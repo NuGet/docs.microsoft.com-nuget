@@ -1,0 +1,5 @@
+﻿nuspec
+project.json
+project.lock.json
+nuget.config
+Target-Frameworks
