@@ -50,14 +50,14 @@ The NuGet Config Defaults file also allows specification of the Default Push Sou
 		<!-- DefaultPushSource key is similar to the 'DefaultPushSource' key of NuGet.config schema-->
 		<!-- This can be used by administrators to prevent accidental publishing of packages to nuget.org -->
 		<config>
-			<add key="DefaultPushSource" value="http://contoso.com/packages/" />
+			<add key="DefaultPushSource" value="https://contoso.com/packages/" />
 		</config>
 	
 		<!-- Default Package Sources -->
 		<!-- They cannot be deleted or modified but can be disabled/enabled by user -->
 		<!-- The following section is similar to 'packageSources' section of NuGet.config schema -->
 		<packageSources>
-			<add key="Contoso Package Source" value="http://contoso.com/packages/" />
+			<add key="Contoso Package Source" value="https://contoso.com/packages/" />
 			<add key="nuget.org" value="https://www.nuget.org/api/v2/" />
 		</packageSources>
 

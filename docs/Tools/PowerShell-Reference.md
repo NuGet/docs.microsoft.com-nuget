@@ -282,7 +282,7 @@ Installs a package and its dependencies into the project.
     </tr>
     <tr>
         <td>Force</td>
-        <td>Install a package forcely to the project. If the same version is already installed, 
+        <td>Install a package forcibly to the project. If the same version is already installed, 
         will uninstall the package first and then install.</td>
         <td>Required = false</td>
     </tr>
@@ -293,7 +293,7 @@ Installs a package and its dependencies into the project.
     </tr>
     <tr>
         <td>DependencyVersion</td>
-        <td>Specifies the version of the dependency package to be selected from the list of valid dependency packages. The defult value is Lowest. You can override this default valueby specifying a new default value in nuget.config file:
+        <td>Specifies the version of the dependency package to be selected from the list of valid dependency packages. The default value is Lowest. You can override this default valueby specifying a new default value in nuget.config file:
         Possible values are: Lowest: the lowest version, HighestPatch: the version with the lowest major, lowest minor, highest patch; HighestMinor: the version with the lowest major, highest minor, highest patch;Highest: the highest version</td>
         <td>Required = false</td>
     </tr>
@@ -571,7 +571,7 @@ Updates a package and its dependencies to a newer version.
         <td>Specifies the version that the package will be upgraded to. If omitted, defaults to 
         the latest version. Starting NuGet 3.0 Beta client or higher, the -Version switch takes in value
         of "Highest", "HighestMinor", "HighestPatch" (equivalent to -Safe) and Lowest to determine 
-        the version of the (currrently specified) package to be upgraded to.</td>
+        the version of the (currently specified) package to be upgraded to.</td>
         <td>Required = false</td>
     </tr>
     <tr>

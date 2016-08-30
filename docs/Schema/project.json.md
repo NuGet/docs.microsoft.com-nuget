@@ -4,7 +4,7 @@
     This page talks about project.json in the context of UWP. For .NET Core take a look <a href="https://docs.microsoft.com/en-us/dotnet/articles/core/tools/project-json">.NET Core Tools - project.json</a>
 </div>
 
-Project.json is the file replacing packages.config as the file specifying the packages used by the project. For more information on the changes to package management this change entaisl, see the topic [here](project.json). This document provides a deeper dive into the content and shape of the file, as well as details on some advanced features not available directly through the UI. 
+Project.json is the file replacing packages.config as the file specifying the packages used by the project. For more information on the changes to package management this change entails, see the topic [here](project.json). This document provides a deeper dive into the content and shape of the file, as well as details on some advanced features not available directly through the UI. 
 
 <div class="block-callout-info">
     <strong>The Future of project.json:</strong><br>

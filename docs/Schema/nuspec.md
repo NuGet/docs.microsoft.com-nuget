@@ -166,7 +166,7 @@ For example, when you use the following command:
 
 The <code>myproject.nuspec</code> file adjacent to the <code>myproject.csproj</code> file may contain the following replacement tokens which 
 are populated by the values within the project.  The file may also contain other replacement tokens that will be specified
-using the [nuget pack -Properties](/ndocs/tools/nuget-cli-reference#pack) feature.
+using the [nuget pack -Properties](/ndocs/tools/nuget.exe-cli-reference#pack) feature.
 
 <table class="reference">
     <tr><th>Token</th><th>Source</th></tr>

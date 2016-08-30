@@ -60,4 +60,4 @@ This brings up the **Publish Package** dialog.
 
 Enter your API Key and click **Publish** to publish your package to the NuGet package feed. If you don't have an account yet, visit [the NuGet Gallery](http://nuget.org/) and register for an account.
 
-After you register and login, click on the **[My Account](http://nuget.org/Contribute/MyAccount)** link to see your API access key.
+After you register and login, click on the **[My Account](https://www.nuget.org/account)** link to see your API access key.

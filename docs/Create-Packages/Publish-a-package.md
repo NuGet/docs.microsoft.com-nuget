@@ -2,7 +2,7 @@
 
 Before you publish your package, you must decide whether you want your package to be public or private.
 
-* If it's for public consumption, use [NuGet.org](https://www.nuget.org/packages/upload).
+* If it's for public consumption, use [NuGet.org](https://www.nuget.org/packages/manage/upload).
 * If it's within an organization or a team, use one of the following methods:
     * NuGet.Server or file shares (for more information, see [Hosting Packages Overview](/ndocs/host-packages/hosting-packages-overview))
 	* Visual Studio Team Services Package Management
@@ -40,4 +40,4 @@ Push your package to NuGet Gallery using the command:
 
 	nuget push YourPackage.nupkg
 
-**Recommended Reading:** [NuGet CLI reference](/ndocs/tools/nuget-cli-reference), [setApiKey](/ndocs/tools/nuget-cli-reference#setapikey), [Push](/ndocs/tools/nuget-cli-reference#push)
+**Recommended Reading:** [NuGet CLI reference](/ndocs/tools/nuget.exe-cli-reference), [setApiKey](/ndocs/tools/nuget.exe-cli-reference#setapikey), [Push](/ndocs/tools/nuget.exe-cli-reference#push)

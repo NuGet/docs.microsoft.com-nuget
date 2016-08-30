@@ -34,7 +34,6 @@ To add preinstalled packages to your project/item template you need to:
 
 Edit your vstemplate file and add a reference to the NuGet template wizard by
 adding a [`WizardExtension`](http://msdn.microsoft.com/en-us/library/ms171411.aspx) element:
-    
     <pre><code class="html">&lt;WizardExtension&gt;
         &lt;Assembly&gt;NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&lt;/Assembly&gt;
         &lt;FullClassName&gt;NuGet.VisualStudio.TemplateWizard&lt;/FullClassName&gt;
@@ -57,7 +56,7 @@ is available in the online package feed.
 The reason for this behavior is that a future version of a package might introduce a change that is not compatible with the project/item template. The choice to upgrade the package to the latest version using NuGet is left to the developer who is in the best position to assume the risks of upgrading the package to the latest version.
 
 <div class="block-callout-info">
-    <strong>Support of mulitple packages elements:</strong><br>
+    <strong>Support of multiple packages elements:</strong><br>
     Starting with NuGet 2.2.1, the wizard also supports multiple `<packages>` elements. This enables scenarios where some packages are installed from one repository, but other packages are installed from a different repository.
 </div>
 
@@ -71,7 +70,6 @@ a VSIX package ([read more about VSIX deployment here](http://msdn.microsoft.com
 **Step 1**
 
 To specify a VSIX as a package repository you modify the `<packages>` element in the `.vstemplate` file:
-
     <pre><code class="html">&lt;packages repository="extension"
               repositoryId="MyTemplateContainerExtensionId"&gt;
     ...
@@ -82,7 +80,6 @@ The `repository` attribute specifies the type of repository (“extension”) wh
 **Step 2**
 
 Add your nupkg files as [custom extension content](http://msdn.microsoft.com/en-us/library/dd393737.aspx) in your `source.extension.vsixmanifest` file. If you're using the 2.0 schema it should look like this:
-
     <pre><code class="html">&lt;Asset Type="Moq.4.0.10827.nupkg" d:Source="File" 
            Path="Packages\Moq.4.0.10827.nupkg" d:VsixSubPath="Packages" /&gt;
     </code></pre>
@@ -102,12 +99,11 @@ You can place the nupkg files in the same VSIX as your project templates or you 
 
 ### Template package repository
 
-If packaging multiple projects is not important to you (e.g. you are only distributing a single project/item template), a simpler but also more limited approach is to include the nupgk files in the project/item template zip file itself.
+If packaging multiple projects is not important to you (e.g. you are only distributing a single project/item template), a simpler but also more limited approach is to include the nupkg files in the project/item template zip file itself.
 
 However, if you are bundling a set of project/item templates that relate to each other and share NuGet packages (e.g. you are shipping a custom MVC project template with versions for Razor, Web Forms, C#, and VB.NET), we do not recommend adding the NuGet packages directly to each project/item template zip file. It needlessly increases the size of the project/item template bundle.
 
 To specify the project/item template as a package repository you modify the `<package>` element:
-
     <pre><code class="html">&lt;packages repository="template"&gt;
         ...
     &lt;/packages&gt;</code></pre>
@@ -152,7 +148,6 @@ Use the repository value of "registry" within the `<packages>` node
 * If you want to force a design time build at the end of packages installation, use `forceDesignTimeBuild="true"` attribute. This attribute is supported on NuGet versions 3.2 and above.
 
 Here's an example `<packages>` element using the registry-specified folder repository:
-
 <pre><code class="html">&lt;packages repository="registry" keyName="AspNetMvc4VS11" isPreunzipped="true"&gt;
     &lt;package id="EntityFramework" version="5.0.0" skipAssemblyReferences="true" /&gt;
     ...
@@ -165,7 +160,6 @@ adding assembly references from the package.
 ## Best Practices
 
 Make your VSIX declare a dependency on the NuGet VSIX by adding a reference to it in your VSIX manifest:
-
     <pre><code class="html">&lt;Reference Id="NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5" MinVersion="1.7.30402.9028"&gt;
      &lt;Name&gt;NuGet Package Manager&lt;/Name&gt;
      &lt;MoreInfoUrl&gt;http://docs.nuget.org/&lt;/MoreInfoUrl&gt;

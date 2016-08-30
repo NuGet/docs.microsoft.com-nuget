@@ -12,19 +12,20 @@ There are are 3 main solutions from the NuGet team to store and retrieve NuGet p
 
 - NuGet Gallery
 
-## Package Hosting Solutions from Microsoft
+## Package Hosting Solutions
+There are several third-party NuGet Servers available that make remote private feeds easy to configure and set-up.
 
-There are several third-party NuGet Servers available that make remote private feeds easy to configure and set-up:-
+### Package Hosting Solutions from Microsoft
 
 [Visual Studio Team Services](https://marketplace.visualstudio.com/items?itemName=ms.feed)
 
-## Other Package Hosting Products
+### Other Package Hosting Products
 
 [MyGet](http://myget.org)
 
 [Inedo's ProGet](http://inedo.com/proget)
 
-[JFrog's Artifactory](http://www.jfrog.com/home/v_artifactorypro_overview)
+[JFrog's Artifactory](https://www.jfrog.com/artifactory/)
 
 [NuGet Server](http://nugetserver.net/)
 

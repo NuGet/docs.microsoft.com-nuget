@@ -18,7 +18,7 @@ NuGet 2.2 now allows you to specify an entire directory in the `<file>` element 
 
 **`<file src="scripts\" target="content\scripts"/>`**
 
-This feature also enables package authors to easily create empty directories by specifying an empty directory in the NuSpec package. 
+**Update 6/24/16: Empty folders in the "content" folder are ignored when installing the package.**
 
 ## Known Issues
 

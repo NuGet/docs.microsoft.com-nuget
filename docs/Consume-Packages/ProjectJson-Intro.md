@@ -1,4 +1,4 @@
-# NuGet 3.0, .NET and project.json 
+# An Introduction to project.json
 
 NuGet 3.0 introduces two new client concepts 
 
@@ -41,7 +41,7 @@ At this point the project system picks up the assembly references and updates th
 
 The build system can choose to pick up other conventions in the package. This is how msbuild targets are supported as well as Roslyn analyzers. It is possible to build packages that supports targets and analyzers for packages.config and project.json scenarios. 
 
-## How does msbuild task know what to pick up?  ##
+## How does msbuild task know what to pick up  ##
 
 The restore process runs ahead of the build itself, it then writes out a new file called project.lock.json. The file includes the package graph as well as other useful information about the packages restored. MSBuild reads the file and translates it into a set of folders where potential references can be found, and then adds them to the project tree in memory. 
 
@@ -64,7 +64,7 @@ project.json is mandatory for UWP apps and ASP.NET 5 apps, is optional for PCLs,
 
 4. Project files are not modified, avoiding merge conflicts and file churn on commits. 
 
-5. Hint paths are not being burned into the project files, fixing the ability to move projects around on disk, and retargeting problems. 
+5. Hint paths are not being burned into the project files, fixing the ability to move projects around on disk, and re-targeting problems. 
 
 6. Enabling the project system to evolve without being dependent on NuGet features. 
 
@@ -77,7 +77,7 @@ project.json is mandatory for UWP apps and ASP.NET 5 apps, is optional for PCLs,
 
 Traditional NuGet packages support a set of features that are not carried over to the transitive world. 
 
-### Install/Uninstall scripts 
+### Install and Uninstall scripts 
 
 These scripts are not supported and will be ignored. In case they exist in the package a project using transitive restore. 
 

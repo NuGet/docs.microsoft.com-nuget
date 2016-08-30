@@ -1,4 +1,4 @@
-# Dependency Resolution in NuGet v3 / project.json 
+# Dependency Resolution in NuGet v3 and project.json 
  
 For projects using project.json, NuGet has new rules for resolving the dependencies of the application. The most fundamental difference is that with package.config the resolution happens once at install time with various knobs to control the process and then the package graph is flattened out. Restore is merely downloading the packages. 
 
@@ -75,7 +75,7 @@ In Figure 2 package A is stating that it depends on Package C 2.0 even though B 
 
 ![Figure 7](/images/consume/projectJson-dependency-7.png)
 
-*Figure 7 - Cousin Dependencies)*
+*Figure 7 - Cousin Dependencies*
 
 In Figure 7 both Package A and C depend on Package B. But C is not an ancestor of "B 1.0" so the nearest wins rule does not apply. Instead the resolver uses the minimum acceptable version, which in this case is "B 2.0".
 
@@ -83,6 +83,6 @@ In Figure 7 both Package A and C depend on Package B. But C is not an ancestor o
 
 ![Figure 8](/images/consume/projectJson-dependency-8.png)
 
-*Figure 8 - Irreconcilable cousin dependencies)*
+*Figure 8 - Irreconcilable cousin dependencies*
 
-In Figure 8 both package A and package C depend on B, just as in Figure 7, but this time package A has an exact version constraint on version 1.0 whilst package C has a greater than 2.0 constraint. This is an error condition for the resolver as it cannot satisfy all of the version constraints. In order to fix it, the consumer needs to specify Package B's version as a top level dependency of MyApp, which will lead to a nearset win rule being applied.
+In Figure 8 both package A and package C depend on B, just as in Figure 7, but this time package A has an exact version constraint on version 1.0 whilst package C has a greater than 2.0 constraint. This is an error condition for the resolver as it cannot satisfy all of the version constraints. In order to fix it, the consumer needs to specify Package B's version as a top level dependency of MyApp, which will lead to a nearest win rule being applied.

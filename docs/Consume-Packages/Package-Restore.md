@@ -1,6 +1,9 @@
 # NuGet Package Restore
 
-> **Important**: Nuget Automatic Package Restore has changed in Nuget 2.7+. Do not mix 'old' and new methods for automatic package restoration. For more information, see Common Issues with Automatic Package Restore, below.
+<div class="block-callout-info">
+	<strong>Note</strong><br>
+	Nuget Automatic Package Restore has changed in Nuget 2.7+. Do not mix 'old' and new methods for automatic package restoration. For more information, see <a href="#common-issues-with-automatic-package-restore">Common Issues with Automatic Package Restore</a>.
+</div>
 
 Many developers like to omit binaries from their source control repository. This can be beneficial in multiple ways:
 
@@ -133,7 +136,7 @@ The MSBuild-Integrated approach requires user action to enable it for a solution
 
 1. NuGet downloads a copy of `NuGet.exe` and `NuGet.targets` from https://www.nuget.org.
 1. NuGet saves these files, along with a `NuGet.config` file, into a `.nuget` folder at the root of the solution.
-1. NuGet updates all projects in the soluton to have them import the `.nuget\NuGet.targets` file, extending MSBuild to invoke `NuGet.exe`'s [Install Command](Command-Line-Reference#Install-Command) during build.
+1. NuGet updates all projects in the solution to have them import the `.nuget\NuGet.targets` file, extending MSBuild to invoke `NuGet.exe`'s [Install Command](Command-Line-Reference#Install-Command) during build.
 
 After that initial setup, building the solution through either Visual Studio or MSBuild from the command-line will restore packages during the build. `NuGet.exe` verifies package restore consent before downloading any missing packages, verifying only the 'Allow NuGet to download missing packages' setting.
 

@@ -23,7 +23,7 @@ The source code from the NuGet clients that is used to calculate these tables ca
 
 Supported framework names in [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
 
-Framework Precendence and Mapping in [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+Framework Precedence and Mapping in [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 ## Supported Frameworks
 
@@ -131,7 +131,7 @@ The following frameworks are deprecated. If you have any packages that target th
 
 <div class="block-callout-warning">
     <strong>Deprecated Frameworks</strong><br>
-    aspnet50, aspnetcore50, winrt, dotnet50 (equvialent to dotnet), dotnet51, dotnet52, dotnet53, dotnet54, dotnet55, dotnet56, dnx, dnx45, dnx451, dnx452, dnxcore50.
+    aspnet50, aspnetcore50, winrt, dotnet50 (equivalent to dotnet), dotnet51, dotnet52, dotnet53, dotnet54, dotnet55, dotnet56, dnx, dnx45, dnx451, dnx452, dnxcore50.
 </div>
 
 <div class="block-callout-info">
@@ -175,7 +175,7 @@ Take a look at [NuGet Tools - Get Nearest Framework](https://aka.ms/s2m3th) to s
 
 To define a target framework that refers to multiple child-target-frameworks, the `portable` keyword shall be used to prefix the list of frameworks that are referenced.  We recommend that you do not artificially include extra frameworks that are not directly compiled against as this could lead to unintended side-effects in those frameworks.
 
-There are additional frameworks that are defined by third parties that provide compatibility with other environments that are accessible in this manner.  Additionally, there are shorthand profile numbers that are available to reference these combinations of related frameworks as `Profile#`, but this is not a recommended practice to use these numbers as it reduces the readiblity of the folders and nuspec. 
+There are additional frameworks that are defined by third parties that provide compatibility with other environments that are accessible in this manner.  Additionally, there are shorthand profile numbers that are available to reference these combinations of related frameworks as `Profile#`, but this is not a recommended practice to use these numbers as it reduces the readability of the folders and nuspec. 
 
 <table class="reference">
   <tr>

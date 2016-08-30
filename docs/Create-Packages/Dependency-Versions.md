@@ -126,7 +126,7 @@ After doing this, you’ll notice a new .nuget folder under your solution, conta
 
 Before NuGet 2.5, when a package was installed that depended on a package already installed in the project, the dependency would be updated as part of the new installation, even if the existing version satisfied the dependency.
 
-Starting with NuGet 2.5, if a dependency version is already satisifed, the dependency will not be updated during other package installations.
+Starting with NuGet 2.5, if a dependency version is already satisfied, the dependency will not be updated during other package installations.
 
 ### Example
 

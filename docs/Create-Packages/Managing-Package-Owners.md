@@ -2,11 +2,11 @@
 
 While each NuGet package's [nuspec metadata](/ndocs/schema/nuspec) defines the package's owner(s), the NuGet gallery at nuget.org ignores that piece of nuspec metadata.  Instead, ownership of a package is defined by who publishes the package to the gallery.  Sometimes this metadata needs to be managed beyond the initial package publishing which means the owner metadata needs to be mutable while the package itself is not.
 
-## Setting a Package's Initial Owner ##
+## Setting Initial Owner ##
 When a brand new package is published to nuget.org, its initial owner is defined by the user that published the package.
 
 1. If the [nuget.org](https://www.nuget.org)'s 'Upload Package' page was used to publish the package, then the logged-on user when the package is uploaded is the package's owner.
-2. If `nuget.exe push` was used to publish the package from the command-line, then the API key specified to nuget.exe will define the package's owner.  This can be done by either including the API key in the [Push command](/ndocs/tools/nuget-cli-reference#push), or by using the [SetApiKey command](/ndocs/tools/nuget-cli-reference#setapikey).
+2. If `nuget.exe push` was used to publish the package from the command-line, then the API key specified to nuget.exe will define the package's owner.  This can be done by either including the API key in the [Push command](/ndocs/tools/nuget.exe-cli-reference#push), or by using the [SetApiKey command](/ndocs/tools/nuget.exe-cli-reference#setapikey).
 
 ## Specifying Additional Package Owners ##
 It's common for a package to have multiple developers; each developer can be listed as a co-owner of the package.  Packages can also utilize a convention for "organizations" to indicate company/group ownership of a package.  For example, the Microsoft ASP.NET packages are co-owned by [microsoft](http://nuget.org/profiles/microsoft), [aspnet](http://nuget.org/profiles/aspnet), and sometimes individuals on the feature team.  The 'microsoft' and 'aspnet' accounts are simply set up with a mailing list email address that can be used to reach the teams that manage those accounts.
@@ -34,8 +34,8 @@ When a package has multiple owners and one needs to be removed the process is si
 3. When logged on as the package's owner, there is a 'Manage Owners' link on the left side to click
 4. Click the 'remove' link next to the owner to be removed
 
-## Transfering Package Ownership ##
-We sometimes get support requests to transfer package ownership from one user to another, but you can almost always accomplish this yourself.  Transfering ownership from one user to another is simply a combination of the two features above.
+## Transferring Package Ownership ##
+We sometimes get support requests to transfer package ownership from one user to another, but you can almost always accomplish this yourself.  Transferring ownership from one user to another is simply a combination of the two features above.
 
 1. The current owner invites the new user to become a co-owner and the new user accepts the invite
 2. The new user removes the old user from the list of owners

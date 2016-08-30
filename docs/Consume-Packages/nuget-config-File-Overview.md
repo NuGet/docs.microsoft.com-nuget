@@ -41,7 +41,7 @@ Below is an example of NuGet configuration file that specifies some of the avail
 		Used to specify default source for the push command.
 		See: NuGet.exe help push
 		-->
-        <add key="DefaultPushSource" value="http://MyRepo/ES/api/v2/package" />
+        <add key="DefaultPushSource" value="https://MyRepo/ES/api/v2/package" />
 		<!-- 
 		Proxy settings
 		-->
@@ -64,7 +64,7 @@ Below is an example of NuGet configuration file that specifies some of the avail
 	  -->
       <packageSources>
         <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
-        <add key="MyRepo - ES" value="http://MyRepo/ES/nuget" />
+        <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
       </packageSources>
 	  <!-- used to store credentials -->
 	  <packageSourceCredentials />
@@ -84,7 +84,7 @@ Below is an example of NuGet configuration file that specifies some of the avail
 	  See: NuGet.exe help mirror
 	  -->
       <apikeys>
-        <add key="http://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
+        <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
       </apikeys>
     </configuration>
 
@@ -159,11 +159,11 @@ c) F:\Project1\NuGet.config with content:
     <configuration>
       <config>
         <add key="repositoryPath" value="External\Packages" />
-        <add key="DefaultPushSource" value="http://MyPrivateRepo/ES/api/v2/package" />
+        <add key="DefaultPushSource" value="https://MyPrivateRepo/ES/api/v2/package" />
       </config>
       <packageSources>
         <clear /> <!-- ensure only the sources defined below are used -->
-        <add key="MyPrivateRepo - ES" value="http://MyPrivateRepo/ES/nuget" />
+        <add key="MyPrivateRepo - ES" value="https://MyPrivateRepo/ES/nuget" />
       </packageSources>
     </configuration>
 
@@ -173,7 +173,7 @@ d) F:\Project2\NuGet.config with content:
     <configuration>
       <packageSources>
 	    <!-- Add this repository to the list of available repositories -->
-        <add key="MyPrivateRepo - DQ" value="http://MyPrivateRepo/DQ/nuget" />
+        <add key="MyPrivateRepo - DQ" value="https://MyPrivateRepo/DQ/nuget" />
       </packageSources>
     </configuration>
 
@@ -184,9 +184,9 @@ d) F:\Project2\NuGet.config with content:
 
 **When invoked from F:\ or F:\tmp**: 1 and 2. The default repository on NuGet.org is used, package restore is enabled and packages get expanded in F:\tmp.
 
-**When invoked from F:\Project1 or F:\Project1\Source**: 1, 2 and 3. The last config file that gets loaded overrides `repositoryPath` therefore packages get expanded in F:\Project1\External\Packages instead of F:\tmp. It also clears `<packageSources>` therefore nuget.org is no longer available as a source; instead only http://MyPrivateRepo/ES/nuget is available.
+**When invoked from F:\Project1 or F:\Project1\Source**: 1, 2 and 3. The last config file that gets loaded overrides `repositoryPath` therefore packages get expanded in F:\Project1\External\Packages instead of F:\tmp. It also clears `<packageSources>` therefore nuget.org is no longer available as a source; instead only https://MyPrivateRepo/ES/nuget is available.
 
-**When invoked from F:\Project2 or F:\Project2\Source**: 1, 2 and 4. This time `packageSources` is not cleared, therefore both nuget.org and http://MyPrivateRepo/DQ/nuget are available as source repositories. Packages get expanded in F:\tmp
+**When invoked from F:\Project2 or F:\Project2\Source**: 1, 2 and 4. This time `packageSources` is not cleared, therefore both nuget.org and https://MyPrivateRepo/DQ/nuget are available as source repositories. Packages get expanded in F:\tmp
 
 ## NuGet config extensibility point
 
@@ -195,20 +195,18 @@ d) F:\Project2\NuGet.config with content:
 	Closest to the folder nuget.exe runs from wins.
 </div>
 
-NuGet config files are treated in the following priority order, for example assuming the solution directory is c:\a\b\c:
+Starting with NuGet 3.4, config files are treated in the following priority order, for example assuming the solution directory is c:\a\b\c:
 
-	c:\a\b\c\.nuget\nuget.config - Onlyfor solution level packages, and not supported in nuget 3.0+
+	c:\a\b\c\.nuget\nuget.config - Only for solution level packages, and not supported in nuget 3.0+
 	c:\a\b\c\nuget.config
 	c:\a\b\nuget.config
 	c:\a\nuget.config
 	c:\nuget.config
-	User specific config file, %AppData%\NuGet\nuget.config. 
+	User specific config file, %AppData%\NuGet\nuget.config.
 
 	Or the user specified file thru option `-configfile`.
 
-### Machine Wide Config File
-
-Starting with NuGet 2.6, with the new config extensibility point, a new location for machine wide config files located under directory `%ProgramData%\NuGet\Config` are read after the user specific config file. So, the above list now becomes:
+Starting with NuGet 2.6 upto 3.3, with the new config extensibility point, a new location for machine wide config files located under directory %ProgramData%\NuGet\Config are read after the user specific config file. So, the above list now becomes:
 
 	c:\a\b\c\\.nuget\nuget.config
 		-c:\a\b\c\nuget.config

@@ -47,13 +47,13 @@ However, if you want to update the template in one go, instead of doing it for e
 
 **Can I use NuGet outside of Visual Studio?**
 
-**You sure can!**, check out our [Install Guide]().
+**You sure can!**, check out our [Install Guide](/ndocs/guides/install-nuget).
 
 ## NuGet CommandLine
 
 **How do I get the latest version of NuGet commandline?**
 
-Check out our [Install Guide]().
+Check out our [Install Guide](/ndocs/guides/install-nuget).
 
 **Is it possible to extend NuGet commandline?**
 
@@ -64,7 +64,7 @@ Yes, it is possible to add custom commands to NuGet.exe. Check out [this post](h
 **How do I get access to the DTE object in the Package Manager console?**
 
 The console provides a variable named `$DTE` that returns the `DTE` object. See the `Get-Project` command in 
-[Package Manager Console Powershell Reference]().
+[Package Manager Console Powershell Reference](/ndocs/tools/powershell-reference#get-project).
 
 **I try to cast the $DTE variable to the type DTE2, but I get an error: Cannot convert the "EnvDTE.DTEClass" value of type "EnvDTE.DTEClass" to type "EnvDTE80.DTE2". What's wrong?**
 
@@ -76,19 +76,19 @@ This is a known issue with how PowerShell interacts with a COM object. Try the f
 
 **How do I get my package in the feed?**
 
-See the [Creating and publishing a package]() page.
+See the [Creating and publishing a package](/ndocs/quickstart/create-and-publish-a-package) page.
 
 **I have multiple versions of my library that target different versions of the .NET Framework. How do I build a single package that supports this?**
 
-See the [Supporting Multiple .NET Framework Versions and Profiles]()
+See the [Supporting Multiple .NET Framework Versions and Profiles](/ndocs/create-packages/supporting-multiple-target-frameworks)
 
 **How do I set up a local repository or feed?**
 
-See [Hosting Your Own NuGet Feeds]().
+See [Hosting Your Own NuGet Feeds](/ndocs/hosting-packages/local-feeds).
 
 **How can I bulk upload packages to my NuGet feed ?**
 
-See [Bulk Publishing NuGet Packages](http://jeffhandley.com/archive/2012/12/13/Bulk-Publishing-NuGet-Packages.aspx
+See [Bulk Publishing NuGet Packages](http://jeffhandley.com/archive/2012/12/13/Bulk-Publishing-NuGet-Packages.aspx)
 	
 **How can I create package out of a project or solution ?**
 
@@ -108,7 +108,7 @@ A solution-level package has to be installed only once in a solution to be avail
 **How to install packages in a different location from the default "Packages" folder?**
 
 This can be done by setting the "repositoryPath" settings in nuget.config.
-More details [here.]()
+More details [here.](/ndocs/schema/nuget.config-file#repositorypath)
 
 **How do I avoid checking in packages folder to source control?**
 
@@ -145,15 +145,15 @@ Delete your NuGet.config file at `%appdata%\nuget` and the client will recreate 
 
 **Is it possible to reserve names for packages that will be published in future?**
 
-It is not possible to squat package names. If you feel that an existing package has taken the name which suits your package more, try [contacting the owner of the package](https://nuget.org/packages/[package ID]/ContactOwners?). If you didnt get response within a couple of weeks, you can contact support and the NuGet Gallery team will look in to it.
+It is not possible to squat package names. If you feel that an existing package has taken the name which suits your package more, try [contacting the owner of the package](https://nuget.org/packages/[package ID]/ContactOwners). If you didnt get response within a couple of weeks, you can contact support and the NuGet Gallery team will look in to it.
 
 **How do I claim ownership for packages ?**
 
-Check out [Managing Package Owners on nuget.org]() for details.
+Check out [Managing Package Owners on nuget.org](/ndocs/create-packages/managing-package-owners) for details.
 
 **How do I deal with a package owner who is violating my software license?**
 
-We encourage the NuGet community to work together to resolve any disputes that may arise between package owners and the owners of other software.  We have crafted a [dispute resolution process](/Consume/Dispute-Resolution) that we ask you to follow before NuGet.org administrators intercede.
+We encourage the NuGet community to work together to resolve any disputes that may arise between package owners and the owners of other software.  We have crafted a [dispute resolution process](/ndocs/policies/dispute-resolution) that we ask you to follow before NuGet.org administrators intercede.
 
 **Is it recommended to upload my test packages to NuGet.org ?**
 
