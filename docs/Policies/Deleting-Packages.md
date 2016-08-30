@@ -12,4 +12,4 @@ version, which is what allows the Restore workflow to continue working.
 ## Exceptions
 
 If you run into an exceptional situation where you think one of your packages must be deleted, this can be handled
-manually by the NuGet team. e.g. if there is a copyright infringement issue, or potentially harmful content, that could be a valid reason to delete it. You should submit a support request through [NuGet Gallery] (http://www.nuget.org) in that case.
+manually by the NuGet team. e.g. if there is a copyright infringement issue, or potentially harmful content, that could be a valid reason to delete it. You should submit a support request through [NuGet Gallery](http://www.nuget.org) in that case.

@@ -36,7 +36,7 @@ The [CoApp](http://coapp.org/news/2013-04-26-Announcing-CoApp-Tools-For-NuGet.ht
 
 * [NuGet 2.5 Release Announcement](http://blog.nuget.org/20130425/nuget-2.5-released.html)
 * [NuGet 2.5 Download Page](https://nuget.codeplex.com/releases/view/96733)
-* [CoApp's PowerShell Tools Installer to create NuGet packages for C++ libraries and tools](http://coapp.org/releases)
+* [CoApp's PowerShell Tools Installer to create NuGet packages for C++ libraries and tools](http://coapp.org/pages/releases.html)
 * [Announcement on the Visual C++ Team Blog](http://blogs.msdn.com/b/vcblog/archive/2013/04/26/nuget-for-c.aspx)
 * [Announcement on the Openness@Microsoft Blog](http://blogs.technet.com/b/openness/archive/2013/04/26/nuget-coapp-release.aspx)
 * [Announcement on the CoApp Blog](http://coapp.org/news/2013-04-26-Announcing-CoApp-Tools-For-NuGet.html)

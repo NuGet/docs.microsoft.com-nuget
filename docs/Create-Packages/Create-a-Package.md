@@ -18,7 +18,7 @@ If you have an assembly, you can easily generate a <span class="text-primary">.n
 and create a package.
 
 <div class="block-callout-info">
-	<a href="http://docs.nuget.org/Create/Nuspec-Reference">.nuspec</a> file is a manifest that uses XML to describe a package. The manifest is used to build a package and is also stored in the package after the package is built.
+	<a href="/ndocs/schema/nuspec">.nuspec</a> file is a manifest that uses XML to describe a package. The manifest is used to build a package and is also stored in the package after the package is built.
 </div>
 
 ###Create a .nuspec file
@@ -130,9 +130,10 @@ You can also use the -Symbols flag to include a symbols package as well. A symbo
 	
 
 ##Convention-based working directory
-Some packages contain more than just assemblies. They may contain the following:<
-* Content and source code that should be injected into the target project.<br>
-* [Configuration file and source code transformations](https://docs.nuget.org/Create/Configuration-File-and-Source-Code-Transformations)
+Some packages contain more than just assemblies. They may contain the following:
+
+* Content and source code that should be injected into the target project
+* [Configuration file and source code transformations](/ndocs/create-packages/source-file-transformations)
 
 
 Some packages might have scripts, like init.ps, for example. Legacy packages that are installed in the packages.config world might use install.ps1 scripts to setup the project. 

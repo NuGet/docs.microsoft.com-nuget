@@ -80,7 +80,7 @@ The key difference is that each operation lets you select which projects it appl
 
 ## Package Sources
 NuGet can display packages from multiple package sources. To add a package source, click on the **Settings** 
-button in the UI or acess it from Tools->Options->NuGet Package Manager to launch the Options dialog. Make sure the **Package Sources** node is selected in the dialog.
+button in the UI or access it from Tools->Options->NuGet Package Manager to launch the Options dialog. Make sure the **Package Sources** node is selected in the dialog.
 
 ![Package Sources Dialog](/images/docs/options.png)
 
@@ -117,7 +117,7 @@ There are currently three options available:
 
 2. **Dependency Behavior** - this allows you to configure how NuGet will decide which versions of dependent packages will be installed.  There are five options:
 
-	a. **Ignore** - This is usually a bad idea, as a package has dictated that it dependends on other packages and will require their contents to operate.  You may choose to skip installing those packages.
+	a. **Ignore** - This is usually a bad idea, as a package has dictated that it depends on other packages and will require their contents to operate.  You may choose to skip installing those packages.
 
     b. **Lowest** - Install the package version with the minimal version number that meets the requirements of my chosen package.
 

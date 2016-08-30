@@ -20,7 +20,7 @@ type at all and are therefore assumed to be `Dependency` packages.
 
 `DotnetCliTool` type packages are extensions to the [.NET CLI](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/index)
 and are invoked via the command line. More details about these per-project extensions are available in the 
-[.NET Core extensibility documention](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/extensibility#per-project-based-extensibility).
+[.NET Core extensibility documentation](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/extensibility#per-project-based-extensibility).
 
 When a package is marked as a `DotnetCliTool`, installation from NuGet in Visual Studio will the package in the
 project.json `"tools"` node, instead of the `"dependencies"` node.
@@ -32,7 +32,7 @@ is set, the produced .nupkg is marked with no package type.
 
 It is possible but cautioned to explicitly specify the `Dependency` package type as older clients do not recognize
 package types. A more backwards-compatible approach is to specify no package type at all and depend on the fact the
-the absense of a package type means the package is a `Dependency`. This is the legacy behavior.
+the absence of a package type means the package is a `Dependency`. This is the legacy behavior.
 
 There are two ways to set a package type.
 

@@ -76,7 +76,7 @@ Here is how the updated nuspec file looks:
 	</package>
 
 
-You should consider updating the metadata tags to make it easier for others to find the package, understand what it does, and how to use it.
+Especially for packages that are build for public consumption, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it.
 
 Having finalized the nuspec file, we are now ready to create the nuget package.
 
@@ -84,15 +84,17 @@ Having finalized the nuspec file, we are now ready to create the nuget package.
 
 Now run the <code>pack</code> command on the project:
 
+<code class="bash hljs">
 	nuget pack AppLogger.csproj
-
+</code>
+	
 You will get warnings if you haven't updated the release notes and tags from their default values.
 
 When the command has completed successfully, it will generate a new file `AppLogger.1.0.0.0.nupkg`. This is your nuget package.
 
 
 ##Publish
-There are two ways you can publish packages: using the [nuget CLI](/ndocs/tools/nuget-cli-reference) (which is what we will be doing here), or using the [nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org). No matter which approach you use, you will need to have an account with [nuget.org](https://www.nuget.org/).
+There are two ways you can publish packages: using the [nuget CLI](/ndocs/tools/nuget.exe-cli-reference) (which is what we will be doing here), or using the [nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org). No matter which approach you use, you will need to have an account with [nuget.org](https://www.nuget.org/).
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
@@ -118,10 +120,13 @@ Open your command prompt and run the following command. Replace the key below wi
 
 You should see something like this when the command has successfully executed.
 
+<code class="bash hljs">
 	Pushing AppLogger.1.0.0.0.nupkg to 'https://www.nuget.org/api/v2/package'...
 	  PUT https://www.nuget.org/api/v2/package/
 	  Created https://www.nuget.org/api/v2/package/ 6829ms
 	Your package was pushed.
+</code>
+	
 
 You can now go to your account on nuget.org and under <b>Manage my packages</b>, you should be able to see the package that you just published. You should also receive an email notifying you that the package was published.
 

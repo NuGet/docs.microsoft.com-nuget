@@ -24,7 +24,7 @@ Reinstalling packages can be pretty straightforward. However, it can get very tr
 The cases above are covered in detail below:
 
 1. Reinstalling packages according to project target framework retargeting
-	* In a simple case, just reinstalling a package using `Update-Package –reinstall &lt;packageName>`
+	* In a simple case, just reinstalling a package using `Update-Package –reinstall <packageName>`
 	will do the trick. A package that is installed against an old target framework gets uninstalled and the same package gets installed against the current target framework of the project.
 	* In some cases, there may be a package that does not support the new target framework.
 		- If a package supports portable class libraries (PCLs) and the project is retargeted to a combination of platforms no longer supported by the package, references to the package will be missing after reinstalling. 
@@ -41,7 +41,7 @@ The cases above are covered in detail below:
 
 ## Background and Reference
 
-1.	[Package can support multiple .NET Framework Versions and Profiles](../Create/Enforced-Package-Conventions#supporting-multiple-.net-framework-versions-and-profiles)
+1.	[Package can support multiple .NET Framework Versions and Profiles](../create-packages/supporting-multiple-target-frameworks)
 2.	[Original Codeplex discussion on –reinstall switch](https://nuget.codeplex.com/discussions/256212)
 3.	[Codeplex Issue with info on various cases involved with -reinstall switch](http://nuget.codeplex.com/workitem/1779)
 4.	[Blog Post: A quick tutorial on the Update-Package command](http://blog.nuget.org/20121231/a-quick-tutorial-on-update-package-command.html)
