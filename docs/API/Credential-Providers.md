@@ -36,7 +36,7 @@ The NuGet.exe client will search the above locations, in order, for Credential P
 
 ## Available Credential Providers
 
-Some of the available Credential Providers are: [Visual Studio Team Services Credential Provider](https://www.visualstudio.com/get-started/package/use/auth#vsts-credential-provider)
+Some of the available Credential Providers are: [Visual Studio Team Services Credential Provider](https://www.visualstudio.com/en-us/docs/package/get-started/nuget/auth#vsts-credential-provider)
 
 ## Creating a Credential Provider
 
