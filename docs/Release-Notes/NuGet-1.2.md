@@ -1,6 +1,6 @@
 # NuGet 1.2 Release Notes
 
-[NuGet 1.0 and 1.1 Release Notes](./nuget-1.1) | [NuGet 1.3 Release Notes](./nuget-1.3)
+[NuGet 1.0 and 1.1 Release Notes](/release-notes/nuget-1.1) | [NuGet 1.3 Release Notes](/release-notes/nuget-1.3)
 
 NuGet 1.2 was released on March 30, 2011.
 
@@ -80,7 +80,7 @@ something about incompatible schema, you are running into this error. Please upd
 * **NuGet.Server incompatibility**: If you’re hosting an internal NuGet feed using the NuGet.Server project, you’ll 
 need to update that project with the latest version of NuGet.Server.
 * **Signature Mismatch Error**: If you run into an error during an upgrade with a message about a Signature Mismatch, 
-you'll need to uninstall NuGet first and then install it. This is listed in our [Known Issues page](./Known-Issues) 
+you'll need to uninstall NuGet first and then install it. This is listed in our [Known Issues page](/release-notes/Known-Issues) 
 which provides more details. The issue only affects those running Visual Studio 2010 SP1 and have a version of NuGet 
 1.0 installed that was incorrectly signed. This version was only made available from the CodePlex website for a brief 
 period so this issue shouldn't affect too many people.

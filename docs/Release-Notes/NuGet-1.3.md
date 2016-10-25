@@ -1,6 +1,6 @@
-﻿# NuGet 1.3 Release Notes
+# NuGet 1.3 Release Notes
 
-[NuGet 1.2 Release Notes](../nuget-1.2) | [NuGet 1.4 Release Notes](../nuget-1.4)
+[NuGet 1.2 Release Notes](/release-notes/nuget-1.2) | [NuGet 1.4 Release Notes](/release-notes/nuget-1.4)
 
 NuGet 1.3 was released on April 25, 2011.
 
@@ -50,7 +50,7 @@ NuGet 1.3 introduces a lot of performance improvements. NuGet 1.3 avoids downloa
 a package multiple times by including a local per-user cache. The cache can be accessed and cleared via 
 the Package Manager Settings dialog:
 
-![NuGet Options Dialog with Package Cache Settings](../media/nuget-options.png)
+![NuGet Options Dialog with Package Cache Settings](./media/nuget-options.png)
 
 Other performance improvements include adding support for HTTP compression and improving the package 
 installation speed within Visual Studio.
