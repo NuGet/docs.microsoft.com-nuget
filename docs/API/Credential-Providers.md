@@ -1,96 +1,61 @@
 # Credential Providers and NuGet
 
-NuGet 3.3+ now supports Credential Providers, which enable NuGet to work seamlessly with authenticated feeds. 
-After you install a Credential Provider, NuGet will automatically acquire and refresh credentials for authenticated feeds as necessary.
+*NuGet 3.3+*
 
-Note: Credential providers only work in NuGet.exe (not in dotnet restore or visual studio). There is a single credential provider that is built into the Visual Studio NuGet extension to support Visual Studio Team Services.
+When `nuget.exe` needs credentials to authenticate with a feed, it looks for them in the following manner:
 
-NuGet Credential Providers can be used in 3 ways:
+1. NuGet first looks for credentials in `nuget.config` files.
+2. NuGet then uses plug-in credential providers, subject to the order given below. (And example is the [Visual Studio Team Services Credential Provider](https://www.visualstudio.com/en-us/docs/package/get-started/nuget/auth#vsts-credential-provider).)
+3. NuGet then prompts the user for credentials on the command line.
 
-* [Globally](#installing-a-credential-provider-globally)
+<div class="block-callout-info">
+	<strong>Note</strong><br>
+	Credential providers do not apply to <em>dotnet restore</em>, or the Package Manager UI or Console in Visual Studio. NuGet in Visual Studio uses a single single built-in credential provider that supports Visual Studio Team Services.
+</div>
 
-* [Environment Variable](#using-a-credential-provider-from-an-environment-variable)
+Plug-in credential providers thus provide a way to hook into custom authentication process for different feeds. They can be used in three ways:
 
-* [Alongside NuGet.exe](#using-a-credential-provider-alongside-nugetexe)
+- **Globally**: to make a credential provider available to all instances of `nuget.exe` run under the current user's profile, add it to `%LocalAppData%\NuGet\CredentialProviders`. You may need to create the `CredentialProviders` folder. Credential providers can be installed at the root of the `CredentialProviders`  folder or within a subfolder. If a credential provider has multiple files/assemblies, you can use subfolders to keep the providers organized.
+- **From an environment variable**: Credential providers can be stored anywhere and made accessible to `nuget.exe` by setting the `%NUGET_CREDENTIALPROVIDERS_PATH%` environment variable to the provider location. This variable can be a semicolon-separated list if you have multiple locations.
+- **Alongside nuget.exe**: Credential providers can be placed in the same folder as `nuget.exe`.
 
-## Installing a Credential Provider Globally
+The loading plug-in credential providers, `nuget.exe` searches the above locations, in order, for any file named `credentialprovider*.exe`, then loads those files in the order they're found. If multiple credential providers exist in the same folder, they're loaded in alphabetical order.
 
-To make a Credential Provider available to all instances of NuGet.exe run under the current user's profile, 
-add it to `%LocalAppData%\NuGet\CredentialProviders`
 
-You may need to create the `CredentialProviders` folder.
+## Creating a credential provider
 
-Credential Providers can be installed at the root of the `CredentialProviders` folder or within a subfolder. If a Credential Provider has multiple files/assemblies, using subfolders can help keep the Providers organized.
+A credential provider is a command-line executable, named in the form `CredentialProvider*.exe`, that gathers inputs, acquires credentials as appropriate, and then returns the appropriate exit status code and standard output.
 
-## Using a Credential Provider from an Environment Variable
+A provider must also do the following:
 
-Credential Providers can also be stored anywhere and then made accessible to NuGet.exe via an environment variable. To use a Credential Provider this way, set the `%NUGET_CREDENTIALPROVIDERS_PATH%` to the location of your Provider. The variable can be a semicolon-separated list, e.g. `path1;path2`, if you have have multiple Credential Providers in different locations.
+- Determine whether it can provide credentials for the targeted URI before initiating credential acquisition. If not, it should return status code 1 with no credentials.
+- Not modify `nuget.config` (such as setting credentials there).
+- Handle HTTP proxy configuration on its own, as NuGet does not provide proxy information to the plugin.
+- Encode `stdout` responses using UTF-8 encoding.
 
-## Using a Credential Provider Alongside NuGet.exe
-
-Credential Providers can also be placed in the same folder as NuGet.exe.
-
-## Using Multiple Credential Providers
-
-The NuGet.exe client will search the above locations, in order, for Credential Providers. Specifically, it will search for any file that matches the pattern `CredentialProvider*.exe` and load each provider in the order it's found. If two Credential Providers are found in the same directory, they will be loaded in alphabetical order.
-
-## Available Credential Providers
-
-Some of the available Credential Providers are: [Visual Studio Team Services Credential Provider](https://www.visualstudio.com/en-us/docs/package/get-started/nuget/auth#vsts-credential-provider)
-
-## Creating a Credential Provider
-
-The NuGet 3.3 client implements an internal CredentialService that is used to acquire credentials. The CredentialService has a list of built-in and plug-in Credential Providers. Each provider is tried sequentially until credentials are acquired.
-
-Built-in providers, such as the existing providers to fetch credentials from nuget.config and to
-prompt the user on the command line, execute in-process. 
-
-During credential acquisition, the credential service will try plug-in credential providers in the following order, stopping as soon as credentials are acquired:
-
-a) Credentials will be fetched from NuGet configuration files.
-
-b) All 3rd party credential providers will be tried in the order of discovery outlined above.
-
-c) The user will be prompted for credentials on the command line.
-
-To create a Credential Provider, create a command-line executable that takes the inputs specified below, acquires credentials as appropriate, then returns the appropriate exit status code and standard output.
-
-### Credential Provider Executable Basics
-
-Credential Providers must follow the naming convention `CredentialProvider*.exe`., and each Credential Provider must:
-
-a) Determine whether it can provide credentials for the targeted URI before initiating credential acquisition. If     the plugin cannot supply credentials for the targeted source, then it should return
-   status code 1 and supply no credentials.
-
-b) Not modify nuget.config (i.e. by setting credentials there).
-
-c) Handle HTTP Proxy configuration on their own. The CredentialService will not pass HTTP Proxy configuration   information to the plugin.
-
-d) Encode stdout responses using UTF-8 encoding.
-
-### Credential Provider Input Parameters
+### Input parameters
 
 <table>
-<th>Input parameter</th>
+<th>Parameter/Switch</th>
 <th>Description</th>
     <tr>
-        <td>Uri{value}</td>
-        <td>The package source Uri for which credentials will be filled.</td>
+        <td>Uri {value}</td>
+        <td>The package source URI requiring credentials.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
-        <td>If present, providers will not issue interactive prompts.</td>
+        <td>If present, provider does not issue interactive prompts.</td>
     </tr>
     <tr>
         <td>IsRetry</td>
-        <td>If present, this is a retry and the credentials were rejected on a previous attempt. Providers typically use the `IsRetry` flag to ensure that they bypass any existing cache and prompt for new credentials if possible.</td>
+        <td>If present, indicates that this attempt is a retry of a previously failed attempt. Providers typically use this flag to ensure that they bypass any existing cache and prompt for new credentials if possible.</td>
     </tr>
 </table>
 
-### Credential Provider Exit Status Codes
+### Exit codes
 
 <table>
-<th>Exit code</th>
+<th>Code</th>
 <th>Result</th>
 <th>Description</th>
     <tr>
@@ -101,16 +66,16 @@ d) Encode stdout responses using UTF-8 encoding.
     <tr>
         <td>1</td>
         <td>ProviderNotApplicable</td>
-        <td>The current provider does not provide credentials for the given uri.</td>
+        <td>The current provider does not provide credentials for the given URI.</td>
     </tr>
     <tr>
         <td>2</td>
         <td>Failure</td>
-        <td>The Credential Provider is the correct provider for the given Uri, but cannot provide credentials.  In this case, the CredentialService will throw an exception and the current request should fail and not be retried. A typical example would be a user cancelling an interactive login.</td>
+        <td>The provider is the correct provider for the given URI, but cannot provide credentials. In this case, nuget.exe will not retry authentication and will fail. A typical example is when a user cancels an interactive login.</td>
     </tr>
 </table>
 
-### Credential Provider Standard Output
+### Standard output
 
 <table>
 <th>Property</th>
@@ -126,11 +91,11 @@ d) Encode stdout responses using UTF-8 encoding.
     </tr>
     <tr>
         <td>Message</td>
-        <td>Optional details about the response.  Will only be used by NuGet to show additional error details in failure cases.</td>
+        <td>Optional details about the response, used only to show additional details in failure cases.</td>
     </tr>
 </table>
 
-### Example stdout
+Example stdout:
 
     { "Username" : "freddy@example.com",
       "Password" : "bwm3bcx6txhprzmxhl2x63mdsul6grctazoomtdb6kfbof7m3a3z",

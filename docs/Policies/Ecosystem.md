@@ -1,21 +1,24 @@
 # An Overview of the NuGet Ecosystem
 
-First introduced in 2010, NuGet has been around for a few years now and many people and organizations are starting to realize that NuGet presents a great opportunity to improve and automate different aspects of the development processes. Because the NuGet project is open source under a permissive [Apache v2 license](http://choosealicense.com/licenses/apache/), other projects can leverage NuGet and companies can build support for it in their products. Whether for open source projects or enterprise application development, NuGet plus the ever-growing set of applications built on and around NuGet, provide a broad selection of tools for improving your software development process.
+Since it's introduction in 2010, NuGet has presented a great opportunity to improve and automate different aspects of the development processes. 
 
-All of these projects are able to innovate for the same reason that has allowed NuGet to innovate - You. As such, please contribute to these projects just as you contribute to NuGet by reporting defects and new feature ideas, providing feedback, writing documentation, and contributing code where possible. 
+Because NuGet is open source under a permissive [Apache v2 license](http://choosealicense.com/licenses/apache/), other projects can leverage NuGet and companies can build support for it in their products. Whether for open-source projects or enterprise application development, NuGet and other applications built on and around NuGet provide a broad ecosystem of tools for improving your software development process.
 
-## .NET Foundation Projects
-The NuGet project provides a free, open source package management system for the Microsoft development platform and consists out of a few client tools as well as the set of services that comprise the [official NuGet Gallery](http://www.nuget.org). Combined, these form the NuGet project which is governed by the [.NET Foundation](http://www.dotnetfoundation.org/).
+All of these projects are able to innovate because of developer contributions. Just as you contribute to NuGet itself, also make contribution to these projects by reporting defects and new feature ideas, providing feedback, writing documentation, and contributing code where possible. 
 
-The NuGet project has migrated from codeplex into our new home in GitHub. The NuGet Organization contains various repositories and the [Home Repo](https://github.com/Nuget/Home) gives an overview to repos and where the various components of the NuGet platform are developed.
+## .NET Foundation projects
 
-## Microsoft Projects
-Microsoft has extensively contributed to the development of the NuGet project. All contributions made by Microsoft employees are also open source and are donated (including copyrights) to the .NET Foundation.
+NuGet provides a free, open source package management system for the Microsoft development platform. It consists of a few client tools as well as the set of services that comprise the [official NuGet Gallery](http://www.nuget.org). Combined, these form the NuGet project which is governed by the [.NET Foundation](http://www.dotnetfoundation.org/).
 
-(TBD) - Super Brief Overview of our components
+The NuGet Organization contains various repositories on GitHub. [https://github.com/Nuget/Home](https://github.com/Nuget/Home) gives an overview of all the repositories and where to find the various NuGet components.
 
-## Non-Microsoft Projects
-In addition to Microsoft, many other individuals and companies have made significant contributions to the NuGet ecosystem. Each project listed here may have a different license than the core NuGet components so please confirm that the license terms are acceptable prior to use. 
+## Microsoft projects
+
+Microsoft has contributed extensively to the development of NuGet. All contributions made by Microsoft employees are also open source and are donated (including copyrights) to the .NET Foundation.
+
+## Non-Microsoft projects
+
+Many other individuals and companies have made significant contributions to the NuGet ecosystem. Each project listed here may have a different license than the core NuGet components, so confirm that the license terms are acceptable prior to use:
 
 * [AppVeyor CI](https://www.appveyor.com/)
 * [Artifactory](https://www.jfrog.com/artifactory/)
@@ -25,12 +28,12 @@ In addition to Microsoft, many other individuals and companies have made signifi
 * [JetBrains ReSharper](https://resharper-plugins.jetbrains.com/)
 * [JetBrains TeamCity](https://www.jetbrains.com/teamcity/)
 * [Klondike](https://github.com/themotleyfool/Klondike)
-* [MyGet](http://www.myget.org/) (or NuGet-as-a-Service)
+* [MyGet (or NuGet-as-a-service)](http://www.myget.org/)
 * [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)
 * [NuGet Server](http://nugetserver.net/)
 * [OctopusDeploy](https://octopus.com/)
 * [Paket](https://fsprojects.github.io/Paket/)
-* [ProGet](http://inedo.com/proget) (Inedo)
+* [ProGet (Inedo)](http://inedo.com/proget)
 * [scriptcs](http://scriptcs.net/)
 * [SharpDevelop](http://community.sharpdevelop.net/blogs/mattward/archive/2011/01/23/NuGetSupportInSharpDevelop.aspx)
 * [Sonatype Nexus](http://www.sonatype.com/nexus-repository-sonatype)
@@ -39,7 +42,8 @@ In addition to Microsoft, many other individuals and companies have made signifi
 
 
 ## Other NuGet-based utilities
-There are quite a few other tools and utilities building further on top of NuGet. Here's a list of what I've found interesting:
+
+These are tools and utilities built on NuGet:
 
 * [Glimpse Extensions](http://getglimpse.com/Packages) (plug-ins are packages)
 * [NuGetMustHaves.com](http://nugetmusthaves.com/)
@@ -47,24 +51,28 @@ There are quite a few other tools and utilities building further on top of NuGet
 * [Orchard](http://www.orchardproject.net/) (CMS modules are fetched from a v1 NuGet feed hosted in the Orchard Gallery)
 * [Java implementation of NuGet Server](http://jonnyzzz.com/blog/2012/03/07/nuget-server-in-pure-java/)
 * [NuGetLatest](https://twitter.com/NuGetLatest) (Twitter bot tweeting new package publications)
-* [HotNuget](http://hotnuget.com) (Compare package usage)
+* [HotNuget](http://hotnuget.com) (compare package usage)
 * [DefinitelyTyped](http://definitelytyped.org/) ([Automatic](https://github.com/DefinitelyTyped/NugetAutomation/) TypeScript Type [Definitions published to NuGet](http://www.nuget.org/packages?q=DefinitelyTyped))
 
-## Training Materials and References
-Using a new tool or technology usually comes with a learning curve. Luckily for you, NuGet has no steep learning curve it all! In fact, anyone can [get started consuming packages in no time](http://www.youtube.com/watch?feature=player_embedded&v=PboPfoptU2c). Authoring packages however, and especially authoring good packages, as well as embracing NuGet in your automated build and deployment processes requires some research in order to get things right.
+## Training materials and references
 
-The following pointers should help you get the maximum out of NuGet:
+Using a new tool or technology usually comes with a learning curve. Luckily for you, NuGet has no steep learning curve it all! In fact, anyone can [get started consuming packages](/ndocs/quickstart/use-a-package) quickly.
 
-* Official NuGet Documentation site: you are here :-)
-* NuGet Blog: [http://blog.nuget.org/](http://blog.nuget.org/)
-* NuGet team on Twitter: [@nuget](http://twitter.com/nuget)
-* Books: [Apress Pro NuGet](http://bit.ly/ProNuGet), [NuGet 2 Essentials](http://www.amazon.com/NuGet-2-Essentials-Damir-Arh-ebook/dp/B00GTQD5M4)
+That said, authoring packages–and especially good packages–along with  embracing NuGet in automated build and deployment processes, requires spending a little more time with the following resources:
 
-## Documentation for Individual Packages
+- [Official NuGet Documentation site](docs.nuget.org)
+- [NuGet Blog](http://blog.nuget.org/)
+- [NuGet team on Twitter, @nuget](http://twitter.com/nuget)
+- Books:
+	* [Apress Pro NuGet](http://bit.ly/ProNuGet)
+	* [NuGet 2 Essentials](http://www.amazon.com/NuGet-2-Essentials-Damir-Arh-ebook/dp/B00GTQD5M4)
 
-[NuDoq](http://nudoq.org) provides the missing link between straightforward access and updates to NuGet packages, and their corresponding API documentation.
+## Documentation for individual packages
 
-NuDoq regularly polls the NuGet.org gallery server for the latest package updates, unpacks and processes the library documentation files, and update the site accordingly.
+[NuDoq](http://nudoq.org) provides straightforward access and updates and documentation for NuGet packages.
 
-## Adding Your Project
-If you have a NuGet ecosystem project that would be a valuable addition to this page, please  submit a pull request with an edit to [this page](https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/Contribute/Ecosystem.md).
+NuDoq regularly polls the NuGet.org gallery server for the latest package updates, unpacks and processes the library documentation files, and updates the site accordingly.
+
+## Adding your project
+
+If you have a NuGet ecosystem project that would be a valuable addition to this page, please  submit a pull request with an edit to this page.

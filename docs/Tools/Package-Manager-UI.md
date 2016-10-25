@@ -1,149 +1,117 @@
-﻿# Managing NuGet Packages Using the UI
+# NuGet Package Manager UI
 
-This topic describes how to find, install, remove, and update NuGet packages using the **Manage NuGet Packages UI**. To use this UI, you must have a solution open in Visual Studio. As an alternative, you can install packages using PowerShell commands. For more information, see [Using the Package Manager Console](Package-Manager-Console).
+The NuGet Package Manager UI in Visual Studio allows you to easily install, uninstall, and update NuGet packages in projects and solutions.
 
-<div class="block-callout-info">
-    <strong>Note:</strong><br>
-    This topic has been updated to reflect the latest UI in Visual Studio 2015.
-</div>
+In this topic:
 
-<div class="block-callout-info">
-    <strong>Note:</strong><br>
-    For managing packages within multiple projects in the solution at the same time, skip to the section <a href="#managing-packages-for-the-solution">Managing Packages for the Solution</a>
-</div>
+- [Finding and installing a package](#finding-and-installing-a-package)
+- [Uninstalling a package](#uninstalling-a-package)
+- [Updating a package](#updating-a-package)
+- [Managing packages for the solution](#managing-packages-for-the-solution) (working with multiple projects at the same time).
+- [Package sources](#package-sources)
+- [Package manager Options control](#package-manager-options-control)
 
-## Finding a Package
 
-In **Solution Explorer**, right-click the **References** node and click **Manage NuGet Packages...**. 
+## Finding and installing a package
 
-<div class="block-callout-info">
-    <strong>Note:</strong><br>
-    In a Website project, right click on the **Bin** node
-</div>
+1. In **Solution Explorer**, right-click **References** (or **Bin** in a Website project), or the desired project, and select **Manage NuGet Packages...**.
 
-![Manage NuGet Packages menu option](/images/docs/ManagePackagesUICommand.png)
+	![Manage NuGet Packages menu option](/images/docs/ManagePackagesUICommand.png)
 
-Browse through the list, or search for a package using the search box at the top right of the dialog box. 
-For example, to find the logging package named Json.NET, enter "json". When you select a package, an **Install** button appears, and a description is shown in the right-hand pane.
+2. On the **Browse** tab, browse the list or search for a specific package using the search box on the top right. Selecting a package displays the package information on the right and enables the **Install** button along with a version-selection drop-down.
 
-![Manage NuGet Packages Dialog Online tab](/images/docs/Search.png)
+	![Manage NuGet Packages Dialog Browse tab](/images/docs/Search.png)
 
-## Installing a Package
+3. Select the desired version from the drop-down and click **Install**. This installs the package and its dependencies; you may be asked to accept license terms in the process. When installation is complete, the new packages appear on the **Installed** tab. **Solution Explorer** also shows the added packages, which you can now use in your project.  
 
-To install a package, select it and then click **Install**. NuGet installs the selected package and any other packages it is dependent on. 
+	![References in Solution Explorer](/images/docs/References.png)
 
-You might be asked to accept license terms.
+## Uninstalling a package
 
-![License Acceptance dialog box](/images/docs/License.png)
+1. In **Solution Explorer**, right-click **References** (or **Bin** in a Website project), or the desired project, and select **Manage NuGet Packages...**.
+2. Click on the **Installed** tab.
+3. Select the package to uninstall and click **Uninstall**.
 
-When the installation completes, the package shows up in the **Installed** tab.
+	![Uninstalling a package](/images/docs/UninstallPackage.png)
 
-In **Solution Explorer**, you can see references that Visual Studio has added for the installed library or libraries. You can now use the library in your project. 
+## Updating a package
 
-![Reference in Solution Explorer](/images/docs/References.png)
+1. In **Solution Explorer**, right-click **References** (or **Bin** in a Website project), or the desired project, and select **Manage NuGet Packages...**.
+2. Click on the **Updates** tab to see packages that have available updates.
+3. Select the package to update, select the desired version from the drop-down on the right, and click **Update**.
 
-## Removing a Package
+	![Updating a package](/images/docs/UpdatePackages.png)
 
-Open the **Manage NuGet Packages** dialog and make sure the **Installed Packages** tab is selected to display 
-the list of installed packages.
+## Managing packages for the solution
+*NuGet 1.4+*
 
-Select the package you want to uninstall and then click **Uninstall** to remove the package.
+1. Select the **Tools > NuGet Package Manager > Manage NuGet Packages for Solution...** menu command, or right-click the solution and select **Manage NuGet Packages...**: 
 
-## Updating a Package
+	![Manage NuGet packages for the solution](/images/docs/ManagePackagesSolutionUICommand.png)
 
-Open the **Manage NuGet Packages** dialog and make sure the **Updates** tab is selected to display 
-the list of packages that have newer versions available.
+2. When managing packages for the solution, the UI lets you select which projects will be affected:
 
-If any packages have updates available, they will be listed in the center pane. The following screenshot 
-shows a newer version of jQuery available.
-
-Select the package you want to update and click **Update** to update the package to the latest version. 
-
-## Managing Packages for the Solution
-
-<div class="block-callout-info">
-    <strong>Support</strong><br>
-    Available in NuGet 1.4+.
-</div>
-
-In the previous section, we looked at managing packages for a single project. In NuGet 1.4 and above, the 
-**Manage NuGet Packages** UI can also be launched at the solution level in order to install/uninstall 
-packages in multiple projects at the same time.
-
-Just right click on the Solution and select **Manage NuGet Packages**. You can also launch this dialog from 
-
-![Manage NuGet Packages Solution level menu](/images/docs/ManagePackagesSolutionUICommand.png)
-
-The key difference is that each operation lets you select which projects it applies to.
-
-![Manage NuGet Packages Solution level menu](/images/docs/SolutionPackagesUI.png)
+	![Project selector when managing packages for the solution](/images/docs/SolutionPackagesUI.png)
 
 ## Package Sources
-NuGet can display packages from multiple package sources. To add a package source, click on the **Settings** 
-button in the UI or access it from Tools->Options->NuGet Package Manager to launch the Options dialog. Make sure the **Package Sources** node is selected in the dialog.
 
-![Package Sources Dialog](/images/docs/options.png)
+The NuGet Package Manager UI allows you to easily switch between package sources using the package source selector:
 
-Type in the name of a source as well as its URL or folder path (a folder containing NuGet package 
-files is a valid package source) and then click the **Add** button.
+![Package source selector in the package manager UI](/images/docs/PackageSourceDropDown.png)
 
-The package source will be listed under the **All** node. Click on the package source to view 
-packages from that source. The **All** node displays an aggregated view of packages from all 
-package sources.
+To manage package sources:
 
-If you want to temporarily disable a package source, just uncheck the package source in the 
-dialog. This is useful if a package source is temporarily down for some reason and you need to 
-keep it from being included in the aggregate feed.
+1. Click on the **Settings** icon in the Package Manager UI outlined below or use the **Tools > Options** command. and scroll to **NuGet Package Manager**.
 
+	![Package manager UI settings icon](/images/docs/PackageSourceSettings.png)
 
-## Package Manager User Interface Options
+2. Select the **Package Sources** node: 
+ 
+	![Package Sources options](/images/docs/options.png)
 
-This topic describes the options available to install and uninstall NuGet packages using the **Manage NuGet Packages** 
-dialog box. To begin using this dialog box, you must have a solution open in Visual Studio.
-For more information, see [Managing NuGet Packages Using the Dialog](Package-Manager-Dialog).
+3. To add a source, click the **+** button, edit the name, enter the URL or path in the **Source** control, and click **Update**. This will make it appear in the selector drop-down.
+4. To change a package source, select it, make edits in the **Name** and **Source** boxes, and click **Update**.
+5. To disable a package source, uncheck the box to the left of the name in the list.
+6. To remove a package source, select it and click the **X** button.
+7. Use the up and down arrow buttons to change the priority order of the package sources.
 
-### Installation Options
+## Package manager Options control
+
+In the Package Manager UI there is a small, expandable **Options** control (shown here both collapsed and expanded):
+
+![Package manager options](/images/docs/PackageManagerUIOptions.png)
+
+The following sections explain these options.
+
+### Show preview window
+
+When checked, a modal window displays which dependent packages will be loaded with the package you have chosen.
+
+![Example Preview Dialog](/images/consume/install-preview-dialog.png)
+
+### Install and Update Options
+<!-- This is here because the link in the UI needs this anchor. See https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Clients/PackageManagement.UI/Xamls/OptionsControl.xaml -->
 <a name="install-options"></a>
 
-Whether you are attempting to install, update, or downgrade a package you will have the same collection of options available to you:
+**Dependency behavior** configures how NuGet decide which versions of dependent packages to installed:
 
-![Installation Options](/images/consume/installation-options.png)
+- *Ignore dependencies* skips installing any dependencies, which typically breaks the package being installed.
+- *Lowest* installs the dependency with the minimal version number that meets the requirements of the primary chosen package.
+- *Highest Patch* installs the version with the same major and minor version numbers, but the highest patch number. For example, if version 1.2.2 is specified then the highest version that starts with 1.2 will be installed
+- *Highest Minor* installs the version with the same major version number but the highest minor number and patch number. If version 1.2.2 is specified, then the highest version that starts with 1 will be installed
+- *Highest* installs the highest available version of the package.
 
-There are currently three options available:
+**File conflict action** specifies how NuGet should handle packages that already exist in the project or local machine:
 
-1. **Show Preview Window** - if enabled, a modal window will be displayed that details which dependent packages will be loaded with the package you have chosen.
-
-	![Example Preview Dialog](/images/consume/install-preview-dialog.png)
-
-2. **Dependency Behavior** - this allows you to configure how NuGet will decide which versions of dependent packages will be installed.  There are five options:
-
-	a. **Ignore** - This is usually a bad idea, as a package has dictated that it depends on other packages and will require their contents to operate.  You may choose to skip installing those packages.
-
-    b. **Lowest** - Install the package version with the minimal version number that meets the requirements of my chosen package.
-
-    c. **Highest Patch** - Install the version with the same first and second version numbers (typically called major and minor version numbers), but the highest patch number.  For example, if version 1.2.2 is specified then the highest version that starts with 1.2 will be installed
-
-    d. **Highest Minor** - Install the version with the same first (or major) version number, but the highest minor number and patch number.  If version 1.2.2 is specified, then the highest version that starts with 1 will be installed
-
-    e. **Highest** - Install the highest version of the package available
-
-3. **File Conflict Options** - If the package or any of its dependent packages being installed match a file already on disk, how should NuGet handle it?
-
-    a. **Prompt** - NuGet will ask if you would like to keep or override the files
-    
-  	b. **Ignore All** - NuGet will skip writing any files into your project with matching file names
-
-	c. **Overwrite All** - NuGet will overwrite any matching files in your project with those from the package 
+- *Prompt* instructs NuGet to ask whether to keep or overwrite existing packages.
+- *Ignore All* instructs NuGet to skip overwriting any existing packages.
+- *Overwrite All* instructs NuGet to overwrite any existing packages. 
 
 ### Uninstall Options
+<!-- This is here because the link in the UI needs this anchor. See https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Clients/PackageManagement.UI/Xamls/OptionsControl.xaml -->
 <a name="uninstall-options"></a>
 
-The following options are available when you are attempting to uninstall and remove a package from your project:
 
-![Uninstallation Options](/images/consume/uninstall-options.png)
+**Remove dependencies**: when checked, removes any dependent packages if they are not referenced elsewhere in the project.
 
-These three options are available:
-
-1. **Show Preview Window** - if enabled, a modal window will be displayed that details what packages and dependent packages will be removed from your project.
-2. **Remove Dependencies** - Remove any dependent packages if they are not referenced by any other package in the project
-3. **Force Uninstall** - Typically used in combination with **Remove Dependencies** to remove a package and its dependencies whether there are other packages that depend on the current package or its dependencies.  This may lead to a breaking reference scenario in your project.
+**Force uninstall even if there are dependencies on it**: when checked, uninstalls a package even if it's still being referenced in the project. This is typically used in combination with **Remove dependencies** to remove a package and whatever dependencies it installed. Using this option may, however, lead to a broken references in the project, in which case you may need to [reinstall those other packages](/ndocs/consume-packages/reinstalling-and-updating-packages).

@@ -1,149 +1,102 @@
-﻿# Managing Packages Using the Package Manager Console
+# Package Manager Console
 
-This topic describes how to find, install, remove, and update NuGet packages using PowerShell commands. Using PowerShell commands is required if you want to install a package without having a solution open. It's also required in some cases for packages that create commands that you can access only by using PowerShell.
+The Package Manager Console in Visual Studio lets you use [NuGet PowerShell commands](/ndocs/tools/powershell-reference) to find, install, uninstall, and update NuGet packages. Using the Console is necessary if you want to work with packages without having a solution open, and is required in cases where the Package Manager UI does not provide a way to perform an operation. Note, however, that all operations can be done with the [NuGet CLI](/ndocs/tools/nuget.exe-cli-reference). 
 
-For the complete reference to NuGet powershell commands, check out the [PowerShell Reference]().
+In all cases, you open the Console in Visual Studio through the **Tools > NuGet Package Manager > Package Manager Console** command.
 
-## Finding a Package
+At the top of the pane you can select the desired package source, manage sources (by clicking the gear icon), and select the default project to which commands will be applied:
 
-You can either use the Quick Launch (type "package manager") or use the View menu to find the package manager console and open it.
+![Package Manager Console controls](/images/docs/PackageManagerConsoleControls.png) 
 
-The **Package Manager Console** window is displayed.
+You can override these settings with most commands by using the `-Source` and `-ProjectName` options.
 
-![Package Manager Console](/images/consume/package-manager-console-empty-window.png)
+In this topic:
 
-The two drop-down lists set default values that let you omit parameters from the commands you enter in the window:
+- [Finding a package](#finding-a-package)
+- [Installing a package](#installing-a-package)
+- [Uninstalling a package](#uninstalling-a-package)
+- [Updating a package](#updating-a-package)
+- [Extending the Package Manager Console](#extending-the-package-manager-console)  
+- [Setting up a NuGet PowerShell profile](#setting-up-a-nuget-powershell-profile)
 
-* In the **Package source** list, select the default source (NuGet package feed) that you want your commands to use. Typically you will leave this as its default value of **NuGet official package source**. For more information about alternative feeds, see [Hosting Your Own NuGet Feeds](../Create/Hosting-Your-Own-NuGet-Feeds).
-* In the **Default project** list, select the default project that you want your commands to work with. (The default value will be the first project in the solution, not necessarily the one you have selected in **Solution Explorer** when you open the window.)
 
-When you enter commands, you can override these defaults.
-In the **Package Manager Console** window, enter `Get-Package -ListAvailable` at the prompt to see a list of all packages 
-that are available in the selected package source. Starting NuGet 3.0 Beta or higher, Get-Package also takes a -PageSize switch, which enables paging support for listing available packages from a package source. 
+## Finding a package
 
-![Get-Package -ListAvailable command](/images/consume/package-manager-console-get-package-remote.png)
+In the console, [`Get-Package -ListAvailable`](/ndocs/tools/powershell-reference#get-package) see all the packages available from the selected source. For nuget.org, the list will contain thousands of packages, so it's helpful to use the `-Filter` switch along with `-PageSize`. In NuGet 3.0 and later, you can instead use the [`Find-Package`](/ndocs/tools/powershell-reference#find-package) command that is better suited to this operation.  
 
-For the default package source, that command is going to list thousands of packages. It makes better sense to specify 
-a filter.
+Examples:
 
-For example, to find the logging package ELMAH, enter `Get-Package -ListAvailable -Filter elmah` (the name of the package) 
-or `Get-Package -Filter Logging -ListAvailable` (a keyword in the package description). Starting NuGet client 3.0 Beta or higher, these Get-Package commands can be replaced by `Find-Package elmah` or `Find-Package Logging`.
+	# All versions of NuGet	
+	Get-Package -ListAvailable -Filter elmah
+	Get-Package -ListAvailable -Filter Logging 
 
-![Get-Package command with filter](/images/consume/package-manager-console-Get-Package-with-filter.png)
+	# List all versions of packages matching the filter "jquery"
+	Get-Package -ListAvailable -Filter jquery -AllVersions
 
-For more options that you can specify with the `Get-Package` and `Find-Package` command, enter `Get-Help Get-Package` and `Get-Help Find-Package`, or see [Package Manager Console Powershell Reference](Package-Manager-Console-PowerShell-Reference).
 
-## Installing a Package
+	# NuGet 3.0+
+	Find-Package elmah
+	Find-Package Logging
 
-After you have found a package that you want to install, use the `Install-Package` command with the name of the package.
-For example, enter the command `Install-Package elmah` as shown in the following example:
+	# List packages with the keyword EntityFramework and version 6.1.1
+    Find-Package EntityFramework -version 6.1.1
 
-![Install-Package command](/images/consume/package-manager-console-install-package.png)
+	# List all versions of the package with the ID of "jquery"
+	Find-Package jquery -AllVersions -ExactMatch
 
-Refer [here] (Package-Manager-Console-PowerShell-Reference#Install-Package) for a complete list of PowerShell Reference on Install
 
-NuGet retrieves the package from the specified package source and installs it in the project 
-that is selected in the **Default project** drop-down list 
-(unless you specify a different project in the command). 
-Files are copied to the solution, references might be added to the project, 
-the project *app.config* or *web.config* file might be updated, etc. 
+## Installing a package
 
-If the package you are installing is dependent on other packages, 
-NuGet installs them also if they are not already installed.
+Once you know the identifier of the package you want to install use [`Install-Package`](/ndocs/tools/powershell-reference#install-package), such as `Install-Package elmah`.
 
-If the package requires license acceptance, you will not be prompted in a dialog box. 
-Instead, a message states that your use of the library constitutes license acceptance.
+NuGet retrieves the package from the specified package source and installs it in the default project of the solution, unless you specify another project using the `-ProjectName` switch. 
 
-![License acceptance text in Package Manager Console](/images/consume/package-manager-console-license-acceptance.png)
+Installing a package performs the following actions:
 
-In **Solution Explorer**, you can see references that Visual Studio has added for the installed library or libraries.
+- Display applicable license terms in the Console window with implied agreement. If you do not agree to the terms, you should uninstall the package immediately.
+- Creates a `packages` folder (if needed) and copies package files into a subfolder within it.
+- Adds references to the project, which subsequently appear in Solution Explorer
+- Updates `app.config` and/or `web.config` if the package uses [source and config file transformations](/ndocs/create-packages/source-and-config-file-transformations).
+- Installs any dependencies if not already present in the project. This might update package versions in the process, as described in [Dependency Resolution](/ndocs/consume-packages/dependency-resolution).  
 
-![Elmah reference in Solution Explorer](/images/consume/elmah-reference-in-solution-explorer.png)
 
-If your *app.config* or *web.config* file required changes, those have been applied. 
-The following example shows some of the changes for ELMAH.
+## Uninstalling a package 
 
-![Web.config changes for elmah](/images/consume/elmah-web.config-changes.png)
+If you do not already know the name of the package you want to remove, use the [`Get-Package`](/ndocs/tools/powershell-reference#get-package) command with no parameters to see all of the currently-installed packages.
 
-A new folder named *packages* is created in your solution folder. 
-(If your project does not have a solution folder, the *packages* folder is created in the project folder.)
+To uninstall a package, use [`Uninstall-Package`](/ndocs/tools/powershell-reference#uninstall-package) with the package ID, such as `Update-Package jQuery`.
 
-![packages folder](/images/consume/packages-folder.png)
+Uninstalling a package performs the following actions:
 
-The *packages* folder contains a subfolder for each installed package. 
-This subfolder contains the files installed by the package. 
-It also contains the package file itself (the *.nupkg* file, which is a *.zip* file 
-that contains all of the files included in the package).
+- References to the package no longer appear in the **Reference** or **Bin** folders in Solution Explorer. (You might need to rebuild the project to see it removed from the **Bin** folder.)
+- The folder for the package is removed from the `packages` folder; the `packages` folder itself is deleted if no packages remain.
+- Any changes made to `app.config` or `web.config` when the package was installed are removed.
+- If other packages were installed because they were dependencies of the package that was removed, and if no remaining packages use those dependencies, the dependency packages are also removed.
 
-![elmah folder in packages folder](/images/consume/elmah-folder-in-packages-folder.png)
 
-You can now use the library in your project. 
-IntelliSense works when you enter code, and library features such as the ELMAH logging information page 
-work when you run the project.
+## Updating a package 
 
-![elmah IntelliSense](/images/consume/elmah-intellisense.png)
+The [`Get-Package -updates`](/ndocs/tools/powershell-reference#get-package) command checks if there are newer versions available for any installed packages.
 
-![elmah Error Log page](/images/consume/elmah-errorr-log-page.png)
+To update a package, use [`Update-Package`](/ndocs/tools/powershell-reference#update-package) with the package ID, such as `Update-Package jQuery`.
 
-## Extending The Package Manager Console With Packages
 
-Some packages install new commands that you can use in the **Package Manager Console** window. 
-One example of such a package is `MvcScaffolding`, which creates commands you can use to generate ASP.NET MVC 
-controllers and views. The following illustration shows that installing MvcScaffolding creates a new command 
-`Scaffold`, complete with tab expansion.
+## Extending the Package Manager Console
+
+Some packages install new commands for the Console. For example, `MvcScaffolding`, creates commands, such as `Scaffold` shown below, to generate ASP.NET MVC controllers and views:
 
 ![Installing and using MvcScaffold](/images/consume/package-manager-console-install-mvcscaffold.png)
 
-## Removing a Package 
 
-From the *Tools* menu, select *Library Package Manager* and then click *Package Manager Console*. 
-If you do not already know the name of the package you want to remove, enter `Get-Package` at the prompt 
-without any flags to see a list of all of the packages that are currently installed.
+## Setting up a NuGet PowerShell Profile
 
-![Package Manager Console showing installed packages](/images/consume/package-manager-console-get-package-listing-installed-packages.png)
-
-To remove a package, use the `Uninstall-Package` command with the name of the package. 
-For example, use the `Uninstall-Package elmah` command as shown in the following example:
-
-![uninstall package command](/images/consume/package-manager-console-uninstall-package.png)
-
-For more options that you can specify with the `uninstall-package` command, enter `get-help uninstall-package` or see [Package Manager Console Powershell Reference](Package-Manager-Console-PowerShell-Reference).
-
-The following package elements are removed:
-
-* References in the project. In **Solution Explorer**, you no longer see the library in the *References* folder or the *bin* folder. (You might have to build the project to see it removed from the *bin* folder.)
-* Files in the solution folder. The folder for the package you removed is deleted from the *packages* folder. If it is the only package you had installed, the *packages* folder is also deleted.)
-* Any changes that were made to your *app.config* or *web.config* file are undone.
-
-If other packages were installed because they were dependencies of the package that you removed, and if no other packages remain that are dependent on the dependency packages, the dependency packages are also removed.
-
-Refer [here] (Package-Manager-Console-PowerShell-Reference#Uninstall-Package) for a complete list of PowerShell Reference on Uninstall
-
-## Updating a Package 
-
-From the **Tools** menu, select **Library Package Manager** and then click **Package Manager Console**.
-To check if there are newer versions available for any installed packages, enter `Get-Package -updates` at the prompt.
-
-![Get-Package command](/images/consume/package-manager-console-get-package-showing-updates.png)
-
-To update a package, enter `Update-Package` with the package ID. For example, enter the command `Update-Package jQuery`.
-For more options that you can use with the `Update-Package` command, enter `get-help Update-Package` or see [here](Package-Manager-Console-PowerShell-Reference#update-package).
-
-![update-package command](/images/consume/package-manager-console-update-package.png)
-
-Refer [here] (Package-Manager-Console-PowerShell-Reference#Update-Package) for a complete list of PowerShell Reference on Update
-
-## Setting up a NuGet Powershell Profile
-Powershell supports the concept of profiles which allow you to have commonly used PS commands available to you wherever you use PowerShell.
-
-NuGet supports a NuGet specific profile typically located at:
+A PowerShell profile lets you make commonly-used commands available wherever you use PoewrShell. NuGet supports a NuGet specific profile typically located at:
 
     %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
 
-The easiest way to find the profile file is to type `$profile` within the NuGet Package Manager Console. 
-For example, this is what I see on my machine.
+To find the profile file, type `$profile` in the Console: 
 
-    PM> $profile
-    C:\Users\philha\Documents\WindowsPowerShell\NuGet_profile.ps1
+    $profile
+    C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 
-This article gives a more in-depth overview of how to [create profiles and commands within it](https://technet.microsoft.com/en-us/magazine/2008.10.windowspowershell.aspx).
+For more details, refer to [Windows PowerShell Profiles](https://technet.microsoft.com/library/bb613488.aspx).

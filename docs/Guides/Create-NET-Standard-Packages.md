@@ -1,27 +1,270 @@
-﻿#Create .NET Standard Packages
-This guide will walk you through creating a nuget package that takes advantage of the .NET Standard.
+#Create .NET Standard Packages
 
-##What is .NET Standard
-The .NET Standard Library is a formal specification of .NET APIs that are intended to be available on all .NET runtimes. The motivation behind the Standard Library is establishing greater uniformity in the .NET ecosystem. 
+The [.NET Standard Library]((https://docs.microsoft.com/en-us/dotnet/articles/standard/library)) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code. 
 
-* [Read more about the .NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
-* [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/en-us/dotnet/articles/core/porting/index)
+This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4. This will work across .NET Framework 4.6.1, Universal Windows Platform 10, .NET Core, and Mono/Xamarin. For details, see the [.NET Standard mapping table](#table) later in this topic.
 
-##Why should you use it
-The .NET Standard Library enables the following key scenarios:
+1. [Pre-requisites](#pre-requisites)
+2. [Create the class library project](#create-the-class-library-project)
+3. [Create and update the .nuspec file](#create-and-update-the--nuspec-file)
+4. [Package the component](#package-the-component)
+5. [Additional options](#additional-options)
+5. [.NET Standard mapping table](#-net-standard-mapping-table)
+6. [Related topics](#related-topics)
 
-* Defines uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload.
-* Enables developers to produce portable libraries that are usable across .NET runtimes, using this same set of APIs.
-* Reduces and hopefully eliminates conditional compilation of shared source due to .NET APIs, only for OS APIs.
 
 ##Pre-requisites
-1. [Visual Studio 2015 Update 3](https://www.visualstudio.com/news/releasenotes/vs2015-update3-vs). If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs) for free.
-2. [.NET Core Tooling Preview 2 for Visual Studio 2015](https://go.microsoft.com/fwlink/?LinkId=817245). This installs templates and other tools for Visual Studio 2015, as well as .NET Core 1.0 itself.
-3. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a common location and add this path to the PATH Environment Variable. For more details, take a look at [The NuGet Install guide](/ndocs/guides/install-nuget#nuget-cli)
+1. Visual Studio 2015. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well, of course. 
+2. .NET Core: Install .NET Core along with templates and other tools for Visual Studio 2015 from [https://go.microsoft.com/fwlink/?LinkId=824849](https://go.microsoft.com/fwlink/?LinkId=824849).
+3. NuGet CLI. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice. Then add that location to your PATH environment variable if it isn't already.
 
-##What are we building
-We are going to create a NuGet package that works across .NET framework 4.6.1, Universal Windows Platform 10, .NET Core and Mono/Xamarin. 
-The table below maps .NET Standard versions to various implementations:
+<div class="block-callout-info">
+	<strong>Note</strong><br>
+	nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
+</div>
+
+
+##Create the class library project
+1. In Visual Studio, **File > New > Project**, expand the **Visual C# > Windows** node, select **Class Library (Portable)**, change the name to AppLogger, and click OK.
+ 
+	![Create new class library project](/images/BuildForNetStandard/01.PNG)
+
+2. In the **Add Portable Class Library** dialog that appears, select the `.NET Framework 4.6` and `ASP.NET Core 1.0` options.
+3. Right-click the `AppLogger (Portable)` in Solution Explorer, select **Properties**, select the **Library** tab, then click **Target .NET Platform Standard** in the **Targeting** section. This will prompt for confirmation, after which you can select `.NET Standard 1.4` from the drop down:
+
+	![Setting the target to .NET Standard 1.4](/images/BuildForNetStandard/02-ChangeTarget.png)
+
+5. Click on the **Build** tab, change the **Configuration** to `Release`, and check the box for **XML documentation file**.
+6. Add your code to the component, for example:
+
+		namespace AppLogger
+		{
+			public class Logger
+			{
+				public void Log(string text)
+				{
+					throw new NotImplementedException("Called Log");
+				}
+			}
+		}
+
+6. Build the project (with the Release configuration) and check that DLL and XML files are produced within the bin\Release folder.
+
+##Create and update the .nuspec file
+
+1. Open a command prompt, navigate to the folder containing `AppLogg.csproj` folder (one level below where the .sln file is), and run the NuGet `spec` command to create the initial `AppLogger.nuspec` file:
+
+	<code class="bash hljs">
+		nuget spec
+	</code>
+
+2. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](/ndocs/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
+
+	<?xml version="1.0"?>
+	<package >
+	  <metadata>
+		<id>AppLogger.YOUR_NAME</id>
+		<version>1.0.0</version>
+		<title>AppLogger</title>
+		<authors>YOUR_NAME</authors>
+		<owners>YOUR_NAME</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Awesome application logging utility</description>
+		<releaseNotes>First release</releaseNotes>
+		<copyright>Copyright 2016 (c) Contoso Corporation. All rights reserved.</copyright>
+		<tags>logger logging logs</tags>
+	  </metadata>
+	</package>
+
+3. Add reference assemblies to the nuspec file, namely the library's DLL and the IntelliSense XML file:
+ 
+	 	<!-- Insert below <metadata> element -->
+		<files>
+			<file src="bin\Release\AppLogger.dll" target="lib\netstandard1.4\AppLogger.dll" />
+			<file src="bin\Release\AppLogger.xml" target="lib\netstandard1.4\AppLogger.xml" />			
+		</files> 
+
+3. Right-click the solution and select **Build Solution** to generate all the files for the package. 
+
+
+##Package the component
+With the completed .nuspec referencing all the files you need to include in the package, you're ready to run the `pack` command:
+
+<code class="bash hljs">
+	nuget pack AppLogger.nuspec
+</code>
+
+This will generate `AppLogger.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
+
+![NuGet Package Explorer showing the AppLogger package](/images/BuildForNetStandard/03-PackageExplorer.PNG)
+
+<div class="block-callout-info">
+	<strong>Note</strong><br>
+	A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
+</div>
+
+To make your package available to other developers,  follow the instructions on [Publish a package](/ndocs/create-packages/publish-a-package).
+
+
+##Additional options
+
+The following sections go into additional options for NuGet package creation:
+
+- [Declaring dependencies](#declaring-dependencies)
+- [Supporting multiple target frameworks](#supporting-multiple-target-frameworks)
+- [Adding targets and props for MSBuild](#adding-targets-and-props-for-msbuild)
+- [Creating localized packages](#creating-localized-packages)
+- [Adding a readme](#adding-a-readme)
+
+###Declaring dependencies
+If you have any dependencies on other NuGet packages, list those in the &lt;dependencies&gt; element with &lt;group&gt; elements. For example, to declare a dependency on NewtonSoft.Json 8.0.3 or above, add the following:
+
+	<!-- Insert within the <metadata> element -->
+	<dependencies>
+		<group targetFramework="uap">
+			<dependency id="Newtonsoft.Json" version="8.0.3" />
+		</group>
+	</dependencies>
+
+The syntax of the *version* attribute here indicates that version 8.0.3 or above is acceptable. To specify different version ranges, refer to [Dependency Versions](/ndocs/create-packages/dependency-versions).
+
+###Supporting multiple target frameworks
+Suppose you'd like to take advantage of an API in .NET Framework 4.6.2 that is not available in .NET Standard 1.4. To do this, you'll first need to make sure the library compiles for .NET 4.6.2 by using conditional compilation or shared projects. (In Visual Studio, you can create a NetCore project, add the framework of choice to the mutliple framework section, and then build.) Then you create the package using the simple convention-based working directory technique as follows: 
+
+1. In the project's root folder containing your .nuspec file, create a folder named `lib`.
+2. Inside `lib`, create folders for each platform you want to support:
+		
+		\lib
+			\netstandard1.4
+				\AppLogger.dll
+			\net462
+				\AppLogger.dll
+
+3. In the .nuspec file, add a `files` node under the `package` node and refer to the files in `lib` using wildcards. <b>Note:</b> Token replacements are not supported with the convention-based working directory approach, so replace them with literal values:
+
+		<?xml version="1.0"?>
+		<package >
+		  <metadata>
+			<id>AppLogger.YOUR_NAME</id>
+			<version>1.0.0.0</version>
+			<title>AppLogger</title>
+			<authors>YOUR_NAME</authors>
+			<owners>YOUR_NAME</owners>
+			<requireLicenseAcceptance>false</requireLicenseAcceptance>
+			<description>Awesome application logging utility</description>
+			<releaseNotes>First release.</releaseNotes>
+			<copyright>Copyright 2016</copyright>
+			<tags>logger logging logs</tags>
+		  </metadata>
+		  <files>
+			  <file src="lib\**" target="lib" />
+		  </files>
+		</package>
+
+4. Create the package again using `nuget pack AppLogger.spec`. 
+		
+For more details on using this technique, see [Supporting Multiple .NET Framework Versions](/ndocs/create-packages/supporting-multiple-target-frameworks)
+
+###Adding targets and props for MSBuild
+
+In some cases you might want to add custom build targets or properties in projects that consume your package, such as running a custom tool or process during build. You do this by adding files in a `\build` folder as described in the steps below. When NuGet installs a package with \build files, it adds an MSBuild element in the project file pointing to the .targets and .props files. 
+
+<div class="block-callout-info">
+	<strong>Note</strong><br>
+	When using project.json, targets are not added to the project but are made available through the project.lock.json.
+</div>
+
+1. In the project folder containing the your .nuspec file, create a folder named `build`.
+2. Inside `build`, create folders for each supported, and within those place your .targets and .props files:
+		
+		\build
+			\netstandard1.4
+				\AppLogger.props
+				\AppLogger.targets
+			\net462
+				\AppLogger.props
+				\AppLogger.targets
+
+3. In the .nuspec file, add a `files` node under the `package` node and refer to the files in `build` using wildcards.
+
+		<?xml version="1.0"?>
+		<package >
+		  <metadata>...
+		  </metadata>
+		  <files>
+			  <file src="build\**" target="build" />
+		  </files>
+		</package>
+
+4. Create the package again using `nuget pack AppLogger.nuspec`.
+
+For additional details, refer to [Include MSBuild props and targets in a package](/ndocs/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package).
+
+
+###Creating localized packages
+To create localized versions of your library, you can either create separate packages for different locales, or include localized resource assemblies within a single package. Here's how to do the latter approach for German and Italian: 
+
+1. Within each target framework folder under `lib`, create folders for each supported language other than the English default. In these folders you can place resource assemblies  and localized IntelliSense XML files. For example: 
+	
+	    lib
+	    ├───netstandard1.4
+	    │   │   AppLogger.dll
+	    │   │   AppLogger.xml
+	    │   │
+	    │   ├───de
+	    │   │       AppLogger.resources.dll
+	    │   │       AppLogger.xml
+	    │   │
+	    │   └───it
+	    │           AppLogger.resources.dll
+	    │           AppLogger.xml
+	    └───net462
+	        │   AppLogger.dll
+	        │   AppLogger.xml
+	        │
+	        ├───de
+	        │       AppLogger.resources.dll
+	        │       AppLogger.xml
+	        │
+	        └───it
+	                AppLogger.resources.dll
+	                AppLogger.xml
+	    
+2. In the .nuspec file, reference these files in the &lt;files&gt; node:
+
+		<?xml version="1.0"?>
+		<package>
+		  <metadata>...
+		  </metadata>
+		  <files>
+		    <file src="lib\**" target="lib" />
+		  </files>
+		</package>
+
+3. Create the package again using `nuget pack AppLogger.nuspec`.
+		
+
+###Adding a readme
+When you include a `readme.txt` file in the root of the package, Visual Studio will display it when the package is installed directly.
+
+<div class="block-callout-info">
+	<strong>Note</strong><br>
+	Readme files are not shown for packages that are installed as a dependency, or for .NET Core projects.
+</div>
+
+To do this, create your `readme.txt` file, place it in the project root folder, and refer to it in the .nuspec file:
+
+	<?xml version="1.0"?>
+	<package >
+	  <metadata>...
+	  </metadata>
+	  <files>
+	    <file src="readme.txt" target="" />
+	  </files>
+	</package>
+
+
+## .NET Standard mapping table
 
 <table class="reference">
 	<tr>
@@ -121,370 +364,18 @@ The table below maps .NET Standard versions to various implementations:
 		<td></td>
 		<td></td>
 		<td></td>
-    <tr>
-	
+    <tr>	
 </table>
 
-Referencing this table and based on our requirements, we will target .NET Standard 1.4. For more information on .NET Standard, read the [.NET Standard Library documentation](https://docs.microsoft.com/en-us/dotnet/articles/standard/library).
 
-##Create new Project
-In Visual Studio, choose File, New, Project. In the New Project dialog, expand the Visual C# node and choose the Windows node, and then choose Class Library (Portable). Change the name to AppLogger.
+##Related topics
+ 
+* [Nuspec Reference](/ndocs/schema/nuspec)
+* [Symbol packages](/ndocs/create-packages/symbol-packages)
+* [Dependency Versions](/ndocs/create-packages/dependency-versions)
+* [Supporting Multiple .NET Framework Versions](/ndocs/create-packages/supporting-multiple-target-frameworks)
+* [Include MSBuild props and targets in a package](/ndocs/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
+* [Creating Localized Packages](/ndocs/create-packages/creating-localized-packages)
+* [.NET Standard Library documentation](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
+* [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/en-us/dotnet/articles/core/porting/index)
 
-![Create new Project](/images/BuildForNetStandard/01.PNG)
-
-In the Add Portable Class Library dialog, select the .NET Framework 4.6 and ASP.NET Core 1.0 options.
-
-##Modify project.json
-From the solution explorer, open project.json. It will look like:
-
-	{
-	  "supports": {
-		"net46.app": {},
-		"dnxcore50.app": {}
-	  },
-	  "dependencies": {
-		"Microsoft.NETCore": "5.0.0",
-		"Microsoft.NETCore.Portable.Compatibility": "1.0.0"
-	  },
-	  "frameworks": {
-		"dotnet": {
-		  "imports": "portable-net452"
-		}
-	  }
-	}
-
-From the context menu for the project, select Properties. Under the Targeting section, click on Target .NET Platform Standard. Click Yes on the confirmation dialog.
-
-![Project Properties](/images/BuildForNetStandard/02.PNG)
-
-Based on the table, we have determined that we will target .NET Standard 1.4. Select .NETStandard1.4 from the drop down.
-
-![Create new Project](/images/BuildForNetStandard/05.PNG)
-
-
-The project.json should now look like:
-
-	{
-	  "supports": {},
-	  "dependencies": {
-		"Microsoft.NETCore.Portable.Compatibility": "1.0.1",
-		"NETStandard.Library": "1.6.0"
-	  },
-	  "frameworks": {
-		"netstandard1.4": {}
-	  }
-	}
-
-"Microsoft.NETCore.Portable.Compatibility"	enables compatibility with portable libraries targeting previous .NET releases like .NET Framework 4.0 and Silverlight.
-
-**Recommended Reading:** [Introduction to project.json](/ndocs/consume-packages/projectjson-intro)
-
-##Add your code
-We are leaving the code of the library as an exercise for the reader of the guide.
-
-	namespace AppLogger
-	{
-		public class Class1
-		{
-			//Add your code
-		}
-	}
-
-##Create the .nuspec file
-
-Bring up a Windows command prompt (e.g. by using Windows + X and choosing Command Prompt) and navigate to the folder containing the `.csproj` file for the project that you just created. This path will look something like this
-	`C:\Users\username\Documents\Visual Studio 2015\Projects\AppLogger\AppLogger`
-
-Then run the `spec` command (ensure you've added nuget.exe to the PATH as discussed in Prerequisites above).
-
-<code class="bash hljs">
-	nuget spec
-</code>
-
-This will generate a new file `AppLogger.nuspec`. Open this file. It will look something like:
-
-	<?xml version="1.0"?>
-	<package >
-	  <metadata>
-		<id>$id$</id>
-		<version>$version$</version>
-		<title>$title$</title>
-		<authors>$author$</authors>
-		<owners>$author$</owners>
-		<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-		<projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-		<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>$description$</description>
-		<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-		<copyright>Copyright 2016</copyright>
-		<tags>Tag1 Tag2</tags>
-	  </metadata>
-	</package>
-
-This file includes tokens that are meant to be replaced at pack time, based on the project metadata stored in AssemblyInfo.cs (This can be found by expanding the properties node in the solution explorer.)
-To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/create-packages/create-a-package#create-a--nuspec-file)
-
-Here is how the updated nuspec file looks:
-
-	<?xml version="1.0"?>
-	<package >
-	  <metadata>
-		<id>$id$</id>
-		<version>$version$</version>
-		<title>$title$</title>
-		<authors>karann</authors>
-		<owners>karann</owners>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>Awesome application logging utility</description>
-		<releaseNotes>First release</releaseNotes>
-		<copyright>Copyright 2016 (c) Contoso Corporation. All rights reserved.</copyright>
-		<tags>application app logger logging logs</tags>
-	  </metadata>
-	</package>
-
-
-Especially for packages that are built for public consumption, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it. Having finalized the nuspec file, we are now ready to create the nuget package.
-
-<div class="block-callout-warning">
-	<strong>Note</strong><br>
-	You must select a package ID that is unique across nuget.org. We recommend using the naming conventions described <a href="/ndocs/create-packages/package-best-practices">here</a>. You must also update the author and description tags or you will get an error in the next step.
-</div>
-
-**Recommended Reading:** [nuspec reference](/ndocs/schema/nuspec)
-
-##Pack
-On the **Build** menu, choose **Build Solution**.
-
-Now run the `pack` command
-
-<code class="bash hljs">
-	nuget pack AppLogger.csproj
-</code>
-	
-
-You will get warnings if you haven't updated the release notes and tags from the default value. When the command has run successfully, it will generate a new file `AppLogger.1.0.0.nupkg`. This is your nuget package.
-
-The following sections will go into more advanced scenarios around NuGet package creation.
-
-##Adding Dependencies
-Let's say your library has a dependency on another nuget package, say Newtonsoft.Json. Here's how you would change the nuspec file to add a dependency on Newtonsoft.Json 8.0.3
-
-	<?xml version="1.0"?>
-	<package >
-	  <metadata>
-		<id>$id$</id>
-		<version>$version$</version>
-		<title>$title$</title>
-		<authors>karann</authors>
-		<owners>karann</owners>
-		<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-		<projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-		<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>Awesome application logging utility</description>
-		<releaseNotes>First release</releaseNotes>
-		<copyright>Copyright 2016</copyright>
-		<tags>application app logger logging logs</tags>
-		<dependencies>
-		  <group>
-			<dependency id="Newtonsoft.Json" version="8.0.3" />
-		  </group>
-		</dependencies>
-	  </metadata>
-	</package>
-
-Specifying a dependency this way implies your library requires Newtonsoft.Json at a minimum version 8.0.3. This is the recommended way of specifying dependencies i.e. to only specify a lower bound, and leave the upper bound open. NuGet also supports using interval notation for specifying version ranges. Take a look at the [Dependency Versions](/ndocs/create-packages/dependency-versions) doc for more details.
-
-##Multiple Target Frameworks
-Let's say you would also like to target .NET Framework 4.6.2 because you would like to take advantage of a new API that is not supported by the .NET Framework 4.6.1 API surface. But, .NET Framework 4.6.2 is not available in .NET Standard 1.4. To do this, we will use the approach of creating a nupkg from a convention based working directory. The package author will have to do the necessary steps to make sure that their library compiles for .NET 4.6.2 by using techniques like conditional compilation and/or using shared projects. If you would like to use Visual Studio, the easiest way to do this would be to create a netcore project, add the framework of choice to the mutliple framework section and then build.
-
-1. In the root directory of the project (folder containing the `.nuspec` file), create a new folder - `lib`
-2. Inside `lib`, create two new folders - one for each platform that we want to support.
-		
-	\lib
-		\netstandard1.4
-			\AppLogger.dll
-		\net462
-			\AppLogger.dll
-
-3. Edit the nuspec file - add a child node `files` to the `package` node. <b>Note:</b> Token replacements are not supported when using the convention based working directory approach. So you should replace these tokens with hardcoded values.
-
-		<?xml version="1.0"?>
-		<package >
-		  <metadata>
-			<id>AppLogger</id>
-			<version>1.0.0.0</version>
-			<title>AppLogger</title>
-			<authors>karann</authors>
-			<owners>karann</owners>
-			<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-			<projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-			<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
-			<requireLicenseAcceptance>false</requireLicenseAcceptance>
-			<description>Awesome application logging utility</description>
-			<releaseNotes>First release.</releaseNotes>
-			<copyright>Copyright 2016</copyright>
-			<tags>application app logger logging logs</tags>
-		  </metadata>
-		  <files>
-			  <file src="lib\**" target="lib" />
-		  </files>
-		</package>
-
-4. Now run the `pack` command
-
-	<code class="bash hljs">
-		nuget pack AppLogger.nuspec
-	</code>
-		
-**Recommended Reading:** [Specifying Files to Include in the Package](/ndocs/schema/nuspec#specifying-files-to-include-in-the-package)
-
-##Targets and Props for MSBuild
-In some cases you might want to add custom [build targets or properties](add link here) to the consumers of your package, for example if you need a custom tool or process to run during build. When NuGet installs a package with \build files, it will add an MSBuild element in the project file pointing to the .targets and .props files. The .props file is added at the top, whereas the .targets file is added to the bottom.
-
-<div class="block-callout-info">
-	In the project.json world, targets are not added to the project but are made available through the project.lock.json.
-</div>
-
-1. In the root directory of project (folder containing the `.nuspec` file), create a new folder - `build`
-2. Inside `build`, create two new folders - one for each platform that we want to support. This is where you would place `.targets` and `.props` files
-	<pre>
-		\build
-			\netstandard1.4
-				\AppLogger.props
-				\AppLogger.targets
-			\net462
-				\AppLogger.props
-				\AppLogger.targets
-	</pre>
-
-3. Edit the nuspec file - add a child node `files` to the `package` node
-
-		<?xml version="1.0"?>
-		<package >
-		  <metadata>...
-		  </metadata>
-		  <files>
-			  <file src="build\**" target="build" />
-		  </files>
-		</package>
-
-4. Now run the `pack` command
-
-	<code class="bash hljs">
-		nuget pack AppLogger.nuspec
-	</code>
-
-**Recommended Reading:** [Import MSBuild targets and props files into project](/ndocs/create-packages/create-a-package#import-msbuild-targets-and-props-files-into-project)
-
-##Creating localized packages
-There are two options for providing a localized experience for your library package:
-
-1. Include your localized satellite assemblies in the same NuGet package as your runtime assemblies.
-2. Create separate localized satellite packages.
-
-We are going to take the first approach. Let's say, you would like to support German and Italian.
-
-1. Create a new folder for the languages (other than english) that we are trying to support under the `lib` folder.
-
-	<pre>
-    lib
-    ├───netstandard1.4
-    │   │   AppLogger.dll
-    │   │   AppLogger.xml
-    │   │
-    │   ├───de
-    │   │       AppLogger.resources.dll
-    │   │       AppLogger.xml
-    │   │
-    │   └───it
-    │           AppLogger.resources.dll
-    │           AppLogger.xml
-    └───net462
-        │   AppLogger.dll
-        │   AppLogger.xml
-        │
-        ├───de
-        │       AppLogger.resources.dll
-        │       AppLogger.xml
-        │
-        └───it
-                AppLogger.resources.dll
-                AppLogger.xml
-    </pre>
-
-	This package contains a single class library (`AppLogger.dll`) that contains the English strings as part of the runtime assembly. The package also contains localized satellite assemblies and XML IntelliSense files for German and Italian.
-
-2. Edit the nuspec file - add a child node `files` to the `package` node
-
-		<?xml version="1.0"?>
-		<package>
-		  <metadata>...
-		  </metadata>
-		  <files>
-		    <file src="lib\**" target="lib" />
-		  </files>
-		</package>
-
-3. Now run the `pack` command
-		<code class="bash hljs">
-			nuget pack AppLogger.nuspec
-		</code>
-
-**Recommended Reading:** [Creating Localized Packages](/ndocs/create-packages/creating-localized-packages)
-
-##Adding a readme
-A package can include a *readme.txt* file in the root of the package. This file will be displayed in Visual Studio immediately after the package is installed.
-
-<div class="block-callout-info">
-	<strong>Note:</strong> When your package is being consumed by a .NET Core project, it does not display the readme.txt.
-</div>
-
-To do this create a text file and edit its content to whatever you would like to be displayed once the package is installed.
-Rename it to readme.txt. Edit the nuspec file - add a child node `files` to the `package` node like below
-
-	<?xml version="1.0"?>
-	<package >
-	  <metadata>...
-	  </metadata>
-	  <files>
-	    <file src="readme.txt" target="" />
-	  </files>
-	</package>
-
-If the package is installed because it is a dependency of another package, the *readme.txt* file will not be opened. Only the *readme.txt* file of the package that the user is explicitly installing will be shown.
-
-**Recommended Reading:** [Adding files to nuget packages](/ndocs/schema/nuspec#specifying-files-to-include-in-the-package)
-
-##Publish
-Go to [nuget.org](https://www.nuget.org/) and register for an account or login if you already have one.
-
-Click on <b>My Account</b> to see the API Key that was generated for you.
-
-![api key](/images/CreatePublishNugetSample/03.PNG)
-
-<div class="block-callout-warning">
-	Always keep your API key a secret! If your key is accidentally revealed, you can always regenerate it at any time. You can also remove the API key if necessary. 
-</div>
-
-Open your console and run the following command. Replace the key below with the key that was generated for you.
-
-<code class="bash hljs">
-	nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://www.nuget.org/api/v2/package
-</code>
-	
-You should see something like this when the command has successfully executed.
-
-<code class="bash hljs">
-	Pushing AppLogger.1.0.0.0.nupkg to 'https://www.nuget.org/api/v2/package'...<br>
-	PUT https://www.nuget.org/api/v2/package/ <br>
-	Created https://www.nuget.org/api/v2/package/ 6829ms <br>
-	Your package was pushed.
-</code>
-
-You can go to your account on nuget.org and <b>Manage my packages</b> to see the package that you just published. You should also receive an email notifying you that the package was just published.
-
-It might take a while for your package to be indexed and appear in search results. While that happens, you will see the following message on your package page.
-
-![api key](/images/CreatePublishNugetSample/04.PNG)
