@@ -1,6 +1,6 @@
 # Dependency Versions
 
-When you [create a NuGet package](creating-a-package), you can specify dependencies for your package in the **&lt;dependencies&gt;** node of the `.nuspec` file, where each dependency is listed with a **&lt;dependency&gt;** tag: 
+When you [create a NuGet package](/ndocs/create-packages/creating-a-package), you can specify dependencies for your package in the **&lt;dependencies&gt;** node of the `.nuspec` file, where each dependency is listed with a **&lt;dependency&gt;** tag: 
   
 	<?xml version="1.0"?>
 	<package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">

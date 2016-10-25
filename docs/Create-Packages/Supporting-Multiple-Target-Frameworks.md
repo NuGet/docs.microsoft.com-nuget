@@ -13,7 +13,7 @@ In this topic:
 
 - [Framework version folder structure](#framework-version-folder-structure)
 - [Content files and PowerShell scripts](#content-files-and-powershell-scripts)
-- [Matching assembly versions and the target framework in a project](matching-assembly-versions-and-the-target-framework-in-a-project)
+- [Matching assembly versions and the target framework in a project](#matching-assembly-versions-and-the-target-framework-in-a-project)
 - [Grouping assemblies by framework version](#grouping-assemblies-by-framework-version)
 - [Determining which NuGet target to use](#determining-which-nuget-target-to-use)
 

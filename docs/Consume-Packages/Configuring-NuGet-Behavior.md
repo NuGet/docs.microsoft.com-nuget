@@ -28,7 +28,7 @@ The behavior of every NuGet command, whether issued from the command line, the P
  
 ## Changing config settings
 
-A configuration file is a simple XML text file containing settings as described in the [NuGet Configuration Settings](ndocs/schema/nuget.config-file.md) topic.
+A configuration file is a simple XML text file containing settings as described in the [NuGet Configuration Settings](/ndocs/schema/nuget.config-file.md) topic.
 
 The preferred method for changing the configuration is using the NuGet [config command](/ndocs/tools/nuget.exe-cli-reference#config) to set a key and value.
 

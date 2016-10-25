@@ -44,8 +44,8 @@ To become a contributor, submit a pull request to one of the following repositor
  
 The detailed process for submitting a pull request varies by repository:
 
-- [Contribution instructions for NuGet Client and NuGet Gallery](../Contribute/Contributing-to-nuget)
-- [Contribution instructions for NuGet Docs](../Contribute/Contributing-to-NuGet-Documentation).
+- [Contribution instructions for NuGet Client and NuGet Gallery](https://github.com/NuGet/NuGet.Client/blob/dev/CONTRIBUTING.md)
+- [Contribution instructions for NuGet Docs](https://github.com/NuGet/NuGetDocs/wiki/Contributing-to-NuGet-Documentation).
 
 
 ### Users
