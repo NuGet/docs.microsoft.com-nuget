@@ -22,7 +22,7 @@ Store passwords in clear text using the [-StorePasswordInClearText](https://docs
 
 In NuGet 3.4 and 3.4.1, when using the NuGet add-in, no sources are reported as available and you are unable to add new sources in the configuration window. The result is similar to the image below:
 
-![NuGet config with no sources](../media/knownIssue-34-NoSources.PNG)
+![NuGet config with no sources](./media/knownIssue-34-NoSources.PNG)
 
 The NuGet.config file in your `%AppData%\NuGet\` folder has accidentally been emptied. To fix this: Close Visual Studio 2015, delete the NuGet.config file in the `%AppData%\NuGet\` folder and restart Visual Studio.  A new NuGet.Config file will be generated and you will be able to proceed.
 
@@ -65,7 +65,7 @@ If you have upgraded to NuGet 2.7+ but your solution fails to build stating that
 
 1. **Force save your NuGet settings with consent given.** To do this, open Visual Studio's options and under Package Manager, choose General. Uncheck and then re-check the boxes for consent and click OK. This forces your `%AppData%\NuGet\NuGet.config` file to be saved with consent explicitly given, allowing NuGet 2.6 and earlier to see that you've given consent.
 1. **Update the version of `NuGet.exe` in your `.nuget` folder.** To do this, run `nuget.exe update -self` from your `.nuget` folder, which will download the latest version of `NuGet.exe` and replace the version in the `.nuget` folder. The latest version of `NuGet.exe` will infer consent to be ON even when not explicitly saved in the `NuGet.config` file.
-1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](../Consume/Package-Restore/Migrating-to-Automatic-Package-Restore).
+1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](/ndocs/consume-packages/package-restore#migrating-to-automatic-restore).
 
 ## Build failure after package update in VS 2012
 The problem: You are using VS 2012 RTM. When updating NuGet packages, you get this message: 
@@ -83,7 +83,7 @@ The fix is to install VS 2012 Update, e.g. [VS 2012 Update 2](http://www.microso
 If you are running VS 2010 SP1, you might run into the following error message when attempting to upgrade 
 NuGet if you have an older version installed.
 
-![Visual Studio Extension Installer](../media/Consume/Visual-Studio-Extension-Installer.png)
+![Visual Studio Extension Installer](./media/Consume/Visual-Studio-Extension-Installer.png)
 
 When viewing the logs, you might see a mention of a `SignatureMismatchException`.
 
@@ -231,7 +231,7 @@ When attempting to install NuGet using the Visual Studio Extension Manager and n
 as an administrator, the &#8220;Run As&#8221; dialog is displayed with the checkbox labeled 
 &#8220;Run this program with restricted access&#8221; checked by default.
 
-![Run As Restricted Dialog](../media/Consume/RunAsRestricted.png)
+![Run As Restricted Dialog](./media/Consume/RunAsRestricted.png)
 
 Clicking OK with that checked crashes Visual Studio. Make sure to uncheck that option before 
 installing NuGet.
