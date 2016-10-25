@@ -1,4 +1,4 @@
-﻿# Package Restore with Team Foundation Build
+# Walkthrough of Package Restore with Team Foundation Build
 
 > Applies To:
 >  - Custom MSBuild projects running on any version of TFS
@@ -174,3 +174,4 @@ In the TF version control template the project is selected via the property `1. 
 ![Build Process for TFVC](/images/consume/PackageRestoreTeamBuildTFVC.png)
 
 In contrast to the git based template the TF version control supports pickers (the button on the right hand side with the three dots). So in order to avoid any typing errors we suggest you use them to select the project.
+

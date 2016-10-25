@@ -1,28 +1,26 @@
 # Local Feeds
 
+Local NuGet package feeds are simply folders on your local network in which you place packages (or even just a folder on your own machine). Local feeds can be either a simple folder of packages, or a hierarchical folder structure that include version numbers. With NuGet 3.3 and above, using the hierarchical structure gives much better performance. 
 
-## Creating Local Feeds
+In these cases, you enable the source by simply adding the pathname, such as `\\myserver\packages` through the [Package Manager UI](/ndocs/tools/package-manager-ui#package-sources) or the command line using [`nuget sources`](/ndocs/tools/nuget.exe-cli-reference#sources).   
+ 
+## Initializing and maintaining hierarchical folders 
 
-Local feeds come in two flavors: a folder of nupkg files and a versioned set of hierarchical folders.  Starting with NuGet 3.3, you can create and install packages [much faster](http://blog.nuget.org/20150922/Accelerate-Package-Source.html) with the hierarchical folder structure.
+With NuGet 3.3 and above, you'll realize much better performance by structuring the feed using a hierarchical versioned folder tree:
 
-You can create a local feed on disk or build your own remote feed using NuGet's server components by following the instructions below.
+	\\myserver\packages
+      └─<packageID>
+        └─<version>	            
+          ├─<packageID>.<version>.nupkg	
+          └─<other files>
 
-Begin by creating or getting the packages you want to include in the custom feed and then putting them all into a folder. In the following example, a folder has been created in the local *c:* drive. The folder contains a single package (.nupkg file).
+NuGet will create this structure automatically when you use the [`nuget add`](/ndocs/tools/nuget.exe-cli-reference#add) command to copy packages to the feed: 
 
-![LocalNuGetFeed-folder.png](/images/create/LocalNuGetFeed-folder.png)
+    nuget add new_package.1.0.0.nupkg -source \\myserver\packages
 
-Now that you have the folder setup, it is super easy to add this as a package source in Visual Studio. Take a look at this [topic](../tools/package-manager-ui#package-sources) to understand how to add a new package source in Visual Studio.
+You can also use the [`nuget init`](/ndocs/tools/nuget.exe-cli-reference#init) command to copy multiple packages from a single folder to the feed. For example, the following command copues all packages from `c:\packages` to a hierarchical tree on `\\myserver\packages`: 
 
-## Creating Local Feeds v3.3+
+    nuget init c:\packages \\myserver\packages
 
-Starting with NuGet 3.3, you can create and manage a folder of packages that can be referenced by the NuGet clients in the same way as described in the previous section. To manage this folder, you will need a copy of the [NuGet command-line tool](http://dist.nuget.org/index.html).
+Again, this will create a folder for each package identifier, each of which will contain a version number folder, within which will be the appropriate package.
 
-Start by creating an empty folder that will contain the new hierarchical NuGet feed.  Let's refer to that folder as `$folder`.  If you have an existing folder of packages at $existing that you would like to add to `$folder`, execute the following command:
-
-    nuget init $existing $folder
-
-As new and updated packages like **freshnizzle.nupkg** are created that you would like to add to the folder, execute the following command:
-
-    nuget add package.nupkg -source $folder
-
-Finally, add a reference to `$folder` in your NuGet configuration as specified above.

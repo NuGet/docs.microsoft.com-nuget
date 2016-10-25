@@ -1,65 +1,43 @@
-﻿# NuGet support for Visual Studio project system
+# NuGet support for the Visual Studio project system
 
-This document outlines the steps you should take in your own project system in Visual Studio so that NuGet packages can be installed in your projects using the NuGet client extension for Visual Studio.
+To support third-party project types in Visual Studio, NuGet 3.x+ supports the [Common Project System (CPS)](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/intro.md), and NuGet 3.2+ supports non-CPS project systems as well. 
 
-## Support
-
-NuGet v3 is the first version to support 3rd party project types, by supporting CPS-based projects. NuGet v3.2 adds support for non-CPS project systems as well.
-
-In NuGet v3.0, the NuGet client will only integrate with project systems that support everything a NuGet package might do. Or in other words, a project system must advertise support for all the project capabilities
-described below for NuGet functionality to "light up".
+To integrate with NuGet, a project system must advertise its own support for all the project capabilities described in this topic.
 
 <div class="block-callout-info">
-    <strong>Note:</strong><br>
-    You should <strong>not</strong> declare capabilities that your project does not actually have for the sake of enabling packages to install in your project. Many features of Visual Studio and other extensions depend on project capabilities besides the NuGet client and falsely advertising capabilities of your project can lead these components to malfunction and your users' experience to degrade.   
+	<strong>Note</strong><br>
+	Do not declare capabilities that your project does not actually have for the sake of enabling packages to install in your project. Many features of Visual Studio and other extensions depend on project capabilities besides the NuGet client. Falsely advertising capabilities of your project can lead these components to malfunction and your users' experience to degrade.   
 </div>
-
 
 ## Advertise project capabilities
 
-Your project system must advertise support for some key capabilities it has so that the NuGet client can determine which packages are compatible with your projects. Below is a table of the project capabilities the NuGet client
-may look for when testing for compatibility.
+The NuGet client determines which packages are compatible with your project type based on the [project's capabilities](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md), as described in the following table.  
 
-<table class="reference">
-<thead>
-<tr>
-<th>Project Capability</th><th>Description</th>
-</tr>
-<tr>
-<td>AssemblyReferences</td><td>Indicates that the project supports assembly references (distinct from WinRTReferences)</td>
-</tr>
-<tr>
-<td>DeclaredSourceItems</td><td>Indicates that the project is a typical MSBuild project (not DNX) in that it declares source items in the project itself (rather than a project.json file that assumes all files in the directory are part of a compilation)</td>
-</tr>
-<tr>
-<td>UserSourceItems</td><td>Indicates that the user is allowed to add arbitrary files to their project.</td>
-</tr>
+<table class="reference">	
+	<tr>
+		<th>Capability</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>AssemblyReferences</td>
+		<td>Indicates that the project supports assembly references (distinct from WinRTReferences).</td>
+	</tr>
+	<tr>
+		<td>DeclaredSourceItems</td>
+		<td>Indicates that the project is a typical MSBuild project (not DNX) in that it declares source items in the project itself (rather than a project.json file that assumes all files in the directory are part of a compilation).</td>
+	</tr>
+	<tr>
+		<td>UserSourceItems</td>
+		<td>Indicates that the user is allowed to add arbitrary files to their project.</td>
+	</tr>
 </table>
 
 
-[Learn more about project capabilities][1].
-
-Note that for [CPS-based project systems][4], the implementation details for project capabilities described in the rest of this section have been done for you. Learn more about [declaring project capabilities in CPS projects][5].
-
-## Responding to queries
-
-Your project declares these capabilities by supporting the `IVsHierarchy::GetProperty` VSHPROPID_ProjectCapabilitiesChecker property. You should return an instance of the
-`Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker`, which is defined in the `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll` assembly. You can reference this assembly by installing the [NuGet package][2] for it.
-
-### Example
-
-You might add the following `case` statement to your `IVsHierarchy::GetProperty` method's `switch` statement:
-
-    case __VSHPROPID8.VSHPROPID_ProjectCapabilitiesChecker:
-        propVal = new VsProjectCapabilitiesPresenceChecker();
-        return VSConstants.S_OK;
-
-We will define the `VsProjectCapabilitiesPresenceChecker` class in the next step.
+For CPS-based project systems, the implementation details for project capabilities described in the rest of this section have been done for you. See [declaring project capabilities in CPS projects](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md#how-to-declare-project-capabilities-in-your-project).
 
 ## Implementing VsProjectCapabilitiesPresenceChecker
 
 The `VsProjectCapabilitiesPresenceChecker` class must implement the `IVsBooleanSymbolPresenceChecker` interface, which is defined as follows:
-
 
     public interface IVsBooleanSymbolPresenceChecker
     {
@@ -119,18 +97,22 @@ A sample implementation of this interface would then be:
         }
     }
 
+Remember to add/remove capabilities from the `ActualProjectCapabilities` set based on what your project system actually supports. See the [project capabilities documentation](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/project_capabilities.md) for full descriptions.
 
-Remember to add/remove capabilities from the `ActualProjectCapabilities` set based on what your project system actually supports. All defined [project capabilities are documented with their descriptions][3] for
-your reference.
+## Responding to queries
+
+A project declares this capability by supporting the  `VSHPROPID_ProjectCapabilitiesChecker` property through the `IVsHierarchy::GetProperty`. It should return an instance of 
+`Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker`, which is defined in the `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll` assembly. Reference this assembly by installing the [its NuGet package](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime).
+
+For example, you might add the following `case` statement to your `IVsHierarchy::GetProperty` method's `switch` statement:
+
+    case __VSHPROPID8.VSHPROPID_ProjectCapabilitiesChecker:
+        propVal = new VsProjectCapabilitiesPresenceChecker();
+        return VSConstants.S_OK;
+
 
 ## DTE Support
 
-NuGet drives the project system to add references, content items, and MSBuild imports by calling into DTE, which is a set of COM interfaces that you may already implement.
+NuGet drives the project system to add references, content items, and MSBuild imports by calling into [DTE](https://msdn.microsoft.com/library/mt452175.aspx), which is the top-level Visual Studio automation interface. DTE is is a set of COM interfaces that you may already implement.
 
-If your project type is [based on CPS][4], DTE is already implemented for you.
-
-[1]: https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md
-[2]: https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime
-[3]: https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/project_capabilities.md
-[4]: https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/intro.md
-[5]: https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md#how-to-declare-project-capabilities-in-your-project
+If your project type is based on CPS, DTE is implemented for you. 

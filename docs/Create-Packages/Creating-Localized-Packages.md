@@ -1,237 +1,133 @@
 # Creating Localized Packages
 
-## Localization Options
+There are two ways to create localized versions of a library:
 
-There are two options for providing a localized experience for your library package:
+1. Include all localized resources assemblies in a single package.
+2. Create separate localized satellite packages (NuGet 1.8 and later), by following a strict set of conventions.
 
-1. Include your localized satellite assemblies in the same NuGet package as your runtime assemblies.  This has always been supported. Note: Currently, NuGet pack doesn't support packing satellite assemblies automatically. You need to specify satellite assemblies manually in Nuspec.
-1. Create separate localized satellite packages that follow a very strict convention.  This approach has been supported since [NuGet 1.8](../Release-Notes/NuGet-1.8#Satellite-Packages-for-Localized-Resources).
+Both methods have their advantages and disadvantages, as described in the following sections.
 
-Different libraries have different localization requirements, so it's important to consider the differences between these two approaches.
+## Localized resource assemblies in a single package
 
-## Single Package Approach
-
-Usually the simplest approach for localization is to include all of the localized satellite assemblies and XML IntelliSense in the same package as your runtime.  Here's an example package layout that accomplishes this.
-
-**_SuperAwesomeness.1.0.0.nupkg_**
-
-* Id: SuperAwesomeness
-* Version: 1.0.0
-* Title: Super Awesomeness
-* Summary: Super Awesome features for your application
-* Description: Super Awesomeness provides lots of super awesome features that you can use in your application
-* Language: en-us
-
-    <pre>
+Including localized resource assemblies in a single package is typically the simplest approach. To do this, create folders within `lib` for supported language other than the package default (assumed to be en-us). In these folders you can place resource assemblies and localized IntelliSense XML files.  
+ 
+For example, the following folder stucture supports, German (de), Italian (it), Japanese (ja), Russian (ru), Chinese (Simplified) (zh-Hans), and Chinese (Traditional) (zh-Hant):
+    
     lib
     └───net40
-        │   SuperAwesomeness.dll
-        │   SuperAwesomeness.xml
+        │   Contoso.Utilities.dll
+        │   Contoso.Utilities.xml
         │
         ├───de
-        │       SuperAwesomeness.resources.dll
-        │       SuperAwesomeness.xml
+        │       Contoso.Utilities.resources.dll
+        │       Contoso.Utilities.xml
         │
         ├───it
-        │       SuperAwesomeness.resources.dll
-        │       SuperAwesomeness.xml
+        │       Contoso.Utilities.resources.dll
+        │       Contoso.Utilities.xml
         │
         ├───ja
-        │       SuperAwesomeness.resources.dll
-        │       SuperAwesomeness.xml
+        │       Contoso.Utilities.resources.dll
+        │       Contoso.Utilities.xml
         │
         ├───ru
-        │       SuperAwesomeness.resources.dll
-        │       SuperAwesomeness.xml
+        │       Contoso.Utilities.resources.dll
+        │       Contoso.Utilities.xml
         │
         ├───zh-Hans
-        │       SuperAwesomeness.resources.dll
-        │       SuperAwesomeness.xml
+        │       Contoso.Utilities.resources.dll
+        │       Contoso.Utilities.xml
         │
         └───zh-Hant
-                SuperAwesomeness.resources.dll
-                SuperAwesomeness.xml
-    </pre>
+                Contoso.Utilities.resources.dll
+                Contoso.Utilities.xml    
 
-This package contains a single class library (SuperAwesomeness.dll) that contains the English strings as part of the runtime assembly.  The package also contains localized satellite assemblies and XML IntelliSense files for German, Italian, Japanese, Russian, Chinese (Simplified) and Chinese (Traditional).
+You can see that the languages are all listed underneath the `net40` target framework folder. If you're [supporting multiple frameworks](/ndocs/create-packages/supporting-multiple-target-frameworks), then you'll have a folder under `lib` for each variant.
 
-Installing this package into your project will yield a fully localized experience in any of the languages it supports.
+With these folders in place, you'll then reference all the files in your `.nuspec`:
+	    
+	<?xml version="1.0"?>
+	<package>
+	  <metadata>...
+	  </metadata>
+	  <files>
+	    <file src="lib\**" target="lib" />
+	  </files>
+	</package>
 
-### Disadvantages to the Single Package Approach
+One example package that uses this approach is [Microsoft.Data.OData 5.4.0](http://nuget.org/packages/Microsoft.Data.OData/5.4.0).
 
-There are a few disadvantages to bundling your localized files into your runtime package.
+### Advantages and disadvantages
 
-1. **Package Size**.  Whether or not this is a problem will depend on how many localized strings your library has, but it's something to be mindful of.
-1. **Package Metadata**.  This is typically the more concerning issue.  A NuGet package can only contain a single nuspec file that can only contain a single language's metadata.  There is no support for localized package metadata within a single NuGet package.
-1. **Simultaneous Shipping**.  Bundling your localized files into your runtime package requires that you simultaneously ship all assets in the single package.  There's no option to ship the default language first and later ship the localized experience.  Any update to your localized experience requires a new version of the runtime package even if the runtime assemblies didn't change.
+Bundling all languages in a single package has a few disadvantages:
 
-### Example of the Single Package Approach
+1. **Shared metadata**: Because a NuGet package can only contain a single `.nuspec` file, you can provide metadata for only a single language. That is, NuGet does not present support localized metadata.
+2. **Package size**: Depending on the number of languages you support, the library can become considerably large, which slows installing and restoring the package.
+3. **Simultaneous releases**: Bundling localized files into a single package requires that you release all assets in that package simultaneously, rather than being able to release each localization separately. Furthermore, any update to any one localization requires a new version of the entire package.
 
-As of version 5.4.0 The [Microsoft.Data.OData package](http://nuget.org/packages/Microsoft.Data.OData/5.4.0) utilizes the single package approach.
+However, it also has a few benefits:
 
-## Satellite Package Approach
+1. **Simplicity**: Consumers of the package get all supported languages in a single install, rather than having to install each language separately. A single package is also easier to find on nuget.org.
+2. **Coupled versions**: Because all of the resource assemblies are in the same package as the primary assembly, they all share the same version number and don't run a risk of getting erroneously decoupled. 
 
-The satellite package approach allows you to separate your localized resources from your runtime assemblies, much like the .NET Framework supports satellite assemblies.  Here is a sample package structure that includes all of the packages involved.
 
-**_SuperAwesomeness.1.0.0.nupkg_**
+## Localized satellite packages 
 
-* Id: SuperAwesomeness
-* Version: 1.0.0
-* Title: Super Awesomeness
-* Summary: Super Awesome features for your application
-* Description: Super Awesomeness provides lots of super awesome features that you can use in your application
-* Language: en-us
+Similar to how .NET Framework supports satellite assemblies, this method separates localized resources and IntelliSense XML files into satellite packages.
 
-    <pre>
+Do to this, your primary package uses the naming convention `{identifier}.{version}.nupkg` and contains the assembly for the default language (such as en-US). For example, `ContosoUtilities.1.0.0.nupkg` would contain the following structure:
+
     lib
     └───net40
-            SuperAwesomeness.dll
-            SuperAwesomeness.xml
-    </pre>
+            ContosoUtilities.dll
+            ContosoUtilities.xml    
 
-**_SuperAwesomeness.de.1.0.0.nupkg_**
+A satellite assembly then uses the naming convention `{identifier}.{language}.{version}.nupkg`, such as `ContosoUtilities.de.1.0.0.nupkg`. The identifier **must** exactly match that of the primary package. 
 
-* Id: SuperAwesomeness.de
-* Version: 1.0.0
-* Title: The German translation of "Super Awesomeness German Resources"
-* Summary: The German translation of "German resources for the SuperAwesomeness package"
-* Description: The German translation of "This package contains the German satellite assemblies for Super Awesomeness"
-* Language: de
-* Dependency: SuperAwesomeness \[1.0.0\]
+Because this is a separate package, it has its own `.nuspec` file that contains localized metadata. Be mindful that the language in the .nuspec **must** match the one used in the filename.
 
-    <pre>
+The satellite assembly **must** also declare an exact version of the primary package as a dependency, using the [] version notation (see [Dependency Versions](/ndocs/create-packages/dependency-versions)). For example, `ContosoUtilities.de.1.0.0.nupkg` must declare a dependency on `ContosoUtilities.1.0.0.nupkg` using the `[1.0.0]` notation. The satellite package can, of course, have a different version number than the primary package.
+
+The satellite package's structure must then include the resource assembly and XML IntelliSense file in a subfolder that matches `{language}` in the package filename:   
+
     lib
     └───net40
         └───de
-                SuperAwesomeness.resources.dll
-                SuperAwesomeness.xml
-    </pre>
+                ContosoUtilities.resources.dll
+                ContosoUtilities.xml
 
-**_SuperAwesomeness.it.1.0.0.nupkg_**
+**Note**: unless specific subcultures such as `ja-JP` are necessary, always use the higher level language identifier, like `ja`.
 
-* Id: SuperAwesomeness.it
-* Version: 1.0.0
-* Title: The Italian translation of "Super Awesomeness Italian Resources"
-* Summary: The Italian translation of "Italian resources for the SuperAwesomeness package"
-* Description: The Italian translation of "This package contains the Italian satellite assemblies for Super Awesomeness"
-* Language: it
-* Dependency: SuperAwesomeness \[1.0.0\]
+In a satellite assembly, NuGet will recognize **only** those files in the folder that matches the `{language}` in the filename. All others are ignored.
 
-    <pre>
-    lib
-    └───net40
-        └───it
-                SuperAwesomeness.resources.dll
-                SuperAwesomeness.xml
-    </pre>
+When all of these conventions are met, NuGet will recognize the package as a satellite package and install the localized files into the primary package's `lib` folder, as if they had been originally bundled. Uninstalling the satellite package will remove its files from that same folder.
 
-**_SuperAwesomeness.ja.1.0.0.nupkg_**
+You would create additional satellite assemblies in the same way for each supported language. For an example, examine the set of ASP.NET MVC packages:
 
-* Id: SuperAwesomeness.ja
-* Version: 1.0.0
-* Title: The Japanese translation of "Super Awesomeness Japanese Resources"
-* Summary: The Japanese translation of "Japanese resources for the SuperAwesomeness package"
-* Description: The Japanese translation of "This package contains the Japanese satellite assemblies for Super Awesomeness"
-* Language: ja
-* Dependency: SuperAwesomeness \[1.0.0\]
+* [Microsoft.AspNet.Mvc](http://nuget.org/packages/Microsoft.AspNet.Mvc) (English primary)
+* [Microsoft.AspNet.Mvc.de](http://nuget.org/packages/Microsoft.AspNet.Mvc.de) (German)
+* [Microsoft.AspNet.Mvc.ja](http://nuget.org/packages/Microsoft.AspNet.Mvc.ja) (Japanese)
+* [Microsoft.AspNet.Mvc.zh-Hans](http://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hans) (Chinese (Simplified))
+* [Microsoft.AspNet.Mvc.zh-Hant](http://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hant) (Chinese (Traditional))
 
-    <pre>
-    lib
-    └───net40
-        └───ja
-                SuperAwesomeness.resources.dll
-                SuperAwesomeness.xml
-    </pre>
+### Summary of required conventions
 
-**_SuperAwesomeness.ru.1.0.0.nupkg_**
+- Primary package must be named `{identifier}.{version}.nupkg`
+- A satellite package must be named `{identifier}.{language}.{version}.nupkg`
+- A satellite package's `.nuspec` must specify its language to match the filename.  
+- A satellite package must declare a dependency on an exact version of the primary using the [] notation in its `.nuspec` file. Ranges are not supported.
+- A satellite package must place files in the `lib\[{framework}\]{language}` folder that exactly matches `{language}` in the filename.  
 
-* Id: SuperAwesomeness.ru
-* Version: 1.0.0
-* Title: The Russian translation of "Super Awesomeness Russian Resources"
-* Summary: The Russian translation of "Russian resources for the SuperAwesomeness package"
-* Description: The Russian translation of "This package contains the Russian satellite assemblies for Super Awesomeness"
-* Language: ru
-* Dependency: SuperAwesomeness \[1.0.0\]
+### Advantages and disadvantages
 
-    <pre>
-    lib
-    └───net40
-        └───ru
-                SuperAwesomeness.resources.dll
-                SuperAwesomeness.xml
-    </pre>
+Using satellite packages has a few benefits:
 
-**_SuperAwesomeness.zh-Hans.1.0.0.nupkg_**
-
-* Id: SuperAwesomeness.zh-Hans
-* Version: 1.0.0
-* Title: The Chinese (Simplified) translation of "Super Awesomeness Chinese (Simplified) Resources"
-* Summary: The Chinese (Simplified) translation of "Chinese (Simplified) resources for the SuperAwesomeness package"
-* Description: The Chinese (Simplified) translation of "This package contains the Chinese (Simplified) satellite assemblies for Super Awesomeness"
-* Language: zh-Hans
-* Dependency: SuperAwesomeness \[1.0.0\]
-
-    <pre>
-    lib
-    └───net40
-        └───zh-Hans
-                SuperAwesomeness.resources.dll
-                SuperAwesomeness.xml
-    </pre>
-
-**_SuperAwesomeness.zh-Hant.1.0.0.nupkg_**
-
-* Id: SuperAwesomeness.zh-Hant
-* Version: 1.0.0
-* Title: The Chinese (Traditional) translation of "Super Awesomeness Chinese (Traditional) Resources"
-* Summary: The Chinese (Traditional) translation of "Chinese (Traditional) resources for the SuperAwesomeness package"
-* Description: The Chinese (Traditional) translation of "This package contains the Chinese (Traditional) satellite assemblies for Super Awesomeness"
-* Language: zh-Hant
-* Dependency: SuperAwesomeness \[1.0.0\]
-
-    <pre>
-    lib
-    └───net40
-        └───zh-Hant
-                SuperAwesomeness.resources.dll
-                SuperAwesomeness.xml
-    </pre>
-
-If a developer installs this full set of packages, the same fully localized experience will be accomplished as the Single Package Approach.  The satellite assemblies and localized IntelliSense will be utilized.
-
-### Benefits and Disadvantages to the Satellite Package Approach
-
-The satellite package approach offers the following benefits:
-
-1. **Package Size**.  The runtime package is kept trim, and package consumers can opt into pulling down the additional localized bits, language by language.
-1. **Package Metadata**.  Because there are now packages that have localized metadata, some users might be able to find your package more easily if you include a fully localized title, summary, and description for your package.
-1. **Deferred Localization**.  You have the opportunity to ship the satellite packages separately from your runtime, deferring localization until after you publish the runtime package.
+1. **Package size**: The overall footprint of the primary package is minimized, and consumers only incur the costs of each language they want to use.
+2. **Separate metadata**: Each satellite package has its own `.nuspec` file and thus its own localized metadata because. This can allow some consumers to find packages more easily by searching nuget.org with localized terms.
+3. **Decoupled releases**: Satellite assemblies can be released over time, rather than all at once, allowing you to spread out your localization efforts.
 
 However, satellite packages have their own set of disadvantages:
 
-1. **Clutter**.  Instead of a single package, you end up having a package for each language you support.  This can lead to cluttered search results.  Satellite packages are not differentiated on the nuget.org gallery or in search results, so they show up as peers of the runtime packages.
-1. **Strict Conventions**.  There are very strict conventions for satellite packages in order for them to be recognized as satellite packages.  Those details are below and they must be followed precisely or the localized experience will not be achieved.
-1. **Versioning**.  One of the conventions is that satellite packages must have an exact version dependency on the associated runtime package.  That means that any time a new runtime package version is published, you must publish updated satellite packages as well, even if the localized resources didn't change.  There are more details below.
-
-### Satellite Package Conventions
-
-Satellite packages work by way of a strict set of conventions.  Aside from these conventions, satellite packages are no different from any other NuGet package.  In order for the package to be treated as a satellite package though, all of the conventions must be followed.
-
-1. The Id of the package must match that of the runtime package, followed by a dot and then the target language as a suffix.  For example, "SuperAwesomeness.ja" is the Japanese satellite package for the "SuperAwesomeness" package.
-1. The Language element in the nuspec must be set to the target language.  Unless specific subcultures are being provided, the higher level culture is recommended.  For example, use "ja" instead of "ja-JP" for Japanese packages.  The language element's value must exactly match the language suffix on the package Id.
-1. The satellite package must have a dependency on the runtime package.  For example, the "SuperAwesomeness.ja" package must have a dependency on the "SuperAwesomeness" package.
-1. The dependency on the runtime package must be for an exact version and not a range.  This is specified using the square brackets in the [dependency version](Versioning).  For instance, the "SuperAwesomeness.ja" package's dependency on "SuperAwesomeness" uses the version range of \[1.0.0\].  Note that the version of the satellite package doesn't need to match the version of the runtime package.  However, a satellite package can only target a single version of the runtime package.  Therefore, it's possible to have SuperAwesomeness.ja version 1.0.1 target (and therefore depend on) SuperAwesomeness version 1.0.0.
-1. Only culture-specific files within the lib folder will be recognized.  Referring to the SuperAwesomeness.ja.1.0.0.nupkg file above, the package illustrates having files under the \lib\ja\ folder.  These files will be recognized because they A) are under the \lib folder, and B) there's a subfolder named "ja" which matches the target language for the package.
-
-By following these conventions, NuGet recognizes that the package is a satellite package at the time of installation.  When that is identified, the localized files in the lib folder are copied into the runtime package's lib folder at the time of package installation.  When the satellite package is uninstalled, the localized files are removed from the runtime package's lib folder.  Once the localized files are copied into the runtime package's lib folder, Visual Studio and MSBuild do the rest of the work.
-
-### Example Satellite Packages
-
-ASP.NET MVC package is one example that utilizes the satellite package approach.  Here are some of the related packages:
-
-* [Microsoft.AspNet.Mvc](http://nuget.org/packages/Microsoft.AspNet.Mvc) - Runtime and English resources
-* [Microsoft.AspNet.Mvc.de](http://nuget.org/packages/Microsoft.AspNet.Mvc.de) - German resources
-* [Microsoft.AspNet.Mvc.ja](http://nuget.org/packages/Microsoft.AspNet.Mvc.ja) - Japanese resources
-* [Microsoft.AspNet.Mvc.zh-Hans](http://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hans) - Chinese (Simplified) resources
-* [Microsoft.AspNet.Mvc.zh-Hant](http://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hant) - Chinese (Traditional) resources
-
+1. **Clutter**: Instead of a single package, you have many packages that can lead to cluttered search results on nuget.org and a long list of references in a Visual Studio project.
+2. **Strict conventions**. Satellite packages must follow the conventions exactly or the localized versions won't be picked up properly.
+3. **Versioning**: Each satellite package must have an exact version dependency on the primary package. This means that updating the primary package may require updating all satellite packages as well, even if the resources didn't change.

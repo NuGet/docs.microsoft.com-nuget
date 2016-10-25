@@ -1,38 +1,44 @@
-# Project.json
+# Project.json Reference
+
+*NuGet 3.x+; also see the end of this topic for project.lock.json*
+
+The `project.json` file replaces `packages.config` in UWP, ASP.NET 5, and .NET desktop projects (WPF and WinForms) as a means to maintain the list of packages used in a project. (For .NET Core, refer to [NET Core Tools - project.json](https://docs.microsoft.com/dotnet/articles/core/tools/project-json)).
+
+The [`project.lock.json`](#project-lock-json) file (described below) is also used in projects with a `project.json` file.
+
 <div class="block-callout-info">
-    <strong>Note: </strong><br>
-    This page talks about project.json in the context of UWP. For .NET Core take a look <a href="https://docs.microsoft.com/en-us/dotnet/articles/core/tools/project-json">.NET Core Tools - project.json</a>
+    <strong>Note</strong><br>
+	When tooling for .NET Core and ASP.NET Core is complete, the function of project.json will be incorporated directly into project files (.csproj, .vsproj, etc.). NuGet clients will continue to support project.json for existing scenarios.
 </div>
 
-Project.json is the file replacing packages.config as the file specifying the packages used by the project. For more information on the changes to package management this change entails, see the topic [here](project.json). This document provides a deeper dive into the content and shape of the file, as well as details on some advanced features not available directly through the UI. 
-
-<div class="block-callout-info">
-    <strong>The Future of project.json:</strong><br>
-    When the tooling for ASP.NET Core and .NET Core hits RTM, project.json for portable apps and websites will be deprecated and contents of this file will move into MSBuild project files (.csproj/.vbproj etc..). NuGet clients will continue to support project.json for UWP and other csproj + project.json scenarios.
-</div>
-
-The project.json used by NuGet 3+ has the following basic shape 
+A project.json file has the following basic structure, where each of the four top-level objects can have any number of child objects:
 
     { 
-        "dependencies": { "PackageId" : "1.0.0" }, 
-        "frameworks" : { "TxM" : {} }, 
-        "runtimes" : { "RID": {}, "RID": {} }, 
-        "supports" : { "CompatibilityProfile" : {}, "CompatibilityProfile" : {} }    
+        "dependencies": {
+			"PackageID" : "{version_constraint}"
+		}, 
+        "frameworks" : {
+			"TxM" : {}
+		}, 
+        "runtimes" : {
+			"RID": {}
+		}, 
+        "supports" : {
+			"CompatibilityProfile" : {}
+		}    
     }
    
 ## Dependencies 
 
 Lists the nuget package dependencies of your project in the form of: 
 
-    PackageId : Version Constraint.  
+    "PackageID" : "version_constraint"
     
 For example: 
 
-    "dependencies": { 
-    
+    "dependencies": {     
        "Microsoft.NETCore": "5.0.0", 
-       "System.Runtime.Serialization.Primitives": "4.0.10" 
-    
+       "System.Runtime.Serialization.Primitives": "4.0.10"     
     } 
 
 The dependencies section is where the NuGet Package Manager dialog will add package dependencies to your project. 
@@ -87,3 +93,27 @@ Imports are designed to allow packages that use the dotnet TxM to operate with p
 	"frameworks": { 
     	"dotnet": { "imports" : "portable-net45+win81" } 
 	} 
+
+
+
+## Differences from Portable Apps and Web Projects
+
+The project.json file used by NuGet is a subset of that found in ASP.NET Core projects. In ASP.NET Core the project.json file is used for project metadata, compilation information, and dependencies. When used in other project systems those three things are split into separate files so the project.json specifies less information. Notable differences include: 
+
+There can only be one framework in the frameworks section 
+
+The framework should be empty, as shown above. No dependencies, compilation options, etc that you can see in DNX project.json files. Given that there can only be a single framework it doesn't make sense to enter framework specific dependencies. 
+
+Compilation is handled by MSBuild so compilation options, preprocessor defines, etc are all part of the MSBuild project file and not your project.json.  
+
+In NuGet 3 unlike in ASP.NET Core projects the user is not expected to manually edit the file, the UI is responsible for manipulating the content. we're working on unifying the experiences across the project systems for project.json, its not unified yet for this release. 
+
+Note that it is possible to edit the file, the user is responsible to build the project to kick off a package restore.
+
+
+# project.lock.json
+
+The `project.lock.json` file is generated in the process of restoring the NuGet packages in projects that use `project.json`. It holds a snapshot of all the information that is generated as NuGet walks the graph of packages and includes the version, contents, and dependencies of all the packages in your project. The build system uses this to choose packages from a global location that are relevant when building the project instead of depending on a local packages folder in the project itself. This results in faster build performance because it's necessary to read only `project.lock.json` instead of many separate `.nuspec` files.
+
+The `project.lock.json` is automatically generated on package restore, so it can be omitted from source control by adding it to `.gitignore` and `.tfignore` files. However, if you include it in source control, the change history will show changes in dependencies resolved over time. 
+  

@@ -1,8 +1,9 @@
-﻿Package-Restore
-Reinstalling-Packages
-ProjectJson-Intro
-ProjectJson-Dependency
-nuget-config-File-Overview
-nuget-config-File-Defaults
-Support-for-Native-Projects
-Search-Syntax
+Overview-and-Workflow
+Finding-and-Choosing-Packages
+Reinstalling-and-Updating-Packages
+Packages-and-Source-Control
+Package-Restore
+Managing-the-NuGet-Cache
+Configuring-NuGet-Behavior
+Enabling-Symbol-Packages
+Dependency-Resolution

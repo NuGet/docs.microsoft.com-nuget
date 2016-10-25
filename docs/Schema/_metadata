@@ -1,5 +1,5 @@
-﻿nuspec
+nuspec
 project.json
-project.lock.json
-nuget.config
+nuget.config-file
 Target-Frameworks
+Analyzers-Conventions

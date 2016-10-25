@@ -1,43 +1,70 @@
 #Publish a Package
 
-Before you publish your package, you must decide whether you want your package to be public or private.
+Once you have [created a package](/ndocs/create-packages/creating-a-package) with `nuget pack`, it's a simple process to make it available to other developers, either publicly or privately:
 
-* If it's for public consumption, use [NuGet.org](https://www.nuget.org/packages/manage/upload).
-* If it's within an organization or a team, use one of the following methods:
-    * NuGet.Server or file shares (for more information, see [Hosting Packages Overview](/ndocs/host-packages/hosting-packages-overview))
-	* Visual Studio Team Services Package Management
-	* Other third-party package repository managers, such as myget, ProGet, Nexus Repository, Artifactory, etc.
+- Public packages are made available to all developers globally through [nuget.org](https://www.nuget.org/packages/manage/upload). See instructions below.
+- Private packages are available to only a team or organization, by hosting them either a file share, a private NuGet server, Visual Studio Team Services package management, or a third- party repository such as myget, ProGet, Nexus Repository, and Artifactory. For additional details, see [Hosting Packages Overview](/ndocs/hosting-packages/overview))
+ 
+##Publish to nuget.org
 
-##Create an account
-To publish to [NuGet.org](https://www.nuget.org/packages/upload) you must have an account.
+For nuget.org, you must first [register for a free account](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) or sign in if already registered: 
+		
+![NuGet registration and sign in location](/images/Create/publish_NuGetSignIn.png)
 
-Go to [nuget.org](http://nuget.org/) and register for an account. Then, log in to your NuGet.org account.
+Next, you can either upload the package through the nuget.org web portal, or push to nuget.org from the command line:
 
-![NuGet SignIn](/images/Create/publish_NuGetSignIn.PNG)
+- Web portal: use the Upload Package tab on nuget.org:
 
-##Publish through NuGet.Org
-Use the Upload Package UI to upload your package to the NuGet Gallery
+	![Upload a package with the NuGet Package Manager](/images/Create/publish_UploadYourPackage.PNG)
 
-![Upload your package](/images/Create/publish_UploadYourPackage.PNG)
+- Command line:
+	1. Click on your user name to navigate to your account settings.
+	2. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:
 
-##Publish to NuGet.org by using the NuGet CLI
+		![Copying an API Key from account settings](/images/Create/publish_APIKey.png)
 
-###Get your API Key
+	3. At a command prompt, run the following command:
 
-Go [nuget.org](http://nuget.org/) and register for an account. Then, click on your username to see an API Key that was generated for you.
+			nuget setApiKey Your-API-Key
 
-![Get your API Key](/images/Create/publish_NuGet-API-Key.PNG)
+		This will store your API key on the machine so that you will not need to do this step again on the same machine.
 
-###Using the push command
+	4. Push your package to NuGet Gallery using the command:
 
-In a command prompt, run the following command:
+			nuget push YourPackage.nupkg
 
-	nuget set ApiKey Your-API-Key
+	5. Before being made public, all packages uploaded to nuget.org are scanned for viruses and rejected if any viruses are found. All packages listed on nuget.org are also scanned periodically.
 
-This will store your API key on the machine so that you will not need to do this step again on the same machine.
+	6. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page: 
 
-Push your package to NuGet Gallery using the command:
+		![Message indicating a package is not yet indexed](/images/Create/publish_NotYetIndexed.png)
 
-	nuget push YourPackage.nupkg
 
-**Recommended Reading:** [NuGet CLI reference](/ndocs/tools/nuget.exe-cli-reference), [setApiKey](/ndocs/tools/nuget.exe-cli-reference#setapikey), [Push](/ndocs/tools/nuget.exe-cli-reference#push)
+## Managing package owners on nuget.org
+
+Although each NuGet package's `.nuspec` file defines the package's authors, the nuget.org gallery does not use that metadata to define ownership. Instead, nuget.org assigns initial ownership to the person who publishes the package. This will be either the logged-in user who uploaded the package through the nuget.org UI, or the users whose API key was used with `nuget SetApiKey` or `nuget push`.  
+
+All package owners have full permissions for the package, including adding and removing other owners, and publishing updates.
+
+To change ownership of a package, do the following:
+  
+1. Sign in to nuget.org with the account that is the current owner of the package.
+1. Click on your username, then on **Manage my packages**, then on the package you want to manage.
+1. Click the **Manage owners** link on the left side.
+
+From here you have several options:
+
+1. To add an owner, enter their NuGet account name and click **Add**. This sends an email to that new co-owner with a confirmation link. Once confirmed, that person has full permissions to add and remove owners. (Until confirmed, the **Manage owners** page will indicate "pending approval" for that person).
+1. To remove an owner, select their name on the **Manage owners** and click **Remove**.
+1. To transfer ownership (as when ownership changes or a package was published under the wrong account), simply add the new owner, and once they've confirmed ownership they can remove you from the list.   
+
+To assign ownership to a company or group, create a nuget.org account using an email alias that is forwarded to the appropriate team members. For example, various Microsoft ASP.NET packages are co-owned by the [microsoft](http://nuget.org/profiles/microsoft) and [aspnet](http://nuget.org/profiles/aspnet) accounts, which simply such aliases.
+
+### Recovering package ownership
+
+Occasionally, a package may not have an active owner. For example, the original owner may have left the company that produces the package, nuget.org credentials are lost, or earlier bugs in the gallery left a package ownerless. 
+
+If you are the rightful owner of a package and need to regain ownership, use the [contact form](https://www.nuget.org/policies/Contact) on nuget.org to explain your situation to the NuGet team. We will then follow a process to verify your ownership of the package, including trying to locate the existing owner through the package'p Project URL, Twitter, email, or other means. But if all else fails, we can send you a new invite to become an owner. 
+
+
+
