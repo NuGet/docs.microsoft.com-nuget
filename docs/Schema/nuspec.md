@@ -163,7 +163,7 @@ These elements must appear within a &lt;metadata&gt; element.
 <table>
         <tr>
             <td><strong>packageTypes</strong></td>
-            <td><em>(3.3+)</em> A collection of zero or more &lt;packageType&gt; elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of <em>name</em> and <em>verion</em>. See <a href="../create-packages/creating-a-package#setting-a-package-type">Setting a package type</a>.
+            <td><em>(3.3+)</em> A collection of zero or more &lt;packageType&gt; elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of <em>name</em> and <em>verion</em>. See <a href="/ndocs/create-packages/creating-a-package#setting-a-package-type">Setting a package type</a>.
             </td>
         </tr>
         <tr>
@@ -274,7 +274,7 @@ The &lt;dependencies&gt; element within &lt;metadata&gt; contains any number of 
     </tr>
     <tr>
         <td><code>version</code></td>
-        <td>(Required) The range of versions acceptable as a dependency. See <a href="dependency-versions#version-ranges-in--nuspec-files">Dependency versions</a> for exact syntax.</td>
+        <td>(Required) The range of versions acceptable as a dependency. See <a href="/ndoc/create-packages/dependency-versions#version-ranges-in--nuspec-files">Dependency versions</a> for exact syntax.</td>
     </tr>
 </table>
 
@@ -295,7 +295,7 @@ As an alternative to a single flat list, dependencies can also be specified acco
 
 Each group has an attribute named `targetFramework` and contains zero or more &lt;dependency&gt; elements. Those dependencies will be installed together when  the target framework is compatible with the project's framework profile.
 
-The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](target-frameworks) for the exact framework identifiers.
+The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](/ndocs/schema/target-frameworks) for the exact framework identifiers.
 
 <div class="block-callout-info">
 	<strong>Note</strong>	
@@ -343,7 +343,7 @@ As an alternative to a single flat list, references can also be specified accord
 
 Each group has an attribute named `targetFramework` and contains zero or more &lt;reference&gt; elements. Those references will be added to a project when the target framework is compatible with the project's framework profile.
 
-The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of references. See [Target frameworks](target-frameworks) for the exact framework identifiers.
+The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of references. See [Target frameworks](/ndocs/schema/target-frameworks) for the exact framework identifiers.
 
 <div class="block-callout-info">
 	<strong>Note</strong>	

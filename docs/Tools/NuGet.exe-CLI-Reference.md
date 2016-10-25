@@ -185,7 +185,7 @@ In NuGet 3.4+, &lt;value&gt; can be use environment variables.
 
 ##  delete 
 
-Deletes or unlists a package from a package source. For nuget.org, the action is to [unlist the package](../Create/Deleting-Packages).
+Deletes or unlists a package from a package source. For nuget.org, the action is to [unlist the package](/ndocs/policies/Deleting-Packages).
 
 ### Usage
     nuget delete <packageID> <packageVersion> [options]

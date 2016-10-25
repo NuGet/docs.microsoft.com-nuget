@@ -60,7 +60,7 @@ Using a new tool or technology usually comes with a learning curve. Luckily for 
 
 That said, authoring packages–and especially good packages–along with  embracing NuGet in automated build and deployment processes, requires spending a little more time with the following resources:
 
-- [Official NuGet Documentation site](docs.nuget.org)
+- [Official NuGet Documentation site](http://docs.nuget.org)
 - [NuGet Blog](http://blog.nuget.org/)
 - [NuGet team on Twitter, @nuget](http://twitter.com/nuget)
 - Books:
