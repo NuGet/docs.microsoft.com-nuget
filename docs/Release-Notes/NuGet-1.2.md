@@ -1,6 +1,6 @@
-﻿# NuGet 1.2 Release Notes
+# NuGet 1.2 Release Notes
 
-[NuGet 1.0 and 1.1 Release Notes](../nuget-1.1) | [NuGet 1.3 Release Notes](../nuget-1.3)
+[NuGet 1.0 and 1.1 Release Notes](./nuget-1.1) | [NuGet 1.3 Release Notes](./nuget-1.3)
 
 NuGet 1.2 was released on March 30, 2011.
 
@@ -12,7 +12,7 @@ that target specific profiles such as the Windows Phone profile. To target a spe
 a dash followed by the profile abbreviation. For example, to target SilverLight running on a Windows Phone (aka Windows 
 Phone 7), you can put an assembly in the sl3-wp folder as demonstrated in the following screenshot.
 
-![Framework Profile Folder Layout](../media/framework-profile-support.png)
+![Framework Profile Folder Layout](./media/framework-profile-support.png)
 
 You might ask why we didn’t just choose to use “wp7” as the moniker. In part, we’re anticipating that Windows Phone 7 
 might run a newer version of Silverlight in the future, in which case you may need to be more specific about which 
@@ -80,7 +80,7 @@ something about incompatible schema, you are running into this error. Please upd
 * **NuGet.Server incompatibility**: If you’re hosting an internal NuGet feed using the NuGet.Server project, you’ll 
 need to update that project with the latest version of NuGet.Server.
 * **Signature Mismatch Error**: If you run into an error during an upgrade with a message about a Signature Mismatch, 
-you'll need to uninstall NuGet first and then install it. This is listed in our [Known Issues page](../Release-Notes/Known-Issues) 
+you'll need to uninstall NuGet first and then install it. This is listed in our [Known Issues page](./Known-Issues) 
 which provides more details. The issue only affects those running Visual Studio 2010 SP1 and have a version of NuGet 
 1.0 installed that was incorrectly signed. This version was only made available from the CodePlex website for a brief 
 period so this issue shouldn't affect too many people.
