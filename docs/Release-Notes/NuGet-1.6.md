@@ -1,6 +1,6 @@
 ﻿# NuGet 1.6 Release Notes
 
-[NuGet 1.5 Release Notes](../nuget-1.5) | [NuGet 1.7 Release Notes](../nuget-1.7)
+[NuGet 1.5 Release Notes](/release-notes/nuget-1.5) | [NuGet 1.7 Release Notes](/release-notes/nuget-1.7)
 
 NuGet 1.6 was released on December 13, 2011.
 
@@ -44,7 +44,7 @@ for when you want to add it back in.
 
 NuGet 1.6 allows unchecking a package source to disable it, but keep it around.
 
-![Disabling a package](../media/package-source-with-disabled-source.png)
+![Disabling a package](./media/package-source-with-disabled-source.png)
 
 ## Bug Fixes
 NuGet 1.6 had a total of 106 work items fixed. 95 of those were classified as bugs and 10 of those were 

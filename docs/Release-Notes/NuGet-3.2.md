@@ -1,7 +1,7 @@
 
 # NuGet 3.2 Release Notes
 
-[NuGet 3.2-RC Release Notes](../nuget-3.2-RC) | [NuGet 3.2.1 Release Notes](../nuget-3.2.1) 
+[NuGet 3.2-RC Release Notes](/release-notes/nuget-3.2-RC) | [NuGet 3.2.1 Release Notes](/release-notes/nuget-3.2.1) 
 
 NuGet 3.2 was released September 16, 2015 as a collection of improvements and fixes for the 3.1.1 release and is available from both [dist.nuget.org](http://dist.nuget.org/index.html) and the [Visual Studio Gallery](https://visualstudiogallery.msdn.microsoft.com/5d345edc-2e2d-4a9c-b73b-d53956dc458d?SRC=Home). 
 
@@ -49,7 +49,7 @@ A complete list of issues addressed in this release can be found in the NuGet Gi
 
 * A new context menu item was added to the Solution Explorer on the solution node that allows packages to be restored without building the solution ([1274](https://github.com/NuGet/Home/issues/1274)).
 
-![New 'Restore Packages' Context Menu Item](../media/NuGet-3.2/newContextMenu.png)
+![New 'Restore Packages' Context Menu Item](./media/NuGet-3.2/newContextMenu.png)
 
 ### Updates and Fixes in Visual Studio
 

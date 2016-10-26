@@ -1,6 +1,6 @@
 # NuGet 2.8 Release Notes
 
-[NuGet 2.7.2 Release Notes](../nuget-2.7.2) | [NuGet 2.8.1 Release Notes](../nuget-2.8.1)
+[NuGet 2.7.2 Release Notes](/release-notes/nuget-2.7.2) | [NuGet 2.8.1 Release Notes](/release-notes/nuget-2.8.1)
 
 NuGet 2.8 was released on January 29, 2014.
 
@@ -46,7 +46,7 @@ In this example, even though Developer1 and Developer2 installed PackageA@1.0.0,
 ### -DependencyVersion Switch
 Though NuGet 2.8 changes the _default_ behavior for resolving dependencies, it also adds more precise control over dependency resolution process via the -DependencyVersion switch in the package manager console. The switch enables resolving dependencies to the lowest possible version (default behavior), the highest possible version, or the highest minor or patch version.  This switch only works for install-package in the powershell command.
 
-![DependencyVersion Switch](../media/NuGet-2.8/dependencyversion.png)
+![DependencyVersion Switch](./media/NuGet-2.8/dependencyversion.png)
 
 ### DependencyVersion Attribute
 In addition to the -DependencyVersion switch detailed above, NuGet has also allowed for the ability to set a new attribute in the nuget.config file defining what the default value is, if the -DependencyVersion switch is not specified in an invocation of install-package. This value will also be respected by the NuGet Package Manager Dialog for any install package operations. To set this value, add the attribute below to your nuget.config file:
@@ -82,7 +82,7 @@ Many different types of capabilities can be delivered as NuGet packages - includ
 ### Individual packages.config Files for Different Platforms
 When developing applications for multiple target platforms, it is common to have different project files for each of the respective build environments. It is also common to consume different NuGet packages in different project files, as packages have varying levels of support for different platforms. NuGet 2.8 provides improved support for this scenario by creating different packages.config files for different platform-specific project files.
 
-![Multiple package.config files](../media/NuGet-2.8/multiple-packageconfigs.png)
+![Multiple package.config files](./media/NuGet-2.8/multiple-packageconfigs.png)
 
 ### Fallback to Local Cache
 Though NuGet packages are typically consumed from a remote gallery such as [the NuGet gallery](http://www.nuget.org/) using a network connection, there are many scenarios where the client is not connected. Without a network connection, the NuGet client was not able to successfully install packages - even when those packages were already on the client's machine in the local NuGet cache. NuGet 2.8 adds automatic cache fallback to the package manager console. For example, when disconnecting the network adapter and installing jQuery, the console shows the following:
@@ -99,7 +99,7 @@ Though NuGet packages are typically consumed from a remote gallery such as [the 
 The cache fallback feature does not require any specific command arguments. Additionally, cache fallback currently works only in the package manager console - the behavior does not currently work in the package manager dialog.
 
 ### WebMatrix NuGet Client Updates
-Along with NuGet 2.8, the NuGet extension for WebMatrix was also updated to include many of the major features delivered with [NuGet 2.5](../NuGet-2.5). New capabilities include those such as 'Update All', 'Minimum NuGet Version', and allowing for overwriting of content files.
+Along with NuGet 2.8, the NuGet extension for WebMatrix was also updated to include many of the major features delivered with [NuGet 2.5](/release-notes/nuget-2.5). New capabilities include those such as 'Update All', 'Minimum NuGet Version', and allowing for overwriting of content files.
 
 To update your NuGet Package Manager extension in WebMatrix 3:
 

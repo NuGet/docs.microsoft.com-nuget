@@ -1,6 +1,6 @@
 # NuGet 3.0 Beta Release Notes
 
-[NuGet 3.0 Preview Release Notes](../nuget-3.0-preview) | [NuGet 3.0 RC Release Notes](../nuget-3.0-rc)
+[NuGet 3.0 Preview Release Notes](/release-notes/nuget-3.0-preview) | [NuGet 3.0 RC Release Notes](/release-notes/nuget-3.0-rc)
 
 NuGet 3.0 Beta was released on February 23, 2015 for the Visual Studio 2015 CTP 6 release. This release means a lot to our team, as we have a number of architecture and performance improvements to share, and we're excited to start tuning the performance settings on our nuget.org service.
 
@@ -22,7 +22,7 @@ We've put a lot of time into building our v3 API and will continue to maintain t
 
 We've enhanced the user-interface in this release to include a combobox that will allow you to choose an action to take with the package and transitioned the preview button into a checkbox in the options area of the screen.  The options area is no longer collapsible and now provides a help link describing the options available.
 
-![The new NuGet UI](../media/NuGet-3.0-Beta/updated-ui.png)
+![The new NuGet UI](./media/NuGet-3.0-Beta/updated-ui.png)
 
 
 ### Operation Logging

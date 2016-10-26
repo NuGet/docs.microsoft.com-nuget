@@ -1,6 +1,6 @@
 # NuGet 2.5 Release Notes
 
-[NuGet 2.2.1 Release Notes](../nuget-2.2.1) | [NuGet 2.6 Release Notes](../nuget-2.6)
+[NuGet 2.2.1 Release Notes](/release-notes/nuget-2.2.1) | [NuGet 2.6 Release Notes](/release-notes/nuget-2.6)
 
 NuGet 2.5 was released on April 25, 2013. This release was so big, we felt compelled to skip versions 2.3 and 2.4! To date, this is the largest release we've had for NuGet, with over [160 work items](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.5&status=all) in the release.
 
@@ -44,7 +44,7 @@ We also appreciate the following individuals for finding bugs with NuGet 2.5 Bet
 
 One of the most requested features of all time has been the ability to overwrite content files that already exist on disk when included in a NuGet package. Starting with NuGet 2.5, these conflicts are identified and you will be prompted to overwrite the files, whereas previously these files were always skipped.
 
-![Overwrite content files](../media/NuGet-2.5/overwrite-file.png)
+![Overwrite content files](./media/NuGet-2.5/overwrite-file.png)
 
 'NuGet.exe update' and 'Install-Package' now both have a new option '-FileConflictAction' to set some default for command-line scenarios.
 
@@ -93,7 +93,7 @@ To try this feature out:
 1. Select 'Updates'
 1. Click the 'Update All' button
 
-![Update All button in the dialog](../media/NuGet-2.5/update-all.png)
+![Update All button in the dialog](./media/NuGet-2.5/update-all.png)
 
 ## Improved project reference support for NuGet.exe Pack
 
@@ -147,7 +147,7 @@ For more background on this change, read the detailed [work item](http://nuget.c
 
 If you are troubleshooting NuGet.exe or just curious what HTTP requests are made during operations, the '-verbosity detailed' switch will now output all HTTP requests made.
 
-![HTTP output from NuGet.exe](../media/NuGet-2.5/verbosity.png)
+![HTTP output from NuGet.exe](./media/NuGet-2.5/verbosity.png)
 
 ## NuGet.exe push now supports UNC and directory sources
 

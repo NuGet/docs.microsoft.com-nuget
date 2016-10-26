@@ -1,6 +1,6 @@
 # NuGet 2.8.5 Release Notes
 
-[NuGet 2.8.3 Release Notes](../nuget-2.8.3) | [NuGet 2.8.6 Release Notes](../nuget-2.8.6) 
+[NuGet 2.8.3 Release Notes](/release-notes/nuget-2.8.3) | [NuGet 2.8.6 Release Notes](/release-notes/nuget-2.8.6) 
 
 NuGet 2.8.5 was released March 30, 2015. It is a minor update to our 2.8.3 VSIX with some targeted fixes. 
 

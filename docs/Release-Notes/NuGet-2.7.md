@@ -1,6 +1,6 @@
 # NuGet 2.7 Release Notes
 
-[NuGet 2.6.1 for WebMatrix Release Notes](../nuget-2.6.1-for-webmatrix) | [NuGet 2.7.1 Release Notes](../nuget-2.7.1)
+[NuGet 2.6.1 for WebMatrix Release Notes](/release-notes/nuget-2.6.1-for-webmatrix) | [NuGet 2.7.1 Release Notes](/release-notes/nuget-2.7.1)
 
 NuGet 2.7 was released on August 22, 2013.
 
@@ -74,7 +74,7 @@ There are several ways to omit your `packages` folder from source control. For m
 
 While all users are implicitly opted into Automatic Package Restore consent, you can easily opt out through the Package Manager settings in Visual Studio.
 
-![Package Manager Settings](../media/NuGet-2.7/package-manager-settings.png)
+![Package Manager Settings](./media/NuGet-2.7/package-manager-settings.png)
 
 #### Simplified Package Restore from the Command-Line
 
@@ -90,7 +90,7 @@ The Restore command will open the solution file and find all projects within the
 
 #### The New Package Restore Workflow
 
-We are excited about these changes to Package Restore, as it introduces a new workflow. If you want to omit your packages from source control you simply don't commit the `packages` folder. Visual Studio users who open and build the solution will see the packages automatically restored. For command-line builds, simply invoke `nuget.exe restore` before invoking `msbuild`. You'll no longer need to remember to use the "Enable NuGet Package Restore" gesture on your solution, and we'll no longer need to modify your projects to alter the build. And this also yields a much improved experience for packages that include MSBuild imports, especially for imports added through NuGet's recent feature for [automatically importing props/targets files](../NuGet-2.5#Automatic-import-of-msbuild-targets-and-props-files) from the \build folder.
+We are excited about these changes to Package Restore, as it introduces a new workflow. If you want to omit your packages from source control you simply don't commit the `packages` folder. Visual Studio users who open and build the solution will see the packages automatically restored. For command-line builds, simply invoke `nuget.exe restore` before invoking `msbuild`. You'll no longer need to remember to use the "Enable NuGet Package Restore" gesture on your solution, and we'll no longer need to modify your projects to alter the build. And this also yields a much improved experience for packages that include MSBuild imports, especially for imports added through NuGet's recent feature for [automatically importing props/targets files](/release-notes/nuget-2.5#Automatic-import-of-msbuild-targets-and-props-files) from the \build folder.
 
 In addition to the work we've done ourselves, we're also working with some important partners to round this new approach out. We don't have concrete timelines for any of these yet, but each partner is as excited as we are about the new approach.
 

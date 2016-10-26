@@ -1,7 +1,7 @@
 
 # NuGet 3.0 RC2 Release Notes
 
-[NuGet 3.0 RC Release Notes](../nuget-3.0-RC) | [NuGet 3.0 Release Notes](../nuget-3.0.0)
+[NuGet 3.0 RC Release Notes](/release-notes/nuget-3.0-RC) | [NuGet 3.0 Release Notes](/release-notes/nuget-3.0.0)
 
 NuGet 3.0 RC2 was released on June 3, 2015 as an interim release available from the Visual Studio 2015 Extension Gallery and [Codeplex](https://nuget.codeplex.com/releases/view/615507). This release has a number of important bug fixes and performance improvements that we felt were important to release before the completed Visual Studio 2015 release. This NuGet extension version is only available for Visual Studio 2015.
 

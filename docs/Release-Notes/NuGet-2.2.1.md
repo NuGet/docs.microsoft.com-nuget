@@ -1,6 +1,6 @@
 # NuGet 2.2.1 Release Notes
 
-[NuGet 2.2 Release Notes](../nuget-2.2) | [NuGet 2.5 Release Notes](../nuget-2.5)
+[NuGet 2.2 Release Notes](/release-notes/nuget-2.2) | [NuGet 2.5 Release Notes](/release-notes/nuget-2.5)
 
 NuGet 2.2.1 was released on February 15, 2013.  The VS Extension version number is 2.2.40116.9051.
 
