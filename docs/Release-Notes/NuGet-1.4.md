@@ -1,6 +1,6 @@
 ﻿# NuGet 1.4 Release Notes
 
-[NuGet 1.3 Release Notes](../nuget-1.3) | [NuGet 1.5 Release Notes](../nuget-1.5)
+[NuGet 1.3 Release Notes](/release-notes/nuget-1.3) | [NuGet 1.5 Release Notes](/release-notes/nuget-1.5)
 
 NuGet 1.4 was released on June 17, 2011.
 
@@ -40,12 +40,12 @@ the dialog once per project.
 NuGet 1.4 adds support for installing/uninstalling/updating packages in multiple projects at the same time. Simply launch 
 the by right clicking the Solution and selecting the **Manage NuGet Packages** menu option.
 
-![Solution Level Manage NuGet Packages dialog](../media/manage-nuget-packages-solution-dialog.png)
+![Solution Level Manage NuGet Packages dialog](./media/manage-nuget-packages-solution-dialog.png)
 
 Notice that in the title bar of the dialog, the name of the solution is displayed, not the name of a project. 
 Package operations now provide a list of checkboxes with the list of projects the operation should apply to.
 
-![Manage NuGet Packages Project Selection](../media/manage-nuget-packages-project-selection.png)
+![Manage NuGet Packages Project Selection](./media/manage-nuget-packages-project-selection.png)
 
 For more details, see the topic on [Managing Packages for the Solution](/ndocs/tools/package-manager-ui#managing-packages-for-the-solution).
 
@@ -75,22 +75,22 @@ menu option, enables you to easily visualize all the projects and their package 
 _**Important Note:** This feature takes advantage of the DGML support in Visual Studio. Creating the visualization is only 
 supported in Visual Studio Ultimate. Viewing a DGML diagram is only supported in Visual Studio Premium or Higher._
 
-![Package Visualizer](../media/package-visualizer.png)
+![Package Visualizer](./media/package-visualizer.png)
 
 ### Automatic Update Check for the NuGet Dialog
 Some versions of NuGet introduce new features expressed via the NuSpec file which are not understood by older versions of the NuGet dialog. 
-One example is the introduction in NuGet 1.4 for [specifying framework assemblies](../NuGet-1.2#Specifying-Framework-Assembly-References-(GAC)). 
+One example is the introduction in NuGet 1.4 for [specifying framework assemblies](/release-notes/nuget-1.2#Specifying-Framework-Assembly-References-(GAC)). 
 Because of this, it's important to use the latest version of NuGet to ensure you can use packages taking advantage of the latest features. 
 To make updates to NuGet more visible, the NuGet dialog contains logic to highlight when a newer version is available. 
 
 _**Note**: The check is only made if the **Online** tab has been selected in the current session._
 
-![Manage NuGet Packages dialog with new version available](../media/manage-nuget-packages-update-notification.png)
+![Manage NuGet Packages dialog with new version available](./media/manage-nuget-packages-update-notification.png)
 
 To turn off the automatic check for updates, go to the NuGet settings dialog and uncheck 
 **Automatically check for updates**.
 
-![NuGet Settings](../media/nuget-settings.png)
+![NuGet Settings](./media/nuget-settings.png)
 
 This feature was actually added in NuGet 1.3, but would not be visible, of course, until an update to 1.3, such as 
 NuGet 1.4, was made available.

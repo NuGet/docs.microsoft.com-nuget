@@ -1,6 +1,6 @@
 # NuGet 3.0 Preview Release Notes
 
-[NuGet 2.9 Release Notes](../nuget-2.9) | [NuGet 3.0 Beta Release Notes](../nuget-3.0-beta)
+[NuGet 2.9 Release Notes](/release-notes/nuget-2.9) | [NuGet 3.0 Beta Release Notes](/release-notes/nuget-3.0-beta)
 
 NuGet 3.0 Preview was released on November 12, 2014 as part of the Visual Studio 2015 Preview release. We released NuGet 3.0 Preview. This is a big release for us (albeit a preview), and we're excited to start getting feedback on our changes.
 
@@ -12,7 +12,7 @@ This NuGet 3.0 Preview is included in Visual Studio 2015 Preview. We are working
 
 The first thing you'll notice about NuGet 3.0 Preview is our brand new UI. It's no longer a modal dialog; it's now a full Visual Studio document window. This allows you to open the UI for multiple projects (and/or the solution) at once, tear the window off to another monitor, dock it however you'd like, etc.
 
-![The new NuGet UI](../media/NuGet-3.0-Preview/new-ui.png)
+![The new NuGet UI](./media/NuGet-3.0-Preview/new-ui.png)
 
 Beyond the usability differences because of abandoning the modal dialog, we also have lots of new features in the new UI.
 
@@ -20,7 +20,7 @@ Beyond the usability differences because of abandoning the modal dialog, we also
 
 Perhaps the most requested UI feature is to allow version selection for package installation and update--this is now available.
 
-![Package Version Selection](../media/NuGet-3.0-Preview/version-selection.png)
+![Package Version Selection](./media/NuGet-3.0-Preview/version-selection.png)
 
 Whether you are installing or updating a package, the version dropdown allows you to see all of the versions available for the package, with some notable versions promoted to the top of the list for easy selection. You no longer need to use the PowerShell Console to get specific versions that are not the latest.
 
@@ -30,11 +30,11 @@ Our previous UI had 3 tabs for Installed, Online, and Updates. The packages list
 
 We now have a combined experience, where you can install, update, or uninstall a package regardless of how you got the package selected. To assist with the specific workflows, we now have a Filter dropdown that lets you filter the packages visible, but then the actions available for the package are consistent.
 
-![Uninstall a Package](../media/NuGet-3.0-Preview/uninstall-package.png)
+![Uninstall a Package](./media/NuGet-3.0-Preview/uninstall-package.png)
 
 By using the "Installed" filter, you can then easily see your installed packages, which ones have updates available, and then you can either uninstall or update the package by changing the version selection to see change the action available.
 
-![Update a Package](../media/NuGet-3.0-Preview/update-package.png)
+![Update a Package](./media/NuGet-3.0-Preview/update-package.png)
 
 ### Version Consolidation
 
@@ -42,7 +42,7 @@ It's common to have the same package installed into multiple projects within you
 
 The solution-level package management window can be accessed by right-clicking on the solution and choosing Manage NuGet Packages for Solution. From there, if you select a package that is installed into multiple projects, but with different versions in use, a new "Consolidate" action becomes available. In the screen shot below, `Newtonsoft.Json` was installed into the `SamplesClassLibrary` with version `6.0.4` and installed into `SamplesConsoleApp` with version `5.0.4`.
 
-![Consolidate Versions](../media/NuGet-3.0-Preview/consolidate.png)
+![Consolidate Versions](./media/NuGet-3.0-Preview/consolidate.png)
 
 Here's the workflow for consolidating onto a single version.
 
@@ -58,23 +58,23 @@ Regardless of which operation you're performing--install/update/uninstall--the n
 
 In the example below, we can see that installing Microsoft.AspNet.SignalR will result in quite a few changes to the project.
 
-![Preview Installing SignalR](../media/NuGet-3.0-Preview/preview.png)
+![Preview Installing SignalR](./media/NuGet-3.0-Preview/preview.png)
 
 ### Installation Options
 
 Using the PowerShell Console, you've had control over a couple of notable installation options. We've now brought those features into the UI as well. You can now control the dependency resolution behavior for how versions of the dependencies are selected.
 
-![Dependency Behavior](../media/NuGet-3.0-Preview/dependency-behavior.png)
+![Dependency Behavior](./media/NuGet-3.0-Preview/dependency-behavior.png)
 
 You can also specify the action to take when content files from packages conflict with files already in your project.
 
-![File Conflict Action](../media/NuGet-3.0-Preview/file-conflict-action.png)
+![File Conflict Action](./media/NuGet-3.0-Preview/file-conflict-action.png)
 
 ### Infinite Scrolling
 
 We used to get quite a bit of feedback on our UI having both the scrolling and paging paradigms when listing packages. It was pretty common to have to scroll to the bottom of the short list, click the next page number, and then scroll again. With the new UI, we've implemented infinite scrolling in the package list so that you only need to scroll--no more paging.
 
-![Infinite Scrolling](../media/NuGet-3.0-Preview/infinite-scrolling.png)
+![Infinite Scrolling](./media/NuGet-3.0-Preview/infinite-scrolling.png)
 
 ### Make it Work, Make it Fast, Make it Pretty
 

@@ -1,6 +1,6 @@
 # NuGet 2.0 Release Notes
 
-[NuGet 1.8 Release Notes](../nuget-1.8) | [NuGet 2.1 Release Notes](../nuget-2.1)
+[NuGet 1.8 Release Notes](/release-notes/nuget-1.8) | [NuGet 2.1 Release Notes](/release-notes/nuget-2.1)
 
 NuGet 2.0 was released on June 19, 2012.
 

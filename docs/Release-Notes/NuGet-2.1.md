@@ -1,6 +1,6 @@
 # NuGet 2.1 Release Notes
 
-[NuGet 2.0 Release Notes](../nuget-2.0) | [NuGet 2.2 Release Notes](../nuget-2.2)
+[NuGet 2.0 Release Notes](/release-notes/nuget-2.0) | [NuGet 2.2 Release Notes](/release-notes/nuget-2.2)
 
 NuGet 2.1 was released on October 4, 2012.
 
@@ -30,7 +30,7 @@ In order to have the team’s internal package repository available for all proj
 
 We can now see that the source was added by running the ‘nuget.exe sources’ command from any directory beneath c:\myteam as shown below:
 
-![Package sources from parent nuget config](../media/releasenotes-21-cfg-hierarchy.png)
+![Package sources from parent nuget config](./media/releasenotes-21-cfg-hierarchy.png)
  
 NuGet.config files are searched for in the following order:
 
@@ -58,11 +58,11 @@ In this example, the shared nuget.config file specifies a shared packages folder
 
 As an example, consider the following portable class library’s available target platforms.
 
-![Portable library creation dialog](../media/releasenotes-21-plib.png)
+![Portable library creation dialog](./media/releasenotes-21-plib.png)
  
 After the library is built and the command ‘nuget.exe pack MyPortableProject.csproj’ is run, the new portable library package folder structure can be seen by examining the contents of the generated NuGet package.
 
-![Portable library package layout](../media/releasenotes-21-plib-layout.png)
+![Portable library package layout](./media/releasenotes-21-plib-layout.png)
 
 As you can see, the portable library folder name convention follows the pattern ‘portable-{framework 1}+{framework n}’ where the framework identifiers follow the existing [framework name and version conventions](/ndocs/schema/target-frameworks). One exception to the name and version conventions is found in the framework identifier used for Windows Phone.  This moniker should use the framework name ‘wp’ (wp7, wp71 or wp8). Using ‘silverlight-wp7’, for example, will result in an error.
 
@@ -113,7 +113,7 @@ In all of the above changes, the old framework names will continue to be fully s
 ## Improved Search in Package Manager Dialog
 Over the past several iterations, changes have been introduced to the NuGet gallery that greatly improved the speed and relevance of package searches.  However, these improvements were limited to the nuget.org Web site.  NuGet 2.1 makes the improved search experience available through the NuGet package manager dialog.  As an example, imagine that you wanted to find the Windows Azure Caching Preview package.  A reasonable search query for this package may be “Azure Cache”.  In previous versions of the package manager dialog, the desired package would not even be listed on the first page of results.  However, in NuGet 2.1, the desired package now shows up at the top of the search results.
 
-![Package manager dialog search](../media/releasenotes-21-vsdlg-search.png)
+![Package manager dialog search](./media/releasenotes-21-vsdlg-search.png)
  
 ## Force Package Update
 Prior to NuGet 2.1, NuGet would skip updating a package when there was a not a high version number.  This introduced friction for certain scenarios – particularly in the case of build or CI scenarios where the team did not want to increment the package version number with each build.  The desired behavior was to force an update regardless.  NuGet 2.1 addresses this with the ‘reinstall’ flag.  For example, previous versions of NuGet would result in the following when attempting to update a package that did not have a more recent package version:
@@ -134,7 +134,7 @@ Another scenario where the reinstall flag proves beneficial is that of framework
 ## Edit Package Sources Within Visual Studio
 In previous versions of NuGet, updating a package source from within the Visual Studio options dialog required deleting and re-adding the package source.  NuGet 2.1 improves this workflow by supporting update as a first class function of the configuration user interface.
 
-![Package manager configuration dialog](../media/releasenotes-21-edit-pkg-source.png)
+![Package manager configuration dialog](./media/releasenotes-21-edit-pkg-source.png)
  
 ## Bug Fixes
 NuGet 2.1 includes many bug fixes. For a full list of work items fixed in NuGet 2.0, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Fixed&type=All&priority=All&release=NuGet%202.1&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).

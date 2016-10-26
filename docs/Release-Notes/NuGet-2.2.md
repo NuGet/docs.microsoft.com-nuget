@@ -1,17 +1,17 @@
 # NuGet 2.2 Release Notes
 
-[NuGet 2.1 Release Notes](../nuget-2.1) | [NuGet 2.2.1 Release Notes](../nuget-2.2.1)
+[NuGet 2.1 Release Notes](/release-notes/nuget-2.1) | [NuGet 2.2.1 Release Notes](/release-notes/nuget-2.2.1)
 
 NuGet 2.2 was released on December 12, 2012.
 
 ## Visual Studio Quick Launch
 One of the new features that was added in Visual Studio 2012 was the [quick launch dialog](http://msdn.microsoft.com/library/hh417697.aspx). NuGet 2.2 extends this dialog, allowing it to initialize the package manager dialog with the search terms entered in the quick launch. For example, entering 'jquery' in quick launch now includes an option in the results to search NuGet packages matching 'jquery'.
 
-![NuGet in Visual Studio Quick Launch](../media/quick-launch.png)
+![NuGet in Visual Studio Quick Launch](./media/quick-launch.png)
 
 Selecting this option will launch the standard NuGet package manager search experience for the term 'jquery'.
 
-![Pre-populated NuGet Package Manager Dialog](../media/pkg-mgr-search-from-quick-launch.png)
+![Pre-populated NuGet Package Manager Dialog](./media/pkg-mgr-search-from-quick-launch.png)
 
 ## Specify Entire Folder for Package Contents
 NuGet 2.2 now allows you to specify an entire directory in the `<file>` element of the .nuspec file to include all of the contents of that directory. For example, the following will cause all scripts in the package's scripts folder to be added to the contents\scripts folder when the package is installed into a project.

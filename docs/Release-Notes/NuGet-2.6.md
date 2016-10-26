@@ -1,6 +1,6 @@
 # NuGet 2.6 Release Notes
 
-[NuGet 2.5 Release Notes](../nuget-2.5) | [NuGet 2.6.1 for WebMatrix Release Notes](../nuget-2.6.1-for-webmatrix)
+[NuGet 2.5 Release Notes](/release-notes/nuget-2.5) | [NuGet 2.6.1 for WebMatrix Release Notes](/release-notes/nuget-2.6.1-for-webmatrix)
 
 NuGet 2.6 was released on June 26, 2013.
 
@@ -107,7 +107,7 @@ This feature is utilized by Visual Studio 2013, where a file is installed at:
 
 Within this file, a new package source called ".NET Framework Packages" is configured.
 
-![NuGet Config File machine wide settings](../media/NuGet-Config-File-Machine-Wide.png)
+![NuGet Config File machine wide settings](./media/NuGet-Config-File-Machine-Wide.png)
 
 ### Contextualizing Search
 

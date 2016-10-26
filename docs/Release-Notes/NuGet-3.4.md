@@ -1,7 +1,7 @@
 
 # NuGet 3.4 Release Notes
 
-[NuGet 3.4-RC Release Notes](../nuget-3.4-RC) | [NuGet 3.4.1 Release Notes](../nuget-3.4.1)
+[NuGet 3.4-RC Release Notes](/release-notes/nuget-3.4-RC) | [NuGet 3.4.1 Release Notes](/release-notes/nuget-3.4.1)
 
 NuGet 3.4 was released March 30, 2016 as part of the Visual Studio 2015 Update 2 and Visual Studio 15 Preview Release and was built with a few tenets in minds:
 
