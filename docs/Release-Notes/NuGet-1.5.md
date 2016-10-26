@@ -1,6 +1,6 @@
 ﻿# NuGet 1.5 Release Notes
 
-[NuGet 1.4 Release Notes](/release-notes/nuget-1.4) | [NuGet 1.6 Release Notes](/release-notes/nuget-1.6)
+[NuGet 1.4 Release Notes](/nuget/release-notes/nuget-1.4) | [NuGet 1.6 Release Notes](/nuget/release-notes/nuget-1.6)
 
 NuGet 1.5 was released on August 30, 2011.
 

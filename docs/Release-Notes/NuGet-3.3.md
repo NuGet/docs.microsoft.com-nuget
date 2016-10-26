@@ -1,7 +1,7 @@
 
 # NuGet 3.3 Release Notes
 
-[NuGet 3.2.1 Release Notes](/release-notes/nuget-3.2.1) | [NuGet 3.4-RC Release Notes](/release-notes/nuget-3.4-RC) 
+[NuGet 3.2.1 Release Notes](/nuget/release-notes/nuget-3.2.1) | [NuGet 3.4-RC Release Notes](/nuget/release-notes/nuget-3.4-RC) 
 
 NuGet 3.3 was released November 30, 2015 with a significant number of user interface updates and command-line features as well as a collection of useful fixes to the NuGet clients.
 

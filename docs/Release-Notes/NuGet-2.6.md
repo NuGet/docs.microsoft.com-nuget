@@ -1,6 +1,6 @@
 # NuGet 2.6 Release Notes
 
-[NuGet 2.5 Release Notes](/release-notes/nuget-2.5) | [NuGet 2.6.1 for WebMatrix Release Notes](/release-notes/nuget-2.6.1-for-webmatrix)
+[NuGet 2.5 Release Notes](/nuget/release-notes/nuget-2.5) | [NuGet 2.6.1 for WebMatrix Release Notes](/nuget/release-notes/nuget-2.6.1-for-webmatrix)
 
 NuGet 2.6 was released on June 26, 2013.
 

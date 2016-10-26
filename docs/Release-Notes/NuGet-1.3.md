@@ -1,6 +1,6 @@
 # NuGet 1.3 Release Notes
 
-[NuGet 1.2 Release Notes](/release-notes/nuget-1.2) | [NuGet 1.4 Release Notes](/release-notes/nuget-1.4)
+[NuGet 1.2 Release Notes](/nuget/release-notes/nuget-1.2) | [NuGet 1.4 Release Notes](/nuget/release-notes/nuget-1.4)
 
 NuGet 1.3 was released on April 25, 2011.
 

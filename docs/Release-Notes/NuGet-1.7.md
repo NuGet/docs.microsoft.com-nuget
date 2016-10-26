@@ -1,6 +1,6 @@
 ﻿# NuGet 1.7 Release Notes
 
-[NuGet 1.6 Release Notes](/release-notes/nuget-1.6) | [NuGet 1.8 Release Notes](/release-notes/nuget-1.8)
+[NuGet 1.6 Release Notes](/nuget/release-notes/nuget-1.6) | [NuGet 1.8 Release Notes](/nuget/release-notes/nuget-1.8)
 
 NuGet 1.7 was released on April 4, 2012.
 

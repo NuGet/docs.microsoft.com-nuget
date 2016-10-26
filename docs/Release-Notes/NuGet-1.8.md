@@ -1,6 +1,6 @@
 # NuGet 1.8 Release Notes
 
-[NuGet 1.7 Release Notes](/release-notes/nuget-1.7) | [NuGet 2.0 Release Notes](/release-notes/nuget-2.0)
+[NuGet 1.7 Release Notes](/nuget/release-notes/nuget-1.7) | [NuGet 2.0 Release Notes](/nuget/release-notes/nuget-2.0)
 
 NuGet 1.8 was released on May 23, 2012.
 

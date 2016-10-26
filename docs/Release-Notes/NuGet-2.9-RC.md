@@ -1,6 +1,6 @@
 # NuGet 2.9-RC Release Notes
 
-[NuGet 2.8.7 Release Notes](/release-notes/nuget-2.8.7) | [NuGet 3.0 Preview Release Notes](/release-notes/nuget-3.0-preview)
+[NuGet 2.8.7 Release Notes](/nuget/release-notes/nuget-2.8.7) | [NuGet 3.0 Preview Release Notes](/nuget/release-notes/nuget-3.0-preview)
 
 NuGet 2.9 was released September 10, 2015 as an update to the 2.8.7 VSIX for Visual Studio 2012 and 2013.  
 
