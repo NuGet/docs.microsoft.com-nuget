@@ -1,6 +1,6 @@
 # NuGet 3.0 Beta Release Notes
 
-[NuGet 3.0 Preview Release Notes](/release-notes/nuget-3.0-preview) | [NuGet 3.0 RC Release Notes](/release-notes/nuget-3.0-rc)
+[NuGet 3.0 Preview Release Notes](/nuget/release-notes/nuget-3.0-preview) | [NuGet 3.0 RC Release Notes](/nuget/release-notes/nuget-3.0-rc)
 
 NuGet 3.0 Beta was released on February 23, 2015 for the Visual Studio 2015 CTP 6 release. This release means a lot to our team, as we have a number of architecture and performance improvements to share, and we're excited to start tuning the performance settings on our nuget.org service.
 

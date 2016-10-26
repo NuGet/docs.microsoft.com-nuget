@@ -1,6 +1,6 @@
 # NuGet 2.8 Release Notes
 
-[NuGet 2.7.2 Release Notes](/release-notes/nuget-2.7.2) | [NuGet 2.8.1 Release Notes](/release-notes/nuget-2.8.1)
+[NuGet 2.7.2 Release Notes](/nuget/release-notes/nuget-2.7.2) | [NuGet 2.8.1 Release Notes](/nuget/release-notes/nuget-2.8.1)
 
 NuGet 2.8 was released on January 29, 2014.
 
@@ -99,7 +99,7 @@ Though NuGet packages are typically consumed from a remote gallery such as [the 
 The cache fallback feature does not require any specific command arguments. Additionally, cache fallback currently works only in the package manager console - the behavior does not currently work in the package manager dialog.
 
 ### WebMatrix NuGet Client Updates
-Along with NuGet 2.8, the NuGet extension for WebMatrix was also updated to include many of the major features delivered with [NuGet 2.5](/release-notes/nuget-2.5). New capabilities include those such as 'Update All', 'Minimum NuGet Version', and allowing for overwriting of content files.
+Along with NuGet 2.8, the NuGet extension for WebMatrix was also updated to include many of the major features delivered with [NuGet 2.5](/nuget/release-notes/nuget-2.5). New capabilities include those such as 'Update All', 'Minimum NuGet Version', and allowing for overwriting of content files.
 
 To update your NuGet Package Manager extension in WebMatrix 3:
 

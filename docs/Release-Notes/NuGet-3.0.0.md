@@ -1,7 +1,7 @@
 
 # NuGet 3.0 Release Notes
 
-[NuGet 3.0 RC2 Release Notes](/release-notes/nuget-3.0-RC2) | [NuGet 3.1 Release Notes](/release-notes/nuget-3.1)
+[NuGet 3.0 RC2 Release Notes](/nuget/release-notes/nuget-3.0-RC2) | [NuGet 3.1 Release Notes](/nuget/release-notes/nuget-3.1)
 
 NuGet 3.0 was released on July 20, 2015 as a bundle extension to Visual Studio 2015. We pushed to deliver this release with Visual Studio so that the complete updated NuGet 3.0 experience would be available for new Visual Studio users. This NuGet extension version is only available for Visual Studio 2015.  
 

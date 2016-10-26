@@ -1,6 +1,6 @@
 # NuGet 2.8.2 Release Notes
 
-[NuGet 2.8.1 Release Notes](/release-notes/nuget-2.8.1) | [NuGet 2.8.3 Release Notes](/release-notes/nuget-2.8.3)
+[NuGet 2.8.1 Release Notes](/nuget/release-notes/nuget-2.8.1) | [NuGet 2.8.3 Release Notes](/nuget/release-notes/nuget-2.8.3)
 
 NuGet 2.8.2 was released on May 22, 2014.  This release only included changes to the NuGet.exe command-line, the NuGet.Server package and other NuGet packages.  The release did not include an updated Visual Studio extension or WebMatrix extension.
 

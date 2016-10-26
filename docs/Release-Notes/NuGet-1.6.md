@@ -1,6 +1,6 @@
 ﻿# NuGet 1.6 Release Notes
 
-[NuGet 1.5 Release Notes](/release-notes/nuget-1.5) | [NuGet 1.7 Release Notes](/release-notes/nuget-1.7)
+[NuGet 1.5 Release Notes](/nuget/release-notes/nuget-1.5) | [NuGet 1.7 Release Notes](/nuget/release-notes/nuget-1.7)
 
 NuGet 1.6 was released on December 13, 2011.
 

@@ -1,7 +1,7 @@
 
 # NuGet 3.2 RC Release Notes
 
-[NuGet 3.1.1 Release Notes](/release-notes/nuget-3.1.1) | [NuGet 3.2 Release Notes](/release-notes/nuget-3.2) 
+[NuGet 3.1.1 Release Notes](/nuget/release-notes/nuget-3.1.1) | [NuGet 3.2 Release Notes](/nuget/release-notes/nuget-3.2) 
 
 NuGet 3.2 release candidate was released September 2, 2015 as a collection of improvements and fixes for the 3.1.1 release.  Also, these are the first releases that are published first to the new dist.nuget.org repository.
 

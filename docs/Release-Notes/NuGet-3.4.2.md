@@ -1,6 +1,6 @@
 # NuGet 3.4.2 Release Notes
 
-[NuGet 3.4 Release Notes](/release-notes/nuget-3.4) 
+[NuGet 3.4 Release Notes](/nuget/release-notes/nuget-3.4) 
 
 NuGet 3.4.2 was released on April 8, 2016 to address several issues that were identified in the 3.4 and 3.4.1 release.
 
