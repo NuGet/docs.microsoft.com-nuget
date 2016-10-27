@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["project.json Impact on Package Authors | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [983485df-9375-4827-b58b-70065320ee37] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 # project.json Impact on Package Authors
 
 The project.json system used in NuGet 3.x affects package authors in several ways as described in the following sections.
@@ -11,7 +40,7 @@ Traditional NuGet packages support a set of features that are not carried over t
 
 ### Install and uninstall scripts are ignored 
 
-The transitive restore model, described in [Dependency resolution](/ndocs/consume-packages/dependency-resolution#dependency-resolution-in-nuget-3-x), does not have a concept of "package install time". A package is either present or not present, but there is no consistent process that occurs when a package is installed.
+The transitive restore model, described in [Dependency resolution](/consume-packages/dependency-resolution#dependency-resolution-in-nuget-3-x), does not have a concept of "package install time". A package is either present or not present, but there is no consistent process that occurs when a package is installed.
 
 Also, install scripts were supported only in Visual Studio. Other IDEs had to mock the Visual Studio extensibility API to attempt to support such scripts, and no support was available in common editors and command-line tools. 
 
