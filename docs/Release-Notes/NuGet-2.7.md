@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 2.7 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [ba2edaad-4795-47a0-a572-d0e1716bd540] 
+ 
+# optional metadata 
+ 
+#description: release notes 2.7
+#keywords: release notes 2.7
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 # NuGet 2.7 Release Notes
 
 [NuGet 2.6.1 for WebMatrix Release Notes](/nuget/release-notes/nuget-2.6.1-for-webmatrix) | [NuGet 2.7.1 Release Notes](/nuget/release-notes/nuget-2.7.1)
@@ -70,7 +99,7 @@ In order to use Automatic Package Restore in Visual Studio, you only need to tak
 
 1. Don't check in your `packages` folder
 
-There are several ways to omit your `packages` folder from source control. For more information, see the [Packages and Source Control](/ndocs/consume-packages/packages-and-source-control) topic.
+There are several ways to omit your `packages` folder from source control. For more information, see the [Packages and Source Control](/consume-packages/packages-and-source-control) topic.
 
 While all users are implicitly opted into Automatic Package Restore consent, you can easily opt out through the Package Manager settings in Visual Studio.
 
@@ -86,7 +115,7 @@ This new Restore command allows you to easily restore all packages for a solutio
 1. nuget.exe restore .
 1. nuget.exe restore
 
-The Restore command will open the solution file and find all projects within the solution. From there, it will find the packages.config files for each of the projects and restore all of the packages found. It also restores solution-level packages found in the .nuget\packages.config file. More information about the new Restore command can be found in the [Command-Line Reference](/ndocs/tools/nuget.exe-cli-reference#restore).
+The Restore command will open the solution file and find all projects within the solution. From there, it will find the packages.config files for each of the projects and restore all of the packages found. It also restores solution-level packages found in the .nuget\packages.config file. More information about the new Restore command can be found in the [Command-Line Reference](/tools/nuget.exe-cli-reference#restore).
 
 #### The New Package Restore Workflow
 
@@ -118,7 +147,7 @@ Many times after retargeting or upgrading your project, you find that some NuGet
 
 If we detect that any of your packages were affected by the retargeting or upgrade, we'll produce immediate build errors to let you know. In addition to the immediate build error, we also persist a `requireReinstallation="true"` flag in your packages.config file for all packages that were affected by the retargeting, and each subsequent build in Visual Studio will raise a build warnings for those packages.
 
-While NuGet cannot take automatic action to reinstall affected packages, we hope this indication and warning will guide help you discover when you need to reinstall packages. We are also working on [package reinstallation guidance documentation](/ndocs/consume-packages/reinstalling-and-updating-packages) that these error messages direct you to.
+While NuGet cannot take automatic action to reinstall affected packages, we hope this indication and warning will guide help you discover when you need to reinstall packages. We are also working on [package reinstallation guidance documentation](/consume-packages/reinstalling-and-updating-packages) that these error messages direct you to.
 
 ### NuGet Configuration Defaults
 
@@ -134,7 +163,7 @@ While not required to use this feature, we expect companies to deploy NuGetDefau
 
 *Note that this feature will never cause a package source to be removed from a developer's NuGet settings. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a NuGetDefaults.config file.*
 
-See [NuGet Configuration Defaults](/ndocs/consume-packages/configuring-nuget-behavior#nuget-defaults-file) for more information about this feature.
+See [NuGet Configuration Defaults](/consume-packages/configuring-nuget-behavior#nuget-defaults-file) for more information about this feature.
 
 ### Renaming the Default Package Source
 
