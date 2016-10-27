@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 3.2 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [70316f35-f046-4f72-98e0-736de172e918] 
+ 
+# optional metadata 
+ 
+#description: release notes 3.2
+#keywords: release notes 3.2
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 
 # NuGet 3.2 Release Notes
 
