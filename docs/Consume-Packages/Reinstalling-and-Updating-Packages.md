@@ -1,3 +1,34 @@
+--- 
+# required metadata 
+ 
+title: ["Reinstalling and Updating Packages | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [2785879b-97f0-4a85-b3cc-bf4eaa5c39bf] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+
 # Reinstalling and Updating Packages
 
 There are a number of situations, described below under [When to Reinstall a Package](#when-to-reinstall-a-package), where references to a package might get broken within a Visual Studio project. In these cases, uninstalling and then reinstalling the same version of the package will restore those reference to working order.
@@ -18,7 +49,7 @@ The same command without `-reinstall` will update a package to a newer version, 
 
 Any updates are subject to version constraints indicated in `packages.config`, as described below in [Constraining upgrade versions](#constraining-upgrade-versions), but do not apply to projects using `project.json`.
 
-For complete usage, refer to the [PowerShell reference for Update-Package](/ndocs/tools/powershell-reference#update-package).
+For complete usage, refer to the [PowerShell reference for Update-Package](/tools/powershell-reference#update-package).
 
 ## When to Reinstall a Package
 
@@ -62,6 +93,6 @@ To set a constraint, open `packages.config` in a text editor, locate the depende
 		<!-- ... -->
     </packages>
 
-In all cases, use the notation described in [Dependency versions](/ndocs/create-packages/dependency-versions).
+In all cases, use the notation described in [Dependency versions](/create-packages/dependency-versions).
 
 	
