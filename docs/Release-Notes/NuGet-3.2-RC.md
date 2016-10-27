@@ -1,4 +1,33 @@
 
+--- 
+# required metadata 
+ 
+title: ["NuGet 3.2 RC Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [330577fa-7965-4433-98ad-b4b4575e1452] 
+ 
+# optional metadata 
+ 
+#description: release notes 3.2 RC
+#keywords: release notes 3.2 RC
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+---
 # NuGet 3.2 RC Release Notes
 
 [NuGet 3.1.1 Release Notes](/nuget/release-notes/nuget-3.1.1) | [NuGet 3.2 Release Notes](/nuget/release-notes/nuget-3.2) 
