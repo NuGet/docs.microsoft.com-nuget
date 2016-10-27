@@ -1,27 +1,56 @@
+--- 
+# required metadata 
+ 
+title: ["Publish a Package | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [2342aabd-983e-4db1-9230-57c84fa36969] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 #Publish a Package
 
-Once you have [created a package](/ndocs/create-packages/creating-a-package) with `nuget pack`, it's a simple process to make it available to other developers, either publicly or privately:
+Once you have [created a package](/create-packages/creating-a-package) with `nuget pack`, it's a simple process to make it available to other developers, either publicly or privately:
 
 - Public packages are made available to all developers globally through [nuget.org](https://www.nuget.org/packages/manage/upload). See instructions below.
-- Private packages are available to only a team or organization, by hosting them either a file share, a private NuGet server, Visual Studio Team Services package management, or a third- party repository such as myget, ProGet, Nexus Repository, and Artifactory. For additional details, see [Hosting Packages Overview](/ndocs/hosting-packages/overview))
+- Private packages are available to only a team or organization, by hosting them either a file share, a private NuGet server, Visual Studio Team Services package management, or a third- party repository such as myget, ProGet, Nexus Repository, and Artifactory. For additional details, see [Hosting Packages Overview](/hosting-packages/overview))
  
 ##Publish to nuget.org
 
 For nuget.org, you must first [register for a free account](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) or sign in if already registered: 
 		
-![NuGet registration and sign in location](/images/Create/publish_NuGetSignIn.png)
+![NuGet registration and sign in location](media/publish_NuGetSignIn.png)
 
 Next, you can either upload the package through the nuget.org web portal, or push to nuget.org from the command line:
 
 - Web portal: use the Upload Package tab on nuget.org:
 
-	![Upload a package with the NuGet Package Manager](/images/Create/publish_UploadYourPackage.PNG)
+	![Upload a package with the NuGet Package Manager](media/publish_UploadYourPackage.PNG)
 
 - Command line:
 	1. Click on your user name to navigate to your account settings.
 	2. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:
 
-		![Copying an API Key from account settings](/images/Create/publish_APIKey.png)
+		![Copying an API Key from account settings](media/publish_APIKey.png)
 
 	3. At a command prompt, run the following command:
 
@@ -37,7 +66,7 @@ Next, you can either upload the package through the nuget.org web portal, or pus
 
 	6. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page: 
 
-		![Message indicating a package is not yet indexed](/images/Create/publish_NotYetIndexed.png)
+		![Message indicating a package is not yet indexed](media/publish_NotYetIndexed.png)
 
 
 ## Managing package owners on nuget.org
