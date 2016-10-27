@@ -1,3 +1,33 @@
+--- 
+# required metadata 
+ 
+title: [".nuspec Reference | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [d4a4db9b-5c2d-46aa-9107-d2b01733df7c] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
 # .nuspec Reference
 
 A `.nuspec` file is an XML manifest that contains package metadata. This is used both to build the package and to provide information to consumers. The manifest is always included in a package.
@@ -41,7 +71,7 @@ Within this schema, a `.nuspec` file has the following general form:
 	
 For a clear visual representation of the schema, open the schema file in Visual Studio in Design mode and click on the **XML Schema Explorer** link, or open the file as code, right-click in the editor, and select **Show XML Schema Explorer**. Either way you'll get a view like the one below (when mostly expanded):
 
-![Visual Studio Schema Explorer with nuspec.xsd open](/images/docs/SchemaExplorer.png)
+![Visual Studio Schema Explorer with nuspec.xsd open](media/SchemaExplorer.png)
 
 
 ### Required metadata elements 
@@ -60,12 +90,12 @@ These elements must appear within a &lt;metadata&gt; element.
             <td><strong>id</strong></td>
             <td>
                 <p>
-                The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package will reside in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See <a href="/ndocs/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number">Choosing a unique package identifier</a> for guidance.</p>				
+                The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package will reside in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See <a href="/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number">Choosing a unique package identifier</a> for guidance.</p>				
             </td>
         </tr>
         <tr>
             <td><strong>version</strong></td>
-            <td>The version of the package, following the <em>major.minor.patch</em> pattern. Version numbers may include a pre-release suffix as described in <a href="/ndocs/create-packages/prerelease-packages#semantic-versioning">Prerelease Packages</a></td>
+            <td>The version of the package, following the <em>major.minor.patch</em> pattern. Version numbers may include a pre-release suffix as described in <a href="/create-packages/prerelease-packages#semantic-versioning">Prerelease Packages</a></td>
         </tr>
         <tr>
             <td><strong>description</strong></td>
@@ -101,7 +131,7 @@ These elements must appear within a &lt;metadata&gt; element.
         <tr>
             <td><strong>owners</strong></td>
             <td>
-                A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in authors, and is ignored when uploading the package to nuget.org. See <a href="/ndocs/create-packages/publish-a-package#managing-package-owners-on-nuget-org">Managing package owners on nuget.org</a>                  
+                A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in authors, and is ignored when uploading the package to nuget.org. See <a href="/create-packages/publish-a-package#managing-package-owners-on-nuget-org">Managing package owners on nuget.org</a>                  
             </td>
         </tr>
         <tr>
@@ -142,7 +172,7 @@ These elements must appear within a &lt;metadata&gt; element.
         </tr>
         <tr>
             <td><strong>language</strong></td>
-            <td>The locale ID for the package. See [Creating localized packages](/ndocs/create-packages/creating-localized-packages).</td>
+            <td>The locale ID for the package. See [Creating localized packages](/create-packages/creating-localized-packages).</td>
         </tr>
         <tr>
             <td><strong>tags</strong></td>
@@ -163,7 +193,7 @@ These elements must appear within a &lt;metadata&gt; element.
 <table>
         <tr>
             <td><strong>packageTypes</strong></td>
-            <td><em>(3.3+)</em> A collection of zero or more &lt;packageType&gt; elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of <em>name</em> and <em>verion</em>. See <a href="/ndocs/create-packages/creating-a-package#setting-a-package-type">Setting a package type</a>.
+            <td><em>(3.3+)</em> A collection of zero or more &lt;packageType&gt; elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of <em>name</em> and <em>verion</em>. See <a href="/create-packages/creating-a-package#setting-a-package-type">Setting a package type</a>.
             </td>
         </tr>
         <tr>
@@ -195,7 +225,7 @@ The &lt;package&gt; node may also contain a &lt;files&gt; and/or &lt;contentFile
 
 ## Replacement tokens
 
-When creating a package, the [`nuget pack` command](/ndocs/tools/nuget.exe-cli-reference#pack) will replace $-delimited tokens in the `.nuspec` file's &lt;metadata&gt; node with values that come from either a project file or the `pack` command's `-properties` switch.
+When creating a package, the [`nuget pack` command](/tools/nuget.exe-cli-reference#pack) will replace $-delimited tokens in the `.nuspec` file's &lt;metadata&gt; node with values that come from either a project file or the `pack` command's `-properties` switch.
 
 On the command line, you specify token values with `nuget pack -properties <name>=<value>;<name>=<value>`. For example, you can use a token such as `$owners$` and `$desc$` in the `.nuspec` and provide the values at packing time as follows:
 
@@ -295,7 +325,7 @@ As an alternative to a single flat list, dependencies can also be specified acco
 
 Each group has an attribute named `targetFramework` and contains zero or more &lt;dependency&gt; elements. Those dependencies will be installed together when  the target framework is compatible with the project's framework profile.
 
-The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](/ndocs/schema/target-frameworks) for the exact framework identifiers.
+The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](/schema/target-frameworks) for the exact framework identifiers.
 
 <div class="block-callout-info">
 	<strong>Note</strong>	
@@ -343,7 +373,7 @@ As an alternative to a single flat list, references can also be specified accord
 
 Each group has an attribute named `targetFramework` and contains zero or more &lt;reference&gt; elements. Those references will be added to a project when the target framework is compatible with the project's framework profile.
 
-The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of references. See [Target frameworks](/ndocs/schema/target-frameworks) for the exact framework identifiers.
+The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of references. See [Target frameworks](/schema/target-frameworks) for the exact framework identifiers.
 
 <div class="block-callout-info">
 	<strong>Note</strong>	
@@ -388,7 +418,7 @@ The &lt;frameworkAssemblies&gt; element contains zero or more &lt;frameworkAssem
     <tr>
         <td>targetFramework</td>
         <td>
-           (Optional) Specifies the target framework to which this reference applies. If omitted, indicates that the reference applies to all frameworks. See <a href="/ndocs/schema/target-frameworks">Target frameworks</a> for the exact framework identifiers.             
+           (Optional) Specifies the target framework to which this reference applies. If omitted, indicates that the reference applies to all frameworks. See <a href="/schema/target-frameworks">Target frameworks</a> for the exact framework identifiers.             
         </td>
     </tr>
 </table>
@@ -406,7 +436,7 @@ The following example shows a reference to `System.Net` for all target framework
 ## Including assembly files
 <a name="specifying-files-to-include-in-the-package"></a>
 
-If you follow the conventions described in [Creating a Package](/ndocs/create-packages/creating-a-package), you do not have to explicitly specify a list of files in the `.nuspec` file. The `nuget pack` command will automatically pick up the necessary files.
+If you follow the conventions described in [Creating a Package](/create-packages/creating-a-package), you do not have to explicitly specify a list of files in the `.nuspec` file. The `nuget pack` command will automatically pick up the necessary files.
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>	
@@ -697,7 +727,7 @@ The package project should structure content using the following pattern:
 	/contentFiles/{codeLanguage}/{TxM}/{any?}
 
 - `codeLanguages` may be `cs`, `vb`, `fs`, `any`, or the lowercase equivalent of a given `$(ProjectLanguage)`
-* `TxM` is any legal target framework moniker that NuGet supports (see [Target frameworks](/ndocs/schema/target-frameworks)).
+* `TxM` is any legal target framework moniker that NuGet supports (see [Target frameworks](/schema/target-frameworks)).
 * Any folder structure may be appended to the end of this syntax.
 
 For example:
