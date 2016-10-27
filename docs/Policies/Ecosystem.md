@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: [“An Overview of the NuGet Ecosystem | Microsoft Docs”] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [8971dcf5-1d05-46e1-adf2-ce0f55521a49] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+---
 # An Overview of the NuGet Ecosystem
 
 Since it's introduction in 2010, NuGet has presented a great opportunity to improve and automate different aspects of the development processes. 
@@ -56,7 +85,7 @@ These are tools and utilities built on NuGet:
 
 ## Training materials and references
 
-Using a new tool or technology usually comes with a learning curve. Luckily for you, NuGet has no steep learning curve it all! In fact, anyone can [get started consuming packages](/ndocs/quickstart/use-a-package) quickly.
+Using a new tool or technology usually comes with a learning curve. Luckily for you, NuGet has no steep learning curve it all! In fact, anyone can [get started consuming packages](/quickstart/use-a-package) quickly.
 
 That said, authoring packages–and especially good packages–along with  embracing NuGet in automated build and deployment processes, requires spending a little more time with the following resources:
 
