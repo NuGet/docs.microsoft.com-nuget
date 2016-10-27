@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 2.9-RC Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [04d76a22-63b0-41d1-9c27-799f4b35058f] 
+ 
+# optional metadata 
+ 
+#description: release notes 2.9
+#keywords: release notes 2.9
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+---
 # NuGet 2.9-RC Release Notes
 
 [NuGet 2.8.7 Release Notes](/nuget/release-notes/nuget-2.8.7) | [NuGet 3.0 Preview Release Notes](/nuget/release-notes/nuget-3.0-preview)
