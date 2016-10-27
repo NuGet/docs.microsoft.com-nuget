@@ -1,4 +1,35 @@
-﻿# NuGet 1.5 Release Notes
+--- 
+# required metadata 
+ 
+title: ["NuGet 1.5 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [3ec1ff28-18fc-4d53-bd43-208619a7270a] 
+ 
+# optional metadata 
+ 
+#description: release notes 1.5
+#keywords: release notes 1.5
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+ 
+ # NuGet 1.5 Release Notes
 
 [NuGet 1.4 Release Notes](/nuget/release-notes/nuget-1.4) | [NuGet 1.6 Release Notes](/nuget/release-notes/nuget-1.6)
 
@@ -29,7 +60,7 @@ For example, if you add the following:
     </references>
 
 Then only the _xunit.dll_ and _xunit.extensions.dll_ will be referenced from the appropriate 
-[framework/profile subdirectory](/ndocs/schema/nuspec#explicit-assembly-references) 
+[framework/profile subdirectory](/schema/nuspec#explicit-assembly-references) 
 of the `lib` folder even if there are other assemblies in the folder.
 
 If this element is omitted, then the usual behavior applies, which is to reference every assembly 
@@ -85,7 +116,7 @@ When using NuGet behind a proxy that requires authentication, NuGet will now pro
 proxy credentials. Entering credentials allows NuGet to connect to the remote repository.
 
 ### Support for Repositories that require authentication
-NuGet now supports connecting to [private repositories](/ndocs/hosting-packages/local-feeds) 
+NuGet now supports connecting to [private repositories](/hosting-packages/local-feeds) 
 that require basic or NTLM authentication.
 
 Support for Digest authentication will be added in a future release.
