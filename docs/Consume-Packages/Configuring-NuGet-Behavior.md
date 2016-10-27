@@ -1,3 +1,34 @@
+--- 
+# required metadata 
+ 
+title: ["Configuring NuGet Behavior | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [c1e34826-d07d-4609-a0fd-123459ae89c5] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+
 # Configuring NuGet Behavior
 
 NuGet's `NuGet.Config` files (in XML) store configuration settings and allow for changing default configuration values. NuGet uses several global configuration files and any number of configuration files within and near to a project to determine its exact behavior. In addition, in NuGet 2.7 and later you can use the `NuGetDefaults.config` file to also specifically control package sources. 
@@ -28,9 +59,9 @@ The behavior of every NuGet command, whether issued from the command line, the P
  
 ## Changing config settings
 
-A configuration file is a simple XML text file containing settings as described in the [NuGet Configuration Settings](/ndocs/schema/nuget.config-file.md) topic.
+A configuration file is a simple XML text file containing settings as described in the [NuGet Configuration Settings](/schema/nuget.config-file.md) topic.
 
-The preferred method for changing the configuration is using the NuGet [config command](/ndocs/tools/nuget.exe-cli-reference#config) to set a key and value.
+The preferred method for changing the configuration is using the NuGet [config command](/tools/nuget.exe-cli-reference#config) to set a key and value.
 
 <div class="block-callout-info">
     <strong>Note:</strong><br>
@@ -72,7 +103,7 @@ To create a new configuration file, copy the template below into that file and t
 As described above in [Config file locations and uses](#config-file-locations-and-uses), any number of `NuGet.Config` files can exist on a machine, both in global locations and within a project's folder structure. This allows you to control settings in different places as they apply to a project, a group of projects, or all projects. 
 
 <div class="block-callout-info">
-    <strong>Note:</strong><br>
+<strong>Note:</strong><br>
 	This process is sometimes referred to as "chaining" of config file, and the ability to insert a specific setting anywhere along the chain may be referred to as a "NuGet extensibility point."
 </div>
 
