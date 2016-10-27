@@ -1,3 +1,34 @@
+--- 
+# required metadata 
+ 
+title: ["Walkthrough of Package Restore with Team Foundation Build | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [3113cccd-35f7-4980-8a6e-fc06556b5064] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+
 # Walkthrough of Package Restore with Team Foundation Build
 
 > Applies To:
@@ -18,7 +49,7 @@ An advantage of using NuGet is that you can use it to avoid checking in binaries
 
 This is especially interesting if you are using a [distributed version control](http://en.wikipedia.org/wiki/Distributed_revision_control) system like git because developers need to clone the entire repository, including the full history, before they can start working locally. Checking in binaries can cause significant repository bloat as binary files are typically stored without delta compression.
 
-NuGet has supported [restoring packages](/ndocs/consume-packages/package-restore) as part of the build for a long time now. The previous implementation had a chicken-and-egg problem for packages that want to extend the build process because NuGet restored packages while building the project. However, MSBuild doesn't allow extending the build during the build; one could argue that this an issue in MSBuild but I would argue that this is an inherent problem. Depending on which aspect you need to extend it might be too late to register by the time your package is restored.
+NuGet has supported [restoring packages](/consume-packages/package-restore) as part of the build for a long time now. The previous implementation had a chicken-and-egg problem for packages that want to extend the build process because NuGet restored packages while building the project. However, MSBuild doesn't allow extending the build during the build; one could argue that this an issue in MSBuild but I would argue that this is an inherent problem. Depending on which aspect you need to extend it might be too late to register by the time your package is restored.
 
 The cure to this problem is making sure that packages are restored as the first step in the build process. NuGet 2.7+ makes this easy via a simplified command line:
 
@@ -77,7 +108,7 @@ The source code is under the `src` folder. Although our demo only uses a single 
 &lt;/configuration>
 </code></pre>
 
-For more details have a look at the <a href="/ndocs/consume-packages/configuring-nuget-behavior">NuGet Config Settings</a>.
+For more details have a look at the <a href="/consume-packages/configuring-nuget-behavior">NuGet Config Settings</a>.
 </p>
 
 In order to communicate to the version control that we don’t intent to check-in the **packages** folders, we've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describes patterns of files you don't want to check-in.
@@ -165,13 +196,13 @@ Git and TF Version Control have different Team Build templates, so the following
 
 First, let's look at the process template for git. In the git based template the build is selected via the property `1. Solution to build`:
 
-![Build Process for git](/images/consume/PackageRestoreTeamBuildGit.png)
+![Build Process for git](media/PackageRestoreTeamBuildGit.png)
 
 Please note that this property is a location in your repository. Since our `build.proj` is in the root, we simply used `build.proj`. If you place the build file under a folder called `tools`, the value would be `tools\build.proj`.
 
 In the TF version control template the project is selected via the property `1. Projects`:
 
-![Build Process for TFVC](/images/consume/PackageRestoreTeamBuildTFVC.png)
+![Build Process for TFVC](media/PackageRestoreTeamBuildTFVC.png)
 
 In contrast to the git based template the TF version control supports pickers (the button on the right hand side with the three dots). So in order to avoid any typing errors we suggest you use them to select the project.
 
