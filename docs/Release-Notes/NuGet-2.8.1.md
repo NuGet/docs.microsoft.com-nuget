@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 2.8.1 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [eebbbae4-fc6a-4c05-9102-4ec66b4c64a4] 
+ 
+# optional metadata 
+ 
+#description: release notes 2.8.1
+#keywords: release notes 2.8.1
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 # NuGet 2.8.1 Release Notes
 
 [NuGet 2.8 Release Notes](/nuget/release-notes/nuget-2.8) | [NuGet 2.8.2 Release Notes](/nuget/release-notes/nuget-2.8.2)
