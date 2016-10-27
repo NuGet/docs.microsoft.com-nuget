@@ -1,3 +1,33 @@
+--- 
+# required metadata 
+ 
+title: ["Project.json Reference | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [d64fa6d8-a3f7-4c72-95d3-1a964375ccb8] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
 # Project.json Reference
 
 *NuGet 3.x+; also see the end of this topic for project.lock.json*
