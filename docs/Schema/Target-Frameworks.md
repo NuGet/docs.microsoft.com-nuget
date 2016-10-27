@@ -1,10 +1,40 @@
+--- 
+# required metadata 
+ 
+title: ["Target Frameworks | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [4343a48e-f6df-4a44-9d66-4616c3caacf5] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
 # Target Frameworks
 
 NuGet uses target framework references in a variety of places to specifically identify and isolate framework-dependent components of a package:
 
-- [nuspec manifest](/ndocs/schema/nuspec): A package can indicate distinct packages to be included in a project depending on the project's target framework. 
-- [nupkg folder name](/ndocs/create-packages/creating-a-package#from-a-convention-based-working-directory): The folders inside a package's `lib` folder can be named according to the target framework, each of which contains the DLLs and other content appropriate to that framework.
-- [project.json](/ndocs/schema/project.json): The `frameworks` node specifies the framework versions that the project can be compiled against.
+- [nuspec manifest](/schema/nuspec): A package can indicate distinct packages to be included in a project depending on the project's target framework. 
+- [nupkg folder name](/create-packages/creating-a-package#from-a-convention-based-working-directory): The folders inside a package's `lib` folder can be named according to the target framework, each of which contains the DLLs and other content appropriate to that framework.
+- [project.json](/schema/project.json): The `frameworks` node specifies the framework versions that the project can be compiled against.
 
 <div class="block-callout-info">
 	<strong>Note</strong>
