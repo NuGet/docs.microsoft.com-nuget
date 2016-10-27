@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["Source Code and Configuration File Transformations | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [20991d69-9e2e-4881-bbf2-96ae634e1872] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 # Source Code and Configuration File Transformations
 
 NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times. 
