@@ -1,4 +1,33 @@
 
+--- 
+# required metadata 
+ 
+title: ["NuGet 3.1 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [0fc4d89a-ccca-4d63-85bf-461cd9ced882] 
+ 
+# optional metadata 
+ 
+#description: release notes 3.1
+#keywords: release notes 3.1
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+---
 # NuGet 3.1 Release Notes
 
 [NuGet 3.0 Release Notes](/nuget/release-notes/nuget-3.0.0) | [NuGet 3.1.1 Release Notes](/nuget/release-notes/nuget-3.1.1)
