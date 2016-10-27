@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["Symbol Packages | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [4667a70d-5a17-4f1e-b2f2-b8d0c6af3882] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 # Symbol Packages
 
 In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the [SymbolSource repository](http://www.symbolsource.org/Public).
@@ -77,7 +106,7 @@ A symbol package can be built by conventions, from a folder structure as describ
 
 ## Publishing a symbol package
 
-1. For convenience, first save your API key with NuGet (see [publish a package](/ndocs/create-packages/publish-a-package), which will apply to both nuget.org and symbolsource.org, because symbolsource.org will check with nuget.org to verify that you are the package owner.
+1. For convenience, first save your API key with NuGet (see [publish a package](/create-packages/publish-a-package), which will apply to both nuget.org and symbolsource.org, because symbolsource.org will check with nuget.org to verify that you are the package owner.
 
 	<code class="bash hljs>   
 		nuget SetApiKey Your-API-Key
