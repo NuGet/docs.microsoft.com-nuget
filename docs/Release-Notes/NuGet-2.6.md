@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 2.6 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [d99bbf29-2b9a-4dc5-a823-5eb4f9e30f7f] 
+ 
+# optional metadata 
+ 
+#description: release notes 2.6
+#keywords: release notes 2.6
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 # NuGet 2.6 Release Notes
 
 [NuGet 2.5 Release Notes](/nuget/release-notes/nuget-2.5) | [NuGet 2.6.1 for WebMatrix Release Notes](/nuget/release-notes/nuget-2.6.1-for-webmatrix)
@@ -23,7 +52,7 @@ Starting with NuGet 2.6, we will publish two extensions as below:
 2. [NuGet Package Manager for Visual Studio 2013](http://visualstudiogallery.msdn.microsoft.com/4ec1526c-4a8c-4a84-b702-b21a8f5293ca)
 
 With this split, the [nuget.org](https://nuget.org) home page's "Install NuGet" button
-will now take you to the [installing NuGet](/ndocs/guides/install-nuget)
+will now take you to the [installing NuGet](/guides/install-nuget)
 page, where you can find more information about installing the different NuGet clients.
 
 ### XDT Web.config transformation support
@@ -41,7 +70,7 @@ NuGet client. NuGet 2.6 includes this integration.
 #### How it works
 
 To take advantage of NuGet’s XDT support, the mechanics look similar to those of the
-[current config transformation feature](/ndocs/create-packages/source-and-config-file-transformations).
+[current config transformation feature](/create-packages/source-and-config-file-transformations).
 Transformation files are added to the package’s content folder. However, while config
 transformations use a single file for both installation and uninstallation, XDT
 transformations enable fine-grained control over both of these processes using the
