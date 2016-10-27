@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: [“Create UWP Packages | Microsoft Docs”] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [d98524b1-a674-4803-8ac5-3c6bce867f86] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+---
 #Create UWP Packages
 
 The [Universal Windows Platform (UWP)](https://developer.microsoft.com/en-us/windows) provides a common app platform for every device that runs Windows 10. Within this model, UWP apps can call both the WinRT APIs that are common to all devices, and also APIs (including Win32 and .NET) that are specific to the device family on which the app is running.
@@ -24,19 +53,19 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 
 1. In Visual Studio, choose **File > New > Project**, expand the **Visual C++ > Windows > Universal** node, select the **Windows Runtime Component (Universal Windows)** template, change the name to ImageEnhancer, and click OK. Accept the default values for Target Version and Minimum Version when prompted.
 
-	![Creating a new UWP Windows Runtime Component project](/images/BuildForUWP/01.PNG)
+	![Creating a new UWP Windows Runtime Component project](media/UWP-NewProject.png)
 
 2. Right click the project in Solution Explorer, select **Add > New Item**, click the **Visual C++ > XAML** node, select **Templated Control**, change the name to AwesomeImageControl.cpp, and click **Add**:
 	
-	![Adding a new XAML Templated Control item to the project](/images/BuildForUWP/02.PNG)
+	![Adding a new XAML Templated Control item to the project](media/UWP-NewXAMLControl.png)
 
 3. Right-click the project in Solution Explorer and select **Properties.** In the Properties page, expand **Configuration Properties > C/C++** and click **Output Files**. In the pane on the right, change the value for **Generate XML Documentation Files** to Yes:
 
-	![Setting Generate XML Documentation Files to Yes](/images/BuildForUWP/03.PNG)
+	![Setting Generate XML Documentation Files to Yes](media/UWP-GenerateXMLDocFiles.png)
 
 4. Right click the *solution* now, select **Batch Build**, check the three Debug boxes in the dialog as shown below. This makes sure that when you do a build, you'll generate a full set of artifacts for each of the target systems that Windows supports.
  
-	![Batch Build](/images/BuildForUWP/04.PNG)
+	![Batch Build](media/UWP-BatchBuild.png)
 
 5. In the Batch Build dialog, and click **Build** to verify the project and create the output files that you'll need for the NuGet package.
 
@@ -56,7 +85,7 @@ To create the initial .nuspec file, do the three steps below. The sections that 
 		nuget spec
 	</code>
 
-3. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](/ndocs/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
+3. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
 	
 		<?xml version="1.0"?>
 		<package >
@@ -229,21 +258,21 @@ With the completed .nuspec referencing all the files you need to include in the 
 
 This will generate `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
 
-![NuGet Package Explorer showing the ImageEnhancer package](/images/BuildForUWP/05.PNG)
+![NuGet Package Explorer showing the ImageEnhancer package](media/UWP-PackageExplorer.png)
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
 	A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
 </div>
 
-To make your package available to other developers,  follow the instructions on [Publish a package](/ndocs/create-packages/publish-a-package).
+To make your package available to other developers,  follow the instructions on [Publish a package](/create-packages/publish-a-package).
 
 
 ##Related topics
  
-* [Nuspec Reference](/ndocs/schema/nuspec)
-* [Symbol packages](/ndocs/create-packages/symbol-packages)
-* [Dependency Versions](/ndocs/create-packages/dependency-versions)
-* [Supporting Multiple .NET Framework Versions](/ndocs/create-packages/supporting-multiple-target-frameworks)
-* [Include MSBuild props and targets in a package](/ndocs/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
-* [Creating Localized Packages](/ndocs/create-packages/creating-localized-packages)
+* [Nuspec Reference](/schema/nuspec)
+* [Symbol packages](/create-packages/symbol-packages)
+* [Dependency Versions](/create-packages/dependency-versions)
+* [Supporting Multiple .NET Framework Versions](/create-packages/supporting-multiple-target-frameworks)
+* [Include MSBuild props and targets in a package](/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
+* [Creating Localized Packages](/create-packages/creating-localized-packages)
