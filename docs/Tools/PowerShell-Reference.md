@@ -1,6 +1,36 @@
+--- 
+# required metadata 
+ 
+title: ["PowerShell Reference | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [cd08b869-44c6-480e-90f7-494a6d08e6d0] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
 # PowerShell Reference
 
-The Package Manager Console provides a PowerShell interface within Visual Studio to interact with NuGet. This topic is the reference for those commands; for a guide to using the console, see the [Package Manager Console](/ndocs/tools/package-manager-console) topic.  
+The Package Manager Console provides a PowerShell interface within Visual Studio to interact with NuGet. This topic is the reference for those commands; for a guide to using the console, see the [Package Manager Console](/tools/package-manager-console) topic.  
 
 <table>
     <tr>
@@ -317,7 +347,7 @@ NuGet 2.7 and earlier will give an error saying that a newer version is already 
 			<li>HighestMinor: the version with the lowest major, highest minor, highest patch</li>
 			<li>Highest: the highest version</li>
 		</ul>
-		You can set the default value using the <a href="/ndocs/schema/nuget.config-file#config-section"><em>dependencyVersion</em></a> setting in the nuget.config file.
+		You can set the default value using the <a href="/schema/nuget.config-file#config-section"><em>dependencyVersion</em></a> setting in the nuget.config file.
         </td>        
     </tr>
     <tr>
@@ -444,7 +474,7 @@ Get the version of installed package from specified project and syncs the versio
 			<li>HighestMinor: the version with the lowest major, highest minor, highest patch</li>
 			<li>Highest: the highest version</li>
 		</ul>
-		You can set the default value using the <a href="/ndocs/schema/nuget.config-file#config-section"><em>dependencyVersion</em></a> setting in the nuget.config file.
+		You can set the default value using the <a href="/schema/nuget.config-file#config-section"><em>dependencyVersion</em></a> setting in the nuget.config file.
         </td>        
     </tr>
     <tr>
@@ -569,7 +599,7 @@ NuGet 2.7 and earlier will give an error saying that a newer version is already 
     </tr>
     <tr>
         <td>Reinstall</td>
-        <td>Resintalls packages using their currently installed versions. See <a href="/ndocs/consume-packages/reinstalling-and-updating-packages">Reinstalling and updating packages</a>.</td>        
+        <td>Resintalls packages using their currently installed versions. See <a href="/consume-packages/reinstalling-and-updating-packages">Reinstalling and updating packages</a>.</td>        
     </tr>
     <tr>
         <td>FileConflictAction</td>
@@ -584,7 +614,7 @@ NuGet 2.7 and earlier will give an error saying that a newer version is already 
 			<li>HighestMinor: the version with the lowest major, highest minor, highest patch</li>
 			<li>Highest (default for Update-Package with no parameters): the highest version</li>
 		</ul>
-		You can set the default value using the <a href="/ndocs/schema/nuget.config-file#config-section"><em>dependencyVersion</em></a> setting in the nuget.config file.
+		You can set the default value using the <a href="/schema/nuget.config-file#config-section"><em>dependencyVersion</em></a> setting in the nuget.config file.
         </td>        
     </tr>    
     <tr>
