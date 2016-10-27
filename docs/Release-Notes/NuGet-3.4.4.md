@@ -1,3 +1,33 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 3.4.4 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [6f0aa9bb-75e5-429d-9954-3cb41a909c14] 
+ 
+# optional metadata 
+ 
+#description: release notes 3.4.4
+#keywords: release notes 3.4.4
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
 # NuGet 3.4.4 Release Notes
 
 The primary focus of this release was improvements to the quality of 3.4.3 version of nuget.exe with a few fixes to the Visual Studio extension as well.
