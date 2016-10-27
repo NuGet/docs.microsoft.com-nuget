@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: [“NuGet Dispute Resolution | Microsoft Docs”] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [6d664378-3f7b-426e-aef3-2254d745fe60] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+---
 # NuGet Dispute Resolution
 
 This document is a recommended resolution process for community members to resolve disputes with other NuGet publishers.  
