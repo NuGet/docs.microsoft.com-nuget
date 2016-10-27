@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: [“Installing NuGet | Microsoft Docs”] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [683b8b34-a6f4-4d56-b9cd-2483bfbad1ad] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+---
 #Installing NuGet
 
 There are two primary tools available to help you build, publish and consume NuGet packages:
@@ -75,14 +104,14 @@ Though not fully-supported as yet, the NuGet command-line executable (version 3.
 	
 
 ###Related topics
-- [NuGet CLI reference ](/ndocs/tools/nuget.exe-cli-reference)
-- [Creating a package](/ndocs/create-packages/creating-a-package)
-- [Publishing a Package](/ndocs/create-packages/publish-a-package)
+- [NuGet CLI reference ](/tools/nuget.exe-cli-reference)
+- [Creating a package](/create-packages/creating-a-package)
+- [Publishing a Package](/create-packages/publish-a-package)
 
 
 ## NuGet Package Manager in Visual Studio
 
-The NuGet Package Manager is included in every edition of Visual Studio 2012 and later. It includes the Package Manager UI ([reference](/ndocs/tools/package-manager-ui)) and the Package Manager Console, through which you can access tools that come with certain packages ([reference](/ndocs/tools/package-manager-console)).
+The NuGet Package Manager is included in every edition of Visual Studio 2012 and later. It includes the Package Manager UI ([reference](/tools/package-manager-ui)) and the Package Manager Console, through which you can access tools that come with certain packages ([reference](/tools/package-manager-console)).
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
@@ -111,17 +140,17 @@ Accessing the beta channel is simple:
 
 1. In Visual Studio, navigate to **Tools > Options > Environment > Extensions and Updates**, then add the feed `https://dotnet.myget.org/F/nuget-beta/vsix/` to the **Additional Extension Galleries** list:
 
-	![Adding the NuGet beta channel feed to Visual Studio](/images/BetaChannel/01_ToolsSettings.png)
+	![Adding the NuGet beta channel feed to Visual Studio](media/BetaChannel-ToolsSettings.png)
 
 2. Navigate to **Tools > Extensions and Updates** and select **Online**, which should show the NuGet-Beta Feed from which you can install a beta NuGet Package Manager:
 
-	![Checking NuGet beta channel updates](/images/BetaChannel/02_ExtensionUpdate.png)
+	![Checking NuGet beta channel updates](media/BetaChannel-ExtensionUpdate.png)
 
 To report problems with the Beta builds or to share ideas, open an issue on the [NuGet GitHub repository](https://github.com/Nuget/Home).
 
 ###Related topics
 
-- [Package Manager UI reference](/ndocs/tools/package-manager-ui)
-- [Package Manager Console reference](/ndocs/tools/package-manager-console)
-- [Package Manager Console PowerShell reference](/ndocs/tools/powershell-reference)
+- [Package Manager UI reference](/tools/package-manager-ui)
+- [Package Manager Console reference](/tools/package-manager-console)
+- [Package Manager Console PowerShell reference](/tools/powershell-reference)
 
