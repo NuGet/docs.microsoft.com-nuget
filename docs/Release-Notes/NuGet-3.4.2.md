@@ -1,3 +1,33 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 3.4.2 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [b514da09-da1f-416b-9bfc-692f08fb6957] 
+ 
+# optional metadata 
+ 
+#description: release notes 3.4.2
+#keywords: release notes 3.4.2
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
 # NuGet 3.4.2 Release Notes
 
 [NuGet 3.4 Release Notes](/nuget/release-notes/nuget-3.4) 
