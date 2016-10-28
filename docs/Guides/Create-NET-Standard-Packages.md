@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: [“Create .NET Standard Packages | Microsoft Docs”] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [29b3bceb-0f35-4cdd-bbc3-a04eb823164c] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+---
 #Create .NET Standard Packages
 
 The [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code. 
@@ -32,7 +61,7 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 2. In the **Add Portable Class Library** dialog that appears, select the `.NET Framework 4.6` and `ASP.NET Core 1.0` options.
 3. Right-click the `AppLogger (Portable)` in Solution Explorer, select **Properties**, select the **Library** tab, then click **Target .NET Platform Standard** in the **Targeting** section. This will prompt for confirmation, after which you can select `.NET Standard 1.4` from the drop down:
 
-	![Setting the target to .NET Standard 1.4](/images/BuildForNetStandard/02-ChangeTarget.png)
+	![Setting the target to .NET Standard 1.4](media/NetStandard-ChangeTarget.png)
 
 5. Click on the **Build** tab, change the **Configuration** to `Release`, and check the box for **XML documentation file**.
 6. Add your code to the component, for example:
@@ -58,7 +87,7 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 		nuget spec
 	</code>
 
-2. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](/ndocs/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
+2. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
 
 	<?xml version="1.0"?>
 	<package >
@@ -96,14 +125,14 @@ With the completed .nuspec referencing all the files you need to include in the 
 
 This will generate `AppLogger.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
 
-![NuGet Package Explorer showing the AppLogger package](/images/BuildForNetStandard/03-PackageExplorer.PNG)
+![NuGet Package Explorer showing the AppLogger package](media/NetStandard-PackageExplorer.png)
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
 	A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
 </div>
 
-To make your package available to other developers,  follow the instructions on [Publish a package](/ndocs/create-packages/publish-a-package).
+To make your package available to other developers,  follow the instructions on [Publish a package](/create-packages/publish-a-package).
 
 
 ##Additional options
@@ -126,7 +155,7 @@ If you have any dependencies on other NuGet packages, list those in the &lt;depe
 		</group>
 	</dependencies>
 
-The syntax of the *version* attribute here indicates that version 8.0.3 or above is acceptable. To specify different version ranges, refer to [Dependency Versions](/ndocs/create-packages/dependency-versions).
+The syntax of the *version* attribute here indicates that version 8.0.3 or above is acceptable. To specify different version ranges, refer to [Dependency Versions](/create-packages/dependency-versions).
 
 ###Supporting multiple target frameworks
 Suppose you'd like to take advantage of an API in .NET Framework 4.6.2 that is not available in .NET Standard 1.4. To do this, you'll first need to make sure the library compiles for .NET 4.6.2 by using conditional compilation or shared projects. (In Visual Studio, you can create a NetCore project, add the framework of choice to the mutliple framework section, and then build.) Then you create the package using the simple convention-based working directory technique as follows: 
@@ -163,7 +192,7 @@ Suppose you'd like to take advantage of an API in .NET Framework 4.6.2 that is n
 
 4. Create the package again using `nuget pack AppLogger.spec`. 
 		
-For more details on using this technique, see [Supporting Multiple .NET Framework Versions](/ndocs/create-packages/supporting-multiple-target-frameworks)
+For more details on using this technique, see [Supporting Multiple .NET Framework Versions](/create-packages/supporting-multiple-target-frameworks)
 
 ###Adding targets and props for MSBuild
 
@@ -198,7 +227,7 @@ In some cases you might want to add custom build targets or properties in projec
 
 4. Create the package again using `nuget pack AppLogger.nuspec`.
 
-For additional details, refer to [Include MSBuild props and targets in a package](/ndocs/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package).
+For additional details, refer to [Include MSBuild props and targets in a package](/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package).
 
 
 ###Creating localized packages
@@ -370,12 +399,12 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 
 ##Related topics
  
-* [Nuspec Reference](/ndocs/schema/nuspec)
-* [Symbol packages](/ndocs/create-packages/symbol-packages)
-* [Dependency Versions](/ndocs/create-packages/dependency-versions)
-* [Supporting Multiple .NET Framework Versions](/ndocs/create-packages/supporting-multiple-target-frameworks)
-* [Include MSBuild props and targets in a package](/ndocs/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
-* [Creating Localized Packages](/ndocs/create-packages/creating-localized-packages)
+* [Nuspec Reference](/schema/nuspec)
+* [Symbol packages](/create-packages/symbol-packages)
+* [Dependency Versions](/create-packages/dependency-versions)
+* [Supporting Multiple .NET Framework Versions](/create-packages/supporting-multiple-target-frameworks)
+* [Include MSBuild props and targets in a package](/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
+* [Creating Localized Packages](/create-packages/creating-localized-packages)
 * [.NET Standard Library documentation](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
 * [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/en-us/dotnet/articles/core/porting/index)
 
