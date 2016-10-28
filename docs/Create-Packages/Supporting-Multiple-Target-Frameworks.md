@@ -1,8 +1,37 @@
+--- 
+# required metadata 
+ 
+title: ["Supporting Multiple .NET Framework Versions | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [2646ffcd-83ae-4086-8915-a7fba3f53e45] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 #Supporting Multiple .NET Framework Versions
 
 Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's specific to UWP, and another version that takes advantage of features in .NET Framework 4.6. 
 
-Fortunately, NuGet supports putting multiple versions of the same library in a single package through the convention-based working directory method described in [Creating a package](/ndocs/create-package/creating-a-package#from-a-convention-based-working-directory).
+Fortunately, NuGet supports putting multiple versions of the same library in a single package through the convention-based working directory method described in [Creating a package](/create-package/creating-a-package#from-a-convention-based-working-directory).
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
@@ -24,7 +53,7 @@ When NuGet installs an assembly from a package, it checks the target .NET Framew
     
     lib\{framework name}[{version}]
 
-For a complete list of supported names, see the [Target Frameworks reference](/ndocs/schema/target-frameworks#supported-frameworks). Note that names are case-sensitive 
+For a complete list of supported names, see the [Target Frameworks reference](/schema/target-frameworks#supported-frameworks). Note that names are case-sensitive 
 
 The following example shows a folder structure that supports four versions of a library:
 
