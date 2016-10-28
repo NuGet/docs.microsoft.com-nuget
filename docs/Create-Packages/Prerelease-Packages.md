@@ -1,10 +1,39 @@
+--- 
+# required metadata 
+ 
+title: ["Pre-release Versions | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [df6a366a-22c1-47bb-8017-18231311ce88] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 # Pre-release Versions
 
 Whenever you release an updated package with a new version number, NuGet considers that one as the "latest stable release" as shown, for example in the Package Manager UI within Visual Studio:
 
-![Package Manager UI showing the latest stable release](/images/Create/Prerelease_01-LatestStable.png)
+![Package Manager UI showing the latest stable release](media/Create/Prerelease_01-LatestStable.png)
 
-A stable release is one that's considered reliable enough to be used in production. The latest stable release is also the one that will be installed as a package update or during package restore (subject to constraints as described in [Reinstalling and updating packages](/ndocs/consume-packages/reinstalling-and-updating-packages)).
+A stable release is one that's considered reliable enough to be used in production. The latest stable release is also the one that will be installed as a package update or during package restore (subject to constraints as described in [Reinstalling and updating packages](/consume-packages/reinstalling-and-updating-packages)).
 
 To support the software release lifecycle, NuGet 1.6 and later allows for the distribution of pre-release packages, where the version number includes a semantic versioning suffix such as `-alpha`, `-beta`, or `-rc` (as described in [semantic versioning](#semantic-versioning) later in this topic).
 
@@ -34,13 +63,13 @@ By default, NuGet does not include pre-release versions when working with packag
 
 - **Package Manager UI in Visual Studio**: In the **Manage NuGet Packages** UI, check the **Include prerelease** box:
 
-	![The Include prerelese checkbox in Visual Studio](/images/Create/Prerelease_02-CheckPrerelease.png)
+	![The Include prerelese checkbox in Visual Studio](media/Create/Prerelease_02-CheckPrerelease.png)
 
 	Checking or unchecking this box will refresh the Package Manager UI and the list of available versions you can install.
 
-- **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](/ndocs/tools/powershell-reference).
+- **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](/tools/powershell-reference).
 
-- **NuGet CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](/ndocs/tools/nuget.exe-cli-reference) 
+- **NuGet CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](/tools/nuget.exe-cli-reference) 
 
 
 ## Semantic versioning
