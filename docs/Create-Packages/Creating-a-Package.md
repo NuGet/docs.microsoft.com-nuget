@@ -1,8 +1,37 @@
+--- 
+# required metadata 
+ 
+title: ["Creating a Package | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [456797cb-e3e4-4b88-9b01-8b5153cee802] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 #Creating a Package
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
-	This topic is intended to be a reference for the process of creating a package. For a focused walkthrough example, refer to the <a href="/ndocs/quickstart/create-and-publish-a-package">Create and Publish a Package Quickstart</a>.
+	This topic is intended to be a reference for the process of creating a package. For a focused walkthrough example, refer to the <a href="/quickstart/create-and-publish-a-package">Create and Publish a Package Quickstart</a>.
 </div>
 
 No matter what your package does or what code it contains, NuGet is how you package that functionality into a component that can be shared with and used by any number of other developers.  
@@ -33,13 +62,13 @@ However, if your package contains assemblies that are used exclusively by your p
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>	
-	When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, <em>excluding</em> those that are named <code>.resources.dll</code> because they are assumed to be localized satellite assemblies (see <a href="/ndocs/create-packages/creating-localized-packages">Creating localized packages</a>). For this reason, avoid using ".resources.dll" for files that otherwise contain essential package code.  
+	When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, <em>excluding</em> those that are named <code>.resources.dll</code> because they are assumed to be localized satellite assemblies (see <a href="/create-packages/creating-localized-packages">Creating localized packages</a>). For this reason, avoid using ".resources.dll" for files that otherwise contain essential package code.  
 </div>
 
 
 ## The role and structure of the .nuspec file
 
-A .nuspec is an XML manifest file that describes a package's contents and drives the process of creating a NuGet package. At a minimum, the manifest includes the package identifier, version number, the title that appears in a gallery, author and owner information, and a long description. It can also include release notes, copyright information, a short description for the Package Manager UI in Visual Studio, a locale ID, home page and license URLs, an icon URL, lists of dependencies and references, tags that assist in gallery searches, and more. See the [Nuspec reference](/ndocs/schema/nuspec) for complete details.
+A .nuspec is an XML manifest file that describes a package's contents and drives the process of creating a NuGet package. At a minimum, the manifest includes the package identifier, version number, the title that appears in a gallery, author and owner information, and a long description. It can also include release notes, copyright information, a short description for the Package Manager UI in Visual Studio, a locale ID, home page and license URLs, an icon URL, lists of dependencies and references, tags that assist in gallery searches, and more. See the [Nuspec reference](/schema/nuspec) for complete details.
 
 Here's typical (but fictitious) `.nuspec` file, with annotation comments:
 
@@ -95,7 +124,7 @@ Here's typical (but fictitious) `.nuspec` file, with annotation comments:
 	  </files>
 	</package>
 
-For details on declaring dependencies and specifying version numbers, see [Dependencies](/ndocs/create-packages/dependency-versions).
+For details on declaring dependencies and specifying version numbers, see [Dependencies](/create-packages/dependency-versions).
 
 Because the manifest is always included in a package, you can find any number of additional examples by examining existing packages. A good source is the global package cache on your machine, the location of which is returned by the following command:
 
@@ -141,7 +170,7 @@ For example, the &lt;id&gt; value will typically appear as follows:
 
 	<id>$id$</id>
 
-and will be replaced with the `AssemblyName` value from the project file. For the exact mapping of project values to `.nuspec` tokens, see the [Replacement Tokens reference](/ndocs/schema/nuspec#replacement-tokens).
+and will be replaced with the `AssemblyName` value from the project file. For the exact mapping of project values to `.nuspec` tokens, see the [Replacement Tokens reference](/schema/nuspec#replacement-tokens).
 
 Note that there are several additional packaging options available when working from a Visual Studio project, as described in the [Creating the package](#creating-the-package) section later on. 
 
@@ -216,7 +245,7 @@ For the **&lt;id&gt;** value, the following best practices apply:
 For the **&lt;version&gt;** value:
 
 - In general, set the version of the package to match the library, though this is not strictly required. This is a simple matter when you limit a package to a single assembly, as described earlier in [Deciding which assemblies to package](#deciding-which-assemblies-to-package). Overall, remember that NuGet itself deals with package versions when resolving dependencies, not assembly versions.
-- When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Handling Dependencies](/ndocs/create-packages/dependency-versions).
+- When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Handling Dependencies](/create-packages/dependency-versions).
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
@@ -351,7 +380,7 @@ In all cases, `nuget pack` excludes folders that start with a period, such as `.
 
 NuGet will indicate if there are any errors in the `.nuspec` file that need correcting, such as forgetting to change values in the manifest from their defaults.
 
-Once `nuget pack` succeeds, you'll have a `.nupkg` file that you can publish to a suitable gallery as described in [Publishing a Package](/ndocs/create-packages/publish-a-package).
+Once `nuget pack` succeeds, you'll have a `.nupkg` file that you can publish to a suitable gallery as described in [Publishing a Package](/create-packages/publish-a-package).
 
 <div class="block-callout-info">
 	<strong>Package Explorer</strong><br>
@@ -361,7 +390,7 @@ Once `nuget pack` succeeds, you'll have a `.nupkg` file that you can publish to 
 
 ### Additional options
 
-You can use various command-line switches with `nuget pack` to exclude files, override the version number in the manifest, and change the output directory, among other features. For a complete list, refer to the [pack command reference](/ndocs/tools/nuget.exe-cli-reference#pack).
+You can use various command-line switches with `nuget pack` to exclude files, override the version number in the manifest, and change the output directory, among other features. For a complete list, refer to the [pack command reference](/tools/nuget.exe-cli-reference#pack).
 
 The following options are a few that are common with Visual Studio projects:
 
@@ -391,18 +420,18 @@ The following options are a few that are common with Visual Studio projects:
 
 ##Next Steps
 
-Once you've created a package, which is a `.nupkg` file, you can publish it to the gallery of your choice as described on [Publishing a Package](/ndocs/create-packages/publish-a-package).
+Once you've created a package, which is a `.nupkg` file, you can publish it to the gallery of your choice as described on [Publishing a Package](/create-packages/publish-a-package).
 
 You might also want to extend the capabilities of your package or otherwise support other scenarios as described in the following topics:
 
-- [Handling dependencies](/ndocs/create-packages/dependency-versions)
-- [Supporting multiple target frameworks](/ndocs/create-packages/supporting-multiple-target-frameworks)
-- [Transformations of source and configuration files](/ndocs/create-packages/source-and-config-file-transformations)
-- [Localization](/ndocs/create-packages/creating-localized-packages)
-- [Pre-release versions](/ndocs/create-packages/prerelease-packages)
+- [Handling dependencies](/create-packages/dependency-versions)
+- [Supporting multiple target frameworks](/create-packages/supporting-multiple-target-frameworks)
+- [Transformations of source and configuration files](/create-packages/source-and-config-file-transformations)
+- [Localization](/create-packages/creating-localized-packages)
+- [Pre-release versions](/create-packages/prerelease-packages)
 
 Finally, there are additional package types to be aware of:
 
-- [Native Packages](/ndocs/create-packages/native-packages)
-- [Symbol Packages](/ndocs/create-packages/symbol-packages)
+- [Native Packages](/create-packages/native-packages)
+- [Symbol Packages](/create-packages/symbol-packages)
 
