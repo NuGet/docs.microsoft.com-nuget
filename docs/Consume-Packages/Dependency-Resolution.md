@@ -1,6 +1,37 @@
+--- 
+# required metadata 
+ 
+title: ["Dependency Resolution | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [1d530a72-3486-4a0d-b6fb-017524616f91] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+
 # Dependency Resolution 
 
-Any time a package is installed or reinstalled, which includes being installed as part of a [restore](/ndocs/consume-packages/package-restore) process, NuGet also installs any additional packages on which that first package depends.
+Any time a package is installed or reinstalled, which includes being installed as part of a [restore](/consume-packages/package-restore) process, NuGet also installs any additional packages on which that first package depends.
 
 Those immediate dependencies might then also have dependencies on their own, which can continue to an arbitrary depth. This produces what's called a *dependency graph* that describes the relationships between packages are all levels. 
 
@@ -58,15 +89,15 @@ NuGet 3.x restores the lowest possible version of a package as defined by its de
 
 For example, in the following figure *1.0-Beta* is considered lower than *1.0* so NuGet chooses the 1.0 version: 
 
-![Choosing the lowest applicable version](/images/consume/projectJson-dependency-1.png)
+![Choosing the lowest applicable version](/media/projectJson-dependency-1.png)
 
 In the next figure, version *2.1* is not available on the feed but because the version constraint is *>= 2.1* NuGet will pick the next lowest version it can find, in this case *2.2*:
 
-![Choosing the next lowest version available on the feed](/images/consume/projectJson-dependency-2.png)
+![Choosing the next lowest version available on the feed](/media/projectJson-dependency-2.png)
 
 When an application specifies an exact version number, such as *1.2*, that is not available on the feed, NuGet will fail with an error when attempting to install or restore the package:
 
-![NuGet generates an error when an exact package version is not available](/images/consume/projectJson-dependency-3.png)
+![NuGet generates an error when an exact package version is not available](/media/projectJson-dependency-3.png)
 
 #### Floating Versions
 
@@ -74,7 +105,7 @@ A floating dependency version is specified with the * wildcard, as with *6.0.\**
 
 When a floating version constraint is specified then NuGet will resolve the highest version of a package that matches the version pattern, for example *6.0.** will get the highest version of a package that starts with *6.0*: 
 
-![Choosing version 6.0.1 when a floating version 6.0.* is requested](/images/consume/projectJson-dependency-4.png)
+![Choosing version 6.0.1 when a floating version 6.0.* is requested](/media/projectJson-dependency-4.png)
 
 
 #### Nearest Wins
@@ -83,7 +114,7 @@ When the package graph for an application contains different versions of the sam
 
 In the example below, the application depends directly on Package B with a version constraint of *>=2.0*. The application also depends on Package A which in turn also depends on Package B, but with a *>=1.0* constraint. Because the dependency on Package B *2.0* is nearer to the application in the graph, that version is used:
 
-![Application using the Nearest Wins rule](/images/consume/projectJson-dependency-5.png)
+![Application using the Nearest Wins rule](/media/projectJson-dependency-5.png)
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
@@ -92,16 +123,16 @@ In the example below, the application depends directly on Package B with a versi
 
 This rule also results in greater efficiency with large dependency graph (such as those with the BCL packages) because by once a given dependency is ignored, NuGet also ignores all remaining dependencies on that branch of the graph. In the diagram below, for example, because Package C 2.0 will be used, NuGet can ignore any branches in the graph that refer to an older version of Package C: 
 
-![When NuGet ignores a package in the graph, it ignores that entire branch](/images/consume/projectJson-dependency-6.png)
+![When NuGet ignores a package in the graph, it ignores that entire branch](/media/projectJson-dependency-6.png)
 
 #### Cousin Dependencies
 
 When different package versions are referred to at the same distance in the graph from the application, NuGet uses the lowest version that satisfies all version requirements (as with the [lowest applicable version](#lowest-applicable-version) and [floating versions](#floating-versions) rules). In the image below, for example, version *2.0* of Package B will satisfy the other *>=1.0* constraint, and will thus be used:
 
-![Resolving cousin dependencies using the lower version that satisfies all constraints](/images/consume/projectJson-dependency-7.png)
+![Resolving cousin dependencies using the lower version that satisfies all constraints](/media/projectJson-dependency-7.png)
 
 In some cases, it is not possible to meet all version requirements. As shown below, if Package A required exactly Package B *1.0* and Package C requires Package B *>=2.0*, then NuGet cannot resolve the dependencies and will give an error.  
 
-![Unresolvable dependencies due to an exact version requirement](/images/consume/projectJson-dependency-8.png)
+![Unresolvable dependencies due to an exact version requirement](/media/projectJson-dependency-8.png)
 
 In these situations, the top-level consumer (the application or package) should add its own direct dependency on Package B so that the [Nearest Wins](#nearest-wins) rule applies.
