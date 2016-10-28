@@ -1,6 +1,36 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet CLI Reference | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [d777c424-0cf3-4bc0-8abd-7ca16c22192b] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
 # NuGet CLI Reference
 
-The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages. Refer to the [Install Guide](/ndocs/guides/install-nuget) for installation instructions.
+The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages. Refer to the [Install Guide](/guides/install-nuget) for installation instructions.
 
 Available commands:
 
@@ -143,7 +173,7 @@ where <packagePath> is the pathname to the package to add, and <sourcePath> spec
 
 ## config 
 
-Gets or sets NuGet config values. For additional usage, see [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior). For details on allowable key names, refer to the [NuGet config file reference](/ndocs/schema/nuget.config-file).
+Gets or sets NuGet config values. For additional usage, see [Configuring NuGet Behavior](/consume-packages/configuring-nuget-behavior). For details on allowable key names, refer to the [NuGet config file reference](/schema/nuget.config-file).
 
 ### Usage
     nuget config -set <name>=<value> [<name>=<value> ...] [options]
@@ -185,7 +215,7 @@ In NuGet 3.4+, &lt;value&gt; can be use environment variables.
 
 ##  delete 
 
-Deletes or unlists a package from a package source. For nuget.org, the action is to [unlist the package](/ndocs/policies/Deleting-Packages).
+Deletes or unlists a package from a package source. For nuget.org, the action is to [unlist the package](/policies/Deleting-Packages).
 
 ### Usage
     nuget delete <packageID> <packageVersion> [options]
@@ -313,7 +343,7 @@ where &lt;source&gt; is the folder containing packages and &lt;destination&gt; i
 
 ## install
 
-Downloads and installs a package into a project using the specified package sources. If no sources are specified, those listed in the global configuration file, `%APPDATA%\NuGet\NuGet.Config`, will be used. See [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior) for additional details.
+Downloads and installs a package into a project using the specified package sources. If no sources are specified, those listed in the global configuration file, `%APPDATA%\NuGet\NuGet.Config`, will be used. See [Configuring NuGet Behavior](/consume-packages/configuring-nuget-behavior) for additional details.
 
 If no specific packages are specified, `install` installs all packages listed in the project's `packages.config` file, making it similar to [`restore`](#restore). In this case, `install` does not work with projects that use `project.json`.
 
@@ -367,7 +397,7 @@ where &lt;packageID&gt; names the package to install (using the latest version),
     </tr>
     <tr>
         <td>requireconsent</td>
-        <td>Verifies that restoring packages is enabled before downloading and installing the packages. For details, see <a href="/ndocs/consume-packages/package-restore">Package Restore</a>.</td>
+        <td>Verifies that restoring packages is enabled before downloading and installing the packages. For details, see <a href="/consume-packages/package-restore">Package Restore</a>.</td>
     </tr>
     <tr>
         <td>solutiondirectory</td>
@@ -451,7 +481,7 @@ where the optional search terms will filter the displayed list. Search terms are
 ## locals
 *Version 3.3+*
 
-Clears or lists local NuGet resources such as the http-request cache, packages cache, and the machine-wide global packages folder. The `locals` command can also be used to display a list of those locations. For more information, see [Managing the NuGet Cache](/ndocs/consume-packages/managing-the-nuget-cache).
+Clears or lists local NuGet resources such as the http-request cache, packages cache, and the machine-wide global packages folder. The `locals` command can also be used to display a list of those locations. For more information, see [Managing the NuGet Cache](/consume-packages/managing-the-nuget-cache).
 
 ### Usage
 
@@ -505,7 +535,7 @@ where &lt;packageID&gt; is the package to mirror, or &lt;configFilePath&gt; iden
 
 The &lt;listUrlTarget&gt; specifies the source repository, and &lt;publishUrlTarget&gt; specifies the target repository.
 
-If your target repository is on https://machine/repo that's running [NuGet.Server](/ndocs/hosting-packages/nuget.server), the list and push urls will be *https://machine/repo/nuget* and *https://machine/repo/api/v2/packag*e, respectively.
+If your target repository is on https://machine/repo that's running [NuGet.Server](/hosting-packages/nuget.server), the list and push urls will be *https://machine/repo/nuget* and *https://machine/repo/api/v2/packag*e, respectively.
 
 ### Options
 <table>
@@ -681,7 +711,7 @@ For this project, the package created by `nuget pack` will have a dependency on 
 
 Pushes a package to a package source and publishes it.
 
-NuGet's default configuration is obtained by loading `%AppData%\NuGet\NuGet.config`, then loading any `nuget.config` or `.nuget\nuget.config` files starting from root of drive and ending in current directory (see [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior))
+NuGet's default configuration is obtained by loading `%AppData%\NuGet\NuGet.config`, then loading any `nuget.config` or `.nuget\nuget.config` files starting from root of drive and ending in current directory (see [Configuring NuGet Behavior](/consume-packages/configuring-nuget-behavior))
 
 ### Usage
     nuget push <packagePath> [options]
@@ -786,7 +816,7 @@ where &lt;projectPath&gt; specifies the location of a solution, a `packages.conf
 	</tr>
     <tr>
         <td>requireconsent</td>
-        <td>Verifies that restoring packages is enabled before downloading and installing the packages. For details, see <a href="/ndocs/consume-packages/package-restore">Package Restore</a>.</td>
+        <td>Verifies that restoring packages is enabled before downloading and installing the packages. For details, see <a href="/consume-packages/package-restore">Package Restore</a>.</td>
     </tr>
     <tr>
         <td>solutiondirectory</td>
@@ -968,7 +998,7 @@ where <operation> is one of *List, Add, Remove, Enable, Disable,* or *Update*, &
 
 ## spec 
 
-Generates a `.nuspec` file for a new package. If run in the same folder as a project file (`.csproj`, `.vbproj`, `.fsproj`), `spec` creates a tokenized `.nuspec` file. For additional information, see [Creating a Package](/ndocs/create-packages/creating-a-package).
+Generates a `.nuspec` file for a new package. If run in the same folder as a project file (`.csproj`, `.vbproj`, `.fsproj`), `spec` creates a tokenized `.nuspec` file. For additional information, see [Creating a Package](/create-packages/creating-a-package).
 
 ### Usage
     nuget spec [<packageID>] [options]
