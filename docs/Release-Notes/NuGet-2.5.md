@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 2.5 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [c193f1e3-d114-427f-9425-9930cc8e4db3] 
+ 
+# optional metadata 
+ 
+#description: release notes 2.5
+#keywords: release notes 2.5
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 # NuGet 2.5 Release Notes
 
 [NuGet 2.2.1 Release Notes](/nuget/release-notes/nuget-2.2.1) | [NuGet 2.6 Release Notes](/nuget/release-notes/nuget-2.6)
