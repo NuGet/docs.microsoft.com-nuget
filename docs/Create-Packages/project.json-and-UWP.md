@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["Project.json and UWP | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [37caf4d7-dabd-4a78-aad2-7d445f818457] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 ﻿#Project.json and UWP
 
 This document describes a new package structure that can be used to take advantage of new features in NuGet v3. The *minClientVersion* property of your NuSpec can be used to state that you require the new features described here by setting it to 3.1. Note that NuGet v3 is available in Visual Studio 2015 and newer. 
