@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: [“Create Cross-Platform Packages | Microsoft Docs”] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [ae24824b-a138-4d12-a810-1f653ddffd32] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+---
 #Create Cross-Platform Packages
 
 A cross-platform package contains code that uses native APIs on iOS, Android, and Windows, depending on the run-time operating system. Although this is straightforward to do, it's preferable to let developers consume the package from a PCL or .NET Standard libraries through a common API surface area.
@@ -25,7 +54,7 @@ In this walkthrough you'll create a cross-platform NuGet package that can be use
 1. Download and run the [Plugin for Xamarin Templates extension](https://visualstudiogallery.msdn.microsoft.com/afead421-3fbf-489a-a4e8-4a244ecdbb1e) for Visual Studio. These templates will make it easy to create the necessary project structure for this walkthrough.
 2. In Visual Studio, **File > New > Project**, search for `Plugin`, select the **Plugin for Xamarin** template, change the name to LoggingLibrary, and click OK.
  
-![New Blank App (Xamarin.Forms Portable) project in Visual Studio](/images/BuildForXplat/01-NewProject.png)
+![New Blank App (Xamarin.Forms Portable) project in Visual Studio](/media/CrossPlatform-NewProject.png)
 
 
 The resulting solution contains two PCL projects, along with a variety of platform-specific projects:
@@ -232,13 +261,13 @@ This will generate `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Opening this file in 
 	A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
 </div>
 
-To make your package available to other developers,  follow the instructions on [Publish a package](/ndocs/create-packages/publish-a-package).
+To make your package available to other developers,  follow the instructions on [Publish a package](/create-packages/publish-a-package).
 
 ##Related topics
  
-* [Nuspec Reference](/ndocs/schema/nuspec)
-* [Symbol packages](/ndocs/create-packages/symbol-packages)
-* [Dependency Versions](/ndocs/create-packages/dependency-versions)
-* [Supporting Multiple .NET Framework Versions](/ndocs/create-packages/supporting-multiple-target-frameworks)
-* [Including MSBuild props and targets in a package](/ndocs/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
-* [Creating Localized Packages](/ndocs/create-packages/creating-localized-packages)
+* [Nuspec Reference](/schema/nuspec)
+* [Symbol packages](/create-packages/symbol-packages)
+* [Dependency Versions](/create-packages/dependency-versions)
+* [Supporting Multiple .NET Framework Versions](/create-packages/supporting-multiple-target-frameworks)
+* [Including MSBuild props and targets in a package](/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
+* [Creating Localized Packages](/create-packages/creating-localized-packages)
