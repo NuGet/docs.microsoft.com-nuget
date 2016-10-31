@@ -31,7 +31,7 @@ ms.reviewer:
 
 Whenever you release an updated package with a new version number, NuGet considers that one as the "latest stable release" as shown, for example in the Package Manager UI within Visual Studio:
 
-![Package Manager UI showing the latest stable release](media/Create/Prerelease_01-LatestStable.png)
+![Package Manager UI showing the latest stable release](media/Prerelease_01-LatestStable.png)
 
 A stable release is one that's considered reliable enough to be used in production. The latest stable release is also the one that will be installed as a package update or during package restore (subject to constraints as described in [Reinstalling and updating packages](/consume-packages/reinstalling-and-updating-packages)).
 
@@ -63,7 +63,7 @@ By default, NuGet does not include pre-release versions when working with packag
 
 - **Package Manager UI in Visual Studio**: In the **Manage NuGet Packages** UI, check the **Include prerelease** box:
 
-	![The Include prerelese checkbox in Visual Studio](media/Create/Prerelease_02-CheckPrerelease.png)
+	![The Include prerelese checkbox in Visual Studio](media/Prerelease_02-CheckPrerelease.png)
 
 	Checking or unchecking this box will refresh the Package Manager UI and the list of available versions you can install.
 
