@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["Creating Localized Packages | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [824c3f45-c6c2-4c82-9d6d-62a19bfdc4a4] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 # Creating Localized Packages
 
 There are two ways to create localized versions of a library:
@@ -42,7 +71,7 @@ For example, the following folder stucture supports, German (de), Italian (it), 
                 Contoso.Utilities.resources.dll
                 Contoso.Utilities.xml    
 
-You can see that the languages are all listed underneath the `net40` target framework folder. If you're [supporting multiple frameworks](/ndocs/create-packages/supporting-multiple-target-frameworks), then you'll have a folder under `lib` for each variant.
+You can see that the languages are all listed underneath the `net40` target framework folder. If you're [supporting multiple frameworks](/create-packages/supporting-multiple-target-frameworks), then you'll have a folder under `lib` for each variant.
 
 With these folders in place, you'll then reference all the files in your `.nuspec`:
 	    
@@ -86,7 +115,7 @@ A satellite assembly then uses the naming convention `{identifier}.{language}.{v
 
 Because this is a separate package, it has its own `.nuspec` file that contains localized metadata. Be mindful that the language in the .nuspec **must** match the one used in the filename.
 
-The satellite assembly **must** also declare an exact version of the primary package as a dependency, using the [] version notation (see [Dependency Versions](/ndocs/create-packages/dependency-versions)). For example, `ContosoUtilities.de.1.0.0.nupkg` must declare a dependency on `ContosoUtilities.1.0.0.nupkg` using the `[1.0.0]` notation. The satellite package can, of course, have a different version number than the primary package.
+The satellite assembly **must** also declare an exact version of the primary package as a dependency, using the [] version notation (see [Dependency Versions](/create-packages/dependency-versions)). For example, `ContosoUtilities.de.1.0.0.nupkg` must declare a dependency on `ContosoUtilities.1.0.0.nupkg` using the `[1.0.0]` notation. The satellite package can, of course, have a different version number than the primary package.
 
 The satellite package's structure must then include the resource assembly and XML IntelliSense file in a subfolder that matches `{language}` in the package filename:   
 

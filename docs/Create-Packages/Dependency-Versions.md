@@ -1,6 +1,35 @@
+--- 
+# required metadata 
+ 
+title: ["Dependency Versions | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [ae6c6212-67e9-4968-9585-e265407fd9c8] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 # Dependency Versions
 
-When you [create a NuGet package](/ndocs/create-packages/creating-a-package), you can specify dependencies for your package in the **&lt;dependencies&gt;** node of the `.nuspec` file, where each dependency is listed with a **&lt;dependency&gt;** tag: 
+When you [create a NuGet package](/create-packages/creating-a-package), you can specify dependencies for your package in the **&lt;dependencies&gt;** node of the `.nuspec` file, where each dependency is listed with a **&lt;dependency&gt;** tag: 
   
 	<?xml version="1.0"?>
 	<package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
@@ -14,7 +43,7 @@ When you [create a NuGet package](/ndocs/create-packages/creating-a-package), yo
 	  </metadata>
 	</package>
 
-Dependencies are installed whenever the dependent package is installed, [reinstalled](/ndocs/consume-packages/reinstalling-and-updating-packages), or included in a [package restore](/ndocs/consume-packages/package-restore). NuGet chooses the exact version of the installed dependency by using the value of the `version` attribute specified for that dependency as described in the following sections.  
+Dependencies are installed whenever the dependent package is installed, [reinstalled](/consume-packages/reinstalling-and-updating-packages), or included in a [package restore](/consume-packages/package-restore). NuGet chooses the exact version of the installed dependency by using the value of the `version` attribute specified for that dependency as described in the following sections.  
 
 - [Version ranges](#version-ranges)
 - [Normalized version numbers](#normalized-version-numbers)
@@ -25,7 +54,7 @@ Dependencies are installed whenever the dependent package is installed, [reinsta
 	Developers most commonly specify a minimum version, which is a version number without adornmants as shown above, like 6.1.0. This allows NuGet to install that version or later.
 </div>
 
-For additional details on how dependencies are installed, see [Reinstalling and updating packages](/ndocs/consume-packages/reinstalling-and-updating-packages) and [Dependency resolution](/ndocs/consume-packages/dependency-resolution).
+For additional details on how dependencies are installed, see [Reinstalling and updating packages](/consume-packages/reinstalling-and-updating-packages) and [Dependency resolution](/consume-packages/dependency-resolution).
 
 
 ## Version ranges

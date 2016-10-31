@@ -1,4 +1,33 @@
 
+--- 
+# required metadata 
+ 
+title: ["NuGet 3.0 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [8ad13a67-9348-4f04-8f8b-b8f4a0b2c6df] 
+ 
+# optional metadata 
+ 
+#description: release notes 3.0.0
+#keywords: release notes 3.0.0
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+---
 # NuGet 3.0 Release Notes
 
 [NuGet 3.0 RC2 Release Notes](/nuget/release-notes/nuget-3.0-RC2) | [NuGet 3.1 Release Notes](/nuget/release-notes/nuget-3.1)

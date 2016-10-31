@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 3.3 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [4110a36a-cffe-4038-8da4-e841bce6e94b] 
+ 
+# optional metadata 
+ 
+#description: release notes 3.3
+#keywords: release notes 3.3
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 
 # NuGet 3.3 Release Notes
 

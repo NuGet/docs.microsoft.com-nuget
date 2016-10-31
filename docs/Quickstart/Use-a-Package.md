@@ -1,3 +1,34 @@
+--- 
+# required metadata 
+ 
+title: ["Use a package | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [f31f8259-20a8-4617-880e-5819299372d2] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+
 #Use a package
 
 This tutorial walks you through installing and using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package in a Universal Windows Platform (UWP) project:
@@ -24,22 +55,22 @@ You can install the Community edition for free from [visualstudio.com](https://w
 ##Create a new UWP project
 In Visual Studio, choose **File > New > Project**, expand **Visual C# > Windows > Universal**, select the **Blank App (Universal Windows)**, and click OK. Accept the default values for Target Version and Minimum Version when prompted.
 
-![Creating a new UWP project](/images/ConsumeNugetSample/QS_Use-01-NewProject.png)
+![Creating a new UWP project](media/QS_Use-01-NewProject.png)
 
 
 ##Add the Newtonsoft.Json NuGet package
 
 1. In Solution Explorer, right click on **References** and choose **Manage NuGet Packages**.
 
-	![Manage NuGet Packages command for project References](/images/ConsumeNugetSample/QS_Use-02-ManageNuGetPackages.png)
+	![Manage NuGet Packages command for project References](media/QS_Use-02-ManageNuGetPackages.png)
 
 2. Choose "nuget.org" as the **Package source**, click the **Browse** tab, search for **Newtonsoft.Json**, select that package in the list, and click **Install**:
 
-	![Locating Newtonsoft.Json package](/images/ConsumeNugetSample/QS_Use-03-NewtonsoftJson.png)
+	![Locating Newtonsoft.Json package](media/QS_Use-03-NewtonsoftJson.png)
 
 3. If prompted to review changes, click OK.
 
-4. Right-click the solution in Solution Explorer and click **Build Solution**. This restore anys NuGet packages listed under **References**. For more details, see [Package Restore](/ndocs/consume-packages/package-restore).
+4. Right-click the solution in Solution Explorer and click **Build Solution**. This restore anys NuGet packages listed under **References**. For more details, see [Package Restore](/consume-packages/package-restore).
 
 
 
@@ -79,24 +110,24 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 
 3. Even though you added the Newtonsoft.Json package to the project, you'll still see a red squiggle under `JsonConvert` because you need a `using` statement. Hover over the underlined `JsonConvert` and you'll see the Lightbulb and the option to **Show potential fixes**:
 
-    ![Lightbulb with show potential fixes command](/images/ConsumeNugetSample/QS_Use-04-ShowPotentialFixes.png)
+    ![Lightbulb with show potential fixes command](media/QS_Use-04-ShowPotentialFixes.png)
 
 
 4. Click on **Show potential fixes** and select the first suggested fix, `using Newtonsoft.Json;`. This adds the necessary line to the top of the file.
 
-	![Lightbulb giving option to add a using statement](/images/ConsumeNugetSample/QS_Use-05-AddUsing.png)
+	![Lightbulb giving option to add a using statement](media/QS_Use-05-AddUsing.png)
 
 5. Build and run the app by pressing F5 or selecting **Debug > Start Debugging**:
 
-	![Initial output of the app](/images/ConsumeNugetSample/QS_Use-06-AppStart.png)
+	![Initial output of the app](media/QS_Use-06-AppStart.png)
 
 6. Click on the button to see the contents of the TextBlock replaced with some JSON text:
 
-	![Output of the app after clicking the button](/images/ConsumeNugetSample/QS_Use-07-AppEnd.png)
+	![Output of the app after clicking the button](media/QS_Use-07-AppEnd.png)
 
 
 
 ##Related topics
-* [Overview and workflow of package consumption](/ndocs/consume-packages/overview-and-workflow)
-* [Finding and choosing](/ndocs/consume-packages/finding-and-choosing-packages)
-* [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior)
+* [Overview and workflow of package consumption](/consume-packages/overview-and-workflow)
+* [Finding and choosing](/consume-packages/finding-and-choosing-packages)
+* [Configuring NuGet Behavior](/consume-packages/configuring-nuget-behavior)

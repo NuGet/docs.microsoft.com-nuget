@@ -1,4 +1,35 @@
-﻿# NuGet 1.7 Release Notes
+--- 
+# required metadata 
+ 
+title: ["NuGet 1.7 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [df7becc6-993d-4d06-8495-a0c26748bdfa] 
+ 
+# optional metadata 
+ 
+#description: release notes 1.7
+#keywords: release notes 1.7
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+
+# NuGet 1.7 Release Notes
 
 [NuGet 1.6 Release Notes](/nuget/release-notes/nuget-1.6) | [NuGet 1.8 Release Notes](/nuget/release-notes/nuget-1.8)
 

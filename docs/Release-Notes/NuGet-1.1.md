@@ -1,3 +1,34 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 1.0 and 1.1 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [0e7688f7-09d2-4477-9fdf-0e27f572a4de] 
+ 
+# optional metadata 
+ 
+#description: release notes 1.1 
+#keywords: release notes 1.1 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+
 # NuGet 1.0 and 1.1 Release Notes
 
 [NuGet 1.2 Release Notes](/nuget/release-notes/nuget-1.2)

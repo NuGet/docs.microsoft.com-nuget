@@ -1,6 +1,36 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet.Config Reference | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [fbf31530-3bf4-478c-b26c-c2b24dd3406d] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
 # NuGet.Config Reference
 
-NuGet behavior is controlled by settings in `NuGet.Config` files as described in [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior). Setting names are case-insensitive.
+NuGet behavior is controlled by settings in `NuGet.Config` files as described in [Configuring NuGet Behavior](/consume-packages/configuring-nuget-behavior). Setting names are case-insensitive.
 
 `NuGet.Config` is an XML file containing a top-level &lt;configuration&gt; node, which then contains the section elements described in this topic. Each section then contains zero or more &lt;add&gt; elements with `key` and `value` attributes. See the [examples config file](#example-config-file) at the end of this topic.
 
@@ -28,7 +58,7 @@ In this topic:
 <a name="repositoryPath"></a>
 <a name="proxy-settings"></a>
 
-Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](/ndocs/tools/nuget.exe-cli-reference#config).
+Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](/tools/nuget.exe-cli-reference#config).
 
 Note: `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using `project.json`.
 
@@ -147,7 +177,7 @@ Controls whether the `packages` folder of a solution is included in source contr
 
 The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, and `disabledPackageSources` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
 
-The [`nuget sources` command](/ndocs/tools/nuget.exe-cli-reference#sources) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](/ndocs/tools/nuget.exe-cli-reference#setapikey). 
+The [`nuget sources` command](/tools/nuget.exe-cli-reference#sources) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](/tools/nuget.exe-cli-reference#setapikey). 
 
 ### packageSources 
 
@@ -218,7 +248,7 @@ When using an unencrypted password:
 
 ### apikeys
 
-Stores keys for sources that use API key authentication, as set with the [`nuget -setapikey` command](/ndocs/tools/nuget.exe-cli-reference#setapikey).
+Stores keys for sources that use API key authentication, as set with the [`nuget -setapikey` command](/tools/nuget.exe-cli-reference#setapikey).
 
 <table>
 	<tr>

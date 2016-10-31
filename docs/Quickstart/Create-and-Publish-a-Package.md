@@ -1,3 +1,34 @@
+--- 
+# required metadata 
+ 
+title: ["Create and publish a package | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [91781ed6-da5c-49f0-b973-16dd8ad84229] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+
 #Create and publish a package
 
 It's a simple process to create a NuGet package from a .NET Class Library and publish it to nuget.org. The following steps walk you through the process using the NuGet command-line interface (CLI) and Visual Studio:
@@ -21,7 +52,7 @@ It's a simple process to create a NuGet package from a .NET Class Library and pu
 
 In Visual Studio, choose **File > New > Project**, expand the **Visual C# > Windows** node, select the "Class Library" template, name the project AppLogger, and click OK.
 
-![Create new class library project](/images/CreatePublishNugetSample/QS_Create-01-NewProject.png)
+![Create new class library project](/media/QS_Create-01-NewProject.png)
 
 Right click on the resulting project file and select **Build** to make sure the project was created properly.
 
@@ -38,7 +69,7 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 		nuget spec
 	</code>
 
-3. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](/ndocs/create-packages/creating-a-package#creating-the--nuspec-file).
+3. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](/create-packages/creating-a-package#creating-the--nuspec-file).
 			
 		<?xml version="1.0"?>
 		<package>
@@ -59,7 +90,7 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 		  </metadata>
 		</package>	
 
-4. Select a package ID that is unique across nuget.org. We recommend using the naming conventions described in [Creating a package](/ndocs/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number). You must also update the author and description tags or you will get an error in the next step. Here's an updated .nuspec file as an example:
+4. Select a package ID that is unique across nuget.org. We recommend using the naming conventions described in [Creating a package](/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number). You must also update the author and description tags or you will get an error in the next step. Here's an updated .nuspec file as an example:
  		
 		<?xml version="1.0"?>
 		<package>
@@ -98,18 +129,18 @@ Note that you'll get warnings if you haven't updated various fields in the .nusp
 
 ##Publish the package
 
-You're now ready to publish the package to nuget.org using the NuGet CLI. (Alternately, you can use the [nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org).
+You're now ready to publish the package to nuget.org using the NuGet CLI. (Alternately, you can use the [nuget.org publishing workflow](/create-packages/publish-a-package#publish-through-nuget-org).
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
-	The packages you publish to <a href="https://www.nuget.org/">nuget.org</a> will be publicly visible to other developers. To host packages privately, see <a href="/ndocs/hosting-packages/overview">Hosting packages</a>.
+	The packages you publish to <a href="https://www.nuget.org/">nuget.org</a> will be publicly visible to other developers. To host packages privately, see <a href="/hosting-packages/overview">Hosting packages</a>.
 </div>
 
 1. Create a free account on [nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F), or log in if you already have one. When creating a new account, you'll receive a confirmation email. You must confirm the account before you can upload a package.
 2. Once logged in, click your user name (on the upper right) to navigate to your account settings.
 3. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:   
 
-	![Copying the API key to the clipboard](/images/CreatePublishNugetSample/QS_Create-02-APIKey.png)
+	![Copying the API key to the clipboard](/media/QS_Create-02-APIKey.png)
 	
 	<div class="block-callout-warning">
 		<strong>Note</strong><br>
@@ -133,7 +164,7 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
 	
 6. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page: 
 
-	![This package has not been indexed yet. It will appear in search results and will be available for install/restore after indexing is complete.](/images/CreatePublishNugetSample/04.PNG)
+	![This package has not been indexed yet. It will appear in search results and will be available for install/restore after indexing is complete.](/media/QS_Create-03-NotIndexed.png)
 
 
 <div class="block-callout-info">
@@ -144,11 +175,11 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
 And that's it! You've just created and published your first NuGet package to [nuget.org](https://www.nuget.org/), that other developers can use in their own projects.
 
 ##Related topics
-* [Create a Package](/ndocs/create-packages/creating-a-package)
-* [Publish a Package](/ndocs/create-packages/publish-a-package)
-* [Support multiple target frameworks](/ndocs/create-packages/supporting-multiple-target-frameworks)
-* [Dependency versions](/ndocs/create-packages/dependency-versions)
-* [Creating localized packages](/ndocs/create-packages/creating-localized-packages)
+* [Create a Package](/create-packages/creating-a-package)
+* [Publish a Package](/create-packages/publish-a-package)
+* [Support multiple target frameworks](/create-packages/supporting-multiple-target-frameworks)
+* [Dependency versions](/create-packages/dependency-versions)
+* [Creating localized packages](/create-packages/creating-localized-packages)
 
 
 

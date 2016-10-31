@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 3.4 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [80a429f5-7569-4349-ad7f-4fe9218eac23] 
+ 
+# optional metadata 
+ 
+#description: release notes 3.4
+#keywords: release notes 3.4
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
 
 # NuGet 3.4 Release Notes
 
@@ -37,7 +66,7 @@ The following features were previously added in the RC and have been updated or 
 
 ## Breaking Changes
 
-* Package version numbers are now normalized to the format *major*.*minor*.*patch*-*prerelease*   Each of major, minor, and patch are treated as integers and drop any leading zeroes.  The prerelease information is treated as a string and no changes are applied to it. These numbers are used in queries by the NuGet clients and the search provided by the NuGet.org service.  More details can be found in the NuGet Docs under [Prerelease Versions](/ndocs/create-packages/prerelease-packages).  
+* Package version numbers are now normalized to the format *major*.*minor*.*patch*-*prerelease*   Each of major, minor, and patch are treated as integers and drop any leading zeroes.  The prerelease information is treated as a string and no changes are applied to it. These numbers are used in queries by the NuGet clients and the search provided by the NuGet.org service.  More details can be found in the NuGet Docs under [Prerelease Versions](/create-packages/prerelease-packages).  
 
 ## Known Issues
 

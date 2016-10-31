@@ -1,3 +1,33 @@
+--- 
+# required metadata 
+ 
+title: ["Packages in Visual Studio templates | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [0b2cf228-f028-475d-8792-c012dffdb26f] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
 # Packages in Visual Studio templates
 
 Visual Studio project and item templates often need to ensure that certain packages are installed into when the project or item is created. For example, the ASP.NET MVC 3 template installs jQuery, Modernizr, and other packages. 

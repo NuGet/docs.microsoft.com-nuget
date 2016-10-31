@@ -1,3 +1,34 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 2.12-RC Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [6681e034-528d-47a6-ab01-6191c687d42b] 
+ 
+# optional metadata 
+ 
+#description: release notes 2.12-RC
+#keywords: release notes 2.12-RC
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+
 # NuGet 2.12-RC Release Notes
 
 NuGet 2.12-RC was released June 22, 2016 as an update to the 2.12.0-rc VSIX for Visual Studio 2013.  

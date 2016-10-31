@@ -1,4 +1,35 @@
-﻿# NuGet 1.6 Release Notes
+--- 
+# required metadata 
+ 
+title: ["NuGet 1.6 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: ed433790-99bf-4b71-92a8-17314bd49867] 
+ 
+# optional metadata 
+ 
+#description: release notes 1.6
+#keywords: release notes 1.6
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+ 
+ # NuGet 1.6 Release Notes
 
 [NuGet 1.5 Release Notes](/nuget/release-notes/nuget-1.5) | [NuGet 1.7 Release Notes](/nuget/release-notes/nuget-1.7)
 
@@ -18,12 +49,12 @@ then you likely need to restart Visual Studio using "Run as Administrator."
 
 ### Support for Semantic Versioning and Prerelease Packages
 NuGet 1.6 introduces support for Semantic Versioning (SemVer). For more details on how it uses 
-SemVer, read the [Versioning documentation](/ndocs/create-packages/prerelease-packages).
+SemVer, read the [Versioning documentation](/create-packages/prerelease-packages).
 
 ### Using NuGet Without Checking In Packages (Package Restore)
 NuGet 1.6 now has first class support for the workflow in which NuGet packages are not added 
 to source control, but instead are restored at build time if missing. For more details, read 
-the [Using NuGet without committing packages to source control](/ndocs/consume-packages/packages-and-source-control) 
+the [Using NuGet without committing packages to source control](/consume-packages/packages-and-source-control) 
 topic.
 
 ### Item Templates That Install NuGet Packages 
@@ -32,7 +63,7 @@ NuGet 1.6 also adds support for Visual Studio item templates. Item templates can
 NuGet packages that are installed when the template in invoked.
 
 For more details on how to change a project/item template to install NuGet packages, read the 
-[Packages in Visual Studio Templates](/ndocs/visual-studio-extensibility/visual-studio-templates) topic.
+[Packages in Visual Studio Templates](/visual-studio-extensibility/visual-studio-templates) topic.
 
 ### Support for disabling package sources
 When multiple package sources are configured, NuGet will look in each one for packages during 

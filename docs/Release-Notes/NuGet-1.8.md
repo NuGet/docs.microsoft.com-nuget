@@ -1,3 +1,34 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 1.8 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [e694ee1a-fe4c-4397-8d0a-7336be4dfebe] 
+ 
+# optional metadata 
+ 
+#description: release notes 1.8
+#keywords: release notes 1.8
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+
 # NuGet 1.8 Release Notes
 
 [NuGet 1.7 Release Notes](/nuget/release-notes/nuget-1.7) | [NuGet 2.0 Release Notes](/nuget/release-notes/nuget-2.0)

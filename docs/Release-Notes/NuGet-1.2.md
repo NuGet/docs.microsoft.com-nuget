@@ -1,3 +1,34 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 1.2 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [48f23141-b2ad-4cdf-8d81-7bb6b9419aa6] 
+ 
+# optional metadata 
+ 
+#description: release notes 1.2
+#keywords: release notes 1.2
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
+
 # NuGet 1.2 Release Notes
 
 [NuGet 1.0 and 1.1 Release Notes](/nuget/release-notes/nuget-1.1) | [NuGet 1.3 Release Notes](/nuget/release-notes/nuget-1.3)
@@ -47,7 +78,7 @@ Framework. The following table lists attributes of the `frameworkAssembly` eleme
         <td>
             <em>Optional</em>. Allows specifying a framework and profile name (or alias) that this framework assembly 
             applies to such as "net40" or "sl4". Uses the same format described in  
-            <a href="/ndocs/create-packages/supporting-multiple-target-frameworks" title="Supporting Multiple .NET Framework Versions">Supporting Multiple Target Frameworks</a>.
+            <a href="/create-packages/supporting-multiple-target-frameworks" title="Supporting Multiple .NET Framework Versions">Supporting Multiple Target Frameworks</a>.
         </td>
     </tr>
 </table>
@@ -61,7 +92,7 @@ Framework. The following table lists attributes of the `frameworkAssembly` eleme
 
 When using the NuGet.exe command line tool, you can now use the SetApiKey command to store your API key. That way, 
 you won’t need to specify it every time you push a package. For more details on saving your API key with NuGet.exe, 
-[read the documentation on publishing a package](/ndocs/create-packages/publish-a-package).
+[read the documentation on publishing a package](/create-packages/publish-a-package).
 
 ### Package Explorer
 Package Explorer has been updated to support NuGet 1.2. For more information, check out the 

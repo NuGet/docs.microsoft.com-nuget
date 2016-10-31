@@ -1,3 +1,33 @@
+--- 
+# required metadata 
+ 
+title: ["Analyzer NuGet Formats | Microsoft Docs"] 
+author: kraigb 
+ms.author: kraigb 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [a86e2080-93dd-4081-ac9b-d3bd66ba3799] 
+ 
+# optional metadata 
+ 
+#description: 
+#keywords: 
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
 # Analyzer NuGet Formats 
 
 The .NET Compiler Platform (also known as "Roslyn") allow developers to create [analyzers] (https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix)that examine the syntax tree and semantics of code as it's being written. This provides developers with a way to create and domain-specific analysis tools, such as those that would help guide the use of a particular API or library. You can find more information on the [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub wiki. Also see the article, [Use Roslyn to Write a Live Code Analyzer for your API](https://msdn.microsoft.com/magazine/dn879356.aspx) in MSDN Magazine.
@@ -27,7 +57,7 @@ Also note that because this package has no platform-specific requirements, the `
 
 ## Analyzers path format 
 
-The use of the `analyzers` folder is similar to that used for [target frameworks](/ndocs/create-packages/supporting-multiple-target-frameworks), except the specifiers in the path describe development host dependencies instead of build-time. The general format is as follows:
+The use of the `analyzers` folder is similar to that used for [target frameworks](/create-packages/supporting-multiple-target-frameworks), except the specifiers in the path describe development host dependencies instead of build-time. The general format is as follows:
 
 	$/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}}/{analyzer_name}.dll
 

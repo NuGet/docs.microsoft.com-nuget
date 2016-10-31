@@ -1,3 +1,32 @@
+--- 
+# required metadata 
+ 
+title: ["NuGet 3.0 Beta Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [4153ff3f-f97f-4e54-b638-e844f70edf22] 
+ 
+# optional metadata 
+ 
+#description: release notes 3.0
+#keywords: release notes 3.0
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+---
 # NuGet 3.0 Beta Release Notes
 
 [NuGet 3.0 Preview Release Notes](/nuget/release-notes/nuget-3.0-preview) | [NuGet 3.0 RC Release Notes](/nuget/release-notes/nuget-3.0-rc)

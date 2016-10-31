@@ -1,3 +1,34 @@
+
+--- 
+# required metadata 
+ 
+title: ["NuGet 1.3 Release Notes | Microsoft Docs"] 
+author: harikmenon
+ms.author: harikm 
+manager: ghogen 
+ms.date: 11/11/2016 
+ms.topic: article 
+ms.prod: nuget 
+#ms.service: 
+ms.technology: nuget 
+ms.assetid: [5d1c2191-783f-4faa-b72e-356a59323d39] 
+ 
+# optional metadata 
+ 
+#description: release notes 1.3
+#keywords: release notes 1.3
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+ms.reviewer:  
+- karann 
+- harikm 
+#ms.suite:  
+#ms.tgt_pltfrm: 
+#ms.custom: 
+ 
+--- 
+
 # NuGet 1.3 Release Notes
 
 [NuGet 1.2 Release Notes](/nuget/release-notes/nuget-1.2) | [NuGet 1.4 Release Notes](/nuget/release-notes/nuget-1.4)
@@ -11,7 +42,7 @@ NuGet 1.3 was released on April 25, 2011.
 The NuGet team partnered with the folks at [SymbolSource.org](http://www.symbolsource.org/) to offer 
 a really simple way of publishing your sources and PDB’s along with your package. This allows consumers 
 of your package to step into the source for your package in the debugger. For more details, read 
-[Creating and Publishing a Symbol Package](/ndocs/create-packages/symbol-packages)
+[Creating and Publishing a Symbol Package](/create-packages/symbol-packages)
 The easy way to publish NuGet packages with sources. You can also watch a live demonstration of this 
 feature as part of the NuGet in Depth talk at Mix11. This feature is fully demonstrated starting at 
 the 20 minute mark of the video.
