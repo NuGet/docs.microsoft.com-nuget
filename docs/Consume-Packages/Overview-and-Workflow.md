@@ -1,4 +1,4 @@
-.md--- 
+---
 # required metadata 
  
 title: ["Package Consumption Overview and Workflow | Microsoft Docs"] 
@@ -35,7 +35,7 @@ Between nuget.org and private package galleries that your organization might est
 
 ![Flow of going to a package source, finding a package, installing it in a project, then adding a using statement and calls to the package API](media/Overview-01-GeneralFlow.png)
 
-For details, see [Finding and Choosing Packages](/consume-packages/finding-and-choosing-packages.md) and the [Use a Package quickstart](/quickstart/use-a-package.md).
+For details, see [Finding and Choosing Packages](../consume-packages/finding-and-choosing-packages.md) and the [Use a Package quickstart](../quickstart/use-a-package.md).
 
 NuGet remembers the identity and version number of each installed package, recording it in either `packages.config` (NuGet 2.x) or `project.json` (NuGet 3.x) in your project root. You can look in the appropriate file at any time to see the full list of  dependencies for your project. 
 
