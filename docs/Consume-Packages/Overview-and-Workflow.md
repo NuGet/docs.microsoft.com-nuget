@@ -31,7 +31,7 @@ ms.reviewer:
 
 # Package Consumption Overview and Workflow
 
-Between nuget.org and private package galleries that your organization might establish, you can find tens of thousands of highly useful packages to use in your apps and services (including packages that support native C++ projects; see [Native C++ Packages](/consume-packages/finding-and-choosing-packages#native-c++-packages)). But regardless of the source, consuming a package follows the same general workflow:
+Between nuget.org and private package galleries that your organization might establish, you can find tens of thousands of highly useful packages to use in your apps and services. But regardless of the source, consuming a package follows the same general workflow:
 
 ![Flow of going to a package source, finding a package, installing it in a project, then adding a using statement and calls to the package API](media/Overview-01-GeneralFlow.png)
 
