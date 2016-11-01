@@ -35,7 +35,7 @@ It's a simple process to create a NuGet package from a .NET Class Library and pu
 
 - [Install pre-requisites](#install-pre-requisites)
 - [Create a class library project](#create-a-class-library-project)
-- [Create the .nuspec package manifest file](#create-the--nuspec-package-manifest-file)
+- [Create the .nuspec package manifest file](#create-the-nuspec-package-manifest-file)
 - [Create the package](#create-the-package)
 - [Publish the package](#publish-the-package)
 
@@ -69,7 +69,7 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 		nuget spec
 	</code>
 
-3. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](/create-packages/creating-a-package#creating-the--nuspec-file).
+3. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](/create-packages/creating-a-package#creating-the-nuspec-file).
 			
 		<?xml version="1.0"?>
 		<package>
