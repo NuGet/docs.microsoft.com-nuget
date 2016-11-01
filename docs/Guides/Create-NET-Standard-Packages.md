@@ -31,14 +31,14 @@ ms.reviewer:
 
 The [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code. 
 
-This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4. This will work across .NET Framework 4.6.1, Universal Windows Platform 10, .NET Core, and Mono/Xamarin. For details, see the [.NET Standard mapping table](#table) later in this topic.
+This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4. This will work across .NET Framework 4.6.1, Universal Windows Platform 10, .NET Core, and Mono/Xamarin. For details, see the [.NET Standard mapping table](#net-standard-mapping-table) later in this topic.
 
 1. [Pre-requisites](#pre-requisites)
 2. [Create the class library project](#create-the-class-library-project)
-3. [Create and update the .nuspec file](#create-and-update-the--nuspec-file)
+3. [Create and update the .nuspec file](#create-and-update-the-nuspec-file)
 4. [Package the component](#package-the-component)
 5. [Additional options](#additional-options)
-5. [.NET Standard mapping table](#-net-standard-mapping-table)
+5. [.NET Standard mapping table](#net-standard-mapping-table)
 6. [Related topics](#related-topics)
 
 

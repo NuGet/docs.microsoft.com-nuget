@@ -35,8 +35,8 @@ This tutorial walks you through installing and using the popular [Newtonsoft.Jso
 
 - [Install pre-requisites](#install-pre-requisites)
 - [Create a new UWP project](#create-a-new-uwp-project)
-- [Add the Newtonsoft.Json NuGet package](#add-the-newtonsoft-json-nuget-package)
-- [Use the Newtonsoft.Json API in the app](#use-the-newtonsoft-json-api-in-the-app)
+- [Add the Newtonsoft.Json NuGet package](#add-the-newtonsoftjson-nuget-package)
+- [Use the Newtonsoft.Json API in the app](#use-the-newtonsoftjson-api-in-the-app)
 
 You'll use a similar same workflow for virtually every NuGet package you use in a project.
 
