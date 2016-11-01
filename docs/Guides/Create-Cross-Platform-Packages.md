@@ -35,7 +35,7 @@ In this walkthrough you'll create a cross-platform NuGet package that can be use
 
 1. [Pre-requisites](#pre-requisites)
 2. [Create the project structure and abstraction code](#create-the-project-structure-and-abstraction-code)
-3. [Write your platform-specific code](#write-your-platform--specific-code)
+3. [Write your platform-specific code](#write-your-platform-specific-code)
 4. [Create and update the .nuspec file](#create-and-update-the--nuspec-file)
 5. [Package the component](#package-the-component)
 6. [Related topics](#related-topics)

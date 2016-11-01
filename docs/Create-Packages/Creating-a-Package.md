@@ -41,8 +41,8 @@ The process of creating a package always begins with creating a `.nuspec` packag
 This topic covers the most common steps involved in package creation:
 
 - [Deciding which assemblies to package](#deciding-which-assemblies-to-package)
-- [The role and structure of the `.nuspec` file](#the-role-and-structure-of-the--nuspec-file)
-- [Creating the `.nuspec` file](#creating-the--nuspec-file) from:
+- [The role and structure of the `.nuspec` file](#the-role-and-structure-of-the-nuspec-file)
+- [Creating the `.nuspec` file](#creating-the-nuspec-file) from:
 	- [An assembly DLL](#from-an-assembly-dll)
 	- [A Visual Studio project](#from-a-visual-studio-project)
 	- [A convention-based working directory](#from-a-convention-based-working-directory)

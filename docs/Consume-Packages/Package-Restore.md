@@ -232,7 +232,7 @@ With TFS 2013 and later, packages are automatically restored by default during b
 
 If you're using a previous version of build templates (such as in a project that's been migrated from earlier versions of TFS), you'll need to also migrate those build templates to TFS 2013. This essentially means recreating the custom parts of the Build Templates using the appropriate template for your source control (TFVC or Git).
 
-For earlier version of TFS, you can simply include a build step to invoke [command-line restore](#command--line-restore) as described earlier.
+For earlier version of TFS, you can simply include a build step to invoke [command-line restore](#command-line-restore) as described earlier.
 
 For more details see then [Walkthrough of Package Restore with Team Foundation Build](/consume-packages/team-foundation-build).
 

@@ -35,11 +35,10 @@ In addition to the Package Manager UI and Console in Visual Studio, NuGet also  
 As of NuGet 3.3+, NuGet exports the following services all of which reside in the `NuGet.VisualStudio` namespace in the `NuGet.VisualStudio.dll` assembly:
 
 - [`IRegistryKey`](#iregistrykey-interface): Method to retrieve a value from a registry subkey.
-- [`IConsoleInitializer`](#iconsoleinitializer-interface): Triggers eager initialization of the NuGet Package Manager Console.
 - [`IVsPackageInstaller`](#ivspackageinstaller-interface): Methods to install NuGet packages into projects.
 - [`IVsPackageInstallerEvents`](#ivspackageinstallerevents-interface): Events for package install/uninstall.
 - [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface): Methods to retrieve installed packages in the current solution and to check whether a given package is installed in a project.
-- [`IVsPackageManagerProvider`](#-ibspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package.    
+- [`IVsPackageManagerProvider`](#ivspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package.    
 - [`IVsPackageMetadata`](#ivspackagemetadata-interface); Methods to retrieve information about an installed package. 
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface): Methods to restore packages installed in a project.
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface): Methods to retrieve a list of NuGet package sources.

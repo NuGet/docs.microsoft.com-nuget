@@ -35,7 +35,7 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 
 1. [Pre-requisites](#pre-requisites)
 2. [Create a UWP Windows Runtime Component](#create-a-uwp-windows-runtime-component)
-3. [Create and update the .nuspec file](#create-and-update-the--nuspec-file)
+3. [Create and update the .nuspec file](#create-and-update-the-nuspec-file)
 4. [Package the component](#package-the-component)
 5. [Related topics](#related-topics)
 

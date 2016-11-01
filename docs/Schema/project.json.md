@@ -34,7 +34,7 @@ ms.reviewer:
 
 The `project.json` file replaces `packages.config` in UWP, ASP.NET 5, and .NET desktop projects (WPF and WinForms) as a means to maintain the list of packages used in a project. (For .NET Core, refer to [NET Core Tools - project.json](https://docs.microsoft.com/dotnet/articles/core/tools/project-json)).
 
-The [`project.lock.json`](#project-lock-json) file (described below) is also used in projects with a `project.json` file.
+The [`project.lock.json`](#projectlockjson) file (described below) is also used in projects with a `project.json` file.
 
 <div class="block-callout-info">
     <strong>Note</strong><br>
