@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Managing the NuGet cache | Microsoft Docs"] 
+title: "Managing the NuGet cache | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [3932217d-780d-4bd1-ad15-767acd3e8870] 
+ms.assetid: 3932217d-780d-4bd1-ad15-767acd3e8870
  
 # optional metadata 
  
@@ -33,7 +33,7 @@ ms.reviewer:
 
 NuGet manages several local caches to avoid downloading packages that are already on the machine, and to provide offline support. NuGet versions 2.8 and later automatically fall back to the cache when installing or reinstalling packages without a network connection.  
 
-To see the list of cache locations, use the [locals command](/tools/nuget.exe-cli-reference#locals):
+To see the list of cache locations, use the [locals command](../tools/nuget.exe-cli-reference#locals.md):
 
 	nuget locals all -list
      

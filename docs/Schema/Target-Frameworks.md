@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Target Frameworks | Microsoft Docs"] 
+title: "Target Frameworks | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [4343a48e-f6df-4a44-9d66-4616c3caacf5] 
+ms.assetid: 4343a48e-f6df-4a44-9d66-4616c3caacf5
  
 # optional metadata 
  
@@ -32,22 +32,15 @@ ms.reviewer:
 
 NuGet uses target framework references in a variety of places to specifically identify and isolate framework-dependent components of a package:
 
-- [nuspec manifest](/schema/nuspec): A package can indicate distinct packages to be included in a project depending on the project's target framework. 
-- [nupkg folder name](/create-packages/creating-a-package#from-a-convention-based-working-directory): The folders inside a package's `lib` folder can be named according to the target framework, each of which contains the DLLs and other content appropriate to that framework.
-- [project.json](/schema/project.json): The `frameworks` node specifies the framework versions that the project can be compiled against.
+- [nuspec manifest](../schema/nuspec.md): A package can indicate distinct packages to be included in a project depending on the project's target framework. 
+- [nupkg folder name](../create-packages/creating-a-package#from-a-convention-based-working-directory.md): The folders inside a package's `lib` folder can be named according to the target framework, each of which contains the DLLs and other content appropriate to that framework.
+- [project.json](../schema/project.json): The `frameworks` node specifies the framework versions that the project can be compiled against.
 
-<div class="block-callout-info">
-	<strong>Note</strong>
-	The NuGet client source code that calculates the tables below is found in the following locations:  
-	<ul>
-	<li>
-		Supported framework names: <a href="https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs">FrameworkConstants.cs</a>
-	</li>
-	<li>
-		Framework precedence and mapping: <a href="https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs">DefaultFrameworkMappings.cs</a>
-	</li>
-	</ul>
-</div>
+
+> [!Note]
+> The NuGet client source code that calculates the tables below is found in the following locations:  
+> -  Supported framework names: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
+> -  Framework precedence and mapping: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 
 ## Supported Frameworks
@@ -56,171 +49,80 @@ A framework is typically referenced by a short target framework moniker or TFM. 
 
 The NuGet clients support the following frameworks. Equivalents are shown within brackets [].
 
-<table class="reference">
-  <tbody>
-    <tr><th>Name</th><th>Abbreviation</th><th>TFMs/TxMs</th>
-    <tr>
-		<td>.NET Framework</td>
-		<td>net</td>
-		<td>
-			net11<br/>
-			net20<br/>
-			net35<br/>
-			net40<br/>
-			net403<br/>
-			net45<br/>
-			net451<br/>
-			net452<br/>
-			net46<br/>
-			net461<br/>
-			net462
-		</td>
-	</tr>
-	<tr>
-		<td>.NET Core</td>
-		<td>netcore</td>
-		<td>
-			netcore [netcore45]<br/>
-			netcore45 [win, win8]<br/>
-			netcore451 [win81]<br/>
-			netcore50
-		</td>
-	</tr>
-	<tr>
-		<td>.NET MicroFramework</td>
-		<td>netmf</td>
-		<td>netmf</td>
-	</tr>
-	<tr>
-		<td>Windows</td>
-		<td>win</td>
-		<td>		
-			win [win8, netcore45]<br/> 
-			win8 [netcore45, win]<br/> 
-			win81 [netcore451]<br/> 
-			win10 (not supported by Windows 10 Platform)			
-		</td>
-	</tr>
-	<tr>
-		<td>Silverlight</td>
-		<td>sl</td>
-		<td>
-			sl4 <br/> 
-			sl5 <br/> 
-		</td>
-	</tr>
-	<tr>
-		<td>Windows Phone</td>
-		<td>wp</td>
-		<td>
-			wp [wp7]<br/>
-			wp7<br/>
-			wp75<br/>
-			wp8<br/>
-			wp81<br/>
-			wpa81<br/>
-		</td>
-	</tr>
-	<tr>
-    	<td>Universal Windows Platform</td>
-    	<td>uap</td>
-    	<td>
-			uap [uap10]<br/>
-			uap10 [uap]<br/>
-    	</td>
-    </tr>
-    <tr>
-    	<td>.NET Standard</td>
-    	<td>netstandard</td>
-    	<td>                
-			netstandard1.0<br/>
-			netstandard1.1<br/>
-			netstandard1.2<br/>
-			netstandard1.3<br/>
-			netstandard1.4<br/>
-			netstandard1.5<br/>
-			netstandard1.6<br/>
-    	</td>
-    </tr>
-    <tr>
-    	<td>.NET Core App</td>
-    	<td>netcoreapp</td>
-    	<td>
-    		netcoreapp1.0<br/>	
-		</td>
-    </tr>
-  </tbody>
-</table>
+| Name           | Abbreviation | TFMs/TxMs |
+| -------------  | ------------ | --------- |
+|.NET Framework  | net          | net11     |
+|                |              | net20     |
+|                |              | net35     |
+|                |              | net40     |
+|                |              | net403    |
+|                |              |net45      |
+|                |              |net451     |
+|                |              |net452     |
+|                |              |net46      |
+|                |              |net461     |
+|                |              |net462     |
+|.NET Core       | netcore      | netcore [netcore45]
+|                |              | netcore45 [win, win8]
+|                |              | netcore451 [win81]
+|                |              | netcore50
+|.NET MicroFramework | netmf    | netmf
+|Windows         | win          | win [win8, netcore45]
+| | | win8 [netcore45, win]
+| | | win81 [netcore451]
+| | | win10 (not supported by Windows 10 Platform)
+Silverlight | sl | sl4
+| | | sl5
+Windows Phone | wp | wp [wp7]
+| | | wp7
+| | | wp75
+| | | wp8
+| | | wp81
+| | | wpa81
+Universal Windows Platform | uap | uap [uap10]
+| | | uap10 [uap]
+.NET Standard | netstandard | netstandard1.0
+| | | netstandard1.1
+| | | netstandard1.2
+| | | netstandard1.3
+| | | netstandard1.4
+| | | netstandard1.5
+| | | netstandard1.6
+.NET Core App | netcoreapp | netcoreapp1.0
 
 ## Deprecated Frameworks
 The following frameworks are deprecated. Packages targeting these frameworks should migrate to the indicated replacements.
 
-<table>
-	<tr>
-		<th>Deprecated framework</th>
-		<th>Replacement</th>
-	</tr>
-	<tr>
-		<td>
-			aspnet50<br>
-			aspnetcore50<br>
-			dnxcore50<br>
-			dnx<br>
-			dnx45<br>
-			dnx451<br>
-			dnx452<br>
-		</td>		
-		<td>netcoreapp</td>
-	</tr>
-	<tr>
-		<td>
-			dotnet<br>
-			dotnet50<br>
-			dotnet51<br>
-			dotnet52<br>
-			dotnet53<br>
-			dotnet54<br>
-			dotnet55<br>
-			dotnet56<br>
-		</td>
-		<td>netstandard</td>
-	</tr>
-	<tr>
-		<td>winrt</td>		
-		<td>win</td>
-	</tr>
-</table>
+Deprecated framework | Replacement
+--- | ---
+aspnet50 | netcoreapp
+aspnetcore50 |
+dnxcore50 |
+dnx |
+dnx45 |
+dnx451 |
+dnx452 |
+dotnet | netstandard
+dotnet50 |
+dotnet51 |
+dotnet52 |
+dotnet53 |
+dotnet54 |
+dotnet55 |
+dotnet56 |
+winrt | win
 
 ## Precedence
 
 A number of frameworks are related to and compatible with one another, but not necessarily equivalent: 
 
-<table>
-	<tr>
-		<th>Framework</th>
-		<th>Can use</th>
-	</tr>
-	<tr>
-		<td>
-			uap (Universal Windows Platform)
-		</td>		
-		<td>
-			win81<br>
-			wpa81<br>
-			netcore50
-		</td>
-	</tr>
-	<tr>
-		<td>
-			win (Windows Store)
-		</td>
-		<td>
-			winrt<br>
-			winrt45
-		</td>
-	</tr>
-
-</table>
+Framework | Can use
+--- | ---
+uap (Universal Windows Platform) | win81
+| | wpa81
+| | netcore50
+win (Windows Store) | winrt
+| | winrt45
 
 ## NET Platform Standard 
 
@@ -233,502 +135,172 @@ The `dotnet` series of monikers should be used in NuGet 3.3 an earlier; the `net
 
 ## Portable Class Libraries
 
-<div class="block-callout-warning">
-    <strong>Not Recommended</strong><br>
-    ALthough PCLs are supported, package authors should support netstandard instead. The .NET Platform Standard is an evolution of PCLs and represents binary portability across platforms using a single moniker that isn't tied to a static like like <em>portable-a+b+c</em> monikers.
-</div>
+> [!Not recommended]
+> Although PCLs are supported, package authors should support netstandard instead. The .NET Platform Standard is an evolution of PCLs and represents binary portability across platforms using a single moniker that isn't tied to a static like like *portable-a+b+c* monikers.
 
 To define a target framework that refers to multiple child-target-frameworks, the `portable` keyword use used to prefix the list of referenced frameworks. Avoid artificially including extra frameworks that are not directly compiled against because it can lead to unintended side-effects in those frameworks.
 
 Additional frameworks defined by third parties provide compatibility with other environments that are accessible in this manner. Additionally, there are shorthand profile numbers that are available to reference these combinations of related frameworks as `Profile#`, but this is not a recommended practice to use these numbers as it reduces the readability of the folders and nuspec. 
 
-<table class="reference">
-  <tr>
-	<th>Profile #</th>
-	<th>Frameworks</th>
-	<th>Full name</th>
-	<th>.NET Standard</th>
-  </tr>
-<tr>
-<td>Profile2</td>
-<td>
-.NETFramework 4.0<br/>
-Windows 8.0<br/>
-Silverlight 4.0<br/>
-WindowsPhone 7.0</td>
-<td>portable-net40+win8+sl4+wp7</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile3</td>
-<td>
-.NETFramework 4.0<br/>
-Silverlight 4.0</td>
-<td>portable-net40+sl4</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile4</td>
-<td>
-.NETFramework 4.5<br/>
-Silverlight 4.0<br/>
-Windows 8.0<br/>
-WindowsPhone 7.0</td>
-<td>portable-net45+sl4+win8+wp7</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile5</td>
-<td>
-.NETFramework 4.0<br/>
-Windows 8.0</td>
-<td>portable-net40+win8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile6</td>
-<td>
-.NETFramework 4.0.3<br/>
-Windows 8.0</td>
-<td>portable-net403+win8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile7</td>
-<td>
-.NETFramework 4.5<br/>
-Windows 8.0</td>
-<td>portable-net45+win8</td>
-<td>netstandard1.1</td>
-</tr>
-<tr>
-<td>Profile14</td>
-<td>
-.NETFramework 4.0<br/>
-Silverlight 5.0</td>
-<td>portable-net40+sl5</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile18</td>
-<td>
-.NETFramework 4.0.3<br/>
-Silverlight 4.0</td>
-<td>portable-net403+sl4</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile19</td>
-<td>
-.NETFramework 4.0.3<br/>
-Silverlight 5.0</td>
-<td>portable-net403+sl5</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile23</td>
-<td>
-.NETFramework 4.5<br/>
-Silverlight 4.0</td>
-<td>portable-net45+sl4</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile24</td>
-<td>
-.NETFramework 4.5<br/>
-Silverlight 5.0</td>
-<td>portable-net45+sl5</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile31</td>
-<td>
-Windows 8.1<br/>
-WindowsPhone 8.1</td>
-<td>portable-win81+wp81</td>
-<td>netstandard1.0</td>
-</tr>
-<tr>
-<td>Profile32</td>
-<td>
-Windows 8.1<br/>
-WindowsPhone 8.1</td>
-<td>portable-win81+wpa81</td>
-<td>netstandard1.2</td>
-</tr>
-<tr>
-<td>Profile36</td>
-<td>
-.NETFramework 4.0<br/>
-Silverlight 4.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.0</td>
-<td>portable-net40+sl4+win8+wp8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile37</td>
-<td>
-.NETFramework 4.0<br/>
-Silverlight 5.0<br/>
-Windows 8.0</td>
-<td>portable-net40+sl5+win8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile41</td>
-<td>
-.NETFramework 4.0.3<br/>
-Silverlight 4.0<br/>
-Windows 8.0</td>
-<td>portable-net403+sl4+win8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile42</td>
-<td>
-.NETFramework 4.0.3<br/>
-Silverlight 5.0<br/>
-Windows 8.0</td>
-<td>portable-net403+sl5+win8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile44</td>
-<td>
-.NETFramework 4.5.1<br/>
-Windows 8.1</td>
-<td>portable-net451+win81</td>
-<td>netstandard1.2</td>
-</tr>
-<tr>
-<td>Profile46</td>
-<td>
-.NETFramework 4.5<br/>
-Silverlight 4.0<br/>
-Windows 8.0</td>
-<td>portable-net45+sl4+win8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile47</td>
-<td>
-.NETFramework 4.5<br/>
-Silverlight 5.0<br/>
-Windows 8.0</td>
-<td>portable-net45+sl5+win8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile49</td>
-<td>
-.NETFramework 4.5<br/>
-WindowsPhone 8.0</td>
-<td>portable-net45+wp8</td>
-<td>netstandard1.0</td>
-</tr>
-<tr>
-<td>Profile78</td>
-<td>
-.NETFramework 4.5<br/>
-Windows 8.0<br/>
-WindowsPhone 8.0</td>
-<td>portable-net45+win8+wp8</td>
-<td>netstandard1.0</td>
-</tr>
-<tr>
-<td>Profile84</td>
-<td>
-WindowsPhone 8.1<br/>
-WindowsPhone 8.1</td>
-<td>portable-wp81+wpa81</td>
-<td>netstandard1.0</td>
-</tr>
-<tr>
-<td>Profile88</td>
-<td>
-.NETFramework 4.0<br/>
-Silverlight 4.0<br/>
-Windows 8.0<br/>
-WindowsPhone 7.5</td>
-<td>portable-net40+sl4+win8+wp75</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile92</td>
-<td>
-.NETFramework 4.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.1</td>
-<td>portable-net40+win8+wpa81</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile95</td>
-<td>
-.NETFramework 4.0.3<br/>
-Silverlight 4.0<br/>
-Windows 8.0<br/>
-WindowsPhone 7.0</td>
-<td>portable-net403+sl4+win8+wp7</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile96</td>
-<td>
-.NETFramework 4.0.3<br/>
-Silverlight 4.0<br/>
-Windows 8.0<br/>
-WindowsPhone 7.5</td>
-<td>portable-net403+sl4+win8+wp75</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile102</td>
-<td>
-.NETFramework 4.0.3<br/>
-Windows 8.0<br/>
-WindowsPhone 8.1</td>
-<td>portable-net403+win8+wpa81</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile104</td>
-<td>
-.NETFramework 4.5<br/>
-Silverlight 4.0<br/>
-Windows 8.0<br/>
-WindowsPhone 7.5</td>
-<td>portable-net45+sl4+win8+wp75</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile111</td>
-<td>
-.NETFramework 4.5<br/>
-Windows 8.0<br/>
-WindowsPhone 8.1</td>
-<td>portable-net45+win8+wpa81</td>
-<td>netstandard1.1</td>
-</tr>
-<tr>
-<td>Profile136</td>
-<td>
-.NETFramework 4.0<br/>
-Silverlight 5.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.0</td>
-<td>portable-net40+sl5+win8+wp8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile143</td>
-<td>
-.NETFramework 4.0.3<br/>
-Silverlight 4.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.0</td>
-<td>portable-net403+sl4+win8+wp8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile147</td>
-<td>
-.NETFramework 4.0.3<br/>
-Silverlight 5.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.0</td>
-<td>portable-net403+sl5+win8+wp8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile151</td>
-<td>
-.NETFramework 4.5.1<br/>
-Windows 8.1<br/>
-WindowsPhone 8.1</td>
-<td>portable-net451+win81+wpa81</td>
-<td>netstandard1.2</td>
-</tr>
-<tr>
-<td>Profile154</td>
-<td>
-.NETFramework 4.5<br/>
-Silverlight 4.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.0</td>
-<td>portable-net45+sl4+win8+wp8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile157</td>
-<td>
-Windows 8.1<br/>
-WindowsPhone 8.1<br/>
-WindowsPhone 8.1</td>
-<td>portable-win81+wp81+wpa81</td>
-<td>netstandard1.0</td>
-</tr>
-<tr>
-<td>Profile158</td>
-<td>
-.NETFramework 4.5<br/>
-Silverlight 5.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.0</td>
-<td>portable-net45+sl5+win8+wp8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile225</td>
-<td>
-.NETFramework 4.0<br/>
-Silverlight 5.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.1</td>
-<td>portable-net40+sl5+win8+wpa81</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile240</td>
-<td>
-.NETFramework 4.0.3<br/>
-Silverlight 5.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.1</td>
-<td>portable-net403+sl5+win8+wpa81</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile255</td>
-<td>
-.NETFramework 4.5<br/>
-Silverlight 5.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.1</td>
-<td>portable-net45+sl5+win8+wpa81</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile259</td>
-<td>
-.NETFramework 4.5<br/>
-Windows 8.0<br/>
-WindowsPhone 8.1<br/>
-WindowsPhone 8.0</td>
-<td>portable-net45+win8+wpa81+wp8</td>
-<td>netstandard1.0</td>
-</tr>
-<tr>
-<td>Profile328</td>
-<td>
-.NETFramework 4.0<br/>
-Silverlight 5.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.1<br/>
-WindowsPhone 8.0</td>
-<td>portable-net40+sl5+win8+wpa81+wp8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile336</td>
-<td>
-.NETFramework 4.0.3<br/>
-Silverlight 5.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.1<br/>
-WindowsPhone 8.0</td>
-<td>portable-net403+sl5+win8+wpa81+wp8</td>
-<td></td>
-</tr>
-<tr>
-<td>Profile344</td>
-<td>
-.NETFramework 4.5<br/>
-Silverlight 5.0<br/>
-Windows 8.0<br/>
-WindowsPhone 8.1<br/>
-WindowsPhone 8.0</td>
-<td>portable-net45+sl5+win8+wpa81+wp8</td>
-<td></td>
-</tr>
-</table>
+Profile # | Frameworks | Full name | .NET Standard
+ --- | --- | --- | ---
+ Profile2 | .NETFramework 4.0 | portable-net40+win8+sl4+wp7 |
+ | Windows 8.0 | |
+ | Silverlight 4.0 |
+ | WindowsPhone 7.0|
+ Profile3 | .NETFramework 4.0 | portable-net40+sl4
+ | Silverlight 4.0 |
+ Profile4 | .NETFramework 4.5 | portable-net45+sl4+win8+wp7
+ | Silverlight 4.0 |
+ | Windows 8.0 |
+ | WindowsPhone 7.0 |
+ Profile5 | .NETFramework 4.0 | portable-net40+win8
+ | Windows 8.0 |
+ Profile6 | .NETFramework 4.0.3 | portable-net403+win8
+ | Windows 8.0 |
+ Profile7 | .NETFramework 4.5 | portable-net45+win8	| netstandard1.1
+ | Windows 8.0 |
+ Profile14 | .NETFramework 4.0 | portable-net40+sl5
+ | Silverlight 5.0 |
+ Profile18 | .NETFramework 4.0.3 | portable-net403+sl4
+ | Silverlight 4.0 |
+ Profile19 | .NETFramework 4.0.3 | portable-net403+sl5
+ | Silverlight 5.0 |
+ Profile23 | .NETFramework 4.5 | portable-net45+sl4
+ | Silverlight 4.0 |
+ Profile24 | .NETFramework 4.5 | portable-net45+sl5
+ | Silverlight 5.0 |
+ Profile31 | Windows 8.1 | portable-win81+wp81 | netstandard1.0
+ | WindowsPhone 8.1 |
+ Profile32 | Windows 8.1 | portable-win81+wpa81 | netstandard1.2
+ | WindowsPhone 8.1 |
+ Profile36 | .NETFramework 4.0 | portable-net40+sl4+win8+wp8
+ | Silverlight 4.0 |
+ | Windows 8.0 |
+ | WindowsPhone 8.0 |
+ Profile37 | .NETFramework 4.0 | portable-net40+sl5+win8
+ | Silverlight 5.0 |
+ | Windows 8.0 |
+ Profile41 | .NETFramework 4.0.3 | portable-net403+sl4+win8
+ | Silverlight 4.0 |
+ | Windows 8.0 |
+ Profile42 | .NETFramework 4.0.3 | portable-net403+sl5+win8
+ | Silverlight 5.0 |
+ | Windows 8.0 |
+ Profile44 | .NETFramework 4.5.1 | portable-net451+win81 | netstandard1.2
+ | Windows 8.1 |
+ Profile46 | .NETFramework 4.5 | portable-net45+sl4+win8
+ | Silverlight 4.0 |
+ | Windows 8.0 |
+ Profile47 | .NETFramework 4.5 | portable-net45+sl5+win8
+ | Silverlight 5.0 |
+ | Windows 8.0 |
+ Profile49 | .NETFramework 4.5 | portable-net45+wp8 | netstandard1.0
+ | WindowsPhone 8.0 |
+ Profile78 | .NETFramework 4.5 | portable-net45+win8+wp8 | netstandard1.0
+ | Windows 8.0 |
+ | WindowsPhone 8.0 |
+ Profile84 | WindowsPhone 8.1 | portable-wp81+wpa81 | netstandard1.0
+ | WindowsPhone 8.1 |
+ Profile88 | .NETFramework 4.0 | portable-net40+sl4+win8+wp75
+ | Silverlight 4.0 |
+ | Windows 8.0 |
+ | WindowsPhone 7.5 |
+ Profile92 | .NETFramework 4.0 | portable-net40+win8+wpa81
+ | Windows 8.0 |
+ | WindowsPhone 8.1 |
+ Profile95 | .NETFramework 4.0.3 | portable-net403+sl4+win8+wp7
+ | Silverlight 4.0 |
+ | Windows 8.0 |
+ | WindowsPhone 7.0 |
+ Profile96 | .NETFramework 4.0.3 | portable-net403+sl4+win8+wp75
+ | Silverlight 4.0 |
+ | Windows 8.0 |
+ | WindowsPhone 7.5 |
+ | Profile102 | .NETFramework 4.0.3 | portable-net403+win8+wpa81
+ | Windows 8.0 |
+ | WindowsPhone 8.1 |
+ Profile104 | .NETFramework 4.5 | portable-net45+sl4+win8+wp75
+ | Silverlight 4.0 |
+ | Windows 8.0 |
+ | WindowsPhone 7.5 |
+ Profile111 | .NETFramework 4.5 | portable-net45+win8+wpa81 | netstandard1.1
+ | Windows 8.0 |
+ | WindowsPhone 8.1 |
+ Profile136 | .NETFramework 4.0 | portable-net40+sl5+win8+wp8
+ | Silverlight 5.0 |
+ | Windows 8.0 | 
+ | WindowsPhone 8.0 |
+ Profile143 | .NETFramework 4.0.3 | portable-net403+sl4+win8+wp8
+ | Silverlight 4.0 |
+ | Windows 8.0 |
+ | WindowsPhone 8.0 |
+ Profile147 | .NETFramework 4.0.3 | portable-net403+sl5+win8+wp8
+ | Silverlight 5.0 |
+ | Windows 8.0 |
+ | WindowsPhone 8.0 |
+ Profile151 | NETFramework 4.5.1 | portable-net451+win81+wpa81 | netstandard1.2
+ | Windows 8.1 |
+ | WindowsPhone 8.1 |
+ Profile154 | .NETFramework 4.5 | portable-net45+sl4+win8+wp8
+ | Silverlight 4.0 |
+ | Windows 8.0 |
+ | WindowsPhone 8.0 |
+ Profile157 | Windows 8.1 | portable-win81+wp81+wpa81 | netstandard1.0
+ | WindowsPhone 8.1 |
+ | WindowsPhone 8.1 |
+ Profile158 | .NETFramework 4.5 | portable-net45+sl5+win8+wp8
+ | Silverlight 5.0 |
+ | Windows 8.0 |
+ | WindowsPhone 8.0 |
+ Profile225 | .NETFramework 4.0 | portable-net40+sl5+win8+wpa81
+ | Silverlight 5.0 |
+ | Windows 8.0 |
+ | WindowsPhone 8.1 |
+ Profile240 | .NETFramework 4.0.3 | portable-net403+sl5+win8+wpa8
+ | Silverlight 5.0 |
+ | Windows 8.0 |
+ | WindowsPhone 8.1 |
+ Profile255 | .NETFramework 4.5 | portable-net45+sl5+win8+wpa81
+ | Silverlight 5.0 |
+ | Windows 8.0 |
+ | WindowsPhone 8.1 |
+ Profile259 | .NETFramework 4.5 | portable-net45+win8+wpa81+wp8 | netstandard1.0
+ | Windows 8.0 |
+ | WindowsPhone 8.1 |
+ | WindowsPhone 8.0 |
+ Profile328 | .NETFramework 4.0 | portable-net40+sl5+win8+wpa81+wp8
+ | Silverlight 5.0 |
+ | Windows 8.0 |
+ | WindowsPhone 8.1 |
+ | WindowsPhone 8.0 |
+ Profile336 | .NETFramework 4.0.3 | portable-net403+sl5+win8+wpa81+wp8
+ | Silverlight 5.0 |
+ | Windows 8.0 |
+ | WindowsPhone 8.1 |
+ | WindowsPhone 8.1 |
+ Profile344 | .NETFramework 4.5 | portable-net45+sl5+win8+wpa81+wp8
+ | Silverlight 5.0 |
+ | Windows 8.0 |
+ | WindowsPhone 8.1 |
+ | WindowsPhone 8.0 |
 
 Additionally, NuGet packages targeting Xamarin can use additional Xamarin-defined frameworks. See [Creating NuGet packages for Xamarin](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/).
  
-<table class="reference">
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>.NET Standard</th>
-  </tr>
-  <tr>
-    <td>monoandroid</td>
-    <td>Mono Support for Android OS</td>
-    <td>netstandard1.4</td>
-  </tr>
-  <tr>
-    <td>monotouch</td>
-    <td>Mono Support for iOS</td>
-    <td>netstandard1.4</td>
-  </tr>
-  <tr>
-    <td>monomac</td>
-    <td>Mono Support for OSX</td>
-    <td>netstandard1.4</td>
-  </tr>
-  <tr>
-    <td>xamarinios</td>
-    <td>Support for Xamarin for iOS</td>
-    <td>netstandard1.4</td>
-  </tr>
-  <tr>
-    <td>xamarinmac</td>
-    <td>Supports for Xamarin for Mac</td>
-    <td>netstandard1.4</td>
-  </tr>
-  <tr>
-    <td>xamarinpsthree</td>
-    <td>Support for Xamarin on Playstation 3</td>
-    <td>netstandard1.4</td>
-  </tr>
-  <tr>
-    <td>xamarinpsfour</td>
-    <td>Support for Xamarin on Playstation 4</td>
-    <td>netstandard1.4</td>
-  </tr>
-  <tr>
-    <td>xamarinpsvita</td>
-    <td>Support for Xamarin on PS Vita</td>
-    <td>netstandard1.4</td>
-  </tr>
-  <tr>
-    <td>xamarinwatchos</td>
-    <td>Xamarin for Watch OS</td>
-    <td>netstandard1.4</td>
-  </tr>
-  <tr>
-    <td>xamarintvos</td>
-    <td>Xamarin for TV OS</td>
-    <td>netstandard1.4</td>
-  </tr>
-  <tr>
-    <td>xamarinxboxthreesixty</td>
-    <td>Xamarin for XBox 360</td>
-    <td>netstandard1.4</td>
-  </tr>
-  <tr>
-    <td>xamarinxboxone</td>
-    <td>Xamarin for XBox One</td>
-    <td>netstandard1.4</td>
-  </tr>
-</table>
+ Name | Description | .NET Standard
+ --- | --- | ---
+ monoandroid | Mono Support for Android OS | netstandard1.4
+ monotouch | Mono Support for iOS | netstandard1.4
+ monomac | Mono Support for OSX | netstandard1.4
+ xamarinios | Support for Xamarin for iOS | netstandard1.4
+ xamarinmac | Supports for Xamarin for Mac | netstandard1.4
+ xamarinpsthree | Support for Xamarin on Playstation 3 | netstandard1.4
+ xamarinpsfour | Support for Xamarin on Playstation 4 | netstandard1.4
+ xamarinpsvita | Support for Xamarin on PS Vita | netstandard1.4
+ xamarinwatchos | Xamarin for Watch OS | netstandard1.4
+ xamarintvos | Xamarin for TV OS | netstandard1.4
+ xamarinxboxthreesixty | Xamarin for XBox 360 | netstandard1.4
+ xamarinxboxone | Xamarin for XBox One | netstandard1.4
 
-<div class="block-callout-info">
-	<strong>Note</strong>
-	Stephen Cleary has created a tool that lists the supported PCLs, which you can find on his post, <a href="http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html">Framework profiles in .NET</a>.
-</div>
-
-
-
+> [!Note]
+> Stephen Cleary has created a tool that lists the supported PCLs, which you can find on his post, [Framework profiles in .NET](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html).

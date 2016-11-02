@@ -2,7 +2,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 3.0 Release Notes | Microsoft Docs"] 
+title: "NuGet 3.0 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -11,7 +11,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [8ad13a67-9348-4f04-8f8b-b8f4a0b2c6df] 
+ms.assetid: 8ad13a67-9348-4f04-8f8b-b8f4a0b2c6df 
  
 # optional metadata 
  
@@ -30,7 +30,7 @@ ms.reviewer:
 ---
 # NuGet 3.0 Release Notes
 
-[NuGet 3.0 RC2 Release Notes](/nuget/release-notes/nuget-3.0-RC2) | [NuGet 3.1 Release Notes](/nuget/release-notes/nuget-3.1)
+[NuGet 3.0 RC2 Release Notes](../nuget/release-notes/nuget-3.0-RC2.md) | [NuGet 3.1 Release Notes](../nuget/release-notes/nuget-3.1.md)
 
 NuGet 3.0 was released on July 20, 2015 as a bundle extension to Visual Studio 2015. We pushed to deliver this release with Visual Studio so that the complete updated NuGet 3.0 experience would be available for new Visual Studio users. This NuGet extension version is only available for Visual Studio 2015.  
 

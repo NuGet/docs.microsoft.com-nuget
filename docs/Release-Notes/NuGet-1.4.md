@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 1.4 Release Notes | Microsoft Docs"] 
+title: "NuGet 1.4 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [e4856d0a-b408-4c60-ac51-f80ea06d9f79] 
+ms.assetid: e4856d0a-b408-4c60-ac51-f80ea06d9f79
  
 # optional metadata 
  
@@ -78,7 +78,7 @@ Package operations now provide a list of checkboxes with the list of projects th
 
 ![Manage NuGet Packages Project Selection](./media/manage-nuget-packages-project-selection.png)
 
-For more details, see the topic on [Managing Packages for the Solution](/tools/package-manager-ui#managing-packages-for-the-solution).
+For more details, see the topic on [Managing Packages for the Solution](../tools/package-manager-ui#managing-packages-for-the-solution).
 
 ### Constraining Upgrades To Allowed Versions
 By default, when running the `Update-Package` command on a package (or updating the package using dialog), it will be 
@@ -89,7 +89,7 @@ only work with version 2.* of a package, but not 3.0 and above. In order to prev
 `packages.config` file using the new `allowedVersions` attribute.
 
 For example, the following example shows how to lock the `SomePackage` package the version range 2.0 - 3.0 (exclusive). 
-The `allowedVersions` attribute accepts values using the [version range format](/create-packages/dependency-versions#version-ranges).
+The `allowedVersions` attribute accepts values using the [version range format](../create-packages/dependency-versions#version-ranges).
 
     <?xml version="1.0" encoding="utf-8"?>
     <packages>
@@ -152,7 +152,7 @@ in a path to the `packages.config` file and will attempt to update packages. Not
 ** Run Powershell scripts within the package.
 
 ### NuGet Server Support for Pushing Packages using NuGet.exe
-NuGet includes a simple way to host a [lightweight web based NuGet repository](/hosting-packages/nuget.server) 
+NuGet includes a simple way to host a [lightweight web based NuGet repository](../hosting-packages/nuget.server) 
 via the `NuGet.Server` NuGet package. With NuGet 1.4, the lightweight server supports pushing and deleting packages using NuGet.exe. 
 The latest version of `NuGet.Server` adds a new `appSetting`, named `apiKey`. When the key is omitted or left blank, pushing packages 
 to the feed is disabled. Setting the apiKey to a value (ideally a strong password) enables pushing packages using NuGet.exe.

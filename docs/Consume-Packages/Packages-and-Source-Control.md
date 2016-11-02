@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["APackages and source control | Microsoft Docs"] 
+title: "APackages and source control | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [2c874e6f-99eb-46dd-997f-f67d98d0237e] 
+ms.assetid: 2c874e6f-99eb-46dd-997f-f67d98d0237e
  
 # optional metadata 
  
@@ -31,7 +31,7 @@ ms.reviewer:
 
 # Packages and source control
 
-Developers typically omit binaries, such as NuGet packages, from their source control repository and rely instead on [package restore](/consume-packages/package-restore) to reinstall a project's dependencies before doing a build.    
+Developers typically omit binaries, such as NuGet packages, from their source control repository and rely instead on [package restore](../consume-packages/package-restore.md) to reinstall a project's dependencies before doing a build.    
  
 The reasons for doing so include the following:
 
@@ -69,7 +69,7 @@ To disable source control integration with TFVC for selected files:
 1. Create a folder called `.nuget` in your solution folder (where the `.sln` file is).
 	* Tip: on Windows, to create this folder in Windows Explorer, use the name `.nuget.` *with* the training dot.
 2. In that folder, create a file named `NuGet.config` and open it for editing.
-3. Add the following text as a minimum, where the [disableSourceControlIntegration](/schema/nuget.config-file#solution-section) setting instructs Visual Studio to skip everything in the `packages` folder:
+3. Add the following text as a minimum, where the [disableSourceControlIntegration](../schema/nuget.config-file#solution-section.md) setting instructs Visual Studio to skip everything in the `packages` folder:
 
 		<?xml version="1.0" encoding="utf-8"?>
 		<configuration>

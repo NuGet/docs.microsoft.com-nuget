@@ -2,7 +2,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 3.1.1 Release Notes | Microsoft Docs"] 
+title: "NuGet 3.1.1 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -11,7 +11,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [18bef6a3-b794-4a93-85a4-76972c8ece1b] 
+ms.assetid: 18bef6a3-b794-4a93-85a4-76972c8ece1b 
  
 # optional metadata 
  
@@ -30,7 +30,7 @@ ms.reviewer:
 ---
 # NuGet 3.1.1 Release Notes
 
-[NuGet 3.1 Release Notes](/nuget/release-notes/nuget-3.1) | [NuGet 3.2-RC Release Notes](/nuget/release-notes/nuget-3.2-RC)
+[NuGet 3.1 Release Notes](../nuget/release-notes/nuget-3.1.md) | [NuGet 3.2-RC Release Notes](../nuget/release-notes/nuget-3.2-RC.md)
 
 NuGet 3.1.1 was released July 27, 2015 as a patch update to the 3.1 VSIX with fix specific to a bug that effected Powershell policy implementation.
 [https://github.com/NuGet/Home/issues/974](https://github.com/NuGet/Home/issues/974)

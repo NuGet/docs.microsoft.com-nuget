@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Walkthrough of Package Restore with Team Foundation Build | Microsoft Docs"] 
+title: "Walkthrough of Package Restore with Team Foundation Build | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [3113cccd-35f7-4980-8a6e-fc06556b5064] 
+ms.assetid: 3113cccd-35f7-4980-8a6e-fc06556b5064
  
 # optional metadata 
  
@@ -49,7 +49,7 @@ An advantage of using NuGet is that you can use it to avoid checking in binaries
 
 This is especially interesting if you are using a [distributed version control](http://en.wikipedia.org/wiki/Distributed_revision_control) system like git because developers need to clone the entire repository, including the full history, before they can start working locally. Checking in binaries can cause significant repository bloat as binary files are typically stored without delta compression.
 
-NuGet has supported [restoring packages](/consume-packages/package-restore) as part of the build for a long time now. The previous implementation had a chicken-and-egg problem for packages that want to extend the build process because NuGet restored packages while building the project. However, MSBuild doesn't allow extending the build during the build; one could argue that this an issue in MSBuild but I would argue that this is an inherent problem. Depending on which aspect you need to extend it might be too late to register by the time your package is restored.
+NuGet has supported [restoring packages](../consume-packages/package-restore.md) as part of the build for a long time now. The previous implementation had a chicken-and-egg problem for packages that want to extend the build process because NuGet restored packages while building the project. However, MSBuild doesn't allow extending the build during the build; one could argue that this an issue in MSBuild but I would argue that this is an inherent problem. Depending on which aspect you need to extend it might be too late to register by the time your package is restored.
 
 The cure to this problem is making sure that packages are restored as the first step in the build process. NuGet 2.7+ makes this easy via a simplified command line:
 
@@ -57,9 +57,8 @@ The cure to this problem is making sure that packages are restored as the first 
 
 When your build process restores packages before building the code, you don't need to check-in **.targets** files 
 
-<p class="info">
-<strong>Note</strong><br/>Packages must be authored to allow loading in Visual Studio. Otherwise, you may still want to check in <strong>.targets</strong> files so that other developers can simply open the solution without having to restore packages first. 
-</p> 
+> [!Note]
+> Packages must be authored to allow loading in Visual Studio. Otherwise, you may still want to check in `.targets` files so that other developers can simply open the solution without having to restore packages first. 
 
 The following demo project shows how to set up the build in such a way that the `packages` folders and **.targets** files don't need to be checked-in. Finally, I'll show how you can setup an automated build on the [Team Foundation Service] for this sample project.
 
@@ -98,18 +97,19 @@ The source code is under the `src` folder. Although our demo only uses a single 
 
 ### Ignore Files
 
-<p class="info">
-<strong>Note</strong><br/>There is currently a <a href="https://nuget.codeplex.com/workitem/4072">known bug in the NuGet Client</a> that causes the client to still add the <code>packages</code> folder to version control. A workaround is to disable the source control integration. In order to do that, you'll need a <code>nuget.config</code> file in the <code>.nuget</code> folder that is parallel to your solution. If this folder doesn't exist yet, you'll need to create it. In <code>nuget.config</code>, add the following content:<br>
+> [!Note]
+> There is currently a [known bug in the NuGet client](https://nuget.codeplex.com/workitem/4072) that causes the client to still add the `packages` folder to version control. A workaround is to disable the source control integration. In order to do that, you'll need a `nuget.config ` file in the  `.nuget` folder that is parallel to your solution. If this folder doesn't exist yet, you'll need to create it. In `nuget.config`, add the following content:
 
-<pre><code>&lt;configuration>
-    &lt;solution>
-        &lt;add key="disableSourceControlIntegration" value="true" />
-    &lt;/solution>
-&lt;/configuration>
-</code></pre>
+		```
+		&lt;configuration>
+			&lt;solution>
+				&lt;add key="disableSourceControlIntegration" value="true" />
+			&lt;/solution>
+		&lt;/configuration>
+		```
 
-For more details have a look at the <a href="/consume-packages/configuring-nuget-behavior">NuGet Config Settings</a>.
-</p>
+> For more details have a look at the [NuGet Config Settings](../consume-packages/configuring-nuget-behavior)
+
 
 In order to communicate to the version control that we don’t intent to check-in the **packages** folders, we've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describes patterns of files you don't want to check-in.
 

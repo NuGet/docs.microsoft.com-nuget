@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Analyzer NuGet Formats | Microsoft Docs"] 
+title: "Analyzer NuGet Formats | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [a86e2080-93dd-4081-ac9b-d3bd66ba3799] 
+ms.assetid: a86e2080-93dd-4081-ac9b-d3bd66ba3799
  
 # optional metadata 
  
@@ -57,7 +57,7 @@ Also note that because this package has no platform-specific requirements, the `
 
 ## Analyzers path format 
 
-The use of the `analyzers` folder is similar to that used for [target frameworks](/create-packages/supporting-multiple-target-frameworks), except the specifiers in the path describe development host dependencies instead of build-time. The general format is as follows:
+The use of the `analyzers` folder is similar to that used for [target frameworks](../create-packages/supporting-multiple-target-frameworks.md), except the specifiers in the path describe development host dependencies instead of build-time. The general format is as follows:
 
 	$/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}}/{analyzer_name}.dll
 

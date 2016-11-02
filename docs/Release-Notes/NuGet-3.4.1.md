@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 3.4.1 Release Notes | Microsoft Docs"] 
+title: "NuGet 3.4.1 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [b016587f-0203-46c7-983d-abb03766f162] 
+ms.assetid: b016587f-0203-46c7-983d-abb03766f162 
  
 # optional metadata 
  
@@ -30,7 +30,7 @@ ms.reviewer:
 
 # NuGet 3.4.1 Release Notes
 
-[NuGet 3.4 Release Notes](/nuget/release-notes/nuget-3.4) 
+[NuGet 3.4 Release Notes](../nuget/release-notes/nuget-3.4.md) 
 
 NuGet 3.4.1 was released March 30, 2016 at the same time as the Visual Studio 2015 Update 2 and Visual Studio 15 Preview Release to address several issues that were identified in the 3.4 release.
 

@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: [".nuspec Reference | Microsoft Docs"] 
+title: ".nuspec Reference | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [d4a4db9b-5c2d-46aa-9107-d2b01733df7c] 
+ms.assetid: d4a4db9b-5c2d-46aa-9107-d2b01733df7c
  
 # optional metadata 
  
@@ -47,10 +47,10 @@ In this topic:
 
 The current `nuspec.xsd` schema file can be found in the [NuGet GitHub repository](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Packaging/compiler/resources/nuspec.xsd).
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	On nuget.org you can find a NuGet.Manifest.Schema 2.0.4 package. However, the schema files contained within it are older versions applicable to NuGet 2.0 and earlier. The most up-to-date schema file is best obtained from the GitHub repository.	
-</div>
+
+> [!NOTE]
+>	On nuget.org you can find a NuGet.Manifest.Schema 2.0.4 package. However, the schema files contained within it are older versions applicable to NuGet 2.0 and earlier. The most up-to-date schema file is best obtained from the GitHub repository.	
+
 
 Within this schema, a `.nuspec` file has the following general form:  
 
@@ -80,35 +80,15 @@ Although the following elements are the minimum requirements for a package, you 
 
 These elements must appear within a &lt;metadata&gt; element.
 
-<table class="reference">
-    <tbody>
-        <tr>
-            <th>Element</th>
-			<th>Description</th>
-        </tr>
-        <tr>
-            <td><strong>id</strong></td>
-            <td>
-                <p>
-                The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package will reside in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See <a href="/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number">Choosing a unique package identifier</a> for guidance.</p>				
-            </td>
-        </tr>
-        <tr>
-            <td><strong>version</strong></td>
-            <td>The version of the package, following the <em>major.minor.patch</em> pattern. Version numbers may include a pre-release suffix as described in <a href="/create-packages/prerelease-packages#semantic-versioning">Prerelease Packages</a></td>
-        </tr>
-        <tr>
-            <td><strong>description</strong></td>
-            <td>
-                A long description of the package for UI display.
-            </td>
-        </tr>
-        <tr>
-            <td><strong>authors</strong></td>
-            <td>A comma-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors.</td>
-        </tr>
-    </tbody>
-</table>
+Element | Description
+--- | ---
+<strong>id</strong> | The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package will reside in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number.md) for guidance.
+<strong>version</strong> | The version of the package, following the <em>major.minor.patch</em> pattern. Version numbers may include a pre-release suffix as described in [Prerelease Packages](../create-packages/prerelease-packages#semantic-versioning.md)
+<strong>description</strong> | A long description of the package for UI display.
+<strong>authors</strong> | A comma-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors.
+
+
+
 
 ### Optional metadata elements
 
@@ -116,116 +96,41 @@ These elements must appear within a &lt;metadata&gt; element.
 
 #### Single elements
 
-<table class="reference">
-    <tbody>
-        <tr>
-            <th>Element</th>
-			<th>Description</th>
-        </tr>
-        <tr>
-            <td><strong>title</strong></td>
-            <td>
-                A human-friendly title of the package, typically used in UI displays as on nuget.org and the Package Manager in Visual Studio. If not specified, the package ID is used instead.
-            </td>
-        </tr>
-        <tr>
-            <td><strong>owners</strong></td>
-            <td>
-                A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in authors, and is ignored when uploading the package to nuget.org. See <a href="/create-packages/publish-a-package#managing-package-owners-on-nuget-org">Managing package owners on nuget.org</a>                  
-            </td>
-        </tr>
-        <tr>
-            <td><strong>projectUrl</strong></td>
-            <td>A URL for the package's home page, often shown in UI displays as well as nuget.org.</td>
-        </tr>
-        <tr>
-            <td><strong>licenseUrl</strong></td>
-            <td>A URL for the package's license, often shown in UI displays as well as nuget.org.</td>            
-        </tr>
-        <tr>
-            <td><strong>iconUrl</strong></td>
-            <td>A URL for a 64x64 image with transparenty background to use as the icon for the package in UI display.
-        </tr>
-        <tr>
-            <td><strong>requireLicenseAcceptance</strong></td>
-            <td>A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.</td>
-        </tr>
-        <tr>
-            <td><strong>developmentDependency</strong></td>
-            <td><em>(2.8+)</em>  A Boolean value specifying whether the package will be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages.</td>
-        </tr>
-        <tr>
-            <td><strong>summary</strong></td>
-            <td>
-                A short description of the package for UI display. If omitted, a truncated version of the <strong>description</strong> is used.
-            </td>
-        </tr>
-        <tr>
-            <td><strong>releaseNotes</strong></td>
-            <td>
-                <em>(1.5+)</em> A description of the changes made in this release of the package, often used in UI like the Updates tab of the Visual Studio Package Manager in place of the package description.
-            </td>
-        </tr>
-        <tr>
-            <td><strong>copyright</strong></td>
-            <td><em>(1.5+)</em> Copyright details for the package.</td>
-        </tr>
-        <tr>
-            <td><strong>language</strong></td>
-            <td>The locale ID for the package. See [Creating localized packages](/create-packages/creating-localized-packages).</td>
-        </tr>
-        <tr>
-            <td><strong>tags</strong></td>
-            <td>A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering mechanisms.</td>
-        </tr>
-        <tr>
-            <td><strong>servicable</strong></td>
-            <td><em>(3.3+)</em>For internal NuGet use only</td>
-        </tr>
-        <tr>
-            <td><strong>minClientVersion</strong></td>
-            <td><em>(2.5+)</em>  Specifies the minimum version of the NuGet client that can install this package, enfoced by nuget.exe and the Visual Studio Package Manager.</td>
-        </tr>
-</table>
+Element | Description
+--- | ---
+<strong>title</strong> | A human-friendly title of the package, typically used in UI displays as on nuget.org and the Package Manager in Visual Studio. If not specified, the package ID is used instead.
+<strong>owners</strong> | A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in authors, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package#managing-package-owners-on-nuget-org.md)
+<strong>projectUrl</strong> | A URL for the package's home page, often shown in UI displays as well as nuget.org.
+<strong>licenseUrl</strong> | A URL for the package's license, often shown in UI displays as well as nuget.org.
+<strong>iconUrl</strong> | A URL for a 64x64 image with transparenty background to use as the icon for the package in UI display.
+<strong>requireLicenseAcceptance</strong> | A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.
+<strong>developmentDependency</strong> | <em>(2.8+)</em>  A Boolean value specifying whether the package will be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages.
+<strong>summary</strong> | A short description of the package for UI display. If omitted, a truncated version of the <strong>description</strong> is used.
+<strong>releaseNotes</strong> | <em>(1.5+)</em> A description of the changes made in this release of the package, often used in UI like the Updates tab of the Visual Studio Package Manager in place of the package description.
+<strong>copyright</strong> | <em>(1.5+)</em> Copyright details for the package.
+<strong>language</strong> | The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md).
+<strong>tags</strong> | A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering mechanisms.
+<strong>servicable</strong> | <em>(3.3+)</em>For internal NuGet use only
+<strong>minClientVersion</strong> | <em>(2.5+)</em>  Specifies the minimum version of the NuGet client that can install this package, enfoced by nuget.exe and the Visual Studio Package Manager.
 
 #### Collection elements
 
-<table>
-        <tr>
-            <td><strong>packageTypes</strong></td>
-            <td><em>(3.3+)</em> A collection of zero or more &lt;packageType&gt; elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of <em>name</em> and <em>verion</em>. See <a href="/create-packages/creating-a-package#setting-a-package-type">Setting a package type</a>.
-            </td>
-        </tr>
-        <tr>
-            <td><strong>dependencies</strong></td>
-            <td>A collection of zero or more &lt;dependency&gt; elements specifying the dependencies for the package. Each dependency has attributes of <em>id</em>, <em>version</em>, <em>include</em> (3.x+), and <em>exclude</em> (3.x+). See <a href="#dependencies">Dependencies</a> below.</td>
-        </tr>
-        <tr>
-            <td><strong>frameworkAssemblies</strong></td>
-            <td><em>(1.2+)</em> A collection of zero or more &lt;frameworkAssembly&gt; elements identifying .NET Framework assembly references that this package requires, which ensures that references are added to projects consuming the package. Each frameworkAssembly has <em>assemblyName</em> and <em>targetFramework</em> attributes. See <a href="#specifying-framework-assembly-references-gac">Specifying framework assembly references GAC</a> below.</td>
-        </tr>
-        <tr>
-            <td><strong>references</strong></td>
-            <td><em>(1.5+)</em> A collection of zero or more &lt;reference&gt; elements naming assemblies in the package's <code>lib</code> folder that are added as project references. Each reference has a <em>file</em> attribute. &lt;references&gt; can also contain a &lt;group&lt; element with a <em>targetFramework</em> attribute, that then contains &lt;reference&gt; elements. If omitted, all references in <code>lib</code> are included. See <a href="#specifying-explicit-assembly-references">Specifying explicit assembly references.</a> below.  
-			</td>
-        </tr>
-        <tr>
-            <td><strong>contentFiles</strong></td>
-            <td><em>(3.3+)</em> A collection of &lt;files&gt; elements that identify content files that should be include in the consuming project. These files are specified with a set of attributes that describe how they should be used within the project system. See <a href="#specifying-files-to-include-in-the-package">Specifying files to include in the package</a> below.</td>
-        </tr>
+|||
+--- | ---
+<strong>packageTypes</strong> | <em>(3.3+)</em> A collection of zero or more &lt;packageType&gt; elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of <em>name</em> and <em>verion</em>. See <a href="/create-packages/creating-a-package#setting-a-package-type">Setting a package type</a>
+<strong>dependencies</strong> | A collection of zero or more &lt;dependency&gt; elements specifying the dependencies for the package. Each dependency has attributes of <em>id</em>, <em>version</em>, <em>include</em> (3.x+), and <em>exclude</em> (3.x+). See <a href="#dependencies">Dependencies</a> below.
+<strong>frameworkAssemblies</strong> | <em>(1.2+)</em> A collection of zero or more &lt;frameworkAssembly&gt; elements identifying .NET Framework assembly references that this package requires, which ensures that references are added to projects consuming the package. Each frameworkAssembly has <em>assemblyName</em> and <em>targetFramework</em> attributes. See <a href="#specifying-framework-assembly-references-gac">Specifying framework assembly references GAC</a> below.
+<strong>references</strong> | <em>(1.5+)</em> A collection of zero or more &lt;reference&gt; elements naming assemblies in the package's `lib` folder that are added as project references. Each reference has a <em>file</em> attribute. &lt;references&gt; can also contain a &lt;group&lt; element with a <em>targetFramework</em> attribute, that then contains &lt;reference&gt; elements. If omitted, all references in `lib` are included. See <a href="#specifying-explicit-assembly-references">Specifying explicit assembly references.</a> below.
+<strong>contentFiles</strong> | <em>(3.3+)</em> A collection of &lt;files&gt; elements that identify content files that should be include in the consuming project. These files are specified with a set of attributes that describe how they should be used within the project system. See <a href="#specifying-files-to-include-in-the-package">Specifying files to include in the package</a> below.
 
-
-    </tbody>
-</table>
-
-### Files element
+### Files element 
 
 The &lt;package&gt; node may also contain a &lt;files&gt; and/or &lt;contentFiles&gt; nodes as siblings to &lt;metadata&gt; to specify whcih assembly and content files to include in the package. See <a href="#including-assembly-files">Including assembly files</a> and <a href="#including-content-files">Including content files</a> later in this topic for details.</td>
         
 
 ## Replacement tokens
 
-When creating a package, the [`nuget pack` command](/tools/nuget.exe-cli-reference#pack) will replace $-delimited tokens in the `.nuspec` file's &lt;metadata&gt; node with values that come from either a project file or the `pack` command's `-properties` switch.
+When creating a package, the [`nuget pack` command](../tools/nuget.exe-cli-reference#pack.md) will replace $-delimited tokens in the `.nuspec` file's &lt;metadata&gt; node with values that come from either a project file or the `pack` command's `-properties` switch.
 
 On the command line, you specify token values with `nuget pack -properties <name>=<value>;<name>=<value>`. For example, you can use a token such as `$owners$` and `$desc$` in the `.nuspec` and provide the values at packing time as follows:
 
@@ -242,42 +147,14 @@ Typically, when you have a project you'll create the `.nuspec` initially using `
 
 With the exception of `$configuration$`, values in the project will be used in preference to any assigned to the same token on the command line.
 
-<table class="reference">
-    <tr>
-		<th>Token</th>
-	    <th>Value source</th>
-		<th>Value</th></tr>
-    <tr>
-        <td>$id$</td>
-	    <td>Project file</td>
-        <td>AssemblyName from the project file</td>
-    </tr>
-    <tr>
-        <td>$version$</td>
-		<td>AssemblyInfo</td>
-        <td>AssemblyInformationalVersion if present, otherwise AssemblyVersion</td>
-    </tr>
-    <tr>
-        <td>$author$</td>
-		<td>AssemblyInfo</td>
-        <td>AssemblyCompany</td>
-    </tr>
-    <tr>
-        <td>$description$</td>
-		<td>AssemblyInfo</td>
-        <td>AssemblyDescription</td> 
-    </tr>
-    <tr>
-        <td>$copyright$</td>
-		<td>AssemblyInfo</td>
-        <td>AssemblyCopyright</td> 
-    </tr>
-    <tr>
-        <td>$configuration$</td>
-		<td>Assembly DLL</td>
-        <td>Configuration used to build the assembly, defaulting to Debug. Note that to create a package using a Release configuration, you always use <code>-properties Configuration=Release</code> on the command line.</td> 
-    </tr>
-</table>
+Token | Value source | Value
+--- | --- | ---
+$id$ | Project file | AssemblyName from the project file
+$version$ | AssemblyInfo | AssemblyInformationalVersion if present, otherwise AssemblyVersion
+$author$ | AssemblyInfo | AssemblyCompany
+$description$ | AssemblyInfo | AssemblyDescription
+$copyright$ | AssemblyInfo | AssemblyCopyright
+$configuration$ | Assembly DLL | Configuration used to build the assembly, defaulting to Debug. Note that to create a package using a Release configuration, you always use `-properties Configuration=Release` on the command line.
 
 Tokens can also be used to resolve paths when you include [assembly files](#including-assembly-files) and [content files](#including-content-files). The tokens have the same names as the MSBuild properties, making it possible to select files to be included depending on the current build configuration. For example, if you use the following tokens in the `.nuspec` file:
 
@@ -295,18 +172,11 @@ And you build an assembly whose `AssemblyName` is `LoggingLibrary` with the `Rel
 ## Dependencies
 
 The &lt;dependencies&gt; element within &lt;metadata&gt; contains any number of &lt;dependency&gt; elements that identify other packages upon which the top-level package depends. The attributes for each &lt;dependency&gt; are as follows: 
-  
-<table class="reference">
-    <tr><th>Attribute</th><th>Description</th></tr>
-    <tr>
-        <td><code>id</code></td>
-        <td>(Required) The package ID of the dependency. </td>
-    </tr>
-    <tr>
-        <td><code>version</code></td>
-        <td>(Required) The range of versions acceptable as a dependency. See <a href="/ndoc/create-packages/dependency-versions#version-ranges-in--nuspec-files">Dependency versions</a> for exact syntax.</td>
-    </tr>
-</table>
+
+Attribute | Description
+--- | ---
+`id` | (Required) The package ID of the dependency.
+`version` | (Required) The range of versions acceptable as a dependency. See <a href="/ndoc/create-packages/dependency-versions#version-ranges-in--nuspec-files">Dependency versions</a> for exact syntax.
 
 For example, the following lines indicate dependencies on `PackageA` version 1.1.0 or higher, and `PackageB` version 1.x. 
 
@@ -325,12 +195,10 @@ As an alternative to a single flat list, dependencies can also be specified acco
 
 Each group has an attribute named `targetFramework` and contains zero or more &lt;dependency&gt; elements. Those dependencies will be installed together when  the target framework is compatible with the project's framework profile.
 
-The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](/schema/target-frameworks) for the exact framework identifiers.
+The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](../schema/target-frameworks.md) for the exact framework identifiers.
 
-<div class="block-callout-info">
-	<strong>Note</strong>	
-	The group format cannot be intermixed with a flat list.
-</div>
+> [!NOTE]	
+>	The group format cannot be intermixed with a flat list.
 
 The following example shows different variations of the &lt;group&gt; element:
 
@@ -373,12 +241,11 @@ As an alternative to a single flat list, references can also be specified accord
 
 Each group has an attribute named `targetFramework` and contains zero or more &lt;reference&gt; elements. Those references will be added to a project when the target framework is compatible with the project's framework profile.
 
-The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of references. See [Target frameworks](/schema/target-frameworks) for the exact framework identifiers.
+The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of references. See [Target frameworks](../schema/target-frameworks.md) for the exact framework identifiers.
 
-<div class="block-callout-info">
-	<strong>Note</strong>	
-	The group format cannot be intermixed with a flat list.
-</div>
+> [!NOTE]	
+>	The group format cannot be intermixed with a flat list.
+
 
 The following example shows different variations of the &lt;group&gt; element:
 
@@ -404,24 +271,10 @@ Framework assemblies are those that are part of the .NET framework and should al
 
 The &lt;frameworkAssemblies&gt; element contains zero or more &lt;frameworkAssembly&gt; elements, each of which specifies the following attributes:
 
-<table class="reference">
-    <tr>
-        <th>Attribute</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>assemblyName</td>
-        <td>
-            (Required) The fully qualified assembly name.
-        </td>
-    </tr>
-    <tr>
-        <td>targetFramework</td>
-        <td>
-           (Optional) Specifies the target framework to which this reference applies. If omitted, indicates that the reference applies to all frameworks. See <a href="/schema/target-frameworks">Target frameworks</a> for the exact framework identifiers.             
-        </td>
-    </tr>
-</table>
+Attribute | Description
+--- | ---
+assemblyName | (Required) The fully qualified assembly name.
+targetFramework | (Optional) Specifies the target framework to which this reference applies. If omitted, indicates that the reference applies to all frameworks. See <a href="/schema/target-frameworks">Target frameworks</a> for the exact framework identifiers.
 
 The following example shows a reference to `System.Net` for all target frameworks, and a reference to `System.ServiceModel` for .NET Framework 4.0 only:
 
@@ -436,12 +289,10 @@ The following example shows a reference to `System.Net` for all target framework
 ## Including assembly files
 <a name="specifying-files-to-include-in-the-package"></a>
 
-If you follow the conventions described in [Creating a Package](/create-packages/creating-a-package), you do not have to explicitly specify a list of files in the `.nuspec` file. The `nuget pack` command will automatically pick up the necessary files.
+If you follow the conventions described in [Creating a Package](../create-packages/creating-a-package.md), you do not have to explicitly specify a list of files in the `.nuspec` file. The `nuget pack` command will automatically pick up the necessary files.
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>	
-	When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, <em>excluding</em> those that are named <code>.resources.dll</code> because they are assumed to be localized satellite assemblies. For this reason, avoid using ".resources.dll" for files that otherwise contain essential package code.  
-</div>
+> [!NOTE]
+>	When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, <em>excluding</em> those that are named ` .resources.dll ` because they are assumed to be localized satellite assemblies. For this reason, avoid using ".resources.dll" for files that otherwise contain essential package code.  
 
 To bypass this automatic behavior and explicitly control which files are included in a package, place a &lt;files&gt; element as a child of &lt;package&gt; (and a sibling of &lt;metadata&gt;), identifying each file with a separate &lt;file&gt; element. For example:     
 
@@ -458,32 +309,12 @@ With NuGet 2.x and earlier, and projects using `packages.config`, the &lt;files&
 
 Each &lt;file&gt; element specifies the following attributes:
 
-<table class="reference">
-    <tr>
-        <th>Attriute</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td><strong>src</strong></td>
-        <td>
-            The location of the file or files to include, subject to exclusions specified by the <code>exclude</code> attribute. The path is relative to the <code>.nuspec</code> file unless an absolute path is specified. The wildcard character * is allowed, and the double 
-            wildcard ** implies a recursive folder search.
-        </td>
-    </tr>
-    <tr>
-        <td><strong>target</strong></td>
-        <td>
-            The relative path to the folder within the package 
-            where the source files will be placed, which must begin with <code>lib</code>, <code>content</code>, or <code>tools</code>.
-        </td>
-    </tr>
-    <tr>
-        <td><strong>exclude</strong></td>
-        <td>
-            A semicolon-delimited list of files or file patterns to exclude from the <code>src</code> location. The wildcard character * is allowed, and the double wildcard ** implies a recursive folder search.
-        </td>
-    </tr>
-</table> 
+Attriute | Description
+--- | ---
+<strong>src</strong> | The location of the file or files to include, subject to exclusions specified by the `exclude` attribute. The path is relative to the `.nuspec` file unless an absolute path is specified. The wildcard character * is allowed, and the double wildcard ** implies a recursive folder search.
+<strong>target</strong> | The relative path to the folder within the package where the source files will be placed, which must begin with `lib`, `content`, or `tools`.
+<strong>exclude</strong> | A semicolon-delimited list of files or file patterns to exclude from the `src` location. The wildcard character * is allowed, and the double wildcard ** implies a recursive folder search.
+
 
 ### Examples
 
@@ -681,42 +512,14 @@ By default, a package places content in a `contentFiles` folder (see below) and 
 To control which files are included, the &lt;contentFiles&gt; element specifies is a collection of &lt;files&gt; elements that identify the exact files include. 
 These files are specified with a set of attributes that describe how they should be used within the project system:
 
-<table class="reference">
-	<tr>
-		<th>Attribute</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td>include</td>
-		<td>
-			(Required) The location of the file or files to include, subject to exclusions specified by the <code>exclude</code> attribute. The path is relative to the <code>.nuspec</code> file unless an absolute path is specified. The wildcard character * is allowed, and the double wildcard ** implies a recursive folder search.
-		</td>    		
-	</tr>
-	<tr>
-		<td>exclude</td>
-        <td>
-            A semicolon-delimited list of files or file patterns to exclude from the <code>src</code> location. The wildcard character * is allowed, and the double wildcard ** implies a recursive folder search.
-        </td>
-	</tr>
-	<tr>
-		<td>buildAction</td>
-		<td>
-			The build action to assign to the contnet item for MSBuild, such as <code>Content</code>, <code>None</code>, <code>Embedded Resource</code>, <code>Compile</code>, etc. The default is <code>Compile</code>. 
-		</td>
-	</tr>
-	<tr>
-		<td>copyToOutput</td>
-		<td>
-			A Boolean indicating whether to copy content items to the build output folder. The default is false.
-		</td>
-	</tr>
-	<tr>
-		<td>flatten</td>
-		<td>
-			A Boolean indicating whether to copy content items to a single folder in the build output (true), or to preserve the folder structure in the package (false). The default is false.
-		</td>
-	</tr>
-</table>
+Attribute | Description
+--- | ---
+include | (Required) The location of the file or files to include, subject to exclusions specified by the `exclude` attribute. The path is relative to the `.nuspec` file unless an absolute path is specified. The wildcard character * is allowed, and the double wildcard ** implies a recursive folder search.
+exclude | A semicolon-delimited list of files or file patterns to exclude from the `src` location. The wildcard character * is allowed, and the double wildcard ** implies a recursive folder search.
+buildAction | The build action to assign to the contnet item for MSBuild, such as `Content`, `None`, `Embedded Resource`, `Compile`, etc. The default is `Compile`.
+copyToOutput | A Boolean indicating whether to copy content items to the build output folder. The default is false.
+flatten | A Boolean indicating whether to copy content items to a single folder in the build output (true), or to preserve the folder structure in the package (false). The default is false.
+
 
 When installing a package, NuGet applies the child elements of &lt;contentFiles&gt; from top to bottom. If multiple entries match the same file then all entries will be applied. The top-most entry will override the lower entries if there is a conflict for the same attribute.
 
@@ -727,7 +530,7 @@ The package project should structure content using the following pattern:
 	/contentFiles/{codeLanguage}/{TxM}/{any?}
 
 - `codeLanguages` may be `cs`, `vb`, `fs`, `any`, or the lowercase equivalent of a given `$(ProjectLanguage)`
-* `TxM` is any legal target framework moniker that NuGet supports (see [Target frameworks](/schema/target-frameworks)).
+* `TxM` is any legal target framework moniker that NuGet supports (see [Target frameworks](../schema/target-frameworks.md)).
 * Any folder structure may be appended to the end of this syntax.
 
 For example:

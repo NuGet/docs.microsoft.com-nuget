@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet Package Manager UI | Microsoft Docs"] 
+title: "NuGet Package Manager UI | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [62f6962b-7b84-4452-ae0d-a9e1ef1fc6f0] 
+ms.assetid: 62f6962b-7b84-4452-ae0d-a9e1ef1fc6f0
  
 # optional metadata 
  
@@ -144,4 +144,4 @@ When checked, a modal window displays which dependent packages will be loaded wi
 
 **Remove dependencies**: when checked, removes any dependent packages if they are not referenced elsewhere in the project.
 
-**Force uninstall even if there are dependencies on it**: when checked, uninstalls a package even if it's still being referenced in the project. This is typically used in combination with **Remove dependencies** to remove a package and whatever dependencies it installed. Using this option may, however, lead to a broken references in the project, in which case you may need to [reinstall those other packages](/consume-packages/reinstalling-and-updating-packages).
+**Force uninstall even if there are dependencies on it**: when checked, uninstalls a package even if it's still being referenced in the project. This is typically used in combination with **Remove dependencies** to remove a package and whatever dependencies it installed. Using this option may, however, lead to a broken references in the project, in which case you may need to [reinstall those other packages](../consume-packages/reinstalling-and-updating-packages.md).

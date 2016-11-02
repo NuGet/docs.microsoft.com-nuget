@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Project.json and UWP | Microsoft Docs"] 
+title: "Project.json and UWP | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [37caf4d7-dabd-4a78-aad2-7d445f818457] 
+ms.assetid: 37caf4d7-dabd-4a78-aad2-7d445f818457
  
 # optional metadata 
  

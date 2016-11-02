@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 2.6.1 for WebMatrix Release Notes | Microsoft Docs"] 
+title: "NuGet 2.6.1 for WebMatrix Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [119ea65b-b38b-4a8c-a4ed-6ea06f1aad09] 
+ms.assetid: 119ea65b-b38b-4a8c-a4ed-6ea06f1aad09 
  
 # optional metadata 
  

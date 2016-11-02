@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 3.5 Beta Release Notes | Microsoft Docs"] 
+title: "NuGet 3.5 Beta Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [14fa0ed9-b82a-45d0-af7d-1d817d68df38] 
+ms.assetid: 14fa0ed9-b82a-45d0-af7d-1d817d68df38 
  
 # optional metadata 
  

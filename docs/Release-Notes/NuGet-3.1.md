@@ -2,7 +2,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 3.1 Release Notes | Microsoft Docs"] 
+title: "NuGet 3.1 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -11,7 +11,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [0fc4d89a-ccca-4d63-85bf-461cd9ced882] 
+ms.assetid: 0fc4d89a-ccca-4d63-85bf-461cd9ced882 
  
 # optional metadata 
  
@@ -30,7 +30,7 @@ ms.reviewer:
 ---
 # NuGet 3.1 Release Notes
 
-[NuGet 3.0 Release Notes](/nuget/release-notes/nuget-3.0.0) | [NuGet 3.1.1 Release Notes](/nuget/release-notes/nuget-3.1.1)
+[NuGet 3.0 Release Notes](../nuget/release-notes/nuget-3.0.0.md) | [NuGet 3.1.1 Release Notes](../nuget/release-notes/nuget-3.1.1.md)
 
 NuGet 3.1 was released on July 27, 2015 as a bundled extension to the Universal Windows Platform SDK for Visual Studio 2015. We delivered this release with the Windows Platform SDK so that the Windows development experience could take advantage of the NuGet cross-platform work that had been previously started. This NuGet extension version is only available for Visual Studio 2015.  
 

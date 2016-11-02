@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: [“An Overview of the NuGet Ecosystem | Microsoft Docs”] 
+title: “An Overview of the NuGet Ecosystem | Microsoft Docs” 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [8971dcf5-1d05-46e1-adf2-ce0f55521a49] 
+ms.assetid: 8971dcf5-1d05-46e1-adf2-ce0f55521a49 
  
 # optional metadata 
  

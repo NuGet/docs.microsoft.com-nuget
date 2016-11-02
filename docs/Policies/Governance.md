@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: [“NuGet Governance | Microsoft Docs”] 
+title: “NuGet Governance | Microsoft Docs” 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [94c088ce-ec96-4876-a210-fbdae743942c] 
+ms.assetid: 94c088ce-ec96-4876-a210-fbdae743942c 
  
 # optional metadata 
  
@@ -28,11 +28,8 @@ ms.reviewer:
  
 ---
 # NuGet Governance
-
-<div class="block-callout-info">	
-	This document is based upon the <a href="http://www.oss-watch.ac.uk/resources/benevolentdictatorgovernancemodel">Benevolent Dictator Governance Model</a>) by the University of Oxford. It is licensed under a <a href="http://creativecommons.org/licenses/by-sa/2.0/uk/">Creative Commons Attribution-ShareAlike 2.0 UK: England & Wales License</a>.
-
-</div>
+	
+> This document is based upon the [Benevolent Dictator Governance Model](http://www.oss-watch.ac.uk/resources/benevolentdictatorgovernancemodel) by the University of Oxford. It is licensed under a [Creative Commons Attribution-ShareAlike 2.0 UK: England & Wales License](http://creativecommons.org/licenses/by-sa/2.0/uk/).
 
 The NuGet project is led by a Benevolent Dictator and managed by the community. That is, the community actively contributes to the day-to-day maintenance of the project, but the general strategic line is drawn by the benevolent dictator. In case of disagreement, the benevolent dictator has the last word.
 
