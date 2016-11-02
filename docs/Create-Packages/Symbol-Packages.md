@@ -45,7 +45,6 @@ You can create both packages with the `-Symbols` option, either from a nuspec fi
 nuget pack MyPackage.nuspec -Symbols
 ```
 
-
 ```
 nuget pack MyProject.csproj -Symbols
 ```

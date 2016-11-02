@@ -57,9 +57,8 @@ The cure to this problem is making sure that packages are restored as the first 
 
 When your build process restores packages before building the code, you don't need to check-in **.targets** files 
 
-<p class="info">
-<strong>Note</strong><br/>Packages must be authored to allow loading in Visual Studio. Otherwise, you may still want to check in <strong>.targets</strong> files so that other developers can simply open the solution without having to restore packages first. 
-</p> 
+> [!Note]
+> Packages must be authored to allow loading in Visual Studio. Otherwise, you may still want to check in `.targets` files so that other developers can simply open the solution without having to restore packages first. 
 
 The following demo project shows how to set up the build in such a way that the `packages` folders and **.targets** files don't need to be checked-in. Finally, I'll show how you can setup an automated build on the [Team Foundation Service] for this sample project.
 
@@ -98,21 +97,19 @@ The source code is under the `src` folder. Although our demo only uses a single 
 
 ### Ignore Files
 
-<p class="info">
-<strong>Note</strong><br/>There is currently a <a href="https://nuget.codeplex.com/workitem/4072">known bug in the NuGet Client</a> that causes the client to still add the 	`packages` folder to version control. A workaround is to disable the source control integration. In order to do that, you'll need a  `nuget.config ` file in the  `.nuget ` folder that is parallel to your solution. If this folder doesn't exist yet, you'll need to create it. In  `nuget.config`, add the following content:<br>
+> [!Note]
+> There is currently a [known bug in the NuGet client](https://nuget.codeplex.com/workitem/4072) that causes the client to still add the `packages` folder to version control. A workaround is to disable the source control integration. In order to do that, you'll need a `nuget.config ` file in the  `.nuget` folder that is parallel to your solution. If this folder doesn't exist yet, you'll need to create it. In `nuget.config`, add the following content:
 
-<pre>
-```
-&lt;configuration>
-    &lt;solution>
-        &lt;add key="disableSourceControlIntegration" value="true" />
-    &lt;/solution>
-&lt;/configuration>
-```
-</pre>
+		```
+		&lt;configuration>
+			&lt;solution>
+				&lt;add key="disableSourceControlIntegration" value="true" />
+			&lt;/solution>
+		&lt;/configuration>
+		```
 
-For more details have a look at the <a href="/consume-packages/configuring-nuget-behavior">NuGet Config Settings</a>.
-</p>
+> For more details have a look at the [NuGet Config Settings](../consume-packages/configuring-nuget-behavior)
+
 
 In order to communicate to the version control that we don’t intent to check-in the **packages** folders, we've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describes patterns of files you don't want to check-in.
 

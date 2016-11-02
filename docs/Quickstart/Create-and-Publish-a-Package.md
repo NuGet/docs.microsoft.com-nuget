@@ -68,7 +68,7 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 		nuget spec
 	```
 
-3. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](../create-packages/creating-a-package#creating-the--nuspec-file.md).
+3. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](../create-packages/creating-a-package#creating-the-nuspec-file.md).
 			
 		<?xml version="1.0"?>
 		<package>
@@ -107,8 +107,8 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 		  </metadata>
 		</package>
 
-> [!NOTE]
->	For packages built for public consumption, pay special attention to the <em>&lt;tags&gt;</em> element, as these tags help others find your package and understand what it does.
+> [!Note]
+> For packages built for public consumption, pay special attention to the &lt;tags&gt; element, as these tags help others find your package and understand what it does.
 
 
 
@@ -129,8 +129,8 @@ Note that you'll get warnings if you haven't updated various fields in the .nusp
 
 You're now ready to publish the package to nuget.org using the NuGet CLI. (Alternately, you can use the [nuget.org publishing workflow](../create-packages/publish-a-package#publish-through-nuget-org.md).
 
-> [!NOTE]
-	The packages you publish to <a href="https://www.nuget.org/">nuget.org</a> will be publicly visible to other developers. To host packages privately, see <a href="../hosting-packages/overview">Hosting packages</a>.
+> [!Note]
+> The packages you publish to nuget.org will be publicly visible to other developers. To host packages privately, see [Hosting packages](../hosting-packages/overview).
 
 
 1. Create a free account on [nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F), or log in if you already have one. When creating a new account, you'll receive a confirmation email. You must confirm the account before you can upload a package.
@@ -139,8 +139,8 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
 
 	![Copying the API key to the clipboard](/media/QS_Create-02-APIKey.png)
 	
-> [!NOTE]
-		Always keep your API key a secret! If your key is accidentally revealed, you can always regenerate it at any time. You can also remove the API key if you no longer want to push packages via the CLI.
+> [!Note]
+> Always keep your API key a secret! If your key is accidentally revealed, you can always regenerate it at any time. You can also remove the API key if you no longer want to push packages via the CLI.
 	
 
 4. At a command prompt, run the following command, replacing the key with the value copied in step 3:
@@ -164,8 +164,8 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
 
 
 
->	<strong>Virus Scanning</strong><br>
->	Before being made public, all packages uploaded to nuget.org are scanned for viruses and rejected if any viruses are found. All packages listed on nuget.org are also scanned periodically.
+> [!Virus Scanning]
+> Before being made public, all packages uploaded to nuget.org are scanned for viruses and rejected if any viruses are found. All packages listed on nuget.org are also scanned periodically.
  
 
 And that's it! You've just created and published your first NuGet package to [nuget.org](https://www.nuget.org/), that other developers can use in their own projects.
@@ -176,7 +176,3 @@ And that's it! You've just created and published your first NuGet package to [nu
 * [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 * [Dependency versions](../create-packages/dependency-versions.md)
 * [Creating localized packages](../create-packages/creating-localized-packages.md)
-
-
-
-

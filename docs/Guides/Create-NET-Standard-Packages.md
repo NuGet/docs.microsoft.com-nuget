@@ -35,10 +35,10 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 1. [Pre-requisites](#pre-requisites)
 2. [Create the class library project](#create-the-class-library-project)
-3. [Create and update the .nuspec file](#create-and-update-the--nuspec-file)
+3. [Create and update the .nuspec file](#create-and-update-the-nuspec-file)
 4. [Package the component](#package-the-component)
 5. [Additional options](#additional-options)
-6. [.NET Standard mapping table](#-net-standard-mapping-table)
+6. [.NET Standard mapping table](#net-standard-mapping-table)
 7. [Related topics](#related-topics)
 
 
@@ -47,7 +47,7 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 2. .NET Core: Install .NET Core along with templates and other tools for Visual Studio 2015 from [https://go.microsoft.com/fwlink/?LinkId=824849](https://go.microsoft.com/fwlink/?LinkId=824849).
 3. NuGet CLI. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice. Then add that location to your PATH environment variable if it isn't already.
 
->[!NOTE]
+>[!Note]
 >nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
 
 
@@ -126,7 +126,7 @@ This will generate `AppLogger.YOUR_NAME.1.0.0.nupkg`. Opening this file in a too
 
 ![NuGet Package Explorer showing the AppLogger package](media/NetStandard-PackageExplorer.png)
 
->[!NOTE]
+>[!Note]
 >A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
 
 
@@ -196,7 +196,7 @@ For more details on using this technique, see [Supporting Multiple .NET Framewor
 
 In some cases you might want to add custom build targets or properties in projects that consume your package, such as running a custom tool or process during build. You do this by adding files in a `\build` folder as described in the steps below. When NuGet installs a package with \build files, it adds an MSBuild element in the project file pointing to the .targets and .props files. 
 
->[!NOTE]
+>[!Note]
 >When using project.json, targets are not added to the project but are made available through the project.lock.json.
 
 
@@ -273,7 +273,7 @@ To create localized versions of your library, you can either create separate pac
 ###Adding a readme
 When you include a `readme.txt` file in the root of the package, Visual Studio will display it when the package is installed directly.
 
->[!NOTE]
+>[!Note]
 >Readme files are not shown for packages that are installed as a dependency, or for .NET Core projects.
 
 

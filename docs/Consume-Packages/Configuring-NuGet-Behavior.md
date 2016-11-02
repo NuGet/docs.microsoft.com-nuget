@@ -50,7 +50,7 @@ The behavior of every NuGet command, whether issued from the command line, the P
 - Additional machine-wide config files (NuGet 2.6 and later) located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}\]]]NuGet.Config`, where `{IDE}` can be `VisualStudio`, `{Version}` can be the Visual Studio version such as `14.0`, and `{SKU}` is either `Community`, `Pro`, or `Enterprise`. These variants allow you to create configurations that are specific to different versions and editions of Visual Studio if needs be.
 - (NuGet 2.7 and later) The "defaults" file located at `%PROGRAMDATA%\NuGet\NuGetDefaults.config`, which is described later under [NuGet defaults file](#nuget-defaults-file) as a way to specifically enable and disable package sources. No other settings are supported in this file.
 
-> [!NOTE] 
+> [!Note] 
 > The `%ProgramData%\NuGet` folder typically requires Administrator permissions to modify. Administrators are expected to set the correct permissions on this folder based on the user and/or machine information. 
 
  
@@ -60,7 +60,7 @@ A configuration file is a simple XML text file containing settings as described 
 
 The preferred method for changing the configuration is using the NuGet [config command](/tools/nuget.exe-cli-reference#config) to set a key and value.
 
-> [!NOTE] 
+> [!Note] 
 > Keys are always case sensitive. 
 
 
@@ -73,8 +73,8 @@ To **set a value** in any existing configuration file, use the `-configFile` swi
 
 Without the `-configFile` switch, NuGet will make the change in the global config file.
 
-> [!NOTE] 
-> In NuGet 3.4 and later you can use environment variables in any value, as in <em>repositoryPath=%PACKAGEHOME%</em>. 
+> [!Note] 
+> In NuGet 3.4 and later you can use environment variables in any value, as in `repositoryPath=%PACKAGEHOME%`. 
 
 
 To **remove a value**, use the same commands but with an empty value, such as:
@@ -87,7 +87,7 @@ To create a new configuration file, copy the template below into that file and t
 	<configuration>
 	</configuration>
 
-> [!NOTE] 
+> [!Warning] 
 > Although you can modify the file in any text editor, NuGet (v3.4.3 and later) silently ignores the entire configuration file if it contains malformed XML (mismatched tags, invalid quotation marks, etc.). 
 
 ## How settings are applied
@@ -95,7 +95,7 @@ To create a new configuration file, copy the template below into that file and t
 As described above in [Config file locations and uses](#config-file-locations-and-uses), any number of `NuGet.Config` files can exist on a machine, both in global locations and within a project's folder structure. This allows you to control settings in different places as they apply to a project, a group of projects, or all projects. 
 
 
-> [!NOTE] 
+> [!Note] 
 > This process is sometimes referred to as "chaining" of config file, and the ability to insert a specific setting anywhere along the chain may be referred to as a "NuGet extensibility point."
 
 When `nuget.exe` is run from the command line or run implicitly within Visual Studio, it loads settings from config files in the following order:
@@ -226,7 +226,7 @@ The defaults file works with the following settings:
 - `disabledPackageSources`: this collection also has the same meaning as in `NuGet.Config` files, where each affected source is listed by its name and a true/false value indicating whether it's disabled. This allows the source name and URL to remain in `packageSources` without it being turned on by default. Individual developers can then re-enable the source by setting the source's value to false in other `NuGet.Config` files without having to find the correct URL again. This is also useful to supply developers with a full list of internal source URLs for an organization while enabling only an individual team's source by default.   
 - `defaultPushSource`: when publishing a package, nuget.org is used as the destination or "push source" unless another is specified, which risks developers accidentally pushing internal packages to a public site. By changing the default push source, administrators can ensure that packages stay internal unless published to nuget.org explicitly.  
 
-> [!NOTE] 
+> [!Note] 
 > The NuGetDefaults.Config file will never cause a package source to be removed from a developer's NuGet configuration. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a NuGetDefaults.config file.
 >
 > Furthermore, neither NuGetDefaults.config or any other mechanism in NuGet can prevent access to package sources like nuget.org. If an organization wishes to block such access, it much use other means such as firewalls to do so.

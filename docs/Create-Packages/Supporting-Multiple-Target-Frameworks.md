@@ -33,7 +33,7 @@ Many libraries target a specific version of the .NET Framework. For example, you
 
 Fortunately, NuGet supports putting multiple versions of the same library in a single package through the convention-based working directory method described in [Creating a package](../create-package/creating-a-package#from-a-convention-based-working-directory.md).
 
-> [!NOTE]
+> [!Note]
 > Assemblies that have no associated framework name or version should be stored directly in the <em>lib</em> folder and not in separate folders.
 
 In this topic:
@@ -68,7 +68,7 @@ The following example shows a folder structure that supports four versions of a 
 
 ## Content files and PowerShell scripts
 
-> [!NOTE]
+> [!Warning]
 > Mutable content file support and script execution is available in NuGEt 2.x, but deprecated in NuGet 3.x and later.
 
 With NuGet 2.x, content files and PowerShell scripts can be grouped by target framework using the same folder convention inside the `content` and `tools` folders. For example:
@@ -92,7 +92,7 @@ With NuGet 2.x, content files and PowerShell scripts can be grouped by target fr
             
 If a framework folder is left empty, NuGet will not add assembly references or content files or run the PowerShell scripts for that framework.
 
-> [!NOTE]
+> [!Note]
 > Because init.ps1 is executed at the solution level and not dependent on project, it must be placed directly under the <em>tools</em> folder. If placed under a framework folder, it will be ignored.
 
 

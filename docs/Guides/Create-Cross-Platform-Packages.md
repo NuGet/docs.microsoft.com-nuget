@@ -36,7 +36,7 @@ In this walkthrough you'll create a cross-platform NuGet package that can be use
 1. [Pre-requisites](#pre-requisites)
 2. [Create the project structure and abstraction code](#create-the-project-structure-and-abstraction-code)
 3. [Write your platform-specific code](#write-your-platform--specific-code)
-4. [Create and update the .nuspec file](#create-and-update-the--nuspec-file)
+4. [Create and update the .nuspec file](#create-and-update-the-nuspec-file)
 5. [Package the component](#package-the-component)
 6. [Related topics](#related-topics)
 
@@ -44,7 +44,7 @@ In this walkthrough you'll create a cross-platform NuGet package that can be use
 1. Visual Studio 2015 with Universal Windows Platform (UWP) and Xamarin. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well, of course. To include UWP and Xamarin tools, select a Custom install and check the appropriate options.
 2. NuGet CLI. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice. Then add that location to your PATH environment variable if it isn't already.
 
->[!NOTE]
+>[!Note]
 >nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
 
 
@@ -110,8 +110,8 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 3. Right-click the solution, select **Configuration Manager...**, and check the **Build** boxes for the PCLs and each platform you're supporting.
 4. Right-click the solution and select **Build Solution** to check your work and produce the artifacts that you'll package next. If you get errors about missing references, right-click the solution, select **Restore NuGet Packages** to install dependencies, and rebuild.
 
->[!NOTE]
->To build for iOS you need a networked Mac connected to Visual Studio as described on <a href="https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/">Introduction to Xamarin.iOS for Visual Studio</a>. If you don't have a Mac available, uncheck the iOS project in the configuration manager (step 3 above).
+>[!Note]
+>To build for iOS you need a networked Mac connected to Visual Studio as described on [Introduction to Xamarin.iOS for Visual Studio](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/). If you don't have a Mac available, uncheck the iOS project in the configuration manager (step 3 above).
 
 
 ##Create and update the .nuspec file
@@ -164,8 +164,8 @@ To include platform-specific reference assemblies, add the following to the &lt;
 		<file src="Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.xml" target="lib\UAP10\Plugin.LoggingLibrary.xml" />
 	</files>
 
->[!NOTE]
->To shorten the names of the DLL and XML files, right-click on any given project, select the <strong>Library</strong> tab, and change the assembly names.
+>[!Note]
+>To shorten the names of the DLL and XML files, right-click on any given project, select the **Library** tab, and change the assembly names.
 
 
 ###Add dependencies
@@ -253,7 +253,7 @@ This will generate `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Opening this file in 
 
 ![NuGet Package Explorer showing the LoggingLibrary package](/images/BuildForXplat/04.PNG)
 
->[!NOTE]
+>[!Note]
 >A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
 
 

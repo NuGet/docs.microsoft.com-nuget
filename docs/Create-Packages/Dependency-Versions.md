@@ -49,8 +49,8 @@ Dependencies are installed whenever the dependent package is installed, [reinsta
 - [Normalized version numbers](#normalized-version-numbers)
 - [Dependency updates during package install](#dependency-updates-during-package-install).
 
-[!BEST PRACTICE]
-		Developers most commonly specify a minimum version, which is a version number without adornmants as shown above, like 6.1.0. This allows NuGet to install that version or later.
+> [!Best practice]
+> Developers most commonly specify a minimum version, which is a version number without adornmants as shown above, like 6.1.0. This allows NuGet to install that version or later.
 
 
 For additional details on how dependencies are installed, see [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md) and [Dependency resolution](../consume-packages/dependency-resolution.md).
@@ -103,8 +103,8 @@ For consistent behavior, it's recommended to always specify a version or version
 
 ## Normalized version numbers
 
-[!NOTE]    
-    This is a breaking change for NuGet 3.4 and later.
+> [!Note]    
+> This is a breaking change for NuGet 3.4 and later.
 
 
 When obtaining packages from a repository during install, reinstall, or restore operations, NuGet 3.4 and later will treat version numbers as follows:

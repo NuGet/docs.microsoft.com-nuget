@@ -44,9 +44,7 @@ To enable this behavior, do the following:
 
 When a symbol package is available, you'll be able to step directly into package code within the Visual Studio debugger.
 
-> {NOTE
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	This same feature allows you to step into the .NET Framework code. See http://referencesource.microsoft.com/. 
-</div>
+> [!Note]
+> This same feature allows you to step into the .NET Framework code. See [http://referencesource.microsoft.com/](http://referencesource.microsoft.com/). 
+
 

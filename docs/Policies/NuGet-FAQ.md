@@ -37,7 +37,7 @@ In this topic:
 - [NuGet Package Manager Console](#nuget-package-manager-console)
 - [Creating and publishing packages](#creating-and-publishing-packages)
 - [Working with packages](#working-with-packages)
-- [Managing packages on nuget.org](#managing-packages-on-nuget-org)
+- [Managing packages on nuget.org](#managing-packages-on-nugetorg)
 
 ## Getting started
 
@@ -82,7 +82,7 @@ To update the template itself, you'll need to manually update the template repos
 Yes, NuGet works directly from the command line. See the [Install guide](../guides/install-nuget.md).
 
 
-## NuGet CommandLine
+## NuGet command line
 
 **How do I get the latest version of NuGet commandline?**
 

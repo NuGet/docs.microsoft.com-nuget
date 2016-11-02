@@ -87,10 +87,10 @@ At the same time, using a NuGet package means taking a dependency on it, so you'
 - *Open source contributions*: many packages are maintained in an open-source repository, making it possible for developers depending on it to directly contribute bug fixes and feature improvements. The contribution history of any given package is also a good indicator of how many developers are actively involved.
 - *Interview the owners*: all this is not to say that new developers are not equally committed to producing great packages for you to use, and it's certainly good to give them a chance to bring something new to the NuGet ecosystem. With this in mind, you can always talk directly to the package developers through the **Contact Owners** option on the listing page. Chances are, they'll be happy to work directly with you to serve your needs!
 
-> [!NOTE]
-> Always be mindful of a package's licence terms, which you can see by clicking <strong>License</strong> on a package's listing page on nuget.org.
+> [!Note]
+> Always be mindful of a package's licence terms, which you can see by clicking **License** on a package's listing page on nuget.org.
 
-> [!NOTE]
+> [!Note]
 > Every package that is uploaded to nuget.org is scanned for viruses. All packages listed on nuget.org are also scanned periodically.
 
 ## Search Syntax

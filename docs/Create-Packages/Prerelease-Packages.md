@@ -49,7 +49,7 @@ You can specify such versions in two ways:
 
 	NuGet will pick up this value instead of the one specified in the `AssemblyVersion` attribute, which does not support SemVer.
 
-> [!NOTE]
+> [!Note]
 > A stable package release cannot have a pre-release dependency. This avoids accidentally installing a potentially unstable releases.
 
 When you’re ready to release a stable version, just remove the suffix and the package will take precedence over any pre-release versions.
@@ -88,8 +88,8 @@ With this in mind, it's generally good to follow recognized naming conventions s
 - `-beta`: Beta release, typically one that is feature complete for the next planned release, but may contain known bugs. 
 - `-rc`: Release candidate, typically a release that's potentially final (stable) unless significant bugs emerge.
 
-> [!NOTE]
-> NuGet does not support SemVer-compatible build numbers with dot notation, as in <em>1.0.1-build.23</em>. You can use a form like <em>1.0.1-build23</em> but this is always considered a pre-release version.
+> [!Note]
+> NuGet does not support SemVer-compatible build numbers with dot notation, as in `1.0.1-build.23`. You can use a form like `1.0.1-build23` but this is always considered a pre-release version.
 
 Whatever suffixes you use, however, NuGet will give them precedence in reverse alphabetical order: 
 

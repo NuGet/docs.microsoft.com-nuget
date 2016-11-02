@@ -35,7 +35,7 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 
 1. [Pre-requisites](#pre-requisites)
 2. [Create a UWP Windows Runtime Component](#create-a-uwp-windows-runtime-component)
-3. [Create and update the .nuspec file](#create-and-update-the--nuspec-file)
+3. [Create and update the .nuspec file](#create-and-update-the-nuspec-file)
 4. [Package the component](#package-the-component)
 5. [Related topics](#related-topics)
 
@@ -44,8 +44,8 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 1. Visual Studio 2015. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well, of course.
 2. NuGet CLI. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice. Then add that location to your PATH environment variable if it isn't already.
 
->[!NOTE]
->nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
+> [!Note]
+> nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
 
 
 ##Create a UWP Windows Runtime Component
@@ -68,8 +68,8 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 
 5. In the Batch Build dialog, and click **Build** to verify the project and create the output files that you'll need for the NuGet package.
 
->[!NOTE]
->In this walkthrough you'll use the Debug artifacts for the package. For non-debug package, check the Release options in the Batch Build dialog instead, and refer to the resulting Release folders in the steps that follow.
+> [!Note]
+> In this walkthrough you'll use the Debug artifacts for the package. For non-debug package, check the Release options in the Batch Build dialog instead, and refer to the resulting Release folders in the steps that follow.
 
 
 ##Create and update the .nuspec file
@@ -101,8 +101,8 @@ To create the initial .nuspec file, do the three steps below. The sections that 
 		  </metadata>
 		</package>
 
->[!NOTE]
->For packages built for public consumption, pay special attention to the <em>&lt;tags&gt;</em> element, as these tags help others find your package and understand what it does.
+> [!Note]
+> For packages built for public consumption, pay special attention to the &lt;tags&gt; element, as these tags help others find your package and understand what it does.
 
 
 
@@ -257,8 +257,8 @@ This will generate `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a
 
 ![NuGet Package Explorer showing the ImageEnhancer package](media/UWP-PackageExplorer.png)
 
->[!NOTE]
->A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
+> [!Note]
+> A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
 
 
 To make your package available to other developers,  follow the instructions on [Publish a package](/create-packages/publish-a-package).

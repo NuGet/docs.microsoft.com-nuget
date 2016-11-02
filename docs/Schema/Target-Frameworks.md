@@ -37,14 +37,10 @@ NuGet uses target framework references in a variety of places to specifically id
 - [project.json](../schema/project.json): The `frameworks` node specifies the framework versions that the project can be compiled against.
 
 
-> [!NOTE]
-	The NuGet client source code that calculates the tables below is found in the following locations:  
->	
-> -  Supported framework names: <a href="https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs">FrameworkConstants.cs</a>
->
-> -  Framework precedence and mapping: <a href="https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs">DefaultFrameworkMappings.cs</a>
-	
-
+> [!Note]
+> The NuGet client source code that calculates the tables below is found in the following locations:  
+> -  Supported framework names: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
+> -  Framework precedence and mapping: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 
 ## Supported Frameworks
@@ -139,10 +135,8 @@ The `dotnet` series of monikers should be used in NuGet 3.3 an earlier; the `net
 
 ## Portable Class Libraries
 
-
-> <strong>Not Recommended</strong><br>
->   ALthough PCLs are supported, package authors should support netstandard instead. The .NET Platform Standard is an evolution of PCLs and represents binary portability across platforms using a single moniker that isn't tied to a static like like <em>portable-a+b+c</em> monikers.
-
+> [!Not recommended]
+> Although PCLs are supported, package authors should support netstandard instead. The .NET Platform Standard is an evolution of PCLs and represents binary portability across platforms using a single moniker that isn't tied to a static like like *portable-a+b+c* monikers.
 
 To define a target framework that refers to multiple child-target-frameworks, the `portable` keyword use used to prefix the list of referenced frameworks. Avoid artificially including extra frameworks that are not directly compiled against because it can lead to unintended side-effects in those frameworks.
 
@@ -308,11 +302,5 @@ Additionally, NuGet packages targeting Xamarin can use additional Xamarin-define
  xamarinxboxthreesixty | Xamarin for XBox 360 | netstandard1.4
  xamarinxboxone | Xamarin for XBox One | netstandard1.4
 
-
-
-> [!NOTE]
->	Stephen Cleary has created a tool that lists the supported PCLs, which you can find on his post, <a href="http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html">Framework profiles in .NET</a>.
-
-
-
-
+> [!Note]
+> Stephen Cleary has created a tool that lists the supported PCLs, which you can find on his post, [Framework profiles in .NET](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html).

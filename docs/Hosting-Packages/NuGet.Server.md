@@ -46,8 +46,8 @@ The following sections walk through this process in detail, using C#.
 	![Setting .NET Framework target to 4.6](/images/hosting/Hosting_01-NuGet.Server-Set4.6.png)
 
 
->	[!NOTE]
-	The web application must target .NET Framework 4.6 or above to use the latest version of NuGet.Server (2.11.2 as of this writing). If you target .NET Framework 4.5.2, be sure to install NuGet Server 2.10.3 instead below in step 3.
+> [!Warning]
+> The web application must target .NET Framework 4.6 or above to use the latest version of NuGet.Server (2.11.2 as of this writing). If you target .NET Framework 4.5.2, be sure to install NuGet Server 2.10.3 instead below in step 3.
 
 
 2. Give the application a suitable name, click OK, and in the next dialog select the **ASP.NET 4.6 - Empty** template (or a higher version) and click OK.

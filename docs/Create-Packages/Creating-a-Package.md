@@ -30,9 +30,8 @@ ms.reviewer:
 #Creating a Package
 
 
-[!NOTE]	
-	This topic is intended to be a reference for the process of creating a package. For a focused walkthrough example, refer to the <a href="/quickstart/create-and-publish-a-package">Create and Publish a Package Quickstart</a>.
-
+> [!Note ]	
+> This topic is intended to be a reference for the process of creating a package. For a focused walkthrough example, refer to the [Create and Publish a Package Quickstart](../quickstart/create-and-publish-a-package).
 
 No matter what your package does or what code it contains, NuGet is how you package that functionality into a component that can be shared with and used by any number of other developers.  
  
@@ -41,7 +40,7 @@ The process of creating a package always begins with creating a `.nuspec` packag
 This topic covers the most common steps involved in package creation:
 
 - [Deciding which assemblies to package](#deciding-which-assemblies-to-package)
-- [The role and structure of the `.nuspec` file](#the-role-and-structure-of-the--nuspec-file)
+- [The role and structure of the `.nuspec` file](#the-role-and-structure-of-the-nuspec-file)
 - [Creating the `.nuspec` file](#creating-the--nuspec-file) from:
 	- [An assembly DLL](#from-an-assembly-dll)
 	- [A Visual Studio project](#from-a-visual-studio-project)
@@ -60,8 +59,8 @@ In general, it's a best practice to have one NuGet package per assembly, provide
  
 However, if your package contains assemblies that are used exclusively by your package, then it's fine to include them. For example, if Utilities.dll depends on Utilities.resources.dll, where the latter is not useful on its own, then you can put both in the same package.	
 
-[!NOTE]	
-	When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, <em>excluding</em> those that are named ```.resources.dll``` because they are assumed to be localized satellite assemblies (see <a href="/create-packages/creating-localized-packages">Creating localized packages</a>). For this reason, avoid using ".resources.dll" for files that otherwise contain essential package code.  
+> [!Note]	
+> When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, *excluding* those that are named `.resources.dll` because they are assumed to be localized satellite assemblies (see [Creating localized packages](../create-packages/creating-localized-packages)). For this reason, avoid using ".resources.dll" for files that otherwise contain essential package code.  
 
 
 
@@ -175,12 +174,10 @@ Note that there are several additional packaging options available when working 
 
 
 
-	[!Solution-level packages (NuGet 2.x only)]
-	NuGet 2.x supports the notion of a solution-level package that installs tools or additional commands for the Package Manager Console, but does not add references, content, or build customizations to any projects in the solution. 
-	
-	A package is considered a solution-level package if it does not contain any files in its lib, content, or build directories. If the package has dependencies, they also must not have files in their lib, content, or build directories.
-	
-	When a solution-level package is installed, it is tracked in a packages.config file in the .nuget directory, rather than in a packages.config file in a specific project.
+> [!Solution-level packages (NuGet 2.x only)]
+> NuGet 2.x supports the notion of a solution-level package that installs tools or additional commands for the Package Manager Console, but does not add references, content, or build customizations to any projects in the solution. 
+> A package is considered a solution-level package if it does not contain any files in its lib, content, or build directories. If the package has dependencies, they also must not have files in their lib, content, or build directories.
+> When a solution-level package is installed, it is tracked in a packages.config file in the .nuget directory, rather than in a packages.config file in a specific project.
 
 
 ## From a convention-based working directory
@@ -226,8 +223,8 @@ For the **&lt;version&gt;** value:
 - In general, set the version of the package to match the library, though this is not strictly required. This is a simple matter when you limit a package to a single assembly, as described earlier in [Deciding which assemblies to package](#deciding-which-assemblies-to-package). Overall, remember that NuGet itself deals with package versions when resolving dependencies, not assembly versions.
 - When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Handling Dependencies](../create-packages/dependency-versions.md).
 
-[!NOTE]
-	The following series of brief blog posts are also helpful to understand versioning:
+> [!Note]
+> The following series of brief blog posts are also helpful to understand versioning:
 	<ul>
 	<li><a href="http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html">Part 1: Taking on DLL Hell</a></li> 
 	<li><a href="http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html">Part 2: The core algorithm</a></li> 
@@ -292,8 +289,8 @@ When you include a file named `readme.txt` in the package, the contents of that 
 
 ![The display of a readme file for a NuGet package upon installation](../images/Create/Create_01-ShowReadme.png)
 
-[!NOTE]
-	If you include an empty &lt;files&gt; node in the .nuspec file, NuGet will not include any other content in the package other than what's in the lib folder.	 
+> [!Note]
+> If you include an empty &lt;files&gt; node in the .nuspec file, NuGet will not include any other content in the package other than what's in the lib folder.	 
 
 
 
@@ -348,8 +345,8 @@ When using a Visual Studio project, run `nuget pack` instead with your project f
 	nuget pack &lt;your_project&gt;.csproj
 ```
 
-[!NOTE]
-	Using the project file directly is necessary for token replacement because the project is the source of the token values. Token replacement does not happen if you use `nuget pack` with a `.nuspec` file.
+> [!Note]
+> Using the project file directly is necessary for token replacement because the project is the source of the token values. Token replacement does not happen if you use `nuget pack` with a `.nuspec` file.
 
 
 In all cases, `nuget pack` excludes folders that start with a period, such as `.git` or `.hg`.
@@ -359,9 +356,9 @@ NuGet will indicate if there are any errors in the `.nuspec` file that need corr
 Once `nuget pack` succeeds, you'll have a `.nupkg` file that you can publish to a suitable gallery as described in [Publishing a Package](../create-packages/publish-a-package.md).
 
 
-	[!Package Explorer]
-	A helpful way to examine a package after creating it is to open it in the <a href="https://github.com/NuGetPackageExplorer/NuGetPackageExplorer">Package Explorer</a> tool. This gives you a graphical view of the package contents and its manifest. You can also rename the resulting .nupkg file to a .zip file and explore its contents directly.
-</div>
+> [!Package Explorer]
+> A helpful way to examine a package after creating it is to open it in the [Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) tool. This gives you a graphical view of the package contents and its manifest. You can also rename the resulting .nupkg file to a .zip file and explore its contents directly.
+
 
 
 ### Additional options

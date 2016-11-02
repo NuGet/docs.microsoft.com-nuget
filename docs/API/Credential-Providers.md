@@ -40,8 +40,8 @@ When `nuget.exe` needs credentials to authenticate with a feed, it looks for the
 3. NuGet then prompts the user for credentials on the command line.
 
 
-	> [!NOTE]
-	> Credential providers do not apply to <em>dotnet restore</em>, or the Package Manager UI or Console in Visual Studio. NuGet in Visual Studio uses a single single built-in credential provider that supports Visual Studio Team Services.
+	> [!Note]
+	> Credential providers do not apply to `dotnet restore`, or the Package Manager UI or Console in Visual Studio. NuGet in Visual Studio uses a single single built-in credential provider that supports Visual Studio Team Services.
 
 
 Plug-in credential providers thus provide a way to hook into custom authentication process for different feeds. They can be used in three ways:
