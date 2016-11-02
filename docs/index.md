@@ -64,7 +64,7 @@ ms.reviewer:
                                 </a>
                             </li>
                             <li class="column column-third">
-                                <a href="/nuget/quickstart/use-a-package.md">
+                                <a href="../nuget/quickstart/use-a-package.md">
                                     <h3>Use a Package</h3>
                                     <p>Learn how to use your first NuGet package in Visual Studio.</p>
                                 </a>
