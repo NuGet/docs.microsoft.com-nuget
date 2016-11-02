@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Project.json Reference | Microsoft Docs"] 
+title: "Project.json Reference | Microsoft Docs" 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [d64fa6d8-a3f7-4c72-95d3-1a964375ccb8] 
+ms.assetid: d64fa6d8-a3f7-4c72-95d3-1a964375ccb8
  
 # optional metadata 
  
@@ -34,12 +34,10 @@ ms.reviewer:
 
 The `project.json` file replaces `packages.config` in UWP, ASP.NET 5, and .NET desktop projects (WPF and WinForms) as a means to maintain the list of packages used in a project. (For .NET Core, refer to [NET Core Tools - project.json](https://docs.microsoft.com/dotnet/articles/core/tools/project-json)).
 
-The [`project.lock.json`](#projectlockjson) file (described below) is also used in projects with a `project.json` file.
+The [`project.lock.json`](#project-lock-json) file (described below) is also used in projects with a `project.json` file.
 
-<div class="block-callout-info">
-    <strong>Note</strong><br>
-	When tooling for .NET Core and ASP.NET Core is complete, the function of project.json will be incorporated directly into project files (.csproj, .vsproj, etc.). NuGet clients will continue to support project.json for existing scenarios.
-</div>
+> [!NOTE]
+>	When tooling for .NET Core and ASP.NET Core is complete, the function of project.json will be incorporated directly into project files (.csproj, .vsproj, etc.). NuGet clients will continue to support project.json for existing scenarios.
 
 A project.json file has the following basic structure, where each of the four top-level objects can have any number of child objects:
 

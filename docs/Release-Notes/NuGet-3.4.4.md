@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 3.4.4 Release Notes | Microsoft Docs"] 
+title: "NuGet 3.4.4 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [6f0aa9bb-75e5-429d-9954-3cb41a909c14] 
+ms.assetid: 6f0aa9bb-75e5-429d-9954-3cb41a909c14 
  
 # optional metadata 
  

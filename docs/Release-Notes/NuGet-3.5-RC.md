@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["3.5 RC Release Notes | Microsoft Docs"] 
+title: "3.5 RC Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [75a9b496-5762-48b6-922f-fdddf1369c45] 
+ms.assetid: 75a9b496-5762-48b6-922f-fdddf1369c45 
  
 # optional metadata 
  

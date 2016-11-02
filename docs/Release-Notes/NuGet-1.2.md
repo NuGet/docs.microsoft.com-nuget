@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 1.2 Release Notes | Microsoft Docs"] 
+title: "NuGet 1.2 Release Notes | Microsoft Docs"
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [48f23141-b2ad-4cdf-8d81-7bb6b9419aa6] 
+ms.assetid: 48f23141-b2ad-4cdf-8d81-7bb6b9419aa6
  
 # optional metadata 
  
@@ -64,24 +64,11 @@ such as when the developer needs to code against types in that assembly in order
 These assemblies are not included in your package as they are assumed to be on every machine  as part of the .NET 
 Framework. The following table lists attributes of the `frameworkAssembly` element.
 
-<table class="reference">
-    <tr>
-        <th>Attribute</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td><strong>assemblyName</strong></td>
-        <td><em>Required</em>. Name of the assembly such as <code>System.Net</code>.</td>
-    </tr>
-    <tr>
-        <td>targetFramework</td>
-        <td>
-            <em>Optional</em>. Allows specifying a framework and profile name (or alias) that this framework assembly 
-            applies to such as "net40" or "sl4". Uses the same format described in  
-            <a href="/create-packages/supporting-multiple-target-frameworks" title="Supporting Multiple .NET Framework Versions">Supporting Multiple Target Frameworks</a>.
-        </td>
-    </tr>
-</table>
+
+|Attribute |Description|
+|----------------|-----------|
+|<strong>assemblyName</strong>|<em>Required</em>. Name of the assembly such as ```System.Net```.|
+|>targetFramework|<em>Optional</em>. Allows specifying a framework and profile name (or alias) that this framework assembly applies to such as "net40" or "sl4". Uses the same format described in  <a href="../create-packages/supporting-multiple-target-frameworks" title="Supporting Multiple .NET Framework Versions">Supporting Multiple Target Frameworks</a>.|
 
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="net40" />
@@ -92,7 +79,7 @@ Framework. The following table lists attributes of the `frameworkAssembly` eleme
 
 When using the NuGet.exe command line tool, you can now use the SetApiKey command to store your API key. That way, 
 you won’t need to specify it every time you push a package. For more details on saving your API key with NuGet.exe, 
-[read the documentation on publishing a package](/create-packages/publish-a-package).
+[read the documentation on publishing a package](../create-packages/publish-a-package).
 
 ### Package Explorer
 Package Explorer has been updated to support NuGet 1.2. For more information, check out the 

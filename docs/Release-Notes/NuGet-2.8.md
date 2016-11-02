@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 2.8 Release Notes | Microsoft Docs"] 
+title: "NuGet 2.8 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [77ba98d8-3d66-4126-b2b6-813ddd8ef192] 
+ms.assetid: 77ba98d8-3d66-4126-b2b6-813ddd8ef192 
  
 # optional metadata 
  
@@ -29,7 +29,7 @@ ms.reviewer:
 ---
 # NuGet 2.8 Release Notes
 
-[NuGet 2.7.2 Release Notes](/nuget/release-notes/nuget-2.7.2) | [NuGet 2.8.1 Release Notes](/nuget/release-notes/nuget-2.8.1)
+[NuGet 2.7.2 Release Notes](../nuget/release-notes/nuget-2.7.2.md) | [NuGet 2.8.1 Release Notes](../nuget/release-notes/nuget-2.8.1.md)
 
 NuGet 2.8 was released on January 29, 2014.
 

@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 3.3 Release Notes | Microsoft Docs"] 
+title: "NuGet 3.3 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [4110a36a-cffe-4038-8da4-e841bce6e94b] 
+ms.assetid: 4110a36a-cffe-4038-8da4-e841bce6e94b 
  
 # optional metadata 
  
@@ -30,7 +30,7 @@ ms.reviewer:
 
 # NuGet 3.3 Release Notes
 
-[NuGet 3.2.1 Release Notes](/nuget/release-notes/nuget-3.2.1) | [NuGet 3.4-RC Release Notes](/nuget/release-notes/nuget-3.4-RC) 
+[NuGet 3.2.1 Release Notes](../nuget/release-notes/nuget-3.2.1.md) | [NuGet 3.4-RC Release Notes](../nuget/release-notes/nuget-3.4-RC.md) 
 
 NuGet 3.3 was released November 30, 2015 with a significant number of user interface updates and command-line features as well as a collection of useful fixes to the NuGet clients.
 

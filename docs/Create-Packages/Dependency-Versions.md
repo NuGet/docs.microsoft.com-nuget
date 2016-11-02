@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Dependency Versions | Microsoft Docs"] 
+title: "Dependency Versions | Microsoft Docs" 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [ae6c6212-67e9-4968-9585-e265407fd9c8] 
+ms.assetid: ae6c6212-67e9-4968-9585-e265407fd9c8 
  
 # optional metadata 
  
@@ -29,7 +29,7 @@ ms.reviewer:
 --- 
 # Dependency Versions
 
-When you [create a NuGet package](/create-packages/creating-a-package), you can specify dependencies for your package in the **&lt;dependencies&gt;** node of the `.nuspec` file, where each dependency is listed with a **&lt;dependency&gt;** tag: 
+When you [create a NuGet package](../create-packages/creating-a-package.md), you can specify dependencies for your package in the **&lt;dependencies&gt;** node of the `.nuspec` file, where each dependency is listed with a **&lt;dependency&gt;** tag: 
   
 	<?xml version="1.0"?>
 	<package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
@@ -43,72 +43,34 @@ When you [create a NuGet package](/create-packages/creating-a-package), you can 
 	  </metadata>
 	</package>
 
-Dependencies are installed whenever the dependent package is installed, [reinstalled](/consume-packages/reinstalling-and-updating-packages), or included in a [package restore](/consume-packages/package-restore). NuGet chooses the exact version of the installed dependency by using the value of the `version` attribute specified for that dependency as described in the following sections.  
+Dependencies are installed whenever the dependent package is installed, [reinstalled](../consume-packages/reinstalling-and-updating-packages.md), or included in a [package restore](../consume-packages/package-restore.md). NuGet chooses the exact version of the installed dependency by using the value of the `version` attribute specified for that dependency as described in the following sections.  
 
 - [Version ranges](#version-ranges)
 - [Normalized version numbers](#normalized-version-numbers)
 - [Dependency updates during package install](#dependency-updates-during-package-install).
 
-<div class="block-callout-info">
-	<strong>Best practice</strong><br>
-	Developers most commonly specify a minimum version, which is a version number without adornmants as shown above, like 6.1.0. This allows NuGet to install that version or later.
-</div>
+> [!Best practice]
+> Developers most commonly specify a minimum version, which is a version number without adornmants as shown above, like 6.1.0. This allows NuGet to install that version or later.
 
-For additional details on how dependencies are installed, see [Reinstalling and updating packages](/consume-packages/reinstalling-and-updating-packages) and [Dependency resolution](/consume-packages/dependency-resolution).
+
+For additional details on how dependencies are installed, see [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md) and [Dependency resolution](../consume-packages/dependency-resolution.md).
 
 
 ## Version ranges
 
 NuGet supports using interval notation for specifying version ranges, summarized as follows:
 
-<table>
-	<tr>
-		<th>Notation</th>
-		<th>Applied rule</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td>1.0</td>
-		<td>1.0 ≤ x</td>
-		<td>Minimum version, inclusive</td>
-	</tr>
-	<tr>
-		<td>(1.0,)</td>
-		<td>1.0 < x</td>
-		<td>Mininum version, exclusive</td>
-	</tr>
-	<tr>
-		<td>[1.0]</td>
-		<td>x == 1.0</td>
-		<td>Exact version match</td>
-	</tr>
-	<tr>
-		<td>(,1.0]</td>
-		<td>x ≤ 1.0</td>
-		<td>Maximum version, inclusive</td>
-	</tr>
-	<tr>
-		<td>(,1.0)</td>
-		<td>x < 1.0</td>
-		<td>Maximum version, exclusive</td>
-	</tr>
-	<tr>
-		<td>[1.0,2.0]</td>
-		<td>1.0 ≤ x ≤ 2.0</td>
-		<td>Exact range, inclusive</td>
-	</tr>
-	<tr>
-		<td>(1.0,2.0)</td>
-		<td>1.0 < x < 2.0</td>
-		<td>Exact range, exclusive</td>
-	</tr>
-	<tr>
-		<td>(1.0)</td>
-		<td>invalid</td>
-		<td>invalid</td>
-	</tr>
-</table>
-
+| Notation | Applied rule | Description |
+|----------|--------------|-------------|
+| 1.0 | 1.0 ≤ x | Minimum version, inclusive |
+| 1.0 | 1.0 < x | Minimum version, exclusive |
+| [1.0] | x == 1.0 | Exact version match |
+| (,1.0] | x ≤ 1.0 | Maximum version, inclusive |
+| (,1.0) | x < 1.0 | Maximum version, exclusive |
+| [1.0,2.0] | 1.0 ≤ x ≤ 2.0 | Exact range, inclusive |
+| (1.0,2.0) | 1.0 < x < 2.0 | Exact range, exclusive |
+| (1.0)	| invalid | invalid |
+		
 
 A few examples:
 
@@ -141,9 +103,9 @@ For consistent behavior, it's recommended to always specify a version or version
 
 ## Normalized version numbers
 
-<div class="block-callout-warning">    
-    This is a breaking change for NuGet 3.4 and later.
-</div>
+> [!Note]    
+> This is a breaking change for NuGet 3.4 and later.
+
 
 When obtaining packages from a repository during install, reinstall, or restore operations, NuGet 3.4 and later will treat version numbers as follows:
 

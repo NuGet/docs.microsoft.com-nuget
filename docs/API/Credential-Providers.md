@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Credential Providers and NuGet | Microsoft Docs"] 
+title: "Credential Providers and NuGet | Microsoft Docs" 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [9c7f6d16-f437-47c4-82d4-6c996e0b18ec] 
+ms.assetid: 9c7f6d16-f437-47c4-82d4-6c996e0b18ec 
  
 # optional metadata 
  
@@ -39,10 +39,10 @@ When `nuget.exe` needs credentials to authenticate with a feed, it looks for the
 2. NuGet then uses plug-in credential providers, subject to the order given below. (And example is the [Visual Studio Team Services Credential Provider](https://www.visualstudio.com/en-us/docs/package/get-started/nuget/auth#vsts-credential-provider).)
 3. NuGet then prompts the user for credentials on the command line.
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	Credential providers do not apply to <em>dotnet restore</em>, or the Package Manager UI or Console in Visual Studio. NuGet in Visual Studio uses a single single built-in credential provider that supports Visual Studio Team Services.
-</div>
+
+	> [!Note]
+	> Credential providers do not apply to `dotnet restore`, or the Package Manager UI or Console in Visual Studio. NuGet in Visual Studio uses a single single built-in credential provider that supports Visual Studio Team Services.
+
 
 Plug-in credential providers thus provide a way to hook into custom authentication process for different feeds. They can be used in three ways:
 
@@ -66,65 +66,28 @@ A provider must also do the following:
 
 ### Input parameters
 
-<table>
-<th>Parameter/Switch</th>
-<th>Description</th>
-    <tr>
-        <td>Uri {value}</td>
-        <td>The package source URI requiring credentials.</td>
-    </tr>
-    <tr>
-        <td>NonInteractive</td>
-        <td>If present, provider does not issue interactive prompts.</td>
-    </tr>
-    <tr>
-        <td>IsRetry</td>
-        <td>If present, indicates that this attempt is a retry of a previously failed attempt. Providers typically use this flag to ensure that they bypass any existing cache and prompt for new credentials if possible.</td>
-    </tr>
-</table>
+
+	|Parameter/Switch |Description|
+	|----------------|-----------|
+	|Uri {value} | The package source URI requiring credentials.|
+	| NonInteractive | If present, provider does not issue interactive prompts. |
+	| IsRetry | If present, indicates that this attempt is a retry of a previously failed attempt. Providers typically use this flag to ensure that they bypass any existing cache and prompt for new credentials if possible.|
 
 ### Exit codes
 
-<table>
-<th>Code</th>
-<th>Result</th>
-<th>Description</th>
-    <tr>
-        <td>0</td>
-        <td>Success</td>
-        <td>Credentials were successfully acquired and have been written to stdout.</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>ProviderNotApplicable</td>
-        <td>The current provider does not provide credentials for the given URI.</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>Failure</td>
-        <td>The provider is the correct provider for the given URI, but cannot provide credentials. In this case, nuget.exe will not retry authentication and will fail. A typical example is when a user cancels an interactive login.</td>
-    </tr>
-</table>
+	|Code |Result |Description
+	|----------------|:-----------:|-----------:|
+	|0 | Success| Credentials were successfully acquired and have been written to stdout.|
+	|1 | ProviderNotApplicable | The current provider does not provide credentials for the given URI.|
+	|2 | Failure | The provider is the correct provider for the given URI, but cannot provide credentials. In this case, nuget.exe will not retry authentication and will fail. A typical example is when a user cancels an interactive login. |
 
 ### Standard output
 
-<table>
-<th>Property</th>
-<th>Notes</th>
-    <tr>
-        <td>Username</td>
-        <td>Username for authenticated requests.
-        </td>
-    </tr>
-    <tr>
-        <td>Password</td>
-        <td>Password for authenticated requests.</td>
-    </tr>
-    <tr>
-        <td>Message</td>
-        <td>Optional details about the response, used only to show additional details in failure cases.</td>
-    </tr>
-</table>
+	|Property |Notes|
+	|----------------|-----------|
+	|Username | Username for authenticated requests.|
+	| Password | Password for authenticated requests.|
+	| Message | Optional details about the response, used only to show additional details in failure cases. |
 
 Example stdout:
 

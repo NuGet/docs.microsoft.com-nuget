@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Symbol Packages | Microsoft Docs"] 
+title: "Symbol Packages | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [4667a70d-5a17-4f1e-b2f2-b8d0c6af3882] 
+ms.assetid: 4667a70d-5a17-4f1e-b2f2-b8d0c6af3882
  
 # optional metadata 
  
@@ -41,13 +41,13 @@ To create a symbol package, follow these conventions:
 
 You can create both packages with the `-Symbols` option, either from a nuspec file or a project file:
 
-<code class="bash hljs">
-	nuget pack MyPackage.nuspec -Symbols
-</code>
+```
+nuget pack MyPackage.nuspec -Symbols
+```
 
-<code class="bash hljs">
-	nuget pack MyProject.csproj -Symbols
-</code>
+```
+nuget pack MyProject.csproj -Symbols
+```
 
 ## Symbol package structure
 
@@ -106,31 +106,35 @@ A symbol package can be built by conventions, from a folder structure as describ
 
 ## Publishing a symbol package
 
-1. For convenience, first save your API key with NuGet (see [publish a package](/create-packages/publish-a-package), which will apply to both nuget.org and symbolsource.org, because symbolsource.org will check with nuget.org to verify that you are the package owner.
+1. For convenience, first save your API key with NuGet (see [publish a package](../create-packages/publish-a-package.md), which will apply to both nuget.org and symbolsource.org, because symbolsource.org will check with nuget.org to verify that you are the package owner.
 
-	<code class="bash hljs>   
-		nuget SetApiKey Your-API-Key
-	</code>
+	
+	```
+	nuget SetApiKey Your-API-Key
+	```
 
 2. After publishing your primary package to nuget.org, push the symbol package as follows, which will automatically use symbolsource.org as the target because of the `.symbols` in the filename:
 	
-	<code class="bash hljs>
- 		nuget push MyPackage.symbols.nupkg
-	</code>
+	
+	```
+	nuget push MyPackage.symbols.nupkg
+	```
 
 
 3. To publish to a different symbol repository, or to push a symbol package that doesn't follow the naming convention, use the `-Source` option:
 
-	<code class="bash hljs>
- 		nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
-	</code>
+	
+	```
+	nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
+	```
 
 
 4. You can also push both primary and symbol packages to both repositories at the same time using the following:
 	
-	<code class="bash hljs>
-	 	nuget push MyPackage.nupkg
-	</code>
+	
+	```
+	nuget push MyPackage.nupkg
+	```
 
 	In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to symbolsource.org (https://nuget.smbsrc.net/), after it publishes the primary package to nuget.org.
 

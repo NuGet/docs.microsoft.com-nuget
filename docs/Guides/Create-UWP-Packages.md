@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: [“Create UWP Packages | Microsoft Docs”] 
+title: “Create UWP Packages | Microsoft Docs” 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [d98524b1-a674-4803-8ac5-3c6bce867f86] 
+ms.assetid: d98524b1-a674-4803-8ac5-3c6bce867f86 
  
 # optional metadata 
  
@@ -44,10 +44,9 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 1. Visual Studio 2015. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well, of course.
 2. NuGet CLI. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice. Then add that location to your PATH environment variable if it isn't already.
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
-</div>
+> [!Note]
+> nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
+
 
 ##Create a UWP Windows Runtime Component
 
@@ -69,10 +68,9 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 
 5. In the Batch Build dialog, and click **Build** to verify the project and create the output files that you'll need for the NuGet package.
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	In this walkthrough you'll use the Debug artifacts for the package. For non-debug package, check the Release options in the Batch Build dialog instead, and refer to the resulting Release folders in the steps that follow.
-</div>
+> [!Note]
+> In this walkthrough you'll use the Debug artifacts for the package. For non-debug package, check the Release options in the Batch Build dialog instead, and refer to the resulting Release folders in the steps that follow.
+
 
 ##Create and update the .nuspec file
 
@@ -81,9 +79,9 @@ To create the initial .nuspec file, do the three steps below. The sections that 
 1. Open a command prompt and navigate to the folder containing ImageEnhancer.vcxproj (this will be a subfolder below where the solution file is).
 2. Run the NuGet `spec` command to generate `ImageEnhancer.nuspec` (the name of the file is taken from the name of the .vcxproj file):
 
-	<code class="bash hljs">
+```
 		nuget spec
-	</code>
+```
 
 3. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
 	
@@ -103,10 +101,9 @@ To create the initial .nuspec file, do the three steps below. The sections that 
 		  </metadata>
 		</package>
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	For packages built for public consumption, pay special attention to the <em>&lt;tags&gt;</em> element, as these tags help others find your package and understand what it does.
-</div>
+> [!Note]
+> For packages built for public consumption, pay special attention to the &lt;tags&gt; element, as these tags help others find your package and understand what it does.
+
 
 
 ###Adding Windows metadata to the package
@@ -252,18 +249,17 @@ Your final .nuspec file should now look like the following, where again YOUR_NAM
 
 With the completed .nuspec referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
-<code class="bash hljs">
+```
 	nuget pack ImageEnhancer.nuspec
-</code>
+```
 
 This will generate `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
 
 ![NuGet Package Explorer showing the ImageEnhancer package](media/UWP-PackageExplorer.png)
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
-</div>
+> [!Note]
+> A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
+
 
 To make your package available to other developers,  follow the instructions on [Publish a package](/create-packages/publish-a-package).
 

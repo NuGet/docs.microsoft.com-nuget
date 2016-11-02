@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Source Code and Configuration File Transformations | Microsoft Docs"] 
+title: "Source Code and Configuration File Transformations | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [20991d69-9e2e-4881-bbf2-96ae634e1872] 
+ms.assetid: 20991d69-9e2e-4881-bbf2-96ae634e1872
  
 # optional metadata 
  
@@ -68,10 +68,8 @@ As described in the sections that follow, config file transformations can be don
 - Include `app.config.transform` and `web.config.transform` files in your package's `content` folder, where the `.transform` extension tells NuGet that these files contain the XML to merge with existing config files when the package is installed. When a package is uninstalled, that same XML is removed.
 - (NuGet 2.6 and later) Include `app.config.install.xdt` and `web.config.install.xdt` files in your package's `content` folder, using [XDT syntax](https://msdn.microsoft.com/library/dd465326.aspx) to describe the desired changes. With this option you can also include a `.uninstall.xdt` file to reverse changes when the package is removed from a project.
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	Transformations are not applied to <em>.config</em> files referenced as a link in Visual Studio. 
-</div>
+> [!Note]
+> Transformations are not applied to `.config` files referenced as a link in Visual Studio.
 
 The advantage of using XDT is that instead of simply merging two static files, it provides a syntax for manipulating the structure of an XML DOM using element and attribute matching using full XPath support. XDT can then add, update, or remove elements, place new elements at a specific location, or replace/remove elements (including child nodes). This makes it straightforward to create uninstall transforms that back out all transformations done during package installation. 
 

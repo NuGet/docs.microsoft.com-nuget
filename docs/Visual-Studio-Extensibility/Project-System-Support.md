@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet support for the Visual Studio project system | Microsoft Docs"] 
+title: "NuGet support for the Visual Studio project system | Microsoft Docs" 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [9d7fa7f6-82ed-4df6-9734-f43a3d8e3b98] 
+ms.assetid: 9d7fa7f6-82ed-4df6-9734-f43a3d8e3b98 
  
 # optional metadata 
  
@@ -34,34 +34,22 @@ To support third-party project types in Visual Studio, NuGet 3.x+ supports the [
 
 To integrate with NuGet, a project system must advertise its own support for all the project capabilities described in this topic.
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	Do not declare capabilities that your project does not actually have for the sake of enabling packages to install in your project. Many features of Visual Studio and other extensions depend on project capabilities besides the NuGet client. Falsely advertising capabilities of your project can lead these components to malfunction and your users' experience to degrade.   
-</div>
+
+
+> [!NOTE]
+> Do not declare capabilities that your project does not actually have for the sake of enabling packages to install in your project. Many features of Visual Studio and other extensions depend on project capabilities besides the NuGet client. Falsely advertising capabilities of your project can lead these components to malfunction and your users' experience to degrade.
 
 ## Advertise project capabilities
 
 The NuGet client determines which packages are compatible with your project type based on the [project's capabilities](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md), as described in the following table.  
 
-<table class="reference">	
-	<tr>
-		<th>Capability</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td>AssemblyReferences</td>
-		<td>Indicates that the project supports assembly references (distinct from WinRTReferences).</td>
-	</tr>
-	<tr>
-		<td>DeclaredSourceItems</td>
-		<td>Indicates that the project is a typical MSBuild project (not DNX) in that it declares source items in the project itself (rather than a project.json file that assumes all files in the directory are part of a compilation).</td>
-	</tr>
-	<tr>
-		<td>UserSourceItems</td>
-		<td>Indicates that the user is allowed to add arbitrary files to their project.</td>
-	</tr>
-</table>
 
+
+|Capability|Description|
+|----------------|-----------|
+|AssemblyReferences|Indicates that the project supports assembly references (distinct from WinRTReferences)|
+|DeclaredSourceItems|Indicates that the project is a typical MSBuild project (not DNX) in that it declares source items in the project itself (rather than a project.json file that assumes all files in the directory are part of a compilation).|
+|UserSourceItems|Indicates that the user is allowed to add arbitrary files to their project.|
 
 For CPS-based project systems, the implementation details for project capabilities described in the rest of this section have been done for you. See [declaring project capabilities in CPS projects](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md#how-to-declare-project-capabilities-in-your-project).
 

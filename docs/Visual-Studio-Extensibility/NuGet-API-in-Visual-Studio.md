@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet API in Visual Studio | Microsoft Docs"] 
+title: "NuGet API in Visual Studio | Microsoft Docs" 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [31f88cf0-d40a-42ee-974e-07910bb0771c] 
+ms.assetid: 31f88cf0-d40a-42ee-974e-07910bb0771c 
  
 # optional metadata 
  
@@ -35,10 +35,11 @@ In addition to the Package Manager UI and Console in Visual Studio, NuGet also  
 As of NuGet 3.3+, NuGet exports the following services all of which reside in the `NuGet.VisualStudio` namespace in the `NuGet.VisualStudio.dll` assembly:
 
 - [`IRegistryKey`](#iregistrykey-interface): Method to retrieve a value from a registry subkey.
+- [`IConsoleInitializer`](#iconsoleinitializer-interface): Triggers eager initialization of the NuGet Package Manager Console.
 - [`IVsPackageInstaller`](#ivspackageinstaller-interface): Methods to install NuGet packages into projects.
 - [`IVsPackageInstallerEvents`](#ivspackageinstallerevents-interface): Events for package install/uninstall.
 - [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface): Methods to retrieve installed packages in the current solution and to check whether a given package is installed in a project.
-- [`IVsPackageManagerProvider`](#ivspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package.    
+- [`IVsPackageManagerProvider`](#-ibspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package.    
 - [`IVsPackageMetadata`](#ivspackagemetadata-interface); Methods to retrieve information about an installed package. 
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface): Methods to restore packages installed in a project.
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface): Methods to retrieve a list of NuGet package sources.
@@ -52,10 +53,9 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
 
     When installed, the package automatically sets the **Embed Interop Types** property of the assembly reference to **True**. This makes your code  resilient against version changes when users update to newer versions of NuGet.
 	
-	<div class="block-callout-warning">
-	    <strong>Note</strong><br>
-	    Do not use any other types besides the public interfaces in your code, and do not reference any other NuGet assemblies, including NuGet.Core.dll.
-	</div>
+> [!NOTE]
+> Do not use any other types besides the public interfaces in your code, and do not reference any other NuGet assemblies, including NuGet.Core.dll.
+
 
 2. To use the a service, import it through the [MEF Import attribute](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes), or through the [IComponentModel service](http://msdn.microsoft.comlibrary/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx). 
 

@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 1.8 Release Notes | Microsoft Docs"] 
+title: "NuGet 1.8 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [e694ee1a-fe4c-4397-8d0a-7336be4dfebe] 
+ms.assetid: e694ee1a-fe4c-4397-8d0a-7336be4dfebe 
  
 # optional metadata 
  

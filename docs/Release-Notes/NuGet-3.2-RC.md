@@ -2,7 +2,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 3.2 RC Release Notes | Microsoft Docs"] 
+title: "NuGet 3.2 RC Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -11,7 +11,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [330577fa-7965-4433-98ad-b4b4575e1452] 
+ms.assetid: 330577fa-7965-4433-98ad-b4b4575e1452 
  
 # optional metadata 
  
@@ -30,7 +30,7 @@ ms.reviewer:
 ---
 # NuGet 3.2 RC Release Notes
 
-[NuGet 3.1.1 Release Notes](/nuget/release-notes/nuget-3.1.1) | [NuGet 3.2 Release Notes](/nuget/release-notes/nuget-3.2) 
+[NuGet 3.1.1 Release Notes](../nuget/release-notes/nuget-3.1.1.md) | [NuGet 3.2 Release Notes](../nuget/release-notes/nuget-3.2.md) 
 
 NuGet 3.2 release candidate was released September 2, 2015 as a collection of improvements and fixes for the 3.1.1 release.  Also, these are the first releases that are published first to the new dist.nuget.org repository.
 

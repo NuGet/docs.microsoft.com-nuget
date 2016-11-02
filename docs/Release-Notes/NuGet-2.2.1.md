@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 2.2.1 Release Notes | Microsoft Docs"] 
+title: "NuGet 2.2.1 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [39ceaeb3-2d33-4b1c-b195-eba36c6cbf9a] 
+ms.assetid: 39ceaeb3-2d33-4b1c-b195-eba36c6cbf9a 
  
 # optional metadata 
  
@@ -54,7 +54,7 @@ NuGet's UI and PowerShell Console are localized into the following languages:
 1. Turkish
 
 ## Visual Studio Templates Support Multiple Preinstalled Package Repositories
-If you produce Visual Studio templates, you can use NuGet to [preinstall packages](/visual-studio-extensibility/visual-studio-templates) as part of the template.  Until now, this feature had a limitation that all of the packages needed to come from the same source.  With NuGet 2.2.1 though, you can have packages installed from multiple repositories (within the template, a VSIX, or a folder on disk defined in the registry).
+If you produce Visual Studio templates, you can use NuGet to [preinstall packages](../visual-studio-extensibility/visual-studio-templates) as part of the template.  Until now, this feature had a limitation that all of the packages needed to come from the same source.  With NuGet 2.2.1 though, you can have packages installed from multiple repositories (within the template, a VSIX, or a folder on disk defined in the registry).
 
 The main scenario for this feature is custom ASP.NET project templates.  The built-in ASP.NET templates use preinstalled packages, pulling packages from local disk.  You can now create a custom ASP.NET project template that uses the existing packages installed by ASP.NET but add extra NuGet packages into your template.
 

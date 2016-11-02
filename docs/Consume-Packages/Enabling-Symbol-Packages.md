@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Enabling Symbol Packages | Microsoft Docs"] 
+title: "Enabling Symbol Packages | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [G0937b5ca-c0e7-4e4f-8c31-5a447db4f226] 
+ms.assetid: G0937b5ca-c0e7-4e4f-8c31-5a447db4f226
  
 # optional metadata 
  
@@ -31,7 +31,7 @@ ms.reviewer:
 
 # Enabling Symbol Packages
 
-Package authors have the option to create [Symbol packages](/create-packages/symbol-packages) for their libraries and upload them to the [SymbolSource repository](http://www.symbolsource.org/Public).
+Package authors have the option to create [Symbol packages](../create-packages/symbol-packages.md) for their libraries and upload them to the [SymbolSource repository](http://www.symbolsource.org/Public).
 
 When you configure Visual Studio to use symbol packages in the debugger, it will automatically download an available symbol package when you install an associated package from nuget.org.
 
@@ -44,8 +44,7 @@ To enable this behavior, do the following:
 
 When a symbol package is available, you'll be able to step directly into package code within the Visual Studio debugger.
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	This same feature allows you to step into the .NET Framework code. See http://referencesource.microsoft.com/. 
-</div>
+> [!Note]
+> This same feature allows you to step into the .NET Framework code. See [http://referencesource.microsoft.com/](http://referencesource.microsoft.com/). 
+
 

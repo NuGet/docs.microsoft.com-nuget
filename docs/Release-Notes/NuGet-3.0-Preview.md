@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 3.0 Preview Release Notes | Microsoft Docs"] 
+title: "NuGet 3.0 Preview Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [6762b6f8-82b7-4bab-a1f0-cd25e5dc1fb4] 
+ms.assetid: 6762b6f8-82b7-4bab-a1f0-cd25e5dc1fb4 
  
 # optional metadata 
  
@@ -29,7 +29,7 @@ ms.reviewer:
 ---
 # NuGet 3.0 Preview Release Notes
 
-[NuGet 2.9 Release Notes](/nuget/release-notes/nuget-2.9) | [NuGet 3.0 Beta Release Notes](/nuget/release-notes/nuget-3.0-beta)
+[NuGet 2.9 Release Notes](../nuget/release-notes/nuget-2.9.md) | [NuGet 3.0 Beta Release Notes](../nuget/release-notes/nuget-3.0-beta.md)
 
 NuGet 3.0 Preview was released on November 12, 2014 as part of the Visual Studio 2015 Preview release. We released NuGet 3.0 Preview. This is a big release for us (albeit a preview), and we're excited to start getting feedback on our changes.
 

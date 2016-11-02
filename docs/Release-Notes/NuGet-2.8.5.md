@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 2.8.5 Release Notes | Microsoft Docs"] 
+title: "NuGet 2.8.5 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [60b96b2e-2a61-4f10-b5ad-3299f5a6d453] 
+ms.assetid: 60b96b2e-2a61-4f10-b5ad-3299f5a6d453 
  
 # optional metadata 
  
@@ -29,7 +29,7 @@ ms.reviewer:
 --- 
 # NuGet 2.8.5 Release Notes
 
-[NuGet 2.8.3 Release Notes](/nuget/release-notes/nuget-2.8.3) | [NuGet 2.8.6 Release Notes](/nuget/release-notes/nuget-2.8.6) 
+[NuGet 2.8.3 Release Notes](../nuget/release-notes/nuget-2.8.3.md) | [NuGet 2.8.6 Release Notes](../nuget/release-notes/nuget-2.8.6.md) 
 
 NuGet 2.8.5 was released March 30, 2015. It is a minor update to our 2.8.3 VSIX with some targeted fixes. 
 
