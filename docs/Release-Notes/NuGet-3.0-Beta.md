@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 3.0 Beta Release Notes | Microsoft Docs"] 
+title: "NuGet 3.0 Beta Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [4153ff3f-f97f-4e54-b638-e844f70edf22] 
+ms.assetid: 4153ff3f-f97f-4e54-b638-e844f70edf22 
  
 # optional metadata 
  
@@ -29,7 +29,7 @@ ms.reviewer:
 ---
 # NuGet 3.0 Beta Release Notes
 
-[NuGet 3.0 Preview Release Notes](/nuget/release-notes/nuget-3.0-preview) | [NuGet 3.0 RC Release Notes](/nuget/release-notes/nuget-3.0-rc)
+[NuGet 3.0 Preview Release Notes](../nuget/release-notes/nuget-3.0-preview.md) | [NuGet 3.0 RC Release Notes](../nuget/release-notes/nuget-3.0-rc.md)
 
 NuGet 3.0 Beta was released on February 23, 2015 for the Visual Studio 2015 CTP 6 release. This release means a lot to our team, as we have a number of architecture and performance improvements to share, and we're excited to start tuning the performance settings on our nuget.org service.
 

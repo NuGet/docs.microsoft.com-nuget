@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet.Config Reference | Microsoft Docs"] 
+title: "NuGet.Config Reference | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [fbf31530-3bf4-478c-b26c-c2b24dd3406d] 
+ms.assetid: fbf31530-3bf4-478c-b26c-c2b24dd3406d
  
 # optional metadata 
  
@@ -30,7 +30,7 @@ ms.reviewer:
 
 # NuGet.Config Reference
 
-NuGet behavior is controlled by settings in `NuGet.Config` files as described in [Configuring NuGet Behavior](/consume-packages/configuring-nuget-behavior). Setting names are case-insensitive.
+NuGet behavior is controlled by settings in `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). Setting names are case-insensitive.
 
 `NuGet.Config` is an XML file containing a top-level &lt;configuration&gt; node, which then contains the section elements described in this topic. Each section then contains zero or more &lt;add&gt; elements with `key` and `value` attributes. See the [examples config file](#example-config-file) at the end of this topic.
 
@@ -58,36 +58,18 @@ In this topic:
 <a name="repositoryPath"></a>
 <a name="proxy-settings"></a>
 
-Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](/tools/nuget.exe-cli-reference#config).
+Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/nuget.exe-cli-reference#config.md).
 
 Note: `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using `project.json`.
 
-<table>
-	<tr>
-		<th>Key</th>
-		<th>Value</th>
-	</tr>
-	<tr>
-		<td>dependencyVersion<br>(package.config only)</td>
-		<td>The default <code>DependencyVersion</code> value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly. This value is also used by the NuGet Package Manager UI. Values are <code>Lowest</code>, <code>HighestPatch</code>, <code>HighestMinor</code>, <code>Highest</code>.</td>
-	</tr>
-	<tr>
-		<td>globalPackagesFolder<br>(project.json only)</td>
-		<td>The location of the default global packages folder. The default is <code>%userprofile%\.nuget\packages</code>. A relative path can be used in project-specific <code>nuget.config</code> files.</td>
-	</tr>	
-	<tr>
-		<td>repositoryPath<br>(packages.config only)</td>
-		<td>The location in which to install NuGet packages instead of the default <code>$(Solutiondir)\packages</code> folder. A relative path can be used in project-specific <code>nuget.config</code> files.</td>
-	</tr>
-	<tr>
-		<td>defaultPushSource</td>
-		<td>Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation.</td>
-	</tr>
-	<tr>
-		<td>http_proxy<br>http_proxy.user<br>http_proxy.password<br>no_proxy</td>
-		<td>Proxy settings to use when connecting to package sources; <code>http_proxy</code> should be in the format <code>http://&lt;username&gt;:&lt;password&gt@&lt;domain&gt</code>. Passwords are encrypted and cannot be added manually. For <code>no_proxy</code>, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the HTTP_PROXY and NO_PROXY environment variables for those values. For additional details, see <a href="http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html">NuGet proxy settings</a> (skolima.blogspot.com).</td>
-	</tr>	
-</table>
+Key | Value
+--- | ---
+dependencyVersion (package.config only) | The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly. This value is also used by the NuGet Package Manager UI. Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`.
+globalPackagesFolder (project.json only) | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages`. A relative path can be used in project-specific `nuget.config` files.
+repositoryPath (packages.config only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)\packages` folder. A relative path can be used in project-specific `nuget.config` files.
+defaultPushSource | Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation.
+http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://&lt;username&gt;:&lt;password&gt@&lt;domain&gt`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the HTTP_PROXY and NO_PROXY environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com).
+
 
 **Example**:
 
@@ -102,17 +84,9 @@ Note: `dependencyVersion` and `repositoryPath` apply only to projects using `pac
 ## bindingRedirects section
 
 Configures whether NuGet does automatic binding redirects when a package is installed.
-
-<table>
-	<tr>
-		<th>Key</th>
-		<th>Value</th>
-	</tr>
-	<tr>
-		<td>skip</td>
-		<td>A Boolean indicating whether to skip automatic binding redirects. The default is false.</td>
-	</tr>
-</table>
+Key | Value
+--- | ---
+skip | A Boolean indicating whether to skip automatic binding redirects. The default is false.
 
 **Example**:
 
@@ -127,21 +101,10 @@ Configures whether NuGet does automatic binding redirects when a package is inst
 
 Controls package restore during builds.
 
-<table>
-	<tr>
-		<th>Key</th>
-		<th>Value</th>
-	</tr>
-	<tr>
-		<td>enabled</td>
-		<td>A Boolean indicating whether NuGet can perform automatic restore. You can also set the <code>EnableNuGetPackageRestore</code> environment variable with a value of <code>True</code> instead of setting this key in the config file.</td>
-	</tr>
-	<tr>
-		<td>automatic</td>
-		<td>A Boolean indicating whether NuGet shoudl check for missing packages during a build.</td>
-	</tr>
-</table>
-
+Key | Value
+--- | ---
+enabled | A Boolean indicating whether NuGet can perform automatic restore. You can also set the `EnableNuGetPackageRestore` environment variable with a value of `True` instead of setting this key in the config file.
+automatic | A Boolean indicating whether NuGet shoudl check for missing packages during a build.
 
 **Example**:
 
@@ -154,17 +117,10 @@ Controls package restore during builds.
 
 Controls whether the `packages` folder of a solution is included in source control. This section works only in `nuget.config` files in a solution folder.
 
-<table>
-	<tr>
-		<th>Key</th>
-		<th>Value</th>
-	</tr>
-	<tr>
-		<td>disableSourceControlIntegration</td>
-		<td>A Boolean indicating whether to ignore the packages folder when working with source control. The default value is true.</td>
-	</tr>
+Key | Value
+--- | ---
+disableSourceControlIntegration | A Boolean indicating whether to ignore the packages folder when working with source control. The default value is true.
 
-</table>
 
 **Example**:
 
@@ -177,22 +133,15 @@ Controls whether the `packages` folder of a solution is included in source contr
 
 The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, and `disabledPackageSources` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
 
-The [`nuget sources` command](/tools/nuget.exe-cli-reference#sources) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](/tools/nuget.exe-cli-reference#setapikey). 
+The [`nuget sources` command](../tools/nuget.exe-cli-reference#sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/nuget.exe-cli-reference#setapikey.md). 
 
 ### packageSources 
 
 Lists all known package sources. Sources can be added using the 
 
-<table>
-	<tr>
-		<th>Key</th>
-		<th>Value</th>
-	</tr>
-	<tr>
-		<td>(name to assign to the package source)</td>
-		<td>The path or URL of the package source.</td>
-	</tr>
-</table>
+Key | Value
+--- | ---
+(name to assign to the package source) | The path or URL of the package source.
 
 **Example**:
 
@@ -207,24 +156,11 @@ Lists all known package sources. Sources can be added using the
 
 Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`. Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.  
 
-<table>
-	<tr>
-		<th>Key</th>
-		<th>Value</th>
-	</tr>
-	<tr>
-		<td>username</td>
-		<td>The user name for the source in plain text.</td>
-	</tr>
-	<tr>
-		<td>password</td>
-		<td>The encrypted password for the source.</td>
-	</tr>
-	<tr>
-		<td>cleartextpassword</td>
-		<td>The unencrypted password for the source.</td>
-	</tr>
-</table>
+Key | Value
+--- | ---
+username | The user name for the source in plain text.
+password | The encrypted password for the source.
+cleartextpassword | The unencrypted password for the source.
 
 **Example:**
 
@@ -248,18 +184,11 @@ When using an unencrypted password:
 
 ### apikeys
 
-Stores keys for sources that use API key authentication, as set with the [`nuget -setapikey` command](/tools/nuget.exe-cli-reference#setapikey).
+Stores keys for sources that use API key authentication, as set with the [`nuget -setapikey` command](../tools/nuget.exe-cli-reference#setapikey.md).
 
-<table>
-	<tr>
-		<th>Key</th>
-		<th>Value</th>
-	</tr>
-	<tr>
-		<td>(source URL)</td>
-		<td>The encrypted API key.</td>
-	</tr>
-</table>
+Key | Value
+--- | ---
+(source URL) | The encrypted API key.
 
 **Example**:
 
@@ -272,16 +201,10 @@ Stores keys for sources that use API key authentication, as set with the [`nuget
 
 Identified currently disabled sources. May be empty.
 
-<table>
-	<tr>
-		<th>Key</th>
-		<th>Value</th>
-	</tr>
-	<tr>
-		<td>(name of source)</td>
-		<td>A Boolean indicating whether the source is disabled.</td>
-	</tr>
-</table>
+Key | Value
+--- | ---
+(name of source) | A Boolean indicating whether the source is disabled.
+
 
 
 **Example:**
@@ -299,16 +222,9 @@ Identified currently disabled sources. May be empty.
 
 Identifies to the currently active source or indicates the aggregate of all sources.
 
-<table>
-	<tr>
-		<th>Key</th>
-		<th>Value</th>
-	</tr>
-	<tr>
-		<td>(name of source) or `All`</td>
-		<td>If key is the name of a source, the value is the source path or URL. If `All`, value should be `(Aggregate source)` to combine all package sources that are not otherwise disabled.</td>
-	</tr>
-</table>
+Key | Value
+--- | ---
+(name of source) or `All` | If key is the name of a source, the value is the source path or URL. If `All`, value should be `(Aggregate source)` to combine all package sources that are not otherwise disabled.
 
 **Example**:
 

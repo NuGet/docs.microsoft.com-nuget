@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: [“Create .NET Standard Packages | Microsoft Docs”] 
+title: “Create .NET Standard Packages | Microsoft Docs” 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [29b3bceb-0f35-4cdd-bbc3-a04eb823164c] 
+ms.assetid: 29b3bceb-0f35-4cdd-bbc3-a04eb823164c 
  
 # optional metadata 
  
@@ -31,15 +31,15 @@ ms.reviewer:
 
 The [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code. 
 
-This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4. This will work across .NET Framework 4.6.1, Universal Windows Platform 10, .NET Core, and Mono/Xamarin. For details, see the [.NET Standard mapping table](#net-standard-mapping-table) later in this topic.
+This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4. This will work across .NET Framework 4.6.1, Universal Windows Platform 10, .NET Core, and Mono/Xamarin. For details, see the [.NET Standard mapping table](#table) later in this topic.
 
 1. [Pre-requisites](#pre-requisites)
 2. [Create the class library project](#create-the-class-library-project)
-3. [Create and update the .nuspec file](#create-and-update-the-nuspec-file)
+3. [Create and update the .nuspec file](#create-and-update-the--nuspec-file)
 4. [Package the component](#package-the-component)
 5. [Additional options](#additional-options)
-5. [.NET Standard mapping table](#net-standard-mapping-table)
-6. [Related topics](#related-topics)
+6. [.NET Standard mapping table](#-net-standard-mapping-table)
+7. [Related topics](#related-topics)
 
 
 ##Pre-requisites
@@ -47,10 +47,9 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 2. .NET Core: Install .NET Core along with templates and other tools for Visual Studio 2015 from [https://go.microsoft.com/fwlink/?LinkId=824849](https://go.microsoft.com/fwlink/?LinkId=824849).
 3. NuGet CLI. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice. Then add that location to your PATH environment variable if it isn't already.
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
-</div>
+>[!NOTE]
+>nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
+
 
 
 ##Create the class library project
@@ -63,8 +62,8 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 	![Setting the target to .NET Standard 1.4](media/NetStandard-ChangeTarget.png)
 
-5. Click on the **Build** tab, change the **Configuration** to `Release`, and check the box for **XML documentation file**.
-6. Add your code to the component, for example:
+4. Click on the **Build** tab, change the **Configuration** to `Release`, and check the box for **XML documentation file**.
+5. Add your code to the component, for example:
 
 		namespace AppLogger
 		{
@@ -83,9 +82,9 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 1. Open a command prompt, navigate to the folder containing `AppLogg.csproj` folder (one level below where the .sln file is), and run the NuGet `spec` command to create the initial `AppLogger.nuspec` file:
 
-	<code class="bash hljs">
+```
 		nuget spec
-	</code>
+```
 
 2. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
 
@@ -113,24 +112,23 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 			<file src="bin\Release\AppLogger.xml" target="lib\netstandard1.4\AppLogger.xml" />			
 		</files> 
 
-3. Right-click the solution and select **Build Solution** to generate all the files for the package. 
+4. Right-click the solution and select **Build Solution** to generate all the files for the package. 
 
 
 ##Package the component
 With the completed .nuspec referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
-<code class="bash hljs">
+```
 	nuget pack AppLogger.nuspec
-</code>
+```
 
 This will generate `AppLogger.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
 
 ![NuGet Package Explorer showing the AppLogger package](media/NetStandard-PackageExplorer.png)
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
-</div>
+>[!NOTE]
+>A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
+
 
 To make your package available to other developers,  follow the instructions on [Publish a package](/create-packages/publish-a-package).
 
@@ -198,10 +196,9 @@ For more details on using this technique, see [Supporting Multiple .NET Framewor
 
 In some cases you might want to add custom build targets or properties in projects that consume your package, such as running a custom tool or process during build. You do this by adding files in a `\build` folder as described in the steps below. When NuGet installs a package with \build files, it adds an MSBuild element in the project file pointing to the .targets and .props files. 
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	When using project.json, targets are not added to the project but are made available through the project.lock.json.
-</div>
+>[!NOTE]
+>When using project.json, targets are not added to the project but are made available through the project.lock.json.
+
 
 1. In the project folder containing the your .nuspec file, create a folder named `build`.
 2. Inside `build`, create folders for each supported, and within those place your .targets and .props files:
@@ -276,10 +273,9 @@ To create localized versions of your library, you can either create separate pac
 ###Adding a readme
 When you include a `readme.txt` file in the root of the package, Visual Studio will display it when the package is installed directly.
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	Readme files are not shown for packages that are installed as a dependency, or for .NET Core projects.
-</div>
+>[!NOTE]
+>Readme files are not shown for packages that are installed as a dependency, or for .NET Core projects.
+
 
 To do this, create your `readme.txt` file, place it in the project root folder, and refer to it in the .nuspec file:
 
@@ -295,106 +291,17 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 
 ## .NET Standard mapping table
 
-<table class="reference">
-	<tr>
-		<th>Platform Name</th>
-		<th>Alias</th>
-		<th> </th>
-		<th> </th>
-		<th> </th>
-		<th> </th>
-		<th> </th>
-		<th> </th>
-		<th> </th>
-    <tr>
-        <td>.NET Standard</td>
-        <td>netstandard</td>
-		<td>1.0</td>
-		<td>1.1</td>
-		<td>1.2</td>
-		<td>1.3</td>
-		<td>1.4</td>
-		<td>1.5</td>
-		<td>1.6</td>
-    </tr>
-	<tr>
-		<td>.NET Core</td>
-		<td>netcoreapp</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>1.0</td>
-    <tr>
-	<tr>
-		<td>.NET Framework</td>
-		<td>net</td>
-		<td>&#x2192;</td>
-		<td>4.5</td>
-		<td>4.5.1</td>
-		<td>4.6</td>
-		<td>4.6.1</td>
-		<td>4.6.2</td>
-		<td>4.6.3</td>
-    <tr>
-	<tr>
-		<td>Mono/Xamarin Platforms</td>
-		<td></td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>*</td>
-    <tr>
-	<tr>
-		<td>Universal Windows Platform</td>
-		<td>uap</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>10.0</td>
-		<td></td>
-		<td></td>
-    <tr>
-	<tr>
-		<td>Windows</td>
-		<td>win</td>
-		<td>&#x2192;</td>
-		<td>8.0</td>
-		<td>8.1</td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-    <tr>
-	<tr>
-		<td>Windows Phone</td>
-		<td>wpa</td>
-		<td>&#x2192;</td>
-		<td>&#x2192;</td>
-		<td>8.1</td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-    <tr>
-	<tr>
-		<td>Windows Phone Silverlight</td>
-		<td>wp</td>
-		<td>8.0</td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-    <tr>	
-</table>
+|Platform Name |Alias|
+|--------------|-----|
+|.NET Standard | netstandard| 1.0| 1.1| 1.2| 1.3| 1.4| 1.5| 1.6|
+|.NET Core | netcoreapp| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| 1.0|
+|.NET Framework| net| 4.5| 4.5.1| 4.6| 4.6.1| 4.6.2| 4.6.3|
+|Mono/Xamarin Platforms| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;|
+|Universal Windows Platform| uap| &#x2192;| &#x2192;| &#x2192;| &#x2192;|10.0|
+|Windows| win| &#x2192;| 8.0| 8.1|
+|Windows Phone| wpa| &#x2192;| &#x2192;|8.1|
+|Windows Phone Silverlight| wp| 8.0|
+
 
 
 ##Related topics

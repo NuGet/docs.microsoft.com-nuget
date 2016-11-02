@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 2.8.6 Release Notes | Microsoft Docs"] 
+title: "NuGet 2.8.6 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [920c551c-18a7-40f4-a32b-ce84de6ea766] 
+ms.assetid: 920c551c-18a7-40f4-a32b-ce84de6ea766 
  
 # optional metadata 
  
@@ -29,7 +29,7 @@ ms.reviewer:
 ---
 # NuGet 2.8.6 Release Notes
 
-[NuGet 2.8.5 Release Notes](/nuget/release-notes/nuget-2.8.5) | [NuGet 2.8.7 Release Notes](/nuget/release-notes/nuget-2.8.7)
+[NuGet 2.8.5 Release Notes](../nuget/release-notes/nuget-2.8.5.md) | [NuGet 2.8.7 Release Notes](../nuget/release-notes/nuget-2.8.7.md)
 
 NuGet 2.8.6 was released July 20, 2015 as a minor update to our 2.8.5 VSIX with some targeted fixes and improvements to support packages that may be delivered with support for the Windows 10 UWP development model.
 

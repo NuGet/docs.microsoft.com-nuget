@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Packages in Visual Studio templates | Microsoft Docs"] 
+title: "Packages in Visual Studio templates | Microsoft Docs" 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [0b2cf228-f028-475d-8792-c012dffdb26f] 
+ms.assetid: 0b2cf228-f028-475d-8792-c012dffdb26f 
  
 # optional metadata 
  
@@ -55,24 +55,24 @@ Steps to include packages in a template:
 1. In your `vstemplate` file, add a reference to the NuGet template wizard by
 adding a [`WizardExtension`](http://msdn.microsoft.com/library/ms171411.aspx) element:
 		
-	<code class="html">
+	```
 		&lt;WizardExtension&gt;
 	        &lt;Assembly&gt;NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&lt;/Assembly&gt;
 	        &lt;FullClassName&gt;NuGet.VisualStudio.TemplateWizard&lt;/FullClassName&gt;
 	    &lt;/WizardExtension&gt;
-	</code>
+	```
 
 	`NuGet.VisualStudio.Interop.dll` is an assembly that contains only the `TemplateWizard` class, which is a simple wrapper that calls into the actual implementation in `NuGet.VisualStudio.dll`. The assembly version will never change so that project/item templates continue to work with new versions of NuGet.
 
 2. Add the list of packages to install in the project:
   
-    <code class="html">
+    ```
 		&lt;WizardData&gt;
 	        &lt;packages&gt;
 	            &lt;package id="jQuery" version="1.6.2" /&gt;
 	        &lt;/packages&gt;
 	    &lt;/WizardData&gt;
-	</code>
+	```
 
 	*(NuGet 2.2.1+)* The wizard supports multiple &lt;package&gt; elements to support multiple package sources. Both the `id` and `version` attributes are required, meaning that specific version of a package will be installed even if a newer version is available. This prevents package updates from breaking the template, leaving the choice to update the package to the developer using the template.
     
@@ -87,29 +87,30 @@ The VSIX itself can serve as the source for packages required by the template:
  
 1. Modify the `<packages>` element in the `.vstemplate` file as follows:
 
-    <code class="html">
+    ```
 		&lt;packages repository="extension"
               repositoryId="MyTemplateContainerExtensionId"&gt;
 
     	&lt;!-- ... --&gt;
     	&lt;/packages&gt;
-	</code>
+	```
 
 	The `repository` attribute specifies the type of repository as `extension` while `repositoryId` is the unique identifier of the VSIX itself (This is the value of the [`ID` attribute](http://msdn.microsoft.com/library/dd393688.aspx) in the extension’s `vsixmanifest` file).
 
 2. Place your `nupkg` files in a folder called `Packages` within the VSIX. 
 3. Add the necessary package files as [custom extension content](http://msdn.microsoft.com/library/dd393737.aspx) in your `source.extension.vsixmanifest` file. If you're using the 2.0 schema it should look like this:
 
-    <code class="html">
+    ```
 		&lt;Asset Type="Moq.4.0.10827.nupkg" d:Source="File" 
            Path="Packages\Moq.4.0.10827.nupkg" d:VsixSubPath="Packages" /&gt;
-    </code>
+    ```
 
     If you're using the 1.0 schema it should look like this:
 
-    <code class="html">&lt;CustomExtension Type="Moq.4.0.10827.nupkg"&gt;
+    ```
+	&lt;CustomExtension Type="Moq.4.0.10827.nupkg"&gt;
       packages/Moq.4.0.10827.nupkg&lt;/CustomExtension&gt;
-    </code></pre>
+    ```
 
 	 
 4. Note that you can deliver packages in the same VSIX as your project templates or you can put them in a separate VSIX if that makes more sense for your scenario. However, do not reference any VSIX over which you do not have control, because changes to that extension could break your template.
@@ -121,11 +122,11 @@ If you are distributing only a single project/item template and do not need to p
 
 1. Modify the `<packages>` element in the `.vstemplate` file as follows:
 
-	<code class="html">
+	```
 		&lt;packages repository="template""&gt;
 			&lt;!-- ... --&gt;
 		&lt;/packages&gt;
-	</code>
+	```
 	
 	The `repository` attribute has the value `template` and the `repositoryId` attribute is not required.
 
@@ -152,24 +153,24 @@ SDKs that are installed using an MSI can install NuGet packages directly on the 
 	- *(NuGet 3.2+)* If you want to force a design-time build at the end of package installation, add the `forceDesignTimeBuild="true"` attribute.
 	- As an optimization, add `skipAssemblyReferences="true"` because the template itself already includes the necessary references.
 	
-	<code class="html">
+	```
 		&lt;packages repository="registry" keyName="AspNetMvc4VS11" isPreunzipped="true"&gt;
 	    	&lt;package id="EntityFramework" version="5.0.0" skipAssemblyReferences="true" /&gt;
 	    	&lt;-- ... --&gt;
 		&lt;/packages&gt;
-	</code>
+	```
     
 
 ## Best Practices
 
 1. Declare a dependency on the NuGet VSIX by adding a reference to it in your VSIX manifest:
-    <code class="html">
+   ```
 		&lt;Reference Id="NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5" MinVersion="1.7.30402.9028"&gt;
 	    	&lt;Name&gt;NuGet Package Manager&lt;/Name&gt;
 	    	&lt;MoreInfoUrl&gt;http://docs.nuget.org/&lt;/MoreInfoUrl&gt;
 	    &lt;/Reference&gt;
 	    &lt-- ... --&gt;
-    </code>
+    ```
 
 2. Require project/item templates to be saved on creation by setting [`<PromptForSaveOnCreation>`](http://msdn.microsoft.com/library/twfxayz5.aspx) in the `.vstemplate` file.
 

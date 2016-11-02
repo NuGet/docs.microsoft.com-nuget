@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Pre-release Versions | Microsoft Docs"] 
+title: "Pre-release Versions | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [df6a366a-22c1-47bb-8017-18231311ce88] 
+ms.assetid: df6a366a-22c1-47bb-8017-18231311ce88
  
 # optional metadata 
  
@@ -33,7 +33,7 @@ Whenever you release an updated package with a new version number, NuGet conside
 
 ![Package Manager UI showing the latest stable release](media/Prerelease_01-LatestStable.png)
 
-A stable release is one that's considered reliable enough to be used in production. The latest stable release is also the one that will be installed as a package update or during package restore (subject to constraints as described in [Reinstalling and updating packages](/consume-packages/reinstalling-and-updating-packages)).
+A stable release is one that's considered reliable enough to be used in production. The latest stable release is also the one that will be installed as a package update or during package restore (subject to constraints as described in [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md)).
 
 To support the software release lifecycle, NuGet 1.6 and later allows for the distribution of pre-release packages, where the version number includes a semantic versioning suffix such as `-alpha`, `-beta`, or `-rc` (as described in [semantic versioning](#semantic-versioning) later in this topic).
 
@@ -49,10 +49,8 @@ You can specify such versions in two ways:
 
 	NuGet will pick up this value instead of the one specified in the `AssemblyVersion` attribute, which does not support SemVer.
 
-<div class="block-callout-info">
-    <strong>Note</strong><br>
-    A stable package release cannot have a pre-release dependency. This avoids accidentally installing a potentially unstable releases.
-</div>
+> [!NOTE]
+> A stable package release cannot have a pre-release dependency. This avoids accidentally installing a potentially unstable releases.
 
 When you’re ready to release a stable version, just remove the suffix and the package will take precedence over any pre-release versions.
 
@@ -67,9 +65,9 @@ By default, NuGet does not include pre-release versions when working with packag
 
 	Checking or unchecking this box will refresh the Package Manager UI and the list of available versions you can install.
 
-- **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](/tools/powershell-reference).
+- **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../tools/powershell-reference.md).
 
-- **NuGet CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](/tools/nuget.exe-cli-reference) 
+- **NuGet CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../tools/nuget.exe-cli-reference.md) 
 
 
 ## Semantic versioning
@@ -90,10 +88,8 @@ With this in mind, it's generally good to follow recognized naming conventions s
 - `-beta`: Beta release, typically one that is feature complete for the next planned release, but may contain known bugs. 
 - `-rc`: Release candidate, typically a release that's potentially final (stable) unless significant bugs emerge.
 
-<div class="block-callout-info">
-    <strong>Note</strong><br>
-    NuGet does not support SemVer-compatible build numbers with dot notation, as in <em>1.0.1-build.23</em>. You can use a form like <em>1.0.1-build23</em> but this is always considered a pre-release version.  
-</div>
+> [!NOTE]
+> NuGet does not support SemVer-compatible build numbers with dot notation, as in <em>1.0.1-build.23</em>. You can use a form like <em>1.0.1-build23</em> but this is always considered a pre-release version.
 
 Whatever suffixes you use, however, NuGet will give them precedence in reverse alphabetical order: 
 

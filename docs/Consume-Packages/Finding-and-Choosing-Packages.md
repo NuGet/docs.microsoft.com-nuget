@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Finding and Choosing Packages | Microsoft Docs"] 
+title: "Finding and Choosing Packages | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [8886f899-797b-4704-9d16-820b55b71186] 
+ms.assetid: 8886f899-797b-4704-9d16-820b55b71186
  
 # optional metadata 
  
@@ -60,7 +60,7 @@ NuGet 2.5+ supports native C++ packages can that can be used in C++ projects in 
 
 To find native packages on [nuget.org](https://www.nuget.org/packages), search using `tag:native`. Such packages typically provide `.targets` and `.props` files, which NuGet imports automatically when the package is added to a project. 
 
-For information on creating native packages, see [Native packages](/create-packages/native-packages).
+For information on creating native packages, see [Native packages](../create-packages/native-packages.md).
 
 
 ## Evaluating packages
@@ -87,16 +87,11 @@ At the same time, using a NuGet package means taking a dependency on it, so you'
 - *Open source contributions*: many packages are maintained in an open-source repository, making it possible for developers depending on it to directly contribute bug fixes and feature improvements. The contribution history of any given package is also a good indicator of how many developers are actively involved.
 - *Interview the owners*: all this is not to say that new developers are not equally committed to producing great packages for you to use, and it's certainly good to give them a chance to bring something new to the NuGet ecosystem. With this in mind, you can always talk directly to the package developers through the **Contact Owners** option on the listing page. Chances are, they'll be happy to work directly with you to serve your needs!
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	Always be mindful of a package's licence terms, which you can see by clicking <strong>License</strong> on a package's listing page on nuget.org.
-</div>
+> [!NOTE]
+> Always be mindful of a package's licence terms, which you can see by clicking <strong>License</strong> on a package's listing page on nuget.org.
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	Every package that is uploaded to nuget.org is scanned for viruses. All packages listed on nuget.org are also scanned periodically.
-</div>
-
+> [!NOTE]
+> Every package that is uploaded to nuget.org is scanned for viruses. All packages listed on nuget.org are also scanned periodically.
 
 ## Search Syntax
 

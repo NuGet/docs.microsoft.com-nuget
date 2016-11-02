@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: [“NuGet frequently-asked questions | Microsoft Docs”] 
+title: “NuGet frequently-asked questions | Microsoft Docs” 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [199a915d-9595-4ae2-a1fb-b15da6d7735a] 
+ms.assetid: 199a915d-9595-4ae2-a1fb-b15da6d7735a 
  
 # optional metadata 
  
@@ -37,13 +37,13 @@ In this topic:
 - [NuGet Package Manager Console](#nuget-package-manager-console)
 - [Creating and publishing packages](#creating-and-publishing-packages)
 - [Working with packages](#working-with-packages)
-- [Managing packages on nuget.org](#managing-packages-on-nugetorg)
+- [Managing packages on nuget.org](#managing-packages-on-nuget-org)
 
 ## Getting started
 
 **What is required to run NuGet?**
 
-All the information around both UI and command-line tools is available in the [Install guide](/guides/install-nuget).
+All the information around both UI and command-line tools is available in the [Install guide](../guides/install-nuget.md).
 
 **Does NuGet support Mono?**
 
@@ -79,14 +79,14 @@ To update the template itself, you'll need to manually update the template repos
 
 **Can I use NuGet outside of Visual Studio?**
 
-Yes, NuGet works directly from the command line. See the [Install guide](/guides/install-nuget).
+Yes, NuGet works directly from the command line. See the [Install guide](../guides/install-nuget.md).
 
 
-## NuGet command line
+## NuGet CommandLine
 
 **How do I get the latest version of NuGet commandline?**
 
-See the [Install guide](/guides/install-nuget).
+See the [Install guide](../guides/install-nuget.md).
 
 **Is it possible to extend the NuGet commandline?**
 
@@ -96,7 +96,7 @@ Yes, it's possible to add custom commands to `nuget.exe`, as described in [Rob R
 
 **How do I get access to the DTE object in the Package Manager console?**
 
-The console provides a variable named `$DTE` that returns the `DTE` object. See the [`Get-Project` command](/tools/powershell-reference#get-project).
+The console provides a variable named `$DTE` that returns the `DTE` object. See the [`Get-Project` command](../tools/powershell-reference#get-project.md).
 
 **I try to cast the $DTE variable to the type DTE2, but I get an error: Cannot convert the "EnvDTE.DTEClass" value of type "EnvDTE.DTEClass" to type "EnvDTE80.DTE2". What's wrong?**
 
@@ -110,15 +110,15 @@ This is a known issue with how PowerShell interacts with a COM object. Try the f
 
 **How do I list my package in a feed?**
 
-See [Creating and publishing a package](/quickstart/create-and-publish-a-package).
+See [Creating and publishing a package](../quickstart/create-and-publish-a-package.md).
 
 **I have multiple versions of my library that target different versions of the .NET Framework. How do I build a single package that supports this?**
 
-See [Supporting Multiple .NET Framework Versions and Profiles](/create-packages/supporting-multiple-target-frameworks).
+See [Supporting Multiple .NET Framework Versions and Profiles](../create-packages/supporting-multiple-target-frameworks.md).
 
 **How do I set up my own repository or feed?**
 
-See the [Hosting packages overview](/hosting-packages/overview).
+See the [Hosting packages overview](../hosting-packages/overview.md).
 
 **How can I upload packages to my NuGet feed in bulk?**
 
@@ -136,15 +136,15 @@ Yes, see Scott Hanselman's Blog post [How to access NuGet when NuGet.org is down
 
 **How do I install packages in a different location from the default packages folder?**
 
-Set the [`repositoryPath`](/schema/nuget.config#config-section) setting in `nuget.config` using `nuget config -set repositoryPath=&lt;path&gt;`. 
+Set the [`repositoryPath`](../schema/nuget.config#config-section.md) setting in `nuget.config` using `nuget config -set repositoryPath=&lt;path&gt;`. 
 
 **How do I avoid checking in packages folder to source control?**
 
-Set the [`disableSourceControlIntegration`](/schema/nuget.config#solution-section) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automaticatlly.
+Set the [`disableSourceControlIntegration`](../schema/nuget.config#solution-section.md) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automaticatlly.
 
 **How do I turn off package restore?**
 
-See [Enabling and disabling package restore](/consume-packages/package-restore#enabling-and-disabling-package-restore).
+See [Enabling and disabling package restore](../consume-packages/package-restore#enabling-and-disabling-package-restore.md).
 
 **Why do I get an "Unable to resolve dependency error" when installing a local package with remote dependencies?**
 
@@ -170,7 +170,7 @@ No. If you feel that an existing package has taken the name which suits your pac
 
 **How do I claim ownership for packages ?**
 
-See [Managing package owners on nuget.org](/create-packages/publish-a-package#managing-package-owners-on-nuget-org).
+See [Managing package owners on nuget.org](../create-packages/publish-a-package#managing-package-owners-on-nuget-org.md).
 
 **How do I deal with a package owner who is violating my software license?**
 

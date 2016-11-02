@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Dependency Resolution | Microsoft Docs"] 
+title: "Dependency Resolution | Microsoft Docs" 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [1d530a72-3486-4a0d-b6fb-017524616f91] 
+ms.assetid: 1d530a72-3486-4a0d-b6fb-017524616f91
  
 # optional metadata 
  
@@ -31,7 +31,7 @@ ms.reviewer:
 
 # Dependency Resolution 
 
-Any time a package is installed or reinstalled, which includes being installed as part of a [restore](/consume-packages/package-restore) process, NuGet also installs any additional packages on which that first package depends.
+Any time a package is installed or reinstalled, which includes being installed as part of a [restore](../consume-packages/package-restore.md) process, NuGet also installs any additional packages on which that first package depends.
 
 Those immediate dependencies might then also have dependencies on their own, which can continue to an arbitrary depth. This produces what's called a *dependency graph* that describes the relationships between packages are all levels. 
 
@@ -56,12 +56,9 @@ This and other challenges is why dependency resolution was overhauled in NuGet 3
 
 As dependencies are installed into a project, NuGet 3.x adds them to a flat package graph in `project.json` in which conflicts are resolved ahead of time. This is referred to as *transitive restore*. Reinstalling or restoring packages is then simply a process of downloading the packages listed in the graph, resulting in faster and more predictable builds. 
 
+> [!NOTE]
+> project.json is mandatory for UWP apps and ASP.NET 5 apps, is optional for PCLs, and currently is not fully supported on other project systems.
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	project.json is mandatory for UWP apps and ASP.NET 5 apps, is optional for PCLs, and currently is not fully supported on other project systems.
-</div>
- 
 
 ### Advantages of transitive restore
 
@@ -116,10 +113,8 @@ In the example below, the application depends directly on Package B with a versi
 
 ![Application using the Nearest Wins rule](/media/projectJson-dependency-5.png)
 
-<div class="block-callout-warning">
-	<strong>Note</strong><br>
-	Applying the Nearest Wins rule can downgrading the package version, thus potentially breaking other dependencies in the graph. This currently produces an error, although we are considering making it a warning instead. See <a href="https://github.com/NuGet/Home/issues/897">issue #897 on GitHub</a>.
-</div>
+>[!NOTE]
+> Applying the Nearest Wins rule can downgrading the package version, thus potentially breaking other dependencies in the graph. This currently produces an error, although we are considering making it a warning instead. See <a href="https://github.com/NuGet/Home/issues/897">issue #897 on GitHub</a>.
 
 This rule also results in greater efficiency with large dependency graph (such as those with the BCL packages) because by once a given dependency is ignored, NuGet also ignores all remaining dependencies on that branch of the graph. In the diagram below, for example, because Package C 2.0 will be used, NuGet can ignore any branches in the graph that refer to an older version of Package C: 
 

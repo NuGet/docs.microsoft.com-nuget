@@ -246,7 +246,7 @@ You can work around the issue by either installing NHibernate 3.0.0.2001 or tell
 behave the same as the compiler by doing the following:
 
 1. Go to *%PROGRAMFILES%\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop* 
-2. Open FxCopCmd.exe.config and change <code>AssemblyReferenceResolveMode</code> from <code>StrongName</code> to <code>StrongNameIgnoringVersion</code>. 
+2. Open FxCopCmd.exe.config and change `AssemblyReferenceResolveMode` from `StrongName` to `StrongNameIgnoringVersion`. 
 3. Save the change and rebuild your project. 
 
 ## Write-Error command doesn't work inside install.ps1/uninstall.ps1/init.ps1

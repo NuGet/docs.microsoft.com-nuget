@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["NuGet 3.4 Release Notes | Microsoft Docs"] 
+title: "NuGet 3.4 Release Notes | Microsoft Docs" 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [80a429f5-7569-4349-ad7f-4fe9218eac23] 
+ms.assetid: 80a429f5-7569-4349-ad7f-4fe9218eac23 
  
 # optional metadata 
  
@@ -30,7 +30,7 @@ ms.reviewer:
 
 # NuGet 3.4 Release Notes
 
-[NuGet 3.4-RC Release Notes](/nuget/release-notes/nuget-3.4-RC) | [NuGet 3.4.1 Release Notes](/nuget/release-notes/nuget-3.4.1)
+[NuGet 3.4-RC Release Notes](../nuget/release-notes/nuget-3.4-RC.md) | [NuGet 3.4.1 Release Notes](../nuget/release-notes/nuget-3.4.1.md)
 
 NuGet 3.4 was released March 30, 2016 as part of the Visual Studio 2015 Update 2 and Visual Studio 15 Preview Release and was built with a few tenets in minds:
 

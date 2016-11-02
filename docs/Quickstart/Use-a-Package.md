@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Use a package | Microsoft Docs"] 
+title: "Use a package | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [f31f8259-20a8-4617-880e-5819299372d2] 
+ms.assetid: f31f8259-20a8-4617-880e-5819299372d2
  
 # optional metadata 
  
@@ -35,15 +35,15 @@ This tutorial walks you through installing and using the popular [Newtonsoft.Jso
 
 - [Install pre-requisites](#install-pre-requisites)
 - [Create a new UWP project](#create-a-new-uwp-project)
-- [Add the Newtonsoft.Json NuGet package](#add-the-newtonsoftjson-nuget-package)
-- [Use the Newtonsoft.Json API in the app](#use-the-newtonsoftjson-api-in-the-app)
+- [Add the Newtonsoft.Json NuGet package](#add-the-newtonsoft-json-nuget-package)
+- [Use the Newtonsoft.Json API in the app](#use-the-newtonsoft-json-api-in-the-app)
 
 You'll use a similar same workflow for virtually every NuGet package you use in a project.
 
-<div class="block-callout-info">
-    <strong>Start with nuget.org</strong><br>
-    Installing packages from <a href="http://nuget.org">nuget.org</a> is a very common workflow that .NET developers use to find components they can reuse in their own applications. You can always search nuget.org directly or find and install packages within Visual Studio as we'll do here.
-</div>
+
+>    <strong>Start with nuget.org</strong><br>
+>   Installing packages from <a href="http://nuget.org">nuget.org</a> is a very common workflow that .NET developers use to find components they can reuse in their own applications. You can always search nuget.org directly or find and install packages within Visual Studio as we'll do here.
+
 
 
 ##Install pre-requisites
@@ -70,7 +70,7 @@ In Visual Studio, choose **File > New > Project**, expand **Visual C# > Windows 
 
 3. If prompted to review changes, click OK.
 
-4. Right-click the solution in Solution Explorer and click **Build Solution**. This restore anys NuGet packages listed under **References**. For more details, see [Package Restore](/consume-packages/package-restore).
+4. Right-click the solution in Solution Explorer and click **Build Solution**. This restore anys NuGet packages listed under **References**. For more details, see [Package Restore](../consume-packages/package-restore.md).
 
 
 
@@ -128,6 +128,6 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 
 
 ##Related topics
-* [Overview and workflow of package consumption](/consume-packages/overview-and-workflow)
-* [Finding and choosing](/consume-packages/finding-and-choosing-packages)
-* [Configuring NuGet Behavior](/consume-packages/configuring-nuget-behavior)
+* [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
+* [Finding and choosing](../consume-packages/finding-and-choosing-packages.md)
+* [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md)

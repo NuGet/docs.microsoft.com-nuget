@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: [“Installing NuGet | Microsoft Docs”] 
+title: “Installing NuGet | Microsoft Docs” 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [683b8b34-a6f4-4d56-b9cd-2483bfbad1ad] 
+ms.assetid: 683b8b34-a6f4-4d56-b9cd-2483bfbad1ad 
  
 # optional metadata 
  
@@ -52,11 +52,10 @@ The following capabilities are supported only in the NuGet CLI:
 - Manage the NuGet cache
 - Replication a package
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	You might also be interested in the <a href="https://github.com/NuGetPackageExplorer/NuGetPackageExplorer">NuGet Package Explorer</a>, an open-source, stand-alone tool to visually explore and create NuGet packages..<br><br>
+>[!NOTE]
+>You might also be interested in the <a href="https://github.com/NuGetPackageExplorer/NuGetPackageExplorer">NuGet Package Explorer</a>, an open-source, stand-alone tool to visually explore and create NuGet packages..<br><br>
 	Also, the cross-platform <a href="https://docs.microsoft.com/en-us/dotnet/articles/core/tools/index#installation">.NET Core CLI</a> toolchain for developing .NET Core applications also supports a <a href="https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-restore">dotnet restore</a> command that performs a nuget restore. No other nuget commands are available in the .NET Core CLI at present, however. 
-</div>
+
 
 
 ##NuGet CLI
@@ -65,22 +64,23 @@ The NuGet CLI can be installed using any of the following methods:
 
 1. **nuget.org**: Download the latest version of the nuget.exe file from [nuget.org/downloads](https://nuget.org/downloads) and save it to an appropriate location on your machine. If desired, add that location to your PATH environment variable so you can NuGet from anywhere. (Note that the download is a single .exe file, so save it rather than running it from the browser.)
 
-	<div class="block-callout-info">
-		With NuGet 1.4+, you can use `nuget update -self` to update your existing nuget.exe to the latest version.	    
-	</div>
+>[!NOTE]
+>With NuGet 1.4+, you can use `nuget update -self` to update your existing nuget.exe to the latest version.	    
+
 
 2. **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client. 
 
-	<code class="bash hljs">
+```
 		choco install nuget.commandline
-	</code>
+```
  
 3. **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.
 
-<div class="block-callout-info">
-	<strong>NuGet 2.x users</strong><br>
-    Because there are a few breaking changes introduced in NuGet 3.2, <a href="https://nuget.org/nuget.exe">https://nuget.org/nuget.exe</a> points to the latest stable NuGet 2.x release to prevent CI systems from potentially breaking at this time.
-</div>
+>[!NOTE]
+><strong>NuGet 2.x users</strong>
+>
+>Because there are a few breaking changes introduced in NuGet 3.2, <a href="https://nuget.org/nuget.exe">https://nuget.org/nuget.exe</a> points to the latest stable NuGet 2.x release to prevent CI systems from potentially breaking at this time.
+
 
 
 ### Compatibility with Mono
@@ -113,11 +113,11 @@ Though not fully-supported as yet, the NuGet command-line executable (version 3.
 
 The NuGet Package Manager is included in every edition of Visual Studio 2012 and later. It includes the Package Manager UI ([reference](/tools/package-manager-ui)) and the Package Manager Console, through which you can access tools that come with certain packages ([reference](/tools/package-manager-console)).
 
-<div class="block-callout-warning">
-	<strong>Note</strong><br>
-	The console requires <a href="http://support.microsoft.com/kb/968929">PowerShell 2.0</a>, which will already be installed on Windows 7 or higher and Windows Server 2008 R2 or higher.<br><br>
-    Package Manager Console commands also work only within  Visual Studio. Use the NuGet CLI outside of that envronment.
-</div>
+>[!NOTE]
+>The console requires <a href="http://support.microsoft.com/kb/968929">PowerShell 2.0</a>, which will already be installed on Windows 7 or higher and Windows Server 2008 R2 or higher.
+>
+>Package Manager Console commands also work only within  Visual Studio. Use the NuGet CLI outside of that environment.
+
 
 ### Package Manager installation for Visual Studio 2010 and earlier
 

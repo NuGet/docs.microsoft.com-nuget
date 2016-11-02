@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: ["Reinstalling and Updating Packages | Microsoft Docs"] 
+title: "Reinstalling and Updating Packages | Microsoft Docs"
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget 
 #ms.service: 
 ms.technology: nuget 
-ms.assetid: [2785879b-97f0-4a85-b3cc-bf4eaa5c39bf] 
+ms.assetid: 2785879b-97f0-4a85-b3cc-bf4eaa5c39bf 
  
 # optional metadata 
  
@@ -35,21 +35,22 @@ There are a number of situations, described below under [When to Reinstall a Pac
 
 Being mindful of the [Considerations](#considerations) described later, you can easily reinstall any package using the following command in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
 
-<code class="bash hljs">
+```
 	Update-Package –reinstall &lt;package_name&gt;
-</code>
+```
+
 	
 Using this command is much easier than removing a package and then trying to locate the same package in the NuGet gallery with the same version.
 
 The same command without `-reinstall` will update a package to a newer version, if applicable:
 
-<code class="bash hljs">
+```
 	Update-Package &lt;package_name&gt;
-</code>
+```
 
 Any updates are subject to version constraints indicated in `packages.config`, as described below in [Constraining upgrade versions](#constraining-upgrade-versions), but do not apply to projects using `project.json`.
 
-For complete usage, refer to the [PowerShell reference for Update-Package](/tools/powershell-reference#update-package).
+For complete usage, refer to the [PowerShell reference for Update-Package](../tools/powershell-reference#update-package.md).
 
 ## When to Reinstall a Package
 
@@ -93,6 +94,6 @@ To set a constraint, open `packages.config` in a text editor, locate the depende
 		<!-- ... -->
     </packages>
 
-In all cases, use the notation described in [Dependency versions](/create-packages/dependency-versions).
+In all cases, use the notation described in [Dependency versions](../create-packages/dependency-versions.md).
 
 	
