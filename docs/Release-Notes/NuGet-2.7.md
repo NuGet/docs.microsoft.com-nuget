@@ -119,7 +119,7 @@ The Restore command will open the solution file and find all projects within the
 
 #### The New Package Restore Workflow
 
-We are excited about these changes to Package Restore, as it introduces a new workflow. If you want to omit your packages from source control you simply don't commit the `packages` folder. Visual Studio users who open and build the solution will see the packages automatically restored. For command-line builds, simply invoke `nuget.exe restore` before invoking `msbuild`. You'll no longer need to remember to use the "Enable NuGet Package Restore" gesture on your solution, and we'll no longer need to modify your projects to alter the build. And this also yields a much improved experience for packages that include MSBuild imports, especially for imports added through NuGet's recent feature for [automatically importing props/targets files](../release-notes/nuget-2.5.md#Automatic-import-of-msbuild-targets-and-props-files) from the \build folder.
+We are excited about these changes to Package Restore, as it introduces a new workflow. If you want to omit your packages from source control you simply don't commit the `packages` folder. Visual Studio users who open and build the solution will see the packages automatically restored. For command-line builds, simply invoke `nuget.exe restore` before invoking `msbuild`. You'll no longer need to remember to use the "Enable NuGet Package Restore" gesture on your solution, and we'll no longer need to modify your projects to alter the build. And this also yields a much improved experience for packages that include MSBuild imports, especially for imports added through NuGet's recent feature for [automatically importing props/targets files](../release-notes/nuget-2.5.md#automatic-import-of-msbuild-targets-and-props-files) from the \build folder.
 
 In addition to the work we've done ourselves, we're also working with some important partners to round this new approach out. We don't have concrete timelines for any of these yet, but each partner is as excited as we are about the new approach.
 
@@ -147,7 +147,7 @@ Many times after retargeting or upgrading your project, you find that some NuGet
 
 If we detect that any of your packages were affected by the retargeting or upgrade, we'll produce immediate build errors to let you know. In addition to the immediate build error, we also persist a `requireReinstallation="true"` flag in your packages.config file for all packages that were affected by the retargeting, and each subsequent build in Visual Studio will raise a build warnings for those packages.
 
-While NuGet cannot take automatic action to reinstall affected packages, we hope this indication and warning will guide help you discover when you need to reinstall packages. We are also working on [package reinstallation guidance documentation](../consume-packages/reinstalling-and-updating-packages) that these error messages direct you to.
+While NuGet cannot take automatic action to reinstall affected packages, we hope this indication and warning will guide help you discover when you need to reinstall packages. We are also working on [package reinstallation guidance documentation](../consume-packages/reinstalling-and-updating-packages.md) that these error messages direct you to.
 
 ### NuGet Configuration Defaults
 

@@ -110,7 +110,7 @@ supported in Visual Studio Ultimate. Viewing a DGML diagram is only supported in
 
 ### Automatic Update Check for the NuGet Dialog
 Some versions of NuGet introduce new features expressed via the NuSpec file which are not understood by older versions of the NuGet dialog. 
-One example is the introduction in NuGet 1.4 for [specifying framework assemblies](../release-notes/nuget-1.2#Specifying-Framework-Assembly-References-(GAC)). 
+One example is the introduction in NuGet 1.4 for [specifying framework assemblies](../release-notes/nuget-1.2#framework-assembly-refs).
 Because of this, it's important to use the latest version of NuGet to ensure you can use packages taking advantage of the latest features. 
 To make updates to NuGet more visible, the NuGet dialog contains logic to highlight when a newer version is available. 
 

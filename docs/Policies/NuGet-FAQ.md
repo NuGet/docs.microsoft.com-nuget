@@ -136,7 +136,7 @@ Yes, see Scott Hanselman's Blog post [How to access NuGet when NuGet.org is down
 
 **How do I install packages in a different location from the default packages folder?**
 
-Set the [`repositoryPath`](../schema/nuget.config.md#config-section) setting in `nuget.config` using `nuget config -set repositoryPath=&lt;path&gt;`. 
+Set the [`repositoryPath`](../schema/nuget.config-file.md#config-section) setting in `nuget.config` using `nuget config -set repositoryPath=&lt;path&gt;`. 
 
 **How do I avoid checking in packages folder to source control?**
 
@@ -144,7 +144,7 @@ Set the [`disableSourceControlIntegration`](../schema/nuget.config.md#solution-s
 
 **How do I turn off package restore?**
 
-See [Enabling and disabling package restore](../consume-packages/package-restore#enabling-and-disabling-package-restore.md).
+See [Enabling and disabling package restore](../consume-packages/package-restore.md#enabling-and-disabling-package-restore).
 
 **Why do I get an "Unable to resolve dependency error" when installing a local package with remote dependencies?**
 
@@ -170,7 +170,7 @@ No. If you feel that an existing package has taken the name which suits your pac
 
 **How do I claim ownership for packages ?**
 
-See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nuget-org).
+See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg).
 
 **How do I deal with a package owner who is violating my software license?**
 

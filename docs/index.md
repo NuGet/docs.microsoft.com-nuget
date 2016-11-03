@@ -58,13 +58,13 @@ ms.reviewer:
                     <section class="journey-step-elements content">
                         <ul class="row">
                             <li class="column column-third">
-                                <a href="../nuget/quickstart/create-and-publish-a-package.md">
+                                <a href="./quickstart/create-and-publish-a-package.md">
                                     <h3>Create a Package</h3>
                                     <p>Learn how to create and publish your first package in 5 steps or less.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
-                                <a href="../nuget/quickstart/use-a-package.md">
+                                <a href="./quickstart/use-a-package.md">
                                     <h3>Use a Package</h3>
                                     <p>Learn how to use your first NuGet package in Visual Studio.</p>
                                 </a>
@@ -85,19 +85,19 @@ ms.reviewer:
                     <section class="journey-step-elements content">
                         <ul class="row">
                             <li class="column column-third">
-                                <a href="../nuget/guides/install-nuget">
+                                <a href="./guides/install-nuget">
                                     <h3>Install NuGet Tools</h3>
                                     <p>Learn how to install and use a variety of NuGet tools.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
-                                <a href="../nuget/guides/create-net-standard-packages.md">
+                                <a href="./guides/create-net-standard-packages.md">
                                     <h3>Create .NET Standard Packages</h3>
                                     <p>Learn how to create universally supported NuGet packages.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
-                                <a href="../nuget/guides/create-uwp-packages.md">
+                                <a href="./guides/create-uwp-packages.md">
                                     <h3>Create UWP Packages</h3>
                                     <p>Learn how to create NuGet packages for the UWP Platform.</p>
                                 </a>

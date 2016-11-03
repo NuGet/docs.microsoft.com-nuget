@@ -114,7 +114,7 @@ Thanks to community contributions, NuGet includes support for WiX project types 
 
 For a full list of bug fixes, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.3&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
 
-## Bug fixes worth noting:
+## Bug fixes worth noting
 
 * Packages with source files work in both Websites and in Web Application Projects. 
 For Websites, source files are copied into the `App_Code` folder

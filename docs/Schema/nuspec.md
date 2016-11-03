@@ -99,7 +99,7 @@ These elements must appear within a &lt;metadata&gt; element.
 Element | Description
 --- | ---
 <strong>title</strong> | A human-friendly title of the package, typically used in UI displays as on nuget.org and the Package Manager in Visual Studio. If not specified, the package ID is used instead.
-<strong>owners</strong> | A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in authors, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nuget-org)
+<strong>owners</strong> | A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in authors, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)
 <strong>projectUrl</strong> | A URL for the package's home page, often shown in UI displays as well as nuget.org.
 <strong>licenseUrl</strong> | A URL for the package's license, often shown in UI displays as well as nuget.org.
 <strong>iconUrl</strong> | A URL for a 64x64 image with transparenty background to use as the icon for the package in UI display.
@@ -176,7 +176,7 @@ The &lt;dependencies&gt; element within &lt;metadata&gt; contains any number of 
 Attribute | Description
 --- | ---
 `id` | (Required) The package ID of the dependency.
-`version` | (Required) The range of versions acceptable as a dependency. See [Dependency versions](../create-packages/dependency-versions.md#version-ranges-in-nuspec-files) for exact syntax.
+`version` | (Required) The range of versions acceptable as a dependency. See [Dependency versions](../create-packages/dependency-versions.md#version-ranges) for exact syntax.
 
 For example, the following lines indicate dependencies on `PackageA` version 1.1.0 or higher, and `PackageB` version 1.x. 
 

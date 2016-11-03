@@ -29,7 +29,7 @@ ms.reviewer:
 ---
 # NuGet 2.8 Release Notes
 
-[NuGet 2.7.2 Release Notes](../release-notes/nuget-2.7.2.md.md) | [NuGet 2.8.1 Release Notes](../release-notes/nuget-2.8.1.md.md)
+[NuGet 2.7.2 Release Notes](../release-notes/nuget-2.7.2.md) | [NuGet 2.8.1 Release Notes](../release-notes/nuget-2.8.1.md)
 
 NuGet 2.8 was released on January 29, 2014.
 
@@ -105,7 +105,7 @@ Many different types of capabilities can be delivered as NuGet packages - includ
 ### Individual packages.config Files for Different Platforms
 When developing applications for multiple target platforms, it is common to have different project files for each of the respective build environments. It is also common to consume different NuGet packages in different project files, as packages have varying levels of support for different platforms. NuGet 2.8 provides improved support for this scenario by creating different packages.config files for different platform-specific project files.
 
-![Multiple package.config files](./media/NuGet-2.8.md/multiple-packageconfigs.png)
+![Multiple package.config files](./media/NuGet-2.8/multiple-packageconfigs.png)
 
 ### Fallback to Local Cache
 Though NuGet packages are typically consumed from a remote gallery such as [the NuGet gallery](http://www.nuget.org/) using a network connection, there are many scenarios where the client is not connected. Without a network connection, the NuGet client was not able to successfully install packages - even when those packages were already on the client's machine in the local NuGet cache. NuGet 2.8 adds automatic cache fallback to the package manager console. For example, when disconnecting the network adapter and installing jQuery, the console shows the following:

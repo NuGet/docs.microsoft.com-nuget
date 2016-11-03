@@ -38,6 +38,7 @@ NuGet 1.2 was released on March 30, 2011.
 ## New Features
 
 ### Framework Profile Support
+
 From the start, NuGet supported having libraries target different frameworks. But now packages may contain assemblies 
 that target specific profiles such as the Windows Phone profile. To target a specific profile of a framework, append 
 a dash followed by the profile abbreviation. For example, to target SilverLight running on a Windows Phone (aka Windows 
@@ -50,12 +51,15 @@ might run a newer version of Silverlight in the future, in which case you may ne
 framework profile you’re targetting.
 
 ### Automatically Add Binding Redirects
+
 When installing a package with strong named assemblies, NuGet can now detect cases where the project requires binding 
 redirects to be added to the configuration file in order for the project to compile and add them automatically. Part 
 3 of David Ebbo’s blog post series on NuGet Versioning entitled “[Unification via Binding Redirects](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)” 
 covers the purpose of this feature in more details.
 
 ### Specifying Framework Assembly References (GAC)
+<a name="framework-assembly-refs"></a>
+
 In some cases, a package may depend on an assembly that’s in the .NET Framework. Strictly speaking, it’s not always 
 necessary that the consumer of your package reference the framework assembly. But in some cases, it is important, 
 such as when the developer needs to code against types in that assembly in order to use your package. The new 
@@ -85,12 +89,13 @@ you won’t need to specify it every time you push a package. For more details o
 Package Explorer has been updated to support NuGet 1.2. For more information, check out the 
 [Package Explorer release notes](http://nuget.codeplex.com/wikipage?title=New%20features%20in%20NuGet%20Package%20Explorer%201.0).
 
-###Other features/fixes
+## Other features/fixes
+
 The previous list were the most noticeable of the many features we implemented and bugs we fixed. All in all, we 
 implemented/fixed [59 work items](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.2&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0) 
 in this release.
 
-### Known Issues
+## Known Issues
 
 * **1.2 Package incompatibility**: Packages built with the latest version of the command line tool, NuGet.exe (> 1.2) 
 will not work with older versions of the NuGet VS Add-in (such as 1.1). If you run into an error message stating 
@@ -98,7 +103,7 @@ something about incompatible schema, you are running into this error. Please upd
 * **NuGet.Server incompatibility**: If you’re hosting an internal NuGet feed using the NuGet.Server project, you’ll 
 need to update that project with the latest version of NuGet.Server.
 * **Signature Mismatch Error**: If you run into an error during an upgrade with a message about a Signature Mismatch, 
-you'll need to uninstall NuGet first and then install it. This is listed in our [Known Issues page](../release-notes/Known-Issues) 
+you'll need to uninstall NuGet first and then install it. This is listed in our [Known Issues page](../release-notes/Known-Issues.md) 
 which provides more details. The issue only affects those running Visual Studio 2010 SP1 and have a version of NuGet 
 1.0 installed that was incorrectly signed. This version was only made available from the CodePlex website for a brief 
 period so this issue shouldn't affect too many people.
