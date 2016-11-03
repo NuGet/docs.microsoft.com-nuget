@@ -31,7 +31,7 @@ ms.reviewer:
 
 # NuGet 1.2 Release Notes
 
-[NuGet 1.0 and 1.1 Release Notes](/nuget/release-notes/nuget-1.1) | [NuGet 1.3 Release Notes](/nuget/release-notes/nuget-1.3)
+[NuGet 1.0 and 1.1 Release Notes](../release-notes/nuget-1.1.md) | [NuGet 1.3 Release Notes](../release-notes/nuget-1.3.md)
 
 NuGet 1.2 was released on March 30, 2011.
 

@@ -122,7 +122,7 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 ```
 
 2. Rename this file to `LoggingLibrary.nuspec` and open it in an editor.
-3. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md(#choosing-a-unique-package-identifier-and-setting-the-version-number))). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
+3. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
 	
 		<?xml version="1.0"?>
 		<package >

@@ -31,10 +31,10 @@ ms.reviewer:
 
 Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's specific to UWP, and another version that takes advantage of features in .NET Framework 4.6. 
 
-Fortunately, NuGet supports putting multiple versions of the same library in a single package through the convention-based working directory method described in [Creating a package](../create-package/creating-a-package#from-a-convention-based-working-directory.md).
+Fortunately, NuGet supports putting multiple versions of the same library in a single package through the convention-based working directory method described in [Creating a package](../create-package/creating-a-package.md#from-a-convention-based-working-directory).
 
 > [!Note]
-> Assemblies that have no associated framework name or version should be stored directly in the <em>lib</em> folder and not in separate folders.
+> Assemblies that have no associated framework name or version should be stored directly in the `lib` folder and not in separate folders.
 
 In this topic:
 
@@ -51,7 +51,7 @@ When NuGet installs an assembly from a package, it checks the target .NET Framew
     
     lib\{framework name}[{version}]
 
-For a complete list of supported names, see the [Target Frameworks reference](../schema/target-frameworks#supported-frameworks.md). Note that names are case-sensitive 
+For a complete list of supported names, see the [Target Frameworks reference](../schema/target-frameworks.md#supported-frameworks). Note that names are case-sensitive 
 
 The following example shows a folder structure that supports four versions of a library:
 

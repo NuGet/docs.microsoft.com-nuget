@@ -46,7 +46,7 @@ The same command without `-reinstall` will update a package to a newer version, 
 
 Any updates are subject to version constraints indicated in `packages.config`, as described below in [Constraining upgrade versions](#constraining-upgrade-versions), but do not apply to projects using `project.json`.
 
-For complete usage, refer to the [PowerShell reference for Update-Package](../tools/powershell-reference#update-package).
+For complete usage, refer to the [PowerShell reference for Update-Package](../tools/powershell-reference.md#update-package).
 
 ## When to Reinstall a Package
 
