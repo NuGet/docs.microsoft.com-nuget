@@ -1,19 +1,28 @@
-﻿---
+---
 layout: HubPage
 
-title: NuGet Documentation
-description:
+title: NuGet Documentation | Microsoft Docs
+description: NuGet is the package manager for the Microsoft development platform including .NET. The NuGet client tools provide the ability to create and consume packages.
 keywords:
+- nuget
+- nuget manager
+- nupkg
+- nuget package explorer
+- nuget package
+- nuget extension
+- nuget.exe
+- nuget commandline
+- nuget cli
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 11/11/2016 
 ms.topic: hubpage
 ms.prod: nuget
-ms.service:
+#ms.service:
 ms.technology: nuget
-ms.suite:
-ms.assetid:
+#ms.suite:
+ms.assetid: 49f63ee9-86a9-41de-baba-e3d66f3d5966
 ms.reviewer:  
 - karann 
 - harikm 
