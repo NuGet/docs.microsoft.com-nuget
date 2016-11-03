@@ -29,8 +29,6 @@
 ## [Managing the NuGet Cache](Consume-Packages/Managing-the-NuGet-Cache.md)
 ## [Configuring NuGet Behavior](Consume-Packages/Configuring-NuGet-Behavior.md)
 ## [Dependency Resolution](Consume-Packages/Dependency-Resolution.md)
-## [Enabling Symbol Packages](Consume-Packages/Enabling-Symbol-Packages.md)
-## [Team Foundation Build](Consume-Packages/Team-Foundation-Build.md)
 # Hosting Packages
 ## [Overview](Hosting-Packages/Overview.md)
 ## [Local Feeds](Hosting-Packages/Local-Feeds.md)
@@ -53,13 +51,12 @@
 ## [NuGet API in Visual Studio](Visual-Studio-Extensibility/NuGet-API-in-Visual-Studio.md)
 ## [Project System Support](Visual-Studio-Extensibility/Project-System-Support.md)
 ## [Visual Studio Templates](Visual-Studio-Extensibility/Visual-Studio-Templates.md)
-## [NuGet API V3](Visual-Studio-Extensibility/NuGet-API-V3.md)
 # Policies
-## [Deleting Packages](Policies/Deleting-Packages.md)
-## [Dispute Resolution](Policies/Dispute-Resolution.md)
-## [Ecosystem](Policies/Ecosystem.md)
-## [Governance](Policies/Governance.md)
 ## [NuGet FAQ](Policies/NuGet-FAQ.md)
+## [Governance](Policies/Governance.md)
+## [Ecosystem](Policies/Ecosystem.md)
+## [Dispute Resolution](Policies/Dispute-Resolution.md)
+## [Deleting Packages](Policies/Deleting-Packages.md)
 # Release Notes
 ## [Known Issues](Release-Notes/Known-Issues.md)
 ## [NuGet 1.1](Release-Notes/NuGet-1.1.md)
