@@ -28,7 +28,6 @@ ms.reviewer:
  
 --- 
 
-
 # Walkthrough of Package Restore with Team Foundation Build
 
 > Applies To:
@@ -36,7 +35,7 @@ ms.reviewer:
 >  - Team Foundation Server 2012 or earlier
 >  - Custom Team Foundation Build Process Templates migrated to TFS 2013 or later
 >  - Build Process Templates With Nuget Restore functionality removed
-
+>
 > If you're using Visual Studio Team Services or on-premises Team Foundation Server 2013 with its build process templates, Automatic Package Restore happens as part of the build process.
 
 This section will provide a detailed walkthrough on how to restore packages as part of the [Team Foundation Build](http://msdn.microsoft.com/en-us/library/ms181710(v=VS.90).aspx) both, for [git](http://en.wikipedia.org/wiki/Git_(software)) as well as [TF Version Control](http://msdn.microsoft.com/en-us/library/ms181237(v=vs.120).aspx).
@@ -60,7 +59,7 @@ When your build process restores packages before building the code, you don't ne
 > [!Note]
 > Packages must be authored to allow loading in Visual Studio. Otherwise, you may still want to check in `.targets` files so that other developers can simply open the solution without having to restore packages first. 
 
-The following demo project shows how to set up the build in such a way that the `packages` folders and **.targets** files don't need to be checked-in. Finally, I'll show how you can setup an automated build on the [Team Foundation Service] for this sample project.
+The following demo project shows how to set up the build in such a way that the `packages` folders and **.targets** files don't need to be checked-in. It also shows how to set up an automated build on the Team Foundation Service for this sample project.
 
 ## Repository Structure
 
@@ -100,11 +99,13 @@ The source code is under the `src` folder. Although our demo only uses a single 
 > [!Note]
 > There is currently a [known bug in the NuGet client](https://nuget.codeplex.com/workitem/4072) that causes the client to still add the `packages` folder to version control. A workaround is to disable the source control integration. In order to do that, you'll need a `nuget.config ` file in the  `.nuget` folder that is parallel to your solution. If this folder doesn't exist yet, you'll need to create it. In `nuget.config`, add the following content:
 >
->    <configuration>
->        <solution>
->            <add key="disableSourceControlIntegration" value="true" />
->        </solution>
->    </configuration>
+<pre>
+    <configuration>
+        <solution>
+            <add key="disableSourceControlIntegration" value="true" />
+        </solution>
+    </configuration>
+</pre>
 >
 > For more details have a look at the [NuGet Config Settings](../consume-packages/configuring-nuget-behavior.md)
 
