@@ -35,10 +35,10 @@ ms.reviewer:
         <h2 class="section-heading"><span class="icon icon-lightbulb-checked"></span> Featured Content</h2>
         <div class="features row">
             <ul class="column-half">
-                <li><a href="../nuget/guides/create-net-standard-packages.md">Create .NET Standard Packages</a></li>
+                <li><a href="./guides/create-net-standard-packages.md">Create .NET Standard Packages</a></li>
             </ul>
             <ul class="column-half">
-                <li><a href="../nuget/guides/create-cross-platform-packages.md">Create Cross-Platform Packages</a></li>
+                <li><a href="./guides/create-cross-platform-packages.md">Create Cross-Platform Packages</a></li>
             </ul>
         </div>
     </section>
@@ -85,7 +85,7 @@ ms.reviewer:
                     <section class="journey-step-elements content">
                         <ul class="row">
                             <li class="column column-third">
-                                <a href="./guides/install-nuget">
+                                <a href="./guides/install-nuget.md">
                                     <h3>Install NuGet Tools</h3>
                                     <p>Learn how to install and use a variety of NuGet tools.</p>
                                 </a>

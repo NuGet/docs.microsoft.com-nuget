@@ -56,6 +56,7 @@ will now take you to the [installing NuGet](../guides/install-nuget.md)
 page, where you can find more information about installing the different NuGet clients.
 
 ### XDT Web.config transformation support
+<a name="xdt"></a>
 
 One of the most highly-requested features for the NuGet client has been to support more
 powerful XML transformations using the XDT transformation engine which is used in Visual

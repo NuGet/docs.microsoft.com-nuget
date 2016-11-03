@@ -140,7 +140,7 @@ Set the [`repositoryPath`](../schema/nuget.config-file.md#config-section) settin
 
 **How do I avoid checking in packages folder to source control?**
 
-Set the [`disableSourceControlIntegration`](../schema/nuget.config.md#solution-section) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automaticatlly.
+Set the [`disableSourceControlIntegration`](../schema/nuget.config-file.md#solution-section) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automaticatlly.
 
 **How do I turn off package restore?**
 

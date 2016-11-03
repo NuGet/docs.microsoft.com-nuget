@@ -55,7 +55,7 @@ At this time, search results are sorted only by relevance, so you generally want
 
 
 ### Native C++ packages
-<a name="native-c++-package"></a>
+<a name="native-c++-packages"></a>
 
 NuGet 2.5+ supports native C++ packages can that can be used in C++ projects in Visual Studio. This enables the **Manage NuGet Packages** context-menu command for projects, introduces a `native` target framework, and provides MSBuild integration.
 

@@ -34,7 +34,7 @@ It's a simple process to create a NuGet package from a .NET Class Library and pu
 
 - [Install pre-requisites](#install-pre-requisites)
 - [Create a class library project](#create-a-class-library-project)
-- [Create the .nuspec package manifest file](#create-the--nuspec-package-manifest-file)
+- [Create the .nuspec package manifest file](#create-the-nuspec-package-manifest-file)
 - [Create the package](#create-the-package)
 - [Publish the package](#publish-the-package)
 
@@ -121,7 +121,7 @@ Note that you'll get warnings if you haven't updated various fields in the .nusp
 
 ## Publish the package
 
-You're now ready to publish the package to nuget.org using the NuGet CLI. (Alternately, you can use the [nuget.org publishing workflow](../create-packages/publish-a-package.md##publish-to-nugetorg).
+You're now ready to publish the package to nuget.org using the NuGet CLI. (Alternately, you can use the [nuget.org publishing workflow](../create-packages/publish-a-package.md#publish-to-nugetorg).
 
 > [!Note]
 > The packages you publish to nuget.org will be publicly visible to other developers. To host packages privately, see [Hosting packages](../hosting-packages/overview.md).
