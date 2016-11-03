@@ -82,7 +82,7 @@ To create the initial .nuspec file, do the three steps below. The sections that 
 
         nuget spec
 
-1. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
+1. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
 
         <?xml version="1.0"?>
         <package >
@@ -107,7 +107,7 @@ To create the initial .nuspec file, do the three steps below. The sections that 
 
 ### Adding Windows metadata to the package
 
-A Windows Runtime Component requires metadata that describes all of its publicly available types, which makes it possible for other apps and libraries to consume the component. This metadata is contained in a .winmd file, which is created when you compile the project and must be included in your NuGet package. An XML file with IntelliSense data is also built at the same time, and should be included as well. 
+A Windows Runtime Component requires metadata that describes all of its publicly available types, which makes it possible for other apps and libraries to consume the component. This metadata is contained in a .winmd file, which is created when you compile the project and must be included in your NuGet package. An XML file with IntelliSense data is also built at the same time, and should be included as well.
 
 Add the following &lt;files&gt; node to the .nuspec file: 
 
@@ -255,13 +255,13 @@ This will generate `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a
 > [!Note]
 > A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
 
-To make your package available to other developers,  follow the instructions on [Publish a package](/create-packages/publish-a-package).
+To make your package available to other developers,  follow the instructions on [Publish a package](../create-packages/publish-a-package.md).
 
 ## Related topics
  
-- [Nuspec Reference](/schema/nuspec)
-- [Symbol packages](/create-packages/symbol-packages)
-- [Dependency Versions](/create-packages/dependency-versions)
-- [Supporting Multiple .NET Framework Versions](/create-packages/supporting-multiple-target-frameworks)
-- [Include MSBuild props and targets in a package](/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
-- [Creating Localized Packages](/create-packages/creating-localized-packages)
+- [Nuspec Reference](../schema/nuspec.md)
+- [Symbol packages](../create-packages/symbol-packages.md)
+- [Dependency Versions](../create-packages/dependency-versions.md)
+- [Supporting Multiple .NET Framework Versions](../create-packages/supporting-multiple-target-frameworks.md)
+- [Include MSBuild props and targets in a package](../create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package.md)
+- [Creating Localized Packages](../create-packages/creating-localized-packages.md)

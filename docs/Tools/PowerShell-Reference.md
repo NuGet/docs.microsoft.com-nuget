@@ -387,7 +387,7 @@ DependencyVersion | Specifies the version of the dependency packages to use, whi
 | | -HighestPatch: the version with the lowest major, lowest minor, highest patch
 | | -HighestMinor: the version with the lowest major, highest minor, highest patch
 | | -Highest (default for Update-Package with no parameters): the highest version
-| | You can set the default value using the [*dependencyVersion*](/schema/nuget.config-file#config-section.md) setting in the nuget.config file.
+| | You can set the default value using the [*dependencyVersion*](../schema/nuget.config-file.md#config-section) setting in the nuget.config file.
 WhatIf | Shows what would happen when running the command without actually performing the update.
 
 ### Examples

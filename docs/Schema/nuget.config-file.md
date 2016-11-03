@@ -43,11 +43,11 @@ In this topic:
 - [packageRestore section](#packagerestore-section)
 - [solution section](#solution-section)
 - [Package source sections](#package-source-sections):
-	- [packageSources](#packagesources)
-	- [packageSourceCredentials](#packagesourcecredentials)
-	- [apikeys](#apikeys)
-	- [disabledPackageSources](#disabledpackagesources)
-	- [activePackageSource](#activepackagesource)	
+    - [packageSources](#packagesources)
+    - [packageSourceCredentials](#packagesourcecredentials)
+    - [apikeys](#apikeys)
+    - [disabledPackageSources](#disabledpackagesources)
+    - [activePackageSource](#activepackagesource)    
 - [Example config file](#example-config-file)
 
 
@@ -73,9 +73,9 @@ http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use 
 
 **Example**:
 
-	  <config>
+      <config>
         <add key="dependencyVersion" value="Highest" />
-		<add key="globalPackagesFolder" value="c:\packages" />
+        <add key="globalPackagesFolder" value="c:\packages" />
         <add key="repositoryPath" value="c:\repo" />        
         <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
       </config>
@@ -137,7 +137,7 @@ The [`nuget sources` command](../tools/nuget.exe-cli-reference.md#sources) is ge
 
 ### packageSources 
 
-Lists all known package sources. Sources can be added using the 
+Lists all known package sources.
 
 Key | Value
 --- | ---
@@ -146,10 +146,10 @@ Key | Value
 **Example**:
 
     <packageSources>
-	    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
-	    <add key="Contoso Package Source" value="https://contoso.com/packages/" />
-		<add key="Test source" value="c:\packages" />
-	</packageSources>
+        <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
+        <add key="Contoso Package Source" value="https://contoso.com/packages/" />
+        <add key="Test source" value="c:\packages" />
+    </packageSources>
 
 
 ### packageSourceCredentials
@@ -209,11 +209,11 @@ Key | Value
 
 **Example:**
 
-	<disabledPackageSources>
-    	<add key="Contoso Package Source" value="true" />
-  	</disabledPackageSources>
+    <disabledPackageSources>
+        <add key="Contoso Package Source" value="true" />
+      </disabledPackageSources>
 
-	<!-- Empty list -->
+    <!-- Empty list -->
     <disabledPackageSources />
 
 ### activePackageSource
@@ -229,12 +229,12 @@ Key | Value
 **Example**:
 
     <activePackageSource>
-	    <!-- Only one active source-->
-	    <add key="nuget.org" value="https://nuget.org/api/v2/" />
+        <!-- Only one active source-->
+        <add key="nuget.org" value="https://nuget.org/api/v2/" />
 
-		<!-- All non-disabled sources are active -->
-		<add key="All" value="(Aggregate source)" />
-  	</activePackageSource>
+        <!-- All non-disabled sources are active -->
+        <add key="All" value="(Aggregate source)" />
+      </activePackageSource>
 
 
 ## Example config file
@@ -244,27 +244,27 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
       <config>
-	    <!-- 
-			Used to specify the default location to expand packages.
-			See: NuGet.exe help install
-			See: NuGet.exe help update
-		-->
+        <!-- 
+            Used to specify the default location to expand packages.
+            See: NuGet.exe help install
+            See: NuGet.exe help update
+        -->
         <add key="repositoryPath" value="External\Packages" />
 
-		<!-- 
-			Used to specify default source for the push command.
-			See: NuGet.exe help push
-		-->
+        <!-- 
+            Used to specify default source for the push command.
+            See: NuGet.exe help push
+        -->
 
         <add key="DefaultPushSource" value="https://MyRepo/ES/api/v2/package" />
 
-		<!-- Proxy settings -->
-		<add key="http_proxy" value="host" />
-		<add key="http_proxy.user" value="username" />
-		<add key="http_proxy.password" value="encrypted_password" />
+        <!-- Proxy settings -->
+        <add key="http_proxy" value="host" />
+        <add key="http_proxy.user" value="username" />
+        <add key="http_proxy.password" value="encrypted_password" />
       </config>
 
-	  <packageRestore>
+      <packageRestore>
         <!-- Allow NuGet to download missing packages -->
         <add key="enabled" value="True" />
 
@@ -272,29 +272,29 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
         <add key="automatic" value="True" />
       </packageRestore>
 
-	  <!--
-		  Used to specify the default Sources for list, install and update.
-		  See: NuGet.exe help list
-		  See: NuGet.exe help install
-		  See: NuGet.exe help update
-	  -->
+      <!--
+          Used to specify the default Sources for list, install and update.
+          See: NuGet.exe help list
+          See: NuGet.exe help install
+          See: NuGet.exe help update
+      -->
       <packageSources>
         <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
         <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
       </packageSources>
 
-	  <!-- Used to store credentials -->
-	  <packageSourceCredentials />
+      <!-- Used to store credentials -->
+      <packageSourceCredentials />
 
-	  <!-- Used to disable package sources  -->
+      <!-- Used to disable package sources  -->
       <disabledPackageSources />
 
-	  <!-- 
-		  Used to specify default API key associated with sources. 
-		  See: NuGet.exe help setApiKey
-		  See: NuGet.exe help push
-		  See: NuGet.exe help mirror
-	  -->
+      <!-- 
+          Used to specify default API key associated with sources. 
+          See: NuGet.exe help setApiKey
+          See: NuGet.exe help push
+          See: NuGet.exe help mirror
+      -->
       <apikeys>
         <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
       </apikeys>

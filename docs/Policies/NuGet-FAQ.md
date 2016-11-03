@@ -174,7 +174,7 @@ See [Managing package owners on nuget.org](../create-packages/publish-a-package.
 
 **How do I deal with a package owner who is violating my software license?**
 
-We encourage the NuGet community to work together to resolve any disputes that may arise between package owners and the owners of other software. We have crafted a [dispute resolution process](/policies/dispute-resolution) to follow before asking nuget.org administrators to intercede.
+We encourage the NuGet community to work together to resolve any disputes that may arise between package owners and the owners of other software. We have crafted a [dispute resolution process](../policies/dispute-resolution.md) to follow before asking nuget.org administrators to intercede.
 
 **Is it recommended to upload my test packages to nuget.org?**
 
@@ -213,7 +213,7 @@ First make sure you're using the latest versions of NuGet. If that continues to 
 - Enter `api.nuget.org` as the hostname and click **Start**.
 - Wait until the **Sent** column is >= 100.
 
-	![Capturing MTR](/images/consume/mtr.png)
+    ![Capturing MTR](media/mtr.png)
  
 - Copy text to clipboard. 
 

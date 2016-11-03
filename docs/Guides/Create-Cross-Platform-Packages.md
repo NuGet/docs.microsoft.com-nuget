@@ -55,7 +55,7 @@ In this walkthrough you'll create a cross-platform NuGet package that can be use
 1. Download and run the [Plugin for Xamarin Templates extension](https://visualstudiogallery.msdn.microsoft.com/afead421-3fbf-489a-a4e8-4a244ecdbb1e) for Visual Studio. These templates will make it easy to create the necessary project structure for this walkthrough.
 1. In Visual Studio, **File > New > Project**, search for `Plugin`, select the **Plugin for Xamarin** template, change the name to LoggingLibrary, and click OK.
 
-    ![New Blank App (Xamarin.Forms Portable) project in Visual Studio](/media/CrossPlatform-NewProject.png)
+    ![New Blank App (Xamarin.Forms Portable) project in Visual Studio](media/CrossPlatform-NewProject.png)
 
 The resulting solution contains two PCL projects, along with a variety of platform-specific projects:
 
@@ -253,19 +253,19 @@ With the completed .nuspec referencing all the files you need to include in the 
 
 This will generate `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
 
-![NuGet Package Explorer showing the LoggingLibrary package](/images/BuildForXplat/04.PNG)
+![NuGet Package Explorer showing the LoggingLibrary package](media/Cross-Platform-PackageExplorer.png)
 
 > [!Note]
 > A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
 
 
-To make your package available to other developers,  follow the instructions on [Publish a package](/create-packages/publish-a-package).
+To make your package available to other developers,  follow the instructions on [Publish a package](../create-packages/publish-a-package.md).
 
 ## Related topics
  
-- [Nuspec Reference](/schema/nuspec)
-- [Symbol packages](/create-packages/symbol-packages)
-- [Dependency Versions](/create-packages/dependency-versions)
-- [Supporting Multiple .NET Framework Versions](/create-packages/supporting-multiple-target-frameworks)
-- [Including MSBuild props and targets in a package](/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
-- [Creating Localized Packages](/create-packages/creating-localized-packages)
+- [Nuspec Reference](../schema/nuspec.md)
+- [Symbol packages](../create-packages/symbol-packages.md)
+- [Dependency Versions](../create-packages/dependency-versions.md)
+- [Supporting Multiple .NET Framework Versions](../create-packages/supporting-multiple-target-frameworks.md)
+- [Including MSBuild props and targets in a package](../create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package.md)
+- [Creating Localized Packages](../create-packages/creating-localized-packages.md)

@@ -102,14 +102,14 @@ Though not fully-supported as yet, the NuGet command-line executable (version 3.
 
 ### Related topics
 
-- [NuGet CLI reference](/tools/nuget.exe-cli-reference)
-- [Creating a package](/create-packages/creating-a-package)
-- [Publishing a Package](/create-packages/publish-a-package)
+- [NuGet CLI reference](../tools/nuget.exe-cli-reference.md)
+- [Creating a package](../create-packages/creating-a-package.md)
+- [Publishing a Package](../create-packages/publish-a-package.md)
 
 
 ## NuGet Package Manager in Visual Studio
 
-The NuGet Package Manager is included in every edition of Visual Studio 2012 and later. It includes the Package Manager UI ([reference](/tools/package-manager-ui)) and the Package Manager Console, through which you can access tools that come with certain packages ([reference](/tools/package-manager-console)).
+The NuGet Package Manager is included in every edition of Visual Studio 2012 and later. It includes the Package Manager UI ([reference](../tools/package-manager-ui.md)) and the Package Manager Console, through which you can access tools that come with certain packages ([reference](../tools/package-manager-console.md)).
 
 > [!Note]
 > The console requires [PowerShell 2.0](http://support.microsoft.com/kb/968929), which will already be installed on Windows 7 or higher and Windows Server 2008 R2 or higher.
@@ -147,6 +147,6 @@ To report problems with the Beta builds or to share ideas, open an issue on the 
 
 ### Related topics
 
-- [Package Manager UI reference](/tools/package-manager-ui)
-- [Package Manager Console reference](/tools/package-manager-console)
-- [Package Manager Console PowerShell reference](/tools/powershell-reference)
+- [Package Manager UI reference](../tools/package-manager-ui.md)
+- [Package Manager Console reference](../tools/package-manager-console.md)
+- [Package Manager Console PowerShell reference](../tools/powershell-reference.md)

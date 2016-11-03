@@ -71,7 +71,7 @@ For example, the following folder stucture supports, German (de), Italian (it), 
                 Contoso.Utilities.resources.dll
                 Contoso.Utilities.xml    
 
-You can see that the languages are all listed underneath the `net40` target framework folder. If you're [supporting multiple frameworks](/create-packages/supporting-multiple-target-frameworks), then you'll have a folder under `lib` for each variant.
+You can see that the languages are all listed underneath the `net40` target framework folder. If you're [supporting multiple frameworks](../create-packages/supporting-multiple-target-frameworks.md), then you'll have a folder under `lib` for each variant.
 
 With these folders in place, you'll then reference all the files in your `.nuspec`:
 	    

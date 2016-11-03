@@ -43,7 +43,7 @@ $Feed = "Your url"
 
 **Workaround:**
 
-Store passwords in clear text using the [-StorePasswordInClearText](/tools/nuget.exe-cli-reference#sources) option.
+Store passwords in clear text using the [-StorePasswordInClearText](../tools/nuget.exe-cli-reference.md#sources) option.
 
 ## Error installing packages with NuGet 3.4, 3.4.1
 
@@ -94,7 +94,7 @@ If you have upgraded to NuGet 2.7+ but your solution fails to build stating that
 
 1. **Force save your NuGet settings with consent given.** To do this, open Visual Studio's options and under Package Manager, choose General. Uncheck and then re-check the boxes for consent and click OK. This forces your `%AppData%\NuGet\NuGet.config` file to be saved with consent explicitly given, allowing NuGet 2.6 and earlier to see that you've given consent.
 1. **Update the version of `NuGet.exe` in your `.nuget` folder.** To do this, run `nuget.exe update -self` from your `.nuget` folder, which will download the latest version of `NuGet.exe` and replace the version in the `.nuget` folder. The latest version of `NuGet.exe` will infer consent to be ON even when not explicitly saved in the `NuGet.config` file.
-1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](/consume-packages/package-restore#migrating-to-automatic-restore).
+1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](../consume-packages/package-restore.md#migrating-to-automatic-restore).
 
 ## Build failure after package update in VS 2012
 The problem: You are using VS 2012 RTM. When updating NuGet packages, you get this message: 

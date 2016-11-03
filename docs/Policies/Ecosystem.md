@@ -85,7 +85,7 @@ These are tools and utilities built on NuGet:
 
 ## Training materials and references
 
-Using a new tool or technology usually comes with a learning curve. Luckily for you, NuGet has no steep learning curve it all! In fact, anyone can [get started consuming packages](/quickstart/use-a-package) quickly.
+Using a new tool or technology usually comes with a learning curve. Luckily for you, NuGet has no steep learning curve it all! In fact, anyone can [get started consuming packages](../quickstart/use-a-package.md) quickly.
 
 That said, authoring packages–and especially good packages–along with  embracing NuGet in automated build and deployment processes, requires spending a little more time with the following resources:
 
