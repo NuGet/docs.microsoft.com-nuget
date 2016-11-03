@@ -106,7 +106,7 @@ The source code is under the `src` folder. Although our demo only uses a single 
 			</solution>
 		</configuration>
 
-> For more details have a look at the [NuGet Config Settings](../consume-packages/configuring-nuget-behavior)
+> For more details have a look at the [NuGet Config Settings](../consume-packages/configuring-nuget-behavior.md)
 
 
 In order to communicate to the version control that we don’t intent to check-in the **packages** folders, we've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describes patterns of files you don't want to check-in.
@@ -188,7 +188,7 @@ The result looks as follows:
 
 ## Configuring Team Build
 
-Team Build offers various process templates. For this demonstration, we're using the [Team Foundation Service]. On-premises installations of TFS will be very similar though.
+Team Build offers various process templates. For this demonstration, we're using the Team Foundation Service. On-premises installations of TFS will be very similar though.
 
 Git and TF Version Control have different Team Build templates, so the following steps will vary depending on which version control system you are using. In both cases, all you need is selecting the build.proj as the project you want to build.
 

@@ -31,7 +31,7 @@ ms.reviewer:
 
 
 > [!Note ]	
-> This topic is intended to be a reference for the process of creating a package. For a focused walkthrough example, refer to the [Create and Publish a Package Quickstart](../quickstart/create-and-publish-a-package).
+> This topic is intended to be a reference for the process of creating a package. For a focused walkthrough example, refer to the [Create and Publish a Package Quickstart](../quickstart/create-and-publish-a-package.md).
 
 No matter what your package does or what code it contains, NuGet is how you package that functionality into a component that can be shared with and used by any number of other developers.  
  
@@ -59,8 +59,8 @@ In general, it's a best practice to have one NuGet package per assembly, provide
  
 However, if your package contains assemblies that are used exclusively by your package, then it's fine to include them. For example, if Utilities.dll depends on Utilities.resources.dll, where the latter is not useful on its own, then you can put both in the same package.	
 
-> [!Note]	
-> When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, *excluding* those that are named `.resources.dll` because they are assumed to be localized satellite assemblies (see [Creating localized packages](../create-packages/creating-localized-packages)). For this reason, avoid using ".resources.dll" for files that otherwise contain essential package code.  
+> [!Note]
+> When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, *excluding* those that are named `.resources.dll` because they are assumed to be localized satellite assemblies (see [Creating localized packages](../create-packages/creating-localized-packages.md)). For this reason, avoid using ".resources.dll" for files that otherwise contain essential package code.
 
 
 
@@ -287,7 +287,7 @@ To directly specify files to include in the package, use the **&lt;files&gt;** n
 
 When you include a file named `readme.txt` in the package, the contents of that file will be displayed in Visual Studio as plain text immediately after the package is installed directly (but not when when the package is installed as a dependency). For example, here's how the readme for the HtmlAgilityPack package appears:
 
-![The display of a readme file for a NuGet package upon installation](../images/Create/Create_01-ShowReadme.png)
+![The display of a readme file for a NuGet package upon installation](media/Create_01-ShowReadme.png)
 
 > [!Note]
 > If you include an empty &lt;files&gt; node in the .nuspec file, NuGet will not include any other content in the package other than what's in the lib folder.	 
@@ -363,7 +363,7 @@ Once `nuget pack` succeeds, you'll have a `.nupkg` file that you can publish to 
 
 ### Additional options
 
-You can use various command-line switches with `nuget pack` to exclude files, override the version number in the manifest, and change the output directory, among other features. For a complete list, refer to the [pack command reference](../tools/nuget.exe-cli-reference#pack.md).
+You can use various command-line switches with `nuget pack` to exclude files, override the version number in the manifest, and change the output directory, among other features. For a complete list, refer to the [pack command reference](../tools/nuget.exe-cli-reference.md#pack).
 
 The following options are a few that are common with Visual Studio projects:
 

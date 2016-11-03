@@ -88,13 +88,13 @@ For reference, see the [NuGet config file overview](../consume-packages/nuget-co
 
 MSBuild-integrated restore with NuGet 2.6 and earlier is typically enabled by right-clicking a solution in Visual Studio and selecting **Enable NuGet Package Restore**. This sets up the necessary files and folders for this option to work, as explained under [MSBuild-integrated restore in Visual Studio](#msbuild-integrated-restore).
 
-In some cases, a developer or company might want to enable or disable package restore on a machine by default for all users. This can be done by adding the same settings above to the global NuGet configuration file located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}]]]`. Individual users can then selectively enable restore as needed on a project level. See [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior#how-settings-are-applied) for exact details on how NuGet prioritizes multiple config files.
+In some cases, a developer or company might want to enable or disable package restore on a machine by default for all users. This can be done by adding the same settings above to the global NuGet configuration file located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}]]]`. Individual users can then selectively enable restore as needed on a project level. See [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied) for exact details on how NuGet prioritizes multiple config files.
 
 ## Constraining package versions with restore
 
 When NuGet restores packages through any method, it will honor any constraints specified in either `packages.config` or `project.json`:
 
-- `packages.config`: Specify a version range in the `allowedVersion` property of the dependency. See [Reinstalling and Updating Packages](../consume-packages/reinstalling-and-updating-packages#constraining-upgrade-versions). For example:
+- `packages.config`: Specify a version range in the `allowedVersion` property of the dependency. See [Reinstalling and Updating Packages](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions). For example:
 
 		<package id="Newtonsoft.json" version="6.0.4" allowedVersions="[6,7)" />
  
@@ -107,9 +107,9 @@ In both cases, use the notation described in [Dependency versions](../create-pac
 
 ## Command-line restore
 
-For NuGet 2.6 and earlier, you use the [Install](../tools/nuget.exe-cli-reference#install) command and point to the `packages.config` file that lists all the dependencies.
+For NuGet 2.6 and earlier, you use the [Install](../tools/nuget.exe-cli-reference.md#install) command and point to the `packages.config` file that lists all the dependencies.
 
-For NuGet 2.7 and above, use the [Restore](../tools/nuget.exe-cli-reference#restore) command to restore all packages in a solution (using either `packages.config` in NuGet 2.x and later or `project.json` in NuGet 3.x and later). For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
+For NuGet 2.7 and above, use the [Restore](../tools/nuget.exe-cli-reference.md#restore) command to restore all packages in a solution (using either `packages.config` in NuGet 2.x and later or `project.json` in NuGet 3.x and later). For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
 
 	c:\proj\app\> nuget restore
 	c:\proj\app\> nuget.exe restore app.sln
@@ -160,7 +160,7 @@ As noted before, MSBuild-integrated restore with NuGet 2.6 and earlier is typica
 
 Again, this option is **not** checked by default for NuGet 2.6 and earlier and must be manually set for package restore to work. For a custom build `.proj`, a pre build `<Exec>` action must also be added manually to restore packages.
 
-With MSBuild-integrated restore, packages that are downloaded by Visual Studio will be automatically added to Team Foundation Version Control by default when the project is connected to a repository. To change this behavior, see [Omitting packages with Team Foundation Version Control](../consume-packages/packages-and-source-control#omitting-packages-with-team-foundation-version-control).
+With MSBuild-integrated restore, packages that are downloaded by Visual Studio will be automatically added to Team Foundation Version Control by default when the project is connected to a repository. To change this behavior, see [Omitting packages with Team Foundation Version Control](../consume-packages/packages-and-source-control.md#omitting-packages-with-team-foundation-version-control).
 
 
 ### Migrating to automatic restore
