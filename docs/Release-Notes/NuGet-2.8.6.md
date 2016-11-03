@@ -39,5 +39,5 @@ In this release, the NuGet Package Manager dialog had support added for:
 
 * Introduced the UAP Target Framework Moniker to support Windows 10 Application Development.
 * NuGet protocol version 3 endpoints
-* Support for [nuget.config](http://docs.nuget.org/consume/NuGet-Config-Settings) protocolVersion attribute on repository sources.  Default value is "2"
+* Support for [nuget.config](../consume-packages/configuring-nuget-behavior.md) protocolVersion attribute on repository sources. Default value is "2"
 * Falling back to remote repository if a required package version is not available in the local cache

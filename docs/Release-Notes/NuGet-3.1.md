@@ -45,7 +45,7 @@ Issues and features in this release are tagged on GitHub with the ["3.1 RTM UWP 
 * Project.json support for Windows UWP and ASP.NET 5 support
 * Transitive package installation
 
-Description and definition of these features can be found in the [NuGet documentation](http://docs.nuget.org/Consume/ProjectJson-Intro)
+Description and definition of these features can be found elsewhere in the documentation.
 
 ### Deprecated
 
