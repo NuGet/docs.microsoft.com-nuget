@@ -4,15 +4,15 @@ layout: HubPage
 title: NuGet Documentation | Microsoft Docs
 description: NuGet is the package manager for the Microsoft development platform including .NET. The NuGet client tools provide the ability to create and consume packages.
 keywords:
-- nuget
-- nuget manager
-- nupkg
-- nuget package explorer
-- nuget package
-- nuget extension
-- nuget.exe
-- nuget commandline
-- nuget cli
+- "nuget"
+- "nuget manager"
+- "nupkg"
+- "nuget package explorer"
+- "nuget package"
+- "nuget extension"
+- "nuget.exe"
+- "nuget commandline"
+- "nuget cli"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -109,6 +109,75 @@ ms.reviewer:
                                 <a href="./guides/create-uwp-packages.md">
                                     <h3>Create UWP Packages</h3>
                                     <p>Learn how to create NuGet packages for the UWP Platform.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </li>
+                <li class="journey-step">
+                    <header class="journey-step-header row">
+                        <div class="title column-third">
+                            <span class="icon icon-tip"></span>
+                            <p>Explore NuGet</p>
+                        </div>
+                        <p class="description column-two-thirds">
+                            Learn more about individual concepts, tools, and policies
+                        </p>
+                    </header>
+                    <section class="journey-step-elements content">
+                        <ul class="row">
+                            <li class="column column-third">
+                                <a href="./create-packages/overview-and-workflow.md">
+                                    <h3>Create Packages</h3>
+                                    <p>Overview and workflow.</p>
+                                </a>
+                            </li>
+                            <li class="column column-third">
+                                <a href="./consume-packages/overview-and-workflow.md">
+                                    <h3>Consume Packages</h3>
+                                    <p>Overview and workflow.</p>
+                                </a>
+                            </li>
+                            <li class="column column-third">
+                                <a href="./hosting-packages/overview.md">
+                                    <h3>Host Packages</h3>
+                                    <p>Overview and workflow.</p>
+                                </a>
+                            </li>
+                            <li class="column column-third">
+                                <a href="./tools/nuget.exe-cli-reference.md">
+                                    <h3>Tools</h3>
+                                    <p>Learn more about NuGet.exe CLI reference, package manager UI and other tools to interact with NuGet</p>
+                                </a>
+                            </li>
+                            <li class="column column-third">
+                                <a href="./schema/nuspec.md">
+                                    <h3>Schema</h3>
+                                    <p>Learn more about the nupsec file, configuration files and other files that are key to the NuGet workflow.</p>
+                                </a>
+                            </li>
+                            <li class="column column-third">
+                                <a href="./api/credential-providers.md">
+                                    <h3>API</h3>
+                                    <p>Learn more about credential providers and NuGet API v3.</p>
+                                </a>
+                            </li>
+                            <li class="column column-third">
+                                <a href="./visual-studio-extensibility/nuget-api-in-visual-studio.md">
+                                    <h3>Visual Studio Extensibility</h3>
+                                    <p></p>
+                                </a>
+                            </li>
+                            <li class="column column-third">
+                                <a href="./nuget/policies/nuget-faq.md">
+                                    <h3>Policies</h3>
+                                    <p>FAQs, Governance and key NuGet.org policies</p>
+                                </a>
+                            </li>
+                            <li class="column column-third">
+                                <a href="./release-notes/nuget-3.5-rc.md">
+                                    <h3>Release Notes</h3>
+                                    <p></p>
                                 </a>
                             </li>
                         </ul>
