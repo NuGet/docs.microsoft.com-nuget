@@ -169,7 +169,7 @@ ms.reviewer:
                                 </a>
                             </li>
                             <li class="column column-third">
-                                <a href="./nuget/policies/nuget-faq.md">
+                                <a href="./policies/nuget-faq.md">
                                     <h3>Policies</h3>
                                     <p>FAQs, Governance and key NuGet.org policies</p>
                                 </a>
