@@ -67,8 +67,8 @@ Framework. The following table lists attributes of the `frameworkAssembly` eleme
 
 |Attribute |Description|
 |----------------|-----------|
-|<strong>assemblyName</strong>|<em>Required</em>. Name of the assembly such as ```System.Net```.|
-|>targetFramework|<em>Optional</em>. Allows specifying a framework and profile name (or alias) that this framework assembly applies to such as "net40" or "sl4". Uses the same format described in  <a href="../create-packages/supporting-multiple-target-frameworks" title="Supporting Multiple .NET Framework Versions">Supporting Multiple Target Frameworks</a>.|
+|**assemblyName**|*Required*. Name of the assembly such as `System.Net`.|
+|**targetFramework**|*Optional*. Allows specifying a framework and profile name (or alias) that this framework assembly applies to such as "net40" or "sl4". Uses the same format described in [Supporting Multiple Target Frameworks](../create-packages/supporting-multiple-target-frameworks.md).|
 
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="net40" />
@@ -79,7 +79,7 @@ Framework. The following table lists attributes of the `frameworkAssembly` eleme
 
 When using the NuGet.exe command line tool, you can now use the SetApiKey command to store your API key. That way, 
 you won’t need to specify it every time you push a package. For more details on saving your API key with NuGet.exe, 
-[read the documentation on publishing a package](../create-packages/publish-a-package).
+[read the documentation on publishing a package](../create-packages/publish-a-package.md).
 
 ### Package Explorer
 Package Explorer has been updated to support NuGet 1.2. For more information, check out the 
@@ -98,7 +98,7 @@ something about incompatible schema, you are running into this error. Please upd
 * **NuGet.Server incompatibility**: If you’re hosting an internal NuGet feed using the NuGet.Server project, you’ll 
 need to update that project with the latest version of NuGet.Server.
 * **Signature Mismatch Error**: If you run into an error during an upgrade with a message about a Signature Mismatch, 
-you'll need to uninstall NuGet first and then install it. This is listed in our [Known Issues page](/nuget/release-notes/Known-Issues) 
+you'll need to uninstall NuGet first and then install it. This is listed in our [Known Issues page](../release-notes/Known-Issues) 
 which provides more details. The issue only affects those running Visual Studio 2010 SP1 and have a version of NuGet 
 1.0 installed that was incorrectly signed. This version was only made available from the CodePlex website for a brief 
 period so this issue shouldn't affect too many people.

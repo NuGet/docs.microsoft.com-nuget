@@ -30,7 +30,7 @@ ms.reviewer:
 
 # NuGet 3.4 Release Notes
 
-[NuGet 3.4-RC Release Notes](../nuget/release-notes/nuget-3.4-RC.md) | [NuGet 3.4.1 Release Notes](../nuget/release-notes/nuget-3.4.1.md)
+[NuGet 3.4-RC Release Notes](../release-notes/nuget-3.4-RC.md) | [NuGet 3.4.1 Release Notes](../release-notes/nuget-3.4.1.md)
 
 NuGet 3.4 was released March 30, 2016 as part of the Visual Studio 2015 Update 2 and Visual Studio 15 Preview Release and was built with a few tenets in minds:
 
@@ -66,21 +66,20 @@ The following features were previously added in the RC and have been updated or 
 
 ## Breaking Changes
 
-* Package version numbers are now normalized to the format *major*.*minor*.*patch*-*prerelease*   Each of major, minor, and patch are treated as integers and drop any leading zeroes.  The prerelease information is treated as a string and no changes are applied to it. These numbers are used in queries by the NuGet clients and the search provided by the NuGet.org service.  More details can be found in the NuGet Docs under [Prerelease Versions](/create-packages/prerelease-packages).  
+* Package version numbers are now normalized to the format *major*.*minor*.*patch*-*prerelease*   Each of major, minor, and patch are treated as integers and drop any leading zeroes.  The prerelease information is treated as a string and no changes are applied to it. These numbers are used in queries by the NuGet clients and the search provided by the NuGet.org service.  More details can be found in the NuGet Docs under [Prerelease Versions](../create-packages/prerelease-packages.md).
 
 ## Known Issues
 
-* __Issue:__ Windows 10 v1511 users may experience issues or even a Visual Studio crash with Powershell in Visual Studio in the following scenarios:
+* **Issue:** Windows 10 v1511 users may experience issues or even a Visual Studio crash with Powershell in Visual Studio in the following scenarios:
     * Installing / Uninstalling packages that have install.ps1 / uninstall.ps1 scripts
     * Loading projects that have an init.ps1 script (like EntityFramework)
     * Publishing web content
 
-* __Workaround:__ Ensure that your Windows 10 install has the latest patches applied, expecially the January 2016 (KB 3124263) or a later update.  More details are available on [GitHub issue #1638](http://github.com/nuget/home/issues/1638)
+* **Workaround:** Ensure that your Windows 10 install has the latest patches applied, expecially the January 2016 (KB 3124263) or a later update.  More details are available on [GitHub issue #1638](http://github.com/nuget/home/issues/1638)
 
-* __Issue:__ NuGet v2 protocol redirects are broken.
+* **Issue:** NuGet v2 protocol redirects are broken.
 Custom NuGet repositories that redirect requests to an alternative host do not honor the redirect request.
-* __Workaround:__  To work around this issue, configure the package repository URI in settings to point to the redirected server location.
-For more information, see [GitHub pull request #387](https://github.com/NuGet/NuGet.Client/pull/387). 
- 
+* **Workaround:**  To work around this issue, configure the package repository URI in settings to point to the redirected server location.
+For more information, see [GitHub pull request #387](https://github.com/NuGet/NuGet.Client/pull/387).
 
 We continue to track issues on our GitHub issues list which can be found at: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)

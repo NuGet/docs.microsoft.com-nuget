@@ -82,8 +82,8 @@ These elements must appear within a &lt;metadata&gt; element.
 
 Element | Description
 --- | ---
-<strong>id</strong> | The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package will reside in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number.md) for guidance.
-<strong>version</strong> | The version of the package, following the <em>major.minor.patch</em> pattern. Version numbers may include a pre-release suffix as described in [Prerelease Packages](../create-packages/prerelease-packages#semantic-versioning.md)
+<strong>id</strong> | The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package will reside in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number) for guidance.
+<strong>version</strong> | The version of the package, following the <em>major.minor.patch</em> pattern. Version numbers may include a pre-release suffix as described in [Prerelease Packages](../create-packages/prerelease-packages.md#semantic-versioning)
 <strong>description</strong> | A long description of the package for UI display.
 <strong>authors</strong> | A comma-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors.
 
@@ -99,7 +99,7 @@ These elements must appear within a &lt;metadata&gt; element.
 Element | Description
 --- | ---
 <strong>title</strong> | A human-friendly title of the package, typically used in UI displays as on nuget.org and the Package Manager in Visual Studio. If not specified, the package ID is used instead.
-<strong>owners</strong> | A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in authors, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package#managing-package-owners-on-nuget-org.md)
+<strong>owners</strong> | A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in authors, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nuget-org)
 <strong>projectUrl</strong> | A URL for the package's home page, often shown in UI displays as well as nuget.org.
 <strong>licenseUrl</strong> | A URL for the package's license, often shown in UI displays as well as nuget.org.
 <strong>iconUrl</strong> | A URL for a 64x64 image with transparenty background to use as the icon for the package in UI display.
@@ -118,19 +118,19 @@ Element | Description
 |||
 --- | ---
 <strong>packageTypes</strong> | <em>(3.3+)</em> A collection of zero or more &lt;packageType&gt; elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of <em>name</em> and <em>verion</em>. See <a href="/create-packages/creating-a-package#setting-a-package-type">Setting a package type</a>
-<strong>dependencies</strong> | A collection of zero or more &lt;dependency&gt; elements specifying the dependencies for the package. Each dependency has attributes of <em>id</em>, <em>version</em>, <em>include</em> (3.x+), and <em>exclude</em> (3.x+). See <a href="#dependencies">Dependencies</a> below.
-<strong>frameworkAssemblies</strong> | <em>(1.2+)</em> A collection of zero or more &lt;frameworkAssembly&gt; elements identifying .NET Framework assembly references that this package requires, which ensures that references are added to projects consuming the package. Each frameworkAssembly has <em>assemblyName</em> and <em>targetFramework</em> attributes. See <a href="#specifying-framework-assembly-references-gac">Specifying framework assembly references GAC</a> below.
-<strong>references</strong> | <em>(1.5+)</em> A collection of zero or more &lt;reference&gt; elements naming assemblies in the package's `lib` folder that are added as project references. Each reference has a <em>file</em> attribute. &lt;references&gt; can also contain a &lt;group&lt; element with a <em>targetFramework</em> attribute, that then contains &lt;reference&gt; elements. If omitted, all references in `lib` are included. See <a href="#specifying-explicit-assembly-references">Specifying explicit assembly references.</a> below.
+<strong>dependencies</strong> | A collection of zero or more &lt;dependency&gt; elements specifying the dependencies for the package. Each dependency has attributes of <em>id</em>, <em>version</em>, <em>include</em> (3.x+), and <em>exclude</em> (3.x+). See [Dependencies](#dependencies) below.
+<strong>frameworkAssemblies</strong> | <em>(1.2+)</em> A collection of zero or more &lt;frameworkAssembly&gt; elements identifying .NET Framework assembly references that this package requires, which ensures that references are added to projects consuming the package. Each frameworkAssembly has <em>assemblyName</em> and <em>targetFramework</em> attributes. See [Specifying framework assembly references GAC](#specifying-framework-assembly-references-gac) below.
+<strong>references</strong> | <em>(1.5+)</em> A collection of zero or more &lt;reference&gt; elements naming assemblies in the package's `lib` folder that are added as project references. Each reference has a <em>file</em> attribute. &lt;references&gt; can also contain a &lt;group&lt; element with a <em>targetFramework</em> attribute, that then contains &lt;reference&gt; elements. If omitted, all references in `lib` are included. See [Specifying explicit assembly references](#specifying-explicit-assembly-references) below.
 <strong>contentFiles</strong> | <em>(3.3+)</em> A collection of &lt;files&gt; elements that identify content files that should be include in the consuming project. These files are specified with a set of attributes that describe how they should be used within the project system. See <a href="#specifying-files-to-include-in-the-package">Specifying files to include in the package</a> below.
 
 ### Files element 
 
-The &lt;package&gt; node may also contain a &lt;files&gt; and/or &lt;contentFiles&gt; nodes as siblings to &lt;metadata&gt; to specify whcih assembly and content files to include in the package. See <a href="#including-assembly-files">Including assembly files</a> and <a href="#including-content-files">Including content files</a> later in this topic for details.</td>
-        
+The &lt;package&gt; node may also contain a &lt;files&gt; and/or &lt;contentFiles&gt; nodes as siblings to &lt;metadata&gt; to specify whcih assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
+
 
 ## Replacement tokens
 
-When creating a package, the [`nuget pack` command](../tools/nuget.exe-cli-reference#pack.md) will replace $-delimited tokens in the `.nuspec` file's &lt;metadata&gt; node with values that come from either a project file or the `pack` command's `-properties` switch.
+When creating a package, the [`nuget pack` command](../tools/nuget.exe-cli-reference.md#pack) will replace $-delimited tokens in the `.nuspec` file's &lt;metadata&gt; node with values that come from either a project file or the `pack` command's `-properties` switch.
 
 On the command line, you specify token values with `nuget pack -properties <name>=<value>;<name>=<value>`. For example, you can use a token such as `$owners$` and `$desc$` in the `.nuspec` and provide the values at packing time as follows:
 
@@ -176,7 +176,7 @@ The &lt;dependencies&gt; element within &lt;metadata&gt; contains any number of 
 Attribute | Description
 --- | ---
 `id` | (Required) The package ID of the dependency.
-`version` | (Required) The range of versions acceptable as a dependency. See <a href="/ndoc/create-packages/dependency-versions#version-ranges-in--nuspec-files">Dependency versions</a> for exact syntax.
+`version` | (Required) The range of versions acceptable as a dependency. See [Dependency versions](../create-packages/dependency-versions.md#version-ranges-in-nuspec-files) for exact syntax.
 
 For example, the following lines indicate dependencies on `PackageA` version 1.1.0 or higher, and `PackageB` version 1.x. 
 
@@ -197,8 +197,8 @@ Each group has an attribute named `targetFramework` and contains zero or more &l
 
 The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](../schema/target-frameworks.md) for the exact framework identifiers.
 
-> [!NOTE]	
->	The group format cannot be intermixed with a flat list.
+> [!Note]	
+> The group format cannot be intermixed with a flat list.
 
 The following example shows different variations of the &lt;group&gt; element:
 
@@ -243,8 +243,8 @@ Each group has an attribute named `targetFramework` and contains zero or more &l
 
 The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of references. See [Target frameworks](../schema/target-frameworks.md) for the exact framework identifiers.
 
-> [!NOTE]	
->	The group format cannot be intermixed with a flat list.
+> [!Note]	
+> The group format cannot be intermixed with a flat list.
 
 
 The following example shows different variations of the &lt;group&gt; element:
@@ -294,7 +294,7 @@ If you follow the conventions described in [Creating a Package](../create-packag
 > [!NOTE]
 >	When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, <em>excluding</em> those that are named ` .resources.dll ` because they are assumed to be localized satellite assemblies. For this reason, avoid using ".resources.dll" for files that otherwise contain essential package code.  
 
-To bypass this automatic behavior and explicitly control which files are included in a package, place a &lt;files&gt; element as a child of &lt;package&gt; (and a sibling of &lt;metadata&gt;), identifying each file with a separate &lt;file&gt; element. For example:     
+To bypass this automatic behavior and explicitly control which files are included in a package, place a &lt;files&gt; element as a child of &lt;package&gt; (and a sibling of &lt;metadata&gt;), identifying each file with a separate &lt;file&gt; element. For example:
 
 	<files>
 	  <file src="bin\Debug\*.dll" target="lib" /> 

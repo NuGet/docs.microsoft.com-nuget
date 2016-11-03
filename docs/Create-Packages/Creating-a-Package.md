@@ -168,7 +168,7 @@ For example, the &lt;id&gt; value will typically appear as follows:
 
 	<id>$id$</id>
 
-and will be replaced with the `AssemblyName` value from the project file. For the exact mapping of project values to `.nuspec` tokens, see the [Replacement Tokens reference](../schema/nuspec#replacement-tokens.md).
+and will be replaced with the `AssemblyName` value from the project file. For the exact mapping of project values to `.nuspec` tokens, see the [Replacement Tokens reference](../schema/nuspec.md#replacement-tokens).
 
 Note that there are several additional packaging options available when working from a Visual Studio project, as described in the [Creating the package](#creating-the-package) section later on. 
 

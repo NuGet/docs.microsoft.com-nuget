@@ -31,7 +31,7 @@ ms.reviewer:
  
  # NuGet 1.6 Release Notes
 
-[NuGet 1.5 Release Notes](/nuget/release-notes/nuget-1.5) | [NuGet 1.7 Release Notes](/nuget/release-notes/nuget-1.7)
+[NuGet 1.5 Release Notes](../release-notes/nuget-1.5.md) | [NuGet 1.7 Release Notes](../release-notes/nuget-1.7.md)
 
 NuGet 1.6 was released on December 13, 2011.
 
@@ -40,7 +40,7 @@ If you are running VS 2010 SP1, you might run into an installation error when at
 NuGet if you have an older version installed.
 
 The workaround is to simply uninstall NuGet and then install it from the VS Extension Gallery.  See
-<a href="http://support.microsoft.com/kb/2581019">http://support.microsoft.com/kb/2581019</a> for more information.
+[http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019) for more information.
 
 Note: If Visual Studio won't allow you to uninstall the extension (the Uninstall button is disabled),
 then you likely need to restart Visual Studio using "Run as Administrator."
@@ -49,12 +49,12 @@ then you likely need to restart Visual Studio using "Run as Administrator."
 
 ### Support for Semantic Versioning and Prerelease Packages
 NuGet 1.6 introduces support for Semantic Versioning (SemVer). For more details on how it uses 
-SemVer, read the [Versioning documentation](../create-packages/prerelease-packages).
+SemVer, read the [Versioning documentation](../create-packages/prerelease-packages.md).
 
 ### Using NuGet Without Checking In Packages (Package Restore)
 NuGet 1.6 now has first class support for the workflow in which NuGet packages are not added 
 to source control, but instead are restored at build time if missing. For more details, read 
-the [Using NuGet without committing packages to source control](../consume-packages/packages-and-source-control) 
+the [Using NuGet without committing packages to source control](../consume-packages/packages-and-source-control.md) 
 topic.
 
 ### Item Templates That Install NuGet Packages 
@@ -63,7 +63,7 @@ NuGet 1.6 also adds support for Visual Studio item templates. Item templates can
 NuGet packages that are installed when the template in invoked.
 
 For more details on how to change a project/item template to install NuGet packages, read the 
-[Packages in Visual Studio Templates](../visual-studio-extensibility/visual-studio-templates) topic.
+[Packages in Visual Studio Templates](../visual-studio-extensibility/visual-studio-templates.md) topic.
 
 ### Support for disabling package sources
 When multiple package sources are configured, NuGet will look in each one for packages during 

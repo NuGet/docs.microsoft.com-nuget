@@ -29,7 +29,7 @@ ms.reviewer:
 --- 
 # Creating Native Packages
 
-A native package contains native C++ code instead of managed code, allowing it to be used within C++ projects. (See [Native C++ Packages](../consume-packages/finding-and-choosing-packages#native-c++-packages.md) in the Consume section.)
+A native package contains native C++ code instead of managed code, allowing it to be used within C++ projects. (See [Native C++ Packages](../consume-packages/finding-and-choosing-packages.md#native-c++-packages) in the Consume section.)
 
 To be consumable in a C++ project, a package must target the `native` framework. At present there are not any version numbers associated with this framework as NuGet treats all C++ projects the same.
 

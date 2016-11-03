@@ -68,7 +68,7 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 		nuget spec
 	```
 
-3. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](../create-packages/creating-a-package#creating-the-nuspec-file.md).
+3. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](../create-packages/creating-a-package.md#creating-the-nuspec-file).
 			
 		<?xml version="1.0"?>
 		<package>
@@ -127,10 +127,10 @@ Note that you'll get warnings if you haven't updated various fields in the .nusp
 
 ##Publish the package
 
-You're now ready to publish the package to nuget.org using the NuGet CLI. (Alternately, you can use the [nuget.org publishing workflow](../create-packages/publish-a-package#publish-through-nuget-org.md).
+You're now ready to publish the package to nuget.org using the NuGet CLI. (Alternately, you can use the [nuget.org publishing workflow](../create-packages/publish-a-package.md#publish-through-nuget-org).
 
 > [!Note]
-> The packages you publish to nuget.org will be publicly visible to other developers. To host packages privately, see [Hosting packages](../hosting-packages/overview).
+> The packages you publish to nuget.org will be publicly visible to other developers. To host packages privately, see [Hosting packages](../hosting-packages/overview.md).
 
 
 1. Create a free account on [nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F), or log in if you already have one. When creating a new account, you'll receive a confirmation email. You must confirm the account before you can upload a package.

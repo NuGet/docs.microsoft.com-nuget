@@ -47,4 +47,4 @@ There are also several third-party NuGet hosting products that support remote pr
 - [Artifactory](https://www.jfrog.com/artifactory/) from JFrog.
 - [Nexus](http://www.sonatype.org/nexus/) from Sonatype.
 
-Regardless of how packages are hosted, you access them by adding them to the list of available sources in `NuGet.config`. This can be done in Visual Studio as described in [Package Sources](../tools/package-manager-ui#package-sources.md), or from the command line using [`nuget sources`](../tools/nuget.exe-cli-reference#sources.md). The path to a source can be anything from a local directory to a network name to an Internet URL. 
+Regardless of how packages are hosted, you access them by adding them to the list of available sources in `NuGet.config`. This can be done in Visual Studio as described in [Package Sources](../tools/package-manager-ui.md#package-sources), or from the command line using [`nuget sources`](../tools/nuget.exe-cli-reference.md#sources). The path to a source can be anything from a local directory to a network name to an Internet URL. 

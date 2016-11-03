@@ -31,7 +31,7 @@ ms.reviewer:
 
 # NuGet 1.4 Release Notes
 
-[NuGet 1.3 Release Notes](/nuget/release-notes/nuget-1.3) | [NuGet 1.5 Release Notes](/nuget/release-notes/nuget-1.5)
+[NuGet 1.3 Release Notes](../release-notes/nuget-1.3.md) | [NuGet 1.5 Release Notes](../release-notes/nuget-1.5.md)
 
 NuGet 1.4 was released on June 17, 2011.
 
@@ -78,7 +78,7 @@ Package operations now provide a list of checkboxes with the list of projects th
 
 ![Manage NuGet Packages Project Selection](./media/manage-nuget-packages-project-selection.png)
 
-For more details, see the topic on [Managing Packages for the Solution](../tools/package-manager-ui#managing-packages-for-the-solution).
+For more details, see the topic on [Managing Packages for the Solution](../tools/package-manager-ui.md#managing-packages-for-the-solution).
 
 ### Constraining Upgrades To Allowed Versions
 By default, when running the `Update-Package` command on a package (or updating the package using dialog), it will be 
@@ -89,7 +89,7 @@ only work with version 2.* of a package, but not 3.0 and above. In order to prev
 `packages.config` file using the new `allowedVersions` attribute.
 
 For example, the following example shows how to lock the `SomePackage` package the version range 2.0 - 3.0 (exclusive). 
-The `allowedVersions` attribute accepts values using the [version range format](../create-packages/dependency-versions#version-ranges).
+The `allowedVersions` attribute accepts values using the [version range format](../create-packages/dependency-versions.md#version-ranges).
 
     <?xml version="1.0" encoding="utf-8"?>
     <packages>
@@ -110,7 +110,7 @@ supported in Visual Studio Ultimate. Viewing a DGML diagram is only supported in
 
 ### Automatic Update Check for the NuGet Dialog
 Some versions of NuGet introduce new features expressed via the NuSpec file which are not understood by older versions of the NuGet dialog. 
-One example is the introduction in NuGet 1.4 for [specifying framework assemblies](/nuget/release-notes/nuget-1.2#Specifying-Framework-Assembly-References-(GAC)). 
+One example is the introduction in NuGet 1.4 for [specifying framework assemblies](../release-notes/nuget-1.2#Specifying-Framework-Assembly-References-(GAC)). 
 Because of this, it's important to use the latest version of NuGet to ensure you can use packages taking advantage of the latest features. 
 To make updates to NuGet more visible, the NuGet dialog contains logic to highlight when a newer version is available. 
 
@@ -152,7 +152,7 @@ in a path to the `packages.config` file and will attempt to update packages. Not
 ** Run Powershell scripts within the package.
 
 ### NuGet Server Support for Pushing Packages using NuGet.exe
-NuGet includes a simple way to host a [lightweight web based NuGet repository](../hosting-packages/nuget.server) 
+NuGet includes a simple way to host a [lightweight web based NuGet repository](../hosting-packages/nuget.server.md) 
 via the `NuGet.Server` NuGet package. With NuGet 1.4, the lightweight server supports pushing and deleting packages using NuGet.exe. 
 The latest version of `NuGet.Server` adds a new `appSetting`, named `apiKey`. When the key is omitted or left blank, pushing packages 
 to the feed is disabled. Setting the apiKey to a value (ideally a strong password) enables pushing packages using NuGet.exe.

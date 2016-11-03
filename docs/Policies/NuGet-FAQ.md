@@ -96,7 +96,7 @@ Yes, it's possible to add custom commands to `nuget.exe`, as described in [Rob R
 
 **How do I get access to the DTE object in the Package Manager console?**
 
-The console provides a variable named `$DTE` that returns the `DTE` object. See the [`Get-Project` command](../tools/powershell-reference#get-project.md).
+The console provides a variable named `$DTE` that returns the `DTE` object. See the [`Get-Project` command](../tools/powershell-reference.md#get-project).
 
 **I try to cast the $DTE variable to the type DTE2, but I get an error: Cannot convert the "EnvDTE.DTEClass" value of type "EnvDTE.DTEClass" to type "EnvDTE80.DTE2". What's wrong?**
 
@@ -136,11 +136,11 @@ Yes, see Scott Hanselman's Blog post [How to access NuGet when NuGet.org is down
 
 **How do I install packages in a different location from the default packages folder?**
 
-Set the [`repositoryPath`](../schema/nuget.config#config-section.md) setting in `nuget.config` using `nuget config -set repositoryPath=&lt;path&gt;`. 
+Set the [`repositoryPath`](../schema/nuget.config.md#config-section) setting in `nuget.config` using `nuget config -set repositoryPath=&lt;path&gt;`. 
 
 **How do I avoid checking in packages folder to source control?**
 
-Set the [`disableSourceControlIntegration`](../schema/nuget.config#solution-section.md) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automaticatlly.
+Set the [`disableSourceControlIntegration`](../schema/nuget.config.md#solution-section) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automaticatlly.
 
 **How do I turn off package restore?**
 
@@ -170,7 +170,7 @@ No. If you feel that an existing package has taken the name which suits your pac
 
 **How do I claim ownership for packages ?**
 
-See [Managing package owners on nuget.org](../create-packages/publish-a-package#managing-package-owners-on-nuget-org.md).
+See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nuget-org).
 
 **How do I deal with a package owner who is violating my software license?**
 

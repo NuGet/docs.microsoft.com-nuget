@@ -32,7 +32,7 @@ ms.reviewer:
 
 Between nuget.org and private package galleries that your organization might establish, you can find tens of thousands of highly useful packages to use in your apps and services. But regardless of the source, consuming a package follows the same general workflow:
 
-![Flow of going to a package source, finding a package, installing it in a project, then adding a using statement and calls to the package API](media/Consume/Overview-01-GeneralFlow.png)
+![Flow of going to a package source, finding a package, installing it in a project, then adding a using statement and calls to the package API](media/Overview-01-GeneralFlow.png)
 
 For details, see [Finding and Choosing Packages](../consume-packages/finding-and-choosing-packages.md) and the [Use a Package quickstart](../quickstart/use-a-package.md).
 
@@ -42,7 +42,7 @@ When installing packages, NuGet typically checks if the package is already avail
 
 When adding project code to a source repository, you typically don't include NuGet packages. Those who later clone the repository, which includes build agents on systems like Visual Studio Team Services, must restore the necessary packages prior to running a build:
 
-![Flow of restoring NuGet packages by cloning a repository and using either a restore command](media/Consume/Overview-02-RestoreFlow.png)
+![Flow of restoring NuGet packages by cloning a repository and using either a restore command](media/Overview-02-RestoreFlow.png)
 
 [Package Restore](../consume-packages/package-restore.md) uses the information in `packages.config` or `project.json` to reinstall all dependencies. Note that there are differences in the process between NuGet 2.x and 3.x, which are described in [Dependency Resolution](..//consume-packages/dependency-resolution.md). 
 

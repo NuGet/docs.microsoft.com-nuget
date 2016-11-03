@@ -30,7 +30,7 @@ ms.reviewer:
 ---
 # NuGet 3.1 Release Notes
 
-[NuGet 3.0 Release Notes](../nuget/release-notes/nuget-3.0.0.md) | [NuGet 3.1.1 Release Notes](../nuget/release-notes/nuget-3.1.1.md)
+[NuGet 3.0 Release Notes](../release-notes/nuget-3.0.0.md) | [NuGet 3.1.1 Release Notes](../release-notes/nuget-3.1.1.md)
 
 NuGet 3.1 was released on July 27, 2015 as a bundled extension to the Universal Windows Platform SDK for Visual Studio 2015. We delivered this release with the Windows Platform SDK so that the Windows development experience could take advantage of the NuGet cross-platform work that had been previously started. This NuGet extension version is only available for Visual Studio 2015.  
 
@@ -82,7 +82,7 @@ The new distributable location resides on the dist.nuget.org host, with a folder
 
 ## Known Issues ##
 
-1.	Cannot execute pack against a <project.json> file - [928](https://github.com/NuGet/Home/issues/928)
+1.	Cannot execute pack against a `project.json` file - [928](https://github.com/NuGet/Home/issues/928)
 2.	Is not supported on Mono - [1059](https://github.com/NuGet/Home/issues/1059)
 3.	Is not localized - [1058](https://github.com/NuGet/Home/issues/1058),   [1057](https://github.com/NuGet/Home/issues/1057)
 4.	Is not signed, just like the existing http://nuget.org/nuget.exe - [1073](https://github.com/NuGet/Home/issues/1073)

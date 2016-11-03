@@ -29,7 +29,7 @@ ms.reviewer:
 --- 
 # NuGet 2.8.3 Release Notes
 
-[NuGet 2.8.2 Release Notes](../nuget/release-notes/nuget-2.8.2.md) | [NuGet 2.8.5 Release Notes](../nuget/release-notes/nuget-2.8.5.md)
+[NuGet 2.8.2 Release Notes](../release-notes/nuget-2.8.2.md) | [NuGet 2.8.5 Release Notes](../release-notes/nuget-2.8.5.md)
 
 NuGet 2.8.3 was released October 17, 2014. It is a minor update to our 2.8.1 VSIX with some targeted fixes. 
 

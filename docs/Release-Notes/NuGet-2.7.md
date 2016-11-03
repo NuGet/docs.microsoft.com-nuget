@@ -29,7 +29,7 @@ ms.reviewer:
 --- 
 # NuGet 2.7 Release Notes
 
-[NuGet 2.6.1 for WebMatrix Release Notes](/nuget/release-notes/nuget-2.6.1-for-webmatrix) | [NuGet 2.7.1 Release Notes](/nuget/release-notes/nuget-2.7.1)
+[NuGet 2.6.1 for WebMatrix Release Notes](../release-notes/nuget-2.6.1-for-webmatrix.md) | [NuGet 2.7.1 Release Notes](../release-notes/nuget-2.7.1.md)
 
 NuGet 2.7 was released on August 22, 2013.
 
@@ -99,7 +99,7 @@ In order to use Automatic Package Restore in Visual Studio, you only need to tak
 
 1. Don't check in your `packages` folder
 
-There are several ways to omit your `packages` folder from source control. For more information, see the [Packages and Source Control](../consume-packages/packages-and-source-control) topic.
+There are several ways to omit your `packages` folder from source control. For more information, see the [Packages and Source Control](../consume-packages/packages-and-source-control.md) topic.
 
 While all users are implicitly opted into Automatic Package Restore consent, you can easily opt out through the Package Manager settings in Visual Studio.
 
@@ -115,11 +115,11 @@ This new Restore command allows you to easily restore all packages for a solutio
 1. nuget.exe restore .
 1. nuget.exe restore
 
-The Restore command will open the solution file and find all projects within the solution. From there, it will find the packages.config files for each of the projects and restore all of the packages found. It also restores solution-level packages found in the .nuget\packages.config file. More information about the new Restore command can be found in the [Command-Line Reference](../tools/nuget.exe-cli-reference#restore).
+The Restore command will open the solution file and find all projects within the solution. From there, it will find the packages.config files for each of the projects and restore all of the packages found. It also restores solution-level packages found in the .nuget\packages.config file. More information about the new Restore command can be found in the [Command-Line Reference](../tools/nuget.exe-cli-reference.md#restore).
 
 #### The New Package Restore Workflow
 
-We are excited about these changes to Package Restore, as it introduces a new workflow. If you want to omit your packages from source control you simply don't commit the `packages` folder. Visual Studio users who open and build the solution will see the packages automatically restored. For command-line builds, simply invoke `nuget.exe restore` before invoking `msbuild`. You'll no longer need to remember to use the "Enable NuGet Package Restore" gesture on your solution, and we'll no longer need to modify your projects to alter the build. And this also yields a much improved experience for packages that include MSBuild imports, especially for imports added through NuGet's recent feature for [automatically importing props/targets files](/nuget/release-notes/nuget-2.5#Automatic-import-of-msbuild-targets-and-props-files) from the \build folder.
+We are excited about these changes to Package Restore, as it introduces a new workflow. If you want to omit your packages from source control you simply don't commit the `packages` folder. Visual Studio users who open and build the solution will see the packages automatically restored. For command-line builds, simply invoke `nuget.exe restore` before invoking `msbuild`. You'll no longer need to remember to use the "Enable NuGet Package Restore" gesture on your solution, and we'll no longer need to modify your projects to alter the build. And this also yields a much improved experience for packages that include MSBuild imports, especially for imports added through NuGet's recent feature for [automatically importing props/targets files](../release-notes/nuget-2.5.md#Automatic-import-of-msbuild-targets-and-props-files) from the \build folder.
 
 In addition to the work we've done ourselves, we're also working with some important partners to round this new approach out. We don't have concrete timelines for any of these yet, but each partner is as excited as we are about the new approach.
 
@@ -163,7 +163,7 @@ While not required to use this feature, we expect companies to deploy NuGetDefau
 
 *Note that this feature will never cause a package source to be removed from a developer's NuGet settings. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a NuGetDefaults.config file.*
 
-See [NuGet Configuration Defaults](../consume-packages/configuring-nuget-behavior#nuget-defaults-file) for more information about this feature.
+See [NuGet Configuration Defaults](../consume-packages/configuring-nuget-behavior.md#nuget-defaults-file) for more information about this feature.
 
 ### Renaming the Default Package Source
 

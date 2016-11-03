@@ -30,7 +30,7 @@ ms.reviewer:
 ---
 # NuGet 3.0 RC Release Notes
 
-[NuGet 3.0 Beta Release Notes](../nuget/release-notes/nuget-3.0-beta.md) | [NuGet 3.0 RC2 Release Notes](../nuget/release-notes/nuget-3.0-RC2.md)
+[NuGet 3.0 Beta Release Notes](../release-notes/nuget-3.0-beta.md) | [NuGet 3.0 RC2 Release Notes](../release-notes/nuget-3.0-RC2.md)
 
 NuGet 3.0 RC was released on April 29, 2015 with the Visual Studio 2015 RC release. This release has a number of important bug fixes, performance improvements and updates to support the new frameworks.  It is only available for Visual Studio 2015.
 

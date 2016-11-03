@@ -29,7 +29,7 @@ ms.reviewer:
 --- 
 # NuGet 2.2 Release Notes
 
-[NuGet 2.1 Release Notes](/nuget/release-notes/nuget-2.1) | [NuGet 2.2.1 Release Notes](/nuget/release-notes/nuget-2.2.1)
+[NuGet 2.1 Release Notes](../release-notes/nuget-2.1.md) | [NuGet 2.2.1 Release Notes](../release-notes/nuget-2.2.1.md)
 
 NuGet 2.2 was released on December 12, 2012.
 
