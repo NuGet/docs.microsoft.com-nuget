@@ -59,17 +59,15 @@ The important parts of the `.gitignore` file are:
 
 ## Omitting packages with Team Foundation Version Control
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	Follow these instructions if possible <em>before</em> adding your project to source control. Otherwise, manually delete the `packages` folder from your repository and check in that change before continuing.
-</div>
+> [!Note]	
+> Follow these instructions if possible *before* adding your project to source control. Otherwise, manually delete the `packages` folder from your repository and check in that change before continuing.
 
 To disable source control integration with TFVC for selected files:
 
 1. Create a folder called `.nuget` in your solution folder (where the `.sln` file is).
 	* Tip: on Windows, to create this folder in Windows Explorer, use the name `.nuget.` *with* the training dot.
 2. In that folder, create a file named `NuGet.config` and open it for editing.
-3. Add the following text as a minimum, where the [disableSourceControlIntegration](../schema/nuget.config-file#solution-section.md) setting instructs Visual Studio to skip everything in the `packages` folder:
+3. Add the following text as a minimum, where the [disableSourceControlIntegration](../schema/nuget.config-file#solution-section) setting instructs Visual Studio to skip everything in the `packages` folder:
 
 		<?xml version="1.0" encoding="utf-8"?>
 		<configuration>

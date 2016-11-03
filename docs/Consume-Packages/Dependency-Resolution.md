@@ -74,7 +74,7 @@ As dependencies are installed into a project, NuGet 3.x adds them to a flat pack
 When the NuGet restore process runs prior to a build, it resolves dependencies first in memory, then writes the resulting graph to a file called `project.lock.json` alongside `project.json`. MSBuild then reads this file and translates it into a set of folders where potential references can be found, and then adds them to the project tree in memory. 
 
 The lock file is temporary and does not need to be added to source control; it's listed by default in both `.gitignore` and `.tfignore`. 
-  
+
 
 ### Dependency resolution rules
 

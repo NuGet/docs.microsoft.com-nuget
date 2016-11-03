@@ -40,9 +40,8 @@ When `nuget.exe` needs credentials to authenticate with a feed, it looks for the
 3. NuGet then prompts the user for credentials on the command line.
 
 
-> **Note**
+> [!Note]
 > Credential providers do not apply to `dotnet restore`, or the Package Manager UI or Console in Visual Studio. NuGet in Visual Studio uses a single single built-in credential provider that supports Visual Studio Team Services.
-
 
 Plug-in credential providers thus provide a way to hook into custom authentication process for different feeds. They can be used in three ways:
 
@@ -67,27 +66,27 @@ A provider must also do the following:
 ### Input parameters
 
 
-	|Parameter/Switch |Description|
-	|----------------|-----------|
-	|Uri {value} | The package source URI requiring credentials.|
-	| NonInteractive | If present, provider does not issue interactive prompts. |
-	| IsRetry | If present, indicates that this attempt is a retry of a previously failed attempt. Providers typically use this flag to ensure that they bypass any existing cache and prompt for new credentials if possible.|
+|Parameter/Switch |Description|
+|----------------|-----------|
+|Uri {value} | The package source URI requiring credentials.|
+| NonInteractive | If present, provider does not issue interactive prompts. |
+| IsRetry | If present, indicates that this attempt is a retry of a previously failed attempt. Providers typically use this flag to ensure that they bypass any existing cache and prompt for new credentials if possible.|
 
 ### Exit codes
 
-	|Code |Result |Description
-	|----------------|:-----------:|-----------:|
-	|0 | Success| Credentials were successfully acquired and have been written to stdout.|
-	|1 | ProviderNotApplicable | The current provider does not provide credentials for the given URI.|
-	|2 | Failure | The provider is the correct provider for the given URI, but cannot provide credentials. In this case, nuget.exe will not retry authentication and will fail. A typical example is when a user cancels an interactive login. |
+|Code |Result |Description
+|----------------|:-----------:|-----------:|
+|0 | Success| Credentials were successfully acquired and have been written to stdout.|
+|1 | ProviderNotApplicable | The current provider does not provide credentials for the given URI.|
+|2 | Failure | The provider is the correct provider for the given URI, but cannot provide credentials. In this case, nuget.exe will not retry authentication and will fail. A typical example is when a user cancels an interactive login. |
 
 ### Standard output
 
-	|Property |Notes|
-	|----------------|-----------|
-	|Username | Username for authenticated requests.|
-	| Password | Password for authenticated requests.|
-	| Message | Optional details about the response, used only to show additional details in failure cases. |
+|Property |Notes|
+|----------------|-----------|
+|Username | Username for authenticated requests.|
+| Password | Password for authenticated requests.|
+| Message | Optional details about the response, used only to show additional details in failure cases. |
 
 Example stdout:
 

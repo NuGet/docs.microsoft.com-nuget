@@ -99,14 +99,12 @@ The source code is under the `src` folder. Although our demo only uses a single 
 
 > [!Note]
 > There is currently a [known bug in the NuGet client](https://nuget.codeplex.com/workitem/4072) that causes the client to still add the `packages` folder to version control. A workaround is to disable the source control integration. In order to do that, you'll need a `nuget.config ` file in the  `.nuget` folder that is parallel to your solution. If this folder doesn't exist yet, you'll need to create it. In `nuget.config`, add the following content:
-
-		```
-		&lt;configuration>
-			&lt;solution>
-				&lt;add key="disableSourceControlIntegration" value="true" />
-			&lt;/solution>
-		&lt;/configuration>
-		```
+		
+		<configuration>
+			<solution>
+				<add key="disableSourceControlIntegration" value="true" />
+			</solution>
+		</configuration>
 
 > For more details have a look at the [NuGet Config Settings](../consume-packages/configuring-nuget-behavior)
 
@@ -194,13 +192,13 @@ Team Build offers various process templates. For this demonstration, we're using
 
 Git and TF Version Control have different Team Build templates, so the following steps will vary depending on which version control system you are using. In both cases, all you need is selecting the build.proj as the project you want to build.
 
-First, let's look at the process template for git. In the git based template the build is selected via the property `1. Solution to build`:
+First, let's look at the process template for git. In the git based template the build is selected via the property `Solution to build`:
 
 ![Build Process for git](media/PackageRestoreTeamBuildGit.png)
 
 Please note that this property is a location in your repository. Since our `build.proj` is in the root, we simply used `build.proj`. If you place the build file under a folder called `tools`, the value would be `tools\build.proj`.
 
-In the TF version control template the project is selected via the property `1. Projects`:
+In the TF version control template the project is selected via the property `Projects`:
 
 ![Build Process for TFVC](media/PackageRestoreTeamBuildTFVC.png)
 
