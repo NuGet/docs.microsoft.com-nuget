@@ -59,7 +59,7 @@ Some users have reported that after installing NuGet packages in WebMatrix that 
 
 ## Other Recent Improvements
 
-When NuGet Package Manager 2.8 was released for Visual Studio, we also released NuGet Package Manager 2.5.0 for WebMatrix.  While this was mentioned in the [NuGet 2.8 Release Notes](../release-notes/nuget-2.8.md#WebMatrix-NuGet-Client-Updates), we didn't mention the specific new features that update introduced.
+When NuGet Package Manager 2.8 was released for Visual Studio, we also released NuGet Package Manager 2.5.0 for WebMatrix.  While this was mentioned in the [NuGet 2.8 Release Notes](../release-notes/nuget-2.8.md##webmatrix-nuget-client-updates), we didn't mention the specific new features that update introduced.
 
 ### Update All
 

@@ -267,5 +267,5 @@ To make your package available to other developers,  follow the instructions on 
 - [Symbol packages](../create-packages/symbol-packages.md)
 - [Dependency Versions](../create-packages/dependency-versions.md)
 - [Supporting Multiple .NET Framework Versions](../create-packages/supporting-multiple-target-frameworks.md)
-- [Including MSBuild props and targets in a package](../create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package.md)
+- [Including MSBuild props and targets in a package](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
 - [Creating Localized Packages](../create-packages/creating-localized-packages.md)

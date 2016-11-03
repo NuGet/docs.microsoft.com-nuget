@@ -28,7 +28,6 @@ ms.reviewer:
  
 --- 
 
-
 # Dependency Resolution 
 
 Any time a package is installed or reinstalled, which includes being installed as part of a [restore](../consume-packages/package-restore.md) process, NuGet also installs any additional packages on which that first package depends.
@@ -63,11 +62,11 @@ As dependencies are installed into a project, NuGet 3.x adds them to a flat pack
 ### Advantages of transitive restore
 
 1. Developers explicitly declare which package versions they depend on, without worrying about their down-level dependencies. 
-2. Project files are not modified, avoiding merge conflicts and file churn on commits. This also allows the project system to evolve independent of NuGet. 
-3. Developers can easily change dependency versions without worrying about side effects on the rest of the project.  
-4. Hint paths are not being burned into the project files, fixing the ability to move projects around on disk, and re-targeting problems. 
-5. Direct support for Native or special dependencies can be determined directly by the project system. This is related to a new package format in NuGet 3.x. 
-6. Developers can specify a floating version range such as *2.8.\**, avoiding expensive and error prone calls to NuGet update on the client machines and build servers. 
+1. Project files are not modified, avoiding merge conflicts and file churn on commits. This also allows the project system to evolve independent of NuGet. 
+1. Developers can easily change dependency versions without worrying about side effects on the rest of the project.  
+1. Hint paths are not being burned into the project files, fixing the ability to move projects around on disk, and re-targeting problems. 
+1. Direct support for Native or special dependencies can be determined directly by the project system. This is related to a new package format in NuGet 3.x. 
+1. Developers can specify a floating version range such as *2.8.\**, avoiding expensive and error prone calls to NuGet update on the client machines and build servers. 
 
 ### Lock file and MSBuild
 
@@ -81,8 +80,9 @@ The lock file is temporary and does not need to be added to source control; it's
 NuGet 3.x applies four main rules to resolve dependencies: lowest applicable version, floating versions, nearest-wins, cousin dependencies. 
 
 #### Lowest applicable version
+<a name="lowest-applicable-version"></a>
 
-NuGet 3.x restores the lowest possible version of a package as defined by its dependencies. This rule also applied to dependencies on the application or the class library unless declared as [floating](#floating-versions).  
+NuGet 3.x restores the lowest possible version of a package as defined by its dependencies. This rule also applied to dependencies on the application or the class library unless declared as [floating](#floating-versions).
 
 For example, in the following figure *1.0-Beta* is considered lower than *1.0* so NuGet chooses the 1.0 version: 
 
@@ -96,7 +96,8 @@ When an application specifies an exact version number, such as *1.2*, that is no
 
 ![NuGet generates an error when an exact package version is not available](media/projectJson-dependency-3.png)
 
-#### Floating Versions
+#### Floating versions
+<a name="floating-versions"></a>
 
 A floating dependency version is specified with the * wildcard, as with *6.0.\** in the `project.json` file. This says "use the latest 6.0.x version"; a floating version of *4.\** means "use the latest 4.x version." Using a floating version allows a dependency package to continue evolving without requiring a change to the consuming application (or package).
 
@@ -105,7 +106,8 @@ When a floating version constraint is specified then NuGet will resolve the high
 ![Choosing version 6.0.1 when a floating version 6.0.* is requested](media/projectJson-dependency-4.png)
 
 
-#### Nearest Wins
+#### Nearest wins
+<a name="nearest-wins"></a>
 
 When the package graph for an application contains different versions of the same package, the package that's closest to the application in the graph will be used and others will be ignored. This allows an application to override any particular package version in the dependency graph. 
 
@@ -120,13 +122,14 @@ This rule also results in greater efficiency with large dependency graph (such a
 
 ![When NuGet ignores a package in the graph, it ignores that entire branch](media/projectJson-dependency-6.png)
 
-#### Cousin Dependencies
+#### Cousin dependencies
+<a name="cousin-dependencies"></a>
 
 When different package versions are referred to at the same distance in the graph from the application, NuGet uses the lowest version that satisfies all version requirements (as with the [lowest applicable version](#lowest-applicable-version) and [floating versions](#floating-versions) rules). In the image below, for example, version *2.0* of Package B will satisfy the other *>=1.0* constraint, and will thus be used:
 
 ![Resolving cousin dependencies using the lower version that satisfies all constraints](media/projectJson-dependency-7.png)
 
-In some cases, it is not possible to meet all version requirements. As shown below, if Package A required exactly Package B *1.0* and Package C requires Package B *>=2.0*, then NuGet cannot resolve the dependencies and will give an error.  
+In some cases, it is not possible to meet all version requirements. As shown below, if Package A required exactly Package B *1.0* and Package C requires Package B *>=2.0*, then NuGet cannot resolve the dependencies and will give an error.
 
 ![Unresolvable dependencies due to an exact version requirement](media/projectJson-dependency-8.png)
 

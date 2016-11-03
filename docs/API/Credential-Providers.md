@@ -75,7 +75,7 @@ A provider must also do the following:
 ### Exit codes
 
 |Code |Result |Description
-|----------------|:-----------:|-----------:|
+|----------------|-----------|-----------|
 |0 | Success| Credentials were successfully acquired and have been written to stdout.|
 |1 | ProviderNotApplicable | The current provider does not provide credentials for the given URI.|
 |2 | Failure | The provider is the correct provider for the given URI, but cannot provide credentials. In this case, nuget.exe will not retry authentication and will fail. A typical example is when a user cancels an interactive login. |
@@ -93,4 +93,3 @@ Example stdout:
     { "Username" : "freddy@example.com",
       "Password" : "bwm3bcx6txhprzmxhl2x63mdsul6grctazoomtdb6kfbof7m3a3z",
       "Message"  : "" }
-

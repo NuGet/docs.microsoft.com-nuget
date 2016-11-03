@@ -312,7 +312,7 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 - [Symbol packages](../create-packages/symbol-packages.md)
 - [Dependency Versions](../create-packages/dependency-versions.md)
 -[Supporting Multiple .NET Framework Versions](../create-packages/supporting-multiple-target-frameworks.md)
-- [Include MSBuild props and targets in a package](../create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package.md)
+- [Include MSBuild props and targets in a package](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
 - [Creating Localized Packages](../create-packages/creating-localized-packages.md)
 - [.NET Standard Library documentation](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
 - [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/en-us/dotnet/articles/core/porting/index)
