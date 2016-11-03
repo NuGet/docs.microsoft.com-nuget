@@ -121,7 +121,7 @@ ms.reviewer:
                             <p>Explore NuGet</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Learn more about individual concepts, tools, and policies
+                            Learn about creation and consumption workflows, find references, and study policies.
                         </p>
                     </header>
                     <section class="journey-step-elements content">
@@ -129,55 +129,55 @@ ms.reviewer:
                             <li class="column column-third">
                                 <a href="./create-packages/overview-and-workflow.md">
                                     <h3>Create Packages</h3>
-                                    <p>Overview and workflow.</p>
+                                    <p>Everything you need to know about creating NuGet packages, from the complete workflow and versioning to pre-release, symbol, and other specialized packages.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="./consume-packages/overview-and-workflow.md">
                                     <h3>Consume Packages</h3>
-                                    <p>Overview and workflow.</p>
+                                    <p>Everything you need to know about using NuGet packages in a project, from finding and choosing good packages to reinstallation, updates, restoration, and caching.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="./hosting-packages/overview.md">
                                     <h3>Host Packages</h3>
-                                    <p>Overview and workflow.</p>
+                                    <p>Learn how to host packages on your own servers or galleries to make them available to only a limited audience.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="./tools/nuget.exe-cli-reference.md">
                                     <h3>Tools</h3>
-                                    <p>Learn more about NuGet.exe CLI reference, package manager UI and other tools to interact with NuGet</p>
+                                    <p>The complete guides to the nuget.exe CLI tool, and the Package Manager UI and Package Manager Console in Visual Studio.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="./schema/nuspec.md">
                                     <h3>Schema</h3>
-                                    <p>Learn more about the nupsec file, configuration files and other files that are key to the NuGet workflow.</p>
+                                    <p>References for nuspec files, nuget.config files, and other files and convensions.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="./api/credential-providers.md">
                                     <h3>API</h3>
-                                    <p>Learn more about credential providers and NuGet API v3.</p>
+                                    <p>Details about authenticating with package sources and the NuGet API.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="./visual-studio-extensibility/nuget-api-in-visual-studio.md">
                                     <h3>Visual Studio Extensibility</h3>
-                                    <p></p>
+                                    <p>Details about the API to the NuGet Package Manager UI and Console in Visual Studio, project system support, and integrating NuGet packages into Visual Studio templates.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="./policies/nuget-faq.md">
                                     <h3>Policies</h3>
-                                    <p>FAQs, Governance and key NuGet.org policies</p>
+                                    <p>Frequently-asked questions along with information about NuGet as an open-source project, deleting packages, and resolving disputes.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="./release-notes/nuget-3.5-rc.md">
                                     <h3>Release Notes</h3>
-                                    <p></p>
+                                    <p>Detailed release notes for every version of NuGet back to the beginning.</p>
                                 </a>
                             </li>
                         </ul>
