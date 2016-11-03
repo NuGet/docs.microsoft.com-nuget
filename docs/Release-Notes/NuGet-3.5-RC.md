@@ -34,7 +34,7 @@ ms.reviewer:
 
 [Issues List](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%223.5 RC")
 
-**Bugs:**
+## Bugs
 
 * Install/restore of a package fails with "Package contains multiple nuspec files." - [#3231](https://github.com/NuGet/Home/issues/3231)
 
@@ -92,7 +92,7 @@ ms.reviewer:
 
 * "Upgrade vailable" filter shows upgrades that violate the version constraint - [#1094](https://github.com/NuGet/Home/issues/1094)
 
-**Performance Improvements:**
+## Performance Improvements
 
 * Performance: Improve ContentModel target framework parsing - [#3162](https://github.com/NuGet/Home/issues/3162)
 
@@ -102,7 +102,7 @@ ms.reviewer:
 
 * Solve ReSharper performance issues in NuGet Update - [#3044](https://github.com/NuGet/Home/issues/3044): On a sample project, time taken to install packages reduced from 140s to 68s.
 
-**DCRs:**
+## DCRs
 
 * NuGet needs to let users know that upgrading/installing in a dotnet tfm based PCL could cause issues - [#3138](https://github.com/NuGet/Home/issues/3138)
 
@@ -118,7 +118,7 @@ ms.reviewer:
 
 * Symbol packages should not ever be used in install or update #2807
 
-**Features:**
+## Features
 
 * Support for fallback package folders - [#2899](https://github.com/NuGet/Home/issues/2899)
 

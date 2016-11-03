@@ -43,7 +43,7 @@ $Feed = "Your url"
 
 **Workaround:**
 
-Store passwords in clear text using the [-StorePasswordInClearText](/tools/nuget.exe-cli-reference#sources) option.
+Store passwords in clear text using the [-StorePasswordInClearText](../tools/nuget.exe-cli-reference.md#sources) option.
 
 ## Error installing packages with NuGet 3.4, 3.4.1
 
@@ -94,7 +94,7 @@ If you have upgraded to NuGet 2.7+ but your solution fails to build stating that
 
 1. **Force save your NuGet settings with consent given.** To do this, open Visual Studio's options and under Package Manager, choose General. Uncheck and then re-check the boxes for consent and click OK. This forces your `%AppData%\NuGet\NuGet.config` file to be saved with consent explicitly given, allowing NuGet 2.6 and earlier to see that you've given consent.
 1. **Update the version of `NuGet.exe` in your `.nuget` folder.** To do this, run `nuget.exe update -self` from your `.nuget` folder, which will download the latest version of `NuGet.exe` and replace the version in the `.nuget` folder. The latest version of `NuGet.exe` will infer consent to be ON even when not explicitly saved in the `NuGet.config` file.
-1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](/consume-packages/package-restore#migrating-to-automatic-restore).
+1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](../consume-packages/package-restore.md#migrating-to-automatic-restore).
 
 ## Build failure after package update in VS 2012
 The problem: You are using VS 2012 RTM. When updating NuGet packages, you get this message: 
@@ -117,8 +117,7 @@ NuGet if you have an older version installed.
 When viewing the logs, you might see a mention of a `SignatureMismatchException`.
 
 To prevent this from occurring, there is a [Visual Studio 2010 SP1 hotfix](http://bit.ly/vsixcertfix) you can install.
-Alternatively, the workaround is to simply uninstall NuGet (while running Visual Studio as Administrator) and then install it from the VS Extension Gallery.  See
-<a href="http://support.microsoft.com/kb/2581019">http://support.microsoft.com/kb/2581019</a> for more information.
+Alternatively, the workaround is to simply uninstall NuGet (while running Visual Studio as Administrator) and then install it from the VS Extension Gallery.  See [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019) for more information.
 
 ## Package Manager Console throws an exception when the Reflector Visual Studio Add-In is also installed.
 
@@ -167,7 +166,7 @@ We've contacted the author of the add-in in the hopes of working out a resolutio
 
 ## Opening Package Manager Console fails with ObjectSecurity exception
 
-If you see these errors when trying to open the Package Manager Console:
+You might see these errors when trying to open the Package Manager Console:
 
     The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2977) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject. 
     The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2984) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject. 
@@ -176,7 +175,7 @@ If you see these errors when trying to open the Package Manager Console:
     The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(3005) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject. 
     The term 'Get-ExecutionPolicy' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
 
-follow the solution discussed on this page (<a href="http://stackoverflow.com/questions/12638289/embedding-powershell-v2-0-in-net-app-on-windows-8-rtm">http://stackoverflow.com/questions/12638289/embedding-powershell-v2-0-in-net-app-on-windows-8-rtm</a>) to fix it.
+If so, follow the solution [discussed on StackOverflow](http://stackoverflow.com/questions/12638289/embedding-powershell-v2-0-in-net-app-on-windows-8-rtm) to fix them.
 
 ## The Add Package Library Reference dialog throws an exception if the solution contains InstallShield Limited Edition Project.
 
@@ -192,10 +191,7 @@ NuGet does not require admin access to use it.
 
 ## The Package Manager Console crashes when I open it in Windows XP. What's wrong?
 
-NuGet requires Powershell 2.0 runtime. Windows XP, by default, doesn't have Powershell 2.0. 
-You can download the Powershell 2.0 runtime from this link 
-<a href="http://support.microsoft.com/kb/968929">http://support.microsoft.com/kb/968929</a>. 
-After you install it, restart Visual Studio and you should be able to open Package Manager Console.
+NuGet requires Powershell 2.0 runtime. Windows XP, by default, doesn't have Powershell 2.0. You can download the Powershell 2.0 runtime from [http://support.microsoft.com/kb/968929](http://support.microsoft.com/kb/968929). After you install it, restart Visual Studio and you should be able to open Package Manager Console.
 
 ## Visual Studio 2010 SP1 Beta crashes on exit if the Package Manager Console is open.
 
@@ -236,18 +232,13 @@ with "Code Analysis" turned on.
     C:\temp\Scratch\src\MyProject.UnitTests\bin\Debug\MyProject.UnitTests.dll. 
     MyProject.UnitTests
 
-<a href="http://davesbox.com/archive/2008/06/14/reference-resolutions-changes-in-code-analysis-and-fxcop-part-2.aspx">David Kean</a> 
-has an Excellent BLog post that explains this issue. 
-By default, FluentNHibernate requires NHibernate 3.0.0.2001. However, by design NuGet will install NHibernate 3.0.0.4000 
-in your project and add the appropriate binding redirects so that it will work.
-You project will compile just fine if code analysis is not turned on. In contrast to the compiler, 
-code analysis tool doesn't properly follow the binding redirects to use 3.0.0.4000 instead of 3.0.0.2001. 
-You can work around the issue by either installing NHibernate 3.0.0.2001 or tell the code analysis tool to 
-behave the same as the compiler by doing the following:
+David Kean has an [excellent blog post](http://davesbox.com/archive/2008/06/14/reference-resolutions-changes-in-code-analysis-and-fxcop-part-2.aspx) that explains this issue.
+
+By default, FluentNHibernate requires NHibernate 3.0.0.2001. However, by design NuGet will install NHibernate 3.0.0.4000 in your project and add the appropriate binding redirects so that it will work. You project will compile just fine if code analysis is not turned on. In contrast to the compiler, code analysis tool doesn't properly follow the binding redirects to use 3.0.0.4000 instead of 3.0.0.2001. You can work around the issue by either installing NHibernate 3.0.0.2001 or tell the code analysis tool to behave the same as the compiler by doing the following:
 
 1. Go to *%PROGRAMFILES%\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop* 
-2. Open FxCopCmd.exe.config and change `AssemblyReferenceResolveMode` from `StrongName` to `StrongNameIgnoringVersion`. 
-3. Save the change and rebuild your project. 
+1. Open FxCopCmd.exe.config and change `AssemblyReferenceResolveMode` from `StrongName` to `StrongNameIgnoringVersion`. 
+1. Save the change and rebuild your project. 
 
 ## Write-Error command doesn't work inside install.ps1/uninstall.ps1/init.ps1
 

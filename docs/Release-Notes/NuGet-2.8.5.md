@@ -29,7 +29,7 @@ ms.reviewer:
 --- 
 # NuGet 2.8.5 Release Notes
 
-[NuGet 2.8.3 Release Notes](../nuget/release-notes/nuget-2.8.3.md) | [NuGet 2.8.6 Release Notes](../nuget/release-notes/nuget-2.8.6.md) 
+[NuGet 2.8.3 Release Notes](../release-notes/nuget-2.8.3.md) | [NuGet 2.8.6 Release Notes](../release-notes/nuget-2.8.6.md) 
 
 NuGet 2.8.5 was released March 30, 2015. It is a minor update to our 2.8.3 VSIX with some targeted fixes. 
 
@@ -43,4 +43,3 @@ In this release, the support for NuGet Package Manager dialog was added for [DNX
 One bug was fixed that prevented packages from installing into FSharp projects properly:
 
 https://nuget.codeplex.com/workitem/4400
-  

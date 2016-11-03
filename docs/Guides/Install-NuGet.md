@@ -27,12 +27,13 @@ ms.reviewer:
 #ms.custom: 
  
 ---
-#Installing NuGet
+
+# Installing NuGet
 
 There are two primary tools available to help you build, publish and consume NuGet packages:
 
 1. The [**NuGet CLI**](#nuget-cli) is the command-line utility that works on Windows, Mac OS X, and Linux and supports all NuGet capabilities.
-2. The [**NuGet Package Manager  in Visual Studio**](#nuget-package-manager-in-visual-studio) is a GUI tool for managing packages and includes a console through which you can use certain NuGet commands directly within Visual Studio. It's included with Visual Studio 2012 and later and can be installed manually for earlier versions.
+1. The [**NuGet Package Manager  in Visual Studio**](#nuget-package-manager-in-visual-studio) is a GUI tool for managing packages and includes a console through which you can use certain NuGet commands directly within Visual Studio. It's included with Visual Studio 2012 and later and can be installed manually for earlier versions.
 
 Both support the following operations:
 
@@ -57,7 +58,7 @@ The following capabilities are supported only in the NuGet CLI:
 > Also, the cross-platform [.NET Core CLI](https://docs.microsoft.com/dotnet/articles/core/tools/index#installation) toolchain for developing .NET Core applications also supports a [dotnet restore](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-restore) command that performs a nuget restore. No other nuget commands are available in the .NET Core CLI at present, however. 
 
 
-##NuGet CLI
+## NuGet CLI
 
 The NuGet CLI can be installed using any of the following methods:
 
@@ -67,60 +68,60 @@ The NuGet CLI can be installed using any of the following methods:
 > With NuGet 1.4+, you can use `nuget update -self` to update your existing nuget.exe to the latest version.
 
 
-2. **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client. 
+1. **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client. 
 
-```
-		choco install nuget.commandline
-```
- 
-3. **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.
+        choco install nuget.commandline
 
-> [!NuGet 2.x users]
+1. **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.
+
+> **NuGet 2.x users**
+>
 > Because there are a few breaking changes introduced in NuGet 3.2, [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe) points to the latest stable NuGet 2.x release to prevent CI systems from potentially breaking at this time.
 
-
-
 ### Compatibility with Mono
+
 Though not fully-supported as yet, the NuGet command-line executable (version 3.2 and above) will run on Mac OS X and Linux systems when the Mono runtime is installed with a few limitations:
 
-* Commands tested to work:
-	* Config
-	* Delete
-	* Help
-	* Install
-	* List
-	* Push
-	* SetApiKey
-	* Sources
-	* Spec	
-* Partially-working commands:
-	* Pack: works with .nuspec files but not with project files.
-	* Restore: works with packages.config and project.json files but not with solution (.sln) files.
-* Commands that do not work:
-	* Update
-	
+- Commands tested to work:
+    - Config
+    - Delete
+    - Help
+    - Install
+    - List
+    - Push
+    - SetApiKey
+    - Sources
+    - Spec
+- Partially-working commands:
+    - Pack: works with .nuspec files but not with project files.
+    - Restore: works with packages.config and project.json files but not with solution (.sln) files.
+- Commands that do not work:
+    - Update
 
-###Related topics
-- [NuGet CLI reference ](/tools/nuget.exe-cli-reference)
-- [Creating a package](/create-packages/creating-a-package)
-- [Publishing a Package](/create-packages/publish-a-package)
+
+### Related topics
+
+- [NuGet CLI reference](../tools/nuget.exe-cli-reference.md)
+- [Creating a package](../create-packages/creating-a-package.md)
+- [Publishing a Package](../create-packages/publish-a-package.md)
 
 
 ## NuGet Package Manager in Visual Studio
 
-The NuGet Package Manager is included in every edition of Visual Studio 2012 and later. It includes the Package Manager UI ([reference](/tools/package-manager-ui)) and the Package Manager Console, through which you can access tools that come with certain packages ([reference](/tools/package-manager-console)).
+The NuGet Package Manager is included in every edition of Visual Studio 2012 and later. It includes the Package Manager UI ([reference](../tools/package-manager-ui.md)) and the Package Manager Console, through which you can access tools that come with certain packages ([reference](../tools/package-manager-console.md)).
 
 > [!Note]
 > The console requires [PowerShell 2.0](http://support.microsoft.com/kb/968929), which will already be installed on Windows 7 or higher and Windows Server 2008 R2 or higher.
+>
 > Package Manager Console commands also work only within  Visual Studio. Use the NuGet CLI outside of that environment.
 
 
 ### Package Manager installation for Visual Studio 2010 and earlier
 
 1. In Visual Studio, click **Tools > Extension and Updates**.
-2. Navigate to **Online**, search for "NuGet Package Manager for Visual Studio," and click **Download**.
-3. In the Installer dialog box, click **Install**.
-4. When installation is complete, restart Visual Studio.
+1. Navigate to **Online**, search for "NuGet Package Manager for Visual Studio," and click **Download**.
+1. In the Installer dialog box, click **Install**.
+1. When installation is complete, restart Visual Studio.
 
 ### Updating the Package Manager
 
@@ -136,17 +137,16 @@ Accessing the beta channel is simple:
 
 1. In Visual Studio, navigate to **Tools > Options > Environment > Extensions and Updates**, then add the feed `https://dotnet.myget.org/F/nuget-beta/vsix/` to the **Additional Extension Galleries** list:
 
-	![Adding the NuGet beta channel feed to Visual Studio](media/BetaChannel-ToolsSettings.png)
+    ![Adding the NuGet beta channel feed to Visual Studio](media/BetaChannel-ToolsSettings.png)
 
-2. Navigate to **Tools > Extensions and Updates** and select **Online**, which should show the NuGet-Beta Feed from which you can install a beta NuGet Package Manager:
+1. Navigate to **Tools > Extensions and Updates** and select **Online**, which should show the NuGet-Beta Feed from which you can install a beta NuGet Package Manager:
 
-	![Checking NuGet beta channel updates](media/BetaChannel-ExtensionUpdate.png)
+    ![Checking NuGet beta channel updates](media/BetaChannel-ExtensionUpdate.png)
 
 To report problems with the Beta builds or to share ideas, open an issue on the [NuGet GitHub repository](https://github.com/Nuget/Home).
 
-###Related topics
+### Related topics
 
-- [Package Manager UI reference](/tools/package-manager-ui)
-- [Package Manager Console reference](/tools/package-manager-console)
-- [Package Manager Console PowerShell reference](/tools/powershell-reference)
-
+- [Package Manager UI reference](../tools/package-manager-ui.md)
+- [Package Manager Console reference](../tools/package-manager-console.md)
+- [Package Manager Console PowerShell reference](../tools/powershell-reference.md)

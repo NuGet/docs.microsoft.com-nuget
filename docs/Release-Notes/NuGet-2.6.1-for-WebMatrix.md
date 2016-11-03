@@ -29,7 +29,7 @@ ms.reviewer:
 --- 
 # NuGet 2.6.1 for WebMatrix Release Notes
 
-[NuGet 2.6 Release Notes](/nuget/release-notes/nuget-2.6) | [NuGet 2.7 Release Notes](/nuget/release-notes/nuget-2.7)
+[NuGet 2.6 Release Notes](../release-notes/nuget-2.6.md) | [NuGet 2.7 Release Notes](../release-notes/nuget-2.7.md)
 
 The NuGet team released an updated NuGet Package Manager extension for WebMatrix on March 26, 2014.  This update can be installed from the [WebMatrix Extension Gallery](http://extensions.webmatrix.com/packages/NuGetPackageManager/) using the following steps:
 
@@ -49,7 +49,7 @@ Since WebMatrix 3 was released, new features have been introduced into NuGet tha
 
 ![An error occurred. The schema version is incompatible. Please upgrade NuGet to the latest version.](./media/NuGet-2.8/webmatrix-schema-version.png)
 
-This latest release provides compatibility with the newest NuGet packages, preventing this error from occurring. New versions of packages including Microsoft.AspNet.WebPages can now be installed in WebMatrix.  Some of these packages were using NuGet features such as [XDT config transforms](/nuget/release-notes/nuget-2.6#XDT-Web.config-transformation-support), which wasn't supported in WebMatrix until now.
+This latest release provides compatibility with the newest NuGet packages, preventing this error from occurring. New versions of packages including Microsoft.AspNet.WebPages can now be installed in WebMatrix.  Some of these packages were using NuGet features such as [XDT config transforms](../release-notes/nuget-2.6.md#xdt), which wasn't supported in WebMatrix until now.
 
 ### Zero-Byte DLLs in bin Folder
 
@@ -59,7 +59,7 @@ Some users have reported that after installing NuGet packages in WebMatrix that 
 
 ## Other Recent Improvements
 
-When NuGet Package Manager 2.8 was released for Visual Studio, we also released NuGet Package Manager 2.5.0 for WebMatrix.  While this was mentioned in the [NuGet 2.8 Release Notes](/nuget/release-notes/nuget-2.8#WebMatrix-NuGet-Client-Updates), we didn't mention the specific new features that update introduced.
+When NuGet Package Manager 2.8 was released for Visual Studio, we also released NuGet Package Manager 2.5.0 for WebMatrix.  While this was mentioned in the [NuGet 2.8 Release Notes](../release-notes/nuget-2.8.md#webmatrix-nuget-client-updates), we didn't mention the specific new features that update introduced.
 
 ### Update All
 

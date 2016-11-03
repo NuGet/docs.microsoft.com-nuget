@@ -30,7 +30,7 @@ ms.reviewer:
 
 # NuGet 3.5 Beta Release Notes
 
-NuGet 3.5 Beta was released on May 16, 2016 as part tof the ASP.NET Core Preview Tooling wave. This release adds support .NET Core RC2 and ASP.NET Core RC2. For more information about this release please refer to http://dot.net
+NuGet 3.5 Beta was released on May 16, 2016 as part tof the ASP.NET Core Preview Tooling wave. This release adds support .NET Core RC2 and ASP.NET Core RC2. For more information about this release please refer to [http://dot.net](http://dot.net).
 
 You can download both the VSIX and NuGet.exe [here](https://dist.nuget.org/index.html).
 

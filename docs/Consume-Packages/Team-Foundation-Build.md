@@ -28,7 +28,6 @@ ms.reviewer:
  
 --- 
 
-
 # Walkthrough of Package Restore with Team Foundation Build
 
 > Applies To:
@@ -36,7 +35,7 @@ ms.reviewer:
 >  - Team Foundation Server 2012 or earlier
 >  - Custom Team Foundation Build Process Templates migrated to TFS 2013 or later
 >  - Build Process Templates With Nuget Restore functionality removed
-
+>
 > If you're using Visual Studio Team Services or on-premises Team Foundation Server 2013 with its build process templates, Automatic Package Restore happens as part of the build process.
 
 This section will provide a detailed walkthrough on how to restore packages as part of the [Team Foundation Build](http://msdn.microsoft.com/en-us/library/ms181710(v=VS.90).aspx) both, for [git](http://en.wikipedia.org/wiki/Git_(software)) as well as [TF Version Control](http://msdn.microsoft.com/en-us/library/ms181237(v=vs.120).aspx).
@@ -53,14 +52,14 @@ NuGet has supported [restoring packages](../consume-packages/package-restore.md)
 
 The cure to this problem is making sure that packages are restored as the first step in the build process. NuGet 2.7+ makes this easy via a simplified command line:
 
-	nuget.exe restore path\to\solution.sln
+    nuget.exe restore path\to\solution.sln
 
 When your build process restores packages before building the code, you don't need to check-in **.targets** files 
 
 > [!Note]
 > Packages must be authored to allow loading in Visual Studio. Otherwise, you may still want to check in `.targets` files so that other developers can simply open the solution without having to restore packages first. 
 
-The following demo project shows how to set up the build in such a way that the `packages` folders and **.targets** files don't need to be checked-in. Finally, I'll show how you can setup an automated build on the [Team Foundation Service] for this sample project.
+The following demo project shows how to set up the build in such a way that the `packages` folders and **.targets** files don't need to be checked-in. It also shows how to set up an automated build on the Team Foundation Service for this sample project.
 
 ## Repository Structure
 
@@ -68,26 +67,26 @@ Our demo project is a simple command line tool that uses the command line argume
 
 The structure of the repository looks as follows:
 
-	<Project>
-	    │   .gitignore
-	    │   .tfignore
-	    │   build.proj
-	    │
-	    ├───src
-	    │   │   BingSearcher.sln
-	    │   │
-	    │   └───BingSearcher
-	    │       │   App.config
-	    │       │   BingSearcher.csproj
-	    │       │   packages.config
-	    │       │   Program.cs
-	    │       │
-	    │       └───Properties
-	    │               AssemblyInfo.cs
-	    │
-	    └───tools
-	        └───NuGet
-	                NuGet.exe
+    <Project>
+        │   .gitignore
+        │   .tfignore
+        │   build.proj
+        │
+        ├───src
+        │   │   BingSearcher.sln
+        │   │
+        │   └───BingSearcher
+        │       │   App.config
+        │       │   BingSearcher.csproj
+        │       │   packages.config
+        │       │   Program.cs
+        │       │
+        │       └───Properties
+        │               AssemblyInfo.cs
+        │
+        └───tools
+            └───NuGet
+                    NuGet.exe
 
 You can see that we haven't checked-in the `packages` folder nor any **.targets** files.
 
@@ -98,42 +97,40 @@ The source code is under the `src` folder. Although our demo only uses a single 
 ### Ignore Files
 
 > [!Note]
-> There is currently a [known bug in the NuGet client](https://nuget.codeplex.com/workitem/4072) that causes the client to still add the `packages` folder to version control. A workaround is to disable the source control integration. In order to do that, you'll need a `nuget.config ` file in the  `.nuget` folder that is parallel to your solution. If this folder doesn't exist yet, you'll need to create it. In `nuget.config`, add the following content:
-		
-		<configuration>
-			<solution>
-				<add key="disableSourceControlIntegration" value="true" />
-			</solution>
-		</configuration>
+> There is currently a [known bug in the NuGet client](https://nuget.codeplex.com/workitem/4072) that causes the client to still add the `packages` folder to version control. A workaround is to disable the source control integration. In order to do that, you'll need a `nuget.config ` file in the  `.nuget` folder that is parallel to your solution. If this folder doesn't exist yet, you'll need to create it. In [`nuget.config`](../consume-packages/configuring-nuget-behavior.md), add the following content:
 
-> For more details have a look at the [NuGet Config Settings](../consume-packages/configuring-nuget-behavior.md)
+    <configuration>
+        <solution>
+            <add key="disableSourceControlIntegration" value="true" />
+        </solution>
+    </configuration>
 
 
 In order to communicate to the version control that we don’t intent to check-in the **packages** folders, we've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describes patterns of files you don't want to check-in.
 
 The `.gitignore` file looks as follows:
 
-	syntax: glob
-	*.user
-	*.suo
-	bin
-	obj
-	packages
+    syntax: glob
+    *.user
+    *.suo
+    bin
+    obj
+    packages
 
 The `.gitignore` file is [quite powerful](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html). For example, if you want to generally not check-in the contents of the `packages` folder but want to go with previous guidance of checking in the **.targets** files you could have the following rule instead:
 
-	packages
-	!packages/**/*.targets
+    packages
+    !packages/**/*.targets
 
 This will exclude all `packages` folders but will re-include all contained **.targets** files. By the way, you can find a template for `.gitignore` files that is specifically tailored for the needs of Visual Studio developers [here](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
 
 TF version control supports a very similar mechanism via the [.tfignore](http://msdn.microsoft.com/en-us/library/ms245454.aspx) file. The syntax is virtually the same:
 
-	*.user
-	*.suo
-	bin
-	obj
-	packages
+    *.user
+    *.suo
+    bin
+    obj
+    packages
 
 ## build.proj
  
@@ -147,44 +144,43 @@ This project will have the three conventional targets `Clean`, `Build` and `Rebu
 
 The result looks as follows:
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<Project ToolsVersion="4.0"
-	         DefaultTargets="Build"
-	         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    	
-	  <PropertyGroup>
-	    <OutDir Condition=" '$(OutDir)'=='' ">$(MSBuildThisFileDirectory)bin\</OutDir>
-	    <Configuration Condition=" '$(Configuration)'=='' ">Release</Configuration>
-	    <SourceHome Condition=" '$(SourceHome)'=='' ">$(MSBuildThisFileDirectory)src\</SourceHome>
-	    <ToolsHome Condition=" '$(ToolsHome)'=='' ">$(MSBuildThisFileDirectory)tools\</ToolsHome>
-	  </PropertyGroup>
-    	
-	  <ItemGroup>
-	    <Solution Include="$(SourceHome)*.sln">
-	      <AdditionalProperties>OutDir=$(OutDir);Configuration=$(Configuration)</AdditionalProperties>
-	    </Solution>
-	  </ItemGroup>
-    	
-	  <Target Name="RestorePackages">
-	    <Exec Command="&quot;$(ToolsHome)NuGet\NuGet.exe&quot; restore &quot;%(Solution.Identity)&quot;" />
-	  </Target>
-    	
-	  <Target Name="Clean">
-	    <MSBuild Targets="Clean"
-	             Projects="@(Solution)" />
-	  </Target>
-    	
-	  <Target Name="Build" DependsOnTargets="RestorePackages">
-	    <MSBuild Targets="Build"
-	             Projects="@(Solution)" />
-	  </Target>
-    	
-	  <Target Name="Rebuild" DependsOnTargets="RestorePackages">
-	    <MSBuild Targets="Rebuild"
-	             Projects="@(Solution)" />
-	  </Target>
-    	
-	</Project>
+    <?xml version="1.0" encoding="utf-8"?>
+    <Project ToolsVersion="4.0"
+             DefaultTargets="Build"
+             xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+      <PropertyGroup>
+        <OutDir Condition=" '$(OutDir)'=='' ">$(MSBuildThisFileDirectory)bin\</OutDir>
+        <Configuration Condition=" '$(Configuration)'=='' ">Release</Configuration>
+        <SourceHome Condition=" '$(SourceHome)'=='' ">$(MSBuildThisFileDirectory)src\</SourceHome>
+        <ToolsHome Condition=" '$(ToolsHome)'=='' ">$(MSBuildThisFileDirectory)tools\</ToolsHome>
+      </PropertyGroup>
+
+      <ItemGroup>
+        <Solution Include="$(SourceHome)*.sln">
+          <AdditionalProperties>OutDir=$(OutDir);Configuration=$(Configuration)</AdditionalProperties>
+        </Solution>
+      </ItemGroup>
+
+      <Target Name="RestorePackages">
+        <Exec Command="&quot;$(ToolsHome)NuGet\NuGet.exe&quot; restore &quot;%(Solution.Identity)&quot;" />
+      </Target>
+
+      <Target Name="Clean">
+        <MSBuild Targets="Clean"
+                 Projects="@(Solution)" />
+      </Target>
+
+      <Target Name="Build" DependsOnTargets="RestorePackages">
+        <MSBuild Targets="Build"
+                 Projects="@(Solution)" />
+      </Target>
+
+      <Target Name="Rebuild" DependsOnTargets="RestorePackages">
+        <MSBuild Targets="Rebuild"
+                 Projects="@(Solution)" />
+      </Target>
+    </Project>
 
 ## Configuring Team Build
 
@@ -203,4 +199,3 @@ In the TF version control template the project is selected via the property `Pro
 ![Build Process for TFVC](media/PackageRestoreTeamBuildTFVC.png)
 
 In contrast to the git based template the TF version control supports pickers (the button on the right hand side with the three dots). So in order to avoid any typing errors we suggest you use them to select the project.
-

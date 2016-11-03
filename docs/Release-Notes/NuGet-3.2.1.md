@@ -31,7 +31,7 @@ ms.reviewer:
 
 # NuGet 3.2.1 Release Notes
 
-[NuGet 3.2 Release Notes](../nuget/release-notes/nuget-3.2.md)
+[NuGet 3.2 Release Notes](../release-notes/nuget-3.2.md)
 
 NuGet 3.2.1 for the command-line was released October 12, 2015 with a handful of optimizations and fixes for the 3.2 release and is available from [dist.nuget.org](http://dist.nuget.org/index.html).
 
@@ -48,7 +48,6 @@ NuGet 3.2.1 for the command-line was released October 12, 2015 with a handful of
 * Now preventing a local .nuget folder from being created when a SpecialFolders.UserProfile cannot be located [1531](https://github.com/NuGet/Home/issues/1531)
 * Improved handling of packages in local cache that are corrupted during download [1405](https://github.com/NuGet/Home/issues/1405) [1157](https://github.com/NuGet/Home/issues/1157)
 
-  
 A complete list of issues addressed for the command-line and Visual Studio extension can be found in the NuGet GitHub [3.2.1 milestone](https://github.com/NuGet/Home/issues?q=milestone%3A3.2.1+is%3Aclosed)
 
 ## Known Issues

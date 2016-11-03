@@ -34,26 +34,26 @@ ms.reviewer:
 
 The `project.json` file replaces `packages.config` in UWP, ASP.NET 5, and .NET desktop projects (WPF and WinForms) as a means to maintain the list of packages used in a project. (For .NET Core, refer to [NET Core Tools - project.json](https://docs.microsoft.com/dotnet/articles/core/tools/project-json)).
 
-The [`project.lock.json`](#project-lock-json) file (described below) is also used in projects with a `project.json` file.
+The [`project.lock.json`](#projectlockjson) file (described below) is also used in projects with a `project.json` file.
 
-> [!NOTE]
->	When tooling for .NET Core and ASP.NET Core is complete, the function of project.json will be incorporated directly into project files (.csproj, .vsproj, etc.). NuGet clients will continue to support project.json for existing scenarios.
+> [!Note]
+> When tooling for .NET Core and ASP.NET Core is complete, the function of project.json will be incorporated directly into project files (.csproj, .vsproj, etc.). NuGet clients will continue to support project.json for existing scenarios.
 
 A project.json file has the following basic structure, where each of the four top-level objects can have any number of child objects:
 
     { 
         "dependencies": {
-			"PackageID" : "{version_constraint}"
-		}, 
+            "PackageID" : "{version_constraint}"
+        }, 
         "frameworks" : {
-			"TxM" : {}
-		}, 
+            "TxM" : {}
+        }, 
         "runtimes" : {
-			"RID": {}
-		}, 
+            "RID": {}
+        }, 
         "supports" : {
-			"CompatibilityProfile" : {}
-		}    
+            "CompatibilityProfile" : {}
+        }    
     }
    
 ## Dependencies 
@@ -93,14 +93,14 @@ The Operating System and Architectures that your application will be running on.
 
 If you are a portable class library that can run on any runtime, you don't need to specify a runtime. Of course any dependencies of your package have to run on any runtime as well. 
 
-	"runtimes": { 
+    "runtimes": { 
         "win10-arm": { }, 
-	    "win10-arm-aot": { }, 
-	    "win10-x86": { }, 
-	    "win10-x86-aot": { }, 
-	    "win10-x64": { }, 
-	    "win10-x64-aot": { } 
-	} 
+        "win10-arm-aot": { }, 
+        "win10-x86": { }, 
+        "win10-x86-aot": { }, 
+        "win10-x64": { }, 
+        "win10-x64-aot": { } 
+    } 
 
 
 ## Supports 
@@ -109,18 +109,18 @@ Defines a set of checks for package dependencies. You can define where you expec
 
 This section should be populated automatically when you select an entry in the Portable Class Library targets dialog. 
 
-	supports": { 
-	    "net46.app": {}, 
-	    "uwp.10.0.app": {} 
-	} 
+    supports": { 
+        "net46.app": {}, 
+        "uwp.10.0.app": {} 
+    } 
 
 ## Imports
 
 Imports are designed to allow packages that use the dotnet TxM to operate with packages that don't declare a dotnet TxM. If your project is using the dotnet TxM then all the packages you depend on must also have a dotnet TxM, unless you add the following to your project.json in order to allow non dotnet platforms to be compatible with dotnet. If you are using the dotnet TxM then the PCL project system will add the appropriate imports statement based on the supported targets. 
 
-	"frameworks": { 
-    	"dotnet": { "imports" : "portable-net45+win81" } 
-	} 
+    "frameworks": { 
+        "dotnet": { "imports" : "portable-net45+win81" } 
+    } 
 
 
 
@@ -139,7 +139,7 @@ In NuGet 3 unlike in ASP.NET Core projects the user is not expected to manually 
 Note that it is possible to edit the file, the user is responsible to build the project to kick off a package restore.
 
 
-# project.lock.json
+## project.lock.json
 
 The `project.lock.json` file is generated in the process of restoring the NuGet packages in projects that use `project.json`. It holds a snapshot of all the information that is generated as NuGet walks the graph of packages and includes the version, contents, and dependencies of all the packages in your project. The build system uses this to choose packages from a global location that are relevant when building the project instead of depending on a local packages folder in the project itself. This results in faster build performance because it's necessary to read only `project.lock.json` instead of many separate `.nuspec` files.
 

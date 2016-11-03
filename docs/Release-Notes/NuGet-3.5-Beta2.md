@@ -28,7 +28,7 @@ ms.reviewer:
  
 --- 
 
-#3.5 Beta2 Release Notes
+# 3.5 Beta2 Release Notes
 
 NuGet 3.5 Beta 2 RTM was released June 27, 2016 for Visual Studio 2013 and nuget.exe
 
@@ -38,7 +38,7 @@ NuGet 3.5 Beta 2 RTM was released June 27, 2016 for Visual Studio 2013 and nuget
 
 # Notable Changes
 
-**Bugs:**
+## Bugs
 
 * Updated error message to lack of support for password decrpytion in .NET Core for authenticated feeds  - [#2942](https://github.com/NuGet/Home/issues/2942)
 
@@ -94,7 +94,7 @@ NuGet 3.5 Beta 2 RTM was released June 27, 2016 for Visual Studio 2013 and nuget
 
 * Improve Update resolver failure messages - [#1373](https://github.com/NuGet/Home/issues/1373)
 
-**Features and Behavior Changes:**
+## Features and Behavior Changes
 
 * NuGet.exe push - timeout parameter doesn't work  - [#2785](https://github.com/NuGet/Home/issues/2785)
 

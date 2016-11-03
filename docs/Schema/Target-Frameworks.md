@@ -33,8 +33,8 @@ ms.reviewer:
 NuGet uses target framework references in a variety of places to specifically identify and isolate framework-dependent components of a package:
 
 - [nuspec manifest](../schema/nuspec.md): A package can indicate distinct packages to be included in a project depending on the project's target framework. 
-- [nupkg folder name](../create-packages/creating-a-package#from-a-convention-based-working-directory.md): The folders inside a package's `lib` folder can be named according to the target framework, each of which contains the DLLs and other content appropriate to that framework.
-- [project.json](../schema/project.json): The `frameworks` node specifies the framework versions that the project can be compiled against.
+- [nupkg folder name](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): The folders inside a package's `lib` folder can be named according to the target framework, each of which contains the DLLs and other content appropriate to that framework.
+- [project.json](../schema/project.json.md): The `frameworks` node specifies the framework versions that the project can be compiled against.
 
 
 > [!Note]
@@ -135,7 +135,9 @@ The `dotnet` series of monikers should be used in NuGet 3.3 an earlier; the `net
 
 ## Portable Class Libraries
 
-> [!Not recommended]
+> [!Warning]
+> **PCLs are not recommended**
+>
 > Although PCLs are supported, package authors should support netstandard instead. The .NET Platform Standard is an evolution of PCLs and represents binary portability across platforms using a single moniker that isn't tied to a static like like *portable-a+b+c* monikers.
 
 To define a target framework that refers to multiple child-target-frameworks, the `portable` keyword use used to prefix the list of referenced frameworks. Avoid artificially including extra frameworks that are not directly compiled against because it can lead to unintended side-effects in those frameworks.

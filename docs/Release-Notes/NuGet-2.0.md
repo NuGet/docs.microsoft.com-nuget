@@ -31,7 +31,7 @@ ms.reviewer:
 
 # NuGet 2.0 Release Notes
 
-[NuGet 1.8 Release Notes](/nuget/release-notes/nuget-1.8) | [NuGet 2.1 Release Notes](/nuget/release-notes/nuget-2.1)
+[NuGet 1.8 Release Notes](../release-notes/nuget-1.8.md) | [NuGet 2.1 Release Notes](../release-notes/nuget-2.1.md)
 
 NuGet 2.0 was released on June 19, 2012.
 
@@ -39,8 +39,8 @@ NuGet 2.0 was released on June 19, 2012.
 If you are running VS 2010 SP1, you might run into an installation error when attempting to upgrade 
 NuGet if you have an older version installed.
 
-The workaround is to simply uninstall NuGet and then install it from the VS Extension Gallery. See 
-<a href="http://support.microsoft.com/kb/2581019">http://support.microsoft.com/kb/2581019</a> for more information, or <a href="http://bit.ly/vsixcertfix">to go directly to the VS hotfix</a>.
+The workaround is to simply uninstall NuGet and then install it from the VS Extension Gallery.  See
+[http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019) for more information, or [go directly to the VS hotfix](http://bit.ly/vsixcertfix).
 
 Note: If Visual Studio won't allow you to uninstall the extension (the Uninstall button is disabled),
 then you likely need to restart Visual Studio using "Run as Administrator."

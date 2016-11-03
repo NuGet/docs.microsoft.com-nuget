@@ -31,7 +31,7 @@ ms.reviewer:
 
 # NuGet 1.3 Release Notes
 
-[NuGet 1.2 Release Notes](/nuget/release-notes/nuget-1.2) | [NuGet 1.4 Release Notes](/nuget/release-notes/nuget-1.4)
+[NuGet 1.2 Release Notes](../release-notes/nuget-1.2.md) | [NuGet 1.4 Release Notes](../release-notes/nuget-1.4.md)
 
 NuGet 1.3 was released on April 25, 2011.
 
@@ -42,7 +42,7 @@ NuGet 1.3 was released on April 25, 2011.
 The NuGet team partnered with the folks at [SymbolSource.org](http://www.symbolsource.org/) to offer 
 a really simple way of publishing your sources and PDB’s along with your package. This allows consumers 
 of your package to step into the source for your package in the debugger. For more details, read 
-[Creating and Publishing a Symbol Package](../create-packages/symbol-packages)
+[Creating and Publishing a Symbol Package](../create-packages/symbol-packages.md)
 The easy way to publish NuGet packages with sources. You can also watch a live demonstration of this 
 feature as part of the NuGet in Depth talk at Mix11. This feature is fully demonstrated starting at 
 the 20 minute mark of the video.
@@ -114,7 +114,7 @@ Thanks to community contributions, NuGet includes support for WiX project types 
 
 For a full list of bug fixes, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.3&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
 
-## Bug fixes worth noting:
+## Bug fixes worth noting
 
 * Packages with source files work in both Websites and in Web Application Projects. 
 For Websites, source files are copied into the `App_Code` folder

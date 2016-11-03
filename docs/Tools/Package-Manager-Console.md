@@ -52,7 +52,7 @@ In this topic:
 
 ## Finding a package
 
-In the console, [`Get-Package -ListAvailable`](../tools/powershell-reference#get-package.md) see all the packages available from the selected source. For nuget.org, the list will contain thousands of packages, so it's helpful to use the `-Filter` switch along with `-PageSize`. In NuGet 3.0 and later, you can instead use the [`Find-Package`](../tools/powershell-reference#find-package.md) command that is better suited to this operation.  
+In the console, [`Get-Package -ListAvailable`](../tools/powershell-reference.md#get-package) see all the packages available from the selected source. For nuget.org, the list will contain thousands of packages, so it's helpful to use the `-Filter` switch along with `-PageSize`. In NuGet 3.0 and later, you can instead use the [`Find-Package`](../tools/powershell-reference.md#find-package) command that is better suited to this operation.  
 
 Examples:
 
@@ -77,7 +77,7 @@ Examples:
 
 ## Installing a package
 
-Once you know the identifier of the package you want to install use [`Install-Package`](../tools/powershell-reference#install-package.md), such as `Install-Package elmah`.
+Once you know the identifier of the package you want to install use [`Install-Package`](../tools/powershell-reference.md#install-package), such as `Install-Package elmah`.
 
 NuGet retrieves the package from the specified package source and installs it in the default project of the solution, unless you specify another project using the `-ProjectName` switch. 
 
@@ -92,9 +92,9 @@ Installing a package performs the following actions:
 
 ## Uninstalling a package 
 
-If you do not already know the name of the package you want to remove, use the [`Get-Package`](../tools/powershell-reference#get-package.md) command with no parameters to see all of the currently-installed packages.
+If you do not already know the name of the package you want to remove, use the [`Get-Package`](../tools/powershell-reference.md#get-package) command with no parameters to see all of the currently-installed packages.
 
-To uninstall a package, use [`Uninstall-Package`](../tools/powershell-reference#uninstall-package.md) with the package ID, such as `Update-Package jQuery`.
+To uninstall a package, use [`Uninstall-Package`](../tools/powershell-reference.md#uninstall-package) with the package ID, such as `Update-Package jQuery`.
 
 Uninstalling a package performs the following actions:
 
@@ -106,9 +106,9 @@ Uninstalling a package performs the following actions:
 
 ## Updating a package 
 
-The [`Get-Package -updates`](../tools/powershell-reference#get-package.md) command checks if there are newer versions available for any installed packages.
+The [`Get-Package -updates`](../tools/powershell-reference.md#get-package) command checks if there are newer versions available for any installed packages.
 
-To update a package, use [`Update-Package`](../tools/powershell-reference#update-package.md) with the package ID, such as `Update-Package jQuery`.
+To update a package, use [`Update-Package`](../tools/powershell-reference.md#update-package) with the package ID, such as `Update-Package jQuery`.
 
 
 ## Extending the Package Manager Console

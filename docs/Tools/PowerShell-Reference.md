@@ -34,19 +34,19 @@ The Package Manager Console provides a PowerShell interface within Visual Studio
 
 Command | Description | NuGet Version
 --- | --- | ---
-<a href="#add-bindingredirect">Add-BindingRedirect</a> | Examines all assemblies within the output path for a project and adds binding redirects to the `app.config` or `web.config` where necessary. | All
-<a href="#find-package">Find-Package</a> | Searches a package source using a package ID or keywords. | 3.0+
-<a href="#get-package">Get-Package</a> | Retrieves the list of packages installed in the local repository, or lists packages available from a package source. | All
-<a href="#get-project">Get-Project</a> | Displays information about the default or specified project. | 3.0+
-<a href="#install-package">Install-Package</a> | Installs a package and its dependencies into the project. | All
-<a href="#open-packagepage">Open-PackagePage</a> | Launches the default browser with the project, license, or report abuse URL for the specified package. | Deprecated in 3.0+
-<a href="#sync-package">Sync-Package</a> | Get the version of installed package from specified project and syncs the version to the rest of projects in the solution. | 3.0+
-<a href="#uninstall-package">Uninstall-Package</a> | Removes a package from a project, optionally removing its dependencies. | All
-<a href="#update-package">Update-Package</a> | Updates a package and its dependencies, or all packages in a project. | All
+[Add-BindingRedirect](#add-bindingredirect) | Examines all assemblies within the output path for a project and adds binding redirects to the `app.config` or `web.config` where necessary. | All
+[Find-Package](#find-package) | Searches a package source using a package ID or keywords. | 3.0+
+[Get-Package](#get-package) | Retrieves the list of packages installed in the local repository, or lists packages available from a package source. | All
+[Get-Project](#get-project) | Displays information about the default or specified project. | 3.0+
+[Install-Package](#install-package) | Installs a package and its dependencies into the project. | All
+[Open-PackagePage](#open-packagepage) | Launches the default browser with the project, license, or report abuse URL for the specified package. | Deprecated in 3.0+
+[Sync-Package](#sync-package) | Get the version of installed package from specified project and syncs the version to the rest of projects in the solution. | 3.0+
+[Uninstall-Package](#uninstall-package) | Removes a package from a project, optionally removing its dependencies. | All
+[Update-Package](#update-package) | Updates a package and its dependencies, or all packages in a project. | All
 
 For detailed help on any of these commands within the console, just run the following with the command name in question:
 
-	Get-Help <command>
+    Get-Help <command>
 
 
 Note that all Package Manager Console commands support the following common PowerShell parameters: 
@@ -69,13 +69,13 @@ For details, refer to [about_CommonParameters](http://go.microsoft.com/fwlink/?L
 Examines all assemblies within the output path for a project and adds binding redirects to the appropriate configuration files. For additional details on what this means, see [Redirecting Assembly Versions](https://msdn.microsoft.com/library/7wd6ex19.aspx) on MSDN.
 
 > [!NOTE]
->    NuGet 1.2+ automatically runs this command when installing a package.  
+> NuGet 1.2+ automatically runs this command when installing a package.
 
 ### Usage
 
-	Add-BindingRedirect [-ProjectName <string>]
+    Add-BindingRedirect [-ProjectName <string>]
 
- 
+
 ### Parameters
 
 |     |     |
@@ -87,7 +87,8 @@ ProjectName | Specifies the project to which to add binding redirects, defaultin
     Add-BindingRedirect MyProjectName
 
 
-## Find-Package 
+## Find-Package
+
 *Version 3.0+*
 
 Searches a package source using a package ID or keywords. 
@@ -111,14 +112,14 @@ ExactMatch | Specified to use the keywords as a case-sensitive package ID.
 ### Examples
 
     # List packages with the keyword Elmah available
-	Find-Package Elmah
-    
+    Find-Package Elmah
+
     # List all versions of the jquery package
     Find-Package jquery -AllVersions -ExactMatch
-    
-	# List packages with the keyword EntityFramework and version 6.1.1
+
+    # List packages with the keyword EntityFramework and version 6.1.1
     Find-Package EntityFramework -version 6.1.1
-    
+
 
 ## Get-Package 
 
@@ -147,22 +148,22 @@ PageSize | *(3.0+)* When used with -ListAvailable, specifies the number of packa
 
 ### Examples
 
-	# Lists the packages installed in the current solution    
-	Get-Package
-    
+    # Lists the packages installed in the current solution
+    Get-Package
+
     # Lists packages available in the current package source
     Get-Package -ListAvailable
-    
-    # Lists all packages in the current source in pages of 20   
+
+    # Lists all packages in the current source in pages of 20
     Get-Package -ListAvailable -PageSize 20 
 
     # Lists packages with the Ninject keyword in the current source, up to 50
     Get-Package -ListAvailable -Filter Ninject
-        
-    # Lists packages installed in the solution that have available updates    
-	Get-Package -Updates
 
-    
+    # Lists packages installed in the solution that have available updates
+    Get-Package -Updates
+
+
 ## Get-Project
 
 Displays information about the default or specified project.
@@ -179,16 +180,16 @@ Name | Specifies the project to display, defaulting to the default project. The 
 All | Displays information for every project in the solution.
 
 ### Examples
-    
+
     # Displays information for the default project
-	Get-Project
-    
+    Get-Project
+
     # Displays information for MyProjectName
     Get-Project MyProjectName
-    
- 	# Displays information for all projects in the solution
+
+     # Displays information for all projects in the solution
     Get-Project -All
-    
+
 
 ## Install-Package
 
@@ -214,13 +215,13 @@ IgnoreDependencies | Installs only this package and not its dependencies.
 ProjectName | Specifies the project into which to install the package, defaulting to the default project.
 Source | Specifies the URL or path to a package source. If omitted, defaults to the currently selected package source.
 IncludePrerelease | Indicates that prerelease packages can be installed.
-FileConflictAction | Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Possible values are <em>Overwrite, Ignore, None, OverwriteAll</em>, and <em>IgnoreAll</em> (3.0+).
+FileConflictAction | Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Possible values are *Overwrite, Ignore, None, OverwriteAll*, and *IgnoreAll* (3.0+).
 DependencyVersion | Specifies the version of the dependency packages to use, which can be one of the following:
 | | - Lowest (default): the lowest version
 | | - HighestPatch: the version with the lowest major, lowest minor, highest patch
 | | - HighestMinor: the version with the lowest major, highest minor, highest patch
 | | - Highest: the highest version
-| | You can set the default value using the <a href="/schema/nuget.config-file#config-section"><em>dependencyVersion</em></a> setting in the nuget.config file.
+| | You can set the default value using the [*dependencyVersion*](../schema/nuget.config-file.md#config-section) setting in the nuget.config file.
 WhatIf | Shows what would happen when running the command without actually performing the install.
 
 ### Examples
@@ -233,17 +234,18 @@ WhatIf | Shows what would happen when running the command without actually perfo
 
     Install-package c:\temp\packages\jQuery.1.10.2.nupkg
 
-	# Installs the latest version of Elmah from the current source
-	Install-Package Elmah
-    
-	# Installs Glimpse 1.0.0 into the MvcApplication1 project 
+    # Installs the latest version of Elmah from the current source
+    Install-Package Elmah
+
+    # Installs Glimpse 1.0.0 into the MvcApplication1 project 
     Install-Package Glimpse -Version 1.0.0 -Project MvcApplication1
-    
-	# Installs Ninject.Mvc3 but not its dependencies from c:\temp\packages
+
+    # Installs Ninject.Mvc3 but not its dependencies from c:\temp\packages
     Install-Package Ninject.Mvc3 -IgnoreDependencies -Source c:\temp\packages
-        
+
 
 ## Open-PackagePage
+
 *Deprecated in 3.0+*
 
 Launches the default browser with the project, license, or report abuse URL for the specified package.
@@ -264,21 +266,22 @@ ReportAbuse | Opens the browser to the package's Report Abuse URL. If neither -L
 PassThru | Displays the selected URL but does not open it in the browser.
 
 ### Examples
-      
+
     # Opens a browser with the Ninject's package's project page
-	Open-PackagePage Ninject
-    
+    Open-PackagePage Ninject
+
     # Opens a browser with the Ninject's package's license page
     Open-PackagePage Ninject -License
-    
-	# Opens a browser with the Ninject's package's report abuse page    
+
+    # Opens a browser with the Ninject's package's report abuse page    
     Open-PackagePage Ninject -ReportAbuse
 
-	# Assigns the license URL to the variable, $url, without launching the browser
+    # Assigns the license URL to the variable, $url, without launching the browser
     $url = Open-PackagePage Ninject -License -WhatIf -PassThru
-    
+
 
 ## Sync-Package
+
 *Version 3.0+*
 
 Get the version of installed package from specified project and syncs the version to the rest of projects in the solution.
@@ -296,20 +299,20 @@ Version | Specifies the version of the package to sync, defaulting to the curren
 ProjectName | Specifies the project to sync the package from, defaulting to the default  project.
 Source | Specifies the URL or path of a package source, defualting to the current package source.
 IncludePrerelease | Includes prerelease packages in the sync.
-FileConflictAction | Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Possible values are <em>Overwrite, Ignore, None, OverwriteAll</em>, and <em>IgnoreAll</em> (3.0+).
+FileConflictAction | Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Possible values are *Overwrite, Ignore, None, OverwriteAll*, and *IgnoreAll* (3.0+).
 DependencyVersion | Specifies the version of the dependency packages to use, which can be one of the following:
 | | -Lowest (default): the lowest version
 | | -HighestPatch: the version with the lowest major, lowest minor, highest patch
 | | -HighestMinor: the version with the lowest major, highest minor, highest patch
 | | -Highest: the highest version
-| | You can set the default value using the <a href="/schema/nuget.config-file#config-section"><em>dependencyVersion</em></a> setting in the nuget.config file.
+| | You can set the default value using the [*dependencyVersion*](../schema/nuget.config-file.md#config-section) setting in the nuget.config file.
 WhatIf | Shows what would happen when running the command without actually performing the sync.
 
 ### Examples
-       
+
     # Syncs the Ninject package installed in the default project into the other projects in the solution
     Sync-Package Ninject
-     
+
     # Syncs only Microsoft.Aspnet.package to the rest of the projects, but not its dependencies 
     Sync-Package Microsoft.Aspnet.Mvc -IgnoreDependencies
 
@@ -340,16 +343,16 @@ Force | Forces a package to be uninstalled, even if there are dependencies on it
 WhatIf | Shows what would happen when running the command without actually performing the uninstall.
 
 ### Examples
-        
+
     # Uninstalls the Elmah package from the default project
-	Uninstall-Package Elmah
-               
+    Uninstall-Package Elmah
+
     # Uninstalls the Elmah package and all its unused dependencies
-	Uninstall-Package Elmah -RemoveDependencies   
-        
+    Uninstall-Package Elmah -RemoveDependencies   
+
     # Uninstalls the Elmah package even if another package depends on it.
-	Uninstall-Package Elmah -Force
-      
+    Uninstall-Package Elmah -Force
+
 
 ## Update-Package
 
@@ -362,9 +365,9 @@ Updates a package and its dependencies, or all packages in a project.
 In NuGet 2.8+, `Update-Package` can be used to downgrade an existing package in your project. For example, if you have Microsoft.AspNet.MVC 5.1.0-rc1 installed, the following command would downgrade it to 5.0.0: 
 
     Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
- 
+
 NuGet 2.7 and earlier will give an error saying that a newer version is already installed.
-    
+
 ### Parameters
 
 |     |     |
@@ -375,16 +378,16 @@ IgnoreDependencies | Skips updating any of the package's dependencies.
 ProjectName | Specifies the project containing the packages to update, defaulting to all projects.
 Safe | Constrains upgrades to only versions with the same Major and Minor version as the currently installed package.
 ToHighestMinor | Constrains upgrades to only versions with the same Major version as the currently installed package
-Version | Specifies the version to use for the upgrade, defaulting to the latest version. In NuGet 3.0+, the version value must be one of <em>Lowest, Highest, HighestMinor</em>, or <em>HighestPatch</em> (equivalent to -Safe).
+Version | Specifies the version to use for the upgrade, defaulting to the latest version. In NuGet 3.0+, the version value must be one of *Lowest, Highest, HighestMinor*, or *HighestPatch* (equivalent to -Safe).
 IncludePrerelease | Indicates that prerelease packages can be used for the update.
-Reinstall | Resintalls packages using their currently installed versions. See <a href="/consume-packages/reinstalling-and-updating-packages">Reinstalling and updating packages</a>.
-FileConflictAction | Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Possible values are <em>Overwrite, Ignore, None, OverwriteAll</em>, and <em>IgnoreAll</em> (3.0+).
+Reinstall | Resintalls packages using their currently installed versions. See [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md).
+FileConflictAction | Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Possible values are *Overwrite, Ignore, None, OverwriteAll*, and *IgnoreAll* (3.0+).
 DependencyVersion | Specifies the version of the dependency packages to use, which can be one of the following:
 | | -Lowest (default): the lowest version
 | | -HighestPatch: the version with the lowest major, lowest minor, highest patch
 | | -HighestMinor: the version with the lowest major, highest minor, highest patch
 | | -Highest (default for Update-Package with no parameters): the highest version
-| | You can set the default value using the <a href="/schema/nuget.config-file#config-section"><em>dependencyVersion</em></a> setting in the nuget.config file.
+| | You can set the default value using the [*dependencyVersion*](../schema/nuget.config-file.md#config-section) setting in the nuget.config file.
 WhatIf | Shows what would happen when running the command without actually performing the update.
 
 ### Examples
@@ -392,24 +395,17 @@ WhatIf | Shows what would happen when running the command without actually perfo
     # Updates all packages in every project.
     Update-Package
 
-	# Updates every package in the MvcApplication1 project
+    # Updates every package in the MvcApplication1 project
     Update-Package -Project MvcApplication1
 
     # Updates the Elmah package in every project to the latest version
-	Update-Package Elmah
-    
+    Update-Package Elmah
+
     # Updates the Elmah package to version 1.1.0 in every project.
     Update-Package Elmah -Version 1.1.0
-    
+
     # Updates the Elmah package within the MvcApplication1 project only
-	Update-Package Elmah -Project MvcApplication1
-    
-	# Updates Elmah to the highest "safe" version. For example, if Elmah version 1.0.0 of a package is installed, and versions 1.0.1, 1.0.2, and 1.1 are available in the feed, the -Safe parameter updates the package to 1.0.2 instead of 1.1 as it would otherwise.
+    Update-Package Elmah -Project MvcApplication1
+
+    # Updates Elmah to the highest "safe" version. For example, if Elmah version 1.0.0 of a package is installed, and versions 1.0.1, 1.0.2, and 1.1 are available in the feed, the -Safe parameter updates the package to 1.0.2 instead of 1.1 as it would otherwise.
     Update-Package Elmah -Safe
-    
-
-
-
-
-        
-    

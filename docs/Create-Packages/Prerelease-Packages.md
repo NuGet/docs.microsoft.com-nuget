@@ -26,7 +26,8 @@ ms.reviewer:
 #ms.tgt_pltfrm: 
 #ms.custom: 
  
---- 
+---
+
 # Pre-release Versions
 
 Whenever you release an updated package with a new version number, NuGet considers that one as the "latest stable release" as shown, for example in the Package Manager UI within Visual Studio:
@@ -41,13 +42,13 @@ You can specify such versions in two ways:
 
 - `.nuspec` file: include the semantic version suffix in the `version` element: 
 
-	    <version>1.0.1-alpha</version>
+        <version>1.0.1-alpha</version>
 
 - Assembly attributes: when building a package from a Visual Studio project (`.csproj` or `.vbproj`), use the `AssemblyInformationalVersionAttribute` to specify the version:
 
-    	[assembly: AssemblyInformationalVersion("1.0.1-beta")]
+        [assembly: AssemblyInformationalVersion("1.0.1-beta")]
 
-	NuGet will pick up this value instead of the one specified in the `AssemblyVersion` attribute, which does not support SemVer.
+    NuGet will pick up this value instead of the one specified in the `AssemblyVersion` attribute, which does not support SemVer.
 
 > [!Note]
 > A stable package release cannot have a pre-release dependency. This avoids accidentally installing a potentially unstable releases.
@@ -61,9 +62,9 @@ By default, NuGet does not include pre-release versions when working with packag
 
 - **Package Manager UI in Visual Studio**: In the **Manage NuGet Packages** UI, check the **Include prerelease** box:
 
-	![The Include prerelese checkbox in Visual Studio](media/Prerelease_02-CheckPrerelease.png)
+    ![The Include prerelese checkbox in Visual Studio](media/Prerelease_02-CheckPrerelease.png)
 
-	Checking or unchecking this box will refresh the Package Manager UI and the list of available versions you can install.
+    Checking or unchecking this box will refresh the Package Manager UI and the list of available versions you can install.
 
 - **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../tools/powershell-reference.md).
 
@@ -76,9 +77,9 @@ The [Semantic Versioning or SemVer convention](http://semver.org/spec/v1.0.0.htm
 
 In this convention, each version has three parts, `Major.Minor.Patch`, with the following meaning:
 
-* `Major`: Breaking changes
-* `Minor`: New features, but backwards compatible
-* `Patch`: Backwards compatible bug fixes only
+- `Major`: Breaking changes
+- `Minor`: New features, but backwards compatible
+- `Patch`: Backwards compatible bug fixes only
 
 Pre-release versions are then denoted by appending a hyphen and a string after the patch number. Technically speaking, you can use *any *string after the hyphen and NuGet will treat the package as pre-release. NuGet then displays the full version number in the applicable UI, leaving consumers to interpret the meaning for themselves.
 
@@ -93,12 +94,12 @@ With this in mind, it's generally good to follow recognized naming conventions s
 
 Whatever suffixes you use, however, NuGet will give them precedence in reverse alphabetical order: 
 
-	1.0.1
-	1.0.1-zzz 
-	1.0.1-rc
+    1.0.1
+    1.0.1-zzz
+    1.0.1-rc
     1.0.1-open
-	1.0.1-beta
+    1.0.1-beta
     1.0.1-alpha2
-    1.0.1-alpha	 
+    1.0.1-alpha
 
 As shown, the version without any suffix will always take precedence over pre-release versions.

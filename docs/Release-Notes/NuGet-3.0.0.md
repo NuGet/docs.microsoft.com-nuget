@@ -30,7 +30,7 @@ ms.reviewer:
 ---
 # NuGet 3.0 Release Notes
 
-[NuGet 3.0 RC2 Release Notes](../nuget/release-notes/nuget-3.0-RC2.md) | [NuGet 3.1 Release Notes](../nuget/release-notes/nuget-3.1.md)
+[NuGet 3.0 RC2 Release Notes](../release-notes/nuget-3.0-RC2.md) | [NuGet 3.1 Release Notes](../release-notes/nuget-3.1.md)
 
 NuGet 3.0 was released on July 20, 2015 as a bundle extension to Visual Studio 2015. We pushed to deliver this release with Visual Studio so that the complete updated NuGet 3.0 experience would be available for new Visual Studio users. This NuGet extension version is only available for Visual Studio 2015.  
 
@@ -44,9 +44,9 @@ There were a number of known issues delivered with this release, and all of thes
 
 *  Translation is not provided for the "Do not show this again" label on the preview window and the "Authors" label in the package description window.
 *  When you working on a project by using TFS source control, NuGet cannot present the package manager user interface if the nuget.config file is marked as read-only.
-   * **Workaround**  Check out the file from TFS. 
+   * **Workaround** Check out the file from TFS.
 *  Text in the yellow "restart bar" in the NuGet Powershell window is not visible when you use the Visual Studio dark theme.
-   * **Workaround** Use the Visual Studio light theme. 
+   * **Workaround** Use the Visual Studio light theme.
 
 
 ## Summary of top issues resolved

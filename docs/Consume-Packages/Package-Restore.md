@@ -84,7 +84,7 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
 		  </packageRestore>
 		</configuration>
 
-For reference, see the [NuGet config file overview](../consume-packages/nuget-config-file-overview.md).
+For reference, see the [NuGet config file overview](../consume-packages/configuring-nuget-behavior.md).
 
 MSBuild-integrated restore with NuGet 2.6 and earlier is typically enabled by right-clicking a solution in Visual Studio and selecting **Enable NuGet Package Restore**. This sets up the necessary files and folders for this option to work, as explained under [MSBuild-integrated restore in Visual Studio](#msbuild-integrated-restore).
 
@@ -181,7 +181,7 @@ The process is as follows:
 1. Close Visual Studio to avoid file potential file locks and conflicts.
 2. If using TFS:  
 	a. Remove `nuget.exe` and `nuget.targets` from the solution's `.nuget` folder and remove those files from the solution workspace.  
-	b. Retain `nuget.config` with the `disableSourceControlIntegration` setting as explained in [Omitting packages with Team Foundation Version Control](../consume-packages/packages-and-source-control#omitting-packages-with-team-foundation-version-control).
+	b. Retain `nuget.config` with the `disableSourceControlIntegration` setting as explained in [Omitting packages with Team Foundation Version Control](../consume-packages/packages-and-source-control.md#omitting-packages-with-team-foundation-version-control).
 3. If not using TFS:  
 	a. Remove the `.nuget` folder from the solution and the solution workspace.  
 4. Edit each project file in the solution, remove the `&lt;RestorePackages&gt;` element, and remove any references to the `nuget.targets` file. Those settings generally appear as follows:

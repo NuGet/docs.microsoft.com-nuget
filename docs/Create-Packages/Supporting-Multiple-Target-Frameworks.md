@@ -31,7 +31,7 @@ ms.reviewer:
 
 Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's specific to UWP, and another version that takes advantage of features in .NET Framework 4.6. 
 
-Fortunately, NuGet supports putting multiple versions of the same library in a single package through the convention-based working directory method described in [Creating a package](../create-package/creating-a-package.md#from-a-convention-based-working-directory).
+Fortunately, NuGet supports putting multiple versions of the same library in a single package through the convention-based working directory method described in [Creating a package](../create-packages/creating-a-package.md#from-a-convention-based-working-directory).
 
 > [!Note]
 > Assemblies that have no associated framework name or version should be stored directly in the `lib` folder and not in separate folders.
@@ -55,15 +55,15 @@ For a complete list of supported names, see the [Target Frameworks reference](..
 
 The following example shows a folder structure that supports four versions of a library:
 
-	\lib
-	    \net46
-	        \MyAssembly.dll
-	    \net461
-	        \MyAssembly.dll
-	    \uap
-	        \MyAssembly.dll
-	    \netcore
-	        \MyAssembly.dll
+    \lib
+        \net46
+            \MyAssembly.dll
+        \net461
+            \MyAssembly.dll
+        \uap
+            \MyAssembly.dll
+        \netcore
+            \MyAssembly.dll
 
 
 ## Content files and PowerShell scripts
@@ -74,26 +74,26 @@ The following example shows a folder structure that supports four versions of a 
 With NuGet 2.x, content files and PowerShell scripts can be grouped by target framework using the same folder convention inside the `content` and `tools` folders. For example:
 
     \content
-	    \net46
-	        \MyContent.txt
-	    \net461
-	        \MyContent461.txt
-	    \uap
-	        \MyUWPContent.html
-	    \netcore
-	\tools
-	    init.ps1
-	    \net46
-	        install.ps1
-	        uninstall.ps1
-	    \uap
-	        install.ps1
-	        uninstall.ps1
+        \net46
+            \MyContent.txt
+        \net461
+            \MyContent461.txt
+        \uap
+            \MyUWPContent.html
+        \netcore
+    \tools
+        init.ps1
+        \net46
+            install.ps1
+            uninstall.ps1
+        \uap
+            install.ps1
+            uninstall.ps1
             
 If a framework folder is left empty, NuGet will not add assembly references or content files or run the PowerShell scripts for that framework.
 
 > [!Note]
-> Because init.ps1 is executed at the solution level and not dependent on project, it must be placed directly under the <em>tools</em> folder. If placed under a framework folder, it will be ignored.
+> Because `init.ps1` is executed at the solution level and not dependent on project, it must be placed directly under the `tools` folder. If placed under a framework folder, it will be ignored.
 
 
 ## Matching assembly versions and the target framework in a project
@@ -104,11 +104,11 @@ If a match is not found, NuGet copies the assembly for the highest version that 
 
 For example, consider the following folder structure in a package:
 
-	\lib
-	    \net45
-	        \MyAssembly.dll
-	    \net461
-	        \MyAssembly.dll
+    \lib
+        \net45
+            \MyAssembly.dll
+        \net461
+            \MyAssembly.dll
 
 
 Installing this package in a project that targets .NET Framework 4.6, NuGet installs the assembly in the `net45` folder.
@@ -117,18 +117,18 @@ Installing this package in a project that targets .NET Framework 4.6, NuGet inst
 
 NuGet copies assemblies from only a single library folder in the package. For example, suppose a package has the following folder structure:
 
-	\lib
-	    \net40
-	        \MyAssembly.dll (v1.0)
-	        \MyAssembly.Core.dll (v1.0)
-	    \net45
-	        \MyAssembly.dll (v2.0)
+    \lib
+        \net40
+            \MyAssembly.dll (v1.0)
+            \MyAssembly.Core.dll (v1.0)
+        \net45
+            \MyAssembly.dll (v2.0)
 
 
 To easily include all these files, use a wildcard in the &lt;files&gt; section of your `.nuspec`:
 
     <files>
-	    <file src="lib\**" target="lib" />
+        <file src="lib\**" target="lib" />
     </files>
 
 When the package is installed in a project that targets .NET Framework 4.5, `MyAssembly.dll (v2.0)` is the only assembly installed. `MyAssembly.Core.dll(v1.0)` is not installed because it's not listed in the `net45` folder. (One reason why NuGet behaves this way is that `MyAssembly.Core.dll` might have merged into version 2.0 of `MyAssembly.dll`.) 
@@ -137,11 +137,11 @@ If you want `MyAssembly.Core.dll` to be installed for .NET Framework 4.5, place 
 
 The rule about copying assemblies from only one folder also applies to the root `lib` folder. Suppose a package has the following folder structure:
 
-	\lib
-	    \MyAssembly.dll (v1.0)
-	    \MyAssembly.Core.dll (v1.0)
-	    \Net45
-	        \MyAssembly.dll (v2.0)
+    \lib
+        \MyAssembly.dll (v1.0)
+        \MyAssembly.Core.dll (v1.0)
+        \Net45
+            \MyAssembly.dll (v2.0)
 
 In projects that target .NET Framework 4.0 and .NET Framework 3.5, NuGet copies both `MyAssembly.dll` and `MyAssembly.Core.dll` because their location in the package does not restrict them to a specific target. But as was true of the previous example, in projects that target .NET Framework 4.5, only `MyAssembly.dll` from the `net45` folder will be copied. If you want to include `MyAssembly.Core.dll` for .NET Framework 4.5, place a copy of it in the `net45` folder.
 
@@ -150,7 +150,7 @@ In projects that target .NET Framework 4.0 and .NET Framework 3.5, NuGet copies 
 
 NuGet also supports targeting a specific framework profile by appending a dash and the profile name to the end of the folder.
 
-	lib\{framework name}-{profile}
+    lib\{framework name}-{profile}
 
 For example, to target the Windows Phone profile, place your assembly in a folder named `sl3-wp`.
 

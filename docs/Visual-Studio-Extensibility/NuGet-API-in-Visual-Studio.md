@@ -35,12 +35,11 @@ In addition to the Package Manager UI and Console in Visual Studio, NuGet also  
 As of NuGet 3.3+, NuGet exports the following services all of which reside in the `NuGet.VisualStudio` namespace in the `NuGet.VisualStudio.dll` assembly:
 
 - [`IRegistryKey`](#iregistrykey-interface): Method to retrieve a value from a registry subkey.
-- [`IConsoleInitializer`](#iconsoleinitializer-interface): Triggers eager initialization of the NuGet Package Manager Console.
 - [`IVsPackageInstaller`](#ivspackageinstaller-interface): Methods to install NuGet packages into projects.
 - [`IVsPackageInstallerEvents`](#ivspackageinstallerevents-interface): Events for package install/uninstall.
 - [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface): Methods to retrieve installed packages in the current solution and to check whether a given package is installed in a project.
-- [`IVsPackageManagerProvider`](#-ibspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package.    
-- [`IVsPackageMetadata`](#ivspackagemetadata-interface); Methods to retrieve information about an installed package. 
+- [`IVsPackageManagerProvider`](#ivspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package.
+- [`IVsPackageMetadata`](#ivspackagemetadata-interface); Methods to retrieve information about an installed package.
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface): Methods to restore packages installed in a project.
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface): Methods to retrieve a list of NuGet package sources.
 - [`IVsPackageUninstaller`](#ivspackageuninstaller-interface): Methods to uninstall NuGet packages from projects.
@@ -52,61 +51,61 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
 1. Install the [`NuGet.VisualStudio`](https://www.nuget.org/packages/NuGet.VisualStudio) package into your project, which contains the `NuGet.VisualStudio.dll` assembly.
 
     When installed, the package automatically sets the **Embed Interop Types** property of the assembly reference to **True**. This makes your code  resilient against version changes when users update to newer versions of NuGet.
-	
-> [!NOTE]
+
+> [!Warning]
 > Do not use any other types besides the public interfaces in your code, and do not reference any other NuGet assemblies, including NuGet.Core.dll.
 
 
-2. To use the a service, import it through the [MEF Import attribute](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes), or through the [IComponentModel service](http://msdn.microsoft.comlibrary/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx). 
+1. To use the a service, import it through the [MEF Import attribute](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes), or through the [IComponentModel service](http://msdn.microsoft.comlibrary/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx). 
 
-		//Using the Import attribute
-		[Import(typeof(IVsPackageInstaller))]
-		public IVsPackageInstaller packageInstaller;
-		packageInstaller.InstallPackage("nuget.org", currentProject,
-			"Newtonsoft.Json", "9.0.1", false);
+        //Using the Import attribute
+        [Import(typeof(IVsPackageInstaller))]
+        public IVsPackageInstaller packageInstaller;
+        packageInstaller.InstallPackage("nuget.org", currentProject,
+            "Newtonsoft.Json", "9.0.1", false);
 
-		//Using the IComponentModel service
-    	var componentModel = (IComponentModel)GetService(typeof(SComponentModel));
-	   	IVsPackageInstallerServices installerServices =
-		    componentModel.GetService<IVsPackageInstallerServices>();
+        //Using the IComponentModel service
+        var componentModel = (IComponentModel)GetService(typeof(SComponentModel));
+           IVsPackageInstallerServices installerServices =
+            componentModel.GetService<IVsPackageInstallerServices>();
 
-    	var installedPackages = installerServices.GetInstalledPackages();
+        var installedPackages = installerServices.GetInstalledPackages();
 
 
-For reference, the source code for NuGet.VisualStudio is contained within the [NuGet.Clients repository](https://github.com/NuGet/NuGet.Client/tree/dev/src/NuGet.Clients/NuGet.VisualStudio).	
+For reference, the source code for NuGet.VisualStudio is contained within the [NuGet.Clients repository](https://github.com/NuGet/NuGet.Client/tree/dev/src/NuGet.Clients/NuGet.VisualStudio).
 
 ## IRegistryKey interface
 
-    /// <summary> 
-    /// Specifies methods for manipulating a key in the Windows registry. 
-    /// </summary> 
-    public interface IRegistryKey 
+    /// <summary>
+    /// Specifies methods for manipulating a key in the Windows registry.
+    /// </summary>
+    public interface IRegistryKey
      { 
-        /// <summary> 
-        /// Retrieves the specified subkey for read or read/write access. 
-        /// </summary> 
-        /// <param name="name">The name or path of the subkey to create or open.</param> 
-        /// <returns>The subkey requested, or null if the operation failed.</returns> 
-        IRegistryKey OpenSubKey(string name); 
- 
- 
-        /// <summary> 
-        /// Retrieves the value associated with the specified name. 
-        /// </summary> 
-        /// <param name="name">The name of the value to retrieve. This string is not case-sensitive.</param> 
-        /// <returns>The value associated with name, or null if name is not found.</returns> 
-        object GetValue(string name); 
- 
- 
-        /// <summary> 
-        /// Closes the key and flushes it to disk if its contents have been modified. 
-        /// </summary> 
-        void Close(); 
-    } 
+        /// <summary>
+        /// Retrieves the specified subkey for read or read/write access.
+        /// </summary>
+        /// <param name="name">The name or path of the subkey to create or open.</param>
+        /// <returns>The subkey requested, or null if the operation failed.</returns>
+        IRegistryKey OpenSubKey(string name);
+
+
+        /// <summary>
+        /// Retrieves the value associated with the specified name.
+        /// </summary>
+        /// <param name="name">The name of the value to retrieve. This string is not case-sensitive.</param>
+        /// <returns>The value associated with name, or null if name is not found.</returns>
+        object GetValue(string name);
+
+
+        /// <summary>
+        /// Closes the key and flushes it to disk if its contents have been modified.
+        /// </summary>
+        void Close();
+    }
 
 
 ## IVsPackageInstaller interface
-    
+
     public interface IVsPackageInstaller
     {
         /// <summary>
@@ -398,7 +397,7 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// <param name="packageId">Current package id</param>
         /// <param name="projectName">Unique project name for finding the project through VS dte</param>
         void GoToPackage(string packageId, string projectName);
-    }    
+    }
 
 ## IVsPackageMetadata interface
 
@@ -505,12 +504,12 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         void UninstallPackage(Project project, string packageId, bool removeDependencies);
     }
 
-##IVsTemplateWizard interface
+## IVsTemplateWizard interface
 
     /// <summary>
     /// Defines the logic for a template wizard extension.
     /// </summary>
-    
+
     public interface IVsTemplateWizard : IWizard
     {
     }

@@ -29,7 +29,7 @@ ms.reviewer:
 ---
 # NuGet 2.9-RC Release Notes
 
-[NuGet 2.8.7 Release Notes](../nuget/release-notes/nuget-2.8.7.md) | [NuGet 3.0 Preview Release Notes](../nuget/release-notes/nuget-3.0-preview.md)
+[NuGet 2.8.7 Release Notes](../release-notes/nuget-2.8.7.md) | [NuGet 3.0 Preview Release Notes](../release-notes/nuget-3.0-preview.md)
 
 NuGet 2.9 was released September 10, 2015 as an update to the 2.8.7 VSIX for Visual Studio 2012 and 2013.  
 
@@ -46,5 +46,3 @@ Download the extension for:
 
 * [Visual Studio 2012](https://dist.nuget.org/visualstudio-2012-vsix/v2.9-rc/NuGet.Tools.vsix)
 * [Visual Studio 2013](https://dist.nuget.org/visualstudio-2013-vsix/v2.9-rc/NuGet.Tools.vsix)
-
-  

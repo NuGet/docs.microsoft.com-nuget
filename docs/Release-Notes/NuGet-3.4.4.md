@@ -40,10 +40,10 @@ You can download both the VSIX and NuGet.exe [here](https://dist.nuget.org/index
 
 [List of Issues](https://github.com/NuGet/Home/issues?q=is%3Aissue+milestone%3A3.4.4+is%3Aclosed)
 
-**Changes:**
+### Changes
 
 - Pack Improvements: Improvements to packing symbols, packing with project.json and more [\#606](https://github.com/NuGet/NuGet.Client/pull/606)
-- Display exception when there is a failure finding projects in update command [\#605](https://github.com/NuGet/NuGet.Client/pull/605) 
+- Display exception when there is a failure finding projects in update command [\#605](https://github.com/NuGet/NuGet.Client/pull/605 
 - Read package type from input .nuspec and project.json when packing [\#603](https://github.com/NuGet/NuGet.Client/pull/603) 
 - Make NuGet.Shared not a project. [\#602](https://github.com/NuGet/NuGet.Client/pull/602) 
 - Use the push timeout as the HTTP response timeout [\#599](https://github.com/NuGet/NuGet.Client/pull/599)
