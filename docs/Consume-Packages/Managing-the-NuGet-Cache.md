@@ -33,7 +33,7 @@ ms.reviewer:
 
 NuGet manages several local caches to avoid downloading packages that are already on the machine, and to provide offline support. NuGet versions 2.8 and later automatically fall back to the cache when installing or reinstalling packages without a network connection.  
 
-To see the list of cache locations, use the [locals command](../tools/nuget.exe-cli-reference#locals.md):
+To see the list of cache locations, use the [locals command](../tools/nuget.exe-cli-reference.md#locals):
 
 	nuget locals all -list
      

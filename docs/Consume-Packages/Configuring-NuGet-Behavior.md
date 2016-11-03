@@ -67,9 +67,9 @@ The preferred method for changing the configuration is using the NuGet [config c
 To **set a value** in any existing configuration file, use the `-configFile` switch as shown in the examples below. 
 
     nuget config -set repositoryPath=c:\packages -configfile c:\my.config
-	nuget config -set repositoryPath=c:\packages -configfile .\myApp\NuGet.Config
-	nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\Config\VisualStudio\14.0\NuGet.Config
-	nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\NuGetDefaults.Config
+    nuget config -set repositoryPath=c:\packages -configfile .\myApp\NuGet.Config
+    nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\Config\VisualStudio\14.0\NuGet.Config
+    nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\NuGetDefaults.Config
 
 Without the `-configFile` switch, NuGet will make the change in the global config file.
 
@@ -151,56 +151,56 @@ Let's say you have the following folder structure:
     d:\
     ├───Project1
     │   └───Source
-	├───Project2
+    ├───Project2
     │   └───Source
-	└───tmp
+    └───tmp
        
 You then have four `NuGet.Config` files in the following locations with the given content:
 
-(A) Global configuration file, `%APPDATA%\NuGet\Nuget.config`:
-	
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-      <activePackageSource>
-        <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
-      </activePackageSource>
-    </configuration>
+1. Global configuration file, `%APPDATA%\NuGet\Nuget.config`:
 
-(B) `d:\NuGet.config`:
+      <?xml version="1.0" encoding="utf-8"?>
+      <configuration>
+        <activePackageSource>
+          <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
+        </activePackageSource>
+      </configuration>
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-	  <config>
-        <add key="repositoryPath" value="d:\tmp" />
-      </config>
-      <packageRestore>
-        <add key="enabled" value="True" />
-      </packageRestore>
-    </configuration>
+2. `d:\NuGet.config`:
 
-(C) `d:\Project1\NuGet.config`:
-
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
+      <?xml version="1.0" encoding="utf-8"?>
+      <configuration>
       <config>
-        <add key="repositoryPath" value="External\Packages" />
-        <add key="DefaultPushSource" value="https://MyPrivateRepo/ES/api/v2/package" />
-      </config>
-      <packageSources>
-        <clear /> <!-- ensure only the sources defined below are used -->
-        <add key="MyPrivateRepo - ES" value="https://MyPrivateRepo/ES/nuget" />
-      </packageSources>
-    </configuration>
+          <add key="repositoryPath" value="d:\tmp" />
+        </config>
+        <packageRestore>
+          <add key="enabled" value="True" />
+        </packageRestore>
+      </configuration>
 
-(D) `d:\Project2\NuGet.config`:
+3. `d:\Project1\NuGet.config`:
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-      <packageSources>
-	    <!-- Add this repository to the list of available repositories -->
-        <add key="MyPrivateRepo - DQ" value="https://MyPrivateRepo/DQ/nuget" />
-      </packageSources>
-    </configuration>
+      <?xml version="1.0" encoding="utf-8"?>
+      <configuration>
+        <config>
+          <add key="repositoryPath" value="External\Packages" />
+          <add key="DefaultPushSource" value="https://MyPrivateRepo/ES/api/v2/package" />
+        </config>
+        <packageSources>
+          <clear /> <!-- ensure only the sources defined below are used -->
+          <add key="MyPrivateRepo - ES" value="https://MyPrivateRepo/ES/nuget" />
+        </packageSources>
+      </configuration>
+
+4. `d:\Project2\NuGet.config`:
+
+      <?xml version="1.0" encoding="utf-8"?>
+      <configuration>
+        <packageSources>
+        <!-- Add this repository to the list of available repositories -->
+          <add key="MyPrivateRepo - DQ" value="https://MyPrivateRepo/DQ/nuget" />
+        </packageSources>
+      </configuration>
 
 
  Here's how NuGet will load and apply the settings, depending on where it's invoked:

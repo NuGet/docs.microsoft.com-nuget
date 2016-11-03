@@ -70,9 +70,10 @@ The best way to evaluate the usefulness of a package is, of course, to download 
 At the same time, using a NuGet package means taking a dependency on it, so you'll want to make sure it's robust and reliable. Because installing and directly testing a package is very time-consuming, you can also learn a lot about a package's quality by using the information on a package's listing page: 
 
 - *Downloads statistics*: a the package page you'll see total downloads, downloads of the most recent version, and average downloads per day. Larger numbers obviously indicates that many other developers have taken a dependency on the package, which means that it has proven itself.
+
 	![Download statistics on a package's listing page](media/Finding-03-Downloads.png)
 
-- *Version history*: on the package page, look at the date of the most recent update, and scroll down to see the version history. A well-maintained package will have recent updates, and will have a rich version history. Neglected packages will have few updates and often haven't been updated in some time. 
+- *Version history*: on the package page, look at the date of the most recent update, and scroll down to see the version history. A well-maintained package will have recent updates, and will have a rich version history. Neglected packages will have few updates and often haven't been updated in some time 
 
 	![Version history on a package's listing page](media/Finding-04-VersionHistory.png)
 
@@ -82,7 +83,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you'
 	![Chart of operations for a NuGet package on nuget.org package statistics](media/Finding-05-OperationChart.png)
 
 - *Dependency installs*: the same **Operation** chart above has an "Install-Dependency" bar that indicates how many other NuGet packages have taken a dependency on this one. This is an even stronger indication that other developers find the package reliable.
--  *Support*: on the package page, click **Project Site** if available to see what support opions are available. A project with a dedicated site is generally better supported.
+- *Support*: on the package page, click **Project Site** if available to see what support opions are available. A project with a dedicated site is generally better supported.
 - *Developer history*: on the package page, click the listed **Owners** to see what other packages they've published. Those with multiple packages are more likely to continue supporting their work in the future.
 - *Open source contributions*: many packages are maintained in an open-source repository, making it possible for developers depending on it to directly contribute bug fixes and feature improvements. The contribution history of any given package is also a good indicator of how many developers are actively involved.
 - *Interview the owners*: all this is not to say that new developers are not equally committed to producing great packages for you to use, and it's certainly good to give them a chance to bring something new to the NuGet ecosystem. With this in mind, you can always talk directly to the package developers through the **Contact Owners** option on the listing page. Chances are, they'll be happy to work directly with you to serve your needs!
