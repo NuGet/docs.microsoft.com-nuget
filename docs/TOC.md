@@ -5,7 +5,7 @@
 # Guides
 ## [Install NuGet](Guides/Install-NuGet.md)
 ## [Create UWP Packages](Guides/Create-UWP-Packages.md)
-## [Create Cross Platform Packages](Guides/Create-Cross-Platform-Packages.md)
+## [Create Cross-Platform Packages](Guides/Create-Cross-Platform-Packages.md)
 ## [Create NET Standard Packages](Guides/Create-NET-Standard-Packages.md)
 # Create Packages
 ## [Overview and Workflow](Create-Packages/Overview-and-Workflow.md)

@@ -41,7 +41,7 @@ This topic covers the most common steps involved in package creation:
 
 - [Deciding which assemblies to package](#deciding-which-assemblies-to-package)
 - [The role and structure of the `.nuspec` file](#the-role-and-structure-of-the-nuspec-file)
-- [Creating the `.nuspec` file](#creating-the--nuspec-file) from:
+- [Creating the `.nuspec` file](#creating-the-nuspec-file) from:
     - [An assembly DLL](#from-an-assembly-dll)
     - [A Visual Studio project](#from-a-visual-studio-project)
     - [A convention-based working directory](#from-a-convention-based-working-directory)
@@ -163,14 +163,16 @@ and will be replaced with the `AssemblyName` value from the project file. For th
 
 Note that there are several additional packaging options available when working from a Visual Studio project, as described in the [Creating the package](#creating-the-package) section later on. 
 
-> [!Note]
 > **Solution-level packages (NuGet 2.x only)**
-> NuGet 2.x supports the notion of a solution-level package that installs tools or additional commands for the Package Manager Console, but does not add references, content, or build customizations to any projects in the solution. 
+>
+> NuGet 2.x supports the notion of a solution-level package that installs tools or additional commands for the Package Manager Console, but does not add references, content, or build customizations to any projects in the solution.
+>
 > A package is considered a solution-level package if it does not contain any files in its lib, content, or build directories. If the package has dependencies, they also must not have files in their lib, content, or build directories.
+>
 > When a solution-level package is installed, it is tracked in a packages.config file in the .nuget directory, rather than in a packages.config file in a specific project.
 
 
-## From a convention-based working directory
+### From a convention-based working directory
 
 In addition to assemblies and simple files like a readme, some packages may contain the following: 
 
@@ -211,7 +213,6 @@ For the **&lt;version&gt;** value:
 - In general, set the version of the package to match the library, though this is not strictly required. This is a simple matter when you limit a package to a single assembly, as described earlier in [Deciding which assemblies to package](#deciding-which-assemblies-to-package). Overall, remember that NuGet itself deals with package versions when resolving dependencies, not assembly versions.
 - When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Handling Dependencies](../create-packages/dependency-versions.md).
 
-> [!Note]
 > The following series of brief blog posts are also helpful to understand versioning:
 >
 > - [Part 1: Taking on DLL Hell](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)

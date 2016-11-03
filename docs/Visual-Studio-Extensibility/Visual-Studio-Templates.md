@@ -139,10 +139,10 @@ SDKs that are installed using an MSI can install NuGet packages directly on the 
     - *(NuGet 3.2+)* If you want to force a design-time build at the end of package installation, add the `forceDesignTimeBuild="true"` attribute.
     - As an optimization, add `skipAssemblyReferences="true"` because the template itself already includes the necessary references.
 
-        <packages repository="registry" keyName="AspNetMvc4VS11" isPreunzipped="true">
-            <package id="EntityFramework" version="5.0.0" skipAssemblyReferences="true" />
-            <-- ... -->
-        </packages>
+            <packages repository="registry" keyName="AspNetMvc4VS11" isPreunzipped="true">
+                <package id="EntityFramework" version="5.0.0" skipAssemblyReferences="true" />
+                <-- ... -->
+            </packages>
 
 ## Best Practices
 

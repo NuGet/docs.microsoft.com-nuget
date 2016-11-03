@@ -75,9 +75,8 @@ The NuGet CLI can be installed using any of the following methods:
 1. **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.
 
 > **NuGet 2.x users**
+>
 > Because there are a few breaking changes introduced in NuGet 3.2, [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe) points to the latest stable NuGet 2.x release to prevent CI systems from potentially breaking at this time.
-
-
 
 ### Compatibility with Mono
 
@@ -113,6 +112,7 @@ The NuGet Package Manager is included in every edition of Visual Studio 2012 and
 
 > [!Note]
 > The console requires [PowerShell 2.0](http://support.microsoft.com/kb/968929), which will already be installed on Windows 7 or higher and Windows Server 2008 R2 or higher.
+>
 > Package Manager Console commands also work only within  Visual Studio. Use the NuGet CLI outside of that environment.
 
 

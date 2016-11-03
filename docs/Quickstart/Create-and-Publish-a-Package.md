@@ -123,7 +123,7 @@ Note that you'll get warnings if you haven't updated various fields in the .nusp
 
 You're now ready to publish the package to nuget.org using the NuGet CLI. (Alternately, you can use the [nuget.org publishing workflow](../create-packages/publish-a-package.md#publish-to-nugetorg).
 
-> [!Note]
+> [!Warning]
 > The packages you publish to nuget.org will be publicly visible to other developers. To host packages privately, see [Hosting packages](../hosting-packages/overview.md).
 
 
@@ -133,7 +133,7 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
 
     ![Copying the API key to the clipboard](media/QS_Create-02-APIKey.png)
 
-> [!Note]
+> [!Warning]
 > Always keep your API key a secret! If your key is accidentally revealed, you can always regenerate it at any time. You can also remove the API key if you no longer want to push packages via the CLI.
 
 

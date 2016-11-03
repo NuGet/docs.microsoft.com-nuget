@@ -281,7 +281,7 @@ The following example shows a reference to `System.Net` for all target framework
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.Net"  />
 
-      <frameworkAssembly assemblyName="System.ServiceModel"     targetFramework="net40" />      
+      <frameworkAssembly assemblyName="System.ServiceModel"     targetFramework="net40" />
     </frameworkAssemblies>
 
 
