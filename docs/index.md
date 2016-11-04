@@ -156,18 +156,18 @@ ms.reviewer:
                                     <p>References for nuspec files, nuget.config files, and other files and convensions.</p>
                                 </a>
                             </li>
-                            <li class="column column-third">
+                            <!--li class="column column-third">
                                 <a href="./api/credential-providers.md">
                                     <h3>API</h3>
                                     <p>Details about authenticating with package sources and the NuGet API.</p>
                                 </a>
-                            </li>
-                            <li class="column column-third">
+                            </li-->
+                            <!--li class="column column-third">
                                 <a href="./visual-studio-extensibility/nuget-api-in-visual-studio.md">
                                     <h3>Visual Studio Extensibility</h3>
                                     <p>Details about the API to the NuGet Package Manager UI and Console in Visual Studio, project system support, and integrating NuGet packages into Visual Studio templates.</p>
                                 </a>
-                            </li>
+                            </li-->
                             <li class="column column-third">
                                 <a href="./policies/nuget-faq.md">
                                     <h3>Policies</h3>
