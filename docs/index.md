@@ -33,7 +33,7 @@ ms.reviewer:
     <section id="hero-content" class="graph">
         <h1>NuGet Documentation</h1>
         <h2>Welcome to NuGet! NuGet is the package manager for the Microsoft development platforms including .NET. Create, share, and reuse thousands of nuget packages. Whether you’re new to NuGet or a pro NuGet user or author, these are the docs that you are looking for.</h2>
-        <h3>Checkout the latest NuGet packages on <a href="https://www.nuget.org/" target="_blank">nuget.org</a></h3>
+        <h3>Check out the latest NuGet packages on <a href="https://www.nuget.org/" target="_blank">nuget.org</a></h3>
     </section>
     <!--aside class="alert section-border">
     <p>Checkout the latest NuGet packages on <a href="https://www.nuget.org/">nuget.org</a></p>
