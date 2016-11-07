@@ -27,6 +27,7 @@ ms.reviewer:
 #ms.custom: 
  
 ---
+
 # NuGet 3.0 Beta Release Notes
 
 [NuGet 3.0 Preview Release Notes](../release-notes/nuget-3.0-preview.md) | [NuGet 3.0 RC Release Notes](../release-notes/nuget-3.0-rc.md)

@@ -47,7 +47,7 @@ NuGet will create this structure automatically when you use the [`nuget add`](..
 
     nuget add new_package.1.0.0.nupkg -source \\myserver\packages
 
-You can also use the [`nuget init`](../tools/nuget.exe-cli-reference.md#init) command to copy multiple packages from a single folder to the feed. For example, the following command copues all packages from `c:\packages` to a hierarchical tree on `\\myserver\packages`: 
+You can also use the [`nuget init`](../tools/nuget.exe-cli-reference.md#init) command to copy multiple packages from a single folder to the feed. For example, the following command copies all packages from `c:\packages` to a hierarchical tree on `\\myserver\packages`: 
 
     nuget init c:\packages \\myserver\packages
 

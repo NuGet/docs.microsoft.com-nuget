@@ -57,6 +57,7 @@ Many other individuals and companies have made significant contributions to the 
 * [JetBrains ReSharper](https://resharper-plugins.jetbrains.com/)
 * [JetBrains TeamCity](https://www.jetbrains.com/teamcity/)
 * [Klondike](https://github.com/themotleyfool/Klondike)
+* [MinimalNugetServer](https://github.com/TanukiSharp/MinimalNugetServer)
 * [MyGet (or NuGet-as-a-service)](http://www.myget.org/)
 * [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)
 * [NuGet Server](http://nugetserver.net/)
