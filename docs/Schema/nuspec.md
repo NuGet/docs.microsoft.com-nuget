@@ -309,7 +309,7 @@ With NuGet 2.x and earlier, and projects using `packages.config`, the &lt;files&
 
 Each &lt;file&gt; element specifies the following attributes:
 
-Attriute | Description
+Attribute | Description
 --- | ---
 **src** | The location of the file or files to include, subject to exclusions specified by the `exclude` attribute. The path is relative to the `.nuspec` file unless an absolute path is specified. The wildcard character * is allowed, and the double wildcard ** implies a recursive folder search.
 **target** | The relative path to the folder within the package where the source files will be placed, which must begin with `lib`, `content`, or `tools`.
