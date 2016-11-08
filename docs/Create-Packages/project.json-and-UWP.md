@@ -26,24 +26,25 @@ ms.reviewer:
 #ms.tgt_pltfrm: 
 #ms.custom: 
  
---- 
-﻿#Project.json and UWP
+---
+ 
+﻿# Project.json and UWP
 
 This document describes a new package structure that can be used to take advantage of new features in NuGet v3. The *minClientVersion* property of your NuSpec can be used to state that you require the new features described here by setting it to 3.1. Note that NuGet v3 is available in Visual Studio 2015 and newer. 
 
 ## Adding UWP support to an existing package 
- ##
+ 
 If you have an existing package and you want to add support for UWP applications then you don’t need to adopt the new packaging format described here. You only need to adopt this format if you require the features it describes and are willing to only work with clients that have updated to the latest version of the NuGet client. 
 
-## I already target netcore45  ##
+## I already target netcore45
 
 If you target netcore45 already, and you don’t need to take advantage of anything new then you don’t need to do anything, netcore45 will be consumed by UWP applications. 
 
-## I want to take advantage of Windows 10 specific APIs  ##
+## I want to take advantage of Windows 10 specific APIs
 
 In this case you need to add the uap10.0 TxM to your package. Create a new directory in your package and add the assembly that has been compiled to work with Windows 10 to that directory. 
 
-## I don’t need Windows 10 specific APIs, but want new .NET features or don’t have netcore45 already  ##
+## I don’t need Windows 10 specific APIs, but want new .NET features or don’t have netcore45 already
 
 In this case you would add the new dotnet TxM to your package. Unlike other TxMs dotnet doesn’t imply a surface area or platform. It is stating that your package will work on any platform that your dependencies work on. When building a package with the dotnet TxM you are likely to have many more TxM specific dependencies in your NuSpec, as you will need to define the BCL packages you depend on, such System.Text, System.Xml, etc. The locations that those dependencies work on define where your package will work.  
 
@@ -60,7 +61,7 @@ See the project.json document for details on supports and includes features that
 
 
 
-## Directory Structure  ##
+## Directory Structure
 
 NuGet packages using the new format have the following well-known directories and behaviors: 
 
@@ -83,7 +84,7 @@ NuGet packages using the new format have the following well-known directories an
 	* runtimes is a new, optional, directory that will contain OS specific code, such as CPU architecture and OS specific or otherwise platform-dependent binaries. 
 
 
-## MSBuild targets and props files in packages  ##
+## MSBuild targets and props files in packages
 
 NuGet packages can contain .props and .targets files which will be imported into any MSBuild project that the package is installed into. In NuGet 2.x, this was done by injecting <Import> statements into the .csproj file, in NuGet 3.0 there is no specific "installation to project" action. Instead the package restore process writes two files: 
 
@@ -94,7 +95,7 @@ NuGet packages can contain .props and .targets files which will be imported into
 MSBuild knows to look for these two files and automatically imports them near the beginning and near the end of the project build process. This provides very similar behavior to NuGet 2, but with one major difference: **There is no guaranteed order of targets/props files in this case**. However, MSBuild does provide ways to order Targets through the BeforeTargets and AfterTargets attributes of the <Target> definition (see [https://msdn.microsoft.com/en-us/library/t50z2hka.aspx](https://msdn.microsoft.com/en-us/library/t50z2hka.aspx)).  
 
 
-## Lib and Ref  ##
+## Lib and Ref
 
 The behavior of the Lib directory hasn't changed significantly in NuGet v3. However, all assemblies must be within sub-folders named after a TxM, and can no longer be placed directly under the lib folder. A TxM is the name of a platform that a given asset in a package is supposed to work for. Logically these are an extension of the Target Framework Monikers (TFM) e.g. *net45*, *net46*, *netcore50*, and *dnxcore50* are all examples of TxMs. We use a new term TxM because a TxM can refer to a framework (TFM) as well as other platform specific surface area. For example the UWP TxM (UAP10.0) represents the .NET surface area as well as the Windows surface area for UWP applications. 
 
@@ -109,7 +110,7 @@ An example lib structure:
 
 The lib folder contains assemblies that will be used at runtime. For most packages a directory under lib for each of the target TxMs is all that is required. 
 
-## Ref  ##
+## Ref
 
 There are sometimes cases where a different assembly should be used during compilation (.NET Reference Assemblies do this today). For those cases, we are introducing a new top-level folder called *ref* (short for "Reference Assemblies"). 
 
@@ -141,11 +142,11 @@ The structure of the ref folder is the same as lib, for example:
 In this example the assemblies in the ref directories would all be identical. 
 
 
-## Runtimes  ##
+## Runtimes
 
 The runtimes folder contains assemblies and native libraries required to run on specific "runtimes", which are generally defined by Operating System and CPU architecture. These runtimes are identified using Runtime Identifiers (RIDs) such as win, win-x86, win7-x86, win8-64, etc. 
 
-## Native light-up  ##
+## Native light-up
 
 In the following example we will show a package that has a purely managed implementation for several platforms, but will use native helpers on Windows 8 where it can call into Windows 8 specific native APIs.  
 
@@ -181,7 +182,7 @@ In the example above the *lib/net40* assembly is purely managed code, whilst the
 
 Only a single lib directory will ever be picked, so if there is a runtime specific directory it will be chosen over non-runtime specific lib. The native directory is additive, if it exists it will be copied to the output of the build. 
 
-## Managed wrapper  ##
+## Managed wrapper
 
 Another way to use runtimes is to ship a package that is purely a managed wrapper over a native assembly. In this scenario you create a package like the following: 
 
@@ -206,7 +207,7 @@ Another way to use runtimes is to ship a package that is purely a managed wrappe
 In this case there is no top-level lib folder as that folder as there is no implementation of this package that doesn’t rely on the corresponding native assembly. If the managed assembly, MyLibrary.dll, was exactly the same in both of these cases then we could put it in a top level lib folder, but because the lack of a native assembly doesn’t cause the package to fail installing if it was installed on a platform that wasn’t win-x86 or win-x64 then the top level lib would be used but no native assembly would be copied. 
 
 
-## Authoring packages for NuGet 2 and NuGet 3  ##
+## Authoring packages for NuGet 2 and NuGet 3
 
 If you want to create a package that can be consumed by projects using packages.config as well as packages using project.json then the following apply: 
 
