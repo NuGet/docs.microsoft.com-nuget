@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
+---
+# required metadata
+
 title: "NuGet CLI Reference | Microsoft Docs"
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
 ms.assetid: d777c424-0cf3-4bc0-8abd-7ca16c22192b
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
 ms.reviewer:  
-- karann 
-- harikm 
+- karann
+- harikm
 #ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # NuGet CLI Reference
 
@@ -40,7 +40,7 @@ Command | Description | NuGet Version
 [config](#config) | Gets or sets NuGet configuration values. | All
 [delete](#delete) | Removes or unlists a package from a package source. | All
 [help or ?](#help) | Displays help information or help for a command. | All
-[init](#init) | Adds packages from a folder to a package soure using hierarchical layout. | 3.3+
+[init](#init) | Adds packages from a folder to a package source using hierarchical layout. | 3.3+
 [install](#install) | Installs a package into the current project but does not modify the project or packages.config. | All
 [list](#list) | Displays packages from a given source. | All
 [locals](#locals) | Clears or lists packages in various caches or the global packages folder, or identifies those folders. | 3.3+
@@ -67,9 +67,9 @@ Adds a specified package to a non-HTTP package source (a folder or UNC path) in 
           ├─<packageID>.<version>.nupkg.sha512
           └─<packageID>.nuspec
 
-When restoring or updating against the package source, hierarchical layout provides significantly better performance. 
+When restoring or updating against the package source, hierarchical layout provides significantly better performance.
 
-To expand all the files in the package to the destination package source, use the `-expand` switch. This typically results in additional subfolders appearing in the destination, such as `tools` and `lib`. 
+To expand all the files in the package to the destination package source, use the `-expand` switch. This typically results in additional subfolders appearing in the destination, such as `tools` and `lib`.
 
 ### Usage
 
@@ -93,7 +93,7 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
     nuget add foo.nupkg -source \\bar\packages\
 
 
-## config 
+## config
 
 Gets or sets NuGet config values. For additional usage, see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). For details on allowable key names, refer to the [NuGet config file reference](../schema/nuget.config-file.md).
 
@@ -101,7 +101,7 @@ Gets or sets NuGet config values. For additional usage, see [Configuring NuGet B
 
     nuget config -set <name>=<value> [<name>=<value> ...] [options]
 
-where &lt;name&gt; and &lt;value&gt; specify a key-value pair to be set in the configuration. You can specify as many pairs as desired. 
+where &lt;name&gt; and &lt;value&gt; specify a key-value pair to be set in the configuration. You can specify as many pairs as desired.
 
 In NuGet 3.4+, &lt;value&gt; can be use environment variables.
 
@@ -109,7 +109,7 @@ In NuGet 3.4+, &lt;value&gt; can be use environment variables.
 ### Options
 
 | | |
-  --- | --- 
+  --- | ---
 configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.config* is used.
 help | Displays help information for the command.
 noninteractive | Suppresses prompts for user input or confirmations.
@@ -172,7 +172,7 @@ where [command] identifies a specific command for which to display help.
 |     |     |
 | --- | --- |
 all | Print detailed help for all available commands; ignored if a specific command is given.
-help | Displays help information for the help command iself.
+help | Displays help information for the help command itself.
 markdown | Print detailed help in markdown format when used with -all. Ignored otherwise.
 noninteractive | Suppresses prompts for user input or confirmations.
 verbosity | Specifies the amount of details displayed in the output: *normal*, *quiet*, *detailed (2.5+)*.
@@ -190,7 +190,7 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 
 *Version 3.3+*
 
-Copies all the packages from a flat folder to a destination folder using a hierarchical layout as described for the [add command](#add) above. That is, using `init` is equivalent to using the `add` command on each package in the folder. 
+Copies all the packages from a flat folder to a destination folder using a hierarchical layout as described for the [add command](#add) above. That is, using `init` is equivalent to using the `add` command on each package in the folder.
 
 As with `add`, the destination must be either a local folder or a UNC path; HTTP package repositories such as nuget.org or private servers are not supported.
 
@@ -260,7 +260,7 @@ version | Specifies the version of the package to install.
     nuget install ninject -outputdirectory c:\proj
 
 
-##  list 
+##  list
 
 Displays a list of packages from a given source. If no sources are specified, all sources defined in the global configuration file, `%AppData%\NuGet\NuGet.config`, are used. If `NuGet.config` specifies no sources, then `list` uses the default feed (nuget.org).
 
@@ -305,12 +305,12 @@ where &lt;cache&gt; is one of `all`, `http-cache`, `packages-cache`, `global-pac
 | --- | --- |
 clear | Clear the specified cache.
 help | Displays help information for the command.
-list | List the location of the specifid cache, or the locations of all caches when used with *all*.
+list | List the location of the specified cache, or the locations of all caches when used with *all*.
 verbosity | Specifies the amount of details displayed in the output: *normal*, *quiet*, *detailed*.
 
 ### Examples
 
-    nuget locals all -list 
+    nuget locals all -list
     nuget locals http-cache -clear
 
 
@@ -318,7 +318,7 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 
 *Deprecated in 3.2+*
 
-Mirrors a package and its dependencies from the specified source repositories to the target repository. 
+Mirrors a package and its dependencies from the specified source repositories to the target repository.
 
 > [!NOTE]
 > To enable this command for NuGet versions before 3.2, go to [https://nuget.codeplex.com/releases](https://nuget.codeplex.com/releases), select the newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to nuget.exe.
@@ -327,7 +327,7 @@ Mirrors a package and its dependencies from the specified source repositories to
 
     nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [options]
 
-where &lt;packageID&gt; is the package to mirror, or &lt;configFilePath&gt; identifies the `packages.config` file that lists the packages to mirror. 
+where &lt;packageID&gt; is the package to mirror, or &lt;configFilePath&gt; identifies the `packages.config` file that lists the packages to mirror.
 
 The &lt;listUrlTarget&gt; specifies the source repository, and &lt;publishUrlTarget&gt; specifies the target repository.
 
@@ -394,7 +394,7 @@ version | Overrides the version number from the nuspec file.
 
 Some NuGet packages are useful as development dependencies, which help you author your own library, but aren't necessarily needed as actual package dependencies.
 
-The `pack` command will ignore `package` entries in `packages.config` 
+The `pack` command will ignore `package` entries in `packages.config`
 that have the `developmentDependency` attribute set to `true`. These entries will not be include as a dependencies in the created package.
 
 For example, consider the following `packages.config` file in the source project:
@@ -418,7 +418,7 @@ For this project, the package created by `nuget pack` will have a dependency on 
 
     nuget pack foo.csproj -Build -symbols -properties owners=janedoe,xiaop;version="1.0.5"
 
-    # create a package from project foo.csproj, using msbuild version 12 to build the project
+    # create a package from project foo.csproj, using MSBuild version 12 to build the project
     nuget pack foo.csproj -Build -symbols -properties owners=janedoe,xiaop;version="1.0.5" -MSBuildVersion 12
 
     nuget pack foo.nuspec -version 2.1.0
@@ -535,7 +535,7 @@ The restore command is executed in the following steps:
     # Restore packages for a solution file
     nuget restore a.sln
 
-    # Restore packages for a solution file, using msbuild version 14.0 to load the solution and its project(s)
+    # Restore packages for a solution file, using MSBuild version 14.0 to load the solution and its project(s)
     nuget restore a.sln -MSBuildVersion 14
 
     # Restore packages for a project's packages.config file, with the packages folder at the parent
@@ -547,7 +547,7 @@ The restore command is executed in the following steps:
 
 ## setapikey
 
-Saves an API key for a given server URL into `NuGet.Config` so that it doesn't need to be entered for subsequent commands. 
+Saves an API key for a given server URL into `NuGet.Config` so that it doesn't need to be entered for subsequent commands.
 
 ### Usage
 
@@ -648,7 +648,7 @@ This command can also be used to update nuget.exe itself using the *-self* flag.
 
     nuget update <configPath> [options]
 
-where &lt;configPath&gt; identifies either a `packages.config` or solution file that lists the project's dependencies. 
+where &lt;configPath&gt; identifies either a `packages.config` or solution file that lists the project's dependencies.
 
 ### Options
 
@@ -673,7 +673,7 @@ version | When used with one package ID, specifies the version of the package to
 
     nuget update
 
-    # update packages installed in solution.sln, using msbuild version 14.0 to load the solution and its project(s).
+    # update packages installed in solution.sln, using MSBuild version 14.0 to load the solution and its project(s).
     nuget update solution.sln -MSBuildVersion 14
 
     nuget update -safe
@@ -683,7 +683,7 @@ version | When used with one package ID, specifies the version of the package to
 
 ## Environment variables
 
-The behavior of nuget.exe can be configured through a number of environment variables, which affect nuget.exe on machine, user, or process levels. 
+The behavior of nuget.exe can be configured through a number of environment variables, which affect nuget.exe on machine, user, or process levels.
 
 In general, options specified directly on the command line or in the NuGet configuration files have precedence, but there are a few exceptions such as *FORCE_NUGET_EXE_INTERACTIVE*. If you find that nuget.exe behaves differently between machines, an environment variable could be the cause. For example, Azure Web Apps Kudu (used during deployment) has *NUGET_XMLDOC_MODE* set to *skip* to speed up package restore performance and save disk space.
 
@@ -694,9 +694,9 @@ no_proxy | Configures domains to bypass from using proxy. | Specified as domains
 EnableNuGetPackageRestore | Flag for if NuGet should implicitly grant consent if that's required by package on restore. | Specified flag is specified as *true* or *1*, any other value treated as flag not set.
 NUGET_EXE_NO_PROMPT | Prevents the exe for prompting for credentials.| Any value except null or empty string will be treated as this flag set/true.
 FORCE_NUGET_EXE_INTERACTIVE | Global environment variable to force interactive mode. | Any value except null or empty string will be treated as this flag set/true.
-NUGET_PACKAGES | Path to where packages are stored / cached. | Specified as absolute path. 
+NUGET_PACKAGES | Path to where packages are stored / cached. | Specified as absolute path.
 NUGET_FALLBACK_PACKAGES | Global fallback packages folders. | Absolute folder paths separated by semicolon (;).
-NUGET_HTTP_CACHE_PATH | HTTP cache folder. | Specified as absolute path. 
+NUGET_HTTP_CACHE_PATH | HTTP cache folder. | Specified as absolute path.
 NUGET_PERSIST_DG | Flag indicating if dg files (data collected from MSBuild) should be persisted. | Specified as *true* or *false* (default), if NUGET_PERSIST_DG_PATH not set will be stored to temporary directory (NuGetScratch folder in current environment temp directory).
 NUGET_PERSIST_DG_PATH | Path to persist dg files. | Specified as absolute path, this option is only used when *NUGET_PERSIST_DG* is set to true.
 NUGET_RESTORE_MSBUILD_ARGS | Sets additional MSBuild arguments. |
