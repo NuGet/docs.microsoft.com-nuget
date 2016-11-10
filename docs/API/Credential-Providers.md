@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: "Credential Providers and NuGet | Microsoft Docs" 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 9c7f6d16-f437-47c4-82d4-6c996e0b18ec 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
+---
+# required metadata
+
+title: "Credential Providers and NuGet | Microsoft Docs"
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 9c7f6d16-f437-47c4-82d4-6c996e0b18ec
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
 ms.reviewer:  
-- karann 
-- harikm 
+- karann
+- harikm
 #ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 
 # Credential Providers and NuGet
@@ -41,7 +41,7 @@ When `nuget.exe` needs credentials to authenticate with a feed, it looks for the
 
 
 > [!Note]
-> Credential providers do not apply to `dotnet restore`, or the Package Manager UI or Console in Visual Studio. NuGet in Visual Studio uses a single single built-in credential provider that supports Visual Studio Team Services.
+> Credential providers do not apply to `dotnet restore`, or the Package Manager UI or Console in Visual Studio. NuGet in Visual Studio uses a single built-in credential provider that supports Visual Studio Team Services.
 
 Plug-in credential providers thus provide a way to hook into custom authentication process for different feeds. They can be used in three ways:
 

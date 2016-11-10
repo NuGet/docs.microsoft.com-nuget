@@ -1,36 +1,36 @@
---- 
-# required metadata 
- 
-title: “Create .NET Standard Packages | Microsoft Docs” 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 29b3bceb-0f35-4cdd-bbc3-a04eb823164c 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
+---
+# required metadata
+
+title: “Create .NET Standard Packages | Microsoft Docs”
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 29b3bceb-0f35-4cdd-bbc3-a04eb823164c
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
 ms.reviewer:  
-- karann 
-- harikm 
+- karann
+- harikm
 #ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 
 # Create .NET Standard Packages
 
-The [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code. 
+The [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code.
 
 This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4. This will work across .NET Framework 4.6.1, Universal Windows Platform 10, .NET Core, and Mono/Xamarin. For details, see the [.NET Standard mapping table](#net-standard-mapping-table) later in this topic.
 
@@ -45,7 +45,7 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 ## Pre-requisites
 
-1. Visual Studio 2015. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well, of course. 
+1. Visual Studio 2015. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well, of course.
 1. .NET Core: Install .NET Core along with templates and other tools for Visual Studio 2015 from [https://go.microsoft.com/fwlink/?LinkId=824849](https://go.microsoft.com/fwlink/?LinkId=824849).
 1. NuGet CLI. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice. Then add that location to your PATH environment variable if it isn't already.
 
@@ -111,9 +111,9 @@ This guide will walk you through creating a nuget package targeting .NET Standar
         <files>
             <file src="bin\Release\AppLogger.dll" target="lib\netstandard1.4\AppLogger.dll" />
             <file src="bin\Release\AppLogger.xml" target="lib\netstandard1.4\AppLogger.xml" />
-        </files> 
+        </files>
 
-1. Right-click the solution and select **Build Solution** to generate all the files for the package. 
+1. Right-click the solution and select **Build Solution** to generate all the files for the package.
 
 
 ## Package the component
@@ -127,7 +127,7 @@ This will generate `AppLogger.YOUR_NAME.1.0.0.nupkg`. Opening this file in a too
 ![NuGet Package Explorer showing the AppLogger package](media/NetStandard-PackageExplorer.png)
 
 > [!Note]
-> A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
+> A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org.
 
 To make your package available to other developers,  follow the instructions on [Publish a package](../create-packages/publish-a-package.md).
 
@@ -156,7 +156,7 @@ The syntax of the *version* attribute here indicates that version 8.0.3 or above
 
 ### Supporting multiple target frameworks
 
-Suppose you'd like to take advantage of an API in .NET Framework 4.6.2 that is not available in .NET Standard 1.4. To do this, you'll first need to make sure the library compiles for .NET 4.6.2 by using conditional compilation or shared projects. (In Visual Studio, you can create a NetCore project, add the framework of choice to the mutliple framework section, and then build.) Then you create the package using the simple convention-based working directory technique as follows: 
+Suppose you'd like to take advantage of an API in .NET Framework 4.6.2 that is not available in .NET Standard 1.4. To do this, you'll first need to make sure the library compiles for .NET 4.6.2 by using conditional compilation or shared projects. (In Visual Studio, you can create a NetCore project, add the framework of choice to the multiple framework section, and then build.) Then you create the package using the simple convention-based working directory technique as follows:
 
 1. In the project's root folder containing your .nuspec file, create a folder named `lib`.
 1. Inside `lib`, create folders for each platform you want to support:
@@ -194,7 +194,7 @@ For more details on using this technique, see [Supporting Multiple .NET Framewor
 
 ### Adding targets and props for MSBuild
 
-In some cases you might want to add custom build targets or properties in projects that consume your package, such as running a custom tool or process during build. You do this by adding files in a `\build` folder as described in the steps below. When NuGet installs a package with \build files, it adds an MSBuild element in the project file pointing to the .targets and .props files. 
+In some cases you might want to add custom build targets or properties in projects that consume your package, such as running a custom tool or process during build. You do this by adding files in a `\build` folder as described in the steps below. When NuGet installs a package with \build files, it adds an MSBuild element in the project file pointing to the .targets and .props files.
 
 > [!Note]
 > When using project.json, targets are not added to the project but are made available through the project.lock.json.
@@ -229,9 +229,9 @@ For additional details, refer to [Include MSBuild props and targets in a package
 
 ### Creating localized packages
 
-To create localized versions of your library, you can either create separate packages for different locales, or include localized resource assemblies within a single package. Here's how to do the latter approach for German and Italian: 
+To create localized versions of your library, you can either create separate packages for different locales, or include localized resource assemblies within a single package. Here's how to do the latter approach for German and Italian:
 
-1. Within each target framework folder under `lib`, create folders for each supported language other than the English default. In these folders you can place resource assemblies  and localized IntelliSense XML files. For example: 
+1. Within each target framework folder under `lib`, create folders for each supported language other than the English default. In these folders you can place resource assemblies  and localized IntelliSense XML files. For example:
 
         lib
         ├───netstandard1.4
@@ -307,7 +307,7 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 
 
 ## Related topics
- 
+
 - [Nuspec Reference](../schema/nuspec.md)
 - [Symbol packages](../create-packages/symbol-packages.md)
 - [Dependency Versions](../create-packages/dependency-versions.md)

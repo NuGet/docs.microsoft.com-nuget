@@ -1,35 +1,35 @@
---- 
-# required metadata 
- 
-title: “Deleting packages | Microsoft Docs” 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: a348ca2e-0a5d-40ad-ba33-9bb37e1d980b 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
+---
+# required metadata
+
+title: “Deleting packages | Microsoft Docs”
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: a348ca2e-0a5d-40ad-ba33-9bb37e1d980b
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
 ms.reviewer:  
-- karann 
-- harikm 
+- karann
+- harikm
 #ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 # Deleting packages
 
-NuGet.org does not support permanent deletion of packages. Doing so would break every project depending on the availabiliyy of the package, especially with build workflows that involve package restore.
+NuGet.org does not support permanent deletion of packages. Doing so would break every project depending on the availability of the package, especially with build workflows that involve package restore.
 
 NuGet.org does supports *unlisting* a package, which can be done in the package management page on the web site. Unlisted packages no longer appear on nuget.org or in the Visual Studio UI, and do not appear in search results. Unlisted packages, however, can still be downloaded and installed by using an exact version number, which supports package restore.
 
