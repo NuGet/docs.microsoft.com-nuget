@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
+---
+# required metadata
+
 title: "NuGet.Config Reference | Microsoft Docs"
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
 ms.assetid: fbf31530-3bf4-478c-b26c-c2b24dd3406d
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
 ms.reviewer:  
-- karann 
-- harikm 
+- karann
+- harikm
 #ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # NuGet.Config Reference
 
@@ -104,7 +104,7 @@ Controls package restore during builds.
 Key | Value
 --- | ---
 enabled | A Boolean indicating whether NuGet can perform automatic restore. You can also set the `EnableNuGetPackageRestore` environment variable with a value of `True` instead of setting this key in the config file.
-automatic | A Boolean indicating whether NuGet shoudl check for missing packages during a build.
+automatic | A Boolean indicating whether NuGet should check for missing packages during a build.
 
 **Example**:
 
@@ -133,9 +133,9 @@ disableSourceControlIntegration | A Boolean indicating whether to ignore the pac
 
 The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, and `disabledPackageSources` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
 
-The [`nuget sources` command](../tools/nuget.exe-cli-reference.md#sources) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/nuget.exe-cli-reference.md#setapikey). 
+The [`nuget sources` command](../tools/nuget.exe-cli-reference.md#sources) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/nuget.exe-cli-reference.md#setapikey).
 
-### packageSources 
+### packageSources
 
 Lists all known package sources.
 
@@ -244,14 +244,14 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
       <config>
-        <!-- 
+        <!--
             Used to specify the default location to expand packages.
             See: NuGet.exe help install
             See: NuGet.exe help update
         -->
         <add key="repositoryPath" value="External\Packages" />
 
-        <!-- 
+        <!--
             Used to specify default source for the push command.
             See: NuGet.exe help push
         -->
@@ -289,8 +289,8 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
       <!-- Used to disable package sources  -->
       <disabledPackageSources />
 
-      <!-- 
-          Used to specify default API key associated with sources. 
+      <!--
+          Used to specify default API key associated with sources.
           See: NuGet.exe help setApiKey
           See: NuGet.exe help push
           See: NuGet.exe help mirror

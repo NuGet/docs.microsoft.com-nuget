@@ -1,34 +1,34 @@
---- 
-# required metadata 
- 
-title: “NuGet Governance | Microsoft Docs” 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 94c088ce-ec96-4876-a210-fbdae743942c 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
+---
+# required metadata
+
+title: “NuGet Governance | Microsoft Docs”
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 94c088ce-ec96-4876-a210-fbdae743942c
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
 ms.reviewer:  
-- karann 
-- harikm 
+- karann
+- harikm
 #ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 # NuGet Governance
-	
+
 > This document is based upon the [Benevolent Dictator Governance Model](http://www.oss-watch.ac.uk/resources/benevolentdictatorgovernancemodel) by the University of Oxford. It is licensed under a [Creative Commons Attribution-ShareAlike 2.0 UK: England & Wales License](http://creativecommons.org/licenses/by-sa/2.0/uk/).
 
 The NuGet project is led by a Benevolent Dictator and managed by the community. That is, the community actively contributes to the day-to-day maintenance of the project, but the general strategic line is drawn by the benevolent dictator. In case of disagreement, the benevolent dictator has the last word.
@@ -37,7 +37,7 @@ It is the benevolent dictator’s job to resolve disputes within the community a
 
 ## Roles And Responsibilities
 
-There are four roles described here: Benevolent Dictator, Committers, Contributors, and Users. 
+There are four roles described here: Benevolent Dictator, Committers, Contributors, and Users.
 
 ### Benevolent Dictator
 
@@ -60,14 +60,14 @@ Committers have no authority where the overall direction of NuGet is concerned. 
 
 Contributors are community members who submit patches to NuGet. These patches may be a one-time occurrence or occur over time. Expectations are that contributors submit patches that are small at first and grow larger when the contributor, committers, and the project lead have built confidence in the quality of a contributor's patches. Contributors are recognized in the associated product release notes document.
 
-Before a contributor’s first patch is put into the repositor, they must sign a [Contributor License Agreement](http://en.wikipedia.org/wiki/Contributor_License_Agreement) or an assignment agreement to the .NET Foundation. The patch can be submitted and discussed but it can’t actually be committed to the repository without the appropriate paperwork in place. To obtain a contributor license agreement, please send a request in email to [contributions@nuget.org](mailto:contributions@nuget.org).
+Before a contributor’s first patch is put into the repository, they must sign a [Contributor License Agreement](http://en.wikipedia.org/wiki/Contributor_License_Agreement) or an assignment agreement to the .NET Foundation. The patch can be submitted and discussed but it can’t actually be committed to the repository without the appropriate paperwork in place. To obtain a contributor license agreement, please send a request in email to [contributions@nuget.org](mailto:contributions@nuget.org).
 
 To become a contributor, submit a pull request to one of the following repositories:
 
 - [NuGet Client](https://github.com/NuGet/NuGet.Client)
 - [NuGet Gallery](https://github.com/nuget/nugetgallery)
 - [NuGet Docs](https://github.com/nuget/nugetdocs)
- 
+
 The detailed process for submitting a pull request varies by repository:
 
 - [Contribution instructions for NuGet Client and NuGet Gallery](https://github.com/NuGet/NuGet.Client/blob/dev/CONTRIBUTING.md)
@@ -93,5 +93,3 @@ Users who continue to engage with the project and its community will often find 
 ## Transparency
 
 Building community trust in the governance of an open-source project is vital to its success. To that end, decision making must be done in a transparent, open fashion. Discussion about the project’s direction must be done publicly. The community should never be caught off-guard by a decision by the Benevolent Dictator. Additionally, discussion about project decisions must be archived so that community members can understand the entire history of a decision and its context.
-
-

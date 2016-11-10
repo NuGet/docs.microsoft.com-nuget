@@ -343,7 +343,7 @@ nocache | Prevents NuGet from using packages from local machine caches.
 noop | Logs what would be done but does not perform the actions; assumes success for push operations.
 prerelease | Includes prerelease packages in the mirroring operation.
 source | A list of package sources to mirror. If no sources are specified, the ones defined in *%AppData%\NuGet\NuGet.config* are used, defaulting to nuget.org if none are specified.
-timeout | Specifies the timeout, in seconds, for pushing to a server. The default is 300 seconds (5 mintues).
+timeout | Specifies the timeout, in seconds, for pushing to a server. The default is 300 seconds (5 minutes).
 version | The version of the package to install. If not specified, the latest version is mirrored.
 
 ### Examples
@@ -638,9 +638,9 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 
 Updates all packages in a project the latest available versions. It is recommended to run ['restore'](#restore) before running the `update`.
 
-Note: `update` does not with with projects using `project.json`.
+Note: `update` does not with projects using `project.json`.
 
-The `update` command will also update assembly references in the project file, provded those references already exist. If an updated package has an added assembly, a new reference will *not* be added. New package dependencies will also not have their assembly references added. To include these operations as part of an update, update the package in Visual Studio using the Package Manager UI or the Package Manager Console.
+The `update` command will also update assembly references in the project file, provided those references already exist. If an updated package has an added assembly, a new reference will *not* be added. New package dependencies will also not have their assembly references added. To include these operations as part of an update, update the package in Visual Studio using the Package Manager UI or the Package Manager Console.
 
 This command can also be used to update nuget.exe itself using the *-self* flag.
 
