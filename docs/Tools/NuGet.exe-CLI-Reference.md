@@ -1,11 +1,11 @@
 ---
 # required metadata
 
-title: "NuGet CLI Reference | Microsoft Docs"
+title: NuGet CLI Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 11/11/2016
+ms.date: 1/3/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -75,7 +75,7 @@ To expand all the files in the package to the destination package source, use th
 
     nuget add <packagePath> -source <sourcePath> [options]
 
-where &ltpackagePath&gt; is the pathname to the package to add, and &lt;sourcePath&gt; specifies the folder-based package source to which the package will be added. HTTP sources are not supported.
+where &lt;packagePath&gt; is the pathname to the package to add, and &lt;sourcePath&gt; specifies the folder-based package source to which the package will be added. HTTP sources are not supported.
 
 ### Options
 
@@ -321,7 +321,7 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 Mirrors a package and its dependencies from the specified source repositories to the target repository.
 
 > [!NOTE]
-> To enable this command for NuGet versions before 3.2, go to [https://nuget.codeplex.com/releases](https://nuget.codeplex.com/releases), select the newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to nuget.exe.
+> To enable this command for NuGet versions before 3.2, go to [https://nuget.codeplex.com/releases](https://nuget.codeplex.com/releases), select the newest stable release, download `NuGet.ServerExtensions.dll` and `Nuget-Signed.exe` to your local disk and rename `Nuget-Signed.exe` to `nuget.exe`.
 
 ### Usage
 
@@ -359,7 +359,9 @@ version | The version of the package to install. If not specified, the latest ve
 
 *Version 2.7+*
 
-Creates a NuGet package based on the specified nuspec or project file.
+Creates a NuGet package based on the specified nuspec or project file. Note that the `pack` command requires MSBuild and will not work on Linux systems. On Mac OS X, you need to have Mono 4.4.2 or later installed.
+
+With Mono, you also need to adjust non-local paths in the .nuspec file to Unix-style paths, as nuget.exe will not itself convert Windows pathnames. 
 
 ### Usage
 
@@ -379,14 +381,13 @@ help | Displays help information for the command.
 includereferencedprojects | Indicates that the built package should include referenced projects either as dependencies or as part of the package. If a referenced project has a corresponding nuspec file that has the same name as the project, then that referenced project is added as a dependency. Otherwise, the referenced project is added as part of the package.
 minclientversion | Set the *minClientVersion* attribute for the created package. This value will override the value of the existing *minClientVersion* attribute (if any) in the .nuspec file.
 msbuildversion | Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.
-noninteractive | Suppresses prompts for user input or confirmations.
 nodefaultexcludes | Prevents default exclusion of NuGet package files and files and folders starting with a dot, such as *.svn*.
 nopackageanalysis | Specifies that pack should not run package analysis after building the package.
 outputdirectory | Specifies the folder in which the created package is stored. If no folder is specified, the current folder is used.
 properties | Specifies a list of token=value pairs, separated by semicolons, where each occurrence of $token$ in the nuspec file will be replaced with the given value. Values can be strings in quotation marks.
+suffix | Appends a suffix to the internally generated version number, typically used for appending build or other pre-release identifiers. For example, using `-suffix nightly` will create a package with a version number like `1.2.3.45-nightly`.
 symbols | Specifies that the package contains sources and symbols. When used with a with a nuspec file, this creates a regular NuGet package file and the corresponding symbols package.
 tool | Specifies that the output files of the project should be placed in the tool folder.
-verbose | Shows verbose output for package building.
 verbosity | Specifies the amount of details displayed in the output: *normal*, *quiet*, *detailed*.
 version | Overrides the version number from the nuspec file.
 
@@ -476,7 +477,9 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 
 NuGet 2.7+: Downloads and installs any packages missing from the `packages` folder.
 
-NuGet 3.3+ with projects using `project.json`: Generates a `project.lock.json` file.
+NuGet 3.3+ with projects using `project.json`: Generates a `project.lock.json` file and a `<project>.nuget.props` file, if needed. (Both files can be omitted from source control.)
+
+NuGet 4.0+ with project in which package references are included in the project file directly: Generates a `<project>.nuget.props` file, if needed, in the `obj` folder. (The file can be omitted from source control.)
 
 ### Usage
 
@@ -509,8 +512,7 @@ The restore command is executed in the following steps:
     | --- | --- |
     Solution (folder) | NuGet looks for a .sln file and uses that if found; otherwise gives an error. $(SolutionDir)\.nuget is used as the starting folder.
     .sln file | Restore packages identified by the solution; gives an error if -solutiondirectory is used. $(SolutionDir)\.nuget is used as the starting folder.
-    packages.config | Restore packages listed in this file.
-    project.json | Restore packages listed in this file, resolving and installing dependencies.
+    packages.config, project.json, or project file | Restore packages listed in the file, resolving and installing dependencies.
     Other file type | File is assumed to be a .sln file as above; if it's not a solution, NuGet gives an error.
     (projectPath not specified) | - NuGet looks for solution files in the current folder. If a single file is found, that one is used to restore packages; if multiple solutions are found, NuGet gives an error.
     |- If there are no solution files, NuGet looks for a packages.config or project.json and uses that to restore packages.
@@ -593,6 +595,9 @@ password | Specifies the password for authenticating with the source.
 storepasswordincleartext | Indicates to store the password in unencrypted text instead of the default behavior of storing an encrypted form.
 username | Specifies the user name for authenticating with the source.
 verbosity | Specifies the amount of details displayed in the output: *normal*, *quiet*, *detailed (2.5+)*.
+
+> [!Note]
+> Make sure to add the sources' password under the same user context as the NuGet.exe is later used to access the package source. The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted. So for example when you use a build server to restore NuGet packages the password must be encrypted with the same Windows user under which  the build server task will run.
 
 
 ### Examples

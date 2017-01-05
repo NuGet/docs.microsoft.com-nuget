@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "3.5 Beta2 Release Notes | Microsoft Docs" 
+title: 3.5 Beta2 Release Notes | Microsoft Docs 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -30,6 +30,8 @@ ms.reviewer:
 
 # 3.5 Beta2 Release Notes
 
+[NuGet 3.5-Beta Release Notes](../release-notes/nuget-3.5-Beta.md) | [NuGet 3.5-RC Release Notes](../release-notes/nuget-3.5-RC.md)
+
 NuGet 3.5 Beta 2 RTM was released June 27, 2016 for Visual Studio 2013 and nuget.exe
 
 [Full Changelog](https://github.com/NuGet/NuGet.Client/compare/release-3.5.0-beta...release-3.5.0-beta2)
@@ -38,7 +40,7 @@ NuGet 3.5 Beta 2 RTM was released June 27, 2016 for Visual Studio 2013 and nuget
 
 # Notable Changes
 
-## Bugs
+## Bug Fixes
 
 * Updated error message to lack of support for password decrpytion in .NET Core for authenticated feeds  - [#2942](https://github.com/NuGet/Home/issues/2942)
 

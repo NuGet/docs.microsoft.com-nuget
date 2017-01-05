@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "NuGet 3.4.2 Release Notes | Microsoft Docs" 
+title: NuGet 3.4.2 Release Notes | Microsoft Docs 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -30,7 +30,7 @@ ms.reviewer:
 
 # NuGet 3.4.2 Release Notes
 
-[NuGet 3.4 Release Notes](../release-notes/nuget-3.4.md) 
+[NuGet 3.4.1 Release Notes](../release-notes/nuget-3.4.1.md) | [NuGet 3.4.3 Release Notes](../release-notes/nuget-3.4.3.md)
 
 NuGet 3.4.2 was released on April 8, 2016 to address several issues that were identified in the 3.4 and 3.4.1 release.
 

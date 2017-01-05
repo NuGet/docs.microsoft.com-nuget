@@ -1,31 +1,30 @@
---- 
-# required metadata 
- 
-title: “NuGet frequently-asked questions | Microsoft Docs” 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 199a915d-9595-4ae2-a1fb-b15da6d7735a 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+---
+# required metadata
+
+title: NuGet frequently-asked questions | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/3/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 199a915d-9595-4ae2-a1fb-b15da6d7735a
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
 ---
 # NuGet frequently-asked questions
 
@@ -57,9 +56,9 @@ A [graphical client](https://github.com/mrward/monodevelop-nuget-addin) is avail
 
 **How do I check the exact version of NuGet installed?**
 
-In Visual Studio, use the **Help > About Microsoft Visual Studio** command and look at the version displayed next to **NuGet Package Manager**. 
+In Visual Studio, use the **Help > About Microsoft Visual Studio** command and look at the version displayed next to **NuGet Package Manager**.
 
-Alternatively, launch the Package Manager Console (**Tools > NuGet Package Manager > Package Manager Console**) and tnere `$host` to see information about NuGet including the version.
+Alternatively, launch the Package Manager Console (**Tools > NuGet Package Manager > Package Manager Console**) and enter `$host` to see information about NuGet including the version.
 
 **What languages are supported by NuGet?**
 
@@ -73,14 +72,13 @@ NuGet has full support for a variety of project templates like Windows, Web, Clo
 
 **How do I update packages that are part of Visual Studio templates?**
 
-Go to the **Updates** tab in the Package Manager UI and select **Update All**, or use the `Update-Package` command from Package Manager Console. 
+Go to the **Updates** tab in the Package Manager UI and select **Update All**, or use the `Update-Package` command from Package Manager Console.
 
 To update the template itself, you'll need to manually update the template repository. See [Xavier Decoster's blog](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages) on this subject. Note that this is done at your own risk, because manual updates might corrupt the template if the latest version of all dependencies are not compatible with each other.
 
 **Can I use NuGet outside of Visual Studio?**
 
 Yes, NuGet works directly from the command line. See the [Install guide](../guides/install-nuget.md).
-
 
 ## NuGet command line
 
@@ -102,7 +100,7 @@ The console provides a variable named `$DTE` that returns the `DTE` object. See 
 
 This is a known issue with how PowerShell interacts with a COM object. Try the following:
 
-	`$dte2 = Get-Interface $dte ([EnvDTE80.DTE2])`
+    `$dte2 = Get-Interface $dte ([EnvDTE80.DTE2])`
 
 `Get-Interface` is a helper function added by the NuGet PowerShell host.
 
@@ -123,7 +121,7 @@ See the [Hosting packages overview](../hosting-packages/overview.md).
 **How can I upload packages to my NuGet feed in bulk?**
 
 See [Bulk publishing NuGet packages](http://jeffhandley.com/archive/2012/12/13/Bulk-Publishing-NuGet-Packages.aspx) (jeffhandly.com).
-	
+
 ## Working with packages
 
 **What is the difference between a project-level package and a solution-level package?**
@@ -136,11 +134,11 @@ Yes, see Scott Hanselman's Blog post [How to access NuGet when NuGet.org is down
 
 **How do I install packages in a different location from the default packages folder?**
 
-Set the [`repositoryPath`](../schema/nuget.config-file.md#config-section) setting in `nuget.config` using `nuget config -set repositoryPath=&lt;path&gt;`. 
+Set the [`repositoryPath`](../schema/nuget.config-file.md#config-section) setting in `nuget.config` using `nuget config -set repositoryPath=&lt;path&gt;`.
 
 **How do I avoid checking in packages folder to source control?**
 
-Set the [`disableSourceControlIntegration`](../schema/nuget.config-file.md#solution-section) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automaticatlly.
+Set the [`disableSourceControlIntegration`](../schema/nuget.config-file.md#solution-section) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automatically.
 
 **How do I turn off package restore?**
 
@@ -154,8 +152,8 @@ You need to select the **All** source when installing a local package into the p
 
 In most projects where separate projects live in separate folders, this is not a problem as NuGet will identify the `packages.config` and `project.json` files in each project. With NuGet 3.3+ and multiple projects in the same folder, you can insert the name of the project into the `packages.config` or `project.json` filenames as below and NuGet will use that file:
 
-	`packages.config`: use the pattern `packages.{project-name}.config`
-	`project.json`: use the pattern `{project-name}.project.json`
+    `packages.config`: use the pattern `packages.{project-name}.config`
+    `project.json`: use the pattern `{project-name}.project.json`
 
 **I don't see nuget.org in my list of repositories, how do I get it back?**
 
@@ -192,9 +190,19 @@ It is possible to share dependencies between multiple packages, making the total
 
 Dependencies are mostly static and never change. When fixing a bug in code, the dependencies may not have to be updated. If you bundle dependencies, you end up reshipping larger packages every time. By splitting NuGet packages into related dependencies, upgrades are much more fine-grained for consumers of your package.
 
+**Can I edit package information after it's been uploaded?**
+
+Yes, in fact, you first get an opportunity to edit package metadata during the upload process. When you upload a package, the NuGet gallery will perform some static analysis and indicate if there are issues. If the package is accepted, you'll then see a page that allows you to edit any of the metadata before the package is added to the gallery. 
+
+For a package already in the gallery, sign into nuget.org, click on your username, then on **Manage my packages**, then on the package you want to manage. From that page, select **Edit Package** on the left-hand side and make the desired changes to the metadata.
+
+Note that dependencies listed for your package are generated automatically from the package itself and cannot be edited.
+
+In addition, uploading packages to [staging.nuget.org](http://staging.nuget.org) is a great way to check your package and test the editing process without making a package available in the public gallery.
+
 **Why can't I download/upload packages to nuget.org?**
 
-First make sure you're using the latest versions of NuGet. If that continues to faile, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
+First make sure you're using the latest versions of NuGet. If that continues to fail, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
 
 - The version of NuGet you're using
 - The package sources you're using
@@ -214,19 +222,20 @@ First make sure you're using the latest versions of NuGet. If that continues to 
 - Wait until the **Sent** column is >= 100.
 
     ![Capturing MTR](media/mtr.png)
- 
-- Copy text to clipboard. 
+
+- Copy text to clipboard.
 
 *To capture Fiddler:*
 
-- Install the latest version of [Fiddler](http://www.telerik.com/download/fiddler). 
+- Install the latest version of [Fiddler](http://www.telerik.com/download/fiddler).
 - Start Fiddler and disable capturing traffic using the **File > Capture Traffic** menu.
-- Remove all sessions (select all items in the list, press the **Delete** key).- - Configure Fiddler to capture HTTPS traffic by checking **Decrypt HTTPS traffic** in the **HTTPS** tab of the **Tools > Fiddler Options...** menu.
+- Remove all sessions (select all items in the list, press the **Delete** key).
+- Configure Fiddler to capture HTTPS traffic by checking **Decrypt HTTPS traffic** in the **HTTPS** tab of the **Tools > Fiddler Options...** menu.
 - Close Visual Studio.
 - Enable the **File > Capture Traffic** menu.
 - Start Visual Studio or nuget.exe .exe and perform the actions that are not working. The traffic generated by these actions should show up in Fiddler.
 - Once the actions have run, use **File > Save > All Sessions** to store the captured sessions.
 
-Note: it may be required to set the `HTTP_PROXY` environment variable to `http://127.0.0.1:8888` for routing NuGet traffic through Fiddler. 
+Note: it may be required to set the `HTTP_PROXY` environment variable to `http://127.0.0.1:8888` for routing NuGet traffic through Fiddler.
 
 If that fails, try the [tips mentioned in this StackOverflow post](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).

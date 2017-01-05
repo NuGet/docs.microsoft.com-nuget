@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "Publish a Package | Microsoft Docs"
+title: Publish a Package | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -93,7 +93,7 @@ To assign ownership to a company or group, create a nuget.org account using an e
 
 Occasionally, a package may not have an active owner. For example, the original owner may have left the company that produces the package, nuget.org credentials are lost, or earlier bugs in the gallery left a package ownerless. 
 
-If you are the rightful owner of a package and need to regain ownership, use the [contact form](https://www.nuget.org/policies/Contact) on nuget.org to explain your situation to the NuGet team. We will then follow a process to verify your ownership of the package, including trying to locate the existing owner through the package'p Project URL, Twitter, email, or other means. But if all else fails, we can send you a new invite to become an owner. 
+If you are the rightful owner of a package and need to regain ownership, use the [contact form](https://www.nuget.org/policies/Contact) on nuget.org to explain your situation to the NuGet team. We will then follow a process to verify your ownership of the package, including trying to locate the existing owner through the package's Project URL, Twitter, email, or other means. But if all else fails, we can send you a new invite to become an owner. 
 
 
 

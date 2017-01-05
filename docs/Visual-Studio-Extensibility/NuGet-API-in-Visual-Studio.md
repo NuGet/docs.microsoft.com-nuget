@@ -1,33 +1,32 @@
---- 
-# required metadata 
- 
-title: "NuGet API in Visual Studio | Microsoft Docs" 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 31f88cf0-d40a-42ee-974e-07910bb0771c 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+---
+# required metadata
 
+title: NuGet API in Visual Studio  | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/3/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 31f88cf0-d40a-42ee-974e-07910bb0771c
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet API in Visual Studio
 
 In addition to the Package Manager UI and Console in Visual Studio, NuGet also  exports some useful services through the [Managed Extensibility Framework (MEF)](http://msdn.microsoft.com/library/dd460648.aspx). This interface allows other components in Visual Studio to interact with NuGet, which can be used to install and uninstall packages, and to obtain information about installed packages.
@@ -37,14 +36,15 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
 - [`IRegistryKey`](#iregistrykey-interface): Method to retrieve a value from a registry subkey.
 - [`IVsPackageInstaller`](#ivspackageinstaller-interface): Methods to install NuGet packages into projects.
 - [`IVsPackageInstallerEvents`](#ivspackageinstallerevents-interface): Events for package install/uninstall.
+- [`IVsPackageInstallerProjectEvents`](#ivspackageinstallerprojectevents-interface): Batch events for package install/uninstall.
 - [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface): Methods to retrieve installed packages in the current solution and to check whether a given package is installed in a project.
 - [`IVsPackageManagerProvider`](#ivspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package.
 - [`IVsPackageMetadata`](#ivspackagemetadata-interface); Methods to retrieve information about an installed package.
+- [`IVsPackageProjectMetadata`](#ivspackageprojectmetadata-interface); Methods to retrieve information about a project where NuGet actions are being executed.
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface): Methods to restore packages installed in a project.
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface): Methods to retrieve a list of NuGet package sources.
 - [`IVsPackageUninstaller`](#ivspackageuninstaller-interface): Methods to uninstall NuGet packages from projects.
 - [`IVsTemplateWizard`](#ivstemplatewizard-interface): Designed for project/item templates to include pre-installed packages; this interface is *not* meant to be invoked from code and has no public methods.
-
 
 ## Using NuGet Services
 
@@ -55,8 +55,7 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
 > [!Warning]
 > Do not use any other types besides the public interfaces in your code, and do not reference any other NuGet assemblies, including NuGet.Core.dll.
 
-
-1. To use the a service, import it through the [MEF Import attribute](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes), or through the [IComponentModel service](http://msdn.microsoft.comlibrary/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx). 
+1. To use a service, import it through the [MEF Import attribute](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes), or through the [IComponentModel service](http://msdn.microsoft.comlibrary/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx).
 
         //Using the Import attribute
         [Import(typeof(IVsPackageInstaller))]
@@ -71,7 +70,6 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
 
         var installedPackages = installerServices.GetInstalledPackages();
 
-
 For reference, the source code for NuGet.VisualStudio is contained within the [NuGet.Clients repository](https://github.com/NuGet/NuGet.Client/tree/dev/src/NuGet.Clients/NuGet.VisualStudio).
 
 ## IRegistryKey interface
@@ -80,7 +78,7 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
     /// Specifies methods for manipulating a key in the Windows registry.
     /// </summary>
     public interface IRegistryKey
-     { 
+     {
         /// <summary>
         /// Retrieves the specified subkey for read or read/write access.
         /// </summary>
@@ -102,7 +100,6 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// </summary>
         void Close();
     }
-
 
 ## IVsPackageInstaller interface
 
@@ -275,7 +272,6 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, bool ignoreDependencies, Project project, IDictionary<string, string> packageVersions);
     }
 
-
 ## IVsPackageInstallerEvents interface
 
     public interface IVsPackageInstallerEvents
@@ -311,12 +307,26 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         event VsPackageEventHandler PackageReferenceRemoved;
     }
 
+## IVsPackageInstallerProjectEvents interface
+
+    public interface IVsPackageInstallerProjectEvents
+    {
+        /// <summary>
+        /// Raised before any IVsPackageInstallerEvents events are raised for a project.
+        /// </summary>
+        event VsPackageProjectEventHandler BatchStart;
+
+        /// <summary>
+        /// Raised after all IVsPackageInstallerEvents events are raised for a project.
+        /// </summary>
+        event VsPackageProjectEventHandler BatchEnd;
+    }
 
 ## IVsPackageInstallerServices interface
 
     public interface IVsPackageInstallerServices
     {
-        // IMPORTANT: do NOT rearrange the methods here. The order is important to maintain 
+        // IMPORTANT: do NOT rearrange the methods here. The order is important to maintain
         // backwards compatibility with clients that were compiled against old versions of NuGet.
 
         /// <summary>
@@ -382,7 +392,7 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         string Description { get; }
 
         /// <summary>
-        /// Check if a recommendation should be surfaced for an alternate package manager. 
+        /// Check if a recommendation should be surfaced for an alternate package manager.
         /// This code should not rely on slow network calls, and should return rapidly.
         /// </summary>
         /// <param name="packageId">Current package id</param>
@@ -438,7 +448,7 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// </summary>
         string InstallPath { get; }
 
-        // IMPORTANT: This property must come LAST, because it was added in 2.5. Having it declared 
+        // IMPORTANT: This property must come LAST, because it was added in 2.5. Having it declared
         // LAST will avoid breaking components that compiled against earlier versions which doesn't
         // have this property.
         /// <summary>
@@ -449,6 +459,21 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// it doesn't require referencing NuGet.Core.dll assembly.
         /// </remarks>
         string VersionString { get; }
+    }
+
+## IVsPackageProjectMetadata interface
+
+    public interface IVsPackageProjectMetadata
+    {
+        /// <summary>
+        /// Unique batch id for batch start/end events of the project.
+        /// </summary>
+        string BatchId { get; }
+
+        /// <summary>
+        /// Name of the project.
+        /// </summary>
+        string ProjectName { get; }
     }
 
 ## IVsPackageRestorer interface
@@ -469,7 +494,7 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         void RestorePackages(Project project);
     }
 
-## IVsPackageSourceProvider interface 
+## IVsPackageSourceProvider interface
 
     public interface IVsPackageSourceProvider
     {

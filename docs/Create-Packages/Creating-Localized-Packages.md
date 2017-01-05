@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "Creating Localized Packages | Microsoft Docs" 
+title: Creating Localized Packages | Microsoft Docs 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 

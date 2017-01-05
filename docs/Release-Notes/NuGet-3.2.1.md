@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "NuGet 3.2.1 Release Notes | Microsoft Docs" 
+title: NuGet 3.2.1 Release Notes | Microsoft Docs 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -31,7 +31,7 @@ ms.reviewer:
 
 # NuGet 3.2.1 Release Notes
 
-[NuGet 3.2 Release Notes](../release-notes/nuget-3.2.md)
+[NuGet 3.2 Release Notes](../release-notes/nuget-3.2.md) | [NuGet 3.3 Release Notes](../release-notes/nuget-3.3.md)
 
 NuGet 3.2.1 for the command-line was released October 12, 2015 with a handful of optimizations and fixes for the 3.2 release and is available from [dist.nuget.org](http://dist.nuget.org/index.html).
 

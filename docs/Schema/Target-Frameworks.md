@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "Target Frameworks | Microsoft Docs"
+title: Target Frameworks | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 

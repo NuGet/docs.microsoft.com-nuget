@@ -49,7 +49,7 @@ Additionally, .NET Foundation staff consider the project lead the primary or fir
 
 ### Committers
 
-Committers are contributors who have made sustained valuable contributions to NuGet and are appointed by the Benevolent Dictator. One appointed, committrs are relied upon to both write code directly to the repository and screen the contributions of others. Committers are often developers but can contribute in other ways.
+Committers are contributors who have made sustained valuable contributions to NuGet and are appointed by the Benevolent Dictator. One appointed, committers are relied upon to both write code directly to the repository and screen the contributions of others. Committers are often developers but can contribute in other ways.
 
 Typically, a committer focuses on a specific aspect of the project, and brings a level of expertise and understanding that earns them the respect of the community and the project lead. The role of committer is not an official one, it is simply a position that influential members of the community assume as the project lead looks to them for guidance and support.
 
@@ -60,7 +60,7 @@ Committers have no authority where the overall direction of NuGet is concerned. 
 
 Contributors are community members who submit patches to NuGet. These patches may be a one-time occurrence or occur over time. Expectations are that contributors submit patches that are small at first and grow larger when the contributor, committers, and the project lead have built confidence in the quality of a contributor's patches. Contributors are recognized in the associated product release notes document.
 
-Before a contributor’s first patch is put into the repositor, they must sign a [Contributor License Agreement](http://en.wikipedia.org/wiki/Contributor_License_Agreement) or an assignment agreement to the .NET Foundation. The patch can be submitted and discussed but it can’t actually be committed to the repository without the appropriate paperwork in place. To obtain a contributor license agreement, please send a request in email to [contributions@nuget.org](mailto:contributions@nuget.org).
+Before a contributor’s first patch is put into the repository, they must sign a [Contributor License Agreement](http://en.wikipedia.org/wiki/Contributor_License_Agreement) or an assignment agreement to the .NET Foundation. The patch can be submitted and discussed but it can’t actually be committed to the repository without the appropriate paperwork in place. To obtain a contributor license agreement, please send a request in email to [contributions@nuget.org](mailto:contributions@nuget.org).
 
 To become a contributor, submit a pull request to one of the following repositories:
 
@@ -70,9 +70,8 @@ To become a contributor, submit a pull request to one of the following repositor
  
 The detailed process for submitting a pull request varies by repository:
 
-- [Contribution instructions for NuGet Client and NuGet Gallery](https://github.com/NuGet/NuGet.Client/blob/dev/CONTRIBUTING.md)
-- [Contribution instructions for NuGet Docs](https://github.com/NuGet/NuGetDocs/wiki/Contributing-to-NuGet-Documentation).
-
+- [Contribution instructions for NuGet Client and NuGet Gallery](https://github.com/NuGet/Home/wiki/Contributing-to-NuGet)
+- [Contribution instructions for NuGet Docs](https://github.com/NuGet/NuGetDocs/wiki/Contributing-to-NuGet-Documentation)
 
 ### Users
 
@@ -93,5 +92,3 @@ Users who continue to engage with the project and its community will often find 
 ## Transparency
 
 Building community trust in the governance of an open-source project is vital to its success. To that end, decision making must be done in a transparent, open fashion. Discussion about the project’s direction must be done publicly. The community should never be caught off-guard by a decision by the Benevolent Dictator. Additionally, discussion about project decisions must be archived so that community members can understand the entire history of a decision and its context.
-
-

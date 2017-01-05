@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "NuGet 1.6 Release Notes | Microsoft Docs" 
+title: NuGet 1.6 Release Notes | Microsoft Docs
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 

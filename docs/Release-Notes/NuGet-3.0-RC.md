@@ -2,7 +2,7 @@
 --- 
 # required metadata 
  
-title: "NuGet 3.0 RC Release Notes | Microsoft Docs" 
+title: NuGet 3.0 RC Release Notes | Microsoft Docs 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 

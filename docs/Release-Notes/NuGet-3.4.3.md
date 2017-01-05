@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "NuGet 3.4.3 Release Notes | Microsoft Docs" 
+title: NuGet 3.4.3 Release Notes | Microsoft Docs 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -30,6 +30,8 @@ ms.reviewer:
 
 # NuGet 3.4.3 Release Notes
 
+[NuGet 3.4.2 Release Notes](../release-notes/nuget-3.4.2.md) | [NuGet 3.4.4 Release Notes](../release-notes/nuget-3.4.4.md)
+
 NuGet 3.4.3 was released on April 22, 2016 to address several issues that were identified in the 3.4 and subsequent releases.
 
 You can download both the VSIX and NuGet.exe [here](https://dist.nuget.org/index.html).
@@ -38,7 +40,7 @@ You can download both the VSIX and NuGet.exe [here](https://dist.nuget.org/index
 
 * Improved Visual Studio reliability. We have fixed some issues in NuGet that caused crashes in Visual Studio.
 
-##Fixes
+## Fixes
 
 * Fixed some authorization issues with password protected private nuget feeds.
 * Fixed an issue around being unable to restore PCL's from project.json with runtimes specified.

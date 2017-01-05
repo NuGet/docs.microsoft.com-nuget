@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "NuGet 3.5 Beta Release Notes | Microsoft Docs" 
+title: NuGet 3.5 Beta Release Notes | Microsoft Docs 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -30,7 +30,9 @@ ms.reviewer:
 
 #NuGet 3.5 RTM Release Notes
 
-## Bugs
+[NuGet 3.5-RC Release Notes](../release-notes/nuget-3.5-RC.md) | [NuGet 4.0 RC Release Notes](../release-notes/nuget-4.0-RC.md)
+
+## Bug Fixes
 
 * Pack doesn't use msbuild 14.1 on mono - [#3550](https://github.com/NuGet/Home/issues/3550)
 
@@ -152,7 +154,7 @@ ms.reviewer:
 
 * Nuget Install with All Package Sources, but package missing from 1 source, fails - [#2322](https://github.com/NuGet/Home/issues/2322)
 
-* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VSMSBuildNuGetProjectSystem+<>c__DisplayClass_0+<<AddReference>b__>d.MoveNext - [#2285](https://github.com/NuGet/Home/issues/2285)
+* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VSMSBuildNuGetProjectSystem+*lt;&gt;c__DisplayClass_0+&lt;&lt;AddReference&gt;b__&gt;d.MoveNext - [#2285](https://github.com/NuGet/Home/issues/2285)
 
 * Install blocks if a single source fails authorization - [#2034](https://github.com/NuGet/Home/issues/2034)
 

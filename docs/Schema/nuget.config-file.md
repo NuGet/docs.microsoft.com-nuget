@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "NuGet.Config Reference | Microsoft Docs"
+title: NuGet.Config Reference | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -36,6 +36,8 @@ NuGet behavior is controlled by settings in `NuGet.Config` files as described in
 
 Note that with NuGet 3.4+ you can use environment variables in `NuGet.Config` values to apply machine-specific settings at run time. For example, if the `HOME` environment variable is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file will resolve to `c:\users\username\NuGetRepository`. If an environment variable is not found, NuGet will leave the value unmodified.
 
+lso note that with Visual Studio 2017+ and NuGet 4.0+, the machine-wide `NuGet.config` is now located at `%ProgramFiles(x86)%\NuGet\Config\` to improve security in multi-user scenarios. You will need to manually migrate existing config files from `%ProgramData%` to `%ProgramFiles(x86)%`. Going forward,NuGet 4.0+ will also treat this as the new location for the machine-wide configuration. `NuGet.config` in `%ProgramData%\NuGet\Config\` will no longer be implicitly referenced or considered for hierarchical merging of `nuget.config`.
+
 In this topic:
 
 - [config section](#config-section)
@@ -68,7 +70,7 @@ dependencyVersion (package.config only) | The default `DependencyVersion` value 
 globalPackagesFolder (project.json only) | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages`. A relative path can be used in project-specific `nuget.config` files.
 repositoryPath (packages.config only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)\packages` folder. A relative path can be used in project-specific `nuget.config` files.
 defaultPushSource | Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation.
-http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://&lt;username&gt;:&lt;password&gt@&lt;domain&gt`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the HTTP_PROXY and NO_PROXY environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com).
+http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://&lt;username&gt;:&lt;password&gt@&lt;domain&gt`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the http_proxy and no_proxy environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com).
 
 
 **Example**:
@@ -104,7 +106,7 @@ Controls package restore during builds.
 Key | Value
 --- | ---
 enabled | A Boolean indicating whether NuGet can perform automatic restore. You can also set the `EnableNuGetPackageRestore` environment variable with a value of `True` instead of setting this key in the config file.
-automatic | A Boolean indicating whether NuGet shoudl check for missing packages during a build.
+automatic | A Boolean indicating whether NuGet should check for missing packages during a build.
 
 **Example**:
 
@@ -119,7 +121,7 @@ Controls whether the `packages` folder of a solution is included in source contr
 
 Key | Value
 --- | ---
-disableSourceControlIntegration | A Boolean indicating whether to ignore the packages folder when working with source control. The default value is true.
+disableSourceControlIntegration | A Boolean indicating whether to ignore the packages folder when working with source control. The default value is false.
 
 
 **Example**:
@@ -299,3 +301,4 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
         <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
       </apikeys>
     </configuration>
+    

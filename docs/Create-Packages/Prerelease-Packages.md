@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "Pre-release Versions | Microsoft Docs"
+title: Pre-release Versions | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 

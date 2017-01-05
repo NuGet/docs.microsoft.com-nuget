@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: "Project.json and UWP | Microsoft Docs"
+title: Project.json and UWP | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen

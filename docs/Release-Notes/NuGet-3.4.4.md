@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "NuGet 3.4.4 Release Notes | Microsoft Docs" 
+title: NuGet 3.4.4 Release Notes | Microsoft Docs 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -29,6 +29,8 @@ ms.reviewer:
 --- 
 
 # NuGet 3.4.4 Release Notes
+
+[NuGet 3.4.3 Release Notes](../release-notes/nuget-3.4.3.md) | [NuGet 3.5-Beta Release Notes](../release-notes/nuget-3.5-Beta.md)
 
 The primary focus of this release was improvements to the quality of 3.4.3 version of nuget.exe with a few fixes to the Visual Studio extension as well.
 

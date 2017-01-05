@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: "Use a package | Microsoft Docs"
+title: Use a package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen

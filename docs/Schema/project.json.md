@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "Project.json Reference | Microsoft Docs" 
+title: Project.json Reference | Microsoft Docs 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -75,7 +75,7 @@ The Package id corresponds to the id of the package on nuget.org , the same as t
 
 The version constraint of **"5.0.0"** corresponds to the **>= 5.0.0** constraint. This means that if for some reason 5.0.0 is not available on the server and 5.0.1 is, the restore will pick 5.0.1 and warn you about the upgrade. Otherwise restore will pick the lowest possible version on the server matching the constraint which will be 5.0.0. 
 
-See [dependency resolution document]() for more details on resolution rules. 
+See [dependency resolution document](../consume-packages/dependency-resolution.md) for more details on resolution rules. 
 
 ## Frameworks
 
