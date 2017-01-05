@@ -160,7 +160,7 @@ The syntax of the *version* attribute here indicates that version 8.0.3 or above
 
 ### Supporting multiple target frameworks
 
-Suppose you'd like to take advantage of an API in .NET Framework 4.6.2 that is not available in .NET Standard 1.4. To do this, you'll first need to make sure the library compiles for .NET 4.6.2 by using conditional compilation or shared projects. (In Visual Studio, you can create a NetCore project, add the framework of choice to the mutliple framework section, and then build.) Then you create the package using the simple convention-based working directory technique as follows: 
+Suppose you'd like to take advantage of an API in .NET Framework 4.6.2 that is not available in .NET Standard 1.4. To do this, you'll first need to make sure the library compiles for .NET 4.6.2 by using conditional compilation or shared projects. (In Visual Studio, you can create a NetCore project, add the framework of choice to the multiple framework section, and then build.) Then you create the package using the simple convention-based working directory technique as follows: 
 
 1. In the project's root folder containing your .nuspec file, create a folder named `lib`.
 1. Inside `lib`, create folders for each platform you want to support:

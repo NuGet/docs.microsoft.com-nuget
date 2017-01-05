@@ -29,7 +29,7 @@ ms.reviewer:
 ---
 # Deleting packages
 
-NuGet.org does not support permanent deletion of packages. Doing so would break every project depending on the availabiliyy of the package, especially with build workflows that involve package restore.
+NuGet.org does not support permanent deletion of packages. Doing so would break every project depending on the availability of the package, especially with build workflows that involve package restore.
 
 NuGet.org does supports *unlisting* a package, which can be done in the package management page on the web site. Unlisted packages no longer appear on nuget.org or in the Visual Studio UI, and do not appear in search results. Unlisted packages, however, can still be downloaded and installed by using an exact version number, which supports package restore. In addition, unlisted packages may still be discovered in the following specific scenarios:
 

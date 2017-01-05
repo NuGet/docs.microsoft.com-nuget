@@ -66,7 +66,7 @@ You can see one of the proposals for bringing back content files, and follow its
 
 ## Impact for Package Authors
 
-Packages using the above features would have to use a different mechanism. The most commonly useful mechanism for this would be the MSBUILD targets/props that continues to get fully supported. The build system can choose to pick up other conventions in the package. This is how msbuild targets are supported as well as Roslyn analyzers. It is possible to build packages that supports targets and analyzers for packages.config and project.json scenarios.
+Packages using the above features would have to use a different mechanism. The most commonly useful mechanism for this would be the MSBUILD targets/props that continues to get fully supported. The build system can choose to pick up other conventions in the package. This is how MSBuild targets are supported as well as Roslyn analyzers. It is possible to build packages that supports targets and analyzers for packages.config and project.json scenarios.
 
 Packages that attempt to modify the project to ease startup, typically work in a very limited set of scenarios, and will instead provide a readme, or guidance on how to use the package.
 
