@@ -128,6 +128,6 @@ For example, you might add the following `case` statement to your `IVsHierarchy:
 
 ## DTE Support
 
-NuGet drives the project system to add references, content items, and MSBuild imports by calling into [DTE](https://msdn.microsoft.com/library/mt452175.aspx), which is the top-level Visual Studio automation interface. DTE is is a set of COM interfaces that you may already implement.
+NuGet drives the project system to add references, content items, and MSBuild imports by calling into [DTE](https://msdn.microsoft.com/library/mt452175.aspx), which is the top-level Visual Studio automation interface. DTE is a set of COM interfaces that you may already implement.
 
 If your project type is based on CPS, DTE is implemented for you. 

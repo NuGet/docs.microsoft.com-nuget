@@ -45,7 +45,7 @@ ms.reviewer:
         <h2 class="section-heading"><span class="icon icon-lightbulb-checked"></span> Featured Content</h2>
         <div class="features row">
             <ul class="column-half">
-                <li><a href="./guides/create-net-standard-packages.md">Create .NET Standard Packages</a></li>
+                <li><a href="./guides/create-net-standard-packages-vs2017.md">Create .NET Standard Packages (Visual Studio 2017)</a></li>
             </ul>
             <ul class="column-half">
                 <li><a href="./guides/create-cross-platform-packages.md">Create Cross-Platform Packages</a></li>
