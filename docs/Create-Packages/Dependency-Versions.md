@@ -1,38 +1,40 @@
---- 
-# required metadata 
- 
-title: "Dependency Versions | Microsoft Docs" 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: ae6c6212-67e9-4968-9585-e265407fd9c8 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+---
+# required metadata
+
+title: Dependency Versions | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/5/20167
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: ae6c6212-67e9-4968-9585-e265407fd9c8
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # Dependency Versions
 
-When you [create a NuGet package](../create-packages/creating-a-package.md), you can specify dependencies for your package in the **&lt;dependencies&gt;** node of the `.nuspec` file, where each dependency is listed with a **&lt;dependency&gt;** tag: 
+*For .NET Core projects using NuGet 4.0+, see [Package References in Project Files](../consume-packages/package-references-in-project-files.md) for declaring dependencies.*
+
+When you [create a NuGet package](../create-packages/creating-a-package.md), you can specify dependencies for your package in the **&lt;dependencies&gt;** node of the `.nuspec` file, where each dependency is listed with a **&lt;dependency&gt;** tag:
 
     <?xml version="1.0"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
+    <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
       <metadata>
         <!-- ... -->
 
@@ -43,7 +45,7 @@ When you [create a NuGet package](../create-packages/creating-a-package.md), you
       </metadata>
     </package>
 
-Dependencies are installed whenever the dependent package is installed, [reinstalled](../consume-packages/reinstalling-and-updating-packages.md), or included in a [package restore](../consume-packages/package-restore.md). NuGet chooses the exact version of the installed dependency by using the value of the `version` attribute specified for that dependency as described in the following sections.  
+Dependencies are installed whenever the dependent package is installed, [reinstalled](../consume-packages/reinstalling-and-updating-packages.md), or included in a [package restore](../consume-packages/package-restore.md). NuGet chooses the exact version of the installed dependency by using the value of the `version` attribute specified for that dependency as described in the following sections.
 
 - [Version ranges](#version-ranges)
 - [Normalized version numbers](#normalized-version-numbers)
@@ -70,26 +72,27 @@ NuGet supports using interval notation for specifying version ranges, summarized
 | (,1.0) | x < 1.0 | Maximum version, exclusive |
 | [1.0,2.0] | 1.0 ≤ x ≤ 2.0 | Exact range, inclusive |
 | (1.0,2.0) | 1.0 < x < 2.0 | Exact range, exclusive |
+| [1.0,2.0) | 1.0 ≤ x < 2.0 | Mixed inclusive minimum and exclusive maximum version |
 | (1.0)    | invalid | invalid |
 
 
 A few examples:
 
-    <!-- Accepts any version 6.1 and above -->    
+    <!-- Accepts any version 6.1 and above -->
     <dependency id="ExamplePackage" version="6.1" />
 
     <!-- Accepts any version above, but not include 4.1.3. This might be
-         used to guarantee a dependency with a specific bug fix. -->    
+         used to guarantee a dependency with a specific bug fix. -->
     <dependency id="ExamplePackage" version="(4.1.3,)" />
 
     <!-- Accepts any version up below 5.x, which might be used to prevent
-         pulling in a later version of a dependency that changed its interface. -->    
+         pulling in a later version of a dependency that changed its interface. -->
     <dependency id="ExamplePackage" version="(,5.0)" />
 
-    <!-- Accepts any 1.x or 2.x version, but no 0.x or 3.x and higher versions -->    
+    <!-- Accepts any 1.x or 2.x version, but no 0.x or 3.x and higher versions -->
     <dependency id="ExamplePackage" version="[1,3)" />
 
-    <!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->    
+    <!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->
     <dependency id="ExamplePackage" version="[1.3.2,1.5)" />
 
 
@@ -112,14 +115,14 @@ When obtaining packages from a repository during install, reinstall, or restore 
 
 - Leading zeroes are removed from version numbers:
 
-    1.00 is treated as 1.0
-    1.01.1 is treated as 1.1.1
-    1.00.0.1 is treated as 1.0.0.1
+        1.00 is treated as 1.0
+        1.01.1 is treated as 1.1.1
+        1.00.0.1 is treated as 1.0.0.1
 
 - A zero in the fourth part of the version number will be omitted
 
-    1.0.0.0 is treated as 1.0.0
-    1.0.01.0 is treated as 1.0.1 
+        1.0.0.0 is treated as 1.0.0
+        1.0.01.0 is treated as 1.0.1
 
 This normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions.
 
@@ -129,7 +132,7 @@ However, NuGet repositories must treat these values in the same way as NuGet to 
 
 With NuGet 2.4.x and earlier, when a package is installed whose dependency already exists in the project, the dependency is updated to the latest version that satisfies the version constraints, even if the existing version also satisfies those constraints.
 
-For example, consider package A that depends on package B and specifies 1.0 for the version number. The source repository contains both versions 1.0, 1.1, and 1.2 of package B. If A is installed in a project that already contains B version 1.0, then B is updated to version 1.2.  
+For example, consider package A that depends on package B and specifies 1.0 for the version number. The source repository contains both versions 1.0, 1.1, and 1.2 of package B. If A is installed in a project that already contains B version 1.0, then B is updated to version 1.2.
 
 With NuGet 2.5 and later, if a dependency version is already satisfied, the dependency will not be updated during other package installations.
 

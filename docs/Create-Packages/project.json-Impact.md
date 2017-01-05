@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "project.json Impact on Package Authors | Microsoft Docs"
+title: project.json Impact on Package Authors | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 

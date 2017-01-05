@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "Source Code and Configuration File Transformations | Microsoft Docs"
+title: Source Code and Configuration File Transformations | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 

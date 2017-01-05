@@ -1,11 +1,11 @@
 --- 
 # required metadata 
  
-title: "NuGet support for the Visual Studio project system | Microsoft Docs" 
+title: NuGet support for the Visual Studio project system | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
-ms.date: 11/11/2016 
+ms.date: 1/3/2017 
 ms.topic: article 
 ms.prod: nuget 
 #ms.service: 
@@ -35,14 +35,12 @@ To support third-party project types in Visual Studio, NuGet 3.x+ supports the [
 To integrate with NuGet, a project system must advertise its own support for all the project capabilities described in this topic.
 
 
-
 > [!NOTE]
 > Do not declare capabilities that your project does not actually have for the sake of enabling packages to install in your project. Many features of Visual Studio and other extensions depend on project capabilities besides the NuGet client. Falsely advertising capabilities of your project can lead these components to malfunction and your users' experience to degrade.
 
 ## Advertise project capabilities
 
 The NuGet client determines which packages are compatible with your project type based on the [project's capabilities](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md), as described in the following table.  
-
 
 
 |Capability|Description|
@@ -87,7 +85,6 @@ The `VsProjectCapabilitiesPresenceChecker` class must implement the `IVsBooleanS
 
 
 A sample implementation of this interface would then be:
-
 
     class VsProjectCapabilitiesPresenceChecker : IVsBooleanSymbolPresenceChecker
     {

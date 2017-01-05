@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "Analyzer NuGet Formats | Microsoft Docs"
+title: Analyzer NuGet Formats | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 

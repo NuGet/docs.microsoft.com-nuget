@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "Known Issues with NuGet | Microsoft Docs" 
+title: Known Issues with NuGet | Microsoft Docs
 author: harikm 
 ms.author: harikm 
 manager: ghogen 

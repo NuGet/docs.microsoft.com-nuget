@@ -1,41 +1,43 @@
---- 
-# required metadata 
- 
-title: "Creating a Package | Microsoft Docs" 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 456797cb-e3e4-4b88-9b01-8b5153cee802 
- 
-# optional metadata 
- 
+---
+# required metadata
+
+title: Creating a Package | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/3/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 456797cb-e3e4-4b88-9b01-8b5153cee802
+
+# optional metadata
+
 description: A detailed guide and reference to the process of creating a NuGet package, including deciding which files to package, creating the .nuspec manifest file, choosing an identifier and version number, setting a package type, adding a readme and other files, creating the .nupkg package file.
-keywords: Nuget package create creation reference nuspec manifest conventions identifier version 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+keywords: Nuget package create creation reference nuspec manifest conventions identifier version
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # Creating a Package
 
 
 > [!Note]
 > This topic is intended to be a reference for the process of creating a package. For a focused walkthrough example, refer to the [Create and Publish a Package Quickstart](../quickstart/create-and-publish-a-package.md).
+>
+> Additionally, this topic applies to all project types other than .NET Core projects using Visual Studio 2017 and NuGet 4.0+. In these cases, NuGet uses information from a .csproj file directly. These details are explained in [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) and [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).
 
 No matter what your package does or what code it contains, NuGet is how you package that functionality into a component that can be shared with and used by any number of other developers.
 
-The process of creating a package always begins with creating a `.nuspec` package manifest file that describes your package contents. This manifest drives the creation of the package as well as its usage when installed into a project. 
+The process of creating a package always begins with creating a `.nuspec` package manifest file that describes your package contents. This manifest drives the creation of the package as well as its usage when installed into a project.
 
 This topic covers the most common steps involved in package creation:
 
@@ -51,7 +53,7 @@ This topic covers the most common steps involved in package creation:
 - [Including MSBuild props and targets in a package](#including-msbuild-props-and-targets-in-a-package)
 - [Creating the package](#creating-the-package)
 
-After these core steps, you can incorporate a variety of other features as described in the other topics in this documentation. See [Next steps](#next-steps) below for a list of those options. 
+After these core steps, you can incorporate a variety of other features as described in the other topics in this documentation. See [Next steps](#next-steps) below for a list of those options.
 
 ## Deciding which assemblies to package
 
@@ -69,7 +71,7 @@ A .nuspec is an XML manifest file that describes a package's contents and drives
 Here's typical (but fictitious) `.nuspec` file, with annotation comments:
 
     <?xml version="1.0"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
+    <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
       <metadata>
         <!-- The identifier that must be unique within the hosting gallery -->
         <id>Contoso.Utility.UsefulStuff</id>
@@ -80,7 +82,7 @@ Here's typical (but fictitious) `.nuspec` file, with annotation comments:
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Dejana Tesic, Rajeev Dey</authors>
 
-        <!-- Owners are typically nuget.org identities that allow gallery 
+        <!-- Owners are typically nuget.org identities that allow gallery
              users to earily find other packages by the same owners.  -->
         <owners>dejanatc, rjdey</owners>
 
@@ -98,7 +100,7 @@ Here's typical (but fictitious) `.nuspec` file, with annotation comments:
         <!-- Any details about this particular release -->
         <releaseNotes>Bug fixes and performance improvements</releaseNotes>
 
-        <!-- The description can be used in package manager UI. Note that the 
+        <!-- The description can be used in package manager UI. Note that the
              nuget.org gallery uses information you add in the portal. -->
         <description>Core utility functions for web applications</description>
 
@@ -126,42 +128,42 @@ Because the manifest is always included in a package, you can find any number of
 
     nuget locals -list global-packages
 
-Go into any *package\version* folder, copy the .nupkg file to a .zip file, then open that .zip file and examine the .nuspec within it. 
+Go into any *package\version* folder, copy the .nupkg file to a .zip file, then open that .zip file and examine the .nuspec within it.
 
 Note that when creating a `.nuspec` from a Visual Studio project, the manifest will contain tokens that will be replaced with information from the project when the package is build. See [Creating the .nuspec from a Visual Studio project](#from-a-visual-studio-project) below.
 
 
 ## Creating the .nuspec file
 
-You can create a `.nuspec` file from scratch in any text editor, or by starting with an editing file from another project. You can also have NuGet create a template manifest for your by using the following command:
+You can create a `.nuspec` file from scratch in any text editor, or by editing a file from another project. You can also have NuGet create a template manifest for your by using the following command:
 
     nuget spec <package_name>
 
-The resulting `<package_name>.nuspec` file (or `Package.nuspec` if you omit a specific name) will contain placeholders for values like the `projectUrl`, so be sure to edit it before using it to creating the package. 
+The resulting `<package_name>.nuspec` file (or `Package.nuspec` if you omit a specific name) will contain placeholders for values like the `projectUrl`, so be sure to edit it before using it to creating the package.
 
 You can also use `nuget spec` with an existing assembly, a Visual Studio project, or a convention-based working directory as described in the following sections. Note that in all cases, the resulting `.nuspec` file will contain placeholders that you'll need to edit before creating the package itself.
 
 ### From an assembly DLL
 
-If you have an assembly DLL, you can easily generate a `.nuspec` file from the metatdata in the assembly using the following command:
+If you have an assembly DLL, you can easily generate a `.nuspec` file from the metadata in the assembly using the following command:
 
     nuget spec MyAssembly.dll
 
 ### From a Visual Studio project
 
-Creating a `.nuspec` from a `.csproj` or `.vbproj` file is convenient because other packages that have been installed into those project will be automatically referenced as dependencies. Simply use the following command in the same folder as the project file: 
+Creating a `.nuspec` from a `.csproj` or `.vbproj` file is convenient because other packages that have been installed into those project will be automatically referenced as dependencies. Simply use the following command in the same folder as the project file:
 
     nuget spec
 
 This creates a template `<project_name>.nuspec` file as usual, but includes tokens that will be replaced at packaging time with values from the project. This means you do not need to update crucial values like the version number in the `.nuspec` as you update the project (but you can always replace the tokens with literal values, if desired).
 
-For example, the &lt;id&gt; value will typically appear as follows: 
+For example, the &lt;id&gt; value will typically appear as follows:
 
     <id>$id$</id>
 
 and will be replaced with the `AssemblyName` value from the project file. For the exact mapping of project values to `.nuspec` tokens, see the [Replacement Tokens reference](../schema/nuspec.md#replacement-tokens).
 
-Note that there are several additional packaging options available when working from a Visual Studio project, as described in the [Creating the package](#creating-the-package) section later on. 
+Note that there are several additional packaging options available when working from a Visual Studio project, as described in the [Creating the package](#creating-the-package) section later on.
 
 > **Solution-level packages (NuGet 2.x only)**
 >
@@ -174,39 +176,39 @@ Note that there are several additional packaging options available when working 
 
 ### From a convention-based working directory
 
-In addition to assemblies and simple files like a readme, some packages may contain the following: 
+In addition to assemblies and simple files like a readme, some packages may contain the following:
 
 - Content and source code that should be injected into the target project
 - PowerShell scripts (packages used in NuGet 2.x can include installation scripts as well, which is no longer supported in NuGet 3.x and later.)
-- Transformations to existing configuration and source code files in a project 
+- Transformations to existing configuration and source code files in a project
 
 To include all these files in a package, you lay out a folder structure using the following conventions:
 
 |Folder |Description|Action upon package install|
 |-------|-----------|---------------------------|
 | tools |Powershell scripts and programs accessible from the Package Manager Console|Contents are copied to the project folder, and the tools folder is added to the PATH environment variable.|
-| lib | Assemblies  (.dll files) | Added as assembly references |
+| lib | Assembly(.dll) files (.dll), documentation (.xml) files, and symbol (.pdb) files | Assemblies are added as references; .xml and .pdb copied into project folders. |
 | content | Arbitrary files | Contents are copied to the project root |
-| build | MSBuild .targets and .props files | Automatically inserted into the project file (NuGet 2.x) or project.json.lock (NuGet 3.x)|
- 
+| build | MSBuild .targets and .props files | Automatically inserted into the project file (NuGet 2.x) or project.json.lock (NuGet 3.x).|
 
-Think of the **content** folder as the of the target application, so if you want the package to add an image in the application's */images* folder, place it in the *content/images* folder of the package.
 
-Next, from the root folder of this layout, run the following command to create the `.nuspec` file: 
+Think of the **content** folder as the root of the target application, so if you want the package to add an image in the application's */images* folder, place it in the *content/images* folder of the package.
+
+Next, from the root folder of this layout, run the following command to create the `.nuspec` file:
 
     nuget spec
 
-In this case, the `.nuspec` will not contain any explicit references to the folder structure, but all those files will be automatically included when creating the package later on. 
+In this case, the `.nuspec` will not contain any explicit references to the folder structure, but all those files will be automatically included when creating the package later on.
 
 ## Choosing a unique package identifier and setting the version number
 
 The package identifier in **&lt;id&gt;** and the version number in **&lt;version&gt;** are the two most important values in the manifest because they uniquely identify the exact code that's contained in the package.
 
-For the **&lt;id&gt;** value, the following best practices apply: 
+For the **&lt;id&gt;** value, the following best practices apply:
 
-- **Uniqueness**: The identifier must be unique within nuget.org or whatever gallery will be hosting the package. Before deciding on an identifier, spend a little time searching in the applicable gallery to see if that name is already used. A good pattern to follow is to use your company name as the first part of the identifier, such as `Contoso.`.  
+- **Uniqueness**: The identifier must be unique within nuget.org or whatever gallery will be hosting the package. Before deciding on an identifier, spend a little time searching in the applicable gallery to see if that name is already used. A good pattern to follow is to use your company name as the first part of the identifier, such as `Contoso.`.
 - **Namespace-like names**: Identifiers should follow a pattern similar to namespaces in .NET, using dot notation instead of hyphens. For example, use `Contoso.Utility.UsefulStuff` rather than `Contoso-Utility-UsefulStuff` or `Contoso_Utility_UsefulStuff`. It's especially helpful to the consumers of your package to match the identifier to the namespaces of the code in the package, if applicable.
-- **Sample Packages**: If you produce a package of sample code that demonstrates how to use another package, attach `.Sample` as a suffix to the identifier, as in `Contoso.Utility.UsefulStuff.Sample`. (The sample package would of course have a dependency on the other package.) When creating a sample package, use the convention-based working directory method described earlier. In the `content` folder, arrange the sample code in a folder called `\Samples\<identifier>` as in `\Samples\Contoso.Utility.UsefulStuff.Sample`. 
+- **Sample Packages**: If you produce a package of sample code that demonstrates how to use another package, attach `.Sample` as a suffix to the identifier, as in `Contoso.Utility.UsefulStuff.Sample`. (The sample package would of course have a dependency on the other package.) When creating a sample package, use the convention-based working directory method described earlier. In the `content` folder, arrange the sample code in a folder called `\Samples\<identifier>` as in `\Samples\Contoso.Utility.UsefulStuff.Sample`.
 
 For the **&lt;version&gt;** value:
 
@@ -241,7 +243,7 @@ Package types are set either in the `.nuspec` file or in `project.json`. In both
           <metadata>
             <!-- ... -->
             <packageTypes>
-              <packageType type="DotnetCliTool" />
+              <packageType name="DotnetCliTool" />
             </packageTypes>
           </metadata>
         </package>
@@ -260,7 +262,7 @@ Package types are set either in the `.nuspec` file or in `project.json`. In both
 To directly specify files to include in the package, use the **&lt;files&gt;** node in the `.nuspec` file, which *follows* the &lt;metadata&gt; tag:
 
     <?xml version="1.0"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
+    <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
       <metadata>
         <!-- ... -->
       </metadata>
@@ -322,7 +324,7 @@ When using an assembly or the convention-based working directory, create a packa
 
     nuget pack &lt;your_project&gt;.nuspec
 
-When using a Visual Studio project, run `nuget pack` instead with your project file, which will automatically load the project's `.nuspec` file and replace any tokens within it using values in the project file: 
+When using a Visual Studio project, run `nuget pack` instead with your project file, which will automatically load the project's `.nuspec` file and replace any tokens within it using values in the project file:
 
     nuget pack &lt;your_project&gt;.csproj
 
@@ -346,7 +348,7 @@ You can use various command-line switches with `nuget pack` to exclude files, ov
 
 The following options are a few that are common with Visual Studio projects:
 
-- **Referenced projects**: If the project references other projects, you can add the referenced projects as part of the package, or as dependencies, by using the `-IncludeReferencedProjects` option: 
+- **Referenced projects**: If the project references other projects, you can add the referenced projects as part of the package, or as dependencies, by using the `-IncludeReferencedProjects` option:
 
         nuget pack MyProject.csproj -IncludeReferencedProjects
 

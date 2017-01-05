@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "Package Manager Console | Microsoft Docs"
+title: Package Manager Console | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -94,7 +94,7 @@ Installing a package performs the following actions:
 
 If you do not already know the name of the package you want to remove, use the [`Get-Package`](../tools/powershell-reference.md#get-package) command with no parameters to see all of the currently-installed packages.
 
-To uninstall a package, use [`Uninstall-Package`](../tools/powershell-reference.md#uninstall-package) with the package ID, such as `Update-Package jQuery`.
+To uninstall a package, use [`Uninstall-Package`](../tools/powershell-reference.md#uninstall-package) with the package ID, such as `Uninstall-Package jQuery`.
 
 Uninstalling a package performs the following actions:
 

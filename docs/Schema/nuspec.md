@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: ".nuspec Reference | Microsoft Docs"
+title: .nuspec Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -103,13 +103,13 @@ Element | Description
 **language** | The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md).
 **tags** | A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering mechanisms.
 **servicable** | *(3.3+)*For internal NuGet use only
-**minClientVersion** | *(2.5+)*  Specifies the minimum version of the NuGet client that can install this package, enfoced by nuget.exe and the Visual Studio Package Manager.
+**minClientVersion** | *(2.5+)*  Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager.
 
 #### Collection elements
 
 |||
 --- | ---
-**packageTypes** | *(3.3+)* A collection of zero or more &lt;packageType&gt; elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of *name* and *verion*. See [Setting a package type](../create-packages/creating-a-package.md#setting-a-package-type).
+**packageTypes** | *(3.3+)* A collection of zero or more &lt;packageType&gt; elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of *name* and *version*. See [Setting a package type](../create-packages/creating-a-package.md#setting-a-package-type).
 **dependencies** | A collection of zero or more &lt;dependency&gt; elements specifying the dependencies for the package. Each dependency has attributes of *id*, *version*, *include* (3.x+), and *exclude* (3.x+). See [Dependencies](#dependencies) below.
 **frameworkAssemblies** | *(1.2+)* A collection of zero or more &lt;frameworkAssembly&gt; elements identifying .NET Framework assembly references that this package requires, which ensures that references are added to projects consuming the package. Each frameworkAssembly has *assemblyName* and *targetFramework* attributes. See [Specifying framework assembly references GAC](#specifying-framework-assembly-references-gac) below.
 **references** | *(1.5+)* A collection of zero or more &lt;reference&gt; elements naming assemblies in the package's `lib` folder that are added as project references. Each reference has a *file* attribute. &lt;references&gt; can also contain a &lt;group&lt; element with a *targetFramework* attribute, that then contains &lt;reference&gt; elements. If omitted, all references in `lib` are included. See [Specifying explicit assembly references](#specifying-explicit-assembly-references) below.
@@ -117,7 +117,7 @@ Element | Description
 
 ### Files element
 
-The &lt;package&gt; node may also contain a &lt;files&gt; and/or &lt;contentFiles&gt; nodes as siblings to &lt;metadata&gt; to specify whcih assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
+The &lt;package&gt; node may also contain a &lt;files&gt; and/or &lt;contentFiles&gt; nodes as siblings to &lt;metadata&gt; to specify which assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
 
 ## Replacement tokens
 
@@ -372,7 +372,7 @@ Content files are files that a package needs to include in a project, but are co
 - Scripts that need to be included with the build output of the project
 - Configuration files for the package that need to be included in the project but don't need any project-specific changes.
 
-Content files are included in a package using the &lt;files&lt; element, specifying the `content` folder in the `target` attribute. However, such files are ignored when the package is installed in a project using the `project.json` system in NuGet 3.3+, which instead uses the &;lt;contentFiles&gt; element.
+Content files are included in a package using the &lt;files&gt; element, specifying the `content` folder in the `target` attribute. However, such files are ignored when the package is installed in a project using the `project.json` system in NuGet 3.3+, which instead uses the &lt;contentFiles&gt; element.
 
 For maximum compatibility with consuming projects, a package ideally specifies content files in both locations.
 
@@ -487,7 +487,7 @@ In this case, because the file extensions of the source and target match, NuGet 
 
 ### Using the contentFiles element for content files
 
-*Verion 3.3+ with project.json only*
+*Version 3.3+ with project.json only*
 
 By default, a package places content in a `contentFiles` folder (see below) and `nuget pack` will include all files in that folder using default attributes. In this case it's not necessary to include a `contentFiles` node in the `.nuspec` at all.
 
@@ -519,7 +519,7 @@ For example:
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml
 
-    net45 content for all lanugages
+    net45 content for all languages
         /contentFiles/any/net45/config.xml
 
     C#-specific content for net45 and up

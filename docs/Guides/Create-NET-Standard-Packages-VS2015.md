@@ -1,11 +1,11 @@
 --- 
 # required metadata 
  
-title: “Create .NET Standard Packages | Microsoft Docs” 
+title: Create .NET Standard Packages with Visual Studio 2015 | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
-ms.date: 11/11/2016 
+ms.date: 1/5/2017
 ms.topic: article 
 ms.prod: nuget 
 #ms.service: 
@@ -28,7 +28,9 @@ ms.reviewer:
  
 ---
 
-# Create .NET Standard Packages
+# Create .NET Standard Packages with Visual Studio 2015
+
+*Applies to NuGet 3.x. See [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) for working with NuGet 4.x+.*
 
 The [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code. 
 
@@ -130,6 +132,8 @@ This will generate `AppLogger.YOUR_NAME.1.0.0.nupkg`. Opening this file in a too
 > A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
 
 To make your package available to other developers,  follow the instructions on [Publish a package](../create-packages/publish-a-package.md).
+
+Note that `pack` requires Mono 4.4.2 on Mac OS X and does not work on Linux systems. On a Mac, you must also convert Windows pathnames in the `.nuspec` file to Unix-style paths.
 
 ## Additional options
 

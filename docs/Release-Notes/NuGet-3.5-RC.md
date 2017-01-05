@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "3.5 RC Release Notes | Microsoft Docs" 
+title: 3.5 RC Release Notes | Microsoft Docs 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -30,11 +30,13 @@ ms.reviewer:
 
 #3.5 RC Release Notes
 
+[NuGet 3.5-Beta2 Release Notes](../release-notes/nuget-3.5-Beta2.md) | [NuGet 3.5-RTM Release Notes](../release-notes/nuget-3.5-RTM.md)
+
 3.5 release is focused on improving quality and performance of NuGet clients. In addition, we have shipped a few features like support for [Fallback folders](https://github.com/NuGet/Home/issues/2899), [PackageType](https://github.com/NuGet/Home/issues/2476) support in nuspec and more.
 
 [Issues List](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%223.5 RC")
 
-## Bugs
+## Bug Fixes
 
 * Install/restore of a package fails with "Package contains multiple nuspec files." - [#3231](https://github.com/NuGet/Home/issues/3231)
 

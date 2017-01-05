@@ -1,11 +1,11 @@
 --- 
 # required metadata 
  
-title: "Dependency Resolution | Microsoft Docs" 
+title: Dependency Resolution | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
-ms.date: 11/11/2016 
+ms.date: 1/3/2017 
 ms.topic: article 
 ms.prod: nuget 
 #ms.service: 

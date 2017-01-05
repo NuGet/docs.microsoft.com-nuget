@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "Creating Native Packages | Microsoft Docs" 
+title: Creating Native Packages | Microsoft Docs 
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 

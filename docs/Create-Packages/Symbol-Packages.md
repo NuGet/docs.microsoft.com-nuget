@@ -1,11 +1,11 @@
 --- 
 # required metadata 
  
-title: "Symbol Packages | Microsoft Docs"
+title: Symbol Packages | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
-ms.date: 11/11/2016 
+ms.date: 1/3/2017 
 ms.topic: article 
 ms.prod: nuget 
 #ms.service: 
@@ -46,6 +46,8 @@ You can create both packages with the `-Symbols` option, either from a nuspec fi
     nuget pack MyPackage.nuspec -Symbols
 
     nuget pack MyProject.csproj -Symbols
+
+Note that `pack` requires Mono 4.4.2 on Mac OS X and does not work on Linux systems. On a Mac, you must also convert Windows pathnames in the `.nuspec` file to Unix-style paths.
 
 ## Symbol package structure
 

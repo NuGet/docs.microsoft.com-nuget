@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "NuGet Package Manager UI | Microsoft Docs"
+title: NuGet Package Manager UI | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 

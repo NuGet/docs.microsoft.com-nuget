@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "PowerShell Reference | Microsoft Docs"
+title: PowerShell Reference | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
@@ -260,7 +260,7 @@ Launches the default browser with the project, license, or report abuse URL for 
 | --- | --- |
 Id | Specifies the package ID of the desired package. The -Id switch itself is optional.
 Version | Specifies the version of the package, defaulting to the latest version.
-Source | Specifies the packiage source, defaulting to the default source.
+Source | Specifies the package source, defaulting to the default source.
 License | Opens the browser to the package's License URL. If neither -License nor -ReportAbuse is specified, the browser opens the package's Project URL.
 ReportAbuse | Opens the browser to the package's Report Abuse URL. If neither -License nor -ReportAbuse is specified, the browser opens the package's Project URL.
 PassThru | Displays the selected URL but does not open it in the browser.
@@ -297,7 +297,7 @@ Get the version of installed package from specified project and syncs the versio
 Id | Specifies the identifier of the package to sync. The -Id switch itself is optional.
 Version | Specifies the version of the package to sync, defaulting to the currently installed version.
 ProjectName | Specifies the project to sync the package from, defaulting to the default  project.
-Source | Specifies the URL or path of a package source, defualting to the current package source.
+Source | Specifies the URL or path of a package source, defaulting to the current package source.
 IncludePrerelease | Includes prerelease packages in the sync.
 FileConflictAction | Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Possible values are *Overwrite, Ignore, None, OverwriteAll*, and *IgnoreAll* (3.0+).
 DependencyVersion | Specifies the version of the dependency packages to use, which can be one of the following:

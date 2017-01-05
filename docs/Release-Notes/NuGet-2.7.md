@@ -1,7 +1,7 @@
 --- 
 # required metadata 
  
-title: "NuGet 2.7 Release Notes | Microsoft Docs" 
+title: NuGet 2.7 Release Notes | Microsoft Docs 
 author: harikmenon
 ms.author: harikm 
 manager: ghogen 
@@ -145,9 +145,9 @@ There is also a known issue with the new package restore workflow whereby [Autom
 
 Many times after retargeting or upgrading your project, you find that some NuGet packages aren't functioning properly. Unfortunately, there is no indication of this and then there's no guidance on how to address it. With NuGet 2.7, we now use some Visual Studio events to recognize when you've retargeted or upgraded your project in a way that affects your installed NuGet packages.
 
-If we detect that any of your packages were affected by the retargeting or upgrade, we'll produce immediate build errors to let you know. In addition to the immediate build error, we also persist a `requireReinstallation="true"` flag in your packages.config file for all packages that were affected by the retargeting, and each subsequent build in Visual Studio will raise a build warnings for those packages.
+If we detect that any of your packages were affected by the retargeting or upgrade, we'll produce immediate build errors to let you know. In addition to the immediate build error, we also persist a `requireReinstallation="true"` flag in your packages.config file for all packages that were affected by the retargeting, and each subsequent build in Visual Studio will raise build warnings for those packages.
 
-While NuGet cannot take automatic action to reinstall affected packages, we hope this indication and warning will guide help you discover when you need to reinstall packages. We are also working on [package reinstallation guidance documentation](../consume-packages/reinstalling-and-updating-packages.md) that these error messages direct you to.
+ALthough NuGet cannot take automatic action to reinstall affected packages, we hope this indication and warning will guide help you discover when you need to reinstall packages. We are also working on [package reinstallation guidance documentation](../consume-packages/reinstalling-and-updating-packages.md) that these error messages direct you to.
 
 ### NuGet Configuration Defaults
 

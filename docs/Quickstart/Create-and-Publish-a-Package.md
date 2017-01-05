@@ -1,7 +1,7 @@
 --- 
 # required metadata
  
-title: "Create and publish a package | Microsoft Docs"
+title: Create and publish a package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -116,7 +116,7 @@ Creating a NuGet package from a project is simple: just run the `pack` command:
 
 This will create a NuGet package file like `AppLogger.1.0.0.0.nupkg` using, of course, the package name and version number from the .nuspec file.
 
-Note that you'll get warnings if you haven't updated various fields in the .nuspec file from from their default values.
+Note that you'll get warnings if you haven't updated various fields in the .nuspec file from their default values.
 
 
 ## Publish the package
