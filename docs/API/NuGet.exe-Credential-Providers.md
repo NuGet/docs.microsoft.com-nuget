@@ -39,7 +39,7 @@ When `nuget.exe` needs credentials to authenticate with a feed, it looks for the
 1. NuGet then prompts the user for credentials on the command line.
 
 > [!Note]
-> NuGet.exe credential providers only work in NuGet.exe (not in dotnet restore or Visual Studio). For credential providers with Visual Studio, see [NuGet.exe Credential Providers for Visual Studio](../api/nuget.exe-credential-providers-for-visual-studio.md)
+> NuGet.exe credential providers only work in NuGet.exe (not in dotnet restore or Visual Studio). For credential providers with Visual Studio, see [NuGet.exe Credential Providers for Visual Studio](../api/nuget-credential-providers-for-visual-studio.md)
     
 NuGet.exe credential providers can be used in 3 ways:
 

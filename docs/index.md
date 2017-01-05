@@ -101,8 +101,14 @@ ms.reviewer:
                                 </a>
                             </li>
                             <li class="column column-third">
-                                <a href="./guides/create-net-standard-packages.md">
-                                    <h3>Create .NET Standard Packages</h3>
+                                <a href="./guides/create-net-standard-packages-vs2017.md">
+                                    <h3>Create .NET Standard Packages (Visual Studio 2017)</h3>
+                                    <p>Learn how to create universally supported NuGet packages.</p>
+                                </a>
+                            </li>
+                            <li class="column column-third">
+                                <a href="./guides/create-net-standard-packages-vs2015.md">
+                                    <h3>Create .NET Standard Packages (Visual Studio 2015)</h3>
                                     <p>Learn how to create universally supported NuGet packages.</p>
                                 </a>
                             </li>
@@ -158,7 +164,7 @@ ms.reviewer:
                                 </a>
                             </li>
                             <!--li class="column column-third">
-                                <a href="./api/credential-providers.md">
+                                <a href="./api/nuget.exe-credential-providers.md">
                                     <h3>API</h3>
                                     <p>Details about authenticating with package sources and the NuGet API.</p>
                                 </a>
