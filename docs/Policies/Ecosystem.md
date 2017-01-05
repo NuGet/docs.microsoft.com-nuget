@@ -5,7 +5,7 @@ title: “An Overview of the NuGet Ecosystem | Microsoft Docs”
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
-ms.date: 11/11/2016 
+ms.date: 1/5/2017 
 ms.topic: article 
 ms.prod: nuget 
 #ms.service: 

@@ -6,7 +6,8 @@
 ## [Install NuGet](Guides/Install-NuGet.md)
 ## [Create UWP Packages](Guides/Create-UWP-Packages.md)
 ## [Create Cross-Platform Packages](Guides/Create-Cross-Platform-Packages.md)
-## [Create NET Standard Packages](Guides/Create-NET-Standard-Packages.md)
+## [Create NET Standard Packages (Visual Studio 2017)](Guides/Create-NET-Standard-Packages-VS2017.md)
+## [Create NET Standard Packages (Visual Studio 2015)](Guides/Create-NET-Standard-Packages-VS2015.md)
 # Create Packages
 ## [Overview and Workflow](Create-Packages/Overview-and-Workflow.md)
 ## [Creating a Package](Create-Packages/Creating-a-Package.md)
@@ -28,8 +29,9 @@
 ## [Package Restore](Consume-Packages/Package-Restore.md)
 ## [Managing the NuGet Cache](Consume-Packages/Managing-the-NuGet-Cache.md)
 ## [Configuring NuGet Behavior](Consume-Packages/Configuring-NuGet-Behavior.md)
-## [Dependency Resolution](Consume-Packages/Dependency-Resolution.md)
-# Hosting Packages
+## [Dependency Resolution](Consume-Packages/Dependency-Resolution.md)# Hosting Packages
+## [Package-References-in-Project-Files](Consume-Packages/Package-References-in-Project-Files.md)
+#Hosting Packages
 ## [Overview](Hosting-Packages/Overview.md)
 ## [Local Feeds](Hosting-Packages/Local-Feeds.md)
 ## [NuGet.Server](Hosting-Packages/NuGet.Server.md)
@@ -38,15 +40,18 @@
 ## [Package Manager UI](Tools/Package-Manager-UI.md)
 ## [Package Manager Console](Tools/Package-Manager-Console.md)
 ## [PowerShell Reference](Tools/PowerShell-Reference.md)
+## [dotnet Commands](Tools/dotnet-Commands.md)
 # Schema
 ## [nuspec](Schema/nuspec.md)
 ## [project.json](Schema/project.json.md)
+## [MSBuild Targets](Schema/msbuild-targets.md)
 ## [nuget.config file](Schema/nuget.config-file.md)
 ## [Target Frameworks](Schema/Target-Frameworks.md)
 ## [Analyzers Conventions](Schema/Analyzers-Conventions.md)
 # API
-## [Credential Providers](API/Credential-Providers.md)
 ## [NuGet API V3](API/NuGet-API-V3.md)
+## [NuGet Credential Providers for Visual Studio](API/Nuget-Credential-Providers-for-Visual-Studio.md)
+## [NuGet.exe Credential Providers](API/NuGet.exe-Credential-Providers.md)
 # Visual Studio Extensibility
 ## [NuGet API in Visual Studio](Visual-Studio-Extensibility/NuGet-API-in-Visual-Studio.md)
 ## [Project System Support](Visual-Studio-Extensibility/Project-System-Support.md)
@@ -59,6 +64,8 @@
 ## [Deleting Packages](Policies/Deleting-Packages.md)
 # Release Notes
 ## [Known Issues](Release-Notes/Known-Issues.md)
+## [NuGet 4.0 RC](Release-Notes/NuGet-4.0-RC.md)
+## [NuGet 3.5 RTM](Release-Notes/NuGet-3.5-RTM.md)
 ## [NuGet 3.5 RC](Release-Notes/NuGet-3.5-RC.md)
 ## [NuGet 3.5 Beta2](Release-Notes/NuGet-3.5-Beta2.md)
 ## [NuGet 3.5 Beta](Release-Notes/NuGet-3.5-Beta.md)
@@ -79,6 +86,8 @@
 ## [NuGet 3.0 RC](Release-Notes/NuGet-3.0-RC.md)
 ## [NuGet 3.0 Beta](Release-Notes/NuGet-3.0-Beta.md)
 ## [NuGet 3.0 Preview](Release-Notes/NuGet-3.0-Preview.md)
+## [NuGet 2.12](Release-Notes/NuGet-2.12.md)
+## [NuGet 2.12 RC](Release-Notes/NuGet-2.12-RC.md)
 ## [NuGet 2.9 RC](Release-Notes/NuGet-2.9-RC.md)
 ## [NuGet 2.8.7](Release-Notes/NuGet-2.8.7.md)
 ## [NuGet 2.8.6](Release-Notes/NuGet-2.8.6.md)
@@ -95,8 +104,6 @@
 ## [NuGet 2.5](Release-Notes/NuGet-2.5.md)
 ## [NuGet 2.2.1](Release-Notes/NuGet-2.2.1.md)
 ## [NuGet 2.2](Release-Notes/NuGet-2.2.md)
-## [NuGet 2.12](Release-Notes/NuGet-2.12.md)
-## [NuGet 2.12 RC](Release-Notes/NuGet-2.12-RC.md)
 ## [NuGet 2.1](Release-Notes/NuGet-2.1.md)
 ## [NuGet 2.0](Release-Notes/NuGet-2.0.md)
 ## [NuGet 1.8](Release-Notes/NuGet-1.8.md)
