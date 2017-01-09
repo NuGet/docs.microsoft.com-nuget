@@ -1,4 +1,3 @@
----
 layout: HubPage
 
 title: NuGet Documentation | Microsoft Docs
@@ -173,7 +172,7 @@ ms.reviewer:
                                     <h3>Visual Studio Extensibility</h3>
                                     <p>Details about the API to the NuGet Package Manager UI and Console in Visual Studio, project system support, and integrating NuGet packages into Visual Studio templates.</p>
                                 </a>
-                            </li-->
+                            </li>
                             <li class="column column-third">
                                 <a href="./policies/nuget-faq.md">
                                     <h3>Policies</h3>
