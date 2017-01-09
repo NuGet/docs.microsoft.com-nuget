@@ -1,31 +1,31 @@
---- 
-# required metadata 
- 
-title: NuGet 2.8 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 2.8 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 77ba98d8-3d66-4126-b2b6-813ddd8ef192 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 77ba98d8-3d66-4126-b2b6-813ddd8ef192
+
+# optional metadata
+
 #description: release notes 2.8
 #keywords: release notes 2.8
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 # NuGet 2.8 Release Notes
 
@@ -63,7 +63,7 @@ When resolving package dependencies, NuGet has historically implemented a strate
 
     Developer1 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.0
 
-    PackageB@1.0.1 is published 
+    PackageB@1.0.1 is published
 
     Developer2 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.1
 

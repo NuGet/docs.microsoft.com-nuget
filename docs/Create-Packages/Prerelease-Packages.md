@@ -1,31 +1,31 @@
---- 
-# required metadata 
- 
-title: Pre-release Versions | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
+---
+# required metadata
+
+title: Pre-release Versions in NuGet Packages | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
 ms.assetid: df6a366a-22c1-47bb-8017-18231311ce88
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 
 # Pre-release Versions
@@ -40,7 +40,7 @@ To support the software release lifecycle, NuGet 1.6 and later allows for the di
 
 You can specify such versions in two ways:
 
-- `.nuspec` file: include the semantic version suffix in the `version` element: 
+- `.nuspec` file: include the semantic version suffix in the `version` element:
 
         <version>1.0.1-alpha</version>
 
@@ -68,7 +68,7 @@ By default, NuGet does not include pre-release versions when working with packag
 
 - **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../tools/powershell-reference.md).
 
-- **NuGet CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../tools/nuget.exe-cli-reference.md) 
+- **NuGet CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../tools/nuget.exe-cli-reference.md)
 
 
 ## Semantic versioning
@@ -86,13 +86,13 @@ Pre-release versions are then denoted by appending a hyphen and a string after t
 With this in mind, it's generally good to follow recognized naming conventions such as the following:
 
 - `-alpha`: Alpha release, typically used for work-in-progress and experimentation
-- `-beta`: Beta release, typically one that is feature complete for the next planned release, but may contain known bugs. 
+- `-beta`: Beta release, typically one that is feature complete for the next planned release, but may contain known bugs.
 - `-rc`: Release candidate, typically a release that's potentially final (stable) unless significant bugs emerge.
 
 > [!Note]
 > NuGet does not support SemVer-compatible build numbers with dot notation, as in `1.0.1-build.23`. You can use a form like `1.0.1-build23` but this is always considered a pre-release version.
 
-Whatever suffixes you use, however, NuGet will give them precedence in reverse alphabetical order: 
+Whatever suffixes you use, however, NuGet will give them precedence in reverse alphabetical order:
 
     1.0.1
     1.0.1-zzz

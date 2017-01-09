@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: Reinstalling and Updating Packages | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/3/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 2785879b-97f0-4a85-b3cc-bf4eaa5c39bf 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+---
+# required metadata
+
+title: Reinstalling and Updating NuGet Packages | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 2785879b-97f0-4a85-b3cc-bf4eaa5c39bf
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # Reinstalling and Updating Packages
 
@@ -61,7 +61,7 @@ The following may be affected when reinstalling a package:
 1. **Reinstalling packages according to project target framework retargeting**
 	- In a simple case, just reinstalling a package using `Update-Package –reinstall <package_name>` works. A package that is installed against an old target framework gets uninstalled and the same package gets installed against the current target framework of the project.
 	- In some cases, there may be a package that does not support the new target framework.
-		- If a package supports portable class libraries (PCLs) and the project is retargeted to a combination of platforms no longer supported by the package, references to the package will be missing after reinstalling. 
+		- If a package supports portable class libraries (PCLs) and the project is retargeted to a combination of platforms no longer supported by the package, references to the package will be missing after reinstalling.
 		- This can surface for packages you're using directly or for packages installed as dependencies. It's possible for the package you're using directly to support the new target framework while its dependency does not.
 		- If reinstalling packages after retargeting your application results in build or runtime errors, you may need to revert your target framework or search for alternative packages that properly support your new target framework.
 

@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: NuGet 2.7.1 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 2.7.1 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: fbe05ada-c15e-4fa2-ad70-898c0296de9e 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: fbe05ada-c15e-4fa2-ad70-898c0296de9e
+
+# optional metadata
+
 #description: release notes 2.7.1
 #keywords: release notes 2.7.1
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet 2.7.1 Release Notes
 
 [NuGet 2.7 Release Notes](../release-notes/nuget-2.7.md) | [NuGet 2.7.2 Release Notes](../release-notes/nuget-2.7.2.md)

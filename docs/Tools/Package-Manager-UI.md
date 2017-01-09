@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: NuGet Package Manager UI | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
+---
+# required metadata
+
+title: NuGet Package Manager UI Reference | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
 ms.assetid: 62f6962b-7b84-4452-ae0d-a9e1ef1fc6f0
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # NuGet Package Manager UI
 
@@ -52,7 +52,7 @@ In this topic:
 
 	![Manage NuGet Packages Dialog Browse tab](media/Search.png)
 
-3. Select the desired version from the drop-down and click **Install**. This installs the package and its dependencies; you may be asked to accept license terms in the process. When installation is complete, the new packages appear on the **Installed** tab. **Solution Explorer** also shows the added packages, which you can now use in your project.  
+3. Select the desired version from the drop-down and click **Install**. This installs the package and its dependencies; you may be asked to accept license terms in the process. When installation is complete, the new packages appear on the **Installed** tab. **Solution Explorer** also shows the added packages, which you can now use in your project.
 
 	![References in Solution Explorer](media/References.png)
 
@@ -75,7 +75,7 @@ In this topic:
 ## Managing packages for the solution
 *NuGet 1.4+*
 
-1. Select the **Tools > NuGet Package Manager > Manage NuGet Packages for Solution...** menu command, or right-click the solution and select **Manage NuGet Packages...**: 
+1. Select the **Tools > NuGet Package Manager > Manage NuGet Packages for Solution...** menu command, or right-click the solution and select **Manage NuGet Packages...**:
 
 	![Manage NuGet packages for the solution](media/ManagePackagesSolutionUICommand.png)
 
@@ -95,8 +95,8 @@ To manage package sources:
 
 	![Package manager UI settings icon](media/PackageSourceSettings.png)
 
-2. Select the **Package Sources** node: 
- 
+2. Select the **Package Sources** node:
+
 	![Package Sources options](media/options.png)
 
 3. To add a source, click the **+** button, edit the name, enter the URL or path in the **Source** control, and click **Update**. This will make it appear in the selector drop-down.
@@ -135,7 +135,7 @@ When checked, a modal window displays which dependent packages will be loaded wi
 
 - *Prompt* instructs NuGet to ask whether to keep or overwrite existing packages.
 - *Ignore All* instructs NuGet to skip overwriting any existing packages.
-- *Overwrite All* instructs NuGet to overwrite any existing packages. 
+- *Overwrite All* instructs NuGet to overwrite any existing packages.
 
 ### Uninstall Options
 <!-- This is here because the link in the UI needs this anchor. See https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Clients/PackageManagement.UI/Xamls/OptionsControl.xaml -->

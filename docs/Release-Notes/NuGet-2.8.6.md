@@ -1,31 +1,31 @@
---- 
-# required metadata 
- 
-title: NuGet 2.8.6 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 2.8.6 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 920c551c-18a7-40f4-a32b-ce84de6ea766 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 920c551c-18a7-40f4-a32b-ce84de6ea766
+
+# optional metadata
+
 #description: release notes 2.8.6
 #keywords: release notes 2.8.6
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 # NuGet 2.8.6 Release Notes
 

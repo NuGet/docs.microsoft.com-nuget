@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
+---
+# required metadata
+
 title: NuGet Credential Providers for Visual Studio | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 9c7f6d16-f437-47c4-82d4-6c996e0b18ec 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 9c7f6d16-f437-47c4-82d4-6c996e0b18ec
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # NuGet credential providers for Visual Studio
 
@@ -95,5 +95,5 @@ A custom NuGet credential provider for Visual Studio must implement the `IVsCred
 | bool isRetry | True if credentials were previously requested for this Uri, but the supplied credentials did not allow authorized access. |
 | bool nonInteractive | If true, the credential provider must suppress all user prompts and use default values instead. |
 | CancellationToken cancellationToken | This cancellation token should be checked to determine if the operation requesting credentials has been cancelled. |
-    
+  
 **Return value**: A credentials object implementing the [`System.Net.ICredentials` interface](https://msdn.microsoft.com/en-us/library/system.net.icredentials.aspx).

@@ -1,38 +1,38 @@
 
---- 
-# required metadata 
- 
-title: NuGet 3.0 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 3.0 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 8ad13a67-9348-4f04-8f8b-b8f4a0b2c6df 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 8ad13a67-9348-4f04-8f8b-b8f4a0b2c6df
+
+# optional metadata
+
 #description: release notes 3.0.0
 #keywords: release notes 3.0.0
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 # NuGet 3.0 Release Notes
 
 [NuGet 3.0 RC2 Release Notes](../release-notes/nuget-3.0-RC2.md) | [NuGet 3.1 Release Notes](../release-notes/nuget-3.1.md)
 
-NuGet 3.0 was released on July 20, 2015 as a bundle extension to Visual Studio 2015. We pushed to deliver this release with Visual Studio so that the complete updated NuGet 3.0 experience would be available for new Visual Studio users. This NuGet extension version is only available for Visual Studio 2015.  
+NuGet 3.0 was released on July 20, 2015 as a bundle extension to Visual Studio 2015. We pushed to deliver this release with Visual Studio so that the complete updated NuGet 3.0 experience would be available for new Visual Studio users. This NuGet extension version is only available for Visual Studio 2015.
 
 We recommend those developers that have access to the Visual Studio gallery update to the latest version that is available, as we are publishing an update shortly after the release of Visual Studio 2015 that contains support for Windows 10 development.
 

@@ -1,31 +1,31 @@
---- 
-# required metadata 
- 
-title: “Deleting packages | Microsoft Docs” 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: a348ca2e-0a5d-40ad-ba33-9bb37e1d980b 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+---
+# required metadata
+
+title: Deleting NuGet Packages from nuget.org | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: a348ca2e-0a5d-40ad-ba33-9bb37e1d980b
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 # Deleting packages
 

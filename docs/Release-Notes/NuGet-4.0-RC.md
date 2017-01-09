@@ -1,30 +1,30 @@
---- 
-# required metadata 
- 
-title: NuGet 4.0 RC Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 4.0 RC Release Notes | Microsoft Docs
 author: karann-msft
-ms.author: karann 
-manager: ghogen 
-ms.date: 11/17/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: fa64825d-5908-4abe-9792-d70766d6e2ff 
- 
-# optional metadata 
- 
+ms.author: karann
+manager: ghogen
+ms.date: 11/17/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: fa64825d-5908-4abe-9792-d70766d6e2ff
+
+# optional metadata
+
 #description: release notes 3.5 RTM
 #keywords: release notes 3.5 RTM
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- kraigb 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- kraigb
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 
 # 4.0 RC Release Notes

@@ -1,11 +1,11 @@
 ---
 # required metadata
 
-title: Project.json and UWP | Microsoft Docs
+title: NuGet Project.json File with Universal Windows Platform Projects | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/5/2017
+ms.date: 1/9/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -20,11 +20,11 @@ ms.assetid: 37caf4d7-dabd-4a78-aad2-7d445f818457
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
 ---
 
 # project.json and UWP
@@ -71,13 +71,13 @@ NuGet packages using the new format have the following well-known directories an
   * Install.ps1 and uninstall.ps1 will no longer run. Init.ps1 works as it always has.
 
 * Content
-  * Content will no longer be copied automatically into a user’s project. Support for content inclusion in the project is planned for a later release 
+  * Content will no longer be copied automatically into a user’s project. Support for content inclusion in the project is planned for a later release
 
 * Lib
   * For many packages the lib will work the same way it does in the 2.0, but with expanded options for what names can be used inside it and better logic for picking the correct sub-directory when consuming packages. However, when used in conjunction with ref, the lib folder will contain assemblies that implement the surface area defined by the assemblies in the ref folder.
 
 * Ref
-  * ref is a new, optional, directory that contains .NET assemblies defining the public surface (public types and methods) for an application to compile against. The assemblies in this folder may have no implementation, they are purely used to define surface area for the compiler. If the package has no ref directory, then the lib is both the reference assembly and the implementation assembly. 
+  * ref is a new, optional, directory that contains .NET assemblies defining the public surface (public types and methods) for an application to compile against. The assemblies in this folder may have no implementation, they are purely used to define surface area for the compiler. If the package has no ref directory, then the lib is both the reference assembly and the implementation assembly.
 
 * Runtimes
   * runtimes is a new, optional, directory that will contain OS specific code, such as CPU architecture and OS specific or otherwise platform-dependent binaries.
@@ -168,7 +168,7 @@ In the following example we will show a package that has a purely managed implem
                  │           MyLibrary.dll
                  │
                  └───native
-                         MyNativeLibrary.dll 
+                         MyNativeLibrary.dll
 
 Given the above package the following things will happen:
 

@@ -1,36 +1,36 @@
---- 
-# required metadata 
- 
-title: PowerShell Reference | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
+---
+# required metadata
+
+title: NuGet PowerShell Reference | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
 ms.assetid: cd08b869-44c6-480e-90f7-494a6d08e6d0
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # PowerShell Reference
 
-The Package Manager Console provides a PowerShell interface within Visual Studio to interact with NuGet. This topic is the reference for those commands; for a guide to using the console, see the [Package Manager Console](../tools/package-manager-console.md) topic.  
+The Package Manager Console provides a PowerShell interface within Visual Studio to interact with NuGet. This topic is the reference for those commands; for a guide to using the console, see the [Package Manager Console](../tools/package-manager-console.md) topic.
 
 Command | Description | NuGet Version
 --- | --- | ---
@@ -49,7 +49,7 @@ For detailed help on any of these commands within the console, just run the foll
     Get-Help <command>
 
 
-Note that all Package Manager Console commands support the following common PowerShell parameters: 
+Note that all Package Manager Console commands support the following common PowerShell parameters:
 
 - Debug
 - ErrorAction
@@ -91,7 +91,7 @@ ProjectName | Specifies the project to which to add binding redirects, defaultin
 
 *Version 3.0+*
 
-Searches a package source using a package ID or keywords. 
+Searches a package source using a package ID or keywords.
 
 ### Usage
 
@@ -121,7 +121,7 @@ ExactMatch | Specified to use the keywords as a case-sensitive package ID.
     Find-Package EntityFramework -version 6.1.1
 
 
-## Get-Package 
+## Get-Package
 
 Retrieves the list of packages installed in the local repository, or lists packages available from a package source when used with the `-ListAvailable` switch.
 
@@ -129,7 +129,7 @@ Retrieves the list of packages installed in the local repository, or lists packa
 
     Get-Package [-Source <string>] [-ListAvailable] [-Updates] [-ProjectName <string>] [-Filter <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease] [-PageSize <int>]
 
-With no parameters, `Get-Package` displays the list of packages installed in the default project. 
+With no parameters, `Get-Package` displays the list of packages installed in the default project.
 
 ### Parameters
 
@@ -155,7 +155,7 @@ PageSize | *(3.0+)* When used with -ListAvailable, specifies the number of packa
     Get-Package -ListAvailable
 
     # Lists all packages in the current source in pages of 20
-    Get-Package -ListAvailable -PageSize 20 
+    Get-Package -ListAvailable -PageSize 20
 
     # Lists packages with the Ninject keyword in the current source, up to 50
     Get-Package -ListAvailable -Filter Ninject
@@ -199,12 +199,12 @@ Installs a package and its dependencies into the project.
 
     Install-Package [-Id] <string> [-Version <string>] [-IgnoreDependencies] [-ProjectName <string>]  [-Source <string>] [-IncludePrerelease] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
 
-In NuGet 2.8+, `Install-Package` can downgrade an existing package in your project. For example, if you have Microsoft.AspNet.MVC 5.1.0-rc1 installed, the following command would downgrade it to 5.0.0: 
+In NuGet 2.8+, `Install-Package` can downgrade an existing package in your project. For example, if you have Microsoft.AspNet.MVC 5.1.0-rc1 installed, the following command would downgrade it to 5.0.0:
 
     Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
- 
+
 NuGet 2.7 and earlier will give an error saying that a newer version is already installed.
-    
+  
 ### Parameters
 
 |     |     |
@@ -237,7 +237,7 @@ WhatIf | Shows what would happen when running the command without actually perfo
     # Installs the latest version of Elmah from the current source
     Install-Package Elmah
 
-    # Installs Glimpse 1.0.0 into the MvcApplication1 project 
+    # Installs Glimpse 1.0.0 into the MvcApplication1 project
     Install-Package Glimpse -Version 1.0.0 -Project MvcApplication1
 
     # Installs Ninject.Mvc3 but not its dependencies from c:\temp\packages
@@ -273,7 +273,7 @@ PassThru | Displays the selected URL but does not open it in the browser.
     # Opens a browser with the Ninject's package's license page
     Open-PackagePage Ninject -License
 
-    # Opens a browser with the Ninject's package's report abuse page    
+    # Opens a browser with the Ninject's package's report abuse page  
     Open-PackagePage Ninject -ReportAbuse
 
     # Assigns the license URL to the variable, $url, without launching the browser
@@ -313,10 +313,10 @@ WhatIf | Shows what would happen when running the command without actually perfo
     # Syncs the Ninject package installed in the default project into the other projects in the solution
     Sync-Package Ninject
 
-    # Syncs only Microsoft.Aspnet.package to the rest of the projects, but not its dependencies 
+    # Syncs only Microsoft.Aspnet.package to the rest of the projects, but not its dependencies
     Sync-Package Microsoft.Aspnet.Mvc -IgnoreDependencies
 
-    # Syncs jQuery.Validation and installs the highest version of jQuery (a dependency) from the package source      
+    # Syncs jQuery.Validation and installs the highest version of jQuery (a dependency) from the package source    
     Sync-Package jQuery.Validation -DependencyVersion highest
 
 
@@ -348,7 +348,7 @@ WhatIf | Shows what would happen when running the command without actually perfo
     Uninstall-Package Elmah
 
     # Uninstalls the Elmah package and all its unused dependencies
-    Uninstall-Package Elmah -RemoveDependencies   
+    Uninstall-Package Elmah -RemoveDependencies 
 
     # Uninstalls the Elmah package even if another package depends on it.
     Uninstall-Package Elmah -Force
@@ -362,7 +362,7 @@ Updates a package and its dependencies, or all packages in a project.
 
     Update-Package [-Id <string>] [-Source <string>] [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Safe] [-IncludePrerelease] [-Reinstall] [-FileConflictAction] [-DependencyVersion] [-WhatIf]
 
-In NuGet 2.8+, `Update-Package` can be used to downgrade an existing package in your project. For example, if you have Microsoft.AspNet.MVC 5.1.0-rc1 installed, the following command would downgrade it to 5.0.0: 
+In NuGet 2.8+, `Update-Package` can be used to downgrade an existing package in your project. For example, if you have Microsoft.AspNet.MVC 5.1.0-rc1 installed, the following command would downgrade it to 5.0.0:
 
     Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 
@@ -371,7 +371,7 @@ NuGet 2.7 and earlier will give an error saying that a newer version is already 
 ### Parameters
 
 |     |     |
-| --- | --- |  
+| --- | --- |
 Id | Specifies the package ID of the package to update. If omitted, updates all packages. The -Id switch itself is optional.
 Source | Specifies the URL or path for a package source.
 IgnoreDependencies | Skips updating any of the package's dependencies.

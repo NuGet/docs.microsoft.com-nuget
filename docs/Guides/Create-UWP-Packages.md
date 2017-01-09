@@ -1,38 +1,38 @@
---- 
-# required metadata 
- 
-title: Create UWP Packages | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: d98524b1-a674-4803-8ac5-3c6bce867f86 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+---
+# required metadata
+
+title: Create NuGet Packages for the Universal Windows Platform | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: d98524b1-a674-4803-8ac5-3c6bce867f86
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 
 # Create UWP Packages
 
 The [Universal Windows Platform (UWP)](https://developer.microsoft.com/en-us/windows) provides a common app platform for every device that runs Windows 10. Within this model, UWP apps can call both the WinRT APIs that are common to all devices, and also APIs (including Win32 and .NET) that are specific to the device family on which the app is running.
 
-In this walkthrough you'll create a NuGet package with a native UWP component (including a XAML control) that can be used in both Managed and Native projects. 
+In this walkthrough you'll create a NuGet package with a native UWP component (including a XAML control) that can be used in both Managed and Native projects.
 
 1. [Pre-requisites](#pre-requisites)
 1. [Create a UWP Windows Runtime Component](#create-a-uwp-windows-runtime-component)
@@ -82,7 +82,7 @@ To create the initial .nuspec file, do the three steps below. The sections that 
 
         nuget spec
 
-1. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
+1. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
 
         <?xml version="1.0"?>
         <package >
@@ -109,7 +109,7 @@ To create the initial .nuspec file, do the three steps below. The sections that 
 
 A Windows Runtime Component requires metadata that describes all of its publicly available types, which makes it possible for other apps and libraries to consume the component. This metadata is contained in a .winmd file, which is created when you compile the project and must be included in your NuGet package. An XML file with IntelliSense data is also built at the same time, and should be included as well.
 
-Add the following &lt;files&gt; node to the .nuspec file: 
+Add the following &lt;files&gt; node to the .nuspec file:
 
     <package >
         <metadata>
@@ -144,7 +144,7 @@ To include a XAML control with your component, you need to add the XAML file tha
 
 ### Adding the native implementation libraries
 
-Within your component, the core logic of the ImageEnhancer type is in native code, which is contained in the various `ImageEnhancer.dll` assemblies that are generated for each target runtime (ARM, x86, and x64). To include these in the package, reference them in the &lt;files&gt; section along with their associated .pri resource files: 
+Within your component, the core logic of the ImageEnhancer type is in native code, which is contained in the various `ImageEnhancer.dll` assemblies that are generated for each target runtime (ARM, x86, and x64). To include these in the package, reference them in the &lt;files&gt; section along with their associated .pri resource files:
 
     <?xml version="1.0"?>
     <package >
@@ -253,12 +253,12 @@ This will generate `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a
 ![NuGet Package Explorer showing the ImageEnhancer package](media/UWP-PackageExplorer.png)
 
 > [!Note]
-> A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
+> A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org.
 
 To make your package available to other developers,  follow the instructions on [Publish a package](../create-packages/publish-a-package.md).
 
 ## Related topics
- 
+
 - [Nuspec Reference](../schema/nuspec.md)
 - [Symbol packages](../create-packages/symbol-packages.md)
 - [Dependency Versions](../create-packages/dependency-versions.md)

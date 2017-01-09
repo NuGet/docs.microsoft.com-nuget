@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
+---
+# required metadata
+
 title: NuGet.exe Credential Providers | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 3cf592de-39f2-4e7f-a597-62635fdcedfa 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 3cf592de-39f2-4e7f-a597-62635fdcedfa
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # NuGet.exe Credential Providers
 
@@ -40,7 +40,7 @@ When `nuget.exe` needs credentials to authenticate with a feed, it looks for the
 
 > [!Note]
 > NuGet.exe credential providers only work in NuGet.exe (not in dotnet restore or Visual Studio). For credential providers with Visual Studio, see [NuGet.exe Credential Providers for Visual Studio](../api/nuget-credential-providers-for-visual-studio.md)
-    
+  
 NuGet.exe credential providers can be used in 3 ways:
 
 - **Globally**: to make a credential provider available to all instances of `nuget.exe` run under the current user's profile, add it to `%LocalAppData%\NuGet\CredentialProviders`. You may need to create the `CredentialProviders` folder. Credential providers can be installed at the root of the `CredentialProviders`  folder or within a subfolder. If a credential provider has multiple files/assemblies, you can use subfolders to keep the providers organized.
@@ -75,7 +75,7 @@ A provider must do the following:
 | IsRetry | If present, indicates that this attempt is a retry of a previously failed attempt. Providers typically use this flag to ensure that they bypass any existing cache and prompt for new credentials if possible.|
 | Verbosity {value} | If present, one of the following values: "normal", "quiet", or "detailed". If no value is supplied, defaults to "normal". Providers should use this as an indication of the level of optional logging to emit to the standard error stream. |
 
-### Exit codes    
+### Exit codes  
 
 | Code |Result | Description |
 |----------------|-----------|-----------|

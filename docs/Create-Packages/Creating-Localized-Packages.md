@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: Creating Localized Packages | Microsoft Docs 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 824c3f45-c6c2-4c82-9d6d-62a19bfdc4a4 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+---
+# required metadata
+
+title: Creating Localized NuGet Packages | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 824c3f45-c6c2-4c82-9d6d-62a19bfdc4a4
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # Creating Localized Packages
 
 There are two ways to create localized versions of a library:
@@ -38,10 +38,10 @@ Both methods have their advantages and disadvantages, as described in the follow
 
 ## Localized resource assemblies in a single package
 
-Including localized resource assemblies in a single package is typically the simplest approach. To do this, create folders within `lib` for supported language other than the package default (assumed to be en-us). In these folders you can place resource assemblies and localized IntelliSense XML files.  
- 
+Including localized resource assemblies in a single package is typically the simplest approach. To do this, create folders within `lib` for supported language other than the package default (assumed to be en-us). In these folders you can place resource assemblies and localized IntelliSense XML files.
+
 For example, the following folder stucture supports, German (de), Italian (it), Japanese (ja), Russian (ru), Chinese (Simplified) (zh-Hans), and Chinese (Traditional) (zh-Hant):
-    
+  
     lib
     └───net40
         │   Contoso.Utilities.dll
@@ -69,12 +69,12 @@ For example, the following folder stucture supports, German (de), Italian (it), 
         │
         └───zh-Hant
                 Contoso.Utilities.resources.dll
-                Contoso.Utilities.xml    
+                Contoso.Utilities.xml  
 
 You can see that the languages are all listed underneath the `net40` target framework folder. If you're [supporting multiple frameworks](../create-packages/supporting-multiple-target-frameworks.md), then you'll have a folder under `lib` for each variant.
 
 With these folders in place, you'll then reference all the files in your `.nuspec`:
-	    
+	  
 	<?xml version="1.0"?>
 	<package>
 	  <metadata>...
@@ -97,10 +97,10 @@ Bundling all languages in a single package has a few disadvantages:
 However, it also has a few benefits:
 
 1. **Simplicity**: Consumers of the package get all supported languages in a single install, rather than having to install each language separately. A single package is also easier to find on nuget.org.
-2. **Coupled versions**: Because all of the resource assemblies are in the same package as the primary assembly, they all share the same version number and don't run a risk of getting erroneously decoupled. 
+2. **Coupled versions**: Because all of the resource assemblies are in the same package as the primary assembly, they all share the same version number and don't run a risk of getting erroneously decoupled.
 
 
-## Localized satellite packages 
+## Localized satellite packages
 
 Similar to how .NET Framework supports satellite assemblies, this method separates localized resources and IntelliSense XML files into satellite packages.
 
@@ -109,15 +109,15 @@ Do to this, your primary package uses the naming convention `{identifier}.{versi
     lib
     └───net40
             ContosoUtilities.dll
-            ContosoUtilities.xml    
+            ContosoUtilities.xml  
 
-A satellite assembly then uses the naming convention `{identifier}.{language}.{version}.nupkg`, such as `ContosoUtilities.de.1.0.0.nupkg`. The identifier **must** exactly match that of the primary package. 
+A satellite assembly then uses the naming convention `{identifier}.{language}.{version}.nupkg`, such as `ContosoUtilities.de.1.0.0.nupkg`. The identifier **must** exactly match that of the primary package.
 
 Because this is a separate package, it has its own `.nuspec` file that contains localized metadata. Be mindful that the language in the .nuspec **must** match the one used in the filename.
 
 The satellite assembly **must** also declare an exact version of the primary package as a dependency, using the [] version notation (see [Dependency Versions](../create-packages/dependency-versions.md)). For example, `ContosoUtilities.de.1.0.0.nupkg` must declare a dependency on `ContosoUtilities.1.0.0.nupkg` using the `[1.0.0]` notation. The satellite package can, of course, have a different version number than the primary package.
 
-The satellite package's structure must then include the resource assembly and XML IntelliSense file in a subfolder that matches `{language}` in the package filename:   
+The satellite package's structure must then include the resource assembly and XML IntelliSense file in a subfolder that matches `{language}` in the package filename: 
 
     lib
     └───net40
@@ -143,9 +143,9 @@ You would create additional satellite assemblies in the same way for each suppor
 
 - Primary package must be named `{identifier}.{version}.nupkg`
 - A satellite package must be named `{identifier}.{language}.{version}.nupkg`
-- A satellite package's `.nuspec` must specify its language to match the filename.  
+- A satellite package's `.nuspec` must specify its language to match the filename.
 - A satellite package must declare a dependency on an exact version of the primary using the [] notation in its `.nuspec` file. Ranges are not supported.
-- A satellite package must place files in the `lib\[{framework}\]{language}` folder that exactly matches `{language}` in the filename.  
+- A satellite package must place files in the `lib\[{framework}\]{language}` folder that exactly matches `{language}` in the filename.
 
 ### Advantages and disadvantages
 

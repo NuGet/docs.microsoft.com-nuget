@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: Creating Native Packages | Microsoft Docs 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 7a70d748-efe2-4f8f-a3fd-67ddb0f6214e 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+---
+# required metadata
+
+title: Creating Native NuGet Packages | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 7a70d748-efe2-4f8f-a3fd-67ddb0f6214e
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # Creating Native Packages
 
 A native package contains native C++ code instead of managed code, allowing it to be used within C++ projects. (See [Native C++ Packages](../consume-packages/finding-and-choosing-packages.md#native-c++-packages) in the Consume section.)

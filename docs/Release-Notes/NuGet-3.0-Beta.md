@@ -1,31 +1,31 @@
---- 
-# required metadata 
- 
-title: NuGet 3.0 Beta Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 3.0 Beta Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 4153ff3f-f97f-4e54-b638-e844f70edf22 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 4153ff3f-f97f-4e54-b638-e844f70edf22
+
+# optional metadata
+
 #description: release notes 3.0
 #keywords: release notes 3.0
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 
 # NuGet 3.0 Beta Release Notes
@@ -60,7 +60,7 @@ We've enhanced the user-interface in this release to include a combobox that wil
 We removed the modal window with logging information that would quickly appear and hide while installing or uninstalling.  This window added no value when you would really want to see the information or be able to copy and paste from it.  Instead, we are now redirecting all of the output logging to the Package Manager pane of the Output window.  We think this is more comfortable and similar to a typical build report that you would want to inspect.
 
 
-### Focus on Performance 
+### Focus on Performance
 
 We made a lot of changes in the name of improving performance of NuGet searches, and fetches.  This was our number one concern from our customers, and we wanted to be sure we addressed it in this release.  We've tuned our servers, built out a new CDN, and improved the query matching logic to hopefully deliver to you more relevant and faster package search results.
 
@@ -68,7 +68,7 @@ As we proceed through this phase of the development of NuGet 3.0, we will be tun
 
 ## Building NuGet with NuGet
 
-We have now rearchitected our NuGet clients into several components that are themselves being built into NuGet packages. This re-use of our own libraries forces us to build components that are re-usable and that can be packaged properly.  We have been able to eliminate duplicated code and have learned how to better configure our development process to support the need to build packages throughout our solutions.  Look for a blog post soon where we will talk about how the code projects are structured and how our build process works. 
+We have now rearchitected our NuGet clients into several components that are themselves being built into NuGet packages. This re-use of our own libraries forces us to build components that are re-usable and that can be packaged properly.  We have been able to eliminate duplicated code and have learned how to better configure our development process to support the need to build packages throughout our solutions.  Look for a blog post soon where we will talk about how the code projects are structured and how our build process works.
 
 ## Stay Tuned
 

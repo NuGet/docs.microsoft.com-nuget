@@ -1,38 +1,38 @@
---- 
-# required metadata 
- 
-title: Create Cross-Platform Packages | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: ae24824b-a138-4d12-a810-1f653ddffd32 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+---
+# required metadata
+
+title: Create Cross-Platform NuGet Packages (for iOS, Android, and Windows) | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: ae24824b-a138-4d12-a810-1f653ddffd32
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 
 # Create Cross-Platform Packages
 
 A cross-platform package contains code that uses native APIs on iOS, Android, and Windows, depending on the run-time operating system. Although this is straightforward to do, it's preferable to let developers consume the package from a PCL or .NET Standard libraries through a common API surface area.
 
-In this walkthrough you'll create a cross-platform NuGet package that can be used in mobile projects on iOS, Android, and Windows.  
+In this walkthrough you'll create a cross-platform NuGet package that can be used in mobile projects on iOS, Android, and Windows.
 
 1. [Pre-requisites](#pre-requisites)
 1. [Create the project structure and abstraction code](#create-the-project-structure-and-abstraction-code)
@@ -123,7 +123,7 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
         nuget spec
 
 1. Rename this file to `LoggingLibrary.nuspec` and open it in an editor.
-1. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
+1. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
 
         <?xml version="1.0"?>
         <package >
@@ -256,13 +256,13 @@ This will generate `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Opening this file in 
 ![NuGet Package Explorer showing the LoggingLibrary package](media/Cross-Platform-PackageExplorer.png)
 
 > [!Note]
-> A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
+> A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org.
 
 
 To make your package available to other developers,  follow the instructions on [Publish a package](../create-packages/publish-a-package.md).
 
 ## Related topics
- 
+
 - [Nuspec Reference](../schema/nuspec.md)
 - [Symbol packages](../create-packages/symbol-packages.md)
 - [Dependency Versions](../create-packages/dependency-versions.md)

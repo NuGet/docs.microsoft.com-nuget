@@ -1,38 +1,38 @@
---- 
-# required metadata 
- 
-title: Packages in Visual Studio templates | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/3/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 0b2cf228-f028-475d-8792-c012dffdb26f 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+---
+# required metadata
+
+title: NuGet Packages in Visual Studio templates | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 0b2cf228-f028-475d-8792-c012dffdb26f
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # Packages in Visual Studio templates
 
-Visual Studio project and item templates often need to ensure that certain packages are installed into when the project or item is created. For example, the ASP.NET MVC 3 template installs jQuery, Modernizr, and other packages. 
+Visual Studio project and item templates often need to ensure that certain packages are installed into when the project or item is created. For example, the ASP.NET MVC 3 template installs jQuery, Modernizr, and other packages.
 
-To support this, template authors can instruct NuGet to install the necessary packages, rather than individual libraries. Developers can then easily update those packages at any later time. 
+To support this, template authors can instruct NuGet to install the necessary packages, rather than individual libraries. Developers can then easily update those packages at any later time.
 
 To learn more about authoring templates themselves, refer to [Creating Project and Item Templates in Visual Studio](https://msdn.microsoft.com/library/s365byhx.aspx) or [Creating Custom Project and Item Templates with the Visual Studio SDK](https://msdn.microsoft.com/library/ff527340.aspx).
 
@@ -88,7 +88,7 @@ The VSIX itself can serve as the source for packages required by the template:
 
     The `repository` attribute specifies the type of repository as `extension` while `repositoryId` is the unique identifier of the VSIX itself (This is the value of the [`ID` attribute](http://msdn.microsoft.com/library/dd393688.aspx) in the extension’s `vsixmanifest` file).
 
-1. Place your `nupkg` files in a folder called `Packages` within the VSIX. 
+1. Place your `nupkg` files in a folder called `Packages` within the VSIX.
 1. Add the necessary package files as [custom extension content](http://msdn.microsoft.com/library/dd393737.aspx) in your `source.extension.vsixmanifest` file. If you're using the 2.0 schema it should look like this:
 
         <Asset Type="Moq.4.0.10827.nupkg" d:Source="File" Path="Packages\Moq.4.0.10827.nupkg" d:VsixSubPath="Packages" />

@@ -1,11 +1,11 @@
 ---
 # required metadata
 
-title: Supporting Multiple .NET Framework Versions | Microsoft Docs
+title: Supporting Multiple .NET Framework Versions in NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/5/2017
+ms.date: 1/9/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:

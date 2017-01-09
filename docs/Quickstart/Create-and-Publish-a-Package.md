@@ -1,19 +1,19 @@
---- 
+---
 # required metadata
- 
-title: Create and publish a package | Microsoft Docs
+
+title: Inroductory Guide to Creating and Publishing a NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/5/2017
+ms.date: 1/9/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
 ms.technology: nuget
 ms.assetid: 91781ed6-da5c-49f0-b973-16dd8ad84229
- 
+
 # optional metadata
- 
+
 description: A tutorial that walks through the process of creating and publishing a NuGet package using a .NET class library using  the nuget.exe command-line interface and Visual Studio.
 keywords: NuGet package create publish
 #ROBOTS:
@@ -55,7 +55,7 @@ In Visual Studio, choose **File > New > Project**, expand the **Visual C# > Wind
 
 Right click on the resulting project file and select **Build** to make sure the project was created properly.
 
-Within a real NuGet package, of course, you'll implement many useful features upon which others can build applications. For this walkthrough, however, you won't add any additional code because a class library from the template is sufficient to create a package. 
+Within a real NuGet package, of course, you'll implement many useful features upon which others can build applications. For this walkthrough, however, you won't add any additional code because a class library from the template is sufficient to create a package.
 
 ## Create the .nuspec package manifest file
 
@@ -149,7 +149,7 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
         Your package was pushed.
 
 
-1. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page: 
+1. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page:
 
     ![This package has not been indexed yet. It will appear in search results and will be available for install/restore after indexing is complete.](media/QS_Create-03-NotIndexed.png)
 

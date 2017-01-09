@@ -1,40 +1,40 @@
 
---- 
-# required metadata 
- 
-title: NuGet 3.1 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 3.1 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 0fc4d89a-ccca-4d63-85bf-461cd9ced882 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 0fc4d89a-ccca-4d63-85bf-461cd9ced882
+
+# optional metadata
+
 #description: release notes 3.1
 #keywords: release notes 3.1
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 # NuGet 3.1 Release Notes
 
 [NuGet 3.0 Release Notes](../release-notes/nuget-3.0.0.md) | [NuGet 3.1.1 Release Notes](../release-notes/nuget-3.1.1.md)
 
-NuGet 3.1 was released on July 27, 2015 as a bundled extension to the Universal Windows Platform SDK for Visual Studio 2015. We delivered this release with the Windows Platform SDK so that the Windows development experience could take advantage of the NuGet cross-platform work that had been previously started. This NuGet extension version is only available for Visual Studio 2015.  
+NuGet 3.1 was released on July 27, 2015 as a bundled extension to the Universal Windows Platform SDK for Visual Studio 2015. We delivered this release with the Windows Platform SDK so that the Windows development experience could take advantage of the NuGet cross-platform work that had been previously started. This NuGet extension version is only available for Visual Studio 2015.
 
-We recommend those developers that have access to the Visual Studio gallery update to the latest version that is available, as we are always publishing updates with bug fixes and new features.  
+We recommend those developers that have access to the Visual Studio gallery update to the latest version that is available, as we are always publishing updates with bug fixes and new features.
 
 ## NuGet Visual Studio Extension
 
@@ -67,18 +67,18 @@ There were a number of known issues delivered with this release.
 
 * Installation of the 3.1 release with the Windows 10 SDK will downgrade any version of NuGet extension that was previously installed
 
-## NuGet Command-line 
+## NuGet Command-line
 
 The NuGet command-line executable was updated and moved to a new distributable location so that historical versions of nuget.exe can continue to be made available.  You can download the 3.1 beta version of nuget.exe for Windows at: [http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe](http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe)
 
 The new distributable location resides on the dist.nuget.org host, with a folder structure that follows this template:
 
      {platform supported}/{version}/nuget.exe
-    
+  
 ### New Features
 
 * NuGet.exe can restore and install packages into projects that use a project.json file.
-* NuGet.exe can connect to and consume the NuGet v3 protocol at: [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json) 
+* NuGet.exe can connect to and consume the NuGet v3 protocol at: [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json)
 
 ## Known Issues ##
 

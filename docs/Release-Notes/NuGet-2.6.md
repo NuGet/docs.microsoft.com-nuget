@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: NuGet 2.6 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 2.6 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: d99bbf29-2b9a-4dc5-a823-5eb4f9e30f7f 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: d99bbf29-2b9a-4dc5-a823-5eb4f9e30f7f
+
+# optional metadata
+
 #description: release notes 2.6
 #keywords: release notes 2.6
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet 2.6 Release Notes
 
 [NuGet 2.5 Release Notes](../release-notes/nuget-2.5.md) | [NuGet 2.6.1 for WebMatrix Release Notes](../release-notes/nuget-2.6.1-for-webmatrix.md)
@@ -111,9 +111,9 @@ products. Additionally, the directory structure supports semantics for product, 
 and even SKU of the IDE. Settings from these directories are applied in the following
 order with a "last in wins" precedence strategy.
 
-1. %ProgramData%\NuGet\Config\*.config 
-2. %ProgramData%\NuGet\Config\{IDE}\*.config 
-3. %ProgramData%\NuGet\Config\{IDE}\{Version}\*.config 
+1. %ProgramData%\NuGet\Config\*.config
+2. %ProgramData%\NuGet\Config\{IDE}\*.config
+3. %ProgramData%\NuGet\Config\{IDE}\{Version}\*.config
 4. %ProgramData%\NuGet\Config\{IDE}\{Version}\{SKU}\*.config
 
 In this list, the {IDE} placeholder is specific to the IDE in which NuGet is running,
@@ -122,7 +122,7 @@ placeholders are provided by the IDE (e.g. "11.0" and "WDExpress", "VWDExpress" 
 "Pro", respectively). The directory can then contain many different *.config files.
 Therefore, the ACME component company can, as a part of their product installer, add
 a custom package source which will be visible only in the Professional and Ultimate
-versions of Visual Studio 2012 by creating the following file path: 
+versions of Visual Studio 2012 by creating the following file path:
 
 %ProgramData%\NuGet\Config\VisualStudio\11.0\Pro\acme.config
 

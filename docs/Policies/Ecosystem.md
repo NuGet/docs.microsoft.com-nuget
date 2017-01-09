@@ -1,39 +1,39 @@
---- 
-# required metadata 
- 
-title: “An Overview of the NuGet Ecosystem | Microsoft Docs” 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 8971dcf5-1d05-46e1-adf2-ce0f55521a49 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+---
+# required metadata
+
+title: Overview of the NuGet Ecosystem | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 8971dcf5-1d05-46e1-adf2-ce0f55521a49
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 # An Overview of the NuGet Ecosystem
 
-Since it's introduction in 2010, NuGet has presented a great opportunity to improve and automate different aspects of the development processes. 
+Since it's introduction in 2010, NuGet has presented a great opportunity to improve and automate different aspects of the development processes.
 
 Because NuGet is open source under a permissive [Apache v2 license](http://choosealicense.com/licenses/apache/), other projects can leverage NuGet and companies can build support for it in their products. Whether for open-source projects or enterprise application development, NuGet and other applications built on and around NuGet provide a broad ecosystem of tools for improving your software development process.
 
-All of these projects are able to innovate because of developer contributions. Just as you contribute to NuGet itself, also make contribution to these projects by reporting defects and new feature ideas, providing feedback, writing documentation, and contributing code where possible. 
+All of these projects are able to innovate because of developer contributions. Just as you contribute to NuGet itself, also make contribution to these projects by reporting defects and new feature ideas, providing feedback, writing documentation, and contributing code where possible.
 
 ## .NET Foundation projects
 
