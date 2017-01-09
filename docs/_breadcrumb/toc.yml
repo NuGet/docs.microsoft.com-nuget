@@ -15,7 +15,7 @@
     - name: Create Packages
       tocHref: /nuget/create-packages/
       topicHref: /nuget/create-packages/overview-and-workflow
-    - name: Consume Package
+    - name: Consume Packages
       tocHref: /nuget/consume-packages/
       topicHref: /nuget/consume-packages/overview-and-workflow
     - name: Hosting Packages
@@ -28,14 +28,14 @@
       tocHref: /nuget/schema/
       topicHref: /nuget/schema/nuspec
     - name: API
-      tocHref: /nuget/api
+      tocHref: /nuget/api/
       topicHref: /nuget/api/nuget-api-v3
     - name: Visual Studio Extensibility
-      tocHref: /nuget/visual-studio-extensibility
+      tocHref: /nuget/visual-studio-extensibility/
       topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
     - name: Policies
-      tocHref: /nuget/policies
+      tocHref: /nuget/policies/
       topicHref: /nuget/policies/nuget-faq
     - name: Release Notes
-      tocHref: /nuget/release-notes
+      tocHref: /nuget/release-notes/
       topicHref: /nuget/release-notes/known-issues
