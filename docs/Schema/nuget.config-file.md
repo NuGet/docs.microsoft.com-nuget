@@ -1,246 +1,303 @@
-﻿# nuget.config
+---
+# required metadata
 
-There are a bunch of NuGet configuration values which can be set via the nuget.config file. Below is the summary of the NuGet config keys and their usage, note the keys are case sensitive.
+title: NuGet.Config File Reference | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: fbf31530-3bf4-478c-b26c-c2b24dd3406d
 
+# optional metadata
 
-## globalPackagesFolder
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
 
-**section**: config  
-**key**: globalPackagesFolder
+---
 
-Allows  you to change the location of the default global packages folder instead of `Users\{username}\.nuget\packages`
+# NuGet.Config Reference
 
-<div class="block-callout-info">
-    <strong>Note:</strong><br>
-    This is only applicable for projects that you use project.json to manage its dependencies.
-</div>
+NuGet behavior is controlled by settings in `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). Setting names are case-insensitive.
 
-This key can be added to the NuGet.config file manually or using the [NuGet.exe Config -Set command]().
+`NuGet.Config` is an XML file containing a top-level &lt;configuration&gt; node, which then contains the section elements described in this topic. Each section then contains zero or more &lt;add&gt; elements with `key` and `value` attributes. See the [examples config file](#example-config-file) at the end of this topic.
 
-    <config>
-      <add key="globalPackagesFolder" value="C:\Temp" />
-    </config>
+Note that with NuGet 3.4+ you can use environment variables in `NuGet.Config` values to apply machine-specific settings at run time. For example, if the `HOME` environment variable is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file will resolve to `c:\users\username\NuGetRepository`. If an environment variable is not found, NuGet will leave the value unmodified.
 
-You can also provide a relative path (note the forward slashes for relative path).
+lso note that with Visual Studio 2017+ and NuGet 4.0+, the machine-wide `NuGet.config` is now located at `%ProgramFiles(x86)%\NuGet\Config\` to improve security in multi-user scenarios. You will need to manually migrate existing config files from `%ProgramData%` to `%ProgramFiles(x86)%`. Going forward,NuGet 4.0+ will also treat this as the new location for the machine-wide configuration. `NuGet.config` in `%ProgramData%\NuGet\Config\` will no longer be implicitly referenced or considered for hierarchical merging of `nuget.config`.
 
-<div class="block-callout-warning">
-    <strong>Note:</strong><br>
-    Relative path is only relative to NuGet.config file location.
-</div>
+In this topic:
 
+- [config section](#config-section)
+- [bindingRedirects section](#bindingredirects-section)
+- [packageRestore section](#packagerestore-section)
+- [solution section](#solution-section)
+- [Package source sections](#package-source-sections):
+    - [packageSources](#packagesources)
+    - [packageSourceCredentials](#packagesourcecredentials)
+    - [apikeys](#apikeys)
+    - [disabledPackageSources](#disabledpackagesources)
+    - [activePackageSource](#activepackagesource)
+- [Example config file](#example-config-file)
 
-<config>
-      <add key="globalPackagesFolder" value="../relativepath" />
-</config>
 
 
-## repositoryPath
+## config section
+<a name="dependencyVersion"></a>
+<a name="globalPackagesFolder"></a>
+<a name="repositoryPath"></a>
+<a name="proxy-settings"></a>
 
-**section**: config  
-**key**: repositoryPath
+Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/nuget.exe-cli-reference.md#config).
 
-Allows  you to install the NuGet packages in the specified folder, instead of the default `"$(Solutiondir)\Packages"` folder.
+Note: `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using `project.json`.
 
-<div class="block-callout-info">
-    <strong>Note:</strong><br>
-     This is only applicable for projects that you use packages.config to manage its dependencies.
-</div>
+Key | Value
+--- | ---
+dependencyVersion (package.config only) | The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly. This value is also used by the NuGet Package Manager UI. Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`.
+globalPackagesFolder (project.json only) | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages`. A relative path can be used in project-specific `nuget.config` files.
+repositoryPath (packages.config only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)\packages` folder. A relative path can be used in project-specific `nuget.config` files.
+defaultPushSource | Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation.
+http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://&lt;username&gt;:&lt;password&gt@&lt;domain&gt`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the http_proxy and no_proxy environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com).
 
 
-This key can be added to the NuGet.config file manually or using the [NuGet.exe Config -Set command]().
+**Example**:
 
-    <config>
-      <add key="repositoryPath" value="C:\Temp" />
-    </config>
+      <config>
+        <add key="dependencyVersion" value="Highest" />
+        <add key="globalPackagesFolder" value="c:\packages" />
+        <add key="repositoryPath" value="c:\repo" />
+        <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
+      </config>
 
-You can also provide a relative path (note the forward slashes for relative path).
 
-<div class="block-callout-warning">
-    <strong>Note:</strong><br>
-    Relative path is only relative to NuGet.config file location.
-</div>
+## bindingRedirects section
 
-    <config>
-      <add key="repositoryPath" value="../relativepath" />
-    </config>
+Configures whether NuGet does automatic binding redirects when a package is installed.
+Key | Value
+--- | ---
+skip | A Boolean indicating whether to skip automatic binding redirects. The default is false.
 
-## dependencyVersion
-
-**section**: config  
-**key**: dependencyVersion
-**Allowed**: values: Lowest, HighestPatch, HighestMinor, Highest
-
-
-<div class="block-callout-info">
-    <strong>Support</strong><br>
-    This property only applies to packages.config projects at this time.
-</div>
-
-Defines what the default DependencyVersion value is, if the `-DependencyVersion` switch is not specified in an invocation of `install-package`. This value will also be respected by the NuGet Package Manager Dialog for any install package operations in projects with a packages.config file.
-
-To set this value, add the attribute below to your nuget.config file:
-
-    <config>
-      <add key="dependencyVersion" value="Highest" />
-    </config>
-
-## packageRestore
-
-**section**: packageRestore  
-**keys**: enabled and automatic
-
-<div class="block-callout-warning">
-    <strong>Deprecated</strong><br>
-    Deprecated since 2.7, has no effect on newer clients.
-</div>
-
-Allows you to restore missing packages from the NuGet source during build.
-
-The environment variable `EnableNuGetPackageRestore` with a value of `true` can be used in place of the `enabled` key in the config file.
-
-More details [here](Package-Restore).
-
-    <packageRestore>
-      <!-- Allow NuGet to download missing packages -->
-      <add key="enabled" value="True" />
-      <!-- Automatically check for missing packages during build in Visual Studio -->
-      <add key="automatic" value="True" />
-    </packageRestore>
-
-## packageSources
-
-**sections**: packageSources, disabledPackageSources and activePackageSource  
-
-Allows you to specify the list of sources to be used while looking for packages.
-
-`packageSources` section has the list of package sources.
-
-`disabledPackageSources` has the list of sources which are currently disabled.
-
-`activePackageSource` points to the currently active source. Specifying `(Aggregate source)` as the source value would imply that all the current package sources except for the disabled ones are active.
-
-The values can be added to the config file directly or using the package manager settings UI or using the [NuGet CLI Sources command]().
-
-    <packageSources>
-      <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
-      <add key="TestSource" value="C:\Temp" />
-    </packageSources>
-    <disabledPackageSources />
-    <activePackageSource>
-      <add key="All" value="(Aggregate source)" />
-    </activePackageSource>
-
-<div class="block-callout-warning">
-    <strong>Note:</strong><br>
-    activePackageSource is not supported in NuGet 3.*+ versions and is deprecated.
-</div>
-
-## disableSourceControlIntegration
-
-**section**: solution  
-**key**: disableSourceControlIntegration
-
-Allows you to disable source control integration for the "Packages" folder.
-
-This key works at the solution level and hence need to be added to the NuGet.config file present in the `$(SolutionDir)\.nuget` directory.
-
-Enabling package restore from VS would add the `.nuget\nuget.config` file automatically.
-
-The default value for this key is true.
-
-    <solution>
-      <add key="disableSourceControlIntegration" value="true" />
-    </solution>
-
-## packageSourceCredentials
-
-**section**: packageSourceCredentials  
-**keys**: Username, Password and ClearTextPassword
-
-Allows you to set the credentials to access the given package source.
-
-This key has to be set using the [NuGet.exe Sources command](). The default behavior is to store the password encrypted in the config file.
-
-    NuGet.exe Sources Add -Name <feedName> -Source <pathToPackageSource> -UserName xxx -Password <secret>
-    NuGet.exe Sources Update -Name <feedName> -Source <pathToPackageSource> -UserName xxx -Password <secret> 
-
-This results in something similar to this:
-
-    <packageSourceCredentials>
-      <feedName>
-        <add key="Username" value="xxx" />
-        <add key="Password" value="...encrypted..." />
-      </feedName>
-    </packageSourceCredentials>
-
-If you want to share the credentials with others then you might want to use the -StorePasswordInClearText option to disable password encryption.
-
-Using this option allows you to store the password in clear text, for instance in your solution-local nuget.config using the new [-Config option](), and commit it to your source control.
-
-    NuGet.exe Sources Add -Name <feedName> -Source <pathToPackageSource> -UserName xxx -Password <secret> -StorePasswordInClearText -Config <path to nuget.config>
-    NuGet.exe Sources Update -Name <feedName> -Source <pathToPackageSource> -UserName xxx -Password <secret> -StorePasswordInClearText -Config <path to nuget.config>
-
-This results in something more readable (or even manually configurable):
-
-    <packageSourceCredentials>
-      <feedName>
-        <add key="Username" value="xxx" />
-        <add key="ClearTextPassword" value="secret" />
-      </feedName>
-    </packageSourceCredentials>
-
-## Proxy settings
-
-**section**: config  
-**keys**: http_proxy, http_proxy.user, http_proxy.password and no_proxy.
-
-Allows you to set the proxy settings to be used while connecting to your NuGet feed.
-More details [here](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html).
-
-This key can be added using [NuGet.exe Config -Set command](Command-Line-Reference#config-command).
-
-It can also be set via environment variables `http_proxy` and `no_proxy`. `http_proxy` should be specified in the format `http://[username]:[password]@proxy.com` whereas `no_proxy` should be a comma-separated list of domains to bypass the proxy server.
-
-<div class="block-callout-warning">
-    <strong>Note:</strong><br>
-    The "http_proxy.password" key value is encrypted before storing in the nuget.config file. Hence it can not be added manually by directly updating the config file.
-</div>
-
-## API Key to access package source
-
-Allows you to set the API Key corresponding to a specific package source. This key has to be set via [NuGet -SetApiKey]().
-
-
-## bindingRedirects
-
-**section**: bindingRedirects  
-**keys**: skip
-
-Allows you to configure addition of binding redirects as part of package install.
-
-More details [here](Package-Restore).
+**Example**:
 
     <bindingRedirects>
         <add key="skip" value="True" />
     </bindingRedirects>
 
-## Environment variables in configuration
 
-Starting with NuGet 3.4, NuGet evaluates environment variables in NuGet.config values.
-NuGet does not evaluate environment variables in other locations.
-This enables you to include NuGet.config in your source repository but still have environment specific configuration exposed. 
+## packageRestore section
 
-Consider an example NuGet.config file:
+*Ignored in 2.7+*
 
+Controls package restore during builds.
+
+Key | Value
+--- | ---
+enabled | A Boolean indicating whether NuGet can perform automatic restore. You can also set the `EnableNuGetPackageRestore` environment variable with a value of `True` instead of setting this key in the config file.
+automatic | A Boolean indicating whether NuGet should check for missing packages during a build.
+
+**Example**:
+
+    <packageRestore>
+      <add key="enabled" value="true" />
+      <add key="automatic" value="true" />
+    </packageRestore>
+
+## solution section
+
+Controls whether the `packages` folder of a solution is included in source control. This section works only in `nuget.config` files in a solution folder.
+
+Key | Value
+--- | ---
+disableSourceControlIntegration | A Boolean indicating whether to ignore the packages folder when working with source control. The default value is false.
+
+
+**Example**:
+
+    <solution>
+      <add key="disableSourceControlIntegration" value="true" />
+    </solution>
+
+
+## Package source sections
+
+The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, and `disabledPackageSources` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
+
+The [`nuget sources` command](../tools/nuget.exe-cli-reference.md#sources) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/nuget.exe-cli-reference.md#setapikey).
+
+### packageSources
+
+Lists all known package sources.
+
+Key | Value
+--- | ---
+(name to assign to the package source) | The path or URL of the package source.
+
+**Example**:
+
+    <packageSources>
+        <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
+        <add key="Contoso Package Source" value="https://contoso.com/packages/" />
+        <add key="Test source" value="c:\packages" />
+    </packageSources>
+
+
+### packageSourceCredentials
+
+Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`. Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.
+
+Key | Value
+--- | ---
+username | The user name for the source in plain text.
+password | The encrypted password for the source.
+cleartextpassword | The unencrypted password for the source.
+
+**Example:**
+
+In the config file, the &lt;packageSourceCredentials&gt; element will contain child nodes for each applicable source name. That is, for a source named "Contoso", the config file will contain the following when using an encrypted password:
+
+    <packageSourceCredentials>
+      <Contoso>
+        <add key="Username" value="user@contoso.com" />
+        <add key="Password" value="..." />
+      </Contoro>
+    </packageSourceCredentials>
+
+When using an unencrypted password:
+
+    <packageSourceCredentials>
+      <Contoso>
+        <add key="Username" value="user@contoso.com" />
+        <add key="ClearTextPassword" value="33f!!lloppa" />
+      </Contoso>
+    </packageSourceCredentials>
+
+### apikeys
+
+Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../tools/nuget.exe-cli-reference.md#setapikey).
+
+Key | Value
+--- | ---
+(source URL) | The encrypted API key.
+
+**Example**:
+
+      <apikeys>
+        <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
+      </apikeys>
+
+
+### disabledPackageSources
+
+Identified currently disabled sources. May be empty.
+
+Key | Value
+--- | ---
+(name of source) | A Boolean indicating whether the source is disabled.
+
+
+
+**Example:**
+
+    <disabledPackageSources>
+        <add key="Contoso Package Source" value="true" />
+      </disabledPackageSources>
+
+    <!-- Empty list -->
+    <disabledPackageSources />
+
+### activePackageSource
+
+*(2.x only; deprecated in 3.x+)*
+
+Identifies to the currently active source or indicates the aggregate of all sources.
+
+Key | Value
+--- | ---
+(name of source) or `All` | If key is the name of a source, the value is the source path or URL. If `All`, value should be `(Aggregate source)` to combine all package sources that are not otherwise disabled.
+
+**Example**:
+
+    <activePackageSource>
+        <!-- Only one active source-->
+        <add key="nuget.org" value="https://nuget.org/api/v2/" />
+
+        <!-- All non-disabled sources are active -->
+        <add key="All" value="(Aggregate source)" />
+      </activePackageSource>
+
+
+## Example config file
+
+Below is an example `NuGet.Config` file that illustrates a number of settings:
+
+    <?xml version="1.0" encoding="utf-8"?>
     <configuration>
-        <config>
-            <add key="repositoryPath" value="%HOME%\NuGetRepository" />
-        </config>
+      <config>
+        <!--
+            Used to specify the default location to expand packages.
+            See: NuGet.exe help install
+            See: NuGet.exe help update
+        -->
+        <add key="repositoryPath" value="External\Packages" />
+
+        <!--
+            Used to specify default source for the push command.
+            See: NuGet.exe help push
+        -->
+
+        <add key="DefaultPushSource" value="https://MyRepo/ES/api/v2/package" />
+
+        <!-- Proxy settings -->
+        <add key="http_proxy" value="host" />
+        <add key="http_proxy.user" value="username" />
+        <add key="http_proxy.password" value="encrypted_password" />
+      </config>
+
+      <packageRestore>
+        <!-- Allow NuGet to download missing packages -->
+        <add key="enabled" value="True" />
+
+        <!-- Automatically check for missing packages during build in Visual Studio -->
+        <add key="automatic" value="True" />
+      </packageRestore>
+
+      <!--
+          Used to specify the default Sources for list, install and update.
+          See: NuGet.exe help list
+          See: NuGet.exe help install
+          See: NuGet.exe help update
+      -->
+      <packageSources>
+        <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
+        <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
+      </packageSources>
+
+      <!-- Used to store credentials -->
+      <packageSourceCredentials />
+
+      <!-- Used to disable package sources  -->
+      <disabledPackageSources />
+
+      <!--
+          Used to specify default API key associated with sources.
+          See: NuGet.exe help setApiKey
+          See: NuGet.exe help push
+          See: NuGet.exe help mirror
+      -->
+      <apikeys>
+        <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
+      </apikeys>
     </configuration>
-
-NuGet evaluates `%HOME%` when it attempts to access the `repositoryPath` key. 
-
-    > nuget config repositoryPath
-    C:\users\username\NuGetRepository
-
-If your NuGet.config references an environment variable that is not set, it will left as is in the configuration value. 

@@ -1,162 +1,172 @@
-#Supporting Multiple .NET Framework Versions
+---
+# required metadata
 
-Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's 
-specific to UWP, and another version of the same library that takes advantage of .NET Framework 4 features. 
-You do not need to create separate packages for each of these versions. NuGet supports putting multiple versions of the 
-same library in a single package keeping them in separate folders within the package.
+title: Supporting Multiple .NET Framework Versions in NuGet Packages | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 2646ffcd-83ae-4086-8915-a7fba3f53e45
 
-## Framework Version Folder Structure
+# optional metadata
 
-When NuGet installs an assembly from a package, it checks the target .NET Framework version of the project 
-you are adding the package to. NuGet then selects the correct version of the assembly in the package by selecting 
-the correct subfolder within the `lib` folder. 
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
 
-To enable NuGet to do this, you use the following naming convention to indicate which assemblies go 
-with which framework versions:
+---
+# Supporting Multiple .NET Framework Versions
 
-    lib\{framework name}{version}
+*For .NET Core projects using NuGet 4.0+, see [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md) for details on cross-targeting.*
 
+Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's specific to UWP, and another version that takes advantage of features in .NET Framework 4.6.
+
+Fortunately, NuGet supports putting multiple versions of the same library in a single package through the convention-based working directory method described in [Creating a package](../create-packages/creating-a-package.md#from-a-convention-based-working-directory).
+
+> [!Note]
+> Assemblies that have no associated framework name or version should be stored directly in the `lib` folder and not in separate folders.
+
+In this topic:
+
+- [Framework version folder structure](#framework-version-folder-structure)
+- [Content files and PowerShell scripts](#content-files-and-powershell-scripts)
+- [Matching assembly versions and the target framework in a project](#matching-assembly-versions-and-the-target-framework-in-a-project)
+- [Grouping assemblies by framework version](#grouping-assemblies-by-framework-version)
+- [Determining which NuGet target to use](#determining-which-nuget-target-to-use)
+
+
+## Framework version folder structure
+
+When NuGet installs an assembly from a package, it checks the target .NET Framework version of the project, then selects the correct version of the assembly from the appropriate subfolder under `lib` in the package, provided those folders use the following convention:
+
+    lib\{framework name}[{version}]
+
+For a complete list of supported names, see the [Target Frameworks reference](../schema/target-frameworks.md#supported-frameworks). Note that names are case-sensitive
 
 The following example shows a folder structure that supports four versions of a library:
 
-	\lib<br>
-	    \net46
-	        \MyAssembly.dll
-	    \net461<br>
-	        \MyAssembly.dll
-	    \uap<br>
-	        \MyAssembly.dll
-	    \netcore<br>
-	        MyAssembly.dll
+    \lib
+        \net46
+            \MyAssembly.dll
+        \net461
+            \MyAssembly.dll
+        \uap
+            \MyAssembly.dll
+        \netcore
+            \MyAssembly.dll
 
-### Content Files and PowerShell Scripts
 
-<div class="block-callout-warning">
-    <strong>Deprecated in NuGet 3.0+:</strong><br>
-    Mutable content file support and script execution is deprecated in NuGet 3.0+
-</div>
+## Content files and PowerShell scripts
 
-In NuGet 2.x, in addition to assembly references, content files as well as PowerShell scripts can be grouped by target frameworks too. The framework folder structure inside `lib` folder described above  applies exactly the same to `content` and `tools` folders.
+> [!Warning]
+> Mutable content file support and script execution is available in NuGEt 2.x, but deprecated in NuGet 3.x and later.
+
+With NuGet 2.x, content files and PowerShell scripts can be grouped by target framework using the same folder convention inside the `content` and `tools` folders. For example:
 
     \content
-	    \net46
-	        \MyContent.txt
-	    \net461
-	        \MyContent461.txt
-	    \uap
-	        \MyUWPContent.html
-	    \netcore
-	\tools
-	    init.ps1
-	    \net46
-	        install.ps1
-	        uninstall.ps1
-	    \uap
-	        install.ps1
-	        uninstall.ps1
-            
-A framework folder can be *empty*, in which case, NuGet will not add assembly references or content files or run the PowerShell scripts for the particular framework version.
+        \net46
+            \MyContent.txt
+        \net461
+            \MyContent461.txt
+        \uap
+            \MyUWPContent.html
+        \netcore
+    \tools
+        init.ps1
+        \net46
+            install.ps1
+            uninstall.ps1
+        \uap
+            install.ps1
+            uninstall.ps1
 
-<div class="block-callout-info">
-    <strong>Note</strong><br>
-   Because init.ps1is executed at the solution level and not dependent on project, it must be placed directly under the `tools` folder. If placed under a framework folder, it will be ignored.
-</div>
+If a framework folder is left empty, NuGet will not add assembly references or content files or run the PowerShell scripts for that framework.
 
-## Framework Names
+> [!Note]
+> Because `init.ps1` is executed at the solution level and not dependent on project, it must be placed directly under the `tools` folder. If placed under a framework folder, it will be ignored.
 
-NuGet attempts to parse the folder name into a [FrameworkName](http://msdn.microsoft.com/en-us/library/dd414023.aspx) 
-object. Names are case insensitive, and you can use abbreviations for both framework name and version number.
- 
-If you omit the framework name, the .NET Framework is assumed. For example, the following folder structure is equivalent to the previous one:
 
-	\lib<br>
-	    \net46
-	        \MyAssembly.dll
-	    \uap
-	        \MyAssembly.dll
+## Matching assembly versions and the target framework in a project
 
-**Recommended Reading**: [List of Target Frameworks](/ndocs/schema/Target-Frameworks.md)
+When NuGet installs a package that has multiple assembly versions, it tries to match the framework name of the assembly with the target framework of the project.
 
-## Assemblies that are not Specific to a Framework Version
+If a match is not found, NuGet copies the assembly for the highest version that is less than or equal to the project's target framework.
 
-Assemblies that have no associated framework name or version are stored directly in the `lib` folder.
+For example, consider the following folder structure in a package:
 
-## Matching Assembly Version to the Target Framework of a Project
+    \lib
+        \net45
+            \MyAssembly.dll
+        \net461
+            \MyAssembly.dll
 
-When NuGet installs a package that has multiple assembly versions, it tries to match the framework name of the 
-assembly with the target framework of the project. 
 
-If a match is not found, NuGet copies the assembly that's for the highest version that is less than or 
-equal to the project's target framework. 
+Installing this package in a project that targets .NET Framework 4.6, NuGet installs the assembly in the `net45` folder.
 
-For example, given the follow folder structure: 
+## Grouping assemblies by framework version
 
-	\lib
-	    \net45
-	        \MyAssembly.dll
-	    \net461
-	        \MyAssembly.dll
+NuGet copies assemblies from only a single library folder in the package. For example, suppose a package has the following folder structure:
 
-If you install a package that has the `lib` folder structure shown in the previous example 
-in a project that targets the .NET Framework 4.6, the assembly in the `net461` folder (for .NET Framework 4.6.1) is selected.
+    \lib
+        \net40
+            \MyAssembly.dll (v1.0)
+            \MyAssembly.Core.dll (v1.0)
+        \net45
+            \MyAssembly.dll (v2.0)
 
-## Grouping Assemblies by Framework Version
 
-NuGet copies assemblies from only a single library folder. For example, suppose a package has the following folder structure:
+To easily include all these files, use a wildcard in the &lt;files&gt; section of your `.nuspec`:
 
-	\lib
-	    \Net40
-	        \MyAssembly.dll (v1.0)
-	        \MyAssembly.Core.dll (v1.0)
-	    \Net45
-	        \MyAssembly.dll (v2.0)
+    <files>
+        <file src="lib\**" target="lib" />
+    </files>
 
-When the package is installed in a project that targets the .NET Framework 4, *MyAssembly.dll (v1.0)* is the only assembly installed. *MyAssembly.Core.dll (v1.0)* is not installed. (One reason why NuGet behaves this way is that *MyAssembly.Core* might have been merged 
-into version 4.0 of *MyAssembly*.) 
+When the package is installed in a project that targets .NET Framework 4.5, `MyAssembly.dll (v2.0)` is the only assembly installed. `MyAssembly.Core.dll(v1.0)` is not installed because it's not listed in the `net45` folder. (One reason why NuGet behaves this way is that `MyAssembly.Core.dll` might have merged into version 2.0 of `MyAssembly.dll`.)
 
-In this example, if you want *MyAssembly.Core.dll* to be installed in a project that targets the .NET Framework 4.5, 
-you must include it in the `Net45` folder as well as in the `Net20` folder.
+If you want `MyAssembly.Core.dll` to be installed for .NET Framework 4.5, place a copy in the `net45` folder.
 
 The rule about copying assemblies from only one folder also applies to the root `lib` folder. Suppose a package has the following folder structure:
 
-	\lib
-	    \MyAssembly.dll (v1.0)
-	        \MyAssembly.Core.dll (v1.0)
-	    \Net40
-	        \MyAssembly.dll (v2.0)
+    \lib
+        \MyAssembly.dll (v1.0)
+        \MyAssembly.Core.dll (v1.0)
+        \Net45
+            \MyAssembly.dll (v2.0)
 
-In projects that target the .NET Framework 4.0 and the .NET Framework 4.5, NuGet copies both *MyAssembly.dll* and *MyAssembly.Core.dll*. But as was true of the previous example, 
-in projects that target the .NET Framework 4.5, only *MyAssembly.dll* from the `Net45` folder will be copied. 
+In projects that target .NET Framework 4.0 and .NET Framework 3.5, NuGet copies both `MyAssembly.dll` and `MyAssembly.Core.dll` because their location in the package does not restrict them to a specific target. But as was true of the previous example, in projects that target .NET Framework 4.5, only `MyAssembly.dll` from the `net45` folder will be copied. If you want to include `MyAssembly.Core.dll` for .NET Framework 4.5, place a copy of it in the `net45` folder.
 
-As in the previous example, if you want *MyAssembly.Core.dll* to be installed in a project that targets the .NET Framework 4.5, you must include it in the *Net45* folder.
 
-## Grouping Assemblies by Framework Profile
+## Grouping assemblies by framework profile
 
 NuGet also supports targeting a specific framework profile by appending a dash and the profile name to the end of the folder.
 
-	lib\{framework name}-{profile}
+    lib\{framework name}-{profile}
 
 For example, to target the Windows Phone profile, place your assembly in a folder named `sl3-wp`.
 
-Profiles supported by NuGet include:
+Profiles supported by NuGet :
 
-* Client - Client Profile
-* Full - Full Profile
-* WP - Windows Phone
+- `client`: Client Profile
+- `full`: Full Profile
+- `wp`: Windows Phone
+- `cf`: Compact Framework
 
-<table class="reference">
-    <tr><th>Profile Name</th><th>Abbreviations</th></tr>
-    <tr><td>Client</td><td>client</td></tr>
-    <tr><td>WindowsPhone</td><td>wp</td></tr>
-    <tr><td>CompactFramework</td><td>cf</td></tr>
-    <tr><td>Full</td><td>full</td></tr>
-</table>
+## Determining which NuGet target to use
 
+When packaging libraries targeting the Portable Class Library it can sometimes to be tricky to determine which NuGet target you should use in your folder names and `.nuspec` file, especially if targeting only a subset of the PCL. Here are some links to useful external resources to help you with this:
 
-## Determining which NuGet Target to use
-
-When packaging libraries targeting the Portable Class Library it can sometimes to be tricky to determine which NuGet Target you should use in your folder names and manifest files especially if targeting only a subset of the PCL.  Here are some links to useful external resources to help you with this:
-
-* [Framework Profiles in .Net](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)
-* [Portable Class Library Profiles](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) - Table enumerating PCL profiles and their equivalent NuGet targets
-* [Portable Library Profiles Tool](https://github.com/StephenCleary/PortableLibraryProfiles) - Command line tool for determining PCL profiles available on your system
+- [Framework profiles in .NET](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html) (stephenclearly.com)
+- [Portable Class Library profiles](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) (plnkr.co): Table enumerating PCL profiles and their equivalent NuGet targets
+- [Portable Class Library profiles tool](https://github.com/StephenCleary/PortableLibraryProfiles) (github.com): command line tool for determining PCL profiles available on your system

@@ -1,12 +1,41 @@
+---
+# required metadata
+
+title: NuGet 2.7.2 Release Notes | Microsoft Docs
+author: harikmenon
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: c775d1d7-de26-476c-bf9e-0cf95986a22f
+
+# optional metadata
+
+#description: release notes 2.7.2
+#keywords: release notes 2.7.2
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet 2.7.2 Release Notes
 
-[NuGet 2.7.1 Release Notes](nuget-2.7.1) | [NuGet 2.8 Release Notes](nuget-2.8)
+[NuGet 2.7.1 Release Notes](../release-notes/nuget-2.7.1.md) | [NuGet 2.8 Release Notes](../release-notes/nuget-2.8.md)
 
 NuGet 2.7.2 was released on November 11, 2013.
 
 ## Noteworthy Bug Fixes and Features
 
-### License Text 
+### License Text
 For quite some time, Microsoft has included the NuGet packages for several popular open-source libraries as a part of the default templates for Web application projects in Visual Studio. jQuery is probably the most well-known example of this type of library. Because of the support agreement associated with components that are delivered along with a product, the package's script file contains different license text than the script file found in the same package on the public nuget.org gallery. This difference in text can prevent package updates from proceeding as a result of the different license text blocks causing the script files to have different content hash values (and therefore to be treated as modified within the project).
 
 To mitigate this issue, NuGet 2.7.2 allows the script author to include the license text block within a specially marked section which looks as follows.
@@ -27,11 +56,8 @@ For assemblies that are part of the .NET Framework, NuGet skips adding binding r
 ### Installing portable libraries with Xamarin Tools installed
 When Xamarin's development tools are installed on a machine, they modify the supported frameworks configuration data to specify compatibility between existing target framework combinations and Xamarin frameworks. With version 2.7.2, NuGet is now aware of these implicit compatibility rules, and therefore makes it easy for developers targeting Xamarin platforms to install portable libraries that are Xamarin-compatible but not explicitly marked as such in the package metadata itself.
 
-### Machine-wide configuration settings honored 
+### Machine-wide configuration settings honored
 When using hierarchical nuget.config files, the repositoryPath key was not being honored for nuget.config files closest to the solution root. In Visual Studio 2013, NuGet installs a custom nuget.config file at %ProgramData%\NuGet\Config\VisualStudio\12.0\Microsoft.VisualStudio.config in order to add the "Microsoft and .NET" package source. As a result, the work-around for using a custom repositoryPath in a solution was to delete the machine-level nuget.config - which also meant removing the "Microsoft and .NET" package source. NuGet 2.7.2 now honors the precedence rules for repositoryPath when using hierarchical nuget.config files.
 
 ## All Changes
 For a full list of work items fixed in NuGet 2.7.2, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%202.7.2&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=Fixed).
-
-## Previous Release
-[NuGet 2.7.1](nuget-2.7.1)

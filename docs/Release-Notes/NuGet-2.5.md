@@ -1,6 +1,35 @@
+---
+# required metadata
+
+title: NuGet 2.5 Release Notes | Microsoft Docs
+author: harikmenon
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: c193f1e3-d114-427f-9425-9930cc8e4db3
+
+# optional metadata
+
+#description: release notes 2.5
+#keywords: release notes 2.5
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet 2.5 Release Notes
 
-[NuGet 2.2.1 Release Notes](nuget-2.2.1) | [NuGet 2.6 Release Notes](nuget-2.6)
+[NuGet 2.2.1 Release Notes](../release-notes/nuget-2.2.1.md) | [NuGet 2.6 Release Notes](../release-notes/nuget-2.6.md)
 
 NuGet 2.5 was released on April 25, 2013. This release was so big, we felt compelled to skip versions 2.3 and 2.4! To date, this is the largest release we've had for NuGet, with over [160 work items](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.5&status=all) in the release.
 
@@ -44,7 +73,7 @@ We also appreciate the following individuals for finding bugs with NuGet 2.5 Bet
 
 One of the most requested features of all time has been the ability to overwrite content files that already exist on disk when included in a NuGet package. Starting with NuGet 2.5, these conflicts are identified and you will be prompted to overwrite the files, whereas previously these files were always skipped.
 
-![Overwrite content files](Images/NuGet-2.5/overwrite-file.png)
+![Overwrite content files](./media/NuGet-2.5/overwrite-file.png)
 
 'NuGet.exe update' and 'Install-Package' now both have a new option '-FileConflictAction' to set some default for command-line scenarios.
 
@@ -60,12 +89,12 @@ When NuGet installs a package with \build files, it will add an MSBuild &lt;Impo
 
 Before 2.5, in .nuspec file, user can only specify the reference files, to be added for all framework. Now with this new feature in 2.5, user can author the &lt;reference/&gt; element for each of the supported platform, for example:
 
-    <references> 
-        <group targetFramework="net45"> 
+    <references>
+        <group targetFramework="net45">
             <reference file="a.dll" />
-        </group> 
-        <group targetFramework="netcore45"> 
-            <reference file="b.dll" /> 
+        </group>
+        <group targetFramework="netcore45">
+            <reference file="b.dll" />
         </group>
         <group>
             <reference file="c.dll" />
@@ -93,7 +122,7 @@ To try this feature out:
 1. Select 'Updates'
 1. Click the 'Update All' button
 
-![Update All button in the dialog](Images/NuGet-2.5/update-all.png)
+![Update All button in the dialog](./media/NuGet-2.5/update-all.png)
 
 ## Improved project reference support for NuGet.exe Pack
 
@@ -130,12 +159,12 @@ Starting with NuGet 2.5, if a dependency version is already satisifed, the depen
 
 **The scenario:**
 
-1. The source repository contains package B with version 1.0.0 and 1.0.2. It also contains package A which has a dependency on B (>= 1.0.0). 
-1. Assume that the current project already has package B version 1.0.0 installed. Now you want to install package A. 
+1. The source repository contains package B with version 1.0.0 and 1.0.2. It also contains package A which has a dependency on B (>= 1.0.0).
+1. Assume that the current project already has package B version 1.0.0 installed. Now you want to install package A.
 
 **In NuGet 2.2 and older:**
 
-* When installing package A, NuGet will auto-update B to 1.0.2, even though the existing version 1.0.0 already satisfies the dependency version constraint, which is >= 1.0.0. 
+* When installing package A, NuGet will auto-update B to 1.0.2, even though the existing version 1.0.0 already satisfies the dependency version constraint, which is >= 1.0.0.
 
 **In NuGet 2.5 and newer:**
 
@@ -147,7 +176,7 @@ For more background on this change, read the detailed [work item](http://nuget.c
 
 If you are troubleshooting NuGet.exe or just curious what HTTP requests are made during operations, the '-verbosity detailed' switch will now output all HTTP requests made.
 
-![HTTP output from NuGet.exe](Images/NuGet-2.5/verbosity.png)
+![HTTP output from NuGet.exe](./media/NuGet-2.5/verbosity.png)
 
 ## NuGet.exe push now supports UNC and directory sources
 

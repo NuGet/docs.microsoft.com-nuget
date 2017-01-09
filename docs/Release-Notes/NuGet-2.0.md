@@ -1,15 +1,46 @@
+---
+# required metadata
+
+title: NuGet 2.0 Release Notes | Microsoft Docs
+author: harikmenon
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 51c7e94f-0084-4c62-bfba-7dfd81675361
+
+# optional metadata
+
+#description: release notes 2.0
+#keywords: release notes 2.0
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
+
+
 # NuGet 2.0 Release Notes
 
-[NuGet 1.8 Release Notes](nuget-1.8) | [NuGet 2.1 Release Notes](nuget-2.1)
+[NuGet 1.8 Release Notes](../release-notes/nuget-1.8.md) | [NuGet 2.1 Release Notes](../release-notes/nuget-2.1.md)
 
 NuGet 2.0 was released on June 19, 2012.
 
 ## Known Installation Issue
-If you are running VS 2010 SP1, you might run into an installation error when attempting to upgrade 
+If you are running VS 2010 SP1, you might run into an installation error when attempting to upgrade
 NuGet if you have an older version installed.
 
-The workaround is to simply uninstall NuGet and then install it from the VS Extension Gallery. See 
-<a href="http://support.microsoft.com/kb/2581019">http://support.microsoft.com/kb/2581019</a> for more information, or <a href="http://bit.ly/vsixcertfix">to go directly to the VS hotfix</a>.
+The workaround is to simply uninstall NuGet and then install it from the VS Extension Gallery.  See
+[http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019) for more information, or [go directly to the VS hotfix](http://bit.ly/vsixcertfix).
 
 Note: If Visual Studio won't allow you to uninstall the extension (the Uninstall button is disabled),
 then you likely need to restart Visual Studio using "Run as Administrator."
@@ -22,7 +53,7 @@ As described in this [post on package restore consent](http://blog.nuget.org/201
 
 Starting with version 2.0, package dependencies can vary based on the framework profile of the target project. This is accomplished using an updated .nuspec schema. The `<dependencies>` element can now contain a set of `<group>` elements. Each group contains zero or more `<dependency>` elements and a `targetFramework` attribute. All dependencies inside a group are installed together if the target framework is compatible with the target project framework profile. For example:
 
-    <dependencies> 
+    <dependencies>
        <group>
           <dependency id="RouteMagic" version="1.1.0" />
        </group>
@@ -31,7 +62,7 @@ Starting with version 2.0, package dependencies can vary based on the framework 
           <dependency id="jQuery" />
           <dependency id="WebActivator" />
        </group>
- 
+
        <group targetFramework="sl30">
        </group>
     </dependencies>
@@ -42,7 +73,7 @@ A package can specify package dependencies in either of two formats: the old for
 
 Note that mixing the two formats is not allowed. For example, the following snippet is **invalid** and will be rejected by NuGet.
 
-    <dependencies> 
+    <dependencies>
        <dependency id="jQuery" />
        <dependency id="WebActivator" />
 
@@ -81,5 +112,5 @@ Also, a new feature in NuGet 2.0 is that a framework folder can be *empty*, in w
 The tab completion feature in the NuGet Package Manager Console has been updated to significantly improve performance. There will be much less delay from the time the tab key is pressed until the suggestion dropdown appears.
 
 ## Bug Fixes
-NuGet 2.0 includes many bug fixes with an emphasis on package restore consent and performance. 
+NuGet 2.0 includes many bug fixes with an emphasis on package restore consent and performance.
 For a full list of work items fixed in NuGet 2.0, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.0&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0).

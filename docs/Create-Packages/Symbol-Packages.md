@@ -1,115 +1,125 @@
-﻿# Creating and Publishing a Symbol Package
+---
+# required metadata
 
-## Introduction
+title: NuGet Symbol Packages | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 4667a70d-5a17-4f1e-b2f2-b8d0c6af3882
 
-Apart from building library/content packages and publishing them to [NuGet.org](http://nuget.org),
-NuGet also supports creating symbol/source packages and publishing them to the new [SymbolSource.org service](https://tripleemcoder.com/2015/10/04/moving-to-the-new-symbolsource-engine/).
-When a package is published to both repositories, Visual Studio can be configured to automatically download 
-PDB files associated with installed packages and allow the developer to use a debugger to step into source 
-files on-demand from Visual Studio. This is a built-in feature of the IDE, that can also be used to debug 
-.NET Framework code using [Microsoft Reference Source](http://referencesource.microsoft.com/) servers. It is only required to add a new symbol source (given below) in the debugger [options](https://msdn.microsoft.com/en-us/library/x54fht41(v=vs.90).aspx).
+# optional metadata
 
-	https://nuget.smbsrc.net
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
 
-## Creating a Symbol Package
+---
 
-When creating and naming symbol packages it is necessary to follow these conventions:
+# Symbol Packages
 
-* The library/content package should be named `MyPackage.nupkg` and contain everything **except** PDB files.
-* The symbol/source package should be named `MyPackage.symbols.nupkg` and contain only DLL, PDB, XMLDOC and 
-source files.
+In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the [SymbolSource repository](http://www.symbolsource.org/Public).
 
-You can create both packages with the `-Symbols` option, either from a nuspec file:
+Package consumers can then add https://nuget.smbsrc.net/ to their symbol sources in Visual Studio. This allows consumers to step into your package code in the Visual Studio debugger.
 
-	NuGet Pack MyPackage.nuspec -Symbols
+## Creating a symbol package
 
-or from a project file:
+To create a symbol package, follow these conventions:
 
-	NuGet Pack MyProject.csproj -Symbols
+- Name the primary package (with your code) `{identifier}.nupkg` and include all your files except `.pdb` files.
+- Name the symbol package `{identifier}.symbols.nupkg` and include your assembly DLL, `.pdb` files, XMLDOC files, source files (see the sections that follow).
 
-## Symbol Package Structure
+You can create both packages with the `-Symbols` option, either from a nuspec file or a project file:
 
-A symbol package can target multiple target frameworks in the same way that a library package does, so the 
-structure of the `lib` folder should look exactly as described in [Creating and Publishing a Package](/Create/Creating-and-Publishing-a-Package),
-plus it should contain PDB files alongside DLLs. An example symbol package that targets .NET 4.0 and Silverlight 
-4 would have this layout:
-	
-	\lib
-		\net40
-			\MyAssembly.dll
-			\MyAssembly.pdb
-		\sl40
-			\MyAssembly.dll
-			\MyAssembly.pdb
+    nuget pack MyPackage.nuspec -Symbols
 
-Source files are placed in a separate special folder - `src`. This folder needs to follow the relative structure 
-of your source repository, because PDBs contain absolute paths to source files used to compile a matching DLL, and 
-they need to be found during publishing on [SymbolSource.org](http://symbolsource.org). A base path (common path 
-prefix) can be stripped out. Consider an example library built from these files:
+    nuget pack MyProject.csproj -Symbols
 
-	C:\Projects
-		\MyProject
-			\Common
-				\MyClass.cs
-			\Full
-				\Properties
-					\AssemblyInfo.cs
-				\MyAssembly.csproj (producing \lib\net40\MyAssembly.dll)
-			\Silverlight
-				\Properties
-					\AssemblyInfo.cs
-				\MySilverlightExtensions.cs
-				\MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
+Note that `pack` requires Mono 4.4.2 on Mac OS X and does not work on Linux systems. On a Mac, you must also convert Windows pathnames in the `.nuspec` file to Unix-style paths.
+
+## Symbol package structure
+
+A symbol package can target multiple target frameworks in the same way that a library package does, so the structure of the `lib` folder should be exactly the same as the primary package, only including `.pdb` files alongside the DLL.
+
+For example, a symbol package that targets .NET 4.0 and Silverlight 4 would have this layout:
+
+    \lib
+        \net40
+            \MyAssembly.dll
+            \MyAssembly.pdb
+        \sl40
+            \MyAssembly.dll
+            \MyAssembly.pdb
+
+Source files are then placed in a separate special folder named `src`, which must follow the relative structure of your source repository. This is because PDBs contain absolute paths to source files used to compile the matching DLL, and they need to be found during the publishing process. A base path (common path prefix) can be stripped out. For example, consider a library built from these files:
+
+    C:\Projects
+        \MyProject
+            \Common
+                \MyClass.cs
+            \Full
+                \Properties
+                    \AssemblyInfo.cs
+                \MyAssembly.csproj (producing \lib\net40\MyAssembly.dll)
+            \Silverlight
+                \Properties
+                    \AssemblyInfo.cs
+                \MySilverlightExtensions.cs
+                \MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
 
 Apart from the `lib` folder, a symbol package would need to contain this layout:
 
-	\src
-		\Common
-			\MyClass.cs
-		\Full
-			\Properties
-				\AssemblyInfo.cs
-		\Silverlight
-			\Properties
-				\AssemblyInfo.cs
-			\MySilverlightExtensions.cs
+    \src
+        \Common
+            \MyClass.cs
+        \Full
+            \Properties
+                \AssemblyInfo.cs
+        \Silverlight
+            \Properties
+                \AssemblyInfo.cs
+            \MySilverlightExtensions.cs
 
-## Specifying Symbol Package Contents
+## Referring to files in the nuspec
 
-A symbol package can be built by conventions, from a folder structured in the way described in the previous section,
-or its contents can be specified using the `files` section. If you wanted to build the example package described previously,
-you could put this into your nuspec file:
+A symbol package can be built by conventions, from a folder structure as described in the previous section, or by specifying its contents in the `files` section of the manifest. For example, to build the package shown in the previous section, use the following in the `.nuspec` file:
 
     <files>
-      <file src="Full\bin\Debug\*.dll" target="lib\net40" /> 
-	  <file src="Full\bin\Debug\*.pdb" target="lib\net40" /> 
-      <file src="Silverlight\bin\Debug\*.dll" target="lib\sl40" /> 
-	  <file src="Silverlight\bin\Debug\*.pdb" target="lib\sl40" /> 
+      <file src="Full\bin\Debug\*.dll" target="lib\net40" />
+      <file src="Full\bin\Debug\*.pdb" target="lib\net40" />
+      <file src="Silverlight\bin\Debug\*.dll" target="lib\sl40" />
+      <file src="Silverlight\bin\Debug\*.pdb" target="lib\sl40" />
       <file src="**\*.cs" target="src" />
     </files>
 
-## Publishing a Symbol Package
+## Publishing a symbol package
 
-To make life easier, first save your API key as usual:
+1. For convenience, first save your API key with NuGet (see [publish a package](../create-packages/publish-a-package.md), which will apply to both nuget.org and symbolsource.org, because symbolsource.org will check with nuget.org to verify that you are the package owner.
 
-    NuGet SetApiKey Your-API-Key
+    nuget SetApiKey Your-API-Key
 
-This will save your API key for both [NuGet.org](http://nuget.org) and [SymbolSource.org](http://symbolsource.org). 
-When you publish to SymbolSource, it contacts the NuGet Gallery to verify that you are an owner of the project.
+1. After publishing your primary package to nuget.org, push the symbol package as follows, which will automatically use symbolsource.org as the target because of the `.symbols` in the filename:
 
-You can push a symbol package separately, which will automatically choose the new SymbolSource.org [service](https://nuget.smbsrc.net/) as the target:
+    nuget push MyPackage.symbols.nupkg
 
- 	NuGet Push MyPackage.symbols.nupkg
+1. To publish to a different symbol repository, or to push a symbol package that doesn't follow the naming convention, use the `-Source` option:
 
-It is possible to override the symbol repository or to push a symbol package that doesn't follow the naming convention 
-by using the `-Source` option:
+    nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
 
- 	NuGet Push MyPackage.symbols.nupkg -Source https://nuget.smbsrc.net/
+1. You can also push both primary and symbol packages to both repositories at the same time using the following:
 
-You can also push both packages to both repositories at the same time:
+    nuget push MyPackage.nupkg
 
- 	NuGet Push MyPackage.nupkg
-
-If the presence of a `.symbols.nupkg` package is detected it will be automatically pushed to the new SymbolSource.org service hosted at https://nuget.smbsrc.net/.
-
-
+    In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to symbolsource.org (https://nuget.smbsrc.net/), after it publishes the primary package to nuget.org.

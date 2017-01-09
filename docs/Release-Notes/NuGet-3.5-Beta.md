@@ -1,6 +1,38 @@
+---
+# required metadata
+
+title: NuGet 3.5 Beta Release Notes | Microsoft Docs
+author: harikmenon
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 14fa0ed9-b82a-45d0-af7d-1d817d68df38
+
+# optional metadata
+
+#description: release notes 3.5
+#keywords: release notes 3.5
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
+
 # NuGet 3.5 Beta Release Notes
 
-NuGet 3.5 Beta was released on May 16, 2016 as part tof the ASP.NET Core Preview Tooling wave. This release adds support .NET Core RC2 and ASP.NET Core RC2. For more information about this release please refer to http://dot.net
+[NuGet 3.4 Release Notes](../release-notes/nuget-3.4.md) | [NuGet 3.5-Beta2 Release Notes](../release-notes/nuget-3.5-Beta2.md)
+
+NuGet 3.5 Beta was released on May 16, 2016 as part of the ASP.NET Core Preview Tooling wave. This release adds support for .NET Core RC2 and ASP.NET Core RC2. For more information about this release please refer to [http://dot.net](http://dot.net).
 
 You can download both the VSIX and NuGet.exe [here](https://dist.nuget.org/index.html).
 

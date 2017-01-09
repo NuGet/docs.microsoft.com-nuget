@@ -1,6 +1,35 @@
+---
+# required metadata
+
+title: NuGet 2.8.2 Release Notes | Microsoft Docs
+author: harikmenon
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: bb547f5d-3c0e-4721-b2c7-3fc7e09c34de
+
+# optional metadata
+
+#description: release notes 2.8.2
+#keywords: release notes 2.8.2
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet 2.8.2 Release Notes
 
-[NuGet 2.8.1 Release Notes](nuget-2.8.1) | [NuGet 2.8.3 Release Notes](nuget-2.8.3)
+[NuGet 2.8.1 Release Notes](../release-notes/nuget-2.8.1.md) | [NuGet 2.8.3 Release Notes](../release-notes/nuget-2.8.3.md)
 
 NuGet 2.8.2 was released on May 22, 2014.  This release only included changes to the NuGet.exe command-line, the NuGet.Server package and other NuGet packages.  The release did not include an updated Visual Studio extension or WebMatrix extension.
 

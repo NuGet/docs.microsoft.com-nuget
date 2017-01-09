@@ -1,111 +1,130 @@
-#Use a Package
+---
+# required metadata
 
-This tutorial walks you through installing a popular Json framework ([Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)) for a Universal Windows Platform (UWP) project. 
+title: Introductory Guide to Using NuGet Packages | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: f31f8259-20a8-4617-880e-5819299372d2
 
-<div class="block-callout-info">
-	<strong>Note:</strong><br>
-	You need to have Visual Studio 2015 Update 3 with Tools for Universal Windows Apps installed to follow this tutorial. If you don't have Visual Studio already, you can download <a href="https://developer.microsoft.com/en-us/windows/downloads">Visual Studio Community 2015</a> for free. 
-</div>
+# optional metadata
 
-##Create a new UWP project
-In Visual Studio, choose **File**, **New**, **Project**. In the **New Project** dialog, expand the **Visual C#** node, then expand the **Windows** node and choose **Universal**. Create a **Blank App (Universal Windows)**.
+description: A tutorial that walks through the process of installing and using a NuGet package.
+keywords: NuGet package consume references installing
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
 
-![Create new Project](/images/ConsumeNugetSample/01.PNG)
-
-
-Accept the default values for Target Version and Minimum Version and click ok.
-
-![Target and Minimum versions](/images/ConsumeNugetSample/02.PNG)
-
-
-##Add a NuGet package
-In the Solution Explorer, right click on **References** and in the context menu, choose **Manage NuGet Packages**.
-
-![References context](/images/ConsumeNugetSample/03.PNG)
-
-
-Choose "nuget.org" as the **Package source**, and select the **Browse** tab. Search for **Newtonsoft.Json** and click **Install**. 
-
-![Browse nuget packages](/images/ConsumeNugetSample/04.PNG)
-
-
-Review changes and click ok.
-
-![Browse nuget packages](/images/ConsumeNugetSample/05.PNG)
-
-<div class="block-callout-warning">
-	<a href="http://nuget.org">nuget.org</a> likely already has a package that could make application development easy for you. Be sure to search for packages inside Visual Studio or on <a href="http://nuget.org">nuget.org</a> for existing packages. 
-</div>
-
-##Build the solution
-In the **Build** menu, choose **Build Solution**. Building the solution also restores NuGet packages.
+---
 
 
+# Use a package
 
-##Utilize the package
-Now that we have added the Newtonsoft.json nuget Package, we will use JsonConvert.SerializeObject, a method from **Newtonsoft.Json**, to convert an object to a JSON string and display it.
+This tutorial walks you through installing and using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package in a Universal Windows Platform (UWP) project:
+
+- [Install pre-requisites](#install-pre-requisites)
+- [Create a new UWP project](#create-a-new-uwp-project)
+- [Add the Newtonsoft.Json NuGet package](#add-the-newtonsoftjson-nuget-package)
+- [Use the Newtonsoft.Json API in the app](#use-the-newtonsoftjson-api-in-the-app)
+
+You'll use a similar same workflow for virtually every NuGet package you use in a project.
+
+> **Start with nuget.org**: Installing packages from nuget.org is a very common workflow that .NET developers use to find components they can reuse in their own applications. You can always search nuget.org directly or find and install packages within Visual Studio as we'll do here.
+
+## Install pre-requisites
+
+This tutorial requires Visual Studio 2015 Update 3 with Tools for Universal Windows Apps.
+
+You can install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions. The UWP tools option can be selected through the Custom install option during setup, checking the box under **Windows and Web Development > Universal Windows App Development Tools**. If you already have Visual Studio installed, you can run the installer again and click **Modify** to add the UWP tools.
+
+## Create a new UWP project
+
+In Visual Studio, choose **File > New > Project**, expand **Visual C# > Windows > Universal**, select the **Blank App (Universal Windows)**, and click OK. Accept the default values for Target Version and Minimum Version when prompted.
+
+![Creating a new UWP project](media/QS_Use-01-NewProject.png)
+
+## Add the Newtonsoft.Json NuGet package
+
+1. In Solution Explorer, right click on **References** and choose **Manage NuGet Packages**.
+
+    ![Manage NuGet Packages command for project References](media/QS_Use-02-ManageNuGetPackages.png)
+
+1. Choose "nuget.org" as the **Package source**, click the **Browse** tab, search for **Newtonsoft.Json**, select that package in the list, and click **Install**:
+
+    ![Locating Newtonsoft.Json package](media/QS_Use-03-NewtonsoftJson.png)
+
+1. If prompted to review changes, click OK.
+
+1. Right-click the solution in Solution Explorer and click **Build Solution**. This restore anys NuGet packages listed under **References**. For more details, see [Package Restore](../consume-packages/package-restore.md).
 
 
-From the Solution Explorer, open MainPage.xaml and copy the following lines of code, replacing the existing `Grid` element:
 
-	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<StackPanel VerticalAlignment="Center">
-			<Button Click="Button_Click" Content="Click Me" />
-			<TextBlock Name="TextBlock" Text="TextBlock" />
-		</StackPanel>
-	</Grid>
+## Use the Newtonsoft.Json API in the app
 
+With the Newtonsoft.Json package in the project, you can call its `JsonConvert.SerializeObject` method to convert an object to a human-readable string.
 
-Expand MainPage.xaml, open MainPage.xaml.cs and copy the following line of code in the `MainPage`class (not the constructor):
+1. Open MainPage.xaml and replace the existing `Grid` element with the following:
 
-	public class Account
-    {
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public DateTime DOB { get; set; }
-    }
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <StackPanel VerticalAlignment="Center">
+                <Button Click="Button_Click" Content="Click Me" Margin="10"/>
+                <TextBlock Name="TextBlock" Text="TextBlock" Margin="10"/>
+            </StackPanel>
+        </Grid>
 
-    private void Button_Click(object sender, RoutedEventArgs e)
-    {
-        Account account = new Account
+1. Expand MainPage.xaml, open MainPage.xaml.cs, and insert the following code inside the `MainPage` class, after the constructor:
+
+        public class Account
         {
-            Name = "John Doe",
-            Email = "john@microsoft.com",
-            DOB = new DateTime(1980, 2, 20, 0, 0, 0, DateTimeKind.Utc),
-        };
-        string json = JsonConvert.SerializeObject(account, Formatting.Indented);
-        TextBlock.Text = json;
-    }
- 
-   
-You will see a red squiggle under **JsonConvert**. Even though we added the Newtonsoft.json nuget package, we need to add a using statement to this class. With your cursor on **JsonConvert**, click the Lightbulb and then click show potential fixes.
+            public string Name { get; set; }
+            public string Email { get; set; }
+            public DateTime DOB { get; set; }
+        }
 
-![Lightbulb fix](/images/ConsumeNugetSample/06.PNG)
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Account account = new Account
+            {
+                Name = "John Doe",
+                Email = "john@microsoft.com",
+                DOB = new DateTime(1980, 2, 20, 0, 0, 0, DateTimeKind.Utc),
+            };
+            string json = JsonConvert.SerializeObject(account, Formatting.Indented);
+            TextBlock.Text = json;
+        }
 
+1. Even though you added the Newtonsoft.Json package to the project, you'll still see a red squiggle under `JsonConvert` because you need a `using` statement. Hover over the underlined `JsonConvert` and you'll see the Lightbulb and the option to **Show potential fixes**:
 
-Select the first suggested fix, **using Newtonsoft.Json;**
-
-![Lightbulb fix](/images/ConsumeNugetSample/07.PNG)
-
-
-
-##Run the app
-Press F5, or go to the **Debug** menu and select **Start Debugging**. After building, the app opens up.
-
-![Output](/images/ConsumeNugetSample/08.PNG)
+    ![Lightbulb with show potential fixes command](media/QS_Use-04-ShowPotentialFixes.png)
 
 
-Click on the button and the contents of the TextBlock are replaced with the json string.
+1. Click on **Show potential fixes** and select the first suggested fix, `using Newtonsoft.Json;`. This adds the necessary line to the top of the file.
 
-![Output](/images/ConsumeNugetSample/09.PNG)
+    ![Lightbulb giving option to add a using statement](media/QS_Use-05-AddUsing.png)
+
+1. Build and run the app by pressing F5 or selecting **Debug > Start Debugging**:
+
+    ![Initial output of the app](media/QS_Use-06-AppStart.png)
+
+1. Click on the button to see the contents of the TextBlock replaced with some JSON text:
+
+    ![Output of the app after clicking the button](media/QS_Use-07-AppEnd.png)
 
 
-That's it!
-You can repeat these steps to install any NuGet package for any project type.
 
+## Related topics
 
-##Related Reading
-* [NuGet 3.0, .NET and project.json](/ndocs/consume-packages/projectjson-intro)
-* [Dependency Resolution in NuGet v3 / project.json](/ndocs/consume-packages/projectjson-dependency)
-* [NuGet Configuration File](/ndocs/consume-packages/nuget-config-file-overview)
-* [NuGet Config File Defaults](/ndocs/consume-packages/nuget-config-file-defaults)
+- [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
+- [Finding and choosing packages](../consume-packages/finding-and-choosing-packages.md)
+- [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md)

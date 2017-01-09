@@ -1,6 +1,36 @@
+---
+# required metadata
+
+title: NuGet 3.4.2 Release Notes | Microsoft Docs
+author: harikmenon
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: b514da09-da1f-416b-9bfc-692f08fb6957
+
+# optional metadata
+
+#description: release notes 3.4.2
+#keywords: release notes 3.4.2
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
+
 # NuGet 3.4.2 Release Notes
 
-[NuGet 3.4 Release Notes](nuget-3.4) 
+[NuGet 3.4.1 Release Notes](../release-notes/nuget-3.4.1.md) | [NuGet 3.4.3 Release Notes](../release-notes/nuget-3.4.3.md)
 
 NuGet 3.4.2 was released on April 8, 2016 to address several issues that were identified in the 3.4 and 3.4.1 release.
 
@@ -23,7 +53,7 @@ You can download the release candidate of NuGet.exe 3.4.2 [here](https://dist.nu
 * Fixed a crash when browsing sources with invalid icon URL.
 * Fixed issues with merging versions and entries from 'All Sources'.
 
-## Known Issues in 3.4.2 Windows x86 Commandline (RC) 
+## Known Issues in 3.4.2 Windows x86 Commandline (RC)
 
 These issues will be fixed early next week before we hit RTM.
 

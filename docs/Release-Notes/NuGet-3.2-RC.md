@@ -1,13 +1,42 @@
 
+---
+# required metadata
+
+title: NuGet 3.2 RC Release Notes | Microsoft Docs
+author: harikmenon
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 330577fa-7965-4433-98ad-b4b4575e1452
+
+# optional metadata
+
+#description: release notes 3.2 RC
+#keywords: release notes 3.2 RC
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet 3.2 RC Release Notes
 
-[NuGet 3.1.1 Release Notes](nuget-3.1.1) | [NuGet 3.2 Release Notes](nuget-3.2) 
+[NuGet 3.1.1 Release Notes](../release-notes/nuget-3.1.1.md) | [NuGet 3.2 Release Notes](../release-notes/nuget-3.2.md)
 
 NuGet 3.2 release candidate was released September 2, 2015 as a collection of improvements and fixes for the 3.1.1 release.  Also, these are the first releases that are published first to the new dist.nuget.org repository.
 
 ## New Features
 
-* Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will properly reference and use that content for each project appropriately.  This supports a new feature  [1102](https://github.com/NuGet/Home/issues/1102) 
+* Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will properly reference and use that content for each project appropriately.  This supports a new feature  [1102](https://github.com/NuGet/Home/issues/1102)
 * NuGet.config now supports a globalPackagesFolder as a relative path - [1062](https://github.com/NuGet/Home/issues/1062)
 
 ## Command-line updates
@@ -24,7 +53,7 @@ We made a number of improvements to better handle network failures while attempt
 
 * Improved error messages when unable to connect to remote feeds - [1238](https://github.com/NuGet/Home/issues/1238)
 * Corrected NuGet restore command to properly return a 1 when an error condition occurs - [1186](https://github.com/NuGet/Home/issues/1186)
-* Now retrying network connections every 200ms for a maximum of 5 attempts in the case of HTTP 5xx failures - [1120](https://github.com/NuGet/Home/issues/1120) 
+* Now retrying network connections every 200ms for a maximum of 5 attempts in the case of HTTP 5xx failures - [1120](https://github.com/NuGet/Home/issues/1120)
 * Improved handling of server redirect responses during a push command - [1051](https://github.com/NuGet/Home/issues/1051)
 * `nuget install -source` now supports either URL or repository name from nuget.config as an argument - [1046](https://github.com/NuGet/Home/issues/1046)
 * Missing packages that were not located on a repository during a restore are now reported as errors instead of warnings [1038](https://github.com/NuGet/Home/issues/1038)
@@ -49,7 +78,7 @@ A complete list of issues addressed in this release can be found in the NuGet Gi
 
 * A new context menu item was added to the Solution Explorer on the solution node that allows packages to be restored without building the solution ([1274](https://github.com/NuGet/Home/issues/1274)).
 
-![New 'Restore Packages' Context Menu Item](images/NuGet-3.2/newContextMenu.png)
+![New 'Restore Packages' Context Menu Item](./media/NuGet-3.2/newContextMenu.png)
 
 ### Updates and Fixes in Visual Studio
 
@@ -98,7 +127,7 @@ Finally, we also improved these items:
 * Verbosity of log messages reduced for project.json managed projects - [1163](https://github.com/NuGet/Home/issues/1163)
 * Now properly displaying the installed version of a package in the user interface - [1061](https://github.com/NuGet/Home/issues/1061)
 
-  
+
 A complete list of issues addressed for the Visual Studio extension can be found in the NuGet GitHub [3.2 milestone](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+-label%3AClosedAs%3ADuplicate+milestone%3A3.2)
 
 ## Known Issues

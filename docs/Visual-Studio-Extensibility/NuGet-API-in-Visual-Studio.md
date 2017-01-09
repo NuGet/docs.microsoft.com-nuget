@@ -1,51 +1,105 @@
+---
+# required metadata
+
+title: NuGet API in Visual Studio  | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 31f88cf0-d40a-42ee-974e-07910bb0771c
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet API in Visual Studio
 
-Besides the UI that everyone has become familiar with, the NuGet extension also exports some useful services, via [MEF](http://msdn.microsoft.com/en-us/library/dd460648.aspx "MEF"), which allow other components in VS to interact with NuGet. These include installing packages, uninstalling packages and querying for installed packages.
+In addition to the Package Manager UI and Console in Visual Studio, NuGet also  exports some useful services through the [Managed Extensibility Framework (MEF)](http://msdn.microsoft.com/library/dd460648.aspx). This interface allows other components in Visual Studio to interact with NuGet, which can be used to install and uninstall packages, and to obtain information about installed packages.
 
-As of NuGet 2.0, NuGet exports six interfaces/services via MEF, all of which reside in the `NuGet.VisualStudio` namespace in the `NuGet.VisualStudio.dll` assembly:
+As of NuGet 3.3+, NuGet exports the following services all of which reside in the `NuGet.VisualStudio` namespace in the `NuGet.VisualStudio.dll` assembly:
 
-## Available Services
-
-**IVsPackageInstaller**: Contains methods to install NuGet packages into projects.
-
-**IVsPackageInstallerEvents**: Offers events which raise when packages are installed and uninstalled in the current solution.
-
-**IVsPackageInstallerServices**: Contains a method to retrieve installed packages in the current solution, as well as methods to check if a specified package Id is installed in a project.
-
-**IVsPackageUninstaller**: Contains methods to uninstall NuGet packages from projects.
-
-**IConsoleInitializer**: Trigger eager initialization of the NuGet Package Manager Console.
-
-**IVsTemplateWizard**: This interface is designed for project/item templates to include pre-installed packages, and is *not* meant to be invoked from code.
-
-Detailed API references is available below.
+- [`IRegistryKey`](#iregistrykey-interface): Method to retrieve a value from a registry subkey.
+- [`IVsPackageInstaller`](#ivspackageinstaller-interface): Methods to install NuGet packages into projects.
+- [`IVsPackageInstallerEvents`](#ivspackageinstallerevents-interface): Events for package install/uninstall.
+- [`IVsPackageInstallerProjectEvents`](#ivspackageinstallerprojectevents-interface): Batch events for package install/uninstall.
+- [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface): Methods to retrieve installed packages in the current solution and to check whether a given package is installed in a project.
+- [`IVsPackageManagerProvider`](#ivspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package.
+- [`IVsPackageMetadata`](#ivspackagemetadata-interface); Methods to retrieve information about an installed package.
+- [`IVsPackageProjectMetadata`](#ivspackageprojectmetadata-interface); Methods to retrieve information about a project where NuGet actions are being executed.
+- [`IVsPackageRestorer`](#ivspackagerestorer-interface): Methods to restore packages installed in a project.
+- [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface): Methods to retrieve a list of NuGet package sources.
+- [`IVsPackageUninstaller`](#ivspackageuninstaller-interface): Methods to uninstall NuGet packages from projects.
+- [`IVsTemplateWizard`](#ivstemplatewizard-interface): Designed for project/item templates to include pre-installed packages; this interface is *not* meant to be invoked from code and has no public methods.
 
 ## Using NuGet Services
 
-**Step 1**
+1. Install the [`NuGet.VisualStudio`](https://www.nuget.org/packages/NuGet.VisualStudio) package into your project, which contains the `NuGet.VisualStudio.dll` assembly.
 
-Install the **NuGet.VisualStudio** nuget package into your project. The [NuGet.VisualStudio](https://nuget.org/packages/NuGet.VisualStudio) package contains the NuGet.VisualStudio.dll assembly which includes all the above interfaces.
+    When installed, the package automatically sets the **Embed Interop Types** property of the assembly reference to **True**. This makes your code  resilient against version changes when users update to newer versions of NuGet.
 
-<div class="block-callout-info">
-    <strong>Note:</strong><br>
-    When installed, the package will automatically set the **Embed Interop Types** property of the assembly reference to **True**. The reason it does so is to make your code  resilient against version changes when users update to newer versions of NuGet.
-</div>
+> [!Warning]
+> Do not use any other types besides the public interfaces in your code, and do not reference any other NuGet assemblies, including NuGet.Core.dll.
 
-<div class="block-callout-warning">
-    <strong>Note:</strong><br>
-    You must NOT use any other types besides the above interfaces in your code. You must NOT reference any other NuGet assemblies either, including NuGet.Core.dll.
-</div>
+1. To use a service, import it through the [MEF Import attribute](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes), or through the [IComponentModel service](http://msdn.microsoft.comlibrary/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx).
+
+        //Using the Import attribute
+        [Import(typeof(IVsPackageInstaller))]
+        public IVsPackageInstaller packageInstaller;
+        packageInstaller.InstallPackage("nuget.org", currentProject,
+            "Newtonsoft.Json", "9.0.1", false);
+
+        //Using the IComponentModel service
+        var componentModel = (IComponentModel)GetService(typeof(SComponentModel));
+           IVsPackageInstallerServices installerServices =
+            componentModel.GetService<IVsPackageInstallerServices>();
+
+        var installedPackages = installerServices.GetInstalledPackages();
+
+For reference, the source code for NuGet.VisualStudio is contained within the [NuGet.Clients repository](https://github.com/NuGet/NuGet.Client/tree/dev/src/NuGet.Clients/NuGet.VisualStudio).
+
+## IRegistryKey interface
+
+    /// <summary>
+    /// Specifies methods for manipulating a key in the Windows registry.
+    /// </summary>
+    public interface IRegistryKey
+     {
+        /// <summary>
+        /// Retrieves the specified subkey for read or read/write access.
+        /// </summary>
+        /// <param name="name">The name or path of the subkey to create or open.</param>
+        /// <returns>The subkey requested, or null if the operation failed.</returns>
+        IRegistryKey OpenSubKey(string name);
 
 
-**Step 2**
+        /// <summary>
+        /// Retrieves the value associated with the specified name.
+        /// </summary>
+        /// <param name="name">The name of the value to retrieve. This string is not case-sensitive.</param>
+        /// <returns>The value associated with name, or null if name is not found.</returns>
+        object GetValue(string name);
 
-With the package installed, you are ready to obtain those services from your code. Because they are exported as MEF contracts, you can import them either via MEF's Import attribute, or through the [IComponentModel service](http://msdn.microsoft.com/en-us/library/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx "IComponentModel interface") in code. 
 
-Sample code snippet:
-
-    var componentModel = (IComponentModel)GetService(typeof(SComponentModel));
-    IVsPackageInstallerServices installerServices = componentModel.GetService<IVsPackageInstallerServices>();
-    var installedPackages = installerServices.GetInstalledPackages();
+        /// <summary>
+        /// Closes the key and flushes it to disk if its contents have been modified.
+        /// </summary>
+        void Close();
+    }
 
 ## IVsPackageInstaller interface
 
@@ -54,11 +108,45 @@ Sample code snippet:
         /// <summary>
         /// Installs a single package from the specified package source.
         /// </summary>
-        /// <param name="source">The package source to install the package from.</param>
+        /// <param name="source">
+        /// The package source to install the package from. This value can be <c>null</c>
+        /// to indicate that the user's configured sources should be used. Otherwise,
+        /// this should be the source path as a string. If the user has credentials
+        /// configured for a source, this value must exactly match the configured source
+        /// value.
+        /// </param>
         /// <param name="project">The target project for package installation.</param>
-        /// <param name="packageId">The package id of the package to install.</param>
-        /// <param name="version">The version of the package to install</param>
-        /// <param name="ignoreDependencies">A boolean indicating whether or not to ignore the package's dependencies during installation.</param>
+        /// <param name="packageId">The package ID of the package to install.</param>
+        /// <param name="version">
+        /// The version of the package to install. <c>null</c> can be provided to
+        /// install the latest version of the package.
+        /// </param>
+        /// <param name="ignoreDependencies">
+        /// A boolean indicating whether or not to ignore the package's dependencies
+        /// during installation.
+        /// </param>
+        void InstallPackage(string source, Project project, string packageId, Version version, bool ignoreDependencies);
+
+        /// <summary>
+        /// Installs a single package from the specified package source.
+        /// </summary>
+        /// <param name="source">
+        /// The package source to install the package from. This value can be <c>null</c>
+        /// to indicate that the user's configured sources should be used. Otherwise,
+        /// this should be the source path as a string. If the user has credentials
+        /// configured for a source, this value must exactly match the configured source
+        /// value.
+        /// </param>
+        /// <param name="project">The target project for package installation.</param>
+        /// <param name="packageId">The package ID of the package to install.</param>
+        /// <param name="version">
+        /// The version of the package to install. <c>null</c> can be provided to
+        /// install the latest version of the package.
+        /// </param>
+        /// <param name="ignoreDependencies">
+        /// A boolean indicating whether or not to ignore the package's dependencies
+        /// during installation.
+        /// </param>
         void InstallPackage(string source, Project project, string packageId, string version, bool ignoreDependencies);
 
         /// <summary>
@@ -67,19 +155,40 @@ Sample code snippet:
         /// <param name="repository">The package repository to install the package from.</param>
         /// <param name="project">The target project for package installation.</param>
         /// <param name="packageId">The package id of the package to install.</param>
-        /// <param name="version">The version of the package to install</param>
-        /// <param name="ignoreDependencies">A boolean indicating whether or not to ignore the package's dependencies during installation.</param>
-        /// <param name="skipAssemblyReferences">A boolean indicating if assembly references from the package should be skipped.</param>
+        /// <param name="version">
+        /// The version of the package to install. <c>null</c> can be provided to
+        /// install the latest version of the package.
+        /// </param>
+        /// <param name="ignoreDependencies">
+        /// A boolean indicating whether or not to ignore the package's dependencies
+        /// during installation.
+        /// </param>
+        /// <param name="skipAssemblyReferences">
+        /// A boolean indicating if assembly references from the package should be
+        /// skipped.
+        /// </param>
         void InstallPackage(IPackageRepository repository, Project project, string packageId, string version, bool ignoreDependencies, bool skipAssemblyReferences);
 
         /// <summary>
         /// Installs one or more packages that exist on disk in a folder defined in the registry.
         /// </summary>
-        /// <param name="keyName">The registry key name (under NuGet's repository key) that defines the folder on disk containing the packages.</param>
-        /// <param name="isPreUnzipped">A boolean indicating whether the folder contains packages that are pre-unzipped.</param>
-        /// <param name="skipAssemblyReferences">A boolean indicating whether the assembly references from the packages should be skipped.</param>
+        /// <param name="keyName">
+        /// The registry key name (under NuGet's repository key) that defines the folder on disk
+        /// containing the packages.
+        /// </param>
+        /// <param name="isPreUnzipped">
+        /// A boolean indicating whether the folder contains packages that are
+        /// pre-unzipped.
+        /// </param>
+        /// <param name="skipAssemblyReferences">
+        /// A boolean indicating whether the assembly references from the packages
+        /// should be skipped.
+        /// </param>
         /// <param name="project">The target project for package installation.</param>
-        /// <param name="packageVersions">A dictionary of packages/versions to install where the key is the package id and the value is the version.</param>
+        /// <param name="packageVersions">
+        /// A dictionary of packages/versions to install where the key is the package id
+        /// and the value is the version.
+        /// </param>
         /// <remarks>
         /// If any version of the package is already installed, no action will be taken.
         /// <para>
@@ -89,13 +198,48 @@ Sample code snippet:
         void InstallPackagesFromRegistryRepository(string keyName, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
 
         /// <summary>
+        /// Installs one or more packages that exist on disk in a folder defined in the registry.
+        /// </summary>
+        /// <param name="keyName">
+        /// The registry key name (under NuGet's repository key) that defines the folder on disk
+        /// containing the packages.
+        /// </param>
+        /// <param name="isPreUnzipped">
+        /// A boolean indicating whether the folder contains packages that are
+        /// pre-unzipped.
+        /// </param>
+        /// <param name="skipAssemblyReferences">
+        /// A boolean indicating whether the assembly references from the packages
+        /// should be skipped.
+        /// </param>
+        /// <param name="ignoreDependencies">A boolean indicating whether the package's dependencies should be ignored</param>
+        /// <param name="project">The target project for package installation.</param>
+        /// <param name="packageVersions">
+        /// A dictionary of packages/versions to install where the key is the package id
+        /// and the value is the version.
+        /// </param>
+        /// <remarks>
+        /// If any version of the package is already installed, no action will be taken.
+        /// </remarks>
+        void InstallPackagesFromRegistryRepository(string keyName, bool isPreUnzipped, bool skipAssemblyReferences, bool ignoreDependencies, Project project, IDictionary<string, string> packageVersions);
+
+        /// <summary>
         /// Installs one or more packages that are embedded in a Visual Studio Extension Package.
         /// </summary>
         /// <param name="extensionId">The Id of the Visual Studio Extension Package.</param>
-        /// <param name="isPreUnzipped">A boolean indicating whether the folder contains packages that are pre-unzipped.</param>
-        /// <param name="skipAssemblyReferences">A boolean indicating whether the assembly references from the packages should be skipped.</param>
+        /// <param name="isPreUnzipped">
+        /// A boolean indicating whether the folder contains packages that are
+        /// pre-unzipped.
+        /// </param>
+        /// <param name="skipAssemblyReferences">
+        /// A boolean indicating whether the assembly references from the packages
+        /// should be skipped.
+        /// </param>
         /// <param name="project">The target project for package installation</param>
-        /// <param name="packageVersions">A dictionary of packages/versions to install where the key is the package id and the value is the version.</param>
+        /// <param name="packageVersions">
+        /// A dictionary of packages/versions to install where the key is the package id
+        /// and the value is the version.
+        /// </param>
         /// <remarks>
         /// If any version of the package is already installed, no action will be taken.
         /// <para>
@@ -103,14 +247,33 @@ Sample code snippet:
         /// </para>
         /// </remarks>
         void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
-    }
 
+        /// <summary>
+        /// Installs one or more packages that are embedded in a Visual Studio Extension Package.
+        /// </summary>
+        /// <param name="extensionId">The Id of the Visual Studio Extension Package.</param>
+        /// <param name="isPreUnzipped">
+        /// A boolean indicating whether the folder contains packages that are
+        /// pre-unzipped.
+        /// </param>
+        /// <param name="skipAssemblyReferences">
+        /// A boolean indicating whether the assembly references from the packages
+        /// should be skipped.
+        /// </param>
+        /// <param name="ignoreDependencies">A boolean indicating whether the package's dependencies should be ignored</param>
+        /// <param name="project">The target project for package installation</param>
+        /// <param name="packageVersions">
+        /// A dictionary of packages/versions to install where the key is the package id
+        /// and the value is the version.
+        /// </param>
+        /// <remarks>
+        /// If any version of the package is already installed, no action will be taken.
+        /// </remarks>
+        void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, bool ignoreDependencies, Project project, IDictionary<string, string> packageVersions);
+    }
 
 ## IVsPackageInstallerEvents interface
 
-    /// <summary>
-    /// Contains events which are raised when packages are installed or uninstalled from projects and the current solution.
-    /// </summary>
     public interface IVsPackageInstallerEvents
     {
         /// <summary>
@@ -144,13 +307,28 @@ Sample code snippet:
         event VsPackageEventHandler PackageReferenceRemoved;
     }
 
+## IVsPackageInstallerProjectEvents interface
+
+    public interface IVsPackageInstallerProjectEvents
+    {
+        /// <summary>
+        /// Raised before any IVsPackageInstallerEvents events are raised for a project.
+        /// </summary>
+        event VsPackageProjectEventHandler BatchStart;
+
+        /// <summary>
+        /// Raised after all IVsPackageInstallerEvents events are raised for a project.
+        /// </summary>
+        event VsPackageProjectEventHandler BatchEnd;
+    }
+
 ## IVsPackageInstallerServices interface
 
-    /// <summary>
-    /// Contains methods to query for installed packages within the current solution.
-    /// </summary>
     public interface IVsPackageInstallerServices
     {
+        // IMPORTANT: do NOT rearrange the methods here. The order is important to maintain
+        // backwards compatibility with clients that were compiled against old versions of NuGet.
+
         /// <summary>
         /// Get the list of NuGet packages installed in the current solution.
         /// </summary>
@@ -169,11 +347,20 @@ Sample code snippet:
         /// </summary>
         /// <param name="project">The project to check for NuGet package.</param>
         /// <param name="id">The id of the package to check.</param>
+        /// <param name="version">The version of the package to check.</param>
+        /// <returns><c>true</c> if the package is install. <c>false</c> otherwise.</returns>
+        bool IsPackageInstalled(Project project, string id, SemanticVersion version);
+
+        /// <summary>
+        /// Checks if a NuGet package with the specified Id and version is installed in the specified project.
+        /// </summary>
+        /// <param name="project">The project to check for NuGet package.</param>
+        /// <param name="id">The id of the package to check.</param>
         /// <param name="versionString">The version of the package to check.</param>
         /// <returns><c>true</c> if the package is install. <c>false</c> otherwise.</returns>
         /// <remarks>
-        /// The reason this method is named IsPackageInstalledEx, instead of IsPackageInstalled, is that 
-        /// when client project compiles against this assembly, the compiler would attempt to bind against 
+        /// The reason this method is named IsPackageInstalledEx, instead of IsPackageInstalled, is that
+        /// when client project compiles against this assembly, the compiler would attempt to bind against
         /// the other overload which accepts SemanticVersion and would require client project to reference NuGet.Core.
         /// </remarks>
         bool IsPackageInstalledEx(Project project, string id, string versionString);
@@ -185,27 +372,45 @@ Sample code snippet:
         IEnumerable<IVsPackageMetadata> GetInstalledPackages(Project project);
     }
 
-## IVsPackageUninstaller interface
+## IVsPackageManagerProvider interface
 
-    /// <summary>
-    /// Contains methods to uninstall packages from a project within the current solution.
-    /// </summary>
-    public interface IVsPackageUninstaller
+    public interface IVsPackageManagerProvider
     {
         /// <summary>
-        /// Uninstall the specified package from a project and specify whether to uninstall its dependency packages too.
+        /// Localized display package manager name.
         /// </summary>
-        /// <param name="project">The project from which the package is uninstalled.</param>
-        /// <param name="packageId">The package to be uninstalled</param>
-        /// <param name="removeDependencies">A boolean to indicate whether the dependency packages should be uninstalled too.</param>
-        void UninstallPackage(Project project, string packageId, bool removeDependencies);
+        string PackageManagerName { get; }
+
+        /// <summary>
+        /// Package manager unique id.
+        /// </summary>
+        string PackageManagerId { get; }
+
+        /// <summary>
+        /// The tool tip description for the package
+        /// </summary>
+        string Description { get; }
+
+        /// <summary>
+        /// Check if a recommendation should be surfaced for an alternate package manager.
+        /// This code should not rely on slow network calls, and should return rapidly.
+        /// </summary>
+        /// <param name="packageId">Current package id</param>
+        /// <param name="projectName">Unique project name for finding the project through VS dte</param>
+        /// <param name="token">Cancellation Token</param>
+        /// <returns>return true if need to direct to integrated package manager for this package</returns>
+        Task<bool> CheckForPackageAsync(string packageId, string projectName, CancellationToken token);
+
+        /// <summary>
+        /// This Action should take the user to the other package manager.
+        /// </summary>
+        /// <param name="packageId">Current package id</param>
+        /// <param name="projectName">Unique project name for finding the project through VS dte</param>
+        void GoToPackage(string packageId, string projectName);
     }
 
 ## IVsPackageMetadata interface
 
-	/// <summary>
-    /// Contains information about an installed package.
-    /// </summary>
     public interface IVsPackageMetadata
     {
         /// <summary>
@@ -214,9 +419,14 @@ Sample code snippet:
         string Id { get; }
 
         /// <summary>
-        /// The version of the package.
+        /// Version of the package.
         /// </summary>
-        string VersionString { get; }
+        /// <remarks>
+        /// Do not use this property because it will require referencing NuGet.Core.dll assembly. Use the VersionString
+        /// property instead.
+        /// </remarks>
+        [Obsolete("Do not use this property because it will require referencing NuGet.Core.dll assembly. Use the VersionString property instead.")]
+        NuGet.SemanticVersion Version { get; }
 
         /// <summary>
         /// Title of the package.
@@ -237,4 +447,94 @@ Sample code snippet:
         /// The location where the package is installed on disk.
         /// </summary>
         string InstallPath { get; }
+
+        // IMPORTANT: This property must come LAST, because it was added in 2.5. Having it declared
+        // LAST will avoid breaking components that compiled against earlier versions which doesn't
+        // have this property.
+        /// <summary>
+        /// The version of the package.
+        /// </summary>
+        /// <remarks>
+        /// Use this property instead of the Version property becase with the type string,
+        /// it doesn't require referencing NuGet.Core.dll assembly.
+        /// </remarks>
+        string VersionString { get; }
+    }
+
+## IVsPackageProjectMetadata interface
+
+    public interface IVsPackageProjectMetadata
+    {
+        /// <summary>
+        /// Unique batch id for batch start/end events of the project.
+        /// </summary>
+        string BatchId { get; }
+
+        /// <summary>
+        /// Name of the project.
+        /// </summary>
+        string ProjectName { get; }
+    }
+
+## IVsPackageRestorer interface
+
+    public interface IVsPackageRestorer
+    {
+        /// <summary>
+        /// Returns a value indicating whether the user consent to download NuGet packages
+        /// has been granted.
+        /// </summary>
+        /// <returns>true if the user consent has been granted; otherwise, false.</returns>
+        bool IsUserConsentGranted();
+
+        /// <summary>
+        /// Restores NuGet packages installed in the given project within the current solution.
+        /// </summary>
+        /// <param name="project">The project whose NuGet packages to restore.</param>
+        void RestorePackages(Project project);
+    }
+
+## IVsPackageSourceProvider interface
+
+    public interface IVsPackageSourceProvider
+    {
+        /// <summary>
+        /// Provides the list of package sources.
+        /// </summary>
+        /// <param name="includeUnOfficial">Unofficial sources will be included in the results</param>
+        /// <param name="includeDisabled">Disabled sources will be included in the results</param>
+        /// <returns>Key: source name Value: source URI</returns>
+        IEnumerable<KeyValuePair<string, string>> GetSources(bool includeUnOfficial, bool includeDisabled);
+
+        /// <summary>
+        /// Raised when sources are added, removed, disabled, or modified.
+        /// </summary>
+        event EventHandler SourcesChanged;
+    }
+
+## IVsPackageUninstaller interface
+
+    public interface IVsPackageUninstaller
+    {
+        /// <summary>
+        /// Uninstall the specified package from a project and specify whether to uninstall its dependency packages
+        /// too.
+        /// </summary>
+        /// <param name="project">The project from which the package is uninstalled.</param>
+        /// <param name="packageId">The package to be uninstalled</param>
+        /// <param name="removeDependencies">
+        /// A boolean to indicate whether the dependency packages should be
+        /// uninstalled too.
+        /// </param>
+        void UninstallPackage(Project project, string packageId, bool removeDependencies);
+    }
+
+## IVsTemplateWizard interface
+
+    /// <summary>
+    /// Defines the logic for a template wizard extension.
+    /// </summary>
+
+    public interface IVsTemplateWizard : IWizard
+    {
     }

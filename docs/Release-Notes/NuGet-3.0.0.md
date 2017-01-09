@@ -1,9 +1,38 @@
 
+---
+# required metadata
+
+title: NuGet 3.0 Release Notes | Microsoft Docs
+author: harikmenon
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 8ad13a67-9348-4f04-8f8b-b8f4a0b2c6df
+
+# optional metadata
+
+#description: release notes 3.0.0
+#keywords: release notes 3.0.0
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet 3.0 Release Notes
 
-[NuGet 3.0 RC2 Release Notes](nuget-3.0-RC2) | [NuGet 3.1 Release Notes](nuget-3.1)
+[NuGet 3.0 RC2 Release Notes](../release-notes/nuget-3.0-RC2.md) | [NuGet 3.1 Release Notes](../release-notes/nuget-3.1.md)
 
-NuGet 3.0 was released on July 20, 2015 as a bundle extension to Visual Studio 2015. We pushed to deliver this release with Visual Studio so that the complete updated NuGet 3.0 experience would be available for new Visual Studio users. This NuGet extension version is only available for Visual Studio 2015.  
+NuGet 3.0 was released on July 20, 2015 as a bundle extension to Visual Studio 2015. We pushed to deliver this release with Visual Studio so that the complete updated NuGet 3.0 experience would be available for new Visual Studio users. This NuGet extension version is only available for Visual Studio 2015.
 
 We recommend those developers that have access to the Visual Studio gallery update to the latest version that is available, as we are publishing an update shortly after the release of Visual Studio 2015 that contains support for Windows 10 development.
 
@@ -15,9 +44,9 @@ There were a number of known issues delivered with this release, and all of thes
 
 *  Translation is not provided for the "Do not show this again" label on the preview window and the "Authors" label in the package description window.
 *  When you working on a project by using TFS source control, NuGet cannot present the package manager user interface if the nuget.config file is marked as read-only.
-   * **Workaround**  Check out the file from TFS. 
+   * **Workaround** Check out the file from TFS.
 *  Text in the yellow "restart bar" in the NuGet Powershell window is not visible when you use the Visual Studio dark theme.
-   * **Workaround** Use the Visual Studio light theme. 
+   * **Workaround** Use the Visual Studio light theme.
 
 
 ## Summary of top issues resolved
@@ -28,9 +57,9 @@ There were a number of known issues delivered with this release, and all of thes
 * [Added 'Do not show preview window' checkbox](https://github.com/NuGet/Home/issues/566)
 * [Added process throttling to reduce processor usage](https://github.com/NuGet/Home/issues/356)
 * Improved portable-class-library reference handling
-	* [https://github.com/NuGet/Home/issues/562](https://github.com/NuGet/Home/issues/562)
-	* [https://github.com/NuGet/Home/issues/454](https://github.com/NuGet/Home/issues/454)
-	* [https://github.com/NuGet/Home/issues/440](https://github.com/NuGet/Home/issues/440)
+    * [https://github.com/NuGet/Home/issues/562](https://github.com/NuGet/Home/issues/562)
+    * [https://github.com/NuGet/Home/issues/454](https://github.com/NuGet/Home/issues/454)
+    * [https://github.com/NuGet/Home/issues/440](https://github.com/NuGet/Home/issues/440)
 * [Autocomplete service was case sensitive](https://github.com/NuGet/Home/issues/198)
 * [Update to reintroduce basic auth credentials](https://github.com/NuGet/Home/issues/456)
 * [Improved error logging](https://github.com/NuGet/Home/issues/407)

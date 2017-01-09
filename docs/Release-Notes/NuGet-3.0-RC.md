@@ -1,20 +1,49 @@
 
+---
+# required metadata
+
+title: NuGet 3.0 RC Release Notes | Microsoft Docs
+author: harikmenon
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: cd0c102f-bc33-4aa2-a921-61fa21d42b28
+
+# optional metadata
+
+#description: release notes 3.0 RC
+#keywords: release notes 3.0 RC
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet 3.0 RC Release Notes
 
-[NuGet 3.0 Beta Release Notes](nuget-3.0-beta) | [NuGet 3.0 RC2 Release Notes](nuget-3.0-RC2)
+[NuGet 3.0 Beta Release Notes](../release-notes/nuget-3.0-beta.md) | [NuGet 3.0 RC2 Release Notes](../release-notes/nuget-3.0-RC2.md)
 
 NuGet 3.0 RC was released on April 29, 2015 with the Visual Studio 2015 RC release. This release has a number of important bug fixes, performance improvements and updates to support the new frameworks.  It is only available for Visual Studio 2015.
 
-### Continued Focus on Performance 
+### Continued Focus on Performance
 
 Stability and performance of NuGet queries continue to be a hot topic that we are focusing on.  With this release, you should start to see very quick search operations in the NuGet UI and website.  We're monitoring the service and how you use the service so that we can continue to tune these operations.
 
 ## Significant Issues Resolved
 
-In order to stabilize the NuGet clients, we resolved many issues as part of this release.  Here is just a brief list of some of the more important issues resolved:  
+In order to stabilize the NuGet clients, we resolved many issues as part of this release.  Here is just a brief list of some of the more important issues resolved:
 
 * As part of the rename of the K framework for ASP.NET 5, framework monikers have been updated to handle dnx and dnxcore [link](https://github.com/NuGet/Home/issues/215)
-* Added help documentation from links in Visual Studio UI to docs.nuget.org [link](https://github.com/NuGet/Home/issues/232)
+* Added help documentation from links in the Visual Studio UI [link](https://github.com/NuGet/Home/issues/232)
 * Better handling of complex references in NuSpec with comma-delimited framework references [link](https://github.com/NuGet/Home/issues/276)
 * Fixed support for Japanese cultures [link](https://github.com/NuGet/Home/issues/253)
 * Updated client to allow ASP.NET 5 projects to use new v3 endpoints [link](https://github.com/NuGet/Home/issues/219)

@@ -1,6 +1,35 @@
+---
+# required metadata
+
+title: NuGet 2.6 Release Notes | Microsoft Docs
+author: harikmenon
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: d99bbf29-2b9a-4dc5-a823-5eb4f9e30f7f
+
+# optional metadata
+
+#description: release notes 2.6
+#keywords: release notes 2.6
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet 2.6 Release Notes
 
-[NuGet 2.5 Release Notes](nuget-2.5) | [NuGet 2.6.1 for WebMatrix Release Notes](nuget-2.6.1-for-webmatrix)
+[NuGet 2.5 Release Notes](../release-notes/nuget-2.5.md) | [NuGet 2.6.1 for WebMatrix Release Notes](../release-notes/nuget-2.6.1-for-webmatrix.md)
 
 NuGet 2.6 was released on June 26, 2013.
 
@@ -23,10 +52,11 @@ Starting with NuGet 2.6, we will publish two extensions as below:
 2. [NuGet Package Manager for Visual Studio 2013](http://visualstudiogallery.msdn.microsoft.com/4ec1526c-4a8c-4a84-b702-b21a8f5293ca)
 
 With this split, the [nuget.org](https://nuget.org) home page's "Install NuGet" button
-will now take you to the [installing NuGet](../Start-Here/installing-nuget)
+will now take you to the [installing NuGet](../guides/install-nuget.md)
 page, where you can find more information about installing the different NuGet clients.
 
 ### XDT Web.config transformation support
+<a name="xdt"></a>
 
 One of the most highly-requested features for the NuGet client has been to support more
 powerful XML transformations using the XDT transformation engine which is used in Visual
@@ -41,7 +71,7 @@ NuGet client. NuGet 2.6 includes this integration.
 #### How it works
 
 To take advantage of NuGet’s XDT support, the mechanics look similar to those of the
-[current config transformation feature](../Create/Creating-Packages-With-Configuration-File-and-Source-Code-Tranformations).
+[current config transformation feature](../create-packages/source-and-config-file-transformations.md).
 Transformation files are added to the package’s content folder. However, while config
 transformations use a single file for both installation and uninstallation, XDT
 transformations enable fine-grained control over both of these processes using the
@@ -81,9 +111,9 @@ products. Additionally, the directory structure supports semantics for product, 
 and even SKU of the IDE. Settings from these directories are applied in the following
 order with a "last in wins" precedence strategy.
 
-1. %ProgramData%\NuGet\Config\*.config 
-2. %ProgramData%\NuGet\Config\{IDE}\*.config 
-3. %ProgramData%\NuGet\Config\{IDE}\{Version}\*.config 
+1. %ProgramData%\NuGet\Config\*.config
+2. %ProgramData%\NuGet\Config\{IDE}\*.config
+3. %ProgramData%\NuGet\Config\{IDE}\{Version}\*.config
 4. %ProgramData%\NuGet\Config\{IDE}\{Version}\{SKU}\*.config
 
 In this list, the {IDE} placeholder is specific to the IDE in which NuGet is running,
@@ -92,7 +122,7 @@ placeholders are provided by the IDE (e.g. "11.0" and "WDExpress", "VWDExpress" 
 "Pro", respectively). The directory can then contain many different *.config files.
 Therefore, the ACME component company can, as a part of their product installer, add
 a custom package source which will be visible only in the Professional and Ultimate
-versions of Visual Studio 2012 by creating the following file path: 
+versions of Visual Studio 2012 by creating the following file path:
 
 %ProgramData%\NuGet\Config\VisualStudio\11.0\Pro\acme.config
 
@@ -107,7 +137,7 @@ This feature is utilized by Visual Studio 2013, where a file is installed at:
 
 Within this file, a new package source called ".NET Framework Packages" is configured.
 
-![NuGet Config File machine wide settings](../images/Consume/NuGet-Config-File-Machine-Wide.png)
+![NuGet Config File machine wide settings](./media/NuGet-Config-File-Machine-Wide.png)
 
 ### Contextualizing Search
 
