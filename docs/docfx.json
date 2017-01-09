@@ -27,7 +27,9 @@
     ],
     "overwrite": [],
     "externalReference": [],
-    "globalMetadata": {},
+        "globalMetadata": {
+            "breadcrumb_path": "~/_breadcrumb/toc.yml",
+            "ROBOTS": "INDEX,FOLLOW"},
     "fileMetadata": {},
     "template": [],
     "dest": "nuget"
