@@ -1,31 +1,31 @@
---- 
-# required metadata 
- 
-title: “NuGet.Server | Microsoft Docs” 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 45138f80-9717-42c2-8b34-9a1bc1fb3eab 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+---
+# required metadata
+
+title: NuGet.Server to Host NuGet Feeds | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 45138f80-9717-42c2-8b34-9a1bc1fb3eab
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 
 # NuGet.Server
@@ -85,11 +85,11 @@ With `NuGet.Server` 1.5 and later, you can more specifically configure the packa
 
 `packagesPath` can be an absolute or virtual path.
 
-When `packagesPath` is omitted or left blank, the packages folder is the default `~/Packages`. 
+When `packagesPath` is omitted or left blank, the packages folder is the default `~/Packages`.
 
 ## Adding packages to the feed externally
 
-Once a NuGet.Server site is running, you can add or delete packages using nuget.exe provided that you set an API key value in `web.config`. 
+Once a NuGet.Server site is running, you can add or delete packages using nuget.exe provided that you set an API key value in `web.config`.
 
 After installing the NuGet.Server package, `web.config` will contain an empty `appSetting/apiKey` value:
 

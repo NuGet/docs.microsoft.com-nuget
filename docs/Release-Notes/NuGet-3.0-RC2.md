@@ -1,32 +1,32 @@
 
---- 
-# required metadata 
- 
-title: NuGet 3.0 RC2 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 3.0 RC2 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 20f9b360-2d78-4676-a803-e86996eb2f10 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 20f9b360-2d78-4676-a803-e86996eb2f10
+
+# optional metadata
+
 #description: release notes 3.0 RC2
 #keywords: release notes 3.0 RC2
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 # NuGet 3.0 RC2 Release Notes
 
@@ -44,9 +44,9 @@ In total, we closed 158 issues in this release, and you can review the [complete
 * [Added 'Do not show preview window' checkbox](https://github.com/NuGet/Home/issues/566)
 * [Added process throttling to reduce processor usage](https://github.com/NuGet/Home/issues/356)
 * Improved portable-class-library reference handling
-	* [https://github.com/NuGet/Home/issues/562](https://github.com/NuGet/Home/issues/562)
-	* [https://github.com/NuGet/Home/issues/454](https://github.com/NuGet/Home/issues/454)
-	* [https://github.com/NuGet/Home/issues/440](https://github.com/NuGet/Home/issues/440)
+    * [https://github.com/NuGet/Home/issues/562](https://github.com/NuGet/Home/issues/562)
+    * [https://github.com/NuGet/Home/issues/454](https://github.com/NuGet/Home/issues/454)
+    * [https://github.com/NuGet/Home/issues/440](https://github.com/NuGet/Home/issues/440)
 * [Autocomplete service was case sensitive](https://github.com/NuGet/Home/issues/198)
 * [Update to reintroduce basic auth credentials](https://github.com/NuGet/Home/issues/456)
 * [Improved error logging](https://github.com/NuGet/Home/issues/407)

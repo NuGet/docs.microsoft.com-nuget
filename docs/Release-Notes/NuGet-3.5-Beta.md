@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: NuGet 3.5 Beta Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 3.5 Beta Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 14fa0ed9-b82a-45d0-af7d-1d817d68df38 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 14fa0ed9-b82a-45d0-af7d-1d817d68df38
+
+# optional metadata
+
 #description: release notes 3.5
 #keywords: release notes 3.5
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # NuGet 3.5 Beta Release Notes
 

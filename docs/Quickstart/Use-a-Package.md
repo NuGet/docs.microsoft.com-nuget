@@ -1,19 +1,19 @@
 ---
 # required metadata
 
-title: Use a package | Microsoft Docs
+title: Introductory Guide to Using NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/5/2017
+ms.date: 1/9/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
 ms.technology: nuget
 ms.assetid: f31f8259-20a8-4617-880e-5819299372d2
- 
+
 # optional metadata
- 
+
 description: A tutorial that walks through the process of installing and using a NuGet package.
 keywords: NuGet package consume references installing
 #ROBOTS:
@@ -26,7 +26,7 @@ ms.reviewer:
 #ms.tgt_pltfrm:
 #ms.custom:
 
---- 
+---
 
 
 # Use a package
@@ -44,7 +44,7 @@ You'll use a similar same workflow for virtually every NuGet package you use in 
 
 ## Install pre-requisites
 
-This tutorial requires Visual Studio 2015 Update 3 with Tools for Universal Windows Apps. 
+This tutorial requires Visual Studio 2015 Update 3 with Tools for Universal Windows Apps.
 
 You can install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions. The UWP tools option can be selected through the Custom install option during setup, checking the box under **Windows and Web Development > Universal Windows App Development Tools**. If you already have Visual Studio installed, you can run the installer again and click **Modify** to add the UWP tools.
 

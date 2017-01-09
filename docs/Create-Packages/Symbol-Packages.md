@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: Symbol Packages | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/3/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
+---
+# required metadata
+
+title: NuGet Symbol Packages | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
 ms.assetid: 4667a70d-5a17-4f1e-b2f2-b8d0c6af3882
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # Symbol Packages
 
@@ -97,10 +97,10 @@ Apart from the `lib` folder, a symbol package would need to contain this layout:
 A symbol package can be built by conventions, from a folder structure as described in the previous section, or by specifying its contents in the `files` section of the manifest. For example, to build the package shown in the previous section, use the following in the `.nuspec` file:
 
     <files>
-      <file src="Full\bin\Debug\*.dll" target="lib\net40" /> 
-      <file src="Full\bin\Debug\*.pdb" target="lib\net40" /> 
-      <file src="Silverlight\bin\Debug\*.dll" target="lib\sl40" /> 
-      <file src="Silverlight\bin\Debug\*.pdb" target="lib\sl40" /> 
+      <file src="Full\bin\Debug\*.dll" target="lib\net40" />
+      <file src="Full\bin\Debug\*.pdb" target="lib\net40" />
+      <file src="Silverlight\bin\Debug\*.dll" target="lib\sl40" />
+      <file src="Silverlight\bin\Debug\*.pdb" target="lib\sl40" />
       <file src="**\*.cs" target="src" />
     </files>
 

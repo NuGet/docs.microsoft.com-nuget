@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: Walkthrough of Package Restore with Team Foundation Build | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/3/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
+---
+# required metadata
+
+title: Walkthrough of NuGet Package Restore with Team Foundation Build | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
 ms.assetid: 3113cccd-35f7-4980-8a6e-fc06556b5064
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # Walkthrough of Package Restore with Team Foundation Build
 
@@ -54,10 +54,10 @@ The cure to this problem is making sure that packages are restored as the first 
 
     nuget.exe restore path\to\solution.sln
 
-When your build process restores packages before building the code, you don't need to check-in **.targets** files 
+When your build process restores packages before building the code, you don't need to check-in **.targets** files
 
 > [!Note]
-> Packages must be authored to allow loading in Visual Studio. Otherwise, you may still want to check in `.targets` files so that other developers can simply open the solution without having to restore packages first. 
+> Packages must be authored to allow loading in Visual Studio. Otherwise, you may still want to check in `.targets` files so that other developers can simply open the solution without having to restore packages first.
 
 The following demo project shows how to set up the build in such a way that the `packages` folders and **.targets** files don't need to be checked-in. It also shows how to set up an automated build on the Team Foundation Service for this sample project.
 
@@ -133,7 +133,7 @@ TF version control supports a very similar mechanism via the [.tfignore](http://
     packages
 
 ## build.proj
- 
+
 For our demo, we keep the build process fairly simple. We'll create an MSBuild project that builds all solutions while making sure that packages are restored before building the solutions.
 
 This project will have the three conventional targets `Clean`, `Build` and `Rebuild` as well as a new target `RestorePackages`.

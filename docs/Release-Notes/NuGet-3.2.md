@@ -1,42 +1,42 @@
---- 
-# required metadata 
- 
-title: NuGet 3.2 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 3.2 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 70316f35-f046-4f72-98e0-736de172e918 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 70316f35-f046-4f72-98e0-736de172e918
+
+# optional metadata
+
 #description: release notes 3.2
 #keywords: release notes 3.2
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # NuGet 3.2 Release Notes
 
-[NuGet 3.2-RC Release Notes](../release-notes/nuget-3.2-RC.md) | [NuGet 3.2.1 Release Notes](../release-notes/nuget-3.2.1.md) 
+[NuGet 3.2-RC Release Notes](../release-notes/nuget-3.2-RC.md) | [NuGet 3.2.1 Release Notes](../release-notes/nuget-3.2.1.md)
 
-NuGet 3.2 was released September 16, 2015 as a collection of improvements and fixes for the 3.1.1 release and is available from both [dist.nuget.org](http://dist.nuget.org/index.html) and the [Visual Studio Gallery](https://visualstudiogallery.msdn.microsoft.com/5d345edc-2e2d-4a9c-b73b-d53956dc458d?SRC=Home). 
+NuGet 3.2 was released September 16, 2015 as a collection of improvements and fixes for the 3.1.1 release and is available from both [dist.nuget.org](http://dist.nuget.org/index.html) and the [Visual Studio Gallery](https://visualstudiogallery.msdn.microsoft.com/5d345edc-2e2d-4a9c-b73b-d53956dc458d?SRC=Home).
 
 ## New Features
 
-* Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will give preference to that configuration for each project appropriately.  This is only supported with Windows 10 Tools v1.1 installed -  [1102](https://github.com/NuGet/Home/issues/1102) 
+* Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will give preference to that configuration for each project appropriately.  This is only supported with Windows 10 Tools v1.1 installed -  [1102](https://github.com/NuGet/Home/issues/1102)
 * NuGet clients support specifying a global NUGET_PACKAGES environment variable to specify the location of the shared global packages folder used in project.json managed projects with Windows 10 tools v1.1.
 
 ## Command-line updates
@@ -53,7 +53,7 @@ This is the first version of the NuGet.exe client that supports the NuGet v3 ser
 
 * Improved error messages when unable to connect to remote feeds - [1238](https://github.com/NuGet/Home/issues/1238)
 * Corrected NuGet restore command to properly return a 1 when an error condition occurs - [1186](https://github.com/NuGet/Home/issues/1186)
-* Now retrying network connections every 200ms for a maximum of 5 attempts in the case of HTTP 5xx failures - [1120](https://github.com/NuGet/Home/issues/1120) 
+* Now retrying network connections every 200ms for a maximum of 5 attempts in the case of HTTP 5xx failures - [1120](https://github.com/NuGet/Home/issues/1120)
 * Improved handling of server redirect responses during a push command - [1051](https://github.com/NuGet/Home/issues/1051)
 * `nuget install -source` now supports either URL or repository name from nuget.config as an argument - [1046](https://github.com/NuGet/Home/issues/1046)
 * Missing packages that were not located on a repository during a restore are now reported as errors instead of warnings [1038](https://github.com/NuGet/Home/issues/1038)
@@ -125,7 +125,7 @@ A complete list of issues addressed in this release can be found in the NuGet Gi
 * Verbosity of log messages reduced for project.json managed projects - [1163](https://github.com/NuGet/Home/issues/1163)
 * Now properly displaying the installed version of a package in the user interface - [1061](https://github.com/NuGet/Home/issues/1061)
 * Packages with dependency ranges specified in their nuspec now have pre-release versions of those dependencies installed for a stable package version - [1304](https://github.com/NuGet/Home/issues/1304)
-  
+
 A complete list of issues addressed for the Visual Studio extension can be found in the NuGet GitHub [3.2 milestone](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+-label%3AClosedAs%3ADuplicate+milestone%3A3.2)
 
 ## Known Issues

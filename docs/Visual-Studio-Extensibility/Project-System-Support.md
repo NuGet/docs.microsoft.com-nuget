@@ -1,36 +1,36 @@
---- 
-# required metadata 
- 
-title: NuGet support for the Visual Studio project system | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/3/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 9d7fa7f6-82ed-4df6-9734-f43a3d8e3b98 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+---
+# required metadata
+
+title: NuGet Support for the Visual Studio Project System | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 9d7fa7f6-82ed-4df6-9734-f43a3d8e3b98
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # NuGet support for the Visual Studio project system
 
-To support third-party project types in Visual Studio, NuGet 3.x+ supports the [Common Project System (CPS)](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/intro.md), and NuGet 3.2+ supports non-CPS project systems as well. 
+To support third-party project types in Visual Studio, NuGet 3.x+ supports the [Common Project System (CPS)](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/intro.md), and NuGet 3.2+ supports non-CPS project systems as well.
 
 To integrate with NuGet, a project system must advertise its own support for all the project capabilities described in this topic.
 
@@ -40,7 +40,7 @@ To integrate with NuGet, a project system must advertise its own support for all
 
 ## Advertise project capabilities
 
-The NuGet client determines which packages are compatible with your project type based on the [project's capabilities](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md), as described in the following table.  
+The NuGet client determines which packages are compatible with your project type based on the [project's capabilities](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md), as described in the following table.
 
 
 |Capability|Description|
@@ -116,7 +116,7 @@ Remember to add/remove capabilities from the `ActualProjectCapabilities` set bas
 
 ## Responding to queries
 
-A project declares this capability by supporting the  `VSHPROPID_ProjectCapabilitiesChecker` property through the `IVsHierarchy::GetProperty`. It should return an instance of 
+A project declares this capability by supporting the  `VSHPROPID_ProjectCapabilitiesChecker` property through the `IVsHierarchy::GetProperty`. It should return an instance of
 `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker`, which is defined in the `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll` assembly. Reference this assembly by installing the [its NuGet package](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime).
 
 For example, you might add the following `case` statement to your `IVsHierarchy::GetProperty` method's `switch` statement:
@@ -130,4 +130,4 @@ For example, you might add the following `case` statement to your `IVsHierarchy:
 
 NuGet drives the project system to add references, content items, and MSBuild imports by calling into [DTE](https://msdn.microsoft.com/library/mt452175.aspx), which is the top-level Visual Studio automation interface. DTE is a set of COM interfaces that you may already implement.
 
-If your project type is based on CPS, DTE is implemented for you. 
+If your project type is based on CPS, DTE is implemented for you.

@@ -1,34 +1,34 @@
---- 
-# required metadata 
- 
-title: “NuGet Governance | Microsoft Docs” 
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 94c088ce-ec96-4876-a210-fbdae743942c 
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
+---
+# required metadata
+
+title: NuGet Project Governance | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 94c088ce-ec96-4876-a210-fbdae743942c
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
 ---
 # NuGet Governance
-	
+
 > This document is based upon the [Benevolent Dictator Governance Model](http://www.oss-watch.ac.uk/resources/benevolentdictatorgovernancemodel) by the University of Oxford. It is licensed under a [Creative Commons Attribution-ShareAlike 2.0 UK: England & Wales License](http://creativecommons.org/licenses/by-sa/2.0/uk/).
 
 The NuGet project is led by a Benevolent Dictator and managed by the community. That is, the community actively contributes to the day-to-day maintenance of the project, but the general strategic line is drawn by the benevolent dictator. In case of disagreement, the benevolent dictator has the last word.
@@ -37,7 +37,7 @@ It is the benevolent dictator’s job to resolve disputes within the community a
 
 ## Roles And Responsibilities
 
-There are four roles described here: Benevolent Dictator, Committers, Contributors, and Users. 
+There are four roles described here: Benevolent Dictator, Committers, Contributors, and Users.
 
 ### Benevolent Dictator
 
@@ -67,7 +67,7 @@ To become a contributor, submit a pull request to one of the following repositor
 - [NuGet Client](https://github.com/NuGet/NuGet.Client)
 - [NuGet Gallery](https://github.com/nuget/nugetgallery)
 - [NuGet Docs](https://github.com/nuget/nugetdocs)
- 
+
 The detailed process for submitting a pull request varies by repository:
 
 - [Contribution instructions for NuGet Client and NuGet Gallery](https://github.com/NuGet/Home/wiki/Contributing-to-NuGet)

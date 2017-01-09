@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: NuGet 2.5 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 2.5 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: c193f1e3-d114-427f-9425-9930cc8e4db3 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: c193f1e3-d114-427f-9425-9930cc8e4db3
+
+# optional metadata
+
 #description: release notes 2.5
 #keywords: release notes 2.5
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet 2.5 Release Notes
 
 [NuGet 2.2.1 Release Notes](../release-notes/nuget-2.2.1.md) | [NuGet 2.6 Release Notes](../release-notes/nuget-2.6.md)
@@ -89,12 +89,12 @@ When NuGet installs a package with \build files, it will add an MSBuild &lt;Impo
 
 Before 2.5, in .nuspec file, user can only specify the reference files, to be added for all framework. Now with this new feature in 2.5, user can author the &lt;reference/&gt; element for each of the supported platform, for example:
 
-    <references> 
-        <group targetFramework="net45"> 
+    <references>
+        <group targetFramework="net45">
             <reference file="a.dll" />
-        </group> 
-        <group targetFramework="netcore45"> 
-            <reference file="b.dll" /> 
+        </group>
+        <group targetFramework="netcore45">
+            <reference file="b.dll" />
         </group>
         <group>
             <reference file="c.dll" />
@@ -159,12 +159,12 @@ Starting with NuGet 2.5, if a dependency version is already satisifed, the depen
 
 **The scenario:**
 
-1. The source repository contains package B with version 1.0.0 and 1.0.2. It also contains package A which has a dependency on B (>= 1.0.0). 
-1. Assume that the current project already has package B version 1.0.0 installed. Now you want to install package A. 
+1. The source repository contains package B with version 1.0.0 and 1.0.2. It also contains package A which has a dependency on B (>= 1.0.0).
+1. Assume that the current project already has package B version 1.0.0 installed. Now you want to install package A.
 
 **In NuGet 2.2 and older:**
 
-* When installing package A, NuGet will auto-update B to 1.0.2, even though the existing version 1.0.0 already satisfies the dependency version constraint, which is >= 1.0.0. 
+* When installing package A, NuGet will auto-update B to 1.0.2, even though the existing version 1.0.0 already satisfies the dependency version constraint, which is >= 1.0.0.
 
 **In NuGet 2.5 and newer:**
 

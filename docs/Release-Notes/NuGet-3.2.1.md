@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: NuGet 3.2.1 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 3.2.1 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: d27c3bb9-8db1-439a-a134-54e20b7a7766 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: d27c3bb9-8db1-439a-a134-54e20b7a7766
+
+# optional metadata
+
 #description: release notes 3.2.1
 #keywords: release notes 3.2.1
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 
 # NuGet 3.2.1 Release Notes

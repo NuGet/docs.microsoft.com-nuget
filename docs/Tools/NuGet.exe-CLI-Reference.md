@@ -1,11 +1,11 @@
 ---
 # required metadata
 
-title: NuGet CLI Reference | Microsoft Docs
+title: NuGet Command-Line Interface (CLI) Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/3/2017
+ms.date: 1/9/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -19,10 +19,10 @@ ms.assetid: d777c424-0cf3-4bc0-8abd-7ca16c22192b
 #ROBOTS:
 #audience:
 #ms.devlang:
-ms.reviewer:  
+ms.reviewer:
 - karann
 - harikm
-#ms.suite:  
+#ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
 
@@ -361,7 +361,7 @@ version | The version of the package to install. If not specified, the latest ve
 
 Creates a NuGet package based on the specified nuspec or project file. Note that the `pack` command requires MSBuild and will not work on Linux systems. On Mac OS X, you need to have Mono 4.4.2 or later installed.
 
-With Mono, you also need to adjust non-local paths in the .nuspec file to Unix-style paths, as nuget.exe will not itself convert Windows pathnames. 
+With Mono, you also need to adjust non-local paths in the .nuspec file to Unix-style paths, as nuget.exe will not itself convert Windows pathnames.
 
 ### Usage
 

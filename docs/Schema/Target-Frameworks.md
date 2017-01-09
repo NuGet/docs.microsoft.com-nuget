@@ -1,44 +1,44 @@
---- 
-# required metadata 
- 
-title: Target Frameworks | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
+---
+# required metadata
+
+title: Target Frameworks References for NuGet | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
 ms.assetid: 4343a48e-f6df-4a44-9d66-4616c3caacf5
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # Target Frameworks
 
 NuGet uses target framework references in a variety of places to specifically identify and isolate framework-dependent components of a package:
 
-- [nuspec manifest](../schema/nuspec.md): A package can indicate distinct packages to be included in a project depending on the project's target framework. 
+- [nuspec manifest](../schema/nuspec.md): A package can indicate distinct packages to be included in a project depending on the project's target framework.
 - [nupkg folder name](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): The folders inside a package's `lib` folder can be named according to the target framework, each of which contains the DLLs and other content appropriate to that framework.
 - [project.json](../schema/project.json.md): The `frameworks` node specifies the framework versions that the project can be compiled against.
 
 
 > [!Note]
-> The NuGet client source code that calculates the tables below is found in the following locations:  
+> The NuGet client source code that calculates the tables below is found in the following locations:
 > -  Supported framework names: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
 > -  Framework precedence and mapping: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
@@ -114,7 +114,7 @@ winrt | win
 
 ## Precedence
 
-A number of frameworks are related to and compatible with one another, but not necessarily equivalent: 
+A number of frameworks are related to and compatible with one another, but not necessarily equivalent:
 
 Framework | Can use
 --- | ---
@@ -124,9 +124,9 @@ uap (Universal Windows Platform) | win81
 win (Windows Store) | winrt
 | | winrt45
 
-## NET Platform Standard 
+## NET Platform Standard
 
-The [.NET  Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) simplifies references between binary-compatible frameworks, allowing a single target framework to reference a combination of others. (For background, see the [.NET Primer](https://docs.microsoft.com/en-us/dotnet/articles/standard/index).) 
+The [.NET  Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) simplifies references between binary-compatible frameworks, allowing a single target framework to reference a combination of others. (For background, see the [.NET Primer](https://docs.microsoft.com/en-us/dotnet/articles/standard/index).)
 
 The [NuGet Get Nearest Framework Tool](https://aka.ms/s2m3th) simulates what NuGet uses to select one framework from many available framework assets in a package based on the project's framework.
 
@@ -142,7 +142,7 @@ The `dotnet` series of monikers should be used in NuGet 3.3 an earlier; the `net
 
 To define a target framework that refers to multiple child-target-frameworks, the `portable` keyword use used to prefix the list of referenced frameworks. Avoid artificially including extra frameworks that are not directly compiled against because it can lead to unintended side-effects in those frameworks.
 
-Additional frameworks defined by third parties provide compatibility with other environments that are accessible in this manner. Additionally, there are shorthand profile numbers that are available to reference these combinations of related frameworks as `Profile#`, but this is not a recommended practice to use these numbers as it reduces the readability of the folders and nuspec. 
+Additional frameworks defined by third parties provide compatibility with other environments that are accessible in this manner. Additionally, there are shorthand profile numbers that are available to reference these combinations of related frameworks as `Profile#`, but this is not a recommended practice to use these numbers as it reduces the readability of the folders and nuspec.
 
 Profile # | Frameworks | Full name | .NET Standard
  --- | --- | --- | ---
@@ -160,7 +160,7 @@ Profile # | Frameworks | Full name | .NET Standard
  | Windows 8.0 |
  Profile6 | .NETFramework 4.0.3 | portable-net403+win8
  | Windows 8.0 |
- Profile7 | .NETFramework 4.5 | portable-net45+win8	| netstandard1.1
+ Profile7 | .NETFramework 4.5 | portable-net45+win8    | netstandard1.1
  | Windows 8.0 |
  Profile14 | .NETFramework 4.0 | portable-net40+sl5
  | Silverlight 5.0 |
@@ -231,7 +231,7 @@ Profile # | Frameworks | Full name | .NET Standard
  | WindowsPhone 8.1 |
  Profile136 | .NETFramework 4.0 | portable-net40+sl5+win8+wp8
  | Silverlight 5.0 |
- | Windows 8.0 | 
+ | Windows 8.0 |
  | WindowsPhone 8.0 |
  Profile143 | .NETFramework 4.0.3 | portable-net403+sl4+win8+wp8
  | Silverlight 4.0 |
@@ -288,7 +288,7 @@ Profile # | Frameworks | Full name | .NET Standard
  | WindowsPhone 8.0 |
 
 Additionally, NuGet packages targeting Xamarin can use additional Xamarin-defined frameworks. See [Creating NuGet packages for Xamarin](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/).
- 
+
  Name | Description | .NET Standard
  --- | --- | ---
  monoandroid | Mono Support for Android OS | netstandard1.4

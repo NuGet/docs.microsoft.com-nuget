@@ -1,11 +1,11 @@
 ---
 # required metadata
 
-title: NuGet frequently-asked questions | Microsoft Docs
+title: NuGet Frequently-Asked Questions | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/3/2017
+ms.date: 1/9/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -192,7 +192,7 @@ Dependencies are mostly static and never change. When fixing a bug in code, the 
 
 **Can I edit package information after it's been uploaded?**
 
-Yes, in fact, you first get an opportunity to edit package metadata during the upload process. When you upload a package, the NuGet gallery will perform some static analysis and indicate if there are issues. If the package is accepted, you'll then see a page that allows you to edit any of the metadata before the package is added to the gallery. 
+Yes, in fact, you first get an opportunity to edit package metadata during the upload process. When you upload a package, the NuGet gallery will perform some static analysis and indicate if there are issues. If the package is accepted, you'll then see a page that allows you to edit any of the metadata before the package is added to the gallery.
 
 For a package already in the gallery, sign into nuget.org, click on your username, then on **Manage my packages**, then on the package you want to manage. From that page, select **Edit Package** on the left-hand side and make the desired changes to the metadata.
 

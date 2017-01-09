@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: NuGet 2.2.1 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 2.2.1 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 39ceaeb3-2d33-4b1c-b195-eba36c6cbf9a 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 39ceaeb3-2d33-4b1c-b195-eba36c6cbf9a
+
+# optional metadata
+
 #description: release notes 2.2.1
 #keywords: release notes 2.2.1
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet 2.2.1 Release Notes
 
 [NuGet 2.2 Release Notes](../release-notes/nuget-2.2.md) | [NuGet 2.5 Release Notes](../release-notes/nuget-2.5.md)

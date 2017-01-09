@@ -1,11 +1,11 @@
 ---
 # required metadata
 
-title: "Local NuGet Feeds | Microsoft Docs"
+title: Setting up Local NuGet Feeds | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/5/2017
+ms.date: 1/9/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -37,10 +37,10 @@ In these cases, you enable the source by simply adding the pathname, such as `\\
 
 With NuGet 3.3 and above, you'll realize much better performance by structuring the feed using a hierarchical versioned folder tree:
 
-	\\myserver\packages
+    \\myserver\packages
       └─<packageID>
-        └─<version>	
-          ├─<packageID>.<version>.nupkg	
+        └─<version>
+          ├─<packageID>.<version>.nupkg
           └─<other files>
 
 NuGet will create this structure automatically when you use the [`nuget add`](../tools/nuget.exe-cli-reference.md#add) command to copy packages to the feed:

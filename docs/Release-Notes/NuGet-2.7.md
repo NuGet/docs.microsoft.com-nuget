@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: NuGet 2.7 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 2.7 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: ba2edaad-4795-47a0-a572-d0e1716bd540 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: ba2edaad-4795-47a0-a572-d0e1716bd540
+
+# optional metadata
+
 #description: release notes 2.7
 #keywords: release notes 2.7
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 # NuGet 2.7 Release Notes
 
 [NuGet 2.6.1 for WebMatrix Release Notes](../release-notes/nuget-2.6.1-for-webmatrix.md) | [NuGet 2.7.1 Release Notes](../release-notes/nuget-2.7.1.md)
@@ -38,7 +38,7 @@ NuGet 2.7 was released on August 22, 2013.
 We would like to thank the following external contributors for their significant contributions to NuGet 2.7:
 
 1. [Mike Roth](http://www.codeplex.com/site/users/view/mxrss) ([@mxrss](https://twitter.com/mxrss))
-    - Show License url when listing packages and verbosity is detailed. 
+    - Show License url when listing packages and verbosity is detailed.
 1. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - [#1956](http://nuget.codeplex.com/workitem/1956) - Add developmentDependency attribute to packages.config and use it in pack command to only include runtime packages
 1. [Rafael Nicoletti](http://www.codeplex.com/site/users/view/tkrafael) ([@tkrafael](https://twitter.com/tkrafael))
@@ -189,7 +189,7 @@ We added some new APIs to our extensibility services to fill the gap of missing 
 
         // Installs one or more packages that exist on disk in a folder defined in the registry.
         void InstallPackagesFromRegistryRepository(string keyName, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
- 
+
         // Installs one or more packages that are embedded in a Visual Studio Extension Package.
         void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
 

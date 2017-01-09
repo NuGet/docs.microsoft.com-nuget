@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Dependency Versions | Microsoft Docs
+title: Specifying Dependency Versions for NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen

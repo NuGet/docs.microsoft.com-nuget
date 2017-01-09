@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: NuGet.Config Reference | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 1/5/2017 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
+---
+# required metadata
+
+title: NuGet.Config File Reference | Microsoft Docs
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 1/9/2017
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
 ms.assetid: fbf31530-3bf4-478c-b26c-c2b24dd3406d
- 
-# optional metadata 
- 
-#description: 
-#keywords: 
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+
+# optional metadata
+
+#description:
+#keywords:
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # NuGet.Config Reference
 
@@ -49,7 +49,7 @@ In this topic:
     - [packageSourceCredentials](#packagesourcecredentials)
     - [apikeys](#apikeys)
     - [disabledPackageSources](#disabledpackagesources)
-    - [activePackageSource](#activepackagesource)    
+    - [activePackageSource](#activepackagesource)
 - [Example config file](#example-config-file)
 
 
@@ -78,7 +78,7 @@ http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use 
       <config>
         <add key="dependencyVersion" value="Highest" />
         <add key="globalPackagesFolder" value="c:\packages" />
-        <add key="repositoryPath" value="c:\repo" />        
+        <add key="repositoryPath" value="c:\repo" />
         <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
       </config>
 
@@ -135,9 +135,9 @@ disableSourceControlIntegration | A Boolean indicating whether to ignore the pac
 
 The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, and `disabledPackageSources` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
 
-The [`nuget sources` command](../tools/nuget.exe-cli-reference.md#sources) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/nuget.exe-cli-reference.md#setapikey). 
+The [`nuget sources` command](../tools/nuget.exe-cli-reference.md#sources) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/nuget.exe-cli-reference.md#setapikey).
 
-### packageSources 
+### packageSources
 
 Lists all known package sources.
 
@@ -156,7 +156,7 @@ Key | Value
 
 ### packageSourceCredentials
 
-Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`. Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.  
+Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`. Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.
 
 Key | Value
 --- | ---
@@ -241,19 +241,19 @@ Key | Value
 
 ## Example config file
 
-Below is an example `NuGet.Config` file that illustrates a number of settings:  
+Below is an example `NuGet.Config` file that illustrates a number of settings:
 
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
       <config>
-        <!-- 
+        <!--
             Used to specify the default location to expand packages.
             See: NuGet.exe help install
             See: NuGet.exe help update
         -->
         <add key="repositoryPath" value="External\Packages" />
 
-        <!-- 
+        <!--
             Used to specify default source for the push command.
             See: NuGet.exe help push
         -->
@@ -291,8 +291,8 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
       <!-- Used to disable package sources  -->
       <disabledPackageSources />
 
-      <!-- 
-          Used to specify default API key associated with sources. 
+      <!--
+          Used to specify default API key associated with sources.
           See: NuGet.exe help setApiKey
           See: NuGet.exe help push
           See: NuGet.exe help mirror
@@ -301,4 +301,3 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
         <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
       </apikeys>
     </configuration>
-    

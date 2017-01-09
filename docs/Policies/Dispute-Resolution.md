@@ -5,7 +5,7 @@ title: “NuGet Dispute Resolution | Microsoft Docs”
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
-ms.date: 1/5/2017 
+ms.date: 1/9/2017 
 ms.topic: article 
 ms.prod: nuget 
 #ms.service: 

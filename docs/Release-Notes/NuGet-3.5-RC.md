@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: 3.5 RC Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: 3.5 RC Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 75a9b496-5762-48b6-922f-fdddf1369c45 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 75a9b496-5762-48b6-922f-fdddf1369c45
+
+# optional metadata
+
 #description: release notes 3.5 RC
 #keywords: release notes 3.5 RC
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 #3.5 RC Release Notes
 

@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: 3.5 Beta2 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: 3.5 Beta2 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 0b76064f-0607-438a-bbf8-dd862690f48e 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 0b76064f-0607-438a-bbf8-dd862690f48e
+
+# optional metadata
+
 #description: release notes 3.5 Beta2
 #keywords: release notes 3.5 Beta2
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # 3.5 Beta2 Release Notes
 

@@ -1,32 +1,32 @@
---- 
-# required metadata 
- 
-title: NuGet 3.4 Release Notes | Microsoft Docs 
+---
+# required metadata
+
+title: NuGet 3.4 Release Notes | Microsoft Docs
 author: harikmenon
-ms.author: harikm 
-manager: ghogen 
-ms.date: 11/11/2016 
-ms.topic: article 
-ms.prod: nuget 
-#ms.service: 
-ms.technology: nuget 
-ms.assetid: 80a429f5-7569-4349-ad7f-4fe9218eac23 
- 
-# optional metadata 
- 
+ms.author: harikm
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+#ms.service:
+ms.technology: nuget
+ms.assetid: 80a429f5-7569-4349-ad7f-4fe9218eac23
+
+# optional metadata
+
 #description: release notes 3.4
 #keywords: release notes 3.4
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-ms.reviewer:  
-- karann 
-- harikm 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
- 
---- 
+#ROBOTS:
+#audience:
+#ms.devlang:
+ms.reviewer:
+- karann
+- harikm
+#ms.suite:
+#ms.tgt_pltfrm:
+#ms.custom:
+
+---
 
 # NuGet 3.4 Release Notes
 
@@ -38,7 +38,7 @@ NuGet 3.4 was released March 30, 2016 as part of the Visual Studio 2015 Update 2
 *  Performance improvements
 *  Minor UI improvements
 
-The following features were previously added in the RC and have been updated or completed for the 3.4 release:  
+The following features were previously added in the RC and have been updated or completed for the 3.4 release:
 
 ## New Features
 

@@ -1,11 +1,11 @@
 ---
 # required metadata
 
-title: .nuspec Reference | Microsoft Docs
+title: .nuspec File Reference for NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/5/2017
+ms.date: 1/9/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -19,10 +19,10 @@ ms.assetid: d4a4db9b-5c2d-46aa-9107-d2b01733df7c
 #ROBOTS:
 #audience:
 #ms.devlang:
-ms.reviewer: 
+ms.reviewer:
 - karann
 - harikm
-#ms.suite: 
+#ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
 ---

@@ -5,7 +5,7 @@ title: dotNet NuGet commands | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/5/2017
+ms.date: 1/9/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -19,10 +19,10 @@ ms.assetid: 0c81dbc4-2c14-4ec8-b87a-b802a899c3ea
 #ROBOTS:
 #audience:
 #ms.devlang:
-ms.reviewer:  
+ms.reviewer:
 - karann
 - harikm
-#ms.suite:  
+#ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
 
