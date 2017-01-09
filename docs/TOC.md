@@ -18,7 +18,7 @@
 ## [Prerelease Packages](Create-Packages/Prerelease-Packages.md)
 ## [Native Packages](Create-Packages/Native-Packages.md)
 ## [Symbol Packages](Create-Packages/Symbol-Packages.md)
-## [Publish a package](Create-Packages/Publish-a-package.md)
+## [Publish a Package](Create-Packages/Publish-a-package.md)
 ## [project.json and UWP](Create-Packages/project.json-and-UWP.md)
 ## [project.json Impact](Create-Packages/project.json-Impact.md)
 # Consume Packages
@@ -29,8 +29,8 @@
 ## [Package Restore](Consume-Packages/Package-Restore.md)
 ## [Managing the NuGet Cache](Consume-Packages/Managing-the-NuGet-Cache.md)
 ## [Configuring NuGet Behavior](Consume-Packages/Configuring-NuGet-Behavior.md)
-## [Dependency Resolution](Consume-Packages/Dependency-Resolution.md)# Hosting Packages
-## [Package-References-in-Project-Files](Consume-Packages/Package-References-in-Project-Files.md)
+## [Dependency Resolution](Consume-Packages/Dependency-Resolution.md)
+## [Package References in Project Files](Consume-Packages/Package-References-in-Project-Files.md)
 #Hosting Packages
 ## [Overview](Hosting-Packages/Overview.md)
 ## [Local Feeds](Hosting-Packages/Local-Feeds.md)

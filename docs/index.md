@@ -32,8 +32,7 @@ ms.reviewer:
 <article id="main">
     <section id="hero-content" class="graph">
         <h1>NuGet Documentation</h1>
-        <h2>Welcome to NuGet! NuGet is the package manager for the Microsoft development platforms including .NET. Create, share, and reuse thousands of nuget packages. Whether you’re new to NuGet or a pro NuGet user or author, these are the docs that you are looking for.</h2>
-        <h3>Check out the latest NuGet packages on <a href="https://www.nuget.org/" target="_blank">nuget.org</a></h3>
+        <h2>Welcome to NuGet! NuGet is the package manager for the Microsoft development platforms including .NET. NuGet gives you access to thousands of package from other developers on <a href="https://www.nuget.org/" target="_blank">nuget.org</a>, and the NuGet tools let you create, share, and host packages of your own.</h2>        
     </section>
     <!--aside class="alert section-border">
     <p>Checkout the latest NuGet packages on <a href="https://www.nuget.org/">nuget.org</a></p>
@@ -62,7 +61,7 @@ ms.reviewer:
                             <p>Quickstart</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Get started quickly on using NuGet.
+                            Experience NuGet with focused walkthroughs.
                         </p>
                     </header>
                     <section class="journey-step-elements content">
@@ -70,7 +69,7 @@ ms.reviewer:
                             <li class="column column-third">
                                 <a href="./quickstart/create-and-publish-a-package.md">
                                     <h3>Create a Package</h3>
-                                    <p>Learn how to create and publish your first package in 5 steps or less.</p>
+                                    <p>Learn how to create and publish your first package to nuget.org.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
@@ -89,7 +88,7 @@ ms.reviewer:
                             <p>Guides</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Let us show you how easy it is to build and host your nuget packages.
+                            Learn more about NuGet's tools and capabilities.
                         </p>
                     </header>
                     <section class="journey-step-elements content">
@@ -97,25 +96,25 @@ ms.reviewer:
                             <li class="column column-third">
                                 <a href="./guides/install-nuget.md">
                                     <h3>Install NuGet Tools</h3>
-                                    <p>Learn how to install and use a variety of NuGet tools.</p>
+                                    <p>Learn how to install and use a the NuGet command-line interface and the NuGet Package Manager UI and Console in Visual Studio.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="./guides/create-net-standard-packages-vs2017.md">
-                                    <h3>Create .NET Standard Packages (Visual Studio 2017)</h3>
-                                    <p>Learn how to create universally supported NuGet packages.</p>
+                                    <h3>Create .NET Standard Packages (Visual Studio 2017 RC)</h3>
+                                    <p>Learn how to create universally supported NuGet packages using Visual Studio 2017 RC.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="./guides/create-net-standard-packages-vs2015.md">
                                     <h3>Create .NET Standard Packages (Visual Studio 2015)</h3>
-                                    <p>Learn how to create universally supported NuGet packages.</p>
+                                    <p>Learn how to create universally supported NuGet packages using Visual Studio 2015.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="./guides/create-uwp-packages.md">
                                     <h3>Create UWP Packages</h3>
-                                    <p>Learn how to create NuGet packages for the UWP Platform.</p>
+                                    <p>Learn how to create NuGet packages for the Universal Windows Platform.</p>
                                 </a>
                             </li>
                         </ul>
@@ -128,7 +127,7 @@ ms.reviewer:
                             <p>Explore NuGet</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Learn about creation and consumption workflows, find references, and study policies.
+                            Go deeper with NuGet workflows, find reference material, and study policies and release notes.
                         </p>
                     </header>
                     <section class="journey-step-elements content">
@@ -154,7 +153,7 @@ ms.reviewer:
                             <li class="column column-third">
                                 <a href="./tools/nuget.exe-cli-reference.md">
                                     <h3>Tools</h3>
-                                    <p>The complete guides to the nuget.exe CLI tool, and the Package Manager UI and Package Manager Console in Visual Studio.</p>
+                                    <p>The complete guides to the nuget.exe command-line tool, and the Package Manager UI and Package Manager Console in Visual Studio.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
@@ -163,13 +162,13 @@ ms.reviewer:
                                     <p>References for nuspec files, nuget.config files, and other files and convensions.</p>
                                 </a>
                             </li>
-                            <!--li class="column column-third">
+                            <li class="column column-third">
                                 <a href="./api/nuget.exe-credential-providers.md">
                                     <h3>API</h3>
-                                    <p>Details about authenticating with package sources and the NuGet API.</p>
+                                    <p>Details about the NuGet API and authenticating with package sources.</p>
                                 </a>
-                            </li-->
-                            <!--li class="column column-third">
+                            </li>
+                            <li class="column column-third">
                                 <a href="./visual-studio-extensibility/nuget-api-in-visual-studio.md">
                                     <h3>Visual Studio Extensibility</h3>
                                     <p>Details about the API to the NuGet Package Manager UI and Console in Visual Studio, project system support, and integrating NuGet packages into Visual Studio templates.</p>
