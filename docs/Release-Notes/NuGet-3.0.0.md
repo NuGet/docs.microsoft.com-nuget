@@ -57,9 +57,9 @@ There were a number of known issues delivered with this release, and all of thes
 * [Added 'Do not show preview window' checkbox](https://github.com/NuGet/Home/issues/566)
 * [Added process throttling to reduce processor usage](https://github.com/NuGet/Home/issues/356)
 * Improved portable-class-library reference handling
-	* [https://github.com/NuGet/Home/issues/562](https://github.com/NuGet/Home/issues/562)
-	* [https://github.com/NuGet/Home/issues/454](https://github.com/NuGet/Home/issues/454)
-	* [https://github.com/NuGet/Home/issues/440](https://github.com/NuGet/Home/issues/440)
+    * [https://github.com/NuGet/Home/issues/562](https://github.com/NuGet/Home/issues/562)
+    * [https://github.com/NuGet/Home/issues/454](https://github.com/NuGet/Home/issues/454)
+    * [https://github.com/NuGet/Home/issues/440](https://github.com/NuGet/Home/issues/440)
 * [Autocomplete service was case sensitive](https://github.com/NuGet/Home/issues/198)
 * [Update to reintroduce basic auth credentials](https://github.com/NuGet/Home/issues/456)
 * [Improved error logging](https://github.com/NuGet/Home/issues/407)

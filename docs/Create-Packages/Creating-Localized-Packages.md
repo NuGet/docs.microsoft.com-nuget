@@ -41,7 +41,7 @@ Both methods have their advantages and disadvantages, as described in the follow
 Including localized resource assemblies in a single package is typically the simplest approach. To do this, create folders within `lib` for supported language other than the package default (assumed to be en-us). In these folders you can place resource assemblies and localized IntelliSense XML files.
 
 For example, the following folder stucture supports, German (de), Italian (it), Japanese (ja), Russian (ru), Chinese (Simplified) (zh-Hans), and Chinese (Traditional) (zh-Hant):
-  
+
     lib
     └───net40
         │   Contoso.Utilities.dll
@@ -69,20 +69,20 @@ For example, the following folder stucture supports, German (de), Italian (it), 
         │
         └───zh-Hant
                 Contoso.Utilities.resources.dll
-                Contoso.Utilities.xml  
+                Contoso.Utilities.xml
 
 You can see that the languages are all listed underneath the `net40` target framework folder. If you're [supporting multiple frameworks](../create-packages/supporting-multiple-target-frameworks.md), then you'll have a folder under `lib` for each variant.
 
 With these folders in place, you'll then reference all the files in your `.nuspec`:
-	  
-	<?xml version="1.0"?>
-	<package>
-	  <metadata>...
-	  </metadata>
-	  <files>
-	    <file src="lib\**" target="lib" />
-	  </files>
-	</package>
+
+    <?xml version="1.0"?>
+    <package>
+      <metadata>...
+      </metadata>
+      <files>
+        <file src="lib\**" target="lib" />
+      </files>
+    </package>
 
 One example package that uses this approach is [Microsoft.Data.OData 5.4.0](http://nuget.org/packages/Microsoft.Data.OData/5.4.0).
 
@@ -109,7 +109,7 @@ Do to this, your primary package uses the naming convention `{identifier}.{versi
     lib
     └───net40
             ContosoUtilities.dll
-            ContosoUtilities.xml  
+            ContosoUtilities.xml
 
 A satellite assembly then uses the naming convention `{identifier}.{language}.{version}.nupkg`, such as `ContosoUtilities.de.1.0.0.nupkg`. The identifier **must** exactly match that of the primary package.
 
@@ -117,7 +117,7 @@ Because this is a separate package, it has its own `.nuspec` file that contains 
 
 The satellite assembly **must** also declare an exact version of the primary package as a dependency, using the [] version notation (see [Dependency Versions](../create-packages/dependency-versions.md)). For example, `ContosoUtilities.de.1.0.0.nupkg` must declare a dependency on `ContosoUtilities.1.0.0.nupkg` using the `[1.0.0]` notation. The satellite package can, of course, have a different version number than the primary package.
 
-The satellite package's structure must then include the resource assembly and XML IntelliSense file in a subfolder that matches `{language}` in the package filename: 
+The satellite package's structure must then include the resource assembly and XML IntelliSense file in a subfolder that matches `{language}` in the package filename:
 
     lib
     └───net40

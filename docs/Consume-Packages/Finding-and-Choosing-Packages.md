@@ -71,16 +71,16 @@ At the same time, using a NuGet package means taking a dependency on it, so you'
 
 - *Downloads statistics*: a the package page you'll see total downloads, downloads of the most recent version, and average downloads per day. Larger numbers obviously indicates that many other developers have taken a dependency on the package, which means that it has proven itself.
 
-	![Download statistics on a package's listing page](media/Finding-03-Downloads.png)
+    ![Download statistics on a package's listing page](media/Finding-03-Downloads.png)
 
 - *Version history*: on the package page, look at the date of the most recent update, and scroll down to see the version history. A well-maintained package will have recent updates, and will have a rich version history. Neglected packages will have few updates and often haven't been updated in some time.
 
-	![Version history on a package's listing page](media/Finding-04-VersionHistory.png)
+    ![Version history on a package's listing page](media/Finding-04-VersionHistory.png)
 
 - *Recent installs*: on the package page, click **Package Statistics** on the left side. This will show you the package installs for the last six weeks. A package with more current use is obviously a better choice than one without.
 - *Restore vs. new install*: on the same package statistics page, uncheck the **Version** checkbox and check **Operation** to see a chart of package restores vs. new installs (below).
 
-	![Chart of operations for a NuGet package on nuget.org package statistics](media/Finding-05-OperationChart.png)
+    ![Chart of operations for a NuGet package on nuget.org package statistics](media/Finding-05-OperationChart.png)
 
 - *Dependency installs*: the same **Operation** chart above has an "Install-Dependency" bar that indicates how many other NuGet packages have taken a dependency on this one. This is an even stronger indication that other developers find the package reliable.
 - *Support*: on the package page, click **Project Site** if available to see what support options are available. A project with a dedicated site is generally better supported.
@@ -100,20 +100,20 @@ NuGet package search works the same on nuget.org, from the NuGet CLI, and within
 
 - **Keywords**: Search will look for relevant packages that contain with all of the provided keywords. Example:
 
-	    modern UI javascript
+        modern UI javascript
 
 - **Phrases**: Entering terms within quotation marks will look for exact matches to those terms (case-insensitive). Example:
 
-    	"modern UI" package
+        "modern UI" package
 
 - **Filtering**: You can apply a search term to a specific property by using the syntax `<property>:<term>` where <property> (case-insensitive) can be `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary`, and `owner`. Terms can be contained in quotes if needed, and you can search for multiple properties at the same time. Also, searches on the `id` property are substring matches, whereas `packageid` uses an exact match. Examples:
-         
-	    id:NuGet.Core                //Match any part of the id property
-		Id:"Nuget.Core"
-		ID:jQuery
+
+        id:NuGet.Core                //Match any part of the id property
+        Id:"Nuget.Core"
+        ID:jQuery
         title:jquery                 //Searches title as shown on the package listing
         PackageId:jquery             //Match the package id exactly
-		id:jquery id:ui              //Search for multiple terms in the id
+        id:jquery id:ui              //Search for multiple terms in the id
         id:jquery tags:validation    //Search multiple properties
         id:"jquery.ui"               //Phrase search
         invalid:jquery ui            //Unsupported properties are ignored, so this

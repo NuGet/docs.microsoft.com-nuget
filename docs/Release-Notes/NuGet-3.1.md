@@ -58,7 +58,7 @@ The following features are no longer available for Visual Studio 2015 and projec
 * install.ps1/ uninstall.ps1 - These scripts will be ignored during package install, restore, update, and uninstall
 * Configuration transforms will be ignored
 * Content will be carried, but not copied into a project.
-	* The team is working to re-implement this feature, follow the discussion and progress at: [https://github.com/NuGet/Home/issues/627](https://github.com/NuGet/Home/issues/627)
+    * The team is working to re-implement this feature, follow the discussion and progress at: [https://github.com/NuGet/Home/issues/627](https://github.com/NuGet/Home/issues/627)
 
 
 ### Known Issues
@@ -74,7 +74,7 @@ The NuGet command-line executable was updated and moved to a new distributable l
 The new distributable location resides on the dist.nuget.org host, with a folder structure that follows this template:
 
      {platform supported}/{version}/nuget.exe
-  
+
 ### New Features
 
 * NuGet.exe can restore and install packages into projects that use a project.json file.
@@ -82,7 +82,7 @@ The new distributable location resides on the dist.nuget.org host, with a folder
 
 ## Known Issues ##
 
-1.	Cannot execute pack against a `project.json` file - [928](https://github.com/NuGet/Home/issues/928)
-2.	Is not supported on Mono - [1059](https://github.com/NuGet/Home/issues/1059)
-3.	Is not localized - [1058](https://github.com/NuGet/Home/issues/1058),   [1057](https://github.com/NuGet/Home/issues/1057)
-4.	Is not signed, just like the existing http://nuget.org/nuget.exe - [1073](https://github.com/NuGet/Home/issues/1073)
+1.    Cannot execute pack against a `project.json` file - [928](https://github.com/NuGet/Home/issues/928)
+2.    Is not supported on Mono - [1059](https://github.com/NuGet/Home/issues/1059)
+3.    Is not localized - [1058](https://github.com/NuGet/Home/issues/1058),   [1057](https://github.com/NuGet/Home/issues/1057)
+4.    Is not signed, just like the existing http://nuget.org/nuget.exe - [1073](https://github.com/NuGet/Home/issues/1073)

@@ -160,7 +160,7 @@ Profile # | Frameworks | Full name | .NET Standard
  | Windows 8.0 |
  Profile6 | .NETFramework 4.0.3 | portable-net403+win8
  | Windows 8.0 |
- Profile7 | .NETFramework 4.5 | portable-net45+win8	| netstandard1.1
+ Profile7 | .NETFramework 4.5 | portable-net45+win8    | netstandard1.1
  | Windows 8.0 |
  Profile14 | .NETFramework 4.0 | portable-net40+sl5
  | Silverlight 5.0 |

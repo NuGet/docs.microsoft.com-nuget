@@ -46,15 +46,15 @@ In this topic:
 
 1. In **Solution Explorer**, right-click **References** (or **Bin** in a Website project), or the desired project, and select **Manage NuGet Packages...**.
 
-	![Manage NuGet Packages menu option](media/ManagePackagesUICommand.png)
+    ![Manage NuGet Packages menu option](media/ManagePackagesUICommand.png)
 
 2. On the **Browse** tab, browse the list or search for a specific package using the search box on the top right. Selecting a package displays the package information on the right and enables the **Install** button along with a version-selection drop-down.
 
-	![Manage NuGet Packages Dialog Browse tab](media/Search.png)
+    ![Manage NuGet Packages Dialog Browse tab](media/Search.png)
 
 3. Select the desired version from the drop-down and click **Install**. This installs the package and its dependencies; you may be asked to accept license terms in the process. When installation is complete, the new packages appear on the **Installed** tab. **Solution Explorer** also shows the added packages, which you can now use in your project.
 
-	![References in Solution Explorer](media/References.png)
+    ![References in Solution Explorer](media/References.png)
 
 ## Uninstalling a package
 
@@ -62,7 +62,7 @@ In this topic:
 2. Click on the **Installed** tab.
 3. Select the package to uninstall and click **Uninstall**.
 
-	![Uninstalling a package](media/UninstallPackage.png)
+    ![Uninstalling a package](media/UninstallPackage.png)
 
 ## Updating a package
 
@@ -70,18 +70,18 @@ In this topic:
 2. Click on the **Updates** tab to see packages that have available updates.
 3. Select the package to update, select the desired version from the drop-down on the right, and click **Update**.
 
-	![Updating a package](media/UpdatePackages.png)
+    ![Updating a package](media/UpdatePackages.png)
 
 ## Managing packages for the solution
 *NuGet 1.4+*
 
 1. Select the **Tools > NuGet Package Manager > Manage NuGet Packages for Solution...** menu command, or right-click the solution and select **Manage NuGet Packages...**:
 
-	![Manage NuGet packages for the solution](media/ManagePackagesSolutionUICommand.png)
+    ![Manage NuGet packages for the solution](media/ManagePackagesSolutionUICommand.png)
 
 2. When managing packages for the solution, the UI lets you select which projects will be affected:
 
-	![Project selector when managing packages for the solution](media/SolutionPackagesUI.png)
+    ![Project selector when managing packages for the solution](media/SolutionPackagesUI.png)
 
 ## Package Sources
 
@@ -93,11 +93,11 @@ To manage package sources:
 
 1. Click on the **Settings** icon in the Package Manager UI outlined below or use the **Tools > Options** command. and scroll to **NuGet Package Manager**.
 
-	![Package manager UI settings icon](media/PackageSourceSettings.png)
+    ![Package manager UI settings icon](media/PackageSourceSettings.png)
 
 2. Select the **Package Sources** node:
 
-	![Package Sources options](media/options.png)
+    ![Package Sources options](media/options.png)
 
 3. To add a source, click the **+** button, edit the name, enter the URL or path in the **Source** control, and click **Update**. This will make it appear in the selector drop-down.
 4. To change a package source, select it, make edits in the **Name** and **Source** boxes, and click **Update**.

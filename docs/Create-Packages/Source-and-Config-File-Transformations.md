@@ -42,21 +42,21 @@ A **config file transformation** allows you to modify files that already exist i
 
 2. To instruct NuGet to apply token replacement at install time, append `.pp` to the source code file name. After installation, the file will not have the `.pp` extension.
 
-	For example, to make transformations in `ContosoData.cs`, name the file in the package `ContosoData.cs.pp`. After installation it will appear as `ContosoData.cs`.
+    For example, to make transformations in `ContosoData.cs`, name the file in the package `ContosoData.cs.pp`. After installation it will appear as `ContosoData.cs`.
 
 3. In the source code file, use case-insensitive tokens of the form `$token$` to indicate values that NuGet should replace with project properties:
 
-	    namespace $rootnamespace$.Models {
-	        public struct CategoryInfo {
-	            public string categoryid;
-	            public string description;
-	            public string htmlUrl;
-	            public string rssUrl;
-	            public string title;
-	        }
-	    }
+        namespace $rootnamespace$.Models {
+            public struct CategoryInfo {
+                public string categoryid;
+                public string description;
+                public string htmlUrl;
+                public string rssUrl;
+                public string title;
+            }
+        }
 
-	Upon installation, NuGet replaces `$rootnamespace$` with `Fabrikam` assuming the target project's whose root namespace is `Fabrikam`.
+    Upon installation, NuGet replaces `$rootnamespace$` with `Fabrikam` assuming the target project's whose root namespace is `Fabrikam`.
 
 The `$rootnamespace$` token is the most commonly used project property; all others are listed in the [Project Properties](https://msdn.microsoft.com/library/vslangproj.projectproperties_properties.aspx) documentation on MSDN. Be mindful, of course, that some properties might be specific to the project type.
 

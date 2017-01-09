@@ -56,23 +56,23 @@ In the console, [`Get-Package -ListAvailable`](../tools/powershell-reference.md#
 
 Examples:
 
-	# All versions of NuGet	
-	Get-Package -ListAvailable -Filter elmah
-	Get-Package -ListAvailable -Filter Logging
+    # All versions of NuGet
+    Get-Package -ListAvailable -Filter elmah
+    Get-Package -ListAvailable -Filter Logging
 
-	# List all versions of packages matching the filter "jquery"
-	Get-Package -ListAvailable -Filter jquery -AllVersions
+    # List all versions of packages matching the filter "jquery"
+    Get-Package -ListAvailable -Filter jquery -AllVersions
 
 
-	# NuGet 3.0+
-	Find-Package elmah
-	Find-Package Logging
+    # NuGet 3.0+
+    Find-Package elmah
+    Find-Package Logging
 
-	# List packages with the keyword EntityFramework and version 6.1.1
+    # List packages with the keyword EntityFramework and version 6.1.1
     Find-Package EntityFramework -version 6.1.1
 
-	# List all versions of the package with the ID of "jquery"
-	Find-Package jquery -AllVersions -ExactMatch
+    # List all versions of the package with the ID of "jquery"
+    Find-Package jquery -AllVersions -ExactMatch
 
 
 ## Installing a package

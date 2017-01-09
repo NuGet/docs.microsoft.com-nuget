@@ -37,10 +37,10 @@ In these cases, you enable the source by simply adding the pathname, such as `\\
 
 With NuGet 3.3 and above, you'll realize much better performance by structuring the feed using a hierarchical versioned folder tree:
 
-	\\myserver\packages
+    \\myserver\packages
       └─<packageID>
-        └─<version>	
-          ├─<packageID>.<version>.nupkg	
+        └─<version>
+          ├─<packageID>.<version>.nupkg
           └─<other files>
 
 NuGet will create this structure automatically when you use the [`nuget add`](../tools/nuget.exe-cli-reference.md#add) command to copy packages to the feed:

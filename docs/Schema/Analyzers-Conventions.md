@@ -59,7 +59,7 @@ Also note that because this package has no platform-specific requirements, the `
 
 The use of the `analyzers` folder is similar to that used for [target frameworks](../create-packages/supporting-multiple-target-frameworks.md), except the specifiers in the path describe development host dependencies instead of build-time. The general format is as follows:
 
-	$/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}}/{analyzer_name}.dll
+    $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}}/{analyzer_name}.dll
 
 - **framework_name**: the *optional* API surface area of the .NET Framework that the contained DLLs need to run. `dotnet` is presently the only valid value because Roslyn is the only host that can run analyzers. If no target is specified, DLLs are assumed to apply to *all* targets.
 - **supported_language**: the language for which the DLL applies, one of `cs` (C#) and `vb` (Visual Basic), and `fs` (F#). The language indicates that the analyzer should be loaded only for a project using that language. If no language is specified then DLL is assumed to apply to *all* languages that support analyzers.
@@ -72,55 +72,55 @@ If the user's project is using `packages.config`, the MSBuild script that picks 
 
 **install.ps1 file contents**
 
-	param($installPath, $toolsPath, $package, $project)
+    param($installPath, $toolsPath, $package, $project)
 
-	$analyzersPaths = Join-Path (Join-Path (Split-Path -Path $toolsPath -Parent) "analyzers" ) * -Resolve
+    $analyzersPaths = Join-Path (Join-Path (Split-Path -Path $toolsPath -Parent) "analyzers" ) * -Resolve
 
-	foreach($analyzersPath in $analyzersPaths)
-	{
-		# Install the language agnostic analyzers.
-		if (Test-Path $analyzersPath)
-		{
-			foreach ($analyzerFilePath in Get-ChildItem $analyzersPath -Filter *.dll)
-			{
-				if($project.Object.AnalyzerReferences)
-				{
-					$project.Object.AnalyzerReferences.Add($analyzerFilePath.FullName)
-				}
-			}
-		}
-	}
+    foreach($analyzersPath in $analyzersPaths)
+    {
+        # Install the language agnostic analyzers.
+        if (Test-Path $analyzersPath)
+        {
+            foreach ($analyzerFilePath in Get-ChildItem $analyzersPath -Filter *.dll)
+            {
+                if($project.Object.AnalyzerReferences)
+                {
+                    $project.Object.AnalyzerReferences.Add($analyzerFilePath.FullName)
+                }
+            }
+        }
+    }
 
-	$project.Type # gives the language name like (C# or VB.NET)
-	$languageFolder = ""
-	if($project.Type -eq "C#")
-	{
-		$languageFolder = "cs"
-	}
-	if($project.Type -eq "VB.NET")
-	{
-		$languageFolder = "vb"
-	}
-	if($languageFolder -eq "")
-	{
-		return
-	}
+    $project.Type # gives the language name like (C# or VB.NET)
+    $languageFolder = ""
+    if($project.Type -eq "C#")
+    {
+        $languageFolder = "cs"
+    }
+    if($project.Type -eq "VB.NET")
+    {
+        $languageFolder = "vb"
+    }
+    if($languageFolder -eq "")
+    {
+        return
+    }
 
-	foreach($analyzersPath in $analyzersPaths)
-	{
-		# Install language specific analyzers.
-		$languageAnalyzersPath = join-path $analyzersPath $languageFolder
-		if (Test-Path $languageAnalyzersPath)
-		{
-			foreach ($analyzerFilePath in Get-ChildItem $languageAnalyzersPath -Filter *.dll)
-			{
-				if($project.Object.AnalyzerReferences)
-				{
-					$project.Object.AnalyzerReferences.Add($analyzerFilePath.FullName)
-				}
-			}
-		}
-	}
+    foreach($analyzersPath in $analyzersPaths)
+    {
+        # Install language specific analyzers.
+        $languageAnalyzersPath = join-path $analyzersPath $languageFolder
+        if (Test-Path $languageAnalyzersPath)
+        {
+            foreach ($analyzerFilePath in Get-ChildItem $languageAnalyzersPath -Filter *.dll)
+            {
+                if($project.Object.AnalyzerReferences)
+                {
+                    $project.Object.AnalyzerReferences.Add($analyzerFilePath.FullName)
+                }
+            }
+        }
+    }
 
 
 **uninstall.ps1 file contents**

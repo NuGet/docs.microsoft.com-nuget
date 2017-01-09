@@ -94,8 +94,8 @@ That said, authoring packages–and especially good packages–along with  embra
 - [NuGet Blog](http://blog.nuget.org/)
 - [NuGet team on Twitter, @nuget](http://twitter.com/nuget)
 - Books:
-	* [Apress Pro NuGet](http://bit.ly/ProNuGet)
-	* [NuGet 2 Essentials](http://www.amazon.com/NuGet-2-Essentials-Damir-Arh-ebook/dp/B00GTQD5M4)
+    * [Apress Pro NuGet](http://bit.ly/ProNuGet)
+    * [NuGet 2 Essentials](http://www.amazon.com/NuGet-2-Essentials-Damir-Arh-ebook/dp/B00GTQD5M4)
 
 ## Documentation for individual packages
 
