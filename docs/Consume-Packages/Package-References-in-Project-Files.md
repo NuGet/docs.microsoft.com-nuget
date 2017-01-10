@@ -164,7 +164,7 @@ For example, say you're targeting `netstandard1.4` as well as `net452` but have 
 
 A package built using this project will show that Newtonsoft.json is included as a dependency only for a `net452` target:
 
-![](media/PackageReference-Condition.png "The result of applying a Condition on PackageReference")
+![The result of applying a Condition on PackageReference](media/PackageReference-Condition.png)
 
 Conditions can also be applied at the `ItemGroup` level and will apply to all children `PackageReference` elements:
 
