@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 2.9-RC Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: 04d76a22-63b0-41d1-9c27-799f4b35058f
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

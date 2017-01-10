@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 2.6 Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: d99bbf29-2b9a-4dc5-a823-5eb4f9e30f7f
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

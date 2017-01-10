@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 2.6.1 for WebMatrix Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: 119ea65b-b38b-4a8c-a4ed-6ea06f1aad09
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

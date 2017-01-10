@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 1.4 Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: e4856d0a-b408-4c60-ac51-f80ea06d9f79
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

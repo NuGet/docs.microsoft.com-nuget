@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet Known Issues | Microsoft Docs
-author: harikm
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: 42e7a619-1c69-454b-8243-16e2f9f950d0
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
