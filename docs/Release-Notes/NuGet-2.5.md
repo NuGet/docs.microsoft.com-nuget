@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 2.5 Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: c193f1e3-d114-427f-9425-9930cc8e4db3
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

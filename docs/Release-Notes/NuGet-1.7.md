@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 1.7 Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: df7becc6-993d-4d06-8495-a0c26748bdfa
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

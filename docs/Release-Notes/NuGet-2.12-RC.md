@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 2.12-RC Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: 6681e034-528d-47a6-ab01-6191c687d42b
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

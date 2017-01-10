@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 1.0 and 1.1 Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ ms.assetid: 0e7688f7-09d2-4477-9fdf-0e27f572a4de
 #audience:
 #ms.devlang:
 ms.reviewer:
-* karann
-* harikm
+- karann
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

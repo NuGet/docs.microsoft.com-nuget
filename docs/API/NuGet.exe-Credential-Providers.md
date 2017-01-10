@@ -21,7 +21,7 @@ ms.assetid: 3cf592de-39f2-4e7f-a597-62635fdcedfa
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
