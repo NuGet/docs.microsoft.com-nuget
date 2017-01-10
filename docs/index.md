@@ -32,7 +32,7 @@ ms.reviewer:
 <article id="main">
     <section id="hero-content" class="graph">
         <h1>NuGet Documentation</h1>
-        <h2>Welcome to NuGet! NuGet is the package manager for Microsoft development platforms including .NET. NuGet gives you access to thousands of package from other developers on <a href="https://www.nuget.org/" target="_blank">nuget.org</a>, and the NuGet tools let you create, share, and host packages of your own.</h2>        
+        <h2>Welcome to NuGet! NuGet is the package manager for the Microsoft development platforms including .NET. NuGet gives you access to thousands of packages from other developers on <a href="https://www.nuget.org/" target="_blank">nuget.org</a>, and the NuGet tools let you create, share, and host packages of your own.</h2>
     </section>
     <!--aside class="alert section-border">
     <p>Checkout the latest NuGet packages on <a href="https://www.nuget.org/">nuget.org</a></p>
@@ -163,7 +163,7 @@ ms.reviewer:
                                 </a>
                             </li>
                             <li class="column column-third">
-                                <a href="./api/nuget.exe-credential-providers.md">
+                                <a href="./api/nuget-api-v3.md">
                                     <h3>API</h3>
                                     <p>Details about the NuGet API and authenticating with package sources.</p>
                                 </a>
