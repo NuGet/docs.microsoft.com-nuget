@@ -47,7 +47,7 @@ The current `nuspec.xsd` schema file can be found in the [NuGet GitHub repositor
 
 Within this schema, a `.nuspec` file has the following general form:
 
-    ```xml
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
       <metadata>
@@ -62,7 +62,7 @@ Within this schema, a `.nuspec` file has the following general form:
       </metadata>
       <!-- Optional 'files' node -->
     </package>
-    ```
+```
 
 For a clear visual representation of the schema, open the schema file in Visual Studio in Design mode and click on the **XML Schema Explorer** link, or open the file as code, right-click in the editor, and select **Show XML Schema Explorer**. Either way you'll get a view like the one below (when mostly expanded):
 
@@ -148,19 +148,19 @@ $configuration$ | Assembly DLL | Configuration used to build the assembly, defau
 
 Tokens can also be used to resolve paths when you include [assembly files](#including-assembly-files) and [content files](#including-content-files). The tokens have the same names as the MSBuild properties, making it possible to select files to be included depending on the current build configuration. For example, if you use the following tokens in the `.nuspec` file:
 
-    ```xml
+```xml
     <files>
         <file src="bin\$configuration$\$id$.pdb" target="lib\net40\" />
     </files>
-    ```
+```
 
 And you build an assembly whose `AssemblyName` is `LoggingLibrary` with the `Release` configuration in MSBuild, the resulting lines in the `.nuspec` file in the package will be as follows:
 
-    ```xml
+```xml
     <files>
         <file src="bin\Release\library.pdb" target="lib\net40" />
     </files>
-    ```
+```
 
 ## Dependencies
 
@@ -173,12 +173,12 @@ Attribute | Description
 
 For example, the following lines indicate dependencies on `PackageA` version 1.1.0 or higher, and `PackageB` version 1.x.
 
-    ```xml
+```xml
     <dependencies>
       <dependency id="PackageA" version="1.1.0" />
       <dependency id="PackageB" version="[1,2)" />
     </dependencies>
-    ```
+```
 
 When creating a `.nuspec` from a project using `nuget spec`, dependencies that exist in that project will be automatically included in the resulting `.nuspec` file.
 
@@ -197,7 +197,7 @@ The &lt;group&gt; element without a `targetFramework` attribute is used as the d
 
 The following example shows different variations of the &lt;group&gt; element:
 
-    ```xml
+```xml
     <dependencies>
        <group>
           <dependency id="RouteMagic" version="1.1.0" />
@@ -211,7 +211,7 @@ The following example shows different variations of the &lt;group&gt; element:
        <group targetFramework="sl30">
        </group>
     </dependencies>
-    ```
+```
 
 <a name="specifying-explicit-assembly-references"></a>
 
@@ -221,12 +221,12 @@ The &lt;references&gt; element explicitly specifies the assemblies that the targ
 
 For example, the following &lt;references&gt; element instructs NuGet to add references to only `xunit.dll` and `xunit.extensions.dll` even if there are additional assemblies in the package:
 
-    ```xml
+```xml
     <references>
       <reference file="xunit.dll" />
       <reference file="xunit.extensions.dll" />
     </references>
-    ```
+```
 
 Explicit reference are typically used for design-time only assemblies. When using [Code Contracts](https://msdn.microsoft.com/library/dd264808.aspx), for example, contract assemblies need to be next to the runtime assemblies that they augment so that Visual Studio can find them, but the contract assemblies need not be referenced by the project or copied into the project's `bin` folder.
 
@@ -247,7 +247,7 @@ The &lt;group&gt; element without a `targetFramework` attribute is used as the d
 
 The following example shows different variations of the &lt;group&gt; element:
 
-    ```xml
+```xml
     <references>
       <group>
         <reference file="a.dll" />
@@ -261,7 +261,7 @@ The following example shows different variations of the &lt;group&gt; element:
         <reference file="bcore45.dll" />
       </group>
     </references>
-    ```
+```
 
 <a name="specifying-framework-assembly-references-gac"></a>
 
@@ -278,13 +278,13 @@ targetFramework | (Optional) Specifies the target framework to which this refere
 
 The following example shows a reference to `System.Net` for all target frameworks, and a reference to `System.ServiceModel` for .NET Framework 4.0 only:
 
-    ```xml
+```xml
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.Net"  />
 
       <frameworkAssembly assemblyName="System.ServiceModel" targetFramework="net40" />
     </frameworkAssemblies>
-    ```
+```
 
 <a name="specifying-files-to-include-in-the-package"></a>
 
@@ -297,13 +297,13 @@ If you follow the conventions described in [Creating a Package](../create-packag
 
 To bypass this automatic behavior and explicitly control which files are included in a package, place a &lt;files&gt; element as a child of &lt;package&gt; (and a sibling of &lt;metadata&gt;), identifying each file with a separate &lt;file&gt; element. For example:
 
-    ```xml
+```xml
     <files>
       <file src="bin\Debug\*.dll" target="lib" />
       <file src="bin\Debug\*.pdb" target="lib" />
       <file src="tools\**\*.*" exclude="**\*.log" />
     </files>
-    ```
+```
 
 With NuGet 2.x and earlier, and projects using `packages.config`, the &lt;files&gt; element is also used to include immutable content files when a package is installed. With NuGet 3.3+ and projects using `project.json`, the &lt;contentFiles&gt; element is used instead. See [Including content files](#including-content-files) below for details.
 
@@ -550,7 +550,7 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 
 #### Example contentFiles section
 
-    ```xml
+```xml
     <contentFiles>
         <!-- Embed image resources -->
         <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
@@ -568,13 +568,13 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
         <!-- Include everything in the scripts folder except exe files -->
         <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
     </contentFiles>
-    ```
+```
 
 ## Example .nuspec files
 
 **A simple .nuspec that does not specify dependencies or files**
 
-    ```xml
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
       <metadata>
@@ -587,11 +587,11 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
         <licenseUrl>http://xunit.codeplex.com/license</licenseUrl>
       </metadata>
     </package>
-    ```
+```
 
 **A .nuspec with dependencies**
 
-    ```xml
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
       <metadata>
@@ -604,11 +604,11 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
         </dependencies>
       </metadata>
     </package>
-    ```
+```
 
 **A .nuspec with files**
 
-    ```xml
+```xml
     <?xml version="1.0"?>
     <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
       <metadata>
@@ -622,11 +622,11 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
         <file src="bin\Debug\*.dll" target="lib" />
       </files>
     </package>
-    ```
+```
 
 **A .nuspec with framework assemblies**
 
-    ```xml
+```xml
     <?xml version="1.0"?>
     <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
       <metadata>
@@ -646,7 +646,7 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
         </frameworkAssemblies>
       </metadata>
     </package>
-    ```
+```
 
 In this example, the following will be installed for specific project targets:
 

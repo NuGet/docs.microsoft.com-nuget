@@ -57,7 +57,7 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
 
 1. To use a service, import it through the [MEF Import attribute](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes), or through the [IComponentModel service](http://msdn.microsoft.comlibrary/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx).
 
-        ```cs
+    ```cs
         //Using the Import attribute
         [Import(typeof(IVsPackageInstaller))]
         public IVsPackageInstaller packageInstaller;
@@ -70,13 +70,13 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
             componentModel.GetService<IVsPackageInstallerServices>();
 
         var installedPackages = installerServices.GetInstalledPackages();
-        ```
+    ```
 
 For reference, the source code for NuGet.VisualStudio is contained within the [NuGet.Clients repository](https://github.com/NuGet/NuGet.Client/tree/dev/src/NuGet.Clients/NuGet.VisualStudio).
 
 ## IRegistryKey interface
 
-    ```cs
+```cs
     /// <summary>
     /// Specifies methods for manipulating a key in the Windows registry.
     /// </summary>
@@ -103,11 +103,11 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// </summary>
         void Close();
     }
-    ```
+```
 
 ## IVsPackageInstaller interface
 
-    ```cs
+```cs
     public interface IVsPackageInstaller
     {
         /// <summary>
@@ -276,11 +276,11 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// </remarks>
         void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, bool ignoreDependencies, Project project, IDictionary<string, string> packageVersions);
     }
-    ```
+```
 
 ## IVsPackageInstallerEvents interface
 
-    ```cs
+```cs
     public interface IVsPackageInstallerEvents
     {
         /// <summary>
@@ -313,11 +313,11 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// </summary>
         event VsPackageEventHandler PackageReferenceRemoved;
     }
-    ```
+```
 
 ## IVsPackageInstallerProjectEvents interface
 
-    ```cs
+```cs
     public interface IVsPackageInstallerProjectEvents
     {
         /// <summary>
@@ -330,11 +330,11 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// </summary>
         event VsPackageProjectEventHandler BatchEnd;
     }
-    ```
+```
 
 ## IVsPackageInstallerServices interface
 
-    ```cs
+```cs
     public interface IVsPackageInstallerServices
     {
         // IMPORTANT: do NOT rearrange the methods here. The order is important to maintain
@@ -382,11 +382,11 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// <param name="project">The project to get NuGet packages from.</param>
         IEnumerable<IVsPackageMetadata> GetInstalledPackages(Project project);
     }
-    ```
+```
 
 ## IVsPackageManagerProvider interface
 
-    ```cs
+```cs
     public interface IVsPackageManagerProvider
     {
         /// <summary>
@@ -421,11 +421,11 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// <param name="projectName">Unique project name for finding the project through VS dte</param>
         void GoToPackage(string packageId, string projectName);
     }
-    ```
+```
 
 ## IVsPackageMetadata interface
 
-    ```cs
+```cs
     public interface IVsPackageMetadata
     {
         /// <summary>
@@ -475,11 +475,11 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// </remarks>
         string VersionString { get; }
     }
-    ```
+```
 
 ## IVsPackageProjectMetadata interface
 
-    ```cs
+```cs
     public interface IVsPackageProjectMetadata
     {
         /// <summary>
@@ -492,11 +492,11 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// </summary>
         string ProjectName { get; }
     }
-    ```
+```
 
 ## IVsPackageRestorer interface
 
-    ```cs
+```cs
     public interface IVsPackageRestorer
     {
         /// <summary>
@@ -512,11 +512,11 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// <param name="project">The project whose NuGet packages to restore.</param>
         void RestorePackages(Project project);
     }
-    ```
+```
 
 ## IVsPackageSourceProvider interface
 
-    ```cs
+```cs
     public interface IVsPackageSourceProvider
     {
         /// <summary>
@@ -532,11 +532,11 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// </summary>
         event EventHandler SourcesChanged;
     }
-    ```
+```
 
 ## IVsPackageUninstaller interface
 
-    ```cs
+```cs
     public interface IVsPackageUninstaller
     {
         /// <summary>
@@ -551,11 +551,11 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         /// </param>
         void UninstallPackage(Project project, string packageId, bool removeDependencies);
     }
-    ```
+```
 
 ## IVsTemplateWizard interface
 
-    ```cs
+```cs
     /// <summary>
     /// Defines the logic for a template wizard extension.
     /// </summary>
@@ -563,4 +563,4 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
     public interface IVsTemplateWizard : IWizard
     {
     }
-    ```
+```

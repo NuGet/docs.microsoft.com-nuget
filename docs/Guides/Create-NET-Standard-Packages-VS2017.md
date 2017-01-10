@@ -61,7 +61,7 @@ The require workload appears as follows in the Visual Studio installer:
 
 1. Add your code to the component, for example:
 
-        ```cs
+    ```cs
         namespace AppLogger
         {
             public class Logger
@@ -72,7 +72,7 @@ The require workload appears as follows in the Visual Studio installer:
                 }
             }
         }
-        ```
+    ```
 
 1. Build the project (with the Release configuration) and check that DLL and XML files are produced within the `bin\Release\netstandard1.4` folder.
 
@@ -82,7 +82,7 @@ With NuGet 4.0 and .NET Core projects, package metadata is contained directly in
 
 1. Right-click the project in Solution Explorer and select **Edit AppLogger.csproj**.
 
-        ```xml
+    ```xml
         <PropertyGroup>
             <TargetFramework>netstandard1.4</TargetFramework>
             <PackageId>AppLogger.YOUR_NAME</PackageId>
@@ -94,7 +94,7 @@ With NuGet 4.0 and .NET Core projects, package metadata is contained directly in
             <Copyright>Copyright 2016 (c) Contoso Corporation. All rights reserved.</Copyright>
             <PackageTags>logger logging logs</PackageTags>
         </PropertyGroup>
-        ```
+    ```
 
 1. Right-click the solution and select **Build Solution** to again generate all the files for the package, this time with the correct metadata.
 

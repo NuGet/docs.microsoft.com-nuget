@@ -79,11 +79,11 @@ To **remove a value**, use the same commands but with an empty value, such as:
 
 To create a new configuration file, copy the template below into that file and then use the `nuget config --configFile <filename>` command to set values:
 
-    ```xml
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
     </configuration>
-    ```
+```
 
 > [!Warning]
 > Although you can modify the file in any text editor, NuGet (v3.4.3 and later) silently ignores the entire configuration file if it contains malformed XML (mismatched tags, invalid quotation marks, etc.).
@@ -155,18 +155,18 @@ You then have four `NuGet.Config` files in the following locations with the give
 
 1. Global configuration file, `%APPDATA%\NuGet\Nuget.config`:
 
-        ```xml
+    ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <configuration>
           <activePackageSource>
             <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
           </activePackageSource>
         </configuration>
-        ```
+    ```
 
 1. `d:\NuGet.config`:
 
-        ```xml
+    ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <configuration>
         <config>
@@ -176,11 +176,11 @@ You then have four `NuGet.Config` files in the following locations with the give
             <add key="enabled" value="True" />
           </packageRestore>
         </configuration>
-        ```
+    ```
 
 1. `d:\Project1\NuGet.config`:
 
-        ```xml
+    ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <configuration>
           <config>
@@ -192,11 +192,11 @@ You then have four `NuGet.Config` files in the following locations with the give
             <add key="MyPrivateRepo - ES" value="https://MyPrivateRepo/ES/nuget" />
           </packageSources>
         </configuration>
-        ```
+    ```
 
 1. `d:\Project2\NuGet.config`:
 
-        ```xml
+    ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <configuration>
           <packageSources>
@@ -204,7 +204,7 @@ You then have four `NuGet.Config` files in the following locations with the give
             <add key="MyPrivateRepo - DQ" value="https://MyPrivateRepo/DQ/nuget" />
           </packageSources>
         </configuration>
-        ```
+    ```
 
 Here's how NuGet will load and apply the settings, depending on where it's invoked:
 
@@ -237,7 +237,7 @@ The defaults file works with the following settings:
 
 The following is an example NuGetDefaults.config file containing each of its allowable sections:
 
-    ```xml
+```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
         <!-- DefaultPushSource key is similar to the 'DefaultPushSource' key of NuGet.config schema-->
@@ -262,4 +262,4 @@ The following is an example NuGetDefaults.config file containing each of its all
             <add key="nuget.org" value="true" />
         </disabledPackageSources>
     </configuration>
-    ```
+```

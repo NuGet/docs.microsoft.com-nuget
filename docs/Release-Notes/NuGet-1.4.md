@@ -91,12 +91,12 @@ only work with version 2.* of a package, but not 3.0 and above. In order to prev
 For example, the following example shows how to lock the `SomePackage` package the version range 2.0 - 3.0 (exclusive).
 The `allowedVersions` attribute accepts values using the [version range format](../create-packages/dependency-versions.md#version-ranges).
 
-    ```xml
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <packages>
         <package id="SomePackage" version="2.1.0" allowedVersions="[2.0, 3.0)" />
     </packages>
-    ```
+```
 
 Note that in 1.4, locking a package to a specific version range must be hand-edited. In NuGet 1.5 we plan to add support for placing this
 range via the `Install-Package` command.
@@ -159,13 +159,13 @@ via the `NuGet.Server` NuGet package. With NuGet 1.4, the lightweight server sup
 The latest version of `NuGet.Server` adds a new `appSetting`, named `apiKey`. When the key is omitted or left blank, pushing packages
 to the feed is disabled. Setting the apiKey to a value (ideally a strong password) enables pushing packages using NuGet.exe.
 
-    ```xml
+```xml
     <appSettings>
         <!-- Set the value here to allow people to push/delete packages from the server.
              NOTE: This is a shared key (password) for all users. -->
         <add key="apiKey" value="" />
     </appSettings>
-    ```
+```
 
 ### Support for Windows Phone Tools Mango Edition
 NuGet is now supported in the release candidate version of Windows Phone Tools for Mango.

@@ -47,14 +47,14 @@ In this topic:
 
 Because `pack` and `restore` are  MSBuild targets, you can access them to enhance your workflow. For example, let’s say you want to push your package to a network share after packing it. You can do that by adding the following in your project file:
 
-    ```xml
+```xml
     <Target Name="CopyPackage" AfterTargets="Pack">
         <Copy
             SourceFiles="$(OutputPath)\$(PackageId).$(PackageVersion).nupkg"
             DestinationFolder="\\myshare\packageshare\"
             />
     </Target>
-    ```
+```
 
 Similarly, you can write an MSBuild task, write your own target and consume NuGet properties in the MSBuild task.
 
@@ -110,49 +110,49 @@ See [Package References in Project Files](../consume-packages/package-references
 
 To include content, add extra metadata to the existing &lt;Content&gt; item. By default everything of type "Content" gets included in the package unless you override with entries like the following:
 
-     ```xml
+ ```xml
      <Content Include="..\win7-x64\libuv.txt">
          <Pack>false</Pack>
      </Content>
-     ```
+ ```
 
 Everything gets added to the root of the `content` and `contentFiles` folder within a package and preserves the relative directory structure, unless you specify a package path:
 
-    ```xml
+```xml
     <Content Include="..\win7-x64\libuv.txt">
         <Pack>true</Pack>
         <PackagePath>content\myfiles</PackagePath>
     </Content>
-    ```
+```
 
 `PackagePath` can be a semicolon-delimited set of target paths. Specifying an empty package path would add the file to the root of the package. For example, the following adds libuv.txt to content\myfiles, content\samples, and the package root:
 
-    ```xml
+```xml
     <Content Include="..\win7-x64\libuv.txt">
         <Pack>true</Pack>
         <PackagePath>content\myfiles;content\sample;;</PackagePath>
     </Content>
-    ```
+```
 
 Packing of content files is also recursive. Content files from any project to project reference, which has `TreatAsPackageReference` set to `false`, are also copied in the similar manner and the same rules apply.
 
 If you wish to prevent copying of a content from another project into your nuget package, use the following form:
 
-    ```xml
+```xml
     <Content Include="..\..\project2\readme.txt">
         <Pack>false</Pack>
     </Content>
-    ```
+```
 
 Similarly, you can override the behavior in the referenced project and include a file to be packed which would have otherwise been excluded:
 
-    ```xml
+```xml
     <Content Include="..\..\project2\readme.txt">
         <Pack>true</Pack>
         <PackagePath>content\myfiles</PackagePath>
         <Visible>false</Visible>
     </Content>
-    ```
+```
 
 Setting `Visible` to `false` prevents Visual Studio from showing the file in the Solution Explorer.
 
@@ -218,24 +218,24 @@ Restore creates the following files in the build `obj` folder:
 
 `PackageTargetFallbacks` may have been set in one of Microsoft targets (we are considering), or other ones. If you'd like to add the list already provided, you can add additional values to the `PackageTargetFallback` property:
 
-    ```xml
+```xml
     <PackageTargetFallback Condition="'$(TargetFramework)'=='Net45'">
         $(PackageTargetFallback);portable-net45+win8+wpa81+wp8
     </PackageTargetFallback >
-    ```
+```
 
 ### Replacing one library from a restore graph
 
 If a restore is bringing the wrong assembly, it is possible to exclude that packages default choice, and replace it with your own choice. First with a top level `PackageReference`, exclude all assets:
 
-    ```xml
+```xml
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1">
         <ExcludeAssets>All</ExcludeAssets>
     </PackageReference>
-    ```
+```
 
 Next, add your own reference to the appropriate local copy of the DLL:
 
-    ```xml
+```xml
     <Reference Include="Newtonsoft.Json.dll" />
-    ```
+```

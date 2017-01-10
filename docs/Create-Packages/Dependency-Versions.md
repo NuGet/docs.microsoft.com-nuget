@@ -33,7 +33,7 @@ ms.reviewer:
 
 When you [create a NuGet package](../create-packages/creating-a-package.md), you can specify dependencies for your package in the **&lt;dependencies&gt;** node of the `.nuspec` file, where each dependency is listed with a **&lt;dependency&gt;** tag:
 
-    ```xml
+```xml
     <?xml version="1.0"?>
     <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
       <metadata>
@@ -45,7 +45,7 @@ When you [create a NuGet package](../create-packages/creating-a-package.md), you
         </dependencies>
       </metadata>
     </package>
-    ```
+```
 
 Dependencies are installed whenever the dependent package is installed, [reinstalled](../consume-packages/reinstalling-and-updating-packages.md), or included in a [package restore](../consume-packages/package-restore.md). NuGet chooses the exact version of the installed dependency by using the value of the `version` attribute specified for that dependency as described in the following sections.
 
@@ -80,7 +80,7 @@ NuGet supports using interval notation for specifying version ranges, summarized
 
 A few examples:
 
-    ```xml
+```xml
     <!-- Accepts any version 6.1 and above -->
     <dependency id="ExamplePackage" version="6.1" />
 
@@ -97,7 +97,7 @@ A few examples:
 
     <!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->
     <dependency id="ExamplePackage" version="[1.3.2,1.5)" />
-    ```
+```
 
 
 If no version is specified for a dependency, NuGet behaves as follows:
