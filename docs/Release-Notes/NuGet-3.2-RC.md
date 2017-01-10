@@ -3,8 +3,8 @@
 # required metadata
 
 title: NuGet 3.2 RC Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -22,7 +22,7 @@ ms.assetid: 330577fa-7965-4433-98ad-b4b4575e1452
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
