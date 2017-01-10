@@ -21,7 +21,7 @@ ms.assetid: d4a4db9b-5c2d-46aa-9107-d2b01733df7c
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -44,9 +44,6 @@ In this topic:
 ## General form and schema
 
 The current `nuspec.xsd` schema file can be found in the [NuGet GitHub repository](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Packaging/compiler/resources/nuspec.xsd).
-
-> [!NOTE]
-> On nuget.org you can find a NuGet.Manifest.Schema 2.0.4 package. However, the schema files contained within it are older versions applicable to NuGet 2.0 and earlier. The most up-to-date schema file is best obtained from the GitHub repository.
 
 Within this schema, a `.nuspec` file has the following general form:
 

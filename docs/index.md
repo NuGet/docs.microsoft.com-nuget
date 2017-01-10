@@ -1,8 +1,9 @@
+
 ---
 layout: HubPage
 
 title: NuGet Documentation | Microsoft Docs
-description: NuGet is the package manager for the Microsoft development platform including .NET. The NuGet client tools provide the ability to create and consume packages.
+description: NuGet is the package manager for Microsoft development platforms including .NET. The NuGet client tools provide the ability to create and consume packages.
 keywords:
 - "nuget"
 - "nuget manager"
@@ -24,15 +25,14 @@ ms.technology: nuget
 #ms.suite:
 ms.assetid: 49f63ee9-86a9-41de-baba-e3d66f3d5966
 ms.reviewer:  
-- karann 
-- harikm 
+- karann
 
 ---
 
 <article id="main">
     <section id="hero-content" class="graph">
         <h1>NuGet Documentation</h1>
-        <h2>Welcome to NuGet! NuGet is the package manager for the Microsoft development platforms including .NET. NuGet gives you access to thousands of packages from other developers on <a href="https://www.nuget.org/" target="_blank">nuget.org</a>, and the NuGet tools let you create, share, and host packages of your own.</h2>        
+        <h2>Welcome to NuGet! NuGet is the package manager for the Microsoft development platforms including .NET. NuGet gives you access to thousands of packages from other developers on <a href="https://www.nuget.org/" target="_blank">nuget.org</a>, and the NuGet tools let you create, share, and host packages of your own.</h2>
     </section>
     <!--aside class="alert section-border">
     <p>Checkout the latest NuGet packages on <a href="https://www.nuget.org/">nuget.org</a></p>
@@ -173,7 +173,7 @@ ms.reviewer:
                                     <h3>Visual Studio Extensibility</h3>
                                     <p>Details about the API to the NuGet Package Manager UI and Console in Visual Studio, project system support, and integrating NuGet packages into Visual Studio templates.</p>
                                 </a>
-                            </li-->
+                            </li>
                             <li class="column column-third">
                                 <a href="./policies/nuget-faq.md">
                                     <h3>Policies</h3>

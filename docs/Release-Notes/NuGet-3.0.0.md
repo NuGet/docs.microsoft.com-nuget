@@ -3,8 +3,8 @@
 # required metadata
 
 title: NuGet 3.0 Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -22,7 +22,7 @@ ms.assetid: 8ad13a67-9348-4f04-8f8b-b8f4a0b2c6df
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
