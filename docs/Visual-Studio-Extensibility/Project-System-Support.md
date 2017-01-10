@@ -129,7 +129,7 @@ For example, you might add the following `case` statement to your `IVsHierarchy:
     case __VSHPROPID8.VSHPROPID_ProjectCapabilitiesChecker:
         propVal = new VsProjectCapabilitiesPresenceChecker();
         return VSConstants.S_OK;
-````
+```
 
 
 ## DTE Support

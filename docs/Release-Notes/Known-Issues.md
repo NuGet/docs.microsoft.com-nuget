@@ -61,17 +61,19 @@ The NuGet.config file in your `%AppData%\NuGet\` folder has accidentally been em
 
 In NuGet 2.7 or above, when you attempt to install any package which contains assembly references, you may receive the error message **"Input string was not in a correct format."**, like below:
 
-    PM> install-package log4net
-     Installing 'log4net 2.0.0'.
-     Successfully installed 'log4net 2.0.0'.
-     Adding 'log4net 2.0.0' to Tyson.OperatorUpload.
-     Install failed. Rolling back...
-     install-package : Input string was not in a correct format.
-     At line:1 char:1
-    ◾install-package log4net
-    ◾ ~~~~~~~~~~~~~~~~~~~~~~~
-    ◾CategoryInfo : NotSpecified: (:) [Install-Package], FormatException
-    ◾ FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PowerShell.Commands.InstallPackageCommand
+```ps
+    install-package log4net
+      Installing 'log4net 2.0.0'.
+      Successfully installed 'log4net 2.0.0'.
+      Adding 'log4net 2.0.0' to Tyson.OperatorUpload.
+      Install failed. Rolling back...
+      install-package : Input string was not in a correct format.
+      At line:1 char:1
+          install-package log4net
+          ~~~~~~~~~~~~~~~~~~~~~~~
+         CategoryInfo : NotSpecified: (:) [Install-Package], FormatException
+         FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PowerShell.Commands.InstallPackageCommand
+```
 
 
 This is caused by the type library for the VSLangProj.dll COM component being unregistered on your system. This can happen, for example, when you have two versions of Visual Studio installed side-by-side and you then uninstall the older version. Doing so may inadvertently unregister the above COM library.

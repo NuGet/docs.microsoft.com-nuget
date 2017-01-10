@@ -34,13 +34,17 @@ There are a number of situations, described below under [When to Reinstall a Pac
 
 Being mindful of the [Considerations](#considerations) described later, you can easily reinstall any package using the following command in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
 
+```ps
     Update-Package –reinstall <package_name>
+```
 
 Using this command is much easier than removing a package and then trying to locate the same package in the NuGet gallery with the same version.
 
 The same command without `-reinstall` will update a package to a newer version, if applicable:
 
+```ps
     Update-Package <package_name>
+```
 
 Any updates are subject to version constraints indicated in `packages.config`, as described below in [Constraining upgrade versions](#constraining-upgrade-versions), but do not apply to projects using `project.json`.
 
