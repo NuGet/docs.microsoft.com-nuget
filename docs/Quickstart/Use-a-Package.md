@@ -21,7 +21,7 @@ keywords: NuGet package consume references installing
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

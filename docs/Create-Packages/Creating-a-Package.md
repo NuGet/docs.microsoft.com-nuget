@@ -21,7 +21,7 @@ keywords: Nuget package create creation reference nuspec manifest conventions id
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
