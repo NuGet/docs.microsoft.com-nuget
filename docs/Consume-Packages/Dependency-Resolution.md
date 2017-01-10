@@ -79,8 +79,9 @@ The lock file is temporary and does not need to be added to source control; it's
 
 NuGet 3.x applies four main rules to resolve dependencies: lowest applicable version, floating versions, nearest-wins, cousin dependencies.
 
-#### Lowest applicable version
 <a name="lowest-applicable-version"></a>
+
+#### Lowest applicable version
 
 NuGet 3.x restores the lowest possible version of a package as defined by its dependencies. This rule also applied to dependencies on the application or the class library unless declared as [floating](#floating-versions).
 
@@ -96,8 +97,9 @@ When an application specifies an exact version number, such as *1.2*, that is no
 
 ![NuGet generates an error when an exact package version is not available](media/projectJson-dependency-3.png)
 
-#### Floating versions
 <a name="floating-versions"></a>
+
+#### Floating versions
 
 A floating dependency version is specified with the * wildcard, as with *6.0.\** in the `project.json` file. This says "use the latest 6.0.x version"; a floating version of *4.\** means "use the latest 4.x version." Using a floating version allows a dependency package to continue evolving without requiring a change to the consuming application (or package).
 
@@ -105,9 +107,9 @@ When a floating version constraint is specified then NuGet will resolve the high
 
 ![Choosing version 6.0.1 when a floating version 6.0.* is requested](media/projectJson-dependency-4.png)
 
+<a name="nearest-wins"></a>
 
 #### Nearest wins
-<a name="nearest-wins"></a>
 
 When the package graph for an application contains different versions of the same package, the package that's closest to the application in the graph will be used and others will be ignored. This allows an application to override any particular package version in the dependency graph.
 
@@ -122,8 +124,9 @@ This rule also results in greater efficiency with large dependency graph (such a
 
 ![When NuGet ignores a package in the graph, it ignores that entire branch](media/projectJson-dependency-6.png)
 
-#### Cousin dependencies
 <a name="cousin-dependencies"></a>
+
+#### Cousin dependencies
 
 When different package versions are referred to at the same distance in the graph from the application, NuGet uses the lowest version that satisfies all version requirements (as with the [lowest applicable version](#lowest-applicable-version) and [floating versions](#floating-versions) rules). In the image below, for example, version *2.0* of Package B will satisfy the other *>=1.0* constraint, and will thus be used:
 

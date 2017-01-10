@@ -72,6 +72,7 @@ If the user's project is using `packages.config`, the MSBuild script that picks 
 
 **install.ps1 file contents**
 
+    ```ps
     param($installPath, $toolsPath, $package, $project)
 
     $analyzersPaths = Join-Path (Join-Path (Split-Path -Path $toolsPath -Parent) "analyzers" ) * -Resolve
@@ -121,10 +122,12 @@ If the user's project is using `packages.config`, the MSBuild script that picks 
             }
         }
     }
+    ```
 
 
 **uninstall.ps1 file contents**
 
+    ```ps
     param($installPath, $toolsPath, $package, $project)
 
     $analyzersPaths = Join-Path (Join-Path (Split-Path -Path $toolsPath -Parent) "analyzers" ) * -Resolve
@@ -181,3 +184,4 @@ If the user's project is using `packages.config`, the MSBuild script that picks 
             }
         }
     }
+    ```

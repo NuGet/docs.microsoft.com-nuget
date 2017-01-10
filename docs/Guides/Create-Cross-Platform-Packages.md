@@ -65,6 +65,7 @@ The resulting solution contains two PCL projects, along with a variety of platfo
 
 By default, the ILoggingLibrary.cs file of the Abstractions project contains an interface definition, but no methods. For the purposes of this walkthrough, add a `Log` method as follows:
 
+    ```cs
     using System;
 
     namespace Plugin.LoggingLibrary.Abstractions
@@ -80,6 +81,7 @@ By default, the ILoggingLibrary.cs file of the Abstractions project contains an 
             void Log(string text);
         }
     }
+    ```
 
 ## Write your platform-specific code
 
@@ -87,6 +89,7 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 
 1. Open the `LoggingLibraryImplementation.cs` file of each platform project and add the necessary code. For example (using the `Plugin.LoggingLibrary.Android` project):
 
+        ```cs
         using Plugin.LoggingLibrary.Abstractions;
         using System;
 
@@ -106,6 +109,7 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
                 }
           }
         }
+        ```
 
 1. Repeat this implementation in the projects for each platform you want to support.
 1. Right-click the iOS project, select **Properties**, click the **Build** tab, and remove "\iPhone" from the **Output path** and **XML documentation file** settings. This is just for later convenience in this walkthrough. Save the file when done.
@@ -125,6 +129,7 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 1. Rename this file to `LoggingLibrary.nuspec` and open it in an editor.
 1. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
 
+        ```xml
         <?xml version="1.0"?>
         <package >
           <metadata>
@@ -140,11 +145,13 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
             <tags>logger logging logs</tags>
           </metadata>
         </package>
+        ```
 
 ### Add reference assemblies
 
 To include platform-specific reference assemblies, add the following to the &lt;files&gt; element of `LoggingLibrary.nuspec` as appropriate for your supported platforms:
 
+    ```xml
     <!-- Insert below <metadata> element -->
     <files>
         <!-- Cross-platform reference assemblies -->
@@ -165,6 +172,7 @@ To include platform-specific reference assemblies, add the following to the &lt;
         <file src="Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.dll" target="lib\UAP10\Plugin.LoggingLibrary.dll" />
         <file src="Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.xml" target="lib\UAP10\Plugin.LoggingLibrary.xml" />
     </files>
+    ```
 
 > [!Note]
 > To shorten the names of the DLL and XML files, right-click on any given project, select the **Library** tab, and change the assembly names.
@@ -174,6 +182,7 @@ To include platform-specific reference assemblies, add the following to the &lt;
 
 If you have specific dependencies for native implementations, use the &lt;dependencies&gt; element with &lt;group&gt; elements to specify them, for example:
 
+    ```xml
     <!-- Insert within the <metadata> element -->
     <dependencies>
         <group targetFramework="MonoAndroid">
@@ -186,19 +195,23 @@ If you have specific dependencies for native implementations, use the &lt;depend
             <!--uap dependencies go here-->
         </group>
     </dependencies>
+    ```
 
 For example, the following would set iTextSharp as a dependency for the UAP target:
 
+    ```xml
     <dependencies>
         <group targetFramework="uap">
             <dependency id="iTextSharp" version="5.5.9" />
         </group>
     </dependencies>
+    ```
 
 ### Final nuspec
 
 Your final .nuspec file should now look like the following, where again YOUR_NAME should be replaced with an appropriate value:
 
+    ```xml
     <?xml version="1.0"?>
     <package >
         <metadata>
@@ -244,6 +257,7 @@ Your final .nuspec file should now look like the following, where again YOUR_NAM
             <file src="Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.xml" target="lib\UAP10\Plugin.LoggingLibrary.xml" />
         </files>
     </package>
+    ```
 
 ## Package the component
 

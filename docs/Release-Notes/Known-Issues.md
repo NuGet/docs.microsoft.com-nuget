@@ -214,7 +214,7 @@ but some files were left behind. To work around this issue:
 1. Exit Visual Studio
 2. Open the following folder (it might be on a different drive on your machine)
 
-    <pre>C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft Corporation\NuGet Package Manager\&lt;version&gt;\</pre>
+    C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft Corporation\NuGet Package Manager\<version>\
 
 3. Delete all the files with the *.deleteme* extensions.
 4. Re-open Visual Studio
