@@ -56,6 +56,7 @@ In the console, [`Get-Package -ListAvailable`](../tools/powershell-reference.md#
 
 Examples:
 
+    ```ps
     # All versions of NuGet
     Get-Package -ListAvailable -Filter elmah
     Get-Package -ListAvailable -Filter Logging
@@ -73,7 +74,7 @@ Examples:
 
     # List all versions of the package with the ID of "jquery"
     Find-Package jquery -AllVersions -ExactMatch
-
+    ```
 
 ## Installing a package
 

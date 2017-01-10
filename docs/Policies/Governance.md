@@ -55,7 +55,6 @@ Typically, a committer focuses on a specific aspect of the project, and brings a
 
 Committers have no authority where the overall direction of NuGet is concerned. However, they do have the ear of the project lead. It is a committer’s job to ensure that the lead is aware of the community’s needs and collective objectives, and to help develop or elicit appropriate contributions to the project. Often, committers are given informal control over their specific areas of responsibility, and are assigned rights to directly modify certain areas of the source code. That is, although committers do not have explicit decision-making authority, they will often find that their actions are synonymous with the decisions made by the lead.
 
-
 ### Contributors
 
 Contributors are community members who submit patches to NuGet. These patches may be a one-time occurrence or occur over time. Expectations are that contributors submit patches that are small at first and grow larger when the contributor, committers, and the project lead have built confidence in the quality of a contributor's patches. Contributors are recognized in the associated product release notes document.

@@ -45,7 +45,9 @@ Selecting this option will launch the standard NuGet package manager search expe
 ## Specify Entire Folder for Package Contents
 NuGet 2.2 now allows you to specify an entire directory in the `<file>` element of the .nuspec file to include all of the contents of that directory. For example, the following will cause all scripts in the package's scripts folder to be added to the contents\scripts folder when the package is installed into a project.
 
-**`<file src="scripts\" target="content\scripts"/>`**
+    ```xml
+    <file src="scripts\" target="content\scripts"/>
+    ```
 
 **Update 6/24/16: Empty folders in the "content" folder are ignored when installing the package.**
 

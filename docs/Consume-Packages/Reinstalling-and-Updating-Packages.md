@@ -83,11 +83,13 @@ In projects using `packages.config`, the same behavior applies unless you specif
 
 To set a constraint, open `packages.config` in a text editor, locate the dependency in question, and add the `allowedVersions` attribute with a version range. For example, to constrain updates to version 1.x, set `allowedVersions` to `[1,2)`:
 
+    ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <packages>
         <package id="ExamplePackage" version="1.1.0" allowedVersions="[1,2)" />
 
         <!-- ... -->
     </packages>
+    ```
 
 In all cases, use the notation described in [Dependency versions](../create-packages/dependency-versions.md).

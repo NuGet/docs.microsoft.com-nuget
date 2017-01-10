@@ -400,12 +400,14 @@ that have the `developmentDependency` attribute set to `true`. These entries wil
 
 For example, consider the following `packages.config` file in the source project:
 
+    ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <packages>
         <package id="jQuery" version="1.5.2" />
         <package id="netfx-Guard" version="1.3.3.2" developmentDependency="true" />
         <package id="microsoft-web-helpers" version="1.15" />
     </packages>
+    ```
 
 For this project, the package created by `nuget pack` will have a dependency on `jQuery` and `microsoft-web-helpers` but not `netfx-Guard`.
 

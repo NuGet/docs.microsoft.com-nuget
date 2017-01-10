@@ -52,9 +52,9 @@ You can also search using the package ID, if you know it. See [Search Syntax](#s
 
 At this time, search results are sorted only by relevance, so you generally want to look through at least the first few pages of results for packages that suit your needs, or refine your search terms to be more specific.
 
+<a name="native-c++-packages"></a>
 
 ### Native C++ packages
-<a name="native-c++-packages"></a>
 
 NuGet 2.5+ supports native C++ packages can that can be used in C++ projects in Visual Studio. This enables the **Manage NuGet Packages** context-menu command for projects, introduces a `native` target framework, and provides MSBuild integration.
 

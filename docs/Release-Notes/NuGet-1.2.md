@@ -57,8 +57,9 @@ redirects to be added to the configuration file in order for the project to comp
 3 of David Ebbo’s blog post series on NuGet Versioning entitled “[Unification via Binding Redirects](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)”
 covers the purpose of this feature in more details.
 
-### Specifying Framework Assembly References (GAC)
 <a name="framework-assembly-refs"></a>
+
+### Specifying Framework Assembly References (GAC)
 
 In some cases, a package may depend on an assembly that’s in the .NET Framework. Strictly speaking, it’s not always
 necessary that the consumer of your package reference the framework assembly. But in some cases, it is important,
@@ -74,10 +75,12 @@ Framework. The following table lists attributes of the `frameworkAssembly` eleme
 |**assemblyName**|*Required*. Name of the assembly such as `System.Net`.|
 |**targetFramework**|*Optional*. Allows specifying a framework and profile name (or alias) that this framework assembly applies to such as "net40" or "sl4". Uses the same format described in [Supporting Multiple Target Frameworks](../create-packages/supporting-multiple-target-frameworks.md).|
 
+    ```xml
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="net40" />
       <frameworkAssembly assemblyName="System.ServiceModel" targetFramework="net40" />
     </frameworkAssemblies>
+    ```
 
 ### NuGet.exe now is able to store API Key credentials
 

@@ -119,9 +119,10 @@ When checked, a modal window displays which dependent packages will be loaded wi
 
 ![Example Preview Dialog](media/InstallPreviewDialog.png)
 
-### Install and Update Options
 <!-- This is here because the link in the UI needs this anchor. See https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Clients/PackageManagement.UI/Xamls/OptionsControl.xaml -->
 <a name="install-options"></a>
+
+### Install and Update Options
 
 **Dependency behavior** configures how NuGet decide which versions of dependent packages to installed:
 
@@ -137,10 +138,10 @@ When checked, a modal window displays which dependent packages will be loaded wi
 - *Ignore All* instructs NuGet to skip overwriting any existing packages.
 - *Overwrite All* instructs NuGet to overwrite any existing packages.
 
-### Uninstall Options
 <!-- This is here because the link in the UI needs this anchor. See https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Clients/PackageManagement.UI/Xamls/OptionsControl.xaml -->
 <a name="uninstall-options"></a>
 
+### Uninstall Options
 
 **Remove dependencies**: when checked, removes any dependent packages if they are not referenced elsewhere in the project.
 
