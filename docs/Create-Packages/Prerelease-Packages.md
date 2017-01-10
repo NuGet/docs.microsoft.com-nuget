@@ -42,15 +42,15 @@ You can specify such versions in two ways:
 
 - `.nuspec` file: include the semantic version suffix in the `version` element:
 
-        ```xml
+    ```xml
         <version>1.0.1-alpha</version>
-        ```
+    ```
 
 - Assembly attributes: when building a package from a Visual Studio project (`.csproj` or `.vbproj`), use the `AssemblyInformationalVersionAttribute` to specify the version:
 
-        ```cs
+    ```cs
         [assembly: AssemblyInformationalVersion("1.0.1-beta")]
-        ```
+    ```
 
     NuGet will pick up this value instead of the one specified in the `AssemblyVersion` attribute, which does not support SemVer.
 

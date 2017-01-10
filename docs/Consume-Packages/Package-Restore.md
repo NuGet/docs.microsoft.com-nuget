@@ -60,7 +60,7 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
 
 - **Allow NuGet to download missing packages** enables all forms of package restore by changing the `packageRestore/enabled` setting in the `%AppData%\NuGet\NuGet.config` file as shown below. (For NuGet 2.6 or earlier, this setting can also be used in a project-specific `.nuget\nuget.config` file.)
 
-        ```xml
+    ```xml
         ...
         <configuration>
           <packageRestore>
@@ -68,7 +68,7 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
             <add key="enabled" value="False" />
           </packageRestore>
         </configuration>
-        ```
+    ```
 
 
 > [!Note]
@@ -77,7 +77,7 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
 
 - **Automatically check for missing packages during build in Visual Studio** enables automatic restore for NuGet 2.7 and later by changing the `packageRestore/automatic` setting in the `%AppData%\NuGet\NuGet.config` file as shown below.
             
-        ```xml
+    ```xml
         ...
         <configuration>
           <packageRestore>
@@ -85,7 +85,7 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
             <add key="automatic" value="False" />
           </packageRestore>
         </configuration>
-        ```
+    ```
 
 For reference, see the [NuGet config file - packageRestore section](../schema/nuget.config-file.md#packagerestore-section).
 
@@ -99,15 +99,15 @@ When NuGet restores packages through any method, it will honor any constraints s
 
 - `packages.config`: Specify a version range in the `allowedVersion` property of the dependency. See [Reinstalling and Updating Packages](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions). For example:
 
-        ```xml
+    ```xml
         <package id="Newtonsoft.json" version="6.0.4" allowedVersions="[6,7)" />
-        ```
+    ```
 
 - `project.json`: Specify a version range directly with the dependency's version number. For example:
 
-        ```json
+    ```json
         "newtonsoft.json": "[6, 7)"
-        ```
+    ```
 
 In both cases, use the notation described in [Dependency versions](../create-packages/dependency-versions.md).
 
@@ -193,7 +193,7 @@ The process is as follows:
     a. Remove the `.nuget` folder from the solution and the solution workspace.
 1. Edit each project file in the solution, remove the `&lt;RestorePackages&gt;` element, and remove any references to the `nuget.targets` file. Those settings generally appear as follows:
 
-        ```xml
+    ```xml
         <RestorePackages>true</RestorePackages>
         ...
         <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
@@ -204,7 +204,7 @@ The process is as follows:
             </PropertyGroup>
             <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
         </Target>
-        ```
+    ```
 
 > [!Tip]    
 > Owen Johnson has created a [PowerShell migration script](https://github.com/owen2/AutomaticPackageRestoreMigrationScript) that can work in many cases, but is used at your own risk. Be sure to commit your project to source control or make a backup before using it.</div>

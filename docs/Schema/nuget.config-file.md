@@ -74,14 +74,14 @@ http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use 
 
 **Example**:
 
-      ```xml
+  ```xml
       <config>
         <add key="dependencyVersion" value="Highest" />
         <add key="globalPackagesFolder" value="c:\packages" />
         <add key="repositoryPath" value="c:\repo" />
         <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
       </config>
-      ```
+  ```
 
 
 ## bindingRedirects section
@@ -93,11 +93,11 @@ skip | A Boolean indicating whether to skip automatic binding redirects. The def
 
 **Example**:
 
-    ```xml
+```xml
     <bindingRedirects>
         <add key="skip" value="True" />
     </bindingRedirects>
-    ```
+```
 
 ## packageRestore section
 
@@ -112,12 +112,12 @@ automatic | A Boolean indicating whether NuGet should check for missing packages
 
 **Example**:
 
-    ```xml
+```xml
     <packageRestore>
       <add key="enabled" value="true" />
       <add key="automatic" value="true" />
     </packageRestore>
-    ```
+```
 
 ## solution section
 
@@ -130,11 +130,11 @@ disableSourceControlIntegration | A Boolean indicating whether to ignore the pac
 
 **Example**:
 
-    ```xml
+```xml
     <solution>
       <add key="disableSourceControlIntegration" value="true" />
     </solution>
-    ```
+```
 
 
 ## Package source sections
@@ -153,13 +153,13 @@ Key | Value
 
 **Example**:
 
-    ```xml
+```xml
     <packageSources>
         <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
         <add key="Contoso Package Source" value="https://contoso.com/packages/" />
         <add key="Test source" value="c:\packages" />
     </packageSources>
-    ```
+```
 
 
 ### packageSourceCredentials
@@ -176,25 +176,25 @@ cleartextpassword | The unencrypted password for the source.
 
 In the config file, the &lt;packageSourceCredentials&gt; element will contain child nodes for each applicable source name. That is, for a source named "Contoso", the config file will contain the following when using an encrypted password:
 
-    ```xml
+```xml
     <packageSourceCredentials>
       <Contoso>
         <add key="Username" value="user@contoso.com" />
         <add key="Password" value="..." />
       </Contoro>
     </packageSourceCredentials>
-    ```
+```
 
 When using an unencrypted password:
 
-    ```xml
+```xml
     <packageSourceCredentials>
       <Contoso>
         <add key="Username" value="user@contoso.com" />
         <add key="ClearTextPassword" value="33f!!lloppa" />
       </Contoso>
     </packageSourceCredentials>
-    ```
+```
 
 ### apikeys
 
@@ -206,11 +206,11 @@ Key | Value
 
 **Example**:
 
-      ```xml
+  ```xml
       <apikeys>
         <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
       </apikeys>
-      ```
+  ```
 
 
 ### disabledPackageSources
@@ -225,14 +225,14 @@ Key | Value
 
 **Example:**
 
-    ```xml
+```xml
     <disabledPackageSources>
         <add key="Contoso Package Source" value="true" />
     </disabledPackageSources>
 
     <!-- Empty list -->
     <disabledPackageSources />
-    ```
+```
 
 ### activePackageSource
 
@@ -246,7 +246,7 @@ Key | Value
 
 **Example**:
 
-    ```xml
+```xml
     <activePackageSource>
         <!-- Only one active source-->
         <add key="nuget.org" value="https://nuget.org/api/v2/" />
@@ -254,14 +254,14 @@ Key | Value
         <!-- All non-disabled sources are active -->
         <add key="All" value="(Aggregate source)" />
     </activePackageSource>
-    ```xml
+```xml
 
 
 ## Example config file
 
 Below is an example `NuGet.Config` file that illustrates a number of settings:
 
-    ```xml
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
       <config>
@@ -320,4 +320,4 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
         <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
       </apikeys>
     </configuration>
-    ```
+```

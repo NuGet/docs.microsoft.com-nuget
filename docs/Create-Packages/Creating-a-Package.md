@@ -70,7 +70,7 @@ A .nuspec is an XML manifest file that describes a package's contents and drives
 
 Here's typical (but fictitious) `.nuspec` file, with annotation comments:
 
-    ```xml
+```xml
     <?xml version="1.0"?>
     <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
       <metadata>
@@ -122,7 +122,7 @@ Here's typical (but fictitious) `.nuspec` file, with annotation comments:
         <file src="readme.txt" target="" />
       </files>
     </package>
-    ```
+```
 
 For details on declaring dependencies and specifying version numbers, see [Dependencies](../create-packages/dependency-versions.md).
 
@@ -161,9 +161,9 @@ This creates a template `<project_name>.nuspec` file as usual, but includes toke
 
 For example, the &lt;id&gt; value will typically appear as follows:
 
-    ```xml
+```xml
     <id>$id$</id>
-    ```
+```
 
 and will be replaced with the `AssemblyName` value from the project file. For the exact mapping of project values to `.nuspec` tokens, see the [Replacement Tokens reference](../schema/nuspec.md#replacement-tokens).
 
@@ -242,7 +242,7 @@ Package types are set either in the `.nuspec` file or in `project.json`. In both
 
 - `.nuspec`: Indicate the package type within a `packageTypes\packageType` node under the `<metadata>` element:
 
-        ```xml
+    ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
           <metadata>
@@ -252,24 +252,24 @@ Package types are set either in the `.nuspec` file or in `project.json`. In both
             </packageTypes>
           </metadata>
         </package>
-        ```
+    ```
 
 - `project.json`: Indicate the package type within a `packOptions.packageType` property json:
 
-        ```json
+    ```json
         {
           // ...
           "packOptions": {
             "packageType": "DotnetCliTool"
           }
         }
-        ```
+    ```
 
 ## Adding a readme and other files
 
 To directly specify files to include in the package, use the **&lt;files&gt;** node in the `.nuspec` file, which *follows* the &lt;metadata&gt; tag:
 
-    ```xml
+```xml
     <?xml version="1.0"?>
     <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
       <metadata>
@@ -283,7 +283,7 @@ To directly specify files to include in the package, use the **&lt;files&gt;** n
         <file src="..\..\SomeRoot\**\*.*" target="" />
       </files>
     </package>
-    ```
+```
 
 When you include a file named `readme.txt` in the package, the contents of that file will be displayed in Visual Studio as plain text immediately after the package is installed directly (but not when when the package is installed as a dependency). For example, here's how the readme for the HtmlAgilityPack package appears:
 
@@ -308,7 +308,7 @@ Files in the root `\build` folder are considered suitable for all target framewo
 
 Then in the `.nuspec` file, be sure to refer to these files in the &lt;files&gt; node:
 
-    ```xml
+```xml
     <?xml version="1.0"?>
     <package >
       <metadata>
@@ -322,7 +322,7 @@ Then in the `.nuspec` file, be sure to refer to these files in the &lt;files&gt;
         <!-- ... -->
       </files>
     </package>
-    ```
+```
 
 When NuGet 2.x installs a package with `\build` files, it will add an MSBuild &lt;Import&gt; elements in the project file pointing to the `.targets` and `.props` files. (`.props` is added at the top of the project file; `.targets` is added at the bottom.)
 
