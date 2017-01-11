@@ -111,6 +111,7 @@ You might be using a dependency purely as a development harness and might not wa
 The following metadata tags control dependency assets:
 
 Tag | Description | Default Value
+--- | --- | ---
 IncludeAssets | These assets will be consumed | all
 ExcludeAssetsTag | These assets will not be consumed | none
 PrivateAssets | These assets will be consumed but won't flow to the parent project | contentfiles;analyzers;build
@@ -119,6 +120,7 @@ PrivateAssets | These assets will be consumed but won't flow to the parent proje
 Allowable values for these tags are as follows, with multiple values separated by a semicolon except with `all` and `none` which must appear by themselves:
 
 Value | Description
+--- | ---
 compile | Contents of the `lib` folder
 runtime | Contents of the `runtime` folder
 contentFiles | Contents of the `contentfiles` folder
