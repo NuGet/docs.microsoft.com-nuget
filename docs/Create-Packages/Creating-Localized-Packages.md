@@ -21,7 +21,7 @@ ms.assetid: 824c3f45-c6c2-4c82-9d6d-62a19bfdc4a4
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -75,6 +75,7 @@ You can see that the languages are all listed underneath the `net40` target fram
 
 With these folders in place, you'll then reference all the files in your `.nuspec`:
 
+```xml
     <?xml version="1.0"?>
     <package>
       <metadata>...
@@ -83,6 +84,7 @@ With these folders in place, you'll then reference all the files in your `.nuspe
         <file src="lib\**" target="lib" />
       </files>
     </package>
+```
 
 One example package that uses this approach is [Microsoft.Data.OData 5.4.0](http://nuget.org/packages/Microsoft.Data.OData/5.4.0).
 

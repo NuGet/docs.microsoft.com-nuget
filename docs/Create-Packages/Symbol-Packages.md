@@ -21,7 +21,7 @@ ms.assetid: 4667a70d-5a17-4f1e-b2f2-b8d0c6af3882
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -96,6 +96,7 @@ Apart from the `lib` folder, a symbol package would need to contain this layout:
 
 A symbol package can be built by conventions, from a folder structure as described in the previous section, or by specifying its contents in the `files` section of the manifest. For example, to build the package shown in the previous section, use the following in the `.nuspec` file:
 
+```xml
     <files>
       <file src="Full\bin\Debug\*.dll" target="lib\net40" />
       <file src="Full\bin\Debug\*.pdb" target="lib\net40" />
@@ -103,6 +104,7 @@ A symbol package can be built by conventions, from a folder structure as describ
       <file src="Silverlight\bin\Debug\*.pdb" target="lib\sl40" />
       <file src="**\*.cs" target="src" />
     </files>
+```
 
 ## Publishing a symbol package
 

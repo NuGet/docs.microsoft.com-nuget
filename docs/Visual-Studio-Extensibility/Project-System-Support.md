@@ -21,7 +21,7 @@ ms.assetid: 9d7fa7f6-82ed-4df6-9734-f43a3d8e3b98
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -55,6 +55,7 @@ For CPS-based project systems, the implementation details for project capabiliti
 
 The `VsProjectCapabilitiesPresenceChecker` class must implement the `IVsBooleanSymbolPresenceChecker` interface, which is defined as follows:
 
+```cs
     public interface IVsBooleanSymbolPresenceChecker
     {
         /// <summary>
@@ -82,10 +83,12 @@ The `VsProjectCapabilitiesPresenceChecker` class must implement the `IVsBooleanS
         /// <returns><c>true</c> if the symbol is present; <c>false</c> otherwise.</returns>
         bool IsSymbolPresent(string symbol);
     }
+```
 
 
 A sample implementation of this interface would then be:
-
+    
+```cs
     class VsProjectCapabilitiesPresenceChecker : IVsBooleanSymbolPresenceChecker
     {
         /// <summary>
@@ -111,6 +114,7 @@ A sample implementation of this interface would then be:
             return ActualProjectCapabilities.Contains(symbol);
         }
     }
+```
 
 Remember to add/remove capabilities from the `ActualProjectCapabilities` set based on what your project system actually supports. See the [project capabilities documentation](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/project_capabilities.md) for full descriptions.
 
@@ -121,9 +125,11 @@ A project declares this capability by supporting the  `VSHPROPID_ProjectCapabili
 
 For example, you might add the following `case` statement to your `IVsHierarchy::GetProperty` method's `switch` statement:
 
+```cs
     case __VSHPROPID8.VSHPROPID_ProjectCapabilitiesChecker:
         propVal = new VsProjectCapabilitiesPresenceChecker();
         return VSConstants.S_OK;
+```
 
 
 ## DTE Support

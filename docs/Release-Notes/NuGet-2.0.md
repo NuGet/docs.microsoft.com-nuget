@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 2.0 Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: 51c7e94f-0084-4c62-bfba-7dfd81675361
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -53,6 +53,7 @@ As described in this [post on package restore consent](http://blog.nuget.org/201
 
 Starting with version 2.0, package dependencies can vary based on the framework profile of the target project. This is accomplished using an updated .nuspec schema. The `<dependencies>` element can now contain a set of `<group>` elements. Each group contains zero or more `<dependency>` elements and a `targetFramework` attribute. All dependencies inside a group are installed together if the target framework is compatible with the target project framework profile. For example:
 
+```xml
     <dependencies>
        <group>
           <dependency id="RouteMagic" version="1.1.0" />
@@ -66,6 +67,7 @@ Starting with version 2.0, package dependencies can vary based on the framework 
        <group targetFramework="sl30">
        </group>
     </dependencies>
+```
 
 Note that a group can contain **zero** dependencies. In the example above, if the package is installed into a project that targets Silverlight 3.0 or later, no dependencies will be installed. If the package is installed into a project that targets .NET 4.0 or later, two dependencies, jQuery and WebActivator, will be installed.  If the package is installed into a project that targets an early version of these 2 frameworks, or any other framework, RouteMagic 1.1.0 will be installed. There is no inheritance between groups. If a project's target framework matches the `targetFramework` attribute of a group, only the dependencies within that group will be installed.
 
@@ -73,6 +75,7 @@ A package can specify package dependencies in either of two formats: the old for
 
 Note that mixing the two formats is not allowed. For example, the following snippet is **invalid** and will be rejected by NuGet.
 
+```xml
     <dependencies>
        <dependency id="jQuery" />
        <dependency id="WebActivator" />
@@ -81,6 +84,7 @@ Note that mixing the two formats is not allowed. For example, the following snip
           <dependency id="RouteMagic" version="1.1.0" />
        </group>
     </dependencies>
+```
 
 ## Grouping content files and PowerShell scripts by target framework
 

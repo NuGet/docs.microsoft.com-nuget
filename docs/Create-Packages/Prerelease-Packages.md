@@ -21,7 +21,7 @@ ms.assetid: df6a366a-22c1-47bb-8017-18231311ce88
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -42,11 +42,15 @@ You can specify such versions in two ways:
 
 - `.nuspec` file: include the semantic version suffix in the `version` element:
 
+    ```xml
         <version>1.0.1-alpha</version>
+    ```
 
 - Assembly attributes: when building a package from a Visual Studio project (`.csproj` or `.vbproj`), use the `AssemblyInformationalVersionAttribute` to specify the version:
 
+    ```cs
         [assembly: AssemblyInformationalVersion("1.0.1-beta")]
+    ```
 
     NuGet will pick up this value instead of the one specified in the `AssemblyVersion` attribute, which does not support SemVer.
 

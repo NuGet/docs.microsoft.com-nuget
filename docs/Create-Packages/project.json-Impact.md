@@ -21,7 +21,7 @@ ms.assetid: 983485df-9375-4827-b58b-70065320ee37
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -31,9 +31,6 @@ ms.reviewer:
 # project.json Impact on Package Authors
 
 The project.json system used in NuGet 3.x affects package authors in several ways as described in the following sections.
-
-- [Install and uninstall scripts are ignored](#install-and-uninstall-scripts-are-ignored)
-
 
 ## Changes affecting existing packages usage
 

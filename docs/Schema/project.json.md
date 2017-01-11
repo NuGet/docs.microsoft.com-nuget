@@ -21,7 +21,7 @@ ms.assetid: d64fa6d8-a3f7-4c72-95d3-1a964375ccb8
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -41,6 +41,7 @@ The [`project.lock.json`](#projectlockjson) file (described below) is also used 
 
 A project.json file has the following basic structure, where each of the four top-level objects can have any number of child objects:
 
+```json
     {
         "dependencies": {
             "PackageID" : "{version_constraint}"
@@ -55,19 +56,24 @@ A project.json file has the following basic structure, where each of the four to
             "CompatibilityProfile" : {}
         }  
     }
+```
  
 ## Dependencies
 
 Lists the nuget package dependencies of your project in the form of:
 
+```json
     "PackageID" : "version_constraint"
+```
   
 For example:
 
+```json
     "dependencies": {   
        "Microsoft.NETCore": "5.0.0",
        "System.Runtime.Serialization.Primitives": "4.0.10"   
     }
+```
 
 The dependencies section is where the NuGet Package Manager dialog will add package dependencies to your project.
 
@@ -81,9 +87,11 @@ See [dependency resolution document](../consume-packages/dependency-resolution.m
 
 This lists the frameworks that your project will run on. E.g. net45, netcoreapp, netstandard.
 
+```json
     "frameworks": {
         "netcore50": {}
      }
+ ```
 
 Unlike the project.json used by ASP.NET Core a project.json that is being used with other project types can only have a single entry in the frameworks section. This is because the build system, MSBuild, only ever builds for a single target in contrast to DNX where the build is run once for each of the targets.
 
@@ -93,6 +101,7 @@ The Operating System and Architectures that your application will be running on.
 
 If you are a portable class library that can run on any runtime, you don't need to specify a runtime. Of course any dependencies of your package have to run on any runtime as well.
 
+```json
     "runtimes": {
         "win10-arm": { },
         "win10-arm-aot": { },
@@ -101,6 +110,7 @@ If you are a portable class library that can run on any runtime, you don't need 
         "win10-x64": { },
         "win10-x64-aot": { }
     }
+```
 
 
 ## Supports
@@ -109,19 +119,22 @@ Defines a set of checks for package dependencies. You can define where you expec
 
 This section should be populated automatically when you select an entry in the Portable Class Library targets dialog.
 
+```json
     supports": {
         "net46.app": {},
         "uwp.10.0.app": {}
     }
+```
 
 ## Imports
 
 Imports are designed to allow packages that use the dotnet TxM to operate with packages that don't declare a dotnet TxM. If your project is using the dotnet TxM then all the packages you depend on must also have a dotnet TxM, unless you add the following to your project.json in order to allow non dotnet platforms to be compatible with dotnet. If you are using the dotnet TxM then the PCL project system will add the appropriate imports statement based on the supported targets.
 
+```json
     "frameworks": {
         "dotnet": { "imports" : "portable-net45+win81" }
     }
-
+```
 
 
 ## Differences from Portable Apps and Web Projects

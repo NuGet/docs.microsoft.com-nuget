@@ -21,7 +21,7 @@ ms.assetid: cd08b869-44c6-480e-90f7-494a6d08e6d0
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -46,8 +46,9 @@ Command | Description | NuGet Version
 
 For detailed help on any of these commands within the console, just run the following with the command name in question:
 
+```ps
     Get-Help <command>
-
+```
 
 Note that all Package Manager Console commands support the following common PowerShell parameters:
 
@@ -73,7 +74,9 @@ Examines all assemblies within the output path for a project and adds binding re
 
 ### Usage
 
+```ps
     Add-BindingRedirect [-ProjectName <string>]
+```
 
 
 ### Parameters
@@ -84,7 +87,9 @@ ProjectName | Specifies the project to which to add binding redirects, defaultin
 
 ### Examples
 
+```ps
     Add-BindingRedirect MyProjectName
+```
 
 
 ## Find-Package
@@ -95,7 +100,9 @@ Searches a package source using a package ID or keywords.
 
 ### Usage
 
-        Find-Package [<keywords>] [-Source <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease] [-ExactMatch]
+```ps
+    Find-Package [<keywords>] [-Source <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease] [-ExactMatch]
+```
 
 ### Parameters
 
@@ -111,6 +118,7 @@ ExactMatch | Specified to use the keywords as a case-sensitive package ID.
 
 ### Examples
 
+```ps
     # List packages with the keyword Elmah available
     Find-Package Elmah
 
@@ -119,7 +127,7 @@ ExactMatch | Specified to use the keywords as a case-sensitive package ID.
 
     # List packages with the keyword EntityFramework and version 6.1.1
     Find-Package EntityFramework -version 6.1.1
-
+```
 
 ## Get-Package
 
@@ -127,7 +135,9 @@ Retrieves the list of packages installed in the local repository, or lists packa
 
 ### Usage
 
+```ps
     Get-Package [-Source <string>] [-ListAvailable] [-Updates] [-ProjectName <string>] [-Filter <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease] [-PageSize <int>]
+```
 
 With no parameters, `Get-Package` displays the list of packages installed in the default project.
 
@@ -148,6 +158,7 @@ PageSize | *(3.0+)* When used with -ListAvailable, specifies the number of packa
 
 ### Examples
 
+```ps
     # Lists the packages installed in the current solution
     Get-Package
 
@@ -162,7 +173,7 @@ PageSize | *(3.0+)* When used with -ListAvailable, specifies the number of packa
 
     # Lists packages installed in the solution that have available updates
     Get-Package -Updates
-
+```
 
 ## Get-Project
 
@@ -170,7 +181,9 @@ Displays information about the default or specified project.
 
 ### Usage
 
+```ps
     Get-Project [-Name <string>] [-All]
+```
 
 ### Parameters
 
@@ -181,6 +194,7 @@ All | Displays information for every project in the solution.
 
 ### Examples
 
+```ps
     # Displays information for the default project
     Get-Project
 
@@ -189,6 +203,7 @@ All | Displays information for every project in the solution.
 
      # Displays information for all projects in the solution
     Get-Project -All
+```
 
 
 ## Install-Package
@@ -197,11 +212,15 @@ Installs a package and its dependencies into the project.
 
 ### Usage
 
+```ps
     Install-Package [-Id] <string> [-Version <string>] [-IgnoreDependencies] [-ProjectName <string>]  [-Source <string>] [-IncludePrerelease] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
+```
 
 In NuGet 2.8+, `Install-Package` can downgrade an existing package in your project. For example, if you have Microsoft.AspNet.MVC 5.1.0-rc1 installed, the following command would downgrade it to 5.0.0:
 
+```ps
     Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
+```
 
 NuGet 2.7 and earlier will give an error saying that a newer version is already installed.
   
@@ -226,6 +245,7 @@ WhatIf | Shows what would happen when running the command without actually perfo
 
 ### Examples
 
+```ps
     Install-package https://raw.githubusercontent.com/json-ld.net/master/src/JsonLD/packages.config
 
     Install-package c:\temp\packages.config
@@ -242,6 +262,7 @@ WhatIf | Shows what would happen when running the command without actually perfo
 
     # Installs Ninject.Mvc3 but not its dependencies from c:\temp\packages
     Install-Package Ninject.Mvc3 -IgnoreDependencies -Source c:\temp\packages
+```
 
 
 ## Open-PackagePage
@@ -252,7 +273,9 @@ Launches the default browser with the project, license, or report abuse URL for 
 
 ### Usage
 
+```ps
     Open-PackagePage [-Id] <string> [-Version <string>] [-Source <string>] [-License <string>] [-ReportAbuse] [-PassThru]
+```
 
 ### Parameters
 
@@ -267,6 +290,7 @@ PassThru | Displays the selected URL but does not open it in the browser.
 
 ### Examples
 
+```ps
     # Opens a browser with the Ninject's package's project page
     Open-PackagePage Ninject
 
@@ -278,6 +302,7 @@ PassThru | Displays the selected URL but does not open it in the browser.
 
     # Assigns the license URL to the variable, $url, without launching the browser
     $url = Open-PackagePage Ninject -License -WhatIf -PassThru
+```
 
 
 ## Sync-Package
@@ -288,7 +313,9 @@ Get the version of installed package from specified project and syncs the versio
 
 ### Usage
 
+```ps
     Sync-Package [-Id] <string> [-Version <string>] [-IgnoreDependencies] [-ProjectName <string>] [-Source <string>] [-IncludePrerelease] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
+```
 
 ### Parameters
 
@@ -310,6 +337,7 @@ WhatIf | Shows what would happen when running the command without actually perfo
 
 ### Examples
 
+```ps
     # Syncs the Ninject package installed in the default project into the other projects in the solution
     Sync-Package Ninject
 
@@ -318,6 +346,7 @@ WhatIf | Shows what would happen when running the command without actually perfo
 
     # Syncs jQuery.Validation and installs the highest version of jQuery (a dependency) from the package source    
     Sync-Package jQuery.Validation -DependencyVersion highest
+```
 
 
 ## Uninstall-Package
@@ -326,7 +355,9 @@ Removes a package from a project, optionally removing its dependencies.
 
 ### Usage
 
+```ps
     Uninstall-Package [-Id] <string> [-Version <string>] [-RemoveDependencies] [-ProjectName <string>] [-Force] [-WhatIf]
+```
 
 If other packages depend on this package, the command will fail unless the –Force option is specified.
 
@@ -344,6 +375,7 @@ WhatIf | Shows what would happen when running the command without actually perfo
 
 ### Examples
 
+```ps
     # Uninstalls the Elmah package from the default project
     Uninstall-Package Elmah
 
@@ -352,6 +384,7 @@ WhatIf | Shows what would happen when running the command without actually perfo
 
     # Uninstalls the Elmah package even if another package depends on it.
     Uninstall-Package Elmah -Force
+```
 
 
 ## Update-Package
@@ -360,11 +393,15 @@ Updates a package and its dependencies, or all packages in a project.
 
 ### Usage
 
+```ps
     Update-Package [-Id <string>] [-Source <string>] [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Safe] [-IncludePrerelease] [-Reinstall] [-FileConflictAction] [-DependencyVersion] [-WhatIf]
+```
 
 In NuGet 2.8+, `Update-Package` can be used to downgrade an existing package in your project. For example, if you have Microsoft.AspNet.MVC 5.1.0-rc1 installed, the following command would downgrade it to 5.0.0:
 
+```ps
     Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
+```
 
 NuGet 2.7 and earlier will give an error saying that a newer version is already installed.
 
@@ -392,6 +429,7 @@ WhatIf | Shows what would happen when running the command without actually perfo
 
 ### Examples
 
+```ps
     # Updates all packages in every project.
     Update-Package
 
@@ -409,3 +447,5 @@ WhatIf | Shows what would happen when running the command without actually perfo
 
     # Updates Elmah to the highest "safe" version. For example, if Elmah version 1.0.0 of a package is installed, and versions 1.0.1, 1.0.2, and 1.1 are available in the feed, the -Safe parameter updates the package to 1.0.2 instead of 1.1 as it would otherwise.
     Update-Package Elmah -Safe
+```
+    

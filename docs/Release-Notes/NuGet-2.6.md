@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 2.6 Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: d99bbf29-2b9a-4dc5-a823-5eb4f9e30f7f
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -55,8 +55,9 @@ With this split, the [nuget.org](https://nuget.org) home page's "Install NuGet" 
 will now take you to the [installing NuGet](../guides/install-nuget.md)
 page, where you can find more information about installing the different NuGet clients.
 
-### XDT Web.config transformation support
 <a name="xdt"></a>
+
+### XDT Web.config transformation support
 
 One of the most highly-requested features for the NuGet client has been to support more
 powerful XML transformations using the XDT transformation engine which is used in Visual
@@ -77,8 +78,8 @@ transformations use a single file for both installation and uninstallation, XDT
 transformations enable fine-grained control over both of these processes using the
 following files:
 
-* Web.config.install.xdt
-* Web.config.uninstall.xdt
+- Web.config.install.xdt
+- Web.config.uninstall.xdt
 
 Additionally, NuGet uses the file suffix to determine which engine to run for transformations,
 so packages using the existing web.config.transforms will continue to work. XDT transformations

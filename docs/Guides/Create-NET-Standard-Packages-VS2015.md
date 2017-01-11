@@ -21,7 +21,7 @@ ms.assetid: 29b3bceb-0f35-4cdd-bbc3-a04eb823164c
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -70,6 +70,7 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 1. Click on the **Build** tab, change the **Configuration** to `Release`, and check the box for **XML documentation file**.
 1. Add your code to the component, for example:
 
+    ```cs
         namespace AppLogger
         {
             public class Logger
@@ -80,6 +81,7 @@ This guide will walk you through creating a nuget package targeting .NET Standar
                 }
             }
         }
+    ```
 
 1. Build the project (with the Release configuration) and check that DLL and XML files are produced within the bin\Release folder.
 
@@ -91,6 +93,7 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 1. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number). Also note that you must also update the author and description tags or you'll get an error during the packing step.
 
+```xml
     <?xml version="1.0"?>
     <package >
       <metadata>
@@ -106,14 +109,17 @@ This guide will walk you through creating a nuget package targeting .NET Standar
         <tags>logger logging logs</tags>
       </metadata>
     </package>
+```
 
 1. Add reference assemblies to the nuspec file, namely the library's DLL and the IntelliSense XML file:
 
+     ```xml
          <!-- Insert below <metadata> element -->
         <files>
             <file src="bin\Release\AppLogger.dll" target="lib\netstandard1.4\AppLogger.dll" />
             <file src="bin\Release\AppLogger.xml" target="lib\netstandard1.4\AppLogger.xml" />
         </files>
+    ```
 
 1. Right-click the solution and select **Build Solution** to generate all the files for the package.
 
@@ -149,12 +155,14 @@ The following sections go into additional options for NuGet package creation:
 
 If you have any dependencies on other NuGet packages, list those in the &lt;dependencies&gt; element with &lt;group&gt; elements. For example, to declare a dependency on NewtonSoft.Json 8.0.3 or above, add the following:
 
+```xml
     <!-- Insert within the <metadata> element -->
     <dependencies>
         <group targetFramework="uap">
             <dependency id="Newtonsoft.Json" version="8.0.3" />
         </group>
     </dependencies>
+```
 
 The syntax of the *version* attribute here indicates that version 8.0.3 or above is acceptable. To specify different version ranges, refer to [Dependency Versions](../create-packages/dependency-versions.md).
 
@@ -173,6 +181,7 @@ Suppose you'd like to take advantage of an API in .NET Framework 4.6.2 that is n
 
 1. In the .nuspec file, add a `files` node under the `package` node and refer to the files in `lib` using wildcards. **Note:** Token replacements are not supported with the convention-based working directory approach, so replace them with literal values:
 
+    ```xml
         <?xml version="1.0"?>
         <package >
           <metadata>
@@ -191,6 +200,7 @@ Suppose you'd like to take advantage of an API in .NET Framework 4.6.2 that is n
               <file src="lib\**" target="lib" />
           </files>
         </package>
+    ```
 
 1. Create the package again using `nuget pack AppLogger.spec`.
 
@@ -217,6 +227,7 @@ In some cases you might want to add custom build targets or properties in projec
 
 1. In the .nuspec file, add a `files` node under the `package` node and refer to the files in `build` using wildcards.
 
+    ```xml
         <?xml version="1.0"?>
         <package >
           <metadata>...
@@ -225,6 +236,7 @@ In some cases you might want to add custom build targets or properties in projec
               <file src="build\**" target="build" />
           </files>
         </package>
+    ```
 
 1. Create the package again using `nuget pack AppLogger.nuspec`.
 
@@ -263,6 +275,7 @@ To create localized versions of your library, you can either create separate pac
 
 1. In the .nuspec file, reference these files in the &lt;files&gt; node:
 
+    ```xml
         <?xml version="1.0"?>
         <package>
           <metadata>...
@@ -271,6 +284,7 @@ To create localized versions of your library, you can either create separate pac
             <file src="lib\**" target="lib" />
           </files>
         </package>
+    ```
 
 1. Create the package again using `nuget pack AppLogger.nuspec`.
 
@@ -285,6 +299,7 @@ When you include a `readme.txt` file in the root of the package, Visual Studio w
 
 To do this, create your `readme.txt` file, place it in the project root folder, and refer to it in the .nuspec file:
 
+```xml
     <?xml version="1.0"?>
     <package >
       <metadata>...
@@ -293,6 +308,7 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
         <file src="readme.txt" target="" />
       </files>
     </package>
+```
 
 
 ## .NET Standard mapping table

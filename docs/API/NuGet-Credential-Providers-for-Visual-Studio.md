@@ -21,7 +21,7 @@ ms.assetid: 9c7f6d16-f437-47c4-82d4-6c996e0b18ec
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -65,6 +65,7 @@ During credential acquisition, the credential service will try credential provid
 
 To create a NuGet credential provider for Visual Studio, create a Visual Studio Extension that exposes a public MEF Export implementing the `IVsCredentialProvider` type, and adheres to the principles outlined below.
 
+```cs
     public interface IVsCredentialProvider
     {
         Task<ICredentials> GetCredentialsAsync(
@@ -75,6 +76,7 @@ To create a NuGet credential provider for Visual Studio, create a Visual Studio 
           bool nonInteractive,
           CancellationToken cancellationToken);
     }
+```
 
 A sample implementation can be found in [the VsCredentialProvider sample](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider).
 

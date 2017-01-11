@@ -21,7 +21,7 @@ ms.assetid: 45138f80-9717-42c2-8b34-9a1bc1fb3eab
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -78,10 +78,12 @@ The following sections walk through this process in detail, using C#.
 
 With `NuGet.Server` 1.5 and later, you can more specifically configure the package folder using the `appSetting/packagesPath` value in `web.config`:
 
+```xml
     <appSettings>
         <!-- Set the value here to specify your custom packages folder. -->
         <add key="packagesPath" value="C:\MyPackages" />
     </appSettings>
+```
 
 `packagesPath` can be an absolute or virtual path.
 
@@ -93,14 +95,17 @@ Once a NuGet.Server site is running, you can add or delete packages using nuget.
 
 After installing the NuGet.Server package, `web.config` will contain an empty `appSetting/apiKey` value:
 
+```xml
     <appSettings>
         <add key="apiKey" value="" />
     </appSettings>
+```
 
 When `apiKey` is omitted or blank, pushing packages to the feed is disabled.
 
 To enable this capability, set the `apiKey` to a value (ideally a strong password) and add a key called `appSettings/requireApiKey` with the value of `true`:
 
+```xml
     <appSettings>
          <!-- Sets whether an API Key is required to push/delete packages -->
         <add key="requireApiKey" value="true" />
@@ -108,5 +113,6 @@ To enable this capability, set the `apiKey` to a value (ideally a strong passwor
         <!-- Set a shared password (for all users) to push/delete packages -->
         <add key="apiKey" value="" />
     </appSettings>
+```
 
 If your server is already secured or you do not otherwise require an API key (for example, when using a private server on a local team network), you can set `requireApiKey` to `false`. All users with access to the server can then push or delete packages.

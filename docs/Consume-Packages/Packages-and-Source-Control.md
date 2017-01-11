@@ -21,7 +21,7 @@ ms.assetid: 2c874e6f-99eb-46dd-997f-f67d98d0237e
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -75,12 +75,14 @@ To disable source control integration with TFVC for selected files:
 1. In that folder, create a file named `NuGet.config` and open it for editing.
 1. Add the following text as a minimum, where the [disableSourceControlIntegration](../schema/nuget.config-file.md#solution-section) setting instructs Visual Studio to skip everything in the `packages` folder:
 
+    ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <configuration>
             <solution>
                 <add key="disableSourceControlIntegration" value="true" />
             </solution>
         </configuration>
+    ```
 
 1. If you are using TFS 2010 or earlier, cloak the `packages` folder in your workspace mappings.
 1. On TFS 2012 or later, or with Visual Studio Team Services, add a [`.tfignore`](https://msdn.microsoft.com/en-us/library/ms245454.aspx#tfignore) file with the content below to explicitly ignore modifications to the `\packages` folder on the repository level and a few other intermediate files. (You can create the file in Windows Explorer using the name a `.tfignore.` with the trailing dot, but you might need to disable the "Hide known file extensions" option first.):

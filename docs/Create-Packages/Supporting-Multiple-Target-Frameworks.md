@@ -21,7 +21,7 @@ ms.assetid: 2646ffcd-83ae-4086-8915-a7fba3f53e45
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -129,9 +129,11 @@ NuGet copies assemblies from only a single library folder in the package. For ex
 
 To easily include all these files, use a wildcard in the &lt;files&gt; section of your `.nuspec`:
 
+```xml
     <files>
         <file src="lib\**" target="lib" />
     </files>
+```
 
 When the package is installed in a project that targets .NET Framework 4.5, `MyAssembly.dll (v2.0)` is the only assembly installed. `MyAssembly.Core.dll(v1.0)` is not installed because it's not listed in the `net45` folder. (One reason why NuGet behaves this way is that `MyAssembly.Core.dll` might have merged into version 2.0 of `MyAssembly.dll`.)
 

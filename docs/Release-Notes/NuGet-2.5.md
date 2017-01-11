@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 2.5 Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: c193f1e3-d114-427f-9425-9930cc8e4db3
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -89,6 +89,7 @@ When NuGet installs a package with \build files, it will add an MSBuild &lt;Impo
 
 Before 2.5, in .nuspec file, user can only specify the reference files, to be added for all framework. Now with this new feature in 2.5, user can author the &lt;reference/&gt; element for each of the supported platform, for example:
 
+```xml
     <references>
         <group targetFramework="net45">
             <reference file="a.dll" />
@@ -100,6 +101,7 @@ Before 2.5, in .nuspec file, user can only specify the reference files, to be ad
             <reference file="c.dll" />
         </group>
     </references>
+```
 
 Here is the flow for how NuGet adds references to projects based on the .nuspec file:
 
@@ -145,7 +147,9 @@ A new metadata attribute called 'minClientVersion' can now indicate the minimum 
 
 This feature helps package author to specify that a package will work only after a particular version of NuGet. As new nuspec features are added after NuGet 2.5, packages will be able to claim a minimum NuGet version.
 
+```xml
     <metadata minClientVersion="2.6">
+```
 
 If the user has NuGet 2.5 installed and a package is identified as requiring 2.6, visual cues will be given to the user indicating the package will not be installable. The user will then be guided to update their version of NuGet.
 
@@ -186,7 +190,7 @@ Starting with NuGet 2.5, if NuGet.exe identifies a UNC/folder source, it will pe
 
 The following command will now work:
 
-    NuGet.exe push -source \\mycompany\repo\ mypackage.1.0.0.nupkg
+    nuget push -source \\mycompany\repo\ mypackage.1.0.0.nupkg
 
 ## NuGet.exe supports explicitly-specified Config files
 
@@ -194,7 +198,7 @@ NuGet.exe commands that acccess configuration (all except 'spec' and 'pack') now
 
 Example:
 
-    NuGet.exe sources add -name test -source http://test -ConfigFile C:\test\.nuget\nuget.config
+    nuget sources add -name test -source http://test -ConfigFile C:\test\.nuget\nuget.config
 
 ## Support for Native projects
 

@@ -21,7 +21,7 @@ ms.assetid: 5a554e9d-1266-48c2-92e8-6dd00b1d6810
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -38,6 +38,7 @@ Package references, using the `PackageReference` node, allow you to manage NuGet
 
 You can add a dependency in your project file using the following syntax:
 
+```xml
     <ItemGroup>
         <!-- ... -->
         <PackageReference Include="Contoso.Utility.UsefulStuff">
@@ -45,19 +46,23 @@ You can add a dependency in your project file using the following syntax:
         </PackageReference>
         <!-- ... -->
     </ItemGroup>
+```
 
 or, alternately:
 
+```xml
     <ItemGroup>
         <!-- ... -->
         <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />
         <!-- ... -->
     </ItemGroup>
+```
 
 ## Controlling dependency version
 
 The convention for specifying version remains unchanged:
 
+```xml
     <ItemGroup>
         <!-- ... -->
         <PackageReference Include="Contoso.Utility.UsefulStuff">
@@ -65,6 +70,7 @@ The convention for specifying version remains unchanged:
         </PackageReference>
         <!-- ... -->
     </ItemGroup>
+```
 
 In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [version ranges](../create-packages/dependency-versions.md#version-ranges).
 
@@ -72,6 +78,7 @@ In the example above, 3.6.0 means any version that is >=3.6.0 with preference fo
 
 [Floating versions](../consume-packages/dependency-resolution.md#floating-versions) are supported with `PackageReference`:
 
+```xml
     <ItemGroup>
         <!-- ... -->
         <PackageReference Include="Contoso.Utility.UsefulStuff">
@@ -83,11 +90,13 @@ In the example above, 3.6.0 means any version that is >=3.6.0 with preference fo
         </PackageReference>
         <!-- ... -->
     </ItemGroup>
+```
 
 ## Controlling dependency assets
 
 You might be using a dependency purely as a development harness and might not want to expose that to projects that will consume your package. In this scenario, you can use the `PrivateAssets` metadata to control this behavior.
 
+```xml
     <ItemGroup>
         <!-- ... -->
 
@@ -97,6 +106,7 @@ You might be using a dependency purely as a development harness and might not wa
 
         <!-- ... -->
     </ItemGroup>
+```
 
 The following metadata tags control dependency assets:
 
@@ -120,6 +130,7 @@ Allowable values for these tags are as follows, with multiple values separated b
 
 In the following example, everything except the content files from the package would be consumed by the project and everything except content files and analyzers would flow to the parent project.
 
+```xml
     <ItemGroup>
         <!-- ... -->
 
@@ -131,6 +142,7 @@ In the following example, everything except the content files from the package w
 
         <!-- ... -->
     </ItemGroup>
+```
 
 Note that because `build` is not included with `PrivateAsset`, targets and props *will* flow to the parent project. Consider, for example, that the reference above is used in a project that builds a NuGet package called AppLogger. AppLogger can consume the targets and props from Contoso.Utility.UsefulStuff, as can projects that consume AppLogger.
 
@@ -140,6 +152,7 @@ You can use a condition to control whether a package is included, where conditio
 
 For example, say you're targeting `netstandard1.4` as well as `net452` but have a dependency that is applicable only for `net452`. In this case you don't want a `nestandard1.4` project that's consuming your package to add that unnecessary dependency. To prevent this, you specify a condition on the `PackageReference` as follows:
 
+```xml
     <ItemGroup>
         <!-- ... -->
         <PackageReference Include="Newtonsoft.json" Condition="'$(TargetFramework)' == 'net452'">
@@ -147,6 +160,7 @@ For example, say you're targeting `netstandard1.4` as well as `net452` but have 
         </PackageReference>
         <!-- ... -->
     </ItemGroup>
+```
 
 A package built using this project will show that Newtonsoft.json is included as a dependency only for a `net452` target:
 
@@ -154,6 +168,7 @@ A package built using this project will show that Newtonsoft.json is included as
 
 Conditions can also be applied at the `ItemGroup` level and will apply to all children `PackageReference` elements:
 
+```xml
     <ItemGroup Condition = "'$(TargetFramework)' == 'net452'>
         <!-- ... -->
 
@@ -165,3 +180,4 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
 
         <!-- ... -->
     </ItemGroup>
+```

@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 2.7 Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: ba2edaad-4795-47a0-a572-d0e1716bd540
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -179,19 +179,23 @@ We added some new APIs to our extensibility services to fill the gap of missing 
 
 #### IVsPackageInstallerServices
 
+    ```cs
         // Checks if a NuGet package with the specified Id and version is installed in the specified project.
         bool IsPackageInstalledEx(Project project, string id, string versionString);
 
         // Get the list of NuGet packages installed in the specified project.
         IEnumerable<IVsPackageMetadata> GetInstalledPackages(Project project);
+    ```
 
 #### IVsPackageInstaller
 
+    ```cs
         // Installs one or more packages that exist on disk in a folder defined in the registry.
         void InstallPackagesFromRegistryRepository(string keyName, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
 
         // Installs one or more packages that are embedded in a Visual Studio Extension Package.
         void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
+    ```
 
 ### Development-Only Dependencies
 

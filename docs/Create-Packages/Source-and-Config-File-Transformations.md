@@ -21,7 +21,7 @@ ms.assetid: 20991d69-9e2e-4881-bbf2-96ae634e1872
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -46,6 +46,7 @@ A **config file transformation** allows you to modify files that already exist i
 
 3. In the source code file, use case-insensitive tokens of the form `$token$` to indicate values that NuGet should replace with project properties:
 
+    ```cs
         namespace $rootnamespace$.Models {
             public struct CategoryInfo {
                 public string categoryid;
@@ -55,6 +56,7 @@ A **config file transformation** allows you to modify files that already exist i
                 public string title;
             }
         }
+    ```
 
     Upon installation, NuGet replaces `$rootnamespace$` with `Fabrikam` assuming the target project's whose root namespace is `Fabrikam`.
 
@@ -79,6 +81,7 @@ The `app.config.transform` and `web.config.transform` in a package's `content` f
 
 As an example, suppose the project initially contains the following content in `web.config`:
 
+```xml
     <configuration>
         <system.webServer>
             <modules>
@@ -86,9 +89,12 @@ As an example, suppose the project initially contains the following content in `
             </modules>
         <system.webServer>
     </configuration>
+```
 
 To add a `MyNuModule` element to the `modules` section during package install, create a `web.config.transform` file in the package's `content` folder that looks like this:
 
+    
+```xml
     <configuration>
         <system.webServer>
             <modules>
@@ -96,9 +102,11 @@ To add a `MyNuModule` element to the `modules` section during package install, c
             </modules>
         <system.webServer>
     </configuration>
+```
 
 After NuGet installs the package, `web.config` will appear as follows:
 
+```xml
     <configuration>
         <system.webServer>
             <modules>
@@ -107,6 +115,7 @@ After NuGet installs the package, `web.config` will appear as follows:
             </modules>
         <system.webServer>
     </configuration>
+```
 
 Notice that NuGet didn't replace the `modules` section, it just merged the new entry into it by adding only new elements and attributes. NuGet will not change any existing elements or attributes.
 
@@ -125,6 +134,7 @@ With NuGet 2.6 and later, you can modify config files using [XDT syntax](https:/
 
 For example, the following `app.config.install.xdt` file will insert an `appSettings` element into `app.config` containing the `FullPath`, `FileName`, and `ActiveConfigurationSettings` values from the project:
 
+```xml
     <?xml version="1.0"?>
     <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
         <appSettings xdt:Transform="Insert">
@@ -133,9 +143,11 @@ For example, the following `app.config.install.xdt` file will insert an `appSett
          <add key="ActiveConfigurationSettings " value="$ActiveConfigurationSettings$" />
         </appSettings>
     </configuration>
+```
 
 For another example, suppose the project initially contains the following content in `web.config`:
 
+```xml
     <configuration>
         <system.webServer>
             <modules>
@@ -143,9 +155,11 @@ For another example, suppose the project initially contains the following conten
             </modules>
         <system.webServer>
     </configuration>
+```
 
 To add a `MyNuModule` element to the `modules` section during package install, the package's `web.config.install.xdt` would contain the following:
 
+```xml
     <?xml version="1.0"?>
     <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
         <system.webServer>
@@ -154,9 +168,11 @@ To add a `MyNuModule` element to the `modules` section during package install, t
             </modules>
         </system.webServer>
     </configuration>
+```
 
 After installing the package, `web.config` will look like this:
 
+```xml
     <configuration>
         <system.webServer>
             <modules>
@@ -165,9 +181,11 @@ After installing the package, `web.config` will look like this:
             </modules>
         <system.webServer>
     </configuration>
+```
 
 To remove only the `MyNuModule` element during package uninstall, the `web.config.uninstall.xdt` file should contain the following:
 
+```xml
     <?xml version="1.0"?>
     <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
         <system.webServer>
@@ -176,7 +194,4 @@ To remove only the `MyNuModule` element during package uninstall, the `web.confi
             </modules>
         </system.webServer>
     </configuration>
-
-
-
-
+```

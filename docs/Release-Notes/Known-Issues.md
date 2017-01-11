@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet Known Issues | Microsoft Docs
-author: harikm
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,12 +21,13 @@ ms.assetid: 42e7a619-1c69-454b-8243-16e2f9f950d0
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
 
 ---
+
 # Known Issues with NuGet
 
 These are the most common known issues with NuGet that are repeatedly reported. If you are having trouble installing NuGet or managing packages, please take a look through these known issues and their resolutions.
@@ -61,17 +62,19 @@ The NuGet.config file in your `%AppData%\NuGet\` folder has accidentally been em
 
 In NuGet 2.7 or above, when you attempt to install any package which contains assembly references, you may receive the error message **"Input string was not in a correct format."**, like below:
 
-    PM> install-package log4net
-     Installing 'log4net 2.0.0'.
-     Successfully installed 'log4net 2.0.0'.
-     Adding 'log4net 2.0.0' to Tyson.OperatorUpload.
-     Install failed. Rolling back...
-     install-package : Input string was not in a correct format.
-     At line:1 char:1
-    ◾install-package log4net
-    ◾ ~~~~~~~~~~~~~~~~~~~~~~~
-    ◾CategoryInfo : NotSpecified: (:) [Install-Package], FormatException
-    ◾ FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PowerShell.Commands.InstallPackageCommand
+```ps
+    install-package log4net
+      Installing 'log4net 2.0.0'.
+      Successfully installed 'log4net 2.0.0'.
+      Adding 'log4net 2.0.0' to Tyson.OperatorUpload.
+      Install failed. Rolling back...
+      install-package : Input string was not in a correct format.
+      At line:1 char:1
+          install-package log4net
+          ~~~~~~~~~~~~~~~~~~~~~~~
+         CategoryInfo : NotSpecified: (:) [Install-Package], FormatException
+         FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PowerShell.Commands.InstallPackageCommand
+```
 
 
 This is caused by the type library for the VSLangProj.dll COM component being unregistered on your system. This can happen, for example, when you have two versions of Visual Studio installed side-by-side and you then uninstall the older version. Doing so may inadvertently unregister the above COM library.
@@ -214,7 +217,7 @@ but some files were left behind. To work around this issue:
 1. Exit Visual Studio
 2. Open the following folder (it might be on a different drive on your machine)
 
-    <pre>C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft Corporation\NuGet Package Manager\&lt;version&gt;\</pre>
+    C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft Corporation\NuGet Package Manager\<version>\
 
 3. Delete all the files with the *.deleteme* extensions.
 4. Re-open Visual Studio

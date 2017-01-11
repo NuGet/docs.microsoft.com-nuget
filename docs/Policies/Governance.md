@@ -21,7 +21,7 @@ ms.assetid: 94c088ce-ec96-4876-a210-fbdae743942c
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -54,7 +54,6 @@ Committers are contributors who have made sustained valuable contributions to Nu
 Typically, a committer focuses on a specific aspect of the project, and brings a level of expertise and understanding that earns them the respect of the community and the project lead. The role of committer is not an official one, it is simply a position that influential members of the community assume as the project lead looks to them for guidance and support.
 
 Committers have no authority where the overall direction of NuGet is concerned. However, they do have the ear of the project lead. It is a committer’s job to ensure that the lead is aware of the community’s needs and collective objectives, and to help develop or elicit appropriate contributions to the project. Often, committers are given informal control over their specific areas of responsibility, and are assigned rights to directly modify certain areas of the source code. That is, although committers do not have explicit decision-making authority, they will often find that their actions are synonymous with the decisions made by the lead.
-
 
 ### Contributors
 

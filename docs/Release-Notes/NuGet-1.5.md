@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 1.5 Release Notes | Microsoft Docs
-author: harikmenon
-ms.author: harikm
+author: karann-msft
+ms.author: karann
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -21,7 +21,7 @@ ms.assetid: 3ec1ff28-18fc-4d53-bd43-208619a7270a
 #ms.devlang:
 ms.reviewer:
 - karann
-- harikm
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -54,10 +54,12 @@ the package should be referenced.
 
 For example, if you add the following:
 
+```xml
     <references>
       <reference file="xunit.dll" />
       <reference file="xunit.extensions.dll" />
     </references>
+```
 
 Then only the _xunit.dll_ and _xunit.extensions.dll_ will be referenced from the appropriate
 [framework/profile subdirectory](../schema/nuspec.md#explicit-assembly-references)
@@ -81,21 +83,27 @@ The `<file>` element within a NuSpec file can be used to include a specific file
 using a wildcard. When using a wildcard, there's no way to exclude a specific subset of the included
 files. For example, suppose you want all text files within a directory except a specific one.
 
+```xml
     <files>
         <file src="*.txt" target="content\docs" exclude="admin.txt" />
     </files>
+```
 
 Use semicolons to specify multiple files.
 
+```xml
     <files>
         <file src="*.txt" target="content\docs" exclude="admin.txt;log.txt" />
     </files>
+```
 
 Or use a wild card to exclude a set of files such as all backup files
 
+```xml
     <files>
         <file src="tools\*.*" target="tools" exclude="*.bak" />
     </files>
+```
 
 ### Removing packages using the dialog prompts to remove dependencies
 When uninstalling a package with dependencies, NuGet prompts, allowing the removal of a package's
