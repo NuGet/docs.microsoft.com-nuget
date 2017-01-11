@@ -63,33 +63,33 @@ Similarly, you can write an MSBuild task, write your own target and consume NuGe
 In order for MSBuild to be able to gather all the inputs, all metadata from `project.json` and `.nuspec` will move into the `.csproj` file. The table below describes the MSBuild properties that can be added to a `.csproj` file within the first &lt;PropertyGroup&gt; node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../schema/nuspec.md).
 
 
-| Attribute/NuSpec Value | MSBuild Property | Default | Notes          
-| Id | PackageId | AssemblyName | $(AssemblyName) from msbuild
-| Version | PackageVersion | Version | New $(Version) property from msbuild, is semver compatible. Could be “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345”.
-| Authors | Authors | username of the current user will be the default value |
-| Owners | N/A | Not present in NuSpec |
-| Description | Description | "Package Description" |
-| Copyright | Copyright | empty |
-| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false |
-| LicenseUrl | PackageLicenseUrl | empty |
-| ProjectUrl | PackageProjectUrl | empty |
-| IconUrl | PackageIconUrl | empty |
-| Tags | PackageTags | empty |
-| ReleaseNotes | PackageReleaseNotes | empty |
-| RepositoryUrl | RepositoryUrl | empty |
-| RepositoryType | RepositoryType | empty |
-| PackageType | `&lt;PackageType&gt;DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0&lt;/PackageType&gt;` |  |
-| Title | Not supported | |
-| Summary | Not supported | |
-| n/a | PackageOutputPath | The bin\{configuration} folder |
-| n/a | Configuration | Debug |
-| n/a | AssemblyName | |
-| n/a | IncludeSymbols | |
-| n/a | IncludeSource | | If true, there must also be a &lt;SourceFile&gt; node.
-| n/a | IsTool | |
-| n/a | NoPackageAnalysis | |
-| n/a | MinClientVersion | |
-| n/a | TargetPath<br>TargetFramework | | See <a href="#cross-targeting">cross-targeting</a> below.
+| Attribute/NuSpec Value | MSBuild Property | Default | Notes |
+| Id | PackageId | AssemblyName | $(AssemblyName) from msbuild |
+| Version | PackageVersion | Version | New $(Version) property from msbuild, is semver compatible. Could be “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345”. |
+| Authors | Authors | username of the current user will be the default value | |
+| Owners | N/A | Not present in NuSpec | |
+| Description | Description | "Package Description" | |
+| Copyright | Copyright | empty | |
+| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
+| LicenseUrl | PackageLicenseUrl | empty | |
+| ProjectUrl | PackageProjectUrl | empty | |
+| IconUrl | PackageIconUrl | empty | |
+| Tags | PackageTags | empty | |
+| ReleaseNotes | PackageReleaseNotes | empty | |
+| RepositoryUrl | RepositoryUrl | empty | |
+| RepositoryType | RepositoryType | empty | |
+| PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
+| Title | Not supported | | |
+| Summary | Not supported | | |
+| n/a | PackageOutputPath | The bin\{configuration} folder | |
+| n/a | Configuration | Debug | |
+| n/a | AssemblyName | | |
+| n/a | IncludeSymbols | | |
+| n/a | IncludeSource | | If true, there must also be a &lt;SourceFile&gt; node. |
+| n/a | IsTool | | |
+| n/a | NoPackageAnalysis | | |
+| n/a | MinClientVersion | | |
+| n/a | TargetPath<br>TargetFramework | | See <a href="#cross-targeting">cross-targeting</a> below. |
 
 ## pack scenarios
 
@@ -190,23 +190,23 @@ As part of the move to MSBuild, package restore becomes an MSBuild target; `nuge
 
 Additional restore settings may come from MSBuild properties; values are set from the command line.
 
-| Property | Description
-| RestoreSources | List of package sources separated by semicolons
-| RestorePackagesPath | User packages directory path
-| RestoreDisableParallel | Limit downloads to one at a time
-| RestoreConfigFile | nuget.config file
-| RestoreNoCache | If true, avoids using the web cache
-| RestoreIgnoreFailedSource | If true, ignores failing or missing package sources
+| Property | Description |
+| RestoreSources | List of package sources separated by semicolons |
+| RestorePackagesPath | User packages directory path |
+| RestoreDisableParallel | Limit downloads to one at a time |
+| RestoreConfigFile | nuget.config file |
+| RestoreNoCache | If true, avoids using the web cache |
+| RestoreIgnoreFailedSource | If true, ignores failing or missing package sources |
 
 
 ### Restore outputs
 
 Restore creates the following files in the build `obj` folder:
 
-| File | Description
-| project.assets.json | Previously project.lock.json
-| {projectName}.projectFileExtension.nuget.g.props | References to msbuild targets contained in packages
-| {projectName}.projectFileExtension.nuget.g.targets | References to msbuild props contained in packages
+| File | Description |
+| project.assets.json | Previously project.lock.json |
+| {projectName}.projectFileExtension.nuget.g.props | References to msbuild targets contained in packages |
+| {projectName}.projectFileExtension.nuget.g.targets | References to msbuild props contained in packages |
 
 ## PackageTargetFallback
 

@@ -32,9 +32,6 @@ ms.reviewer:
 
 The project.json system used in NuGet 3.x affects package authors in several ways as described in the following sections.
 
-- [Install and uninstall scripts are ignored](#install-and-uninstall-scripts-are-ignored)
-
-
 ## Changes affecting existing packages usage
 
 Traditional NuGet packages support a set of features that are not carried over to the transitive world.

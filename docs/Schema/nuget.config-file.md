@@ -87,6 +87,7 @@ http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use 
 ## bindingRedirects section
 
 Configures whether NuGet does automatic binding redirects when a package is installed.
+
 Key | Value
 --- | ---
 skip | A Boolean indicating whether to skip automatic binding redirects. The default is false.

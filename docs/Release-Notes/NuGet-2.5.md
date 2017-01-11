@@ -190,7 +190,7 @@ Starting with NuGet 2.5, if NuGet.exe identifies a UNC/folder source, it will pe
 
 The following command will now work:
 
-    NuGet.exe push -source \\mycompany\repo\ mypackage.1.0.0.nupkg
+    nuget push -source \\mycompany\repo\ mypackage.1.0.0.nupkg
 
 ## NuGet.exe supports explicitly-specified Config files
 
@@ -198,7 +198,7 @@ NuGet.exe commands that acccess configuration (all except 'spec' and 'pack') now
 
 Example:
 
-    NuGet.exe sources add -name test -source http://test -ConfigFile C:\test\.nuget\nuget.config
+    nuget sources add -name test -source http://test -ConfigFile C:\test\.nuget\nuget.config
 
 ## Support for Native projects
 
