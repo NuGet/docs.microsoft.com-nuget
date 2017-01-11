@@ -146,20 +146,10 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
     ```bash
         nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://www.nuget.org/api/v2/package
     ```
-    ```powershell
-        nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://www.nuget.org/api/v2/package
-    ```
-
+    
 1. You should then see something like the following:
 
-    ```bash
-        Pushing AppLogger.1.0.0.0.nupkg to 'https://www.nuget.org/api/v2/package'...
-          PUT https://www.nuget.org/api/v2/package/
-          Created https://www.nuget.org/api/v2/package/ 6829ms
-        Your package was pushed. 
     ```
-    
-    ```powershell
         Pushing AppLogger.1.0.0.0.nupkg to 'https://www.nuget.org/api/v2/package'...
           PUT https://www.nuget.org/api/v2/package/
           Created https://www.nuget.org/api/v2/package/ 6829ms
