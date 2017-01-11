@@ -118,9 +118,11 @@ For NuGet 2.6 and earlier, you use the [Install](../tools/nuget.exe-cli-referenc
 
 For NuGet 2.7 and above, use the [Restore](../tools/nuget.exe-cli-reference.md#restore) command to restore all packages in a solution (using either `packages.config` in NuGet 2.x and later or `project.json` in NuGet 3.x and later). For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
 
+```bash
     c:\proj\app\> nuget restore
     c:\proj\app\> nuget.exe restore app.sln
     c:\proj\> nuget restore app
+```
 
 ## Automatic restore in Visual Studio
 
@@ -149,8 +151,10 @@ To correct these errors, do one of the following:
 1. [Migrate the project to automatic restore](#migrating-to-automatic-restore).
 1. Update `nuget.exe` in the `.nuget` folder** as follows
 
+    ```bash
         cd .nuget
         nuget update -self
+    ```
 
 1. Reset consent in your `%AppData%\NuGet\NuGet.config` file by going to **Tools > Options > NuGet Package Manager > General** in Visual Studio, uncheck and re-check both **Package Restore** options, and click OK. This re-saves `NuGet.config` with the proper consent settings for NuGet 2.6 and earlier.
 

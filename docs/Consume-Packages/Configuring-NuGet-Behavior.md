@@ -63,10 +63,12 @@ The preferred method for changing the configuration is using the NuGet [config c
 
 To **set a value** in any existing configuration file, use the `-configFile` switch as shown in the examples below.
 
+```bash
     nuget config -set repositoryPath=c:\packages -configfile c:\my.config
     nuget config -set repositoryPath=c:\packages -configfile .\myApp\NuGet.Config
     nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\Config\VisualStudio\14.0\NuGet.Config
     nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\NuGetDefaults.Config
+```
 
 Without the `-configFile` switch, NuGet will make the change in the global config file.
 
@@ -75,7 +77,9 @@ Without the `-configFile` switch, NuGet will make the change in the global confi
 
 To **remove a value**, use the same commands but with an empty value, such as:
 
+```bash
     nuget config -set repositoryPath= -configfile c:\my.config
+```
 
 To create a new configuration file, copy the template below into that file and then use the `nuget config --configFile <filename>` command to set values:
 

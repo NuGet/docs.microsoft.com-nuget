@@ -52,7 +52,9 @@ NuGet has supported [restoring packages](../consume-packages/package-restore.md)
 
 The cure to this problem is making sure that packages are restored as the first step in the build process. NuGet 2.7+ makes this easy via a simplified command line:
 
+```bash
     nuget restore path\to\solution.sln
+```
 
 When your build process restores packages before building the code, you don't need to check-in **.targets** files
 

@@ -110,23 +110,25 @@ You might be using a dependency purely as a development harness and might not wa
 
 The following metadata tags control dependency assets:
 
-| Tag | Description | Default Value
-| IncludeAssets | These assets will be consumed | all
-| ExcludeAssetsTag | These assets will not be consumed | none
-| PrivateAssets | These assets will be consumed but won't flow to the parent project | contentfiles;analyzers;build
+Tag | Description | Default Value
+--- | --- | ---
+IncludeAssets | These assets will be consumed | all
+ExcludeAssetsTag | These assets will not be consumed | none
+PrivateAssets | These assets will be consumed but won't flow to the parent project | contentfiles;analyzers;build
 
 
 Allowable values for these tags are as follows, with multiple values separated by a semicolon except with `all` and `none` which must appear by themselves:
 
-| Value | Description
-| compile | Contents of the `lib` folder
-| runtime | Contents of the `runtime` folder
-| contentFiles | Contents of the `contentfiles` folder
-| build | Props and targets in the `build` folder
-| anaylzers | .NET analyzers
-| native | Contents of the `native` folder
-| none | None of the above are used.
-| all | All of the above (except `none`)
+Value | Description
+--- | ---
+compile | Contents of the `lib` folder
+runtime | Contents of the `runtime` folder
+contentFiles | Contents of the `contentfiles` folder
+build | Props and targets in the `build` folder
+anaylzers | .NET analyzers
+native | Contents of the `native` folder
+none | None of the above are used.
+all | All of the above (except `none`)
 
 In the following example, everything except the content files from the package would be consumed by the project and everything except content files and analyzers would flow to the parent project.
 

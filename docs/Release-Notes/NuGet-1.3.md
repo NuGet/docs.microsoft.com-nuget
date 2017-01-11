@@ -101,8 +101,10 @@ using two new flags:
 * __-Exclude__ is used to add other files/folders to exclude using a pattern. For example, to exclude
 all files with the '.bak' file extension
 
-        NuGet Pack MyPackage.nuspec -Exclude **\*.bak
-  
+```bash
+        nuget Pack MyPackage.nuspec -Exclude **\*.bak
+```  
+
 _Note: the pattern is not recursive by default._
 
 ### Support for WiX Projects and the .NET Micro Framework
