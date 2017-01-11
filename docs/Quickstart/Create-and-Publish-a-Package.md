@@ -143,15 +143,18 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
 
 1. At a command prompt, run the following command, replacing the key with the value copied in step 3:
 
+    ```bash
         nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://www.nuget.org/api/v2/package
+    ```
 
 1. You should then see something like the following:
 
+    ```bash
         Pushing AppLogger.1.0.0.0.nupkg to 'https://www.nuget.org/api/v2/package'...
           PUT https://www.nuget.org/api/v2/package/
           Created https://www.nuget.org/api/v2/package/ 6829ms
-        Your package was pushed.
-
+        Your package was pushed. 
+    ```
 
 1. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page:
 
