@@ -11,7 +11,7 @@ ms.topic: article
 ms.prod: nuget
 #ms.service:
 ms.technology: nuget
-ms.assetid: 0c858c79-f176-4de9-ab77-a03d115d5dc3
+ms.assetid: 96dc77d4-93f9-4628-bef9-551721fe3754
 
 # optional metadata
 #description: release notes Known Issues

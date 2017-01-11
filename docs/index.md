@@ -181,7 +181,7 @@ ms.reviewer:
                                 </a>
                             </li>
                             <li class="column column-third">
-                                <a href="./release-notes/nuget-4.0-rc.md">
+                                <a href="./release-notes/index.md">
                                     <h3>Release Notes</h3>
                                     <p>Detailed release notes for every version of NuGet back to the beginning.</p>
                                 </a>
