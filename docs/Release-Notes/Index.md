@@ -38,7 +38,7 @@ ms.reviewer:
 
 [NuGet 3.5 RC](../release-notes/nuget-3.5-rc.md)
 
-[NuGet 3.5 Beta2](../release-notes/nuget-3.5-beta2)
+[NuGet 3.5 Beta2](../release-notes/nuget-3.5-beta2.md)
 
 [NuGet 3.4.4](../release-notes/nuget-3.4.4.md)
 
