@@ -80,7 +80,9 @@ To create the initial .nuspec file, do the three steps below. The sections that 
 1. Open a command prompt and navigate to the folder containing ImageEnhancer.vcxproj (this will be a subfolder below where the solution file is).
 1. Run the NuGet `spec` command to generate `ImageEnhancer.nuspec` (the name of the file is taken from the name of the .vcxproj file):
 
+    ```bash
         nuget spec
+    ```
 
 1. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
 
@@ -259,7 +261,9 @@ Your final .nuspec file should now look like the following, where again YOUR_NAM
 
 With the completed .nuspec referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
+```bash
     nuget pack ImageEnhancer.nuspec
+```
 
 This will generate `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
 

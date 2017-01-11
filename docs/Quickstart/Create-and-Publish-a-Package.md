@@ -64,7 +64,9 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 1. Open a command prompt and navigate to the folder containing the AppLogger project file (.csproj).
 1. Run the NuGet CLI `spec` command to generate `AppLogg.nuspec`:
 
+    ```bash
         nuget spec
+    ```
 
 1. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](../create-packages/creating-a-package.md#creating-the-nuspec-file).
 
@@ -116,7 +118,9 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 
 Creating a NuGet package from a project is simple: just run the `pack` command:
 
+```bash
     nuget pack AppLogger.csproj
+```
 
 This will create a NuGet package file like `AppLogger.1.0.0.0.nupkg` using, of course, the package name and version number from the .nuspec file.
 

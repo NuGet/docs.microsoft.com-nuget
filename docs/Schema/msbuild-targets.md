@@ -64,6 +64,7 @@ In order for MSBuild to be able to gather all the inputs, all metadata from `pro
 
 
 | Attribute/NuSpec Value | MSBuild Property | Default | Notes |
+|--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | $(AssemblyName) from msbuild |
 | Version | PackageVersion | Version | New $(Version) property from msbuild, is semver compatible. Could be “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345”. |
 | Authors | Authors | username of the current user will be the default value | |
@@ -191,6 +192,7 @@ As part of the move to MSBuild, package restore becomes an MSBuild target; `nuge
 Additional restore settings may come from MSBuild properties; values are set from the command line.
 
 | Property | Description |
+|--------|--------|
 | RestoreSources | List of package sources separated by semicolons |
 | RestorePackagesPath | User packages directory path |
 | RestoreDisableParallel | Limit downloads to one at a time |
@@ -204,6 +206,7 @@ Additional restore settings may come from MSBuild properties; values are set fro
 Restore creates the following files in the build `obj` folder:
 
 | File | Description |
+|--------|--------|
 | project.assets.json | Previously project.lock.json |
 | {projectName}.projectFileExtension.nuget.g.props | References to msbuild targets contained in packages |
 | {projectName}.projectFileExtension.nuget.g.targets | References to msbuild props contained in packages |

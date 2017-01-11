@@ -54,13 +54,17 @@ Next, you can either upload the package through the nuget.org web portal, or pus
 
     3. At a command prompt, run the following command:
 
+        ```bash
             nuget setApiKey Your-API-Key
+        ```
 
         This will store your API key on the machine so that you will not need to do this step again on the same machine.
 
     4. Push your package to NuGet Gallery using the command:
 
+        ```bash
             nuget push YourPackage.nupkg -Source https://www.nuget.org/api/v2/package
+        ```
 
     5. Before being made public, all packages uploaded to nuget.org are scanned for viruses and rejected if any viruses are found. All packages listed on nuget.org are also scanned periodically.
 
