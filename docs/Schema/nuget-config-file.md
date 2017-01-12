@@ -59,7 +59,7 @@ In this topic:
 
 ## config section
 
-Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/nuget.exe-cli-reference.md#config).
+Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/nuget-exe-cli-reference.md#config).
 
 Note: `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using `project.json`.
 
@@ -142,7 +142,7 @@ disableSourceControlIntegration | A Boolean indicating whether to ignore the pac
 
 The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, and `disabledPackageSources` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
 
-The [`nuget sources` command](../tools/nuget.exe-cli-reference.md#sources) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/nuget.exe-cli-reference.md#setapikey).
+The [`nuget sources` command](../tools/nuget-exe-cli-reference.md#sources) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/nuget-exe-cli-reference.md#setapikey).
 
 ### packageSources
 
@@ -199,7 +199,7 @@ When using an unencrypted password:
 
 ### apikeys
 
-Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../tools/nuget.exe-cli-reference.md#setapikey).
+Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../tools/nuget-exe-cli-reference.md#setapikey).
 
 Key | Value
 --- | ---

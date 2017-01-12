@@ -136,11 +136,11 @@ Yes, see Scott Hanselman's Blog post [How to access NuGet when NuGet.org is down
 
 **How do I install packages in a different location from the default packages folder?**
 
-Set the [`repositoryPath`](../schema/nuget.config-file.md#config-section) setting in `nuget.config` using `nuget config -set repositoryPath=&lt;path&gt;`.
+Set the [`repositoryPath`](../Schema/nuget-config-file.md#config-section) setting in `nuget.config` using `nuget config -set repositoryPath=&lt;path&gt;`.
 
 **How do I avoid checking in packages folder to source control?**
 
-Set the [`disableSourceControlIntegration`](../schema/nuget.config-file.md#solution-section) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automatically.
+Set the [`disableSourceControlIntegration`](../Schema/nuget-config-file.md#solution-section) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automatically.
 
 **How do I turn off package restore?**
 

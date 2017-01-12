@@ -30,7 +30,7 @@ ms.reviewer:
 
 # Package Manager Console
 
-The Package Manager Console in Visual Studio lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the Console is necessary if you want to work with packages without having a solution open, and is required in cases where the Package Manager UI does not provide a way to perform an operation. Note, however, that all operations can be done with the [NuGet CLI](../tools/nuget.exe-cli-reference.md).
+The Package Manager Console in Visual Studio lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the Console is necessary if you want to work with packages without having a solution open, and is required in cases where the Package Manager UI does not provide a way to perform an operation. Note, however, that all operations can be done with the [NuGet CLI](../tools/nuget-exe-cli-reference.md).
 
 In all cases, you open the Console in Visual Studio through the **Tools > NuGet Package Manager > Package Manager Console** command.
 

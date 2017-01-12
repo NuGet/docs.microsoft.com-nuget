@@ -36,7 +36,7 @@ NuGet 3.3 was released November 30, 2015 with a significant number of user inter
 
 ## New Features
 
-* Credential Providers have been introduced that allow NuGet command-line clients to be able to work seamlessly with an authenticated feed. [Instructions on how to install the Visual Studio Team Services credential provider ](../API/NuGet.exe-Credential-Providers.md) and configure the NuGet clients to use it are available on NuGet Docs.
+* Credential Providers have been introduced that allow NuGet command-line clients to be able to work seamlessly with an authenticated feed. [Instructions on how to install the Visual Studio Team Services credential provider ](../API/nuget-exe-Credential-Providers.md) and configure the NuGet clients to use it are available on NuGet Docs.
 
 ## New User Interface Features
 
@@ -53,7 +53,7 @@ NuGet 3.3 was released November 30, 2015 with a significant number of user inter
 
 ## New Command-line Features
 
-In this version we introduced the `add` and `init` commands to initialize folder-based repositories as described in the [nuget.exe reference](../tools/nuget.exe-cli-reference.md). Repositories that are constructed and maintained with this folder structure will [deliver significant performance benefits](http://blog.nuget.org/20150922/Accelerate-Package-Source.html) as outlined on our blog.
+In this version we introduced the `add` and `init` commands to initialize folder-based repositories as described in the [nuget.exe reference](../tools/nuget-exe-cli-reference.md). Repositories that are constructed and maintained with this folder structure will [deliver significant performance benefits](http://blog.nuget.org/20150922/Accelerate-Package-Source.html) as outlined on our blog.
 
 ## ContentFiles
 
@@ -61,7 +61,7 @@ Content is now supported in project.json managed projects through the new `conte
 
 ## NuGet Locals Cache Management
 
-The NuGet command-line has been updated to include information about how to manage the local caches on a workstation.  More information about the locals command is available in the [NuGet command-line reference](../tools/nuget.exe-cli-reference.md#locals).
+The NuGet command-line has been updated to include information about how to manage the local caches on a workstation.  More information about the locals command is available in the [NuGet command-line reference](../tools/nuget-exe-cli-reference.md#locals).
 
 ## Fixed Issues
 

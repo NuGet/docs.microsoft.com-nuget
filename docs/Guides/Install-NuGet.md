@@ -103,7 +103,7 @@ Though not fully-supported as yet, the NuGet command-line executable (version 3.
 
 ### Related topics
 
-- [NuGet CLI reference](../tools/nuget.exe-cli-reference.md)
+- [NuGet CLI reference](../tools/nuget-exe-cli-reference.md)
 - [Creating a package](../create-packages/creating-a-package.md)
 - [Publishing a Package](../create-packages/publish-a-package.md)
 

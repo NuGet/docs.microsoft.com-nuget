@@ -44,7 +44,7 @@ $Feed = "Your url"
 
 **Workaround:**
 
-Store passwords in clear text using the [-StorePasswordInClearText](../tools/nuget.exe-cli-reference.md#sources) option.
+Store passwords in clear text using the [-StorePasswordInClearText](../tools/nuget-exe-cli-reference.md#sources) option.
 
 ## Error installing packages with NuGet 3.4, 3.4.1
 
