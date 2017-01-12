@@ -89,7 +89,9 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 1. Open a command prompt, navigate to the folder containing `AppLogg.csproj` folder (one level below where the .sln file is), and run the NuGet `spec` command to create the initial `AppLogger.nuspec` file:
 
+```bash
         nuget spec
+```
 
 1. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number). Also note that you must also update the author and description tags or you'll get an error during the packing step.
 
@@ -128,7 +130,9 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 With the completed .nuspec referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
+```bash
     nuget pack AppLogger.nuspec
+```
 
 This will generate `AppLogger.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
 

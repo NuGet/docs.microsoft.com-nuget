@@ -54,19 +54,21 @@ The behavior of every NuGet command, whether issued from the command line, the P
 
 ## Changing config settings
 
-A configuration file is a simple XML text file containing settings as described in the [NuGet Configuration Settings](../schema/nuget.config-file.md) topic.
+A configuration file is a simple XML text file containing settings as described in the [NuGet Configuration Settings](../Schema/nuget-config-file.md) topic.
 
-The preferred method for changing the configuration is using the NuGet [config command](../tools/nuget.exe-cli-reference.md#config) to set a key and value.
+The preferred method for changing the configuration is using the NuGet [config command](../tools/nuget-exe-cli-reference.md#config) to set a key and value.
 
 > [!Note]
 > Keys are always case sensitive.
 
 To **set a value** in any existing configuration file, use the `-configFile` switch as shown in the examples below.
 
+```bash
     nuget config -set repositoryPath=c:\packages -configfile c:\my.config
     nuget config -set repositoryPath=c:\packages -configfile .\myApp\NuGet.Config
     nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\Config\VisualStudio\14.0\NuGet.Config
     nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\NuGetDefaults.Config
+```
 
 Without the `-configFile` switch, NuGet will make the change in the global config file.
 
@@ -75,7 +77,9 @@ Without the `-configFile` switch, NuGet will make the change in the global confi
 
 To **remove a value**, use the same commands but with an empty value, such as:
 
+```bash
     nuget config -set repositoryPath= -configfile c:\my.config
+```
 
 To create a new configuration file, copy the template below into that file and then use the `nuget config --configFile <filename>` command to set values:
 

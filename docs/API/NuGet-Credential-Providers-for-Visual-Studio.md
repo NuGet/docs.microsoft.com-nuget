@@ -38,7 +38,7 @@ A sample implementation can be found in [the VsCredentialProvider sample](https:
 > [!Note]
 > NuGet credential providers for Visual Studio must be installed as a regular Visual Studio extension and will require [Visual Studio 2017](https://aka.ms/vs/15/preview/vs_enterprise) (currently in preview) or above.
 >
-> NuGet credential providers for Visual Studio work only in Visual Studio (not in dotnet restore or nuget.exe). For credential providers with nuget.exe, see [NuGet.exe Credential Providers](../api/nuget.exe-credential-providers.md).
+> NuGet credential providers for Visual Studio work only in Visual Studio (not in dotnet restore or nuget.exe). For credential providers with nuget.exe, see [NuGet.exe Credential Providers](../api/nuget-exe-Credential-providers.md).
 
 ## Available NuGet credential providers for Visual Studio
 

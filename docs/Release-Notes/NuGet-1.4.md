@@ -154,7 +154,7 @@ in a path to the `packages.config` file and will attempt to update packages. Not
 ** Run Powershell scripts within the package.
 
 ### NuGet Server Support for Pushing Packages using NuGet.exe
-NuGet includes a simple way to host a [lightweight web based NuGet repository](../hosting-packages/nuget.server.md)
+NuGet includes a simple way to host a [lightweight web based NuGet repository](../hosting-packages/NuGet-Server.md)
 via the `NuGet.Server` NuGet package. With NuGet 1.4, the lightweight server supports pushing and deleting packages using NuGet.exe.
 The latest version of `NuGet.Server` adds a new `appSetting`, named `apiKey`. When the key is omitted or left blank, pushing packages
 to the feed is disabled. Setting the apiKey to a value (ideally a strong password) enables pushing packages using NuGet.exe.

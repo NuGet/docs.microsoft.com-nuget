@@ -128,7 +128,9 @@ For details on declaring dependencies and specifying version numbers, see [Depen
 
 Because the manifest is always included in a package, you can find any number of additional examples by examining existing packages. A good source is the global package cache on your machine, the location of which is returned by the following command:
 
+```bash
     nuget locals -list global-packages
+```
 
 Go into any *package\version* folder, copy the .nupkg file to a .zip file, then open that .zip file and examine the .nuspec within it.
 
@@ -139,7 +141,9 @@ Note that when creating a `.nuspec` from a Visual Studio project, the manifest w
 
 You can create a `.nuspec` file from scratch in any text editor, or by editing a file from another project. You can also have NuGet create a template manifest for your by using the following command:
 
+```bash
     nuget spec <package_name>
+```
 
 The resulting `<package_name>.nuspec` file (or `Package.nuspec` if you omit a specific name) will contain placeholders for values like the `projectUrl`, so be sure to edit it before using it to creating the package.
 
@@ -149,13 +153,17 @@ You can also use `nuget spec` with an existing assembly, a Visual Studio project
 
 If you have an assembly DLL, you can easily generate a `.nuspec` file from the metadata in the assembly using the following command:
 
+```bash
     nuget spec MyAssembly.dll
+```
 
 ### From a Visual Studio project
 
 Creating a `.nuspec` from a `.csproj` or `.vbproj` file is convenient because other packages that have been installed into those project will be automatically referenced as dependencies. Simply use the following command in the same folder as the project file:
 
+```bash
     nuget spec
+```
 
 This creates a template `<project_name>.nuspec` file as usual, but includes tokens that will be replaced at packaging time with values from the project. This means you do not need to update crucial values like the version number in the `.nuspec` as you update the project (but you can always replace the tokens with literal values, if desired).
 
@@ -200,7 +208,9 @@ Think of the **content** folder as the root of the target application, so if you
 
 Next, from the root folder of this layout, run the following command to create the `.nuspec` file:
 
+```bash
     nuget spec
+```
 
 In this case, the `.nuspec` will not contain any explicit references to the folder structure, but all those files will be automatically included when creating the package later on.
 
@@ -333,11 +343,15 @@ With NuGet 3.x, targets are not added to the project but are instead made availa
 
 When using an assembly or the convention-based working directory, create a package by running `nuget pack` with your `.nuspec` file:
 
+```bash
     nuget pack &lt;your_project&gt;.nuspec
+```
 
 When using a Visual Studio project, run `nuget pack` instead with your project file, which will automatically load the project's `.nuspec` file and replace any tokens within it using values in the project file:
 
+```bash
     nuget pack &lt;your_project&gt;.csproj
+```
 
 > [!Note]
 > Using the project file directly is necessary for token replacement because the project is the source of the token values. Token replacement does not happen if you use `nuget pack` with a `.nuspec` file.
@@ -355,13 +369,15 @@ Once `nuget pack` succeeds, you'll have a `.nupkg` file that you can publish to 
 
 ### Additional options
 
-You can use various command-line switches with `nuget pack` to exclude files, override the version number in the manifest, and change the output directory, among other features. For a complete list, refer to the [pack command reference](../tools/nuget.exe-cli-reference.md#pack).
+You can use various command-line switches with `nuget pack` to exclude files, override the version number in the manifest, and change the output directory, among other features. For a complete list, refer to the [pack command reference](../tools/nuget-exe-cli-reference.md#pack).
 
 The following options are a few that are common with Visual Studio projects:
 
 - **Referenced projects**: If the project references other projects, you can add the referenced projects as part of the package, or as dependencies, by using the `-IncludeReferencedProjects` option:
 
+    ```bash
         nuget pack MyProject.csproj -IncludeReferencedProjects
+    ```
 
     This inclusion process is recursive, so if MyProject.csproj references projects B and C, and those projects reference D, E, and F, then files from B, C, D, E, and F will be included in the package.
 
@@ -369,12 +385,16 @@ The following options are a few that are common with Visual Studio projects:
 
 - **Build configuration**: By default, NuGet will use the default build configuration set in the project file, typically *Debug*. To pack files from a different build configuration, such as *Release*, use the `-properties` option with the configuration:
 
+    ```bash
         nuget pack MyProject.csproj -properties Configuration=Release
+    ```
 
 - **Symbols**: to include symbols that allow consumers to step through your package code in the debugger, use the `-Symbols` option:
 
+    ```bash
         nuget pack MyProject.csproj -symbols
-
+    ```
+    
 ## Next Steps
 
 Once you've created a package, which is a `.nupkg` file, you can publish it to the gallery of your choice as described on [Publishing a Package](../create-packages/publish-a-package.md).
