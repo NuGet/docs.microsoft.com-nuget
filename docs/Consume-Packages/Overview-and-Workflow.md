@@ -34,7 +34,7 @@ Between nuget.org and private package galleries that your organization might est
 
 ![Flow of going to a package source, finding a package, installing it in a project, then adding a using statement and calls to the package API](media/Overview-01-GeneralFlow.png)
 
-\* _Except with `nuget install` from the command-line, in which case it's necessary to edit the configuration files by hand. See the [install command reference](../tools/nuget.exe-cli-reference.md#install)._
+\* _Except with `nuget install` from the command-line, in which case it's necessary to edit the configuration files by hand. See the [install command reference](../tools/nuget-exe-cli-reference.md#install)._
 
 NuGet remembers the identity and version number of each installed package, recording it in either `packages.config` or `project.json` in your project root, depending on project type. With NuGet 4.0+ and .NET Core projects, dependencies are instead stored in the project file directly. See [Package References in Project Files](../consume-packages/package-references-in-project-files.md). In any case, you can look in the appropriate file at any time to see the full list of  dependencies for your project.
 

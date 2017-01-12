@@ -85,11 +85,7 @@ NuGet packages using the new format have the following well-known directories an
 
 ## MSBuild targets and props files in packages
 
-NuGet packages can contain .props and .targets files which will be imported into any MSBuild project that the package is installed into. In NuGet 2.x, this was done by injecting &lt;Import&gt; statements into the .csproj file, in NuGet 3.0 there is no specific "installation to project" action. Instead the package restore process writes two files:
-
-* [projectname].nuget.props
-
-* [projectname].nuget.targets
+NuGet packages can contain .props and .targets files which will be imported into any MSBuild project that the package is installed into. In NuGet 2.x, this was done by injecting &lt;Import&gt; statements into the .csproj file, in NuGet 3.0 there is no specific "installation to project" action. Instead the package restore process writes two files `[projectname].nuget.props` and `[projectname].nuget.targets`.
 
 MSBuild knows to look for these two files and automatically imports them near the beginning and near the end of the project build process. This provides very similar behavior to NuGet 2, but with one major difference: **There is no guaranteed order of targets/props files in this case**. However, MSBuild does provide ways to order Targets through the BeforeTargets and AfterTargets attributes of the &lt;Target&gt; definition (see [https://msdn.microsoft.com/en-us/library/t50z2hka.aspx](https://msdn.microsoft.com/en-us/library/t50z2hka.aspx)).
 

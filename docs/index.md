@@ -151,7 +151,7 @@ ms.reviewer:
                                 </a>
                             </li>
                             <li class="column column-third">
-                                <a href="./tools/nuget.exe-cli-reference.md">
+                                <a href="./tools/nuget-exe-cli-reference.md">
                                     <h3>Tools</h3>
                                     <p>The complete guides to the nuget.exe command-line tool, and the Package Manager UI and Package Manager Console in Visual Studio.</p>
                                 </a>
