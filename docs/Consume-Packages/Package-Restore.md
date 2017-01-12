@@ -87,7 +87,7 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
         </configuration>
     ```
 
-For reference, see the [NuGet config file - packageRestore section](../schema/nuget.config-file.md#packagerestore-section).
+For reference, see the [NuGet config file - packageRestore section](../Schema/nuget-config-file.md#packagerestore-section).
 
 MSBuild-integrated restore with NuGet 2.6 and earlier is typically enabled by right-clicking a solution in Visual Studio and selecting **Enable NuGet Package Restore**. This sets up the necessary files and folders for this option to work, as explained under [MSBuild-integrated restore in Visual Studio](#msbuild-integrated-restore).
 
@@ -114,9 +114,9 @@ In both cases, use the notation described in [Dependency versions](../create-pac
 
 ## Command-line restore
 
-For NuGet 2.6 and earlier, you use the [Install](../tools/nuget.exe-cli-reference.md#install) command and point to the `packages.config` file that lists all the dependencies.
+For NuGet 2.6 and earlier, you use the [Install](../tools/nuget-exe-cli-reference.md#install) command and point to the `packages.config` file that lists all the dependencies.
 
-For NuGet 2.7 and above, use the [Restore](../tools/nuget.exe-cli-reference.md#restore) command to restore all packages in a solution (using either `packages.config` in NuGet 2.x and later or `project.json` in NuGet 3.x and later). For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
+For NuGet 2.7 and above, use the [Restore](../tools/nuget-exe-cli-reference.md#restore) command to restore all packages in a solution (using either `packages.config` in NuGet 2.x and later or `project.json` in NuGet 3.x and later). For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
 
 ```bash
     c:\proj\app\> nuget restore

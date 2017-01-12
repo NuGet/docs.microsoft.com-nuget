@@ -98,7 +98,7 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 
 ## config
 
-Gets or sets NuGet config values. For additional usage, see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). For details on allowable key names, refer to the [NuGet config file reference](../schema/nuget.config-file.md).
+Gets or sets NuGet config values. For additional usage, see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). For details on allowable key names, refer to the [NuGet config file reference](../Schema/nuget-config-file.md).
 
 ### Usage
 
@@ -359,7 +359,7 @@ where &lt;packageID&gt; is the package to mirror, or &lt;configFilePath&gt; iden
 
 The &lt;listUrlTarget&gt; specifies the source repository, and &lt;publishUrlTarget&gt; specifies the target repository.
 
-If your target repository is on https://machine/repo that's running [NuGet.Server](../hosting-packages/nuget.server.md), the list and push urls will be *https://machine/repo/nuget* and *https://machine/repo/api/v2/packag*e, respectively.
+If your target repository is on https://machine/repo that's running [NuGet.Server](../hosting-packages/NuGet-Server.md), the list and push urls will be *https://machine/repo/nuget* and *https://machine/repo/api/v2/packag*e, respectively.
 
 ### Options
 

@@ -23,7 +23,7 @@
       topicHref: /nuget/hosting-packages/overview
     - name: Tools
       tocHref: /nuget/tools/
-      topicHref: /nuget/tools/nuget.exe-cli-reference
+      topicHref: /nuget/tools/nuget-exe-cli-reference
     - name: Schema
       tocHref: /nuget/schema/
       topicHref: /nuget/schema/nuspec
