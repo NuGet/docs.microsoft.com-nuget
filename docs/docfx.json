@@ -30,7 +30,9 @@
     "externalReference": [],
         "globalMetadata": {
             "breadcrumb_path": "~/_breadcrumb/toc.yml",
-            "ROBOTS": "INDEX,FOLLOW"},
+            "ROBOTS": "INDEX,FOLLOW",
+            "searchScope": ["NuGet"]
+            },
     "fileMetadata": {},
     "template": [],
     "dest": "nuget"
