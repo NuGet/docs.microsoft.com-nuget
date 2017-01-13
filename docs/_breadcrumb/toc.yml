@@ -38,4 +38,4 @@
       topicHref: /nuget/policies/nuget-faq
     - name: Release Notes
       tocHref: /nuget/release-notes/
-      topicHref: /nuget/release-notes/known-issues
+      topicHref: /nuget/release-notes/index
