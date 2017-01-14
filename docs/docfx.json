@@ -31,8 +31,7 @@
         "globalMetadata": {
             "breadcrumb_path": "~/_breadcrumb/toc.yml",
             "ROBOTS": "INDEX,FOLLOW",
-            "searchScope": ["NuGet"],
-            "hideScope": true
+            "searchScope": ["NuGet"]          
             },
     "fileMetadata": {},
     "template": [],
