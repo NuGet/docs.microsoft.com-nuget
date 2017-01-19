@@ -85,7 +85,7 @@ See [dependency resolution document](../consume-packages/dependency-resolution.m
 
 ## Frameworks
 
-This lists the frameworks that your project will run on. E.g. net45, netcoreapp, netstandard.
+This lists the frameworks that your project will run on. For example, net45, netcoreapp, netstandard.
 
 ```json
     "frameworks": {
@@ -115,12 +115,12 @@ If you are a portable class library that can run on any runtime, you don't need 
 
 ## Supports
 
-Defines a set of checks for package dependencies. You can define where you expect the portable library/application to run, it is not restrictive, you may be able to run elsewhere but specifying things here will make NuGet check that all dependencies are able to be satisfied on the listed TxMs. Examples of the values for this are: net46.app,uwp.10.0.app etc...
+Defines a set of checks for package dependencies. You can define where you expect the portable library/application to run, it is not restrictive, you may be able to run elsewhere but specifying things here will make NuGet check that all dependencies are able to be satisfied on the listed TxMs. Examples of the values for this are: net46.app, uwp.10.0.app, etc.
 
 This section should be populated automatically when you select an entry in the Portable Class Library targets dialog.
 
 ```json
-    supports": {
+    "supports": {
         "net46.app": {},
         "uwp.10.0.app": {}
     }
@@ -143,9 +143,9 @@ The project.json file used by NuGet is a subset of that found in ASP.NET Core pr
 
 There can only be one framework in the frameworks section
 
-The framework should be empty, as shown above. No dependencies, compilation options, etc that you can see in DNX project.json files. Given that there can only be a single framework it doesn't make sense to enter framework specific dependencies.
+The framework should be empty, as shown above. No dependencies, compilation options, etc. that you can see in DNX project.json files. Given that there can only be a single framework it doesn't make sense to enter framework specific dependencies.
 
-Compilation is handled by MSBuild so compilation options, preprocessor defines, etc are all part of the MSBuild project file and not your project.json.
+Compilation is handled by MSBuild so compilation options, preprocessor defines, etc. are all part of the MSBuild project file and not your project.json.
 
 In NuGet 3 unlike in ASP.NET Core projects the user is not expected to manually edit the file, the UI is responsible for manipulating the content. we're working on unifying the experiences across the project systems for project.json, its not unified yet for this release.
 
@@ -157,4 +157,3 @@ Note that it is possible to edit the file, the user is responsible to build the 
 The `project.lock.json` file is generated in the process of restoring the NuGet packages in projects that use `project.json`. It holds a snapshot of all the information that is generated as NuGet walks the graph of packages and includes the version, contents, and dependencies of all the packages in your project. The build system uses this to choose packages from a global location that are relevant when building the project instead of depending on a local packages folder in the project itself. This results in faster build performance because it's necessary to read only `project.lock.json` instead of many separate `.nuspec` files.
 
 The `project.lock.json` is automatically generated on package restore, so it can be omitted from source control by adding it to `.gitignore` and `.tfignore` files. However, if you include it in source control, the change history will show changes in dependencies resolved over time.
-
