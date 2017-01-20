@@ -14,8 +14,8 @@ ms.assetid: 94c088ce-ec96-4876-a210-fbdae743942c
 
 # optional metadata
 
-#description:
-#keywords:
+description: The governance model for NuGet, including roles and responsibilities for committers, contributors, and users.
+keywords: NuGet governance, NuGet benevolent dictator, committer responisibilites, contributor responisibilites, user responsibilities
 #ROBOTS:
 #audience:
 #ms.devlang:

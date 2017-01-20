@@ -14,8 +14,8 @@ ms.assetid: 97577ddd-c294-432d-81a7-b4aebe88bd1c
 
 # optional metadata
 
-#description:
-#keywords:
+description: An overview of opens for hosting your own NuGet package feeds or galleries either locally or remotely.
+keywords: keywords: NuGet feed, NuGet gallery, custom package feed, NuGet.Server
 #ROBOTS:
 #audience:
 #ms.devlang:

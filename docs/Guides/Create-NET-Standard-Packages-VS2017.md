@@ -14,8 +14,8 @@ ms.assetid: 2c1de334-fdc9-4e1e-8ef6-a90b3e77ff0f
 
 # optional metadata
 
-#description:
-#keywords:
+description: An end-to-end walkthrough of creating .NET standard NuGet packages using NuGet 4.x and Visual Studio 2017.
+keywords: create a package, .NET Standard packages, .NET Core
 #ROBOTS:
 #audience:
 #ms.devlang:

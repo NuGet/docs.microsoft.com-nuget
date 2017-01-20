@@ -14,8 +14,8 @@ ms.assetid: 8971dcf5-1d05-46e1-adf2-ce0f55521a49
 
 # optional metadata
 
-#description:
-#keywords:
+description: Comprehensive resources in the NuGet ecosystem including NuGet sources, non-Microsoft NuGet projects, utilities, and training materials.
+keywords: NuGet ecosystem, non-Microsoft NuGet projects, NuGet open source, NuGet utilities, NuGet training materials
 #ROBOTS:
 #audience:
 #ms.devlang:

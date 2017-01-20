@@ -14,8 +14,8 @@ ms.assetid: 91781ed6-da5c-49f0-b973-16dd8ad84229
 
 # optional metadata
 
-description: A tutorial that walks through the process of creating and publishing a NuGet package using a .NET class library using  the nuget.exe command-line interface and Visual Studio.
-keywords: NuGet package create publish
+description: A walkthrough tutorial on creating and publishing a NuGet package using both the nuget.exe command-line interface and Visual Studio.
+keywords: NuGet package creation, NuGet package publishing, NuGet tutorial
 #ROBOTS:
 #audience:
 #ms.devlang:

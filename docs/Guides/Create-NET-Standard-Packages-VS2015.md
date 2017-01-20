@@ -14,8 +14,8 @@ ms.assetid: 29b3bceb-0f35-4cdd-bbc3-a04eb823164c
 
 # optional metadata
 
-#description:
-#keywords:
+description: An end-to-end walkthrough of creating .NET standard NuGet packages using NuGet 3.x and Visual Studio 2015.
+keywords: create a package, .NET Standard packages, .NET standard mapping table
 #ROBOTS:
 #audience:
 #ms.devlang:
