@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet Credential Providers for Visual Studio | Microsoft Docs
+title: NuGet credential providers for Visual Studio | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -14,8 +14,8 @@ ms.assetid: 9c7f6d16-f437-47c4-82d4-6c996e0b18ec
 
 # optional metadata
 
-#description:
-#keywords:
+description: NuGet credential providers are extensions for Visual Studio that authenticate with a feedthrough the IVsCredentialProvider interface.
+keywords: NuGet credential providers, authenticate with feed, authenticate with gallery, NuGet visual studio extension
 #ROBOTS:
 #audience:
 #ms.devlang:

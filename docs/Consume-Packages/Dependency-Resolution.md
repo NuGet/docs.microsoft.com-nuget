@@ -14,8 +14,8 @@ ms.assetid: 1d530a72-3486-4a0d-b6fb-017524616f91
 
 # optional metadata
 
-#description:
-#keywords:
+description: Installing a NuGet package also installs any other packages it depends upon, as well as those package's own dependencies. Dependency resolution is the process of finding the apporpropriate package to install given all the dependency constraints and package versions involved. The process differs between NuGet 2.x and NuGet 3.x+.
+keywords: NuGet package dependencies dependency versions graph version resolution transitive restore
 #ROBOTS:
 #audience:
 #ms.devlang:
