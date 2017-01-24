@@ -14,8 +14,8 @@ ms.assetid: ae24824b-a138-4d12-a810-1f653ddffd32
 
 # optional metadata
 
-#description:
-#keywords:
+description: An end-to-end walkthrough of creating NuGet packages for Xamarin that use native APIs on iOS, Android, and Windows.
+keywords: create a package, packages for Xamarin, cross-platform packages
 #ROBOTS:
 #audience:
 #ms.devlang:

@@ -14,8 +14,8 @@ ms.assetid: 77ba98d8-3d66-4126-b2b6-813ddd8ef192
 
 # optional metadata
 
-#description: release notes 2.8
-#keywords: release notes 2.8
+description: Release notes for NuGet 2.8 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 2.8 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

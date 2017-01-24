@@ -14,8 +14,8 @@ ms.assetid: 2785879b-97f0-4a85-b3cc-bf4eaa5c39bf
 
 # optional metadata
 
-#description:
-#keywords:
+description: Details on when it's necessary to reinstall and update packages, as with broken package references in Visual Studio.
+keywords: NuGet package installation, NuGet package reinstallation, NuGet package restore, updating package, restoring packages, fixing broken references
 #ROBOTS:
 #audience:
 #ms.devlang:

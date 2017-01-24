@@ -1,4 +1,3 @@
-
 ---
 # required metadata
 
@@ -15,8 +14,8 @@ ms.assetid: 0fc4d89a-ccca-4d63-85bf-461cd9ced882
 
 # optional metadata
 
-#description: release notes 3.1
-#keywords: release notes 3.1
+description: Release notes for NuGet 3.1 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 3.1 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

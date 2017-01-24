@@ -14,8 +14,8 @@ ms.assetid: f31f8259-20a8-4617-880e-5819299372d2
 
 # optional metadata
 
-description: A tutorial that walks through the process of installing and using a NuGet package.
-keywords: NuGet package consume references installing
+description: A walkthrough tutorial on the process of installing and using a NuGet package in a project.
+keywords: NuGet package consumption, installing NuGet packages, NuGet package references, using NuGet packages
 #ROBOTS:
 #audience:
 #ms.devlang:

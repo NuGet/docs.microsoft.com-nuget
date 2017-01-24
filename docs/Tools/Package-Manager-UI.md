@@ -14,8 +14,8 @@ ms.assetid: 62f6962b-7b84-4452-ae0d-a9e1ef1fc6f0
 
 # optional metadata
 
-#description:
-#keywords:
+description: Instructions for using the NuGet Package Manager UI in Visual Studio for working with packages.
+keywords: NuGet package manager UI, NuGet in Visual Studio, managing NuGet packages, NuGet user interface
 #ROBOTS:
 #audience:
 #ms.devlang:

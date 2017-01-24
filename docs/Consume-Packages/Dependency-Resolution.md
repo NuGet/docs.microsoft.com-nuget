@@ -14,8 +14,8 @@ ms.assetid: 1d530a72-3486-4a0d-b6fb-017524616f91
 
 # optional metadata
 
-#description:
-#keywords:
+description: Details on the process through which a NuGet package's dependencies are resolved and installed in both NuGet 2.x and NuGet 3.x+.
+keywords: NuGet package dependencies, NuGet versioning, dependency versions, version graph, version resolution, transitive restore
 #ROBOTS:
 #audience:
 #ms.devlang:

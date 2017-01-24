@@ -14,8 +14,8 @@ ms.assetid: 119ea65b-b38b-4a8c-a4ed-6ea06f1aad09
 
 # optional metadata
 
-#description: release notes 2.6.1
-#keywords: release notes 2.6.1
+description: Release notes for NuGet 2.6.1 for WebMatrix including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 2.6.1 for WebMatrix release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

@@ -14,8 +14,8 @@ ms.assetid: a86e2080-93dd-4081-ac9b-d3bd66ba3799
 
 # optional metadata
 
-#description:
-#keywords:
+description: Conventions for .NET analyzers that are packaged and distributed with NuGet packages that implement an API or library.
+keywords: NuGet analyzer conventions, .NET analyzers, NuGet and .NET Compiler Platform, NuGet and Roslyn
 #ROBOTS:
 #audience:
 #ms.devlang:

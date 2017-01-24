@@ -14,8 +14,8 @@ ms.assetid: 60af25ad-e899-43ac-9236-8b8cb167bcde
 
 # optional metadata
 
-#description: release notes 3.4.3
-#keywords: release notes 3.4.3
+description: Release notes for NuGet 3.4.3 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 3.4.3 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

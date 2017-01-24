@@ -14,8 +14,8 @@ ms.assetid: 1354a527-d988-43d1-8dcf-6ce46ec5d3d4
 
 # optional metadata
 
-#description:
-#keywords:
+description: How to create a local feed for NuGet packages using folders on your local network
+keywords: NuGet feed, NuGet gallery, local package feed
 #ROBOTS:
 #audience:
 #ms.devlang:

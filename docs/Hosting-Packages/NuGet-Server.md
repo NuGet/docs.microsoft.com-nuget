@@ -14,8 +14,8 @@ ms.assetid: 45138f80-9717-42c2-8b34-9a1bc1fb3eab
 
 # optional metadata
 
-#description:
-#keywords:
+description: How to create and host a NuGet package feed on any server running IIS using NuGet.Server, making packages available through HTTP and OData.
+keywords: NuGet feed, NuGet gallery, remote package feed, NuGet.Server
 #ROBOTS:
 #audience:
 #ms.devlang:

@@ -14,8 +14,8 @@ ms.assetid: 983485df-9375-4827-b58b-70065320ee37
 
 # optional metadata
 
-#description:
-#keywords:
+description: Details on how the implementation of project.json in NuGet 3.x affects package authors, such as unsupported features, content, and package format.
+keywords: NuGet and project.json, project.json impact, package authoring considerations, project.json features
 #ROBOTS:
 #audience:
 #ms.devlang:
@@ -67,18 +67,18 @@ Packages using the above features would have to use a different mechanism. The m
 
 Packages that attempt to modify the project to ease startup, typically work in a very limited set of scenarios, and will instead provide a readme, or guidance on how to use the package.
 
-Most existing packages should not need to use the new package format described below.
+Most existing packages should not need to use the package format described below.
 
-The new format enables native content as a first class scenario. This means that managed assemblies depending on close to hardware implementations to ship binary implementations alongside the managed assemblies based on the target platform. For example System.IO.Compression package is utilizing this technology. [https://www.nuget.org/packages/System.IO.Compression](https://www.nuget.org/packages/System.IO.Compression)
+The format enables native content as a first class scenario. This means that managed assemblies depending on close to hardware implementations to ship binary implementations alongside the managed assemblies based on the target platform. For example System.IO.Compression package is utilizing this technology. [https://www.nuget.org/packages/System.IO.Compression](https://www.nuget.org/packages/System.IO.Compression)
 
-In summary if the functionality above is not absolutely necessary, we recommend sticking with the existing package format. The new format will be supported only by NuGet 3.0.
+In summary if the functionality above is not absolutely necessary, we recommend sticking with the existing package format, as the format described here is supported only by NuGet 3.x+.
 
 It would be possible to build packages to work for both packages.config and project.json scenarios through shimming, however it is often simpler to just structure the packages the traditional way, without the deprecated features mentioned above.
 
 
 ## 3.x Package Format  ##
 
-The 3.x package format allows for several new features:
+The 3.x package format allows for several additional features beyond NuGet 2.x:
 
 1. Defining a reference assembly used for compilation and a set of implementation assemblies used for runtime on different platforms/devices. Which allows you to take advantage of platform specific APIs while providing a common surface area for your consumers. Specifically this makes writing intermediate portable libraries easier.
 

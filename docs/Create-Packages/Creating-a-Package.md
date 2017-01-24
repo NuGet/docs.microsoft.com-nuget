@@ -14,8 +14,8 @@ ms.assetid: 456797cb-e3e4-4b88-9b01-8b5153cee802
 
 # optional metadata
 
-description: A detailed guide and reference to the process of creating a NuGet package, including deciding which files to package, creating the .nuspec manifest file, choosing an identifier and version number, setting a package type, adding a readme and other files, creating the .nupkg package file.
-keywords: Nuget package create creation reference nuspec manifest conventions identifier version
+description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
+keywords: NuGet package creation, creating a package, nuspec manifest, NuGet package conventions, NuGet package version
 #ROBOTS:
 #audience:
 #ms.devlang:

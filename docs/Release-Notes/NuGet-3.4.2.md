@@ -14,8 +14,8 @@ ms.assetid: b514da09-da1f-416b-9bfc-692f08fb6957
 
 # optional metadata
 
-#description: release notes 3.4.2
-#keywords: release notes 3.4.2
+description: Release notes for NuGet 3.4.2 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 3.4.2 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

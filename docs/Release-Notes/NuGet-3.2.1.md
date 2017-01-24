@@ -14,8 +14,8 @@ ms.assetid: d27c3bb9-8db1-439a-a134-54e20b7a7766
 
 # optional metadata
 
-#description: release notes 3.2.1
-#keywords: release notes 3.2.1
+description: Release notes for NuGet 3.2.1 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 3.2.1 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

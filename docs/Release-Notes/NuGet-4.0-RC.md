@@ -14,8 +14,8 @@ ms.assetid: fa64825d-5908-4abe-9792-d70766d6e2ff
 
 # optional metadata
 
-#description: release notes 3.5 RTM
-#keywords: release notes 3.5 RTM
+description: Release notes for NuGet 4.0 RC including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 4.0 RC release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

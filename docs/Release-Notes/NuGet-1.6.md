@@ -14,8 +14,8 @@ ms.assetid: ed433790-99bf-4b71-92a8-17314bd49867
 
 # optional metadata
 
-#description: release notes 1.6
-#keywords: release notes 1.6
+description: Release notes for NuGet 1.6 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 1.6 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

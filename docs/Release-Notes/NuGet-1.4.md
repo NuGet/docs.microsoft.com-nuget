@@ -14,8 +14,8 @@ ms.assetid: e4856d0a-b408-4c60-ac51-f80ea06d9f79
 
 # optional metadata
 
-#description: release notes 1.4
-#keywords: release notes 1.4
+description: Release notes for NuGet 1.4 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 1.4 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

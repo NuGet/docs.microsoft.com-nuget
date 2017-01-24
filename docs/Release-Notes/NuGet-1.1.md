@@ -14,8 +14,8 @@ ms.assetid: 0e7688f7-09d2-4477-9fdf-0e27f572a4de
 
 # optional metadata
 
-#description: release notes 1.1
-#keywords: release notes 1.1
+description: Release notes for NuGet 1.1 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 1.1 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

@@ -14,8 +14,8 @@ ms.assetid: 7a70d748-efe2-4f8f-a3fd-67ddb0f6214e
 
 # optional metadata
 
-#description:
-#keywords:
+description: Details on creating native NuGet packages that contains C++ code instead of managed code, for use in C++ projects.
+keywords: NuGet native packages, NuGet C++ packages, native code packages, targeting C++ projects
 #ROBOTS:
 #audience:
 #ms.devlang:

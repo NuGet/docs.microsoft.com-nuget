@@ -14,8 +14,8 @@ ms.assetid: a348ca2e-0a5d-40ad-ba33-9bb37e1d980b
 
 # optional metadata
 
-#description:
-#keywords:
+description: Policies for unlisting packages from nuget.org; permanent deletion is not supported except when packages violate other policies.
+keywords: NuGet package deletion, NuGet package unlisting, prohibited uses of packages
 #ROBOTS:
 #audience:
 #ms.devlang:

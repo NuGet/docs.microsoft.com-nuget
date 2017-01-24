@@ -14,8 +14,8 @@ ms.assetid: 2c874e6f-99eb-46dd-997f-f67d98d0237e
 
 # optional metadata
 
-#description:
-#keywords:
+description: Considerations for how to treat NuGet packages within version control and source control systems, and how to omit packages with git and TFVC.
+keywords: NuGet source control, NuGet version control, NuGet and git, NuGet and TFS, NuGet and TFVC, omitting packages, source control repositories, version control repositories
 #ROBOTS:
 #audience:
 #ms.devlang:
