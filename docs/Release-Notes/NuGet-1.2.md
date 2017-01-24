@@ -14,8 +14,8 @@ ms.assetid: 48f23141-b2ad-4cdf-8d81-7bb6b9419aa6
 
 # optional metadata
 
-#description: release notes 1.2
-#keywords: release notes 1.2
+description: Release notes for NuGet 1.2 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 1.2 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

@@ -14,8 +14,8 @@ ms.assetid: 3932217d-780d-4bd1-ad15-767acd3e8870
 
 # optional metadata
 
-#description:
-#keywords:
+description: How to manage the different NuGet package caches that exist on a machine, which are used when installing or restoring packages.
+keywords: NuGet package cache, package caching, NuGet caches, managing caches, local NuGet cache, global NuGet cache, NuGet locals command, clearing a cache
 #ROBOTS:
 #audience:
 #ms.devlang:

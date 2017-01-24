@@ -14,8 +14,8 @@ ms.assetid: 8886f899-797b-4704-9d16-820b55b71186
 
 # optional metadata
 
-#description:
-#keywords:
+description: An overview of how to find and choose the best NuGet packages for a project including details on the NuGet search syntax.
+keywords: NuGet package consumption, NuGet package discovery, best NuGet packages, deciding on packages, consuming packages, evaluating package, NuGet search syntax
 #ROBOTS:
 #audience:
 #ms.devlang:

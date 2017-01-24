@@ -14,8 +14,8 @@ ms.assetid: c1e34826-d07d-4609-a0fd-123459ae89c5
 
 # optional metadata
 
-description: NuGet.Config files contain settings that control various aspect of NuGet's behavior both globally and on a per-project basis. Settings are changed with the nuget config command and are applied in a well-defined deterministic order when multiple config files are involved.
-keywords: NuGet config configuration behavior nuget.config nugetdefaults.config defaults
+description: NuGet.Config files control NuGet's behavior both globally and on a per-project basis, and are modified with nuget config command.
+keywords: NuGet config files, NuGet configuration, NuGet behavior settings, NuGet settings, nuget.config, nugetdefaults.config defaults
 #ROBOTS:
 #audience:
 #ms.devlang:

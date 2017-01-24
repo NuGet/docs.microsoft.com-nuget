@@ -14,8 +14,8 @@ ms.assetid: 3c60f920-457d-4f43-9efe-210c514e5242
 
 # optional metadata
 
-#description:
-#keywords:
+description: An overview of the process of consuming NuGet packages in a project, with links to other specific parts of the process.
+keywords: NuGet package consumption, NuGet consumption overview, NuGet consumption workflow, package consumption workflow, package consumption overview
 #ROBOTS:
 #audience:
 #ms.devlang:

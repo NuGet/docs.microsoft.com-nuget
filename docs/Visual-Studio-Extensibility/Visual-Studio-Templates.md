@@ -14,8 +14,8 @@ ms.assetid: 0b2cf228-f028-475d-8792-c012dffdb26f
 
 # optional metadata
 
-#description:
-#keywords:
+description: Instructions for including NuGet packages as part of Visual Studio project and item templates.
+keywords: NuGet in Visual Studio, Visual Studio project templates, Visual Studio item templates, packages in project templates, packages in item templates
 #ROBOTS:
 #audience:
 #ms.devlang:

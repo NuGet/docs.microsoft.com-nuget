@@ -14,8 +14,8 @@ ms.assetid: 824c3f45-c6c2-4c82-9d6d-62a19bfdc4a4
 
 # optional metadata
 
-#description:
-#keywords:
+description: Details on the two ways to create localized NuGet packages, either by including all assemblies in a single package or publishing separate assemblies.
+keywords: NuGet package localization, NuGet satellite assemblies, creating localized packages, NuGet localization conventions
 #ROBOTS:
 #audience:
 #ms.devlang:

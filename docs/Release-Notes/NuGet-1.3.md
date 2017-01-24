@@ -14,8 +14,8 @@ ms.assetid: 5d1c2191-783f-4faa-b72e-356a59323d39
 
 # optional metadata
 
-#description: release notes 1.3
-#keywords: release notes 1.3
+description: Release notes for NuGet 1.3 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 1.3 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

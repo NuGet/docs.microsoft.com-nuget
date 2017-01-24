@@ -1,4 +1,3 @@
-
 ---
 # required metadata
 
@@ -15,8 +14,8 @@ ms.assetid: cd0c102f-bc33-4aa2-a921-61fa21d42b28
 
 # optional metadata
 
-#description: release notes 3.0 RC
-#keywords: release notes 3.0 RC
+description: Release notes for NuGet 3.0 RC including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 3.0 RC release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

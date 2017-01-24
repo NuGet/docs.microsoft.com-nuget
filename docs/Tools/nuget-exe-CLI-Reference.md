@@ -14,8 +14,8 @@ ms.assetid: d777c424-0cf3-4bc0-8abd-7ca16c22192b
 
 # optional metadata
 
-#description:
-#keywords:
+description: The complete command-line reference for nuget.exe and information on the use of environment variables.
+keywords: nuget.exe reference, nuget.exe command-line interface, nuget.exe CLI, NuGet commands
 #ROBOTS:
 #audience:
 #ms.devlang:

@@ -1,4 +1,3 @@
-
 ---
 # required metadata
 
@@ -15,8 +14,8 @@ ms.assetid: 8ad13a67-9348-4f04-8f8b-b8f4a0b2c6df
 
 # optional metadata
 
-#description: release notes 3.0.0
-#keywords: release notes 3.0.0
+description: Release notes for NuGet 3.0.0 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 3.0.0 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

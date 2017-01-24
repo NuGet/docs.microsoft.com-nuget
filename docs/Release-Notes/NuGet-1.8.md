@@ -14,8 +14,8 @@ ms.assetid: e694ee1a-fe4c-4397-8d0a-7336be4dfebe
 
 # optional metadata
 
-#description: release notes 1.8
-#keywords: release notes 1.8
+description: Release notes for NuGet 1.8 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 1.8 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

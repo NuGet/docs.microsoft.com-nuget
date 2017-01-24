@@ -14,8 +14,8 @@ ms.assetid: d64fa6d8-a3f7-4c72-95d3-1a964375ccb8
 
 # optional metadata
 
-#description:
-#keywords:
+description: In some project types, project.json maintains the list of NuGet packages ued in a project.
+keywords: NuGet project.json, NuGet package references, NuGet dependencies, project.lock.json
 #ROBOTS:
 #audience:
 #ms.devlang:

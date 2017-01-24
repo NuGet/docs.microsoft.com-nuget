@@ -14,8 +14,8 @@ ms.assetid: 3c60f920-457d-4f43-9efe-210c514e5242
 
 # optional metadata
 
-#description:
-#keywords:
+description: An overview of the process of creating and publishing a NuGet package, with links to other specific parts of the process.
+keywords: NuGet package creation, NuGet creation overview, NuGet creation workflow, package creation workflow, package creation overview.
 #ROBOTS:
 #audience:
 #ms.devlang:

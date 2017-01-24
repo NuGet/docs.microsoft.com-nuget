@@ -14,8 +14,8 @@ ms.assetid: 3113cccd-35f7-4980-8a6e-fc06556b5064
 
 # optional metadata
 
-#description:
-#keywords:
+description: A walkthrough of how NuGet package restore with with Team Foundation Build (both TFS and Visual Studio Team Services).
+keywords: NuGet package restore, NuGet and TFS, NuGet and VSTS, NuGet build systems, team foundation build, custom MSBuild projects, cloud build, continuous integration
 #ROBOTS:
 #audience:
 #ms.devlang:

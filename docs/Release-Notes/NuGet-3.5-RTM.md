@@ -14,8 +14,8 @@ ms.assetid: 4153ff3f-f97f-4e54-b638-e844f70edf22
 
 # optional metadata
 
-#description: release notes 3.5 RTM
-#keywords: release notes 3.5 RTM
+description: Release notes for NuGet 3.5 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 3.5 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:
@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-#NuGet 3.5 RTM Release Notes
+#NuGet 3.5 Release Notes
 
 [NuGet 3.5-RC Release Notes](../release-notes/nuget-3.5-RC.md) | [NuGet 4.0 RC Release Notes](../release-notes/nuget-4.0-RC.md)
 

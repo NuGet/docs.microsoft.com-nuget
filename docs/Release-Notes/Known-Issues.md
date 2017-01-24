@@ -14,8 +14,8 @@ ms.assetid: 42e7a619-1c69-454b-8243-16e2f9f950d0
 
 # optional metadata
 
-#description: release notes Known Issues
-#keywords: release notes Known Issues
+description: Known issues with NuGet including authentication, package installation, and tools.
+keywords: NuGet known issues, NuGet problems
 #ROBOTS:
 #audience:
 #ms.devlang:

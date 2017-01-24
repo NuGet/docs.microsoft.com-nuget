@@ -14,8 +14,8 @@ ms.assetid: 86f7e724-2509-4d7d-aa8d-4a3fb913ded6
 
 # optional metadata
 
-#description: release notes 3.5 RTM
-#keywords: release notes 3.5 RTM
+description: NuGet pack and restore can work directly as MSBuild targets with NuGet 4.0+.
+keywords: NuGet and MSBuild, NuGet pack target, NuGet restore target
 #ROBOTS:
 #audience:
 #ms.devlang:
