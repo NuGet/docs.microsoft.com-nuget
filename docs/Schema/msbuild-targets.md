@@ -123,7 +123,7 @@ As part of the change for [NuGet Issue 2582](https://github.com/NuGet/Home/issue
 
 ### Output assemblies
 
-The `nuget pack` command will copy output files with extensions `.exe`, `.dll`, `.xml`, and `.winmd`. The output files that are copied depend on what MSBuild provides from the `BuiltOutputProjectGroup` target.
+The `nuget pack` command will copy output files with extensions `.exe`, `.dll`, `.xml`, `.winmd`, `.json`, and `.pri`. The output files that are copied depend on what MSBuild provides from the `BuiltOutputProjectGroup` target.
 
 There are two MSBuild  properties that you can use in your project file or command line to control where output assemblies go:
 
@@ -180,7 +180,7 @@ If you want to copy all your content to only a specific root folder(s) (instead 
     </Content>
 ```
 
-There is also an MSBuild property `$(IncludeContentInPack)`, which defaults to `true`. If this is set to `false` on any project, then the content from that project or it's project to project dependencies are not included in the nuget package.
+There is also an MSBuild property `$(IncludeContentInPack)`, which defaults to `true`. If this is set to `false` on any project, then the content from that project are not included in the nuget package.
 
 > [!Note]
 > Apart from Content items, the &lt;Pack&gt; and &lt;PackagePath&gt; metadata can also be set on files with a build action of Compile, EmbeddedResource, ApplicationDefinition, Page, Resource, SplashScreen, DesignData, DesignDataWithDesignTimeCreatableTypes, CodeAnalysisDictionary, AndroidAsset, AndroidResource, BundleResource or None.
@@ -189,7 +189,7 @@ There is also an MSBuild property `$(IncludeContentInPack)`, which defaults to `
 
 ### IncludeSymbols
 
-When using `MSBuild /t:pack /p:IncludeSymbols=true`, the corresponding pdb files are copied along with other output files (`.dll`, `.exe`, `.winmd`, `.xml`). Note that setting `IncludeSymbols=true` creates a regular package *and* a symbols package.
+When using `MSBuild /t:pack /p:IncludeSymbols=true`, the corresponding pdb files are copied along with other output files (`.dll`, `.exe`, `.winmd`, `.xml`, `.json`, `.pri`). Note that setting `IncludeSymbols=true` creates a regular package *and* a symbols package.
 
 ### IncludeSource
 
