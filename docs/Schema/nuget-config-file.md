@@ -255,7 +255,7 @@ Key | Value
         <!-- All non-disabled sources are active -->
         <add key="All" value="(Aggregate source)" />
     </activePackageSource>
-```xml
+```
 
 
 ## Example config file
