@@ -36,7 +36,7 @@ NuGet behavior is controlled by settings in `NuGet.Config` files as described in
 
 Note that with NuGet 3.4+ you can use environment variables in `NuGet.Config` values to apply machine-specific settings at run time. For example, if the `HOME` environment variable is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file will resolve to `c:\users\username\NuGetRepository`. If an environment variable is not found, NuGet will leave the value unmodified.
 
-lso note that with Visual Studio 2017+ and NuGet 4.0+, the machine-wide `NuGet.config` is now located at `%ProgramFiles(x86)%\NuGet\Config\` to improve security in multi-user scenarios. You will need to manually migrate existing config files from `%ProgramData%` to `%ProgramFiles(x86)%`. Going forward,NuGet 4.0+ will also treat this as the new location for the machine-wide configuration. `NuGet.config` in `%ProgramData%\NuGet\Config\` will no longer be implicitly referenced or considered for hierarchical merging of `nuget.config`.
+Also note that with Visual Studio 2017+ and NuGet 4.0+, the machine-wide `NuGet.config` is now located at `%ProgramFiles(x86)%\NuGet\Config\` to improve security in multi-user scenarios. You will need to manually migrate existing config files from `%ProgramData%` to `%ProgramFiles(x86)%`. Going forward,NuGet 4.0+ will also treat this as the new location for the machine-wide configuration. `NuGet.config` in `%ProgramData%\NuGet\Config\` will no longer be implicitly referenced or considered for hierarchical merging of `nuget.config`.
 
 In this topic:
 
