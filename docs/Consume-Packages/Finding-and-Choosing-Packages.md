@@ -56,7 +56,7 @@ At this time, search results are sorted only by relevance, so you generally want
 
 ### Does the package support my project's target framework?
 
-NuGet will install a package into a project only if that package's supported frameworks include the project's target framework. (See [Supporting multiple target frameworks](../create-packages/supporting-multiple-target-framework.md) for how this is done when creating a package.) If the package is not compatible, NuGet will issue an error.
+NuGet will install a package into a project only if that package's supported frameworks include the project's target framework. (See [Supporting multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md) for how this is done when creating a package.) If the package is not compatible, NuGet will issue an error.
 
 Some packages list their supported frameworks directly in the nuget.org gallery, but because such data is not required, many packages do not include that list. Therefore the primary way to check whether a target framework is supported is to attempt to install the package into a project. Using `Install-Package` in the NuGet Package Manager Console is the best method for this, as it will show you the most information if the package is incompatible, including its list of supported frameworks.
 
