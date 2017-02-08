@@ -5,7 +5,7 @@ title: Create .NET Standard NuGet Packages with Visual Studio 2017 | Microsoft D
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 2/8/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -30,7 +30,7 @@ ms.reviewer:
 
 # Create .NET Standard Packages with Visual Studio 2017
 
-*Applies to NuGet 4.x+. See [Create .NET Standard Packages with Visual Studio 2015](../guides/create-net-standard-packages-vs2015.md) for working with NuGet 3.x+*
+*Applies to NuGet 4.x+ and MSBuild 15.1+ as provided with Visual Studio 2017. See [Create .NET Standard Packages with Visual Studio 2015](../guides/create-net-standard-packages-vs2015.md) for working with NuGet 3.x+*
 
 The [.NET Standard Library]((https://docs.microsoft.com/en-us/dotnet/articles/standard/library)) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code.
 
@@ -44,20 +44,20 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 ## Pre-requisites
 
-This walkthrough requires Visual Studio 2017 with the **.NET Core and Docker (Preview)** workload. You can install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/), or use the Professional and Enterprise editions.
+This walkthrough requires Visual Studio 2017 with the **.NET Core cross-platform development** workload. You can install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/), or use the Professional and Enterprise editions.
 
 The require workload appears as follows in the Visual Studio installer:
 
-![.NET Core and Docker (Preview) workload in the Visual Studio Installer](media/NuGet4-01-Workload.png)
+![.NET Core cross-platform development workload in the Visual Studio Installer](media/NuGet4-01-Workload.png)
 
 ## Create the .NET Core class library project
 
-1. In Visual Studio, **File > New > Project**, expand the **Visual C# > .NET Core** node, select **Class Library (Net Standard)**, change the name to AppLogger, and click OK.
+1. In Visual Studio, **File > New > Project**, expand the **Visual C# > .NET Standard** node, select **Class Library (Net Standard)**, change the name to AppLogger, and click OK.
 
     ![Create new class library project](media/NuGet4-02-NewProject.png)
 
 1. Change the build configuration to **Release**.
-1. Right-click the `AppLogger (Portable)` in Solution Explorer, select **Properties**, select the **Build** tab, check the box for **XML documentation file**, and set the filename to just `AppLogger.xml`.
+1. Right-click the `AppLogger (Portable)` in Solution Explorer, select **Properties**, select the **Build** tab, check the box for **XML documentation file**, and set the filename to just `AppLogger.xml`. Then save the project.
 
 1. Add your code to the component, for example:
 
@@ -80,7 +80,7 @@ The require workload appears as follows in the Visual Studio installer:
 
 With NuGet 4.0 and .NET Core projects, package metadata is contained directly in the `.csproj` file instead of external files such as a `.nuspec`. A full description of that metadata is found in [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md#pack-target).
 
-1. Right-click the project in Solution Explorer and select **Edit AppLogger.csproj**.
+1. Right-click the project in Solution Explorer, select **Edit AppLogger.csproj**, and then edit the first property group to include package information such as the following:
 
     ```xml
         <PropertyGroup>
@@ -96,16 +96,16 @@ With NuGet 4.0 and .NET Core projects, package metadata is contained directly in
         </PropertyGroup>
     ```
 
-1. Right-click the solution and select **Build Solution** to again generate all the files for the package, this time with the correct metadata.
+1. Save the project, then right-click the solution and select **Build Solution** to again generate all the files for the package, this time with the correct metadata.
 
 
 ## Package the component
 
-NuGet 4.0 supports a pack target using MSBuild when the project contains the necessary package metadata, as was added in the previous section. To invoke MSBuild in this way, simply specify the pack target on the command line:
+NuGet 4.0 supports a pack target using MSBuild version 15.1+ when the project contains the necessary package metadata, as was added in the previous section. To invoke MSBuild in this way, simply specify the pack target on the command line in the same folder as the `.csproj` file:
 
     msbuild /t:pack /p:Configuration=Release
 
-This will generate `AppLogger.YOUR_NAME.1.0.0.nupkg` in the `bin\Release` folder by default, as it builds that configuration. If you omit the `/p` switch, the default configuration will be `Debug`.
+This generates `AppLogger.YOUR_NAME.1.0.0.nupkg` in the `bin\Release` folder by default, as it builds that configuration. If you omit the `/p` switch, the default configuration will be `Debug`.
 
 Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
 
@@ -119,7 +119,7 @@ To make your package available to other developers,  follow the instructions on 
 
 ## Related topics
 
-- [Package References in Project Files](../consume-packages/package-references-in-project-files.md). This topic covers how dependencies are indicated in a `.csproj` file.
+- [Package References in Project Files](../consume-packages/package-references-in-project-files.md)
 - [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md)
 - [.NET Standard Library documentation](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
 - [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/en-us/dotnet/articles/core/porting/index)

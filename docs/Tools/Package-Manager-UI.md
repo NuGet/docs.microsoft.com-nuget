@@ -5,7 +5,7 @@ title: NuGet Package Manager UI Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 2/8/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -40,6 +40,11 @@ In this topic:
 - [Managing packages for the solution](#managing-packages-for-the-solution) (working with multiple projects at the same time).
 - [Package sources](#package-sources)
 - [Package manager Options control](#package-manager-options-control)
+
+> [!Note]
+> If you're missing the NuGet Package Manager in Visual Studio 2015, check **Tools > Extensions and Updates...* and search for the NuGet Package Manager extension.
+> In Visual Studio 2017, NuGet and the NuGet Package Manager is automatically installed when you select any .NET-related workloads; you can also install it individually by checking the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.)
+
 
 
 ## Finding and installing a package
