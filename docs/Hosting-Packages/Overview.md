@@ -22,6 +22,7 @@ ms.assetid: 97577ddd-c294-432d-81a7-b4aebe88bd1c
 ms.reviewer:
 - karann
 - unnir
+- anangaur
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -37,10 +38,9 @@ For all such purposes, NuGet supports setting up a private package source in the
 - NuGet.Server: Packages are made available through a local server through HTTP. For details, see [NuGet.Server](../hosting-packages/NuGet-Server.md).
 - NuGet Gallery: Packages are hosted on an Internet server using the [NuGet Gallery Project](https://github.com/NuGet/NuGetGallery/wiki/Hosting-the-NuGet-Gallery-Locally-in-IIS) on GitHub. NuGet Gallery provides user management and additional features such as an extensive web UI that allows searching and exploring packages from within the browser, similar to nuget.org.
 
-If you're using Visual Studio Team Services, you can also use the [Package Management extension](https://marketplace.visualstudio.com/items?itemName=ms.feed) to make NuGet packages available to your team. This extension works in conjunction with any other solution.
+There are also several other NuGet hosting products that support remote private feeds, including the following:
 
-There are also several third-party NuGet hosting products that support remote private feeds, including the following:
-
+- [Package Management](https://www.visualstudio.com/en-us/docs/package/overview) from [VS Team Services](https://www.visualstudio.com/team-services/) and [TFS](https://www.visualstudio.com/tfs/)
 - [MyGet](http://myget.org)
 - [ProGet](http://inedo.com/proget) from Inedo
 - [NuGet Server](http://nugetserver.net/), a community project from Inedo
