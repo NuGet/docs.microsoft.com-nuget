@@ -68,7 +68,7 @@ NuGet supports using interval notation for specifying version ranges, summarized
 | Notation | Applied rule | Description |
 |----------|--------------|-------------|
 | 1.0 | 1.0 ≤ x | Minimum version, inclusive |
-| 1.0 | 1.0 < x | Minimum version, exclusive |
+| (1.0,) | 1.0 < x | Minimum version, exclusive |
 | [1.0] | x == 1.0 | Exact version match |
 | (,1.0] | x ≤ 1.0 | Maximum version, inclusive |
 | (,1.0) | x < 1.0 | Maximum version, exclusive |

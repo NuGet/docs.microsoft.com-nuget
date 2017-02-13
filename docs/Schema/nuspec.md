@@ -441,7 +441,7 @@ For content files, simply use the same format as for assembly files, but specify
     Packaged result:
         content\style.css
 
-** Content file copied to a folder with dot in name**
+**Content file copied to a folder with dot in name**
 
 In this case, NuGet sees that the extension in `target` does not match the extension in `src` and thus treats that part of the name in `target` as a folder:
 
