@@ -14,8 +14,8 @@ ms.assetid: 75a9b496-5762-48b6-922f-fdddf1369c45
 
 # optional metadata
 
-#description: release notes 3.5 RC
-#keywords: release notes 3.5 RC
+description: Release notes for NuGet 3.5 RC including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 3.5 RC release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

@@ -5,7 +5,7 @@ title: Dependency Resolution in NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 2/8/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -14,8 +14,8 @@ ms.assetid: 1d530a72-3486-4a0d-b6fb-017524616f91
 
 # optional metadata
 
-#description:
-#keywords:
+description: Details on the process through which a NuGet package's dependencies are resolved and installed in both NuGet 2.x and NuGet 3.x+.
+keywords: NuGet package dependencies, NuGet versioning, dependency versions, version graph, version resolution, transitive restore
 #ROBOTS:
 #audience:
 #ms.devlang:
@@ -38,6 +38,7 @@ When multiple packages have the same dependency, then the same package ID can ap
 
 The exact process differs between NuGet 2.x (using `packages.config`) and NuGet 3.x (using `project.json`) as described in the sections below.
 
+In some cases, such as when there's a conflict between a dependency specified in one project and an assembly that's produced by another, it might be necessary to explicitly exclude a reference. The section [Excluding references](#excluding-reference) below.
 
 ## Dependency Resolution in NuGet 2.x
 
@@ -137,3 +138,30 @@ In some cases, it is not possible to meet all version requirements. As shown bel
 ![Unresolvable dependencies due to an exact version requirement](media/projectJson-dependency-8.png)
 
 In these situations, the top-level consumer (the application or package) should add its own direct dependency on Package B so that the [Nearest Wins](#nearest-wins) rule applies.
+
+# Excluding references
+
+There are scenarios in which assemblies with the same name might be referenced more than once in a project, producing design-time and build-time errors. For example, consider a project that contains a custom version of C.dll, and references packageC that also contains C.dll. At the same time, the project also depends on packageB which also depends on packageC and C.dll. As a result, NuGet won't be able to determine which C.dll to use, but you can't just remove the project's dependency on packageC because packageB also depends on it.
+
+To resolve this, you must directly reference the C.dll you want (or use another package that references the right one), and then add a dependency on packageC that excludes all its assets. This is done as follows:
+
+* If you're project is using `packages.config` for tracking NuGet dependencies, simply remove the reference to pakcageC from the `.csproj` file so that it references only the version of C.dll that you want.
+    
+* If your project uses `project.json` for NuGet, add `"exclude" : "all"` in the dependency for packageC:
+
+    ```json
+        {
+            "dependencies": {
+                "packageC": {
+                "version": "1.0.0",
+                "exclude": "all"
+                }
+            }
+        }
+    '''
+
+* With [package references in project files](../consume-packages/package-references-in-project-files.md) (NuGet 4.0+ only), add `Exclude="All"` in the dependency:
+
+    ```xml
+        <PackageReference Include="packageC" Version="1.0.0" Exclude="All" />
+    ```

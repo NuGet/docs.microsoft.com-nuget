@@ -14,8 +14,8 @@ ms.assetid: 0c81dbc4-2c14-4ec8-b87a-b802a899c3ea
 
 # optional metadata
 
-#description:
-#keywords:
+description: A short reference for NuGet-related commands using the dotnet command-line interface.
+keywords: dotnet NuGet commands, dotnet pack, dotnet restore, dotnet nuget locals, dotnet nuget push, dotnet nuget delete
 #ROBOTS:
 #audience:
 #ms.devlang:

@@ -15,8 +15,8 @@ ms.assetid: d1a393b7-51b1-4840-b1a8-fdd76455077d
 
 # optional metadata
 
-#description:
-#keywords:
+description: The NuGet and NuGetGallery APIs are evolving and not yet documented, but examples are available on Dave Glick's blog.
+keywords: NuGet API, NuGetGallery API, NuGet v3 libraries
 #ROBOTS:
 #audience:
 #ms.devlang:

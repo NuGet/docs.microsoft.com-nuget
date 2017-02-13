@@ -14,8 +14,8 @@ ms.assetid: d99bbf29-2b9a-4dc5-a823-5eb4f9e30f7f
 
 # optional metadata
 
-#description: release notes 2.6
-#keywords: release notes 2.6
+description: Release notes for NuGet 2.6 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 2.6 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

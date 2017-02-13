@@ -14,8 +14,8 @@ ms.assetid: 2c573368-c9e7-4284-9715-e71d4bba85dd
 
 # optional metadata
 
-#description: release notes 2.8.3
-#keywords: release notes 2.8.3
+description: Release notes for NuGet 2.8.3 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 2.8.3 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

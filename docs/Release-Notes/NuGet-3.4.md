@@ -14,8 +14,8 @@ ms.assetid: 80a429f5-7569-4349-ad7f-4fe9218eac23
 
 # optional metadata
 
-#description: release notes 3.4
-#keywords: release notes 3.4
+description: Release notes for NuGet 3.4 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 3.4 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

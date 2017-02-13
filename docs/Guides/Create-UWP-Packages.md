@@ -14,8 +14,8 @@ ms.assetid: d98524b1-a674-4803-8ac5-3c6bce867f86
 
 # optional metadata
 
-#description:
-#keywords:
+description: An end-to-end walkthrough of creating NuGet packages using a Windows Runtime Component for the Universal Windows Platform.
+keywords: create a package, packages for UWP, Windows Runtime Components
 #ROBOTS:
 #audience:
 #ms.devlang:

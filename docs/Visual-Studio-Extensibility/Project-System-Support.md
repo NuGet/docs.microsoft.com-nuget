@@ -14,8 +14,8 @@ ms.assetid: 9d7fa7f6-82ed-4df6-9734-f43a3d8e3b98
 
 # optional metadata
 
-#description:
-#keywords:
+description: Integration of NuGet into the Visual Studio project system for third-party project types.
+keywords: NuGet in Visual Studio, custom project types, Visual Studio projects
 #ROBOTS:
 #audience:
 #ms.devlang:

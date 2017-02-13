@@ -14,8 +14,8 @@ ms.assetid: df6a366a-22c1-47bb-8017-18231311ce88
 
 # optional metadata
 
-#description:
-#keywords:
+description: How to specify pre-release version numbers for a NuGet package, using the semantic versioning conventions.
+keywords: versioning, NuGet package versioning, NuGet prerelease versions, NuGet prerelease packages, preview package versions, RC package versions, Beta package versions, NuGet semantic versioning
 #ROBOTS:
 #audience:
 #ms.devlang:

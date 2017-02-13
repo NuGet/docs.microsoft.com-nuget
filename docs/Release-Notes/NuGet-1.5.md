@@ -14,8 +14,8 @@ ms.assetid: 3ec1ff28-18fc-4d53-bd43-208619a7270a
 
 # optional metadata
 
-#description: release notes 1.5
-#keywords: release notes 1.5
+description: Release notes for NuGet 1.5 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 1.5 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

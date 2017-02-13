@@ -14,8 +14,8 @@ ms.assetid: 20991d69-9e2e-4881-bbf2-96ae634e1872
 
 # optional metadata
 
-#description:
-#keywords:
+description: Details on the ability for NuGet packages to transform source code and configuration (XML) files when installed.
+keywords: NuGet package installation, NuGet package transformations, modifying configuration files, modifying source code
 #ROBOTS:
 #audience:
 #ms.devlang:

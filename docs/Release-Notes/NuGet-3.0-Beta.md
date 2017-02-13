@@ -14,8 +14,8 @@ ms.assetid: 4153ff3f-f97f-4e54-b638-e844f70edf22
 
 # optional metadata
 
-#description: release notes 3.0
-#keywords: release notes 3.0
+description: Release notes for NuGet 3.0 Beta including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 3.0 Beta release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

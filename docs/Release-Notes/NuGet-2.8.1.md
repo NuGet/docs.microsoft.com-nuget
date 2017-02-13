@@ -14,8 +14,8 @@ ms.assetid: eebbbae4-fc6a-4c05-9102-4ec66b4c64a4
 
 # optional metadata
 
-#description: release notes 2.8.1
-#keywords: release notes 2.8.1
+description: Release notes for NuGet 2.8.1 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 2.8.1 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

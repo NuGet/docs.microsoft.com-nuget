@@ -14,8 +14,8 @@ ms.assetid: d4a4db9b-5c2d-46aa-9107-d2b01733df7c
 
 # optional metadata
 
-#description:
-#keywords:
+description: The .nuspec file contains package metadata used when building a package and to provide information to package consumers.
+keywords: nuspec reference, NuGet package metadata, NuGet package manifest, nuspec schema
 #ROBOTS:
 #audience:
 #ms.devlang:

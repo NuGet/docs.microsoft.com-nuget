@@ -14,8 +14,8 @@ ms.assetid: 3cf592de-39f2-4e7f-a597-62635fdcedfa
 
 # optional metadata
 
-#description:
-#keywords:
+description: nuget.exe credential providers authenticate with a feed, and are implemented as command-line executables that follow specific conventions.
+keywords: nuget.exe credential providers, credential provider API, authenticate with feed, authenticate with gallery
 #ROBOTS:
 #audience:
 #ms.devlang:

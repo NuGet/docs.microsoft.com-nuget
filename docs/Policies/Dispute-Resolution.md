@@ -14,8 +14,8 @@ ms.assetid: 6d664378-3f7b-426e-aef3-2254d745fe60
  
 # optional metadata 
  
-#description: 
-#keywords: 
+description: The process for resolving disputes between NuGet package publishers related to branding, trademarks, and other conflict situations.
+keywords: NuGet package disputes, NuGet dispute resolution, dispute resoution process
 #ROBOTS: 
 #audience: 
 #ms.devlang: 

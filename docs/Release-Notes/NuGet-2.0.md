@@ -14,8 +14,8 @@ ms.assetid: 51c7e94f-0084-4c62-bfba-7dfd81675361
 
 # optional metadata
 
-#description: release notes 2.0
-#keywords: release notes 2.0
+description: Release notes for NuGet 2.0 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 2.0 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

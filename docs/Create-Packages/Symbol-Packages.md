@@ -14,8 +14,8 @@ ms.assetid: 4667a70d-5a17-4f1e-b2f2-b8d0c6af3882
 
 # optional metadata
 
-#description:
-#keywords:
+description: How to create NuGet packages that contain only symbols to support debugging of other NuGet packages in Visual Studio.
+keywords: NuGet symbol packages, NuGet package debugging, supporting NuGet debugging, package symbols, symbol package conventions
 #ROBOTS:
 #audience:
 #ms.devlang:

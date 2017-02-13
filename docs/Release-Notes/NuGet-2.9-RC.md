@@ -14,8 +14,8 @@ ms.assetid: 04d76a22-63b0-41d1-9c27-799f4b35058f
 
 # optional metadata
 
-#description: release notes 2.9
-#keywords: release notes 2.9
+description: Release notes for NuGet 2.9 RC including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 2.9 RC release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

@@ -14,8 +14,8 @@ ms.assetid: 4343a48e-f6df-4a44-9d66-4616c3caacf5
 
 # optional metadata
 
-#description:
-#keywords:
+description: NuGet target framework references identify and isolate framework-dependent components of a package.
+keywords: NuGet package targeting, .NET framework targets, .NET framework versions
 #ROBOTS:
 #audience:
 #ms.devlang:

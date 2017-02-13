@@ -1,4 +1,3 @@
-
 ---
 # required metadata
 
@@ -15,8 +14,8 @@ ms.assetid: 18bef6a3-b794-4a93-85a4-76972c8ece1b
 
 # optional metadata
 
-#description: release notes 3.1.1
-#keywords: release notes 3.1.1
+description: Release notes for NuGet 3.1.1 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 3.1.1 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

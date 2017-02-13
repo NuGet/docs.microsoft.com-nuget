@@ -14,8 +14,8 @@ ms.assetid: 6681e034-528d-47a6-ab01-6191c687d42b
 
 # optional metadata
 
-#description: release notes 2.12-RC
-#keywords: release notes 2.12-RC
+description: Release notes for NuGet 2.12 RC including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 2.12 RC release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

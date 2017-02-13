@@ -5,7 +5,7 @@ title: NuGet Package Manager Console Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 2/8/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -14,8 +14,8 @@ ms.assetid: 2b92b119-6861-406c-82af-9d739af230e4
 
 # optional metadata
 
-#description:
-#keywords:
+description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
+keywords: NuGet package manager console, NuGet powershell, managing NuGet packages
 #ROBOTS:
 #audience:
 #ms.devlang:
@@ -30,9 +30,15 @@ ms.reviewer:
 
 # Package Manager Console
 
-The Package Manager Console in Visual Studio lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the Console is necessary if you want to work with packages without having a solution open, and is required in cases where the Package Manager UI does not provide a way to perform an operation. Note, however, that all operations can be done with the [NuGet CLI](../tools/nuget-exe-cli-reference.md).
+The Package Manager Console that is built into Visual Studio (2012 and later) lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. 
 
-In all cases, you open the Console in Visual Studio through the **Tools > NuGet Package Manager > Package Manager Console** command.
+> [!Note]
+> If you're missing the NuGet Package Manager in Visual Studio 2015, check **Tools > Extensions and Updates...* and search for the NuGet Package Manager extension.
+> In Visual Studio 2017, NuGet and the NuGet Package Manager is automatically installed when you select any .NET-related workloads; you can also install it individually by checking the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.)
+
+Using the Console is necessary if you want to work with packages without having a solution open, and is required in cases where the Package Manager UI does not provide a way to perform an operation. Note, however, that all operations can be done with the [NuGet CLI](../tools/nuget-exe-cli-reference.md).
+
+In all cases, you open the Console in Visual Studio through the **Tools > NuGet Package Manager > Package Manager Console** command. 
 
 At the top of the pane you can select the desired package source, manage sources (by clicking the gear icon), and select the default project to which commands will be applied:
 
@@ -80,7 +86,7 @@ Examples:
 
 Once you know the identifier of the package you want to install use [`Install-Package`](../tools/powershell-reference.md#install-package), such as `Install-Package elmah`.
 
-NuGet retrieves the package from the specified package source and installs it in the default project of the solution, unless you specify another project using the `-ProjectName` switch.
+NuGet downloads the package from the specified package source and installs it in the default project of the solution, unless you specify another project using the `-ProjectName` switch.
 
 Installing a package performs the following actions:
 
@@ -121,7 +127,7 @@ Some packages install new commands for the Console. For example, `MvcScaffolding
 
 ## Setting up a NuGet PowerShell Profile
 
-A PowerShell profile lets you make commonly-used commands available wherever you use PoewrShell. NuGet supports a NuGet specific profile typically located at:
+A PowerShell profile lets you make commonly-used commands available wherever you use PowerShell. NuGet supports a NuGet specific profile typically located at:
 
     %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
 

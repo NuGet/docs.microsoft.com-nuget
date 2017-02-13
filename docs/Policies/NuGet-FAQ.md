@@ -14,8 +14,8 @@ ms.assetid: 199a915d-9595-4ae2-a1fb-b15da6d7735a
 
 # optional metadata
 
-#description:
-#keywords:
+description: Common questions and answers for using NuGet on the command line and in Visual Studio, and working with the NuGet gallery.
+keywords: NuGet Q&A, questions and answers, common problems, NuGet versions, package versions
 #ROBOTS:
 #audience:
 #ms.devlang:

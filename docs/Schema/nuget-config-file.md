@@ -14,8 +14,8 @@ ms.assetid: fbf31530-3bf4-478c-b26c-c2b24dd3406d
 
 # optional metadata
 
-#description:
-#keywords:
+description: NuGet.Config file reference including the config, bindingRedirects, packageRestore, solution, and packageSource sections.
+keywords: NuGet.Config file, NuGet configuration reference, NuGet configuration options
 #ROBOTS:
 #audience:
 #ms.devlang:

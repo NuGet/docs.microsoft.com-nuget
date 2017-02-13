@@ -14,8 +14,8 @@ ms.assetid: 37caf4d7-dabd-4a78-aad2-7d445f818457
 
 # optional metadata
 
-#description:
-#keywords:
+description: Description of how the project.json file is used to track NuGet dependencies in Universal Windows Platform (UWP) projects.
+keywords: NuGet dependencies, NuGet and UWP, UWP and project.json, NuGet project.json file
 #ROBOTS:
 #audience:
 #ms.devlang:
@@ -29,7 +29,7 @@ ms.reviewer:
 
 # project.json and UWP
 
-This document describes a new package structure that can be used to take advantage of new features in NuGet v3. The *minClientVersion* property of your NuSpec can be used to state that you require the new features described here by setting it to 3.1. Note that NuGet v3 is available in Visual Studio 2015 and newer.
+This document describes a the package structure that can be used to take advantage of features in NuGet v3. The *minClientVersion* property of your NuSpec can be used to state that you require the features described here by setting it to 3.1. Note that NuGet v3 is available in Visual Studio 2015 and newer.
 
 ## Adding UWP support to an existing package
 

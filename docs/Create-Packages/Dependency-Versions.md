@@ -14,8 +14,8 @@ ms.assetid: ae6c6212-67e9-4968-9585-e265407fd9c8
 
 # optional metadata
 
-#description:
-#keywords:
+description: Exact details on specifying version numbers and ranges for other packages upon which a NuGet package depends, and how dependencies are installed.
+keywords: versioning, NuGet package dependencies, NuGet dependency versions, NuGet version numbers, NuGet package version, version ranges, version specifications, normalized version numbers
 #ROBOTS:
 #audience:
 #ms.devlang:

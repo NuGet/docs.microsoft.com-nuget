@@ -14,8 +14,8 @@ ms.assetid: df7becc6-993d-4d06-8495-a0c26748bdfa
 
 # optional metadata
 
-#description: release notes 1.7
-#keywords: release notes 1.7
+description: Release notes for NuGet 1.7 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 1.7 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

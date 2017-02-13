@@ -14,8 +14,8 @@ ms.assetid: 2646ffcd-83ae-4086-8915-a7fba3f53e45
 
 # optional metadata
 
-#description:
-#keywords:
+description: Description of the various methods to target multiple .NET Framework versions from within a single NuGet package.
+keywords: NuGet package targeting, .NET Framework versions, NuGet and .NET, targeting multiple frameworks, NuGet package creation
 #ROBOTS:
 #audience:
 #ms.devlang:

@@ -14,8 +14,8 @@ ms.assetid: fbe05ada-c15e-4fa2-ad70-898c0296de9e
 
 # optional metadata
 
-#description: release notes 2.7.1
-#keywords: release notes 2.7.1
+description: Release notes for NuGet 2.7.1 including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 2.7.1 release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:

@@ -14,8 +14,8 @@ ms.assetid: a7bf21da-86ae-4c2d-8750-04ff53f41967
 
 # optional metadata
 
-#description:
-#keywords:
+description: A description of how NuGet restores packages upon which a project depends, including how to disable restore and constrain versions.
+keywords: NuGet package restore, NuGet package installation, installing package, restoring packages, dependency versions, disabling automatic restore, constraining package versions
 #ROBOTS:
 #audience:
 #ms.devlang:

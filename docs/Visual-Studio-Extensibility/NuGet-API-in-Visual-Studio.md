@@ -14,8 +14,8 @@ ms.assetid: 31f88cf0-d40a-42ee-974e-07910bb0771c
 
 # optional metadata
 
-#description:
-#keywords:
+description: Interface reference for the API that NuGet exports through the Managed Extensibility Framework in Visual Studio
+keywords: NuGet API, NuGet in Visual Studio, NuGet programming interfaces
 #ROBOTS:
 #audience:
 #ms.devlang:
@@ -29,7 +29,7 @@ ms.reviewer:
 ---
 # NuGet API in Visual Studio
 
-In addition to the Package Manager UI and Console in Visual Studio, NuGet also  exports some useful services through the [Managed Extensibility Framework (MEF)](http://msdn.microsoft.com/library/dd460648.aspx). This interface allows other components in Visual Studio to interact with NuGet, which can be used to install and uninstall packages, and to obtain information about installed packages.
+In addition to the Package Manager UI and Console in Visual Studio, NuGet also exports some useful services through the [Managed Extensibility Framework (MEF)](http://msdn.microsoft.com/library/dd460648.aspx). This interface allows other components in Visual Studio to interact with NuGet, which can be used to install and uninstall packages, and to obtain information about installed packages.
 
 As of NuGet 3.3+, NuGet exports the following services all of which reside in the `NuGet.VisualStudio` namespace in the `NuGet.VisualStudio.dll` assembly:
 
