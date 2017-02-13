@@ -5,7 +5,7 @@ title: NuGet pack and restore as MSBuild targets | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 11/17/2016
+ms.date: 2/8/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -31,9 +31,9 @@ ms.reviewer:
 
 *NuGet 4.0+*
 
-NuGet 4.0+ can work directly with the information in a `.csproj` file without requring a separate `packages.config` or `project.json` file. All the metadata that was previously stored in those configuration files can be instead stored in the `.csproj` file directly, as described here.
+NuGet 4.0+ can work directly with the information in a `.csproj` file without requring a separate `.nuspec` or `project.json` file. All the metadata that was previously stored in those configuration files can be instead stored in the `.csproj` file directly, as described here.
 
-NuGet is also a first-class MSBuild citizen with the `pack` and `restore` targets as described below. These targets allow you to work with NuGet as you would with any other MSBuild task or target.
+With MSBuild 15.1+, NuGet is also a first-class MSBuild citizen with the `pack` and `restore` targets as described below. These targets allow you to work with NuGet as you would with any other MSBuild task or target.
 
 In this topic:
 
@@ -45,7 +45,7 @@ In this topic:
 
 ## Target build order
 
-Because `pack` and `restore` are  MSBuild targets, you can access them to enhance your workflow. For example, let’s say you want to push your package to a network share after packing it. You can do that by adding the following in your project file:
+Because `pack` and `restore` are  MSBuild targets, you can access them to enhance your workflow. For example, let’s say you want to copy your package to a network share after packing it. You can do that by adding the following in your project file:
 
 ```xml
     <Target Name="CopyPackage" AfterTargets="Pack">
@@ -60,7 +60,7 @@ Similarly, you can write an MSBuild task, write your own target and consume NuGe
 
 ## pack target
 
-In order for MSBuild to be able to gather all the inputs, all metadata from `project.json` and `.nuspec` will move into the `.csproj` file. The table below describes the MSBuild properties that can be added to a `.csproj` file within the first &lt;PropertyGroup&gt; node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../schema/nuspec.md).
+When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs from the `.csproj` file rather than `project.json` or `.nuspec` files. The table below describes the MSBuild properties that can be added to a `.csproj` file within the first &lt;PropertyGroup&gt; node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../schema/nuspec.md).
 
 
 | Attribute/NuSpec Value | MSBuild Property | Default | Notes |
@@ -69,6 +69,7 @@ In order for MSBuild to be able to gather all the inputs, all metadata from `pro
 | Version | PackageVersion | Version | New $(Version) property from MSBuild, is semver compatible. Could be “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345”. |
 | Authors | Authors | Username of the current user | |
 | Owners | N/A | Not present in NuSpec | |
+| Title | Title | The PackageId| |
 | Description | Description | "Package Description" | |
 | Copyright | Copyright | empty | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
@@ -80,7 +81,6 @@ In order for MSBuild to be able to gather all the inputs, all metadata from `pro
 | RepositoryUrl | RepositoryUrl | empty | |
 | RepositoryType | RepositoryType | empty | |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
-| Title | Not supported | | |
 | Summary | Not supported | | |
 
 
@@ -222,9 +222,9 @@ If using MSBuild to pack your project, use a command like the following:
 
 ## restore target
 
-As part of the move to MSBuild, package restore becomes an MSBuild target; `nuget restore` and `dotnet restore` use this target to restore packages in .NET Core projects.
+As part of the move to MSBuild, package restore becomes an MSBuild target, that is, `msbuild /t:restore`. `nuget restore` and `dotnet restore` use this target to restore packages in .NET Core projects.
 
-The restore target will gather all MSBuild data and pass it into the restore task in `NuGet.Build.Tasks`, which is a wrapper for the existing `restore` command from `NuGet.Commands`. It works as follows:
+The restore target works as follows:
 
 1. Read all project to project references
 1. Read the project properties to find the intermediate folder and target frameworks
@@ -265,60 +265,8 @@ Restore creates the following files in the build `obj` folder:
 | File | Description |
 |--------|--------|
 | project.assets.json | Previously project.lock.json |
-| {projectName}.projectFileExtension.nuget.g.props | References to MSBuild targets contained in packages |
-| {projectName}.projectFileExtension.nuget.g.targets | References to MSBuild props contained in packages |
-
-### Multiple asset files per project
-
-`project.assets.json` will be placed in the intermediate folder for a specific target framework. Instead of containing all combinations of frameworks and RIDs, it will contain a single framework.
-
-The restore task will read target frameworks from the project file and then restore for all frameworks.
-
-RIDs will be passed into MSBuild, these will then flow through to NuGet restore and will create additional runtime graphs in the assets file.
-
-
-### .dg file format
-
-Data collected from MSBuild is put into a `.dg` file. This is kept in memory but can be written to a file and passed to `nuget restore` as an input.
-
-The basic file format consists of |-delimited lines prefixed with a character to denote the entry type, followed by a colon. An example of a project with one reference is as follows:
-
-```
-    #:/src/myProj.csproj
-    $:netstandard1.6
-    +:RestoreOuputType|netcore
-    +:RestoreOuputPath|/src/myProj/obj/
-    +:Framework|netstandard1.6
-    +:Runtime|win7-x64
-    =:/src/myProj.csproj|/src/myChildProj.csproj
-    #:/src/myChildProj.csproj
-    +:RestoreOuputType|netcore
-    +:RestoreOuputPath|/src/myChildProj/obj/
-    +:Framework|netstandard1.3
-```
-
-
-| Character | Description |
-| # | Entry point, these projects will be restored. This also marks the beginning of a section for a project, all entries below this are considered part of that project until another section is encountered. |
-| $ | Restore output separator, this allows for multiple restore outputs. Format: `Comment` |
-| + | Property value. Format: `Name|Value` |
-| = | Project to project reference. Format: `Parent|Child` |
-
-The project to project entries represent edges in the project graph, restore adds these edges to the restore graph along with the package references to create a full graph of all dependencies for the project when building the lock file.
-
-Properties in the `.dg` file are as follows:
-
-| Property | Description |
-| RestoreOutputPath | Output location, this is typically the intermediate folder. |
-| RestoreOutputType | Restore type, if set to `netcore` then assets are placed in the output path with the new names. |
-| Framework | The target frameworks for which to restore. |
-| Runtime | An optional RID for which to restore. |
-
-> [!Note]
-> **Open issues**
-> - Uncertain whether it's possible to get the same behavior between MSBuild and Visual Studio.
-> - `msbuild /t:restore solution.sln` needs a target in the metaproj
-> - Uncertian whether  RID restores go into different files such as project.assets.{RID}.json.
+| {projectName}.projectFileExtension.nuget.g.props | References to MSBuild properties contained in packages |
+| {projectName}.projectFileExtension.nuget.g.targets | References to MSBuild targets contained in packages |
 
 
 ## PackageTargetFallback

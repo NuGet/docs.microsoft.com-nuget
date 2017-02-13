@@ -5,7 +5,7 @@ title: Creating a NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 2/8/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -141,11 +141,11 @@ Note that when creating a `.nuspec` from a Visual Studio project, the manifest w
 
 You can create a `.nuspec` file from scratch in any text editor, or by editing a file from another project. You can also have NuGet create a template manifest for your by using the following command:
 
-```bash
-    nuget spec <package_name>
+```bash    
+    nuget spec MyPackage
 ```
 
-The resulting `<package_name>.nuspec` file (or `Package.nuspec` if you omit a specific name) will contain placeholders for values like the `projectUrl`, so be sure to edit it before using it to creating the package.
+The resulting `MyPackage.nuspec` file (or `Package.nuspec` if you omit a specific name) will contain placeholders for values like the `projectUrl`, so be sure to edit it before using it to creating the package.
 
 You can also use `nuget spec` with an existing assembly, a Visual Studio project, or a convention-based working directory as described in the following sections. Note that in all cases, the resulting `.nuspec` file will contain placeholders that you'll need to edit before creating the package itself.
 
@@ -165,7 +165,7 @@ Creating a `.nuspec` from a `.csproj` or `.vbproj` file is convenient because ot
     nuget spec
 ```
 
-This creates a template `<project_name>.nuspec` file as usual, but includes tokens that will be replaced at packaging time with values from the project. This means you do not need to update crucial values like the version number in the `.nuspec` as you update the project (but you can always replace the tokens with literal values, if desired).
+This creates a template `<project_name>.nuspec` file as usual (where &lt;project_name&gt; is replaced with your project name), but includes tokens that will be replaced at packaging time with values from the project. This means you do not need to update crucial values like the version number in the `.nuspec` as you update the project (but you can always replace the tokens with literal values, if desired).
 
 For example, the &lt;id&gt; value will typically appear as follows:
 

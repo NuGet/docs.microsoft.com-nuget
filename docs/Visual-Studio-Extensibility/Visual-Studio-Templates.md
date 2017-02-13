@@ -5,7 +5,7 @@ title: NuGet Packages in Visual Studio templates | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 2/8/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -59,7 +59,7 @@ Steps to include packages in a template:
             <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
             <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
         </WizardExtension>
-        111
+    ```
 
     `NuGet.VisualStudio.Interop.dll` is an assembly that contains only the `TemplateWizard` class, which is a simple wrapper that calls into the actual implementation in `NuGet.VisualStudio.dll`. The assembly version will never change so that project/item templates continue to work with new versions of NuGet.
 
