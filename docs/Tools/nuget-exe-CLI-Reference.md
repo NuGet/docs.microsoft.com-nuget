@@ -416,7 +416,7 @@ nodefaultexcludes | Prevents default exclusion of NuGet package files and files 
 nopackageanalysis | Specifies that pack should not run package analysis after building the package.
 outputdirectory | Specifies the folder in which the created package is stored. If no folder is specified, the current folder is used.
 properties | Specifies a list of token=value pairs, separated by semicolons, where each occurrence of $token$ in the nuspec file will be replaced with the given value. Values can be strings in quotation marks.
-suffix | Appends a suffix to the internally generated version number, typically used for appending build or other pre-release identifiers. For example, using `-suffix nightly` will create a package with a version number like `1.2.3.45-nightly`.
+suffix | Appends a suffix to the internally generated version number, typically used for appending build or other pre-release identifiers. For example, using `-suffix nightly` will create a package with a version number like `1.2.3-nightly`. Suffixes must start with a letter to avoid warnings, errors, and potential incompatibilities with different versions of NuGet and the NuGet Package Manager.
 symbols | Specifies that the package contains sources and symbols. When used with a with a nuspec file, this creates a regular NuGet package file and the corresponding symbols package.
 tool | Specifies that the output files of the project should be placed in the tool folder.
 verbosity | Specifies the amount of details displayed in the output: *normal*, *quiet*, *detailed*.
