@@ -193,9 +193,9 @@ When using `MSBuild /t:pack /p:IncludeSymbols=true`, the corresponding pdb files
 
 ### IncludeSource
 
-This is the same as `IncludeSymbols`, except that it copies source files along with pdbs as well. All files of type Compile are copied over to `src\&lt;ProjectName&gt;\` preserving the relative path directory structure in the resulting package. The same also happens for source files of any `ProjectReference` which has `TreatAsPackageReference` set to `false`.
+This is the same as `IncludeSymbols`, except that it copies source files along with pdbs as well. All files of type Compile are copied over to `src\<ProjectName>\` preserving the relative path directory structure in the resulting package. The same also happens for source files of any `ProjectReference` which has `TreatAsPackageReference` set to `false`.
 
-If a file of type Compile, is outside the project folder, then it is just added to `src\&lt;ProjectName&gt;\`.
+If a file of type Compile, is outside the project folder, then it is just added to `src\<ProjectName>\`.
 
 ### IsTool
 
