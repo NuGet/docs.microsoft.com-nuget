@@ -36,7 +36,7 @@ For all such purposes, NuGet supports setting up a private package source in the
 
 - Local feed: Packages are simply placed on a suitable network file share, ideally using `nuget init` and `nuget add` to create a hierarchical folder structure (NuGet 3.3+). For details, see [Local Feeds](../hosting-packages/local-feeds.md).
 - NuGet.Server: Packages are made available through a local server through HTTP. For details, see [NuGet.Server](../hosting-packages/NuGet-Server.md).
-- NuGet Gallery: Packages are hosted on an Internet server using the [NuGet Gallery Project](https://github.com/NuGet/NuGetGallery/wiki/Hosting-the-NuGet-Gallery-Locally-in-IIS) on GitHub. NuGet Gallery provides user management and additional features such as an extensive web UI that allows searching and exploring packages from within the browser, similar to nuget.org.
+- NuGet Gallery: Packages are hosted on an Internet server using the [NuGet Gallery Project](https://github.com/NuGet/NuGetGallery#build-and-run-the-gallery-in-arbitrary-number-easy-steps) on GitHub. NuGet Gallery provides user management and additional features such as an extensive web UI that allows searching and exploring packages from within the browser, similar to nuget.org.
 
 There are also several other NuGet hosting products that support remote private feeds, including the following:
 
