@@ -29,8 +29,6 @@ ms.reviewer:
 
 # 4.0 RTM Release Notes
 
-[NuGet 4.0 RC Release Notes](../release-notes/nuget-4.0-RC.md)
-
 [NuGet 4.0 RTM for Visual Studio 2017]() TBD is focused on adding support for .NET Core scenarios, addressing key customer feedback and improving performance in a variety of scenarios. This release brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restore, and more.
 
 ## Known issues
@@ -99,7 +97,9 @@ msbuild /t:restore fails when a PackageReferenece based project targeting .NET46
 * #### Workaround:
 There is no workaround at this time.
 
-[Issues List](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RTM")
+## Issues fixed in NuGet 4.0 RTM timeframe
+
+[NuGet 4.0 RC Release Notes](../release-notes/nuget-4.0-RC.md) - Lists all the issues fixed for NuGet 4.0 RC
 
 **Bug:**
 
@@ -136,22 +136,7 @@ There is no workaround at this time.
 * PMC Script Compat? Create website use server HTTP or FTP, Show error in output window - [#4224](https://github.com/NuGet/Home/issues/4224)
 
 * Content only packages - [#3668](https://github.com/NuGet/Home/issues/3668)
-
-**DCR:**
-
-* migrate vsix from v2 vsix to v3 vsix - [#4196](https://github.com/NuGet/Home/issues/4196)
-
-* NuGet should have a mechanism for getting the path to the lock file in MSBuild - [#3351](https://github.com/NuGet/Home/issues/3351)
-
-* Add build assets to the TFM compatibility check and assets file - [#3296](https://github.com/NuGet/Home/issues/3296)
-
-**Feature:**
-
-* Localize strings in NuGet.Core.sln - [#2041](https://github.com/NuGet/Home/issues/2041)
-
-[Issues List](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC4")
-
-**Bug:**
+**4.0 RC4**
 
 * By default opt out of package format selector option - [#4468](https://github.com/NuGet/Home/issues/4468)
 
@@ -251,7 +236,8 @@ There is no workaround at this time.
 
 * dotnet restore (on xplat) fails if an http feed is specified after a local feed via command line - [#4243](https://github.com/NuGet/Home/issues/4243)
 
-* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VSSolutionManager+<<EnsureSolutionIsLoaded>b___0>d.MoveNext - [#4222](https://github.com/NuGet/Home/issues/4222)
+* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VSSolutionManager
+<<EnsureSolutionIsLoaded>b___0>d.MoveNext - [#4222](https://github.com/NuGet/Home/issues/4222)
 
 * [vsfeedback] Remove NuGet package not noticed by editor - [#4219](https://github.com/NuGet/Home/issues/4219)
 
@@ -293,19 +279,7 @@ There is no workaround at this time.
 
 * re-Publish Nuget.CommandLine 3.4.4 to Nuget.org - [#2931](https://github.com/NuGet/Home/issues/2931)
 
-**DCR:**
-
-* Nuget forces to load web application projects in LSL mode - [#4258](https://github.com/NuGet/Home/issues/4258)
-
-* AutoReferenced PackageReference support to block version changes in UI for "sdk installed" packages - [#4044](https://github.com/NuGet/Home/issues/4044)
-
-* Correctly communicate PackageSpec.Version for any project dependencies (PackageRef) - [#3902](https://github.com/NuGet/Home/issues/3902)
-
-* Does UI feedback for AutoRestore need more visible notifications? - [#3804](https://github.com/NuGet/Home/issues/3804)
-
-[Issues List](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC3")
-
-**Bug:**
+**4.0 RC3**
 
 * Missing method on restore NuGet.RuntimeModel.JsonObjectWriter.GetJObject() - [#4303](https://github.com/NuGet/Home/issues/4303)
 
@@ -417,68 +391,7 @@ There is no workaround at this time.
 
 * Re-enable PackFromProjectWithDevelopmentDependencySet for VS15 - [#3272](https://github.com/NuGet/Home/issues/3272)
 
-**DCR:**
-
-* Packages.config should not be the default in VS 2017  - [#4162](https://github.com/NuGet/Home/issues/4162)
-
-* Define a new ProjectCapability "Pack" in Pack targets for enabling Package related capabilities - [#4146](https://github.com/NuGet/Home/issues/4146)
-
-* Run Pack as a post build target conditioned on "GeneratePackageOnBuild" MSBuild property - [#4145](https://github.com/NuGet/Home/issues/4145)
-
-* Use NuGet property RestoreProjectStyle to create specific NuGet project - [#4134](https://github.com/NuGet/Home/issues/4134)
-
-* Adapt Restore for Transitive Project References change - [#4076](https://github.com/NuGet/Home/issues/4076)
-
-* Add NuGet properties in target file for UWP projects - [#4061](https://github.com/NuGet/Home/issues/4061)
-
-* Add NuGet properties in target file for non-UWP projects - [#4030](https://github.com/NuGet/Home/issues/4030)
-
-* UWP TargetPlatformVersion support - [#3923](https://github.com/NuGet/Home/issues/3923)
-
-* Communicate project reference metadata to NuGet project system - [#3922](https://github.com/NuGet/Home/issues/3922)
-
-* Add UI for packaging mode - [#3921](https://github.com/NuGet/Home/issues/3921)
-
-* Legacy csproj needs NugetTargetMoniker and RuntimeIdentifiers set in proj/targets - [#3854](https://github.com/NuGet/Home/issues/3854)
-
-* Install package may overlap with auto-restore - [#3836](https://github.com/NuGet/Home/issues/3836)
-
-* Context menu QueryStatus doesn't happen when VSPackage is not loaded - [#3835](https://github.com/NuGet/Home/issues/3835)
-
-* Solution Restore and Build Restore still show dialogs - [#3789](https://github.com/NuGet/Home/issues/3789)
-
-**Docs:**
-
-* Landing page URLs to docs.nuget.org are broken - [#4157](https://github.com/NuGet/Home/issues/4157)
-
-* Fail to open link "NuGet config file overview". - [#4057](https://github.com/NuGet/Home/issues/4057)
-
-* NuGet docs for contribution guidelines contain dead link (404) - [#4024](https://github.com/NuGet/Home/issues/4024)
-
-* NuGet.props file generated on `dotnet restore`? - [#3511](https://github.com/NuGet/Home/issues/3511)
-
-**Feature:**
-
-* support for removing references into csproj from commandline(s) - [#4101](https://github.com/NuGet/Home/issues/4101)
-
-* Support restore for PackageReference projects (normal and xplat) and Lightweight Solution Load - [#4003](https://github.com/NuGet/Home/issues/4003)
-
-* Legacy PackageReference support updating package versions from the command line - [#3926](https://github.com/NuGet/Home/issues/3926)
-
-* support for adding references into csproj from commandline(s) - [#3751](https://github.com/NuGet/Home/issues/3751)
-
-* Support NuGet restore for Lightweight Solution Load for Packages.Config or Project.Json - [#3711](https://github.com/NuGet/Home/issues/3711)
-
-* contentFiles support in nuget generated targets file - [#3683](https://github.com/NuGet/Home/issues/3683)
-
-* Establish a Mono CI for NuGet.exe validation on Mac using msbuild - [#3646](https://github.com/NuGet/Home/issues/3646)
-
-* Move NuGet off of v2 NuGet.Core dependencies - [#3645](https://github.com/NuGet/Home/issues/3645)
-
-
-[Issues List](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC2")
-
-**Bug:**
+**4.0 RC2**
 
 * Blend problems with NuGet - [#4043](https://github.com/NuGet/Home/issues/4043)
 
@@ -524,13 +437,82 @@ There is no workaround at this time.
 
 * packages.config Package restore/update should detect some basic corruption scenarios, part 2 - [#1712](https://github.com/NuGet/Home/issues/1712)
 
-**Docs:**
+**DCR:**
 
-* Fix dotnet/nuget.exe locals doc/help message - [#3919](https://github.com/NuGet/Home/issues/3919)
+* migrate vsix from v2 vsix to v3 vsix - [#4196](https://github.com/NuGet/Home/issues/4196)
 
-* Update build instructions at NuGet.Client readme - [#3640](https://github.com/NuGet/Home/issues/3640)
+* NuGet should have a mechanism for getting the path to the lock file in MSBuild - [#3351](https://github.com/NuGet/Home/issues/3351)
+
+* Add build assets to the TFM compatibility check and assets file - [#3296](https://github.com/NuGet/Home/issues/3296)
+
+
+**4.0 RC3**
+
+* Packages.config should not be the default in VS 2017  - [#4162](https://github.com/NuGet/Home/issues/4162)
+
+* Define a new ProjectCapability "Pack" in Pack targets for enabling Package related capabilities - [#4146](https://github.com/NuGet/Home/issues/4146)
+
+* Run Pack as a post build target conditioned on "GeneratePackageOnBuild" MSBuild property - [#4145](https://github.com/NuGet/Home/issues/4145)
+
+* Use NuGet property RestoreProjectStyle to create specific NuGet project - [#4134](https://github.com/NuGet/Home/issues/4134)
+
+* Adapt Restore for Transitive Project References change - [#4076](https://github.com/NuGet/Home/issues/4076)
+
+* Add NuGet properties in target file for UWP projects - [#4061](https://github.com/NuGet/Home/issues/4061)
+
+* Add NuGet properties in target file for non-UWP projects - [#4030](https://github.com/NuGet/Home/issues/4030)
+
+* UWP TargetPlatformVersion support - [#3923](https://github.com/NuGet/Home/issues/3923)
+
+* Communicate project reference metadata to NuGet project system - [#3922](https://github.com/NuGet/Home/issues/3922)
+
+* Add UI for packaging mode - [#3921](https://github.com/NuGet/Home/issues/3921)
+
+* Legacy csproj needs NugetTargetMoniker and RuntimeIdentifiers set in proj/targets - [#3854](https://github.com/NuGet/Home/issues/3854)
+
+* Install package may overlap with auto-restore - [#3836](https://github.com/NuGet/Home/issues/3836)
+
+* Context menu QueryStatus doesn't happen when VSPackage is not loaded - [#3835](https://github.com/NuGet/Home/issues/3835)
+
+* Solution Restore and Build Restore still show dialogs - [#3789](https://github.com/NuGet/Home/issues/3789)
+
+**4.0 RC2**
+
+* Isolate VSSDK version in NuGet.Clients solution build - [#3890](https://github.com/NuGet/Home/issues/3890)
+
+* NuGet should enable contract based portable profiles to install in contract based frameworks like DNXCore50 - [#1749](https://github.com/NuGet/Home/issues/1749)
 
 **Feature:**
+
+* Localize strings in NuGet.Core.sln - [#2041](https://github.com/NuGet/Home/issues/2041)
+
+**4.0 RC4**
+
+* Nuget forces to load web application projects in LSL mode - [#4258](https://github.com/NuGet/Home/issues/4258)
+
+* AutoReferenced PackageReference support to block version changes in UI for "sdk installed" packages - [#4044](https://github.com/NuGet/Home/issues/4044)
+
+* Correctly communicate PackageSpec.Version for any project dependencies (PackageRef) - [#3902](https://github.com/NuGet/Home/issues/3902)
+
+* Does UI feedback for AutoRestore need more visible notifications? - [#3804](https://github.com/NuGet/Home/issues/3804)
+
+**4.0 RC3**
+
+* support for removing references into csproj from commandline(s) - [#4101](https://github.com/NuGet/Home/issues/4101)
+
+* Support restore for PackageReference projects (normal and xplat) and Lightweight Solution Load - [#4003](https://github.com/NuGet/Home/issues/4003)
+
+* Legacy PackageReference support updating package versions from the command line - [#3926](https://github.com/NuGet/Home/issues/3926)
+
+* support for adding references into csproj from commandline(s) - [#3751](https://github.com/NuGet/Home/issues/3751)
+
+* Support NuGet restore for Lightweight Solution Load for Packages.Config or Project.Json - [#3711](https://github.com/NuGet/Home/issues/3711)
+
+* contentFiles support in nuget generated targets file - [#3683](https://github.com/NuGet/Home/issues/3683)
+
+* Establish a Mono CI for NuGet.exe validation on Mac using msbuild - [#3646](https://github.com/NuGet/Home/issues/3646)
+
+* Move NuGet off of v2 NuGet.Core dependencies - [#3645](https://github.com/NuGet/Home/issues/3645)
 
 * CLI support for Refs - [#3918](https://github.com/NuGet/Home/issues/3918)
 
@@ -540,11 +522,22 @@ There is no workaround at this time.
 
 * Legacy csproj and PackageRef support for restore in nuget.exe restore or dotnet restore3 - [#3749](https://github.com/NuGet/Home/issues/3749)
 
-**DCR:**
 
-* Isolate VSSDK version in NuGet.Clients solution build - [#3890](https://github.com/NuGet/Home/issues/3890)
+**Docs:**
 
-* NuGet should enable contract based portable profiles to install in contract based frameworks like DNXCore50 - [#1749](https://github.com/NuGet/Home/issues/1749)
+* Landing page URLs to docs.nuget.org are broken - [#4157](https://github.com/NuGet/Home/issues/4157)
+
+* Fail to open link "NuGet config file overview". - [#4057](https://github.com/NuGet/Home/issues/4057)
+
+* NuGet docs for contribution guidelines contain dead link (404) - [#4024](https://github.com/NuGet/Home/issues/4024)
+
+* NuGet.props file generated on `dotnet restore`? - [#3511](https://github.com/NuGet/Home/issues/3511)
+
+* Fix dotnet/nuget.exe locals doc/help message - [#3919](https://github.com/NuGet/Home/issues/3919)
+
+* Update build instructions at NuGet.Client readme - [#3640](https://github.com/NuGet/Home/issues/3640)
 
 
+## Links to GitHub issues
+[List-1](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RTM")  [List-2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC4")  [List-3](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC3")  [List-4](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC2")
 
