@@ -390,8 +390,6 @@ There is no workaround at this time.
 
 * LockRecursionException in ProjectSystemCache.TryGetProjectNameByShortName - [#3861](https://github.com/NuGet/Home/issues/3861)
 
-* Perf regression - DPL work - AutoRestore causes solution load. Instead it should wait to start for solution load. - [#3844](https://github.com/NuGet/Home/issues/3844)
-
 * Trim whitespace from MSBuild properties - [#3819](https://github.com/NuGet/Home/issues/3819)
 
 * Consolidate the two project events raised on project load - [#3759](https://github.com/NuGet/Home/issues/3759)
