@@ -134,7 +134,6 @@ There is no workaround at this time.
 * PMC Script Compat? Create website use server HTTP or FTP, Show error in output window - [#4224](https://github.com/NuGet/Home/issues/4224)
 
 * Content only packages - [#3668](https://github.com/NuGet/Home/issues/3668)
-**4.0 RC4**
 
 * By default opt out of package format selector option - [#4468](https://github.com/NuGet/Home/issues/4468)
 
@@ -277,8 +276,6 @@ There is no workaround at this time.
 
 * re-Publish Nuget.CommandLine 3.4.4 to Nuget.org - [#2931](https://github.com/NuGet/Home/issues/2931)
 
-**4.0 RC3**
-
 * Missing method on restore NuGet.RuntimeModel.JsonObjectWriter.GetJObject() - [#4303](https://github.com/NuGet/Home/issues/4303)
 
 * On Migrate, projects change from project.json to csproj --- restore fails - [#4297](https://github.com/NuGet/Home/issues/4297)
@@ -371,8 +368,6 @@ There is no workaround at this time.
 
 * Re-enable PackFromProjectWithDevelopmentDependencySet for VS15 - [#3272](https://github.com/NuGet/Home/issues/3272)
 
-**4.0 RC2**
-
 * Blend problems with NuGet - [#4043](https://github.com/NuGet/Home/issues/4043)
 
 * Adapt to willow install change for pack - [#4042](https://github.com/NuGet/Home/issues/4042)
@@ -413,15 +408,11 @@ There is no workaround at this time.
 
 * packages.config Package restore/update should detect some basic corruption scenarios, part 2 - [#1712](https://github.com/NuGet/Home/issues/1712)
 
-**DCR:**
-
 * migrate vsix from v2 vsix to v3 vsix - [#4196](https://github.com/NuGet/Home/issues/4196)
 
 * NuGet should have a mechanism for getting the path to the lock file in MSBuild - [#3351](https://github.com/NuGet/Home/issues/3351)
 
 * Add build assets to the TFM compatibility check and assets file - [#3296](https://github.com/NuGet/Home/issues/3296)
-
-**4.0 RC3**
 
 * Packages.config should not be the default in VS 2017  - [#4162](https://github.com/NuGet/Home/issues/4162)
 
@@ -451,8 +442,6 @@ There is no workaround at this time.
 
 * Solution Restore and Build Restore still show dialogs - [#3789](https://github.com/NuGet/Home/issues/3789)
 
-**4.0 RC2**
-
 * Isolate VSSDK version in NuGet.Clients solution build - [#3890](https://github.com/NuGet/Home/issues/3890)
 
 * NuGet should enable contract based portable profiles to install in contract based frameworks like DNXCore50 - [#1749](https://github.com/NuGet/Home/issues/1749)
@@ -461,8 +450,6 @@ There is no workaround at this time.
 
 * Localize strings in NuGet.Core.sln - [#2041](https://github.com/NuGet/Home/issues/2041)
 
-**4.0 RC4**
-
 * Nuget forces to load web application projects in LSL mode - [#4258](https://github.com/NuGet/Home/issues/4258)
 
 * AutoReferenced PackageReference support to block version changes in UI for "sdk installed" packages - [#4044](https://github.com/NuGet/Home/issues/4044)
@@ -470,8 +457,6 @@ There is no workaround at this time.
 * Correctly communicate PackageSpec.Version for any project dependencies (PackageRef) - [#3902](https://github.com/NuGet/Home/issues/3902)
 
 * Does UI feedback for AutoRestore need more visible notifications? - [#3804](https://github.com/NuGet/Home/issues/3804)
-
-**4.0 RC3**
 
 * support for removing references into csproj from commandline(s) - [#4101](https://github.com/NuGet/Home/issues/4101)
 
