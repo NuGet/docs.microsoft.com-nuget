@@ -29,7 +29,7 @@ ms.reviewer:
 
 # 4.0 RTM Release Notes
 
-[NuGet 4.0 RTM for Visual Studio 2017]() TBD is focused on adding support for .NET Core scenarios, addressing key customer feedback and improving performance in a variety of scenarios. This release brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restore, and more.
+[NuGet 4.0 for Visual Studio 2017]() **TBD** is focused on adding support for .NET Core scenarios, addressing key customer feedback and improving performance in a variety of scenarios. This release brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restore, and more.
 
 ## Known issues
 
@@ -408,7 +408,7 @@ There is no workaround at this time.
 
 * packages.config Package restore/update should detect some basic corruption scenarios, part 2 - [#1712](https://github.com/NuGet/Home/issues/1712)
 
-**DCR**
+**DCR:**
 
 * migrate vsix from v2 vsix to v3 vsix - [#4196](https://github.com/NuGet/Home/issues/4196)
 
@@ -488,6 +488,6 @@ There is no workaround at this time.
 [Issues list 1](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RTM")  
 [Issues list 2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC4")  
 [Issues list 3](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC3")  
-[Issues list 4](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC2") 
+[Issues list 4](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC2")  
 [Issues list 5](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC")
 
