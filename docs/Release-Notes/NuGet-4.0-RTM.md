@@ -2,10 +2,10 @@
 # required metadata
 
 title: NuGet 4.0 RC Release Notes | Microsoft Docs
-author: anangaur-msft
+author: anangaur
 ms.author: anangaur
-manager: ghogen
-ms.date: 11/17/2016
+manager: unnir
+ms.date: 03/03/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
