@@ -29,7 +29,7 @@ ms.reviewer:
 
 # 4.0 RTM Release Notes
 
-[NuGet 4.0 for Visual Studio 2017]() **TBD** is focused on adding support for .NET Core scenarios, addressing key customer feedback and improving performance in a variety of scenarios. This release brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restore, and more.
+[NuGet 4.0]() **TBD** for [Visual Studio 2017]() **TBD** is focused on adding support for .NET Core scenarios, addressing key customer feedback and improving performance in a variety of scenarios. This release brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restore, and more.
 
 ## Known issues
 
@@ -193,8 +193,6 @@ There is no workaround at this time.
 
 * Specifying package path doesn't work with dotnet pack - [#4321](https://github.com/NuGet/Home/issues/4321)
 
-* [Test Failure]Fail to uninstall packages from .Net Standard ClassLibrary application. - [#4314](https://github.com/NuGet/Home/issues/4314)
-
 * [vsfeedback] VS hangs forever after package update  - [#4313](https://github.com/NuGet/Home/issues/4313)
 
 * [vsfeedback] votes   VS (External)  January 08  Developer Community   screenshot      watson log   .NET log    more files Select  Visual Studio 17 Community Edition - "Can't reach localhost" after nuget updates  - [#4312](https://github.com/NuGet/Home/issues/4312)
@@ -288,8 +286,6 @@ There is no workaround at this time.
 
 * fix targets file for build tasks - [#4267](https://github.com/NuGet/Home/issues/4267)
 
-* Regression - CPS based project systems get the wrong NuGet restore style - [#4253](https://github.com/NuGet/Home/issues/4253)
-
 * [Watson] clr20r3: CLR_EXCEPTION_System.ArgumentNullException_80004003_NuGet.PackageManagement.UI.dll!Unknown - [#4223](https://github.com/NuGet/Home/issues/4223)
 
 * Error list has error after build solution which unload the referenced project - [#4208](https://github.com/NuGet/Home/issues/4208)
@@ -299,8 +295,6 @@ There is no workaround at this time.
 * vsfeedback: nuget manager ui for solution crashes when you select all projects - [#4191](https://github.com/NuGet/Home/issues/4191)
 
 * NuGet.exe msbuildpath fails when there is a trailing slash - [#4180](https://github.com/NuGet/Home/issues/4180)
-
-* [Test Failure]Menu 'Restore NuGet Packages' is disabled. - [#4168](https://github.com/NuGet/Home/issues/4168)
 
 * PackageReference doesn't work on .NET 4.5.2 console app - [#4163](https://github.com/NuGet/Home/issues/4163)
 
