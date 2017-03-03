@@ -105,8 +105,6 @@ There is no workaround at this time.
 
 * Dependency name of project reference not taken from PackageId - [#4642](https://github.com/NuGet/Home/issues/4642)
 
-* [Test Failure]Fail to create UWP project on Blend - [#4625](https://github.com/NuGet/Home/issues/4625)
-
 * Entity Framework tools -- "No executable found matching command 'dotnet-ef'" - [#4600](https://github.com/NuGet/Home/issues/4600)
 
 * NuGet restore in Visual Studio does not respect PackageId property of projects - [#4586](https://github.com/NuGet/Home/issues/4586)
@@ -295,12 +293,6 @@ There is no workaround at this time.
 
 * Regression - CPS based project systems get the wrong NuGet restore style - [#4253](https://github.com/NuGet/Home/issues/4253)
 
-* [Test failure]Fail to load PMC on JS Cordova project - [#4252](https://github.com/NuGet/Home/issues/4252)
-
-* [Test Failure] VS crashed when loading project file on multiple projects after activating LSL  - [#4235](https://github.com/NuGet/Home/issues/4235)
-
-* [Test Failure] Build error occur after installing a package with ‘PackageReference in project file’ selected as package management format - [#4232](https://github.com/NuGet/Home/issues/4232)
-
 * [Watson] clr20r3: CLR_EXCEPTION_System.ArgumentNullException_80004003_NuGet.PackageManagement.UI.dll!Unknown - [#4223](https://github.com/NuGet/Home/issues/4223)
 
 * Error list has error after build solution which unload the referenced project - [#4208](https://github.com/NuGet/Home/issues/4208)
@@ -329,19 +321,13 @@ There is no workaround at this time.
 
 * [VSFeedback] Error occurred while restoring NuGet packages for website project: Value cannot be null. - [#4092](https://github.com/NuGet/Home/issues/4092)
 
-* VS Perf regression in RC2 - [#4072](https://github.com/NuGet/Home/issues/4072)
-
 * Migration Throws "Object reference Exception" in NuGet.PackageManagement.VisualStudio.SolutionRestoreWorker - [#4067](https://github.com/NuGet/Home/issues/4067)
 
 * dotnet pack should pack tools with the versions that the package was built against - [#4063](https://github.com/NuGet/Home/issues/4063)
 
 * P2P solution build caused a VS hang - [#4050](https://github.com/NuGet/Home/issues/4050)
 
-* [Test Failure]The information of output flashed and disappear when Install/Uninstall/Update package by UI on Web Application (.NET Core) - [#4038](https://github.com/NuGet/Home/issues/4038)
-
 * New background restore writes milliseconds to status bar when it takes seconds to restore - [#4036](https://github.com/NuGet/Home/issues/4036)
-
-* [Test Failure] Failed to restore mixed solution with PC and PJ projects after deleting a package manually - [#4028](https://github.com/NuGet/Home/issues/4028)
 
 * Typo on failed to resolve all project references - [#4018](https://github.com/NuGet/Home/issues/4018)
 
@@ -353,8 +339,6 @@ There is no workaround at this time.
 
 * dotnet pack fails when PackagePath is empty - [#3993](https://github.com/NuGet/Home/issues/3993)
 
-* [Test Failure] Reloading projects with multiple packages.config failed - [#3980](https://github.com/NuGet/Home/issues/3980)
-
 * Trim whitespace from project properties in LegacyCSProj - [#3900](https://github.com/NuGet/Home/issues/3900)
 
 * Restore task fails in an multi user scenario - [#3897](https://github.com/NuGet/Home/issues/3897)
@@ -363,8 +347,6 @@ There is no workaround at this time.
 
 * Default Copy of ContentFiles are incorrect for MsBuild /t:pack - [#3894](https://github.com/NuGet/Home/issues/3894)
 
-* [Test Failure]Failed to update a latest packge in .NetCore application - [#3827](https://github.com/NuGet/Home/issues/3827)
-
 * Install package restore double logs the restoring packages message - [#3785](https://github.com/NuGet/Home/issues/3785)
 
 * Remove Guardrails - Restore of "runtimes" section should only apply to the current project - [#3768](https://github.com/NuGet/Home/issues/3768)
@@ -372,8 +354,6 @@ There is no workaround at this time.
 * Pack task puts content files in both 'content/' and 'contentFiles/' - [#3718](https://github.com/NuGet/Home/issues/3718)
 
 * dotnet pack3 does extra tag splitting - [#3701](https://github.com/NuGet/Home/issues/3701)
-
-* [Test Failure] Build error occur after installing package ‘FSharp.Core’ to F# Console Application template - [#3686](https://github.com/NuGet/Home/issues/3686)
 
 * dotnet pack: packing projects with package references results in duplicate import warning - [#3665](https://github.com/NuGet/Home/issues/3665)
 
@@ -397,13 +377,9 @@ There is no workaround at this time.
 
 * Adapt to willow install change for pack - [#4042](https://github.com/NuGet/Home/issues/4042)
 
-* [Test Failure] Error ‘Object reference not set to an instance of an object’ occur when trying to open PMC and PM UI on VS Blend - [#4037](https://github.com/NuGet/Home/issues/4037)
-
 * Integrate 4.0.0.2067 into CLI and SDK repos to ship with RC2 - [#4029](https://github.com/NuGet/Home/issues/4029)
 
 * VS Hangs when you Create new Core Console App, Close Solution, Open Solution and Close Solution  - [#4008](https://github.com/NuGet/Home/issues/4008)
-
-* [Test Failure]  VS hang when restoring NuGet package - [#4006](https://github.com/NuGet/Home/issues/4006)
 
 * Hitting hang opening project against d15prerel.25916.01 - [#3982](https://github.com/NuGet/Home/issues/3982)
 
@@ -444,7 +420,6 @@ There is no workaround at this time.
 * NuGet should have a mechanism for getting the path to the lock file in MSBuild - [#3351](https://github.com/NuGet/Home/issues/3351)
 
 * Add build assets to the TFM compatibility check and assets file - [#3296](https://github.com/NuGet/Home/issues/3296)
-
 
 **4.0 RC3**
 
@@ -522,22 +497,10 @@ There is no workaround at this time.
 
 * Legacy csproj and PackageRef support for restore in nuget.exe restore or dotnet restore3 - [#3749](https://github.com/NuGet/Home/issues/3749)
 
-
-**Docs:**
-
-* Landing page URLs to docs.nuget.org are broken - [#4157](https://github.com/NuGet/Home/issues/4157)
-
-* Fail to open link "NuGet config file overview". - [#4057](https://github.com/NuGet/Home/issues/4057)
-
-* NuGet docs for contribution guidelines contain dead link (404) - [#4024](https://github.com/NuGet/Home/issues/4024)
-
-* NuGet.props file generated on `dotnet restore`? - [#3511](https://github.com/NuGet/Home/issues/3511)
-
-* Fix dotnet/nuget.exe locals doc/help message - [#3919](https://github.com/NuGet/Home/issues/3919)
-
-* Update build instructions at NuGet.Client readme - [#3640](https://github.com/NuGet/Home/issues/3640)
-
-
-## Links to GitHub issues
-[List-1](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RTM")  [List-2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC4")  [List-3](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC3")  [List-4](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC2")
+## Links to GitHub issues fixed in RTM
+[Issues list 1](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RTM")  
+[Issues list 2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC4")  
+[Issues list 3](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC3")  
+[Issues list 4](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC2")
+[Issues list 5](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC")
 
