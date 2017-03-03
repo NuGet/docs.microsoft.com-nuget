@@ -125,7 +125,7 @@ There is no workaround at this time.
 
 * Building soon after starting NuGet operation (install, update, restore), can cause VS to Hang - [#4420](https://github.com/NuGet/Home/issues/4420)
 
-* [Watson] apphangb1: APPLICATION_HANG_BusyHang_cfffffff_Microsoft.VisualStudio.Shell.15.0.dll!Microsoft.VisualStudio.Shell.VsTaskLibraryHelper+__c__DisplayClass24_0_1+__AsVsTask_b__1_d[[System.__Canon,_mscorlib]].MoveNext - [#4371](https://github.com/NuGet/Home/issues/4371)
+* UI Hang - Deadlock initializing NuGet.SolutionRestoreManager.RestoreManagerPackage [#4371](https://github.com/NuGet/Home/issues/4371)
 
 * add package command should add version as attribute instead of element - [#4325](https://github.com/NuGet/Home/issues/4325)
 
@@ -169,11 +169,7 @@ There is no workaround at this time.
 
 * NullReferenceException adding  nuget with packageref in  C++  project - [#4378](https://github.com/NuGet/Home/issues/4378)
 
-* [Watson] apphangb1: APPLICATION_HANG_BusyHang_cfffffff_NuGet.PackageManagement.VisualStudio.dll!Unknown - [#4372](https://github.com/NuGet/Home/issues/4372)
-
 * Building a Class library (.NET Standard) in a multiproject solution while restoring Nuget packages hangs VS - [#4370](https://github.com/NuGet/Home/issues/4370)
-
-* Perf: ManagedLangs_CS_DDRIT.0500.Add New Project regressed CLR_BytesAllocated_devenv by 2,161,657.333 Bytes (23.4%). Baseline 26112.00 - [#4369](https://github.com/NuGet/Home/issues/4369)
 
 * Accessibility: Narrator does not narrate the Browse, Install, Update tab buttons in NuGet Package Manager UI - [#4367](https://github.com/NuGet/Home/issues/4367)
 
@@ -194,8 +190,6 @@ There is no workaround at this time.
 * Specifying package path doesn't work with dotnet pack - [#4321](https://github.com/NuGet/Home/issues/4321)
 
 * [vsfeedback] VS hangs forever after package update  - [#4313](https://github.com/NuGet/Home/issues/4313)
-
-* [vsfeedback] votes   VS (External)  January 08  Developer Community   screenshot      watson log   .NET log    more files Select  Visual Studio 17 Community Edition - "Can't reach localhost" after nuget updates  - [#4312](https://github.com/NuGet/Home/issues/4312)
 
 * [vsfeedback] NuGet Package Manager seems to be saying the latest stable version of CsvHelper package is 1.1.0 when it's really 2.16.3  - [#4311](https://github.com/NuGet/Home/issues/4311)
 
@@ -223,7 +217,7 @@ There is no workaround at this time.
 
 * Eliminate ServiceProvider as dangerous coding pattern (which can cause hangs) - [#4268](https://github.com/NuGet/Home/issues/4268)
 
-* [Watson] visualstudiononfatalerrors2: VSNONFATALERROR_80000003_devenv.exe!vs.core.delaynotification_unknown_NuGet.Protocol.Core.v3_NuGet.Protocol.DownloadTimeoutStream.Read_unknown__InstrumentDelayNotification - [#4266](https://github.com/NuGet/Home/issues/4266)
+* Perf/UIHang - Improve DownloadTimeoutStream reads - [#4266](https://github.com/NuGet/Home/issues/4266)
 
 * Visual Studio deadlocks if you attempt to close a project before NuGet restore has finished - [#4257](https://github.com/NuGet/Home/issues/4257)
 
@@ -231,16 +225,11 @@ There is no workaround at this time.
 
 * dotnet restore (on xplat) fails if an http feed is specified after a local feed via command line - [#4243](https://github.com/NuGet/Home/issues/4243)
 
-* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VSSolutionManager
-<<EnsureSolutionIsLoaded>b___0>d.MoveNext - [#4222](https://github.com/NuGet/Home/issues/4222)
-
 * [vsfeedback] Remove NuGet package not noticed by editor - [#4219](https://github.com/NuGet/Home/issues/4219)
 
 * [vsfeedback] Cannot resolve nuget packages on new project (needs to restart visual studio) - [#4217](https://github.com/NuGet/Home/issues/4217)
 
 * [vsfeedback] .net core web project from vs2015 - dotnet watch tool hangs restore - [#4214](https://github.com/NuGet/Home/issues/4214)
-
-* [Watson] HANG: Microsoft.VisualStudio.ProjectSystem.VS.Implementation!ProjectConfigProviderBase.__c__DisplayClass39_0._Microsoft.VisualStudio.Shell.Interop.IVsCfgProvider2.GetCfgOfName_b_ - [#4209](https://github.com/NuGet/Home/issues/4209)
 
 * [VSFeedback] nuget configuration is invalid - [#4203](https://github.com/NuGet/Home/issues/4203)
 
@@ -285,8 +274,6 @@ There is no workaround at this time.
 * Core projects can hang, lock up UI on open - [#4269](https://github.com/NuGet/Home/issues/4269)
 
 * fix targets file for build tasks - [#4267](https://github.com/NuGet/Home/issues/4267)
-
-* [Watson] clr20r3: CLR_EXCEPTION_System.ArgumentNullException_80004003_NuGet.PackageManagement.UI.dll!Unknown - [#4223](https://github.com/NuGet/Home/issues/4223)
 
 * Error list has error after build solution which unload the referenced project - [#4208](https://github.com/NuGet/Home/issues/4208)
 
