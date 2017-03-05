@@ -79,8 +79,8 @@ Windows Phone | wp | wp [wp7]
 | | | wp8
 | | | wp81
 | | | wpa81
-Universal Windows Platform | uap | uap [uap10]
-| | | uap10.0 [uap]
+Universal Windows Platform | uap | uap [uap10.0]
+| | | uap10.0
 .NET Standard | netstandard | netstandard1.0
 | | | netstandard1.1
 | | | netstandard1.2
