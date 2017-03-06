@@ -162,7 +162,7 @@ And you build an assembly whose `AssemblyName` is `LoggingLibrary` with the `Rel
 
 ```xml
     <files>
-        <file src="bin\Release\library.pdb" target="lib\net40" />
+        <file src="bin\Release\LoggingLibrary.pdb" target="lib\net40" />
     </files>
 ```
 

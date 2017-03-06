@@ -167,7 +167,7 @@ Profiles supported by NuGet :
 
 ## Determining which NuGet target to use
 
-When packaging libraries targeting the Portable Class Library it can sometimes to be tricky to determine which NuGet target you should use in your folder names and `.nuspec` file, especially if targeting only a subset of the PCL. Here are some links to useful external resources to help you with this:
+When packaging libraries targeting the Portable Class Library it can sometimes be tricky to determine which NuGet target you should use in your folder names and `.nuspec` file, especially if targeting only a subset of the PCL. Here are some links to useful external resources to help you with this:
 
 - [Framework profiles in .NET](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html) (stephenclearly.com)
 - [Portable Class Library profiles](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) (plnkr.co): Table enumerating PCL profiles and their equivalent NuGet targets
