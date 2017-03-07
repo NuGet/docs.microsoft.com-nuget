@@ -29,72 +29,72 @@ ms.reviewer:
 
 # 4.0 RTM Release Notes
 
-[NuGet 4.0]() **TBD** for [Visual Studio 2017]() **TBD** is focused on adding support for .NET Core scenarios, addressing key customer feedback and improving performance in a variety of scenarios. This release brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restore, and more.
+[Visual Studio 2017](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes) comes with NuGet 4.0 which adds support for .NET Core, has a bunch of quality fixes and improves performance. This release also brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restores, and more.
 
 ## Known issues
 
-#### NuGet restore may fail when you have multiple projects referencing another project in a solution
+### NuGet restore may fail when you have multiple projects referencing another project in a solution
 
-* #### Issue:
+#### Issue:
 NuGet restore may not work if, in a solution, you have project references to the same project with different casing or with different relative paths. [NuGet#4574](https://github.com/NuGet/Home/issues/4574)
 
-* #### Workaround:
+#### Workaround:
 Fix the casings or relative paths to be the same for all project references.
 
-#### While using Package Manager Console, 'Enter' key may not work
-* #### Issue:
+### While using Package Manager Console, 'Enter' key may not work
+#### Issue:
 Occasionally, the enter key does not work in the Package Manager Console. If you see this, please check out the progress on the fix, and provide any additional helpful information about your repro steps. [NuGet#4204](https://github.com/NuGet/Home/issues/4204) [NuGet#4570](https://github.com/NuGet/Home/issues/4570)
 
-* #### Workaround:
+#### Workaround:
 Restart Visual Studio and open the PMC before opening the solution. Alternatively, try deleting the project.lock.json and restoring again.
 
-#### In .NET Core projects, you may end up in infinite restore loop when you use a package containing an assembly with an invalid signature
-* #### Issue:
+### In .NET Core projects, you may end up in infinite restore loop when you use a package containing an assembly with an invalid signature
+#### Issue:
 Occassionally, when you use a package containing an assembly with an invalid signature or when the package version is set with 'DateTime' ticker, it causes package auto-restore to run in infinite loop. [NuGet#4542](https://github.com/NuGet/Home/issues/4542)
 
-* #### Workaround:
+#### Workaround:
 There is no workaround at this time.
 
-#### You will be unable to view, add, or update DotNetCLITools, using Nuget Package Manager
-* #### Issue:
+### You will be unable to view, add, or update DotNetCLITools, using Nuget Package Manager
+#### Issue:
 NuGet Package Manager does not display and does not allow add/update of DotNetCLITools. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
 
 * #### Workaround:
 DotNetCLIToolReferences must be manually edited in your project file.
 
-#### NuGet restore will fail when you set PackageId property for projects
-* #### Issue:
+### NuGet restore will fail when you set PackageId property for projects
+#### Issue:
 For .NET Core projects, NuGet restore in Visual Studio does not respect PackageId property of projects. [NuGet#4586](https://github.com/NuGet/Home/issues/4586)
 
-* #### Workaround:
+#### Workaround:
 Run restore using the command-line.
 
-#### When your project does not have 'obj' folder, package restore may fail
-* #### Issue:
+### When your project does not have 'obj' folder, package restore may fail
+#### Issue:
 Visual Studio fails to restore PackageReferences when 'obj' folder has been deleted. [NuGet#4528](https://github.com/NuGet/Home/issues/4528)
 
-* #### Workaround:
+#### Workaround:
 Create 'obj' folder manually and the restore should work. 
 
-#### Manually updating packages using Update-Package in console may fail
-* #### Issue:
+### Manually updating packages using Update-Package in console may fail
+#### Issue:
 Using Update-Package manually in the console only works once for PackageReferences projects that were just converted. [NuGet#4431](https://github.com/NuGet/Home/issues/4431)
 
-* #### Workaround:
+#### Workaround:
 There is no workaround at this time.
 
-#### Retargeting target framework version may lead to incomplete Intellisense
-* #### Issue:
+### Retargeting target framework version may lead to incomplete Intellisense
+#### Issue:
 Retargeting target framework version may lead to incomplete Intellisense, in Visual Studio. This happens when you are using PackageReferences as the package manager format. [NuGet#4216](https://github.com/NuGet/Home/issues/4216)
 
-* #### Workaround:
+#### Workaround:
 Do a manual restore.
 
-#### msbuild /t:restore fails when a project targeting .NET461 references another project targeting .NETStandard
-* #### Issue:
+### ```msbuild /t:restore``` fails when a project targeting .NET461 references another project targeting .NETStandard
+#### Issue:
 msbuild /t:restore fails when a PackageReferenece based project targeting .NET461 references another PackageReference based project targeting .NETStandard.  [NuGet#4532](https://github.com/NuGet/Home/issues/4532)
 
-* #### Workaround:
+#### Workaround:
 There is no workaround at this time.
 
 ## Issues fixed in NuGet 4.0 RTM timeframe
