@@ -20,7 +20,8 @@ keywords: NuGet 4.0 RTM release notes, bug fixes, known issues, added features, 
 #audience:
 #ms.devlang:
 ms.reviewer:
-- kraigb
+- karann
+- unnir
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
