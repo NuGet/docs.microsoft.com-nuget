@@ -32,7 +32,8 @@ ms.reviewer:
 
 These are the most common known issues with NuGet that are repeatedly reported. If you are having trouble installing NuGet or managing packages, please take a look through these known issues and their resolutions.
 
-[!Note] For known issues with NuGet 4.0, please refer to [NuGet 4.0 RTM release notes](https://docs.microsoft.com/en-us/nuget/release-notes/nuget-4.0-rtm)
+> [!Note] 
+> For known issues with NuGet 4.0, please refer to [NuGet 4.0 RTM release notes](https://docs.microsoft.com/en-us/nuget/release-notes/nuget-4.0-rtm)
 
 ## Authentication issues with NuGet feeds in VSTS with nuget.exe v3.4.3
 
