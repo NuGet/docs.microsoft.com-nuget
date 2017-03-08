@@ -32,6 +32,8 @@ ms.reviewer:
 
 [Known Issues](../release-notes/known-issues.md)
 
+[NuGet 4.0 RTM](../release-notes/nuget-4.0-rtm.md)
+
 [NuGet 4.0 RC](../release-notes/nuget-4.0-rc.md)
 
 [NuGet 3.5 RTM](../release-notes/nuget-3.5-rtm.md)
