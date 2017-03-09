@@ -484,7 +484,7 @@ configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, 
 help | Displays help information for the command.
 noninteractive | Suppresses prompts for user input or confirmations.
 source | Specifies the server URL. With NuGet 2.5+, NuGet will identify a UNC or local folder source and simply copy the file there instead of pushing it using HTTP.  Also, starting with NuGet 3.4.2, this is a mandatory parameter unless the NuGet.config file specifies a *DefaultPushSource* value.
-timeout | Specifies the timeout, in seconds, for pushing to a server. The default is 300 seconds (5 mintues).
+timeout | Specifies the timeout, in seconds, for pushing to a server. The default is 300 seconds (5 minutes).
 verbosity | Specifies the amount of details displayed in the output: *normal*, *quiet*, *detailed (2.5+)*.
 
 ### Examples

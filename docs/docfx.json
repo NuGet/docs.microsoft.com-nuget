@@ -31,7 +31,8 @@
         "globalMetadata": {
             "breadcrumb_path": "~/_breadcrumb/toc.yml",
             "ROBOTS": "INDEX,FOLLOW",
-            "searchScope": ["NuGet"]          
+            "searchScope": ["NuGet"],
+            "uhfHeaderId": "MSDocsHeader-NuGet"
             },
     "fileMetadata": {},
     "template": [],

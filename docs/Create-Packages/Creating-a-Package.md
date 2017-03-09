@@ -344,13 +344,13 @@ With NuGet 3.x, targets are not added to the project but are instead made availa
 When using an assembly or the convention-based working directory, create a package by running `nuget pack` with your `.nuspec` file:
 
 ```bash
-    nuget pack &lt;your_project&gt;.nuspec
+    nuget pack <your_project>.nuspec
 ```
 
 When using a Visual Studio project, run `nuget pack` instead with your project file, which will automatically load the project's `.nuspec` file and replace any tokens within it using values in the project file:
 
 ```bash
-    nuget pack &lt;your_project&gt;.csproj
+    nuget pack <your_project>.csproj
 ```
 
 > [!Note]
