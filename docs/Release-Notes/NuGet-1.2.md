@@ -76,10 +76,10 @@ Framework. The following table lists attributes of the `frameworkAssembly` eleme
 |**targetFramework**|*Optional*. Allows specifying a framework and profile name (or alias) that this framework assembly applies to such as "net40" or "sl4". Uses the same format described in [Supporting Multiple Target Frameworks](../create-packages/supporting-multiple-target-frameworks.md).|
 
 ```xml
-    <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="net40" />
-      <frameworkAssembly assemblyName="System.ServiceModel" targetFramework="net40" />
-    </frameworkAssemblies>
+  <frameworkAssemblies>
+    <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="net40" />
+    <frameworkAssembly assemblyName="System.ServiceModel" targetFramework="net40" />
+  </frameworkAssemblies>
 ```
 
 ### NuGet.exe now is able to store API Key credentials

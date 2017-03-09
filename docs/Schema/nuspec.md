@@ -48,20 +48,20 @@ The current `nuspec.xsd` schema file can be found in the [NuGet GitHub repositor
 Within this schema, a `.nuspec` file has the following general form:
 
 ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-      <metadata>
-        <!-- Required elements-->
-        <id></id>
-        <version></version>
-        <description></description>
-        <authors></authors>
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+    <!-- Required elements-->
+    <id></id>
+    <version></version>
+    <description></description>
+    <authors></authors>
 
-        <!-- Optional elements -->
-        <!-- ... -->
-      </metadata>
-      <!-- Optional 'files' node -->
-    </package>
+    <!-- Optional elements -->
+    <!-- ... -->
+    </metadata>
+    <!-- Optional 'files' node -->
+</package>
 ```
 
 For a clear visual representation of the schema, open the schema file in Visual Studio in Design mode and click on the **XML Schema Explorer** link, or open the file as code, right-click in the editor, and select **Show XML Schema Explorer**. Either way you'll get a view like the one below (when mostly expanded):
@@ -125,8 +125,8 @@ When creating a package, the [`nuget pack` command](../tools/nuget-exe-cli-refer
 On the command line, you specify token values with `nuget pack -properties <name>=<value>;<name>=<value>`. For example, you can use a token such as `$owners$` and `$desc$` in the `.nuspec` and provide the values at packing time as follows:
 
 ```bash
-    nuget pack MyProject.csproj -properties
-        owners=janedoe,harikm,kimo,xiaop;desc="Awesome app logger utility"
+nuget pack MyProject.csproj -properties
+    owners=janedoe,harikm,kimo,xiaop;desc="Awesome app logger utility"
 ```
 
 To use values from a project, specify the tokens described in the table below (AssemblyInfo refers to the file in `Properties` such as `AssemblyInfo.cs` or `AssemblyInfo.vb`).
@@ -134,7 +134,7 @@ To use values from a project, specify the tokens described in the table below (A
 To use these tokens, you must run `nuget pack` with the project file rather than just the `.nuspec`. For example, when using the following command, the `$id$` and `$version$` tokens in a `.nuspec` file will be replaced with the project's `AssemblyName` and `AssemblyVersion` values:
 
 ```bash
-    nuget pack MyProject.csproj
+nuget pack MyProject.csproj
 ```
 
 Typically, when you have a project you'll create the `.nuspec` initially using `nuget spec MyProject.csproj` which will automatically include some of these standard tokens. Note, however, that if a project lacks values for required `.nuspec` elements, then `nuget pack` will fail. Furthermore, if you change project values, be sure to rebuild before creating the package; this can be done conveniently with the pack command's `build` switch.
@@ -153,17 +153,17 @@ $configuration$ | Assembly DLL | Configuration used to build the assembly, defau
 Tokens can also be used to resolve paths when you include [assembly files](#including-assembly-files) and [content files](#including-content-files). The tokens have the same names as the MSBuild properties, making it possible to select files to be included depending on the current build configuration. For example, if you use the following tokens in the `.nuspec` file:
 
 ```xml
-    <files>
-        <file src="bin\$configuration$\$id$.pdb" target="lib\net40\" />
-    </files>
+<files>
+    <file src="bin\$configuration$\$id$.pdb" target="lib\net40\" />
+</files>
 ```
 
 And you build an assembly whose `AssemblyName` is `LoggingLibrary` with the `Release` configuration in MSBuild, the resulting lines in the `.nuspec` file in the package will be as follows:
 
 ```xml
-    <files>
-        <file src="bin\Release\LoggingLibrary.pdb" target="lib\net40" />
-    </files>
+<files>
+    <file src="bin\Release\LoggingLibrary.pdb" target="lib\net40" />
+</files>
 ```
 
 ## Dependencies
@@ -178,10 +178,10 @@ Attribute | Description
 For example, the following lines indicate dependencies on `PackageA` version 1.1.0 or higher, and `PackageB` version 1.x.
 
 ```xml
-    <dependencies>
-      <dependency id="PackageA" version="1.1.0" />
-      <dependency id="PackageB" version="[1,2)" />
-    </dependencies>
+<dependencies>
+    <dependency id="PackageA" version="1.1.0" />
+    <dependency id="PackageB" version="[1,2)" />
+</dependencies>
 ```
 
 When creating a `.nuspec` from a project using `nuget spec`, dependencies that exist in that project will be automatically included in the resulting `.nuspec` file.
@@ -202,19 +202,19 @@ The &lt;group&gt; element without a `targetFramework` attribute is used as the d
 The following example shows different variations of the &lt;group&gt; element:
 
 ```xml
-    <dependencies>
-       <group>
-          <dependency id="RouteMagic" version="1.1.0" />
-       </group>
+<dependencies>
+    <group>
+        <dependency id="RouteMagic" version="1.1.0" />
+    </group>
 
-       <group targetFramework="net40">
-          <dependency id="jQuery" />
-          <dependency id="WebActivator" />
-       </group>
+    <group targetFramework="net40">
+        <dependency id="jQuery" />
+        <dependency id="WebActivator" />
+    </group>
 
-       <group targetFramework="sl30">
-       </group>
-    </dependencies>
+    <group targetFramework="sl30">
+    </group>
+</dependencies>
 ```
 
 <a name="specifying-explicit-assembly-references"></a>
@@ -226,10 +226,10 @@ The &lt;references&gt; element explicitly specifies the assemblies that the targ
 For example, the following &lt;references&gt; element instructs NuGet to add references to only `xunit.dll` and `xunit.extensions.dll` even if there are additional assemblies in the package:
 
 ```xml
-    <references>
-      <reference file="xunit.dll" />
-      <reference file="xunit.extensions.dll" />
-    </references>
+<references>
+    <reference file="xunit.dll" />
+    <reference file="xunit.extensions.dll" />
+</references>
 ```
 
 Explicit reference are typically used for design-time only assemblies. When using [Code Contracts](https://msdn.microsoft.com/library/dd264808.aspx), for example, contract assemblies need to be next to the runtime assemblies that they augment so that Visual Studio can find them, but the contract assemblies need not be referenced by the project or copied into the project's `bin` folder.
@@ -252,19 +252,19 @@ The &lt;group&gt; element without a `targetFramework` attribute is used as the d
 The following example shows different variations of the &lt;group&gt; element:
 
 ```xml
-    <references>
-      <group>
-        <reference file="a.dll" />
-      </group>
+<references>
+    <group>
+    <reference file="a.dll" />
+    </group>
 
-      <group targetFramework="net45">
-          <reference file="b45.dll" />
-      </group>
+    <group targetFramework="net45">
+        <reference file="b45.dll" />
+    </group>
 
-      <group targetFramework="netcore45">
-        <reference file="bcore45.dll" />
-      </group>
-    </references>
+    <group targetFramework="netcore45">
+    <reference file="bcore45.dll" />
+    </group>
+</references>
 ```
 
 <a name="specifying-framework-assembly-references-gac"></a>
@@ -283,11 +283,11 @@ targetFramework | (Optional) Specifies the target framework to which this refere
 The following example shows a reference to `System.Net` for all target frameworks, and a reference to `System.ServiceModel` for .NET Framework 4.0 only:
 
 ```xml
-    <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System.Net"  />
+<frameworkAssemblies>
+    <frameworkAssembly assemblyName="System.Net"  />
 
-      <frameworkAssembly assemblyName="System.ServiceModel" targetFramework="net40" />
-    </frameworkAssemblies>
+    <frameworkAssembly assemblyName="System.ServiceModel" targetFramework="net40" />
+</frameworkAssemblies>
 ```
 
 <a name="specifying-files-to-include-in-the-package"></a>
@@ -302,11 +302,11 @@ If you follow the conventions described in [Creating a Package](../create-packag
 To bypass this automatic behavior and explicitly control which files are included in a package, place a &lt;files&gt; element as a child of &lt;package&gt; (and a sibling of &lt;metadata&gt;), identifying each file with a separate &lt;file&gt; element. For example:
 
 ```xml
-    <files>
-      <file src="bin\Debug\*.dll" target="lib" />
-      <file src="bin\Debug\*.pdb" target="lib" />
-      <file src="tools\**\*.*" exclude="**\*.log" />
-    </files>
+<files>
+    <file src="bin\Debug\*.dll" target="lib" />
+    <file src="bin\Debug\*.pdb" target="lib" />
+    <file src="tools\**\*.*" exclude="**\*.log" />
+</files>
 ```
 
 With NuGet 2.x and earlier, and projects using `packages.config`, the &lt;files&gt; element is also used to include immutable content files when a package is installed. With NuGet 3.3+ and projects using `project.json`, the &lt;contentFiles&gt; element is used instead. See [Including content files](#including-content-files) below for details.
@@ -555,23 +555,23 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 #### Example contentFiles section
 
 ```xml
-    <contentFiles>
-        <!-- Embed image resources -->
-        <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
-        <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
+<contentFiles>
+    <!-- Embed image resources -->
+    <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
+    <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
 
-        <!-- Embed all image resources under contentFiles/cs/ -->
-        <files include="cs/**/*.png" buildAction="EmbeddedResource" />
+    <!-- Embed all image resources under contentFiles/cs/ -->
+    <files include="cs/**/*.png" buildAction="EmbeddedResource" />
 
-        <!-- Copy config.xml to the root of the output folder -->
-        <files include="cs/uap/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
+    <!-- Copy config.xml to the root of the output folder -->
+    <files include="cs/uap/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
 
-        <!-- Copy run.cmd to the output folder and keep the directory structure -->
-        <files include="cs/commands/run.cmd" buildAction="None" copyToOutput="true" flatten="false" />
+    <!-- Copy run.cmd to the output folder and keep the directory structure -->
+    <files include="cs/commands/run.cmd" buildAction="None" copyToOutput="true" flatten="false" />
 
-        <!-- Include everything in the scripts folder except exe files -->
-        <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
-    </contentFiles>
+    <!-- Include everything in the scripts folder except exe files -->
+    <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
+</contentFiles>
 ```
 
 ## Example .nuspec files
@@ -579,77 +579,77 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 **A simple .nuspec that does not specify dependencies or files**
 
 ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-      <metadata>
-        <id>sample</id>
-        <version>1.2.3</version>
-        <authors>Kim Abercrombie, Franck Halmaert</authors>
-        <description>Sample exists only to show a sample .nuspec file.</description>
-        <language>en-US</language>
-        <projectUrl>http://xunit.codeplex.com/</projectUrl>
-        <licenseUrl>http://xunit.codeplex.com/license</licenseUrl>
-      </metadata>
-    </package>
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+    <id>sample</id>
+    <version>1.2.3</version>
+    <authors>Kim Abercrombie, Franck Halmaert</authors>
+    <description>Sample exists only to show a sample .nuspec file.</description>
+    <language>en-US</language>
+    <projectUrl>http://xunit.codeplex.com/</projectUrl>
+    <licenseUrl>http://xunit.codeplex.com/license</licenseUrl>
+    </metadata>
+</package>
 ```
 
 **A .nuspec with dependencies**
 
 ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-      <metadata>
-        <id>sample</id>
-        <version>1.0.0</version>
-        <authors>Microsoft</authors>
-        <dependencies>
-          <dependency id="another-package" version="3.0.0" />
-          <dependency id="yet-another-package"/>
-        </dependencies>
-      </metadata>
-    </package>
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+    <id>sample</id>
+    <version>1.0.0</version>
+    <authors>Microsoft</authors>
+    <dependencies>
+        <dependency id="another-package" version="3.0.0" />
+        <dependency id="yet-another-package"/>
+    </dependencies>
+    </metadata>
+</package>
 ```
 
 **A .nuspec with files**
 
 ```xml
-    <?xml version="1.0"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-      <metadata>
-        <id>routedebugger</id>
-        <version>1.0.0</version>
-        <authors>Jay Hamlin</authors>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Route Debugger is a little utility I wrote...</description>
-      </metadata>
-      <files>
-        <file src="bin\Debug\*.dll" target="lib" />
-      </files>
-    </package>
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+    <id>routedebugger</id>
+    <version>1.0.0</version>
+    <authors>Jay Hamlin</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Route Debugger is a little utility I wrote...</description>
+    </metadata>
+    <files>
+    <file src="bin\Debug\*.dll" target="lib" />
+    </files>
+</package>
 ```
 
 **A .nuspec with framework assemblies**
 
 ```xml
-    <?xml version="1.0"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-      <metadata>
-        <id>PackageWithGacReferences</id>
-        <version>1.0</version>
-        <authors>Author here</authors>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>
-            A package that has framework assemblyReferences depending
-            on the target framework.
-        </description>
-        <frameworkAssemblies>
-          <frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
-          <frameworkAssembly assemblyName="System.Net" targetFramework="net40-client, net40" />
-          <frameworkAssembly assemblyName="Microsoft.Devices.Sensors" targetFramework="sl4-wp" />
-          <frameworkAssembly assemblyName="System.Json" targetFramework="sl3" />
-        </frameworkAssemblies>
-      </metadata>
-    </package>
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+    <id>PackageWithGacReferences</id>
+    <version>1.0</version>
+    <authors>Author here</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+        A package that has framework assemblyReferences depending
+        on the target framework.
+    </description>
+    <frameworkAssemblies>
+        <frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
+        <frameworkAssembly assemblyName="System.Net" targetFramework="net40-client, net40" />
+        <frameworkAssembly assemblyName="Microsoft.Devices.Sensors" targetFramework="sl4-wp" />
+        <frameworkAssembly assemblyName="System.Json" targetFramework="sl3" />
+    </frameworkAssemblies>
+    </metadata>
+</package>
 ```
 
 In this example, the following will be installed for specific project targets:

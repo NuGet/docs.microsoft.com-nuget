@@ -48,12 +48,12 @@ In this topic:
 Because `pack` and `restore` are  MSBuild targets, you can access them to enhance your workflow. For example, let’s say you want to copy your package to a network share after packing it. You can do that by adding the following in your project file:
 
 ```xml
-    <Target Name="CopyPackage" AfterTargets="Pack">
-        <Copy
-            SourceFiles="$(OutputPath)\$(PackageId).$(PackageVersion).nupkg"
-            DestinationFolder="\\myshare\packageshare\"
-            />
-    </Target>
+<Target Name="CopyPackage" AfterTargets="Pack">
+    <Copy
+        SourceFiles="$(OutputPath)\$(PackageId).$(PackageVersion).nupkg"
+        DestinationFolder="\\myshare\packageshare\"
+        />
+</Target>
 ```
 
 Similarly, you can write an MSBuild task, write your own target and consume NuGet properties in the MSBuild task.
@@ -139,15 +139,15 @@ See [Package References in Project Files](../consume-packages/package-references
 Project to project references are considered by default as nuget package references, for example:
 
 ```xml
-    <ProjectReference Include="..\UwpLibrary2\UwpLibrary2.csproj"/>
+<ProjectReference Include="..\UwpLibrary2\UwpLibrary2.csproj"/>
 ```
 
 You can also add the following metadata to your project reference:
 
 ```xml
-    <IncludeAssets>
-    <ExcludeAssets>
-    <PrivateAssets>
+<IncludeAssets>
+<ExcludeAssets>
+<PrivateAssets>
 ```
 
 ### Including content in a package
@@ -155,18 +155,18 @@ You can also add the following metadata to your project reference:
 To include content, add extra metadata to the existing &lt;Content&gt; item. By default everything of type "Content" gets included in the package unless you override with entries like the following:
 
  ```xml
-     <Content Include="..\win7-x64\libuv.txt">
-         <Pack>false</Pack>
-     </Content>
+    <Content Include="..\win7-x64\libuv.txt">
+        <Pack>false</Pack>
+    </Content>
  ```
 
 By default, everything gets added to the root of the `content` and `contentFiles\any\<target_framework>` folder within a package and preserves the relative directory structure, unless you specify a package path:
 
 ```xml
-    <Content Include="..\win7-x64\libuv.txt">        
-        <Pack>true</Pack>
-        <PackagePath>content\myfiles\</PackagePath>
-    </Content>
+<Content Include="..\win7-x64\libuv.txt">        
+    <Pack>true</Pack>
+    <PackagePath>content\myfiles\</PackagePath>
+</Content>
 ```
 
 If you want to copy all your content to only a specific root folder(s) (instead of `content` and `contentFiles` both), you can use the MSBuild property `ContentTargetFolders`, which defaults to "content;contentFiles" but can be set to any other folder names. Note that just specifying "contentFiles" in `ContentTargetFolders` puts files under "contentFiles\any\&lt;target_framework&gt;" or "contentFiles\&lt;language&gt;\&lt;target_framework&gt;" based on `buildAction`.
@@ -174,10 +174,10 @@ If you want to copy all your content to only a specific root folder(s) (instead 
 `PackagePath` can be a semicolon-delimited set of target paths. Specifying an empty package path would add the file to the root of the package. For example, the following adds libuv.txt to content\myfiles, content\samples, and the package root:
 
 ```xml
-    <Content Include="..\win7-x64\libuv.txt">
-        <Pack>true</Pack>
-        <PackagePath>content\myfiles;content\sample;;</PackagePath>
-    </Content>
+<Content Include="..\win7-x64\libuv.txt">
+    <Pack>true</Pack>
+    <PackagePath>content\myfiles;content\sample;;</PackagePath>
+</Content>
 ```
 
 There is also an MSBuild property `$(IncludeContentInPack)`, which defaults to `true`. If this is set to `false` on any project, then the content from that project are not included in the nuget package.
@@ -212,12 +212,13 @@ You can use a `.nuspec` file to pack your project provided that you have a proje
 If using `dotnet.exe` to pack your project, use a command like the following:
 
 ```bash
-    dotnet pack <path to csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
- ```
+dotnet pack <path to csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
+```
+
 If using MSBuild to pack your project, use a command like the following:
 
 ```bash
-    msbuild /t:pack <path to csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
+msbuild /t:pack <path to csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
 ```
 
 ## restore target
@@ -253,9 +254,9 @@ Additional restore settings may come from MSBuild properties; values are set fro
 **Example**
 
 ```xml
-    <PropertyGroup>
-    <RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
-    <PropertyGroup>
+<PropertyGroup>
+<RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
+<PropertyGroup>
 ```
 
 ### Restore outputs
@@ -279,9 +280,9 @@ Restore creates the following files in the build `obj` folder:
 `PackageTargetFallbacks` may have been set in one of Microsoft targets (we are considering), or other ones. If you'd like to add the list already provided, you can add additional values to the `PackageTargetFallback` property:
 
 ```xml
-    <PackageTargetFallback Condition="'$(TargetFramework)'=='Net45'">
-        $(PackageTargetFallback);portable-net45+win8+wpa81+wp8
-    </PackageTargetFallback >
+<PackageTargetFallback Condition="'$(TargetFramework)'=='Net45'">
+    $(PackageTargetFallback);portable-net45+win8+wpa81+wp8
+</PackageTargetFallback >
 ```
 
 ### Replacing one library from a restore graph
@@ -289,13 +290,13 @@ Restore creates the following files in the build `obj` folder:
 If a restore is bringing the wrong assembly, it is possible to exclude that packages default choice, and replace it with your own choice. First with a top level `PackageReference`, exclude all assets:
 
 ```xml
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1">
-        <ExcludeAssets>All</ExcludeAssets>
-    </PackageReference>
+<PackageReference Include="Newtonsoft.Json" Version="9.0.1">
+    <ExcludeAssets>All</ExcludeAssets>
+</PackageReference>
 ```
 
 Next, add your own reference to the appropriate local copy of the DLL:
 
 ```xml
-    <Reference Include="Newtonsoft.Json.dll" />
+<Reference Include="Newtonsoft.Json.dll" />
 ```

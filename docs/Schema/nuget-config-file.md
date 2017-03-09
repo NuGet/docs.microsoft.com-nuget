@@ -74,14 +74,14 @@ http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use 
 
 **Example**:
 
-  ```xml
-      <config>
-        <add key="dependencyVersion" value="Highest" />
-        <add key="globalPackagesFolder" value="c:\packages" />
-        <add key="repositoryPath" value="c:\repo" />
-        <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
-      </config>
-  ```
+```xml
+<config>
+<add key="dependencyVersion" value="Highest" />
+<add key="globalPackagesFolder" value="c:\packages" />
+<add key="repositoryPath" value="c:\repo" />
+<add key="http_proxy" value="http://company-squid:3128@contoso.com" />
+</config>
+```
 
 
 ## bindingRedirects section
@@ -95,9 +95,9 @@ skip | A Boolean indicating whether to skip automatic binding redirects. The def
 **Example**:
 
 ```xml
-    <bindingRedirects>
-        <add key="skip" value="True" />
-    </bindingRedirects>
+<bindingRedirects>
+    <add key="skip" value="True" />
+</bindingRedirects>
 ```
 
 ## packageRestore section
@@ -114,10 +114,10 @@ automatic | A Boolean indicating whether NuGet should check for missing packages
 **Example**:
 
 ```xml
-    <packageRestore>
-      <add key="enabled" value="true" />
-      <add key="automatic" value="true" />
-    </packageRestore>
+<packageRestore>
+    <add key="enabled" value="true" />
+    <add key="automatic" value="true" />
+</packageRestore>
 ```
 
 ## solution section
@@ -132,9 +132,9 @@ disableSourceControlIntegration | A Boolean indicating whether to ignore the pac
 **Example**:
 
 ```xml
-    <solution>
-      <add key="disableSourceControlIntegration" value="true" />
-    </solution>
+<solution>
+    <add key="disableSourceControlIntegration" value="true" />
+</solution>
 ```
 
 
@@ -155,11 +155,11 @@ Key | Value
 **Example**:
 
 ```xml
-    <packageSources>
-        <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
-        <add key="Contoso Package Source" value="https://contoso.com/packages/" />
-        <add key="Test source" value="c:\packages" />
-    </packageSources>
+<packageSources>
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
+    <add key="Contoso Package Source" value="https://contoso.com/packages/" />
+    <add key="Test source" value="c:\packages" />
+</packageSources>
 ```
 
 
@@ -178,23 +178,23 @@ cleartextpassword | The unencrypted password for the source.
 In the config file, the &lt;packageSourceCredentials&gt; element will contain child nodes for each applicable source name. That is, for a source named "Contoso", the config file will contain the following when using an encrypted password:
 
 ```xml
-    <packageSourceCredentials>
-      <Contoso>
-        <add key="Username" value="user@contoso.com" />
-        <add key="Password" value="..." />
-      </Contoro>
-    </packageSourceCredentials>
+<packageSourceCredentials>
+    <Contoso>
+    <add key="Username" value="user@contoso.com" />
+    <add key="Password" value="..." />
+    </Contoro>
+</packageSourceCredentials>
 ```
 
 When using an unencrypted password:
 
 ```xml
-    <packageSourceCredentials>
-      <Contoso>
-        <add key="Username" value="user@contoso.com" />
-        <add key="ClearTextPassword" value="33f!!lloppa" />
-      </Contoso>
-    </packageSourceCredentials>
+<packageSourceCredentials>
+    <Contoso>
+    <add key="Username" value="user@contoso.com" />
+    <add key="ClearTextPassword" value="33f!!lloppa" />
+    </Contoso>
+</packageSourceCredentials>
 ```
 
 ### apikeys
@@ -207,11 +207,11 @@ Key | Value
 
 **Example**:
 
-  ```xml
-      <apikeys>
-        <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
-      </apikeys>
-  ```
+```xml
+<apikeys>
+<add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
+</apikeys>
+```
 
 
 ### disabledPackageSources
@@ -227,12 +227,12 @@ Key | Value
 **Example:**
 
 ```xml
-    <disabledPackageSources>
-        <add key="Contoso Package Source" value="true" />
-    </disabledPackageSources>
+<disabledPackageSources>
+    <add key="Contoso Package Source" value="true" />
+</disabledPackageSources>
 
-    <!-- Empty list -->
-    <disabledPackageSources />
+<!-- Empty list -->
+<disabledPackageSources />
 ```
 
 ### activePackageSource
@@ -248,13 +248,13 @@ Key | Value
 **Example**:
 
 ```xml
-    <activePackageSource>
-        <!-- Only one active source-->
-        <add key="nuget.org" value="https://nuget.org/api/v2/" />
+<activePackageSource>
+    <!-- Only one active source-->
+    <add key="nuget.org" value="https://nuget.org/api/v2/" />
 
-        <!-- All non-disabled sources are active -->
-        <add key="All" value="(Aggregate source)" />
-    </activePackageSource>
+    <!-- All non-disabled sources are active -->
+    <add key="All" value="(Aggregate source)" />
+</activePackageSource>
 ```
 
 
@@ -263,62 +263,62 @@ Key | Value
 Below is an example `NuGet.Config` file that illustrates a number of settings:
 
 ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-      <config>
-        <!--
-            Used to specify the default location to expand packages.
-            See: NuGet.exe help install
-            See: NuGet.exe help update
-        -->
-        <add key="repositoryPath" value="External\Packages" />
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <config>
+    <!--
+        Used to specify the default location to expand packages.
+        See: NuGet.exe help install
+        See: NuGet.exe help update
+    -->
+    <add key="repositoryPath" value="External\Packages" />
 
-        <!--
-            Used to specify default source for the push command.
-            See: NuGet.exe help push
-        -->
+    <!--
+        Used to specify default source for the push command.
+        See: NuGet.exe help push
+    -->
 
-        <add key="DefaultPushSource" value="https://MyRepo/ES/api/v2/package" />
+    <add key="DefaultPushSource" value="https://MyRepo/ES/api/v2/package" />
 
-        <!-- Proxy settings -->
-        <add key="http_proxy" value="host" />
-        <add key="http_proxy.user" value="username" />
-        <add key="http_proxy.password" value="encrypted_password" />
-      </config>
+    <!-- Proxy settings -->
+    <add key="http_proxy" value="host" />
+    <add key="http_proxy.user" value="username" />
+    <add key="http_proxy.password" value="encrypted_password" />
+    </config>
 
-      <packageRestore>
-        <!-- Allow NuGet to download missing packages -->
-        <add key="enabled" value="True" />
+    <packageRestore>
+    <!-- Allow NuGet to download missing packages -->
+    <add key="enabled" value="True" />
 
-        <!-- Automatically check for missing packages during build in Visual Studio -->
-        <add key="automatic" value="True" />
-      </packageRestore>
+    <!-- Automatically check for missing packages during build in Visual Studio -->
+    <add key="automatic" value="True" />
+    </packageRestore>
 
-      <!--
-          Used to specify the default Sources for list, install and update.
-          See: NuGet.exe help list
-          See: NuGet.exe help install
-          See: NuGet.exe help update
-      -->
-      <packageSources>
-        <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
-        <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
-      </packageSources>
+    <!--
+        Used to specify the default Sources for list, install and update.
+        See: NuGet.exe help list
+        See: NuGet.exe help install
+        See: NuGet.exe help update
+    -->
+    <packageSources>
+    <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
+    <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
+    </packageSources>
 
-      <!-- Used to store credentials -->
-      <packageSourceCredentials />
+    <!-- Used to store credentials -->
+    <packageSourceCredentials />
 
-      <!-- Used to disable package sources  -->
-      <disabledPackageSources />
+    <!-- Used to disable package sources  -->
+    <disabledPackageSources />
 
-      <!--
-          Used to specify default API key associated with sources.
-          See: NuGet.exe help setApiKey
-          See: NuGet.exe help push
-          See: NuGet.exe help mirror
-      -->
-      <apikeys>
-        <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
-      </apikeys>
-    </configuration>
+    <!--
+        Used to specify default API key associated with sources.
+        See: NuGet.exe help setApiKey
+        See: NuGet.exe help push
+        See: NuGet.exe help mirror
+    -->
+    <apikeys>
+    <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
+    </apikeys>
+</configuration>
 ```

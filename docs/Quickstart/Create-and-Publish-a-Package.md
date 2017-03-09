@@ -65,50 +65,50 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 1. Run the NuGet CLI `spec` command to generate `AppLogg.nuspec`:
 
     ```bash
-        nuget spec
+    nuget spec
     ```
 
 1. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](../create-packages/creating-a-package.md#creating-the-nuspec-file).
 
     ```xml
-        <?xml version="1.0"?>
-        <package>
-          <metadata>
-            <id>$id$</id>
-            <version>$version$</version>
-            <title>$title$</title>
-            <authors>$author$</authors>
-            <owners>$author$</owners>
-            <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-            <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-            <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
-            <requireLicenseAcceptance>false</requireLicenseAcceptance>
-            <description>$description$</description>
-            <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-            <copyright>Copyright 2016</copyright>
-            <tags>Tag1 Tag2</tags>
-          </metadata>
-        </package>
+    <?xml version="1.0"?>
+    <package>
+        <metadata>
+        <id>$id$</id>
+        <version>$version$</version>
+        <title>$title$</title>
+        <authors>$author$</authors>
+        <owners>$author$</owners>
+        <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+        <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+        <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>$description$</description>
+        <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+        <copyright>Copyright 2016</copyright>
+        <tags>Tag1 Tag2</tags>
+        </metadata>
+    </package>
     ```
 
 1. Select a package ID that is unique across nuget.org. We recommend using the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number). You must also update the author and description tags or you will get an error in the next step. Here's an updated .nuspec file as an example:
 
     ```xml
-        <?xml version="1.0"?>
-        <package>
-          <metadata>
-            <id>MyCompanyName.MyProductName.MyPackageName</id>
-            <version>$version$</version>
-            <title>$title$</title>
-            <authors>kraigb</authors>
-            <owners>kraigb</owners>
-            <requireLicenseAcceptance>false</requireLicenseAcceptance>
-            <description>Awesome application logging utility</description>
-            <releaseNotes>First release</releaseNotes>
-            <copyright>Copyright 2016</copyright>
-            <tags>application app logger logging logs</tags>
-          </metadata>
-        </package>
+    <?xml version="1.0"?>
+    <package>
+        <metadata>
+        <id>MyCompanyName.MyProductName.MyPackageName</id>
+        <version>$version$</version>
+        <title>$title$</title>
+        <authors>kraigb</authors>
+        <owners>kraigb</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Awesome application logging utility</description>
+        <releaseNotes>First release</releaseNotes>
+        <copyright>Copyright 2016</copyright>
+        <tags>application app logger logging logs</tags>
+        </metadata>
+    </package>
     ```
 
 > [!Note]
@@ -119,7 +119,7 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 Creating a NuGet package from a project is simple: just run the `pack` command:
 
 ```bash
-    nuget pack AppLogger.csproj
+nuget pack AppLogger.csproj
 ```
 
 This will create a NuGet package file like `AppLogger.1.0.0.0.nupkg` using, of course, the package name and version number from the .nuspec file.
@@ -148,16 +148,16 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
 1. At a command prompt, run the following command, replacing the key with the value copied in step 3:
 
     ```bash
-        nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://www.nuget.org/api/v2/package
+    nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://www.nuget.org/api/v2/package
     ```
     
 1. You should then see something like the following:
 
     ```
-        Pushing AppLogger.1.0.0.0.nupkg to 'https://www.nuget.org/api/v2/package'...
-          PUT https://www.nuget.org/api/v2/package/
-          Created https://www.nuget.org/api/v2/package/ 6829ms
-        Your package was pushed. 
+    Pushing AppLogger.1.0.0.0.nupkg to 'https://www.nuget.org/api/v2/package'...
+        PUT https://www.nuget.org/api/v2/package/
+        Created https://www.nuget.org/api/v2/package/ 6829ms
+    Your package was pushed. 
     ```
 
 1. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page:

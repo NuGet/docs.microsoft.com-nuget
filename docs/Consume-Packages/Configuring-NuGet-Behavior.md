@@ -64,10 +64,10 @@ The preferred method for changing the configuration is using the NuGet [config c
 To **set a value** in any existing configuration file, use the `-configFile` switch as shown in the examples below.
 
 ```bash
-    nuget config -set repositoryPath=c:\packages -configfile c:\my.config
-    nuget config -set repositoryPath=c:\packages -configfile .\myApp\NuGet.Config
-    nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\Config\VisualStudio\14.0\NuGet.Config
-    nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\NuGetDefaults.Config
+nuget config -set repositoryPath=c:\packages -configfile c:\my.config
+nuget config -set repositoryPath=c:\packages -configfile .\myApp\NuGet.Config
+nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\Config\VisualStudio\14.0\NuGet.Config
+nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\NuGetDefaults.Config
 ```
 
 Without the `-configFile` switch, NuGet will make the change in the global config file.
@@ -78,15 +78,15 @@ Without the `-configFile` switch, NuGet will make the change in the global confi
 To **remove a value**, use the same commands but with an empty value, such as:
 
 ```bash
-    nuget config -set repositoryPath= -configfile c:\my.config
+nuget config -set repositoryPath= -configfile c:\my.config
 ```
 
 To create a new configuration file, copy the template below into that file and then use the `nuget config --configFile <filename>` command to set values:
 
 ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-    </configuration>
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+</configuration>
 ```
 
 > [!Warning]
@@ -160,54 +160,54 @@ You then have four `NuGet.Config` files in the following locations with the give
 1. Global configuration file, `%APPDATA%\NuGet\Nuget.config`:
 
     ```xml
-        <?xml version="1.0" encoding="utf-8"?>
-        <configuration>
-          <activePackageSource>
-            <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
-          </activePackageSource>
-        </configuration>
+    <?xml version="1.0" encoding="utf-8"?>
+    <configuration>
+        <activePackageSource>
+        <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
+        </activePackageSource>
+    </configuration>
     ```
 
 1. `d:\NuGet.config`:
 
     ```xml
-        <?xml version="1.0" encoding="utf-8"?>
-        <configuration>
-        <config>
-            <add key="repositoryPath" value="d:\tmp" />
-          </config>
-          <packageRestore>
-            <add key="enabled" value="True" />
-          </packageRestore>
-        </configuration>
+    <?xml version="1.0" encoding="utf-8"?>
+    <configuration>
+    <config>
+        <add key="repositoryPath" value="d:\tmp" />
+        </config>
+        <packageRestore>
+        <add key="enabled" value="True" />
+        </packageRestore>
+    </configuration>
     ```
 
 1. `d:\Project1\NuGet.config`:
 
     ```xml
-        <?xml version="1.0" encoding="utf-8"?>
-        <configuration>
-          <config>
-            <add key="repositoryPath" value="External\Packages" />
-            <add key="DefaultPushSource" value="https://MyPrivateRepo/ES/api/v2/package" />
-          </config>
-          <packageSources>
-            <clear /> <!-- ensure only the sources defined below are used -->
-            <add key="MyPrivateRepo - ES" value="https://MyPrivateRepo/ES/nuget" />
-          </packageSources>
-        </configuration>
+    <?xml version="1.0" encoding="utf-8"?>
+    <configuration>
+        <config>
+        <add key="repositoryPath" value="External\Packages" />
+        <add key="DefaultPushSource" value="https://MyPrivateRepo/ES/api/v2/package" />
+        </config>
+        <packageSources>
+        <clear /> <!-- ensure only the sources defined below are used -->
+        <add key="MyPrivateRepo - ES" value="https://MyPrivateRepo/ES/nuget" />
+        </packageSources>
+    </configuration>
     ```
 
 1. `d:\Project2\NuGet.config`:
 
     ```xml
-        <?xml version="1.0" encoding="utf-8"?>
-        <configuration>
-          <packageSources>
-          <!-- Add this repository to the list of available repositories -->
-            <add key="MyPrivateRepo - DQ" value="https://MyPrivateRepo/DQ/nuget" />
-          </packageSources>
-        </configuration>
+    <?xml version="1.0" encoding="utf-8"?>
+    <configuration>
+        <packageSources>
+        <!-- Add this repository to the list of available repositories -->
+        <add key="MyPrivateRepo - DQ" value="https://MyPrivateRepo/DQ/nuget" />
+        </packageSources>
+    </configuration>
     ```
 
 Here's how NuGet will load and apply the settings, depending on where it's invoked:
@@ -242,28 +242,28 @@ The defaults file works with the following settings:
 The following is an example NuGetDefaults.config file containing each of its allowable sections:
 
 ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <configuration>
-        <!-- DefaultPushSource key is similar to the 'DefaultPushSource' key of NuGet.config schema-->
-        <!-- This can be used by administrators to prevent accidental publishing of packages to nuget.org -->
-        <config>
-            <add key="DefaultPushSource" value="https://contoso.com/packages/" />
-        </config>
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- DefaultPushSource key is similar to the 'DefaultPushSource' key of NuGet.config schema-->
+    <!-- This can be used by administrators to prevent accidental publishing of packages to nuget.org -->
+    <config>
+        <add key="DefaultPushSource" value="https://contoso.com/packages/" />
+    </config>
 
-        <!-- Default Package Sources -->
-        <!-- They cannot be deleted or modified but can be disabled/enabled by user -->
-        <!-- The following section is similar to 'packageSources' section of NuGet.config schema -->
-        <packageSources>
-            <add key="Contoso Package Source" value="https://contoso.com/packages/" />
-            <add key="nuget.org" value="https://www.nuget.org/api/v2/" />
-        </packageSources>
+    <!-- Default Package Sources -->
+    <!-- They cannot be deleted or modified but can be disabled/enabled by user -->
+    <!-- The following section is similar to 'packageSources' section of NuGet.config schema -->
+    <packageSources>
+        <add key="Contoso Package Source" value="https://contoso.com/packages/" />
+        <add key="nuget.org" value="https://www.nuget.org/api/v2/" />
+    </packageSources>
 
-        <!-- Default Package Sources that are disabled by default -->
-        <!-- They cannot be modified or deleted either but can be enabled/disabled by user -->
-        <!-- The following section is similar to 'disabledPackageSources' section of NuGet.config schema -->
-        <!-- The value part of the entry in 'disabledPackageSources' section has no effect -->
-        <disabledPackageSources>
-            <add key="nuget.org" value="true" />
-        </disabledPackageSources>
-    </configuration>
+    <!-- Default Package Sources that are disabled by default -->
+    <!-- They cannot be modified or deleted either but can be enabled/disabled by user -->
+    <!-- The following section is similar to 'disabledPackageSources' section of NuGet.config schema -->
+    <!-- The value part of the entry in 'disabledPackageSources' section has no effect -->
+    <disabledPackageSources>
+        <add key="nuget.org" value="true" />
+    </disabledPackageSources>
+</configuration>
 ```
