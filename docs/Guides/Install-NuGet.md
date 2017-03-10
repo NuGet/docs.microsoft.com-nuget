@@ -71,7 +71,7 @@ The NuGet CLI can be installed using any of the following methods:
 1. **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client. 
 
     ```bash
-        choco install nuget.commandline
+    choco install nuget.commandline
     ```
     
 1. **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.

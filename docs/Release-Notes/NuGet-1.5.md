@@ -55,10 +55,10 @@ the package should be referenced.
 For example, if you add the following:
 
 ```xml
-    <references>
-      <reference file="xunit.dll" />
-      <reference file="xunit.extensions.dll" />
-    </references>
+<references>
+    <reference file="xunit.dll" />
+    <reference file="xunit.extensions.dll" />
+</references>
 ```
 
 Then only the _xunit.dll_ and _xunit.extensions.dll_ will be referenced from the appropriate
@@ -84,25 +84,25 @@ using a wildcard. When using a wildcard, there's no way to exclude a specific su
 files. For example, suppose you want all text files within a directory except a specific one.
 
 ```xml
-    <files>
-        <file src="*.txt" target="content\docs" exclude="admin.txt" />
-    </files>
+<files>
+    <file src="*.txt" target="content\docs" exclude="admin.txt" />
+</files>
 ```
 
 Use semicolons to specify multiple files.
 
 ```xml
-    <files>
-        <file src="*.txt" target="content\docs" exclude="admin.txt;log.txt" />
-    </files>
+<files>
+    <file src="*.txt" target="content\docs" exclude="admin.txt;log.txt" />
+</files>
 ```
 
 Or use a wild card to exclude a set of files such as all backup files
 
 ```xml
-    <files>
-        <file src="tools\*.*" target="tools" exclude="*.bak" />
-    </files>
+<files>
+    <file src="tools\*.*" target="tools" exclude="*.bak" />
+</files>
 ```
 
 ### Removing packages using the dialog prompts to remove dependencies

@@ -91,7 +91,8 @@ Retargeting target framework version may lead to incomplete Intellisense, in Vis
 #### Workaround:
 Do a manual restore.
 
-### ```msbuild /t:restore``` fails when a project targeting .NET461 references another project targeting .NETStandard
+### `msbuild /t:restore` fails when a project targeting .NET461 references another project targeting .NETStandard
+
 #### Issue:
 msbuild /t:restore fails when a PackageReferenece based project targeting .NET461 references another PackageReference based project targeting .NETStandard.  [NuGet#4532](https://github.com/NuGet/Home/issues/4532)
 

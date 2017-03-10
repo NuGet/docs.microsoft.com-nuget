@@ -101,7 +101,7 @@ The console provides a variable named `$DTE` that returns the `DTE` object. See 
 This is a known issue with how PowerShell interacts with a COM object. Try the following:
 
 ```ps
-    `$dte2 = Get-Interface $dte ([EnvDTE80.DTE2])`
+`$dte2 = Get-Interface $dte ([EnvDTE80.DTE2])`
 ```
 
 `Get-Interface` is a helper function added by the NuGet PowerShell host.

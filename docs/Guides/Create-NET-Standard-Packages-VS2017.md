@@ -62,16 +62,16 @@ The require workload appears as follows in the Visual Studio installer:
 1. Add your code to the component, for example:
 
     ```cs
-        namespace AppLogger
+    namespace AppLogger
+    {
+        public class Logger
         {
-            public class Logger
+            public void Log(string text)
             {
-                public void Log(string text)
-                {
-                    throw new NotImplementedException("Called Log");
-                }
+                throw new NotImplementedException("Called Log");
             }
         }
+    }
     ```
 
 1. Build the project (with the Release configuration) and check that DLL and XML files are produced within the `bin\Release\netstandard1.4` folder.
@@ -83,17 +83,17 @@ With NuGet 4.0 and .NET Core projects, package metadata is contained directly in
 1. Right-click the project in Solution Explorer, select **Edit AppLogger.csproj**, and then edit the first property group to include package information such as the following:
 
     ```xml
-        <PropertyGroup>
-            <TargetFramework>netstandard1.4</TargetFramework>
-            <PackageId>AppLogger.YOUR_NAME</PackageId>
-            <PackageVersion>1.0.0</PackageVersion>
-            <Authors>YOUR_NAME</Authors>
-            <Description>Awesome application logging utility</Description>
-            <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-            <PackageReleaseNotes>First release</PackageReleaseNotes>
-            <Copyright>Copyright 2016 (c) Contoso Corporation. All rights reserved.</Copyright>
-            <PackageTags>logger logging logs</PackageTags>
-        </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard1.4</TargetFramework>
+        <PackageId>AppLogger.YOUR_NAME</PackageId>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Authors>YOUR_NAME</Authors>
+        <Description>Awesome application logging utility</Description>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageReleaseNotes>First release</PackageReleaseNotes>
+        <Copyright>Copyright 2016 (c) Contoso Corporation. All rights reserved.</Copyright>
+        <PackageTags>logger logging logs</PackageTags>
+    </PropertyGroup>
     ```
 
 1. Save the project, then right-click the solution and select **Build Solution** to again generate all the files for the package, this time with the correct metadata.

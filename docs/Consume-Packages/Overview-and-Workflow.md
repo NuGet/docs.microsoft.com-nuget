@@ -36,7 +36,10 @@ Between nuget.org and private package galleries that your organization might est
 
 \* _Except with `nuget install` from the command-line, in which case it's necessary to edit the configuration files by hand. See the [install command reference](../tools/nuget-exe-cli-reference.md#install)._
 
-NuGet remembers the identity and version number of each installed package, recording it in either `packages.config` or `project.json` in your project root, depending on project type. With NuGet 4.0+ and .NET Core projects, dependencies are instead stored in the project file directly. See [Package References in Project Files](../consume-packages/package-references-in-project-files.md). In any case, you can look in the appropriate file at any time to see the full list of  dependencies for your project.
+NuGet remembers the identity and version number of each installed package, recording it in either `packages.config` or `project.json` in your project root, depending on project type. With NuGet 4.0+ and .NET Core projects, dependencies are instead stored in the project file directly. See [Package References in Project Files](../consume-packages/package-references-in-project-files.md). In any case, you can look in the appropriate file at any time to see the full list of dependencies for your project.
+
+> [!Tip]
+> It's prudent to always check the license for each package you intend to use in your software. On nuget.org, you'll find a **License** link on the left side of each package's description page.
 
 When installing packages, NuGet typically checks if the package is already available from its cache. You can manually clear this cache from the command line, as described on [Managing the NuGet cache](../consume-packages/managing-the-nuget-cache.md).
 

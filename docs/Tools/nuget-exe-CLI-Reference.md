@@ -74,7 +74,7 @@ To expand all the files in the package to the destination package source, use th
 ### Usage
 
 ```bash
-    nuget add <packagePath> -source <sourcePath> [options]
+nuget add <packagePath> -source <sourcePath> [options]
 ```
 
 where &lt;packagePath&gt; is the pathname to the package to add, and &lt;sourcePath&gt; specifies the folder-based package source to which the package will be added. HTTP sources are not supported.
@@ -91,9 +91,9 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 ### Examples
 
 ```bash
-    nuget add foo.nupkg -source c:\bar\
+nuget add foo.nupkg -source c:\bar\
 
-    nuget add foo.nupkg -source \\bar\packages\
+nuget add foo.nupkg -source \\bar\packages\
 ```
 
 ## config
@@ -103,7 +103,7 @@ Gets or sets NuGet config values. For additional usage, see [Configuring NuGet B
 ### Usage
 
 ```bash
-    nuget config -set <name>=<value> [<name>=<value> ...] [options]
+nuget config -set <name>=<value> [<name>=<value> ...] [options]
 ```
 
 where &lt;name&gt; and &lt;value&gt; specify a key-value pair to be set in the configuration. You can specify as many pairs as desired.
@@ -124,11 +124,11 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 ### Examples
 
 ```bash
-    nuget config -set repositoryPath=c:\packages -configfile c:\my.config
+nuget config -set repositoryPath=c:\packages -configfile c:\my.config
 
-    nuget config -set repositoryPath=%PACKAGE_REPO% -configfile %ProgramData%\NuGet\NuGetDefaults.Config
+nuget config -set repositoryPath=%PACKAGE_REPO% -configfile %ProgramData%\NuGet\NuGetDefaults.Config
 
-    nuget config -set HTTP_PROXY=http://127.0.0.1 -set HTTP_PROXY.USER=domain\user
+nuget config -set HTTP_PROXY=http://127.0.0.1 -set HTTP_PROXY.USER=domain\user
 ```
 
 ## delete
@@ -138,7 +138,7 @@ Deletes or unlists a package from a package source. For nuget.org, the action is
 ### Usage
 
 ```bash
-    nuget delete <packageID> <packageVersion> [options]
+nuget delete <packageID> <packageVersion> [options]
 ```
 
 where &lt;packageID&gt; and &lt;packageVersion&gt; identify the exact package to delete or unlist. The exact behavior depends on the source. For local folders, for instance, the package is deleted; for nuget.org the package is unlisted.
@@ -157,9 +157,9 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 ### Examples
 
 ```bash
-    nuget delete MyPackage 1.0
+nuget delete MyPackage 1.0
 
-    nuget delete MyPackage 1.0 -source http://package.contoso.com/source -apikey A1B2C3
+nuget delete MyPackage 1.0 -source http://package.contoso.com/source -apikey A1B2C3
 ```
 
 ## help
@@ -169,8 +169,8 @@ Displays general help information and help information about specific commands.
 ### Usage
 
 ```bash
-    nuget help [command] [options]
-    nuget ? [command] [options]
+nuget help [command] [options]
+nuget ? [command] [options]
 ```
 
 where [command] identifies a specific command for which to display help.
@@ -191,11 +191,11 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 ### Examples
 
 ```bash
-    nuget help
-    nuget help push
-    nuget ?
-    nuget push -?
-    nuget help -all -markdown
+nuget help
+nuget help push
+nuget ?
+nuget push -?
+nuget help -all -markdown
 ```
 
 ## init
@@ -210,7 +210,7 @@ As with `add`, the destination must be either a local folder or a UNC path; HTTP
 ### Usage
 
 ```bash
-    nuget init <source> <destination> [options]
+nuget init <source> <destination> [options]
 ```
 
 where &lt;source&gt; is the folder containing packages and &lt;destination&gt; is the local folder or UNC pathname to which the packages will be copied.
@@ -226,8 +226,8 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 ### Examples
 
 ```bash
-    nuget init c:\foo c:\bar
-    nuget init \\foo\packages \\bar\packages -expand
+nuget init c:\foo c:\bar
+nuget init \\foo\packages \\bar\packages -expand
 ```
 
 ## install
@@ -244,7 +244,7 @@ To add a dependency, either add a project through the Package Manager UI or Cons
 ### Usage
 
 ```bash
-    nuget install <packageID | configFilePath> [options]
+nuget install <packageID | configFilePath> [options]
 ```
 
 where &lt;packageID&gt; names the package to install (using the latest version), or &lt;configFilePath&gt; identifies the `packages.config` file that lists the packages to install. You can indicate a specific version with the `-version` option.
@@ -271,11 +271,11 @@ version | Specifies the version of the package to install.
 ### Examples
 
 ```bash
-    nuget install elmah
+nuget install elmah
 
-    nuget install packages.config
+nuget install packages.config
 
-    nuget install ninject -outputdirectory c:\proj
+nuget install ninject -outputdirectory c:\proj
 ```
 
 ##  list
@@ -285,7 +285,7 @@ Displays a list of packages from a given source. If no sources are specified, al
 ### Usage
 
 ```bash
-    nuget list [search terms] [options]
+nuget list [search terms] [options]
 ```
 
 where the optional search terms will filter the displayed list. Search terms are applied to the names of packages, tags, and package descriptions.
@@ -305,9 +305,9 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 ### Examples
 
 ```bash
-    nuget list
+nuget list
 
-    nuget list -verbose -allversions
+nuget list -verbose -allversions
 ```
 
 ## locals
@@ -318,7 +318,7 @@ Clears or lists local NuGet resources such as the http-request cache, packages c
 ### Usage
 
 ```bash
-    nuget locals <cache> [options]
+nuget locals <cache> [options]
 ```
 
 where &lt;cache&gt; is one of `all`, `http-cache`, `packages-cache`, `global-packages`, and `temp` *(3.4+)*.
@@ -336,8 +336,8 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 ### Examples
 
 ```bash
-    nuget locals all -list
-    nuget locals http-cache -clear
+nuget locals all -list
+nuget locals http-cache -clear
 ```
 
 ## mirror
@@ -352,7 +352,7 @@ Mirrors a package and its dependencies from the specified source repositories to
 ### Usage
 
 ```bash
-    nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [options]
+nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [options]
 ```
 
 where &lt;packageID&gt; is the package to mirror, or &lt;configFilePath&gt; identifies the `packages.config` file that lists the packages to mirror.
@@ -377,11 +377,11 @@ version | The version of the package to install. If not specified, the latest ve
 ### Examples
 
 ```bash
-    nuget mirror packages.config  https://MyRepo/nuget https://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -nocache
+nuget mirror packages.config  https://MyRepo/nuget https://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -nocache
 
-    nuget mirror Microsoft.AspNet.Mvc https://MyRepo/nuget https://MyRepo/api/v2/package -version 4.0.20505.0
+nuget mirror Microsoft.AspNet.Mvc https://MyRepo/nuget https://MyRepo/api/v2/package -version 4.0.20505.0
 
-    nuget mirror Microsoft.Net.Http https://MyRepo/nuget https://MyRepo/api/v2/package -prerelease
+nuget mirror Microsoft.Net.Http https://MyRepo/nuget https://MyRepo/api/v2/package -prerelease
 ```
 
 ##  pack
@@ -395,7 +395,7 @@ With Mono, you also need to adjust non-local paths in the .nuspec file to Unix-s
 ### Usage
 
 ```bash
-    nuget pack <nuspecPath | projectPath> [options]
+nuget pack <nuspecPath | projectPath> [options]
 ```
 
 where &lt;nuspecPath&gt; and &lt;projectPath&gt; specify the `.nuspec` or project file, respectively.
@@ -432,12 +432,12 @@ that have the `developmentDependency` attribute set to `true`. These entries wil
 For example, consider the following `packages.config` file in the source project:
 
 ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <packages>
-        <package id="jQuery" version="1.5.2" />
-        <package id="netfx-Guard" version="1.3.3.2" developmentDependency="true" />
-        <package id="microsoft-web-helpers" version="1.15" />
-    </packages>
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+    <package id="jQuery" version="1.5.2" />
+    <package id="netfx-Guard" version="1.3.3.2" developmentDependency="true" />
+    <package id="microsoft-web-helpers" version="1.15" />
+</packages>
 ```
 
 For this project, the package created by `nuget pack` will have a dependency on `jQuery` and `microsoft-web-helpers` but not `netfx-Guard`.
@@ -445,20 +445,20 @@ For this project, the package created by `nuget pack` will have a dependency on 
 ### Examples
 
 ```bash
-    nuget pack
+nuget pack
 
-    nuget pack foo.nuspec
+nuget pack foo.nuspec
 
-    nuget pack foo.csproj
+nuget pack foo.csproj
 
-    nuget pack foo.csproj -Build -symbols -properties owners=janedoe,xiaop;version="1.0.5"
+nuget pack foo.csproj -Build -symbols -properties owners=janedoe,xiaop;version="1.0.5"
 
-    # create a package from project foo.csproj, using MSBuild version 12 to build the project
-    nuget pack foo.csproj -Build -symbols -properties owners=janedoe,xiaop;version="1.0.5" -MSBuildVersion 12
+# create a package from project foo.csproj, using MSBuild version 12 to build the project
+nuget pack foo.csproj -Build -symbols -properties owners=janedoe,xiaop;version="1.0.5" -MSBuildVersion 12
 
-    nuget pack foo.nuspec -version 2.1.0
+nuget pack foo.nuspec -version 2.1.0
 
-    nuget pack foo.nuspec -version 1.0.0 -minclientversion 2.5
+nuget pack foo.nuspec -version 1.0.0 -minclientversion 2.5
 ```
 
 ##  push
@@ -470,7 +470,7 @@ NuGet's default configuration is obtained by loading `%AppData%\NuGet\NuGet.conf
 ### Usage
 
 ```bash
-    nuget push <packagePath> [options]
+nuget push <packagePath> [options]
 ```
 
 where &lt;packagePath&gt; identifies the package to push to the server.
@@ -490,21 +490,21 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 ### Examples
 
 ```bash
-    nuget push foo.nupkg
+nuget push foo.nupkg
 
-    nuget push foo.symbols.nupkg
+nuget push foo.symbols.nupkg
 
-    nuget push foo.nupkg -Timeout 360
+nuget push foo.nupkg -Timeout 360
 
-    nuget push *.nupkg
+nuget push *.nupkg
 
-    nuget.exe push -source \\mycompany\repo\ mypackage.1.0.0.nupkg
+nuget.exe push -source \\mycompany\repo\ mypackage.1.0.0.nupkg
 
-    nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source https://www.nuget.org/api/v2/package
+nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source https://www.nuget.org/api/v2/package
 
-    nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
+nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
-    nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/
+nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/
 ```
 
 
@@ -521,7 +521,7 @@ NuGet 4.0+ with project in which package references are included in the project 
 ### Usage
 
 ```bash
-    nuget restore <projectPath> [options]
+nuget restore <projectPath> [options]
 ```
 
 where &lt;projectPath&gt; specifies the location of a solution, a `packages.config` file, or a `project.json` file. See [Remarks](#remarks) below for behavioral details.
@@ -574,17 +574,17 @@ The restore command is executed in the following steps:
 ### Examples
 
 ```bash
-    # Restore packages for a solution file
-    nuget restore a.sln
+# Restore packages for a solution file
+nuget restore a.sln
 
-    # Restore packages for a solution file, using MSBuild version 14.0 to load the solution and its project(s)
-    nuget restore a.sln -MSBuildVersion 14
+# Restore packages for a solution file, using MSBuild version 14.0 to load the solution and its project(s)
+nuget restore a.sln -MSBuildVersion 14
 
-    # Restore packages for a project's packages.config file, with the packages folder at the parent
-    nuget restore proj1\packages.config -PackagesDirectory ..\packages
+# Restore packages for a project's packages.config file, with the packages folder at the parent
+nuget restore proj1\packages.config -PackagesDirectory ..\packages
 
-    # Restore packages for the solution in the current folder, specifying package sources
-    nuget restore -source "https://www.nuget.org/api/v2;https://www.myget.org/F/nuget"
+# Restore packages for the solution in the current folder, specifying package sources
+nuget restore -source "https://www.nuget.org/api/v2;https://www.myget.org/F/nuget"
 ```
 
 ## setapikey
@@ -594,7 +594,7 @@ Saves an API key for a given server URL into `NuGet.Config` so that it doesn't n
 ### Usage
 
 ```bash
-    nuget setapikey <key> -source <url> [options]
+nuget setapikey <key> -source <url> [options]
 ```
 
 where &lt;source&gt; identifies the server and &lt;key&gt; is the key or password to save. If &lt;source&gt; is omitted, nuget.org is assumed.
@@ -611,9 +611,9 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 ### Examples
 
 ```bash
-    nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
+nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
-    nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -source https://example.com/nugetfeed
+nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -source https://example.com/nugetfeed
 ```
 
 ## sources
@@ -623,7 +623,7 @@ Manages the list of sources located in `%AppData%\NuGet\NuGet.config` or the spe
 ### Usage
 
 ```bash
-    nuget sources <operation> -Name <name> -Source <source>
+nuget sources <operation> -Name <name> -Source <source>
 ```
 
 where &lt;operation&gt; is one of *List, Add, Remove, Enable, Disable,* or *Update*, &lt;name&gt; is the name of the source, and &lt;source&gt; is the source's URL.
@@ -648,11 +648,11 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 ### Examples
 
 ```bash
-    nuget sources Add "MyServer" \\myserver\packages
+nuget sources Add "MyServer" \\myserver\packages
 
-    nuget sources Disable "MyServer"
+nuget sources Disable "MyServer"
 
-    nuget source Enable "nuget.org"
+nuget source Enable "nuget.org"
 ```
 
 ## spec
@@ -662,7 +662,7 @@ Generates a `.nuspec` file for a new package. If run in the same folder as a pro
 ### Usage
 
 ```bash
-    nuget spec [<packageID>] [options]
+nuget spec [<packageID>] [options]
 ```
 
 where &lt;packageID&gt; is an optional package identifier to save in the `.nuspec` file.
@@ -681,11 +681,11 @@ verbosity | Specifies the amount of details displayed in the output: *normal*, *
 ### Examples
 
 ```bash
-    nuget spec
+nuget spec
 
-    nuget spec MyPackage
+nuget spec MyPackage
 
-    nuget spec -a MyAssembly.dll
+nuget spec -a MyAssembly.dll
 ```
 
 ## update
@@ -701,7 +701,7 @@ This command can also be used to update nuget.exe itself using the *-self* flag.
 ### Usage
 
 ```bash
-    nuget update <configPath> [options]
+nuget update <configPath> [options]
 ```
 
 where &lt;configPath&gt; identifies either a `packages.config` or solution file that lists the project's dependencies.
@@ -728,14 +728,14 @@ version | When used with one package ID, specifies the version of the package to
 ### Examples
 
 ```bash
-    nuget update
+nuget update
 
-    # update packages installed in solution.sln, using MSBuild version 14.0 to load the solution and its project(s).
-    nuget update solution.sln -MSBuildVersion 14
+# update packages installed in solution.sln, using MSBuild version 14.0 to load the solution and its project(s).
+nuget update solution.sln -MSBuildVersion 14
 
-    nuget update -safe
+nuget update -safe
 
-    nuget update -self
+nuget update -self
 ```
 
 ## Environment variables

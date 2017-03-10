@@ -58,16 +58,16 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
 
 ![Controlling package restore behaviors through NuGet Package Manager options](media/Restore-01-AutoRestoreOptions.png)
 
-- **Allow NuGet to download missing packages** enables all forms of package restore by changing the `packageRestore/enabled` setting in the `%AppData%\NuGet\NuGet.config` file as shown below. (For NuGet 2.6 or earlier, this setting can also be used in a project-specific `.nuget\nuget.config` file.)
+- **Allow NuGet to download missing packages**: enables all forms of package restore by changing the `packageRestore/enabled` setting in the `%AppData%\NuGet\NuGet.config` file as shown below. (For NuGet 2.6 or earlier, this setting can also be used in a project-specific `.nuget\nuget.config` file.)
 
     ```xml
-        ...
-        <configuration>
-          <packageRestore>
-              <!-- Disables command-line, automatic, and MSBuild-Integrated restore -->
-            <add key="enabled" value="False" />
-          </packageRestore>
-        </configuration>
+    ...
+    <configuration>
+        <packageRestore>
+            <!-- Disables command-line, automatic, and MSBuild-Integrated restore -->
+        <add key="enabled" value="False" />
+        </packageRestore>
+    </configuration>
     ```
 
 
@@ -75,16 +75,16 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
 >  The `packageRestore/enabled` setting can be overridden globally by setting an environment variable called **EnableNuGetPackageRestore** with a value of TRUE or FALSE before launching Visual Studio or starting a build.
 
 
-- **Automatically check for missing packages during build in Visual Studio** enables automatic restore for NuGet 2.7 and later by changing the `packageRestore/automatic` setting in the `%AppData%\NuGet\NuGet.config` file as shown below.
+- **Automatically check for missing packages during build in Visual Studio**: enables automatic restore for NuGet 2.7 and later by changing the `packageRestore/automatic` setting in the `%AppData%\NuGet\NuGet.config` file as shown below.
             
     ```xml
-        ...
-        <configuration>
-          <packageRestore>
-            <!-- Disables automatic restore in Visual Studio -->
-            <add key="automatic" value="False" />
-          </packageRestore>
-        </configuration>
+    ...
+    <configuration>
+        <packageRestore>
+        <!-- Disables automatic restore in Visual Studio -->
+        <add key="automatic" value="False" />
+        </packageRestore>
+    </configuration>
     ```
 
 For reference, see the [NuGet config file - packageRestore section](../Schema/nuget-config-file.md#packagerestore-section).
@@ -100,13 +100,13 @@ When NuGet restores packages through any method, it will honor any constraints s
 - `packages.config`: Specify a version range in the `allowedVersion` property of the dependency. See [Reinstalling and Updating Packages](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions). For example:
 
     ```xml
-        <package id="Newtonsoft.json" version="6.0.4" allowedVersions="[6,7)" />
+    <package id="Newtonsoft.json" version="6.0.4" allowedVersions="[6,7)" />
     ```
 
 - `project.json`: Specify a version range directly with the dependency's version number. For example:
 
     ```json
-        "newtonsoft.json": "[6, 7)"
+    "newtonsoft.json": "[6, 7)"
     ```
 
 In both cases, use the notation described in [Dependency versions](../create-packages/dependency-versions.md).
@@ -119,9 +119,9 @@ For NuGet 2.6 and earlier, you use the [Install](../tools/nuget-exe-cli-referenc
 For NuGet 2.7 and above, use the [Restore](../tools/nuget-exe-cli-reference.md#restore) command to restore all packages in a solution (using either `packages.config` in NuGet 2.x and later or `project.json` in NuGet 3.x and later). For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
 
 ```bash
-    c:\proj\app\> nuget restore
-    c:\proj\app\> nuget.exe restore app.sln
-    c:\proj\> nuget restore app
+c:\proj\app\> nuget restore
+c:\proj\app\> nuget.exe restore app.sln
+c:\proj\> nuget restore app
 ```
 
 ## Automatic restore in Visual Studio
@@ -152,8 +152,8 @@ To correct these errors, do one of the following:
 1. Update `nuget.exe` in the `.nuget` folder** as follows
 
     ```bash
-        cd .nuget
-        nuget update -self
+    cd .nuget
+    nuget update -self
     ```
 
 1. Reset consent in your `%AppData%\NuGet\NuGet.config` file by going to **Tools > Options > NuGet Package Manager > General** in Visual Studio, uncheck and re-check both **Package Restore** options, and click OK. This re-saves `NuGet.config` with the proper consent settings for NuGet 2.6 and earlier.
@@ -198,16 +198,16 @@ The process is as follows:
 1. Edit each project file in the solution, remove the `&lt;RestorePackages&gt;` element, and remove any references to the `nuget.targets` file. Those settings generally appear as follows:
 
     ```xml
-        <RestorePackages>true</RestorePackages>
-        ...
-        <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-        ...
-        <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-            <PropertyGroup>
-                <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-            </PropertyGroup>
-            <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-        </Target>
+    <RestorePackages>true</RestorePackages>
+    ...
+    <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+    ...
+    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+        <PropertyGroup>
+            <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+        </PropertyGroup>
+        <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    </Target>
     ```
 
 > [!Tip]    
@@ -230,7 +230,6 @@ When creating a build definition on Team Services, simply include the Restore Nu
 
 ![NuGet package restore task in a Visual Studio Team Service build definition](media/Restore-02-VSTSBuild.png)
 
-
 ### Team Foundation Server
 
 With TFS 2013 and later, packages are automatically restored by default during build, provided that you're using a Team Build Template for Team Foundation Server 2013 or later.
@@ -240,7 +239,6 @@ If you're using a previous version of build templates (such as in a project that
 For earlier version of TFS, you can simply include a build step to invoke [command-line restore](#commandline-restore) as described earlier.
 
 For more details see then [Walkthrough of Package Restore with Team Foundation Build](../consume-packages/team-foundation-build.md).
-
 
 ### Command-line restore wrapped in MSBuild
 

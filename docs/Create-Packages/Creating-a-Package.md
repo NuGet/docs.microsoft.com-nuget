@@ -71,57 +71,57 @@ A .nuspec is an XML manifest file that describes a package's contents and drives
 Here's typical (but fictitious) `.nuspec` file, with annotation comments:
 
 ```xml
-    <?xml version="1.0"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
-      <metadata>
-        <!-- The identifier that must be unique within the hosting gallery -->
-        <id>Contoso.Utility.UsefulStuff</id>
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+    <metadata>
+    <!-- The identifier that must be unique within the hosting gallery -->
+    <id>Contoso.Utility.UsefulStuff</id>
 
-        <!-- The package version number that is used when resolving dependencies -->
-        <version>1.8.3.331</version>
+    <!-- The package version number that is used when resolving dependencies -->
+    <version>1.8.3.331</version>
 
-        <!-- Authors contain text that appears directly on the gallery -->
-        <authors>Dejana Tesic, Rajeev Dey</authors>
+    <!-- Authors contain text that appears directly on the gallery -->
+    <authors>Dejana Tesic, Rajeev Dey</authors>
 
-        <!-- Owners are typically nuget.org identities that allow gallery
-             users to earily find other packages by the same owners.  -->
-        <owners>dejanatc, rjdey</owners>
+    <!-- Owners are typically nuget.org identities that allow gallery
+            users to earily find other packages by the same owners.  -->
+    <owners>dejanatc, rjdey</owners>
 
-        <!-- License and project URLs provide links for the gallery -->
-        <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
-        <projectUrl>http://github.com/contoso/UsefulStuff</projectUrl>
+    <!-- License and project URLs provide links for the gallery -->
+    <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+    <projectUrl>http://github.com/contoso/UsefulStuff</projectUrl>
 
-        <!-- The icon is used in Visual Studio's package manager UI -->
-        <iconUrl>http://github.com/contoso/UsefulStuff/nuget_icon.png</iconUrl>
+    <!-- The icon is used in Visual Studio's package manager UI -->
+    <iconUrl>http://github.com/contoso/UsefulStuff/nuget_icon.png</iconUrl>
 
-        <!-- If true, this value prompts the user to accept the license when
-             installing the package. -->
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- If true, this value prompts the user to accept the license when
+            installing the package. -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
-        <!-- Any details about this particular release -->
-        <releaseNotes>Bug fixes and performance improvements</releaseNotes>
+    <!-- Any details about this particular release -->
+    <releaseNotes>Bug fixes and performance improvements</releaseNotes>
 
-        <!-- The description can be used in package manager UI. Note that the
-             nuget.org gallery uses information you add in the portal. -->
-        <description>Core utility functions for web applications</description>
+    <!-- The description can be used in package manager UI. Note that the
+            nuget.org gallery uses information you add in the portal. -->
+    <description>Core utility functions for web applications</description>
 
-        <!-- Copyright information -->
-        <copyright>Copyright ©2016 Contoso Corporation</copyright>
+    <!-- Copyright information -->
+    <copyright>Copyright ©2016 Contoso Corporation</copyright>
 
-        <!-- Tags appear in the gallery and can be used for tag searches -->
-        <tags>web utility http json url parsing</tags>
+    <!-- Tags appear in the gallery and can be used for tag searches -->
+    <tags>web utility http json url parsing</tags>
 
-        <!-- Dependencies are automatically installed when the package is installed -->
-        <dependencies>
-          <dependency id="Newtonsoft.Json" version="9.0" />
-        </dependencies>
-      </metadata>
+    <!-- Dependencies are automatically installed when the package is installed -->
+    <dependencies>
+        <dependency id="Newtonsoft.Json" version="9.0" />
+    </dependencies>
+    </metadata>
 
-      <!-- A readme.txt will be displayed when the package is installed -->
-      <files>
-        <file src="readme.txt" target="" />
-      </files>
-    </package>
+    <!-- A readme.txt will be displayed when the package is installed -->
+    <files>
+    <file src="readme.txt" target="" />
+    </files>
+</package>
 ```
 
 For details on declaring dependencies and specifying version numbers, see [Dependencies](../create-packages/dependency-versions.md).
@@ -129,7 +129,7 @@ For details on declaring dependencies and specifying version numbers, see [Depen
 Because the manifest is always included in a package, you can find any number of additional examples by examining existing packages. A good source is the global package cache on your machine, the location of which is returned by the following command:
 
 ```bash
-    nuget locals -list global-packages
+nuget locals -list global-packages
 ```
 
 Go into any *package\version* folder, copy the .nupkg file to a .zip file, then open that .zip file and examine the .nuspec within it.
@@ -142,7 +142,7 @@ Note that when creating a `.nuspec` from a Visual Studio project, the manifest w
 You can create a `.nuspec` file from scratch in any text editor, or by editing a file from another project. You can also have NuGet create a template manifest for your by using the following command:
 
 ```bash    
-    nuget spec MyPackage
+nuget spec MyPackage
 ```
 
 The resulting `MyPackage.nuspec` file (or `Package.nuspec` if you omit a specific name) will contain placeholders for values like the `projectUrl`, so be sure to edit it before using it to creating the package.
@@ -154,7 +154,7 @@ You can also use `nuget spec` with an existing assembly, a Visual Studio project
 If you have an assembly DLL, you can easily generate a `.nuspec` file from the metadata in the assembly using the following command:
 
 ```bash
-    nuget spec MyAssembly.dll
+nuget spec MyAssembly.dll
 ```
 
 ### From a Visual Studio project
@@ -162,7 +162,7 @@ If you have an assembly DLL, you can easily generate a `.nuspec` file from the m
 Creating a `.nuspec` from a `.csproj` or `.vbproj` file is convenient because other packages that have been installed into those project will be automatically referenced as dependencies. Simply use the following command in the same folder as the project file:
 
 ```bash
-    nuget spec
+nuget spec
 ```
 
 This creates a template `<project_name>.nuspec` file as usual (where &lt;project_name&gt; is replaced with your project name), but includes tokens that will be replaced at packaging time with values from the project. This means you do not need to update crucial values like the version number in the `.nuspec` as you update the project (but you can always replace the tokens with literal values, if desired).
@@ -170,7 +170,7 @@ This creates a template `<project_name>.nuspec` file as usual (where &lt;project
 For example, the &lt;id&gt; value will typically appear as follows:
 
 ```xml
-    <id>$id$</id>
+<id>$id$</id>
 ```
 
 and will be replaced with the `AssemblyName` value from the project file. For the exact mapping of project values to `.nuspec` tokens, see the [Replacement Tokens reference](../schema/nuspec.md#replacement-tokens).
@@ -209,7 +209,7 @@ Think of the **content** folder as the root of the target application, so if you
 Next, from the root folder of this layout, run the following command to create the `.nuspec` file:
 
 ```bash
-    nuget spec
+nuget spec
 ```
 
 In this case, the `.nuspec` will not contain any explicit references to the folder structure, but all those files will be automatically included when creating the package later on.
@@ -253,26 +253,26 @@ Package types are set either in the `.nuspec` file or in `project.json`. In both
 - `.nuspec`: Indicate the package type within a `packageTypes\packageType` node under the `<metadata>` element:
 
     ```xml
-        <?xml version="1.0" encoding="utf-8"?>
-        <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
-          <metadata>
-            <!-- ... -->
-            <packageTypes>
-              <packageType name="DotnetCliTool" />
-            </packageTypes>
-          </metadata>
-        </package>
+    <?xml version="1.0" encoding="utf-8"?>
+    <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+        <metadata>
+        <!-- ... -->
+        <packageTypes>
+            <packageType name="DotnetCliTool" />
+        </packageTypes>
+        </metadata>
+    </package>
     ```
 
 - `project.json`: Indicate the package type within a `packOptions.packageType` property json:
 
     ```json
-        {
-          // ...
-          "packOptions": {
-            "packageType": "DotnetCliTool"
-          }
+    {
+        // ...
+        "packOptions": {
+        "packageType": "DotnetCliTool"
         }
+    }
     ```
 
 ## Adding a readme and other files
@@ -280,19 +280,19 @@ Package types are set either in the `.nuspec` file or in `project.json`. In both
 To directly specify files to include in the package, use the **&lt;files&gt;** node in the `.nuspec` file, which *follows* the &lt;metadata&gt; tag:
 
 ```xml
-    <?xml version="1.0"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
-      <metadata>
-        <!-- ... -->
-      </metadata>
-      <files>
-        <!-- Add a readme -->
-        <file src="readme.txt" target="" />
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+    <metadata>
+    <!-- ... -->
+    </metadata>
+    <files>
+    <!-- Add a readme -->
+    <file src="readme.txt" target="" />
 
-        <!-- Add files from an arbitrary folder that's not necessarily in the project -->
-        <file src="..\..\SomeRoot\**\*.*" target="" />
-      </files>
-    </package>
+    <!-- Add files from an arbitrary folder that's not necessarily in the project -->
+    <file src="..\..\SomeRoot\**\*.*" target="" />
+    </files>
+</package>
 ```
 
 When you include a file named `readme.txt` in the package, the contents of that file will be displayed in Visual Studio as plain text immediately after the package is installed directly (but not when when the package is installed as a dependency). For example, here's how the readme for the HtmlAgilityPack package appears:
@@ -319,19 +319,19 @@ Files in the root `\build` folder are considered suitable for all target framewo
 Then in the `.nuspec` file, be sure to refer to these files in the &lt;files&gt; node:
 
 ```xml
-    <?xml version="1.0"?>
-    <package >
-      <metadata>
-        <!-- ... -->
-      </metadata>
-      <files>
-        <!-- Include everything in \build -->
-        <file src="build\**" target="build" />
+<?xml version="1.0"?>
+<package >
+    <metadata>
+    <!-- ... -->
+    </metadata>
+    <files>
+    <!-- Include everything in \build -->
+    <file src="build\**" target="build" />
 
-        <!-- Other files -->
-        <!-- ... -->
-      </files>
-    </package>
+    <!-- Other files -->
+    <!-- ... -->
+    </files>
+</package>
 ```
 
 When NuGet 2.x installs a package with `\build` files, it will add an MSBuild &lt;Import&gt; elements in the project file pointing to the `.targets` and `.props` files. (`.props` is added at the top of the project file; `.targets` is added at the bottom.)
@@ -344,13 +344,13 @@ With NuGet 3.x, targets are not added to the project but are instead made availa
 When using an assembly or the convention-based working directory, create a package by running `nuget pack` with your `.nuspec` file:
 
 ```bash
-    nuget pack <your_project>.nuspec
+nuget pack <your_project>.nuspec
 ```
 
 When using a Visual Studio project, run `nuget pack` instead with your project file, which will automatically load the project's `.nuspec` file and replace any tokens within it using values in the project file:
 
 ```bash
-    nuget pack <your_project>.csproj
+nuget pack <your_project>.csproj
 ```
 
 > [!Note]
@@ -376,7 +376,7 @@ The following options are a few that are common with Visual Studio projects:
 - **Referenced projects**: If the project references other projects, you can add the referenced projects as part of the package, or as dependencies, by using the `-IncludeReferencedProjects` option:
 
     ```bash
-        nuget pack MyProject.csproj -IncludeReferencedProjects
+    nuget pack MyProject.csproj -IncludeReferencedProjects
     ```
 
     This inclusion process is recursive, so if MyProject.csproj references projects B and C, and those projects reference D, E, and F, then files from B, C, D, E, and F will be included in the package.
@@ -386,13 +386,13 @@ The following options are a few that are common with Visual Studio projects:
 - **Build configuration**: By default, NuGet will use the default build configuration set in the project file, typically *Debug*. To pack files from a different build configuration, such as *Release*, use the `-properties` option with the configuration:
 
     ```bash
-        nuget pack MyProject.csproj -properties Configuration=Release
+    nuget pack MyProject.csproj -properties Configuration=Release
     ```
 
 - **Symbols**: to include symbols that allow consumers to step through your package code in the debugger, use the `-Symbols` option:
 
     ```bash
-        nuget pack MyProject.csproj -symbols
+    nuget pack MyProject.csproj -symbols
     ```
     
 ## Next Steps

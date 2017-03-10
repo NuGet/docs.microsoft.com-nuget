@@ -47,15 +47,15 @@ A **config file transformation** allows you to modify files that already exist i
 3. In the source code file, use case-insensitive tokens of the form `$token$` to indicate values that NuGet should replace with project properties:
 
     ```cs
-        namespace $rootnamespace$.Models {
-            public struct CategoryInfo {
-                public string categoryid;
-                public string description;
-                public string htmlUrl;
-                public string rssUrl;
-                public string title;
-            }
+    namespace $rootnamespace$.Models {
+        public struct CategoryInfo {
+            public string categoryid;
+            public string description;
+            public string htmlUrl;
+            public string rssUrl;
+            public string title;
         }
+    }
     ```
 
     Upon installation, NuGet replaces `$rootnamespace$` with `Fabrikam` assuming the target project's whose root namespace is `Fabrikam`.
@@ -82,39 +82,39 @@ The `app.config.transform` and `web.config.transform` in a package's `content` f
 As an example, suppose the project initially contains the following content in `web.config`:
 
 ```xml
-    <configuration>
-        <system.webServer>
-            <modules>
-                <add name="ContosoUtilities" type="Contoso.Utilities" />
-            </modules>
-        <system.webServer>
-    </configuration>
+<configuration>
+    <system.webServer>
+        <modules>
+            <add name="ContosoUtilities" type="Contoso.Utilities" />
+        </modules>
+    <system.webServer>
+</configuration>
 ```
 
 To add a `MyNuModule` element to the `modules` section during package install, create a `web.config.transform` file in the package's `content` folder that looks like this:
 
     
 ```xml
-    <configuration>
-        <system.webServer>
-            <modules>
-                <add name="MyNuModule" type="Sample.MyNuModule" />
-            </modules>
-        <system.webServer>
-    </configuration>
+<configuration>
+    <system.webServer>
+        <modules>
+            <add name="MyNuModule" type="Sample.MyNuModule" />
+        </modules>
+    <system.webServer>
+</configuration>
 ```
 
 After NuGet installs the package, `web.config` will appear as follows:
 
 ```xml
-    <configuration>
-        <system.webServer>
-            <modules>
-                <add name="ContosoUtilities" type="Contoso.Utilities" />
-                <add name="MyNuModule" type="Sample.MyNuModule" />
-            </modules>
-        <system.webServer>
-    </configuration>
+<configuration>
+    <system.webServer>
+        <modules>
+            <add name="ContosoUtilities" type="Contoso.Utilities" />
+            <add name="MyNuModule" type="Sample.MyNuModule" />
+        </modules>
+    <system.webServer>
+</configuration>
 ```
 
 Notice that NuGet didn't replace the `modules` section, it just merged the new entry into it by adding only new elements and attributes. NuGet will not change any existing elements or attributes.
@@ -135,63 +135,63 @@ With NuGet 2.6 and later, you can modify config files using [XDT syntax](https:/
 For example, the following `app.config.install.xdt` file will insert an `appSettings` element into `app.config` containing the `FullPath`, `FileName`, and `ActiveConfigurationSettings` values from the project:
 
 ```xml
-    <?xml version="1.0"?>
-    <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-        <appSettings xdt:Transform="Insert">
-         <add key="FullPath" value="$FullPath$" />
-         <add key="FileName" value="$filename$" />
-         <add key="ActiveConfigurationSettings " value="$ActiveConfigurationSettings$" />
-        </appSettings>
-    </configuration>
+<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <appSettings xdt:Transform="Insert">
+        <add key="FullPath" value="$FullPath$" />
+        <add key="FileName" value="$filename$" />
+        <add key="ActiveConfigurationSettings " value="$ActiveConfigurationSettings$" />
+    </appSettings>
+</configuration>
 ```
 
 For another example, suppose the project initially contains the following content in `web.config`:
 
 ```xml
-    <configuration>
-        <system.webServer>
-            <modules>
-                <add name="ContosoUtilities" type="Contoso.Utilities" />
-            </modules>
-        <system.webServer>
-    </configuration>
+<configuration>
+    <system.webServer>
+        <modules>
+            <add name="ContosoUtilities" type="Contoso.Utilities" />
+        </modules>
+    <system.webServer>
+</configuration>
 ```
 
 To add a `MyNuModule` element to the `modules` section during package install, the package's `web.config.install.xdt` would contain the following:
 
 ```xml
-    <?xml version="1.0"?>
-    <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-        <system.webServer>
-            <modules>
-                <add name="MyNuModule" type="Sample.MyNuModule" xdt:Transform="Insert" />
-            </modules>
-        </system.webServer>
-    </configuration>
+<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <system.webServer>
+        <modules>
+            <add name="MyNuModule" type="Sample.MyNuModule" xdt:Transform="Insert" />
+        </modules>
+    </system.webServer>
+</configuration>
 ```
 
 After installing the package, `web.config` will look like this:
 
 ```xml
-    <configuration>
-        <system.webServer>
-            <modules>
-                <add name="ContosoUtilities" type="Contoso.Utilities" />
-                <add name="MyNuModule" type="Sample.MyNuModule" />
-            </modules>
-        <system.webServer>
-    </configuration>
+<configuration>
+    <system.webServer>
+        <modules>
+            <add name="ContosoUtilities" type="Contoso.Utilities" />
+            <add name="MyNuModule" type="Sample.MyNuModule" />
+        </modules>
+    <system.webServer>
+</configuration>
 ```
 
 To remove only the `MyNuModule` element during package uninstall, the `web.config.uninstall.xdt` file should contain the following:
 
 ```xml
-    <?xml version="1.0"?>
-    <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-        <system.webServer>
-            <modules>
-                <add name="MyNuModule" xdt:Transform="Remove" xdt:Locator="Match(name)" />
-            </modules>
-        </system.webServer>
-    </configuration>
+<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <system.webServer>
+        <modules>
+            <add name="MyNuModule" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+        </modules>
+    </system.webServer>
+</configuration>
 ```

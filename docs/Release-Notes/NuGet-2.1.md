@@ -50,15 +50,15 @@ Additionally, if package restore is enabled for the solution, the following fold
 In order to have the team’s internal package repository available for all projects that the team works on, while not making it available for every project on the machine, we can create a new nuget.config file and place it in the c:\myteam directory. There is no way to specificy a packages forlder per project.
 
 ```xml
-    <configuration>
-      <packageSources>
-        <add key="Official project team source" value="http://teamserver/api/v2/" />
-      </packageSources>
-      <disabledPackageSources />
-      <activePackageSource>
-        <add key="Official project team source" value="http://teamserver/api/v2/" />
-      </activePackageSource>
-    </configuration>
+<configuration>
+    <packageSources>
+    <add key="Official project team source" value="http://teamserver/api/v2/" />
+    </packageSources>
+    <disabledPackageSources />
+    <activePackageSource>
+    <add key="Official project team source" value="http://teamserver/api/v2/" />
+    </activePackageSource>
+</configuration>
 ```
 
 We can now see that the source was added by running the ‘nuget.exe sources’ command from any directory beneath c:\myteam as shown below:
@@ -78,12 +78,12 @@ In the past, NuGet has managed a solution’s packages from a known ‘packages�
 NuGet 2.1 provides more granular control over the location of the packages folder via the ‘repositoryPath’ element in the NuGet.config file.  Building on the previous example of hierarchical nuget.config support, assume that we wish to have all projects under C:\myteam\ share the same packages folder.  To accomplish this, simply add the following entry to C:\myteam\nuget.config.
 
 ```xml
-    <configuration>
-      <config>
-        <add key="repositoryPath" value="C:\myteam\teampackages" />
-      </config>
-      ...
-    </configuration>
+<configuration>
+    <config>
+    <add key="repositoryPath" value="C:\myteam\teampackages" />
+    </config>
+    ...
+</configuration>
 ```
 
 In this example, the shared nuget.config file specifies a shared packages folder for every project that is created beneath C:\myteam, regardless of depth. Note that if you have an existing packages folder underneath your solution root, you will need to delete it before NuGet will place packages in the new location.
