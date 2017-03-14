@@ -71,7 +71,7 @@ The NuGet CLI can be installed using any of the following methods:
 1. **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client. 
 
     ```bash
-        choco install nuget.commandline
+    choco install nuget.commandline
     ```
     
 1. **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.
@@ -124,6 +124,9 @@ The NuGet Package Manager is included in every edition of Visual Studio 2012 and
 1. Navigate to **Online**, search for "NuGet Package Manager for Visual Studio," and click **Download**.
 1. In the Installer dialog box, click **Install**.
 1. When installation is complete, restart Visual Studio.
+
+> [!Tip]
+> If you're unable to use the **Extensions and Updates** dialog in Visual Studio (for example, its blocked by a proxy), you can download extensions for Visual Studio 2013 and 2015 directly at [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 
 ### Updating the Package Manager
 

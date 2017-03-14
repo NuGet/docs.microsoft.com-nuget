@@ -66,21 +66,21 @@ The resulting solution contains two PCL projects, along with a variety of platfo
 By default, the ILoggingLibrary.cs file of the Abstractions project contains an interface definition, but no methods. For the purposes of this walkthrough, add a `Log` method as follows:
 
 ```cs
-    using System;
+using System;
 
-    namespace Plugin.LoggingLibrary.Abstractions
+namespace Plugin.LoggingLibrary.Abstractions
+{
+    /// <summary>
+    /// Interface for LoggingLibrary
+    /// </summary>
+    public interface ILoggingLibrary
     {
         /// <summary>
-        /// Interface for LoggingLibrary
+        /// Log a message
         /// </summary>
-        public interface ILoggingLibrary
-        {
-            /// <summary>
-            /// Log a message
-            /// </summary>
-            void Log(string text);
-        }
+        void Log(string text);
     }
+}
 ```
 
 ## Write your platform-specific code
@@ -90,25 +90,25 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 1. Open the `LoggingLibraryImplementation.cs` file of each platform project and add the necessary code. For example (using the `Plugin.LoggingLibrary.Android` project):
 
     ```cs
-        using Plugin.LoggingLibrary.Abstractions;
-        using System;
+    using Plugin.LoggingLibrary.Abstractions;
+    using System;
 
-        namespace Plugin.LoggingLibrary
+    namespace Plugin.LoggingLibrary
+    {
+        /// <summary>
+        /// Implementation for Feature
+        /// </summary>
+        public class LoggingLibraryImplementation : ILoggingLibrary
         {
-          /// <summary>
-          /// Implementation for Feature
-          /// </summary>
-          public class LoggingLibraryImplementation : ILoggingLibrary
-          {
-                /// <summary>
-                /// Log a message
-                /// </summary>
-                public void Log(string text)
-                {
-                    throw new NotImplementedException("Called Log on Android");
-                }
-          }
+            /// <summary>
+            /// Log a message
+            /// </summary>
+            public void Log(string text)
+            {
+                throw new NotImplementedException("Called Log on Android");
+            }
         }
+    }
     ```
 
 1. Repeat this implementation in the projects for each platform you want to support.
@@ -125,28 +125,28 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 1. Open a command prompt, navigate to the `LoggingLibrary` folder that's one level below where the .sln file is, and run the NuGet `spec` command to create the initial `Package.nuspec` file:
 
 ```bash
-        nuget spec
+nuget spec
 ```
 
 1. Rename this file to `LoggingLibrary.nuspec` and open it in an editor.
 1. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
 
     ```xml
-        <?xml version="1.0"?>
-        <package >
-          <metadata>
-            <id>LoggingLibrary.YOUR_NAME</id>
-            <version>1.0.0</version>
-            <title>LoggingLibrary</title>
-            <authors>YOUR_NAME</authors>
-            <owners>YOUR_NAME</owners>
-            <requireLicenseAcceptance>false</requireLicenseAcceptance>
-            <description>Awesome application logging utility</description>
-            <releaseNotes>First release</releaseNotes>
-            <copyright>Copyright 2016</copyright>
-            <tags>logger logging logs</tags>
-          </metadata>
-        </package>
+    <?xml version="1.0"?>
+    <package >
+        <metadata>
+        <id>LoggingLibrary.YOUR_NAME</id>
+        <version>1.0.0</version>
+        <title>LoggingLibrary</title>
+        <authors>YOUR_NAME</authors>
+        <owners>YOUR_NAME</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Awesome application logging utility</description>
+        <releaseNotes>First release</releaseNotes>
+        <copyright>Copyright 2016</copyright>
+        <tags>logger logging logs</tags>
+        </metadata>
+    </package>
     ```
 
 ### Add reference assemblies
@@ -154,7 +154,91 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 To include platform-specific reference assemblies, add the following to the &lt;files&gt; element of `LoggingLibrary.nuspec` as appropriate for your supported platforms:
 
 ```xml
-    <!-- Insert below <metadata> element -->
+<!-- Insert below <metadata> element -->
+<files>
+    <!-- Cross-platform reference assemblies -->
+    <file src="Plugin.LoggingLibrary\bin\Release\Plugin.LoggingLibrary.dll" target="lib\netstandard1.4\Plugin.LoggingLibrary.dll" />
+    <file src="Plugin.LoggingLibrary\bin\Release\Plugin.LoggingLibrary.xml" target="lib\netstandard1.4\Plugin.LoggingLibrary.xml" />
+    <file src="Plugin.LoggingLibrary.Abstractions\bin\Release\Plugin.LoggingLibrary.Abstractions.dll" target="lib\netstandard1.4\Plugin.LoggingLibrary.Abstractions.dll" />
+    <file src="Plugin.LoggingLibrary.Abstractions\bin\Release\Plugin.LoggingLibrary.Abstractions.xml" target="lib\netstandard1.4\Plugin.LoggingLibrary.Abstractions.xml" />
+
+    <!-- iOS reference assemblies -->
+    <file src="Plugin.LoggingLibrary.iOS\bin\Release\Plugin.LoggingLibrary.dll" target="lib\Xamarin.iOS10\Plugin.LoggingLibrary.dll" />
+    <file src="Plugin.LoggingLibrary.iOS\bin\Release\Plugin.LoggingLibrary.xml" target="lib\Xamarin.iOS10\Plugin.LoggingLibrary.xml" />
+
+    <!-- Android reference assemblies -->
+    <file src="Plugin.LoggingLibrary.Android\bin\Release\Plugin.LoggingLibrary.dll" target="lib\MonoAndroid10\Plugin.LoggingLibrary.dll" />
+    <file src="Plugin.LoggingLibrary.Android\bin\Release\Plugin.LoggingLibrary.xml" target="lib\MonoAndroid10\Plugin.LoggingLibrary.xml" />
+
+    <!-- UWP reference assemblies -->
+    <file src="Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.dll" target="lib\UAP10\Plugin.LoggingLibrary.dll" />
+    <file src="Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.xml" target="lib\UAP10\Plugin.LoggingLibrary.xml" />
+</files>
+```
+
+> [!Note]
+> To shorten the names of the DLL and XML files, right-click on any given project, select the **Library** tab, and change the assembly names.
+
+
+### Add dependencies
+
+If you have specific dependencies for native implementations, use the &lt;dependencies&gt; element with &lt;group&gt; elements to specify them, for example:
+
+```xml
+<!-- Insert within the <metadata> element -->
+<dependencies>
+    <group targetFramework="MonoAndroid">
+        <!--MonoAndroid dependencies go here-->
+    </group>
+    <group targetFramework="Xamarin.iOS10">
+        <!--Xamarin.iOS10 dependencies go here-->
+    </group>
+    <group targetFramework="uap">
+        <!--uap dependencies go here-->
+    </group>
+</dependencies>
+```
+
+For example, the following would set iTextSharp as a dependency for the UAP target:
+
+```xml
+<dependencies>
+    <group targetFramework="uap">
+        <dependency id="iTextSharp" version="5.5.9" />
+    </group>
+</dependencies>
+```
+
+### Final nuspec
+
+Your final .nuspec file should now look like the following, where again YOUR_NAME should be replaced with an appropriate value:
+
+```xml
+<?xml version="1.0"?>
+<package >
+    <metadata>
+    <id>LoggingLibrary.YOUR_NAME</id>
+    <version>1.0.0</version>
+    <title>LoggingLibrary</title>
+    <authors>YOUR_NAME</authors>
+    <owners>YOUR_NAME</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Awesome application logging utility</description>
+    <releaseNotes>First release</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>logger logging logs</tags>
+        <dependencies>
+        <group targetFramework="MonoAndroid">
+            <!--MonoAndroid dependencies go here-->
+        </group>
+        <group targetFramework="Xamarin.iOS10">
+            <!--Xamarin.iOS10 dependencies go here-->
+        </group>
+        <group targetFramework="uap">
+            <dependency id="iTextSharp" version="5.5.9" />
+        </group>
+    </dependencies>
+    </metadata>
     <files>
         <!-- Cross-platform reference assemblies -->
         <file src="Plugin.LoggingLibrary\bin\Release\Plugin.LoggingLibrary.dll" target="lib\netstandard1.4\Plugin.LoggingLibrary.dll" />
@@ -174,91 +258,7 @@ To include platform-specific reference assemblies, add the following to the &lt;
         <file src="Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.dll" target="lib\UAP10\Plugin.LoggingLibrary.dll" />
         <file src="Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.xml" target="lib\UAP10\Plugin.LoggingLibrary.xml" />
     </files>
-```
-
-> [!Note]
-> To shorten the names of the DLL and XML files, right-click on any given project, select the **Library** tab, and change the assembly names.
-
-
-### Add dependencies
-
-If you have specific dependencies for native implementations, use the &lt;dependencies&gt; element with &lt;group&gt; elements to specify them, for example:
-
-```xml
-    <!-- Insert within the <metadata> element -->
-    <dependencies>
-        <group targetFramework="MonoAndroid">
-            <!--MonoAndroid dependencies go here-->
-        </group>
-        <group targetFramework="Xamarin.iOS10">
-            <!--Xamarin.iOS10 dependencies go here-->
-        </group>
-        <group targetFramework="uap">
-            <!--uap dependencies go here-->
-        </group>
-    </dependencies>
-```
-
-For example, the following would set iTextSharp as a dependency for the UAP target:
-
-```xml
-    <dependencies>
-        <group targetFramework="uap">
-            <dependency id="iTextSharp" version="5.5.9" />
-        </group>
-    </dependencies>
-```
-
-### Final nuspec
-
-Your final .nuspec file should now look like the following, where again YOUR_NAME should be replaced with an appropriate value:
-
-```xml
-    <?xml version="1.0"?>
-    <package >
-        <metadata>
-        <id>LoggingLibrary.YOUR_NAME</id>
-        <version>1.0.0</version>
-        <title>LoggingLibrary</title>
-        <authors>YOUR_NAME</authors>
-        <owners>YOUR_NAME</owners>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Awesome application logging utility</description>
-        <releaseNotes>First release</releaseNotes>
-        <copyright>Copyright 2016</copyright>
-        <tags>logger logging logs</tags>
-            <dependencies>
-          <group targetFramework="MonoAndroid">
-              <!--MonoAndroid dependencies go here-->
-          </group>
-          <group targetFramework="Xamarin.iOS10">
-              <!--Xamarin.iOS10 dependencies go here-->
-          </group>
-          <group targetFramework="uap">
-              <dependency id="iTextSharp" version="5.5.9" />
-          </group>
-        </dependencies>
-        </metadata>
-        <files>
-            <!-- Cross-platform reference assemblies -->
-            <file src="Plugin.LoggingLibrary\bin\Release\Plugin.LoggingLibrary.dll" target="lib\netstandard1.4\Plugin.LoggingLibrary.dll" />
-            <file src="Plugin.LoggingLibrary\bin\Release\Plugin.LoggingLibrary.xml" target="lib\netstandard1.4\Plugin.LoggingLibrary.xml" />
-            <file src="Plugin.LoggingLibrary.Abstractions\bin\Release\Plugin.LoggingLibrary.Abstractions.dll" target="lib\netstandard1.4\Plugin.LoggingLibrary.Abstractions.dll" />
-            <file src="Plugin.LoggingLibrary.Abstractions\bin\Release\Plugin.LoggingLibrary.Abstractions.xml" target="lib\netstandard1.4\Plugin.LoggingLibrary.Abstractions.xml" />
-
-            <!-- iOS reference assemblies -->
-            <file src="Plugin.LoggingLibrary.iOS\bin\Release\Plugin.LoggingLibrary.dll" target="lib\Xamarin.iOS10\Plugin.LoggingLibrary.dll" />
-          <file src="Plugin.LoggingLibrary.iOS\bin\Release\Plugin.LoggingLibrary.xml" target="lib\Xamarin.iOS10\Plugin.LoggingLibrary.xml" />
-
-            <!-- Android reference assemblies -->
-            <file src="Plugin.LoggingLibrary.Android\bin\Release\Plugin.LoggingLibrary.dll" target="lib\MonoAndroid10\Plugin.LoggingLibrary.dll" />
-            <file src="Plugin.LoggingLibrary.Android\bin\Release\Plugin.LoggingLibrary.xml" target="lib\MonoAndroid10\Plugin.LoggingLibrary.xml" />
-
-            <!-- UWP reference assemblies -->
-            <file src="Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.dll" target="lib\UAP10\Plugin.LoggingLibrary.dll" />
-            <file src="Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.xml" target="lib\UAP10\Plugin.LoggingLibrary.xml" />
-        </files>
-    </package>
+</package>
 ```
 
 ## Package the component
@@ -266,7 +266,7 @@ Your final .nuspec file should now look like the following, where again YOUR_NAM
 With the completed .nuspec referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
 ```bash
-    nuget pack LoggingLibrary.nuspec
+nuget pack LoggingLibrary.nuspec
 ```
 
 This will generate `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:

@@ -35,7 +35,7 @@ There are a number of situations, described below under [When to Reinstall a Pac
 Being mindful of the [Considerations](#considerations) described later, you can easily reinstall any package using the following command in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
 
 ```ps
-    Update-Package –reinstall <package_name>
+Update-Package –reinstall <package_name>
 ```
 
 Using this command, where &lt;package_name&gt; is replaced with the specific package name you want, is much easier than removing a package and then trying to locate the same package in the NuGet gallery with the same version.
@@ -43,7 +43,7 @@ Using this command, where &lt;package_name&gt; is replaced with the specific pac
 The same command without `-reinstall` will update a package to a newer version, if applicable:
 
 ```ps
-    Update-Package <package_name>
+Update-Package <package_name>
 ```
 
 Any updates are subject to version constraints indicated in `packages.config`, as described below in [Constraining upgrade versions](#constraining-upgrade-versions), but do not apply to projects using `project.json`.
@@ -88,12 +88,12 @@ In projects using `packages.config`, the same behavior applies unless you specif
 To set a constraint, open `packages.config` in a text editor, locate the dependency in question, and add the `allowedVersions` attribute with a version range. For example, to constrain updates to version 1.x, set `allowedVersions` to `[1,2)`:
 
 ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <packages>
-        <package id="ExamplePackage" version="1.1.0" allowedVersions="[1,2)" />
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+    <package id="ExamplePackage" version="1.1.0" allowedVersions="[1,2)" />
 
-        <!-- ... -->
-    </packages>
+    <!-- ... -->
+</packages>
 ```
 
 In all cases, use the notation described in [Dependency versions](../create-packages/dependency-versions.md).

@@ -44,9 +44,9 @@ To create a symbol package, follow these conventions:
 You can create both packages with the `-Symbols` option, either from a nuspec file or a project file:
 
 ```bash
-    nuget pack MyPackage.nuspec -Symbols
+nuget pack MyPackage.nuspec -Symbols
 
-    nuget pack MyProject.csproj -Symbols
+nuget pack MyProject.csproj -Symbols
 ```
 
 Note that `pack` requires Mono 4.4.2 on Mac OS X and does not work on Linux systems. On a Mac, you must also convert Windows pathnames in the `.nuspec` file to Unix-style paths.
@@ -99,13 +99,13 @@ Apart from the `lib` folder, a symbol package would need to contain this layout:
 A symbol package can be built by conventions, from a folder structure as described in the previous section, or by specifying its contents in the `files` section of the manifest. For example, to build the package shown in the previous section, use the following in the `.nuspec` file:
 
 ```xml
-    <files>
-      <file src="Full\bin\Debug\*.dll" target="lib\net40" />
-      <file src="Full\bin\Debug\*.pdb" target="lib\net40" />
-      <file src="Silverlight\bin\Debug\*.dll" target="lib\sl40" />
-      <file src="Silverlight\bin\Debug\*.pdb" target="lib\sl40" />
-      <file src="**\*.cs" target="src" />
-    </files>
+<files>
+    <file src="Full\bin\Debug\*.dll" target="lib\net40" />
+    <file src="Full\bin\Debug\*.pdb" target="lib\net40" />
+    <file src="Silverlight\bin\Debug\*.dll" target="lib\sl40" />
+    <file src="Silverlight\bin\Debug\*.pdb" target="lib\sl40" />
+    <file src="**\*.cs" target="src" />
+</files>
 ```
 
 ## Publishing a symbol package
@@ -113,25 +113,25 @@ A symbol package can be built by conventions, from a folder structure as describ
 1. For convenience, first save your API key with NuGet (see [publish a package](../create-packages/publish-a-package.md), which will apply to both nuget.org and symbolsource.org, because symbolsource.org will check with nuget.org to verify that you are the package owner.
 
 ```bash
-    nuget SetApiKey Your-API-Key
+nuget SetApiKey Your-API-Key
 ```
 
 1. After publishing your primary package to nuget.org, push the symbol package as follows, which will automatically use symbolsource.org as the target because of the `.symbols` in the filename:
 
 ```bash
-    nuget push MyPackage.symbols.nupkg
+nuget push MyPackage.symbols.nupkg
 ```
 
 1. To publish to a different symbol repository, or to push a symbol package that doesn't follow the naming convention, use the `-Source` option:
 
 ```bash
-    nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
+nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
 ```
 
 1. You can also push both primary and symbol packages to both repositories at the same time using the following:
 
 ```bash
-    nuget push MyPackage.nupkg
+nuget push MyPackage.nupkg
 ```
 
     In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to symbolsource.org (https://nuget.smbsrc.net/), after it publishes the primary package to nuget.org.

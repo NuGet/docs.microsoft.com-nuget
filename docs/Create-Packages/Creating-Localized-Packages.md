@@ -76,14 +76,14 @@ You can see that the languages are all listed underneath the `net40` target fram
 With these folders in place, you'll then reference all the files in your `.nuspec`:
 
 ```xml
-    <?xml version="1.0"?>
-    <package>
-      <metadata>...
-      </metadata>
-      <files>
-        <file src="lib\**" target="lib" />
-      </files>
-    </package>
+<?xml version="1.0"?>
+<package>
+    <metadata>...
+    </metadata>
+    <files>
+    <file src="lib\**" target="lib" />
+    </files>
+</package>
 ```
 
 One example package that uses this approach is [Microsoft.Data.OData 5.4.0](http://nuget.org/packages/Microsoft.Data.OData/5.4.0).

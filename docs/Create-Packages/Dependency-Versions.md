@@ -34,17 +34,17 @@ ms.reviewer:
 When you [create a NuGet package](../create-packages/creating-a-package.md), you can specify dependencies for your package in the **&lt;dependencies&gt;** node of the `.nuspec` file, where each dependency is listed with a **&lt;dependency&gt;** tag:
 
 ```xml
-    <?xml version="1.0"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
-      <metadata>
-        <!-- ... -->
+  <?xml version="1.0"?>
+  <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+    <metadata>
+      <!-- ... -->
 
-        <dependencies>
-          <dependency id="Newtonsoft.Json" version="9.0" />
-          <dependency id="EntityFramework" version="6.1.0" />
-        </dependencies>
-      </metadata>
-    </package>
+      <dependencies>
+        <dependency id="Newtonsoft.Json" version="9.0" />
+        <dependency id="EntityFramework" version="6.1.0" />
+      </dependencies>
+    </metadata>
+  </package>
 ```
 
 Dependencies are installed whenever the dependent package is installed, [reinstalled](../consume-packages/reinstalling-and-updating-packages.md), or included in a [package restore](../consume-packages/package-restore.md). NuGet chooses the exact version of the installed dependency by using the value of the `version` attribute specified for that dependency as described in the following sections.
@@ -81,22 +81,22 @@ NuGet supports using interval notation for specifying version ranges, summarized
 A few examples:
 
 ```xml
-    <!-- Accepts any version 6.1 and above -->
-    <dependency id="ExamplePackage" version="6.1" />
+  <!-- Accepts any version 6.1 and above -->
+  <dependency id="ExamplePackage" version="6.1" />
 
-    <!-- Accepts any version above, but not include 4.1.3. This might be
-         used to guarantee a dependency with a specific bug fix. -->
-    <dependency id="ExamplePackage" version="(4.1.3,)" />
+  <!-- Accepts any version above, but not include 4.1.3. This might be
+        used to guarantee a dependency with a specific bug fix. -->
+  <dependency id="ExamplePackage" version="(4.1.3,)" />
 
-    <!-- Accepts any version up below 5.x, which might be used to prevent
-         pulling in a later version of a dependency that changed its interface. -->
-    <dependency id="ExamplePackage" version="(,5.0)" />
+  <!-- Accepts any version up below 5.x, which might be used to prevent
+        pulling in a later version of a dependency that changed its interface. -->
+  <dependency id="ExamplePackage" version="(,5.0)" />
 
-    <!-- Accepts any 1.x or 2.x version, but no 0.x or 3.x and higher versions -->
-    <dependency id="ExamplePackage" version="[1,3)" />
+  <!-- Accepts any 1.x or 2.x version, but no 0.x or 3.x and higher versions -->
+  <dependency id="ExamplePackage" version="[1,3)" />
 
-    <!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->
-    <dependency id="ExamplePackage" version="[1.3.2,1.5)" />
+  <!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->
+  <dependency id="ExamplePackage" version="[1.3.2,1.5)" />
 ```
 
 

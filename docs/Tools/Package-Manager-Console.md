@@ -33,8 +33,9 @@ ms.reviewer:
 The Package Manager Console that is built into Visual Studio (2012 and later) lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. 
 
 > [!Note]
-> If you're missing the NuGet Package Manager in Visual Studio 2015, check **Tools > Extensions and Updates...* and search for the NuGet Package Manager extension.
-> In Visual Studio 2017, NuGet and the NuGet Package Manager is automatically installed when you select any .NET-related workloads; you can also install it individually by checking the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.)
+> If you're missing the NuGet Package Manager in Visual Studio 2015, check **Tools > Extensions and Updates...** and search for the NuGet Package Manager extension. If you're unable to use the extensions installer in Visual Studio, you can download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
+>
+> In Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed when you select any .NET-related workloads; you can also install it individually by checking the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.)
 
 Using the Console is necessary if you want to work with packages without having a solution open, and is required in cases where the Package Manager UI does not provide a way to perform an operation. Note, however, that all operations can be done with the [NuGet CLI](../tools/nuget-exe-cli-reference.md).
 
@@ -63,23 +64,23 @@ In the console, [`Get-Package -ListAvailable`](../tools/powershell-reference.md#
 Examples:
 
 ```ps
-    # All versions of NuGet
-    Get-Package -ListAvailable -Filter elmah
-    Get-Package -ListAvailable -Filter Logging
+# All versions of NuGet
+Get-Package -ListAvailable -Filter elmah
+Get-Package -ListAvailable -Filter Logging
 
-    # List all versions of packages matching the filter "jquery"
-    Get-Package -ListAvailable -Filter jquery -AllVersions
+# List all versions of packages matching the filter "jquery"
+Get-Package -ListAvailable -Filter jquery -AllVersions
 
 
-    # NuGet 3.0+
-    Find-Package elmah
-    Find-Package Logging
+# NuGet 3.0+
+Find-Package elmah
+Find-Package Logging
 
-    # List packages with the keyword EntityFramework and version 6.1.1
-    Find-Package EntityFramework -version 6.1.1
+# List packages with the keyword EntityFramework and version 6.1.1
+Find-Package EntityFramework -version 6.1.1
 
-    # List all versions of the package with the ID of "jquery"
-    Find-Package jquery -AllVersions -ExactMatch
+# List all versions of the package with the ID of "jquery"
+Find-Package jquery -AllVersions -ExactMatch
 ```
 
 ## Installing a package
