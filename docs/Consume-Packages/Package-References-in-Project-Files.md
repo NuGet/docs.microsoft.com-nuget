@@ -15,7 +15,7 @@ ms.assetid: 5a554e9d-1266-48c2-92e8-6dd00b1d6810
 # optional metadata
 
 description: Details on specifying NuGet package references directly in project files as supported by NuGet 4.0+
-keywords: NuGet package dependencies, package references, project files, PackageReference, packages.config, project.json
+keywords: NuGet package dependencies, package references, project files, PackageReference, packages.config, project.json, VS2017, VS 2017, Visual Studio 2017, 2017
 #ROBOTS:
 #audience:
 #ms.devlang:
