@@ -61,7 +61,7 @@ In this topic:
 
 Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/nuget-exe-cli-reference.md#config).
 
-Note: `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using `project.json`.
+Note: `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using `project.json` and projects using the new Visual Studio 2017 project format.
 
 Key | Value
 --- | ---
