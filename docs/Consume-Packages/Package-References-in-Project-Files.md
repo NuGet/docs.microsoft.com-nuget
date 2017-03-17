@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet Package References in Project Files | Microsoft Docs
+title: NuGet PackageReference in Visual Studio Project Files | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -14,8 +14,8 @@ ms.assetid: 5a554e9d-1266-48c2-92e8-6dd00b1d6810
 
 # optional metadata
 
-description: Details on specifying NuGet package references directly in project files as supported by NuGet 4.0+
-keywords: NuGet package dependencies, package references, project files, PackageReference, packages.config, project.json
+description: Details on NuGet PackageReference in project files as supported by NuGet 4.0+ and VS2017
+keywords: NuGet package dependencies, package references, project files, PackageReference, packages.config, project.json, VS2017, Visual Studio 2017, NuGet 4
 #ROBOTS:
 #audience:
 #ms.devlang:
@@ -29,7 +29,7 @@ ms.reviewer:
 ---
 # Package References in Project Files
 
-Package references, using the `PackageReference` node, allow you to manage NuGet dependencies directly in .NET Core project files, without needing a separate `packages.config` or `project.json` file. This approach also allows you to use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. In terms of behavior and dependency resolution, it is the same as using `project.json`
+Package references, using the `PackageReference` node, allow you to manage NuGet dependencies directly in .NET Core project files, without needing a separate `packages.config` or `project.json` file. This approach also allows you to use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. In terms of behavior and dependency resolution, it is the same as using `project.json`.
 
 > [!Note]
 > Package references are currently supported for only .NET Core projects in Visual Studio 2017.
