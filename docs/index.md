@@ -118,7 +118,7 @@ ms.reviewer:
                                 </a>
                             </li>
                             <li class="column column-third">
-                                <a href="./guides/uwp-controls-as-nuget-packages.md">
+                                <a href="./guides/create-uwp-controls.md">
                                     <h3>Create UWP Controls in NuGet Packages</h3>
                                     <p>Learn how to create NuGet packages that contain UWP controls with full support for Visual Studio and Blend designers.</p>
                                 </a>

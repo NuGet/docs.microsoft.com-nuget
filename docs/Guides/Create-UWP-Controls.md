@@ -214,11 +214,10 @@ You may also author an[MSBuild targets file](https://docs.microsoft.com/en-us/vi
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
     <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
-   <Content Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0.14393.0\contosoSampleImage.jpg">
-       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-   </Content>
+        <Content Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0.14393.0\contosoSampleImage.jpg">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 </Project>
 ```
