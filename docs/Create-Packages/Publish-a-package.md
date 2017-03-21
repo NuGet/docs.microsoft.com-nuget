@@ -32,7 +32,7 @@ ms.reviewer:
 Once you have [created a package](../create-packages/creating-a-package.md) with `nuget pack`, it's a simple process to make it available to other developers, either publicly or privately:
 
 - Public packages are made available to all developers globally through [nuget.org](https://www.nuget.org/packages/manage/upload). See instructions below.
-- Private packages are available to only a team or organization, by hosting them either a file share, a private NuGet server, Visual Studio Team Services package management, or a third- party repository such as myget, ProGet, Nexus Repository, and Artifactory. For additional details, see [Hosting Packages Overview](../hosting-packages/overview.md))
+- Private packages are available to only a team or organization, by hosting them either a file share, a private NuGet server, Visual Studio Team Services package management, or a third-party repository such as myget, ProGet, Nexus Repository, and Artifactory. For additional details, see [Hosting Packages Overview](../hosting-packages/overview.md))
 
 ##Publish to nuget.org
 
