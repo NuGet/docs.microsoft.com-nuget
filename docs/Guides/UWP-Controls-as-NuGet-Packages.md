@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: How to packages UWP controls with NuGet | Microsoft Docs
+title: How to package UWP controls with NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
