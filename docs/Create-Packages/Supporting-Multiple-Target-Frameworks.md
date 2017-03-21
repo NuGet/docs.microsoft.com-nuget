@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Supporting Multiple .NET Framework Versions in NuGet Packages | Microsoft Docs
+title: Multi-targeting for NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen

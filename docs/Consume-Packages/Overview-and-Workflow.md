@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet Package Consumption Overview and Workflow | Microsoft Docs
+title: Overview and workflow of using NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Package Consumption Overview and Workflow
+# Package Consumption Workflow
 
 Between nuget.org and private package galleries that your organization might establish, you can find tens of thousands of highly useful packages to use in your apps and services. But regardless of the source, consuming a package follows the same general workflow as shown below. For details, see [Finding and Choosing Packages](../consume-packages/finding-and-choosing-packages.md) and the [Use a Package quickstart](../quickstart/use-a-package.md).
 

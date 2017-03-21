@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Dependency Resolution in NuGet | Microsoft Docs
+title: NuGet Package Dependency Resolution | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Dependency Resolution
+# How NuGet Resolves Package Dependencies
 
 Any time a package is installed or reinstalled, which includes being installed as part of a [restore](../consume-packages/package-restore.md) process, NuGet also installs any additional packages on which that first package depends.
 

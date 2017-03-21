@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet Package Creation Overview and Workflow | Microsoft Docs
+title: Overview and workflow of creating NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-#Overview and Workflow
+# Package Creation Workflow
 
 Creating a package starts with the code you want to package and share with others, either through the public nuget.org gallery or a private gallery within your organization. The package can also include additional files such as a readme that is displayed when the package is installed, and can include transformations to certain project files.
 

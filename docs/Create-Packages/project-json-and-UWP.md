@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet Project.json File with Universal Windows Platform Projects | Microsoft Docs
+title: NuGet project.json file with UWP projects | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen

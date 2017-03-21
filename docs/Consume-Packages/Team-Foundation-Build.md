@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Walkthrough of Package Restore with Team Foundation Build
+# Setting up Package Restore with Team Foundation Build
 
 > Applies To:
 >  - Custom MSBuild projects running on any version of TFS

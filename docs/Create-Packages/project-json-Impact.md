@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: project.json Impact on NuGet Package Authors | Microsoft Docs
+title: project.json impact on NuGet package authors | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# project.json Impact on Package Authors
+# Impact of project.json when Creating Packages
 
 The project.json system used in NuGet 3.x affects package authors in several ways as described in the following sections.
 

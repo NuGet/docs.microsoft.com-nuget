@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Publishing a NuGet Package | Microsoft Docs
+title: How to Publish a NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-#Publish a Package
+# Publishing Packages
 
 Once you have [created a package](../create-packages/creating-a-package.md) with `nuget pack`, it's a simple process to make it available to other developers, either publicly or privately:
 

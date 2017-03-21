@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Pre-release Versions in NuGet Packages | Microsoft Docs
+title: Pre-release versions in NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen

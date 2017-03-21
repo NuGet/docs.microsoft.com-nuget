@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Finding and Choosing NuGet Packages | Microsoft Docs
+title: Finding and choosing NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Finding and Choosing Packages
+# Finding and Evaluating NuGet Packages for Your Project
 
 When starting any .NET project, or whenever you identify a functional need for your app or service, you can save yourself lots of time and trouble by using existing NuGet packages that fulfill that need. These packages can come from the public collection on [nuget.org](http://www.nuget.org/packages/), or a private source that's provided by your organization or another third party.
 

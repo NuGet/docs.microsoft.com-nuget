@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Managing the NuGet Cache | Microsoft Docs
+title: How to manage package caching in NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen

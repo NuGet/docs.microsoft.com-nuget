@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet Symbol Packages | Microsoft Docs
+title: How to create NuGet symbol packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Symbol Packages
+# Creating Symbol Packages
 
 In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the [SymbolSource repository](http://www.symbolsource.org/Public).
 
