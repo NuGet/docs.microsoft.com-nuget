@@ -39,7 +39,7 @@ With Visual Studio 2017, you can take advantage of added capabilities for UWP co
 
 ## Add toolbox/assets pane support for XAML controls
 
-To have a XAML control appear in the XAML designer’s toolbox in Visual Studio, and the Assets pane of Blend, create a `VisualStudioToolsManifest.xml` file in the root of the `tools` folder of your package project. This file is not required if you don’t need the control to appear in the designer.
+To have a XAML control appear in the XAML designer’s toolbox in Visual Studio, and the Assets pane of Blend, create a `VisualStudioToolsManifest.xml` file in the root of the `tools` folder of your package project. This file is not required if you don’t need the control to appear in the toolbox or Assets pane.
 
 ```
 \build
@@ -54,8 +54,11 @@ The structure of the file is as follows:
 <FileList>
   <File Reference = "your_package_file">
     <ToolboxItems VSCategory="vs_category" BlendCategory="blend_category">
-      <Item Type="type_full_name" />
+      <Item Type="type_full_name_1" />
+
+      <!-- Any number of additional Items -->
       <Item Type="type_full_name_2" />
+      <Item Type="type_full_name_3" />
     </ToolboxItems>
   </File>
 </FileList>
@@ -63,10 +66,12 @@ The structure of the file is as follows:
 
 where:
 
-- *your_package_file*: the name of your control DLL, such as `ManagedPackage.winmd`.
-- *vs_category*: The label for the group in which the control should appear in the Visual Studio designer’s toolbox. A category is necessary for the control to appear in the toolbox.
-- *blend_category*: The label for the group in which the control should appear in the Blend designer’s Assets pane. A category is necessary for the control to appear in the assets.
-- *type_full_name*: The fully-qualified identifier for the control, including the namespace, such as `ManagedPackage.MyCustomControl`
+- *your_package_file*: the name of your control file, such as `ManagedPackage.winmd`.
+- *vs_category*: The label for the group in which the control should appear in the Visual Studio designer’s toolbox. A `VSCategory` is necessary for the control to appear in the toolbox.
+- *blend_category*: The label for the group in which the control should appear in the Blend designer’s Assets pane. A `BlendCategory` is necessary for the control to appear in Assets.
+- *type_full_name_n*: The fully-qualified name for each control, including the namespace, such as `ManagedPackage.MyCustomControl`. Note that the dot format is used for both managed and native types.
+
+In more advanced scenarios, you can also include multiple `<File>` elements within `<FileList>` when a single package contains multiple control assemblies. You can also have multiple `<ToolboxItems>` nodes within a single `<File>` if you want to organize your controls into separate categories.
 
 In the following example, the control implemented in `ManagedPackage.winmd` will appear in Visual Studio and Blend in a group named “Managed Package”, and “MyCustomControl” will appear in that group.
 
@@ -86,11 +91,10 @@ In the following example, the control implemented in `ManagedPackage.winmd` will
 
 > [!Note]
 > You must explicitly specify every control that you would like to see in the toolbox/assets pane. Ensure you specify them in the format `Namespace.ControlName`.
-> If your package contains multiple control assemblies, then you must have a separate `File` node for each one of them. Also, you may choose to put controls from a single assembly into different categories. You can do that by creating additional `ToolboxItems` nodes.
 
 ## Add custom icons to your controls
 
-To display a custom icon in the toolbox/assets pane, add an image to the library project or the corresponding design.dll project with the name “Namespace.ControlName.extension” and set the build action to “Embedded Resource”. Supported formats are `.png`, `.jpg`, `.jpeg`, `.gif`, and `.bmp`.
+To display a custom icon in the toolbox/assets pane, add an image to your project or the corresponding design.dll project with the name “Namespace.ControlName.extension” and set the build action to “Embedded Resource”. Supported formats are `.png`, `.jpg`, `.jpeg`, `.gif`, and `.bmp`.
 
 In the example above, the project contains an image file named “ManagedPackage.MyCustomControl.png”.
 
@@ -187,7 +191,7 @@ To configure where the control properties show up in the property inspector, add
 > [!Note]
 > By default, control properties will show up under the Miscellaneous category in the property inspector.
 
-To ensure [Edit Copy of Template](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles) (Edit Template > Edit a Copy) works, you must include the `Generic.xaml` and any resource dictionaries that it merges in the `<AssemblyName>\Themes` directory.
+To ensure that the **[Edit Template > Edit a Copy](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** feature works, you must include the `Generic.xaml` and any resource dictionaries that it merges in the `<AssemblyName>\Themes` directory.
 
 ## Use strings and resources
 
