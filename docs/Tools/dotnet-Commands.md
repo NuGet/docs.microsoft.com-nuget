@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# dotNet Commands
+# dotNet commands
 
 The DotNet command-line interface, which runs on Windows, Mac OS X, and Linux, provides a number of essential nuget.exe commands as listed below. Where dotnet provides the desired commands, it is not necessary to download nuget.exe.
 

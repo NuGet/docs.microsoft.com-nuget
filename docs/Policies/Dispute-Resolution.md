@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom: 
  
 ---
-# Resolving Disputes Over NuGet Package Names
+# Resolving disputes over NuGet package names
 
 This document is a recommended resolution process for community members to resolve disputes with other NuGet publishers.  
 

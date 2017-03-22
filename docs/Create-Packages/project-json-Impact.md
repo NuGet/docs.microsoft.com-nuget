@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Impact of project.json when Creating Packages
+# Impact of project.json when creating packages
 
 The project.json system used in NuGet 3.x affects package authors in several ways as described in the following sections.
 
@@ -61,7 +61,7 @@ Content files can still be carried inside the packages, and will be ignored curr
 
 You can see one of the proposals for bringing back content files, and follow its progress, here: [https://github.com/NuGet/Home/issues/627](https://github.com/NuGet/Home/issues/627).
 
-## Impact for Package Authors
+## Impact for package authors
 
 Packages using the above features would have to use a different mechanism. The most commonly useful mechanism for this would be the MSBUILD targets/props that continues to get fully supported. The build system can choose to pick up other conventions in the package. This is how MSBuild targets are supported as well as Roslyn analyzers. It is possible to build packages that supports targets and analyzers for packages.config and project.json scenarios.
 
@@ -76,7 +76,7 @@ In summary if the functionality above is not absolutely necessary, we recommend 
 It would be possible to build packages to work for both packages.config and project.json scenarios through shimming, however it is often simpler to just structure the packages the traditional way, without the deprecated features mentioned above.
 
 
-## 3.x Package Format  ##
+## 3.x package format  ##
 
 The 3.x package format allows for several additional features beyond NuGet 2.x:
 

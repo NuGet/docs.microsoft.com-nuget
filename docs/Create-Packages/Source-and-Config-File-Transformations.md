@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# Transforming Source Code and Configuration Files
+# Transforming source code and configuration files
 
 NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times.
 

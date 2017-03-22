@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Creating UWP Controls as NuGet Packages
+# Creating UWP controls as NuGet packages
 
 With Visual Studio 2017, you can take advantage of added capabilities for UWP controls that you deliver in NuGet packages. This guide walks you through these capabilities using the [ExtensionSDKasNuGetPackage sample](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage). 
 
@@ -172,7 +172,7 @@ Here is an example of what the targets file should look like:
 </Project>
 ```
 
-## Add Design-Time support
+## Add design-time support
 
 To configure where the control properties show up in the property inspector, add custom adorners, etc., place your `design.dll` file inside the `lib\<platform>\Design` folder as appropriate to the target platform:
 

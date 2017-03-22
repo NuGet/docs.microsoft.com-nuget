@@ -134,7 +134,7 @@ For Visual Studio 2015 Update 2 and later, the Package Manager is automatically 
 
 For earlier versions of Visual Studio, select the **Tools > Extensions and Updates** command and click on the **Updates** tab to see if a new version of the Package Manager is available.  
 
-### NuGet Beta Channel
+### NuGet beta channel
 
 The NuGet Beta Channel for the NuGet Package Manager in Visual Studio 2015 gives you access to high-quality builds that are close to completion. We use this channel to gather feedback on our near-final builds, and it's recommended for developers who want to try out new features and those who are experiencing blocking issues and need early access to updated builds before RTM. 
 

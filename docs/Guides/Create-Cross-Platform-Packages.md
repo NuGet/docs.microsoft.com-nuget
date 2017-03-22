@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Create Cross-Platform Packages
+# Create cross-platform packages
 
 A cross-platform package contains code that uses native APIs on iOS, Android, and Windows, depending on the run-time operating system. Although this is straightforward to do, it's preferable to let developers consume the package from a PCL or .NET Standard libraries through a common API surface area.
 

@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Creating Localized NuGet Packages
+# Creating localized NuGet packages
 
 There are two ways to create localized versions of a library:
 

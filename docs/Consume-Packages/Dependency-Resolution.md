@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# How NuGet Resolves Package Dependencies
+# How NuGet resolves package dependencies
 
 Any time a package is installed or reinstalled, which includes being installed as part of a [restore](../consume-packages/package-restore.md) process, NuGet also installs any additional packages on which that first package depends.
 
@@ -40,7 +40,7 @@ The exact process differs between NuGet 2.x (using `packages.config`) and NuGet 
 
 In some cases, such as when there's a conflict between a dependency specified in one project and an assembly that's produced by another, it might be necessary to explicitly exclude a reference. The section [Excluding references](#excluding-reference) below.
 
-## Dependency Resolution in NuGet 2.x
+## Dependency resolution in NuGet 2.x
 
 With NuGet 2.x, a project's dependencies are written to the `packages.config` file as a flat list. Any dependencies of those packages are also written in the same list, and NuGet might also modify `.csproj` file and possibly also `app.config`, `web.config`, and other individual files.
 
@@ -52,7 +52,7 @@ On the downside, the NuGet 2.x process for resolving dependencies gets complicat
 
 This and other challenges is why dependency resolution was overhauled in NuGet 3.x, as described in the next section.
 
-## Dependency Resolution in NuGet 3.x
+## Dependency resolution in NuGet 3.x
 
 As dependencies are installed into a project, NuGet 3.x adds them to a flat package graph in `project.json` in which conflicts are resolved ahead of time. This is referred to as *transitive restore*. Reinstalling or restoring packages is then simply a process of downloading the packages listed in the graph, resulting in faster and more predictable builds.
 

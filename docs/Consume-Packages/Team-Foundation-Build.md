@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Setting up Package Restore with Team Foundation Build
+# Setting up package restore with Team Foundation Build
 
 > Applies To:
 >  - Custom MSBuild projects running on any version of TFS
@@ -42,7 +42,7 @@ This section will provide a detailed walkthrough on how to restore packages as p
 
 Although this walkthrough is specific for the scenario of using [Team Foundation Service](http://tfs.visualstudio.com/), the concepts also apply to other version control- and build systems.
 
-## The General Approach
+## The general approach
 
 An advantage of using NuGet is that you can use it to avoid checking in binaries to your version control system.
 
@@ -63,7 +63,7 @@ When your build process restores packages before building the code, you don't ne
 
 The following demo project shows how to set up the build in such a way that the `packages` folders and **.targets** files don't need to be checked-in. It also shows how to set up an automated build on the Team Foundation Service for this sample project.
 
-## Repository Structure
+## Repository structure
 
 Our demo project is a simple command line tool that uses the command line argument to query Bing. It targets the .NET Framework 4 and uses many of the [BCL packages](http://www.nuget.org/profiles/dotnetframework/) ([Microsoft.Net.Http](http://www.nuget.org/packages/Microsoft.Net.Http), [Microsoft.Bcl](http://www.nuget.org/packages/Microsoft.Bcl), [Microsoft.Bcl.Async](http://www.nuget.org/packages/Microsoft.Bcl.Async), and [Microsoft.Bcl.Build](http://www.nuget.org/packages/Microsoft.Bcl.Build)).
 
@@ -96,7 +96,7 @@ We have, however, checked-in the `nuget.exe` as it's needed during the build. Fo
 
 The source code is under the `src` folder. Although our demo only uses a single solution, you can easily imagine that this folder contains more than one solution.
 
-### Ignore Files
+### Ignore files
 
 > [!Note]
 > There is currently a [known bug in the NuGet client](https://nuget.codeplex.com/workitem/4072) that causes the client to still add the `packages` folder to version control. A workaround is to disable the source control integration. In order to do that, you'll need a `nuget.config ` file in the  `.nuget` folder that is parallel to your solution. If this folder doesn't exist yet, you'll need to create it. In [`nuget.config`](../consume-packages/configuring-nuget-behavior.md), add the following content:

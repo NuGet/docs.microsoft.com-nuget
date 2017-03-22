@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Omitting NuGet Packages in Source Control Systems
+# Omitting NuGet packages in source control systems
 
 Developers typically omit binaries, such as NuGet packages, from their source control repository and rely instead on [package restore](../consume-packages/package-restore.md) to reinstall a project's dependencies before doing a build.
 

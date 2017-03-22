@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Authenticating Feeds with NuGet.exe Credential Providers
+# Authenticating feeds with NuGet.exe credential providers
 
 *NuGet 3.3+*
 

@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# NuGet CLI Reference
+# NuGet CLI reference
 
 The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages. Refer to the [Install Guide](../guides/install-nuget.md) for installation instructions.
 

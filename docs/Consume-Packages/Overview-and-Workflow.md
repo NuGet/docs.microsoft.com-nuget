@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Package Consumption Workflow
+# Package consumption workflow
 
 Between nuget.org and private package galleries that your organization might establish, you can find tens of thousands of highly useful packages to use in your apps and services. But regardless of the source, consuming a package follows the same general workflow as shown below. For details, see [Finding and Choosing Packages](../consume-packages/finding-and-choosing-packages.md) and the [Use a Package quickstart](../quickstart/use-a-package.md).
 

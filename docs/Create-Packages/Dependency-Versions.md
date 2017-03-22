@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# Specifying Dependency Versions for NuGet Packages
+# Specifying dependency versions for NuGet Packages
 
 *For .NET Core projects using NuGet 4.0+, see [Package References in Project Files](../consume-packages/package-references-in-project-files.md) for declaring dependencies.*
 

@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Pre-release Versions
+# Pre-release versions
 
 Whenever you release an updated package with a new version number, NuGet considers that one as the "latest stable release" as shown, for example in the Package Manager UI within Visual Studio:
 

@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Finding and Evaluating NuGet Packages for Your Project
+# Finding and evaluating NuGet packages for your project
 
 When starting any .NET project, or whenever you identify a functional need for your app or service, you can save yourself lots of time and trouble by using existing NuGet packages that fulfill that need. These packages can come from the public collection on [nuget.org](http://www.nuget.org/packages/), or a private source that's provided by your organization or another third party.
 

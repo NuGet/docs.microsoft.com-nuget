@@ -60,7 +60,7 @@ See the project.json document for details on supports and includes features that
 
 
 
-## Directory Structure
+## Directory structure
 
 NuGet packages using the new format have the following well-known directories and behaviors:
 

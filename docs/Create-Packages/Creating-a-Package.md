@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# Creating NuGet Packages
+# Creating NuGet packages
 
 > [!Note]
 > This topic is intended to be a reference for the process of creating a package. For a focused walkthrough example, refer to the [Create and Publish a Package Quickstart](../quickstart/create-and-publish-a-package.md).

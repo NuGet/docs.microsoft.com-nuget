@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Creating Symbol Packages
+# Creating symbol packages
 
 In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the [SymbolSource repository](http://www.symbolsource.org/Public).
 

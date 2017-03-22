@@ -26,7 +26,8 @@ ms.reviewer:
 #ms.tgt_pltfrm:
 #ms.custom:
 ---
-# .nuspec Reference
+
+# .nuspec reference
 
 A `.nuspec` file is an XML manifest that contains package metadata. This is used both to build the package and to provide information to consumers. The manifest is always included in a package.
 

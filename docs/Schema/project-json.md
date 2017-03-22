@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Project.json Reference
+# Project.json reference
 
 *NuGet 3.x+; also see the end of this topic for project.lock.json*
 
