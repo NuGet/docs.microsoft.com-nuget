@@ -39,7 +39,7 @@ With Visual Studio 2017, you can take advantage of added capabilities for UWP co
 
 ## Add toolbox/assets pane support for XAML controls
 
-To have a XAML control appear in the XAML designer’s toolbox in Visual Studio, create a `VisualStudioToolsManifest.xml` file in the root of the `tools` folder of your package project. This file is not required if you don’t need the control to appear in the designer.
+To have a XAML control appear in the XAML designer’s toolbox in Visual Studio, and the Assets pane of Blend, create a `VisualStudioToolsManifest.xml` file in the root of the `tools` folder of your package project. This file is not required if you don’t need the control to appear in the designer.
 
 ```
 \build
@@ -55,10 +55,6 @@ The structure of the file is as follows:
   <File Reference = "your_package_file">
     <ToolboxItems VSCategory="vs_category" BlendCategory="blend_category">
       <Item Type="type_full_name" />
-    </ToolboxItems>
-  </File>
-  <File Reference = "your_package_file_2">
-    <ToolboxItems VSCategory="vs_category" BlendCategory="blend_category">
       <Item Type="type_full_name_2" />
     </ToolboxItems>
   </File>
@@ -90,14 +86,18 @@ In the following example, the control implemented in `ManagedPackage.winmd` will
 
 > [!Note]
 > You must explicitly specify every control that you would like to see in the toolbox/assets pane. Ensure you specify them in the format `Namespace.ControlName`.
+> If your package contains multiple control assemblies, then you must have a separate `File` node for each one of them. Also, you may choose to put controls from a single assembly into different categories. You can do that by creating additional `ToolboxItems` nodes.
 
 ## Add custom icons to your controls
 
-To display a custom icon in the toolbox/assets pane, add an image to the library project with the name “Namespace.ControlName.extension” and set the build action to “Embedded Resource”.
+To display a custom icon in the toolbox/assets pane, add an image to the library project or the corresponding design.dll project with the name “Namespace.ControlName.extension” and set the build action to “Embedded Resource”. Supported formats are `.png`, `.jpg`, `.jpeg`, `.gif`, and `.bmp`.
 
 In the example above, the project contains an image file named “ManagedPackage.MyCustomControl.png”.
 
 ![Setting a custom icon in a project](media/UWP-control-custom-icon.png)
+
+> [!Note]
+> For native controls, you must put the icon as a resource in the design.dll project.
 
 ## Support specific Windows platform versions
 
@@ -170,7 +170,7 @@ Here is an example of what the targets file should look like:
 
 ## Add Design-Time support
 
-To configure where the control properties show up in the property inspector, add custom adorners, etc., To add this support, place your `design.dll` file inside the `lib\<platform>\Design` folder as appropriate to the target platform:
+To configure where the control properties show up in the property inspector, add custom adorners, etc., place your `design.dll` file inside the `lib\<platform>\Design` folder as appropriate to the target platform:
 
 ```
 \build
@@ -187,7 +187,7 @@ To configure where the control properties show up in the property inspector, add
 > [!Note]
 > By default, control properties will show up under the Miscellaneous category in the property inspector.
 
-To ensure [Edit Template](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/xaml-styles#use-tools-to-work-with-styles-easily) works, you must include the `Generic.xaml` and any resource dictionaries that it merges in the `<AssemblyName>\Themes` directory.
+To ensure [Edit Copy of Template](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles) (Edit Template > Edit a Copy) works, you must include the `Generic.xaml` and any resource dictionaries that it merges in the `<AssemblyName>\Themes` directory.
 
 ## Use strings and resources
 
