@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Create UWP Packages
+# Create UWP packages
 
 The [Universal Windows Platform (UWP)](https://developer.microsoft.com/en-us/windows) provides a common app platform for every device that runs Windows 10. Within this model, UWP apps can call both the WinRT APIs that are common to all devices, and also APIs (including Win32 and .NET) that are specific to the device family on which the app is running.
 

@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# PowerShell Reference
+# PowerShell reference
 
 The Package Manager Console provides a PowerShell interface within Visual Studio to interact with NuGet. This topic is the reference for those commands; for a guide to using the console, see the [Package Manager Console](../tools/package-manager-console.md) topic.
 

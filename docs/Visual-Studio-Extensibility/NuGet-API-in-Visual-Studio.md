@@ -46,7 +46,7 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
 - [`IVsPackageUninstaller`](#ivspackageuninstaller-interface): Methods to uninstall NuGet packages from projects.
 - [`IVsTemplateWizard`](#ivstemplatewizard-interface): Designed for project/item templates to include pre-installed packages; this interface is *not* meant to be invoked from code and has no public methods.
 
-## Using NuGet Services
+## Using NuGet services
 
 1. Install the [`NuGet.VisualStudio`](https://www.nuget.org/packages/NuGet.VisualStudio) package into your project, which contains the `NuGet.VisualStudio.dll` assembly.
 

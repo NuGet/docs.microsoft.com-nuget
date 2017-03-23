@@ -4,6 +4,7 @@
 # Guides
 ## [Install NuGet](Guides/Install-NuGet.md)
 ## [Create UWP Packages](Guides/Create-UWP-Packages.md)
+## [Creating UWP Controls as NuGet Packages](Guides/Create-UWP-Controls.md)
 ## [Create Cross-Platform Packages](Guides/Create-Cross-Platform-Packages.md)
 ## [Create NET Standard Packages (Visual Studio 2017)](Guides/Create-NET-Standard-Packages-VS2017.md)
 ## [Create NET Standard Packages (Visual Studio 2015)](Guides/Create-NET-Standard-Packages-VS2015.md)

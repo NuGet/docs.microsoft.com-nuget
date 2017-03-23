@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet Project.json File with Universal Windows Platform Projects | Microsoft Docs
+title: NuGet project.json file with UWP projects | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -60,7 +60,7 @@ See the project.json document for details on supports and includes features that
 
 
 
-## Directory Structure
+## Directory structure
 
 NuGet packages using the new format have the following well-known directories and behaviors:
 

@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Source Code and Configuration File Transformations for NuGet Packages | Microsoft Docs
+title: Source and config file transformations for NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# Source Code and Configuration File Transformations
+# Transforming source code and configuration files
 
 NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times.
 

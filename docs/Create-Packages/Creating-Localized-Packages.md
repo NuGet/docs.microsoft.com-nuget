@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Creating Localized NuGet Packages | Microsoft Docs
+title: How to Create a Localized NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -27,7 +27,8 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# Creating Localized Packages
+
+# Creating localized NuGet packages
 
 There are two ways to create localized versions of a library:
 
