@@ -28,7 +28,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# Hosting Your Own NuGet Feeds
+# Hosting your own NuGet feeds
 
 Instead of making packages publicly available, you might want to release packages for only a limited audience, such as your organization or workgroup. In addition, some companies may want to restrict which third-party libraries their developers may use, and thus direct those developers to draw from a limited package source rather than nuget.org.
 

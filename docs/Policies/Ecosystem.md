@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# An Overview of the NuGet Ecosystem
+# An overview of the NuGet ecosystem
 
 Since it's introduction in 2010, NuGet has presented a great opportunity to improve and automate different aspects of the development processes.
 

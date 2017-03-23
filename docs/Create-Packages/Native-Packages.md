@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# Creating Native Packages
+# Creating native packages
 
 A native package contains native C++ code instead of managed code, allowing it to be used within C++ projects. (See [Native C++ Packages](../consume-packages/finding-and-choosing-packages.md#native-c++-packages) in the Consume section.)
 

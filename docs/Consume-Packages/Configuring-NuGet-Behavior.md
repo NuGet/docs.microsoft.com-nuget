@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Configuring NuGet Behavior | Microsoft Docs
+title: Configuring the behavior of NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -15,7 +15,7 @@ ms.assetid: c1e34826-d07d-4609-a0fd-123459ae89c5
 # optional metadata
 
 description: NuGet.Config files control NuGet's behavior both globally and on a per-project basis, and are modified with nuget config command.
-keywords: NuGet config files, NuGet configuration, NuGet behavior settings, NuGet settings, nuget.config, nugetdefaults.config defaults
+keywords: NuGet config files, NuGet configuration, NuGet behavior settings, NuGet settings, nuget.config, nugetdefaults.config, defaults
 #ROBOTS:
 #audience:
 #ms.devlang:
@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Configuring NuGet Behavior
+# Configuring NuGet behavior
 
 NuGet's `NuGet.Config` files (in XML) store configuration settings and allow for changing default configuration values. NuGet uses several global configuration files and any number of configuration files within and near to a project to determine its exact behavior. In addition, in NuGet 2.7 and later you can use the `NuGetDefaults.config` file to also specifically control package sources.
 

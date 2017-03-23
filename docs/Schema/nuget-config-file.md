@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# NuGet.Config Reference
+# NuGet.Config reference
 
 NuGet behavior is controlled by settings in `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). Setting names are case-insensitive.
 

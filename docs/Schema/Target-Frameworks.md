@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Target Frameworks
+# Target frameworks
 
 NuGet uses target framework references in a variety of places to specifically identify and isolate framework-dependent components of a package:
 
@@ -43,7 +43,7 @@ NuGet uses target framework references in a variety of places to specifically id
 > -  Framework precedence and mapping: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 
-## Supported Frameworks
+## Supported frameworks
 
 A framework is typically referenced by a short target framework moniker or TFM. In .NET Standard this is also is generalized to *TxM* to allow a single reference to multiple frameworks.
 
@@ -90,7 +90,7 @@ Universal Windows Platform | uap | uap [uap10.0]
 | | | netstandard1.6
 .NET Core App | netcoreapp | netcoreapp1.0
 
-## Deprecated Frameworks
+## Deprecated frameworks
 The following frameworks are deprecated. Packages targeting these frameworks should migrate to the indicated replacements.
 
 Deprecated framework | Replacement
@@ -126,7 +126,7 @@ win (Windows Store) | winrt
 
 ## NET Platform Standard
 
-The [.NET  Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) simplifies references between binary-compatible frameworks, allowing a single target framework to reference a combination of others. (For background, see the [.NET Standard](https://docs.microsoft.com/dotnet/articles/standard/library).)
+The [.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) simplifies references between binary-compatible frameworks, allowing a single target framework to reference a combination of others. (For background, see the [.NET Standard](https://docs.microsoft.com/en-us/dotnet/articles/standard/library).)
 
 The [NuGet Get Nearest Framework Tool](https://aka.ms/s2m3th) simulates what NuGet uses to select one framework from many available framework assets in a package based on the project's framework.
 

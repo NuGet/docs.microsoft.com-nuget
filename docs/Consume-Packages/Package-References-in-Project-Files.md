@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# Package References in Project Files
+# Package references (PackageReference) in project files
 
 Package references, using the `PackageReference` node, allow you to manage NuGet dependencies directly in .NET Core and .NET Standard project files, without needing a separate `packages.config` or `project.json` file. This approach also allows you to use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. In terms of behavior and dependency resolution, it is the same as using `project.json`.
 

@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Creating a NuGet Package | Microsoft Docs
+title: How to create a NuGet package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -27,8 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# Creating a Package
-
+# Creating NuGet packages
 
 > [!Note]
 > This topic is intended to be a reference for the process of creating a package. For a focused walkthrough example, refer to the [Create and Publish a Package Quickstart](../quickstart/create-and-publish-a-package.md).

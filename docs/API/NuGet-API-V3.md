@@ -1,7 +1,7 @@
 ---
 # required metadata 
 
-title: NuGet API v3 | Microsoft Docs
+title: NuGet v3 Client and NuGetGallery APIs | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
