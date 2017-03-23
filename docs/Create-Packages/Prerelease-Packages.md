@@ -66,9 +66,9 @@ By default, NuGet does not include pre-release versions when working with packag
 
 - **Package Manager UI in Visual Studio**: In the **Manage NuGet Packages** UI, check the **Include prerelease** box:
 
-    ![The Include prerelese checkbox in Visual Studio](media/Prerelease_02-CheckPrerelease.png)
+    ![The Include prerelease checkbox in Visual Studio](media/Prerelease_02-CheckPrerelease.png)
 
-    Checking or unchecking this box will refresh the Package Manager UI and the list of available versions you can install.
+    Setting or clearing this box will refresh the Package Manager UI and the list of available versions you can install.
 
 - **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../tools/powershell-reference.md).
 

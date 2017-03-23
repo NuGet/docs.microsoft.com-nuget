@@ -101,7 +101,7 @@ That said, authoring packages–and especially good packages–along with  embra
 
 [NuDoq](http://nudoq.org) provides straightforward access and updates and documentation for NuGet packages.
 
-NuDoq regularly polls the NuGet.org gallery server for the latest package updates, unpacks and processes the library documentation files, and updates the site accordingly.
+NuDoq regularly polls the nuget.org gallery server for the latest package updates, unpacks and processes the library documentation files, and updates the site accordingly.
 
 ## Adding your project
 

@@ -111,7 +111,7 @@ supported in Visual Studio Ultimate. Viewing a DGML diagram is only supported in
 ![Package Visualizer](./media/package-visualizer.png)
 
 ### Automatic Update Check for the NuGet Dialog
-Some versions of NuGet introduce new features expressed via the NuSpec file which are not understood by older versions of the NuGet dialog.
+Some versions of NuGet introduce new features expressed via the `.nuspec` file which are not understood by older versions of the NuGet dialog.
 One example is the introduction in NuGet 1.4 for [specifying framework assemblies](../release-notes/nuget-1.2.md#framework-assembly-refs).
 Because of this, it's important to use the latest version of NuGet to ensure you can use packages taking advantage of the latest features.
 To make updates to NuGet more visible, the NuGet dialog contains logic to highlight when a newer version is available.
@@ -140,24 +140,24 @@ the **Online** or **Updates** tab is selected.
 commands.
 * **Package Source Names**: Supplying the name of a package source is supported when specifying a package source using the `-Source` flag.
 
-### NuGet.exe Command line improvements
-* **NuGet Custom Commands**: NuGet.exe is extensible via custom commands using MEF.
+### nuget.exe Command line improvements
+* **NuGet Custom Commands**: nuget.exe is extensible via custom commands using MEF.
 * **Simpler the workflow for creating symbol packages**: The `-Symbols` flag can be applied to a normal convention
-based folder structure creating a symbols package by only including the source and pdb files within the folder.
+based folder structure creating a symbols package by only including the source and `.pdb` files within the folder.
 * **Specifying Multiple Sources**: The `NuGet install` command supports specifying multiple sources using semi-colons as a delimiter or by specifying
 `-Source` multiple times.
 * **Proxy Authentication Support**: NuGet 1.4 adds support for prompting for user credentials when using NuGet behind a proxy that requires
 authentication.
-* **NuGet.exe Update Breaking Change**: The `-Self` flag is now required for NuGet.exe to update itself. `NuGet.exe Update` now takes
+* **nuget.exe Update Breaking Change**: The `-Self` flag is now required for nuget.exe to update itself. `nuget.exe Update` now takes
 in a path to the `packages.config` file and will attempt to update packages. Note that this update is limited in that it will not:
 ** Update, add, remove content in the project file.
 ** Run Powershell scripts within the package.
 
-### NuGet Server Support for Pushing Packages using NuGet.exe
+### NuGet Server Support for Pushing Packages using nuget.exe
 NuGet includes a simple way to host a [lightweight web based NuGet repository](../hosting-packages/NuGet-Server.md)
-via the `NuGet.Server` NuGet package. With NuGet 1.4, the lightweight server supports pushing and deleting packages using NuGet.exe.
+via the `NuGet.Server` NuGet package. With NuGet 1.4, the lightweight server supports pushing and deleting packages using nuget.exe.
 The latest version of `NuGet.Server` adds a new `appSetting`, named `apiKey`. When the key is omitted or left blank, pushing packages
-to the feed is disabled. Setting the apiKey to a value (ideally a strong password) enables pushing packages using NuGet.exe.
+to the feed is disabled. Setting the apiKey to a value (ideally a strong password) enables pushing packages using nuget.exe.
 
 ```xml
 <appSettings>
@@ -193,5 +193,5 @@ Shortly after the release of NuGet 1.4, we found a couple of issues that were im
 The specific version number of this update to 1.4 is 1.4.20615.9020.
 
 ## Bug Fixes
-* [Issue 1220](http://nuget.codeplex.com/workitem/1220): Update-Package doesnt execute install.ps1/uninstall.ps1 in all projects when there is more than one project
+* [Issue 1220](http://nuget.codeplex.com/workitem/1220): Update-Package doesnt execute `install.ps1`/`uninstall.ps1` in all projects when there is more than one project
 * [Issue 1156](http://nuget.codeplex.com/workitem/1156): Package Manager Consol stuck on W2K3/XP (when Powershell 2 is not installed)

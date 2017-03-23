@@ -36,7 +36,7 @@ NuGet 2.12 RTM was released June 27, 2016 for Visual Studio 2013
 ### Updates in this release
 
 * Full NetStandard  and NetCoreApp support for VS2013.
-* Adding include/exclude to nuspec dependency entries.
+* Adding include/exclude to `.nuspec` dependency entries.
 * Add support for "no_proxy" to specify proxy exceptions.
 * TFS related fixes.
 

@@ -51,6 +51,6 @@ When adding project code to a source repository, you typically don't include NuG
 
 Occasionally it's necessary to reinstall packages that are already included in a project, which may also reinstall dependencies. This is easy to do using the `reinstall` command via the NuGet command line or the NuGet Package Manager Console. For details, see [Reinstalling and Updating Packages](../consume-packages/reinstalling-and-updating-packages.md).
 
-Finally, NuGet's behavior is driven by `nuget.config` configuration files. Multiple files can be used to centralize certain settings at different levels, as explained in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).
+Finally, NuGet's behavior is driven by `Nuget.Config` configuration files. Multiple files can be used to centralize certain settings at different levels, as explained in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).
 
 Enjoy your productive coding with NuGet packages!

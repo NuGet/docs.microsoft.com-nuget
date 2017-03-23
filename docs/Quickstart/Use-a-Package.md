@@ -66,7 +66,7 @@ In Visual Studio, choose **File > New > Project**, expand **Visual C# > Windows 
 
 1. If prompted to review changes, click OK.
 
-1. Right-click the solution in Solution Explorer and click **Build Solution**. This restore anys NuGet packages listed under **References**. For more details, see [Package Restore](../consume-packages/package-restore.md).
+1. Right-click the solution in Solution Explorer and click **Build Solution**. This restores any NuGet packages listed under **References**. For more details, see [Package Restore](../consume-packages/package-restore.md).
 
 
 

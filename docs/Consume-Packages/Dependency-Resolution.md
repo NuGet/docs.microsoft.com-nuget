@@ -46,7 +46,7 @@ With NuGet 2.x, a project's dependencies are written to the `packages.config` fi
 
 NuGet 2.x will attempt to resolve dependency conflicts during the installation of each individual package, which includes package restore. That is, if Package A is being installed and depends on Package B, and Package B is already listed in `packages.config` as a dependency of something else, NuGet will compare the versions of Package B being requested and attempt to find a version that will satisfy all version constraints. Specifically, NuGet will select the lower major.minor version that satisfies dependencies.
 
-By default, NuGet 2.7 and earlier resolves the highest *patch* version (using the major.minor.patch.build convention). [NuGet 2.8](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies) changes this behavior to look for the lowest patch version by default, and allows you to control this setting through the `DependencyVersion` attribute in `nuget.config` and the `-DependencyVersion` switch on the command line.  
+By default, NuGet 2.7 and earlier resolves the highest *patch* version (using the major.minor.patch.build convention). [NuGet 2.8](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies) changes this behavior to look for the lowest patch version by default, and allows you to control this setting through the `DependencyVersion` attribute in `Nuget.Config` and the `-DependencyVersion` switch on the command line.  
 
 On the downside, the NuGet 2.x process for resolving dependencies gets complicated for larger dependency graphs. This is especially true during package restore, because each new package installation requires a traversal of the whole graph and raises the chance for version conflicts. When a conflict occurs, package restoration is stopped, leaving the project in a partially-restored state, especially with potential modifications to the project file itself.
 
@@ -57,7 +57,7 @@ This and other challenges is why dependency resolution was overhauled in NuGet 3
 As dependencies are installed into a project, NuGet 3.x adds them to a flat package graph in `project.json` in which conflicts are resolved ahead of time. This is referred to as *transitive restore*. Reinstalling or restoring packages is then simply a process of downloading the packages listed in the graph, resulting in faster and more predictable builds.
 
 > [!Note]
-> project.json is mandatory for UWP apps and ASP.NET 5 apps, is optional for PCLs, and currently is not fully supported on other project systems.
+> `project.json` is mandatory for UWP apps and ASP.NET 5 apps, is optional for PCLs, and currently is not fully supported on other project systems.
 
 
 ### Advantages of transitive restore
@@ -141,11 +141,11 @@ In these situations, the top-level consumer (the application or package) should 
 
 # Excluding references
 
-There are scenarios in which assemblies with the same name might be referenced more than once in a project, producing design-time and build-time errors. For example, consider a project that contains a custom version of C.dll, and references packageC that also contains C.dll. At the same time, the project also depends on packageB which also depends on packageC and C.dll. As a result, NuGet won't be able to determine which C.dll to use, but you can't just remove the project's dependency on packageC because packageB also depends on it.
+There are scenarios in which assemblies with the same name might be referenced more than once in a project, producing design-time and build-time errors. For example, consider a project that contains a custom version of `C.dll`, and references packageC that also contains `C.dll`. At the same time, the project also depends on packageB which also depends on packageC and `C.dll`. As a result, NuGet won't be able to determine which `C.dll` to use, but you can't just remove the project's dependency on packageC because packageB also depends on it.
 
-To resolve this, you must directly reference the C.dll you want (or use another package that references the right one), and then add a dependency on packageC that excludes all its assets. This is done as follows:
+To resolve this, you must directly reference the `C.dll` you want (or use another package that references the right one), and then add a dependency on packageC that excludes all its assets. This is done as follows:
 
-* If you're project is using `packages.config` for tracking NuGet dependencies, simply remove the reference to pakcageC from the `.csproj` file so that it references only the version of C.dll that you want.
+* If you're project is using `packages.config` for tracking NuGet dependencies, simply remove the reference to packageC from the `.csproj` file so that it references only the version of `C.dll` that you want.
     
 * If your project uses `project.json` for NuGet, add `"exclude" : "all"` in the dependency for packageC:
 

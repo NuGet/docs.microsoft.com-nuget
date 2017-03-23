@@ -59,16 +59,16 @@ Within a real NuGet package, of course, you'll implement many useful features up
 
 ## Create the .nuspec package manifest file
 
-Every NuGet package needs a manifest–a .nuspec file–to describe its contents and its dependencies. The NuGet CLI will create this file for you, which you then customize.
+Every NuGet package needs a manifest–a `.nuspec` file–to describe its contents and its dependencies. The NuGet CLI will create this file for you, which you then customize.
 
-1. Open a command prompt and navigate to the folder containing the AppLogger project file (.csproj).
+1. Open a command prompt and navigate to the folder containing the AppLogger project file (`.csproj`).
 1. Run the NuGet CLI `spec` command to generate `AppLogg.nuspec`:
 
     ```bash
     nuget spec
     ```
 
-1. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](../create-packages/creating-a-package.md#creating-the-nuspec-file).
+1. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$`<token>`$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](../create-packages/creating-a-package.md#creating-the-nuspec-file).
 
     ```xml
     <?xml version="1.0"?>
@@ -91,7 +91,7 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
     </package>
     ```
 
-1. Select a package ID that is unique across nuget.org. We recommend using the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number). You must also update the author and description tags or you will get an error in the next step. Here's an updated .nuspec file as an example:
+1. Select a package ID that is unique across nuget.org. We recommend using the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number). You must also update the author and description tags or you will get an error in the next step. Here's an updated `.nuspec` file as an example:
 
     ```xml
     <?xml version="1.0"?>
@@ -112,7 +112,7 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
     ```
 
 > [!Note]
-> For packages built for public consumption, pay special attention to the &lt;tags&gt; element, as these tags help others find your package and understand what it does.
+> For packages built for public consumption, pay special attention to the `<tags>` element, as these tags help others find your package and understand what it does.
 
 ## Create the package
 
@@ -122,9 +122,9 @@ Creating a NuGet package from a project is simple: just run the `pack` command:
 nuget pack AppLogger.csproj
 ```
 
-This will create a NuGet package file like `AppLogger.1.0.0.0.nupkg` using, of course, the package name and version number from the .nuspec file.
+This will create a NuGet package file like `AppLogger.1.0.0.0.nupkg` using, of course, the package name and version number from the `.nuspec` file.
 
-Note that you'll get warnings if you haven't updated various fields in the .nuspec file from their default values.
+Note that you'll get warnings if you haven't updated various fields in the `.nuspec` file from their default values.
 
 
 ## Publish the package

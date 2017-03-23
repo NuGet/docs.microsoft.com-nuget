@@ -37,7 +37,7 @@ ms.reviewer:
 
 * Behavioral changes in `dotnet pack --version-suffix foo` - [#3838](https://github.com/NuGet/Home/issues/3838)
 
-* NuGet.exe restore on vs "15" machine only fails - [#3834](https://github.com/NuGet/Home/issues/3834)
+* nuget.exe restore on vs "15" machine only fails - [#3834](https://github.com/NuGet/Home/issues/3834)
 
 * .NETCore file new project should block the build during restore - [#3780](https://github.com/NuGet/Home/issues/3780)
 
@@ -45,7 +45,7 @@ ms.reviewer:
 
 * [Test Failure]Package ‘jQuery Validation’ can’t be uninstalled by PM UI - [#3755](https://github.com/NuGet/Home/issues/3755)
 
-* When a package is installed to UWP project.json, parent projects should also be restored - [#3731](https://github.com/NuGet/Home/issues/3731)
+* When a package is installed to UWP `project.json`, parent projects should also be restored - [#3731](https://github.com/NuGet/Home/issues/3731)
 
 * Modify the NuGet targets to log the package sources as High verbosity instead of Normal - [#3719](https://github.com/NuGet/Home/issues/3719)
 
@@ -69,7 +69,7 @@ ms.reviewer:
 
 * System.Xml.XmlException: Unrecognized root element in Core Properties part. Line 2, position 2. - [#2718](https://github.com/NuGet/Home/issues/2718)
 
-* Nuspec with escaped < or > (&lt; / &gt;) in text fields no longer builds - [#2651](https://github.com/NuGet/Home/issues/2651)
+* `.nuspec` with escaped &lt; or &gt; in text fields no longer builds - [#2651](https://github.com/NuGet/Home/issues/2651)
 
 * nuget.exe delete won't prompt for credentials (it's in non-interactive mode) - [#2626](https://github.com/NuGet/Home/issues/2626)
 
@@ -87,7 +87,7 @@ ms.reviewer:
 
 * Tool restore without proper imports silently fails. - [#2462](https://github.com/NuGet/Home/issues/2462)
 
-* NuGet prompts to enter credentials when there is a private feed even when installing from NuGet.org - [#2346](https://github.com/NuGet/Home/issues/2346)
+* NuGet prompts to enter credentials when there is a private feed even when installing from nuget.org - [#2346](https://github.com/NuGet/Home/issues/2346)
 
 * ApplicationInsights 2.0 package is listed but doesn't exist yet - [#2317](https://github.com/NuGet/Home/issues/2317)
 
@@ -132,7 +132,7 @@ ms.reviewer:
 
 * [0] NuGet Restore Task & Targets - [#2994](https://github.com/NuGet/Home/issues/2994)
 
-* [1] Enable Solution level restore in msbuild - [#2993](https://github.com/NuGet/Home/issues/2993)
+* [1] Enable Solution level restore in MSBuild - [#2993](https://github.com/NuGet/Home/issues/2993)
 
 * Support credential provider public extensibility in Visual Studio - [#2909](https://github.com/NuGet/Home/issues/2909)
 
@@ -142,11 +142,11 @@ ms.reviewer:
 
 * Unable to install C++ package to C++ UWP project in VS "15" Preview - [#2369](https://github.com/NuGet/Home/issues/2369)
 
-* Nupkg needs to support \buildCrossTargeting\ folder - and import .targets/.props for "crosstargeting" msbuild scope. - [#3499](https://github.com/NuGet/Home/issues/3499)
+* Nupkg needs to support \buildCrossTargeting\ folder - and import `.targets` / `.props` for "crosstargeting" MSBuild scope. - [#3499](https://github.com/NuGet/Home/issues/3499)
 
 * ToolsReference Design - [#3462](https://github.com/NuGet/Home/issues/3462)
 
-* Fix NuGet UI to support restore w/ PackageReferences in csproj - [#3455](https://github.com/NuGet/Home/issues/3455)
+* Fix NuGet UI to support restore w/ PackageReferences in `.csproj` - [#3455](https://github.com/NuGet/Home/issues/3455)
 
 * Adding clear cache button to VS package manager settings - [#3289](https://github.com/NuGet/Home/issues/3289)
 
@@ -170,7 +170,7 @@ ms.reviewer:
 
 * "type": "platform" Dependencies represented as "type":"package" in lock file - [#2695](https://github.com/NuGet/Home/issues/2695)
 
-* NuGet.exe Verbose mode should show the download url - [#2629](https://github.com/NuGet/Home/issues/2629)
+* nuget.exe Verbose mode should show the download url - [#2629](https://github.com/NuGet/Home/issues/2629)
 
 * Move NuGet xplat to Microsoft.NetCore.App and netcoreapp1.0 - [#2483](https://github.com/NuGet/Home/issues/2483)
 
@@ -180,16 +180,16 @@ ms.reviewer:
 
 * Need a better name than suppressParent - [#2196](https://github.com/NuGet/Home/issues/2196)
 
-* Determine project.json dependency name to use for msbuild projects - [#1914](https://github.com/NuGet/Home/issues/1914)
+* Determine `project.json` dependency name to use for MSBuild projects - [#1914](https://github.com/NuGet/Home/issues/1914)
 
 * Add SemVer 2.0.0 support to NuGet.Core - [#3383](https://github.com/NuGet/Home/issues/3383)
 
-* Allow transitive dependency NuPkgs with .targets to be available in MSBuild - [#3342](https://github.com/NuGet/Home/issues/3342)
+* Allow transitive dependency NuPkgs with `.targets` to be available in MSBuild - [#3342](https://github.com/NuGet/Home/issues/3342)
 
 * NuGet restore from the commandline is significantly slower than VS - [#3330](https://github.com/NuGet/Home/issues/3330)
 
 * Make package ID and version comparison case insensitive - [#2522](https://github.com/NuGet/Home/issues/2522)
 
-* NoCache option does not work for packages.config based restore/install (GlobalPackagesFolder) - [#1406](https://github.com/NuGet/Home/issues/1406)
+* NoCache option does not work for `packages.config` based restore/install (GlobalPackagesFolder) - [#1406](https://github.com/NuGet/Home/issues/1406)
 
 * FindPackageByIdResource resources needs a default cache context and logger - [#1357](https://github.com/NuGet/Home/issues/1357)

@@ -147,9 +147,9 @@ The following are the most significant changes made in CTP 2:
 
 * Switched the package feed from ATOM to an OData service endpoint: If you upgrade to the CTP2 version of NuGet, be sure to add the following URL as a package source: [http://go.microsoft.com/fwlink/?LinkID=204820](http://go.microsoft.com/fwlink/?LinkID=204820).
 * Renamed the Add-Package command to *Install-Package*.
-* Updated the NuSpec Format. The NuSpec format now includes the *iconUrl* field for specifying a 32x32 png icon which will show up in the Add Package Dialog. So be sure to set that to distinguish your package. The NuSpec format also includes the new *projectUrl* field which you can use to point to a web page that provides more information about your package.
+* Updated the `.nuspec` Format. The `.nuspec` format now includes the *iconUrl* field for specifying a 32x32 png icon which will show up in the Add Package Dialog. So be sure to set that to distinguish your package. The `.nuspec` format also includes the new *projectUrl* field which you can use to point to a web page that provides more information about your package.
 
-This build will not work with old nupkg files. If you get null reference exceptions, you're using an old nupkg file and
+This build will not work with old `.nupkg` files. If you get null reference exceptions, you're using an old `.nupkg` file and
 need to rebuild it with the updated [NuGet command line tool](http://nuget.codeplex.com/releases/52017/download/165468).
 
 The following is a list of features and bugs that were fixed for NuGet CTP 2 (does not include bugs for minor code cleanups etc.).
@@ -178,7 +178,7 @@ The following is a list of features and bugs that were fixed for NuGet CTP 2 (do
 * [The activity in the console, when using the dialog, disappears after use](http://nuget.codeplex.com/workitem/87)
 * [Cleanup command line parsing in nupack.exe](http://nuget.codeplex.com/workitem/89)
 * [Add a friendly name to package sources](http://nuget.codeplex.com/workitem/98)
-* [Update NuSpec to support including package icons](http://nuget.codeplex.com/workitem/103)
+* [Update .nuspec to support including package icons](http://nuget.codeplex.com/workitem/103)
 * [Feed UI doesn't allow copying the URL](http://nuget.codeplex.com/workitem/105)
 * [Better remove-package error handling.](http://nuget.codeplex.com/workitem/107)
 * [Typing in Console Window depends on cursor focus](http://nuget.codeplex.com/workitem/112)
@@ -192,14 +192,14 @@ The following is a list of features and bugs that were fixed for NuGet CTP 2 (do
 * [Update NuPack.Server to require NuPack User Agent To Download Package](http://nuget.codeplex.com/workitem/142)
 * [License Acceptance Dialog Must List Licenses For All Dependencies That Require Acceptance](http://nuget.codeplex.com/workitem/145)
 * [Log an error when a package throws in the feed](http://nuget.codeplex.com/workitem/150)
-* [NuPack.exe should not allow an empty &lt;licenseurl&gt;element](http://nuget.codeplex.com/workitem/152)
+* [NuPack.exe should not allow an empty &lt;licenseurl&gt; element](http://nuget.codeplex.com/workitem/152)
 * [Rename List-Package to Get-Package, Add-Package to Install-Package, and Remove-Package to Uninstall-Package](http://nuget.codeplex.com/workitem/155)
 * [Using the Add Package Reference menu item from the Solution Navigator crashes Visual Studio](http://nuget.codeplex.com/workitem/158)
 * ["Available package sources" label is missing a colon](http://nuget.codeplex.com/workitem/160)
-* [Make Nuspec xml element casing consistently camel cased](http://nuget.codeplex.com/workitem/161)
+* [Make .nuspec xml element casing consistently camel cased](http://nuget.codeplex.com/workitem/161)
 * [The NuPack VSIX's manifest needs to turn on the 'admin' bit](http://nuget.codeplex.com/workitem/162)
 * [If you run List-Package with no feeds, you get null ref error](http://nuget.codeplex.com/workitem/164)
-* [NuGet.exe: specify destination path](http://nuget.codeplex.com/workitem/171)
+* [nuget.exe: specify destination path](http://nuget.codeplex.com/workitem/171)
 * [Powershell Errors Opening Package Management Console on WinXP](http://nuget.codeplex.com/workitem/175)
 * [VS Crashes while trying to load package list](http://nuget.codeplex.com/workitem/176)
 * [allow meta packages (no files, only dependencies)](http://nuget.codeplex.com/workitem/180)
@@ -255,7 +255,7 @@ The following is a list of features and bugs that were fixed for NuGet CTP 1.
 * [Package Manager unusable when loading profile throws an exception](http://nuget.codeplex.com/workitem/39)
 * [init.ps1, install.ps1 and uninstall.ps1 need to receive additional state](http://nuget.codeplex.com/workitem/41)
 * [Combine Console and GUI Packages Into One Package](http://nuget.codeplex.com/workitem/42)
-* [Xml transform logic doesn't work if applied to xml that isn't at the root](http://nuget.codeplex.com/workitem/43)
+* [Xml transform logic doesn't work if applied to XML that isn't at the root](http://nuget.codeplex.com/workitem/43)
 * [Manage package sources settings dialog not updating the NuPack console](http://nuget.codeplex.com/workitem/44)
 * [NuPack Console UI: Rename 'Package feed' drop-down list to 'Package source'](http://nuget.codeplex.com/workitem/45)
 * [NuPack Console Options: Rename 'Repository UI' to be consistent with NuPack Console](http://nuget.codeplex.com/workitem/46)
@@ -283,8 +283,8 @@ The following is a list of features and bugs that were fixed for NuGet CTP 1.
 * [Rename packages.xml to NuPack.config](http://nuget.codeplex.com/workitem/132)
 * [Console forces cursor to the end of line](http://nuget.codeplex.com/workitem/135)
 * [Remove-Package intellisense is broken](http://nuget.codeplex.com/workitem/136)
-* [Add RequireLicenseAcceptance Flag to NuSpec and Feed](http://nuget.codeplex.com/workitem/137)
-* [Add LicenseUrl to NuSpec Format and Package Feed](http://nuget.codeplex.com/workitem/138)
+* [Add RequireLicenseAcceptance Flag to .nuspec and Feed](http://nuget.codeplex.com/workitem/137)
+* [Add LicenseUrl to .nuspec Format and Package Feed](http://nuget.codeplex.com/workitem/138)
 * [Clicking Install For Package That Requires Acceptance Should Show Acceptance Dialog](http://nuget.codeplex.com/workitem/139)
 * [Add Disclaimer Text to the Add Package Dialog](http://nuget.codeplex.com/workitem/140)
 * [Add Disclaimer When the Package Console is run the first time](http://nuget.codeplex.com/workitem/143)

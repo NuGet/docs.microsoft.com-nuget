@@ -49,13 +49,13 @@ The following capabilities are supported only in the NuGet CLI:
 - Manage packages (nuget.org or private feed)
 - Create packages 
 - Publish packages
-- Manage nuget.config
+- Manage Nuget.Config
 - Manage the NuGet cache
 - Replication a package
 
 > [!Note]
 > You might also be interested in the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), an open-source, stand-alone tool to visually explore and create NuGet packages.
-> Also, the cross-platform [.NET Core CLI](https://docs.microsoft.com/dotnet/articles/core/tools/index#installation) toolchain for developing .NET Core applications also supports a [dotnet restore](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-restore) command that performs a nuget restore. No other nuget commands are available in the .NET Core CLI at present, however. 
+> Also, the cross-platform [.NET Core CLI](https://docs.microsoft.com/dotnet/articles/core/tools/index#installation) toolchain for developing .NET Core applications also supports a [dotnet restore](https://docs.microsoft.com/dotnet/articles/core/tools/dotnet-restore) command that performs a nuget restore. No other nuget commands are available in the .NET Core CLI at present, however. 
 
 
 ## NuGet CLI
@@ -95,8 +95,8 @@ Though not fully-supported as yet, the NuGet command-line executable (version 3.
     - Sources
     - Spec
 - Partially-working commands:
-    - Pack: works with .nuspec files but not with project files.
-    - Restore: works with packages.config and project.json files but not with solution (.sln) files.
+    - Pack: works with `.nuspec` files but not with project files.
+    - Restore: works with `packages.config` and `project.json` files but not with solution (`.sln`) files.
 - Commands that do not work:
     - Update
 
