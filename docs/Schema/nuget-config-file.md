@@ -32,11 +32,11 @@ ms.reviewer:
 
 NuGet behavior is controlled by settings in `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). Setting names are case-insensitive.
 
-`NuGet.Config` is an XML file containing a top-level &lt;configuration&gt; node, which then contains the section elements described in this topic. Each section then contains zero or more &lt;add&gt; elements with `key` and `value` attributes. See the [examples config file](#example-config-file) at the end of this topic.
+`NuGet.Config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic. Each section then contains zero or more `<add>` elements with `key` and `value` attributes. See the [examples config file](#example-config-file) at the end of this topic.
 
 Note that with NuGet 3.4+ you can use environment variables in `NuGet.Config` values to apply machine-specific settings at run time. For example, if the `HOME` environment variable is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file will resolve to `c:\users\username\NuGetRepository`. If an environment variable is not found, NuGet will leave the value unmodified.
 
-Also note that with Visual Studio 2017+ and NuGet 4.0+, the machine-wide `NuGet.config` is now located at `%ProgramFiles(x86)%\NuGet\Config\` to improve security in multi-user scenarios. You will need to manually migrate existing config files from `%ProgramData%` to `%ProgramFiles(x86)%`. Going forward,NuGet 4.0+ will also treat this as the new location for the machine-wide configuration. `NuGet.config` in `%ProgramData%\NuGet\Config\` will no longer be implicitly referenced or considered for hierarchical merging of `nuget.config`.
+Also note that with Visual Studio 2017+ and NuGet 4.0+, the machine-wide `NuGet.Config` is now located at `%ProgramFiles(x86)%\NuGet\Config\` to improve security in multi-user scenarios. You will need to manually migrate existing config files from `%ProgramData%` to `%ProgramFiles(x86)%`. Going forward,NuGet 4.0+ will also treat this as the new location for the machine-wide configuration. `NuGet.Config` in `%ProgramData%\NuGet\Config\` will no longer be implicitly referenced or considered for hierarchical merging of `Nuget.Config`.
 
 In this topic:
 
@@ -66,10 +66,10 @@ Note: `dependencyVersion` and `repositoryPath` apply only to projects using `pac
 Key | Value
 --- | ---
 dependencyVersion (package.config only) | The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly. This value is also used by the NuGet Package Manager UI. Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`.
-globalPackagesFolder (project.json only) | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages`. A relative path can be used in project-specific `nuget.config` files.
-repositoryPath (packages.config only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)\packages` folder. A relative path can be used in project-specific `nuget.config` files.
+globalPackagesFolder (`project.json` only) | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages`. A relative path can be used in project-specific `Nuget.Config` files.
+repositoryPath (`packages.config` only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)\packages` folder. A relative path can be used in project-specific `Nuget.Config` files.
 defaultPushSource | Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation.
-http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://&lt;username&gt;:&lt;password&gt@&lt;domain&gt`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the http_proxy and no_proxy environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com).
+http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://<username>:<password>@<domain>`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the http_proxy and no_proxy environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com).
 
 
 **Example**:
@@ -122,7 +122,7 @@ automatic | A Boolean indicating whether NuGet should check for missing packages
 
 ## solution section
 
-Controls whether the `packages` folder of a solution is included in source control. This section works only in `nuget.config` files in a solution folder.
+Controls whether the `packages` folder of a solution is included in source control. This section works only in `Nuget.Config` files in a solution folder.
 
 Key | Value
 --- | ---
@@ -175,7 +175,7 @@ cleartextpassword | The unencrypted password for the source.
 
 **Example:**
 
-In the config file, the &lt;packageSourceCredentials&gt; element will contain child nodes for each applicable source name. That is, for a source named "Contoso", the config file will contain the following when using an encrypted password:
+In the config file, the `<packageSourceCredentials>` element will contain child nodes for each applicable source name. That is, for a source named "Contoso", the config file will contain the following when using an encrypted password:
 
 ```xml
 <packageSourceCredentials>
@@ -268,14 +268,14 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
     <config>
     <!--
         Used to specify the default location to expand packages.
-        See: NuGet.exe help install
-        See: NuGet.exe help update
+        See: nuget.exe help install
+        See: nuget.exe help update
     -->
     <add key="repositoryPath" value="External\Packages" />
 
     <!--
         Used to specify default source for the push command.
-        See: NuGet.exe help push
+        See: nuget.exe help push
     -->
 
     <add key="DefaultPushSource" value="https://MyRepo/ES/api/v2/package" />
@@ -296,9 +296,9 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
 
     <!--
         Used to specify the default Sources for list, install and update.
-        See: NuGet.exe help list
-        See: NuGet.exe help install
-        See: NuGet.exe help update
+        See: nuget.exe help list
+        See: nuget.exe help install
+        See: nuget.exe help update
     -->
     <packageSources>
     <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
@@ -313,9 +313,9 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
 
     <!--
         Used to specify default API key associated with sources.
-        See: NuGet.exe help setApiKey
-        See: NuGet.exe help push
-        See: NuGet.exe help mirror
+        See: nuget.exe help setApiKey
+        See: nuget.exe help push
+        See: nuget.exe help mirror
     -->
     <apikeys>
     <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />

@@ -56,13 +56,13 @@ NuGet 3.5 Beta 2 RTM was released June 27, 2016 for Visual Studio 2013 and nuget
 
 * Fix NuGet configuration is invalid error in WebSite projects - VS 2015 VSIX (v3.4.3) - [#2667](https://github.com/NuGet/Home/issues/2667)
 
-* Fix pack issues from csproj when content files are included - [#2658](https://github.com/NuGet/Home/issues/2658)
+* Fix pack issues from `.csproj` when content files are included - [#2658](https://github.com/NuGet/Home/issues/2658)
 
-* DefaultPushSource in NuGetDefaults.config (ProgramData\NuGet) doesn't work - [#2653](https://github.com/NuGet/Home/issues/2653)
+* DefaultPushSource in `NuGetDefaults.Config` (`ProgramData\NuGet`) doesn't work - [#2653](https://github.com/NuGet/Home/issues/2653)
 
 * Fix issue in Nuget 3.4.3 release - Value cannot be null on package creation - [#2648](https://github.com/NuGet/Home/issues/2648)
 
-* Restore uses stored credentials from nuget.config for VSTS feeds - [#2647](https://github.com/NuGet/Home/issues/2647)
+* Restore uses stored credentials from Nuget.Config for VSTS feeds - [#2647](https://github.com/NuGet/Home/issues/2647)
 
 * Performance - Fix excessive allocations in version comparsion code - [#2632](https://github.com/NuGet/Home/issues/2632)
 
@@ -80,13 +80,13 @@ NuGet 3.5 Beta 2 RTM was released June 27, 2016 for Visual Studio 2013 and nuget
 
 * Display exception when there is a failure finding projects in update command - [#2418](https://github.com/NuGet/Home/issues/2418)
 
-* Package content is not restored correctly when installing a package from a nuget v3.3+ feed with the argument -NoCache when the package contains *.nupkg files - [#2354](https://github.com/NuGet/Home/issues/2354)
+* Package content is not restored correctly when installing a package from a nuget v3.3+ feed with the argument -NoCache when the package contains `.nupkg` files - [#2354](https://github.com/NuGet/Home/issues/2354)
 
 * Fix issue with package install (All Sources) when package is missing from 1 source - [#2322](https://github.com/NuGet/Home/issues/2322)
 
 * Install blocks if a single source fails authorization - [#2034](https://github.com/NuGet/Home/issues/2034)
 
-* nuspec version range should override -IncludeReferencedProjects version - [#1983](https://github.com/NuGet/Home/issues/1983)
+* `.nuspec` version range should override -IncludeReferencedProjects version - [#1983](https://github.com/NuGet/Home/issues/1983)
 
 * NuGet 3.3.0 update fails with 'An additional constraint ... defined in packages.config prevents this operation.' - [#1816](https://github.com/NuGet/Home/issues/1816)
 
@@ -98,14 +98,14 @@ NuGet 3.5 Beta 2 RTM was released June 27, 2016 for Visual Studio 2013 and nuget
 
 ## Features and Behavior Changes
 
-* NuGet.exe push - timeout parameter doesn't work  - [#2785](https://github.com/NuGet/Home/issues/2785)
+* nuget.exe push - timeout parameter doesn't work  - [#2785](https://github.com/NuGet/Home/issues/2785)
 
-* nuget.exe restore doesn't produce .props and .targets files for .nuproj projects (regression in v3.4.3.855) - [#2711](https://github.com/NuGet/Home/issues/2711)
+* nuget.exe restore doesn't produce `.props` and `.targets` files for `.nuproj` projects (regression in v3.4.3.855) - [#2711](https://github.com/NuGet/Home/issues/2711)
 
 * Need extensibility API to compare frameworks with imports - [#2633](https://github.com/NuGet/Home/issues/2633)
 
-* Hide dependency options when using project.json - [#2486](https://github.com/NuGet/Home/issues/2486)
+* Hide dependency options when using `project.json` - [#2486](https://github.com/NuGet/Home/issues/2486)
 
-* Print out NuGet.exe version header in detailed output - [#1887](https://github.com/NuGet/Home/issues/1887)
+* Print out nuget.exe version header in detailed output - [#1887](https://github.com/NuGet/Home/issues/1887)
 
 * NuGet should add support for /runtimes/{rid}/nativeassets/{txm}/ - [#2782](https://github.com/NuGet/Home/issues/2782)

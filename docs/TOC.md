@@ -36,22 +36,22 @@
 ## [Local Feeds](Hosting-Packages/Local-Feeds.md)
 ## [NuGet.Server](Hosting-Packages/NuGet-Server.md)
 # Tools
-## [NuGet.exe CLI Reference](tools/nuget-exe-CLI-Reference.md)
+## [nuget.exe CLI Reference](tools/nuget-exe-CLI-Reference.md)
 ## [Package Manager UI](Tools/Package-Manager-UI.md)
 ## [Package Manager Console](Tools/Package-Manager-Console.md)
 ## [PowerShell Reference](Tools/PowerShell-Reference.md)
 ## [dotnet Commands](Tools/dotnet-Commands.md)
 # Schema
-## [nuspec](Schema/nuspec.md)
+## .nuspec](Schema/nuspec.md)
 ## [project.json](Schema/project-json.md)
 ## [MSBuild Targets](Schema/msbuild-targets.md)
-## [nuget.config file](Schema/nuget-config-file.md)
+## [Nuget.Config file](Schema/nuget-config-file.md)
 ## [Target Frameworks](Schema/Target-Frameworks.md)
 ## [Analyzers Conventions](Schema/Analyzers-Conventions.md)
 # API
 ## [NuGet API V3](API/NuGet-API-V3.md)
 ## [NuGet Credential Providers for Visual Studio](API/Nuget-Credential-Providers-for-Visual-Studio.md)
-## [NuGet.exe Credential Providers](API/nuget-exe-Credential-Providers.md)
+## [nuget.exe Credential Providers](API/nuget-exe-Credential-Providers.md)
 # Visual Studio Extensibility
 ## [NuGet API in Visual Studio](Visual-Studio-Extensibility/NuGet-API-in-Visual-Studio.md)
 ## [Project System Support](Visual-Studio-Extensibility/Project-System-Support.md)

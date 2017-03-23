@@ -31,7 +31,7 @@ ms.reviewer:
 
 Creating a package starts with the code you want to package and share with others, either through the public nuget.org gallery or a private gallery within your organization. The package can also include additional files such as a readme that is displayed when the package is installed, and can include transformations to certain project files.
 
-A package can also serve only to pull in a number of other dependencies and not contain any code of its own, which is a convenient way to create a single package for an SDK that's composed of multiple independent packages. In other cases, a package may contain only symbol (.pdb) files to aid debugging.
+A package can also serve only to pull in a number of other dependencies and not contain any code of its own, which is a convenient way to create a single package for an SDK that's composed of multiple independent packages. In other cases, a package may contain only symbol (`.pdb`) files to aid debugging.
 
 > [!Note]
 > When you create a package for use by other developers, it's important to understand that they will be taking a dependency on your work. As such, creating and publishing a package also implies a commitment to fixing bugs and making other updates, or at the very least making the package available as open source so others can help to maintain it.

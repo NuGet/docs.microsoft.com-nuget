@@ -55,12 +55,12 @@ The following features are available in this RC, with more planned for the 3.4 f
 
 ## Updates and Improvements
 
-* Packages referenced in project.json that have a floating version will not update on every build. Instead, they will update only when forced to restore, clean, rebuild, or modify project.json.
-* NuGet.org repository sources are no longer forced into a project configuration when you use the NuGet configuration UI.
+* Packages referenced in `project.json` that have a floating version will not update on every build. Instead, they will update only when forced to restore, clean, rebuild, or modify `project.json`.
+* nuget.org repository sources are no longer forced into a project configuration when you use the NuGet configuration UI.
 * NuGet no longer restores packages in shared projects nor writes a lock file.
 * We've improved network failure and retry handling for unreachable or slow-to-respond servers.
 * Keyboard and mouse behaviors are improved in the Visual Studio Package Manager UI.
-* We now support the latest project.json schema in DNX.
+* We now support the latest `project.json` schema in DNX.
 
 ## Known Issues
 

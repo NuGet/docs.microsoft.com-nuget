@@ -35,8 +35,8 @@ ms.reviewer:
 
 NuGet 2.1 was released on October 4, 2012.
 
-## Hierarchical Nuget.config
-NuGet 2.1 gives you greater flexibility in controlling NuGet settings by way of recursively walking up the directory structure looking for NuGet.config files and then building the configuration from the set of all found files.  As an example, consider the scenario where a team has an internal package repository for CI builds of other internal dependencies. The directory structure for an individual project might look like the following:
+## Hierarchical Nuget.Config
+NuGet 2.1 gives you greater flexibility in controlling NuGet settings by way of recursively walking up the folder structure looking for `NuGet.Config` files and then building the configuration from the set of all found files.  As an example, consider the scenario where a team has an internal package repository for CI builds of other internal dependencies. The folder structure for an individual project might look like the following:
 
     C:\
     C:\myteam\
@@ -47,7 +47,7 @@ Additionally, if package restore is enabled for the solution, the following fold
 
     C:\myteam\solution1\.nuget
 
-In order to have the team’s internal package repository available for all projects that the team works on, while not making it available for every project on the machine, we can create a new nuget.config file and place it in the c:\myteam directory. There is no way to specificy a packages forlder per project.
+In order to have the team’s internal package repository available for all projects that the team works on, while not making it available for every project on the machine, we can create a new Nuget.Config file and place it in the c:\myteam folder. There is no way to specificy a packages forlder per project.
 
 ```xml
 <configuration>
@@ -61,21 +61,22 @@ In order to have the team’s internal package repository available for all proj
 </configuration>
 ```
 
-We can now see that the source was added by running the ‘nuget.exe sources’ command from any directory beneath c:\myteam as shown below:
+We can now see that the source was added by running the ‘nuget.exe sources’ command from any folder beneath c:\myteam as shown below:
 
 ![Package sources from parent nuget config](./media/releasenotes-21-cfg-hierarchy.png)
 
-NuGet.config files are searched for in the following order:
+`NuGet.Config` files are searched for in the following order:
 
-1. .nuget\nuget.config
+1. `.nuget\Nuget.Config`
 2. Recursive walk from project folder to root
-3. Global nuget.config (%appdata%\NuGet\nuget.config)
+3. Global `Nuget.Config` (`%appdata%\NuGet\Nuget.Config`)
 
-The configurations are than applied in the *reverse order*, meaning that based on the above ordering, the global nuget.config would be applied first, followed by the discovered nuget.config files from root to project folder, followed by .nuget\nuget.config.  This is particularly important if you’re using the `<clear/>` element to remove a set of items from config.
+The configurations are than applied in the *reverse order*, meaning that based on the above ordering, the global Nuget.Config would be applied first, followed by the discovered Nuget.Config files from root to project folder, followed by `.nuget\Nuget.Config`.  This is particularly important if you’re using the `<clear/>` element to remove a set of items from config.
 
 ## Specify ‘packages’ Folder Location
-In the past, NuGet has managed a solution’s packages from a known ‘packages’ folder found beneath the solution root directory.  For development teams that have many different solutions which have NuGet packages installed, this can result in the same package being installed in many different places on the file system.
-NuGet 2.1 provides more granular control over the location of the packages folder via the ‘repositoryPath’ element in the NuGet.config file.  Building on the previous example of hierarchical nuget.config support, assume that we wish to have all projects under C:\myteam\ share the same packages folder.  To accomplish this, simply add the following entry to C:\myteam\nuget.config.
+In the past, NuGet has managed a solution’s packages from a known ‘packages’ folder found beneath the solution root folder.  For development teams that have many different solutions which have NuGet packages installed, this can result in the same package being installed in many different places on the file system.
+
+NuGet 2.1 provides more granular control over the location of the packages folder via the `repositoryPath` element in the `NuGet.Config` file.  Building on the previous example of hierarchical Nuget.Config support, assume that we wish to have all projects under C:\myteam\ share the same packages folder.  To accomplish this, simply add the following entry to `c:\myteam\Nuget.Config`.
 
 ```xml
 <configuration>
@@ -86,16 +87,16 @@ NuGet 2.1 provides more granular control over the location of the packages folde
 </configuration>
 ```
 
-In this example, the shared nuget.config file specifies a shared packages folder for every project that is created beneath C:\myteam, regardless of depth. Note that if you have an existing packages folder underneath your solution root, you will need to delete it before NuGet will place packages in the new location.
+In this example, the shared `Nuget.Config` file specifies a shared packages folder for every project that is created beneath C:\myteam, regardless of depth. Note that if you have an existing packages folder underneath your solution root, you will need to delete it before NuGet will place packages in the new location.
 
 ## Support for Portable Libraries
-[Portable libraries](http://msdn.microsoft.com/en-us/library/gg597391.aspx) is a feature first introduced with .NET 4 that enables you to build assemblies that can work without modification on different Microsoft platforms, from versions of the.NET Framework to Silverlight to Windows Phone and even Xbox 360 (though at this time, NuGet does not support the Xbox portable library target).  By extending the [package conventions](../create-packages/supporting-multiple-target-frameworks.md) for framework versions and profiles, NuGet 2.1 now supports portable libraries by enabling you to create packages that have compound framework and profile target lib folders.
+[Portable libraries](http://msdn.microsoft.com/library/gg597391.aspx) is a feature first introduced with .NET 4 that enables you to build assemblies that can work without modification on different Microsoft platforms, from versions of the.NET Framework to Silverlight to Windows Phone and even Xbox 360 (though at this time, NuGet does not support the Xbox portable library target).  By extending the [package conventions](../create-packages/supporting-multiple-target-frameworks.md) for framework versions and profiles, NuGet 2.1 now supports portable libraries by enabling you to create packages that have compound framework and profile target `lib` folders.
 
 As an example, consider the following portable class library’s available target platforms.
 
 ![Portable library creation dialog](./media/releasenotes-21-plib.png)
 
-After the library is built and the command ‘nuget.exe pack MyPortableProject.csproj’ is run, the new portable library package folder structure can be seen by examining the contents of the generated NuGet package.
+After the library is built and the command `nuget.exe pack MyPortableProject.csproj` is run, the new portable library package folder structure can be seen by examining the contents of the generated NuGet package.
 
 ![Portable library package layout](./media/releasenotes-21-plib-layout.png)
 

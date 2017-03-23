@@ -41,7 +41,7 @@ The NuGet team released an updated NuGet Package Manager extension for WebMatrix
 
 ## Notable Changes
 
-This extension update addresses two of the biggest issues users have faced consuming NuGet packages within WebMatrix.  The first was a NuGet schema version error and the second was a bug leading to zero-byte DLLs in the bin folder.
+This extension update addresses two of the biggest issues users have faced consuming NuGet packages within WebMatrix.  The first was a NuGet schema version error and the second was a bug leading to zero-byte DLLs in the `bin` folder.
 
 ### NuGet Schema Version Error
 
@@ -53,7 +53,7 @@ This latest release provides compatibility with the newest NuGet packages, preve
 
 ### Zero-Byte DLLs in bin Folder
 
-Some users have reported that after installing NuGet packages in WebMatrix that include DLLs that get copied to bin, that the DLLs show up in the bin folder as 0-byte files.  This breaks the application at runtime.
+Some users have reported that after installing NuGet packages in WebMatrix that include DLLs that get copied to bin, that the DLLs show up in the `bin` folder as 0-byte files.  This breaks the application at runtime.
 
 [This issue](https://nuget.codeplex.com/workitem/4060) has now been fixed.
 

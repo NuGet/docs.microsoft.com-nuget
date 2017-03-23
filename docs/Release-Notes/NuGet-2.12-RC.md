@@ -36,7 +36,7 @@ NuGet 2.12-RC was released June 22, 2016 as an update to the 2.12.0-rc VSIX for 
 ### Updates in this release
 
 * Full NetStandard  and NetCoreApp support for VS2013.
-* Adding include/exclude to nuspec dependency entries.
+* Adding include/exclude to `.nuspec` dependency entries.
 * Add support for "no_proxy" to specify proxy exceptions.
 * TFS related fixes.
 

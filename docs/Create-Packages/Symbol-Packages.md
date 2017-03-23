@@ -41,7 +41,7 @@ To create a symbol package, follow these conventions:
 - Name the primary package (with your code) `{identifier}.nupkg` and include all your files except `.pdb` files.
 - Name the symbol package `{identifier}.symbols.nupkg` and include your assembly DLL, `.pdb` files, XMLDOC files, source files (see the sections that follow).
 
-You can create both packages with the `-Symbols` option, either from a nuspec file or a project file:
+You can create both packages with the `-Symbols` option, either from a `.nuspec` file or a project file:
 
 ```bash
 nuget pack MyPackage.nuspec -Symbols

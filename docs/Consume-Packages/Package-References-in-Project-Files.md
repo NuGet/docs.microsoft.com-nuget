@@ -146,13 +146,13 @@ In the following example, everything except the content files from the package w
 </ItemGroup>
 ```
 
-Note that because `build` is not included with `PrivateAsset`, targets and props *will* flow to the parent project. Consider, for example, that the reference above is used in a project that builds a NuGet package called AppLogger. AppLogger can consume the targets and props from Contoso.Utility.UsefulStuff, as can projects that consume AppLogger.
+Note that because `build` is not included with `PrivateAsset`, targets and props *will* flow to the parent project. Consider, for example, that the reference above is used in a project that builds a NuGet package called AppLogger. AppLogger can consume the targets and props from `Contoso.Utility.UsefulStuff`, as can projects that consume AppLogger.
 
 ## Adding a PackageReference condition
 
 You can use a condition to control whether a package is included, where conditions can use any MSBuild variable or a variable defined in the targets or props file.
 
-For example, say you're targeting `netstandard1.4` as well as `net452` but have a dependency that is applicable only for `net452`. In this case you don't want a `nestandard1.4` project that's consuming your package to add that unnecessary dependency. To prevent this, you specify a condition on the `PackageReference` as follows:
+For example, say you're targeting `netstandard1.4` as well as `net452` but have a dependency that is applicable only for `net452`. In this case you don't want a `netstandard1.4` project that's consuming your package to add that unnecessary dependency. To prevent this, you specify a condition on the `PackageReference` as follows:
 
 ```xml
 <ItemGroup>

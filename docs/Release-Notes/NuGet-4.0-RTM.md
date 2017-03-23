@@ -30,7 +30,7 @@ ms.reviewer:
 
 # 4.0 RTM Release Notes
 
-[Visual Studio 2017](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes) comes with NuGet 4.0 which adds support for .NET Core, has a bunch of quality fixes and improves performance. This release also brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restores, and more.
+[Visual Studio 2017](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.0 which adds support for .NET Core, has a bunch of quality fixes and improves performance. This release also brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restores, and more.
 
 ## Known issues
 
@@ -47,7 +47,7 @@ Fix the casings or relative paths to be the same for all project references.
 Occasionally, the enter key does not work in the Package Manager Console. If you see this, please check out the progress on the fix, and provide any additional helpful information about your repro steps. [NuGet#4204](https://github.com/NuGet/Home/issues/4204) [NuGet#4570](https://github.com/NuGet/Home/issues/4570)
 
 #### Workaround:
-Restart Visual Studio and open the PMC before opening the solution. Alternatively, try deleting the project.lock.json and restoring again.
+Restart Visual Studio and open the PMC before opening the solution. Alternatively, try deleting the `project.lock.json` and restoring again.
 
 ### In .NET Core projects, you may end up in infinite restore loop when you use a package containing an assembly with an invalid signature
 #### Issue:
@@ -179,7 +179,7 @@ There is no workaround at this time.
 
 * Visual Studio deadlocks if you attempt to close a project before NuGet restore has finished - [#4257](https://github.com/NuGet/Home/issues/4257)
 
-* Issues with PackTask and packing NuSpec - [#4250](https://github.com/NuGet/Home/issues/4250)
+* Issues with PackTask and packing `.nuspec` - [#4250](https://github.com/NuGet/Home/issues/4250)
 
 * [vsfeedback] Cannot resolve nuget packages on new project (needs to restart visual studio) - [#4217](https://github.com/NuGet/Home/issues/4217)
 
@@ -187,9 +187,9 @@ There is no workaround at this time.
 
 * Nuget.Client should use CPS JoinableTaskFactory when interacting with CPS to prevent deadlocks - [#4185](https://github.com/NuGet/Home/issues/4185)
 
-* NuGet 3.5.0 not unpacking *.targets from package - [#4171](https://github.com/NuGet/Home/issues/4171)
+* NuGet 3.5.0 not unpacking `.targets` from package - [#4171](https://github.com/NuGet/Home/issues/4171)
 
-* dotnet pack does not support title in .csproj - [#4150](https://github.com/NuGet/Home/issues/4150)
+* dotnet pack does not support title in `.csproj` - [#4150](https://github.com/NuGet/Home/issues/4150)
 
 * Install-Package results in error dialog in VS2017 RC - [#4127](https://github.com/NuGet/Home/issues/4127)
 
@@ -205,7 +205,7 @@ There is no workaround at this time.
 
 * re-Publish Nuget.CommandLine 3.4.4 to Nuget.org - [#2931](https://github.com/NuGet/Home/issues/2931)
 
-* On Migrate, projects change from project.json to csproj --- restore fails - [#4297](https://github.com/NuGet/Home/issues/4297)
+* On Migrate, projects change from `project.json` to `.csproj` --- restore fails - [#4297](https://github.com/NuGet/Home/issues/4297)
 
 * Restore failing on newly created xunit Test project  - [#4296](https://github.com/NuGet/Home/issues/4296)
 
@@ -219,11 +219,11 @@ There is no workaround at this time.
 
 * vsfeedback: nuget manager ui for solution crashes when you select all projects - [#4191](https://github.com/NuGet/Home/issues/4191)
 
-* NuGet.exe msbuildpath fails when there is a trailing slash - [#4180](https://github.com/NuGet/Home/issues/4180)
+* nuget.exe msbuildpath fails when there is a trailing slash - [#4180](https://github.com/NuGet/Home/issues/4180)
 
 * vsfeedback: NuGet restore give several project reference warnings for LinqToTwitter project - [#4156](https://github.com/NuGet/Home/issues/4156)
 
-* Pack from csproj does not include the minClientVersion attribute  - [#4135](https://github.com/NuGet/Home/issues/4135)
+* Pack from `.csproj` does not include the minClientVersion attribute  - [#4135](https://github.com/NuGet/Home/issues/4135)
 
 * NuGet.Build.Tasks.Pack.dll shipped delay signed in VS2017 (d15rel 26014.00) - [#4122](https://github.com/NuGet/Home/issues/4122)
 
@@ -301,11 +301,11 @@ There is no workaround at this time.
 
 * Consolidate the two project events raised on project load - [#3759](https://github.com/NuGet/Home/issues/3759)
 
-* P2P libraries in project.assets.json file have incorrect Version - [#3748](https://github.com/NuGet/Home/issues/3748)
+* P2P libraries in `project.assets.json` file have incorrect Version - [#3748](https://github.com/NuGet/Home/issues/3748)
 
 * Restore crash due to unresponsive feed and unavailable package - [#3672](https://github.com/NuGet/Home/issues/3672)
 
-* NuGet.exe could hang on a large amount of msbuild error output - [#3572](https://github.com/NuGet/Home/issues/3572)
+* nuget.exe could hang on a large amount of MSBuild error output - [#3572](https://github.com/NuGet/Home/issues/3572)
 
 * Restore-on-build for Blend fails first time, succeeds second time (VS scenario fixed) - [#2121](https://github.com/NuGet/Home/issues/2121)
 
@@ -333,7 +333,7 @@ There is no workaround at this time.
 
 * Add UI for packaging mode - [#3921](https://github.com/NuGet/Home/issues/3921)
 
-* Legacy csproj needs NugetTargetMoniker and RuntimeIdentifiers set in proj/targets - [#3854](https://github.com/NuGet/Home/issues/3854)
+* Legacy `.csproj` needs NugetTargetMoniker and RuntimeIdentifiers set in proj/targets - [#3854](https://github.com/NuGet/Home/issues/3854)
 
 * Install package may overlap with auto-restore - [#3836](https://github.com/NuGet/Home/issues/3836)
 
@@ -353,17 +353,17 @@ There is no workaround at this time.
 
 * Correctly communicate PackageSpec.Version for any project dependencies (PackageRef) - [#3902](https://github.com/NuGet/Home/issues/3902)
 
-* support for removing references into csproj from commandline(s) - [#4101](https://github.com/NuGet/Home/issues/4101)
+* support for removing references into `.csproj` from commandline(s) - [#4101](https://github.com/NuGet/Home/issues/4101)
 
 * Support restore for PackageReference projects (normal and xplat) and Lightweight Solution Load - [#4003](https://github.com/NuGet/Home/issues/4003)
 
-* support for adding references into csproj from commandline(s) - [#3751](https://github.com/NuGet/Home/issues/3751)
+* support for adding references into `.csproj` from commandline(s) - [#3751](https://github.com/NuGet/Home/issues/3751)
 
-* Support NuGet restore for Lightweight Solution Load for Packages.Config or Project.Json - [#3711](https://github.com/NuGet/Home/issues/3711)
+* Support NuGet restore for Lightweight Solution Load for `packages.config` or `project.json` - [#3711](https://github.com/NuGet/Home/issues/3711)
 
 * contentFiles support in nuget generated targets file - [#3683](https://github.com/NuGet/Home/issues/3683)
 
-* Establish a Mono CI for NuGet.exe validation on Mac using msbuild - [#3646](https://github.com/NuGet/Home/issues/3646)
+* Establish a Mono CI for nuget.exe validation on Mac using MSBuild - [#3646](https://github.com/NuGet/Home/issues/3646)
 
 * Move NuGet off of v2 NuGet.Core dependencies - [#3645](https://github.com/NuGet/Home/issues/3645)
 

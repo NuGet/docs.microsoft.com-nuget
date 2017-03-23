@@ -132,15 +132,15 @@ A solution-level package (NuGet 3.x and later) is installed only once in a solut
 
 **Is it possible to install NuGet package without Internet connectivity?**
 
-Yes, see Scott Hanselman's Blog post [How to access NuGet when NuGet.org is down (or you're on a plane)](http://www.hanselman.com/blog/HowToAccessNuGetWhenNuGetorgIsDownOrYoureOnAPlane.aspx) (hanselman.com).
+Yes, see Scott Hanselman's Blog post [How to access NuGet when nuget.org is down (or you're on a plane)](http://www.hanselman.com/blog/HowToAccessNuGetWhenNuGetorgIsDownOrYoureOnAPlane.aspx) (hanselman.com).
 
 **How do I install packages in a different location from the default packages folder?**
 
-Set the [`repositoryPath`](../Schema/nuget-config-file.md#config-section) setting in `nuget.config` using `nuget config -set repositoryPath=&lt;path&gt;`.
+Set the [`repositoryPath`](../Schema/nuget-config-file.md#config-section) setting in `Nuget.Config` using `nuget config -set repositoryPath=<path>`.
 
 **How do I avoid checking in packages folder to source control?**
 
-Set the [`disableSourceControlIntegration`](../Schema/nuget-config-file.md#solution-section) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automatically.
+Set the [`disableSourceControlIntegration`](../Schema/nuget-config-file.md#solution-section) in `Nuget.Config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\Nuget.Config` file. Enabling package restore from Visual Studio creates this file automatically.
 
 **How do I turn off package restore?**
 
@@ -160,7 +160,7 @@ In most projects where separate projects live in separate folders, this is not a
 **I don't see nuget.org in my list of repositories, how do I get it back?**
 
 - Add `https://api.nuget.org/v3/index.json` to your list of sources, or
-- Delete the `%appdata%\.nuget\NuGet.config` and let NuGet re-create it.
+- Delete the `%appdata%\.nuget\NuGet.Config` and let NuGet re-create it.
 
 ## Managing packages on nuget.org
 

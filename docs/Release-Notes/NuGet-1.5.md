@@ -61,27 +61,27 @@ For example, if you add the following:
 </references>
 ```
 
-Then only the _xunit.dll_ and _xunit.extensions.dll_ will be referenced from the appropriate
-[framework/profile subdirectory](../schema/nuspec.md#explicit-assembly-references)
+Then only the `xunit.dll` and `xunit.extensions.dll` will be referenced from the appropriate
+[framework/profile subfolder](../schema/nuspec.md#explicit-assembly-references)
 of the `lib` folder even if there are other assemblies in the folder.
 
 If this element is omitted, then the usual behavior applies, which is to reference every assembly
-in the lib folder.
+in the `lib` folder.
 
 __What is this feature used for?__
 
 This feature supports design-time only assemblies. For example, when using Code Contracts, the
 contract assemblies need to be next to the runtime assemblies that they augment so that Visual
 Studio can find them, but the contract assemblies should not actually be referenced by the project
-and should not be copied into the bin folder.
+and should not be copied into the `bin` folder.
 
 Likewise, the feature can be used to for unit test frameworks such as XUnit which need its tools
 assemblies to be located next to the runtime assemblies, but excluded from project references.
 
-### Added ability to exclude files in the NuSpec
-The `<file>` element within a NuSpec file can be used to include a specific file or a set of files
+### Added ability to exclude files in the .nuspec
+The `<file>` element within a `.nuspec` file can be used to include a specific file or a set of files
 using a wildcard. When using a wildcard, there's no way to exclude a specific subset of the included
-files. For example, suppose you want all text files within a directory except a specific one.
+files. For example, suppose you want all text files within a folder except a specific one.
 
 ```xml
 <files>
@@ -129,8 +129,8 @@ that require basic or NTLM authentication.
 
 Support for Digest authentication will be added in a future release.
 
-### Performance improvements to the NuGet.org repository
-We've made several performance improvements to the NuGet.org gallery to make package listing
+### Performance improvements to the nuget.org repository
+We've made several performance improvements to the nuget.org gallery to make package listing
 and searching faster.
 
 ### Solution dialog project filtering
@@ -147,8 +147,8 @@ first release.
 To add release notes to a package, use the new `<releaseNotes />` metadata element in your
 NuSpec file.
 
-### NuSpec `<files />` improvement
-The .nuspec file now allows empty &lt;files /&gt; element, which tells nuget.exe
+### .nuspec &ltfiles /&gt; improvement
+The `.nuspec` file now allows empty `<files />` element, which tells nuget.exe
 not to include any file in the package.
 
 ## Bug Fixes
@@ -158,9 +158,9 @@ For a full list of work items fixed in NuGet 1.5, please view the [NuGet Issue T
 
 ## Bug fixes worth noting:
 
-* [Issue 1273](http://nuget.codeplex.com/workitem/1273): Made packages.config more version control
+* [Issue 1273](http://nuget.codeplex.com/workitem/1273): Made `packages.config` more version control
 friendly by sorting packages alphabetically and removing extra whitespace.
 * [Issue 844](http://nuget.codeplex.com/workitem/844): Version numbers are now normalized so that
 `Install-Package 1.0` works on a package with the version `1.0.0`.
-* [Issue 1060](http://nuget.codeplex.com/workitem/1060): When creating a package using NuGet.exe,
+* [Issue 1060](http://nuget.codeplex.com/workitem/1060): When creating a package using nuget.exe,
 the `-Version` flag overrides the `<version />` element.

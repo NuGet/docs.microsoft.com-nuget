@@ -77,7 +77,7 @@ Though NuGet 2.8 changes the _default_ behavior for resolving dependencies, it a
 
 ## DependencyVersion Attribute
 
-In addition to the -DependencyVersion switch detailed above, NuGet has also allowed for the ability to set a new attribute in the nuget.config file defining what the default value is, if the -DependencyVersion switch is not specified in an invocation of install-package. This value will also be respected by the NuGet Package Manager Dialog for any install package operations. To set this value, add the attribute below to your nuget.config file:
+In addition to the -DependencyVersion switch detailed above, NuGet has also allowed for the ability to set a new attribute in the Nuget.Config file defining what the default value is, if the -DependencyVersion switch is not specified in an invocation of install-package. This value will also be respected by the NuGet Package Manager Dialog for any install package operations. To set this value, add the attribute below to your Nuget.Config file:
 
     <config>
         <add key="dependencyversion" value="Highest" />
@@ -104,11 +104,11 @@ It is not uncommon to install a prerelease version of a package in order to inve
 
 ## Development Dependencies
 
-Many different types of capabilities can be delivered as NuGet packages - including tools that are used for optimizing the development process. These components, while they can be instrumental in developing a new package, should not be considered a dependency of the new package when it is later published. NuGet 2.8 enables a package to identify itself in the .nuspec file as a developmentDependency. When installed, this metadata will also be added to the packages.config file of the project into which the package was installed. When that packages.config file is later analyzed for NuGet dependencies during `nuget.exe pack`, it will exclude those dependences marked as development dependencies.
+Many different types of capabilities can be delivered as NuGet packages - including tools that are used for optimizing the development process. These components, while they can be instrumental in developing a new package, should not be considered a dependency of the new package when it is later published. NuGet 2.8 enables a package to identify itself in the `.nuspec` file as a developmentDependency. When installed, this metadata will also be added to the `packages.config` file of the project into which the package was installed. When that `packages.config` file is later analyzed for NuGet dependencies during `nuget.exe pack`, it will exclude those dependencies marked as development dependencies.
 
 ## Individual packages.config Files for Different Platforms
 
-When developing applications for multiple target platforms, it is common to have different project files for each of the respective build environments. It is also common to consume different NuGet packages in different project files, as packages have varying levels of support for different platforms. NuGet 2.8 provides improved support for this scenario by creating different packages.config files for different platform-specific project files.
+When developing applications for multiple target platforms, it is common to have different project files for each of the respective build environments. It is also common to consume different NuGet packages in different project files, as packages have varying levels of support for different platforms. NuGet 2.8 provides improved support for this scenario by creating different `packages.config` files for different platform-specific project files.
 
 ![Multiple package.config files](./media/NuGet-2.8/multiple-packageconfigs.png)
 

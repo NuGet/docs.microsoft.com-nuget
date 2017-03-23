@@ -15,7 +15,7 @@ ms.assetid: 2342aabd-983e-4db1-9230-57c84fa36969
 # optional metadata
 
 description: Detailed instructions for how to publish a NuGet package to nuget.org or private feeds, and how to manage package ownership on nuget.org.
-keywords: NuGet package publishing, publish NuGet package, NuGet package ownership, publish to NuGet.org, private NuGet feeds
+keywords: NuGet package publishing, publish NuGet package, NuGet package ownership, publish to nuget.org, private NuGet feeds
 #ROBOTS:
 #audience:
 #ms.devlang:

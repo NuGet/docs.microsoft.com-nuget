@@ -35,7 +35,7 @@ NuGet 2.9 was released September 10, 2015 as an update to the 2.8.7 VSIX for Vis
 
 ### Updates in this release
 
-* Now skipping processing packages if their contained *.nuspec document is malformed - [PR8](https://github.com/NuGet/NuGet2/pull/8)
+* Now skipping processing packages if their contained `.nuspec` document is malformed - [PR8](https://github.com/NuGet/NuGet2/pull/8)
 * Corrected multipartwebrequest handling of \r\n for Unix/Linux scenarios - [776](https://github.com/NuGet/Home/issues/776)
 * Corrected integration with build events in Visual Studio 2013 Community edition - [1180](https://github.com/NuGet/Home/issues/1180)
 

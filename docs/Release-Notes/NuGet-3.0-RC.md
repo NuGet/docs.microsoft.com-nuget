@@ -43,7 +43,7 @@ In order to stabilize the NuGet clients, we resolved many issues as part of this
 
 * As part of the rename of the K framework for ASP.NET 5, framework monikers have been updated to handle dnx and dnxcore [link](https://github.com/NuGet/Home/issues/215)
 * Added help documentation from links in the Visual Studio UI [link](https://github.com/NuGet/Home/issues/232)
-* Better handling of complex references in NuSpec with comma-delimited framework references [link](https://github.com/NuGet/Home/issues/276)
+* Better handling of complex references in `.nuspec` with comma-delimited framework references [link](https://github.com/NuGet/Home/issues/276)
 * Fixed support for Japanese cultures [link](https://github.com/NuGet/Home/issues/253)
 * Updated client to allow ASP.NET 5 projects to use new v3 endpoints [link](https://github.com/NuGet/Home/issues/219)
 * Updated to better handle packages folder with source control [link](https://github.com/NuGet/Home/issues/56)

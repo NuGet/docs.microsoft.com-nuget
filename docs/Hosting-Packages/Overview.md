@@ -40,11 +40,11 @@ For all such purposes, NuGet supports setting up a private package source in the
 
 There are also several other NuGet hosting products that support remote private feeds, including the following:
 
-- [Package Management](https://www.visualstudio.com/en-us/docs/package/overview) from [VS Team Services](https://www.visualstudio.com/team-services/) and [TFS](https://www.visualstudio.com/tfs/)
+- [Package Management](https://www.visualstudio.com/docs/package/overview) from [VS Team Services](https://www.visualstudio.com/team-services/) and [TFS](https://www.visualstudio.com/tfs/)
 - [MyGet](http://myget.org)
 - [ProGet](http://inedo.com/proget) from Inedo
 - [NuGet Server](http://nugetserver.net/), a community project from Inedo
 - [Artifactory](https://www.jfrog.com/artifactory/) from JFrog.
 - [Nexus](http://www.sonatype.org/nexus/) from Sonatype.
 
-Regardless of how packages are hosted, you access them by adding them to the list of available sources in `NuGet.config`. This can be done in Visual Studio as described in [Package Sources](../tools/package-manager-ui.md#package-sources), or from the command line using [`nuget sources`](../tools/nuget-exe-cli-reference.md#sources). The path to a source can be anything from a local directory to a network name to an Internet URL.
+Regardless of how packages are hosted, you access them by adding them to the list of available sources in `NuGet.Config`. This can be done in Visual Studio as described in [Package Sources](../tools/package-manager-ui.md#package-sources), or from the command line using [`nuget sources`](../tools/nuget-exe-cli-reference.md#sources). The path to a source can be anything from a local folder to a network name to an Internet URL.

@@ -228,7 +228,7 @@ NuGet 2.7 and earlier will give an error saying that a newer version is already 
 
 |     |     |
 | --- | --- |
-Id | Specifies the package ID of the package to install. With NuGet 3.0+, the ID can be a path or URL of a packages.config file or a .nupkg file. The -Id switch itself is optional.
+Id | Specifies the package ID of the package to install. With NuGet 3.0+, the ID can be a path or URL of a `packages.config` file or a `.nupkg` file. The -Id switch itself is optional.
 Version | Specifies the version of the package to install, defaulting to the latest version.
 IgnoreDependencies | Installs only this package and not its dependencies.
 ProjectName | Specifies the project into which to install the package, defaulting to the default project.
@@ -240,7 +240,7 @@ DependencyVersion | Specifies the version of the dependency packages to use, whi
 | | - HighestPatch: the version with the lowest major, lowest minor, highest patch
 | | - HighestMinor: the version with the lowest major, highest minor, highest patch
 | | - Highest: the highest version
-| | You can set the default value using the [*dependencyVersion*](../Schema/nuget-config-file.md#config-section) setting in the nuget.config file.
+| | You can set the default value using the [`dependencyVersion`](../Schema/nuget-config-file.md#config-section) setting in the Nuget.Config file.
 WhatIf | Shows what would happen when running the command without actually performing the install.
 
 ### Examples
@@ -332,7 +332,7 @@ DependencyVersion | Specifies the version of the dependency packages to use, whi
 | | -HighestPatch: the version with the lowest major, lowest minor, highest patch
 | | -HighestMinor: the version with the lowest major, highest minor, highest patch
 | | -Highest: the highest version
-| | You can set the default value using the [*dependencyVersion*](../Schema/nuget-config-file.md#config-section) setting in the nuget.config file.
+| | You can set the default value using the [*dependencyVersion*](../Schema/nuget-config-file.md#config-section) setting in the Nuget.Config file.
 WhatIf | Shows what would happen when running the command without actually performing the sync.
 
 ### Examples
@@ -424,7 +424,7 @@ DependencyVersion | Specifies the version of the dependency packages to use, whi
 | | -HighestPatch: the version with the lowest major, lowest minor, highest patch
 | | -HighestMinor: the version with the lowest major, highest minor, highest patch
 | | -Highest (default for Update-Package with no parameters): the highest version
-| | You can set the default value using the [*dependencyVersion*](../Schema/nuget-config-file.md#config-section) setting in the nuget.config file.
+| | You can set the default value using the [*dependencyVersion*](../Schema/nuget-config-file.md#config-section) setting in the Nuget.Config file.
 WhatIf | Shows what would happen when running the command without actually performing the update.
 
 ### Examples
