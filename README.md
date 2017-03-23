@@ -18,7 +18,7 @@ No contribution is too big or too small--
 1. Visit the page to edit on [docs.microsoft.com/nuget](docs.microsoft.com/nuget), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.    
 1. Edit the markdown:
     1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
-    1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file.md>`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
+    1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
     1. When using external links, especially to docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
 1. When you're done, enter a commit message below, and click **Propose file change**.
 1. Send a pull request for your change. We review PRs on a regular basis.'
@@ -132,9 +132,12 @@ You can also use one of the following callout tags on the first line that will c
 
 ### Links
 
-In general, always use the title of the target page as the link text rather than words like "see here" or "this documentation".
-
-Note that bare URLs are not automatically converted into links.
+- In general, always use the title of the target page as the link text rather than words like "see here" or "this documentation".
+- Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the trailing `.md`.
+- If you're linking to another topic in the same folder, then `../<folder>/` can be omitted.
+- When using anchors, always remember to include the `.md` before the `#`.
+- When using external links, especially to https://docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
+- Bare URLs are not automatically converted into links.
 
 ### Inline HTML
 
