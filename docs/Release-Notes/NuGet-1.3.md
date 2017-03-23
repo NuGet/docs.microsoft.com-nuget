@@ -85,15 +85,15 @@ the Package Manager Settings dialog:
 Other performance improvements include adding support for HTTP compression and improving the package
 installation speed within Visual Studio.
 
-### Visual Studio and NuGet.exe uses the same list of package sources
+### Visual Studio and nuget.exe uses the same list of package sources
 
-Prior to NuGet 1.3, the list of package sources used by NuGet.exe and the NuGet Visual Studio Add-In
+Prior to NuGet 1.3, the list of package sources used by nuget.exe and the NuGet Visual Studio Add-In
 were not stored in the same place. NuGet 1.3 now uses the same list in both places. The list is stored
-in NuGet.config and stored in the AppData folder.
+in `NuGet.Config` and stored in the AppData folder.
 
-### NuGet.exe Ignores Files and Folders that start with '.' by default
+### nuget.exe Ignores Files and Folders that start with '.' by default
 
-In order to make NuGet work well with source control systems such Subversion and Mercurial, NuGet.exe
+In order to make NuGet work well with source control systems such Subversion and Mercurial, nuget.exe
 ignores folders and files that start with the '.' character when creating packages. This can be overridden
 using two new flags:
 

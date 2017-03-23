@@ -46,7 +46,7 @@ The NuGet client determines which packages are compatible with your project type
 |Capability|Description|
 |----------------|-----------|
 |AssemblyReferences|Indicates that the project supports assembly references (distinct from WinRTReferences)|
-|DeclaredSourceItems|Indicates that the project is a typical MSBuild project (not DNX) in that it declares source items in the project itself (rather than a project.json file that assumes all files in the directory are part of a compilation).|
+|DeclaredSourceItems|Indicates that the project is a typical MSBuild project (not DNX) in that it declares source items in the project itself (rather than a `project.json` file that assumes all files in the folder are part of a compilation).|
 |UserSourceItems|Indicates that the user is allowed to add arbitrary files to their project.|
 
 For CPS-based project systems, the implementation details for project capabilities described in the rest of this section have been done for you. See [declaring project capabilities in CPS projects](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md#how-to-declare-project-capabilities-in-your-project).

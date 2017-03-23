@@ -32,7 +32,7 @@ ms.reviewer:
 
 *Applies to NuGet 4.x+ and MSBuild 15.1+ as provided with Visual Studio 2017. See [Create .NET Standard Packages with Visual Studio 2015](../guides/create-net-standard-packages-vs2015.md) for working with NuGet 3.x+*
 
-The [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code.
+The [.NET Standard Library](https://docs.microsoft.com/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code.
 
 This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4 with Visual Studio 2017 and NuGet 4.0.
 
@@ -111,9 +111,8 @@ Opening this file in a tool like the [NuGet Package Explorer](https://github.com
 
 ![NuGet Package Explorer showing the AppLogger package](media/NuGet4-03-PackageExplorer.png)
 
-
-> [!Note]
-> A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org.
+> [!Tip]
+> A `.nupkg` file is just a ZIP file with a different extension. You can also examine package contents, then, by changing `.nupkg` to `.zip`, but remember to restore the extension before uploading a package to nuget.org.
 
 To make your package available to other developers,  follow the instructions on [Publish a package](../create-packages/publish-a-package.md).
 
@@ -121,5 +120,5 @@ To make your package available to other developers,  follow the instructions on 
 
 - [Package References in Project Files](../consume-packages/package-references-in-project-files.md)
 - [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md)
-- [.NET Standard Library documentation](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
-- [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/en-us/dotnet/articles/core/porting/index)
+- [.NET Standard Library documentation](https://docs.microsoft.com/dotnet/articles/standard/library)
+- [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/dotnet/articles/core/porting/index)

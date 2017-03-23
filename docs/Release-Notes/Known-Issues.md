@@ -32,7 +32,7 @@ ms.reviewer:
 
 These are the most common known issues with NuGet that are repeatedly reported. If you are having trouble installing NuGet or managing packages, please take a look through these known issues and their resolutions.
 
-[!Note] For known issues with NuGet 4.0, please refer to [NuGet 4.0 RTM release notes](https://docs.microsoft.com/en-us/nuget/release-notes/nuget-4.0-rtm)
+[!Note] For known issues with NuGet 4.0, please refer to [NuGet 4.0 RTM release notes](https://docs.microsoft.com/nuget/release-notes/nuget-4.0-rtm)
 
 ## Authentication issues with NuGet feeds in VSTS with nuget.exe v3.4.3
 
@@ -56,7 +56,7 @@ In NuGet 3.4 and 3.4.1, when using the NuGet add-in, no sources are reported as 
 
 ![NuGet config with no sources](./media/knownIssue-34-NoSources.PNG)
 
-The NuGet.config file in your `%AppData%\NuGet\` folder has accidentally been emptied. To fix this: Close Visual Studio 2015, delete the NuGet.config file in the `%AppData%\NuGet\` folder and restart Visual Studio.  A new NuGet.Config file will be generated and you will be able to proceed.
+The `NuGet.Config` file in your `%AppData%\NuGet\` folder has accidentally been emptied. To fix this: Close Visual Studio 2015, delete the `NuGet.Config` file in the `%AppData%\NuGet\` folder and restart Visual Studio.  A new `NuGet.Config` file will be generated and you will be able to proceed.
 
 ## Error installing packages with NuGet 2.7
 
@@ -79,11 +79,11 @@ install-package log4net
 ```
 
 
-This is caused by the type library for the VSLangProj.dll COM component being unregistered on your system. This can happen, for example, when you have two versions of Visual Studio installed side-by-side and you then uninstall the older version. Doing so may inadvertently unregister the above COM library.
+This is caused by the type library for the `VSLangProj.dll` COM component being unregistered on your system. This can happen, for example, when you have two versions of Visual Studio installed side-by-side and you then uninstall the older version. Doing so may inadvertently unregister the above COM library.
 
 **Solution:**:
 
-Run this command from an **elevated prompt** to re-register the type library for VSLangProj.dll
+Run this command from an **elevated prompt** to re-register the type library for `VSLangProj.dll`
 
     regsvr32 "C:\Program Files (x86)\Common Files\microsoft shared\MSEnv\VsLangproj.olb"
 
@@ -93,12 +93,12 @@ For more information about this error, see this [work item](https://nuget.codepl
 
 ## Package Restore Consent Errors with NuGet 2.7
 
-If you are using NuGet 2.7+, but you are working in a solution that had enabled package restore through the MSBuild-integrated approach, it's possible that package restore will still fail due to a lack of package restore consent. This happens when the version of `NuGet.exe` in your solution's `.nuget` folder is version 2.6 or earlier, where package restore consent was still OFF by default.
+If you are using NuGet 2.7+, but you are working in a solution that had enabled package restore through the MSBuild-integrated approach, it's possible that package restore will still fail due to a lack of package restore consent. This happens when the version of `nuget.exe` in your solution's `.nuget` folder is version 2.6 or earlier, where package restore consent was still OFF by default.
 
 If you have upgraded to NuGet 2.7+ but your solution fails to build stating that you haven't given consent, you have a few options for proceeding:
 
-1. **Force save your NuGet settings with consent given.** To do this, open Visual Studio's options and under Package Manager, choose General. Uncheck and then re-check the boxes for consent and click OK. This forces your `%AppData%\NuGet\NuGet.config` file to be saved with consent explicitly given, allowing NuGet 2.6 and earlier to see that you've given consent.
-1. **Update the version of `NuGet.exe` in your `.nuget` folder.** To do this, run `nuget.exe update -self` from your `.nuget` folder, which will download the latest version of `NuGet.exe` and replace the version in the `.nuget` folder. The latest version of `NuGet.exe` will infer consent to be ON even when not explicitly saved in the `NuGet.config` file.
+1. **Force save your NuGet settings with consent given.** To do this, open Visual Studio's options and under Package Manager, choose General. Uncheck and then re-check the boxes for consent and click OK. This forces your `%AppData%\NuGet\NuGet.Config` file to be saved with consent explicitly given, allowing NuGet 2.6 and earlier to see that you've given consent.
+1. **Update the version of `nuget.exe` in your `.nuget` folder.** To do this, run `nuget.exe update -self` from your `.nuget` folder, which will download the latest version of `nuget.exe` and replace the version in the `.nuget` folder. The latest version of `nuget.exe` will infer consent to be ON even when not explicitly saved in the `NuGet.Config` file.
 1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](../consume-packages/package-restore.md#migrating-to-automatic-restore).
 
 ## Build failure after package update in VS 2012
@@ -110,7 +110,7 @@ The cause is that certain files in the old packages are locked by a background M
 Even after VS restart, the background MSBuild process still uses the files in the old packages,
 causing the build failures.
 
-The fix is to install VS 2012 Update, e.g. [VS 2012 Update 2](http://www.microsoft.com/en-us/download/details.aspx?id=38188).
+The fix is to install VS 2012 Update, e.g. [VS 2012 Update 2](http://www.microsoft.com/download/details.aspx?id=38188).
 
 ## Upgrading to latest NuGet from an older version causes a signature verification error
 
@@ -143,7 +143,7 @@ or
     System.Management.Automation.CmdletInvocationException: Could not load file or assembly 'Scripts\nuget.psm1' or one of its dependencies. <br />The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) ---&gt; System.IO.FileLoadException: Could not load file or <br />assembly 'Scripts\nuget.psm1' or one of its dependencies. The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) <br />---&gt; System.ArgumentException: Illegal characters in path.
        at System.IO.Path.CheckInvalidPathChars(String path)
        at System.IO.Path.Combine(String path1, String path2)
-       at Microsoft.VisualStudio.Platform.VsAppDomainManager.&lt;AssemblyPaths&gt;d__1.MoveNext()
+       at Microsoft.VisualStudio.Platform.VsAppDomainManager.<AssemblyPaths>d__1.MoveNext()
        at Microsoft.VisualStudio.Platform.VsAppDomainManager.InnerResolveHandler(String name)
        at Microsoft.VisualStudio.Platform.VsAppDomainManager.ResolveHandler(Object sender, ResolveEventArgs args)
        at System.AppDomain.OnAssemblyResolveEvent(RuntimeAssembly assembly, String assemblyFullName)

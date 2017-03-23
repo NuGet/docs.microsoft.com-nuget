@@ -41,7 +41,7 @@ Issues and features in this release are tagged on GitHub with the ["3.1 RTM UWP 
 
 ### New Features
 
-* Project.json support for Windows UWP and ASP.NET 5 support
+* `project.json` support for Windows UWP and ASP.NET 5 support
 * Transitive package installation
 
 Description and definition of these features can be found elsewhere in the documentation.
@@ -52,9 +52,9 @@ The following features are no longer available for Visual Studio 2015:
 
 * Solution level packages can no longer be installed
 
-The following features are no longer available for Visual Studio 2015 and projects that use the project.json specification
+The following features are no longer available for Visual Studio 2015 and projects that use the `project.json` specification
 
-* install.ps1/ uninstall.ps1 - These scripts will be ignored during package install, restore, update, and uninstall
+* `install.ps1` and `uninstall.ps1` - These scripts will be ignored during package install, restore, update, and uninstall
 * Configuration transforms will be ignored
 * Content will be carried, but not copied into a project.
     * The team is working to re-implement this feature, follow the discussion and progress at: [https://github.com/NuGet/Home/issues/627](https://github.com/NuGet/Home/issues/627)
@@ -76,8 +76,8 @@ The new distributable location resides on the dist.nuget.org host, with a folder
 
 ### New Features
 
-* NuGet.exe can restore and install packages into projects that use a project.json file.
-* NuGet.exe can connect to and consume the NuGet v3 protocol at: [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json)
+* nuget.exe can restore and install packages into projects that use a `project.json` file.
+* nuget.exe can connect to and consume the NuGet v3 protocol at: [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json)
 
 ## Known Issues ##
 

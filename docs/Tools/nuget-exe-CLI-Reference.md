@@ -41,16 +41,16 @@ Command | Description | NuGet Version
 [delete](#delete) | Removes or unlists a package from a package source. | All
 [help or ?](#help) | Displays help information or help for a command. | All
 [init](#init) | Adds packages from a folder to a package source using hierarchical layout. | 3.3+
-[install](#install) | Installs a package into the current project but does not modify the project or packages.config. | All
+[install](#install) | Installs a package into the current project but does not modify the project or `packages.config`. | All
 [list](#list) | Displays packages from a given source. | All
 [locals](#locals) | Clears or lists packages in various caches or the global packages folder, or identifies those folders. | 3.3+
 [mirror](#mirror) | Mirrors a package and its dependencies from a source to a target repository. | Deprecated in 3.2+
-[pack](#pack) | Creates a NuGet package from a .nuspec or project file. | 2.7+
+[pack](#pack) | Creates a NuGet package from a `.nuspec` or project file. | 2.7+
 [push](#push) | Publishes a package to a package source. | All
-[restore](#restore) | Restores all packages referenced by packages.config or project.json. | 2.7+
+[restore](#restore) | Restores all packages referenced by `packages.config` or `project.json`. | 2.7+
 [setapikey](#setapikey) | Saves an API key for a given package source. | All
 [sources](#sources) | Manages package sources in configuration files. | All
-[spec](#spec) | Generates a .nuspec file, using tokens if generating the file from a Visual Studio project. | All
+[spec](#spec) | Generates a `.nuspec` file, using tokens if generating the file from a Visual Studio project. | All
 [update](#update) | Updates a project's packages to the latest available versions. | All
 
 
@@ -115,7 +115,7 @@ In NuGet 3.4+, &lt;value&gt; can be use environment variables.
 
 | | |
   --- | ---
-configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.config* is used.
+configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.Config* is used.
 help | Displays help information for the command.
 noninteractive | Suppresses prompts for user input or confirmations.
 verbosity | Specifies the amount of details displayed in the output: *normal*, *quiet*, *detailed (2.5+)*.
@@ -147,8 +147,8 @@ where &lt;packageID&gt; and &lt;packageVersion&gt; identify the exact package to
 
 |     |     |
 | --- | --- |
-apikey | The API key for the target repository. If not present,  the one specified in *%AppData%\NuGet\NuGet.config* is used.
-configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.config* is used.
+apikey | The API key for the target repository. If not present,  the one specified in *%AppData%\NuGet\NuGet.Config* is used.
+configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.Config* is used.
 help | Displays help information for the command.
 noninteractive | Suppresses prompts for user input or confirmations.
 source | Specifies the server URL. Supported URLs for nuget.org include *https://www.nuget.org, https://www.nuget.org/api/v3, https://www.nuget.org/api/v2/package*. For private feeds, substitute the host name, for example, *%hostname%/api/v3*.
@@ -254,7 +254,7 @@ where &lt;packageID&gt; names the package to install (using the latest version),
 
 |     |     |
 | --- | --- |
-configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.config* is used.
+configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.Config* is used.
 excludeversion | Excludes the version number from the installation folder.
 fileconflictaction | *(2.5+)* Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Values are *overwrite, ignore, none*.
 help | Displays help information for the command.
@@ -280,7 +280,7 @@ nuget install ninject -outputdirectory c:\proj
 
 ##  list
 
-Displays a list of packages from a given source. If no sources are specified, all sources defined in the global configuration file, `%AppData%\NuGet\NuGet.config`, are used. If `NuGet.config` specifies no sources, then `list` uses the default feed (nuget.org).
+Displays a list of packages from a given source. If no sources are specified, all sources defined in the global configuration file, `%AppData%\NuGet\NuGet.Config`, are used. If `NuGet.Config` specifies no sources, then `list` uses the default feed (nuget.org).
 
 ### Usage
 
@@ -294,7 +294,7 @@ where the optional search terms will filter the displayed list. Search terms are
 |     |     |
 | --- | --- |
 allversions | List all versions of a package. By default, only the latest package version is displayed.
-configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.config* is used.
+configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.Config* is used.
 help | Displays help information for the command.
 noninteractive | Suppresses prompts for user input or confirmations.
 prerelease | Includes prerelease packages in the list.
@@ -365,12 +365,12 @@ If your target repository is on https://machine/repo that's running [NuGet.Serve
 
 |     |     |
 | --- | --- |
-apikey | The API key for the target repository. If not present,  the one specified in *%AppData%\NuGet\NuGet.config* is used.
+apikey | The API key for the target repository. If not present,  the one specified in *%AppData%\NuGet\NuGet.Config* is used.
 help | Displays help information for the command.
 nocache | Prevents NuGet from using packages from local machine caches.
 noop | Logs what would be done but does not perform the actions; assumes success for push operations.
 prerelease | Includes prerelease packages in the mirroring operation.
-source | A list of package sources to mirror. If no sources are specified, the ones defined in *%AppData%\NuGet\NuGet.config* are used, defaulting to nuget.org if none are specified.
+source | A list of package sources to mirror. If no sources are specified, the ones defined in *%AppData%\NuGet\NuGet.Config* are used, defaulting to nuget.org if none are specified.
 timeout | Specifies the timeout, in seconds, for pushing to a server. The default is 300 seconds (5 minutes).
 version | The version of the package to install. If not specified, the latest version is mirrored.
 
@@ -388,9 +388,9 @@ nuget mirror Microsoft.Net.Http https://MyRepo/nuget https://MyRepo/api/v2/packa
 
 *Version 2.7+*
 
-Creates a NuGet package based on the specified nuspec or project file. Note that the `pack` command requires MSBuild and will not work on Linux systems. On Mac OS X, you need to have Mono 4.4.2 or later installed.
+Creates a NuGet package based on the specified `.nuspec` or project file. Note that the `pack` command requires MSBuild and will not work on Linux systems. On Mac OS X, you need to have Mono 4.4.2 or later installed.
 
-With Mono, you also need to adjust non-local paths in the .nuspec file to Unix-style paths, as nuget.exe will not itself convert Windows pathnames.
+With Mono, you also need to adjust non-local paths in the `.nuspec` file to Unix-style paths, as nuget.exe will not itself convert Windows pathnames.
 
 ### Usage
 
@@ -404,23 +404,23 @@ where &lt;nuspecPath&gt; and &lt;projectPath&gt; specify the `.nuspec` or projec
 
 |     |     |
 | --- | --- |
-basepath | Sets the base path of the files defined in the nuspec file.
+basepath | Sets the base path of the files defined in the `.nuspec` file.
 build | Specifies that the project should be built before building the package.
 exclude | Specifies one or more wildcard patterns to exclude when creating a package.
 excludeemptydirectories | Prevent inclusion of empty directories when building the package.
 help | Displays help information for the command.
-includereferencedprojects | Indicates that the built package should include referenced projects either as dependencies or as part of the package. If a referenced project has a corresponding nuspec file that has the same name as the project, then that referenced project is added as a dependency. Otherwise, the referenced project is added as part of the package.
-minclientversion | Set the *minClientVersion* attribute for the created package. This value will override the value of the existing *minClientVersion* attribute (if any) in the .nuspec file.
+includereferencedprojects | Indicates that the built package should include referenced projects either as dependencies or as part of the package. If a referenced project has a corresponding `.nuspec` file that has the same name as the project, then that referenced project is added as a dependency. Otherwise, the referenced project is added as part of the package.
+minclientversion | Set the *minClientVersion* attribute for the created package. This value will override the value of the existing *minClientVersion* attribute (if any) in the `.nuspec` file.
 msbuildversion | Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.
 nodefaultexcludes | Prevents default exclusion of NuGet package files and files and folders starting with a dot, such as *.svn*.
 nopackageanalysis | Specifies that pack should not run package analysis after building the package.
 outputdirectory | Specifies the folder in which the created package is stored. If no folder is specified, the current folder is used.
-properties | Specifies a list of token=value pairs, separated by semicolons, where each occurrence of $token$ in the nuspec file will be replaced with the given value. Values can be strings in quotation marks.
+properties | Specifies a list of token=value pairs, separated by semicolons, where each occurrence of $token$ in the `.nuspec` file will be replaced with the given value. Values can be strings in quotation marks.
 suffix | Appends a suffix to the internally generated version number, typically used for appending build or other pre-release identifiers. For example, using `-suffix nightly` will create a package with a version number like `1.2.3-nightly`. Suffixes must start with a letter to avoid warnings, errors, and potential incompatibilities with different versions of NuGet and the NuGet Package Manager.
-symbols | Specifies that the package contains sources and symbols. When used with a with a nuspec file, this creates a regular NuGet package file and the corresponding symbols package.
+symbols | Specifies that the package contains sources and symbols. When used with a with a `.nuspec` file, this creates a regular NuGet package file and the corresponding symbols package.
 tool | Specifies that the output files of the project should be placed in the tool folder.
 verbosity | Specifies the amount of details displayed in the output: *normal*, *quiet*, *detailed*.
-version | Overrides the version number from the nuspec file.
+version | Overrides the version number from the `.nuspec` file.
 
 ### Excluding development dependencies
 
@@ -465,7 +465,7 @@ nuget pack foo.nuspec -version 1.0.0 -minclientversion 2.5
 
 Pushes a package to a package source and publishes it.
 
-NuGet's default configuration is obtained by loading `%AppData%\NuGet\NuGet.config`, then loading any `nuget.config` or `.nuget\nuget.config` files starting from root of drive and ending in current directory (see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md))
+NuGet's default configuration is obtained by loading `%AppData%\NuGet\NuGet.Config`, then loading any `Nuget.Config` or `.nuget\Nuget.Config` files starting from root of drive and ending in current directory (see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md))
 
 ### Usage
 
@@ -479,11 +479,11 @@ where &lt;packagePath&gt; identifies the package to push to the server.
 
 |     |     |
 | --- | --- |
-apikey | The API key for the target repository. If not present,  the one specified in *%AppData%\NuGet\NuGet.config* is used.
-configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.config* is used.
+apikey | The API key for the target repository. If not present,  the one specified in *%AppData%\NuGet\NuGet.Config* is used.
+configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.Config* is used.
 help | Displays help information for the command.
 noninteractive | Suppresses prompts for user input or confirmations.
-source | Specifies the server URL. With NuGet 2.5+, NuGet will identify a UNC or local folder source and simply copy the file there instead of pushing it using HTTP.  Also, starting with NuGet 3.4.2, this is a mandatory parameter unless the NuGet.config file specifies a *DefaultPushSource* value.
+source | Specifies the server URL. With NuGet 2.5+, NuGet will identify a UNC or local folder source and simply copy the file there instead of pushing it using HTTP.  Also, starting with NuGet 3.4.2, this is a mandatory parameter unless the `NuGet.Config` file specifies a *DefaultPushSource* value.
 timeout | Specifies the timeout, in seconds, for pushing to a server. The default is 300 seconds (5 minutes).
 verbosity | Specifies the amount of details displayed in the output: *normal*, *quiet*, *detailed (2.5+)*.
 
@@ -524,13 +524,13 @@ NuGet 4.0+ with project in which package references are included in the project 
 nuget restore <projectPath> [options]
 ```
 
-where &lt;projectPath&gt; specifies the location of a solution, a `packages.config` file, or a `project.json` file. See [Remarks](#remarks) below for behavioral details.
+where `<projectPath>` specifies the location of a solution, a `packages.config` file, or a `project.json` file. See [Remarks](#remarks) below for behavioral details.
 
 ### Options
 
 |     |     |
 | --- | --- |
-configfile | The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.config* is used.
+configfile | The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.Config* is used.
 disableparallelprocessing | Disables parallel NuGet project restores and package downloads.
 help | Displays help information for the command.
 msbuildversion | Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.
@@ -549,19 +549,19 @@ The restore command is executed in the following steps:
 1. Determine the operation mode of the restore command.
     projectPath file type | Behavior
     | --- | --- |
-    Solution (folder) | NuGet looks for a .sln file and uses that if found; otherwise gives an error. $(SolutionDir)\.nuget is used as the starting folder.
-    .sln file | Restore packages identified by the solution; gives an error if -solutiondirectory is used. $(SolutionDir)\.nuget is used as the starting folder.
-    packages.config, project.json, or project file | Restore packages listed in the file, resolving and installing dependencies.
-    Other file type | File is assumed to be a .sln file as above; if it's not a solution, NuGet gives an error.
+    Solution (folder) | NuGet looks for a `.sln` file and uses that if found; otherwise gives an error. `(SolutionDir)\.nuget` is used as the starting folder.
+    `.sln` file | Restore packages identified by the solution; gives an error if `-solutiondirectory` is used. `$(SolutionDir)\.nuget` is used as the starting folder.
+    `packages.config`, `project.json`, or project file | Restore packages listed in the file, resolving and installing dependencies.
+    Other file type | File is assumed to be a `.sln` file as above; if it's not a solution, NuGet gives an error.
     (projectPath not specified) | - NuGet looks for solution files in the current folder. If a single file is found, that one is used to restore packages; if multiple solutions are found, NuGet gives an error.
-    |- If there are no solution files, NuGet looks for a packages.config or project.json and uses that to restore packages.
-    |- If no solution file, packages.config, or project.json is found, NuGet gives an error.
+    |- If there are no solution files, NuGet looks for a `packages.config` or `project.json` and uses that to restore packages.
+    |- If no solution file, `packages.config`, or `project.json` is found, NuGet gives an error.
 
 1. Determine the packages folder using the following priority order (NuGet gives an error if none of these folders are found):
 
     - The `%userprofile%\.nuget\packages` value in `project.json`.
     - The folder specified with `-packagesdirectory`.
-    - The `repositoryPath` vale in `nuget.config`
+    - The `repositoryPath` vale in `Nuget.Config`
     - The folder specified with `-solutiondirectory`
     - `$(SolutionDir)\packages`
 
@@ -597,13 +597,13 @@ Saves an API key for a given server URL into `NuGet.Config` so that it doesn't n
 nuget setapikey <key> -source <url> [options]
 ```
 
-where &lt;source&gt; identifies the server and &lt;key&gt; is the key or password to save. If &lt;source&gt; is omitted, nuget.org is assumed.
+where `<source>` identifies the server and `<key>` is the key or password to save. If &lt;source&gt; is omitted, nuget.org is assumed.
 
 ### Options
 
 |     |     |
 | --- | --- |
-configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.config* is used.
+configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.Config* is used.
 help | Displays help information for the command.
 noninteractive | Suppresses prompts for user input or confirmations.
 verbosity | Specifies the amount of details displayed in the output: *normal*, *quiet*, *detailed (2.5+)*.
@@ -618,7 +618,7 @@ nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -source https://example.com
 
 ## sources
 
-Manages the list of sources located in `%AppData%\NuGet\NuGet.config` or the specified configiration file.
+Manages the list of sources located in `%AppData%\NuGet\NuGet.Config` or the specified configuration file.
 
 ### Usage
 
@@ -633,7 +633,7 @@ where &lt;operation&gt; is one of *List, Add, Remove, Enable, Disable,* or *Upda
 
 |     |     |
 | --- | --- |
-configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.config* is used.
+configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.Config* is used.
 help | Displays help information for the command.
 noninteractive | Suppresses prompts for user input or confirmations.
 password | Specifies the password for authenticating with the source.
@@ -642,7 +642,7 @@ username | Specifies the user name for authenticating with the source.
 verbosity | Specifies the amount of details displayed in the output: *normal*, *quiet*, *detailed (2.5+)*.
 
 > [!Note]
-> Make sure to add the sources' password under the same user context as the NuGet.exe is later used to access the package source. The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted. So for example when you use a build server to restore NuGet packages the password must be encrypted with the same Windows user under which  the build server task will run.
+> Make sure to add the sources' password under the same user context as the nuget.exe is later used to access the package source. The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted. So for example when you use a build server to restore NuGet packages the password must be encrypted with the same Windows user under which  the build server task will run.
 
 
 ### Examples
@@ -672,8 +672,8 @@ where &lt;packageID&gt; is an optional package identifier to save in the `.nuspe
 |     |     |
 | --- | --- |
 assemblypath | Specifies the path to the assembly to use for metadata.
-configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.config* is used.
-force | Overwrites any existing .nuspec file.
+configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.Config* is used.
+force | Overwrites any existing `.nuspec` file.
 help | Displays help information for the command.
 noninteractive | Suppresses prompts for user input or confirmations.
 verbosity | Specifies the amount of details displayed in the output: *normal*, *quiet*, *detailed (2.5+)*.
@@ -710,7 +710,7 @@ where &lt;configPath&gt; identifies either a `packages.config` or solution file 
 
 |     |     |
 | --- | --- |
-configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.config* is used.
+configfile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.Config* is used.
 fileconflictaction | *(2.5+)* Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Values are *overwrite, ignore, none*.
 help | Displays help information for the command.
 id | Specifies a list of package IDs to update.

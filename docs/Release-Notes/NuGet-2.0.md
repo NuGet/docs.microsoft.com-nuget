@@ -51,7 +51,7 @@ As described in this [post on package restore consent](http://blog.nuget.org/201
 
 ## Group dependencies by target frameworks
 
-Starting with version 2.0, package dependencies can vary based on the framework profile of the target project. This is accomplished using an updated .nuspec schema. The `<dependencies>` element can now contain a set of `<group>` elements. Each group contains zero or more `<dependency>` elements and a `targetFramework` attribute. All dependencies inside a group are installed together if the target framework is compatible with the target project framework profile. For example:
+Starting with version 2.0, package dependencies can vary based on the framework profile of the target project. This is accomplished using an updated `.nuspec` schema. The `<dependencies>` element can now contain a set of `<group>` elements. Each group contains zero or more `<dependency>` elements and a `targetFramework` attribute. All dependencies inside a group are installed together if the target framework is compatible with the target project framework profile. For example:
 
 ```xml
 <dependencies>
@@ -108,7 +108,7 @@ In addition to assembly references, content files and PowerShell scripts can als
             \install.ps1
             \uninstall.ps1
 
-**Note**: Because **`init.ps1`** is executed at the solution level and is not dependent on any individual project, it must be placed directly under the `tools` folder. If placed within a framework-specific folder, it will be ignored.
+**Note**: Because `init.ps1` is executed at the solution level and is not dependent on any individual project, it must be placed directly under the `tools` folder. If placed within a framework-specific folder, it will be ignored.
 
 Also, a new feature in NuGet 2.0 is that a framework folder can be *empty*, in which case, NuGet will not add assembly references, add content files or run  PowerShell scripts for the particular framework version. In the example above, the folder `content\net40` is empty.
 

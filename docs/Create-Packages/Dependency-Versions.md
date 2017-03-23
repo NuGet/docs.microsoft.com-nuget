@@ -31,7 +31,7 @@ ms.reviewer:
 
 *For .NET Core projects using NuGet 4.0+, see [Package References in Project Files](../consume-packages/package-references-in-project-files.md) for declaring dependencies.*
 
-When you [create a NuGet package](../create-packages/creating-a-package.md), you can specify dependencies for your package in the **&lt;dependencies&gt;** node of the `.nuspec` file, where each dependency is listed with a **&lt;dependency&gt;** tag:
+When you [create a NuGet package](../create-packages/creating-a-package.md), you can specify dependencies for your package in the `<dependencies>` node of the `.nuspec` file, where each dependency is listed with a `<dependency>` tag:
 
 ```xml
   <?xml version="1.0"?>
@@ -55,7 +55,7 @@ Dependencies are installed whenever the dependent package is installed, [reinsta
 
 > **Best practice**
 >
-> Developers most commonly specify a minimum version, which is a version number without adornmants as shown above, like 6.1.0. This allows NuGet to install that version or later.
+> Developers most commonly specify a minimum version, which is a version number without adornments as shown above, like 6.1.0. This allows NuGet to install that version or later.
 
 
 For additional details on how dependencies are installed, see [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md) and [Dependency resolution](../consume-packages/dependency-resolution.md).

@@ -56,9 +56,9 @@ We have since released a hotfix that addresses this issue.  By updating NuGet th
 ### Satellite Packages for Localized Resources
 NuGet 1.8 now supports the ability to create separate packages for localized resources, similar to the satellite assembly capabilities of the .NET Framework.  A satellite package is created in the same way as any other NuGet package with the addition of a few conventions:
 
-* The satellite package ID and file name should include a suffix that matches one of the standard [culture strings used by the .NET Framework](http://msdn.microsoft.com/en-us/goglobal/bb896001.aspx).
-* In its .nuspec file, the satellite package should define a language element with the same culture string used in the ID
-* The satellite package should define a dependency in its .nuspec file to its core package, which is simply the package with the same ID minus the language suffix.  The core package needs to be available in the repository for successful installation.
+* The satellite package ID and file name should include a suffix that matches one of the standard [culture strings used by the .NET Framework](http://msdn.microsoft.com/goglobal/bb896001.aspx).
+* In its `.nuspec` file, the satellite package should define a language element with the same culture string used in the ID
+* The satellite package should define a dependency in its `.nuspec` file to its core package, which is simply the package with the same ID minus the language suffix.  The core package needs to be available in the repository for successful installation.
 
 To install a package with localized resources, a developer explicitly selects the localized package from the repository. At present, the NuGet gallery does not give any kind of special treatment to satellite packages.
 
@@ -72,7 +72,7 @@ Additionally, while installing the satellite package, NuGet also recognizes the 
 
 ![Core package folder with copied resource folder](./media/fldr-copied-loc.png)
 
-One existing bug to note with satellite packages is that NuGet does not copy localized resources to the bin folder for Web site projects.  This issue will be fixed in the next release of NuGet.
+One existing bug to note with satellite packages is that NuGet does not copy localized resources to the `bin` folder for Web site projects.  This issue will be fixed in the next release of NuGet.
 
 For a complete sample demonstrating how to create and use satellite packages, see [https://github.com/NuGet/SatellitePackageSample](https://github.com/NuGet/SatellitePackageSample).
 
@@ -89,7 +89,7 @@ Now, as stated above, we have only laid the groundwork for this feature in NuGet
 
 For more details, please see the [team blog post](http://blog.nuget.org/20120518/package-restore-and-consent.html) on this feature.
 
-### NuGet.exe Performance Improvements
+### nuget.exe Performance Improvements
 By modifying the install command to download and install packages in parallel, NuGet 1.8 brings dramatic performance improvements to nuget.exe – and by extension package restore.  High level testing shows that performance for installing 6 packages into a project improves by about 35% in NuGet 1.8.  Increasing the number of packages to 25 shows a performance gain of about 60%.
 
 ## Bug Fixes

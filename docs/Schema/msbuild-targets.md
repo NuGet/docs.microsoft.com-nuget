@@ -31,7 +31,7 @@ ms.reviewer:
 
 *NuGet 4.0+*
 
-NuGet 4.0+ can work directly with the information in a `.csproj` file without requring a separate `.nuspec` or `project.json` file. All the metadata that was previously stored in those configuration files can be instead stored in the `.csproj` file directly, as described here.
+NuGet 4.0+ can work directly with the information in a `.csproj` file without requiring a separate `.nuspec` or `project.json` file. All the metadata that was previously stored in those configuration files can be instead stored in the `.csproj` file directly, as described here.
 
 With MSBuild 15.1+, NuGet is also a first-class MSBuild citizen with the `pack` and `restore` targets as described below. These targets allow you to work with NuGet as you would with any other MSBuild task or target.
 
@@ -60,7 +60,7 @@ Similarly, you can write an MSBuild task, write your own target and consume NuGe
 
 ## pack target
 
-When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs from the `.csproj` file rather than `project.json` or `.nuspec` files. The table below describes the MSBuild properties that can be added to a `.csproj` file within the first &lt;PropertyGroup&gt; node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../schema/nuspec.md).
+When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs from the `.csproj` file rather than `project.json` or `.nuspec` files. The table below describes the MSBuild properties that can be added to a `.csproj` file within the first `<PropertyGroup>` node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../schema/nuspec.md).
 
 
 | Attribute/NuSpec Value | MSBuild Property | Default | Notes |
@@ -152,7 +152,7 @@ You can also add the following metadata to your project reference:
 
 ### Including content in a package
 
-To include content, add extra metadata to the existing &lt;Content&gt; item. By default everything of type "Content" gets included in the package unless you override with entries like the following:
+To include content, add extra metadata to the existing `<Content>` item. By default everything of type "Content" gets included in the package unless you override with entries like the following:
 
  ```xml
     <Content Include="..\win7-x64\libuv.txt">
@@ -160,7 +160,7 @@ To include content, add extra metadata to the existing &lt;Content&gt; item. By 
     </Content>
  ```
 
-By default, everything gets added to the root of the `content` and `contentFiles\any\<target_framework>` folder within a package and preserves the relative directory structure, unless you specify a package path:
+By default, everything gets added to the root of the `content` and `contentFiles\any\<target_framework>` folder within a package and preserves the relative folder structure, unless you specify a package path:
 
 ```xml
 <Content Include="..\win7-x64\libuv.txt">        
@@ -169,9 +169,9 @@ By default, everything gets added to the root of the `content` and `contentFiles
 </Content>
 ```
 
-If you want to copy all your content to only a specific root folder(s) (instead of `content` and `contentFiles` both), you can use the MSBuild property `ContentTargetFolders`, which defaults to "content;contentFiles" but can be set to any other folder names. Note that just specifying "contentFiles" in `ContentTargetFolders` puts files under "contentFiles\any\&lt;target_framework&gt;" or "contentFiles\&lt;language&gt;\&lt;target_framework&gt;" based on `buildAction`.
+If you want to copy all your content to only a specific root folder(s) (instead of `content` and `contentFiles` both), you can use the MSBuild property `ContentTargetFolders`, which defaults to "content;contentFiles" but can be set to any other folder names. Note that just specifying "contentFiles" in `ContentTargetFolders` puts files under `contentFiles\any\<target_framework>` or `contentFiles\<language>\<target_framework>` based on `buildAction`.
 
-`PackagePath` can be a semicolon-delimited set of target paths. Specifying an empty package path would add the file to the root of the package. For example, the following adds libuv.txt to content\myfiles, content\samples, and the package root:
+`PackagePath` can be a semicolon-delimited set of target paths. Specifying an empty package path would add the file to the root of the package. For example, the following adds `libuv.txt` to `content\myfiles`, `content\samples`, and the package root:
 
 ```xml
 <Content Include="..\win7-x64\libuv.txt">
@@ -183,17 +183,17 @@ If you want to copy all your content to only a specific root folder(s) (instead 
 There is also an MSBuild property `$(IncludeContentInPack)`, which defaults to `true`. If this is set to `false` on any project, then the content from that project are not included in the nuget package.
 
 > [!Note]
-> Apart from Content items, the &lt;Pack&gt; and &lt;PackagePath&gt; metadata can also be set on files with a build action of Compile, EmbeddedResource, ApplicationDefinition, Page, Resource, SplashScreen, DesignData, DesignDataWithDesignTimeCreatableTypes, CodeAnalysisDictionary, AndroidAsset, AndroidResource, BundleResource or None.
+> Apart from Content items, the `<Pack>` and `<PackagePath>` metadata can also be set on files with a build action of Compile, EmbeddedResource, ApplicationDefinition, Page, Resource, SplashScreen, DesignData, DesignDataWithDesignTimeCreatableTypes, CodeAnalysisDictionary, AndroidAsset, AndroidResource, BundleResource or None.
 >
-> For pack to append the filename to your package path when using globbing patterns, your package path must end with the directory separator character, otherwise the package path is treated as the full path including the file name.
+> For pack to append the filename to your package path when using globbing patterns, your package path must end with the folder separator character, otherwise the package path is treated as the full path including the file name.
 
 ### IncludeSymbols
 
-When using `MSBuild /t:pack /p:IncludeSymbols=true`, the corresponding pdb files are copied along with other output files (`.dll`, `.exe`, `.winmd`, `.xml`, `.json`, `.pri`). Note that setting `IncludeSymbols=true` creates a regular package *and* a symbols package.
+When using `MSBuild /t:pack /p:IncludeSymbols=true`, the corresponding `.pdb` files are copied along with other output files (`.dll`, `.exe`, `.winmd`, `.xml`, `.json`, `.pri`). Note that setting `IncludeSymbols=true` creates a regular package *and* a symbols package.
 
 ### IncludeSource
 
-This is the same as `IncludeSymbols`, except that it copies source files along with pdbs as well. All files of type Compile are copied over to `src\<ProjectName>\` preserving the relative path directory structure in the resulting package. The same also happens for source files of any `ProjectReference` which has `TreatAsPackageReference` set to `false`.
+This is the same as `IncludeSymbols`, except that it copies source files along with `.pdb` files as well. All files of type `Compile` are copied over to `src\<ProjectName>\` preserving the relative path folder structure in the resulting package. The same also happens for source files of any `ProjectReference` which has `TreatAsPackageReference` set to `false`.
 
 If a file of type Compile, is outside the project folder, then it is just added to `src\<ProjectName>\`.
 
@@ -201,29 +201,29 @@ If a file of type Compile, is outside the project folder, then it is just added 
 
 When using `MSBuild /t:pack /p:IsTool=true`, all output files, as specified in the [Output Assemblies](#output-assemblies) scenario, are copied to the `tools` folder instead of the `lib` folder. Note that this is different from a `DotNetCliTool` which is specified by setting the `PackageType` in `.csproj` file.
 
-### Packing using a nuspec
+### Packing using a .nuspec
 
-You can use a `.nuspec` file to pack your project provided that you have a project file to import `NuGet.Build.Tasks.Pack.targets` so that the pack task can be executed. The following three MSBuild properties are relevant to packing using a nuspec:
+You can use a `.nuspec` file to pack your project provided that you have a project file to import `NuGet.Build.Tasks.Pack.targets` so that the pack task can be executed. The following three MSBuild properties are relevant to packing using a `.nuspec`:
 
-1. `NuspecFile`: relative or absolute path to the .nuspec file being used for packing.
+1. `NuspecFile`: relative or absolute path to the `.nuspec` file being used for packing.
 1. `NuspecProperties`: a semicolon-separated list of key=value pairs. Due to the way MSBuild command-line parsing works, multiple properties must be specified as follows: `/p:NuspecProperties=\"key1=value1;key2=value2\"`.  
-1. `NuspecBasePath`: Base path for the .nuspec file.
+1. `NuspecBasePath`: Base path for the `.nuspec` file.
 
 If using `dotnet.exe` to pack your project, use a command like the following:
 
 ```bash
-dotnet pack <path to csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
+dotnet pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
 ```
 
 If using MSBuild to pack your project, use a command like the following:
 
 ```bash
-msbuild /t:pack <path to csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
+msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
 ```
 
 ## restore target
 
-As part of the move to MSBuild, package restore becomes an MSBuild target, that is, `msbuild /t:restore`. `nuget restore` and `dotnet restore` use this target to restore packages in .NET Core projects.
+As part of the move to MSBuild, package restore becomes an MSBuild target, that is,  MSBuild /t:restore`. `nuget restore` and `dotnet restore` use this target to restore packages in .NET Core projects.
 
 The restore target works as follows:
 
@@ -242,14 +242,14 @@ Additional restore settings may come from MSBuild properties; values are set fro
 | Property | Description |
 |--------|--------|
 | RestoreSources | Semicolon-delimited list of package sources |
-| RestorePackagesPath | User packages directory path |
+| RestorePackagesPath | User packages folder path |
 | RestoreDisableParallel | Limit downloads to one at a time |
-| RestoreConfigFile | `nuget.config` file |
+| RestoreConfigFile | `Nuget.Config` file |
 | RestoreNoCache | If true, avoids using the web cache |
 | RestoreIgnoreFailedSource | If true, ignores failing or missing package sources |
 | RestoreTaskAssemblyFile | Path to `NuGet.Build.Tasks.dll` |
 | RestoreGraphProjectInput | Semicolon-delimited list of projects to restore, which should contain absolute paths. |
-| RestoreOutputPath | Output directory, defaulting to the `obj` folder |
+| RestoreOutputPath | Output folder, defaulting to the `obj` folder |
 
 **Example**
 
@@ -265,9 +265,9 @@ Restore creates the following files in the build `obj` folder:
 
 | File | Description |
 |--------|--------|
-| project.assets.json | Previously project.lock.json |
-| {projectName}.projectFileExtension.nuget.g.props | References to msbuild props contained in packages |
-| {projectName}.projectFileExtension.nuget.g.targets | References to msbuild targets contained in packages |
+| `project.assets.json` | Previously `project.lock.json` |
+| `{projectName}.projectFileExtension.nuget.g.props` | References to MSBuild props contained in packages |
+| `{projectName}.projectFileExtension.nuget.g.targets` | References to MSBuild targets contained in packages |
 
 ## PackageTargetFallback
 

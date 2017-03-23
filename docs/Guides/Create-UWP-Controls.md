@@ -94,14 +94,14 @@ In the following example, the control implemented in `ManagedPackage.winmd` will
 
 ## Add custom icons to your controls
 
-To display a custom icon in the toolbox/assets pane, add an image to your project or the corresponding design.dll project with the name “Namespace.ControlName.extension” and set the build action to “Embedded Resource”. Supported formats are `.png`, `.jpg`, `.jpeg`, `.gif`, and `.bmp`.
+To display a custom icon in the toolbox/assets pane, add an image to your project or the corresponding `design.dll` project with the name “Namespace.ControlName.extension” and set the build action to “Embedded Resource”. Supported formats are `.png`, `.jpg`, `.jpeg`, `.gif`, and `.bmp`.
 
 In the example above, the project contains an image file named “ManagedPackage.MyCustomControl.png”.
 
 ![Setting a custom icon in a project](media/UWP-control-custom-icon.png)
 
 > [!Note]
-> For native controls, you must put the icon as a resource in the design.dll project.
+> For native controls, you must put the icon as a resource in the `design.dll` project.
 
 ## Support specific Windows platform versions
 
@@ -130,20 +130,20 @@ The correct version of the assembly is then selected based on the consuming proj
 
 > [!Note]
 > The TPV `\lib\uap10.0` and `\lib\uap`  will continue to work, but there’s no TPMinV check and the package can be consumed by a UWP project irrespective of its TPMinV.
-> This feature currently works only for PackageReference-based UWP projects. To continue to support project.json-based UWP projects, include your controls under the `\lib\uap10.0` folder as well.
+> This feature currently works only for PackageReference-based UWP projects. To continue to support `project.json` based UWP projects, include your controls under the `\lib\uap10.0` folder as well.
 
 ## Build-time TPMinV check for project.json/packages.config based UWP projects
 
-The install-time TPMinV check is not supported for UWP projects using project.json or packages.config. Instead, you can author a build target that performs this check at project build time. 
+The install-time TPMinV check is not supported for UWP projects using `project.json` or `packages.config`. Instead, you can author a build target that performs this check at project build time. 
 
-For example, let’s say you’ve set the TPMinV for you controls package to Windows 10 Anniversary Edition (10.0; Build 14393), so you want to ensure that the package is consumed only by UWP projects that match that lower bound. To allow your package to be consumed by project.json-based UWP projects, you must package your controls with the following folder names:
+For example, let’s say you’ve set the TPMinV for you controls package to Windows 10 Anniversary Edition (10.0; Build 14393), so you want to ensure that the package is consumed only by UWP projects that match that lower bound. To allow your package to be consumed by `project.json` based UWP projects, you must package your controls with the following folder names:
 
 ```
 \lib\uap10.0\*
 \ref\uap10.0\*
 ```
 
-To enforce the appropriate TPMinV check, create an [MSBuild targets file](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-targets) and package it under the build folder:
+To enforce the appropriate TPMinV check, create an [MSBuild targets file](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets) and package it under the build folder:
 
 ```
 \build
@@ -191,7 +191,7 @@ To configure where the control properties show up in the property inspector, add
 > [!Note]
 > By default, control properties will show up under the Miscellaneous category in the property inspector.
 
-To ensure that the **[Edit Template > Edit a Copy](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** feature works, you must include the `Generic.xaml` and any resource dictionaries that it merges in the `<AssemblyName>\Themes` directory.
+To ensure that the **[Edit Template > Edit a Copy](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** feature works, you must include the `Generic.xaml` and any resource dictionaries that it merges in the `<AssemblyName>\Themes` folder.
 
 ## Use strings and resources
 
@@ -213,7 +213,7 @@ To package content such as images that can be used by your control or the consum
 \tools
 ```
 
-You may also author an[MSBuild targets file](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-targets) to ensure the asset is copied to the consuming project’s output directory:
+You may also author an[MSBuild targets file](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets) to ensure the asset is copied to the consuming project’s output folder:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

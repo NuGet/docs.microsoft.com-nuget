@@ -30,7 +30,7 @@ ms.reviewer:
 
 # Impact of project.json when creating packages
 
-The project.json system used in NuGet 3.x affects package authors in several ways as described in the following sections.
+The `project.json` system used in NuGet 3.x affects package authors in several ways as described in the following sections.
 
 ## Changes affecting existing packages usage
 
@@ -63,7 +63,7 @@ You can see one of the proposals for bringing back content files, and follow its
 
 ## Impact for package authors
 
-Packages using the above features would have to use a different mechanism. The most commonly useful mechanism for this would be the MSBUILD targets/props that continues to get fully supported. The build system can choose to pick up other conventions in the package. This is how MSBuild targets are supported as well as Roslyn analyzers. It is possible to build packages that supports targets and analyzers for packages.config and project.json scenarios.
+Packages using the above features would have to use a different mechanism. The most commonly useful mechanism for this would be the MSBuild targets/props that continues to get fully supported. The build system can choose to pick up other conventions in the package. This is how MSBuild targets are supported as well as Roslyn analyzers. It is possible to build packages that supports targets and analyzers for `packages.config` and `project.json` scenarios.
 
 Packages that attempt to modify the project to ease startup, typically work in a very limited set of scenarios, and will instead provide a readme, or guidance on how to use the package.
 
@@ -73,7 +73,7 @@ The format enables native content as a first class scenario. This means that man
 
 In summary if the functionality above is not absolutely necessary, we recommend sticking with the existing package format, as the format described here is supported only by NuGet 3.x+.
 
-It would be possible to build packages to work for both packages.config and project.json scenarios through shimming, however it is often simpler to just structure the packages the traditional way, without the deprecated features mentioned above.
+It would be possible to build packages to work for both `packages.config` and `project.json` scenarios through shimming, however it is often simpler to just structure the packages the traditional way, without the deprecated features mentioned above.
 
 
 ## 3.x package format  ##

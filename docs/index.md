@@ -165,7 +165,7 @@ ms.reviewer:
                             <li class="column column-third">
                                 <a href="./schema/nuspec.md">
                                     <h3>Schema</h3>
-                                    <p>References for nuspec files, nuget.config files, and other files and convensions.</p>
+                                    <p>References for .nuspec files, Nuget.Config files, and other files and conventions.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
