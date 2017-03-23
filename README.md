@@ -17,8 +17,9 @@ No contribution is too big or too small--
 
 1. Visit the page to edit on [docs.microsoft.com/nuget](docs.microsoft.com/nuget), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.    
 1. Edit the markdown:
-    1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
-    1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file.md>`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
+    a. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
+    a. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file.md>`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
+    a. When using external links, especially to docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
 1. When you're done, enter a commit message below, and click **Propose file change**.
 1. Send a pull request for your change. We review PRs on a regular basis.'
 1. Thank you!
@@ -49,7 +50,7 @@ Don't worry too much, though. We'll thoroughly review your contributions and edi
 
 ## Naming
 
-Follow these naming conventions when referring to NuGet and related components.
+Follow these naming conventions and capitalizations when referring to NuGet and related components.
 
 - NuGet: refers to the technology.
 - NuGet Package Manager UI, NuGet Package Manager Console, etc.: refers to other components build on NuGet.
@@ -57,6 +58,8 @@ Follow these naming conventions when referring to NuGet and related components.
 - packages.config, project.json: refer to NuGet files in a project.
 - NuGet.Config and NuGetDefaults.Config: these files appear with this capitalization so be sure to follow them.
 - .nuspec: refers to a NuGet specification for creating a package; generally, we speak of a .nuspec file with the period, because it's always used as a file extension.
+
+For items not listed here, search in the repository for the term and see how it's used.
 
 ### Heading capitalizations
 
@@ -106,9 +109,9 @@ Markdown and HTML are ignored within inline code.
 
 Code blocks on docs.microsoft.com are delineated by with three grave accents (backticks), ```, at the beginning and the end. You do not need to indent code blocks unless they are contained within a list.
 
-The opening ``` should be followed by a language code for proper syntax coloring, such as ```xml, ```json, ```csharp. Use ```bash for command-line examples and ```output for command-line results.
+The opening "```" should be followed by a language code for proper syntax coloring, such as "```xml", "```json", "```csharp", etc. Use "```bash" for command-line examples and "```output" for command-line results.
 
-The only case when you should use ``` without a language tag is when creating a block of fixed-point text that isn't related to any kind of code. In these cases you can also just indent the code block, which can be preferable because it visually separates the code in an editor. See [docs/create-packages/project-json-and-uwp.md](docs/create-packages/project-json-and-uwp.md) for an example.
+The only case when you should use "```" without a language tag is when creating a block of fixed-point text that isn't related to any kind of code. In these cases you can also just indent the code block, which can be preferable because it visually separates the code in an editor. See [docs/create-packages/project-json-and-uwp.md](./docs/create-packages/project-json-and-uwp.md) for an example.
 
 ### Callouts
 
@@ -120,10 +123,10 @@ You can also use one of the following callout tags on the first line that will c
 
 | Tag | Shading color | Topic with examples | 
 | --- | --- | --- |
-| `> [!Note]` | Light blue, use for callouts without any special emphasis. | [Creating NuGet packages](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package) |
-| `> [!Tip]` | Green, use for callouts that share special tips and tricks or other helpful knowledge. | [Package consumption overview](https://docs.microsoft.com/en-us/nuget/consume-packages/overview-and-workflow) | 
-| `> [!Important]` | Yellow, use for callouts that describe cautions. | [NuGet.Server](https://docs.microsoft.com/en-us/nuget/hosting-packages/nuget-server) |
-| `> [!Warning]` | Red, use for callouts that warn readers about situations that could cause data loss or unexpected consequences. | [Dependency resolution]([NuGet.Server](https://docs.microsoft.com/en-us/nuget/hosting-packages/nuget-server) |
+| `> [!Note]` | Light blue, use for callouts without any special emphasis. | [Creating NuGet packages](https://docs.microsoft.com/nuget/create-packages/creating-a-package) |
+| `> [!Tip]` | Green, use for callouts that share special tips and tricks or other helpful knowledge. | [Package consumption overview](https://docs.microsoft.com/nuget/consume-packages/overview-and-workflow) | 
+| `> [!Important]` | Yellow, use for callouts that describe cautions. | [NuGet.Server](https://docs.microsoft.com/nuget/hosting-packages/nuget-server) |
+| `> [!Warning]` | Red, use for callouts that warn readers about situations that could cause data loss or unexpected consequences. | [Dependency resolution](https://docs.microsoft.com/nuget/consume-packages/dependency-resolution) |
 
 ### Links
 
@@ -135,7 +138,7 @@ Note that bare URLs are not automatically converted into links.
 
 If you need to do something that markdown can't handle, use inline HTML. An example is creating a bullet list inside a table.
 
-Use "&lt;" and "&gt;" for < and > characters outside a code block or inline code (delimited by backticks `).
+Use `&lt;` and `&gt;` for < and > characters outside a code block or inline code (delimited by backticks `).
 
 Block-level HTML elements have a few restrictions:
 
