@@ -17,9 +17,9 @@ No contribution is too big or too small--
 
 1. Visit the page to edit on [docs.microsoft.com/nuget](docs.microsoft.com/nuget), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.    
 1. Edit the markdown:
-    a. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
-    a. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file.md>`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
-    a. When using external links, especially to docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
+    1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
+    1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file.md>`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
+    1. When using external links, especially to docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
 1. When you're done, enter a commit message below, and click **Propose file change**.
 1. Send a pull request for your change. We review PRs on a regular basis.'
 1. Thank you!
@@ -109,9 +109,9 @@ Markdown and HTML are ignored within inline code.
 
 Code blocks on docs.microsoft.com are delineated by with three grave accents (backticks), ```, at the beginning and the end. You do not need to indent code blocks unless they are contained within a list.
 
-The opening "```" should be followed by a language code for proper syntax coloring, such as "```xml", "```json", "```csharp", etc. Use "```bash" for command-line examples and "```output" for command-line results.
+The opening ``` should be followed by a language code for proper syntax coloring, such as xml, json, csharp, etc. Use bash for command-line examples and output for command-line results.
 
-The only case when you should use "```" without a language tag is when creating a block of fixed-point text that isn't related to any kind of code. In these cases you can also just indent the code block, which can be preferable because it visually separates the code in an editor. See [docs/create-packages/project-json-and-uwp.md](./docs/create-packages/project-json-and-uwp.md) for an example.
+The only case when you should use ``` without a language tag is when creating a block of fixed-point text that isn't related to any kind of code. In these cases you can also just indent the code block, which can be preferable because it visually separates the code in an editor. See [docs/create-packages/project-json-and-uwp.md](./docs/Create-Packages/project-json-and-UWP.md) for an example.
 
 ### Callouts
 
