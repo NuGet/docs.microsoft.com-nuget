@@ -605,7 +605,7 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
     <authors>Microsoft</authors>
     <dependencies>
         <dependency id="another-package" version="3.0.0" />
-        <dependency id="yet-another-package"/>
+        <dependency id="yet-another-package" version="1.0.0" />
     </dependencies>
     </metadata>
 </package>

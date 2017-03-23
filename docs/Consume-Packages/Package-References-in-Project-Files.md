@@ -171,14 +171,14 @@ A package built using this project will show that Newtonsoft.json is included as
 Conditions can also be applied at the `ItemGroup` level and will apply to all children `PackageReference` elements:
 
 ```xml
-<ItemGroup Condition = "'$(TargetFramework)' == 'net452'>
+<ItemGroup Condition = "'$(TargetFramework)' == 'net452'">
     <!-- ... -->
 
     <PackageReference Include="Newtonsoft.json">
         <Version>9.0.1</Version>
     </PackageReference>
 
-    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0">
+    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />
 
     <!-- ... -->
 </ItemGroup>

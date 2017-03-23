@@ -39,7 +39,7 @@ With Visual Studio 2017, you can take advantage of added capabilities for UWP co
 
 ## Add toolbox/assets pane support for XAML controls
 
-To have a XAML control appear in the XAML designer’s toolbox in Visual Studio, and the Assets pane of Blend, create a `VisualStudioToolsManifest.xml` file in the root of the `tools` folder of your package project. This file is not required if you don’t need the control to appear in the toolbox or Assets pane.
+To have a XAML control appear in the XAML designer’s toolbox in Visual Studio and the Assets pane of Blend, create a `VisualStudioToolsManifest.xml` file in the root of the `tools` folder of your package project. This file is not required if you don’t need the control to appear in the toolbox or Assets pane.
 
 ```
 \build
@@ -96,7 +96,7 @@ In the following example, the control implemented in `ManagedPackage.winmd` will
 
 To display a custom icon in the toolbox/assets pane, add an image to your project or the corresponding `design.dll` project with the name “Namespace.ControlName.extension” and set the build action to “Embedded Resource”. Supported formats are `.png`, `.jpg`, `.jpeg`, `.gif`, and `.bmp`.
 
-In the example above, the project contains an image file named “ManagedPackage.MyCustomControl.png”.
+In the example below, the project contains an image file named “ManagedPackage.MyCustomControl.png”.
 
 ![Setting a custom icon in a project](media/UWP-control-custom-icon.png)
 
