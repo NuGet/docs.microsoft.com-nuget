@@ -134,9 +134,10 @@ You can also use one of the following callout tags on the first line that will c
 
 - In general, always use the title of the target page as the link text rather than words like "see here" or "this documentation".
 - Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the trailing `.md`.
+- Links to other markdown files on docs.microsoft.com are case-insensitive (unlike links to files in GitHub, which are).
 - If you're linking to another topic in the same folder, then `../<folder>/` can be omitted.
 - When using anchors, always remember to include the `.md` before the `#`.
-- When using external links, especially to https://docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
+- When using external links, especially to docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
 - Bare URLs are not automatically converted into links.
 
 ### Inline HTML
