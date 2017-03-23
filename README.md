@@ -36,6 +36,8 @@ If you're creating a new topic, keep the following in mind as well:
 
 ## Conventions
 
+In general, if you don't see something described here, look in editing markdown files for examples, with the exception of files in the Release Notes which are legacy content and haven't been as thoroughly edited.
+
 ## Language level and terms
 
 Because our docs can be localized into many languages other than English, topics should be written at what's called the "fifth-grade" reading level, or what a typical 11-12 year old child would understand. In other words, avoid using college-level words if possible.
@@ -109,7 +111,7 @@ Markdown and HTML are ignored within inline code.
 
 Code blocks on docs.microsoft.com are delineated by with three grave accents (backticks), ```, at the beginning and the end. You do not need to indent code blocks unless they are contained within a list.
 
-The opening ``` should be followed by a language code for proper syntax coloring, such as xml, json, csharp, etc. Use bash for command-line examples and output for command-line results.
+The opening ``` should be followed by a language code for proper syntax coloring, such as "xml", "json", "csharp", etc. Use "bash" for command-line examples and "output" for command-line results.
 
 The only case when you should use ``` without a language tag is when creating a block of fixed-point text that isn't related to any kind of code. In these cases you can also just indent the code block, which can be preferable because it visually separates the code in an editor. See [docs/create-packages/project-json-and-uwp.md](./docs/Create-Packages/project-json-and-UWP.md) for an example.
 
