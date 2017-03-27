@@ -42,7 +42,7 @@
 ## [PowerShell Reference](Tools/PowerShell-Reference.md)
 ## [dotnet Commands](Tools/dotnet-Commands.md)
 # Schema
-## .nuspec](Schema/nuspec.md)
+## [.nuspec](Schema/nuspec.md)
 ## [project.json](Schema/project-json.md)
 ## [MSBuild Targets](Schema/msbuild-targets.md)
 ## [Nuget.Config file](Schema/nuget-config-file.md)
