@@ -145,9 +145,9 @@ There are scenarios in which assemblies with the same name might be referenced m
 
 To resolve this, you must directly reference the `C.dll` you want (or use another package that references the right one), and then add a dependency on packageC that excludes all its assets. This is done as follows:
 
-* If you're project is using `packages.config` for tracking NuGet dependencies, simply remove the reference to packageC from the `.csproj` file so that it references only the version of `C.dll` that you want.
+- If you're project is using `packages.config` for tracking NuGet dependencies, simply remove the reference to packageC from the `.csproj` file so that it references only the version of `C.dll` that you want.
     
-* If your project uses `project.json` for NuGet, add `"exclude" : "all"` in the dependency for packageC:
+- If your project uses `project.json` for NuGet, add `"exclude" : "all"` in the dependency for packageC:
 
     ```json
     {
@@ -158,9 +158,9 @@ To resolve this, you must directly reference the `C.dll` you want (or use anothe
             }
         }
     }
-    '''
+    ```
 
-* With [package references in project files](../consume-packages/package-references-in-project-files.md) (NuGet 4.0+ only), add `Exclude="All"` in the dependency:
+- With [package references in project files](../consume-packages/package-references-in-project-files.md) (NuGet 4.0+ only), add `Exclude="All"` in the dependency:
 
     ```xml
     <PackageReference Include="packageC" Version="1.0.0" Exclude="All" />
