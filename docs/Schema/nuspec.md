@@ -103,7 +103,7 @@ Element | Description
 **language** | The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md).
 **tags** | A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering mechanisms.
 **serviceable** | *(3.3+)*For internal NuGet use only
-**minClientVersion** | *(2.5+)*  Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager.
+**minClientVersion** | *(2.5+)*  Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager. This is used whenever the package depends on specific features of the `.nuspec` file that were added in a particular version of the NuGet client. For example, a package using the `developmentDependency` attribute would specify "2.8" for `minClientVersion`. Similarly, a package using the `contentFiles` element (see the next section) would set `minClientVersion` to "3.3". Note also that because NuGet clients prior to 2.5 do not recognize this flag, they will *always* refuse to install the package no matter what value you use in `minClientVersion`.
 
 #### Collection elements
 

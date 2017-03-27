@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Introductory Guide to Creating and Publishing a NuGet | Microsoft Docs
+title: Introductory Guide to Creating and Publishing a NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
