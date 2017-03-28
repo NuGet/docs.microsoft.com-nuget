@@ -133,7 +133,7 @@ When different package versions are referred to at the same distance in the grap
 
 ![Resolving cousin dependencies using the lower version that satisfies all constraints](media/projectJson-dependency-7.png)
 
-In some cases, it is not possible to meet all version requirements. As shown below, if Package A required exactly Package B *1.0* and Package C requires Package B *>=2.0*, then NuGet cannot resolve the dependencies and will give an error.
+In some cases, it is not possible to meet all version requirements. As shown below, if Package A requires exactly Package B *1.0* and Package C requires Package B *>=2.0*, then NuGet cannot resolve the dependencies and will give an error.
 
 ![Unresolvable dependencies due to an exact version requirement](media/projectJson-dependency-8.png)
 

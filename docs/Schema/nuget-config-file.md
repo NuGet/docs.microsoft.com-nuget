@@ -76,10 +76,10 @@ http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use 
 
 ```xml
 <config>
-<add key="dependencyVersion" value="Highest" />
-<add key="globalPackagesFolder" value="c:\packages" />
-<add key="repositoryPath" value="c:\repo" />
-<add key="http_proxy" value="http://company-squid:3128@contoso.com" />
+    <add key="dependencyVersion" value="Highest" />
+    <add key="globalPackagesFolder" value="c:\packages" />
+    <add key="repositoryPath" value="c:\repo" />
+    <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
 </config>
 ```
 
@@ -157,8 +157,8 @@ Key | Value
 ```xml
 <packageSources>
     <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
-    <add key="Contoso Package Source" value="https://contoso.com/packages/" />
-    <add key="Test source" value="c:\packages" />
+    <add key="Contoso" value="https://contoso.com/packages/" />
+    <add key="Test Source" value="c:\packages" />
 </packageSources>
 ```
 
@@ -175,25 +175,33 @@ cleartextpassword | The unencrypted password for the source.
 
 **Example:**
 
-In the config file, the `<packageSourceCredentials>` element will contain child nodes for each applicable source name. That is, for a source named "Contoso", the config file will contain the following when using an encrypted password:
+In the config file, the `<packageSourceCredentials>` element will contain child nodes for each applicable source name (spaces in the name are replaced with `_x0020+`). That is, for sources named "Contoso" and "Test Source", the config file will contain the following when using encrypted passwords:
 
 ```xml
 <packageSourceCredentials>
     <Contoso>
-    <add key="Username" value="user@contoso.com" />
-    <add key="Password" value="..." />
-    </Contoro>
+        <add key="Username" value="user@contoso.com" />
+        <add key="Password" value="..." />
+    </Contoso>
+    <Test_x0020_Source>
+        <add key="Username" value="user" />
+        <add key="Password" value="..." />
+    </Test_x0020_Source>
 </packageSourceCredentials>
 ```
 
-When using an unencrypted password:
+When using unencrypted passwords:
 
 ```xml
 <packageSourceCredentials>
     <Contoso>
-    <add key="Username" value="user@contoso.com" />
-    <add key="ClearTextPassword" value="33f!!lloppa" />
+        <add key="Username" value="user@contoso.com" />
+        <add key="ClearTextPassword" value="33f!!lloppa" />
     </Contoso>
+    <Test_x0020_Source>
+        <add key="Username" value="user" />
+        <add key="Password" value="hal+9ooo_da!sY" />
+    </Test_x0020_Source>    
 </packageSourceCredentials>
 ```
 
@@ -209,7 +217,7 @@ Key | Value
 
 ```xml
 <apikeys>
-<add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
+    <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
 </apikeys>
 ```
 
@@ -228,7 +236,7 @@ Key | Value
 
 ```xml
 <disabledPackageSources>
-    <add key="Contoso Package Source" value="true" />
+    <add key="Contoso" value="true" />
 </disabledPackageSources>
 
 <!-- Empty list -->
