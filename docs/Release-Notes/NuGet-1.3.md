@@ -102,7 +102,7 @@ using two new flags:
 all files with the '.bak' file extension
 
 ```bash
-    nuget Pack MyPackage.nuspec -Exclude **\*.bak
+nuget Pack MyPackage.nuspec -Exclude **\*.bak
 ```  
 
 _Note: the pattern is not recursive by default._
