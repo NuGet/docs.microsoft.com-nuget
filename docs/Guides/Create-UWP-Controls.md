@@ -107,35 +107,6 @@ In the example below, the project contains an image file named “ManagedPackage
 
 UWP packages have a TargetPlatformVersion (TPV) and TargetPlatformMinVersion (TPMinV) that define the upper and lower bounds of the OS version where the app can be installed. TPV further specifies the version of the SDK against which the app is built. Be mindful of these properties when authoring a UWP package: using APIs outside the bounds of the platform versions defined in the app will cause either the build to fail or the app to fail at runtime.
 
-## PackageReference-based UWP projects 
-For example, let’s say you’ve set the TPMinV for you controls package to Windows 10 Anniversary Edition (10.0; Build 14393), so you want to ensure that the package is consumed only by UWP projects that match that lower bound. To enforce the appropriate TPMinV check, package your control contents with the following folder names:
-
-```
-\lib\uap10.0.14393.0\*
-\ref\uap10.0.14393.0\*
-```
-
-Note that `ref` is given here for completeness. It’s required only if you have a reference assembly that’s used to compile the app and there’s a different implementation assembly in `lib` that’s copied into the application output.
-
-To specify multiple versions of the assembly targeting specific versions of the SDK, creating separate folders for each version of the OS:
-
-```
-\lib\uap10.0.14393.0\*
-\lib\uap10.0.10586.0\*
-\ref\uap10.0.14393.0\*
-\ref\uap10.0.10586.0\*
-```
-
-The correct version of the assembly is then selected based on the consuming project's TPV. If the consuming project's TPV is higher than all available assemblies, the highest version of the assembly is selected.
-
-> [!Note]
-> The TPV `\lib\uap10.0` and `\lib\uap`  will continue to work, but there’s no TPMinV check and the package can be consumed by a UWP project irrespective of its TPMinV.
-> This feature currently works only for PackageReference-based UWP projects. To continue to support `project.json` based UWP projects, include your controls under the `\lib\uap10.0` folder as well.
-
-## Build-time TPMinV check for project.json/packages.config based UWP projects
-
-The install-time TPMinV check is not supported for UWP projects using `project.json` or `packages.config`. Instead, you can author a build target that performs this check at project build time. 
-
 For example, let’s say you’ve set the TPMinV for you controls package to Windows 10 Anniversary Edition (10.0; Build 14393), so you want to ensure that the package is consumed only by UWP projects that match that lower bound. To allow your package to be consumed by `project.json` based UWP projects, you must package your controls with the following folder names:
 
 ```
