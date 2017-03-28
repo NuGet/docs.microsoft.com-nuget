@@ -5,7 +5,7 @@ title: Configuring the behavior of NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 3/27/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -46,11 +46,15 @@ The behavior of every NuGet command, whether issued from the command line, the P
 - Project-specific `NuGet.Config` files located in any folder from the solution folder up to the drive root. These allow control over settings as they apply to a project or a group of projects.
 - A solution-specific `NuGet.Config` file located within a `.nuget` folder in the solution. Settings in this file apply only to solution-wide packages and is supported only in NuGet 3.3 and earlier. It is ignored for NuGet 3.4 and later.
 - The global config file located in `%APPDATA%\NuGet\NuGet.Config`, which is always used unless you specify a different config file using the `-configFile` switch on any NuGet command. For example, `nuget restore -configfile c:\my.config` will use settings from `c:\my.config` for the command and ignores any settings in the global config file.
-- Additional machine-wide config files (NuGet 2.6 and later) located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}\]]]NuGet.Config`, where `{IDE}` can be `VisualStudio`, `{Version}` can be the Visual Studio version such as `14.0`, and `{SKU}` is either `Community`, `Pro`, or `Enterprise`. These variants allow you to create configurations that are specific to different versions and editions of Visual Studio if needs be.
-- (NuGet 2.7 and later) The "defaults" file located at `%PROGRAMDATA%\NuGet\NuGetDefaults.Config`, which is described later under [NuGet defaults file](#nuget-defaults-file) as a way to specifically enable and disable package sources. No other settings are supported in this file.
+- Additional machine-wide config files:
+    - NuGet 2.6 to NuGet 3.5: located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}\]]]NuGet.Config`, where `{IDE}` can be `VisualStudio`, `{Version}` can be the Visual Studio version such as `14.0`, and `{SKU}` is either `Community`, `Pro`, or `Enterprise`. These variants allow you to create configurations that are specific to different versions and editions of Visual Studio if needs be.
+    - NuGet 4.0+: located under `%ProgramFiles(x86)%\NuGet\Config` rather than `%ProgramData%`.
+- The "default" file:
+    - NuGet 2.7 to NuGet 3.5: located at `%PROGRAMDATA%\NuGet\NuGetDefaults.Config`, which is described later under [NuGet defaults file](#nuget-defaults-file) as a way to specifically enable and disable package sources. No other settings are supported in this file.
+    - NuGet 4.0+: located under `%ProgramFiles(x86)%\NuGet\Config` rather than `%ProgramData%`.
 
 > [!Note]
-> The `%ProgramData%\NuGet` folder typically requires Administrator permissions to modify. Administrators are expected to set the correct permissions on this folder based on the user and/or machine information.
+> The `%ProgramData%\NuGet` and `%ProgramFiles(x86)\NuGet` folders typically requires Administrator permissions to modify. Administrators are expected to set the correct permissions on these folders based on the user and/or machine information.
 
 ## Changing config settings
 
@@ -101,7 +105,7 @@ As described above in [Config file locations and uses](#config-file-locations-an
 
 When `nuget.exe` is run from the command line or run implicitly within Visual Studio, it loads settings from config files in the following order:
 
-1. Files in `%ProgramData%\NuGet\Config` starting at this top folder and iterating down through the `{IDE}\{Version}\{SKU}\` subfolders if they exist.
+1. Files in `%ProgramData%\NuGet\Config` (NuGet 3.5 and earlier) or `%ProgramFiles(x86)%\NuGet\Config` (NuGet 4.0+) starting at this top folder and iterating down through the `{IDE}\{Version}\{SKU}\` subfolders if they exist.
 1. The global config file, except in NuGet 3.4 and later if `-configFile` is used on the command line.
 1. The file specified with `-configFile`.
 1. Files found in the path to the current folder (where nuget.exe is invoked or the folder containing the Visual Studio solution), starting from the root and ending in the current folder.
@@ -136,11 +140,17 @@ It can also help to think about the "priority order" in which settings are appli
     (Ignored in NuGet 3.4 and later if -configFile is used)
     %AppData%\NuGet\NuGet.Config
 
-    (NuGet 2.6 and later)
+    (NuGet 2.6 to 3.5)
     %ProgramData%\NuGet\Config\{IDE}\{Version}\{SKU}\NuGet.Config
     %ProgramData%\NuGet\Config\{IDE}\{Version}\NuGet.Config
     %ProgramData%\NuGet\Config\{IDE}\NuGet.Config
     %ProgramData%\NuGet\Config\NuGet.Config
+
+    (NuGet 4.0+)
+    %ProgramFiles(x86)%\NuGet\Config\{IDE}\{Version}\{SKU}\NuGet.Config
+    %ProgramFiles(x86)%\NuGet\Config\{IDE}\{Version}\NuGet.Config
+    %ProgramFiles(x86)%\NuGet\Config\{IDE}\NuGet.Config
+    %ProgramFiles(x86)%\NuGet\Config\NuGet.Config
 
 ### Settings walkthrough
 
@@ -222,7 +232,7 @@ Here's how NuGet will load and apply the settings, depending on where it's invok
 
 ## NuGet defaults file
 
-NuGet 3.3 and earlier uses a hardcoded default package source, nuget.org, that the user could not delete. However, when using NuGet with internal package sources, it's often desirable to make sure that developers and build servers use packages from those sources instead of nuget.org. With NuGet 2.7 and later, you can use the `%PROGRAMDATA%\NuGet\NuGetDefaults.Config` file to control certain machine-wide defaults described below. This provides administrators a convenient way to deploy (using Group Policy, for example) consistent `NuGetDefaults.Config` files to developer and build machines, thus ensuring correct use of package sources.
+NuGet 3.3 and earlier uses a hardcoded default package source, nuget.org, that the user could not delete. However, when using NuGet with internal package sources, it's often desirable to make sure that developers and build servers use packages from those sources instead of nuget.org. With NuGet 2.7 to 3.5, you can use the `%ProgramData%\NuGet\NuGetDefaults.Config` file (or `%ProgramFiles(x86)%\NuGet\NuGetDefaults.Config` with NuGet 4.0+) to control certain machine-wide defaults described below. This provides administrators a convenient way to deploy (using Group Policy, for example) consistent `NuGetDefaults.Config` files to developer and build machines, thus ensuring correct use of package sources.
 
 Note that NuGet 3.4 and later does not use a hardcoded default source. When nuget.exe is run for the first time, `NuGet.Config` is generated and nuget.org is added as the default package source in the config file. In the absence of the `NuGet.Config` file, the default package source is undefined.
 
