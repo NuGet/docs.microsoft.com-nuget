@@ -28,11 +28,11 @@ ms.reviewer:
 
 ---
 
-# Create .NET Standard Packages with Visual Studio 2015
+# Create .NET standard packages with Visual Studio 2015
 
 *Applies to NuGet 3.x. See [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) for working with NuGet 4.x+.*
 
-The [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code.
+The [.NET Standard Library](https://docs.microsoft.com/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code.
 
 This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4. This will work across .NET Framework 4.6.1, Universal Windows Platform 10, .NET Core, and Mono/Xamarin. For details, see the [.NET Standard mapping table](#net-standard-mapping-table) later in this topic.
 
@@ -87,13 +87,13 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 ## Create and update the .nuspec file
 
-1. Open a command prompt, navigate to the folder containing `AppLogg.csproj` folder (one level below where the .sln file is), and run the NuGet `spec` command to create the initial `AppLogger.nuspec` file:
+1. Open a command prompt, navigate to the folder containing `AppLogg.csproj` folder (one level below where the `.sln` file is), and run the NuGet `spec` command to create the initial `AppLogger.nuspec` file:
 
 ```bash
 nuget spec
 ```
 
-1. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number). Also note that you must also update the author and description tags or you'll get an error during the packing step.
+1. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number). Also note that you must also update the author and description tags or you'll get an error during the packing step.
 
 ```xml
 <?xml version="1.0"?>
@@ -113,7 +113,7 @@ nuget spec
 </package>
 ```
 
-1. Add reference assemblies to the nuspec file, namely the library's DLL and the IntelliSense XML file:
+1. Add reference assemblies to the `.nuspec` file, namely the library's DLL and the IntelliSense XML file:
 
     ```xml
     <!-- Insert below <metadata> element -->
@@ -128,7 +128,7 @@ nuget spec
 
 ## Package the component
 
-With the completed .nuspec referencing all the files you need to include in the package, you're ready to run the `pack` command:
+With the completed `.nuspec` referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
 ```bash
 nuget pack AppLogger.nuspec
@@ -138,8 +138,8 @@ This will generate `AppLogger.YOUR_NAME.1.0.0.nupkg`. Opening this file in a too
 
 ![NuGet Package Explorer showing the AppLogger package](media/NetStandard-PackageExplorer.png)
 
-> [!Note]
-> A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org.
+> [!Tip]
+> A `.nupkg` file is just a ZIP file with a different extension. You can also examine package contents, then, by changing `.nupkg` to `.zip`, but remember to restore the extension before uploading a package to nuget.org.
 
 To make your package available to other developers,  follow the instructions on [Publish a package](../create-packages/publish-a-package.md).
 
@@ -157,7 +157,7 @@ The following sections go into additional options for NuGet package creation:
 
 ### Declaring dependencies
 
-If you have any dependencies on other NuGet packages, list those in the &lt;dependencies&gt; element with &lt;group&gt; elements. For example, to declare a dependency on NewtonSoft.Json 8.0.3 or above, add the following:
+If you have any dependencies on other NuGet packages, list those in the `<dependencies>` element with `<group>` elements. For example, to declare a dependency on NewtonSoft.Json 8.0.3 or above, add the following:
 
 ```xml
 <!-- Insert within the <metadata> element -->
@@ -174,7 +174,7 @@ The syntax of the *version* attribute here indicates that version 8.0.3 or above
 
 Suppose you'd like to take advantage of an API in .NET Framework 4.6.2 that is not available in .NET Standard 1.4. To do this, you'll first need to make sure the library compiles for .NET 4.6.2 by using conditional compilation or shared projects. (In Visual Studio, you can create a NetCore project, add the framework of choice to the multiple framework section, and then build.) Then you create the package using the simple convention-based working directory technique as follows:
 
-1. In the project's root folder containing your .nuspec file, create a folder named `lib`.
+1. In the project's root folder containing your `.nuspec` file, create a folder named `lib`.
 1. Inside `lib`, create folders for each platform you want to support:
 
         \lib
@@ -183,7 +183,7 @@ Suppose you'd like to take advantage of an API in .NET Framework 4.6.2 that is n
             \net462
                 \AppLogger.dll
 
-1. In the .nuspec file, add a `files` node under the `package` node and refer to the files in `lib` using wildcards. **Note:** Token replacements are not supported with the convention-based working directory approach, so replace them with literal values:
+1. In the `.nuspec` file, add a `files` node under the `package` node and refer to the files in `lib` using wildcards. **Note:** Token replacements are not supported with the convention-based working directory approach, so replace them with literal values:
 
     ```xml
     <?xml version="1.0"?>
@@ -215,11 +215,11 @@ For more details on using this technique, see [Supporting Multiple .NET Framewor
 In some cases you might want to add custom build targets or properties in projects that consume your package, such as running a custom tool or process during build. You do this by adding files in a `\build` folder as described in the steps below. When NuGet installs a package with \build files, it adds an MSBuild element in the project file pointing to the .targets and .props files.
 
 > [!Note]
-> When using project.json, targets are not added to the project but are made available through the project.lock.json.
+> When using `project.json`, targets are not added to the project but are made available through the `project.lock.json`.
 
 
-1. In the project folder containing the your .nuspec file, create a folder named `build`.
-1. Inside `build`, create folders for each supported, and within those place your .targets and .props files:
+1. In the project folder containing the your `.nuspec` file, create a folder named `build`.
+1. Inside `build`, create folders for each supported, and within those place your `.targets` and `.props` files:
 
         \build
             \netstandard1.4
@@ -229,7 +229,7 @@ In some cases you might want to add custom build targets or properties in projec
                 \AppLogger.props
                 \AppLogger.targets
 
-1. In the .nuspec file, add a `files` node under the `package` node and refer to the files in `build` using wildcards.
+1. In the `.nuspec` file, add a `files` node under the `package` node and refer to the files in `build` using wildcards.
 
     ```xml
     <?xml version="1.0"?>
@@ -277,7 +277,7 @@ To create localized versions of your library, you can either create separate pac
                     AppLogger.resources.dll
                     AppLogger.xml
 
-1. In the .nuspec file, reference these files in the &lt;files&gt; node:
+1. In the `.nuspec` file, reference these files in the `<files>` node:
 
     ```xml
     <?xml version="1.0"?>
@@ -301,7 +301,7 @@ When you include a `readme.txt` file in the root of the package, Visual Studio w
 > Readme files are not shown for packages that are installed as a dependency, or for .NET Core projects.
 
 
-To do this, create your `readme.txt` file, place it in the project root folder, and refer to it in the .nuspec file:
+To do this, create your `readme.txt` file, place it in the project root folder, and refer to it in the `.nuspec` file:
 
 ```xml
 <?xml version="1.0"?>
@@ -338,5 +338,5 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 -[Supporting Multiple .NET Framework Versions](../create-packages/supporting-multiple-target-frameworks.md)
 - [Include MSBuild props and targets in a package](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
 - [Creating Localized Packages](../create-packages/creating-localized-packages.md)
-- [.NET Standard Library documentation](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
-- [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/en-us/dotnet/articles/core/porting/index)
+- [.NET Standard Library documentation](https://docs.microsoft.com/dotnet/articles/standard/library)
+- [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/dotnet/articles/core/porting/index)

@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Create Cross-Platform Packages
+# Create cross-platform packages
 
 A cross-platform package contains code that uses native APIs on iOS, Android, and Windows, depending on the run-time operating system. Although this is straightforward to do, it's preferable to let developers consume the package from a PCL or .NET Standard libraries through a common API surface area.
 
@@ -117,19 +117,19 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 1. Right-click the solution and select **Build Solution** to check your work and produce the artifacts that you'll package next. If you get errors about missing references, right-click the solution, select **Restore NuGet Packages** to install dependencies, and rebuild.
 
 > [!Note]
-> To build for iOS you need a networked Mac connected to Visual Studio as described on [Introduction to Xamarin.iOS for Visual Studio](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/). If you don't have a Mac available, uncheck the iOS project in the configuration manager (step 3 above).
+> To build for iOS you need a networked Mac connected to Visual Studio as described on [Introduction to Xamarin.iOS for Visual Studio](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/). If you don't have a Mac available, clear the iOS project in the configuration manager (step 3 above).
 
 
 ## Create and update the .nuspec file
 
-1. Open a command prompt, navigate to the `LoggingLibrary` folder that's one level below where the .sln file is, and run the NuGet `spec` command to create the initial `Package.nuspec` file:
+1. Open a command prompt, navigate to the `LoggingLibrary` folder that's one level below where the `.sln` file is, and run the NuGet `spec` command to create the initial `Package.nuspec` file:
 
 ```bash
 nuget spec
 ```
 
 1. Rename this file to `LoggingLibrary.nuspec` and open it in an editor.
-1. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
+1. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
 
     ```xml
     <?xml version="1.0"?>
@@ -151,7 +151,7 @@ nuget spec
 
 ### Add reference assemblies
 
-To include platform-specific reference assemblies, add the following to the &lt;files&gt; element of `LoggingLibrary.nuspec` as appropriate for your supported platforms:
+To include platform-specific reference assemblies, add the following to the `<files>` element of `LoggingLibrary.nuspec` as appropriate for your supported platforms:
 
 ```xml
 <!-- Insert below <metadata> element -->
@@ -182,7 +182,7 @@ To include platform-specific reference assemblies, add the following to the &lt;
 
 ### Add dependencies
 
-If you have specific dependencies for native implementations, use the &lt;dependencies&gt; element with &lt;group&gt; elements to specify them, for example:
+If you have specific dependencies for native implementations, use the `<dependencies>` element with `<group>` elements to specify them, for example:
 
 ```xml
 <!-- Insert within the <metadata> element -->
@@ -209,9 +209,9 @@ For example, the following would set iTextSharp as a dependency for the UAP targ
 </dependencies>
 ```
 
-### Final nuspec
+### Final .nuspec
 
-Your final .nuspec file should now look like the following, where again YOUR_NAME should be replaced with an appropriate value:
+Your final `.nuspec` file should now look like the following, where again YOUR_NAME should be replaced with an appropriate value:
 
 ```xml
 <?xml version="1.0"?>
@@ -263,7 +263,7 @@ Your final .nuspec file should now look like the following, where again YOUR_NAM
 
 ## Package the component
 
-With the completed .nuspec referencing all the files you need to include in the package, you're ready to run the `pack` command:
+With the completed `.nuspec` referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
 ```bash
 nuget pack LoggingLibrary.nuspec
@@ -273,8 +273,8 @@ This will generate `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Opening this file in 
 
 ![NuGet Package Explorer showing the LoggingLibrary package](media/Cross-Platform-PackageExplorer.png)
 
-> [!Note]
-> A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org.
+> [!Tip]
+> A `.nupkg` file is just a ZIP file with a different extension. You can also examine package contents, then, by changing `.nupkg` to `.zip`, but remember to restore the extension before uploading a package to nuget.org.
 
 
 To make your package available to other developers,  follow the instructions on [Publish a package](../create-packages/publish-a-package.md).

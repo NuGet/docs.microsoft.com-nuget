@@ -34,9 +34,9 @@ ms.reviewer:
 
 NuGet 3.4.2 was released on April 8, 2016 to address several issues that were identified in the 3.4 and 3.4.1 release.
 
-## Nuget.exe 3.4.2 RC is now available
+## nuget.exe 3.4.2 RC is now available
 
-You can download the release candidate of NuGet.exe 3.4.2 [here](https://dist.nuget.org/index.html).
+You can download the release candidate of nuget.exe 3.4.2 [here](https://dist.nuget.org/index.html).
 
 ## Updates and Improvements
 
@@ -47,7 +47,7 @@ You can download the release candidate of NuGet.exe 3.4.2 [here](https://dist.nu
 
 ##Fixes
 
-* Fixed an issue where NuGet.org source was missing in NuGet settings or config after updating to 3.4.1.
+* Fixed an issue where nuget.org source was missing in NuGet settings or config after updating to 3.4.1.
 * Fixed an issue where a casing change to FindPackagesById in 3.4.1 breaks Artifactory.
 * Corrected an issue with FIPS that caused failures with NuGet restore with nuget.exe.
 * Fixed a crash when browsing sources with invalid icon URL.

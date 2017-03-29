@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Supporting Multiple .NET Framework Versions in NuGet Packages | Microsoft Docs
+title: Multi-targeting for NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# Supporting Multiple .NET Framework Versions
+# Supporting multiple .NET framework versions
 
 *For .NET Core projects using NuGet 4.0+, see [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md) for details on cross-targeting.*
 
@@ -127,7 +127,7 @@ NuGet copies assemblies from only a single library folder in the package. For ex
             \MyAssembly.dll (v2.0)
 
 
-To easily include all these files, use a wildcard in the &lt;files&gt; section of your `.nuspec`:
+To easily include all these files, use a wildcard in the `<files>` section of your `.nuspec`:
 
 ```xml
 <files>

@@ -117,6 +117,12 @@ ms.reviewer:
                                     <p>Learn how to create NuGet packages for the Universal Windows Platform.</p>
                                 </a>
                             </li>
+                            <li class="column column-third">
+                                <a href="./guides/create-uwp-controls.md">
+                                    <h3>Create UWP Controls in NuGet Packages</h3>
+                                    <p>Learn how to create NuGet packages that contain UWP controls with full support for Visual Studio and Blend designers.</p>
+                                </a>
+                            </li>
                         </ul>
                     </section>
                 </li>
@@ -159,7 +165,7 @@ ms.reviewer:
                             <li class="column column-third">
                                 <a href="./schema/nuspec.md">
                                     <h3>Schema</h3>
-                                    <p>References for nuspec files, nuget.config files, and other files and convensions.</p>
+                                    <p>References for .nuspec files, Nuget.Config files, and other files and conventions.</p>
                                 </a>
                             </li>
                             <li class="column column-third">

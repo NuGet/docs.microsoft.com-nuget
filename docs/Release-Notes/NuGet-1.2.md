@@ -82,10 +82,10 @@ Framework. The following table lists attributes of the `frameworkAssembly` eleme
   </frameworkAssemblies>
 ```
 
-### NuGet.exe now is able to store API Key credentials
+### nuget.exe now is able to store API Key credentials
 
-When using the NuGet.exe command line tool, you can now use the SetApiKey command to store your API key. That way,
-you won’t need to specify it every time you push a package. For more details on saving your API key with NuGet.exe,
+When using the nuget.exe command line tool, you can now use the SetApiKey command to store your API key. That way,
+you won’t need to specify it every time you push a package. For more details on saving your API key with nuget.exe,
 [read the documentation on publishing a package](../create-packages/publish-a-package.md).
 
 ### Package Explorer
@@ -100,7 +100,7 @@ in this release.
 
 ## Known Issues
 
-* **1.2 Package incompatibility**: Packages built with the latest version of the command line tool, NuGet.exe (> 1.2)
+* **1.2 Package incompatibility**: Packages built with the latest version of the command line tool, nuget.exe (> 1.2)
 will not work with older versions of the NuGet VS Add-in (such as 1.1). If you run into an error message stating
 something about incompatible schema, you are running into this error. Please update NuGet to the latest version.
 * **NuGet.Server incompatibility**: If you’re hosting an internal NuGet feed using the NuGet.Server project, you’ll

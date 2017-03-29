@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# Local Feeds
+# Local feeds
 
 Local NuGet package feeds are simply folders on your local network in which you place packages (or even just a folder on your own machine). Local feeds can be either a simple folder of packages, or a hierarchical folder structure that include version numbers. With NuGet 3.3 and above, using the hierarchical structure gives much better performance.
 

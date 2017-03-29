@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Reinstalling and Updating Packages
+# How to reinstall and update packages
 
 There are a number of situations, described below under [When to Reinstall a Package](#when-to-reinstall-a-package), where references to a package might get broken within a Visual Studio project. In these cases, uninstalling and then reinstalling the same version of the package will restore those reference to working order.
 
@@ -38,7 +38,7 @@ Being mindful of the [Considerations](#considerations) described later, you can 
 Update-Package –reinstall <package_name>
 ```
 
-Using this command, where &lt;package_name&gt; is replaced with the specific package name you want, is much easier than removing a package and then trying to locate the same package in the NuGet gallery with the same version.
+Using this command, where `<package_name>` is replaced with the specific package name you want, is much easier than removing a package and then trying to locate the same package in the NuGet gallery with the same version.
 
 The same command without `-reinstall` will update a package to a newer version, if applicable:
 
@@ -70,7 +70,7 @@ The following may be affected when reinstalling a package:
         - If reinstalling packages after retargeting your application results in build or runtime errors, you may need to revert your target framework or search for alternative packages that properly support your new target framework.
 
 1. **requireReinstallation attribute added in packages.config after project retargeting or upgrade**
-    - If NuGet detects that packages were affected by retargeting or upgrading a project, it add a `requireReinstallation="true"` attribute in  'packages.config' to all affected package references. Because of this, each subsequent build in Visual Studio will raise build warnings for those packages so you can remember to reinstall them.
+    - If NuGet detects that packages were affected by retargeting or upgrading a project, it add a `requireReinstallation="true"` attribute in  `packages.config` to all affected package references. Because of this, each subsequent build in Visual Studio will raise build warnings for those packages so you can remember to reinstall them.
 
 1. **Reinstalling packages with dependencies**
     - `Update-Package –reinstall` reinstalls the same version of the original package, but installs the latest version of dependencies unless specific version constraints are provided. This allows you to update only the dependencies as required to fix an issue. However, if this rolls a dependency back to an earlier version, you can use `Update-Package <dependency_name>` to reinstall that one dependency without affecting the dependent package.

@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Creating Localized NuGet Packages | Microsoft Docs
+title: How to Create a Localized NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -27,7 +27,8 @@ ms.reviewer:
 #ms.custom:
 
 ---
-# Creating Localized Packages
+
+# Creating localized NuGet packages
 
 There are two ways to create localized versions of a library:
 
@@ -40,7 +41,7 @@ Both methods have their advantages and disadvantages, as described in the follow
 
 Including localized resource assemblies in a single package is typically the simplest approach. To do this, create folders within `lib` for supported language other than the package default (assumed to be en-us). In these folders you can place resource assemblies and localized IntelliSense XML files.
 
-For example, the following folder stucture supports, German (de), Italian (it), Japanese (ja), Russian (ru), Chinese (Simplified) (zh-Hans), and Chinese (Traditional) (zh-Hant):
+For example, the following folder structure supports, German (de), Italian (it), Japanese (ja), Russian (ru), Chinese (Simplified) (zh-Hans), and Chinese (Traditional) (zh-Hant):
 
     lib
     └───net40
@@ -115,7 +116,7 @@ Do to this, your primary package uses the naming convention `{identifier}.{versi
 
 A satellite assembly then uses the naming convention `{identifier}.{language}.{version}.nupkg`, such as `ContosoUtilities.de.1.0.0.nupkg`. The identifier **must** exactly match that of the primary package.
 
-Because this is a separate package, it has its own `.nuspec` file that contains localized metadata. Be mindful that the language in the .nuspec **must** match the one used in the filename.
+Because this is a separate package, it has its own `.nuspec` file that contains localized metadata. Be mindful that the language in the `.nuspec` **must** match the one used in the filename.
 
 The satellite assembly **must** also declare an exact version of the primary package as a dependency, using the [] version notation (see [Dependency Versions](../create-packages/dependency-versions.md)). For example, `ContosoUtilities.de.1.0.0.nupkg` must declare a dependency on `ContosoUtilities.1.0.0.nupkg` using the `[1.0.0]` notation. The satellite package can, of course, have a different version number than the primary package.
 

@@ -26,7 +26,8 @@ ms.reviewer:
 #ms.tgt_pltfrm:
 #ms.custom:
 ---
-# .nuspec Reference
+
+# .nuspec reference
 
 A `.nuspec` file is an XML manifest that contains package metadata. This is used both to build the package and to provide information to consumers. The manifest is always included in a package.
 
@@ -72,7 +73,7 @@ For a clear visual representation of the schema, open the schema file in Visual 
 
 Although the following elements are the minimum requirements for a package, you should consider adding the [optional metadata elements](#optional-metadata-elements) to improve the overall experience developers have with your package.
 
-These elements must appear within a &lt;metadata&gt; element.
+These elements must appear within a `<metadata>` element.
 
 Element | Description
 --- | ---
@@ -83,7 +84,7 @@ Element | Description
 
 ### Optional metadata elements
 
-These elements must appear within a &lt;metadata&gt; element.
+These elements must appear within a `<metadata>` element.
 
 #### Single elements
 
@@ -93,7 +94,7 @@ Element | Description
 **owners** | A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in authors, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)
 **projectUrl** | A URL for the package's home page, often shown in UI displays as well as nuget.org.
 **licenseUrl** | A URL for the package's license, often shown in UI displays as well as nuget.org.
-**iconUrl** | A URL for a 64x64 image with transparenty background to use as the icon for the package in UI display.
+**iconUrl** | A URL for a 64x64 image with transparency background to use as the icon for the package in UI display.
 **requireLicenseAcceptance** | A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.
 **developmentDependency** | *(2.8+)*  A Boolean value specifying whether the package will be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages.
 **summary** | A short description of the package for UI display. If omitted, a truncated version of the **description** is used.
@@ -101,26 +102,26 @@ Element | Description
 **copyright** | *(1.5+)* Copyright details for the package.
 **language** | The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md).
 **tags** | A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering mechanisms.
-**servicable** | *(3.3+)*For internal NuGet use only
+**serviceable** | *(3.3+)*For internal NuGet use only
 **minClientVersion** | *(2.5+)*  Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager.
 
 #### Collection elements
 
 |||
 --- | ---
-**packageTypes** | *(3.3+)* A collection of zero or more &lt;packageType&gt; elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of *name* and *version*. See [Setting a package type](../create-packages/creating-a-package.md#setting-a-package-type).
-**dependencies** | A collection of zero or more &lt;dependency&gt; elements specifying the dependencies for the package. Each dependency has attributes of *id*, *version*, *include* (3.x+), and *exclude* (3.x+). See [Dependencies](#dependencies) below.
-**frameworkAssemblies** | *(1.2+)* A collection of zero or more &lt;frameworkAssembly&gt; elements identifying .NET Framework assembly references that this package requires, which ensures that references are added to projects consuming the package. Each frameworkAssembly has *assemblyName* and *targetFramework* attributes. See [Specifying framework assembly references GAC](#specifying-framework-assembly-references-gac) below.
-**references** | *(1.5+)* A collection of zero or more &lt;reference&gt; elements naming assemblies in the package's `lib` folder that are added as project references. Each reference has a *file* attribute. &lt;references&gt; can also contain a &lt;group&lt; element with a *targetFramework* attribute, that then contains &lt;reference&gt; elements. If omitted, all references in `lib` are included. See [Specifying explicit assembly references](#specifying-explicit-assembly-references) below.
-**contentFiles** | *(3.3+)* A collection of &lt;files&gt; elements that identify content files that should be include in the consuming project. These files are specified with a set of attributes that describe how they should be used within the project system. See [Specifying files to include in the package](#specifying-files-to-include-in-the-package) below.
+**packageTypes** | *(3.3+)* A collection of zero or more `<packageType>` elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of *name* and *version*. See [Setting a package type](../create-packages/creating-a-package.md#setting-a-package-type).
+**dependencies** | A collection of zero or more `<dependency>` elements specifying the dependencies for the package. Each dependency has attributes of *id*, *version*, *include* (3.x+), and *exclude* (3.x+). See [Dependencies](#dependencies) below.
+**frameworkAssemblies** | *(1.2+)* A collection of zero or more `<frameworkAssembly>` elements identifying .NET Framework assembly references that this package requires, which ensures that references are added to projects consuming the package. Each frameworkAssembly has *assemblyName* and *targetFramework* attributes. See [Specifying framework assembly references GAC](#specifying-framework-assembly-references-gac) below.
+**references** | *(1.5+)* A collection of zero or more `<reference>` elements naming assemblies in the package's `lib` folder that are added as project references. Each reference has a *file* attribute. `<references>` can also contain a `<group>` element with a *targetFramework* attribute, that then contains `<reference>` elements. If omitted, all references in `lib` are included. See [Specifying explicit assembly references](#specifying-explicit-assembly-references) below.
+**contentFiles** | *(3.3+)* A collection of `<files>` elements that identify content files that should be include in the consuming project. These files are specified with a set of attributes that describe how they should be used within the project system. See [Specifying files to include in the package](#specifying-files-to-include-in-the-package) below.
 
 ### Files element
 
-The &lt;package&gt; node may also contain a &lt;files&gt; and/or &lt;contentFiles&gt; nodes as siblings to &lt;metadata&gt; to specify which assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
+The `<package>` node may also contain a `<files>` and/or `<contentFiles>` nodes as siblings to `<metadata>` to specify which assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
 
 ## Replacement tokens
 
-When creating a package, the [`nuget pack` command](../tools/nuget-exe-cli-reference.md#pack) will replace $-delimited tokens in the `.nuspec` file's &lt;metadata&gt; node with values that come from either a project file or the `pack` command's `-properties` switch.
+When creating a package, the [`nuget pack` command](../tools/nuget-exe-cli-reference.md#pack) will replace $-delimited tokens in the `.nuspec` file's `<metadata>` node with values that come from either a project file or the `pack` command's `-properties` switch.
 
 On the command line, you specify token values with `nuget pack -properties <name>=<value>;<name>=<value>`. For example, you can use a token such as `$owners$` and `$desc$` in the `.nuspec` and provide the values at packing time as follows:
 
@@ -168,7 +169,7 @@ And you build an assembly whose `AssemblyName` is `LoggingLibrary` with the `Rel
 
 ## Dependencies
 
-The &lt;dependencies&gt; element within &lt;metadata&gt; contains any number of &lt;dependency&gt; elements that identify other packages upon which the top-level package depends. The attributes for each &lt;dependency&gt; are as follows:
+The `<dependencies>` element within `<metadata>` contains any number of `<dependency>` elements that identify other packages upon which the top-level package depends. The attributes for each `<dependency>` are as follows:
 
 Attribute | Description
 --- | ---
@@ -190,16 +191,16 @@ When creating a `.nuspec` from a project using `nuget spec`, dependencies that e
 
 *Version 2.0+*
 
-As an alternative to a single flat list, dependencies can also be specified according to the framework profile of the target project using &lt;group&gt; elements within &lt;dependencies&gt;.
+As an alternative to a single flat list, dependencies can also be specified according to the framework profile of the target project using `<group>` elements within `<dependencies>`.
 
-Each group has an attribute named `targetFramework` and contains zero or more &lt;dependency&gt; elements. Those dependencies will be installed together when  the target framework is compatible with the project's framework profile.
+Each group has an attribute named `targetFramework` and contains zero or more `<dependency>` elements. Those dependencies will be installed together when  the target framework is compatible with the project's framework profile.
 
-The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](../schema/target-frameworks.md) for the exact framework identifiers.
+The `<group>` element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](../schema/target-frameworks.md) for the exact framework identifiers.
 
 > [!Note]
 > The group format cannot be intermixed with a flat list.
 
-The following example shows different variations of the &lt;group&gt; element:
+The following example shows different variations of the `<group>` element:
 
 ```xml
 <dependencies>
@@ -221,9 +222,9 @@ The following example shows different variations of the &lt;group&gt; element:
 
 ## Explicit assembly references
 
-The &lt;references&gt; element explicitly specifies the assemblies that the target project should reference when using the package. When this element is present, NuGet will add references to only the listed assemblies; it will not add references for any other assemblies in the package's `lib` folder.
+The `<references>` element explicitly specifies the assemblies that the target project should reference when using the package. When this element is present, NuGet will add references to only the listed assemblies; it will not add references for any other assemblies in the package's `lib` folder.
 
-For example, the following &lt;references&gt; element instructs NuGet to add references to only `xunit.dll` and `xunit.extensions.dll` even if there are additional assemblies in the package:
+For example, the following `<references>` element instructs NuGet to add references to only `xunit.dll` and `xunit.extensions.dll` even if there are additional assemblies in the package:
 
 ```xml
 <references>
@@ -240,16 +241,16 @@ Similarly, explicit references can be used for unit test frameworks, such as XUn
 
 *Version 2.5+*
 
-As an alternative to a single flat list, references can also be specified according to the framework profile of the target project using &lt;group&gt; elements within &lt;references&gt;.
+As an alternative to a single flat list, references can also be specified according to the framework profile of the target project using `<group>` elements within `<references>`.
 
-Each group has an attribute named `targetFramework` and contains zero or more &lt;reference&gt; elements. Those references will be added to a project when the target framework is compatible with the project's framework profile.
+Each group has an attribute named `targetFramework` and contains zero or more `<reference>` elements. Those references will be added to a project when the target framework is compatible with the project's framework profile.
 
-The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of references. See [Target frameworks](../schema/target-frameworks.md) for the exact framework identifiers.
+The `<group>` element without a `targetFramework` attribute is used as the default or fallback list of references. See [Target frameworks](../schema/target-frameworks.md) for the exact framework identifiers.
 
 > [!Note]
 > The group format cannot be intermixed with a flat list.
 
-The following example shows different variations of the &lt;group&gt; element:
+The following example shows different variations of the `<group>` element:
 
 ```xml
 <references>
@@ -271,9 +272,9 @@ The following example shows different variations of the &lt;group&gt; element:
 
 ## Framework assembly references
 
-Framework assemblies are those that are part of the .NET framework and should already be in the global assembly cache (GAC) for any given machine. By identifying those assemblies within the &lt;frameworkAssemblies&gt; element, a package can ensure that required references are added to a project in the event that the project doesn't have such references already. Such assemblies, of course, are not included in a package directly.
+Framework assemblies are those that are part of the .NET framework and should already be in the global assembly cache (GAC) for any given machine. By identifying those assemblies within the `<frameworkAssemblies>` element, a package can ensure that required references are added to a project in the event that the project doesn't have such references already. Such assemblies, of course, are not included in a package directly.
 
-The &lt;frameworkAssemblies&gt; element contains zero or more &lt;frameworkAssembly&gt; elements, each of which specifies the following attributes:
+The `<frameworkAssemblies>` element contains zero or more `<frameworkAssembly>` elements, each of which specifies the following attributes:
 
 Attribute | Description
 --- | ---
@@ -299,7 +300,7 @@ If you follow the conventions described in [Creating a Package](../create-packag
 > [!NOTE]
 > When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, *excluding* those that are named `.resources.dll` because they are assumed to be localized satellite assemblies. For this reason, avoid using `.resources.dll` for files that otherwise contain essential package code.
 
-To bypass this automatic behavior and explicitly control which files are included in a package, place a &lt;files&gt; element as a child of &lt;package&gt; (and a sibling of &lt;metadata&gt;), identifying each file with a separate &lt;file&gt; element. For example:
+To bypass this automatic behavior and explicitly control which files are included in a package, place a `<files>` element as a child of `<package>` (and a sibling of `<metadata>`), identifying each file with a separate `<file>` element. For example:
 
 ```xml
 <files>
@@ -309,11 +310,11 @@ To bypass this automatic behavior and explicitly control which files are include
 </files>
 ```
 
-With NuGet 2.x and earlier, and projects using `packages.config`, the &lt;files&gt; element is also used to include immutable content files when a package is installed. With NuGet 3.3+ and projects using `project.json`, the &lt;contentFiles&gt; element is used instead. See [Including content files](#including-content-files) below for details.
+With NuGet 2.x and earlier, and projects using `packages.config`, the `<files>` element is also used to include immutable content files when a package is installed. With NuGet 3.3+ and projects using `project.json`, the `<contentFiles>` element is used instead. See [Including content files](#including-content-files) below for details.
 
 ### File element attributes
 
-Each &lt;file&gt; element specifies the following attributes:
+Each `<file>` element specifies the following attributes:
 
 Attribute | Description
 --- | ---
@@ -394,7 +395,7 @@ Content files are files that a package needs to include in a project, but are co
 - Scripts that need to be included with the build output of the project
 - Configuration files for the package that need to be included in the project but don't need any project-specific changes.
 
-Content files are included in a package using the &lt;files&gt; element, specifying the `content` folder in the `target` attribute. However, such files are ignored when the package is installed in a project using the `project.json` system in NuGet 3.3+, which instead uses the &lt;contentFiles&gt; element.
+Content files are included in a package using the `<files>` element, specifying the `content` folder in the `target` attribute. However, such files are ignored when the package is installed in a project using the `project.json` system in NuGet 3.3+, which instead uses the `<contentFiles>` element.
 
 For maximum compatibility with consuming projects, a package ideally specifies content files in both locations.
 
@@ -513,7 +514,7 @@ In this case, because the file extensions of the source and target match, NuGet 
 
 By default, a package places content in a `contentFiles` folder (see below) and `nuget pack` will include all files in that folder using default attributes. In this case it's not necessary to include a `contentFiles` node in the `.nuspec` at all.
 
-To control which files are included, the &lt;contentFiles&gt; element specifies is a collection of &lt;files&gt; elements that identify the exact files include.
+To control which files are included, the `<contentFiles>` element specifies is a collection of `<files>` elements that identify the exact files include.
 These files are specified with a set of attributes that describe how they should be used within the project system:
 
 Attribute | Description
@@ -524,7 +525,7 @@ buildAction | The build action to assign to the content item for MSBuild, such a
 copyToOutput | A Boolean indicating whether to copy content items to the build output folder. The default is false.
 flatten | A Boolean indicating whether to copy content items to a single folder in the build output (true), or to preserve the folder structure in the package (false). The default is false.
 
-When installing a package, NuGet applies the child elements of &lt;contentFiles&gt; from top to bottom. If multiple entries match the same file then all entries will be applied. The top-most entry will override the lower entries if there is a conflict for the same attribute.
+When installing a package, NuGet applies the child elements of `<contentFiles>` from top to bottom. If multiple entries match the same file then all entries will be applied. The top-most entry will override the lower entries if there is a conflict for the same attribute.
 
 #### Package folder structure
 
@@ -576,7 +577,7 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 
 ## Example .nuspec files
 
-**A simple .nuspec that does not specify dependencies or files**
+**A simple `.nuspec` that does not specify dependencies or files**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -593,7 +594,7 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 </package>
 ```
 
-**A .nuspec with dependencies**
+**A `.nuspec` with dependencies**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -610,7 +611,7 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 </package>
 ```
 
-**A .nuspec with files**
+**A `.nuspec` with files**
 
 ```xml
 <?xml version="1.0"?>
@@ -628,7 +629,7 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 </package>
 ```
 
-**A .nuspec with framework assemblies**
+**A `.nuspec` with framework assemblies**
 
 ```xml
 <?xml version="1.0"?>

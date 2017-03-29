@@ -34,7 +34,7 @@ ms.reviewer:
 
 ## Bug Fixes
 
-* Pack doesn't use msbuild 14.1 on mono - [#3550](https://github.com/NuGet/Home/issues/3550)
+* Pack doesn't use MSBuild 14.1 on mono - [#3550](https://github.com/NuGet/Home/issues/3550)
 
 * Update tab doesn't select the latest available version to update instead select current installed version - [#3498](https://github.com/NuGet/Home/issues/3498)
 
@@ -48,7 +48,7 @@ ms.reviewer:
 
 * Nuget IKVM slow install on large project - [#3428](https://github.com/NuGet/Home/issues/3428)
 
-* NuGet.exe Update -Self keeps on updating itself - [#3395](https://github.com/NuGet/Home/issues/3395)
+* nuget.exe Update -Self keeps on updating itself - [#3395](https://github.com/NuGet/Home/issues/3395)
 
 * 3.5 install/restore from UNC share has performance Regression from 3.4.4 - [#3355](https://github.com/NuGet/Home/issues/3355)
 
@@ -56,13 +56,13 @@ ms.reviewer:
 
 * Install tab at solution level doesn't show package's version - [#3339](https://github.com/NuGet/Home/issues/3339)
 
-* xproj project.json update from Installed tab loses state - [#3303](https://github.com/NuGet/Home/issues/3303)
+* xproj `project.json` update from Installed tab loses state - [#3303](https://github.com/NuGet/Home/issues/3303)
 
-* NuGet pack on csproj ignores empty files element in nuspec file - [#3257](https://github.com/NuGet/Home/issues/3257)
+* NuGet pack on `.csproj` ignores empty files element in `.nuspec` file - [#3257](https://github.com/NuGet/Home/issues/3257)
 
 * Website projects hosted in IIS should not cause restore to fail - [#3235](https://github.com/NuGet/Home/issues/3235)
 
-* Credentials not retrieved from nuget.config when v3 endpoint redirects to v2 - [#3179](https://github.com/NuGet/Home/issues/3179)
+* Credentials not retrieved from Nuget.Config when v3 endpoint redirects to v2 - [#3179](https://github.com/NuGet/Home/issues/3179)
 
 * NuGet pack fails to resolve assembly when retrieving portable assembly metadata - [#3128](https://github.com/NuGet/Home/issues/3128)
 
@@ -76,37 +76,37 @@ ms.reviewer:
 
 * Restore randomly fails with An item with the same key has already been added. - [#2646](https://github.com/NuGet/Home/issues/2646)
 
-* Cannot install Nuget.Common in csproj - [#2635](https://github.com/NuGet/Home/issues/2635)
+* Cannot install Nuget.Common in `.csproj` - [#2635](https://github.com/NuGet/Home/issues/2635)
 
 * When using the UI to search a V2 source, FindPackagesById is called twice for each ID - [#2517](https://github.com/NuGet/Home/issues/2517)
 
 * Packages cannot depend on projects - [#2490](https://github.com/NuGet/Home/issues/2490)
 
-* Nuget.exe pack -Exclude is documented but not supported - [#2284](https://github.com/NuGet/Home/issues/2284)
+* nuget.exe pack -Exclude is documented but not supported - [#2284](https://github.com/NuGet/Home/issues/2284)
 
-* Issues with error messages when 'contentFiles' section of nuspec is invalid - [#1686](https://github.com/NuGet/Home/issues/1686)
+* Issues with error messages when 'contentFiles' section of `.nuspec` is invalid - [#1686](https://github.com/NuGet/Home/issues/1686)
 
 * Push always sends entire package twice with authenticated package sources - [#1501](https://github.com/NuGet/Home/issues/1501)
 
-* No information was given when calling nuget.exe update *.csproj while the project does not have a packages.config - [#1496](https://github.com/NuGet/Home/issues/1496)
+* No information was given when calling nuget.exe update *.csproj while the project does not have a `packages.config` - [#1496](https://github.com/NuGet/Home/issues/1496)
 
-* Packages.config restore does not retry on 5xx status codes from V2 sources - [#1217](https://github.com/NuGet/Home/issues/1217)
+* `packages.config` restore does not retry on 5xx status codes from V2 sources - [#1217](https://github.com/NuGet/Home/issues/1217)
 
-* Double dot in file src in .nuspec doesn't work - [#2947](https://github.com/NuGet/Home/issues/2947)
+* Double dot in file src in `.nuspec` doesn't work - [#2947](https://github.com/NuGet/Home/issues/2947)
 
 * CoreCLR restore needs to ignore feeds with encryption - [#2942](https://github.com/NuGet/Home/issues/2942)
 
-* NuGet.exe push 403 handling - Incorrectly prompting for credentials - [#2910](https://github.com/NuGet/Home/issues/2910)
+* nuget.exe push 403 handling - Incorrectly prompting for credentials - [#2910](https://github.com/NuGet/Home/issues/2910)
 
-* NuGet update through package manager removes properties from the project.json - [#2888](https://github.com/NuGet/Home/issues/2888)
+* NuGet update through package manager removes properties from the `project.json` - [#2888](https://github.com/NuGet/Home/issues/2888)
 
-* NuGet.PackageManagement.VisualStudio try to load "NuGet.TeamFoundationServer14", but that dll name changed to "NuGet.TeamFoundationServer" - [#2857](https://github.com/NuGet/Home/issues/2857)
+* NuGet.PackageManagement.VisualStudio try to load "NuGet.TeamFoundationServer14", but that DLL name changed to "NuGet.TeamFoundationServer" - [#2857](https://github.com/NuGet/Home/issues/2857)
 
 * Package manager UI doesn't show newly updated version - [#2828](https://github.com/NuGet/Home/issues/2828)
 
 * update-package trying to use packageid,version instead of package.version - [#2771](https://github.com/NuGet/Home/issues/2771)
 
-* nuget restore project.csproj should error if the project isn't using nuget (p.config or p.json) - [#2766](https://github.com/NuGet/Home/issues/2766)
+* nuget restore csproj should error if the project isn't using nuget (`packages.config` or `project.json`) - [#2766](https://github.com/NuGet/Home/issues/2766)
 
 * TFS Error "[file]not be found in your workspace, or you do not have permission to access it"  during upgrade or uninstall when solution/project is bound to TFS source control - [#2739](https://github.com/NuGet/Home/issues/2739)
 
@@ -116,11 +116,11 @@ ms.reviewer:
 
 * nuget configuration is invalid - VS 2015 VSIX (v3.4.3) - [#2667](https://github.com/NuGet/Home/issues/2667)
 
-* DefaultPushSource in NuGetDefaults.config (ProgramData\NuGet) doesn't work - [#2653](https://github.com/NuGet/Home/issues/2653)
+* DefaultPushSource in `NuGetDefaults.Config` (`ProgramData\NuGet`) doesn't work - [#2653](https://github.com/NuGet/Home/issues/2653)
 
 * nuget 3.4.3 release -  getting Value cannot be null on package build - [#2648](https://github.com/NuGet/Home/issues/2648)
 
-* restore is not using stored credentials from nuget.config for VSTS feeds - [#2647](https://github.com/NuGet/Home/issues/2647)
+* restore is not using stored credentials from Nuget.Config for VSTS feeds - [#2647](https://github.com/NuGet/Home/issues/2647)
 
 * [dotnet restore] --configfile is relative to project dir instead of the cmd dir - [#2639](https://github.com/NuGet/Home/issues/2639)
 
@@ -144,13 +144,13 @@ ms.reviewer:
 
 * Update command might be a bit more verbose if i ask it to be so... - [#2418](https://github.com/NuGet/Home/issues/2418)
 
-* VSIX built locally should have the same dlls and files as the CI build. - [#2401](https://github.com/NuGet/Home/issues/2401)
+* VSIX built locally should have the same DLLs and files as the CI build. - [#2401](https://github.com/NuGet/Home/issues/2401)
 
 * Fix NuGet downgrade warnings in the build - [#2396](https://github.com/NuGet/Home/issues/2396)
 
 * Failing to authenticate package source (3 times) is blocked forever - [#2362](https://github.com/NuGet/Home/issues/2362)
 
-* Package content is not restored correctly when installing a package from a nuget v3.3+ feed with the argument -NoCache when the package contains *.nupkg files - [#2354](https://github.com/NuGet/Home/issues/2354)
+* Package content is not restored correctly when installing a package from a nuget v3.3+ feed with the argument -NoCache when the package contains `.nupkg` files - [#2354](https://github.com/NuGet/Home/issues/2354)
 
 * Nuget Install with All Package Sources, but package missing from 1 source, fails - [#2322](https://github.com/NuGet/Home/issues/2322)
 
@@ -158,7 +158,7 @@ ms.reviewer:
 
 * Install blocks if a single source fails authorization - [#2034](https://github.com/NuGet/Home/issues/2034)
 
-* nuspec version range should override -IncludeReferencedProjects version - [#1983](https://github.com/NuGet/Home/issues/1983)
+* `.nuspec` version range should override -IncludeReferencedProjects version - [#1983](https://github.com/NuGet/Home/issues/1983)
 
 * Update-Package super slow - "Attempting to gather dependencies information" - [#1909](https://github.com/NuGet/Home/issues/1909)
 
@@ -182,7 +182,7 @@ ms.reviewer:
 
 * Install/restore of a particular package fails with "Package contains multiple nuspec files." - [#3231](https://github.com/NuGet/Home/issues/3231)
 
-* Lowercase IDs & packages.config scenarios - [#3209](https://github.com/NuGet/Home/issues/3209)
+* Lowercase IDs & `packages.config` scenarios - [#3209](https://github.com/NuGet/Home/issues/3209)
 
 * [3.5-beta2] Package restore fails to restore "legacy" packages - [#3208](https://github.com/NuGet/Home/issues/3208)
 
@@ -190,13 +190,13 @@ ms.reviewer:
 
 * update-package of ASP.NET web app generates warning related to file: source - [#3194](https://github.com/NuGet/Home/issues/3194)
 
-* nuget pack csproj (with project.json) crashes if there are no packOptions and owner in json file - [#3180](https://github.com/NuGet/Home/issues/3180)
+* nuget pack csproj (with `project.json`) crashes if there are no packOptions and owner in JSON file - [#3180](https://github.com/NuGet/Home/issues/3180)
 
-* nuget pack for project.json ignores packOptions tags like summary, authors , owners etc - [#3161](https://github.com/NuGet/Home/issues/3161)
+* nuget pack for `project.json` ignores packOptions tags like summary, authors , owners etc - [#3161](https://github.com/NuGet/Home/issues/3161)
 
 * NullReferenceException via NuGet.Packaging.PhysicalPackageFile.GetStream - [#3160](https://github.com/NuGet/Home/issues/3160)
 
-* NuGet pack ignores dependencies in output nuspec for project.json - [#3145](https://github.com/NuGet/Home/issues/3145)
+* NuGet pack ignores dependencies in output `.nuspec` for `project.json` - [#3145](https://github.com/NuGet/Home/issues/3145)
 
 * Updating multiple packages with rollback leaves the project in a broken state - [#3139](https://github.com/NuGet/Home/issues/3139)
 
@@ -216,7 +216,7 @@ ms.reviewer:
 
 * When installed VS 2015 update 3 on a VS that uses NuGet version 3.5.0 error occurs - [#3053](https://github.com/NuGet/Home/issues/3053)
 
-* "Blocked by packages.config" in project.json (UWP, a.k.a build integrated) project - [#3046](https://github.com/NuGet/Home/issues/3046)
+* "Blocked by packages.config" in `project.json` (UWP, a.k.a build integrated) project - [#3046](https://github.com/NuGet/Home/issues/3046)
 
 * update dotnet cli installed by build script to preview2-003121, which is the official preview2 build. - [#3045](https://github.com/NuGet/Home/issues/3045)
 
@@ -236,17 +236,17 @@ ms.reviewer:
 
 * Credential plugin exited with error -1 / error downloading package when using credential providers with multiple sources - [#2885](https://github.com/NuGet/Home/issues/2885)
 
-* project.json nuget restore causes recompilation when nothing changed - [#2817](https://github.com/NuGet/Home/issues/2817)
+* `project.json` nuget restore causes recompilation when nothing changed - [#2817](https://github.com/NuGet/Home/issues/2817)
 
 * Symbols packages should not ever be used in install or update - [#2807](https://github.com/NuGet/Home/issues/2807)
 
-* VS doesn't support environment variables in repositoryPath (NuGet.exe does) - [#2763](https://github.com/NuGet/Home/issues/2763)
+* VS doesn't support environment variables in repositoryPath (nuget.exe does) - [#2763](https://github.com/NuGet/Home/issues/2763)
 
 * Label the unlabeled UIElements in Package Manager UI for accessibility - [#2745](https://github.com/NuGet/Home/issues/2745)
 
 * Portable frameworks with hyphenated profiles are rejected. - [#2734](https://github.com/NuGet/Home/issues/2734)
 
-* NuGet package manager should make it clear that options list in packages detail does not apply to project.json - [#2665](https://github.com/NuGet/Home/issues/2665)
+* NuGet package manager should make it clear that options list in packages detail does not apply to `project.json` - [#2665](https://github.com/NuGet/Home/issues/2665)
 
 * nuget.exe push/delete won't use API Key  - [#2627](https://github.com/NuGet/Home/issues/2627)
 
@@ -267,11 +267,11 @@ ms.reviewer:
 
 * nuget.exe support for MSBuild 15 - [#1937](https://github.com/NuGet/Home/issues/1937)
 
-* Pack support for csproj + project.json - [#1689](https://github.com/NuGet/Home/issues/1689)
+* Pack support for .`csproj` + `project.json` - [#1689](https://github.com/NuGet/Home/issues/1689)
 
 * Disable user action when there are user actions being executed - [#1440](https://github.com/NuGet/Home/issues/1440)
 
-* NuGet should add support for /runtimes/{rid}/nativeassets/{txm}/ - [#2782](https://github.com/NuGet/Home/issues/2782)
+* NuGet should add support for `runtimes/{rid}/nativeassets/{txm}/` - [#2782](https://github.com/NuGet/Home/issues/2782)
 
 * Add framework compatibilities missing in NuGet 2.x (which are already in 3.x) - [#2720](https://github.com/NuGet/Home/issues/2720)
 
@@ -285,17 +285,17 @@ ms.reviewer:
 
 ## DCRs
 
-* NuGet.exe push - timeout parameter doesn't work  - [#2785](https://github.com/NuGet/Home/issues/2785)
+* nuget.exe push - timeout parameter doesn't work  - [#2785](https://github.com/NuGet/Home/issues/2785)
 
 * Package Description text should be selectable - [#1769](https://github.com/NuGet/Home/issues/1769)
 
-* Enable nuget.exe to produce .props and .targets files for .nuproj projects [#2711](https://github.com/NuGet/Home/issues/2711)
+* Enable nuget.exe to produce `.props` and `.targets` files for `.nuproj` projects [#2711](https://github.com/NuGet/Home/issues/2711)
 
 * Add extensibility API to compare frameworks with imports - [#2633](https://github.com/NuGet/Home/issues/2633)
 
-* Hide dependency options when using project.json - [#2486](https://github.com/NuGet/Home/issues/2486)
+* Hide dependency options when using `project.json` - [#2486](https://github.com/NuGet/Home/issues/2486)
 
-* Print out NuGet.exe version header in detailed output - [#1887](https://github.com/NuGet/Home/issues/1887)
+* Print out nuget.exe version header in detailed output - [#1887](https://github.com/NuGet/Home/issues/1887)
 
 * NuGet needs to let users know that upgrading/installing in a dotnet tfm based PCL could cause issues - [#3138](https://github.com/NuGet/Home/issues/3138)
 
@@ -305,4 +305,4 @@ ms.reviewer:
 
 * Add netcoreapp11 and netstandard17 support - [#2998](https://github.com/NuGet/Home/issues/2998)
 
-* Leverage AssemblyMetadata attribute for nuspec token replacements - [#2851](https://github.com/NuGet/Home/issues/2851)
+* Leverage AssemblyMetadata attribute for `.nuspec` token replacements - [#2851](https://github.com/NuGet/Home/issues/2851)

@@ -48,7 +48,7 @@ For an example, see the [NuGetInVsTemplates sample](https://bitbucket.org/marcin
 
 When a template is instantiated, a [template wizard](https://msdn.microsoft.com/library/ms185301.aspx) is invoked to load the list of packages to install along with information about where to find those packages. Packages can be embedded in the VSIX, embedded in the template, or located on the local hard drive in which case you use a registry key to reference the file path. Details on these locations are given later in this section.
 
-Preinstalled packages work using [template wizards](http://msdn.microsoft.com/en-us/library/ms185301.aspx). A special wizard gets invoked when the template gets instantiated. The wizard loads the list of packages that need to be installed and passes that information to the appropriate NuGet APIs.
+Preinstalled packages work using [template wizards](http://msdn.microsoft.com/library/ms185301.aspx). A special wizard gets invoked when the template gets instantiated. The wizard loads the list of packages that need to be installed and passes that information to the appropriate NuGet APIs.
 
 Steps to include packages in a template:
 
@@ -73,7 +73,7 @@ Steps to include packages in a template:
     </WizardData>
     ```
 
-    *(NuGet 2.2.1+)* The wizard supports multiple &lt;package&gt; elements to support multiple package sources. Both the `id` and `version` attributes are required, meaning that specific version of a package will be installed even if a newer version is available. This prevents package updates from breaking the template, leaving the choice to update the package to the developer using the template.
+    *(NuGet 2.2.1+)* The wizard supports multiple `<package>` elements to support multiple package sources. Both the `id` and `version` attributes are required, meaning that specific version of a package will be installed even if a newer version is available. This prevents package updates from breaking the template, leaving the choice to update the package to the developer using the template.
 
 
 1. Specify the repository where NuGet can find the packages as described in the following sections.
@@ -135,7 +135,7 @@ Note that using this approach in a VSIX that contains multiple templates leads t
 
 SDKs that are installed using an MSI can install NuGet packages directly on the developer's machine. This makes them immediately available when a project or item template is used, rather than having to extract them during that time. ASP.NET templates use this approach.
 
-1. Have the MSI install packages to the machine. You can install only the `.nupkg` files, or you can install those along with the expanded contents, which saves an additional step when the template is used. In this case, follow NuGet's standard folder structure whereing the `.nupkg` files are in the root folder, and then each package has a subfolder with the id/version pair as the subfolder name.
+1. Have the MSI install packages to the machine. You can install only the `.nupkg` files, or you can install those along with the expanded contents, which saves an additional step when the template is used. In this case, follow NuGet's standard folder structure wherein the `.nupkg` files are in the root folder, and then each package has a subfolder with the id/version pair as the subfolder name.
 
 1. Write a registry key to identify the package location:
 

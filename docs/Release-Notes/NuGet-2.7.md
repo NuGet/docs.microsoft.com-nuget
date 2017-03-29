@@ -40,7 +40,7 @@ We would like to thank the following external contributors for their significant
 1. [Mike Roth](http://www.codeplex.com/site/users/view/mxrss) ([@mxrss](https://twitter.com/mxrss))
     - Show License url when listing packages and verbosity is detailed.
 1. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
-    - [#1956](http://nuget.codeplex.com/workitem/1956) - Add developmentDependency attribute to packages.config and use it in pack command to only include runtime packages
+    - [#1956](http://nuget.codeplex.com/workitem/1956) - Add developmentDependency attribute to `packages.config` and use it in pack command to only include runtime packages
 1. [Rafael Nicoletti](http://www.codeplex.com/site/users/view/tkrafael) ([@tkrafael](https://twitter.com/tkrafael))
     - Avoid duplicate Properties key in nuget.exe pack command.
 1. [Ben Phegan](http://www.codeplex.com/site/users/view/benphegan) ([@BenPhegan](https://twitter.com/benphegan))
@@ -58,7 +58,7 @@ We would like to thank the following external contributors for their significant
 1. [Miroslav Bajtos](http://www.codeplex.com/site/users/view/miroslavbajtos) ([@bajtos](https://twitter.com/bajtos))
     - [#2891](http://nuget.codeplex.com/workitem/2891) - Fix bug of nuget.pack parsing wildcard in the 'exclude' attribute incorrectly.
 1. [Justin Dearing](http://www.codeplex.com/site/users/view/zippy1981) ([@zippy1981](https://twitter.com/zippy1981))
-    - [#3307](http://nuget.codeplex.com/workitem/3307) - Fix bug NuGet.targets does not pass $(Platform) to nuget.exe when restoring packages.
+    - [#3307](http://nuget.codeplex.com/workitem/3307) - Fix bug `NuGet.targets` does not pass $(Platform) to nuget.exe when restoring packages.
 1. [Brian Federici](http://www.codeplex.com/site/users/view/benerdin) ([@benerdin](https://twitter.com/benerdin))
     - [#3294](http://nuget.codeplex.com/workitem/3294) - Fix bug in nuget.exe package command which would allow adding files with the same name but different casing, eventually causing "Item already exists" exception.
 1. [Daniel Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
@@ -85,7 +85,7 @@ Starting with NuGet 2.7, package restore consent is ON by default while allowing
 * Visual Studio 2013 Preview
 * Visual Studio 2012
 * Visual Studio 2010
-* NuGet.exe Command-Line Utility
+* nuget.exe Command-Line Utility
 
 #### Automatic Package Restore in Visual Studio
 
@@ -115,7 +115,7 @@ This new Restore command allows you to easily restore all packages for a solutio
 1. nuget.exe restore .
 1. nuget.exe restore
 
-The Restore command will open the solution file and find all projects within the solution. From there, it will find the packages.config files for each of the projects and restore all of the packages found. It also restores solution-level packages found in the .nuget\packages.config file. More information about the new Restore command can be found in the [Command-Line Reference](../tools/nuget-exe-cli-reference.md#restore).
+The Restore command will open the solution file and find all projects within the solution. From there, it will find the `packages.config` files for each of the projects and restore all of the packages found. It also restores solution-level packages found in the `.nuget\packages.config` file. More information about the new Restore command can be found in the [Command-Line Reference](../tools/nuget-exe-cli-reference.md#restore).
 
 #### The New Package Restore Workflow
 
@@ -145,9 +145,9 @@ There is also a known issue with the new package restore workflow whereby [Autom
 
 Many times after retargeting or upgrading your project, you find that some NuGet packages aren't functioning properly. Unfortunately, there is no indication of this and then there's no guidance on how to address it. With NuGet 2.7, we now use some Visual Studio events to recognize when you've retargeted or upgraded your project in a way that affects your installed NuGet packages.
 
-If we detect that any of your packages were affected by the retargeting or upgrade, we'll produce immediate build errors to let you know. In addition to the immediate build error, we also persist a `requireReinstallation="true"` flag in your packages.config file for all packages that were affected by the retargeting, and each subsequent build in Visual Studio will raise build warnings for those packages.
+If we detect that any of your packages were affected by the retargeting or upgrade, we'll produce immediate build errors to let you know. In addition to the immediate build error, we also persist a `requireReinstallation="true"` flag in your `packages.config` file for all packages that were affected by the retargeting, and each subsequent build in Visual Studio will raise build warnings for those packages.
 
-ALthough NuGet cannot take automatic action to reinstall affected packages, we hope this indication and warning will guide help you discover when you need to reinstall packages. We are also working on [package reinstallation guidance documentation](../consume-packages/reinstalling-and-updating-packages.md) that these error messages direct you to.
+Although NuGet cannot take automatic action to reinstall affected packages, we hope this indication and warning will guide help you discover when you need to reinstall packages. We are also working on [package reinstallation guidance documentation](../consume-packages/reinstalling-and-updating-packages.md) that these error messages direct you to.
 
 ### NuGet Configuration Defaults
 
@@ -157,11 +157,11 @@ Many companies are using NuGet internally, but have had a hard time guiding thei
 1. Registered, but disabled package sources
 1. The default nuget.exe push source
 
-Each of these can now be configured within a file located at %ProgramData%\NuGet\NuGetDefaults.config. If this config file specifies package sources, then the default nuget.org package source will not be registered automatically, and the ones in NuGetDefaults.config will be registered instead.
+Each of these can now be configured within a file located at `%ProgramData%\NuGet\NuGetDefaults.Config`. If this config file specifies package sources, then the default nuget.org package source will not be registered automatically, and the ones in `NuGetDefaults.Config` will be registered instead.
 
-While not required to use this feature, we expect companies to deploy NuGetDefaults.config files using Group Policy.
+While not required to use this feature, we expect companies to deploy `NuGetDefaults.Config` files using Group Policy.
 
-*Note that this feature will never cause a package source to be removed from a developer's NuGet settings. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a NuGetDefaults.config file.*
+*Note that this feature will never cause a package source to be removed from a developer's NuGet settings. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a `NuGetDefaults.Config` file.*
 
 See [NuGet Configuration Defaults](../consume-packages/configuring-nuget-behavior.md#nuget-defaults-file) for more information about this feature.
 
@@ -199,11 +199,11 @@ We added some new APIs to our extensibility services to fill the gap of missing 
 
 ### Development-Only Dependencies
 
-This feature was contributed by [Adam Ralph](https://twitter.com/adamralph) and it allows package authors to declare dependencies that were only used at development time and don't require package dependencies. By adding a `developmentDependency="true"` attribute to a package in packages.config, nuget.exe pack will no longer include that package as a dependency.
+This feature was contributed by [Adam Ralph](https://twitter.com/adamralph) and it allows package authors to declare dependencies that were only used at development time and don't require package dependencies. By adding a `developmentDependency="true"` attribute to a package in `packages.config`, `nuget.exe pack` will no longer include that package as a dependency.
 
 ### Removed Support for Visual Studio 2010 Express for Windows Phone
 
-The new package restore model in 2.7 is implemented by a new VSPackage which is different from the main NuGet VSPackage. Due to a technical issue, this new VSPackage doesn’t work correctly in the *Visual Studio 2010 Express for Windows Phone* SKU as we share the same code base with other supported Visual Studio SKUs. Therefore, starting with NuGet 2.7, we are dropping support for *Visual Studio 2010 Express for Windows Phone* from the published extension. Support for *Visual Studio 2010 Express for Web* is still included in the primary extension published to the Visual Studio Extension Gallery.
+The new package restore model in 2.7 is implemented by a new VSPackage which is different from the main NuGet VSPackage. Due to a technical issue, this new VSPackage doesn't work correctly in the *Visual Studio 2010 Express for Windows Phone* SKU as we share the same code base with other supported Visual Studio SKUs. Therefore, starting with NuGet 2.7, we are dropping support for *Visual Studio 2010 Express for Windows Phone* from the published extension. Support for *Visual Studio 2010 Express for Web* is still included in the primary extension published to the Visual Studio Extension Gallery.
 
 Since we are unsure how many developers are still using NuGet in that version/edition of Visual Studio, we are publishing a separate Visual Studio extension specifically for those users and publishing it on CodePlex (rather than the Visual Studio Extension Gallery). We don't plan to continue to maintain that extension, but if this affects you please let us know by filing an issue on CodePlex.
 

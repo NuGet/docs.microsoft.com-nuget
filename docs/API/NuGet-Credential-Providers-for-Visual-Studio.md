@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# NuGet credential providers for Visual Studio
+# Authenticating feeds in Visual Studio with NuGet credential providers
 
 The NuGet Visual Studio Extension 3.6+ supports credential providers, which enable NuGet to work with authenticated feeds.
 After you install a NuGet credential provider for Visual Studio, the NuGet Visual Studio extension will automatically acquire and refresh credentials for authenticated feeds as necessary.
@@ -38,7 +38,7 @@ A sample implementation can be found in [the VsCredentialProvider sample](https:
 > [!Note]
 > NuGet credential providers for Visual Studio must be installed as a regular Visual Studio extension and will require [Visual Studio 2017](https://aka.ms/vs/15/preview/vs_enterprise) (currently in preview) or above.
 >
-> NuGet credential providers for Visual Studio work only in Visual Studio (not in dotnet restore or nuget.exe). For credential providers with nuget.exe, see [NuGet.exe Credential Providers](../api/nuget-exe-Credential-providers.md).
+> NuGet credential providers for Visual Studio work only in Visual Studio (not in dotnet restore or nuget.exe). For credential providers with nuget.exe, see [nuget.exe Credential Providers](../api/nuget-exe-Credential-providers.md).
 
 ## Available NuGet credential providers for Visual Studio
 
@@ -98,4 +98,4 @@ A custom NuGet credential provider for Visual Studio must implement the `IVsCred
 | bool nonInteractive | If true, the credential provider must suppress all user prompts and use default values instead. |
 | CancellationToken cancellationToken | This cancellation token should be checked to determine if the operation requesting credentials has been cancelled. |
   
-**Return value**: A credentials object implementing the [`System.Net.ICredentials` interface](https://msdn.microsoft.com/en-us/library/system.net.icredentials.aspx).
+**Return value**: A credentials object implementing the [`System.Net.ICredentials` interface](https://msdn.microsoft.com/library/system.net.icredentials.aspx).

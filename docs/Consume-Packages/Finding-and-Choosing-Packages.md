@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Finding and Choosing NuGet Packages | Microsoft Docs
+title: Finding and choosing NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Finding and Choosing Packages
+# Finding and evaluating NuGet packages for your project
 
 When starting any .NET project, or whenever you identify a functional need for your app or service, you can save yourself lots of time and trouble by using existing NuGet packages that fulfill that need. These packages can come from the public collection on [nuget.org](http://www.nuget.org/packages/), or a private source that's provided by your organization or another third party.
 
@@ -86,7 +86,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you'
     ![Version history on a package's listing page](media/Finding-04-VersionHistory.png)
 
 - *Recent installs*: on the package page, click **Package Statistics** on the left side. This will show you the package installs for the last six weeks. A package with more current use is obviously a better choice than one without.
-- *Restore vs. new install*: on the same package statistics page, uncheck the **Version** checkbox and check **Operation** to see a chart of package restores vs. new installs (below).
+- *Restore vs. new install*: on the same package statistics page, clear the **Version** checkbox and check **Operation** to see a chart of package restores vs. new installs (below).
 
     ![Chart of operations for a NuGet package on nuget.org package statistics](media/Finding-05-OperationChart.png)
 

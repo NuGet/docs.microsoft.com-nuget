@@ -27,7 +27,7 @@ ms.reviewer:
 #ms.custom: 
  
 ---
-# Resolving Disputes Over NuGet Package Names
+# Resolving disputes over NuGet package names
 
 This document is a recommended resolution process for community members to resolve disputes with other NuGet publishers.  
 
@@ -42,4 +42,4 @@ By following the process below, Northwind and Nancy can work together to a suita
 
 1. Contact the owners of the package you have the dispute with using the **Contact Owners** link on the package details page. Explain your issue in a kind and direct manner.
 2. Send a copy of your message to [support@nuget.org](mailto:support@nuget.org) so that NuGet and the .NET Foundation are aware of your dispute.
-3. Wait a maximum of 30 days for a resolution, after which notify [support@nuget.org](mailto:support@nuget.org) again. The NuGet.org support team will get involved and try to work through the dispute with both parties.
+3. Wait a maximum of 30 days for a resolution, after which notify [support@nuget.org](mailto:support@nuget.org) again. The nuget.org support team will get involved and try to work through the dispute with both parties.

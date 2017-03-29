@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Publishing a NuGet Package | Microsoft Docs
+title: How to Publish a NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -15,7 +15,7 @@ ms.assetid: 2342aabd-983e-4db1-9230-57c84fa36969
 # optional metadata
 
 description: Detailed instructions for how to publish a NuGet package to nuget.org or private feeds, and how to manage package ownership on nuget.org.
-keywords: NuGet package publishing, publish NuGet package, NuGet package ownership, publish to NuGet.org, private NuGet feeds
+keywords: NuGet package publishing, publish NuGet package, NuGet package ownership, publish to nuget.org, private NuGet feeds
 #ROBOTS:
 #audience:
 #ms.devlang:
@@ -27,14 +27,14 @@ ms.reviewer:
 #ms.custom:
 
 ---
-#Publish a Package
+# Publishing packages
 
 Once you have [created a package](../create-packages/creating-a-package.md) with `nuget pack`, it's a simple process to make it available to other developers, either publicly or privately:
 
 - Public packages are made available to all developers globally through [nuget.org](https://www.nuget.org/packages/manage/upload). See instructions below.
-- Private packages are available to only a team or organization, by hosting them either a file share, a private NuGet server, Visual Studio Team Services package management, or a third- party repository such as myget, ProGet, Nexus Repository, and Artifactory. For additional details, see [Hosting Packages Overview](../hosting-packages/overview.md))
+- Private packages are available to only a team or organization, by hosting them either a file share, a private NuGet server, Visual Studio Team Services package management, or a third-party repository such as myget, ProGet, Nexus Repository, and Artifactory. For additional details, see [Hosting Packages Overview](../hosting-packages/overview.md))
 
-##Publish to nuget.org
+## Publish to nuget.org
 
 For nuget.org, you must first [register for a free account](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) or sign in if already registered:
 

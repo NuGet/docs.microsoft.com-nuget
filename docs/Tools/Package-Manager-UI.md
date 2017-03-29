@@ -106,7 +106,7 @@ To manage package sources:
 
 3. To add a source, click the **+** button, edit the name, enter the URL or path in the **Source** control, and click **Update**. This will make it appear in the selector drop-down.
 4. To change a package source, select it, make edits in the **Name** and **Source** boxes, and click **Update**.
-5. To disable a package source, uncheck the box to the left of the name in the list.
+5. To disable a package source, clear the box to the left of the name in the list.
 6. To remove a package source, select it and click the **X** button.
 7. Use the up and down arrow buttons to change the priority order of the package sources.
 

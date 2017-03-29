@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet Package Consumption Overview and Workflow | Microsoft Docs
+title: Overview and workflow of using NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Package Consumption Overview and Workflow
+# Package consumption workflow
 
 Between nuget.org and private package galleries that your organization might establish, you can find tens of thousands of highly useful packages to use in your apps and services. But regardless of the source, consuming a package follows the same general workflow as shown below. For details, see [Finding and Choosing Packages](../consume-packages/finding-and-choosing-packages.md) and the [Use a Package quickstart](../quickstart/use-a-package.md).
 
@@ -51,6 +51,6 @@ When adding project code to a source repository, you typically don't include NuG
 
 Occasionally it's necessary to reinstall packages that are already included in a project, which may also reinstall dependencies. This is easy to do using the `reinstall` command via the NuGet command line or the NuGet Package Manager Console. For details, see [Reinstalling and Updating Packages](../consume-packages/reinstalling-and-updating-packages.md).
 
-Finally, NuGet's behavior is driven by `nuget.config` configuration files. Multiple files can be used to centralize certain settings at different levels, as explained in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).
+Finally, NuGet's behavior is driven by `Nuget.Config` configuration files. Multiple files can be used to centralize certain settings at different levels, as explained in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).
 
 Enjoy your productive coding with NuGet packages!

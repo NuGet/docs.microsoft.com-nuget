@@ -61,7 +61,7 @@ page, where you can find more information about installing the different NuGet c
 
 One of the most highly-requested features for the NuGet client has been to support more
 powerful XML transformations using the XDT transformation engine which is used in Visual
-Studio [build configuration transformations](http://msdn.microsoft.com/en-us/library/dd465318(v=vs.100).aspx).
+Studio [build configuration transformations](http://msdn.microsoft.com/library/dd465318(v=vs.100).aspx).
 In April 2013, we made two big announcements regarding NuGet support for XDT. The first
 was that the XDT library itself was being itself [released as a NuGet package](https://nuget.org/packages/Microsoft.Web.Xdt)
 and [open sourced on CodePlex](http://xdt.codeplex.com/). This step enabled the XDT engine
@@ -88,7 +88,7 @@ applications in your project.
 
 #### What you can do with XDT
 
-One of XDT’s greatest strengths is its [simple but powerful syntax](http://msdn.microsoft.com/en-us/library/dd465326.aspx)
+One of XDT’s greatest strengths is its [simple but powerful syntax](http://msdn.microsoft.com/library/dd465326.aspx)
 for manipulating the structure of an XML DOM. Rather than simply overlaying one fixed document
 structure onto another structure, XDT provides controls for matching elements in a variety of
 ways, from simple attribute name matching to full XPath support. Once a matching element or
@@ -105,10 +105,10 @@ conventional idea of a product or product family becomes potentially more fragme
 NuGet’s custom package source feature provides one way of organizing packages; however,
 custom package sources are not discoverable on their own.
 
-NuGet 2.6 extends the logic for configuring NuGet by searching the directory hierarchy
+NuGet 2.6 extends the logic for configuring NuGet by searching the folder hierarchy
 under the path %ProgramData%/NuGet/Config. Product installers can add custom NuGet
-configuration files under this directory to register a custom package source for their
-products. Additionally, the directory structure supports semantics for product, version,
+configuration files under this folder to register a custom package source for their
+products. Additionally, the folder structure supports semantics for product, version,
 and even SKU of the IDE. Settings from these directories are applied in the following
 order with a "last in wins" precedence strategy.
 
@@ -120,17 +120,17 @@ order with a "last in wins" precedence strategy.
 In this list, the {IDE} placeholder is specific to the IDE in which NuGet is running,
 so in the case of Visual Studio, it will be "VisualStudio". The {Version} and {SKU}
 placeholders are provided by the IDE (e.g. "11.0" and "WDExpress", "VWDExpress" and
-"Pro", respectively). The directory can then contain many different *.config files.
+"Pro", respectively). The folder can then contain many different *.config files.
 Therefore, the ACME component company can, as a part of their product installer, add
 a custom package source which will be visible only in the Professional and Ultimate
 versions of Visual Studio 2012 by creating the following file path:
 
 %ProgramData%\NuGet\Config\VisualStudio\11.0\Pro\acme.config
 
-While the directory structure makes it straightforward for programs like software
+While the folder structure makes it straightforward for programs like software
 installers to add machine-wide package sources to NuGet's configuration, the NuGet
 configuration dialog has also been updated to allow for the registration of package
-sources as either user-specific (e.g. registered in %AppData%/NuGet/NuGet.config) or machine-wide.
+sources as either user-specific (e.g. registered in %AppData%/NuGet/NuGet.Config) or machine-wide.
 
 This feature is utilized by Visual Studio 2013, where a file is installed at:
 

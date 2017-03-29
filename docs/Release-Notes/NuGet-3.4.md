@@ -57,16 +57,16 @@ The following features were previously added in the RC and have been updated or 
 
 ## Updates and Improvements
 
-* Packages referenced in project.json that have a floating version will not update on every build. Instead, they will update only when forced to restore, clean, rebuild, or modify project.json.
-* NuGet.org repository sources are no longer forced into a project configuration when you use the NuGet configuration UI.
+* Packages referenced in `project.json` that have a floating version will not update on every build. Instead, they will update only when forced to restore, clean, rebuild, or modify `project.json`.
+* nuget.org repository sources are no longer forced into a project configuration when you use the NuGet configuration UI.
 * NuGet no longer restores packages in shared projects nor writes a lock file.
 * We've improved network failure and retry handling for unreachable or slow-to-respond servers.
 * Keyboard and mouse behaviors are improved in the Visual Studio Package Manager UI.
-* We now support the latest project.json schema in DNX.
+* We now support the latest `project.json` schema in DNX.
 
 ## Breaking Changes
 
-* Package version numbers are now normalized to the format *major*.*minor*.*patch*-*prerelease*   Each of major, minor, and patch are treated as integers and drop any leading zeroes.  The prerelease information is treated as a string and no changes are applied to it. These numbers are used in queries by the NuGet clients and the search provided by the NuGet.org service.  More details can be found in the NuGet Docs under [Prerelease Versions](../create-packages/prerelease-packages.md).
+* Package version numbers are now normalized to the format *major*.*minor*.*patch*-*prerelease*   Each of major, minor, and patch are treated as integers and drop any leading zeroes.  The prerelease information is treated as a string and no changes are applied to it. These numbers are used in queries by the NuGet clients and the search provided by the nuget.org service.  More details can be found in the NuGet Docs under [Prerelease Versions](../create-packages/prerelease-packages.md).
 
 ## Known Issues
 
