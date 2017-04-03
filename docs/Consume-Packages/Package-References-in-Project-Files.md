@@ -41,19 +41,7 @@ You can add a dependency in your project file using the following syntax:
 ```xml
 <ItemGroup>
     <!-- ... -->
-    <PackageReference Include="Contoso.Utility.UsefulStuff">
-        <Version>3.6.0</Version>
-    </PackageReference>
-    <!-- ... -->
-</ItemGroup>
-```
-
-or, alternately:
-
-```xml
-<ItemGroup>
-    <!-- ... -->
-    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />
+    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />    
     <!-- ... -->
 </ItemGroup>
 ```
@@ -65,9 +53,7 @@ The convention for specifying version remains unchanged:
 ```xml
 <ItemGroup>
     <!-- ... -->
-    <PackageReference Include="Contoso.Utility.UsefulStuff">
-        <Version>3.6.0</Version>
-    </PackageReference>
+    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />
     <!-- ... -->
 </ItemGroup>
 ```
@@ -81,13 +67,8 @@ In the example above, 3.6.0 means any version that is >=3.6.0 with preference fo
 ```xml
 <ItemGroup>
     <!-- ... -->
-    <PackageReference Include="Contoso.Utility.UsefulStuff">
-        <Version>3.6.*</Version>
-    </PackageReference>
-
-    <PackageReference Include="Contoso.Utility.UsefulStuff">
-        <Version>3.6.0-beta*</Version>
-    </PackageReference>
+    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.*" />
+    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0-beta*" />
     <!-- ... -->
 </ItemGroup>
 ```
@@ -157,9 +138,7 @@ For example, say you're targeting `netstandard1.4` as well as `net452` but have 
 ```xml
 <ItemGroup>
     <!-- ... -->
-    <PackageReference Include="Newtonsoft.json" Condition="'$(TargetFramework)' == 'net452'">
-        <Version>9.0.1</Version>
-    </PackageReference>
+    <PackageReference Include="Newtonsoft.json" Version="9.0.1" Condition="'$(TargetFramework)' == 'net452'" />    
     <!-- ... -->
 </ItemGroup>
 ```
@@ -173,13 +152,8 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
 ```xml
 <ItemGroup Condition = "'$(TargetFramework)' == 'net452'">
     <!-- ... -->
-
-    <PackageReference Include="Newtonsoft.json">
-        <Version>9.0.1</Version>
-    </PackageReference>
-
+    <PackageReference Include="Newtonsoft.json" Version="9.0.1" />
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />
-
     <!-- ... -->
 </ItemGroup>
 ```
