@@ -225,7 +225,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 ## restore target
 
-As part of the move to MSBuild, package restore becomes an MSBuild target, that is,  MSBuild /t:restore`. `nuget restore` and `dotnet restore` use this target to restore packages in .NET Core projects.
+As part of the move to MSBuild, package restore becomes an MSBuild target, that is, `MSBuild /t:restore`, `nuget restore` and `dotnet restore` use this target to restore packages in .NET Core projects.
 
 The restore target works as follows:
 
