@@ -34,6 +34,7 @@ NuGet uses target framework references in a variety of places to specifically id
 
 - [.nuspec manifest](../schema/nuspec.md): A package can indicate distinct packages to be included in a project depending on the project's target framework.
 - [.nupkg folder name](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): The folders inside a package's `lib` folder can be named according to the target framework, each of which contains the DLLs and other content appropriate to that framework.
+- [packages.config](../Schema/packages.config.md): The `targetframework` attribute of a dependency specifies the variant of a package to install.
 - [project.json](../Schema/project-json.md): The `frameworks` node specifies the framework versions that the project can be compiled against.
 
 
