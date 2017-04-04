@@ -5,7 +5,7 @@ title: Installing NuGet | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
-ms.date: 1/9/2017
+ms.date: 4/4/2017
 ms.topic: article 
 ms.prod: nuget 
 #ms.service: 
@@ -32,7 +32,7 @@ ms.reviewer:
 
 There are two primary tools available to help you build, publish and consume NuGet packages:
 
-1. The [**NuGet CLI**](#nuget-cli) is the command-line utility that works on Windows, Mac OS X, and Linux and supports all NuGet capabilities.
+1. The [**NuGet CLI**](#nuget-cli) is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux either through Mono or through the .NET Core CLI.
 1. The [**NuGet Package Manager  in Visual Studio**](#nuget-package-manager-in-visual-studio) is a GUI tool for managing packages and includes a console through which you can use certain NuGet commands directly within Visual Studio. It's included with Visual Studio 2012 and later and can be installed manually for earlier versions.
 
 Both support the following operations:
@@ -60,7 +60,11 @@ The following capabilities are supported only in the NuGet CLI:
 
 ## NuGet CLI
 
-The NuGet CLI can be installed using any of the following methods:
+The NuGet command-line interface provides access to all NuGet capabilities, and can be run on Windows, Mac OSX, and Linux as described in the following sections.
+
+### Windows
+
+On Windows, the NuGet CLI can be installed using any of the following methods:
 
 1. **nuget.org**: Download the latest version of the nuget.exe file from [nuget.org/downloads](https://nuget.org/downloads) and save it to an appropriate location on your machine. If desired, add that location to your PATH environment variable so you can NuGet from anywhere. (Note that the download is a single .exe file, so save it rather than running it from the browser.)
 
@@ -80,25 +84,33 @@ The NuGet CLI can be installed using any of the following methods:
 >
 > Because there are a few breaking changes introduced in NuGet 3.2, [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe) points to the latest stable NuGet 2.x release to prevent CI systems from potentially breaking at this time.
 
-### Compatibility with Mono
+<a name="compatibility-with-mono"></a>
 
-Though not fully-supported as yet, the NuGet command-line executable (version 3.2 and above) will run on Mac OS X and Linux systems when the Mono runtime is installed with a few limitations:
+## Mac OSX and Linux
 
-- Commands tested to work:
-    - Config
-    - Delete
-    - Help
-    - Install
-    - List
-    - Push
-    - SetApiKey
-    - Sources
-    - Spec
-- Partially-working commands:
-    - Pack: works with `.nuspec` files but not with project files.
-    - Restore: works with `packages.config` and `project.json` files but not with solution (`.sln`) files.
-- Commands that do not work:
-    - Update
+On Mac OSX and Linux, there are two ways to run NuGet:
+
+1. Install the [.NET Core SDK](https://www.microsoft.com/net/download/core), which includes NuGet capabilities. Downloads are also listed on [github.com/dotnet/cli](https://github.com/dotnet/cli).
+
+1. Install [Mono](http://www.mono-project.com/docs/getting-started/install/) and then use the nuget.exe command-line executable for Windows (version 3.2 and later) from [nuget.org/downloads](https://nuget.org/downloads). Running NuGet on Mono is subject to the following limitations:
+
+    - Commands tested to work:
+        - Config
+        - Delete
+        - Help
+        - Install
+        - List
+        - Push
+        - SetApiKey
+        - Sources
+        - Spec
+
+    - Partially-working commands:
+        - Pack: works with `.nuspec` files but not with project files.
+        - Restore: works with `packages.config` and `project.json` files but not with solution (`.sln`) files.
+
+    - Commands that do not work:
+        - Update
 
 
 ### Related topics
