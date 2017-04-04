@@ -4,6 +4,8 @@ The NuGet documentation contained in this repository is hosted on docs.microsoft
 
 Contributions to this docset are welcome. Please submit PRs to the *live* branch, which is what's published to the live docs site. (The master branch is used for staging larger series of changes.)
 
+NuGet follows the [.NET Foundation Contributors Code of Conduct](https://github.com/dotnet/home/blob/master/guidance/be-nice.md). Please take a few minutes to review it.
+
 ## Respository structure
 
 - All markdown files are in the docs folder and various subfolders.
