@@ -30,7 +30,9 @@ ms.reviewer:
 
 # packages.config reference
 
-The `packages.config` is used in some project types to maintain the list of packages referenced by the project.
+The `packages.config` file is used in some project types to maintain the list of packages referenced by the project. This allows NuGet to easily restore the project's dependencies when the project to be transported to a different machine, such as a build server, without all those packages.
+
+## Schema
 
 The schema is simple: following the standard XML header is a single `<packages>` node that contains one or more `<package>` elements, one for each reference. Each `<package>` element can have the following attributes:
 
