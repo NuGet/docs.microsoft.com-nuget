@@ -5,7 +5,7 @@ title: NuGet pack and restore as MSBuild targets | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 2/8/2017
+ms.date: 4/3/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -33,7 +33,7 @@ ms.reviewer:
 
 NuGet 4.0+ can work directly with the information in a `.csproj` file without requiring a separate `.nuspec` or `project.json` file. All the metadata that was previously stored in those configuration files can be instead stored in the `.csproj` file directly, as described here.
 
-With MSBuild 15.1+, NuGet is also a first-class MSBuild citizen with the `pack` and `restore` targets as described below. These targets allow you to work with NuGet as you would with any other MSBuild task or target.
+With MSBuild 15.1+, NuGet is also a first-class MSBuild citizen with the `pack` and `restore` targets as described below. These targets allow you to work with NuGet as you would with any other MSBuild task or target. (For NuGet 3.x and earlier, you use the [pack](../tools/nuget-exe-cli-reference.md#pack) and [restore](../tools/nuget-exe-cli-reference.md#pack) commands through the NuGet CLI instead.)
 
 In this topic:
 
