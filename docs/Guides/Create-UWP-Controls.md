@@ -130,15 +130,13 @@ Here is an example of what the targets file should look like:
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-<Target Name="TPMinVCheck" BeforeTargets="Build;ReBuild" Condition="'$(TargetPlatformMinVersion)' != ''">
-     <PropertyGroup>
-    <RequiredTPMinV>10.0.14393</RequiredTPMinV>
-    <ActualTPMinV>$(TargetPlatformMinVersion)</ActualTPMinV>
-    <PackageId>ManagedPackage</PackageId>
-  </PropertyGroup>
-    <Error 
-        Condition=" '$([System.Version]::Parse($(ActualTPMinV)).CompareTo($([System.Version]::Parse($(RequiredTPMinV)))))' == '-1' " 
-        Text = "The $(PackageId) nuget package cannot be used in the $(MSBuildProjectName) project since the project's TargetPlatformMinVersion - $(ActualTPMinV) does not match the Minimum Version - $(RequiredTPMinV) supported by the package" />
+  <Target Name="TPMinVCheck" BeforeTargets="Build;ReBuild" Condition="'$(TargetPlatformMinVersion)' != ''">
+    <PropertyGroup>
+      <RequiredTPMinV>10.0.14393</RequiredTPMinV>
+      <ActualTPMinV>$(TargetPlatformMinVersion)</ActualTPMinV>
+      <PackageId>ManagedPackage</PackageId>
+    </PropertyGroup>
+    <Error Condition=" '$([System.Version]::Parse($(ActualTPMinV)).CompareTo($([System.Version]::Parse($(RequiredTPMinV)))))' == '-1' " 	   Text = "The $(PackageId) nuget package cannot be used in the $(MSBuildProjectName) project since the project's TargetPlatformMinVersion - $(ActualTPMinV) does not match the Minimum Version - $(RequiredTPMinV) supported by the package" />
   </Target>
 </Project>
 ```
