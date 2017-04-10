@@ -43,6 +43,7 @@
 ## [dotnet Commands](Tools/dotnet-Commands.md)
 # Schema
 ## [.nuspec](Schema/nuspec.md)
+## [packages.config](Schema/packages-config.md)
 ## [project.json](Schema/project-json.md)
 ## [MSBuild Targets](Schema/msbuild-targets.md)
 ## [Nuget.Config file](Schema/nuget-config-file.md)
