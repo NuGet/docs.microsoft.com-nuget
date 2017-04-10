@@ -77,11 +77,9 @@ These are tools and utilities built on NuGet:
 
 * [Glimpse Extensions](http://getglimpse.com/Packages) (plug-ins are packages)
 * [NuGetMustHaves.com](http://nugetmusthaves.com/)
-* [NuGetFeed](http://nugetfeed.org/) (build a list of favorite packages)
 * [Orchard](http://www.orchardproject.net/) (CMS modules are fetched from a v1 NuGet feed hosted in the Orchard Gallery)
 * [Java implementation of NuGet Server](http://jonnyzzz.com/blog/2012/03/07/nuget-server-in-pure-java/)
 * [NuGetLatest](https://twitter.com/NuGetLatest) (Twitter bot tweeting new package publications)
-* [HotNuget](http://hotnuget.com) (compare package usage)
 * [DefinitelyTyped](http://definitelytyped.org/) ([Automatic](https://github.com/DefinitelyTyped/NugetAutomation/) TypeScript Type [Definitions published to NuGet](http://www.nuget.org/packages?q=DefinitelyTyped))
 
 ## Training materials and references

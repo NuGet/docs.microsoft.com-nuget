@@ -59,7 +59,7 @@ We would like to thank the following external contributors for their significant
     - [#2891](http://nuget.codeplex.com/workitem/2891) - Fix bug of nuget.pack parsing wildcard in the 'exclude' attribute incorrectly.
 1. [Justin Dearing](http://www.codeplex.com/site/users/view/zippy1981) ([@zippy1981](https://twitter.com/zippy1981))
     - [#3307](http://nuget.codeplex.com/workitem/3307) - Fix bug `NuGet.targets` does not pass $(Platform) to nuget.exe when restoring packages.
-1. [Brian Federici](http://www.codeplex.com/site/users/view/benerdin) ([@benerdin](https://twitter.com/benerdin))
+1. [Brian Federici](http://www.codeplex.com/site/users/view/benerdin)
     - [#3294](http://nuget.codeplex.com/workitem/3294) - Fix bug in nuget.exe package command which would allow adding files with the same name but different casing, eventually causing "Item already exists" exception.
 1. [Daniel Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
     - [#2990](http://nuget.codeplex.com/workitem/2990) - Add Version property to NetPortableProfile class.
