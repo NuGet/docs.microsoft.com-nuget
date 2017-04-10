@@ -32,7 +32,7 @@ ms.reviewer:
 
 There are two primary tools available to help you build, publish and consume NuGet packages:
 
-1. The [**NuGet CLI**](#nuget-cli) is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux either through Mono or through the .NET Core CLI.
+1. The [**NuGet CLI**](#nuget-cli) is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux through either the .NET Core CLI or with Mono.
 1. The [**NuGet Package Manager  in Visual Studio**](#nuget-package-manager-in-visual-studio) is a GUI tool for managing packages and includes a console through which you can use certain NuGet commands directly within Visual Studio. It's included with Visual Studio 2012 and later and can be installed manually for earlier versions.
 
 Both support the following operations:
