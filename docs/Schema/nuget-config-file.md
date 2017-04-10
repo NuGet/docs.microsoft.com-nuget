@@ -63,13 +63,13 @@ Contains miscellaneous configuration settings, which can be set using the [`nuge
 
 Note: `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using `project.json` and projects using the new Visual Studio 2017 project format.
 
-Key | Value
---- | ---
-dependencyVersion (package.config only) | The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly. This value is also used by the NuGet Package Manager UI. Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`.
-globalPackagesFolder (projects not using `packages.config`) | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages`. A relative path can be used in project-specific `Nuget.Config` files.
-repositoryPath (`packages.config` only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)\packages` folder. A relative path can be used in project-specific `Nuget.Config` files.
-defaultPushSource | Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation.
-http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://<username>:<password>@<domain>`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the http_proxy and no_proxy environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com).
+| Key | Value |
+| --- | --- |
+| dependencyVersion (package.config only) | The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly. This value is also used by the NuGet Package Manager UI. Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
+| globalPackagesFolder (projects not using `packages.config`) | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages`. A relative path can be used in project-specific `Nuget.Config` files. |
+| repositoryPath (`packages.config` only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)\packages` folder. A relative path can be used in project-specific `Nuget.Config` files. |
+| defaultPushSource | Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation. |
+| http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://<username>:<password>@<domain>`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the http_proxy and no_proxy environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
 
 
 **Example**:
@@ -88,9 +88,9 @@ http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use 
 
 Configures whether NuGet does automatic binding redirects when a package is installed.
 
-Key | Value
---- | ---
-skip | A Boolean indicating whether to skip automatic binding redirects. The default is false.
+| Key | Value |
+| --- | --- |
+| skip | A Boolean indicating whether to skip automatic binding redirects. The default is false. |
 
 **Example**:
 
@@ -106,10 +106,10 @@ skip | A Boolean indicating whether to skip automatic binding redirects. The def
 
 Controls package restore during builds.
 
-Key | Value
---- | ---
-enabled | A Boolean indicating whether NuGet can perform automatic restore. You can also set the `EnableNuGetPackageRestore` environment variable with a value of `True` instead of setting this key in the config file.
-automatic | A Boolean indicating whether NuGet should check for missing packages during a build.
+| Key | Value |
+| --- | --- |
+| enabled | A Boolean indicating whether NuGet can perform automatic restore. You can also set the `EnableNuGetPackageRestore` environment variable with a value of `True` instead of setting this key in the config file. |
+| automatic | A Boolean indicating whether NuGet should check for missing packages during a build. |
 
 **Example**:
 
@@ -124,9 +124,9 @@ automatic | A Boolean indicating whether NuGet should check for missing packages
 
 Controls whether the `packages` folder of a solution is included in source control. This section works only in `Nuget.Config` files in a solution folder.
 
-Key | Value
---- | ---
-disableSourceControlIntegration | A Boolean indicating whether to ignore the packages folder when working with source control. The default value is false.
+| Key | Value |
+| --- | --- |
+| disableSourceControlIntegration | A Boolean indicating whether to ignore the packages folder when working with source control. The default value is false. |
 
 
 **Example**:
@@ -148,9 +148,9 @@ The [`nuget sources` command](../tools/nuget-exe-cli-reference.md#sources) is ge
 
 Lists all known package sources.
 
-Key | Value
---- | ---
-(name to assign to the package source) | The path or URL of the package source.
+| Key | Value |
+| --- | --- |
+| (name to assign to the package source) | The path or URL of the package source. |
 
 **Example**:
 
@@ -167,11 +167,11 @@ Key | Value
 
 Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`. Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.
 
-Key | Value
---- | ---
-username | The user name for the source in plain text.
-password | The encrypted password for the source.
-cleartextpassword | The unencrypted password for the source.
+| Key | Value |
+| --- | --- |
+| username | The user name for the source in plain text. |
+| password | The encrypted password for the source. |
+| cleartextpassword | The unencrypted password for the source. |
 
 **Example:**
 
@@ -209,9 +209,9 @@ When using unencrypted passwords:
 
 Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../tools/nuget-exe-cli-reference.md#setapikey).
 
-Key | Value
---- | ---
-(source URL) | The encrypted API key.
+| Key | Value |
+| --- | --- |
+| (source URL) | The encrypted API key. |
 
 **Example**:
 
@@ -226,9 +226,9 @@ Key | Value
 
 Identified currently disabled sources. May be empty.
 
-Key | Value
---- | ---
-(name of source) | A Boolean indicating whether the source is disabled.
+| Key | Value |
+| --- | --- |
+| (name of source) | A Boolean indicating whether the source is disabled. |
 
 
 
@@ -249,9 +249,9 @@ Key | Value
 
 Identifies to the currently active source or indicates the aggregate of all sources.
 
-Key | Value
---- | ---
-(name of source) or `All` | If key is the name of a source, the value is the source path or URL. If `All`, value should be `(Aggregate source)` to combine all package sources that are not otherwise disabled.
+| Key | Value |
+| --- | --- |
+| (name of source) or `All` | If key is the name of a source, the value is the source path or URL. If `All`, value should be `(Aggregate source)` to combine all package sources that are not otherwise disabled. |
 
 **Example**:
 
@@ -274,32 +274,32 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
     <config>
-    <!--
-        Used to specify the default location to expand packages.
-        See: nuget.exe help install
-        See: nuget.exe help update
-    -->
-    <add key="repositoryPath" value="External\Packages" />
+        <!--
+            Used to specify the default location to expand packages.
+            See: nuget.exe help install
+            See: nuget.exe help update
+        -->
+        <add key="repositoryPath" value="External\Packages" />
 
-    <!--
-        Used to specify default source for the push command.
-        See: nuget.exe help push
-    -->
+        <!--
+            Used to specify default source for the push command.
+            See: nuget.exe help push
+        -->
 
-    <add key="DefaultPushSource" value="https://MyRepo/ES/api/v2/package" />
+        <add key="DefaultPushSource" value="https://MyRepo/ES/api/v2/package" />
 
-    <!-- Proxy settings -->
-    <add key="http_proxy" value="host" />
-    <add key="http_proxy.user" value="username" />
-    <add key="http_proxy.password" value="encrypted_password" />
+        <!-- Proxy settings -->
+        <add key="http_proxy" value="host" />
+        <add key="http_proxy.user" value="username" />
+        <add key="http_proxy.password" value="encrypted_password" />
     </config>
 
     <packageRestore>
-    <!-- Allow NuGet to download missing packages -->
-    <add key="enabled" value="True" />
+        <!-- Allow NuGet to download missing packages -->
+        <add key="enabled" value="True" />
 
-    <!-- Automatically check for missing packages during build in Visual Studio -->
-    <add key="automatic" value="True" />
+        <!-- Automatically check for missing packages during build in Visual Studio -->
+        <add key="automatic" value="True" />
     </packageRestore>
 
     <!--
@@ -309,8 +309,8 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
         See: nuget.exe help update
     -->
     <packageSources>
-    <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
-    <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
+        <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
+        <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
     </packageSources>
 
     <!-- Used to store credentials -->
@@ -326,7 +326,7 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
         See: nuget.exe help mirror
     -->
     <apikeys>
-    <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
+        <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
     </apikeys>
 </configuration>
 ```
