@@ -99,14 +99,6 @@ A few examples:
   <dependency id="ExamplePackage" version="[1.3.2,1.5)" />
 ```
 
-
-If no version is specified for a dependency, NuGet behaves as follows:
-
-- NuGet v2.7.2 and earlier: The **latest** package version will be used
-- NuGet v2.8 and later:  The **lowest** package version will be used
-
-For consistent behavior, it's recommended to always specify a version or version range for package dependencies.
-
 (For the curious, the NuGet version notation is inspired by Maven Version Range Specification, but is not identical to it.)
 
 ## Normalized version numbers
