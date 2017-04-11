@@ -41,8 +41,3 @@ NuGet 2.9 was released September 10, 2015 as an update to the 2.8.7 VSIX for Vis
 
 
 The complete list of fixes in this release can be found on GitHub in the [2.8.8 milestone](https://github.com/NuGet/Home/issues?q=milestone%3A2.8.8+is%3Aclosed)
-
-Download the extension for:
-
-* [Visual Studio 2012](https://dist.nuget.org/visualstudio-2012-vsix/v2.9-rc/NuGet.Tools.vsix)
-* [Visual Studio 2013](https://dist.nuget.org/visualstudio-2013-vsix/v2.9-rc/NuGet.Tools.vsix)

@@ -38,7 +38,7 @@ When multiple packages have the same dependency, then the same package ID can ap
 
 The exact process differs between NuGet 2.x (using `packages.config`) and NuGet 3.x (using `project.json`) as described in the sections below.
 
-In some cases, such as when there's a conflict between a dependency specified in one project and an assembly that's produced by another, it might be necessary to explicitly exclude a reference. The section [Excluding references](#excluding-reference) below.
+In some cases, such as when there's a conflict between a dependency specified in one project and an assembly that's produced by another, it might be necessary to explicitly exclude a reference. The section [Excluding references](#excluding-references) below.
 
 ## Dependency resolution in NuGet 2.x
 
