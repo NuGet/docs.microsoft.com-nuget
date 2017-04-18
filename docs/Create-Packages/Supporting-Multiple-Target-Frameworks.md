@@ -71,7 +71,7 @@ The following example shows a folder structure that supports four versions of a 
 ## Content files and PowerShell scripts
 
 > [!Warning]
-> Mutable content file support and script execution is available in NuGEt 2.x, but deprecated in NuGet 3.x and later.
+> Mutable content file support and script execution is available in NuGet 2.x, but deprecated in NuGet 3.x and later.
 
 With NuGet 2.x, content files and PowerShell scripts can be grouped by target framework using the same folder convention inside the `content` and `tools` folders. For example:
 
