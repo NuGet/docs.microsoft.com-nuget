@@ -9,7 +9,7 @@ ms.date: 1/9/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
-ms.technology: nuget
+ms.technology: null
 ms.assetid: 824c3f45-c6c2-4c82-9d6d-62a19bfdc4a4
 
 # optional metadata
