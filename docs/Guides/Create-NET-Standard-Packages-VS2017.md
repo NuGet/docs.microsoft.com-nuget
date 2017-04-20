@@ -9,7 +9,7 @@ ms.date: 2/8/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
-ms.technology: nuget
+ms.technology: null
 ms.assetid: 2c1de334-fdc9-4e1e-8ef6-a90b3e77ff0f
 
 # optional metadata
@@ -105,7 +105,9 @@ NuGet 4.0 supports a pack target using MSBuild version 15.1+ when the project co
 
     msbuild /t:pack /p:Configuration=Release
 
-This generates `AppLogger.YOUR_NAME.1.0.0.nupkg` in the `bin\Release` folder by default, as it builds that configuration. If you omit the `/p` switch, the default configuration will be `Debug`.
+For additional options with `msbuild /t:pack`, such as including content files, symbols, and source code, see [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md#pack-target).
+
+In any case, the command above generates `AppLogger.YOUR_NAME.1.0.0.nupkg` in the `bin\Release` folder by default, as it builds that configuration. If you omit the `/p` switch, the default configuration will be `Debug`. 
 
 Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
 

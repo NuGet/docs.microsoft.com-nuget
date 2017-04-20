@@ -9,7 +9,7 @@ ms.date: 2/8/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
-ms.technology: nuget
+ms.technology: null
 ms.assetid: 1d530a72-3486-4a0d-b6fb-017524616f91
 
 # optional metadata
@@ -139,7 +139,7 @@ In some cases, it is not possible to meet all version requirements. As shown bel
 
 In these situations, the top-level consumer (the application or package) should add its own direct dependency on Package B so that the [Nearest Wins](#nearest-wins) rule applies.
 
-# Excluding references
+## Excluding references
 
 There are scenarios in which assemblies with the same name might be referenced more than once in a project, producing design-time and build-time errors. For example, consider a project that contains a custom version of `C.dll`, and references packageC that also contains `C.dll`. At the same time, the project also depends on packageB which also depends on packageC and `C.dll`. As a result, NuGet won't be able to determine which `C.dll` to use, but you can't just remove the project's dependency on packageC because packageB also depends on it.
 

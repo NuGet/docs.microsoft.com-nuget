@@ -9,7 +9,7 @@ ms.date: 2/8/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
-ms.technology: nuget
+ms.technology: null
 ms.assetid: 456797cb-e3e4-4b88-9b01-8b5153cee802
 
 # optional metadata
@@ -190,7 +190,7 @@ Note that there are several additional packaging options available when working 
 In addition to assemblies and simple files like a readme, some packages may contain the following:
 
 - Content and source code that should be injected into the target project
-- PowerShell scripts (packages used in NuGet 2.x can include installation scripts as well, which is no longer supported in NuGet 3.x and later.)
+- PowerShell scripts (packages used in NuGet 2.x can include installation scripts as well, which is not supported in NuGet 3.x and later.)
 - Transformations to existing configuration and source code files in a project
 
 To include all these files in a package, you lay out a folder structure using the following conventions:
