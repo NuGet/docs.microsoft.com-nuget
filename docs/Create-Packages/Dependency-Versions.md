@@ -5,7 +5,7 @@ title: Dependency Versions in NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/5/20167
+ms.date: 4/24/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:

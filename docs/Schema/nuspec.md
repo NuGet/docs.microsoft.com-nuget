@@ -508,6 +508,7 @@ In this case, because the file extensions of the source and target match, NuGet 
         All .txt files from docs except admin.txt (first example)
         All .txt files from docs except admin.txt and log.txt (second example)
 
+<a name="using-contentfiles-element-for-content-files"></a>
 ### Using the contentFiles element for content files
 
 *Version 3.3+ with project.json only*

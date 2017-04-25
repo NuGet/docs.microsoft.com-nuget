@@ -5,7 +5,7 @@ title: Target Frameworks References for NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 4/24/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -90,6 +90,7 @@ Universal Windows Platform | uap | uap [uap10.0]
 | | | netstandard1.5
 | | | netstandard1.6
 .NET Core App | netcoreapp | netcoreapp1.0
+| | | netcoreapp1.1
 
 ## Deprecated frameworks
 The following frameworks are deprecated. Packages targeting these frameworks should migrate to the indicated replacements.
@@ -148,145 +149,145 @@ Additional frameworks defined by third parties provide compatibility with other 
 Profile # | Frameworks | Full name | .NET Standard
  --- | --- | --- | ---
  Profile2 | .NETFramework 4.0 | portable-net40+win8+sl4+wp7 |
- | Windows 8.0 | |
- | Silverlight 4.0 |
- | WindowsPhone 7.0|
+ | | Windows 8.0 | |
+ | | Silverlight 4.0 |
+ | | WindowsPhone 7.0|
  Profile3 | .NETFramework 4.0 | portable-net40+sl4
- | Silverlight 4.0 |
+ | | Silverlight 4.0 |
  Profile4 | .NETFramework 4.5 | portable-net45+sl4+win8+wp7
- | Silverlight 4.0 |
- | Windows 8.0 |
- | WindowsPhone 7.0 |
+ | | Silverlight 4.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 7.0 |
  Profile5 | .NETFramework 4.0 | portable-net40+win8
- | Windows 8.0 |
+ | | Windows 8.0 |
  Profile6 | .NETFramework 4.0.3 | portable-net403+win8
- | Windows 8.0 |
+ | | Windows 8.0 |
  Profile7 | .NETFramework 4.5 | portable-net45+win8    | netstandard1.1
- | Windows 8.0 |
+ | | Windows 8.0 |
  Profile14 | .NETFramework 4.0 | portable-net40+sl5
- | Silverlight 5.0 |
+ | | Silverlight 5.0 |
  Profile18 | .NETFramework 4.0.3 | portable-net403+sl4
- | Silverlight 4.0 |
+ | | Silverlight 4.0 |
  Profile19 | .NETFramework 4.0.3 | portable-net403+sl5
- | Silverlight 5.0 |
+ | | Silverlight 5.0 |
  Profile23 | .NETFramework 4.5 | portable-net45+sl4
- | Silverlight 4.0 |
+ | | Silverlight 4.0 |
  Profile24 | .NETFramework 4.5 | portable-net45+sl5
- | Silverlight 5.0 |
+ | | Silverlight 5.0 |
  Profile31 | Windows 8.1 | portable-win81+wp81 | netstandard1.0
- | WindowsPhone 8.1 |
+ | | WindowsPhone 8.1 |
  Profile32 | Windows 8.1 | portable-win81+wpa81 | netstandard1.2
- | WindowsPhone 8.1 |
+ | | WindowsPhone 8.1 |
  Profile36 | .NETFramework 4.0 | portable-net40+sl4+win8+wp8
- | Silverlight 4.0 |
- | Windows 8.0 |
- | WindowsPhone 8.0 |
+ | | Silverlight 4.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.0 |
  Profile37 | .NETFramework 4.0 | portable-net40+sl5+win8
- | Silverlight 5.0 |
- | Windows 8.0 |
+ | | Silverlight 5.0 |
+ | | Windows 8.0 |
  Profile41 | .NETFramework 4.0.3 | portable-net403+sl4+win8
- | Silverlight 4.0 |
- | Windows 8.0 |
+ | | Silverlight 4.0 |
+ | | Windows 8.0 |
  Profile42 | .NETFramework 4.0.3 | portable-net403+sl5+win8
- | Silverlight 5.0 |
- | Windows 8.0 |
+ | | Silverlight 5.0 |
+ | | Windows 8.0 |
  Profile44 | .NETFramework 4.5.1 | portable-net451+win81 | netstandard1.2
- | Windows 8.1 |
+ | | Windows 8.1 |
  Profile46 | .NETFramework 4.5 | portable-net45+sl4+win8
- | Silverlight 4.0 |
- | Windows 8.0 |
+ | | Silverlight 4.0 |
+ | | Windows 8.0 |
  Profile47 | .NETFramework 4.5 | portable-net45+sl5+win8
- | Silverlight 5.0 |
- | Windows 8.0 |
+ | | Silverlight 5.0 |
+ | | Windows 8.0 |
  Profile49 | .NETFramework 4.5 | portable-net45+wp8 | netstandard1.0
- | WindowsPhone 8.0 |
+ | | WindowsPhone 8.0 |
  Profile78 | .NETFramework 4.5 | portable-net45+win8+wp8 | netstandard1.0
- | Windows 8.0 |
- | WindowsPhone 8.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.0 |
  Profile84 | WindowsPhone 8.1 | portable-wp81+wpa81 | netstandard1.0
- | WindowsPhone 8.1 |
+ | | WindowsPhone 8.1 |
  Profile88 | .NETFramework 4.0 | portable-net40+sl4+win8+wp75
- | Silverlight 4.0 |
- | Windows 8.0 |
- | WindowsPhone 7.5 |
+ | | Silverlight 4.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 7.5 |
  Profile92 | .NETFramework 4.0 | portable-net40+win8+wpa81
- | Windows 8.0 |
- | WindowsPhone 8.1 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.1 |
  Profile95 | .NETFramework 4.0.3 | portable-net403+sl4+win8+wp7
- | Silverlight 4.0 |
- | Windows 8.0 |
- | WindowsPhone 7.0 |
+ | | Silverlight 4.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 7.0 |
  Profile96 | .NETFramework 4.0.3 | portable-net403+sl4+win8+wp75
- | Silverlight 4.0 |
- | Windows 8.0 |
- | WindowsPhone 7.5 |
- | Profile102 | .NETFramework 4.0.3 | portable-net403+win8+wpa81
- | Windows 8.0 |
- | WindowsPhone 8.1 |
+ | | Silverlight 4.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 7.5 |
+ Profile102 | .NETFramework 4.0.3 | portable-net403+win8+wpa81
+ | | Windows 8.0 |
+ | | WindowsPhone 8.1 |
  Profile104 | .NETFramework 4.5 | portable-net45+sl4+win8+wp75
- | Silverlight 4.0 |
- | Windows 8.0 |
- | WindowsPhone 7.5 |
+ | | Silverlight 4.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 7.5 |
  Profile111 | .NETFramework 4.5 | portable-net45+win8+wpa81 | netstandard1.1
- | Windows 8.0 |
- | WindowsPhone 8.1 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.1 |
  Profile136 | .NETFramework 4.0 | portable-net40+sl5+win8+wp8
- | Silverlight 5.0 |
- | Windows 8.0 |
- | WindowsPhone 8.0 |
+ | | Silverlight 5.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.0 |
  Profile143 | .NETFramework 4.0.3 | portable-net403+sl4+win8+wp8
- | Silverlight 4.0 |
- | Windows 8.0 |
- | WindowsPhone 8.0 |
+ | | Silverlight 4.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.0 |
  Profile147 | .NETFramework 4.0.3 | portable-net403+sl5+win8+wp8
- | Silverlight 5.0 |
- | Windows 8.0 |
- | WindowsPhone 8.0 |
+ | | Silverlight 5.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.0 |
  Profile151 | NETFramework 4.5.1 | portable-net451+win81+wpa81 | netstandard1.2
- | Windows 8.1 |
- | WindowsPhone 8.1 |
+ | | Windows 8.1 |
+ | | WindowsPhone 8.1 |
  Profile154 | .NETFramework 4.5 | portable-net45+sl4+win8+wp8
- | Silverlight 4.0 |
- | Windows 8.0 |
- | WindowsPhone 8.0 |
+ | | Silverlight 4.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.0 |
  Profile157 | Windows 8.1 | portable-win81+wp81+wpa81 | netstandard1.0
- | WindowsPhone 8.1 |
- | WindowsPhone 8.1 |
+ | | WindowsPhone 8.1 |
+ | | WindowsPhone 8.1 |
  Profile158 | .NETFramework 4.5 | portable-net45+sl5+win8+wp8
- | Silverlight 5.0 |
- | Windows 8.0 |
- | WindowsPhone 8.0 |
+ | | Silverlight 5.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.0 |
  Profile225 | .NETFramework 4.0 | portable-net40+sl5+win8+wpa81
- | Silverlight 5.0 |
- | Windows 8.0 |
- | WindowsPhone 8.1 |
+ | | Silverlight 5.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.1 |
  Profile240 | .NETFramework 4.0.3 | portable-net403+sl5+win8+wpa8
- | Silverlight 5.0 |
- | Windows 8.0 |
- | WindowsPhone 8.1 |
+ | | Silverlight 5.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.1 |
  Profile255 | .NETFramework 4.5 | portable-net45+sl5+win8+wpa81
- | Silverlight 5.0 |
- | Windows 8.0 |
- | WindowsPhone 8.1 |
+ | | Silverlight 5.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.1 |
  Profile259 | .NETFramework 4.5 | portable-net45+win8+wpa81+wp8 | netstandard1.0
- | Windows 8.0 |
- | WindowsPhone 8.1 |
- | WindowsPhone 8.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.1 |
+ | | WindowsPhone 8.0 |
  Profile328 | .NETFramework 4.0 | portable-net40+sl5+win8+wpa81+wp8
- | Silverlight 5.0 |
- | Windows 8.0 |
- | WindowsPhone 8.1 |
- | WindowsPhone 8.0 |
+ | | Silverlight 5.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.1 |
+ | | WindowsPhone 8.0 |
  Profile336 | .NETFramework 4.0.3 | portable-net403+sl5+win8+wpa81+wp8
- | Silverlight 5.0 |
- | Windows 8.0 |
- | WindowsPhone 8.1 |
- | WindowsPhone 8.1 |
+ | | Silverlight 5.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.1 |
+ | | WindowsPhone 8.1 |
  Profile344 | .NETFramework 4.5 | portable-net45+sl5+win8+wpa81+wp8
- | Silverlight 5.0 |
- | Windows 8.0 |
- | WindowsPhone 8.1 |
- | WindowsPhone 8.0 |
+ | | Silverlight 5.0 |
+ | | Windows 8.0 |
+ | | WindowsPhone 8.1 |
+ | | WindowsPhone 8.0 |
 
 Additionally, NuGet packages targeting Xamarin can use additional Xamarin-defined frameworks. See [Creating NuGet packages for Xamarin](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/).
 

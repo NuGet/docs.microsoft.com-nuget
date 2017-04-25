@@ -5,7 +5,7 @@ title: Source and config file transformations for NuGet packages | Microsoft Doc
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 4/24/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -47,8 +47,10 @@ A **config file transformation** allows you to modify files that already exist i
 3. In the source code file, use case-insensitive tokens of the form `$token$` to indicate values that NuGet should replace with project properties:
 
     ```cs
-    namespace $rootnamespace$.Models {
-        public struct CategoryInfo {
+    namespace $rootnamespace$.Models
+    {
+        public struct CategoryInfo
+        {
             public string categoryid;
             public string description;
             public string htmlUrl;
