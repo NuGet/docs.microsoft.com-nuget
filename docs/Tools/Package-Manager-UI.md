@@ -12,6 +12,7 @@ ms.prod: nuget
 ms.technology: null
 ms.assetid: 62f6962b-7b84-4452-ae0d-a9e1ef1fc6f0
 f1_keywords: 
+  - "vs.toolsoptionspages.nuget_package_manager"
   - "vs.toolsoptionspages.nuget_package_manager.general"
   - "vs.toolsoptionspages.nuget_package_manager.package_sources"
 
