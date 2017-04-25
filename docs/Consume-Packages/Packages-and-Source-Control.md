@@ -5,7 +5,7 @@ title: NuGet Packages and Source Control | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 4/24/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -95,5 +95,8 @@ To disable source control integration with TFVC for selected files:
         # Include package target files which may be required for MSBuild,
         # again prefixing the folder name as needed.
         !packages/*.targets
+
+        # Make sure not to exclude packages.config
+        !packages.config
 
 1. Add `NuGet.Config` and `.tfignore` to source control and check in your changes.

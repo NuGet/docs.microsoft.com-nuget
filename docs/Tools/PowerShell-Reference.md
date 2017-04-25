@@ -5,7 +5,7 @@ title: NuGet PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 4/24/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -50,14 +50,14 @@ For detailed help on any of these commands within the console, just run the foll
 Get-Help <command>
 ```
 
-Note that all Package Manager Console commands support the following common PowerShell parameters:
+Note that all Package Manager Console commands support the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216):
 
 - Debug
 - ErrorAction
 - ErrorVariable
 - OutBuffer
 - OutVariable
-- PiplineVariable
+- PipelineVariable
 - Verbose
 - WarningAction
 - WarningVariable

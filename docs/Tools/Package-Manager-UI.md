@@ -5,12 +5,16 @@ title: NuGet Package Manager UI Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 2/8/2017
+ms.date: 4/24/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
 ms.technology: null
 ms.assetid: 62f6962b-7b84-4452-ae0d-a9e1ef1fc6f0
+f1_keywords: 
+  - "vs.toolsoptionspages.nuget_package_manager"
+  - "vs.toolsoptionspages.nuget_package_manager.general"
+  - "vs.toolsoptionspages.nuget_package_manager.package_sources"
 
 # optional metadata
 

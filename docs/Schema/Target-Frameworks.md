@@ -5,7 +5,7 @@ title: Target Frameworks References for NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 4/24/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -90,6 +90,7 @@ Universal Windows Platform | uap | uap [uap10.0]
 | | | netstandard1.5
 | | | netstandard1.6
 .NET Core App | netcoreapp | netcoreapp1.0
+| | | netcoreapp1.1
 
 ## Deprecated frameworks
 The following frameworks are deprecated. Packages targeting these frameworks should migrate to the indicated replacements.
