@@ -119,7 +119,7 @@ In the example below, the application depends directly on Package B with a versi
 ![Application using the Nearest Wins rule](media/projectJson-dependency-5.png)
 
 >[!Warning]
-> Applying the Nearest Wins rule can downgrading the package version, thus potentially breaking other dependencies in the graph. This currently produces an error, although we are considering making it a warning instead. See [issue #897 on GitHub](https://github.com/NuGet/Home/issues/897).
+> Applying the Nearest Wins rule can downgrade the package version, thus potentially breaking other dependencies in the graph. Hence this rule is applied with a warning to aler the user.
 
 This rule also results in greater efficiency with large dependency graph (such as those with the BCL packages) because by once a given dependency is ignored, NuGet also ignores all remaining dependencies on that branch of the graph. In the diagram below, for example, because Package C 2.0 will be used, NuGet can ignore any branches in the graph that refer to an older version of Package C:
 
