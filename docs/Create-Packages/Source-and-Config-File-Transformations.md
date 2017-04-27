@@ -22,11 +22,14 @@ keywords: NuGet package installation, NuGet package transformations, modifying c
 ms.reviewer:
 - karann
 - unnir
+- anangaur
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
 
 ---
+> Note: This functionality is not available in the new [PackageReference](http://blog.nuget.org/20170316/NuGet-now-fully-integrated-into-MSBuild.html) world. 
+
 # Transforming source code and configuration files
 
 NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times.
