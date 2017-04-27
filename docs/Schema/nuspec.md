@@ -511,7 +511,7 @@ In this case, because the file extensions of the source and target match, NuGet 
 <a name="using-contentfiles-element-for-content-files"></a>
 ### Using the contentFiles element for content files
 
-*Version 3.3+ with project.json only*
+*Version 3.3+ with project.json and 4.0+ with PackageReference*
 
 By default, a package places content in a `contentFiles` folder (see below) and `nuget pack` will include all files in that folder using default attributes. In this case it's not necessary to include a `contentFiles` node in the `.nuspec` at all.
 
