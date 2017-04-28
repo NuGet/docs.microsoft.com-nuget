@@ -248,7 +248,7 @@ Additional restore settings may come from MSBuild properties; values are set fro
 | RestoreDisableParallel | Limit downloads to one at a time |
 | RestoreConfigFile | `Nuget.Config` file |
 | RestoreNoCache | If true, avoids using the web cache |
-| RestoreIgnoreFailedSource | If true, ignores failing or missing package sources |
+| RestoreIgnoreFailedSources | If true, ignores failing or missing package sources |
 | RestoreTaskAssemblyFile | Path to `NuGet.Build.Tasks.dll` |
 | RestoreGraphProjectInput | Semicolon-delimited list of projects to restore, which should contain absolute paths. |
 | RestoreOutputPath | Output folder, defaulting to the `obj` folder |
@@ -257,7 +257,7 @@ Additional restore settings may come from MSBuild properties; values are set fro
 
 ```xml
 <PropertyGroup>
-<RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
+<RestoreIgnoreFailedSources>true</RestoreIgnoreFailedSources>
 <PropertyGroup>
 ```
 
