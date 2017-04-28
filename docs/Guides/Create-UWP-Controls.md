@@ -94,7 +94,7 @@ In the following example, the control implemented in `ManagedPackage.winmd` will
 
 ## Add custom icons to your controls
 
-To display a custom icon in the toolbox/assets pane, add an image to your project or the corresponding `design.dll` project with the name “Namespace.ControlName.extension” and set the build action to “Embedded Resource”. Supported formats are `.png`, `.jpg`, `.jpeg`, `.gif`, and `.bmp`.
+To display a custom icon in the toolbox/assets pane, add an image to your project or the corresponding `design.dll` project with the name “Namespace.ControlName.extension” and set the build action to “Embedded Resource”. Supported formats are `.png`, `.jpg`, `.jpeg`, `.gif`, and `.bmp`. The recommended image size is 64 pixels by 64 pixels.
 
 In the example below, the project contains an image file named “ManagedPackage.MyCustomControl.png”.
 
