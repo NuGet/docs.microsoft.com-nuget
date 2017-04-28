@@ -107,7 +107,9 @@ If no version is specified for a dependency, NuGet behaves as follows:
 
 For consistent behavior, it's recommended to always specify a version or version range for package dependencies.
 
-(For the curious, the NuGet version notation is inspired by Maven Version Range Specification, but is not identical to it.)
+> [!Warning]
+> When pushing to NuGet.org, packages that do not specify a version or version range for dependencies, will be rejected.
+
 
 ## Normalized version numbers
 
