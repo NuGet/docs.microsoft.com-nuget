@@ -62,6 +62,8 @@ Similarly, you can write an MSBuild task, write your own target and consume NuGe
 
 When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs from the `.csproj` file rather than `project.json` or `.nuspec` files. The table below describes the MSBuild properties that can be added to a `.csproj` file within the first `<PropertyGroup>` node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../schema/nuspec.md).
 
+Note that the `Owners` and `Summary` properties from `.nuspec` are not supported with MSBuild.
+
 
 | Attribute/NuSpec Value | MSBuild Property | Default | Notes |
 |--------|--------|--------|--------|
@@ -95,6 +97,7 @@ When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs
 - Description
 - Copyright
 - PackageRequireLicenseAcceptance
+- DevelopmentDependency
 - PackageLicenseUrl
 - PackageProjectUrl
 - PackageIconUrl
@@ -125,7 +128,7 @@ As part of the change for [NuGet Issue 2582](https://github.com/NuGet/Home/issue
 
 ### Output assemblies
 
-The `nuget pack` command will copy output files with extensions `.exe`, `.dll`, `.xml`, `.winmd`, `.json`, and `.pri`. The output files that are copied depend on what MSBuild provides from the `BuiltOutputProjectGroup` target.
+`nuget pack` copies output files with extensions `.exe`, `.dll`, `.xml`, `.winmd`, `.json`, and `.pri`. The output files that are copied depend on what MSBuild provides from the `BuiltOutputProjectGroup` target.
 
 There are two MSBuild  properties that you can use in your project file or command line to control where output assemblies go:
 
