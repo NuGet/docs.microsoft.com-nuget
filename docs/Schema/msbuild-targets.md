@@ -66,7 +66,7 @@ When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs
 | Attribute/NuSpec Value | MSBuild Property | Default | Notes |
 |--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | $(AssemblyName) from MSBuild |
-| Version | PackageVersion | Version | New $(Version) property from MSBuild, is semver compatible. Could be “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345”. |
+| Version | PackageVersion | Version | $(Version) property from MSBuild, semver compatible, for example “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345”. |
 | VersionPrefix | PackageVersionPrefix | empty | Setting PackageVersion will overwrite PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | empty | $(VersionSuffix) from MSBuild. Setting PackageVersion will overwrite PackageVersionSuffix | 
 | Authors | Authors | Username of the current user | |
@@ -225,9 +225,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 ## restore target
 
-As part of the move to MSBuild, package restore becomes an MSBuild target, that is, `MSBuild /t:restore`, `nuget restore` and `dotnet restore` use this target to restore packages in .NET Core projects.
-
-The restore target works as follows:
+`MSBuild /t:restore` (which `nuget restore` and `dotnet restore` use with .NET Core projects), restores packages referenced in the project file as follows:
 
 1. Read all project to project references
 1. Read the project properties to find the intermediate folder and target frameworks
@@ -257,7 +255,7 @@ Additional restore settings may come from MSBuild properties; values are set fro
 
 ```xml
 <PropertyGroup>
-<RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
+    <RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
 <PropertyGroup>
 ```
 
@@ -273,13 +271,17 @@ Restore creates the following files in the build `obj` folder:
 
 ## PackageTargetFallback
 
-`PackageTargetFallback` is the MSBuild equivalent of `Imports`.
+Normally, a project built with MSBuild targeting a specific dotnet TxM requires that all its dependencies also have that same TxM. However, one or more of those dependency packages might not have that TxM but instead target frameworks that you know are compatible. In such cases you need a way to specify the mapping.
 
-### MSBuild syntax to support PackageTargetFallback
+`PackageTargetFallback` is the MSBuild equivalent of the [`imports` keyword used in `project.json`](../schema/project-json#imports)) that's used or this purpose. For example, if the project is using the `Net45` TxM, the following entry states that it can also use packages targeting `portable-net45+win81`:
 
-    <PackageTargetFallback Condition="'$(TargetFramework)'=='Net45'">portable-net45+win81</PackageTargetFallback>
+```xml
+<PackageTargetFallback Condition="'$(TargetFramework)'=='Net45'">
+    portable-net45+win81
+</PackageTargetFallback>
+```
 
-`PackageTargetFallbacks` may have been set in one of Microsoft targets (we are considering), or other ones. If you'd like to add the list already provided, you can add additional values to the `PackageTargetFallback` property:
+In cases where a `PackageTargetFallback` is already defined for a given TxM, you can extend it by adding additional values to the `PackageTargetFallback` property of the element:
 
 ```xml
 <PackageTargetFallback Condition="'$(TargetFramework)'=='Net45'">
