@@ -270,7 +270,7 @@ Restore creates the following files in the build `obj` folder:
 | `{projectName}.projectFileExtension.nuget.g.targets` | References to MSBuild targets contained in packages |
 
 
-## PackageTargetFallback 
+### PackageTargetFallback 
 
 The `PackageTargetFallback` element allows you to specify a set of compatible targets to be used when restoring packages (the equivalent of [`imports` in `project.json`](../schema/project-json#imports)). It's designed to allow packages that use a dotnet [TxM](../schema/target-frameworks) to work with compatible packages that don't declare a dotnet TxM. That is, if your project uses the dotnet TxM, then all the packages it depends on must also have a dotnet TxM, unless you add the `<PackageTargetFallback>` to your project in order to allow non-dotnet platforms to be compatible with dotnet. 
 
