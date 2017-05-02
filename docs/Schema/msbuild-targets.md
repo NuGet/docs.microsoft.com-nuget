@@ -66,7 +66,7 @@ When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs
 | Attribute/NuSpec Value | MSBuild Property | Default | Notes |
 |--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | $(AssemblyName) from MSBuild |
-| Version | PackageVersion | Version | $(Version) property from MSBuild, semver compatible, for example “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345”. |
+| Version | PackageVersion | Version | This is semver compatible, for example “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345” |
 | VersionPrefix | PackageVersionPrefix | empty | Setting PackageVersion will overwrite PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | empty | $(VersionSuffix) from MSBuild. Setting PackageVersion will overwrite PackageVersionSuffix | 
 | Authors | Authors | Username of the current user | |
