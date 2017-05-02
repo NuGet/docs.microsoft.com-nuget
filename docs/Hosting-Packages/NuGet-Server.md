@@ -46,7 +46,7 @@ The following sections walk through this process in detail, using C#.
 
     ![Setting .NET Framework target to 4.6](media/Hosting_01-NuGet.Server-Set4.6.png)
 
-1. Give the application a suitable name, click OK, and in the next dialog select the **ASP.NET 4.6 - Empty** template and click OK.
+1. Give the application a suitable name (*other* than NuGet.Server), click OK, and in the next dialog select the **ASP.NET 4.6 - Empty** template and click OK.
 
 1. Right-click the project, select **Manage NuGet Packages**, and in the Package Manager UI search and install the latest version of the NuGet.Server package if you're targeting .NET Framework 4.6. (You can also install it from the Package Manager Console with `Install-Package NuGet.Server`.)
 

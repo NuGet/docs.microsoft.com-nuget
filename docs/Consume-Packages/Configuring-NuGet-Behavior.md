@@ -167,7 +167,7 @@ Let's say you have the following folder structure:
 
 You then have four `NuGet.Config` files in the following locations with the given content:
 
-1. Global configuration file, `%APPDATA%\NuGet\Nuget.Config`:
+A. Global configuration file, `%APPDATA%\NuGet\Nuget.Config`:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -178,7 +178,7 @@ You then have four `NuGet.Config` files in the following locations with the give
     </configuration>
     ```
 
-1. `d:\NuGet.Config`:
+B. `d:\NuGet.Config`:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -192,7 +192,7 @@ You then have four `NuGet.Config` files in the following locations with the give
     </configuration>
     ```
 
-1. `d:\Project1\NuGet.Config`:
+C. `d:\Project1\NuGet.Config`:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -208,7 +208,7 @@ You then have four `NuGet.Config` files in the following locations with the give
     </configuration>
     ```
 
-1. `d:\Project2\NuGet.Config`:
+D. `d:\Project2\NuGet.Config`:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>

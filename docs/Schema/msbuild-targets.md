@@ -66,7 +66,7 @@ When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs
 | Attribute/NuSpec Value | MSBuild Property | Default | Notes |
 |--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | $(AssemblyName) from MSBuild |
-| Version | PackageVersion | Version | New $(Version) property from MSBuild, is semver compatible. Could be “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345”. |
+| Version | PackageVersion | Version | This is semver compatible, for example “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345” |
 | VersionPrefix | PackageVersionPrefix | empty | Setting PackageVersion will overwrite PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | empty | $(VersionSuffix) from MSBuild. Setting PackageVersion will overwrite PackageVersionSuffix | 
 | Authors | Authors | Username of the current user | |
@@ -225,9 +225,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 ## restore target
 
-As part of the move to MSBuild, package restore becomes an MSBuild target, that is, `MSBuild /t:restore`, `nuget restore` and `dotnet restore` use this target to restore packages in .NET Core projects.
-
-The restore target works as follows:
+`MSBuild /t:restore` (which `nuget restore` and `dotnet restore` use with .NET Core projects), restores packages referenced in the project file as follows:
 
 1. Read all project to project references
 1. Read the project properties to find the intermediate folder and target frameworks
@@ -257,7 +255,7 @@ Additional restore settings may come from MSBuild properties; values are set fro
 
 ```xml
 <PropertyGroup>
-<RestoreIgnoreFailedSources>true</RestoreIgnoreFailedSources>
+    <RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
 <PropertyGroup>
 ```
 
@@ -271,21 +269,26 @@ Restore creates the following files in the build `obj` folder:
 | `{projectName}.projectFileExtension.nuget.g.props` | References to MSBuild props contained in packages |
 | `{projectName}.projectFileExtension.nuget.g.targets` | References to MSBuild targets contained in packages |
 
-## PackageTargetFallback
 
-`PackageTargetFallback` is the MSBuild equivalent of `Imports`.
+### PackageTargetFallback 
 
-### MSBuild syntax to support PackageTargetFallback
+The `PackageTargetFallback` element allows you to specify a set of compatible targets to be used when restoring packages (the equivalent of [`imports` in `project.json`](../schema/project-json#imports)). It's designed to allow packages that use a dotnet [TxM](../schema/target-frameworks) to work with compatible packages that don't declare a dotnet TxM. That is, if your project uses the dotnet TxM, then all the packages it depends on must also have a dotnet TxM, unless you add the `<PackageTargetFallback>` to your project in order to allow non-dotnet platforms to be compatible with dotnet. 
 
-    <PackageTargetFallback Condition="'$(TargetFramework)'=='Net45'">portable-net45+win81</PackageTargetFallback>
-
-`PackageTargetFallbacks` may have been set in one of Microsoft targets (we are considering), or other ones. If you'd like to add the list already provided, you can add additional values to the `PackageTargetFallback` property:
+For example, if the project is using the `netcoreapp1.0` TxM, the following entry states that it can also use packages targeting `portable-net45+win81`:
 
 ```xml
-<PackageTargetFallback Condition="'$(TargetFramework)'=='Net45'">
+<PackageTargetFallback Condition="'$(TargetFramework)'=='netcoreapp1.0'">
+    portable-net45+win81
+</PackageTargetFallback>
+```
+To declare a fallback for all targets in your project, leave off the `Condition` attribute. You can also extend any existing `PackageTargetFallback` by including `$(PackageTargetFallback)` as shown here:
+
+```xml
+<PackageTargetFallback>
     $(PackageTargetFallback);portable-net45+win8+wpa81+wp8
 </PackageTargetFallback >
 ```
+
 
 ### Replacing one library from a restore graph
 
