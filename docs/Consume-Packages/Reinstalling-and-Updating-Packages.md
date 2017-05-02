@@ -32,7 +32,7 @@ ms.reviewer:
 
 There are a number of situations, described below under [When to Reinstall a Package](#when-to-reinstall-a-package), where references to a package might get broken within a Visual Studio project. In these cases, uninstalling and then reinstalling the same version of the package will restore those reference to working order.
 
-Being mindful of the [Considerations](#considerations) described later, you can easily reinstall any package using the following command in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
+Being mindful of the [Considerations](#considerations) described later, you can easily reinstall any package using the [Update-Package command](../Tools/PowerShell-Reference.md#update-package) in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
 
 ```ps
 Update-Package –reinstall <package_name>
@@ -45,6 +45,8 @@ The same command without `-reinstall` will update a package to a newer version, 
 ```ps
 Update-Package <package_name>
 ```
+
+Using `Update-Package` without `-reinstall` will update all packages in the project. For other options, see the [Update-Package command](../Tools/PowerShell-Reference.md#update-package).
 
 Any updates are subject to version constraints indicated in `packages.config`, as described below in [Constraining upgrade versions](#constraining-upgrade-versions), but do not apply to projects using `project.json`.
 
