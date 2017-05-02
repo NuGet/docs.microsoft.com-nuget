@@ -272,20 +272,21 @@ Restore creates the following files in the build `obj` folder:
 
 ### PackageTargetFallback 
 
-The `PackageTargetFallback` element allows you to specify a set of compatible targets to be used when restoring packages (the equivalent of [`imports` in `project.json`](../schema/project-json#imports)). It's designed to allow packages that use a dotnet [TxM](../schema/target-frameworks) to work with compatible packages that don't declare a dotnet TxM. That is, if your project uses the dotnet TxM, then all the packages it depends on must also have a dotnet TxM, unless you add the `<PackageTargetFallback>` to your project in order to allow non-dotnet platforms to be compatible with dotnet. 
+The `PackageTargetFallback` element allows you to specify a set of compatible targets to be used when restoring packages (the equivalent of [`imports` in `project.json`](../schema/project-json.md#imports)). It's designed to allow packages that use a dotnet [TxM](../schema/target-frameworks.md) to work with compatible packages that don't declare a dotnet TxM. That is, if your project uses the dotnet TxM, then all the packages it depends on must also have a dotnet TxM, unless you add the `<PackageTargetFallback>` to your project in order to allow non-dotnet platforms to be compatible with dotnet. 
 
-For example, if the project is using the `netcoreapp1.0` TxM, the following entry states that it can also use packages targeting `portable-net45+win81`:
+For example, if the project is using the `netstandard1.6` TxM, and a dependent package contains only `lib/net45/a.dll` and `lib/portable-net45+win81/a.dll`, then the project will fail to build. If what you want to bring in is the latter DLL, then you can add a `PackageTargetFallback` as follows to say that the `portable-net45+win81` DLL is compatible:
 
 ```xml
-<PackageTargetFallback Condition="'$(TargetFramework)'=='netcoreapp1.0'">
+<PackageTargetFallback Condition="'$(TargetFramework)'=='netstandard1.6'">
     portable-net45+win81
 </PackageTargetFallback>
 ```
+
 To declare a fallback for all targets in your project, leave off the `Condition` attribute. You can also extend any existing `PackageTargetFallback` by including `$(PackageTargetFallback)` as shown here:
 
 ```xml
 <PackageTargetFallback>
-    $(PackageTargetFallback);portable-net45+win8+wpa81+wp8
+    $(PackageTargetFallback);portable-net45+win81
 </PackageTargetFallback >
 ```
 
