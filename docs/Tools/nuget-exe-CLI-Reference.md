@@ -600,7 +600,7 @@ The restore command is executed in the following steps:
     - The `%userprofile%\.nuget\packages` value in `project.json`.
     - The folder specified with `-PackagesDirectory`.
     - The `repositoryPath` vale in `Nuget.Config`
-    - The folder specified with `-SolutionSirectory`
+    - The folder specified with `-SolutionDirectory`
     - `$(SolutionDir)\packages`
 
 
