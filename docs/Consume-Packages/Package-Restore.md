@@ -217,7 +217,7 @@ With MSBuild-integrated restore, packages that are downloaded by Visual Studio w
 Although the MSBuild-integrated restore approach works with NuGet 2.7 and later, it has several drawbacks:
 
 - It requires additional files within the solution folder.
-- It requires importing a `.targets` file into all projects in the solution, which this can introduce issues when projects are shared among multiple solutions.
+- It requires importing a `.targets` file into all projects in the solution, which can introduce issues when projects are shared among multiple solutions.
 - Projects will fail to load if `NuGet.targets` cannot be found.
 - Projects won't build successfully if any of the restored NuGet packages extend MSBuild through a targets/props file import.
 - Packages are automatically added to Team Foundation Version Control, when in use, unless specifically disabled.
