@@ -5,7 +5,7 @@ title: Reinstalling and Updating NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 2/8/2017
+ms.date: 5/3/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -48,7 +48,7 @@ Update-Package <package_name>
 
 Using `Update-Package` without `-reinstall` will update all packages in the project. For other options, see the [Update-Package command](../Tools/PowerShell-Reference.md#update-package).
 
-Any updates are subject to version constraints indicated in `packages.config`, as described below in [Constraining upgrade versions](#constraining-upgrade-versions), but do not apply to projects using `project.json`.
+Any updates are subject to version constraints indicated in `packages.config`, as described below in [Constraining upgrade versions](#constraining-upgrade-versions), but do not apply to projects using `project.json` or package references in project files.
 
 For complete usage, refer to the [PowerShell reference for Update-Package](../tools/powershell-reference.md#update-package).
 
@@ -83,7 +83,7 @@ The following may be affected when reinstalling a package:
 
 ## Constraining upgrade versions
 
-In NuGet 3.x with projects using `project.json` to list dependencies, installing or updating a package will *always* install the latest version available from the package source.
+In NuGet 3.x with projects using `project.json` or [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) to list dependencies, installing or updating a package will *always* install the latest version available from the package source.
 
 In projects using `packages.config`, the same behavior applies unless you specifically constrain the version range. For example, if you know that your application will work only with version 1.x of a package but not 2.0 and above, perhaps due to a major change in the package API, then you'd want to constrain upgrades to 1.x versions. This prevents accidental updates that would break the application.
 
