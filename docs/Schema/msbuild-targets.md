@@ -240,21 +240,29 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 ### Restore properties
 
-Additional restore settings may come from MSBuild properties; values are set from the command line.
+Additional restore settings may come from MSBuild properties in the project file. Values can also be set from the command line using the `/p:` switch (see Examples below).
 
 | Property | Description |
 |--------|--------|
-| RestoreSources | Semicolon-delimited list of package sources |
-| RestorePackagesPath | User packages folder path |
-| RestoreDisableParallel | Limit downloads to one at a time |
-| RestoreConfigFile | `Nuget.Config` file |
-| RestoreNoCache | If true, avoids using the web cache |
-| RestoreIgnoreFailedSources | If true, ignores failing or missing package sources |
-| RestoreTaskAssemblyFile | Path to `NuGet.Build.Tasks.dll` |
+| RestoreSources | Semicolon-delimited list of package sources. |
+| RestorePackagesPath | User packages folder path. |
+| RestoreDisableParallel | Limit downloads to one at a time. |
+| RestoreConfigFile | Path to a `Nuget.Config` file to apply. |
+| RestoreNoCache | If true, avoids using the web cache. |
+| RestoreIgnoreFailedSources | If true, ignores failing or missing package sources. |
+| RestoreTaskAssemblyFile | Path to `NuGet.Build.Tasks.dll`. |
 | RestoreGraphProjectInput | Semicolon-delimited list of projects to restore, which should contain absolute paths. |
-| RestoreOutputPath | Output folder, defaulting to the `obj` folder |
+| RestoreOutputPath | Output folder, defaulting to the `obj` folder. |
 
-**Example**
+**Examples**
+
+Command line:
+
+```
+msbuild /t:restore /p:RestoreConfigFile=<path>
+```
+
+Project file:
 
 ```xml
 <PropertyGroup>
