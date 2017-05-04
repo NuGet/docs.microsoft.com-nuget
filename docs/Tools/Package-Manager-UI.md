@@ -81,6 +81,12 @@ In this topic:
 
     ![Updating a package](media/UpdatePackages.png)
 
+> [!Note]
+> Packages that come from a larger framework or SDK, such as Microsoft.NETCore.App and Microsoft.NETStandard.Library, should not be updated independently of the SDK. Accordingly, these packages are marked with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`, which causes the Package Manager to disable the **Update** button and show the package as **AutoReferenced**. To update the package, update the SDK to which it belongs.
+>
+> ![Example package marked as AutoReferenced](media/PackageManagerUIAutoReferenced.png)
+
+
 ## Managing packages for the solution
 *NuGet 1.4+*
 
