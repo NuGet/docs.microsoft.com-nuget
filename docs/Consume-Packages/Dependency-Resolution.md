@@ -165,3 +165,32 @@ To resolve this, you must directly reference the `C.dll` you want (or use anothe
     ```xml
     <PackageReference Include="packageC" Version="1.0.0" Exclude="All" />
     ```
+
+## Resolving incompatible package errors
+
+During a package restore operation, you may see the error "One or more packages are not compatible..." or that a package "is not compatible" with the project's target framework.
+
+This error occurs when one or more of the packages referenced in your project do not indicate that they support the project's target framework; that is, the package does not contain a suitable DLL in its `lib` folder for a target framework that is compatible with the project. (See [Target frameworks](../Schema/Target-Frameworks.md) for a list.) 
+
+For example, if a project targets `netstandard1.6` and you attempt to install a package that contains DLLs in only the `lib\net20` and `\lib\net45` folders, then you'll see messages like the following for the package and possibly its dependents:
+
+```output
+Restoring packages for myproject.csproj...
+Package ContosoUtilities 2.1.2.3 is not compatible with netstandard1.6 (.NETStandard,Version=v1.6). Package ContosoUtilities 2.1.2.3 supports:
+  - net20 (.NETFramework,Version=v2.0)
+  - net45 (.NETFramework,Version=v4.5)
+Package ContosoCore 0.86.0 is not compatible with netstandard1.6 (.NETStandard,Version=v1.6). Package ContosoCore 0.86.0 supports:
+  - 11 (11,Version=v0.0)
+  - net20 (.NETFramework,Version=v2.0)
+  - sl3 (Silverlight,Version=v3.0)
+  - sl4 (Silverlight,Version=v4.0)
+One or more packages are incompatible with .NETStandard,Version=v1.6.
+Package restore failed. Rolling back package changes for 'MyProject'.
+```
+
+To resolve incompatibilities, do one of the following:
+
+- Retarget your project to a framework that is supported by the packages you want to use.
+- Contact the author of the packages and work with them to add support for your chosen framework. Each package listing page on [nuget.org](https://www.nuget.org/) has a **Contact Owners** link for this purpose.
+- **Not recommended**: as a temporary solution while you work with the package author, projects targeting `netcore`, `netstandard`, and `netcoreapp` can denote other frameworks as being compatible, thereby allowing packages targeting those other frameworks to be used. See [project.json imports](../Schema/project-json.md#imports) and [MSBuild restore target PackageTargetFallback](../Schema/msbuild-targets.md#packagetargetfallback). This can cause unexpected behaviors, so again, it's best to resolve package incompatibilities by working with the package author on an update.
+

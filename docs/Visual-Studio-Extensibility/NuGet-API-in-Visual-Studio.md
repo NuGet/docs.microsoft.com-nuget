@@ -55,7 +55,7 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
 > [!Warning]
 > Do not use any other types besides the public interfaces in your code, and do not reference any other NuGet assemblies, including `NuGet.Core.dll`.
 
-1. To use a service, import it through the [MEF Import attribute](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes), or through the [IComponentModel service](http://msdn.microsoft.comlibrary/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx).
+1. To use a service, import it through the [MEF Import attribute](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes), or through the [IComponentModel service](http://msdn.microsoft.com/library/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx).
 
     ```cs
     //Using the Import attribute

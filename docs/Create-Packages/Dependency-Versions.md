@@ -5,7 +5,7 @@ title: Dependency Versions in NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 4/24/2017
+ms.date: 5/4/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -89,7 +89,9 @@ A few examples:
   <dependency id="ExamplePackage" version="(4.1.3,)" />
 
   <!-- Accepts any version up below 5.x, which might be used to prevent
-        pulling in a later version of a dependency that changed its interface. -->
+        pulling in a later version of a dependency that changed its interface.
+        However, this form is not recommended because it can be difficult to
+        determine the lowest version.  -->
   <dependency id="ExamplePackage" version="(,5.0)" />
 
   <!-- Accepts any 1.x or 2.x version, but no 0.x or 3.x and higher versions -->
@@ -99,17 +101,8 @@ A few examples:
   <dependency id="ExamplePackage" version="[1.3.2,1.5)" />
 ```
 
-
-If no version is specified for a dependency, NuGet behaves as follows:
-
-- NuGet v2.7.2 and earlier: The **latest** package version will be used
-- NuGet v2.8 and later:  The **lowest** package version will be used
-
-For consistent behavior, it's recommended to always specify a version or version range for package dependencies.
-
-> [!Warning]
-> When pushing to NuGet.org, packages that do not specify a version or version range for dependencies, will be rejected.
-
+> [!Important]
+> Always specify a version or version range for package dependencies. NuGet.org will reject packages that lack dependency versions. In addition, without a version, NuGet 2.8.x and earlier will use the latest package version, whereas NuGet 3.x and later will use the lowest package version. Specifying versions avoids this uncertainty. 
 
 ## Normalized version numbers
 

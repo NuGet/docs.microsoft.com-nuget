@@ -124,7 +124,7 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 
 1. Open a command prompt, navigate to the `LoggingLibrary` folder that's one level below where the `.sln` file is, and run the NuGet `spec` command to create the initial `Package.nuspec` file:
 
-```bash
+```
 nuget spec
 ```
 
@@ -265,7 +265,7 @@ Your final `.nuspec` file should now look like the following, where again YOUR_N
 
 With the completed `.nuspec` referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
-```bash
+```
 nuget pack LoggingLibrary.nuspec
 ```
 
