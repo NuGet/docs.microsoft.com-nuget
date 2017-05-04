@@ -47,21 +47,23 @@ Use the [.gitignore file](https://www.kernel.org/pub/software/scm/git/docs/gitig
 
 The important parts of the `.gitignore` file are:
 
-    # Ignore NuGet Packages
-    *.nupkg
+```
+# Ignore NuGet Packages
+*.nupkg
 
-    # Ignore the packages folder
-    **/packages/*
+# Ignore the packages folder
+**/packages/*
 
-    # except build/, which is used as an MSBuild target.
-    !**/packages/build/
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
 
-    # Uncomment if necessary; generally it will be regenerated when needed
-    #!**/packages/repositories.config
+# Uncomment if necessary; generally it will be regenerated when needed
+#!**/packages/repositories.config
 
-    # Ignore other intermediate files that NuGet might create
-    project.lock.json
-    *.nuget.props
+# Ignore other intermediate files that NuGet might create
+project.lock.json
+*.nuget.props
+```
 
 ## Omitting packages with Team Foundation Version Control
 
@@ -71,32 +73,32 @@ The important parts of the `.gitignore` file are:
 To disable source control integration with TFVC for selected files:
 
 1. Create a folder called `.nuget` in your solution folder (where the `.sln` file is).
-    * Tip: on Windows, to create this folder in Windows Explorer, use the name `.nuget.` *with* the training dot.
+    - Tip: on Windows, to create this folder in Windows Explorer, use the name `.nuget.` *with* the training dot.
 1. In that folder, create a file named `NuGet.Config` and open it for editing.
 1. Add the following text as a minimum, where the [disableSourceControlIntegration](../Schema/nuget-config-file.md#solution-section) setting instructs Visual Studio to skip everything in the `packages` folder:
 
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-        <solution>
-            <add key="disableSourceControlIntegration" value="true" />
-        </solution>
-    </configuration>
-    ```
+   ```xml
+   <?xml version="1.0" encoding="utf-8"?>
+   <configuration>
+       <solution>
+           <add key="disableSourceControlIntegration" value="true" />
+       </solution>
+   </configuration>
+   ```
 
 1. If you are using TFS 2010 or earlier, cloak the `packages` folder in your workspace mappings.
 1. On TFS 2012 or later, or with Visual Studio Team Services, add a [`.tfignore`](https://msdn.microsoft.com/library/ms245454.aspx#tfignore) file with the content below to explicitly ignore modifications to the `\packages` folder on the repository level and a few other intermediate files. (You can create the file in Windows Explorer using the name a `.tfignore.` with the trailing dot, but you might need to disable the "Hide known file extensions" option first.):
 
-        # Ignore the NuGet packages folder in the root of the repository.
-        # If needed, prefix 'packages' with additional folder names if it's
-        # not in the same folder as .tfignore.
-        packages
+   # Ignore the NuGet packages folder in the root of the repository.
+   # If needed, prefix 'packages' with additional folder names if it's
+   # not in the same folder as .tfignore.
+   packages
 
-        # Include package target files which may be required for MSBuild,
-        # again prefixing the folder name as needed.
-        !packages/*.targets
+   # Include package target files which may be required for MSBuild,
+   # again prefixing the folder name as needed.
+   !packages/*.targets
 
-        # Make sure not to exclude packages.config
-        !packages.config
+   # Make sure not to exclude packages.config
+   !packages.config
 
 1. Add `NuGet.Config` and `.tfignore` to source control and check in your changes.
