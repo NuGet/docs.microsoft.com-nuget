@@ -99,8 +99,7 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
         </packageRestore>
     </configuration>
     ```
-
-
+    <br/>
     > [!Note]
     >  The `packageRestore/enabled` setting can be overridden globally by setting an environment variable called **EnableNuGetPackageRestore** with a value of TRUE or FALSE before launching Visual Studio or starting a build.
     
