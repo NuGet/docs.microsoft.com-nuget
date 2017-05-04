@@ -88,31 +88,34 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
 
 ![Controlling package restore behaviors through NuGet Package Manager options](media/Restore-01-AutoRestoreOptions.png)
 
-- **Allow NuGet to download missing packages**: enables all forms of package restore by changing the `packageRestore/enabled` setting in the `%AppData%\NuGet\NuGet.Config` file as shown below. (For NuGet 2.6 or earlier, this setting can also be used in a project-specific `.nuget\Nuget.Config` file.)
+- **Allow NuGet to download missing packages**: controls all forms of package restore by changing the `packageRestore/enabled` setting in the `%AppData%\NuGet\NuGet.Config` file as shown below. (For NuGet 2.6 or earlier, this setting can also be used in a project-specific `.nuget\Nuget.Config` file.)
 
     ```xml
     ...
     <configuration>
         <packageRestore>
-            <!-- Disables command-line, automatic, and MSBuild-Integrated restore -->
-        <add key="enabled" value="False" />
+            <!-- The 'enabled' key is True when the "Allow NuGet to download missing packages" checkbox is set.
+                 Clearing the box sets this to False, disabling command-line, automatic, and MSBuild-Integrated restore. -->
+            <add key="enabled" value="True" />
         </packageRestore>
     </configuration>
     ```
 
 
-> [!Note]
->  The `packageRestore/enabled` setting can be overridden globally by setting an environment variable called **EnableNuGetPackageRestore** with a value of TRUE or FALSE before launching Visual Studio or starting a build.
+    > [!Note]
+    >  The `packageRestore/enabled` setting can be overridden globally by setting an environment variable called **EnableNuGetPackageRestore** with a value of TRUE or FALSE before launching Visual Studio or starting a build.
+    
 
-
-- **Automatically check for missing packages during build in Visual Studio**: enables automatic restore for NuGet 2.7 and later by changing the `packageRestore/automatic` setting in the `%AppData%\NuGet\NuGet.Config` file as shown below.
+- **Automatically check for missing packages during build in Visual Studio**: controls automatic restore for NuGet 2.7 and later by changing the `packageRestore/automatic` setting in the `%AppData%\NuGet\NuGet.Config` file as shown below.
             
     ```xml
     ...
     <configuration>
         <packageRestore>
-        <!-- Disables automatic restore in Visual Studio -->
-        <add key="automatic" value="False" />
+            <!-- The 'automatic' key is set to True when the "Automatically check for missing packages during
+                 build in Visual Studio" checkbox is set. Clearing the box sets this to False and disables
+                 automatic restore. -->
+            <add key="automatic" value="True" />
         </packageRestore>
     </configuration>
     ```
