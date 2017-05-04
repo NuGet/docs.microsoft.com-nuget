@@ -156,7 +156,7 @@ For NuGet 2.6 and earlier, you use the [Install](../tools/nuget-exe-cli-referenc
 
 For NuGet 2.7 and above, use the [Restore](../tools/nuget-exe-cli-reference.md#restore) command to restore all packages in a solution (whether it uses `packages.config`, `project.json`, or package references in project files). For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
 
-```bash
+```
 c:\proj\app\> nuget restore
 c:\proj\app\> nuget.exe restore app.sln
 c:\proj\> nuget restore app
@@ -192,7 +192,7 @@ To correct these errors, do one of the following:
 1. [Migrate the project to automatic restore](#migrating-to-automatic-restore).
 1. Update `nuget.exe` in the `.nuget` folder** as follows
 
-    ```bash
+    ```
     cd .nuget
     nuget update -self
     ```

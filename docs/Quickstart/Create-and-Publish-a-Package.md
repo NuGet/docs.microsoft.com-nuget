@@ -64,7 +64,7 @@ Every NuGet package needs a manifest–a `.nuspec` file–to describe its conten
 1. Open a command prompt and navigate to the folder containing the AppLogger project file (`.csproj`).
 1. Run the NuGet CLI `spec` command to generate `AppLogg.nuspec`:
 
-    ```bash
+    ```
     nuget spec
     ```
 
@@ -118,7 +118,7 @@ Every NuGet package needs a manifest–a `.nuspec` file–to describe its conten
 
 Creating a NuGet package from a project is simple: just run the `pack` command:
 
-```bash
+```
 nuget pack AppLogger.csproj
 ```
 
@@ -147,7 +147,7 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
 
 1. At a command prompt, run the following command, replacing the key with the value copied in step 3:
 
-    ```bash
+    ```
     nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://www.nuget.org/api/v2/package
     ```
     

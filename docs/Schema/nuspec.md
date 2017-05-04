@@ -125,7 +125,7 @@ When creating a package, the [`nuget pack` command](../tools/nuget-exe-cli-refer
 
 On the command line, you specify token values with `nuget pack -properties <name>=<value>;<name>=<value>`. For example, you can use a token such as `$owners$` and `$desc$` in the `.nuspec` and provide the values at packing time as follows:
 
-```bash
+```
 nuget pack MyProject.csproj -properties
     owners=janedoe,harikm,kimo,xiaop;desc="Awesome app logger utility"
 ```
@@ -134,7 +134,7 @@ To use values from a project, specify the tokens described in the table below (A
 
 To use these tokens, you must run `nuget pack` with the project file rather than just the `.nuspec`. For example, when using the following command, the `$id$` and `$version$` tokens in a `.nuspec` file will be replaced with the project's `AssemblyName` and `AssemblyVersion` values:
 
-```bash
+```
 nuget pack MyProject.csproj
 ```
 

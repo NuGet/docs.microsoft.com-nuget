@@ -190,7 +190,7 @@ Starting with NuGet 2.5, if nuget.exe identifies a UNC/folder source, it will pe
 
 The following command will now work:
 
-```bash
+```
 nuget push -source \\mycompany\repo\ mypackage.1.0.0.nupkg
 ```
 
@@ -200,7 +200,7 @@ nuget.exe commands that access configuration (all except 'spec' and 'pack') now 
 
 Example:
 
-```bash
+```
 nuget sources add -name test -source http://test -ConfigFile C:\test\.nuget\Nuget.Config
 ```
 

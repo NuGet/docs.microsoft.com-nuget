@@ -216,13 +216,13 @@ You can use a `.nuspec` file to pack your project provided that you have a proje
 
 If using `dotnet.exe` to pack your project, use a command like the following:
 
-```bash
+```
 dotnet pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
 ```
 
 If using MSBuild to pack your project, use a command like the following:
 
-```bash
+```
 msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
 ```
 
