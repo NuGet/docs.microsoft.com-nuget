@@ -43,7 +43,7 @@ To create a symbol package, follow these conventions:
 
 You can create both packages with the `-Symbols` option, either from a `.nuspec` file or a project file:
 
-```bash
+```
 nuget pack MyPackage.nuspec -Symbols
 
 nuget pack MyProject.csproj -Symbols
@@ -112,25 +112,25 @@ A symbol package can be built by conventions, from a folder structure as describ
 
 1. For convenience, first save your API key with NuGet (see [publish a package](../create-packages/publish-a-package.md), which will apply to both nuget.org and symbolsource.org, because symbolsource.org will check with nuget.org to verify that you are the package owner.
 
-```bash
+```
 nuget SetApiKey Your-API-Key
 ```
 
 1. After publishing your primary package to nuget.org, push the symbol package as follows, which will automatically use symbolsource.org as the target because of the `.symbols` in the filename:
 
-```bash
+```
 nuget push MyPackage.symbols.nupkg
 ```
 
 1. To publish to a different symbol repository, or to push a symbol package that doesn't follow the naming convention, use the `-Source` option:
 
-```bash
+```
 nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
 ```
 
 1. You can also push both primary and symbol packages to both repositories at the same time using the following:
 
-```bash
+```
 nuget push MyPackage.nupkg
 ```
 

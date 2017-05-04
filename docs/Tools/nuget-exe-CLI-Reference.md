@@ -5,7 +5,7 @@ title: NuGet Command-Line Interface (CLI) Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 3/28/2017
+ms.date: 5/4/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -76,7 +76,7 @@ To expand all the files in the package to the destination package source, use th
 
 ### Usage
 
-```bash
+```
 nuget add <packagePath> -Source <sourcePath> [options]
 ```
 
@@ -95,7 +95,7 @@ where `<packagePath>` is the pathname to the package to add, and `<sourcePath>` 
 
 ### Examples
 
-```bash
+```
 nuget add foo.nupkg -Source c:\bar\
 
 nuget add foo.nupkg -Source \\bar\packages\
@@ -107,7 +107,7 @@ Gets or sets NuGet configuration values. For additional usage, see [Configuring 
 
 ### Usage
 
-```bash
+```
 nuget config -Set <name>=[<value>] [<name>=<value> ...] [options]
 nuget config -AsPath <name> [options]
 ```
@@ -131,7 +131,7 @@ In NuGet 3.4+, `<value>` can use environment variables.
 
 ### Examples
 
-```bash
+```
 nuget config -Set repositoryPath=c:\packages -configfile c:\my.config
 
 nuget config -Set repositoryPath=
@@ -147,7 +147,7 @@ Deletes or unlists a package from a package source. For nuget.org, the action is
 
 ### Usage
 
-```bash
+```
 nuget delete <packageID> <packageVersion> [options]
 ```
 
@@ -162,12 +162,12 @@ where `<packageID>` and `<packageVersion>` identify the exact package to delete 
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
-| Source | Specifies the server URL. Supported URLs for nuget.org include *https://www.nuget.org, https://www.nuget.org/api/v3, https://www.nuget.org/api/v2/package*. For private feeds, substitute the host name, for example, *%hostname%/api/v3*. |
+| Source | Specifies the server URL. Supported URLs for nuget.org include `https://www.nuget.org`, `https://www.nuget.org/api/v3`, `https://www.nuget.org/api/v2/package`. For private feeds, substitute the host name, for example, *%hostname%/api/v3*. |
 | Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed (2.5+)*. |
 
 ### Examples
 
-```bash
+```
 nuget delete MyPackage 1.0
 
 nuget delete MyPackage 1.0 -Source http://package.contoso.com/source -apikey A1B2C3
@@ -179,7 +179,7 @@ Displays general help information and help information about specific commands.
 
 ### Usage
 
-```bash
+```
 nuget help [command] [options]
 nuget ? [command] [options]
 ```
@@ -203,7 +203,7 @@ where [command] identifies a specific command for which to display help.
 
 ### Examples
 
-```bash
+```
 nuget help
 nuget help push
 nuget ?
@@ -222,7 +222,7 @@ As with `add`, the destination must be either a local folder or a UNC path; HTTP
 
 ### Usage
 
-```bash
+```
 nuget init <source> <destination> [options]
 ```
 
@@ -241,7 +241,7 @@ where `<source>` is the folder containing packages and `<destination>` is the lo
 
 ### Examples
 
-```bash
+```
 nuget init c:\foo c:\bar
 nuget init \\foo\packages \\bar\packages -Expand
 ```
@@ -259,7 +259,7 @@ To add a dependency, either add a project through the Package Manager UI or Cons
 
 ### Usage
 
-```bash
+```
 nuget install <packageID | configFilePath> [options]
 ```
 
@@ -290,7 +290,7 @@ where `<packageID>` names the package to install (using the latest version), or 
 
 ### Examples
 
-```bash
+```
 nuget install elmah
 
 nuget install packages.config
@@ -304,7 +304,7 @@ Displays a list of packages from a given source. If no sources are specified, al
 
 ### Usage
 
-```bash
+```
 nuget list [search terms] [options]
 ```
 
@@ -325,7 +325,7 @@ where the optional search terms will filter the displayed list. Search terms are
 
 ### Examples
 
-```bash
+```
 nuget list
 
 nuget list -Verbose -AllVersions
@@ -338,7 +338,7 @@ Clears or lists local NuGet resources such as the http-request cache, packages c
 
 ### Usage
 
-```bash
+```
 nuget locals <cache> [options]
 ```
 
@@ -359,7 +359,7 @@ where `<cache>` is one of `all`, `http-cache`, `packages-cache`, `global-package
 
 ### Examples
 
-```bash
+```
 nuget locals all -list
 nuget locals http-cache -clear
 ```
@@ -375,7 +375,7 @@ Mirrors a package and its dependencies from the specified source repositories to
 
 ### Usage
 
-```bash
+```
 nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [options]
 ```
 
@@ -383,7 +383,7 @@ where `<packageID>` is the package to mirror, or `<configFilePath>` identifies t
 
 The `<listUrlTarget>` specifies the source repository, and `<publishUrlTarget>` specifies the target repository.
 
-If your target repository is on https://machine/repo that's running [NuGet.Server](../hosting-packages/NuGet-Server.md), the list and push urls will be *https://machine/repo/nuget* and *https://machine/repo/api/v2/packag*e, respectively.
+If your target repository is on `https://machine/repo` that's running [NuGet.Server](../hosting-packages/NuGet-Server.md), the list and push urls will be `https://machine/repo/nuget` and `https://machine/repo/api/v2/package`, respectively.
 
 ### Options
 
@@ -400,7 +400,7 @@ If your target repository is on https://machine/repo that's running [NuGet.Serve
 
 ### Examples
 
-```bash
+```
 nuget mirror packages.config  https://MyRepo/nuget https://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -nocache
 
 nuget mirror Microsoft.AspNet.Mvc https://MyRepo/nuget https://MyRepo/api/v2/package -version 4.0.20505.0
@@ -418,7 +418,7 @@ With Mono, you also need to adjust non-local paths in the `.nuspec` file to Unix
 
 ### Usage
 
-```bash
+```
 nuget pack <nuspecPath | projectPath> [options]
 ```
 
@@ -469,7 +469,7 @@ For this project, the package created by `nuget pack` will have a dependency on 
 
 ### Examples
 
-```bash
+```
 nuget pack
 
 nuget pack foo.nuspec
@@ -494,7 +494,7 @@ NuGet's default configuration is obtained by loading `%AppData%\NuGet\NuGet.Conf
 
 ### Usage
 
-```bash
+```
 nuget push <packagePath> [options]
 ```
 
@@ -519,7 +519,7 @@ where `<packagePath>` identifies the package to push to the server.
 
 ### Examples
 
-```bash
+```
 nuget push foo.nupkg
 
 nuget push foo.symbols.nupkg
@@ -550,7 +550,7 @@ NuGet 4.0+ with project in which package references are included in the project 
 
 ### Usage
 
-```bash
+```
 nuget restore <projectPath> [options]
 ```
 
@@ -600,7 +600,7 @@ The restore command is executed in the following steps:
     - The `%userprofile%\.nuget\packages` value in `project.json`.
     - The folder specified with `-PackagesDirectory`.
     - The `repositoryPath` vale in `Nuget.Config`
-    - The folder specified with `-SolutionSirectory`
+    - The folder specified with `-SolutionDirectory`
     - `$(SolutionDir)\packages`
 
 
@@ -611,7 +611,7 @@ The restore command is executed in the following steps:
 
 ### Examples
 
-```bash
+```
 # Restore packages for a solution file
 nuget restore a.sln
 
@@ -631,7 +631,7 @@ Saves an API key for a given server URL into `NuGet.Config` so that it doesn't n
 
 ### Usage
 
-```bash
+```
 nuget setapikey <key> -Source <url> [options]
 ```
 
@@ -649,7 +649,7 @@ where `<source>` identifies the server and `<key>` is the key or password to sav
 
 ### Examples
 
-```bash
+```
 nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
 nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -source https://example.com/nugetfeed
@@ -661,7 +661,7 @@ Manages the list of sources located in `%AppData%\NuGet\NuGet.Config` or the spe
 
 ### Usage
 
-```bash
+```
 nuget sources <operation> -Name <name> -Source <source>
 ```
 
@@ -688,7 +688,7 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
 ### Examples
 
-```bash
+```
 nuget sources Add -Name "MyServer" -Source \\myserver\packages
 
 nuget sources Disable -Name "MyServer"
@@ -702,7 +702,7 @@ Generates a `.nuspec` file for a new package. If run in the same folder as a pro
 
 ### Usage
 
-```bash
+```
 nuget spec [<packageID>] [options]
 ```
 
@@ -721,7 +721,7 @@ where `<packageID>` is an optional package identifier to save in the `.nuspec` f
 
 ### Examples
 
-```bash
+```
 nuget spec
 
 nuget spec MyPackage
@@ -741,7 +741,7 @@ This command can also be used to update nuget.exe itself using the *-self* flag.
 
 ### Usage
 
-```bash
+```
 nuget update <configPath> [options]
 ```
 
@@ -769,7 +769,7 @@ where `<configPath>` identifies either a `packages.config` or solution file that
 
 ### Examples
 
-```bash
+```
 nuget update
 
 # update packages installed in solution.sln, using MSBuild version 14.0 to load the solution and its project(s).
@@ -788,7 +788,7 @@ In general, options specified directly on the command line or in the NuGet confi
 
 |Variable|Description|Remarks|
 | --- | --- | --- |
-| http_proxy | Http proxy used for NuGet HTTP operations. | This would be specified as *http://&lt;username&gt;:&lt;password&gt;@proxy.com*. |
+| http_proxy | Http proxy used for NuGet HTTP operations. | This would be specified as `http://<username>:<password>@proxy.com`. |
 | no_proxy | Configures domains to bypass from using proxy. | Specified as domains separated by comma (,). |
 | EnableNuGetPackageRestore | Flag for if NuGet should implicitly grant consent if that's required by package on restore. | Specified flag is specified | as *true* or *1*, any other value treated as flag not set. |
 | NUGET_EXE_NO_PROMPT | Prevents the exe for prompting for credentials.| Any value except null or empty string will be treated as this flag set/true. |

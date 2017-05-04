@@ -45,13 +45,13 @@ With NuGet 3.3 and above, you'll realize much better performance by structuring 
 
 NuGet will create this structure automatically when you use the [`nuget add`](../tools/nuget-exe-cli-reference.md#add) command to copy packages to the feed:
 
-```bash
+```
 nuget add new_package.1.0.0.nupkg -source \\myserver\packages
 ```
 
 You can also use the [`nuget init`](../tools/nuget-exe-cli-reference.md#init) command to copy multiple packages from a single folder to the feed. For example, the following command copies all packages from `c:\packages` to a hierarchical tree on `\\myserver\packages`:
 
-```bash
+```
 nuget init c:\packages \\myserver\packages
 ```
 

@@ -89,7 +89,7 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 1. Open a command prompt, navigate to the folder containing `AppLogg.csproj` folder (one level below where the `.sln` file is), and run the NuGet `spec` command to create the initial `AppLogger.nuspec` file:
 
-```bash
+```
 nuget spec
 ```
 
@@ -130,7 +130,7 @@ nuget spec
 
 With the completed `.nuspec` referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
-```bash
+```
 nuget pack AppLogger.nuspec
 ```
 

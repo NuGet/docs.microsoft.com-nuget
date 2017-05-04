@@ -81,6 +81,11 @@ In this topic:
 
     ![Updating a package](media/UpdatePackages.png)
 
+4. If the **Update** button is disabled and the package is marked as **AutoReferenced** as shown below, it means that it's part of a larger framework or SDK and should not be updated independently. (These packages, such as Microsoft.NETCore.App and Microsoft.NETStandard.Library, are marked internally with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.). To update the package, update the SDK to which it belongs.
+
+    ![Example package marked as AutoReferenced](media/PackageManagerUIAutoReferenced.png)
+
+
 ## Managing packages for the solution
 *NuGet 1.4+*
 

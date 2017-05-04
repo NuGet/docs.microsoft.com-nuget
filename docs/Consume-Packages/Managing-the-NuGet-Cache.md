@@ -35,7 +35,7 @@ NuGet manages several local caches to avoid downloading packages that are alread
 
 To see the list of cache locations, use the [locals command](../tools/nuget-exe-cli-reference.md#locals):
 
-```bash
+```
 nuget locals all -list
 ```
 
@@ -48,7 +48,7 @@ Typical output is as follows:
 
 If you encounter package installation problems or otherwise want to ensure that you're installing packages from the remote gallery, use the `locals -clear` option in one or more of the following ways:
 
-```bash
+```
 nuget locals http-cache -clear        #Clear the 3.x cache
 nuget locals packages-cache -clear    #Clear the 2.x cache
 nuget locals global-packages -clear   #Clear the global cache

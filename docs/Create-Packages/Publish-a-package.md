@@ -54,7 +54,7 @@ Next, you can either upload the package through the nuget.org web portal, or pus
 
     3. At a command prompt, run the following command:
 
-        ```bash
+        ```
         nuget setApiKey Your-API-Key
         ```
 
@@ -62,7 +62,7 @@ Next, you can either upload the package through the nuget.org web portal, or pus
 
     4. Push your package to NuGet Gallery using the command:
 
-        ```bash
+        ```
         nuget push YourPackage.nupkg -Source https://www.nuget.org/api/v2/package
         ```
 

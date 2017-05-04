@@ -5,7 +5,7 @@ title: Dependency Versions in NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 4/24/2017
+ms.date: 5/4/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -34,17 +34,17 @@ ms.reviewer:
 When you [create a NuGet package](../create-packages/creating-a-package.md), you can specify dependencies for your package in the `<dependencies>` node of the `.nuspec` file, where each dependency is listed with a `<dependency>` tag:
 
 ```xml
-  <?xml version="1.0"?>
-  <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
-      <!-- ... -->
+        <!-- ... -->
 
-      <dependencies>
-        <dependency id="Newtonsoft.Json" version="9.0" />
-        <dependency id="EntityFramework" version="6.1.0" />
-      </dependencies>
+        <dependencies>
+            <dependency id="Newtonsoft.Json" version="9.0" />
+            <dependency id="EntityFramework" version="6.1.0" />
+        </dependencies>
     </metadata>
-  </package>
+</package>
 ```
 
 Dependencies are installed whenever the dependent package is installed, [reinstalled](../consume-packages/reinstalling-and-updating-packages.md), or included in a [package restore](../consume-packages/package-restore.md). NuGet chooses the exact version of the installed dependency by using the value of the `version` attribute specified for that dependency as described in the following sections.
@@ -81,35 +81,30 @@ NuGet supports using interval notation for specifying version ranges, summarized
 A few examples:
 
 ```xml
-  <!-- Accepts any version 6.1 and above -->
-  <dependency id="ExamplePackage" version="6.1" />
+<!-- Accepts any version 6.1 and above -->
+<dependency id="ExamplePackage" version="6.1" />
 
-  <!-- Accepts any version above, but not include 4.1.3. This might be
-        used to guarantee a dependency with a specific bug fix. -->
-  <dependency id="ExamplePackage" version="(4.1.3,)" />
+<!-- Accepts any version above, but not include 4.1.3. This might be
+      used to guarantee a dependency with a specific bug fix. -->
+<dependency id="ExamplePackage" version="(4.1.3,)" />
 
-  <!-- Accepts any version up below 5.x, which might be used to prevent
-        pulling in a later version of a dependency that changed its interface. -->
-  <dependency id="ExamplePackage" version="(,5.0)" />
+<!-- Accepts any version up below 5.x, which might be used to prevent
+      pulling in a later version of a dependency that changed its interface.
+      However, this form is not recommended because it can be difficult to
+      determine the lowest version.  -->
+<dependency id="ExamplePackage" version="(,5.0)" />
 
-  <!-- Accepts any 1.x or 2.x version, but no 0.x or 3.x and higher versions -->
-  <dependency id="ExamplePackage" version="[1,3)" />
+<!-- Accepts any 1.x or 2.x version, but no 0.x or 3.x and higher versions -->
+<dependency id="ExamplePackage" version="[1,3)" />
 
-  <!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->
-  <dependency id="ExamplePackage" version="[1.3.2,1.5)" />
+<!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->
+<dependency id="ExamplePackage" version="[1.3.2,1.5)" />
 ```
 
+<br/>
 
-If no version is specified for a dependency, NuGet behaves as follows:
-
-- NuGet v2.7.2 and earlier: The **latest** package version will be used
-- NuGet v2.8 and later:  The **lowest** package version will be used
-
-For consistent behavior, it's recommended to always specify a version or version range for package dependencies.
-
-> [!Warning]
-> When pushing to NuGet.org, packages that do not specify a version or version range for dependencies, will be rejected.
-
+> [!Important]
+> Always specify a version or version range for package dependencies. NuGet.org will reject packages that lack dependency versions. In addition, without a version, NuGet 2.8.x and earlier will use the latest package version, whereas NuGet 3.x and later will use the lowest package version. Specifying versions avoids this uncertainty. 
 
 ## Normalized version numbers
 
@@ -121,14 +116,18 @@ When obtaining packages from a repository during install, reinstall, or restore 
 
 - Leading zeroes are removed from version numbers:
 
-        1.00 is treated as 1.0
-        1.01.1 is treated as 1.1.1
-        1.00.0.1 is treated as 1.0.0.1
+    ```
+    1.00 is treated as 1.0
+    1.01.1 is treated as 1.1.1
+    1.00.0.1 is treated as 1.0.0.1
+    ```
 
 - A zero in the fourth part of the version number will be omitted
 
-        1.0.0.0 is treated as 1.0.0
-        1.0.01.0 is treated as 1.0.1
+    ```
+    1.0.0.0 is treated as 1.0.0
+    1.0.01.0 is treated as 1.0.1
+    ```
 
 This normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions.
 
