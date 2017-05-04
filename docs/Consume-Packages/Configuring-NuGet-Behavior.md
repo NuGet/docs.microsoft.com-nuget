@@ -92,6 +92,7 @@ To create a new configuration file, copy the template below into that file and t
 <configuration>
 </configuration>
 ```
+<br/>
 
 > [!Warning]
 > Although you can modify the file in any text editor, NuGet (v3.4.3 and later) silently ignores the entire configuration file if it contains malformed XML (mismatched tags, invalid quotation marks, etc.).
@@ -169,56 +170,56 @@ You then have four `NuGet.Config` files in the following locations with the give
 
 A. Global configuration file, `%APPDATA%\NuGet\Nuget.Config`:
 
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-        <activePackageSource>
-        <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
-        </activePackageSource>
-    </configuration>
-    ```
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <activePackageSource>
+    <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
+    </activePackageSource>
+</configuration>
+```
 
 B. `d:\NuGet.Config`:
 
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-    <config>
-        <add key="repositoryPath" value="d:\tmp" />
-        </config>
-        <packageRestore>
-        <add key="enabled" value="True" />
-        </packageRestore>
-    </configuration>
-    ```
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+<config>
+    <add key="repositoryPath" value="d:\tmp" />
+    </config>
+    <packageRestore>
+    <add key="enabled" value="True" />
+    </packageRestore>
+</configuration>
+```
 
 C. `d:\Project1\NuGet.Config`:
 
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-        <config>
-        <add key="repositoryPath" value="External\Packages" />
-        <add key="DefaultPushSource" value="https://MyPrivateRepo/ES/api/v2/package" />
-        </config>
-        <packageSources>
-        <clear /> <!-- ensure only the sources defined below are used -->
-        <add key="MyPrivateRepo - ES" value="https://MyPrivateRepo/ES/nuget" />
-        </packageSources>
-    </configuration>
-    ```
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <config>
+    <add key="repositoryPath" value="External\Packages" />
+    <add key="DefaultPushSource" value="https://MyPrivateRepo/ES/api/v2/package" />
+    </config>
+    <packageSources>
+    <clear /> <!-- ensure only the sources defined below are used -->
+    <add key="MyPrivateRepo - ES" value="https://MyPrivateRepo/ES/nuget" />
+    </packageSources>
+</configuration>
+```
 
 D. `d:\Project2\NuGet.Config`:
 
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-        <packageSources>
-        <!-- Add this repository to the list of available repositories -->
-        <add key="MyPrivateRepo - DQ" value="https://MyPrivateRepo/DQ/nuget" />
-        </packageSources>
-    </configuration>
-    ```
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <packageSources>
+    <!-- Add this repository to the list of available repositories -->
+    <add key="MyPrivateRepo - DQ" value="https://MyPrivateRepo/DQ/nuget" />
+    </packageSources>
+</configuration>
+```
 
 Here's how NuGet will load and apply the settings, depending on where it's invoked:
 

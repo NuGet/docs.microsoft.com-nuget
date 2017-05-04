@@ -91,7 +91,6 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
 - **Allow NuGet to download missing packages**: controls all forms of package restore by changing the `packageRestore/enabled` setting in the `%AppData%\NuGet\NuGet.Config` file as shown below. (For NuGet 2.6 or earlier, this setting can also be used in a project-specific `.nuget\Nuget.Config` file.)
 
     ```xml
-    ...
     <configuration>
         <packageRestore>
             <!-- The 'enabled' key is True when the "Allow NuGet to download missing packages" checkbox is set.
