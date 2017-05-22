@@ -102,7 +102,7 @@ When an application specifies an exact version number, such as *1.2*, that is no
 
 #### Floating versions
 
-A floating dependency version is specified with the * wildcard, as with *6.0.\** in the `project.json` file. This says "use the latest 6.0.x version"; a floating version of *4.\** means "use the latest 4.x version." Using a floating version allows a dependency package to continue evolving without requiring a change to the consuming application (or package).
+A floating dependency version is specified with the * wildcard, as with *6.0.** in the `project.json` file. This says "use the latest 6.0.x version"; a floating version of *4.** means "use the latest 4.x version." Using a floating version allows a dependency package to continue evolving without requiring a change to the consuming application (or package).
 
 When a floating version constraint is specified then NuGet will resolve the highest version of a package that matches the version pattern, for example *6.0.** will get the highest version of a package that starts with *6.0*:
 
