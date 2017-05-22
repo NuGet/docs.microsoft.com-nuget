@@ -94,7 +94,7 @@ With this in mind, it's generally good to follow recognized naming conventions s
 - `-rc`: Release candidate, typically a release that's potentially final (stable) unless significant bugs emerge.
 
 > [!Note]
-> NuGet does not support SemVer-compatible build numbers with dot notation, as in `1.0.1-build.23`. You can use a form like `1.0.1-build23` but this is always considered a pre-release version.
+> NuGet does not support [SemVer-compatible (v2.0.0)](http://semver.org/spec/v2.0.0.html) prerelease numbers with dot notation, as in `1.0.1-build.23`. You can use a form like `1.0.1-build23` but this is always considered a pre-release version.
 
 Whatever suffixes you use, however, NuGet will give them precedence in reverse alphabetical order:
 

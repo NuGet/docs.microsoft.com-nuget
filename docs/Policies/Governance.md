@@ -88,6 +88,22 @@ Users should be encouraged to participate in the life of NuGet and the community
 
 Users who continue to engage with the project and its community will often find themselves becoming more and more involved. Such users may then go on to become contributors, as described above.
 
+## Package succession under special circumstances
+In the unfortunate situation where a NuGet account holder is incapacitated or deceased, we’ll work with the community to add appropriate owner/s to the package where the said account has sole ownership and the package is published under an [OSI approved license](https://opensource.org/licenses/alphabetical). To request ownership you must send us the following documents:
+
+1.	A photocopy of your government-issued photo ID.
+2.	One of the following documents proving the previous account holder’s status: 
+    - An official, government-issued death certificate if the previous account holder is deceased, or,
+    - A certified document such as a certificate signed by a medical professional in charge of the care of an incapacitated account holder.
+3.	One of the following documents proving your right to ownership: 
+    - Marriage certificate showing that you are the surviving spouse of the account holder,
+    - Signed power of attorney,
+    - Copy of a will or trust document naming you as executor or beneficiary,
+    - Birth certificate for the account holder, if you are their parent, or,
+    - Guardianship paperwork if you are a legal guardian of the account holder.
+    
+If you find yourself in need of invoking this policy, please send us an email at [support@nuget.org](mailto:support@nuget.org) with the ID and version of the package.
+    
 ## Transparency
 
 Building community trust in the governance of an open-source project is vital to its success. To that end, decision making must be done in a transparent, open fashion. Discussion about the project’s direction must be done publicly. The community should never be caught off-guard by a decision by the Benevolent Dictator. Additionally, discussion about project decisions must be archived so that community members can understand the entire history of a decision and its context.
