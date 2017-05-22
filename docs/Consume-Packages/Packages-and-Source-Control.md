@@ -43,7 +43,7 @@ Note that although package restore is the default behavior with NuGet, some manu
 
 ## Omitting packages with Git
 
-Use the [.gitignore file](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html) to have Git ignore the contents of the `packages` folder. For reference, see the [sample `.gitignore` for Visual Studio projects](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
+Use the [.gitignore file](https://git-scm.com/docs/gitignore) to have Git ignore the contents of the `packages` folder. For reference, see the [sample `.gitignore` for Visual Studio projects](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
 
 The important parts of the `.gitignore` file are:
 
@@ -90,7 +90,7 @@ To disable source control integration with TFVC for selected files:
 
 1. If you are using TFS 2010 or earlier, cloak the `packages` folder in your workspace mappings.
 
-1. On TFS 2012 or later, or with Visual Studio Team Services, add a [`.tfignore`](https://msdn.microsoft.com/library/ms245454.aspx#tfignore) file with the content below to explicitly ignore modifications to the `\packages` folder on the repository level and a few other intermediate files. (You can create the file in Windows Explorer using the name a `.tfignore.` with the trailing dot, but you might need to disable the "Hide known file extensions" option first.):
+1. On TFS 2012 or later, or with Visual Studio Team Services, add a `.tfignore` file (as described on [AddFiles to the Server](https://msdn.microsoft.com/library/ms245454.aspx#tfignore)) with the content below to explicitly ignore modifications to the `\packages` folder on the repository level and a few other intermediate files. (You can create the file in Windows Explorer using the name a `.tfignore.` with the trailing dot, but you might need to disable the "Hide known file extensions" option first.):
 
    ```
    # Ignore the NuGet packages folder in the root of the repository.
