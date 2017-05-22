@@ -134,4 +134,4 @@ nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
 nuget push MyPackage.nupkg
 ```
 
-    In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to symbolsource.org (https://nuget.smbsrc.net/), after it publishes the primary package to nuget.org.
+In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to symbolsource.org (https://nuget.smbsrc.net/), after it publishes the primary package to nuget.org.
