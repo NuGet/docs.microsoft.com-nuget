@@ -5,7 +5,7 @@ title: Create .NET Standard NuGet Packages with Visual Studio 2017 | Microsoft D
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 2/8/2017
+ms.date: 5/23/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -57,9 +57,9 @@ The require workload appears as follows in the Visual Studio installer:
     ![Create new class library project](media/NuGet4-02-NewProject.png)
 
 1. Change the build configuration to **Release**.
-1. Right-click the `AppLogger (Portable)` in Solution Explorer, select **Properties**, select the **Build** tab, check the box for **XML documentation file**, and set the filename to just `AppLogger.xml`. Then save the project.
+1. Right-click the `AppLogger` project in Solution Explorer, select **Properties**, select the **Build** tab, check the box for **XML documentation file**, and set the filename to just `AppLogger.xml`. Then save the project.
 
-1. Add your code to the component, for example:
+1. Add your code to the component, such as the following (which clearly just outputs messages to the console):
 
     ```cs
     namespace AppLogger
@@ -68,7 +68,7 @@ The require workload appears as follows in the Visual Studio installer:
         {
             public void Log(string text)
             {
-                throw new NotImplementedException("Called Log");
+                Console.WriteLine(text);
             }
         }
     }
@@ -91,7 +91,7 @@ With NuGet 4.0 and .NET Core projects, package metadata is contained directly in
         <Description>Awesome application logging utility</Description>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageReleaseNotes>First release</PackageReleaseNotes>
-        <Copyright>Copyright 2016 (c) Contoso Corporation. All rights reserved.</Copyright>
+        <Copyright>Copyright 2017 (c) Contoso Corporation. All rights reserved.</Copyright>
         <PackageTags>logger logging logs</PackageTags>
     </PropertyGroup>
     ```
@@ -120,7 +120,7 @@ To make your package available to other developers,  follow the instructions on 
 
 ## Related topics
 
-- [Package References in Project Files](../consume-packages/package-references-in-project-files.md)
-- [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md)
+- [Package References in Project Files](../consume-packages/package-references-in-project-files.md) describes all the details of describing your package directly in the project file.
+- [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md) describes all the options for using `msbuild /t:pack` to create the package.
 - [.NET Standard Library documentation](https://docs.microsoft.com/dotnet/articles/standard/library)
 - [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/dotnet/articles/core/porting/index)

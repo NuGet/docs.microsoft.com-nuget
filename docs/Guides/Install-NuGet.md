@@ -90,9 +90,9 @@ On Windows, the NuGet CLI can be installed using any of the following methods:
 
 On Mac OSX and Linux, there are two ways to run NuGet:
 
-1. Install the [.NET Core SDK](https://www.microsoft.com/net/download/core), which includes NuGet capabilities. Downloads are also listed on [github.com/dotnet/cli](https://github.com/dotnet/cli).
+1. Install the [.NET Core SDK](https://www.microsoft.com/net/download/core), which includes the core NuGet capabilities. Downloads are also listed on [github.com/dotnet/cli](https://github.com/dotnet/cli). If you need fuller capabilities, then use the second option below to use `nuget.exe` with Mono.
 
-1. Install [Mono](http://www.mono-project.com/docs/getting-started/install/) and then use the nuget.exe command-line executable for Windows (version 3.2 and later) from [nuget.org/downloads](https://nuget.org/downloads). Running NuGet on Mono is subject to the following limitations:
+1. Install [Mono](http://www.mono-project.com/docs/getting-started/install/) and then use the `nuget.exe` command-line executable for Windows (version 3.2 and later) from [nuget.org/downloads](https://nuget.org/downloads). Running NuGet on Mono is subject to the following limitations:
 
     - Commands tested to work:
         - Config
