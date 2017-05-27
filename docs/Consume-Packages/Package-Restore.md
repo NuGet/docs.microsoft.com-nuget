@@ -67,7 +67,7 @@ From the command line:
 | --- | --- | 
 | `nuget restore` | All versions of NuGet and all reference types. See [Command-line restore](#command-line-restore) below. | 
 | `dotnet restore` | Same as `nuget restore` for .NET Core projects. See [dotnet restore](https://docs.microsoft.com/dotnet/articles/core/tools/dotnet-restore). |
-| `msbuild /t:restore` | Nuget 4.x+ and MSBuild 15.1+ with [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) only. `nuget restore` and `dotnet restore` both use this command for applicable projects. See [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).|
+| `msbuild /t:restore` | Nuget 4.x+ and MSBuild 15.1+ with [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) only. `nuget restore` and `dotnet restore` both use this command for applicable projects. See [NuGet pack and restore as MSBuild targets- restore target](../schema/msbuild-targets.md#restore-target).|
 
 Inside Visual Studio, there are five ways that package restore can happen:
 

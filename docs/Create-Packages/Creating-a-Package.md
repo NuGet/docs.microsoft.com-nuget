@@ -294,7 +294,7 @@ To directly specify files to include in the package, use the `<files>` node in t
 </package>
 ```
 
-When you include a file named `readme.txt` in the package, the contents of that file will be displayed in Visual Studio as plain text immediately after the package is installed directly (but not when when the package is installed as a dependency). For example, here's how the readme for the HtmlAgilityPack package appears:
+When you include a file named `readme.txt` in the package, the contents of that file will be displayed in Visual Studio as plain text immediately after the package is installed directly (but not when the package is installed as a dependency). For example, here's how the readme for the HtmlAgilityPack package appears:
 
 ![The display of a readme file for a NuGet package upon installation](media/Create_01-ShowReadme.png)
 

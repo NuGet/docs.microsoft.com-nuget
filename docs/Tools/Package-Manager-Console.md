@@ -37,7 +37,7 @@ The Package Manager Console that is built into Visual Studio (2012 and later) le
 >
 > In Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed when you select any .NET-related workloads; you can also install it individually by checking the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.)
 
-Using the Console is necessary if you want to work with packages without having a solution open, and is required in cases where the Package Manager UI does not provide a way to perform an operation. Note, however, that all operations can be done with the [NuGet CLI](../tools/nuget-exe-cli-reference.md).
+Using the Console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. Note, however, that all operations can be done with the [NuGet CLI](../tools/nuget-exe-cli-reference.md).
 
 In all cases, you open the Console in Visual Studio through the **Tools > NuGet Package Manager > Package Manager Console** command. 
 

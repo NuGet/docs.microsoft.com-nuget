@@ -46,7 +46,7 @@ The same command without `-reinstall` will update a package to a newer version, 
 Update-Package <package_name>
 ```
 
-Using `Update-Package` without `-reinstall` will update all packages in the project. For other options, see the [Update-Package command](../Tools/PowerShell-Reference.md#update-package).
+Using `Update-Package` without `-reinstall` will update all packages in all projects in the current folder. You can use `-ProjectName <name>` to update all packages in a specific project. For other options, see the [Update-Package command](../Tools/PowerShell-Reference.md#update-package).
 
 Any updates are subject to version constraints indicated in `packages.config`, as described below in [Constraining upgrade versions](#constraining-upgrade-versions), but do not apply to projects using `project.json` or package references in project files.
 

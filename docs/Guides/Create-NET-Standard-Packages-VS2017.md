@@ -50,7 +50,7 @@ The require workload appears as follows in the Visual Studio installer:
 
 ![.NET Core cross-platform development workload in the Visual Studio Installer](media/NuGet4-01-Workload.png)
 
-## Create the .NET Core class library project
+## Create the .NET Standard class library project
 
 1. In Visual Studio, **File > New > Project**, expand the **Visual C# > .NET Standard** node, select **Class Library (Net Standard)**, change the name to AppLogger, and click OK.
 
