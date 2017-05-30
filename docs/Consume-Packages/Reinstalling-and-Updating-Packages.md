@@ -5,7 +5,7 @@ title: Reinstalling and Updating NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 5/3/2017
+ms.date: 5/24/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -46,11 +46,15 @@ The same command without `-reinstall` will update a package to a newer version, 
 Update-Package <package_name>
 ```
 
-Using `Update-Package` without `-reinstall` will update all packages in all projects in the current folder. You can use `-ProjectName <name>` to update all packages in a specific project. For other options, see the [Update-Package command](../Tools/PowerShell-Reference.md#update-package).
+To update all packages in a specific project, use the `-ProjectName` argument:
 
-Any updates are subject to version constraints indicated in `packages.config`, as described below in [Constraining upgrade versions](#constraining-upgrade-versions), but do not apply to projects using `project.json` or package references in project files.
+```ps
+Update-Package application-project.csproj
+```
 
-For complete usage, refer to the [PowerShell reference for Update-Package](../tools/powershell-reference.md#update-package).
+Using `Update-Package` by itself, with no other arguments, will update all packages in all projects in the current folder. See the [Update-Package command](../Tools/PowerShell-Reference.md#update-package) reference for complete usage details.
+
+Updating packages in a project or solution using `project.json` or [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding pre-release packages). Projects that use `packages.config` can, if desired, limit update versions as described below in[Constraining upgrade versions](#constraining-upgrade-versions).
 
 ## When to Reinstall a Package
 
@@ -83,9 +87,9 @@ The following may be affected when reinstalling a package:
 
 ## Constraining upgrade versions
 
-In NuGet 3.x with projects using `project.json` or [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) to list dependencies, installing or updating a package will *always* install the latest version available from the package source.
+By default, reinstalling or updating a package *always* installs the latest version available from the package source.
 
-In projects using `packages.config`, the same behavior applies unless you specifically constrain the version range. For example, if you know that your application will work only with version 1.x of a package but not 2.0 and above, perhaps due to a major change in the package API, then you'd want to constrain upgrades to 1.x versions. This prevents accidental updates that would break the application.
+In projects using `packages.config`, however, you can specifically constrain the version range. For example, if you know that your application works only with version 1.x of a package but not 2.0 and above, perhaps due to a major change in the package API, then you'd want to constrain upgrades to 1.x versions. This prevents accidental updates that would break the application.
 
 To set a constraint, open `packages.config` in a text editor, locate the dependency in question, and add the `allowedVersions` attribute with a version range. For example, to constrain updates to version 1.x, set `allowedVersions` to `[1,2)`:
 
@@ -98,4 +102,4 @@ To set a constraint, open `packages.config` in a text editor, locate the depende
 </packages>
 ```
 
-In all cases, use the notation described in [Dependency versions](../create-packages/dependency-versions.md).
+In all cases, use the notation described in [Dependency versions - version ranges](../create-packages/dependency-versions.md#version-ranges).

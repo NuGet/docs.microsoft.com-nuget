@@ -5,7 +5,7 @@ title: Installing NuGet | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
-ms.date: 4/4/2017
+ms.date: 5/30/2017
 ms.topic: article 
 ms.prod: nuget 
 #ms.service: 
@@ -32,10 +32,10 @@ ms.reviewer:
 
 There are two primary tools available to help you build, publish and consume NuGet packages:
 
-1. The [**NuGet CLI**](#nuget-cli) is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux through either the .NET Core CLI or with Mono.
-1. The [**NuGet Package Manager  in Visual Studio**](#nuget-package-manager-in-visual-studio) is a GUI tool for managing packages and includes a console through which you can use certain NuGet commands directly within Visual Studio. It's included with Visual Studio 2012 and later and can be installed manually for earlier versions.
+1. The [**NuGet CLI**](#nuget-cli) is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux using Mono, or through the .NET Core CLI (`dotnet`).
+1. The [**NuGet Package Manager in Visual Studio**](#nuget-package-manager-in-visual-studio) is a GUI tool for managing packages and includes a PowerShell console through which you can use certain NuGet commands directly within Visual Studio. The Package Manager UI and Console are both included with Visual Studio 2012 and later and can be installed manually for earlier versions.
 
-Both support the following operations:
+The NuGet CLI and Package Manager both support the following operations:
 
 - Search packages
 - Install packages
@@ -54,8 +54,8 @@ The following capabilities are supported only in the NuGet CLI:
 - Replication a package
 
 > [!Note]
-> You might also be interested in the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), an open-source, stand-alone tool to visually explore and create NuGet packages.
-> Also, the cross-platform [.NET Core CLI](https://docs.microsoft.com/dotnet/articles/core/tools/index#installation) toolchain for developing .NET Core applications also supports a [dotnet restore](https://docs.microsoft.com/dotnet/articles/core/tools/dotnet-restore) command that performs a nuget restore. No other nuget commands are available in the .NET Core CLI at present, however. 
+> Another good tool is the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), an open-source, stand-alone tool to visually explore, create, and edit NuGet packages. It's very helpful, for example, to make experimental changes to a package structure without having to rebuild the package each time.
+> The cross-platform [.NET Core CLI](https://docs.microsoft.com/dotnet/articles/core/tools/index#installation) toolchain, used for developing .NET Core applications, supports several NuGet commands, such as delete, locals, push, pack, and restore. 
 
 
 ## NuGet CLI
@@ -64,9 +64,9 @@ The NuGet command-line interface provides access to all NuGet capabilities, and 
 
 ### Windows
 
-On Windows, the NuGet CLI can be installed using any of the following methods:
+On Windows, install the NuGet CLI using any of the following methods:
 
-1. **nuget.org**: Download the latest version of the nuget.exe file from [nuget.org/downloads](https://nuget.org/downloads) and save it to an appropriate location on your machine. If desired, add that location to your PATH environment variable so you can NuGet from anywhere. (Note that the download is a single .exe file, so save it rather than running it from the browser.)
+1. **nuget.org**: Various versions of `nuget.exe` are available on [nuget.org/downloads](https://nuget.org/downloads). Each download link points directly to an `.exe` file, so be sure to right-click and save the file to your computer rather than running it from the browser. If desired, add the save location to your PATH environment variable so you can NuGet from anywhere.
 
 > [!Note]
 > With NuGet 1.4+, you can use `nuget update -self` to update your existing nuget.exe to the latest version.
@@ -82,35 +82,35 @@ On Windows, the NuGet CLI can be installed using any of the following methods:
 
 > **NuGet 2.x users**
 >
-> Because there are a few breaking changes introduced in NuGet 3.2, [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe) points to the latest stable NuGet 2.x release to prevent CI systems from potentially breaking at this time.
+> Because of breaking changes introduced in NuGet 3.2, [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe) points to the latest stable NuGet 2.x release to prevent CI systems from potentially breaking.
 
 <a name="compatibility-with-mono"></a>
 
 ## Mac OSX and Linux
 
-On Mac OSX and Linux, there are two ways to run NuGet:
+On Mac OSX and Linux, there are two ways to run the NuGet CLI:
 
 1. Install the [.NET Core SDK](https://www.microsoft.com/net/download/core), which includes the core NuGet capabilities. Downloads are also listed on [github.com/dotnet/cli](https://github.com/dotnet/cli). If you need fuller capabilities, then use the second option below to use `nuget.exe` with Mono.
 
 1. Install [Mono](http://www.mono-project.com/docs/getting-started/install/) and then use the `nuget.exe` command-line executable for Windows (version 3.2 and later) from [nuget.org/downloads](https://nuget.org/downloads). Running NuGet on Mono is subject to the following limitations:
 
     - Commands tested to work:
-        - Config
-        - Delete
-        - Help
-        - Install
-        - List
-        - Push
-        - SetApiKey
-        - Sources
-        - Spec
+        - config
+        - delete
+        - help
+        - install
+        - list
+        - push
+        - setApiKey
+        - sources
+        - spec
 
     - Partially-working commands:
-        - Pack: works with `.nuspec` files but not with project files.
-        - Restore: works with `packages.config` and `project.json` files but not with solution (`.sln`) files.
+        - pack: works with `.nuspec` files but not with project files.
+        - restore: works with `packages.config` and `project.json` files but not with solution (`.sln`) files.
 
     - Commands that do not work:
-        - Update
+        - update
 
 
 ### Related topics
@@ -122,15 +122,17 @@ On Mac OSX and Linux, there are two ways to run NuGet:
 
 ## NuGet Package Manager in Visual Studio
 
-The NuGet Package Manager is included in every edition of Visual Studio 2012 and later. It includes the Package Manager UI ([reference](../tools/package-manager-ui.md)) and the Package Manager Console, through which you can access tools that come with certain packages ([reference](../tools/package-manager-console.md)).
+The NuGet Package Manager is included in every edition of Visual Studio 2012 and later. It includes the Package Manager UI ([reference](../tools/package-manager-ui.md)), and the Package Manager Console through which you can access tools that come with certain packages ([reference](../tools/package-manager-console.md)).
 
 > [!Note]
 > The console requires [PowerShell 2.0](http://support.microsoft.com/kb/968929), which will already be installed on Windows 7 or higher and Windows Server 2008 R2 or higher.
 >
-> Package Manager Console commands also work only within  Visual Studio. Use the NuGet CLI outside of that environment.
+> Package Manager Console commands also work only within Visual Studio. Use the NuGet CLI outside of that environment.
 
 
 ### Package Manager installation for Visual Studio 2010 and earlier
+
+*These steps are not necessary for Visual Studio 2012 and later, which already include the Package Manager.*
 
 1. In Visual Studio, click **Tools > Extension and Updates**.
 1. Navigate to **Online**, search for "NuGet Package Manager for Visual Studio," and click **Download**.
@@ -146,21 +148,13 @@ For Visual Studio 2015 Update 2 and later, the Package Manager is automatically 
 
 For earlier versions of Visual Studio, select the **Tools > Extensions and Updates** command and click on the **Updates** tab to see if a new version of the Package Manager is available.  
 
-### NuGet beta channel
+### NuGet previews
 
-The NuGet Beta Channel for the NuGet Package Manager in Visual Studio 2015 gives you access to high-quality builds that are close to completion. We use this channel to gather feedback on our near-final builds, and it's recommended for developers who want to try out new features and those who are experiencing blocking issues and need early access to updated builds before RTM. 
+If you'd like to preview upcoming NuGet features, install the [Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/), which works side-by-side with stable releases of Visual Studio.
 
-Accessing the beta channel is simple:
+Note that the previous NuGet Beta Channel (`https://dotnet.myget.org/F/nuget-beta/vsix/`) for Visual Studio 2015 is no longer used.
 
-1. In Visual Studio, navigate to **Tools > Options > Environment > Extensions and Updates**, then add the feed `https://dotnet.myget.org/F/nuget-beta/vsix/` to the **Additional Extension Galleries** list:
-
-    ![Adding the NuGet beta channel feed to Visual Studio](media/BetaChannel-ToolsSettings.png)
-
-1. Navigate to **Tools > Extensions and Updates** and select **Online**, which should show the NuGet-Beta Feed from which you can install a beta NuGet Package Manager:
-
-    ![Checking NuGet beta channel updates](media/BetaChannel-ExtensionUpdate.png)
-
-To report problems with the Beta builds or to share ideas, open an issue on the [NuGet GitHub repository](https://github.com/Nuget/Home).
+To report problems with any release of NuGet or to share ideas, open an issue on the [NuGet GitHub repository](https://github.com/Nuget/Home).
 
 ### Related topics
 
