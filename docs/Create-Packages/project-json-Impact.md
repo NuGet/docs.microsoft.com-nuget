@@ -38,7 +38,7 @@ Traditional NuGet packages support a set of features that are not carried over t
 
 ### Install and uninstall scripts are ignored
 
-The transitive restore model, described in [Dependency resolution](../consume-packages/dependency-resolution.md#dependency-resolution-in-nuget-3x), does not have a concept of "package install time". A package is either present or not present, but there is no consistent process that occurs when a package is installed.
+The transitive restore model, described in [Dependency resolution](../consume-packages/dependency-resolution.md#dependency-resolution-with-projectjson-and-package-references), does not have a concept of "package install time". A package is either present or not present, but there is no consistent process that occurs when a package is installed.
 
 Also, install scripts were supported only in Visual Studio. Other IDEs had to mock the Visual Studio extensibility API to attempt to support such scripts, and no support was available in common editors and command-line tools.
 

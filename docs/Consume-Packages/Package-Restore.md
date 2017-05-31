@@ -174,9 +174,9 @@ When enabled, automatic restore works as follows:
 1. A `.nuget` folder is created in the solution containing a `Nuget.Config` file that contains only a single setting for `disableSourceControlIntegration` (as described in [Packages and source control](../consume-packages/packages-and-source-control.md) for Team Foundation Version Control).
 2. When a build begins, Visual Studio instructs NuGet to restore packages.
 3. NuGet recursively looks for all `packages.config` files in the solution, looks for `project.json`, or looks in the project file.
-4. For each packages listed in the reference files, NuGet checks if it exists in the solution's `packages` folder.
+4. For each packages listed in the reference files, NuGet checks if it already exists in the solution (the `packages` folder, `project.lock.json`, or `project.assets.json` depending on whether the project is using `packages.config`, `project.json`, or package references in project files).
 5. If the package is not found, NuGet attempts to retrieve the package from its cache first (see [Managing the NuGet cache](../consume-packages/managing-the-nuget-cache.md). If the package is not in the cache, NuGet downloads the package from the enabled sources as listed in **Tools > Options > [NuGet] Package Manager > Package Sources**, in the order that the sources appear.
-6. If the download is successful, NuGet caches it, and then installs the package into the `packages` folder; otherwise NuGet fails and the build fails.
+6. If the download is successful, NuGet caches it, and then installs the package into the solution (again, either the `packages` folder, `project.lock.json`, or `project.assets.json`); otherwise NuGet fails and the build fails.
 
 During this process, developers see a progress dialog with the option to cancel package restore.
 

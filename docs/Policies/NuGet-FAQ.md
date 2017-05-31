@@ -94,7 +94,7 @@ Yes, it's possible to add custom commands to `nuget.exe`, as described in [Rob R
 
 **How do I get access to the DTE object in the Package Manager console?**
 
-The console provides a variable named `$DTE` that returns the `DTE` object. See the [`Get-Project` command](../tools/powershell-reference.md#get-project).
+The top-level object in the Visual Studio automation object model is called the DTE object. The console provides this through a variable named `$DTE`. For more information, see [Automation Model Overview](https://docs.microsoft.com/visualstudio/extensibility/internals/automation-model-overview) in the Visual Studio Extensibility documentation.
 
 **I try to cast the $DTE variable to the type DTE2, but I get an error: Cannot convert the "EnvDTE.DTEClass" value of type "EnvDTE.DTEClass" to type "EnvDTE80.DTE2". What's wrong?**
 
