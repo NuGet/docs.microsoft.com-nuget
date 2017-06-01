@@ -32,7 +32,7 @@ ms.reviewer:
 
 There are a number of situations, described below under [When to Reinstall a Package](#when-to-reinstall-a-package), where references to a package might get broken within a Visual Studio project. In these cases, uninstalling and then reinstalling the same version of the package will restore those reference to working order.
 
-Being mindful of the [Considerations](#considerations) described later, you can easily reinstall any package using the [Update-Package command](../Tools/PowerShell-Reference.md#update-package) in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
+Being mindful of the [Considerations](#considerations) described later, you can easily reinstall any package using the [Update-Package command](../Tools/ps-ref-update-package.md) in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
 
 ```ps
 Update-Package –reinstall <package_name>
@@ -52,7 +52,7 @@ To update all packages in a specific project, use the `-ProjectName` argument:
 Update-Package application-project.csproj
 ```
 
-Using `Update-Package` by itself, with no other arguments, will update all packages in all projects in the current folder. See the [Update-Package command](../Tools/PowerShell-Reference.md#update-package) reference for complete usage details.
+Using `Update-Package` by itself, with no other arguments, will update all packages in all projects in the current folder. See the [Update-Package command](../Tools/ps-ref-update-package.md) reference for complete usage details.
 
 Updating packages in a project or solution using `project.json` or [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding pre-release packages). Projects that use `packages.config` can, if desired, limit update versions as described below in[Constraining upgrade versions](#constraining-upgrade-versions).
 
