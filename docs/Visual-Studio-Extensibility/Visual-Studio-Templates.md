@@ -139,7 +139,7 @@ SDKs that are installed using an MSI can install NuGet packages directly on the 
 
 1. Write a registry key to identify the package location:
 
-    - Key location: `HKEY_LOCAL_MACHINE\SOFTWARE[\Wow6432Node]\NuGet\Repository`
+    - Key location: Either the machine-wide `HKEY_LOCAL_MACHINE\SOFTWARE[\Wow6432Node]\NuGet\Repository` or if it's per-user installed templates and packages, alternatively use `HKEY_CURRENT_USER\SOFTWARE\NuGet\Repository`
     - Key name: use a name that's unique to you. For example, the ASP.NET MVC 4 templates for VS 2012 use `AspNetMvc4VS11`.
     - Values: the full path to the packages folder.
 
