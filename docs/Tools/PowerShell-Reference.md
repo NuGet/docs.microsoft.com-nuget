@@ -44,10 +44,10 @@ Command | Description | NuGet Version
 [Uninstall-Package](ps-ref-uninstall-package.md) | Removes a package from a project, optionally removing its dependencies. | All
 [Update-Package](ps-ref-update-package.md) | Updates a package and its dependencies, or all packages in a project. | All
 
-For detailed help on any of these commands within the console, just run the following with the command name in question:
+For complete, detailed help on any of these commands within the console, just run the following with the command name in question:
 
 ```ps
-Get-Help <command>
+Get-Help <command> -full
 ```
 
 Note that all Package Manager Console commands support the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216):

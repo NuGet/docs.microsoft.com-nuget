@@ -54,11 +54,11 @@ Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Ver
 | IncludePrerelease | Includes prerelease packages in the sync. |
 | FileConflictAction | The action to take when asked to overwrite or ignore existing files referenced by the project. Possible values are *Overwrite, Ignore, None, OverwriteAll*, and *(3.0+)* *IgnoreAll*. |
 | DependencyVersion | The version of the dependency packages to use, which can be one of the following:<br/>
-    <ul><li>-Lowest (default): the lowest version<li>
-    <li>-HighestPatch: the version with the lowest major, lowest minor, highest patch</li>
-    <li>-HighestMinor: the version with the lowest major, highest minor, highest patch</li>
-    <li>-Highest (default for Update-Package with no parameters): the highest version</li></ul>
-    You can set the default value using the [`dependencyVersion`](../Schema/nuget-config-file.md#config-section) setting in the `Nuget.Config` file. |
+<ul><li>-Lowest (default): the lowest version<li>
+<li>-HighestPatch: the version with the lowest major, lowest minor, highest patch</li>
+<li>-HighestMinor: the version with the lowest major, highest minor, highest patch</li>
+<li>-Highest (default for Update-Package with no parameters): the highest version</li></ul>
+You can set the default value using the [`dependencyVersion`](../Schema/nuget-config-file.md#config-section) setting in the `Nuget.Config` file. |
 | WhatIf | Shows what would happen when running the command without actually performing the sync. |
 
 None of these parameters accept pipeline input or wildcard characters.

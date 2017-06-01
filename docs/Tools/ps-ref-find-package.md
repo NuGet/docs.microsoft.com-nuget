@@ -45,7 +45,7 @@ Find-Package [-Id] <keywords> -Source <string> [-AllVersions] [-First [<int>]]
 
 | Parameter | Description |
 | --- | --- |
-| Id/&lt;keywords&gt; | (Required) Keywords to use when searching the package source. Use `-ExactMatch` to return only those packages whose package ID matches the keywords. If no keywords are given, `Find-Package` returns a list of the top 20 packages by downloads, or the number specified by -First. Note that -Id is optional and a no-op. |
+| Id &lt;keywords&gt; | (Required) Keywords to use when searching the package source. Use -ExactMatch to return only those packages whose package ID matches the keywords. If no keywords are given, `Find-Package` returns a list of the top 20 packages by downloads, or the number specified by -First. Note that -Id is optional and a no-op. |
 | Source | The URL or folder path for the package source to search. Local folder paths can be absolute, or relative to the current folder. If omitted, `Find-Package` searches the currently selected package source. |
 | AllVersions | Displays all available versions of each package instead of only the latest version. |
 | First | The number of packages to return from the beginning of the list; the default is 20. |
