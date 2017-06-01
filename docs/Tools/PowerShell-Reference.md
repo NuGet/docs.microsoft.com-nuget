@@ -34,15 +34,15 @@ The Package Manager Console provides a PowerShell interface within Visual Studio
 
 Command | Description | NuGet Version
 --- | --- | ---
-[Add-BindingRedirect](ps-ref-add-bindingredirect,md) | Examines all assemblies within the output path for a project and adds binding redirects to the `app.config` or `web.config` where necessary. | All
-[Find-Package](ps-ref-find-package,md) | Searches a package source using a package ID or keywords. | 3.0+
-[Get-Package](ps-ref-get-package,md) | Retrieves the list of packages installed in the local repository, or lists packages available from a package source. | All
-[Get-Project](ps-ref-get-project,md) | Displays information about the default or specified project. | 3.0+
-[Install-Package](ps-ref-install-package,md) | Installs a package and its dependencies into the project. | All
-[Open-PackagePage](ps-ref-open-packagepage,md) | Launches the default browser with the project, license, or report abuse URL for the specified package. | Deprecated in 3.0+
-[Sync-Package](ps-ref-sync-package,md) | Get the version of installed package from specified project and syncs the version to the rest of projects in the solution. | 3.0+
-[Uninstall-Package](ps-ref-uninstall-package,md) | Removes a package from a project, optionally removing its dependencies. | All
-[Update-Package](ps-ref-update-package,md) | Updates a package and its dependencies, or all packages in a project. | All
+[Add-BindingRedirect](ps-ref-add-bindingredirect.md) | Examines all assemblies within the output path for a project and adds binding redirects to the `app.config` or `web.config` where necessary. | All
+[Find-Package](ps-ref-find-package.md) | Searches a package source using a package ID or keywords. | 3.0+
+[Get-Package](ps-ref-get-package.md) | Retrieves the list of packages installed in the local repository, or lists packages available from a package source. | All
+[Get-Project](ps-ref-get-project.md) | Displays information about the default or specified project. | 3.0+
+[Install-Package](ps-ref-install-package.md) | Installs a package and its dependencies into the project. | All
+[Open-PackagePage](ps-ref-open-packagepage.md) | Launches the default browser with the project, license, or report abuse URL for the specified package. | Deprecated in 3.0+
+[Sync-Package](ps-ref-sync-package.md) | Get the version of installed package from specified project and syncs the version to the rest of projects in the solution. | 3.0+
+[Uninstall-Package](ps-ref-uninstall-package.md) | Removes a package from a project, optionally removing its dependencies. | All
+[Update-Package](ps-ref-update-package.md) | Updates a package and its dependencies, or all packages in a project. | All
 
 For detailed help on any of these commands within the console, just run the following with the command name in question:
 
