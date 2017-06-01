@@ -77,6 +77,9 @@ NuGet supports using interval notation for specifying version ranges, summarized
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | Mixed inclusive minimum and exclusive maximum version |
 | (1.0)    | invalid | invalid |
 
+> [!Note]
+> Pre-release versions are not included when resolving version ranges. Pre-release versions are included when using a wildcard (*) with a floating version number. That is, *[1.0,2.0]* will not include 2.0-beta, but *2.0-** will. However, due to issues [4513](https://github.com/NuGet/Home/issues/4513) and [4859](https://github.com/NuGet/Home/issues/4859), this resolves the lowest matching version, not the latest.
+
 
 A few examples:
 

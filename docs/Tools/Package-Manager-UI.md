@@ -105,7 +105,7 @@ The NuGet Package Manager UI allows you to easily switch between package sources
 
 To manage package sources:
 
-1. Click on the **Settings** icon in the Package Manager UI outlined below or use the **Tools > Options** command. and scroll to **NuGet Package Manager**.
+1. Click on the **Settings** icon in the Package Manager UI outlined below or use the **Tools > Options** command and scroll to **NuGet Package Manager**.
 
     ![Package manager UI settings icon](media/PackageSourceSettings.png)
 
@@ -138,7 +138,7 @@ When checked, a modal window displays which dependent packages will be loaded wi
 
 ### Install and Update Options
 
-**Dependency behavior** configures how NuGet decide which versions of dependent packages to installed:
+**Dependency behavior** configures how NuGet decides which versions of dependent packages to install:
 
 - *Ignore dependencies* skips installing any dependencies, which typically breaks the package being installed.
 - *Lowest* installs the dependency with the minimal version number that meets the requirements of the primary chosen package.
