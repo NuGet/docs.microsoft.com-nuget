@@ -46,7 +46,7 @@ Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Ver
 
 | Parameter | Description |
 | --- | --- |
-| Id | The identifier of the package to sync. The -Id switch itself is optional. |
+| Id | (Required) The identifier of the package to sync. The -Id switch itself is optional. |
 | IgnoreDependencies | Install only this package and not its dependencies. |
 | ProjectName | The project to sync the package from, defaulting to the default  project. |
 | Version | The version of the package to sync, defaulting to the currently installed version. |
@@ -61,6 +61,7 @@ Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Ver
     You can set the default value using the [`dependencyVersion`](../Schema/nuget-config-file.md#config-section) setting in the `Nuget.Config` file. |
 | WhatIf | Shows what would happen when running the command without actually performing the sync. |
 
+None of these parameters accept pipeline input or wildcard characters.
 
 ## Common Parameters
 

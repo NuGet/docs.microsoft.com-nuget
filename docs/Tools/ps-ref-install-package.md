@@ -52,7 +52,7 @@ NuGet 2.7 and earlier will give an error saying that a newer version is already 
 
 | Parameter | Description |
 | --- | --- |
-| Id | The package ID of the package to install. (*3.0+*) The ID can be a path or URL of a `packages.config` file or a `.nupkg` file. The -Id switch itself is optional. |
+| Id | (Required) The identifier of the package to install. (*3.0+*) The identifier can be a path or URL of a `packages.config` file or a `.nupkg` file. The -Id switch itself is optional. |
 | IgnoreDependencies | Install only this package and not its dependencies. |
 | ProjectName | The project into which to install the package, defaulting to the default project. |
 | Source | The URL or folder path for the package source to search. Local folder paths can be absolute, or relative to the current folder. If omitted, `Install-Package` searches the currently selected package source. |
@@ -66,6 +66,8 @@ NuGet 2.7 and earlier will give an error saying that a newer version is already 
     <li>-Highest (default for Update-Package with no parameters): the highest version</li></ul>
     You can set the default value using the [`dependencyVersion`](../Schema/nuget-config-file.md#config-section) setting in the `Nuget.Config` file. |
 | WhatIf | Shows what would happen when running the command without actually performing the install. |
+
+None of these parameters accept pipeline input or wildcard characters.
 
 ## Common Parameters
 

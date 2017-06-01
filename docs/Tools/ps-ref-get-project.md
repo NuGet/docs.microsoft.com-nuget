@@ -45,6 +45,8 @@ Get-Project [[-Name] <string>] [-All] [<CommonParameters>]
 | Name | Specifies the project to display, defaulting to the default project selected in the Package Manager Console. The -Name switch is itself optional. |
 | All | Displays information for every project in the solution; the order of projects is not deterministic. |
 
+None of these parameters accept pipeline input or wildcard characters.
+
 ## Common Parameters
 
 `Get-Project` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.

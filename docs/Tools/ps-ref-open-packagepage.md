@@ -52,6 +52,8 @@ Open-PackagePage [-Id] <string> [-Version] [-Source] [-License] [-ReportAbuse]
 | ReportAbuse | Opens the browser to the package's Report Abuse URL. If neither -License nor -ReportAbuse is specified, the browser opens the package's Project URL. |
 | PassThru | Displays the URL but does not open it in the browser. |
 
+None of these parameters accept pipeline input or wildcard characters.
+
 ## Common Parameters
 
 `Open-PackagePage` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.

@@ -46,12 +46,14 @@ If other packages depend on this package, the command will fail unless the –Fo
 
 | Parameter | Description |
 | --- | --- |
-| Id | The identifier of the package to uninstall. The -Id switch itself is optional. |
+| Id | (Required) The identifier of the package to uninstall. The -Id switch itself is optional. |
 | Version | The version of the package to uninstall, defaulting to the currently installed version. |
 | RemoveDependencies | Uninstall the package and its unused dependencies. That is, if any dependency has another package that depends on it, it is skipped. |
 | ProjectName | The project from which to uninstall the package, defaulting to the default project. |
 | Force | Forces a package to be uninstalled, even if other packages depend on it. |
 | WhatIf | Shows what would happen when running the command without actually performing the uninstall. |
+
+None of these parameters accept pipeline input or wildcard characters.
 
 ## Common Parameters
 

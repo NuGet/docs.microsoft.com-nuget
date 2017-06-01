@@ -54,6 +54,8 @@ Find-Package [-Id] <keywords> -Source <string> [-AllVersions] [-First [<int>]]
 | ExactMatch | Specified to use &lt;keywords&gt; as a case-sensitive package ID. |
 | StartWith | Returns packages whose package ID begins with &lt;keywords&gt;. |
 
+None of these parameters accept pipeline input or wildcard characters.
+
 ## Common Parameters
 
 `Find-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.

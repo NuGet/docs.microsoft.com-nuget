@@ -57,6 +57,8 @@ With no parameters, `Get-Package` displays the list of packages installed in the
 | IncludePrerelease | Includes prerelease packages in the results. |
 | PageSize | *(3.0+)* When used with -ListAvailable (required), the number of packages to list before giving a prompt to continue. |
 
+None of these parameters accept pipeline input or wildcard characters.
+
 ## Common Parameters
 
 `Get-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.

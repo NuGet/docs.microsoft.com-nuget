@@ -52,7 +52,7 @@ NuGet 2.7 and earlier will give an error saying that a newer version is already 
 
 |  Parameter | Description |
 | --- | --- |
-| Id | The package Id of the package to update. If omitted, updates all packages. The -Id switch itself is optional. |
+| Id | (Required) The identifier of the package to update. If omitted, updates all packages. The -Id switch itself is optional. |
 | IgnoreDependencies | Skips updating the package's dependencies. |
 | ProjectName | The name of the project containing the packages to update, defaulting to all projects. |
 | Version | The version to use for the upgrade, defaulting to the latest version. In NuGet 3.0+, the version value must be one of *Lowest, Highest, HighestMinor*, or *HighestPatch* (equivalent to `-Safe`). |
@@ -70,6 +70,8 @@ NuGet 2.7 and earlier will give an error saying that a newer version is already 
 | ToHighestPatch | Constrains upgrades to only versions with the same Minor version as the currently installed package. |
 | ToHighestMinor | Constrains upgrades to only versions with the same Major version as the currently installed package. |
 | WhatIf | Shows what would happen when running the command without actually performing the update. |
+
+None of these parameters accept pipeline input or wildcard characters.
 
 ### Common Parameters
 

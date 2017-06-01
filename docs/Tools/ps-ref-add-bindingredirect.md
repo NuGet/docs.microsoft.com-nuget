@@ -45,7 +45,9 @@ Add-BindingRedirect [-ProjectName] <string> [<CommonParameters>]
 
 | Parameter | Description |
 | --- | --- |
-| ProjectName | The project to which to add binding redirects. The -ProjectName switch itself is optional. |
+| ProjectName | (Required) The project to which to add binding redirects. The -ProjectName switch itself is optional. |
+
+None of these parameters accept pipeline input or wildcard characters.
 
 ## Common Parameters
 
