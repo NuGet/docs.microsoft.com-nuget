@@ -34,50 +34,41 @@ ms.reviewer:
 
 Launches the default browser with the project, license, or report abuse URL for the specified package.
 
-## Usage
+## Syntax
 
 ```ps
-Open-PackagePage [-Id] <string> [-Version <string>] [-Source <string>] [-License <string>] [-ReportAbuse] [-PassThru]
+Open-PackagePage [-Id] <string> [-Version] [-Source] [-License] [-ReportAbuse]
+    [-PassThru] [<CommonParameters>]
 ```
 
 ## Parameters
 
-|  Parameter   | Description    |
+| Parameter | Description |
 | --- | --- |
-Id | Specifies the package ID of the desired package. The -Id switch itself is optional.
-Version | Specifies the version of the package, defaulting to the latest version.
-Source | Specifies the package source, defaulting to the default source.
-License | Opens the browser to the package's License URL. If neither -License nor -ReportAbuse is specified, the browser opens the package's Project URL.
-ReportAbuse | Opens the browser to the package's Report Abuse URL. If neither -License nor -ReportAbuse is specified, the browser opens the package's Project URL.
-PassThru | Displays the selected URL but does not open it in the browser.
+| Id | The package ID of the desired package. The -Id switch itself is optional. |
+| Version | The version of the package, defaulting to the latest version. |
+| Source | The package source, defaulting to the selected source in the source drop-down. |
+| License | Opens the browser to the package's License URL. If neither -License nor -ReportAbuse is specified, the browser opens the package's Project URL. |
+| ReportAbuse | Opens the browser to the package's Report Abuse URL. If neither -License nor -ReportAbuse is specified, the browser opens the package's Project URL. |
+| PassThru | Displays the URL but does not open it in the browser. |
 
 ## Common Parameters
 
-`Open-PackagePage` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216):
-
-- Debug
-- ErrorAction
-- ErrorVariable
-- OutBuffer
-- OutVariable
-- PipelineVariable
-- Verbose
-- WarningAction
-- WarningVariable
+`Open-PackagePage` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.
 
 ## Examples
 
 ```ps
-# Opens a browser with the Ninject's package's project page
+# Opens a browser with the Ninject package's project page
 Open-PackagePage Ninject
 
-# Opens a browser with the Ninject's package's license page
+# Opens a browser with the Ninject package's license page
 Open-PackagePage Ninject -License
 
-# Opens a browser with the Ninject's package's report abuse page  
+# Opens a browser with the Ninject package's report abuse page  
 Open-PackagePage Ninject -ReportAbuse
 
 # Assigns the license URL to the variable, $url, without launching the browser
-$url = Open-PackagePage Ninject -License -WhatIf -PassThru
+$url = Open-PackagePage Ninject -License -PassThru
 ```
   

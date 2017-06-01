@@ -30,41 +30,32 @@ ms.reviewer:
 
 # Add-BindingRedirect
 
-Examines all assemblies within the output path for a project and adds binding redirects to the appropriate configuration files. For additional details on what this means, see [Redirecting Assembly Versions](https://msdn.microsoft.com/library/7wd6ex19.aspx) on MSDN.
+Examines all assemblies within the output path for a project and adds binding redirects to the application (or web) configuration file where necessary. For additional details on what this means, see [Redirecting Assembly Versions](https://msdn.microsoft.com/library/7wd6ex19.aspx) on MSDN.
 
-> [!NOTE]
+> [!Note]
 > NuGet 1.2+ automatically runs this command when installing a package.
 
-## Usage
+## Syntax
 
 ```ps
-Add-BindingRedirect [-ProjectName <string>]
+Add-BindingRedirect [-ProjectName] <string> [<CommonParameters>]
 ```
 
+## Parameters
 
-### Parameters
-
-|  Parameter   | Description    |
+| Parameter | Description |
 | --- | --- |
-| ProjectName | Specifies the project to which to add binding redirects, defaulting to the default project. The -ProjectName switch itself is optional. |
+| ProjectName | The project to which to add binding redirects. The -ProjectName switch itself is optional. |
 
-# Common Parameters
+## Common Parameters
 
-`Install-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216):
-
-- Debug
-- ErrorAction
-- ErrorVariable
-- OutBuffer
-- OutVariable
-- PipelineVariable
-- Verbose
-- WarningAction
-- WarningVariable
+`Add-BindingRedirect` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.
 
 ## Examples
 
 ```ps
-Add-BindingRedirect MyProjectName
+Add-BindingRedirect MyProject
+
+Add-BindingRedirect -ProjectName MyProject
 ```
  

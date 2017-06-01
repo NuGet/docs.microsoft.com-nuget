@@ -32,45 +32,40 @@ ms.reviewer:
 
 *Version 3.0+*
 
-Searches a package source using a package ID or keywords.
+Gets the set of remote packages with specified ID or keywords from the package source.
 
-## Usage
+## Syntax
 
 ```ps
-Find-Package [<keywords>] [-Source <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease] [-ExactMatch]
+Find-Package [-Id] <keywords> -Source <string> [-AllVersions] [-First [<int>]]
+    [-Skip <int>] [-IncludePrerelease] [-ExactMatch] [-StartWith] [<CommonParameters>]
 ```
 
 ## Parameters
 
-|  Parameter   | Description    |
+| Parameter | Description |
 | --- | --- |
-&lt;keywords&gt; | Searches the package source for packages with the keywords. Use the `-ExactMatch` switch to return only those packages whose package ID matches the keywords. If no keywords are given, Find-Package returns a list of the top 20 packages by downloads.
-Source | Specifies the URL or path for the package source to search. If omitted, searched the currently selected package source.
-First | Specifies the number of packages to return from the beginning of the list. If not specified, Find-Package lists 20 packages.
-Skip | Skips the specified number of packages, counting from the beginning of the list
-AllVersions | Displays all available versions of each package instead of only the latest version.
-IncludePrerelease | Indicates whether to include prerelease packages in the list.
-ExactMatch | Specified to use the keywords as a case-sensitive package ID.
+| Id/&lt;keywords&gt; | (Required) Keywords to use when searching the package source. Use `-ExactMatch` to return only those packages whose package ID matches the keywords. If no keywords are given, `Find-Package` returns a list of the top 20 packages by downloads, or the number specified by -First. Note that -Id is optional and a no-op. |
+| Source | The URL or folder path for the package source to search. Local folder paths can be absolute, or relative to the current folder. If omitted, `Find-Package` searches the currently selected package source. |
+| AllVersions | Displays all available versions of each package instead of only the latest version. |
+| First | The number of packages to return from the beginning of the list; the default is 20. |
+| Skip | Omits the first &lt;int&gt; packages from the displayed list.  |
+| IncludePrerelease | Includes prerelease packages in the results. |
+| ExactMatch | Specified to use &lt;keywords&gt; as a case-sensitive package ID. |
+| StartWith | Returns packages whose package ID begins with &lt;keywords&gt;. |
 
 ## Common Parameters
 
-`Find-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216):
-
-- Debug
-- ErrorAction
-- ErrorVariable
-- OutBuffer
-- OutVariable
-- PipelineVariable
-- Verbose
-- WarningAction
-- WarningVariable
+`Find-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.
 
 ## Examples
 
 ```ps
-# List packages with the keyword Elmah available
+# List available packages with the keyword Elmah
 Find-Package Elmah
+
+# List packages whose ID begins with Elmah
+Find-Package Elmah -StartWith
 
 # List all versions of the jquery package
 Find-Package jquery -AllVersions -ExactMatch
@@ -78,4 +73,3 @@ Find-Package jquery -AllVersions -ExactMatch
 # List packages with the keyword EntityFramework and version 6.1.1
 Find-Package EntityFramework -version 6.1.1
 ```
-

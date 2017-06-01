@@ -30,34 +30,24 @@ ms.reviewer:
 
 # Get-Project
 
-Displays information about the default or specified project.
+Displays information about the default or specified project. `Get-Project` specifically returns a referent to the Visual Studio DTE (Development Tools Environment) object for the project.
 
-## Usage
+## Syntax
 
 ```ps
-Get-Project [-Name <string>] [-All]
+Get-Project [[-Name] <string>] [-All] [<CommonParameters>]
 ```
 
 ## Parameters
 
-|  Parameter   | Description    |
+| Parameter | Description |
 | --- | --- |
-Name | Specifies the project to display, defaulting to the default project. The -Name switch is itself optional.
-All | Displays information for every project in the solution.
+| Name | Specifies the project to display, defaulting to the default project selected in the Package Manager Console. The -Name switch is itself optional. |
+| All | Displays information for every project in the solution; the order of projects is not deterministic. |
 
 ## Common Parameters
 
-`Get-Project` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216):
-
-- Debug
-- ErrorAction
-- ErrorVariable
-- OutBuffer
-- OutVariable
-- PipelineVariable
-- Verbose
-- WarningAction
-- WarningVariable
+`Get-Project` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.
 
 ## Examples
 
@@ -65,7 +55,7 @@ All | Displays information for every project in the solution.
 # Displays information for the default project
 Get-Project
 
-# Displays information for MyProjectName
+# Displays information for a project in the solution
 Get-Project MyProjectName
 
     # Displays information for all projects in the solution

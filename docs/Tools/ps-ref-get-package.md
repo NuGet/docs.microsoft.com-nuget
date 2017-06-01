@@ -30,44 +30,36 @@ ms.reviewer:
 
 # Get-Package
 
-Retrieves the list of packages installed in the local repository, or lists packages available from a package source when used with the `-ListAvailable` switch.
+Retrieves the list of packages installed in the local repository, lists packages available from a package source when used with the -ListAvailable switch, or lists available updates when used with the -Update switch.
 
-## Usage
+## Syntax
 
 ```ps
-Get-Package [-Source <string>] [-ListAvailable] [-Updates] [-ProjectName <string>] [-Filter <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease] [-PageSize <int>]
+Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
+    [-Filter <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease]
+    [-PageSize] [<CommonParameters>]
 ```
 
 With no parameters, `Get-Package` displays the list of packages installed in the default project.
 
 ## Parameters
 
-|  Parameter   | Description    |
+| Parameter | Description |
 | --- | --- |
-Source | Specifies the URL or path of a package source. When used with -ListAvailable, defaults to nuget.org.
-ListAvailable | Lists packages available from a package source, defaulting to nuget.org. If -PageSize and/or -First are not specified, this will show 50 packages.
-Updates | Lists packages that have an update available from the package source.
-ProjectName | Specifies the project from which to get installed packages.
-Filter | Specifies a filter string used to narrow down the list of packages returned. The filter is searched for in the package ID, the description and tags.
-IncludePrerelease | Indicates that prerelease packages should be included in the list.
-First | Specifies the number of packages to return from the beginning of the list. If not specified, defaults to 50.
-Skip | Skips the specified number of packages, counting from the beginning of the list.
-AllVersions | Displays all available versions of each package instead of only the latest version.
-PageSize | *(3.0+)* When used with -ListAvailable, specifies the number of packages to list before giving a prompt to continue. The command will continue listing packages as long as there are more to return. Without -PageSize, at most 50 packages are listed by default.
+| Source | The URL or folder path for the package . Local folder paths can be absolute, or relative to the current folder. If omitted, `Get-Package` searches the currently selected package source. When used with -ListAvailable, defaults to nuget.org. |
+| ListAvailable | Lists packages available from a package source, defaulting to nuget.org. Shows a default of 50 packages unless -PageSize and/or -First are specified. |
+| Updates | Lists packages that have an update available from the package source. |
+| ProjectName | The project from which to get installed packages. If omitted, returns installed projects for the entire solution. |
+| Filter | A filter string used to narrow down the list of packages by applying it to the package ID, description, and tags. |
+| First | The number of packages to return from the beginning of the list. If not specified, defaults to 50. |
+| Skip | Omits the first &lt;int&gt; packages from the displayed list.  |
+| AllVersions | Displays all available versions of each package instead of only the latest version. |
+| IncludePrerelease | Includes prerelease packages in the results. |
+| PageSize | *(3.0+)* When used with -ListAvailable (required), the number of packages to list before giving a prompt to continue. |
 
 ## Common Parameters
 
-`Get-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216):
-
-- Debug
-- ErrorAction
-- ErrorVariable
-- OutBuffer
-- OutVariable
-- PipelineVariable
-- Verbose
-- WarningAction
-- WarningVariable
+`Get-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.
 
 ## Examples
 
@@ -75,16 +67,22 @@ PageSize | *(3.0+)* When used with -ListAvailable, specifies the number of packa
 # Lists the packages installed in the current solution
 Get-Package
 
+# Lists the packages installed in a project
+Get-Package -ProjectName MyProject
+
 # Lists packages available in the current package source
 Get-Package -ListAvailable
 
-# Lists all packages in the current source in pages of 20
-Get-Package -ListAvailable -PageSize 20
+# Lists 30 packages at a time from the current source, and prompts to continue if more are available
+Get-Package -ListAvailable -PageSize 30
 
 # Lists packages with the Ninject keyword in the current source, up to 50
 Get-Package -ListAvailable -Filter Ninject
 
 # Lists packages installed in the solution that have available updates
 Get-Package -Updates
+
+# Lists packages installed in a specific project that have available updates
+Get-Package -Updates -ProjectName MyProject
 ```
 

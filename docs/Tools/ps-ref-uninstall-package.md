@@ -30,12 +30,13 @@ ms.reviewer:
 
 # Uninstall-Package
 
-Removes a package from a project, optionally removing its dependencies.
+Removes a package from a project, optionally removing its dependencies. If other packages depend on this package, the command will fail unless the –Force option is specified.
 
-## Usage
+## Syntax
 
 ```ps
-Uninstall-Package [-Id] <string> [-Version <string>] [-RemoveDependencies] [-ProjectName <string>] [-Force] [-WhatIf]
+Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [-Force]
+    [-Version <string>] [-WhatIf] [<CommonParameters>]
 ```
 
 If other packages depend on this package, the command will fail unless the –Force option is specified.
@@ -43,28 +44,18 @@ If other packages depend on this package, the command will fail unless the –Fo
 
 ## Parameters
 
-|  Parameter   | Description    |
+| Parameter | Description |
 | --- | --- |
-Id | Specifies the identifier of the package to uninstall. The -Id switch itself is optional.
-Version | Specifies the version of the package to uninstall, defaulting to the currently installed version.
-RemoveDependencies | Uninstalls the package and its unused dependencies. That is, if any dependency has another package that depends on it, it is skipped.
-ProjectName | Specifies the project from which to uninstall the package, defaulting to the default project.
-Force | Forces a package to be uninstalled, even if there are dependencies on it.
-WhatIf | Shows what would happen when running the command without actually performing the uninstall.
+| Id | The identifier of the package to uninstall. The -Id switch itself is optional. |
+| Version | The version of the package to uninstall, defaulting to the currently installed version. |
+| RemoveDependencies | Uninstall the package and its unused dependencies. That is, if any dependency has another package that depends on it, it is skipped. |
+| ProjectName | The project from which to uninstall the package, defaulting to the default project. |
+| Force | Forces a package to be uninstalled, even if other packages depend on it. |
+| WhatIf | Shows what would happen when running the command without actually performing the uninstall. |
 
 ## Common Parameters
 
-`Uninstall-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216):
-
-- Debug
-- ErrorAction
-- ErrorVariable
-- OutBuffer
-- OutVariable
-- PipelineVariable
-- Verbose
-- WarningAction
-- WarningVariable
+`Uninstall-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.
 
 ## Examples
 
@@ -75,6 +66,6 @@ Uninstall-Package Elmah
 # Uninstalls the Elmah package and all its unused dependencies
 Uninstall-Package Elmah -RemoveDependencies 
 
-# Uninstalls the Elmah package even if another package depends on it.
+# Uninstalls the Elmah package even if another package depends on it
 Uninstall-Package Elmah -Force
 ```
