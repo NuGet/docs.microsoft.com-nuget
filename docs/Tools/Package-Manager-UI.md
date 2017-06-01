@@ -105,7 +105,7 @@ The NuGet Package Manager UI allows you to easily switch between package sources
 
 To manage package sources:
 
-1. Click on the **Settings** icon in the Package Manager UI outlined below or use the **Tools > Options** command. and scroll to **NuGet Package Manager**.
+1. Click on the **Settings** icon in the Package Manager UI outlined below or use the **Tools > Options** command and scroll to **NuGet Package Manager**.
 
     ![Package manager UI settings icon](media/PackageSourceSettings.png)
 
