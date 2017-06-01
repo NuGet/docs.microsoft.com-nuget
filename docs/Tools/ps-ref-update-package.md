@@ -61,13 +61,7 @@ NuGet 2.7 and earlier will give an error saying that a newer version is already 
 | IncludePrerelease | Includes prerelease packages for updates. |
 | Reinstall | Resintalls packages using their currently installed versions. See [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md). |
 | FileConflictAction | The action to take when asked to overwrite or ignore existing files referenced by the project. Possible values are *Overwrite, Ignore, None, OverwriteAll*, and *IgnoreAll* (3.0+). |
-| DependencyVersion | The version of the dependency packages to use, which can be one of the following:<br/>
-<ul><li>-Lowest (default): the lowest version<li>
-<li>-HighestPatch: the version with the lowest major, lowest minor, highest patch</li>
-<li>-HighestMinor: the version with the lowest major, highest minor, highest patch</li>
-<li>-Highest (default for Update-Package with no parameters): the highest version</li></ul>
-You can set the default value using the [`dependencyVersion`](../Schema/nuget-config-file.md#config-section) setting in the `Nuget.Config` file. |
-| ToHighestPatch | Constrains upgrades to only versions with the same Minor version as the currently installed package. |
+| DependencyVersion | The version of the dependency packages to use, which can be one of the following:<br/><ul><li>-Lowest (default): the lowest version</li><li>-HighestPatch: the version with the lowest major, lowest minor, highest patch</li><li>-HighestMinor: the version with the lowest major, highest minor, highest patch</li><li>-Highest (default for Update-Package with no parameters): the highest version</li></ul>You can set the default value using the [`dependencyVersion`](../Schema/nuget-config-file.md#config-section) setting in the `Nuget.Config` file. || ToHighestPatch | Constrains upgrades to only versions with the same Minor version as the currently installed package. |
 | ToHighestMinor | Constrains upgrades to only versions with the same Major version as the currently installed package. |
 | WhatIf | Shows what would happen when running the command without actually performing the update. |
 
