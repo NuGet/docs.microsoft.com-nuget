@@ -37,7 +37,7 @@ The [.NET Standard Library](https://docs.microsoft.com/dotnet/articles/standard/
 This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4 with Visual Studio 2017 and NuGet 4.0.
 
 1. [Pre-requisites](#pre-requisites)
-1. [Create the class library project](#create-the-net-core-class-library-project)
+1. [Create the class library project](#create-the-netstandard-class-library-project)
 1. [Edit metadata in the .csproj file](#edit-metadata-in-the-csproj-file)
 1. [Package the component](#package-the-component)
 1. [Related topics](#related-topics)
