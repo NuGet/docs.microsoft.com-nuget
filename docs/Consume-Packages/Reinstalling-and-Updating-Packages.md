@@ -49,7 +49,7 @@ Update-Package <package_name>
 To update all packages in a specific project, use the `-ProjectName` argument:
 
 ```ps
-Update-Package application-project.csproj
+Update-Package -ProjectName application-project.csproj
 ```
 
 Using `Update-Package` by itself, with no other arguments, will update all packages in all projects in the current folder. See the [Update-Package command](../Tools/ps-ref-update-package.md) reference for complete usage details.
