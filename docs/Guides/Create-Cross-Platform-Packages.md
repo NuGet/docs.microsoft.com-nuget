@@ -148,6 +148,9 @@ nuget spec
         </metadata>
     </package>
     ```
+    
+> [!Tip]
+> You can suffix your package version with `-alpha`, `-beta` or `-rc` to mark your package as pre-release, check [Pre-release versions](../create-packages/prerelease-packages.md) for more information about pre-release versions.
 
 ### Add reference assemblies
 
