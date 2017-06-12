@@ -36,7 +36,7 @@ ms.reviewer:
 
 The NuGet Package Manager UI in Visual Studio allows you to easily install, uninstall, and update NuGet packages in projects and solutions.
 
-**NOTE:** This topic covers the Package Manager UI for Visual Studio on Windows only. For the experience in Visual Studio for Mac, see [Including a NuGet package in your project)](../../mac/nuget-walkthrough.md).
+**NOTE:** This topic covers the Package Manager UI for Visual Studio on Windows only. For the experience in Visual Studio for Mac, see [Including a NuGet package in your project)](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
 In this topic:
 
