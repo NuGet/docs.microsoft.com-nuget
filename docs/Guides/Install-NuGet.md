@@ -33,7 +33,7 @@ ms.reviewer:
 There are two primary tools available to help you build, publish and consume NuGet packages:
 
 1. The [**NuGet CLI**](#nuget-cli) is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux using Mono, or through the .NET Core CLI (`dotnet`).
-1. The [**NuGet Package Manager in Visual Studio**](#nuget-package-manager-in-visual-studio) is a GUI tool for managing packages and includes a PowerShell console through which you can use certain NuGet commands directly within Visual Studio. The Package Manager UI and Console are both included with Visual Studio 2012 and later and can be installed manually for earlier versions.
+1. The [**NuGet Package Manager in Visual Studio (Windows only)**](#nuget-package-manager-in-visual-studio) is a GUI tool for managing packages and includes a PowerShell console through which you can use certain NuGet commands directly within Visual Studio. The Package Manager UI and Console are both included with Visual Studio (on Windows) 2012 and later and can be installed manually for earlier versions.
 
 The NuGet CLI and Package Manager both support the following operations:
 
@@ -122,12 +122,12 @@ On Mac OSX and Linux, there are two ways to run the NuGet CLI:
 
 ## NuGet Package Manager in Visual Studio
 
-The NuGet Package Manager is included in every edition of Visual Studio 2012 and later. It includes the Package Manager UI ([reference](../tools/package-manager-ui.md)), and the Package Manager Console through which you can access tools that come with certain packages ([reference](../tools/package-manager-console.md)).
+The NuGet Package Manager is included in every edition of Visual Studio on Windows, 2012 and later. It includes the Package Manager UI ([reference](../tools/package-manager-ui.md)), and the Package Manager Console through which you can access tools that come with certain packages ([reference](../tools/package-manager-console.md)).
 
 > [!Note]
 > The console requires [PowerShell 2.0](http://support.microsoft.com/kb/968929), which will already be installed on Windows 7 or higher and Windows Server 2008 R2 or higher.
 >
-> Package Manager Console commands also work only within Visual Studio. Use the NuGet CLI outside of that environment.
+> Package Manager Console commands also work only within Visual Studio on Windows. Use the NuGet CLI outside of that environment, including with Visual Studio for Mac.
 
 
 ### Package Manager installation for Visual Studio 2010 and earlier
