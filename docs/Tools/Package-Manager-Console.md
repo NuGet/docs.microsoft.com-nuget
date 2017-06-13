@@ -3,9 +3,9 @@
 
 title: NuGet Package Manager Console Guide | Microsoft Docs
 author: kraigb
-ms.author: kraigb
+hms.author: kraigb
 manager: ghogen
-ms.date: 6/1/2017
+ms.date: 6/13/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -13,7 +13,7 @@ ms.technology: null
 ms.assetid: 2b92b119-6861-406c-82af-9d739af230e4
 
 # optional metadata
-
+T
 description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
 keywords: NuGet package manager console, NuGet powershell, managing NuGet packages
 #ROBOTS:
@@ -30,7 +30,7 @@ ms.reviewer:
 
 # Package Manager Console
 
-The Package Manager Console that is built into Visual Studio (2012 and later) lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. 
+The Package Manager Console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. The Console is built into Visual Studio on Windows, version 2012 and later; it is not presently available with Visual Studio for Mac. The equivalent commands, however, are available through the [NuGet CLI](nuget-exe-CLI-reference.md).
 
 > [!Note]
 > If you're missing the NuGet Package Manager in Visual Studio 2015, check **Tools > Extensions and Updates...** and search for the NuGet Package Manager extension. If you're unable to use the extensions installer in Visual Studio, you can download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
