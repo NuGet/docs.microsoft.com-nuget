@@ -34,13 +34,13 @@ ms.reviewer:
 This tutorial walks you through installing and using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package in a Universal Windows Platform (UWP) project:
 
 - [Install pre-requisites](#install-pre-requisites)
-- [Create a new UWP project](#create-a-new-uwp-project)
+- [Create a UWP project](#create-a-uwp-project)
 - [Add the Newtonsoft.Json NuGet package](#add-the-newtonsoftjson-nuget-package)
 - [Use the Newtonsoft.Json API in the app](#use-the-newtonsoftjson-api-in-the-app)
 
-You'll use a similar same workflow for virtually every NuGet package you use in a project.
+You use a similar same workflow for virtually every NuGet package you use in a project.
 
-> **Start with nuget.org**: Installing packages from nuget.org is a very common workflow that .NET developers use to find components they can reuse in their own applications. You can always search nuget.org directly or find and install packages within Visual Studio as we'll do here.
+> **Start with nuget.org**: Installing packages from nuget.org is a common workflow that .NET developers use to find components they can reuse in their own applications. You can always search nuget.org directly or find and install packages within Visual Studio as we do here.
 
 ## Install pre-requisites
 
@@ -48,7 +48,7 @@ This tutorial requires Visual Studio 2015 Update 3 with Tools for Universal Wind
 
 You can install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions. The UWP tools option can be selected through the Custom install option during setup, checking the box under **Windows and Web Development > Universal Windows App Development Tools**. If you already have Visual Studio installed, you can run the installer again and click **Modify** to add the UWP tools.
 
-## Create a new UWP project
+## Create a UWP project
 
 In Visual Studio, choose **File > New > Project**, expand **Visual C# > Windows > Universal**, select the **Blank App (Universal Windows)**, and click OK. Accept the default values for Target Version and Minimum Version when prompted.
 

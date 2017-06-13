@@ -32,6 +32,9 @@ ms.reviewer:
 
 The Package Manager Console provides a PowerShell interface within Visual Studio to interact with NuGet through the specific commands listed below. For a guide to using the console, see the [Package Manager Console](../tools/package-manager-console.md) topic.
 
+> [!Note]
+> All PowerShell commands relate only to package consumption. No PowerShell commands relate to creating and publishing packages except to the extent that a package can also be a consumer of other packages.
+
 Command | Description | NuGet Version
 --- | --- | ---
 [Add-BindingRedirect](ps-ref-add-bindingredirect.md) | Examines all assemblies within the output path for a project and adds binding redirects to the `app.config` or `web.config` where necessary. | All
