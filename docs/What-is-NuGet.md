@@ -94,7 +94,7 @@ Take a moment to browse the table of contents for this documentation, and you'll
 
 ## Comments, contributions, and issues
 
-Finally, we very much welcome comments and contributions to this documentation&mdash;just select the **Comments** and **Edit** commands on this page, or visit the [docs repository](https://github.com/NuGet/docs.microsoft.com-nuget/) and [docs issue list](https://github.com/NuGet/docs.microsoft.com-nuget/issues) on GitHub.
+Finally, we very much welcome comments and contributions to this documentation&mdash;just select the **Comments** and **Edit** commands on any page, or visit the [docs repository](https://github.com/NuGet/docs.microsoft.com-nuget/) and [docs issue list](https://github.com/NuGet/docs.microsoft.com-nuget/issues) on GitHub.
 
 We also welcome contributions to NuGet itself through its [various GitHub repositories](https://github.com/NuGet); NuGet issues can be found on [https://github.com/NuGet/home/issues](https://github.com/NuGet/home/issues).
 
