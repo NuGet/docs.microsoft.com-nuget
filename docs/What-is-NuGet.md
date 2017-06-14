@@ -47,6 +47,7 @@ A "compatible" package in this case means that it contains assemblies that are b
 In addition to providing the public nuget.org host, NuGet also provides a variety of tools used by both creators and consumers:
 
 | Tool | Applicable Scenarios | Description |
+| --- | --- | --- |
 | [`nuget.exe` CLI](../tools/nuget-exe-cli-reference.md) | Creation, Consumption | Provides all NuGet capabilities, with some commands applying specifically to package creators, some applying only to consumers, and others applying to both. For example, the `nuget pack` command creates a package from various assemblies and related files and is used exclusively by package creators. The `nuget install` command installs a package into a project and is used by consumers. The `nuget config` command is used by everyone to set NuGet configuration variables.  |
 | [Package Manager UI](../tools/package-manager-ui.md) | Consumption | Provides an easy-to-use UI through which developers can install and manage packages in .NET projects. | 
 | [Package Manager Console](../tools/package-manager-console.md) | Consumption | Provides [PowerShell commands](../tools/Powershell-Reference.md) for installing and managing packages in .NET projects. | 
