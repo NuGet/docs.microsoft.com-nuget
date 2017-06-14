@@ -46,7 +46,7 @@ In NuGet 2.8+, `Install-Package` can downgrade an existing package in your proje
 Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 ```
 
-NuGet 2.7 and earlier will give an error saying that a newer version is already installed.
+NuGet 2.7 and earlier gives an error saying that a newer version is already installed.
   
 ## Parameters
 
