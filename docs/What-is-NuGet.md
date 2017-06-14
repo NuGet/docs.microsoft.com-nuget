@@ -46,15 +46,15 @@ A "compatible" package in this case means that it contains assemblies that are b
 
 In addition to providing the public nuget.org host, NuGet also provides a variety of tools used by both creators and consumers:
 
-| Tool | Applicable Scenarios | Description |
+| Tool | Platforms | Applicable Scenarios | Description |
 | --- | --- | --- |
-| [`nuget.exe` CLI](../tools/nuget-exe-cli-reference.md) | Creation, Consumption | Provides all NuGet capabilities, with some commands applying specifically to package creators, some applying only to consumers, and others applying to both. For example, the `nuget pack` command creates a package from various assemblies and related files and is used exclusively by package creators. The `nuget install` command installs a package into a project and is used by consumers. The `nuget config` command is used by everyone to set NuGet configuration variables.  |
-| [Package Manager UI](../tools/package-manager-ui.md) | Consumption | Provides an easy-to-use UI through which developers can install and manage packages in .NET projects. | 
-| [Package Manager Console](../tools/package-manager-console.md) | Consumption | Provides [PowerShell commands](../tools/Powershell-Reference.md) for installing and managing packages in .NET projects. | 
-| [dotnet CLI](../tools/dotnet-commands.md) | Creation, Consumption | Provides certain NuGet CLI capabilities directly within the .NET Core toolchain. |
-| [MSBuild](../schema/msbuild-targets.md) | Creation, Consumption | Provides the ability to create packages and restore packages used in a project directly through the MSBuild toolchain. |
+| [nuget.exe CLI](../tools/nuget-exe-cli-reference.md) | All | Creation, Consumption | Provides all NuGet capabilities, with some commands applying specifically to package creators, some applying only to consumers, and others applying to both. For example, the `nuget pack` command creates a package from various assemblies and related files and is used exclusively by package creators. The `nuget install` command installs a package into a project and is used by consumers. The `nuget config` command is used by everyone to set NuGet configuration variables.  |
+| [Package Manager UI](../tools/package-manager-ui.md) | Visual Studio on Windows | Consumption | Provides an easy-to-use UI through which developers can install and manage packages in .NET projects. | 
+| [Package Manager Console](../tools/package-manager-console.md) | Visual Studio on Windows | Consumption | Provides [PowerShell commands](../tools/Powershell-Reference.md) for installing and managing packages in .NET projects. | 
+| [dotnet CLI](../tools/dotnet-commands.md) | All | Creation, Consumption | Provides certain NuGet CLI capabilities directly within the .NET Core toolchain. |
+| [MSBuild](../schema/msbuild-targets.md) | Windows | Creation, Consumption | Provides the ability to create packages and restore packages used in a project directly through the MSBuild toolchain. |
 
-As you can see, the tools you work with depend greatly on whether you're creating (and publishing) packages or consuming them. More specific details can be found in the [Package creation workflow](./Create-Packages/Overview-and-Workflow.md) and [Package consumption workflow](./Consume-Packages/Overview-and-Workflow.md) topics, along with other topics in those sections. 
+As you can see, the tools you work with depend greatly on whether you're creating (and publishing) packages or consuming them, and the platform you're working on. More specific details can be found in the [Package creation workflow](./Create-Packages/Overview-and-Workflow.md) and [Package consumption workflow](./Consume-Packages/Overview-and-Workflow.md) topics, along with other topics in those sections. 
 
 Package creators are typically also consumers, as they build on top of functionality that exists in other NuGet packages. And those packages, of course, may in turn depend on still others.
 
