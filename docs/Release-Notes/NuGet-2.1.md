@@ -47,7 +47,7 @@ Additionally, if package restore is enabled for the solution, the following fold
 
     C:\myteam\solution1\.nuget
 
-In order to have the team’s internal package repository available for all projects that the team works on, while not making it available for every project on the machine, we can create a new Nuget.Config file and place it in the c:\myteam folder. There is no way to specificy a packages forlder per project.
+In order to have the team’s internal package repository available for all projects that the team works on, while not making it available for every project on the machine, we can create a new Nuget.Config file and place it in the c:\myteam folder. There is no way to specificy a packages folder per project.
 
 ```xml
 <configuration>
