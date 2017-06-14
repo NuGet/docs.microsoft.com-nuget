@@ -5,7 +5,7 @@ title: NuGet Command-Line Interface (CLI) Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 5/4/2017
+ms.date: 6/7/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -32,29 +32,37 @@ ms.reviewer:
 
 The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages. Refer to the [Install Guide](../guides/install-nuget.md) for installation instructions.
 
-Available commands are listed below. Also see the section on [Environment variables](#environment-variables) for how they're used with nuget.exe.
+Available commands are listed below, and each indicate whether they're applicable to package creation, package consumption, and/or publishing a package to a host. Also see the section on [Environment variables](#environment-variables) for how `nuget.exe` uses such variables.
 
 > [!Note]
 > Command option names are case-insensitive. Options that are deprecated are not included in this reference, such as `NoPrompt` (replaced by `NonInteractive`) and `Verbose` (replaced by `Verbosity`).
 
-Command | Description | NuGet Version
---- | --- | ---
-[add](#add) | Adds a package to a non-HTTP package source using hierarchical layout. For HTTP sources, use *push*. | 3.3+
-[config](#config) | Gets or sets NuGet configuration values. | All
-[delete](#delete) | Removes or unlists a package from a package source. | All
-[help or ?](#help) | Displays help information or help for a command. | All
-[init](#init) | Adds packages from a folder to a package source using hierarchical layout. | 3.3+
-[install](#install) | Installs a package into the current project but does not modify the project or `packages.config`. | All
-[list](#list) | Displays packages from a given source. | All
-[locals](#locals) | Clears or lists packages in various caches or the global packages folder, or identifies those folders. | 3.3+
-[mirror](#mirror) | Mirrors a package and its dependencies from a source to a target repository. | Deprecated in 3.2+
-[pack](#pack) | Creates a NuGet package from a `.nuspec` or project file. | 2.7+
-[push](#push) | Publishes a package to a package source. | All
-[restore](#restore) | Restores all packages referenced by `packages.config` or `project.json`. | 2.7+
-[setapikey](#setapikey) | Saves an API key for a given package source. | All
-[sources](#sources) | Manages package sources in configuration files. | All
-[spec](#spec) | Generates a `.nuspec` file, using tokens if generating the file from a Visual Studio project. | All
-[update](#update) | Updates a project's packages to the latest available versions. | All
+| Command | Applicable Roles | NuGet Version | Description | 
+| --- | --- | --- | --- |
+| [add](#add) | Publishing | 3.3+ | Adds a package to a non-HTTP package source using hierarchical layout. For HTTP sources, use *push*. |
+| [config](#config) | All | All | Gets or sets NuGet configuration values. |
+| [delete](#delete) | Publishing | All | Removes or unlists a package from a package source. |
+| [help or ?](#help) | All | All | Displays help information or help for a command. |
+| [init](#init) | Creation | 3.3+ | Adds packages from a folder to a package source using hierarchical layout. |
+| [install](#install) | Consumption | All | Installs a package into the current project but does not modify the project or `packages.config`. |
+| [list](#list) | Consumption, perhaps Publishing | All | Displays packages from a given source. |
+| [locals](#locals) | Consumption | 3.3+ | Clears or lists packages in various caches or the global packages folder, or identifies those folders. |
+| [mirror](#mirror) | Publishing | Deprecated in 3.2+ | Mirrors a package and its dependencies from a source to a target repository. |
+| [pack](#pack) | Creation | 2.7+ | Creates a NuGet package from a `.nuspec` or project file. |
+| [push](#push) | Publishing | All | Publishes a package to a package source. |
+| [restore](#restore) | Consumption | 2.7+ | Restores all packages referenced by `packages.config` or `project.json`. | 
+| [setapikey](#setapikey) | Consumption, Publishing | All | Saves an API key for a given package source when that package source requires a key for access. |
+| [sources](#sources) | Consumption, Publishing | All | Manages package sources in configuration files. |
+| [spec](#spec) | Creation | All | Generates a `.nuspec` file, using tokens if generating the file from a Visual Studio project. |
+| [update](#update) | Consumption | All | Updates a project's packages to the latest available versions. |
+
+For convenience, the following table lists the NuGet commands that are applicable to each specific roles. Developers concerned only with consuming packages, for example, need only understand that subset of NuGet commands.
+
+| Role | Commands |
+| --- | --- |
+| Consumption | `config`, `help`, `install`, `list`, `locals`, `restore`, `setapikey`, `sources`, `update` | 
+| Creation | `config`, `help`, `init`, `pack`, `spec` |
+| Publishing | `add`, `config`, `delete`, `help`, `list`, `push`, `setapikey`, `sources` |
 
 
 ## add

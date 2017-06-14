@@ -30,14 +30,11 @@ ms.reviewer:
 
 # project.json reference
 
-*NuGet 3.x+; also see the end of this topic for project.lock.json*
+*NuGet 3.x+*
 
-The `project.json` file replaces `packages.config` in UWP, ASP.NET 5, and .NET desktop projects (WPF and WinForms) as a means to maintain the list of packages used in a project. (For .NET Core, refer to [NET Core Tools - project.json](https://docs.microsoft.com/dotnet/articles/core/tools/project-json)).
+The `project.json` file maintains a list of packages used in a project. It supercedes using `packages.config` to maintain that list, but is in turn superceded by [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) with NuGet 4.0+.
 
 The [`project.lock.json`](#projectlockjson) file (described below) is also used in projects with a `project.json` file.
-
-> [!Note]
-> When tooling for .NET Core and ASP.NET Core is complete, the function of `project.json` will be incorporated directly into project files (`.csproj`, `.vsproj`, etc.). NuGet clients will continue to support `project.json` for existing scenarios.
 
 A `project.json` file has the following basic structure, where each of the four top-level objects can have any number of child objects:
 
@@ -137,7 +134,7 @@ Imports are designed to allow packages that use the dotnet TxM to operate with p
 ```
 
 
-## Differences from Portable Apps and Web Projects
+## Differences from portable apps and web projects
 
 The `project.json` file used by NuGet is a subset of that found in ASP.NET Core projects. In ASP.NET Core the `project.json` file is used for project metadata, compilation information, and dependencies. When used in other project systems those three things are split into separate files so the `project.json` specifies less information. Notable differences include:
 

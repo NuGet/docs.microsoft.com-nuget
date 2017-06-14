@@ -129,7 +129,7 @@ In this example the assemblies in the `ref` directories would all be identical.
 
 ## Runtimes
 
-The runtimes folder contains assemblies and native libraries required to run on specific "runtimes", which are generally defined by Operating System and CPU architecture. These runtimes are identified using Runtime Identifiers (RIDs) such as `win`, `win-x86`, `win7-x86`, `win8-64`, etc.
+The runtimes folder contains assemblies and native libraries required to run on specific "runtimes", which are generally defined by Operating System and CPU architecture. These runtimes are identified using [Runtime Identifiers (RIDs)](https://docs.microsoft.com/dotnet/core/rid-catalog) such as `win`, `win-x86`, `win7-x86`, `win8-64`, etc.
 
 ## Native light-up
 

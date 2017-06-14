@@ -5,7 +5,7 @@ title: Overview of Hosting Your Own NuGet Feeds | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 6/13/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -40,7 +40,7 @@ For all such purposes, NuGet supports setting up a private package source in the
 
 There are also several other NuGet hosting products that support remote private feeds, including the following:
 
-- [Package Management](https://www.visualstudio.com/docs/package/overview) from [VS Team Services](https://www.visualstudio.com/team-services/) and [TFS](https://www.visualstudio.com/tfs/)
+- [Visual Studio Team Services Package Management](https://www.visualstudio.com/docs/package/nuget/publish), which is also available on Team Foundation Server 2017 and later.
 - [MyGet](http://myget.org)
 - [ProGet](http://inedo.com/proget) from Inedo
 - [NuGet Server](http://nugetserver.net/), a community project from Inedo

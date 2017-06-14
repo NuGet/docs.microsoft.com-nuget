@@ -5,7 +5,7 @@ title: How to Publish a NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 6/13/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -31,8 +31,10 @@ ms.reviewer:
 
 Once you have [created a package](../create-packages/creating-a-package.md) with `nuget pack`, it's a simple process to make it available to other developers, either publicly or privately:
 
-- Public packages are made available to all developers globally through [nuget.org](https://www.nuget.org/packages/manage/upload). See instructions below.
-- Private packages are available to only a team or organization, by hosting them either a file share, a private NuGet server, Visual Studio Team Services package management, or a third-party repository such as myget, ProGet, Nexus Repository, and Artifactory. For additional details, see [Hosting Packages Overview](../hosting-packages/overview.md))
+- Public packages are made available to all developers globally through [nuget.org](https://www.nuget.org/packages/manage/upload) as described in this topic.
+- Private packages are available to only a team or organization, by hosting them either a file share, a private NuGet server, [Visual Studio Team Services Package Management](https://www.visualstudio.com/docs/package/nuget/publish), or a third-party repository such as myget, ProGet, Nexus Repository, and Artifactory. For additional details, see [Hosting Packages Overview](../hosting-packages/overview.md).
+
+This topic covers publishing to nuget.org; for publishing to Visual Studio Team Services, see [Package Management](https://www.visualstudio.com/docs/package/nuget/publish).
 
 ## Publish to nuget.org
 
