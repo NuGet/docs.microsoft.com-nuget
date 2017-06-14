@@ -80,7 +80,7 @@ To check what method is in use for project, simply look for `packages.config` or
 
 You can also switch from one method to another. NuGet literally doesn't care which method you use, so long as you have the appropriate version of [NuGet installed](../guides/install-nuget.md). Older projects that use `packages.config` can be converted to use either `project.json` or PackageReference, and projects using `project.json` can also be converted to use PackageReference. For each package, simply create the appropriate reference element in the new file using the same package identifier and version number shown in the older file. ((TODO: make a topic for this migration showing examples.)) When it comes time to restore or update packages, NuGet will find whatever method you're using.
 
-# What else does NuGet do?
+## What else does NuGet do?
 
 So far we've seen NuGet's central hosting role with nuget.org, its support for private hosting, the tools it provides for creating, publishing, and consuming packages, and its most important function of maintaining a reference list of packages used in a project along with the ability to restore and update those packages.
 
