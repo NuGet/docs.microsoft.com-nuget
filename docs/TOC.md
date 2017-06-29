@@ -74,6 +74,7 @@
 ## [Deleting Packages](Policies/Deleting-Packages.md)
 # Release Notes
 ## [Known Issues](Release-Notes/Known-Issues.md)
+## [NuGet 4.0 RTM](Release-Notes/NuGet-4.0-RTM.md)
 ## [NuGet 4.0 RC](Release-Notes/NuGet-4.0-RC.md)
 ## [NuGet 3.5 RTM](Release-Notes/NuGet-3.5-RTM.md)
 ## [NuGet 3.5 RC](Release-Notes/NuGet-3.5-RC.md)
