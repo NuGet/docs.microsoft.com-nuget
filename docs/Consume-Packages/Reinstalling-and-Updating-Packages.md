@@ -54,7 +54,7 @@ Update-Package -ProjectName application-project.csproj
 
 Using `Update-Package` by itself, with no other arguments, will update all packages in all projects in the current folder. See the [Update-Package command](../Tools/ps-ref-update-package.md) reference for complete usage details.
 
-Updating packages in a project or solution using `project.json` or [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding pre-release packages). Projects that use `packages.config` can, if desired, limit update versions as described below in[Constraining upgrade versions](#constraining-upgrade-versions).
+Updating packages in a project or solution using `project.json` or [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding pre-release packages). Projects that use `packages.config` can, if desired, limit update versions as described below in [Constraining upgrade versions](#constraining-upgrade-versions).
 
 ## When to Reinstall a Package
 
