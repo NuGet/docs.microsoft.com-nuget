@@ -50,7 +50,7 @@ Because `pack` and `restore` are  MSBuild targets, you can access them to enhanc
 ```xml
 <Target Name="CopyPackage" AfterTargets="Pack">
     <Copy
-        SourceFiles="$(OutputPath)\$(PackageId).$(PackageVersion).nupkg"
+        SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg"
         DestinationFolder="\\myshare\packageshare\"
         />
 </Target>
