@@ -143,7 +143,7 @@ When checked, a modal window displays which dependent packages will be loaded wi
 **Dependency behavior** configures how NuGet decides which versions of dependent packages to install:
 
 - *Ignore dependencies* skips installing any dependencies, which typically breaks the package being installed.
-- *Lowest* installs the dependency with the minimal version number that meets the requirements of the primary chosen package.
+- *Lowest* [Default] installs the dependency with the minimal version number that meets the requirements of the primary chosen package.
 - *Highest Patch* installs the version with the same major and minor version numbers, but the highest patch number. For example, if version 1.2.2 is specified then the highest version that starts with 1.2 will be installed
 - *Highest Minor* installs the version with the same major version number but the highest minor number and patch number. If version 1.2.2 is specified, then the highest version that starts with 1 will be installed
 - *Highest* installs the highest available version of the package.
