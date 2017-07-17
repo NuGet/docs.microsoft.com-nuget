@@ -72,6 +72,7 @@
 ## [Ecosystem](Policies/Ecosystem.md)
 ## [Dispute Resolution](Policies/Dispute-Resolution.md)
 ## [Deleting Packages](Policies/Deleting-Packages.md)
+# [GitHub Repositories](https://github.com/NuGet)
 # Release Notes
 ## [Known Issues](Release-Notes/Known-Issues.md)
 ## [NuGet 4.0 RC](Release-Notes/NuGet-4.0-RC.md)
