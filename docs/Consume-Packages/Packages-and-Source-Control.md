@@ -73,7 +73,7 @@ project.lock.json
 To disable source control integration with TFVC for selected files:
 
 1. Create a folder called `.nuget` in your solution folder (where the `.sln` file is).
-    - Tip: on Windows, to create this folder in Windows Explorer, use the name `.nuget.` *with* the training dot.
+    - Tip: on Windows, to create this folder in Windows Explorer, use the name `.nuget.` *with* the trailing dot.
 
 1. In that folder, create a file named `NuGet.Config` and open it for editing.
 

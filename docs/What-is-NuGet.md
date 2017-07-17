@@ -5,8 +5,8 @@ title: What is NuGet and what does it do? | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/14/2017
-ms.topic: article
+ms.date: 7/12/2017
+ms.topic: hero-article
 ms.prod: nuget
 #ms.service:
 ms.technology: null
@@ -85,15 +85,15 @@ The computer that receives a project, such as a build server obtaining a copy of
 
 Clearly, then, NuGet's primarily role where developers are concerned is maintaining that reference list on behalf of your project and providing the means to efficiently restore (and update) those referenced packages.
 
-How this exactly happens has evolved over the different versions of NuGet:
+How this exactly happens has evolved over the different versions of NuGet, resulting in several *package management formats*, as they're called:
 
 - [`packages.config`](../schema/packages.config.md): *(NuGet 1.0+)* An XML file that maintains a flat list of all dependencies in the project, including the dependencies of other installed packages. 
-- [`project.json`](../schema/project-json.md): *(NuGet 3.0+)* A JSON file that maintains a list of the project's dependencies with an overall package graph in an associated file, `project.lock.json`. This structure provides improved performance over `packages.config` as described on [Dependency Resolution](../consume-packages/dependency-resolution.md).
+- [`project.json`](../schema/project-json.md): *(NuGet 3.0+)* A JSON file that maintains a list of the project's dependencies with an overall package graph in an associated file, `project.lock.json`. This structure provides improved performance over `packages.config` as described on [Dependency Resolution](../consume-packages/dependency-resolution.md), but also has been generally superceded by PackageReference below.
 - [Package references in project files](../consume-packages/package-references-in-project-files.md) (also known as "PackageReference") | *(NuGet 4.0+)* Maintains a list of a project's top-level dependencies directly within the project file, so no separate file is needed. An associated file, `project.assets.json`, is dynamically generated like `project.lock.json` to manage the overall dependency graph.
 
-To check what method is in use for project, simply look for `packages.config` or `project.json` in the project root after installing your first package. If you don't see either file, look in the project file directly for a &lt;PackageReference&gt;element. This is the case for most new projects created in Visual Studio 2017.
+Which package management format is employed in any given project depends on the project type and the available version of NuGet. To check what format is being used, simply look for `packages.config` or `project.json` in the project root after installing your first package. If you don't see either file, look in the project file directly for a &lt;PackageReference&gt;element. This is the case for most new projects created in Visual Studio 2017. (You can change this default in Visual Studio through **Tools > Options > NuGet Package Manager** in the **Package Management** settings.
 
-You can also switch from one method to another. NuGet literally doesn't care which method you use, so long as you have the appropriate version of [NuGet installed](../guides/install-nuget.md). Older projects that use `packages.config` can be converted to use either `project.json` or PackageReference, and projects using `project.json` can also be converted to use PackageReference. For each package, simply create the appropriate reference element in the new file using the same package identifier and version number shown in the older file. When it comes time to restore or update packages, NuGet will find whatever method you're using.
+You can also switch from one format to another. NuGet literally doesn't care which method you use, so long as you have the appropriate version of [NuGet installed](../guides/install-nuget.md). Older projects that use `packages.config` can be converted to use either `project.json` or PackageReference, and projects using `project.json` can also be converted to use PackageReference. For each package, simply create the appropriate reference element in the new file using the same package identifier and version number shown in the older file. When it comes time to restore or update packages, NuGet will find whatever method you're using.
 
 ## What else does NuGet do?
 
@@ -101,7 +101,9 @@ So far we've seen a number of NuGet's capabilities and services. In its hosting 
 
 To make these processes work efficiently, NuGet does some behind-the-scenes optimizations. Most notably, NuGet manages both machine-wide and project-specific package caches to shortcut installation and reinstallation. Where the machine-wide cache is concerned, any package that you download and install in a project is stored in the cache, such that installing the same package in another project doesn't have to download it again. This is clearly very helpful when you're frequently restoring a larger number of packages, as on a build server. For more details on the mechanism and how to work with it, see [Managing the NuGet cache](../consume-packages/managing-the-nuget-cache.md).
 
-Within an individual project, NuGet does a lot of work to manage the overall dependency graph. (When using `project.json` or &lt;PackageReference&gt;, NuGet keeps that information in a secondary file called `project.lock.json` and `project.assets.json`, respectively.) This again includes resolving multiple references to different versions of the same package. That is, it's quite common that a project takes a dependency on one or more packages that themselves had the same dependencies. For example, the most popular package on nuget.org, Newtonsoft.Json, is quite frequently used by application and packages alike to manage JSON data, so in the entire dependency graph you could easily have ten different references to Newtonsoft.Json. At the same time, you don't want to bring multiple versions of that package into the application itself, so NuGet sorts out which single version that everyone can use. (See [Dependency Resolution](consume-packages/dependency-resolution.md) for more on this topic.)
+Within an individual project, NuGet does a lot of work to manage the overall dependency graph. (When using `project.json` or &lt;PackageReference&gt;, NuGet keeps that information in a secondary file called `project.lock.json` and `project.assets.json`, respectively.) This again includes resolving multiple references to different versions of the same package.
+
+That is, it's quite common that a project takes a dependency on one or more packages that themselves have the same dependencies. For example, some of the most useful utility packages on nuget.org are employed by many other packages. In the entire dependency graph, ten, you could easily have ten different references to different versions of the same package. However, you don't want to bring multiple versions of that package into the application itself, so NuGet sorts out which single version that everyone can use. (See [Dependency Resolution](consume-packages/dependency-resolution.md) for more on this topic.)
 
 Beyond that, NuGet maintains all the specifications related to how packages are structured (including [localization](Create-Packages/Creating-Localized-Packages.md) and [debug symbols](Create-Packages/Symbol-Packages.md) and how they are referenced (including [version ranges](consume-packages/dependency-versions.md) and [pre-release versions](create-packages/Prerelease-Packages.md). NuGet also and provides APIs for credential providers (for accessing private hosts) and for developers who write Visual Studio extensions and project templates.
 
@@ -111,6 +113,6 @@ Take a moment to browse the table of contents for this documentation, and you'll
 
 Finally, we very much welcome comments and contributions to this documentation&mdash;just select the **Comments** and **Edit** commands on any page, or visit the [docs repository](https://github.com/NuGet/docs.microsoft.com-nuget/) and [docs issue list](https://github.com/NuGet/docs.microsoft.com-nuget/issues) on GitHub.
 
-We also welcome contributions to NuGet itself through its [various GitHub repositories](https://github.com/NuGet); NuGet issues can be found on [https://github.com/NuGet/home/issues](https://github.com/NuGet/home/issues).
+We also welcome contributions to NuGet itself through its [various GitHub repositories](https://github.com/NuGet/Home); NuGet issues can be found on [https://github.com/NuGet/home/issues](https://github.com/NuGet/home/issues).
 
 Enjoy your NuGet experience!
