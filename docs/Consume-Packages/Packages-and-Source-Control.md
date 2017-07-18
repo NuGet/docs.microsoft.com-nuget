@@ -99,11 +99,10 @@ To disable source control integration with TFVC for selected files:
    *.nupkg   
 
    # Ignore the NuGet packages folder in the root of the repository. If needed, prefix 'packages'
-   & with additional folder names if it's not in the same folder as .tfignore.   
+   # with additional folder names if it's not in the same folder as .tfignore.   
    packages
 
-   # Include package target files which may be required for MSBuild,
-   # again prefixing the folder name as needed.
+   # Include package target files which may be required for MSBuild, again prefixing the folder name as needed.
    !packages/*.targets
 
    # Omit temporary files
