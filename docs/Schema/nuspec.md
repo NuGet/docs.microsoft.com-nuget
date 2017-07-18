@@ -53,14 +53,14 @@ Within this schema, a `.nuspec` file has the following general form:
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-    <!-- Required elements-->
-    <id></id>
-    <version></version>
-    <description></description>
-    <authors></authors>
+        <!-- Required elements-->
+        <id></id>
+        <version></version>
+        <description></description>
+        <authors></authors>
 
-    <!-- Optional elements -->
-    <!-- ... -->
+        <!-- Optional elements -->
+        <!-- ... -->
     </metadata>
     <!-- Optional 'files' node -->
 </package>
