@@ -5,7 +5,7 @@ title: NuGet project.json file with UWP projects | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 7/17/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -29,11 +29,11 @@ ms.reviewer:
 
 # project.json and UWP
 
-This document describes a the package structure that can be used to take advantage of features in NuGet v3. The `minClientVersion` property of your `.nuspec` can be used to state that you require the features described here by setting it to 3.1. Note that NuGet v3 is available in Visual Studio 2015 and later.
+This document describes the package structure that employs features in NuGet 3+ (Visual Studio 2015 and later). The `minClientVersion` property of your `.nuspec` can be used to state that you require the features described here by setting it to 3.1.
 
 ## Adding UWP support to an existing package
 
-If you have an existing package and you want to add support for UWP applications then you don’t need to adopt the  packaging format described here. You only need to adopt this format if you require the features it describes and are willing to only work with clients that have updated to the latest version of the NuGet client.
+If you have an existing package and you want to add support for UWP applications, then you don’t need to adopt the  packaging format described here. You only need to adopt this format if you require the features it describes and are willing to  work only with clients that have updated to version 3+ of the NuGet client.
 
 ## I already target netcore45
 
@@ -45,7 +45,7 @@ In this case you need to add the `uap10.0` target framework moniker (TFM or TxM)
 
 ## I don’t need Windows 10 specific APIs, but want new .NET features or don’t have netcore45 already
 
-In this case you would add the `dotnet` TxM to your package. Unlike other TxMs, `dotnet` doesn't imply a surface area or platform. It is stating that your package will work on any platform that your dependencies work on. When building a package with the `dotnet` TxM, you are likely to have many more TxM-specific dependencies in your `.nuspec`, as you will need to define the BCL packages you depend on, such `System.Text`, `System.Xml`, etc. The locations that those dependencies work on define where your package will work.
+In this case you would add the `dotnet` TxM to your package. Unlike other TxMs, `dotnet` doesn't imply a surface area or platform. It is stating that your package works on any platform that your dependencies work on. When building a package with the `dotnet` TxM, you are likely to have many more TxM-specific dependencies in your `.nuspec`, as you need to define the BCL packages you depend on, such `System.Text`, `System.Xml`, etc. The locations that those dependencies work on define where your package works.
 
 ### How do I find out my dependencies
 
@@ -69,14 +69,14 @@ NuGet packages using this format have the following well-known folder and behavi
 | Build | Contains MSBuild targets and props files in this folder are integrated differently into the project, but otherwise there is no change. |
 | Tools | `install.ps1` and `uninstall.ps1` are not run. `init.ps1` works as it always has. |
 | Content | Content is not copied automatically into a user's project. Support for content inclusion in the project is planned for a later release. |
-| Lib | For many packages the `lib` will work the same way it does in NuGet 2.x, but with expanded options for what names can be used inside it and better logic for picking the correct sub-folder when consuming packages. However, when used in conjunction with `ref`, the `lib` folder will contain assemblies that implement the surface area defined by the assemblies in the `ref` folder. |
+| Lib | For many packages the `lib` works the same way it does in NuGet 2.x, but with expanded options for what names can be used inside it and better logic for picking the correct sub-folder when consuming packages. However, when used in conjunction with `ref`, the `lib` folder contains assemblies that implement the surface area defined by the assemblies in the `ref` folder. |
 | Ref | `ref` is an optional folder that contains .NET assemblies defining the public surface (public types and methods) for an application to compile against. The assemblies in this folder may have no implementation, they are purely used to define surface area for the compiler. If the package has no `ref` folder, then the `lib` is both the reference assembly and the implementation assembly. |
-| Runtimes | `runtimes` is an optional folder that will contain OS specific code, such as CPU architecture and OS specific or otherwise platform-dependent binaries. |
+| Runtimes | `runtimes` is an optional folder that contains OS specific code, such as CPU architecture and OS specific or otherwise platform-dependent binaries. |
 
 
 ## MSBuild targets and props files in packages
 
-NuGet packages can contain `.targets` and `.props` files which will be imported into any MSBuild project that the package is installed into. In NuGet 2.x, this was done by injecting `<Import>` statements into the `.csproj` file, in NuGet 3.0 there is no specific "installation to project" action. Instead the package restore process writes two files `[projectname].nuget.props` and `[projectname].NuGet.targets`.
+NuGet packages can contain `.targets` and `.props` files which are imported into any MSBuild project that the package is installed into. In NuGet 2.x, this was done by injecting `<Import>` statements into the `.csproj` file, in NuGet 3.0 there is no specific "installation to project" action. Instead the package restore process writes two files `[projectname].nuget.props` and `[projectname].NuGet.targets`.
 
 MSBuild knows to look for these two files and automatically imports them near the beginning and near the end of the project build process. This provides very similar behavior to NuGet 2.x, but with one major difference: *there is no guaranteed order of targets/props files in this case*. However, MSBuild does provide ways to order targets through the `BeforeTargets` and `AfterTargets` attributes of the `<Target>` definition (see [Target Element (MSBuild)](https://docs.microsoft.com/visualstudio/msbuild/target-element-msbuild).
 
@@ -93,13 +93,13 @@ An example lib structure:
     └───wp81
             MyLibrary.dll
 
-The `lib` folder contains assemblies that will be used at runtime. For most packages a folder under `lib` for each of the target TxMs is all that is required.
+The `lib` folder contains assemblies that are used at runtime. For most packages a folder under `lib` for each of the target TxMs is all that is required.
 
 ## Ref
 
 There are sometimes cases where a different assembly should be used during compilation (.NET Reference Assemblies do this today). For those cases, use a top-level folder called `ref` (short for "Reference Assemblies").
 
-Most package authors will not require the `ref` folder. It is useful for packages that need to provide a consistent surface area for compilation and IntelliSense but then have different implementation for different TxMs. The biggest use case of this will be the `System.*` packages that are being produced as part of shipping .NET Core on NuGet. These packages have various implementations that are being unified by a consistent set of ref assemblies.
+Most package authors don't require the `ref` folder. It is useful for packages that need to provide a consistent surface area for compilation and IntelliSense but then have different implementation for different TxMs. The biggest use case of this are the `System.*` packages that are being produced as part of shipping .NET Core on NuGet. These packages have various implementations that are being unified by a consistent set of ref assemblies.
 
 Mechanically, the assemblies included in the `ref` folder are the reference assemblies being passed to the compiler. For those of you who have used csc.exe these are the assemblies we are passing to the [C# /reference option](https://docs.microsoft.com/dotnet/articles/csharp/language-reference/compiler-options/reference-compiler-option) switch.
 
@@ -157,15 +157,15 @@ The following example shows a package that has a purely managed implementation f
                  └───native
                          MyNativeLibrary.dll
 
-Given the above package the following things will happen:
+Given the above package the following things happen:
 
-- When not on Windows 8 the `lib/net40/MyLibrary.dll` assembly will be used.
+- When not on Windows 8 the `lib/net40/MyLibrary.dll` assembly is used.
 
-- When on Windows 8 the `runtimes/win8-<architecture>/lib/MyLibrary.dll` will be used and the `native/MyNativeHelper.dll` will be copied to the output of your build.
+- When on Windows 8 the `runtimes/win8-<architecture>/lib/MyLibrary.dll` is used and the `native/MyNativeHelper.dll` is copied to the output of your build.
 
 In the example above the `lib/net40` assembly is purely managed code, whilst the assemblies in the runtimes folder will p/invoke into the native helper assembly to call APIs specific to Windows 8.
 
-Only a single `lib` folder will ever be picked, so if there is a runtime specific folder it will be chosen over non-runtime specific `lib`. The native folder is additive, if it exists it will be copied to the output of the build.
+Only a single `lib` folder is ever be picked, so if there is a runtime specific folder it is chosen over non-runtime specific `lib`. The native folder is additive, if it exists it's copied to the output of the build.
 
 ## Managed wrapper
 
@@ -196,9 +196,9 @@ In this case there is no top-level `lib` folder as that folder as there is no im
 
 If you want to create a package that can be consumed by projects using `packages.config` as well as packages using `project.json` then the following apply:
 
-- Ref and runtimes only work on NuGet 3. They will both be ignored by NuGet 2.
+- Ref and runtimes only work on NuGet 3. They are both ignored by NuGet 2.
 
-- You cannot rely on `install.ps1` or `uninstall.ps1` to function. These files will execute when using `packages.config`, but are ignored with `project.json`. So your package needs to be usable without them running. `init.ps1` still runs on NuGet 3.
+- You cannot rely on `install.ps1` or `uninstall.ps1` to function. These files execute when using `packages.config`, but are ignored with `project.json`. So your package needs to be usable without them running. `init.ps1` still runs on NuGet 3.
 
 - Targets and Props installation is different, so make sure that your package works as expected on both clients.
 

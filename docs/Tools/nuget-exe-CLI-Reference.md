@@ -5,7 +5,7 @@ title: NuGet Command-Line Interface (CLI) Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/7/2017
+ms.date: 7/17/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -37,6 +37,9 @@ Available commands are listed below, and each indicate whether they're applicabl
 > [!Note]
 > Command option names are case-insensitive. Options that are deprecated are not included in this reference, such as `NoPrompt` (replaced by `NonInteractive`) and `Verbose` (replaced by `Verbosity`).
 
+> [!Important]
+> On Mac OSX and Linux, some NuGet capabilities are available through the [dotnet CLI](dotnet-Commands.md) and through the [NuGet CLI running on Mono](../guides/install-nuget.md#mac-osx-and-linux). 
+
 | Command | Applicable Roles | NuGet Version | Description | 
 | --- | --- | --- | --- |
 | [add](#add) | Publishing | 3.3+ | Adds a package to a non-HTTP package source using hierarchical layout. For HTTP sources, use *push*. |
@@ -48,13 +51,13 @@ Available commands are listed below, and each indicate whether they're applicabl
 | [list](#list) | Consumption, perhaps Publishing | All | Displays packages from a given source. |
 | [locals](#locals) | Consumption | 3.3+ | Clears or lists packages in various caches or the global packages folder, or identifies those folders. |
 | [mirror](#mirror) | Publishing | Deprecated in 3.2+ | Mirrors a package and its dependencies from a source to a target repository. |
-| [pack](#pack) | Creation | 2.7+ | Creates a NuGet package from a `.nuspec` or project file. |
+| [pack](#pack) | Creation | 2.7+ | Creates a NuGet package from a `.nuspec` or project file. On Mac OSX with Mono, creating a package from a project file is not supported. |
 | [push](#push) | Publishing | All | Publishes a package to a package source. |
-| [restore](#restore) | Consumption | 2.7+ | Restores all packages referenced by `packages.config` or `project.json`. | 
+| [restore](#restore) | Consumption | 2.7+ | Restores all packages referenced by `packages.config`, `project.json`, or project files (using package references). Note: restoring packages from package references in a project file is not supported with the CLI on Mono. | 
 | [setapikey](#setapikey) | Consumption, Publishing | All | Saves an API key for a given package source when that package source requires a key for access. |
 | [sources](#sources) | Consumption, Publishing | All | Manages package sources in configuration files. |
 | [spec](#spec) | Creation | All | Generates a `.nuspec` file, using tokens if generating the file from a Visual Studio project. |
-| [update](#update) | Consumption | All | Updates a project's packages to the latest available versions. |
+| [update](#update) | Consumption | All | Updates a project's packages to the latest available versions. Note: this command is not supported with the CLI running on Mono. |
 
 For convenience, the following table lists the NuGet commands that are applicable to each specific roles. Developers concerned only with consuming packages, for example, need only understand that subset of NuGet commands.
 
@@ -256,14 +259,18 @@ nuget init \\foo\packages \\bar\packages -Expand
 
 ## install
 
-Downloads and installs a package into a project using the specified package sources. If no sources are specified, those listed in the global configuration file, `%APPDATA%\NuGet\NuGet.Config`, will be used. See [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md) for additional details.
+Downloads and installs a package into a project using the specified package sources. 
+
+> [!Tip]
+> The nuget.exe CLI downloads packages within the context of a project. To download a package directly outside the context of a project, visit the package's page on [nuget.org](https://www.nuget.org) and select the **Download** link. 
+
+If no sources are specified, those listed in the global configuration file, `%APPDATA%\NuGet\NuGet.Config`, will be used. See [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md) for additional details.
 
 If no specific packages are specified, `install` installs all packages listed in the project's `packages.config` file, making it similar to [`restore`](#restore). In this case, `install` does not work with projects that use `project.json`.
 
 The `install` command does not modify a project file or `packages.config`; in this way it's similar to `restore` in that it only adds packages to disk but does not change a project's dependencies.
 
 To add a dependency, either add a project through the Package Manager UI or Console in Visual Studio, or modify `packages.config` and then run either `install` or `restore`. For projects using `project.json`, you can modify that file and then run `restore`.
-
 
 ### Usage
 
@@ -420,9 +427,9 @@ nuget mirror Microsoft.Net.Http https://MyRepo/nuget https://MyRepo/api/v2/packa
 
 *Version 2.7+*
 
-Creates a NuGet package based on the specified `.nuspec` or project file. Note that the `pack` command requires MSBuild and will not work on Linux systems. On Mac OS X, you need to have Mono 4.4.2 or later installed.
+Creates a NuGet package based on the specified `.nuspec` or project file. 
 
-With Mono, you also need to adjust non-local paths in the `.nuspec` file to Unix-style paths, as nuget.exe will not itself convert Windows pathnames.
+On Mac OS X and Linux, you need to have Mono 4.4.2 or later installed. Under Mono, creating  a package from a project file is not supported. You also need to adjust non-local paths in the `.nuspec` file to Unix-style paths, as nuget.exe doesn't convert Windows pathnames itself.
 
 ### Usage
 
@@ -555,6 +562,8 @@ NuGet 2.7+: Downloads and installs any packages missing from the `packages` fold
 NuGet 3.3+ with projects using `project.json`: Generates a `project.lock.json` file and a `<project>.nuget.props` file, if needed. (Both files can be omitted from source control.)
 
 NuGet 4.0+ with project in which package references are included in the project file directly: Generates a `<project>.nuget.props` file, if needed, in the `obj` folder. (The file can be omitted from source control.)
+
+On Mac OSX and Linux with the CLI on Mono, restoring packages from package references in a project file is not supported.
 
 ### Usage
 
@@ -741,9 +750,9 @@ nuget spec -a MyAssembly.dll
 
 Updates all packages in a project the latest available versions. It is recommended to run ['restore'](#restore) before running the `update`.
 
-Note: `update` does not work with projects using `project.json`.
+Note: `update` does not work with the CLI running under Mono (Mac OSX or Linux). The command also does not work with projects using `project.json`.
 
-The `update` command will also update assembly references in the project file, provided those references already exist. If an updated package has an added assembly, a new reference will *not* be added. New package dependencies will also not have their assembly references added. To include these operations as part of an update, update the package in Visual Studio using the Package Manager UI or the Package Manager Console.
+The `update` command also updates assembly references in the project file, provided those references already exist. If an updated package has an added assembly, a new reference is *not* added. New package dependencies also don't have their assembly references added. To include these operations as part of an update, update the package in Visual Studio using the Package Manager UI or the Package Manager Console.
 
 This command can also be used to update nuget.exe itself using the *-self* flag.
 

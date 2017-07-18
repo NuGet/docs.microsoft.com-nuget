@@ -5,7 +5,7 @@ title: NuGet Update-Package PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/1/2017
+ms.date: 7/17/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -46,13 +46,13 @@ In NuGet 2.8+, `Update-Package` can be used to downgrade an existing package in 
 Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 ```
 
-NuGet 2.7 and earlier will give an error saying that a newer version is already installed.
+NuGet 2.7 and earlier gives an error saying that a newer version is already installed.
 
 ## Parameters
 
 |  Parameter | Description |
 | --- | --- |
-| Id | (Required) The identifier of the package to update. If omitted, updates all packages. The -Id switch itself is optional. |
+| Id | The identifier of the package to update. If omitted, updates all packages. The -Id switch itself is optional. |
 | IgnoreDependencies | Skips updating the package's dependencies. |
 | ProjectName | The name of the project containing the packages to update, defaulting to all projects. |
 | Version | The version to use for the upgrade, defaulting to the latest version. In NuGet 3.0+, the version value must be one of *Lowest, Highest, HighestMinor*, or *HighestPatch* (equivalent to -Safe). |
@@ -75,11 +75,11 @@ None of these parameters accept pipeline input or wildcard characters.
 ### Examples
 
 ```ps
-# Updates all packages in every project
+# Updates all packages in every project of the solution
 Update-Package
 
 # Updates every package in the MvcApplication1 project
-Update-Package -Project MvcApplication1
+Update-Package -ProjectName MvcApplication1
 
 # Updates the Elmah package in every project to the latest version
 Update-Package Elmah

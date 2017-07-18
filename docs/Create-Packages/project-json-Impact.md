@@ -30,7 +30,7 @@ ms.reviewer:
 
 # Impact of project.json when creating packages
 
-The `project.json` system used in NuGet 3.x affects package authors in several ways as described in the following sections.
+The `project.json` system used in NuGet 3+ affects package authors in several ways as described in the following sections.
 
 ## Changes affecting existing packages usage
 
@@ -44,7 +44,7 @@ Also, install scripts were supported only in Visual Studio. Other IDEs had to mo
 
 ### Content transforms are not supported.
 
-Similar to install scripts, transforms run on package install and are typically not idempotent. Since there is no install time anymore, XDT Transform and similar features are not supported, and will be ignored if such a package is used in a transitive scenario.
+Similar to install scripts, transforms run on package install and are typically not idempotent. Since there is no install time anymore, XDT Transform and similar features are not supported, and are ignored if such a package is used in a transitive scenario.
 
 
 ### Content
@@ -57,7 +57,7 @@ Traditional NuGet packages are shipping content files such as source code and co
 
 Support for content is currently disabled for similar reasons for scripts and transforms, but we are in the process of designing support for content.
 
-Content files can still be carried inside the packages, and will be ignored currently, however the end user can still copy them into the right spot.
+Content files can still be carried inside the packages, and are ignored currently, however the end user can still copy them into the right spot.
 
 You can see one of the proposals for bringing back content files, and follow its progress, here: [https://github.com/NuGet/Home/issues/627](https://github.com/NuGet/Home/issues/627).
 
@@ -65,7 +65,7 @@ You can see one of the proposals for bringing back content files, and follow its
 
 Packages using the above features would have to use a different mechanism. The most commonly useful mechanism for this would be the MSBuild targets/props that continues to get fully supported. The build system can choose to pick up other conventions in the package. This is how MSBuild targets are supported as well as Roslyn analyzers. It is possible to build packages that supports targets and analyzers for `packages.config` and `project.json` scenarios.
 
-Packages that attempt to modify the project to ease startup, typically work in a very limited set of scenarios, and will instead provide a readme, or guidance on how to use the package.
+Packages that attempt to modify the project to ease startup typically work in a very limited set of scenarios, and should instead provide a readme, or guidance on how to use the package.
 
 Most existing packages should not need to use the package format described below.
 

@@ -5,7 +5,7 @@ title: How to Publish a NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/13/2017
+ms.date: 7/17/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -60,7 +60,7 @@ Next, you can either upload the package through the nuget.org web portal, or pus
         nuget setApiKey Your-API-Key
         ```
 
-        This will store your API key on the machine so that you will not need to do this step again on the same machine.
+        This stores your API key on the machine so that you need not do this step again on the same machine.
 
     4. Push your package to NuGet Gallery using the command:
 
@@ -77,7 +77,7 @@ Next, you can either upload the package through the nuget.org web portal, or pus
 
 ## Managing package owners on nuget.org
 
-Although each NuGet package's `.nuspec` file defines the package's authors, the nuget.org gallery does not use that metadata to define ownership. Instead, nuget.org assigns initial ownership to the person who publishes the package. This will be either the logged-in user who uploaded the package through the nuget.org UI, or the users whose API key was used with `nuget SetApiKey` or `nuget push`.
+Although each NuGet package's `.nuspec` file defines the package's authors, the nuget.org gallery does not use that metadata to define ownership. Instead, nuget.org assigns initial ownership to the person who publishes the package. This is either the logged-in user who uploaded the package through the nuget.org UI, or the users whose API key was used with `nuget SetApiKey` or `nuget push`.
 
 All package owners have full permissions for the package, including adding and removing other owners, and publishing updates.
 
@@ -89,7 +89,7 @@ To change ownership of a package, do the following:
 
 From here you have several options:
 
-1. To add an owner, enter their NuGet account name and click **Add**. This sends an email to that new co-owner with a confirmation link. Once confirmed, that person has full permissions to add and remove owners. (Until confirmed, the **Manage owners** page will indicate "pending approval" for that person).
+1. To add an owner, enter their NuGet account name and click **Add**. This sends an email to that new co-owner with a confirmation link. Once confirmed, that person has full permissions to add and remove owners. (Until confirmed, the **Manage owners** page indicates "pending approval" for that person).
 1. To remove an owner, select their name on the **Manage owners** and click **Remove**.
 1. To transfer ownership (as when ownership changes or a package was published under the wrong account), simply add the new owner, and once they've confirmed ownership they can remove you from the list.
 
@@ -99,4 +99,4 @@ To assign ownership to a company or group, create a nuget.org account using an e
 
 Occasionally, a package may not have an active owner. For example, the original owner may have left the company that produces the package, nuget.org credentials are lost, or earlier bugs in the gallery left a package ownerless.
 
-If you are the rightful owner of a package and need to regain ownership, use the [contact form](https://www.nuget.org/policies/Contact) on nuget.org to explain your situation to the NuGet team. We will then follow a process to verify your ownership of the package, including trying to locate the existing owner through the package's Project URL, Twitter, email, or other means. But if all else fails, we can send you a new invite to become an owner.
+If you are the rightful owner of a package and need to regain ownership, use the [contact form](https://www.nuget.org/policies/Contact) on nuget.org to explain your situation to the NuGet team. We then follow a process to verify your ownership of the package, including trying to locate the existing owner through the package's Project URL, Twitter, email, or other means. But if all else fails, we can send you a new invite to become an owner.
