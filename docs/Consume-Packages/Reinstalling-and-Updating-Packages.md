@@ -65,7 +65,7 @@ To update all packages in a solution, just use `Update-Package` by itself with n
 Update-Package 
 ```
 
-Updating packages in a project or solution using `project.json` or [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding pre-release packages). Projects that use `packages.config` can, if desired, limit update versions as described below in[Constraining upgrade versions](#constraining-upgrade-versions).
+Updating packages in a project or solution using `project.json` or [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding pre-release packages). Projects that use `packages.config` can, if desired, limit update versions as described below in [Constraining upgrade versions](#constraining-upgrade-versions).
 
 For full details on the command, see the [Update-Package](../Tools/ps-ref-update-package.md) reference.
 

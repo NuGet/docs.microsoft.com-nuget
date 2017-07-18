@@ -54,7 +54,7 @@ The behavior of every NuGet command, whether issued from the command line, the P
     - NuGet 4.0+: located under `%ProgramFiles(x86)%\NuGet\Config` rather than `%ProgramData%`.
 
 > [!Note]
-> The `%ProgramData%\NuGet` and `%ProgramFiles(x86)\NuGet` folders typically requires Administrator permissions to modify. Administrators are expected to set the correct permissions on these folders based on the user and/or machine information.
+> The `%ProgramData%\NuGet` and `%ProgramFiles(x86)%\NuGet` folders typically requires Administrator permissions to modify. Administrators are expected to set the correct permissions on these folders based on the user and/or machine information.
 
 ## Changing config settings
 
