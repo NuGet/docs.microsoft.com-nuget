@@ -5,7 +5,7 @@ title: Installing NuGet | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
-ms.date: 5/30/2017
+ms.date: 7/17/2017
 ms.topic: article 
 ms.prod: nuget 
 #ms.service: 
@@ -80,9 +80,8 @@ On Windows, install the NuGet CLI using any of the following methods:
     
 1. **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.
 
-> **NuGet 2.x users**
->
-> Because of breaking changes introduced in NuGet 3.2, [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe) points to the latest stable NuGet 2.x release to prevent CI systems from potentially breaking.
+> [!Note]
+> **For NuGet 2.x users**: Because of breaking changes introduced in NuGet 3.2, [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe) points to the latest stable NuGet 2.x release to prevent continuous integration systems from potentially breaking.
 
 <a name="compatibility-with-mono"></a>
 

@@ -5,7 +5,7 @@ title: NuGet PackageReference in Visual Studio Project Files | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 4/24/2017
+ms.date: 7/17/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -135,7 +135,7 @@ Note that because `build` is not included with `PrivateAssets`, targets and prop
 
 ## Adding a PackageReference condition
 
-You can use a condition to control whether a package is included, where conditions can use any MSBuild variable or a variable defined in the targets or props file.
+You can use a condition to control whether a package is included, where conditions can use any MSBuild variable or a variable defined in the targets or props file. However, at presently, only the `TargetFramework` variable is supported.
 
 For example, say you're targeting `netstandard1.4` as well as `net452` but have a dependency that is applicable only for `net452`. In this case you don't want a `netstandard1.4` project that's consuming your package to add that unnecessary dependency. To prevent this, you specify a condition on the `PackageReference` as follows:
 

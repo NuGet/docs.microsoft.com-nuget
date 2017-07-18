@@ -5,7 +5,7 @@ title: Configuring the behavior of NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 3/27/2017
+ms.date: 7/17/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -158,13 +158,13 @@ It can also help to think about the "priority order" in which settings are appli
 Let's say you have the following folder structure:
 
     c:\
-    └───Users
+       Users
     d:\
-    ├───Project1
-    │   └───Source
-    ├───Project2
-    │   └───Source
-    └───tmp
+       Project1
+         Source
+       Project2
+         Source
+       tmp
 
 You then have four `NuGet.Config` files in the following locations with the given content:
 

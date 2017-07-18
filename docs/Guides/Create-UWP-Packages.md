@@ -5,7 +5,7 @@ title: Create NuGet Packages for the Universal Windows Platform | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 7/17/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -42,7 +42,7 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 
 ## Pre-requisites
 
-1. Visual Studio 2015. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well, of course.
+1. Visual Studio 2017 or Visual Studio 2015. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well.
 1. NuGet CLI. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice. Then add that location to your PATH environment variable if it isn't already.
 
 > [!Note]

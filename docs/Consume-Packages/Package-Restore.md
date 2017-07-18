@@ -5,7 +5,7 @@ title: NuGet Package Restore | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 5/3/2017
+ms.date: 7/17/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -51,7 +51,7 @@ For additional details on package restore on build servers, see [Package restore
 
 ## Package restore overview
 
-First, package references are maintained in one of the following ways, depending on project type and NuGet version. (Note that NuGet 4 and MSBuild 15.1 are installed with Visual Studio 2017.)
+First, package references are maintained in one of the following package management formats, depending on project type and NuGet version. (Note that NuGet 4 and MSBuild 15.1 are installed with Visual Studio 2017.)
 
 | Method | NuGet Version | Description | 
 | --- | --- | --- |
@@ -61,15 +61,16 @@ First, package references are maintained in one of the following ways, depending
 
 Using these reference lists, package restore then happens in different ways both from the command line and inside Visual Studio.
 
-From the command line:
+From the command line or Package Manager Console:
 
 | Command | Applicable scenarios |
 | --- | --- | 
 | `nuget restore` | All versions of NuGet and all reference types. See [Command-line restore](#command-line-restore) below. | 
 | `dotnet restore` | Same as `nuget restore` for .NET Core projects. See [dotnet restore](https://docs.microsoft.com/dotnet/articles/core/tools/dotnet-restore). |
 | `msbuild /t:restore` | Nuget 4.x+ and MSBuild 15.1+ with [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) only. `nuget restore` and `dotnet restore` both use this command for applicable projects. See [NuGet pack and restore as MSBuild targets- restore target](../schema/msbuild-targets.md#restore-target).|
+| `Update-Package -reinstall -ProjectName <project>` | Restores a project's packages from the Package Manager Console. See [Udpate-Package reference](../tools/ps-ref-update-package.md). | 
 
-Inside Visual Studio, there are five ways that package restore can happen:
+Inside Visual Studio, there are four ways that package restore can happen:
 
 | Type | When restore happens |
 | --- | --- |
@@ -162,6 +163,17 @@ c:\proj\> nuget restore app
 
 For NuGet 4.0+ and MSBuild 15.1+, you can also use `MSBuild /t:restore` as described on [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).
 
+In the [Package Manager Console](../tools/Package-Manager-Console.md) you can use the [`Update-Package`](../tools/ps-ref-update-package.md) command:
+
+```ps
+# Restore packages for a project
+Update-Package -reinstall -ProjectName <project>
+
+# Restore packages for all projects in the solution
+Update-Package -reinstall
+```
+
+Note that the `-reinstall` argument is what specifically instructs `Update-Package` to restore packages to their currently installed versions rather than updating any of those versions.
 
 ## Automatic restore in Visual Studio
 
@@ -172,14 +184,13 @@ Automatic restore is also ignored if a `.nuget\NuGet.targets` file exists in a p
 When enabled, automatic restore works as follows:
 
 1. A `.nuget` folder is created in the solution containing a `Nuget.Config` file that contains only a single setting for `disableSourceControlIntegration` (as described in [Packages and source control](../consume-packages/packages-and-source-control.md) for Team Foundation Version Control).
-2. When a build begins, Visual Studio instructs NuGet to restore packages.
-3. NuGet recursively looks for all `packages.config` files in the solution, looks for `project.json`, or looks in the project file.
-4. For each packages listed in the reference files, NuGet checks if it already exists in the solution (the `packages` folder, `project.lock.json`, or `project.assets.json` depending on whether the project is using `packages.config`, `project.json`, or package references in project files).
-5. If the package is not found, NuGet attempts to retrieve the package from its cache first (see [Managing the NuGet cache](../consume-packages/managing-the-nuget-cache.md). If the package is not in the cache, NuGet downloads the package from the enabled sources as listed in **Tools > Options > [NuGet] Package Manager > Package Sources**, in the order that the sources appear.
-6. If the download is successful, NuGet caches it, and then installs the package into the solution (again, either the `packages` folder, `project.lock.json`, or `project.assets.json`); otherwise NuGet fails and the build fails.
+1. When a build begins, Visual Studio instructs NuGet to restore packages.
+1. NuGet recursively looks for all `packages.config` files in the solution, looks for `project.json`, or looks in the project file.
+1. For each packages listed in the reference files, NuGet checks if it already exists in the solution (the `packages` folder, `project.lock.json`, or `project.assets.json` depending on whether the project is using `packages.config`, `project.json`, or package references in project files).
+1. If the package is not found, NuGet attempts to retrieve the package from its cache first (see [Managing the NuGet cache](../consume-packages/managing-the-nuget-cache.md). If the package is not in the cache, NuGet attempts to download the package from the enabled sources as listed in **Tools > Options > [NuGet] Package Manager > Package Sources**, in the order that the sources appear. In this case, NuGet does not indicate a failure to find the package until all the sources have been checked, at which time it reports the failure only for the last source in the list. By implication such an error also means that the package wasn't present on any of the other sources either, even though errors were not shown for those sources individually.
+1. If the download is successful, NuGet caches the package and installs it into the solution (again, into either the `packages` folder, `project.lock.json`, or `project.assets.json`); otherwise NuGet fails and the build fails.
 
-During this process, developers see a progress dialog with the option to cancel package restore.
-
+During this process, you see a progress dialog with the option to cancel package restore.
 
 ### Automatic restore errors
 
