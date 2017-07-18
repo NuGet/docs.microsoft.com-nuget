@@ -1,4 +1,3 @@
-
 ---
 layout: HubPage
 
@@ -17,7 +16,7 @@ keywords:
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017 
+ms.date: 7/17/2017 
 ms.topic: hubpage
 ms.prod: nuget
 #ms.service:
@@ -190,6 +189,12 @@ ms.reviewer:
                                 <a href="./release-notes/index.md">
                                     <h3>Release Notes</h3>
                                     <p>Detailed release notes for every version of NuGet back to the beginning.</p>
+                                </a>
+                            </li>
+                            <li class="column column-third">
+                                <a href="https://github.com/NuGet">
+                                    <h3>GitHub Repositories</h3>
+                                    <p>NuGet is entirely open source, including the NuGet client, server, documentation, and more.</p>
                                 </a>
                             </li>
                         </ul>
