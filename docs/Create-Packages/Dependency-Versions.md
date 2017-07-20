@@ -1,3 +1,3 @@
 ---
-redirect_url: /nuget/schema/package-versioning.md
+redirect_url: /nuget/schema/package-versioning
 ---
