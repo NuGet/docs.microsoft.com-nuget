@@ -11,7 +11,6 @@
 # Create Packages
 ## [Overview and Workflow](Create-Packages/Overview-and-Workflow.md)
 ## [Creating a Package](Create-Packages/Creating-a-Package.md)
-## [Dependency Versions](Create-Packages/Dependency-Versions.md)
 ## [Supporting Multiple Target Frameworks](Create-Packages/Supporting-Multiple-Target-Frameworks.md)
 ## [Source and Config File Transformations](Create-Packages/Source-and-Config-File-Transformations.md)
 ## [Creating Localized Packages](Create-Packages/Creating-Localized-Packages.md)
@@ -56,6 +55,7 @@
 ## [project.json](Schema/project-json.md)
 ## [MSBuild Targets](Schema/msbuild-targets.md)
 ## [Nuget.Config file](Schema/nuget-config-file.md)
+## [Package Versioning](Schema/Package-Versioning.md)
 ## [Target Frameworks](Schema/Target-Frameworks.md)
 ## [Analyzers Conventions](Schema/Analyzers-Conventions.md)
 # API
