@@ -115,4 +115,4 @@ To set a constraint, open `packages.config` in a text editor, locate the depende
 </packages>
 ```
 
-In all cases, use the notation described in [Dependency versions - version ranges](../create-packages/dependency-versions.md#version-ranges).
+In all cases, use the notation described in [Package versioning](../schema/package-versioning.md#version-ranges-and-wildcards).

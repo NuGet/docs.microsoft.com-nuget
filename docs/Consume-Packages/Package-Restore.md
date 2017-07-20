@@ -147,7 +147,7 @@ When NuGet restores packages through any method, it will honor any constraints s
     <PackageReference Include="Newtonsoft.json" Version="[6, 7)" />  
     ```
 
-In all cases, use the notation described in [Dependency versions](../create-packages/dependency-versions.md).
+In all cases, use the notation described in [Package versioning](../schema/package-versioning.md).
 
 ## Command-line restore
 

@@ -175,7 +175,7 @@ The `<dependencies>` element within `<metadata>` contains any number of `<depend
 Attribute | Description
 --- | ---
 `id` | (Required) The package ID of the dependency.
-`version` | (Required) The range of versions acceptable as a dependency. See [Dependency versions](../create-packages/dependency-versions.md#version-ranges) for exact syntax.
+`version` | (Required) The range of versions acceptable as a dependency. See [Package versioning](../schema/package-versioning.md#version-ranges-and-wildcards) for exact syntax.
 
 For example, the following lines indicate dependencies on `PackageA` version 1.1.0 or higher, and `PackageB` version 1.x.
 
