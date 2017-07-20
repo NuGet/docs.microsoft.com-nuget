@@ -40,6 +40,7 @@ In this topic:
 - [Dependency resolution with PackageReference and project.json](#dependency-resolution-with-packagereference-and-projectjson)
 - [Dependency resolution with packages.confid](#dependency-resolution-with-packagesconfig)
 - [Excluding references](#excluding-references), which is necessary when there's a conflict between a dependency specified in one project and an assembly that's produced by another.
+- [Dependency updates during package install](#dependency-updates-during-package-install)
 - [Resolving incompatible package errors](#resolving-incompatible-package-errors)
 
 ## Dependency resolution with PackageReference and project.json
@@ -155,6 +156,15 @@ To resolve this, you must directly reference the `C.dll` you want (or use anothe
     }
     ```
 
+## Dependency updates during package install 
+
+With NuGet 2.4.x and earlier, when a package is installed whose dependency already exists in the project, the dependency is updated to the latest version that satisfies the version constraints, even if the existing version also satisfies those constraints. 
+
+For example, consider package A that depends on package B and specifies 1.0 for the version number. The source repository contains both versions 1.0, 1.1, and 1.2 of package B. If A is installed in a project that already contains B version 1.0, then B is updated to version 1.2. 
+
+With NuGet 2.5 and later, if a dependency version is already satisfied, the dependency isn't updated during other package installations. 
+
+In the same example above, installing package A into a project with NuGet 2.5 and later leaves package B 1.0 in the project, as it already satisfies the version constraint. However, if package A had requests version 1.1 or higher of B, then B 1.2 would be installed. 
 
 ## Resolving incompatible package errors
 
