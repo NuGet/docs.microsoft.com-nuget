@@ -39,10 +39,10 @@ The errors and warnings listed here are available only with [PackageReference-ba
 
 | Group | Error Numbers |
 | --- | --- |
-| [Non-specific errors and warnings](#non-specific-errors-and-warnings) | [NU1000](#nu1000), [NU1500](#nu1500) |
 | [Invalid input errors](#invalid-input-errors) | [NU1001](#nu1001), [NU1002](#nu1002), [NU1003](#nu1003) |
 | [Missing package and project errors](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [NU1106](#nu1106) |
 | [Compatibility errors](#compatibility-errors) | [NU1201](#nu1201), [NU1202](#nu1202), [NU1203](#nu1203), [NU1401](#nu1401) |
+| [NuGet internal errors and warnings](#nuget-internal-errors-and-warnings) | [NU1000](#nu1000), [NU1500](#nu1500) |
 
 **Warnings**
 
@@ -53,29 +53,6 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | [Resolver conflict warnings](#resolver-conflict-warnings) | [NU1606](#nu1606), [NU1607](#nu1607) |
 | [Package fallback warnings](#package-fallback-warnings) | [NU1701](#nu1701) |
 | [Feed warnings](#feed-warnings) | [NU1801](#nu1801) |
-
-
-## Non-specific errors and warnings
-
-These are internal NuGet error/warning. If you get any of these error/warning codes, the log should contain more information. 
-
-[NU1000](#nu1000) | [NU1500](#nu1500)
-
-### NU1000
-
-| | |
-| --- | --- |
-| **Issue** | Generic error from NuGet. |
-| **Common causes** | n/a |
-| **Example message** | n/a |
-
-### NU1500
-
-| | |
-| --- | --- |
-| **Issue** | Generic error from NuGet. |
-| **Common causes** | n/a |
-| **Example message** | n/a |
 
 ## Invalid input errors
 
@@ -321,3 +298,22 @@ These are internal NuGet error/warning. If you get any of these error/warning co
 | **Issue** | An error occurred when reading the feed when `IgnoreFailedSources` is set to true, converting it to a non-fatal warning. This could contain any message and is generic. |
 | **Common causes** | The source is invalid. |
 | **Example message** | n/a |
+
+
+## NuGet internal errors and warnings
+
+[NU1000](#nu1000) | [NU1500](#nu1500)
+
+### NU1000
+
+| | |
+| --- | --- |
+| **Issue** | A non specific internal error from NuGet. |
+| **Common causes** | Check the logs for more information |
+
+### NU1500
+
+| | |
+| --- | --- |
+| **Issue** | A non specific internal warning from NuGet. |
+| **Common causes** | Check the logs for more information |
