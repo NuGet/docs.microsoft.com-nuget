@@ -33,7 +33,7 @@ ms.reviewer:
 
 This topic lists all warnings and errors that may occur with NuGet during package restore.
 
-[Errors](#errors):
+**Errors:**
 
 | Group | Error Numbers |
 | --- | --- |
@@ -42,7 +42,7 @@ This topic lists all warnings and errors that may occur with NuGet during packag
 | [Missing package and project errors](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [NU1106](#nu1106) |
 | [Compatibility errors](#compatibility-errors) | [NU1201](#nu1201), [NU1202](#nu1202), [NU1203](#nu1203), [NU1401](#nu1401) |
 
-[Warnings](#warnings):
+**Warnings:**
 
 | Group | Warning numbers |
 | --- | --- |
@@ -53,40 +53,32 @@ This topic lists all warnings and errors that may occur with NuGet during packag
 | [Feed warnings](#feed-warnings) | [NU1801](#nu1801) |
 
 
-## Errors
-
-| Group | Error Numbers |
-| --- | --- |
-| [Non-specific errors and warnings](#non-specific-errors-and-warnings) | [NU1000](#nu1000), [NU1500](#nu1500) |
-| [Invalid input errors](#invalid-input-errors) | [NU1001](#nu1001), [NU1002](#nu1002), [NU1003](#nu1003) |
-| [Missing package and project errors](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [NU1106](#nu1106) |
-| [Compatibility errors](#compatibility-errors) | [NU1201](#nu1201), [NU1202](#nu1202), [NU1203](#nu1203), [NU1401](#nu1401) |
-
-### Non-specific errors and warnings
+## Non-specific errors and warnings
 
 [NU1000](#nu1000) | [NU1500](#nu1500)
 
-#### NU1000
+### NU1000
 
 **Issue:** Generic error from NuGet.
 
-#### NU1500
+### NU1500
 
 **Issue:** Generic warning from NuGet.
 
-### Invalid input errors
+## Invalid input errors
 
 [NU1001](#nu1001) | [NU1002](#nu1002) | [NU1003](#nu1003)
 
-#### NU1001
+### NU1001
 
+| | |
 | --- | --- |
 | **Issue** | The project does not contain one or more frameworks. |
 | **Common causes** | The project does not contain a `TargetFramework` or `TargetFrameworks` property. |
 | **Example message** | The project projA does not specify any target frameworks in c:\tmp\projA.csproj. |
 
 
-#### NU1002
+### NU1002
 
 **Issue**: Invalid combination of inputs along with a CLEAR keyword.
 
@@ -97,7 +89,7 @@ This topic lists all warnings and errors that may occur with NuGet during packag
 'CLEAR' cannot be used in conjunction with other values.
 ```
 
-#### NU1003
+### NU1003
 
 **Issue:**
 `PackageTargetFallback` and `AssetTargetFallback` provide different behavior for selecting assets and can not be used together.
@@ -110,11 +102,11 @@ Both `PackageTargetFallback` and `AssetTargetFallback` exist in the project.
 PackageTargetFallback and AssetTargetFallback cannot be used together. Remove PackageTargetFallback(deprecated) references from the project environment.
 ```
 
-### Missing package and project errors
+## Missing package and project errors
 
 [NU1100](#nu1100) | [NU1101](#nu1101) | [NU1102](#nu1102) | [NU1103](#nu1103) | [NU1104](#nu1104) | [NU1105](#nu1105) | [NU1106](#nu1106)
 
-#### NU1100
+### NU1100
 
 **Issue:**
 A dependency group not be resolved. This is a generic issue for types that are not packages or projects.
@@ -127,7 +119,7 @@ The project contains a dependency on an item that does not exist.
 Unable to resolve System.Missing for net45
 ```
 
-#### NU1101
+### NU1101
 
 **Issue:**
 The package id cannot be found on any sources.
@@ -139,7 +131,7 @@ The correct package source is missing or the package id has a typo.
 ```
 Unable to find package System.Missing. No packages exist with this id in source(s): dotnet-core, dotnet-roslyn, NuGet.org
 ```
-#### NU1102
+### NU1102
 
 **Issue:**
 The package id is found but a version within the specified dependency range cannot be found on any of the sources.
@@ -159,7 +151,7 @@ Unable to find package NuGet.Versioning with version (>= 9.0.1)
   - Found 0 version(s) in dotnet-roslyn
 ```
 
-#### NU1103
+### NU1103
 
 **Issue:**
 No stable versions were found in the dependency range. Pre-release versions were found but are not allowed.
@@ -176,7 +168,7 @@ Unable to find a stable package NuGet.Versioning with version (>= 3.0.0)
   - Found 0 version(s) in dotnet-roslyn
 ```
 
-#### NU1104
+### NU1104
 
 **Issue:**
 A ProjectReference points to a file that does not exist.
@@ -190,7 +182,7 @@ The project file is missing from disk or the reference is incorrect.
 Project reference does not exist 'c:\a.csproj'. Check that the project reference is valid and that the project file exists.
 ```
 
-#### NU1105
+### NU1105
 
 **Issue:**
 The project file exists but no restore information was provided for it.
@@ -204,7 +196,7 @@ In Visual Studio this could mean that the project is unloaded. From the command 
 Unable to read project information for 'c:\a.csproj'. The project file may be invalid or missing targets required for restore.
 ```
 
-#### NU1106
+### NU1106
 
 **Issue:**
 Dependency constraints cannot be resolved.
@@ -217,11 +209,11 @@ Packages contain dependency on exact versions of a package instead of open ended
 Unable to satisfy conflicting requests for {id}: {conflict path} Framework: {target graph}
 ```
 
-### Compatibility errors
+## Compatibility errors
 
 [NU1201](#nu1201) | [NU1202](#nu1202) | [NU1203](#nu1203) | [NU1401](#nu1401)
 
-#### NU1201
+### NU1201
 
 **Issue:**
 A dependency project does not contain a framework compatible with the current project.
@@ -236,7 +228,7 @@ Project ServerWeb is not compatible with netstandard1.3 (.NETStandard,Version=v1
   - netcoreapp1.0 (.NETCoreApp,Version=v1.0)
 ```
 
-#### NU1202
+### NU1202
 
 **Issue:**
 A dependency package does not contain any assets compatible with the project.
@@ -263,7 +255,7 @@ Package System.ComponentModel.EventBasedAsync 4.0.11 is not compatible with nets
   - xamarinwatchos10 (Xamarin.WatchOS,Version=v1.0)
 ```
 
-#### NU1203
+### NU1203
 
 **Issue:**
 The package does not support the project's RuntimeIdentifier.
@@ -276,7 +268,7 @@ The package does not support the current RuntimeIdentifier. Change the RuntimeId
 System.Example 1.0.0 provides a compile-time reference assembly for a.dll on net461, but there is no compatible run-time assembly.
 ```
 
-#### NU1401
+### NU1401
 
 **Issue:**
 The package requires features or frameworks not currently supported by the installed version of NuGet.
@@ -289,21 +281,13 @@ Upgrade NuGet to fix the issue.
 The 'NuGet.Versioning' package requires NuGet client version '5.0.0' or above, but the current NuGet version is '4.3.0'. To upgrade NuGet, please go to http://docs.nuget.org/consume/installing-nuget.
 ```
 
-## Warnings
 
-| Group | Warning numbers |
-| --- | --- |
-| [Invalid input warnings](#invalid-input-warnings) | [NU1501](#nu1501), [NU1502](#nu1502), [NU1503](#nu1503) |
-| [Unexpected package version warnings](#unexpected-package-version-warnings) | [NU1601](#nu1601), [NU1602](#nu1602), [NU1603](#nu1603), [NU1604](#nu1604), [NU1605](#nu1605), [NU1606](#nu1606), [NU1607](#nu1607) |
-| [Resolver conflict warnings](#resolver-conflict-warnings) | [NU1606](#nu1606), [NU1607](#nu1607) |
-| [Package fallback warnings](#package-fallback-warnings) | [NU1701](#nu1701) |
-| [Feed warnings](#feed-warnings) | [NU1801](#nu1801) |
 
-### Invalid input warnings
+## Invalid input warnings
 
 [NU1501](#nu1501) | [NU1502](#nu1502) | [NU1503](#nu1503)
 
-#### NU1501
+### NU1501
 
 **Issue:**
 The project restore is attempting to operate on was not found.
@@ -316,7 +300,7 @@ The project is missing.
 The folder 'c:\projects\a' does not contain a project to restore.
 ```
 
-#### NU1502
+### NU1502
 
 **Issue:**
 `RuntimeSupports` contains an invalid profile.
@@ -329,7 +313,7 @@ The supports profile was not found in a runtime.json file from the current depen
 Unknown Compatibility Profile: aaa
 ```
 
-#### NU1503
+### NU1503
 
 **Issue:**
 A dependency project does not import NuGet's restore targets. This is similar to NU1105 but here the project is skipped and ignored instead of causing all of restore to fail. In complex solutions there are often other types of projects that may not support restore.
@@ -342,11 +326,11 @@ This can happen for projects that do not import common props/targets which autom
 Skipping restore for project 'c:\a.csproj'. The project file may be invalid or missing targets required for restore. 
 ```
 
-### Unexpected package version warnings
+## Unexpected package version warnings
 
 [NU1601](#nu1601) | [NU1602](#nu1602) | [NU1603](#nu1603) | [NU1604](#nu1604) | [NU1605](#nu1605) | [NU1606](#nu1606) | [NU1607](#nu1607)
 
-#### NU1601
+### NU1601
 
 **Issue:**
 A direct project dependency was bumped to a higher version than the project specified.
@@ -359,7 +343,7 @@ Another dependency package required a higher version and bumped the package up.
 Dependency specified was NuGet.Versioning (>= 3.5.0) but ended up with NuGet.Versioning 4.0.0.
 ```
 
-#### NU1602
+### NU1602
 
 **Issue:**
 A package dependency is missing a lower bound. This does not allow restore to find the *best match*. Each restore will float downwards trying to find a lower version that can be used. This means that restore goes online to check all sources each time instead of using the packages that already exist in the user package folder.
@@ -372,7 +356,7 @@ This is usually a package authoring error.
 NuGet.Packaging 4.0.0 does not provide an inclusive lower bound for dependency NuGet.Versioning (> 3.5.0). An approximate best match of 3.6.0 was resolved.
 ```
 
-#### NU1603
+### NU1603
 
 **Issue:**
 A package dependency specified a version that could not be found. A higher version was used instead, which differs from what the package was authored against.
@@ -387,7 +371,7 @@ The package sources do not contain the expected lower bound version. If the pack
 NuGet.Packaging 4.0.0 depends on NuGet.Versioning (>= 4.0.0) but 4.0.0 was not found. An approximate best match of 5.0.0 was resolved.
 ```
 
-#### NU1604
+### NU1604
 
 **Issue:**
 A project dependency does not define a lower bound.
@@ -402,7 +386,7 @@ The project's *PackageReference* *Version* attribute should be updated to includ
 Project dependency NuGet.Versioning (<= 9.0.0) does not contain an inclusive lower bound. Include a lower bound in the dependency version to ensure consistent restore results.
 ```
 
-#### NU1605
+### NU1605
 
 **Issue:**
 A dependency package specified a version constraint on a higher version of a package than restore ultimately resolved.
@@ -417,11 +401,11 @@ Detected package downgrade: NuGet.Versioning from 4.0.0 to 3.5.0. Reference the 
   NuGet.Commands 4.0.0 -> NuGet.Configuration 4.0.0 -> NuGet.Versioning 4.0.0
 ```
 
-### Resolver conflict warnings
+## Resolver conflict warnings
 
 [NU1606](#nu1606) | [NU1607](#nu1607)
 
-#### NU1606
+### NU1606
 
 **Issue:**
 A circular dependency was detected.
@@ -434,7 +418,7 @@ A package is authored incorrectly.
 Cycle detected: A -> B -> A
 ```
 
-#### NU1607
+### NU1607
 
 **Issue:**
 Unable to resolve dependency constaints between packages.
@@ -449,11 +433,11 @@ Version conflict detected for NuGet.Versioning. Reference the package directly f
   NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)
 ```
 
-### Package fallback warnings
+## Package fallback warnings
 
 [NU1701](#nu1701)
 
-#### NU1701
+### NU1701
 
 **Issue:**
 *PackageTargetFallback* was used to select assets from a package. This is a warning to let the user know that the assets may not be 100% compatible.
@@ -466,7 +450,7 @@ The package does not support the project framework.
 Package 'NuGet.Versioning' was restored using 'portable-net45+win8' instead the project target framework 'netstandard1.5'. This package may not be fully compatible with your project.
 ```
 
-### Feed warnings
+## Feed warnings
 
 [NU1801](#nu1801)
 
