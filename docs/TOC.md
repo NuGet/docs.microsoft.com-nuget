@@ -50,7 +50,8 @@
 ### [Uninstall-Package](Tools/ps-ref-uninstall-package.md)
 ### [Update-Package](Tools/ps-ref-update-package.md)
 ## [dotnet Commands](Tools/dotnet-Commands.md)
-# Schema
+# Reference
+## [Errors and warnings](Reference/Errors-and-Warnings.md)
 ## [.nuspec](Schema/nuspec.md)
 ## [packages.config](Schema/packages-config.md)
 ## [project.json](Schema/project-json.md)
