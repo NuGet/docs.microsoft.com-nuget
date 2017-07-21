@@ -57,6 +57,8 @@ The errors and warnings listed here are available only with [PackageReference-ba
 
 ## Non-specific errors and warnings
 
+These are internal NuGet error/warning. If you get any of these error/warning codes, the log should contain more information. 
+
 [NU1000](#nu1000) | [NU1500](#nu1500)
 
 ### NU1000
