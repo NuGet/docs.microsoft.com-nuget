@@ -129,12 +129,7 @@ This topic lists all warnings and errors that may occur with NuGet during packag
 | --- | --- |
 | **Issue** | The package id is found but a version within the specified dependency range cannot be found on any of the sources. |
 | **Common causes** | The correct package source is missing or the dependency range is incorrect. The range might be specified by a package and not the user. The user may need to switch to an available version if this package is referenced by the project directly. |
-| **Example message** | *Unable to find package NuGet.Versioning with version (>= 9.0.1)<br/>
-  - Found 30 version(s) in NuGet.org [ Nearest version: 4.0.0 ]<br/>
-  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>
-  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>
-  - Found 0 version(s) in dotnet-core<br/>
-  - Found 0 version(s) in dotnet-roslyn* |
+| **Example message** | *Unable to find package NuGet.Versioning with version (>= 9.0.1)<br/>  - Found 30 version(s) in NuGet.org [ Nearest version: 4.0.0 ]<br/>  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>  - Found 0 version(s) in dotnet-core<br/>  - Found 0 version(s) in dotnet-roslyn* |
 
 ### NU1103
 
@@ -142,11 +137,7 @@ This topic lists all warnings and errors that may occur with NuGet during packag
 | --- | --- |
 | **Issue** | No stable versions were found in the dependency range. Pre-release versions were found but are not allowed. |
 | **Common causes** | The project specified a stable version for the dependency range. Users need to change this to include pre-release versions. |
-| **Example message** | *Unable to find a stable package NuGet.Versioning with version (>= 3.0.0)<br/>
-  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>
-  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>
-  - Found 0 version(s) in dotnet-core<br/>
-  - Found 0 version(s) in dotnet-roslyn* |
+| **Example message** | *Unable to find a stable package NuGet.Versioning with version (>= 3.0.0)<br/>  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>  - Found 0 version(s) in dotnet-core<br/>  - Found 0 version(s) in dotnet-roslyn* |
 
 
 ### NU1104
@@ -183,9 +174,7 @@ This topic lists all warnings and errors that may occur with NuGet during packag
 | --- | --- |
 | **Issue** | A dependency project does not contain a framework compatible with the current project. |
 | **Common causes** | The project's target framework is a higher version than the consuming project. |
-| **Example message** | *Project ServerWeb is not compatible with netstandard1.3 (.NETStandard,Version=v1.3). Project ServerWeb supports:<br/>
-  - netstandard1.6 (.NETStandard,Version=v1.6)<br/>
-  - netcoreapp1.0 (.NETCoreApp,Version=v1.0)* |
+| **Example message** | *Project ServerWeb is not compatible with netstandard1.3 (.NETStandard,Version=v1.3). Project ServerWeb supports:<br/>  - netstandard1.6 (.NETStandard,Version=v1.6)<br/>  - netcoreapp1.0 (.NETCoreApp,Version=v1.0)* |
 
 
 ### NU1202
@@ -194,21 +183,7 @@ This topic lists all warnings and errors that may occur with NuGet during packag
 | --- | --- |
 | **Issue** | A dependency package does not contain any assets compatible with the project. |
 | **Common causes** | The package does not support the project's target framework. |
-| **Example message** | *Package System.ComponentModel.EventBasedAsync 4.0.11 is not compatible with netstandard1.3 (.NETStandard,Version=v1.3). Package System.ComponentModel.EventBasedAsync 4.0.11 supports:<br/>
-  - monoandroid10 (MonoAndroid,Version=v1.0)<br/>
-  - monotouch10 (MonoTouch,Version=v1.0)<br/>
-  - net45 (.NETFramework,Version=v4.5)<br/>
-  - netcore50 (.NETCore,Version=v5.0)<br/>
-  - netstandard1.0 (.NETStandard,Version=v1.0)<br/>
-  - netstandard1.3 (.NETStandard,Version=v1.3)<br/>
-  - portable-net45+win8+wp8+wpa81 (.NETPortable,Version=v0.0,Profile=Profile259)<br/>
-  - win8 (Windows,Version=v8.0)<br/>
-  - wp8 (WindowsPhone,Version=v8.0)<br/>
-  - wpa81 (WindowsPhoneApp,Version=v8.1)<br/>
-  - xamarinios10 (Xamarin.iOS,Version=v1.0)<br/>
-  - xamarinmac20 (Xamarin.Mac,Version=v2.0)<br/>
-  - xamarintvos10 (Xamarin.TVOS,Version=v1.0)<br/>
-  - xamarinwatchos10 (Xamarin.WatchOS,Version=v1.0)*|
+| **Example message** | *Package System.ComponentModel.EventBasedAsync 4.0.11 is not compatible with netstandard1.3 (.NETStandard,Version=v1.3). Package System.ComponentModel.EventBasedAsync 4.0.11 supports:<br/>  - monoandroid10 (MonoAndroid,Version=v1.0)<br/>  - monotouch10 (MonoTouch,Version=v1.0)<br/>  - net45 (.NETFramework,Version=v4.5)<br/>  - netcore50 (.NETCore,Version=v5.0)<br/>  - netstandard1.0 (.NETStandard,Version=v1.0)<br/>  - netstandard1.3 (.NETStandard,Version=v1.3)<br/>  - portable-net45+win8+wp8+wpa81 (.NETPortable,Version=v0.0,Profile=Profile259)<br/>  - win8 (Windows,Version=v8.0)<br/>  - wp8 (WindowsPhone,Version=v8.0)<br/>  - wpa81 (WindowsPhoneApp,Version=v8.1)<br/>  - xamarinios10 (Xamarin.iOS,Version=v1.0)<br/>  - xamarinmac20 (Xamarin.Mac,Version=v2.0)<br/>  - xamarintvos10 (Xamarin.TVOS,Version=v1.0)<br/>  - xamarinwatchos10 (Xamarin.WatchOS,Version=v1.0)*|
 
 
 ### NU1203
@@ -279,7 +254,7 @@ This topic lists all warnings and errors that may occur with NuGet during packag
 
 | | |
 | --- | --- |
-| **Issue** | A package dependency specified a version that could not be found. A higher version was used instead, which differs from what the package was authored against.<br/>This means that restore did not find the *best match*. Each restore will float downwards trying to find a lower version that can be used. This means that restore goes online to check all sources each time instead of using the packages that already exist in the user package folder. |
+| **Issue** | A package dependency specified a version that could not be found. A higher version was used instead, which differs from what the package was authored against.<br/><br/>This means that restore did not find the *best match*. Each restore will float downwards trying to find a lower version that can be used. This means that restore goes online to check all sources each time instead of using the packages that already exist in the user package folder. |
 | **Common causes** | The package sources do not contain the expected lower bound version. If the package expected has not been released then this may be a package authoring error. |
 | **Example message** | NuGet.Packaging 4.0.0 depends on NuGet.Versioning (>= 4.0.0) but 4.0.0 was not found. An approximate best match of 5.0.0 was resolved. |
 
@@ -287,7 +262,7 @@ This topic lists all warnings and errors that may occur with NuGet during packag
 
 | | |
 | --- | --- |
-| **Issue** | A project dependency does not define a lower bound.<br/>This means that restore did not find the *best match*. Each restore will float downwards trying to find a lower version that can be used. This means that restore goes online to check all sources each time instead of using the packages that already exist in the user package folder. |
+| **Issue** | A project dependency does not define a lower bound.<br/><br/>This means that restore did not find the *best match*. Each restore will float downwards trying to find a lower version that can be used. This means that restore goes online to check all sources each time instead of using the packages that already exist in the user package folder. |
 | **Common causes** | The project's *PackageReference* *Version* attribute should be updated to include a lower bound. |
 | **Example message** | *Project dependency NuGet.Versioning (<= 9.0.0) does not contain an inclusive lower bound. Include a lower bound in the dependency version to ensure consistent restore results.* |
 
@@ -297,9 +272,7 @@ This topic lists all warnings and errors that may occur with NuGet during packag
 | --- | --- |
 | **Issue** | A dependency package specified a version constraint on a higher version of a package than restore ultimately resolved. |
 | **Common causes** | Nearest wins when resolving packages. A nearer package in the graph may have overridden a distant package. |
-| **Example message** | *Detected package downgrade: NuGet.Versioning from 4.0.0 to 3.5.0. Reference the package directly from the project to select a different version.<br/>
-  NuGet.Packaging 3.5.0 -> NuGet.Versioning 3.5.0<br/>
-  NuGet.Commands 4.0.0 -> NuGet.Configuration 4.0.0 -> NuGet.Versioning 4.0.0* |
+| **Example message** | *Detected package downgrade: NuGet.Versioning from 4.0.0 to 3.5.0. Reference the package directly from the project to select a different version.<br/>  NuGet.Packaging 3.5.0 -> NuGet.Versioning 3.5.0<br/>  NuGet.Commands 4.0.0 -> NuGet.Configuration 4.0.0 -> NuGet.Versioning 4.0.0* |
 
 ## Resolver conflict warnings
 
@@ -319,9 +292,7 @@ This topic lists all warnings and errors that may occur with NuGet during packag
 | --- | --- |
 | **Issue** | Unable to resolve dependency constraints between packages. |
 | **Common causes** | Packages with dependency constraints on exact versions do not allow other packages to increase the version if needed. |
-| **Example message** | *Version conflict detected for NuGet.Versioning. Reference the package directly from the project to resolve this issue.<br/>
-  NuGet.Packaging 3.5.0 -> NuGet.Versioning (= 3.5.0)<br/>
-  NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)* |
+| **Example message** | *Version conflict detected for NuGet.Versioning. Reference the package directly from the project to resolve this issue.<br/>  NuGet.Packaging 3.5.0 -> NuGet.Versioning (= 3.5.0)<br/>  NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)* |
 
 ## Package fallback warnings
 
@@ -333,7 +304,7 @@ This topic lists all warnings and errors that may occur with NuGet during packag
 | --- | --- |
 | **Issue** | *PackageTargetFallback* was used to select assets from a package. This is a warning to let the user know that the assets may not be 100% compatible. |
 | **Common causes** | The package does not support the project framework. |
-| **Example message** | *Package 'NuGet.Versioning' was restored using 'portable-net45+win8' instead the project target framework 'netstandard1.5'. This package may not be fully compatible with your project. |
+| **Example message** | *Package 'NuGet.Versioning' was restored using 'portable-net45+win8' instead the project target framework 'netstandard1.5'. This package may not be fully compatible with your project.* |
 
 ## Feed warnings
 
