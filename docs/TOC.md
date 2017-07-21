@@ -50,7 +50,7 @@
 ### [Uninstall-Package](Tools/ps-ref-uninstall-package.md)
 ### [Update-Package](Tools/ps-ref-update-package.md)
 ## [dotnet Commands](Tools/dotnet-Commands.md)
-# Schema
+# Reference
 ## [.nuspec](Schema/nuspec.md)
 ## [packages.config](Schema/packages-config.md)
 ## [project.json](Schema/project-json.md)
@@ -58,6 +58,7 @@
 ## [Nuget.Config file](Schema/nuget-config-file.md)
 ## [Target Frameworks](Schema/Target-Frameworks.md)
 ## [Analyzers Conventions](Schema/Analyzers-Conventions.md)
+## [Errors and warnings (PREVIEW)](Reference/Errors-and-Warnings.md)
 # API
 ## [NuGet API V3](API/NuGet-API-V3.md)
 ## [NuGet Credential Providers for Visual Studio](API/Nuget-Credential-Providers-for-Visual-Studio.md)
