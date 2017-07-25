@@ -33,7 +33,9 @@ ms.reviewer:
 There are two primary tools available to help you build, publish and consume NuGet packages:
 
 1. The [**NuGet CLI**](#nuget-cli) is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux using Mono, or through the .NET Core CLI (`dotnet`).
-1. The [**NuGet Package Manager in Visual Studio (Windows only)**](#nuget-package-manager-in-visual-studio) is a GUI tool for managing packages and includes a PowerShell console through which you can use certain NuGet commands directly within Visual Studio. The Package Manager UI and Console are both included with Visual Studio (on Windows) 2012 and later and can be installed manually for earlier versions.
+1. The [**NuGet Package Manager in Visual Studio**](#nuget-package-manager-in-visual-studio) (Windows only) is a GUI tool for managing packages and includes a PowerShell console through which you can use certain NuGet commands directly within Visual Studio. The Package Manager UI and Console are both included with Visual Studio (on Windows) 2012 and later and can be installed manually for earlier versions.
+
+    With Visual Studio for Mac, NuGet capabilities are built in directly. See [Including a NuGet package in your project](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough) for a walkthrough.
 
 The NuGet CLI and Package Manager both support the following operations:
 
@@ -134,7 +136,7 @@ The NuGet Package Manager is included in every edition of Visual Studio on Windo
 *These steps are not necessary for Visual Studio 2012 and later, which already include the Package Manager.*
 
 1. In Visual Studio, click **Tools > Extension and Updates**.
-1. Navigate to **Online**, search for "NuGet Package Manager for Visual Studio," and click **Download**.
+1. Navigate to **Online**, then search for "NuGet Package Manager for Visual Studio" and click **Download**.
 1. In the Installer dialog box, click **Install**.
 1. When installation is complete, restart Visual Studio.
 
