@@ -31,10 +31,9 @@ ms.reviewer:
 
 No matter what your package does or what code it contains, NuGet is how you package that functionality into a component that can be shared with and used by any number of other developers.
 
-This topic is a reference for different aspects of creating a package. For a focused walkthrough, refer to [Create and Publish a Package Quickstart](../quickstart/create-and-publish-a-package.md).
+The packaging process begins with the compiled code (assemblies), symbols, and/or other files that you want to deliver as a package (see [Overview and workflow](Overview-and-Workflow.md). That is, creating a package is an independent process from compiling or otherwise generating the files that go into the package. That said, the packaging process can can use information in a project file, helping you keep compiled assemblies and packages containing those assemblies in sync.
 
-> [!Note]
-> This topic applies to project types other than .NET Core projects using Visual Studio 2017 and NuGet 4.0+. In those .NET Core projects, NuGet uses information in the `.csproj` file directly. For details, see [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) and [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).
+This topic describes the detailed process of creating a package and serves as a reference for different aspects of that process. For a focused walkthrough, refer to [Create and Publish a Package Quickstart](../quickstart/create-and-publish-a-package.md).
 
 In this topic:
 
@@ -52,18 +51,26 @@ In this topic:
 
 After these core steps, you can incorporate a variety of other features as described elsewhere in this documentation. See [Next steps](#next-steps) below.
 
+> [!Note]
+> This topic applies to project types other than .NET Core projects using Visual Studio 2017 and NuGet 4.0+. In those .NET Core projects, NuGet uses information in the `.csproj` file directly. For details, see [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) and [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).
+
 ## Deciding which assemblies to package
 
-In general, it's best to have one NuGet package per assembly, provided that each assembly is independently useful. For example, if you have a `Utilities.dll` that depends on `Parser.dll`, and `Parser.dll` is useful on its own, then create one package for each.
+Most general-purpose packages contain one or more assemblies that other developers can use in their own projects.
 
-However, if your package contains assemblies that are used exclusively by your package, then it's fine to include them. For example, if `Utilities.dll` depends on `Utilities.resources.dll`, where the latter is not useful on its own, then put both in the same package.
+In general, it's best to have one assembly per NuGet package, provided that each assembly is independently useful. For example, if you have a `Utilities.dll` that depends on `Parser.dll`, and `Parser.dll` is useful on its own, then create one package for each. Doing so allows developers to use `Parser.dll` independently of `Utilities.dll`.
 
-> [!Note]
-> When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, *excluding* those that are named `.resources.dll` because they are assumed to be localized satellite assemblies (see [Creating localized packages](creating-localized-packages.md)). For this reason, avoid using `.resources.dll` for files that otherwise contain essential package code.
+However, if your library is composed of multiple assemblies that aren't independently useful, then it's fine to combine them into one package. Using the previous example, if `Parser.dll` contains code that's used only by `Utilities.dll`, then it's fine to keep `Parser.dll` in the same package.
+
+Similarly, if `Utilities.dll` depends on `Utilities.resources.dll`, where again the latter is not useful on its own, then put both in the same package.
+
+Resources are, in fact, a special case. When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, *excluding* those that are named `.resources.dll` because they are assumed to be localized satellite assemblies (see [Creating localized packages](creating-localized-packages.md)). For this reason, avoid using `.resources.dll` for files that otherwise contain essential package code.
 
 ## The role and structure of the .nuspec file
 
-The process of creating a package always begins with creating a `.nuspec` package manifest, an XML file that describes your package contents. This manifest drives the creation of the package as well as its usage when installed into a project.
+Once you know what files you want to package, the next step is creating a `.nuspec` package manifest. The manifest is an XML file that describes the package's contents and is itself included in the package. The manifest both drives the creation of the package and instructs NuGet on how to install the package into a project. The manifest, for example, identifies other package dependencies such that NuGet can also install those dependencies when the main package is installed.
+
+The manifest contains both required an optional properties as described below. For exact details, including other properties not mentioned here, see  the [.nuspec reference](../schema/nuspec.md).
 
 Required properties:
 - The package identifier, which must be unique across the gallery that hosts the package.
@@ -81,9 +88,7 @@ Common optional properties:
 - Lists of dependencies and references
 - Tags that assist in gallery searches
 
-For more information on all properties, see the [.nuspec reference](../schema/nuspec.md).
-
-Here's typical (but fictitious) `.nuspec` file, with annotation comments:
+The following is a typical (but fictitious) `.nuspec` file, with comments describing the properties:
 
 ```xml
 <?xml version="1.0"?>
@@ -139,9 +144,9 @@ Here's typical (but fictitious) `.nuspec` file, with annotation comments:
 </package>
 ```
 
-For details on declaring dependencies and specifying version numbers, see [Dependencies](../create-packages/dependency-versions.md).
+For details on declaring dependencies and specifying version numbers, see [Dependency versions](../create-packages/dependency-versions.md).
 
-Because the manifest is always included in a package, you can find any number of additional examples by examining existing packages. A good source is the global package cache on your machine, the location of which is returned by the following command:
+Because the manifest is included in the package created from it, you can find any number of additional examples by examining existing packages. A good source is the global package cache on your machine, the location of which is returned by the following command:
 
 ```
 nuget locals -list global-packages
@@ -154,19 +159,18 @@ Go into any *package\version* folder, copy the `.nupkg` file to a `.zip` file, t
 
 ## Creating the .nuspec file
 
-You can create a `.nuspec` file in a variety of ways:
-- Use a text editor to create the file from scratch.
-- Create a copy of an existing manifest and edit as desired.
-- Use the [nuget spec](../Tools/nuget-exe-CLI-Reference.md#spec) command to create a template manifest.
+Creating a complete manifest typically begins with a basic `.nuspec` file, which you then edit by hand into its final form so that it describes the package contains the content you want.
 
-With `nuget spec`, you can create a new file with default values, or you can create a file using information in an existing assembly DLL, a Visual Studio project, or a convention-based working directory as explained in the following sections. 
+The best way to create an initial `.nuspec` file is by using the [nuget spec](../Tools/nuget-exe-CLI-Reference.md#spec) command to create a template manifest. This ensures that you start with the proper file structure. You can also start with a manifest from another package and modify it to suit your needs.
+
+With `nuget spec`, you can create a new file with default values, or you can create a file using information in an existing assembly DLL, a project file, or a convention-based working directory as explained in the following sections.
 
 > [!Important]
 > Generated `.nuspec` files contain placeholders that must be modified before creating the package with the `nuget pack` command. That command fails if the `.nuspec` contains any placeholders.
 
 ### New file with default values
 
-The following command creates a default manifest:
+The following command creates a default manifest with placeholders:
 
 ```    
 nuget spec [<package-name>]
@@ -182,6 +186,8 @@ If you have an assembly DLL, generate a `.nuspec` file from the metadata in the 
 nuget spec <assembly-name>.dll
 ```
 
+Using this form of the command replaces a few placeholders in the manifest with specific values from the assembly. For example, the `<id>` property is set to the assembly name, and `<version>` is set to the assembly version. Other properties in the manifest, however, don't have matching values in the assembly and thus still contain placeholders.
+
 ### From a Visual Studio project
 
 Using `nuget spec` in a folder containing a project file creates a `.nuspec` using that project information:
@@ -191,15 +197,17 @@ Using `nuget spec` in a folder containing a project file creates a `.nuspec` usi
 nuget spec
 ```
 
-The resulting `<project-name>.nuspec` file contains tokens that are be replaced at packaging time with values from the project, including references to any other packages that have already been installed.
+The resulting `<project-name>.nuspec` file contains *tokens* that are replaced at packaging time with values from the project, including references to any other packages that have already been installed.
 
-Tokens relieve you from needing to update crucial values like the version number in the `.nuspec` as you update the project. (You can always replace the tokens with literal values, if desired). For example, the `<id>` value typically appears as follows:
+A token is delimited by `$` symbols on both sides of the project property. For example, the `<id>` value in a manifest generated in this way typically appears as follows:
 
 ```xml
 <id>$id$</id>
 ```
 
-The token is be replaced with the `AssemblyName` value from the project file at packing time. For the exact mapping of project values to `.nuspec` tokens, see the [Replacement Tokens reference](../schema/nuspec.md#replacement-tokens).
+This token is replaced with the `AssemblyName` value from the project file at packing time. For the exact mapping of project values to `.nuspec` tokens, see the [Replacement Tokens reference](../schema/nuspec.md#replacement-tokens).
+
+Tokens relieve you from needing to update crucial values like the version number in the `.nuspec` as you update the project. (You can always replace the tokens with literal values, if desired). 
 
 Note that there are several additional packaging options available when working from a Visual Studio project, as described in the [Creating the package](#creating-the-package) section later on.
 
@@ -213,20 +221,29 @@ NuGet tracks installed solution-level packages in a `packages.config` file in th
 
 ### From a convention-based working directory
 
-In addition to assemblies and simple files like a readme, some packages may contain the following:
+Technically speaking, a NuGet package is just a ZIP file that's been renamed with the `.nupkg` extension and whose contents match certain conventions. The package's assembly DLLs, for instance, are always placed in a `lib` folder.
+
+The practical upshot of this is that you can simply create a folder structure that follows the expected conventions and contains all the files you want to include in the package *excluding any folders that begin with `.`*. You then generate a manifest directly from that folder tree. When you create the package using that manifest, NuGet automatically adds all the files in the folder structure.
+
+An advantage to this approach is that you don't need to edit the manifest to specifically identify which files you want to include in the package (as explained later in this topic). That is, when creating a manifest and package from the contents of a project tree, NuGet includes only the files that you specify in the manifest. Otherwise you'd risk including temporary build files, project files, `.gitignore` files, and so forth. 
+
+When using a convention-based working directory, on the other hand, NuGet assumes that everything in the folder structure is exactly what you want in the final package (again excluding folders starting with `.`). You don't need to specifically reference any files in the manifest. 
+
+Such a folder structure also allows you to easily include files that might not be part of a project at all, including:
 
 - Content and source code that should be injected into the target project.
 - PowerShell scripts (packages used in NuGet 2.x can include installation scripts as well, which is not supported in NuGet 3.x and later).
 - Transformations to existing configuration and source code files in a project.
 
-To include all these files in a package, first lay out a folder structure using the following conventions:
+The folder conventions are as follows:
 
-| Folder | Description| Action upon package install |
+| Folder | Description | Action upon package install |
 | --- | --- | --- |
-| tools | Powershell scripts and programs accessible from the Package Manager Console | Contents are copied to the project folder, and the `tools` folder is added to the PATH environment variable.|
+| (root) | Location for readme.txt | Visual Studio displays a readme.txt file in the package root when the package is installed. |
 | lib | Assembly files (`.dll`), documentation (`.xml`) files, and symbol (`.pdb`) files | Assemblies are added as references; `.xml` and `.pdb` copied into project folders. |
 | content | Arbitrary files | Contents are copied to the project root |
-| build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file (NuGet 2.x) or `project.lock.json` (NuGet 3.x). |
+| build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file (NuGet 2.x) or `project.lock.json` (NuGet 3.x+). |
+| tools | Powershell scripts and programs accessible from the Package Manager Console | Contents are copied to the project folder, and the `tools` folder is added to the PATH environment variable.|
 
 Think of the **content** folder as the root of the target application. To have the package add an image in the application's */images* folder, place it in the package's *content/images* folder.
 
@@ -236,7 +253,7 @@ Next, from the root folder of this layout, run the following command to create t
 nuget spec
 ```
 
-In this case, the `.nuspec` contains no explicit references to the folder structure, but the files are be automatically included when the package is created.
+In this case, the `.nuspec` contains no explicit references to files in the folder structure. Again, NuGet automatically includes all files when the package is created.  
 
 ## Choosing a unique package identifier and setting the version number
 
@@ -319,7 +336,10 @@ To directly specify files to include in the package, use the `<files>` node in t
 </package>
 ```
 
-When you include a file named `readme.txt` in the package, Visual Studio displays the contents of that file as plain text immediately after installing the package directly. (Readme files are not displayed for packages installed as dependencies). For example, here's how the readme for the HtmlAgilityPack package appears:
+> [!Tip]
+> When using the convention-based working directory approach, you can place the readme.txt in the package root and other content in the `content` folder. No `<file>` elements are necessary in the manifest.
+
+When you include a file named `readme.txt` in the package root, Visual Studio displays the contents of that file as plain text immediately after installing the package directly. (Readme files are not displayed for packages installed as dependencies). For example, here's how the readme for the HtmlAgilityPack package appears:
 
 ![The display of a readme file for a NuGet package upon installation](media/Create_01-ShowReadme.png)
 
@@ -365,7 +385,7 @@ With NuGet 3.x, targets are not added to the project but are instead made availa
 
 ## Creating the package
 
-When using an assembly or the convention-based working directory, create a package by running `nuget pack` with your `.nuspec` file, replacing `<project-name>` with your specific project:
+When using an assembly or the convention-based working directory, create a package by running `nuget pack` with your `.nuspec` file, replacing `<manifest-name>` with your specific filename:
 
 ```
 nuget pack <project-name>.nuspec
