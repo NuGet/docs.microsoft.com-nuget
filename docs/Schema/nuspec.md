@@ -118,7 +118,7 @@ These elements must appear within a `<metadata>` element.
 
 ### Files element
 
-The `<package>` node may contain a `<files>` and/or `<contentFiles>` nodes as siblings to `<metadata>` to specify which assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
+The `<package>` node may contain a `<files>` or `<contentFiles>` node as siblings to `<metadata>` to specify which assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
 
 ## Replacement tokens
 
@@ -320,7 +320,7 @@ Each `<file>` element specifies the following attributes:
 | Attribute | Description |
 | --- | --- |
 | **src** | The location of the file or files to include, subject to exclusions specified by the `exclude` attribute. The path is relative to the `.nuspec` file unless an absolute path is specified. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
-| **target** | The relative path to the folder within the package where the source files are placed, which must begin with `lib`, `content`, or `tools`. |
+| **target** | The relative path to the folder within the package where the source files are placed, which must begin with `lib`, `content`, `build`, or `tools`. See [Creating a .nuspec from a convention-based working directory](../Create-Packages/Creating-a-Package.md#from-a-convention-based-working-directory). |
 | **exclude** | A semicolon-delimited list of files or file patterns to exclude from the `src` location. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
 
 ### Examples
@@ -398,7 +398,7 @@ Content files are immutable files that a package needs to include in a project. 
 
 Content files are included in a package using the `<files>` element, specifying the `content` folder in the `target` attribute. However, such files are ignored when the package is installed in a project using the `project.json` system in NuGet 3.3+ or PackageReference in NuGet 4+, which instead uses the `<contentFiles>` element.
 
-For maximum compatibility with consuming projects, a package ideally specifies content files in both locations.
+For maximum compatibility with consuming projects, a package ideally specifies the content files in both elements.
 
 ### Using the files element for content files
 
