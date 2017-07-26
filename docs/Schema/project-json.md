@@ -5,7 +5,7 @@ title: project.json File Reference for NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 7/26/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -32,11 +32,11 @@ ms.reviewer:
 
 *NuGet 3.x+*
 
-The `project.json` file maintains a list of packages used in a project. It supercedes using `packages.config` to maintain that list, but is in turn superceded by [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) with NuGet 4.0+.
+The `project.json` file maintains a list of packages used in a project, known as a package reference format. It supercedes `packages.config` but is in turn superceded by [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) with NuGet 4.0+.
 
-The [`project.lock.json`](#projectlockjson) file (described below) is also used in projects with a `project.json` file.
+The [`project.lock.json`](#projectlockjson) file (described below) is also used in projects employing `project.json`.
 
-A `project.json` file has the following basic structure, where each of the four top-level objects can have any number of child objects:
+`project.json` has the following basic structure, where each of the four top-level objects can have any number of child objects:
 
 ```json
 {
@@ -57,7 +57,7 @@ A `project.json` file has the following basic structure, where each of the four 
  
 ## Dependencies
 
-Lists the nuget package dependencies of your project in the form of:
+Lists the NuGet package dependencies of your project in the following form:
 
 ```json
 "PackageID" : "version_constraint"
@@ -72,17 +72,17 @@ For example:
 }
 ```
 
-The dependencies section is where the NuGet Package Manager dialog will add package dependencies to your project.
+The `dependencies` section is where the NuGet Package Manager dialog adds package dependencies to your project.
 
 The Package id corresponds to the id of the package on nuget.org , the same as the id used in the package manager console: `Install-Package Microsoft.NETCore`.
 
-The version constraint of `"5.0.0"` corresponds to the `>= 5.0.0` constraint. This means that if for some reason 5.0.0 is not available on the server and 5.0.1 is, the restore will pick 5.0.1 and warn you about the upgrade. Otherwise restore will pick the lowest possible version on the server matching the constraint which will be 5.0.0.
+When restoring packages, the version constraint of `"5.0.0"` implies `>= 5.0.0`. That is, if 5.0.0 is not available on the server but 5.0.1 is, NuGet installs  5.0.1 and warns you about the upgrade. NuGet otherwise picks the lowest possible version on the server matching the constraint.
 
-See [dependency resolution document](../consume-packages/dependency-resolution.md) for more details on resolution rules.
+See [Dependency resolution](../consume-packages/dependency-resolution.md) for more details on resolution rules.
 
 ## Frameworks
 
-This lists the frameworks that your project will run on. For example, `net45`, `netcoreapp`, `netstandard`.
+Lists the frameworks that the project runs on, such as `net45`, `netcoreapp`, `netstandard`.
 
 ```json
 "frameworks": {
@@ -90,13 +90,11 @@ This lists the frameworks that your project will run on. For example, `net45`, `
     }
  ```
 
-Unlike the `project.json` used by ASP.NET Core, a `project.json` that is being used with other project types can only have a single entry in the frameworks section. This is because the build system, MSBuild, only ever builds for a single target in contrast to DNX where the build is run once for each of the targets.
+Only a single entry is allowed in the `frameworks` section. (An exception is `project.json` files for ASP.NET projects that are build with deprecated DNX toolchain, which allows for multiple targets.)
 
 ## Runtimes
 
-The Operating System and Architectures that your application will be running on. For example, win7-x64, win8-x64, win8-x86.
-
-If you are a portable class library that can run on any runtime, you don't need to specify a runtime. Of course any dependencies of your package have to run on any runtime as well.
+Lists the operating systems and architectures that your app runs on, such as `win10-arm`, `win8-x64`, `win8-x86`.
 
 ```json
 "runtimes": {
@@ -109,10 +107,12 @@ If you are a portable class library that can run on any runtime, you don't need 
 }
 ```
 
+A package containing a PCL that can run on any runtime doesn't need to specify a runtime. This must also be true of any dependencies, otherwise you must specify runtimes.
+
 
 ## Supports
 
-Defines a set of checks for package dependencies. You can define where you expect the portable library/application to run, it is not restrictive, you may be able to run elsewhere but specifying things here will make NuGet check that all dependencies are able to be satisfied on the listed TxMs. Examples of the values for this are: net46.app, uwp.10.0.app, etc.
+Defines a set of checks for package dependencies. You can define where you expect the PCL or app to run. The definitions are not restrictive, as your code may be able to run elsewhere. But specifying these checks makes NuGet check that all dependencies are satisfied on the listed TxMs. Examples of the values for this are: `net46.app`, `uwp.10.0.app`, etc.
 
 This section should be populated automatically when you select an entry in the Portable Class Library targets dialog.
 
@@ -125,7 +125,7 @@ This section should be populated automatically when you select an entry in the P
 
 ## Imports
 
-Imports are designed to allow packages that use the dotnet TxM to operate with packages that don't declare a dotnet TxM. If your project is using the dotnet TxM then all the packages you depend on must also have a dotnet TxM, unless you add the following to your `project.json` in order to allow non dotnet platforms to be compatible with dotnet. If you are using the dotnet TxM then the PCL project system will add the appropriate imports statement based on the supported targets.
+Imports are designed to allow packages that use the `dotnet` TxM to operate with packages that don't declare a dotnet TxM. If your project is using the `dotnet` TxM then all the packages you depend on must also have a `dotnet` TxM, unless you add the following to your `project.json` to allow non `dotnet` platforms to be compatible with `dotnet`:
 
 ```json
 "frameworks": {
@@ -133,24 +133,23 @@ Imports are designed to allow packages that use the dotnet TxM to operate with p
 }
 ```
 
+If you are using the `dotnet` TxM then the PCL project system adds the appropriate `imports` statement based on the supported targets.
 
 ## Differences from portable apps and web projects
 
-The `project.json` file used by NuGet is a subset of that found in ASP.NET Core projects. In ASP.NET Core the `project.json` file is used for project metadata, compilation information, and dependencies. When used in other project systems those three things are split into separate files so the `project.json` specifies less information. Notable differences include:
+The `project.json` file used by NuGet is a subset of that found in ASP.NET Core projects. In ASP.NET Core `project.json` is used for project metadata, compilation information, and dependencies. When used in other project systems, those three things are split into separate files and `project.json` contains less information. Notable differences include:
 
-There can only be one framework in the frameworks section
+- There can only be one framework in the `frameworks` section.
 
-The framework should be empty, as shown above. No dependencies, compilation options, etc. that you can see in DNX `project.json` files. Given that there can only be a single framework it doesn't make sense to enter framework specific dependencies.
+- The file cannot contain dependencies, compilation options, etc. that you see in DNX `project.json` files. Given that there can only be a single framework it doesn't make sense to enter framework-specific dependencies.
 
-Compilation is handled by MSBuild so compilation options, preprocessor defines, etc. are all part of the MSBuild project file and not your `project.json`.
+- Compilation is handled by MSBuild so compilation options, preprocessor defines, etc. are all part of the MSBuild project file and not `project.json`.
 
-In NuGet 3 unlike in ASP.NET Core projects the user is not expected to manually edit the file, the UI is responsible for manipulating the content. we're working on unifying the experiences across the project systems for `project.json`, its not unified yet for this release.
-
-Note that it is possible to edit the file, the user is responsible to build the project to kick off a package restore.
+In NuGet 3+, developers are not expected to manually edit the `project.json`, as the Package Manager UI in Visual Studio manipulates the content. That said, you can certainly edit the file, but you must build the project to start a package restore or invoke restore in another way. See [Package restore](../Consume-Packages/Package-Restore.md).
 
 
 ## project.lock.json
 
 The `project.lock.json` file is generated in the process of restoring the NuGet packages in projects that use `project.json`. It holds a snapshot of all the information that is generated as NuGet walks the graph of packages and includes the version, contents, and dependencies of all the packages in your project. The build system uses this to choose packages from a global location that are relevant when building the project instead of depending on a local packages folder in the project itself. This results in faster build performance because it's necessary to read only `project.lock.json` instead of many separate `.nuspec` files.
 
-The `project.lock.json` is automatically generated on package restore, so it can be omitted from source control by adding it to `.gitignore` and `.tfignore` files. However, if you include it in source control, the change history will show changes in dependencies resolved over time.
+`project.lock.json` is automatically generated on package restore, so it can be omitted from source control by adding it to `.gitignore` and `.tfignore` files (see [Packages and source control](../Consume-Packages/Packages-and-Source-Control.md). However, if you include it in source control, the change history shows changes in dependencies resolved over time.

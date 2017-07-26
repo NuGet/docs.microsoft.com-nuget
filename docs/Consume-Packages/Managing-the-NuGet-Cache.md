@@ -5,7 +5,7 @@ title: How to manage package caching in NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 7/26/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -28,12 +28,11 @@ ms.reviewer:
 
 ---
 
+# Managing the NuGet cache
 
-#Managing the NuGet cache
+NuGet manages several local caches to avoid downloading packages that are already on the computer, and to provide offline support. NuGet 2.8+ automatically falls back to the cache when installing or reinstalling packages without a network connection.
 
-NuGet manages several local caches to avoid downloading packages that are already on the machine, and to provide offline support. NuGet versions 2.8 and later automatically fall back to the cache when installing or reinstalling packages without a network connection.
-
-To see the list of cache locations, use the [locals command](../tools/nuget-exe-cli-reference.md#locals):
+Cache locations are available using the [locals command](../tools/nuget-exe-cli-reference.md#locals):
 
 ```
 nuget locals all -list
@@ -41,19 +40,19 @@ nuget locals all -list
 
 Typical output is as follows:
 
-    http-cache: C:\Users\user\AppData\Local\NuGet\v3-cache   #3.x cache
-    packages-cache: C:\Users\user\AppData\Local\NuGet\Cache  #2.x cache
+    http-cache: C:\Users\user\AppData\Local\NuGet\v3-cache   #NuGet 3.x+ cache
+    packages-cache: C:\Users\user\AppData\Local\NuGet\Cache  #NuGet 2.x cache
     global-packages: C:\Users\user\.nuget\packages\          #Global cache
     temp: C:\Users\user\AppData\Local\Temp\NuGetScratch      #Temp folder
 
-If you encounter package installation problems or otherwise want to ensure that you're installing packages from the remote gallery, use the `locals -clear` option in one or more of the following ways:
+If you encounter package installation problems or otherwise want to ensure that you're installing packages from a remote gallery, use the `locals -clear` option:
 
 ```
-nuget locals http-cache -clear        #Clear the 3.x cache
+nuget locals http-cache -clear        #Clear the 3.x+ cache
 nuget locals packages-cache -clear    #Clear the 2.x cache
 nuget locals global-packages -clear   #Clear the global cache
 nuget locals temp -clear              #Clear the temporary cache
-nuget locals all -clear               #Clears all caches
+nuget locals all -clear               #Clear all caches
 ```
 
 Note that managing the cache is presently supported only from the NuGet command line, and not within Visual Studio or through the Package Manager Console. Also, managing the 2.x cache is not supported in NuGet 3.6 and later.
