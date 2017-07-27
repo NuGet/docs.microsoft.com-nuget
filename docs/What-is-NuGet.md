@@ -5,7 +5,7 @@ title: What is NuGet and what does it do? | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/12/2017
+ms.date: 7/27/2017
 ms.topic: hero-article
 ms.prod: nuget
 #ms.service:
@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# A simple introduction to NuGet
+# An introduction to NuGet
 
 An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful libraries and packages. For .NET, that mechanism is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles.
 
@@ -67,7 +67,7 @@ The following image shows a project that depends on five packages, which in turn
 
 ![An example NuGet dependency graph for a .NET project](media/dependency-graph.png)
 
-Notice that some packages appear multiple times in the dependency graph. For example, there are four different consumers of package B, and each consumer might also specify a different version for that package (not shown). Because this is a common occurrence, NuGet fortunately does all the hard work to determine exactly which version of package B will satisfy all its consumers. NuGet then does the same for all other packages, no matter how deep the dependency graph becomes.
+Notice that some packages appear multiple times in the dependency graph. For example, there are four different consumers of package B, and each consumer might also specify a different version for that package (not shown). Because this is a common occurrence, NuGet fortunately does all the hard work to determine exactly which version of package B satisfies all its consumers. NuGet then does the same for all other packages, no matter how deep the dependency graph becomes.
 
 For more details on how NuGet performs this service, see [Dependency resolution](./Consume-Packages/Dependency-Resolution.md).
 
@@ -88,18 +88,18 @@ Clearly, then, NuGet's primarily role where developers are concerned is maintain
 How this exactly happens has evolved over the different versions of NuGet, resulting in several *package management formats*, as they're called:
 
 - [`packages.config`](../schema/packages.config.md): *(NuGet 1.0+)* An XML file that maintains a flat list of all dependencies in the project, including the dependencies of other installed packages. 
-- [`project.json`](../schema/project-json.md): *(NuGet 3.0+)* A JSON file that maintains a list of the project's dependencies with an overall package graph in an associated file, `project.lock.json`. This structure provides improved performance over `packages.config` as described on [Dependency Resolution](../consume-packages/dependency-resolution.md), but also has been generally superceded by PackageReference below.
+- [`project.json`](../schema/project-json.md): *(NuGet 3.0+)* A JSON file that maintains a list of the project's dependencies with an overall package graph in an associated file, `project.lock.json`. This structure provides improved performance over `packages.config` as described on [Dependency Resolution](../consume-packages/dependency-resolution.md), including transitive restore, but has itself been generally superceded by PackageReference below.
 - [Package references in project files](../consume-packages/package-references-in-project-files.md) (also known as "PackageReference") | *(NuGet 4.0+)* Maintains a list of a project's top-level dependencies directly within the project file, so no separate file is needed. An associated file, `project.assets.json`, is dynamically generated like `project.lock.json` to manage the overall dependency graph.
 
-Which package management format is employed in any given project depends on the project type and the available version of NuGet. To check what format is being used, simply look for `packages.config` or `project.json` in the project root after installing your first package. If you don't see either file, look in the project file directly for a &lt;PackageReference&gt;element. This is the case for most new projects created in Visual Studio 2017. (You can change this default in Visual Studio through **Tools > Options > NuGet Package Manager** in the **Package Management** settings.
+Which package management format is employed in any given project depends on the project type, and the available version of NuGet and Visual Studio. To check what format is being used, simply look for `packages.config` or `project.json` in the project root after installing your first package. If you don't see either file, look in the project file directly for a &lt;PackageReference&gt;element.
 
-You can also switch from one format to another. NuGet literally doesn't care which method you use, so long as you have the appropriate version of [NuGet installed](../guides/install-nuget.md). Older projects that use `packages.config` can be converted to use either `project.json` or PackageReference, and projects using `project.json` can also be converted to use PackageReference. For each package, simply create the appropriate reference element in the new file using the same package identifier and version number shown in the older file. When it comes time to restore or update packages, NuGet will find whatever method you're using.
+In Visual Studio 2017, for example, most project types use `packages.config` except for UWP C# and .NET Core projects in Visual Studio 2017 use PackageReference. 
 
 ## What else does NuGet do?
 
-So far we've seen a number of NuGet's capabilities and services. In its hosting role, NuGet provides the central nuget.org repository and supports private hosting. NuGet provides the tools developers need for creating, publishing, and consuming packages. And most importantly, NuGet maintains a reference list of packages used in a project and the ability to restore and update those packages from that list.
+To summarize what we've covered so far, NuGet provides (in its hosting role) the central nuget.org repository and supports private hosting. NuGet provides the tools developers need for creating, publishing, and consuming packages. And most importantly, NuGet maintains a reference list of packages used in a project and the ability to restore and update those packages from that list.
 
-To make these processes work efficiently, NuGet does some behind-the-scenes optimizations. Most notably, NuGet manages both machine-wide and project-specific package caches to shortcut installation and reinstallation. Where the machine-wide cache is concerned, any package that you download and install in a project is stored in the cache, such that installing the same package in another project doesn't have to download it again. This is clearly very helpful when you're frequently restoring a larger number of packages, as on a build server. For more details on the mechanism and how to work with it, see [Managing the NuGet cache](../consume-packages/managing-the-nuget-cache.md).
+To make these processes work efficiently, NuGet does some behind-the-scenes optimizations. Most notably, NuGet manages both computer-wide and project-specific package caches to shortcut installation and reinstallation. Where the computer-wide cache is concerned, any package that you download and install in a project is stored in the cache, such that installing the same package in another project doesn't have to download it again. This is clearly very helpful when you're frequently restoring a larger number of packages, as on a build server. For more details on the mechanism and how to work with it, see [Managing the NuGet cache](../consume-packages/managing-the-nuget-cache.md).
 
 Within an individual project, NuGet does a lot of work to manage the overall dependency graph. (When using `project.json` or &lt;PackageReference&gt;, NuGet keeps that information in a secondary file called `project.lock.json` and `project.assets.json`, respectively.) This again includes resolving multiple references to different versions of the same package.
 
