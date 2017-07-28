@@ -5,7 +5,7 @@ title: NuGet Package Manager UI Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/24/2017
+ms.date: 07/24/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -81,9 +81,9 @@ In this topic:
 
     ![Updating a package](media/UpdatePackages.png)
 
-4. If the **Update** button is disabled and the package is marked as **AutoReferenced**, it means that it's part of a larger framework or SDK and should not be updated independently. (These packages, such as Microsoft.NETCore.App and Microsoft.NETStandard.Library, are marked internally with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) To update the package, you must update the SDK to which it belongs.
+4. For some packages, the **Update** button is disabled and the package a message appears saying that it's "Implicitly referenced by an SDK". (In some versions of Visual Studio the text may read only "AutoReferenced".) These conditions indicate that the package, such as Microsoft.NETCore.App, is part of a larger framework or SDK and should not be updated independently. (Such packages, of which Microsoft.NETStandard.Library is another example, are marked internally with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) To update the package, you must update the SDK to which it belongs.
 
-    ![Example package marked as AutoReferenced](media/PackageManagerUIAutoReferenced.png)
+    ![Example package marked as Implicitly references or AutoReferenced](media/PackageManagerUIAutoReferenced.png)
 
 
 ## Managing packages for the solution
