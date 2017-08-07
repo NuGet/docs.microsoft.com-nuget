@@ -70,7 +70,7 @@ Resources are, in fact, a special case. When a package is installed into a proje
 
 Once you know what files you want to package, the next step is creating a `.nuspec` package manifest. The manifest is an XML file that describes the package's contents and is itself included in the package. The manifest both drives the creation of the package and instructs NuGet on how to install the package into a project. The manifest, for example, identifies other package dependencies such that NuGet can also install those dependencies when the main package is installed.
 
-The manifest contains both required an optional properties as described below. For exact details, including other properties not mentioned here, see  the [.nuspec reference](../schema/nuspec.md).
+The manifest contains both required and optional properties as described below. For exact details, including other properties not mentioned here, see  the [.nuspec reference](../schema/nuspec.md).
 
 Required properties:
 - The package identifier, which must be unique across the gallery that hosts the package.
