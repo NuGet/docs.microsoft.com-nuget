@@ -240,7 +240,7 @@ To avoid all these issues, it's recommended to migrate any project using MSBuild
 The process is as follows:
 
 1. Close Visual Studio to avoid file potential file locks and conflicts.
-1. If using TFS:
+1. If using Team Foundation Server (TFS):
     1. Remove `nuget.exe` and `NuGet.targets` from the solution's `.nuget` folder and remove those files from the solution workspace.
     1. Retain `Nuget.Config` with the `disableSourceControlIntegration` setting as explained in [Omitting packages with Team Foundation Version Control](../consume-packages/packages-and-source-control.md#omitting-packages-with-team-foundation-version-control).
 1. If not using TFS:

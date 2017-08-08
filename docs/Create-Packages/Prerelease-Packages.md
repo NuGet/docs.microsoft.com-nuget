@@ -103,9 +103,11 @@ Whatever suffixes you use, however, NuGet will give them precedence in reverse a
 1.0.1-zzz
 1.0.1-rc
 1.0.1-open
+1.0.1-beta12
+1.0.1-beta05
 1.0.1-beta
 1.0.1-alpha2
 1.0.1-alpha
 ```
 
-As shown, the version without any suffix will always take precedence over pre-release versions.
+As shown, the version without any suffix will always take precedence over pre-release versions. Note also that if you use numerical suffixes with pre-release tags that might use double-digit numbers (or more), use leading zeroes as in beta01 and beta05 to ensure that they sort correctly when the numbers get larger.
