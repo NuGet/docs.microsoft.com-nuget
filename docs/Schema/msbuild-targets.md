@@ -80,7 +80,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | LicenseUrl | PackageLicenseUrl | empty | |
 | ProjectUrl | PackageProjectUrl | empty | |
 | IconUrl | PackageIconUrl | empty | |
-| Tags | PackageTags | empty | |
+| Tags | PackageTags | empty | Tags are semi-colon delimited. |
 | ReleaseNotes | PackageReleaseNotes | empty | |
 | RepositoryUrl | RepositoryUrl | empty | |
 | RepositoryType | RepositoryType | empty | |
