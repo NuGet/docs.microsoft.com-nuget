@@ -1,9 +1,9 @@
 ---
 # required metadata
 
-title: NuGet 4.0 RC Release Notes | Microsoft Docs
-author: anangaur
-ms.author: anangaur
+title: NuGet 4.0 RTM Release Notes | Microsoft Docs
+author: karann
+ms.author: karann
 manager: unnir
 ms.date: 03/03/2017
 ms.topic: article
@@ -14,8 +14,8 @@ ms.assetid: 906cc4dd-7948-4e86-a093-21df830ce8c3
 
 # optional metadata
 
-description: Release notes for NuGet 4.0 RTM including known issues, bug fixes, added features, and DCRs.
-keywords: NuGet 4.0 RTM release notes, bug fixes, known issues, added features, DCRs
+description: Release notes for NuGet 4.3 RTM including known issues, bug fixes, added features, and DCRs.
+keywords: NuGet 4.3 RTM release notes, bug fixes, known issues, added features, DCRs
 #ROBOTS:
 #audience:
 #ms.devlang:
@@ -28,9 +28,9 @@ ms.reviewer:
 
 ---
 
-# 4.3 Release Notes
+# 4.3 RTM Release Notes
 
-[Visual Studio 2017](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.3 which adds support for .NET Core, has a bunch of quality fixes and improves performance. This release also brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restores, and more.
+[Visual Studio 2017](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.3 RTM which adds support for .NET Core, has a bunch of quality fixes and improves performance. This release also brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restores, and more.
 
 ## Known issues
 
