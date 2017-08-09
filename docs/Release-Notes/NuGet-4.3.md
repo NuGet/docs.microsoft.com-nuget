@@ -28,11 +28,22 @@ ms.reviewer:
 
 ---
 
-#4.3 Release Notes
+# 4.3 Release Notes
 
-[Full Changelog]()
+[Visual Studio 2017](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.3 which adds support for .NET Core, has a bunch of quality fixes and improves performance. This release also brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restores, and more.
 
-[Issues List](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.3")
+## Known issues
+
+### NuGet restore may fail when you have multiple projects referencing another project in a solution
+
+#### Issue:
+NuGet restore may not work if, in a solution, you have project references to the same project with different casing or with different relative paths. [NuGet#4574](https://github.com/NuGet/Home/issues/4574)
+
+#### Workaround:
+Fix the casings or relative paths to be the same for all project references.
+
+
+## Issues fixed in NuGet 4.3 RTM timeframe
 
 **Bug:**
 
@@ -112,3 +123,6 @@ ms.reviewer:
 
 * Add ability to mark nuget warnings as errors - [#2395](https://github.com/NuGet/Home/issues/2395)
 
+## Links to GitHub issues fixed in RTM
+
+[Issues List](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.3")
