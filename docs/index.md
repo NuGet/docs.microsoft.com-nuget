@@ -29,7 +29,7 @@ ms.reviewer:
 ---
 <div id="main" class="v2">
 <div class="container">
-    <h1>Nuget Documentation</h1>
+    <h1>NuGet Documentation</h1>
     <ul class="pivots">
         <li>
             <a href="#start">Get Started</a>
