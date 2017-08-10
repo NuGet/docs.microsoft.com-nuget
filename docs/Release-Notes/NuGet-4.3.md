@@ -61,20 +61,6 @@ Fix the casings or relative paths to be the same for all project references.
 
 * msbuild /t:pack fails with The "DevelopmentDependency" parameter is not supported by the "PackTask" task - [#5584](https://github.com/NuGet/Home/issues/5584)
 
-* nuget.org not added to %AppData%\NuGet\nuget.config if file already contains a packageSource - [#5477](https://github.com/NuGet/Home/issues/5477)
-
-* NU1201 for netcoreapp2.0 -> net461 project dependency using new csproj format/sdk, but not for classic csproj - [#5461](https://github.com/NuGet/Home/issues/5461)
-
-* SDK based projects, with SDK 2.0 restore causes a build error - [#5449](https://github.com/NuGet/Home/issues/5449)
-
-* build\native\PackageName.targets isn't imported after installing package in C++ project - [#5439](https://github.com/NuGet/Home/issues/5439)
-
-* Missing nuget restore error messages in VS Package Manager output window - [#5412](https://github.com/NuGet/Home/issues/5412)
-
-* Regression: msbuild /t:pack fails with `The file '' to be packed was not found on disk.` - [#5408](https://github.com/NuGet/Home/issues/5408)
-
-* NU1201 Does Not Produce a Library Id - [#5405](https://github.com/NuGet/Home/issues/5405)
-
 * Restore on .NET Core 2.0 project imports .NET Framework 3.5 package targets - [#5149](https://github.com/NuGet/Home/issues/5149)
 
 * [Test Failure] Some projects can't be created after installing NuGet client 4.3.0-preview1-2462 (Insertable) under dev folder - [#4952](https://github.com/NuGet/Home/issues/4952)
