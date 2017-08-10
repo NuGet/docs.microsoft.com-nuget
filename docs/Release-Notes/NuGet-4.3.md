@@ -30,7 +30,7 @@ ms.reviewer:
 
 # 4.3 RTM Release Notes
 
-[Visual Studio 2017](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.3 RTM which adds support for .NET Core, has a bunch of quality fixes and improves performance. This release also brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restores, and more.
+[Visual Studio 2017 15.3 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.3 RTM which adds support new scenarios such as .NET Core 2.0/.NET Standard 2.0, has a bunch of quality fixes and improves performance. This release also brings several improvements like support for Semantic Versioning 2.0.0, MSBuild integration of NuGet warnings and errors, and more.
 
 ## Known issues
 
