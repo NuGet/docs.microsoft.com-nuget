@@ -30,9 +30,22 @@ ms.reviewer:
 
 # 4.3 RTM Release Notes
 
-[Visual Studio 2017 15.3 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.3 RTM which adds support new scenarios such as .NET Core 2.0/.NET Standard 2.0, has a bunch of quality fixes and improves performance. This release also brings several improvements like support for Semantic Versioning 2.0.0, MSBuild integration of NuGet warnings and errors, and more.
+[Visual Studio 2017 15.3 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.3 RTM which adds support for new scenarios such as .NET Standard 2.0/.NET Core 2.0, has a bunch of quality fixes and improves performance. This release also brings several improvements like support for Semantic Versioning 2.0.0, MSBuild integration of NuGet warnings and errors, and more.
 
 ## Known issues
+
+### NuGet restore may treat disabled package sources as enabled in some cases
+
+#### Issue:
+The following restore command line techniques will treat disabled packages sources as enabled. [NuGet#5704](https://github.com/NuGet/Home/issues/5704)
+1) msbuild /t:restore
+2) dotnet restore (either with dotnet.exe that ships with VS, or the one that comes with NetCore SDK 2.0.0)
+
+#### Workaround:
+1) Use Visual Studio (2017 15.3 or later) or NuGet.exe (v4.3.0 or later)
+2) Delete your disabled source and continue to use msbuild or dotnet.exe.
+3) For your solution, you could use "Clear" in NuGet.config and then define the sources necessary for that solution.
+
 
 ### NuGet restore may fail when you have multiple projects referencing another project in a solution
 
@@ -41,7 +54,6 @@ NuGet restore may not work if, in a solution, you have project references to the
 
 #### Workaround:
 Fix the casings or relative paths to be the same for all project references.
-
 
 ## Issues fixed in NuGet 4.3 RTM timeframe
 
