@@ -1,6 +1,6 @@
 ---
 layout: HubPage
-
+hide_bc: true
 title: NuGet Documentation | Microsoft Docs
 description: NuGet is the package manager for Microsoft development platforms including .NET. The NuGet client tools provide the ability to create and consume packages.
 keywords:
@@ -16,8 +16,8 @@ keywords:
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017 
-ms.topic: hubpage
+ms.date: 8/10/2017 
+ms.topic: hub-page
 ms.prod: nuget
 #ms.service:
 ms.technology: null
@@ -27,180 +27,238 @@ ms.reviewer:
 - karann
 
 ---
-
-<article id="main">
-    <section id="hero-content" class="graph">
-        <h1>NuGet Documentation</h1>
-        <h2>Welcome to NuGet! NuGet is the package manager for the Microsoft development platforms including .NET. NuGet gives you access to thousands of packages from other developers on <a href="https://www.nuget.org/" target="_blank">nuget.org</a>, and the NuGet tools let you create, share, and host packages of your own.</h2>
-    </section>
-    <!--aside class="alert section-border">
-    <p>Checkout the latest NuGet packages on <a href="https://www.nuget.org/">nuget.org</a></p>
-        <ol class="action-list">
-            <li><a href="https://www.nuget.org/" class="button-bordered button-translucent">Get it!</a></li>
-        </ol>
-    </aside-->
-    <section id="featured" class="container">
-        <h2 class="section-heading"><span class="icon icon-lightbulb-checked"></span> Featured Content</h2>
-        <div class="features row">
-            <ul class="column-half">
-                <li><a href="./guides/create-net-standard-packages-vs2017.md">Create .NET Standard Packages (Visual Studio 2017)</a></li>
-            </ul>
-            <ul class="column-half">
-                <li><a href="./guides/create-cross-platform-packages.md">Create Cross-Platform Packages</a></li>
-            </ul>
-        </div>
-    </section>
-    <div id="journeys">
-        <section class="container">
-            <ul class="journeys-list">
-                <li class="journey-step">
-                    <header class="journey-step-header row">
-                        <div class="title column-third">
-                            <span class="icon icon-tip"></span>
-                            <p>Quickstart</p>
-                        </div>
-                        <p class="description column-two-thirds">
-                            Experience NuGet with focused walkthroughs.
-                        </p>
-                    </header>
-                    <section class="journey-step-elements content">
-                        <ul class="row">
-                            <li class="column column-third">
-                                <a href="./quickstart/create-and-publish-a-package.md">
-                                    <h3>Create a Package</h3>
-                                    <p>Learn how to create and publish your first package to nuget.org.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./quickstart/use-a-package.md">
-                                    <h3>Use a Package</h3>
-                                    <p>Learn how to use your first NuGet package in Visual Studio.</p>
-                                </a>
-                            </li>                            
-                        </ul>
-                    </section>
-                </li>
-                <li class="journey-step">
-                    <header class="journey-step-header row">
-                        <div class="title column-third">
-                            <span class="icon icon-tip"></span>
-                            <p>Guides</p>
-                        </div>
-                        <p class="description column-two-thirds">
-                            Learn more about NuGet's tools and capabilities.
-                        </p>
-                    </header>
-                    <section class="journey-step-elements content">
-                        <ul class="row">
-                            <li class="column column-third">
-                                <a href="./guides/install-nuget.md">
-                                    <h3>Install NuGet Tools</h3>
-                                    <p>Learn how to install and use a the NuGet command-line interface and the NuGet Package Manager UI and Console in Visual Studio.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./guides/create-net-standard-packages-vs2017.md">
-                                    <h3>Create .NET Standard Packages (Visual Studio 2017 RC)</h3>
-                                    <p>Learn how to create universally supported NuGet packages using Visual Studio 2017 RC.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./guides/create-net-standard-packages-vs2015.md">
-                                    <h3>Create .NET Standard Packages (Visual Studio 2015)</h3>
-                                    <p>Learn how to create universally supported NuGet packages using Visual Studio 2015.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./guides/create-uwp-packages.md">
-                                    <h3>Create UWP Packages</h3>
-                                    <p>Learn how to create NuGet packages for the Universal Windows Platform.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./guides/create-uwp-controls.md">
-                                    <h3>Create UWP Controls in NuGet Packages</h3>
-                                    <p>Learn how to create NuGet packages that contain UWP controls with full support for Visual Studio and Blend designers.</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </section>
-                </li>
-                <li class="journey-step">
-                    <header class="journey-step-header row">
-                        <div class="title column-third">
-                            <span class="icon icon-tip"></span>
-                            <p>Explore NuGet</p>
-                        </div>
-                        <p class="description column-two-thirds">
-                            Go deeper with NuGet workflows, find reference material, and study policies and release notes.
-                        </p>
-                    </header>
-                    <section class="journey-step-elements content">
-                        <ul class="row">
-                            <li class="column column-third">
-                                <a href="./create-packages/overview-and-workflow.md">
-                                    <h3>Create Packages</h3>
-                                    <p>Everything you need to know about creating NuGet packages, from the complete workflow and versioning to pre-release, symbol, and other specialized packages.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./consume-packages/overview-and-workflow.md">
-                                    <h3>Consume Packages</h3>
-                                    <p>Everything you need to know about using NuGet packages in a project, from finding and choosing good packages to reinstallation, updates, restoration, and caching.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./hosting-packages/overview.md">
-                                    <h3>Host Packages</h3>
-                                    <p>Learn how to host packages on your own servers or galleries to make them available to only a limited audience.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./tools/nuget-exe-cli-reference.md">
-                                    <h3>Tools</h3>
-                                    <p>The complete guides to the nuget.exe command-line tool, and the Package Manager UI and Package Manager Console in Visual Studio.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./schema/nuspec.md">
-                                    <h3>Schema</h3>
-                                    <p>References for .nuspec files, Nuget.Config files, and other files and conventions.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./api/nuget-api-v3.md">
-                                    <h3>API</h3>
-                                    <p>Details about the NuGet API and authenticating with package sources.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./visual-studio-extensibility/nuget-api-in-visual-studio.md">
-                                    <h3>Visual Studio Extensibility</h3>
-                                    <p>Details about the API to the NuGet Package Manager UI and Console in Visual Studio, project system support, and integrating NuGet packages into Visual Studio templates.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./policies/nuget-faq.md">
-                                    <h3>Policies</h3>
-                                    <p>Frequently-asked questions along with information about NuGet as an open-source project, deleting packages, and resolving disputes.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="./release-notes/index.md">
-                                    <h3>Release Notes</h3>
-                                    <p>Detailed release notes for every version of NuGet back to the beginning.</p>
-                                </a>
-                            </li>
-                            <li class="column column-third">
-                                <a href="https://github.com/NuGet">
-                                    <h3>GitHub Repositories</h3>
-                                    <p>NuGet is entirely open source, including the NuGet client, server, documentation, and more.</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </section>
+<div id="main" class="v2">
+<div class="container">
+    <h1>Nuget Documentation</h1>
+    <ul class="pivots">
+        <li>
+            <a href="#start">Get Started</a>
+            <ul id="start">
+                <li>
+                    <a href="#start-all"></a>
+                    <ul id="start-all" class="cardsC">
+                        <li>
+                            <a href="/nuget/what-is-nuget">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage  bgdAccent1">
+                                                <img src="/media/hubs/nuget/nuget-get-started-what-is-nuget.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h3>What is NuGet</h3>
+                                            <p>Learn how NuGet allows .NET developers to create, share, and consume libraries and packages.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/nuget/quickstart/use-a-package">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage  bgdAccent1">
+                                                <img src="/media/hubs/nuget/nuget-get-started-quickstarts.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h3>Quickstarts</h3>
+                                            <p>Experience NuGet with focused walkthroughs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/nuget/guides/install-nuget">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage  bgdAccent1">
+                                                <img src="/media/hubs/nuget/nuget-get-started-guides.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h3>Guides</h3>
+                                            <p>Learn more about NuGet's tools and capabilities.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/nuget/create-packages/overview-and-workflow">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage  bgdAccent1">
+                                                <img src="/media/hubs/nuget/nuget-get-started-create-packages.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h3>Create Packages</h3>
+                                            <p>Everything you need to know about creating NuGet packages, from overall workflow to versioning, pre-release, &amp; other specialized packages.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/nuget/consume-packages/overview-and-workflow">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage  bgdAccent1">
+                                                <img src="/media/hubs/nuget/nuget-get-started-consume-packages.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h3>Consume Packages</h3>
+                                            <p>Everything you need to know about using NuGet packages, from finding and choosing good packages to restoration updates, and caching.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/nuget/hosting-packages/overview">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage  bgdAccent1">
+                                                <img src="/media/hubs/nuget/nuget-get-started-host-packages.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h3>Host Packages</h3>
+                                            <p>Learn how to host packages on your own servers or galleries to make them available to only a limited audience.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
-        </section>
-    </div>
-</article>
+        </li>
+        <li>
+            <a href="#tools">Tools &amp; Reference</a>
+            <ul id="tools">
+                <li>
+                    <a href="#tools-all"></a>
+                    <ul id="tools-all" class="cardsC">
+                        <li>
+                            <a href="/nuget/tools/nuget-exe-cli-reference">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage  bgdAccent1">
+                                                <img src="/media/hubs/nuget/nuget-tools-tools.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h3>Tools</h3>
+                                            <p>The complete guides to the nuget.exe command-line tool, and the Package Manager UI and Package Manager Console in Visual Studio.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/nuget/schema/nuspec">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage  bgdAccent1">
+                                                <img src="/media/hubs/nuget/nuget-tools-reference.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h3>Reference</h3>
+                                            <p>Details about artifacts and formats NuGet cares about, supported frameworks, and errors and warnings.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/nuget/api/nuget-api-v3">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage  bgdAccent1">
+                                                <img src="/media/hubs/nuget/nuget-tools-api.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h3>API</h3>
+                                            <p>Details about the NuGet API and authenticating with package sources.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/nuget/visual-studio-extensibility/nuget-api-in-visual-studio">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage  bgdAccent1">
+                                                <img src="/media/hubs/nuget/nuget-tools-vs-extensibility.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h3>Visual Studio Extensibility</h3>
+                                            <p>Details about the API to the NuGet Package Manager UI and Console in Visual Studio, project system support, and integrating into Visual Studio templates.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/nuget/policies/nuget-faq">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage  bgdAccent1">
+                                                <img src="/media/hubs/nuget/nuget-tools-policies.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h3>Policies</h3>
+                                            <p>Frequently-asked questions along with information about NuGet as an open-source project, deleting packages, and resolving disputes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
