@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet 4.0 RTM Release Notes | Microsoft Docs
+title: NuGet 4.3 RTM Release Notes | Microsoft Docs
 author: karann
 ms.author: karann
 manager: unnir
@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: nuget
 #ms.service:
 ms.technology: null
-ms.assetid: 906cc4dd-7948-4e86-a093-21df830ce8c3
+ms.assetid: da3bf363-4d9d-446c-b91d-41c4cf6e16a1
 
 # optional metadata
 
@@ -22,6 +22,7 @@ keywords: NuGet 4.3 RTM release notes, bug fixes, known issues, added features, 
 ms.reviewer:
 - karann
 - unnir
+- anangaur
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -49,17 +50,36 @@ The following restore command line techniques will treat disabled packages sourc
 
 ## Issues fixed in NuGet 4.3 RTM timeframe
 
+**Feature:**
+
+* Improve NuGet Restore Perf - Implement smarter NoOp for command line restores and VS - [#5080](https://github.com/NuGet/Home/issues/5080)
+
+* NET Core 2.0: VS/Dotnet CLI should start using existing NuGet functionality: FallBack folders - [#4939](https://github.com/NuGet/Home/issues/4939)
+
+* NET Core 2.0: Enable users to ignore specific restore warnings (or elevate to error) - [#4898](https://github.com/NuGet/Home/issues/4898)
+
+* NET Core 2.0: CLI localized assemblies - [#4896](https://github.com/NuGet/Home/issues/4896)
+
+* NET Core 2.0: register all warnings/errors to assets file (including PackageTargetFallback) - [#4895](https://github.com/NuGet/Home/issues/4895)
+
+* Enable TFM support: NetStandard2.0, Tizen - [#4892](https://github.com/NuGet/Home/issues/4892)
+
+* Reduce the number of NuGet.Core and NuGet.Client projects (and thus DLLs) - [#2446](https://github.com/NuGet/Home/issues/2446)
+
+* Add ability to mark nuget warnings as errors - [#2395](https://github.com/NuGet/Home/issues/2395)
+
+
 **Bug:**
 
 * msbuild /t:pack fails with The "DevelopmentDependency" parameter is not supported by the "PackTask" task - [#5584](https://github.com/NuGet/Home/issues/5584)
-
-* dotnet Restore (& therefore msbuild /t:restore) skips projects with an explicit solution project dependency [#4578](https://github.com/NuGet/Home/issues/4578)
 
 * Directory structure for content files flattened if not adding Windows directory separator at the end of PackagePath - [#4795](https://github.com/NuGet/Home/issues/4795)
 
 * netcore projects don't support setting as developmentDependency - [#4694](https://github.com/NuGet/Home/issues/4694)
 
 * RestoreManagerPackage being loaded synchronously which blocked UI thread and deadlocked VS - [#4679](https://github.com/NuGet/Home/issues/4679)
+
+* dotnet Restore (& therefore msbuild /t:restore) skips projects with an explicit solution project dependency [#4578](https://github.com/NuGet/Home/issues/4578)
 
 * If your solution has projectreferences that refer to the same project, with different casing, restore may not work. This also affects different relative paths, without a difference in casing - [#4574](https://github.com/NuGet/Home/issues/4574)
 
@@ -85,30 +105,6 @@ The following restore command line techniques will treat disabled packages sourc
 
 * Put dependency diagnostics in the lock file - [#1599](https://github.com/NuGet/Home/issues/1599)
 
-**Docs:**
-
-* MSBuild restore and NuGet.config - [#5043](https://github.com/NuGet/Home/issues/5043)
-
-* AutoReferenced docs and fwlink - [#4470](https://github.com/NuGet/Home/issues/4470)
-
-**Feature:**
-
-* Improve NuGet Restore Perf - Implement smarter NoOp for command line restores and VS - [#5080](https://github.com/NuGet/Home/issues/5080)
-
-* NET Core 2.0: VS/Dotnet CLI should start using existing NuGet functionality: FallBack folders - [#4939](https://github.com/NuGet/Home/issues/4939)
-
-* NET Core 2.0: register all warnings/errors to assets file (including PackageTargetFallback) - [#4895](https://github.com/NuGet/Home/issues/4895)
-
-* NET Core 2.0: Enable users to ignore specific restore warnings (or elevate to error) - [#4898](https://github.com/NuGet/Home/issues/4898)
-
-* Add ability to mark nuget warnings as errors - [#2395](https://github.com/NuGet/Home/issues/2395)
-
-* NET Core 2.0: CLI localized assemblies - [#4896](https://github.com/NuGet/Home/issues/4896)
-
-* Enable TFM support: NetStandard2.0, Tizen - [#4892](https://github.com/NuGet/Home/issues/4892)
-
-* Reduce the number of NuGet.Core and NuGet.Client projects (and thus DLLs) - [#2446](https://github.com/NuGet/Home/issues/2446)
-
-## Links to GitHub issues fixed in RTM
+## Link to GitHub issues fixed in 4.3 RTM
 
 [Issues List](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.3")
