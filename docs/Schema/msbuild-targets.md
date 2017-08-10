@@ -187,6 +187,9 @@ If you want to copy all your content to only a specific root folder(s) (instead 
 
 There is also an MSBuild property `$(IncludeContentInPack)`, which defaults to `true`. If this is set to `false` on any project, then the content from that project are not included in the nuget package.
 
+Other pack specific metadata that you can set on any of the above items also includes ``` <PackageCopyToOutput> ``` and ``` <PackageFlatten> ``` which will set CopyToOutput and Flatten values on the contentFiles entry in the output nuspec.
+
+
 > [!Note]
 > Apart from Content items, the `<Pack>` and `<PackagePath>` metadata can also be set on files with a build action of Compile, EmbeddedResource, ApplicationDefinition, Page, Resource, SplashScreen, DesignData, DesignDataWithDesignTimeCreatableTypes, CodeAnalysisDictionary, AndroidAsset, AndroidResource, BundleResource or None.
 >
