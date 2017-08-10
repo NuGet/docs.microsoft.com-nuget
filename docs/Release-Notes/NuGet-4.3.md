@@ -61,21 +61,17 @@ Fix the casings or relative paths to be the same for all project references.
 
 * msbuild /t:pack fails with The "DevelopmentDependency" parameter is not supported by the "PackTask" task - [#5584](https://github.com/NuGet/Home/issues/5584)
 
-* Restore on .NET Core 2.0 project imports .NET Framework 3.5 package targets - [#5149](https://github.com/NuGet/Home/issues/5149)
-
-* [Test Failure] Some projects can't be created after installing NuGet client 4.3.0-preview1-2462 (Insertable) under dev folder - [#4952](https://github.com/NuGet/Home/issues/4952)
-
-* msbuild /t:restore refuses to restore one particular project from a solution - [#4845](https://github.com/NuGet/Home/issues/4845)
+* dotnet Restore (& therefore msbuild /t:restore) skips projects with an explicit solution project dependency [#4578](https://github.com/NuGet/Home/issues/4578)
 
 * Directory structure for content files flattened if not adding Windows directory separator at the end of PackagePath - [#4795](https://github.com/NuGet/Home/issues/4795)
 
-* Pack targets don't support setting developmentDependency - [#4694](https://github.com/NuGet/Home/issues/4694)
+* netcore projects don't support setting as developmentDependency - [#4694](https://github.com/NuGet/Home/issues/4694)
 
 * RestoreManagerPackage being loaded synchronously which blocked UI thread and deadlocked VS - [#4679](https://github.com/NuGet/Home/issues/4679)
 
 * If your solution has projectreferences that refer to the same project, with different casing, restore may not work. This also affects different relative paths, without a difference in casing - [#4574](https://github.com/NuGet/Home/issues/4574)
 
-* Executables restored from NuGet packages are no longer executable with .NET Core "2.0" - [#4424](https://github.com/NuGet/Home/issues/4424)
+* Executables restored from NuGet packages are no longer executable with .NET Core 2.0 - [#4424](https://github.com/NuGet/Home/issues/4424)
 
 * NuGet.exe swallows details of exception when parsing solution file - [#4411](https://github.com/NuGet/Home/issues/4411)
 
@@ -87,7 +83,7 @@ Fix the casings or relative paths to be the same for all project references.
 
 **DCR:**
 
-* Read DotnetCliToolTargetFramework  from CPS nomation - [#5397](https://github.com/NuGet/Home/issues/5397)
+* Read DotnetCliToolTargetFramework from CPS nomation - [#5397](https://github.com/NuGet/Home/issues/5397)
 
 * TPMinV check should work for pj style UWP - [#4763](https://github.com/NuGet/Home/issues/4763)
 
@@ -105,21 +101,19 @@ Fix the casings or relative paths to be the same for all project references.
 
 **Feature:**
 
-* dotnet.exe - additional nuget functionality - update - [#4965](https://github.com/NuGet/Home/issues/4965)
-
 * NET Core 2.0: VS/Dotnet CLI should start using existing NuGet functionality: FallBack folders - [#4939](https://github.com/NuGet/Home/issues/4939)
-
-* NET Core 2.0: Enable users to ignore specific restore warnings (or elevate to error) - [#4898](https://github.com/NuGet/Home/issues/4898)
-
-* NET Core 2.0: CLI localized assemblies - [#4896](https://github.com/NuGet/Home/issues/4896)
 
 * NET Core 2.0: register all warnings/errors to assets file (including PackageTargetFallback) - [#4895](https://github.com/NuGet/Home/issues/4895)
 
-* Enable TFM support: NetStandard2.0, Tizen, Unity - [#4892](https://github.com/NuGet/Home/issues/4892)
-
-* Reduce the number of NuGet.Core and NuGet.Client projects - [#2446](https://github.com/NuGet/Home/issues/2446)
+* NET Core 2.0: Enable users to ignore specific restore warnings (or elevate to error) - [#4898](https://github.com/NuGet/Home/issues/4898)
 
 * Add ability to mark nuget warnings as errors - [#2395](https://github.com/NuGet/Home/issues/2395)
+
+* NET Core 2.0: CLI localized assemblies - [#4896](https://github.com/NuGet/Home/issues/4896)
+
+* Enable TFM support: NetStandard2.0, Tizen - [#4892](https://github.com/NuGet/Home/issues/4892)
+
+* Reduce the number of NuGet.Core and NuGet.Client projects (and thus DLLs) - [#2446](https://github.com/NuGet/Home/issues/2446)
 
 ## Links to GitHub issues fixed in RTM
 
