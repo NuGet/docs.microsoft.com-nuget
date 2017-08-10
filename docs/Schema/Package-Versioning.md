@@ -72,7 +72,7 @@ That said, package developers generally follow recognized naming conventions:
 - `-rc`: Release candidate, typically a release that's potentially final (stable) unless significant bugs emerge.
 
 > [!Note]
-> NuGet 4.3.0 and above has started supporting [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html). However older NuGet versions do not support it. Hence with older version, you cannot use prerelease numbers with dot notation, as in *1.0.1-build.23*. You can use a form like *1.0.1-build23* but this is always considered a pre-release version. 
+> NuGet 4.3.0+ supports [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html), which supports pre-release numbers with dot notation, as in *1.0.1-build.23*. Dot notation is not supported with NuGet versions before 4.3.0. You can use a form like *1.0.1-build23*. 
 
 When resolving package references and multiple package versions differ only by suffix, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order. For example, the following versions would be chosen in the exact order shown: 
 
