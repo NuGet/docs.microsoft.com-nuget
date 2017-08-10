@@ -50,6 +50,8 @@ The following restore command line techniques will treat disabled packages sourc
 
 ## Issues fixed in NuGet 4.3 RTM timeframe
 
+[NuGet 4.0 RTM Release Notes](../release-notes/nuget-4.0-RTM.md) - Lists all the issues fixed for NuGet 4.0 RTM
+
 **Feature:**
 
 * Improve NuGet Restore Perf - Implement smarter NoOp for command line restores and VS - [#5080](https://github.com/NuGet/Home/issues/5080)
