@@ -47,14 +47,6 @@ The following restore command line techniques will treat disabled packages sourc
 3) For your solution, you could use "Clear" in NuGet.config and then define the sources necessary for that solution.
 
 
-### NuGet restore may fail when you have multiple projects referencing another project in a solution
-
-#### Issue:
-NuGet restore may not work if, in a solution, you have project references to the same project with different casing or with different relative paths. [NuGet#4574](https://github.com/NuGet/Home/issues/4574)
-
-#### Workaround:
-Fix the casings or relative paths to be the same for all project references.
-
 ## Issues fixed in NuGet 4.3 RTM timeframe
 
 **Bug:**
