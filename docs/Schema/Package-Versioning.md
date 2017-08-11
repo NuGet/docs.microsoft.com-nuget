@@ -5,7 +5,7 @@ title: NuGet Package Version Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/20/2017
+ms.date: 8/10/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -72,7 +72,7 @@ That said, package developers generally follow recognized naming conventions:
 - `-rc`: Release candidate, typically a release that's potentially final (stable) unless significant bugs emerge.
 
 > [!Note]
-> At present, NuGet does not support [SemVer-compatible (v2.0.0)](http://semver.org/spec/v2.0.0.html) prerelease numbers with dot notation, as in *1.0.1-build.23*. You can use a form like *1.0.1-build23* but this is always considered a pre-release version.
+> NuGet 4.3.0+ supports [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html), which supports pre-release numbers with dot notation, as in *1.0.1-build.23*. Dot notation is not supported with NuGet versions before 4.3.0. You can use a form like *1.0.1-build23*. 
 
 When resolving package references and multiple package versions differ only by suffix, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order. For example, the following versions would be chosen in the exact order shown: 
 
@@ -89,6 +89,29 @@ When resolving package references and multiple package versions differ only by s
 
 <!-- For compatibility with previous dependency-versions page -->
 <a name="version-ranges"</a>
+
+## Semantic Versioning 2.0.0
+
+With NuGet 4.3.0+ and Visual Studio 2017 version 15.3+, NuGet supports [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html).
+
+Certain semantics of SemVer 2.0.0 that are not supported in older clients. NuGet considers a package version to be SemVer 2.0.0 specific if either of the following statements is true:
+
+- The pre-release label is dot-separated, for example, *1.0.0-alpha.1*
+- The version has build-metadata, for example, *1.0.0+githash*
+
+For nuget.org, a package is defined as a SemVer v2.0.0 package if either of the following statements is true:
+
+- The package's own version is SemVer v2.0.0 compliant but not SemVer v1.0.0 compliant, as defined above.
+- Any of the package's dependency version ranges has a minimum or maximum version that is SemVer v2.0.0 compliant but not SemVer v1.0.0 compliant, defined above; for example, *[1.0.0-alpha.1, )*.
+
+If you upload a SemVer v2.0.0-specific package to nuget.org, the package is invisible to older clients and available to only the following NuGet clients: 
+- NuGet 4.3.0+
+- Visual Studio 2017 version 15.3+ 
+- dotnet.exe version 2.0+
+
+Third-party clients:
+- JetBrains Rider
+- Paket version 5.0+
 
 ## Version ranges and wildcards
 
