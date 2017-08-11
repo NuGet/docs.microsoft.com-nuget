@@ -187,7 +187,7 @@ If you want to copy all your content to only a specific root folder(s) (instead 
 
 There is also an MSBuild property `$(IncludeContentInPack)`, which defaults to `true`. If this is set to `false` on any project, then the content from that project are not included in the nuget package.
 
-Other pack specific metadata that you can set on any of the above items also includes ``` <PackageCopyToOutput> ``` and ``` <PackageFlatten> ``` which will set CopyToOutput and Flatten values on the contentFiles entry in the output nuspec.
+Other pack specific metadata that you can set on any of the above items includes ```<PackageCopyToOutput>``` and ```<PackageFlatten>``` which sets ```CopyToOutput``` and ```Flatten``` values on the ```contentFiles``` entry in the output nuspec.
 
 
 > [!Note]
