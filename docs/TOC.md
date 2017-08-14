@@ -1,3 +1,4 @@
+# [What is NuGet?](What-is-NuGet.md)
 # Quickstart
 ## [Create and Publish a Package](Quickstart/Create-and-Publish-a-Package.md)
 ## [Use a Package](Quickstart/Use-a-Package.md)
@@ -58,6 +59,7 @@
 ## [Package Versioning](reference/package-versioning.md)
 ## [Target Frameworks](Schema/Target-Frameworks.md)
 ## [Analyzers Conventions](Schema/Analyzers-Conventions.md)
+## [Errors and warnings (PREVIEW)](Reference/Errors-and-Warnings.md)
 # API
 ## [NuGet API V3](API/NuGet-API-V3.md)
 ## [NuGet Credential Providers for Visual Studio](API/Nuget-Credential-Providers-for-Visual-Studio.md)

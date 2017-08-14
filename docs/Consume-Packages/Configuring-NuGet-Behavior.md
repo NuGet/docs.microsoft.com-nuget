@@ -5,7 +5,7 @@ title: Configuring the behavior of NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 7/25/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -45,7 +45,7 @@ The behavior of every NuGet command, whether issued from the command line, the P
 
 - Project-specific `NuGet.Config` files located in any folder from the solution folder up to the drive root. These allow control over settings as they apply to a project or a group of projects.
 - A solution-specific `NuGet.Config` file located within a `.nuget` folder in the solution. Settings in this file apply only to solution-wide packages and is supported only in NuGet 3.3 and earlier. It is ignored for NuGet 3.4 and later.
-- The global config file located in `%APPDATA%\NuGet\NuGet.Config`, which is always used unless you specify a different config file using the `-configFile` switch on any NuGet command. For example, `nuget restore -configfile c:\my.config` will use settings from `c:\my.config` for the command and ignores any settings in the global config file.
+- The global config file located in `%APPDATA%\NuGet\NuGet.Config`, which is always used unless you specify a different config file using the `-configFile` switch on any NuGet command. For example, `nuget restore -configfile c:\my.config` uses settings from `c:\my.config` for the command and ignores any settings in the global config file.
 - Additional machine-wide config files:
     - NuGet 2.6 to NuGet 3.5: located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}\]]]NuGet.Config`, where `{IDE}` can be `VisualStudio`, `{Version}` can be the Visual Studio version such as `14.0`, and `{SKU}` is either `Community`, `Pro`, or `Enterprise`. These variants allow you to create configurations that are specific to different versions and editions of Visual Studio if needs be.
     - NuGet 4.0+: located under `%ProgramFiles(x86)%\NuGet\Config` rather than `%ProgramData%`.
@@ -74,7 +74,7 @@ nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\Con
 nuget config -set repositoryPath=c:\packages -configfile %ProgramData%\NuGet\NuGetDefaults.Config
 ```
 
-Without the `-configFile` switch, NuGet will make the change in the global config file.
+Without the `-configFile` switch, NuGet makes the change in the global config file.
 
 > [!Note]
 > In NuGet 3.4 and later you can use environment variables in any value, as in `repositoryPath=%PACKAGEHOME%`.
@@ -113,7 +113,7 @@ When `nuget.exe` is run from the command line or run implicitly within Visual St
 
 As settings are found in these files, they are processed as follows:
 
-1. For single-item elements, the last value found for any given key will be used. This means that those settings that are "closest" to where NuGet was invoked will be applied.
+1. For single-item elements, the last value found for any given key is used. This means that those settings that are "closest" to where NuGet was invoked is applied.
 
 1. For collection elements (such as `<packageSources>`), values from all configuration files are added to the collection.
 
@@ -168,7 +168,7 @@ Let's say you have the following folder structure:
 
 You then have four `NuGet.Config` files in the following locations with the given content:
 
-A. Global configuration file, `%APPDATA%\NuGet\Nuget.Config`:
+File A. Global configuration file, `%APPDATA%\NuGet\Nuget.Config`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -179,7 +179,7 @@ A. Global configuration file, `%APPDATA%\NuGet\Nuget.Config`:
 </configuration>
 ```
 
-B. `d:\NuGet.Config`:
+File B. `d:\NuGet.Config`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -193,7 +193,7 @@ B. `d:\NuGet.Config`:
 </configuration>
 ```
 
-C. `d:\Project1\NuGet.Config`:
+File C. `d:\Project1\NuGet.Config`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -209,7 +209,7 @@ C. `d:\Project1\NuGet.Config`:
 </configuration>
 ```
 
-D. `d:\Project2\NuGet.Config`:
+File D. `d:\Project2\NuGet.Config`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -221,30 +221,32 @@ D. `d:\Project2\NuGet.Config`:
 </configuration>
 ```
 
-Here's how NuGet will load and apply the settings, depending on where it's invoked:
+Here's how NuGet loads and apply the settings, depending on where it's invoked:
 
 - **Invoked from c:\users**: Only the default repository listed in the global configuration file (A) is used, because that's the only file found on the `c:` drive.
 
-- **Invoked from d:\ or d:\tmp**: (A) is loaded first, then NuGet goes to the root of `d:` and finds (B). NuGet also looks for a configuration file in `d:\tmp` but does not find one. As a result, the default repository on nuget.org is used, package restore is enabled, and packages get expanded in `d:\tmp`.
+- **Invoked from d:\ or d:\tmp**: File (A) is loaded first, then NuGet goes to the root of `d:` and finds file (B). NuGet also looks for a configuration file in `d:\tmp` but does not find one. As a result, the default repository on nuget.org is used, package restore is enabled, and packages get expanded in `d:\tmp`.
 
-- **Invoked from d:\Project1 or d:\Project1\Source**: (A) is loaded first, then NuGet loads (B) from the `d:` root, followed by (C). Settings in (C) override those in (B) and (A), so the `repositoryPath` where packages get installed will be `d:\Project1\External\Packages` instead of `d:\tmp`. Also, because (C) clears `<packageSources>`, nuget.org will no longer be available a source leaving only `https://MyPrivateRepo/ES/nuget`.
+- **Invoked from d:\Project1 or d:\Project1\Source**: File (A) is loaded first, then NuGet loads file (B) from the `d:` root, followed by file (C). Settings in (C) override those in (B) and (A), so the `repositoryPath` where packages get installed is `d:\Project1\External\Packages` instead of `d:\tmp`. Also, because (C) clears `<packageSources>`, nuget.org is no longer available a source leaving only `https://MyPrivateRepo/ES/nuget`.
 
-- **Invoked from d:\Project2 or d:\Project2\Source**: (A) is loaded first followed by (B) and (D). Because `packageSources` is not cleared, both `nuget.org` and `https://MyPrivateRepo/DQ/nuget` are available as sources. Packages get expanded in `d:\tmp` as specified in (B).
+- **Invoked from d:\Project2 or d:\Project2\Source**: File (A) is loaded first followed by file (B) and file (D). Because `packageSources` is not cleared, both `nuget.org` and `https://MyPrivateRepo/DQ/nuget` are available as sources. Packages get expanded in `d:\tmp` as specified in (B).
 
 ## NuGet defaults file
 
-NuGet 3.3 and earlier uses a hardcoded default package source, nuget.org, that the user could not delete. However, when using NuGet with internal package sources, it's often desirable to make sure that developers and build servers use packages from those sources instead of nuget.org. With NuGet 2.7 to 3.5, you can use the `%ProgramData%\NuGet\NuGetDefaults.Config` file (or `%ProgramFiles(x86)%\NuGet\NuGetDefaults.Config` with NuGet 4.0+) to control certain machine-wide defaults described below. This provides administrators a convenient way to deploy (using Group Policy, for example) consistent `NuGetDefaults.Config` files to developer and build machines, thus ensuring correct use of package sources.
+NuGet 3.3 and earlier is hardcoded to use nuget.org as the default package source, which cannot be changed. However, when using NuGet with internal package sources, it's often desirable to make sure that developers and build servers use packages from those sources instead of nuget.org. With NuGet 2.7 to 3.5, you can use the `%ProgramData%\NuGet\NuGetDefaults.Config` file (or `%ProgramFiles(x86)%\NuGet\NuGetDefaults.Config` with NuGet 4.0+) to control certain machine-wide defaults described below. This provides administrators a convenient way (using Group Policy, for example) to deploy consistent `NuGetDefaults.Config` files to developer and build machines, thus ensuring correct use of package sources.
 
 Note that NuGet 3.4 and later does not use a hardcoded default source. When nuget.exe is run for the first time, `NuGet.Config` is generated and nuget.org is added as the default package source in the config file. In the absence of the `NuGet.Config` file, the default package source is undefined.
 
 The defaults file works with the following settings:
 
-- `packageSources`: this collection has the same meaning as `packageSources` in regular config files and specifies the default sources in their preferred order. If this setting exists in `NuGetDefaults.Config`, then NuGet will not use nuget.org as a default package source. An administrator can thus make sure that everyone using this file will be working with the same sources and avoids using nuget.org if desired.
+- `packageSources`: this collection has the same meaning as `packageSources` in regular config files and specifies the default sources in their preferred order. If this setting exists in `NuGetDefaults.Config`, then NuGet doesn't use nuget.org as a default package source. An administrator can thus make sure that everyone using this file is working with the same sources and avoids using nuget.org if desired.
+ 
 - `disabledPackageSources`: this collection also has the same meaning as in `NuGet.Config` files, where each affected source is listed by its name and a true/false value indicating whether it's disabled. This allows the source name and URL to remain in `packageSources` without it being turned on by default. Individual developers can then re-enable the source by setting the source's value to false in other `NuGet.Config` files without having to find the correct URL again. This is also useful to supply developers with a full list of internal source URLs for an organization while enabling only an individual team's source by default.
+
 - `defaultPushSource`: when publishing a package, nuget.org is used as the destination or "push source" unless another is specified, which risks developers accidentally pushing internal packages to a public site. By changing the default push source, administrators can ensure that packages stay internal unless published to nuget.org explicitly.
 
 > [!Note]
-> The `NuGetDefaults.Config` file will never cause a package source to be removed from a developer's NuGet configuration. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a `NuGetDefaults.Config` file.
+> The `NuGetDefaults.Config` file never causes a package source to be removed from a developer's NuGet configuration. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a `NuGetDefaults.Config` file.
 >
 > Furthermore, neither `NuGetDefaults.Config` or any other mechanism in NuGet can prevent access to package sources like nuget.org. If an organization wishes to block such access, it much use other means such as firewalls to do so.
 

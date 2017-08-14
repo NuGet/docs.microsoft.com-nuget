@@ -59,18 +59,18 @@ First, package references are maintained in one of the following package managem
 | `project.json` | 3.x+ | Used only by default with UWP projects, but projects can be converted from `packages.config`. `project.json` lists only top-level dependencies. References, Targets, and Props are added dynamically to the project during build, resulting in better performance compared with `packages.config`. (See [project.json schema](../schema/project-json.md).)|
 | PackageReference | 4.x+ | Lists dependencies directly in the project file in the `<PackageReference>` node, alongside `<Reference>` and `<ProjectReference>`. Works similarly to `project.json`; see [Package references in project files](../Consume-Packages/Package-References-in-Project-Files.md). |
 
-Using these reference lists, package restore then happens in different ways both from the command line and inside Visual Studio.
+Second, you start a restore using the reference list in a variety of ways:
 
-From the command line or Package Manager Console:
+From the command line or [Package Manager Console](../tools/Package-Manager-Console.md):
 
 | Command | Applicable scenarios |
 | --- | --- | 
 | `nuget restore` | All versions of NuGet and all reference types. See [Command-line restore](#command-line-restore) below. | 
 | `dotnet restore` | Same as `nuget restore` for .NET Core projects. See [dotnet restore](https://docs.microsoft.com/dotnet/articles/core/tools/dotnet-restore). |
 | `msbuild /t:restore` | Nuget 4.x+ and MSBuild 15.1+ with [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) only. `nuget restore` and `dotnet restore` both use this command for applicable projects. See [NuGet pack and restore as MSBuild targets- restore target](../schema/msbuild-targets.md#restore-target).|
-| `Update-Package -reinstall -ProjectName <project>` | Restores a project's packages from the Package Manager Console. See [Udpate-Package reference](../tools/ps-ref-update-package.md). | 
+| `Update-Package -reinstall -ProjectName <project>` | Restores a project's packages from the Package Manager Console. See [Update-Package reference](../tools/ps-ref-update-package.md). | 
 
-Inside Visual Studio, there are four ways that package restore can happen:
+Visual Studio itself also restores packages at different times:
 
 | Type | When restore happens |
 | --- | --- |
@@ -83,7 +83,7 @@ See [Automatic restore in Visual Studio](#automatic-restore-in-visual-studio) be
 
 ## Enabling and disabling package restore
 
-Automatic restore and command-line restore is enabled by default with NuGet 2.7 and later. MSBuild-integrated restore and command-line restore is **not** enabled by default for NuGet 2.6 and earlier and must be enabled manually.
+Automatic restore and command-line restore is enabled by default with NuGet 2.7+. MSBuild-integrated restore and command-line restore is **not** enabled by default for NuGet 2.6 and earlier and must be enabled manually.
 
 Package restore is primarily enabled through **Tools > Options > [NuGet] Package Manager > General** in Visual Studio:
 
@@ -240,7 +240,7 @@ To avoid all these issues, it's recommended to migrate any project using MSBuild
 The process is as follows:
 
 1. Close Visual Studio to avoid file potential file locks and conflicts.
-1. If using TFS:
+1. If using Team Foundation Server (TFS):
     1. Remove `nuget.exe` and `NuGet.targets` from the solution's `.nuget` folder and remove those files from the solution workspace.
     1. Retain `Nuget.Config` with the `disableSourceControlIntegration` setting as explained in [Omitting packages with Team Foundation Version Control](../consume-packages/packages-and-source-control.md#omitting-packages-with-team-foundation-version-control).
 1. If not using TFS:
