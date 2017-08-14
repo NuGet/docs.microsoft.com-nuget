@@ -123,7 +123,7 @@ Here's typical (but fictitious) `.nuspec` file, with annotation comments:
 </package>
 ```
 
-For details on declaring dependencies and specifying version numbers, see [Package versioning](../schema/package-versioning.md).
+For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md).
 
 Because the manifest is always included in a package, you can find any number of additional examples by examining existing packages. A good source is the global package cache on your machine, the location of which is returned by the following command:
 
@@ -226,7 +226,7 @@ For the `<id>` value, the following best practices apply:
 For the `<version>` value:
 
 - In general, set the version of the package to match the library, though this is not strictly required. This is a simple matter when you limit a package to a single assembly, as described earlier in [Deciding which assemblies to package](#deciding-which-assemblies-to-package). Overall, remember that NuGet itself deals with package versions when resolving dependencies, not assembly versions.
-- When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Package versioning](../schema/package-versioning.md).
+- When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Package versioning](../reference/package-versioning.md).
 
 > The following series of brief blog posts are also helpful to understand versioning:
 >
@@ -400,7 +400,7 @@ Once you've created a package, which is a `.nupkg` file, you can publish it to t
 
 You might also want to extend the capabilities of your package or otherwise support other scenarios as described in the following topics:
 
-- [Package versioning](../schema/package-versioning.md)
+- [Package versioning](../reference/package-versioning.md)
 - [Supporting multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Transformations of source and configuration files](../create-packages/source-and-config-file-transformations.md)
 - [Localization](../create-packages/creating-localized-packages.md)

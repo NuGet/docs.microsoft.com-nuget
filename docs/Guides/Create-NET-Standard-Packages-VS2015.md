@@ -168,7 +168,7 @@ If you have any dependencies on other NuGet packages, list those in the `<depend
 </dependencies>
 ```
 
-The syntax of the *version* attribute here indicates that version 8.0.3 or above is acceptable. To specify different version ranges, refer to [Package versioning](../schema/package-versioning.md).
+The syntax of the *version* attribute here indicates that version 8.0.3 or above is acceptable. To specify different version ranges, refer to [Package versioning](../reference/package-versioning.md).
 
 ### Supporting multiple target frameworks
 
@@ -334,7 +334,7 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 
 - [Nuspec Reference](../schema/nuspec.md)
 - [Symbol packages](../create-packages/symbol-packages.md)
-- [Package versioning](../schema/package-versioning.md)
+- [Package versioning](../reference/package-versioning.md)
 - [Supporting Multiple .NET Framework Versions](../create-packages/supporting-multiple-target-frameworks.md)
 - [Include MSBuild props and targets in a package](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
 - [Creating Localized Packages](../create-packages/creating-localized-packages.md)

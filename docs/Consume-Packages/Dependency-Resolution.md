@@ -5,7 +5,7 @@ title: NuGet Package Dependency Resolution | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/20/2017
+ms.date: 8/14/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -38,7 +38,7 @@ When multiple packages have the same dependency, then the same package ID can ap
 
 In this topic:
 - [Dependency resolution with PackageReference and project.json](#dependency-resolution-with-packagereference-and-projectjson)
-- [Dependency resolution with packages.confid](#dependency-resolution-with-packagesconfig)
+- [Dependency resolution with packages.config](#dependency-resolution-with-packagesconfig)
 - [Excluding references](#excluding-references), which is necessary when there's a conflict between a dependency specified in one project and an assembly that's produced by another.
 - [Dependency updates during package install](#dependency-updates-during-package-install)
 - [Resolving incompatible package errors](#resolving-incompatible-package-errors)
@@ -84,7 +84,7 @@ When using a wildcard, NuGet resolves the highest version of a package that matc
 ![Choosing version 6.0.1 when a floating version 6.0.* is requested](media/projectJson-dependency-4.png)
 
 > [!Note]
-> For information on the behavior of wildcards and pre-release versions, see [Package versioning](../Schema/Package-Versioning.md#version-ranges-and-wildcards).
+> For information on the behavior of wildcards and pre-release versions, see [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards).
 
 
 <a name="nearest-wins"></a>

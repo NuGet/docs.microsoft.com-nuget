@@ -62,7 +62,7 @@ The convention for specifying the version of a package is the same as when using
 </ItemGroup>
 ```
 
-In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../schema/package-versioning.md#version-ranges-and-wildcards).
+In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards).
 
 ## Floating Versions
 

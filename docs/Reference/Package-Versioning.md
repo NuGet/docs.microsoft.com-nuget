@@ -5,7 +5,7 @@ title: NuGet Package Version Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/10/2017
+ms.date: 8/14/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:

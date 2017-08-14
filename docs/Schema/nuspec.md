@@ -79,7 +79,7 @@ These elements must appear within a `<metadata>` element.
 Element | Description
 --- | ---
 **id** | The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package will reside in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number) for guidance.
-**version** | The version of the package, following the *major.minor.patch* pattern. Version numbers may include a pre-release suffix as described in [Package versioning](../schema/package-versioning.md#pre-release-versions)
+**version** | The version of the package, following the *major.minor.patch* pattern. Version numbers may include a pre-release suffix as described in [Package versioning](../reference/package-versioning.md#pre-release-versions)
 **description** | A long description of the package for UI display.
 **authors** | A comma-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors.
 
@@ -175,7 +175,7 @@ The `<dependencies>` element within `<metadata>` contains any number of `<depend
 Attribute | Description
 --- | ---
 `id` | (Required) The package ID of the dependency.
-`version` | (Required) The range of versions acceptable as a dependency. See [Package versioning](../schema/package-versioning.md#version-ranges-and-wildcards) for exact syntax.
+`version` | (Required) The range of versions acceptable as a dependency. See [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards) for exact syntax.
 
 For example, the following lines indicate dependencies on `PackageA` version 1.1.0 or higher, and `PackageB` version 1.x.
 

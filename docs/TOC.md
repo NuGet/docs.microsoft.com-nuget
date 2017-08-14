@@ -49,13 +49,13 @@
 ### [Uninstall-Package](Tools/ps-ref-uninstall-package.md)
 ### [Update-Package](Tools/ps-ref-update-package.md)
 ## [dotnet Commands](Tools/dotnet-Commands.md)
-# Schema
+# Reference
 ## [.nuspec](Schema/nuspec.md)
 ## [packages.config](Schema/packages-config.md)
 ## [project.json](Schema/project-json.md)
 ## [MSBuild Targets](Schema/msbuild-targets.md)
 ## [Nuget.Config file](Schema/nuget-config-file.md)
-## [Package Versioning](Schema/Package-Versioning.md)
+## [Package Versioning](reference/package-versioning.md)
 ## [Target Frameworks](Schema/Target-Frameworks.md)
 ## [Analyzers Conventions](Schema/Analyzers-Conventions.md)
 # API
