@@ -6,7 +6,7 @@ title: NuGet Release Notes | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 8/14/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
