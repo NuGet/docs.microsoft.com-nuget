@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet Restore Errors and Warnings Reference (PREVIEW) | Microsoft Docs
+title: NuGet Restore Errors and Warnings Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
