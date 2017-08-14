@@ -38,7 +38,7 @@ ms.reviewer:
                     <a href="#start-all"></a>
                     <ul id="start-all" class="cardsC">
                         <li>
-                            <a href="what-is-nuget">
+                            <a href="what-is-nuget.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -57,7 +57,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="quickstart/use-a-package">
+                            <a href="quickstart/use-a-package.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -76,7 +76,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="guides/install-nuget">
+                            <a href="guides/install-nuget.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -95,7 +95,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="create-packages/overview-and-workflow">
+                            <a href="create-packages/overview-and-workflow.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -114,7 +114,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="consume-packages/overview-and-workflow">
+                            <a href="consume-packages/overview-and-workflow.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -133,7 +133,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="hosting-packages/overview">
+                            <a href="hosting-packages/overview.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -162,7 +162,7 @@ ms.reviewer:
                     <a href="#tools-all"></a>
                     <ul id="tools-all" class="cardsC">
                         <li>
-                            <a href="tools/nuget-exe-cli-reference">
+                            <a href="tools/nuget-exe-cli-reference.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -181,7 +181,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="schema/nuspec">
+                            <a href="schema/nuspec.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -200,7 +200,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="api/nuget-api-v3">
+                            <a href="api/nuget-api-v3.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -219,7 +219,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="visual-studio-extensibility/nuget-api-in-visual-studio">
+                            <a href="visual-studio-extensibility/nuget-api-in-visual-studio.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -238,7 +238,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="policies/nuget-faq">
+                            <a href="policies/nuget-faq.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
