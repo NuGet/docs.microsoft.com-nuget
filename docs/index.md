@@ -16,7 +16,7 @@ keywords:
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/10/2017 
+ms.date: 8/15/2017 
 ms.topic: hub-page
 ms.prod: nuget
 #ms.service:
@@ -38,13 +38,13 @@ ms.reviewer:
                     <a href="#start-all"></a>
                     <ul id="start-all" class="cardsC">
                         <li>
-                            <a href="/nuget/what-is-nuget">
+                            <a href="what-is-nuget">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="/media/hubs/nuget/nuget-get-started-what-is-nuget.svg" alt="" />
+                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -57,13 +57,13 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="/nuget/quickstart/use-a-package">
+                            <a href="quickstart/use-a-package">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="/media/hubs/nuget/nuget-get-started-quickstarts.svg" alt="" />
+                                                <img src="media/hub/nuget-get-started-quickstarts.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -76,13 +76,13 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="/nuget/guides/install-nuget">
+                            <a href="guides/install-nuget">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="/media/hubs/nuget/nuget-get-started-guides.svg" alt="" />
+                                                <img src="media/hub/nuget-get-started-guides.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -95,13 +95,13 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="/nuget/create-packages/overview-and-workflow">
+                            <a href="create-packages/overview-and-workflow">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="/media/hubs/nuget/nuget-get-started-create-packages.svg" alt="" />
+                                                <img src="media/hub/nuget-get-started-create-packages.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -114,13 +114,13 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="/nuget/consume-packages/overview-and-workflow">
+                            <a href="consume-packages/overview-and-workflow">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="/media/hubs/nuget/nuget-get-started-consume-packages.svg" alt="" />
+                                                <img src="media/hub/nuget-get-started-consume-packages.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -133,13 +133,13 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="/nuget/hosting-packages/overview">
+                            <a href="hosting-packages/overview">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="/media/hubs/nuget/nuget-get-started-host-packages.svg" alt="" />
+                                                <img src="media/hub/nuget-get-started-host-packages.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -162,13 +162,13 @@ ms.reviewer:
                     <a href="#tools-all"></a>
                     <ul id="tools-all" class="cardsC">
                         <li>
-                            <a href="/nuget/tools/nuget-exe-cli-reference">
+                            <a href="tools/nuget-exe-cli-reference">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="/media/hubs/nuget/nuget-tools-tools.svg" alt="" />
+                                                <img src="media/hub/nuget-tools-tools.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -181,13 +181,13 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="/nuget/schema/nuspec">
+                            <a href="schema/nuspec">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="/media/hubs/nuget/nuget-tools-reference.svg" alt="" />
+                                                <img src="media/hub/nuget-tools-reference.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -200,13 +200,13 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="/nuget/api/nuget-api-v3">
+                            <a href="api/nuget-api-v3">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="/media/hubs/nuget/nuget-tools-api.svg" alt="" />
+                                                <img src="media/hub/nuget-tools-api.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -219,13 +219,13 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="/nuget/visual-studio-extensibility/nuget-api-in-visual-studio">
+                            <a href="visual-studio-extensibility/nuget-api-in-visual-studio">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="/media/hubs/nuget/nuget-tools-vs-extensibility.svg" alt="" />
+                                                <img src="media/hub/nuget-tools-vs-extensibility.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -238,13 +238,13 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="/nuget/policies/nuget-faq">
+                            <a href="policies/nuget-faq">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="/media/hubs/nuget/nuget-tools-policies.svg" alt="" />
+                                                <img src="media/hub/nuget-tools-policies.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
