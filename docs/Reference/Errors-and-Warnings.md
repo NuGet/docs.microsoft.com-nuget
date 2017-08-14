@@ -283,7 +283,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 
 | | |
 | --- | --- |
-| **Issue** | *PackageTargetFallback* was used to select assets from a package. This is a warning to let the user know that the assets may not be 100% compatible. |
+| **Issue** | *PackageTargetFallback/AssetTargetFallback* was used to select assets from a package. This is a warning to let the user know that the assets may not be 100% compatible. |
 | **Common causes** | The package doesn't support the project framework. |
 | **Example message** | *Package 'NuGet.Versioning' was restored using 'portable-net45+win8' instead the project target framework 'netstandard1.5'. This package may not be fully compatible with your project.* |
 
