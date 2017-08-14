@@ -44,8 +44,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <!--<img src="./media/hub/nuget-get-started-what-is-nuget.svg" alt="" /> -->
-                                                <img src="./media/nuget-roles.svg" alt="" />
+                                                <img src="/media/hubs/nuget/nuget-get-started-what-is-nuget.svg" alt="" />        
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -64,7 +63,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-quickstarts.svg" alt="" />
+                                                <img src="/media/hubs/nuget/nuget-get-started-quickstarts.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -83,7 +82,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-guides.svg" alt="" />
+                                                <img src="/media/hubs/nuget/nuget-get-started-guides.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -102,7 +101,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-create-packages.svg" alt="" />
+                                                <img src="/media/hubs/nuget/nuget-get-started-create-packages.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -121,7 +120,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-consume-packages.svg" alt="" />
+                                                <img src="/media/hubs/nuget/nuget-get-started-consume-packages.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -140,7 +139,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-host-packages.svg" alt="" />
+                                                <img src="/media/hubs/nuget/nuget-get-started-host-packages.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -169,7 +168,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-tools.svg" alt="" />
+                                                <img src="/media/hubs/nuget/nuget-tools-tools.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -188,7 +187,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-reference.svg" alt="" />
+                                                <img src="/media/hubs/nuget/nuget-tools-reference.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -207,7 +206,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-api.svg" alt="" />
+                                                <img src="/media/hubs/nuget/nuget-tools-api.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -226,7 +225,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-vs-extensibility.svg" alt="" />
+                                                <img src="/media/hubs/nuget/nuget-tools-vs-extensibility.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -245,7 +244,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-policies.svg" alt="" />
+                                                <img src="/media/hubs/nuget/nuget-tools-policies.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
