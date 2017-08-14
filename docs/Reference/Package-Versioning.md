@@ -107,7 +107,7 @@ For nuget.org, a package is defined as a SemVer v2.0.0 package if either of the 
 If you upload a SemVer v2.0.0-specific package to nuget.org, the package is invisible to older clients and available to only the following NuGet clients: 
 - NuGet 4.3.0+
 - Visual Studio 2017 version 15.3+ 
-- dotnet.exe version 2.0+
+- dotnet.exe (.NET SDK 2.0.0+)
 
 Third-party clients:
 - JetBrains Rider
