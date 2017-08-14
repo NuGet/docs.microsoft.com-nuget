@@ -30,7 +30,7 @@ ms.reviewer:
 
 # NuGet CLI reference
 
-The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages. Refer to the [Install Guide](../guides/install-nuget.md) for installation instructions.
+The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages. Refer to the [Install Guide](../guides/install-nuget.md) for installation instructions, which amounts to downloading the `nuget.exe` directly to a folder of your choice. On Windows, you typically add that folder to your PATH environment variable so you can use it from anywhere.
 
 Available commands are listed below, and each indicate whether they're applicable to package creation, package consumption, and/or publishing a package to a host. Also see the section on [Environment variables](#environment-variables) for how `nuget.exe` uses such variables.
 

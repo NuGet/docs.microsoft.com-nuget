@@ -68,12 +68,11 @@ The NuGet command-line interface provides access to all NuGet capabilities, and 
 
 On Windows, install the NuGet CLI using any of the following methods:
 
-1. **nuget.org**: Various versions of `nuget.exe` are available on [nuget.org/downloads](https://nuget.org/downloads). Each download link points directly to an `.exe` file, so be sure to right-click and save the file to your computer rather than running it from the browser. If desired, add the save location to your PATH environment variable so you can NuGet from anywhere.
+1. **nuget.org**: Various versions of `nuget.exe` are available on [nuget.org/downloads](https://nuget.org/downloads). Each download link points directly to an `.exe` file, so be sure to right-click and save the file to your computer rather than running it from the browser. If desired, add the save location to your PATH environment variable so you can use NuGet from anywhere.
 
-> [!Note]
-> With NuGet 1.4+, you can use `nuget update -self` to update your existing nuget.exe to the latest version.
-
-
+    > [!Note]
+    > With NuGet 1.4+, you can use `nuget update -self` to update your existing nuget.exe to the latest version.
+    
 1. **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client. 
 
     ```
@@ -82,9 +81,9 @@ On Windows, install the NuGet CLI using any of the following methods:
     
 1. **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.
 
-> [!Note]
-> **For NuGet 2.x users**: Because of breaking changes introduced in NuGet 3.2, [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe) points to the latest stable NuGet 2.x release to prevent continuous integration systems from potentially breaking.
-
+    > [!Note]
+    > **For NuGet 2.x users**: Because of breaking changes introduced in NuGet 3.2, [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe) points to the latest stable NuGet 2.x release to prevent continuous integration systems from potentially breaking.
+    
 <a name="compatibility-with-mono"></a>
 
 ## Mac OSX and Linux
