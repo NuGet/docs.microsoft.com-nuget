@@ -31,7 +31,7 @@
 ## [Configuring NuGet Behavior](Consume-Packages/Configuring-NuGet-Behavior.md)
 ## [Dependency Resolution](Consume-Packages/Dependency-Resolution.md)
 ## [Package References in Project Files](Consume-Packages/Package-References-in-Project-Files.md)
-#Hosting Packages
+# Hosting Packages
 ## [Overview](Hosting-Packages/Overview.md)
 ## [Local Feeds](Hosting-Packages/Local-Feeds.md)
 ## [NuGet.Server](Hosting-Packages/NuGet-Server.md)
