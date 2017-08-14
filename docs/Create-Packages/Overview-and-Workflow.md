@@ -52,7 +52,7 @@ From there, you can consider a number of other options for your package:
 -  [Pre-release Packages](../create-packages/prerelease-packages.md) demonstrates how to release alpha, beta, and rc packages to those customers who are interested.
 -  [Source and Config File Transformations](../create-packages/source-and-config-file-transformations.md) describes how you can do both one-way token replacements in files that are added to a project, and modify `web.config` and `app.config` with settings that are also backed out when the package is uninstalled.
 -  [Symbol Packages](../create-packages/symbol-packages.md) offers guidance for supplying symbols for your library that allow consumers to step into your code while debugging.
--  [Dependency Versions](../create-packages/dependency-versions.md) discusses how to identify the exact versions that you allow for your dependencies (other packages that you consume from your package).
+-  [Package versioning](../reference/package-versioning.md) discusses how to identify the exact versions that you allow for your dependencies (other packages that you consume from your package).
 -  [Native Packages](../create-packages/native-packages.md) describes the process for creating a package for C++ consumers.
 
 When you're then ready to publish a package to nuget.org, follow the simple process in [Publish a package](../create-packages/publish-a-package.md).

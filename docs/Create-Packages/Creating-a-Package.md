@@ -79,7 +79,7 @@ Required properties:
 - A long description of the package.
 
 Common optional properties:
-- Release note
+- Release notes
 - Copyright information
 - A short description for the [Package Manager UI in Visual Studio](../Tools/Package-Manager-UI.md)
 - A locale ID
@@ -137,14 +137,14 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
     </dependencies>
     </metadata>
 
-    <!-- A readme.txt is be displayed when the package is installed -->
+    <!-- A readme.txt to display when the package is installed -->
     <files>
-    <file src="readme.txt" target="" />
+        <file src="readme.txt" target="" />
     </files>
 </package>
 ```
 
-For details on declaring dependencies and specifying version numbers, see [Dependency versions](../create-packages/dependency-versions.md).
+For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md).
 
 Because the manifest is included in the package created from it, you can find any number of additional examples by examining existing packages. A good source is the global package cache on your machine, the location of which is returned by the following command:
 
@@ -159,7 +159,7 @@ Go into any *package\version* folder, copy the `.nupkg` file to a `.zip` file, t
 
 ## Creating the .nuspec file
 
-Creating a complete manifest typically begins with a basic `.nuspec` file, which you then edit by hand into its final form so that it describes the package contains the content you want.
+Creating a complete manifest typically begins with a basic `.nuspec` file, which you then edit by hand into its final form so that it describes the exact content you want in the final package.
 
 The best way to create an initial `.nuspec` file is by using the [nuget spec](../Tools/nuget-exe-CLI-Reference.md#spec) command to create a template manifest. This ensures that you start with the proper file structure. You can also start with a manifest from another package and modify it to suit your needs.
 
@@ -178,6 +178,10 @@ nuget spec [<package-name>]
 
 If you omit `<package-name>`, the resulting file is `Package.nuspec`. If you provide a name such as `Contoso.Utility.UsefulStuff`, the file is `Contoso.Utility.UsefulStuff.nuspec`.
 
+The resulting `.nuspec` contains placeholders for values like the `projectUrl`. Be sure to edit the file before using it to creating the package.
+
+You can also use `nuget spec` with an existing assembly, a Visual Studio project, or a convention-based working directory as described in the following sections. Note that in all cases, the resulting `.nuspec` file contains placeholders that you'll need to edit before creating the package itself.
+
 ### From an assembly DLL
 
 If you have an assembly DLL, generate a `.nuspec` file from the metadata in the assembly using the following command:
@@ -190,7 +194,7 @@ Using this form of the command replaces a few placeholders in the manifest with 
 
 ### From a Visual Studio project
 
-Using `nuget spec` in a folder containing a project file creates a `.nuspec` using that project information:
+Creating a `.nuspec` from a `.csproj` or `.vbproj` file is convenient because other packages that have been installed into those project are automatically referenced as dependencies. Simply use the following command in the same folder as the project file:
 
 ```
 # Use in a folder containing a project file <project-name>.csproj or <project-name>.vbproj
@@ -268,7 +272,7 @@ The package identifier (`<id>` element) and the version number (`<version>` elem
 **Best practices for the package version:**
 
 - In general, set the version of the package to match the library, though this is not strictly required. This is a simple matter when you limit a package to a single assembly, as described earlier in [Deciding which assemblies to package](#deciding-which-assemblies-to-package). Overall, remember that NuGet itself deals with package versions when resolving dependencies, not assembly versions.
-- When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Handling Dependencies](../create-packages/dependency-versions.md).
+- When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Package versioning](../reference/package-versioning.md).
 
 > The following series of brief blog posts are also helpful to understand versioning:
 >
@@ -423,7 +427,7 @@ The following options are a few that are common with Visual Studio projects:
     nuget pack MyProject.csproj -IncludeReferencedProjects
     ```
 
-    This inclusion process is recursive, so if `MyProject.csproj` references projects B and C, and those projects reference D, E, and F, then files from B, C, D, E, and F are be included in the package.
+    This inclusion process is recursive, so if `MyProject.csproj` references projects B and C, and those projects reference D, E, and F, then files from B, C, D, E, and F are included in the package.
 
     If a referenced project includes a `.nuspec` file of its own, then NuGet adds that referenced project as a dependency instead.  You need to package and publish that project separately.
 
@@ -445,7 +449,7 @@ Once you've created a package, which is a `.nupkg` file, you can publish it to t
 
 You might also want to extend the capabilities of your package or otherwise support other scenarios as described in the following topics:
 
-- [Handling dependencies](../create-packages/dependency-versions.md)
+- [Package versioning](../reference/package-versioning.md)
 - [Supporting multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Transformations of source and configuration files](../create-packages/source-and-config-file-transformations.md)
 - [Localization](../create-packages/creating-localized-packages.md)

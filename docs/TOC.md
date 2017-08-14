@@ -12,7 +12,6 @@
 # Create Packages
 ## [Overview and Workflow](Create-Packages/Overview-and-Workflow.md)
 ## [Creating a Package](Create-Packages/Creating-a-Package.md)
-## [Dependency Versions](Create-Packages/Dependency-Versions.md)
 ## [Supporting Multiple Target Frameworks](Create-Packages/Supporting-Multiple-Target-Frameworks.md)
 ## [Source and Config File Transformations](Create-Packages/Source-and-Config-File-Transformations.md)
 ## [Creating Localized Packages](Create-Packages/Creating-Localized-Packages.md)
@@ -55,11 +54,12 @@
 ## [.nuspec](Schema/nuspec.md)
 ## [packages.config](Schema/packages-config.md)
 ## [project.json](Schema/project-json.md)
-## [MSBuild Targets](Schema/msbuild-targets.md)
+## [Package Versioning](reference/package-versioning.md)
 ## [Nuget.Config file](Schema/nuget-config-file.md)
+## [MSBuild Targets](Schema/msbuild-targets.md)
 ## [Target Frameworks](Schema/Target-Frameworks.md)
 ## [Analyzers Conventions](Schema/Analyzers-Conventions.md)
-## [Errors and warnings (PREVIEW)](Reference/Errors-and-Warnings.md)
+## [Errors and warnings](Reference/Errors-and-Warnings.md)
 # API
 ## [NuGet API V3](API/NuGet-API-V3.md)
 ## [NuGet Credential Providers for Visual Studio](API/Nuget-Credential-Providers-for-Visual-Studio.md)
@@ -77,6 +77,7 @@
 # [GitHub Repositories](https://github.com/NuGet)
 # Release Notes
 ## [Known Issues](Release-Notes/Known-Issues.md)
+## [NuGet 4.3 RTM](Release-Notes/NuGet-4.3-RTM.md)
 ## [NuGet 4.0 RTM](Release-Notes/NuGet-4.0-RTM.md)
 ## [NuGet 4.0 RC](Release-Notes/NuGet-4.0-RC.md)
 ## [NuGet 3.5 RTM](Release-Notes/NuGet-3.5-RTM.md)

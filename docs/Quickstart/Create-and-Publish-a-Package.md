@@ -174,5 +174,5 @@ And that's it! You've just created and published your first NuGet package to [nu
 - [Create a Package](../create-packages/creating-a-package.md)
 - [Publish a Package](../create-packages/publish-a-package.md)
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
-- [Dependency versions](../create-packages/dependency-versions.md)
+- [Package versioning](../reference/package-versioning.md)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)
