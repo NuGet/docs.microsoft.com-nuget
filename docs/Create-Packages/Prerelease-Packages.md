@@ -5,7 +5,7 @@ title: Pre-release versions in NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/20/2017
+ms.date: 8/14/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -36,7 +36,7 @@ Whenever you release an updated package with a new version number, NuGet conside
 
 A stable release is one that's considered reliable enough to be used in production. The latest stable release is also the one that will be installed as a package update or during package restore (subject to constraints as described in [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md)).
 
-To support the software release lifecycle, NuGet 1.6 and later allows for the distribution of pre-release packages, where the version number includes a semantic versioning suffix such as `-alpha`, `-beta`, or `-rc`. For more information, see [Package versioning](../Schema/Package-Versioning.md#pre-release-versions).
+To support the software release lifecycle, NuGet 1.6 and later allows for the distribution of pre-release packages, where the version number includes a semantic versioning suffix such as `-alpha`, `-beta`, or `-rc`. For more information, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
 
 You can specify such versions in two ways:
 
@@ -57,4 +57,4 @@ You can specify such versions in two ways:
 > [!Note]
 > A stable package release cannot have a pre-release dependency. This avoids accidentally installing potentially unstable releases.
 
-When you’re ready to release a stable version, just remove the suffix and the package takes precedence over any pre-release versions. Again, see [Package versioning](../Schema/Package-Versioning.md#pre-release-versions).
+When you’re ready to release a stable version, just remove the suffix and the package takes precedence over any pre-release versions. Again, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
