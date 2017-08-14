@@ -5,7 +5,7 @@ title: Pre-release versions in NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 8/14/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -14,7 +14,7 @@ ms.assetid: df6a366a-22c1-47bb-8017-18231311ce88
 
 # optional metadata
 
-description: How to specify pre-release version numbers for a NuGet package, using the semantic versioning conventions.
+description: Guidance for building pre-release packages
 keywords: versioning, NuGet package versioning, NuGet prerelease versions, NuGet prerelease packages, preview package versions, RC package versions, Beta package versions, NuGet semantic versioning
 #ROBOTS:
 #audience:
@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Pre-release versions
+# Building pre-release packages
 
 Whenever you release an updated package with a new version number, NuGet considers that one as the "latest stable release" as shown, for example in the Package Manager UI within Visual Studio:
 
@@ -36,7 +36,7 @@ Whenever you release an updated package with a new version number, NuGet conside
 
 A stable release is one that's considered reliable enough to be used in production. The latest stable release is also the one that will be installed as a package update or during package restore (subject to constraints as described in [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md)).
 
-To support the software release lifecycle, NuGet 1.6 and later allows for the distribution of pre-release packages, where the version number includes a semantic versioning suffix such as `-alpha`, `-beta`, or `-rc` (as described in [semantic versioning](#semantic-versioning) later in this topic).
+To support the software release lifecycle, NuGet 1.6 and later allows for the distribution of pre-release packages, where the version number includes a semantic versioning suffix such as `-alpha`, `-beta`, or `-rc`. For more information, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
 
 You can specify such versions in two ways:
 
@@ -52,12 +52,12 @@ You can specify such versions in two ways:
     [assembly: AssemblyInformationalVersion("1.0.1-beta")]
     ```
 
-    NuGet will pick up this value instead of the one specified in the `AssemblyVersion` attribute, which does not support SemVer.
+    NuGet picks up this value instead of the one specified in the `AssemblyVersion` attribute, which does not support semantic versioning.
 
 > [!Note]
-> A stable package release cannot have a pre-release dependency. This avoids accidentally installing a potentially unstable releases.
+> A stable package release cannot have a pre-release dependency. This avoids accidentally installing potentially unstable releases.
 
-When you’re ready to release a stable version, just remove the suffix and the package will take precedence over any pre-release versions.
+When you’re ready to release a stable version, just remove the suffix and the package takes precedence over any pre-release versions. Again, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
 
 
 ## Installing and updating pre-release packages

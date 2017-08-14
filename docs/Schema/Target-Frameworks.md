@@ -20,6 +20,7 @@ keywords: NuGet package targeting, .NET framework targets, .NET framework versio
 #audience:
 #ms.devlang:
 ms.reviewer:
+- anangaur
 - karann
 - unnir
 #ms.suite:
@@ -89,8 +90,12 @@ Universal Windows Platform | uap | uap [uap10.0]
 | | | netstandard1.4
 | | | netstandard1.5
 | | | netstandard1.6
-.NET Core App | netcoreapp | netcoreapp1.0
-| | | netcoreapp1.1
+| | | netstandard2.0
+.NET Core App | netcoreapp | netcoreapp1.0|
+| | | netcoreapp1.1|
+| | | netcoreapp2.0|
+Tizen | tizen | tizen3|
+| | | tizen4|
 
 ## Deprecated frameworks
 The following frameworks are deprecated. Packages targeting these frameworks should migrate to the indicated replacements.

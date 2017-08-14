@@ -53,14 +53,14 @@ Within this schema, a `.nuspec` file has the following general form:
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-    <!-- Required elements-->
-    <id></id>
-    <version></version>
-    <description></description>
-    <authors></authors>
+        <!-- Required elements-->
+        <id></id>
+        <version></version>
+        <description></description>
+        <authors></authors>
 
-    <!-- Optional elements -->
-    <!-- ... -->
+        <!-- Optional elements -->
+        <!-- ... -->
     </metadata>
     <!-- Optional 'files' node -->
 </package>
@@ -79,7 +79,7 @@ These elements must appear within a `<metadata>` element.
 | Element | Description |
 | --- | --- |
 | **id** | The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package resides in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number) for guidance. |
-| **version** | The version of the package, following the *major.minor.patch* pattern. Version numbers may include a pre-release suffix as described in [Prerelease Packages](../create-packages/prerelease-packages.md#semantic-versioning). |
+| **version** | The version of the package, following the *major.minor.patch* pattern. Version numbers may include a pre-release suffix as described in [Package versioning](../reference/package-versioning.md#pre-release-versions). |
 | **description** | A long description of the package for UI display. |
 | **authors** | A comma-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors. |
 
@@ -173,9 +173,9 @@ And you build an assembly whose `AssemblyName` is `LoggingLibrary` with the `Rel
 The `<dependencies>` element within `<metadata>` contains any number of `<dependency>` elements that identify other packages upon which the top-level package depends. The attributes for each `<dependency>` are as follows:
 
 | Attribute | Description |
-| --- | --- |
-| **id** | (Required) The package ID of the dependency. |
-| **version** | (Required) The range of versions acceptable as a dependency. See [Dependency versions](../create-packages/dependency-versions.md#version-ranges) for exact syntax. |
+| --- | --- | 
+| `id` | (Required) The package ID of the dependency. |
+| `version` | (Required) The range of versions acceptable as a dependency. See [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards) for exact syntax. |
 
 For example, the following lines indicate dependencies on `PackageA` version 1.1.0 or higher, and `PackageB` version 1.x.
 

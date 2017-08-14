@@ -5,7 +5,7 @@ title: Finding and choosing NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 2/8/2017
+ms.date: 7/20/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -61,6 +61,21 @@ Some packages list their supported frameworks directly in the nuget.org gallery,
 At present there is no means to search nuget.org for packages that support a specific target framework, but the feature is under consideration; see [NuGet Issue 2936](https://github.com/NuGet/NuGetGallery/issues/2936).
 
 <a name="native-cpp-packages"></a>
+
+## Pre-release packages
+
+By default, NuGet does not include pre-release versions when working with packages, but you can change this behavior as follows:
+
+- **Package Manager UI in Visual Studio**: In the **Manage NuGet Packages** UI, check the **Include prerelease** box:
+
+    ![The Include prerelease checkbox in Visual Studio](media/Prerelease_02-CheckPrerelease.png)
+
+    Setting or clearing this box will refresh the Package Manager UI and the list of available versions you can install.
+
+- **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../tools/powershell-reference.md).
+
+- **NuGet CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../tools/nuget-exe-cli-reference.md)
+
 
 ### Native C++ packages
 
