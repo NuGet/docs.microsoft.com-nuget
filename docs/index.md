@@ -44,7 +44,8 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="" />
+                                                <!--<img src="./media/hub/nuget-get-started-what-is-nuget.svg" alt="" /> -->
+                                                <img src="./media/nuget-roles.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
