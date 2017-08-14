@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet Restore Errors and Warnings Reference (PREVIEW) | Microsoft Docs
+title: NuGet Restore Errors and Warnings Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -20,7 +20,7 @@ keywords: NuGet errors, NuGet warnings, diagnostics
 #audience:
 #ms.devlang:
 ms.reviewer:
-- anandr
+- anangaur
 - karann
 - unnir
 #ms.suite:
@@ -29,11 +29,11 @@ ms.reviewer:
 
 ---
 
-# Errors and warnings (PREVIEW)
+# Errors and warnings
 
-In NuGet 4.3.0 (currently in preview), errors and warnings are numbered as described in this topic and provide detailed information to help you address the issues involved. 
+In NuGet 4.3.0, errors and warnings are numbered as described in this topic and provide detailed information to help you address the issues involved. 
 
-The errors and warnings listed here are available only with [PackageReference-based](../Consume-Packages/Package-References-in-Project-Files.md) projects and NuGet 4.3.0 (currently in preview). NuGet also honors MSBuild properties to suppress warnings or elevate them to errors. For more information, see [How to: Suppress Compiler Warnings](https://docs.microsoft.com/visualstudio/ide/how-to-suppress-compiler-warnings) in the Visual Studio documentation.
+The errors and warnings listed here are available only with [PackageReference-based](../Consume-Packages/Package-References-in-Project-Files.md) projects and NuGet 4.3.0. NuGet also honors MSBuild properties to suppress warnings or elevate them to errors. For more information, see [How to: Suppress Compiler Warnings](https://docs.microsoft.com/visualstudio/ide/how-to-suppress-compiler-warnings) in the Visual Studio documentation.
 
 **Errors**
 
