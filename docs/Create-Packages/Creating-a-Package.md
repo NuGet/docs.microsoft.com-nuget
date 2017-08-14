@@ -79,7 +79,7 @@ Required properties:
 - A long description of the package.
 
 Common optional properties:
-- Release note
+- Release notes
 - Copyright information
 - A short description for the [Package Manager UI in Visual Studio](../Tools/Package-Manager-UI.md)
 - A locale ID
@@ -159,7 +159,7 @@ Go into any *package\version* folder, copy the `.nupkg` file to a `.zip` file, t
 
 ## Creating the .nuspec file
 
-Creating a complete manifest typically begins with a basic `.nuspec` file, which you then edit by hand into its final form so that it describes the package contains the content you want.
+Creating a complete manifest typically begins with a basic `.nuspec` file, which you then edit by hand into its final form so that it describes the exact content you want in the final package.
 
 The best way to create an initial `.nuspec` file is by using the [nuget spec](../Tools/nuget-exe-CLI-Reference.md#spec) command to create a template manifest. This ensures that you start with the proper file structure. You can also start with a manifest from another package and modify it to suit your needs.
 

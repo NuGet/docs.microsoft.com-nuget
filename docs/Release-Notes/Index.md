@@ -6,7 +6,7 @@ title: NuGet Release Notes | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 8/14/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -31,6 +31,8 @@ ms.reviewer:
 # Release Notes
 
 [Known Issues](../release-notes/known-issues.md)
+
+[NuGet 4.3 RTM](../release-notes/nuget-4.3-rtm.md)
 
 [NuGet 4.0 RTM](../release-notes/nuget-4.0-rtm.md)
 
