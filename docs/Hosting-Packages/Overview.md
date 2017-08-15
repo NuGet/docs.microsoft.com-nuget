@@ -44,7 +44,7 @@ There are also several other NuGet hosting products that support remote private 
 - [MyGet](http://myget.org)
 - [ProGet](http://inedo.com/proget) from Inedo
 - [NuGet Server](http://nugetserver.net/), a community project from Inedo
-- [NuGet Server (Open Source)](http://nuget-server.net), an opensource implementaion similar to Inedo's NuGet Server
+- [NuGet Server (Open Source)](http://nuget-server.net), an open-source implementaion similar to Inedo's NuGet Server
 - [Artifactory](https://www.jfrog.com/artifactory/) from JFrog.
 - [Nexus](http://www.sonatype.org/nexus/) from Sonatype.
 
