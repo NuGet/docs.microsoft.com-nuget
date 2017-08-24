@@ -6,7 +6,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 5/23/2017
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: nuget
 #ms.service:
 ms.technology: null
