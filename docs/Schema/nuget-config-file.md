@@ -5,7 +5,7 @@ title: NuGet.Config File Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 8/25/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -30,13 +30,14 @@ ms.reviewer:
 
 # NuGet.Config reference
 
-NuGet behavior is controlled by settings in `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). Setting names are case-insensitive.
+NuGet behavior is controlled by settings in different `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).
 
-`NuGet.Config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic. Each section then contains zero or more `<add>` elements with `key` and `value` attributes. See the [examples config file](#example-config-file) at the end of this topic.
+`NuGet.Config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic. Each section then contains zero or more `<add>` elements with `key` and `value` attributes. See the [examples config file](#example-config-file) at the end of this topic. Setting names are case-insensitive.
 
-Note that with NuGet 3.4+ you can use environment variables in `NuGet.Config` values to apply machine-specific settings at run time. For example, if the `HOME` environment variable is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file will resolve to `c:\users\username\NuGetRepository`. If an environment variable is not found, NuGet will leave the value unmodified.
+With NuGet 3.4+ you can use environment variables in `NuGet.Config` values to apply machine-specific settings at run time. For example, if the `HOME` environment variable is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file resolves to `c:\users\username\NuGetRepository`. If an environment variable is not found, NuGet uses the literal value from the configuration file.
 
-Also note that with Visual Studio 2017+ and NuGet 4.0+, the machine-wide `NuGet.Config` is now located at `%ProgramFiles(x86)%\NuGet\Config\` to improve security in multi-user scenarios. You will need to manually migrate existing config files from `%ProgramData%` to `%ProgramFiles(x86)%`. Going forward,NuGet 4.0+ will also treat this as the new location for the machine-wide configuration. `NuGet.Config` in `%ProgramData%\NuGet\Config\` will no longer be implicitly referenced or considered for hierarchical merging of `Nuget.Config`.
+> [!Note]
+> With Visual Studio 2017+ and NuGet 4.0+, the machine-wide `NuGet.Config` is located at `%ProgramFiles(x86)%\NuGet\Config\` to improve security in multi-user scenarios. You need to manually migrate existing config files from `%ProgramData%` to `%ProgramFiles(x86)%`. NuGet 4.0+ also treats this as the location for the machine-wide configuration. Also, `NuGet.Config` in `%ProgramData%\NuGet\Config\` is not implicitly referenced or considered for hierarchical merging of `Nuget.Config`.
 
 In this topic:
 
@@ -61,11 +62,11 @@ In this topic:
 
 Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/nuget-exe-cli-reference.md#config).
 
-Note: `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using `project.json` and projects using the new Visual Studio 2017 project format.
+Note: `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using `project.json` and PackageReference formats.
 
 | Key | Value |
 | --- | --- |
-| dependencyVersion (package.config only) | The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly. This value is also used by the NuGet Package Manager UI. Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
+| dependencyVersion (`packages.config` only) | The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly. This value is also used by the NuGet Package Manager UI. Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
 | globalPackagesFolder (projects not using `packages.config`) | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages`. A relative path can be used in project-specific `Nuget.Config` files. |
 | repositoryPath (`packages.config` only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)\packages` folder. A relative path can be used in project-specific `Nuget.Config` files. |
 | defaultPushSource | Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation. |
@@ -175,7 +176,7 @@ Stores usernames and passwords for sources, typically specified with the `-usern
 
 **Example:**
 
-In the config file, the `<packageSourceCredentials>` element will contain child nodes for each applicable source name (spaces in the name are replaced with `_x0020+`). That is, for sources named "Contoso" and "Test Source", the config file will contain the following when using encrypted passwords:
+In the config file, the `<packageSourceCredentials>` element contains child nodes for each applicable source name (spaces in the name are replaced with `_x0020+`). That is, for sources named "Contoso" and "Test Source", the config file contains the following when using encrypted passwords:
 
 ```xml
 <packageSourceCredentials>
