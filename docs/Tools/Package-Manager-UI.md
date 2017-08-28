@@ -119,6 +119,9 @@ To manage package sources:
 6. To remove a package source, select it and then select the **X** button.
 7. Use the up and down arrow buttons to change the priority order of the package sources. Visual Studio searches these sources in the priority order when restoring packages for a project. For more information, see [Package restore](../Consume-Packages/Package-Restore.md).
 
+> [!Tip]
+> If a package source reappears after deleting it, it may be listed in a computer-wide or global NuGet.Config files. See [Configuring NuGet behavior](../Consume-Packages/Configuring-NuGet-Behavior.md) for the location of these files, then edit those files manually to remove the source. Sources can also be managed through the [`nuget sources` command](../tools/nuget-exe-CLI-reference.md).
+
 ## Package manager Options control
 
 In the Package Manager UI there is a small, expandable **Options** control (shown here both collapsed and expanded):
