@@ -74,7 +74,8 @@ The manifest contains both required and optional properties as described below. 
 
 Required properties:
 - The package identifier, which must be unique across the gallery that hosts the package.
-- A specific version number in the form *Major.Minor.Patch.Build[-Suffix]* where *-Suffix* identifies [pre-release versions](Prerelease-Packages.md)- - The package title as it should appears on the host (like nuget.org)
+- A specific version number in the form *Major.Minor.Patch.Build[-Suffix]* where *-Suffix* identifies [pre-release versions](Prerelease-Packages.md)
+- The package title as it should appears on the host (like nuget.org)
 - Author and owner information.
 - A long description of the package.
 
