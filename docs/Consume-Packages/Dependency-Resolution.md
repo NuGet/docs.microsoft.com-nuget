@@ -45,7 +45,7 @@ In this topic:
 
 ## Dependency resolution with PackageReference and project.json
 
-When installing packages into projects using the PackageReference or `project.json` formats, NuGet adds references to a flat package graph in the appropriate file and resolves conflicts ahead of time. This process is referred to as *transitive restore*. Reinstalling or restoring packages is then a process of downloading the packages listed in the graph, resulting in faster and more predictable builds. You can also take advantage of wildcard (floating) versions, such as *2.8.\**, avoiding expensive and error prone calls to `nuget update` on the client machines and build servers.
+When installing packages into projects using the PackageReference or `project.json` formats, NuGet adds references to a flat package graph in the appropriate file and resolves conflicts ahead of time. This process is referred to as *transitive restore*. Reinstalling or restoring packages is then a process of downloading the packages listed in the graph, resulting in faster and more predictable builds. You can also take advantage of wildcard (floating) versions, such as 2.8.\*, avoiding expensive and error prone calls to `nuget update` on the client machines and build servers.
 
 When the NuGet restore process runs prior to a build, it resolves dependencies first in memory, then writes the resulting graph to a file called `project.assets.json` in the `obj` folder of a project using PackageReference, or in a file named `project.lock.json` alongside `project.json`. MSBuild then reads this file and translates it into a set of folders where potential references can be found, and then adds them to the project tree in memory.
 
@@ -61,15 +61,15 @@ Transitive restore applies four main rules to resolve dependencies: lowest appli
 
 The lowest applicable version rule restores the lowest possible version of a package as defined by its dependencies. It also applies to dependencies on the application or the class library unless declared as [floating](#floating-versions).
 
-In the following figure, for example, *1.0-beta* is considered lower than *1.0* so NuGet chooses the 1.0 version:
+In the following figure, for example, 1.0-beta is considered lower than 1.0 so NuGet chooses the 1.0 version:
 
 ![Choosing the lowest applicable version](media/projectJson-dependency-1.png)
 
-In the next figure, version *2.1* is not available on the feed but because the version constraint is *>= 2.1* NuGet picks the next lowest version it can find, in this case *2.2*:
+In the next figure, version 2.1 is not available on the feed but because the version constraint is >= 2.1 NuGet picks the next lowest version it can find, in this case 2.2:
 
 ![Choosing the next lowest version available on the feed](media/projectJson-dependency-2.png)
 
-When an application specifies an exact version number, such as *1.2*, that is not available on the feed, NuGet fails with an error when attempting to install or restore the package:
+When an application specifies an exact version number, such as 1.2, that is not available on the feed, NuGet fails with an error when attempting to install or restore the package:
 
 ![NuGet generates an error when an exact package version is not available](media/projectJson-dependency-3.png)
 
@@ -77,9 +77,9 @@ When an application specifies an exact version number, such as *1.2*, that is no
 
 #### Floating (wildcard) versions
 
-A floating or wildcard dependency version is specified with the * wildcard, as with *6.0.\**. This version specification says "use the latest 6.0.x version"; *4.\** means "use the latest 4.x version." Using a wildcard allows a dependency package to continue evolving without requiring a change to the consuming application (or package).
+A floating or wildcard dependency version is specified with the \* wildcard, as with 6.0.\*. This version specification says "use the latest 6.0.x version"; 4.\* means "use the latest 4.x version." Using a wildcard allows a dependency package to continue evolving without requiring a change to the consuming application (or package).
 
-When using a wildcard, NuGet resolves the highest version of a package that matches the version pattern, for example *6.0.** gets the highest version of a package that starts with *6.0*:
+When using a wildcard, NuGet resolves the highest version of a package that matches the version pattern, for example 6.0.\* gets the highest version of a package that starts with 6.0:
 
 ![Choosing version 6.0.1 when a floating version 6.0.* is requested](media/projectJson-dependency-4.png)
 
@@ -93,7 +93,7 @@ When using a wildcard, NuGet resolves the highest version of a package that matc
 
 When the package graph for an application contains different versions of the same package, NuGet chooses the package that's closest to the application in the graph and ignores all others. This behavior allows an application to override any particular package version in the dependency graph.
 
-In the example below, the application depends directly on Package B with a version constraint of *>=2.0*. The application also depends on Package A which in turn also depends on Package B, but with a *>=1.0* constraint. Because the dependency on Package B *2.0* is nearer to the application in the graph, that version is used:
+In the example below, the application depends directly on Package B with a version constraint of >=2.0. The application also depends on Package A which in turn also depends on Package B, but with a >=1.0 constraint. Because the dependency on Package B 2.0 is nearer to the application in the graph, that version is used:
 
 ![Application using the Nearest Wins rule](media/projectJson-dependency-5.png)
 
@@ -108,11 +108,11 @@ This rule also results in greater efficiency with a large dependency graph (such
 
 #### Cousin dependencies
 
-When different package versions are referred to at the same distance in the graph from the application, NuGet uses the lowest version that satisfies all version requirements (as with the [lowest applicable version](#lowest-applicable-version) and [floating versions](#floating-versions) rules). In the image below, for example, version *2.0* of Package B satisfies the other *>=1.0* constraint, and is thus used:
+When different package versions are referred to at the same distance in the graph from the application, NuGet uses the lowest version that satisfies all version requirements (as with the [lowest applicable version](#lowest-applicable-version) and [floating versions](#floating-versions) rules). In the image below, for example, version 2.0 of Package B satisfies the other >=1.0 constraint, and is thus used:
 
 ![Resolving cousin dependencies using the lower version that satisfies all constraints](media/projectJson-dependency-7.png)
 
-In some cases, it is not possible to meet all version requirements. As shown below, if Package A requires exactly Package B *1.0* and Package C requires Package B *>=2.0*, then NuGet cannot resolve the dependencies and gives an error.
+In some cases, it is not possible to meet all version requirements. As shown below, if Package A requires exactly Package B 1.0 and Package C requires Package B >=2.0, then NuGet cannot resolve the dependencies and gives an error.
 
 ![Unresolvable dependencies due to an exact version requirement](media/projectJson-dependency-8.png)
 

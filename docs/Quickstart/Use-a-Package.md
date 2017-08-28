@@ -5,7 +5,7 @@ title: Introductory Guide to Using NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 8/25/2017
 ms.topic: get-started-article
 ms.prod: nuget
 #ms.service:
@@ -31,22 +31,21 @@ ms.reviewer:
 
 # Use a package
 
-This tutorial walks you through installing and using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package in a Universal Windows Platform (UWP) project:
+This tutorial walks you through installing and using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package in a Universal Windows Platform (UWP) project. You use a similar same workflow for virtually every NuGet package you use in a project.
 
 - [Install pre-requisites](#install-pre-requisites)
 - [Create a UWP project](#create-a-uwp-project)
 - [Add the Newtonsoft.Json NuGet package](#add-the-newtonsoftjson-nuget-package)
 - [Use the Newtonsoft.Json API in the app](#use-the-newtonsoftjson-api-in-the-app)
 
-You use a similar same workflow for virtually every NuGet package you use in a project.
-
-> **Start with nuget.org**: Installing packages from nuget.org is a common workflow that .NET developers use to find components they can reuse in their own applications. You can always search nuget.org directly or find and install packages within Visual Studio as we do here.
+> [!Tip]
+> **Start with nuget.org**: Installing packages from nuget.org is a common workflow that .NET developers use to find components they can reuse in their own applications. You can always search nuget.org directly or find and install packages within Visual Studio as shown in this topic.
 
 ## Install pre-requisites
 
-This tutorial requires Visual Studio 2015 Update 3 with Tools for Universal Windows Apps.
+This tutorial requires Visual Studio 2015 Update 3 with Tools for Universal Windows Apps, or Visual Studio 2017 with the Universal Windows Platform development workload. If you already have Visual Studio installed, you can run the installer again to add the UWP tools.
 
-You can install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions. The UWP tools option can be selected through the Custom install option during setup, checking the box under **Windows and Web Development > Universal Windows App Development Tools**. If you already have Visual Studio installed, you can run the installer again and click **Modify** to add the UWP tools.
+You can install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions. 
 
 ## Create a UWP project
 
@@ -85,7 +84,7 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
     </Grid>
     ```
 
-1. Expand MainPage.xaml, open MainPage.xaml.cs, and insert the following code inside the `MainPage` class, after the constructor:
+1. Expand the MainPage.xaml node in Solution Explorer, open MainPage.xaml.cs, and insert the following code inside the `MainPage` class, after the constructor:
 
     ```cs
     public class Account
@@ -113,7 +112,7 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
     ![Lightbulb with show potential fixes command](media/QS_Use-04-ShowPotentialFixes.png)
 
 
-1. Click on **Show potential fixes** and select the first suggested fix, `using Newtonsoft.Json;`. This adds the necessary line to the top of the file.
+1. Click on **Show potential fixes** (or the Lightbulb) and select the first suggested fix, `using Newtonsoft.Json;`. This adds the necessary line to the top of the file.
 
     ![Lightbulb giving option to add a using statement](media/QS_Use-05-AddUsing.png)
 
@@ -124,8 +123,6 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 1. Click on the button to see the contents of the TextBlock replaced with some JSON text:
 
     ![Output of the app after clicking the button](media/QS_Use-07-AppEnd.png)
-
-
 
 ## Related topics
 

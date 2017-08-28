@@ -45,6 +45,10 @@ In this topic:
 - [Extending the Package Manager Console](#extending-the-package-manager-console)
 - [Setting up a NuGet PowerShell profile](#setting-up-a-nuget-powershell-profile)
 
+> [!Tip]
+> Many console operations depend on having a solution opened in Visual Studio with a known path name. If you have an unsaved solution, or no solution, you can see the error, "Solution is not opened or not saved. Please ensure you have an open and saved solution." This indicates that the console cannot determine the solution folder. Saving an unsaved solution, or creating and saving a solution if you don't have one open, should correct the error.
+
+
 ## Availability of the console
 
 In Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed when you select any .NET-related workloads; you can also install it individually by checking the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.

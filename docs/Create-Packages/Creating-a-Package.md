@@ -245,7 +245,8 @@ The folder conventions are as follows:
 | Folder | Description | Action upon package install |
 | --- | --- | --- |
 | (root) | Location for readme.txt | Visual Studio displays a readme.txt file in the package root when the package is installed. |
-| lib | Assembly files (`.dll`), documentation (`.xml`) files, and symbol (`.pdb`) files | Assemblies are added as references; `.xml` and `.pdb` copied into project folders. |
+| lib | Assembly (`.dll`), documentation (`.xml`), and symbol (`.pdb`) files | Assemblies are added as references; `.xml` and `.pdb` copied into project folders. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md) for creating framework target-specific sub-folders. |
+| runtimes | Architecture-specific assembly (`.dll`), symbol (`.pdb`), and native resource (`.pri`) files | Assemblies are added as references; other files are copied into project folders. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md). |
 | content | Arbitrary files | Contents are copied to the project root |
 | build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file (NuGet 2.x) or `project.lock.json` (NuGet 3.x+). |
 | tools | Powershell scripts and programs accessible from the Package Manager Console | Contents are copied to the project folder, and the `tools` folder is added to the PATH environment variable.|

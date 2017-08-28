@@ -5,7 +5,7 @@ title: Target Frameworks References for NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 4/24/2017
+ms.date: 8/23/2017
 ms.topic: reference
 ms.prod: nuget
 #ms.service:
