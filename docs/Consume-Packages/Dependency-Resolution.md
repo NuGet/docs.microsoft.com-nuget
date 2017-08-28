@@ -77,7 +77,7 @@ When an application specifies an exact version number, such as *1.2*, that is no
 
 #### Floating (wildcard) versions
 
-A floating or wildcard dependency version is specified with the \* wildcard, as with *6.0.**. This version specification says "use the latest 6.0.x version"; *4.** means "use the latest 4.x version." Using a wildcard allows a dependency package to continue evolving without requiring a change to the consuming application (or package).
+A floating or wildcard dependency version is specified with the \* wildcard, as with *6.0.\**. This version specification says "use the latest 6.0.x version"; *4.** means "use the latest 4.x version." Using a wildcard allows a dependency package to continue evolving without requiring a change to the consuming application (or package).
 
 When using a wildcard, NuGet resolves the highest version of a package that matches the version pattern, for example *6.0.** gets the highest version of a package that starts with *6.0*:
 
