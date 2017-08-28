@@ -5,7 +5,7 @@ title: Multi-targeting for NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/26/2017
+ms.date: 8/25/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -76,6 +76,24 @@ To easily include all these files when building the package, use a recursive `**
     <file src="lib\**" target="lib" />
 </files>
 ```
+
+### Architecture-specific folders 
+
+If you have architecture-specific assemblies, that is, separate assemblies that target ARM, x86, and x64, you must place them in a folder named `runtimes` within sub-folders named `{platform}-{architecture}\lib\{framework}` or `{platform}-{architecture}\native`. For example, the following folder structure would accommodate both native and managed DLLs targeting Windows 10 and the `uap10.0` framework:
+
+    \runtimes
+        \win10-arm
+            \native
+            \lib\uap10.0
+        \win10-x86
+            \native
+            \lib\uap10.0
+        \win10-x64
+            \native
+            \lib\uap10.0
+
+See [Create UWP Packages](../Guides/Create-UWP-Packages.md) for an example of referencing these files in the `.nuspec` manifest.
+
 
 ## Matching assembly versions and the target framework in a project
 
