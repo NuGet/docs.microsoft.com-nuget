@@ -6,7 +6,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 8/14/2017
-ms.topic: article
+ms.topic: reference
 ms.prod: nuget
 #ms.service:
 ms.technology: null
@@ -94,7 +94,7 @@ When resolving package references and multiple package versions differ only by s
 
 With NuGet 4.3.0+ and Visual Studio 2017 version 15.3+, NuGet supports [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html).
 
-Certain semantics of SemVer 2.0.0 that are not supported in older clients. NuGet considers a package version to be SemVer 2.0.0 specific if either of the following statements is true:
+Certain semantics of SemVer v2.0.0 that are not supported in older clients. NuGet considers a package version to be SemVer v2.0.0 specific if either of the following statements is true:
 
 - The pre-release label is dot-separated, for example, *1.0.0-alpha.1*
 - The version has build-metadata, for example, *1.0.0+githash*
@@ -107,7 +107,7 @@ For nuget.org, a package is defined as a SemVer v2.0.0 package if either of the 
 If you upload a SemVer v2.0.0-specific package to nuget.org, the package is invisible to older clients and available to only the following NuGet clients: 
 - NuGet 4.3.0+
 - Visual Studio 2017 version 15.3+ 
-- dotnet.exe version 2.0+
+- dotnet.exe (.NET SDK 2.0.0+)
 
 Third-party clients:
 - JetBrains Rider
