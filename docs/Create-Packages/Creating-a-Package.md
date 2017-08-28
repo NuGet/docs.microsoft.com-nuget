@@ -31,7 +31,7 @@ ms.reviewer:
 
 No matter what your package does or what code it contains, NuGet is how you package that functionality into a component that can be shared with and used by any number of other developers.
 
-The packaging process begins with the compiled code (assemblies), symbols, and/or other files that you want to deliver as a package (see [Overview and workflow](Overview-and-Workflow.md). That is, creating a package is an independent process from compiling or otherwise generating the files that go into the package. That said, the packaging process can can use information in a project file, helping you keep compiled assemblies and packages containing those assemblies in sync.
+The packaging process begins with the compiled code (assemblies), symbols, and/or other files that you want to deliver as a package (see [Overview and workflow](Overview-and-Workflow.md). That is, creating a package is an independent process from compiling or otherwise generating the files that go into the package. That said, the packaging process can use information in a project file, helping you keep compiled assemblies and packages containing those assemblies in sync.
 
 This topic describes the detailed process of creating a package and serves as a reference for different aspects of that process. For a focused walkthrough, refer to [Create and Publish a Package Quickstart](../quickstart/create-and-publish-a-package.md).
 
