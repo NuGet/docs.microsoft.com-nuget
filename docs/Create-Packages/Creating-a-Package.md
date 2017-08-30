@@ -5,7 +5,7 @@ title: How to create a NuGet package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/24/2017
+ms.date: 8/29/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -144,7 +144,7 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
 </package>
 ```
 
-For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md).
+For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `include` and `exclude` attributes on the `dependency` element. See [.nuspec Reference - Dependencies](../Schema/nuspec.md#dependencies).
 
 Because the manifest is included in the package created from it, you can find any number of additional examples by examining existing packages. A good source is the global package cache on your machine, the location of which is returned by the following command:
 
@@ -386,7 +386,6 @@ Then in the `.nuspec` file, be sure to refer to these files in the `<files>` nod
 When NuGet 2.x installs a package with `\build` files, it adds an MSBuild `<Import>` elements in the project file pointing to the `.targets` and `.props` files. (`.props` is added at the top of the project file; `.targets` is added at the bottom.)
 
 With NuGet 3.x, targets are not added to the project but are instead made available through the `project.lock.json`.
-
 
 ## Creating the package
 
