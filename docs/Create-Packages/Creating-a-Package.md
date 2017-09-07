@@ -219,7 +219,7 @@ Note that there are several additional packaging options available when working 
 
 *NuGet 2.x only. This capability is not present in NuGet 3.0+.*
 
-NuGet 2.x supported the notion of a solution-level package that installs tools or additional commands for the Package Manager Console, but does not add references, content, or build customizations to any projects in the solution. Such packages contain no files in its direct `lib`, `content`, or `build` folders, and none of its dependencies have files in their respective `lib`, `content`, or `build` folders.
+NuGet 2.x supported the notion of a solution-level package that installs tools or additional commands for the Package Manager Console (the contents of the `tools` folder), but does not add references, content, or build customizations to any projects in the solution. Such packages contain no files in its direct `lib`, `content`, or `build` folders, and none of its dependencies have files in their respective `lib`, `content`, or `build` folders. 
 
 NuGet tracks installed solution-level packages in a `packages.config` file in the `.nuget` folder, rather than the project's `packages.config` file.
 
@@ -248,7 +248,7 @@ The folder conventions are as follows:
 | runtimes | Architecture-specific assembly (`.dll`), symbol (`.pdb`), and native resource (`.pri`) files | Assemblies are added as references; other files are copied into project folders. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md). |
 | content | Arbitrary files | Contents are copied to the project root |
 | build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file (NuGet 2.x) or `project.lock.json` (NuGet 3.x+). |
-| tools | Powershell scripts and programs accessible from the Package Manager Console | Contents are copied to the project folder, and the `tools` folder is added to the PATH environment variable.|
+| tools | Powershell scripts and programs accessible from the Package Manager Console | Contents are copied to the project folder, and the `tools` folder is added to the PATH environment variable. |
 
 Think of the **content** folder as the root of the target application. To have the package add an image in the application's */images* folder, place it in the package's *content/images* folder.
 
