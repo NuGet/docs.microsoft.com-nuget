@@ -192,7 +192,7 @@ ms.reviewer:
                                         </div>
                                         <div class="cardText">
                                             <h3>Reference</h3>
-                                            <p>Details about artifacts and formats NuGet cares uses, supported frameworks, and errors and warnings.</p>
+                                            <p>Details about artifacts and formats NuGet uses, supported frameworks, and errors and warnings.</p>
                                         </div>
                                     </div>
                                 </div>
