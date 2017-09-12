@@ -32,7 +32,7 @@ ms.reviewer:
 
 In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the [SymbolSource repository](http://www.symbolsource.org/Public).
 
-Package consumers can then add https://nuget.smbsrc.net/ to their symbol sources in Visual Studio. This allows consumers to step into your package code in the Visual Studio debugger.
+Package consumers can then add `http://srv.symbolsource.org/pdb/Public` to their symbol sources in Visual Studio (see [Using SymbolSource](https://www.symbolsource.org/Public/Wiki/Using). This allows consumers to step into your package code in the Visual Studio debugger.
 
 ## Creating a symbol package
 
@@ -134,4 +134,4 @@ nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
 nuget push MyPackage.nupkg
 ```
 
-In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to symbolsource.org (https://nuget.smbsrc.net/), after it publishes the primary package to nuget.org.
+In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to https://nuget.smbsrc.net/ (the push URL for symbolsource.org), after it publishes the primary package to nuget.org.
