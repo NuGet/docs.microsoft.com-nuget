@@ -343,7 +343,7 @@ where the optional search terms will filter the displayed list. Search terms are
 ```
 nuget list
 
-nuget list -Verbose -AllVersions
+nuget list -Verbosity detailed -AllVersions
 ```
 
 ## locals
