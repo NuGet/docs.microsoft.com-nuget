@@ -30,7 +30,7 @@ ms.reviewer:
 
 # How to reinstall and update packages
 
-There are a number of situations, described below under [When to Reinstall a Package](#when-to-reinstall-a-package), where references to a package might get broken within a Visual Studio project. In these cases, uninstalling and then reinstalling the same version of the package will restore those reference to working order.
+There are a number of situations, described below under [When to Reinstall a Package](#when-to-reinstall-a-package), where references to a package might get broken within a Visual Studio project. In these cases, uninstalling and then reinstalling the same version of the package will restore those references to working order.
 
 Being mindful of the [Considerations](#considerations) described later, you can easily reinstall any package using the [Update-Package command](../Tools/ps-ref-update-package.md) in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
 
