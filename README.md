@@ -9,7 +9,7 @@ NuGet follows the [.NET Foundation Contributors Code of Conduct](https://github.
 ## Respository structure
 
 - All markdown files are in the docs folder and various subfolders.
-- The docs/index.md file defines the landing (hub) page are it appears on docs.microsoft.com/nuget.
+- The docs/index.md file defines the landing (hub) page as it appears on docs.microsoft.com/nuget.
 - The docs/TOC.md file defines the left-hand navigation panel that appears when you navigate to any page other than the hub page.
 - Images are contained within media folders within each subfolder.
 
