@@ -30,7 +30,7 @@ ms.reviewer:
 
 # Creating symbol packages
 
-In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the [SymbolSource repository](http://www.symbolsource.org/Public).
+In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the a symbol repository such as [SymbolSource](http://www.symbolsource.org/Public).
 
 Package consumers can then add `http://srv.symbolsource.org/pdb/Public` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](https://docs.microsoft.com/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger) for details on that process.
 
@@ -135,7 +135,3 @@ A symbol package can be built by conventions, from a folder structure as describ
     ```
 
 In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to https://nuget.smbsrc.net/ (the push URL for symbolsource.org), after it publishes the primary package to nuget.org.
-
-## See Also
-
-- <a href="https://www.symbolsource.org/Public/Wiki/Using" target="_blank">Using SymbolSource</a> (symbolsource.org)
