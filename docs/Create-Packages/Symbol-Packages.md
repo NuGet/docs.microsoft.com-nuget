@@ -5,7 +5,7 @@ title: How to create NuGet symbol packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 9/12/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -32,7 +32,8 @@ ms.reviewer:
 
 In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the [SymbolSource repository](http://www.symbolsource.org/Public).
 
-Package consumers can then add https://nuget.smbsrc.net/ to their symbol sources in Visual Studio. This allows consumers to step into your package code in the Visual Studio debugger.
+Package consumers can then add `http://srv.symbolsource.org/pdb/Public` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](https://docs.microsoft.com/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger) for details on that process.
+
 
 ## Creating a symbol package
 
@@ -112,26 +113,30 @@ A symbol package can be built by conventions, from a folder structure as describ
 
 1. For convenience, first save your API key with NuGet (see [publish a package](../create-packages/publish-a-package.md), which will apply to both nuget.org and symbolsource.org, because symbolsource.org will check with nuget.org to verify that you are the package owner.
 
-```
-nuget SetApiKey Your-API-Key
-```
+    ```
+    nuget SetApiKey Your-API-Key
+    ```
 
 1. After publishing your primary package to nuget.org, push the symbol package as follows, which will automatically use symbolsource.org as the target because of the `.symbols` in the filename:
 
-```
-nuget push MyPackage.symbols.nupkg
-```
+    ```
+    nuget push MyPackage.symbols.nupkg
+    ```
 
 1. To publish to a different symbol repository, or to push a symbol package that doesn't follow the naming convention, use the `-Source` option:
 
-```
-nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
-```
+    ```
+    nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
+    ```
 
 1. You can also push both primary and symbol packages to both repositories at the same time using the following:
 
-```
-nuget push MyPackage.nupkg
-```
+    ```
+    nuget push MyPackage.nupkg
+    ```
 
-In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to symbolsource.org (https://nuget.smbsrc.net/), after it publishes the primary package to nuget.org.
+In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to https://nuget.smbsrc.net/ (the push URL for symbolsource.org), after it publishes the primary package to nuget.org.
+
+## See Also
+
+ - <a href="https://www.symbolsource.org/Public/Wiki/Using" target="_blank">Using SymbolSource</a> (symbolsource.org) 
