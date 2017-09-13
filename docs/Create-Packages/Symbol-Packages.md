@@ -136,3 +136,7 @@ A symbol package can be built by conventions, from a folder structure as describ
     ```
 
 In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to https://nuget.smbsrc.net/ (the push URL for symbolsource.org), after it publishes the primary package to nuget.org.
+
+## See Also
+
+ - <a href="https://www.symbolsource.org/Public/Wiki/Using" target="_blank">Using SymbolSource</a> (symbolsource.org) 
