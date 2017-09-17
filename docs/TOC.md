@@ -27,6 +27,7 @@
 ## [Reinstalling and Updating Packages](Consume-Packages/Reinstalling-and-Updating-Packages.md)
 ## [Packages and Source Control](Consume-Packages/Packages-and-Source-Control.md)
 ## [Package Restore](Consume-Packages/Package-Restore.md)
+## [Package Restore with TFBuild](Consume-Packages/Team-Foundation-Build.md)
 ## [Managing the NuGet Cache](Consume-Packages/Managing-the-NuGet-Cache.md)
 ## [Configuring NuGet Behavior](Consume-Packages/Configuring-NuGet-Behavior.md)
 ## [Dependency Resolution](Consume-Packages/Dependency-Resolution.md)
