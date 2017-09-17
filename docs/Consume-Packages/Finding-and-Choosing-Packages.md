@@ -100,7 +100,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you'
 
     ![Version history on a package's listing page](media/Finding-04-VersionHistory.png)
 
-- *Recent installs*: on the package page, select **Package Statistics** on the left side. This shows you the package installs for the last six weeks. A package that other developers are actively using is typically a better choice than one that's not.
+- *Recent installs*: on the package page, select **View full stats** on the right side. This shows you the package installs over the last six weeks. A package that other developers are actively using is typically a better choice than one that's not.
 - *Restore vs. new install*: on the same package statistics page, clear the **Version** checkbox and select **Operation** to see a chart of package restores vs. new installs (below).
 
     ![Chart of operations for a NuGet package on nuget.org package statistics](media/Finding-05-OperationChart.png)
