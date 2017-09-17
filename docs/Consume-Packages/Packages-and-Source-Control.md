@@ -43,7 +43,7 @@ Although package restore is the default behavior with NuGet, some manual work is
 
 ## Omitting packages with Git
 
-Use the [.gitignore file](https://git-scm.com/docs/gitignore) to have Git ignore the contents of the `packages` folder. For reference, see the [sample `.gitignore` for Visual Studio projects](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
+Use the [.gitignore file](https://git-scm.com/docs/gitignore) to have Git ignore the contents of the `packages` folder. For reference, see the [sample .gitignore for Visual Studio projects](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
 
 The important parts of the `.gitignore` file are:
 
