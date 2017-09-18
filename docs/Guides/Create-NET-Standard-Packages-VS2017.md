@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Create .NET standard packages with Visual Studio 2017
+# Create .NET Standard packages with Visual Studio 2017
 
 *Applies to NuGet 4.x+ and MSBuild 15.3+ as provided with Visual Studio 2017 Update 3. See [Create .NET Standard Packages with Visual Studio 2015](../guides/create-net-standard-packages-vs2015.md) for working with NuGet 3.x+*
 

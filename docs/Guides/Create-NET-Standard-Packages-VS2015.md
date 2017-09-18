@@ -28,7 +28,7 @@ ms.reviewer:
 
 ---
 
-# Create .NET standard packages with Visual Studio 2015
+# Create .NET Standard packages with Visual Studio 2015
 
 *Applies to NuGet 3.x. See [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) for working with NuGet 4.x+.*
 
