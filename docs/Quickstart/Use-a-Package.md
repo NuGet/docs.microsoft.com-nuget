@@ -31,7 +31,7 @@ ms.reviewer:
 
 # Use a package
 
-This tutorial walks you through installing and using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package in a Universal Windows Platform (UWP) project. You use a similar same workflow for virtually every NuGet package you use in a project.
+This tutorial walks you through installing and using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package in a Universal Windows Platform (UWP) project. You use a similar workflow for virtually every NuGet package you use in a project.
 
 - [Install pre-requisites](#install-pre-requisites)
 - [Create a UWP project](#create-a-uwp-project)
