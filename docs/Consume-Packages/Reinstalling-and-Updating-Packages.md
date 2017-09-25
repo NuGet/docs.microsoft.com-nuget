@@ -89,7 +89,7 @@ The following may be affected when reinstalling a package:
         - If reinstalling packages after retargeting your application results in build or runtime errors, you may need to revert your target framework or search for alternative packages that properly support your new target framework.
 
 1. **requireReinstallation attribute added in packages.config after project retargeting or upgrade**
-    - If NuGet detects that packages were affected by retargeting or upgrading a project, it will add a `requireReinstallation="true"` attribute in  `packages.config` to all affected package references. Because of this, each subsequent build in Visual Studio raises build warnings for those packages so you can remember to reinstall them.
+    - If NuGet detects that packages were affected by retargeting or upgrading a project, it adds a `requireReinstallation="true"` attribute in  `packages.config` to all affected package references. Because of this, each subsequent build in Visual Studio raises build warnings for those packages so you can remember to reinstall them.
 
 1. **Reinstalling packages with dependencies**
     - `Update-Package –reinstall` reinstalls the same version of the original package, but installs the latest version of dependencies unless specific version constraints are provided. This allows you to update only the dependencies as required to fix an issue. However, if this rolls a dependency back to an earlier version, you can use `Update-Package <dependency_name>` to reinstall that one dependency without affecting the dependent package.
