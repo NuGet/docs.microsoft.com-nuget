@@ -247,8 +247,8 @@ The folder conventions are as follows:
 | (root) | Location for readme.txt | Visual Studio displays a readme.txt file in the package root when the package is installed. |
 | lib | Assembly (`.dll`), documentation (`.xml`), and symbol (`.pdb`) files | Assemblies are added as references; `.xml` and `.pdb` are extracted in packages folder. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md) for creating framework target-specific sub-folders. |
 | runtimes | Architecture-specific assembly (`.dll`), symbol (`.pdb`), and native resource (`.pri`) files | Assemblies are added as references; other files are extracted in packages folder. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md). |
-| contentFiles | Arbitrary files | Contents are extracted in packages folder and linked to target project based on buildAction. See [Including content files] (../schema/nuspec.md#including-content-files) |
-| build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file (packages.config) or `project.lock.json` (project.json) or (<projectName>.csproj.nuget.g.targets/ <projectName>.csproj.nuget.g.props). |
+| contentFiles | Arbitrary files | Contents are extracted in packages folder and linked to target project based on buildAction. See [Including content files](../schema/nuspec.md#including-content-files). |
+| build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file (packages.config) or `project.lock.json` (project.json) or (`<projectName>.csproj.nuget.g.targets`/ `<projectName>.csproj.nuget.g.props`). |
 | tools | Powershell scripts and programs accessible from the Package Manager Console | Contents are extracted into the packages folder, and the `tools` folder is added to the PATH environment variable. |
 
 Next, from the root folder of this layout, run the following command to create the `.nuspec` file:
