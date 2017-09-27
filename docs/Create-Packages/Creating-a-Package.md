@@ -226,7 +226,7 @@ NuGet tracks installed solution-level packages in a `packages.config` file in th
 
 ### From a convention-based working directory
 
-Technically speaking, a NuGet package is just a ZIP file that's been renamed with the `.nupkg` extension and whose contents match certain conventions. The package's assembly DLLs, for instance, are always placed in a `lib\{tfm}` folder.
+Technically speaking, a NuGet package is just a ZIP file that's been renamed with the `.nupkg` extension and whose contents match certain conventions. The package's assembly DLLs, for instance, are always placed in a `lib\{tfm}\` folder.
 
 The practical upshot of this is that you can simply create a folder structure that follows the expected conventions and contains all the files you want to include in the package *excluding any folders that begin with `.`*. You then generate a manifest directly from that folder tree. When you create the package using that manifest, NuGet automatically adds all the files in the folder structure.
 
@@ -236,8 +236,8 @@ When using a convention-based working directory, on the other hand, NuGet assume
 
 Such a folder structure also allows you to easily include files that might not be part of a project at all, including:
 
-- Content and source code that should be available for reference across projects through global packages folder.
-- PowerShell scripts only initialization script init.ps1 (packages used with NuGet packages.config format can include installation scripts as well, which is not supported in NuGet project.json and packageReference formats).
+- Content and source code that should be referenced from the global packages folder.
+- PowerShell scripts only initialization script init.ps1 (packages used with NuGet packages.config format can include installation scripts as well, which is not supported in NuGet project.json and PackageReference formats).
 - Transformations to source code files in a project via .pp files.
 
 The folder conventions are as follows:
@@ -245,10 +245,11 @@ The folder conventions are as follows:
 | Folder | Description | Action upon package install |
 | --- | --- | --- |
 | (root) | Location for readme.txt | Visual Studio displays a readme.txt file in the package root when the package is installed. |
-| lib | Assembly (`.dll`), documentation (`.xml`), and symbol (`.pdb`) files | Assemblies are added as references; `.xml` and `.pdb` are extracted in packages folder. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md) for creating framework target-specific sub-folders. |
+| lib | Assembly (`.dll`), documentation (`.xml`), and symbol (`.pdb`) files | Assemblies are added as references; additional files in this folder are extracted to disk in global packages folder. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md) for creating framework target-specific sub-folders. |
 | runtimes | Architecture-specific assembly (`.dll`), symbol (`.pdb`), and native resource (`.pri`) files | Assemblies are added as references; other files are extracted in packages folder. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md). |
 | contentFiles | Arbitrary files | Contents are extracted in packages folder and linked to target project based on buildAction. See [Including content files](../schema/nuspec.md#including-content-files). |
-| build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file (packages.config) or `project.lock.json` (project.json) or (`<projectName>.csproj.nuget.g.targets`/ `<projectName>.csproj.nuget.g.props`). |
+| build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file (packages.config) or `project.lock.json` (project.json) or `<projectName>.csproj.nuget.g.targets`/ `<projectName>.csproj.nuget.g.props` (for PackageReference and referenced for specific TFM). |
+| buildMultiTargeting | MSBuild `.targets` and `.props` files | Only applicable for PackageReference, this is a build folder that does not use a TFM, it is referenced in the outer build only for multi-framework projects. |
 | tools | Powershell scripts and programs accessible from the Package Manager Console | Contents are extracted into the packages folder, and the `tools` folder is added to the PATH environment variable. |
 
 Next, from the root folder of this layout, run the following command to create the `.nuspec` file:
