@@ -152,9 +152,9 @@ When packaging libraries targeting the Portable Class Library it can be tricky t
 ## Content files and PowerShell scripts
 
 > [!Warning]
-> Mutable content file support and script execution is available in NuGet packages.config world, but deprecated in NuGet project.json and packagesReference world. So these should not be used for any new packages.
+> Mutable content files and script execution are available with the `packages.config` format only; they are deprecated when using `project.json` and PackagesReference formats and should should not be used for any new packages.
 
-With NuGet packages.config, content files and PowerShell scripts can be grouped by target framework using the same folder convention inside the `content` and `tools` folders. For example:
+With `packages.config`, content files and PowerShell scripts can be grouped by target framework using the same folder convention inside the `content` and `tools` folders. For example:
 
     \content
         \net46
