@@ -5,7 +5,7 @@ title: Multi-targeting for NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/25/2017
+ms.date: 9/27/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -52,7 +52,7 @@ When building a package that contains only one version of a library or target mu
 
 For a complete list of supported names, see the [Target Frameworks reference](../schema/target-frameworks.md#supported-frameworks).
 
-You should never have a version of the library that is not specific to a framework, and placed directly in the root `lib` folder (was only supported with NuGet packages.config). Because then it will make it compatible with any target framework and allows it to be installed everywhere but might fail at runtime. So adding assemblies in root (`lib\abc.dll`) or subfolders (`lib\abc\abc.dll`) has been deprecated and ignored in PackagesReference.
+You should never have a version of the library that is not specific to a framework and placed directly in the root `lib` folder. (This capability was supported only with `packages.config`). Doing so would make the compatible with any target framework and allow it to be installed anywhere, likely resulting in unexpected runtime errors. Adding assemblies in the root folder (such as `lib\abc.dll`) or subfolders (such as `lib\abc\abc.dll`) has been deprecated and is ignored when using the PackagesReference format.
 
 For example, the following folder structure supports four versions of an assembly that are framework-specific:
 
@@ -96,7 +96,7 @@ See [Create UWP Packages](../Guides/Create-UWP-Packages.md) for an example of re
 
 When NuGet installs a package that has multiple assembly versions, it tries to match the framework name of the assembly with the target framework of the project.
 
-If a match is not found, NuGet copies the assembly for the highest version that is less than or equal to the project's target framework, if available. If not compatible assembly found, then NuGet returns appropriate error message.
+If a match is not found, NuGet copies the assembly for the highest version that is less than or equal to the project's target framework, if available. If no compatible assembly is found, NuGet returns an appropriate error message.
 
 For example, consider the following folder structure in a package:
 
