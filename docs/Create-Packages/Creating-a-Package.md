@@ -249,7 +249,7 @@ The folder conventions are as follows:
 | runtimes | Architecture-specific assembly (`.dll`), symbol (`.pdb`), and native resource (`.pri`) files | Assemblies are added as references; other files are extracted in the `packages` folder. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md). |
 | contentFiles | Arbitrary files | Contents are extracted in the `packages` folder and linked to target project based on buildAction. See [Including content files](../schema/nuspec.md#including-content-files). |
 | build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file (when using `packages.config`), `project.lock.json` (when using `project.json`), or `<projectName>.csproj.nuget.g.targets`/ `<projectName>.csproj.nuget.g.props` (when using PackageReference and referenced for specific TFM). |
-| buildMultiTargeting | MSBuild `.targets` and `.props` files | Only applicable for PackageReference; this is a build folder that does not use a TFM, it is referenced in the outer build only for multi-framework projects. (Not commonly used, use build unless you know that you need this folder) |
+| buildMultiTargeting | MSBuild `.targets` and `.props` files | Only applicable for PackageReference; this is a build folder that does not use a TFM, it is referenced in the outer build only for multi-framework projects. (Not commonly used; use `build` unless you know that you need this folder.) |
 | tools | Powershell scripts and programs accessible from the Package Manager Console | Contents are extracted into the `packages` folder, and the `tools` folder is added to the PATH environment variable. |
 
 Next, from the root folder of this layout, run the following command to create the `.nuspec` file:
