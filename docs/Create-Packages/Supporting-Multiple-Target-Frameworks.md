@@ -52,7 +52,7 @@ When building a package that contains only one version of a library or target mu
 
 For a complete list of supported names, see the [Target Frameworks reference](../schema/target-frameworks.md#supported-frameworks).
 
-You should never have a version of the library that is not specific to a framework, and placed directly in the root `lib` folder (was only supported with NuGet packages.config). Because then it will make it compatible with any target framework and allows it to be installed everywhere but might fail at runtime.
+You should never have a version of the library that is not specific to a framework, and placed directly in the root `lib` folder (was only supported with NuGet packages.config). Because then it will make it compatible with any target framework and allows it to be installed everywhere but might fail at runtime. So adding assemblies in root (`lib\abc.dll`) or subfolders (`lib\abc\abc.dll`) has been deprecated and ignored in PackagesReference.
 
 For example, the following folder structure supports four versions of an assembly that are framework-specific:
 
@@ -111,7 +111,7 @@ When installing this package in a project that targets .NET Framework 4.6, NuGet
 
 If the project targets .NET Framework 4.6.1, on the other hand, NuGet installs the assembly in the `net461` folder.
 
-If the project targets .NET framework 4.0 and earlier, NuGet throws appropriate error message for not finding the compatible assembly.
+If the project targets .NET framework 4.0 and earlier, NuGet throws an appropriate error message for not finding the compatible assembly.
 
 ## Grouping assemblies by framework version
 
