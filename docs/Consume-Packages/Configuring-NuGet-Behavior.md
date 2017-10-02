@@ -30,7 +30,7 @@ ms.reviewer:
 
 # Configuring NuGet behavior
 
-NuGet's `NuGet.Config` files (in XML) store configuration settings and allow for changing default configuration values. NuGet uses several global configuration files and any number of configuration files within and near to a project to determine its exact behavior. In addition, in NuGet 2.7 and later you can use the `NuGetDefaults.Config` file to also specifically control package sources.
+NuGet's `NuGet.Config` files store configuration settings in XML and allow for changing default configuration values. NuGet uses several global configuration files and any number of configuration files within and near to a project to determine its exact behavior. In addition, in NuGet 2.7 and later you can use the `NuGetDefaults.Config` file to also specifically control package sources.
 
 In this topic:
 

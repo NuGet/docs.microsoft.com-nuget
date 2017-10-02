@@ -79,7 +79,7 @@ Instead, NuGet simply maintains a reference list of the packages upon which a pr
 
 ![A NuGet reference list is created on package installation and can be used to restore packages elsewhere](media/nuget-restore.png)
 
-With only the reference list, NuGet can then reinstall&mdash;that is, restore&mdash;all of those packages from public and/or private hosts at any later time. (For this reason, nuget.org does not allow permanent deletion of published packages, although they can be hidden; see [Deleting packages](Policies/deleting-packages.md).) When committing a project to source control, or sharing it is some other way, you need only include the reference list and need not include any package binaries (see [Packages and source control](Consume-Packages/Packages-and-Source-Control.md).
+With only the reference list, NuGet can then reinstall&mdash;that is, restore&mdash;all of those packages from public and/or private hosts at any later time. (For this reason, nuget.org does not allow permanent deletion of published packages, although they can be hidden; see [Deleting packages](Policies/deleting-packages.md).) When committing a project to source control, or sharing it in some other way, you need only include the reference list and need not include any package binaries (see [Packages and source control](Consume-Packages/Packages-and-Source-Control.md).
 
 The computer that receives a project, such as a build server obtaining a copy of the project as part of an automated deployment system, simply asks NuGet to restore dependencies whenever they're needed. Build systems like Visual Studio Team Services provide "NuGet restore" steps for this exact purpose. Similarly, when developers obtain a copy of a project (as when cloning a repository) then open the project in Visual Studio and run a build, Visual Studio automatically restores the necessary NuGet packages. Developers can also tell NuGet to restore packages at any time using the the `nuget restore` CLI command or the `Install-Package` cmdlet in the Package Manager Console.
 
@@ -93,7 +93,7 @@ How this exactly happens has evolved over the different versions of NuGet, resul
 
 Which package management format is employed in any given project depends on the project type, and the available version of NuGet and Visual Studio. To check what format is being used, simply look for `packages.config` or `project.json` in the project root after installing your first package. If you don't see either file, look in the project file directly for a &lt;PackageReference&gt;element.
 
-In Visual Studio 2017, for example, most project types use `packages.config` except for UWP C# and .NET Core projects in Visual Studio 2017 use PackageReference. 
+In Visual Studio 2017, for example, most project types use `packages.config` except for UWP C# and .NET Core projects which use PackageReference. 
 
 ## What else does NuGet do?
 
