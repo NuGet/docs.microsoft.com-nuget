@@ -5,33 +5,36 @@ title: Introductory Guide to Using NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/25/2017
+ms.date: 10/2/2017
 ms.topic: get-started-article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: f31f8259-20a8-4617-880e-5819299372d2
 
 # optional metadata
 
 description: A walkthrough tutorial on the process of installing and using a NuGet package in a project.
-keywords: NuGet package consumption, installing NuGet packages, NuGet package references, using NuGet packages
-#ROBOTS:
-#audience:
-#ms.devlang:
+keywords: install NuGet, NuGet package consumption, installing NuGet packages, NuGet package references, using NuGet packages
 ms.reviewer:
 - karann
 - unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 
 ---
 
 
-# Use a package
+# Install and use a package
 
-This tutorial walks you through installing and using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package in a Universal Windows Platform (UWP) project. You use a similar same workflow for virtually every NuGet package you use in a project.
+Installing a package happens in three ways:
+
+| Method | Description | Reference |
+| --- | --- | --- | 
+| nuget.exe CLI: `nuget install <package_name>` | Downloads the package identified by \<package_name\> and expands its contents into a folder in the current directory. No changes are made to any project files. Dependencies are also downloaded and expanded. | [CLI reference](../tools/nuget-exe-CLI-Reference.md) |
+| Package Manager Console (Visual Studio): `Install-Package <package_name>` | Downloads and installs the package into the current project, then update the project file to list the package as a dependency. | [Package Manager Console Guide](../tools/Package-Manager-Console.md) |
+| Package Manager UI (Visual Studio) | Provides a UI through which you can browse, select, and install packages into a project. Updates the project file to list the package as a dependency. | [Package Manager UI Reference](../tools/Package-Manager-UI.md) |
+
+Once installed, refer to the package in code with `using <namespace>` where \<namespace\> is specific to the package you're using. Once the reference is made, you can call the package through its API.
+
+The remainder of this topic walks through the process of using the Package Manager UI to install the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package in a Universal Windows Platform (UWP) project. It then shows an example of using the package. You use a similar same workflow for virtually every NuGet package you use in a project.
 
 - [Install pre-requisites](#install-pre-requisites)
 - [Create a UWP project](#create-a-uwp-project)
@@ -66,8 +69,6 @@ In Visual Studio, choose **File > New > Project**, expand **Visual C# > Windows 
 1. If prompted to review changes, click OK.
 
 1. Right-click the solution in Solution Explorer and click **Build Solution**. This restores any NuGet packages listed under **References**. For more details, see [Package Restore](../consume-packages/package-restore.md).
-
-
 
 ## Use the Newtonsoft.Json API in the app
 

@@ -5,10 +5,9 @@ title: NuGet Package Restore | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 10/2/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: a7bf21da-86ae-4c2d-8750-04ff53f41967
 
@@ -16,15 +15,9 @@ ms.assetid: a7bf21da-86ae-4c2d-8750-04ff53f41967
 
 description: A description of how NuGet restores packages upon which a project depends, including how to disable restore and constrain versions.
 keywords: NuGet package restore, NuGet package installation, installing package, restoring packages, dependency versions, disabling automatic restore, constraining package versions
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann
 - unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 
 ---
 
@@ -34,6 +27,7 @@ To promote a cleaner development environment and to reduce repository size, NuGe
 
 In this topic:
 
+- [Quick guide to package restore](#quick-guide-to-package-restore)
 - [Package restore overview](#package-restore-overview)
 - [Enabling and disabling package restore](#enabling-and-disabling-package-restore)
 - [Constraining package versions with restore](#constraining-package-versions-with-restore)
@@ -48,6 +42,16 @@ For additional details on package restore on build servers, see [Package restore
 
 > [!Note]
 > Projects configured for package restore also work with xbuild on Mono.
+
+# Quick guide to package restore
+
+Use any of these methods to quickly restore packages:
+
+- **Package Manager console**: Run the `Update-Package -reinstall -ProjectName <project>` command where \<project\> is the name of the affected project as it appears in Solution Explorer. Use `Update-Package -reinstall` by itself to restore all packages in the solution. See [Update-Package](../tools/ps-ref-update-package.md)
+- **Package Manager UI**: right-click the solution in Solution Explorer and select **Restore NuGet Packages**.
+- **Command line**: use `nuget restore`.
+
+The next section describes additional methods and considerations.
 
 ## Package restore overview
 

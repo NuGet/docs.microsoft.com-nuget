@@ -5,10 +5,9 @@ title: NuGet Command-Line Interface (CLI) Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 10/2/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: d777c424-0cf3-4bc0-8abd-7ca16c22192b
 
@@ -16,29 +15,24 @@ ms.assetid: d777c424-0cf3-4bc0-8abd-7ca16c22192b
 
 description: The complete command-line reference for nuget.exe and information on the use of environment variables.
 keywords: nuget.exe reference, nuget.exe command-line interface, nuget.exe CLI, NuGet command.
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann
 - unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 
 ---
 
 # NuGet CLI reference
 
-The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages. Refer to the [Install Guide](../guides/install-nuget.md) for installation instructions, which amounts to downloading the `nuget.exe` directly to a folder of your choice. On Windows, you typically add that folder to your PATH environment variable so you can use it from anywhere.
+The NuGet Command Line Interface (CLI), `nuget.exe`, provides the full extent of NuGet functionality to install, create, publish, and manage packages without making any changes to project files.  
 
-Available commands are listed below, and each indicate whether they're applicable to package creation, package consumption, and/or publishing a package to a host. Also see the section on [Environment variables](#environment-variables) for how `nuget.exe` uses such variables.
+To install `nuget.exe`:
 
-> [!Note]
-> Command option names are case-insensitive. Options that are deprecated are not included in this reference, such as `NoPrompt` (replaced by `NonInteractive`) and `Verbose` (replaced by `Verbosity`).
+[!INCLUDE[install-cli](../includes/install-cli.md)]
 
 > [!Important]
 > On Mac OSX and Linux, some NuGet capabilities are available through the [dotnet CLI](dotnet-Commands.md) and through the [NuGet CLI running on Mono](../guides/install-nuget.md#mac-osx-and-linux). 
+
+Available commands and applicability to package creation, package consumption, and/or publishing a package to a host: 
 
 | Command | Applicable Roles | NuGet Version | Description | 
 | --- | --- | --- | --- |
@@ -47,25 +41,32 @@ Available commands are listed below, and each indicate whether they're applicabl
 | [delete](#delete) | Publishing | All | Removes or unlists a package from a package source. |
 | [help or ?](#help) | All | All | Displays help information or help for a command. |
 | [init](#init) | Creation | 3.3+ | Adds packages from a folder to a package source using hierarchical layout. |
-| [install](#install) | Consumption | All | Installs a package into the current project but does not modify the project or `packages.config`. |
+| [install](#install) | Consumption | All | Installs a package into the current project but does not modify projects or reference files. |
 | [list](#list) | Consumption, perhaps Publishing | All | Displays packages from a given source. |
 | [locals](#locals) | Consumption | 3.3+ | Clears or lists packages in various caches or the global packages folder, or identifies those folders. |
 | [mirror](#mirror) | Publishing | Deprecated in 3.2+ | Mirrors a package and its dependencies from a source to a target repository. |
 | [pack](#pack) | Creation | 2.7+ | Creates a NuGet package from a `.nuspec` or project file. On Mac OSX with Mono, creating a package from a project file is not supported. |
 | [push](#push) | Publishing | All | Publishes a package to a package source. |
-| [restore](#restore) | Consumption | 2.7+ | Restores all packages referenced by `packages.config`, `project.json`, or project files (using package references). Note: restoring packages from package references in a project file is not supported with the CLI on Mono. | 
+| [restore](#restore) | Consumption | 2.7+ | Restores all packages referenced by the package reference format in use. Note: restoring packages using the PackageReference format is not supported with the CLI on Mono. | 
 | [setapikey](#setapikey) | Consumption, Publishing | All | Saves an API key for a given package source when that package source requires a key for access. |
 | [sources](#sources) | Consumption, Publishing | All | Manages package sources in configuration files. |
 | [spec](#spec) | Creation | All | Generates a `.nuspec` file, using tokens if generating the file from a Visual Studio project. |
 | [update](#update) | Consumption | All | Updates a project's packages to the latest available versions. Note: this command is not supported with the CLI running on Mono. |
 
-For convenience, the following table lists the NuGet commands that are applicable to each specific roles. Developers concerned only with consuming packages, for example, need only understand that subset of NuGet commands.
+Different commands make use of various [Environment variables](#environment-variables).
+
+NuGet CLI commands by applicable roles:
 
 | Role | Commands |
 | --- | --- |
 | Consumption | `config`, `help`, `install`, `list`, `locals`, `restore`, `setapikey`, `sources`, `update` | 
 | Creation | `config`, `help`, `init`, `pack`, `spec` |
 | Publishing | `add`, `config`, `delete`, `help`, `list`, `push`, `setapikey`, `sources` |
+
+Developers concerned only with consuming packages, for example, need only understand that subset of NuGet commands.
+
+> [!Note]
+> Command option names are case-insensitive. Options that are deprecated are not included in this reference, such as `NoPrompt` (replaced by `NonInteractive`) and `Verbose` (replaced by `Verbosity`).
 
 
 ## add
