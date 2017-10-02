@@ -31,15 +31,15 @@ The Package Manager Console provides a PowerShell interface within Visual Studio
 > [!Important]
 > The commands listed here are specific to the Package Manager Console in Visual Studio, and differ from the [Package Management module commands](https://msdn.microsoft.com/powershell/reference/6/packagemanagement/packagemanagement) that are available in a general PowerShell environment. Specifically, each environment has commands that are not available in the other, and commands with the same name may also differ in their specific arguments. When using the Package Management Console in Visual Studio, the commands and arguments documented in this present topic apply.
 
-| Command | Description | NuGet Version |
+| Common Commands | Description | NuGet Version |
 | --- | --- | --- |
-| **Common Commands** |
 | [Install-Package](ps-ref-install-package.md) | Installs a package and its dependencies into the project. | All |
 | [Update-Package](ps-ref-update-package.md) | Updates a package and its dependencies, or all packages in a project. | All |
 | [Find-Package](ps-ref-find-package.md) | Searches a package source using a package ID or keywords. | 3.0+ |
 | [Get-Package](ps-ref-get-package.md) | Retrieves the list of packages installed in the local repository, or lists packages available from a package source. | All |
-| | |
-| **Secondary Commands** |
+
+| Secondary Commands | Description | NuGet Version |
+| --- | --- | --- |
 | [Add-BindingRedirect](ps-ref-add-bindingredirect.md) | Examines all assemblies within the output path for a project and adds binding redirects to the `app.config` or `web.config` where necessary. | All |
 | [Get-Project](ps-ref-get-project.md) | Displays information about the default or specified project. | 3.0+ |
 | [Open-PackagePage](ps-ref-open-packagepage.md) | Launches the default browser with the project, license, or report abuse URL for the specified package. | Deprecated in 3.0+ |

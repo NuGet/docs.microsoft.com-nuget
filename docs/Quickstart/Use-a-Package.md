@@ -21,7 +21,6 @@ ms.reviewer:
 
 ---
 
-
 # Install and use a package
 
 Installing a package happens in three ways:

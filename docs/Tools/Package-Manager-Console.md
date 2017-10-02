@@ -95,10 +95,7 @@ Find-Package logging -First 100
 Find-Package jquery -AllVersions -ExactMatch
 ```
 
-See [Find-Package](../tools/ps-ref-find-package.md).
-
-> [!Note]
-> `Find-Package` is not available in Visual Studio 2013 and earlier; use [Get-Package](../tools/ps-ref-get-package.md) instead.
+See [Find-Package](../tools/ps-ref-find-package.md). In Visual Studio 2013 and earlier, use [Get-Package](../tools/ps-ref-get-package.md) instead.
 
 
 ## Installing a package

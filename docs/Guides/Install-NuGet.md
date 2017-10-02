@@ -11,7 +11,8 @@ ms.prod: nuget
 ms.technology: null 
 ms.assetid: 683b8b34-a6f4-4d56-b9cd-2483bfbad1ad 
  
-# optional metadata 
+# optional metadata
+
 description: Guidance on installing the NuGet client tools: the command-line interface (CLI) and the NuGet Package Manager for Visual Studio.
 keywords: nuget.exe CLI, nuget client tools, NuGet package manager, NuGet package manager console, NuGet for Visual Studio, NuGet beta channel
 ms.reviewer:  
@@ -20,9 +21,10 @@ ms.reviewer:
  
 ---
 
-# Installing NuGet Tools
+# Installing NuGet client tools
 
-**Looking to install a package? See [Quickstart - Use a package](../Quickstart/Use-a-Package.md).**
+> [!Tip] 
+> **Looking to install a package? See [Quickstart - Use a package](../Quickstart/Use-a-Package.md).**
 
 There are two primary tools available to help you build, publish and consume NuGet packages:
 
@@ -64,8 +66,8 @@ The NuGet command-line interface provides access to all NuGet capabilities, and 
 
 [!INCLUDE[install-cli](../includes/install-cli.md)]
 
-    > [!Note]
-    > With NuGet 1.4+, you can use `nuget update -self` to update your existing nuget.exe to the latest version.
+> [!Note]
+> With NuGet 1.4+, you can use `nuget update -self` to update your existing nuget.exe to the latest version.
 
 **Other methods:**
 
