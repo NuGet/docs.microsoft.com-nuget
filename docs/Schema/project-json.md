@@ -32,7 +32,7 @@ ms.reviewer:
 
 *NuGet 3.x+*
 
-The `project.json` file maintains a list of packages used in a project, known as a package reference format. It supercedes `packages.config` but is in turn superceded by [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) with NuGet 4.0+.
+The `project.json` file maintains a list of packages used in a project, known as a package reference format. It supersedes `packages.config` but is in turn superseded by [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) with NuGet 4.0+.
 
 The [`project.lock.json`](#projectlockjson) file (described below) is also used in projects employing `project.json`.
 
