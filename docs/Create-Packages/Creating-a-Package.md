@@ -71,7 +71,7 @@ The manifest:
 
 Required properties:
 - The package identifier, which must be unique across the gallery that hosts the package.
-- A specific version number in the form *Major.Minor.Patch.Build[-Suffix]* where *-Suffix* identifies [pre-release versions](Prerelease-Packages.md)- - The package title as it should appears on the host (like nuget.org)
+- A specific version number in the form *Major.Minor.Patch[-Suffix]* where *-Suffix* identifies [pre-release versions](Prerelease-Packages.md)- - The package title as it should appears on the host (like nuget.org)
 - Author and owner information.
 - A long description of the package.
 
@@ -95,7 +95,7 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
     <id>Contoso.Utility.UsefulStuff</id>
 
     <!-- The package version number that is used when resolving dependencies -->
-    <version>1.8.3.331</version>
+    <version>1.8.3-beta</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Dejana Tesic, Rajeev Dey</authors>
