@@ -101,11 +101,6 @@ At the same time, using a NuGet package means taking a dependency on it, so you'
     ![Version history on a package's listing page](media/Finding-04-VersionHistory.png)
 
 - *Recent installs*: on the package page, select **View full stats** on the right side. This shows you the package installs over the last six weeks. A package that other developers are actively using is typically a better choice than one that's not.
-- *Restore vs. new install*: on the same package statistics page, clear the **Version** checkbox and select **Operation** to see a chart of package restores vs. new installs (below).
-
-    ![Chart of operations for a NuGet package on nuget.org package statistics](media/Finding-05-OperationChart.png)
-
-- *Dependency installs*: the same **Operation** chart above has an "Install-Dependency" bar that indicates how many other NuGet packages have taken a dependency on this one. This is an even stronger indication that other developers find the package reliable.
 - *Support*: on the package page, select **Project Site** (if available) to see what support options are available. A project with a dedicated site is generally better supported.
 - *Developer history*: on the package page, select the listed **Owners** to see what other packages they've published. Those with multiple packages are more likely to continue supporting their work in the future.
 - *Open source contributions*: many packages are maintained in open-source repositories, making it possible for developers depending on them to directly contribute bug fixes and feature improvements. The contribution history of any given package is also a good indicator of how many developers are actively involved.
