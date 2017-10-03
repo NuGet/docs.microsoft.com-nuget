@@ -99,7 +99,7 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
     <id>Contoso.Utility.UsefulStuff</id>
 
     <!-- The package version number that is used when resolving dependencies -->
-    <version>1.8.3-ci-331</version>
+    <version>1.8.3-beta</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Dejana Tesic, Rajeev Dey</authors>
