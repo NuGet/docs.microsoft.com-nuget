@@ -42,7 +42,7 @@ For additional details on package restore on build servers, see [Package restore
 > [!Note]
 > Projects configured for package restore also work with xbuild on Mono.
 
-# Quick guide to package restore
+## Quick guide to package restore
 
 [!INCLUDE[package-restore](../includes/package-restore.md)]
 
