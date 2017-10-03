@@ -71,7 +71,8 @@ The manifest:
 
 Required properties:
 - The package identifier, which must be unique across the gallery that hosts the package.
-- A specific version number in the form *Major.Minor.Patch[-Suffix]* where *-Suffix* identifies [pre-release versions](Prerelease-Packages.md)- - The package title as it should appears on the host (like nuget.org)
+- A specific version number in the form *Major.Minor.Patch[-Suffix]* where *-Suffix* identifies [pre-release versions](Prerelease-Packages.md)
+- The package title as it should appears on the host (like nuget.org)
 - Author and owner information.
 - A long description of the package.
 
@@ -241,7 +242,6 @@ Note that there are several additional packaging options available when working 
 NuGet 2.x supported the notion of a solution-level package that installs tools or additional commands for the Package Manager Console (the contents of the `tools` folder), but does not add references, content, or build customizations to any projects in the solution. Such packages contain no files in its direct `lib`, `content`, or `build` folders, and none of its dependencies have files in their respective `lib`, `content`, or `build` folders. 
 
 NuGet tracks installed solution-level packages in a `packages.config` file in the `.nuget` folder, rather than the project's `packages.config` file.
-
 
 ### New file with default values
 
