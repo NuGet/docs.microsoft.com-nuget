@@ -25,9 +25,10 @@ ms.reviewer:
 
 You may encounter situations where you need to restore the NuGet packages referenced by a project. For example, a project in Visual Studio may show the following error:
 
-    ```
-    This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them. The missing file is {name}.
-    ```
+```
+This project references NuGet package(s) that are missing on this computer.
+Use NuGet Package Restore to download them. The missing file is {name}.
+```
 
 Use any of the following methods to quickly restore packages:
 
