@@ -5,7 +5,7 @@ title: NuGet Package Restore | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/2/2017
+ms.date: 10/3/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
