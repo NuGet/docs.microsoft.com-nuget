@@ -64,6 +64,7 @@
 ## [NuGet API V3](API/NuGet-API-V3.md)
 ## [NuGet Credential Providers for Visual Studio](API/Nuget-Credential-Providers-for-Visual-Studio.md)
 ## [nuget.exe Credential Providers](API/nuget-exe-Credential-Providers.md)
+## [NuGet Protocols](API/nuget-protocols.md)
 # Visual Studio Extensibility
 ## [NuGet API in Visual Studio](Visual-Studio-Extensibility/NuGet-API-in-Visual-Studio.md)
 ## [Project System Support](Visual-Studio-Extensibility/Project-System-Support.md)
