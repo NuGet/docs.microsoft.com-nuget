@@ -2,8 +2,9 @@
 # Quickstart
 ## [Create and Publish a Package](Quickstart/Create-and-Publish-a-Package.md)
 ## [Use a Package](Quickstart/Use-a-Package.md)
+## [Restore Packages](Quickstart/Restore.md)
 # Guides
-## [Install NuGet](Guides/Install-NuGet.md)
+## [Install NuGet client tools](Guides/Install-NuGet.md)
 ## [Create UWP Packages](Guides/Create-UWP-Packages.md)
 ## [Creating UWP Controls as NuGet Packages](Guides/Create-UWP-Controls.md)
 ## [Create Cross-Platform Packages](Guides/Create-Cross-Platform-Packages.md)

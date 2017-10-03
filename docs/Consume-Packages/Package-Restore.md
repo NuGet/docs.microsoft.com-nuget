@@ -26,7 +26,6 @@ ms.reviewer:
 To promote a cleaner development environment and to reduce repository size, NuGet **Package Restore** installs all referenced packages before a project is built. This widely-used feature ensures that all dependencies are available in a project without requiring those packages to be stored in source control (see [Packages and Source Control](../consume-packages/packages-and-source-control.md) on how to configure your repository to exclude package binaries).
 
 In this topic:
-
 - [Quick guide to package restore](#quick-guide-to-package-restore)
 - [Package restore overview](#package-restore-overview)
 - [Enabling and disabling package restore](#enabling-and-disabling-package-restore)
@@ -43,15 +42,9 @@ For additional details on package restore on build servers, see [Package restore
 > [!Note]
 > Projects configured for package restore also work with xbuild on Mono.
 
-## Quick guide to package restore
+# Quick guide to package restore
 
-Use any of these methods to quickly restore packages:
-
-- **Package Manager console**: Run the `Update-Package -reinstall -ProjectName <project>` command where \<project\> is the name of the affected project as it appears in Solution Explorer. Use `Update-Package -reinstall` by itself to restore all packages in the solution. See [Update-Package](../tools/ps-ref-update-package.md)
-- **Package Manager UI**: right-click the solution in Solution Explorer and select **Restore NuGet Packages**.
-- **Command line**: use `nuget restore`.
-
-The next section describes additional methods and considerations.
+[!INCLUDE[package-restore](../includes/package-restore.md)]
 
 ## Package restore overview
 

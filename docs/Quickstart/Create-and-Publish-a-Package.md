@@ -33,7 +33,9 @@ It's a simple process to create a NuGet package from a .NET Class Library and pu
 ## Pre-requisites
 
 1. Install any edition of Visual Studio 2017 from [visualstudio.com](https://www.visualstudio.com/).
+
 1. Install the NuGet CLI tool, `nuget.exe`, by downloading the latest version of `nuget.exe` from [nuget.org/downloads](https://nuget.org/downloads), and saving the `.exe` to a location in your PATH. Note that the download *is* the tool itself, not an installer.
+
 1. Create a suitable .NET Class Library project for the code you want to package. If you don't already have a project, you can create a simple one as follows:
     1. In Visual Studio, choose **File > New > Project**, expand the **Visual C# > Windows** node, select the "Class Library" template, name the project AppLogger, and click **OK**.
     1. Right-click on the resulting project file and select **Build** to make sure the project was created properly. The DLL is found within the Debug folder (or Release if you build that configuration instead).
