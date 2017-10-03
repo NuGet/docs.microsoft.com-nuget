@@ -32,7 +32,7 @@ Updating and reinstalling packages is accomplished as follows:
 | --- | --- | --- |
 | Package Manager console (described in [Using Update-Package](#using-update-package)) | `Update-Package` command | `Update-Package -reinstall` command |
 | Package Manager UI | On the **Updates** tab, select one or more packages and select **Update** | One the **Installed** tab, select a package, record its name, then select **Uninstall**. Switch to the **Browse** tab, search for the package name, select it, then select **Install**). |
-| nuget.exe CLI | `nuget update` command | Delete the package folder, then run `nuget install`. |
+| nuget.exe CLI | `nuget update` command | For all packages, delete the package folder, then run `nuget install`. For a single package, delete the package folder and use `nuget install <id>` to reinstall the same one. |
 
 In this topic:
 - [When to Reinstall a Package](#when-to-reinstall-a-package)
