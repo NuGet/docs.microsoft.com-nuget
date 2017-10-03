@@ -13,7 +13,7 @@ ms.assetid: 683b8b34-a6f4-4d56-b9cd-2483bfbad1ad
  
 # optional metadata
 
-description: Guidance on installing the NuGet client tools: the command-line interface (CLI) and the NuGet Package Manager for Visual Studio.
+description: Guidance on installing the NuGet client tools, the command-line interface (CLI), and the NuGet Package Manager for Visual Studio.
 keywords: nuget.exe CLI, nuget client tools, NuGet package manager, NuGet package manager console, NuGet for Visual Studio, NuGet beta channel
 ms.reviewer:  
 - karann 
