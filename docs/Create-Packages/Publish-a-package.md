@@ -50,7 +50,7 @@ Next, you can either upload the package through the nuget.org web portal, or pus
 
 - Command line:
 > [!Note]
-> We recommend using NuGet.exe v4.1.0 or above to push packages.
+> To push packages, you would need to use the [latest NuGet.exe clients](https://www.nuget.org/downloads) (v4.3.0 or above)
 
     1. Click on your user name to navigate to your account settings.
     2. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:
