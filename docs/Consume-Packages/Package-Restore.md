@@ -196,7 +196,7 @@ If you're using NuGet 2.7 or later and have a solution that is still configured 
 To correct these errors, do one of the following:
 
 1. [Migrate the project to automatic restore](#migrating-to-automatic-restore).
-1. Update `nuget.exe` in the `.nuget` folder** as follows
+1. Update `nuget.exe` in the `.nuget` folder as follows
 
     ```
     cd .nuget

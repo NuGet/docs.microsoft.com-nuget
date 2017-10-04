@@ -504,6 +504,9 @@ nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
 
 ##  push
 
+> [!Note]
+> We recommend using NuGet.exe v4.1.0 or above to push packages.
+
 Pushes a package to a package source and publishes it.
 
 NuGet's default configuration is obtained by loading `%AppData%\NuGet\NuGet.Config`, then loading any `Nuget.Config` or `.nuget\Nuget.Config` files starting from root of drive and ending in current directory (see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md))
