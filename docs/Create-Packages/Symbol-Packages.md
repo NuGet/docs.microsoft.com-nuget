@@ -112,7 +112,7 @@ A symbol package can be built by conventions, from a folder structure as describ
 ## Publishing a symbol package
 
 > [!Note]
-> We recommend using NuGet.exe v4.1.0 or above to push packages.
+> To push packages, you would need to use the [latest NuGet.exe clients](https://www.nuget.org/downloads) (v4.3.0 or above)
 
 1. For convenience, first save your API key with NuGet (see [publish a package](../create-packages/publish-a-package.md), which will apply to both nuget.org and symbolsource.org, because symbolsource.org will check with nuget.org to verify that you are the package owner.
 
