@@ -18,8 +18,8 @@ f1_keywords:
 
 # optional metadata
 
-description: Instructions for using the NuGet Package Manager UI in Visual Studio for working with packages.
-keywords: NuGet package manager UI, NuGet in Visual Studio, managing NuGet packages, NuGet user interface
+description: Instructions for using the NuGet Package Manager UI in Visual Studio for working with NuGet packages.
+keywords: NuGet UI, NuGet package manager UI, NuGet in Visual Studio, managing NuGet packages, NuGet user interface, package manager in Visual Studio
 #ROBOTS:
 #audience:
 #ms.devlang:

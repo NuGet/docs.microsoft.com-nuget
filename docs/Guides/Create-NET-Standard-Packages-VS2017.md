@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Create .NET Standard NuGet Packages with Visual Studio 2017 | Microsoft Docs
+title: Create .NET Standard 2.0 NuGet Packages with Visual Studio 2017 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -14,7 +14,7 @@ ms.assetid: 2c1de334-fdc9-4e1e-8ef6-a90b3e77ff0f
 
 # optional metadata
 
-description: An end-to-end walkthrough of creating .NET standard NuGet packages using NuGet 4.x and Visual Studio 2017.
+description: An end-to-end walkthrough of creating .NET Standard 2.0 NuGet packages using NuGet 4.x and Visual Studio 2017.
 keywords: create a package, .NET Standard packages, .NET Core
 #ROBOTS:
 #audience:
@@ -28,13 +28,13 @@ ms.reviewer:
 
 ---
 
-# Create .NET standard packages with Visual Studio 2017
+# Create .NET Standard 2.0 packages with Visual Studio 2017
 
-*Applies to NuGet 4.x+ and MSBuild 15.1+ as provided with Visual Studio 2017. See [Create .NET Standard Packages with Visual Studio 2015](../guides/create-net-standard-packages-vs2015.md) for working with NuGet 3.x+*
+*Applies to NuGet 4.x+ and MSBuild 15.3+ as provided with Visual Studio 2017 Update 3. For earlier versions of Visual Studio 2017, these instructions apply to .NET Standard 1.4 to 1.6 by changing the \<TargetFramework\> property. Also see [Create .NET Standard Packages with Visual Studio 2015](../guides/create-net-standard-packages-vs2015.md) for working with NuGet 3.x+.*
 
 The [.NET Standard Library](https://docs.microsoft.com/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code.
 
-This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4 with Visual Studio 2017 and NuGet 4.0.
+This guide will walk you through creating a nuget package targeting .NET Standard Library 2.0 with Visual Studio 2017 Update 3 and NuGet 4.0.
 
 1. [Pre-requisites](#pre-requisites)
 1. [Create the class library project](#create-the-netstandard-class-library-project)
@@ -44,7 +44,7 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 ## Pre-requisites
 
-This walkthrough requires Visual Studio 2017 with the **.NET Core cross-platform development** workload. You can install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/), or use the Professional and Enterprise editions.
+This walkthrough requires Visual Studio 2017 Update 3 with the **.NET Core cross-platform development** workload. You can install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/), or use the Professional and Enterprise editions.
 
 The require workload appears as follows in the Visual Studio installer:
 
@@ -74,7 +74,7 @@ The require workload appears as follows in the Visual Studio installer:
     }
     ```
 
-1. Build the project (with the Release configuration) and check that DLL and XML files are produced within the `bin\Release\netstandard1.4` folder.
+1. Build the project (with the Release configuration) and check that DLL and XML files are produced within the `bin\Release\netstandard2.0` folder.
 
 ## Edit metadata in the .csproj file
 
@@ -84,7 +84,7 @@ With NuGet 4.0 and .NET Core projects, package metadata is contained directly in
 
     ```xml
     <PropertyGroup>
-        <TargetFramework>netstandard1.4</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
         <PackageId>AppLogger.YOUR_NAME</PackageId>
         <PackageVersion>1.0.0</PackageVersion>
         <Authors>YOUR_NAME</Authors>
@@ -101,7 +101,7 @@ With NuGet 4.0 and .NET Core projects, package metadata is contained directly in
 
 ## Package the component
 
-NuGet 4.0 supports a pack target using MSBuild version 15.1+ when the project contains the necessary package metadata, as was added in the previous section. To invoke MSBuild in this way, simply specify the pack target on the command line in the same folder as the `.csproj` file:
+NuGet 4.0 supports a pack target using MSBuild version 15.1+ (including MSBuild 15.3 as part of Visual Studio 2017 Update 3) when the project contains the necessary package metadata, as was added in the previous section. To invoke MSBuild in this way, simply specify the pack target on the command line in the same folder as the `.csproj` file:
 
     msbuild /t:pack /p:Configuration=Release
 

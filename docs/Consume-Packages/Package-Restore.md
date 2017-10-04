@@ -5,10 +5,9 @@ title: NuGet Package Restore | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 10/3/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: a7bf21da-86ae-4c2d-8750-04ff53f41967
 
@@ -16,15 +15,9 @@ ms.assetid: a7bf21da-86ae-4c2d-8750-04ff53f41967
 
 description: A description of how NuGet restores packages upon which a project depends, including how to disable restore and constrain versions.
 keywords: NuGet package restore, NuGet package installation, installing package, restoring packages, dependency versions, disabling automatic restore, constraining package versions
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann
 - unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 
 ---
 
@@ -33,7 +26,7 @@ ms.reviewer:
 To promote a cleaner development environment and to reduce repository size, NuGet **Package Restore** installs all referenced packages before a project is built. This widely-used feature ensures that all dependencies are available in a project without requiring those packages to be stored in source control (see [Packages and Source Control](../consume-packages/packages-and-source-control.md) on how to configure your repository to exclude package binaries).
 
 In this topic:
-
+- [Quick guide to package restore](#quick-guide-to-package-restore)
 - [Package restore overview](#package-restore-overview)
 - [Enabling and disabling package restore](#enabling-and-disabling-package-restore)
 - [Constraining package versions with restore](#constraining-package-versions-with-restore)
@@ -48,6 +41,10 @@ For additional details on package restore on build servers, see [Package restore
 
 > [!Note]
 > Projects configured for package restore also work with xbuild on Mono.
+
+## Quick guide to package restore
+
+[!INCLUDE[package-restore](../includes/package-restore.md)]
 
 ## Package restore overview
 
