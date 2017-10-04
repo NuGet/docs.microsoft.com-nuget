@@ -81,6 +81,9 @@ Get-Package -ListAvailable -PageSize 30
 # Lists packages with the Ninject keyword in the current source, up to 50
 Get-Package -ListAvailable -Filter Ninject
 
+# List all versions of packages matching the filter "jquery"
+Get-Package -ListAvailable -Filter jquery -AllVersions
+
 # Lists packages installed in the solution that have available updates
 Get-Package -Updates
 
