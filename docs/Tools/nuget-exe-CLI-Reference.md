@@ -505,7 +505,7 @@ nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
 ##  push
 
 > [!Note]
-> We recommend using NuGet.exe v4.1.0 or above to push packages.
+> To push packages, you would need to use the [latest NuGet.exe clients](https://www.nuget.org/downloads) (v4.3.0 or above)
 
 Pushes a package to a package source and publishes it.
 
