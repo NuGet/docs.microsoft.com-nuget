@@ -122,6 +122,8 @@ On Mac OSX and Linux, there are two ways to run the NuGet CLI:
 
 The NuGet Package Manager is included in every edition of Visual Studio on Windows, 2012 and later. It includes the Package Manager UI ([reference](../tools/package-manager-ui.md)), and the Package Manager Console through which you can access tools that come with certain packages ([reference](../tools/package-manager-console.md)).
 
+The Visual Studio 2017 installer includes the NuGet Package Manager with any workload that employs .NET. To install separately, or to verify that the Package Manager is installed, run the Visual Studio 2017 installer and check the option under **Individual Components > Code tools > NuGet package manager**.
+
 > [!Note]
 > The console requires [PowerShell 2.0](http://support.microsoft.com/kb/968929), which will already be installed on Windows 7 or higher and Windows Server 2008 R2 or higher.
 >
@@ -132,7 +134,7 @@ The NuGet Package Manager is included in every edition of Visual Studio on Windo
 
 *These steps are not necessary for Visual Studio 2012 and later, which already include the Package Manager.*
 
-1. In Visual Studio, click **Tools > Extension and Updates**.
+1. In Visual Studio 2010 and earlier, click **Tools > Extension and Updates**.
 1. Navigate to **Online**, then search for "NuGet Package Manager for Visual Studio" and click **Download**.
 1. In the Installer dialog box, click **Install**.
 1. When installation is complete, restart Visual Studio.
@@ -144,7 +146,7 @@ The NuGet Package Manager is included in every edition of Visual Studio on Windo
 
 For Visual Studio 2015 Update 2 and later, the Package Manager is automatically updated to the latest stable release.
 
-For earlier versions of Visual Studio, select the **Tools > Extensions and Updates** command and click on the **Updates** tab to see if a new version of the Package Manager is available.  
+For Visual Studio 2015 Update 1 and earlier, select the **Tools > Extensions and Updates** command and click on the **Updates** tab to see if a new version of the Package Manager is available.  
 
 ### NuGet previews
 
