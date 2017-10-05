@@ -46,7 +46,7 @@ Available commands and applicability to package creation, package consumption, a
 | [locals](#locals) | Consumption | 3.3+ | Clears or lists packages in various caches or the global packages folder, or identifies those folders. |
 | [mirror](#mirror) | Publishing | Deprecated in 3.2+ | Mirrors a package and its dependencies from a source to a target repository. |
 | [pack](#pack) | Creation | 2.7+ | Creates a NuGet package from a `.nuspec` or project file. On Mac OSX with Mono, creating a package from a project file is not supported. |
-| [push](#push) | Publishing | 4.1+ | Publishes a package to a package source. |
+| [push](#push) | Publishing | 4.3+ | Publishes a package to a package source. The push command is available in all versions of nuget.exe, but 4.3+ is required to push to nuget.org. |
 | [restore](#restore) | Consumption | 2.7+ | Restores all packages referenced by the package reference format in use. Note: restoring packages using the PackageReference format is not supported with the CLI on Mono. | 
 | [setapikey](#setapikey) | Consumption, Publishing | All | Saves an API key for a given package source when that package source requires a key for access. |
 | [sources](#sources) | Consumption, Publishing | All | Manages package sources in configuration files. |
@@ -505,7 +505,7 @@ nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
 ##  push
 
 > [!Important]
-> To push packages, you must use [nuget.exe 4.3.0 or above](https://www.nuget.org/downloads).
+> To push packages to nuget.org, you must use [nuget.exe 4.3.0 or above](https://www.nuget.org/downloads).
 
 Pushes a package to a package source and publishes it.
 
