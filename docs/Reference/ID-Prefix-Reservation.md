@@ -110,7 +110,8 @@ If a 3rd party feed provider is interested in implementing their own service to 
 
 ### v2 Search Service Example
 ```json
-"data": [
+"data": 
+[
     {
         "PackageRegistration": {
             "Id": "MySql.Data.Entity",
