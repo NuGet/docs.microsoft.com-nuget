@@ -59,10 +59,10 @@ There are several more advanced prefix reservation scenarios described below, in
 When a package comes from a reserved prefix, you will see the below visual indicators on the [NuGet.org](https://www.nuget.org/) gallery and in Visual Studio 2017 version 15.4 or later:
 
 **NuGet.org Gallery**
-![NuGet.org Gallery](..\media\nuget-gallery-reserved-prefix.png)
+![NuGet.org Gallery](media/nuget-gallery-reserved-prefix.png)
 
 **Visual Studio**
-![Visual Studio](..\media\visual-studio-reserved-prefix.png)
+![Visual Studio](media/visual-studio-reserved-prefix.png)
 
 ## ID Prefix Reservation Application Process
 To apply for a prefix reservation, follow the below steps. 
