@@ -193,5 +193,7 @@ There is no workaround at this time.
 ## Link to GitHub issues fixed in 4.4 RTM
 
 [Issues List 1](https://github.com/NuGet/Home/issues?q=is:issue+is:closed+milestone:"4.4")
+
 [Issues List 2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.4+-+7%2F31+through+8%2F18%22)
+
 [Issues List 3](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.4+-+7%2F10+through+7%2F28%22)
