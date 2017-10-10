@@ -61,6 +61,7 @@
 ## [Target Frameworks](Schema/Target-Frameworks.md)
 ## [Analyzers Conventions](Schema/Analyzers-Conventions.md)
 ## [Errors and warnings](Reference/Errors-and-Warnings.md)
+## [ID Prefix Reservation](Reference/ID-Prefix-Reservation.md)
 # API
 ## [NuGet API V3](API/NuGet-API-V3.md)
 ## [NuGet Credential Providers for Visual Studio](API/Nuget-Credential-Providers-for-Visual-Studio.md)
