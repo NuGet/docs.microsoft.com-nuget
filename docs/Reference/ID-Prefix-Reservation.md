@@ -29,16 +29,21 @@ ms.reviewer:
 
 ---
 
-# Package ID Prefix Reservation
+# Package ID prefix reservation
 [NuGet.org](https://www.nuget.org/) and Visual Studio 2017 version 15.4 or later now show a visual indicator for packages that are submitted by owners with a reserved package ID prefix, as long as the package matches the reserved ID prefix naming pattern. The below reference explains what the ID prefix reservation entails, and how an owner can apply for an ID prefix.
 
-## ID Prefix Reservation Details 
+## What is package ID prefix reservation?
+We've heard from the NuGet community that there are identity issues when trying to consume NuGet packages. We've also heard from NuGet package owners that sometimes they are forced to make takedown requests for packages that are squatting on their ID prefixes - something that can cause delays in shipping new packages. To alleviate pain in both the package consumer and package owner scenarios, we have built a package ID prefix reservation feature.
+
+Package owners will be able to reserve and protect their identity by reserving ID prefixes. Package consumers will be provided with additional information when consuming packages that the package they are consuming is not deceptive in its identifying properties. Read on to see how ID prefix reservation works in details.
+
+## ID prefix reservation details 
 When a package ID prefix is reserved, several things happen on the [NuGet.org](https://www.nuget.org/) gallery, as well as in Visual Studio. In addition, there are advanced scenarios that are supported by ID prefix reservations, such as setting a prefix as 'public', delegating prefix subsets to multiple owners.
 
 The below section describes the feature in detail, as well as the more advanced functionality.
 
-### ID Prefix Reservation on NuGet.org
-When a prefix is reserved on [NuGet.org](https://www.nuget.org/), several things happen. 
+### ID prefix reservation on NuGet.org
+When a prefix is reserved on [NuGet.org](https://www.nuget.org/), the following will happen:
 1. A prefix reservation is associated with an owner or set of owners on [NuGet.org](https://www.nuget.org/). 
 2. Whenever a package is submitted to [NuGet.org](https://www.nuget.org/) with an ID that matches the reserved ID prefix, the package is rejected unless it originates from the owner(s) that reserved the ID prefix.
 3. Any package that matches the reserved ID prefix and originates from the owner(s) that reserved the ID prefix will have a visual indicator in Visual Studio 2017 version 15.4 or later, and on [NuGet.org](https://www.nuget.org/) indicating that the package is under a reserved ID prefix. This is true for both new package submissions as well as existing packages under the owner(s). **Note:** The indicator in Visual Studio will only appear if a single feed is selected as the package source. 
@@ -49,13 +54,13 @@ These changes are based on the following conditions and impose several additiona
 * If there is more than one owner of a package where one or more owners has the reserved prefix and one or more owners does not have the reserved prefix, then only the owner(s) with the reserved prefix can remove other owner(s) with a reserved prefix. The owners who do not have the prefix reserved cannot remove owners with the prefix reserved. They can still remove other owners that also do not have the prefix reserved.
   * Once a package has the visual indicator, it should *always* have the visual indicator (guarunteeing that at least one owner with the reserved prefix will always remain an owner)
 
-### Advanced Prefix Reservation Scenarios
+### Advanced prefix reservation scenarios
 There are several more advanced prefix reservation scenarios described below, including subprefix delegation, and marking prefixes as public. Below are the more advanced prefix reservations that can be made. 
 
 * During prefix reservation, the owner can request delegation of prefix subsets (or the prefix) to other owners. For example, if '[Microsoft](https://www.nuget.org/profiles/microsoft)' owns 'Microsoft.\*', but '[aspnet](https://www.nuget.org/profiles/aspnet)' wants to reserve 'Microsoft.AspNet.\*', '[Microsoft](https://www.nuget.org/profiles/microsoft)' can choose to delegate 'Microsoft.AspNet.\*' to the [aspnet](https://www.nuget.org/profiles/aspnet) account.
 *  During prefix reservation, the owner can choose to make a prefix public. This will still give them the visual indicator showing that the package originates from a reserved prefix, but it will **not** block future package submissions on the prefix for any owner. This is useful for open source projects with many contributors - the top or core contributors can have the prefix reserved, but it can still be open to all contributors. 
 
-### Prefix Resveration Visual Indicator
+### Prefix resveration visual indicator
 When a package comes from a reserved prefix, you will see the below visual indicators on the [NuGet.org](https://www.nuget.org/) gallery and in Visual Studio 2017 version 15.4 or later:
 
 **NuGet.org Gallery**
@@ -64,7 +69,7 @@ When a package comes from a reserved prefix, you will see the below visual indic
 **Visual Studio**
 ![Visual Studio](media/visual-studio-reserved-prefix.png)
 
-## ID Prefix Reservation Application Process
+## ID prefix reservation application process
 To apply for a prefix reservation, follow the below steps. 
 1. Review the acceptance [criteria for prefix ID reservation](#id-prefix-reservation-criteria).
 2. Determine the namespaces you want to reserve, in addition to any [advanced prefix reservation scenarios](#advanced-prefix-reservation-scenarios) you may require.
@@ -72,7 +77,7 @@ To apply for a prefix reservation, follow the below steps.
 
 After the application is submitted, you will be notified of acceptance or rejection (with the criteria that caused rejection). We may need to ask additional identifying questions to confirm owner identity. 
 
-### ID Prefix Reservation Criteria
+### ID prefix reservation criteria
 When reviewing any application for ID prefix reservation, the [NuGet.org](https://www.nuget.org/) team will evalaute the application against the below criteria. Not all criteria needs to be met for a prefix to be reserved, but the application may be denied if there is not substantial evidence of the criteria being met (with an explanation given):
 1. Does the package ID prefix properly and clearly identify the package owner?
 2. Are a significant number of the packages that have already been submitted by the owner under the package ID prefix?
@@ -80,10 +85,10 @@ When reviewing any application for ID prefix reservation, the [NuGet.org](https:
 4. Would *not* reserving the package ID prefix cause ambiguity and confusion for the community?
 5. Are the identifying properties of the packages that match the package ID prefix clear and consistent (especially the package author)?
 
-## 3rd Party Feed Provider Scenarios
+## 3rd party feed provider scenarios
 If a 3rd party feed provider is interested in implementing their own service to provide prefix reservations, you can do so by modifying the search service in the NuGet v2 or v3 feed providers. The addition in the feed search service is to add the *verified* property, with examples for both the v2 and v3 feeds below. 
 
-### v3 Search Service Example
+### v3 search service example
 ```json
 "data": 
 [
@@ -108,7 +113,7 @@ If a 3rd party feed provider is interested in implementing their own service to 
 ]
 ```
 
-### v2 Search Service Example
+### v2 search service example
 ```json
 "data": 
 [
