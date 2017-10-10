@@ -45,7 +45,7 @@ When a prefix is reserved on [NuGet.org](https://www.nuget.org/), the following 
 1. A prefix reservation is associated with an owner or set of owners on [NuGet.org](https://www.nuget.org/). 
 2. Whenever a package is submitted to [NuGet.org](https://www.nuget.org/) with an ID that matches the reserved ID prefix, the package is rejected unless it originates from the owner(s) that reserved the ID prefix.
 3. Any package that matches the reserved ID prefix and originates from the owner(s) that reserved the ID prefix will have a visual indicator in Visual Studio 2017 version 15.4 or later, and on [NuGet.org](https://www.nuget.org/) indicating that the package is under a reserved ID prefix. This is true for both new package submissions as well as existing packages under the owner(s). **Note:** The indicator in Visual Studio will only appear if a single feed is selected as the package source. 
-4. All previously existing packages that match the reserved ID prefix, but are *not* owned by the owner of the reserved prefix will remain unchanged (they will not be unlisted, but they will also not have the visual indicator).
+4. All previously existing packages that match the reserved ID prefix, but are *not* owned by the owner of the reserved prefix will remain unchanged (they will not be unlisted, but they will also not have the visual indicator). In addition, owners of these packages will still be able to submit new versions to the package.
 
 These changes are based on the following conditions and impose several additional restrictions:
 * Only one owner of a package needs to have the reserved prefix for the visual indicator to appear (for packages with multiple-owners).
@@ -84,7 +84,7 @@ When reviewing any application for ID prefix reservation, the [NuGet.org](https:
 5. Are the identifying properties of the packages that match the package ID prefix clear and consistent (especially the package author)?
 
 ## 3rd party feed provider scenarios
-If a 3rd party feed provider is interested in implementing their own service to provide prefix reservations, you can do so by modifying the search service in the NuGet v2 or v3 feed providers. The addition in the feed search service is to add the *verified* property, with examples for both the v2 and v3 feeds below. 
+If a 3rd party feed provider is interested in implementing their own service to provide prefix reservations, you can do so by modifying the search service in the NuGet v3 feed providers. The addition in the feed search service is to add the *verified* property, with examples for the v3 feeds below. The NuGet client will not support the added property in the v2 feed.
 
 ### v3 search service example
 ```json
@@ -108,47 +108,5 @@ If a 3rd party feed provider is interested in implementing their own service to 
         "verified": true,
         "versions": []
     },
-]
-```
-
-### v2 search service example
-```json
-"data": 
-[
-    {
-        "PackageRegistration": {
-            "Id": "MySql.Data.Entity",
-            "DownloadCount": 434685,
-            "Verified": true,
-            "Owners": []
-        },
-        "Version": "6.9.9",
-        "NormalizedVersion": "6.9.9",
-        "Title": "MySql.Data.Entity",
-        "Description": "Entity Framework 6.0 supported",
-        "Summary": "",
-        "Authors": "Oracle",
-        "Copyright": "Copyright 2016",
-        "Tags": "MySql MySql.Data.Entity Connector/NET EntityFramework",
-        "ReleaseNotes": "Review Readme.txt for details.",
-        "ProjectUrl": "http://dev.mysql.com/downloads/",
-        "IconUrl": "http://www.mysql.com/common/logos/logo-mysql-170x115.png",
-        "IsLatestStable": true,
-        "IsLatest": false,
-        "Listed": true,
-        "Created": "2016-06-28T02:38:23.9630000Z",
-        "Published": "2016-06-28T02:38:23.9630000Z",
-        "LastUpdated": "2016-06-28T02:38:23.9630000Z",
-        "LastEdited": "2016-07-01T23:34:08.9330000Z",
-        "DownloadCount": 140487,
-        "FlattenedDependencies": "MySql.Data:[6.9.9, ):|EntityFramework:[6.0.0, ):",
-        "Dependencies": [],
-        "SupportedFrameworks": [],
-        "Hash": "U2WX/TzaLGYk5tN4zYOVLBpRgYIx7iJmjJamPcy4eDlaYrBBEymc9WI4R6hKSFdnSfhEOAPtUlsFn8l1ZB67Dg==",
-        "HashAlgorithm": "SHA512",
-        "PackageFileSize": 134989,
-        "LicenseUrl": "http://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
-        "RequiresLicenseAcceptance": false
-    }
 ]
 ```
