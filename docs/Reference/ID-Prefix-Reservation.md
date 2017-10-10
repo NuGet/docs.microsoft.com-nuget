@@ -50,7 +50,7 @@ When a prefix is reserved on [NuGet.org](https://www.nuget.org/), the following 
 These changes are based on the following conditions and impose several additional restrictions:
 * Only one owner of a package needs to have the reserved prefix for the visual indicator to appear (for packages with multiple-owners).
 * If there is more than one owner of a package where one or more owners has the reserved prefix and one or more owners does not have the reserved prefix, then only the owner(s) with the reserved prefix can remove other owner(s) with a reserved prefix. The owners who do not have the prefix reserved cannot remove owners with the prefix reserved. They can still remove other owners that also do not have the prefix reserved.
-  * Once a package has the visual indicator, it should *always* have the visual indicator (guarunteeing that at least one owner with the reserved prefix will always remain an owner)
+  * Once a package has the visual indicator, it should *always* have the visual indicator (guaranteeing that at least one owner with the reserved prefix will always remain an owner)
 
 ### Advanced prefix reservation scenarios
 There are several more advanced prefix reservation scenarios described below, including subprefix delegation, and marking prefixes as public. Below are the more advanced prefix reservations that can be made. 
