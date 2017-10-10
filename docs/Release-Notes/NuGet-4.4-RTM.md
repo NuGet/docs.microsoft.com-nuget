@@ -36,7 +36,7 @@ ms.reviewer:
 ## Known issues
 
 ### Issues with .NET Standard 2.0 with .NET Framework & NuGet 
-.NET Standard & our tooling was desgined such that projects targeting .NET Framework 4.6.1 can consume NuGet packages & projects targeting .NET Standard 2.0 or earlier. Unfortunately, there are a few issues around that scenario. [This document](https://github.com/dotnet/standard/issues/481) summarizes the issues, the plan for addressing them, and  workarounds you can deploy with today's state of the tooling.
+.NET Standard & its tooling was desgined such that projects targeting .NET Framework 4.6.1 can consume NuGet packages & projects targeting .NET Standard 2.0 or earlier. [This document](https://github.com/dotnet/standard/issues/481) summarizes the issues around that scenario, the plan for addressing them, and  workarounds you can deploy with today's state of the tooling.
 
 ### While using Package Manager Console, 'Enter' key may not work
 
