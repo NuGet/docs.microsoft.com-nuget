@@ -42,7 +42,7 @@ In this topic:
 - [Setting a package type](#setting-a-package-type) (NuGet 3.5 and later)
 - [Adding a readme and other files](#adding-a-readme-and-other-files)
 - [Including MSBuild props and targets in a package](#including-msbuild-props-and-targets-in-a-package)
-- [Authoring COM Interop packages compatible with Package Reference](#authoring-com-interop-packages-compatible-with-package-reference)
+- [compackages with interop assemblies](#authoring-packages-with-interop-assemblies)
 - [Running nuget pack to generate the .nupkg file](#running-nuget-pack-to-generate-the-nupkg-file)
 
 After these core steps, you can incorporate a variety of other features as described elsewhere in this documentation. See [Next steps](#next-steps) below.
@@ -61,7 +61,8 @@ Most general-purpose packages contain one or more assemblies that other develope
 
 Resources are, in fact, a special case. When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, *excluding* those that are named `.resources.dll` because they are assumed to be localized satellite assemblies (see [Creating localized packages](creating-localized-packages.md)). For this reason, avoid using `.resources.dll` for files that otherwise contain essential package code.
 
-If your library contains COM interop assemblies, you need to follow additional authoring guidelines to make them compatible with package reference (see [Authoring COM Interop packages compatible with Package Reference](#authoring-com-interop-packages-compatible-with-package-reference) )
+If your library contains COM interop assemblies, you need to follow additional authoring guidelines. (see - [Authoring packages with interop assemblies](#authoring-packages-with-interop-assemblies)
+ )
 
 ## The role and structure of the .nuspec file
 
@@ -388,7 +389,7 @@ With NuGet 3.x, targets are not added to the project but are instead made availa
 
 <a href="creating-the-package"></a>
 
-## Authoring COM Interop packages compatible with Package Reference
+# Authoring packages with interop assemblies
 
 In the packages.config world, when adding references to the assemblies from the packages NuGet and Visual Studio would test which assemblies are interop and set the EmbedInteropTypes to true.
 
@@ -400,7 +401,7 @@ See sample project [here](https://github.com/NuGet/Samples/tree/master/NuGet.Sam
       
  <Target Name="EmbeddingAssemblyNameFromPackageId" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
    <PropertyGroup>
-     <_InteropAssemblyFileName>NuGet.Samples.Interop</_InteropAssemblyFileName>
+     <_InteropAssemblyFileName>{InteropAssemblyName}</_InteropAssemblyFileName>
    </PropertyGroup>
    <ItemGroup>
      <ReferencePath Condition=" '%(FileName)' == '$(_InteropAssemblyFileName)' AND '%(ReferencePath.NuGetPackageId)' == '$(MSBuildThisFileName)' ">
