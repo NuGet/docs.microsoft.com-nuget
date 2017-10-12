@@ -168,7 +168,9 @@ This is not an issue when using PackageReference, as each project file contains 
 
 **Is it possible to reserve names for packages that will be published in future?**
 
-No. If you feel that an existing package has taken the name which suits your package better, try contacting the owner of the package (select on the owner name on the package page on nuget.org). If you don't get a response within a reasonable time, [contact support](https://www.nuget.org/policies/Contact) and we'll look into it.
+You can reserve package ID prefixes for an owner or set of owners on NuGet.org. This will restrict package uploads matching the ID prefix pattern to only be accepted by the owner(s) with the reserved ID. For more information, read the [documentation](https://docs.microsoft.com/nuget/reference/id-prefix-reservation).
+
+If you feel that a previously submitted package has taken the name which suits your package better, try contacting the owner of the package (select Contact owners on the package page on nuget.org). If you don't get a response within a reasonable time, [contact support](https://www.nuget.org/policies/Contact) and we'll look into it.
 
 **How do I claim ownership for packages ?**
 
