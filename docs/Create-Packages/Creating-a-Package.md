@@ -61,7 +61,7 @@ Most general-purpose packages contain one or more assemblies that other develope
 
 Resources are, in fact, a special case. When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, *excluding* those that are named `.resources.dll` because they are assumed to be localized satellite assemblies (see [Creating localized packages](creating-localized-packages.md)). For this reason, avoid using `.resources.dll` for files that otherwise contain essential package code.
 
-If your library contains COM interop assemblies, you need to add special authoring to make them compatible with package reference (see [Authoring COM Interop packages compatible with Package Reference](#authoring-com-interop-packages-compatible-with-package-reference) )
+If your library contains COM interop assemblies, you need to follow additional authoring guidelines to make them compatible with package reference (see [Authoring COM Interop packages compatible with Package Reference](#authoring-com-interop-packages-compatible-with-package-reference) )
 
 ## The role and structure of the .nuspec file
 
@@ -393,8 +393,8 @@ With NuGet 3.x, targets are not added to the project but are instead made availa
 In the packages.config world, when adding references to the assemblies from the packages NuGet and Visual Studio would test which assemblies are interop and set the EmbedInteropTypes to true.
 
 In the Package Reference case, the EmbedInteropTypes metadata is always false for all assemblies. We require package authors to explicitly add this metadata by including a [targets file](#including-msbuild-props-and-targets-in-a-package).
- It's very important that you make this target name as unique as possible to avoid clashes. Ideally you would include both you package name and the assembly being embedded in the name.
-See sample project https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop.
+ It's very important that you make this target name as unique as possible to avoid clashes. Ideally you would include both your package name and the assembly being embedded in the target name.
+See sample project [here](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop).
 
 ```xml
       
