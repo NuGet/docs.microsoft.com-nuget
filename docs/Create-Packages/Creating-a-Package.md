@@ -42,7 +42,7 @@ In this topic:
 - [Setting a package type](#setting-a-package-type) (NuGet 3.5 and later)
 - [Adding a readme and other files](#adding-a-readme-and-other-files)
 - [Including MSBuild props and targets in a package](#including-msbuild-props-and-targets-in-a-package)
-- [compackages with interop assemblies](#authoring-packages-with-interop-assemblies)
+- [Authoring packages with interop assemblies](#authoring-packages-with-interop-assemblies)
 - [Running nuget pack to generate the .nupkg file](#running-nuget-pack-to-generate-the-nupkg-file)
 
 After these core steps, you can incorporate a variety of other features as described elsewhere in this documentation. See [Next steps](#next-steps) below.
@@ -387,29 +387,26 @@ When NuGet 2.x installs a package with `\build` files, it adds an MSBuild `<Impo
 
 With NuGet 3.x, targets are not added to the project but are instead made available through the `project.lock.json`.
 
-<a href="creating-the-package"></a>
-
 # Authoring packages with interop assemblies
 
-In the packages.config world, when adding references to the assemblies from the packages NuGet and Visual Studio would test which assemblies are interop and set the EmbedInteropTypes to true.
+When using the `packages.config` reference format, adding references to the assemblies from the packages causes NuGet and Visual Studio to test which assemblies are interop and set the `EmbedInteropTypes` to true.
 
-In the Package Reference case, the EmbedInteropTypes metadata is always false for all assemblies. We require package authors to explicitly add this metadata by including a [targets file](#including-msbuild-props-and-targets-in-a-package).
- It's very important that you make this target name as unique as possible to avoid clashes. Ideally you would include both your package name and the assembly being embedded in the target name.
-See sample project [here](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop).
+When using the PackageReference format, the `EmbedInteropTypes` metadata is always false for all assemblies. Package authors must explicitly add this metadata by including a [targets file](#including-msbuild-props-and-targets-in-a-package). The target name should be unique to avoid conflicts; ideally, use a combination of your package name and the assembly being embedded. For an example, see [NuGet.Samples.Interop](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop).
 
-```xml
-      
- <Target Name="EmbeddingAssemblyNameFromPackageId" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
-   <PropertyGroup>
-     <_InteropAssemblyFileName>{InteropAssemblyName}</_InteropAssemblyFileName>
-   </PropertyGroup>
-   <ItemGroup>
-     <ReferencePath Condition=" '%(FileName)' == '$(_InteropAssemblyFileName)' AND '%(ReferencePath.NuGetPackageId)' == '$(MSBuildThisFileName)' ">
-       <EmbedInteropTypes>true</EmbedInteropTypes>
-     </ReferencePath>
-   </ItemGroup>
- </Target>
+```xml      
+<Target Name="EmbeddingAssemblyNameFromPackageId" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
+  <PropertyGroup>
+    <_InteropAssemblyFileName>{InteropAssemblyName}</_InteropAssemblyFileName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ReferencePath Condition=" '%(FileName)' == '$(_InteropAssemblyFileName)' AND '%(ReferencePath.NuGetPackageId)' == '$(MSBuildThisFileName)' ">
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </ReferencePath>
+  </ItemGroup>
+</Target>
 ```
+
+<a name="creating-the-package"></a>
 
 ## Running nuget pack to generate the .nupkg file
 
