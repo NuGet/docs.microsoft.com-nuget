@@ -406,6 +406,15 @@ When using the PackageReference format, the `EmbedInteropTypes` metadata is alwa
 </Target>
 ```
 
+**Note**
+By default the build assets will not flow transitively. 
+The default value for private assets is:
+```
+<PrivateAssets>contentfiles;analyzers;build</PrivateAssets>
+```
+[More info](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#controlling-dependency-assets)
+Packages authored this way, will work differently when they are a pulled as a transitive dependency from a project to project reference. 
+
 <a name="creating-the-package"></a>
 
 ## Running nuget pack to generate the .nupkg file
