@@ -42,7 +42,7 @@ In this topic:
 - [Setting a package type](#setting-a-package-type) (NuGet 3.5 and later)
 - [Adding a readme and other files](#adding-a-readme-and-other-files)
 - [Including MSBuild props and targets in a package](#including-msbuild-props-and-targets-in-a-package)
-- [Authoring packages with interop assemblies](#authoring-packages-with-interop-assemblies)
+- [Authoring packages that contain COM interop assemblies](#authoring-packages-with-interop-assemblies)
 - [Running nuget pack to generate the .nupkg file](#running-nuget-pack-to-generate-the-nupkg-file)
 
 After these core steps, you can incorporate a variety of other features as described elsewhere in this documentation. See [Next steps](#next-steps) below.
@@ -61,8 +61,7 @@ Most general-purpose packages contain one or more assemblies that other develope
 
 Resources are, in fact, a special case. When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, *excluding* those that are named `.resources.dll` because they are assumed to be localized satellite assemblies (see [Creating localized packages](creating-localized-packages.md)). For this reason, avoid using `.resources.dll` for files that otherwise contain essential package code.
 
-If your library contains COM interop assemblies, you need to follow additional authoring guidelines. (see - [Authoring packages with interop assemblies](#authoring-packages-with-interop-assemblies)
- )
+If your library contains COM interop assemblies, follow additional the guidelines in [Authoring packages with COM interop assemblies](#authoring-packages-with-interop-assemblies).
 
 ## The role and structure of the .nuspec file
 
@@ -389,9 +388,9 @@ With NuGet 3.x, targets are not added to the project but are instead made availa
 
 # Authoring packages with interop assemblies
 
-When using the `packages.config` reference format, adding references to the assemblies from the packages causes NuGet and Visual Studio to test which assemblies are interop and set the `EmbedInteropTypes` to true.
+Packages that contain COM interop assemblies need to include an appropriate targets file so that the correct `EmbedInteropTypes` metadata is added to projects using the PackageReference format.
 
-When using the PackageReference format, the `EmbedInteropTypes` metadata is always false for all assemblies. Package authors must explicitly add this metadata by including a [targets file](#including-msbuild-props-and-targets-in-a-package). The target name should be unique to avoid conflicts; ideally, use a combination of your package name and the assembly being embedded. For an example, see [NuGet.Samples.Interop](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop).
+By default, the `EmbedInteropTypes` metadata is always false for all assemblies when PackageReference is used. Package authors must explicitly add this metadata by including a [targets file](#including-msbuild-props-and-targets-in-a-package). The target name should be unique to avoid conflicts; ideally, use a combination of your package name and the assembly being embedded. For an example, see [NuGet.Samples.Interop](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop).
 
 ```xml      
 <Target Name="EmbeddingAssemblyNameFromPackageId" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
@@ -406,14 +405,8 @@ When using the PackageReference format, the `EmbedInteropTypes` metadata is alwa
 </Target>
 ```
 
-**Note**
-By default the build assets will not flow transitively. 
-The default value for private assets is:
-```
-<PrivateAssets>contentfiles;analyzers;build</PrivateAssets>
-```
-[More info](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#controlling-dependency-assets)
-Packages authored this way, will work differently when they are a pulled as a transitive dependency from a project to project reference. 
+Note that when using the `packages.config` reference format, adding references to the assemblies from the packages causes NuGet and Visual Studio to check for COM interop assemblies and set the `EmbedInteropTypes` to true. In this case the targets file is not used.
+
 
 <a name="creating-the-package"></a>
 
