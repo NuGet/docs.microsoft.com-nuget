@@ -598,7 +598,7 @@ where `<projectPath>` specifies the location of a solution, a `packages.config` 
 | Recursive | *(4.0+)* Restores all references projects for UWP and .NET Core projects. Does not apply to projects using `packages.config`. |
 | RequireConsent | Verifies that restoring packages is enabled before downloading and installing the packages. For details, see [Package Restore](../consume-packages/package-restore.md). |
 | SolutionDirectory | Specifies the solution folder. Not valid when restoring packages for a solution. |
-| Source | Specifies list of package sources to use for the restore. |
+| Source | Specifies list of package sources (as URLS) to use for the restore. |
 | Verbosity |>Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed (2.5+)*. |
 
 ### Remarks
