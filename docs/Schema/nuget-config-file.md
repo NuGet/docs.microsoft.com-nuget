@@ -201,7 +201,7 @@ When using unencrypted passwords:
     </Contoso>
     <Test_x0020_Source>
         <add key="Username" value="user" />
-        <add key="Password" value="hal+9ooo_da!sY" />
+        <add key="ClearTextPassword" value="hal+9ooo_da!sY" />
     </Test_x0020_Source>    
 </packageSourceCredentials>
 ```
