@@ -40,8 +40,7 @@ In this topic:
 
 - [Finding and installing a package](#finding-and-installing-a-package)
 - [Uninstalling a package](#uninstalling-a-package)
-- [Updating a package](#updating-a-package)
-    - ["Implicitly referenced by an SDK" or "AutoReferenced" message](#implicit_reference) message.
+- [Updating a package](#updating-a-package) (includes the ["Implicitly referenced by an SDK" or "AutoReferenced" message](#implicit_reference))
 - [Managing packages for the solution](#managing-packages-for-the-solution) (working with multiple projects at the same time).
 - [Package sources](#package-sources)
 - [Package manager Options control](#package-manager-options-control)
