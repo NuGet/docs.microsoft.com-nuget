@@ -29,7 +29,6 @@ All `nuget.exe` are available on Windows; most commands work with [nuget.exe run
 
 To install `nuget.exe`:
 
-1. On Mac and Linux, install [Mono 4.4.2 or later](http://www.mono-project.com/docs/getting-started/install/).  
 [!INCLUDE[install-cli](../includes/install-cli.md)]
 
 Available commands and applicability to package creation, package consumption, and/or publishing a package to a host: 
