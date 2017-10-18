@@ -1,3 +1,3 @@
 ---
-redirect_url: ../reference/package-versioning 
+redirect_url: http://docs.microsoft.com/nuget/reference/package-versioning 
 ---
