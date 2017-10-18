@@ -383,7 +383,7 @@ When NuGet 2.x installs a package with `\build` files, it adds an MSBuild `<Impo
 
 With NuGet 3.x, targets are not added to the project but are instead made available through the `project.lock.json`.
 
-<a href="creating-the-package"></a>
+<a name="creating-the-package"></a>
 
 ## Running nuget pack to generate the .nupkg file
 
