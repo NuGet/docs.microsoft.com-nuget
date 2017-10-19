@@ -405,7 +405,11 @@ By default, the `EmbedInteropTypes` metadata is always false for all assemblies 
 </Target>
 ```
 
-Note that when using the `packages.config` reference format, adding references to the assemblies from the packages causes NuGet and Visual Studio to check for COM interop assemblies and set the `EmbedInteropTypes` to true. In this case the targets file is not used.
+Note that when using the `packages.config` reference format, adding references to the assemblies from the packages causes NuGet and Visual Studio to check for COM interop assemblies and set the `EmbedInteropTypes` to true in the project file. In this case the targets are overriden.
+
+Additionally, by default the [build assets do not flow transitively](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#controlling-dependency-assets). 
+Packages authored this way, will work differently when they are a pulled as a transitive dependency from a project to project reference. 
+The package consumer can allow them to flow by modifying the PrivateAssets default value. 
 
 <a name="creating-the-package"></a>
 
