@@ -47,5 +47,6 @@ There are also several other NuGet hosting products that support remote private 
 - [NuGet Server (Open Source)](http://nuget-server.net), an open-source implementation similar to Inedo's NuGet Server
 - [Artifactory](https://www.jfrog.com/artifactory/) from JFrog.
 - [Nexus](http://www.sonatype.org/nexus/) from Sonatype.
+- [TeamCity](https://www.jetbrains.com/teamcity/) from JetBrains.
 
 Regardless of how packages are hosted, you access them by adding them to the list of available sources in `NuGet.Config`. This can be done in Visual Studio as described in [Package Sources](../tools/package-manager-ui.md#package-sources), or from the command line using [`nuget sources`](../tools/nuget-exe-cli-reference.md#sources). The path to a source can be a local folder pathname, a network name, or a URL.

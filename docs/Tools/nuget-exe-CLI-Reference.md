@@ -505,7 +505,7 @@ nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
 ## push
 
 > [!Important]
-> To push packages to NuGet.org, you need to use the latest NuGet clients (Eg. [NuGet.exe v4.1.0 or above](https://www.nuget.org/downloads)) that implement the required [NuGet protocols](https://docs.microsoft.com/en-us/nuget/api/nuget-protocols).
+> To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](https://docs.microsoft.com/en-us/nuget/api/nuget-protocols).
 
 Pushes a package to a package source and publishes it.
 
@@ -598,7 +598,7 @@ where `<projectPath>` specifies the location of a solution, a `packages.config` 
 | Recursive | *(4.0+)* Restores all references projects for UWP and .NET Core projects. Does not apply to projects using `packages.config`. |
 | RequireConsent | Verifies that restoring packages is enabled before downloading and installing the packages. For details, see [Package Restore](../consume-packages/package-restore.md). |
 | SolutionDirectory | Specifies the solution folder. Not valid when restoring packages for a solution. |
-| Source | Specifies list of package sources to use for the restore. |
+| Source | Specifies list of package sources (as URLS) to use for the restore. |
 | Verbosity |>Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed (2.5+)*. |
 
 ### Remarks
