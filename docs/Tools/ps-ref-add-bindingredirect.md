@@ -5,7 +5,7 @@ title: NuGet Add-BindingRedirect PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/1/2017
+ms.date: 10/17/2017
 ms.topic: reference
 ms.prod: nuget
 #ms.service:
@@ -30,7 +30,9 @@ ms.reviewer:
 
 # Add-BindingRedirect
 
-Examines all assemblies within the output path for a project and adds binding redirects to the application (or web) configuration file where necessary. For additional details on what this means, see [Redirecting Assembly Versions](https://msdn.microsoft.com/library/7wd6ex19.aspx) on MSDN.
+Examines all assemblies within the output path for a project and adds binding redirects to the application or web configuration file where necessary.
+
+For details on binding redirects and why they are used, see [Redirecting Assembly Versions](https://docs.microsoft.com/dotnet/framework/configure-apps/redirect-assembly-versions) in the .NET documentation.
 
 > [!Note]
 > NuGet 1.2+ automatically runs this command when installing a package.

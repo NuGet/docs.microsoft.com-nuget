@@ -42,7 +42,7 @@ In this topic:
 - [Setting a package type](#setting-a-package-type) (NuGet 3.5 and later)
 - [Adding a readme and other files](#adding-a-readme-and-other-files)
 - [Including MSBuild props and targets in a package](#including-msbuild-props-and-targets-in-a-package)
-- [Authoring packages that contain COM interop assemblies](#authoring-packages-with-interop-assemblies)
+- [Authoring packages that contain COM interop assemblies](#authoring-packages-with-com-interop-assemblies)
 - [Running nuget pack to generate the .nupkg file](#running-nuget-pack-to-generate-the-nupkg-file)
 
 After these core steps, you can incorporate a variety of other features as described elsewhere in this documentation. See [Next steps](#next-steps) below.
@@ -386,7 +386,7 @@ When NuGet 2.x installs a package with `\build` files, it adds an MSBuild `<Impo
 
 With NuGet 3.x, targets are not added to the project but are instead made available through the `project.lock.json`.
 
-# Authoring packages with interop assemblies
+# Authoring packages with COM interop assemblies
 
 Packages that contain COM interop assemblies need to include an appropriate targets file so that the correct `EmbedInteropTypes` metadata is added to projects using the PackageReference format.
 
@@ -406,7 +406,6 @@ By default, the `EmbedInteropTypes` metadata is always false for all assemblies 
 ```
 
 Note that when using the `packages.config` reference format, adding references to the assemblies from the packages causes NuGet and Visual Studio to check for COM interop assemblies and set the `EmbedInteropTypes` to true. In this case the targets file is not used.
-
 
 <a name="creating-the-package"></a>
 

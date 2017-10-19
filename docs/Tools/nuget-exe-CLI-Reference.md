@@ -5,7 +5,7 @@ title: NuGet Command-Line Interface (CLI) Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/2/2017
+ms.date: 10/17/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
@@ -25,12 +25,11 @@ ms.reviewer:
 
 The NuGet Command Line Interface (CLI), `nuget.exe`, provides the full extent of NuGet functionality to install, create, publish, and manage packages without making any changes to project files.  
 
+All `nuget.exe` are available on Windows; most commands work with [nuget.exe running on Mono](../guides/install-nuget.md#mac-osx-and-linux) except where indicated for `pack`, `restore`, and `update`. Some NuGet capabilities are also available on Mac and Linux through the [dotnet CLI](dotnet-Commands.md). 
+
 To install `nuget.exe`:
 
 [!INCLUDE[install-cli](../includes/install-cli.md)]
-
-> [!Important]
-> On Mac OSX and Linux, some NuGet capabilities are available through the [dotnet CLI](dotnet-Commands.md) and through the [NuGet CLI running on Mono](../guides/install-nuget.md#mac-osx-and-linux). 
 
 Available commands and applicability to package creation, package consumption, and/or publishing a package to a host: 
 
@@ -45,13 +44,13 @@ Available commands and applicability to package creation, package consumption, a
 | [list](#list) | Consumption, perhaps Publishing | All | Displays packages from a given source. |
 | [locals](#locals) | Consumption | 3.3+ | Clears or lists packages in various caches or the global packages folder, or identifies those folders. |
 | [mirror](#mirror) | Publishing | Deprecated in 3.2+ | Mirrors a package and its dependencies from a source to a target repository. |
-| [pack](#pack) | Creation | 2.7+ | Creates a NuGet package from a `.nuspec` or project file. On Mac OSX with Mono, creating a package from a project file is not supported. |
-| [push](#push) | Publishing | 4.3+ | Publishes a package to a package source. The push command is available in all versions of nuget.exe, but 4.3+ is required to push to nuget.org. |
-| [restore](#restore) | Consumption | 2.7+ | Restores all packages referenced by the package reference format in use. Note: restoring packages using the PackageReference format is not supported with the CLI on Mono. | 
+| [pack](#pack) | Creation | 2.7+ | Creates a NuGet package from a `.nuspec` or project file. When running on Mono, creating a package from a project file is not supported. |
+| [push](#push) | Publishing | All | Publishes a package to a package source. |
+| [restore](#restore) | Consumption | 2.7+ | Restores all packages referenced by the package reference format in use. When running on Mono, restoring packages using the PackageReference format is not supported. | 
 | [setapikey](#setapikey) | Consumption, Publishing | All | Saves an API key for a given package source when that package source requires a key for access. |
 | [sources](#sources) | Consumption, Publishing | All | Manages package sources in configuration files. |
 | [spec](#spec) | Creation | All | Generates a `.nuspec` file, using tokens if generating the file from a Visual Studio project. |
-| [update](#update) | Consumption | All | Updates a project's packages to the latest available versions. Note: this command is not supported with the CLI running on Mono. |
+| [update](#update) | Consumption | All | Updates a project's packages to the latest available versions. Not supported when running on Mono. |
 
 Different commands make use of various [Environment variables](#environment-variables).
 
@@ -314,7 +313,7 @@ nuget install packages.config
 nuget install ninject -OutputDirectory c:\proj
 ```
 
-##  list
+## list
 
 Displays a list of packages from a given source. If no sources are specified, all sources defined in the global configuration file, `%AppData%\NuGet\NuGet.Config`, are used. If `NuGet.Config` specifies no sources, then `list` uses the default feed (nuget.org).
 
@@ -424,13 +423,14 @@ nuget mirror Microsoft.AspNet.Mvc https://MyRepo/nuget https://MyRepo/api/v2/pac
 nuget mirror Microsoft.Net.Http https://MyRepo/nuget https://MyRepo/api/v2/package -prerelease
 ```
 
-##  pack
+## pack
 
 *Version 2.7+*
 
 Creates a NuGet package based on the specified `.nuspec` or project file. 
 
-On Mac OS X and Linux, you need to have Mono 4.4.2 or later installed. Under Mono, creating  a package from a project file is not supported. You also need to adjust non-local paths in the `.nuspec` file to Unix-style paths, as nuget.exe doesn't convert Windows pathnames itself.
+> [!Important]
+> Under Mono, creating  a package from a project file is not supported. You also need to adjust non-local paths in the `.nuspec` file to Unix-style paths, as nuget.exe doesn't convert Windows pathnames itself.
 
 ### Usage
 
@@ -502,10 +502,10 @@ nuget pack foo.nuspec -Version 2.1.0
 nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
 ```
 
-##  push
+## push
 
 > [!Important]
-> To push packages to NuGet.org, you need to use the latest NuGet clients (Eg. [NuGet.exe v4.1.0 or above](https://www.nuget.org/downloads)) that implement the required [NuGet protocols](https://docs.microsoft.com/en-us/nuget/api/nuget-protocols).
+> To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](https://docs.microsoft.com/en-us/nuget/api/nuget-protocols).
 
 Pushes a package to a package source and publishes it.
 

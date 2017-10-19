@@ -40,7 +40,7 @@ In this topic:
 
 - [Finding and installing a package](#finding-and-installing-a-package)
 - [Uninstalling a package](#uninstalling-a-package)
-- [Updating a package](#updating-a-package)
+- [Updating a package](#updating-a-package) (includes the ["Implicitly referenced by an SDK" or "AutoReferenced" message](#implicit_reference))
 - [Managing packages for the solution](#managing-packages-for-the-solution) (working with multiple projects at the same time).
 - [Package sources](#package-sources)
 - [Package manager Options control](#package-manager-options-control)
@@ -81,7 +81,7 @@ In this topic:
 
     ![Updating a package](media/UpdatePackages.png)
 
-4. For some packages, the **Update** button is disabled and the package a message appears saying that it's "Implicitly referenced by an SDK". (In some versions of Visual Studio the text may read only "AutoReferenced".) These conditions indicate that the package, such as Microsoft.NETCore.App, is part of a larger framework or SDK and should not be updated independently. (Such packages, of which Microsoft.NETStandard.Library is another example, are marked internally with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) To update the package, you must update the SDK to which it belongs.
+4. <a name="implicit_reference"></a>For some packages, the **Update** button is disabled and the package a message appears saying that it's "Implicitly referenced by an SDK". (In some versions of Visual Studio the text may read only "AutoReferenced".) These conditions indicate that the package, such as Microsoft.NETCore.App, is part of a larger framework or SDK and should not be updated independently. (Such packages, of which Microsoft.NETStandard.Library is another example, are marked internally with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) To update the package, you must update the SDK to which it belongs.
 
     ![Example package marked as Implicitly references or AutoReferenced](media/PackageManagerUIAutoReferenced.png)
 
