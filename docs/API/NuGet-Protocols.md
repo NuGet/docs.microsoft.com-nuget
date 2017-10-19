@@ -27,7 +27,7 @@ This topic lists various protocols as and when they come to existence.
 
 ## NuGet protocol version 4.1.0
 
-This protocol speicifes usage of verify-scope keys to interact with services other than nuget.org, to validate a package against a nuget.org account. 
+This protocol specifies usage of verify-scope keys to interact with services other than nuget.org, to validate a package against a nuget.org account. 
 
 Validation ensures that the user-created API keys are used only with nuget.org, and that other verification or validation from a third-party service is handled through a one-time use verify-scope keys. These verify-scope keys can be used to validate that the package belongs to a particular user (account) on nuget.org.
 
