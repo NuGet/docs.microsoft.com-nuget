@@ -42,7 +42,7 @@ For nuget.org, you must first [register for a free account](https://www.nuget.or
 
 ![NuGet registration and sign in location](media/publish_NuGetSignIn.png)
 
-Next, you can either upload the package through the nuget.org web portal, or push to nuget.org from the command line:
+Next, you can either upload the package through the nuget.org web portal, push to nuget.org from the command line, or publish as part of a CI/CD process through Visual Studio Team Services, as described in the following sections.
 
 ### Web portal: use the Upload Package tab on nuget.org:
 
@@ -79,7 +79,7 @@ Next, you can either upload the package through the nuget.org web portal, or pus
 
 ### Visual Studio Team Services (CI/CD)
 
-If you push packages to NuGet.org using Visual Studio Team Services as part of your Continuos Integration/Deployment process, please make sure to use the NuGet version 4.1 or above in the NuGet tasks. You can learn more in the following blog post: [Using the latest NuGet in your build](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/)
+If you push packages to nuget.org using Visual Studio Team Services as part of your Continuous Integration/Deployment process, you must use nuget.exe 4.1 or above in the NuGet tasks. Details can be found on [Using the latest NuGet in your build](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/) (Microsoft DevOps blog).
 
 ## Managing package owners on nuget.org
 
