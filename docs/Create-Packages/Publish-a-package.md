@@ -44,11 +44,11 @@ For nuget.org, you must first [register for a free account](https://www.nuget.or
 
 Next, you can either upload the package through the nuget.org web portal, or push to nuget.org from the command line:
 
-- Web portal: use the Upload Package tab on nuget.org:
+### Web portal: use the Upload Package tab on nuget.org:
 
     ![Upload a package with the NuGet Package Manager](media/publish_UploadYourPackage.PNG)
 
-- Command line:
+### Command line:
     > [!Important]
     > To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](https://docs.microsoft.com/en-us/nuget/api/nuget-protocols).
 
@@ -77,6 +77,9 @@ Next, you can either upload the package through the nuget.org web portal, or pus
 
         ![Message indicating a package is not yet indexed](media/publish_NotYetIndexed.png)
 
+### Visual Studio Team Services (CI/CD)
+
+If you push packages to NuGet.org using Visual Studio Team Services as part of your Continuos Integration/Deployment process, please make sure to use the NuGet version 4.1 or above in the NuGet tasks. You can learn more in the following blog post: [Using the latest NuGet in your build](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/)
 
 ## Managing package owners on nuget.org
 
