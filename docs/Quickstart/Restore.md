@@ -39,6 +39,6 @@ Missing packages: {name}
 
 The solution is to enable NuGet package restore in Tools/Options. Ensure, both the boxes under `Package Restore` are checked i.e. `Allow NuGet to download missing packages`, and allow NuGet to `Automatically check for missing packages during build in Visual Studio`. 
 
-![enable NuGet package restore in Tool/Options](media/QS_Restore-01-ToolsOptions.png)
+![enable NuGet package restore in Tool/Options](../Consume-Packages/media/restore-01-autorestoreoptions.png)
 
 For additional details, see [Package restore](../Consume-Packages/Package-Restore#enabling-and-disabling-package-restore).
