@@ -20,8 +20,8 @@ keywords: NuGet API, NuGet in Visual Studio, NuGet programming interfaces
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

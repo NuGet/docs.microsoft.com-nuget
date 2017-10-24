@@ -4,7 +4,7 @@
 title: NuGet 4.4 RTM Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
-manager: unnir
+manager: unniravindranathan
 ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
@@ -20,8 +20,8 @@ keywords: NuGet 4.3 RTM release notes, bug fixes, known issues, added features, 
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 - anangaur
 #ms.suite:
 #ms.tgt_pltfrm:

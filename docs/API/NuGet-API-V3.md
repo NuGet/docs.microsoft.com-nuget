@@ -21,8 +21,8 @@ keywords: NuGet API, NuGetGallery API, NuGet v3 libraries
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

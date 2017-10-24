@@ -16,8 +16,8 @@ ms.assetid: cd08b869-44c6-480e-90f7-494a6d08e6d0
 description: The complete reference to PowerShell commands available in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 
 ---
 

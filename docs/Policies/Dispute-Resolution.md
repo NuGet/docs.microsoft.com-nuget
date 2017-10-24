@@ -20,8 +20,8 @@ keywords: NuGet package disputes, NuGet dispute resolution, dispute resolution p
 #audience: 
 #ms.devlang: 
 ms.reviewer:  
-- karann 
-- unnir 
+- karann-msft 
+- unniravindranathan 
 #ms.suite:  
 #ms.tgt_pltfrm: 
 #ms.custom: 

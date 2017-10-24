@@ -20,8 +20,8 @@ keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powers
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

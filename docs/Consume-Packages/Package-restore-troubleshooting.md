@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Troubleshooting NuGet Package Restore | Microsoft Docs
+title: Troubleshooting NuGet Package Restore in Visual STudio | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -13,7 +13,7 @@ ms.assetid: b70326a0-5bfc-4b7c-881d-7a7d5ebeeed5
 
 # optional metadata
 
-description: A description of commong nuget restore errors and how to troubleshoot them.
+description: A description of common NuGet restore errors in Visual Studio and how to troubleshoot them.
 keywords: NuGet package restore, restoring packages, troubleshooting, troubleshoot
 ms.reviewer:
 - karann-msft

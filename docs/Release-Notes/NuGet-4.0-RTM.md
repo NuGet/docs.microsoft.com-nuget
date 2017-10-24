@@ -4,7 +4,7 @@
 title: NuGet 4.0 RC Release Notes | Microsoft Docs
 author: anangaur
 ms.author: anangaur
-manager: unnir
+manager: unniravindranathan
 ms.date: 03/03/2017
 ms.topic: article
 ms.prod: nuget
@@ -20,8 +20,8 @@ keywords: NuGet 4.0 RTM release notes, bug fixes, known issues, added features, 
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
