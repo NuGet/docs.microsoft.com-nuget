@@ -41,23 +41,27 @@ To use any command, open a command window or bash shell, then run `nuget` follow
 
 Available commands and applicability to package creation, package consumption, and/or publishing a package to a host:
 
-| Command | Applicable Roles | NuGet Version | Description | 
+| Common Commands | Applicable Roles | NuGet Version | Description | 
+| --- | --- | --- | --- |
+| [pack](cli-ref-pack.md) | Creation | 2.7+ | Creates a NuGet package from a `.nuspec` or project file. When running on Mono, creating a package from a project file is not supported. |
+| [push](cli-ref-push.md) | Publishing | All | Publishes a package to a package source. |
+| [config](cli-ref-config.md) | All | All | Gets or sets NuGet configuration values. |
+| [help or ?](cli-ref-help.md) | All | All | Displays help information or help for a command. |
+| [locals](cli-ref-locals.md) | Consumption | 3.3+ | Clears or lists packages in various caches or the global packages folder, or identifies those folders. |
+| [restore](cli-ref-restore.md) | Consumption | 2.7+ | Restores all packages referenced by the package reference format in use. When running on Mono, restoring packages using the PackageReference format is not supported. | 
+| [setapikey](cli-ref-setapikey.md) | Publishing, Consumption | All | Saves an API key for a given package source when that package source requires a key for access. |
+| [spec](cli-ref-spec.md) | Creation | All | Generates a `.nuspec` file, using tokens if generating the file from a Visual Studio project. |
+
+
+| Secondary Commands | Applicable Roles | NuGet Version | Description | 
 | --- | --- | --- | --- |
 | [add](cli-ref-add.md) | Publishing | 3.3+ | Adds a package to a non-HTTP package source using hierarchical layout. For HTTP sources, use *push*. |
-| [config](cli-ref-config.md) | All | All | Gets or sets NuGet configuration values. |
 | [delete](cli-ref-delete.md) | Publishing | All | Removes or unlists a package from a package source. |
-| [help or ?](cli-ref-help.md) | All | All | Displays help information or help for a command. |
 | [init](cli-ref-init.md) | Creation | 3.3+ | Adds packages from a folder to a package source using hierarchical layout. |
 | [install](cli-ref-install.md) | Consumption | All | Installs a package into the current project but does not modify projects or reference files. |
 | [list](cli-ref-list.md) | Consumption, perhaps Publishing | All | Displays packages from a given source. |
-| [locals](cli-ref-locals.md) | Consumption | 3.3+ | Clears or lists packages in various caches or the global packages folder, or identifies those folders. |
 | [mirror](cli-ref-mirror.md) | Publishing | Deprecated in 3.2+ | Mirrors a package and its dependencies from a source to a target repository. |
-| [pack](cli-ref-pack.md) | Creation | 2.7+ | Creates a NuGet package from a `.nuspec` or project file. When running on Mono, creating a package from a project file is not supported. |
-| [push](cli-ref-push.md) | Publishing | All | Publishes a package to a package source. |
-| [restore](cli-ref-restore.md) | Consumption | 2.7+ | Restores all packages referenced by the package reference format in use. When running on Mono, restoring packages using the PackageReference format is not supported. | 
-| [setapikey](cli-ref-setapikey.md) | Consumption, Publishing | All | Saves an API key for a given package source when that package source requires a key for access. |
 | [sources](cli-ref-sources.md) | Consumption, Publishing | All | Manages package sources in configuration files. |
-| [spec](cli-ref-spec.md) | Creation | All | Generates a `.nuspec` file, using tokens if generating the file from a Visual Studio project. |
 | [update](cli-ref-update.md) | Consumption | All | Updates a project's packages to the latest available versions. Not supported when running on Mono. |
 
 Different commands make use of various [Environment variables](cli-ref-environment-variables.md).
