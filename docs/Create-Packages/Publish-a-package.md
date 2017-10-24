@@ -46,36 +46,36 @@ Next, you can either upload the package through the nuget.org web portal, push t
 
 ### Web portal: use the Upload Package tab on nuget.org:
 
-    ![Upload a package with the NuGet Package Manager](media/publish_UploadYourPackage.PNG)
+![Upload a package with the NuGet Package Manager](media/publish_UploadYourPackage.PNG)
 
 ### Command line:
-    > [!Important]
-    > To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](https://docs.microsoft.com/en-us/nuget/api/nuget-protocols).
+> [!Important]
+> To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](https://docs.microsoft.com/en-us/nuget/api/nuget-protocols).
 
-    1. Click on your user name to navigate to your account settings.
-    2. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:
+1. Click on your user name to navigate to your account settings.
+2. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:
 
-        ![Copying an API Key from account settings](media/publish_APIKey.png)
+    ![Copying an API Key from account settings](media/publish_APIKey.png)
 
-    3. At a command prompt, run the following command:
+3. At a command prompt, run the following command:
 
-        ```
-        nuget setApiKey Your-API-Key
-        ```
+    ```
+    nuget setApiKey Your-API-Key
+    ```
 
-        This stores your API key on the machine so that you need not do this step again on the same machine.
+    This stores your API key on the machine so that you need not do this step again on the same machine.
 
-    4. Push your package to NuGet Gallery using the command:
+4. Push your package to NuGet Gallery using the command:
 
-        ```
-        nuget push YourPackage.nupkg -Source https://www.nuget.org/api/v2/package
-        ```
+    ```
+    nuget push YourPackage.nupkg -Source https://www.nuget.org/api/v2/package
+    ```
 
-    5. Before being made public, all packages uploaded to nuget.org are scanned for viruses and rejected if any viruses are found. All packages listed on nuget.org are also scanned periodically.
+5. Before being made public, all packages uploaded to nuget.org are scanned for viruses and rejected if any viruses are found. All packages listed on nuget.org are also scanned periodically.
 
-    6. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page:
+6. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page:
 
-        ![Message indicating a package is not yet indexed](media/publish_NotYetIndexed.png)
+    ![Message indicating a package is not yet indexed](media/publish_NotYetIndexed.png)
 
 ### Visual Studio Team Services (CI/CD)
 
