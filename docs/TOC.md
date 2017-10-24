@@ -28,6 +28,7 @@
 ## [Reinstalling and Updating Packages](Consume-Packages/Reinstalling-and-Updating-Packages.md)
 ## [Packages and Source Control](Consume-Packages/Packages-and-Source-Control.md)
 ## [Package Restore](Consume-Packages/Package-Restore.md)
+### [Troubleshooting](Consume-Packages/Package-restore-troubleshooting.md)
 ## [Managing the NuGet Cache](Consume-Packages/Managing-the-NuGet-Cache.md)
 ## [Configuring NuGet Behavior](Consume-Packages/Configuring-NuGet-Behavior.md)
 ## [Dependency Resolution](Consume-Packages/Dependency-Resolution.md)
