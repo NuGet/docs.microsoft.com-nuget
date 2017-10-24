@@ -20,8 +20,8 @@ keywords: NuGet in Visual Studio, custom project types, Visual Studio projects
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

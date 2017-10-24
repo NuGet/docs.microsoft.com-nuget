@@ -20,8 +20,8 @@ keywords: NuGet config files, NuGet configuration, NuGet behavior settings, NuGe
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

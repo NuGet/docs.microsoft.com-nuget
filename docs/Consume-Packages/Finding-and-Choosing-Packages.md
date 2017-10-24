@@ -20,8 +20,8 @@ keywords: NuGet package consumption, NuGet package discovery, best NuGet package
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

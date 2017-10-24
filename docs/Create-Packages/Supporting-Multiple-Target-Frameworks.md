@@ -20,8 +20,8 @@ keywords: NuGet package targeting, .NET Framework versions, NuGet and .NET, targ
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

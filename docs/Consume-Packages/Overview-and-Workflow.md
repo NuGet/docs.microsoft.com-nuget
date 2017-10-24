@@ -20,8 +20,8 @@ keywords: NuGet package consumption, NuGet consumption overview, NuGet consumpti
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

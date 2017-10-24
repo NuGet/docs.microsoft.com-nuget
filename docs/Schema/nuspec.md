@@ -21,8 +21,8 @@ keywords: nuspec reference, NuGet package metadata, NuGet package manifest, nusp
 #ms.devlang:
 ms.reviewer:
 - anangaur
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

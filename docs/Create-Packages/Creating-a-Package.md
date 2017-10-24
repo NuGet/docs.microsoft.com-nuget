@@ -17,8 +17,8 @@ ms.assetid: 456797cb-e3e4-4b88-9b01-8b5153cee802
 description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
 keywords: NuGet package creation, creating a package, nuspec manifest, NuGet package conventions, NuGet package version
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 
 ---
 # Creating NuGet packages

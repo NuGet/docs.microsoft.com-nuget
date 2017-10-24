@@ -16,8 +16,8 @@ ms.assetid: b70326a0-5bfc-4b7c-881d-7a7d5ebeeed5
 description: A brief description of how to restore NuGet packages in a project.
 keywords: NuGet package restore, restoring packages
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 
 ---
 

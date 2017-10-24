@@ -20,7 +20,7 @@ keywords: NuGet and MSBuild, NuGet pack target, NuGet restore target
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
+- karann-msft
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

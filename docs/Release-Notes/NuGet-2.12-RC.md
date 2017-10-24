@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 2.12-RC Release Notes | Microsoft Docs
-author: karann-msft
-ms.author: karann
+author: karann-msft-msft
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ keywords: NuGet 2.12 RC release notes, bug fixes, known issues, added features, 
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

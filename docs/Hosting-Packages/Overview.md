@@ -20,8 +20,8 @@ keywords: NuGet feed, NuGet gallery, custom package feed, NuGet.Server
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 - anangaur
 #ms.suite:
 #ms.tgt_pltfrm:

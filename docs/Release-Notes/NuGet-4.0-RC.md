@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 4.0 RC Release Notes | Microsoft Docs
-author: karann-msft
-ms.author: karann
+author: karann-msft-msft
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/17/2016
 ms.topic: article
