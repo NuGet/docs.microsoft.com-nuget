@@ -23,9 +23,7 @@ ms.reviewer:
 
 ## locals command (NuGet CLI)
 
-| Applicable roles | Supported Versions |
-| --- | --- |
-| Package consumption | 3.3+ |
+*Applicable roles: package consumption &bullet; Supported versions: 3.3+*
 
 Clears or lists local NuGet resources such as the http-request cache, packages cache, and the machine-wide global packages folder. The `locals` command can also be used to display a list of those locations. For more information, see [Managing the NuGet Cache](../consume-packages/managing-the-nuget-cache.md).
 

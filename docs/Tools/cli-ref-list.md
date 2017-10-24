@@ -23,9 +23,7 @@ ms.reviewer:
 
 # list command (NuGet CLI)
 
-| Applicable roles | Supported Versions |
-| --- | --- |
-| Package consumption, publishing | All |
+*Applicable roles: package consumption, publishing &bullet; Supported versions: all*
 
 Displays a list of packages from a given source. If no sources are specified, all sources defined in the global configuration file, `%AppData%\NuGet\NuGet.Config`, are used. If `NuGet.Config` specifies no sources, then `list` uses the default feed (nuget.org).
 

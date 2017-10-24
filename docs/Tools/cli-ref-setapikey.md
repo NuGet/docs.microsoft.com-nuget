@@ -23,9 +23,7 @@ ms.reviewer:
 
 ## setapikey command (NuGet CLI)
 
-| Applicable roles | Supported Versions |
-| --- | --- |
-| Package consumption, publishing | All |
+*Applicable roles: package consumption, publishing &bullet; Supported versions: all*
 
 Saves an API key for a given server URL into `NuGet.Config` so that it doesn't need to be entered for subsequent commands.
 
