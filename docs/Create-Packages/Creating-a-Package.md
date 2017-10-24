@@ -5,7 +5,7 @@ title: How to create a NuGet package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/2/2017
+ms.date: 10/20/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -42,6 +42,7 @@ In this topic:
 - [Setting a package type](#setting-a-package-type) (NuGet 3.5 and later)
 - [Adding a readme and other files](#adding-a-readme-and-other-files)
 - [Including MSBuild props and targets in a package](#including-msbuild-props-and-targets-in-a-package)
+- [Authoring packages that contain COM interop assemblies](#authoring-packages-with-com-interop-assemblies)
 - [Running nuget pack to generate the .nupkg file](#running-nuget-pack-to-generate-the-nupkg-file)
 
 After these core steps, you can incorporate a variety of other features as described elsewhere in this documentation. See [Next steps](#next-steps) below.
@@ -59,6 +60,8 @@ Most general-purpose packages contain one or more assemblies that other develope
     - Similarly, if `Utilities.dll` depends on `Utilities.resources.dll`, where again the latter is not useful on its own, then put both in the same package.
 
 Resources are, in fact, a special case. When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, *excluding* those that are named `.resources.dll` because they are assumed to be localized satellite assemblies (see [Creating localized packages](creating-localized-packages.md)). For this reason, avoid using `.resources.dll` for files that otherwise contain essential package code.
+
+If your library contains COM interop assemblies, follow additional the guidelines in [Authoring packages with COM interop assemblies](#authoring-packages-with-com-interop-assemblies).
 
 ## The role and structure of the .nuspec file
 
@@ -382,6 +385,27 @@ Then in the `.nuspec` file, be sure to refer to these files in the `<files>` nod
 When NuGet 2.x installs a package with `\build` files, it adds an MSBuild `<Import>` elements in the project file pointing to the `.targets` and `.props` files. (`.props` is added at the top of the project file; `.targets` is added at the bottom.)
 
 With NuGet 3.x, targets are not added to the project but are instead made available through the `project.lock.json`.
+
+# Authoring packages with COM interop assemblies
+
+Packages that contain COM interop assemblies must include an appropriate [targets file](#including-msbuild-props-and-targets-in-a-package) so that the correct `EmbedInteropTypes` metadata is added to projects using the PackageReference format. By default, the `EmbedInteropTypes` metadata is always false for all assemblies when PackageReference is used, so the targets file adds this metadata explicitly. To avoid conflicts, the target name should be unique; ideally, use a combination of your package name and the assembly being embedded, replacing the `{InteropAssemblyName}` in the example below with that value. (Also see [NuGet.Samples.Interop](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop) for an example.)
+
+```xml      
+<Target Name="EmbeddingAssemblyNameFromPackageId" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
+  <PropertyGroup>
+    <_InteropAssemblyFileName>{InteropAssemblyName}</_InteropAssemblyFileName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ReferencePath Condition=" '%(FileName)' == '$(_InteropAssemblyFileName)' AND '%(ReferencePath.NuGetPackageId)' == '$(MSBuildThisFileName)' ">
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </ReferencePath>
+  </ItemGroup>
+</Target>
+```
+
+Note that when using the `packages.config` reference format, adding references to the assemblies from the packages causes NuGet and Visual Studio to check for COM interop assemblies and set the `EmbedInteropTypes` to true in the project file. In this case the targets are overriden.
+
+Additionally, by default the [build assets do not flow transitively](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets). Packages authored as described here work differently when they are pulled as a transitive dependency from a project to project reference. The package consumer can allow them to flow by modifying the PrivateAssets default value to not include build.  
 
 <a name="creating-the-package"></a>
 
