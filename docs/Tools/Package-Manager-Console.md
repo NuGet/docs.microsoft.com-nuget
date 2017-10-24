@@ -31,16 +31,17 @@ For example, finding and installing a package is done with three easy steps:
 
 2. Find the package you want to install. If you already know this, skip to step 3.
 
-```ps
-# Find packages containing the keyword "elmah"
-Find-Package elmah
-```
+    ```ps
+    # Find packages containing the keyword "elmah"
+    Find-Package elmah
+   ```
 
 3. Run the install command
-```ps
-# Install the Elmah package to the project named MyProject.
-Install-Package Elmah -ProjectName MyProject
-```
+
+    ```ps
+    # Install the Elmah package to the project named MyProject.
+    Install-Package Elmah -ProjectName MyProject
+    ```
 
 In this topic:
 
