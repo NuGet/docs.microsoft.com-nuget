@@ -135,9 +135,9 @@ Installing a package performs the following actions:
 
 - Displays applicable license terms in the console window with implied agreement. If you do not agree to the terms, you should uninstall the package immediately.
 - Adds a reference to the project in whatever reference format is in use. References subsequently appear in Solution Explorer and the applicable reference format file. Note, however, that with PackageReference, you need to save the project to see the changes in the project file directly.
-- Caches the package and updates the restore graph:
-    - PackageReference:  package is cached at `%USERPROFILE%\.nuget\packages` and the restore graph i.e. `project.assets.json` is updated.
-    - `packages.config`: creates a `packages` folder at the solution root and copies the package files into a subfolder within it. The restore graph i.e. `package.config` is updated.
+- Caches the package:
+    - PackageReference:  package is cached at `%USERPROFILE%\.nuget\packages` and the lock file i.e. `project.assets.json` is updated.
+    - `packages.config`: creates a `packages` folder at the solution root and copies the package files into a subfolder within it. The `package.config` file is updated.
 - Updates `app.config` and/or `web.config` if the package uses [source and config file transformations](../create-packages/source-and-config-file-transformations.md).
 - Installs any dependencies if not already present in the project. This might update package versions in the process, as described in [Dependency Resolution](../consume-packages/dependency-resolution.md).
 - Displays the package's readme file, if available, in a Visual Studio window.
@@ -163,7 +163,6 @@ See [Uninstall-Package](../tools/ps-ref-uninstall-package.md). Use [Get-Package]
 Uninstalling a package performs the following actions:
 
 - Removes references to the package from the project (and whatever reference format is in use). References no longer appear in Solution Explorer. (You might need to rebuild the project to see it removed from the **Bin** folder.)
-- Removes the package from the project cache (`project.assets.json`, the `packages` folder, or `project.lock.json`)
 - Reverses any changes made to `app.config` or `web.config` when the package was installed.
 - Removes previously-installed dependencies if no remaining packages use those dependencies.
 
