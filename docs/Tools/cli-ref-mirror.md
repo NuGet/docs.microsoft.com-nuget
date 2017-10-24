@@ -23,7 +23,7 @@ ms.reviewer:
 
 # mirror command (NuGet CLI)
 
-*Applicable roles: package publishing &bullet; Supported versions: deprecated in 3.2+*
+**Applies to:** package publishing &bullet; **Supported versions:** deprecated in 3.2+
 
 Mirrors a package and its dependencies from the specified source repositories to the target repository.
 

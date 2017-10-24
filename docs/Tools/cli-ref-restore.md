@@ -23,7 +23,7 @@ ms.reviewer:
 
 # restore command (NuGet CLI)
 
-*Applicable roles: package consumption &bullet; Supported versions: 2.7+*
+**Applies to:** package consumption &bullet; **Supported versions:** 2.7+
 
 NuGet 2.7+: Downloads and installs any packages missing from the `packages` folder.
 

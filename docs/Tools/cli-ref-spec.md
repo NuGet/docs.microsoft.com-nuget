@@ -23,7 +23,7 @@ ms.reviewer:
 
 # spec command (NuGet CLI)
 
-*Applicable roles: package creation &bullet; Supported versions: all*
+**Applies to:** package creation &bullet; **Supported versions:** all
 
 Generates a `.nuspec` file for a new package. If run in the same folder as a project file (`.csproj`, `.vbproj`, `.fsproj`), `spec` creates a tokenized `.nuspec` file. For additional information, see [Creating a Package](../create-packages/creating-a-package.md).
 

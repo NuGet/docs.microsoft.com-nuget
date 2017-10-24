@@ -23,7 +23,7 @@ ms.reviewer:
 
 # init command (NuGet CLI)
 
-*Applicable roles: package creation &bullet; Supported versions: 3.3+*
+**Applies to:** package creation &bullet; **Supported versions:** 3.3+
 
 Copies all the packages from a flat folder to a destination folder using a hierarchical layout as described for the [add command](#add) above. That is, using `init` is equivalent to using the `add` command on each package in the folder.
 
