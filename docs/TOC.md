@@ -2,8 +2,9 @@
 # Quickstart
 ## [Create and Publish a Package](Quickstart/Create-and-Publish-a-Package.md)
 ## [Use a Package](Quickstart/Use-a-Package.md)
+## [Restore Packages](Quickstart/Restore.md)
 # Guides
-## [Install NuGet](Guides/Install-NuGet.md)
+## [Install NuGet client tools](Guides/Install-NuGet.md)
 ## [Create UWP Packages](Guides/Create-UWP-Packages.md)
 ## [Creating UWP Controls as NuGet Packages](Guides/Create-UWP-Controls.md)
 ## [Create Cross-Platform Packages](Guides/Create-Cross-Platform-Packages.md)
@@ -60,10 +61,12 @@
 ## [Target Frameworks](Schema/Target-Frameworks.md)
 ## [Analyzers Conventions](Schema/Analyzers-Conventions.md)
 ## [Errors and warnings](Reference/Errors-and-Warnings.md)
+## [ID Prefix Reservation](Reference/ID-Prefix-Reservation.md)
 # API
 ## [NuGet API V3](API/NuGet-API-V3.md)
 ## [NuGet Credential Providers for Visual Studio](API/Nuget-Credential-Providers-for-Visual-Studio.md)
 ## [nuget.exe Credential Providers](API/nuget-exe-Credential-Providers.md)
+## [NuGet Protocols](API/nuget-protocols.md)
 # Visual Studio Extensibility
 ## [NuGet API in Visual Studio](Visual-Studio-Extensibility/NuGet-API-in-Visual-Studio.md)
 ## [Project System Support](Visual-Studio-Extensibility/Project-System-Support.md)
@@ -77,6 +80,7 @@
 # [GitHub Repositories](https://github.com/NuGet)
 # Release Notes
 ## [Known Issues](Release-Notes/Known-Issues.md)
+## [NuGet 4.4 RTM](Release-Notes/NuGet-4.4-RTM.md)
 ## [NuGet 4.3 RTM](Release-Notes/NuGet-4.3-RTM.md)
 ## [NuGet 4.0 RTM](Release-Notes/NuGet-4.0-RTM.md)
 ## [NuGet 4.0 RC](Release-Notes/NuGet-4.0-RC.md)

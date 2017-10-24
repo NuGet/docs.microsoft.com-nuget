@@ -1,0 +1,5 @@
+- **Package Manager console** (Visual Studio, **Tools > NuGet Package Manager > Package Manager Console**): Run the `Update-Package -reinstall -ProjectName <project>` command where \<project\> is the name of the affected project as it appears in Solution Explorer. Use `Update-Package -reinstall` by itself to restore all packages in the solution. See [Update-Package](../tools/ps-ref-update-package.md). You can also reinstall a single package, if desired.
+
+- **Package Manager UI** (Visual Studio): right-click the solution in Solution Explorer and select **Restore NuGet Packages**. If one or more individual packages are still not installed properly (meaning that Solution Explorer shows an error icon), then use the Package Manager UI to uninstall the affected packages and reinstall them. See [Reinstalling and updating packages](../Consume-Packages/Reinstalling-and-Updating-Packages.md)
+
+- **Command line**: use the [nuget restore](../tools/nuget-exe-CLI-Reference.md#restore) command. Simply running `nuget restore` in the project folder attempts to restore the project's dependencies.

@@ -5,7 +5,7 @@ title: How to Publish a NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 10/5/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -49,8 +49,8 @@ Next, you can either upload the package through the nuget.org web portal, or pus
     ![Upload a package with the NuGet Package Manager](media/publish_UploadYourPackage.PNG)
 
 - Command line:
-> [!Note]
-> We recommend using NuGet.exe v4.1.0 or above to push packages.
+    > [!Important]
+    > To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](https://docs.microsoft.com/en-us/nuget/api/nuget-protocols).
 
     1. Click on your user name to navigate to your account settings.
     2. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:
