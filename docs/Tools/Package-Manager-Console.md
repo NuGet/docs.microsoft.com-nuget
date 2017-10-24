@@ -16,8 +16,8 @@ ms.assetid: 2b92b119-6861-406c-82af-9d739af230e4
 description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
 keywords: NuGet package manager console, NuGet powershell, managing NuGet packages
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 
 ---
 
