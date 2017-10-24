@@ -2,7 +2,7 @@
 # required metadata
 
 title: 3.5 RC Release Notes | Microsoft Docs
-author: karann-msft-msft
+author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016

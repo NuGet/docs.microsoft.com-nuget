@@ -21,7 +21,7 @@ keywords: NuGet package ID, prefix, reservation
 #ms.devlang:
 ms.reviewer:
 - ananguar
-- karann-msft-msft
+- karann-msft
 - unniravindranathanavindranathan
 #ms.suite:
 #ms.tgt_pltfrm:

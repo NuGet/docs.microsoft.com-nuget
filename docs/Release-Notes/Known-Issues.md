@@ -2,7 +2,7 @@
 # required metadata
 
 title: NuGet Known Issues | Microsoft Docs
-author: karann-msft-msft
+author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016

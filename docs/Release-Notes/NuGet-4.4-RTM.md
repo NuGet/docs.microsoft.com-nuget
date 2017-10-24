@@ -2,8 +2,8 @@
 # required metadata
 
 title: NuGet 4.4 RTM Release Notes | Microsoft Docs
-author: karann-msft-msft
-ms.author: karann-msft-msft
+author: karann-msft
+ms.author: karann-msft
 manager: unniravindranathan
 ms.date: 08/14/2017
 ms.topic: article
