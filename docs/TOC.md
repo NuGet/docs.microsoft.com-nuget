@@ -2,7 +2,6 @@
 # Quickstart
 ## [Create and Publish a Package](Quickstart/Create-and-Publish-a-Package.md)
 ## [Use a Package](Quickstart/Use-a-Package.md)
-## [Restore Packages](Quickstart/Restore.md)
 # Guides
 ## [Install NuGet client tools](Guides/Install-NuGet.md)
 ## [Create UWP Packages](Guides/Create-UWP-Packages.md)
