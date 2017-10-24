@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet Quick Guide ro Package Restore | Microsoft Docs
+title: Troubleshooting NuGet Package Restore | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -13,24 +13,26 @@ ms.assetid: b70326a0-5bfc-4b7c-881d-7a7d5ebeeed5
 
 # optional metadata
 
-description: A brief description of how to restore NuGet packages in a project.
-keywords: NuGet package restore, restoring packages
+description: A description of commong nuget restore errors and how to troubleshoot them.
+keywords: NuGet package restore, restoring packages, troubleshooting, troubleshoot
 ms.reviewer:
 - karann
 - unnir
 
 ---
 
-# Quick guide to package restore
+# Troubleshooting package restore errors
+
+This page focuses on common package restore errors and steps to resolve them. For how-to restore packages, see [Package restore](../Consume-Packages/Package-Restore.md#enabling-and-disabling-package-restore).
 
 By default, building a project in Visual Studio automatically restores NuGet packages referenced in the project. However, builds will fail with if package restore is disabled in the **Tools > Options > NuGet Package Manager > Package Restore** settings and the necessary packages are not available on your computer. In these cases you may see the following errors:
 
-```
+```ps
 This project references NuGet package(s) that are missing on this computer.
 Use NuGet Package Restore to download them. The missing file is {name}.
 ```
 
-```
+```ps
 One or more NuGet packages need to be restored but couldn't be because consent has
 not been granted. To give consent, open the Visual Studio Options dialog, click on
 the NuGet Package Manager node and check 'Allow NuGet to download missing packages
@@ -42,4 +44,4 @@ To enable package restore, open **Tools > Options > NuGet Package Manager** and 
 
 ![enable NuGet package restore in Tool/Options](../Consume-Packages/media/restore-01-autorestoreoptions.png)
 
-For additional details, see [Package restore](../Consume-Packages/Package-Restore.md#enabling-and-disabling-package-restore).
+
