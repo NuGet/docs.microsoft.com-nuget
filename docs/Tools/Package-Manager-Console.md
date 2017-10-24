@@ -88,7 +88,7 @@ In this topic:
 Get-Package -updates
 
 # Updates a specific package using its identifier, in this case jQuery
-# Update-Package jQuery
+Update-Package jQuery
 
 # Update all packages in the project named MyProject (as it appears in Solution Explorer)
 Update-Package -ProjectName MyProject
