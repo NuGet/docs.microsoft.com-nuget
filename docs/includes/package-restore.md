@@ -2,4 +2,4 @@
 
 - **Package Manager UI** (Visual Studio): right-click the solution in Solution Explorer and select **Restore NuGet Packages**. If one or more individual packages are still not installed properly (meaning that Solution Explorer shows an error icon), then use the Package Manager UI to uninstall the affected packages and reinstall them. See [Reinstalling and updating packages](../Consume-Packages/Reinstalling-and-Updating-Packages.md)
 
-- **Command line**: use the [nuget restore](../tools/nuget-exe-CLI-Reference.md#restore) command. Simply running `nuget restore` in the project folder attempts to restore the project's dependencies.
+- **Command line**: use the [nuget restore](../tools/cli-ref-restore.md) command. Simply running `nuget restore` in the project folder attempts to restore the project's dependencies.

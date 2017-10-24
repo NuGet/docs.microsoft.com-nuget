@@ -415,7 +415,7 @@ Once `nuget pack` succeeds, you have a `.nupkg` file that you can publish to a s
 
 ### Additional options
 
-You can use various command-line switches with `nuget pack` to exclude files, override the version number in the manifest, and change the output folder, among other features. For a complete list, refer to the [pack command reference](../tools/nuget-exe-cli-reference.md#pack).
+You can use various command-line switches with `nuget pack` to exclude files, override the version number in the manifest, and change the output folder, among other features. For a complete list, refer to the [pack command reference](../tools/cli-ref-pack.md).
 
 The following options are a few that are common with Visual Studio projects:
 

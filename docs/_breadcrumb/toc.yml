@@ -24,8 +24,8 @@
     - name: Tools
       tocHref: /nuget/tools/
       topicHref: /nuget/tools/nuget-exe-cli-reference
-    - name: Schema
-      tocHref: /nuget/schema/
+    - name: Reference
+      tocHref: /nuget/reference/
       topicHref: /nuget/schema/nuspec
     - name: API
       tocHref: /nuget/api/
