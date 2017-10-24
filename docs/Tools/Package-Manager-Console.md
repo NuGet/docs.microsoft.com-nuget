@@ -5,7 +5,7 @@ title: NuGet Package Manager Console Guide | Microsoft Docs
 author: kraigb
 hms.author: kraigb
 manager: ghogen
-ms.date: 10/2/2017
+ms.date: 10/24/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -23,9 +23,9 @@ ms.reviewer:
 
 # Package Manager Console
 
-The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later.
+The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later. The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation.
 
-## Installing a NuGet package in 3 easy steps
+For example, finding and installing a package is done with three easy steps:
 
 1. Open the project/solution in Visual Studio, and open the console using the **Tools > NuGet Package Manager > Package Manager Console** command.
 
@@ -42,22 +42,19 @@ Find-Package elmah
 Install-Package Elmah -ProjectName MyProject
 ```
 
-That's it!
-
-The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. 
-
-All operations that are available in the console can also be done with the [NuGet CLI](../tools/nuget-exe-cli-reference.md). However, console commands operate within the context of Visual Studio and a saved project/solution and often accomplish more than their equivalent CLI commands. For example, installing a package through the console adds a reference to the project whereas the CLI command does not. For this reason, developers working in Visual Studio typically prefer using the console to the CLI.
-
 In this topic:
 
 - [Opening the console](#opening-the-console)
-- [Finding a package](#finding-a-package)
-- [Updating a package](#updating-a-package)
 - [Installing a package](#installing-a-package)
 - [Uninstalling a package](#uninstalling-a-package)
+- [Finding a package](#finding-a-package)
+- [Updating a package](#updating-a-package)
 - [Availability of the console](#availability-of-the-console)
 - [Extending the Package Manager Console](#extending-the-package-manager-console)
 - [Setting up a NuGet PowerShell profile](#setting-up-a-nuget-powershell-profile)
+
+> [!Important]
+> All operations that are available in the console can also be done with the [NuGet CLI](../tools/nuget-exe-cli-reference.md). However, console commands operate within the context of Visual Studio and a saved project/solution and often accomplish more than their equivalent CLI commands. For example, installing a package through the console adds a reference to the project whereas the CLI command does not. For this reason, developers working in Visual Studio typically prefer using the console to the CLI.
 
 > [!Tip]
 > Many console operations depend on having a solution opened in Visual Studio with a known path name. If you have an unsaved solution, or no solution, you can see the error, "Solution is not opened or not saved. Please ensure you have an open and saved solution." This indicates that the console cannot determine the solution folder. Saving an unsaved solution, or creating and saving a solution if you don't have one open, should correct the error.
@@ -79,44 +76,6 @@ In this topic:
 5. The rightmost button interrupts a long-running command. For example, running `Get-Package -ListAvailable -PageSize 500` lists the top 500 packages on the default source (such as nuget.org), which could take several minutes to run.
 
     ![Package Manager Console stop control](media/PackageManagerConsoleControls3.png)
-
-
-## Updating a package
-
-```ps
-# Checks if there are newer versions available for any installed packages
-Get-Package -updates
-
-# Updates a specific package using its identifier, in this case jQuery
-Update-Package jQuery
-
-# Update all packages in the project named MyProject (as it appears in Solution Explorer)
-Update-Package -ProjectName MyProject
-
-# Update all packages in the solution
-Update-Package
-```
-
-See [Get-Package](../tools/ps-ref-get-package.md) and [Update-Package](../tools/ps-ref-update-package.md)
-
-## Finding a package
-
-```ps
-# Find packages containing keywords
-Find-Package elmah
-Find-Package logging
-
-# List packages whose ID begins with Elmah
-Find-Package Elmah -StartWith
-
-# By default, Get-Package returns a list of 20 packages; use -First to show more
-Find-Package logging -First 100
-
-# List all versions of the package with the ID of "jquery"
-Find-Package jquery -AllVersions -ExactMatch
-```
-
-See [Find-Package](../tools/ps-ref-find-package.md). In Visual Studio 2013 and earlier, use [Get-Package](../tools/ps-ref-get-package.md) instead.
 
 
 ## Installing a package
@@ -168,6 +127,44 @@ Uninstalling a package performs the following actions:
 
 > [!Tip]
 > Like `Install-Package`, the `Uninstall-Package` command has the benefit of managing references in the project, unlike the `nuget uninstall` CLI command.
+
+## Updating a package
+
+```ps
+# Checks if there are newer versions available for any installed packages
+Get-Package -updates
+
+# Updates a specific package using its identifier, in this case jQuery
+Update-Package jQuery
+
+# Update all packages in the project named MyProject (as it appears in Solution Explorer)
+Update-Package -ProjectName MyProject
+
+# Update all packages in the solution
+Update-Package
+```
+
+See [Get-Package](../tools/ps-ref-get-package.md) and [Update-Package](../tools/ps-ref-update-package.md)
+
+## Finding a package
+
+```ps
+# Find packages containing keywords
+Find-Package elmah
+Find-Package logging
+
+# List packages whose ID begins with Elmah
+Find-Package Elmah -StartWith
+
+# By default, Get-Package returns a list of 20 packages; use -First to show more
+Find-Package logging -First 100
+
+# List all versions of the package with the ID of "jquery"
+Find-Package jquery -AllVersions -ExactMatch
+```
+
+See [Find-Package](../tools/ps-ref-find-package.md). In Visual Studio 2013 and earlier, use [Get-Package](../tools/ps-ref-get-package.md) instead.
+
 
 ## Availability of the console
 
