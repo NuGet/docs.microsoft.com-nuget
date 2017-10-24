@@ -20,8 +20,8 @@ keywords: NuGet credential providers, authenticate with feed, authenticate with 
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

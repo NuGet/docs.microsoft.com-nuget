@@ -20,8 +20,8 @@ keywords: NuGet source control, NuGet version control, NuGet and git, NuGet and 
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

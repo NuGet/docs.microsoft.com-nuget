@@ -20,8 +20,8 @@ keywords: nuget.exe credential providers, credential provider API, authenticate 
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

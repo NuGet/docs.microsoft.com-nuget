@@ -24,8 +24,8 @@ keywords: NuGet UI, NuGet package manager UI, NuGet in Visual Studio, managing N
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

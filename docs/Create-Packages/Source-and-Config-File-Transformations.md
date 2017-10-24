@@ -20,8 +20,8 @@ keywords: NuGet package installation, NuGet package transformations, modifying c
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 - anangaur
 #ms.suite:
 #ms.tgt_pltfrm:

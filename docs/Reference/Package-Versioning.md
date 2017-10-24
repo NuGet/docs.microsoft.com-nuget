@@ -21,8 +21,8 @@ keywords: versioning, NuGet package dependencies, NuGet dependency versions, NuG
 #ms.devlang:
 ms.reviewer:
 - anandr
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

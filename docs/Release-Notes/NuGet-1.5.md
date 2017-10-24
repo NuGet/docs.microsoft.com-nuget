@@ -3,7 +3,7 @@
 
 title: NuGet 1.5 Release Notes | Microsoft Docs
 author: karann-msft
-ms.author: karann
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ keywords: NuGet 1.5 release notes, bug fixes, known issues, added features, DCRs
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

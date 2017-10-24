@@ -3,7 +3,7 @@
 
 title: 3.5 Beta2 Release Notes | Microsoft Docs
 author: karann-msft
-ms.author: karann
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ keywords: NuGet 3.5 Beta 2 release notes, bug fixes, known issues, added feature
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

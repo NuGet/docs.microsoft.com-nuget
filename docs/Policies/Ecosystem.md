@@ -20,8 +20,8 @@ keywords: NuGet ecosystem, non-Microsoft NuGet projects, NuGet open source, NuGe
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

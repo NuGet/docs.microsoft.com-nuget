@@ -20,8 +20,8 @@ keywords: NuGet symbol packages, NuGet package debugging, supporting NuGet debug
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

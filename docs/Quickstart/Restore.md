@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: NuGet Quick Guide ro Package Restore | Microsoft Docs
+title: NuGet Quick Guide to Package Restore | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -16,8 +16,8 @@ ms.assetid: b70326a0-5bfc-4b7c-881d-7a7d5ebeeed5
 description: A brief description of how to restore NuGet packages in a project.
 keywords: NuGet package restore, restoring packages
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 
 ---
 

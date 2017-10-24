@@ -5,7 +5,7 @@ title: NuGet Package Restore | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/3/2017
+ms.date: 10/24/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -16,8 +16,8 @@ ms.assetid: a7bf21da-86ae-4c2d-8750-04ff53f41967
 description: A description of how NuGet restores packages upon which a project depends, including how to disable restore and constrain versions.
 keywords: NuGet package restore, NuGet package installation, installing package, restoring packages, dependency versions, disabling automatic restore, constraining package versions
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 
 ---
 
@@ -45,6 +45,10 @@ For additional details on package restore on build servers, see [Package restore
 ## Quick guide to package restore
 
 [!INCLUDE[package-restore](../includes/package-restore.md)]
+
+> [!Note]
+> If you see the error "This project references NuGet package(s) that are missing on this computer" or "One or more NuGet packages need to be restored but couldn't be because consent has
+not been granted," turn on automatic restore by following the instructions under [Enabling and disabling package restore](#enabling-and-disabling-package-restore).
 
 ## Package restore overview
 
@@ -82,7 +86,7 @@ See [Automatic restore in Visual Studio](#automatic-restore-in-visual-studio) be
 
 Automatic restore and command-line restore is enabled by default with NuGet 2.7+. MSBuild-integrated restore and command-line restore is **not** enabled by default for NuGet 2.6 and earlier and must be enabled manually.
 
-Package restore is primarily enabled through **Tools > Options > [NuGet] Package Manager > General** in Visual Studio:
+Package restore is primarily enabled through **Tools > Options > NuGet Package Manager** in Visual Studio:
 
 ![Controlling package restore behaviors through NuGet Package Manager options](media/Restore-01-AutoRestoreOptions.png)
 

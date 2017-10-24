@@ -20,8 +20,8 @@ keywords: NuGet Q&A, questions and answers, common problems, NuGet versions, pac
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

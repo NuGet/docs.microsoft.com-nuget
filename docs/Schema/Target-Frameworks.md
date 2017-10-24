@@ -21,8 +21,8 @@ keywords: NuGet package targeting, .NET framework targets, .NET framework versio
 #ms.devlang:
 ms.reviewer:
 - anangaur
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

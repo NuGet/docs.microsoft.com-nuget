@@ -20,8 +20,8 @@ keywords: create a package, packages for Xamarin, cross-platform packages
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

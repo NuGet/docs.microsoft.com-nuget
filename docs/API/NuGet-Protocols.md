@@ -4,7 +4,7 @@
 title: NuGet Protocols | Microsoft Docs
 author: anangaur
 ms.author: anangaur
-manager: unnir
+manager: unniravindranathan
 ms.date: 10/3/2017
 ms.topic: article
 ms.prod: nuget
@@ -16,7 +16,7 @@ ms.assetid: ba1d9742-9f1c-42ff-8c30-8e953e23c501
 description: The evolving nuget.org protocols to interact with nuget.org by NuGet clients.
 ms.reviewer:
 - kraigb
-- karann
+- karann-msft
 
 ---
 # NuGet Protocols
