@@ -175,7 +175,7 @@ In Visual Studio 2017, NuGet and the NuGet Package Manager are automatically ins
 
 Also, if you're missing the NuGet Package Manager in Visual Studio 2015 and earlier, check **Tools > Extensions and Updates...** and search for the NuGet Package Manager extension. If you're unable to use the extensions installer in Visual Studio, you can download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 
-The Package Manager Console it is not presently available with Visual Studio for Mac. The equivalent commands, however, are available through the [NuGet CLI](nuget-exe-CLI-reference.md). Visual Studio for Mac does have a UI managing NuGet packages. See [Including a NuGet package in your project](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+The Package Manager Console is not presently available with Visual Studio for Mac. The equivalent commands, however, are available through the [NuGet CLI](nuget-exe-CLI-reference.md). Visual Studio for Mac does have a UI for managing NuGet packages. See [Including a NuGet package in your project](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
 
 ## Extending the Package Manager Console
