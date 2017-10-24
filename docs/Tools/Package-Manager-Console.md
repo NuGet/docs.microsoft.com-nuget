@@ -27,7 +27,7 @@ The NuGet Package Manager Console is built into Visual Studio on Windows version
 
 ## Installing a NuGet package in 3 easy steps
 
-1. Open the project in Visual Studio, open the console using the **Tools > NuGet Package Manager > Package Manager Console** command. For a solution with more than one project, select the desired project from the `Default project` drop down.
+1. Open the project/solution in Visual Studio, and open the console using the **Tools > NuGet Package Manager > Package Manager Console** command.
 
 2. Find the package you want to install. If you already know this, skip to step 3.
 
@@ -38,8 +38,8 @@ Find-Package elmah
 
 3. Run the install command
 ```ps
-# Add the Elmah package to the default project as specified in the console's project selector
-Install-Package Elmah
+# Install the Elmah package to the project named MyProject.
+Install-Package Elmah -ProjectName MyProject
 ```
 
 That's it!
