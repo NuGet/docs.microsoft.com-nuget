@@ -23,8 +23,9 @@ ms.reviewer:
 
 # push command (NuGet CLI)
 
-**Applicable roles**: Package publishing
-**Supported versions**: All; publishing to nuget.org requires 4.1.0+
+| Applicable roles | Supported Versions |
+| --- | --- |
+| Package publishing | All' 4.1.0+ required for nuget.org |
 
 > [!Important]
 > To push packages to nuget.org you must use nuget.exe v4.1.0+, which implements the required [NuGet protocols](../api/nuget-protocols.md).

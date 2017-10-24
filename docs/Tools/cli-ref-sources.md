@@ -23,8 +23,9 @@ ms.reviewer:
 
 # sources command (NuGet CLI)
 
-**Applicable roles**: Package consumption, publishing
-**Supported versions**: All
+| Applicable roles | Supported Versions |
+| --- | --- |
+| Package consumption, publishing | All |
 
 Manages the list of sources located in `%AppData%\NuGet\NuGet.Config` or the specified configuration file.
 

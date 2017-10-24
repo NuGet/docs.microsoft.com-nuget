@@ -23,8 +23,9 @@ ms.reviewer:
 
 # help or ? command (NuGet CLI)
 
-**Applicable roles**: All
-**Supported versions**: All
+| Applicable roles | Supported Versions |
+| --- | --- |
+| All | All |
 
 Displays general help information and help information about specific commands.
 

@@ -23,8 +23,9 @@ ms.reviewer:
 
 # delete command (NuGet CLI)
 
-**Applicable roles**: Package publishing
-**Supported versions**: All
+| Applicable roles | Supported Versions |
+| --- | --- |
+| Package publishing | All |
 
 Deletes or unlists a package from a package source. For nuget.org, the delete command [unlists the package](../policies/Deleting-Packages.md).
 

@@ -23,8 +23,9 @@ ms.reviewer:
 
 # pack command (NuGet CLI)
 
-**Applicable roles**: Package creation
-**Supported versions**: 2.7+
+| Applicable roles | Supported Versions |
+| --- | --- |
+| Package creation | 2.7+ |
 
 Creates a NuGet package based on the specified `.nuspec` or project file. 
 

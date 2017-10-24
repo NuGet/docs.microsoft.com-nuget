@@ -23,8 +23,9 @@ ms.reviewer:
 
 # install command (NuGet CLI)
 
-**Applicable roles**: Package consumption
-**Supported versions**: All
+| Applicable roles | Supported Versions |
+| --- | --- |
+| Package consumption | All |
 
 Downloads and installs a package into a project using the specified package sources. 
 

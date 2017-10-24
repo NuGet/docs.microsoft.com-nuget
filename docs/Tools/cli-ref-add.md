@@ -23,8 +23,9 @@ ms.reviewer:
 
 # add command (NuGet CLI)
 
-**Applicable roles**: Package publishing
-**Supported versions**: 3.3+
+| Applicable roles | Supported Versions |
+| --- | --- |
+| Package publishing | 3.3+ |
 
 Adds a specified package to a non-HTTP package source (a folder or UNC path) in a hierarchical layout, wherein folders are created for the package ID and version number. For example:
 

@@ -23,8 +23,9 @@ ms.reviewer:
 
 # update command (NuGet CLI)
 
-**Applicable roles**: Package consumption
-**Supported versions**: All
+| Applicable roles | Supported Versions |
+| --- | --- |
+| Package consumption | All |
 
 Updates all packages in a project the latest available versions. It is recommended to run ['restore'](#restore) before running the `update`.
 

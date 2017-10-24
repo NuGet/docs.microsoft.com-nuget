@@ -23,8 +23,9 @@ ms.reviewer:
 
 # config command (NuGet CLI)
 
-**Applicable roles**: All
-**Supported versions**: All
+| Applicable roles | Supported Versions |
+| --- | --- |
+| All | All |
 
 Gets or sets NuGet configuration values. For additional usage, see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). For details on allowable key names, refer to the [NuGet config file reference](../Schema/nuget-config-file.md).
 
