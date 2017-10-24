@@ -5,7 +5,7 @@ title: Configuring the behavior of NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/25/2017
+ms.date: 10/24/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
