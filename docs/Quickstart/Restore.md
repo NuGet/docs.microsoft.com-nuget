@@ -38,7 +38,7 @@ during build.' You can also give consent by setting the environment variable
 'EnableNuGetPackageRestore' to 'true'. Missing packages: {name}	
 ```
 
-The enable package restore, open **Tools > Options > NuGet Package Manager** and select the options for **Allow NuGet to download missing packages** and **Automatically check for missing packages during build in Visual Studio**:
+To enable package restore, open **Tools > Options > NuGet Package Manager** and select the options for **Allow NuGet to download missing packages** and **Automatically check for missing packages during build in Visual Studio**:
 
 ![enable NuGet package restore in Tool/Options](../Consume-Packages/media/restore-01-autorestoreoptions.png)
 
