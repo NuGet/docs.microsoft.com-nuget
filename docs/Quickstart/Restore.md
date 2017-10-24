@@ -5,7 +5,7 @@ title: NuGet Quick Guide ro Package Restore | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/3/2017
+ms.date: 10/24/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -23,15 +23,23 @@ ms.reviewer:
 
 # Quick guide to package restore
 
-You may encounter situations where you need to restore the NuGet packages referenced by a project. For example, a project in Visual Studio may show the following error:
+By default, building a project in Visual Studio automatically restores NuGet packages referenced in the project. However, builds will fail with if package restore is disabled in the **Tools > Options > NuGet Package Manager > Package Restore** settings and the necessary packages are not available on your computer. In these cases you may see the following errors:
 
 ```
 This project references NuGet package(s) that are missing on this computer.
 Use NuGet Package Restore to download them. The missing file is {name}.
 ```
 
-Use any of the following methods to quickly restore packages:
+```
+One or more NuGet packages need to be restored but couldn't be because consent has
+not been granted. To give consent, open the Visual Studio Options dialog, click on
+the NuGet Package Manager node and check 'Allow NuGet to download missing packages
+during build.' You can also give consent by setting the environment variable
+'EnableNuGetPackageRestore' to 'true'. Missing packages: {name}	
+```
 
-[!INCLUDE[package-restore](../includes/package-restore.md)]
+The enable package restore, open **Tools > Options > NuGet Package Manager** and select the options for **Allow NuGet to download missing packages** and **Automatically check for missing packages during build in Visual Studio**:
 
-For additional details, see [Package restore](../Consume-Packages/Package-Restore.md).
+![enable NuGet package restore in Tool/Options](../Consume-Packages/media/restore-01-autorestoreoptions.png)
+
+For additional details, see [Package restore](../Consume-Packages/Package-Restore.md#enabling-and-disabling-package-restore).

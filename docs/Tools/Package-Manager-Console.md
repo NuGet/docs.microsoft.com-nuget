@@ -5,7 +5,7 @@ title: NuGet Package Manager Console Guide | Microsoft Docs
 author: kraigb
 hms.author: kraigb
 manager: ghogen
-ms.date: 10/2/2017
+ms.date: 10/24/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -16,27 +16,46 @@ ms.assetid: 2b92b119-6861-406c-82af-9d739af230e4
 description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
 keywords: NuGet package manager console, NuGet powershell, managing NuGet packages
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 
 ---
 
 # Package Manager Console
 
-The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later (see [Availability](#availability-of-the-console)). The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. 
+The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later. The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation.
 
-All operations that are available in the console can also be done with the [NuGet CLI](../tools/nuget-exe-cli-reference.md). However, console commands operate within the context of Visual Studio and a saved project/solution and often accomplish more than their equivalent CLI commands. For example, installing a package through the console adds a reference to the project whereas the CLI command does not. For this reason, developers working in Visual Studio typically prefer using the console to the CLI.
+For example, finding and installing a package is done with three easy steps:
+
+1. Open the project/solution in Visual Studio, and open the console using the **Tools > NuGet Package Manager > Package Manager Console** command.
+
+2. Find the package you want to install. If you already know this, skip to step 3.
+
+    ```ps
+    # Find packages containing the keyword "elmah"
+    Find-Package elmah
+   ```
+
+3. Run the install command
+
+    ```ps
+    # Install the Elmah package to the project named MyProject.
+    Install-Package Elmah -ProjectName MyProject
+    ```
 
 In this topic:
 
 - [Opening the console](#opening-the-console)
-- [Finding a package](#finding-a-package)
-- [Updating a package](#updating-a-package)
 - [Installing a package](#installing-a-package)
 - [Uninstalling a package](#uninstalling-a-package)
+- [Finding a package](#finding-a-package)
+- [Updating a package](#updating-a-package)
 - [Availability of the console](#availability-of-the-console)
 - [Extending the Package Manager Console](#extending-the-package-manager-console)
 - [Setting up a NuGet PowerShell profile](#setting-up-a-nuget-powershell-profile)
+
+> [!Important]
+> All operations that are available in the console can also be done with the [NuGet CLI](../tools/nuget-exe-cli-reference.md). However, console commands operate within the context of Visual Studio and a saved project/solution and often accomplish more than their equivalent CLI commands. For example, installing a package through the console adds a reference to the project whereas the CLI command does not. For this reason, developers working in Visual Studio typically prefer using the console to the CLI.
 
 > [!Tip]
 > Many console operations depend on having a solution opened in Visual Studio with a known path name. If you have an unsaved solution, or no solution, you can see the error, "Solution is not opened or not saved. Please ensure you have an open and saved solution." This indicates that the console cannot determine the solution folder. Saving an unsaved solution, or creating and saving a solution if you don't have one open, should correct the error.
@@ -60,6 +79,56 @@ In this topic:
     ![Package Manager Console stop control](media/PackageManagerConsoleControls3.png)
 
 
+## Installing a package
+
+```ps
+# Add the Elmah package to the default project as specified in the console's project selector
+Install-Package Elmah
+
+# Add the Elmah package to a project named UtilitiesLib that is not the default
+Install-Package Elmah -ProjectName UtilitiesLib
+```
+
+See [Install-Package](../tools/ps-ref-install-package.md).
+
+Installing a package performs the following actions:
+
+- Displays applicable license terms in the console window with implied agreement. If you do not agree to the terms, you should uninstall the package immediately.
+- Adds a reference to the project in whatever reference format is in use. References subsequently appear in Solution Explorer and the applicable reference format file. Note, however, that with PackageReference, you need to save the project to see the changes in the project file directly.
+- Caches the package:
+    - PackageReference:  package is cached at `%USERPROFILE%\.nuget\packages` and the lock file i.e. `project.assets.json` is updated.
+    - `packages.config`: creates a `packages` folder at the solution root and copies the package files into a subfolder within it. The `package.config` file is updated.
+- Updates `app.config` and/or `web.config` if the package uses [source and config file transformations](../create-packages/source-and-config-file-transformations.md).
+- Installs any dependencies if not already present in the project. This might update package versions in the process, as described in [Dependency Resolution](../consume-packages/dependency-resolution.md).
+- Displays the package's readme file, if available, in a Visual Studio window.
+
+> [!Tip]
+> One of the primary advantages of installing packages with the `Install-Package` command in the console is that adds a reference to the project just as if you used the Package Manager UI. In contrast, the `nuget install` CLI command only downloads the package and does not automatically add a reference.
+
+## Uninstalling a package
+
+```ps
+# Uninstalls the Elmah package from the default project
+Uninstall-Package Elmah
+
+# Uninstalls the Elmah package and all its unused dependencies
+Uninstall-Package Elmah -RemoveDependencies 
+
+# Uninstalls the Elmah package even if another package depends on it
+Uninstall-Package Elmah -Force
+```
+
+See [Uninstall-Package](../tools/ps-ref-uninstall-package.md). Use [Get-Package](../tools/ps-ref-get-package.md) to see all packages currently installed in the default project if you need to find an identifier.
+
+Uninstalling a package performs the following actions:
+
+- Removes references to the package from the project (and whatever reference format is in use). References no longer appear in Solution Explorer. (You might need to rebuild the project to see it removed from the **Bin** folder.)
+- Reverses any changes made to `app.config` or `web.config` when the package was installed.
+- Removes previously-installed dependencies if no remaining packages use those dependencies.
+
+> [!Tip]
+> Like `Install-Package`, the `Uninstall-Package` command has the benefit of managing references in the project, unlike the `nuget uninstall` CLI command.
+
 ## Updating a package
 
 ```ps
@@ -67,7 +136,7 @@ In this topic:
 Get-Package -updates
 
 # Updates a specific package using its identifier, in this case jQuery
-# Update-Package jQuery
+Update-Package jQuery
 
 # Update all packages in the project named MyProject (as it appears in Solution Explorer)
 Update-Package -ProjectName MyProject
@@ -98,65 +167,13 @@ Find-Package jquery -AllVersions -ExactMatch
 See [Find-Package](../tools/ps-ref-find-package.md). In Visual Studio 2013 and earlier, use [Get-Package](../tools/ps-ref-get-package.md) instead.
 
 
-## Installing a package
-
-```ps
-# Add the Elmah package to the default project as specified in the console's project selector
-Install-Package Elmah
-
-# Add the Elmah package to a project named UtilitiesLib that is not the default
-Install-Package Elmah -ProjectName UtilitiesLib
-```
-
-See [Install-Package](../tools/ps-ref-install-package.md).
-
-Installing a package performs the following actions:
-
-- Displays applicable license terms in the console window with implied agreement. If you do not agree to the terms, you should uninstall the package immediately.
-- Adds a reference to the project in whatever reference format is in use. References subsequently appear in Solution Explorer and the applicable reference format file. Note, however, that with PackageReference, you need to save the project to see the changes in the project file directly.
-- Caches the package in the project depending on the reference format in use:
-    - PackageReference:  package is cached within  or `project.assets.json`
-    - `packages.config`: creates a `packages` folder and copies package files into a subfolder within it.
-    - `project.json`: package is cached within `project.lock.json`
-- Updates `app.config` and/or `web.config` if the package uses [source and config file transformations](../create-packages/source-and-config-file-transformations.md).
-- Installs any dependencies if not already present in the project. This might update package versions in the process, as described in [Dependency Resolution](../consume-packages/dependency-resolution.md).
-- Displays the package's readme file, if available, in a Visual Studio window.
-
-> [!Tip]
-> One of the primary advantages of installing packages with the `Install-Package` command in the console is that adds a reference to the project just as if you used the Package Manager UI. In contrast, the `nuget install` CLI command only downloads the package and does not automatically add a reference.
-
-## Uninstalling a package
-
-```ps
-# Uninstalls the Elmah package from the default project
-Uninstall-Package Elmah
-
-# Uninstalls the Elmah package and all its unused dependencies
-Uninstall-Package Elmah -RemoveDependencies 
-
-# Uninstalls the Elmah package even if another package depends on it
-Uninstall-Package Elmah -Force
-```
-
-See [Uninstall-Package](../tools/ps-ref-uninstall-package.md). Use [Get-Package](../tools/ps-ref-get-package.md) to see all packages currently installed in the default project if you need to find an identifier.
-
-Uninstalling a package performs the following actions:
-
-- Removes references to the package from the project (and whatever reference format is in use). References no longer appear in Solution Explorer. (You might need to rebuild the project to see it removed from the **Bin** folder.)
-- Removes the package from the project cache (`project.assets.json`, the `packages` folder, or `project.lock.json`)
-- Reverses any changes made to `app.config` or `web.config` when the package was installed.
-- Removes previously-installed dependencies if no remaining packages use those dependencies.
-
-> [!Tip]
-> Like `Install-Package`, the `Uninstall-Package` command has the benefit of managing references in the project, unlike the `nuget uninstall` CLI command.
-
 ## Availability of the console
 
 In Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed when you select any .NET-related workloads; you can also install it individually by checking the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.
 
 Also, if you're missing the NuGet Package Manager in Visual Studio 2015 and earlier, check **Tools > Extensions and Updates...** and search for the NuGet Package Manager extension. If you're unable to use the extensions installer in Visual Studio, you can download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 
-The Package Manager Console it is not presently available with Visual Studio for Mac. The equivalent commands, however, are available through the [NuGet CLI](nuget-exe-CLI-reference.md). Visual Studio for Mac does have a UI managing NuGet packages. See [Including a NuGet package in your project](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+The Package Manager Console is not presently available with Visual Studio for Mac. The equivalent commands, however, are available through the [NuGet CLI](nuget-exe-CLI-reference.md). Visual Studio for Mac does have a UI for managing NuGet packages. See [Including a NuGet package in your project](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
 
 ## Extending the Package Manager Console
