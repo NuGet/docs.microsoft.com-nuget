@@ -23,15 +23,23 @@ ms.reviewer:
 
 # NuGet CLI reference
 
-The NuGet Command Line Interface (CLI), `nuget.exe`, provides the full extent of NuGet functionality to install, create, publish, and manage packages without making any changes to project files.  
+The NuGet Command Line Interface (CLI), `nuget.exe`, provides the full extent of NuGet functionality to install, create, publish, and manage packages without making any changes to project files.
 
-All `nuget.exe` are available on Windows; most commands work with [nuget.exe running on Mono](../guides/install-nuget.md#mac-osx-and-linux) except where indicated for `pack`, `restore`, and `update`. Some NuGet capabilities are also available on Mac and Linux through the [dotnet CLI](dotnet-Commands.md). 
+To use any command, open a command window or bash shell, then run `nuget` followed by the command and appropriate options, such as `nuget install elmah` (to install the elmah package).
 
-To install `nuget.exe`:
+## Installing nuget.exe
 
 [!INCLUDE[install-cli](../includes/install-cli.md)]
 
-Available commands and applicability to package creation, package consumption, and/or publishing a package to a host: 
+## Availability
+
+- All commands are available on Windows.
+- All commands work with [nuget.exe running on Mono](../guides/install-nuget.md#mac-osx-and-linux) except where indicated for `pack`, `restore`, and `update`.
+- The `pack`, `restore`, `delete`, `locals`, and `push` commands are also available on Mac and Linux through the [dotnet CLI](dotnet-Commands.md). 
+
+## Commands and applicability
+
+Available commands and applicability to package creation, package consumption, and/or publishing a package to a host:
 
 | Command | Applicable Roles | NuGet Version | Description | 
 | --- | --- | --- | --- |

@@ -28,7 +28,7 @@ ms.reviewer:
 Creates a NuGet package based on the specified `.nuspec` or project file. 
 
 > [!Important]
-> Under Mono, creating  a package from a project file is not supported. You also need to adjust non-local paths in the `.nuspec` file to Unix-style paths, as nuget.exe doesn't convert Windows pathnames itself.
+> Under Mono, creating a package from a project file is not supported. You also need to adjust non-local paths in the `.nuspec` file to Unix-style paths, as nuget.exe doesn't convert Windows pathnames itself.
 
 ## Usage
 
