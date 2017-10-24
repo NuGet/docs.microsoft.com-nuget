@@ -16,24 +16,24 @@ ms.assetid: b70326a0-5bfc-4b7c-881d-7a7d5ebeeed5
 description: A description of commong nuget restore errors and how to troubleshoot them.
 keywords: NuGet package restore, restoring packages, troubleshooting, troubleshoot
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 
 ---
 
-# Troubleshooting package restore errors
+# Troubleshooting package restore errors in Visual Studio
 
 > [!Note]
-> This page focuses on common package restore errors and steps to resolve them. For how-to restore packages, see [Package restore](../Consume-Packages/Package-Restore.md#enabling-and-disabling-package-restore).
+> This page focuses on common errors when restoring packages in Visual Studio and steps to resolve them. For how-to restore packages, see [Package restore](../Consume-Packages/Package-Restore.md#enabling-and-disabling-package-restore).
 
-By default, building a project in Visual Studio automatically restores NuGet packages referenced in the project. However, builds will fail with if package restore is disabled in the **Tools > Options > NuGet Package Manager > Package Restore** settings and the necessary packages are not available on your computer. In these cases you may see the following errors:
+By default, building a project in Visual Studio automatically restores NuGet packages referenced in the project. However, builds will fail if package restore is disabled in the **Tools > Options > NuGet Package Manager > Package Restore** settings and the necessary packages are not available on your computer. In these cases you may see the following errors:
 
-```bash
+```
 This project references NuGet package(s) that are missing on this computer.
 Use NuGet Package Restore to download them. The missing file is {name}.
 ```
 
-```bash
+```
 One or more NuGet packages need to be restored but couldn't be because consent has
 not been granted. To give consent, open the Visual Studio Options dialog, click on
 the NuGet Package Manager node and check 'Allow NuGet to download missing packages
