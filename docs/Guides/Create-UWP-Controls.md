@@ -20,8 +20,8 @@ keywords: NuGet UWP controls, Visual Studio XAML designer, Blend designer, custo
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

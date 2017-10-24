@@ -5,7 +5,7 @@ title: Configuring the behavior of NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/25/2017
+ms.date: 10/24/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -20,8 +20,8 @@ keywords: NuGet config files, NuGet configuration, NuGet behavior settings, NuGe
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -60,7 +60,7 @@ The behavior of every NuGet command, whether issued from the command line, the P
 
 A configuration file is a simple XML text file containing settings as described in the [NuGet Configuration Settings](../Schema/nuget-config-file.md) topic.
 
-The preferred method for changing the configuration is using the NuGet [config command](../tools/nuget-exe-cli-reference.md#config) to set a key and value.
+The preferred method for changing the configuration is using the NuGet [config command](../tools/cli-ref-config.md) to set a key and value.
 
 > [!Note]
 > Keys are always case sensitive.

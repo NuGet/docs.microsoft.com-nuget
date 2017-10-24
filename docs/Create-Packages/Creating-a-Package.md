@@ -17,8 +17,8 @@ ms.assetid: 456797cb-e3e4-4b88-9b01-8b5153cee802
 description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
 keywords: NuGet package creation, creating a package, nuspec manifest, NuGet package conventions, NuGet package version
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 
 ---
 # Creating NuGet packages
@@ -439,7 +439,7 @@ Once `nuget pack` succeeds, you have a `.nupkg` file that you can publish to a s
 
 ### Additional options
 
-You can use various command-line switches with `nuget pack` to exclude files, override the version number in the manifest, and change the output folder, among other features. For a complete list, refer to the [pack command reference](../tools/nuget-exe-cli-reference.md#pack).
+You can use various command-line switches with `nuget pack` to exclude files, override the version number in the manifest, and change the output folder, among other features. For a complete list, refer to the [pack command reference](../tools/cli-ref-pack.md).
 
 The following options are a few that are common with Visual Studio projects:
 

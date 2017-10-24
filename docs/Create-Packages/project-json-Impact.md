@@ -20,8 +20,8 @@ keywords: NuGet and project.json, project.json impact, package authoring conside
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

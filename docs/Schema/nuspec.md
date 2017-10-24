@@ -21,8 +21,8 @@ keywords: nuspec reference, NuGet package metadata, NuGet package manifest, nusp
 #ms.devlang:
 ms.reviewer:
 - anangaur
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -122,7 +122,7 @@ The `<package>` node may contain a `<files>` or `<contentFiles>` node as sibling
 
 ## Replacement tokens
 
-When creating a package, the [`nuget pack` command](../tools/nuget-exe-cli-reference.md#pack) replaces $-delimited tokens in the `.nuspec` file's `<metadata>` node with values that come from either a project file or the `pack` command's `-properties` switch.
+When creating a package, the [`nuget pack` command](../tools/cli-ref-pack.md) replaces $-delimited tokens in the `.nuspec` file's `<metadata>` node with values that come from either a project file or the `pack` command's `-properties` switch.
 
 On the command line, you specify token values with `nuget pack -properties <name>=<value>;<name>=<value>`. For example, you can use a token such as `$owners$` and `$desc$` in the `.nuspec` and provide the values at packing time as follows:
 

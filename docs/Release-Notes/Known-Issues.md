@@ -3,7 +3,7 @@
 
 title: NuGet Known Issues | Microsoft Docs
 author: karann-msft
-ms.author: karann
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ keywords: NuGet known issues, NuGet problems
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -47,7 +47,7 @@ $Feed = "Your url"
 
 **Workaround:**
 
-Store passwords in clear text using the [-StorePasswordInClearText](../tools/nuget-exe-cli-reference.md#sources) option.
+Store passwords in clear text using the [-StorePasswordInClearText](../tools/cli-ref-sources.md) option.
 
 ## Error installing packages with NuGet 3.4, 3.4.1
 
