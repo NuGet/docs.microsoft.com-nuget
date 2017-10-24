@@ -36,7 +36,7 @@ ms.reviewer:
 ## Known issues
 
 ### Issues with .NET Standard 2.0 with .NET Framework & NuGet 
-.NET Standard & its tooling was desgined such that projects targeting .NET Framework 4.6.1 can consume NuGet packages & projects targeting .NET Standard 2.0 or earlier. [This document](https://github.com/dotnet/standard/issues/481) summarizes the issues around that scenario, the plan for addressing them, and  workarounds you can deploy with today's state of the tooling.
+.NET Standard & its tooling was designed such that projects targeting .NET Framework 4.6.1 can consume NuGet packages & projects targeting .NET Standard 2.0 or earlier. [This document](https://github.com/dotnet/standard/issues/481) summarizes the issues around that scenario, the plan for addressing them, and workarounds you can deploy with today's state of the tooling.
 
 ### While using Package Manager Console, 'Enter' key may not work
 
@@ -150,7 +150,7 @@ There is no workaround at this time.
 
 * Nuget.exe (3.+) install package with Version number and ExcludeVersion flag doesn't update package to newer version - [#2405](https://github.com/NuGet/Home/issues/2405)
 
-* Project.json restore should warn when top level packages violate constraints - [#2358](https://github.com/NuGet/Home/issues/2358)
+* Project.json restore should warn when top-level packages violate constraints - [#2358](https://github.com/NuGet/Home/issues/2358)
 
 * -ConfigFile is not setting custom config on install command - [#1646](https://github.com/NuGet/Home/issues/1646)
 
@@ -176,7 +176,7 @@ There is no workaround at this time.
 
 * Lightweight Solution Load: Support - PMC - [#5053](https://github.com/NuGet/Home/issues/5053)
 
-* Add support for pre restore MSBuild target that Visual Studio triggers - [#4781](https://github.com/NuGet/Home/issues/4781)
+* Add support for pre-restore MSBuild target that Visual Studio triggers - [#4781](https://github.com/NuGet/Home/issues/4781)
 
 * Add a public target to NuGet.targets that can be referenced using BeforeTargets - [#4634](https://github.com/NuGet/Home/issues/4634)
 
@@ -194,6 +194,6 @@ There is no workaround at this time.
 
 [Issues List 1](https://github.com/NuGet/Home/issues?q=is:issue+is:closed+milestone:"4.4")
 
-[Issues List 2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.4+-+7%2F31+through+8%2F18%22)
+[Issues List 2](https://github.com/NuGet/Home/issues?q=is:issue+is:closed+milestone:%224.4+-+7%2F31+through+8%2F18%22)
 
-[Issues List 3](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.4+-+7%2F10+through+7%2F28%22)
+[Issues List 3](https://github.com/NuGet/Home/issues?q=is:issue+is:closed+milestone:%224.4+-+7%2F10+through+7%2F28%22)
