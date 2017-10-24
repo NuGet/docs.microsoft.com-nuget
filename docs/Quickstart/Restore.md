@@ -42,4 +42,4 @@ The enable package restore, open **Tools > Options > NuGet Package Manager** and
 
 ![enable NuGet package restore in Tool/Options](../Consume-Packages/media/restore-01-autorestoreoptions.png)
 
-For additional details, see [Package restore](../Consume-Packages/Package-Restore#enabling-and-disabling-package-restore).
+For additional details, see [Package restore](../Consume-Packages/Package-Restore.md#enabling-and-disabling-package-restore).
