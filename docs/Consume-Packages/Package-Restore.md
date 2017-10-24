@@ -152,9 +152,9 @@ In all cases, use the notation described in [Package versioning](../reference/pa
 
 ## Command-line restore
 
-For NuGet 2.6 and earlier, you use the [Install](../tools/nuget-exe-cli-reference.md#install) command and point to the `packages.config` file that lists all the dependencies.
+For NuGet 2.6 and earlier, you use the [Install](../tools/cli-ref-install.md) command and point to the `packages.config` file that lists all the dependencies.
 
-For NuGet 2.7 and above, use the [Restore](../tools/nuget-exe-cli-reference.md#restore) command to restore all packages in a solution (whether it uses `packages.config`, `project.json`, or package references in project files). For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
+For NuGet 2.7 and above, use the [Restore](../tools/cli-ref-restore.md) command to restore all packages in a solution (whether it uses `packages.config`, `project.json`, or package references in project files). For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
 
 ```
 c:\proj\app\> nuget restore

@@ -50,7 +50,7 @@ Next, you can either upload the package through the nuget.org web portal, push t
 
 ### Command line:
 > [!Important]
-> To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](https://docs.microsoft.com/en-us/nuget/api/nuget-protocols).
+> To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](../api/nuget-protocols.md).
 
 1. Click on your user name to navigate to your account settings.
 2. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:
