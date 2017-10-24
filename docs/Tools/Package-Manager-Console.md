@@ -23,7 +23,28 @@ ms.reviewer:
 
 # Package Manager Console
 
-The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later (see [Availability](#availability-of-the-console)). The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. 
+The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later.
+
+## Installing a NuGet package in 3 easy steps
+
+1. Open the project in Visual Studio, open the console using the **Tools > NuGet Package Manager > Package Manager Console** command. For a solution with more than one project, select the desired project from the `Default project` drop down.
+
+2. Find the package you want to install. If you already know this, skip to step 3.
+
+```ps
+# Find packages containing the keyword "elmah"
+Find-Package elmah
+```
+
+3. Run the install command
+```ps
+# Add the Elmah package to the default project as specified in the console's project selector
+Install-Package Elmah
+```
+
+That's it!
+
+The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. 
 
 All operations that are available in the console can also be done with the [NuGet CLI](../tools/nuget-exe-cli-reference.md). However, console commands operate within the context of Visual Studio and a saved project/solution and often accomplish more than their equivalent CLI commands. For example, installing a package through the console adds a reference to the project whereas the CLI command does not. For this reason, developers working in Visual Studio typically prefer using the console to the CLI.
 
