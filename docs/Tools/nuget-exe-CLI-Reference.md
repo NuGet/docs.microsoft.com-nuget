@@ -25,7 +25,7 @@ ms.reviewer:
 
 The NuGet Command Line Interface (CLI), `nuget.exe`, provides the full extent of NuGet functionality to install, create, publish, and manage packages without making any changes to project files.
 
-To use any command, open a command window or bash shell, then run `nuget` followed by the command and appropriate options, such as `nuget install elmah` (to install the elmah package).
+To use any command, open a command window or bash shell, then run `nuget` followed by the command and appropriate options, such as `nuget help pack` (to view help on the pack command).
 
 ## Installing nuget.exe
 
