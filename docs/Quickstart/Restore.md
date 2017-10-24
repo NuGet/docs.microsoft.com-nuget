@@ -41,4 +41,4 @@ The solution is to enable NuGet package restore in Tools/Options. Ensure, both t
 
 ![enable NuGet package restore in Tool/Options](media/QS_Restore-01-ToolsOptions.png)
 
-For additional details, see [Package restore](../Consume-Packages/Package-Restore.md).
+For additional details, see [Package restore](../Consume-Packages/Package-Restore#enabling-and-disabling-package-restore).
