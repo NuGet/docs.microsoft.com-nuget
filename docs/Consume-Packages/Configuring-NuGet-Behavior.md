@@ -49,7 +49,7 @@ Notes for earlier versions of NuGet:
 
 A `NuGet.Config` file is a simple XML text file containing key/value pairs as described in the [NuGet Configuration Settings](../Schema/nuget-config-file.md) topic.
 
-Settings are managed using the NuGet CLI[config command](../tools/cli-ref-config.md):
+Settings are managed using the NuGet CLI [config command](../tools/cli-ref-config.md):
 - By default, changes are made to the user-level config file.
 - To change settings in a different file, use the `-configFile` switch. In this case files can use any filename.
 - Keys are always case sensitive.
