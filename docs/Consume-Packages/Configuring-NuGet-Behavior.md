@@ -38,12 +38,12 @@ In this topic:
 | Scope | NuGet.Config file location | Decsription |
 | --- | --- | --- |
 | Project | Project folder or any folder up to the drive root | In a project folder, settings apply only to that project. In parent folders that contain multiple projects subfolders, settings apply to all projects in those subfolders. |
-| User | Windows: `%APPDATA%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.nuget/NuGet.Config` | Settings apply to all operations, but are overridden by any project-level settings. When using CLI commands, you can specify a different config file using the `-configFile` switch to ignore any settings in the default user-level file. |
-| Computer | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME` (typically `~/.local/share`) | Settings apply to all operations on the computer, but are overriden by any user- or project-level settings. |
+| User | Windows: *%APPDATA%\NuGet\NuGet.Config*<br/>Mac/Linux: *~/.nuget/NuGet.Config* | Settings apply to all operations, but are overridden by any project-level settings. When using CLI commands, you can specify a different config file using the `-configFile` switch to ignore any settings in the default user-level file. |
+| Computer | Windows: *%ProgramFiles(x86)%\NuGet\Config*<br/>Mac/Linux: *$XDG_DATA_HOME* (typically *~/.local/share*) | Settings apply to all operations on the computer, but are overriden by any user- or project-level settings. |
 
 Notes for earlier versions of NuGet:
 - NuGet 3.3 and earlier used a `.nuget` folder for solution-wide settings. This file not used in NuGet 3.4+.
-- For NuGet 2.6 to 3.x, the computer-level config file on Windows was located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}\]]]NuGet.Config`, where `{IDE}` can be `VisualStudio`, `{Version}` was the Visual Studio version such as `14.0`, and `{SKU}` is either `Community`, `Pro`, or `Enterprise`. To migrate settings to NuGet 4.0+, simply copy the config file to `%ProgramFiles(x86)%\NuGet\Config`. On Mac, this previous location was `/Library/Appilcation Support` and on Linux, `/etc/opt`.
+- For NuGet 2.6 to 3.x, the computer-level config file on Windows was located in *%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}\]]]NuGet.Config*, where *{IDE}* can be *VisualStudio*, *{Version}* was the Visual Studio version such as *14.0*, and *{SKU}* is either *Community*, *Pro*, or *Enterprise*. To migrate settings to NuGet 4.0+, simply copy the config file to *%ProgramFiles(x86)%\NuGet\Config*. On Mac, this previous location was */Library/Appilcation Support* and on Linux, */etc/opt*.
 
 ## Changing config settings
 
@@ -152,7 +152,7 @@ Let's say you have the following folder structure on two separate drives:
 
 You then have four `NuGet.Config` files in the following locations with the given content. (The computer-level file is not included in this example, but would behave similarly to the user-level file.)
 
-File A. User-level file, (`%APPDATA%\NuGet\NuGet.Config` on Windows, `~/.nuget/NuGet.Config` on Mac/Linux):
+File A. User-level file, (*%APPDATA%\NuGet\NuGet.Config* on Windows, *~/.nuget/NuGet.Config* on Mac/Linux):
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -163,7 +163,7 @@ File A. User-level file, (`%APPDATA%\NuGet\NuGet.Config` on Windows, `~/.nuget/N
 </configuration>
 ```
 
-File B. `disk_drive_2/NuGet.Config`:
+File B. *disk_drive_2/NuGet.Config*:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -177,7 +177,7 @@ File B. `disk_drive_2/NuGet.Config`:
 </configuration>
 ```
 
-File C. `disk_drive_2/Project1/NuGet.Config`:
+File C. *disk_drive_2/Project1/NuGet.Config*:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -193,7 +193,7 @@ File C. `disk_drive_2/Project1/NuGet.Config`:
 </configuration>
 ```
 
-File D. `disk_drive_2/Project2/NuGet.Config`:
+File D. *disk_drive_2/Project2/NuGet.Config*:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -211,9 +211,9 @@ NuGet then loads and applies settings as follows, depending on where it's invoke
 
 - **Invoked from disk_drive_2/ or disk_drive_`/tmp**: The user-level file (A) is loaded first, then NuGet goes to the root of disk_drive_2 and finds file (B). NuGet also looks for a configuration file in `/tmp` but does not find one. As a result, the default repository on nuget.org is used, package restore is enabled, and packages get expanded in `disk_drive_2/tmp`.
 
-- **Invoked from disk_drive_2/Project1 or disk_drive_2/Project1/Source**: The user-level file (A) is loaded first, then NuGet loads file (B) from the root of disk_drive_2, followed by file (C). Settings in (C) override those in (B) and (A), so the `repositoryPath` where packages get installed is `disk_drive_2/Project1/External/Packages` instead of `disk_drive_2/tmp`. Also, because (C) clears `<packageSources>`, nuget.org is no longer available as a source leaving only `https://MyPrivateRepo/ES/nuget`.
+- **Invoked from disk_drive_2/Project1 or disk_drive_2/Project1/Source**: The user-level file (A) is loaded first, then NuGet loads file (B) from the root of disk_drive_2, followed by file (C). Settings in (C) override those in (B) and (A), so the `repositoryPath` where packages get installed is *disk_drive_2/Project1/External/Packages* instead of *disk_drive_2/tmp*. Also, because (C) clears `<packageSources>`, nuget.org is no longer available as a source leaving only *https://MyPrivateRepo/ES/nuget*.
 
-- **Invoked from disk_drive_2/Project2 or disk_drive_2/Project2/Source**: The user-level file (A) is loaded first followed by file (B) and file (D). Because `packageSources` is not cleared, both `nuget.org` and `https://MyPrivateRepo/DQ/nuget` are available as sources. Packages get expanded in `disk_drive_2/tmp` as specified in (B).
+- **Invoked from disk_drive_2/Project2 or disk_drive_2/Project2/Source**: The user-level file (A) is loaded first followed by file (B) and file (D). Because `packageSources` is not cleared, both `nuget.org` and *https://MyPrivateRepo/DQ/nuget* are available as sources. Packages get expanded in *disk_drive_2/tmp* as specified in (B).
 
 ## NuGet defaults file
 
@@ -226,8 +226,8 @@ The `NuGetDefaults.Config` file exists to specify package sources from which pac
 
 ### NuGetDefaults.Config location
 
-Windows: `%ProgramFiles(x86)%\NuGet\Config` (NuGet 2.7 to NuGet 3.x: `%PROGRAMDATA%\NuGet\NuGetDefaults.Config`)
-Mac/Linux: `$XDG_DATA_HOME` (typically `~/.local/share`) 
+Windows: *%ProgramFiles(x86)%\NuGet\Config* (NuGet 2.7 to NuGet 3.x: *%PROGRAMDATA%\NuGet\NuGetDefaults.Config*)
+Mac/Linux: *$XDG_DATA_HOME* (typically *~/.local/share*) 
 
 ### NuGetDefaults.Config settings
 
