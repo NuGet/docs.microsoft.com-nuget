@@ -9,7 +9,8 @@
         "exclude": [
           "**/obj/**",
           "nuget/**",
-          "**/includes/**"
+          "**/includes/**",
+          "archive/**"
         ]
       }
     ],
