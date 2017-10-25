@@ -38,12 +38,12 @@ In this topic:
 | Scope | NuGet.Config file location | Decsription |
 | --- | --- | --- |
 | Project | Project folder or any folder up to the drive root | In a project folder, settings apply only to that project. In parent folders that contain multiple projects subfolders, settings apply to all projects in those subfolders. |
-| User | Windows: `%APPDATA%\NuGet\NuGet.Config`<br/>Mac/Linux: `$HOME/.nuget/` | Settings apply to all operations, but are overridden by any project-level settings. When using CLI commands, you can specify a different config file using the `-configFile` switch to ignore any settings in the default user-level file. |
+| User | Windows: `%APPDATA%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.nuget/NuGet.Config` | Settings apply to all operations, but are overridden by any project-level settings. When using CLI commands, you can specify a different config file using the `-configFile` switch to ignore any settings in the default user-level file. |
 | Computer | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME` (typically `~/.local/share`) | Settings apply to all operations on the computer, but are overriden by any user- or project-level settings. |
 
 Notes for earlier versions of NuGet:
 - NuGet 3.3 and earlier used a `.nuget` folder for solution-wide settings. This file not used in NuGet 3.4+.
-- For NuGet 2.6 to 3.x, the computer-level config file on Windows was located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}\]]]NuGet.Config`, where `{IDE}` can be `VisualStudio`, `{Version}` was the Visual Studio version such as `14.0`, and `{SKU}` is either `Community`, `Pro`, or `Enterprise`. To migrate settings to NuGet 4.0+, simply copy the config file to `%ProgramFiles(x86)%\NuGet\Config`.
+- For NuGet 2.6 to 3.x, the computer-level config file on Windows was located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}\]]]NuGet.Config`, where `{IDE}` can be `VisualStudio`, `{Version}` was the Visual Studio version such as `14.0`, and `{SKU}` is either `Community`, `Pro`, or `Enterprise`. To migrate settings to NuGet 4.0+, simply copy the config file to `%ProgramFiles(x86)%\NuGet\Config`. On Mac, this previous location was `/Library/Appilcation Support` and on Linux, `/etc/opt`.
 
 ## Changing config settings
 
@@ -131,7 +131,7 @@ Specifically, NuGet loads settings from the different config files in the follow
 
 As NuGet finds settings in these files, they are processed as follows:
 
-1. For single-item elements, NuGet uses only the last value found for any given key. This means that settings that are "closest" to the current folder or project override any others found earlier. For example, the `DefaultPushSource` settings in `NuGetDefaults.Config` is overridden if it exists in any other config file.
+1. For single-item elements, NuGet uses only the last value found for any given key. This means that settings that are "closest" to the current folder or project override any others found earlier. For example, the `defaultPushSource` settings in `NuGetDefaults.Config` is overridden if it exists in any other config file.
 
 1. For collection elements (such as `<packageSources>`), NuGet combines the values from all configuration files into a single collection.
 
@@ -152,7 +152,7 @@ Let's say you have the following folder structure on two separate drives:
 
 You then have four `NuGet.Config` files in the following locations with the given content. (The computer-level file is not included in this example, but would behave similarly to the user-level file.)
 
-File A. User-level file, (`%APPDATA%\NuGet\NuGet.Config` on Windows, `$HOME/.nuget/` on Mac/Linux):
+File A. User-level file, (`%APPDATA%\NuGet\NuGet.Config` on Windows, `~/.nuget/NuGet.Config` on Mac/Linux):
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -184,7 +184,7 @@ File C. `disk_drive_2/Project1/NuGet.Config`:
 <configuration>
     <config>
         <add key="repositoryPath" value="External/Packages" />
-        <add key="DefaultPushSource" value="https://MyPrivateRepo/ES/api/v2/package" />
+        <add key="defaultPushSource" value="https://MyPrivateRepo/ES/api/v2/package" />
     </config>
     <packageSources>
         <clear /> <!-- ensure only the sources defined below are used -->
@@ -235,17 +235,17 @@ Mac/Linux: `$XDG_DATA_HOME` (typically `~/.local/share`)
  
 - `disabledPackageSources`: this collection also has the same meaning as in `NuGet.Config` files, where each affected source is listed by its name and a true/false value indicating whether it's disabled. This allows the source name and URL to remain in `packageSources` without having it turned on by default. Individual developers can then re-enable the source by setting the source's value to false in other `NuGet.Config` files without having to find the correct URL again. This is also useful to supply developers with a full list of internal source URLs for an organization while enabling only an individual team's source by default.
 
-- `DefaultPushSource`: specifies the default target for `nuget push` operations, overriding the built-in default of nuget.org. Administrators can deploy this setting to avoid publishing internal packages to the public nuget.org by accident, as developers specifically need to use `nuget push -Source` to publish to nuget.org.
+- `defaultPushSource`: specifies the default target for `nuget push` operations, overriding the built-in default of nuget.org. Administrators can deploy this setting to avoid publishing internal packages to the public nuget.org by accident, as developers specifically need to use `nuget push -Source` to publish to nuget.org.
 
 ### Example NuGetDefaults.Config and application
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <!-- DefaultPushSource key works like the 'DefaultPushSource' key of NuGet.Config files. -->
+    <!-- defaultPushSource key works like the 'defaultPushSource' key of NuGet.Config files. -->
     <!-- This can be used by administrators to prevent accidental publishing of packages to nuget.org. -->
     <config>
-        <add key="DefaultPushSource" value="https://contoso.com/packages/" />
+        <add key="defaultPushSource" value="https://contoso.com/packages/" />
     </config>
 
     <!-- Default Package Sources; works like the 'packageSources' section of NuGet.Config files. -->
