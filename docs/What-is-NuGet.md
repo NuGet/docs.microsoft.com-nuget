@@ -24,13 +24,13 @@ ms.reviewer:
 
 # An introduction to NuGet
 
-An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful libraries of code. Such libraries are typically referred to as "packages" because they can contain compiled code (as DLLs) along with other useful content for whatever projects consume them.
+An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful libraries of code. Such libraries are typically referred to as "packages" because they can contain compiled code (as DLLs) along with other content that might be needed in the projects consume those libraries.
 
 For .NET, the mechanism for sharing code is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. 
 
-## The flow of packages between creators, hosts, and consumers
+Put simply, a NuGet package is a single ZIP file with the `.nupkg` extension that contains compiled code (DLLs), other files related to that code, and a descriptive manifest that includes information like the package's version number. Library developers create package files and publish them to a host. Package consumers receive those packages, add them to their projects, and then call that library's functionality in their project code. NuGet itself then handles all of the intermediate details.
 
-Put simply, a library developer create a package (which is essentially a ZIP file) and makes it available to others through a host. Consumers then download that package and expand its contents into their projects. Consumers can then utilize that library in their own code.
+## The flow of packages between creators, hosts, and consumers
 
 In its role as host, NuGet itself maintains the central repository of over 60,000 unique, publicly-available packages at [nuget.org](https://www.nuget.org). These packages are employed by millions of .NET developers every day. NuGet also enables you to host packages privately in the cloud, on a private network, or even on just your local file system. By doing so, those packages are available to only those developers within a particular organization or customer group. The options are explained on [Hosting your own NuGet feeds](Hosting-Packages/Overview.md).
 
