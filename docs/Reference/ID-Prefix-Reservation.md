@@ -4,28 +4,21 @@
 title: ID Prefix Reservation Reference | Microsoft Docs
 author: diverdan92
 ms.author: diverdan92
-manager: unniravindranathanavindranathan
+manager: unniravindranathan
 ms.date: 10/9/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-#ms.assetid: 
+ms.assetid: 76c0bb7f-9aaf-4c09-b3fd-f6802f9dd602
 
 # optional metadata
 
 description: Package ID Prefix Reservation feature description and author guide.
 keywords: NuGet package ID, prefix, reservation
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - ananguar
 - karann-msft
-- unniravindranathanavindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
+- unniravindranathan
 
 ---
 
