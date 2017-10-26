@@ -5,10 +5,9 @@ title: What is NuGet and what does it do? | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/27/2017
+ms.date: 10/26/2017
 ms.topic: hero-article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: c3faf278-4cbf-4733-96f6-9ee9f7203af9
 
@@ -16,23 +15,22 @@ ms.assetid: c3faf278-4cbf-4733-96f6-9ee9f7203af9
 
 description: A comprehensive introduction to what NuGet is and does
 keywords: NuGet package manager, consumption, package creation, package hosting
-#ROBOTS:
-#audience:
-#ms.devlang:
+
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 
 ---
 
 # An introduction to NuGet
 
-An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful libraries and packages. For .NET, that mechanism is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles.
+An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful libraries of code. Such libraries are typically referred to as "packages" because they can contain compiled code (as DLLs) along with other useful content for whatever projects consume them.
+
+For .NET, the mechanism for sharing code is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. 
 
 ## The flow of packages between creators, hosts, and consumers
+
+Put simply, a library developer create a package (which is essentially a ZIP file) and makes it available to others through a host. Consumers then download that package and expand its contents into their projects. Consumers can then utilize that library in their own code.
 
 In its role as host, NuGet itself maintains the central repository of over 60,000 unique, publicly-available packages at [nuget.org](https://www.nuget.org). These packages are employed by millions of .NET developers every day. NuGet also enables you to host packages privately in the cloud, on a private network, or even on just your local file system. By doing so, those packages are available to only those developers within a particular organization or customer group. The options are explained on [Hosting your own NuGet feeds](Hosting-Packages/Overview.md).
 
