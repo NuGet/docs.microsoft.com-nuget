@@ -53,11 +53,11 @@ In this topic:
 
 ## Finding and installing a package
 
-1. In **Solution Explorer**, right-click either **References**  or a project and select **Manage NuGet Packages...**. (In web site projects, right-click the **Bin** folder instead.)
+1. In **Solution Explorer**, right-click either **References**  or a project and select **Manage NuGet Packages...**.
 
     ![Manage NuGet Packages menu option](media/ManagePackagesUICommand.png)
 
-2. The **Browse** tab displays available packages by popularity. Search for a specific package using the search box on the top right. Select a package to display the package information on the right and to enable the **Install** button along with a version-selection drop-down.
+2. The **Browse** tab displays available packages by popularity. Search for a specific package using the search box on the top left. Select a package to display the package information on the right and to enable the **Install** button along with a version-selection drop-down.
 
     ![Manage NuGet Packages Dialog Browse tab](media/Search.png)
 
@@ -67,7 +67,7 @@ In this topic:
 
 ## Uninstalling a package
 
-1. In **Solution Explorer**, right-click either **References** or the desired project, and select **Manage NuGet Packages...**. (In web site projects, right-click the **Bin** folder instead.)
+1. In **Solution Explorer**, right-click either **References** or the desired project, and select **Manage NuGet Packages...**.
 2. Select the **Installed** tab.
 3. Select the package to uninstall and select **Uninstall**.
 
@@ -75,19 +75,18 @@ In this topic:
 
 ## Updating a package
 
-1. In **Solution Explorer**, right-click either **References** or the desired project, and select **Manage NuGet Packages...**. (In web site projects, right-click the **Bin** folder instead.)
+1. In **Solution Explorer**, right-click either **References** or the desired project, and select **Manage NuGet Packages...**.
 2. Select the **Updates** tab to see packages that have available updates.
 3. Select the package to update, select the desired version from the drop-down on the right, and select **Update**.
 
     ![Updating a package](media/UpdatePackages.png)
 
-4. <a name="implicit_reference"></a>For some packages, the **Update** button is disabled and the package a message appears saying that it's "Implicitly referenced by an SDK". (In some versions of Visual Studio the text may read only "AutoReferenced".) These conditions indicate that the package, such as Microsoft.NETCore.App, is part of a larger framework or SDK and should not be updated independently. (Such packages, of which Microsoft.NETStandard.Library is another example, are marked internally with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) To update the package, you must update the SDK to which it belongs.
+4. <a name="implicit_reference"></a>For some packages, the **Update** button is disabled and a message appears saying that it's "Implicitly referenced by an SDK". (In some versions of Visual Studio the text may read only "AutoReferenced".) These conditions indicate that the package, such as Microsoft.NETCore.App, is part of a larger framework or SDK and should not be updated independently. (Such packages, of which Microsoft.NETStandard.Library is another example, are marked internally with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) To update the package, you must update the SDK to which it belongs.
 
     ![Example package marked as Implicitly references or AutoReferenced](media/PackageManagerUIAutoReferenced.png)
 
 
 ## Managing packages for the solution
-*NuGet 1.4+*
 
 1. Select the **Tools > NuGet Package Manager > Manage NuGet Packages for Solution...** menu command, or right-click the solution and select **Manage NuGet Packages...**:
 
