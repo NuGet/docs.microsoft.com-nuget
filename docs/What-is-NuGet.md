@@ -5,10 +5,9 @@ title: What is NuGet and what does it do? | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/27/2017
+ms.date: 10/26/2017
 ms.topic: hero-article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: c3faf278-4cbf-4733-96f6-9ee9f7203af9
 
@@ -16,21 +15,20 @@ ms.assetid: c3faf278-4cbf-4733-96f6-9ee9f7203af9
 
 description: A comprehensive introduction to what NuGet is and does
 keywords: NuGet package manager, consumption, package creation, package hosting
-#ROBOTS:
-#audience:
-#ms.devlang:
+
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 
 ---
 
 # An introduction to NuGet
 
-An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful libraries and packages. For .NET, that mechanism is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles.
+An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful libraries of code. Such libraries are typically referred to as "packages" because they can contain compiled code (as DLLs) along with other content that might be needed in the projects consume those libraries.
+
+For .NET, the mechanism for sharing code is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. 
+
+Put simply, a NuGet package is a single ZIP file with the `.nupkg` extension that contains compiled code (DLLs), other files related to that code, and a descriptive manifest that includes information like the package's version number. Library developers create package files and publish them to a host. Package consumers receive those packages, add them to their projects, and then call that library's functionality in their project code. NuGet itself then handles all of the intermediate details.
 
 ## The flow of packages between creators, hosts, and consumers
 

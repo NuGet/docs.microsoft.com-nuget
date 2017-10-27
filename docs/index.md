@@ -44,12 +44,12 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="What is NuGet? Learn how NuGet allows .NET developers to create, share, and consume libraries and packages." />        
+                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="What is NuGet? Learn how NuGet, the package manager for .NET, allows developers to create, share, and consume libraries." />        
                                             </div>
                                         </div>
                                         <div class="cardText">
                                             <h3>What is NuGet?</h3>
-                                            <p>Learn how NuGet allows .NET developers to create, share, and consume libraries and packages.</p>
+                                            <p>Learn how NuGet, the package manager for .NET, allows developers to create, share, and consume libraries.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -63,12 +63,12 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-quickstarts.svg" alt="Quickstarts: Experience NuGet with focused walkthroughs" />
+                                                <img src="media/hub/nuget-get-started-quickstarts.svg" alt="Quickstarts: Experience NuGet with focused walkthroughs for creating a simple package and using a package." />
                                             </div>
                                         </div>
                                         <div class="cardText">
                                             <h3>Quickstarts</h3>
-                                            <p>Experience NuGet with focused walkthroughs.</p>
+                                            <p>Experience NuGet with focused walkthroughs for creating a simple package and using a package.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -82,12 +82,12 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-guides.svg" alt="Guides: learn more about NuGet's tools and capabilities" />
+                                                <img src="media/hub/nuget-get-started-guides.svg" alt="Guides: experience NuGet's tools and capabilities with installation and package creation walkthroughs." />
                                             </div>
                                         </div>
                                         <div class="cardText">
                                             <h3>Guides</h3>
-                                            <p>Learn more about NuGet's tools and capabilities.</p>
+                                            <p>Experience NuGet's tools and capabilities with installation and package creation walkthroughs.</p>
                                         </div>
                                     </div>
                                 </div>

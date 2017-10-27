@@ -92,16 +92,6 @@ If the command fails, check to see if the file exists in that location.
 
 For more information about this error, see this [work item](https://nuget.codeplex.com/workitem/3609 "Work item 3609").
 
-## Package Restore Consent Errors with NuGet 2.7
-
-If you are using NuGet 2.7+, but you are working in a solution that had enabled package restore through the MSBuild-integrated approach, it's possible that package restore will still fail due to a lack of package restore consent. This happens when the version of `nuget.exe` in your solution's `.nuget` folder is version 2.6 or earlier, where package restore consent was still OFF by default.
-
-If you have upgraded to NuGet 2.7+ but your solution fails to build stating that you haven't given consent, you have a few options for proceeding:
-
-1. **Force save your NuGet settings with consent given.** To do this, open Visual Studio's options and under Package Manager, choose General. Uncheck and then re-check the boxes for consent and click OK. This forces your `%AppData%\NuGet\NuGet.Config` file to be saved with consent explicitly given, allowing NuGet 2.6 and earlier to see that you've given consent.
-1. **Update the version of `nuget.exe` in your `.nuget` folder.** To do this, run `nuget.exe update -self` from your `.nuget` folder, which will download the latest version of `nuget.exe` and replace the version in the `.nuget` folder. The latest version of `nuget.exe` will infer consent to be ON even when not explicitly saved in the `NuGet.Config` file.
-1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](../consume-packages/package-restore.md#migrating-to-automatic-restore).
-
 ## Build failure after package update in VS 2012
 The problem: You are using VS 2012 RTM. When updating NuGet packages, you get this message:
 "One or more packages could not be completed uninstalled." and you are prompted to restart
