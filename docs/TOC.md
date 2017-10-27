@@ -2,7 +2,6 @@
 # Quickstart
 ## [Create and Publish a Package](Quickstart/Create-and-Publish-a-Package.md)
 ## [Use a Package](Quickstart/Use-a-Package.md)
-## [Restore Packages](Quickstart/Restore.md)
 # Guides
 ## [Install NuGet client tools](Guides/Install-NuGet.md)
 ## [Create UWP Packages](Guides/Create-UWP-Packages.md)
@@ -25,9 +24,10 @@
 # Consume Packages
 ## [Overview and Workflow](Consume-Packages/Overview-and-Workflow.md)
 ## [Finding and Choosing Packages](Consume-Packages/Finding-and-Choosing-Packages.md)
+## [Package Restore](Consume-Packages/Package-Restore.md)
+### [Troubleshooting](Consume-Packages/Package-restore-troubleshooting.md)
 ## [Reinstalling and Updating Packages](Consume-Packages/Reinstalling-and-Updating-Packages.md)
 ## [Packages and Source Control](Consume-Packages/Packages-and-Source-Control.md)
-## [Package Restore](Consume-Packages/Package-Restore.md)
 ## [Managing the NuGet Cache](Consume-Packages/Managing-the-NuGet-Cache.md)
 ## [Configuring NuGet Behavior](Consume-Packages/Configuring-NuGet-Behavior.md)
 ## [Dependency Resolution](Consume-Packages/Dependency-Resolution.md)

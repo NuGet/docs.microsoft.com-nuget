@@ -47,7 +47,7 @@ In this topic:
 
 ## Finding and installing a package
 
-1. In **Solution Explorer**, right-click either **References**  or a project and select **Manage NuGet Packages...**. (In web site projects, right-click the **Bin** folder.)
+1. In **Solution Explorer**, right-click either **References**  or a project and select **Manage NuGet Packages...**.
 
     ![Manage NuGet Packages menu option](media/ManagePackagesUICommand.png)
 
@@ -65,7 +65,7 @@ In this topic:
 
 ## Uninstalling a package
 
-1. In **Solution Explorer**, right-click either **References** or the desired project, and select **Manage NuGet Packages...**. (In web site projects, right-click the **Bin** folder.)
+1. In **Solution Explorer**, right-click either **References** or the desired project, and select **Manage NuGet Packages...**.
 2. Select the **Installed** tab.
 3. Select the package to uninstall (using search to filter the list if necessary) and select **Uninstall**.
 
