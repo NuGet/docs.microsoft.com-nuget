@@ -21,7 +21,7 @@ ms.reviewer:
 
 ---
 
-# Installing and reinstalling packages with package restore
+# Package Restore
 
 To promote a cleaner development environment and to reduce repository size, NuGet **Package Restore** installs all referenced packages before a project is built. This widely-used feature ensures that all dependencies are available in a project without requiring those packages to be stored in source control (see [Packages and Source Control](../consume-packages/packages-and-source-control.md) on how to configure your repository to exclude package binaries).
 
