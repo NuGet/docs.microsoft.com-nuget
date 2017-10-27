@@ -8,7 +8,6 @@ manager: ghogen
 ms.date: 8/23/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 4343a48e-f6df-4a44-9d66-4616c3caacf5
 
@@ -16,16 +15,10 @@ ms.assetid: 4343a48e-f6df-4a44-9d66-4616c3caacf5
 
 description: NuGet target framework references identify and isolate framework-dependent components of a package.
 keywords: NuGet package targeting, .NET framework targets, .NET framework versions
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 
 ---
 
@@ -128,7 +121,7 @@ Framework | Can use
 uap (Universal Windows Platform) | win81
 | | wpa81
 | | netcore50
-win (Windows Store) | winrt
+win (Microsoft Store) | winrt
 | | winrt45
 
 ## NET Platform Standard
