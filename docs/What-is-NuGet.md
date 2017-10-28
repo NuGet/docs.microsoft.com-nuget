@@ -24,7 +24,7 @@ ms.reviewer:
 
 # An introduction to NuGet
 
-An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful libraries of code. Such libraries are typically referred to as "packages" because they can contain compiled code (as DLLs) along with other content that might be needed in the projects consume those libraries.
+An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful libraries of code. Such libraries are typically referred to as "packages" because they can contain compiled code (as DLLs) along with other content that might be needed in the projects that consume those libraries.
 
 For .NET, the mechanism for sharing code is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. 
 
@@ -38,7 +38,7 @@ Whatever its nature, a host serves as a point of connection between package *cre
 
 ![Relationship between package creators, package hosts, and package consumers](media/nuget-roles.png)
 
-A "compatible" package in this case means that it contains assemblies built for at least one target .NET framework that's compatible with the consuming project's target framework. To make a package widely compatible, it's creator compiles separate assemblies for various target frameworks and includes all of them in the same package. When a consumer installs that package, NuGet extracts only those assemblies that are needed by the project. This minimizes the package's footprint in the final application and/or assemblies produced by that project.
+A "compatible" package in this case means that it contains assemblies built for at least one target .NET framework that's compatible with the consuming project's target framework. To make a package widely compatible, its creator compiles separate assemblies for various target frameworks and includes all of them in the same package. When a consumer installs that package, NuGet extracts only those assemblies that are needed by the project. This minimizes the package's footprint in the final application and/or assemblies produced by that project.
 
 ## NuGet tools
 
