@@ -5,7 +5,7 @@ title: NuGet Frequently-Asked Questions | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/25/2017
+ms.date: 10/30/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
