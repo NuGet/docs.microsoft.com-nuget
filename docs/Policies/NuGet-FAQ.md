@@ -166,6 +166,10 @@ This is not an issue when using PackageReference, as each project file contains 
 
 ## Managing packages on nuget.org
 
+**Why do you recommend editing the nuspec and uploading a new package for making changes to package metadata?**
+
+NuGet will be implementing package signing. A design principle of package signing is that signed package content must be immutable, which includes the nuspec. Editing the package metadata results in changes to the nuspec, invalidating existing signatures. We recommend modifying existing workflows to not require editing the package metadata after the package has been created.
+
 **Is it possible to reserve names for packages that will be published in future?**
 
 Yes. You can reserve IDs for packages on [nuget.org](https://www.nuget.org/) by requesting a package ID prefix for your account. In order to request a package ID prefix, send mail to account (at) nuget.org with the package owner display name, and the requested package ID prefix.  
