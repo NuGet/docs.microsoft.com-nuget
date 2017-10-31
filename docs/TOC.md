@@ -92,6 +92,7 @@
 ## [Package Metadata](API/registration-base-url-resource.md)
 ## [Package Content](API/package-base-address-resource.md)
 ## [Report Abuse URL](API/report-abuse-resource.md)
+## [Catalog](API/catalog-resource.md)
 ## [nuget.org Protocols](API/nuget-protocols.md)
 # Visual Studio Extensibility
 ## [NuGet API in Visual Studio](Visual-Studio-Extensibility/NuGet-API-in-Visual-Studio.md)

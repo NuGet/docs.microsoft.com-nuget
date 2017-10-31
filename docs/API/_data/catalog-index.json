@@ -1,0 +1,25 @@
+{
+  "commitId": "3d698852-eefb-48ed-8f55-9ee357540d20",
+  "commitTimeStamp": "2017-10-31T23:33:17.0954363Z",
+  "count": 3,
+  "items": [
+    {
+      "@id": "https://api.nuget.org/v3/catalog0/page0.json",
+      "commitId": "3a4df280-3d86-458e-a713-4c91ca261fef",
+      "commitTimeStamp": "2015-02-01T06:30:11.7477681Z",
+      "count": 540
+    },
+    {
+      "@id": "https://api.nuget.org/v3/catalog0/page1.json",
+      "commitId": "8bcd3cbf-74f0-47a2-a7ae-b7ecc50005d3",
+      "commitTimeStamp": "2015-02-01T06:39:53.9553899Z",
+      "count": 540
+    },
+    {
+      "@id": "https://api.nuget.org/v3/catalog0/page2.json",
+      "commitId": "3d698852-eefb-48ed-8f55-9ee357540d20",
+      "commitTimeStamp": "2017-10-31T23:33:17.0954363Z",
+      "count": 47
+    }
+  ]
+}

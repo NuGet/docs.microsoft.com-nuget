@@ -80,6 +80,7 @@ Resource name                                                          | Require
 [`PackageBaseAddress`](package-base-address-resource.md)               | yes      | Get package content (.nupkg).
 [`SearchAutocompleteService`](search-autocomplete-service-resource.md) | no       | Discover package IDs and versions by substring.
 [`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | no       | Construct a URL to access a "report abuse" web page.
+[`Catalog`](catalog-resource.md)                                       | no       | Full record of all package events.
 
 In general, all non-binary data returned by a API resource are serialized using JSON. The response schema
 returned by each resource in the service index is defined individually for that resource. For more information about

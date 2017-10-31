@@ -1,0 +1,48 @@
+{
+  "commitId": "616117f5-d9dd-4664-82b9-74d87169bbe9",
+  "commitTimeStamp": "2017-10-31T23:30:32.4197849Z",
+  "count": 5,
+  "parent": "https://api.nuget.org/v3/catalog0/index.json",
+  "items": [
+    {
+      "@id": "https://api.nuget.org/v3/catalog0/data/2017.10.31.23.30.32/util.biz.payments.0.0.4-preview.json",
+      "@type": "nuget:PackageDetails",
+      "commitId": "616117f5-d9dd-4664-82b9-74d87169bbe9",
+      "commitTimeStamp": "2017-10-31T23:30:32.4197849Z",
+      "nuget:id": "Util.Biz.Payments",
+      "nuget:version": "0.0.4-preview"
+    },
+    {
+      "@id": "https://api.nuget.org/v3/catalog0/data/2017.10.31.23.28.02/util.biz.0.0.4-preview.json",
+      "@type": "nuget:PackageDetails",
+      "commitId": "820340b2-97e3-4f93-b82e-bc85550a6560",
+      "commitTimeStamp": "2017-10-31T23:28:02.788239Z",
+      "nuget:id": "Util.Biz",
+      "nuget:version": "0.0.4-preview"
+    },
+    {
+      "@id": "https://api.nuget.org/v3/catalog0/data/2017.10.31.22.31.22/sourcecode.clay.data.1.0.0-preview1-00258.json",
+      "@type": "nuget:PackageDetails",
+      "commitId": "cae34527-ffc7-4e96-884f-7cf95a32dbdd",
+      "commitTimeStamp": "2017-10-31T22:31:22.5169519Z",
+      "nuget:id": "SourceCode.Clay.Data",
+      "nuget:version": "1.0.0-preview1-00258"
+    },
+    {
+      "@id": "https://api.nuget.org/v3/catalog0/data/2017.10.31.22.31.22/sourcecode.clay.1.0.0-preview1-00258.json",
+      "@type": "nuget:PackageDetails",
+      "commitId": "cae34527-ffc7-4e96-884f-7cf95a32dbdd",
+      "commitTimeStamp": "2017-10-31T22:31:22.5169519Z",
+      "nuget:id": "SourceCode.Clay",
+      "nuget:version": "1.0.0-preview1-00258"
+    },
+    {
+      "@id": "https://api.nuget.org/v3/catalog0/data/2017.10.31.22.31.22/sourcecode.clay.json.1.0.0-preview1-00258.json",
+      "@type": "nuget:PackageDetails",
+      "commitId": "cae34527-ffc7-4e96-884f-7cf95a32dbdd",
+      "commitTimeStamp": "2017-10-31T22:31:22.5169519Z",
+      "nuget:id": "SourceCode.Clay.Json",
+      "nuget:version": "1.0.0-preview1-00258"
+    }
+  ]
+}
