@@ -37,6 +37,7 @@ In this topic:
 - [Creating and publishing packages](#creating-and-publishing-packages)
 - [Working with packages](#working-with-packages)
 - [Managing packages on nuget.org](#managing-packages-on-nugetorg)
+- [NuGet.org not accessible](#nugetorg-not-accessible)
 
 ## Getting started
 
@@ -201,6 +202,8 @@ NuGet uses HTTP to download packages, so larger packages have a higher likelihoo
 It is possible to share dependencies between multiple packages, making the total download size for consumers of your NuGet packages smaller.
 
 Dependencies are mostly static and never change. When fixing a bug in code, the dependencies may not need to be updated. If you bundle dependencies, you end up reshipping larger packages every time. By splitting NuGet packages into related dependencies, upgrades are much more fine-grained for consumers of your package.
+
+## NuGet.org not accessible
 
 **Why can't I download packages from or upload packages to nuget.org?**
 
