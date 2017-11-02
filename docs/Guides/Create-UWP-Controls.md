@@ -6,7 +6,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 3/21/2017
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: nuget
 #ms.service:
 ms.technology: null
@@ -20,8 +20,8 @@ keywords: NuGet UWP controls, Visual Studio XAML designer, Blend designer, custo
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -134,9 +134,8 @@ Here is an example of what the targets file should look like:
     <PropertyGroup>
       <RequiredTPMinV>10.0.14393</RequiredTPMinV>
       <ActualTPMinV>$(TargetPlatformMinVersion)</ActualTPMinV>
-      <PackageId>ManagedPackage</PackageId>
     </PropertyGroup>
-    <Error Condition=" '$([System.Version]::Parse($(ActualTPMinV)).CompareTo($([System.Version]::Parse($(RequiredTPMinV)))))' == '-1' " 	   Text = "The $(PackageId) nuget package cannot be used in the $(MSBuildProjectName) project since the project's TargetPlatformMinVersion - $(ActualTPMinV) does not match the Minimum Version - $(RequiredTPMinV) supported by the package" />
+    <Error Condition=" '$([System.Version]::Parse($(ActualTPMinV)).CompareTo($([System.Version]::Parse($(RequiredTPMinV)))))' == '-1' " 	   Text = "The INSERT_PACKAGE_ID_HERE nuget package cannot be used in the $(MSBuildProjectName) project since the project's TargetPlatformMinVersion - $(ActualTPMinV) does not match the Minimum Version - $(RequiredTPMinV) supported by the package" />
   </Target>
 </Project>
 ```

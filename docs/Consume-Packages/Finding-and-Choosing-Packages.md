@@ -5,7 +5,7 @@ title: Finding and choosing NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/20/2017
+ms.date: 8/25/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -20,8 +20,8 @@ keywords: NuGet package consumption, NuGet package discovery, best NuGet package
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -44,7 +44,7 @@ When you visit nuget.org or open the Package Manager UI in Visual Studio, you'll
 
 ![Default view of nuget.org/packages showing the most popular packages](media/Finding-01-Popularity.png)
 
-For specific needs, searching by tags (within Visual Studio's Package Manager or on a portal like nuget.org) is the most common means of discovering a suitable package. For example, searching on "json" will list all NuGet packages that are tagged with that keyword and thus have some relationship to the JSON data format.
+For specific needs, searching by tags (within Visual Studio's Package Manager or on a portal like nuget.org) is the most common means of discovering a suitable package. For example, searching on "json" lists all NuGet packages that are tagged with that keyword and thus have some relationship to the JSON data format.
 
 ![Search results for 'json' on nuget.org](media/Finding-02-SearchResults.png)
 
@@ -54,13 +54,11 @@ At this time, search results are sorted only by relevance, so you generally want
 
 ### Does the package support my project's target framework?
 
-NuGet will install a package into a project only if that package's supported frameworks include the project's target framework. (See [Supporting multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md) for how this is done when creating a package.) If the package is not compatible, NuGet will issue an error.
+NuGet installs a package into a project only if that package's supported frameworks include the project's target framework. (See [Supporting multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md) for how this is done when creating a package.) If the package is not compatible, NuGet issues an error.
 
-Some packages list their supported frameworks directly in the nuget.org gallery, but because such data is not required, many packages do not include that list. Therefore the primary way to check whether a target framework is supported is to attempt to install the package into a project. Using `Install-Package` in the NuGet Package Manager Console is the best method for this, as it will show you the most information if the package is incompatible, including its list of supported frameworks.
+Some packages list their supported frameworks directly in the nuget.org gallery, but because such data is not required, many packages do not include that list. Therefore the primary way to check whether a target framework is supported is to attempt to install the package into a project. Using `Install-Package` in the NuGet Package Manager Console is the best method for this, as it shows you the most information if the package is incompatible, including its list of supported frameworks.
 
 At present there is no means to search nuget.org for packages that support a specific target framework, but the feature is under consideration; see [NuGet Issue 2936](https://github.com/NuGet/NuGetGallery/issues/2936).
-
-<a name="native-cpp-packages"></a>
 
 ## Pre-release packages
 
@@ -70,12 +68,14 @@ By default, NuGet does not include pre-release versions when working with packag
 
     ![The Include prerelease checkbox in Visual Studio](media/Prerelease_02-CheckPrerelease.png)
 
-    Setting or clearing this box will refresh the Package Manager UI and the list of available versions you can install.
+    Setting or clearing this box refreshes the Package Manager UI and the list of available versions you can install.
 
 - **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../tools/powershell-reference.md).
 
 - **NuGet CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../tools/nuget-exe-cli-reference.md)
 
+
+<a name="native-cpp-packages"></a>
 
 ### Native C++ packages
 
@@ -92,44 +92,39 @@ The best way to evaluate the usefulness of a package is, of course, to download 
 
 At the same time, using a NuGet package means taking a dependency on it, so you'll want to make sure it's robust and reliable. Because installing and directly testing a package is very time-consuming, you can also learn a lot about a package's quality by using the information on a package's listing page:
 
-- *Downloads statistics*: a the package page you'll see total downloads, downloads of the most recent version, and average downloads per day. Larger numbers obviously indicates that many other developers have taken a dependency on the package, which means that it has proven itself.
+- *Downloads statistics*: a the package page you'll see total downloads, downloads of the most recent version, and average downloads per day. Larger numbers indicate that many other developers have taken a dependency on the package, which means that it has proven itself.
 
     ![Download statistics on a package's listing page](media/Finding-03-Downloads.png)
 
-- *Version history*: on the package page, look at the date of the most recent update, and scroll down to see the version history. A well-maintained package will have recent updates, and will have a rich version history. Neglected packages will have few updates and often haven't been updated in some time.
+- *Version history*: on the package page, look at the date of the most recent update, and scroll down to see the version history. A well-maintained package has recent updates and a rich version history. Neglected packages have few updates and often haven't been updated in some time.
 
     ![Version history on a package's listing page](media/Finding-04-VersionHistory.png)
 
-- *Recent installs*: on the package page, click **Package Statistics** on the left side. This will show you the package installs for the last six weeks. A package with more current use is obviously a better choice than one without.
-- *Restore vs. new install*: on the same package statistics page, clear the **Version** checkbox and check **Operation** to see a chart of package restores vs. new installs (below).
-
-    ![Chart of operations for a NuGet package on nuget.org package statistics](media/Finding-05-OperationChart.png)
-
-- *Dependency installs*: the same **Operation** chart above has an "Install-Dependency" bar that indicates how many other NuGet packages have taken a dependency on this one. This is an even stronger indication that other developers find the package reliable.
-- *Support*: on the package page, click **Project Site** if available to see what support options are available. A project with a dedicated site is generally better supported.
-- *Developer history*: on the package page, click the listed **Owners** to see what other packages they've published. Those with multiple packages are more likely to continue supporting their work in the future.
-- *Open source contributions*: many packages are maintained in an open-source repository, making it possible for developers depending on it to directly contribute bug fixes and feature improvements. The contribution history of any given package is also a good indicator of how many developers are actively involved.
-- *Interview the owners*: all this is not to say that new developers are not equally committed to producing great packages for you to use, and it's certainly good to give them a chance to bring something new to the NuGet ecosystem. With this in mind, you can always talk directly to the package developers through the **Contact Owners** option on the listing page. Chances are, they'll be happy to work directly with you to serve your needs!
+- *Recent installs*: on the package page, select **View full stats** on the right side. This shows you the package installs over the last six weeks. A package that other developers are actively using is typically a better choice than one that's not.
+- *Support*: on the package page, select **Project Site** (if available) to see what support options are available. A project with a dedicated site is generally better supported.
+- *Developer history*: on the package page, select the listed **Owners** to see what other packages they've published. Those with multiple packages are more likely to continue supporting their work in the future.
+- *Open source contributions*: many packages are maintained in open-source repositories, making it possible for developers depending on them to directly contribute bug fixes and feature improvements. The contribution history of any given package is also a good indicator of how many developers are actively involved.
+- *Interview the owners*: new developers can certainly be equally committed to producing great packages for you to use, and it's good to give them a chance to bring something new to the NuGet ecosystem. With this in mind, reach out directly to the package developers through the **Contact Owners** option on the listing page. Chances are, they'll be happy to work with you to serve your needs!
 
 > [!Note]
-> Always be mindful of a package's license terms, which you can see by clicking **License** on a package's listing page on nuget.org.
+> Always be mindful of a package's license terms, which you can see by selecting **License** on a package's listing page on nuget.org.
 
 > [!Note]
-> Every package that is uploaded to nuget.org is scanned for viruses. All packages listed on nuget.org are also scanned periodically.
+> Every package that's uploaded to nuget.org is scanned for viruses, and nuget.org periodically re-scans all packages.
 
 ## Search Syntax
 
 NuGet package search works the same on nuget.org, from the NuGet CLI, and within the NuGet Package Manager extension in Visual Studio. In general, search is applied to keywords as well as package descriptions.
 
-- **Keywords**: Search will look for relevant packages that contain with all of the provided keywords. Example:
+- **Keywords**: Search looks for relevant packages that contain all the provided keywords. Example:
 
         modern UI javascript
 
-- **Phrases**: Entering terms within quotation marks will look for exact matches to those terms (case-insensitive). Example:
+- **Phrases**: Entering terms within quotation marks looks for exact case-insensitive matches to those terms. Example:
 
         "modern UI" package
 
-- **Filtering**: You can apply a search term to a specific property by using the syntax `<property>:<term>` where <property> (case-insensitive) can be `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary`, and `owner`. Terms can be contained in quotes if needed, and you can search for multiple properties at the same time. Also, searches on the `id` property are substring matches, whereas `packageid` uses an exact match. Examples:
+- **Filtering**: You can apply a search term to a specific property by using the syntax `<property>:<term>` where `<property>` (case-insensitive) can be `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary`, and `owner`. Terms can be contained in quotes if needed, and you can search for multiple properties at the same time. Also, searches on the `id` property are substring matches, whereas `packageid` uses an exact match. Examples:
 
         id:NuGet.Core                //Match any part of the id property
         Id:"Nuget.Core"

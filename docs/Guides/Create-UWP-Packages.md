@@ -6,7 +6,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 7/17/2017
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: nuget
 #ms.service:
 ms.technology: null
@@ -20,8 +20,8 @@ keywords: create a package, packages for UWP, Windows Runtime Components
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

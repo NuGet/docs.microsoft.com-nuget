@@ -20,8 +20,8 @@ keywords: NuGet in Visual Studio, Visual Studio project templates, Visual Studio
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

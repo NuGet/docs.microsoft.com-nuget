@@ -6,7 +6,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 4/3/2017
-ms.topic: article
+ms.topic: reference
 ms.prod: nuget
 #ms.service:
 ms.technology: null
@@ -20,8 +20,8 @@ keywords: NuGet packages.config file, NuGet package references, NuGet dependenci
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

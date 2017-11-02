@@ -6,7 +6,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 7/25/2017
-ms.topic: article
+ms.topic: reference
 ms.prod: nuget
 #ms.service:
 ms.technology: null
@@ -20,8 +20,8 @@ keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powers
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

@@ -6,7 +6,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 6/1/2017
-ms.topic: article
+ms.topic: reference
 ms.prod: nuget
 #ms.service:
 ms.technology: null
@@ -20,8 +20,8 @@ keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powers
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -63,15 +63,16 @@ None of these parameters accept pipeline input or wildcard characters.
 ## Examples
 
 ```ps
-# List available packages with the keyword Elmah
-Find-Package Elmah
+# Find packages containing keywords
+Find-Package elmah
+Find-Package logging
 
 # List packages whose ID begins with Elmah
 Find-Package Elmah -StartWith
 
-# List all versions of the jquery package
-Find-Package jquery -AllVersions -ExactMatch
+# By default, Get-Package returns a list of 20 packages; use -First to show more
+Find-Package logging -First 100
 
-# List packages with the keyword EntityFramework and version 6.1.1
-Find-Package EntityFramework -version 6.1.1
+# List all versions of the package with the ID of "jquery"
+Find-Package jquery -AllVersions -ExactMatch
 ```

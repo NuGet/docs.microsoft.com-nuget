@@ -20,8 +20,8 @@ keywords: NuGet source control, NuGet version control, NuGet and git, NuGet and 
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -36,14 +36,14 @@ The reasons for relying on package restore include the following:
 
 1. Distributed version control systems, such as Git, include full copies of every version of every file within the repository. Binary files that are frequently updated lead to significant bloat and lengthens the time it takes to clone the repository.
 1. When packages are included in the repository, developers are liable to add references directly to package contents on disk rather than referencing packages through NuGet, which can lead to hard-coded path names in the project.
-1. It becomes harder to "clean" your solution of any unused package folders, as you need to ensure you don't delete any package folders still in use.
+1. It becomes harder to clean your solution of any unused package folders, as you need to ensure you don't delete any package folders still in use.
 1. By omitting packages, you maintain clean boundaries of ownership between your code and the packages from others that you depend upon. Many NuGet packages are maintained in their own source control repositories already.
 
 Although package restore is the default behavior with NuGet, some manual work is necessary to omit packages&mdash;namely, the `packages` folder in your project&mdash;from source control, as described in the following sections.
 
 ## Omitting packages with Git
 
-Use the [.gitignore file](https://git-scm.com/docs/gitignore) to have Git ignore the contents of the `packages` folder. For reference, see the [sample `.gitignore` for Visual Studio projects](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
+Use the [.gitignore file](https://git-scm.com/docs/gitignore) to avoid including the `packages` folder in source control. For reference, see the [sample `.gitignore` for Visual Studio projects](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
 
 The important parts of the `.gitignore` file are:
 
@@ -61,7 +61,7 @@ The important parts of the `.gitignore` file are:
 #!**/packages/repositories.config
 
 # Ignore other intermediate files that NuGet might create. project.lock.json is used in conjunction
-# with project.json; project.assets.json is used in conjunction with package references in project files.
+# with project.json; project.assets.json is used in conjunction with the PackageReference format.
 project.lock.json
 project.assets.json
 *.nuget.props

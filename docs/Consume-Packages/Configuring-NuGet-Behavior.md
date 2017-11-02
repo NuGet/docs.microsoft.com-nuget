@@ -5,7 +5,7 @@ title: Configuring the behavior of NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/25/2017
+ms.date: 10/24/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -20,8 +20,8 @@ keywords: NuGet config files, NuGet configuration, NuGet behavior settings, NuGe
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -30,7 +30,7 @@ ms.reviewer:
 
 # Configuring NuGet behavior
 
-NuGet's `NuGet.Config` files (in XML) store configuration settings and allow for changing default configuration values. NuGet uses several global configuration files and any number of configuration files within and near to a project to determine its exact behavior. In addition, in NuGet 2.7 and later you can use the `NuGetDefaults.Config` file to also specifically control package sources.
+NuGet's `NuGet.Config` files store configuration settings in XML and allow for changing default configuration values. NuGet uses several global configuration files and any number of configuration files within and near to a project to determine its exact behavior. In addition, in NuGet 2.7 and later you can use the `NuGetDefaults.Config` file to also specifically control package sources.
 
 In this topic:
 
@@ -48,7 +48,7 @@ The behavior of every NuGet command, whether issued from the command line, the P
 - The global config file located in `%APPDATA%\NuGet\NuGet.Config`, which is always used unless you specify a different config file using the `-configFile` switch on any NuGet command. For example, `nuget restore -configfile c:\my.config` uses settings from `c:\my.config` for the command and ignores any settings in the global config file.
 - Additional machine-wide config files:
     - NuGet 2.6 to NuGet 3.5: located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}\]]]NuGet.Config`, where `{IDE}` can be `VisualStudio`, `{Version}` can be the Visual Studio version such as `14.0`, and `{SKU}` is either `Community`, `Pro`, or `Enterprise`. These variants allow you to create configurations that are specific to different versions and editions of Visual Studio if needs be.
-    - NuGet 4.0+: located under `%ProgramFiles(x86)%\NuGet\Config` rather than `%ProgramData%`.
+    - NuGet 4.0+: located under `%ProgramFiles(x86)%\NuGet\Config` rather than `%ProgramData%`. To migrate configuration files from `%ProgramData%`, simply copy them to the location under `%ProgramFiles(x86)%`.
 - The "default" file:
     - NuGet 2.7 to NuGet 3.5: located at `%PROGRAMDATA%\NuGet\NuGetDefaults.Config`, which is described later under [NuGet defaults file](#nuget-defaults-file) as a way to specifically enable and disable package sources. No other settings are supported in this file.
     - NuGet 4.0+: located under `%ProgramFiles(x86)%\NuGet\Config` rather than `%ProgramData%`.
@@ -60,7 +60,7 @@ The behavior of every NuGet command, whether issued from the command line, the P
 
 A configuration file is a simple XML text file containing settings as described in the [NuGet Configuration Settings](../Schema/nuget-config-file.md) topic.
 
-The preferred method for changing the configuration is using the NuGet [config command](../tools/nuget-exe-cli-reference.md#config) to set a key and value.
+The preferred method for changing the configuration is using the NuGet [config command](../tools/cli-ref-config.md) to set a key and value.
 
 > [!Note]
 > Keys are always case sensitive.

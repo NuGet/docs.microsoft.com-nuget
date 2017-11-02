@@ -2,9 +2,9 @@
 # required metadata
 
 title: NuGet 4.3 RTM Release Notes | Microsoft Docs
-author: karann
-ms.author: karann
-manager: unnir
+author: karann-msft
+ms.author: karann-msft
+manager: unniravindranathan
 ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
@@ -20,8 +20,8 @@ keywords: NuGet 4.3 RTM release notes, bug fixes, known issues, added features, 
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 - anangaur
 #ms.suite:
 #ms.tgt_pltfrm:
@@ -46,6 +46,30 @@ The following restore command-line techniques treat disabled packages sources as
 1. Use Visual Studio (2017 15.3 or later) or NuGet.exe (v4.3.0 or later)
 1. Delete your disabled source and continue to use msbuild or dotnet.exe.
 1. For your solution, you could use "Clear" in NuGet.config and then define the sources necessary for that solution.
+
+### While using Package Manager Console, 'Enter' key may not work
+
+#### Issue:
+Occasionally, the enter key does not work in the Package Manager Console. If you see this, please check out the progress on the fix, and provide any additional helpful information about your repro steps. [NuGet#4204](https://github.com/NuGet/Home/issues/4204) [NuGet#4570](https://github.com/NuGet/Home/issues/4570)
+
+#### Workaround:
+Restart Visual Studio and open the PMC before opening the solution. Alternatively, try deleting the `project.lock.json` and restoring again.
+
+### You will be unable to view, add, or update DotNetCLITools, using Nuget Package Manager
+
+#### Issue:
+NuGet Package Manager does not display and does not allow add/update of DotNetCLITools. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
+
+#### Workaround:
+DotNetCLIToolReferences must be manually edited in your project file.
+
+### Retargeting target framework version may lead to incomplete Intellisense
+
+#### Issue:
+Retargeting target framework version may lead to incomplete Intellisense, in Visual Studio. This happens when you are using PackageReferences as the package manager format. [NuGet#4216](https://github.com/NuGet/Home/issues/4216)
+
+#### Workaround:
+Do a manual restore.
 
 
 ## Issues fixed in NuGet 4.3 RTM timeframe

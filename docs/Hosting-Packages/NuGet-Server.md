@@ -5,7 +5,7 @@ title: NuGet.Server to Host NuGet Feeds | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 3/8/2017
+ms.date: 8/25/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -20,8 +20,8 @@ keywords: NuGet feed, NuGet gallery, remote package feed, NuGet.Server
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -30,9 +30,7 @@ ms.reviewer:
 
 # NuGet.Server
 
-NuGet.Server is a package provided by the .NET Foundation that creates an ASP.NET application that can host a package feed on any server that runs IIS. Simply said, NuGet.Server basically makes a folder on the server available through HTTP(S) (specifically OData). As such it's best for simple scenarios and is easy to set up.
-
-The process is as follows:
+NuGet.Server is a package provided by the .NET Foundation that creates an ASP.NET application that can host a package feed on any server that runs IIS. Simply said, NuGet.Server makes a folder on the server available through HTTP(S) (specifically OData). It's easy to set up and is best for simple scenarios.
 
 1. Create an empty ASP.NET Web application in Visual Studio and add the NuGet.Server package to it.
 1. Configure the `Packages` folder in the application and add packages.
@@ -46,7 +44,7 @@ The following sections walk through this process in detail, using C#.
 
     ![Setting .NET Framework target to 4.6](media/Hosting_01-NuGet.Server-Set4.6.png)
 
-1. Give the application a suitable name (*other* than NuGet.Server), click OK, and in the next dialog select the **ASP.NET 4.6 - Empty** template and click OK.
+1. Give the application a suitable name *other* than NuGet.Server, select OK, and in the next dialog select the **Empty** template and select OK.
 
 1. Right-click the project, select **Manage NuGet Packages**, and in the Package Manager UI search and install the latest version of the NuGet.Server package if you're targeting .NET Framework 4.6. (You can also install it from the Package Manager Console with `Install-Package NuGet.Server`.)
 
@@ -67,9 +65,9 @@ The following sections walk through this process in detail, using C#.
 
 1. Click on **here** in the area outlined above to see the OData feed of packages.
 
-1. By running the application the first time, the `Packages` folder gets restructured to contain a folder for each package. This matches the [local storage layout](http://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands) introduced with NuGet 3.3 to improve performance. When adding more packages, continue to follow this structure.
+1. The first time you run the application, NuGet.Server restructures the `Packages` folder to contain a folder for each package. This matches the [local storage layout](http://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands) introduced with NuGet 3.3 to improve performance. When adding more packages, continue to follow this structure.
 
-1. Once you've tested your local deployment, you can deploy the application to any other internal or external site as needed.
+1. Once you've tested your local deployment, deploy the application to any other internal or external site as needed.
 1. Once deployed to `http://<domain>`, the URL that you use for the package source will be `http://<domain>/nuget`.
 
 
@@ -92,7 +90,7 @@ When `packagesPath` is omitted or left blank, the packages folder is the default
 
 Once a NuGet.Server site is running, you can add or delete packages using nuget.exe provided that you set an API key value in `web.config`.
 
-After installing the NuGet.Server package, `web.config` will contain an empty `appSetting/apiKey` value:
+After installing the NuGet.Server package, `web.config` contains an empty `appSetting/apiKey` value:
 
 ```xml
 <appSettings>

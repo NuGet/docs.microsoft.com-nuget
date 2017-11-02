@@ -20,8 +20,8 @@ keywords: versioning, NuGet package versioning, NuGet prerelease versions, NuGet
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:

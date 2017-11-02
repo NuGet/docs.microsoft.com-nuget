@@ -5,7 +5,7 @@ title: NuGet Frequently-Asked Questions | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 8/25/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -20,8 +20,8 @@ keywords: NuGet Q&A, questions and answers, common problems, NuGet versions, pac
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -48,7 +48,7 @@ All the information around both UI and command-line tools is available in the [I
 
 The command-line tool, `nuget.exe`, builds and runs under Mono 3.2+ and can create packages in Mono.
 
-Although `nuget.exe` work fully on Windows, there are known issues on Linux and OS X. Refer [Mono issues](https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mono) on GitHub.
+Although `nuget.exe` works fully on Windows, there are known issues on Linux and OS X. Refer to [Mono issues](https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mono) on GitHub.
 
 A [graphical client](https://github.com/mrward/monodevelop-nuget-addin) is available as an add-in for MonoDevelop.
 
@@ -68,25 +68,25 @@ The most recent version of NuGet supports C#, Visual Basic, F#, WiX, and C++.
 
 **What project templates are supported by NuGet?**
 
-NuGet has full support for a variety of project templates like Windows, Web, Cloud, SharePoint, Wix and so on.
+NuGet has full support for a variety of project templates like Windows, Web, Cloud, SharePoint, Wix, and so on.
 
 **How do I update packages that are part of Visual Studio templates?**
 
-Go to the **Updates** tab in the Package Manager UI and select **Update All**, or use the `Update-Package` command from Package Manager Console.
+Go to the **Updates** tab in the Package Manager UI and select **Update All**, or use the [`Update-Package` command](../Tools/ps-ref-update-package.md) from the Package Manager Console.
 
-To update the template itself, you'll need to manually update the template repository. See [Xavier Decoster's blog](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages) on this subject. Note that this is done at your own risk, because manual updates might corrupt the template if the latest version of all dependencies are not compatible with each other.
+To update the template itself, you need to manually update the template repository. See [Xavier Decoster's blog](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages) on this subject. Note that this is done at your own risk, because manual updates might corrupt the template if the latest version of all dependencies are not compatible with each other.
 
 **Can I use NuGet outside of Visual Studio?**
 
-Yes, NuGet works directly from the command line. See the [Install guide](../guides/install-nuget.md).
+Yes, NuGet works directly from the command line. See the [Install guide](../guides/install-nuget.md) and the [CLI reference](../tools/nuget-exe-CLI-Reference.md).
 
 ## NuGet command line
 
-**How do I get the latest version of NuGet commandline?**
+**How do I get the latest version of NuGet command line tool?**
 
 See the [Install guide](../guides/install-nuget.md).
 
-**Is it possible to extend the NuGet commandline?**
+**Is it possible to extend the NuGet command line tool?**
 
 Yes, it's possible to add custom commands to `nuget.exe`, as described in [Rob Reynold's post](http://geekswithblogs.net/robz/archive/2011/07/15/extend-nuget-command-line.aspx).
 
@@ -128,9 +128,9 @@ See [Bulk publishing NuGet packages](http://jeffhandley.com/archive/2012/12/13/B
 
 **What is the difference between a project-level package and a solution-level package?**
 
-A solution-level package (NuGet 3.x and later) is installed only once in a solution and is then available for all projects in the solution. A project-level package is installed in each project that uses it. Typically, a solution-level package installs new commands that can be called from within the Package Manager Console.
+A solution-level package (NuGet 3.x and later) is installed only once in a solution and is then available for all projects in the solution. A project-level package is installed in each project that uses it. A solution-level package might also install new commands that can be called from within the Package Manager Console.
 
-**Is it possible to install NuGet package without Internet connectivity?**
+**Is it possible to install NuGet packages without Internet connectivity?**
 
 Yes, see Scott Hanselman's Blog post [How to access NuGet when nuget.org is down (or you're on a plane)](http://www.hanselman.com/blog/HowToAccessNuGetWhenNuGetorgIsDownOrYoureOnAPlane.aspx) (hanselman.com).
 
@@ -152,10 +152,12 @@ You need to select the **All** source when installing a local package into the p
 
 **I have multiple projects in the same folder, how can I use separate packages.config or project.json files for each project?**
 
-In most projects where separate projects live in separate folders, this is not a problem as NuGet will identify the `packages.config` and `project.json` files in each project. With NuGet 3.3+ and multiple projects in the same folder, you can insert the name of the project into the `packages.config` or `project.json` filenames as below and NuGet will use that file:
+In most projects where separate projects live in separate folders, this is not a problem as NuGet identifies the `packages.config` and `project.json` files in each project. With NuGet 3.3+ and multiple projects in the same folder, you can insert the name of the project into the `packages.config` or `project.json` filenames as below and NuGet uses that file:
 
     `packages.config`: use the pattern `packages.{project-name}.config`
     `project.json`: use the pattern `{project-name}.project.json`
+
+This is not an issue when using PackageReference, as each project file contains its own list of dependencies.
 
 **I don't see nuget.org in my list of repositories, how do I get it back?**
 
@@ -166,7 +168,7 @@ In most projects where separate projects live in separate folders, this is not a
 
 **Is it possible to reserve names for packages that will be published in future?**
 
-No. If you feel that an existing package has taken the name which suits your package better, try contacting the owner of the package (click on the owner name on the package page on nuget.org). If you don't get a response within a reasonable time, [contact support](https://www.nuget.org/policies/Contact) and we'll look into it.
+Yes. You can reserve IDs for packages on [nuget.org](https://www.nuget.org/) by requesting a package ID prefix for your account. In order to request a package ID prefix, send mail to account (at) nuget.org with the package owner display name, and the requested package ID prefix.  
 
 **How do I claim ownership for packages ?**
 
@@ -178,7 +180,7 @@ We encourage the NuGet community to work together to resolve any disputes that m
 
 **Is it recommended to upload my test packages to nuget.org?**
 
-For test purposes, you can use [staging.nuget.org](http://staging.nuget.org), or alternative public NuGet  servers like [myget.org](https://myget.org) or [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/).
+For test purposes, you can use [staging.nuget.org](http://staging.nuget.org), or alternative public NuGet servers like [myget.org](https://myget.org) or [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/).
 
 Note that packages uploaded to staging.nuget.org may not be preserved. See [Goodbye preview](http://blog.nuget.org/20130419/goodbye-preview.html).
 
@@ -186,23 +188,23 @@ Note that packages uploaded to staging.nuget.org may not be preserved. See [Good
 
 nuget.org allows packages up to 250MB, but we recommend keeping packages under 1MB if possible and using dependencies to link packages together. As a rule of thumb, packages contain only one assembly to avoid collisions.
 
-NuGet's uses HTTP to download packages, so larger packages have a higher likelihood of failed installs than smaller ones.
+NuGet uses HTTP to download packages, so larger packages have a higher likelihood of failed installs than smaller ones.
 
 It is possible to share dependencies between multiple packages, making the total download size for consumers of your NuGet packages smaller.
 
-Dependencies are mostly static and never change. When fixing a bug in code, the dependencies may not have to be updated. If you bundle dependencies, you end up reshipping larger packages every time. By splitting NuGet packages into related dependencies, upgrades are much more fine-grained for consumers of your package.
+Dependencies are mostly static and never change. When fixing a bug in code, the dependencies may not need to be updated. If you bundle dependencies, you end up reshipping larger packages every time. By splitting NuGet packages into related dependencies, upgrades are much more fine-grained for consumers of your package.
 
 **Can I edit package information after it's been uploaded?**
 
-Yes, in fact, you first get an opportunity to edit package metadata during the upload process. When you upload a package, the NuGet gallery will perform some static analysis and indicate if there are issues. If the package is accepted, you'll then see a page that allows you to edit any of the metadata before the package is added to the gallery.
+Yes, in fact, you first get an opportunity to edit package metadata during the upload process. When you upload a package, the NuGet gallery performs some static analysis and indicates issues. If the package is accepted, you see a page that allows you to edit any of the metadata before the package is added to the gallery.
 
-For a package already in the gallery, sign into nuget.org, click on your username, then on **Manage my packages**, then on the package you want to manage. From that page, select **Edit Package** on the left-hand side and make the desired changes to the metadata.
+For a package already in the gallery, sign into nuget.org, select on your username, select **Manage my packages**, then select the package you want to manage. From that page, select **Edit Package** on the left-hand side and make the desired changes to the metadata.
 
 Note that dependencies listed for your package are generated automatically from the package itself and cannot be edited.
 
 In addition, uploading packages to [staging.nuget.org](http://staging.nuget.org) is a great way to check your package and test the editing process without making a package available in the public gallery.
 
-**Why can't I download/upload packages to nuget.org?**
+**Why can't I download packages from or upload packages to nuget.org?**
 
 First make sure you're using the latest versions of NuGet. If that continues to fail, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
 
@@ -214,8 +216,8 @@ First make sure you're using the latest versions of NuGet. If that continues to 
 - Your operating system version
 - Machine configuration (CPU, Network, hard drive)
 - Whether is your machine behind a proxy or firewall
-- The versions of .NET that are installed on the machine.
-- Versions of cross-platform tools such as .NET CLI, or DNU that you're using.
+- The versions of .NET that are installed on the machine
+- Versions of cross-platform tools such as .NET CLI, or DNU that you're using
 
 *To capture MTR:*
 

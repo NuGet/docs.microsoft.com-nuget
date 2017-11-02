@@ -5,10 +5,9 @@ title: Target Frameworks References for NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 4/24/2017
-ms.topic: article
+ms.date: 8/23/2017
+ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 4343a48e-f6df-4a44-9d66-4616c3caacf5
 
@@ -16,16 +15,10 @@ ms.assetid: 4343a48e-f6df-4a44-9d66-4616c3caacf5
 
 description: NuGet target framework references identify and isolate framework-dependent components of a package.
 keywords: NuGet package targeting, .NET framework targets, .NET framework versions
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - anangaur
-- karann
-- unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
+- karann-msft
+- unniravindranathan
 
 ---
 
@@ -128,7 +121,7 @@ Framework | Can use
 uap (Universal Windows Platform) | win81
 | | wpa81
 | | netcore50
-win (Windows Store) | winrt
+win (Microsoft Store) | winrt
 | | winrt45
 
 ## NET Platform Standard
@@ -137,7 +130,7 @@ The [.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Docume
 
 The [NuGet Get Nearest Framework Tool](https://aka.ms/s2m3th) simulates what NuGet uses to select one framework from many available framework assets in a package based on the project's framework.
 
-The `dotnet` series of monikers should be used in NuGet 3.3 an earlier; the `netstandard` moniker syntax should be used in v3.4 and later.
+The `dotnet` series of monikers should be used in NuGet 3.3 and earlier; the `netstandard` moniker syntax should be used in v3.4 and later.
 
 
 ## Portable Class Libraries
