@@ -38,14 +38,13 @@ registration hive contains all metadata about every package available on a packa
 
 The following `@type` values are used:
 
-@type value                     | clientVersion value | Notes
-------------------------------- | ------------------- | -----
-RegistrationsBaseUrl            | (none)              | The initial release
-RegistrationsBaseUrl/3.0.0-beta | (none)              | Alias of `RegistrationsBaseUrl`
-RegistrationsBaseUrl/3.0.0-rc   | (none)              | Alias of `RegistrationsBaseUrl`
-RegistrationsBaseUrl/3.4.0      | (none)              | Gzipped responses
-RegistrationsBaseUrl/3.6.0      | (none)              | Includes SemVer 2.0.0 packages
-RegistrationsBaseUrl/Versioned  | 4.3.0-alpha         | Alias of `RegistrationsBaseUrl/3.6.0`
+@type value                     | Notes
+------------------------------- | -----
+RegistrationsBaseUrl            | The initial release
+RegistrationsBaseUrl/3.0.0-beta | Alias of `RegistrationsBaseUrl`
+RegistrationsBaseUrl/3.0.0-rc   | Alias of `RegistrationsBaseUrl`
+RegistrationsBaseUrl/3.4.0      | Gzipped responses
+RegistrationsBaseUrl/3.6.0      | Includes SemVer 2.0.0 packages
 
 This represents three distinct registration hives available for various client versions.
 
