@@ -9,6 +9,8 @@
 ## [Create Cross-Platform Packages](Guides/Create-Cross-Platform-Packages.md)
 ## [Create NET Standard Packages (Visual Studio 2017)](Guides/Create-NET-Standard-Packages-VS2017.md)
 ## [Create NET Standard Packages (Visual Studio 2015)](Guides/Create-NET-Standard-Packages-VS2015.md)
+## API
+### [Query for all packages](Guides/api/query-for-all-published-packages.md)
 # Create Packages
 ## [Overview and Workflow](Create-Packages/Overview-and-Workflow.md)
 ## [Creating a Package](Create-Packages/Creating-a-Package.md)
