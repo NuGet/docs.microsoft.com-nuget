@@ -27,11 +27,10 @@ ms.reviewer:
 
 # Catalog
 
-It is possible to enumerate all package creates and deletes on a package source by inspecting a resource
-called the **catalog**. The catalog resource has the `Catalog` type in the [service index](service-index.md).
+The **catalog** is a resource that records all package operations on a package source, such as creations and deletions. The catalog resource has the `Catalog` type in the [service index](service-index.md).
 
 > [!Note]
-> Since the catalog is not used by the official NuGet client, not all package sources implement the catalog.
+> Because the catalog is not used by the official NuGet client, not all package sources implement the catalog.
 
 ## Versioning
 
@@ -44,11 +43,11 @@ Catalog/3.0.0 | The initial release
 ## Base URL
 
 The entry point URL for the following APIs is the value of the `@id` property associated with the aforementioned
-resource `@type` values. In the following document, the placeholder URL `{@id}` will be used.
+resource `@type` values. This topic uses the placeholder URL `{@id}`.
 
 ## HTTP methods
 
-All URLs found in the catalog resource only support the HTTP methods `GET` and `HEAD`.
+All URLs found in the catalog resource support only the HTTP methods `GET` and `HEAD`.
 
 ## Catalog index
 
@@ -66,20 +65,19 @@ In short, catalog blobs have the following hierarchical structure:
 - **Page**: a grouping of catalog items.
 - **Leaf**: a document representing a catalog item, which is a snapshot of a single package's state.
 
-Each catalog object has a property called the `commitTimeStamp`. This is the time when the item was added to the
+Each catalog object has a property called the `commitTimeStamp` representing when the item was added to the
 catalog. Catalog items are added to a catalog page in batches called commits. All catalog items in the same commit
 have the same commit timestamp (`commitTimeStamp`) and commit ID (`commitId`). Catalog items placed in the same commit
 represent events that happened around the same point in time on the package source. There is no ordering within a
 catalog commit.
 
-Per package ID and version, there will never be more than one catalog item in a commit. This ensures that catalog items
-for a single package can always be unambiguously ordered with respect to commit timestamp.
+Because each package ID and version is unique, there will never be more than one catalog item in a commit. This ensures that catalog items for a single package can always be unambiguously ordered with respect to commit timestamp.
 
-There will never be more than one commit to the catalog per `commitTimeStamp`. In other words, the `commitId` is
+There is never be more than one commit to the catalog per `commitTimeStamp`. In other words, the `commitId` is
 redundant with the `commitTimeStamp`.
 
-In contrast to the [package metadata resource](registration-base-url-resource.md) which is indexed by package ID, the
-catalog is indexed (i.e. queryable) only by time.
+In contrast to the [package metadata resource](registration-base-url-resource.md), which is indexed by package ID, the
+catalog is indexed (and queryable) only by time.
 
 Catalog items are always added to the catalog in a monotonically increasing, chronological order. This means that if a
 catalog commit is added at time X then no catalog commit will ever be added with a time less than or equal to X.
@@ -139,8 +137,8 @@ The catalog page is a collection of catalog items. It is a document fetched usin
 catalog index. The URL to a catalog page is not intended to be predictable and should be discovered using only the
 catalog index.
 
-New catalog items will only ever be added to the page in the catalog index with the highest commit timestamp or to a
-new page. Once a page with a higher commit timestamp is added to the catalog, older pages will never be added to or
+New catalog items are added to the page in the catalog index only with the highest commit timestamp or to a
+new page. Once a page with a higher commit timestamp is added to the catalog, older pages are never added to or
 changed.
 
 The catalog page document is a JSON object with the following properties:
@@ -157,14 +155,14 @@ Each element in the `items` array is an object with some minimal details about t
 not contain all of the catalog item's data. The order of the items in the page's `items` array is not defined. Items
 can be ordered by the client in memory using their `commitTimeStamp` property.
 
-The number of catalog items in a page is defined by server implementation. For nuget.org, there will be at most 550
+The number of catalog items in a page is defined by server implementation. For nuget.org, there are at most 550
 items in each page, although the actual number may be smaller for some pages dependong on the size of the next commit
 batch at the point in time.
 
-As new items are introduced, the `count` will be incremented and new catalog item objects will appear in the `items`
+As new items are introduced, the `count` is incremented and new catalog item objects appear in the `items`
 array.
 
-As items are added to the page, the `commitId` will change and the `commitTimeStamp` will increase. These two
+As items are added to the page, the `commitId` changes and the `commitTimeStamp` increases. These two
 properties are essentially a summary over all `commitId` and `commitTimeStamp` values in the `items` array.
 
 ### Catalog item object in a page
@@ -217,8 +215,7 @@ version                 | string                     | yes      | The package ve
 ### Item types
 
 The `@type` property is a string or array of strings. For convenience, if the `@type` value is a string, it should be
-treated as any array of size one. Not all possible values for `@type` are documented. However, each catalog item will
-have exactly one of the two following string type values:
+treated as any array of size one. Not all possible values for `@type` are documented. However, each catalog item has exactly one of the two following string type values:
 
 1. `PackageDetails`: represents a snapshot of package metadata
 1. `PackageDelete`: represents a package that was deleted
@@ -329,7 +326,7 @@ GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_li
 This section describes a client concept that, although is not necessarily mandated by the protocol, should be part of
 any practical catalog client implementation.
 
-Since the catalog is an append-only data structure indexed by time, the client should store a **cursor** locally,
+Because the catalog is an append-only data structure indexed by time, the client should store a **cursor** locally,
 representing up to what point in time the client has processed catalog items. Note that this cursor value should never
 be generated using the client's machine clock. Instead, the value should come from a catalog object's
 `commitTimestamp` value.
