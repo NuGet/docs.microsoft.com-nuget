@@ -37,6 +37,7 @@ In this topic:
 - [Creating and publishing packages](#creating-and-publishing-packages)
 - [Working with packages](#working-with-packages)
 - [Managing packages on nuget.org](#managing-packages-on-nugetorg)
+- [nuget.org not accessible](#nugetorg-not-accessible)
 
 ## Getting started
 
@@ -202,9 +203,11 @@ It is possible to share dependencies between multiple packages, making the total
 
 Dependencies are mostly static and never change. When fixing a bug in code, the dependencies may not need to be updated. If you bundle dependencies, you end up reshipping larger packages every time. By splitting NuGet packages into related dependencies, upgrades are much more fine-grained for consumers of your package.
 
+## nuget.org not accessible
+
 **Why can't I download packages from or upload packages to nuget.org?**
 
-First make sure you're using the latest versions of NuGet. If that continues to fail, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
+First, make sure you're using the latest versions of NuGet. If that version continues to fail, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
 
 - The version of NuGet you're using
 - The package sources you're using
