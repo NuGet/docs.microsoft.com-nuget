@@ -5,7 +5,7 @@ title: NuGet Frequently-Asked Questions | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/25/2017
+ms.date: 10/30/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -37,6 +37,7 @@ In this topic:
 - [Creating and publishing packages](#creating-and-publishing-packages)
 - [Working with packages](#working-with-packages)
 - [Managing packages on nuget.org](#managing-packages-on-nugetorg)
+- [nuget.org not accessible](#nugetorg-not-accessible)
 
 ## Getting started
 
@@ -166,6 +167,14 @@ This is not an issue when using PackageReference, as each project file contains 
 
 ## Managing packages on nuget.org
 
+**Can I edit package metadata after it's been uploaded? Why do you recommend editing the nuspec and uploading a new package for making changes to package metadata?**
+
+NuGet will be implementing package signing. A design principle of package signing is that signed package content must be immutable, which includes the nuspec. Editing the package metadata results in changes to the nuspec, invalidating existing signatures. We recommend modifying existing workflows to not require editing the package metadata after the package has been created.
+
+Note that dependencies listed for your package are generated automatically from the package itself and cannot be edited.
+
+In addition, uploading packages to [staging.nuget.org](http://staging.nuget.org) is a great way to test and validate your package without making a package available in the public gallery.
+
 **Is it possible to reserve names for packages that will be published in future?**
 
 Yes. You can reserve IDs for packages on [nuget.org](https://www.nuget.org/) by requesting a package ID prefix for your account. In order to request a package ID prefix, send mail to account (at) nuget.org with the package owner display name, and the requested package ID prefix.  
@@ -194,19 +203,11 @@ It is possible to share dependencies between multiple packages, making the total
 
 Dependencies are mostly static and never change. When fixing a bug in code, the dependencies may not need to be updated. If you bundle dependencies, you end up reshipping larger packages every time. By splitting NuGet packages into related dependencies, upgrades are much more fine-grained for consumers of your package.
 
-**Can I edit package information after it's been uploaded?**
-
-Yes, in fact, you first get an opportunity to edit package metadata during the upload process. When you upload a package, the NuGet gallery performs some static analysis and indicates issues. If the package is accepted, you see a page that allows you to edit any of the metadata before the package is added to the gallery.
-
-For a package already in the gallery, sign into nuget.org, select on your username, select **Manage my packages**, then select the package you want to manage. From that page, select **Edit Package** on the left-hand side and make the desired changes to the metadata.
-
-Note that dependencies listed for your package are generated automatically from the package itself and cannot be edited.
-
-In addition, uploading packages to [staging.nuget.org](http://staging.nuget.org) is a great way to check your package and test the editing process without making a package available in the public gallery.
+## nuget.org not accessible
 
 **Why can't I download packages from or upload packages to nuget.org?**
 
-First make sure you're using the latest versions of NuGet. If that continues to fail, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
+First, make sure you're using the latest versions of NuGet. If that version continues to fail, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
 
 - The version of NuGet you're using
 - The package sources you're using

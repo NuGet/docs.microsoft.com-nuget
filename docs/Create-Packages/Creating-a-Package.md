@@ -195,7 +195,7 @@ The folder conventions are as follows:
 
 Because your folder structure can contain any number of assemblies for any number of target frameworks, this method is necessary when creating packages that support multiple frameworks 
 
-In any case, once you have the desired folder structure in place, run the following command in that foler to create the `.nuspec` file:
+In any case, once you have the desired folder structure in place, run the following command in that folder to create the `.nuspec` file:
 
 ```
 nuget spec
