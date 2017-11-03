@@ -1,0 +1,25 @@
+{
+  "totalHits": 571,
+  "data": [
+    "WindowsAzure.Storage",
+    "Storage.Net",
+    "CK.Storage",
+    "NCL.Storage",
+    "DK.Storage",
+    "Nine.Storage.Test",
+    "Touch.Storage.Aws",
+    "StorageAPIClient",
+    "StorageAccess",
+    "Storage.Net.Microsoft.Azure.Storage",
+    "UnofficialAzure.StorageClient",
+    "StorageAccess12",
+    "AWSSDK.StorageGateway",
+    "StorageExtensions",
+    "Cloud.Storage",
+    "lighthouse.storage",
+    "ZU.Storage.Redis",
+    "Magicodes.Storage",
+    "Masticore.Storage",
+    "hq.storage"
+  ]
+}

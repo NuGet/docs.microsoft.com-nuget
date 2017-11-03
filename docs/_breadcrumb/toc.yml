@@ -29,7 +29,7 @@
       topicHref: /nuget/schema/nuspec
     - name: API
       tocHref: /nuget/api/
-      topicHref: /nuget/api/nuget-api-v3
+      topicHref: /nuget/api/overview
     - name: Visual Studio Extensibility
       tocHref: /nuget/visual-studio-extensibility/
       topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio

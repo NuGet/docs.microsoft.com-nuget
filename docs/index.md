@@ -200,18 +200,18 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="api/nuget-api-v3.md">
+                            <a href="api/overview.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-api.svg" alt="API: Details about the NuGet API and authenticating with package sources." />
+                                                <img src="media/hub/nuget-tools-api.svg" alt="API: Details about the NuGet API" />
                                             </div>
                                         </div>
                                         <div class="cardText">
                                             <h3>API</h3>
-                                            <p>Details about the NuGet API and authenticating with package sources.</p>
+                                            <p>Details about the NuGet HTTP protocol and programmatically interacting with package sources.</p>
                                         </div>
                                     </div>
                                 </div>

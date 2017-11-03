@@ -1,0 +1,12 @@
+{
+  "@type": [
+    "PackageDelete",
+    "catalog:Permalink"
+  ],
+  "catalog:commitId": "19fec5b4-9335-4e4b-bd50-8d5d3f734597",
+  "catalog:commitTimeStamp": "2017-11-02T00:40:00.1969812Z",
+  "id": "netstandard1.4_lib",
+  "originalId": "netstandard1.4_lib",
+  "published": "2017-11-02T00:37:43.7181952Z",
+  "version": "1.0.0-test"
+}

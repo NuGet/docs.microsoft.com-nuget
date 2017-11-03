@@ -103,14 +103,14 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | --- | --- |
 | **Issue** | The package cannot be found on any sources. |
 | **Common causes** | The correct package source is missing or the package identifier is incorrect. |
-| **Example message** | *Unable to find package System.Missing. No packages exist with this id in source(s): dotnet-core, dotnet-roslyn, NuGet.org* |
+| **Example message** | *Unable to find package System.Missing. No packages exist with this id in source(s): dotnet-core, dotnet-roslyn, nuget.org* |
 ### NU1102
 
 | | |
 | --- | --- |
 | **Issue** | The package identifier is found but a version within the specified dependency range cannot be found on any of the sources. |
 | **Common causes** | The correct package source is missing or the dependency range is incorrect. The range might be specified by a package and not the user. The user may need to switch to an available version if this package is referenced by the project directly. |
-| **Example message** | *Unable to find package NuGet.Versioning with version (>= 9.0.1)<br/>  - Found 30 version(s) in NuGet.org [ Nearest version: 4.0.0 ]<br/>  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>  - Found 0 version(s) in dotnet-core<br/>  - Found 0 version(s) in dotnet-roslyn* |
+| **Example message** | *Unable to find package NuGet.Versioning with version (>= 9.0.1)<br/>  - Found 30 version(s) in nuget.org [ Nearest version: 4.0.0 ]<br/>  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>  - Found 0 version(s) in dotnet-core<br/>  - Found 0 version(s) in dotnet-roslyn* |
 
 ### NU1103
 
