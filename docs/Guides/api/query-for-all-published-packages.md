@@ -63,11 +63,11 @@ Otherwise, follow the guide below to build a reliable catalog reader.
 
 ## Initialize a cursor
 
-The first piece of a reliable catalog reader is implementing a cursor. For full details about the design of a catalog
-cursor, see the [catalog reference document](../../api/catalog-resource.md#cursor). In short, cursor is just a point
-in time up to which you have processed events in the catalog. Events in the catalog represent package publishes and
-other package changes. If you care about all packages ever published to NuGet (since the beginning of time), you would
-initialize your cursor to a "minimum value" timestamp (e.g. `DateTime.MinValue` in .NET). If you care only about
+The first step in building a reliable catalog reader is implementing a cursor. For full details about the design of a
+catalog cursor, see the [catalog reference document](../../api/catalog-resource.md#cursor). In short, cursor is a
+point in time up to which you have processed events in the catalog. Events in the catalog represent package publishes
+and other package changes. If you care about all packages ever published to NuGet (since the beginning of time), you
+would initialize your cursor to a "minimum value" timestamp (e.g. `DateTime.MinValue` in .NET). If you care only about
 packages published starting now, you would use the current timestamp as your initial cursor value.
 
 For this guide, we'll initialize our cursor to a timestamp one hour ago. For now, just save that timestamp in memory.
@@ -78,7 +78,7 @@ DateTime cursor = DateTime.UtcNow.AddHours(-1);
 
 ## Determine catalog index URL
 
-The location of every resource (endpoint) in the NuGet API should be should be discovered using the
+The location of every resource (endpoint) in the NuGet API should be discovered using the
 [service index](../../api/service-index.md). Since this guide focuses on nuget.org, we'll be using nuget.org's service
 index.
 
