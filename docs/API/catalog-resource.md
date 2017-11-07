@@ -32,6 +32,9 @@ The **catalog** is a resource that records all package operations on a package s
 > [!Note]
 > Because the catalog is not used by the official NuGet client, not all package sources implement the catalog.
 
+> [!Note]
+> Currently, the nuget.org catalog is not available in China. For more details, see [NuGet/NuGetGallery#4949](https://github.com/NuGet/NuGetGallery/issues/4949).
+
 ## Versioning
 
 The following `@type` value is used:
