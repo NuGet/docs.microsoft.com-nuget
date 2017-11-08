@@ -154,8 +154,8 @@ You need to select the **All** source when installing a local package into the p
 
 In most projects where separate projects live in separate folders, this is not a problem as NuGet identifies the `packages.config` and `project.json` files in each project. With NuGet 3.3+ and multiple projects in the same folder, you can insert the name of the project into the `packages.config` or `project.json` filenames as below and NuGet uses that file:
 
-    `packages.config`: use the pattern `packages.{project-name}.config`
-    `project.json`: use the pattern `{project-name}.project.json`
+- `packages.config`: use the pattern `packages.{project-name}.config`
+- `project.json`: use the pattern `{project-name}.project.json`
 
 This is not an issue when using PackageReference, as each project file contains its own list of dependencies.
 
@@ -243,3 +243,8 @@ First make sure you're using the latest versions of NuGet. If that continues to 
 Note: it may be required to set the `HTTP_PROXY` environment variable to `http://127.0.0.1:8888` for routing NuGet traffic through Fiddler.
 
 If that fails, try the [tips mentioned in this StackOverflow post](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
+
+**What are the API endpoints for nuget.org?**
+
+V3: `https://api.nuget.org/v3/index.json`
+V2: `https://www.nuget.org/api/v2/` (Note that the V2 API is deprecated and does not work with NuGet 4+.)

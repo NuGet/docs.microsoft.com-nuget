@@ -5,7 +5,7 @@ title: Introductory Guide to Using NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/4/2017
+ms.date: 10/04/2017
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: null

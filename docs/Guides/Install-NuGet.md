@@ -2,28 +2,28 @@
 # required metadata 
  
 title: Installing NuGet client tools | Microsoft Docs
-author: kraigb 
-ms.author: kraigb 
-manager: ghogen 
-ms.date: 10/2/2017
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 10/02/2017
 ms.topic: get-started-article
-ms.prod: nuget 
-ms.technology: null 
-ms.assetid: 683b8b34-a6f4-4d56-b9cd-2483bfbad1ad 
- 
+ms.prod: nuget
+ms.technology: null
+ms.assetid: 683b8b34-a6f4-4d56-b9cd-2483bfbad1ad
+
 # optional metadata
 
 description: Guidance on installing client tools, the command-line interface (CLI), and the Package Manager for Visual Studio.
 keywords: nuget.exe CLI, NuGet client tools, NuGet package manager, NuGet package manager console, NuGet for Visual Studio, NuGet beta channel
-ms.reviewer:  
-- karann-msft 
-- unniravindranathan 
- 
+ms.reviewer:
+- karann-msft
+- unniravindranathan
+
 ---
 
 # Installing NuGet client tools
 
-> [!Tip] 
+> [!Tip]
 > **Looking to install a package? See [Quickstart - Use a package](../Quickstart/Use-a-Package.md).**
 
 There are two primary tools available to help you build, publish and consume NuGet packages:
@@ -73,7 +73,7 @@ The NuGet command-line interface provides access to all NuGet capabilities, and 
 
 - **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client. 
 
-    ```
+    ```ps
     choco install nuget.commandline
     ```
     

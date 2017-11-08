@@ -5,7 +5,7 @@ title: Overview and workflow of using NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/6/2017
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:

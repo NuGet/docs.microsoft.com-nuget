@@ -158,7 +158,7 @@ File A. User-level file, (%APPDATA%\NuGet\NuGet.Config on Windows, ~/.nuget/NuGe
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
     <activePackageSource>
-        <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
+        <add key="NuGet official package source" value="https://api.nuget.org/v3/index.json" />
     </activePackageSource>
 </configuration>
 ```
@@ -252,7 +252,7 @@ Mac/Linux: $XDG_DATA_HOME (typically ~/.local/share)
     <!-- This collection cannot be deleted or modified but can be disabled/enabled by users. -->
     <packageSources>
         <add key="Contoso Package Source" value="https://contoso.com/packages/" />
-        <add key="nuget.org" value="https://www.nuget.org/api/v2/" />
+        <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
     </packageSources>
 
     <!-- Default Package Sources that are disabled by default. -->

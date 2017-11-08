@@ -16,7 +16,7 @@ keywords:
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/15/2017 
+ms.date: 08/15/2017 
 ms.topic: hub-page
 ms.prod: nuget
 #ms.service:

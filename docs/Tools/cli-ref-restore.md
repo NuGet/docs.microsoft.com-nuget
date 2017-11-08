@@ -108,6 +108,5 @@ nuget restore a.sln -MSBuildVersion 14
 nuget restore proj1\packages.config -PackagesDirectory ..\packages
 
 # Restore packages for the solution in the current folder, specifying package sources
-nuget restore -source "https://www.nuget.org/api/v2;https://www.myget.org/F/nuget"
+nuget restore -source "https://api.nuget.org/v3/index.json;https://www.myget.org/F/nuget"
 ```
-\

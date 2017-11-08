@@ -5,7 +5,7 @@ title: Overview and workflow of creating NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/26/2017
+ms.date: 07/26/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
