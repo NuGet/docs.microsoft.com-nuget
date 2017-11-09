@@ -92,6 +92,8 @@ nuget pack foo.nuspec
 
 nuget pack foo.csproj
 
+nuget pack foo.csproj -Properties Configuration=Release
+
 nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="1.0.5"
 
 # create a package from project foo.csproj, using MSBuild version 12 to build the project
