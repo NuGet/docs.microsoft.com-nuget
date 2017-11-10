@@ -160,26 +160,79 @@ and allow your code to reprocess the old catalog items.
 
 ## C# sample code
 
-Since the catalog is a set of JSON documents, it can be interacted with using any programming language that has
-an HTTP client and JSON deserializer.
+Since the catalog is a set of JSON documents available over HTTP, it can be interacted with using any programming
+language that has an HTTP client and JSON deserializer.
 
-For improved understanding and convenience, we have made a small sample available written in C# to demonstrate how to
-read from the catalog. The solution file requires Visual Studio 2017. The project is `netcoreapp2.0` depends on the
-[NuGet.Protocol 4.4.0](https://www.nuget.org/packages/NuGet.Protocol/4.4.0) (for resolving the service index) and
-[Newtonsoft.Json 9.0.1](https://www.nuget.org/packages/Newtonsoft.Json/9.0.1) (for JSON deserialization).
-
-Simply clone the [NuGet/Samples](https://github.com/NuGet/Samples) repository on GitHub, restore, build, and run the
-project file under the `CatalogReaderExample` directory. 
+However, for your convenience, ww have made some C# samples available in the
+[*NuGet/Samples* GitHub repository](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample).
 
 ```
 git clone https://github.com/NuGet/Samples.git
 ```
 
+### Catalog SDK
+
+The easiest way to consume the catalog is to use our pre-release .NET catalog SDK package:
+[`NuGet.Protocol.Catalog`](https://dotnet.myget.org/feed/nuget-build/package/nuget/NuGet.Protocol.Catalog).
+This package is available on the `nuget-build` MyGet feed, which has the following NuGet package source URL:
+```
+https://dotnet.myget.org/F/nuget-build/api/v3/index.json
+```
+
+You can install this package to a project compatible with `netstandard1.3` or greater (such as .NET Framework 4.6)
+and start hacking!
+
+A sample using this package is available on GitHub in the
+[*NuGet.Protocol.Catalog.Sample* project](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/NuGet.Protocol.Catalog.Sample).
+
+#### Sample output
+
+```
+2017-11-10T22:16:44.8689025+00:00: Found package details leaf for xSkrape.APIWrapper.REST 1.0.2.
+2017-11-10T22:16:54.6972769+00:00: Found package details leaf for xSkrape.APIWrapper.REST 1.0.1.
+2017-11-10T22:19:20.6385542+00:00: Found package details leaf for Platform.EnUnity 1.0.8.
+...
+2017-11-10T23:05:04.9695890+00:00: Found package details leaf for xSkrape.APIWrapper.Base 1.0.1.
+2017-11-10T23:05:04.9695890+00:00: Found package details leaf for xSkrape.APIWrapper.Base 1.0.2.
+2017-11-10T23:07:23.1303569+00:00: Found package details leaf for VeiculoX.Model 0.0.15.
+Processing the catalog leafs failed. Retrying.
+fail: NuGet.Protocol.Catalog.LoggerCatalogLeafProcessor[0]
+      10 catalog commits have been processed. We will now simulate a failure.
+warn: NuGet.Protocol.Catalog.CatalogProcessor[0]
+      Failed to process leaf https://api.nuget.org/v3/catalog0/data/2017.11.10.23.07.23/veiculox.model.0.0.15.json (VeiculoX.Model 0.0.15, PackageDetails).
+warn: NuGet.Protocol.Catalog.CatalogProcessor[0]
+      13 out of 59 leaves were left incomplete due to a processing failure.
+warn: NuGet.Protocol.Catalog.CatalogProcessor[0]
+      1 out of 1 pages were left incomplete due to a processing failure.
+2017-11-10T23:07:23.1303569+00:00: Found package details leaf for VeiculoX.Model 0.0.15.
+2017-11-10T23:07:33.0212446+00:00: Found package details leaf for VeiculoX.Model 0.0.14.
+2017-11-10T23:07:41.6621837+00:00: Found package details leaf for VeiculoX.Model 0.0.13.
+2017-11-10T23:09:58.5728614+00:00: Found package details leaf for CreaSoft.Composition.Web.Extensions 1.1.0.
+2017-11-10T23:09:58.5728614+00:00: Found package details leaf for DarkXaHTeP.Extensions.Configuration.Consul 0.0.4.
+2017-11-10T23:09:58.5728614+00:00: Found package details leaf for xSkrape.APIWrapper.REST.Sample 1.0.3.
+2017-11-10T23:10:09.0574930+00:00: Found package details leaf for Microsoft.VisualStudio.Imaging 15.4.27004.
+2017-11-10T23:10:09.0574930+00:00: Found package details leaf for Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime 14.3.25407.
+2017-11-10T23:10:09.0574930+00:00: Found package details leaf for Microsoft.VisualStudio.Language.Intellisense 15.4.27004.
+2017-11-10T23:10:09.0574930+00:00: Found package details leaf for Microsoft.VisualStudio.Language.StandardClassification 15.4.27004.
+2017-11-10T23:10:09.0574930+00:00: Found package details leaf for Microsoft.VisualStudio.ManagedInterfaces 8.0.50727.
+2017-11-10T23:10:09.0574930+00:00: Found package details leaf for xSkrape.APIWrapper.REST.Sample 1.0.2.
+2017-11-10T23:10:09.0574930+00:00: Found package details leaf for xSkrape.APIWrapper.REST.Sample 1.0.3.
+```
+
+### Minimal sample
+
+If you are interested in an example with fewer dependencies and one that illustrates the interaction with the catalog
+in more detail, you can take a look at the
+[*CatalogReaderExample* sample project](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/CatalogReaderExample).
+The project is `netcoreapp2.0` and depends on the [NuGet.Protocol 4.4.0](https://www.nuget.org/packages/NuGet.Protocol/4.4.0)
+(for resolving the service index) and
+[Newtonsoft.Json 9.0.1](https://www.nuget.org/packages/Newtonsoft.Json/9.0.1) (for JSON deserialization).
+
 The main logic of the code is visible in the
 [`Program.cs`](https://github.com/NuGet/Samples/blob/master/CatalogReaderExample/CatalogReaderExample/Program.cs)
 file.
 
-### Sample output
+#### Sample output
 
 ```
 No cursor found. Defaulting to 11/2/2017 9:41:28 PM.
