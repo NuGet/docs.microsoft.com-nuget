@@ -65,7 +65,7 @@ The following image shows a project that depends on five packages, which in turn
 
 ![An example NuGet dependency graph for a .NET project](media/dependency-graph.png)
 
-Notice that some packages appear multiple times in the dependency graph. For example, there are four different consumers of package B, and each consumer might also specify a different version for that package (not shown). Because this is a common occurrence, NuGet fortunately does all the hard work to determine exactly which version of package B satisfies all its consumers. NuGet then does the same for all other packages, no matter how deep the dependency graph becomes.
+Notice that some packages appear multiple times in the dependency graph. For example, there are three different consumers of package B, and each consumer might also specify a different version for that package (not shown). Because this is a common occurrence, NuGet fortunately does all the hard work to determine exactly which version of package B satisfies all its consumers. NuGet then does the same for all other packages, no matter how deep the dependency graph becomes.
 
 For more details on how NuGet performs this service, see [Dependency resolution](Consume-Packages/Dependency-Resolution.md).
 
