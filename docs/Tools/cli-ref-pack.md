@@ -55,7 +55,7 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 | NoDefaultExcludes | Prevents default exclusion of NuGet package files and files and folders starting with a dot, such as `.svn` and `.gitignore`. |
 | NoPackageAnalysis | Specifies that pack should not run package analysis after building the package. |
 | OutputDirectory | Specifies the folder in which the created package is stored. If no folder is specified, the current folder is used. |
-| Properties | Specifies a list of token=value pairs, separated by semicolons, where each occurrence of `$token$` in the `.nuspec` file will be replaced with the given value. Values can be strings in quotation marks. |
+| Properties | Specifies a list of token=value pairs, separated by semicolons, where each occurrence of `$token$` in the `.nuspec` file will be replaced with the given value. Values can be strings in quotation marks. Note that for the "Configuration" property, the default is "Debug". To change to a Release configuration, use `-Properties Configuration=Release`. |
 | Suffix | *(3.4.4+)* Appends a suffix to the internally generated version number, typically used for appending build or other pre-release identifiers. For example, using `-suffix nightly` will create a package with a version number like `1.2.3-nightly`. Suffixes must start with a letter to avoid warnings, errors, and potential incompatibilities with different versions of NuGet and the NuGet Package Manager. |
 | Symbols | Specifies that the package contains sources and symbols. When used with a `.nuspec` file, this creates a regular NuGet package file and the corresponding symbols package. |
 | Tool | Specifies that the output files of the project should be placed in the `tool` folder. |
