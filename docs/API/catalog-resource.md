@@ -262,7 +262,7 @@ packageHashAlgorithm    | string                     | yes      |
 packageSize             | integer                    | yes      | The size of the package .nupkg in bytes
 projectUrl              | string                     | no       |
 releaseNotes            | string                     | no       |
-requireLicenseAgreement | boolean                    | no       |
+requireLicenseAgreement | boolean                    | no       | Assume `false` if excluded
 summary                 | string                     | no       |
 tags                    | array of strings           | no       |
 title                   | string                     | no       |
