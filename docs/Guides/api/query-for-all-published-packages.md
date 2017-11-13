@@ -37,8 +37,8 @@ the package was published. Scenarios requiring this kind of query against nuget.
 The legacy way of doing this typically depended on sorting the OData package entity by a timestamp and paging across
 the massive result set using `skip` and `top` (page size) parameters. Unfortunately, this approach has some drawbacks:
 
-- Possibility of missing packages, since the queries are being made on data that is often changing order
-- Slow query response time, since the queries are not optimized (the most optimized queries are ones that support a
+- Possibility of missing packages, because the queries are being made on data that is often changing order
+- Slow query response time, because the queries are not optimized (the most optimized queries are ones that support a
   mainline scenario for the official NuGet client)
 - Use of deprecated and undocumented API, meaning the support of such queries in the future is not guaranteed
 - Inability to replay history in the exact order that it transpired
@@ -79,7 +79,7 @@ DateTime cursor = DateTime.UtcNow.AddHours(-1);
 ## Determine catalog index URL
 
 The location of every resource (endpoint) in the NuGet API should be discovered using the
-[service index](../../api/service-index.md). Since this guide focuses on nuget.org, we'll be using nuget.org's service
+[service index](../../api/service-index.md). Because this guide focuses on nuget.org, we'll be using nuget.org's service
 index.
 
 ```
@@ -160,11 +160,10 @@ and allow your code to reprocess the old catalog items.
 
 ## C# sample code
 
-Since the catalog is a set of JSON documents available over HTTP, it can be interacted with using any programming
+Because the catalog is a set of JSON documents available over HTTP, it can be interacted with using any programming
 language that has an HTTP client and JSON deserializer.
 
-However, for your convenience, ww have made some C# samples available in the
-[*NuGet/Samples* GitHub repository](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample).
+C# samples are available in the [NuGet/Samples repository](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample).
 
 ```
 git clone https://github.com/NuGet/Samples.git
@@ -172,18 +171,14 @@ git clone https://github.com/NuGet/Samples.git
 
 ### Catalog SDK
 
-The easiest way to consume the catalog is to use our pre-release .NET catalog SDK package:
-[`NuGet.Protocol.Catalog`](https://dotnet.myget.org/feed/nuget-build/package/nuget/NuGet.Protocol.Catalog).
-This package is available on the `nuget-build` MyGet feed, which has the following NuGet package source URL:
-```
-https://dotnet.myget.org/F/nuget-build/api/v3/index.json
-```
+The easiest way to consume the catalog is to use the pre-release .NET catalog SDK package:
+[NuGet.Protocol.Catalog](https://dotnet.myget.org/feed/nuget-build/package/nuget/NuGet.Protocol.Catalog).
+This package is available on the `nuget-build` MyGet feed, for which you use the NuGet package source URL `https://dotnet.myget.org/F/nuget-build/api/v3/index.json`.
 
-You can install this package to a project compatible with `netstandard1.3` or greater (such as .NET Framework 4.6)
-and start hacking!
+You can install this package to a project compatible with `netstandard1.3` or greater (such as .NET Framework 4.6).
 
 A sample using this package is available on GitHub in the
-[*NuGet.Protocol.Catalog.Sample* project](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/NuGet.Protocol.Catalog.Sample).
+[NuGet.Protocol.Catalog.Sample project](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/NuGet.Protocol.Catalog.Sample).
 
 #### Sample output
 
@@ -221,16 +216,14 @@ warn: NuGet.Protocol.Catalog.CatalogProcessor[0]
 
 ### Minimal sample
 
-If you are interested in an example with fewer dependencies and one that illustrates the interaction with the catalog
-in more detail, you can take a look at the
-[*CatalogReaderExample* sample project](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/CatalogReaderExample).
-The project is `netcoreapp2.0` and depends on the [NuGet.Protocol 4.4.0](https://www.nuget.org/packages/NuGet.Protocol/4.4.0)
+For an example with fewer dependencies that illustrates the interaction with the catalog in more detail, see the 
+[CatalogReaderExample sample project](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/CatalogReaderExample).
+The project targets `netcoreapp2.0` and depends on the [NuGet.Protocol 4.4.0](https://www.nuget.org/packages/NuGet.Protocol/4.4.0)
 (for resolving the service index) and
 [Newtonsoft.Json 9.0.1](https://www.nuget.org/packages/Newtonsoft.Json/9.0.1) (for JSON deserialization).
 
 The main logic of the code is visible in the
-[`Program.cs`](https://github.com/NuGet/Samples/blob/master/CatalogReaderExample/CatalogReaderExample/Program.cs)
-file.
+[Program.cs file](https://github.com/NuGet/Samples/blob/master/CatalogReaderExample/CatalogReaderExample/Program.cs).
 
 #### Sample output
 
