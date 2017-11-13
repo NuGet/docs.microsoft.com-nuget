@@ -167,9 +167,9 @@ This is not an issue when using PackageReference, as each project file contains 
 
 ## Managing packages on nuget.org
 
-**Can I edit package metadata after it's been uploaded? Why do you recommend editing the nuspec and uploading a new package for making changes to package metadata?**
+**Can I edit package metadata after it's been uploaded? Why do you require editing the nuspec and uploading a new package for making changes to package metadata?**
 
-NuGet will be implementing package signing. A design principle of package signing is that signed package content must be immutable, which includes the nuspec. Editing the package metadata results in changes to the nuspec, invalidating existing signatures. We recommend modifying existing workflows to not require editing the package metadata after the package has been created.
+NuGet requires all packages to be signed. A design principle of package signing is that signed package content must be immutable, which includes the nuspec. Editing the package metadata results in changes to the nuspec, invalidating existing signatures. We recommend modifying existing workflows to not require editing the package metadata after the package has been created.
 
 Note that dependencies listed for your package are generated automatically from the package itself and cannot be edited.
 
