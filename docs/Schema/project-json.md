@@ -80,6 +80,48 @@ When restoring packages, the version constraint of `"5.0.0"` implies `>= 5.0.0`.
 
 See [Dependency resolution](../consume-packages/dependency-resolution.md) for more details on resolution rules.
 
+### Managing dependency assets
+
+Which assets from dependencies flow into the top-level project is controlled by specifying a comma-delimited set of tags in the `include` and `exclude` properties of the dependency reference. The tags are listed the table below:
+
+| Include/Exclude tag | Affected folders of the target |
+| --- | --- |
+| contentFiles | Content  |
+| runtime | Runtime, Resources, and FrameworkAssemblies  |
+| compile | lib |
+| build | build (MSBuild props and targets) |
+| native | native |
+| none | No folders |
+| all | All folders |
+
+Tags specified with `exclude` take precedence over those specified with `include`. For example, `include="runtime, compile" exclude="compile"` is the same as `include="runtime"`.
+
+For example, to include the `build` and `native` folders of a dependency, use the following:
+
+```json
+{
+  "dependencies": {
+    "packageA": {
+      "version": "1.0.0",
+      "include": "build, native"
+    }
+  }
+}
+```
+
+To exclude the `content` and `build` folders of a dependency, use the following:
+
+```json
+{
+  "dependencies": {
+    "packageA": {
+      "version": "1.0.0",
+      "exclude": "contentFiles, build"
+    }
+  }
+}
+```
+
 ## Frameworks
 
 Lists the frameworks that the project runs on, such as `net45`, `netcoreapp`, `netstandard`.
