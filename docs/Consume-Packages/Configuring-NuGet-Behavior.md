@@ -19,7 +19,6 @@ keywords: NuGet config files, NuGet configuration, NuGet behavior settings, NuGe
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # Configuring NuGet behavior

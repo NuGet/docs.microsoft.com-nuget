@@ -14,21 +14,21 @@ ms.assetid: 29b3bceb-0f35-4cdd-bbc3-a04eb823164c
 
 # optional metadata
 
-description: An end-to-end walkthrough of creating .NET standard NuGet packages using NuGet 3.x and Visual Studio 2015.
-keywords: create a package, .NET Standard packages, .NET standard mapping table
+description: An end-to-end walkthrough of creating .NET Standard NuGet packages using NuGet 3.x and Visual Studio 2015.
+keywords: create a package, .NET Standard packages, .NET Standard mapping table
 #ROBOTS:
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
 
 ---
 
-# Create .NET standard packages with Visual Studio 2015
+# Create .NET Standard packages with Visual Studio 2015
 
 *Applies to NuGet 3.x. See [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) for working with NuGet 4.x+.*
 

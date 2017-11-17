@@ -20,8 +20,8 @@ keywords: NuGet API, NuGet in Visual Studio, NuGet programming interfaces
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -59,14 +59,14 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
 
     ```cs
     //Using the Import attribute
-    [Import(typeof(IVsPackageInstaller))]
-    public IVsPackageInstaller packageInstaller;
-    packageInstaller.InstallPackage("nuget.org", currentProject,
-        "Newtonsoft.Json", "9.0.1", false);
+    [Import(typeof(IVsPackageInstaller2))]
+    public IVsPackageInstaller2 packageInstaller;
+    packageInstaller.InstallLatestPackage(null, currentProject,
+        "Newtonsoft.Json", false, false);
 
     //Using the IComponentModel service
     var componentModel = (IComponentModel)GetService(typeof(SComponentModel));
-        IVsPackageInstallerServices installerServices =
+    IVsPackageInstallerServices installerServices =
         componentModel.GetService<IVsPackageInstallerServices>();
 
     var installedPackages = installerServices.GetInstalledPackages();

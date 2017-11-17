@@ -20,8 +20,8 @@ keywords: NuGet release notes, NuGet known issues
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -31,6 +31,8 @@ ms.reviewer:
 # Release Notes
 
 [Known Issues](../release-notes/known-issues.md)
+
+[NuGet 4.4 RTM](../release-notes/nuget-4.4-rtm.md)
 
 [NuGet 4.3 RTM](../release-notes/nuget-4.3-rtm.md)
 

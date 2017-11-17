@@ -9,7 +9,8 @@
         "exclude": [
           "**/obj/**",
           "nuget/**",
-          "**/includes/**"
+          "**/includes/**",
+          "archive/**"
         ]
       }
     ],
@@ -18,7 +19,9 @@
         "files": [
           "**/*.png",
           "**/*.jpg",
-          "**/*.svg"
+          "**/*.svg",
+          "**/*.json",
+          "**/*.xml"
         ],
         "exclude": [
           "**/obj/**",

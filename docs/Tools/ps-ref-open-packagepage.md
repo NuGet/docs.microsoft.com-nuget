@@ -20,8 +20,8 @@ keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powers
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -50,7 +50,7 @@ Open-PackagePage [-Id] <string> [-Version] [-Source] [-License] [-ReportAbuse]
 | Source | The package source, defaulting to the selected source in the source drop-down. |
 | License | Opens the browser to the package's License URL. If neither -License nor -ReportAbuse is specified, the browser opens the package's Project URL. |
 | ReportAbuse | Opens the browser to the package's Report Abuse URL. If neither -License nor -ReportAbuse is specified, the browser opens the package's Project URL. |
-| PassThru | Displays the URL but does not open it in the browser. |
+| PassThru | Displays the URL; use with -WhatIf to suppress opening the browser. |
 
 None of these parameters accept pipeline input or wildcard characters.
 
@@ -71,6 +71,6 @@ Open-PackagePage Ninject -License
 Open-PackagePage Ninject -ReportAbuse
 
 # Assigns the license URL to the variable, $url, without launching the browser
-$url = Open-PackagePage Ninject -License -PassThru
+$url = Open-PackagePage Ninject -License -PassThru -WhatIf
 ```
   

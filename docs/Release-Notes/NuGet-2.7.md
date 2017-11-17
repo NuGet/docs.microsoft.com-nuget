@@ -3,7 +3,7 @@
 
 title: NuGet 2.7 Release Notes | Microsoft Docs
 author: karann-msft
-ms.author: karann
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ keywords: NuGet 2.7 release notes, bug fixes, known issues, added features, DCRs
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -115,7 +115,7 @@ This new Restore command allows you to easily restore all packages for a solutio
 1. nuget.exe restore .
 1. nuget.exe restore
 
-The Restore command will open the solution file and find all projects within the solution. From there, it will find the `packages.config` files for each of the projects and restore all of the packages found. It also restores solution-level packages found in the `.nuget\packages.config` file. More information about the new Restore command can be found in the [Command-Line Reference](../tools/nuget-exe-cli-reference.md#restore).
+The Restore command will open the solution file and find all projects within the solution. From there, it will find the `packages.config` files for each of the projects and restore all of the packages found. It also restores solution-level packages found in the `.nuget\packages.config` file. More information about the new Restore command can be found in the [Command-Line Reference](../tools/cli-ref-restore.md).
 
 #### The New Package Restore Workflow
 

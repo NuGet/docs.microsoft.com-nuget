@@ -20,8 +20,8 @@ keywords: NuGet package dependencies, package references, project files, Package
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -86,7 +86,7 @@ You might be using a dependency purely as a development harness and might not wa
     <!-- ... -->
 
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0">
-        <PrivateAssets>All</PrivateAssets>
+        <PrivateAssets>all</PrivateAssets>
     </PackageReference>
 
     <!-- ... -->
@@ -122,7 +122,7 @@ In the following example, everything except the content files from the package w
     <!-- ... -->
 
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0">
-        <IncludeAssets>All</IncludeAssets>
+        <IncludeAssets>all</IncludeAssets>
         <ExcludeAssets>contentFiles</ExcludeAssets>
         <PrivateAssets>contentFiles;analyzers</PrivateAssets>
     </PackageReference>

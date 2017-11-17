@@ -1,34 +1,30 @@
 --- 
 # required metadata 
  
-title: Installing NuGet | Microsoft Docs
+title: Installing NuGet client tools | Microsoft Docs
 author: kraigb 
 ms.author: kraigb 
 manager: ghogen 
-ms.date: 7/17/2017
+ms.date: 10/2/2017
 ms.topic: get-started-article
 ms.prod: nuget 
-#ms.service: 
 ms.technology: null 
 ms.assetid: 683b8b34-a6f4-4d56-b9cd-2483bfbad1ad 
  
-# optional metadata 
- 
-description: Guidance on installing the NuGet command-line interface (CLI) and the NuGet Package Manager for Visual Studio.
-keywords: nuget.exe CLI, NuGet package manager, NuGet package manager console, NuGet for Visual Studio, NuGet beta channel
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
+# optional metadata
+
+description: Guidance on installing client tools, the command-line interface (CLI), and the Package Manager for Visual Studio.
+keywords: nuget.exe CLI, NuGet client tools, NuGet package manager, NuGet package manager console, NuGet for Visual Studio, NuGet beta channel
 ms.reviewer:  
-- karann 
-- unnir 
-#ms.suite:  
-#ms.tgt_pltfrm: 
-#ms.custom: 
+- karann-msft 
+- unniravindranathan 
  
 ---
 
-# Installing NuGet
+# Installing NuGet client tools
+
+> [!Tip] 
+> **Looking to install a package? See [Quickstart - Use a package](../Quickstart/Use-a-Package.md).**
 
 There are two primary tools available to help you build, publish and consume NuGet packages:
 
@@ -53,7 +49,7 @@ The following capabilities are supported only in the NuGet CLI:
 - Publish packages
 - Manage Nuget.Config
 - Manage the NuGet cache
-- Replication a package
+- Replicating a package
 
 > [!Note]
 > Another good tool is the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), an open-source, stand-alone tool to visually explore, create, and edit NuGet packages. It's very helpful, for example, to make experimental changes to a package structure without having to rebuild the package each time.
@@ -66,20 +62,22 @@ The NuGet command-line interface provides access to all NuGet capabilities, and 
 
 ### Windows
 
-On Windows, install the NuGet CLI using any of the following methods:
+**Direct download:**
 
-1. **nuget.org**: Various versions of `nuget.exe` are available on [nuget.org/downloads](https://nuget.org/downloads). Each download link points directly to an `.exe` file, so be sure to right-click and save the file to your computer rather than running it from the browser. If desired, add the save location to your PATH environment variable so you can use NuGet from anywhere.
+[!INCLUDE[install-cli](../includes/install-cli.md)]
 
-    > [!Note]
-    > With NuGet 1.4+, you can use `nuget update -self` to update your existing nuget.exe to the latest version.
-    
-1. **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client. 
+> [!Note]
+> With NuGet 1.4+, you can use `nuget update -self` to update your existing nuget.exe to the latest version.
+
+**Other methods:**
+
+- **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client. 
 
     ```
     choco install nuget.commandline
     ```
     
-1. **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.
+- **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.
 
     > [!Note]
     > **For NuGet 2.x users**: Because of breaking changes introduced in NuGet 3.2, [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe) points to the latest stable NuGet 2.x release to prevent continuous integration systems from potentially breaking.
@@ -90,9 +88,9 @@ On Windows, install the NuGet CLI using any of the following methods:
 
 On Mac OSX and Linux, there are two ways to run the NuGet CLI:
 
-1. Install the [.NET Core SDK](https://www.microsoft.com/net/download/core), which includes the core NuGet capabilities. Downloads are also listed on [github.com/dotnet/cli](https://github.com/dotnet/cli). If you need fuller capabilities, then use the second option below to use `nuget.exe` with Mono.
+- Install the [.NET Core SDK](https://www.microsoft.com/net/download/core), which includes the core NuGet capabilities. Downloads are also listed on [github.com/dotnet/cli](https://github.com/dotnet/cli). If you need fuller capabilities, then use the second option below to use `nuget.exe` with Mono.
 
-1. Install [Mono](http://www.mono-project.com/docs/getting-started/install/) and then use the `nuget.exe` command-line executable for Windows (version 3.2 and later) from [nuget.org/downloads](https://nuget.org/downloads). Running NuGet on Mono is subject to the following limitations:
+- Install [Mono](http://www.mono-project.com/docs/getting-started/install/) and then use the `nuget.exe` command-line executable for Windows (version 3.2 and later) from [nuget.org/downloads](https://nuget.org/downloads). Running NuGet on Mono is subject to the following limitations:
 
     - Commands tested to work:
         - config
@@ -124,6 +122,8 @@ On Mac OSX and Linux, there are two ways to run the NuGet CLI:
 
 The NuGet Package Manager is included in every edition of Visual Studio on Windows, 2012 and later. It includes the Package Manager UI ([reference](../tools/package-manager-ui.md)), and the Package Manager Console through which you can access tools that come with certain packages ([reference](../tools/package-manager-console.md)).
 
+The Visual Studio 2017 installer includes the NuGet Package Manager with any workload that employs .NET. To install separately, or to verify that the Package Manager is installed, run the Visual Studio 2017 installer and check the option under **Individual Components > Code tools > NuGet package manager**.
+
 > [!Note]
 > The console requires [PowerShell 2.0](http://support.microsoft.com/kb/968929), which will already be installed on Windows 7 or higher and Windows Server 2008 R2 or higher.
 >
@@ -134,7 +134,7 @@ The NuGet Package Manager is included in every edition of Visual Studio on Windo
 
 *These steps are not necessary for Visual Studio 2012 and later, which already include the Package Manager.*
 
-1. In Visual Studio, click **Tools > Extension and Updates**.
+1. In Visual Studio 2010 and earlier, click **Tools > Extension and Updates**.
 1. Navigate to **Online**, then search for "NuGet Package Manager for Visual Studio" and click **Download**.
 1. In the Installer dialog box, click **Install**.
 1. When installation is complete, restart Visual Studio.
@@ -146,7 +146,7 @@ The NuGet Package Manager is included in every edition of Visual Studio on Windo
 
 For Visual Studio 2015 Update 2 and later, the Package Manager is automatically updated to the latest stable release.
 
-For earlier versions of Visual Studio, select the **Tools > Extensions and Updates** command and click on the **Updates** tab to see if a new version of the Package Manager is available.  
+For Visual Studio 2015 Update 1 and earlier, select the **Tools > Extensions and Updates** command and click on the **Updates** tab to see if a new version of the Package Manager is available.  
 
 ### NuGet previews
 

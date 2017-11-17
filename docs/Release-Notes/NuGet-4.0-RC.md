@@ -3,7 +3,7 @@
 
 title: NuGet 4.0 RC Release Notes | Microsoft Docs
 author: karann-msft
-ms.author: karann
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/17/2016
 ms.topic: article

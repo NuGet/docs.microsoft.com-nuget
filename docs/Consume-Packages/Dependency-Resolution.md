@@ -20,8 +20,8 @@ keywords: NuGet package dependencies, NuGet versioning, dependency versions, ver
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -49,7 +49,7 @@ When installing packages into projects using the PackageReference or `project.js
 
 When the NuGet restore process runs prior to a build, it resolves dependencies first in memory, then writes the resulting graph to a file called `project.assets.json` in the `obj` folder of a project using PackageReference, or in a file named `project.lock.json` alongside `project.json`. MSBuild then reads this file and translates it into a set of folders where potential references can be found, and then adds them to the project tree in memory.
 
-The lock file is temporary should not be added to source control. It's listed by default in both `.gitignore` and `.tfignore`. See [Packages and source control](Packages-and-Source-Control.md).
+The lock file is temporary and should not be added to source control. It's listed by default in both `.gitignore` and `.tfignore`. See [Packages and source control](Packages-and-Source-Control.md).
 
 ### Dependency resolution rules
 

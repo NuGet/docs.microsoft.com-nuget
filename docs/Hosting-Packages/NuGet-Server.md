@@ -20,8 +20,8 @@ keywords: NuGet feed, NuGet gallery, remote package feed, NuGet.Server
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
