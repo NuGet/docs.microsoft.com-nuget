@@ -124,7 +124,7 @@ GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
 
 Name        | In     | Type    | Required | Notes
 ----------- | ------ | ------- | -------- | -----
-id          | URL    | string  | no       | The package ID to fetch versions for
+id          | URL    | string  | yes      | The package ID to fetch versions for
 prerelease  | URL    | boolean | no       | `true` or `false` determining whether to include [pre-release packages](../create-packages/prerelease-packages.md)
 semVerLevel | URL    | string  | no       | A SemVer 2.0.0 version string 
 
