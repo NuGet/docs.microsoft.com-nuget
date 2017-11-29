@@ -139,7 +139,7 @@ Name   | Type             | Required | Notes
 count  | integer          | yes      | The number of registration leaves in the page
 items  | array of objects | no       | The array of registration leaves and their associate metadata
 lower  | string           | yes      | The lowest SemVer 2.0.0 version in the page (inclusive)
-parent | string           | yes      | The URL to the registration index
+parent | string           | no       | The URL to the registration index
 upper  | string           | yes      | The highest SemVer 2.0.0 version in the page (inclusive)
 
 The `lower` and `upper` bounds of the page object are useful when the metadata for a specific page version is needed.
@@ -147,6 +147,8 @@ These bounds can be used to fetch the only registration page needed. The version
 [NuGet's version rules](../reference/package-versioning.md). The version strings are normalized and do not include
 build metadata. As with all versions in the NuGet ecosystem, comparison of version strings is implemented using
 [SemVer 2.0.0's version precedence rules](http://semver.org/spec/v2.0.0.html#spec-item-11).
+
+The `parent` property will only appear if the registration page object has the `items` property.
 
 If the `items` property is not present in the registration page object, the URL specified in the `@id` must be used to
 fetch metadata about individual package versions. The `items` array is sometimes excluded from the page
