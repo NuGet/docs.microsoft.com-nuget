@@ -99,7 +99,7 @@ These elements must appear within a `<metadata>` element.
 | **requireLicenseAcceptance** | A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package. |
 | **developmentDependency** | *(2.8+)* A Boolean value specifying whether the package is be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages. |
 | **summary** | A short description of the package for UI display. If omitted, a truncated version of `description` is used. |
-| **releaseNotes** | *(1.5+)* A description of the changes made in this release of the package, often used in UI like the *Updates* tab of the Visual Studio Package Manager in place of the package description. |
+| **releaseNotes** | *(1.5+)* A description of the changes made in this release of the package, often used in UI like the **Updates** tab of the Visual Studio Package Manager in place of the package description. |
 | **copyright** | *(1.5+)* Copyright details for the package. |
 | **language** | The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md). |
 | **tags** | A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering. |
