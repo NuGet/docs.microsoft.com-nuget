@@ -156,7 +156,7 @@ Tokens can also be used to resolve paths when you include [assembly files](#incl
 
 ```xml
 <files>
-    <file src="bin\$configuration$\$id$.pdb" target="lib\net40\" />
+    <file src="bin\$configuration$\$id$.pdb" target="lib\net40" />
 </files>
 ```
 
@@ -164,7 +164,7 @@ And you build an assembly whose `AssemblyName` is `LoggingLibrary` with the `Rel
 
 ```xml
 <files>
-    <file src="bin\Release\LoggingLibrary.pdb" target="lib\net40\" />
+    <file src="bin\Release\LoggingLibrary.pdb" target="lib\net40" />
 </files>
 ```
 
