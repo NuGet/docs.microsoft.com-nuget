@@ -92,19 +92,19 @@ These elements must appear within a `<metadata>` element.
 | Element | Description |
 | --- | --- |
 | **title** | A human-friendly title of the package, typically used in UI displays as on nuget.org and the Package Manager in Visual Studio. If not specified, the package ID is used. |
-| **owners** | A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in *authors*, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg). |
+| **owners** | A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in `authors`, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg). |
 | **projectUrl** | A URL for the package's home page, often shown in UI displays as well as nuget.org. |
 | **licenseUrl** | A URL for the package's license, often shown in UI displays as well as nuget.org. |
-| **iconUrl** | A URL for a 64x64 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like `https://github.com/<username\>/<repository>/raw/<branch>/<logo.png>`. |
+| **iconUrl** | A URL for a 64x64 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like `https://github.com/<username>/<repository>/raw/<branch>/<logo.png>`. |
 | **requireLicenseAcceptance** | A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package. |
-| **developmentDependency** | *(2.8+)*  A Boolean value specifying whether the package is be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages. |
-| **summary** | A short description of the package for UI display. If omitted, a truncated version of **description** is used. |
+| **developmentDependency** | *(2.8+)* A Boolean value specifying whether the package is be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages. |
+| **summary** | A short description of the package for UI display. If omitted, a truncated version of `description` is used. |
 | **releaseNotes** | *(1.5+)* A description of the changes made in this release of the package, often used in UI like the **Updates** tab of the Visual Studio Package Manager in place of the package description. |
 | **copyright** | *(1.5+)* Copyright details for the package. |
 | **language** | The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md). |
 | **tags** | A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering. |
-| **serviceable** | *(3.3+)*For internal NuGet use only. |
-| **minClientVersion** | *(2.5+)*  Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager. This is used whenever the package depends on specific features of the `.nuspec` file that were added in a particular version of the NuGet client. For example, a package using the `developmentDependency` attribute should specify "2.8" for `minClientVersion`. Similarly, a package using the `contentFiles` element (see the next section) should set `minClientVersion` to "3.3". Note also that because NuGet clients prior to 2.5 do not recognize this flag, they *always* refuse to install the package no matter what `minClientVersion` contains. |
+| **serviceable** | *(3.3+)* For internal NuGet use only. |
+| **minClientVersion** | *(2.5+)* Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager. This is used whenever the package depends on specific features of the `.nuspec` file that were added in a particular version of the NuGet client. For example, a package using the `developmentDependency` attribute should specify "2.8" for `minClientVersion`. Similarly, a package using the `contentFiles` element (see the next section) should set `minClientVersion` to "3.3". Note also that because NuGet clients prior to 2.5 do not recognize this flag, they *always* refuse to install the package no matter what `minClientVersion` contains. |
 
 #### Collection elements
 
@@ -156,7 +156,7 @@ Tokens can also be used to resolve paths when you include [assembly files](#incl
 
 ```xml
 <files>
-    <file src="bin\$configuration$\$id$.pdb" target="lib\net40\" />
+    <file src="bin\$configuration$\$id$.pdb" target="lib\net40" />
 </files>
 ```
 
