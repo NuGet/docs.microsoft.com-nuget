@@ -23,7 +23,7 @@ No contribution is too big or too small--
     1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
     1. When using external links, especially to docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
 1. When you're done, enter a commit message below, and click **Propose file change**.
-1. Send a pull request for your change. We review PRs on a regular basis.'
+1. Send a pull request for your change. We review PRs on a regular basis.
 1. Thank you!
 
 If you're creating a new topic, keep the following in mind as well:
