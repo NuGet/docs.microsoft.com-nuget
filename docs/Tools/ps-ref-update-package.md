@@ -8,23 +8,16 @@ manager: ghogen
 ms.date: 7/17/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 90f4dcb0-6e5a-4948-8ea9-62e0d061d95a
+ms.assetid: b4aa92a9-ce47-4d23-ae51-d5683e08a9d5
 
 # optional metadata
 
 description: Reference for Update-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Update-Package
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 
 ---
 

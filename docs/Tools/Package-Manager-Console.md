@@ -47,7 +47,7 @@ For example, finding and installing a package is done with three easy steps:
 
 In this topic:
 
-- [Opening the console](#opening-the-console)
+- [Opening the console](#opening-the-console-and-console-controls)
 - [Installing a package](#installing-a-package)
 - [Uninstalling a package](#uninstalling-a-package)
 - [Finding a package](#finding-a-package)

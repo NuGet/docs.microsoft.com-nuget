@@ -1,0 +1,50 @@
+{
+  "count": 1,
+  "items": [
+    {
+      "@id": "https://api.nuget.org/v3/registration3/nuget.server.core/index.json#page/3.0.0-beta/3.0.0-beta",
+      "count": 1,
+      "items": [
+        {
+          "@id": "https://api.nuget.org/v3/registration3/nuget.server.core/3.0.0-beta.json",
+          "catalogEntry": {
+            "@id": "https://api.nuget.org/v3/catalog0/data/2017.10.05.18.41.33/nuget.server.core.3.0.0-beta.json",
+            "authors": ".NET Foundation",
+            "dependencyGroups": [
+              {
+                "@id": "https://api.nuget.org/v3/catalog0/data/2017.10.05.18.41.33/nuget.server.core.3.0.0-beta.json#dependencygroup",
+                "dependencies": [
+                  {
+                    "@id": "https://api.nuget.org/v3/catalog0/data/2017.10.05.18.41.33/nuget.server.core.3.0.0-beta.json#dependencygroup/nuget.core",
+                    "id": "NuGet.Core",
+                    "range": "[2.14.0, )",
+                    "registration": "https://api.nuget.org/v3/registration3/nuget.core/index.json"
+                  }
+                ]
+              }
+            ],
+            "description": "Core library for creating a Web Application used to host a simple NuGet feed",
+            "iconUrl": "",
+            "id": "NuGet.Server.Core",
+            "language": "",
+            "licenseUrl": "https://raw.githubusercontent.com/NuGet/NuGet.Server/dev/LICENSE.txt",
+            "listed": true,
+            "minClientVersion": "2.6",
+            "packageContent": "https://api.nuget.org/v3-flatcontainer/nuget.server.core/3.0.0-beta/nuget.server.core.3.0.0-beta.nupkg",
+            "projectUrl": "https://github.com/NuGet/NuGet.Server",
+            "published": "2017-10-05T18:40:32.43+00:00",
+            "requireLicenseAcceptance": false,
+            "summary": "",
+            "tags": [ "" ],
+            "title": "",
+            "version": "3.0.0-beta"
+          },
+          "packageContent": "https://api.nuget.org/v3-flatcontainer/nuget.server.core/3.0.0-beta/nuget.server.core.3.0.0-beta.nupkg",
+          "registration": "https://api.nuget.org/v3/registration3/nuget.server.core/index.json"
+        }
+      ],
+      "lower": "3.0.0-beta",
+      "upper": "3.0.0-beta"
+    }
+  ]
+}

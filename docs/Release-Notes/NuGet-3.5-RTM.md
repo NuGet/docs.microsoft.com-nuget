@@ -8,23 +8,16 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 4153ff3f-f97f-4e54-b638-e844f70edf22
+ms.assetid: 082a96b9-607b-4225-864d-e1cea537f591
 
 # optional metadata
 
 description: Release notes for NuGet 3.5 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 3.5 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 
 ---
 

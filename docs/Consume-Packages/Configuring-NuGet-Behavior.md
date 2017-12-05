@@ -19,7 +19,6 @@ keywords: NuGet config files, NuGet configuration, NuGet behavior settings, NuGe
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # Configuring NuGet behavior
@@ -90,7 +89,6 @@ nuget config -set repositoryPath=/home/packages -configfile $XDG_DATA_HOME/NuGet
 
 > [!Note]
 > In NuGet 3.4 and later you can use environment variables in any value, as in `repositoryPath=%PACKAGEHOME%` (Windows) and `repositoryPath=%PACKAGEHOME` (Mac/Linux).
-
 
 ### Removing a value
 

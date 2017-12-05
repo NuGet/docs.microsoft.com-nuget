@@ -57,6 +57,7 @@ where `<packageID>` names the package to install (using the latest version), or 
 | FallbackSource | *(3.2+)* A list of package sources to use as fallbacks in case the package isn't found in the primary or default source. |
 | FileConflictAction | *(2.5+)* Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Values are *overwrite, ignore, none*. |
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
+| Framework | *(4.4+)* Target framework used for selecting dependencies. Defaults to 'Any' if not specified. |
 | Help | Displays help information for the command. |
 | NoCache | Prevents NuGet from using packages from local machine caches. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |

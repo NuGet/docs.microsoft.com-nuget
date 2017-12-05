@@ -66,7 +66,7 @@ To install a NuGet package, you need some kind of .NET-based project in Visual S
 
 With the Newtonsoft.Json package in the project, you can call its `JsonConvert.SerializeObject` method to convert an object to a human-readable string.
 
-1. Open `MainWindwos.xaml` (WPF) or `MainPage.xaml` (UWP) and replace the existing `Grid` element with the following:
+1. Open `MainWindow.xaml` (WPF) or `MainPage.xaml` (UWP) and replace the existing `Grid` element with the following:
 
     ```xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
