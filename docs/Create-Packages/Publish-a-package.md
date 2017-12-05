@@ -68,7 +68,7 @@ Next, you can either upload the package through the nuget.org web portal, push t
 4. Push your package to NuGet Gallery using the command:
 
     ```
-    nuget push YourPackage.nupkg -Source https://www.nuget.org/api/v2/package
+    nuget push YourPackage.nupkg -Source https://api.nuget.org/v3/index.json
     ```
 
 5. Before being made public, all packages uploaded to nuget.org are scanned for viruses and rejected if any viruses are found. All packages listed on nuget.org are also scanned periodically.

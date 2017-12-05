@@ -95,7 +95,7 @@ These elements must appear within a `<metadata>` element.
 | **owners** | A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in *authors*, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg). |
 | **projectUrl** | A URL for the package's home page, often shown in UI displays as well as nuget.org. |
 | **licenseUrl** | A URL for the package's license, often shown in UI displays as well as nuget.org. |
-| **iconUrl** | A URL for a 64x64 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like `https://github.com/<username\>/<repsitory>/raw/<branch>/<logo.png>`. |
+| **iconUrl** | A URL for a 64x64 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like https://github.com/username/repository-/raw/branch/logo.png. |
 | **requireLicenseAcceptance** | A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package. |
 | **developmentDependency** | *(2.8+)*  A Boolean value specifying whether the package is be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages. |
 | **summary** | A short description of the package for UI display. If omitted, a truncated version of **description** is used. |
@@ -126,7 +126,7 @@ When creating a package, the [`nuget pack` command](../tools/cli-ref-pack.md) re
 
 On the command line, you specify token values with `nuget pack -properties <name>=<value>;<name>=<value>`. For example, you can use a token such as `$owners$` and `$desc$` in the `.nuspec` and provide the values at packing time as follows:
 
-```
+```ps
 nuget pack MyProject.csproj -properties
     owners=janedoe,harikm,kimo,xiaop;desc="Awesome app logger utility"
 ```
@@ -135,7 +135,7 @@ To use values from a project, specify the tokens described in the table below (A
 
 To use these tokens, run `nuget pack` with the project file rather than just the `.nuspec`. For example, when using the following command, the `$id$` and `$version$` tokens in a `.nuspec` file are replaced with the project's `AssemblyName` and `AssemblyVersion` values:
 
-```
+```ps
 nuget pack MyProject.csproj
 ```
 

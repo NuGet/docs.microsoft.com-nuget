@@ -134,7 +134,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `push` comm
 1. At a command prompt, run the following command, specifying your package name and replacing the key with the value copied in step 4:
 
     ```
-    nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://www.nuget.org/api/v2/package
+    nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://api.nuget.org/v3/index.json
     ```
     
 1. nuget.exe displays the results of the publishing process:

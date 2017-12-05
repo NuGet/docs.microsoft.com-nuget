@@ -25,14 +25,14 @@ ms.reviewer:
 
 **Applies to:** package consumption &bullet; **Supported versions:** all
 
-Downloads and installs a package into a project using the specified package sources. 
+Downloads and installs a package into a project, defaulting to the current folder, using specified package sources. 
 
 > [!Tip]
-> The nuget.exe CLI downloads packages within the context of a project. To download a package directly outside the context of a project, visit the package's page on [nuget.org](https://www.nuget.org) and select the **Download** link. 
+> To download a package directly outside the context of a project, visit the package's page on [nuget.org](https://www.nuget.org) and select the **Download** link. 
 
-If no sources are specified, those listed in the global configuration file, `%APPDATA%\NuGet\NuGet.Config`, will be used. See [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md) for additional details.
+If no sources are specified, those listed in the global configuration file, `%APPDATA%\NuGet\NuGet.Config`, are used. See [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md) for additional details.
 
-If no specific packages are specified, `install` installs all packages listed in the project's `packages.config` file, making it similar to [`restore`](#restore). In this case, `install` does not work with projects that use `project.json`.
+If no specific packages are specified, `install` installs all packages listed in the project's `packages.config` file, making it similar to [`restore`](#restore). (The `install` command does not work with `project.json`.)
 
 The `install` command does not modify a project file or `packages.config`; in this way it's similar to `restore` in that it only adds packages to disk but does not change a project's dependencies.
 

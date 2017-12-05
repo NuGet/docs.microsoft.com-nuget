@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Troubleshooting NuGet Package Restore in Visual STudio | Microsoft Docs
+title: Troubleshooting NuGet Package Restore in Visual Studio | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
