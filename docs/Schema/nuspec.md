@@ -5,7 +5,7 @@ title: .nuspec File Reference for NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/25/2017
+ms.date: 8/29/2017
 ms.topic: reference
 ms.prod: nuget
 #ms.service:
@@ -176,6 +176,18 @@ The `<dependencies>` element within `<metadata>` contains any number of `<depend
 | --- | --- | 
 | `id` | (Required) The package ID of the dependency. |
 | `version` | (Required) The range of versions acceptable as a dependency. See [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards) for exact syntax. |
+| include | A comma-delimited list of include/exclude tags (see below) indicating of the dependency to include in the final package. The default value is `none`. |
+| exclude | A comma-delimited list of include/exclude tags (see below) indicating of the dependency to exclude in the final package. The  default value is `all`. Tags specified with `exclude` take precedence over those specified with `include`. For example, `include="runtime, compile" exclude="compile"` is the same as `include="runtime"`. |
+
+| Include/Exclude tag | Affected folders of the target |
+| --- | --- |
+| contentFiles | Content  |
+| runtime | Runtime, Resources, and FrameworkAssemblies  |
+| compile | lib |
+| build | build (MSBuild props and targets) |
+| native | native |
+| none | No folders |
+| all | All folders |
 
 For example, the following lines indicate dependencies on `PackageA` version 1.1.0 or higher, and `PackageB` version 1.x.
 
@@ -186,7 +198,16 @@ For example, the following lines indicate dependencies on `PackageA` version 1.1
 </dependencies>
 ```
 
-When creating a `.nuspec` from a project using `nuget spec`, dependencies that exist in that project are automatically included in the resulting `.nuspec` file.
+The following lines indicate dependencies on the same packages, but specify to include the `contentFiles` and `build` folders of `PackageA` and everything but the `native` and `compile` folders of `PackageB`"
+
+```xml
+<dependencies>
+    <dependency id="PackageA" version="1.1.0" include="contentFiles, build" />
+    <dependency id="PackageB" version="[1,2)" exclude="native, compile" />
+</dependencies>
+```
+
+Note: When creating a `.nuspec` from a project using `nuget spec`, dependencies that exist in that project are automatically included in the resulting `.nuspec` file.
 
 ### Dependency groups
 

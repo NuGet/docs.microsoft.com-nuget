@@ -113,10 +113,10 @@ GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
 
 ### Request parameters
 
-Name          | In     | Type    | Required | Notes
-------------- | ------ | ------- | -------- | -----
-LOWER_ID      | URL    | string  | yes      | The package ID, lowercase
-LOWER_VERSION | URL    | integer | yes      | The package version, normalized and lowercased
+Name          | In     | Type   | Required | Notes
+------------- | ------ | ------ | -------- | -----
+LOWER_ID      | URL    | string | yes      | The package ID, lowercase
+LOWER_VERSION | URL    | string | yes      | The package version, normalized and lowercased
 
 Both `LOWER_ID` and `LOWER_VERSION` are lowercased using the rules implemented by .NET's
 [`System.String.ToLowerInvariant()`](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx)
