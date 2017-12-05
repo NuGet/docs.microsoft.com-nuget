@@ -44,7 +44,7 @@ where `<packageID>` and `<packageVersion>` identify the exact package to delete 
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
-| Source | Specifies the server URL. Supported URLs for nuget.org include `https://www.nuget.org`, `https://www.nuget.org/api/v3`, `https://www.nuget.org/api/v2/package`. For private feeds, substitute the host name, for example, *%hostname%/api/v3*. |
+| Source | Specifies the server URL. The URL for nuget.org is `https://api.nuget.org/v3/index.json`. For private feeds, substitute the host name, for example, *%hostname%/api/v3*. |
 | Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed (2.5+)*. |
 
 Also see [Environment variables](cli-ref-environment-variables.md)

@@ -1,31 +1,18 @@
 ---
-# required metadata
-
 title: Overview and workflow of using NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/6/2017
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 3c60f920-457d-4f43-9efe-210c514e5242
-
-# optional metadata
-
 description: An overview of the process of consuming NuGet packages in a project, with links to other specific parts of the process.
 keywords: NuGet package consumption, NuGet consumption overview, NuGet consumption workflow, package consumption workflow, package consumption overview
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Package consumption workflow

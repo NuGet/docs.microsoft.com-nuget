@@ -1,35 +1,23 @@
 ---
-# required metadata
-
 title: Introductory Guide to Using NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/4/2017
+ms.date: 10/04/2017
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: null
 ms.assetid: f31f8259-20a8-4617-880e-5819299372d2
-
-# optional metadata
-
 description: A walkthrough tutorial on the process of installing and using a NuGet package in a project.
 keywords: install NuGet, NuGet package consumption, installing NuGet packages, NuGet package references, using NuGet packages
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # Install and use a package
 
-Installing a package happens in three ways:
-
-| Method | Description | Reference |
-| --- | --- | --- | 
-| nuget.exe CLI: `nuget install <package_name>` | Downloads the package identified by \<package_name\> and expands its contents into a folder in the current directory. No changes are made to any project files. Dependencies are also downloaded and expanded. | [CLI reference](../tools/nuget-exe-CLI-Reference.md) |
-| Package Manager Console (Visual Studio): `Install-Package <package_name>` | Downloads and installs the package into the current project, then update the project file to list the package as a dependency. | [Package Manager Console Guide](../tools/Package-Manager-Console.md) |
-| Package Manager UI (Visual Studio) | Provides a UI through which you can browse, select, and install packages into a project. Updates the project file to list the package as a dependency. | [Package Manager UI Reference](../tools/Package-Manager-UI.md) |
+[!INCLUDE [install-methods](../includes/install-methods.md)]
 
 Once installed, refer to the package in code with `using <namespace>` where \<namespace\> is specific to the package you're using. Once the reference is made, you can call the package through its API.
 

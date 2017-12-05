@@ -25,9 +25,9 @@ ms.reviewer:
 
 **Applies to:** package consumption &bullet; **Supported versions:** all
 
-Updates all packages in a project the latest available versions. It is recommended to run ['restore'](#restore) before running the `update`.
+Updates all packages in a project (using `packages.config`) to their latest available versions. It is recommended to run ['restore'](#restore) before running the `update`.
 
-Note: `update` does not work with the CLI running under Mono (Mac OSX or Linux). The command also does not work with projects using `project.json`.
+Note: `update` does not work with the CLI running under Mono (Mac OSX or Linux). The command also does not work with projects using `project.json` or PackageReference management formats.
 
 The `update` command also updates assembly references in the project file, provided those references already exist. If an updated package has an added assembly, a new reference is *not* added. New package dependencies also don't have their assembly references added. To include these operations as part of an update, update the package in Visual Studio using the Package Manager UI or the Package Manager Console.
 

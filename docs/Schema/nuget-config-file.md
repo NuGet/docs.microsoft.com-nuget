@@ -250,7 +250,7 @@ Identifies to the currently active source or indicates the aggregate of all sour
 ```xml
 <activePackageSource>
     <!-- Only one active source-->
-    <add key="nuget.org" value="https://nuget.org/api/v2/" />
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
 
     <!-- All non-disabled sources are active -->
     <add key="All" value="(Aggregate source)" />
@@ -314,7 +314,7 @@ Below is an example `NuGet.Config` file that illustrates a number of settings:
         See: nuget.exe help update
     -->
     <packageSources>
-        <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
+        <add key="NuGet official package source" value="https://api.nuget.org/v3/index.json" />
         <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
     </packageSources>
 
