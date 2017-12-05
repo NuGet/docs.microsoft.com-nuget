@@ -66,7 +66,7 @@ There is no workaround at this time.
 
 ## Issues fixed in NuGet 4.5 RTM timeframe
 
-[NuGet 4.4 RTM Release Notes](../release-notes/nuget-4.4-RTM.md) - Lists all the issues fixed for NuGet 4.4 RTM
+For issues fixed in NuGet 4.4 RTM, please refer to [NuGet 4.4 RTM Release Notes](../release-notes/nuget-4.4-RTM.md) 
 
 **Feature:**
 
