@@ -23,20 +23,22 @@ ms.reviewer:
 
 # Package Manager Console
 
-The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later. The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation.
+The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later. (It is not included with Visual Studio for Mac or Visual Studio Code.)
+
+The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation.
 
 For example, finding and installing a package is done with three easy steps:
 
 1. Open the project/solution in Visual Studio, and open the console using the **Tools > NuGet Package Manager > Package Manager Console** command.
 
-2. Find the package you want to install. If you already know this, skip to step 3.
+1. Find the package you want to install. If you already know this, skip to step 3.
 
     ```ps
     # Find packages containing the keyword "elmah"
     Find-Package elmah
-   ```
+    ```
 
-3. Run the install command
+1. Run the install command:
 
     ```ps
     # Install the Elmah package to the project named MyProject.
@@ -64,20 +66,19 @@ In this topic:
 
 1. Open the console in Visual Studio using the **Tools > NuGet Package Manager > Package Manager Console** command. The console is a Visual Studio window that can be arranged and positioned however you like (see [Customize window layouts in Visual Studio](https://docs.microsoft.com/visualstudio/ide/customizing-window-layouts-in-visual-studio)).
 
-2. By default, console commands operate against a specific package source and project as set in the control at the top of the window:
+1. By default, console commands operate against a specific package source and project as set in the control at the top of the window:
 
     ![Package Manager Console controls for package source and project](media/PackageManagerConsoleControls1.png)
 
-3. Selecting a different package source and/or project changes those defaults for subsequent commands. To overrride these settings without changing the defaults, most commands support `-Source` and `-ProjectName` options.
+1. Selecting a different package source and/or project changes those defaults for subsequent commands. To overrride these settings without changing the defaults, most commands support `-Source` and `-ProjectName` options.
 
-4. To manage package sources, select the gear icon. This is a shortcut to the **Tools > Options > NuGet Package Manager > Package Sources** dialog box as described on the [Package Manager UI](Package-Manager-UI.md#package-sources) page. Also, the control to the right of the project selector clears the console's contents:
+1. To manage package sources, select the gear icon. This is a shortcut to the **Tools > Options > NuGet Package Manager > Package Sources** dialog box as described on the [Package Manager UI](Package-Manager-UI.md#package-sources) page. Also, the control to the right of the project selector clears the console's contents:
 
     ![Package Manager Console settings and clear controls](media/PackageManagerConsoleControls2.png)
 
-5. The rightmost button interrupts a long-running command. For example, running `Get-Package -ListAvailable -PageSize 500` lists the top 500 packages on the default source (such as nuget.org), which could take several minutes to run.
+1. The rightmost button interrupts a long-running command. For example, running `Get-Package -ListAvailable -PageSize 500` lists the top 500 packages on the default source (such as nuget.org), which could take several minutes to run.
 
     ![Package Manager Console stop control](media/PackageManagerConsoleControls3.png)
-
 
 ## Installing a package
 
@@ -166,7 +167,6 @@ Find-Package jquery -AllVersions -ExactMatch
 
 See [Find-Package](../tools/ps-ref-find-package.md). In Visual Studio 2013 and earlier, use [Get-Package](../tools/ps-ref-get-package.md) instead.
 
-
 ## Availability of the console
 
 In Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed when you select any .NET-related workloads; you can also install it individually by checking the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.
@@ -175,13 +175,13 @@ Also, if you're missing the NuGet Package Manager in Visual Studio 2015 and earl
 
 The Package Manager Console is not presently available with Visual Studio for Mac. The equivalent commands, however, are available through the [NuGet CLI](nuget-exe-CLI-reference.md). Visual Studio for Mac does have a UI for managing NuGet packages. See [Including a NuGet package in your project](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
+The Package Manager Console is not included with Visual Studio Code.
 
 ## Extending the Package Manager Console
 
 Some packages install new commands for the console. For example, `MvcScaffolding` creates commands like `Scaffold` shown below, which generates ASP.NET MVC controllers and views:
 
 ![Installing and using MvcScaffold](media/PackageManagerConsoleInstall.png)
-
 
 ## Setting up a NuGet PowerShell Profile
 
@@ -193,7 +193,7 @@ A PowerShell profile lets you make commonly-used commands available wherever you
 
 To find the profile, type `$profile` in the console:
 
-```ps    
+```ps
 $profile
 C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```

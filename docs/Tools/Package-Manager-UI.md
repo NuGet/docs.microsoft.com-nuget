@@ -28,7 +28,7 @@ ms.reviewer:
 
 # NuGet Package Manager UI
 
-The NuGet Package Manager UI in Visual Studio on Windows allows you to easily install, uninstall, and update NuGet packages in projects and solutions. For the experience in Visual Studio for Mac, see [Including a NuGet package in your project](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+The NuGet Package Manager UI in Visual Studio on Windows allows you to easily install, uninstall, and update NuGet packages in projects and solutions. For the experience in Visual Studio for Mac, see [Including a NuGet package in your project](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough). The Package Manager UI is not included with Visual Studio Code.
 
 In this topic:
 
@@ -44,49 +44,47 @@ In this topic:
 >
 > In Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed with any .NET-related workloads. Install it individuall by selecting the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.
 
-
 ## Finding and installing a package
 
 1. In **Solution Explorer**, right-click either **References**  or a project and select **Manage NuGet Packages...**.
 
     ![Manage NuGet Packages menu option](media/ManagePackagesUICommand.png)
 
-2. The **Browse** tab displays packages by popularity from the currently selected source (see [package sources](#package-sources)). Search for a specific package using the search box on the upper left. Select a package from the list to display its information, which also enables the **Install** button along with a version-selection drop-down.
+1. The **Browse** tab displays packages by popularity from the currently selected source (see [package sources](#package-sources)). Search for a specific package using the search box on the upper left. Select a package from the list to display its information, which also enables the **Install** button along with a version-selection drop-down.
 
     ![Manage NuGet Packages Dialog Browse tab](media/Search.png)
-   
-4. Select the desired version from the drop-down and select **Install**. Visual Studio installs the package and its dependencies into the project. You may be asked to accept license terms. When installation is complete, the added packages appear on the **Installed** tab. Packages are also listed in the **References** node of Solution Explorer, indicating that you can refer to them in the project with `using` statements.
+
+1. Select the desired version from the drop-down and select **Install**. Visual Studio installs the package and its dependencies into the project. You may be asked to accept license terms. When installation is complete, the added packages appear on the **Installed** tab. Packages are also listed in the **References** node of Solution Explorer, indicating that you can refer to them in the project with `using` statements.
 
     ![References in Solution Explorer](media/References.png)
 
 > [!Tip]
     > To include prerelease versions in the search, and to make prerelease versions available in the version drop-down, select the **Include prerelease** option.
 
-
 ## Uninstalling a package
 
 1. In **Solution Explorer**, right-click either **References** or the desired project, and select **Manage NuGet Packages...**.
-2. Select the **Installed** tab.
-3. Select the package to uninstall (using search to filter the list if necessary) and select **Uninstall**.
+1. Select the **Installed** tab.
+1. Select the package to uninstall (using search to filter the list if necessary) and select **Uninstall**.
 
     ![Uninstalling a package](media/UninstallPackage.png)
 
-4. Note that the **Include preprelease** and **Package source** controls have no effect when uninstalling packages.
- 
+1. Note that the **Include preprelease** and **Package source** controls have no effect when uninstalling packages.
+
 ## Updating a package
 
 1. In **Solution Explorer**, right-click either **References** or the desired project, and select **Manage NuGet Packages...**. (In web site projects, right-click the **Bin** folder.)
-2. Select the **Updates** tab to see packages that have available updates from the selected package sources. Select **Include prerelease** to include prerelease packages in the update list.
-3. Select the package to update, select the desired version from the drop-down on the right, and select **Update**.
+1. Select the **Updates** tab to see packages that have available updates from the selected package sources. Select **Include prerelease** to include prerelease packages in the update list.
+1. Select the package to update, select the desired version from the drop-down on the right, and select **Update**.
 
     ![Updating a package](media/UpdatePackages.png)
 
-4. <a name="implicit_reference"></a>For some packages, the **Update** button is disabled and a message appears saying that it's "Implicitly referenced by an SDK" (or "AutoReferenced"). The message indicates that the package, such as Microsoft.NETCore.App or Microsoft.NETStandard.Library, is part of a larger framework or SDK and should not be updated independently. (Such packagee are internally marked with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) To update the package, update the SDK to which it belongs.
+1. <a name="implicit_reference"></a>For some packages, the **Update** button is disabled and a message appears saying that it's "Implicitly referenced by an SDK" (or "AutoReferenced"). The message indicates that the package, such as Microsoft.NETCore.App or Microsoft.NETStandard.Library, is part of a larger framework or SDK and should not be updated independently. (Such packagee are internally marked with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) To update the package, update the SDK to which it belongs.
 
     ![Example package marked as Implicitly references or AutoReferenced](media/PackageManagerUIAutoReferenced.png)
 
-5. To update multiple packages to their newest versions, select  them in the list and select the **Update** button above the list.
-6. You can also update an individual package from the **Installed** tab. In this case, the details for the package include a version selector (subject to the **Include prerelease** option) and an **Update** button.
+1. To update multiple packages to their newest versions, select  them in the list and select the **Update** button above the list.
+1. You can also update an individual package from the **Installed** tab. In this case, the details for the package include a version selector (subject to the **Include prerelease** option) and an **Update** button.
 
 ## Managing packages for the solution
 
@@ -96,7 +94,7 @@ Managing packages for a solution is a convenient means to work with multiple pro
 
     ![Manage NuGet packages for the solution](media/ManagePackagesSolutionUICommand.png)
 
-2. When managing packages for the solution, the UI lets you select the projects that are affected by the operations:
+1. When managing packages for the solution, the UI lets you select the projects that are affected by the operations:
 
     ![Project selector when managing packages for the solution](media/SolutionPackagesUI.png)
 
@@ -112,15 +110,15 @@ To manage package sources:
 
     ![Package manager UI settings icon](media/PackageSourceSettings.png)
 
-2. Select the **Package Sources** node:
+1. Select the **Package Sources** node:
 
     ![Package Sources options](media/options.png)
 
-3. To add a source, select **+**, edit the name, enter the URL or path in the **Source** control, and select  **Update**. The source now appears in the selector drop-down.
-4. To change a package source, select it, make edits in the **Name** and **Source** boxes, and select **Update**.
-5. To disable a package source, clear the box to the left of the name in the list.
-6. To remove a package source, select it and then select the **X** button.
-7. Use the up and down arrow buttons to change the priority order of the package sources. Visual Studio searches these sources in the priority order when restoring packages for a project. For more information, see [Package restore](../Consume-Packages/Package-Restore.md).
+1. To add a source, select **+**, edit the name, enter the URL or path in the **Source** control, and select  **Update**. The source now appears in the selector drop-down.
+1. To change a package source, select it, make edits in the **Name** and **Source** boxes, and select **Update**.
+1. To disable a package source, clear the box to the left of the name in the list.
+1. To remove a package source, select it and then select the **X** button.
+1. Use the up and down arrow buttons to change the priority order of the package sources. Visual Studio searches these sources in the priority order when restoring packages for a project. For more information, see [Package restore](../Consume-Packages/Package-Restore.md).
 
 > [!Tip]
 > If a package source reappears after deleting it, it may be listed in a computer-level or user-level `NuGet.Config` files. See [Configuring NuGet behavior](../Consume-Packages/Configuring-NuGet-Behavior.md) for the location of these files, then remove the source by editing the files manually or using the [nuget sources command](../tools/nuget-exe-CLI-reference.md).

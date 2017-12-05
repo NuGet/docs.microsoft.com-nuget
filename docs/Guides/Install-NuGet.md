@@ -33,6 +33,8 @@ There are two primary tools available to help you build, publish and consume NuG
 
     With Visual Studio for Mac, NuGet capabilities are built in directly. See [Including a NuGet package in your project](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough) for a walkthrough.
 
+    Visual Studio Code at present does not have any built-in NuGet support. Use the NuGet CLI or the [dotnet CLI](../Tools/dotnet-Commands.md).
+
 The NuGet CLI and Package Manager both support the following operations:
 
 - Search packages
@@ -55,7 +57,6 @@ The following capabilities are supported only in the NuGet CLI:
 > Another good tool is the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), an open-source, stand-alone tool to visually explore, create, and edit NuGet packages. It's very helpful, for example, to make experimental changes to a package structure without having to rebuild the package each time.
 > The cross-platform [.NET Core CLI](https://docs.microsoft.com/dotnet/articles/core/tools/index#installation) toolchain, used for developing .NET Core applications, supports several NuGet commands, such as delete, locals, push, pack, and restore. 
 
-
 ## NuGet CLI
 
 The NuGet command-line interface provides access to all NuGet capabilities, and can be run on Windows, Mac OSX, and Linux as described in the following sections.
@@ -76,12 +77,12 @@ The NuGet command-line interface provides access to all NuGet capabilities, and 
     ```ps
     choco install nuget.commandline
     ```
-    
+
 - **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.
 
     > [!Note]
     > **For NuGet 2.x users**: Because of breaking changes introduced in NuGet 3.2, [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe) points to the latest stable NuGet 2.x release to prevent continuous integration systems from potentially breaking.
-    
+
 <a name="compatibility-with-mono"></a>
 
 ## Mac OSX and Linux
@@ -110,13 +111,11 @@ On Mac OSX and Linux, there are two ways to run the NuGet CLI:
     - Commands that do not work:
         - update
 
-
 ### Related topics
 
 - [NuGet CLI reference](../tools/nuget-exe-cli-reference.md)
 - [Creating a package](../create-packages/creating-a-package.md)
 - [Publishing a Package](../create-packages/publish-a-package.md)
-
 
 ## NuGet Package Manager in Visual Studio
 
@@ -127,8 +126,7 @@ The Visual Studio 2017 installer includes the NuGet Package Manager with any wor
 > [!Note]
 > The console requires [PowerShell 2.0](http://support.microsoft.com/kb/968929), which will already be installed on Windows 7 or higher and Windows Server 2008 R2 or higher.
 >
-> Package Manager Console commands also work only within Visual Studio on Windows. Use the NuGet CLI outside of that environment, including with Visual Studio for Mac.
-
+> Package Manager Console commands also work only within Visual Studio on Windows. Use the NuGet CLI outside of that environment, including with Visual Studio for Mac and Visual Studio Code.
 
 ### Package Manager installation for Visual Studio 2010 and earlier
 
