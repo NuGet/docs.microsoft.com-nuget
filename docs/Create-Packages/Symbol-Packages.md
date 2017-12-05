@@ -20,6 +20,7 @@ keywords: NuGet symbol packages, NuGet package debugging, supporting NuGet debug
 #audience:
 #ms.devlang:
 ms.reviewer:
+- anangaur
 - karann-msft
 - unniravindranathan
 #ms.suite:
@@ -125,6 +126,8 @@ A symbol package can be built by conventions, from a folder structure as describ
     ```
     nuget push MyPackage.symbols.nupkg
     ```
+> [!Important]
+> With nuget.exe 4.5.0 or above, the symbols packages are not automatically pushed to symbolsource.org. You would need to push separately as explained in the next step.
 
 1. To publish to a different symbol repository, or to push a symbol package that doesn't follow the naming convention, use the `-Source` option:
 
@@ -142,4 +145,4 @@ In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to https
 
 ## See Also
 
- - <a href="https://www.symbolsource.org/Public/Wiki/Using" target="_blank">Using SymbolSource</a> (symbolsource.org) 
+ - <a href="https://www.symbolsource.org/Public/Wiki/Using" target="_blank">Using SymbolSource</a> (symbolsource.org)

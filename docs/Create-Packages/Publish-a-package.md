@@ -20,6 +20,7 @@ keywords: NuGet package publishing, publish NuGet package, NuGet package ownersh
 #audience:
 #ms.devlang:
 ms.reviewer:
+- anangaurkarann-msft
 - karann-msft
 - unniravindranathan
 #ms.suite:
