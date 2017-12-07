@@ -39,13 +39,4 @@
       "template_folder": "_themes.pdf"
     }
   },
-  "branch_target_mapping": {
-    "live": [
-      "Publish",
-      "Pdf"
-    ]
-  },
-  "need_generate_pdf_url_template": true,
-  "need_generate_pdf": false,
-  "need_generate_intellisense": false
 }

@@ -108,6 +108,7 @@
 # [GitHub Repositories](https://github.com/NuGet)
 # Release Notes
 ## [Known Issues](Release-Notes/Known-Issues.md)
+## [NuGet 4.5 RTM](Release-Notes/NuGet-4.5-RTM.md)
 ## [NuGet 4.4 RTM](Release-Notes/NuGet-4.4-RTM.md)
 ## [NuGet 4.3 RTM](Release-Notes/NuGet-4.3-RTM.md)
 ## [NuGet 4.0 RTM](Release-Notes/NuGet-4.0-RTM.md)
