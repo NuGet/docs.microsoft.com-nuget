@@ -57,15 +57,12 @@ Occasionally, when you use a package that contains an assembly with an invalid s
 There is no workaround at this time.
 
 ## Issues fixed in NuGet 4.5 RTM timeframe
-
 For issues fixed in NuGet 4.4 RTM, please refer to [NuGet 4.4 RTM Release Notes](../release-notes/nuget-4.4-RTM.md) 
 
 ### Feature:
-
 * Disable auto-push of symbols package - [#6113](https://github.com/NuGet/Home/issues/6113)
 
 ### Bug:
-
 * [Regression] in 15.5p1: Portable0.0 is skipped - [#6105](https://github.com/NuGet/Home/issues/6105)
 * Assets from packages are missing after restore - [#5995](https://github.com/NuGet/Home/issues/5995)
 * Plugin credential providers do not work with URIs containing spaces - [#5982](https://github.com/NuGet/Home/issues/5982)
