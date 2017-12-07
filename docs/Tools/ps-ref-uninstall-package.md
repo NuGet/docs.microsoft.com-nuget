@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet Uninstall-Package PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -8,27 +6,19 @@ manager: ghogen
 ms.date: 6/1/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: f4f5dc79-8e8e-4012-8986-873a5d9283d9
-
-# optional metadata
-
 description: Reference for Uninstall-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Uninstall-Package
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 
 ---
 
-# Uninstall-Package
+# Uninstall-Package (Package Manager Console in Visual Studio)
+
+*This topic describes the command within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows. For the generic PowerShell Uninstall-Package command, see the [PowerShell PackageManagement reference](https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6).*
 
 Removes a package from a project, optionally removing its dependencies. If other packages depend on this package, the command will fail unless the –Force option is specified.
 
@@ -40,7 +30,6 @@ Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [
 ```
 
 If other packages depend on this package, the command will fail unless the –Force option is specified.
-
 
 ## Parameters
 

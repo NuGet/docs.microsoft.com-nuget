@@ -1,36 +1,23 @@
 ---
-# required metadata
-
 title: NuGet Sync-Package PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/1/2017
+ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 1b980b93-fa58-430c-b663-78ce069b1603
-
-# optional metadata
-
 description: Reference for Sync-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Sync-Package
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
-# Sync-Package
+# Sync-Package (Package Manager Console in Visual Studio)
 
-*Version 3.0+*
+*Version 3.0+; available only within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows.*
 
 Gets the version of installed package from specified (or default) project and synchronizes the version to the rest of projects in the solution.
 

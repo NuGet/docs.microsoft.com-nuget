@@ -1,24 +1,18 @@
 ---
-# required metadata
-
 title: NuGet CLI install command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
 ms.assetid: 59ac622f-837c-4545-bc93-a56330e02d71
-
-# optional metadata
-
 description: Reference for the nuget.exe install command
 keywords: nuget install reference, install package command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # install command (NuGet CLI)
@@ -55,7 +49,6 @@ where `<packageID>` names the package to install (using the latest version), or 
 | DisableParallelProcessing | Disables installing multiple packages in parallel. |
 | ExcludeVersion | Installs the package to a folder named with only the package name and not the version number. |
 | FallbackSource | *(3.2+)* A list of package sources to use as fallbacks in case the package isn't found in the primary or default source. |
-| FileConflictAction | *(2.5+)* Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Values are *overwrite, ignore, none*. |
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Framework | *(4.4+)* Target framework used for selecting dependencies. Defaults to 'Any' if not specified. |
 | Help | Displays help information for the command. |

@@ -1,31 +1,20 @@
 ---
-# required metadata
-
 title: NuGet Frequently-Asked Questions | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/30/2017
+ms.date: 12/07/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 199a915d-9595-4ae2-a1fb-b15da6d7735a
-
-# optional metadata
-
 description: Common questions and answers for using NuGet on the command line and in Visual Studio, and working with the NuGet gallery.
 keywords: NuGet Q&A, questions and answers, common problems, NuGet versions, package versions
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 ---
+
 # NuGet frequently-asked questions
 
 In this topic:
@@ -53,15 +42,28 @@ Although `nuget.exe` works fully on Windows, there are known issues on Linux and
 
 A [graphical client](https://github.com/mrward/monodevelop-nuget-addin) is available as an add-in for MonoDevelop.
 
+**How can I determine what a package contains and whether it's stable and useful for my application?**
+
+The primary source for learning about a package is its listing page on nuget.org (or another private feed). Each package page on nuget.org includes a description of the package, its version history, and usage statistics. The **Info** section on the package page also contains a link to the project's web site where you typically find many examples and other documentation to help you learn how the package is used.
+
+For more information, see [Finding and choosing packages](../Consume-Packages/Finding-and-Choosing-Packages.md).
+
 ## NuGet in Visual Studio
 
-**How do I check the exact version of NuGet installed?**
+**How is NuGet supported in different Visual Studio products?**
+
+- Visual Studio on Windows supports the [Package Manager UI](../tools/Package-Manager-UI.md) and the [Package Manager Console](../tools/Package-Manager-Console.md).
+- Visual Studio for Mac has built-in NuGet capabilities as described on [Including a NuGet package in your project](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+- Visual Studio Code (all platforms) does not have any direct NuGet integration. Use the [NuGet CLI](../tools/nuget-exe-CLI-Reference.md) or the [dotnet CLI](../tools/dotnet-commands.md).
+- Visual Studio Team Services provides [a build step to restore NuGet packages](https://docs.microsoft.com/vsts/build-release/tasks/package/nuget). You can also [host private NuGet package feeds on Team Services](https://www.visualstudio.com/docs/package/nuget/publish).
+
+**How do I check the exact version of the NuGet tools that are installed?**
 
 In Visual Studio, use the **Help > About Microsoft Visual Studio** command and look at the version displayed next to **NuGet Package Manager**.
 
 Alternatively, launch the Package Manager Console (**Tools > NuGet Package Manager > Package Manager Console**) and enter `$host` to see information about NuGet including the version.
 
-**What languages are supported by NuGet?**
+**What programming languages are supported by NuGet?**
 
 NuGet generally works for .NET languages and is designed to bring .NET libraries into a project. Because it also supports MSBuild and Visual Studio automation in some project types, it also supports other projects and languages to various degrees.
 
@@ -91,7 +93,7 @@ See the [Install guide](../guides/install-nuget.md).
 
 Yes, it's possible to add custom commands to `nuget.exe`, as described in [Rob Reynold's post](http://geekswithblogs.net/robz/archive/2011/07/15/extend-nuget-command-line.aspx).
 
-## NuGet Package Manager Console
+## NuGet Package Manager Console (Visual Studio on Windows)
 
 **How do I get access to the DTE object in the Package Manager console?**
 
@@ -129,7 +131,7 @@ See [Bulk publishing NuGet packages](http://jeffhandley.com/archive/2012/12/13/B
 
 **What is the difference between a project-level package and a solution-level package?**
 
-A solution-level package (NuGet 3.x and later) is installed only once in a solution and is then available for all projects in the solution. A project-level package is installed in each project that uses it. A solution-level package might also install new commands that can be called from within the Package Manager Console.
+A solution-level package (NuGet 3.x+) is installed only once in a solution and is then available for all projects in the solution. A project-level package is installed in each project that uses it. A solution-level package might also install new commands that can be called from within the Package Manager Console.
 
 **Is it possible to install NuGet packages without Internet connectivity?**
 
@@ -139,7 +141,7 @@ Yes, see Scott Hanselman's Blog post [How to access NuGet when nuget.org is down
 
 Set the [`repositoryPath`](../Schema/nuget-config-file.md#config-section) setting in `Nuget.Config` using `nuget config -set repositoryPath=<path>`.
 
-**How do I avoid checking in packages folder to source control?**
+**How do I avoid adding the NuGet packages folder into to source control?**
 
 Set the [`disableSourceControlIntegration`](../Schema/nuget-config-file.md#solution-section) in `Nuget.Config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\Nuget.Config` file. Enabling package restore from Visual Studio creates this file automatically.
 
@@ -151,12 +153,9 @@ See [Enabling and disabling package restore](../consume-packages/package-restore
 
 You need to select the **All** source when installing a local package into the project. This aggregates all the feeds instead of using just one. The reason this error appears is that users of a local repository often want to avoid accidentally installing a remote package due to corporate polices.
 
-**I have multiple projects in the same folder, how can I use separate packages.config or project.json files for each project?**
+**I have multiple projects in the same folder, how can I use separate packages.config files for each project?**
 
-In most projects where separate projects live in separate folders, this is not a problem as NuGet identifies the `packages.config` and `project.json` files in each project. With NuGet 3.3+ and multiple projects in the same folder, you can insert the name of the project into the `packages.config` or `project.json` filenames as below and NuGet uses that file:
-
-- `packages.config`: use the pattern `packages.{project-name}.config`
-- `project.json`: use the pattern `{project-name}.project.json`
+In most projects where separate projects live in separate folders, this is not a problem as NuGet identifies the `packages.config` files in each project. With NuGet 3.3+ and multiple projects in the same folder, you can insert the name of the project into the `packages.config` filenames use the pattern `packages.{project-name}.config`, and NuGet uses that file.
 
 This is not an issue when using PackageReference, as each project file contains its own list of dependencies.
 
