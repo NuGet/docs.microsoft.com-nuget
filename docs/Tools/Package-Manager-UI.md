@@ -1,29 +1,22 @@
 ---
-# required metadata
-
 title: NuGet Package Manager UI Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/25/2017
+ms.date: 12/08/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 62f6962b-7b84-4452-ae0d-a9e1ef1fc6f0
 f1_keywords: 
   - "vs.toolsoptionspages.nuget_package_manager"
   - "vs.toolsoptionspages.nuget_package_manager.general"
   - "vs.toolsoptionspages.nuget_package_manager.package_sources"
-
-# optional metadata
-
 description: Instructions for using the NuGet Package Manager UI in Visual Studio for working with NuGet packages.
 keywords: NuGet UI, NuGet package manager UI, NuGet in Visual Studio, managing NuGet packages, NuGet user interface, package manager in Visual Studio
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # NuGet Package Manager UI
@@ -125,7 +118,7 @@ To manage package sources:
 
 ## Package manager Options control
 
-When a package is selected, the Package Manager UI displays a small, expandable **Options** control below the version selector (shown here both collapsed and expanded):
+When a package is selected, the Package Manager UI displays a small, expandable **Options** control below the version selector (shown here both collapsed and expanded). Note that for some project types, such as .NET Core and those using the `project.json` reference format, only the **Show preview window** option is provided.
 
 ![Package manager options](media/PackageManagerUIOptions.png)
 
@@ -141,6 +134,8 @@ When selected, a modal window displays which the dependencies of a chosen packag
 <a name="install-options"></a>
 
 ### Install and Update Options
+
+(Not available for all project types.)
 
 **Dependency behavior** configures how NuGet decides which versions of dependent packages to install:
 
@@ -160,6 +155,8 @@ When selected, a modal window displays which the dependencies of a chosen packag
 <a name="uninstall-options"></a>
 
 ### Uninstall Options
+
+(Not available for all project types.)
 
 **Remove dependencies**: when selected, removes any dependent packages if they're not referenced elsewhere in the project.
 

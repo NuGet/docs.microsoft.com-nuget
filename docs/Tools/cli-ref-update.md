@@ -1,31 +1,25 @@
 ---
-# required metadata
-
 title: NuGet CLI update command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
 ms.assetid: 61fde945-6983-46a5-8636-da0fada4e641
-
-# optional metadata
-
 description: Reference for the nuget.exe update command
 keywords: nuget update reference, update package command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # update command (NuGet CLI)
 
 **Applies to:** package consumption &bullet; **Supported versions:** all
 
-Updates all packages in a project (using `packages.config`) to their latest available versions. It is recommended to run ['restore'](#restore) before running the `update`.
+Updates all packages in a project (using `packages.config`) to their latest available versions. It is recommended to run ['restore'](#restore) before running the `update`. (To update an individual package, use [`nuget install`](cli-ref-install.md) without specifying a version number, in which case NuGet installs the latest version.)
 
 Note: `update` does not work with the CLI running under Mono (Mac OSX or Linux). The command also does not work with projects using `project.json` or PackageReference management formats.
 

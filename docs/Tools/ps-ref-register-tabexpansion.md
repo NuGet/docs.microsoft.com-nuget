@@ -1,34 +1,23 @@
 ---
-# required metadata
-
 title: NuGet Register-TabExpansion PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/25/2017
+ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 8314ec69-ee8c-4933-84ef-e6d8a412d268
-
-# optional metadata
-
 description: Reference for Register-TabExpansion PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Register-TabExpansion
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
-# Register-TabExpansion
+# Register-TabExpansion (Package Manager Console in Visual Studio)
+
+*Available only within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows.*
 
 Registers a tab expansion for the parameters of the specified command, such that when Tab is used when entering a command, the expanded values appear as available options for the parameter in question. Any previous expansions for the command are overwritten.
 

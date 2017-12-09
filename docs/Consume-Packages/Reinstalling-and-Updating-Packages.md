@@ -1,25 +1,18 @@
 ---
-# required metadata
-
 title: Reinstalling and Updating NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 12/07/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 2785879b-97f0-4a85-b3cc-bf4eaa5c39bf
-
-# optional metadata
-
 description: Details on when it's necessary to reinstall and update packages, as with broken package references in Visual Studio.
 keywords: NuGet package installation, NuGet package reinstallation, NuGet package restore, updating package, restoring packages, fixing broken references
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # How to reinstall and update packages
@@ -70,12 +63,12 @@ In all cases, use the notation described in [Package versioning](../reference/pa
 Being mindful of the [Considerations](#considerations) described below, you can easily reinstall any package using the [Update-Package command](../Tools/ps-ref-update-package.md) in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
 
 ```ps
-Update-Package -Id <package_name> –reinstall 
+Update-Package -Id <package_name> –reinstall
 ```
 
 Using this command is much easier than removing a package and then trying to locate the same package in the NuGet gallery with the same version. Note that the `-Id` switch is optional.
 
-The same command without `-reinstall` updates a package to a newer version, if applicable:
+The same command without `-reinstall` updates a package to a newer version, if applicable. The command gives an error if the package in question is not already installed in a project; that is, `Update-Package` does not install packages directly.
 
 ```ps
 Update-Package <package_name>

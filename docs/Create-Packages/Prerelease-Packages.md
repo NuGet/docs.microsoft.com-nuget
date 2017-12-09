@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: Pre-release versions in NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -8,24 +6,13 @@ manager: ghogen
 ms.date: 8/14/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: df6a366a-22c1-47bb-8017-18231311ce88
-
-# optional metadata
-
 description: Guidance for building pre-release packages
 keywords: versioning, NuGet package versioning, NuGet prerelease versions, NuGet prerelease packages, preview package versions, RC package versions, Beta package versions, NuGet semantic versioning
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Building pre-release packages
@@ -53,9 +40,6 @@ You can specify such versions in two ways:
     ```
 
     NuGet picks up this value instead of the one specified in the `AssemblyVersion` attribute, which does not support semantic versioning.
-
-> [!Note]
-> A stable package release cannot have a pre-release dependency. This avoids accidentally installing potentially unstable releases.
 
 When you’re ready to release a stable version, just remove the suffix and the package takes precedence over any pre-release versions. Again, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
 
