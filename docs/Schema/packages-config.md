@@ -1,31 +1,18 @@
 ---
-# required metadata
-
 title: NuGet packages.config File Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 4/3/2017
+ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 207b9547-4558-41dc-9f3f-4bbdfb1d74e3
-
-# optional metadata
-
 description: In some project types, packages.config maintains the list of NuGet packages used in the project.
 keywords: NuGet packages.config file, NuGet package references, NuGet dependencies
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # packages.config reference
@@ -65,7 +52,7 @@ The following `packages.config` refers to nine packages, but `Microsoft.Net.Comp
   <package id="Microsoft.Net.Compilers" version="1.0.0" targetFramework="net46" developmentDependency="true" />
   <package id="Microsoft.Web.Infrastructure" version="1.0.0.0" targetFramework="net46" />
   <package id="Microsoft.Web.Xdt" version="2.1.1" targetFramework="net46" />
-  <package id="Newtonsoft.Json" version="8.0.3" allowedVersions="(8,10]" targetFramework="net46" />
+  <package id="Newtonsoft.Json" version="8.0.3" allowedVersions="[8,10)" targetFramework="net46" />
   <package id="NuGet.Core" version="2.11.1" targetFramework="net46" />
   <package id="NuGet.Server" version="2.11.2" targetFramework="net46" />
   <package id="RouteMagic" version="1.3" targetFramework="net46" />

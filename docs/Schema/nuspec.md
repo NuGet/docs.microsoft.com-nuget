@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: .nuspec File Reference for NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -8,24 +6,14 @@ manager: ghogen
 ms.date: 8/29/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: d4a4db9b-5c2d-46aa-9107-d2b01733df7c
-
-# optional metadata
-
 description: The .nuspec file contains package metadata used when building a package and to provide information to package consumers.
 keywords: nuspec reference, NuGet package metadata, NuGet package manifest, nuspec schema
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 ---
 
 # .nuspec reference
@@ -118,7 +106,7 @@ These elements must appear within a `<metadata>` element.
 
 ### Files element
 
-The `<package>` node may contain a `<files>` or `<contentFiles>` node as siblings to `<metadata>` to specify which assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
+The `<package>` node may contain a `<files>` node as a sibling to `<metadata>`, and a or `<contentFiles>` child under `<metadata>`, to specify which assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
 
 ## Replacement tokens
 
