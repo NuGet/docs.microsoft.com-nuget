@@ -57,7 +57,7 @@ The NuGet clients support the following frameworks. Equivalents are shown within
 |                |              |net46      |
 |                |              |net461     |
 |                |              |net462     |
-|.NET Core       | netcore      | netcore [netcore45]
+|Windows Store   | netcore      | netcore [netcore45]
 |                |              | netcore45 [win, win8]
 |                |              | netcore451 [win81]
 |                |              | netcore50
