@@ -1,34 +1,23 @@
 ---
-# required metadata
-
 title: NuGet Get-Package PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/1/2017
+ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 42476008-64b3-480e-a966-98b2fa38b681
-
-# optional metadata
-
 description: Reference for Get-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Get-Package
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
-# Get-Package
+# Get-Package (Package Manager Console in Visual Studio)
+
+*This topic describes the command within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows. For the generic PowerShell Get-Package command, see the [PowerShell PackageManagement reference](https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6).*
 
 Retrieves the list of packages installed in the local repository, lists packages available from a package source when used with the -ListAvailable switch, or lists available updates when used with the -Update switch.
 

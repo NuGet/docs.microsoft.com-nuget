@@ -1,36 +1,24 @@
 ---
-# required metadata
-
 title: NuGet Open-PackagePage PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/1/2017
+ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: e9f84530-6b3d-43b0-a832-0acb2997f6fc
-
-# optional metadata
-
 description: Reference for Open-PackagePage PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Open-PackagePage
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 
 ---
 
-# Open-PackagePage
+# Open-PackagePage (Package Manager Console in Visual Studio)
 
-*Deprecated in 3.0+*
+*Deprecated in 3.0+; available only within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows.*
 
 Launches the default browser with the project, license, or report abuse URL for the specified package.
 
@@ -73,4 +61,3 @@ Open-PackagePage Ninject -ReportAbuse
 # Assigns the license URL to the variable, $url, without launching the browser
 $url = Open-PackagePage Ninject -License -PassThru -WhatIf
 ```
-  

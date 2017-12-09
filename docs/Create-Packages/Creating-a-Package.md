@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: How to create a NuGet package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -11,16 +9,13 @@ ms.prod: nuget
 #ms.service:
 ms.technology: null
 ms.assetid: 456797cb-e3e4-4b88-9b01-8b5153cee802
-
-# optional metadata
-
 description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
 keywords: NuGet package creation, creating a package, nuspec manifest, NuGet package conventions, NuGet package version
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
+
 # Creating NuGet packages
 
 No matter what your package does or what code it contains, you use `nuget.exe` to package that functionality into a component that can be shared with and used by any number of other developers. To install `nuget.exe`, see [Install NuGet CLI](../guides/Install-NuGet.md#nuget-cli). Note that Visual Studio does not automatically include `nuget.exe`.
@@ -203,7 +198,6 @@ nuget spec
 
 Again, the generated `.nuspec` contains no explicit references to files in the folder structure. NuGet automatically includes all files when the package is created. You still need to edit placeholder values in other parts of the manifest, however.
 
-
 ### From an assembly DLL
 
 In the simple case of creating a package from an assembly, you can generate a `.nuspec` file from the metadata in the assembly using the following command:
@@ -237,7 +231,6 @@ Tokens relieve you from needing to update crucial values like the version number
 
 Note that there are several additional packaging options available when working from a Visual Studio project, as described in [Running nuget pack to generate the .nupkg file](#running-nuget-pack-to-generate-the-nupkg-file) later on.
 
-
 #### Solution-level packages
 
 *NuGet 2.x only. Not available in NuGet 3.0+.*
@@ -257,7 +250,6 @@ nuget spec [<package-name>]
 If you omit \<package-name\>, the resulting file is `Package.nuspec`. If you provide a name such as `Contoso.Utility.UsefulStuff`, the file is `Contoso.Utility.UsefulStuff.nuspec`.
 
 The resulting `.nuspec` contains placeholders for values like the `projectUrl`. Be sure to edit the file before using it to create the final `.nupkg` file.
-
 
 ## Choosing a unique package identifier and setting the version number
 
@@ -279,7 +271,6 @@ The package identifier (`<id>` element) and the version number (`<version>` elem
 > - [Part 1: Taking on DLL Hell](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
 > - [Part 2: The core algorithm](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)
 > - [Part 3: Unification via Binding Redirects](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)
-
 
 ## Setting a package type
 
@@ -386,7 +377,7 @@ When NuGet 2.x installs a package with `\build` files, it adds an MSBuild `<Impo
 
 With NuGet 3.x, targets are not added to the project but are instead made available through the `project.lock.json`.
 
-# Authoring packages with COM interop assemblies
+## Authoring packages with COM interop assemblies
 
 Packages that contain COM interop assemblies must include an appropriate [targets file](#including-msbuild-props-and-targets-in-a-package) so that the correct `EmbedInteropTypes` metadata is added to projects using the PackageReference format. By default, the `EmbedInteropTypes` metadata is always false for all assemblies when PackageReference is used, so the targets file adds this metadata explicitly. To avoid conflicts, the target name should be unique; ideally, use a combination of your package name and the assembly being embedded, replacing the `{InteropAssemblyName}` in the example below with that value. (Also see [NuGet.Samples.Interop](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop) for an example.)
 
@@ -426,7 +417,6 @@ nuget pack <project-name>.csproj
 > [!Note]
 > Using the project file directly is necessary for token replacement because the project is the source of the token values. Token replacement does not happen if you use `nuget pack` with a `.nuspec` file.
 
-
 In all cases, `nuget pack` excludes folders that start with a period, such as `.git` or `.hg`.
 
 NuGet indicates if there are any errors in the `.nuspec` file that need correcting, such as forgetting to change placeholder values in the manifest.
@@ -435,7 +425,6 @@ Once `nuget pack` succeeds, you have a `.nupkg` file that you can publish to a s
 
 > [!Tip]
 > A helpful way to examine a package after creating it is to open it in the [Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) tool. This gives you a graphical view of the package contents and its manifest. You can also rename the resulting `.nupkg` file to a `.zip` file and explore its contents directly.
-
 
 ### Additional options
 
@@ -464,7 +453,7 @@ The following options are a few that are common with Visual Studio projects:
     ```
     nuget pack MyProject.csproj -symbols
     ```
-    
+
 ## Next Steps
 
 Once you've created a package, which is a `.nupkg` file, you can publish it to the gallery of your choice as described on [Publishing a Package](../create-packages/publish-a-package.md).

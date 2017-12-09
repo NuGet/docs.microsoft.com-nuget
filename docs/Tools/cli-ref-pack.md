@@ -1,31 +1,25 @@
 ---
-# required metadata
-
 title: NuGet CLI pack command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 12/08/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
 ms.assetid: 55e9e4d2-8039-4e9b-bdd9-c8b3eb0e894b
-
-# optional metadata
-
 description: Reference for the nuget.exe pack command
 keywords: nuget pack reference, pack command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # pack command (NuGet CLI)
 
 **Applies to:** package creation &bullet; **Supported versions:** 2.7+
 
-Creates a NuGet package based on the specified `.nuspec` or project file. 
+Creates a NuGet package based on the specified `.nuspec` or project file. The `dotnet pack` command (see [dotnet Commands](dotnet-Commands.md)) and `msbuild /t:pack` (see [MSBuild targets](../schema/msbuild-targets.md)) may be used as alternates.
 
 > [!Important]
 > Under Mono, creating a package from a project file is not supported. You also need to adjust non-local paths in the `.nuspec` file to Unix-style paths, as nuget.exe doesn't convert Windows pathnames itself.
@@ -55,7 +49,7 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 | NoDefaultExcludes | Prevents default exclusion of NuGet package files and files and folders starting with a dot, such as `.svn` and `.gitignore`. |
 | NoPackageAnalysis | Specifies that pack should not run package analysis after building the package. |
 | OutputDirectory | Specifies the folder in which the created package is stored. If no folder is specified, the current folder is used. |
-| Properties | Specifies a list of token=value pairs, separated by semicolons, where each occurrence of `$token$` in the `.nuspec` file will be replaced with the given value. Values can be strings in quotation marks. Note that for the "Configuration" property, the default is "Debug". To change to a Release configuration, use `-Properties Configuration=Release`. |
+| Properties | Specifies a list of properties that override values in the project file; see [Common MSBuild Project Properties](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-properties) for property names. The Properties argument here is a list of token=value pairs, separated by semicolons, where each occurrence of `$token$` in the `.nuspec` file will be replaced with the given value. Values can be strings in quotation marks. Note that for the "Configuration" property, the default is "Debug". To change to a Release configuration, use `-Properties Configuration=Release`. |
 | Suffix | *(3.4.4+)* Appends a suffix to the internally generated version number, typically used for appending build or other pre-release identifiers. For example, using `-suffix nightly` will create a package with a version number like `1.2.3-nightly`. Suffixes must start with a letter to avoid warnings, errors, and potential incompatibilities with different versions of NuGet and the NuGet Package Manager. |
 | Symbols | Specifies that the package contains sources and symbols. When used with a `.nuspec` file, this creates a regular NuGet package file and the corresponding symbols package. |
 | Tool | Specifies that the output files of the project should be placed in the `tool` folder. |

@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet Install-Package PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -8,27 +6,18 @@ manager: ghogen
 ms.date: 6/1/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 879db0ef-6b72-4a4a-bb68-f9e3a00f64b8
-
-# optional metadata
-
 description: Reference for Install-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Install-Package
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
-# Install-Package
+# Install-Package (Package Manager Console in Visual Studio)
+
+*This topic describes the command within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows. For the generic PowerShell Install-Package command, see the [PowerShell PackageManagement reference](https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6).*
 
 Installs a package and its dependencies into a project.
 
