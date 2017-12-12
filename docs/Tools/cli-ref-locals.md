@@ -35,7 +35,6 @@ nuget locals <cache> [options]
 
 where `<cache>` is one of `all`, `http-cache`, `packages-cache`, `global-packages`, and `temp` *(3.4+)*.
 
-
 ## Options
 
 | Option | Description |

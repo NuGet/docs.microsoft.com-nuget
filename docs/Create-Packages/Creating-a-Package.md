@@ -3,10 +3,9 @@ title: How to create a NuGet package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/20/2017
+ms.date: 12/12/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 456797cb-e3e4-4b88-9b01-8b5153cee802
 description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
@@ -63,11 +62,13 @@ If your library contains COM interop assemblies, follow additional the guideline
 Once you know what files you want to package, the next step is creating a package manifest in a `.nuspec` XML file.
 
 The manifest:
+
 1. Describes the package's contents and is itself included in the package.
-2. Drives both the creation of the package and instructs NuGet on how to install the package into a project. For example, the manifest identifies other package dependencies such that NuGet can also install those dependencies when the main package is installed.
-3. Contains both required and optional properties as described below. For exact details, including other properties not mentioned here, see  the [.nuspec reference](../schema/nuspec.md).
+1. Drives both the creation of the package and instructs NuGet on how to install the package into a project. For example, the manifest identifies other package dependencies such that NuGet can also install those dependencies when the main package is installed.
+1. Contains both required and optional properties as described below. For exact details, including other properties not mentioned here, see  the [.nuspec reference](../schema/nuspec.md).
 
 Required properties:
+
 - The package identifier, which must be unique across the gallery that hosts the package.
 - A specific version number in the form *Major.Minor.Patch[-Suffix]* where *-Suffix* identifies [pre-release versions](Prerelease-Packages.md)
 - The package title as it should appears on the host (like nuget.org)
@@ -75,6 +76,7 @@ Required properties:
 - A long description of the package.
 
 Common optional properties:
+
 - Release notes
 - Copyright information
 - A short description for the [Package Manager UI in Visual Studio](../Tools/Package-Manager-UI.md)
@@ -243,7 +245,7 @@ NuGet tracks installed solution-level packages in a `packages.config` file in th
 
 The following command creates a default manifest with placeholders, which ensures you start with the proper file structure:
 
-```    
+```
 nuget spec [<package-name>]
 ```
 
@@ -453,6 +455,19 @@ The following options are a few that are common with Visual Studio projects:
     ```
     nuget pack MyProject.csproj -symbols
     ```
+
+### Testing package installation
+
+Before publishing a package, you typically want to test the process of installing a package into a project. The tests make sure that the necessarily files all end up in their correct places in the project.
+
+You can test installations manually in Visual Studio or on the command line using the normal [package installation steps](../Quickstart/Use-a-Package.md).
+
+For automated testing, the basic process is as follows:
+
+1. Copy the `.nupkg` file to a local folder.
+1. Add the folder to your package sources using the `nuget sources -name <name> -source <path>` command (see [nuget sources](../tools/cli-ref-sources.md)). Note that you need only set this local source once on any given computer.
+1. Install the package from that source using `nuget install <packageID> -source <name>` where `<name>` matches the name of your source as given to `nuget sources`. Specifying the source ensures that the package is installed from that source alone.
+1. Examine the file system to check that files are installed correctly.
 
 ## Next Steps
 

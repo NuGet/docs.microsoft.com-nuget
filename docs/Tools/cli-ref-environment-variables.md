@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet CLI environment variables | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -10,15 +8,11 @@ ms.topic: reference
 ms.prod: nuget
 ms.technology: null
 ms.assetid: 1f5c31ca-fa0a-4798-a906-110f2c73d00b
-
-# optional metadata
-
 description: Reference for the nuget.exe environment variables
 keywords: nuget environment variables
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # NuGet CLI environment variables

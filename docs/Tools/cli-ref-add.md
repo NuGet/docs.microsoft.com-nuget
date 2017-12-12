@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet CLI add command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -10,15 +8,11 @@ ms.topic: reference
 ms.prod: nuget
 ms.technology: null
 ms.assetid: 4f68a016-ad4e-41fc-b869-88910fc5121e
-
-# optional metadata
-
 description: Reference for the nuget.exe add command
 keywords: nuget add reference, add package command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # add command (NuGet CLI)
