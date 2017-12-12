@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet CLI delete command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -10,15 +8,11 @@ ms.topic: reference
 ms.prod: nuget
 ms.technology: null
 ms.assetid: c213a07a-711d-47e0-9ee6-1d582e6cdb69
-
-# optional metadata
-
 description: Reference for the nuget.exe delete command
 keywords: nuget delete reference, delete package command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # delete command (NuGet CLI)

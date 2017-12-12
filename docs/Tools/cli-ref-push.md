@@ -51,7 +51,7 @@ where `<packagePath>` identifies the package to push to the server.
 | Help | Displays help information for the command. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
 | NoSymbols | *(3.5+)* If a symbols package exists, it will not be pushed to a symbol server. |
-| Source | Specifies the server URL. With NuGet 2.5+, NuGet will identify a UNC or local folder source and simply copy the file there instead of pushing it using HTTP.  Also, starting with NuGet 3.4.2, this is a mandatory parameter unless the `NuGet.Config` file specifies a *DefaultPushSource* value. |
+| Source | Specifies the server URL. With NuGet 2.5+, NuGet will identify a UNC or local folder source and simply copy the file there instead of pushing it using HTTP.  Also, starting with NuGet 3.4.2, this is a mandatory parameter unless the `NuGet.Config` file specifies a *DefaultPushSource* value (see [Configuring NuGet behvior](../Consume-Packages/Configuring-NuGet-Behavior.md)). |
 | SymbolSource | *(3.5+)* Specifies the symbol server URL; nuget.smbsrc.net is used when pushing to nuget.org |
 | SymbolApiKey | *(3.5+)* Specifies the API key for the URL specified in `-SymbolSource`. |
 | Timeout | Specifies the timeout, in seconds, for pushing to a server. The default is 300 seconds (5 minutes). |

@@ -19,7 +19,7 @@ ms.reviewer:
 
 **Applies to:** package consumption &bullet; **Supported versions:** all
 
-Downloads and installs a package into a project, defaulting to the current folder, using specified package sources. 
+Downloads and installs a package into a project, defaulting to the current folder, using specified package sources.
 
 > [!Tip]
 > To download a package directly outside the context of a project, visit the package's page on [nuget.org](https://www.nuget.org) and select the **Download** link. 
@@ -40,7 +40,6 @@ nuget install <packageID | configFilePath> [options]
 
 where `<packageID>` names the package to install (using the latest version), or `<configFilePath>` identifies the `packages.config` file that lists the packages to install. You can indicate a specific version with the `-Version` option.
 
-
 ## Options
 
 | Option | Description |
@@ -59,7 +58,7 @@ where `<packageID>` names the package to install (using the latest version), or 
 | PreRelease | Allows prerelease packages to be installed. This flag is not required when restoring packages with `packages.config`. |
 | RequireConsent | Verifies that restoring packages is enabled before downloading and installing the packages. For details, see [Package Restore](../consume-packages/package-restore.md). |
 | SolutionDirectory | Specifies root folder of the solution for which to restore packages. |
-| Source | Specifies a list of package sources to use. |
+| Source | Specifies list of package sources (as URLS) to use. If omitted, the command uses the sources provided in configuration files, see [Configuring NuGet behvior](../Consume-Packages/Configuring-NuGet-Behavior.md). |
 | Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed (2.5+)*. |
 | Version | Specifies the version of the package to install. |
 
