@@ -114,7 +114,6 @@ Copy the template below into the new file and then use `nuget config --configFil
 
 <br/>
 
-
 ## How settings are applied
 
 Multiple `NuGet.Config` files allow you to store settings in different locations so that they apply to a single project, a group of projects, or all projects. These settings collectively apply to any NuGet operation invoked from the command line or from Visual Studio, with settings that exist "closest" to a project or the current folder taking precedence.
@@ -139,9 +138,9 @@ As NuGet finds settings in these files, they are applied as follows:
 
 Let's say you have the following folder structure on two separate drives:
 
-    disk_drive_1 
-        User    
-    disk_drive_2 
+    disk_drive_1
+        User
+    disk_drive_2
        Project1
          Source
        Project2
@@ -230,7 +229,7 @@ Mac/Linux: $XDG_DATA_HOME (typically ~/.local/share)
 ### NuGetDefaults.Config settings
 
 - `packageSources`: this collection has the same meaning as `packageSources` in regular config files and specifies the default sources in their preferred order. If this setting exists in `NuGetDefaults.Config`, then NuGet doesn't use nuget.org as a default package source. An administrator can thus make sure that everyone using this file is working with the same sources and avoids using nuget.org if desired.
- 
+
 - `disabledPackageSources`: this collection also has the same meaning as in `NuGet.Config` files, where each affected source is listed by its name and a true/false value indicating whether it's disabled. This allows the source name and URL to remain in `packageSources` without having it turned on by default. Individual developers can then re-enable the source by setting the source's value to false in other `NuGet.Config` files without having to find the correct URL again. This is also useful to supply developers with a full list of internal source URLs for an organization while enabling only an individual team's source by default.
 
 - `defaultPushSource`: specifies the default target for `nuget push` operations, overriding the built-in default of nuget.org. Administrators can deploy this setting to avoid publishing internal packages to the public nuget.org by accident, as developers specifically need to use `nuget push -Source` to publish to nuget.org.

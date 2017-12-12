@@ -51,7 +51,7 @@ where `<configPath>` identifies either a `packages.config` or solution file that
 | RepositoryPath | Specifies the local folder where packages are installed. |
 | Safe | Specifies that only updates with the highest version available within the same major and minor version as the installed package will be installed. |
 | Self | *(1.4+)* Updates nuget.exe to the latest version; all other arguments are ignored. |
-| Source | Specifies a list of package sources to use for the updates. |
+| Source | Specifies list of package sources (as URLS) to use for the updates. If omitted, the command uses the sources provided in configuration files, see [Configuring NuGet behvior](../Consume-Packages/Configuring-NuGet-Behavior.md). |
 | Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed (2.5+)*. |
 | Version | When used with one package ID, specifies the version of the package to update. |
 
