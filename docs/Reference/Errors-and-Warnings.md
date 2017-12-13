@@ -3,7 +3,7 @@ title: NuGet Restore Errors and Warnings Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/14/2017
+ms.date: 12/13/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
@@ -29,7 +29,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | Group | Error Numbers |
 | --- | --- |
 | [Invalid input errors](#invalid-input-errors) | [NU1001](#nu1001), [NU1002](#nu1002), [NU1003](#nu1003) |
-| [Missing package and project errors](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [NU1106](#nu1106) |
+| [Missing package and project errors](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [NU1106](#nu1106), [NU1107](#nu1107) (previously NU1607), [NU1108](#nu1107) (previously NU1606) |
 | [Compatibility errors](#compatibility-errors) | [NU1201](#nu1201), [NU1202](#nu1202), [NU1203](#nu1203), [NU1401](#nu1401) |
 
 **Warnings**
@@ -38,7 +38,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | --- | --- |
 | [Invalid input warnings](#invalid-input-warnings) | [NU1501](#nu1501), [NU1502](#nu1502), [NU1503](#nu1503) |
 | [Unexpected package version warnings](#unexpected-package-version-warnings) | [NU1601](#nu1601), [NU1602](#nu1602), [NU1603](#nu1603), [NU1604](#nu1604), [NU1605](#nu1605) |
-| [Resolver conflict warnings](#resolver-conflict-warnings) | [NU1606](#nu1606), [NU1607](#nu1607) |
+| [Resolver conflict warnings](#resolver-conflict-warnings) | [NU1608](#nu1608) |
 | [Package fallback warnings](#package-fallback-warnings) | [NU1701](#nu1701) |
 | [Feed warnings](#feed-warnings) | [NU1801](#nu1801) |
 | [NuGet internal errors and warnings](#nuget-internal-errors-and-warnings) | [NU1000](#nu1000), [NU1500](#nu1500) |
@@ -131,6 +131,8 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Common causes** | Packages contain dependency on exact versions of a package instead of open-ended ranges. |
 | **Example message** | *Unable to satisfy conflicting requests for {id}: {conflict path} Framework: {target graph}* |
 
+<a name="NU1107></a>
+
 ### NU1107 (Previously NU1607)
 
 | | |
@@ -138,6 +140,8 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Issue** | Unable to resolve dependency constraints between packages. |
 | **Common causes** | Packages with dependency constraints on exact versions do not allow other packages to increase the version if needed. |
 | **Example message** | *Version conflict detected for NuGet.Versioning. Reference the package directly from the project to resolve this issue.<br/>  NuGet.Packaging 3.5.0 -> NuGet.Versioning (= 3.5.0)<br/>  NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)* |
+
+<a name="NU1108></a>
 
 ### NU1108 (Previously NU1606)
 

@@ -91,6 +91,20 @@ Managing packages for a solution is a convenient means to work with multiple pro
 
     ![Project selector when managing packages for the solution](media/SolutionPackagesUI.png)
 
+### Consolidate tab
+
+Developers typically consider it bad practice to use different versions of the same NuGet package across different projects in the same solution. When you choose to manage packages for a solution, the Package Manager UI provides a **Consolidate** tab on which you can easily see where packages with distinct version numbers are used by different projects in the solution:
+
+![Package Manager UI Consolidate tab](media/ConsolidateTab.png)
+
+In this example, the ClassLibrary1 project is using EntityFramework 6.2.0, whereas ConsoleApp1 is using EntityFramework 6.2.0. To consolidate package versions, do the following:
+
+- Select the projects to update in the project list.
+- Select the version to use in all those projects in the **Version** control, such as EntityFramework 6.2.0.
+- Select the **Install** button.
+
+The Package Manager installs the selected package version into all selected projects, after which the package no longer appears on the **Consolidate** tab.
+
 ## Package sources
 
 To change the source from which Visual Studio obtains packages, select one from the source selector:
