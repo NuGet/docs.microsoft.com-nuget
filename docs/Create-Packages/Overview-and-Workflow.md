@@ -31,7 +31,7 @@ A package can also serve to only pull in any number of other dependencies, witho
 
 Whatever the case, creating a package begins with deciding which assemblies and other files to package. You then create a manifest file, referred to as a `.nuspec` file, to describe the package's contents along with its identifer, version number, copyright information, MSBuild props and targets, and much more.
 
-When you've prepared all the necessary files in the appropriate folders and have created the appropriate `.nuspec` file, you then use the `nuget pack` command (or the[MSBuild pack target](../Schema/msbuild-targets.md)) to put everything together into a `.nupkg` file. You're then ready to deploy the package to whatever host makes it available to other developers.
+When you've prepared all the necessary files in the appropriate folders and have created the appropriate `.nuspec` file, you then use the `nuget pack` command (or the [MSBuild pack target](../Schema/msbuild-targets.md)) to put everything together into a `.nupkg` file. You're then ready to deploy the package to whatever host makes it available to other developers.
 
 > [!Tip]
 > A NuGet package with the `.nupkg` extension is simple a ZIP file. To easily examine any package's contents, change the extension to `.zip` and expand its contents as usual. Just be sure to change the extension back to `.nupkg` before attempting to upload it to a host.
