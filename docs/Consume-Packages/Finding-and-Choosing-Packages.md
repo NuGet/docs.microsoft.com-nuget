@@ -107,7 +107,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 - *Interview the owners*: new developers can certainly be equally committed to producing great packages for you to use, and it's good to give them a chance to bring something new to the NuGet ecosystem. With this in mind, reach out directly to the package developers through the **Contact Owners** option under **Info** on the listing page. Chances are, they'll be happy to work with you to serve your needs!
 
 > [!Note]
-> Always be mindful of a package's license terms, which you can see by selecting **License Info** on a package's listing page on nuget.org.
+> Always be mindful of a package's license terms, which you can see by selecting **License Info** on a package's listing page on nuget.org. If a package does not specify license terms, contact the package owner directly using the **Contact owners** link on the package page. Microsoft does not license any intellectual property to you from third party package providers and is not responsible for information provided by third parties.
 
 ## Search Syntax
 
