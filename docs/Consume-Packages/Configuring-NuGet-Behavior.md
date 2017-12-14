@@ -34,7 +34,7 @@ In this topic:
 
 ## Config file locations and uses
 
-| Scope | NuGet.Config file location | Decsription |
+| Scope | NuGet.Config file location | Description |
 | --- | --- | --- |
 | Project | Project folder or any folder up to the drive root | In a project folder, settings apply only to that project. In parent folders that contain multiple projects subfolders, settings apply to all projects in those subfolders. |
 | User | Windows: %APPDATA%\NuGet\NuGet.Config<br/>Mac/Linux: ~/.nuget/NuGet.Config | Settings apply to all operations, but are overridden by any project-level settings. When using CLI commands, you can specify a different config file using the `-configFile` switch to ignore any settings in the default user-level file. |
