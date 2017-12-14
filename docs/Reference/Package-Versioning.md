@@ -161,27 +161,27 @@ Always specify a version or version range for package dependencies in project fi
 In `packages.config`, every dependency is listed with an exact `version` attribute that's used when restoring packages. The `allowedVersions` attribute is used only during update operations to constrain the versions to which the package might be updated.
 
 ```xml
-<!-- Install/restore version 6.1, accept any version 6.1 and above on update. -->
-<package id="ExamplePackage" version="6.1" allowedVersions="6.1" />
+<!-- Install/restore version 6.1.0, accept any version 6.1.0 and above on update. -->
+<package id="ExamplePackage" version="6.1.0" allowedVersions="6.1.0" />
 
-<!-- Install/restore version 6.1, and do not change during update. -->
-<package id="ExamplePackage" version="6.1" allowedVersions="[6.1]" />
+<!-- Install/restore version 6.1.0, and do not change during update. -->
+<package id="ExamplePackage" version="6.1.0" allowedVersions="[6.1.0]" />
 
-<!-- Install/restore version 6.1, accept any 6.x version during update. -->
-<package id="ExamplePackage" version="6.1" allowedVersions="[6,7)" />
+<!-- Install/restore version 6.1.0, accept any 6.x version during update. -->
+<package id="ExamplePackage" version="6.1.0" allowedVersions="[6,7)" />
 
 <!-- Install/restore version 4.1.4, accept any version above, but not including, 4.1.3.
      Could be used to guarantee a dependency with a specific bug fix. -->
 <package id="ExamplePackage" version="4.1.4" allowedVersions="(4.1.3,)" />
 
-<!-- Install/restore version 3.1, accept any version up below 5.x on update, which might be
+<!-- Install/restore version 3.1.2, accept any version up below 5.x on update, which might be
      used to prevent pulling in a later version of a dependency that changed its interface.
      However, this form is not recommended because it can be difficult to determine the lowest version. -->
-<package id="ExamplePackage" version="3.1" allowedVersions="(,5.0)" />
+<package id="ExamplePackage" version="3.1.2" allowedVersions="(,5.0)" />
 
-<!-- Install/restore version 1.1, accept any 1.x or 2.x version on update, but not
+<!-- Install/restore version 1.1.4, accept any 1.x or 2.x version on update, but not
      0.x or 3.x and higher. -->
-<package id="ExamplePackage" version="1.1" allowedVersions="[1,3)" />
+<package id="ExamplePackage" version="1.1.4" allowedVersions="[1,3)" />
 
 <!-- Install/restore version 1.3.5, accepts 1.3.2 up to 1.4.x on update, but not 1.5 and higher. -->
 <package id="ExamplePackage" version="1.3.5" allowedVersions="[1.3.2,1.5)" />
