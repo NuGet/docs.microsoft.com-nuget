@@ -26,7 +26,7 @@ Between nuget.org and private package galleries that your organization might est
 NuGet remembers the identity and version number of each installed package, recording it in either `packages.config`, the project file, or a `project.json` file in your project root, depending on project type and your version of NuGet. With NuGet 4.0+, [storing dependencies in the project file](../consume-packages/package-references-in-project-files.md) is the default (except for UWP projects targeting Windows 10 RS1). In any case, you can look in the appropriate file at any time to see the full list of dependencies for your project.
 
 > [!Tip]
-> It's prudent to always check the license for each package you intend to use in your software. On nuget.org, you'll find a license link on the right side of each package's description page.
+> It's prudent to always check the license for each package you intend to use in your software. On nuget.org, you'll find a **License Info** link on the right side of each package's description page. If a package does not specify license terms, contact the package owner directly using the **Contact owners** link on the package page. Microsoft does not license any intellectual property to you from third party package providers and is not responsible for information provided by third parties.
 
 When installing packages, NuGet typically checks if the package is already available from its cache. You can manually clear this cache from the command line, as described on [Managing the NuGet cache](../consume-packages/managing-the-nuget-cache.md).
 
