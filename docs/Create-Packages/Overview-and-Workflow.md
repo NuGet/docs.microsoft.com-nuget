@@ -34,7 +34,7 @@ Whatever the case, creating a package begins with deciding which assemblies and 
 When you've prepared all the necessary files in the appropriate folders and have created the appropriate `.nuspec` file, you then use the `nuget pack` command (or the [MSBuild pack target](../Schema/msbuild-targets.md)) to put everything together into a `.nupkg` file. You're then ready to deploy the package to whatever host makes it available to other developers.
 
 > [!Tip]
-> A NuGet package with the `.nupkg` extension is simple a ZIP file. To easily examine any package's contents, change the extension to `.zip` and expand its contents as usual. Just be sure to change the extension back to `.nupkg` before attempting to upload it to a host.
+> A NuGet package with the `.nupkg` extension is simply a ZIP file. To easily examine any package's contents, change the extension to `.zip` and expand its contents as usual. Just be sure to change the extension back to `.nupkg` before attempting to upload it to a host.
 
 To learn and understand the creation process, start with [Creating a package](../create-packages/creating-a-package.md) which guides you through the core processes common to all packages. 
 
