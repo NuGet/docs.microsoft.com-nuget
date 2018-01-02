@@ -52,8 +52,8 @@ Clients are required to pass the following header when they make API calls to **
 X-NuGet-Protocol-Version: 4.1.0
 ```
 
-Note that the `X-NuGet-Client-Version` header is reserved and only to be used by the official NuGet client. Third party
-clients should use the `X-NuGet-Protocol-Version` header and value.
+Note that the `X-NuGet-Client-Version` header has similar semantics but is reserved to only be used by the official
+NuGet client. Third party clients should use the `X-NuGet-Protocol-Version` header and value.
 
 The **push** protocol itself is described in the documentation for the
 [`PackagePublish` resource](package-publish-resource.md).
