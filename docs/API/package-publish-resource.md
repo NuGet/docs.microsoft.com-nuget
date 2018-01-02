@@ -53,6 +53,9 @@ endpoint, see below.
 
 ## Push a package
 
+> [!Note]
+> nuget.org has [additional requirements](NuGet-Protocols.md) for interacting with the push endpoint.
+
 nuget.org supports pushing new packages using the following API. If the package with the provided ID and version
 already exists, nuget.org will reject the push. Other package sources may support replacing an existing package.
 
