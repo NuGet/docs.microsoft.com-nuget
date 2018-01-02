@@ -27,8 +27,8 @@ ms.reviewer:
 
 # Push and Delete
 
-It is possible to push and delete (or unlist, depending on the server implementation) packages using the NuGet V3 API.
-Both operations are based off of the `PackagePublish` resource found in the [service index](service-index.md).
+It is possible to push, delete (or unlist, depending on the server implementation), and relist packages using the NuGet
+V3 API. These operations are based off of the `PackagePublish` resource found in the [service index](service-index.md).
 
 ## Versioning
 
@@ -48,8 +48,8 @@ Note that this URL points to the same location as the legacy V2 push endpoint si
 
 ## HTTP methods
 
-The `PUT` and `DELETE` HTTP methods are supported by this resource. For which methods are supported on each endpoint,
-see below.
+The `PUT`, `POST` and `DELETE` HTTP methods are supported by this resource. For which methods are supported on each
+endpoint, see below.
 
 ## Push a package
 
@@ -117,4 +117,31 @@ X-NuGet-ApiKey | Header | string | yes      | For example, `X-NuGet-ApiKey: {USE
 Status Code | Meaning
 ----------- | -------
 204         | The package was deleted
+404         | No package with the provided `ID` and `VERSION` exists
+
+## Relist a package
+
+If a package is unlisted, it is possible to make that package once again visible in search results using the "relist"
+endpoint. This endpoint has the same shape as the [delete (unlist) endpoint](#delete-a-package) but uses the `POST`
+HTTP method instead of the `DELETE` method.
+
+If the package is already listed, the request still succeeds.
+
+```
+POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
+```
+
+### Request parameters
+
+Name           | In     | Type   | Required | Notes
+-------------- | ------ | ------ | -------- | -----
+ID             | URL    | string | yes      | The ID of the package to relist
+VERSION        | URL    | string | yes      | The version of the package to relist
+X-NuGet-ApiKey | Header | string | yes      | For example, `X-NuGet-ApiKey: {USER_API_KEY}`
+
+### Response
+
+Status Code | Meaning
+----------- | -------
+204         | The package is now listed
 404         | No package with the provided `ID` and `VERSION` exists
