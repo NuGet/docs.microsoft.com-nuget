@@ -139,7 +139,7 @@ same way not matter what you are doing with the catalog leaves.
 
 If you are interested in downloading the .nupkg's for packages found in the catalog, you can use the
 [package content resource](../../api/package-base-address-resource.md). However, note that there is a short delay
-between when a package is found in catalog and when it is available in the package content resource. Therefore, if
+between when a package is found in catalog and when it's available in the package content resource. Therefore, if
 you encounter `404 Not Found` when attempting to download a .nupkg for a package that you found in the catalog, simply
 retry a short time later. Fixing this delay is tracked by GitHub issue
 [NuGet/NuGetGallery#3455](https://github.com/NuGet/NuGetGallery/issues/3455).

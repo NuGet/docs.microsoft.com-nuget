@@ -78,7 +78,7 @@ NuGet packages using this format have the following well-known folder and behavi
 
 NuGet packages can contain `.targets` and `.props` files which are imported into any MSBuild project that the package is installed into. In NuGet 2.x, this was done by injecting `<Import>` statements into the `.csproj` file, in NuGet 3.0 there is no specific "installation to project" action. Instead the package restore process writes two files `[projectname].nuget.props` and `[projectname].NuGet.targets`.
 
-MSBuild knows to look for these two files and automatically imports them near the beginning and near the end of the project build process. This provides very similar behavior to NuGet 2.x, but with one major difference: *there is no guaranteed order of targets/props files in this case*. However, MSBuild does provide ways to order targets through the `BeforeTargets` and `AfterTargets` attributes of the `<Target>` definition (see [Target Element (MSBuild)](https://docs.microsoft.com/visualstudio/msbuild/target-element-msbuild).
+MSBuild knows to look for these two files and automatically imports them near the beginning and near the end of the project build process. This provides very similar behavior to NuGet 2.x, but with one major difference: *there is no guaranteed order of targets/props files in this case*. However, MSBuild does provide ways to order targets through the `BeforeTargets` and `AfterTargets` attributes of the `<Target>` definition (see [Target Element (MSBuild)](/visualstudio/msbuild/target-element-msbuild).
 
 
 ## Lib and Ref
@@ -101,7 +101,7 @@ There are sometimes cases where a different assembly should be used during compi
 
 Most package authors don't require the `ref` folder. It is useful for packages that need to provide a consistent surface area for compilation and IntelliSense but then have different implementation for different TxMs. The biggest use case of this are the `System.*` packages that are being produced as part of shipping .NET Core on NuGet. These packages have various implementations that are being unified by a consistent set of ref assemblies.
 
-Mechanically, the assemblies included in the `ref` folder are the reference assemblies being passed to the compiler. For those of you who have used csc.exe these are the assemblies we are passing to the [C# /reference option](https://docs.microsoft.com/dotnet/articles/csharp/language-reference/compiler-options/reference-compiler-option) switch.
+Mechanically, the assemblies included in the `ref` folder are the reference assemblies being passed to the compiler. For those of you who have used csc.exe these are the assemblies we are passing to the [C# /reference option](/dotnet/articles/csharp/language-reference/compiler-options/reference-compiler-option) switch.
 
 The structure of the `ref` folder is the same as `lib`, for example:
 
@@ -129,7 +129,7 @@ In this example the assemblies in the `ref` directories would all be identical.
 
 ## Runtimes
 
-The runtimes folder contains assemblies and native libraries required to run on specific "runtimes", which are generally defined by Operating System and CPU architecture. These runtimes are identified using [Runtime Identifiers (RIDs)](https://docs.microsoft.com/dotnet/core/rid-catalog) such as `win`, `win-x86`, `win7-x86`, `win8-64`, etc.
+The runtimes folder contains assemblies and native libraries required to run on specific "runtimes", which are generally defined by Operating System and CPU architecture. These runtimes are identified using [Runtime Identifiers (RIDs)](/dotnet/core/rid-catalog) such as `win`, `win-x86`, `win7-x86`, `win8-64`, etc.
 
 ## Native light-up
 
@@ -165,7 +165,7 @@ Given the above package the following things happen:
 
 In the example above the `lib/net40` assembly is purely managed code, whilst the assemblies in the runtimes folder will p/invoke into the native helper assembly to call APIs specific to Windows 8.
 
-Only a single `lib` folder is ever be picked, so if there is a runtime specific folder it is chosen over non-runtime specific `lib`. The native folder is additive, if it exists it's copied to the output of the build.
+Only a single `lib` folder is ever be picked, so if there is a runtime specific folder it's chosen over non-runtime specific `lib`. The native folder is additive, if it exists it's copied to the output of the build.
 
 ## Managed wrapper
 

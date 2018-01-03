@@ -38,7 +38,7 @@ ms.reviewer:
 >
 > If you're using Visual Studio Team Services or on-premises Team Foundation Server 2013 with its build process templates, Automatic Package Restore happens as part of the build process.
 
-This section will provide a detailed walkthrough on how to restore packages as part of the [Team Services Build](https://docs.microsoft.com/vsts/build-release/index) both, for both Git and Team Services Version Control.
+This section will provide a detailed walkthrough on how to restore packages as part of the [Team Services Build](/vsts/build-release/index) both, for both Git and Team Services Version Control.
 
 Although this walkthrough is specific for the scenario of using Visual Studio Team Services, the concepts also apply to other version control and build systems.
 

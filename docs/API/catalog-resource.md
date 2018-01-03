@@ -266,7 +266,7 @@ requireLicenseAgreement | boolean                    | no       | Assume `false`
 summary                 | string                     | no       |
 tags                    | array of strings           | no       |
 title                   | string                     | no       |
-verbatimVersion         | string                     | no       | The version string as it is originally found in the .nuspec
+verbatimVersion         | string                     | no       | The version string as it's originally found in the .nuspec
 
 The package `version` property is the full, normalized version string. This means that SemVer 2.0.0 build data can
 be included here.

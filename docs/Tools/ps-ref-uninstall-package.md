@@ -18,7 +18,7 @@ ms.reviewer:
 
 # Uninstall-Package (Package Manager Console in Visual Studio)
 
-*This topic describes the command within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows. For the generic PowerShell Uninstall-Package command, see the [PowerShell PackageManagement reference](https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6).*
+*This topic describes the command within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows. For the generic PowerShell Uninstall-Package command, see the [PowerShell PackageManagement reference](/powershell/module/packagemanagement/?view=powershell-6).*
 
 Removes a package from a project, optionally removing its dependencies. If other packages depend on this package, the command will fail unless the –Force option is specified.
 
@@ -37,7 +37,7 @@ If other packages depend on this package, the command will fail unless the –Fo
 | --- | --- |
 | Id | (Required) The identifier of the package to uninstall. The -Id switch itself is optional. |
 | Version | The version of the package to uninstall, defaulting to the currently installed version. |
-| RemoveDependencies | Uninstall the package and its unused dependencies. That is, if any dependency has another package that depends on it, it is skipped. |
+| RemoveDependencies | Uninstall the package and its unused dependencies. That is, if any dependency has another package that depends on it, it's skipped. |
 | ProjectName | The project from which to uninstall the package, defaulting to the default project. |
 | Force | Forces a package to be uninstalled, even if other packages depend on it. |
 | WhatIf | Shows what would happen when running the command without actually performing the uninstall. |
