@@ -21,7 +21,7 @@ No contribution is too big or too small--
 1. Edit the markdown:
     1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
     1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
-    1. When using external links, especially to docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
+    1. When using external links, especially to docs.microsoft.com (or msdn.microsoft.com for any older content), omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
 1. When you're done, enter a commit message below, and click **Propose file change**.
 1. Send a pull request for your change. We review PRs on a regular basis.
 1. Thank you!
@@ -139,7 +139,7 @@ You can also use one of the following callout tags on the first line that will c
 - Links to other markdown files on docs.microsoft.com are case-insensitive (unlike links to files in GitHub, which are).
 - If you're linking to another topic in the same folder, then `../<folder>/` can be omitted.
 - When using anchors, always remember to include the `.md` before the `#`.
-- When using external links, especially to docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
+- When using external links, especially to docs.microsoft.com (or msdn.microsoft.com for any older content), omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
 - Bare URLs are not automatically converted into links.
 
 ### Inline HTML

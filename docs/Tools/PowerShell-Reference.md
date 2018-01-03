@@ -29,7 +29,7 @@ The Package Manager Console provides a PowerShell interface within Visual Studio
 > All PowerShell commands relate only to package consumption. No PowerShell commands relate to creating and publishing packages except to the extent that a package can also be a consumer of other packages.
 
 > [!Important]
-> The commands listed here are specific to the Package Manager Console in Visual Studio, and differ from the [Package Management module commands](https://msdn.microsoft.com/powershell/reference/6/packagemanagement/packagemanagement) that are available in a general PowerShell environment. Specifically, each environment has commands that are not available in the other, and commands with the same name may also differ in their specific arguments. When using the Package Management Console in Visual Studio, the commands and arguments documented in this present topic apply.
+> The commands listed here are specific to the Package Manager Console in Visual Studio, and differ from the [Package Management module commands](/powershell/module/packagemanagement/?view=powershell-6) that are available in a general PowerShell environment. Specifically, each environment has commands that are not available in the other, and commands with the same name may also differ in their specific arguments. When using the Package Management Console in Visual Studio, the commands and arguments documented in this present topic apply.
 
 | Common Commands | Description | NuGet Version |
 | --- | --- | --- |

@@ -29,7 +29,7 @@ ms.reviewer:
 ---
 # NuGet API in Visual Studio
 
-In addition to the Package Manager UI and Console in Visual Studio, NuGet also exports some useful services through the [Managed Extensibility Framework (MEF)](http://msdn.microsoft.com/library/dd460648.aspx). This interface allows other components in Visual Studio to interact with NuGet, which can be used to install and uninstall packages, and to obtain information about installed packages.
+In addition to the Package Manager UI and Console in Visual Studio, NuGet also exports some useful services through the [Managed Extensibility Framework (MEF)](/dotnet/framework/mef/index). This interface allows other components in Visual Studio to interact with NuGet, which can be used to install and uninstall packages, and to obtain information about installed packages.
 
 As of NuGet 3.3+, NuGet exports the following services all of which reside in the `NuGet.VisualStudio` namespace in the `NuGet.VisualStudio.dll` assembly:
 
@@ -55,7 +55,7 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
 > [!Warning]
 > Do not use any other types besides the public interfaces in your code, and do not reference any other NuGet assemblies, including `NuGet.Core.dll`.
 
-1. To use a service, import it through the [MEF Import attribute](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes), or through the [IComponentModel service](http://msdn.microsoft.com/library/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx).
+1. To use a service, import it through the [MEF Import attribute](/dotnet/framework/mef/index#imports-and-exports-with-attributes), or through the [IComponentModel service](/dotnet/api/microsoft.visualstudio.componentmodelhost.icomponentmodel?redirectedfrom=MSDN&view=visualstudiosdk-2017).
 
     ```cs
     //Using the Import attribute
