@@ -52,7 +52,7 @@ In this walkthrough you'll create a cross-platform NuGet package that can be use
 
 ## Create the project structure and abstraction code
 
-1. Download and run the [Plugin for Xamarin Templates extension](https://visualstudiogallery.msdn.microsoft.com/afead421-3fbf-489a-a4e8-4a244ecdbb1e) for Visual Studio. These templates will make it easy to create the necessary project structure for this walkthrough.
+1. Download and run the [Plugin for Xamarin Templates extension](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates) for Visual Studio. These templates will make it easy to create the necessary project structure for this walkthrough.
 1. In Visual Studio, **File > New > Project**, search for `Plugin`, select the **Plugin for Xamarin** template, change the name to LoggingLibrary, and click OK.
 
     ![New Blank App (Xamarin.Forms Portable) project in Visual Studio](media/CrossPlatform-NewProject.png)

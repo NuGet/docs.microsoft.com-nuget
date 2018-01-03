@@ -49,7 +49,7 @@ Packages that meet any of the following criteria are not allowed on the public N
 - Infringes copyrights or violates licenses.
 - Contains illegal content.
 - Are being used to squat on package identifiers, including packages that have zero productive content. Packages must contain code or the owners must concede the identifier to someone who actually has a product to ship.
-- Attempt to make the gallery do something that it is not explicitly designed to do.
+- Attempt to make the gallery do something that it's not explicitly designed to do.
 
 If you find a package that is in violation of any of these items, click the **Report Abuse** link on the package details page and submit a report.
 
