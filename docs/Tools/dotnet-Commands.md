@@ -1,32 +1,20 @@
 ---
-# required metadata
-
 title: dotNet NuGet commands | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 12/08/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 0c81dbc4-2c14-4ec8-b87a-b802a899c3ea
-
-# optional metadata
-
 description: A short reference for NuGet-related commands using the dotnet command-line interface.
 keywords: dotnet NuGet commands, dotnet pack, dotnet restore, dotnet nuget locals, dotnet nuget push, dotnet nuget delete
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # dotNet commands
 
 The DotNet command-line interface, which runs on Windows, Mac OS X, and Linux, provides a number of essential nuget.exe commands as listed below. Where dotnet provides the desired commands, it's not necessary to download nuget.exe.

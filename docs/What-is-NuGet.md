@@ -24,7 +24,7 @@ ms.reviewer:
 
 # An introduction to NuGet
 
-An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful libraries of code. Such libraries are typically referred to as "packages" because they can contain compiled code (as DLLs) along with other content that might be needed in the projects that consume those libraries.
+An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful  code. Often such code is bundled into a "packages" that contain compiled code (as DLLs) along with other content needed in the projects that consume these packages.
 
 For .NET, the mechanism for sharing code is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. 
 
@@ -79,7 +79,7 @@ Instead, NuGet simply maintains a reference list of the packages upon which a pr
 
 With only the reference list, NuGet can then reinstall&mdash;that is, restore&mdash;all of those packages from public and/or private hosts at any later time. (For this reason, nuget.org does not allow permanent deletion of published packages, although they can be hidden; see [Deleting packages](Policies/deleting-packages.md).) When committing a project to source control, or sharing it in some other way, you need only include the reference list and need not include any package binaries (see [Packages and source control](Consume-Packages/Packages-and-Source-Control.md).)
 
-The computer that receives a project, such as a build server obtaining a copy of the project as part of an automated deployment system, simply asks NuGet to restore dependencies whenever they're needed. Build systems like Visual Studio Team Services provide "NuGet restore" steps for this exact purpose. Similarly, when developers obtain a copy of a project (as when cloning a repository) then open the project in Visual Studio and run a build, Visual Studio automatically restores the necessary NuGet packages. Developers can also tell NuGet to restore packages at any time using the the `nuget restore` CLI command or the `Install-Package` cmdlet in the Package Manager Console.
+The computer that receives a project, such as a build server obtaining a copy of the project as part of an automated deployment system, simply asks NuGet to restore dependencies whenever they're needed. Build systems like Visual Studio Team Services provide "NuGet restore" steps for this exact purpose. Similarly, when developers obtain a copy of a project (as when cloning a repository) then open the project in Visual Studio and run a build, Visual Studio automatically restores the necessary NuGet packages. Developers can also tell NuGet to restore packages at any time using the `nuget restore` CLI command or the `Install-Package` cmdlet in the Package Manager Console.
 
 Clearly, then, NuGet's primary role where developers are concerned is maintaining that reference list on behalf of your project and providing the means to efficiently restore (and update) those referenced packages.
 

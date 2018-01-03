@@ -164,6 +164,13 @@ This is not an issue when using PackageReference, as each project file contains 
 - Add `https://api.nuget.org/v3/index.json` to your list of sources, or
 - Delete the `%appdata%\.nuget\NuGet.Config` and let NuGet re-create it.
 
+**What are the default license terms if a package doesn't provide specific license information?**
+
+Each package is governed by the terms that are included with the package. You should review the applicable terms before accessing, downloading, or acquiring any packages. On nuget.org, use the **License Info** link on the package page.
+
+If a package does not specify the licensing terms, contact the package owner directly using the **Contact owners** link on the nuget.org package page. Microsoft does not license any intellectual property to you from third party package providers and is not responsible for information provided by third parties.
+
+
 ## Managing packages on nuget.org
 
 **Can I edit package metadata after it's been uploaded? Why do you recommend editing the nuspec and uploading a new package for making changes to package metadata?**
