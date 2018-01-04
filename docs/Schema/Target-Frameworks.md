@@ -49,7 +49,7 @@ The NuGet clients support the frameworks in the table below. Equivalents are sho
 |                |              | net46      |
 |                |              | net461     |
 |                |              | net462     |
-|Windows Store   | netcore      | netcore [netcore45] |
+|Microsoft Store (Windows Store) | netcore      | netcore [netcore45] |
 |                |              | netcore45 [win, win8] |
 |                |              | netcore451 [win81] |
 |                |              | netcore50 |
