@@ -81,7 +81,7 @@ These elements must appear within a `<metadata>` element.
 
 ### Optional metadata elements
 
-These elements must appear within a `<metadata>` element.
+These elements may appear within a `<metadata>` element.
 
 #### Single elements
 
