@@ -90,9 +90,9 @@ discovered by inspecting the registration index.
 
 ### Registration pages and leaves
 
-Although it is not strictly required for a server implementation to store registration leafs in seperate
-registration page documents, it is a recommended practice to conserve client-side memory. Instead of inlining all
-registration leaves in the index or immediately storing leaves in page documents, it is recommended that the server
+Although it's not strictly required for a server implementation to store registration leafs in seperate
+registration page documents, it's a recommended practice to conserve client-side memory. Instead of inlining all
+registration leaves in the index or immediately storing leaves in page documents, it's recommended that the server
 implementation define some heuristic to choose between the two approaches based on the number of package versions
 or cumulative size of package leaves.
 
@@ -115,8 +115,7 @@ Name     | In     | Type    | Required | Notes
 LOWER_ID | URL    | string  | yes      | The package ID, lowercased
 
 The `LOWER_ID` value is the desired package ID lowercased using the rules implemented by .NET's
-[`System.String.ToLowerInvariant()`](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx)
-method.
+[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) method.
 
 ### Response
 

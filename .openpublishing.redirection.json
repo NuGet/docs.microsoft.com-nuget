@@ -1,0 +1,34 @@
+{
+    "redirections": [
+        {
+            "source_path": "docs/API/introduction.md",
+            "redirect_url": "/nuget/api/overview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/API/NuGet-API-V3.md",
+            "redirect_url": "/nuget/reference/nuget-client-sdk",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/API/NuGet-Credential-Providers-for-Visual-Studio.md",
+            "redirect_url": "/nuget/reference/extensibility/nuget-credential-providers-for-visual-studio",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/API/nuget-exe-Credential-Providers.md",
+            "redirect_url": "/nuget/reference/extensibility/nuget-exe-credential-providers",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Create-Packages/Dependency-Versions.md",
+            "redirect_url": "/nuget/reference/package-versioning",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Quickstart/restore.md",
+            "redirect_url": "/nuget/consume-packages/package-restore-troubleshooting",
+            "redirect_document_id": false
+        }
+    ]
+}

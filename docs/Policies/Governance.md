@@ -33,7 +33,7 @@ ms.reviewer:
 
 The NuGet project is led by a Benevolent Dictator and managed by the community. That is, the community actively contributes to the day-to-day maintenance of the project, but the general strategic line is drawn by the benevolent dictator. In case of disagreement, the benevolent dictator has the last word.
 
-It is the benevolent dictator’s job to resolve disputes within the community and to ensure that the project is able to progress in a coordinated way. In turn, it is the community’s job to guide the decisions of the benevolent dictator through active engagement and contribution.
+It is the benevolent dictator’s job to resolve disputes within the community and to ensure that the project is able to progress in a coordinated way. In turn, it's the community’s job to guide the decisions of the benevolent dictator through active engagement and contribution.
 
 ## Roles and responsibilities
 
@@ -51,7 +51,7 @@ Additionally, .NET Foundation staff consider the project lead the primary or fir
 
 Committers are contributors who have made sustained valuable contributions to NuGet and are appointed by the Benevolent Dictator. One appointed, committers are relied upon to both write code directly to the repository and screen the contributions of others. Committers are often developers but can contribute in other ways.
 
-Typically, a committer focuses on a specific aspect of the project, and brings a level of expertise and understanding that earns them the respect of the community and the project lead. The role of committer is not an official one, it is simply a position that influential members of the community assume as the project lead looks to them for guidance and support.
+Typically, a committer focuses on a specific aspect of the project, and brings a level of expertise and understanding that earns them the respect of the community and the project lead. The role of committer is not an official one, it's simply a position that influential members of the community assume as the project lead looks to them for guidance and support.
 
 Committers have no authority where the overall direction of NuGet is concerned. However, they do have the ear of the project lead. It is a committer’s job to ensure that the lead is aware of the community’s needs and collective objectives, and to help develop or elicit appropriate contributions to the project. Often, committers are given informal control over their specific areas of responsibility, and are assigned rights to directly modify certain areas of the source code. That is, although committers do not have explicit decision-making authority, they will often find that their actions are synonymous with the decisions made by the lead.
 

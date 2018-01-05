@@ -24,7 +24,7 @@ ms.reviewer:
 
 # An introduction to NuGet
 
-An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful libraries of code. Such libraries are typically referred to as "packages" because they can contain compiled code (as DLLs) along with other content that might be needed in the projects that consume those libraries.
+An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful  code. Often such code is bundled into a "packages" that contain compiled code (as DLLs) along with other content needed in the projects that consume these packages.
 
 For .NET, the mechanism for sharing code is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. 
 
@@ -48,7 +48,7 @@ In addition to hosting support, NuGet also provides a variety of tools used by b
 | --- | --- | --- | --- |
 | [nuget.exe CLI](Tools/nuget-exe-CLI-Reference.md) | All | Creation, Consumption | Provides all NuGet capabilities, with some commands applying specifically to package creators, some applying only to consumers, and others applying to both. For example, package creators use the `nuget pack` command to create a package from various assemblies and related files, package consumers use `nuget install` to include packages in a project, and everyone uses `nuget config` to set NuGet configuration variables.  |
 | [Package Manager UI](Tools/Package-Manager-UI.md) | Visual Studio on Windows | Consumption | Provides an easy-to-use UI for installing and managing packages in .NET projects. | 
-| [Manage NuGet UI](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | Consumption | Provide an easy-to-use UI for installing and managing packages in .NET projects. |
+| [Manage NuGet UI](/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | Consumption | Provide an easy-to-use UI for installing and managing packages in .NET projects. |
 | [Package Manager Console](Tools/Package-Manager-Console.md) | Visual Studio on Windows | Consumption | Provides [PowerShell commands](Tools/Powershell-Reference.md) for installing and managing packages in .NET projects. | 
 | [dotnet CLI](Tools/dotnet-Commands.md) | All | Creation, Consumption | Provides certain NuGet CLI capabilities directly within the .NET Core toolchain. |
 | [MSBuild](Schema/msbuild-targets.md) | Windows | Creation, Consumption | Provides the ability to create packages and restore packages used in a project directly through the MSBuild toolchain. |

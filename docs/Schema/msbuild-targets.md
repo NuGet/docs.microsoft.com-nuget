@@ -203,7 +203,7 @@ When using `MSBuild /t:pack /p:IncludeSymbols=true`, the corresponding `.pdb` fi
 
 This is the same as `IncludeSymbols`, except that it copies source files along with `.pdb` files as well. All files of type `Compile` are copied over to `src\<ProjectName>\` preserving the relative path folder structure in the resulting package. The same also happens for source files of any `ProjectReference` which has `TreatAsPackageReference` set to `false`.
 
-If a file of type Compile, is outside the project folder, then it is just added to `src\<ProjectName>\`.
+If a file of type Compile, is outside the project folder, then it's just added to `src\<ProjectName>\`.
 
 ### IsTool
 
@@ -307,7 +307,7 @@ To declare a fallback for all targets in your project, leave off the `Condition`
 
 ### Replacing one library from a restore graph
 
-If a restore is bringing the wrong assembly, it is possible to exclude that packages default choice, and replace it with your own choice. First with a top level `PackageReference`, exclude all assets:
+If a restore is bringing the wrong assembly, it's possible to exclude that packages default choice, and replace it with your own choice. First with a top level `PackageReference`, exclude all assets:
 
 ```xml
 <PackageReference Include="Newtonsoft.Json" Version="9.0.1">

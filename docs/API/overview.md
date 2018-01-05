@@ -31,7 +31,7 @@ The NuGet API is a set of HTTP endpoints that can be used to download packages, 
 and perform most other operations available in the official NuGet clients.
 
 This API is used by the NuGet client in Visual Studio, nuget.exe, and the .NET CLI to perform NuGet operations such as
-[`dotnet restore`](https://docs.microsoft.com/dotnet/articles/core/preview3/tools/dotnet-restore), search in the Visual
+[`dotnet restore`](/dotnet/articles/core/preview3/tools/dotnet-restore), search in the Visual
 Studio UI, and [`nuget.exe push`](../tools/cli-ref-push.md).
 
 Note in some cases, nuget.org has additional requirements that are not enforced by other package sources. These
@@ -62,7 +62,7 @@ version string's minor version will be increased.
 Older clients (such as nuget.exe 2.x) do not support the V3 API and only support the older V2 API, which is not
 documented here.
 
-The NuGet V3 API is named as such because it is the successor of the V2 API, which was the OData-based protocol
+The NuGet V3 API is named as such because it's the successor of the V2 API, which was the OData-based protocol
 implemented by the 2.x version of the official NuGet client. The V3 API was first supported by the 3.0 version of the
 official NuGet client and is still the latest major protocol version supported by the NuGet client, 4.0 and on. 
 

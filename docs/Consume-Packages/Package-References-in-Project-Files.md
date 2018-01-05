@@ -34,7 +34,7 @@ Package references, using the `PackageReference` node, allow you to manage NuGet
 > [!Important]
 > At present, package references are supported in Visual Studio 2017 only, for .NET Core projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update).
 
-The `PackageReference` approach allows you to use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. In terms of behavior and [dependency resolution](Dependency-Resolution.md), it is the same as using `project.json`.
+The `PackageReference` approach allows you to use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. In terms of behavior and [dependency resolution](Dependency-Resolution.md), it's the same as using `project.json`.
 
 For more details on the integration of MSBuild with package references in project files, see [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).
 

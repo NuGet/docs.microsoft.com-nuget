@@ -117,7 +117,6 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `push` comm
 > [!Warning]
 > The packages you publish to nuget.org are publicly visible to other developers. To host packages privately, see [Hosting packages](../hosting-packages/overview.md).
 
-
 1. Create a free account on [nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F), or log in if you already have one. Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
 
 1. Once logged in, select your user name (on the upper right), then select **API Keys**.
@@ -136,7 +135,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `push` comm
     ```
     nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://api.nuget.org/v3/index.json
     ```
-    
+
 1. nuget.exe displays the results of the publishing process:
 
     ```

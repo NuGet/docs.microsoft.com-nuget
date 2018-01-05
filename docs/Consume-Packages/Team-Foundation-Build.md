@@ -38,9 +38,9 @@ ms.reviewer:
 >
 > If you're using Visual Studio Team Services or on-premises Team Foundation Server 2013 with its build process templates, Automatic Package Restore happens as part of the build process.
 
-This section will provide a detailed walkthrough on how to restore packages as part of the [Team Foundation Build](http://msdn.microsoft.com/library/ms181710(v=VS.90).aspx) both, for [git](http://en.wikipedia.org/wiki/Git_(software)) as well as [TF Version Control](http://msdn.microsoft.com/library/ms181237(v=vs.120).aspx).
+This section will provide a detailed walkthrough on how to restore packages as part of the [Team Services Build](/vsts/build-release/index) both, for both Git and Team Services Version Control.
 
-Although this walkthrough is specific for the scenario of using [Team Foundation Service](http://tfs.visualstudio.com/), the concepts also apply to other version control- and build systems.
+Although this walkthrough is specific for the scenario of using Visual Studio Team Services, the concepts also apply to other version control and build systems.
 
 ## The general approach
 
@@ -128,7 +128,7 @@ The `.gitignore` file is [quite powerful](https://www.kernel.org/pub/software/sc
 
 This will exclude all `packages` folders but will re-include all contained `.targets` files. By the way, you can find a template for `.gitignore` files that is specifically tailored for the needs of Visual Studio developers [here](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
 
-TF version control supports a very similar mechanism via the [.tfignore](http://msdn.microsoft.com/library/ms245454.aspx) file. The syntax is virtually the same:
+TF version control supports a very similar mechanism via the [.tfignore](/vsts/tfvc/add-files-server#customize-which-files-are-ignored-by-version-control) file. The syntax is virtually the same:
 
     *.user
     *.suo
@@ -144,7 +144,7 @@ This project will have the three conventional targets `Clean`, `Build` and `Rebu
 
 - The `Build` and `Rebuild` targets both depend on `RestorePackages`. This makes sure that you can both run `Build` and `Rebuild` and rely on packages being restored.
 - `Clean`, `Build` and `Rebuild` invoke the corresponding MSBuild target on all solution files.
-- The `RestorePackages` target invokes `nuget.exe` for each solution file. This is accomplished by using [MSBuild's batching functionality](http://msdn.microsoft.com/library/ms171473.aspx).
+- The `RestorePackages` target invokes `nuget.exe` for each solution file. This is accomplished by using [MSBuild's batching functionality](/visualstudio/msbuild/msbuild-batching).
 
 The result looks as follows:
 
