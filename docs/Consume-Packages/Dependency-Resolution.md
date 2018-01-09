@@ -150,10 +150,10 @@ To resolve this, you must directly reference the `C.dll` you want (or use anothe
     }
     ```
 
-- With [package references in project files](../consume-packages/package-references-in-project-files.md) (NuGet 4.0+ only), add `Exclude="All"` in the dependency:
+- With [package references in project files](../consume-packages/package-references-in-project-files.md) (NuGet 4.0+ only), add `ExcludeAssets="All"` in the dependency:
 
     ```xml
-    <PackageReference Include="packageC" Version="1.0.0" Exclude="All" />
+    <PackageReference Include="packageC" Version="1.0.0" ExcludeAssets="All" />
     ```
 
 ## Resolving incompatible package errors
