@@ -10,6 +10,8 @@ ms.topic: article
 ms.prod: nuget
 ms.technology: null
 ms.assetid: 2b92b119-6861-406c-82af-9d739af230e4
+f1_keywords: 
+  - "vs.nuget.packagemanager.console"
 
 # optional metadata
 
