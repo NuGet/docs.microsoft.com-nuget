@@ -3,7 +3,7 @@
 
 title: NuGet 3.0 Preview Release Notes | Microsoft Docs
 author: karann-msft
-ms.author: karann
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ keywords: NuGet 3.0 Preview release notes, bug fixes, known issues, added featur
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -67,7 +67,7 @@ By using the "Installed" filter, you can then easily see your installed packages
 
 ### Version Consolidation
 
-It's common to have the same package installed into multiple projects within your solution. Sometimes the versions installed into each project can drift apart and it is necessary to consolidate the versions in use. NuGet 3.0 Preview introduces a new feature for just this scenario.
+It's common to have the same package installed into multiple projects within your solution. Sometimes the versions installed into each project can drift apart and it's necessary to consolidate the versions in use. NuGet 3.0 Preview introduces a new feature for just this scenario.
 
 The solution-level package management window can be accessed by right-clicking on the solution and choosing Manage NuGet Packages for Solution. From there, if you select a package that is installed into multiple projects, but with different versions in use, a new "Consolidate" action becomes available. In the screen shot below, `Newtonsoft.Json` was installed into the `SamplesClassLibrary` with version `6.0.4` and installed into `SamplesConsoleApp` with version `5.0.4`.
 

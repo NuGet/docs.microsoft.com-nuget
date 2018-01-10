@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet credential providers for Visual Studio | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -8,24 +6,13 @@ manager: ghogen
 ms.date: 1/9/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 9c7f6d16-f437-47c4-82d4-6c996e0b18ec
-
-# optional metadata
-
 description: NuGet credential providers authenticate with feeds by implementing the IVsCredentialProvider interface in a Visual Studio extension.
 keywords: NuGet credential providers, authenticate with feed, authenticate with gallery, NuGet visual studio extension
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
-- karann
-- unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
+- karann-msft
+- unniravindranathan
 ---
 
 # Authenticating feeds in Visual Studio with NuGet credential providers
@@ -38,7 +25,7 @@ A sample implementation can be found in [the VsCredentialProvider sample](https:
 > [!Note]
 > NuGet credential providers for Visual Studio must be installed as a regular Visual Studio extension and will require [Visual Studio 2017](https://aka.ms/vs/15/preview/vs_enterprise) (currently in preview) or above.
 >
-> NuGet credential providers for Visual Studio work only in Visual Studio (not in dotnet restore or nuget.exe). For credential providers with nuget.exe, see [nuget.exe Credential Providers](../api/nuget-exe-Credential-providers.md).
+> NuGet credential providers for Visual Studio work only in Visual Studio (not in dotnet restore or nuget.exe). For credential providers with nuget.exe, see [nuget.exe Credential Providers](nuget-exe-Credential-providers.md).
 
 ## Available NuGet credential providers for Visual Studio
 
@@ -97,5 +84,5 @@ A custom NuGet credential provider for Visual Studio must implement the `IVsCred
 | bool isRetry | True if credentials were previously requested for this Uri, but the supplied credentials did not allow authorized access. |
 | bool nonInteractive | If true, the credential provider must suppress all user prompts and use default values instead. |
 | CancellationToken cancellationToken | This cancellation token should be checked to determine if the operation requesting credentials has been cancelled. |
-  
-**Return value**: A credentials object implementing the [`System.Net.ICredentials` interface](https://msdn.microsoft.com/library/system.net.icredentials.aspx).
+
+**Return value**: A credentials object implementing the [`System.Net.ICredentials` interface](/dotnet/api/system.net.icredentials?view=netstandard-2.0).

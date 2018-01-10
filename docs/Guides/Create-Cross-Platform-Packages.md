@@ -6,7 +6,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 1/9/2017
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: nuget
 #ms.service:
 ms.technology: null
@@ -20,8 +20,8 @@ keywords: create a package, packages for Xamarin, cross-platform packages
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -52,7 +52,7 @@ In this walkthrough you'll create a cross-platform NuGet package that can be use
 
 ## Create the project structure and abstraction code
 
-1. Download and run the [Plugin for Xamarin Templates extension](https://visualstudiogallery.msdn.microsoft.com/afead421-3fbf-489a-a4e8-4a244ecdbb1e) for Visual Studio. These templates will make it easy to create the necessary project structure for this walkthrough.
+1. Download and run the [Plugin for Xamarin Templates extension](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates) for Visual Studio. These templates will make it easy to create the necessary project structure for this walkthrough.
 1. In Visual Studio, **File > New > Project**, search for `Plugin`, select the **Plugin for Xamarin** template, change the name to LoggingLibrary, and click OK.
 
     ![New Blank App (Xamarin.Forms Portable) project in Visual Studio](media/CrossPlatform-NewProject.png)
@@ -286,7 +286,7 @@ To make your package available to other developers,  follow the instructions on 
 
 - [Nuspec Reference](../schema/nuspec.md)
 - [Symbol packages](../create-packages/symbol-packages.md)
-- [Dependency Versions](../create-packages/dependency-versions.md)
+- [Package versioning](../reference/package-versioning.md)
 - [Supporting Multiple .NET Framework Versions](../create-packages/supporting-multiple-target-frameworks.md)
 - [Including MSBuild props and targets in a package](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
 - [Creating Localized Packages](../create-packages/creating-localized-packages.md)

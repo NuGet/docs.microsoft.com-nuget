@@ -3,7 +3,7 @@
 
 title: NuGet 3.3 Release Notes | Microsoft Docs
 author: karann-msft
-ms.author: karann
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ keywords: NuGet 3.3 release notes, bug fixes, known issues, added features, DCRs
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -61,7 +61,7 @@ Content is now supported in `project.json` managed projects through the new `con
 
 ## NuGet Locals Cache Management
 
-The NuGet command-line has been updated to include information about how to manage the local caches on a workstation.  More information about the locals command is available in the [NuGet command-line reference](../tools/nuget-exe-cli-reference.md#locals).
+The NuGet command-line has been updated to include information about how to manage the local caches on a workstation.  More information about the locals command is available in the [NuGet command-line reference](../tools/cli-ref-locals.md).
 
 ## Fixed Issues
 

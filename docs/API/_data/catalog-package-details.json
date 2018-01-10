@@ -1,0 +1,55 @@
+{
+  "@type": [
+    "PackageDetails",
+    "catalog:Permalink"
+  ],
+  "authors": "Microsoft DPE",
+  "catalog:commitId": "49fe04d8-5694-45a5-9822-3be61bda871b",
+  "catalog:commitTimeStamp": "2015-02-01T11:18:40.8589193Z",
+  "created": "2011-12-02T20:21:23.74Z",
+  "description": "This package contains a class library with the Windows Azure Storage Proxy Cloud Services, and a WebActivator enabled class with the default configuration.",
+  "iconUrl": "http://wazmobiletoolkit.blob.core.windows.net/nuget/logos/WinAzure_rgb.png",
+  "id": "WindowsAzure.Storage",
+  "isPrerelease": false,
+  "language": "en-US",
+  "licenseUrl": "http://www.opensource.org/licenses/ms-pl",
+  "packageHash": "2edCwKLcbcgFJpsAwa883BLtOy8bZpWwbQpiIb71E74k5t2f2WzXEGWbPwntRleUEgSrcxJrh9Orm/TAmgO4NQ==",
+  "packageHashAlgorithm": "SHA512",
+  "packageSize": 118348,
+  "projectUrl": "http://watwp.codeplex.com",
+  "published": "1900-01-01T00:00:00Z",
+  "requireLicenseAcceptance": false,
+  "title": "Windows Azure Storage Proxy Cloud Services",
+  "version": "1.0.0",
+  "dependencyGroups": [
+    {
+      "@id": "https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json#dependencygroup",
+      "@type": "PackageDependencyGroup",
+      "dependencies": [
+        {
+          "@id": "https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json#dependencygroup/aspnet.suppressformsredirect",
+          "@type": "PackageDependency",
+          "id": "aspnet.suppressformsredirect",
+          "range": "[0.0.1.4, )"
+        },
+        {
+          "@id": "https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json#dependencygroup/webactivator",
+          "@type": "PackageDependency",
+          "id": "WebActivator",
+          "range": "[1.4.4, )"
+        },
+        {
+          "@id": "https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json#dependencygroup/webapi.all",
+          "@type": "PackageDependency",
+          "id": "WebApi.All",
+          "range": "[0.5.0, )"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "Storage",
+    "WindowsAzure",
+    "DPE"
+  ]
+}

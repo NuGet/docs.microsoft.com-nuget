@@ -3,7 +3,7 @@
 
 title: NuGet 2.6 Release Notes | Microsoft Docs
 author: karann-msft
-ms.author: karann
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ keywords: NuGet 2.6 release notes, bug fixes, known issues, added features, DCRs
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -48,8 +48,8 @@ sizes as small as possible, we are producing a separate extension for Visual Stu
 
 Starting with NuGet 2.6, we will publish two extensions as below:
 
-1. [NuGet Package Manager](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c/file/37502/30/NuGet.Tools.vsix) (applies to Visual Studio 2010 and 2012)
-2. [NuGet Package Manager for Visual Studio 2013](http://visualstudiogallery.msdn.microsoft.com/4ec1526c-4a8c-4a84-b702-b21a8f5293ca)
+1. [NuGet Package Manager](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManager) (applies to Visual Studio 2010 and 2012)
+1. [NuGet Package Manager for Visual Studio 2013](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManagerforVisualStudio2013)
 
 With this split, the [nuget.org](https://nuget.org) home page's "Install NuGet" button
 will now take you to the [installing NuGet](../guides/install-nuget.md)
@@ -61,7 +61,8 @@ page, where you can find more information about installing the different NuGet c
 
 One of the most highly-requested features for the NuGet client has been to support more
 powerful XML transformations using the XDT transformation engine which is used in Visual
-Studio [build configuration transformations](http://msdn.microsoft.com/library/dd465318(v=vs.100).aspx).
+Studio build configuration transformations.
+
 In April 2013, we made two big announcements regarding NuGet support for XDT. The first
 was that the XDT library itself was being itself [released as a NuGet package](https://nuget.org/packages/Microsoft.Web.Xdt)
 and [open sourced on CodePlex](http://xdt.codeplex.com/). This step enabled the XDT engine

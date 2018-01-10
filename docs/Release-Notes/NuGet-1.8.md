@@ -3,7 +3,7 @@
 
 title: NuGet 1.8 Release Notes | Microsoft Docs
 author: karann-msft
-ms.author: karann
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ keywords: NuGet 1.8 release notes, bug fixes, known issues, added features, DCRs
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -85,7 +85,7 @@ There are 2 ways to provide this consent. The first can be found in the package 
 
 The second method is to set the environment variable “EnableNuGetPackageRestore” to the value “true”.  This method is intended for unattended machines such as CI or build servers.
 
-Now, as stated above, we have only laid the groundwork for this feature in NuGet 1.8.  Practically, this means that while we’ve added all of the logic to enable the feature, it is not currently enforced in this version. It will be enabled, however, in the next release of NuGet, so we wanted to make you aware of it as soon as possible so that you can configure your environments appropriately and therefore not be impacted when we start enforce the consent constraint.
+Now, as stated above, we have only laid the groundwork for this feature in NuGet 1.8.  Practically, this means that while we’ve added all of the logic to enable the feature, it's not currently enforced in this version. It will be enabled, however, in the next release of NuGet, so we wanted to make you aware of it as soon as possible so that you can configure your environments appropriately and therefore not be impacted when we start enforce the consent constraint.
 
 For more details, please see the [team blog post](http://blog.nuget.org/20120518/package-restore-and-consent.html) on this feature.
 

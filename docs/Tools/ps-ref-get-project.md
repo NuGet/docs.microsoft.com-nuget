@@ -1,34 +1,25 @@
 ---
-# required metadata
-
 title: NuGet Get-Project PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/1/2017
-ms.topic: article
+ms.date: 12/07/2017
+ms.topic: reference
 ms.prod: nuget
 #ms.service:
 ms.technology: null
 ms.assetid: 09c10ea3-ba26-4bfa-999e-de5350e6e920
-
-# optional metadata
-
 description: Reference for GetProject PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Get-Project
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
-- karann
-- unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
+- karann-msft
+- unniravindranathan
 
 ---
 
-# Get-Project
+# Get-Project (Package Manager Console in Visual Studio)
+
+*Available only within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows.*
 
 Displays information about the default or specified project. `Get-Project` specifically returns a referent to the Visual Studio DTE (Development Tools Environment) object for the project.
 

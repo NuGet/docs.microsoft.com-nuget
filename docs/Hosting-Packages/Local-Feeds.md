@@ -1,41 +1,32 @@
 ---
-# required metadata
-
 title: Setting up Local NuGet Feeds | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 12/06/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 1354a527-d988-43d1-8dcf-6ce46ec5d3d4
-
-# optional metadata
-
 description: How to create a local feed for NuGet packages using folders on your local network
 keywords: NuGet feed, NuGet gallery, local package feed
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
-- karann
-- unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
+- karann-msft
+- unniravindranathan
 ---
+
 # Local feeds
 
-Local NuGet package feeds are simply folders on your local network in which you place packages (or even just a folder on your own machine). Local feeds can be either a simple folder of packages, or a hierarchical folder structure that include version numbers. With NuGet 3.3 and above, using the hierarchical structure gives much better performance.
+Local NuGet package feeds are simply hierarchical folder structures on your local network (or even just your own computer) in which you place packages. These feeds can then be used as package sources with all other NuGet operations using the CLI, the Package Manager UI, and the Package Manager Console.
 
-In these cases, you enable the source by simply adding the pathname, such as `\\myserver\packages` through the [Package Manager UI](../tools/package-manager-ui.md#package-sources) or the command line using [`nuget sources`](../tools/nuget-exe-cli-reference.md#sources).
+To enable the source, add its pathname (such as `\\myserver\packages`) to the list of sources using the [Package Manager UI](../tools/package-manager-ui.md#package-sources) or the [`nuget sources`](../tools/cli-ref-sources.md) command.
+
+> [!Note]
+> Hierarchical folder structures are supported in NuGet 3.3+. Older versions of NuGet use only a single folder containing packages, with which performance is much lower than the hierarchical structure.
 
 ## Initializing and maintaining hierarchical folders
 
-With NuGet 3.3 and above, you'll realize much better performance by structuring the feed using a hierarchical versioned folder tree:
+The hierarchical versioned folder tree has the following general structure:
 
     \\myserver\packages
       └─<packageID>
@@ -43,16 +34,18 @@ With NuGet 3.3 and above, you'll realize much better performance by structuring 
           ├─<packageID>.<version>.nupkg
           └─<other files>
 
-NuGet will create this structure automatically when you use the [`nuget add`](../tools/nuget-exe-cli-reference.md#add) command to copy packages to the feed:
+NuGet creates this structure automatically when you use the [`nuget add`](../tools/cli-ref-add.md) command to copy a package to the feed:
 
 ```
 nuget add new_package.1.0.0.nupkg -source \\myserver\packages
 ```
 
-You can also use the [`nuget init`](../tools/nuget-exe-cli-reference.md#init) command to copy multiple packages from a single folder to the feed. For example, the following command copies all packages from `c:\packages` to a hierarchical tree on `\\myserver\packages`:
+The `nuget add` command works with one package at a time, which can be inconvenient when setting up a feed with multiple packages.
+
+In such cases, use the [`nuget init`](../tools/cli-ref-init.md) command to copy all packages in a folder to the feed as if you ran `nuget add` on each one individually. For example, the following command copies all packages from `c:\packages` to a hierarchical tree on `\\myserver\packages`:
 
 ```
 nuget init c:\packages \\myserver\packages
 ```
 
-Again, this will create a folder for each package identifier, each of which will contain a version number folder, within which will be the appropriate package.
+As with the `add` command, `init` creates a folder for each package identifier, each of which contains a version number folder, within which is the appropriate package.

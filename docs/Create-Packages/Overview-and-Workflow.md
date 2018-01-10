@@ -5,26 +5,19 @@ title: Overview and workflow of creating NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/26/2017
+ms.date: 07/26/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 3c60f920-457d-4f43-9efe-210c514e5242
+ms.assetid: feb7918c-4709-48a4-a106-8d65c41014dc
 
 # optional metadata
 
 description: An overview of the process of creating and publishing a NuGet package, with links to other specific parts of the process.
 keywords: NuGet package creation, NuGet creation overview, NuGet creation workflow, package creation workflow, package creation overview.
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
-- karann
-- unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
+- karann-msft
+- unniravindranathan
 
 ---
 # Package creation workflow
@@ -38,10 +31,10 @@ A package can also serve to only pull in any number of other dependencies, witho
 
 Whatever the case, creating a package begins with deciding which assemblies and other files to package. You then create a manifest file, referred to as a `.nuspec` file, to describe the package's contents along with its identifer, version number, copyright information, MSBuild props and targets, and much more.
 
-When you've prepared all the necessary files in the appropriate folders and have created the appropriate `.nuspec` file, you then use the `nuget pack` command (or the[MSBuild pack target](../Schema/msbuild-targets.md)) to put everything together into a `.nupkg` file. You're then ready to deploy the package to whatever host makes it available to other developers.
+When you've prepared all the necessary files in the appropriate folders and have created the appropriate `.nuspec` file, you then use the `nuget pack` command (or the [MSBuild pack target](../Schema/msbuild-targets.md)) to put everything together into a `.nupkg` file. You're then ready to deploy the package to whatever host makes it available to other developers.
 
 > [!Tip]
-> A NuGet package with the `.nupkg` extension is simple a ZIP file. To easily examine any package's contents, change the extension to `.zip` and expand its contents as usual. Just be sure to change the extension back to `.nupkg` before attempting to upload it to a host.
+> A NuGet package with the `.nupkg` extension is simply a ZIP file. To easily examine any package's contents, change the extension to `.zip` and expand its contents as usual. Just be sure to change the extension back to `.nupkg` before attempting to upload it to a host.
 
 To learn and understand the creation process, start with [Creating a package](../create-packages/creating-a-package.md) which guides you through the core processes common to all packages. 
 
@@ -52,7 +45,7 @@ From there, you can consider a number of other options for your package:
 -  [Pre-release Packages](../create-packages/prerelease-packages.md) demonstrates how to release alpha, beta, and rc packages to those customers who are interested.
 -  [Source and Config File Transformations](../create-packages/source-and-config-file-transformations.md) describes how you can do both one-way token replacements in files that are added to a project, and modify `web.config` and `app.config` with settings that are also backed out when the package is uninstalled.
 -  [Symbol Packages](../create-packages/symbol-packages.md) offers guidance for supplying symbols for your library that allow consumers to step into your code while debugging.
--  [Dependency Versions](../create-packages/dependency-versions.md) discusses how to identify the exact versions that you allow for your dependencies (other packages that you consume from your package).
+-  [Package versioning](../reference/package-versioning.md) discusses how to identify the exact versions that you allow for your dependencies (other packages that you consume from your package).
 -  [Native Packages](../create-packages/native-packages.md) describes the process for creating a package for C++ consumers.
 
 When you're then ready to publish a package to nuget.org, follow the simple process in [Publish a package](../create-packages/publish-a-package.md).

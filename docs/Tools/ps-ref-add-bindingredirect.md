@@ -1,39 +1,27 @@
 ---
-# required metadata
-
 title: NuGet Add-BindingRedirect PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/1/2017
-ms.topic: article
+ms.date: 12/07/2017
+ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 90f4dcb0-6e5a-4948-8ea9-62e0d061d95a
-
-# optional metadata
-
 description: Reference for Add-BindingRedirect PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Add-BindingRedirect
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
-- karann
-- unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
+- karann-msft
+- unniravindranathan
 ---
 
-# Add-BindingRedirect
+# Add-BindingRedirect (Package Manager Console in Visual Studio)
 
-Examines all assemblies within the output path for a project and adds binding redirects to the application (or web) configuration file where necessary. For additional details on what this means, see [Redirecting Assembly Versions](https://msdn.microsoft.com/library/7wd6ex19.aspx) on MSDN.
+*Available only within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows.*
 
-> [!Note]
-> NuGet 1.2+ automatically runs this command when installing a package.
+Examines all assemblies within the output path for a project and adds binding redirects to the application or web configuration file where necessary. This command is run automatically when installing a package.
+
+For details on binding redirects and why they are used, see [Redirecting Assembly Versions](/dotnet/framework/configure-apps/redirect-assembly-versions) in the .NET documentation.
 
 ## Syntax
 
@@ -60,4 +48,3 @@ Add-BindingRedirect MyProject
 
 Add-BindingRedirect -ProjectName MyProject
 ```
- 

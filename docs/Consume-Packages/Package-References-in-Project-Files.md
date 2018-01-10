@@ -20,8 +20,8 @@ keywords: NuGet package dependencies, package references, project files, Package
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -34,7 +34,7 @@ Package references, using the `PackageReference` node, allow you to manage NuGet
 > [!Important]
 > At present, package references are supported in Visual Studio 2017 only, for .NET Core projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update).
 
-The `PackageReference` approach allows you to use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. In terms of behavior and [dependency resolution](Dependency-Resolution.md), it is the same as using `project.json`.
+The `PackageReference` approach allows you to use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. In terms of behavior and [dependency resolution](Dependency-Resolution.md), it's the same as using `project.json`.
 
 For more details on the integration of MSBuild with package references in project files, see [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).
 
@@ -62,7 +62,7 @@ The convention for specifying the version of a package is the same as when using
 </ItemGroup>
 ```
 
-In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [version ranges](../create-packages/dependency-versions.md#version-ranges).
+In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards).
 
 ## Floating Versions
 
@@ -86,7 +86,7 @@ You might be using a dependency purely as a development harness and might not wa
     <!-- ... -->
 
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0">
-        <PrivateAssets>All</PrivateAssets>
+        <PrivateAssets>all</PrivateAssets>
     </PackageReference>
 
     <!-- ... -->
@@ -122,7 +122,7 @@ In the following example, everything except the content files from the package w
     <!-- ... -->
 
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0">
-        <IncludeAssets>All</IncludeAssets>
+        <IncludeAssets>all</IncludeAssets>
         <ExcludeAssets>contentFiles</ExcludeAssets>
         <PrivateAssets>contentFiles;analyzers</PrivateAssets>
     </PackageReference>

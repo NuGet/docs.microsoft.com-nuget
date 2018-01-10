@@ -1,0 +1,55 @@
+{
+  "count": 2,
+  "lower": "1.0.531",
+  "parent": "https://api.nuget.org/v3/registration3/ravendb.client/index.json",
+  "upper": "1.0.729-unstable",
+  "items": [
+    {
+      "@id": "https://api.nuget.org/v3/registration3/ravendb.client/1.0.531.json",
+      "@type": "Package",
+      "commitId": "e0b9ca79-75b5-414f-9e3e-de9534b5cfd1",
+      "commitTimeStamp": "2017-10-26T14:12:19.3439088Z",
+      "catalogEntry": {
+        "@id": "https://api.nuget.org/v3/catalog0/data/2015.02.01.11.38.37/ravendb.client.1.0.531.json",
+        "@type": "PackageDetails",
+        "authors": "Hibernating Rhinos",
+        "iconUrl": "http://static.ravendb.net/logo-for-nuget.png",
+        "id": "RavenDB.Client",
+        "licenseUrl": "http://www.ravendb.net/licensing",
+        "listed": false,
+        "packageContent": "https://api.nuget.org/v3-flatcontainer/ravendb.client/1.0.531/ravendb.client.1.0.531.nupkg",
+        "projectUrl": "http://www.ravendb.net/",
+        "published": "1900-01-01T00:00:00+00:00",
+        "requireLicenseAcceptance": true,
+        "title": "RavenDB (Client Only)",
+        "version": "1.0.531"
+      },
+      "packageContent": "https://api.nuget.org/v3-flatcontainer/ravendb.client/1.0.531/ravendb.client.1.0.531.nupkg",
+      "registration": "https://api.nuget.org/v3/registration3/ravendb.client/index.json"
+    },
+    {
+      "@id": "https://api.nuget.org/v3/registration3/ravendb.client/1.0.729-unstable.json",
+      "@type": "Package",
+      "commitId": "e0b9ca79-75b5-414f-9e3e-de9534b5cfd1",
+      "commitTimeStamp": "2017-10-26T14:12:19.3439088Z",
+      "catalogEntry": {
+        "@id": "https://api.nuget.org/v3/catalog0/data/2015.02.01.18.22.05/ravendb.client.1.0.729-unstable.json",
+        "@type": "PackageDetails",
+        "authors": "Hibernating Rhinos",
+        "iconUrl": "http://static.ravendb.net/logo-for-nuget.png",
+        "id": "RavenDB.Client",
+        "licenseUrl": "http://www.ravendb.net/licensing",
+        "listed": false,
+        "packageContent": "https://api.nuget.org/v3-flatcontainer/ravendb.client/1.0.729-unstable/ravendb.client.1.0.729-unstable.nupkg",
+        "projectUrl": "http://www.ravendb.net/",
+        "published": "1900-01-01T00:00:00+00:00",
+        "requireLicenseAcceptance": true,
+        "summary": "This package includes the clinet API of RavenDB.",
+        "title": "RavenDB Client",
+        "version": "1.0.729-Unstable"
+      },
+      "packageContent": "https://api.nuget.org/v3-flatcontainer/ravendb.client/1.0.729-unstable/ravendb.client.1.0.729-unstable.nupkg",
+      "registration": "https://api.nuget.org/v3/registration3/ravendb.client/index.json"
+    }
+  ]
+}

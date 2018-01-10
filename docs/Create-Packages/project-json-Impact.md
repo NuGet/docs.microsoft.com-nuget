@@ -20,8 +20,8 @@ keywords: NuGet and project.json, project.json impact, package authoring conside
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -38,7 +38,7 @@ Traditional NuGet packages support a set of features that are not carried over t
 
 ### Install and uninstall scripts are ignored
 
-The transitive restore model, described in [Dependency resolution](../consume-packages/dependency-resolution.md#dependency-resolution-with-projectjson-and-package-references), does not have a concept of "package install time". A package is either present or not present, but there is no consistent process that occurs when a package is installed.
+The transitive restore model, described in [Dependency resolution](../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference-and-projectjson), does not have a concept of "package install time". A package is either present or not present, but there is no consistent process that occurs when a package is installed.
 
 Also, install scripts were supported only in Visual Studio. Other IDEs had to mock the Visual Studio extensibility API to attempt to support such scripts, and no support was available in common editors and command-line tools.
 
@@ -73,7 +73,7 @@ The format enables native content as a first class scenario. This means that man
 
 In summary if the functionality above is not absolutely necessary, we recommend sticking with the existing package format, as the format described here is supported only by NuGet 3.x+.
 
-It would be possible to build packages to work for both `packages.config` and `project.json` scenarios through shimming, however it is often simpler to just structure the packages the traditional way, without the deprecated features mentioned above.
+It would be possible to build packages to work for both `packages.config` and `project.json` scenarios through shimming, however it's often simpler to just structure the packages the traditional way, without the deprecated features mentioned above.
 
 
 ## 3.x package format  ##

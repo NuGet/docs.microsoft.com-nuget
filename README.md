@@ -9,7 +9,7 @@ NuGet follows the [.NET Foundation Contributors Code of Conduct](https://github.
 ## Respository structure
 
 - All markdown files are in the docs folder and various subfolders.
-- The docs/index.md file defines the landing (hub) page are it appears on docs.microsoft.com/nuget.
+- The docs/index.md file defines the landing (hub) page as it appears on docs.microsoft.com/nuget.
 - The docs/TOC.md file defines the left-hand navigation panel that appears when you navigate to any page other than the hub page.
 - Images are contained within media folders within each subfolder.
 
@@ -17,13 +17,13 @@ NuGet follows the [.NET Foundation Contributors Code of Conduct](https://github.
 
 No contribution is too big or too small--
 
-1. Visit the page to edit on [docs.microsoft.com/nuget](https://docs.microsoft.com/en-us/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.    
+1. Visit the page to edit on [docs.microsoft.com/nuget](/en-us/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.    
 1. Edit the markdown:
     1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
     1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
-    1. When using external links, especially to docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
+    1. When using external links, especially to docs.microsoft.com (or msdn.microsoft.com for any older content), omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
 1. When you're done, enter a commit message below, and click **Propose file change**.
-1. Send a pull request for your change. We review PRs on a regular basis.'
+1. Send a pull request for your change. We review PRs on a regular basis.
 1. Thank you!
 
 If you're creating a new topic, keep the following in mind as well:
@@ -121,16 +121,16 @@ The only case when you should use ``` without a language tag is when creating a 
 
 docs.microsoft.com uses blockquotes for callouts, that is, lines starting with ">".
 
-Callout sections with ">" only will appear with a solid gray line to the left. See [Creating NuGet packages](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package) for examples.
+Callout sections with ">" only will appear with a solid gray line to the left. See [Creating NuGet packages](/en-us/nuget/create-packages/creating-a-package) for examples.
 
 You can also use one of the following callout tags on the first line that will create a shaded callout in the indicated color:
 
 | Tag | Shading color | Topic with examples | 
 | --- | --- | --- |
-| `> [!Note]` | Light blue, use for callouts without any special emphasis. | [Creating NuGet packages](https://docs.microsoft.com/nuget/create-packages/creating-a-package) |
-| `> [!Tip]` | Green, use for callouts that share special tips and tricks or other helpful knowledge. | [Package consumption overview](https://docs.microsoft.com/nuget/consume-packages/overview-and-workflow) | 
-| `> [!Important]` | Yellow, use for callouts that describe cautions. | [NuGet.Server](https://docs.microsoft.com/nuget/hosting-packages/nuget-server) |
-| `> [!Warning]` | Red, use for callouts that warn readers about situations that could cause data loss or unexpected consequences. | [Dependency resolution](https://docs.microsoft.com/nuget/consume-packages/dependency-resolution) |
+| `> [!Note]` | Light blue, use for callouts without any special emphasis. | [Creating NuGet packages](/nuget/create-packages/creating-a-package) |
+| `> [!Tip]` | Green, use for callouts that share special tips and tricks or other helpful knowledge. | [Package consumption overview](/nuget/consume-packages/overview-and-workflow) | 
+| `> [!Important]` | Yellow, use for callouts that describe cautions. | [NuGet.Server](/nuget/hosting-packages/nuget-server) |
+| `> [!Warning]` | Red, use for callouts that warn readers about situations that could cause data loss or unexpected consequences. | [Dependency resolution](/nuget/consume-packages/dependency-resolution) |
 
 ### Links
 
@@ -139,7 +139,7 @@ You can also use one of the following callout tags on the first line that will c
 - Links to other markdown files on docs.microsoft.com are case-insensitive (unlike links to files in GitHub, which are).
 - If you're linking to another topic in the same folder, then `../<folder>/` can be omitted.
 - When using anchors, always remember to include the `.md` before the `#`.
-- When using external links, especially to docs.microsoft.com or msdn.microsoft.com, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
+- When using external links, especially to docs.microsoft.com (or msdn.microsoft.com for any older content), omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
 - Bare URLs are not automatically converted into links.
 
 ### Inline HTML

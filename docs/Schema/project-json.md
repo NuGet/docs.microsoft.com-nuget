@@ -6,7 +6,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 7/26/2017
-ms.topic: article
+ms.topic: reference
 ms.prod: nuget
 #ms.service:
 ms.technology: null
@@ -20,8 +20,8 @@ keywords: NuGet project.json, NuGet package references, NuGet dependencies, proj
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -32,7 +32,7 @@ ms.reviewer:
 
 *NuGet 3.x+*
 
-The `project.json` file maintains a list of packages used in a project, known as a package reference format. It supercedes `packages.config` but is in turn superceded by [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) with NuGet 4.0+.
+The `project.json` file maintains a list of packages used in a project, known as a package reference format. It supersedes `packages.config` but is in turn superseded by [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) with NuGet 4.0+.
 
 The [`project.lock.json`](#projectlockjson) file (described below) is also used in projects employing `project.json`.
 
@@ -79,6 +79,48 @@ The Package id corresponds to the id of the package on nuget.org , the same as t
 When restoring packages, the version constraint of `"5.0.0"` implies `>= 5.0.0`. That is, if 5.0.0 is not available on the server but 5.0.1 is, NuGet installs  5.0.1 and warns you about the upgrade. NuGet otherwise picks the lowest possible version on the server matching the constraint.
 
 See [Dependency resolution](../consume-packages/dependency-resolution.md) for more details on resolution rules.
+
+### Managing dependency assets
+
+Which assets from dependencies flow into the top-level project is controlled by specifying a comma-delimited set of tags in the `include` and `exclude` properties of the dependency reference. The tags are listed the table below:
+
+| Include/Exclude tag | Affected folders of the target |
+| --- | --- |
+| contentFiles | Content  |
+| runtime | Runtime, Resources, and FrameworkAssemblies  |
+| compile | lib |
+| build | build (MSBuild props and targets) |
+| native | native |
+| none | No folders |
+| all | All folders |
+
+Tags specified with `exclude` take precedence over those specified with `include`. For example, `include="runtime, compile" exclude="compile"` is the same as `include="runtime"`.
+
+For example, to include the `build` and `native` folders of a dependency, use the following:
+
+```json
+{
+  "dependencies": {
+    "packageA": {
+      "version": "1.0.0",
+      "include": "build, native"
+    }
+  }
+}
+```
+
+To exclude the `content` and `build` folders of a dependency, use the following:
+
+```json
+{
+  "dependencies": {
+    "packageA": {
+      "version": "1.0.0",
+      "exclude": "contentFiles, build"
+    }
+  }
+}
+```
 
 ## Frameworks
 

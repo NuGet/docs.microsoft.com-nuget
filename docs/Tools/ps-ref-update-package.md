@@ -1,34 +1,23 @@
 ---
-# required metadata
-
 title: NuGet Update-Package PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
-ms.topic: article
+ms.date: 12/07/2017
+ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 90f4dcb0-6e5a-4948-8ea9-62e0d061d95a
-
-# optional metadata
-
+ms.assetid: b4aa92a9-ce47-4d23-ae51-d5683e08a9d5
 description: Reference for Update-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Update-Package
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
-- karann
-- unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
+- karann-msft
+- unniravindranathan
 ---
 
-# Update-Package
+# Update-Package (Package Manager Console in Visual Studio)
+
+*Available only within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows.*
 
 Updates a package and its dependencies, or all packages in a project, to a newer version.
 
@@ -91,5 +80,17 @@ Update-Package -Id Elmah -Version 1.1.0
 # For example, if Elmah version 1.0.0 of a package is installed, and versions 1.0.1, 1.0.2,
 # and 1.1 are available in the feed, the -Safe parameter updates the package to 1.0.2 instead
 # of 1.1 as it would otherwise.
-Update-Package Elmah -Project MvcApplication1 -Safe
+Update-Package Elmah -ProjectName MvcApplication1 -Safe
+
+# Reinstall the same version of the original package, but with the latest version of dependencies
+# (subject to version constraints). If this command rolls a dependency back to an earlier version,
+# use Update-Package <dependency_name> to reinstall that one dependency without affecting the
+# dependent package.
+Update-Package ELmah –reinstall 
+
+# Reinstall the Elmah package in just MyProject
+Update-Package Elmah -ProjectName MyProject -reinstall
+
+# Reinstall the same version of the original package without touching dependencies.
+Update-Package ELmah –reinstall -ignoreDependencies
 ```

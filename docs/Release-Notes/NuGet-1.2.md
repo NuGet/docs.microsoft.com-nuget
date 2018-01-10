@@ -3,7 +3,7 @@
 
 title: NuGet 1.2 Release Notes | Microsoft Docs
 author: karann-msft
-ms.author: karann
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ keywords: NuGet 1.2 release notes, bug fixes, known issues, added features, DCRs
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -62,7 +62,7 @@ covers the purpose of this feature in more details.
 ### Specifying Framework Assembly References (GAC)
 
 In some cases, a package may depend on an assembly that’s in the .NET Framework. Strictly speaking, it’s not always
-necessary that the consumer of your package reference the framework assembly. But in some cases, it is important,
+necessary that the consumer of your package reference the framework assembly. But in some cases, it's important,
 such as when the developer needs to code against types in that assembly in order to use your package. The new
 `frameworkAssemblies` element, a child element of the metadata element, allows you to specify a set of
 `frameworkAssembly` elements pointing to a Framework assembly in the GAC. Note the emphasis on Framework assembly.

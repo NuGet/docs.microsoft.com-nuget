@@ -1,31 +1,18 @@
 ---
-# required metadata
-
 title: nuget.exe Credential Providers | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 12/12/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 3cf592de-39f2-4e7f-a597-62635fdcedfa
-
-# optional metadata
-
 description: nuget.exe credential providers authenticate with a feed, and are implemented as command-line executables that follow specific conventions.
 keywords: nuget.exe credential providers, credential provider API, authenticate with feed, authenticate with gallery
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
-- karann
-- unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
+- karann-msft
+- unniravindranathan
 ---
 
 # Authenticating feeds with nuget.exe credential providers
@@ -38,9 +25,8 @@ When `nuget.exe` needs credentials to authenticate with a feed, it looks for the
 1. NuGet then uses plug-in credential providers, subject to the order given below. (And example is the [Visual Studio Team Services Credential Provider](https://www.visualstudio.com/docs/package/get-started/nuget/auth#vsts-credential-provider).)
 1. NuGet then prompts the user for credentials on the command line.
 
-> [!Note]
-> nuget.exe credential providers only work in nuget.exe (not in dotnet restore or Visual Studio). For credential providers with Visual Studio, see [nuget.exe Credential Providers for Visual Studio](../api/nuget-credential-providers-for-visual-studio.md)
-  
+Note that the credential providers described here work only in `nuget.exe` and not in 'dotnet restore' or Visual Studio. For credential providers with Visual Studio, see [nuget.exe Credential Providers for Visual Studio](nuget-credential-providers-for-visual-studio.md)
+
 nuget.exe credential providers can be used in 3 ways:
 
 - **Globally**: to make a credential provider available to all instances of `nuget.exe` run under the current user's profile, add it to `%LocalAppData%\NuGet\CredentialProviders`. You may need to create the `CredentialProviders` folder. Credential providers can be installed at the root of the `CredentialProviders`  folder or within a subfolder. If a credential provider has multiple files/assemblies, you can use subfolders to keep the providers organized.
@@ -50,7 +36,6 @@ nuget.exe credential providers can be used in 3 ways:
 - **Alongside nuget.exe**: nuget.exe credential providers can be placed in the same folder as `nuget.exe`.
 
 When loading credential providers, `nuget.exe` searches the above locations, in order, for any file named `credentialprovider*.exe`, then loads those files in the order they're found. If multiple credential providers exist in the same folder, they're loaded in alphabetical order.
-
 
 ## Creating a nuget.exe credential provider
 
@@ -67,7 +52,6 @@ A provider must do the following:
 
 ### Input parameters
 
-
 | Parameter/Switch |Description|
 |----------------|-----------|
 | Uri {value} | The package source URI requiring credentials.|
@@ -75,7 +59,7 @@ A provider must do the following:
 | IsRetry | If present, indicates that this attempt is a retry of a previously failed attempt. Providers typically use this flag to ensure that they bypass any existing cache and prompt for new credentials if possible.|
 | Verbosity {value} | If present, one of the following values: "normal", "quiet", or "detailed". If no value is supplied, defaults to "normal". Providers should use this as an indication of the level of optional logging to emit to the standard error stream. |
 
-### Exit codes  
+### Exit codes
 
 | Code |Result | Description |
 |----------------|-----------|-----------|
@@ -96,3 +80,24 @@ Example stdout:
     { "Username" : "freddy@example.com",
       "Password" : "bwm3bcx6txhprzmxhl2x63mdsul6grctazoomtdb6kfbof7m3a3z",
       "Message"  : "" }
+
+## Troubleshooting a credential provider
+
+At present, NuGet doesn't provide much direct support for debugging custom credential providers; [issue 4598](https://github.com/NuGet/Home/issues/4598) is tracking this work.
+
+You can also do the following:
+
+- Run nuget.exe with the `-verbosity` switch to inspect detailed output.
+- Add debug messages to `stdout` in appropriate places.
+- Be sure that you're using nuget.exe 3.3 or higher.
+- Attach debugger on startup with this code snippet:
+
+    ```cs
+    while (!Debugger.IsAttached)
+    {
+        System.Threading.Thread.Sleep(100);
+    }
+    Debugger.Break();
+    ```
+
+For further help, [submit a support request a nuget.org](https://www.nuget.org/policies/Contact).

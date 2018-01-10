@@ -3,7 +3,7 @@
 
 title: NuGet 1.0 and 1.1 Release Notes | Microsoft Docs
 author: karann-msft
-ms.author: karann
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ keywords: NuGet 1.1 release notes, bug fixes, known issues, added features, DCRs
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -248,7 +248,7 @@ The following is a list of features and bugs that were fixed for NuGet CTP 1.
 * [NuPack.UI should use the PackageSource API](http://nuget.codeplex.com/workitem/26)
 * [[Nupack.Core]: PackageManager marks packages as installed prior to installing them](http://nuget.codeplex.com/workitem/27)
 * [Deleting default project from solution still shows the deleted project as default](http://nuget.codeplex.com/workitem/30)
-* [New-Package fails with "Cannot add part for the specified URI because it is already in the package."](http://nuget.codeplex.com/workitem/32)
+* [New-Package fails with "Cannot add part for the specified URI because it's already in the package."](http://nuget.codeplex.com/workitem/32)
 * [Remove "NuPack" strings from Visual Studio GUI](http://nuget.codeplex.com/workitem/35)
 * [Add Apache Header To a COPYRIGHT.txt file](http://nuget.codeplex.com/workitem/36)
 * [Remove Update-PackageSource Command](http://nuget.codeplex.com/workitem/37)
@@ -262,7 +262,7 @@ The following is a list of features and bugs that were fixed for NuGet CTP 1.
 * [Add-Package fails against a website that was opened from IIS or a URL](http://nuget.codeplex.com/workitem/53)
 * [Package Manager Source Doesn't Work With FwLink](http://nuget.codeplex.com/workitem/55)
 * [Set the default package source](http://nuget.codeplex.com/workitem/59)
-* [When adding package sources in option, when only one source is supplied, assume it is the default.](http://nuget.codeplex.com/workitem/60)
+* [When adding package sources in option, when only one source is supplied, assume it's the default.](http://nuget.codeplex.com/workitem/60)
 * [The Dialog UI shows fake "recent" packages](http://nuget.codeplex.com/workitem/62)
 * [Options: Clicking cancel does not cancel changes](http://nuget.codeplex.com/workitem/63)
 * [Add Package Reference Dialog Search should be case insensitive](http://nuget.codeplex.com/workitem/65)

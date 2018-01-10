@@ -20,7 +20,7 @@ keywords: NuGet and MSBuild, NuGet pack target, NuGet restore target
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
+- karann-msft
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -33,7 +33,7 @@ ms.reviewer:
 
 NuGet 4.0+ can work directly with the information in a `.csproj` file without requiring a separate `.nuspec` or `project.json` file. All the metadata that was previously stored in those configuration files can be instead stored in the `.csproj` file directly, as described here.
 
-With MSBuild 15.1+, NuGet is also a first-class MSBuild citizen with the `pack` and `restore` targets as described below. These targets allow you to work with NuGet as you would with any other MSBuild task or target. (For NuGet 3.x and earlier, you use the [pack](../tools/nuget-exe-cli-reference.md#pack) and [restore](../tools/nuget-exe-cli-reference.md#pack) commands through the NuGet CLI instead.)
+With MSBuild 15.1+, NuGet is also a first-class MSBuild citizen with the `pack` and `restore` targets as described below. These targets allow you to work with NuGet as you would with any other MSBuild task or target. (For NuGet 3.x and earlier, you use the [pack](../tools/cli-ref-pack.md) and [restore](../tools/cli-ref-restore.md) commands through the NuGet CLI instead.)
 
 In this topic:
 
@@ -80,7 +80,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | LicenseUrl | PackageLicenseUrl | empty | |
 | ProjectUrl | PackageProjectUrl | empty | |
 | IconUrl | PackageIconUrl | empty | |
-| Tags | PackageTags | empty | |
+| Tags | PackageTags | empty | Tags are semi-colon delimited. |
 | ReleaseNotes | PackageReleaseNotes | empty | |
 | RepositoryUrl | RepositoryUrl | empty | |
 | RepositoryType | RepositoryType | empty | |
@@ -187,6 +187,9 @@ If you want to copy all your content to only a specific root folder(s) (instead 
 
 There is also an MSBuild property `$(IncludeContentInPack)`, which defaults to `true`. If this is set to `false` on any project, then the content from that project are not included in the nuget package.
 
+Other pack specific metadata that you can set on any of the above items includes ```<PackageCopyToOutput>``` and ```<PackageFlatten>``` which sets ```CopyToOutput``` and ```Flatten``` values on the ```contentFiles``` entry in the output nuspec.
+
+
 > [!Note]
 > Apart from Content items, the `<Pack>` and `<PackagePath>` metadata can also be set on files with a build action of Compile, EmbeddedResource, ApplicationDefinition, Page, Resource, SplashScreen, DesignData, DesignDataWithDesignTimeCreatableTypes, CodeAnalysisDictionary, AndroidAsset, AndroidResource, BundleResource or None.
 >
@@ -200,7 +203,7 @@ When using `MSBuild /t:pack /p:IncludeSymbols=true`, the corresponding `.pdb` fi
 
 This is the same as `IncludeSymbols`, except that it copies source files along with `.pdb` files as well. All files of type `Compile` are copied over to `src\<ProjectName>\` preserving the relative path folder structure in the resulting package. The same also happens for source files of any `ProjectReference` which has `TreatAsPackageReference` set to `false`.
 
-If a file of type Compile, is outside the project folder, then it is just added to `src\<ProjectName>\`.
+If a file of type Compile, is outside the project folder, then it's just added to `src\<ProjectName>\`.
 
 ### IsTool
 
@@ -304,7 +307,7 @@ To declare a fallback for all targets in your project, leave off the `Condition`
 
 ### Replacing one library from a restore graph
 
-If a restore is bringing the wrong assembly, it is possible to exclude that packages default choice, and replace it with your own choice. First with a top level `PackageReference`, exclude all assets:
+If a restore is bringing the wrong assembly, it's possible to exclude that packages default choice, and replace it with your own choice. First with a top level `PackageReference`, exclude all assets:
 
 ```xml
 <PackageReference Include="Newtonsoft.Json" Version="9.0.1">

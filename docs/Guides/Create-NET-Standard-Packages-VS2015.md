@@ -6,7 +6,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 1/9/2017
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: nuget
 #ms.service:
 ms.technology: null
@@ -14,25 +14,25 @@ ms.assetid: 29b3bceb-0f35-4cdd-bbc3-a04eb823164c
 
 # optional metadata
 
-description: An end-to-end walkthrough of creating .NET standard NuGet packages using NuGet 3.x and Visual Studio 2015.
-keywords: create a package, .NET Standard packages, .NET standard mapping table
+description: An end-to-end walkthrough of creating .NET Standard NuGet packages using NuGet 3.x and Visual Studio 2015.
+keywords: create a package, .NET Standard packages, .NET Standard mapping table
 #ROBOTS:
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
 
 ---
 
-# Create .NET standard packages with Visual Studio 2015
+# Create .NET Standard packages with Visual Studio 2015
 
 *Applies to NuGet 3.x. See [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) for working with NuGet 4.x+.*
 
-The [.NET Standard Library](https://docs.microsoft.com/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code.
+The [.NET Standard Library](/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code.
 
 This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4. This will work across .NET Framework 4.6.1, Universal Windows Platform 10, .NET Core, and Mono/Xamarin. For details, see the [.NET Standard mapping table](#net-standard-mapping-table) later in this topic.
 
@@ -168,7 +168,7 @@ If you have any dependencies on other NuGet packages, list those in the `<depend
 </dependencies>
 ```
 
-The syntax of the *version* attribute here indicates that version 8.0.3 or above is acceptable. To specify different version ranges, refer to [Dependency Versions](../create-packages/dependency-versions.md).
+The syntax of the *version* attribute here indicates that version 8.0.3 or above is acceptable. To specify different version ranges, refer to [Package versioning](../reference/package-versioning.md).
 
 ### Supporting multiple target frameworks
 
@@ -334,9 +334,9 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 
 - [Nuspec Reference](../schema/nuspec.md)
 - [Symbol packages](../create-packages/symbol-packages.md)
-- [Dependency Versions](../create-packages/dependency-versions.md)
--[Supporting Multiple .NET Framework Versions](../create-packages/supporting-multiple-target-frameworks.md)
+- [Package versioning](../reference/package-versioning.md)
+- [Supporting Multiple .NET Framework Versions](../create-packages/supporting-multiple-target-frameworks.md)
 - [Include MSBuild props and targets in a package](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
 - [Creating Localized Packages](../create-packages/creating-localized-packages.md)
-- [.NET Standard Library documentation](https://docs.microsoft.com/dotnet/articles/standard/library)
-- [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/dotnet/articles/core/porting/index)
+- [.NET Standard Library documentation](/dotnet/articles/standard/library)
+- [Porting to .NET Core from .NET Framework](/dotnet/articles/core/porting/index)

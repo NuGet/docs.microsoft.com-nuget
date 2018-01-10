@@ -3,7 +3,7 @@
 
 title: NuGet 2.8 Release Notes | Microsoft Docs
 author: karann-msft
-ms.author: karann
+ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
@@ -20,8 +20,8 @@ keywords: NuGet 2.8 release notes, bug fixes, known issues, added features, DCRs
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -104,11 +104,11 @@ It is not uncommon to install a prerelease version of a package in order to inve
 
 ## Development Dependencies
 
-Many different types of capabilities can be delivered as NuGet packages - including tools that are used for optimizing the development process. These components, while they can be instrumental in developing a new package, should not be considered a dependency of the new package when it is later published. NuGet 2.8 enables a package to identify itself in the `.nuspec` file as a developmentDependency. When installed, this metadata will also be added to the `packages.config` file of the project into which the package was installed. When that `packages.config` file is later analyzed for NuGet dependencies during `nuget.exe pack`, it will exclude those dependencies marked as development dependencies.
+Many different types of capabilities can be delivered as NuGet packages - including tools that are used for optimizing the development process. These components, while they can be instrumental in developing a new package, should not be considered a dependency of the new package when it's later published. NuGet 2.8 enables a package to identify itself in the `.nuspec` file as a developmentDependency. When installed, this metadata will also be added to the `packages.config` file of the project into which the package was installed. When that `packages.config` file is later analyzed for NuGet dependencies during `nuget.exe pack`, it will exclude those dependencies marked as development dependencies.
 
 ## Individual packages.config Files for Different Platforms
 
-When developing applications for multiple target platforms, it is common to have different project files for each of the respective build environments. It is also common to consume different NuGet packages in different project files, as packages have varying levels of support for different platforms. NuGet 2.8 provides improved support for this scenario by creating different `packages.config` files for different platform-specific project files.
+When developing applications for multiple target platforms, it's common to have different project files for each of the respective build environments. It is also common to consume different NuGet packages in different project files, as packages have varying levels of support for different platforms. NuGet 2.8 provides improved support for this scenario by creating different `packages.config` files for different platform-specific project files.
 
 ![Multiple package.config files](./media/NuGet-2.8/multiple-packageconfigs.png)
 

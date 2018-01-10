@@ -1,36 +1,24 @@
 ---
-# required metadata
-
 title: NuGet Find-Package PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 6/1/2017
-ms.topic: article
+ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 2f7b8847-8259-4366-98c0-13cab88d6e1b
-
-# optional metadata
-
 description: Reference for Find-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Find-Package
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
-- karann
-- unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
+- karann-msft
+- unniravindranathan
 
 ---
 
-# Find-Package
+# Find-Package (Package Manager Console in Visual Studio)
 
-*Version 3.0+*
+*Version 3.0+; this topic describes the command within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows. For the generic PowerShell Find-Package command, see the [PowerShell PackageManagement reference](/powershell/module/packagemanagement/?view=powershell-6).*
 
 Gets the set of remote packages with specified ID or keywords from the package source.
 
@@ -63,15 +51,16 @@ None of these parameters accept pipeline input or wildcard characters.
 ## Examples
 
 ```ps
-# List available packages with the keyword Elmah
-Find-Package Elmah
+# Find packages containing keywords
+Find-Package elmah
+Find-Package logging
 
 # List packages whose ID begins with Elmah
 Find-Package Elmah -StartWith
 
-# List all versions of the jquery package
-Find-Package jquery -AllVersions -ExactMatch
+# By default, Get-Package returns a list of 20 packages; use -First to show more
+Find-Package logging -First 100
 
-# List packages with the keyword EntityFramework and version 6.1.1
-Find-Package EntityFramework -version 6.1.1
+# List all versions of the package with the ID of "jquery"
+Find-Package jquery -AllVersions -ExactMatch
 ```

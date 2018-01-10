@@ -5,10 +5,9 @@ title: What is NuGet and what does it do? | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/27/2017
+ms.date: 10/26/2017
 ms.topic: hero-article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: c3faf278-4cbf-4733-96f6-9ee9f7203af9
 
@@ -16,21 +15,20 @@ ms.assetid: c3faf278-4cbf-4733-96f6-9ee9f7203af9
 
 description: A comprehensive introduction to what NuGet is and does
 keywords: NuGet package manager, consumption, package creation, package hosting
-#ROBOTS:
-#audience:
-#ms.devlang:
+
 ms.reviewer:
-- karann
-- unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
+- karann-msft
+- unniravindranathan
 
 ---
 
 # An introduction to NuGet
 
-An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful libraries and packages. For .NET, that mechanism is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles.
+An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful  code. Often such code is bundled into a "packages" that contain compiled code (as DLLs) along with other content needed in the projects that consume these packages.
+
+For .NET, the mechanism for sharing code is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. 
+
+Put simply, a NuGet package is a single ZIP file with the `.nupkg` extension that contains compiled code (DLLs), other files related to that code, and a descriptive manifest that includes information like the package's version number. Library developers create package files and publish them to a host. Package consumers receive those packages, add them to their projects, and then call that library's functionality in their project code. NuGet itself then handles all of the intermediate details.
 
 ## The flow of packages between creators, hosts, and consumers
 
@@ -40,7 +38,7 @@ Whatever its nature, a host serves as a point of connection between package *cre
 
 ![Relationship between package creators, package hosts, and package consumers](media/nuget-roles.png)
 
-A "compatible" package in this case means that it contains assemblies built for at least one target .NET framework that's compatible with the consuming project's target framework. To make a package widely compatible, it's creator compiles separate assemblies for various target frameworks and includes all of them in the same package. When a consumer installs that package, NuGet extracts only those assemblies that are needed by the project. This minimizes the package's footprint in the final application and/or assemblies produced by that project.
+A "compatible" package in this case means that it contains assemblies built for at least one target .NET framework that's compatible with the consuming project's target framework. To make a package widely compatible, its creator compiles separate assemblies for various target frameworks and includes all of them in the same package. When a consumer installs that package, NuGet extracts only those assemblies that are needed by the project. This minimizes the package's footprint in the final application and/or assemblies produced by that project.
 
 ## NuGet tools
 
@@ -50,7 +48,7 @@ In addition to hosting support, NuGet also provides a variety of tools used by b
 | --- | --- | --- | --- |
 | [nuget.exe CLI](Tools/nuget-exe-CLI-Reference.md) | All | Creation, Consumption | Provides all NuGet capabilities, with some commands applying specifically to package creators, some applying only to consumers, and others applying to both. For example, package creators use the `nuget pack` command to create a package from various assemblies and related files, package consumers use `nuget install` to include packages in a project, and everyone uses `nuget config` to set NuGet configuration variables.  |
 | [Package Manager UI](Tools/Package-Manager-UI.md) | Visual Studio on Windows | Consumption | Provides an easy-to-use UI for installing and managing packages in .NET projects. | 
-| [Manage NuGet UI](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | Consumption | Provide an easy-to-use UI for installing and managing packages in .NET projects. |
+| [Manage NuGet UI](/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | Consumption | Provide an easy-to-use UI for installing and managing packages in .NET projects. |
 | [Package Manager Console](Tools/Package-Manager-Console.md) | Visual Studio on Windows | Consumption | Provides [PowerShell commands](Tools/Powershell-Reference.md) for installing and managing packages in .NET projects. | 
 | [dotnet CLI](Tools/dotnet-Commands.md) | All | Creation, Consumption | Provides certain NuGet CLI capabilities directly within the .NET Core toolchain. |
 | [MSBuild](Schema/msbuild-targets.md) | Windows | Creation, Consumption | Provides the ability to create packages and restore packages used in a project directly through the MSBuild toolchain. |
@@ -67,7 +65,7 @@ The following image shows a project that depends on five packages, which in turn
 
 ![An example NuGet dependency graph for a .NET project](media/dependency-graph.png)
 
-Notice that some packages appear multiple times in the dependency graph. For example, there are four different consumers of package B, and each consumer might also specify a different version for that package (not shown). Because this is a common occurrence, NuGet fortunately does all the hard work to determine exactly which version of package B satisfies all its consumers. NuGet then does the same for all other packages, no matter how deep the dependency graph becomes.
+Notice that some packages appear multiple times in the dependency graph. For example, there are three different consumers of package B, and each consumer might also specify a different version for that package (not shown). Because this is a common occurrence, NuGet fortunately does all the hard work to determine exactly which version of package B satisfies all its consumers. NuGet then does the same for all other packages, no matter how deep the dependency graph becomes.
 
 For more details on how NuGet performs this service, see [Dependency resolution](Consume-Packages/Dependency-Resolution.md).
 
@@ -79,21 +77,21 @@ Instead, NuGet simply maintains a reference list of the packages upon which a pr
 
 ![A NuGet reference list is created on package installation and can be used to restore packages elsewhere](media/nuget-restore.png)
 
-With only the reference list, NuGet can then reinstall&mdash;that is, restore&mdash;all of those packages from public and/or private hosts at any later time. (For this reason, nuget.org does not allow permanent deletion of published packages, although they can be hidden; see [Deleting packages](Policies/deleting-packages.md).) When committing a project to source control, or sharing it is some other way, you need only include the reference list and need not include any package binaries (see [Packages and source control](Consume-Packages/Packages-and-Source-Control.md).
+With only the reference list, NuGet can then reinstall&mdash;that is, restore&mdash;all of those packages from public and/or private hosts at any later time. (For this reason, nuget.org does not allow permanent deletion of published packages, although they can be hidden; see [Deleting packages](Policies/deleting-packages.md).) When committing a project to source control, or sharing it in some other way, you need only include the reference list and need not include any package binaries (see [Packages and source control](Consume-Packages/Packages-and-Source-Control.md).)
 
-The computer that receives a project, such as a build server obtaining a copy of the project as part of an automated deployment system, simply asks NuGet to restore dependencies whenever they're needed. Build systems like Visual Studio Team Services provide "NuGet restore" steps for this exact purpose. Similarly, when developers obtain a copy of a project (as when cloning a repository) then open the project in Visual Studio and run a build, Visual Studio automatically restores the necessary NuGet packages. Developers can also tell NuGet to restore packages at any time using the the `nuget restore` CLI command or the `Install-Package` cmdlet in the Package Manager Console.
+The computer that receives a project, such as a build server obtaining a copy of the project as part of an automated deployment system, simply asks NuGet to restore dependencies whenever they're needed. Build systems like Visual Studio Team Services provide "NuGet restore" steps for this exact purpose. Similarly, when developers obtain a copy of a project (as when cloning a repository) then open the project in Visual Studio and run a build, Visual Studio automatically restores the necessary NuGet packages. Developers can also tell NuGet to restore packages at any time using the `nuget restore` CLI command or the `Install-Package` cmdlet in the Package Manager Console.
 
-Clearly, then, NuGet's primarily role where developers are concerned is maintaining that reference list on behalf of your project and providing the means to efficiently restore (and update) those referenced packages.
+Clearly, then, NuGet's primary role where developers are concerned is maintaining that reference list on behalf of your project and providing the means to efficiently restore (and update) those referenced packages.
 
 How this exactly happens has evolved over the different versions of NuGet, resulting in several *package management formats*, as they're called:
 
 - [`packages.config`](Schema/packages-config.md): *(NuGet 1.0+)* An XML file that maintains a flat list of all dependencies in the project, including the dependencies of other installed packages. 
-- [`project.json`](Schema/project-json.md): *(NuGet 3.0+)* A JSON file that maintains a list of the project's dependencies with an overall package graph in an associated file, `project.lock.json`. This structure provides improved performance over `packages.config` as described on [Dependency Resolution](Consume-Packages/Dependency-Resolution.md), including transitive restore, but has itself been generally superceded by PackageReference below.
+- [`project.json`](Schema/project-json.md): *(NuGet 3.0+)* A JSON file that maintains a list of the project's dependencies with an overall package graph in an associated file, `project.lock.json`. This structure provides improved performance over `packages.config` as described on [Dependency Resolution](Consume-Packages/Dependency-Resolution.md), including transitive restore, but has itself been generally superseded by PackageReference below.
 - [Package references in project files](Consume-Packages/Package-References-in-Project-Files.md) (also known as "PackageReference") | *(NuGet 4.0+)* Maintains a list of a project's top-level dependencies directly within the project file, so no separate file is needed. An associated file, `project.assets.json`, is dynamically generated like `project.lock.json` to manage the overall dependency graph.
 
 Which package management format is employed in any given project depends on the project type, and the available version of NuGet and Visual Studio. To check what format is being used, simply look for `packages.config` or `project.json` in the project root after installing your first package. If you don't see either file, look in the project file directly for a &lt;PackageReference&gt;element.
 
-In Visual Studio 2017, for example, most project types use `packages.config` except for UWP C# and .NET Core projects in Visual Studio 2017 use PackageReference. 
+In Visual Studio 2017, for example, most project types use `packages.config` except for UWP C# and .NET Core projects which use PackageReference. 
 
 ## What else does NuGet do?
 
@@ -105,7 +103,7 @@ Within an individual project, NuGet does a lot of work to manage the overall dep
 
 That is, it's quite common that a project takes a dependency on one or more packages that themselves have the same dependencies. For example, some of the most useful utility packages on nuget.org are employed by many other packages. In the entire dependency graph, ten, you could easily have ten different references to different versions of the same package. However, you don't want to bring multiple versions of that package into the application itself, so NuGet sorts out which single version that everyone can use. (See [Dependency Resolution](Consume-Packages/Dependency-Resolution.md) for more on this topic.)
 
-Beyond that, NuGet maintains all the specifications related to how packages are structured (including [localization](Create-Packages/Creating-Localized-Packages.md) and [debug symbols](Create-Packages/Symbol-Packages.md) and how they are referenced (including [version ranges](create-packages/dependency-versions.md) and [pre-release versions](create-packages/Prerelease-Packages.md). NuGet also and provides APIs for credential providers (for accessing private hosts) and for developers who write Visual Studio extensions and project templates.
+Beyond that, NuGet maintains all the specifications related to how packages are structured (including [localization](Create-Packages/Creating-Localized-Packages.md) and [debug symbols](Create-Packages/Symbol-Packages.md)) and how they are referenced (including [version ranges](reference/package-versioning.md#version-ranges-and-wildcards) and [pre-release versions](create-packages/Prerelease-Packages.md).) NuGet also provides APIs for credential providers (for accessing private hosts) and for developers who write Visual Studio extensions and project templates.
 
 Take a moment to browse the table of contents for this documentation, and you'll see all of these capabilities represented there, along with release notes dating back to NuGet's beginnings.
 

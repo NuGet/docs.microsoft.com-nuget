@@ -1,46 +1,35 @@
 ---
-# required metadata
-
-title: NuGet Restore Errors and Warnings Reference (PREVIEW) | Microsoft Docs
+title: NuGet Restore Errors and Warnings Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/21/2017
-ms.topic: article
+ms.date: 12/13/2017
+ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: b76b8a00-7155-4163-b533-894086d2ef78
 
 # optional metadata
-
 description: Complete reference for warnings and errors issued from NuGet during package restore
 keywords: NuGet errors, NuGet warnings, diagnostics
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
-- anandr
-- karann
-- unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
+- anangaur
+- karann-msft
+- unniravindranathan
 ---
 
-# Errors and warnings (PREVIEW)
+# Errors and warnings
 
-In NuGet 4.3.0 (currently in preview), errors and warnings are numbered as described in this topic and provide detailed information to help you address the issues involved. 
+In NuGet 4.3.0, errors and warnings are numbered as described in this topic and provide detailed information to help you address the issues involved. 
 
-The errors and warnings listed here are available only with [PackageReference-based](../Consume-Packages/Package-References-in-Project-Files.md) projects and NuGet 4.3.0 (currently in preview). NuGet also honors MSBuild properties to suppress warnings or elevate them to errors. For more information, see [How to: Suppress Compiler Warnings](https://docs.microsoft.com/visualstudio/ide/how-to-suppress-compiler-warnings) in the Visual Studio documentation.
+The errors and warnings listed here are available only with [PackageReference-based](../Consume-Packages/Package-References-in-Project-Files.md) projects and NuGet 4.3.0. NuGet also honors MSBuild properties to suppress warnings or elevate them to errors. For more information, see [How to: Suppress Compiler Warnings](/visualstudio/ide/how-to-suppress-compiler-warnings) in the Visual Studio documentation.
 
 **Errors**
 
 | Group | Error Numbers |
 | --- | --- |
 | [Invalid input errors](#invalid-input-errors) | [NU1001](#nu1001), [NU1002](#nu1002), [NU1003](#nu1003) |
-| [Missing package and project errors](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [NU1106](#nu1106) |
+| [Missing package and project errors](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [NU1106](#nu1106), [NU1107](#nu1107) (previously NU1607), [NU1108](#nu1107) (previously NU1606) |
 | [Compatibility errors](#compatibility-errors) | [NU1201](#nu1201), [NU1202](#nu1202), [NU1203](#nu1203), [NU1401](#nu1401) |
 
 **Warnings**
@@ -49,7 +38,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | --- | --- |
 | [Invalid input warnings](#invalid-input-warnings) | [NU1501](#nu1501), [NU1502](#nu1502), [NU1503](#nu1503) |
 | [Unexpected package version warnings](#unexpected-package-version-warnings) | [NU1601](#nu1601), [NU1602](#nu1602), [NU1603](#nu1603), [NU1604](#nu1604), [NU1605](#nu1605) |
-| [Resolver conflict warnings](#resolver-conflict-warnings) | [NU1606](#nu1606), [NU1607](#nu1607) |
+| [Resolver conflict warnings](#resolver-conflict-warnings) | [NU1608](#nu1608) |
 | [Package fallback warnings](#package-fallback-warnings) | [NU1701](#nu1701) |
 | [Feed warnings](#feed-warnings) | [NU1801](#nu1801) |
 | [NuGet internal errors and warnings](#nuget-internal-errors-and-warnings) | [NU1000](#nu1000), [NU1500](#nu1500) |
@@ -65,7 +54,6 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Issue** | The project doesn't contain one or more frameworks. |
 | **Common causes** | The project doesn't contain a `TargetFramework` or `TargetFrameworks` property. |
 | **Example message** | *The project projA does not specify any target frameworks in c:\tmp\projA.csproj* |
-
 
 ### NU1002
 
@@ -83,7 +71,6 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Common causes** | Both `PackageTargetFallback` and `AssetTargetFallback` exist in the project. |
 | **Example message** | *PackageTargetFallback and AssetTargetFallback cannot be used together. Remove PackageTargetFallback(deprecated) references from the project environment.* |
 
-
 ## Missing package and project errors
 
 [NU1100](#nu1100) | [NU1101](#nu1101) | [NU1102](#nu1102) | [NU1103](#nu1103) | [NU1104](#nu1104) | [NU1105](#nu1105) | [NU1106](#nu1106)
@@ -96,21 +83,21 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Common causes** | The project contains a dependency on an item that doesn't exist. |
 | **Example message** | *Unable to resolve System.Missing for net45* |
 
-
 ### NU1101
 
 | | |
 | --- | --- |
 | **Issue** | The package cannot be found on any sources. |
 | **Common causes** | The correct package source is missing or the package identifier is incorrect. |
-| **Example message** | *Unable to find package System.Missing. No packages exist with this id in source(s): dotnet-core, dotnet-roslyn, NuGet.org* |
+| **Example message** | *Unable to find package System.Missing. No packages exist with this id in source(s): dotnet-core, dotnet-roslyn, nuget.org* |
+
 ### NU1102
 
 | | |
 | --- | --- |
 | **Issue** | The package identifier is found but a version within the specified dependency range cannot be found on any of the sources. |
 | **Common causes** | The correct package source is missing or the dependency range is incorrect. The range might be specified by a package and not the user. The user may need to switch to an available version if this package is referenced by the project directly. |
-| **Example message** | *Unable to find package NuGet.Versioning with version (>= 9.0.1)<br/>  - Found 30 version(s) in NuGet.org [ Nearest version: 4.0.0 ]<br/>  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>  - Found 0 version(s) in dotnet-core<br/>  - Found 0 version(s) in dotnet-roslyn* |
+| **Example message** | *Unable to find package NuGet.Versioning with version (>= 9.0.1)<br/>  - Found 30 version(s) in nuget.org [ Nearest version: 4.0.0 ]<br/>  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>  - Found 0 version(s) in dotnet-core<br/>  - Found 0 version(s) in dotnet-roslyn* |
 
 ### NU1103
 
@@ -119,7 +106,6 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Issue** | No stable versions were found in the dependency range. Pre-release versions were found but are not allowed. |
 | **Common causes** | The project specified a stable version for the dependency range. Users need to change the version range to include pre-release versions. |
 | **Example message** | *Unable to find a stable package NuGet.Versioning with version (>= 3.0.0)<br/>  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>  - Found 0 version(s) in dotnet-core<br/>  - Found 0 version(s) in dotnet-roslyn* |
-
 
 ### NU1104
 
@@ -145,6 +131,26 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Common causes** | Packages contain dependency on exact versions of a package instead of open-ended ranges. |
 | **Example message** | *Unable to satisfy conflicting requests for {id}: {conflict path} Framework: {target graph}* |
 
+<a name="NU1107></a>
+
+### NU1107 (Previously NU1607)
+
+| | |
+| --- | --- |
+| **Issue** | Unable to resolve dependency constraints between packages. |
+| **Common causes** | Packages with dependency constraints on exact versions do not allow other packages to increase the version if needed. |
+| **Example message** | *Version conflict detected for NuGet.Versioning. Reference the package directly from the project to resolve this issue.<br/>  NuGet.Packaging 3.5.0 -> NuGet.Versioning (= 3.5.0)<br/>  NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)* |
+
+<a name="NU1108></a>
+
+### NU1108 (Previously NU1606)
+
+| | |
+| --- | --- |
+| **Issue** | A circular dependency was detected. |
+| **Common causes** | A package is authored incorrectly. |
+| **Example message** | *Cycle detected: A -> B -> A* |
+
 ## Compatibility errors
 
 [NU1201](#nu1201) | [NU1202](#nu1202) | [NU1203](#nu1203) | [NU1401](#nu1401)
@@ -157,15 +163,13 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Common causes** | The project's target framework is a higher version than the consuming project. |
 | **Example message** | *Project ServerWeb is not compatible with netstandard1.3 (.NETStandard,Version=v1.3). Project ServerWeb supports:<br/>  - netstandard1.6 (.NETStandard,Version=v1.6)<br/>  - netcoreapp1.0 (.NETCoreApp,Version=v1.0)* |
 
-
 ### NU1202
 
 | | |
 | --- | --- |
 | **Issue** | A dependency package doesn't contain any assets compatible with the project. |
 | **Common causes** | The package doesn't support the project's target framework. |
-| **Example message** | *Package System.ComponentModel.EventBasedAsync 4.0.11 is not compatible with netstandard1.3 (.NETStandard,Version=v1.3). Package System.ComponentModel.EventBasedAsync 4.0.11 supports:<br/>  - monoandroid10 (MonoAndroid,Version=v1.0)<br/>  - monotouch10 (MonoTouch,Version=v1.0)<br/>  - net45 (.NETFramework,Version=v4.5)<br/>  - netcore50 (.NETCore,Version=v5.0)<br/>  - netstandard1.0 (.NETStandard,Version=v1.0)<br/>  - netstandard1.3 (.NETStandard,Version=v1.3)<br/>  - portable-net45+win8+wp8+wpa81 (.NETPortable,Version=v0.0,Profile=Profile259)<br/>  - win8 (Windows,Version=v8.0)<br/>  - wp8 (WindowsPhone,Version=v8.0)<br/>  - wpa81 (WindowsPhoneApp,Version=v8.1)<br/>  - xamarinios10 (Xamarin.iOS,Version=v1.0)<br/>  - xamarinmac20 (Xamarin.Mac,Version=v2.0)<br/>  - xamarintvos10 (Xamarin.TVOS,Version=v1.0)<br/>  - xamarinwatchos10 (Xamarin.WatchOS,Version=v1.0)*|
-
+| **Example message** | *Package System.ComponentModel.EventBasedAsync 4.0.11 is not compatible with netstandard1.3 (.NETStandard,Version=v1.3). Package System.ComponentModel.EventBasedAsync 4.0.11 supports:<br/>  - monoandroid10 (MonoAndroid,Version=v1.0)<br/>  - monotouch10 (MonoTouch,Version=v1.0)<br/>  - net45 (.NETFramework,Version=v4.5)<br/>  - netcore50 (.NETCore,Version=v5.0)<br/>  - netstandard1.0 (.NETStandard,Version=v1.0)<br/>  - portable-net45+win8+wp8+wpa81 (.NETPortable,Version=v0.0,Profile=Profile259)<br/>  - win8 (Windows,Version=v8.0)<br/>  - wp8 (WindowsPhone,Version=v8.0)<br/>  - wpa81 (WindowsPhoneApp,Version=v8.1)<br/>  - xamarinios10 (Xamarin.iOS,Version=v1.0)<br/>  - xamarinmac20 (Xamarin.Mac,Version=v2.0)<br/>  - xamarintvos10 (Xamarin.TVOS,Version=v1.0)<br/>  - xamarinwatchos10 (Xamarin.WatchOS,Version=v1.0)*|
 
 ### NU1203
 
@@ -257,23 +261,15 @@ The errors and warnings listed here are available only with [PackageReference-ba
 
 ## Resolver conflict warnings
 
-[NU1606](#nu1606) | [NU1607](#nu1607)
+[NU1608](#nu1608)
 
-### NU1606
-
-| | |
-| --- | --- |
-| **Issue** | A circular dependency was detected. |
-| **Common causes** | A package is authored incorrectly. |
-| **Example message** | *Cycle detected: A -> B -> A* |
-
-### NU1607
+### NU1608
 
 | | |
 | --- | --- |
-| **Issue** | Unable to resolve dependency constraints between packages. |
-| **Common causes** | Packages with dependency constraints on exact versions do not allow other packages to increase the version if needed. |
-| **Example message** | *Version conflict detected for NuGet.Versioning. Reference the package directly from the project to resolve this issue.<br/>  NuGet.Packaging 3.5.0 -> NuGet.Versioning (= 3.5.0)<br/>  NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)* |
+| **Issue** | A resolve package is higher than a dependency constraint allows. In some cases this is intentional and the warning can be suppressed. |
+| **Common causes** | A package referenced directly by a project will override dependency constraints from other packages.   |
+| **Example message** | *Detected package version outside of dependency constraint: x 1.0.0 requires y (= 1.0.0) but version y 2.0.0 was resolved.* |
 
 ## Package fallback warnings
 
@@ -283,7 +279,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 
 | | |
 | --- | --- |
-| **Issue** | *PackageTargetFallback* was used to select assets from a package. This is a warning to let the user know that the assets may not be 100% compatible. |
+| **Issue** | *PackageTargetFallback/AssetTargetFallback* was used to select assets from a package. This is a warning to let the user know that the assets may not be 100% compatible. |
 | **Common causes** | The package doesn't support the project framework. |
 | **Example message** | *Package 'NuGet.Versioning' was restored using 'portable-net45+win8' instead the project target framework 'netstandard1.5'. This package may not be fully compatible with your project.* |
 
@@ -298,7 +294,6 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Issue** | An error occurred when reading the feed when `IgnoreFailedSources` is set to true, converting it to a non-fatal warning. This could contain any message and is generic. |
 | **Common causes** | The source is invalid. |
 | **Example message** | n/a |
-
 
 ## NuGet internal errors and warnings
 

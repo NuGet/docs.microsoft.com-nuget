@@ -1,31 +1,19 @@
 ---
-# required metadata
-
 title: Target Frameworks References for NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 4/24/2017
-ms.topic: article
+ms.date: 12/11/2017
+ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 4343a48e-f6df-4a44-9d66-4616c3caacf5
-
-# optional metadata
-
 description: NuGet target framework references identify and isolate framework-dependent components of a package.
 keywords: NuGet package targeting, .NET framework targets, .NET framework versions
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
-- karann
-- unnir
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
+- anangaur
+- karann-msft
+- unniravindranathan
 ---
 
 # Target frameworks
@@ -37,18 +25,16 @@ NuGet uses target framework references in a variety of places to specifically id
 - [packages.config](../Schema/packages-config.md): The `targetframework` attribute of a dependency specifies the variant of a package to install.
 - [project.json](../Schema/project-json.md): The `frameworks` node specifies the framework versions that the project can be compiled against.
 
-
 > [!Note]
 > The NuGet client source code that calculates the tables below is found in the following locations:
 > -  Supported framework names: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
 > -  Framework precedence and mapping: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
-
 ## Supported frameworks
 
 A framework is typically referenced by a short target framework moniker or TFM. In .NET Standard this is also is generalized to *TxM* to allow a single reference to multiple frameworks.
 
-The NuGet clients support the following frameworks. Equivalents are shown within brackets [].
+The NuGet clients support the frameworks in the table below. Equivalents are shown within brackets []. Note that some tools, such as `dotnet`, might use variations of canonical TFMs in some files. For example, `dotnet pack` uses  `.NETCoreApp2.0` in a `.nuspec` file rather than `netcoreapp2.0`. The various NuGet client tools handle these variations properly, but you should always use canonical TFMs when editing files directly.
 
 | Name           | Abbreviation | TFMs/TxMs |
 | -------------  | ------------ | --------- |
@@ -57,96 +43,97 @@ The NuGet clients support the following frameworks. Equivalents are shown within
 |                |              | net35     |
 |                |              | net40     |
 |                |              | net403    |
-|                |              |net45      |
-|                |              |net451     |
-|                |              |net452     |
-|                |              |net46      |
-|                |              |net461     |
-|                |              |net462     |
-|.NET Core       | netcore      | netcore [netcore45]
-|                |              | netcore45 [win, win8]
-|                |              | netcore451 [win81]
-|                |              | netcore50
-|.NET MicroFramework | netmf    | netmf
-|Windows         | win          | win [win8, netcore45]
-| | | win8 [netcore45, win]
-| | | win81 [netcore451]
-| | | win10 (not supported by Windows 10 Platform)
-Silverlight | sl | sl4
-| | | sl5
-Windows Phone (SL) | wp | wp [wp7]
-| | | wp7
-| | | wp75
-| | | wp8
-| | | wp81
-Windows Phone (UWP) | | wpa81
-Universal Windows Platform | uap | uap [uap10.0]
-| | | uap10.0
-.NET Standard | netstandard | netstandard1.0
-| | | netstandard1.1
-| | | netstandard1.2
-| | | netstandard1.3
-| | | netstandard1.4
-| | | netstandard1.5
-| | | netstandard1.6
-.NET Core App | netcoreapp | netcoreapp1.0
-| | | netcoreapp1.1
+|                |              | net45      |
+|                |              | net451     |
+|                |              | net452     |
+|                |              | net46      |
+|                |              | net461     |
+|                |              | net462     |
+|Microsoft Store (Windows Store) | netcore      | netcore [netcore45] |
+|                |              | netcore45 [win, win8] |
+|                |              | netcore451 [win81] |
+|                |              | netcore50 |
+|.NET MicroFramework | netmf    | netmf |
+|Windows         | win          | win [win8, netcore45] |
+| | | win8 [netcore45, win] |
+| | | win81 [netcore451] |
+| | | win10 (not supported by Windows 10 Platform) |
+Silverlight | sl | sl4 |
+| | | sl5 |
+Windows Phone (SL) | wp | wp [wp7] |
+| | | wp7 |
+| | | wp75 |
+| | | wp8 |
+| | | wp81 |
+Windows Phone (UWP) | | wpa81 |
+Universal Windows Platform | uap | uap [uap10.0] |
+| | | uap10.0 |
+.NET Standard | netstandard | netstandard1.0 |
+| | | netstandard1.1 |
+| | | netstandard1.2 |
+| | | netstandard1.3 |
+| | | netstandard1.4 |
+| | | netstandard1.5 |
+| | | netstandard1.6 |
+| | | netstandard2.0 |
+.NET Core App | netcoreapp | netcoreapp1.0 |
+| | | netcoreapp1.1 |
+| | | netcoreapp2.0 |
+Tizen | tizen | tizen3 |
+| | | tizen4 |
 
 ## Deprecated frameworks
 The following frameworks are deprecated. Packages targeting these frameworks should migrate to the indicated replacements.
 
-Deprecated framework | Replacement
---- | ---
-aspnet50 | netcoreapp
-aspnetcore50 |
-dnxcore50 |
-dnx |
-dnx45 |
-dnx451 |
-dnx452 |
-dotnet | netstandard
-dotnet50 |
-dotnet51 |
-dotnet52 |
-dotnet53 |
-dotnet54 |
-dotnet55 |
-dotnet56 |
-winrt | win
+| Deprecated framework | Replacement
+| --- | ---
+| aspnet50 | netcoreapp |
+| aspnetcore50 |
+| dnxcore50 |
+| dnx |
+| dnx45 |
+| dnx451 |
+| dnx452 |
+| dotnet | netstandard |
+| dotnet50 | |
+| dotnet51 | |
+| dotnet52 | |
+| dotnet53 | |
+| dotnet54 | |
+| dotnet55 | |
+| dotnet56 | |
+| winrt | win |
 
 ## Precedence
 
 A number of frameworks are related to and compatible with one another, but not necessarily equivalent:
 
-Framework | Can use
---- | ---
-uap (Universal Windows Platform) | win81
-| | wpa81
-| | netcore50
-win (Windows Store) | winrt
-| | winrt45
+| Framework | Can use |
+| --- | --- |
+| uap (Universal Windows Platform) | win81 |
+| | wpa81 |
+| | netcore50 |
+| win (Microsoft Store) | winrt |
+| | | winrt45 |
 
 ## NET Platform Standard
 
-The [.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) simplifies references between binary-compatible frameworks, allowing a single target framework to reference a combination of others. (For background, see the [.NET Primer](https://docs.microsoft.com/dotnet/articles/standard/index).)
+The [.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) simplifies references between binary-compatible frameworks, allowing a single target framework to reference a combination of others. (For background, see the [.NET Primer](/dotnet/articles/standard/index).)
 
 The [NuGet Get Nearest Framework Tool](https://aka.ms/s2m3th) simulates what NuGet uses to select one framework from many available framework assets in a package based on the project's framework.
 
-The `dotnet` series of monikers should be used in NuGet 3.3 an earlier; the `netstandard` moniker syntax should be used in v3.4 and later.
-
+The `dotnet` series of monikers should be used in NuGet 3.3 and earlier; the `netstandard` moniker syntax should be used in v3.4 and later.
 
 ## Portable Class Libraries
 
 > [!Warning]
-> **PCLs are not recommended**
->
-> Although PCLs are supported, package authors should support netstandard instead. The .NET Platform Standard is an evolution of PCLs and represents binary portability across platforms using a single moniker that isn't tied to a static like like *portable-a+b+c* monikers.
+> **PCLs are not recommended**. Although PCLs are supported, package authors should support netstandard instead. The .NET Platform Standard is an evolution of PCLs and represents binary portability across platforms using a single moniker that isn't tied to a static like like *portable-a+b+c* monikers.
 
 To define a target framework that refers to multiple child-target-frameworks, the `portable` keyword use used to prefix the list of referenced frameworks. Avoid artificially including extra frameworks that are not directly compiled against because it can lead to unintended side-effects in those frameworks.
 
 Additional frameworks defined by third parties provide compatibility with other environments that are accessible in this manner. Additionally, there are shorthand profile numbers that are available to reference these combinations of related frameworks as `Profile#`, but this is not a recommended practice to use these numbers as it reduces the readability of the folders and `.nuspec`.
 
-Profile # | Frameworks | Full name | .NET Standard
+| Profile # | Frameworks | Full name | .NET Standard |
  --- | --- | --- | ---
  Profile2 | .NETFramework 4.0 | portable-net40+win8+sl4+wp7 |
  | | Windows 8.0 | |
@@ -162,7 +149,7 @@ Profile # | Frameworks | Full name | .NET Standard
  | | Windows 8.0 |
  Profile6 | .NETFramework 4.0.3 | portable-net403+win8
  | | Windows 8.0 |
- Profile7 | .NETFramework 4.5 | portable-net45+win8    | netstandard1.1
+ Profile7 | .NETFramework 4.5 | portable-net45+win8 | netstandard1.1
  | | Windows 8.0 |
  Profile14 | .NETFramework 4.0 | portable-net40+sl5
  | | Silverlight 5.0 |
@@ -291,20 +278,20 @@ Profile # | Frameworks | Full name | .NET Standard
 
 Additionally, NuGet packages targeting Xamarin can use additional Xamarin-defined frameworks. See [Creating NuGet packages for Xamarin](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/).
 
- Name | Description | .NET Standard
- --- | --- | ---
- monoandroid | Mono Support for Android OS | netstandard1.4
- monotouch | Mono Support for iOS | netstandard1.4
- monomac | Mono Support for OSX | netstandard1.4
- xamarinios | Support for Xamarin for iOS | netstandard1.4
- xamarinmac | Supports for Xamarin for Mac | netstandard1.4
- xamarinpsthree | Support for Xamarin on Playstation 3 | netstandard1.4
- xamarinpsfour | Support for Xamarin on Playstation 4 | netstandard1.4
- xamarinpsvita | Support for Xamarin on PS Vita | netstandard1.4
- xamarinwatchos | Xamarin for Watch OS | netstandard1.4
- xamarintvos | Xamarin for TV OS | netstandard1.4
- xamarinxboxthreesixty | Xamarin for XBox 360 | netstandard1.4
- xamarinxboxone | Xamarin for XBox One | netstandard1.4
+| Name | Description | .NET Standard |
+| --- | --- | ---
+| monoandroid | Mono Support for Android OS | netstandard1.4 |
+| monotouch | Mono Support for iOS | netstandard1.4 |
+| monomac | Mono Support for OSX | netstandard1.4 |
+| xamarinios | Support for Xamarin for iOS | netstandard1.4 |
+| xamarinmac | Supports for Xamarin for Mac | netstandard1.4 |
+| xamarinpsthree | Support for Xamarin on Playstation 3 | netstandard1.4 |
+| xamarinpsfour | Support for Xamarin on Playstation 4 | netstandard1.4 |
+| xamarinpsvita | Support for Xamarin on PS Vita | netstandard1.4 |
+| xamarinwatchos | Xamarin for Watch OS | netstandard1.4 |
+| xamarintvos | Xamarin for TV OS | netstandard1.4 |
+| xamarinxboxthreesixty | Xamarin for XBox 360 | netstandard1.4 |
+| xamarinxboxone | Xamarin for XBox One | netstandard1.4 |
 
 > [!Note]
 > Stephen Cleary has created a tool that lists the supported PCLs, which you can find on his post, [Framework profiles in .NET](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html).

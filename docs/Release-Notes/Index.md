@@ -6,7 +6,7 @@ title: NuGet Release Notes | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 8/14/2017
 ms.topic: article
 ms.prod: nuget
 #ms.service:
@@ -20,8 +20,8 @@ keywords: NuGet release notes, NuGet known issues
 #audience:
 #ms.devlang:
 ms.reviewer:
-- karann
-- unnir
+- karann-msft
+- unniravindranathan
 #ms.suite:
 #ms.tgt_pltfrm:
 #ms.custom:
@@ -31,6 +31,12 @@ ms.reviewer:
 # Release Notes
 
 [Known Issues](../release-notes/known-issues.md)
+
+[NuGet 4.5 RTM](../release-notes/nuget-4.5-rtm.md)
+
+[NuGet 4.4 RTM](../release-notes/nuget-4.4-rtm.md)
+
+[NuGet 4.3 RTM](../release-notes/nuget-4.3-rtm.md)
 
 [NuGet 4.0 RTM](../release-notes/nuget-4.0-rtm.md)
 
