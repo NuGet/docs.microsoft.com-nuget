@@ -36,7 +36,7 @@ In this topic:
 > [!Note]
 > If you're missing the NuGet Package Manager in Visual Studio 2015, check **Tools > Extensions and Updates...** and search for the *NuGet Package Manager* extension. If you're unable to use the extensions installer in Visual Studio, download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 >
-> In Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed with any .NET-related workloads. Install it individuall by selecting the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.
+> In Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed with any .NET-related workloads. Install it individually by selecting the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.
 
 ## Finding and installing a package
 
