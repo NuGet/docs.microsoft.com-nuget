@@ -162,6 +162,12 @@ To resolve this, you must directly reference the `C.dll` you want (or use anothe
     }
     ```
 
+- With [package references in project files](../consume-packages/package-references-in-project-files.md) (NuGet 4.0+ only), add `ExcludeAssets="All"` in the dependency:
+
+    ```xml
+    <PackageReference Include="packageC" Version="1.0.0" ExcludeAssets="All" />
+    ```
+
 ## Dependency updates during package install 
 
 With NuGet 2.4.x and earlier, when a package is installed whose dependency already exists in the project, the dependency is updated to the latest version that satisfies the version constraints, even if the existing version also satisfies those constraints. 
