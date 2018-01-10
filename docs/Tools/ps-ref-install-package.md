@@ -60,13 +60,13 @@ None of these parameters accept pipeline input or wildcard characters.
 ## Examples
 
 ```ps
-# Installs the latest version of Elmah from the current source into the default project
+# Installs the latest version of Elmah from the current source into the default project.
 Install-Package Elmah
 
-# Installs Glimpse 1.0.0 into the MvcApplication1 project
+# Installs Glimpse 1.0.0 into the MvcApplication1 project.
 Install-Package Glimpse -Version 1.0.0 -Project MvcApplication1
 
-# Installs Ninject.Mvc3 but not its dependencies from c:\temp\packages
+# Installs Ninject.Mvc3 but not its dependencies from c:\temp\packages.
 Install-Package Ninject.Mvc3 -IgnoreDependencies -Source c:\temp\packages
 
 # Installs the package listed on the online packages.config into the current project.
@@ -75,6 +75,6 @@ Install-package https://raw.githubusercontent.com/json-ld.net/master/src/JsonLD/
 # Installs jquery 1.10.2 package, using the .nupkg file under local path of c:\temp\packages.
 Install-package c:\temp\packages\jQuery.1.10.2.nupkg
 
-# Installs the specific online package
+# Installs the specific online package.
 Install-package https://az320820.vo.msecnd.net/packages/microsoft.aspnet.mvc.5.2.3.nupkg
 ```
