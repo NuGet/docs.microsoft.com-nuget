@@ -27,6 +27,8 @@ ms.reviewer:
 
 Manages the list of sources located in `%AppData%\NuGet\NuGet.Config` or the specified configuration file.
 
+Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
+
 ## Usage
 
 ```
@@ -34,7 +36,6 @@ nuget sources <operation> -Name <name> -Source <source>
 ```
 
 where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*, `<name>` is the name of the source, and `<source>` is the source's URL.
-
 
 ## Options
 
