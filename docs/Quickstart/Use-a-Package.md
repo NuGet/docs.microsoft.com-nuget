@@ -17,6 +17,8 @@ ms.reviewer:
 
 # Install and use a package
 
+NuGet packages are units of reusable code that other developers make available to you for use in your projects. See [What is NuGet?](../What-is-NuGet.md) for background.
+
 [!INCLUDE [install-methods](../includes/install-methods.md)]
 
 Once installed, refer to the package in code with `using <namespace>` where \<namespace\> is specific to the package you're using. Once the reference is made, you can call the package through its API.

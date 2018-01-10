@@ -35,11 +35,11 @@ In this topic:
 - [packageRestore section](#packagerestore-section)
 - [solution section](#solution-section)
 - [Package source sections](#package-source-sections):
-    - [packageSources](#packagesources)
-    - [packageSourceCredentials](#packagesourcecredentials)
-    - [apikeys](#apikeys)
-    - [disabledPackageSources](#disabledpackagesources)
-    - [activePackageSource](#activepackagesource)
+  -[packageSources](#packagesources)
+  - [packageSourceCredentials](#packagesourcecredentials)
+  - [apikeys](#apikeys)
+  - [disabledPackageSources](#disabledpackagesources)
+  - [activePackageSource](#activepackagesource)
 - [Using environment variables](#using-environment-variables)
 - [Example config file](#example-config-file)
 
@@ -62,7 +62,6 @@ Note: `dependencyVersion` and `repositoryPath` apply only to projects using `pac
 | defaultPushSource | Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://<username>:<password>@<domain>`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the http_proxy and no_proxy environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
 
-
 **Example**:
 
 ```xml
@@ -73,7 +72,6 @@ Note: `dependencyVersion` and `repositoryPath` apply only to projects using `pac
     <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
 </config>
 ```
-
 
 ## bindingRedirects section
 
@@ -119,7 +117,6 @@ Controls whether the `packages` folder of a solution is included in source contr
 | --- | --- |
 | disableSourceControlIntegration | A Boolean indicating whether to ignore the packages folder when working with source control. The default value is false. |
 
-
 **Example**:
 
 ```xml
@@ -128,13 +125,13 @@ Controls whether the `packages` folder of a solution is included in source contr
 </solution>
 ```
 
-
 ## Package source sections
 
 The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, and `disabledPackageSources` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
 
 The [`nuget sources` command](../tools/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/cli-ref-setapikey.md).
 
+Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 
 ### packageSources
 
@@ -153,7 +150,6 @@ Lists all known package sources.
     <add key="Test Source" value="c:\packages" />
 </packageSources>
 ```
-
 
 ### packageSourceCredentials
 
@@ -193,7 +189,7 @@ When using unencrypted passwords:
     <Test_x0020_Source>
         <add key="Username" value="user" />
         <add key="ClearTextPassword" value="hal+9ooo_da!sY" />
-    </Test_x0020_Source>    
+    </Test_x0020_Source>
 </packageSourceCredentials>
 ```
 
@@ -213,7 +209,6 @@ Stores keys for sources that use API key authentication, as set with the [`nuget
 </apikeys>
 ```
 
-
 ### disabledPackageSources
 
 Identified currently disabled sources. May be empty.
@@ -221,8 +216,6 @@ Identified currently disabled sources. May be empty.
 | Key | Value |
 | --- | --- |
 | (name of source) | A Boolean indicating whether the source is disabled. |
-
-
 
 **Example:**
 
@@ -266,7 +259,6 @@ For example, if the `HOME` environment variable on Windows is set to `c:\users\u
 Similarly, if `HOME` on Mac/Linux is set to `/home/myStuff`, then `$HOME/NuGetRepository` in the configuration file resolves to `/home/myStuff/NuGetRepository`.
 
 If an environment variable is not found, NuGet uses the literal value from the configuration file.
-
 
 ## Example config file
 

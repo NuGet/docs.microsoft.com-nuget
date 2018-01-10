@@ -54,7 +54,7 @@ Every NuGet package needs a manifest&mdash;a `.nuspec` file&mdash;to describe it
     nuget spec
     ```
 
-1. Open the file in a text editor. The manifest looks something like the code below, where tokens in the form *$`<token>`$* are be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](../create-packages/creating-a-package.md#creating-the-nuspec-file).
+1. Open the file in a text editor. The manifest looks something like the code below, where tokens in the form `<token>` (such as `$id$`) are be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](../create-packages/creating-a-package.md#creating-the-nuspec-file).
 
     ```xml
     <?xml version="1.0"?>
