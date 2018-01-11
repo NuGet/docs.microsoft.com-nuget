@@ -3,7 +3,7 @@ title: NuGet Frequently-Asked Questions | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 12/07/2017
+ms.date: 01/11/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -89,6 +89,10 @@ Yes, NuGet works directly from the command line. See the [Install guide](../guid
 
 See the [Install guide](../guides/install-nuget.md).
 
+**What is the license for nuget.exe?**
+
+You are allowed to redistribute nuget.exe under the terms of the MIT license. You are responsible for updating and servicing any copies of nuget.exe that you choose to redistribute.
+
 **Is it possible to extend the NuGet command line tool?**
 
 Yes, it's possible to add custom commands to `nuget.exe`, as described in [Rob Reynold's post](http://geekswithblogs.net/robz/archive/2011/07/15/extend-nuget-command-line.aspx).
@@ -169,7 +173,6 @@ This is not an issue when using PackageReference, as each project file contains 
 Each package is governed by the terms that are included with the package. You should review the applicable terms before accessing, downloading, or acquiring any packages. On nuget.org, use the **License Info** link on the package page.
 
 If a package does not specify the licensing terms, contact the package owner directly using the **Contact owners** link on the nuget.org package page. Microsoft does not license any intellectual property to you from third party package providers and is not responsible for information provided by third parties.
-
 
 ## Managing packages on nuget.org
 
