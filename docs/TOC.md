@@ -9,7 +9,6 @@
 ## [Create UWP Packages](Guides/Create-UWP-Packages.md)
 ## [Creating UWP Controls as NuGet Packages](Guides/Create-UWP-Controls.md)
 ## [Create Cross-Platform Packages](Guides/Create-Cross-Platform-Packages.md)
-## [Query for all packages using the API](Guides/api/query-for-all-published-packages.md)
 # Create Packages
 ## [Overview and Workflow](Create-Packages/Overview-and-Workflow.md)
 ## [Creating a Package](Create-Packages/Creating-a-Package.md)
@@ -86,6 +85,7 @@
 ### [nuget.exe Credential Providers](Reference/extensibility/nuget-exe-Credential-Providers.md)
 # API
 ## [Overview](API/overview.md)
+## [How-to: query for all packages using the API](Guides/api/query-for-all-published-packages.md)
 ## [Service Index](API/service-index.md)
 ## [Push and Delete](API/package-publish-resource.md)
 ## [Search](API/search-query-service-resource.md)
