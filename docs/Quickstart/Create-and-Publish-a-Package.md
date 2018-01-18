@@ -128,7 +128,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `push` comm
     ![Copying the API key to the clipboard](media/QS_Create-02-APIKey.png)
 
     > [!Warning]
-    > Save your key in a secure location and keep it a secret. If your key is accidentally revealed, you can regenerate it at any time. You can also remove the API key if you no longer want to push packages via the CLI.
+    > Save your key in a secure location and keep it secret. If your key is accidentally revealed, you can regenerate it at any time. You can also remove the API key if you no longer want to push packages via the CLI.
 
 1. At a command prompt, run the following command, specifying your package name and replacing the key with the value copied in step 4:
 
