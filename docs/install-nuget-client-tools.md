@@ -17,7 +17,7 @@ ms.reviewer:
 # Installing NuGet client tools
 
 > [!Tip]
-> **Looking to install a package? See [Quickstart - Use a package](../Quickstart/Use-a-Package.md).**
+> **Looking to install a package? See [Quickstart - Use a package](quickstart/use-a-package.md).**
 
 To work with NuGet, as a package consumer or creator, you can use cross-platform command-line interface (CLI) tools as well as NuGet features in Visual Studio. This article briefly outlines the capabilities of the different tools and how to install them.
 
@@ -47,7 +47,7 @@ The NuGet CLI, `nuget.exe`, is the command-line utility for Windows that provide
 
 Installation:
 
-[!INCLUDE[install-cli](../includes/install-cli.md)]
+[!INCLUDE[install-cli](includes/install-cli.md)]
 
 > [!Tip]
 > Use `nuget update -self` to update an existing nuget.exe to the latest version.
@@ -65,7 +65,7 @@ Other ways to install the NuGet CLI:
 
 - Visual Studio Code: NuGet capabilities are available through marketplace extensions, or use the `dotnet.exe` or `nuget.exe` CLI tools.
 
-- Visual Studio on Windows: The **NuGet Package Manager** is included with Visual Studio 2012 and later. The Package Manager provides the [Package Manager UI](../tools/package-manager-ui.md) and the [Package Manager Console](../tools/package-manager-console.md), through which you can run most NuGet operations.
+- Visual Studio on Windows: The **NuGet Package Manager** is included with Visual Studio 2012 and later. The Package Manager provides the [Package Manager UI](tools/package-manager-ui.md) and the [Package Manager Console](tools/package-manager-console.md), through which you can run most NuGet operations.
   - The Package Manager UI and Console are unique to Visual Studio on Windows. They are not available on Visual Studio for Mac at present.
   - Visual Studio does not automatically include the `nuget.exe` CLI, which must be installed separately.
   - Package Manager Console commands work only within Visual Studio on Windows and not within other PowerShell environments.
