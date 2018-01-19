@@ -44,6 +44,7 @@ where `<packageID>` names the package to install (using the latest version), or 
 | Option | Description |
 | --- | --- |
 | ConfigFile | The NuGet configuration file to apply. If not specified, *%AppData%\NuGet\NuGet.Config* is used. |
+| DependencyVersion | *(4.4+)* Specifies a specific version, overriding the default dependency resolution behavior. |
 | DisableParallelProcessing | Disables installing multiple packages in parallel. |
 | ExcludeVersion | Installs the package to a folder named with only the package name and not the version number. |
 | FallbackSource | *(3.2+)* A list of package sources to use as fallbacks in case the package isn't found in the primary or default source. |
