@@ -3,7 +3,7 @@ title: NuGet project.json archive content | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 01/18/2018
+ms.date: 01/17/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null

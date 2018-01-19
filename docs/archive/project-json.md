@@ -3,7 +3,7 @@ title: project.json File Reference for NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 07/26/2017
+ms.date: 07/27/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
