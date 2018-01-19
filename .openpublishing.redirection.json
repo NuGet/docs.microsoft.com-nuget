@@ -36,6 +36,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/guides/install-nuget.md",
+            "redirect_url": "/nuget/install-nuget-client-tools",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/Schema/project-json.md",
             "redirect_url": "/nuget/archive/project-json",
             "redirect_document_id": false
