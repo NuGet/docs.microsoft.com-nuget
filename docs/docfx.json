@@ -10,7 +10,8 @@
           "**/obj/**",
           "nuget/**",
           "**/includes/**",
-          "archive/**"
+          "archive/config-priority-order.md",
+          "archive/readme.md"
         ]
       }
     ],
