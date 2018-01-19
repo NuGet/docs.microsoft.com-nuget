@@ -22,13 +22,6 @@ Those immediate dependencies might then also have dependencies on their own, whi
 
 When multiple packages have the same dependency, then the same package ID can appear in the graph multiple times, potentially with different version constraints. However, only one version of a given package can be used in a project, so NuGet must choose which version is be used. The exact process depends on the package reference format being used.
 
-In this topic:
-- [Dependency resolution with PackageReference](#dependency-resolution-with-packagereference)
-- [Dependency resolution with packages.config](#dependency-resolution-with-packagesconfig)
-- [Excluding references](#excluding-references), which is necessary when there's a conflict between a dependency specified in one project and an assembly that's produced by another.
-- [Dependency updates during package install](#dependency-updates-during-package-install)
-- [Resolving incompatible package errors](#resolving-incompatible-package-errors)
-
 ## Dependency resolution with PackageReference
 
 When installing packages into projects using the PackageReference format, NuGet adds references to a flat package graph in the appropriate file and resolves conflicts ahead of time. This process is referred to as *transitive restore*. Reinstalling or restoring packages is then a process of downloading the packages listed in the graph, resulting in faster and more predictable builds. You can also take advantage of wildcard (floating) versions, such as 2.8.\*, avoiding expensive and error prone calls to `nuget update` on the client machines and build servers.

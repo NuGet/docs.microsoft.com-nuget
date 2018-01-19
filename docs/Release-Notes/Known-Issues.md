@@ -84,7 +84,7 @@ The problem: You are using VS 2012 RTM. When updating NuGet packages, you get th
 
 The cause is that certain files in the old packages are locked by a background MSBuild process. Even after VS restart, the background MSBuild process still uses the files in the old packages, causing the build failures.
 
-The fix is to install VS 2012 Update, e.g. [VS 2012 Update 2](http://www.microsoft.com/download/details.aspx?id=38188).
+The fix is to install VS 2012 Update, e.g. VS 2012 Update 2.
 
 ## Upgrading to latest NuGet from an older version causes a signature verification error
 

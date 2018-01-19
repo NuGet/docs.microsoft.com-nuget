@@ -14,7 +14,7 @@ ms.reviewer:
 - unniravindranathan
 ---
 
-## setapikey command (NuGet CLI)
+# setapikey command (NuGet CLI)
 
 **Applies to:** package consumption, publishing &bullet; **Supported versions:** all
 

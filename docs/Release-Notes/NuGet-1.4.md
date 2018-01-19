@@ -173,10 +173,10 @@ correctly when specifying a specific package source.
 * [Issue 1036](http://nuget.codeplex.com/workitem/1036): Adding `NuGet Pack SomeProject.csproj` to post-build event no longer causes an infinite loop.
 * [Issue 961](http://nuget.codeplex.com/workitem/961): `-Source` flag supports relative paths.
 
-# NuGet 1.4 Update
+## NuGet 1.4 Update
 Shortly after the release of NuGet 1.4, we found a couple of issues that were important to fix.
 The specific version number of this update to 1.4 is 1.4.20615.9020.
 
-## Bug Fixes
+### Bug Fixes
 * [Issue 1220](http://nuget.codeplex.com/workitem/1220): Update-Package doesnt execute `install.ps1`/`uninstall.ps1` in all projects when there is more than one project
 * [Issue 1156](http://nuget.codeplex.com/workitem/1156): Package Manager Consol stuck on W2K3/XP (when Powershell 2 is not installed)

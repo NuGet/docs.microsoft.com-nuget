@@ -97,9 +97,7 @@ must perform more HTTP requests to get the information it needs.
 The heuristic that nuget.org uses is as follows: if there are 128 or more versions of a package, break the leaves
 into pages of size 64. If there are less than 128 versions, inline all leaves into the registration index.
 
-```
-GET {@id}/{LOWER_ID}/index.json
-```
+    GET {@id}/{LOWER_ID}/index.json
 
 ### Request parameters
 
@@ -223,11 +221,9 @@ any version of the dependency is allowed.
 
 ### Sample request
 
-```
-GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
-```
+    GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
 
-### Sample response 
+### Sample response
 
 [!code-JSON [package-registration-index.json](./_data/package-registration-index.json)]
 
@@ -256,9 +252,7 @@ The shape of the registration leaf objects is the same as in the registration in
 
 ## Sample request
 
-```
-GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
-```
+    GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
 
 ## Sample response
 
@@ -290,9 +284,7 @@ registration   | string  | no       | The URL to the registration index
 
 ### Sample request
 
-```
-GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
-```
+    GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
 
 ### Sample response
 

@@ -46,8 +46,8 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 |--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | $(AssemblyName) from MSBuild |
 | Version | PackageVersion | Version | This is semver compatible, for example “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345” |
-| VersionPrefix | PackageVersionPrefix | empty | Setting PackageVersion will overwrite PackageVersionPrefix |
-| VersionSuffix | PackageVersionSuffix | empty | $(VersionSuffix) from MSBuild. Setting PackageVersion will overwrite PackageVersionSuffix | 
+| VersionPrefix | PackageVersionPrefix | empty | Setting PackageVersion overwrites PackageVersionPrefix |
+| VersionSuffix | PackageVersionSuffix | empty | $(VersionSuffix) from MSBuild. Setting PackageVersion overwrites PackageVersionSuffix |
 | Authors | Authors | Username of the current user | |
 | Owners | N/A | Not present in NuSpec | |
 | Title | Title | The PackageId| |

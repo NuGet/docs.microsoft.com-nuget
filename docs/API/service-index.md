@@ -25,11 +25,7 @@ implementation to discover the package source's capabilities. The service index 
 properties: `version` (the schema version of the service index) and `resources`  (the endpoints or capabilities of the
 package source).
 
-nuget.org's service index is located here:
-
-```
-https://api.nuget.org/v3/index.json
-```
+nuget.org's service index is located at `https://api.nuget.org/v3/index.json`.
 
 ## Versioning
 
@@ -65,9 +61,7 @@ The `@id` is a URL that must be absolute and must either have the HTTP or HTTPS 
 The `@type` is used to identify the specific protocol to use when interacting with resource. The type of the resource
 is an opaque string but generally has the format:
 
-```
-{RESOURCE_NAME}/{RESOURCE_VERSION}
-```
+    {RESOURCE_NAME}/{RESOURCE_VERSION}
 
 Clients are expected to hard code the `@type` values that they understand and look them up in a package source's
 service index. The exact `@type` values in use today are enumerated on the individual resource reference documents
@@ -82,9 +76,7 @@ compatible `@type` can be used in a round-robin fashion in case of connection fa
 
 ### Sample request
 
-```
 GET https://api.nuget.org/v3/index.json
-```
 
 ### Sample response
 

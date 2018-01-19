@@ -24,8 +24,6 @@ NuGet 3.5 Beta 2 RTM was released June 27, 2016 for Visual Studio 2013 and nuget
 
 [Issues List](https://github.com/Nuget/Home/issues?q=is%3Aissue+milestone%3A%223.5+Beta2%22+is%3Aclosed)
 
-# Notable Changes
-
 ## Bug Fixes
 
 * Updated error message to lack of support for password decrpytion in .NET Core for authenticated feeds  - [#2942](https://github.com/NuGet/Home/issues/2942)

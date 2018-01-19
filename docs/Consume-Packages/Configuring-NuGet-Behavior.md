@@ -18,13 +18,6 @@ ms.reviewer:
 
 NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Config` (XML) files that can exist at project-, user-, and computer-wide levels. A global `NuGetDefaults.Config` file (2.7+) also specifically configures package sources. Settings apply to all commands issued in the CLI, the Package Manager Console, and the Package Manager UI.
 
-In this topic:
-
-- [NuGet.Config file locations and uses](#config-file-locations-and-uses)
-- [Changing settings](#changing-config-settings)
-- [How settings are applied](#how-settings-are-applied)
-- [NuGetDefaults.Config file](#nuget-defaults-file)
-
 ## Config file locations and uses
 
 | Scope | NuGet.Config file location | Description |
@@ -54,7 +47,7 @@ Settings are managed using the NuGet CLI [config command](../tools/cli-ref-confi
 
 Windows:
 
-```
+```cli
 # Set repositoryPath in the user-level config file
 nuget config -set repositoryPath=c:\packages 
 
@@ -68,7 +61,7 @@ nuget config -set repositoryPath=c:\packages -configfile %ProgramFiles(x86)%\NuG
 
 Mac/Linux:
 
-```
+```cli
 # Set repositoryPath in the user-level config file
 nuget config -set repositoryPath=/home/packages 
 
@@ -87,7 +80,7 @@ nuget config -set repositoryPath=/home/packages -configfile $XDG_DATA_HOME/NuGet
 
 To remove a value, specify a key with an empty value.
 
-```
+```cli
 # Windows
 nuget config -set repositoryPath= -configfile c:\my.Config
 
@@ -104,8 +97,6 @@ Copy the template below into the new file and then use `nuget config --configFil
 <configuration>
 </configuration>
 ```
-
-<br/>
 
 ## How settings are applied
 
@@ -158,7 +149,7 @@ File B. disk_drive_2/NuGet.Config:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
-    <config>        
+    <config>
         <add key="repositoryPath" value="disk_drive_2/tmp" />
     </config>
     <packageRestore>

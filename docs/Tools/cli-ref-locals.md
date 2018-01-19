@@ -14,7 +14,7 @@ ms.reviewer:
 - unniravindranathan
 ---
 
-## locals command (NuGet CLI)
+# locals command (NuGet CLI)
 
 **Applies to:** package consumption &bullet; **Supported versions:** 3.3+
 

@@ -47,13 +47,9 @@ All URLs found in the catalog resource support only the HTTP methods `GET` and `
 
 ## Catalog index
 
-The catalog index is a document in a well-known location that has a list of catalog items, ordered cronologically. It
-is the entry point of the catalog resource.
+The catalog index is a document in a well-known location that has a list of catalog items, ordered cronologically. It is the entry point of the catalog resource.
 
-The index is comprised of catalog pages. Each catalog page contains catalog items. Each catalog item represents an
-event concerning a single package at a point in time. A catalog item can represent a package that was created,
-unlisted, relisted, or deleted from the package source. By processing the catalog items in chronological order, the
-client can build an up-to-date view of every package that exists on the V3 package source.
+The index is comprised of catalog pages. Each catalog page contains catalog items. Each catalog item represents an event concerning a single package at a point in time. A catalog item can represent a package that was created, unlisted, relisted, or deleted from the package source. By processing the catalog items in chronological order, the client can build an up-to-date view of every package that exists on the V3 package source.
 
 In short, catalog blobs have the following hierarchical structure:
 
@@ -61,28 +57,19 @@ In short, catalog blobs have the following hierarchical structure:
 - **Page**: a grouping of catalog items.
 - **Leaf**: a document representing a catalog item, which is a snapshot of a single package's state.
 
-Each catalog object has a property called the `commitTimeStamp` representing when the item was added to the
-catalog. Catalog items are added to a catalog page in batches called commits. All catalog items in the same commit
-have the same commit timestamp (`commitTimeStamp`) and commit ID (`commitId`). Catalog items placed in the same commit
-represent events that happened around the same point in time on the package source. There is no ordering within a
-catalog commit.
+Each catalog object has a property called the `commitTimeStamp` representing when the item was added to the catalog. Catalog items are added to a catalog page in batches called commits. All catalog items in the same commit have the same commit timestamp (`commitTimeStamp`) and commit ID (`commitId`). Catalog items placed in the same commit represent events that happened around the same point in time on the package source. There is no ordering within a catalog commit.
 
 Because each package ID and version is unique, there will never be more than one catalog item in a commit. This ensures that catalog items for a single package can always be unambiguously ordered with respect to commit timestamp.
 
-There is never be more than one commit to the catalog per `commitTimeStamp`. In other words, the `commitId` is
-redundant with the `commitTimeStamp`.
+There is never be more than one commit to the catalog per `commitTimeStamp`. In other words, the `commitId` is redundant with the `commitTimeStamp`.
 
-In contrast to the [package metadata resource](registration-base-url-resource.md), which is indexed by package ID, the
-catalog is indexed (and queryable) only by time.
+In contrast to the [package metadata resource](registration-base-url-resource.md), which is indexed by package ID, the catalog is indexed (and queryable) only by time.
 
-Catalog items are always added to the catalog in a monotonically increasing, chronological order. This means that if a
-catalog commit is added at time X then no catalog commit will ever be added with a time less than or equal to X.
+Catalog items are always added to the catalog in a monotonically increasing, chronological order. This means that if a catalog commit is added at time X then no catalog commit will ever be added with a time less than or equal to X.
 
 The following request fetches the catalog index.
 
-```
-GET {@id}
-```
+    GET {@id}
 
 The catalog index is a JSON document that contains an object with the following properties:
 
@@ -119,9 +106,7 @@ URL.
 
 ### Sample request
 
-```
-GET https://api.nuget.org/v3/catalog0/index.json
-```
+    GET https://api.nuget.org/v3/catalog0/index.json
 
 ### Sample response
 
@@ -183,9 +168,7 @@ For more details about what each type means, see the [corresponding items type](
 
 ### Sample request
 
-```
-GET https://api.nuget.org/v3/catalog0/page2926.json
-```
+    GET https://api.nuget.org/v3/catalog0/page2926.json
 
 ### Sample response
 
@@ -277,9 +260,7 @@ The `published` timestamp is the time when the package was last listed.
 
 #### Sample request
 
-```
 GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
-```
 
 #### Sample response
 
@@ -307,9 +288,7 @@ item's commit timestamp.
 
 #### Sample request
 
-```
 GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
-```
 
 #### Sample response
 

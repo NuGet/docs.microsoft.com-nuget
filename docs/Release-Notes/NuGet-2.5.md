@@ -54,9 +54,9 @@ We also appreciate the following individuals for finding bugs with NuGet 2.5 Bet
 1. [Tony Wall](https://www.codeplex.com/site/users/view/CodeChief) ([@CodeChief](https://twitter.com/codechief))
     - [#3200](https://nuget.codeplex.com/workitem/3200) - MSTest broken with lastest NuGet 2.4 and 2.5 builds
 
-# Notable features in the release
+## Notable features in the release
 
-## Allow users to overwrite content files that already exist
+### Allow users to overwrite content files that already exist
 
 One of the most requested features of all time has been the ability to overwrite content files that already exist on disk when included in a NuGet package. Starting with NuGet 2.5, these conflicts are identified and you will be prompted to overwrite the files, whereas previously these files were always skipped.
 
@@ -66,13 +66,13 @@ One of the most requested features of all time has been the ability to overwrite
 
 Set a default action when a file from a package already exists in the target project. Set to 'Overwrite' to always overwrite files. Set to 'Ignore' to skip files. If not specified, it will prompt for each conflicting file.
 
-## Automatic import of MSBuild targets and props files
+### Automatic import of MSBuild targets and props files
 
 A new conventional folder has been created at the top level of the NuGet package.  As a peer to `\lib`, `\content`, and `\tools`, you can now include a `\build` folder in your package.  Under this folder, you can place two files with fixed names, `{packageid}.targets` or `{packageid}.props`. These two files can be either directly under `build` or under framework-specific folders just like the other folders. The rule for picking the best-matched framework folder is exactly the same as in those.
 
 When NuGet installs a package with \build files, it will add an MSBuild `<Import>` element in the project file pointing to the `.targets` and `.props` files. The `.props` file is added at the top, whereas the `.targets` file is added to the bottom.
 
-## Specify different references per platform using `<References/>` element
+### Specify different references per platform using `<References/>` element
 
 Before 2.5, in `.nuspec` file, user can only specify the reference files, to be added for all framework. Now with this new feature in 2.5, user can author the `<reference/>` element for each of the supported platform, for example:
 
@@ -100,7 +100,7 @@ This new feature will allow package authors to use the References feature to app
 
 Note: you must presently use nuget.exe pack to use this feature; NuGet Package Explorer does not yet support it.
 
-## Update All button to allow updating all packages at once
+### Update All button to allow updating all packages at once
 
 Many of you know about the "Update-Package" PowerShell cmdlet to update all of your packages; now there's an easy way to do this through the UI as well.
 
@@ -113,7 +113,7 @@ To try this feature out:
 
 ![Update All button in the dialog](./media/NuGet-2.5/update-all.png)
 
-## Improved project reference support for nuget.exe Pack
+### Improved project reference support for nuget.exe Pack
 
 Now nuget.exe pack command processes referenced projects with the following rules:
 
@@ -128,7 +128,7 @@ This allows a referenced project to be treated as a dependency if there is a `.n
 More details here:
 [http://nuget.codeplex.com/workitem/936](http://nuget.codeplex.com/workitem/936)
 
-## Add a 'Minimum NuGet Version' property to packages
+### Add a 'Minimum NuGet Version' property to packages
 
 A new metadata attribute called 'minClientVersion' can now indicate the minimum NuGet client version required to consume a package.
 
@@ -142,7 +142,7 @@ If the user has NuGet 2.5 installed and a package is identified as requiring 2.6
 
 This will improve upon the existing experience where packages begin to install but then fail indicating an unrecognized schema version was identified.
 
-## Dependencies are no longer unnecessarily updated during package installation
+### Dependencies are no longer unnecessarily updated during package installation
 
 Before NuGet 2.5, when a package was installed that depended on a package already installed in the project, the dependency would be updated as part of the new installation, even if the existing version satisfied the dependency.
 
@@ -163,13 +163,13 @@ Starting with NuGet 2.5, if a dependency version is already satisfied, the depen
 
 For more background on this change, read the detailed [work item](http://nuget.codeplex.com/workitem/1681) as well as the related [discussion thread](http://nuget.codeplex.com/discussions/436712).
 
-## nuget.exe outputs http requests with detailed verbosity
+### nuget.exe outputs http requests with detailed verbosity
 
 If you are troubleshooting nuget.exe or just curious what HTTP requests are made during operations, the '-verbosity detailed' switch will now output all HTTP requests made.
 
 ![HTTP output from nuget.exe](./media/NuGet-2.5/verbosity.png)
 
-## nuget.exe push now supports UNC and folder sources
+### nuget.exe push now supports UNC and folder sources
 
 Before NuGet 2.5, if you attempted to run 'nuget.exe push' to a package source based on a UNC path or local folder, the push would fail. With the recently added hierarchical configuration feature, it had become common for nuget.exe to need to target either a UNC/folder source, or an HTTP-based NuGet Gallery.
 
@@ -181,7 +181,7 @@ The following command will now work:
 nuget push -source \\mycompany\repo\ mypackage.1.0.0.nupkg
 ```
 
-## nuget.exe supports explicitly-specified Config files
+### nuget.exe supports explicitly-specified Config files
 
 nuget.exe commands that access configuration (all except 'spec' and 'pack') now support a new '-ConfigFile' option, which forces a specific config file to be used in place of the default config file at %AppData%\nuget\Nuget.Config.
 
@@ -191,7 +191,7 @@ Example:
 nuget sources add -name test -source http://test -ConfigFile C:\test\.nuget\Nuget.Config
 ```
 
-## Support for Native projects
+### Support for Native projects
 
 With NuGet 2.5, the NuGet tooling is now available for Native projects in Visual Studio. We expect most native packages will utilize the MSBuild imports feature above, using a tool created by the [CoApp project](http://coapp.org). For more information, read [the details about the tool](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) on the coapp.org website.
 

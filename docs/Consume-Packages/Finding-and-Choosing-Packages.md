@@ -19,12 +19,6 @@ ms.reviewer:
 
 When starting any .NET project, or whenever you identify a functional need for your app or service, you can save yourself lots of time and trouble by using existing NuGet packages that fulfill that need. These packages can come from the public collection on [nuget.org](http://www.nuget.org/packages/), or a private source that's provided by your organization or another third party.
 
-On this page:
-
-- [Finding packages](#finding-packages)
-- [Evaluating packages](#evaluating-packages)
-- [Search syntax](#search-syntax)
-
 ## Finding packages
 
 When you visit nuget.org or open the Package Manager UI in Visual Studio, you'll see a list of packages sorted by total downloads. This immediately shows you the most widely-used packages across the millions of .NET projects. There's a good chance, then, that at least some of the packages listed on the first few pages will be useful in your projects.

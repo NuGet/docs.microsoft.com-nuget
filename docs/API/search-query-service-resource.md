@@ -51,9 +51,7 @@ package metadata fields may also be considered.
 
 An unlisted package should never appear in search results.
 
-```
-GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
-```
+    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
 
 ### Request parameters
 
@@ -133,9 +131,7 @@ downloads | integer | yes      | The number of downloads for this specific packa
 
 ### Sample request
 
-```
-GET https://api-v2v3search-0.nuget.org/query?q=NuGet.Versioning&prerelease=false
-```
+    GET https://api-v2v3search-0.nuget.org/query?q=NuGet.Versioning&prerelease=false
 
 ### Sample response
 
