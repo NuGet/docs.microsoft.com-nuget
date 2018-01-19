@@ -16,6 +16,37 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
+
+f1_keywords:
+  - "NU1000"
+  - "NU1001"
+  - "NU1002"
+  - "NU1003"
+  - "NU1100"
+  - "NU1101"
+  - "NU1102"
+  - "NU1103"
+  - "NU1104"
+  - "NU1105"
+  - "NU1106"
+  - "NU1107"
+  - "NU1108"
+  - "NU1201"
+  - "NU1202"
+  - "NU1203"
+  - "NU1401"
+  - "NU1500"
+  - "NU1501"
+  - "NU1502"
+  - "NU1503"
+  - "NU1601"
+  - "NU1602"
+  - "NU1603"
+  - "NU1604"
+  - "NU1605"
+  - "NU1608"
+  - "NU1701"
+  - "NU1801"
 ---
 
 # Errors and warnings
