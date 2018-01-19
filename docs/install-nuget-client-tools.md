@@ -16,17 +16,18 @@ ms.reviewer:
 
 # Installing NuGet client tools
 
-> [!Tip]
-> **Looking to install a package? See [Quickstart - Use a package](quickstart/use-a-package.md).**
-
 To work with NuGet, as a package consumer or creator, you can use cross-platform command-line interface (CLI) tools as well as NuGet features in Visual Studio. This article briefly outlines the capabilities of the different tools and how to install them.
+
+**Looking to install a package? See [Quickstart - Use a package](quickstart/use-a-package.md).**
 
 > [!Tip]
 > Developers working on Windows can also explore the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), an open-source, stand-alone tool to visually explore, create, and edit NuGet packages. It's very helpful, for example, to make experimental changes to a package structure without rebuilding the package.
 
 ## CLI tools
 
-The two NuGet CLI tools are `dotnet.exe` and `nuget.exe`. `dotnet` works on all platforms; `nuget.exe` works on Windows and on Mac and Linux under Mono, with some limitations.
+The two NuGet CLI tools are `dotnet.exe` and `nuget.exe`.
+
+`dotnet.exe` works on all platforms; `nuget.exe` works on Windows and on Mac and Linux under Mono, with some limitations.
 
 ### dotnet.exe CLI (recommended)
 
@@ -39,7 +40,7 @@ Installation:
 - On developer computers, install the [.NET Core SDK](https://aka.ms/dotnetcoregs).
 - For build servers, follow the instructions on [Using .NET Core SDK and tools in Continuous Integration](/dotnet/core/tools/using-ci-with-cli).
 
-For more information, see [.NET Core command-line interface tools](/dotnet/core/tools/index?tabs=netcore2x#tabpanel_fXL5YCOYDa_netcore2x)
+For more information, see [.NET Core command-line interface tools](/dotnet/core/tools/index?tabs=netcore2x#tabpanel_fXL5YCOYDa_netcore2x).
 
 ### nuget.exe CLI
 
@@ -53,21 +54,21 @@ Installation:
 > Use `nuget update -self` to update an existing nuget.exe to the latest version.
 
 Other ways to install the NuGet CLI:
-- **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client: `choco install nuget.commandline`.
 - **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.
+- **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client: `choco install nuget.commandline`.
 
 > [!Note]
 > The latest recommended NuGet CLI is always available at `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`. For compatibility purposes  with older continuous integration systems, a previous URL, `https://nuget.org/nuget.exe` always provides the 2.8.6 CLI tool.
 
 ## Visual Studio
 
-- Visual Studio for Mac: certain NuGet capabilities are built in directly. See [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough) for a walkthrough. For other capabilities, use the `dotnet.exe` or `nuget.exe` CLI tools.
-
 - Visual Studio Code: NuGet capabilities are available through marketplace extensions, or use the `dotnet.exe` or `nuget.exe` CLI tools.
+- 
+- Visual Studio for Mac: certain NuGet capabilities are built in directly. See [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough) for a walkthrough. For other capabilities, use the `dotnet.exe` or `nuget.exe` CLI tools.
 
 - Visual Studio on Windows: The **NuGet Package Manager** is included with Visual Studio 2012 and later. The Package Manager provides the [Package Manager UI](tools/package-manager-ui.md) and the [Package Manager Console](tools/package-manager-console.md), through which you can run most NuGet operations.
   - The Package Manager UI and Console are unique to Visual Studio on Windows. They are not available on Visual Studio for Mac at present.
-  - Visual Studio does not automatically include the `nuget.exe` CLI, which must be installed separately.
+  - Visual Studio does not automatically include the `nuget.exe` CLI, which must be installed separately as described earlier.
   - Package Manager Console commands work only within Visual Studio on Windows and not within other PowerShell environments.
   - The Visual Studio 2017 installer includes the NuGet Package Manager with any workload that employs .NET. To install separately, or to verify that the Package Manager is installed, run the Visual Studio 2017 installer and check the option under **Individual Components > Code tools > NuGet package manager**.
   - For Visual Studio 2010 and earlier, install the "NuGet Package Manager for Visual Studio" extension.
@@ -76,7 +77,7 @@ Other ways to install the NuGet CLI:
 
 ## Feature availability
 
-| Feature | dotnet CLI | nuget CLI (Windows) | nuget CLI (Mono) | Visual Studio (Windows) | Visual Studio Mac |
+| Feature | dotnet CLI | nuget CLI (Windows) | nuget CLI (Mono) | Visual Studio (Windows) | Visual Studio for Mac |
 | --- | --- | --- | --- | --- | --- |
 | Search packages |  | &#10004; | &#10004; | &#10004; | &#10004; |
 | Install/uninstall packages | &#10004;(1) | &#10004;(2) | &#10004; | &#10004; | &#10004; |
@@ -87,14 +88,18 @@ Other ways to install the NuGet CLI:
 | Set API keys for feeds | | &#10004; | &#10004; | | |
 | Create packages(4) | &#10004; | &#10004; | &#10004;(5) | &#10004; | |
 | Publish packages | &#10004;(1) | &#10004; | &#10004; | &#10004; |  |
-| Replicating a package |  | &#10004; | &#10004; | | |
+| Replicate packages |  | &#10004; | &#10004; | | |
 | Manage the NuGet cache | &#10004; | &#10004; | &#10004; | | |
 | Manage NuGet configuration | | &#10004; | &#10004; | | |
 
 (1) Packages on nuget.org only
+
 (2) Does not affect project files; use `dotnet.exe` instead.
+
 (3) Works only with `packages.config` file and not with solution (`.sln`) files.
+
 (4) Various advanced package features are available through the CLI only as they aren't represented in the Visual Studio UI tools.
+
 (5) Works with `.nuspec` files but not with project files.
 
 ### Related topics

@@ -1,5 +1,5 @@
 # [What is NuGet?](what-is-nuget.md)
-## [Install NuGet client tools](install-nuget-client-tools.md)
+# [Install NuGet client tools](install-nuget-client-tools.md)
 # Quickstart
 ## [Create and Publish a Package](Quickstart/Create-and-Publish-a-Package.md)
 ## [Use a Package](Quickstart/Use-a-Package.md)
