@@ -77,13 +77,13 @@
 ## [Errors and warnings](Reference/Errors-and-Warnings.md)
 ## [ID Prefix Reservation](Reference/ID-Prefix-Reservation.md)
 ## [NuGet Client SDK](Reference/nuget-client-sdk.md)
+## Extensibility
+### [NuGet Credential Providers for Visual Studio](Reference/extensibility/Nuget-Credential-Providers-for-Visual-Studio.md)
+### [nuget.exe Credential Providers](Reference/extensibility/nuget-exe-Credential-Providers.md)
 ## Archived content
 ### [project.json reference format](archive/project-json.md)
 ### [project.json and UWP](archive/project-json-and-UWP.md)
 ### [project.json impact](archive/project-json-impact.md)
-## Extensibility
-### [NuGet Credential Providers for Visual Studio](Reference/extensibility/Nuget-Credential-Providers-for-Visual-Studio.md)
-### [nuget.exe Credential Providers](Reference/extensibility/nuget-exe-Credential-Providers.md)
 # API
 ## [Overview](API/overview.md)
 ## [How-to: query for all packages using the API](Guides/api/query-for-all-published-packages.md)
