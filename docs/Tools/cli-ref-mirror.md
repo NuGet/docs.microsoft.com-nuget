@@ -1,24 +1,17 @@
 ---
-# required metadata
-
 title: NuGet CLI mirror command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 190d7010-172e-44b8-8a32-94a2a63be4f3
-
-# optional metadata
-
 description: Reference for the nuget.exe mirror command
 keywords: nuget mirror reference, mirror command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # mirror command (NuGet CLI)
@@ -32,7 +25,7 @@ Mirrors a package and its dependencies from the specified source repositories to
 
 ## Usage
 
-```
+```cli
 nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [options]
 ```
 
@@ -59,7 +52,7 @@ Also see [Environment variables](cli-ref-environment-variables.md)
 
 ## Examples
 
-```
+```cli
 nuget mirror packages.config  https://MyRepo/nuget https://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -nocache
 
 nuget mirror Microsoft.AspNet.Mvc https://MyRepo/nuget https://MyRepo/api/v2/package -version 4.0.20505.0

@@ -3,11 +3,10 @@ title: NuGet CLI add command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 4f68a016-ad4e-41fc-b869-88910fc5121e
 description: Reference for the nuget.exe add command
 keywords: nuget add reference, add package command
 ms.reviewer:
@@ -34,7 +33,7 @@ To expand all the files in the package to the destination package source, use th
 
 ## Usage
 
-```
+```cli
 nuget add <packagePath> -Source <sourcePath> [options]
 ```
 
@@ -55,7 +54,7 @@ Also see [Environment variables](cli-ref-environment-variables.md)
 
 ## Examples
 
-```
+```cli
 nuget add foo.nupkg -Source c:\bar\
 
 nuget add foo.nupkg -Source \\bar\packages\

@@ -1,47 +1,25 @@
 ﻿---
-# required metadata
-
 title: NuGet pack and restore as MSBuild targets | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 4/3/2017
+ms.date: 04/03/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 86f7e724-2509-4d7d-aa8d-4a3fb913ded6
-
-# optional metadata
-
 description: NuGet pack and restore can work directly as MSBuild targets with NuGet 4.0+.
 keywords: NuGet and MSBuild, NuGet pack target, NuGet restore target
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # NuGet pack and restore as MSBuild targets
 
 *NuGet 4.0+*
 
-NuGet 4.0+ can work directly with the information in a `.csproj` file without requiring a separate `.nuspec` or `project.json` file. All the metadata that was previously stored in those configuration files can be instead stored in the `.csproj` file directly, as described here.
+With the PackageReference format, NuGet 4.0+ can store all manifest metadata directly within a project file rather than using a separate `.nuspec` file.
 
 With MSBuild 15.1+, NuGet is also a first-class MSBuild citizen with the `pack` and `restore` targets as described below. These targets allow you to work with NuGet as you would with any other MSBuild task or target. (For NuGet 3.x and earlier, you use the [pack](../tools/cli-ref-pack.md) and [restore](../tools/cli-ref-restore.md) commands through the NuGet CLI instead.)
-
-In this topic:
-
-- [Target build order](#target-build-order)
-- [pack target](#pack-target)
-- [pack scenarios](#pack-scenarios)
-- [restore target](#restore-target)
-- [PackageTargetFallback](#packagetargetfallback)
 
 ## Target build order
 
@@ -60,10 +38,9 @@ Similarly, you can write an MSBuild task, write your own target and consume NuGe
 
 ## pack target
 
-When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs from the `.csproj` file rather than `project.json` or `.nuspec` files. The table below describes the MSBuild properties that can be added to a `.csproj` file within the first `<PropertyGroup>` node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../schema/nuspec.md).
+When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs from the project file. The table below describes the MSBuild properties that can be added to a project file within the first `<PropertyGroup>` node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../schema/nuspec.md).
 
 Note that the `Owners` and `Summary` properties from `.nuspec` are not supported with MSBuild.
-
 
 | Attribute/NuSpec Value | MSBuild Property | Default | Notes |
 |--------|--------|--------|--------|
@@ -86,7 +63,6 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | RepositoryType | RepositoryType | empty | |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | Summary | Not supported | | |
-
 
 ### pack target inputs
 
@@ -168,7 +144,7 @@ To include content, add extra metadata to the existing `<Content>` item. By defa
 By default, everything gets added to the root of the `content` and `contentFiles\any\<target_framework>` folder within a package and preserves the relative folder structure, unless you specify a package path:
 
 ```xml
-<Content Include="..\win7-x64\libuv.txt">        
+<Content Include="..\win7-x64\libuv.txt">
     <Pack>true</Pack>
     <PackagePath>content\myfiles\</PackagePath>
 </Content>
@@ -189,9 +165,8 @@ There is also an MSBuild property `$(IncludeContentInPack)`, which defaults to `
 
 Other pack specific metadata that you can set on any of the above items includes ```<PackageCopyToOutput>``` and ```<PackageFlatten>``` which sets ```CopyToOutput``` and ```Flatten``` values on the ```contentFiles``` entry in the output nuspec.
 
-
 > [!Note]
-> Apart from Content items, the `<Pack>` and `<PackagePath>` metadata can also be set on files with a build action of Compile, EmbeddedResource, ApplicationDefinition, Page, Resource, SplashScreen, DesignData, DesignDataWithDesignTimeCreatableTypes, CodeAnalysisDictionary, AndroidAsset, AndroidResource, BundleResource or None.
+> Apart from Content items, the `<Pack>` and `<PackagePath>` metadata can also be set on files with a build action of Compile, EmbeddedResource, ApplicationDefinition, Page, Resource, SplashScreen, DesignData, DesignDataWithDesignTimeCreateableTypes, CodeAnalysisDictionary, AndroidAsset, AndroidResource, BundleResource or None.
 >
 > For pack to append the filename to your package path when using globbing patterns, your package path must end with the folder separator character, otherwise the package path is treated as the full path including the file name.
 
@@ -219,13 +194,13 @@ You can use a `.nuspec` file to pack your project provided that you have a proje
 
 If using `dotnet.exe` to pack your project, use a command like the following:
 
-```
+```cli
 dotnet pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
 ```
 
 If using MSBuild to pack your project, use a command like the following:
 
-```
+```cli
 msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
 ```
 
@@ -239,7 +214,6 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 1. Run restore
 1. Download packages
 1. Write assets file, targets, and props
-
 
 ### Restore properties
 
@@ -257,11 +231,11 @@ Additional restore settings may come from MSBuild properties in the project file
 | RestoreGraphProjectInput | Semicolon-delimited list of projects to restore, which should contain absolute paths. |
 | RestoreOutputPath | Output folder, defaulting to the `obj` folder. |
 
-**Examples**
+#### Examples
 
 Command line:
 
-```
+```cli
 msbuild /t:restore /p:RestoreConfigFile=<path>
 ```
 
@@ -283,10 +257,9 @@ Restore creates the following files in the build `obj` folder:
 | `{projectName}.projectFileExtension.nuget.g.props` | References to MSBuild props contained in packages |
 | `{projectName}.projectFileExtension.nuget.g.targets` | References to MSBuild targets contained in packages |
 
+### PackageTargetFallback
 
-### PackageTargetFallback 
-
-The `PackageTargetFallback` element allows you to specify a set of compatible targets to be used when restoring packages (the equivalent of [`imports` in `project.json`](../schema/project-json.md#imports)). It's designed to allow packages that use a dotnet [TxM](../schema/target-frameworks.md) to work with compatible packages that don't declare a dotnet TxM. That is, if your project uses the dotnet TxM, then all the packages it depends on must also have a dotnet TxM, unless you add the `<PackageTargetFallback>` to your project in order to allow non-dotnet platforms to be compatible with dotnet. 
+The `PackageTargetFallback` element allows you to specify a set of compatible targets to be used when restoring packages. It's designed to allow packages that use a dotnet [TxM](../schema/target-frameworks.md) to work with compatible packages that don't declare a dotnet TxM. That is, if your project uses the dotnet TxM, then all the packages it depends on must also have a dotnet TxM, unless you add the `<PackageTargetFallback>` to your project in order to allow non-dotnet platforms to be compatible with dotnet.
 
 For example, if the project is using the `netstandard1.6` TxM, and a dependent package contains only `lib/net45/a.dll` and `lib/portable-net45+win81/a.dll`, then the project will fail to build. If what you want to bring in is the latter DLL, then you can add a `PackageTargetFallback` as follows to say that the `portable-net45+win81` DLL is compatible:
 
@@ -303,7 +276,6 @@ To declare a fallback for all targets in your project, leave off the `Condition`
     $(PackageTargetFallback);portable-net45+win81
 </PackageTargetFallback >
 ```
-
 
 ### Replacing one library from a restore graph
 

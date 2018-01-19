@@ -1,31 +1,17 @@
 ---
-# required metadata
-
 title: NuGet Package Dependency Resolution | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/14/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 1d530a72-3486-4a0d-b6fb-017524616f91
-
-# optional metadata
-
 description: Details on the process through which a NuGet package's dependencies are resolved and installed in both NuGet 2.x and NuGet 3.x+.
 keywords: NuGet package dependencies, NuGet versioning, dependency versions, version graph, version resolution, transitive restore
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # How NuGet resolves package dependencies
@@ -37,19 +23,19 @@ Those immediate dependencies might then also have dependencies on their own, whi
 When multiple packages have the same dependency, then the same package ID can appear in the graph multiple times, potentially with different version constraints. However, only one version of a given package can be used in a project, so NuGet must choose which version is be used. The exact process depends on the package reference format being used.
 
 In this topic:
-- [Dependency resolution with PackageReference and project.json](#dependency-resolution-with-packagereference-and-projectjson)
+- [Dependency resolution with PackageReference](#dependency-resolution-with-packagereference)
 - [Dependency resolution with packages.config](#dependency-resolution-with-packagesconfig)
 - [Excluding references](#excluding-references), which is necessary when there's a conflict between a dependency specified in one project and an assembly that's produced by another.
 - [Dependency updates during package install](#dependency-updates-during-package-install)
 - [Resolving incompatible package errors](#resolving-incompatible-package-errors)
 
-## Dependency resolution with PackageReference and project.json
+## Dependency resolution with PackageReference
 
-When installing packages into projects using the PackageReference or `project.json` formats, NuGet adds references to a flat package graph in the appropriate file and resolves conflicts ahead of time. This process is referred to as *transitive restore*. Reinstalling or restoring packages is then a process of downloading the packages listed in the graph, resulting in faster and more predictable builds. You can also take advantage of wildcard (floating) versions, such as 2.8.\*, avoiding expensive and error prone calls to `nuget update` on the client machines and build servers.
+When installing packages into projects using the PackageReference format, NuGet adds references to a flat package graph in the appropriate file and resolves conflicts ahead of time. This process is referred to as *transitive restore*. Reinstalling or restoring packages is then a process of downloading the packages listed in the graph, resulting in faster and more predictable builds. You can also take advantage of wildcard (floating) versions, such as 2.8.\*, avoiding expensive and error prone calls to `nuget update` on the client machines and build servers.
 
-When the NuGet restore process runs prior to a build, it resolves dependencies first in memory, then writes the resulting graph to a file called `project.assets.json` in the `obj` folder of a project using PackageReference, or in a file named `project.lock.json` alongside `project.json`. MSBuild then reads this file and translates it into a set of folders where potential references can be found, and then adds them to the project tree in memory.
+When the NuGet restore process runs prior to a build, it resolves dependencies first in memory, then writes the resulting graph to a file called `project.assets.json` in the `obj` folder of a project using PackageReference. MSBuild then reads this file and translates it into a set of folders where potential references can be found, and then adds them to the project tree in memory.
 
-The lock file is temporary and should not be added to source control. It's listed by default in both `.gitignore` and `.tfignore`. See [Packages and source control](Packages-and-Source-Control.md).
+The lock file is temporary and should not be added to source control. It's listed by default in both `.gitignore` and `.tfignore`. See [Packages and source control](packages-and-source-control.md).
 
 ### Dependency resolution rules
 
@@ -124,16 +110,15 @@ With `packages.config`, a project's dependencies are written to `packages.config
 
 With `packages.config`, NuGet attempts to resolve dependency conflicts during the installation of each individual package. That is, if Package A is being installed and depends on Package B, and Package B is already listed in `packages.config` as a dependency of something else, NuGet compares the versions of Package B being requested and attempts to find a version that satisfies all version constraints. Specifically, NuGet selects the lower *major.minor* version that satisfies dependencies.
 
-By default, NuGet 2.7 and earlier resolves the highest *patch* version (using the *major.minor.patch.build* convention). [NuGet 2.8 and higher](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies) changes this behavior to look for the lowest patch version by default. You can control this setting through the `DependencyVersion` attribute in `Nuget.Config` and the `-DependencyVersion` switch on the command line.  
+By default, NuGet 2.8 looks for the lowest patch version (see [NuGet 2.8 release notes](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies)). You can control this setting through the `DependencyVersion` attribute in `Nuget.Config` and the `-DependencyVersion` switch on the command line.  
 
 The `packages.config` process for resolving dependencies gets complicated for larger dependency graphs. Each new package installation requires a traversal of the whole graph and raises the chance for version conflicts. When a conflict occurs, installation is stopped, leaving the project in an indeterminate state, especially with potential modifications to the project file itself. This is not an issue when using other package reference formats.
 
-
 ## Managing dependency assets
 
-When using the `project.json` or PackageReference formats, you can control which assets from dependencies flow into the top-level project. For details, see [project.json](../Schema/project-json.md) and [Package references in project files](Package-References-in-Project-Files.md#controlling-dependency-assets).
+When using the PackageReference format, you can control which assets from dependencies flow into the top-level project. For details, see [PackageReference](package-references-in-project-files.md#controlling-dependency-assets).
 
-When the top-level project is itself a package, you also have control over this flow by using the `include` and `exclude` attributes with dependencies listed in the `.nuspec` file. See [.nuspec Reference - Dependencies](../Schema/nuspec.md#dependencies).
+When the top-level project is itself a package, you also have control over this flow by using the `include` and `exclude` attributes with dependencies listed in the `.nuspec` file. See [.nuspec Reference - Dependencies](../schema/nuspec.md#dependencies).
 
 ## Excluding references
 
@@ -149,28 +134,9 @@ To resolve this, you must directly reference the `C.dll` you want (or use anothe
 
 - `packages.config`: remove the reference to PackageC from the `.csproj` file so that it references only the version of `C.dll` that you want.
     
-- `project.json`: add `"exclude" : "all"` in the dependency for PackageC:
-
-    ```json
-    {
-        "dependencies": {
-            "PackageC": {
-            "version": "1.0.0",
-            "exclude": "all"
-            }
-        }
-    }
-    ```
-
 ## Dependency updates during package install 
 
-With NuGet 2.4.x and earlier, when a package is installed whose dependency already exists in the project, the dependency is updated to the latest version that satisfies the version constraints, even if the existing version also satisfies those constraints. 
-
-For example, consider package A that depends on package B and specifies 1.0 for the version number. The source repository contains both versions 1.0, 1.1, and 1.2 of package B. If A is installed in a project that already contains B version 1.0, then B is updated to version 1.2. 
-
-With NuGet 2.5 and later, if a dependency version is already satisfied, the dependency isn't updated during other package installations. 
-
-In the same example above, installing package A into a project with NuGet 2.5 and later leaves package B 1.0 in the project, as it already satisfies the version constraint. However, if package A had requests version 1.1 or higher of B, then B 1.2 would be installed. 
+If a dependency version is already satisfied, the dependency isn't updated during other package installations. For example, consider package A that depends on package B and specifies 1.0 for the version number. The source repository contains versions 1.0, 1.1, and 1.2 of package B. If A is installed in a project that already contains B version 1.0, then B 1.0 remains in use because it satisfies the version constraint. However, if package A had requests version 1.1 or higher of B, then B 1.2 would be installed. 
 
 ## Resolving incompatible package errors
 
@@ -198,4 +164,4 @@ To resolve incompatibilities, do one of the following:
 
 - Retarget your project to a framework that is supported by the packages you want to use.
 - Contact the author of the packages and work with them to add support for your chosen framework. Each package listing page on [nuget.org](https://www.nuget.org/) has a **Contact Owners** link for this purpose.
-- **Not recommended**: as a temporary solution while you work with the package author, projects targeting `netcore`, `netstandard`, and `netcoreapp` can denote other frameworks as being compatible, thereby allowing packages targeting those other frameworks to be used. See [project.json imports](../Schema/project-json.md#imports) and [MSBuild restore target PackageTargetFallback](../Schema/msbuild-targets.md#packagetargetfallback). This can cause unexpected behaviors, so again, it's best to resolve package incompatibilities by working with the package author on an update.
+

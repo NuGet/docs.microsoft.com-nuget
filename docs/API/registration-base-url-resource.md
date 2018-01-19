@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: Package Metadata, NuGet API | Microsoft Docs
 author:
 - joelverhagen
@@ -13,19 +11,14 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 96b07019-c2e1-4f40-9290-f65ad71af3b1
-
-# optional metadata
-
 description: The package registration base URL allows fetching metadata about packages.
 keywords: NuGet API package metadata, NuGet API registration, NuGet API unlisted packages
 ms.reviewer:
 - karann
 - unniravindranathan
-
 ---
 
-# Package Metadata
+# Package metadata
 
 It is possible to fetch metadata about the packages available on a package source using the NuGet V3 API. This
 metadata can be fetched using the `RegistrationsBaseUrl` resource found in the [service index](service-index.md).

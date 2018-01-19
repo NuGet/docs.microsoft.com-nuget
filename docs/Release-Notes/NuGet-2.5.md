@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 2.5 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,25 +6,14 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: c193f1e3-d114-427f-9425-9930cc8e4db3
-
-# optional metadata
-
 description: Release notes for NuGet 2.5 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 2.5 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # NuGet 2.5 Release Notes
 
 [NuGet 2.2.1 Release Notes](../release-notes/nuget-2.2.1.md) | [NuGet 2.6 Release Notes](../release-notes/nuget-2.6.md)

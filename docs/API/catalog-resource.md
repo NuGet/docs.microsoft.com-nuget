@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: Catalog, NuGet V3 API | Microsoft Docs
 author:
 - joelverhagen
@@ -13,16 +11,11 @@ ms.date: 10/30/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: cfd338b5-6253-48c0-88ba-17c6b98fc935
-
-# optional metadata
-
 description: The catalog is an index of all packages created and deleted on nuget.org.
 keywords: NuGet V3 API catalog, nuget.org transaction log, replicate NuGet.org, clone NuGet.org, append-only record of NuGet.org
 ms.reviewer:
 - karann
 - unniravindranathan
-
 ---
 
 # Catalog

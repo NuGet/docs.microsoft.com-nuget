@@ -1,45 +1,34 @@
 ---
-# required metadata
-
 title: NuGet CLI restore command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 6ee41020-e548-4e61-b8cd-c82b77ac6af7
-
-# optional metadata
-
 description: Reference for the nuget.exe restore command
 keywords: nuget restore reference, restore packages command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # restore command (NuGet CLI)
 
 **Applies to:** package consumption &bullet; **Supported versions:** 2.7+
 
-NuGet 2.7+: Downloads and installs any packages missing from the `packages` folder.
+Downloads and installs any packages missing from the `packages` folder. When used with NuGet 4.0+ and the PackageReference format, generates a `<project>.nuget.props` file, if needed, in the `obj` folder. (The file can be omitted from source control.)
 
-NuGet 3.3+ with projects using `project.json`: Generates a `project.lock.json` file and a `<project>.nuget.props` file, if needed. (Both files can be omitted from source control.)
-
-NuGet 4.0+ with project in which package references are included in the project file directly: Generates a `<project>.nuget.props` file, if needed, in the `obj` folder. (The file can be omitted from source control.)
-
-On Mac OSX and Linux with the CLI on Mono, restoring packages is not supported with the PackageReference format.
+On Mac OSX and Linux with the CLI on Mono, restoring packages is not supported with PackageReference.
 
 ## Usage
 
-```
+```cli
 nuget restore <projectPath> [options]
 ```
 
-where `<projectPath>` specifies the location of a solution, a `packages.config` file, or a `project.json` file. See [Remarks](#remarks) below for behavioral details.
+where `<projectPath>` specifies the location of a solution or a `packages.config` file. See [Remarks](#remarks) below for behavioral details.
 
 ## Options
 
@@ -63,7 +52,7 @@ where `<projectPath>` specifies the location of a solution, a `packages.config` 
 | RequireConsent | Verifies that restoring packages is enabled before downloading and installing the packages. For details, see [Package Restore](../consume-packages/package-restore.md). |
 | SolutionDirectory | Specifies the solution folder. Not valid when restoring packages for a solution. |
 | Source | Specifies the list of package sources (as URLs) to use for the restore. If omitted, the command uses the sources provided in configuration files, see [Configuring NuGet behavior](../Consume-Packages/Configuring-NuGet-Behavior.md). |
-| Verbosity |>Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed (2.5+)*. |
+| Verbosity |>Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
@@ -76,15 +65,14 @@ The restore command performs the following steps:
     | --- | --- |
     Solution (folder) | NuGet looks for a `.sln` file and uses that if found; otherwise gives an error. `(SolutionDir)\.nuget` is used as the starting folder.
     `.sln` file | Restore packages identified by the solution; gives an error if `-SolutionDirectory` is used. `$(SolutionDir)\.nuget` is used as the starting folder.
-    `packages.config`, `project.json`, or project file | Restore packages listed in the file, resolving and installing dependencies.
+    `packages.config` or project file | Restore packages listed in the file, resolving and installing dependencies.
     Other file type | File is assumed to be a `.sln` file as above; if it's not a solution, NuGet gives an error.
     (projectPath not specified) | - NuGet looks for solution files in the current folder. If a single file is found, that one is used to restore packages; if multiple solutions are found, NuGet gives an error.
-    |- If there are no solution files, NuGet looks for a `packages.config` or `project.json` and uses that to restore packages.
-    |- If no solution file, `packages.config`, or `project.json` is found, NuGet gives an error.
+    |- If there are no solution files, NuGet looks for a `packages.config` and uses that to restore packages.
+    |- If no solution or `packages.config` file is found, NuGet gives an error.
 
 1. Determine the packages folder using the following priority order (NuGet gives an error if none of these folders are found):
 
-    - The `%userprofile%\.nuget\packages` value in `project.json`.
     - The folder specified with `-PackagesDirectory`.
     - The `repositoryPath` vale in `Nuget.Config`
     - The folder specified with `-SolutionDirectory`
@@ -97,7 +85,7 @@ The restore command performs the following steps:
 
 ## Examples
 
-```
+```cli
 # Restore packages for a solution file
 nuget restore a.sln
 

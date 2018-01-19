@@ -1,46 +1,26 @@
 ---
-# required metadata
-
 title: Create .NET Standard 2.0 NuGet Packages with Visual Studio 2017 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 5/23/2017
+ms.date: 05/23/2017
 ms.topic: get-started-article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 2c1de334-fdc9-4e1e-8ef6-a90b3e77ff0f
-
-# optional metadata
-
 description: An end-to-end walkthrough of creating .NET Standard 2.0 NuGet packages using NuGet 4.x and Visual Studio 2017.
 keywords: create a package, .NET Standard packages, .NET Core
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Create .NET Standard 2.0 packages with Visual Studio 2017
 
-*Applies to NuGet 4.x+ and MSBuild 15.3+ as provided with Visual Studio 2017 Update 3. For earlier versions of Visual Studio 2017, these instructions apply to .NET Standard 1.4 to 1.6 by changing the \<TargetFramework\> property. Also see [Create .NET Standard Packages with Visual Studio 2015](../guides/create-net-standard-packages-vs2015.md) for working with NuGet 3.x+.*
+*Applies to NuGet 4.x+ and MSBuild 15.3+ as provided with Visual Studio 2017 Update 3 and later. For earlier versions of Visual Studio 2017, these instructions apply to .NET Standard 1.4 to 1.6 by changing the \<TargetFramework\> property. Also see [Create .NET Standard Packages with Visual Studio 2015](../guides/create-net-standard-packages-vs2015.md) for working with NuGet 3.x+.*
 
 The [.NET Standard Library](/dotnet/articles/standard/library) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code.
 
-This guide will walk you through creating a nuget package targeting .NET Standard Library 2.0 with Visual Studio 2017 Update 3 and NuGet 4.0.
-
-1. [Pre-requisites](#pre-requisites)
-1. [Create the class library project](#create-the-netstandard-class-library-project)
-1. [Edit metadata in the .csproj file](#edit-metadata-in-the-csproj-file)
-1. [Package the component](#package-the-component)
-1. [Related topics](#related-topics)
+This guide walks you through creating a nuget package targeting .NET Standard Library 2.0 with Visual Studio 2017.
 
 ## Pre-requisites
 
@@ -97,7 +77,6 @@ With NuGet 4.0 and .NET Core projects, package metadata is contained directly in
     ```
 
 1. Save the project, then right-click the solution and select **Build Solution** to again generate all the files for the package, this time with the correct metadata.
-
 
 ## Package the component
 

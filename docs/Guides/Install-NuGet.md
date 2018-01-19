@@ -1,6 +1,4 @@
---- 
-# required metadata 
- 
+---
 title: Installing NuGet client tools | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -9,16 +7,11 @@ ms.date: 10/02/2017
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 683b8b34-a6f4-4d56-b9cd-2483bfbad1ad
-
-# optional metadata
-
 description: Guidance on installing client tools, the command-line interface (CLI), and the Package Manager for Visual Studio.
 keywords: nuget.exe CLI, NuGet client tools, NuGet package manager, NuGet package manager console, NuGet for Visual Studio, NuGet beta channel
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # Installing NuGet client tools
@@ -67,8 +60,7 @@ The NuGet command-line interface provides access to all NuGet capabilities, and 
 
 [!INCLUDE[install-cli](../includes/install-cli.md)]
 
-> [!Note]
-> With NuGet 1.4+, you can use `nuget update -self` to update your existing nuget.exe to the latest version.
+You can also use `nuget update -self` to update your existing nuget.exe to the latest version.
 
 **Other methods:**
 
@@ -93,23 +85,23 @@ On Mac OSX and Linux, there are two ways to run the NuGet CLI:
 
 - Install [Mono](http://www.mono-project.com/docs/getting-started/install/) and then use the `nuget.exe` command-line executable for Windows (version 3.2 and later) from [nuget.org/downloads](https://nuget.org/downloads). Running NuGet on Mono is subject to the following limitations:
 
-    - Commands tested to work:
-        - config
-        - delete
-        - help
-        - install
-        - list
-        - push
-        - setApiKey
-        - sources
-        - spec
+  - Commands tested to work:
+    - config
+    - delete
+    - help
+    - install
+    - list
+    - push
+    - setApiKey
+    - sources
+    - spec
 
-    - Partially-working commands:
-        - pack: works with `.nuspec` files but not with project files.
-        - restore: works with `packages.config` and `project.json` files but not with solution (`.sln`) files.
+  - Partially-working commands:
+    - pack: works with `.nuspec` files but not with project files.
+    - restore: works with `packages.config` files but not with solution (`.sln`) files.
 
-    - Commands that do not work:
-        - update
+  - Commands that don't work:
+    - update
 
 ### Related topics
 

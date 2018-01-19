@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 3.1 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,25 +6,14 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 0fc4d89a-ccca-4d63-85bf-461cd9ced882
-
-# optional metadata
-
 description: Release notes for NuGet 3.1 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 3.1 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # NuGet 3.1 Release Notes
 
 [NuGet 3.0 Release Notes](../release-notes/nuget-3.0.0.md) | [NuGet 3.1.1 Release Notes](../release-notes/nuget-3.1.1.md)

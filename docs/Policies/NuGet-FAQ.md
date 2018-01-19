@@ -7,7 +7,6 @@ ms.date: 01/11/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 199a915d-9595-4ae2-a1fb-b15da6d7735a
 description: Common questions and answers for using NuGet on the command line and in Visual Studio, and working with the NuGet gallery.
 keywords: NuGet Q&A, questions and answers, common problems, NuGet versions, package versions
 ms.reviewer:
@@ -16,19 +15,6 @@ ms.reviewer:
 ---
 
 # NuGet frequently-asked questions
-
-In this topic:
-
-- [Getting started](#getting-started)
-- [NuGet in Visual Studio](#nuget-in-visual-studio)
-- [NuGet command line](#nuget-command-line)
-- [NuGet Package Manager Console](#nuget-package-manager-console)
-- [Creating and publishing packages](#creating-and-publishing-packages)
-- [Working with packages](#working-with-packages)
-- [Managing packages on nuget.org](#managing-packages-on-nugetorg)
-- [nuget.org not accessible](#nugetorg-not-accessible)
-
-## Getting started
 
 **What is required to run NuGet?**
 

@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 3.4 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,24 +6,12 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 80a429f5-7569-4349-ad7f-4fe9218eac23
-
-# optional metadata
-
 description: Release notes for NuGet 3.4 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 3.4 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # NuGet 3.4 Release Notes

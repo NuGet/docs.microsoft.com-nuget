@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: project.json impact on NuGet package authors | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -8,27 +6,18 @@ manager: ghogen
 ms.date: 1/9/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 983485df-9375-4827-b58b-70065320ee37
-
-# optional metadata
-
 description: Details on how the implementation of project.json in NuGet 3.x affects package authors, such as unsupported features, content, and package format.
 keywords: NuGet and project.json, project.json impact, package authoring considerations, project.json features
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Impact of project.json when creating packages
+
+> [!Important]
+> This content is deprecated. Projects should use either the `packages.config` or PackageReference formats.
 
 The `project.json` system used in NuGet 3+ affects package authors in several ways as described in the following sections.
 
@@ -42,10 +31,9 @@ The transitive restore model, described in [Dependency resolution](../consume-pa
 
 Also, install scripts were supported only in Visual Studio. Other IDEs had to mock the Visual Studio extensibility API to attempt to support such scripts, and no support was available in common editors and command-line tools.
 
-### Content transforms are not supported.
+### Content transforms are not supported
 
 Similar to install scripts, transforms run on package install and are typically not idempotent. Since there is no install time anymore, XDT Transform and similar features are not supported, and are ignored if such a package is used in a transitive scenario.
-
 
 ### Content
 
@@ -53,7 +41,7 @@ Traditional NuGet packages are shipping content files such as source code and co
 
 1. Initial files dropped into the project so the user can edit them at a later time. The common example is default configuration files.
 
-2. Content files used as companions to the assemblies installed in the project. The example here would be a logo image used by an assembly.
+1. Content files used as companions to the assemblies installed in the project. The example here would be a logo image used by an assembly.
 
 Support for content is currently disabled for similar reasons for scripts and transforms, but we are in the process of designing support for content.
 
@@ -75,15 +63,14 @@ In summary if the functionality above is not absolutely necessary, we recommend 
 
 It would be possible to build packages to work for both `packages.config` and `project.json` scenarios through shimming, however it's often simpler to just structure the packages the traditional way, without the deprecated features mentioned above.
 
-
-## 3.x package format  ##
+## 3.x package format
 
 The 3.x package format allows for several additional features beyond NuGet 2.x:
 
 1. Defining a reference assembly used for compilation and a set of implementation assemblies used for runtime on different platforms/devices. Which allows you to take advantage of platform specific APIs while providing a common surface area for your consumers. Specifically this makes writing intermediate portable libraries easier.
 
-2. Allows packages to pivot on platforms e.g. operating systems or CPU architecture.
+1. Allows packages to pivot on platforms e.g. operating systems or CPU architecture.
 
-3. Allows for separation of platform specific implementations to companion packages.
+1. Allows for separation of platform specific implementations to companion packages.
 
-4. Support Native dependencies as a first class citizen.
+1. Support Native dependencies as a first class citizen.

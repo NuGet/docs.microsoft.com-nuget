@@ -1,30 +1,17 @@
 ---
-# required metadata
-
 title: Creating Native NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/09/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 7a70d748-efe2-4f8f-a3fd-67ddb0f6214e
-
-# optional metadata
-
 description: Details on creating native NuGet packages that contains C++ code instead of managed code, for use in C++ projects.
 keywords: NuGet native packages, NuGet C++ packages, native code packages, targeting C++ projects
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 
 ---
 # Creating native packages

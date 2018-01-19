@@ -1,31 +1,17 @@
 ---
-# required metadata
-
 title: Create NuGet Packages for the Universal Windows Platform | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 07/17/2017
 ms.topic: get-started-article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: d98524b1-a674-4803-8ac5-3c6bce867f86
-
-# optional metadata
-
 description: An end-to-end walkthrough of creating NuGet packages using a Windows Runtime Component for the Universal Windows Platform.
 keywords: create a package, packages for UWP, Windows Runtime Components
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Create UWP packages
@@ -47,7 +33,6 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 
 > [!Note]
 > nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
-
 
 ## Create a UWP Windows Runtime Component
 
@@ -72,7 +57,6 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 > [!Note]
 > In this walkthrough you'll use the Debug artifacts for the package. For non-debug package, check the Release options in the Batch Build dialog instead, and refer to the resulting Release folders in the steps that follow.
 
-
 ## Create and update the .nuspec file
 
 To create the initial `.nuspec` file, do the three steps below. The sections that follow then guide you through other necessary updates.
@@ -80,7 +64,7 @@ To create the initial `.nuspec` file, do the three steps below. The sections tha
 1. Open a command prompt and navigate to the folder containing `ImageEnhancer.vcxproj` (this will be a subfolder below where the solution file is).
 1. Run the NuGet `spec` command to generate `ImageEnhancer.nuspec` (the name of the file is taken from the name of the `.vcxproj` file):
 
-    ```
+    ```cli
     nuget spec
     ```
 
@@ -106,8 +90,6 @@ To create the initial `.nuspec` file, do the three steps below. The sections tha
 
 > [!Note]
 > For packages built for public consumption, pay special attention to the `<tags>` element, as these tags help others find your package and understand what it does.
-
-
 
 ### Adding Windows metadata to the package
 
@@ -256,12 +238,11 @@ Your final `.nuspec` file should now look like the following, where again YOUR_N
 </package>
 ```
 
-
 ## Package the component
 
 With the completed `.nuspec` referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
-```
+```cli
 nuget pack ImageEnhancer.nuspec
 ```
 

@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 3.4.2 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,24 +6,12 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: b514da09-da1f-416b-9bfc-692f08fb6957
-
-# optional metadata
-
 description: Release notes for NuGet 3.4.2 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 3.4.2 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # NuGet 3.4.2 Release Notes
@@ -45,7 +31,7 @@ You can download the release candidate of nuget.exe 3.4.2 [here](https://dist.nu
 * In addition to this change, we have fixed an issue where we were hitting the network twice when fetching the update count in the VS UI. This was partially responsible for some timeout issues customers experienced in 3.4/3.4.1.
 * Added support for no_proxy setting
 
-##Fixes
+## Fixes
 
 * Fixed an issue where nuget.org source was missing in NuGet settings or config after updating to 3.4.1.
 * Fixed an issue where a casing change to FindPackagesById in 3.4.1 breaks Artifactory.

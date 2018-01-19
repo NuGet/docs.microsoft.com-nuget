@@ -7,7 +7,6 @@ ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 207b9547-4558-41dc-9f3f-4bbdfb1d74e3
 description: In some project types, packages.config maintains the list of NuGet packages used in the project.
 keywords: NuGet packages.config file, NuGet package references, NuGet dependencies
 ms.reviewer:

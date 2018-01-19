@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: 3.5 Beta2 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,27 +6,15 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 0b76064f-0607-438a-bbf8-dd862690f48e
-
-# optional metadata
-
 description: Release notes for NuGet 3.5 Beta 2 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 3.5 Beta 2 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
-# 3.5 Beta2 Release Notes
+# NuGet 3.5 Beta2 Release Notes
 
 [NuGet 3.5-Beta Release Notes](../release-notes/nuget-3.5-Beta.md) | [NuGet 3.5-RC Release Notes](../release-notes/nuget-3.5-RC.md)
 

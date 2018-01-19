@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet project.json file with UWP projects | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -8,26 +6,18 @@ manager: ghogen
 ms.date: 7/17/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 37caf4d7-dabd-4a78-aad2-7d445f818457
-
-# optional metadata
-
 description: Description of how the project.json file is used to track NuGet dependencies in Universal Windows Platform (UWP) projects.
 keywords: NuGet dependencies, NuGet and UWP, UWP and project.json, NuGet project.json file
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
 ---
 
 # project.json and UWP
+
+> [!Important]
+> This content is deprecated. Projects should use either the `packages.config` or PackageReference formats.
 
 This document describes the package structure that employs features in NuGet 3+ (Visual Studio 2015 and later). The `minClientVersion` property of your `.nuspec` can be used to state that you require the features described here by setting it to 3.1.
 
@@ -52,13 +42,13 @@ In this case you would add the `dotnet` TxM to your package. Unlike other TxMs, 
 There are two ways to figure out which dependencies to list:
 
 1. Use the [NuSpec Dependency Generator](https://github.com/onovotny/ReferenceGenerator) **3rd party** tool. The tool automates the process and updates your `.nuspec` file with the dependant packages on build. It is available via a NuGet package, [NuSpec.ReferenceGenerator](https://www.nuget.org/packages/NuSpec.ReferenceGenerator/).
-2. (The hard way) Use `ILDasm` to look at your `.dll` to see what assemblies are actually needed at runtime. Then determine which NuGet package they each come from.
 
-See the [`project.json`](../Schema/project-json.md) topic for details on features that help in the creation of a package that supports the `dotnet` TxM.
+1. (The hard way) Use `ILDasm` to look at your `.dll` to see what assemblies are actually needed at runtime. Then determine which NuGet package they each come from.
+
+See the [`project.json`](project-json.md) topic for details on features that help in the creation of a package that supports the `dotnet` TxM.
 
 > [!Important]
 > If your package is intended to work with PCL projects, we highly recommend to create a `dotnet` folder, to avoid warnings and potential compatibility issues.
-
 
 ## Directory structure
 
@@ -73,13 +63,11 @@ NuGet packages using this format have the following well-known folder and behavi
 | Ref | `ref` is an optional folder that contains .NET assemblies defining the public surface (public types and methods) for an application to compile against. The assemblies in this folder may have no implementation, they are purely used to define surface area for the compiler. If the package has no `ref` folder, then the `lib` is both the reference assembly and the implementation assembly. |
 | Runtimes | `runtimes` is an optional folder that contains OS specific code, such as CPU architecture and OS specific or otherwise platform-dependent binaries. |
 
-
 ## MSBuild targets and props files in packages
 
 NuGet packages can contain `.targets` and `.props` files which are imported into any MSBuild project that the package is installed into. In NuGet 2.x, this was done by injecting `<Import>` statements into the `.csproj` file, in NuGet 3.0 there is no specific "installation to project" action. Instead the package restore process writes two files `[projectname].nuget.props` and `[projectname].NuGet.targets`.
 
 MSBuild knows to look for these two files and automatically imports them near the beginning and near the end of the project build process. This provides very similar behavior to NuGet 2.x, but with one major difference: *there is no guaranteed order of targets/props files in this case*. However, MSBuild does provide ways to order targets through the `BeforeTargets` and `AfterTargets` attributes of the `<Target>` definition (see [Target Element (MSBuild)](/visualstudio/msbuild/target-element-msbuild).
-
 
 ## Lib and Ref
 
@@ -123,9 +111,7 @@ The structure of the `ref` folder is the same as `lib`, for example:
              └───portable-net451-win81
                      MyImageProcessingLibrary.dll
 
-
 In this example the assemblies in the `ref` directories would all be identical.
-
 
 ## Runtimes
 
@@ -190,7 +176,6 @@ Another way to use runtimes is to ship a package that is purely a managed wrappe
                          MyImplementation.dll
 
 In this case there is no top-level `lib` folder as that folder as there is no implementation of this package that doesn't rely on the corresponding native assembly. If the managed assembly, `MyLibrary.dll`, was exactly the same in both of these cases then we could put it in a top level `lib` folder, but because the lack of a native assembly doesn't cause the package to fail installing if it was installed on a platform that wasn't win-x86 or win-x64 then the top level lib would be used but no native assembly would be copied.
-
 
 ## Authoring packages for NuGet 2 and NuGet 3
 

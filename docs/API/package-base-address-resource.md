@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: Package Content, NuGet API | Microsoft Docs
 author:
 - joelverhagen
@@ -13,16 +11,11 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: ec68b5d1-a684-4995-b1a6-6210dbb24875
-
-# optional metadata
-
 description: The package base address is a simple interface for fetching the package itself.
 keywords: NuGet flat container, NuGet package base address, NuGet nupkg API, NuGet API package versions, NuGet API unlisted packages, NuGet API download nuspec
 ms.reviewer:
 - karann
 - unniravindranathan
-
 ---
 
 # Package Content

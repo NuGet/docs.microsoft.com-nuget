@@ -3,11 +3,10 @@ title: NuGet CLI pack command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 12/08/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 55e9e4d2-8039-4e9b-bdd9-c8b3eb0e894b
 description: Reference for the nuget.exe pack command
 keywords: nuget pack reference, pack command
 ms.reviewer:
@@ -26,7 +25,7 @@ Creates a NuGet package based on the specified `.nuspec` or project file. The `d
 
 ## Usage
 
-```
+```cli
 nuget pack <nuspecPath | projectPath> [options]
 ```
 
@@ -53,7 +52,7 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 | Suffix | *(3.4.4+)* Appends a suffix to the internally generated version number, typically used for appending build or other pre-release identifiers. For example, using `-suffix nightly` will create a package with a version number like `1.2.3-nightly`. Suffixes must start with a letter to avoid warnings, errors, and potential incompatibilities with different versions of NuGet and the NuGet Package Manager. |
 | Symbols | Specifies that the package contains sources and symbols. When used with a `.nuspec` file, this creates a regular NuGet package file and the corresponding symbols package. |
 | Tool | Specifies that the output files of the project should be placed in the `tool` folder. |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed (2.5+)*. |
+| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
 | Version | Overrides the version number from the `.nuspec` file. |
 
 Also see [Environment variables](cli-ref-environment-variables.md)
@@ -79,7 +78,7 @@ For this project, the package created by `nuget pack` will have a dependency on 
 
 ## Examples
 
-```
+```cli
 nuget pack
 
 nuget pack foo.nuspec
@@ -95,5 +94,5 @@ nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="
 
 nuget pack foo.nuspec -Version 2.1.0
 
-nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
+nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 3.2
 ```

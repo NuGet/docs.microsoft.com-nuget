@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 2.12-RC Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,26 +6,13 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 6681e034-528d-47a6-ab01-6191c687d42b
-
-# optional metadata
-
 description: Release notes for NuGet 2.12 RC including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 2.12 RC release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
-
 
 # NuGet 2.12-RC Release Notes
 

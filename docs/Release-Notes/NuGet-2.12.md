@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 2.12 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,26 +6,13 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 5e6ff968-6946-4689-8250-30b07a0c756a
-
-# optional metadata
-
 description: Release notes for NuGet 2.12 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 2.12 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
-
 
 # NuGet 2.12 Release Notes
 

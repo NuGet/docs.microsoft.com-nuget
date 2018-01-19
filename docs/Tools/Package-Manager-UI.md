@@ -7,7 +7,6 @@ ms.date: 12/08/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 62f6962b-7b84-4452-ae0d-a9e1ef1fc6f0
 f1_keywords: 
   - "vs.toolsoptionspages.nuget_package_manager"
   - "vs.toolsoptionspages.nuget_package_manager.general"
@@ -132,7 +131,7 @@ To manage package sources:
 
 ## Package manager Options control
 
-When a package is selected, the Package Manager UI displays a small, expandable **Options** control below the version selector (shown here both collapsed and expanded). Note that for some project types, such as .NET Core and those using the `project.json` reference format, only the **Show preview window** option is provided.
+When a package is selected, the Package Manager UI displays a small, expandable **Options** control below the version selector (shown here both collapsed and expanded). Note that for some project types, only the **Show preview window** option is provided.
 
 ![Package manager options](media/PackageManagerUIOptions.png)
 

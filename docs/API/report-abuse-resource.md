@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: Report Abuse URL Template, NuGet API | Microsoft Docs
 author:
 - joelverhagen
@@ -13,19 +11,14 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 148d743a-09e5-4539-8454-675be11902db
-
-# optional metadata
-
 description: The report abuse URL template allows clients to display a report abuse link in their UI.
 keywords: NuGet API report abuse, NuGet API file complaint, NuGet.org report URL template
 ms.reviewer:
 - karann
 - unniravindranathan
-
 ---
 
-# Report Abuse URL Template
+# Report abuse URL template
 
 It is possible for a client to build a URL that can be used by the user to report abuse about a specific package. This
 is useful when a package source wants to enable all client experiences (even 3rd party) to delegate abuse reports to

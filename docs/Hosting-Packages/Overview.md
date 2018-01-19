@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: Overview of Hosting Your Own NuGet Feeds | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -8,26 +6,15 @@ manager: ghogen
 ms.date: 08/25/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 97577ddd-c294-432d-81a7-b4aebe88bd1c
-
-# optional metadata
-
 description: An overview of opens for hosting your own NuGet package feeds or galleries either locally or remotely.
 keywords: NuGet feed, NuGet gallery, custom package feed, NuGet.Server
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # Hosting your own NuGet feeds
 
 Instead of making packages publicly available, you might want to release packages to only a limited audience, such as your organization or workgroup. In addition, some companies may want to restrict which third-party libraries their developers may use, and thus direct those developers to draw from a limited package source rather than nuget.org.

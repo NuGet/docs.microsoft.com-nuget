@@ -1,34 +1,22 @@
 ---
-# required metadata
-
 title: Introductory Guide to Creating and Publishing a NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/3/2017
+ms.date: 10/03/2017
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 91781ed6-da5c-49f0-b973-16dd8ad84229
-
-# optional metadata
-
 description: A walkthrough tutorial on creating and publishing a NuGet package using both the nuget.exe command-line interface and Visual Studio.
 keywords: NuGet package creation, NuGet package publishing, NuGet tutorial
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # Create and publish a package
 
-It's a simple process to create a NuGet package from a .NET Class Library and publish it to nuget.org. The following steps walk you through the process using the NuGet command-line interface (CLI) and Visual Studio:
-
-- [Pre-requisites](#install-pre-requisites)
-- [Create the .nuspec package manifest file](#create-the-nuspec-package-manifest-file)
-- [Run the pack command](#run-the-pack-command)
-- [Publish the package](#publish-the-package)
+It's a simple process to create a NuGet package from a .NET Class Library and publish it to nuget.org. This article walks you through the process using the NuGet command-line interface (CLI) and Visual Studio.
 
 ## Pre-requisites
 
@@ -50,7 +38,7 @@ Every NuGet package needs a manifest&mdash;a `.nuspec` file&mdash;to describe it
 
 1. Run the NuGet CLI `spec` command to generate the manifest, which is named after your project, such as `AppLogger.nuspec`:
 
-    ```
+    ```cli
     nuget spec
     ```
 
@@ -104,7 +92,7 @@ Every NuGet package needs a manifest&mdash;a `.nuspec` file&mdash;to describe it
 
 To build a NuGet package (a `.nupkg` file) from a project, run the `pack` command:
 
-```
+```cli
 nuget pack AppLogger.csproj
 ```
 
@@ -132,13 +120,13 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `push` comm
 
 1. At a command prompt, run the following command, specifying your package name and replacing the key with the value copied in step 4:
 
-    ```
+    ```cli
     nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://api.nuget.org/v3/index.json
     ```
 
 1. nuget.exe displays the results of the publishing process:
 
-    ```
+    ```output
     Pushing AppLogger.1.0.0.0.nupkg to 'https://www.nuget.org/api/v2/package'...
         PUT https://www.nuget.org/api/v2/package/
         Created https://www.nuget.org/api/v2/package/ 6829ms

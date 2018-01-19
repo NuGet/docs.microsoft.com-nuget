@@ -1,38 +1,24 @@
 ---
-# required metadata
-
 title: project.json File Reference for NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/26/2017
+ms.date: 07/26/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: d64fa6d8-a3f7-4c72-95d3-1a964375ccb8
-
-# optional metadata
-
 description: In some project types, project.json maintains the list of NuGet packages used in the project.
 keywords: NuGet project.json, NuGet package references, NuGet dependencies, project.lock.json
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # project.json reference
 
 *NuGet 3.x+*
 
-The `project.json` file maintains a list of packages used in a project, known as a package reference format. It supersedes `packages.config` but is in turn superseded by [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) with NuGet 4.0+.
+The `project.json` file maintains a list of packages used in a project, known as a package reference format. It supersedes `packages.config` but is in turn superseded by [PackageReference](../consume-packages/package-references-in-project-files.md) with NuGet 4.0+.
 
 The [`project.lock.json`](#projectlockjson) file (described below) is also used in projects employing `project.json`.
 
@@ -51,10 +37,10 @@ The [`project.lock.json`](#projectlockjson) file (described below) is also used 
     },
     "supports" : {
         "CompatibilityProfile" : {}
-    }  
+    }
 }
 ```
- 
+
 ## Dependencies
 
 Lists the NuGet package dependencies of your project in the following form:
@@ -62,13 +48,13 @@ Lists the NuGet package dependencies of your project in the following form:
 ```json
 "PackageID" : "version_constraint"
 ```
-  
+
 For example:
 
 ```json
-"dependencies": {   
+"dependencies": {
     "Microsoft.NETCore": "5.0.0",
-    "System.Runtime.Serialization.Primitives": "4.0.10"   
+    "System.Runtime.Serialization.Primitives": "4.0.10"
 }
 ```
 
@@ -187,11 +173,11 @@ The `project.json` file used by NuGet is a subset of that found in ASP.NET Core 
 
 - Compilation is handled by MSBuild so compilation options, preprocessor defines, etc. are all part of the MSBuild project file and not `project.json`.
 
-In NuGet 3+, developers are not expected to manually edit the `project.json`, as the Package Manager UI in Visual Studio manipulates the content. That said, you can certainly edit the file, but you must build the project to start a package restore or invoke restore in another way. See [Package restore](../Consume-Packages/Package-Restore.md).
+In NuGet 3+, developers are not expected to manually edit the `project.json`, as the Package Manager UI in Visual Studio manipulates the content. That said, you can certainly edit the file, but you must build the project to start a package restore or invoke restore in another way. See [Package restore](../consume-packages/package-restore.md).
 
 
 ## project.lock.json
 
 The `project.lock.json` file is generated in the process of restoring the NuGet packages in projects that use `project.json`. It holds a snapshot of all the information that is generated as NuGet walks the graph of packages and includes the version, contents, and dependencies of all the packages in your project. The build system uses this to choose packages from a global location that are relevant when building the project instead of depending on a local packages folder in the project itself. This results in faster build performance because it's necessary to read only `project.lock.json` instead of many separate `.nuspec` files.
 
-`project.lock.json` is automatically generated on package restore, so it can be omitted from source control by adding it to `.gitignore` and `.tfignore` files (see [Packages and source control](../Consume-Packages/Packages-and-Source-Control.md). However, if you include it in source control, the change history shows changes in dependencies resolved over time.
+`project.lock.json` is automatically generated on package restore, so it can be omitted from source control by adding it to `.gitignore` and `.tfignore` files (see [Packages and source control](../consume-packages/packages-and-source-control.md). However, if you include it in source control, the change history shows changes in dependencies resolved over time.

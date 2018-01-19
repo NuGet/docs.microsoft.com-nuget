@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: Service Index, NuGet API | Microsoft Docs
 author:
 - joelverhagen
@@ -13,19 +11,14 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 2f6d6cf2-53fb-417a-b1d8-e0ac591c1699
-
-# optional metadata
-
 description: The service index is the entry point of the NuGet HTTP API and enumerates the capabilities of the server.
 keywords: NuGet API entry point, NuGetA PI endpoint discovery
 ms.reviewer:
 - karann
 - unnir
-
 ---
 
-# Service Index
+# Service index
 
 The service index is a JSON document that is the entry point for a NuGet package source and allows a client
 implementation to discover the package source's capabilities. The service index is a JSON object with two required
@@ -33,6 +26,7 @@ properties: `version` (the schema version of the service index) and `resources` 
 package source).
 
 nuget.org's service index is located here:
+
 ```
 https://api.nuget.org/v3/index.json
 ```

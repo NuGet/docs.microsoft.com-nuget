@@ -1,31 +1,17 @@
 ---
-# required metadata
-
 title: NuGet Packages and Source Control | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 07/17/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 2c874e6f-99eb-46dd-997f-f67d98d0237e
-
-# optional metadata
-
 description: Considerations for how to treat NuGet packages within version control and source control systems, and how to omit packages with git and TFVC.
 keywords: NuGet source control, NuGet version control, NuGet and git, NuGet and TFS, NuGet and TFVC, omitting packages, source control repositories, version control repositories
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Omitting NuGet packages in source control systems
@@ -47,7 +33,7 @@ Use the [.gitignore file](https://git-scm.com/docs/gitignore) to avoid including
 
 The important parts of the `.gitignore` file are:
 
-```
+```gitignore
 # Ignore NuGet Packages
 *.nupkg
 
@@ -94,9 +80,9 @@ To disable source control integration with TFVC for selected files:
 
 1. On TFS 2012 or later, or with Visual Studio Team Services, create a `.tfignore` file as described on [AddFiles to the Server](https://www.visualstudio.com/en-us/docs/tfvc/add-files-server#tfignore). In that file, include the content below to explicitly ignore modifications to the `\packages` folder on the repository level and a few other intermediate files. (You can create the file in Windows Explorer using the name a `.tfignore.` with the trailing dot, but you might need to disable the "Hide known file extensions" option first.):
 
-   ```
+   ```cli
    # Ignore NuGet Packages
-   *.nupkg   
+   *.nupkg
 
    # Ignore the NuGet packages folder in the root of the repository. If needed, prefix 'packages'
    # with additional folder names if it's not in the same folder as .tfignore.   

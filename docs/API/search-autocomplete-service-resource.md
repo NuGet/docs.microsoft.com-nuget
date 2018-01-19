@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: Autocomplete, NuGet API | Microsoft Docs
 author:
 - joelverhagen
@@ -13,16 +11,11 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: ead5cf7a-e51e-4cbb-8798-58226f4c853f
-
-# optional metadata
-
 description: The search autocomplete service supports interactive discovery of package IDs and versions.
 keywords: NuGet autocomplete API, NuGet search package ID, substring package ID
 ms.reviewer:
 - karann
 - unniravindranathan
-
 ---
 
 # Autocomplete

@@ -19,13 +19,9 @@ manager: ghogen
 ms.date: 08/15/2017 
 ms.topic: hub-page
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-#ms.suite:
-ms.assetid: 49f63ee9-86a9-41de-baba-e3d66f3d5966
 ms.reviewer:  
 - karann-msft
-
 ---
 <div id="main" class="v2">
 <div class="container">

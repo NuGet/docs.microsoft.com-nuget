@@ -19,8 +19,6 @@
 ## [Native Packages](Create-Packages/Native-Packages.md)
 ## [Symbol Packages](Create-Packages/Symbol-Packages.md)
 ## [Publish a Package](Create-Packages/Publish-a-package.md)
-## [project.json and UWP](Create-Packages/project-json-and-UWP.md)
-## [project.json Impact](Create-Packages/project-json-Impact.md)
 # Consume Packages
 ## [Overview and Workflow](Consume-Packages/Overview-and-Workflow.md)
 ## [Finding and Choosing Packages](Consume-Packages/Finding-and-Choosing-Packages.md)
@@ -71,7 +69,6 @@
 # Reference
 ## [.nuspec](Schema/nuspec.md)
 ## [packages.config](Schema/packages-config.md)
-## [project.json](Schema/project-json.md)
 ## [Package Versioning](reference/package-versioning.md)
 ## [Nuget.Config file](Schema/nuget-config-file.md)
 ## [MSBuild Targets](Schema/msbuild-targets.md)
@@ -80,6 +77,10 @@
 ## [Errors and warnings](Reference/Errors-and-Warnings.md)
 ## [ID Prefix Reservation](Reference/ID-Prefix-Reservation.md)
 ## [NuGet Client SDK](Reference/nuget-client-sdk.md)
+## Archived content
+### [project.json reference format](archive/project-json.md)
+### [project.json and UWP](archive/project-json-and-UWP.md)
+### [project.json impact](archive/project-json-impact.md)
 ## Extensibility
 ### [NuGet Credential Providers for Visual Studio](Reference/extensibility/Nuget-Credential-Providers-for-Visual-Studio.md)
 ### [nuget.exe Credential Providers](Reference/extensibility/nuget-exe-Credential-Providers.md)

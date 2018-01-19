@@ -1,5 +1,5 @@
 ---
-title: Finding and choosing NuGet Packages | Microsoft Docs
+title: Finding and Choosing NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -13,7 +13,6 @@ keywords: NuGet package consumption, NuGet package discovery, best NuGet package
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # Finding and evaluating NuGet packages for your project

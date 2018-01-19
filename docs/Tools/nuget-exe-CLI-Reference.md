@@ -7,7 +7,6 @@ ms.date: 10/24/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: d777c424-0cf3-4bc0-8abd-7ca16c22192b
 description: Command-line reference index for the nuget.exe CLI
 keywords: nuget.exe reference index, nuget.exe command-line interface, nuget.exe CLI, nuget command
 ms.reviewer:

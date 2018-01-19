@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: nuget.org Protocols | Microsoft Docs
 author: anangaur
 ms.author: anangaur
@@ -9,17 +7,13 @@ ms.date: 10/30/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: ba1d9742-9f1c-42ff-8c30-8e953e23c501
-
-# optional metadata
-
 description: The evolving nuget.org protocols to interact with NuGet clients.
 ms.reviewer:
 - kraigb
 - karann-msft
-
 ---
-# nuget.org Protocols
+
+# nuget.org protocols
 
 To interact with nuget.org, clients need to follow certain protocols. Because these protocols keep evolving, clients
 must identify the protocol version they use when calling specific nuget.org APIs. This allows nuget.org to introduce
