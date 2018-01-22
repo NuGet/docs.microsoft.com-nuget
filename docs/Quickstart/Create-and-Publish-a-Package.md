@@ -121,7 +121,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `push` comm
 
 1. Once logged in, select your user name (on the upper right), then select **API Keys**.
 
-1. Select **Create**, provide a name for your key, select **Select Scopes > Push**Under **API Key**, enter * for **Glob pattern**, then select **Create**.
+1. Select **Create**, provide a name for your key, select **Select Scopes > Push** under **API Key**, enter * for **Glob pattern**, then select **Create**.
 
 1. Once the key is created, select **Copy** to retrieve the access key you'll need in the CLI:
 
