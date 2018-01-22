@@ -1,4 +1,4 @@
-Installing a package happens in three ways:
+You can install a NuGet package in three different ways:
 
 | Method | Description | Reference |
 | --- | --- | --- |

@@ -60,7 +60,7 @@ There is no workaround at this time.
 #### Issue:
 NuGet Package Manager does not display and does not allow add/update of DotNetCLITools. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
 
-* #### Workaround:
+#### Workaround:
 DotNetCLIToolReferences must be manually edited in your project file.
 
 ### NuGet restore will fail when you set PackageId property for projects
@@ -374,4 +374,3 @@ There is no workaround at this time.
 [Issues list 3](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC3")  
 [Issues list 4](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC2")  
 [Issues list 5](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.0 RC")
-

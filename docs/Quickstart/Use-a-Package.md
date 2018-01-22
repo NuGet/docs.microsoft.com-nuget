@@ -23,7 +23,7 @@ NuGet packages are units of reusable code that other developers make available t
 
 Once installed, refer to the package in code with `using <namespace>` where \<namespace\> is specific to the package you're using. Once the reference is made, you can call the package through its API.
 
-The remainder of this topic walks through the process of using the Package Manager UI to install the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package in a Universal Windows Platform (UWP) project. It then shows an example of using the package. You use a similar same workflow for virtually every NuGet package you use in a project.
+The remainder of this topic walks through the process of using the Package Manager UI to install the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package in a Universal Windows Platform (UWP) project. It then shows an example of using the package. You use a similar workflow for other NuGet packages.
 
 - [Install pre-requisites](#install-pre-requisites)
 - [Create a project](#create-a-project)
@@ -31,7 +31,7 @@ The remainder of this topic walks through the process of using the Package Manag
 - [Use the Newtonsoft.Json API in the app](#use-the-newtonsoftjson-api-in-the-app)
 
 > [!Tip]
-> **Start with nuget.org**: Installing packages from nuget.org is a common workflow that .NET developers use to find components they can reuse in their own applications. You can always search nuget.org directly or find and install packages within Visual Studio as shown in this topic.
+> **Start with nuget.org**: Installing packages from nuget.org is a common workflow that .NET developers use to find components they can use in their own applications. You can always search nuget.org directly or find and install packages within Visual Studio as shown in this topic.
 
 ## Install pre-requisites
 
