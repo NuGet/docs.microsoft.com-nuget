@@ -20,11 +20,11 @@ ms.reviewer:
 
 To work with NuGet, as a package consumer or creator, you can use [cross-platform command-line interface (CLI) tools](#cli-tools) as well as [NuGet features in Visual Studio](#visual-studio). This article briefly outlines the capabilities of the different tools, how to install them, and their comparative [feature availability](#feature-availability).
 
-| Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Download link |
+| Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Download link&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
 | [dotnet.exe](#dotnetexe-cli) | Included with the .NET Core SDK and provides core NuGet features on all platforms. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
-| [nuget.exe](#nugetexe-cli) | Provides all NuGet capabilities on Windows and Mac/Linux under Mono. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
-| [Visual Studio](#visual-studio) | Provides NuGet capabilites through the Package Manager UI and Package Manager Console. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
+| [nuget.exe](#nugetexe-cli) | Provides all NuGet capabilities on Windows and most features running under Mono on Mac and Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [Visual Studio](#visual-studio) | Provides NuGet capabilities through the Package Manager UI and Package Manager Console. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 ## CLI tools
 
