@@ -16,13 +16,13 @@ ms.reviewer:
 
 # Installing NuGet client tools
 
-To work with NuGet, as a package consumer or creator, you can use cross-platform command-line interface (CLI) tools as well as NuGet features in Visual Studio. This article briefly outlines the capabilities of the different tools and how to install them. The [Feature availability](#feature-availability) section provides a comparison between the tools.
+To work with NuGet, as a package consumer or creator, you can use [cross-platform command-line interface (CLI) tools](#cli-tools) as well as [NuGet features in Visual Studio](#visual-studio). This article briefly outlines the capabilities of the different tools, how to install them, and their comparative [feature availability](#feature-availability).
 
 **Looking to install a package? See [Quickstart - Use a package](quickstart/use-a-package.md).**
 
 ## CLI tools
 
-The two NuGet CLI tools are `dotnet.exe` and `nuget.exe`. See [Feature availability](#feature-availability) for a thorough comparison.
+The two NuGet CLI tools are `dotnet.exe` and `nuget.exe`. See [feature availability](#feature-availability) for a comparison.
 
 ### dotnet.exe CLI
 
