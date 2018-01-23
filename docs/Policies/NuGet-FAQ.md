@@ -18,7 +18,7 @@ ms.reviewer:
 
 **What is required to run NuGet?**
 
-All the information around both UI and command-line tools is available in the [Install guide](../guides/install-nuget.md).
+All the information around both UI and command-line tools is available in the [Install guide](../install-nuget-client-tools.md).
 
 **Does NuGet support Mono?**
 
@@ -67,13 +67,13 @@ To update the template itself, you need to manually update the template reposito
 
 **Can I use NuGet outside of Visual Studio?**
 
-Yes, NuGet works directly from the command line. See the [Install guide](../guides/install-nuget.md) and the [CLI reference](../tools/nuget-exe-CLI-Reference.md).
+Yes, NuGet works directly from the command line. See the [Install guide](../install-nuget-client-tools.md) and the [CLI reference](../tools/nuget-exe-CLI-Reference.md).
 
 ## NuGet command line
 
 **How do I get the latest version of NuGet command line tool?**
 
-See the [Install guide](../guides/install-nuget.md).
+See the [Install guide](../install-nuget-client-tools.md).
 
 **What is the license for nuget.exe?**
 

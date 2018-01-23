@@ -34,7 +34,7 @@ In the list of reference formats:
 
 ## nuget restore on Mono
 
-*Originally in [Install NuGet client tools](../guides/install-nuget.md).*
+*Originally in [Install NuGet client tools](../install-nuget-client-tools.md).*
 
 Works with `project.json`.
 

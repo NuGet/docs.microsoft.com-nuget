@@ -5,7 +5,7 @@ title: NuGet Package Manager Console Guide | Microsoft Docs
 author: kraigb
 hms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/23/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -20,7 +20,7 @@ ms.reviewer:
 
 The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later. (It is not included with Visual Studio for Mac or Visual Studio Code.)
 
-The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation.
+The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. To use `nuget.exe` commands in the console, see [Using the nuget.exe CLI in the console](#using-the-nuget-exe-cli-in-the-console).
 
 For example, finding and installing a package is done with three easy steps:
 
@@ -167,7 +167,7 @@ Some packages install new commands for the console. For example, `MvcScaffolding
 
 ![Installing and using MvcScaffold](media/PackageManagerConsoleInstall.png)
 
-## Setting up a NuGet PowerShell Profile
+## Setting up a NuGet PowerShell profile
 
 A PowerShell profile lets you make commonly-used commands available wherever you use PowerShell. NuGet supports a NuGet-specific profile typically found at the following location:
 
@@ -181,3 +181,12 @@ C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
 For more details, refer to [Windows PowerShell Profiles](https://technet.microsoft.com/library/bb613488.aspx).
+
+## Using the nuget.exe CLI in the console
+
+To make the [`nuget.exe` CLI](nuget-exe-CLI-Reference.md) available in the Package Manager Console, install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the console:
+
+```ps
+# Other versions are available, see http://www.nuget.org/packages/NuGet.CommandLine/
+Install-Package NuGet.CommandLine -Version 4.4.1
+```

@@ -72,7 +72,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="guides/install-nuget.md">
+                            <a href="install-nuget-client-tools.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">

@@ -38,9 +38,7 @@ Starting with NuGet 2.6, we will publish two extensions as below:
 1. [NuGet Package Manager](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManager) (applies to Visual Studio 2010 and 2012)
 1. [NuGet Package Manager for Visual Studio 2013](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManagerforVisualStudio2013)
 
-With this split, the [nuget.org](https://nuget.org) home page's "Install NuGet" button
-will now take you to the [installing NuGet](../guides/install-nuget.md)
-page, where you can find more information about installing the different NuGet clients.
+With this split, the [nuget.org](https://nuget.org) home page's "Install NuGet" button takes you to the [installing NuGet](../install-nuget-client-tools.md) page, where you can find more information about installing the different NuGet clients.
 
 <a name="xdt"></a>
 

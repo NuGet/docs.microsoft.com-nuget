@@ -3,7 +3,7 @@ title: NuGet Command-Line Interface (CLI) Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/23/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
@@ -26,10 +26,13 @@ This documentation reflects the latest version of the NuGet CLI. For exact detai
 
 [!INCLUDE[install-cli](../includes/install-cli.md)]
 
+> [!Tip]
+> To make the NuGet CLI available within the Package Manager Console in Visual Studio, see [Using the nuget.exe CLI in the console](package-manager-console.md#using-the-nuget-exe-cli-in-the-console).
+
 ## Availability
 
 - All commands are available on Windows.
-- All commands work with [nuget.exe running on Mono](../guides/install-nuget.md#mac-osx-and-linux) except where indicated for `pack`, `restore`, and `update`.
+- All commands work with [nuget.exe running on Mono](../install-nuget-client-tools.md#mac-osx-and-linux) except where indicated for `pack`, `restore`, and `update`.
 - The `pack`, `restore`, `delete`, `locals`, and `push` commands are also available on Mac and Linux through the [dotnet CLI](dotnet-Commands.md).
 
 ## Commands and applicability
@@ -46,7 +49,6 @@ Available commands and applicability to package creation, package consumption, a
 | [restore](cli-ref-restore.md) | Consumption | 2.7+ | Restores all packages referenced by the package reference format in use. When running on Mono, restoring packages using the PackageReference format is not supported. |
 | [setapikey](cli-ref-setapikey.md) | Publishing, Consumption | All | Saves an API key for a given package source when that package source requires a key for access. |
 | [spec](cli-ref-spec.md) | Creation | All | Generates a `.nuspec` file, using tokens if generating the file from a Visual Studio project. |
-
 
 | Secondary Commands | Applicable Roles | NuGet Version | Description |
 | --- | --- | --- | --- |

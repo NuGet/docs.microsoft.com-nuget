@@ -16,24 +16,17 @@ ms.reviewer:
 
 # Installing NuGet client tools
 
-To work with NuGet, as a package consumer or creator, you can use cross-platform command-line interface (CLI) tools as well as NuGet features in Visual Studio. This article briefly outlines the capabilities of the different tools and how to install them.
+To work with NuGet, as a package consumer or creator, you can use cross-platform command-line interface (CLI) tools as well as NuGet features in Visual Studio. This article briefly outlines the capabilities of the different tools and how to install them. The [Feature availability](#feature-availability) section provides a comparison between the tools.
 
 **Looking to install a package? See [Quickstart - Use a package](quickstart/use-a-package.md).**
 
-> [!Tip]
-> Developers working on Windows can also explore the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), an open-source, stand-alone tool to visually explore, create, and edit NuGet packages. It's very helpful, for example, to make experimental changes to a package structure without rebuilding the package.
-
 ## CLI tools
 
-The two NuGet CLI tools are `dotnet.exe` and `nuget.exe`.
+The two NuGet CLI tools are `dotnet.exe` and `nuget.exe`. See [Feature availability](#feature-availability) for a thorough comparison.
 
-`dotnet.exe` works on all platforms; `nuget.exe` works on Windows and on Mac and Linux under Mono, with some limitations.
+### dotnet.exe CLI
 
-### dotnet.exe CLI (recommended)
-
-The .NET Core 2.0 CLI, `dotnet.exe`, works on all platforms (Windows, Mac, and Linux) and provides the most important NuGet features, such as installing, restoring, and publishing packages. Unlike the `nuget.exe` CLI, 'dotnet' provides direct integration with .NET Core project files, which is helpful in most scenarios. `dotnet` is also built directly for each platform and does not require you to install Mono.
-
-For these reasons, it's recommended that .NET Core developers typically use `dotnet` and rely on `nuget.exe` only when necessary.
+The .NET Core 2.0 CLI, `dotnet.exe`, works on all platforms (Windows, Mac, and Linux) and provides core  NuGet features, such as installing, restoring, and publishing packages. 'dotnet' provides direct integration with .NET Core project files (such as `.csproj`), which is helpful in most scenarios. `dotnet` is also built directly for each platform and does not require you to install Mono.
 
 Installation:
 
@@ -44,7 +37,7 @@ For more information, see [.NET Core command-line interface tools](/dotnet/core/
 
 ### nuget.exe CLI
 
-The NuGet CLI, `nuget.exe`, is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux using Mono with some limitations.
+The NuGet CLI, `nuget.exe`, is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux using Mono with some limitations. Unlike `dotnet`, the `nuget.exe` CLI does not affect project files.
 
 Installation:
 
@@ -53,17 +46,12 @@ Installation:
 > [!Tip]
 > Use `nuget update -self` to update an existing nuget.exe to the latest version.
 
-Other ways to install the NuGet CLI:
-- **Visual Studio**: Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the Package Manager Console in Visual Studio.
-- **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client: `choco install nuget.commandline`.
-
 > [!Note]
 > The latest recommended NuGet CLI is always available at `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`. For compatibility purposes  with older continuous integration systems, a previous URL, `https://nuget.org/nuget.exe` always provides the 2.8.6 CLI tool.
 
 ## Visual Studio
 
 - Visual Studio Code: NuGet capabilities are available through marketplace extensions, or use the `dotnet.exe` or `nuget.exe` CLI tools.
-- 
 - Visual Studio for Mac: certain NuGet capabilities are built in directly. See [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough) for a walkthrough. For other capabilities, use the `dotnet.exe` or `nuget.exe` CLI tools.
 
 - Visual Studio on Windows: The **NuGet Package Manager** is included with Visual Studio 2012 and later. The Package Manager provides the [Package Manager UI](tools/package-manager-ui.md) and the [Package Manager Console](tools/package-manager-console.md), through which you can run most NuGet operations.
@@ -111,3 +99,5 @@ Other ways to install the NuGet CLI:
 - [Package Manager Console PowerShell reference](tools/powershell-reference.md)
 - [Creating a package](create-packages/creating-a-package.md)
 - [Publishing a Package](create-packages/publish-a-package.md)
+
+Developers working on Windows can also explore the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), an open-source, stand-alone tool to visually explore, create, and edit NuGet packages. It's very helpful, for example, to make experimental changes to a package structure without rebuilding the package.
