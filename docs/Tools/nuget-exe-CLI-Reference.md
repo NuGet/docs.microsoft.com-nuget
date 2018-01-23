@@ -27,7 +27,7 @@ This documentation reflects the latest version of the NuGet CLI. For exact detai
 [!INCLUDE[install-cli](../includes/install-cli.md)]
 
 > [!Tip]
-> To make the NuGet CLI available within the Package Manager Console in Visual Studio, see [Using the nuget.exe CLI in the console](package-manager-console.md#using-the-nuget-exe-cli-in-the-console).
+> To make the NuGet CLI available within the Package Manager Console in Visual Studio, see [Using the nuget.exe CLI in the console](package-manager-console.md#using-the-nugetexe-cli-in-the-console).
 
 ## Availability
 
