@@ -23,7 +23,7 @@ To work with NuGet, as a package consumer or creator, you can use [cross-platfor
 | Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Download link&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
 | [dotnet.exe](#dotnetexe-cli) | Included with the .NET Core SDK and provides core NuGet features on all platforms. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
-| [nuget.exe](#nugetexe-cli) | Provides all NuGet capabilities on Windows and most features running under Mono on Mac and Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [nuget.exe](#nugetexe-cli) | Provides all NuGet capabilities on Windows and most features running under [Mono](http://www.mono-project.com/docs/getting-started/install/) on Mac and Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
 | [Visual Studio](#visual-studio) | Provides NuGet capabilities through the Package Manager UI and Package Manager Console. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 ## CLI tools
