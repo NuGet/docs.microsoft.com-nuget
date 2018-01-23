@@ -14,17 +14,17 @@ ms.reviewer:
 - unniravindranathan
 ---
 
-**Looking to install a package? See [Quickstart - Use a package](quickstart/use-a-package.md).**
-
 # Installing NuGet client tools
+
+> **Looking to install a package? See [Quickstart - Use a package](quickstart/use-a-package.md).**
 
 To work with NuGet, as a package consumer or creator, you can use [cross-platform command-line interface (CLI) tools](#cli-tools) as well as [NuGet features in Visual Studio](#visual-studio). This article briefly outlines the capabilities of the different tools, how to install them, and their comparative [feature availability](#feature-availability).
 
-| Tool        | Description           | Download link  |
+| Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Download link |
 |:------------- |:-------------|:-----|
-| [dotnet.exe](#dotnetexe-cli) | Works on all platforms (Windows, Mac, and Linux) and provides core  NuGet features, such as installing, restoring, and publishing packages. You would need to install .NET Core SDK to get the dotnet.exe | [Download .NET SDK](https://www.microsoft.com/net/download/windows) |
-| [nuget.exe](#nugetexe-cli)     | command-line utility for Windows that provides all NuGet capabilities      |  [Download nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
-| [Visual Studio](#visual-studio) | NuGet functionalities are on Visual Studio  through NuGet Package Manager. [Learn more](#visual-studio) | [Download Visual Studio 2017](https://www.visualstudio.com/downloads/) |
+| [dotnet.exe](#dotnetexe-cli) | Included with the .NET Core SDK and provides core NuGet features on all platforms. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
+| [nuget.exe](#nugetexe-cli) | Provides all NuGet capabilities on Windows and Mac/Linux under Mono. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [Visual Studio](#visual-studio) | Provides NuGet capabilites through the Package Manager UI and Package Manager Console. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 ## CLI tools
 
