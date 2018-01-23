@@ -29,7 +29,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | Group | Error Numbers |
 | --- | --- |
 | [Invalid input errors](#invalid-input-errors) | [NU1001](#nu1001), [NU1002](#nu1002), [NU1003](#nu1003) |
-| [Missing package and project errors](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [NU1106](#nu1106), [NU1107](#nu1107) (previously NU1607), [NU1108](#nu1107) (previously NU1606) |
+| [Missing package and project errors](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [NU1106](#nu1106), [NU1107](#nu1107) (previously NU1607), [NU1108](#nu1108) (previously NU1606) |
 | [Compatibility errors](#compatibility-errors) | [NU1201](#nu1201), [NU1202](#nu1202), [NU1203](#nu1203), [NU1401](#nu1401) |
 
 **Warnings**
@@ -131,7 +131,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Common causes** | Packages contain dependency on exact versions of a package instead of open-ended ranges. |
 | **Example message** | *Unable to satisfy conflicting requests for {id}: {conflict path} Framework: {target graph}* |
 
-<a name="NU1107"></a> 
+<a name="nu1107"></a> 
 
 ### NU1107 (Previously NU1607)
 
@@ -141,7 +141,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Common causes** | Packages with dependency constraints on exact versions do not allow other packages to increase the version if needed. |
 | **Example message** | *Version conflict detected for NuGet.Versioning. Reference the package directly from the project to resolve this issue.<br/>  NuGet.Packaging 3.5.0 -> NuGet.Versioning (= 3.5.0)<br/>  NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)* |
 
-<a name="NU1108"></a>
+<a name="nu1108"></a>
 
 ### NU1108 (Previously NU1606)
 
