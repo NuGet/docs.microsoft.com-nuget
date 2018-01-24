@@ -327,7 +327,7 @@ To bypass this automatic behavior and explicitly control which files are include
 </files>
 ```
 
-With NuGet 2.x and earlier, and projects using `packages.config`, the `<files>` element is also used to include immutable content files when a package is installed. With NuGet 3.3+ and projects using `project.json` pr PackageReference, the `<contentFiles>` element is used instead. See [Including content files](#including-content-files) below for details.
+With NuGet 2.x and earlier, and projects using `packages.config`, the `<files>` element is also used to include immutable content files when a package is installed. With NuGet 3.3+ and projects using `project.json` or PackageReference, the `<contentFiles>` element is used instead. See [Including content files](#including-content-files) below for details.
 
 ### File element attributes
 
