@@ -31,7 +31,7 @@ This documentation reflects the latest version of the NuGet CLI. For exact detai
 
 ## Availability
 
-See [feature availability](install-nuget-client-tools.md#feature-availability) for exact details.
+See [feature availability](../install-nuget-client-tools.md#feature-availability) for exact details.
 
 - All commands are available on Windows.
 - All commands work with nuget.exe running on Mono except where indicated for `pack`, `restore`, and `update`.
