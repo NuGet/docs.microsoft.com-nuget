@@ -31,9 +31,11 @@ This documentation reflects the latest version of the NuGet CLI. For exact detai
 
 ## Availability
 
+See [feature availability](install-nuget-client-tools.md#feature-availability) for exact details.
+
 - All commands are available on Windows.
-- All commands work with [nuget.exe running on Mono](../install-nuget-client-tools.md#mac-osx-and-linux) except where indicated for `pack`, `restore`, and `update`.
-- The `pack`, `restore`, `delete`, `locals`, and `push` commands are also available on Mac and Linux through the [dotnet CLI](dotnet-Commands.md).
+- All commands work with nuget.exe running on Mono except where indicated for `pack`, `restore`, and `update`.
+- The `pack`, `restore`, `delete`, `locals`, and `push` commands are also available on Mac and Linux through the dotnet CLI.
 
 ## Commands and applicability
 
