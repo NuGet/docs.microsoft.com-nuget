@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: Service Index, NuGet API | Microsoft Docs
 author:
 - joelverhagen
@@ -13,29 +11,21 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 2f6d6cf2-53fb-417a-b1d8-e0ac591c1699
-
-# optional metadata
-
 description: The service index is the entry point of the NuGet HTTP API and enumerates the capabilities of the server.
 keywords: NuGet API entry point, NuGetA PI endpoint discovery
 ms.reviewer:
 - karann
 - unnir
-
 ---
 
-# Service Index
+# Service index
 
 The service index is a JSON document that is the entry point for a NuGet package source and allows a client
 implementation to discover the package source's capabilities. The service index is a JSON object with two required
 properties: `version` (the schema version of the service index) and `resources`  (the endpoints or capabilities of the
 package source).
 
-nuget.org's service index is located here:
-```
-https://api.nuget.org/v3/index.json
-```
+nuget.org's service index is located at `https://api.nuget.org/v3/index.json`.
 
 ## Versioning
 
@@ -71,9 +61,7 @@ The `@id` is a URL that must be absolute and must either have the HTTP or HTTPS 
 The `@type` is used to identify the specific protocol to use when interacting with resource. The type of the resource
 is an opaque string but generally has the format:
 
-```
-{RESOURCE_NAME}/{RESOURCE_VERSION}
-```
+    {RESOURCE_NAME}/{RESOURCE_VERSION}
 
 Clients are expected to hard code the `@type` values that they understand and look them up in a package source's
 service index. The exact `@type` values in use today are enumerated on the individual resource reference documents
@@ -88,9 +76,7 @@ compatible `@type` can be used in a round-robin fashion in case of connection fa
 
 ### Sample request
 
-```
 GET https://api.nuget.org/v3/index.json
-```
 
 ### Sample response
 

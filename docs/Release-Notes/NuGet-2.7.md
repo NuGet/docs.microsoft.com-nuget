@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 2.7 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,25 +6,14 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: ba2edaad-4795-47a0-a572-d0e1716bd540
-
-# optional metadata
-
 description: Release notes for NuGet 2.7 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 2.7 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # NuGet 2.7 Release Notes
 
 [NuGet 2.6.1 for WebMatrix Release Notes](../release-notes/nuget-2.6.1-for-webmatrix.md) | [NuGet 2.7.1 Release Notes](../release-notes/nuget-2.7.1.md)

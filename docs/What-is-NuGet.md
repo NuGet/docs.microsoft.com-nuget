@@ -82,15 +82,12 @@ With only the reference list, NuGet can then reinstall&mdash;that is, *restore*&
 
 The computer that receives a project, such as a build server obtaining a copy of the project as part of an automated deployment system, simply asks NuGet to restore dependencies whenever they're needed. Build systems like Visual Studio Team Services provide "NuGet restore" steps for this exact purpose. Similarly, when developers obtain a copy of a project (as when cloning a repository), they can invoke a command like `nuget restore` (NuGet CLI), `dotnet restore` (dotnet CLI), or `Install-Package` (Package Manager Console) to obtain all the necessary a packages. Visual Studio, for its part, automatically restores packages when building a project.
 
-Clearly, then, NuGet's primary role where developers are concerned is maintaining that reference list on behalf of your project and providing the means to efficiently restore (and update) those referenced packages.
-
-How this exactly happens has evolved over the different versions of NuGet, resulting in several *package management formats*, as they're called:
+Clearly, then, NuGet's primary role where developers are concerned is maintaining that reference list on behalf of your project and providing the means to efficiently restore (and update) those referenced packages. This list is maintained in one of two *package management formats*, as they're called:
 
 - [`packages.config`](Schema/packages-config.md): *(NuGet 1.0+)* An XML file that maintains a flat list of all dependencies in the project, including the dependencies of other installed packages.
 - [PackageReference](Consume-Packages/Package-References-in-Project-Files.md) (or "package references in project files") | *(NuGet 4.0+)* Maintains a list of a project's top-level dependencies directly within the project file, so no separate file is needed. An associated file, `project.assets.json`, is dynamically generated to manage the overall dependency graph.
-- [`project.json`](Schema/project-json.md): *(deprecated)* A JSON file that maintains a list of the project's dependencies with an overall package graph in an associated file, `project.lock.json`. This format is deprecated in favor of PackageReference.
 
-Which package management format is employed in any given project depends on the project type, and the available version of NuGet (and/or Visual Studio). To check what format is being used, simply look for `packages.config` or `project.json` in the project root after installing your first package. If you don't see either file, look in the project file directly for a &lt;PackageReference&gt;element.
+Which package management format is employed in any given project depends on the project type, and the available version of NuGet (and/or Visual Studio). To check what format is being used, simply look for `packages.config` in the project root after installing your first package. If you don't that file, look in the project file directly for a &lt;PackageReference&gt;element.
 
 ## What else does NuGet do?
 

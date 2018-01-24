@@ -1,33 +1,20 @@
 ---
-# required metadata
-
 title: How to Publish a NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/5/2017
+ms.date: 10/05/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 2342aabd-983e-4db1-9230-57c84fa36969
-
-# optional metadata
-
 description: Detailed instructions for how to publish a NuGet package to nuget.org or private feeds, and how to manage package ownership on nuget.org.
 keywords: NuGet package publishing, publish NuGet package, NuGet package ownership, publish to nuget.org, private NuGet feeds
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # Publishing packages
 
 Once you have [created a package](../create-packages/creating-a-package.md) with `nuget pack`, it's a simple process to make it available to other developers, either publicly or privately:
@@ -43,42 +30,43 @@ For nuget.org, you must first [register for a free account](https://www.nuget.or
 
 ![NuGet registration and sign in location](media/publish_NuGetSignIn.png)
 
-Next, you can either upload the package through the nuget.org web portal, push to nuget.org from the command line, or publish as part of a CI/CD process through Visual Studio Team Services, as described in the following sections.
+Next, you can either upload the package through the nuget.org web portal, push to nuget.org from the command line (requires `nuget.exe` 4.1.0+) , or publish as part of a CI/CD process through Visual Studio Team Services, as described in the following sections.
 
-### Web portal: use the Upload Package tab on nuget.org:
+### Web portal: use the Upload Package tab on nuget.org
 
 ![Upload a package with the NuGet Package Manager](media/publish_UploadYourPackage.PNG)
 
-### Command line:
+### Command line
+
 > [!Important]
 > To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](../api/nuget-protocols.md).
 
 1. Click on your user name to navigate to your account settings.
-2. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:
+1. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:
 
     ![Copying an API Key from account settings](media/publish_APIKey.png)
 
-3. At a command prompt, run the following command:
+1. At a command prompt, run the following command:
 
-    ```
+    ```cli
     nuget setApiKey Your-API-Key
     ```
 
     This stores your API key on the machine so that you need not do this step again on the same machine.
 
-4. Push your package to NuGet Gallery using the command:
+1. Push your package to NuGet Gallery using the command:
 
-    ```
+    ```cli
     nuget push YourPackage.nupkg -Source https://api.nuget.org/v3/index.json
     ```
 
-5. Before being made public, all packages uploaded to nuget.org are scanned for viruses and rejected if any viruses are found. All packages listed on nuget.org are also scanned periodically.
+1. Before being made public, all packages uploaded to nuget.org are scanned for viruses and rejected if any viruses are found. All packages listed on nuget.org are also scanned periodically.
 
-6. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page:
+1. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page:
 
     ![Message indicating a package is not yet indexed](media/publish_NotYetIndexed.png)
 
-### Package Validation and Indexing
+### Package validation and indexing
 
 Packages pushed to NuGet.org undergo several validations. When the package has passed all validation checks, it might take a while for it to be indexed and appear in search results. Once indexing is complete, you'll receive an email confirming that the package was successfully published. If the package fails a validation check, the package details page will update to display the associated error and you'll also receive an email notifying you about it.
 
@@ -86,7 +74,7 @@ Package validation and indexing usually takes under 15 minutes. If the package p
 
 ### Visual Studio Team Services (CI/CD)
 
-If you push packages to nuget.org using Visual Studio Team Services as part of your Continuous Integration/Deployment process, you must use nuget.exe 4.1 or above in the NuGet tasks. Details can be found on [Using the latest NuGet in your build](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/) (Microsoft DevOps blog).
+If you push packages to nuget.org using Visual Studio Team Services as part of your Continuous Integration/Deployment process, you must use `nuget.exe` 4.1 or above in the NuGet tasks. Details can be found on [Using the latest NuGet in your build](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/) (Microsoft DevOps blog).
 
 ## Managing package owners on nuget.org
 

@@ -7,7 +7,6 @@ ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 90f4dcb0-6e5a-4948-8ea9-62e0d061d95a
 description: Reference for Add-BindingRedirect PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Add-BindingRedirect
 ms.reviewer:

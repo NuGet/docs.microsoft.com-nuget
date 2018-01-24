@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: Overview, NuGet API | Microsoft Docs
 author:
 - joelverhagen
@@ -13,16 +11,11 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 8c81f1ac-18c7-44d1-b2e3-584fe85dee6f
-
-# optional metadata
-
 description: The NuGet API is a set of HTTP endpoints that can be used to download packages, fetch metadata, publish new packages, etc.
 keywords: NuGet V3 API, NuGet V2 API, NuGet JSON, NuGet registration API, NuGet API flat container, NuGet nupkg API, NuGet metadata API, NuGet search API, NuGet push API, NuGe publish API, NuGet delete API, NuGet unlist API, NuGet protocol
 ms.reviewer:
 - karann
 - unniravindranathan
-
 ---
 
 # NuGet API

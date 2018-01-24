@@ -1,32 +1,18 @@
 ---
-# required metadata
-
 title: How to create NuGet symbol packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 9/12/2017
+ms.date: 09/12/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 4667a70d-5a17-4f1e-b2f2-b8d0c6af3882
-
-# optional metadata
-
 description: How to create NuGet packages that contain only symbols to support debugging of other NuGet packages in Visual Studio.
 keywords: NuGet symbol packages, NuGet package debugging, supporting NuGet debugging, package symbols, symbol package conventions
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Creating symbol packages
@@ -34,7 +20,6 @@ ms.reviewer:
 In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the [SymbolSource repository](http://www.symbolsource.org/Public).
 
 Package consumers can then add `http://srv.symbolsource.org/pdb/Public` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger) for details on that process.
-
 
 ## Creating a symbol package
 
@@ -45,7 +30,7 @@ To create a symbol package, follow these conventions:
 
 You can create both packages with the `-Symbols` option, either from a `.nuspec` file or a project file:
 
-```
+```cli
 nuget pack MyPackage.nuspec -Symbols
 
 nuget pack MyProject.csproj -Symbols
@@ -117,13 +102,13 @@ A symbol package can be built by conventions, from a folder structure as describ
 
 1. For convenience, first save your API key with NuGet (see [publish a package](../create-packages/publish-a-package.md), which will apply to both nuget.org and symbolsource.org, because symbolsource.org will check with nuget.org to verify that you are the package owner.
 
-    ```
+    ```cli
     nuget SetApiKey Your-API-Key
     ```
 
 1. After publishing your primary package to nuget.org, push the symbol package as follows, which will automatically use symbolsource.org as the target because of the `.symbols` in the filename:
 
-    ```
+    ```cli
     nuget push MyPackage.symbols.nupkg
     ```
 > [!Note]
@@ -131,13 +116,13 @@ A symbol package can be built by conventions, from a folder structure as describ
 
 1. To publish to a different symbol repository, or to push a symbol package that doesn't follow the naming convention, use the `-Source` option:
 
-    ```
+    ```cli
     nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
     ```
 
 1. You can also push both primary and symbol packages to both repositories at the same time using the following:
 
-    ```
+    ```cli
     nuget push MyPackage.nupkg
     ```
 
@@ -145,4 +130,4 @@ In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to https
 
 ## See Also
 
- - <a href="https://www.symbolsource.org/Public/Wiki/Using" target="_blank">Using SymbolSource</a> (symbolsource.org)
+[Using SymbolSource](https://www.symbolsource.org/Public/Wiki/Using) (symbolsource.org)

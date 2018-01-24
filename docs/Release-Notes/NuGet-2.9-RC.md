@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 2.9-RC Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,25 +6,14 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 04d76a22-63b0-41d1-9c27-799f4b35058f
-
-# optional metadata
-
 description: Release notes for NuGet 2.9 RC including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 2.9 RC release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # NuGet 2.9-RC Release Notes
 
 [NuGet 2.8.7 Release Notes](../release-notes/nuget-2.8.7.md) | [NuGet 3.0 Preview Release Notes](../release-notes/nuget-3.0-preview.md)

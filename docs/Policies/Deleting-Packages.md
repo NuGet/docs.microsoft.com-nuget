@@ -1,32 +1,19 @@
 ---
-# required metadata
-
 title: Deleting NuGet Packages from nuget.org | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/18/2018
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: a348ca2e-0a5d-40ad-ba33-9bb37e1d980b
-
-# optional metadata
-
 description: Policies for unlisting packages from nuget.org; permanent deletion is not supported except when packages violate other policies.
 keywords: NuGet package deletion, NuGet package unlisting, prohibited uses of packages
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # Deleting packages
 
 nuget.org does not support permanent deletion of packages. Doing so would break every project depending on the availability of the package, especially with build workflows that involve package restore.

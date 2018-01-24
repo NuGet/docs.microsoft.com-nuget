@@ -26,6 +26,26 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/Create-Packages/project-json-impact.md",
+            "redirect_url": "/nuget/archive/project-json-impact",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Create-Packages/project-json-and-uwp.md",
+            "redirect_url": "/nuget/archive/project-json-and-uwp",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/guides/install-nuget.md",
+            "redirect_url": "/nuget/install-nuget-client-tools",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Schema/project-json.md",
+            "redirect_url": "/nuget/archive/project-json",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/Quickstart/restore.md",
             "redirect_url": "/nuget/consume-packages/package-restore-troubleshooting",
             "redirect_document_id": false

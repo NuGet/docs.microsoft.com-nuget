@@ -3,11 +3,10 @@ title: NuGet Command-Line Interface (CLI) Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/23/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: d777c424-0cf3-4bc0-8abd-7ca16c22192b
 description: Command-line reference index for the nuget.exe CLI
 keywords: nuget.exe reference index, nuget.exe command-line interface, nuget.exe CLI, nuget command
 ms.reviewer:
@@ -27,11 +26,16 @@ This documentation reflects the latest version of the NuGet CLI. For exact detai
 
 [!INCLUDE[install-cli](../includes/install-cli.md)]
 
+> [!Tip]
+> To make the NuGet CLI available within the Package Manager Console in Visual Studio, see [Using the nuget.exe CLI in the console](package-manager-console.md#using-the-nugetexe-cli-in-the-console).
+
 ## Availability
 
+See [feature availability](../install-nuget-client-tools.md#feature-availability) for exact details.
+
 - All commands are available on Windows.
-- All commands work with [nuget.exe running on Mono](../guides/install-nuget.md#mac-osx-and-linux) except where indicated for `pack`, `restore`, and `update`.
-- The `pack`, `restore`, `delete`, `locals`, and `push` commands are also available on Mac and Linux through the [dotnet CLI](dotnet-Commands.md).
+- All commands work with nuget.exe running on Mono except where indicated for `pack`, `restore`, and `update`.
+- The `pack`, `restore`, `delete`, `locals`, and `push` commands are also available on Mac and Linux through the dotnet CLI.
 
 ## Commands and applicability
 
@@ -47,7 +51,6 @@ Available commands and applicability to package creation, package consumption, a
 | [restore](cli-ref-restore.md) | Consumption | 2.7+ | Restores all packages referenced by the package reference format in use. When running on Mono, restoring packages using the PackageReference format is not supported. |
 | [setapikey](cli-ref-setapikey.md) | Publishing, Consumption | All | Saves an API key for a given package source when that package source requires a key for access. |
 | [spec](cli-ref-spec.md) | Creation | All | Generates a `.nuspec` file, using tokens if generating the file from a Visual Studio project. |
-
 
 | Secondary Commands | Applicable Roles | NuGet Version | Description |
 | --- | --- | --- | --- |

@@ -7,7 +7,6 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 1354a527-d988-43d1-8dcf-6ce46ec5d3d4
 description: How to create a local feed for NuGet packages using folders on your local network
 keywords: NuGet feed, NuGet gallery, local package feed
 ms.reviewer:
@@ -36,7 +35,7 @@ The hierarchical versioned folder tree has the following general structure:
 
 NuGet creates this structure automatically when you use the [`nuget add`](../tools/cli-ref-add.md) command to copy a package to the feed:
 
-```
+```cli
 nuget add new_package.1.0.0.nupkg -source \\myserver\packages
 ```
 
@@ -44,7 +43,7 @@ The `nuget add` command works with one package at a time, which can be inconveni
 
 In such cases, use the [`nuget init`](../tools/cli-ref-init.md) command to copy all packages in a folder to the feed as if you ran `nuget add` on each one individually. For example, the following command copies all packages from `c:\packages` to a hierarchical tree on `\\myserver\packages`:
 
-```
+```cli
 nuget init c:\packages \\myserver\packages
 ```
 

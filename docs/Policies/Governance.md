@@ -1,32 +1,19 @@
 ---
-# required metadata
-
 title: NuGet Project Governance | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/18/2018
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 94c088ce-ec96-4876-a210-fbdae743942c
-
-# optional metadata
-
 description: The governance model for NuGet, including roles and responsibilities for committers, contributors, and users.
 keywords: NuGet governance, NuGet benevolent dictator, committer responsibilities, contributor responsibilities, user responsibilities
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # NuGet governance
 
 > This document is based upon the [Benevolent Dictator Governance Model](http://www.oss-watch.ac.uk/resources/benevolentdictatorgovernancemodel) by the University of Oxford. It is licensed under a [Creative Commons Attribution-ShareAlike 2.0 UK: England & Wales License](http://creativecommons.org/licenses/by-sa/2.0/uk/).
@@ -39,7 +26,7 @@ It is the benevolent dictator’s job to resolve disputes within the community a
 
 There are four roles described here: Benevolent Dictator, Committers, Contributors, and Users.
 
-### Benevolent Dictator
+### Benevolent dictator
 
 The NuGet core team is self-appointed as Benevolent Dictator or project lead. However, because the community always has the ability to fork, the team is fully answerable to the community. The project lead is expected to understand the community as a whole and strive to satisfy as many conflicting needs as possible, while ensuring that the project survives in the long term.
 
@@ -89,21 +76,22 @@ Users should be encouraged to participate in the life of NuGet and the community
 Users who continue to engage with the project and its community will often find themselves becoming more and more involved. Such users may then go on to become contributors, as described above.
 
 ## Package succession under special circumstances
+
 In the unfortunate situation where a NuGet account holder is incapacitated or deceased, we’ll work with the community to add appropriate owner/s to the package where the said account has sole ownership and the package is published under an [OSI approved license](https://opensource.org/licenses/alphabetical). To request ownership you must send us the following documents:
 
-1.	A photocopy of your government-issued photo ID.
-2.	One of the following documents proving the previous account holder’s status: 
+1. A photocopy of your government-issued photo ID.
+1. One of the following documents proving the previous account holder’s status: 
     - An official, government-issued death certificate if the previous account holder is deceased, or,
     - A certified document such as a certificate signed by a medical professional in charge of the care of an incapacitated account holder.
-3.	One of the following documents proving your right to ownership: 
+1. One of the following documents proving your right to ownership: 
     - Marriage certificate showing that you are the surviving spouse of the account holder,
     - Signed power of attorney,
     - Copy of a will or trust document naming you as executor or beneficiary,
     - Birth certificate for the account holder, if you are their parent, or,
     - Guardianship paperwork if you are a legal guardian of the account holder.
-    
+
 If you find yourself in need of invoking this policy, please send us an email at [support@nuget.org](mailto:support@nuget.org) with the ID and version of the package.
-    
+
 ## Transparency
 
 Building community trust in the governance of an open-source project is vital to its success. To that end, decision making must be done in a transparent, open fashion. Discussion about the project’s direction must be done publicly. The community should never be caught off-guard by a decision by the Benevolent Dictator. Additionally, discussion about project decisions must be archived so that community members can understand the entire history of a decision and its context.

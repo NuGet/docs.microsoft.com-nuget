@@ -1,31 +1,17 @@
 ---
-# required metadata
-
 title: How to Create a Localized NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/18/2018
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 824c3f45-c6c2-4c82-9d6d-62a19bfdc4a4
-
-# optional metadata
-
 description: Details on the two ways to create localized NuGet packages, either by including all assemblies in a single package or publishing separate assemblies.
 keywords: NuGet package localization, NuGet satellite assemblies, creating localized packages, NuGet localization conventions
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Creating localized NuGet packages
@@ -33,7 +19,7 @@ ms.reviewer:
 There are two ways to create localized versions of a library:
 
 1. Include all localized resources assemblies in a single package.
-2. Create separate localized satellite packages (NuGet 1.8 and later), by following a strict set of conventions.
+1. Create separate localized satellite packages (NuGet 1.8 and later), by following a strict set of conventions.
 
 Both methods have their advantages and disadvantages, as described in the following sections.
 
@@ -89,19 +75,18 @@ With these folders in place, you'll then reference all the files in your `.nuspe
 
 One example package that uses this approach is [Microsoft.Data.OData 5.4.0](http://nuget.org/packages/Microsoft.Data.OData/5.4.0).
 
-### Advantages and disadvantages
+### Advantages and disadvantages (localized resource assemblies)
 
 Bundling all languages in a single package has a few disadvantages:
 
 1. **Shared metadata**: Because a NuGet package can only contain a single `.nuspec` file, you can provide metadata for only a single language. That is, NuGet does not present support localized metadata.
-2. **Package size**: Depending on the number of languages you support, the library can become considerably large, which slows installing and restoring the package.
-3. **Simultaneous releases**: Bundling localized files into a single package requires that you release all assets in that package simultaneously, rather than being able to release each localization separately. Furthermore, any update to any one localization requires a new version of the entire package.
+1. **Package size**: Depending on the number of languages you support, the library can become considerably large, which slows installing and restoring the package.
+1. **Simultaneous releases**: Bundling localized files into a single package requires that you release all assets in that package simultaneously, rather than being able to release each localization separately. Furthermore, any update to any one localization requires a new version of the entire package.
 
 However, it also has a few benefits:
 
 1. **Simplicity**: Consumers of the package get all supported languages in a single install, rather than having to install each language separately. A single package is also easier to find on nuget.org.
-2. **Coupled versions**: Because all of the resource assemblies are in the same package as the primary assembly, they all share the same version number and don't run a risk of getting erroneously decoupled.
-
+1. **Coupled versions**: Because all of the resource assemblies are in the same package as the primary assembly, they all share the same version number and don't run a risk of getting erroneously decoupled.
 
 ## Localized satellite packages
 
@@ -136,11 +121,11 @@ When all of these conventions are met, NuGet will recognize the package as a sat
 
 You would create additional satellite assemblies in the same way for each supported language. For an example, examine the set of ASP.NET MVC packages:
 
-* [Microsoft.AspNet.Mvc](http://nuget.org/packages/Microsoft.AspNet.Mvc) (English primary)
-* [Microsoft.AspNet.Mvc.de](http://nuget.org/packages/Microsoft.AspNet.Mvc.de) (German)
-* [Microsoft.AspNet.Mvc.ja](http://nuget.org/packages/Microsoft.AspNet.Mvc.ja) (Japanese)
-* [Microsoft.AspNet.Mvc.zh-Hans](http://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hans) (Chinese (Simplified))
-* [Microsoft.AspNet.Mvc.zh-Hant](http://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hant) (Chinese (Traditional))
+- [Microsoft.AspNet.Mvc](http://nuget.org/packages/Microsoft.AspNet.Mvc) (English primary)
+- [Microsoft.AspNet.Mvc.de](http://nuget.org/packages/Microsoft.AspNet.Mvc.de) (German)
+- [Microsoft.AspNet.Mvc.ja](http://nuget.org/packages/Microsoft.AspNet.Mvc.ja) (Japanese)
+- [Microsoft.AspNet.Mvc.zh-Hans](http://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hans) (Chinese (Simplified))
+- [Microsoft.AspNet.Mvc.zh-Hant](http://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hant) (Chinese (Traditional))
 
 ### Summary of required conventions
 
@@ -150,16 +135,16 @@ You would create additional satellite assemblies in the same way for each suppor
 - A satellite package must declare a dependency on an exact version of the primary using the [] notation in its `.nuspec` file. Ranges are not supported.
 - A satellite package must place files in the `lib\[{framework}\]{language}` folder that exactly matches `{language}` in the filename.
 
-### Advantages and disadvantages
+### Advantages and disadvantages (satellite packages)
 
 Using satellite packages has a few benefits:
 
 1. **Package size**: The overall footprint of the primary package is minimized, and consumers only incur the costs of each language they want to use.
-2. **Separate metadata**: Each satellite package has its own `.nuspec` file and thus its own localized metadata because. This can allow some consumers to find packages more easily by searching nuget.org with localized terms.
-3. **Decoupled releases**: Satellite assemblies can be released over time, rather than all at once, allowing you to spread out your localization efforts.
+1. **Separate metadata**: Each satellite package has its own `.nuspec` file and thus its own localized metadata because. This can allow some consumers to find packages more easily by searching nuget.org with localized terms.
+1. **Decoupled releases**: Satellite assemblies can be released over time, rather than all at once, allowing you to spread out your localization efforts.
 
 However, satellite packages have their own set of disadvantages:
 
 1. **Clutter**: Instead of a single package, you have many packages that can lead to cluttered search results on nuget.org and a long list of references in a Visual Studio project.
-2. **Strict conventions**. Satellite packages must follow the conventions exactly or the localized versions won't be picked up properly.
-3. **Versioning**: Each satellite package must have an exact version dependency on the primary package. This means that updating the primary package may require updating all satellite packages as well, even if the resources didn't change.
+1. **Strict conventions**. Satellite packages must follow the conventions exactly or the localized versions won't be picked up properly.
+1. **Versioning**: Each satellite package must have an exact version dependency on the primary package. This means that updating the primary package may require updating all satellite packages as well, even if the resources didn't change.

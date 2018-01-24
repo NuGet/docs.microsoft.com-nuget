@@ -1,38 +1,24 @@
 ---
-# required metadata
-
 title: Create Cross-Platform NuGet Packages (for iOS, Android, and Windows) | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/09/2017
 ms.topic: get-started-article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: ae24824b-a138-4d12-a810-1f653ddffd32
-
-# optional metadata
-
 description: An end-to-end walkthrough of creating NuGet packages for Xamarin that use native APIs on iOS, Android, and Windows.
 keywords: create a package, packages for Xamarin, cross-platform packages
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Create cross-platform packages
 
 A cross-platform package contains code that uses native APIs on iOS, Android, and Windows, depending on the run-time operating system. Although this is straightforward to do, it's preferable to let developers consume the package from a PCL or .NET Standard libraries through a common API surface area.
 
-In this walkthrough you'll create a cross-platform NuGet package that can be used in mobile projects on iOS, Android, and Windows.
+In this walkthrough you create a cross-platform NuGet package that can be used in mobile projects on iOS, Android, and Windows.
 
 1. [Pre-requisites](#pre-requisites)
 1. [Create the project structure and abstraction code](#create-the-project-structure-and-abstraction-code)
@@ -48,7 +34,6 @@ In this walkthrough you'll create a cross-platform NuGet package that can be use
 
 > [!Note]
 > nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
-
 
 ## Create the project structure and abstraction code
 
@@ -119,12 +104,11 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 > [!Note]
 > To build for iOS you need a networked Mac connected to Visual Studio as described on [Introduction to Xamarin.iOS for Visual Studio](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/). If you don't have a Mac available, clear the iOS project in the configuration manager (step 3 above).
 
-
 ## Create and update the .nuspec file
 
 1. Open a command prompt, navigate to the `LoggingLibrary` folder that's one level below where the `.sln` file is, and run the NuGet `spec` command to create the initial `Package.nuspec` file:
 
-```
+```cli
 nuget spec
 ```
 
@@ -148,7 +132,7 @@ nuget spec
         </metadata>
     </package>
     ```
-    
+
 > [!Tip]
 > You can suffix your package version with `-alpha`, `-beta` or `-rc` to mark your package as pre-release, check [Pre-release versions](../create-packages/prerelease-packages.md) for more information about pre-release versions.
 
@@ -181,7 +165,6 @@ To include platform-specific reference assemblies, add the following to the `<fi
 
 > [!Note]
 > To shorten the names of the DLL and XML files, right-click on any given project, select the **Library** tab, and change the assembly names.
-
 
 ### Add dependencies
 
@@ -268,7 +251,7 @@ Your final `.nuspec` file should now look like the following, where again YOUR_N
 
 With the completed `.nuspec` referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
-```
+```cli
 nuget pack LoggingLibrary.nuspec
 ```
 
@@ -278,7 +261,6 @@ This will generate `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Opening this file in 
 
 > [!Tip]
 > A `.nupkg` file is just a ZIP file with a different extension. You can also examine package contents, then, by changing `.nupkg` to `.zip`, but remember to restore the extension before uploading a package to nuget.org.
-
 
 To make your package available to other developers,  follow the instructions on [Publish a package](../create-packages/publish-a-package.md).
 

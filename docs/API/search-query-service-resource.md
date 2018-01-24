@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: Search, NuGet API | Microsoft Docs
 author:
 - joelverhagen
@@ -13,16 +11,11 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 11ca2092-67dc-41a9-a7af-afe610d8febb
-
-# optional metadata
-
 description: The search service allows clients to query for packages by keyword and to filter results on certain package fields.
 keywords: NuGet search API, NuGet discover packages, API to query NuGet packages, API to browse NuGet packages
 ms.reviewer:
 - karann
 - unniravindranathan
-
 ---
 
 # Search
@@ -58,9 +51,7 @@ package metadata fields may also be considered.
 
 An unlisted package should never appear in search results.
 
-```
-GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
-```
+    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
 
 ### Request parameters
 
@@ -140,9 +131,7 @@ downloads | integer | yes      | The number of downloads for this specific packa
 
 ### Sample request
 
-```
-GET https://api-v2v3search-0.nuget.org/query?q=NuGet.Versioning&prerelease=false
-```
+    GET https://api-v2v3search-0.nuget.org/query?q=NuGet.Versioning&prerelease=false
 
 ### Sample response
 

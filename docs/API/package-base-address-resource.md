@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: Package Content, NuGet API | Microsoft Docs
 author:
 - joelverhagen
@@ -13,16 +11,11 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: ec68b5d1-a684-4995-b1a6-6210dbb24875
-
-# optional metadata
-
 description: The package base address is a simple interface for fetching the package itself.
 keywords: NuGet flat container, NuGet package base address, NuGet nupkg API, NuGet API package versions, NuGet API unlisted packages, NuGet API download nuspec
 ms.reviewer:
 - karann
 - unniravindranathan
-
 ---
 
 # Package Content
@@ -60,9 +53,7 @@ listing" for the package content API mentioned below.
 > [!Note]
 > This list contains both listed and unlisted package versions.
 
-```
-GET {@id}/{LOWER_ID}/index.json
-```
+    GET {@id}/{LOWER_ID}/index.json
 
 ### Request parameters
 
@@ -93,9 +84,7 @@ in the following endpoints.
 
 ### Sample request
 
-```
-GET https://api.nuget.org/v3-flatcontainer/owin/index.json
-```
+    GET https://api.nuget.org/v3-flatcontainer/owin/index.json
 
 ### Sample response
 
@@ -106,9 +95,7 @@ GET https://api.nuget.org/v3-flatcontainer/owin/index.json
 If the client knows a package ID and version and wants to download the package content, they only need to construct the
 following URL:
 
-```
-GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
-```
+    GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
 
 ### Request parameters
 
@@ -134,9 +121,7 @@ If the package does not exist on the package source, a 404 status code is return
 
 ### Sample request
 
-```
-GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
-```
+    GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
 
 ### Sample response
 
@@ -147,9 +132,7 @@ The binary stream that is the .nupkg for Newtonsoft.Json 9.0.1.
 If the client knows a package ID and version and wants to download the package manifest, they only need to construct the
 following URL:
 
-```
-GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
-```
+    GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
 
 ### Request parameters
 
@@ -174,9 +157,7 @@ If the package does not exist on the package source, a 404 status code is return
 
 ### Sample request
 
-```
-GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/6.0.4/newtonsoft.json.nuspec
-```
+    GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/6.0.4/newtonsoft.json.nuspec
 
 ### Sample response
 

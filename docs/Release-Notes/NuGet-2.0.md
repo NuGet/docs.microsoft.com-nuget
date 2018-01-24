@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 2.0 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,26 +6,13 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 51c7e94f-0084-4c62-bfba-7dfd81675361
-
-# optional metadata
-
 description: Release notes for NuGet 2.0 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 2.0 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
-
 
 # NuGet 2.0 Release Notes
 

@@ -5,29 +5,24 @@ title: NuGet Package Manager Console Guide | Microsoft Docs
 author: kraigb
 hms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/23/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 2b92b119-6861-406c-82af-9d739af230e4
 f1_keywords: 
   - "vs.nuget.packagemanager.console"
-
-# optional metadata
-
 description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
 keywords: NuGet package manager console, NuGet powershell, managing NuGet packages
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # Package Manager Console
 
 The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later. (It is not included with Visual Studio for Mac or Visual Studio Code.)
 
-The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation.
+The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. To use `nuget.exe` commands in the console, see [Using the nuget.exe CLI in the console](#using-the-nugetexe-cli-in-the-console).
 
 For example, finding and installing a package is done with three easy steps:
 
@@ -46,17 +41,6 @@ For example, finding and installing a package is done with three easy steps:
     # Install the Elmah package to the project named MyProject.
     Install-Package Elmah -ProjectName MyProject
     ```
-
-In this topic:
-
-- [Opening the console](#opening-the-console-and-console-controls)
-- [Installing a package](#installing-a-package)
-- [Uninstalling a package](#uninstalling-a-package)
-- [Finding a package](#finding-a-package)
-- [Updating a package](#updating-a-package)
-- [Availability of the console](#availability-of-the-console)
-- [Extending the Package Manager Console](#extending-the-package-manager-console)
-- [Setting up a NuGet PowerShell profile](#setting-up-a-nuget-powershell-profile)
 
 > [!Important]
 > All operations that are available in the console can also be done with the [NuGet CLI](../tools/nuget-exe-cli-reference.md). However, console commands operate within the context of Visual Studio and a saved project/solution and often accomplish more than their equivalent CLI commands. For example, installing a package through the console adds a reference to the project whereas the CLI command does not. For this reason, developers working in Visual Studio typically prefer using the console to the CLI.
@@ -99,8 +83,8 @@ Installing a package performs the following actions:
 - Displays applicable license terms in the console window with implied agreement. If you do not agree to the terms, you should uninstall the package immediately.
 - Adds a reference to the project in whatever reference format is in use. References subsequently appear in Solution Explorer and the applicable reference format file. Note, however, that with PackageReference, you need to save the project to see the changes in the project file directly.
 - Caches the package:
-    - PackageReference:  package is cached at `%USERPROFILE%\.nuget\packages` and the lock file i.e. `project.assets.json` is updated.
-    - `packages.config`: creates a `packages` folder at the solution root and copies the package files into a subfolder within it. The `package.config` file is updated.
+  - PackageReference:  package is cached at `%USERPROFILE%\.nuget\packages` and the lock file i.e. `project.assets.json` is updated.
+  - `packages.config`: creates a `packages` folder at the solution root and copies the package files into a subfolder within it. The `package.config` file is updated.
 - Updates `app.config` and/or `web.config` if the package uses [source and config file transformations](../create-packages/source-and-config-file-transformations.md).
 - Installs any dependencies if not already present in the project. This might update package versions in the process, as described in [Dependency Resolution](../consume-packages/dependency-resolution.md).
 - Displays the package's readme file, if available, in a Visual Studio window.
@@ -185,13 +169,11 @@ Some packages install new commands for the console. For example, `MvcScaffolding
 
 ![Installing and using MvcScaffold](media/PackageManagerConsoleInstall.png)
 
-## Setting up a NuGet PowerShell Profile
+## Setting up a NuGet PowerShell profile
 
 A PowerShell profile lets you make commonly-used commands available wherever you use PowerShell. NuGet supports a NuGet-specific profile typically found at the following location:
 
-```
-%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
-```
+    %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
 
 To find the profile, type `$profile` in the console:
 
@@ -201,3 +183,12 @@ C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
 For more details, refer to [Windows PowerShell Profiles](https://technet.microsoft.com/library/bb613488.aspx).
+
+## Using the nuget.exe CLI in the console
+
+To make the [`nuget.exe` CLI](nuget-exe-CLI-Reference.md) available in the Package Manager Console, install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the console:
+
+```ps
+# Other versions are available, see http://www.nuget.org/packages/NuGet.CommandLine/
+Install-Package NuGet.CommandLine -Version 4.4.1
+```

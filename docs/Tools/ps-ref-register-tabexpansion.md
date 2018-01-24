@@ -7,7 +7,6 @@ ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 8314ec69-ee8c-4933-84ef-e6d8a412d268
 description: Reference for Register-TabExpansion PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Register-TabExpansion
 ms.reviewer:

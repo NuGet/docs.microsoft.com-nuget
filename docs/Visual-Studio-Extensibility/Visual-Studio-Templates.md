@@ -3,7 +3,7 @@ title: NuGet Packages in Visual Studio templates | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/3/2018
+ms.date: 01/03/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -145,4 +145,4 @@ SDKs that are installed using an MSI can install NuGet packages directly on the 
 
 1. Require project/item templates to be saved on creation by including [`<PromptForSaveOnCreation>true</PromptForSaveOnCreation>`](/visualstudio/extensibility/promptforsaveoncreation-element-visual-studio-templates) in the `.vstemplate` file.
 
-1. Templates do not include a `packages.config` or `project.json` file, and do not include or any references or content that would be added when NuGet packages are installed.
+1. Templates do not include a `packages.config` file, and do not include or any references or content that would be added when NuGet packages are installed.

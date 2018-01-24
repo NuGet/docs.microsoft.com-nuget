@@ -7,13 +7,11 @@ ms.date: 6/1/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 2f7b8847-8259-4366-98c0-13cab88d6e1b
 description: Reference for Find-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Find-Package
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # Find-Package (Package Manager Console in Visual Studio)

@@ -1,42 +1,25 @@
 ---
-# required metadata
-
 title: Source and config file transformations for NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 4/24/2017
+ms.date: 04/24/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 20991d69-9e2e-4881-bbf2-96ae634e1872
-
-# optional metadata
-
 description: Details on the ability for NuGet packages to transform source code and configuration (XML) files when installed.
 keywords: NuGet package installation, NuGet package transformations, modifying configuration files, modifying source code
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Transforming source code and configuration files
 
-For projects using `packages.config` or `project.json`, NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times.
+For projects using `packages.config`, NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times. Transformations are not applied when a package is installed in a project using [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md).
 
-> [!Note]
-> Source and configuration file transformations are not applied when a package is installed in a project using [Package References in project files](../Consume-Packages/Package-References-in-Project-Files.md). 
-
-A **source code transformation** applies one-way token replacement to files in the package's `content` folder when the package is installed, where tokens refer to Visual Studio [project properties](/dotnet/api/vslangproj.projectproperties?redirectedfrom=MSDN&view=visualstudiosdk-2017#properties_). This allows you to insert a file into the project's namespace, or to customize code that would typically go into `global.asax` in an ASP.NET project.
+A **source code transformation** applies one-way token replacement to files in the package's `content` folder when the package is installed, where tokens refer to Visual Studio [project properties](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7). This allows you to insert a file into the project's namespace, or to customize code that would typically go into `global.asax` in an ASP.NET project.
 
 A **config file transformation** allows you to modify files that already exist in a target project, such as `web.config` and `app.config`. For example, your package might need to add an item to the `modules` section in the config file. This transformation is done by including special files in the package that describe the sections to add to the configuration files. When a package is uninstalled, those same changes are then reversed, making this a two-way transformation.
 
@@ -66,7 +49,7 @@ A **config file transformation** allows you to modify files that already exist i
 
     Upon installation, NuGet replaces `$rootnamespace$` with `Fabrikam` assuming the target project's whose root namespace is `Fabrikam`.
 
-The `$rootnamespace$` token is the most commonly used project property; all others are listed in the [Project Properties](/dotnet/api/vslangproj.projectproperties?redirectedfrom=MSDN&view=visualstudiosdk-2017#properties_) documentation on MSDN. Be mindful, of course, that some properties might be specific to the project type.
+The `$rootnamespace$` token is the most commonly used project property; all others are listed in [project properties](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7). Be mindful, of course, that some properties might be specific to the project type.
 
 ## Specifying config file transformations
 
@@ -133,7 +116,7 @@ To see the effect of installing and uninstalling the package, create a new ASP.N
 
 ### XDT transforms
 
-With NuGet 2.6 and later, you can modify config files using [XDT syntax](https://msdn.microsoft.com/library/dd465326.aspx). You can also have NuGet replace tokens with [Project Properties](/dotnet/api/vslangproj.projectproperties?redirectedfrom=MSDN&view=visualstudiosdk-2017#properties_) by including the property name within `$` delimeters (case-insensitive).
+With NuGet 2.6 and later, you can modify config files using [XDT syntax](https://msdn.microsoft.com/library/dd465326.aspx). You can also have NuGet replace tokens with [project properties](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7) by including the property name within `$` delimeters (case-insensitive).
 
 For example, the following `app.config.install.xdt` file will insert an `appSettings` element into `app.config` containing the `FullPath`, `FileName`, and `ActiveConfigurationSettings` values from the project:
 

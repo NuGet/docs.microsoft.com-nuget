@@ -1,52 +1,36 @@
 ---
-# required metadata
-
 title: How to package UWP controls with NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 3/21/2017
+ms.date: 03/21/2017
 ms.topic: get-started-article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 1f9de20a-f394-4cf2-8e40-ba0f4239cd5e
-
-# optional metadata
-
 description: How to create NuGet packages that contain UWP controls, including the necessary metadata and supporting files for the Visual Studio and Blend designers.
 keywords: NuGet UWP controls, Visual Studio XAML designer, Blend designer, custom controls
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Creating UWP controls as NuGet packages
 
 With Visual Studio 2017, you can take advantage of added capabilities for UWP controls that you deliver in NuGet packages. This guide walks you through these capabilities using the [ExtensionSDKasNuGetPackage sample](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage). 
 
-## Pre-requisites:
+## Pre-requisites
 
-1.	Visual Studio 2017
-1.	Understanding of how to [Create UWP Packages](create-uwp-packages.md)
+1. Visual Studio 2017
+1. Understanding of how to [Create UWP Packages](create-uwp-packages.md)
 
 ## Add toolbox/assets pane support for XAML controls
 
 To have a XAML control appear in the XAML designer’s toolbox in Visual Studio and the Assets pane of Blend, create a `VisualStudioToolsManifest.xml` file in the root of the `tools` folder of your package project. This file is not required if you don’t need the control to appear in the toolbox or Assets pane.
 
-```
-\build
-\lib
-\tools
-	\VisualStudioToolsManifest.xml
-```    
+    \build
+    \lib
+    \tools
+        VisualStudioToolsManifest.xml
 
 The structure of the file is as follows:
 
@@ -107,22 +91,18 @@ In the example below, the project contains an image file named “ManagedPackage
 
 UWP packages have a TargetPlatformVersion (TPV) and TargetPlatformMinVersion (TPMinV) that define the upper and lower bounds of the OS version where the app can be installed. TPV further specifies the version of the SDK against which the app is built. Be mindful of these properties when authoring a UWP package: using APIs outside the bounds of the platform versions defined in the app will cause either the build to fail or the app to fail at runtime.
 
-For example, let’s say you’ve set the TPMinV for you controls package to Windows 10 Anniversary Edition (10.0; Build 14393), so you want to ensure that the package is consumed only by UWP projects that match that lower bound. To allow your package to be consumed by `project.json` based UWP projects, you must package your controls with the following folder names:
+For example, let’s say you’ve set the TPMinV for you controls package to Windows 10 Anniversary Edition (10.0; Build 14393), so you want to ensure that the package is consumed only by UWP projects that match that lower bound. To allow your package to be consumed by UWP projects, you must package your controls with the following folder names:
 
-```
-\lib\uap10.0\*
-\ref\uap10.0\*
-```
+    \lib\uap10.0\*
+    \ref\uap10.0\*
 
 To enforce the appropriate TPMinV check, create an [MSBuild targets file](/visualstudio/msbuild/msbuild-targets) and package it under the build folder (replacing "your_assembly_name" with the name of your specific assembly):
 
-```
-\build
-	\uap10.0
-		your_assembly_name.targets
-\lib
-\tools
-```
+    \build
+      \uap10.0
+        your_assembly_name.targets
+    \lib
+    \tools
 
 Here is an example of what the targets file should look like:
 
@@ -144,22 +124,18 @@ Here is an example of what the targets file should look like:
 
 To configure where the control properties show up in the property inspector, add custom adorners, etc., place your `design.dll` file inside the `lib\<platform>\Design` folder as appropriate to the target platform. Also, to ensure that the **[Edit Template > Edit a Copy](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** feature works, you must include the `Generic.xaml` and any resource dictionaries that it merges in the `<AssemblyName>\Themes` folder. (This file has no impact on the runtime behavior of a control.)
 
-
-```
-\build
-\lib
-	\uap10.0.14393.0
-		\Design
-			\MyControl.design.dll
-		\your_assembly_name
-			\Themes		
-				Generic.xaml
-\tools
-```
+    \build
+    \lib
+      \uap10.0.14393.0
+        \Design
+          \MyControl.design.dll
+        \your_assembly_name
+          \Themes
+            Generic.xaml
+    \tools
 
 > [!Note]
 > By default, control properties will show up under the Miscellaneous category in the property inspector.
-
 
 ## Use strings and resources
 
@@ -171,15 +147,13 @@ For an example, refer to [MyCustomControl.cs](https://github.com/NuGet/Samples/b
 
 To package content such as images that can be used by your control or the consuming UWP project. add those files `lib\uap10.0.14393.0` folder as follows ("your_assembly_name" should again match your particular control):
 
-```
-\build
-\lib
-	\uap10.0.14393.0
-		\Design
-		\your_assembly_name
-\contosoSampleImage.jpg
-\tools
-```
+    \build
+    \lib
+      \uap10.0.14393.0
+        \Design
+          \your_assembly_name
+    \contosoSampleImage.jpg
+    \tools
 
 You may also author an[MSBuild targets file](/visualstudio/msbuild/msbuild-targets) to ensure the asset is copied to the consuming project’s output folder:
 

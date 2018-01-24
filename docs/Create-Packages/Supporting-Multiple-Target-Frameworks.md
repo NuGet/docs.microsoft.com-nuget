@@ -1,32 +1,19 @@
 ---
-# required metadata
-
 title: Multi-targeting for NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 9/27/2017
+ms.date: 09/27/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 2646ffcd-83ae-4086-8915-a7fba3f53e45
-
-# optional metadata
-
 description: Description of the various methods to target multiple .NET Framework versions from within a single NuGet package.
 keywords: NuGet package targeting, .NET Framework versions, NuGet and .NET, targeting multiple frameworks, NuGet package creation
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # Supporting multiple .NET framework versions
 
 *For .NET Core projects using NuGet 4.0+, see [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md) for details on cross-targeting.*
@@ -34,15 +21,6 @@ ms.reviewer:
 Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's specific to UWP, and another version that takes advantage of features in .NET Framework 4.6.
 
 To accommodate this, NuGet supports putting multiple versions of the same library in a single package when using the convention-based working directory method described in [Creating a package](../create-packages/creating-a-package.md#from-a-convention-based-working-directory).
-
-In this topic:
-
-- [Framework version folder structure](#framework-version-folder-structure)
-- [Matching assembly versions and the target framework in a project](#matching-assembly-versions-and-the-target-framework-in-a-project)
-- [Grouping assemblies by framework version](#grouping-assemblies-by-framework-version)
-- [Determining which NuGet target to use](#determining-which-nuget-target-to-use)
-- [Content files and PowerShell scripts](#content-files-and-powershell-scripts)
-
 
 ## Framework version folder structure
 
@@ -91,7 +69,6 @@ If you have architecture-specific assemblies, that is, separate assemblies that 
 
 See [Create UWP Packages](../Guides/Create-UWP-Packages.md) for an example of referencing these files in the `.nuspec` manifest.
 
-
 ## Matching assembly versions and the target framework in a project
 
 When NuGet installs a package that has multiple assembly versions, it tries to match the framework name of the assembly with the target framework of the project.
@@ -105,7 +82,6 @@ For example, consider the following folder structure in a package:
             \MyAssembly.dll
         \net461
             \MyAssembly.dll
-
 
 When installing this package in a project that targets .NET Framework 4.6, NuGet installs the assembly in the `net45` folder, because that's the highest available version that's less than or equal to 4.6.
 
@@ -152,7 +128,7 @@ When packaging libraries targeting the Portable Class Library it can be tricky t
 ## Content files and PowerShell scripts
 
 > [!Warning]
-> Mutable content files and script execution are available with the `packages.config` format only; they are deprecated when using `project.json` and PackagesReference formats and should should not be used for any new packages.
+> Mutable content files and script execution are available with the `packages.config` format only; they are deprecated with all other formats and should not be used for any new packages.
 
 With `packages.config`, content files and PowerShell scripts can be grouped by target framework using the same folder convention inside the `content` and `tools` folders. For example:
 
