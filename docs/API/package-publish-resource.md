@@ -133,5 +133,5 @@ X-NuGet-ApiKey | Header | string | yes      | For example, `X-NuGet-ApiKey: {USE
 
 Status Code | Meaning
 ----------- | -------
-204         | The package is now listed
+200         | The package is now listed
 404         | No package with the provided `ID` and `VERSION` exists

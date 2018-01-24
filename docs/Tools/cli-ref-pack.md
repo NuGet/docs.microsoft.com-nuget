@@ -37,7 +37,7 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 | --- | --- |
 | BasePath | Sets the base path of the files defined in the `.nuspec` file. |
 | Build | Specifies that the project should be built before building the package. |
-| Exclude | Specifies one or more wildcard patterns to exclude when creating a package. |
+| Exclude | Specifies one or more wildcard patterns to exclude when creating a package. To specify more than one pattern, repeat the -Exclude flag. See example below. |
 | ExcludeEmptyDirectories | Prevents inclusion of empty directories when building the package. |
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
@@ -94,5 +94,7 @@ nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="
 
 nuget pack foo.nuspec -Version 2.1.0
 
-nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 3.2
+nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
+
+nuget pack Package.nuspec -exclude "*.exe" -exclude "*.bat"
 ```

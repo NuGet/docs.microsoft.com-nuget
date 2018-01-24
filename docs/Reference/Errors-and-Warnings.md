@@ -13,6 +13,37 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
+
+f1_keywords:
+  - "NU1000"
+  - "NU1001"
+  - "NU1002"
+  - "NU1003"
+  - "NU1100"
+  - "NU1101"
+  - "NU1102"
+  - "NU1103"
+  - "NU1104"
+  - "NU1105"
+  - "NU1106"
+  - "NU1107"
+  - "NU1108"
+  - "NU1201"
+  - "NU1202"
+  - "NU1203"
+  - "NU1401"
+  - "NU1500"
+  - "NU1501"
+  - "NU1502"
+  - "NU1503"
+  - "NU1601"
+  - "NU1602"
+  - "NU1603"
+  - "NU1604"
+  - "NU1605"
+  - "NU1608"
+  - "NU1701"
+  - "NU1801"
 ---
 
 # Errors and warnings
@@ -128,7 +159,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Common causes** | Packages contain dependency on exact versions of a package instead of open-ended ranges. |
 | **Example message** | *Unable to satisfy conflicting requests for {id}: {conflict path} Framework: {target graph}* |
 
-<a name="NU1107"></a>
+<a name="NU1107"></a> 
 
 ### NU1107 (Previously NU1607)
 
@@ -258,8 +289,6 @@ The errors and warnings listed here are available only with [PackageReference-ba
 
 ## Resolver conflict warnings
 
-[NU1608](#nu1608)
-
 ### NU1608
 
 | | |
@@ -270,8 +299,6 @@ The errors and warnings listed here are available only with [PackageReference-ba
 
 ## Package fallback warnings
 
-[NU1701](#nu1701)
-
 ### NU1701
 
 | | |
@@ -281,8 +308,6 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Example message** | *Package 'NuGet.Versioning' was restored using 'portable-net45+win8' instead the project target framework 'netstandard1.5'. This package may not be fully compatible with your project.* |
 
 ## Feed warnings
-
-[NU1801](#nu1801)
 
 ### NU1801
 

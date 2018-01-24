@@ -136,7 +136,7 @@ nuget locals -list global-packages
 Go into any *package\version* folder, copy the `.nupkg` file to a `.zip` file, then open that `.zip` file and examine the `.nuspec` within it.
 
 > [!Note]
-> When creating a `.nuspec` from a Visual Studio project, the manifest contains tokens that are be replaced with information from the project when the package is built. See [Creating the .nuspec from a Visual Studio project](#from-a-visual-studio-project).
+> When creating a `.nuspec` from a Visual Studio project, the manifest contains tokens that are replaced with information from the project when the package is built. See [Creating the .nuspec from a Visual Studio project](#from-a-visual-studio-project).
 
 ## Creating the .nuspec file
 

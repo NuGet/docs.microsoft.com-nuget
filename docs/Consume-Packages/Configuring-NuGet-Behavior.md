@@ -22,13 +22,13 @@ NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Con
 
 | Scope | NuGet.Config file location | Description |
 | --- | --- | --- |
-| Project | Project folder or any folder up to the drive root | In a project folder, settings apply only to that project. In parent folders that contain multiple projects subfolders, settings apply to all projects in those subfolders. |
-| User | Windows: %APPDATA%\NuGet\NuGet.Config<br/>Mac/Linux: ~/.nuget/NuGet.Config | Settings apply to all operations, but are overridden by any project-level settings. When using CLI commands, you can specify a different config file using the `-configFile` switch to ignore any settings in the default user-level file. |
+| Project | Current folder (aka Project folder) or any folder up to the drive root.| In a project folder, settings apply only to that project. In parent folders that contain multiple projects subfolders, settings apply to all projects in those subfolders. |
+| User | Windows: %APPDATA%\NuGet\NuGet.Config<br/>Mac/Linux: ~/.nuget/NuGet.Config | Settings apply to all operations, but are overridden by any project-level settings. |
 | Computer | Windows: %ProgramFiles(x86)%\NuGet\Config<br/>Mac/Linux: $XDG_DATA_HOME (typically ~/.local/share) | Settings apply to all operations on the computer, but are overriden by any user- or project-level settings. |
 
 Notes for earlier versions of NuGet:
 - NuGet 3.3 and earlier used a `.nuget` folder for solution-wide settings. This file not used in NuGet 3.4+.
-- For NuGet 2.6 to 3.x, the computer-level config file on Windows was located in %ProgramData%\NuGet\Config[\\{IDE}[\\{Version}[\\{SKU}]]]\NuGet.Config, where *{IDE}* can be *VisualStudio*, *{Version}* was the Visual Studio version such as *14.0*, and *{SKU}* is either *Community*, *Pro*, or *Enterprise*. To migrate settings to NuGet 4.0+, simply copy the config file to %ProgramFiles(x86)%\NuGet\Config. On Linus, this previous location was /etc/opt, and on Mac, /Library/Application Support.
+- For NuGet 2.6 to 3.x, the computer-level config file on Windows was located in %ProgramData%\NuGet\Config[\\{IDE}[\\{Version}[\\{SKU}]]]\NuGet.Config, where *{IDE}* can be *VisualStudio*, *{Version}* was the Visual Studio version such as *14.0*, and *{SKU}* is either *Community*, *Pro*, or *Enterprise*. To migrate settings to NuGet 4.0+, simply copy the config file to %ProgramFiles(x86)%\NuGet\Config. On Linux, this previous location was /etc/opt, and on Mac, /Library/Application Support.
 
 ## Changing config settings
 

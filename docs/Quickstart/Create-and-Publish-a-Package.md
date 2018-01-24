@@ -109,14 +109,14 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `push` comm
 
 1. Once logged in, select your user name (on the upper right), then select **API Keys**.
 
-1. Select **Create**, provide a name for your key, select **Select Scopes > Push**Under **API Key**, enter * for **Glob pattern**, then select **Create**.
+1. Select **Create**, provide a name for your key, select **Select Scopes > Push** under **API Key**, enter * for **Glob pattern**, then select **Create**.
 
 1. Once the key is created, select **Copy** to retrieve the access key you'll need in the CLI:
 
     ![Copying the API key to the clipboard](media/QS_Create-02-APIKey.png)
 
     > [!Warning]
-    > Save your key in a secure location and keep is a secret. If your key is accidentally revealed, you can always regenerate it at any time. You can also remove the API key if you no longer want to push packages via the CLI.
+    > Save your key in a secure location and keep it secret. If your key is accidentally revealed, you can regenerate it at any time. You can also remove the API key if you no longer want to push packages via the CLI.
 
 1. At a command prompt, run the following command, specifying your package name and replacing the key with the value copied in step 4:
 
