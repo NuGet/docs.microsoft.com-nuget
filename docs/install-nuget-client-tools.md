@@ -26,7 +26,7 @@ To work with NuGet, as a package consumer or creator, you can use [cross-platfor
 | [nuget.exe](#nugetexe-cli) | Provides all NuGet capabilities on Windows and most features running under [Mono](http://www.mono-project.com/docs/getting-started/install/) on Mac and Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
 | [Visual Studio](#visual-studio) | Provides NuGet capabilities through the Package Manager UI and Package Manager Console. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
-The [MSBuild CLI](../schema/msbuild-targets.md) also provides the ability to restore and create packages, which is primarily useful on build servers. MSBuild is not otherwise a general-purpose tool for working with NuGet.
+The [MSBuild CLI](schema/msbuild-targets.md) also provides the ability to restore and create packages, which is primarily useful on build servers. MSBuild is not otherwise a general-purpose tool for working with NuGet.
 
 ## CLI tools
 
