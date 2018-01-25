@@ -1,8 +1,10 @@
 # [What is NuGet?](what-is-nuget.md)
 # [Install NuGet client tools](install-nuget-client-tools.md)
 # Quickstart
-## [Create and Publish a Package](Quickstart/Create-and-Publish-a-Package.md)
-## [Use a Package](Quickstart/Use-a-Package.md)
+## [Create and publish a package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
+## [Create and publish a package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
+## [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
+## [Install and use a package (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
 # Guides
 ## [Create NET Standard Packages (Visual Studio 2017)](Guides/Create-NET-Standard-Packages-VS2017.md)
 ## [Create NET Standard Packages (Visual Studio 2015)](Guides/Create-NET-Standard-Packages-VS2015.md)

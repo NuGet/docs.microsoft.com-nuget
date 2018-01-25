@@ -49,6 +49,15 @@
             "source_path": "docs/Quickstart/restore.md",
             "redirect_url": "/nuget/consume-packages/package-restore-troubleshooting",
             "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Quickstart/Create-and-Publish-a-Package.md",
+            "redirect_url": "/nuget/quickstart/create-and-publish-a-package-using-visual-studio",
+            "redirect_document_id": false
+        },        {
+            "source_path": "docs/Quickstart/Use-a-Package.md",
+            "redirect_url": "/nuget/quickstart/install-and-use-a-package-in-visual-studio",
+            "redirect_document_id": false
         }
     ]
 }
