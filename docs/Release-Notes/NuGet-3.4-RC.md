@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 3.4-RC Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,24 +6,12 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 239d3d95-5a72-4fac-8389-b6deac27884d
-
-# optional metadata
-
 description: Release notes for NuGet 3.4 RC including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 3.4 RC release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # NuGet 3.4-RC Release Notes
@@ -34,9 +20,9 @@ ms.reviewer:
 
 NuGet 3.4-RC was released March 3, 2016 alongside the Visual Studio 2015 Update 2 RC and was built with a few tenets in minds:
 
-*  Cross-Platform support
-*  Performance improvements
-*  Minor UI improvements
+* Cross-Platform support
+* Performance improvements
+* Minor UI improvements
 
 The following features are available in this RC, with more planned for the 3.4 final release.
 

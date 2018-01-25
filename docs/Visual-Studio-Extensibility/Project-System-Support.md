@@ -1,31 +1,17 @@
 ---
-# required metadata
-
 title: NuGet Support for the Visual Studio Project System | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/09/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 9d7fa7f6-82ed-4df6-9734-f43a3d8e3b98
-
-# optional metadata
-
 description: Integration of NuGet into the Visual Studio project system for third-party project types.
 keywords: NuGet in Visual Studio, custom project types, Visual Studio projects
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # NuGet support for the Visual Studio project system
@@ -34,20 +20,18 @@ To support third-party project types in Visual Studio, NuGet 3.x+ supports the [
 
 To integrate with NuGet, a project system must advertise its own support for all the project capabilities described in this topic.
 
-
-> [!NOTE]
-> Do not declare capabilities that your project does not actually have for the sake of enabling packages to install in your project. Many features of Visual Studio and other extensions depend on project capabilities besides the NuGet client. Falsely advertising capabilities of your project can lead these components to malfunction and your users' experience to degrade.
+> [!Note]
+> Don't declare capabilities that your project does not actually have for the sake of enabling packages to install in your project. Many features of Visual Studio and other extensions depend on project capabilities besides the NuGet client. Falsely advertising capabilities of your project can lead these components to malfunction and your users' experience to degrade.
 
 ## Advertise project capabilities
 
 The NuGet client determines which packages are compatible with your project type based on the [project's capabilities](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md), as described in the following table.
 
-
-|Capability|Description|
-|----------------|-----------|
-|AssemblyReferences|Indicates that the project supports assembly references (distinct from WinRTReferences)|
-|DeclaredSourceItems|Indicates that the project is a typical MSBuild project (not DNX) in that it declares source items in the project itself (rather than a `project.json` file that assumes all files in the folder are part of a compilation).|
-|UserSourceItems|Indicates that the user is allowed to add arbitrary files to their project.|
+| Capability | Description |
+| --- | --- |
+| AssemblyReferences | Indicates that the project supports assembly references (distinct from WinRTReferences). |
+| DeclaredSourceItems | Indicates that the project is a typical MSBuild project (not DNX) in that it declares source items in the project itself. |
+| UserSourceItems|Indicates that the user is allowed to add arbitrary files to their project. |
 
 For CPS-based project systems, the implementation details for project capabilities described in the rest of this section have been done for you. See [declaring project capabilities in CPS projects](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md#how-to-declare-project-capabilities-in-your-project).
 
@@ -85,9 +69,8 @@ public interface IVsBooleanSymbolPresenceChecker
 }
 ```
 
-
 A sample implementation of this interface would then be:
-    
+
 ```cs
 class VsProjectCapabilitiesPresenceChecker : IVsBooleanSymbolPresenceChecker
 {

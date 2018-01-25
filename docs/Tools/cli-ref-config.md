@@ -3,11 +3,10 @@ title: NuGet CLI config command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: a50295ff-8be9-47d9-a260-822e899334cb
 description: Reference for the nuget.exe config command
 keywords: nuget config reference, config command
 ms.reviewer:
@@ -23,7 +22,7 @@ Gets or sets NuGet configuration values. For additional usage, see [Configuring 
 
 ## Usage
 
-```
+```cli
 nuget config -Set <name>=[<value>] [<name>=<value> ...] [options]
 nuget config -AsPath <name> [options]
 ```
@@ -39,17 +38,17 @@ In NuGet 3.4+, `<value>` can use [environment variables](cli-ref-environment-var
 | Option | Description |
 | --- | --- |
 | AsPath | Returns the config value as a path, ignored when `-Set` is used. |
-| ConfigFile | *(2.5+)* The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.Config* is used. |
+| ConfigFile | The NuGet configuration file to modify. If not specified, *%AppData%\NuGet\NuGet.Config* is used. |
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed (2.5+)*. |
+| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
 ### Examples
 
-```
+```cli
 nuget config -Set repositoryPath=c:\packages -configfile c:\my.config
 
 nuget config -Set repositoryPath=

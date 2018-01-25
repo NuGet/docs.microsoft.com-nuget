@@ -3,17 +3,15 @@ title: NuGet Uninstall-Package PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/1/2017
+ms.date: 06/01/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: f4f5dc79-8e8e-4012-8986-873a5d9283d9
 description: Reference for Uninstall-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Uninstall-Package
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # Uninstall-Package (Package Manager Console in Visual Studio)

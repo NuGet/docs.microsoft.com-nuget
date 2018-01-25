@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 1.8 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,26 +6,13 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: e694ee1a-fe4c-4397-8d0a-7336be4dfebe
-
-# optional metadata
-
 description: Release notes for NuGet 1.8 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 1.8 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
-
 
 # NuGet 1.8 Release Notes
 

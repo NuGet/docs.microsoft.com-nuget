@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 1.5 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,28 +6,15 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 3ec1ff28-18fc-4d53-bd43-208619a7270a
-
-# optional metadata
-
 description: Release notes for NuGet 1.5 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 1.5 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
-
- # NuGet 1.5 Release Notes
+# NuGet 1.5 Release Notes
 
 [NuGet 1.4 Release Notes](../release-notes/nuget-1.4.md) | [NuGet 1.6 Release Notes](../release-notes/nuget-1.6.md)
 
@@ -49,6 +34,7 @@ advantage of.
 For more details about this feature, read this [blog post by the developer of the feature](http://blogs.msdn.com/b/marcinon/archive/2011/07/08/project-templates-and-preinstalled-nuget-packages.aspx).
 
 ### Explicit Assembly References
+
 Added a new `<references />` element used to explicitly specify which assemblies within the
 the package should be referenced.
 

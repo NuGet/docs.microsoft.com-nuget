@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: Push and Delete, NuGet API | Microsoft Docs
 author:
 - joelverhagen
@@ -13,16 +11,11 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 1eaa403a-5c13-4c05-9352-2f791b98aa7e
-
-# optional metadata
-
 description: The publish service allows clients to publish new packages and unlist or delete existing packages.
 keywords: NuGet API push package, NuGet API delete package, NuGet API unlist package, NuGet API upload package, NuGet API create package
 ms.reviewer:
 - karann
 - unniravindranathan
-
 ---
 
 # Push and Delete
@@ -59,9 +52,7 @@ endpoint, see below.
 nuget.org supports pushing new packages using the following API. If the package with the provided ID and version
 already exists, nuget.org will reject the push. Other package sources may support replacing an existing package.
 
-```
-PUT https://www.nuget.org/api/v2/package
-```
+    PUT https://www.nuget.org/api/v2/package
 
 ### Request parameters
 
@@ -103,9 +94,7 @@ implementations are free to interpret this signal as a hard delete, soft delete,
 [NuGet.Server](https://www.nuget.org/packages/NuGet.Server) (a server implementation only supporting the older V2 API)
 supports handling this request as either an unlist or a hard delete based on a configuration option.
 
-```
-DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
-```
+    DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### Request parameters
 
@@ -130,9 +119,7 @@ HTTP method instead of the `DELETE` method.
 
 If the package is already listed, the request still succeeds.
 
-```
-POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
-```
+    POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### Request parameters
 

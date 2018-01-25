@@ -17,32 +17,14 @@ ms.reviewer:
 
 # Creating NuGet packages
 
-No matter what your package does or what code it contains, you use `nuget.exe` to package that functionality into a component that can be shared with and used by any number of other developers. To install `nuget.exe`, see [Install NuGet CLI](../guides/Install-NuGet.md#nuget-cli). Note that Visual Studio does not automatically include `nuget.exe`.
+No matter what your package does or what code it contains, you use `nuget.exe` to package that functionality into a component that can be shared with and used by any number of other developers. To install `nuget.exe`, see [Install NuGet CLI](../install-nuget-client-tools.md#nugetexe-cli). Note that Visual Studio does not automatically include `nuget.exe`.
 
-Technically speaking, a NuGet package is just a ZIP file that's been renamed with the `.nupkg` extension and whose contents match certain conventions. This topic describes the detailed process of creating a package that meets those conventions. For a focused walkthrough, refer to [Create and Publish a Package Quickstart](../quickstart/create-and-publish-a-package.md).
+Technically speaking, a NuGet package is just a ZIP file that's been renamed with the `.nupkg` extension and whose contents match certain conventions. This topic describes the detailed process of creating a package that meets those conventions. For a focused walkthrough, refer to [Quickstart: create and publish a package](../quickstart/create-and-publish-a-package.md).
 
-Packaging begins with the compiled code (assemblies), symbols, and/or other files that you want to deliver as a package (see [Overview and workflow](Overview-and-Workflow.md)). This process is independent from compiling or otherwise generating the files that go into the package, although you can use draw from information in a project file to keep the compiled assemblines and packages in sync.
-
-In this topic:
-
-- [Deciding which assemblies to package](#deciding-which-assemblies-to-package)
-- [The role and structure of the `.nuspec` file](#the-role-and-structure-of-the-nuspec-file)
-- [Creating the `.nuspec` file](#creating-the-nuspec-file) from:
-    - [A convention-based working directory](#from-a-convention-based-working-directory)
-    - [An assembly DLL](#from-an-assembly-dll)
-    - [A Visual Studio project](#from-a-visual-studio-project)
-    - [New file with default values](#new-file-with-default-values)    
-- [Choosing a unique package identifier and setting the version number](#choosing-a-unique-package-identifier-and-setting-the-version-number)
-- [Setting a package type](#setting-a-package-type) (NuGet 3.5 and later)
-- [Adding a readme and other files](#adding-a-readme-and-other-files)
-- [Including MSBuild props and targets in a package](#including-msbuild-props-and-targets-in-a-package)
-- [Authoring packages that contain COM interop assemblies](#authoring-packages-with-com-interop-assemblies)
-- [Running nuget pack to generate the .nupkg file](#running-nuget-pack-to-generate-the-nupkg-file)
-
-After these core steps, you can incorporate a variety of other features as described elsewhere in this documentation. See [Next steps](#next-steps) below.
+Packaging begins with the compiled code (assemblies), symbols, and/or other files that you want to deliver as a package (see [Overview and workflow](overview-and-workflow.md)). This process is independent from compiling or otherwise generating the files that go into the package, although you can use draw from information in a project file to keep the compiled assemblies and packages in sync.
 
 > [!Note]
-> This topic applies to project types other than .NET Core projects using Visual Studio 2017 and NuGet 4.0+. In those .NET Core projects, NuGet uses information in the `.csproj` file directly. For details, see [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) and [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).
+> This topic applies to project types other than .NET Core projects using Visual Studio 2017 and NuGet 4.0+. In those .NET Core projects, NuGet uses information in the project file directly. For details, see [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) and [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).
 
 ## Deciding which assemblies to package
 
@@ -51,7 +33,8 @@ Most general-purpose packages contain one or more assemblies that other develope
 - In general, it's best to have one assembly per NuGet package, provided that each assembly is independently useful. For example, if you have a `Utilities.dll` that depends on `Parser.dll`, and `Parser.dll` is useful on its own, then create one package for each. Doing so allows developers to use `Parser.dll` independently of `Utilities.dll`.
 
 - If your library is composed of multiple assemblies that aren't independently useful, then it's fine to combine them into one package. Using the previous example, if `Parser.dll` contains code that's used only by `Utilities.dll`, then it's fine to keep `Parser.dll` in the same package.
-    - Similarly, if `Utilities.dll` depends on `Utilities.resources.dll`, where again the latter is not useful on its own, then put both in the same package.
+
+- Similarly, if `Utilities.dll` depends on `Utilities.resources.dll`, where again the latter is not useful on its own, then put both in the same package.
 
 Resources are, in fact, a special case. When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, *excluding* those that are named `.resources.dll` because they are assumed to be localized satellite assemblies (see [Creating localized packages](creating-localized-packages.md)). For this reason, avoid using `.resources.dll` for files that otherwise contain essential package code.
 
@@ -142,11 +125,11 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
 </package>
 ```
 
-For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `include` and `exclude` attributes on the `dependency` element. See [.nuspec Reference - Dependencies](../Schema/nuspec.md#dependencies).
+For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `include` and `exclude` attributes on the `dependency` element. See [.nuspec Reference - Dependencies](../schema/nuspec.md#dependencies).
 
 Because the manifest is included in the package created from it, you can find any number of additional examples by examining existing packages. A good source is the global package cache on your machine, the location of which is returned by the following command:
 
-```
+```cli
 nuget locals -list global-packages
 ```
 
@@ -194,7 +177,7 @@ Because your folder structure can contain any number of assemblies for any numbe
 
 In any case, once you have the desired folder structure in place, run the following command in that folder to create the `.nuspec` file:
 
-```
+```cli
 nuget spec
 ```
 
@@ -204,7 +187,7 @@ Again, the generated `.nuspec` contains no explicit references to files in the f
 
 In the simple case of creating a package from an assembly, you can generate a `.nuspec` file from the metadata in the assembly using the following command:
 
-```
+```cli
 nuget spec <assembly-name>.dll
 ```
 
@@ -214,7 +197,7 @@ Using this form replaces a few placeholders in the manifest with specific values
 
 Creating a `.nuspec` from a `.csproj` or `.vbproj` file is convenient because other packages that have been installed into those project are automatically referenced as dependencies. Simply use the following command in the same folder as the project file:
 
-```
+```cli
 # Use in a folder containing a project file <project-name>.csproj or <project-name>.vbproj
 nuget spec
 ```
@@ -237,7 +220,7 @@ Note that there are several additional packaging options available when working 
 
 *NuGet 2.x only. Not available in NuGet 3.0+.*
 
-NuGet 2.x supported the notion of a solution-level package that installs tools or additional commands for the Package Manager Console (the contents of the `tools` folder), but does not add references, content, or build customizations to any projects in the solution. Such packages contain no files in its direct `lib`, `content`, or `build` folders, and none of its dependencies have files in their respective `lib`, `content`, or `build` folders. 
+NuGet 2.x supported the notion of a solution-level package that installs tools or additional commands for the Package Manager Console (the contents of the `tools` folder), but does not add references, content, or build customizations to any projects in the solution. Such packages contain no files in its direct `lib`, `content`, or `build` folders, and none of its dependencies have files in their respective `lib`, `content`, or `build` folders.
 
 NuGet tracks installed solution-level packages in a `packages.config` file in the `.nuget` folder, rather than the project's `packages.config` file.
 
@@ -245,7 +228,7 @@ NuGet tracks installed solution-level packages in a `packages.config` file in th
 
 The following command creates a default manifest with placeholders, which ensures you start with the proper file structure:
 
-```
+```cli
 nuget spec [<package-name>]
 ```
 
@@ -282,11 +265,9 @@ With NuGet 3.5+, packages can be marked with a specific *package type* to indica
 
 - `DotnetCliTool` type packages are extensions to the [.NET CLI](/dotnet/articles/core/tools/index) and are invoked from the command line. Such packages can be installed only in .NET Core projects and have no effect on restore operations. More details about these per-project extensions are available in the  [.NET Core extensibility](/dotnet/articles/core/tools/extensibility#per-project-based-extensibility) documentation.
 
-    When a DotnetCliTool package is installed, Visual Studio places the package in the `project.json` `tools` node instead of the `dependencies` node.
-
 - Custom type packages use an arbitrary type identifier that conforms to the same format rules as package IDs. Any type other than `Dependency` and `DotnetCliTool`, however, are not recognized by the NuGet Package Manager in Visual Studio.
 
-Package types are set either in the `.nuspec` file or in `project.json`. In both cases, it's best for backwards compatibility to *not* explicitly set the `Dependency` type and to instead rely on NuGet assuming this type when no type is specified.
+Package types are set in the `.nuspec` file. It's best for backwards compatibility to *not* explicitly set the `Dependency` type and to instead rely on NuGet assuming this type when no type is specified.
 
 - `.nuspec`: Indicate the package type within a `packageTypes\packageType` node under the `<metadata>` element:
 
@@ -300,17 +281,6 @@ Package types are set either in the `.nuspec` file or in `project.json`. In both
         </packageTypes>
         </metadata>
     </package>
-    ```
-
-- `project.json`: Indicate the package type within a `packOptions.packageType` property json:
-
-    ```json
-    {
-        // ...
-        "packOptions": {
-        "packageType": "DotnetCliTool"
-        }
-    }
     ```
 
 ## Adding a readme and other files
@@ -383,7 +353,7 @@ With NuGet 3.x, targets are not added to the project but are instead made availa
 
 Packages that contain COM interop assemblies must include an appropriate [targets file](#including-msbuild-props-and-targets-in-a-package) so that the correct `EmbedInteropTypes` metadata is added to projects using the PackageReference format. By default, the `EmbedInteropTypes` metadata is always false for all assemblies when PackageReference is used, so the targets file adds this metadata explicitly. To avoid conflicts, the target name should be unique; ideally, use a combination of your package name and the assembly being embedded, replacing the `{InteropAssemblyName}` in the example below with that value. (Also see [NuGet.Samples.Interop](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop) for an example.)
 
-```xml      
+```xml
 <Target Name="EmbeddingAssemblyNameFromPackageId" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
   <PropertyGroup>
     <_InteropAssemblyFileName>{InteropAssemblyName}</_InteropAssemblyFileName>
@@ -398,7 +368,7 @@ Packages that contain COM interop assemblies must include an appropriate [target
 
 Note that when using the `packages.config` reference format, adding references to the assemblies from the packages causes NuGet and Visual Studio to check for COM interop assemblies and set the `EmbedInteropTypes` to true in the project file. In this case the targets are overriden.
 
-Additionally, by default the [build assets do not flow transitively](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets). Packages authored as described here work differently when they are pulled as a transitive dependency from a project to project reference. The package consumer can allow them to flow by modifying the PrivateAssets default value to not include build.  
+Additionally, by default the [build assets do not flow transitively](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets). Packages authored as described here work differently when they are pulled as a transitive dependency from a project to project reference. The package consumer can allow them to flow by modifying the PrivateAssets default value to not include build.
 
 <a name="creating-the-package"></a>
 
@@ -406,13 +376,13 @@ Additionally, by default the [build assets do not flow transitively](../consume-
 
 When using an assembly or the convention-based working directory, create a package by running `nuget pack` with your `.nuspec` file, replacing `<manifest-name>` with your specific filename:
 
-```
+```cli
 nuget pack <project-name>.nuspec
 ```
 
 When using a Visual Studio project, run `nuget pack` with your project file, which automatically loads the project's `.nuspec` file and replaces any tokens within it using values in the project file:
 
-```
+```cli
 nuget pack <project-name>.csproj
 ```
 
@@ -436,7 +406,7 @@ The following options are a few that are common with Visual Studio projects:
 
 - **Referenced projects**: If the project references other projects, you can add the referenced projects as part of the package, or as dependencies, by using the `-IncludeReferencedProjects` option:
 
-    ```
+    ```cli
     nuget pack MyProject.csproj -IncludeReferencedProjects
     ```
 
@@ -446,13 +416,13 @@ The following options are a few that are common with Visual Studio projects:
 
 - **Build configuration**: By default, NuGet uses the default build configuration set in the project file, typically *Debug*. To pack files from a different build configuration, such as *Release*, use the `-properties` option with the configuration:
 
-    ```
+    ```cli
     nuget pack MyProject.csproj -properties Configuration=Release
     ```
 
 - **Symbols**: to include symbols that allow consumers to step through your package code in the debugger, use the `-Symbols` option:
 
-    ```
+    ```cli
     nuget pack MyProject.csproj -symbols
     ```
 

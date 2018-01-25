@@ -1,27 +1,20 @@
 ---
-# required metadata
-
 title: NuGet CLI locals command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 7f672c7c-74c9-4296-bc27-4d47882b541c
-
-# optional metadata
-
 description: Reference for the nuget.exe locals command
 keywords: nuget locals reference, locals command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
-## locals command (NuGet CLI)
+# locals command (NuGet CLI)
 
 **Applies to:** package consumption &bullet; **Supported versions:** 3.3+
 
@@ -29,7 +22,7 @@ Clears or lists local NuGet resources such as the http-request cache, packages c
 
 ## Usage
 
-```
+```cli
 nuget locals <cache> [options]
 ```
 
@@ -51,7 +44,7 @@ Also see [Environment variables](cli-ref-environment-variables.md)
 
 ## Examples
 
-```
+```cli
 nuget locals all -list
 nuget locals http-cache -clear
 ```

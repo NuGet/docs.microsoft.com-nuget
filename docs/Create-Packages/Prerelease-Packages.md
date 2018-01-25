@@ -3,11 +3,10 @@ title: Pre-release versions in NuGet packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/14/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: df6a366a-22c1-47bb-8017-18231311ce88
 description: Guidance for building pre-release packages
 keywords: versioning, NuGet package versioning, NuGet prerelease versions, NuGet prerelease packages, preview package versions, RC package versions, Beta package versions, NuGet semantic versioning
 ms.reviewer:
@@ -43,7 +42,6 @@ You can specify such versions in two ways:
 
 When you’re ready to release a stable version, just remove the suffix and the package takes precedence over any pre-release versions. Again, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
 
-
 ## Installing and updating pre-release packages
 
 By default, NuGet does not include pre-release versions when working with packages, but you can change this behavior as follows:
@@ -57,7 +55,6 @@ By default, NuGet does not include pre-release versions when working with packag
 - **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../tools/powershell-reference.md).
 
 - **NuGet CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../tools/nuget-exe-cli-reference.md)
-
 
 ## Semantic versioning
 
@@ -82,16 +79,14 @@ With this in mind, it's generally good to follow recognized naming conventions s
 
 Whatever suffixes you use, however, NuGet will give them precedence in reverse alphabetical order:
 
-```
-1.0.1
-1.0.1-zzz
-1.0.1-rc
-1.0.1-open
-1.0.1-beta12
-1.0.1-beta05
-1.0.1-beta
-1.0.1-alpha2
-1.0.1-alpha
-```
+    1.0.1
+    1.0.1-zzz
+    1.0.1-rc
+    1.0.1-open
+    1.0.1-beta12
+    1.0.1-beta05
+    1.0.1-beta
+    1.0.1-alpha2
+    1.0.1-alpha
 
 As shown, the version without any suffix will always take precedence over pre-release versions. Note also that if you use numerical suffixes with pre-release tags that might use double-digit numbers (or more), use leading zeroes as in beta01 and beta05 to ensure that they sort correctly when the numbers get larger.

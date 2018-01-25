@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 3.5 Beta Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -9,19 +7,14 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 082a96b9-607b-4225-864d-e1cea537f591
-
-# optional metadata
-
 description: Release notes for NuGet 3.5 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 3.5 release notes, bug fixes, known issues, added features, DCRs
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
-#NuGet 3.5 Release Notes
+# NuGet 3.5 Release Notes
 
 [NuGet 3.5-RC Release Notes](../release-notes/nuget-3.5-RC.md) | [NuGet 4.0 RC Release Notes](../release-notes/nuget-4.0-RC.md)
 

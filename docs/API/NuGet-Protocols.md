@@ -1,6 +1,4 @@
 ---
-# required metadata 
-
 title: nuget.org Protocols | Microsoft Docs
 author: anangaur
 ms.author: anangaur
@@ -9,17 +7,13 @@ ms.date: 10/30/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: ba1d9742-9f1c-42ff-8c30-8e953e23c501
-
-# optional metadata
-
 description: The evolving nuget.org protocols to interact with NuGet clients.
 ms.reviewer:
 - kraigb
 - karann-msft
-
 ---
-# nuget.org Protocols
+
+# nuget.org protocols
 
 To interact with nuget.org, clients need to follow certain protocols. Because these protocols keep evolving, clients
 must identify the protocol version they use when calling specific nuget.org APIs. This allows nuget.org to introduce
@@ -48,9 +42,7 @@ be used to validate that the package belongs to a particular user (account) on n
 
 Clients are required to pass the following header when they make API calls to **push** packages to nuget.org:
 
-```
-X-NuGet-Protocol-Version: 4.1.0
-```
+    X-NuGet-Protocol-Version: 4.1.0
 
 Note that the `X-NuGet-Client-Version` header has similar semantics but is reserved to only be used by the official
 NuGet client. Third party clients should use the `X-NuGet-Protocol-Version` header and value.
@@ -65,9 +57,7 @@ If a client interacts with external services and needs to validate whether a pac
 
 This API is used to get a verify-scope key for a nuget.org author to validate a package owned by him/her.
 
-```
-POST api/v2/package/create-verification-key/{ID}/{VERSION}
-```
+    POST api/v2/package/create-verification-key/{ID}/{VERSION}
 
 #### Request parameters
 
@@ -79,7 +69,7 @@ X-NuGet-ApiKey | Header | string | yes      | For example, `X-NuGet-ApiKey: {USE
 
 #### Response
 
-```
+```json
 {
     "Key": "{Verify scope key from nuget.org}",
     "Expires": "{Date}"
@@ -90,9 +80,7 @@ X-NuGet-ApiKey | Header | string | yes      | For example, `X-NuGet-ApiKey: {USE
 
 This API is used to validate a verify-scope key for package owned by the nuget.org author.
 
-```
-GET api/v2/verifykey/{ID}/{VERSION}
-```
+    GET api/v2/verifykey/{ID}/{VERSION}
 
 #### Request parameters
 

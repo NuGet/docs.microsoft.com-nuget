@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 3.4.3 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,24 +6,12 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 60af25ad-e899-43ac-9236-8b8cb167bcde
-
-# optional metadata
-
 description: Release notes for NuGet 3.4.3 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 3.4.3 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # NuGet 3.4.3 Release Notes

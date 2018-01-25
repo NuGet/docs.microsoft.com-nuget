@@ -7,9 +7,6 @@ ms.date: 12/13/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: b76b8a00-7155-4163-b533-894086d2ef78
-
-# optional metadata
 description: Complete reference for warnings and errors issued from NuGet during package restore
 keywords: NuGet errors, NuGet warnings, diagnostics
 ms.reviewer:

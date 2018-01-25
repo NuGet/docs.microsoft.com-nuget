@@ -7,7 +7,6 @@ ms.date: 06/06/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 3c60f920-457d-4f43-9efe-210c514e5242
 description: An overview of the process of consuming NuGet packages in a project, with links to other specific parts of the process.
 keywords: NuGet package consumption, NuGet consumption overview, NuGet consumption workflow, package consumption workflow, package consumption overview
 ms.reviewer:
@@ -23,7 +22,7 @@ Between nuget.org and private package galleries that your organization might est
 
 \* _Except with `nuget install` from the command-line, in which case it's necessary to edit the configuration files by hand. See the [install command reference](../tools/cli-ref-install.md)._
 
-NuGet remembers the identity and version number of each installed package, recording it in either `packages.config`, the project file, or a `project.json` file in your project root, depending on project type and your version of NuGet. With NuGet 4.0+, [storing dependencies in the project file](../consume-packages/package-references-in-project-files.md) is the default (except for UWP projects targeting Windows 10 RS1). In any case, you can look in the appropriate file at any time to see the full list of dependencies for your project.
+NuGet remembers the identity and version number of each installed package, recording it in either `packages.config` or the project file, depending on project type and your version of NuGet. With NuGet 4.0+, [storing dependencies in the project file, or PackageReference](../consume-packages/package-references-in-project-files.md) is generally the default, although this is configurable in Visual Studio through the [Package Manager UI options](../tools/package-manager-ui.md). In any case, you can look in the appropriate file at any time to see the full list of dependencies for your project.
 
 > [!Tip]
 > It's prudent to always check the license for each package you intend to use in your software. On nuget.org, you'll find a **License Info** link on the right side of each package's description page. If a package does not specify license terms, contact the package owner directly using the **Contact owners** link on the package page. Microsoft does not license any intellectual property to you from third party package providers and is not responsible for information provided by third parties.
@@ -36,7 +35,7 @@ When adding project code to a source repository, you typically don't include NuG
 
 ![Flow of restoring NuGet packages by cloning a repository and using either a restore command](media/Overview-02-RestoreFlow.png)
 
-[Package Restore](../consume-packages/package-restore.md) uses the information in the project file, `packages.config`, `project.json` to reinstall all dependencies. Note that there are differences in the process involved, as described in [Dependency Resolution](../consume-packages/dependency-resolution.md).
+[Package Restore](../consume-packages/package-restore.md) uses the information in the project file or `packages.config` to reinstall all dependencies. Note that there are differences in the process involved, as described in [Dependency Resolution](../consume-packages/dependency-resolution.md).
 
 Occasionally it's necessary to reinstall packages that are already included in a project, which may also reinstall dependencies. This is easy to do using the `reinstall` command via the NuGet command line or the NuGet Package Manager Console. For details, see [Reinstalling and Updating Packages](../consume-packages/reinstalling-and-updating-packages.md).
 

@@ -1,31 +1,17 @@
 ---
-
-# required metadata
-
 title: NuGet Release Notes | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/14/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 96dc77d4-93f9-4628-bef9-551721fe3754
-
-# optional metadata
 description: Index of NuGet release notes and known issues for all versions.
 keywords: NuGet release notes, NuGet known issues
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Release Notes

@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet.Config File Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
@@ -8,18 +6,12 @@ manager: ghogen
 ms.date: 10/25/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: fbf31530-3bf4-478c-b26c-c2b24dd3406d
-
-# optional metadata
-
 description: NuGet.Config file reference including the config, bindingRedirects, packageRestore, solution, and packageSource sections.
 keywords: NuGet.Config file, NuGet configuration reference, NuGet configuration options
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # NuGet.Config reference
@@ -52,7 +44,7 @@ In this topic:
 
 Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/cli-ref-config.md).
 
-Note: `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using `project.json` and PackageReference formats.
+Note: `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using the PackageReference format.
 
 | Key | Value |
 | --- | --- |
