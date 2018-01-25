@@ -3,7 +3,7 @@ title: Create NuGet Packages for the Universal Windows Platform | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 07/17/2017
+ms.date: 03/21/2017
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: null
@@ -18,23 +18,15 @@ ms.reviewer:
 
 The [Universal Windows Platform (UWP)](https://developer.microsoft.com/windows) provides a common app platform for every device that runs Windows 10. Within this model, UWP apps can call both the WinRT APIs that are common to all devices, and also APIs (including Win32 and .NET) that are specific to the device family on which the app is running.
 
-In this walkthrough you'll create a NuGet package with a native UWP component (including a XAML control) that can be used in both Managed and Native projects.
-
-1. [Pre-requisites](#pre-requisites)
-1. [Create a UWP Windows Runtime Component](#create-a-uwp-windows-runtime-component)
-1. [Create and update the .nuspec file](#create-and-update-the-nuspec-file)
-1. [Package the component](#package-the-component)
-1. [Related topics](#related-topics)
+In this walkthrough you create a NuGet package with a native UWP component (including a XAML control) that can be used in both Managed and Native projects.
 
 ## Pre-requisites
 
-1. Visual Studio 2017 or Visual Studio 2015. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well.
-1. NuGet CLI. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice. Then add that location to your PATH environment variable if it isn't already.
+1. Visual Studio 2017 or Visual Studio 2015. Install the 2017 Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well.
 
-> [!Note]
-> nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
+1. NuGet CLI. Download the latest version of `nuget.exe` from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice (the download is the `.exe` directly). Then add that location to your PATH environment variable if it isn't already.
 
-## Create a UWP Windows Runtime Component
+## Create a UWP Windows Runtime component
 
 1. In Visual Studio, choose **File > New > Project**, expand the **Visual C++ > Windows > Universal** node, select the **Windows Runtime Component (Universal Windows)** template, change the name to ImageEnhancer, and click OK. Accept the default values for Target Version and Minimum Version when prompted.
 
@@ -55,7 +47,7 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 1. In the Batch Build dialog, and click **Build** to verify the project and create the output files that you'll need for the NuGet package.
 
 > [!Note]
-> In this walkthrough you'll use the Debug artifacts for the package. For non-debug package, check the Release options in the Batch Build dialog instead, and refer to the resulting Release folders in the steps that follow.
+> In this walkthrough you use the Debug artifacts for the package. For non-debug package, check the Release options in the Batch Build dialog instead, and refer to the resulting Release folders in the steps that follow.
 
 ## Create and update the .nuspec file
 
@@ -246,7 +238,7 @@ With the completed `.nuspec` referencing all the files you need to include in th
 nuget pack ImageEnhancer.nuspec
 ```
 
-This will generate `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
+This generates `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
 
 ![NuGet Package Explorer showing the ImageEnhancer package](media/UWP-PackageExplorer.png)
 

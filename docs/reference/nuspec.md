@@ -333,7 +333,7 @@ Each `<file>` element specifies the following attributes:
 | Attribute | Description |
 | --- | --- |
 | **src** | The location of the file or files to include, subject to exclusions specified by the `exclude` attribute. The path is relative to the `.nuspec` file unless an absolute path is specified. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
-| **target** | The relative path to the folder within the package where the source files are placed, which must begin with `lib`, `content`, `build`, or `tools`. See [Creating a .nuspec from a convention-based working directory](../Create-Packages/Creating-a-Package.md#from-a-convention-based-working-directory). |
+| **target** | The relative path to the folder within the package where the source files are placed, which must begin with `lib`, `content`, `build`, or `tools`. See [Creating a .nuspec from a convention-based working directory](../create-packages/creating-a-package.md#from-a-convention-based-working-directory). |
 | **exclude** | A semicolon-delimited list of files or file patterns to exclude from the `src` location. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
 
 ### Examples

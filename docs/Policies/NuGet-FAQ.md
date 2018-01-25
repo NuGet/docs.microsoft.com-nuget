@@ -32,7 +32,7 @@ A [graphical client](https://github.com/mrward/monodevelop-nuget-addin) is avail
 
 The primary source for learning about a package is its listing page on nuget.org (or another private feed). Each package page on nuget.org includes a description of the package, its version history, and usage statistics. The **Info** section on the package page also contains a link to the project's web site where you typically find many examples and other documentation to help you learn how the package is used.
 
-For more information, see [Finding and choosing packages](../Consume-Packages/Finding-and-Choosing-Packages.md).
+For more information, see [Finding and choosing packages](../consume-packages/Finding-and-Choosing-Packages.md).
 
 ## NuGet in Visual Studio
 

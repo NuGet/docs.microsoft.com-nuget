@@ -125,10 +125,10 @@ To manage package sources:
 1. To change a package source, select it, make edits in the **Name** and **Source** boxes, and select **Update**.
 1. To disable a package source, clear the box to the left of the name in the list.
 1. To remove a package source, select it and then select the **X** button.
-1. Use the up and down arrow buttons to change the priority order of the package sources. Visual Studio searches these sources in the priority order when restoring packages for a project. For more information, see [Package restore](../Consume-Packages/Package-Restore.md).
+1. Use the up and down arrow buttons to change the priority order of the package sources. Visual Studio searches these sources in the priority order when restoring packages for a project. For more information, see [Package restore](../consume-packages/Package-Restore.md).
 
 > [!Tip]
-> If a package source reappears after deleting it, it may be listed in a computer-level or user-level `NuGet.Config` files. See [Configuring NuGet behavior](../Consume-Packages/Configuring-NuGet-Behavior.md) for the location of these files, then remove the source by editing the files manually or using the [nuget sources command](../tools/nuget-exe-CLI-reference.md).
+> If a package source reappears after deleting it, it may be listed in a computer-level or user-level `NuGet.Config` files. See [Configuring NuGet behavior](../consume-packages/Configuring-NuGet-Behavior.md) for the location of these files, then remove the source by editing the files manually or using the [nuget sources command](../tools/nuget-exe-CLI-reference.md).
 
 ## Package manager Options control
 
