@@ -50,7 +50,7 @@ Within a real NuGet package, of course, you implement many useful features with 
     > [!Note]
     > For packages built for public consumption, pay special attention to the **Tags** property, as tags help others find your package and understand what it does.
 
-1. Give your package a unique identifier and fill out any other desired properties. For a description of the different properties, see [.nuspec file reference](../schema/nuspec.md). All of the properties here go into the `.nuspec` manifest that Visual Studio creates for the project.
+1. Give your package a unique identifier and fill out any other desired properties. For a description of the different properties, see [.nuspec file reference](../reference/nuspec.md). All of the properties here go into the `.nuspec` manifest that Visual Studio creates for the project.
 
     > [!Important]
     > You must give the package an identifier that's unique across nuget.org or whatever host you're using. For this walkthrough we recommend including "Sample" or "Test" in the name as the later publishing step does make the package publicly visible (though it's unlikely anyone will actually use it).

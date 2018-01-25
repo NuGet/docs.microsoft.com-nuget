@@ -58,7 +58,7 @@ The require workload appears as follows in the Visual Studio installer:
 
 ## Edit metadata in the .csproj file
 
-With NuGet 4.0 and .NET Core projects, package metadata is contained directly in the `.csproj` file instead of external files such as a `.nuspec`. A full description of that metadata is found in [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md#pack-target).
+With NuGet 4.0 and .NET Core projects, package metadata is contained directly in the `.csproj` file instead of external files such as a `.nuspec`. A full description of that metadata is found in [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md#pack-target).
 
 1. Right-click the project in Solution Explorer, select **Edit AppLogger.csproj**, and then edit the first property group to include package information such as the following:
 
@@ -84,7 +84,7 @@ NuGet 4.0 supports a pack target using MSBuild version 15.1+ (including MSBuild 
 
     msbuild /t:pack /p:Configuration=Release
 
-For additional options with `msbuild /t:pack`, such as including content files, symbols, and source code, see [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md#pack-target).
+For additional options with `msbuild /t:pack`, such as including content files, symbols, and source code, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md#pack-target).
 
 In any case, the command above generates `AppLogger.YOUR_NAME.1.0.0.nupkg` in the `bin\Release` folder by default, as it builds that configuration. If you omit the `/p` switch, the default configuration will be `Debug`. 
 
@@ -100,6 +100,6 @@ To make your package available to other developers,  follow the instructions on 
 ## Related topics
 
 - [Package References in Project Files](../consume-packages/package-references-in-project-files.md) describes all the details of describing your package directly in the project file.
-- [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md) describes all the options for using `msbuild /t:pack` to create the package.
+- [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md) describes all the options for using `msbuild /t:pack` to create the package.
 - [.NET Standard Library documentation](/dotnet/articles/standard/library)
 - [Porting to .NET Core from .NET Framework](/dotnet/articles/core/porting/index)

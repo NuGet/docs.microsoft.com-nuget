@@ -23,7 +23,7 @@ Package references, using the `PackageReference` node, allow you to manage NuGet
 
 The `PackageReference` approach allows you to use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow.
 
-For more details on the integration of MSBuild with package references in project files, see [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).
+For more details on the integration of MSBuild with package references in project files, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
 ## Adding a PackageReference
 

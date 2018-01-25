@@ -111,7 +111,7 @@ The `packages.config` process for resolving dependencies gets complicated for la
 
 When using the PackageReference format, you can control which assets from dependencies flow into the top-level project. For details, see [PackageReference](package-references-in-project-files.md#controlling-dependency-assets).
 
-When the top-level project is itself a package, you also have control over this flow by using the `include` and `exclude` attributes with dependencies listed in the `.nuspec` file. See [.nuspec Reference - Dependencies](../schema/nuspec.md#dependencies).
+When the top-level project is itself a package, you also have control over this flow by using the `include` and `exclude` attributes with dependencies listed in the `.nuspec` file. See [.nuspec Reference - Dependencies](../reference/nuspec.md#dependencies).
 
 ## Excluding references
 

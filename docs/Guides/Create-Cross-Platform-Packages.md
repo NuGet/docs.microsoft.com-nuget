@@ -266,7 +266,7 @@ To make your package available to other developers,  follow the instructions on 
 
 ## Related topics
 
-- [Nuspec Reference](../schema/nuspec.md)
+- [Nuspec Reference](../reference/nuspec.md)
 - [Symbol packages](../create-packages/symbol-packages.md)
 - [Package versioning](../reference/package-versioning.md)
 - [Supporting Multiple .NET Framework Versions](../create-packages/supporting-multiple-target-frameworks.md)

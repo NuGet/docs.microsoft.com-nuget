@@ -26,7 +26,7 @@
       topicHref: /nuget/tools/nuget-exe-cli-reference
     - name: Reference
       tocHref: /nuget/reference/
-      topicHref: /nuget/schema/nuspec
+      topicHref: /nuget/reference/nuspec
     - name: API
       tocHref: /nuget/api/
       topicHref: /nuget/api/overview

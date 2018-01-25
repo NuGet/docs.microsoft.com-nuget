@@ -89,11 +89,11 @@ When using the `project.json` format, you can control which assets from dependen
 
 An added means of resolving errors:
 
-- **Not recommended**: as a temporary solution while you work with the package author, projects targeting `netcore`, `netstandard`, and `netcoreapp` can denote other frameworks as being compatible, thereby allowing packages targeting those other frameworks to be used. See [project.json imports](project-json.md#imports) and [MSBuild restore target PackageTargetFallback](../schema/msbuild-targets.md#packagetargetfallback). This can cause unexpected behaviors, so again, it's best to resolve package incompatibilities by working with the package author on an update.
+- **Not recommended**: as a temporary solution while you work with the package author, projects targeting `netcore`, `netstandard`, and `netcoreapp` can denote other frameworks as being compatible, thereby allowing packages targeting those other frameworks to be used. See [project.json imports](project-json.md#imports) and [MSBuild restore target PackageTargetFallback](../reference/msbuild-targets.md#packagetargetfallback). This can cause unexpected behaviors, so again, it's best to resolve package incompatibilities by working with the package author on an update.
 
 ## Target frameworks
 
-*Originally in [Target frameworks](../schema/target-frameworks.md).*
+*Originally in [Target frameworks](../reference/target-frameworks.md).*
 
 - [project.json](project-json.md): The `frameworks` node specifies the framework versions that the project can be compiled against.
 
@@ -132,13 +132,13 @@ When using the `project.json` format, NuGet also supports using a wildcard notat
 
 ### NuGet.Config reference
 
-*Originally in [NuGet.Config reference](../schema/nuget-config-file.md).*
+*Originally in [NuGet.Config reference](../reference/nuget-config-file.md).*
 
 `globalPackagesFolder` applies only to `project.json`.
 
 ### nuspec file reference
 
-*Originally in [nuspec reference](../schema/nuspec.md).*
+*Originally in [nuspec reference](../reference/nuspec.md).*
 
 The `<contentFiles>` element is used instead of `<files>` with `project.json`.
 
