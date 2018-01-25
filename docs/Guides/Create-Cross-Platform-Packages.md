@@ -44,9 +44,9 @@ In this walkthrough you create a cross-platform NuGet package that can be used i
 
 The resulting solution contains two PCL projects, along with a variety of platform-specific projects:
 
-- The PCL named `Plugin.LoggingLibrary.Abstractions (Portable)`, defines the public interface (the API surface area) of the component, in this case the `ILoggingLibrary` interface contained in the ILoggingLibrary.cs file. This is where you'll define the interface to your library.
+- The PCL named `Plugin.LoggingLibrary.Abstractions (Portable)`, defines the public interface (the API surface area) of the component, in this case the `ILoggingLibrary` interface contained in the ILoggingLibrary.cs file. This is where you define the interface to your library.
 - The other PCL, `Plugin.LoggingLibrary (Portable)`, contains code in CrossLoggingLibrary.cs that will locate a platform-specific implementation of the abstract interface at run time. You typically don't need to modify this file.
-- The platform-specific projects, such as `Plugin.LoggingLibrary.Android`, each contain contain a native implementation of the interface in their respective LoggingLibraryImplementation.cs files. This is where you'll build out your library's code.
+- The platform-specific projects, such as `Plugin.LoggingLibrary.Android`, each contain contain a native implementation of the interface in their respective LoggingLibraryImplementation.cs files. This is where you build out your library's code.
 
 By default, the ILoggingLibrary.cs file of the Abstractions project contains an interface definition, but no methods. For the purposes of this walkthrough, add a `Log` method as follows:
 
@@ -99,7 +99,7 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 1. Repeat this implementation in the projects for each platform you want to support.
 1. Right-click the iOS project, select **Properties**, click the **Build** tab, and remove "\iPhone" from the **Output path** and **XML documentation file** settings. This is just for later convenience in this walkthrough. Save the file when done.
 1. Right-click the solution, select **Configuration Manager...**, and check the **Build** boxes for the PCLs and each platform you're supporting.
-1. Right-click the solution and select **Build Solution** to check your work and produce the artifacts that you'll package next. If you get errors about missing references, right-click the solution, select **Restore NuGet Packages** to install dependencies, and rebuild.
+1. Right-click the solution and select **Build Solution** to check your work and produce the artifacts that you package next. If you get errors about missing references, right-click the solution, select **Restore NuGet Packages** to install dependencies, and rebuild.
 
 > [!Note]
 > To build for iOS you need a networked Mac connected to Visual Studio as described on [Introduction to Xamarin.iOS for Visual Studio](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/). If you don't have a Mac available, clear the iOS project in the configuration manager (step 3 above).
@@ -113,7 +113,7 @@ nuget spec
 ```
 
 1. Rename this file to `LoggingLibrary.nuspec` and open it in an editor.
-1. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
+1. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you get an error during the packing step.
 
     ```xml
     <?xml version="1.0"?>
@@ -255,7 +255,7 @@ With the completed `.nuspec` referencing all the files you need to include in th
 nuget pack LoggingLibrary.nuspec
 ```
 
-This will generate `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
+This will generate `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you see the following contents:
 
 ![NuGet Package Explorer showing the LoggingLibrary package](media/Cross-Platform-PackageExplorer.png)
 

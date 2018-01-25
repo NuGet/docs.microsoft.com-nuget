@@ -1,6 +1,6 @@
 Errors from the `push` command typically indicate the problem. For example, you may have forgotten to update the version number in your project and are therefore trying to publish a package that already exists.
 
-You'll also see errors when trying to publish a package using an identifier that already exists on the host. The name "AppLogger", for example, already exists. In such a case, the `push` command gives the following error:
+You also see errors when trying to publish a package using an identifier that already exists on the host. The name "AppLogger", for example, already exists. In such a case, the `push` command gives the following error:
 
 ```output
 Response status code does not indicate success: 403 (The specified API key is invalid, has expired, or does not have permission to access the specified package.).

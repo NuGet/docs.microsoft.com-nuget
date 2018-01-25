@@ -102,7 +102,7 @@ Within an individual project, NuGet manages the overall dependency graph, which 
 
 Beyond that, NuGet maintains all the specifications related to how packages are structured (including [localization](create-packages/Creating-Localized-Packages.md) and [debug symbols](create-packages/Symbol-Packages.md)) and how they are referenced (including [version ranges](reference/package-versioning.md#version-ranges-and-wildcards) and [pre-release versions](create-packages/Prerelease-Packages.md).) NuGet also provides various APIs to work with its services programmatically, and provides support for developers who write Visual Studio extensions and project templates.
 
-Take a moment to browse the table of contents for this documentation, and you'll see all of these capabilities represented there, along with release notes dating back to NuGet's beginnings.
+Take a moment to browse the table of contents for this documentation, and you see all of these capabilities represented there, along with release notes dating back to NuGet's beginnings.
 
 ## Comments, contributions, and issues
 

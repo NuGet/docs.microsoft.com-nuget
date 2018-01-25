@@ -26,7 +26,7 @@ This NuGet 3.0 Preview is included in Visual Studio 2015 Preview. We are working
 
 ## Brand New UI
 
-The first thing you'll notice about NuGet 3.0 Preview is our brand new UI. It's no longer a modal dialog; it's now a full Visual Studio document window. This allows you to open the UI for multiple projects (and/or the solution) at once, tear the window off to another monitor, dock it however you'd like, etc.
+The first thing you notice about NuGet 3.0 Preview is our brand new UI. It's no longer a modal dialog; it's now a full Visual Studio document window. This allows you to open the UI for multiple projects (and/or the solution) at once, tear the window off to another monitor, dock it however you'd like, etc.
 
 ![The new NuGet UI](./media/NuGet-3.0-Preview/new-ui.png)
 
@@ -112,13 +112,13 @@ We used to have an "Update All" button in the old UI that isn't there in the new
 
 In addition to all of the new features in our new package management UI, we've also been working on some implementation details for NuGet's client/server protocol. The work we've done is to create "API v3" for NuGet, which is designed around high availability for critical scenarios such as package restore and installing packages. The new API is based on REST and Hypermedia and we've selected [JSON-LD](http://json-ld.org) as our resource format.
 
-In the NuGet 3.0 Preview bits, you'll see a new package source called "preview.nuget.org" in the package source dropdown. If you select that package source, we'll use our new API rather to connect to nuget.org. We've made the preview source available in the UI while we continue to test, revise, and improve the new API. In NuGet 3.0 RC, this new API v3-based package source will replace the v2-based "nuget.org" package source.
+In the NuGet 3.0 Preview bits, you see a new package source called "preview.nuget.org" in the package source dropdown. If you select that package source, we'll use our new API rather to connect to nuget.org. We've made the preview source available in the UI while we continue to test, revise, and improve the new API. In NuGet 3.0 RC, this new API v3-based package source will replace the v2-based "nuget.org" package source.
 
 Despite the investment we're putting into API v3, we've made all of these new features also work with our existing API v2 protocol, which means they will work with existing package sources other than nuget.org as well.
 
 ## New Features Coming
 
-Between now and 3.0 RTM, we are also working on some fundamental new NuGet features, beyond what you'll see in the UI. Here's a short list of salient investment areas:
+Between now and 3.0 RTM, we are also working on some fundamental new NuGet features, beyond what you see in the UI. Here's a short list of salient investment areas:
 
 1. We're partnering with the Visual Studio and MSBuild teams to get [NuGet deeper into the platform](http://blog.nuget.org/20141014/in-the-platform.html).
 1. We're working to abandon installation-time package conventions and instead apply those conventions at packaging time by introducing a new "authoritative" [package manifest](http://blog.nuget.org/20141023/package-manifests.html).

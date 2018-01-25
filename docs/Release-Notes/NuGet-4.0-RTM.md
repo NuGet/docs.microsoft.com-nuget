@@ -50,7 +50,7 @@ Occassionally, when you use a package containing an assembly with an invalid sig
 
 There is no workaround at this time.
 
-### You will be unable to view, add, or update DotNetCLITools, using Nuget Package Manager
+### You are unable to view, add, or update DotNetCLITools, using Nuget Package Manager
 
 #### Issue
 

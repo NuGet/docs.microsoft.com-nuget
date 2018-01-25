@@ -28,7 +28,7 @@ It's a simple process to create a NuGet package from a .NET Class Library and pu
     1. In Visual Studio, choose **File > New > Project**, expand the **Visual C# > Windows** node, select the "Class Library" template, name the project AppLogger, and click **OK**.
     1. Right-click on the resulting project file and select **Build** to make sure the project was created properly. The DLL is found within the Debug folder (or Release if you build that configuration instead).
 
-    Within a real NuGet package, of course, you'll implement many useful features upon which others can build applications. For this walkthrough, however, you won't write any additional code because a class library from the template is sufficient to create a package.
+    Within a real NuGet package, of course, you implement many useful features upon which others can build applications. For this walkthrough, however, you won't write any additional code because a class library from the template is sufficient to create a package.
 
 ## Create the .nuspec package manifest file
 
@@ -111,7 +111,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `push` comm
 
 1. Select **Create**, provide a name for your key, select **Select Scopes > Push** under **API Key**, enter * for **Glob pattern**, then select **Create**.
 
-1. Once the key is created, select **Copy** to retrieve the access key you'll need in the CLI:
+1. Once the key is created, select **Copy** to retrieve the access key you need in the CLI:
 
     ![Copying the API key to the clipboard](media/QS_Create-02-APIKey.png)
 

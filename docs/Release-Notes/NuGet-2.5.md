@@ -58,7 +58,7 @@ We also appreciate the following individuals for finding bugs with NuGet 2.5 Bet
 
 ### Allow users to overwrite content files that already exist
 
-One of the most requested features of all time has been the ability to overwrite content files that already exist on disk when included in a NuGet package. Starting with NuGet 2.5, these conflicts are identified and you will be prompted to overwrite the files, whereas previously these files were always skipped.
+One of the most requested features of all time has been the ability to overwrite content files that already exist on disk when included in a NuGet package. Starting with NuGet 2.5, these conflicts are identified and you are prompted to overwrite the files, whereas previously these files were always skipped.
 
 ![Overwrite content files](./media/NuGet-2.5/overwrite-file.png)
 

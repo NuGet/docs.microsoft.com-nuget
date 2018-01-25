@@ -88,7 +88,7 @@ For additional options with `msbuild /t:pack`, such as including content files, 
 
 In any case, the command above generates `AppLogger.YOUR_NAME.1.0.0.nupkg` in the `bin\Release` folder by default, as it builds that configuration. If you omit the `/p` switch, the default configuration will be `Debug`. 
 
-Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
+Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you see the following contents:
 
 ![NuGet Package Explorer showing the AppLogger package](media/NuGet4-03-PackageExplorer.png)
 

@@ -101,7 +101,7 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
     }
     ```
 
-1. Even though you added the Newtonsoft.Json package to the project, red squiggles appears under `JsonConvert` because you need a `using` statement. Hover over the underlined `JsonConvert` and you'll see the Lightbulb and the option to **Show potential fixes**:
+1. Even though you added the Newtonsoft.Json package to the project, red squiggles appears under `JsonConvert` because you need a `using` statement. Hover over the underlined `JsonConvert` and you see the Lightbulb and the option to **Show potential fixes**:
 
     ![Lightbulb with show potential fixes command](media/QS_Use-04-ShowPotentialFixes.png)
 

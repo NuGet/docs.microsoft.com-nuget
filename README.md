@@ -29,7 +29,7 @@ No contribution is too big or too small--
 If you're creating a new topic, keep the following in mind as well:
 
 1. Always place the new topic in an appropriate subfolder, and follow the conventions for filenames as you see them used here.
-1. You must include a metadata block as you'll see on other topics. The fields you should change are the following: title, ms.date, ms.assetid, description, and keywords.
+1. You must include a metadata block as you see on other topics. The fields you should change are the following: title, ms.date, ms.assetid, description, and keywords.
     1. For ms.assetid, always create a new GUID for a new topic.
     1. Leave the ms.author and manager fields set as they are, because these are used to manage ownership internally.
     1. Ideally for SEO, the title field and the top-level # heading of the topic are different; see various topics for examples.

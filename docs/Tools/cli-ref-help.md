@@ -30,7 +30,7 @@ nuget ? [command] [options]
 where [command] identifies a specific command for which to display help.
 
 > [!Warning]
-> With some commands, be mindful to specify *help* first, as with `nuget help install`, because there is a package named "help" on nuget.org. If you give the command `nuget install help`, you'll not get help on the install command but will instead install the package named help.
+> With some commands, be mindful to specify *help* first, as with `nuget help install`, because there is a package named "help" on nuget.org. If you give the command `nuget install help`, you won't get help on the install command but will instead install the package named help.
 
 ## Options
 

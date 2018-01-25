@@ -40,11 +40,11 @@ In this walkthrough you create a NuGet package with a native UWP component (incl
 
     ![Setting Generate XML Documentation Files to Yes](media/UWP-GenerateXMLDocFiles.png)
 
-1. Right click the *solution* now, select **Batch Build**, check the three Debug boxes in the dialog as shown below. This makes sure that when you do a build, you'll generate a full set of artifacts for each of the target systems that Windows supports.
+1. Right click the *solution* now, select **Batch Build**, check the three Debug boxes in the dialog as shown below. This makes sure that when you do a build, you generate a full set of artifacts for each of the target systems that Windows supports.
 
     ![Batch Build](media/UWP-BatchBuild.png)
 
-1. In the Batch Build dialog, and click **Build** to verify the project and create the output files that you'll need for the NuGet package.
+1. In the Batch Build dialog, and click **Build** to verify the project and create the output files that you need for the NuGet package.
 
 > [!Note]
 > In this walkthrough you use the Debug artifacts for the package. For non-debug package, check the Release options in the Batch Build dialog instead, and refer to the resulting Release folders in the steps that follow.
@@ -60,7 +60,7 @@ To create the initial `.nuspec` file, do the three steps below. The sections tha
     nuget spec
     ```
 
-1. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
+1. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you get an error during the packing step.
 
     ```xml
     <?xml version="1.0"?>
@@ -238,7 +238,7 @@ With the completed `.nuspec` referencing all the files you need to include in th
 nuget pack ImageEnhancer.nuspec
 ```
 
-This generates `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
+This generates `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you see the following contents:
 
 ![NuGet Package Explorer showing the ImageEnhancer package](media/UWP-PackageExplorer.png)
 

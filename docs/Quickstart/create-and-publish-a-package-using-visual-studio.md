@@ -55,7 +55,7 @@ Within a real NuGet package, of course, you implement many useful features with 
     > [!Important]
     > You must give the package an identifier that's unique across nuget.org or whatever host you're using. For this walkthrough we recommend including "Sample" or "Test" in the name as the later publishing step does make the package publicly visible (though it's unlikely anyone will actually use it).
     >
-    > If you attempt to publish a package with a name that already exists, you'll see an error. 
+    > If you attempt to publish a package with a name that already exists, you see an error. 
 
 
 ## Run the pack command
