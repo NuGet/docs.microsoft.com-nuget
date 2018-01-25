@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet Known Issues | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -10,22 +8,11 @@ ms.topic: article
 ms.prod: nuget
 #ms.service:
 ms.technology: null
-ms.assetid: 42e7a619-1c69-454b-8243-16e2f9f950d0
-
-# optional metadata
-
 description: Known issues with NuGet including authentication, package installation, and tools.
 keywords: NuGet known issues, NuGet problems
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Known Issues with NuGet
@@ -79,7 +66,6 @@ install-package log4net
         FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PowerShell.Commands.InstallPackageCommand
 ```
 
-
 This is caused by the type library for the `VSLangProj.dll` COM component being unregistered on your system. This can happen, for example, when you have two versions of Visual Studio installed side-by-side and you then uninstall the older version. Doing so may inadvertently unregister the above COM library.
 
 **Solution:**:
@@ -93,20 +79,16 @@ If the command fails, check to see if the file exists in that location.
 For more information about this error, see this [work item](https://nuget.codeplex.com/workitem/3609 "Work item 3609").
 
 ## Build failure after package update in VS 2012
-The problem: You are using VS 2012 RTM. When updating NuGet packages, you get this message:
-"One or more packages could not be completed uninstalled." and you are prompted to restart
-Visual Studio. After VS restart, you get weird build errors.
 
-The cause is that certain files in the old packages are locked by a background MSBuild process.
-Even after VS restart, the background MSBuild process still uses the files in the old packages,
-causing the build failures.
+The problem: You are using VS 2012 RTM. When updating NuGet packages, you get this message: "One or more packages could not be completed uninstalled." and you are prompted to restart Visual Studio. After VS restart, you get weird build errors.
 
-The fix is to install VS 2012 Update, e.g. [VS 2012 Update 2](http://www.microsoft.com/download/details.aspx?id=38188).
+The cause is that certain files in the old packages are locked by a background MSBuild process. Even after VS restart, the background MSBuild process still uses the files in the old packages, causing the build failures.
+
+The fix is to install VS 2012 Update, e.g. VS 2012 Update 2.
 
 ## Upgrading to latest NuGet from an older version causes a signature verification error
 
-If you are running VS 2010 SP1, you might run into the following error message when attempting to upgrade
-NuGet if you have an older version installed.
+If you are running VS 2010 SP1, you might run into the following error message when attempting to upgrade NuGet if you have an older version installed.
 
 ![Visual Studio Extension Installer](./media/Visual-Studio-Extension-Installer.png)
 
@@ -117,8 +99,7 @@ Alternatively, the workaround is to simply uninstall NuGet (while running Visual
 
 ## Package Manager Console throws an exception when the Reflector Visual Studio Add-In is also installed.
 
-When running the Package Manager console, you may run into the following exception message
-if you have the Reflector VS Add-in installed.
+When running the Package Manager console, you may run into the following exception message if you have the Reflector VS Add-in installed.
 
     The following error occurred while loading the extended type data file:
     Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2950) :
@@ -173,17 +154,13 @@ You might see these errors when trying to open the Package Manager Console:
 
 If so, follow the solution [discussed on StackOverflow](http://stackoverflow.com/questions/12638289/embedding-powershell-v2-0-in-net-app-on-windows-8-rtm) to fix them.
 
-## The Add Package Library Reference dialog throws an exception if the solution contains InstallShield Limited Edition Project.
+## The Add Package Library Reference dialog throws an exception if the solution contains InstallShield Limited Edition Project
 
-We have identified that if your solution contains one or more InstallShield Limited Edition project, the **Add Package Library
-Reference** dialog will throw an exception when opened. There is currently no workaround yet except either removing
-InstallShield projects or unloading them.
+We have identified that if your solution contains one or more InstallShield Limited Edition project, the **Add Package Library Reference** dialog will throw an exception when opened. There is currently no workaround yet except either removing InstallShield projects or unloading them.
 
 ## Uninstall Button Greyed out? NuGet Requires Admin Privileges to Install/Uninstall
 
-If you try to uninstall NuGet via the Visual Studio Extension Manager, you may notice that the Uninstall button is disabled.
-NuGet requires admin access to install and uninstall. Relaunch Visual Studio as an administrator to uninstall the extension.
-NuGet does not require admin access to use it.
+If you try to uninstall NuGet via the Visual Studio Extension Manager, you may notice that the Uninstall button is disabled. NuGet requires admin access to install and uninstall. Relaunch Visual Studio as an administrator to uninstall the extension. NuGet does not require admin access to use it.
 
 ## The Package Manager Console crashes when I open it in Windows XP. What's wrong?
 
@@ -191,36 +168,30 @@ NuGet requires Powershell 2.0 runtime. Windows XP, by default, doesn't have Powe
 
 ## Visual Studio 2010 SP1 Beta crashes on exit if the Package Manager Console is open.
 
-If you have installed Visual Studio 2010 SP1 Beta, you may notice that if you leave the Package Manager Console open
-and close Visual Studio, it will crash. This is a known issue of Visual Studio and will be fixed in SP1 RTM release.
-For now, just ignore the crash or uninstall SP1 Beta if you can.
+If you have installed Visual Studio 2010 SP1 Beta, you may notice that if you leave the Package Manager Console open and close Visual Studio, it will crash. This is a known issue of Visual Studio and will be fixed in SP1 RTM release. For now, just ignore the crash or uninstall SP1 Beta if you can.
 
 ## The element 'metadata' ... has invalid child element exception occurs
 
-If you installed packages built with a pre-release version of NuGet, you might encounter an error message stating
-"The element 'metadata' in namespace 'schemas.microsoft.com/packaging/2010/07/nuspec.xsd' has invalid child element" when
-running the RTM version of NuGet with that project. You'll need to uninstall and then re-install each package
-using the RTM version of NuGet.
+If you installed packages built with a pre-release version of NuGet, you might encounter an error message stating "The element 'metadata' in namespace 'schemas.microsoft.com/packaging/2010/07/nuspec.xsd' has invalid child element" when running the RTM version of NuGet with that project. You'll need to uninstall and then re-install each package using the RTM version of NuGet.
 
-## Attempting to install or uninstall results in the error "Cannot create a file when that file already exists.&rdquo;
+## Attempting to install or uninstall results in the error "Cannot create a file when that file already exists."
 
 For some reason, Visual Studio extensions can get in a weird state where you've uninstalled the VSIX extension,
 but some files were left behind. To work around this issue:
 
 1. Exit Visual Studio
-2. Open the following folder (it might be on a different drive on your machine)
+1. Open the following folder (it might be on a different drive on your machine)
 
     C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft Corporation\NuGet Package Manager\<version>\
 
-3. Delete all the files with the *.deleteme* extensions.
-4. Re-open Visual Studio
+1. Delete all the files with the *.deleteme* extensions.
+1. Re-open Visual Studio
 
 After following these steps, you should be able to continue.
 
 ## In rare cases, compiling with Code Analysis turned on causes error.
 
-You might get the following error if you installs FluentNHibernate with the Package Manager console and then compile your project
-with "Code Analysis" turned on.
+You might get the following error if you installs FluentNHibernate with the Package Manager console and then compile your project with "Code Analysis" turned on.
 
     Error 3 CA0058 : The referenced assembly
     'NHibernate, Version=3.0.0.2001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4'
@@ -241,29 +212,23 @@ This is a known issue. Instead of calling Write-Error, try calling throw.
     throw "My error message"
 
 ## Installing NuGet with restricted access on Windows 2003 can crash Visual Studio
-When attempting to install NuGet using the Visual Studio Extension Manager and not running
-as an administrator, the &#8220;Run As&#8221; dialog is displayed with the checkbox labeled
-&#8220;Run this program with restricted access&#8221; checked by default.
+
+When attempting to install NuGet using the Visual Studio Extension Manager and not running as an administrator, the &#8220;Run As&#8221; dialog is displayed with the checkbox labeled &#8220;Run this program with restricted access&#8221; checked by default.
 
 ![Run As Restricted Dialog](./media/RunAsRestricted.png)
 
-Clicking OK with that checked crashes Visual Studio. Make sure to uncheck that option before
-installing NuGet.
+Clicking OK with that checked crashes Visual Studio. Make sure to uncheck that option before installing NuGet.
 
 ## Cannot uninstall NuGet for Windows Phone Tools
-Windows Phone Tools does not have support for the Visual Studio Extension Manager. In order to
-uninstall NuGet, run the following command.
+
+Windows Phone Tools does not have support for the Visual Studio Extension Manager. In order to uninstall NuGet, run the following command.
 
      vsixinstaller.exe /uninstall:NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5
 
 ## Changing the capitalization of NuGet package IDs breaks package restore
-As discussed at length on [this GitHub issue](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932),
-changing the capitalization of NuGet packages can be done by NuGet support, but causes
-complications during package restore for users who have existing, differently-cased, packages
-in their local package cache. We recommend only requesting a case change when you have a way to
-communicate with existing users of your package about the break that may occur to their
-build-time package restore.
 
-## Reporting Issues
-For reporting issues on NuGet Clients, please go [here](https://nuget.codeplex.com/WorkItem/Create).
-For reporting issues on NuGet Gallery, please go [here](https://github.com/nuget/nugetgallery/issues).
+As discussed at length on [this GitHub issue](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932), changing the capitalization of NuGet packages can be done by NuGet support, but causes complications during package restore for users who have existing, differently-cased, packages in their local package cache. We recommend only requesting a case change when you have a way to communicate with existing users of your package about the break that may occur to their build-time package restore.
+
+## Reporting issues
+
+To report NuGet issues, visit [https://github.com/nuget/home/issues](https://github.com/nuget/home/issues).

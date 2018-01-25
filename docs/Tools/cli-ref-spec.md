@@ -1,24 +1,17 @@
 ---
-# required metadata
-
 title: NuGet CLI spec command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 85611449-87e6-489b-8c6c-fe1d7be76c13
-
-# optional metadata
-
 description: Reference for the nuget.exe spec command
 keywords: nuget spec reference, spec command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # spec command (NuGet CLI)
@@ -29,7 +22,7 @@ Generates a `.nuspec` file for a new package. If run in the same folder as a pro
 
 ## Usage
 
-```
+```cli
 nuget spec [<packageID>] [options]
 ```
 
@@ -44,13 +37,13 @@ where `<packageID>` is an optional package identifier to save in the `.nuspec` f
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed (2.5+)*. |
+| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
 ## Examples
 
-```
+```cli
 nuget spec
 
 nuget spec MyPackage

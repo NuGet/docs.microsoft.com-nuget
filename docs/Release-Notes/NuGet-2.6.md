@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 2.6 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,25 +6,14 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: d99bbf29-2b9a-4dc5-a823-5eb4f9e30f7f
-
-# optional metadata
-
 description: Release notes for NuGet 2.6 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 2.6 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # NuGet 2.6 Release Notes
 
 [NuGet 2.5 Release Notes](../release-notes/nuget-2.5.md) | [NuGet 2.6.1 for WebMatrix Release Notes](../release-notes/nuget-2.6.1-for-webmatrix.md)
@@ -51,9 +38,7 @@ Starting with NuGet 2.6, we will publish two extensions as below:
 1. [NuGet Package Manager](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManager) (applies to Visual Studio 2010 and 2012)
 1. [NuGet Package Manager for Visual Studio 2013](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManagerforVisualStudio2013)
 
-With this split, the [nuget.org](https://nuget.org) home page's "Install NuGet" button
-will now take you to the [installing NuGet](../guides/install-nuget.md)
-page, where you can find more information about installing the different NuGet clients.
+With this split, the [nuget.org](https://nuget.org) home page's "Install NuGet" button takes you to the [installing NuGet](../install-nuget-client-tools.md) page, where you can find more information about installing the different NuGet clients.
 
 <a name="xdt"></a>
 

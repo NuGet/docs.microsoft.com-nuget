@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 3.0 Beta Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,24 +6,12 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 4153ff3f-f97f-4e54-b638-e844f70edf22
-
-# optional metadata
-
 description: Release notes for NuGet 3.0 Beta including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 3.0 Beta release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # NuGet 3.0 Beta Release Notes

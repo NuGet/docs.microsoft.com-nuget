@@ -21,7 +21,7 @@ There are a number of situations, described below under [When to Reinstall a Pac
 
 Updating and reinstalling packages is accomplished as follows:
 
-| Method | Update | Reinstall | 
+| Method | Update | Reinstall |
 | --- | --- | --- |
 | Package Manager console (described in [Using Update-Package](#using-update-package)) | `Update-Package` command | `Update-Package -reinstall` command |
 | Package Manager UI | On the **Updates** tab, select one or more packages and select **Update** | On the **Installed** tab, select a package, record its name, then select **Uninstall**. Switch to the **Browse** tab, search for the package name, select it, then select **Install**). |
@@ -81,6 +81,7 @@ By default, `Update-Package` affects all packages in a solution. To limit the ac
 # Reinstall the package in just MyProject
 Update-Package <package_name> -ProjectName MyProject -reinstall
 ```
+
 To *update* all packages in a project (or reinstall using `-reinstall`), use `-ProjectName` without specifying any particular package:
 
 ```ps
@@ -94,7 +95,7 @@ To update all packages in a solution, just use `Update-Package` by itself with n
 Update-Package 
 ```
 
-Updating packages in a project or solution using `project.json` or [package references in project files](../Consume-Packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding pre-release packages). Projects that use `packages.config` can, if desired, limit update versions as described below in [Constraining upgrade versions](#constraining-upgrade-versions).
+Updating packages in a project or solution using [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding pre-release packages). Projects that use `packages.config` can, if desired, limit update versions as described below in [Constraining upgrade versions](#constraining-upgrade-versions).
 
 For full details on the command, see the [Update-Package](../Tools/ps-ref-update-package.md) reference.
 
@@ -118,4 +119,3 @@ The following may be affected when reinstalling a package:
 
 1. **Reinstalling packages when dependent versions are involved**
     - As explained above, reinstalling a package does not change versions of any other installed packages that depend on it. It's possible, then, that reinstalling a dependency could break the dependent package.
-

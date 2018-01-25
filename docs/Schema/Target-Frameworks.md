@@ -7,7 +7,6 @@ ms.date: 12/11/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 4343a48e-f6df-4a44-9d66-4616c3caacf5
 description: NuGet target framework references identify and isolate framework-dependent components of a package.
 keywords: NuGet package targeting, .NET framework targets, .NET framework versions
 ms.reviewer:
@@ -22,13 +21,12 @@ NuGet uses target framework references in a variety of places to specifically id
 
 - [.nuspec manifest](../schema/nuspec.md): A package can indicate distinct packages to be included in a project depending on the project's target framework.
 - [.nupkg folder name](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): The folders inside a package's `lib` folder can be named according to the target framework, each of which contains the DLLs and other content appropriate to that framework.
-- [packages.config](../Schema/packages-config.md): The `targetframework` attribute of a dependency specifies the variant of a package to install.
-- [project.json](../Schema/project-json.md): The `frameworks` node specifies the framework versions that the project can be compiled against.
+- [packages.config](../schema/packages-config.md): The `targetframework` attribute of a dependency specifies the variant of a package to install.
 
 > [!Note]
 > The NuGet client source code that calculates the tables below is found in the following locations:
-> -  Supported framework names: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
-> -  Framework precedence and mapping: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+> - Supported framework names: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
+> - Framework precedence and mapping: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 ## Supported frameworks
 

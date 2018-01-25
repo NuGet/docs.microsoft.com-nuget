@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 2.6.1 for WebMatrix Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,25 +6,15 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
 ms.assetid: 119ea65b-b38b-4a8c-a4ed-6ea06f1aad09
-
-# optional metadata
-
 description: Release notes for NuGet 2.6.1 for WebMatrix including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 2.6.1 for WebMatrix release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # NuGet 2.6.1 for WebMatrix Release Notes
 
 [NuGet 2.6 Release Notes](../release-notes/nuget-2.6.md) | [NuGet 2.7 Release Notes](../release-notes/nuget-2.7.md)

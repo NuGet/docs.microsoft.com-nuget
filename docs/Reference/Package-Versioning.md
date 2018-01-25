@@ -7,7 +7,6 @@ ms.date: 12/08/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 6ee3c826-dd3a-4fa9-863f-1fd80bc4230f
 description: Exact details on specifying version numbers and ranges for other packages upon which a NuGet package depends, and how dependencies are installed.
 keywords: versioning, NuGet package dependencies, NuGet dependency versions, NuGet version numbers, NuGet package version, version ranges, version specifications, normalized version numbers
 ms.reviewer:
@@ -38,12 +37,11 @@ A specific version number is in the form *Major.Minor.Patch[-Suffix]*, where the
 - *-Suffix* (optional): a hyphen followed by a string denoting a pre-release version (following the [Semantic Versioning or SemVer 1.0 convention](http://semver.org/spec/v1.0.0.html)).
 
 **Examples:**
-```
-1.0.1
-6.11.1231
-4.3.1-rc
-2.2.44-beta1
-```
+
+    1.0.1
+    6.11.1231
+    4.3.1-rc
+    2.2.44-beta1
 
 > [!Important]
 > nuget.org rejects any package upload that lacks an exact version number. The version must be specified in the `.nuspec` or project file used to create the package.
@@ -63,16 +61,14 @@ That said, package developers generally follow recognized naming conventions:
 
 When resolving package references and multiple package versions differ only by suffix, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order. For example, the following versions would be chosen in the exact order shown:
 
-```
-1.0.1
-1.0.1-zzz
-1.0.1-rc
-1.0.1-open
-1.0.1-beta
-1.0.1-alpha2
-1.0.1-alpha
-1.0.1-aaa
-```
+    1.0.1
+    1.0.1-zzz
+    1.0.1-rc
+    1.0.1-open
+    1.0.1-beta
+    1.0.1-alpha2
+    1.0.1-alpha
+    1.0.1-aaa
 
 ## Semantic Versioning 2.0.0
 
@@ -119,7 +115,7 @@ When referring to package dependencies, NuGet supports using interval notation f
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | Mixed inclusive minimum and exclusive maximum version |
 | (1.0)    | invalid | invalid |
 
-When using the PackageReference or `project.json` package reference formats, NuGet also supports using a wildcard notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number. Wildcards are not supported with the `packages.config` format.
+When using the PackageReference format, NuGet also supports using a wildcard notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number. Wildcards are not supported with the `packages.config` format.
 
 > [!Note]
 > Pre-release versions are not included when resolving version ranges. Pre-release versions *are* included when using a wildcard (\*). The version range *[1.0,2.0]*, for example, does not include 2.0-beta, but the wildcard notation _2.0-*_ does. See [issue 912](https://github.com/NuGet/Home/issues/912) for further discussion on pre-release wildcards.
@@ -224,18 +220,14 @@ When obtaining packages from a repository during install, reinstall, or restore 
 
 - Leading zeroes are removed from version numbers:
 
-    ```
-    1.00 is treated as 1.0
-    1.01.1 is treated as 1.1.1
-    1.00.0.1 is treated as 1.0.0.1
-    ```
+        1.00 is treated as 1.0
+        1.01.1 is treated as 1.1.1
+        1.00.0.1 is treated as 1.0.0.1
 
 - A zero in the fourth part of the version number will be omitted
 
-    ```
-    1.0.0.0 is treated as 1.0.0
-    1.0.01.0 is treated as 1.0.1
-    ```
+        1.0.0.0 is treated as 1.0.0
+        1.0.01.0 is treated as 1.0.1
 
 This normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions when resolving dependencies.
 

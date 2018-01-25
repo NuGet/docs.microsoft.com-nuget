@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 2.7.1 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,25 +6,14 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: fbe05ada-c15e-4fa2-ad70-898c0296de9e
-
-# optional metadata
-
 description: Release notes for NuGet 2.7.1 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 2.7.1 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # NuGet 2.7.1 Release Notes
 
 [NuGet 2.7 Release Notes](../release-notes/nuget-2.7.md) | [NuGet 2.7.2 Release Notes](../release-notes/nuget-2.7.2.md)

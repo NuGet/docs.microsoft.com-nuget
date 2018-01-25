@@ -1,40 +1,27 @@
 ---
-# required metadata
-
-title: NuGet PackageReference in Visual Studio Project Files | Microsoft Docs
+title: NuGet PackageReference format (package references in project files) | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 07/17/2017
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 5a554e9d-1266-48c2-92e8-6dd00b1d6810
-
-# optional metadata
-
-description: Details on NuGet PackageReference in project files as supported by NuGet 4.0+ and VS2017
-keywords: NuGet package dependencies, package references, project files, PackageReference, packages.config, project.json, VS2017, Visual Studio 2017, NuGet 4
-#ROBOTS:
-#audience:
-#ms.devlang:
+description: Details on NuGet PackageReference in project files as supported by NuGet 4.0+ and VS2017 and .NET Core 2.0
+keywords: NuGet package dependencies, package references, project files, PackageReference, packages.config, VS2017, Visual Studio 2017, NuGet 4, .NET Core 2.0
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # Package references (PackageReference) in project files
 
-Package references, using the `PackageReference` node, allow you to manage NuGet dependencies directly within project files, rather than needing a separate `packages.config` or `project.json` file. This method doesn't affect other aspects of NuGet; for example, settings in `NuGet.Config` files (including package sources) are still applied as explained in [Configuring NuGet Behavior](Configuring-NuGet-Behavior.md).
+Package references, using the `PackageReference` node, allow you to manage NuGet dependencies directly within project files, rather than needing a separate `packages.config` file. This method doesn't affect other aspects of NuGet; for example, settings in `NuGet.Config` files (including package sources) are still applied as explained in [Configuring NuGet Behavior](Configuring-NuGet-Behavior.md).
 
 > [!Important]
 > At present, package references are supported in Visual Studio 2017 only, for .NET Core projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update).
 
-The `PackageReference` approach allows you to use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. In terms of behavior and [dependency resolution](Dependency-Resolution.md), it's the same as using `project.json`.
+The `PackageReference` approach allows you to use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow.
 
 For more details on the integration of MSBuild with package references in project files, see [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).
 
@@ -45,14 +32,14 @@ Add a dependency in your project file using the following syntax:
 ```xml
 <ItemGroup>
     <!-- ... -->
-    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />    
+    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />
     <!-- ... -->
 </ItemGroup>
 ```
 
 ## Controlling dependency version
 
-The convention for specifying the version of a package is the same as when using `packages.config` or `project.json`:
+The convention for specifying the version of a package is the same as when using `packages.config`:
 
 ```xml
 <ItemGroup>
@@ -98,9 +85,8 @@ The following metadata tags control dependency assets:
 | Tag | Description | Default Value |
 | --- | --- | --- |
 | IncludeAssets | These assets will be consumed | all |
-| ExcludeAssets | These assets will not be consumed | none | 
+| ExcludeAssets | These assets will not be consumed | none |
 | PrivateAssets | These assets will be consumed but won't flow to the parent project | contentfiles;analyzers;build |
-
 
 Allowable values for these tags are as follows, with multiple values separated by a semicolon except with `all` and `none` which must appear by themselves:
 
@@ -142,7 +128,7 @@ For example, say you're targeting `netstandard1.4` as well as `net452` but have 
 ```xml
 <ItemGroup>
     <!-- ... -->
-    <PackageReference Include="Newtonsoft.json" Version="9.0.1" Condition="'$(TargetFramework)' == 'net452'" />    
+    <PackageReference Include="Newtonsoft.json" Version="9.0.1" Condition="'$(TargetFramework)' == 'net452'" />
     <!-- ... -->
 </ItemGroup>
 ```

@@ -1,31 +1,17 @@
 ---
-# required metadata
-
 title: Create .NET Standard NuGet Packages with Visual Studio 2015 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/09/2017
 ms.topic: get-started-article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 29b3bceb-0f35-4cdd-bbc3-a04eb823164c
-
-# optional metadata
-
 description: An end-to-end walkthrough of creating .NET Standard NuGet packages using NuGet 3.x and Visual Studio 2015.
 keywords: create a package, .NET Standard packages, .NET Standard mapping table
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
 
 # Create .NET Standard packages with Visual Studio 2015
@@ -44,7 +30,6 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 1. [.NET Standard mapping table](#net-standard-mapping-table)
 1. [Related topics](#related-topics)
 
-
 ## Pre-requisites
 
 1. Visual Studio 2015. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well, of course.
@@ -54,8 +39,6 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 > [!Note]
 > nuget.exe is the CLI tool itself, not an installer, so be sure to save the downloaded file from your browser instead of running it.
 
-
-
 ## Create the class library project
 
 1. In Visual Studio, **File > New > Project**, expand the **Visual C# > Windows** node, select **Class Library (Portable)**, change the name to AppLogger, and click OK.
@@ -63,11 +46,13 @@ This guide will walk you through creating a nuget package targeting .NET Standar
     ![Create new class library project](media/NetStandard-NewProject.png)
 
 1. In the **Add Portable Class Library** dialog that appears, select the `.NET Framework 4.6` and `ASP.NET Core 1.0` options.
+
 1. Right-click the `AppLogger (Portable)` in Solution Explorer, select **Properties**, select the **Library** tab, then click **Target .NET Platform Standard** in the **Targeting** section. This will prompt for confirmation, after which you can select `.NET Standard 1.4` from the drop down:
 
     ![Setting the target to .NET Standard 1.4](media/NetStandard-ChangeTarget.png)
 
 1. Click on the **Build** tab, change the **Configuration** to `Release`, and check the box for **XML documentation file**.
+
 1. Add your code to the component, for example:
 
     ```cs
@@ -89,7 +74,7 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 1. Open a command prompt, navigate to the folder containing `AppLogg.csproj` folder (one level below where the `.sln` file is), and run the NuGet `spec` command to create the initial `AppLogger.nuspec` file:
 
-```
+```cli
 nuget spec
 ```
 
@@ -125,12 +110,11 @@ nuget spec
 
 1. Right-click the solution and select **Build Solution** to generate all the files for the package.
 
-
 ## Package the component
 
 With the completed `.nuspec` referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
-```
+```cli
 nuget pack AppLogger.nuspec
 ```
 
@@ -214,11 +198,8 @@ For more details on using this technique, see [Supporting Multiple .NET Framewor
 
 In some cases you might want to add custom build targets or properties in projects that consume your package, such as running a custom tool or process during build. You do this by adding files in a `\build` folder as described in the steps below. When NuGet installs a package with \build files, it adds an MSBuild element in the project file pointing to the .targets and .props files.
 
-> [!Note]
-> When using `project.json`, targets are not added to the project but are made available through the `project.lock.json`.
-
-
 1. In the project folder containing the your `.nuspec` file, create a folder named `build`.
+
 1. Inside `build`, create folders for each supported, and within those place your `.targets` and `.props` files:
 
         \build
@@ -245,7 +226,6 @@ In some cases you might want to add custom build targets or properties in projec
 1. Create the package again using `nuget pack AppLogger.nuspec`.
 
 For additional details, refer to [Include MSBuild props and targets in a package](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package).
-
 
 ### Creating localized packages
 
@@ -292,14 +272,12 @@ To create localized versions of your library, you can either create separate pac
 
 1. Create the package again using `nuget pack AppLogger.nuspec`.
 
-
 ### Adding a readme
 
 When you include a `readme.txt` file in the root of the package, Visual Studio will display it when the package is installed directly.
 
 > [!Note]
 > Readme files are not shown for packages that are installed as a dependency, or for .NET Core projects.
-
 
 To do this, create your `readme.txt` file, place it in the project root folder, and refer to it in the `.nuspec` file:
 
@@ -314,7 +292,6 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 </package>
 ```
 
-
 ## .NET Standard mapping table
 
 |Platform Name |Alias|
@@ -327,8 +304,6 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 |Windows| win| &#x2192;| 8.0| 8.1|
 |Windows Phone| wpa| &#x2192;| &#x2192;|8.1|
 |Windows Phone Silverlight| wp| 8.0|
-
-
 
 ## Related topics
 

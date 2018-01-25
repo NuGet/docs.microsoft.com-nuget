@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: NuGet 2.8.2 Release Notes | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
@@ -8,25 +6,14 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: bb547f5d-3c0e-4721-b2c7-3fc7e09c34de
-
-# optional metadata
-
 description: Release notes for NuGet 2.8.2 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 2.8.2 release notes, bug fixes, known issues, added features, DCRs
-#ROBOTS:
-#audience:
-#ms.devlang:
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-#ms.suite:
-#ms.tgt_pltfrm:
-#ms.custom:
-
 ---
+
 # NuGet 2.8.2 Release Notes
 
 [NuGet 2.8.1 Release Notes](../release-notes/nuget-2.8.1.md) | [NuGet 2.8.3 Release Notes](../release-notes/nuget-2.8.3.md)

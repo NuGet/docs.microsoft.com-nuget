@@ -3,7 +3,7 @@ title: NuGet Install-Package PowerShell Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 6/1/2017
+ms.date: 06/01/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null

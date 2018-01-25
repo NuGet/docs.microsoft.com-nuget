@@ -6,15 +6,12 @@ manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-#ms.service:
 ms.technology: null
-ms.assetid: 09c10ea3-ba26-4bfa-999e-de5350e6e920
 description: Reference for GetProject PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Get-Project
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
 ---
 
 # Get-Project (Package Manager Console in Visual Studio)

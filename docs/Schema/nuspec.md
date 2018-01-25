@@ -3,11 +3,10 @@ title: .nuspec File Reference for NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/29/2017
+ms.date: 08/29/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: d4a4db9b-5c2d-46aa-9107-d2b01733df7c
 description: The .nuspec file contains package metadata used when building a package and to provide information to package consumers.
 keywords: nuspec reference, NuGet package metadata, NuGet package manifest, nuspec schema
 ms.reviewer:
@@ -64,7 +63,7 @@ The `<metadata>` element supports the attributes described in the following tabl
 
 | Attribute | Required | Description |
 | --- | --- | --- | 
-| **minClientVersion** | No | *(2.5+)* Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager. This is used whenever the package depends on specific features of the `.nuspec` file that were added in a particular version of the NuGet client. For example, a package using the `developmentDependency` attribute should specify "2.8" for `minClientVersion`. Similarly, a package using the `contentFiles` element (see the next section) should set `minClientVersion` to "3.3". Note also that because NuGet clients prior to 2.5 do not recognize this flag, they *always* refuse to install the package no matter what `minClientVersion` contains. |
+| **minClientVersion** | No | Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager. This is used whenever the package depends on specific features of the `.nuspec` file that were added in a particular version of the NuGet client. For example, a package using the `developmentDependency` attribute should specify "2.8" for `minClientVersion`. Similarly, a package using the `contentFiles` element (see the next section) should set `minClientVersion` to "3.3". Note also that because NuGet clients prior to 2.5 do not recognize this flag, they *always* refuse to install the package no matter what `minClientVersion` contains. |
 
 ### Required metadata elements
 
@@ -256,8 +255,6 @@ Similarly, explicit references can be used for unit test frameworks, such as XUn
 
 ### Reference groups
 
-*Version 2.5+*
-
 As an alternative to a single flat list, references can be specified according to the framework profile of the target project using `<group>` elements within `<references>`.
 
 Each group has an attribute named `targetFramework` and contains zero or more `<reference>` elements. Those references are added to a project when the target framework is compatible with the project's framework profile.
@@ -327,7 +324,7 @@ To bypass this automatic behavior and explicitly control which files are include
 </files>
 ```
 
-With NuGet 2.x and earlier, and projects using `packages.config`, the `<files>` element is also used to include immutable content files when a package is installed. With NuGet 3.3+ and projects using `project.json` or PackageReference, the `<contentFiles>` element is used instead. See [Including content files](#including-content-files) below for details.
+With NuGet 2.x and earlier, and projects using `packages.config`, the `<files>` element is also used to include immutable content files when a package is installed. With NuGet 3.3+ and projects PackageReference, the `<contentFiles>` element is used instead. See [Including content files](#including-content-files) below for details.
 
 ### File element attributes
 
@@ -412,7 +409,7 @@ Content files are immutable files that a package needs to include in a project. 
 - Scripts that need to be included with the build output of the project
 - Configuration files for the package that need to be included in the project but don't need any project-specific changes
 
-Content files are included in a package using the `<files>` element, specifying the `content` folder in the `target` attribute. However, such files are ignored when the package is installed in a project using the `project.json` system in NuGet 3.3+ or PackageReference in NuGet 4+, which instead uses the `<contentFiles>` element.
+Content files are included in a package using the `<files>` element, specifying the `content` folder in the `target` attribute. However, such files are ignored when the package is installed in a project using PackageReference, which instead uses the `<contentFiles>` element.
 
 For maximum compatibility with consuming projects, a package ideally specifies the content files in both elements.
 
@@ -529,7 +526,7 @@ In this case, because the file extensions of the source and target match, NuGet 
 
 ### Using the contentFiles element for content files
 
-*Version 3.3+ with project.json and 4.0+ with PackageReference*
+*NuGet 4.0+ with PackageReference*
 
 By default, a package places content in a `contentFiles` folder (see below) and `nuget pack` included all files in that folder using default attributes. In this case it's not necessary to include a `contentFiles` node in the `.nuspec` at all.
 

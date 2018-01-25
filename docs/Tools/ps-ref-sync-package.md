@@ -7,7 +7,6 @@ ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 1b980b93-fa58-430c-b663-78ce069b1603
 description: Reference for Sync-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Sync-Package
 ms.reviewer:

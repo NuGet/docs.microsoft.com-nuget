@@ -7,7 +7,6 @@ ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 42476008-64b3-480e-a966-98b2fa38b681
 description: Reference for Get-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Get-Package
 ms.reviewer:
@@ -79,4 +78,3 @@ Get-Package -Updates
 # Lists packages installed in a specific project that have available updates
 Get-Package -Updates -ProjectName MyProject
 ```
-

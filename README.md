@@ -17,7 +17,7 @@ NuGet follows the [.NET Foundation Contributors Code of Conduct](https://github.
 
 No contribution is too big or too small--
 
-1. Visit the page to edit on [docs.microsoft.com/nuget](/en-us/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.    
+1. Visit the page to edit on [docs.microsoft.com/nuget](/en-us/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
 1. Edit the markdown:
     1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
     1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
@@ -59,7 +59,7 @@ Follow these naming conventions and capitalizations when referring to NuGet and 
 - NuGet: refers to the technology.
 - NuGet Package Manager UI, NuGet Package Manager Console, etc.: refers to other components build on NuGet.
 - nuget.exe: refers to the command-line executable; you can use "nuget" by itself when followed by other arguments. When referring to the command by itself, as in "when you run nuget", include the .exe as in "when you run nuget.exe" so your meaning is clear.
-- packages.config, project.json: refer to NuGet files in a project.
+- packages.config (or the deprecated project.json): refer to NuGet files in a project.
 - NuGet.Config and NuGetDefaults.Config: these files appear with this capitalization so be sure to follow them.
 - .nuspec: refers to a NuGet specification for creating a package; generally, we speak of a .nuspec file with the period, because it's always used as a file extension.
 
@@ -93,7 +93,7 @@ Always include a meaningful description of the image in the markdown alt-text be
 
 ### Inline code
 
-Delineate inline code with grave accents (backticks), as in `nuget pack`. This inline formatting is used for the following:
+Delineate inline code with grave accents (backticks), as in \`nuget pack\`. This inline formatting is used for the following:
 
 - Code
 - Identifiers
@@ -113,9 +113,9 @@ Markdown and HTML are ignored within inline code.
 
 Code blocks on docs.microsoft.com are delineated by with three grave accents (backticks), ```, at the beginning and the end. You do not need to indent code blocks unless they are contained within a list.
 
-The opening ``` should be followed by a language code for proper syntax coloring, such as "xml", "json", "csharp", etc. Use "bash" for command-line examples and "output" for command-line results.
+The opening ``` should be followed by a language code for proper syntax coloring, such as "xml", "json", "csharp", etc. Use "cli" for command-line examples and "output" for command-line results.
 
-The only case when you should use ``` without a language tag is when creating a block of fixed-point text that isn't related to any kind of code. In these cases you can also just indent the code block, which can be preferable because it visually separates the code in an editor. See [docs/create-packages/project-json-and-uwp.md](./docs/Create-Packages/project-json-and-UWP.md) for an example.
+The only case when you should use ``` without a language tag is when creating a block of fixed-point text that isn't related to any kind of code. In these cases you can also just indent the code block, which can be preferable because it visually separates the code in an editor.
 
 ### Callouts
 
@@ -125,12 +125,12 @@ Callout sections with ">" only will appear with a solid gray line to the left. S
 
 You can also use one of the following callout tags on the first line that will create a shaded callout in the indicated color:
 
-| Tag | Shading color | Topic with examples | 
+| Tag | Callout use | Topic with examples |
 | --- | --- | --- |
-| `> [!Note]` | Light blue, use for callouts without any special emphasis. | [Creating NuGet packages](/nuget/create-packages/creating-a-package) |
-| `> [!Tip]` | Green, use for callouts that share special tips and tricks or other helpful knowledge. | [Package consumption overview](/nuget/consume-packages/overview-and-workflow) | 
-| `> [!Important]` | Yellow, use for callouts that describe cautions. | [NuGet.Server](/nuget/hosting-packages/nuget-server) |
-| `> [!Warning]` | Red, use for callouts that warn readers about situations that could cause data loss or unexpected consequences. | [Dependency resolution](/nuget/consume-packages/dependency-resolution) |
+| `> [!Note]` | Callouts without any special emphasis. | [Creating NuGet packages](/nuget/create-packages/creating-a-package) |
+| `> [!Tip]` | Callouts that share special tips and tricks or other helpful knowledge. | [Package consumption overview](/nuget/consume-packages/overview-and-workflow) | 
+| `> [!Important]` | Callouts that describe cautions. | [NuGet.Server](/nuget/hosting-packages/nuget-server) |
+| `> [!Warning]` | Callouts that warn readers about situations that could cause data loss or unexpected consequences. | [Dependency resolution](/nuget/consume-packages/dependency-resolution) |
 
 ### Links
 
@@ -150,6 +150,6 @@ Use `&lt;` and `&gt;` for < and > characters outside a code block or inline code
 
 Block-level HTML elements have a few restrictions:
 
-* They must be separated from surrounding text by blank lines.
-* The begin and end tags of the outermost block element must not be indented.
-* Markdown can't be used within HTML blocks.
+- They must be separated from surrounding text by blank lines.
+- The begin and end tags of the outermost block element must not be indented.
+- Markdown can't be used within HTML blocks.
