@@ -18,7 +18,7 @@ ms.reviewer:
 
 **Applies to:** all &bullet; **Supported versions**: all
 
-Gets or sets NuGet configuration values. For additional usage, see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). For details on allowable key names, refer to the [NuGet config file reference](../Schema/nuget-config-file.md).
+Gets or sets NuGet configuration values in `%AppData%\NuGet\NuGet.Config` or the specified configuration file. For additional usage, see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). For details on allowable key names, refer to the [NuGet config file reference](../Schema/nuget-config-file.md).
 
 ## Usage
 
