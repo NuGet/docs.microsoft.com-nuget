@@ -27,7 +27,7 @@ In this topic:
 - [packageRestore section](#packagerestore-section)
 - [solution section](#solution-section)
 - [Package source sections](#package-source-sections):
-  -[packageSources](#packagesources)
+  - [packageSources](#packagesources)
   - [packageSourceCredentials](#packagesourcecredentials)
   - [apikeys](#apikeys)
   - [disabledPackageSources](#disabledpackagesources)
