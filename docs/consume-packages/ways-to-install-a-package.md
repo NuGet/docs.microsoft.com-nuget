@@ -18,7 +18,7 @@ ms.reviewer:
 
 NuGet packages are downloaded and installed using any of the following methods (see [Install NuGet client tools](../install-nuget-client-tools.md) if you don't have these installed already):
 
-| Method | Description | References |
+| Method&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | References&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --- | --- | --- |
 | dotnet.exe CLI: `dotnet install <package_name>` | Downloads the package identified by \<package_name\>, expands its contents into a folder in the current directory, and adds a reference to the project file. Dependencies are also downloaded and expanded. | [Install and use a package (dotnet CLI)](../quickstart/install-and-use-a-package-using-the-dotnet-cli.md)<br/>[dotnet commands](../tools/dotnet-commands.md) |
 | Package Manager UI (Visual Studio) | Provides a UI through which you can browse, select, and install packages into a project. Adds references to installed packages to the project file. | [Install and use a package (Visual Studio)](../quickstart/install-and-use-a-package-in-visual-studio.md)<br/>[Package Manager UI reference](../tools/package-manager-ui.md) |
