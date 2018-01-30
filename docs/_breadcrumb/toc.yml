@@ -8,17 +8,17 @@
     items:
     - name: Quickstart
       tocHref: /nuget/quickstart/
-      topicHref: /nuget/quickstart/create-and-publish-a-package
+      topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
     - name: Guides
       tocHref: /nuget/guides/ 
-      topicHref: /nuget/guides/install-nuget
-    - name: Create Packages
+      topicHref: /nuget/guides/create-net-standard-packages-vs2017
+    - name: Create packages
       tocHref: /nuget/create-packages/
       topicHref: /nuget/create-packages/overview-and-workflow
-    - name: Consume Packages
+    - name: Consume packages
       tocHref: /nuget/consume-packages/
       topicHref: /nuget/consume-packages/overview-and-workflow
-    - name: Hosting Packages
+    - name: Hosting packages
       tocHref: /nuget/hosting-packages/
       topicHref: /nuget/hosting-packages/overview
     - name: Tools
@@ -30,12 +30,12 @@
     - name: API
       tocHref: /nuget/api/
       topicHref: /nuget/api/overview
-    - name: Visual Studio Extensibility
+    - name: Visual Studio extensibility
       tocHref: /nuget/visual-studio-extensibility/
       topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
     - name: Policies
       tocHref: /nuget/policies/
       topicHref: /nuget/policies/nuget-faq
-    - name: Release Notes
+    - name: Release notes
       tocHref: /nuget/release-notes/
       topicHref: /nuget/release-notes/index
