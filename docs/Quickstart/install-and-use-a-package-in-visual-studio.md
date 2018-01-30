@@ -16,7 +16,7 @@ ms.reviewer:
 
 # Install and use a package in Visual Studio
 
-NuGet packages contain reusable code that other developers make available to you for use in your projects. See [What is NuGet?](../What-is-NuGet.md) for background. Packages are installed into a Visual Studio project using the Package Manager UI, as described in this article for the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package and a Universal Windows Platform (UWP) project. You can also use `Install-Package <package_name>` in the [Package Manager Console](../tools/Package-Manager-Console.md).
+NuGet packages contain reusable code that other developers make available to you for use in your projects. See [What is NuGet?](../What-is-NuGet.md) for background. Packages are installed into a Visual Studio project using the Package Manager UI or the Package Manager Console, as described in this article for the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package and a Universal Windows Platform (UWP) project. You can also use `Install-Package <package_name>` in the [Package Manager Console](../tools/package-manager-console.md).
 
 Once installed, refer to the package in code with `using <namespace>` where \<namespace\> is specific to the package you're using. Once the reference is made, you can call the package through its API.
 
@@ -36,6 +36,10 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
 
 ## Add the Newtonsoft.Json NuGet package
 
+To install the package, you can use either the Package Manager UI or the Package Manager Console.
+
+### Package Manager UI
+
 1. In Solution Explorer, right-click **References** and choose **Manage NuGet Packages**.
 
     ![Manage NuGet Packages command for project References](media/QS_Use-02-ManageNuGetPackages.png)
@@ -52,7 +56,15 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
 
 1. If prompted to review changes, select **OK**.
 
-1. Right-click the solution in Solution Explorer and select **Build Solution**. This command restores any NuGet packages listed under **References**. For more details, see [Package Restore](../consume-packages/package-restore.md).
+### Package Manager Console
+
+1. Select the **Tools > NuGet Package Manager > Package Manager Console** menu command.
+
+1. Once the console opens, check that the **Default project** drop-down list shows the project into which you want to install the package. If you have a single project in the solution, it is already selected.
+
+    ![Locating Newtonsoft.Json package](media/QS_Use-08-Console1.png)
+
+1. Enter the command `Install-Package Newtonsoft.json` (see [Install-Package](../tools/ps-ref-install-package.md)). The console window shows output for the command. Errors typically indicate that the package isn't compatible with the project's target framework.
 
 ## Use the Newtonsoft.Json API in the app
 
@@ -110,4 +122,5 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
 - [Finding and choosing packages](../consume-packages/finding-and-choosing-packages.md)
+- [Ways to install a package](../consume-packages/ways-to-install-a-package.md)
 - [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md)

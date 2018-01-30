@@ -17,7 +17,7 @@ ms.reviewer:
 # Troubleshooting package restore errors in Visual Studio
 
 > [!Note]
-> This page focuses on common errors when restoring packages in Visual Studio and steps to resolve them. For how-to restore packages, see [Package restore](../consume-packages/Package-Restore.md#enabling-and-disabling-package-restore).
+> This page focuses on common errors when restoring packages in Visual Studio and steps to resolve them. For how-to restore packages, see [Package restore](../consume-packages/package-restore.md#enabling-and-disabling-package-restore).
 
 By default, building a project in Visual Studio automatically restores NuGet packages referenced in the project. However, builds will fail if package restore is disabled in the **Tools > Options > NuGet Package Manager > Package Restore** settings and the necessary packages are not available on your computer. In these cases you may see the following errors:
 

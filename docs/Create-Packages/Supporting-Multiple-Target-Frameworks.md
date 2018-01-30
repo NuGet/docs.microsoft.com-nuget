@@ -67,7 +67,7 @@ If you have architecture-specific assemblies, that is, separate assemblies that 
             \native
             \lib\uap10.0
 
-See [Create UWP Packages](../guides/Create-UWP-Packages.md) for an example of referencing these files in the `.nuspec` manifest.
+See [Create UWP Packages](../guides/create-uwp-packages.md) for an example of referencing these files in the `.nuspec` manifest.
 
 ## Matching assembly versions and the target framework in a project
 

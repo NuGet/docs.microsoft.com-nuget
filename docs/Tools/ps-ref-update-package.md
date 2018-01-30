@@ -16,7 +16,7 @@ ms.reviewer:
 
 # Update-Package (Package Manager Console in Visual Studio)
 
-*Available only within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows.*
+*Available only within the [NuGet Package Manager Console](package-manager-console.md) in Visual Studio on Windows.*
 
 Updates a package and its dependencies, or all packages in a project, to a newer version.
 

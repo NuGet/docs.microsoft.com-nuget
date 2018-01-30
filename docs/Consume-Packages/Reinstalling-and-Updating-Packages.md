@@ -61,7 +61,7 @@ In all cases, use the notation described in [Package versioning](../reference/pa
 
 ## Using Update-Package
 
-Being mindful of the [Considerations](#considerations) described below, you can easily reinstall any package using the [Update-Package command](../Tools/ps-ref-update-package.md) in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
+Being mindful of the [Considerations](#considerations) described below, you can easily reinstall any package using the [Update-Package command](../tools/ps-ref-update-package.md) in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
 
 ```ps
 Update-Package -Id <package_name> –reinstall
@@ -95,9 +95,9 @@ To update all packages in a solution, just use `Update-Package` by itself with n
 Update-Package 
 ```
 
-Updating packages in a project or solution using [PackageReference](../consume-packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding pre-release packages). Projects that use `packages.config` can, if desired, limit update versions as described below in [Constraining upgrade versions](#constraining-upgrade-versions).
+Updating packages in a project or solution using [PackageReference](../consume-packages/package-references-in-project-files.md) always updates to the latest version of the package (excluding pre-release packages). Projects that use `packages.config` can, if desired, limit update versions as described below in [Constraining upgrade versions](#constraining-upgrade-versions).
 
-For full details on the command, see the [Update-Package](../Tools/ps-ref-update-package.md) reference.
+For full details on the command, see the [Update-Package](../tools/ps-ref-update-package.md) reference.
 
 ### Considerations
 

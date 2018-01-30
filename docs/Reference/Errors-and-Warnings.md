@@ -50,7 +50,7 @@ f1_keywords:
 
 In NuGet 4.3.0, errors and warnings are numbered as described in this topic and provide detailed information to help you address the issues involved. 
 
-The errors and warnings listed here are available only with [PackageReference-based](../consume-packages/Package-References-in-Project-Files.md) projects and NuGet 4.3.0. NuGet also honors MSBuild properties to suppress warnings or elevate them to errors. For more information, see [How to: Suppress Compiler Warnings](/visualstudio/ide/how-to-suppress-compiler-warnings) in the Visual Studio documentation.
+The errors and warnings listed here are available only with [PackageReference-based](../consume-packages/package-references-in-project-files.md) projects and NuGet 4.3.0. NuGet also honors MSBuild properties to suppress warnings or elevate them to errors. For more information, see [How to: Suppress Compiler Warnings](/visualstudio/ide/how-to-suppress-compiler-warnings) in the Visual Studio documentation.
 
 **Errors**
 

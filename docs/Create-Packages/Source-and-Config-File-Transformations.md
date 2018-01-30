@@ -17,7 +17,7 @@ ms.reviewer:
 
 # Transforming source code and configuration files
 
-For projects using `packages.config`, NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times. Transformations are not applied when a package is installed in a project using [PackageReference](../consume-packages/Package-References-in-Project-Files.md).
+For projects using `packages.config`, NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times. Transformations are not applied when a package is installed in a project using [PackageReference](../consume-packages/package-references-in-project-files.md).
 
 A **source code transformation** applies one-way token replacement to files in the package's `content` folder when the package is installed, where tokens refer to Visual Studio [project properties](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7). This allows you to insert a file into the project's namespace, or to customize code that would typically go into `global.asax` in an ASP.NET project.
 

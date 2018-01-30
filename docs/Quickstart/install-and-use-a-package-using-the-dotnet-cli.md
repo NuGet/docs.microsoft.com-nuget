@@ -107,4 +107,5 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
 
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
 - [Finding and choosing packages](../consume-packages/finding-and-choosing-packages.md)
+- [Ways to install a package](../consume-packages/ways-to-install-a-package.md)
 - [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md)

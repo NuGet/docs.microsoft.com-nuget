@@ -53,7 +53,7 @@ The manifest:
 Required properties:
 
 - The package identifier, which must be unique across the gallery that hosts the package.
-- A specific version number in the form *Major.Minor.Patch[-Suffix]* where *-Suffix* identifies [pre-release versions](Prerelease-Packages.md)
+- A specific version number in the form *Major.Minor.Patch[-Suffix]* where *-Suffix* identifies [pre-release versions](prerelease-packages.md)
 - The package title as it should appears on the host (like nuget.org)
 - Author and owner information.
 - A long description of the package.
@@ -62,7 +62,7 @@ Common optional properties:
 
 - Release notes
 - Copyright information
-- A short description for the [Package Manager UI in Visual Studio](../Tools/Package-Manager-UI.md)
+- A short description for the [Package Manager UI in Visual Studio](../tools/package-manager-ui.md)
 - A locale ID
 - Home page and license URLs
 - An icon URL
@@ -167,8 +167,8 @@ The folder conventions are as follows:
 | Folder | Description | Action upon package install |
 | --- | --- | --- |
 | (root) | Location for readme.txt | Visual Studio displays a readme.txt file in the package root when the package is installed. |
-| lib/{tfm} | Assembly (`.dll`), documentation (`.xml`), and symbol (`.pdb`) files for the given Target Framework Moniker (TFM) | Assemblies are added as references; `.xml` and `.pdb` copied into project folders. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md) for creating framework target-specific sub-folders. |
-| runtimes | Architecture-specific assembly (`.dll`), symbol (`.pdb`), and native resource (`.pri`) files | Assemblies are added as references; other files are copied into project folders. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md). |
+| lib/{tfm} | Assembly (`.dll`), documentation (`.xml`), and symbol (`.pdb`) files for the given Target Framework Moniker (TFM) | Assemblies are added as references; `.xml` and `.pdb` copied into project folders. See [Supporting multiple target frameworks](supporting-multiple-target-frameworks.md) for creating framework target-specific sub-folders. |
+| runtimes | Architecture-specific assembly (`.dll`), symbol (`.pdb`), and native resource (`.pri`) files | Assemblies are added as references; other files are copied into project folders. See [Supporting multiple target frameworks](supporting-multiple-target-frameworks.md). |
 | content | Arbitrary files | Contents are copied to the project root. Think of the **content** folder as the root of the target application that ultimately consumes the package. To have the package add an image in the application's */images* folder, place it in the package's *content/images* folder. |
 | build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file (NuGet 2.x) or `project.lock.json` (NuGet 3.x+). |
 | tools | Powershell scripts and programs accessible from the Package Manager Console | The `tools` folder is added to the `PATH` environment variable for the Package Manager Console only (Specifically, *not* to the `PATH` as set for MSBuild when building the project). |
@@ -430,7 +430,7 @@ The following options are a few that are common with Visual Studio projects:
 
 Before publishing a package, you typically want to test the process of installing a package into a project. The tests make sure that the necessarily files all end up in their correct places in the project.
 
-You can test installations manually in Visual Studio or on the command line using the normal [package installation steps](../Quickstart/Use-a-Package.md).
+You can test installations manually in Visual Studio or on the command line using the normal [package installation steps](../consume-packages/ways-to-install-a-package.md).
 
 For automated testing, the basic process is as follows:
 

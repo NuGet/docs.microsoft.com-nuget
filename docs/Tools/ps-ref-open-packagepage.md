@@ -16,7 +16,7 @@ ms.reviewer:
 
 # Open-PackagePage (Package Manager Console in Visual Studio)
 
-*Deprecated in 3.0+; available only within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows.*
+*Deprecated in 3.0+; available only within the [NuGet Package Manager Console](package-manager-console.md) in Visual Studio on Windows.*
 
 Launches the default browser with the project, license, or report abuse URL for the specified package.
 

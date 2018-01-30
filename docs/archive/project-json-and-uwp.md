@@ -71,7 +71,7 @@ MSBuild knows to look for these two files and automatically imports them near th
 
 ## Lib and Ref
 
-The behavior of the `lib` folder hasn't changed significantly in NuGet v3. However, all assemblies must be within sub-folders named after a TxM, and can no longer be placed directly under the `lib` folder. A TxM is the name of a platform that a given asset in a package is supposed to work for. Logically these are an extension of the Target Framework Monikers (TFM) e.g. `net45`, `net46`, `netcore50`, and `dnxcore50` are all examples of TxMs (see [Target Frameworks](../Schema/Target-Frameworks.md). TxM can refer to a framework (TFM) as well as other platform-specific surface areas. For example the UWP TxM (`uap10.0`) represents the .NET surface area as well as the Windows surface area for UWP applications.
+The behavior of the `lib` folder hasn't changed significantly in NuGet v3. However, all assemblies must be within sub-folders named after a TxM, and can no longer be placed directly under the `lib` folder. A TxM is the name of a platform that a given asset in a package is supposed to work for. Logically these are an extension of the Target Framework Monikers (TFM) e.g. `net45`, `net46`, `netcore50`, and `dnxcore50` are all examples of TxMs (see [Target Frameworks](../Schema/target-frameworks.md). TxM can refer to a framework (TFM) as well as other platform-specific surface areas. For example the UWP TxM (`uap10.0`) represents the .NET surface area as well as the Windows surface area for UWP applications.
 
 An example lib structure:
 

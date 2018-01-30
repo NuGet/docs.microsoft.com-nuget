@@ -34,15 +34,15 @@ Package restore is triggered in the following ways:
 
 - **Package Manager UI (Visual Studio on Windows)**: Packages are restored automatically when creating a project from a template and when building a project (subject to the option described in [Enabling and disabling package restore](#enabling-and-disabling-package-restore)). In NuGet 4.0+, restore also happens automatically when changes are made to a .NET Core SDK-based project.
 
-    To restore manually, right-click the solution in Solution Explorer and select **Restore NuGet Packages**. If one or more individual packages are still not installed properly (meaning that Solution Explorer shows an error icon), then use the Package Manager UI to uninstall and reinstall the affected packages. See [Reinstalling and updating packages](../consume-packages/Reinstalling-and-Updating-Packages.md)
+    To restore manually, right-click the solution in Solution Explorer and select **Restore NuGet Packages**. If one or more individual packages are still not installed properly (meaning that Solution Explorer shows an error icon), then use the Package Manager UI to uninstall and reinstall the affected packages. See [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md)
 
     If you see the error "This project references NuGet package(s) that are missing on this computer" or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," turn on automatic restore by following the instructions under [Enabling and disabling package restore](#enabling-and-disabling-package-restore).
 
-- **NuGet CLI**: use the [nuget restore](../tools/cli-ref-restore.md) command, which restores packages listed in the project file (see [PackageReference](../consume-packages/Package-References-in-Project-Files.md)) or in a [packages.config](../reference/packages-config.md) file. You can also specify a solution file.
+- **NuGet CLI**: use the [nuget restore](../tools/cli-ref-restore.md) command, which restores packages listed in the project file (see [PackageReference](../consume-packages/package-references-in-project-files.md)) or in a [packages.config](../reference/packages-config.md) file. You can also specify a solution file.
 
-- **dotnet CLI**: use the [dotnet restore](/dotnet/core/tools/dotnet-restore.md?tabs=netcore2x) command, which restores packages listed in the project file (see [PackageReference](../consume-packages/Package-References-in-Project-Files.md)). With .NET Core 2.0 and later, restore is done automatically with `dotnet build` and `dotnet run`.
+- **dotnet CLI**: use the [dotnet restore](/dotnet/core/tools/dotnet-restore.md?tabs=netcore2x) command, which restores packages listed in the project file (see [PackageReference](../consume-packages/package-references-in-project-files.md)). With .NET Core 2.0 and later, restore is done automatically with `dotnet build` and `dotnet run`.
 
-- **MSBuild**: use the [msbuild /t:restore](../reference/msbuild-targets.md#restore-target) command, which restores packages packages listed in the project file (see [PackageReference](../consume-packages/Package-References-in-Project-Files.md)). Available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017. `nuget restore` and `dotnet restore` both use this command for applicable projects.
+- **MSBuild**: use the [msbuild /t:restore](../reference/msbuild-targets.md#restore-target) command, which restores packages packages listed in the project file (see [PackageReference](../consume-packages/package-references-in-project-files.md)). Available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017. `nuget restore` and `dotnet restore` both use this command for applicable projects.
 
 - **Visual Studio Team Services**: When creating a build definition on Team Services, include the [NuGet restore](/vsts/build-release/tasks/package/nuget#restore-nuget-packages) or [.NET Core Restore](/vsts/build-release/tasks/build/dotnet-core#restore-nuget-packages) task in the definition before any build task. This task is included by default in a number of build templates.
 
@@ -107,4 +107,4 @@ In all cases, use the notation described in [Package versioning](../reference/pa
 
 ## Troubleshooting
 
-See [Troubleshooting package restore](Package-restore-troubleshooting.md).
+See [Troubleshooting package restore](package-restore-troubleshooting.md).

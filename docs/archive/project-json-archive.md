@@ -144,12 +144,12 @@ The `<contentFiles>` element is used instead of `<files>` with `project.json`.
 
 ### Package manager options control
 
-*Originally in [Package Manager UI reference](../tools/Package-Manager-UI.md).*
+*Originally in [Package Manager UI reference](../tools/package-manager-ui.md).*
 
 Projects using `project.json` reference format show only the **Show preview window** option.
 
 ### Visual Studio Templates
 
-*Originally in [NuGet Packages in Visual Studio templates](../Visual-Studio-Extensibility/visual-studio-templates.md).*
+*Originally in [NuGet Packages in Visual Studio templates](../visual-studio-extensibility/visual-studio-templates.md).*
 
 Best practices: templates do not include a `project.json` file, and do not include or any references or content that would be added when NuGet packages are installed.

@@ -16,7 +16,7 @@ ms.reviewer:
 
 # Sync-Package (Package Manager Console in Visual Studio)
 
-*Version 3.0+; available only within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows.*
+*Version 3.0+; available only within the [NuGet Package Manager Console](package-manager-console.md) in Visual Studio on Windows.*
 
 Gets the version of installed package from specified (or default) project and synchronizes the version to the rest of projects in the solution.
 

@@ -16,7 +16,7 @@ ms.reviewer:
 
 # Add-BindingRedirect (Package Manager Console in Visual Studio)
 
-*Available only within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows.*
+*Available only within the [NuGet Package Manager Console](package-manager-console.md) in Visual Studio on Windows.*
 
 Examines all assemblies within the output path for a project and adds binding redirects to the application or web configuration file where necessary. This command is run automatically when installing a package.
 

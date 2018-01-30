@@ -16,7 +16,7 @@ ms.reviewer:
 
 # Get-Project (Package Manager Console in Visual Studio)
 
-*Available only within the [NuGet Package Manager Console](Package-Manager-Console.md) in Visual Studio on Windows.*
+*Available only within the [NuGet Package Manager Console](package-manager-console.md) in Visual Studio on Windows.*
 
 Displays information about the default or specified project. `Get-Project` specifically returns a referent to the Visual Studio DTE (Development Tools Environment) object for the project.
 
