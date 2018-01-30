@@ -83,7 +83,7 @@ Package restore is primarily enabled through **Tools > Options > NuGet Package M
     </configuration>
     ```
 
-For reference, see the [NuGet config file - packageRestore section](../Schema/nuget-config-file.md#packagerestore-section).
+For reference, see the [NuGet config file - packageRestore section](../reference/nuget-config-file.md#packagerestore-section).
 
 In some cases, a developer or company might want to enable or disable package restore for all users on a computer. This is done by adding the same settings above to the global NuGet configuration file located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}]]]`. Individual users can then selectively enable restore as needed on a project level. See [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied) for exact details on how NuGet prioritizes multiple config files.
 

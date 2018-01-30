@@ -177,7 +177,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="schema/nuspec.md">
+                            <a href="reference/nuspec.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
