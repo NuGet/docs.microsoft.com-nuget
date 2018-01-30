@@ -18,7 +18,7 @@ ms.reviewer:
 
 **Applies to:** all &bullet; **Supported versions**: all
 
-Gets or sets NuGet configuration values in `%AppData%\NuGet\NuGet.Config` or the specified configuration file. For additional usage, see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). For details on allowable key names, refer to the [NuGet config file reference](../Schema/nuget-config-file.md).
+Gets or sets NuGet configuration values in the user scope configuration file or a specified configuration file. The user scope configuration file is located at `%APPDATA%\NuGet\NuGet.Config` in Windows and at `~/.nuget/NuGet.Config` in Mac/Linux. For additional usage, see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). For details on allowable key names, refer to the [NuGet config file reference](../Schema/nuget-config-file.md).
 
 ## Usage
 
