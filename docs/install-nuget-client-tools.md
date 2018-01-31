@@ -16,7 +16,7 @@ ms.reviewer:
 
 # Installing NuGet client tools
 
-> **Looking to install a package? See [Quickstart - Use a package](quickstart/use-a-package.md).**
+> **Looking to install a package? See [Ways to install NuGet packages](consume-packages/ways-to-install-a-package.md).**
 
 To work with NuGet, as a package consumer or creator, you can use [cross-platform command-line interface (CLI) tools](#cli-tools) as well as [NuGet features in Visual Studio](#visual-studio). This article briefly outlines the capabilities of the different tools, how to install them, and their comparative [feature availability](#feature-availability).
 

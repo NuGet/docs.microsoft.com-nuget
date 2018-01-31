@@ -5,12 +5,6 @@
 ## [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
 ## [Create and publish a package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
 ## [Create and publish a package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
-# Guides
-## [Create NET Standard packages (Visual Studio 2017)](guides/create-net-standard-packages-vs2017.md)
-## [Create NET Standard packages (Visual Studio 2015)](guides/create-net-standard-packages-vs2015.md)
-## [Create UWP packages](guides/create-uwp-packages.md)
-## [Creating UWP controls as NuGet packages](guides/create-uwp-controls.md)
-## [Create packages for Xamarin](guides/create-packages-for-xamarin.md)
 # Consume packages
 ## [Overview and workflow](consume-packages/overview-and-workflow.md)
 ## [Finding and choosing packages](consume-packages/finding-and-choosing-packages.md)
@@ -25,6 +19,11 @@
 ## [Package references in project files](consume-packages/package-references-in-project-files.md)
 # Create packages
 ## [Overview and workflow](create-packages/overview-and-workflow.md)
+## Guides
+### [Create UWP packages](guides/create-uwp-packages.md)
+### [Creating UWP controls as NuGet packages](guides/create-uwp-controls.md)
+### [Create NET Standard packages (Visual Studio 2015)](guides/create-net-standard-packages-vs2015.md)
+## [Create packages for Xamarin](guides/create-packages-for-xamarin.md)
 ## [Creating a package](create-packages/creating-a-package.md)
 ## [Supporting multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
 ## [Source and config file transformations](create-packages/source-and-config-file-transformations.md)
