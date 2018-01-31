@@ -30,7 +30,7 @@ This NuGet 3.0 Beta is available to install in the Visual Studio 2015 CTP 6 Exte
 
 We've been working on some implementation details for NuGet's client/server protocol. The work we've done is to create "API v3" for NuGet, which is designed around high availability for critical scenarios such as package restore and installing packages. The new API is based on REST and Hypermedia and we've selected [JSON-LD](http://json-ld.org) as our resource format.
 
-In the NuGet 3.0 Beta bits, you'll see a new package source called "api.nuget.org" in the package source dropdown.   If you select that package source, we'll use our new API rather to connect to nuget.org. In NuGet 3.0 RC, this new API v3-based package source will replace the v2-based "nuget.org" package source.  We recommend disabling all of the other public package sources and leave only api.nuget.org as your only public package repository.
+In the NuGet 3.0 Beta bits, you see a new package source called "api.nuget.org" in the package source dropdown.   If you select that package source, we'll use our new API rather to connect to nuget.org. In NuGet 3.0 RC, this new API v3-based package source will replace the v2-based "nuget.org" package source.  We recommend disabling all of the other public package sources and leave only api.nuget.org as your only public package repository.
 
 We've put a lot of time into building our v3 API and will continue to maintain the standard v2 API for old clients seeking to access the public repository.
 

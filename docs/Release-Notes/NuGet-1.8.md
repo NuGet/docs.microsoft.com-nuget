@@ -34,7 +34,7 @@ then you likely need to restart Visual Studio using "Run as Administrator."
 
 Shortly after NuGet 1.8 was released, we learned that a cryptography change in 1.8 broke users on Windows XP.
 
-We have since released a hotfix that addresses this issue.  By updating NuGet through the Visual Studio Extension Gallery, you will receive this hotfix.
+We have since released a hotfix that addresses this issue.  By updating NuGet through the Visual Studio Extension Gallery, you receive this hotfix.
 
 ## Features
 

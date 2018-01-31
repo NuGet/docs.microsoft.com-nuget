@@ -38,7 +38,7 @@ Similarly, you can write an MSBuild task, write your own target and consume NuGe
 
 ## pack target
 
-When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs from the project file. The table below describes the MSBuild properties that can be added to a project file within the first `<PropertyGroup>` node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../schema/nuspec.md).
+When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs from the project file. The table below describes the MSBuild properties that can be added to a project file within the first `<PropertyGroup>` node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../reference/nuspec.md).
 
 Note that the `Owners` and `Summary` properties from `.nuspec` are not supported with MSBuild.
 
@@ -259,7 +259,7 @@ Restore creates the following files in the build `obj` folder:
 
 ### PackageTargetFallback
 
-The `PackageTargetFallback` element allows you to specify a set of compatible targets to be used when restoring packages. It's designed to allow packages that use a dotnet [TxM](../schema/target-frameworks.md) to work with compatible packages that don't declare a dotnet TxM. That is, if your project uses the dotnet TxM, then all the packages it depends on must also have a dotnet TxM, unless you add the `<PackageTargetFallback>` to your project in order to allow non-dotnet platforms to be compatible with dotnet.
+The `PackageTargetFallback` element allows you to specify a set of compatible targets to be used when restoring packages. It's designed to allow packages that use a dotnet [TxM](../reference/target-frameworks.md) to work with compatible packages that don't declare a dotnet TxM. That is, if your project uses the dotnet TxM, then all the packages it depends on must also have a dotnet TxM, unless you add the `<PackageTargetFallback>` to your project in order to allow non-dotnet platforms to be compatible with dotnet.
 
 For example, if the project is using the `netstandard1.6` TxM, and a dependent package contains only `lib/net45/a.dll` and `lib/portable-net45+win81/a.dll`, then the project will fail to build. If what you want to bring in is the latter DLL, then you can add a `PackageTargetFallback` as follows to say that the `portable-net45+win81` DLL is compatible:
 

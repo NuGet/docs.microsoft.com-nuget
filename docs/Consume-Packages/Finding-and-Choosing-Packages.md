@@ -21,7 +21,7 @@ When starting any .NET project, or whenever you identify a functional need for y
 
 ## Finding packages
 
-When you visit nuget.org or open the Package Manager UI in Visual Studio, you'll see a list of packages sorted by total downloads. This immediately shows you the most widely-used packages across the millions of .NET projects. There's a good chance, then, that at least some of the packages listed on the first few pages will be useful in your projects.
+When you visit nuget.org or open the Package Manager UI in Visual Studio, you see a list of packages sorted by total downloads. This immediately shows you the most widely-used packages across the millions of .NET projects. There's a good chance, then, that at least some of the packages listed on the first few pages will be useful in your projects.
 
 ![Default view of nuget.org/packages showing the most popular packages](media/Finding-01-Popularity.png)
 
@@ -45,7 +45,7 @@ Fortunately, you can determine supported frameworks through two other means:
 
 1. Attempt to install a package into a project using the [`Install-Package`](../tools/ps-ref-install-package.md) command in the NuGet Package Manager Console. If the package is incompatible, this command shows you the package's supported frameworks.
 
-1. Download the package from its page on nuget.org using the **Manual download** link under **Info**. Change the extension from `.nupkg` to `.zip`, and open the file to examine the content of its `lib` folder. There you'll see subfolders for each of the supported frameworks, where each subfolder is named with a target framework moniker (TFM; see [Target Frameworks](../schema/Target-Frameworks.md)). If you see no subfolders under `lib` and only a single DLL, then you must attempt to install the package in your project to discover its compatibility.
+1. Download the package from its page on nuget.org using the **Manual download** link under **Info**. Change the extension from `.nupkg` to `.zip`, and open the file to examine the content of its `lib` folder. There you see subfolders for each of the supported frameworks, where each subfolder is named with a target framework moniker (TFM; see [Target Frameworks](../reference/target-frameworks.md)). If you see no subfolders under `lib` and only a single DLL, then you must attempt to install the package in your project to discover its compatibility.
 
 ## Pre-release packages
 

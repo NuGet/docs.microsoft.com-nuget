@@ -25,7 +25,7 @@ ms.reviewer:
 
 .NET Standard & its tooling was designed such that projects targeting .NET Framework 4.6.1 can consume NuGet packages & projects targeting .NET Standard 2.0 or earlier. [This document](https://github.com/dotnet/standard/issues/481) summarizes the issues around that scenario, the plan for addressing them, and workarounds you can deploy with today's state of the tooling.
 
-### You will be unable to view, add, or update DotNetCLITools, using Nuget Package Manager
+### You are unable to view, add, or update DotNetCLITools, using Nuget Package Manager
 
 #### Issue
 

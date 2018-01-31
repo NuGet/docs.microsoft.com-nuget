@@ -72,7 +72,7 @@ NuGet 2.1 provides more granular control over the location of the packages folde
 </configuration>
 ```
 
-In this example, the shared `Nuget.Config` file specifies a shared packages folder for every project that is created beneath C:\myteam, regardless of depth. Note that if you have an existing packages folder underneath your solution root, you will need to delete it before NuGet will place packages in the new location.
+In this example, the shared `Nuget.Config` file specifies a shared packages folder for every project that is created beneath C:\myteam, regardless of depth. Note that if you have an existing packages folder underneath your solution root, you need to delete it before NuGet will place packages in the new location.
 
 ## Support for Portable Libraries
 [Portable libraries](/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library) is a feature first introduced with .NET 4 that enables you to build assemblies that can work without modification on different Microsoft platforms, from versions of the.NET Framework to Silverlight to Windows Phone and even Xbox 360 (though at this time, NuGet does not support the Xbox portable library target).  By extending the [package conventions](../create-packages/supporting-multiple-target-frameworks.md) for framework versions and profiles, NuGet 2.1 now supports portable libraries by enabling you to create packages that have compound framework and profile target `lib` folders.
@@ -85,7 +85,7 @@ After the library is built and the command `nuget.exe pack MyPortableProject.csp
 
 ![Portable library package layout](./media/releasenotes-21-plib-layout.png)
 
-As you can see, the portable library folder name convention follows the pattern ‘portable-{framework 1}+{framework n}’ where the framework identifiers follow the existing [framework name and version conventions](../schema/target-frameworks.md). One exception to the name and version conventions is found in the framework identifier used for Windows Phone.  This moniker should use the framework name ‘wp’ (wp7, wp71 or wp8). Using ‘silverlight-wp7’, for example, will result in an error.
+As you can see, the portable library folder name convention follows the pattern ‘portable-{framework 1}+{framework n}’ where the framework identifiers follow the existing [framework name and version conventions](../reference/target-frameworks.md). One exception to the name and version conventions is found in the framework identifier used for Windows Phone.  This moniker should use the framework name ‘wp’ (wp7, wp71 or wp8). Using ‘silverlight-wp7’, for example, will result in an error.
 
 When installing the package that is created from this folder structure, NuGet can now apply its framework and profile rules to multiple targets, as specified in the folder name.  Behind NuGet’s matching rules is the principle that “more specific” targets will take precedence over “less specific” ones.  This means that monikers targeting a specific platform will always be preferred over portable ones if they are both compatible with a project.  Additionally, if multiple portable targets are compatible with a project, NuGet will prefer the one where the set of platforms supported is “closest” to the project referencing the package.
 

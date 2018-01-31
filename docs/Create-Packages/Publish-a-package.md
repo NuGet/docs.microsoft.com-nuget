@@ -17,7 +17,7 @@ ms.reviewer:
 
 # Publishing packages
 
-Once you have [created a package](../create-packages/creating-a-package.md) with `nuget pack`, it's a simple process to make it available to other developers, either publicly or privately:
+Once you have created a package and have your `.nukpg` file in hand, it's a simple process to make it available to other developers, either publicly or privately:
 
 - Public packages are made available to all developers globally through [nuget.org](https://www.nuget.org/packages/manage/upload) as described in this topic.
 - Private packages are available to only a team or organization, by hosting them either a file share, a private NuGet server, [Visual Studio Team Services Package Management](https://www.visualstudio.com/docs/package/nuget/publish), or a third-party repository such as myget, ProGet, Nexus Repository, and Artifactory. For additional details, see [Hosting Packages Overview](../hosting-packages/overview.md).
@@ -42,7 +42,7 @@ Next, you can either upload the package through the nuget.org web portal, push t
 > To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](../api/nuget-protocols.md).
 
 1. Click on your user name to navigate to your account settings.
-1. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:
+1. Under **API Key**, click **copy to clipboard** to retrieve the access key you need in the CLI:
 
     ![Copying an API Key from account settings](media/publish_APIKey.png)
 
@@ -62,13 +62,13 @@ Next, you can either upload the package through the nuget.org web portal, push t
 
 1. Before being made public, all packages uploaded to nuget.org are scanned for viruses and rejected if any viruses are found. All packages listed on nuget.org are also scanned periodically.
 
-1. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page:
+1. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you see the following message on your package page:
 
     ![Message indicating a package is not yet indexed](media/publish_NotYetIndexed.png)
 
 ### Package validation and indexing
 
-Packages pushed to NuGet.org undergo several validations. When the package has passed all validation checks, it might take a while for it to be indexed and appear in search results. Once indexing is complete, you'll receive an email confirming that the package was successfully published. If the package fails a validation check, the package details page will update to display the associated error and you'll also receive an email notifying you about it.
+Packages pushed to NuGet.org undergo several validations. When the package has passed all validation checks, it might take a while for it to be indexed and appear in search results. Once indexing is complete, you receive an email confirming that the package was successfully published. If the package fails a validation check, the package details page will update to display the associated error and you also receive an email notifying you about it.
 
 Package validation and indexing usually takes under 15 minutes. If the package publishing is taking longer than expected, visit [status.nuget.org](https://status.nuget.org/) to check if NuGet.org is experiencing any interruptions. If all systems are operational and the package hasn't been successfully published within an hour, please login to NuGet.org and contact us using the Contact Support link on the package page.
 

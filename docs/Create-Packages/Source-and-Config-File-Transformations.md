@@ -17,7 +17,7 @@ ms.reviewer:
 
 # Transforming source code and configuration files
 
-For projects using `packages.config`, NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times. Transformations are not applied when a package is installed in a project using [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md).
+For projects using `packages.config`, NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times. Transformations are not applied when a package is installed in a project using [PackageReference](../consume-packages/package-references-in-project-files.md).
 
 A **source code transformation** applies one-way token replacement to files in the package's `content` folder when the package is installed, where tokens refer to Visual Studio [project properties](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7). This allows you to insert a file into the project's namespace, or to customize code that would typically go into `global.asax` in an ASP.NET project.
 
@@ -112,7 +112,7 @@ As a more extensive example, the [Error Logging Modules and Handlers for ASP.NET
 
 To examine its `web.config.transform` file, download the ELMAH package from the link above, change the package extension from `.nupkg` to `.zip`, and then open `content\web.config.transform` in that ZIP file.
 
-To see the effect of installing and uninstalling the package, create a new ASP.NET project in Visual Studio (the template is under **Visual C# > Web** in the New Project dialog), and select an empty ASP.NET application. Open `web.config` to see its initial state. Then right-click the project, select **Manage NuGet Packages**, browse for ELMAH on nuget.org, and install the latest version. Notice all the changes to `web.config`. Now uninstall the package and you'll see `web.config` revert to its prior state.
+To see the effect of installing and uninstalling the package, create a new ASP.NET project in Visual Studio (the template is under **Visual C# > Web** in the New Project dialog), and select an empty ASP.NET application. Open `web.config` to see its initial state. Then right-click the project, select **Manage NuGet Packages**, browse for ELMAH on nuget.org, and install the latest version. Notice all the changes to `web.config`. Now uninstall the package and you see `web.config` revert to its prior state.
 
 ### XDT transforms
 

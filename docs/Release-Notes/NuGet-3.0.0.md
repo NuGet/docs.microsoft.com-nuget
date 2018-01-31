@@ -26,7 +26,7 @@ In total, we closed 240 issues in the 3.0 release, and you can review the [compl
 
 ## Known Issues
 
-There were a number of known issues delivered with this release, and all of these items are fixed in our scheduled 3.1 release to coincide with the release of Windows 10 on July 29th.  You will be able to update your Visual Studio extension from the gallery on or after that date to fix these known issues.
+There were a number of known issues delivered with this release, and all of these items are fixed in our scheduled 3.1 release to coincide with the release of Windows 10 on July 29th.  You are able to update your Visual Studio extension from the gallery on or after that date to fix these known issues.
 
 *  Translation is not provided for the "Do not show this again" label on the preview window and the "Authors" label in the package description window.
 *  When you working on a project by using TFS source control, NuGet cannot present the package manager user interface if the Nuget.Config file is marked as read-only.

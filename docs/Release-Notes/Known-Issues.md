@@ -44,7 +44,7 @@ In NuGet 3.4 and 3.4.1, when using the NuGet add-in, no sources are reported as 
 
 ![NuGet config with no sources](./media/knownIssue-34-NoSources.PNG)
 
-The `NuGet.Config` file in your `%AppData%\NuGet\` folder has accidentally been emptied. To fix this: Close Visual Studio 2015, delete the `NuGet.Config` file in the `%AppData%\NuGet\` folder and restart Visual Studio.  A new `NuGet.Config` file will be generated and you will be able to proceed.
+The `NuGet.Config` file in your `%AppData%\NuGet\` folder has accidentally been emptied. To fix this: Close Visual Studio 2015, delete the `NuGet.Config` file in the `%AppData%\NuGet\` folder and restart Visual Studio.  A new `NuGet.Config` file will be generated and you are able to proceed.
 
 ## Error installing packages with NuGet 2.7
 
@@ -172,7 +172,7 @@ If you have installed Visual Studio 2010 SP1 Beta, you may notice that if you le
 
 ## The element 'metadata' ... has invalid child element exception occurs
 
-If you installed packages built with a pre-release version of NuGet, you might encounter an error message stating "The element 'metadata' in namespace 'schemas.microsoft.com/packaging/2010/07/nuspec.xsd' has invalid child element" when running the RTM version of NuGet with that project. You'll need to uninstall and then re-install each package using the RTM version of NuGet.
+If you installed packages built with a pre-release version of NuGet, you might encounter an error message stating "The element 'metadata' in namespace 'schemas.microsoft.com/packaging/2010/07/nuspec.xsd' has invalid child element" when running the RTM version of NuGet with that project. You need to uninstall and then re-install each package using the RTM version of NuGet.
 
 ## Attempting to install or uninstall results in the error "Cannot create a file when that file already exists."
 

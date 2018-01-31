@@ -35,7 +35,7 @@ Occasionally, the enter key does not work in the Package Manager Console. If you
 
 Restart Visual Studio and open the PMC before opening the solution. Alternatively, try deleting the `project.lock.json` and restoring again.
 
-### You will be unable to view, add, or update DotNetCLITools, using Nuget Package Manager
+### You are unable to view, add, or update DotNetCLITools, using Nuget Package Manager
 
 #### Issue
 
