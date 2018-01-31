@@ -75,7 +75,7 @@ As an example, suppose the project initially contains the following content in `
         <modules>
             <add name="ContosoUtilities" type="Contoso.Utilities" />
         </modules>
-    <system.webServer>
+    </system.webServer>
 </configuration>
 ```
 
@@ -87,7 +87,7 @@ To add a `MyNuModule` element to the `modules` section during package install, c
         <modules>
             <add name="MyNuModule" type="Sample.MyNuModule" />
         </modules>
-    <system.webServer>
+    </system.webServer>
 </configuration>
 ```
 
@@ -100,7 +100,7 @@ After NuGet installs the package, `web.config` will appear as follows:
             <add name="ContosoUtilities" type="Contoso.Utilities" />
             <add name="MyNuModule" type="Sample.MyNuModule" />
         </modules>
-    <system.webServer>
+    </system.webServer>
 </configuration>
 ```
 
@@ -139,7 +139,7 @@ For another example, suppose the project initially contains the following conten
         <modules>
             <add name="ContosoUtilities" type="Contoso.Utilities" />
         </modules>
-    <system.webServer>
+    </system.webServer>
 </configuration>
 ```
 
@@ -165,7 +165,7 @@ After installing the package, `web.config` will look like this:
             <add name="ContosoUtilities" type="Contoso.Utilities" />
             <add name="MyNuModule" type="Sample.MyNuModule" />
         </modules>
-    <system.webServer>
+    </system.webServer>
 </configuration>
 ```
 
