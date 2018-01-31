@@ -33,7 +33,7 @@ This extension update addresses two of the biggest issues users have faced consu
 
 ### NuGet Schema Version Error
 
-Since WebMatrix 3 was released, new features have been introduced into NuGet that require a new schema version for the NuGet packages.  When trying to manage your NuGet packages in your web site, these new packages can lead to errors that you'll see in WebMatrix.
+Since WebMatrix 3 was released, new features have been introduced into NuGet that require a new schema version for the NuGet packages.  When trying to manage your NuGet packages in your web site, these new packages can lead to errors that you see in WebMatrix.
 
 ![An error occurred. The schema version is incompatible. Please upgrade NuGet to the latest version.](./media/NuGet-2.8/webmatrix-schema-version.png)
 

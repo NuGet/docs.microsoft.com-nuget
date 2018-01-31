@@ -56,19 +56,19 @@ Works with `project.json`.
 
 ## Dependency resolution with PackageReference
 
-*Originally in [Dependency resolution](../Consume-Packages/dependency-resolution.md#dependency-resolution-with-packagereference).*
+*Originally in [Dependency resolution](../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference).*
 
 The behavior of PackageReference applies also to `project.json`. NuGet restore writes the dependency graph into a file named `project.lock.json` alongside `project.json`.
 
 ## Managing dependency assets
 
-*Originally in [Dependency resolution](../Consume-Packages/dependency-resolution.md#managing-dependency-assets).*
+*Originally in [Dependency resolution](../consume-packages/dependency-resolution.md#managing-dependency-assets).*
 
 When using the `project.json` format, you can control which assets from dependencies flow into the top-level project. For details, see [project.json](project-json.md).
 
 ## Excluding references
 
-*Originally in [Dependency resolution](../Consume-Packages/dependency-resolution.md#excluding-references).*
+*Originally in [Dependency resolution](../consume-packages/dependency-resolution.md#excluding-references).*
 
 - `project.json`: add `"exclude" : "all"` in the dependency for PackageC:
 
@@ -85,21 +85,21 @@ When using the `project.json` format, you can control which assets from dependen
 
 ## Resolving incompatible package errors
 
-*Originally in [Dependency resolution](../Consume-Packages/dependency-resolution.md#resolving-incompatible-package-errors).*
+*Originally in [Dependency resolution](../consume-packages/dependency-resolution.md#resolving-incompatible-package-errors).*
 
 An added means of resolving errors:
 
-- **Not recommended**: as a temporary solution while you work with the package author, projects targeting `netcore`, `netstandard`, and `netcoreapp` can denote other frameworks as being compatible, thereby allowing packages targeting those other frameworks to be used. See [project.json imports](project-json.md#imports) and [MSBuild restore target PackageTargetFallback](../schema/msbuild-targets.md#packagetargetfallback). This can cause unexpected behaviors, so again, it's best to resolve package incompatibilities by working with the package author on an update.
+- **Not recommended**: as a temporary solution while you work with the package author, projects targeting `netcore`, `netstandard`, and `netcoreapp` can denote other frameworks as being compatible, thereby allowing packages targeting those other frameworks to be used. See [project.json imports](project-json.md#imports) and [MSBuild restore target PackageTargetFallback](../reference/msbuild-targets.md#packagetargetfallback). This can cause unexpected behaviors, so again, it's best to resolve package incompatibilities by working with the package author on an update.
 
 ## Target frameworks
 
-*Originally in [Target frameworks](../schema/target-frameworks.md).*
+*Originally in [Target frameworks](../reference/target-frameworks.md).*
 
 - [project.json](project-json.md): The `frameworks` node specifies the framework versions that the project can be compiled against.
 
 ## Creating a package
 
-*Originally in [Creating a package](../Create-Packages/creating-a-package.md)*
+*Originally in [Creating a package](../create-packages/creating-a-package.md)*
 
 ### Setting a package type
 
@@ -132,24 +132,24 @@ When using the `project.json` format, NuGet also supports using a wildcard notat
 
 ### NuGet.Config reference
 
-*Originally in [NuGet.Config reference](../schema/nuget-config-file.md).*
+*Originally in [NuGet.Config reference](../reference/nuget-config-file.md).*
 
 `globalPackagesFolder` applies only to `project.json`.
 
 ### nuspec file reference
 
-*Originally in [nuspec reference](../schema/nuspec.md).*
+*Originally in [nuspec reference](../reference/nuspec.md).*
 
 The `<contentFiles>` element is used instead of `<files>` with `project.json`.
 
 ### Package manager options control
 
-*Originally in [Package Manager UI reference](../tools/Package-Manager-UI.md).*
+*Originally in [Package Manager UI reference](../tools/package-manager-ui.md).*
 
 Projects using `project.json` reference format show only the **Show preview window** option.
 
 ### Visual Studio Templates
 
-*Originally in [NuGet Packages in Visual Studio templates](../Visual-Studio-Extensibility/visual-studio-templates.md).*
+*Originally in [NuGet Packages in Visual Studio templates](../visual-studio-extensibility/visual-studio-templates.md).*
 
 Best practices: templates do not include a `project.json` file, and do not include or any references or content that would be added when NuGet packages are installed.

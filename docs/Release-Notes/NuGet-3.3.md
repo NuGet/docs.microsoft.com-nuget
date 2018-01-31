@@ -22,7 +22,7 @@ NuGet 3.3 was released November 30, 2015 with a significant number of user inter
 
 ## New Features
 
-* Credential Providers have been introduced that allow NuGet command-line clients to be able to work seamlessly with an authenticated feed. [Instructions on how to install the Visual Studio Team Services credential provider ](../API/nuget-exe-Credential-Providers.md) and configure the NuGet clients to use it are available on NuGet Docs.
+* Credential Providers have been introduced that allow NuGet command-line clients to be able to work seamlessly with an authenticated feed. [Instructions on how to install the Visual Studio Team Services credential provider ](../api/nuget-exe-credential-providers.md) and configure the NuGet clients to use it are available on NuGet Docs.
 
 ## New User Interface Features
 
@@ -43,7 +43,7 @@ In this version we introduced the `add` and `init` commands to initialize folder
 
 ## ContentFiles
 
-Content is now supported in `project.json` managed projects through the new `contentFiles` folder and `.nuspec` `contentFiles` element notation.  This content can be more directly specified by the package author for interactions with project systems.  More information about how to configure contentFiles in a `.nuspec` document can be found in the [.nuspec Reference](../schema/nuspec.md).
+Content is now supported in `project.json` managed projects through the new `contentFiles` folder and `.nuspec` `contentFiles` element notation.  This content can be more directly specified by the package author for interactions with project systems.  More information about how to configure contentFiles in a `.nuspec` document can be found in the [.nuspec Reference](../reference/nuspec.md).
 
 ## NuGet Locals Cache Management
 

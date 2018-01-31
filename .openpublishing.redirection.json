@@ -1,38 +1,43 @@
 {
     "redirections": [
         {
-            "source_path": "docs/API/introduction.md",
+            "source_path": "docs/api/introduction.md",
             "redirect_url": "/nuget/api/overview",
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/API/NuGet-API-V3.md",
+            "source_path": "docs/api/NuGet-API-V3.md",
             "redirect_url": "/nuget/reference/nuget-client-sdk",
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/API/NuGet-Credential-Providers-for-Visual-Studio.md",
+            "source_path": "docs/api/NuGet-Credential-Providers-for-Visual-Studio.md",
             "redirect_url": "/nuget/reference/extensibility/nuget-credential-providers-for-visual-studio",
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/API/nuget-exe-Credential-Providers.md",
+            "source_path": "docs/api/nuget-exe-credential-providers.md",
             "redirect_url": "/nuget/reference/extensibility/nuget-exe-credential-providers",
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/Create-Packages/Dependency-Versions.md",
+            "source_path": "docs/create-packages/Dependency-Versions.md",
             "redirect_url": "/nuget/reference/package-versioning",
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/Create-Packages/project-json-impact.md",
+            "source_path": "docs/create-packages/project-json-impact.md",
             "redirect_url": "/nuget/archive/project-json-impact",
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/Create-Packages/project-json-and-uwp.md",
+            "source_path": "docs/create-packages/project-json-and-uwp.md",
             "redirect_url": "/nuget/archive/project-json-and-uwp",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/guides/create-cross-platform-packages.md",
+            "redirect_url": "/nuget/guides/create-packages-for-xamarin",
             "redirect_document_id": false
         },
         {
@@ -46,8 +51,43 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/Schema/analyzers-conventions.md",
+            "redirect_url": "/nuget/reference/analyzers-conventions",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Schema/msbuild-targets.md",
+            "redirect_url": "/nuget/reference/msbuild-targets",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Schema/nuget-config-file.md",
+            "redirect_url": "/nuget/reference/nuget-config-file",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Schema/nuspec.md",
+            "redirect_url": "/nuget/reference/nuspec",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Schema/target-frameworks.md",
+            "redirect_url": "/nuget/reference/target-frameworks",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/Quickstart/restore.md",
             "redirect_url": "/nuget/consume-packages/package-restore-troubleshooting",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Quickstart/Create-and-publish-a-package.md",
+            "redirect_url": "/nuget/quickstart/create-and-publish-a-package-using-visual-studio",
+            "redirect_document_id": false
+        },        
+        {
+            "source_path": "docs/Quickstart/Use-a-Package.md",
+            "redirect_url": "/nuget/quickstart/install-and-use-a-package-in-visual-studio",
             "redirect_document_id": false
         }
     ]

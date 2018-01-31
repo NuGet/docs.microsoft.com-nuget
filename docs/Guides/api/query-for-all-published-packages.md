@@ -77,7 +77,7 @@ For each remaining catalog page, download the full document using the `@id` prop
 
 Deserialize the [catalog page](../../api/catalog-resource.md#catalog-page). Filter out all [catalog leaf objects](../../api/catalog-resource.md#catalog-item-object-in-a-page) with `commitTimeStamp` less than or equal to your current cursor value.
 
-After you have downloaded all of the catalog pages not filtered out, you will have a set of catalog leaf objects representing packages that have been published, unlisted, listed, or deleted in the time between your cursor timestamp and now.
+After you have downloaded all of the catalog pages not filtered out, you have a set of catalog leaf objects representing packages that have been published, unlisted, listed, or deleted in the time between your cursor timestamp and now.
 
 ## Process catalog leaves
 

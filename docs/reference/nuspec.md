@@ -211,7 +211,7 @@ As an alternative to a single flat list, dependencies can be specified according
 
 Each group has an attribute named `targetFramework` and contains zero or more `<dependency>` elements. Those dependencies are installed together when  the target framework is compatible with the project's framework profile.
 
-The `<group>` element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](../schema/target-frameworks.md) for the exact framework identifiers.
+The `<group>` element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](../reference/target-frameworks.md) for the exact framework identifiers.
 
 > [!Important]
 > The group format cannot be intermixed with a flat list.
@@ -259,7 +259,7 @@ As an alternative to a single flat list, references can be specified according t
 
 Each group has an attribute named `targetFramework` and contains zero or more `<reference>` elements. Those references are added to a project when the target framework is compatible with the project's framework profile.
 
-The `<group>` element without a `targetFramework` attribute is used as the default or fallback list of references. See [Target frameworks](../schema/target-frameworks.md) for the exact framework identifiers.
+The `<group>` element without a `targetFramework` attribute is used as the default or fallback list of references. See [Target frameworks](../reference/target-frameworks.md) for the exact framework identifiers.
 
 > [!Important]
 > The group format cannot be intermixed with a flat list.
@@ -293,7 +293,7 @@ The `<frameworkAssemblies>` element contains zero or more `<frameworkAssembly>` 
 | Attribute | Description |
 | --- | --- |
 | **assemblyName** | (Required) The fully qualified assembly name. |
-| **targetFramework** | (Optional) Specifies the target framework to which this reference applies. If omitted, indicates that the reference applies to all frameworks. See [Target frameworks](../schema/target-frameworks.md) for the exact framework identifiers. |
+| **targetFramework** | (Optional) Specifies the target framework to which this reference applies. If omitted, indicates that the reference applies to all frameworks. See [Target frameworks](../reference/target-frameworks.md) for the exact framework identifiers. |
 
 The following example shows a reference to `System.Net` for all target frameworks, and a reference to `System.ServiceModel` for .NET Framework 4.0 only:
 
@@ -333,7 +333,7 @@ Each `<file>` element specifies the following attributes:
 | Attribute | Description |
 | --- | --- |
 | **src** | The location of the file or files to include, subject to exclusions specified by the `exclude` attribute. The path is relative to the `.nuspec` file unless an absolute path is specified. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
-| **target** | The relative path to the folder within the package where the source files are placed, which must begin with `lib`, `content`, `build`, or `tools`. See [Creating a .nuspec from a convention-based working directory](../Create-Packages/Creating-a-Package.md#from-a-convention-based-working-directory). |
+| **target** | The relative path to the folder within the package where the source files are placed, which must begin with `lib`, `content`, `build`, or `tools`. See [Creating a .nuspec from a convention-based working directory](../create-packages/creating-a-package.md#from-a-convention-based-working-directory). |
 | **exclude** | A semicolon-delimited list of files or file patterns to exclude from the `src` location. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
 
 ### Examples
@@ -551,7 +551,7 @@ The package project should structure content using the following pattern:
     /contentFiles/{codeLanguage}/{TxM}/{any?}
 
 - `codeLanguages` may be `cs`, `vb`, `fs`, `any`, or the lowercase equivalent of a given `$(ProjectLanguage)`
-- `TxM` is any legal target framework moniker that NuGet supports (see [Target frameworks](../schema/target-frameworks.md)).
+- `TxM` is any legal target framework moniker that NuGet supports (see [Target frameworks](../reference/target-frameworks.md)).
 - Any folder structure may be appended to the end of this syntax.
 
 For example:

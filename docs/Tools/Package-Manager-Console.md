@@ -58,7 +58,7 @@ For example, finding and installing a package is done with three easy steps:
 
 1. Selecting a different package source and/or project changes those defaults for subsequent commands. To overrride these settings without changing the defaults, most commands support `-Source` and `-ProjectName` options.
 
-1. To manage package sources, select the gear icon. This is a shortcut to the **Tools > Options > NuGet Package Manager > Package Sources** dialog box as described on the [Package Manager UI](Package-Manager-UI.md#package-sources) page. Also, the control to the right of the project selector clears the console's contents:
+1. To manage package sources, select the gear icon. This is a shortcut to the **Tools > Options > NuGet Package Manager > Package Sources** dialog box as described on the [Package Manager UI](package-manager-ui.md#package-sources) page. Also, the control to the right of the project selector clears the console's contents:
 
     ![Package Manager Console settings and clear controls](media/PackageManagerConsoleControls2.png)
 
@@ -186,7 +186,7 @@ For more details, refer to [Windows PowerShell Profiles](https://technet.microso
 
 ## Using the nuget.exe CLI in the console
 
-To make the [`nuget.exe` CLI](nuget-exe-CLI-Reference.md) available in the Package Manager Console, install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the console:
+To make the [`nuget.exe` CLI](nuget-exe-cli-reference.md) available in the Package Manager Console, install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the console:
 
 ```ps
 # Other versions are available, see http://www.nuget.org/packages/NuGet.CommandLine/

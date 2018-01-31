@@ -33,7 +33,7 @@ where `<packageID>` is the package to mirror, or `<configFilePath>` identifies t
 
 The `<listUrlTarget>` specifies the source repository, and `<publishUrlTarget>` specifies the target repository.
 
-If your target repository is on `https://machine/repo` that's running [NuGet.Server](../hosting-packages/NuGet-Server.md), the list and push urls will be `https://machine/repo/nuget` and `https://machine/repo/api/v2/package`, respectively.
+If your target repository is on `https://machine/repo` that's running [NuGet.Server](../hosting-packages/nuget-server.md), the list and push urls will be `https://machine/repo/nuget` and `https://machine/repo/api/v2/package`, respectively.
 
 ## Options
 

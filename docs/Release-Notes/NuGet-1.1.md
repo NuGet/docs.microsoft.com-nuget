@@ -43,7 +43,7 @@ The NuGet Command Line Tool requires:
 
 To use this [latest release](http://nuget.codeplex.com/releases/view/52018):
 
-* First uninstall your older build. You'll need to run VS as administrator to do this.
+* First uninstall your older build. You need to run VS as administrator to do this.
 * Remove all the existing feeds that you have.
 * Add a new feed pointing to [http://go.microsoft.com/fwlink/?LinkId=206669](http://go.microsoft.com/fwlink/?LinkId=206669).
 

@@ -24,7 +24,7 @@ Technically speaking, a NuGet package is just a ZIP file that's been renamed wit
 Packaging begins with the compiled code (assemblies), symbols, and/or other files that you want to deliver as a package (see [Overview and workflow](overview-and-workflow.md)). This process is independent from compiling or otherwise generating the files that go into the package, although you can use draw from information in a project file to keep the compiled assemblies and packages in sync.
 
 > [!Note]
-> This topic applies to project types other than .NET Core projects using Visual Studio 2017 and NuGet 4.0+. In those .NET Core projects, NuGet uses information in the project file directly. For details, see [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) and [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).
+> This topic applies to project types other than .NET Core projects using Visual Studio 2017 and NuGet 4.0+. In those .NET Core projects, NuGet uses information in the project file directly. For details, see [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) and [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
 ## Deciding which assemblies to package
 
@@ -48,12 +48,12 @@ The manifest:
 
 1. Describes the package's contents and is itself included in the package.
 1. Drives both the creation of the package and instructs NuGet on how to install the package into a project. For example, the manifest identifies other package dependencies such that NuGet can also install those dependencies when the main package is installed.
-1. Contains both required and optional properties as described below. For exact details, including other properties not mentioned here, see  the [.nuspec reference](../schema/nuspec.md).
+1. Contains both required and optional properties as described below. For exact details, including other properties not mentioned here, see  the [.nuspec reference](../reference/nuspec.md).
 
 Required properties:
 
 - The package identifier, which must be unique across the gallery that hosts the package.
-- A specific version number in the form *Major.Minor.Patch[-Suffix]* where *-Suffix* identifies [pre-release versions](Prerelease-Packages.md)
+- A specific version number in the form *Major.Minor.Patch[-Suffix]* where *-Suffix* identifies [pre-release versions](prerelease-packages.md)
 - The package title as it should appears on the host (like nuget.org)
 - Author and owner information.
 - A long description of the package.
@@ -62,7 +62,7 @@ Common optional properties:
 
 - Release notes
 - Copyright information
-- A short description for the [Package Manager UI in Visual Studio](../Tools/Package-Manager-UI.md)
+- A short description for the [Package Manager UI in Visual Studio](../tools/package-manager-ui.md)
 - A locale ID
 - Home page and license URLs
 - An icon URL
@@ -125,7 +125,7 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
 </package>
 ```
 
-For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `include` and `exclude` attributes on the `dependency` element. See [.nuspec Reference - Dependencies](../schema/nuspec.md#dependencies).
+For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `include` and `exclude` attributes on the `dependency` element. See [.nuspec Reference - Dependencies](../reference/nuspec.md#dependencies).
 
 Because the manifest is included in the package created from it, you can find any number of additional examples by examining existing packages. A good source is the global package cache on your machine, the location of which is returned by the following command:
 
@@ -167,8 +167,8 @@ The folder conventions are as follows:
 | Folder | Description | Action upon package install |
 | --- | --- | --- |
 | (root) | Location for readme.txt | Visual Studio displays a readme.txt file in the package root when the package is installed. |
-| lib/{tfm} | Assembly (`.dll`), documentation (`.xml`), and symbol (`.pdb`) files for the given Target Framework Moniker (TFM) | Assemblies are added as references; `.xml` and `.pdb` copied into project folders. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md) for creating framework target-specific sub-folders. |
-| runtimes | Architecture-specific assembly (`.dll`), symbol (`.pdb`), and native resource (`.pri`) files | Assemblies are added as references; other files are copied into project folders. See [Supporting multiple target frameworks](Supporting-Multiple-Target-Frameworks.md). |
+| lib/{tfm} | Assembly (`.dll`), documentation (`.xml`), and symbol (`.pdb`) files for the given Target Framework Moniker (TFM) | Assemblies are added as references; `.xml` and `.pdb` copied into project folders. See [Supporting multiple target frameworks](supporting-multiple-target-frameworks.md) for creating framework target-specific sub-folders. |
+| runtimes | Architecture-specific assembly (`.dll`), symbol (`.pdb`), and native resource (`.pri`) files | Assemblies are added as references; other files are copied into project folders. See [Supporting multiple target frameworks](supporting-multiple-target-frameworks.md). |
 | content | Arbitrary files | Contents are copied to the project root. Think of the **content** folder as the root of the target application that ultimately consumes the package. To have the package add an image in the application's */images* folder, place it in the package's *content/images* folder. |
 | build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file (NuGet 2.x) or `project.lock.json` (NuGet 3.x+). |
 | tools | Powershell scripts and programs accessible from the Package Manager Console | The `tools` folder is added to the `PATH` environment variable for the Package Manager Console only (Specifically, *not* to the `PATH` as set for MSBuild when building the project). |
@@ -210,7 +210,7 @@ A token is delimited by `$` symbols on both sides of the project property. For e
 <id>$id$</id>
 ```
 
-This token is replaced with the `AssemblyName` value from the project file at packing time. For the exact mapping of project values to `.nuspec` tokens, see the [Replacement Tokens reference](../schema/nuspec.md#replacement-tokens).
+This token is replaced with the `AssemblyName` value from the project file at packing time. For the exact mapping of project values to `.nuspec` tokens, see the [Replacement Tokens reference](../reference/nuspec.md#replacement-tokens).
 
 Tokens relieve you from needing to update crucial values like the version number in the `.nuspec` as you update the project. (You can always replace the tokens with literal values, if desired). 
 
@@ -430,7 +430,7 @@ The following options are a few that are common with Visual Studio projects:
 
 Before publishing a package, you typically want to test the process of installing a package into a project. The tests make sure that the necessarily files all end up in their correct places in the project.
 
-You can test installations manually in Visual Studio or on the command line using the normal [package installation steps](../Quickstart/Use-a-Package.md).
+You can test installations manually in Visual Studio or on the command line using the normal [package installation steps](../consume-packages/ways-to-install-a-package.md).
 
 For automated testing, the basic process is as follows:
 

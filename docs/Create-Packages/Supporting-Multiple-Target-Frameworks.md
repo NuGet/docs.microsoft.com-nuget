@@ -16,7 +16,7 @@ ms.reviewer:
 
 # Supporting multiple .NET framework versions
 
-*For .NET Core projects using NuGet 4.0+, see [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md) for details on cross-targeting.*
+*For .NET Core projects using NuGet 4.0+, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md) for details on cross-targeting.*
 
 Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's specific to UWP, and another version that takes advantage of features in .NET Framework 4.6.
 
@@ -28,7 +28,7 @@ When building a package that contains only one version of a library or target mu
 
     lib\{framework name}[{version}]
 
-For a complete list of supported names, see the [Target Frameworks reference](../schema/target-frameworks.md#supported-frameworks).
+For a complete list of supported names, see the [Target Frameworks reference](../reference/target-frameworks.md#supported-frameworks).
 
 You should never have a version of the library that is not specific to a framework and placed directly in the root `lib` folder. (This capability was supported only with `packages.config`). Doing so would make the compatible with any target framework and allow it to be installed anywhere, likely resulting in unexpected runtime errors. Adding assemblies in the root folder (such as `lib\abc.dll`) or subfolders (such as `lib\abc\abc.dll`) has been deprecated and is ignored when using the PackagesReference format.
 
@@ -67,7 +67,7 @@ If you have architecture-specific assemblies, that is, separate assemblies that 
             \native
             \lib\uap10.0
 
-See [Create UWP Packages](../Guides/Create-UWP-Packages.md) for an example of referencing these files in the `.nuspec` manifest.
+See [Create UWP Packages](../guides/create-uwp-packages.md) for an example of referencing these files in the `.nuspec` manifest.
 
 ## Matching assembly versions and the target framework in a project
 

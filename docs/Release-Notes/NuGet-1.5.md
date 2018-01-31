@@ -48,7 +48,7 @@ For example, if you add the following:
 ```
 
 Then only the `xunit.dll` and `xunit.extensions.dll` will be referenced from the appropriate
-[framework/profile subfolder](../schema/nuspec.md#explicit-assembly-references)
+[framework/profile subfolder](../reference/nuspec.md#explicit-assembly-references)
 of the `lib` folder even if there are other assemblies in the folder.
 
 If this element is omitted, then the usual behavior applies, which is to reference every assembly

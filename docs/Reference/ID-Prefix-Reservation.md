@@ -55,7 +55,7 @@ There are several more advanced prefix reservation scenarios described below, in
 
 ### Prefix reservation visual indicator
 
-When a package comes from a reserved prefix, you will see the below visual indicators on the [nuget.org](https://www.nuget.org/) gallery and in Visual Studio 2017 version 15.4 or later:
+When a package comes from a reserved prefix, you see the below visual indicators on the [nuget.org](https://www.nuget.org/) gallery and in Visual Studio 2017 version 15.4 or later:
 
 **nuget.org Gallery**
 ![nuget.org Gallery](media/nuget-gallery-reserved-prefix.png)
@@ -71,7 +71,7 @@ When a package comes from a reserved prefix, you will see the below visual indic
 
 1. Send a mail to [account@nuget.org](mailto:account@nuget.org) with the owner display name on [nuget.org](https://www.nuget.org/), as well as any reserved prefixes you are requesting. If you are delegating prefix subsets to multiple owners, make sure you mention all owner display names and prefix subsets.
 
-After the application is submitted, you will be notified of acceptance or rejection (with the criteria that caused rejection). We may need to ask additional identifying questions to confirm owner identity.
+After the application is submitted, you are notified of acceptance or rejection (with the criteria that caused rejection). We may need to ask additional identifying questions to confirm owner identity.
 
 ### ID prefix reservation criteria
 

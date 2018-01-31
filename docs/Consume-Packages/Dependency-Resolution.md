@@ -111,7 +111,7 @@ The `packages.config` process for resolving dependencies gets complicated for la
 
 When using the PackageReference format, you can control which assets from dependencies flow into the top-level project. For details, see [PackageReference](package-references-in-project-files.md#controlling-dependency-assets).
 
-When the top-level project is itself a package, you also have control over this flow by using the `include` and `exclude` attributes with dependencies listed in the `.nuspec` file. See [.nuspec Reference - Dependencies](../schema/nuspec.md#dependencies).
+When the top-level project is itself a package, you also have control over this flow by using the `include` and `exclude` attributes with dependencies listed in the `.nuspec` file. See [.nuspec Reference - Dependencies](../reference/nuspec.md#dependencies).
 
 ## Excluding references
 
@@ -135,9 +135,9 @@ If a dependency version is already satisfied, the dependency isn't updated durin
 
 During a package restore operation, you may see the error "One or more packages are not compatible..." or that a package "is not compatible" with the project's target framework.
 
-This error occurs when one or more of the packages referenced in your project do not indicate that they support the project's target framework; that is, the package does not contain a suitable DLL in its `lib` folder for a target framework that is compatible with the project. (See [Target frameworks](../Schema/Target-Frameworks.md) for a list.) 
+This error occurs when one or more of the packages referenced in your project do not indicate that they support the project's target framework; that is, the package does not contain a suitable DLL in its `lib` folder for a target framework that is compatible with the project. (See [Target frameworks](../reference/target-frameworks.md) for a list.) 
 
-For example, if a project targets `netstandard1.6` and you attempt to install a package that contains DLLs in only the `lib\net20` and `\lib\net45` folders, then you'll see messages like the following for the package and possibly its dependents:
+For example, if a project targets `netstandard1.6` and you attempt to install a package that contains DLLs in only the `lib\net20` and `\lib\net45` folders, then you see messages like the following for the package and possibly its dependents:
 
 ```output
 Restoring packages for myproject.csproj...
