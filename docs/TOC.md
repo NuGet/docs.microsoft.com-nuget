@@ -19,11 +19,6 @@
 ## [Package references in project files](consume-packages/package-references-in-project-files.md)
 # Create packages
 ## [Overview and workflow](create-packages/overview-and-workflow.md)
-## Guides
-### [Create UWP packages](guides/create-uwp-packages.md)
-### [Creating UWP controls as NuGet packages](guides/create-uwp-controls.md)
-### [Create NET Standard packages (Visual Studio 2015)](guides/create-net-standard-packages-vs2015.md)
-## [Create packages for Xamarin](guides/create-packages-for-xamarin.md)
 ## [Creating a package](create-packages/creating-a-package.md)
 ## [Supporting multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
 ## [Source and config file transformations](create-packages/source-and-config-file-transformations.md)
@@ -32,6 +27,11 @@
 ## [Native packages](create-packages/native-packages.md)
 ## [Symbol packages](create-packages/symbol-packages.md)
 ## [Publish a package](create-packages/publish-a-package.md)
+## Guides
+### [Create UWP packages](guides/create-uwp-packages.md)
+### [Creating UWP controls as NuGet packages](guides/create-uwp-controls.md)
+### [Create NET Standard packages (Visual Studio 2015)](guides/create-net-standard-packages-vs2015.md)
+### [Create packages for Xamarin](guides/create-packages-for-xamarin.md)
 # Host packages
 ## [Overview](hosting-packages/overview.md)
 ## [Local feeds](hosting-packages/local-feeds.md)
