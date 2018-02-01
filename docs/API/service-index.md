@@ -54,6 +54,7 @@ Name          | Type   | Required | Notes
 ------------- | ------ | -------- | -----
 @id           | string | yes      | The URL to the resource
 @type         | string | yes      | A string constant representing the resource type
+clientVersion | string | no       | The client version that this resource applies to
 comment       | string | no       | A human readable description of the resource
 
 The `@id` is a URL that must be absolute and must either have the HTTP or HTTPS schema.
@@ -81,3 +82,33 @@ GET https://api.nuget.org/v3/index.json
 ### Sample response
 
 [!code-JSON [service-index.json](./_data/service-index.json)]
+
+### Client version
+
+A resource `@type` can optionally have the following form:
+
+```
+{RESOURCE_NAME}/Versioned
+```
+
+When the `@type` is suffixed with the `/Versioned` string, an additional property is required on the resource:
+`clientVersion`.
+
+This value is the minimum client version compatible with this resource. The client version is SemVer 2.0.0 compliant
+version string. A client implementation knows its own version (also a SemVer 2.0.0 version) and compares it to the
+resource `clientVersion` value using standard SemVer 2.0.0 comparison rules. If the client's own version is greater
+than or equal to the resource `clientVersion` and if the `{RESOURCE_NAME}` is known, this resource should be considered
+consumable by the client implementation.
+
+For this `clientVersion` model to work, there needs to be some agreement between the server and client implementors
+about what protocol each `{RESOURCE_NAME}` and `clientVersion` combination implies.
+
+This feature allows server implementations to backport resources to clients that have already shipped. When no
+`clientVersion` is specified on the resource, there is no way for a client that is already shipped to discover the
+resource since the `@type` values that client knows about are hard coded.
+
+> [!Note]
+> For nuget.org, the client versions in the service index align with the official NuGet client.
+
+> [!Note]
+> This client version feature was first supported by version 4.0.0 of the official NuGet client.
