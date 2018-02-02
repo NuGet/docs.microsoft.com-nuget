@@ -87,7 +87,7 @@ Clearly, then, NuGet's primary role where developers are concerned is maintainin
 - [`packages.config`](reference/packages-config.md): *(NuGet 1.0+)* An XML file that maintains a flat list of all dependencies in the project, including the dependencies of other installed packages.
 - [PackageReference](consume-packages/package-references-in-project-files.md) (or "package references in project files") | *(NuGet 4.0+)* Maintains a list of a project's top-level dependencies directly within the project file, so no separate file is needed. An associated file, `project.assets.json`, is dynamically generated to manage the overall dependency graph.
 
-Which package management format is employed in any given project depends on the project type, and the available version of NuGet (and/or Visual Studio). To check what format is being used, simply look for `packages.config` in the project root after installing your first package. If you don't that file, look in the project file directly for a &lt;PackageReference&gt;element.
+Which package management format is employed in any given project depends on the project type, and the available version of NuGet (and/or Visual Studio). To check what format is being used, simply look for `packages.config` in the project root after installing your first package. If you don't have that file, look in the project file directly for a &lt;PackageReference&gt;element.
 
 ## What else does NuGet do?
 
