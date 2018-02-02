@@ -52,7 +52,7 @@ To easily include all these files when building the package, use a recursive `**
 </files>
 ```
 
-### Architecture-specific folders 
+### Architecture-specific folders
 
 If you have architecture-specific assemblies, that is, separate assemblies that target ARM, x86, and x64, you must place them in a folder named `runtimes` within sub-folders named `{platform}-{architecture}\lib\{framework}` or `{platform}-{architecture}\native`. For example, the following folder structure would accommodate both native and managed DLLs targeting Windows 10 and the `uap10.0` framework:
 
