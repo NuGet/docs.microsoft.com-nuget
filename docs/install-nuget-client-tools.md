@@ -55,7 +55,7 @@ Installation:
 > Use `nuget update -self` to update an existing nuget.exe to the latest version.
 
 > [!Note]
-> The latest recommended NuGet CLI is always available at `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`. For compatibility purposes  with older continuous integration systems, a previous URL, `https://nuget.org/nuget.exe` currently provides the 2.8.6 CLI tool. This is deprecated.
+> The latest recommended NuGet CLI is always available at `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`. For compatibility purposes  with older continuous integration systems, a previous URL, `https://nuget.org/nuget.exe` currently provides the 2.8.6 CLI tool. [This is deprecated](https://github.com/NuGet/NuGetGallery/issues/5381).
 
 ## Visual Studio
 
