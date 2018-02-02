@@ -46,6 +46,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/guides/create-net-standard-packages-vs2017.md",
+            "redirect_url": "/nuget/quickstart/create-and-publish-a-package-using-visual-studio",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/Schema/project-json.md",
             "redirect_url": "/nuget/archive/project-json",
             "redirect_document_id": false

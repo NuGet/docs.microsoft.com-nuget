@@ -3,12 +3,12 @@ title: Introductory Guide to Creating and Publishing a NuGet Package using Visua
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 01/24/2018
+ms.date: 02/02/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: null
 description: A walkthrough tutorial on creating and publishing a NuGet package using Visual Studio 2017.
-keywords: NuGet package creation, NuGet package publishing, NuGet tutorial, Visual Studio create NuGet package
+keywords: NuGet package creation, NuGet package publishing, NuGet tutorial, Visual Studio create NuGet package, msbuild pack
 ms.reviewer:
 - karann-msft
 - unniravindranathan
@@ -36,7 +36,20 @@ You can use an existing .NET Class Library project for the code you want to pack
 
 1. Right-click on the resulting project file and select **Build** to make sure the project was created properly. The DLL is found within the Debug folder (or Release if you build that configuration instead).
 
-Within a real NuGet package, of course, you implement many useful features with which others can build applications. For this walkthrough, however, you won't write any additional code because a class library from the template is sufficient to create a package.
+Within a real NuGet package, of course, you implement many useful features with which others can build applications. For this walkthrough, however, you won't write any additional code because a class library from the template is sufficient to create a package. Still, if you'd like some functional code for the package, use the following:
+
+```cs
+namespace AppLogger
+{
+    public class Logger
+    {
+        public void Log(string text)
+        {
+            Console.WriteLine(text);
+        }
+    }
+}
+```
 
 > [!Tip]
 > Unless you have a reason to choose otherwise, .NET Standard is the preferred target for NuGet packages, as it provides compatibility with the widest range of consuming projects.
@@ -55,23 +68,38 @@ Within a real NuGet package, of course, you implement many useful features with 
     > [!Important]
     > You must give the package an identifier that's unique across nuget.org or whatever host you're using. For this walkthrough we recommend including "Sample" or "Test" in the name as the later publishing step does make the package publicly visible (though it's unlikely anyone will actually use it).
     >
-    > If you attempt to publish a package with a name that already exists, you see an error. 
+    > If you attempt to publish a package with a name that already exists, you see an error.
 
+1. Optional: to see the properties directly in the project file, right-click the project in Solution Explorer and select **Edit AppLogger.csproj**.
 
 ## Run the pack command
+
+1. Set the configuration to **Release**.
 
 1. Right click the project in **Solution Explorer** and select the **Pack** command:
 
     ![NuGet pack command on the Visual Studio project context menu](media/qs_create-vs-02-pack-command.png)
 
-1. Visual Studio builds the project and creates the `.nupkg` file. Examine the **Output** window for details (similar to the following), which contains the path to the package file:
+1. Visual Studio builds the project and creates the `.nupkg` file. Examine the **Output** window for details (similar to the following), which contains the path to the package file. Note also that the built assembly is in `bin\Release\netstandard2.0` as befits the .NET Standard 2.0 target.
 
     ```output
-    1>------ Build started: Project: AppLogger, Configuration: Debug Any CPU ------
-    1>AppLogger -> d:\proj\AppLogger\AppLogger\bin\Debug\netstandard2.0\AppLogger.dll
-    1>Successfully created package 'd:\proj\AppLogger\AppLogger\bin\Debug\AppLogger.1.0.0.nupkg'.
+    1>------ Build started: Project: AppLogger, Configuration: Release Any CPU ------
+    1>AppLogger -> d:\proj\AppLogger\AppLogger\bin\Release\netstandard2.0\AppLogger.dll
+    1>Successfully created package 'd:\proj\AppLogger\AppLogger\bin\Release\AppLogger.1.0.0.nupkg'.
     ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
     ```
+
+### Alternate option: pack with MSBuild
+
+As an alternate to using the **Pack** menu command, NuGet 4.x+ and MSBuild 15.1+ supports a `pack` target when the project contains the necessary package data:
+
+```cli
+msbuild /t:pack /p:Configuration=Release
+```
+
+The package can then be found in the `bin\Release` folder.
+
+For additional options with `msbuild /t:pack`, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md#pack-target).
 
 ## Publish the package
 
@@ -127,3 +155,5 @@ This step is an alternative to using `nuget.exe`.
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Package versioning](../reference/package-versioning.md)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)
+- [.NET Standard Library documentation](/dotnet/articles/standard/library)
+- [Porting to .NET Core from .NET Framework](/dotnet/articles/core/porting/index)
