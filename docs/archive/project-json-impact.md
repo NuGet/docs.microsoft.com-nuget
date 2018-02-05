@@ -57,7 +57,7 @@ Packages that attempt to modify the project to ease startup typically work in a 
 
 Most existing packages should not need to use the package format described below.
 
-The format enables native content as a first class scenario. This means that managed assemblies depending on close to hardware implementations to ship binary implementations alongside the managed assemblies based on the target platform. For example System.IO.Compression package is utilizing this technology. [https://www.nuget.org/packages/System.IO.Compression](https://www.nuget.org/packages/System.IO.Compression)
+The format enables native content as a first class scenario. This means that managed assemblies depend on close to hardware implementations to ship binary implementations alongside the managed assemblies based on the target platform. For example System.IO.Compression package is utilizing this technology. [https://www.nuget.org/packages/System.IO.Compression](https://www.nuget.org/packages/System.IO.Compression)
 
 In summary if the functionality above is not absolutely necessary, we recommend sticking with the existing package format, as the format described here is supported only by NuGet 3.x+.
 
