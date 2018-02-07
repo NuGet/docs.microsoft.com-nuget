@@ -35,7 +35,8 @@ service index schema, the version string's minor version will be increased.
 
 Each resource in the service index is versioned independently from the service index schema version.
 
-The current schema version is `3.0.0-beta.1`.
+The current schema version is `3.0.0`. The `3.0.0` version is functionally equivalent to the older `3.0.0-beta.1`
+version but should be preferred as it more clearly communicates the stable, defined schema.
 
 ## HTTP methods
 
