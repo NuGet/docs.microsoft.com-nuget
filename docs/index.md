@@ -72,7 +72,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="quickstart/create-and-publish-a-package-using-the-dotnet-cli">
+                            <a href="quickstart/create-and-publish-a-package-using-the-dotnet-cli.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
