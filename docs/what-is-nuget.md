@@ -43,7 +43,7 @@ Package developers who require APIs outside of .NET Standard, on the other hand,
 
 ## NuGet tools
 
-In addition to hosting support, NuGet also provides a variety of tools used by both creators and consumers:
+In addition to hosting support, NuGet also provides a variety of tools used by both creators and consumers. See [Installing NuGet client tools](install-nuget-client-tools.md) for how to obtain specific tools.
 
 | Tool | Platforms | Applicable Scenarios | Description |
 | --- | --- | --- | --- |

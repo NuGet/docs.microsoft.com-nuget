@@ -24,16 +24,13 @@ The NuGet API is a set of HTTP endpoints that can be used to download packages, 
 and perform most other operations available in the official NuGet clients.
 
 This API is used by the NuGet client in Visual Studio, nuget.exe, and the .NET CLI to perform NuGet operations such as
-[`dotnet restore`](/dotnet/articles/core/preview3/tools/dotnet-restore), search in the Visual
-Studio UI, and [`nuget.exe push`](../tools/cli-ref-push.md).
+[`dotnet restore`](/dotnet/articles/core/preview3/tools/dotnet-restore), search in the Visual Studio UI, and [`nuget.exe push`](../tools/cli-ref-push.md).
 
-Note in some cases, nuget.org has additional requirements that are not enforced by other package sources. These
-differences are documented by the [nuget.org Protocols](nuget-protocols.md).
+Note in some cases, nuget.org has additional requirements that are not enforced by other package sources. These differences are documented by the [nuget.org Protocols](nuget-protocols.md).
 
 ## Service index
 
-The entry point for the API is a JSON document in a well known location. This document is called the **service index**.
-The location of the service index for nuget.org is `https://api.nuget.org/v3/index.json`.
+The entry point for the API is a JSON document in a well known location. This document is called the **service index**. The location of the service index for nuget.org is `https://api.nuget.org/v3/index.json`.
 
 This JSON document contains a list of *resources* which provide different functionality and fulfill different
 use cases.
@@ -49,8 +46,7 @@ The API is version 3 of NuGet's HTTP protocol. This protocol is sometimes referr
 documents will refer to this version of the protocol simply as "the API."
 
 The service index schema version is indicated by the `version` property in the service index. The API mandates that
-the version string has a major version number of `3`. As non-breaking changes are made to the service index schema, the
-version string's minor version will be increased.
+the version string has a major version number of `3`. As non-breaking changes are made to the service index schema, the version string's minor version will be increased.
 
 Older clients (such as nuget.exe 2.x) do not support the V3 API and only support the older V2 API, which is not
 documented here.

@@ -29,13 +29,12 @@ nuget.org's service index is located at `https://api.nuget.org/v3/index.json`.
 
 ## Versioning
 
-The `version` value is a SemVer 2.0.0 parseable version string which indicates the schema version of the service index.
-The API mandates that the version string has a major version number of `3`. As non-breaking changes are made to the
-service index schema, the version string's minor version will be increased.
+The `version` value is a SemVer 2.0.0 parseable version string which indicates the schema version of the service index. The API mandates that the version string has a major version number of `3`. As non-breaking changes are made to the service index schema, the version string's minor version will be increased.
 
 Each resource in the service index is versioned independently from the service index schema version.
 
-The current schema version is `3.0.0-beta.1`.
+The current schema version is `3.0.0`. The `3.0.0` version is functionally equivalent to the older `3.0.0-beta.1`
+version but should be preferred as it more clearly communicates the stable, defined schema.
 
 ## HTTP methods
 

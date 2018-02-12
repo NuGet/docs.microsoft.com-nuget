@@ -36,7 +36,7 @@ Additionally, .NET Foundation staff consider the project lead the primary or fir
 
 ### Committers
 
-Committers are contributors who have made sustained valuable contributions to NuGet and are appointed by the Benevolent Dictator. One appointed, committers are relied upon to both write code directly to the repository and screen the contributions of others. Committers are often developers but can contribute in other ways.
+Committers are contributors who have made sustained valuable contributions to NuGet and are appointed by the Benevolent Dictator. Once appointed, committers are relied upon to both write code directly to the repository and screen the contributions of others. Committers are often developers but can contribute in other ways.
 
 Typically, a committer focuses on a specific aspect of the project, and brings a level of expertise and understanding that earns them the respect of the community and the project lead. The role of committer is not an official one, it's simply a position that influential members of the community assume as the project lead looks to them for guidance and support.
 

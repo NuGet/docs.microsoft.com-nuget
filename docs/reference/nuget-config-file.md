@@ -127,7 +127,7 @@ Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 
 ### packageSources
 
-Lists all known package sources.
+Lists all known package sources. The order is ignored during restore operations and with any project using the PackageReference format. NuGet respects the order of sources for install and update operations with projects using `packages.config`.
 
 | Key | Value |
 | --- | --- |

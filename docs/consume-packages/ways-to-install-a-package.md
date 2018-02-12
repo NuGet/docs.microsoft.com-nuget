@@ -3,7 +3,7 @@ title: Ways to Install NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 01/30/2018
+ms.date: 02/12/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: null
@@ -31,7 +31,10 @@ In general, NuGet does the following then asked to install a package:
 
 1. Acquire the package:
     - Check if the requested package already exists in a cache (see [Managing the NuGet cache](managing-the-nuget-cache.md)).
-    - If the package is not in the cache, attempt to download the package from the sources listed in the configuration files, starting with the first in the list. This behavior allows you to use private package feeds before looking for a package on nuget.org (see [Configuring NuGet behavior](configuring-nuget-behavior.md)).
+    - If the package is not in the cache, attempt to download the package from the sources listed in the [configuration files](Configuring-NuGet-Behavior.md).
+      - For projects using the `packages.config` reference format, NuGet uses the order of the sources in the configuration.
+      - For projects using the PackageReference format, NuGet checks sources that are local folders first, then checks sources on network shares, then checks HTTP (Internet) sources.
+      - In general, the order in which NuGet checks sources isn't particularly meaningful, because any given package with a specific identifier and version number is exactly the same on whatever source it's found.
     - If the package is successfully acquired from one of the sources, NuGet adds it to the cache. Otherwise, installation fails.
 
 1. Expand the package into the project.
