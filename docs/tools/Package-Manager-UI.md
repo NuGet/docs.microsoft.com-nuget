@@ -62,7 +62,7 @@ In this topic:
 
     ![Uninstalling a package](media/UninstallPackage.png)
 
-1. Note that the **Include preprelease** and **Package source** controls have no effect when uninstalling packages.
+1. Note that the **Include prerelease** and **Package source** controls have no effect when uninstalling packages.
 
 ## Updating a package
 
@@ -72,7 +72,7 @@ In this topic:
 
     ![Updating a package](media/UpdatePackages.png)
 
-1. <a name="implicit_reference"></a>For some packages, the **Update** button is disabled and a message appears saying that it's "Implicitly referenced by an SDK" (or "AutoReferenced"). The message indicates that the package, such as Microsoft.NETCore.App or Microsoft.NETStandard.Library, is part of a larger framework or SDK and should not be updated independently. (Such packagee are internally marked with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) To update the package, update the SDK to which it belongs.
+1. <a name="implicit_reference"></a>For some packages, the **Update** button is disabled and a message appears saying that it's "Implicitly referenced by an SDK" (or "AutoReferenced"). The message indicates that the package, such as Microsoft.NETCore.App or Microsoft.NETStandard.Library, is part of a larger framework or SDK and should not be updated independently. (Such packages are internally marked with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) To update the package, update the SDK to which it belongs.
 
     ![Example package marked as Implicitly references or AutoReferenced](media/PackageManagerUIAutoReferenced.png)
 
@@ -174,4 +174,4 @@ When selected, a modal window displays which the dependencies of a chosen packag
 
 **Remove dependencies**: when selected, removes any dependent packages if they're not referenced elsewhere in the project.
 
-**Force uninstall even if there are dependencies on it**: when selected, uninstalls a package even if it's still being referenced in the project. This is typically used in combination with **Remove dependencies** to remove a package and whatever dependencies it installed. Using this option may, however, lead to a broken references in the project. In such cases you may need to [reinstall those other packages](../consume-packages/reinstalling-and-updating-packages.md).
+**Force uninstall even if there are dependencies on it**: when selected, uninstalls a package even if it's still being referenced in the project. This is typically used in combination with **Remove dependencies** to remove a package and whatever dependencies it installed. Using this option may, however, lead to broken references in the project. In such cases, you may need to [reinstall those other packages](../consume-packages/reinstalling-and-updating-packages.md).
