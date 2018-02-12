@@ -131,6 +131,7 @@ Name                     | Description
 X-NuGet-ApiKey           | Required for push and delete, see [`PackagePublish` resource](package-publish-resource.md)
 X-NuGet-Client-Version   | **Deprecated** and replaced by `X-NuGet-Protocol-Version`
 X-NuGet-Protocol-Version | Required in certain cases only on nuget.org, see [nuget.org protocols](NuGet-Protocols.md)
+X-NuGet-Session-Id       | Identifies HTTP requests that are part of the same NuGet client session. For `PackageReference` restore operations there is a single session id, for other scenarios such as auto complete, and `packages.config` restore there may be several different session id's due to how the code is factored.
 
 ## Authentication
 
