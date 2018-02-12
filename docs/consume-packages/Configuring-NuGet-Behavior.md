@@ -212,7 +212,7 @@ Mac/Linux: $XDG_DATA_HOME (typically ~/.local/share)
 
 ### NuGetDefaults.Config settings
 
-- `packageSources`: this collection has the same meaning as `packageSources` in regular config files and specifies the default sources in their preferred order. If this setting exists in `NuGetDefaults.Config`, then NuGet doesn't use nuget.org as a default package source. An administrator can thus make sure that everyone using this file is working with the same sources and avoids using nuget.org if desired.
+- `packageSources`: this collection has the same meaning as `packageSources` in regular config files and specifies the default sources. NuGet uses the sources in order when installing or updating packages in projects using the `packages.config` reference format. For projects using the PackageReference format, NuGet uses local sources first, then sources on network shares, then HTTP sources, regardless of the order in the configuration files. NuGet always ignores the order of sources with restore operations.
 
 - `disabledPackageSources`: this collection also has the same meaning as in `NuGet.Config` files, where each affected source is listed by its name and a true/false value indicating whether it's disabled. This allows the source name and URL to remain in `packageSources` without having it turned on by default. Individual developers can then re-enable the source by setting the source's value to false in other `NuGet.Config` files without having to find the correct URL again. This is also useful to supply developers with a full list of internal source URLs for an organization while enabling only an individual team's source by default.
 

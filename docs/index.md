@@ -16,7 +16,7 @@ keywords:
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 08/15/2017 
+ms.date: 02/12/2018
 ms.topic: hub-page
 ms.prod: nuget
 ms.technology: null
@@ -53,7 +53,7 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="quickstart/use-a-package.md">
+                            <a href="quickstart/install-and-use-a-package-using-the-dotnet-cli.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -63,8 +63,8 @@ ms.reviewer:
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Quickstarts</h3>
-                                            <p>Experience NuGet with focused walkthroughs for creating a simple package and using a package.</p>
+                                            <h3>Quickstart: Using a package</h3>
+                                            <p>Learn how to install and use a NuGet package within a project (walkthroughs are available for both the dotnet CLI and Visual Studio).</p>
                                         </div>
                                     </div>
                                 </div>
@@ -72,18 +72,18 @@ ms.reviewer:
                             </a>
                         </li>
                         <li>
-                            <a href="install-nuget-client-tools.md">
+                            <a href="quickstart/create-and-publish-a-package-using-the-dotnet-cli">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-guides.svg" alt="Guides: experience NuGet's tools and capabilities with installation and package creation walkthroughs." />
+                                                <img src="media/hub/nuget-get-started-guides.svg" alt="Guides: experience NuGet's tools and capabilities for creating a package." />
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Guides</h3>
-                                            <p>Experience NuGet's tools and capabilities with installation and package creation walkthroughs.</p>
+                                            <h3>Quickstart: Creating a pckage</h3>
+                                            <p>Experience NuGet's tools and capabilities for package creation (walkthroughs are available for both the dotnet CLI and Visual Studio).</p>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@ ms.reviewer:
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Create Packages</h3>
+                                            <h3>Create packages</h3>
                                             <p>Everything you need to know about creating NuGet packages, from overall workflow to versioning, pre-release, &amp; other specialized packages.</p>
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@ ms.reviewer:
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Consume Packages</h3>
+                                            <h3>Consume packages</h3>
                                             <p>Everything you need to know about using NuGet packages, from finding and choosing good packages to restoration updates, and caching.</p>
                                         </div>
                                     </div>
@@ -139,7 +139,7 @@ ms.reviewer:
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Host Packages</h3>
+                                            <h3>Host packages</h3>
                                             <p>Learn how to host packages on your own servers or galleries to make them available to only a limited audience.</p>
                                         </div>
                                     </div>
@@ -225,7 +225,7 @@ ms.reviewer:
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Visual Studio Extensibility</h3>
+                                            <h3>Visual Studio extensibility</h3>
                                             <p>Details about the API to the NuGet Package Manager UI and Console in Visual Studio, project system support, and integrating into Visual Studio templates.</p>
                                         </div>
                                     </div>
