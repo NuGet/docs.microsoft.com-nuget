@@ -62,7 +62,7 @@ Name        | Type    | Required | Notes
 `{id}`      | string  | no       | The package ID to report abuse for
 `{version}` | string  | no       | The package version to report abuse for
 
-The `{id}` and `{version}` values interpreted by the server implementation must be case insenstive and not sensitive to
+The `{id}` and `{version}` values interpreted by the server implementation must be case insensitive and not sensitive to
 whether the version is normalized.
 
 For example, nuget.org's report abuse template looks like this:
