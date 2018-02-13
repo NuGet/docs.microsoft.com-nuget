@@ -47,7 +47,7 @@ All URLs found in the catalog resource support only the HTTP methods `GET` and `
 
 ## Catalog index
 
-The catalog index is a document in a well-known location that has a list of catalog items, ordered cronologically. It is the entry point of the catalog resource.
+The catalog index is a document in a well-known location that has a list of catalog items, ordered chronologically. It is the entry point of the catalog resource.
 
 The index is comprised of catalog pages. Each catalog page contains catalog items. Each catalog item represents an event concerning a single package at a point in time. A catalog item can represent a package that was created, unlisted, relisted, or deleted from the package source. By processing the catalog items in chronological order, the client can build an up-to-date view of every package that exists on the V3 package source.
 
@@ -137,7 +137,7 @@ not contain all of the catalog item's data. The order of the items in the page's
 can be ordered by the client in memory using their `commitTimeStamp` property.
 
 The number of catalog items in a page is defined by server implementation. For nuget.org, there are at most 550
-items in each page, although the actual number may be smaller for some pages dependong on the size of the next commit
+items in each page, although the actual number may be smaller for some pages depending on the size of the next commit
 batch at the point in time.
 
 As new items are introduced, the `count` is incremented and new catalog item objects appear in the `items`
@@ -177,7 +177,7 @@ For more details about what each type means, see the [corresponding items type](
 ## Catalog leaf
 
 The catalog leaf contains metadata about a specific package ID and version at some point in time. It is a document
-fetched using the `@id` value found in a catalog page. The URL to a catalog leaf is not intended to be predictedable
+fetched using the `@id` value found in a catalog page. The URL to a catalog leaf is not intended to be predictable
 and should be discovered using only a catalog page.
 
 The catalog leaf document is a JSON object with the following properties:
@@ -250,13 +250,13 @@ be included here.
 The `created` timestamp is when the package was first received by the package source, which is typically a short
 time before the catalog item's commit timestamp.
 
-The `packageHashAlgorithm` is a string defined by the server implementation represeting the hashing algorithm used to
+The `packageHashAlgorithm` is a string defined by the server implementation representing the hashing algorithm used to
 produce the `packageHash`. nuget.org always used the `packageHashAlgorithm` value of `SHA512`.
 
 The `published` timestamp is the time when the package was last listed.
 
 > [!Note]
-> On nuget.org, the `published` value is set to year 1900 when the package is unlisted.
+> On nuget.org, the `published` value is set to the year 1900 when the package is unlisted.
 
 #### Sample request
 
@@ -352,7 +352,7 @@ to the package source.
 
 ### Dependent cursors
 
-Suppose there are two catalog clients that have an inherant dependency where one client's output depends on another
+Suppose there are two catalog clients that have an inherent dependency where one client's output depends on another
 client's output. 
 
 #### Example
@@ -369,7 +369,7 @@ Since both resources are built off of the catalog, the cursor of the catalog cli
 
 #### Algorithm
 
-To implement this restriction, simple modify the algorithm above to be:
+To implement this restriction, simply modify the algorithm above to be:
 
 1. Fetch the recorded cursor value from a local store.
 1. Download and deserialize the catalog index.
