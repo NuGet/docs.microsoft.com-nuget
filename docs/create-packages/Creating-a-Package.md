@@ -332,7 +332,7 @@ Then in the `.nuspec` file, be sure to refer to these files in the `<files>` nod
 ```xml
 <?xml version="1.0"?>
 <package >
-    <metadata>
+    <metadata minClientVersion="2.5">
     <!-- ... -->
     </metadata>
     <files>
