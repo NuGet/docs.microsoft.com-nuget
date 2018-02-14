@@ -345,7 +345,7 @@ Then in the `.nuspec` file, be sure to refer to these files in the `<files>` nod
 </package>
 ```
 
-Including MSBuild props and targets in a package is a feature that was only [introduced with the release of NuGet 2.5](../release-notes/nuget-2.5#automatic-import-of-msbuild-targets-and-props-files), therefore it is recommended to add the `minClientVersion="2.5"` attribute to the `metadata` element, to indicate the minimum NuGet client version required to consume the package.
+Including MSBuild props and targets in a package is a feature that was only [introduced with the release of NuGet 2.5](../release-notes/NuGet-2.5.md#automatic-import-of-msbuild-targets-and-props-files), therefore it is recommended to add the `minClientVersion="2.5"` attribute to the `metadata` element, to indicate the minimum NuGet client version required to consume the package.
 
 When NuGet 2.5+ installs a package with `\build` files, it adds an MSBuild `<Import>` elements in the project file pointing to the `.targets` and `.props` files. (`.props` is added at the top of the project file; `.targets` is added at the bottom.)
 
