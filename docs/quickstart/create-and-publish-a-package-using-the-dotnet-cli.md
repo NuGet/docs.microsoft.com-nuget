@@ -1,5 +1,5 @@
 ---
-title:Creating and publishing a NuGet package using the dotnet CLI | Microsoft Docs
+title: Creating and publishing a NuGet package using the dotnet CLI | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
