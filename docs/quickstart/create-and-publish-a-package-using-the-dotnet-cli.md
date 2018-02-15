@@ -1,5 +1,5 @@
 ---
-title: Introductory Guide to Creating and Publishing a NuGet Package using the dotnet CLI | Microsoft Docs
+title:Creating and publishing a NuGet package using the dotnet CLI | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -90,7 +90,6 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nug
 ### Publish errors
 
 [!INCLUDE[publish-errors](includes/publish-errors.md)]
-
 
 ### Manage the published package
 
