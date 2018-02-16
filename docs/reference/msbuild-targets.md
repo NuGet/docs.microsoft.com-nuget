@@ -61,8 +61,8 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | ReleaseNotes | PackageReleaseNotes | empty | |
 | Repository/Url | RepositoryUrl | empty | Repository URL used to clone or retrieve source code. Example: *https://github.com/NuGet/NuGet.Client.git* |
 | Repository/Type | RepositoryType | empty | Repository type. Examples: *git*, *tfs*. |
-| Repository/Branch | RepositoryBranch | empty | Optional repository branch information. Example: *master* (NuGet 4.7.0+) |
-| Repository/Commit | RepositoryCommit | empty | Optional repository commit or changeset to indicate which source the package was built against. Example: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
+| Repository/Branch | RepositoryBranch | empty | Optional repository branch information. *RepositoryUrl* must also be specified for this property to be included. Example: *master* (NuGet 4.7.0+) |
+| Repository/Commit | RepositoryCommit | empty | Optional repository commit or changeset to indicate which source the package was built against. *RepositoryUrl* must also be specified for this property to be included. Example: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | Summary | Not supported | | |
 
