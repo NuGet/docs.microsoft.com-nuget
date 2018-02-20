@@ -97,7 +97,7 @@ Developers typically consider it bad practice to use different versions of the s
 
 ![Package Manager UI Consolidate tab](media/ConsolidateTab.png)
 
-In this example, the ClassLibrary1 project is using EntityFramework 6.2.0, whereas ConsoleApp1 is using EntityFramework 6.2.0. To consolidate package versions, do the following:
+In this example, the ClassLibrary1 project is using EntityFramework 6.2.0, whereas ConsoleApp1 is using EntityFramework 6.1.0. To consolidate package versions, do the following:
 
 - Select the projects to update in the project list.
 - Select the version to use in all those projects in the **Version** control, such as EntityFramework 6.2.0.
