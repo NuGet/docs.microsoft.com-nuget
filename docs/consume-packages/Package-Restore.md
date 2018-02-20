@@ -32,7 +32,7 @@ If a package is not already installed, NuGet first attempts to retrieve it from 
 
 Package restore is triggered in the following ways:
 
-- **dotnet CLI**: use the [dotnet restore](/dotnet/core/tools/dotnet-restore.md?tabs=netcore2x) command, which restores packages listed in the project file (see [PackageReference](../consume-packages/package-references-in-project-files.md)). With .NET Core 2.0 and later, restore is done automatically with `dotnet build` and `dotnet run`.
+- **dotnet CLI**: use the [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x) command, which restores packages listed in the project file (see [PackageReference](../consume-packages/package-references-in-project-files.md)). With .NET Core 2.0 and later, restore is done automatically with `dotnet build` and `dotnet run`.
 
 - **Package Manager UI (Visual Studio on Windows)**: Packages are restored automatically when creating a project from a template and when building a project (subject to the option described in [Enabling and disabling package restore](#enabling-and-disabling-package-restore)). In NuGet 4.0+, restore also happens automatically when changes are made to a .NET Core SDK-based project.
 

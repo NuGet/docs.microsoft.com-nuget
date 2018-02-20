@@ -19,13 +19,13 @@ ms.reviewer:
 
 [NuGet 2.6 Release Notes](../release-notes/nuget-2.6.md) | [NuGet 2.7 Release Notes](../release-notes/nuget-2.7.md)
 
-The NuGet team released an updated NuGet Package Manager extension for WebMatrix on March 26, 2014.  This update can be installed from the [WebMatrix Extension Gallery](http://extensions.webmatrix.com/packages/NuGetPackageManager/) using the following steps:
+The NuGet team released an updated NuGet Package Manager extension for WebMatrix on March 26, 2014.  This update can be installed from the [WebMatrix Extension Gallery](https://blogs.iis.net/webmatrix/retiring-the-webmatrix-extensions-gallery) using the following steps:
 
 1. Open WebMatrix 3
-2. Click the Extensions icon in the Home ribbon
-3. Select the Updates tab
-4. Click to update NuGet Package Manager to 2.6.1
-6. Close and restart WebMatrix 3
+1. Click the Extensions icon in the Home ribbon
+1. Select the Updates tab
+1. Click to update NuGet Package Manager to 2.6.1
+1. Close and restart WebMatrix 3
 
 ## Notable Changes
 

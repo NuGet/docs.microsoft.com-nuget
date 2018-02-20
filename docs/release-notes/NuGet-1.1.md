@@ -131,7 +131,7 @@ The following are the changes made in this Release Candidate since CTP 2. Visit 
 
 The following are the most significant changes made in CTP 2:
 
-* Switched the package feed from ATOM to an OData service endpoint: If you upgrade to the CTP2 version of NuGet, be sure to add the following URL as a package source: [http://go.microsoft.com/fwlink/?LinkID=204820](http://go.microsoft.com/fwlink/?LinkID=204820).
+* Switched the package feed from ATOM to an OData service endpoint: If you upgrade to the CTP2 version of NuGet, be sure to add the following URL as a package source: https://feed.nuget.org/ctp2/odata/v1/.
 * Renamed the Add-Package command to *Install-Package*.
 * Updated the `.nuspec` Format. The `.nuspec` format now includes the *iconUrl* field for specifying a 32x32 png icon which will show up in the Add Package Dialog. So be sure to set that to distinguish your package. The `.nuspec` format also includes the new *projectUrl* field which you can use to point to a web page that provides more information about your package.
 
