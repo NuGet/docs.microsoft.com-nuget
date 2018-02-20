@@ -22,7 +22,7 @@ In addition to building packages for nuget.org or other sources, NuGet also supp
 Package consumers can then add `https://nuget.smbsrc.net` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger) for details on that process.
 
 ## Creating a symbol package
-
+nuget.org and other sources, NuGet also allows you to create related symbol packages and publish them to the SymbolSource repository.
 To create a symbol package, follow these conventions:
 
 - Name the primary package (with your code) `{identifier}.nupkg` and include all your files except `.pdb` files.
