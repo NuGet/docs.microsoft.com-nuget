@@ -82,7 +82,7 @@ ms.reviewer:
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Quickstart: Creating a pckage</h3>
+                                            <h3>Quickstart: Creating a package</h3>
                                             <p>Experience NuGet's tools and capabilities for package creation (walkthroughs are available for both the dotnet CLI and Visual Studio).</p>
                                         </div>
                                     </div>
