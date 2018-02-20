@@ -207,8 +207,12 @@ The `NuGetDefaults.Config` file exists to specify package sources from which pac
 
 ### NuGetDefaults.Config location
 
-Windows: %ProgramFiles(x86)%\NuGet\Config (NuGet 2.7 to NuGet 3.x: %PROGRAMDATA%\NuGet\NuGetDefaults.Config)
-Mac/Linux: $XDG_DATA_HOME (typically ~/.local/share) 
+The following table describes where the `NuGetDefaults.Config` file should be stored, depending on the target OS:
+
+| OS Platform  | NuGetDefaults.Config Location |
+| --- | --- |
+| Windows      | **NuGet 4.x:** %ProgramFiles(x86)%\NuGet\Config <br />**NuGet 2.7 to 3.x:** %PROGRAMDATA%\NuGet |
+| Mac/Linux    | $XDG_DATA_HOME (typically ~/.local/share)|
 
 ### NuGetDefaults.Config settings
 
