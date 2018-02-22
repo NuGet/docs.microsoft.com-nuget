@@ -26,6 +26,7 @@
 ## [Prerelease packages](create-packages/prerelease-packages.md)
 ## [Native packages](create-packages/native-packages.md)
 ## [Symbol packages](create-packages/symbol-packages.md)
+## [Signed packages](create-packages/sign-a-package.md)
 ## [Publish a package](create-packages/publish-a-package.md)
 ## Guides
 ### [Create UWP packages](guides/create-uwp-packages.md)
