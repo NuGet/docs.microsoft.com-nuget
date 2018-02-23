@@ -172,7 +172,7 @@ In addition, uploading packages to [staging.nuget.org](http://staging.nuget.org)
 
 **Is it possible to reserve names for packages that will be published in future?**
 
-Yes. You can reserve IDs for packages on [nuget.org](https://www.nuget.org/) by requesting a package ID prefix for your account. In order to request a package ID prefix, send mail to account (at) nuget.org with the package owner display name, and the requested package ID prefix.  
+Yes. You can reserve IDs for packages on [nuget.org](https://www.nuget.org/) by requesting a package ID prefix for your account. In order to request a package ID prefix, follow the instructions in the [documentation](https://docs.microsoft.com/nuget/reference/id-prefix-reservation).
 
 **How do I claim ownership for packages ?**
 
