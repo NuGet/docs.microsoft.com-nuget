@@ -26,8 +26,7 @@ Signing a package is a simple process that will ensure the package has not been 
 
 
 > [!Warning] 
-> NuGet.org does not accept signed packages yet. You can use signed packages for packages distributed in private feeds.
-
+> NuGet.org does not accept signed packages yet. You can sign packages for publishing in custom feeds.
 
 ## How to sign a package
 
@@ -56,7 +55,7 @@ There are some cases where the sign operation can fail, here are the most common
 ## How to verify a signed package
 
 You can use the `nuget.exe` [verify command](../tools/cli-ref-verify) to see the signature details of a given package.
-
+s
 ```cli
 nuget verify -signature <MyPackage.nupkg>
 ```
@@ -68,4 +67,6 @@ Signed packages don't require any specific action to be installed, however if th
 > [!Warning]
 > Packages signed with untrusted certificates will be considered as unsigned, and will be installed without any warning or issue as any other unsigned package.
 
+## More information
 
+To learn more about package signing see the [Signed Packages Reference](../reference/Signed-Packages-Reference.md)s
