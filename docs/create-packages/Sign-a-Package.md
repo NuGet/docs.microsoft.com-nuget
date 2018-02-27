@@ -33,8 +33,10 @@ Signing a package is a simple process that will ensure the package has not been 
 
 Using `nuget.exe` you can use the [sign command](../tools/cli-ref-sign) to sign a package:
 
-```
-nuget sign <MyPackage.nupkg> -CertificateSubjectName <MyCertSubjectName> -Timestamper <TimestampServiceURL>
+```cli
+nuget sign <MyPackage.nupkg> \
+    -CertificateSubjectName <MyCertSubjectName> \
+    -Timestamper <TimestampServiceURL>
 ```
 
 As described in the command reference you can use a certificate available in the certificate store or use a certificate from a file.
@@ -55,7 +57,7 @@ There are some cases where the sign operation can fail, here are the most common
 
 You can use the `nuget.exe` [verify command](../tools/cli-ref-verify) to see the signature details of a given package.
 
-```
+```cli
 nuget verify -signature <MyPackage.nupkg>
 ```
 
