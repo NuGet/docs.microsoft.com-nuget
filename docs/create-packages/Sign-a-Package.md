@@ -69,4 +69,4 @@ Signed packages don't require any specific action to be installed, however if th
 
 ## More information
 
-To learn more about package signing see the [Signed Packages Reference](../reference/Signed-Packages-Reference.md)s
+To learn more about package signing see the [Signed Packages Reference](../reference/Signed-Packages-Reference.md).
