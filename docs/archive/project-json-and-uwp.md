@@ -117,7 +117,7 @@ In this example the assemblies in the `ref` directories would all be identical.
 
 The runtimes folder contains assemblies and native libraries required to run on specific "runtimes", which are generally defined by Operating System and CPU architecture. These runtimes are identified using [Runtime Identifiers (RIDs)](/dotnet/core/rid-catalog) such as `win`, `win-x86`, `win7-x86`, `win8-64`, etc.
 
-## Native light-up
+## Native helpers to use platform-specific APIs
 
 The following example shows a package that has a purely managed implementation for several platforms, but uses native helpers on Windows 8 where it can call into Windows 8-specific native APIs.
 
