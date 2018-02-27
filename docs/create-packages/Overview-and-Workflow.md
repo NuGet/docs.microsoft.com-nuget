@@ -41,6 +41,7 @@ From there, you can consider a number of other options for your package:
 - [Symbol Packages](../create-packages/symbol-packages.md) offers guidance for supplying symbols for your library that allow consumers to step into your code while debugging.
 - [Package versioning](../reference/package-versioning.md) discusses how to identify the exact versions that you allow for your dependencies (other packages that you consume from your package).
 - [Native Packages](../create-packages/native-packages.md) describes the process for creating a package for C++ consumers.
+- [Singing Packages](sign-a-package) describes the process for adding a digital signature to a package.
 
 When you're then ready to publish a package to nuget.org, follow the simple process in [Publish a package](../create-packages/publish-a-package.md).
 
