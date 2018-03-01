@@ -22,7 +22,7 @@ Signing a package is a simple process that will ensure the package has not been 
 
 1. The .nupkg to sign. See [Creating a package](creating-a-package.md).
 2. NuGet.exe CLI tools. See how to [Install NuGet CLI](../install-nuget-client-tools.md#nugetexe-cli). *Singing is available from version 4.6 or later*.
-3. Get a code signing certificate. These are certificates issued for that purpose. For packages published to NuGet.org the certificate must be issued by a trusted certificate authority [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners). For private package consumption you can use any other certificate as long it is trusted in the consumer machine.  
+3. [Get a code signing certificate](../reference/signed-packages-referece#get-codesigning-certificate). 
 
 
 > [!Warning] 
@@ -33,8 +33,8 @@ Signing a package is a simple process that will ensure the package has not been 
 Using `nuget.exe` you can use the [sign command](../tools/cli-ref-sign) to sign a package:
 
 ```cli
-nuget sign <MyPackage.nupkg> \
-    -CertificateSubjectName <MyCertSubjectName> \
+nuget sign <MyPackage.nupkg> ^
+    -CertificateSubjectName <MyCertSubjectName> ^
     -Timestamper <TimestampServiceURL>
 ```
 
@@ -65,7 +65,7 @@ nuget verify -signature <MyPackage.nupkg>
 Signed packages don't require any specific action to be installed, however if the content has been modified since it was signed, the installation will be blocked and will produce an error message.
 
 > [!Warning]
-> Packages signed with untrusted certificates will be considered as unsigned, and will be installed without any warning or issue as any other unsigned package.
+> Packages signed with untrusted certificates will be considered as unsigned and will be installed without any warning or issue as any other unsigned package.
 
 ## More information
 
