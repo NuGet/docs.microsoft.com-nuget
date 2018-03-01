@@ -21,7 +21,7 @@ Signing a package is a simple process that will ensure the package has not been 
 ## Pre-requisites
 
 1. The .nupkg to sign. See [Creating a package](creating-a-package.md).
-2. NuGet.exe CLI tools. See how to [Install NuGet CLI](../install-nuget-client-tools.md#nugetexe-cli). *Singing is available from version 4.6 or later*.
+2. NuGet.exe CLI tools. See how to [Install NuGet CLI](../install-nuget-client-tools.md#nugetexe-cli). *Signing is available from version 4.6 or later*.
 3. [Get a code signing certificate](../reference/signed-packages-referece#get-codesigning-certificate). 
 
 
