@@ -23,7 +23,7 @@ Once installed, refer to the package in code with `using <namespace>` where \<na
 > [!Tip]
 > **Start with nuget.org**: Browsing nuget.org is how .NET developers typically find components they can reuse in their own applications. You can search nuget.org directly or find and install packages within Visual Studio as shown in this article.
 
-## Pre-requisites
+## Prerequisites
 
 - Visual Studio 2017 with the Universal Windows Platform development workload, or
 - Visual Studio 2015 Update 3 with Tools for Universal Windows Apps.
