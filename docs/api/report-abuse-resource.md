@@ -27,7 +27,7 @@ It is possible for a client to build a URL that can be used by the user to repor
 is useful when a package source wants to enable all client experiences (even 3rd party) to delegate abuse reports to
 the package source.
 
-The resource used for fetching package content is the `ReportAbuseUriTemplate` resource found in the
+The resource used for building this URL is the `ReportAbuseUriTemplate` resource found in the
 [service index](service-index.md).
 
 ## Versioning

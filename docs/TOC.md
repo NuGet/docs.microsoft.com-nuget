@@ -103,6 +103,7 @@
 ## [Package metadata](api/registration-base-url-resource.md)
 ## [Package content](api/package-base-address-resource.md)
 ## [Report abuse URL](api/report-abuse-resource.md)
+## [Repository signatures](api/repository-signatures-resource.md)
 ## [Catalog](api/catalog-resource.md)
 ## [Rate limits](api/rate-limits.md)
 ## [nuget.org protocols](api/nuget-protocols.md)
