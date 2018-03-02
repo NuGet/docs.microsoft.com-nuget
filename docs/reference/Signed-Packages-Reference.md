@@ -62,6 +62,7 @@ New-SelfSignedCertificate	-Subject "CN=NuGet Test Developer, OU=Use for testing 
 							-KeyLength 2048 `
 							-KeyAlgorithm RSA `
                             -HashAlgorithm SHA256 `
+							-Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
 							-CertStoreLocation "Cert:\CurrentUser\My" 
 ```
 This command creates a testing certificate available in the personal certificate store. You can open the certificate store by running `certmgr.msc` to see the new created certificate.
