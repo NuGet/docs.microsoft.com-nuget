@@ -31,7 +31,7 @@ Additionally, author-signed packages provide an extra authentication mechanism t
 
 ## How to sign a package
 
-[Signing Packages](../create-packages/Sign-a-package) explains how to sign a package using the [sign command](../tools/cli-ref-sign).
+[Signing Packages](../create-packages/Sign-a-package.md) explains how to sign a package using the [sign command](../tools/cli-ref-sign.md).
 
 ## Certificate Requirements
 

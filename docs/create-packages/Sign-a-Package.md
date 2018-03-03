@@ -22,7 +22,7 @@ Signing a package is a simple process that will ensure the package has not been 
 
 1. The .nupkg to sign. See [Creating a package](creating-a-package.md).
 2. NuGet.exe CLI tools. See how to [Install NuGet CLI](../install-nuget-client-tools.md#nugetexe-cli). *Signing is available from version 4.6 or later*.
-3. [Get a code signing certificate](../reference/signed-packages-referece#get-codesigning-certificate). 
+3. [Get a code signing certificate](../reference/signed-packages-referece.md#get-codesigning-certificate). 
 
 
 > [!Warning] 
@@ -30,7 +30,7 @@ Signing a package is a simple process that will ensure the package has not been 
 
 ## How to sign a package
 
-Using `nuget.exe` you can use the [sign command](../tools/cli-ref-sign) to sign a package:
+Using `nuget.exe` you can use the [sign command](../tools/cli-ref-sign.md) to sign a package:
 
 ```cli
 nuget sign <MyPackage.nupkg> ^
@@ -54,7 +54,7 @@ There are some cases where the sign operation can fail.  Here are the most commo
 
 ## How to verify a signed package
 
-You can use the `nuget.exe` [verify command](../tools/cli-ref-verify) to see the signature details of a given package.
+You can use the `nuget.exe` [verify command](../tools/cli-ref-verify.md) to see the signature details of a given package.
 
 ```cli
 nuget verify -signature <MyPackage.nupkg>
