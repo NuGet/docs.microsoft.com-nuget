@@ -20,14 +20,14 @@ A cross-platform package contains code that uses native APIs on iOS, Android, an
 
 In this walkthrough you create a cross-platform NuGet package that can be used in mobile projects on iOS, Android, and Windows.
 
-1. [Pre-requisites](#pre-requisites)
+1. [Prerequisites](#prerequisites)
 1. [Create the project structure and abstraction code](#create-the-project-structure-and-abstraction-code)
 1. [Write your platform-specific code](#write-your-platform-specific-code)
 1. [Create and update the .nuspec file](#create-and-update-the-nuspec-file)
 1. [Package the component](#package-the-component)
 1. [Related topics](#related-topics)
 
-## Pre-requisites
+## Prerequisites
 
 1. Visual Studio 2015 with Universal Windows Platform (UWP) and Xamarin. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well, of course. To include UWP and Xamarin tools, select a Custom install and check the appropriate options.
 1. NuGet CLI. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice. Then add that location to your PATH environment variable if it isn't already.
