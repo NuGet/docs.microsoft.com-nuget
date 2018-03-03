@@ -21,6 +21,9 @@ NuGet packages can include a digital signature which provides protection against
 
 NuGet 4.6 introduces the ability to sign NuGet packages and verify signed NuGet packages. Visual Studio 2017 Update 6 introduces the ability to verify signed NuGet packages.
 
+> [!Warning] 
+> NuGet.org does not accept signed packages yet. You can sign packages for publishing in custom feeds.
+
 ## Benefits of signed packages
 
 Signed packages provide the strongest end-to-end validation. An author signature guarantees that the package has not been modified since the author signed the package, no matter from which repository or what transport method the package is delivered.
