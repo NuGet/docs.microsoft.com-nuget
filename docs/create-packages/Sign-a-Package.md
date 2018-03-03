@@ -59,7 +59,7 @@ You can use the `nuget.exe` [verify command](../tools/cli-ref-verify.md) to see 
 nuget verify -signature <MyPackage.nupkg>
 ```
 
-## How to install a signed package
+## Install a signed package
 
 Signed packages don't require any specific action to be installed; however, if the content has been modified since it was signed, the installation will be blocked and will produce an error message.
 
