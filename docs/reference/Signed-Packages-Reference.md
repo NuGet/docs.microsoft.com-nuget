@@ -29,7 +29,7 @@ Consumers who demand a locked-down environment can require packages signed with 
 
 Additionally, author-signed packages provide an extra authentication mechanism to nuget.org's publishing pipeline because the signing certificate must be registered ahead of time.
 
-## How to sign a package
+## Sign a package
 
 [Signing Packages](../create-packages/Sign-a-package.md) explains how to sign a package using the [sign command](../tools/cli-ref-sign.md).
 
@@ -61,7 +61,6 @@ New-SelfSignedCertificate	-Subject "CN=NuGet Test Developer, OU=Use for testing 
    			    			-KeyUsage DigitalSignature `
 							-KeyLength 2048 `
 							-KeyAlgorithm RSA `
-							-Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
                             -HashAlgorithm SHA256 `
 							-Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
 							-CertStoreLocation "Cert:\CurrentUser\My" 

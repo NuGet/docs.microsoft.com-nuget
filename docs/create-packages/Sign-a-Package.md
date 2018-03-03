@@ -1,5 +1,5 @@
 ---
-title: How to Sign a NuGet Package | Microsoft Docs
+title: Signing NuGet Packages | Microsoft Docs
 author: rido-min
 ms.author: rido-min
 manager: unniravindranathan
@@ -14,7 +14,7 @@ ms.reviewer:
 - anangaur
 ---
 
-# How to create a signed NuGet Package
+# Signing NuGet Packages
 
 Signing a package is a simple process that will ensure the package has not been modified since creation to consumption.
 
@@ -28,7 +28,7 @@ Signing a package is a simple process that will ensure the package has not been 
 > [!Warning] 
 > NuGet.org does not accept signed packages yet. You can sign packages for publishing in custom feeds.
 
-## How to sign a package
+## Sign a package
 
 Using `nuget.exe` you can use the [sign command](../tools/cli-ref-sign.md) to sign a package:
 
@@ -52,7 +52,7 @@ There are some cases where the sign operation can fail.  Here are the most commo
 > Signed packages should include a timestamp to make sure the signature will remain valid when the signing certificate has expired. The sign operation will produce a warning when signing without a timestamp.
 
 
-## How to verify a signed package
+## Verify a signed package
 
 You can use the `nuget.exe` [verify command](../tools/cli-ref-verify.md) to see the signature details of a given package.
 
