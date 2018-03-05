@@ -77,6 +77,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | [Package fallback warnings](#package-fallback-warnings) | [NU1701](#nu1701) |
 | [Feed warnings](#feed-warnings) | [NU1801](#nu1801) |
 | [NuGet internal errors and warnings](#nuget-internal-errors-and-warnings) | [NU1000](#nu1000), [NU1500](#nu1500) |
+| [Signed packages (creation and verification)](#signed-packages-creation-and-verification)| [NU3000](#nu3000), [NU3001](#nu3001), [NU3002](#nu3002), [NU3004](#nu3004), [NU3008](#nu3008), [NU3018](#nu3018), [NU3028](#nu3028) |
 
 ## Invalid input errors
 
