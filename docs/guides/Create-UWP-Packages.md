@@ -20,7 +20,7 @@ The [Universal Windows Platform (UWP)](https://developer.microsoft.com/windows) 
 
 In this walkthrough you create a NuGet package with a native UWP component (including a XAML control) that can be used in both Managed and Native projects.
 
-## Pre-requisites
+## Prerequisites
 
 1. Visual Studio 2017 or Visual Studio 2015. Install the 2017 Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well.
 
