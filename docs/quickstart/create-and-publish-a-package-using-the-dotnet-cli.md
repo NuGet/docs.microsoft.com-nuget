@@ -18,7 +18,7 @@ ms.reviewer:
 
 It's a simple process to create a NuGet package from a .NET Class Library and publish it to nuget.org using the `dotnet` command-line interface (CLI).
 
-## Pre-requisites
+## Prerequisites
 
 1. Install the [.NET Core SDK](https://www.microsoft.com/net/download/), which includes the `dotnet` CLI.
 
@@ -102,3 +102,4 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nug
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Package versioning](../reference/package-versioning.md)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)
+- [Signing packages](../create-packages/Sign-a-package.md)

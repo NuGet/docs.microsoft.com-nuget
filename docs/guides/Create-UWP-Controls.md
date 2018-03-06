@@ -18,7 +18,7 @@ ms.reviewer:
 
 With Visual Studio 2017, you can take advantage of added capabilities for UWP controls that you deliver in NuGet packages. This guide walks you through these capabilities using the [ExtensionSDKasNuGetPackage sample](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage). 
 
-## Pre-requisites
+## Prerequisites
 
 1. Visual Studio 2017
 1. Understanding of how to [Create UWP Packages](create-uwp-packages.md)

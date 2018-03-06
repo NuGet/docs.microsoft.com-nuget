@@ -22,7 +22,7 @@ The [.NET Standard Library](/dotnet/articles/standard/library) is a formal speci
 
 This guide walks you through creating a NuGet package targeting .NET Standard Library 1.4. Such a library works across .NET Framework 4.6.1, Universal Windows Platform 10, .NET Core, and Mono/Xamarin. For details, see the [.NET Standard mapping table](#net-standard-mapping-table) later in this topic.
 
-## Pre-requisites
+## Prerequisites
 
 1. Visual Studio 2015 Update 3
 1. [.NET Core SDK](https://www.microsoft.com/net/download/)

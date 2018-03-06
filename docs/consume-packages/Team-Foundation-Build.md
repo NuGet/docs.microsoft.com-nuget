@@ -96,7 +96,7 @@ The source code is under the `src` folder. Although our demo only uses a single 
 </configuration>
 ```
 
-To communicate to version control that we don’t intent to check-in the **packages** folders, we've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describes patterns of files you don't want to check-in.
+To communicate to version control that we don’t intent to check-in the **packages** folders, we've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describe patterns of files you don't want to check-in.
 
 The `.gitignore` file looks as follows:
 

@@ -3,7 +3,7 @@ title: NuGet Restore Errors and Warnings Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 12/13/2017
+ms.date: 03/06/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
@@ -44,6 +44,13 @@ f1_keywords:
   - "NU1608"
   - "NU1701"
   - "NU1801"
+  - "NU3000"
+  - "NU3001"
+  - "NU3002"
+  - "NU3004"
+  - "NU3008"
+  - "NU3018"
+  - "NU3028"
 ---
 
 # Errors and warnings
@@ -70,6 +77,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | [Package fallback warnings](#package-fallback-warnings) | [NU1701](#nu1701) |
 | [Feed warnings](#feed-warnings) | [NU1801](#nu1801) |
 | [NuGet internal errors and warnings](#nuget-internal-errors-and-warnings) | [NU1000](#nu1000), [NU1500](#nu1500) |
+| [Signed packages (creation and verification)](#signed-packages-creation-and-verification)| [NU3000](#nu3000), [NU3001](#nu3001), [NU3002](#nu3002), [NU3004](#nu3004), [NU3008](#nu3008), [NU3018](#nu3018), [NU3028](#nu3028) |
 
 ## Invalid input errors
 
@@ -334,3 +342,61 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | --- | --- |
 | **Issue** | A non specific internal warning from NuGet. |
 | **Common causes** | Check the logs for more information |
+
+## Signed packages (creation and verification)
+
+*NuGet 4.6.0+*
+
+[NU3000](#nu3000) | [NU3001](#nu3001) | [NU3002](#nu3002) | [NU3004](#nu3004) | [NU3008](#nu3008) | [NU3018](#nu3018) | [NU3028](#nu3028)
+
+### NU3000
+
+| | |
+| --- | --- |
+| **Issue** | A non-specific error related to package signing and signed package verification. |
+| **Common causes** | Check the logs for more information. |
+
+### NU3001
+
+| | |
+| --- | --- |
+| **Issue** | Invalid input. |
+| **Common causes** | Invalid arguments to either the [sign command](../tools/cli-ref-sign.md) or the [verify command](../tools/cli-ref-verify.md). |
+
+### NU3002
+
+| | |
+| --- | --- |
+| **Issue** | The `-Timestamper` option was not specified. |
+| **Common causes** | The `-Timestamper` option was not provided to the [sign command](../tools/cli-ref-sign.md). |
+| **Example message** | *The '-Timestamper' option was not provided. The signed package will not be timestamped. To learn more about this option, please visit https://docs.nuget.org/docs/reference/command-line-reference.* |
+
+### NU3004
+
+| | |
+| --- | --- |
+| **Issue** | The package is not signed. |
+| **Common causes** | An unsigned package was provided to the [verify command](../tools/cli-ref-verify.md). |
+
+### NU3008
+
+| | |
+| --- | --- |
+| **Issue** | The package integrity check failed. |
+| **Common causes** | A signed package was tampered with since being signed. |
+
+### NU3018
+
+| | |
+| --- | --- |
+| **Issue** | Certificate chain building failed for the primary signature. |
+| **Common causes** | The primary signing certificate is untrusted, revoked, or revocation information for the certificate is unavailable. |
+| **Example message** | *WARNING: NU3018: The revocation function was unable to check revocation for the certificate.* |
+
+### NU3028
+
+| | |
+| --- | --- |
+| **Issue** | Certificate chain building failed for the timestamp signature. |
+| **Common causes** | The timestamp signing certificate is untrusted, revoked, or revocation information for the certificate is unavailable. |
+| **Example message** | *WARNING: NU3028: The revocation function was unable to check revocation for the certificate.* |
