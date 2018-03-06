@@ -3,7 +3,7 @@ title: NuGet Restore Errors and Warnings Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 12/13/2017
+ms.date: 03/06/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
@@ -344,7 +344,8 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | **Common causes** | Check the logs for more information |
 
 ## Signed packages (creation and verification)
-NuGet 4.6.0 introduces new errors and warnings related to signed packages.
+
+*NuGet 4.6.0+*
 
 [NU3000](#nu3000) | [NU3001](#nu3001) | [NU3002](#nu3002) | [NU3004](#nu3004) | [NU3008](#nu3008) | [NU3018](#nu3018) | [NU3028](#nu3028)
 
@@ -352,23 +353,23 @@ NuGet 4.6.0 introduces new errors and warnings related to signed packages.
 
 | | |
 | --- | --- |
-| **Issue** | A non specific error related to package signing and signed package verification. |
-| **Common causes** | Check the logs for more information |
+| **Issue** | A non-specific error related to package signing and signed package verification. |
+| **Common causes** | Check the logs for more information. |
 
 ### NU3001
 
 | | |
 | --- | --- |
-| **Issue** | Invalid input error. |
+| **Issue** | Invalid input. |
 | **Common causes** | Invalid arguments to either the [sign command](../tools/cli-ref-sign.md) or the [verify command](../tools/cli-ref-verify.md). |
 
 ### NU3002
 
 | | |
 | --- | --- |
-| **Issue** | The *-Timestamper* option was not used. |
-| **Common causes** | The *-Timestamper* option was not provided to the [sign command](../tools/cli-ref-sign.md). |
-| **Example message** | *The '-Timestamper' option was not provided. The signed package will not be timestamped. To learn more about this option, please visit https://docs.nuget.org/docs/reference/command-line-reference* |
+| **Issue** | The `-Timestamper` option was not specified. |
+| **Common causes** | The `-Timestamper` option was not provided to the [sign command](../tools/cli-ref-sign.md). |
+| **Example message** | *The '-Timestamper' option was not provided. The signed package will not be timestamped. To learn more about this option, please visit https://docs.nuget.org/docs/reference/command-line-reference.* |
 
 ### NU3004
 
@@ -398,4 +399,4 @@ NuGet 4.6.0 introduces new errors and warnings related to signed packages.
 | --- | --- |
 | **Issue** | Certificate chain building failed for the timestamp signature. |
 | **Common causes** | The timestamp signing certificate is untrusted, revoked, or revocation information for the certificate is unavailable. |
-| **Example message** | *WARNING: NU3028: The revocation function was unable to check revocation for the certificate.* |.
+| **Example message** | *WARNING: NU3028: The revocation function was unable to check revocation for the certificate.* |

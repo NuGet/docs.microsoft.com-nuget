@@ -3,7 +3,7 @@ title: NuGet CLI sign command | Microsoft Docs
 author: dtivel
 ms.author: dtivel
 manager: doronm
-ms.date: 03/02/2018
+ms.date: 03/06/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
@@ -22,11 +22,13 @@ Signs all the packages matching the first argument with a certificate. The certi
 
 Package signing is not yet supported under Mono or on non-Windows platforms.
 
-## Usage 
+## Usage
 
 ```cli
 nuget sign <package(s)> [options]
 ```
+
+where `<package(s)>` is one or more `.nupkg` files.
 
 ## Options
 
@@ -43,7 +45,7 @@ This option should be used when specifying the certificate via -CertificateSubje
 The search is a case-insensitive string comparison using the supplied value, which will find all certificates with the subject name containing that string, regardless of other subject values.
 The certificate store can be specified by -CertificateStoreName and -CertificateStoreLocation options. |
 | ConfigFile | The NuGet configuration file to apply. If not specified, *%AppData%\NuGet\NuGet.Config* is used. |
-| ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
+| ForceEnglishOutput | Forces nuget.exe to run using an invariant, English-based culture. |
 | HashAlgorithm | Hash algorithm to be used to sign the package. Defaults to SHA256. |
 | Help | Displays help information for the command. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
@@ -52,7 +54,6 @@ The certificate store can be specified by -CertificateStoreName and -Certificate
 | Timestamper | URL to an RFC 3161 timestamping server. |
 | TimestampHashAlgorithm | Hash algorithm to be used by the RFC 3161 timestamp server. Defaults to SHA256. |
 | Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
-
 
 ## Examples
 
