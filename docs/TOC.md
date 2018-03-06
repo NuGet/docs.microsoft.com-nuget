@@ -26,6 +26,7 @@
 ## [Prerelease packages](create-packages/prerelease-packages.md)
 ## [Native packages](create-packages/native-packages.md)
 ## [Symbol packages](create-packages/symbol-packages.md)
+## [Signing packages](create-packages/sign-a-package.md)
 ## [Publish a package](create-packages/publish-a-package.md)
 ## Guides
 ### [Create UWP packages](guides/create-uwp-packages.md)
@@ -51,9 +52,11 @@
 ### [push](tools/cli-ref-push.md)
 ### [restore](tools/cli-ref-restore.md)
 ### [setapikey](tools/cli-ref-setapikey.md)
+### [sign](tools/cli-ref-sign.md)
 ### [sources](tools/cli-ref-sources.md)
 ### [spec](tools/cli-ref-spec.md)
 ### [update](tools/cli-ref-update.md)
+### [verify](tools/cli-ref-verify.md)
 ### [Environment variables](tools/cli-ref-environment-variables.md)
 ## [Package Manager UI](tools/package-manager-ui.md)
 ## [Package Manager Console](tools/package-manager-console.md)
@@ -79,6 +82,7 @@
 ## [Errors and warnings](reference/errors-and-warnings.md)
 ## [ID prefix reservation](reference/id-prefix-reservation.md)
 ## [NuGet client SDK](reference/nuget-client-sdk.md)
+## [Signed packages reference](reference/signed-packages-reference.md)
 ## Extensibility
 ### [NuGet credential providers for Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [nuget.exe credential providers](reference/extensibility/nuget-exe-credential-providers.md)

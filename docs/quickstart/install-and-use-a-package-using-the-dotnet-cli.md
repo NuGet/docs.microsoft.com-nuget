@@ -23,7 +23,7 @@ Once installed, refer to the package in code with `using <namespace>` where \<na
 > [!Tip]
 > **Start with nuget.org**: Browsing nuget.org is how .NET developers typically find components they can reuse in their own applications. You can search nuget.org directly or find and install packages within Visual Studio as shown in this article.
 
-## Pre-requisites
+## Prerequisites
 
 - The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool.
 
