@@ -94,7 +94,7 @@
             "source_path": "docs/Quickstart/Use-a-Package.md",
             "redirect_url": "/nuget/quickstart/install-and-use-a-package-in-visual-studio",
             "redirect_document_id": false
-        }
+        },
         {
             "source_path": "/docs/policies/command-line-reference.md",
             "redirect_url": "/nuget/tools/nuget-exe-cli-reference",
