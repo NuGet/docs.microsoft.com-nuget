@@ -219,6 +219,9 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 1. Download packages
 1. Write assets file, targets, and props
 
+> [!Note]
+> The `restore` MSBuild target only works for projects using `PackageReference` items and does not restore packages referenced using a `packages.config` file.
+
 ### Restore properties
 
 Additional restore settings may come from MSBuild properties in the project file. Values can also be set from the command line using the `/p:` switch (see Examples below).
