@@ -83,7 +83,7 @@ Configures whether NuGet does automatic binding redirects when a package is inst
 
 ## packageRestore section
 
-*Ignored in 2.7+*
+*Ignored in all current versions (2.7+)*
 
 Controls package restore during builds.
 

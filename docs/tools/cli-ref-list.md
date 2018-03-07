@@ -26,7 +26,7 @@ Displays a list of packages from a given source. If no sources are specified, al
 nuget list [search terms] [options]
 ```
 
-where the optional search terms will filter the displayed list. Search terms are applied to the names of packages, tags, and package descriptions.
+where the optional search terms will filter the displayed list. Search terms are applied to the names of packages, tags, and package descriptions just as they are when using them on nuget.org.
 
 ## Options
 
@@ -49,5 +49,7 @@ Also see [Environment variables](cli-ref-environment-variables.md)
 ```cli
 nuget list
 
-nuget list -Verbosity detailed -AllVersions
+nuget list chinese korean -Verbosity detailed
+
+nuget list couchbase -AllVersions
 ```

@@ -19,7 +19,7 @@ ms.reviewer:
 There are two ways to create localized versions of a library:
 
 1. Include all localized resources assemblies in a single package.
-1. Create separate localized satellite packages (NuGet 1.8 and later), by following a strict set of conventions.
+1. Create separate localized satellite packages by following a strict set of conventions.
 
 Both methods have their advantages and disadvantages, as described in the following sections.
 

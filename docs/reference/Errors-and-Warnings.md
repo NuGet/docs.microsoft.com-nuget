@@ -1,5 +1,5 @@
 ---
-title: NuGet Restore Errors and Warnings Reference | Microsoft Docs
+title: NuGet Errors and Warnings Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -7,7 +7,7 @@ ms.date: 03/06/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-description: Complete reference for warnings and errors issued from NuGet during package restore
+description: Complete reference for warnings and errors issued from NuGet during various NuGet operations.
 keywords: NuGet errors, NuGet warnings, diagnostics
 ms.reviewer:
 - anangaur
@@ -55,9 +55,9 @@ f1_keywords:
 
 # Errors and warnings
 
-In NuGet 4.3.0, errors and warnings are numbered as described in this topic and provide detailed information to help you address the issues involved. 
+In NuGet 4.3.0+, errors and warnings are numbered as described in this topic and provide detailed information to help you address the issues involved.
 
-The errors and warnings listed here are available only with [PackageReference-based](../consume-packages/package-references-in-project-files.md) projects and NuGet 4.3.0. NuGet also honors MSBuild properties to suppress warnings or elevate them to errors. For more information, see [How to: Suppress Compiler Warnings](/visualstudio/ide/how-to-suppress-compiler-warnings) in the Visual Studio documentation.
+The errors and warnings listed here are available only with [PackageReference-based](../consume-packages/package-references-in-project-files.md) projects and NuGet 4.3.0+. NuGet also honors MSBuild properties to suppress warnings or elevate them to errors. For more information, see [How to: Suppress Compiler Warnings](/visualstudio/ide/how-to-suppress-compiler-warnings) in the Visual Studio documentation.
 
 **Errors**
 
@@ -88,24 +88,24 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | | |
 | --- | --- |
 | **Issue** | The project doesn't contain one or more frameworks. |
-| **Common causes** | The project doesn't contain a `TargetFramework` or `TargetFrameworks` property. |
 | **Example message** | *The project projA does not specify any target frameworks in c:\tmp\projA.csproj* |
+| **Solution** | Add a `TargetFramework` or `TargetFrameworks` property to the specified project file. |
 
 ### NU1002
 
 | | |
 | --- | --- |
 | **Issue** | Invalid combination of inputs along with a CLEAR keyword. |
-| **Common causes** | CLEAR may not be combined with other inputs. |
 | **Example message** | *'CLEAR' cannot be used in conjunction with other values* |
+| **Solution** | Use CLEAR by itself and omit all other inputs. |
 
 ### NU1003
 
 | | |
 | --- | --- |
 | **Issue** | `PackageTargetFallback` and `AssetTargetFallback` provide different behavior for selecting assets and cannot be used together. |
-| **Common causes** | Both `PackageTargetFallback` and `AssetTargetFallback` exist in the project. |
 | **Example message** | *PackageTargetFallback and AssetTargetFallback cannot be used together. Remove PackageTargetFallback(deprecated) references from the project environment.* |
+| **Solution** | Remove the deprecated `PackageTargetFallback` element from the project. |
 
 ## Missing package and project errors
 
@@ -116,66 +116,67 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | | |
 | --- | --- |
 | **Issue** | A dependency group not be resolved. This is a generic issue for types that are not packages or projects. |
-| **Common causes** | The project contains a dependency on an item that doesn't exist. |
 | **Example message** | *Unable to resolve System.Missing for net45* |
+| **Solution** | Open the project file and examine the list of its dependencies. Check that each dependency exists on the package sources you're using, and that the package supports the project's target framework. |
 
 ### NU1101
 
 | | |
 | --- | --- |
 | **Issue** | The package cannot be found on any sources. |
-| **Common causes** | The correct package source is missing or the package identifier is incorrect. |
 | **Example message** | *Unable to find package System.Missing. No packages exist with this id in source(s): dotnet-core, dotnet-roslyn, nuget.org* |
+| **Solution** | Edit the project file or `packages.config` to correct the identifier of the package and/or its version number. Also check that the [NuGet configuration](../consume-packages/Configuring-NuGet-Behavior.md) identifies the package sources your expect to be using. |
 
 ### NU1102
 
 | | |
 | --- | --- |
-| **Issue** | The package identifier is found but a version within the specified dependency range cannot be found on any of the sources. |
-| **Common causes** | The correct package source is missing or the dependency range is incorrect. The range might be specified by a package and not the user. The user may need to switch to an available version if this package is referenced by the project directly. |
+| **Issue** | The package identifier is found but a version within the specified dependency range cannot be found on any of the sources. The range might be specified by a package and not the user. |
 | **Example message** | *Unable to find package NuGet.Versioning with version (>= 9.0.1)<br/>  - Found 30 version(s) in nuget.org [ Nearest version: 4.0.0 ]<br/>  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>  - Found 0 version(s) in dotnet-core<br/>  - Found 0 version(s) in dotnet-roslyn* |
+| **Solution** | Edit the project file or `packages.config` to correct the package version. Also check that the [NuGet configuration](../consume-packages/Configuring-NuGet-Behavior.md) identifies the package sources your expect to be using. You may need to change the requeted version if this package is referenced by the project directly. |
 
 ### NU1103
 
 | | |
 | --- | --- |
-| **Issue** | No stable versions were found in the dependency range. Pre-release versions were found but are not allowed. |
-| **Common causes** | The project specified a stable version for the dependency range. Users need to change the version range to include pre-release versions. |
+| **Issue** | The project specified a stable version for the dependency range, but no stable versions were found in that range. Pre-release versions were found but are not allowed. |
 | **Example message** | *Unable to find a stable package NuGet.Versioning with version (>= 3.0.0)<br/>  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>  - Found 0 version(s) in dotnet-core<br/>  - Found 0 version(s) in dotnet-roslyn* |
+| **Solution** |  Edit the version range in the project file or `packages.config` to include pre-release versions. See [Package versioning](../reference/Package-Versioning.md). |
 
 ### NU1104
 
 | | |
 | --- | --- |
 | **Issue** | A ProjectReference points to a file that doesn't exist. |
-| **Common causes** | The project file is missing from disk or the reference is incorrect. |
 | **Example message** | *Project reference does not exist 'c:\a.csproj'. Check that the project reference is valid and that the project file exists.* |
+| **Solution** | Edit the project file to either correct the path to the referenced project or to remove the reference altogether if it's no longer needed. |
 
 ### NU1105
 
 | | |
 | --- | --- |
 | **Issue** | The project file exists but no restore information was provided for it. |
-| **Common causes** | In Visual Studio this could mean that the project is unloaded. From the command line this could mean that the file is corrupt or that it doesn't contain the custom after imports target needed for restore to read the project. |
 | **Example message** | *Unable to read project information for 'c:\a.csproj'. The project file may be invalid or missing targets required for restore.* |
+| **Solution** | In Visual Studio, the error could mean that the project is unloaded, in which case reload the project. From the command line this could mean that the file is corrupt or that it doesn't contain the custom "after imports" target needed for restore to read the project. Check that the project file is valid and contains an "after imports" target. |
 
 ### NU1106
 
 | | |
 | --- | --- |
 | **Issue** | Dependency constraints cannot be resolved. |
-| **Common causes** | Packages contain dependency on exact versions of a package instead of open-ended ranges. |
-| **Example message** | *Unable to satisfy conflicting requests for {id}: {conflict path} Framework: {target graph}* |
+| **Example message** | *Unable to satisfy conflicting requests for {id}: {conflict path} Framework: {target graph}* 
+| **Solution** | Edit the project file or `packages.config` to specify more open-ended ranges for the dependency rather than an exact version. |
+|
 
-<a name="nu1107"></a> 
+<a name="nu1107"></a>
 
 ### NU1107 (Previously NU1607)
 
 | | |
 | --- | --- |
 | **Issue** | Unable to resolve dependency constraints between packages. |
-| **Common causes** | Packages with dependency constraints on exact versions do not allow other packages to increase the version if needed. |
 | **Example message** | *Version conflict detected for NuGet.Versioning. Reference the package directly from the project to resolve this issue.<br/>  NuGet.Packaging 3.5.0 -> NuGet.Versioning (= 3.5.0)<br/>  NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)* |
+| **Solution** | Packages with dependency constraints on exact versions do not allow other packages to increase the version if needed. Add a reference to the project directly (in the project file or `packages.config`) with the exact version required. |
 
 <a name="nu1108"></a>
 
@@ -184,8 +185,8 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | | |
 | --- | --- |
 | **Issue** | A circular dependency was detected. |
-| **Common causes** | A package is authored incorrectly. |
 | **Example message** | *Cycle detected: A -> B -> A* |
+| **Solution** | The package is authored incorrectly; contact the package owner to correct the bug. |
 
 ## Compatibility errors
 
@@ -195,33 +196,33 @@ The errors and warnings listed here are available only with [PackageReference-ba
 
 | | |
 | --- | --- |
-| **Issue** | A dependency project doesn't contain a framework compatible with the current project. |
-| **Common causes** | The project's target framework is a higher version than the consuming project. |
+| **Issue** | A dependency project doesn't contain a framework compatible with the current project. Typically, the project's target framework is a higher version than the consuming project. |
 | **Example message** | *Project ServerWeb is not compatible with netstandard1.3 (.NETStandard,Version=v1.3). Project ServerWeb supports:<br/>  - netstandard1.6 (.NETStandard,Version=v1.6)<br/>  - netcoreapp1.0 (.NETCoreApp,Version=v1.0)* |
+| **Solution** | Change the project's target framework to an equal or lower version than the consuming project. |
 
 ### NU1202
 
 | | |
 | --- | --- |
 | **Issue** | A dependency package doesn't contain any assets compatible with the project. |
-| **Common causes** | The package doesn't support the project's target framework. |
 | **Example message** | *Package System.ComponentModel.EventBasedAsync 4.0.11 is not compatible with netstandard1.3 (.NETStandard,Version=v1.3). Package System.ComponentModel.EventBasedAsync 4.0.11 supports:<br/>  - monoandroid10 (MonoAndroid,Version=v1.0)<br/>  - monotouch10 (MonoTouch,Version=v1.0)<br/>  - net45 (.NETFramework,Version=v4.5)<br/>  - netcore50 (.NETCore,Version=v5.0)<br/>  - netstandard1.0 (.NETStandard,Version=v1.0)<br/>  - portable-net45+win8+wp8+wpa81 (.NETPortable,Version=v0.0,Profile=Profile259)<br/>  - win8 (Windows,Version=v8.0)<br/>  - wp8 (WindowsPhone,Version=v8.0)<br/>  - wpa81 (WindowsPhoneApp,Version=v8.1)<br/>  - xamarinios10 (Xamarin.iOS,Version=v1.0)<br/>  - xamarinmac20 (Xamarin.Mac,Version=v2.0)<br/>  - xamarintvos10 (Xamarin.TVOS,Version=v1.0)<br/>  - xamarinwatchos10 (Xamarin.WatchOS,Version=v1.0)*|
+| **Solution** | Change the project's target framework to one that the package supports. |
 
 ### NU1203
 
 | | |
 | --- | --- |
 | **Issue** | The package doesn't support the project's `RuntimeIdentifier`. |
-| **Common causes** | The package doesn't support the current `RuntimeIdentifier`. Change the `RuntimeIdentifier` values used in the project if needed. |
 | **Example message** | *System.Example 1.0.0 provides a compile-time reference assembly for a.dll on net461, but there is no compatible run-time assembly.* |
+| **Solution** | Change the `RuntimeIdentifier` values used in the project as needed. |
 
 ### NU1401
 
 | | |
 | --- | --- |
 | **Issue** | The package requires features or frameworks not currently supported by the installed version of NuGet. |
-| **Common causes** | Upgrade NuGet to fix the issue. |
-| **Example message** | *The 'NuGet.Versioning' package requires NuGet client version '5.0.0' or above, but the current NuGet version is '4.3.0'. To upgrade NuGet, please go to http://docs.nuget.org/consume/installing-nuget.* |
+| **Example message** | *The 'NuGet.Versioning' package requires NuGet client version '5.0.0' or above, but the current NuGet version is '4.3.0'.* |
+| **Solution** | Install a newer version of NuGet. See [Installing NuGet client tools](../install-nuget-client-tools.md). |
 
 ## Invalid input warnings
 
@@ -232,24 +233,24 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | | |
 | --- | --- |
 | **Issue** | The project restore is attempting to operate on was not found. |
-| **Common causes** | The project is missing. |
 | **Example message** | *The folder 'c:\projects\a' does not contain a project to restore.* |
+| **Solution** | Run nuget restore in a folder that contains a project. |
 
 ### NU1502
 
 | | |
 | --- | --- |
-| **Issue** | `RuntimeSupports` contains an invalid profile. |
-| **Common causes** | The supports profile was not found in a `runtime.json` file from the current dependency packages. |
+| **Issue** | `RuntimeSupports` contains an invalid profile. Typically, the supports profile was not found in a `runtime.json` file from the current dependency packages.|
 | **Example message** | *Unknown Compatibility Profile: aaa* |
+| **Solution** | Check the `RuntimeSupports` value in your project. |
 
 ### NU1503
 
 | | |
 | --- | --- |
 | **Issue** | A dependency project doesn't import NuGet's restore targets. This is similar to NU1105 but here the project is skipped and ignored instead of causing all of restore to fail. In complex solutions there are often other types of projects that may not support restore. |
-| **Common causes** | This can happen for projects that do not import common props/targets which automatically import restore. If the project doesn't need to be restored this can be ignored. |
 | **Example message** | *Skipping restore for project 'c:\a.csproj'. The project file may be invalid or missing targets required for restore.* |
+| **Solution** | This can happen for projects that do not import common props/targets which automatically import restore. If the project doesn't need to be restored this can be ignored. Otherwise, edit the affected project to add targets for restore. |
 
 ## Unexpected package version warnings
 
@@ -260,40 +261,40 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | | |
 | --- | --- |
 | **Issue** | A direct project dependency was bumped to a higher version than the project specified. |
-| **Common causes** | Another dependency package required a higher version and bumped the package up. |
 | **Example message** | *Dependency specified was NuGet.Versioning (>= 3.5.0) but ended up with NuGet.Versioning 4.0.0.* |
+| **Solution** | Update the dependency in the project to an appropriate version. |
 
 ### NU1602
 
 | | |
 | --- | --- |
 | **Issue** | A package dependency is missing a lower bound. This doesn't allow restore to find the *best match*. Each restore will float downwards trying to find a lower version that can be used. This means that restore goes online to check all sources each time instead of using the packages that already exist in the user package folder. |
-| **Common causes** | This is usually a package authoring error. |
 | **Example message** | *NuGet.Packaging 4.0.0 does not provide an inclusive lower bound for dependency NuGet.Versioning (> 3.5.0). An approximate best match of 3.6.0 was resolved.* |
+| **Solution** | This is usually a package authoring error. Contact the package author to resolve the issue. |
 
 ### NU1603
 
 | | |
 | --- | --- |
-| **Issue** | A package dependency specified a version that could not be found. A higher version was used instead, which differs from what the package was authored against.<br/><br/>This means that restore did not find the *best match*. Each restore will float downwards trying to find a lower version that can be used. This means that restore goes online to check all sources each time instead of using the packages that already exist in the user package folder. |
-| **Common causes** | The package sources do not contain the expected lower bound version. If the package expected has not been released then this may be a package authoring error. |
+| **Issue** | A package dependency specified a version that could not be found. Typically, the package sources do not contain the expected lower bound version. A higher version was used instead, which differs from what the package was authored against.<br/><br/>This means that restore did not find the *best match*. Each restore will float downwards trying to find a lower version that can be used. This means that restore goes online to check all sources each time instead of using the packages that already exist in the user package folder. |
 | **Example message** | NuGet.Packaging 4.0.0 depends on NuGet.Versioning (>= 4.0.0) but 4.0.0 was not found. An approximate best match of 5.0.0 was resolved. |
+| **Solution** | If the package expected has not been released then this may be a package authoring error. Contact the package author to resolve the issue. If the package has been released, then check that it's available on the package sources you're using. If using a private source, you may need to update the package on that feed. |
 
 ### NU1604
 
 | | |
 | --- | --- |
 | **Issue** | A project dependency doesn't define a lower bound.<br/><br/>This means that restore did not find the *best match*. Each restore will float downwards trying to find a lower version that can be used. This means that restore goes online to check all sources each time instead of using the packages that already exist in the user package folder. |
-| **Common causes** | The project's *PackageReference* *Version* attribute should be updated to include a lower bound. |
 | **Example message** | *Project dependency NuGet.Versioning (<= 9.0.0) doe not contain an inclusive lower bound. Include a lower bound in the dependency version to ensure consistent restore results.* |
+| **Solution** | Update the project's `PackageReference` `Version` attribute to include a lower bound. |
 
 ### NU1605
 
 | | |
 | --- | --- |
-| **Issue** | A dependency package specified a version constraint on a higher version of a package than restore ultimately resolved. |
-| **Common causes** | Nearest wins when resolving packages. A nearer package in the graph may have overridden a distant package. |
+| **Issue** | A dependency package specified a version constraint on a higher version of a package than restore ultimately resolved. That is, because of the "nearest wins" rule when resolving packages, a nearer package in the graph may have overridden a distant package. |
 | **Example message** | *Detected package downgrade: NuGet.Versioning from 4.0.0 to 3.5.0. Reference the package directly from the project to select a different version.<br/>  NuGet.Packaging 3.5.0 -> NuGet.Versioning 3.5.0<br/>  NuGet.Commands 4.0.0 -> NuGet.Configuration 4.0.0 -> NuGet.Versioning 4.0.0* |
+| **Solution** | Add a direct reference to the project for the higher version of the package that you want to use. |
 
 ## Resolver conflict warnings
 
@@ -301,9 +302,9 @@ The errors and warnings listed here are available only with [PackageReference-ba
 
 | | |
 | --- | --- |
-| **Issue** | A resolve package is higher than a dependency constraint allows. In some cases this is intentional and the warning can be suppressed. |
-| **Common causes** | A package referenced directly by a project will override dependency constraints from other packages.   |
+| **Issue** | A resolved package is higher than a dependency constraint allows. This means that a package referenced directly by a project overrides dependency constraints from other packages.|
 | **Example message** | *Detected package version outside of dependency constraint: x 1.0.0 requires y (= 1.0.0) but version y 2.0.0 was resolved.* |
+| **Solution** | In some cases this is intentional and the warning can be suppressed. Otherwise, change the project's reference to the package to widen its version constraints. |
 
 ## Package fallback warnings
 
@@ -311,9 +312,9 @@ The errors and warnings listed here are available only with [PackageReference-ba
 
 | | |
 | --- | --- |
-| **Issue** | *PackageTargetFallback/AssetTargetFallback* was used to select assets from a package. This is a warning to let the user know that the assets may not be 100% compatible. |
-| **Common causes** | The package doesn't support the project framework. |
+| **Issue** | `PackageTargetFallback` / `AssetTargetFallback` was used to select assets from a package. The warning let users know that the assets may not be 100% compatible. |
 | **Example message** | *Package 'NuGet.Versioning' was restored using 'portable-net45+win8' instead the project target framework 'netstandard1.5'. This package may not be fully compatible with your project.* |
+| **Solution** | Change the project's target framework to one that the package supports. |
 
 ## Feed warnings
 
@@ -322,8 +323,8 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | | |
 | --- | --- |
 | **Issue** | An error occurred when reading the feed when `IgnoreFailedSources` is set to true, converting it to a non-fatal warning. This could contain any message and is generic. |
-| **Common causes** | The source is invalid. |
 | **Example message** | n/a |
+| **Solution** | Edit your configuration to specify valid sources. |
 
 ## NuGet internal errors and warnings
 
@@ -334,14 +335,14 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | | |
 | --- | --- |
 | **Issue** | A non specific internal error from NuGet. |
-| **Common causes** | Check the logs for more information |
+| **Solution** | Check the logs for more information |
 
 ### NU1500
 
 | | |
 | --- | --- |
 | **Issue** | A non specific internal warning from NuGet. |
-| **Common causes** | Check the logs for more information |
+| **Solution** | Check the logs for more information |
 
 ## Signed packages (creation and verification)
 
@@ -354,49 +355,49 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | | |
 | --- | --- |
 | **Issue** | A non-specific error related to package signing and signed package verification. |
-| **Common causes** | Check the logs for more information. |
+| **Solution** | Check the logs for more information. |
 
 ### NU3001
 
 | | |
 | --- | --- |
-| **Issue** | Invalid input. |
-| **Common causes** | Invalid arguments to either the [sign command](../tools/cli-ref-sign.md) or the [verify command](../tools/cli-ref-verify.md). |
+| **Issue** | Invalid arguments to either the [sign command](../tools/cli-ref-sign.md) or the [verify command](../tools/cli-ref-verify.md). |
+| **Solution** | Check and correct the arguments provided. |
 
 ### NU3002
 
 | | |
 | --- | --- |
-| **Issue** | The `-Timestamper` option was not specified. |
-| **Common causes** | The `-Timestamper` option was not provided to the [sign command](../tools/cli-ref-sign.md). |
-| **Example message** | *The '-Timestamper' option was not provided. The signed package will not be timestamped. To learn more about this option, please visit https://docs.nuget.org/docs/reference/command-line-reference.* |
+| **Issue** | The `-Timestamper` option was not specified with the [nuget sign command](../tools/cli-ref-sign.md). |
+| **Example message** | *The '-Timestamper' option was not provided. The signed package will not be timestamped.* |
+| **Solution** | Specify the `-Timestamper` option with `nuget sign`. |
 
 ### NU3004
 
 | | |
 | --- | --- |
-| **Issue** | The package is not signed. |
-| **Common causes** | An unsigned package was provided to the [verify command](../tools/cli-ref-verify.md). |
+| **Issue** | An unsigned package was provided to the [nuget verify command](../tools/cli-ref-verify.md). |
+| **Solution** | Run `nuget verify` with a signed package. See [Sign a package](../create-packages/Sign-a-Package.md). |
 
 ### NU3008
 
 | | |
 | --- | --- |
-| **Issue** | The package integrity check failed. |
-| **Common causes** | A signed package was tampered with since being signed. |
+| **Issue** | The package integrity check failed, meaning that a signed package was tampered with since being signed. |
+| **Solution** | Scan your computer with anti-virus software. Then remove the package from the computer, reinstall it, and try the operation again. If the problem persists, contact the owner of the package source and the package owner. |
 
 ### NU3018
 
 | | |
 | --- | --- |
-| **Issue** | Certificate chain building failed for the primary signature. |
-| **Common causes** | The primary signing certificate is untrusted, revoked, or revocation information for the certificate is unavailable. |
+| **Issue** | Certificate chain building failed for the primary signature. The primary signing certificate is untrusted, revoked, or revocation information for the certificate is unavailable. |
 | **Example message** | *WARNING: NU3018: The revocation function was unable to check revocation for the certificate.* |
+| **Solution** | Use a trusted and valid certificate. |
 
 ### NU3028
 
 | | |
 | --- | --- |
-| **Issue** | Certificate chain building failed for the timestamp signature. |
-| **Common causes** | The timestamp signing certificate is untrusted, revoked, or revocation information for the certificate is unavailable. |
+| **Issue** | Certificate chain building failed for the timestamp signature. The timestamp signing certificate is untrusted, revoked, or revocation information for the certificate is unavailable. |
 | **Example message** | *WARNING: NU3028: The revocation function was unable to check revocation for the certificate.* |
+| **Solution** | Use a trusted and valid certificate. |

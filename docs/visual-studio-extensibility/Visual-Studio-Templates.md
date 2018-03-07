@@ -58,7 +58,7 @@ Steps to include packages in a template:
     </WizardData>
     ```
 
-    *(NuGet 2.2.1+)* The wizard supports multiple `<package>` elements to support multiple package sources. Both the `id` and `version` attributes are required, meaning that specific version of a package will be installed even if a newer version is available. This prevents package updates from breaking the template, leaving the choice to update the package to the developer using the template.
+    The wizard supports multiple `<package>` elements to support multiple package sources. Both the `id` and `version` attributes are required, meaning that specific version of a package will be installed even if a newer version is available. This prevents package updates from breaking the template, leaving the choice to update the package to the developer using the template.
 
 1. Specify the repository where NuGet can find the packages as described in the following sections.
 

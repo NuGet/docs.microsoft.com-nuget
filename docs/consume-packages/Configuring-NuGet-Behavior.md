@@ -16,7 +16,7 @@ ms.reviewer:
 
 # Configuring NuGet behavior
 
-NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Config` (XML) files that can exist at project-, user-, and computer-wide levels. A global `NuGetDefaults.Config` file (2.7+) also specifically configures package sources. Settings apply to all commands issued in the CLI, the Package Manager Console, and the Package Manager UI.
+NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Config` (XML) files that can exist at project-, user-, and computer-wide levels. A global `NuGetDefaults.Config` file also specifically configures package sources. Settings apply to all commands issued in the CLI, the Package Manager Console, and the Package Manager UI.
 
 ## Config file locations and uses
 
@@ -211,7 +211,7 @@ The following table describes where the `NuGetDefaults.Config` file should be st
 
 | OS Platform  | NuGetDefaults.Config Location |
 | --- | --- |
-| Windows      | **NuGet 4.x:** %ProgramFiles(x86)%\NuGet\Config <br />**NuGet 2.7 to 3.x:** %PROGRAMDATA%\NuGet |
+| Windows      | **NuGet 4.x+:** %ProgramFiles(x86)%\NuGet\Config <br />**NuGet 3.x and earlier:** %PROGRAMDATA%\NuGet |
 | Mac/Linux    | $XDG_DATA_HOME (typically ~/.local/share)|
 
 ### NuGetDefaults.Config settings

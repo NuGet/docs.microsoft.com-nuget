@@ -69,11 +69,9 @@ In Visual Studio and when using the NuGet CLI, NuGet does not include pre-releas
 
 ### Native C++ packages
 
-NuGet (2.5+) supports native C++ packages can that can be used in C++ projects in Visual Studio. This enables the **Manage NuGet Packages** context-menu command for projects, introduces a `native` target framework, and provides MSBuild integration.
+NuGet supports native C++ packages can that can be used in C++ projects in Visual Studio. This enables the **Manage NuGet Packages** context-menu command for projects, introduces a `native` target framework, and provides MSBuild integration.
 
 To find native packages on [nuget.org](https://www.nuget.org/packages), search using `tag:native`. Such packages typically provide `.targets` and `.props` files, which NuGet imports automatically when the package is added to a project.
-
-For information on creating native packages, see [Native packages](../create-packages/native-packages.md).
 
 ## Evaluating packages
 

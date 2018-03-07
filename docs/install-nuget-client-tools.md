@@ -24,7 +24,7 @@ To work with NuGet, as a package consumer or creator, you can use [cross-platfor
 |:------------- |:-------------|:-----|
 | [dotnet.exe](#dotnetexe-cli) | Included with the .NET Core SDK and provides core NuGet features on all platforms. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
 | [nuget.exe](#nugetexe-cli) | Provides all NuGet capabilities on Windows and most features running under [Mono](http://www.mono-project.com/docs/getting-started/install/) on Mac and Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
-| [Visual Studio](#visual-studio) | Provides NuGet capabilities through the Package Manager UI and Package Manager Console. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
+| [Visual Studio](#visual-studio) | Provides NuGet capabilities through the Package Manager UI and Package Manager Console; included with .NET-related workloads. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 The [MSBuild CLI](reference/msbuild-targets.md) also provides the ability to restore and create packages, which is primarily useful on build servers. MSBuild is not otherwise a general-purpose tool for working with NuGet.
 
@@ -63,10 +63,10 @@ Installation:
 - Visual Studio for Mac: certain NuGet capabilities are built in directly. See [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough) for a walkthrough. For other capabilities, use the `dotnet.exe` or `nuget.exe` CLI tools.
 
 - Visual Studio on Windows: The **NuGet Package Manager** is included with Visual Studio 2012 and later. The Package Manager provides the [Package Manager UI](tools/package-manager-ui.md) and the [Package Manager Console](tools/package-manager-console.md), through which you can run most NuGet operations.
+  - The Visual Studio 2017 installer includes the NuGet Package Manager with any workload that employs .NET. To install separately, or to verify that the Package Manager is installed, run the Visual Studio 2017 installer and check the option under **Individual Components > Code tools > NuGet package manager**.
   - The Package Manager UI and Console are unique to Visual Studio on Windows. They are not available on Visual Studio for Mac at present.
   - Visual Studio does not automatically include the `nuget.exe` CLI, which must be installed separately as described earlier.
   - Package Manager Console commands work only within Visual Studio on Windows and not within other PowerShell environments.
-  - The Visual Studio 2017 installer includes the NuGet Package Manager with any workload that employs .NET. To install separately, or to verify that the Package Manager is installed, run the Visual Studio 2017 installer and check the option under **Individual Components > Code tools > NuGet package manager**.
   - For Visual Studio 2010 and earlier, install the "NuGet Package Manager for Visual Studio" extension.
   - NuGet Extensions for Visual Studio 2013 and 2015 can also be downloaded from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
   - If you'd like to preview upcoming NuGet features, install the [Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/), which works side-by-side with stable releases of Visual Studio. To report problems or share ideas for previews, open an issue on the [NuGet GitHub repository](https://github.com/Nuget/Home/issues).

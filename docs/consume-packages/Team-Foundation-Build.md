@@ -37,7 +37,7 @@ This is especially interesting if you are using a [distributed version control](
 
 NuGet has supported [restoring packages](../consume-packages/package-restore.md) as part of the build for a long time now. The previous implementation had a chicken-and-egg problem for packages that want to extend the build process because NuGet restored packages while building the project. However, MSBuild doesn't allow extending the build during the build; one could argue that this an issue in MSBuild but I would argue that this is an inherent problem. Depending on which aspect you need to extend it might be too late to register by the time your package is restored.
 
-The cure to this problem is making sure that packages are restored as the first step in the build process. NuGet 2.7+ makes this easy via a simplified command line:
+The cure to this problem is making sure that packages are restored as the first step in the build process:
 
 ```cli
 nuget restore path\to\solution.sln
