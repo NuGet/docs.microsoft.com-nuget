@@ -96,7 +96,7 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "/docs/policies/command-line-reference.md",
+            "source_path": "docs/policies/command-line-reference.md",
             "redirect_url": "/nuget/tools/nuget-exe-cli-reference",
             "redirect_document_id": false
         }
