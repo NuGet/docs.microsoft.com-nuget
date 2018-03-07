@@ -34,8 +34,6 @@ In NuGet 2.8+, `Update-Package` can be used to downgrade an existing package in 
 Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 ```
 
-NuGet 2.7 and earlier gives an error saying that a newer version is already installed.
-
 ## Parameters
 
 |  Parameter | Description |
