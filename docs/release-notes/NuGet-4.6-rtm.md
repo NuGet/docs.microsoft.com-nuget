@@ -1,6 +1,6 @@
 
 ---
-title: NuGet 4.5 RTM Release Notes | Microsoft Docs
+title: NuGet 4.6 RTM Release Notes | Microsoft Docs
 author: anangaur
 ms.author: anangaur
 manager: unnir
