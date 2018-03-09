@@ -392,7 +392,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | --- | --- |
 | **Issue** | Certificate chain building failed for the primary signature. The primary signing certificate is untrusted, revoked, or revocation information for the certificate is unavailable. |
 | **Example message** | *WARNING: NU3018: The revocation function was unable to check revocation for the certificate.* |
-| **Solution** | Use a trusted and valid certificate. |
+| **Solution** | Use a trusted and valid certificate. Check internet connectivity. |
 
 ### NU3028
 
@@ -400,4 +400,4 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | --- | --- |
 | **Issue** | Certificate chain building failed for the timestamp signature. The timestamp signing certificate is untrusted, revoked, or revocation information for the certificate is unavailable. |
 | **Example message** | *WARNING: NU3028: The revocation function was unable to check revocation for the certificate.* |
-| **Solution** | Use a trusted and valid certificate. |
+| **Solution** | Use a trusted and valid certificate. Check internet connectivity. |
