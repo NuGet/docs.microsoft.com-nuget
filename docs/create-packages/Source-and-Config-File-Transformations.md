@@ -17,15 +17,15 @@ ms.reviewer:
 
 # Transforming source code and configuration files
 
-For projects using `packages.config`, NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times. Transformations are not applied when a package is installed in a project using [PackageReference](../consume-packages/package-references-in-project-files.md).
+For projects using `packages.config`, NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times. Only Source code transformations are applied when a package is installed in a project using [PackageReference](../consume-packages/package-references-in-project-files.md).
 
-A **source code transformation** applies one-way token replacement to files in the package's `content` folder when the package is installed, where tokens refer to Visual Studio [project properties](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7). This allows you to insert a file into the project's namespace, or to customize code that would typically go into `global.asax` in an ASP.NET project.
+A **source code transformation** applies one-way token replacement to files in the package's `content` or `contentFiles` folder (`content` for customers using `packages.config` and `contentFiles` for `PackageReference`) when the package is installed, where tokens refer to Visual Studio [project properties](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7). This allows you to insert a file into the project's namespace, or to customize code that would typically go into `global.asax` in an ASP.NET project.
 
 A **config file transformation** allows you to modify files that already exist in a target project, such as `web.config` and `app.config`. For example, your package might need to add an item to the `modules` section in the config file. This transformation is done by including special files in the package that describe the sections to add to the configuration files. When a package is uninstalled, those same changes are then reversed, making this a two-way transformation.
 
 ## Specifying source code transformations
 
-1. Files that you want to insert from the package into the project must be located within the package's `content` folder. For example, if you want a file called `ContosoData.cs` to be installed in a `Models` folder of the target project, it must be inside the `content\Models` folder in the package.
+1. Files that you want to insert from the package into the project must be located within the package's `content` and `contentFiles` folders. For example, if you want a file called `ContosoData.cs` to be installed in a `Models` folder of the target project, it must be inside the `content\Models` and `contentFiles\{lang}\{tfm}\Models` folders in the package.
 
 1. To instruct NuGet to apply token replacement at install time, append `.pp` to the source code file name. After installation, the file will not have the `.pp` extension.
 
