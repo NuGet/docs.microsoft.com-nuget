@@ -437,7 +437,7 @@ You can test installations manually in Visual Studio or on the command line usin
 For automated testing, the basic process is as follows:
 
 1. Copy the `.nupkg` file to a local folder.
-1. Add the folder to your package sources using the `nuget sources -name <name> -source <path>` command (see [nuget sources](../tools/cli-ref-sources.md)). Note that you need only set this local source once on any given computer.
+1. Add the folder to your package sources using the `nuget sources add -name <name> -source <path>` command (see [nuget sources](../tools/cli-ref-sources.md)). Note that you need only set this local source once on any given computer.
 1. Install the package from that source using `nuget install <packageID> -source <name>` where `<name>` matches the name of your source as given to `nuget sources`. Specifying the source ensures that the package is installed from that source alone.
 1. Examine the file system to check that files are installed correctly.
 
