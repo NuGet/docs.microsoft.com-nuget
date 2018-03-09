@@ -4,20 +4,16 @@ Initial planned throttling limits are based on the maximum load we've seen on th
 
 # V1 OData API
 
-Throttling Type: **based on IP**
-
-Api | Throttling Values | Main use case | V3 APIs support
--- | -- | -- | --
-**GET** `/api/v1/Packages` | 1000 / minute | Query NuGet package metadata via v1 OData `Packages` collection | [package search documentation](https://docs.microsoft.com/en-us/nuget/api/search-query-service-resource)
-**GET** `/api/v1/Search()?searchTerm=&targetFramework=&includePrerelease=` | 3000 / minute | Search for NuGet packages via v1 Search endpoint | [package search documentation](https://docs.microsoft.com/en-us/nuget/api/search-query-service-resource)
+Api | Throttling Type | Throttling Values | Main use case | V3 APIs support
+-- | -- | -- | -- | --
+**GET** `/api/v1/Packages` | IP | 1000 / minute | Query NuGet package metadata via v1 OData `Packages` collection | [package search documentation](https://docs.microsoft.com/en-us/nuget/api/search-query-service-resource)
+**GET** `/api/v1/Search()?searchTerm=&targetFramework=&includePrerelease=` | IP | 3000 / minute | Search for NuGet packages via v1 Search endpoint | [package search documentation](https://docs.microsoft.com/en-us/nuget/api/search-query-service-resource)
 
 # V2 OData API
 
-Throttling Type: **based on IP**
-
-Api | Throttling Values | Main use case | V3 APIs support
--- | -- | -- | --
-**GET** `/api/v2/Packages` | 20000 / minute | Query NuGet package metadata via v2 OData `Packages` collection | [package search documentation](https://docs.microsoft.com/en-us/nuget/api/search-query-service-resource)
-**GET** `/api/v2/Packages/$count` | 100 / minute | Query NuGet package count via v2 OData `Packages` collection | 
-**PUT** `/api/v2/package` | 100 / minute | Upload a new NuGet package (version) via v2 push endpoint | 
-**DELETE** `/api/v2/package/{id}/{version}` | 100 / minute | Unlist a NuGet package (version) via v2 endpoint |
+Api | Throttling Type | Throttling Values | Main use case | V3 APIs support
+-- | -- | -- | -- | --
+**GET** `/api/v2/Packages` | IP | 20000 / minute | Query NuGet package metadata via v2 OData `Packages` collection | [package search documentation](https://docs.microsoft.com/en-us/nuget/api/search-query-service-resource)
+**GET** `/api/v2/Packages/$count` | IP | 100 / minute | Query NuGet package count via v2 OData `Packages` collection | 
+**PUT** `/api/v2/package` | API Key | 100 / minute | Upload a new NuGet package (version) via v2 push endpoint | 
+**DELETE** `/api/v2/package/{id}/{version}` | API Key | 100 / minute | Unlist a NuGet package (version) via v2 endpoint |
