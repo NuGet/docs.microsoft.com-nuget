@@ -1,8 +1,15 @@
+# NuGet API rate limiting
+
 The NuGet.org service API needs some configurable and enforceable upper limits on acceptable API usage. 
 
-Initial planned throttling limits are based on the maximum load we've seen on these endpoints to date. Upon reaching the maximum allowed requests a 429 (too many messages) error code will be returned. 
-A sample response is:
-{ "statusCode": 429, "message": "Rate limit is exceeded. Try again in 58 seconds." }
+Initial planned throttling limits are based on the maximum load we've seen on these endpoints to date. Upon reaching the maximum allowed requests an error response returns. 
+
+    {
+      "statusCode": 429,
+      "message": "Rate limit is exceeded. Try again in 56 seconds."
+    }
+
+
 
 # V1 OData API
 
