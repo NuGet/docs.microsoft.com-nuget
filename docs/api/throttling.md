@@ -24,5 +24,11 @@ Api | Throttling Type | Throttling Values | Main use case | V3 APIs support
 -- | -- | -- | -- | --
 **GET** `/api/v2/Packages` | IP | 20000 / minute | Query NuGet package metadata via v2 OData `Packages` collection | [package search documentation](https://docs.microsoft.com/en-us/nuget/api/search-query-service-resource)
 **GET** `/api/v2/Packages/$count` | IP | 100 / minute | Query NuGet package count via v2 OData `Packages` collection | 
-**PUT** `/api/v2/package` | API Key | 100 / minute | Upload a new NuGet package (version) via v2 push endpoint | 
-**DELETE** `/api/v2/package/{id}/{version}` | API Key | 100 / minute | Unlist a NuGet package (version) via v2 endpoint |
+
+
+# V2 API
+
+Api | Throttling Type | Throttling Values | Main use case 
+-- | -- | -- | -- 
+**PUT** `/api/v2/package` | API Key | 100 / minute | Upload a new NuGet package (version) via v2 push endpoint 
+**DELETE** `/api/v2/package/{id}/{version}` | API Key | 100 / minute | Unlist a NuGet package (version) via v2 endpoint 
