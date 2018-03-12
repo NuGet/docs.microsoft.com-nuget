@@ -1,6 +1,6 @@
 # NuGet API rate limiting
 
-The NuGet.org service API needs some configurable and enforceable upper limits on acceptable API usage. 
+I order to prevent the extreme overload on NuGet Server resources the NuGet.org service API needs some configurable and enforceable upper limits on acceptable API usage. 
 
 Initial planned throttling limits are based on the maximum load we've seen on these endpoints to date. Upon reaching the maximum allowed requests an error response returns. 
 
@@ -24,7 +24,6 @@ Api | Throttling Type | Throttling Values | Main use case | V3 APIs support
 -- | -- | -- | -- | --
 **GET** `/api/v2/Packages` | IP | 20000 / minute | Query NuGet package metadata via v2 OData `Packages` collection | [package search documentation](https://docs.microsoft.com/en-us/nuget/api/search-query-service-resource)
 **GET** `/api/v2/Packages/$count` | IP | 100 / minute | Query NuGet package count via v2 OData `Packages` collection | 
-
 
 # V2 API
 
