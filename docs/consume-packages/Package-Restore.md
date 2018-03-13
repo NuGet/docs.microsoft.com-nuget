@@ -54,7 +54,7 @@ Package restore is primarily enabled through **Tools > Options > NuGet Package M
 
 ![Controlling package restore behaviors through NuGet Package Manager options](media/Restore-01-AutoRestoreOptions.png)
 
-- **Allow NuGet to download missing packages**: controls all forms of package restore by changing the `packageRestore/enabled` setting in the `%AppData%\NuGet\NuGet.Config` file as shown below.
+- **Allow NuGet to download missing packages**: controls all forms of package restore by changing the `packageRestore/enabled` setting in the `%AppData%\NuGet\NuGet.Config` file as shown below. In Visual Studio, this setting allows the **Restore NuGet Packages** command on the solution's context menu to work.
 
     ```xml
     <configuration>
@@ -69,7 +69,7 @@ Package restore is primarily enabled through **Tools > Options > NuGet Package M
     > [!Note]
     >  The `packageRestore/enabled` setting can be overridden globally by setting an environment variable called **EnableNuGetPackageRestore** with a value of TRUE or FALSE before launching Visual Studio or starting a build.
 
-- **Automatically check for missing packages during build in Visual Studio**: controls automatic restore by changing the `packageRestore/automatic` setting in the `%AppData%\NuGet\NuGet.Config` file as shown below.
+- **Automatically check for missing packages during build in Visual Studio**: controls automatic restore by changing the `packageRestore/automatic` setting in the `%AppData%\NuGet\NuGet.Config` file as shown below. When this option is set, running a build from Visual Studio automatically restores any missing packages. The option does not affect builds run from the command line using MSBuild.
 
     ```xml
     ...
