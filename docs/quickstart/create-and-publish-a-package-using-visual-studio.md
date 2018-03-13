@@ -1,22 +1,22 @@
 ---
-title: Introductory Guide to Creating and Publishing a NuGet Package using Visual Studio | Microsoft Docs
+title: Introductory Guide to Creating and Publishing a .NET Standard NuGet Package using Visual Studio | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 02/02/2018
+ms.date: 03/18/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: null
-description: A walkthrough tutorial on creating and publishing a NuGet package using Visual Studio 2017.
+description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio 2017.
 keywords: NuGet package creation, NuGet package publishing, NuGet tutorial, Visual Studio create NuGet package, msbuild pack
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 ---
 
-# Create and publish a package using Visual Studio
+# Create and publish a package using Visual Studio (.NET Standard)
 
-It's a simple process to create a NuGet package from a .NET Class Library in Visual Studio, and then publish it to nuget.org using a CLI tool.
+It's a simple process to create a NuGet package from a .NET Standard Class Library in Visual Studio, and then publish it to nuget.org using a CLI tool.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ It's a simple process to create a NuGet package from a .NET Class Library in Vis
 
 ## Create a class library project
 
-You can use an existing .NET Class Library project for the code you want to package, or create a simple one as follows:
+You can use an existing .NET Standard Class Library project for the code you want to package, or create a simple one as follows:
 
 1. In Visual Studio, choose **File > New > Project**, expand the **Visual C# > .NET Standard** node, select the "Class Library (.NET Standard)" template, name the project AppLogger, and click **OK**.
 
@@ -115,7 +115,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using either the `nug
 
 This step is an alternative to using `dotnet.exe`.
 
-1. Change to the folder containing the `.nupkg` file..
+1. Change to the folder containing the `.nupkg` file.
 
 1. Run the following command, specifying your package name and replacing the key value with your API key:
 

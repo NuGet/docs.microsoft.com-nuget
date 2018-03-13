@@ -1,5 +1,5 @@
 ---
-title: Create Cross-Platform NuGet Packages (for iOS, Android, and Windows) | Microsoft Docs
+title: Create NuGet Packages for Xamarin (for iOS, Android, and Windows) | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -14,7 +14,7 @@ ms.reviewer:
 - unniravindranathan
 ---
 
-# Create cross-platform packages
+# Create packages for Xamarin
 
 A cross-platform package contains code that uses native APIs on iOS, Android, and Windows, depending on the run-time operating system. Although this is straightforward to do, it's preferable to let developers consume the package from a PCL or .NET Standard libraries through a common API surface area.
 
@@ -108,9 +108,9 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 
 1. Open a command prompt, navigate to the `LoggingLibrary` folder that's one level below where the `.sln` file is, and run the NuGet `spec` command to create the initial `Package.nuspec` file:
 
-```cli
-nuget spec
-```
+    ```cli
+    nuget spec
+    ```
 
 1. Rename this file to `LoggingLibrary.nuspec` and open it in an editor.
 1. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you get an error during the packing step.

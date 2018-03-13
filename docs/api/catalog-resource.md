@@ -12,7 +12,7 @@ ms.topic: reference
 ms.prod: nuget
 ms.technology: null
 description: The catalog is an index of all packages created and deleted on nuget.org.
-keywords: NuGet V3 API catalog, nuget.org transaction log, replicate NuGet.org, clone NuGet.org, append-only record of NuGet.org
+keywords: NuGet V3 API catalog, nuget.org transaction log, replicate nuget.org, clone nuget.org, append-only record of nuget.org
 ms.reviewer:
 - karann
 - unniravindranathan
