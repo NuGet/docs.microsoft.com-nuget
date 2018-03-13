@@ -208,7 +208,7 @@ If using MSBuild to pack your project, use a command like the following:
 msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
 ```
 
-Please note that packing a nuspec using dotnet.exe or msbuild also leads to building the project by default. This can be avoided by passing ```--no-build``` property to dotnet.exe, which is the equivalent of setting ```<NoBuild>true</NoBuild> ``` in your project file.
+Please note that packing a nuspec using dotnet.exe or msbuild also leads to building the project by default. This can be avoided by passing ```--no-build``` property to dotnet.exe, which is the equivalent of setting ```<NoBuild>true</NoBuild> ``` in your project file, along with setting ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` in the project file
 
 An example of a csproj file to pack a nuspec file is:
 
