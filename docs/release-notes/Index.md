@@ -18,6 +18,8 @@ ms.reviewer:
 
 [Known Issues](../release-notes/known-issues.md)
 
+[NuGet 4.6 RTM](../release-notes/nuget-4.6-rtm.md)
+
 [NuGet 4.5 RTM](../release-notes/nuget-4.5-rtm.md)
 
 [NuGet 4.4 RTM](../release-notes/nuget-4.4-rtm.md)

@@ -114,6 +114,7 @@
 ## [Deleting packages](policies/deleting-packages.md)
 # Release notes
 ## [Known Issues](release-notes/known-issues.md)
+## [NuGet 4.6 RTM](release-notes/NuGet-4.6-RTM.md)
 ## [NuGet 4.5 RTM](release-notes/NuGet-4.5-RTM.md)
 ## [NuGet 4.4 RTM](release-notes/NuGet-4.4-RTM.md)
 ## [NuGet 4.3 RTM](release-notes/NuGet-4.3-RTM.md)

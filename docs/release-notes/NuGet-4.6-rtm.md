@@ -1,6 +1,6 @@
 
 ---
-title: NuGet 4.5 RTM Release Notes | Microsoft Docs
+title: NuGet 4.6 RTM Release Notes | Microsoft Docs
 author: anangaur
 ms.author: anangaur
 manager: unnir
@@ -64,7 +64,6 @@ ms.reviewer:
 * Nuget add hangs on CentOS - [#2708](https://github.com/NuGet/Home/issues/2708)
 * Restore with packagesavemode -nupkg fails for json.net - [#2706](https://github.com/NuGet/Home/issues/2706)
 * Package Manager filter not available in vs output window for restore command - [#2704](https://github.com/NuGet/Home/issues/2704)
-* Can't install a package when there are some leftovers in the packages folder - [#492](https://github.com/NuGet/Home/issues/492)
 
 
 [List of all issues fixed in this release](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.6")

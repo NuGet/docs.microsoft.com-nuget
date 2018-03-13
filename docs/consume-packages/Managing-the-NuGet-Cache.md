@@ -50,4 +50,4 @@ The following errors can occur when using `nuget locals`:
 - **Clearing local resources failed: Unable to delete one or more files**
 - **The directory is not empty**
 
-These indicate that you either do not have permission to delete files in the cache, or that one or more files in the cache are in use by another process, which must be closed before the those files can be removed.
+These indicate that you either do not have permission to delete files in the cache, or that one or more files in the cache are in use by another process, which must be closed before the files can be removed.
