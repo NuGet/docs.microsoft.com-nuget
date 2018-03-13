@@ -539,7 +539,7 @@ These files are specified with a set of attributes that describe how they should
 | **include** | (Required) The location of the file or files to include, subject to exclusions specified by the `exclude` attribute. The path is relative to the `.nuspec` file unless an absolute path is specified. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
 | **exclude** | A semicolon-delimited list of files or file patterns to exclude from the `src` location. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
 | **buildAction** | The build action to assign to the content item for MSBuild, such as `Content`, `None`, `Embedded Resource`, `Compile`, etc. The default is `Compile`. |
-| **copyToOutput** | A Boolean indicating whether to copy content items to the build output folder. The default is false. |
+| **copyToOutput** | A Boolean indicating whether to copy content items to the build (or publish) output folder. The default is false. |
 | **flatten** | A Boolean indicating whether to copy content items to a single folder in the build output (true), or to preserve the folder structure in the package (false). This flag only works when copyToOutput flag is set to true. The default is false. |
 
 When installing a package, NuGet applies the child elements of `<contentFiles>` from top to bottom. If multiple entries match the same file then all entries are applied. The top-most entry overrides the lower entries if there is a conflict for the same attribute.
