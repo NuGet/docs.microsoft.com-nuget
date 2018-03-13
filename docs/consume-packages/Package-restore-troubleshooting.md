@@ -98,7 +98,7 @@ You can edit these settings directly, or by opening **Tools > Options > NuGet Pa
 
 ![Enable NuGet package restore in Tool/Options](../consume-packages/media/restore-01-autorestoreoptions.png)
 
-> [!Warning]
+> [!Important]
 > If you edit the `packageRestore` settings directly in `nuget.config`, restart Visual Studio so that the options dialog box shows the current values.
 
 ## Other potential conditions
