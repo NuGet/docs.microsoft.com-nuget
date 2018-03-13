@@ -72,27 +72,27 @@ during build.' You can also give consent by setting the environment variable
 
 This error indicates that package restore is disabled in your NuGet configuration, that is, the applicable `nuget.config` file (typically `%AppData%\NuGet\NuGet.Config`) contains the following:
 
-    ```xml
-    <!-- Package restore is disabled when these settings are false -->
-    <configuration>
-        <packageRestore>
-            <add key="enabled" value="False" />
-            <add key="automatic" value="False" />
-        </packageRestore>
-    </configuration>
-    ```
+```xml
+<!-- Package restore is disabled when these settings are false -->
+<configuration>
+    <packageRestore>
+        <add key="enabled" value="False" />
+        <add key="automatic" value="False" />
+    </packageRestore>
+</configuration>
+```
 
 To enable package restore and automatic restore on build, set both keys to true:
 
-    ```xml
-    <!-- Package restore is enabled -->
-    <configuration>
-        <packageRestore>
-            <add key="enabled" value="True" />
-            <add key="automatic" value="True" />
-        </packageRestore>
-    </configuration>
-    ```
+```xml
+<!-- Package restore is enabled -->
+<configuration>
+    <packageRestore>
+        <add key="enabled" value="True" />
+        <add key="automatic" value="True" />
+    </packageRestore>
+</configuration>
+```
 
 You can edit these settings directly, or by opening **Tools > Options > NuGet Package Manager** in Visual Studio and setting the options for **Allow NuGet to download missing packages** and **Automatically check for missing packages during build in Visual Studio** (shown below). To enable restore, make sure both options are selected, then try restoring packages again or running a build.
 
