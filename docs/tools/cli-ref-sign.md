@@ -37,13 +37,9 @@ where `<package(s)>` is one or more `.nupkg` files.
 | CertificateFingerprint | Specifies the SHA-1 fingerprint of the certificate used to search a local certificate store for the certificate. |
 | CertificatePassword | Specifies the certificate password, if needed. If a certificate is password protected but no password is provided, the command will prompt for a password at run time, unless the -NonInteractive option is passed. |
 | CertificatePath | Specifies the file path to the certificate to be used in signing the package. |
-| CertificateStoreLocation | Specifies the name of the X.509 certificate store use to search for the certificate. Defaults to "CurrentUser", the X.509 certificate store used by the current user.
-This option should be used when specifying the certificate via -CertificateSubjectName or -CertificateFingerprint options. |
-| CertificateStoreName | Specifies the name of the X.509 certificate store to use to search for the certificate. Defaults to "My", the X.509 certificate store for personal certificates.
-This option should be used when specifying the certificate via -CertificateSubjectName or -CertificateFingerprint options. |
-| CertificateSubjectName | Specifies the subject name of the certificate used to search a local certificate store for the certificate.
-The search is a case-insensitive string comparison using the supplied value, which will find all certificates with the subject name containing that string, regardless of other subject values.
-The certificate store can be specified by -CertificateStoreName and -CertificateStoreLocation options. |
+| CertificateStoreLocation | Specifies the name of the X.509 certificate store use to search for the certificate. Defaults to "CurrentUser", the X.509 certificate store used by the current user. This option should be used when specifying the certificate via -CertificateSubjectName or -CertificateFingerprint options. |
+| CertificateStoreName | Specifies the name of the X.509 certificate store to use to search for the certificate. Defaults to "My", the X.509 certificate store for personal certificates. This option should be used when specifying the certificate via -CertificateSubjectName or -CertificateFingerprint options. |
+| CertificateSubjectName | Specifies the subject name of the certificate used to search a local certificate store for the certificate.  The search is a case-insensitive string comparison using the supplied value, which will find all certificates with the subject name containing that string, regardless of other subject values.  The certificate store can be specified by -CertificateStoreName and -CertificateStoreLocation options. |
 | ConfigFile | The NuGet configuration file to apply. If not specified, *%AppData%\NuGet\NuGet.Config* is used. |
 | ForceEnglishOutput | Forces nuget.exe to run using an invariant, English-based culture. |
 | HashAlgorithm | Hash algorithm to be used to sign the package. Defaults to SHA256. |
