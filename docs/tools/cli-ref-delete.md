@@ -32,8 +32,8 @@ where `<packageID>` and `<packageVersion>` identify the exact package to delete 
 
 | Option | Description |
 | --- | --- |
-| ApiKey | The API key for the target repository. If not present, the one specified in *%AppData%\NuGet\NuGet.Config* is used. |
-| ConfigFile | The NuGet configuration file to apply. If not specified, *%AppData%\NuGet\NuGet.Config* is used. |
+| ApiKey | The API key for the target repository. If not present, the one specified in the config file is used. |
+| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |

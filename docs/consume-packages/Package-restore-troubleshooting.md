@@ -70,7 +70,7 @@ during build.' You can also give consent by setting the environment variable
 'EnableNuGetPackageRestore' to 'true'. Missing packages: {name}
 ```
 
-This error indicates that package restore is disabled in your NuGet configuration, that is, the applicable `nuget.config` file (typically `%AppData%\NuGet\NuGet.Config`) contains the following:
+This error indicates that package restore is disabled in your NuGet configuration, that is, the applicable `nuget.config` file (typically `%AppData%\NuGet\NuGet.Config` on Windows and `~/.nuget/NuGet/NuGet.Config` on Mac/Linux) contains the following:
 
 ```xml
 <!-- Package restore is disabled when these settings are false -->

@@ -23,8 +23,8 @@ NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Con
 | Scope | NuGet.Config file location | Description |
 | --- | --- | --- |
 | Project | Current folder (aka Project folder) or any folder up to the drive root.| In a project folder, settings apply only to that project. In parent folders that contain multiple projects subfolders, settings apply to all projects in those subfolders. |
-| User | Windows: %APPDATA%\NuGet\NuGet.Config<br/>Mac/Linux: ~/.nuget/NuGet.Config | Settings apply to all operations, but are overridden by any project-level settings. |
-| Computer | Windows: %ProgramFiles(x86)%\NuGet\Config<br/>Mac/Linux: $XDG_DATA_HOME (typically ~/.local/share) | Settings apply to all operations on the computer, but are overriden by any user- or project-level settings. |
+| User | Windows: `%APPDATA%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.nuget/NuGet/NuGet.Config` | Settings apply to all operations, but are overridden by any project-level settings. |
+| Computer | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME` (typically `~/.local/share`) | Settings apply to all operations on the computer, but are overriden by any user- or project-level settings. |
 
 Notes for earlier versions of NuGet:
 - NuGet 3.3 and earlier used a `.nuget` folder for solution-wide settings. This file is not used in NuGet 3.4+.
@@ -133,7 +133,7 @@ Let's say you have the following folder structure on two separate drives:
 
 You then have four `NuGet.Config` files in the following locations with the given content. (The computer-level file is not included in this example, but would behave similarly to the user-level file.)
 
-File A. User-level file, (%APPDATA%\NuGet\NuGet.Config on Windows, ~/.nuget/NuGet.Config on Mac/Linux):
+File A. User-level file, (`%APPDATA%\NuGet\NuGet.Config` on Windows, `~/.nuget/NuGet/NuGet.Config` on Mac/Linux):
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

@@ -23,7 +23,7 @@ Downloads and installs a package into a project, defaulting to the current folde
 > [!Tip]
 > To download a package directly outside the context of a project, visit the package's page on [nuget.org](https://www.nuget.org) and select the **Download** link.
 
-If no sources are specified, those listed in the global configuration file, `%APPDATA%\NuGet\NuGet.Config`, are used. See [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md) for additional details.
+If no sources are specified, those listed in the global configuration file, `%APPDATA%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), are used. See [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md) for additional details.
 
 If no specific packages are specified, `install` installs all packages listed in the project's `packages.config` file, making it similar to [`restore`](cli-ref-restore.md).
 
@@ -43,7 +43,7 @@ where `<packageID>` names the package to install (using the latest version), or 
 
 | Option | Description |
 | --- | --- |
-| ConfigFile | The NuGet configuration file to apply. If not specified, *%AppData%\NuGet\NuGet.Config* is used. |
+| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
 | DependencyVersion | *(4.4+)* Specifies a specific version, overriding the default dependency resolution behavior. |
 | DisableParallelProcessing | Disables installing multiple packages in parallel. |
 | ExcludeVersion | Installs the package to a folder named with only the package name and not the version number. |

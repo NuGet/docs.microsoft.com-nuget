@@ -37,7 +37,7 @@ where [command] identifies a specific command for which to display help.
 | Option | Description |
 | --- | --- |
 | All | Print detailed help for all available commands; ignored if a specific command is given. |
-| ConfigFile | The NuGet configuration file to apply. If not specified, *%AppData%\NuGet\NuGet.Config* is used. |
+| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the help command itself. |
 | Markdown | Print detailed help in markdown format when used with `-All`. Ignored otherwise. |

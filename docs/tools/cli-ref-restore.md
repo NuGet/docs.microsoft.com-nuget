@@ -34,7 +34,7 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 
 | Option | Description |
 | --- | --- |
-| ConfigFile | The NuGet configuration file to apply. If not specified, *%AppData%\NuGet\NuGet.Config* is used. |
+| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
 | DirectDownload | *(4.0+)* Downloads packages directly without populating caches with any binaries or metadata. |
 | DisableParallelProcessing | Disables restoring multiple packages in parallel. |
 | FallbackSource | *(3.2+)* A list of package sources to use as fallbacks in case the package isn't found in the primary or default source. |

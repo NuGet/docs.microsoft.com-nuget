@@ -18,7 +18,7 @@ ms.reviewer:
 
 **Applies to:** package consumption, publishing &bullet; **Supported versions:** all
 
-Displays a list of packages from a given source. If no sources are specified, all sources defined in the global configuration file, `%AppData%\NuGet\NuGet.Config`, are used. If `NuGet.Config` specifies no sources, then `list` uses the default feed (nuget.org).
+Displays a list of packages from a given source. If no sources are specified, all sources defined in the global configuration file, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config`, are used. If `NuGet.Config` specifies no sources, then `list` uses the default feed (nuget.org).
 
 ## Usage
 
@@ -33,7 +33,7 @@ where the optional search terms will filter the displayed list. Search terms are
 | Option | Description |
 | --- | --- |
 | AllVersions | List all versions of a package. By default, only the latest package version is displayed. |
-| ConfigFile | The NuGet configuration file to apply. If not specified, *%AppData%\NuGet\NuGet.Config* is used. |
+| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
 | IncludeDelisted | *(3.2+)* Display unlisted packages. |
