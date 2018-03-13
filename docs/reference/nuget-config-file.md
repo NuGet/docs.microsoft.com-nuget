@@ -155,7 +155,7 @@ Stores usernames and passwords for sources, typically specified with the `-usern
 
 **Example:**
 
-In the config file, the `<packageSourceCredentials>` element contains child nodes for each applicable source name (spaces in the name are replaced with `_x0020+`). That is, for sources named "Contoso" and "Test Source", the config file contains the following when using encrypted passwords:
+In the config file, the `<packageSourceCredentials>` element contains child nodes for each applicable source name (spaces in the name are replaced with `_x0020_`). That is, for sources named "Contoso" and "Test Source", the config file contains the following when using encrypted passwords:
 
 ```xml
 <packageSourceCredentials>
