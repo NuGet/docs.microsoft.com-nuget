@@ -96,7 +96,7 @@ For example, let’s say you’ve set the TPMinV for you controls package to Win
     \lib\uap10.0\*
     \ref\uap10.0\*
 
-To enforce the appropriate TPMinV check, create an [MSBuild targets file](/visualstudio/msbuild/msbuild-targets) and package it under the `build\uap10.0\<your_assembly_name>` folder, replacing `<your_assembly_name>` with the name of your specific assembly.
+To enforce the appropriate TPMinV check, create an [MSBuild targets file](/visualstudio/msbuild/msbuild-targets) and package it under the `build\uap10.0" folder as `<your_assembly_name>.targets`, replacing `<your_assembly_name>` with the name of your specific assembly.
 
 Here is an example of what the targets file should look like:
 
@@ -137,7 +137,7 @@ For an example, refer to [MyCustomControl.cs](https://github.com/NuGet/Samples/b
 
 ## Package content such as images
 
-To package content such as images that can be used by your control or the consuming UWP project, place those files within the `lib\uap10.0\` folder directly.
+To package content such as images that can be used by your control or the consuming UWP project, place those files within the `lib\uap10.0` folder.
 
 You may also author an [MSBuild targets file](/visualstudio/msbuild/msbuild-targets) to ensure the asset is copied to the consuming project’s output folder:
 
