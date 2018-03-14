@@ -50,7 +50,7 @@ This situation commonly occurs when you obtain the project's source code from so
 
 Use one of the following methods to restore the packages:
 
-- In Visual Studio, enable package restore by selecting the **Tools > NuGet Package Manager > Package Manager Settings** menu command, setting both options under **Package Restore**, and selecting **OK** (see the [consent](#consent) section below). Then build the solution again.
+- In Visual Studio, enable package restore by selecting the **Tools > NuGet Package Manager > Package Manager Settings** menu command, setting both options under **Package Restore**, and selecting **OK**. Then build the solution again.
 - For .NET Core projects, run `dotnet restore` or `dotnet build` (which automatically runs restore).
 - On the command line, run `nuget restore` (except for projects created with `dotnet`, in which case use `dotnet restore`).
 - On the command line with projects using the PackageReference format, run `msbuild /t:restore`.
