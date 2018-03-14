@@ -75,7 +75,7 @@ When `packagesPath` is omitted or left blank, the packages folder is the default
 
 ## Adding packages to the feed externally
 
-Once a NuGet.Server site is running, you can add or delete packages using nuget.exe provided that you set an API key value in `web.config`.
+Once a NuGet.Server site is running, you can add packages using [nuget push](../tools/cli-ref-push.md) provided that you set an API key value in `web.config`.
 
 After installing the NuGet.Server package, `web.config` contains an empty `appSetting/apiKey` value:
 
@@ -99,11 +99,13 @@ To enable this capability, set the `apiKey` to a value (ideally a strong passwor
 </appSettings>
 ```
 
-If your server is already secured or you do not otherwise require an API key (for example, when using a private server on a local team network), you can set `requireApiKey` to `false`. All users with access to the server can then push or delete packages.
+If your server is already secured or you do not otherwise require an API key (for example, when using a private server on a local team network), you can set `requireApiKey` to `false`. All users with access to the server can then push packages.
 
 ## Removing packages from the feed
 
-With NuGet.Server, the `nuget delete` command removes a package from the repository. If you want to change the behavior to delist the package instead (leaving it available for package restore), change the `enableDelisting` key in `web.config` to true.
+With NuGet.Server, the [nuget delete](../tools/cli-ref-delete.md) command removes a package from the repository provided that you include the API key with the comment.
+
+If you want to change the behavior to delist the package instead (leaving it available for package restore), change the `enableDelisting` key in `web.config` to true.
 
 ## NuGet.Server support
 
