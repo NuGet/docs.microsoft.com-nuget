@@ -38,7 +38,7 @@ This situation commonly occurs when you obtain the project's source code from so
 Use one of the following methods to restore the packages:
 
 - For .NET Core projects, run `dotnet restore` or `dotnet build` (which automatically runs restore).
-- In Visual Studio, right-click the solution and select **Restore NuGet packages**, or right-click the project and select **Build**. If package restore isn't enabled, however, you'll see the error described in the [consent](#consent) section below.
+- In Visual Studio, first enable package restore by selecting the **Tools > NuGet Package Manager > Package Manager Settings** menu command, setting both options under **Package Restore**, and selecting **OK** (see the [consent](#consent) section below). Then build the solution again.
 - On the command line, run `nuget restore` (except for projects created with `dotnet`, in which case use `dotnet restore`).
 - On the command line with projects using the PackageReference format, run `msbuild /t:restore`.
 
@@ -94,7 +94,7 @@ To enable package restore and automatic restore on build, set both keys to true:
 </configuration>
 ```
 
-You can edit these settings directly, or by opening **Tools > Options > NuGet Package Manager** in Visual Studio and setting the options for **Allow NuGet to download missing packages** and **Automatically check for missing packages during build in Visual Studio** (shown below). To enable restore, make sure both options are selected, then try restoring packages again or running a build.
+You can edit these settings directly, or by opening **Tools > NuGet Package Manager > Package Manager Settings** in Visual Studio and setting the options for **Allow NuGet to download missing packages** and **Automatically check for missing packages during build in Visual Studio** (shown below). Select **OK** to apply the settings, then try restoring packages again or running a build.
 
 ![Enable NuGet package restore in Tool/Options](../consume-packages/media/restore-01-autorestoreoptions.png)
 
