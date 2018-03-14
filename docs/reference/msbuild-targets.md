@@ -216,7 +216,7 @@ An example of a csproj file to pack a nuspec file is:
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <NoBuild>true</>
+    <NoBuild>true</NoBuild>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <NuspecFile>PATH_TO_NUSPEC_FILE</NuspecFile>
     <NuspecProperties>add nuspec properties here</NuspecProperties>
