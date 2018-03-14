@@ -20,6 +20,19 @@ This article focuses on common errors when restoring packages and steps to resol
 
 If the instructions here do not work for you, [please file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so that we can examine your scenario more carefully. Do not use the "Is this page helpful?" control shown on this page because it doesn't give us the ability to contact you for more information.
 
+## Quick solution for Visual Studio users
+
+If you're using Visual Studio, first enable package restore as follows. Otherwise continue to the sections that follow.
+
+1. Select the **Tools > NuGet Package Manager > Package Manager Settings** menu command.
+1. Set both options under **Package Restore**
+1. Select **OK**
+1. Build your project again.
+
+![Enable NuGet package restore in Tool/Options](../consume-packages/media/restore-01-autorestoreoptions.png)
+
+These settings can also be changed in your `NuGet.config` file; see the [consent](#consent) section.
+
 <a name="missing"></a>
 
 ## This project references NuGet package(s) that are missing on this computer
@@ -37,8 +50,8 @@ This situation commonly occurs when you obtain the project's source code from so
 
 Use one of the following methods to restore the packages:
 
+- In Visual Studio, enable package restore by selecting the **Tools > NuGet Package Manager > Package Manager Settings** menu command, setting both options under **Package Restore**, and selecting **OK** (see the [consent](#consent) section below). Then build the solution again.
 - For .NET Core projects, run `dotnet restore` or `dotnet build` (which automatically runs restore).
-- In Visual Studio, first enable package restore by selecting the **Tools > NuGet Package Manager > Package Manager Settings** menu command, setting both options under **Package Restore**, and selecting **OK** (see the [consent](#consent) section below). Then build the solution again.
 - On the command line, run `nuget restore` (except for projects created with `dotnet`, in which case use `dotnet restore`).
 - On the command line with projects using the PackageReference format, run `msbuild /t:restore`.
 
@@ -70,19 +83,11 @@ during build.' You can also give consent by setting the environment variable
 'EnableNuGetPackageRestore' to 'true'. Missing packages: {name}
 ```
 
-This error indicates that package restore is disabled in your NuGet configuration, that is, the applicable `nuget.config` file (typically `%AppData%\NuGet\NuGet.Config` on Windows and `~/.nuget/NuGet/NuGet.Config` on Mac/Linux) contains the following:
+This error indicates that package restore is disabled in your NuGet configuration.
 
-```xml
-<!-- Package restore is disabled when these settings are false -->
-<configuration>
-    <packageRestore>
-        <add key="enabled" value="False" />
-        <add key="automatic" value="False" />
-    </packageRestore>
-</configuration>
-```
+You can change the applicable settings in Visual Studio as described earlier under [Quick solution for Visual Studio users](#quick-solution-for-visual-studio-users).
 
-To enable package restore and automatic restore on build, set both keys to true:
+You can also edit these settings directly in the applicable `nuget.config` file (typically `%AppData%\NuGet\NuGet.Config` on Windows and `~/.nuget/NuGet/NuGet.Config` on Mac/Linux). Make sure the `enabled` and `automatic` keys under `packageRestore` are set to True:
 
 ```xml
 <!-- Package restore is enabled -->
@@ -94,12 +99,7 @@ To enable package restore and automatic restore on build, set both keys to true:
 </configuration>
 ```
 
-You can edit these settings directly, or by opening **Tools > NuGet Package Manager > Package Manager Settings** in Visual Studio and setting the options for **Allow NuGet to download missing packages** and **Automatically check for missing packages during build in Visual Studio** (shown below). Select **OK** to apply the settings, then try restoring packages again or running a build.
-
-![Enable NuGet package restore in Tool/Options](../consume-packages/media/restore-01-autorestoreoptions.png)
-
-> [!Important]
-> If you edit the `packageRestore` settings directly in `nuget.config`, restart Visual Studio so that the options dialog box shows the current values.
+Note that if you edit the `packageRestore` settings directly in `nuget.config`, restart Visual Studio so that the options dialog box shows the current values.
 
 ## Other potential conditions
 
