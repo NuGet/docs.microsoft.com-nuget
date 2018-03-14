@@ -58,7 +58,7 @@ This error occurs for the same reasons as explained in the [previous section](#m
 
 <a name="consent"></a>
 
-## One or more NuGet packages need to be restored by couldn't be because consent has not been granted
+## One or more NuGet packages need to be restored but couldn't be because consent has not been granted
 
 Complete error message:
 
