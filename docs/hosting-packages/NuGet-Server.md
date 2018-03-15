@@ -42,7 +42,7 @@ If you have further questions about NuGet.Server, create an issue on [https://gi
 
 1. Installing NuGet.Server converts the empty Web application into a package source. It installs a variety of other packages, creates a `Packages` folder in the application, and modifies `web.config` to include additional settings (see the comments in that file for details).
 
-    > [!Important]]
+    > [!Important]
     > Carefully inspect `web.config` after the NuGet.Server package has completed its modifications to that file. NuGet.Server may not overwrite existing elements but instead create duplicate elements. Those duplicates will cause an "Internal Server Error" when you later try to run the project. For example, if your `web.config` contains `<compilation debug="true" targetFramework="4.5.2" />` before installing NuGet.Server, the package doesn't overwrite it but inserts a second `<compilation debug="true" targetFramework="4.6" />`. In that case, delete the element with the older framework version.
 
 1. To make packages available in the feed when you publish the application to a server, add each `.nupkg` files to the `Packages` folder in Visual Studio, then set each one's **Build Action** to **Content** and **Copy to Output Directory** to **Copy always**:
