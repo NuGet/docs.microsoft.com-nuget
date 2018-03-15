@@ -3,8 +3,9 @@
 # Quickstarts
 ## [Install and use a package (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
 ## [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
-## [Create and publish a package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
-## [Create and publish a package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
+## [Create and publish a NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
+## [Create and publish a NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
+## [Create and publish a NET Framework package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)
 # Consume packages
 ## [Overview and workflow](consume-packages/overview-and-workflow.md)
 ## [Finding and choosing packages](consume-packages/finding-and-choosing-packages.md)

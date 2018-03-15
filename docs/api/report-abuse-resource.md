@@ -12,7 +12,7 @@ ms.topic: reference
 ms.prod: nuget
 ms.technology: null
 description: The report abuse URL template allows clients to display a report abuse link in their UI.
-keywords: NuGet API report abuse, NuGet API file complaint, NuGet.org report URL template
+keywords: NuGet API report abuse, NuGet API file complaint, nuget.org report URL template
 ms.reviewer:
 - karann
 - unniravindranathan

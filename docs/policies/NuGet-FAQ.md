@@ -152,7 +152,7 @@ This is not an issue when using PackageReference, as each project file contains 
 **I don't see nuget.org in my list of repositories, how do I get it back?**
 
 - Add `https://api.nuget.org/v3/index.json` to your list of sources, or
-- Delete the `%appdata%\.nuget\NuGet.Config` and let NuGet re-create it.
+- Delete `%appdata%\.nuget\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) and let NuGet re-create it.
 
 **What are the default license terms if a package doesn't provide specific license information?**
 

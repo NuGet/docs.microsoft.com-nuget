@@ -33,7 +33,7 @@ where `<cache>` is one of `all`, `http-cache`, `packages-cache`, `global-package
 | Option | Description |
 | --- | --- |
 | Clear | Clears the specified cache. |
-| ConfigFile | The NuGet configuration file to apply. If not specified, *%AppData%\NuGet\NuGet.Config* is used. |
+| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
 | List | Lists the location of the specified cache, or the locations of all caches when used with *all*. |
