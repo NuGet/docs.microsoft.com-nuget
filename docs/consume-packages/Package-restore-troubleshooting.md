@@ -25,8 +25,8 @@ If the instructions here do not work for you, [please file an issue on GitHub](h
 If you're using Visual Studio, first enable package restore as follows. Otherwise continue to the sections that follow.
 
 1. Select the **Tools > NuGet Package Manager > Package Manager Settings** menu command.
-1. Set both options under **Package Restore**
-1. Select **OK**
+1. Set both options under **Package Restore**.
+1. Select **OK**.
 1. Build your project again.
 
 ![Enable NuGet package restore in Tool/Options](../consume-packages/media/restore-01-autorestoreoptions.png)
