@@ -34,7 +34,7 @@ where `<source>` is the folder containing packages and `<destination>` is the lo
 
 | Option | Description |
 | --- | --- |
-| ConfigFile | The NuGet configuration file to apply. If not specified, *%AppData%\NuGet\NuGet.Config* is used. |
+| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Expand | Adds all files in each package that's added to the package source; same as `-Expand` with the `add` command. |
 | Help | Displays help information for the command. |

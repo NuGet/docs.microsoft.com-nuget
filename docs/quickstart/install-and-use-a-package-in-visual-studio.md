@@ -36,7 +36,7 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
 
 ## Add the Newtonsoft.Json NuGet package
 
-To install the package, you can use either the Package Manager UI or the Package Manager Console.
+To install the package, you can use either the Package Manager UI or the Package Manager Console. When you install a package, NuGet records the dependency in either your project file or a `packages.config` file. For more information, see [Package consumption overview and workflow](../consume-packages/Overview-and-Workflow.md).
 
 ### Package Manager UI
 

@@ -44,7 +44,7 @@ In NuGet 3.4 and 3.4.1, when using the NuGet add-in, no sources are reported as 
 
 ![NuGet config with no sources](./media/knownIssue-34-NoSources.PNG)
 
-The `NuGet.Config` file in your `%AppData%\NuGet\` folder has accidentally been emptied. To fix this: Close Visual Studio 2015, delete the `NuGet.Config` file in the `%AppData%\NuGet\` folder and restart Visual Studio.  A new `NuGet.Config` file will be generated and you are able to proceed.
+The `NuGet.Config` file in your `%AppData%\NuGet\` (Windows) or `~/.nuget/` (Mac/Linux) folder has accidentally been emptied. To fix this: close Visual Studio (on Windows, if applicable), delete the `NuGet.Config` file, and try the operation again. NuGet generated a new `NuGet.Config` and you should be able to proceed.
 
 ## Error installing packages with NuGet 2.7
 

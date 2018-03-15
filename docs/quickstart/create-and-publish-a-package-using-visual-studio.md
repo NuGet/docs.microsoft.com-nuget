@@ -1,22 +1,22 @@
 ---
-title: Introductory Guide to Creating and Publishing a NuGet Package using Visual Studio | Microsoft Docs
+title: Introductory Guide to Creating and Publishing a .NET Standard NuGet Package using Visual Studio | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 02/02/2018
+ms.date: 03/18/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: null
-description: A walkthrough tutorial on creating and publishing a NuGet package using Visual Studio 2017.
+description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio 2017.
 keywords: NuGet package creation, NuGet package publishing, NuGet tutorial, Visual Studio create NuGet package, msbuild pack
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 ---
 
-# Create and publish a package using Visual Studio
+# Create and publish a package using Visual Studio (.NET Standard)
 
-It's a simple process to create a NuGet package from a .NET Class Library in Visual Studio, and then publish it to nuget.org using a CLI tool.
+It's a simple process to create a NuGet package from a .NET Standard Class Library in Visual Studio, and then publish it to nuget.org using a CLI tool.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ It's a simple process to create a NuGet package from a .NET Class Library in Vis
 
 ## Create a class library project
 
-You can use an existing .NET Class Library project for the code you want to package, or create a simple one as follows:
+You can use an existing .NET Standard Class Library project for the code you want to package, or create a simple one as follows:
 
 1. In Visual Studio, choose **File > New > Project**, expand the **Visual C# > .NET Standard** node, select the "Class Library (.NET Standard)" template, name the project AppLogger, and click **OK**.
 
@@ -56,7 +56,7 @@ namespace AppLogger
 
 ## Configure package properties
 
-1. Select the **Project > Properties** menu command, then select the **Package** tab:
+1. Select the **Project > Properties** menu command, then select the **Package** tab. (The **Package** tab appears only for .NET Standard class library projects; if you are targeting .NET Framework, see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) instead.)
 
     ![NuGet package properties in a Visual Studio project](media/qs_create-vs-01-package-properties.png)
 
@@ -91,7 +91,7 @@ namespace AppLogger
 
 ### Alternate option: pack with MSBuild
 
-As an alternate to using the **Pack** menu command, NuGet 4.x+ and MSBuild 15.1+ supports a `pack` target when the project contains the necessary package data:
+As an alternate to using the **Pack** menu command, NuGet 4.x+ and MSBuild 15.1+ supports a `pack` target when the project contains the necessary package data. Open a command prompt, navigate to your project folder and run the following command. (You typically want to start the "Developer Command Prompt for Visual Studio" from the Start menu, as it will be configured with all the necessary paths for MSBuild.)
 
 ```cli
 msbuild /t:pack /p:Configuration=Release
@@ -115,7 +115,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using either the `nug
 
 This step is an alternative to using `dotnet.exe`.
 
-1. Change to the folder containing the `.nupkg` file..
+1. Change to the folder containing the `.nupkg` file.
 
 1. Run the following command, specifying your package name and replacing the key value with your API key:
 

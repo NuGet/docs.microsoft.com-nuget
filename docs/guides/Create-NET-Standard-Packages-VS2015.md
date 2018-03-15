@@ -66,29 +66,29 @@ This guide walks you through creating a NuGet package targeting .NET Standard Li
 
 1. Open a command prompt, navigate to the folder containing `AppLogger.csproj` folder (one level below where the `.sln` file is), and run the NuGet `spec` command to create the initial `AppLogger.nuspec` file:
 
-```cli
-nuget spec
-```
+    ```cli
+    nuget spec
+    ```
 
 1. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number). Also note that you must also update the author and description tags or you get an error during the packing step.
 
-```xml
-<?xml version="1.0"?>
-<package >
-    <metadata>
-    <id>AppLogger.YOUR_NAME</id>
-    <version>1.0.0</version>
-    <title>AppLogger</title>
-    <authors>YOUR_NAME</authors>
-    <owners>YOUR_NAME</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Awesome application logging utility</description>
-    <releaseNotes>First release</releaseNotes>
-    <copyright>Copyright 2018 (c) Contoso Corporation. All rights reserved.</copyright>
-    <tags>logger logging logs</tags>
-    </metadata>
-</package>
-```
+    ```xml
+    <?xml version="1.0"?>
+    <package >
+        <metadata>
+        <id>AppLogger.YOUR_NAME</id>
+        <version>1.0.0</version>
+        <title>AppLogger</title>
+        <authors>YOUR_NAME</authors>
+        <owners>YOUR_NAME</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Awesome application logging utility</description>
+        <releaseNotes>First release</releaseNotes>
+        <copyright>Copyright 2018 (c) Contoso Corporation. All rights reserved.</copyright>
+        <tags>logger logging logs</tags>
+        </metadata>
+    </package>
+    ```
 
 1. Add reference assemblies to the `.nuspec` file, namely the library's DLL and the IntelliSense XML file:
 

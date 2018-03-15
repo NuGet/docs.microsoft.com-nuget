@@ -3,7 +3,7 @@ title: NuGet pack and restore as MSBuild targets | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 04/03/2017
+ms.date: 03/13/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -38,7 +38,9 @@ Similarly, you can write an MSBuild task, write your own target and consume NuGe
 
 ## pack target
 
-When using the pack target, that is, `msbuild /t:pack`, MSBuild draws its inputs from the project file. The table below describes the MSBuild properties that can be added to a project file within the first `<PropertyGroup>` node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../reference/nuspec.md).
+For .NET Standard projects using the PackageReference format, using `msbuild /t:pack` draws inputs from the project file to use in creating a NuGet package.
+
+The table below describes the MSBuild properties that can be added to a project file within the first `<PropertyGroup>` node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../reference/nuspec.md).
 
 Note that the `Owners` and `Summary` properties from `.nuspec` are not supported with MSBuild.
 
@@ -236,8 +238,7 @@ An example of a csproj file to pack a nuspec file is:
 1. Download packages
 1. Write assets file, targets, and props
 
-> [!Note]
-> The `restore` MSBuild target only works for projects using `PackageReference` items and does not restore packages referenced using a `packages.config` file.
+The `restore` target works **only** for projects using the PackageReference format. It does **not** work for projects using the `packages.config` format; use [nuget restore](../tools/cli-ref-restore.md) instead.
 
 ### Restore properties
 
