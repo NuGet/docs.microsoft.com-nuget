@@ -17,7 +17,6 @@
 ## [Managing the NuGet cache](consume-packages/managing-the-nuget-cache.md)
 ## [Configuring NuGet behavior](consume-packages/configuring-nuget-behavior.md)
 ## [Dependency resolution](consume-packages/dependency-resolution.md)
-## [Package references in project files](consume-packages/package-references-in-project-files.md)
 # Create packages
 ## [Overview and workflow](create-packages/overview-and-workflow.md)
 ## [Creating a package](create-packages/creating-a-package.md)
@@ -74,6 +73,7 @@
 ## [dotnet commands](tools/dotnet-Commands.md)
 # Reference
 ## [.nuspec](reference/nuspec.md)
+## [Package references in project files](consume-packages/package-references-in-project-files.md)
 ## [packages.config](reference/packages-config.md)
 ## [Package versioning](reference/package-versioning.md)
 ## [Nuget.Config file](reference/nuget-config-file.md)
