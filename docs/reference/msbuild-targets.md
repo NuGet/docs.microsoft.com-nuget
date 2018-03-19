@@ -261,7 +261,7 @@ Restore creates the following files in the build `obj` folder:
 
 | File | Description |
 |--------|--------|
-| `project.assets.json` | Previously `project.lock.json` |
+| `project.assets.json` | Contains the dependency graph of all package references. |
 | `{projectName}.projectFileExtension.nuget.g.props` | References to MSBuild props contained in packages |
 | `{projectName}.projectFileExtension.nuget.g.targets` | References to MSBuild targets contained in packages |
 
