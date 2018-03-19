@@ -3,7 +3,7 @@ title: How to Publish a NuGet Package | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/05/2017
+ms.date: 03/19/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -19,32 +19,46 @@ ms.reviewer:
 
 Once you have created a package and have your `.nukpg` file in hand, it's a simple process to make it available to other developers, either publicly or privately:
 
-- Public packages are made available to all developers globally through [nuget.org](https://www.nuget.org/packages/manage/upload) as described in this topic.
+- Public packages are made available to all developers globally through [nuget.org](https://www.nuget.org/packages/manage/upload) as described in this article (requires NuGet 4.1.0+).
 - Private packages are available to only a team or organization, by hosting them either a file share, a private NuGet server, [Visual Studio Team Services Package Management](https://www.visualstudio.com/docs/package/nuget/publish), or a third-party repository such as myget, ProGet, Nexus Repository, and Artifactory. For additional details, see [Hosting Packages Overview](../hosting-packages/overview.md).
 
-This topic covers publishing to nuget.org; for publishing to Visual Studio Team Services, see [Package Management](https://www.visualstudio.com/docs/package/nuget/publish).
+This article covers publishing to nuget.org; for publishing to Visual Studio Team Services, see [Package Management](https://www.visualstudio.com/docs/package/nuget/publish).
 
 ## Publish to nuget.org
 
-For nuget.org, you must first [register for a free account](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) or sign in if already registered:
+For nuget.org, you must sign in with a Microsoft account, with which you'll be asked to register the account with nuget.org. You can also sign in with a nuget.org account created using older versions of the portal.
 
-![NuGet registration and sign in location](media/publish_NuGetSignIn.png)
+![NuGet sign in location](media/publish_NuGetSignIn.png)
 
 Next, you can either upload the package through the nuget.org web portal, push to nuget.org from the command line (requires `nuget.exe` 4.1.0+) , or publish as part of a CI/CD process through Visual Studio Team Services, as described in the following sections.
 
 ### Web portal: use the Upload Package tab on nuget.org
 
-![Upload a package with the NuGet Package Manager](media/publish_UploadYourPackage.PNG)
+1. Select **Upload** on the top menu of nuget.org and browse to the package location.
+
+    ![Upload a package on nuget.org](media/publish_UploadYourPackage.PNG)
+
+1. nuget.org tells you if the package name is available. If it isn't, change the package identifier in your project, rebuild, and try the upload again.
+
+1. If the package name is available, nuget.org opens a **Verify** section in which you can review the metadata from the package manifest. To change any of the metadata, edit your project (project file or `.nuspec` file), rebuild, recreate the package, and upload again.
+
+1. Under **Import Documentation** you can paste Markdown, point to your docs with a URL, or upload a documentation file.
+
+1. When all the information is ready, select the **Submit** button
 
 ### Command line
 
-> [!Important]
-> To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](../api/nuget-protocols.md).
+To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](../api/nuget-protocols.md). You also need an API key, which is created on nuget.org.
 
-1. Click on your user name to navigate to your account settings.
-1. Under **API Key**, click **copy to clipboard** to retrieve the access key you need in the CLI:
+#### Create API keys
 
-    ![Copying an API Key from account settings](media/publish_APIKey.png)
+[!INCLUDE[publish-api-key](includes/publish-api-key.md)]
+
+#### Publish with dotnet nuget push
+
+[!INCLUDE[publish-dotnet](includes/publish-dotnet.md)]
+
+#### Publish with nuget push
 
 1. At a command prompt, run the following command:
 
@@ -52,25 +66,27 @@ Next, you can either upload the package through the nuget.org web portal, push t
     nuget setApiKey Your-API-Key
     ```
 
-    This stores your API key on the machine so that you need not do this step again on the same machine.
+    This stores your API key on the machine so that you need repeat this step again on the same computer.
 
-1. Push your package to NuGet Gallery using the command:
+1. Push your package to NuGet Gallery using the following command:
 
     ```cli
     nuget push YourPackage.nupkg -Source https://api.nuget.org/v3/index.json
     ```
 
-1. Before being made public, all packages uploaded to nuget.org are scanned for viruses and rejected if any viruses are found. All packages listed on nuget.org are also scanned periodically.
-
-1. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you see the following message on your package page:
-
-    ![Message indicating a package is not yet indexed](media/publish_NotYetIndexed.png)
-
 ### Package validation and indexing
 
-Packages pushed to nuget.org undergo several validations. When the package has passed all validation checks, it might take a while for it to be indexed and appear in search results. Once indexing is complete, you receive an email confirming that the package was successfully published. If the package fails a validation check, the package details page will update to display the associated error and you also receive an email notifying you about it.
+Packages pushed to nuget.org undergo several validations, such as virus checks. (All packages on nuget.org are periodically scanned.)
+
+. When the package has passed all validation checks, it might take a while for it to be indexed and appear in search results. Once indexing is complete, you receive an email confirming that the package was successfully published. If the package fails a validation check, the package details page will update to display the associated error and you also receive an email notifying you about it.
 
 Package validation and indexing usually takes under 15 minutes. If the package publishing is taking longer than expected, visit [status.nuget.org](https://status.nuget.org/) to check if nuget.org is experiencing any interruptions. If all systems are operational and the package hasn't been successfully published within an hour, please login to nuget.org and contact us using the Contact Support link on the package page.
+
+To see the status of a package, select **Manage packages** under your account name on nuget.org. You receive a confirmation email when validation is complete.
+
+Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you see the following message on your package page:
+
+    ![Message indicating a package is not yet published](media/publish_NotYetIndexed.png)
 
 ### Visual Studio Team Services (CI/CD)
 
@@ -85,14 +101,14 @@ All package owners have full permissions for the package, including adding and r
 To change ownership of a package, do the following:
 
 1. Sign in to nuget.org with the account that is the current owner of the package.
-1. Click on your username, then on **Manage my packages**, then on the package you want to manage.
-1. Click the **Manage owners** link on the left side.
+1. Select your account name, select **Manage packages**, and expand **Published Packages**.
+1. Select on the package you want to manage, then on the right side select **Manage owners**.
 
 From here you have several options:
 
-1. To add an owner, enter their NuGet account name and click **Add**. This sends an email to that new co-owner with a confirmation link. Once confirmed, that person has full permissions to add and remove owners. (Until confirmed, the **Manage owners** page indicates "pending approval" for that person).
-1. To remove an owner, select their name on the **Manage owners** and click **Remove**.
-1. To transfer ownership (as when ownership changes or a package was published under the wrong account), simply add the new owner, and once they've confirmed ownership they can remove you from the list.
+1. Remove any owner listed under **Current Owners**.
+1. Add an owner under **Add Owner** by entering their user name, a message, and selecting **Add**. This action sends an email to that new co-owner with a confirmation link. Once confirmed, that person has full permissions to add and remove owners. (Until confirmed, the **Current Owners** section indicates pending approval for that person.)
+1. To transfer ownership (as when ownership changes or a package was published under the wrong account), add the new owner, and once they've confirmed ownership they can remove you from the list.
 
 To assign ownership to a company or group, create a nuget.org account using an email alias that is forwarded to the appropriate team members. For example, various Microsoft ASP.NET packages are co-owned by the [microsoft](http://nuget.org/profiles/microsoft) and [aspnet](http://nuget.org/profiles/aspnet) accounts, which simply such aliases.
 

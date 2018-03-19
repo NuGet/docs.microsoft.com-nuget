@@ -32,8 +32,8 @@
 ## Guides
 ### [Create UWP packages](guides/create-uwp-packages.md)
 ### [Creating UWP controls as NuGet packages](guides/create-uwp-controls.md)
-### [Create NET Standard packages (Visual Studio 2015)](guides/create-net-standard-packages-vs2015.md)
-### [Create packages for Xamarin](guides/create-packages-for-xamarin.md)
+### [Create NET Standard/NET Framework packages with Visual Studio 2015](guides/create-net-standard-packages-vs2015.md)
+### [Create packages for Xamarin with Visual Studio 2015](guides/create-packages-for-xamarin.md)
 # Host packages
 ## [Overview](hosting-packages/overview.md)
 ## [Local feeds](hosting-packages/local-feeds.md)
