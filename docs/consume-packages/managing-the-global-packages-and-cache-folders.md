@@ -97,14 +97,18 @@ In Visual Studio, use the **Tools > NuGet Package Manager > Package Manager Sett
 
 ![NuGet option command for clearing caches](media/options-clear-caches.png)
 
-## Errors
+## Troubleshooting errors
 
 The following errors can occur when using `nuget locals` or `dotnet nuget locals`:
 
-- "Clearing local resources failed: Unable to delete one or more files"
-- "The directory is not empty"
+- *Error: The process cannot access the file <package> because it is being used by another process* or *Clearing local resources failed: Unable to delete one or more files*:
 
-These errors may indicate the following conditions:
+    One or more files in the folder are in use by another process; for example, a Visual Studio project is open that refers to packages in the *global-packages* folder. Close those processes and try again.
 
-- You don't have permission to delete files in the cache. Change the folder permissions, if possible, and try again. Otherwise, contact your system administrator.
-- One or more files in the cache are in use by another process. Close those processes and try again.
+- *Error: Access to the path <path> is denied* or *The directory is not empty*:
+
+    You don't have permission to delete files in the cache. Change the folder permissions, if possible, and try again. Otherwise, contact your system administrator.
+
+- *Error: The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.*
+
+    Shorten the folder names and try again.
