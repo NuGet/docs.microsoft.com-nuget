@@ -3,7 +3,7 @@ title: Introductory Guide to Using NuGet Packages from within Visual Studio | Mi
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 01/23/2018
+ms.date: 03/16/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: null
@@ -16,7 +16,7 @@ ms.reviewer:
 
 # Install and use a package in Visual Studio
 
-NuGet packages contain reusable code that other developers make available to you for use in your projects. See [What is NuGet?](../What-is-NuGet.md) for background. Packages are installed into a Visual Studio project using the Package Manager UI or the Package Manager Console, as described in this article for the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package and a Universal Windows Platform (UWP) project.
+NuGet packages contain reusable code that other developers make available to you for use in your projects. See [What is NuGet?](../What-is-NuGet.md) for background. Packages are installed into a Visual Studio project using the Package Manager UI or the Package Manager Console. This article demonstrates the process using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package and a Universal Windows Platform (UWP) project. The same process applies to any other .NET or .NET Core project.
 
 Once installed, refer to the package in code with `using <namespace>` where \<namespace\> is specific to the package you're using. Once the reference is made, you can call the package through its API.
 
@@ -32,7 +32,9 @@ You can install the 2017 Community edition for free from [visualstudio.com](http
 
 ## Create a project
 
-NuGet packages can be installed into a .NET project of some kind. For this walkthrough, you use a simple Universal Windows (UWP) app. Create a project in Visual Studio using **File > New Project...** and selecting the **Windows Universal > Blank App (Universal Windows)**. Accept the default values for Target Version and Minimum Version when prompted.
+NuGet packages can be installed into any .NET project, provided that the package supports the same target framework as the project.
+
+For this walkthrough, use a simple Universal Windows (UWP) app. Create a project in Visual Studio using **File > New Project...** and selecting the **Windows Universal > Blank App (Universal Windows)**. Accept the default values for Target Version and Minimum Version when prompted.
 
 ## Add the Newtonsoft.Json NuGet package
 
@@ -52,7 +54,7 @@ To install the package, you can use either the Package Manager UI or the Package
 
 1. (Visual Studio 2017) If prompted to select a package management format, select **PackageReference in project file**:
 
-    ![Selecting a package reference format](media/QS_Use-03b-SelectFormat.png)
+    ![Selecting a package management format](media/QS_Use-03b-SelectFormat.png)
 
 1. If prompted to review changes, select **OK**.
 

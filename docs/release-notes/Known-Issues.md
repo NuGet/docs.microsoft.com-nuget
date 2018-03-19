@@ -227,7 +227,7 @@ Windows Phone Tools does not have support for the Visual Studio Extension Manage
 
 ## Changing the capitalization of NuGet package IDs breaks package restore
 
-As discussed at length on [this GitHub issue](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932), changing the capitalization of NuGet packages can be done by NuGet support, but causes complications during package restore for users who have existing, differently-cased, packages in their local package cache. We recommend only requesting a case change when you have a way to communicate with existing users of your package about the break that may occur to their build-time package restore.
+As discussed at length on [this GitHub issue](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932), changing the capitalization of NuGet packages can be done by NuGet support, but causes complications during package restore for users who have existing, differently-cased, packages in their *global-packages* folder. We recommend only requesting a case change when you have a way to communicate with existing users of your package about the break that may occur to their build-time package restore.
 
 ## Reporting issues
 

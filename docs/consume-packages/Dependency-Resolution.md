@@ -20,7 +20,7 @@ Any time a package is installed or reinstalled, which includes being installed a
 
 Those immediate dependencies might then also have dependencies on their own, which can continue to an arbitrary depth. This produces what's called a *dependency graph* that describes the relationships between packages at all levels.
 
-When multiple packages have the same dependency, then the same package ID can appear in the graph multiple times, potentially with different version constraints. However, only one version of a given package can be used in a project, so NuGet must choose which version is used. The exact process depends on the package reference format being used.
+When multiple packages have the same dependency, then the same package ID can appear in the graph multiple times, potentially with different version constraints. However, only one version of a given package can be used in a project, so NuGet must choose which version is used. The exact process depends on the package management format being used.
 
 ## Dependency resolution with PackageReference
 
@@ -105,7 +105,7 @@ With `packages.config`, NuGet attempts to resolve dependency conflicts during th
 
 By default, NuGet 2.8 looks for the lowest patch version (see [NuGet 2.8 release notes](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies)). You can control this setting through the `DependencyVersion` attribute in `Nuget.Config` and the `-DependencyVersion` switch on the command line.  
 
-The `packages.config` process for resolving dependencies gets complicated for larger dependency graphs. Each new package installation requires a traversal of the whole graph and raises the chance for version conflicts. When a conflict occurs, installation is stopped, leaving the project in an indeterminate state, especially with potential modifications to the project file itself. This is not an issue when using other package reference formats.
+The `packages.config` process for resolving dependencies gets complicated for larger dependency graphs. Each new package installation requires a traversal of the whole graph and raises the chance for version conflicts. When a conflict occurs, installation is stopped, leaving the project in an indeterminate state, especially with potential modifications to the project file itself. This is not an issue when using other package management formats.
 
 ## Managing dependency assets
 
@@ -117,7 +117,7 @@ When the top-level project is itself a package, you also have control over this 
 
 There are scenarios in which assemblies with the same name might be referenced more than once in a project, producing design-time and build-time errors. Consider a project that contains a custom version of `C.dll`, and references Package C that also contains `C.dll`. At the same time, the project also depends on Package B which also depends on Package C and `C.dll`. As a result, NuGet can't determine which `C.dll` to use, but you can't just remove the project's dependency on Package C because Package B also depends on it.
 
-To resolve this, you must directly reference the `C.dll` you want (or use another package that references the right one), and then add a dependency on Package C that excludes all its assets. This is done as follows depending on the package reference format in use:
+To resolve this, you must directly reference the `C.dll` you want (or use another package that references the right one), and then add a dependency on Package C that excludes all its assets. This is done as follows depending on the package management format in use:
 
 - [PackageReference](../consume-packages/package-references-in-project-files.md): add `Exclude="All"` in the dependency:
 

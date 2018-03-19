@@ -51,7 +51,7 @@ where `<packageID>` names the package to install (using the latest version), or 
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Framework | *(4.4+)* Target framework used for selecting dependencies. Defaults to 'Any' if not specified. |
 | Help | Displays help information for the command. |
-| NoCache | Prevents NuGet from using packages from local machine caches. |
+| NoCache | Prevents NuGet from using cached packages. See [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
 | OutputDirectory | Specifies the folder in which packages are installed. If no folder is specified, the current folder is used. |
 | PackageSaveMode | Specifies the types of files to save after package installation: one of `nuspec`, `nupkg`, or `nuspec;nupkg`. |

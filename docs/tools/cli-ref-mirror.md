@@ -41,7 +41,7 @@ If your target repository is on `https://machine/repo` that's running [NuGet.Ser
 | --- | --- |
 | ApiKey | The API key for the target repository. If not present,  the one specified in the config file is used (`%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux)). |
 | Help | Displays help information for the command. |
-| NoCache | Prevents NuGet from using packages from local machine caches. |
+| NoCache | Prevents NuGet from using cached packages. See [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | Noop | Logs what would be done but does not perform the actions; assumes success for push operations. |
 | PreRelease | Includes prerelease packages in the mirroring operation. |
 | Source | A list of package sources to mirror. If no sources are specified, the ones defined in the config file (see ApiKey above) are used, defaulting to nuget.org if none are specified. |

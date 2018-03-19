@@ -14,7 +14,7 @@
 ### [Troubleshooting](consume-packages/package-restore-troubleshooting.md)
 ## [Reinstalling and updating packages](consume-packages/reinstalling-and-updating-packages.md)
 ## [Packages and source control](consume-packages/packages-and-source-control.md)
-## [Managing the NuGet cache](consume-packages/managing-the-nuget-cache.md)
+## [Managing the global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ## [Configuring NuGet behavior](consume-packages/configuring-nuget-behavior.md)
 ## [Dependency resolution](consume-packages/dependency-resolution.md)
 ## [Package references in project files](consume-packages/package-references-in-project-files.md)
@@ -88,7 +88,7 @@
 ### [NuGet credential providers for Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [nuget.exe credential providers](reference/extensibility/nuget-exe-credential-providers.md)
 ## Archived content
-### [project.json reference format](archive/project-json.md)
+### [project.json management format](archive/project-json.md)
 ### [project.json and UWP](archive/project-json-and-uwp.md)
 ### [project.json impact](archive/project-json-impact.md)
 # API

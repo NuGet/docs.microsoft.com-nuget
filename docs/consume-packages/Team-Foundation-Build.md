@@ -106,6 +106,9 @@ The `.gitignore` file looks as follows:
     bin
     obj
     packages
+    *.nupkg
+    project.lock.json
+    project.assets.json
 
 The `.gitignore` file is [quite powerful](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html). For example, if you want to generally not check-in the contents of the `packages` folder but want to go with previous guidance of checking in the `.targets` files you could have the following rule instead:
 
@@ -121,6 +124,9 @@ TF version control supports a very similar mechanism via the [.tfignore](/vsts/t
     bin
     obj
     packages
+    *.nupkg
+    project.lock.json
+    project.assets.json
 
 ## build.proj
 

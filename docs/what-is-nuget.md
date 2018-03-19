@@ -3,12 +3,12 @@ title: What is NuGet and what does it do? | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 01/10/2018
+ms.date: 03/16/2018
 ms.topic: hero-article
 ms.prod: nuget
 ms.technology: null
 description: A comprehensive introduction to what NuGet is and does
-keywords: NuGet package manager, consumption, package creation, package hosting
+keywords: NuGet package manager, consumption, package creation, package hosting, .NET packages, .NET Core packages
 ms.reviewer:
 - karann-msft
 - unniravindranathan
@@ -18,15 +18,15 @@ ms.reviewer:
 
 An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful code. Often such code is bundled into "packages" that contain compiled code (as DLLs) along with other content needed in the projects that consume these packages.
 
-For .NET, the Microsoft-supported mechanism for sharing code is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles.
+For .NET (including .NET Core), the Microsoft-supported mechanism for sharing code is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles.
 
 Put simply, a NuGet package is a single ZIP file with the `.nupkg` extension that contains compiled code (DLLs), other files related to that code, and a descriptive manifest that includes information like the package's version number. Developers with code to share create packages and publish them to a public or private host. Package consumers obtain those packages from suitable hosts, add them to their projects, and then call a package's functionality in their project code. NuGet itself then handles all of the intermediate details.
 
-Because NuGet supports private hosts alongside the public nuget.org host, you can use NuGet packages to share code that's exclusive to an organization or a workgroup. You can also use NuGet packages as a convenient way to factor your own code for use in nothing but your own projects. In short, a NuGet package is a shareable unit of code, but does not require nor imply any particular means of sharing.
+Because NuGet supports private hosts alongside the public nuget.org host, you can use NuGet packages to share code that's exclusive to an organization or a work group. You can also use NuGet packages as a convenient way to factor your own code for use in nothing but your own projects. In short, a NuGet package is a shareable unit of code, but does not require nor imply any particular means of sharing.
 
 ## The flow of packages between creators, hosts, and consumers
 
-In its role as a public host, NuGet itself maintains the central repository of over 100,000 unique packages at [nuget.org](https://www.nuget.org). These packages are employed by millions of .NET developers every day. NuGet also enables you to host packages privately in the cloud (such as on Visual Studio Team Services), on a private network, or even on just your local file system. By doing so, those packages are available to only those developers that have access to the host, giving you the ability to make packages available to a specific group of consumers. The options are explained on [Hosting your own NuGet feeds](hosting-packages/overview.md). Through configuration options, you can also control exactly which hosts can be accessed by any given computer, thereby ensuring that packages are obtained from specific sources rather than a public repository like nuget.org.
+In its role as a public host, NuGet itself maintains the central repository of over 100,000 unique packages at [nuget.org](https://www.nuget.org). These packages are employed by millions of .NET/.NET Core developers every day. NuGet also enables you to host packages privately in the cloud (such as on Visual Studio Team Services), on a private network, or even on just your local file system. By doing so, those packages are available to only those developers that have access to the host, giving you the ability to make packages available to a specific group of consumers. The options are explained on [Hosting your own NuGet feeds](hosting-packages/overview.md). Through configuration options, you can also control exactly which hosts can be accessed by any given computer, thereby ensuring that packages are obtained from specific sources rather than a public repository like nuget.org.
 
 Whatever its nature, a host serves as the point of connection between package *creators* and package *consumers*. Creators build useful NuGet packages and publish them to a host. Consumers then search for useful and compatible packages on accessible hosts, downloading and including those packages in their projects. Once installed in a project, the packages' APIs are available to the rest of the project code.
 
@@ -34,12 +34,12 @@ Whatever its nature, a host serves as the point of connection between package *c
 
 ## Package targeting compatibility
 
-A "compatible" package means that it contains assemblies built for at least one target .NET framework that's compatible with the consuming project's target framework. Developers can create packages that are specific to one framework, as with UWP controls, or they can support a wider range of targets. To maximize a package's compatibility, developers target [.NET Standard](/dotnet/standard/net-standard), which all .NET projects can consume. This is the most efficient means for both creators and consumers, as a single package (usually containing a single assembly) works for all consuming projects.
+A "compatible" package means that it contains assemblies built for at least one target .NET framework that's compatible with the consuming project's target framework. Developers can create packages that are specific to one framework, as with UWP controls, or they can support a wider range of targets. To maximize a package's compatibility, developers target [.NET Standard](/dotnet/standard/net-standard), which all .NET and .NET Core projects can consume. This is the most efficient means for both creators and consumers, as a single package (usually containing a single assembly) works for all consuming projects.
 
 Package developers who require APIs outside of .NET Standard, on the other hand, create separate assemblies for the different target frameworks they want to support and include all of those assemblies in the same package (which is called "multi-targeting"). When a consumer installs such a package, NuGet extracts only those assemblies that are needed by the project. This minimizes the package's footprint in the final application and/or assemblies produced by that project. A multi-targeting package is, of course, more difficult for its creator to maintain.
 
 > [!Note]
-> Targeting .NET Standard supercedes the previous approach of using various "portable class library" (PCL) targets. This documentation therefore focuses on creating packages for .NET Standard.
+> Targeting .NET Standard supercedes the previous approach of using various portable class library (PCL) targets. This documentation therefore focuses on creating packages for .NET Standard.
 
 ## NuGet tools
 
@@ -72,7 +72,7 @@ For more details on how NuGet performs this service, see [Dependency resolution]
 
 ## Tracking references and restoring packages
 
-Because projects can easily move between developer computers, source control repositories, build servers, and so forth, it's highly impractical to keep binary assemblies from NuGet packages directly bound to a project. Doing so would make each copy of the project unnecessarily bloated (and thereby waste space in source control repositories). It would also make it very difficult to update package binaries to newer versions as updates would have to be applied across all copies of the project.
+Because projects can easily move between developer computers, source control repositories, build servers, and so forth, it's highly impractical to keep the binary assemblies of NuGet packages directly bound to a project. Doing so would make each copy of the project unnecessarily bloated (and thereby waste space in source control repositories). It would also make it very difficult to update package binaries to newer versions as updates would have to be applied across all copies of the project.
 
 NuGet instead maintains a simple reference list of the packages upon which a project depends, including both top-level and down-level dependencies. That is, whenever you install a package from some host into a project, NuGet records the package identifier and version number in the reference list. (Uninstalling a package, of course, removes it from the list.) NuGet then provides a means to restore all referenced packages upon request, as described on [Package restore](consume-packages/package-restore.md).
 
@@ -80,23 +80,30 @@ NuGet instead maintains a simple reference list of the packages upon which a pro
 
 With only the reference list, NuGet can then reinstall&mdash;that is, *restore*&mdash;all of those packages from public and/or private hosts at any later time. When committing a project to source control, or sharing it in some other way, you include only the reference list and exclude any package binaries (see [Packages and source control](consume-packages/packages-and-source-control.md).)
 
-The computer that receives a project, such as a build server obtaining a copy of the project as part of an automated deployment system, simply asks NuGet to restore dependencies whenever they're needed. Build systems like Visual Studio Team Services provide "NuGet restore" steps for this exact purpose. Similarly, when developers obtain a copy of a project (as when cloning a repository), they can invoke a command like `nuget restore` (NuGet CLI), `dotnet restore` (dotnet CLI), or `Install-Package` (Package Manager Console) to obtain all the necessary packages. Visual Studio, for its part, automatically restores packages when building a project.
+The computer that receives a project, such as a build server obtaining a copy of the project as part of an automated deployment system, simply asks NuGet to restore dependencies whenever they're needed. Build systems like Visual Studio Team Services provide "NuGet restore" steps for this exact purpose. Similarly, when developers obtain a copy of a project (as when cloning a repository), they can invoke command like `nuget restore` (NuGet CLI), `dotnet restore` (dotnet CLI), or `Install-Package` (Package Manager Console) to obtain all the necessary packages. Visual Studio, for its part, automatically restores packages when building a project (provided that automatic restore is enabled, as described on [Package restore](consume-packages/package-restore.md)).
 
 Clearly, then, NuGet's primary role where developers are concerned is maintaining that reference list on behalf of your project and providing the means to efficiently restore (and update) those referenced packages. This list is maintained in one of two *package management formats*, as they're called:
 
-- [`packages.config`](reference/packages-config.md): *(NuGet 1.0+)* An XML file that maintains a flat list of all dependencies in the project, including the dependencies of other installed packages.
-- [PackageReference](consume-packages/package-references-in-project-files.md) (or "package references in project files") | *(NuGet 4.0+)* Maintains a list of a project's top-level dependencies directly within the project file, so no separate file is needed. An associated file, `project.assets.json`, is dynamically generated to manage the overall dependency graph.
+- [`packages.config`](reference/packages-config.md): *(NuGet 1.0+)* An XML file that maintains a flat list of all dependencies in the project, including the dependencies of other installed packages. Installed or restored packages are stored in a `packages` folder.
 
-Which package management format is employed in any given project depends on the project type, and the available version of NuGet (and/or Visual Studio). To check what format is being used, simply look for `packages.config` in the project root after installing your first package. If you don't have that file, look in the project file directly for a &lt;PackageReference&gt;element.
+- [PackageReference](consume-packages/package-references-in-project-files.md) (or "package references in project files") | *(NuGet 4.0+)* Maintains a list of a project's top-level dependencies directly within the project file, so no separate file is needed. An associated file, `project.assets.json`, is dynamically generated to manage the overall dependency graph of the packages that a project uses along with all down-level dependencies. PackageReference is always used by .NET Core projects.
+
+Which package management format is employed in any given project depends on the project type, and the available version of NuGet (and/or Visual Studio). To check what format is being used, simply look for `packages.config` in the project root after installing your first package. If you don't have that file, look in the project file directly for a \<PackageReference\> element.
+
+When you have a choice, we recommend using PackageReference. `packages.config` is maintained for legacy purposes and is no longer under active development.
+
+> [!Tip]
+> Various `nuget.exe` CLI commands, like `nuget install`, do not automatically add the package to the reference list. The list is updated when installing a package with the Visual Studio Package Manager (UI or Console), and with `dotnet.exe` CLI.
 
 ## What else does NuGet do?
 
 So far you've learned the following characteristics of NuGet:
+
 - NuGet provides the central nuget.org repository with support for private hosting.
 - NuGet provides the tools developers need for creating, publishing, and consuming packages.
 - Most importantly, NuGet maintains a reference list of packages used in a project and the ability to restore and update those packages from that list.
 
-To make these processes work efficiently, NuGet does some behind-the-scenes optimizations. Most notably, NuGet manages both computer-wide and project-specific package caches to shortcut installation and reinstallation. Where the computer-wide cache is concerned, any package that you download and install in a project is stored in the cache, such that installing the same package in another project doesn't incur another download. This is clearly very helpful when you're frequently restoring a larger number of packages, as on a build server. For more details on the mechanism and how to work with it, see [Managing the NuGet cache](consume-packages/Managing-the-Nuget-Cache.md).
+To make these processes work efficiently, NuGet does some behind-the-scenes optimizations. Most notably, NuGet manages a package cache and a global packages folder to shortcut installation and reinstallation. The cache avoids downloading a package that's already been installed on the machine. The global packages folder allows multiple projects to share the same installed package, thereby reducing NuGet's overall footprint on the computer. The cache and global packages folder are also very helpful when you're frequently restoring a larger number of packages, as on a build server. For more details on these mechanisms, see [Managing the global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md).
 
 Within an individual project, NuGet manages the overall dependency graph, which again includes resolving multiple references to different versions of the same package. It's quite common that a project takes a dependency on one or more packages that themselves have the same dependencies. Some of the most useful utility packages on nuget.org are employed by many other packages. In the entire dependency graph, then, you could easily have ten different references to different versions of the same package. To avoid bringing multiple versions of that package into the application itself, NuGet sorts out which single version can be used by all consumers. (For more information, see [Dependency Resolution](consume-packages/dependency-resolution.md).)
 

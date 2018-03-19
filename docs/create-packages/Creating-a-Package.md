@@ -7,7 +7,6 @@ ms.date: 12/12/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 456797cb-e3e4-4b88-9b01-8b5153cee802
 description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
 keywords: NuGet package creation, creating a package, nuspec manifest, NuGet package conventions, NuGet package version
 ms.reviewer:
@@ -127,7 +126,7 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
 
 For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `include` and `exclude` attributes on the `dependency` element. See [.nuspec Reference - Dependencies](../reference/nuspec.md#dependencies).
 
-Because the manifest is included in the package created from it, you can find any number of additional examples by examining existing packages. A good source is the global package cache on your machine, the location of which is returned by the following command:
+Because the manifest is included in the package created from it, you can find any number of additional examples by examining existing packages. A good source is the *global-packages* folder on your computer, the location of which is returned by the following command:
 
 ```cli
 nuget locals -list global-packages
@@ -368,7 +367,7 @@ Packages that contain COM interop assemblies must include an appropriate [target
 </Target>
 ```
 
-Note that when using the `packages.config` reference format, adding references to the assemblies from the packages causes NuGet and Visual Studio to check for COM interop assemblies and set the `EmbedInteropTypes` to true in the project file. In this case the targets are overriden.
+Note that when using the `packages.config` management format, adding references to the assemblies from the packages causes NuGet and Visual Studio to check for COM interop assemblies and set the `EmbedInteropTypes` to true in the project file. In this case the targets are overriden.
 
 Additionally, by default the [build assets do not flow transitively](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets). Packages authored as described here work differently when they are pulled as a transitive dependency from a project to project reference. The package consumer can allow them to flow by modifying the PrivateAssets default value to not include build.
 
