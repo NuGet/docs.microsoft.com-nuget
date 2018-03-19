@@ -35,7 +35,23 @@ For more information, see [What happens when a package is installed](ways-to-ins
 
 ## Viewing folder locations
 
-You can view folder locations using the [nuget locals command](../tools/cli-ref-locals.md):
+You can view folder locations using the [dotnet nuget locals command](/dotnet/core/tools/dotnet-nuget-locals):
+
+```cli
+dotnet nuget locals all --list
+```
+
+Typical output (Mac/Linux; "user1" is the current username):
+
+```output
+info : http-cache: /home/user1/.local/share/NuGet/v3-cache
+info : global-packages: /home/user1/.nuget/packages/
+info : temp: /tmp/NuGetScratch
+```
+
+To display the location of a single folder, use `http-cache`, `global-packages`, or `temp` instead of `all`. 
+
+You also view locations using the [nuget locals command](../tools/cli-ref-locals.md):
 
 ```cli
 # Display locals for all folders: global-packages, cache, and temp
@@ -50,45 +66,31 @@ global-packages: C:\Users\user1\.nuget\packages\
 temp: C:\Users\user1\AppData\Local\Temp\NuGetScratch
 ```
 
-To display the location of a single folder, use `http-cache`, `global-packages`, or `temp` instead of `all`. (Also `package-cache` with NuGet 3.5 and earlier.)
-
-You can also use the [dotnet nuget locals command](/dotnet/core/tools/dotnet-nuget-locals), which has the same functionality as `nuget locals`:
-
-```cli
-dotnet nuget locals all --list
-```
-
-Typical output (Mac/Linux; "user1" is the current username):
-
-```output
-info : http-cache: /home/user1/.local/share/NuGet/v3-cache
-info : global-packages: /home/user1/.nuget/packages/
-info : temp: /tmp/NuGetScratch
-```
+(`package-cache` is used in NuGet 2.x and appears with NuGet 3.5 and earlier.)
 
 ## Clearing local folders
 
-If you encounter package installation problems or otherwise want to ensure that you're installing packages from a remote gallery, use the `locals -clear` option (`--clear` or `-c` in dotnet), specifying the folder to clear, or `all` to clear all folders:
+If you encounter package installation problems or otherwise want to ensure that you're installing packages from a remote gallery, use the `locals --clear` option (dotnet.exe) or `locals -clear` (nuget.exe), specifying the folder to clear, or `all` to clear all folders:
 
 ```cli
 # Clear the 3.x+ cache (use either command)
-nuget locals http-cache -clear
 dotnet nuget locals http-cache --clear
+nuget locals http-cache -clear
 
 # Clear the 2.x cache (NuGet CLI 3.5 and earlier only)
 nuget locals packages-cache -clear
 
 # Clear the global packages folder (use either command)
-nuget locals global-packages -clear
 dotnet nuget locals global-packages --clear
+nuget locals global-packages -clear
 
 # Clear the temporary cache (use either command)
-nuget locals temp -clear
 dotnet nuget locals temp --clear
+nuget locals temp -clear
 
 # Clear all caches (use either command)
-nuget locals all -clear
 dotnet nuget locals all --clear
+nuget locals all -clear
 ```
 
 Any packages used by projects that are currently open in Visual Studio are not cleared from the *global-packages* folder.
