@@ -3,7 +3,7 @@ title: Creating and publishing a NuGet package using the dotnet CLI | Microsoft 
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 01/24/2018
+ms.date: 03/19/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: null
@@ -55,14 +55,14 @@ Every NuGet package needs a manifest that describes the package's contents and d
 
 ## Run the pack command
 
-To build a NuGet package (a `.nupkg` file) from the project, run the `dotnet pack` command:
+To build a NuGet package (a `.nupkg` file) from the project, run the `dotnet pack` command, which also builds the project automatically:
 
 ```cli
 # Uses the project file in the current folder by default
 dotnet pack
 ```
 
-The output will show the path to the `.nupkg` file:
+The output shows the path to the `.nupkg` file:
 
 ```output
 Microsoft (R) Build Engine version 15.5.180.51428 for .NET Core
@@ -71,6 +71,14 @@ Copyright (C) Microsoft Corporation. All rights reserved.
   Restore completed in 29.91 ms for D:\proj\AppLoggerNet\AppLogger\AppLogger.csproj.
   AppLogger -> D:\proj\AppLoggerNet\AppLogger\bin\Debug\netstandard2.0\AppLogger.dll
   Successfully created package 'D:\proj\AppLoggerNet\AppLogger\bin\Debug\AppLogger.1.0.0.nupkg'.
+```
+
+### Automatically generate package on build
+
+To automatically run `dotnet pack` when you run `dotnet build`, add the following line to your project file within `<PropertyGroup>`:
+
+```xml
+<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 ```
 
 ## Publish the package
