@@ -18,11 +18,11 @@ ms.reviewer:
 
 Whenever you install, update, or restore a package, NuGet manages packages and package information in several folders outside of your project structure:
 
-| Name | | Description and Location (per user)|
-| --- | --- | --- |
-| global-packages | The *global-packages* folder is where NuGet installs any downloaded package. Each package is fully expanded into a subfolder that matches the package identifier and version number. Projects using the PackageReference format always use packages directly from this folder. When using the `packages.config`, packages are installed to the *global-packages* folder, then copied into the project's `packages` folder.<br/>Locations:<ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/..nuget/packages`</li><li>Override using the NUGET_PACKAGES environment variable.</li></ul> |
-| http-cache | The Visual Studio Package Manager (NuGet 3.x+) and the `dotnet` tool store copies of downloaded packages in this cache (saved as `.dat` files), organized into subfolders for each package source. Packages are not expanded, and the cache is not used by the `nuget.exe` tool.<br/>Locations:<ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Override using the NUGET_HTTP_CACHE_PATH environment variable.</li></ul> |
-| temp | A folder where NuGet stores temporary files during its various operations.<br/>Locations:<ul><li>Windows: `%temp%\NuGetScratch`</li><li>Mac/Linux: `/tmp/NuGetScratch`</li></ul> |
+| Name | Description and Location (per user)|
+| --- | --- |
+| global-packages | The *global-packages* folder is where NuGet installs any downloaded package. Each package is fully expanded into a subfolder that matches the package identifier and version number. Projects using the PackageReference format always use packages directly from this folder. When using the `packages.config`, packages are installed to the *global-packages* folder, then copied into the project's `packages` folder.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/..nuget/packages`</li><li>Override using the NUGET_PACKAGES environment variable.</li></ul> |
+| http-cache | The Visual Studio Package Manager (NuGet 3.x+) and the `dotnet` tool store copies of downloaded packages in this cache (saved as `.dat` files), organized into subfolders for each package source. Packages are not expanded, and the cache is not used by the `nuget.exe` tool.<br/><ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Override using the NUGET_HTTP_CACHE_PATH environment variable.</li></ul> |
+| temp | A folder where NuGet stores temporary files during its various operations.<br/><li>Windows: `%temp%\NuGetScratch`</li><li>Mac/Linux: `/tmp/NuGetScratch`</li></ul> |
 
 > [!Note]
 > NuGet 3.5 and earlier uses *packages-cache* instead of the *http-cache*, which is located in `%localappdata%\NuGet\Cache`.
@@ -103,11 +103,11 @@ In Visual Studio, use the **Tools > NuGet Package Manager > Package Manager Sett
 
 The following errors can occur when using `nuget locals` or `dotnet nuget locals`:
 
-- *Error: The process cannot access the file <package> because it is being used by another process* or *Clearing local resources failed: Unable to delete one or more files*:
+- *Error: The process cannot access the file <package> because it is being used by another process* or *Clearing local resources failed: Unable to delete one or more files*
 
     One or more files in the folder are in use by another process; for example, a Visual Studio project is open that refers to packages in the *global-packages* folder. Close those processes and try again.
 
-- *Error: Access to the path <path> is denied* or *The directory is not empty*:
+- *Error: Access to the path <path> is denied* or *The directory is not empty*
 
     You don't have permission to delete files in the cache. Change the folder permissions, if possible, and try again. Otherwise, contact your system administrator.
 
