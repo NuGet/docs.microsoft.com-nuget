@@ -1,5 +1,5 @@
 ---
-title: How to manage the global packages, cache, and temp folders in NuGet | Microsoft Docs
+title: How to manage the global packages, cache, temp folders in NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -14,14 +14,14 @@ ms.reviewer:
 - unniravindranathan
 ---
 
-# Managing the global packages, the cache, and temp folders
+# Managing the global packages, cache, and temp folders
 
 Whenever you install, update, or restore a package, NuGet manages packages and package information in several folders outside of your project structure:
 
 | Name | Description and Location (per user)|
 | --- | --- |
-| global-packages | The *global-packages* folder is where NuGet installs any downloaded package. Each package is fully expanded into a subfolder that matches the package identifier and version number. Projects using the PackageReference format always use packages directly from this folder. When using the `packages.config`, packages are installed to the *global-packages* folder, then copied into the project's `packages` folder.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/..nuget/packages`</li><li>Override using the NUGET_PACKAGES environment variable.</li></ul> |
-| http-cache | The Visual Studio Package Manager (NuGet 3.x+) and the `dotnet` tool store copies of downloaded packages in this cache (saved as `.dat` files), organized into subfolders for each package source. Packages are not expanded, and the cache is not used by the `nuget.exe` tool.<br/><ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Override using the NUGET_HTTP_CACHE_PATH environment variable.</li></ul> |
+| global&#8209;packages | The *global-packages* folder is where NuGet installs any downloaded package. Each package is fully expanded into a subfolder that matches the package identifier and version number. Projects using the PackageReference format always use packages directly from this folder. When using the `packages.config`, packages are installed to the *global-packages* folder, then copied into the project's `packages` folder.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/..nuget/packages`</li><li>Override using the NUGET_PACKAGES environment variable.</li></ul> |
+| http&#8209;cache | The Visual Studio Package Manager (NuGet 3.x+) and the `dotnet` tool store copies of downloaded packages in this cache (saved as `.dat` files), organized into subfolders for each package source. Packages are not expanded, and the cache is not used by the `nuget.exe` tool.<br/><ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Override using the NUGET_HTTP_CACHE_PATH environment variable.</li></ul> |
 | temp | A folder where NuGet stores temporary files during its various operations.<br/><li>Windows: `%temp%\NuGetScratch`</li><li>Mac/Linux: `/tmp/NuGetScratch`</li></ul> |
 
 > [!Note]
