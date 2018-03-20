@@ -27,9 +27,9 @@ In general, options specified directly on the command line or in NuGet configura
 | EnableNuGetPackageRestore | Flag for if NuGet should implicitly grant consent if that's required by package on restore. | Specified flag is specified | as *true* or *1*, any other value treated as flag not set. |
 | NUGET_EXE_NO_PROMPT | Prevents the exe for prompting for credentials.| Any value except null or empty string will be treated as this flag set/true. |
 FORCE_NUGET_EXE_INTERACTIVE | Global environment variable to force interactive mode. | Any value except null or empty string will be treated as this flag set/true. |
-| NUGET_PACKAGES | Path to use for the *global-packages* folder as described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md). | Specified as absolute path. |
+| NUGET_PACKAGES | Path to use for the *global-packages* folder as described on [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). | Specified as absolute path. |
 | NUGET_FALLBACK_PACKAGES | Global fallback packages folders. | Absolute folder paths separated by semicolon (;). |
-| NUGET_HTTP_CACHE_PATH | Path to use for the *http-cache* folder as described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md). | Specified as absolute path. |
+| NUGET_HTTP_CACHE_PATH | Path to use for the *http-cache* folder as described on [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). | Specified as absolute path. |
 | NUGET_PERSIST_DG | Flag indicating if dg files (data collected from MSBuild) should be persisted. | Specified as *true* or *false* (default), if NUGET_PERSIST_DG_PATH not set will be stored to temporary directory (NuGetScratch folder in current environment temp directory). |
 | NUGET_PERSIST_DG_PATH | Path to persist dg files. | Specified as absolute path, this option is only used when *NUGET_PERSIST_DG* is set to true. |
 | NUGET_RESTORE_MSBUILD_ARGS | Sets additional MSBuild arguments. |

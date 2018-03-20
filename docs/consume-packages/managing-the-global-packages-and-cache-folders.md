@@ -31,7 +31,7 @@ By using the cache and *global-packages* folders, NuGet generally avoids downloa
 
 By default, NuGet checks caches before attempting to retrieve packages from online sources, unless you specify `--no-cache` with `dotnet.exe` commands or `-NoCache` with `nuget.exe` commands.
 
-For more information, see [What happens when a package is installed](ways-to-install-a-package.md#what-happens-when-a-package-is-installed.md).
+For more information, see [What happens when a package is installed](ways-to-install-a-package.md#what-happens-when-a-package-is-installed).
 
 ## Viewing folder locations
 
