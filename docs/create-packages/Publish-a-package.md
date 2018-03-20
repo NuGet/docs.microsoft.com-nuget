@@ -60,13 +60,13 @@ To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://w
 
 #### Publish with nuget push
 
-1. At a command prompt, run the following command:
+1. At a command prompt, run the following command, replacing `<your_API_key>` with the key obtained from nuget.org:
 
     ```cli
-    nuget setApiKey Your-API-Key
+    nuget setApiKey <your_API_key>
     ```
 
-    This stores your API key on the machine so that you need repeat this step again on the same computer.
+    This command stores your API key in your NuGet configuration so that you need repeat this step again on the same computer.
 
 1. Push your package to NuGet Gallery using the following command:
 
@@ -86,7 +86,7 @@ To see the status of a package, select **Manage packages** under your account na
 
 Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you see the following message on your package page:
 
-    ![Message indicating a package is not yet published](media/publish_NotYetIndexed.png)
+![Message indicating a package is not yet published](media/publish_NotYetIndexed.png)
 
 ### Visual Studio Team Services (CI/CD)
 
