@@ -40,7 +40,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="What is NuGet? Learn how NuGet, the package manager for .NET, allows developers to create, share, and consume libraries." />        
+                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="" />        
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -59,7 +59,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-quickstarts.svg" alt="Quickstarts: Experience NuGet with focused walkthroughs for creating a simple package and using a package." />
+                                                <img src="media/hub/nuget-get-started-quickstarts.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -78,7 +78,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-guides.svg" alt="Guides: experience NuGet's tools and capabilities for creating a package." />
+                                                <img src="media/hub/nuget-get-started-guides.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -97,7 +97,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-create-packages.svg" alt="Create Packages: Everything you need to know about creating NuGet packages, from overall workflow to versioning, pre-release, and other specialized packages." />
+                                                <img src="media/hub/nuget-get-started-create-packages.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -116,7 +116,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-consume-packages.svg" alt="Consume Packages: Everything you need to know about using NuGet packages, from finding and choosing good packages to restoration updates, and caching." />
+                                                <img src="media/hub/nuget-get-started-consume-packages.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -135,7 +135,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-host-packages.svg" alt="Host Packages: Learn how to host packages on your own servers or galleries to make them available to only a limited audience." />
+                                                <img src="media/hub/nuget-get-started-host-packages.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -164,7 +164,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-tools.svg" alt="Tools: The complete guides to the nuget.exe command-line tool, and the Package Manager UI and Package Manager Console in Visual Studio." />
+                                                <img src="media/hub/nuget-tools-tools.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -183,7 +183,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-reference.svg" alt="Reference: Details about artifacts and formats NuGet cares about, supported frameworks, and errors and warnings." />
+                                                <img src="media/hub/nuget-tools-reference.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -202,7 +202,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-api.svg" alt="API: Details about the NuGet API" />
+                                                <img src="media/hub/nuget-tools-api.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -221,7 +221,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-vs-extensibility.svg" alt="Visual Studio Extensibility: Details about the API to the NuGet Package Manager UI and Console in Visual Studio, project system support, and integrating into Visual Studio templates." />
+                                                <img src="media/hub/nuget-tools-vs-extensibility.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
@@ -240,7 +240,7 @@ ms.reviewer:
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-policies.svg" alt="Policies: Frequently-asked questions along with information about NuGet as an open-source project, deleting packages, and resolving disputes." />
+                                                <img src="media/hub/nuget-tools-policies.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
