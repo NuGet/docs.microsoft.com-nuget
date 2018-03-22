@@ -227,6 +227,61 @@ An example of a csproj file to pack a nuspec file is:
 </Project>
 ```
 
+### Advanced Extension Points to create customized package
+
+The Pack target provides two extension points which run in the inner build (target framework specific build) with the goal of being able to pack target framework specific content/assemblies into a package.
+
+#### For files that need to go inside lib folder (or folder specified via BuildOutputTargetFolder)
+
+A package author can write their own custom target and specify it as the value of the property ```$(TargetsForTfmSpecificBuildOutput)```. The target should write out any files that need to go into the ```BuildOutputTargetFolder (lib by default)```  into the ItemGroup ```BuildOutputInPackage``` and set the following two metadata values :
+
+```a) FinalOutputPath :``` This is the absolute path of the file on disk (if not provided, the Identity is used to evaluate source path)
+
+```b) TargetPath :``` This is optional and defaults to the name of the file. Package authors need to set it when the file needs to go into a subfolder within ```lib\<TargetFramework>``` , like satellite assemblies, which go under their respective culture folders.
+
+An example:
+
+```
+<PropertyGroup>
+  <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetMyPackageFiles</TargetsForTfmSpecificBuildOutput>
+</PropertyGroup>
+
+<Target Name="GetMyPackageFiles">
+  <ItemGroup>
+    <BuildOutputInPackage Include="$(OutputPath)cs\$(AssemblyName).resources.dll">
+        <TargetPath>cs</TargetPath>
+    </BuildOutputInPackage>
+  </ItemGroup>
+</Target>
+
+```
+
+#### For files outside of BuildOutputTargetFolder
+
+A similar extension point has been provided for files that need to be packed outside of lib folder but are still specific to a target framework. Package authors can write their own custom target and specify it as the value of the property ```$(TargetsForTfmSpecificContentInPackage)```. The target should write out any files that need to be included in the package into the ItemGroup ```TfmSpecificPackageFile``` and set the following optional metadata:
+
+```a) PackagePath :``` Path where the file should be output in the package. NuGet will throw a warning if more than one file is added to the same package path.
+
+```b) BuildAction:``` Default value has been set to None. This is only required if the package path is in contentFiles folder.
+
+An example:
+```
+<PropertyGroup>
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomContentTarget</TargetsForTfmSpecificContentInPackage>
+</PropertyGroup>
+
+<Target Name=""CustomContentTarget"">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include=""abc.txt"">
+        <PackagePath>mycontent/$(TargetFramework)</PackagePath>
+      </TfmSpecificPackageFile>
+      <TfmSpecificPackageFile Include=""Extensions/ext.txt"" Condition=""'$(TargetFramework)' == 'net46'"">
+        <PackagePath>net46content</PackagePath>
+      </TfmSpecificPackageFile>  
+    </ItemGroup>
+  </Target>  
+```
+
 ## restore target
 
 `MSBuild /t:restore` (which `nuget restore` and `dotnet restore` use with .NET Core projects), restores packages referenced in the project file as follows:
