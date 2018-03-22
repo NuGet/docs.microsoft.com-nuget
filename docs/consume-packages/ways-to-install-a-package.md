@@ -27,28 +27,29 @@ NuGet packages are downloaded and installed using any of the methods in the foll
 
 ## What happens when a package is installed
 
-Simply said, the different NuGet tools typically create a reference to a package in the project file or `packages.config`, then perform a package restore, which effectively installs teh package. The exception is `nuget install`, which only expands the package into a `packages` folder and does not modify any other files.
+Simply said, the different NuGet tools typically create a reference to a package in the project file or `packages.config`, then perform a package restore, which effectively installs the package. The exception is `nuget install`, which only expands the package into a `packages` folder and does not modify any other files.
 
 The general process is as follows:
 
 1. (All tools except `nuget.exe`) Record the package identifer and version into the project file or `packages.config`.
 
 1. Acquire the package:
-    - Retrieve the requested package (by identifer and version number) from the cache if it exists there, unless you're using `-NoCache` with `nuget.exe` commands or `--no-cache` with `dotnet restore` (Visual Studio and `dotnet add package` always use the cache). If a package is used from the cache, "CACHE" appears in the output.
+    - Check if the package (by exact identifer and version number) is already installed in the *global-packages* folder as described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md).
 
-    - If the package is not in the cache, attempt to download the package from the sources listed in the [configuration files](Configuring-NuGet-Behavior.md). If a package is downloaded, "GET" and "OK" appear in the output.
+    - If the package is not in the *global-packages* folder, attempt to retrieve it from the sources listed listed in the [configuration files](Configuring-NuGet-Behavior.md). For online sources, attempt first to retrieve the package from the cache unless `-NoCache` is specified with `nuget.exe` commands or `--no-cache` is specified with `dotnet restore`. (Visual Studio and `dotnet add package` always use the cache.) If a package is used from the cache, "CACHE" appears in the output. The cache has an expiration time of 30 minutes.
 
-    - If the package cannot be successfully acquired from any sources, installation fails at this point with an error. The error shows only the last source checked, but implies that the package wasn't available from any source.
+    - If the package is not in the cache, attempt to download it from the sources listed in the configuration. If a package is downloaded, "GET" and "OK" appear in the output.
+
+    - If the package cannot be successfully acquired from any sources, installation fails at this point with an error such as [NU1103](../reference/errors-and-warnings.md#nu1103). Note that errors from `nuget.exe` commands show only the last source checked, but implies that the package wasn't available from any source.
 
     When acquiring the package, the order of sources in the NuGet configuration may apply:
-      - For projects using the PackageReference format, NuGet checks sources that are local folders first, then checks sources on network shares, then checks HTTP sources.
-      - For projects using the `packages.config` management format, NuGet uses the order of the sources in the configuration.
-      - Restore operations ignore source ordering, using a package from whichever source responds first.
+      - For projects using the PackageReference format, NuGet checks sources local folder and network shares before checking HTTP sources.
+      - For projects using the `packages.config` management format, NuGet uses the order of the sources in the configuration. An exception is restore operations, in which case source ordering is ignored and NuGet uses the package from whichever source responds first.
       - In general, the order in which NuGet checks sources isn't particularly meaningful, because any given package with a specific identifier and version number is exactly the same on whatever source it's found.
 
 1. (All tools except `nuget.exe`) Save a copy of the package and other information in the *http-cache* folder as described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md).
 
-1. Install the package into the per-user *global-packages* folder as described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md). NuGet creates a subfolder for each package identifier, then creates subfolders for each installed version of the package.
+1. If downloaded, install the package into the per-user *global-packages* folder. NuGet creates a subfolder for each package identifier, then creates subfolders for each installed version of the package.
 
 1. Update other project files and folders:
 
