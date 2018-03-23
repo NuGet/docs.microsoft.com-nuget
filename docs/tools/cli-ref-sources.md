@@ -12,6 +12,9 @@ keywords: nuget sources reference, sources command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # sources command (NuGet CLI)

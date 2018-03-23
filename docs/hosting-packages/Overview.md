@@ -13,6 +13,9 @@ ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Hosting your own NuGet feeds

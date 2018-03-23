@@ -3,7 +3,7 @@ title: NuGet PackageReference format (package references in project files) | Mic
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 07/17/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -12,6 +12,9 @@ keywords: NuGet package dependencies, package references, project files, Package
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Package references (PackageReference) in project files
@@ -20,7 +23,7 @@ Package references, using the `PackageReference` node, manage NuGet dependencies
 
 With PackageReference, you can also use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. (See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
 
-By default, PackageReference is used for .NET Core projects, .NET Standard projects,  and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later. .NET full framework projects support PackageReference, but currently default to `packages.config`. To use PackageReference, migrate the dependencies from `packages.config` into your project file, then remove packages.config.
+By default, PackageReference is used for .NET Core projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later, with the exception of C++ UWP projects. .NET full framework projects support PackageReference, but currently default to `packages.config`. To use PackageReference, migrate the dependencies from `packages.config` into your project file, then remove packages.config.
 
 ## Adding a PackageReference
 
@@ -90,7 +93,7 @@ Allowable values for these tags are as follows, with multiple values separated b
 | Value | Description |
 | --- | ---
 | compile | Contents of the `lib` folder |
-| runtime | Contents of the `runtime` folder |
+| runtime | Contents of the `runtimes` folder |
 | contentFiles | Contents of the `contentfiles` folder |
 | build | Props and targets in the `build` folder |
 | analyzers | .NET analyzers |

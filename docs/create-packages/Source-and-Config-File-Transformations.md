@@ -13,6 +13,9 @@ ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Transforming source code and configuration files

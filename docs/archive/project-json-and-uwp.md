@@ -12,6 +12,9 @@ keywords: NuGet dependencies, NuGet and UWP, UWP and project.json, NuGet project
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # project.json and UWP

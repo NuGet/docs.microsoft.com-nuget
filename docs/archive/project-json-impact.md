@@ -12,6 +12,9 @@ keywords: NuGet and project.json, project.json impact, package authoring conside
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Impact of project.json when creating packages

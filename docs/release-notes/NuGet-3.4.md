@@ -12,6 +12,9 @@ keywords: NuGet 3.4 release notes, bug fixes, known issues, added features, DCRs
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet 3.4 Release Notes
@@ -20,9 +23,9 @@ ms.reviewer:
 
 NuGet 3.4 was released March 30, 2016 as part of the Visual Studio 2015 Update 2 and Visual Studio 15 Preview Release and was built with a few tenets in minds:
 
-*  Cross-Platform support
-*  Performance improvements
-*  Minor UI improvements
+* Cross-Platform support
+* Performance improvements
+* Minor UI improvements
 
 The following features were previously added in the RC and have been updated or completed for the 3.4 release:
 

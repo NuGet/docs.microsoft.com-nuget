@@ -12,6 +12,9 @@ keywords: nuget delete reference, delete package command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # delete command (NuGet CLI)

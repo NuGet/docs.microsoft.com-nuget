@@ -12,6 +12,9 @@ keywords: NuGet package restore, NuGet and TFS, NuGet and VSTS, NuGet build syst
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Setting up package restore with Team Foundation Build

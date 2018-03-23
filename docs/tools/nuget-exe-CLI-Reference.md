@@ -12,6 +12,9 @@ keywords: nuget.exe reference index, nuget.exe command-line interface, nuget.exe
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet CLI reference

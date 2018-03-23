@@ -4,7 +4,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
 ms.technology: null
 description: An end-to-end walkthrough of creating NuGet packages for Xamarin that use native APIs on iOS, Android, and Windows.
@@ -12,6 +12,9 @@ keywords: create a package, packages for Xamarin, cross-platform packages
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Create packages for Xamarin with Visual Studio 2015

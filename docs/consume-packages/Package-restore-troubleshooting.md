@@ -12,6 +12,9 @@ keywords: NuGet package restore, restoring packages, troubleshooting, troublesho
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Troubleshooting package restore errors

@@ -17,6 +17,9 @@ keywords: NuGet UI, NuGet package manager UI, NuGet in Visual Studio, managing N
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet Package Manager UI

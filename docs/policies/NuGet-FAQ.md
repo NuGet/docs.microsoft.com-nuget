@@ -12,6 +12,9 @@ keywords: NuGet Q&A, questions and answers, common problems, NuGet versions, pac
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet frequently-asked questions

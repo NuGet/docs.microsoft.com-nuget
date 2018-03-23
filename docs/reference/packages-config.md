@@ -12,6 +12,9 @@ keywords: NuGet packages.config file, NuGet package references, NuGet dependenci
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # packages.config reference

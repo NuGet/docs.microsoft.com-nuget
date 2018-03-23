@@ -12,6 +12,9 @@ keywords: nuget push reference, push command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # push command (NuGet CLI)

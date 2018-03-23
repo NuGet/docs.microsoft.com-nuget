@@ -12,6 +12,9 @@ keywords: NuGet project.json, NuGet package references, NuGet dependencies, proj
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # project.json reference

@@ -13,6 +13,9 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Publishing packages

@@ -12,6 +12,9 @@ keywords: NuGet package consumption, NuGet package discovery, best NuGet package
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Finding and evaluating NuGet packages for your project

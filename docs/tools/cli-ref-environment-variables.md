@@ -12,6 +12,9 @@ keywords: nuget environment variables
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet CLI environment variables

@@ -13,6 +13,9 @@ keywords: NuGet known issues, NuGet problems
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Known Issues with NuGet

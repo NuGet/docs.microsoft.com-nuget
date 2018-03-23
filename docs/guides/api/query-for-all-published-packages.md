@@ -8,7 +8,7 @@ ms.author:
 - kraigb
 manager: skofman
 ms.date: 11/02/2017
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
 ms.technology: null
 description: Using the NuGet API, you can query for all packages published to nuget.org and stay up-to-date over time.
@@ -16,6 +16,9 @@ keywords: NuGet API enumerate all packages, NuGet API replicate packages, latest
 ms.reviewer:
 - karann
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Query for all packages published to nuget.org

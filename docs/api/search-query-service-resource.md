@@ -16,6 +16,9 @@ keywords: NuGet search API, NuGet discover packages, API to query NuGet packages
 ms.reviewer:
 - karann
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Search

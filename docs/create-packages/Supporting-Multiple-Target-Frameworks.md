@@ -12,6 +12,9 @@ keywords: NuGet package targeting, .NET Framework versions, NuGet and .NET, targ
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Supporting multiple .NET framework versions

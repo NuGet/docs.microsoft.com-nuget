@@ -12,6 +12,9 @@ keywords: NuGet package installation, NuGet package reinstallation, NuGet packag
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # How to reinstall and update packages

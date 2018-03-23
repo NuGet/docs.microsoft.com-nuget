@@ -12,6 +12,9 @@ keywords: dotnet NuGet commands, dotnet pack, dotnet restore, dotnet nuget local
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # dotNet commands

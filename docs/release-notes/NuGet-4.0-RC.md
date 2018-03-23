@@ -11,6 +11,9 @@ description: Release notes for NuGet 4.0 RC including known issues, bug fixes, a
 keywords: NuGet 4.0 RC release notes, bug fixes, known issues, added features, DCRs
 ms.reviewer:
 - kraigb
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet 4.0 RC Release Notes

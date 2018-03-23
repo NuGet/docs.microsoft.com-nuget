@@ -12,6 +12,9 @@ keywords: NuGet package consumption, NuGet consumption overview, NuGet consumpti
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Package consumption workflow

@@ -12,6 +12,9 @@ keywords: NuGet config files, NuGet configuration, NuGet behavior settings, NuGe
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Configuring NuGet behavior

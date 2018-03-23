@@ -12,6 +12,9 @@ keywords: NuGet project.json file
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # project.json archive
