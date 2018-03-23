@@ -12,6 +12,9 @@ keywords: nuget locals reference, locals command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # locals command (NuGet CLI)

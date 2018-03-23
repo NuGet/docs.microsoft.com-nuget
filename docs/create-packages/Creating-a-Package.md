@@ -13,6 +13,9 @@ keywords: NuGet package creation, creating a package, nuspec manifest, NuGet pac
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Creating NuGet packages

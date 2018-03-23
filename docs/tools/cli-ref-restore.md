@@ -12,6 +12,9 @@ keywords: nuget restore reference, restore packages command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # restore command (NuGet CLI)

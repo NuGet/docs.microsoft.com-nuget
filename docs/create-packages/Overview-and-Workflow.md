@@ -12,6 +12,9 @@ keywords: NuGet package creation, NuGet creation overview, NuGet creation workfl
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Package creation workflow

@@ -4,7 +4,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/24/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
 ms.technology: null
 description: A walkthrough tutorial on creating and publishing a NuGet package using the .NET Core CLI, dotnet.
@@ -12,6 +12,9 @@ keywords: NuGet package creation, NuGet package publishing, NuGet tutorial, dotn
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Create and publish a package

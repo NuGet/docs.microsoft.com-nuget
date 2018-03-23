@@ -12,6 +12,9 @@ keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powers
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Get-Project (Package Manager Console in Visual Studio)

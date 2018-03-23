@@ -12,6 +12,9 @@ keywords: NuGet ecosystem, non-Microsoft NuGet projects, NuGet open source, NuGe
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # An overview of the NuGet ecosystem

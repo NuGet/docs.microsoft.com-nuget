@@ -12,6 +12,9 @@ keywords: nuget add reference, add package command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # add command (NuGet CLI)

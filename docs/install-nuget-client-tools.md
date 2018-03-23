@@ -4,7 +4,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/24/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
 ms.technology: null
 description: Guidance on installing client tools, the dotnet and nuget command-line interfaces (CLI), and the Package Manager for Visual Studio.
@@ -12,6 +12,9 @@ keywords: dotnet.exe CLI, nuget.exe CLI, NuGet client tools, NuGet package manag
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Installing NuGet client tools

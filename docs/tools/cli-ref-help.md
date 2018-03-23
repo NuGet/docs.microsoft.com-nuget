@@ -12,6 +12,9 @@ keywords: nuget help reference, help command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # help or ? command (NuGet CLI)

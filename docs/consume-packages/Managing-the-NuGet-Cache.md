@@ -12,6 +12,9 @@ keywords: NuGet package cache, package caching, NuGet caches, managing caches, l
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Managing the NuGet cache

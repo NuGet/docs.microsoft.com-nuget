@@ -4,7 +4,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 02/12/2018
-ms.topic: get-started-article
+ms.topic: overview
 ms.prod: nuget
 ms.technology: null
 description: Describes the process of installing NuGet packages into a project, including what happens on disk and to applicable project files.
@@ -12,6 +12,9 @@ keywords: install NuGet, NuGet package consumption, installing NuGet packages, N
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Different ways to install a NuGet Package

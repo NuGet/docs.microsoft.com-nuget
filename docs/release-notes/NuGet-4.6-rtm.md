@@ -14,6 +14,9 @@ ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet 4.6 RTM Release Notes

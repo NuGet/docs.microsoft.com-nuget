@@ -12,6 +12,9 @@ keywords: nuget install reference, install package command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # install command (NuGet CLI)

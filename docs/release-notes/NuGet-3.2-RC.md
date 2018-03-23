@@ -12,6 +12,9 @@ keywords: NuGet 3.2 RC release notes, bug fixes, known issues, added features, D
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet 3.2 RC Release Notes

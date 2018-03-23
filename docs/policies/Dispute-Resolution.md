@@ -12,6 +12,9 @@ keywords: NuGet package disputes, NuGet dispute resolution, dispute resolution p
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Resolving disputes over NuGet package names

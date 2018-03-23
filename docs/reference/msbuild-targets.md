@@ -11,6 +11,10 @@ description: NuGet pack and restore can work directly as MSBuild targets with Nu
 keywords: NuGet and MSBuild, NuGet pack target, NuGet restore target
 ms.reviewer:
 - karann-msft
+- unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet pack and restore as MSBuild targets

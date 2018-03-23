@@ -22,6 +22,9 @@ ms.prod: nuget
 ms.technology: null
 ms.reviewer:  
 - karann-msft
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 <div id="main" class="v2">
 <div class="container">

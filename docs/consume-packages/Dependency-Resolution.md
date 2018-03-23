@@ -12,6 +12,9 @@ keywords: NuGet package dependencies, NuGet versioning, dependency versions, ver
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # How NuGet resolves package dependencies

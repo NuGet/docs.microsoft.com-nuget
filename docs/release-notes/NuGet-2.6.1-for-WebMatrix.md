@@ -13,6 +13,9 @@ keywords: NuGet 2.6.1 for WebMatrix release notes, bug fixes, known issues, adde
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet 2.6.1 for WebMatrix Release Notes

@@ -12,6 +12,9 @@ keywords: NuGet release notes, NuGet known issues
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Release Notes

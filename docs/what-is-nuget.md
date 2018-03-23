@@ -4,7 +4,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/10/2018
-ms.topic: hero-article
+ms.topic: overview
 ms.prod: nuget
 ms.technology: null
 description: A comprehensive introduction to what NuGet is and does
@@ -12,6 +12,9 @@ keywords: NuGet package manager, consumption, package creation, package hosting
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # An introduction to NuGet

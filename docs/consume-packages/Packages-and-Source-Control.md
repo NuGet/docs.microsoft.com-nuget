@@ -12,6 +12,9 @@ keywords: NuGet source control, NuGet version control, NuGet and git, NuGet and 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Omitting NuGet packages in source control systems

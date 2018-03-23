@@ -12,6 +12,9 @@ keywords: nuget.exe credential providers, credential provider API, authenticate 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Authenticating feeds with nuget.exe credential providers

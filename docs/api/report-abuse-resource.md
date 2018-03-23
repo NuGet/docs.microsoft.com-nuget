@@ -16,6 +16,9 @@ keywords: NuGet API report abuse, NuGet API file complaint, nuget.org report URL
 ms.reviewer:
 - karann
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Report abuse URL template

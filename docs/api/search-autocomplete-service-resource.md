@@ -16,6 +16,9 @@ keywords: NuGet autocomplete API, NuGet search package ID, substring package ID
 ms.reviewer:
 - karann
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Autocomplete

@@ -4,7 +4,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 03/18/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
 ms.technology: null
 description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio 2017.
@@ -12,6 +12,9 @@ keywords: NuGet package creation, NuGet package publishing, NuGet tutorial, Visu
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Create and publish a package using Visual Studio (.NET Standard)

@@ -13,6 +13,9 @@ keywords: NuGet package restore, NuGet package installation, installing package,
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Package Restore

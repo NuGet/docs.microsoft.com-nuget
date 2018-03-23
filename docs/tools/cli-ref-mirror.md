@@ -12,6 +12,9 @@ keywords: nuget mirror reference, mirror command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # mirror command (NuGet CLI)

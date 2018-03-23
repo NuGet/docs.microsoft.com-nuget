@@ -13,6 +13,9 @@ ms.reviewer:
 - anandr
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Package versioning

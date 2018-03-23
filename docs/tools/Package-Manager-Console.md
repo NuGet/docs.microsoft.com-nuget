@@ -16,6 +16,9 @@ keywords: NuGet package manager console, NuGet powershell, managing NuGet packag
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Package Manager Console

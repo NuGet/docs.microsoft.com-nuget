@@ -16,6 +16,9 @@ keywords: NuGet V3 API catalog, nuget.org transaction log, replicate nuget.org, 
 ms.reviewer:
 - karann
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Catalog

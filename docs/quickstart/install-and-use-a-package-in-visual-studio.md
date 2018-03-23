@@ -4,7 +4,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/23/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
 ms.technology: null
 description: A walkthrough tutorial on the process of installing and using a NuGet package in a Visual Studio project.
@@ -12,6 +12,9 @@ keywords: install NuGet, NuGet package consumption, installing NuGet packages, N
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Install and use a package in Visual Studio

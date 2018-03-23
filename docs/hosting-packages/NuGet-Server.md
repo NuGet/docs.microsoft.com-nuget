@@ -12,6 +12,9 @@ keywords: NuGet feed, NuGet gallery, remote package feed, NuGet.Server
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet.Server

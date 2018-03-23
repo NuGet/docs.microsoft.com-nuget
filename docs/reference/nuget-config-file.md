@@ -12,6 +12,9 @@ keywords: NuGet.Config file, NuGet configuration reference, NuGet configuration 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet.Config reference

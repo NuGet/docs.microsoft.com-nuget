@@ -16,6 +16,9 @@ keywords: NuGet API push package, NuGet API delete package, NuGet API unlist pac
 ms.reviewer:
 - karann
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Push and Delete
