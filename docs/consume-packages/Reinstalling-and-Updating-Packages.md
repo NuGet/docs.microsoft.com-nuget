@@ -7,7 +7,6 @@ ms.date: 12/07/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 2785879b-97f0-4a85-b3cc-bf4eaa5c39bf
 description: Details on when it's necessary to reinstall and update packages, as with broken package references in Visual Studio.
 keywords: NuGet package installation, NuGet package reinstallation, NuGet package restore, updating package, restoring packages, fixing broken references
 ms.reviewer:
@@ -47,7 +46,7 @@ In this article:
 
 By default, reinstalling or updating a package *always* installs the latest version available from the package source.
 
-In projects using the `packages.config` reference format, however, you can specifically constrain the version range. For example, if you know that your application works only with version 1.x of a package but not 2.0 and above, perhaps due to a major change in the package API, then you'd want to constrain upgrades to 1.x versions. This prevents accidental updates that would break the application.
+In projects using the `packages.config` management format, however, you can specifically constrain the version range. For example, if you know that your application works only with version 1.x of a package but not 2.0 and above, perhaps due to a major change in the package API, then you'd want to constrain upgrades to 1.x versions. This prevents accidental updates that would break the application.
 
 To set a constraint, open `packages.config` in a text editor, locate the dependency in question, and add the `allowedVersions` attribute with a version range. For example, to constrain updates to version 1.x, set `allowedVersions` to `[1,2)`:
 

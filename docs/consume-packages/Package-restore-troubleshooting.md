@@ -3,7 +3,7 @@ title: Troubleshooting NuGet Package Restore in Visual Studio | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 03/13/2018
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -47,7 +47,10 @@ This project references NuGet package(s) that are missing on this computer.
 Use NuGet Package Restore to download them. The missing file is {name}.
 ```
 
-This error occurs you attempt to build a project that contains references to one or more NuGet packages, but those packages are not presently cached in the project. (Packages are cached in a `packages` folder at the solution root if the project uses `packages.config`, or in the `obj/project.assets.json` file if the project uses the PackageReference format.)
+This error occurs you attempt to build a project that contains references to one or more NuGet packages, but those packages are not presently installed on the computer or in the project.
+
+- When using the PackageReference management format, the error means that the package is not installed in the *global-packages* folder as described on as described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md).
+- When using `packages.config`, the error means that the package is not installed in the `packages` folder at the solution root.
 
 This situation commonly occurs when you obtain the project's source code from source control or another download. Packages are typically omitted from source control or downloads because they can be restored from package feeds like nuget.org (see [Packages and source control](Packages-and-Source-Control.md)). Including them would otherwise bloat the repository or create unnecessarily large .zip files.
 
@@ -58,7 +61,7 @@ Use one of the following methods to restore the packages:
 - On the command line, run `nuget restore` (except for projects created with `dotnet`, in which case use `dotnet restore`).
 - On the command line with projects using the PackageReference format, run `msbuild /t:restore`.
 
-After a successful restore, you should see either a `packages` folder (when using `packages.config`) or the `obj/project.assets.json` file (when using PackageReference). The project should now build successfully. If not, [file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so we can follow up with you.
+After a successful restore, the package should be present in the *global-packages* folder. For projects using PackageReference, a restore should recreate the `obj/project.assets.json` file; for projects using `packages.config`, the package should appear in the project's `packages` folder. The project should now build successfully. If not, [file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so we can follow up with you.
 
 <a name="assets"></a>
 
@@ -70,7 +73,9 @@ Complete error message:
 Assets file '<path>\project.assets.json' not found. Run a NuGet package restore to generate this file.
 ```
 
-This error occurs for the same reasons as explained in the [previous section](#missing), and has the same remedies. For example, running `msbuild` on a .NET Core project that's been obtained from source control won't automatically restore packages. In this case, run `msbuild /t:restore` followed by `msbuild`, or use `dotnet build` (which restores packages automatically).
+The `project.assets.json` file maintains a project's dependency graph when using the PackageReference management format, which is used to make sure that all necessary packages are installed on the computer. Because this file is generated dynamically through package restore, it's typically not added to source control. As a result, this error occurs when building a project with a tool such as `msbuild` that does not automatically restore packages.
+
+In this case, run `msbuild /t:restore` followed by `msbuild`, or use `dotnet build` (which restores packages automatically). You can also use any of the package restore methods in the [previous section](#missing).
 
 <a name="consent"></a>
 
@@ -102,11 +107,12 @@ You can also edit these settings directly in the applicable `nuget.config` file 
 </configuration>
 ```
 
-Note that if you edit the `packageRestore` settings directly in `nuget.config`, restart Visual Studio so that the options dialog box shows the current values.
+> [!Important]
+> If you edit the `packageRestore` settings directly in `nuget.config`, restart Visual Studio so that the options dialog box shows the current values.
 
 ## Other potential conditions
 
-- You may encounter build errors due to missing files, with a message saying to use NuGet restore to download them. However, running a restore might say, "All packages are already installed and there is nothing to restore." In this case, delete the `packages` folder (when using `packages.config`) or the `obj/project.assets.json` file (when using PackageReference) and run restore again.
+- You may encounter build errors due to missing files, with a message saying to use NuGet restore to download them. However, running a restore might say, "All packages are already installed and there is nothing to restore." In this case, delete the `packages` folder (when using `packages.config`) or the `obj/project.assets.json` file (when using PackageReference) and run restore again. If the error still persists, use `nuget locals all -clear` or `dotnet locals all --clear` from the command line to clear the *global-packages* and cache folders as described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md).
 
 - When obtaining a project from source control, your project folders may be set to read-only. Change the folder permissions and try restoring packages again.
 

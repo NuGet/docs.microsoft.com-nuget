@@ -26,7 +26,7 @@ Downloads and installs a package into a project, defaulting to the current folde
 > [!Tip]
 > To download a package directly outside the context of a project, visit the package's page on [nuget.org](https://www.nuget.org) and select the **Download** link.
 
-If no sources are specified, those listed in the global configuration file, `%APPDATA%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), are used. See [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md) for additional details.
+If no sources are specified, those listed in the global configuration file, `%appdata%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), are used. See [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md) for additional details.
 
 If no specific packages are specified, `install` installs all packages listed in the project's `packages.config` file, making it similar to [`restore`](cli-ref-restore.md).
 
@@ -54,7 +54,7 @@ where `<packageID>` names the package to install (using the latest version), or 
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Framework | *(4.4+)* Target framework used for selecting dependencies. Defaults to 'Any' if not specified. |
 | Help | Displays help information for the command. |
-| NoCache | Prevents NuGet from using packages from local machine caches. |
+| NoCache | Prevents NuGet from using cached packages. See [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
 | OutputDirectory | Specifies the folder in which packages are installed. If no folder is specified, the current folder is used. |
 | PackageSaveMode | Specifies the types of files to save after package installation: one of `nuspec`, `nupkg`, or `nuspec;nupkg`. |

@@ -21,7 +21,7 @@ ms.workload:
 
 **Applies to:** package consumption, publishing &bullet; **Supported versions:** all
 
-Manages the list of sources located in the user scope configuration file or a specified configuration file. The user scope configuration file is located at `%APPDATA%\NuGet\NuGet.Config` (Windows) and `~/.nuget/NuGet/NuGet.Config` (Mac/Linux).
+Manages the list of sources located in the user scope configuration file or a specified configuration file. The user scope configuration file is located at `%appdata%\NuGet\NuGet.Config` (Windows) and `~/.nuget/NuGet/NuGet.Config` (Mac/Linux).
 
 Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 

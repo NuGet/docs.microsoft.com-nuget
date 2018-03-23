@@ -7,7 +7,6 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 920c551c-18a7-40f4-a32b-ce84de6ea766
 description: Release notes for NuGet 2.8.6 including known issues, bug fixes, added features, and DCRs.
 keywords: NuGet 2.8.6 release notes, bug fixes, known issues, added features, DCRs
 ms.reviewer:

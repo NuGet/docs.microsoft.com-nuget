@@ -7,7 +7,6 @@ ms.date: 06/01/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 879db0ef-6b72-4a4a-bb68-f9e3a00f64b8
 description: Reference for Install-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Install-Package
 ms.reviewer:

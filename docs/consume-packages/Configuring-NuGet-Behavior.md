@@ -26,7 +26,7 @@ NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Con
 | Scope | NuGet.Config file location | Description |
 | --- | --- | --- |
 | Project | Current folder (aka Project folder) or any folder up to the drive root.| In a project folder, settings apply only to that project. In parent folders that contain multiple projects subfolders, settings apply to all projects in those subfolders. |
-| User | Windows: `%APPDATA%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.nuget/NuGet/NuGet.Config` | Settings apply to all operations, but are overridden by any project-level settings. |
+| User | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.nuget/NuGet/NuGet.Config` | Settings apply to all operations, but are overridden by any project-level settings. |
 | Computer | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME` (typically `~/.local/share`) | Settings apply to all operations on the computer, but are overriden by any user- or project-level settings. |
 
 Notes for earlier versions of NuGet:
@@ -136,7 +136,7 @@ Let's say you have the following folder structure on two separate drives:
 
 You then have four `NuGet.Config` files in the following locations with the given content. (The computer-level file is not included in this example, but would behave similarly to the user-level file.)
 
-File A. User-level file, (`%APPDATA%\NuGet\NuGet.Config` on Windows, `~/.nuget/NuGet/NuGet.Config` on Mac/Linux):
+File A. User-level file, (`%appdata%\NuGet\NuGet.Config` on Windows, `~/.nuget/NuGet/NuGet.Config` on Mac/Linux):
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -219,7 +219,7 @@ The following table describes where the `NuGetDefaults.Config` file should be st
 
 ### NuGetDefaults.Config settings
 
-- `packageSources`: this collection has the same meaning as `packageSources` in regular config files and specifies the default sources. NuGet uses the sources in order when installing or updating packages in projects using the `packages.config` reference format. For projects using the PackageReference format, NuGet uses local sources first, then sources on network shares, then HTTP sources, regardless of the order in the configuration files. NuGet always ignores the order of sources with restore operations.
+- `packageSources`: this collection has the same meaning as `packageSources` in regular config files and specifies the default sources. NuGet uses the sources in order when installing or updating packages in projects using the `packages.config` management format. For projects using the PackageReference format, NuGet uses local sources first, then sources on network shares, then HTTP sources, regardless of the order in the configuration files. NuGet always ignores the order of sources with restore operations.
 
 - `disabledPackageSources`: this collection also has the same meaning as in `NuGet.Config` files, where each affected source is listed by its name and a true/false value indicating whether it's disabled. This allows the source name and URL to remain in `packageSources` without having it turned on by default. Individual developers can then re-enable the source by setting the source's value to false in other `NuGet.Config` files without having to find the correct URL again. This is also useful to supply developers with a full list of internal source URLs for an organization while enabling only an individual team's source by default.
 

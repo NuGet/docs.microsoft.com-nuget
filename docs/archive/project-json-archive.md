@@ -19,7 +19,7 @@ ms.workload:
 
 # project.json archive
 
-The `project.json` reference format was introduced with NuGet 3.x and used for certain project types. It was deprecated with the introduction of the PackageReference format, in which dependencies are listed directly in a project file.
+The `project.json` management format was introduced with NuGet 3.x and used for certain project types. It was deprecated with the introduction of the PackageReference format, in which dependencies are listed directly in a project file.
 
 Also see:
 
@@ -27,11 +27,11 @@ Also see:
 - [project.json impact on package authors](project-json-impact.md)
 - [project.json and UWP](project-json-and-uwp.md)
 
-## project.json reference format
+## project.json management format
 
 *Originally in [Package restore](../what-is-nuget.md).*
 
-In the list of reference formats:
+In the list of management formats:
 
 - [`project.json`](project-json.md): *(deprecated)* A JSON file that maintains a list of the project's dependencies with an overall package graph in an associated file, `project.lock.json`. This format is deprecated in favor of PackageReference.
 
@@ -137,7 +137,7 @@ When using the `project.json` format, NuGet also supports using a wildcard notat
 
 *Originally in [NuGet.Config reference](../reference/nuget-config-file.md).*
 
-`globalPackagesFolder` applies only to `project.json`.
+`globalPackagesFolder` applies only to `project.json`. (Added note: also applies to PackageReference.)
 
 ### nuspec file reference
 
@@ -149,7 +149,7 @@ The `<contentFiles>` element is used instead of `<files>` with `project.json`.
 
 *Originally in [Package Manager UI reference](../tools/package-manager-ui.md).*
 
-Projects using `project.json` reference format show only the **Show preview window** option.
+Projects using `project.json` management format show only the **Show preview window** option.
 
 ### Visual Studio Templates
 
