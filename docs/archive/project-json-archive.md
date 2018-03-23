@@ -134,7 +134,7 @@ When using the `project.json` format, NuGet also supports using a wildcard notat
 
 *Originally in [NuGet.Config reference](../reference/nuget-config-file.md).*
 
-`globalPackagesFolder` applies only to `project.json`.
+`globalPackagesFolder` applies only to `project.json`. (Added note: also applies to PackageReference.)
 
 ### nuspec file reference
 

@@ -44,13 +44,13 @@ In this topic:
 
 Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/cli-ref-config.md).
 
-Note: `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using the PackageReference format.
+`dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using the PackageReference format.
 
 | Key | Value |
 | --- | --- |
 | dependencyVersion (`packages.config` only) | The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly. This value is also used by the NuGet Package Manager UI. Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
 | globalPackagesFolder (projects using PackageReference only) | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages` (Windows) or `~/.nuget/packages` (Mac/Linux). A relative path can be used in project-specific `Nuget.Config` files. This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence. |
-| repositoryPath (`packages.config` only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)/packages` folder. A relative path can be used in project-specific `Nuget.Config` files. |
+| repositoryPath (`packages.config` only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)/packages` folder. A relative path can be used in project-specific `Nuget.Config` files. This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence. |
 | defaultPushSource | Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://<username>:<password>@<domain>`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the http_proxy and no_proxy environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
 
@@ -60,7 +60,7 @@ Note: `dependencyVersion` and `repositoryPath` apply only to projects using `pac
 <config>
     <add key="dependencyVersion" value="Highest" />
     <add key="globalPackagesFolder" value="c:\packages" />
-    <add key="repositoryPath" value="c:\repo" />
+    <add key="repositoryPath" value="c:\installed_packages" />
     <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
 </config>
 ```

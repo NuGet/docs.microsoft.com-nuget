@@ -116,7 +116,7 @@ To avoid using the *global-packages* folder, do one of the following:
 - Clear the folder using `nuget locals global-packages -clear` or `dotnet nuget locals global-packages --clear`
 - Temporarily change the location of the *global-packages* folder before the restore operation using one of the following methods:
   - Set the NUGET_PACKAGES environment variable to a different folder.
-  - Projects using PackageReference only: create a `NuGet.Config` file that sets `globalPackagesFolder` to a different folder (see [configuration settings](../reference/nuget-config-file.md#config-section)
+  - Create a `NuGet.Config` file that sets `globalPackagesFolder` (if using PackageReference) or `repositoryPath` (if using `packages.config`) to a different folder (see [configuration settings](../reference/nuget-config-file.md#config-section)
   - MSBuild only: specify a different folder with the `RestorePackagesPath` property.
 
 To avoid using the cache for HTTP sources, do one of the following:
