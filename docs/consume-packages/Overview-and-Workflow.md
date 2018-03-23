@@ -20,7 +20,7 @@ Between nuget.org and private package galleries that your organization might est
 
 ![Flow of going to a package source, finding a package, installing it in a project, then adding a using statement and calls to the package API](media/Overview-01-GeneralFlow.png)
 
-\* _Visual Studio and `dotnet.exe` only. The `nuget install` command does not modify project files or `packages.config`; entries must be mananged manually._
+\* _Visual Studio and dotnet.ex` only. The nuget install command does not modify project files or packages.config; entries must be managed manually._
 
 For further details, see [Finding and Choosing Packages](../consume-packages/finding-and-choosing-packages.md) and [Different ways to install a NuGet package](ways-to-install-a-package.md).
 

@@ -107,6 +107,24 @@ When restoring packages through any method, NuGet honors any constraints specifi
 
 In all cases, use the notation described in [Package versioning](../reference/package-versioning.md).
 
+## Forcing restore from package sources
+
+By default, NuGet restore operations use packages from the *global-packages* and *http-cache* folders, which are described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md).
+
+To avoid using the *global-packages* folder, do one of the following:
+
+- Clear the folder using `nuget locals global-packages -clear` or `dotnet nuget locals global-packages --clear`
+- Temporarily change the location of the *global-packages* folder before the restore operation using one of the following methods:
+  - Set the NUGET_PACKAGES environment variable to a different folder.
+  - Projects using PackageReference only: create a `NuGet.Config` file that sets `globalPackagesFolder` to a different folder (see [configuration settings](../reference/nuget-config-file.md#config-section)
+  - MSBuild only: specify a different folder with the `RestorePackagesPath` property.
+
+To avoid using the cache for HTTP sources, do one of the following:
+
+- Use the `-NoCache` option with `nuget restore` or the `--no-cache` option with `dotnet restore`. These options do not affect restore operations through the Visual Studio Package Manager UI or Console.
+- Clear the cache using `nuget locals http-cache -clear` or `dotnet nuget locals http-cache --clear`.
+- Temporarily set of the NUGET_HTTP_CACHE_PATH environment variable to a different folder.
+
 ## Troubleshooting
 
 See [Troubleshooting package restore](package-restore-troubleshooting.md).
