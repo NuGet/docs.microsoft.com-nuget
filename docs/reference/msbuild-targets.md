@@ -3,7 +3,7 @@ title: NuGet pack and restore as MSBuild targets | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 03/13/2018
+ms.date: 03/23/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -227,19 +227,21 @@ An example of a csproj file to pack a nuspec file is:
 </Project>
 ```
 
-### Advanced Extension Points to create customized package
+### Advanced extension points to create customized package
 
-The Pack target provides two extension points which run in the inner build (target framework specific build) with the goal of being able to pack target framework specific content/assemblies into a package.
+The `pack` target provides two extension points that run in the inner, target framework specific build. The extension points support including target framework specific content and assemblies into a package:
 
-#### For files that need to go inside lib folder (or folder specified via BuildOutputTargetFolder)
+- `TargetsForTfmSpecificBuildOutput` target: Use for files inside the `lib` folder or a folder specified using `BuildOutputTargetFolder`.
+- `TargetsForTfmSpecificContentInPackage` target: Use for files outside the `BuildOutputTargetFolder`.
 
-A package author can write their own custom target and specify it as the value of the property ```$(TargetsForTfmSpecificBuildOutput)```. The target should write out any files that need to go into the ```BuildOutputTargetFolder (lib by default)```  into the ItemGroup ```BuildOutputInPackage``` and set the following two metadata values :
+#### TargetsForTfmSpecificBuildOutput
 
-```a) FinalOutputPath :``` This is the absolute path of the file on disk (if not provided, the Identity is used to evaluate source path)
+Write a custom target and specify it as the value of the `$(TargetsForTfmSpecificBuildOutput)` property. For any files that need to go into the `BuildOutputTargetFolder` (lib by default), the target should write those files into the ItemGroup `BuildOutputInPackage` and set the following two metadata values:
 
-```b) TargetPath :``` This is optional and defaults to the name of the file. Package authors need to set it when the file needs to go into a subfolder within ```lib\<TargetFramework>``` , like satellite assemblies, which go under their respective culture folders.
+- `FinalOutputPath`: The absolute path of the file; if not provided, the Identity is used to evaluate source path.
+- `TargetPath`:  (Optional) Set when the file needs to go into a subfolder within `lib\<TargetFramework>` , like satellite assemblies that go under their respective culture folders. Defaults to the name of the file.
 
-An example:
+Example:
 
 ```
 <PropertyGroup>
@@ -253,16 +255,14 @@ An example:
     </BuildOutputInPackage>
   </ItemGroup>
 </Target>
-
 ```
 
-#### For files outside of BuildOutputTargetFolder
+#### TargetsForTfmSpecificContentInPackage
 
-A similar extension point has been provided for files that need to be packed outside of lib folder but are still specific to a target framework. Package authors can write their own custom target and specify it as the value of the property ```$(TargetsForTfmSpecificContentInPackage)```. The target should write out any files that need to be included in the package into the ItemGroup ```TfmSpecificPackageFile``` and set the following optional metadata:
+Write a custom target and specify it as the value of the `$(TargetsForTfmSpecificContentInPackage)` property. For any files to include in the package, the target should write those files into the ItemGroup `TfmSpecificPackageFile` and set the following optional metadata:
 
-```a) PackagePath :``` Path where the file should be output in the package. NuGet will throw a warning if more than one file is added to the same package path.
-
-```b) BuildAction:``` Default value has been set to None. This is only required if the package path is in contentFiles folder.
+- `PackagePath`: Path where the file should be output in the package. NuGet issues a warning if more than one file is added to the same package path.
+- `BuildAction`: The build action to assign to the file, required only if the package path is in the `contentFiles` folder. Defaults to "None".
 
 An example:
 ```
