@@ -11,6 +11,9 @@ description: The evolving nuget.org protocols to interact with NuGet clients.
 ms.reviewer:
 - kraigb
 - karann-msft
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # nuget.org protocols

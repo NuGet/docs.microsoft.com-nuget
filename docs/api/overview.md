@@ -16,6 +16,9 @@ keywords: NuGet V3 API, NuGet V2 API, NuGet JSON, NuGet registration API, NuGet 
 ms.reviewer:
 - karann
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet API

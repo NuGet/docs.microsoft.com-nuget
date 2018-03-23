@@ -12,6 +12,9 @@ keywords: nuget spec reference, spec command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # spec command (NuGet CLI)

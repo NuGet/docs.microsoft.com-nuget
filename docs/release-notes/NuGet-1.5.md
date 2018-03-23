@@ -12,6 +12,9 @@ keywords: NuGet 1.5 release notes, bug fixes, known issues, added features, DCRs
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet 1.5 Release Notes

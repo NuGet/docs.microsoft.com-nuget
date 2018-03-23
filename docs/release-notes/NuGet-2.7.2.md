@@ -12,6 +12,9 @@ keywords: NuGet 2.7.2 release notes, bug fixes, known issues, added features, DC
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet 2.7.2 Release Notes

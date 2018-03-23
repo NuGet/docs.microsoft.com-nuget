@@ -12,6 +12,9 @@ keywords: NuGet package deletion, NuGet package unlisting, prohibited uses of pa
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Deleting packages

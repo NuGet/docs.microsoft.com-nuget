@@ -12,6 +12,9 @@ keywords: NuGet 2.12 release notes, bug fixes, known issues, added features, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet 2.12 Release Notes

@@ -16,6 +16,9 @@ keywords: NuGet flat container, NuGet package base address, NuGet nupkg API, NuG
 ms.reviewer:
 - karann
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Package Content

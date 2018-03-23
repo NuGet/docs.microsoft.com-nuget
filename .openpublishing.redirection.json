@@ -21,6 +21,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/consume-packages/managing-the-nuget-cache.md",
+            "redirect_url": "/nuget/consume-packages/managing-the-global-packages-and-cache-folders",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/create-packages/Dependency-Versions.md",
             "redirect_url": "/nuget/reference/package-versioning",
             "redirect_document_id": false

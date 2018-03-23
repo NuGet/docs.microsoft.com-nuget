@@ -11,6 +11,10 @@ description: NuGet pack and restore can work directly as MSBuild targets with Nu
 keywords: NuGet and MSBuild, NuGet pack target, NuGet restore target
 ms.reviewer:
 - karann-msft
+- unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet pack and restore as MSBuild targets
@@ -250,7 +254,7 @@ Additional restore settings may come from MSBuild properties in the project file
 | RestorePackagesPath | User packages folder path. |
 | RestoreDisableParallel | Limit downloads to one at a time. |
 | RestoreConfigFile | Path to a `Nuget.Config` file to apply. |
-| RestoreNoCache | If true, avoids using the web cache. |
+| RestoreNoCache | If true, avoids using cached packages. See [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | RestoreIgnoreFailedSources | If true, ignores failing or missing package sources. |
 | RestoreTaskAssemblyFile | Path to `NuGet.Build.Tasks.dll`. |
 | RestoreGraphProjectInput | Semicolon-delimited list of projects to restore, which should contain absolute paths. |
@@ -278,7 +282,7 @@ Restore creates the following files in the build `obj` folder:
 
 | File | Description |
 |--------|--------|
-| `project.assets.json` | Previously `project.lock.json` |
+| `project.assets.json` | Contains the dependency graph of all package references. |
 | `{projectName}.projectFileExtension.nuget.g.props` | References to MSBuild props contained in packages |
 | `{projectName}.projectFileExtension.nuget.g.targets` | References to MSBuild targets contained in packages |
 

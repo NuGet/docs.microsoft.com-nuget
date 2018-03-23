@@ -12,6 +12,9 @@ keywords: nuget setapikey reference, setapikey command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # setapikey command (NuGet CLI)

@@ -12,6 +12,9 @@ keywords: NuGet 3.0 Preview release notes, bug fixes, known issues, added featur
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet 3.0 Preview Release Notes

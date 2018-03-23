@@ -13,6 +13,9 @@ ms.reviewer:
 - ananguar
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Signed packages

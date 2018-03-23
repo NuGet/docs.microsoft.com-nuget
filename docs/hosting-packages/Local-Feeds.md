@@ -12,6 +12,9 @@ keywords: NuGet feed, NuGet gallery, local package feed
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Local feeds

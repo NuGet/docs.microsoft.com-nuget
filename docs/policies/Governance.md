@@ -12,6 +12,9 @@ keywords: NuGet governance, NuGet benevolent dictator, committer responsibilitie
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet governance

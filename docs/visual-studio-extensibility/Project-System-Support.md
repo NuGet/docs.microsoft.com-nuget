@@ -12,6 +12,9 @@ keywords: NuGet in Visual Studio, custom project types, Visual Studio projects
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet support for the Visual Studio project system

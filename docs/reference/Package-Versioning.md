@@ -3,7 +3,7 @@ title: NuGet Package Version Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 12/08/2017
+ms.date: 03/23/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
@@ -13,6 +13,9 @@ ms.reviewer:
 - anandr
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Package versioning
@@ -105,8 +108,8 @@ When referring to package dependencies, NuGet supports using interval notation f
 
 | Notation | Applied rule | Description |
 |----------|--------------|-------------|
-| 1.0 | 1.0 ≥ x | Minimum version, inclusive |
-| (1.0,) | 1.0 > x | Minimum version, exclusive |
+| 1.0 | x ≥ 1.0 | Minimum version, inclusive |
+| (1.0,) | x > 1.0 | Minimum version, exclusive |
 | [1.0] | x == 1.0 | Exact version match |
 | (,1.0] | x ≤ 1.0 | Maximum version, inclusive |
 | (,1.0) | x < 1.0 | Maximum version, exclusive |

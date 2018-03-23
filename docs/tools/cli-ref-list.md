@@ -12,6 +12,9 @@ keywords: nuget list reference, list packages command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # list command (NuGet CLI)

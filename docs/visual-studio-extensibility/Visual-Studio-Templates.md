@@ -12,6 +12,9 @@ keywords: NuGet in Visual Studio, Visual Studio project templates, Visual Studio
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Packages in Visual Studio templates

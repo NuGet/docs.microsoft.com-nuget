@@ -12,6 +12,9 @@ keywords: NuGet API, NuGetGallery API, NuGet v3 libraries
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet Client SDK

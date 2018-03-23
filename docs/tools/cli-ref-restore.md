@@ -12,6 +12,9 @@ keywords: nuget restore reference, restore packages command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # restore command (NuGet CLI)
@@ -42,15 +45,15 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 | Help | Displays help information for the command. |
 | MSBuildPath | *(4.0+)* Specifies the path of MSBuild to use with the command, taking precedence over `-MSBuildVersion`. |
 | MSBuildVersion | *(3.2+)* Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild. |
-| NoCache | Prevents NuGet from using packages from local machine caches. |
+| NoCache | Prevents NuGet from using cached packages. See [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
-| OutputDirectory | Specifies the folder in which packages are installed. If no folder is specified, the current folder is used. |
+| OutputDirectory | Specifies the folder in which packages are installed. If no folder is specified, the current folder is used. Required when restoring with a `packages.config` file unless `PackagesDirectory` or `SolutionDirectory` is used.|
 | PackageSaveMode | Specifies the types of files to save after package installation: one of `nuspec`, `nupkg`, or `nuspec;nupkg`. |
-| PackagesDirectory | Same as `OutputDirectory`. |
+| PackagesDirectory | Same as `OutputDirectory`. Required when restoring with a `packages.config` file unless `OutputDirectory` or `SolutionDirectory` is used. |
 | Project2ProjectTimeOut | Timeout in seconds for resolving project-to-project references. |
 | Recursive | *(4.0+)* Restores all references projects for UWP and .NET Core projects. Does not apply to projects using `packages.config`. |
 | RequireConsent | Verifies that restoring packages is enabled before downloading and installing the packages. For details, see [Package Restore](../consume-packages/package-restore.md). |
-| SolutionDirectory | Specifies the solution folder. Not valid when restoring packages for a solution. |
+| SolutionDirectory | Specifies the solution folder. Not valid when restoring packages for a solution. Required when restoring with a `packages.config` file unless `PackagesDirectory` or `OutputDirectory` is used. |
 | Source | Specifies the list of package sources (as URLs) to use for the restore. If omitted, the command uses the sources provided in configuration files, see [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md). |
 | Verbosity |>Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
 

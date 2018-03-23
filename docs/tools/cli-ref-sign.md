@@ -12,6 +12,9 @@ keywords: nuget sign reference, sign command
 ms.reviewer:
 - karann
 - rmpablos
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # sign command (NuGet CLI)

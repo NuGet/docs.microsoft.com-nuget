@@ -12,6 +12,9 @@ keywords: nuget config reference, config command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # config command (NuGet CLI)

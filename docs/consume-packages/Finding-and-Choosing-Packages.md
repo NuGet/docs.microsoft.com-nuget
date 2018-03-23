@@ -3,16 +3,18 @@ title: Finding and Choosing NuGet Packages | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 12/07/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-ms.assetid: 8886f899-797b-4704-9d16-820b55b71186
 description: An overview of how to find and choose the best NuGet packages for a project including details on the NuGet search syntax.
 keywords: NuGet package consumption, NuGet package discovery, best NuGet packages, deciding on packages, consuming packages, evaluating package, NuGet search syntax
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Finding and evaluating NuGet packages for your project
@@ -27,7 +29,7 @@ When you visit nuget.org or open the Package Manager UI in Visual Studio, you se
 
 Notice the **Include prerelease** option on the upper right of the page. When selected, nuget.org shows all versions of packages including beta and other early releases. To show only stable released, clear the option.
 
-For specific needs, searching by tags (within Visual Studio's Package Manager or on a portal like nuget.org) is the most common means of discovering a suitable package. For example, searching on "json" lists all NuGet packages that are tagged with that keyword and thus have some relationship to the JSON data format.
+For specific needs, searching by tags (within the Visual Studio Package Manager or on a portal like nuget.org) is the most common means of discovering a suitable package. For example, searching on "json" lists all NuGet packages that are tagged with that keyword and thus have some relationship to the JSON data format.
 
 ![Search results for 'json' on nuget.org](media/Finding-02-SearchResults.png)
 
@@ -37,7 +39,7 @@ At this time, search results are sorted only by relevance, so you generally want
 
 ### Does the package support my project's target framework?
 
-NuGet installs a package into a project only if that package's supported frameworks include the project's target framework. (See [Supporting multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md) for how this is done when creating a package.) If the package is not compatible, NuGet issues an error.
+NuGet installs a package into a project only if that package's supported frameworks include the project's target framework. If the package is not compatible, NuGet issues an error.
 
 Some packages list their supported frameworks directly in the nuget.org gallery, but because such data is not required, many packages do not include that list. At present there is no means to search nuget.org for packages that support a specific target framework (the feature is under consideration, see [NuGet Issue 2936](https://github.com/NuGet/NuGetGallery/issues/2936)).
 
@@ -55,7 +57,7 @@ By default, nuget.org shows pre-release packages in search results. To search on
 
 ![Include prerelease checkbox on nuget.org](media/Finding-06-include-prerelease.png)
 
-In Visual Studio and when using the NuGet CLI, NuGet does not include pre-release versions by default. To change this behavior, do the following steps:
+In Visual Studio, and when using the NuGet and dotnet CLI tools, NuGet does not include pre-release versions by default. To change this behavior, do the following steps:
 
 - **Package Manager UI in Visual Studio**: In the **Manage NuGet Packages** UI, set the **Include prerelease** box. Setting or clearing this box refreshes the Package Manager UI and the list of available versions you can install.
 
@@ -63,7 +65,9 @@ In Visual Studio and when using the NuGet CLI, NuGet does not include pre-releas
 
 - **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../tools/powershell-reference.md).
 
-- **NuGet CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../tools/nuget-exe-cli-reference.md)
+- **nuget.exe CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../tools/nuget-exe-cli-reference.md)
+
+- **dotnet.exe CLI**: Specify the exact pre-release version using the `-v` argument. Refer to the [dotnet add package reference](/dotnet/core/tools/dotnet-add-package).
 
 <a name="native-cpp-packages"></a>
 
@@ -75,7 +79,7 @@ To find native packages on [nuget.org](https://www.nuget.org/packages), search u
 
 ## Evaluating packages
 
-The best way to evaluate the usefulness of a package is to download it and try it out in your code. After all, every highly popular package got started with only a few developers using it, and you might be one of the early adopters! (Note that all packages on nuget.org are routinely scanned for viruses.)
+The best way to evaluate the usefulness of a package is to download it and try it out in your code (all packages on nuget.org are routinely scanned for viruses, by the way). After all, every highly popular package got started with only a few developers using it, and you might be one of the early adopters!
 
 At the same time, using a NuGet package means taking a dependency on it, so you want to make sure it's robust and reliable. Because installing and directly testing a package is time-consuming, you can also learn a lot about a package's quality by using the information on a package's listing page:
 
@@ -89,7 +93,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 
 - *Recent installs*: on the package page under **Statistics**, select **View full stats**. The full stats page shows the package installs over the last six weeks by version number. A package that other developers are actively using is typically a better choice than one that's not.
 
-- *Support*: on the package page under **Info**, select **Project Site** (if available) to see what support options are available. A project with a dedicated site is generally better supported.
+- *Support*: on the package page under **Info**, select **Project Site** (if available) to see what support options the author provides. A project with a dedicated site is generally better supported.
 
 - *Developer history*: on the package page under **Owners**, select an owner to see what other packages they've published. Those with multiple packages are more likely to continue supporting their work in the future.
 
@@ -104,29 +108,19 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 
 NuGet package search works the same on nuget.org, from the NuGet CLI, and within the NuGet Package Manager extension in Visual Studio. In general, search is applied to keywords as well as package descriptions.
 
-- **Keywords**: Search looks for relevant packages that contain all the provided keywords. Example:
-
-    ```
-    modern UI javascript
-    ```
-
-- **Phrases**: Entering terms within quotation marks looks for exact case-insensitive matches to those terms. Example:
-
-    ```
-    "modern UI" package
-    ```
-
+- **Keywords**: Search looks for relevant packages that contain all the provided keywords. Example: `modern UI javascript`
+- **Phrases**: Entering terms within quotation marks looks for exact case-insensitive matches to those terms. Example: `"modern UI" package`
 - **Filtering**: You can apply a search term to a specific property by using the syntax `<property>:<term>` where `<property>` (case-insensitive) can be `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary`, and `owner`. Terms can be contained in quotes if needed, and you can search for multiple properties at the same time. Also, searches on the `id` property are substring matches, whereas `packageid` uses an exact match. Examples:
 
     ```
-    id:NuGet.Core                //Match any part of the id property
+    id:NuGet.Core                # Match any part of the id property
     Id:"Nuget.Core"
     ID:jQuery
-    title:jquery                 //Searches title as shown on the package listing
-    PackageId:jquery             //Match the package id exactly
-    id:jquery id:ui              //Search for multiple terms in the id
-    id:jquery tags:validation    //Search multiple properties
-    id:"jquery.ui"               //Phrase search
-    invalid:jquery ui            //Unsupported properties are ignored, so this
-                                 //is the same as searching on jquery ui
+    title:jquery                 # Searches title as shown on the package listing
+    PackageId:jquery             # Match the package id exactly
+    id:jquery id:ui              # Search for multiple terms in the id
+    id:jquery tags:validation    # Search multiple properties
+    id:"jquery.ui"               # Phrase search
+    invalid:jquery ui            # Unsupported properties are ignored, so this
+                                 # is the same as searching on jquery ui
     ```

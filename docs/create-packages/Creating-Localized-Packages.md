@@ -12,6 +12,9 @@ keywords: NuGet package localization, NuGet satellite assemblies, creating local
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Creating localized NuGet packages

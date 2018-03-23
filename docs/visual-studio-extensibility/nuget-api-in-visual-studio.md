@@ -12,6 +12,9 @@ keywords: NuGet API, NuGet in Visual Studio, NuGet programming interfaces
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet API in Visual Studio
