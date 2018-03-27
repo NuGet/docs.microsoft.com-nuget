@@ -35,7 +35,7 @@ The following tables list the rate limits for the NuGet.org API.
 
 ## Package search
 
-We recommend you to use NuGet.org's V3 APIs for search that are performant and do not have any limit currently. For V1 and V2 API's the followins limits are in place:
+We recommend you to use NuGet.org's [V3 APIs](https://docs.microsoft.com/nuget/api/search-query-service-resource) for search that are performant and do not have any limit currently. For V1 and V2 API's the followins limits are in place:
 
 | API | Throttling Type | Throttling Values | Main use case |
 |:---|:---|:---|:---|
