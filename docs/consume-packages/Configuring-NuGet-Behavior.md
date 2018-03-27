@@ -93,7 +93,7 @@ nuget config -set repositoryPath= -configfile /home/my.Config
 
 ### Creating a new config file
 
-Copy the template below into the new file and then use `nuget config --configFile <filename>` to set values:
+Copy the template below into the new file and then use `nuget config -configFile <filename>` to set values:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
