@@ -110,7 +110,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 
 ### PackageIconUrl
 
-As part of the change for [NuGet Issue 2582](https://github.com/NuGet/Home/issues/2582), `PackageIconUrl` will eventually be changed to `PackageIconUri` and can be relative path to a icon file which will included at the root of the resulting package.
+As part of the change for [NuGet Issue 352](https://github.com/NuGet/Home/issues/352), `PackageIconUrl` will eventually be changed to `PackageIconUri` and can be relative path to a icon file which will included at the root of the resulting package.
 
 ### Output assemblies
 
