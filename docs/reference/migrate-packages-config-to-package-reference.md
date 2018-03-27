@@ -18,3 +18,17 @@ ms.workload:
 ---
 
 # Migrate from packages.config to PackageReference
+
+Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating your project from packages.config to PackageReference. Package references, using the PackageReference node, manage NuGet dependencies directly within project files (as opposed to a separate packages.config file).
+
+## PackageReference v/s packages.config
+
+
+## Steps to migrate
+
+1. Open a solution containing a package.config based project
+
+2. Navigate to 
+
+
+## 
