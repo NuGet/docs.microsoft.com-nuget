@@ -36,8 +36,8 @@ The following tables list the rate limits for the NuGet.org API.
 
 For details on the following APIs, refer to the the [package search documentation](https://docs.microsoft.com/nuget/api/search-query-service-resource)
 
-Api | Throttling Type | Throttling Values | Main use case | V3 APIs support
-:-- |:-- |:-- |:-- | --
+Api | Throttling Type | Throttling Values | Main use case |
+:--- |:--- |:--- |:---|
 **GET** `/api/v1/Packages` | IP | 1000 / minute | Query NuGet package metadata via v1 OData `Packages` collection |
 **GET** `/api/v1/Search()` | IP | 3000 / minute | Search for NuGet packages via v1 Search endpoint | 
 
