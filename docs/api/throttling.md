@@ -1,5 +1,5 @@
 ---
-title: NuGet API Rate Limits | Microsoft Docs
+title: Rate Limits | Microsoft Docs
 author:
 - cmanu
 ms.author:
@@ -19,7 +19,7 @@ ms.workload:
  - "aspnet"
 ---
 
-# NuGet API Rate Limits
+# NuGet.org API Rate Limits
 
 The NuGet.org API enforces rate limiting to prevent abuse. Requests that exceed the rate limit return the following error: 
 
