@@ -14,9 +14,10 @@ keywords: NuGet API, rate limiting
 ms.reviewer:
 - skofman
 - anangaur
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
-
-
 
 # NuGet API Rate Limits
 
@@ -28,7 +29,6 @@ The NuGet.org API enforces rate limiting to prevent abuse. Requests that exceed 
       "message": "Rate limit is exceeded. Try again in 56 seconds."
     }
   ~~~
-
 
 The following tables list the rate limits for the NuGet.org API.
 
