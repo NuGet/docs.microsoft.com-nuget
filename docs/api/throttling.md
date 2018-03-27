@@ -19,7 +19,7 @@ ms.workload:
  - "aspnet"
 ---
 
-# NuGet.org API Rate Limits
+# API Rate Limits
 
 The NuGet.org API enforces rate limiting to prevent abuse. Requests that exceed the rate limit return the following error: 
 
