@@ -35,9 +35,11 @@ The following tables list the rate limits for the NuGet.org API.
 
 ## Package search
 
-We recommend you to use NuGet.org's [V3 APIs](https://docs.microsoft.com/nuget/api/search-query-service-resource) for search that are performant and do not have any limit currently. For V1 and V2 API's the followins limits are in place:
+> [!Note]
+> We recommend using NuGet.org's [V3 APIs](https://docs.microsoft.com/nuget/api/search-query-service-resource) for search that are performant and do not have any limit currently. For V1 and V2 search APIs, the followins limits apply:
 
-| API | Throttling Type | Throttling Values | Main use case |
+
+| API | Limit Type | Limit Value | API usecase |
 |:---|:---|:---|:---|
 **GET** `/api/v1/Packages` | IP | 1000 / minute | Query NuGet package metadata via v1 OData `Packages` collection |
 **GET** `/api/v1/Search()` | IP | 3000 / minute | Search for NuGet packages via v1 Search endpoint | 
@@ -46,7 +48,7 @@ We recommend you to use NuGet.org's [V3 APIs](https://docs.microsoft.com/nuget/a
 
 ## Package Push and Unlist
 
-| API | Throttling Type | Throttling Values | Main use case 
+| API | Limit Type | Limit Value | APU usecase | 
 |:---|:---|:---|:--- |
 **PUT** `/api/v2/package` | API Key | 100 / minute | Upload a new NuGet package (version) via v2 push endpoint 
 **DELETE** `/api/v2/package/{id}/{version}` | API Key | 100 / minute | Unlist a NuGet package (version) via v2 endpoint 
