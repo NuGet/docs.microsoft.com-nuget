@@ -53,8 +53,24 @@ Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project f
 
 ## Package compatibility issues
 
+Some aspects that were supported in packages.config are not supported in PackageReference. The migrator analyzes and detects such issues.
+
+* "install.ps1" script will be ignored when the package is installed after the migration
+* "content" assets will not be available when the package is installed after the migration
+* XDT transforms will not be applied when the package is installed after the upgrade
+* "lib\foo.dll" will be ignored when the package is installed after the migration
 
 
 ## Rolling back to packages.config
 
-As part 
+The project file and the packages.config are backedup to `<solution_root>\MigrationBackup\<unique_guid>\<project_name>\`
+
+1. Close the project and copy the project file and packages.config from the backup to the project folder which is usually `<solution_root>\<project_name>\`
+
+2. Open the project and bring up the package mananger console from Tools > NuGet Package Manager > Package Manager Console
+
+3. Run the following command from the package manager console
+
+```cli
+update-package -reinstall
+```
