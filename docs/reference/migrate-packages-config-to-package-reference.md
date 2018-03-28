@@ -19,7 +19,7 @@ ms.workload:
 
 # Migrate from packages.config to PackageReference
 
-Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project from packages.config to [package references (PackageReference) in project files](../consume-packages/Package-References-in-Project-Files.md).
+NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project from packages.config to [package references (PackageReference) in project files](../consume-packages/Package-References-in-Project-Files.md).
 
 > [!Note]
 > This option is currently not available for ASP.NET and C++ projects.
@@ -55,11 +55,37 @@ Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project f
 
 Some aspects that were supported in packages.config are not supported in PackageReference. The migrator analyzes and detects such issues.
 
-* "install.ps1" script will be ignored when the package is installed after the migration
-* "content" assets will not be available when the package is installed after the migration
-* XDT transforms will not be applied when the package is installed after the upgrade
-* "lib\foo.dll" will be ignored when the package is installed after the migration
+### "install.ps1" script will be ignored when the package is installed after the migration
 
+| | |
+| --- | --- |
+| **Issue** | PackageReference does not support install.ps1 scripts because they can potentially do bad things **TBD** |
+| **Potential impact** | The project might not build correctly |
+| **Workaround** | **TBD** |
+
+### "content" assets will not be available when the package is installed after the migration
+
+| | |
+| --- | --- |
+| **Issue** | PackageReference support contentFiles but not content **TBD** |
+| **Potential impact** | The project might not build correctly |
+| **Workaround** | **TBD** |
+ 
+### XDT transforms will not be applied when the package is installed after the upgrade
+
+| | |
+| --- | --- |
+| **Issue** | PackageReference does not support XDT transforms **TBD** |
+| **Potential impact** | The project might not build correctly |
+| **Workaround** | **TBD** |
+ 
+### "lib\foo.dll" will be ignored when the package is installed after the migration
+
+| | |
+| --- | --- |
+| **Issue** | PackageReference does not support .dll files at the root of the lib folder **TBD** |
+| **Potential impact** | The project might not build correctly |
+| **Workaround** | **TBD** |
 
 ## Rolling back to packages.config
 
@@ -70,7 +96,6 @@ The project file and the packages.config are backedup to `<solution_root>\Migrat
 2. Open the project and bring up the package mananger console from Tools > NuGet Package Manager > Package Manager Console
 
 3. Run the following command from the package manager console
-
-```cli
-update-package -reinstall
-```
+   ```cli
+   update-package -reinstall
+   ```
