@@ -21,15 +21,19 @@ ms.workload:
 
 NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project from packages.config to [package references (PackageReference) in project files](../consume-packages/Package-References-in-Project-Files.md).
 
-> [!Note]
-> This option is currently not available for ASP.NET and C++ projects.
+## Who should migrate?
 
-## Advantages of PackageReference
+* Visual Studio 2017 - The PackageReference feature is only supported in Visual Studio 2017. Projects that use PackageReference cannot be opened with Visual Studio 2015.
 
-* **Manage all project dependencies in one place** - Just like project to project references or assembly references, NuGet package references, using the `PackageReference` node, can be managed directly within project files (as opposed to a separate `packages.config` file).
-* **Uncluttered view of top-level dependencies** - Unlike packages.config, PackageReference only lists the NuGet packages you care about i.e. the packages you explicitly installed to the project . It does not clutter the list of installed packages (NuGet package manager UI) or the list of references (project file) with the dependencies of the NuGet package itself. 
-* **Performance improvements** - Solution-local packages folders are no longer used. Packages are resolved against the user’s cache at `%userdata%\.nuget`, rather than a solution specific packages folder. This makes PackageReference perform faster and consume less disk space by using a shared folder of packages on your workstation.
-* **Fine control over dependencies and content flow** - Using the existing features of MSBuild allows you to [conditionally reference a NuGet package](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition) and choose package references per target framework, configuration, platform, or other pivots.
+* C++ and ASP.NET projects - there are some limitations of PackageReference and the option to migrate is currently not available for C++ and ASP.NET project types.
+
+* Known package compatibility issues - due to fundamental differences between packages.config and PackageReference, some packages may not be fully incompatible with. The [package compatibility issues](#package-compatibility-issues) section talks about this in more detail.
+
+* Leverage the advantages of PackageReference
+  * **Manage all project dependencies in one place** - Just like project to project references or assembly references, NuGet package references, using the `PackageReference` node, can be managed directly within project files (as opposed to a separate `packages.config` file).
+  * **Uncluttered view of top-level dependencies** - Unlike packages.config, PackageReference only lists the NuGet packages you care about i.e. the packages you explicitly installed to the project . It does not clutter the list of installed packages (NuGet package manager UI) or the list of references (project file) with the dependencies of the NuGet package itself. 
+  * **Performance improvements** - Solution-local packages folders are no longer used. Packages are resolved against the user’s cache at `%userdata%\.nuget`, rather than a solution specific packages folder. This makes PackageReference perform faster and consume less disk space by using a shared folder of packages on your workstation.
+  * **Fine control over dependencies and content flow** - Using the existing features of MSBuild allows you to [conditionally reference a NuGet package](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition) and choose package references per target framework, configuration, platform, or other pivots.
 
 ## Steps to migrate
 
@@ -50,6 +54,21 @@ NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds supp
 5. Review the package compatibiltiy issues. The next section talks in detail about the types of issues and how they might impact your project.
 
 6. Click `OK` to begin the migration. At the end of the migration, a report is generated that provides the path to the backup, a snapshot of the packages that were installed as Top-level dependencies,  the list of compatibility issues that were displayed before the migration started. This report is also stored to the backup.
+
+7. Validate that the solution builds and runs. [Found an issue?]()
+
+## Steps to rollback to packages.config
+
+The project file and the packages.config are backedup to `<solution_root>\MigrationBackup\<unique_guid>\<project_name>\`
+
+1. Close the project and copy the project file and packages.config from the backup to the project folder which is usually `<solution_root>\<project_name>\`
+
+2. Open the project and bring up the package mananger console from Tools > NuGet Package Manager > Package Manager Console
+
+3. Run the following command from the package manager console
+   ```cli
+   update-package -reinstall
+   ```
 
 ## Package compatibility issues
 
@@ -87,15 +106,7 @@ Some aspects that were supported in packages.config are not supported in Package
 | **Potential impact** | The project might not build correctly |
 | **Workaround** | **TBD** |
 
-## Rolling back to packages.config
 
-The project file and the packages.config are backedup to `<solution_root>\MigrationBackup\<unique_guid>\<project_name>\`
+## Found an issue? Report it!
 
-1. Close the project and copy the project file and packages.config from the backup to the project folder which is usually `<solution_root>\<project_name>\`
-
-2. Open the project and bring up the package mananger console from Tools > NuGet Package Manager > Package Manager Console
-
-3. Run the following command from the package manager console
-   ```cli
-   update-package -reinstall
-   ```
+If you run into a problem with the migration experience, please [file an issue on the NuGet GitHub repository](https://github.com/NuGet/Home/issues/).
