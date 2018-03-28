@@ -34,7 +34,7 @@ Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project f
 ## Steps to migrate
 
 > [!Note]
-> Visual Studio creates a backup of the project when the migration is initiated which allows you to [roll back to packages.config](). 
+> Visual Studio creates a backup of the project when the migration is initiated which allows you to [roll back to packages.config](#rolling-back-to-packagesconfig). 
 
 1. Open a solution containing a package.config based project
 
@@ -45,9 +45,11 @@ Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project f
 > [!Note]
 > PackageRefence format supports transitive package restore and dynamically resolves dependencies. This means transitive dependecies do not need to be installed explicitly.
 
-4. Optional - you may choose to treat a NuGet package classified as a transitive dependency, to be treated as a top-level dependency by checking the check box against the package under the `Top-Level` column.
+4. Optional - you may choose to treat a NuGet package classified as a transitive dependency, to be treated as a top-level dependency by checking the `Top-Level` check box against the package.
 
 5. Review the package compatibiltiy issues. The next section talks in detail about the types of issues and how they might impact your project.
+
+6. Click `OK` to begin the migration. At the end of the migration, a report is generated that provides the path to the backup, a snapshot of the packages that were installed as Top-level dependencies,  the list of compatibility issues that were displayed before the migration started. This report is also stored to the backup.
 
 ## Package compatibility issues
 
