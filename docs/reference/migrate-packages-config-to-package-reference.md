@@ -21,7 +21,7 @@ ms.workload:
 
 Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project from packages.config to [package references (PackageReference) in project files](../consume-packages/Package-References-in-Project-Files.md).
 
-> Note
+> [!Note]
 > This option is currently not available for ASP.NET and C++ projects.
 
 ## Advantages of PackageReference
@@ -33,8 +33,8 @@ Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project f
 
 ## Steps to migrate
 
-> Note
-> The migrator saves a backup of the project file and the packages.config when the migration is initiated should you 
+> [!Note]
+> Visual Studio creates a backup of the project when the migration is initiated which allows you to [roll back to packages.config](). 
 
 1. Open a solution containing a package.config based project
 
@@ -42,15 +42,16 @@ Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project f
 
 3. The migrator analyzes the NuGet package references and attempts to categorize them into `Top-level dependencies` i.e. the NuGet packages that you explicitly installed v/s `Transitive dependencies` i.e. packages that were installed because one of your top-level NuGet package depends on it.
 
-> Note 
+> [!Note]
 > PackageRefence format supports transitive package restore and dynamically resolves dependencies. This means transitive dependecies do not need to be installed explicitly.
 
 4. Optional - you may choose to treat a NuGet package classified as a transitive dependency, to be treated as a top-level dependency by checking the check box against the package under the `Top-Level` column.
 
 5. Review the package compatibiltiy issues. The next section talks in detail about the types of issues and how they might impact your project.
 
-
 ## Package compatibility issues
+
+
 
 ## Rolling back to packages.config
 
