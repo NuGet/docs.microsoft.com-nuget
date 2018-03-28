@@ -38,7 +38,7 @@ NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds supp
 ## Steps to migrate
 
 > [!Note]
-> Visual Studio creates a backup of the project when the migration is initiated which allows you to [roll back to packages.config](#Steps-to-rollback-to-packages-config). 
+> Visual Studio creates a backup of the project when the migration is initiated which allows you to [roll back to packages.config](#steps-to-rollback-to-packagesconfig). 
 
 1. Open a solution containing a `packages.config` based project
 
@@ -55,7 +55,7 @@ NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds supp
 
 6. Click `OK` to begin the migration. At the end of the migration, a report is generated that provides a path to the backup, list of packages installed (Top-level dependencies), packages referenced as transitive dependencies, and a list of compatibility issues that were identified at the start of migration. This report is also saved to the backup folder.
 
-7. Validate that the solution builds and runs. [Found an issue?]()
+7. Validate that the solution builds and runs. [Found an issue?](#found-an-issue-report-it)
 
 ## Steps to rollback to packages.config
 
