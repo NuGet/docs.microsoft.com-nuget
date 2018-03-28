@@ -23,11 +23,11 @@ NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds supp
 
 ## Who should migrate?
 
-* Visual Studio 2017 - The PackageReference feature is only supported in Visual Studio 2017. Projects that use PackageReference cannot be opened with Visual Studio 2015.
+* Visual Studio 2017 - The PackageReference feature is only supported in Visual Studio 2017. Projects that use PackageReference cannot be opened with Visual Studio 2015 or older versions.
 
-* C++ and ASP.NET projects - there are some limitations of PackageReference and the option to migrate is currently not available for C++ and ASP.NET project types.
+* C++ and ASP.NET projects - The option to migrate is currently not available for C++ and ASP.NET project types.
 
-* Known package compatibility issues - due to fundamental differences between packages.config and PackageReference, some packages may not be fully incompatible with. The [package compatibility issues](#package-compatibility-issues) section talks about this in more detail.
+* Known package compatibility issues - Some packages may not be fully incompatible with PackageReference based projects. The [package compatibility issues](#package-compatibility-issues) section talks about this in more detail.
 
 * Leverage the advantages of PackageReference
   * **Manage all project dependencies in one place** - Just like project to project references or assembly references, NuGet package references, using the `PackageReference` node, can be managed directly within project files (as opposed to a separate `packages.config` file).
@@ -38,13 +38,13 @@ NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds supp
 ## Steps to migrate
 
 > [!Note]
-> Visual Studio creates a backup of the project when the migration is initiated which allows you to [roll back to packages.config](#rolling-back-to-packagesconfig). 
+> Visual Studio creates a backup of the project when the migration is initiated which allows you to [roll back to packages.config](#Steps-to-rollback-to-packages-config). 
 
-1. Open a solution containing a package.config based project
+1. Open a solution containing a `packages.config` based project
 
 2. Right click on the `References` node or the `packages.config` file and select `Migrate packages.config to PackageReference...`
 
-3. The migrator analyzes the NuGet package references and attempts to categorize them into `Top-level dependencies` i.e. the NuGet packages that you explicitly installed v/s `Transitive dependencies` i.e. packages that were installed because one of your top-level NuGet package depends on it.
+3. The migrator analyzes the NuGet package references and attempts to categorize them into `Top-level dependencies` i.e. NuGet packages that you explicitly installed v/s `Transitive dependencies` i.e. packages that were installed because one of the top-level NuGet package depends on it.
 
 > [!Note]
 > PackageRefence format supports transitive package restore and dynamically resolves dependencies. This means transitive dependecies do not need to be installed explicitly.
@@ -53,7 +53,7 @@ NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds supp
 
 5. Review the package compatibiltiy issues. The next section talks in detail about the types of issues and how they might impact your project.
 
-6. Click `OK` to begin the migration. At the end of the migration, a report is generated that provides the path to the backup, a snapshot of the packages that were installed as Top-level dependencies,  the list of compatibility issues that were displayed before the migration started. This report is also stored to the backup.
+6. Click `OK` to begin the migration. At the end of the migration, a report is generated that provides a path to the backup, list of packages installed (Top-level dependencies), packages referenced as transitive dependencies, and a list of compatibility issues that were identified at the start of migration. This report is also saved to the backup folder.
 
 7. Validate that the solution builds and runs. [Found an issue?]()
 
