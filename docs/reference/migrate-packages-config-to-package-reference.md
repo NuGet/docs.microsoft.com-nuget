@@ -101,7 +101,7 @@ Some aspects that were supported in packages.config are not supported in Package
 | | |
 | --- | --- |
 | **Description** | With PackageReference, assemblies present at the root of lib folder without a target framework specific sub-folder are ignored. NuGet looks for a sub-folder matching the TargetFrameworkMoniker (TFM) corresponding to the project’s target framework and installs the matching assemblies into the project. |
-| **Potential impact** | Packages that do not have a sub-folder matching the TargetFrameworkMoniker (TFM) corresponding to the project’s target framework may not behave as expected after the transition or fail installation during the migration |
+| **Potential impact** | Packages that do not have a sub-folder matching the TargetFrameworkMoniker (TFM) corresponding to the project’s target framework may not behave as expected or fail installation during the migration |
 
 
 ## Found an issue? Report it!
