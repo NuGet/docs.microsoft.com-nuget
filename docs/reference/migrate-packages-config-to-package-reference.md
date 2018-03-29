@@ -19,7 +19,7 @@ ms.workload:
 
 # Migrate from packages.config to PackageReference
 
-NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project from [packages.config](./packages-config.md) to [package references (PackageReference) in project files](../consume-packages/Package-References-in-Project-Files.md).
+Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project from [packages.config](./packages-config.md) to [package references (PackageReference) in project files](../consume-packages/Package-References-in-Project-Files.md).
 
 ## Why migrate?
 
@@ -48,9 +48,9 @@ We are working on further improving PackageReference. [Take a look at this GitHu
 3. The migrator analyzes the NuGet package references and attempts to categorize them into `Top-level dependencies` i.e. NuGet packages that you explicitly installed v/s `Transitive dependencies` i.e. packages that were installed because one of the top-level NuGet package depends on it.
 
    > [!Note]
-   > PackageReference format supports transitive package restore and dynamically resolves dependencies. This means transitive dependencies do not need to be installed explicitly.
+   > * PackageReference format supports transitive package restore and dynamically resolves dependencies. This means transitive dependencies do not need to be installed explicitly.
 
-4. (Optional) You may choose to treat a NuGet package classified as a transitive dependency, to be treated as a top-level dependency by checking the `Top-Level` check box against the package.
+4. (Optional) You may choose to treat a NuGet package classified as a transitive dependency, to be treated as a top-level dependency by checking the `Top-Level` check box against the package. This flag will automatically be checked for packages containing assets that do not flow transitively (i.e. `build`, `buildCrossTargeting`, `contentFiles`, or `analyzers`) or marked as a development dependency (i.e. `developmentDependency = "true"`).
 
 5. Review the package compatibility issues. The next section talks in detail about the types of issues and how they might impact your project.
 
