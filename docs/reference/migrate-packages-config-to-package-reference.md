@@ -19,7 +19,7 @@ ms.workload:
 
 # Migrate from packages.config to PackageReference
 
-NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project from packages.config to [package references (PackageReference) in project files](../consume-packages/Package-References-in-Project-Files.md).
+NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project from [packages.config](./packages-config.md) to [package references (PackageReference) in project files](../consume-packages/Package-References-in-Project-Files.md).
 
 ## Who should migrate?
 
