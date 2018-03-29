@@ -24,9 +24,9 @@ NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds supp
 ## Why migrate?
 
 * **Manage all project dependencies in one place** - Just like project to project references or assembly references, NuGet package references, using the `PackageReference` node, can be managed directly within project files (as opposed to a separate `packages.config` file).
-  * **Uncluttered view of top-level dependencies** - Unlike packages.config, PackageReference only lists the NuGet packages you care about i.e. the packages you explicitly installed to the project. It does not clutter the list of installed packages (NuGet package manager UI) or the list of references (project file) with the dependencies of the NuGet package itself. 
-  * **Performance improvements** - Solution-local packages folders are no longer used. Packages are resolved against the user’s cache at `%userdata%\.nuget`, rather than a solution specific packages folder. This makes PackageReference perform faster and consume less disk space by using a shared folder of packages on your workstation.
-  * **Fine control over dependencies and content flow** - Using the existing features of MSBuild allows you to [conditionally reference a NuGet package](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition) and choose package references per target framework, configuration, platform, or other pivots.
+* **Uncluttered view of top-level dependencies** - Unlike packages.config, PackageReference only lists the NuGet packages you care about i.e. the packages you explicitly installed to the project. It does not clutter the list of installed packages (NuGet package manager UI) or the list of references (project file) with the dependencies of the NuGet package itself. 
+* **Performance improvements** - Solution-local packages folders are no longer used. Packages are resolved against the user’s cache at `%userdata%\.nuget`, rather than a solution specific packages folder. This makes PackageReference perform faster and consume less disk space by using a shared folder of packages on your workstation.
+* **Fine control over dependencies and content flow** - Using the existing features of MSBuild allows you to [conditionally reference a NuGet package](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition) and choose package references per target framework, configuration, platform, or other pivots.
   
 We are working on further improving PackageReference. [Take a look at this GitHub issue for more details](TBD).
 
@@ -47,10 +47,10 @@ We are working on further improving PackageReference. [Take a look at this GitHu
 
 3. The migrator analyzes the NuGet package references and attempts to categorize them into `Top-level dependencies` i.e. NuGet packages that you explicitly installed v/s `Transitive dependencies` i.e. packages that were installed because one of the top-level NuGet package depends on it.
 
-> [!Note]
-> PackageReference format supports transitive package restore and dynamically resolves dependencies. This means transitive dependencies do not need to be installed explicitly.
+   > [!Note]
+   > PackageReference format supports transitive package restore and dynamically resolves dependencies. This means transitive dependencies do not need to be installed explicitly.
 
-4. Optional - you may choose to treat a NuGet package classified as a transitive dependency, to be treated as a top-level dependency by checking the `Top-Level` check box against the package.
+4. (Optional) You may choose to treat a NuGet package classified as a transitive dependency, to be treated as a top-level dependency by checking the `Top-Level` check box against the package.
 
 5. Review the package compatibility issues. The next section talks in detail about the types of issues and how they might impact your project.
 
