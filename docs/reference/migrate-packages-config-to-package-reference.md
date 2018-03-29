@@ -19,7 +19,7 @@ ms.workload:
 
 # Migrate from packages.config to PackageReference
 
-NuGet 4.x.x., which ships with Visual Studio 2017 Version 15.7 Preview 3 and later, supports for migrating a project from using the [packages.config](./packages-config.md) management format to the [PackageReference](../consume-packages/Package-References-in-Project-Files.md) format.
+Visual Studio 2017 Version 15.7 Preview 3 and later supports migrating a project from the [packages.config](./packages-config.md) management format to the [PackageReference](../consume-packages/Package-References-in-Project-Files.md) format.
 
 ## Benefits of using PackageReference
 
@@ -49,7 +49,7 @@ NuGet 4.x.x., which ships with Visual Studio 2017 Version 15.7 Preview 3 and lat
    > [!Note]
    > PackageReference supports transitive package restore and resolves dependencies dynamically, meaning that transitive dependencies need not be installed explicitly.
 
-1. (Optional) You may choose to treat a NuGet package classified as a transitive dependency, to be treated as a top-level dependency by selecting the **Top-Level** option for the package.
+1. (Optional) You may choose to treat a NuGet package classified as a transitive dependency as a top-level dependency by selecting the **Top-Level** option for the package. This option is automatically set for packages containing assets that do not flow transitively (those in the `build`, `buildCrossTargeting`, `contentFiles`, or `analyzers` folders) and those marked as a development dependency (`developmentDependency = "true"`).
 
 1. Review any [package compatibility issues](#package-compatibility-issues).
 
