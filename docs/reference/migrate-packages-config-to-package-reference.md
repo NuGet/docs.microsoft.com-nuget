@@ -31,7 +31,7 @@ NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds supp
 We are working on further improving PackageReference. [Take a look at this GitHub issue for more details](TBD).
 
 > [!Note]
-> * NuGet PackageReference support was added with Visual Studio 2017 and projects that use PackageReference are incomatible with Visual Studio 2015 and older.
+> * NuGet PackageReference support was added with Visual Studio 2017 and projects that use PackageReference are incompatible with Visual Studio 2015 and older.
 > * The option to migrate is currently not available for C++ and ASP.NET project types.
 > * Some packages may not be fully compatible with PackageReference based projects. The [package compatibility issues](#package-compatibility-issues) section talks about this in more detail.
 
@@ -79,7 +79,7 @@ Some aspects that were supported in packages.config are not supported in Package
 
 | | |
 | --- | --- |
-| **Description** | With PackageReference, install.ps1 and uninstall.ps1 powershell scripts are not executed while installing or uninstalling a package. |
+| **Description** | With PackageReference, install.ps1 and uninstall.ps1 PowerShell scripts are not executed while installing or uninstalling a package. |
 | **Potential impact** | Packages that depend on these scripts to configure some behavior in the destination project might not work as expected. |
 
 ### "content" assets will not be available when the package is installed after the migration
