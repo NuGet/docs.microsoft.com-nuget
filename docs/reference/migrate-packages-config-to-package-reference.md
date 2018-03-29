@@ -21,21 +21,22 @@ ms.workload:
 
 NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds support for migrating a project from [packages.config](./packages-config.md) to [package references (PackageReference) in project files](../consume-packages/Package-References-in-Project-Files.md).
 
-## Who should migrate?
+## Why migrate?
 
-* Visual Studio 2017 - The PackageReference feature is only supported in Visual Studio 2017. Projects that use PackageReference cannot be opened with Visual Studio 2015 or older versions.
-
-* C++ and ASP.NET projects - The option to migrate is currently not available for C++ and ASP.NET project types.
-
-* Known package compatibility issues - Some packages may not be fully incompatible with PackageReference based projects. The [package compatibility issues](#package-compatibility-issues) section talks about this in more detail.
-
-* Leverage the advantages of PackageReference
-  * **Manage all project dependencies in one place** - Just like project to project references or assembly references, NuGet package references, using the `PackageReference` node, can be managed directly within project files (as opposed to a separate `packages.config` file).
+* **Manage all project dependencies in one place** - Just like project to project references or assembly references, NuGet package references, using the `PackageReference` node, can be managed directly within project files (as opposed to a separate `packages.config` file).
   * **Uncluttered view of top-level dependencies** - Unlike packages.config, PackageReference only lists the NuGet packages you care about i.e. the packages you explicitly installed to the project. It does not clutter the list of installed packages (NuGet package manager UI) or the list of references (project file) with the dependencies of the NuGet package itself. 
   * **Performance improvements** - Solution-local packages folders are no longer used. Packages are resolved against the user’s cache at `%userdata%\.nuget`, rather than a solution specific packages folder. This makes PackageReference perform faster and consume less disk space by using a shared folder of packages on your workstation.
   * **Fine control over dependencies and content flow** - Using the existing features of MSBuild allows you to [conditionally reference a NuGet package](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition) and choose package references per target framework, configuration, platform, or other pivots.
+  
+We are working on further improving PackageReference. [Take a look at this GitHub issue for more details](TBD).
 
-## Steps to migrate
+> [!Note]
+> * NuGet PackageReference support was added with Visual Studio 2017 and projects that use PackageReference are incomatible with Visual Studio 2015 and older.
+> * The option to migrate is currently not available for C++ and ASP.NET project types.
+> * Some packages may not be fully compatible with PackageReference based projects. The [package compatibility issues](#package-compatibility-issues) section talks about this in more detail.
+
+
+## How to migrate?
 
 > [!Note]
 > Visual Studio creates a backup of the project when the migration is initiated which allows you to [roll back to packages.config](#steps-to-rollback-to-packagesconfig). 
@@ -57,7 +58,7 @@ NuGet 4.x.x. that ships with Visual Studio 2017 Version 15.7 Preview 3 adds supp
 
 7. Validate that the solution builds and runs. [Found an issue?](#found-an-issue-report-it)
 
-## Steps to rollback to packages.config
+## How to rollback to packages.config?
 
 The project file and the packages.config are backed up to `<solution_root>\MigrationBackup\<unique_guid>\<project_name>\`
 
@@ -72,39 +73,35 @@ The project file and the packages.config are backed up to `<solution_root>\Migra
 
 ## Package compatibility issues
 
-Some aspects that were supported in packages.config are not supported in PackageReference. The migrator analyzes and detects such issues.
+Some aspects that were supported in packages.config are not supported in PackageReference. The migrator analyzes and detects such issues. Any package that has one or more of the following issues may not behave as expected after the migration.
 
 ### "install.ps1" script will be ignored when the package is installed after the migration
 
 | | |
 | --- | --- |
-| **Issue** | PackageReference does not support install.ps1 scripts because they can potentially do bad things **TBD** |
-| **Potential impact** | The project might not build correctly |
-| **Workaround** | **TBD** |
+| **Description** | With PackageReference, install.ps1 and uninstall.ps1 powershell scripts are not executed while installing or uninstalling a package. |
+| **Potential impact** | Packages that depend on these scripts to configure some behavior in the destination project might not work as expected. |
 
 ### "content" assets will not be available when the package is installed after the migration
 
 | | |
 | --- | --- |
-| **Issue** | PackageReference support contentFiles but not content **TBD** |
-| **Potential impact** | The project might not build correctly |
-| **Workaround** | **TBD** |
+| **Description** | “content” assets are not supported with PackageReference and are ignored while installing the package. PackageReference adds support for contentFiles to have better transitive support and shared content.  |
+| **Potential impact** | “content” assets are not copied into the project and project code that depends on the presence of those assets will require refactoring.  |
  
 ### XDT transforms will not be applied when the package is installed after the upgrade
 
 | | |
 | --- | --- |
-| **Issue** | PackageReference does not support XDT transforms **TBD** |
-| **Potential impact** | The project might not build correctly |
-| **Workaround** | **TBD** |
+| **Description** | XDT transforms are not supported with PackageReference and .xdt files are ignored while installing or uninstalling a package.   |
+| **Potential impact** | XDT transforms will not be applied to any project XML files, most commonly, Web.config.(un)install.xdt, which means the project's web.config file will not be updated when the package is installed or uninstalled. |
  
 ### "lib\foo.dll" will be ignored when the package is installed after the migration
 
 | | |
 | --- | --- |
-| **Issue** | PackageReference does not support .dll files at the root of the lib folder **TBD** |
-| **Potential impact** | The project might not build correctly |
-| **Workaround** | **TBD** |
+| **Description** | With PackageReference, assemblies present at the root of lib folder without a target framework specific sub-folder are ignored. NuGet looks for a sub-folder matching the TargetFrameworkMoniker (TFM) corresponding to the project’s target framework and installs the matching assemblies into the project. |
+| **Potential impact** | Packages that do not have a sub-folder matching the TargetFrameworkMoniker (TFM) corresponding to the project’s target framework may not behave as expected after the transition or fail installation during the migration |
 
 
 ## Found an issue? Report it!
