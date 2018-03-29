@@ -1,5 +1,5 @@
 ---
-title: NuGet.org Organizations | Microsoft Docs
+title: Organizations on NuGet.org | Microsoft Docs
 author: anangaur
 ms.author: anangaur
 manager: unnir
