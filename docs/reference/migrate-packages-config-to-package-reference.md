@@ -29,7 +29,7 @@ Visual Studio 2017 Version 15.7 Preview 3 and later supports migrating a project
 * **Fine control over dependencies and content flow**: Using the existing features of MSBuild allows you to [conditionally reference a NuGet package](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition) and choose package references per target framework, configuration, platform, or other pivots.
 * **PackageReference is under active development**: See [PackageReference issues on GitHub](https://aka.ms/nuget-pr-improvements). packages.config is no longer under active development.
 
-### Reasons to not migrate
+### Limitations
 
 * NuGet PackageReference is not available in Visual Studio 2015 and earlier. Migrated projects can be opened only in Visual Studio 2017.
 * Migration is not currently available for C++ and ASP.NET project.
@@ -63,7 +63,7 @@ Visual Studio 2017 Version 15.7 Preview 3 and later supports migrating a project
 
 1. Close the migrated project.
 
-1. Copy the project file and `packages.config` from the backup to the project folder, typically `<solution_root>\MigrationBackup\<unique_guid>\<project_name>\`.
+1. Copy the project file and `packages.config` from the backup (typically `<solution_root>\MigrationBackup\<unique_guid>\<project_name>\`) to the project folder.
 
 1. Open the project.
 
