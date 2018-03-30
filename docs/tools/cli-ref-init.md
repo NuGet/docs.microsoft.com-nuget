@@ -12,6 +12,9 @@ keywords: nuget init reference, init command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # init command (NuGet CLI)

@@ -16,6 +16,9 @@ keywords: NuGet API package metadata, NuGet API registration, NuGet API unlisted
 ms.reviewer:
 - karann
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Package metadata

@@ -12,6 +12,9 @@ keywords: nuget verify reference, verify command
 ms.reviewer:
 - karann
 - rmpablos
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # verify command (NuGet CLI)

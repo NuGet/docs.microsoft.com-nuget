@@ -12,6 +12,9 @@ keywords: NuGet 4.0 RTM release notes, bug fixes, known issues, added features, 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet 4.0 RTM Release Notes

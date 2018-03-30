@@ -12,6 +12,9 @@ keywords: NuGet analyzer conventions, .NET analyzers, NuGet and .NET Compiler Pl
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Analyzer NuGet formats

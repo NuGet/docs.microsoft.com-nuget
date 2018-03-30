@@ -12,6 +12,9 @@ keywords: versioning, NuGet package versioning, NuGet prerelease versions, NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Building pre-release packages

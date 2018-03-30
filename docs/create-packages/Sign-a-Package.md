@@ -12,6 +12,9 @@ keywords: NuGet package signing, NuGet security, creating signed packages
 ms.reviewer:
 - karann-msft
 - anangaur
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Signing NuGet Packages

@@ -12,6 +12,9 @@ keywords: nuget.exe reference index, nuget.exe command-line interface, nuget.exe
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet CLI reference
@@ -47,8 +50,8 @@ Available commands and applicability to package creation, package consumption, a
 | [push](cli-ref-push.md) | Publishing | All | Publishes a package to a package source. |
 | [config](cli-ref-config.md) | All | All | Gets or sets NuGet configuration values. |
 | [help or ?](cli-ref-help.md) | All | All | Displays help information or help for a command. |
-| [locals](cli-ref-locals.md) | Consumption | 3.3+ | Clears or lists packages in various caches or the global packages folder, or identifies those folders. |
-| [restore](cli-ref-restore.md) | Consumption | 2.7+ | Restores all packages referenced by the package reference format in use. When running on Mono, restoring packages using the PackageReference format is not supported. |
+| [locals](cli-ref-locals.md) | Consumption | 3.3+ | Lists locations of the *global-packages*, *http-cache*, and *temp* folders and clears the contents of those folders. |
+| [restore](cli-ref-restore.md) | Consumption | 2.7+ | Restores all packages referenced by the package management format in use. When running on Mono, restoring packages using the PackageReference format is not supported. |
 | [setapikey](cli-ref-setapikey.md) | Publishing, Consumption | All | Saves an API key for a given package source when that package source requires a key for access. |
 | [spec](cli-ref-spec.md) | Creation | All | Generates a `.nuspec` file, using tokens if generating the file from a Visual Studio project. |
 

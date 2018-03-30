@@ -16,6 +16,9 @@ keywords: NuGet package manager console, NuGet powershell, managing NuGet packag
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Package Manager Console
@@ -78,19 +81,10 @@ Install-Package Elmah -ProjectName UtilitiesLib
 
 See [Install-Package](../tools/ps-ref-install-package.md).
 
-Installing a package performs the following actions:
+Installing a package in the console performs the same steps as described on [What happens when a package is installed](../consume-packages/ways-to-install-a-package.md#what-happens-when-a-package-is-installed), with the following additions:
 
-- Displays applicable license terms in the console window with implied agreement. If you do not agree to the terms, you should uninstall the package immediately.
-- Adds a reference to the project in whatever reference format is in use. References subsequently appear in Solution Explorer and the applicable reference format file. Note, however, that with PackageReference, you need to save the project to see the changes in the project file directly.
-- Caches the package:
-  - PackageReference:  package is cached at `%USERPROFILE%\.nuget\packages` and the lock file i.e. `project.assets.json` is updated.
-  - `packages.config`: creates a `packages` folder at the solution root and copies the package files into a subfolder within it. The `package.config` file is updated.
-- Updates `app.config` and/or `web.config` if the package uses [source and config file transformations](../create-packages/source-and-config-file-transformations.md).
-- Installs any dependencies if not already present in the project. This might update package versions in the process, as described in [Dependency Resolution](../consume-packages/dependency-resolution.md).
-- Displays the package's readme file, if available, in a Visual Studio window.
-
-> [!Tip]
-> One of the primary advantages of installing packages with the `Install-Package` command in the console is that adds a reference to the project just as if you used the Package Manager UI. In contrast, the `nuget install` CLI command only downloads the package and does not automatically add a reference.
+- The Console displays applicable license terms in its window with implied agreement. If you do not agree to the terms, you should uninstall the package immediately.
+- Also a reference to the package is added to the project file and appears in **Solution Explorer** under the **References** node, you need to save the project to see the changes in the project file directly.
 
 ## Uninstalling a package
 
@@ -109,12 +103,9 @@ See [Uninstall-Package](../tools/ps-ref-uninstall-package.md). Use [Get-Package]
 
 Uninstalling a package performs the following actions:
 
-- Removes references to the package from the project (and whatever reference format is in use). References no longer appear in Solution Explorer. (You might need to rebuild the project to see it removed from the **Bin** folder.)
+- Removes references to the package from the project (and whatever management format is in use). References no longer appear in **Solution Explorer**. (You might need to rebuild the project to see it removed from the **Bin** folder.)
 - Reverses any changes made to `app.config` or `web.config` when the package was installed.
 - Removes previously-installed dependencies if no remaining packages use those dependencies.
-
-> [!Tip]
-> Like `Install-Package`, the `Uninstall-Package` command has the benefit of managing references in the project, unlike the `nuget uninstall` CLI command.
 
 ## Updating a package
 

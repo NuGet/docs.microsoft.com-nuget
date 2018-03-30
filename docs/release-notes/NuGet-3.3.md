@@ -12,6 +12,9 @@ keywords: NuGet 3.3 release notes, bug fixes, known issues, added features, DCRs
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet 3.3 Release Notes

@@ -3,7 +3,7 @@ title: NuGet pack and restore as MSBuild targets | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 03/13/2018
+ms.date: 03/23/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
@@ -11,6 +11,10 @@ description: NuGet pack and restore can work directly as MSBuild targets with Nu
 keywords: NuGet and MSBuild, NuGet pack target, NuGet restore target
 ms.reviewer:
 - karann-msft
+- unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet pack and restore as MSBuild targets
@@ -106,7 +110,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 
 ### PackageIconUrl
 
-As part of the change for [NuGet Issue 2582](https://github.com/NuGet/Home/issues/2582), `PackageIconUrl` will eventually be changed to `PackageIconUri` and can be relative path to a icon file which will included at the root of the resulting package.
+As part of the change for [NuGet Issue 352](https://github.com/NuGet/Home/issues/352), `PackageIconUrl` will eventually be changed to `PackageIconUri` and can be relative path to a icon file which will included at the root of the resulting package.
 
 ### Output assemblies
 
@@ -227,6 +231,61 @@ An example of a csproj file to pack a nuspec file is:
 </Project>
 ```
 
+### Advanced extension points to create customized package
+
+The `pack` target provides two extension points that run in the inner, target framework specific build. The extension points support including target framework specific content and assemblies into a package:
+
+- `TargetsForTfmSpecificBuildOutput` target: Use for files inside the `lib` folder or a folder specified using `BuildOutputTargetFolder`.
+- `TargetsForTfmSpecificContentInPackage` target: Use for files outside the `BuildOutputTargetFolder`.
+
+#### TargetsForTfmSpecificBuildOutput
+
+Write a custom target and specify it as the value of the `$(TargetsForTfmSpecificBuildOutput)` property. For any files that need to go into the `BuildOutputTargetFolder` (lib by default), the target should write those files into the ItemGroup `BuildOutputInPackage` and set the following two metadata values:
+
+- `FinalOutputPath`: The absolute path of the file; if not provided, the Identity is used to evaluate source path.
+- `TargetPath`:  (Optional) Set when the file needs to go into a subfolder within `lib\<TargetFramework>` , like satellite assemblies that go under their respective culture folders. Defaults to the name of the file.
+
+Example:
+
+```
+<PropertyGroup>
+  <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetMyPackageFiles</TargetsForTfmSpecificBuildOutput>
+</PropertyGroup>
+
+<Target Name="GetMyPackageFiles">
+  <ItemGroup>
+    <BuildOutputInPackage Include="$(OutputPath)cs\$(AssemblyName).resources.dll">
+        <TargetPath>cs</TargetPath>
+    </BuildOutputInPackage>
+  </ItemGroup>
+</Target>
+```
+
+#### TargetsForTfmSpecificContentInPackage
+
+Write a custom target and specify it as the value of the `$(TargetsForTfmSpecificContentInPackage)` property. For any files to include in the package, the target should write those files into the ItemGroup `TfmSpecificPackageFile` and set the following optional metadata:
+
+- `PackagePath`: Path where the file should be output in the package. NuGet issues a warning if more than one file is added to the same package path.
+- `BuildAction`: The build action to assign to the file, required only if the package path is in the `contentFiles` folder. Defaults to "None".
+
+An example:
+```
+<PropertyGroup>
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomContentTarget</TargetsForTfmSpecificContentInPackage>
+</PropertyGroup>
+
+<Target Name=""CustomContentTarget"">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include=""abc.txt"">
+        <PackagePath>mycontent/$(TargetFramework)</PackagePath>
+      </TfmSpecificPackageFile>
+      <TfmSpecificPackageFile Include=""Extensions/ext.txt"" Condition=""'$(TargetFramework)' == 'net46'"">
+        <PackagePath>net46content</PackagePath>
+      </TfmSpecificPackageFile>  
+    </ItemGroup>
+  </Target>  
+```
+
 ## restore target
 
 `MSBuild /t:restore` (which `nuget restore` and `dotnet restore` use with .NET Core projects), restores packages referenced in the project file as follows:
@@ -250,7 +309,7 @@ Additional restore settings may come from MSBuild properties in the project file
 | RestorePackagesPath | User packages folder path. |
 | RestoreDisableParallel | Limit downloads to one at a time. |
 | RestoreConfigFile | Path to a `Nuget.Config` file to apply. |
-| RestoreNoCache | If true, avoids using the web cache. |
+| RestoreNoCache | If true, avoids using cached packages. See [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | RestoreIgnoreFailedSources | If true, ignores failing or missing package sources. |
 | RestoreTaskAssemblyFile | Path to `NuGet.Build.Tasks.dll`. |
 | RestoreGraphProjectInput | Semicolon-delimited list of projects to restore, which should contain absolute paths. |
@@ -278,7 +337,7 @@ Restore creates the following files in the build `obj` folder:
 
 | File | Description |
 |--------|--------|
-| `project.assets.json` | Previously `project.lock.json` |
+| `project.assets.json` | Contains the dependency graph of all package references. |
 | `{projectName}.projectFileExtension.nuget.g.props` | References to MSBuild props contained in packages |
 | `{projectName}.projectFileExtension.nuget.g.targets` | References to MSBuild targets contained in packages |
 

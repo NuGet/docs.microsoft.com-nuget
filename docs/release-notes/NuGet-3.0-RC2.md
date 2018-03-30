@@ -12,6 +12,9 @@ keywords: NuGet 3.0 RC2 release notes, bug fixes, known issues, added features, 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # NuGet 3.0 RC2 Release Notes

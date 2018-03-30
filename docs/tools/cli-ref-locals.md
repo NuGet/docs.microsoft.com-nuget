@@ -3,7 +3,7 @@ title: NuGet CLI locals command | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 01/18/2018
+ms.date: 03/19/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
@@ -12,31 +12,34 @@ keywords: nuget locals reference, locals command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # locals command (NuGet CLI)
 
 **Applies to:** package consumption &bullet; **Supported versions:** 3.3+
 
-Clears or lists local NuGet resources such as the http-request cache, packages cache, and the machine-wide global packages folder. The `locals` command can also be used to display a list of those locations. For more information, see [Managing the NuGet Cache](../consume-packages/managing-the-nuget-cache.md).
+Clears or lists local NuGet resources such as the *http-cache*, *global-packages* folder, and the temp folder. The `locals` command can also be used to display a list of those locations. For more information, see [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
 ## Usage
 
 ```cli
-nuget locals <cache> [options]
+nuget locals <folder> [options]
 ```
 
-where `<cache>` is one of `all`, `http-cache`, `packages-cache`, `global-packages`, and `temp` *(3.4+)*.
+where `<folder>` is one of `all`, `http-cache`, `packages-cache` *(3.5 and earlier)*, `global-packages`, and `temp` *(3.4+)*.
 
 ## Options
 
 | Option | Description |
 | --- | --- |
-| Clear | Clears the specified cache. |
+| Clear | Clears the specified folder. |
 | ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
-| List | Lists the location of the specified cache, or the locations of all caches when used with *all*. |
+| List | Lists the location of the specified folder, or the locations of all folders when used with *all*. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
 | Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
 
@@ -48,3 +51,5 @@ Also see [Environment variables](cli-ref-environment-variables.md)
 nuget locals all -list
 nuget locals http-cache -clear
 ```
+
+For additional examples, see [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md).

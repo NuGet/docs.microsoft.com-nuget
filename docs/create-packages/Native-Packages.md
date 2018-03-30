@@ -12,8 +12,11 @@ keywords: NuGet native packages, NuGet C++ packages, native code packages, targe
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
+
 # Creating native packages
 
 A native package contains native C++ code instead of managed code, allowing it to be used within C++ projects. (See [Native C++ Packages](../consume-packages/finding-and-choosing-packages.md#native-c-packages) in the Consume section.)

@@ -12,13 +12,16 @@ keywords: NuGet project.json, NuGet package references, NuGet dependencies, proj
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # project.json reference
 
 *NuGet 3.x+*
 
-The `project.json` file maintains a list of packages used in a project, known as a package reference format. It supersedes `packages.config` but is in turn superseded by [PackageReference](../consume-packages/package-references-in-project-files.md) with NuGet 4.0+.
+The `project.json` file maintains a list of packages used in a project, known as a package management format. It supersedes `packages.config` but is in turn superseded by [PackageReference](../consume-packages/package-references-in-project-files.md) with NuGet 4.0+.
 
 The [`project.lock.json`](#projectlockjson) file (described below) is also used in projects employing `project.json`.
 
@@ -118,7 +121,7 @@ Lists the frameworks that the project runs on, such as `net45`, `netcoreapp`, `n
     }
  ```
 
-Only a single entry is allowed in the `frameworks` section. (An exception is `project.json` files for ASP.NET projects that are build with deprecated DNX toolchain, which allows for multiple targets.)
+Only a single entry is allowed in the `frameworks` section. (An exception is `project.json` files for ASP.NET projects that are build with deprecated DNX tool chain, which allows for multiple targets.)
 
 ## Runtimes
 

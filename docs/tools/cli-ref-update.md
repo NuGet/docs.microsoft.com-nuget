@@ -12,6 +12,9 @@ keywords: nuget update reference, update package command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # update command (NuGet CLI)

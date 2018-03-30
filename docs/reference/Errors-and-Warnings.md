@@ -13,6 +13,9 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 
 f1_keywords:
   - "NU1000"
@@ -133,7 +136,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | --- | --- |
 | **Issue** | The package identifier is found but a version within the specified dependency range cannot be found on any of the sources. The range might be specified by a package and not the user. |
 | **Example message** | *Unable to find package NuGet.Versioning with version (>= 9.0.1)<br/>  - Found 30 version(s) in nuget.org [ Nearest version: 4.0.0 ]<br/>  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>  - Found 0 version(s) in dotnet-core<br/>  - Found 0 version(s) in dotnet-roslyn* |
-| **Solution** | Edit the project file or `packages.config` to correct the package version. Also check that the [NuGet configuration](../consume-packages/Configuring-NuGet-Behavior.md) identifies the package sources your expect to be using. You may need to change the requeted version if this package is referenced by the project directly. |
+| **Solution** | Edit the project file to correct the package version. Also check that the [NuGet configuration](../consume-packages/Configuring-NuGet-Behavior.md) identifies the package sources your expect to be using. You may need to change the requeted version if this package is referenced by the project directly. |
 
 ### NU1103
 
@@ -141,7 +144,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | --- | --- |
 | **Issue** | The project specified a stable version for the dependency range, but no stable versions were found in that range. Pre-release versions were found but are not allowed. |
 | **Example message** | *Unable to find a stable package NuGet.Versioning with version (>= 3.0.0)<br/>  - Found 10 version(s) in dotnet-buildtools [ Nearest version: 4.0.0-rc-2129 ]<br/>  - Found 9 version(s) in NuGetVolatile [ Nearest version: 3.0.0-beta-00032 ]<br/>  - Found 0 version(s) in dotnet-core<br/>  - Found 0 version(s) in dotnet-roslyn* |
-| **Solution** |  Edit the version range in the project file or `packages.config` to include pre-release versions. See [Package versioning](../reference/Package-Versioning.md). |
+| **Solution** |  Edit the version range in the project file to include pre-release versions. See [Package versioning](../reference/Package-Versioning.md). |
 
 ### NU1104
 
@@ -164,8 +167,8 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | | |
 | --- | --- |
 | **Issue** | Dependency constraints cannot be resolved. |
-| **Example message** | *Unable to satisfy conflicting requests for {id}: {conflict path} Framework: {target graph}* 
-| **Solution** | Edit the project file or `packages.config` to specify more open-ended ranges for the dependency rather than an exact version. |
+| **Example message** | *Unable to satisfy conflicting requests for {id}: {conflict path} Framework: {target graph}* |
+| **Solution** | Edit the project file to specify more open-ended ranges for the dependency rather than an exact version. |
 |
 
 <a name="nu1107"></a>
@@ -176,7 +179,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | --- | --- |
 | **Issue** | Unable to resolve dependency constraints between packages. |
 | **Example message** | *Version conflict detected for NuGet.Versioning. Reference the package directly from the project to resolve this issue.<br/>  NuGet.Packaging 3.5.0 -> NuGet.Versioning (= 3.5.0)<br/>  NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)* |
-| **Solution** | Packages with dependency constraints on exact versions do not allow other packages to increase the version if needed. Add a reference to the project directly (in the project file or `packages.config`) with the exact version required. |
+| **Solution** | Packages with dependency constraints on exact versions do not allow other packages to increase the version if needed. Add a reference to the project directly (in the project file) with the exact version required. |
 
 <a name="nu1108"></a>
 

@@ -12,6 +12,9 @@ keywords: NuGet credential providers, authenticate with feed, authenticate with 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Authenticating feeds in Visual Studio with NuGet credential providers

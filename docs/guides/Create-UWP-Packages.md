@@ -4,7 +4,7 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 03/21/2017
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
 ms.technology: null
 description: An end-to-end walkthrough of creating NuGet packages using a Windows Runtime Component for the Universal Windows Platform.
@@ -12,6 +12,9 @@ keywords: create a package, packages for UWP, Windows Runtime Components
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Create UWP packages

@@ -12,6 +12,9 @@ keywords: NuGet package dependencies, package references, project files, Package
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Package references (PackageReference) in project files

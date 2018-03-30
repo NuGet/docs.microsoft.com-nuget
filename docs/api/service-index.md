@@ -16,6 +16,9 @@ keywords: NuGet API entry point, NuGetA PI endpoint discovery
 ms.reviewer:
 - karann
 - unnir
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # Service index

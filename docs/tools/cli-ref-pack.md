@@ -12,6 +12,9 @@ keywords: nuget pack reference, pack command
 ms.reviewer:
 - karann-msft
 - unniravindranathan
+ms.workload: 
+ - "dotnet"
+ - "aspnet"
 ---
 
 # pack command (NuGet CLI)
