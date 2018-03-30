@@ -273,7 +273,7 @@ The following example shows different variations of the `<group>` element:
 ```xml
 <references>
     <group>
-    <reference file="a.dll" />
+        <reference file="a.dll" />
     </group>
 
     <group targetFramework="net45">
@@ -281,7 +281,7 @@ The following example shows different variations of the `<group>` element:
     </group>
 
     <group targetFramework="netcore45">
-    <reference file="bcore45.dll" />
+        <reference file="bcore45.dll" />
     </group>
 </references>
 ```
@@ -604,13 +604,13 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-    <id>sample</id>
-    <version>1.2.3</version>
-    <authors>Kim Abercrombie, Franck Halmaert</authors>
-    <description>Sample exists only to show a sample .nuspec file.</description>
-    <language>en-US</language>
-    <projectUrl>http://xunit.codeplex.com/</projectUrl>
-    <licenseUrl>http://xunit.codeplex.com/license</licenseUrl>
+        <id>sample</id>
+        <version>1.2.3</version>
+        <authors>Kim Abercrombie, Franck Halmaert</authors>
+        <description>Sample exists only to show a sample .nuspec file.</description>
+        <language>en-US</language>
+        <projectUrl>http://xunit.codeplex.com/</projectUrl>
+        <licenseUrl>http://xunit.codeplex.com/license</licenseUrl>
     </metadata>
 </package>
 ```
@@ -621,13 +621,13 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-    <id>sample</id>
-    <version>1.0.0</version>
-    <authors>Microsoft</authors>
-    <dependencies>
-        <dependency id="another-package" version="3.0.0" />
-        <dependency id="yet-another-package" version="1.0.0" />
-    </dependencies>
+        <id>sample</id>
+        <version>1.0.0</version>
+        <authors>Microsoft</authors>
+        <dependencies>
+            <dependency id="another-package" version="3.0.0" />
+            <dependency id="yet-another-package" version="1.0.0" />
+        </dependencies>
     </metadata>
 </package>
 ```
@@ -638,14 +638,14 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-    <id>routedebugger</id>
-    <version>1.0.0</version>
-    <authors>Jay Hamlin</authors>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Route Debugger is a little utility I wrote...</description>
+        <id>routedebugger</id>
+        <version>1.0.0</version>
+        <authors>Jay Hamlin</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Route Debugger is a little utility I wrote...</description>
     </metadata>
     <files>
-    <file src="bin\Debug\*.dll" target="lib" />
+        <file src="bin\Debug\*.dll" target="lib" />
     </files>
 </package>
 ```
@@ -656,20 +656,20 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-    <id>PackageWithGacReferences</id>
-    <version>1.0</version>
-    <authors>Author here</authors>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>
-        A package that has framework assemblyReferences depending
-        on the target framework.
-    </description>
-    <frameworkAssemblies>
-        <frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
-        <frameworkAssembly assemblyName="System.Net" targetFramework="net40-client, net40" />
-        <frameworkAssembly assemblyName="Microsoft.Devices.Sensors" targetFramework="sl4-wp" />
-        <frameworkAssembly assemblyName="System.Json" targetFramework="sl3" />
-    </frameworkAssemblies>
+        <id>PackageWithGacReferences</id>
+        <version>1.0</version>
+        <authors>Author here</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>
+            A package that has framework assemblyReferences depending
+            on the target framework.
+        </description>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
+            <frameworkAssembly assemblyName="System.Net" targetFramework="net40-client, net40" />
+            <frameworkAssembly assemblyName="Microsoft.Devices.Sensors" targetFramework="sl4-wp" />
+            <frameworkAssembly assemblyName="System.Json" targetFramework="sl3" />
+        </frameworkAssemblies>
     </metadata>
 </package>
 ```
