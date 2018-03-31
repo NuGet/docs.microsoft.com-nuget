@@ -4,14 +4,17 @@
 3. Add the folder where you placed `nuget.exe` to your PATH environment variable to use the CLI tool from anywhere.
 
 #### macOS/Linux
-Behaviors may vary slightly by OS distribution. From a shell prompt:
+Behaviors may vary slightly by OS distribution.
 
 1. Install [Mono 4.4.2 or later](http://www.mono-project.com/docs/getting-started/install/).
-2. Execute the following commands to download the latest stable `nuget.exe` to `/usr/local/bin`, give the file permissions to execute, and create a symbolic link so `.exe` is not required when running the CLI:
+2. Execute the following commands at a shell prompt:
     
     ```bash
+    # Download the latest stable `nuget.exe` to `/usr/local/bin`
     sudo curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+    # Give the file permissions to execute
     sudo chmod 755 /usr/local/bin/nuget.exe
+    # Create a symbolic link so ".exe" is not required when running the CLI
     sudo ln -s /usr/local/bin/nuget.exe /usr/local/bin/nuget
     ```
 3. Test the installation by entering `nuget` with no parameters. NuGet CLI help should display.
