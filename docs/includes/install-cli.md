@@ -14,7 +14,11 @@ Behaviors may vary slightly by OS distribution.
     sudo curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
     # Give the file permissions to execute
     sudo chmod 755 /usr/local/bin/nuget.exe
-    # Create a symbolic link so ".exe" is not required when running the CLI
-    sudo ln -s /usr/local/bin/nuget.exe /usr/local/bin/nuget
     ```
-3. Test the installation by entering `nuget` with no parameters. NuGet CLI help should display.
+3. Create an alias by adding the following script to the appropriate file for your OS (typically `~/.bash_aliases` or `~/.bash_profile`):
+    
+    ```bash
+    # Create as alias for nuget
+    alias nuget="mono /usr/local/bin/nuget.exe"
+    ```
+4. Reload the shell.  Test the installation by entering `nuget` with no parameters. NuGet CLI help should display.
