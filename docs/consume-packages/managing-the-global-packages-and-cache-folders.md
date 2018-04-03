@@ -95,7 +95,7 @@ nuget locals all -clear
 
 Any packages used by projects that are currently open in Visual Studio are not cleared from the *global-packages* folder.
 
-In Visual Studio, use the **Tools > NuGet Package Manager > Package Manager Settings** menu command, then select **Clear All NuGet Cache(s)**. Managing the cache isn't presently available through the Package Manager Console.
+In Visual Studio 2017, use the **Tools > NuGet Package Manager > Package Manager Settings** menu command, then select **Clear All NuGet Cache(s)**. Managing the cache isn't presently available through the Package Manager Console. In Visual Studio 2015, use the CLI commands instead.
 
 ![NuGet option command for clearing caches](media/options-clear-caches.png)
 
