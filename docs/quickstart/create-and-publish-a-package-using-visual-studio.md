@@ -59,7 +59,7 @@ namespace AppLogger
 
 ## Configure package properties
 
-1. Select the **Project > Properties** menu command, then select the **Package** tab. (The **Package** tab appears only for .NET Standard class library projects; if you are targeting .NET Framework, see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) instead.)
+1. Select the **Project > Properties** menu command, then select the **Package** tab. (The **Package** tab appears only for .NET Standard class library projects; if you are targeting .NET Framework, see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) instead. If it doesn't appear for a .NET Standard project, you may need to update Visual Studio 2017 to the latest release.)
 
     ![NuGet package properties in a Visual Studio project](media/qs_create-vs-01-package-properties.png)
 
