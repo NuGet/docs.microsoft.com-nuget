@@ -92,8 +92,8 @@ Allowable values for these tags are as follows, with multiple values separated b
 
 | Value | Description |
 | --- | ---
-| compile | Contents of the `lib` folder |
-| runtime | Contents of the `runtimes` folder |
+| compile | Contents of the `lib` folder and controls whether your project can compile against the assemblies within the folder |
+| runtime | Contents of the `lib` and `runtimes` folder and controls whether these assemblies will be copied out to the build output directory |
 | contentFiles | Contents of the `contentfiles` folder |
 | build | Props and targets in the `build` folder |
 | analyzers | .NET analyzers |
