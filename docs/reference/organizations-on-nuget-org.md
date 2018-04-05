@@ -14,9 +14,14 @@ ms.reviewer:
 - camsoper
 ---
 
-Organizations enables businesses and open-source projects to collaborate across many packages at once using a single NuGet.org identity.  
+Organizations enables businesses and open-source projects to collaborate across many packages at once using a single NuGet.org identity. For a package consumer, an organization account appears same as an existing user account on NuGet.org. 
 
 ## Adding a new Organization
+
+To add a new Organization, go to **Manage Organizations** and click on **Add new organization**. 
+
+
+### Transform existing account to an Organization
 
 ## Managing Orgnizations 
 
