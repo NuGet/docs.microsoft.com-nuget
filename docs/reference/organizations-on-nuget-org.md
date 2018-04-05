@@ -25,14 +25,13 @@ To add a new Organization, go to **Manage Organizations** and click on **Add new
 
 ### Transform existing account to an Organization
 
-## Managing Orgnizations 
+## Managing Organizations 
 
 ### Organization membership roles
 
-### Managing packages across Organizations
+### Managing packages
 
-## Publishing packages from an organization
-
+## Publishing packages
 ### Uploading packages
 
 ### Using API keys
