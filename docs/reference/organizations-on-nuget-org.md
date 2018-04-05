@@ -20,7 +20,7 @@ Organizations enables businesses and open-source projects to collaborate across 
 
 To add a new Organization, go to **Manage Organizations** and click on **Add new organization**. 
 
-![manage org option](media/org-manage-option.png)
+![manage org option](./media/org-manage-option.png)
 
 
 ### Transform existing account to an Organization
