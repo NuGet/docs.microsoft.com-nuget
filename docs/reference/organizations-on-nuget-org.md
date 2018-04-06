@@ -42,15 +42,49 @@ This will bring up the transform page that requires you to provide a user accoun
 
 ## Managing Organizations 
 
+### Adding members
+As the Organization Administrator, you can add more members to it. You would need to provide the NuGet.org's **user account names** to add them as members. You **cannot** add members through their email addresses.
 
-### Organization membership roles
+While adding members, you cwould need to select one of the following membership roles:
+
+#### Collaborator
+A colloborator can manage all the organization's packages. He/She can submit new packages, update or unlist existing packages. A collaborator, however, cannot make changes to the organization i.e. a collaborator cannot modify the email address, change notification settings or add/remove members to the organization. A collaborator can also not request or act on co-ownership requests for the organization's packages. 
+
+### Administrator
+An administrator has absolute permissions on the organization and its packages. Like a collaborator, he/she can manage all the organization's packages - submit new packages, update or unlist existing packages. In addition he/she can also make changes to the organization metadata and memberships. An administrator can also request or act on co-ownership requests for the organization's packages.
 
 ### Managing packages
+As an organization member, you can see all the organization's packages in the `Packages` section of the Organization's details page. You can also view all your packages across your account and all organizations you are member of, on the `Manage Packages` page. You can select the account filter to view packages by your account or any specific organization.
+
+![manage packages with account filter](TBD)
 
 ## Publishing packages
+You can publish packages to an organzation in the same ways you can publish packages to your account i.e. either by directly uploading the NuGet package or by pushing the package through CLI.
+
 ### Uploading packages
+When you directly upload a new package on the [Upload](https://www.nuget.org/packages/manage/upload) page, you can select the account (your account) or organization it should be uploaded for:
+
+![upload package with account option](TBD)
+
+For submitting any update to an existing package, you would not see this account/organization dropdown as the package ownership is already known to NuGet.org.
 
 ### Using API keys
+To [push a package through CLI](https://docs.microsoft.com/en-us/nuget/create-packages/publish-a-package#command-line), you would need to get an API key that needs to be used with the [`push` command](https://docs.microsoft.com/en-us/nuget/tools/cli-ref-push). 
 
+While creating a new API key, please select the organization for which you need this API key for. Any API key you create would be only applicable to this organization that you choose here:
 
-## Removing Organizations
+![api key with account option](TBD)
+
+## Removing Organization
+You can remove yourself from an organization by clicking on the `X` button against your membership:
+
+![remove from organization](TBD)
+
+If you are an Administrator, you can remove any other member including another Administrator from the organization. If you are the sole Administrator for an Organization, you cannot remove yourself unless you add another member as an Organization administrator.
+
+If you wish to delete an organization, you can do so:
+* If you are the sole member (Administrator) of the organization.
+* If your organization does not own any package.
+
+If the above conditions are satisfied, you can request deletion of the organization. 
+
