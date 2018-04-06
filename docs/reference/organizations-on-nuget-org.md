@@ -29,14 +29,19 @@ To add a new Organization, go to **Manage Organizations** and click on **Add new
 
 ![add new organization](TBD)
 
+Once the Organization account is created, you are the Administrator and you can add more members and submit packages against it.
+
 ### Transform existing account to an Organization
 If you were managing your packages as a team using a single user account and would like to convert the user account into an organization, you can do so through the **Transform your account to an organization** option:
 
+![transform existing account to an organization - option](TBD)
+
+This will bring up the transform page that requires you to provide a user account who would be the Administrator to the newly transformed organization. Please be aware that this is an irreversible process i.e. you cannot transform back to a user account from an organization account you transformed to.
+
 ![transform existing account to an organization](TBD)
 
-This will bring up the transform page that requires you to provide a user account who would be the Administrator to the newly transformed organization. 
-
 ## Managing Organizations 
+
 
 ### Organization membership roles
 
