@@ -30,7 +30,7 @@ We create a backup of the project file and `packages.config` to `<solution_root>
 ### Set PackageReference as the default
 Open the Options dialog by selecting `Tools > Options`, and then select  `NuGet Package Manager > General`. From here you can change the "Default package management format" to PackageReference. This means when you install the first NuGet package for a newly created project, NuGet will use the PackageReference format. Newly created projects that come with existing NuGet references using packages.config (such as WPF), must be migrated to PackageReference after project creation.
 
-![trypackageref](../images/2017-03-16-NuGet-now-fully-integrated-into-MSBuild/trypackageref.gif)
+![trypackageref](../images/2018-04-04-migrate-packages-config-to-package-reference/trypackageref.gif)
 
 ### Limitations
 Some project types do not yet support the `PackageReference` format. Also, some packages are [not fully compatible with `PackageReference`](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference#package-compatibility-issues). While we work towards bringing the `PackageReference` goodness to all project types, and to make these packages compatible with `PackageReference`, we have limited the option to migrate for C++, JS, and ASP.NET (.NET Framework) projects.
