@@ -18,7 +18,7 @@ To try out the new migration experience, [download Visual Studio 2017 Preview](h
 
 <sup>[*Not all project types will have this option.](#limitations)</sup>
 
-![tryprmigrator](/images/2018-04-04-migrate-packages-config-to-package-reference/2018.04.04.15.7Prev3.nuget_migrator.PNG)
+![tryprmigrator](../images/2018-04-04-migrate-packages-config-to-package-reference/2018.04.04.15.7Prev3.nuget_migrator.PNG)
 
 The migrator analyzes the existing references, calculates the dependency graph, and categorizes them into top-level and transitive dependencies. You have the flexibility to mark a package, that was categorized as a transitive dependency, to be treated as a top-level dependency. It also scans for potential [package incompatibilities](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference#package-compatibility-issues) and warns about them.
 
