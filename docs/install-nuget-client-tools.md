@@ -3,7 +3,7 @@ title: Installing NuGet client tools | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 01/24/2018
+ms.date: 04/09/2018
 ms.topic: quickstart
 ms.prod: nuget
 ms.technology: null
@@ -21,7 +21,7 @@ ms.workload:
 
 > **Looking to install a package? See [Ways to install NuGet packages](consume-packages/ways-to-install-a-package.md).**
 
-To work with NuGet, as a package consumer or creator, you can use [command-line interface (CLI) tools](#cli-tools) as well as [NuGet features in Visual Studio](#visual-studio). This article briefly outlines the capabilities of the different tools, how to install them, and their comparative [feature availability](#feature-availability).
+To work with NuGet, as a package consumer or creator, you can use [command-line interface (CLI) tools](#cli-tools) as well as [NuGet features in Visual Studio](#visual-studio). This article briefly outlines the capabilities of the different tools, how to install them, and their comparative [feature availability](#feature-availability). To get started using NuGet to consume packages, see [Install and use a package (.NET CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) and [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md). To get started creating NuGet packages, see [Create and publish a NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) and [Create and publish a NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md).
 
 | Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Download&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
