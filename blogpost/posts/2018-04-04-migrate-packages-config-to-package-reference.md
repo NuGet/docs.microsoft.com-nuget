@@ -5,7 +5,7 @@ author: Karan Nandwani
 comments: false
 ---
 
-Last year, we introduced the option to [make PackageReference the default package management format](https://blog.nuget.org/20170316/NuGet-now-fully-integrated-into-MSBuild.html#what-about-other-project-types-that-are-not-net-core) for managing NuGet dependencies when installing the first NuGet package for a newly created projects. With Visual Studio Version 15.7 Preview 3, we have introduced the capability to migrate existing C++, JavaScript, and ASP.NET (.NET Framework) projects that use the `packages.config` format to use PackageReference instead. We're working on adding support for other project types.
+Last year, we introduced the option to [make PackageReference the default package management format](https://blog.nuget.org/20170316/NuGet-now-fully-integrated-into-MSBuild.html#what-about-other-project-types-that-are-not-net-core) for managing NuGet dependencies when installing the first NuGet package for a newly created projects. With Visual Studio Version 15.7 Preview 3, we have introduced the capability to migrate existing projects that use the `packages.config` format to use PackageReference instead.
 
 Benefits of using PackageReference include:
 
@@ -20,7 +20,7 @@ Benefits of using PackageReference include:
 
 To try out the new migration experience, [download Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/), open a `packages.config` based project, right-click the **References** node in **Solution Explorer**, and select the **Migrate packages.config to PackageReference....** command.
 
-<sup>[*Not all project types currently support migration.*](#limitations)</sup>
+*Note that the migrator does not presently support C++, JavaScript, and ASP.NET (.NET Framework) projects.*
 
 ![tryprmigrator](../images/2018-04-04-migrate-packages-config-to-package-reference/2018.04.04.15.7Prev3.nuget_migrator.PNG)
 
@@ -44,7 +44,7 @@ In the NuGet options in Visual Studio (opened using the **Tools > NuGet Package 
 
 ### Limitations
 
-Although we're working to bring the PackageReference goodness to all project types and to make all packages compatible with PackageReference, migration is presently limited to C++, JavaScript, and ASP.NET (.NET Framework) projects.
+Although we're working to bring the PackageReference goodness to all project types and to make all packages compatible with PackageReference, migration is not presently supported for C++, JavaScript, and ASP.NET (.NET Framework) projects.
 
 Also, some packages are [not fully compatible with PackageReference](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference#package-compatibility-issues).
 
