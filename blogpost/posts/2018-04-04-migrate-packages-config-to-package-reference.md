@@ -22,7 +22,7 @@ To try out the new migration experience, [download Visual Studio 2017 Preview](h
 
 The migrator analyzes the existing references, calculates the dependency graph, and categorizes them into top-level and transitive dependencies. You have the flexibility to mark a package, that was categorized as a transitive dependency, to be treated as a top-level dependency. It also scans for potential [package incompatibilities](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference#package-compatibility-issues) and warns about them.
 
-![migratordialog](/images/2018-04-04-migrate-packages-config-to-package-reference/2018.04.04.15.7Prev3.nuget_migrator_dialog.PNG)
+![migratordialog](../images/2018-04-04-migrate-packages-config-to-package-reference/2018.04.04.15.7Prev3.nuget_migrator_dialog.PNG)
 
 ### Backup and roll back
 We create a backup of the project file and `packages.config` to `<solution_root>\MigrationBackup\<unique_guid>\<project_name>\` before the migration begins to allow you to [roll back to `packages.config`](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference#how-to-roll-back-to-packagesconfig) if necessary.
@@ -30,7 +30,7 @@ We create a backup of the project file and `packages.config` to `<solution_root>
 ### Set PackageReference as the default
 Open the Options dialog by selecting `Tools > Options`, and then select  `NuGet Package Manager > General`. From here you can change the "Default package management format" to PackageReference. This means when you install the first NuGet package for a newly created project, NuGet will use the PackageReference format. Newly created projects that come with existing NuGet references using packages.config (such as WPF), must be migrated to PackageReference after project creation.
 
-![trypackageref](/images/2017-03-16-NuGet-now-fully-integrated-into-MSBuild/trypackageref.gif)
+![trypackageref](../images/2017-03-16-NuGet-now-fully-integrated-into-MSBuild/trypackageref.gif)
 
 ### Limitations
 Some project types do not yet support the `PackageReference` format. Also, some packages are [not fully compatible with `PackageReference`](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference#package-compatibility-issues). While we work towards bringing the `PackageReference` goodness to all project types, and to make these packages compatible with `PackageReference`, we have limited the option to migrate for C++, JS, and ASP.NET (.NET Framework) projects.
