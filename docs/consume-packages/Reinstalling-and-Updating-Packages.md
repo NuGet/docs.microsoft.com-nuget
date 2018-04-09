@@ -77,7 +77,7 @@ The same command without `-reinstall` updates a package to a newer version, if a
 Update-Package <package_name>
 ```
 
-By default, `Update-Package` affects all packages in a solution. To limit the action to a specific project, use the `-ProjectName` switch, using the name of the project as it appears in Solution Explorer:
+By default, `Update-Package` affects all projects in a solution. To limit the action to a specific project, use the `-ProjectName` switch, using the name of the project as it appears in Solution Explorer:
 
 ```ps
 # Reinstall the package in just MyProject
