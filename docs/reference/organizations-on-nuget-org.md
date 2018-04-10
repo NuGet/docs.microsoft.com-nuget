@@ -34,11 +34,11 @@ Once the Organization account is created, you are the Administrator and you can 
 ### Transform existing account to an Organization
 If you were managing your packages as a team using a single user account and would like to convert the user account into an organization, you can do so through the **Transform your account to an organization** option:
 
-![transform existing account to an organization - option](TBD)
+![transform existing account to an organization - option](./media/org-transform-option.png)
 
 This will bring up the transform page that requires you to provide a user account who would be the Administrator to the newly transformed organization. Please be aware that this is an irreversible process i.e. you cannot transform back to a user account from an organization account you transformed to.
 
-![transform existing account to an organization](TBD)
+![transform existing account to an organization](./media/org-transform-page.png)
 
 ## Managing Organizations 
 
@@ -56,7 +56,7 @@ An administrator has absolute permissions on the organization and its packages. 
 ### Managing packages
 As an organization member, you can see all the organization's packages in the `Packages` section of the Organization's details page. You can also view all your packages across your account and all organizations you are member of, on the `Manage Packages` page. You can select the account filter to view packages by your account or any specific organization.
 
-![manage packages with account filter](TBD)
+![manage packages with account filter](./media/org-manage-packages-filter.png)
 
 ## Publishing packages
 You can publish packages to an organzation in the same ways you can publish packages to your account i.e. either by directly uploading the NuGet package or by pushing the package through CLI.
@@ -64,7 +64,7 @@ You can publish packages to an organzation in the same ways you can publish pack
 ### Uploading packages
 When you directly upload a new package on the [Upload](https://www.nuget.org/packages/manage/upload) page, you can select the account (your account) or organization it should be uploaded for:
 
-![upload package with account option](TBD)
+![upload package with account option](./media/org-upload-option.png)
 
 For submitting any update to an existing package, you would not see this account/organization dropdown as the package ownership is already known to NuGet.org.
 
@@ -73,12 +73,12 @@ To [push a package through CLI](https://docs.microsoft.com/en-us/nuget/create-pa
 
 While creating a new API key, please select the organization for which you need this API key for. Any API key you create would be only applicable to this organization that you choose here:
 
-![api key with account option](TBD)
+![api key with account option](./media/org-apikey-option.png)
 
 ## Removing Organization
 You can remove yourself from an organization by clicking on the `X` button against your membership:
 
-![remove from organization](TBD)
+![remove from organization](./media/org-remove-self-option.png)
 
 If you are an Administrator, you can remove any other member including another Administrator from the organization. If you are the sole Administrator for an Organization, you cannot remove yourself unless you add another member as an Organization administrator.
 
