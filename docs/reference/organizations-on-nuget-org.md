@@ -61,7 +61,7 @@ An administrator has absolute permissions on the organization and its packages. 
 ### Managing packages
 As an organization member, you can see all the organization's packages in the `Packages` section of the Organization's details page. You can also view all your packages across your account and all organizations you are member of, on the `Manage Packages` page. You can select the account filter to view packages by your account or any specific organization.
 
-![manage packages with account filter](./media/org-manage-packages-filter.png)
+![manage packages with account filter](./media/org-manage-packages-option.png)
 
 ## Publishing packages
 You can publish packages to an organzation in the same ways you can publish packages to your account i.e. either by directly uploading the NuGet package or by pushing the package through CLI.
