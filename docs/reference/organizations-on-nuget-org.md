@@ -29,6 +29,11 @@ To add a new Organization, go to **Manage Organizations** and click on **Add new
 
 ![add new organization](./media/org-add-new-option.png)
 
+On the add new organization page, provide the organization name and email address. Organization accounts share the same namespace as accounts and hence you would require to key in a name that is not already an existing account on NuGet.org. Similarly the email address has to be unique one thats not already been used.
+
+
+![add new organization](./media/org-add-new-page.png)
+
 Once the Organization account is created, you are the Administrator and you can add more members and submit packages against it.
 
 ### Transform existing account to an Organization
