@@ -84,7 +84,7 @@
 ## [ID prefix reservation](reference/id-prefix-reservation.md)
 ## [NuGet client SDK](reference/nuget-client-sdk.md)
 ## [Signed packages reference](reference/signed-packages-reference.md)
-## [Organizations on NuGet.org](reference/organizations-on-nuget-org.md)
+## [Organizations on nuget.org](reference/organizations-on-nuget-org.md)
 ## Extensibility
 ### [NuGet credential providers for Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [nuget.exe credential providers](reference/extensibility/nuget-exe-credential-providers.md)

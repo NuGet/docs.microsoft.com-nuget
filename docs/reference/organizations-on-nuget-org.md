@@ -1,97 +1,105 @@
 ---
-title: Organizations on NuGet.org | Microsoft Docs
+title: Organizations on nuget.org | Microsoft Docs
 author: anangaur
 ms.author: anangaur
 manager: unnir
-ms.date: 04/04/2018
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: null
-description: Organizations on NuGet.org helps you to manage packages published by group or in a team, company environment.
+description: Organizations on nuget.org helps you to manage packages published by group or in a team, company environment.
 ms.reviewer:
 - karann-msft
 - kraigb
 - camsoper
 ---
 
-Organizations enables businesses and open-source projects to collaborate across many packages at once using a single NuGet.org identity. For a package consumer, an organization account appears same as an existing user account on NuGet.org. 
+# Organization on nuget.org
 
-## User accounts vs. Organization accounts
-Your user account is your identity on NuGet.org. Your user account can be a member of any number of organizations. A package can belong to an organization account the same way it could belong to a user account. Package consumers do not see any difference between an user account or the organization account. Both appear as package `owners`.
+Organizations enables businesses and open-source projects to collaborate across many packages at once using a single nuget.org identity. For a package consumer, an organization account appears same as an existing user account on nuget.org.
 
-An organization account would have one or more user accounts as its members. These members can manage a set of packages while maintining a single identity ownership. 
+## User accounts vs. organization accounts
 
-## Adding a new Organization
+Your user account is your identity on nuget.org and can be a member of any number of organizations. A package can belong to an organization account like it can belong to a user account. Package consumers don't see any difference between an user account or the organization account: both appear as package `owners`.
 
-To add a new Organization, go to **Manage Organizations**... 
+An organization account has one or more user accounts as its members. These members can manage a set of packages while maintaining a single identity for ownership.
 
-![manage org option](./media/org-manage-option.png)
+## Adding a new organization
 
-.. and click on **Add new organization**
+To add a new organization, select your account on nuget.org, then select the **Manage Organizations...** menu command:
 
-![add new organization](./media/org-add-new-option.png)
+![Menu option on nuget.org for Manager Organizations](media/org-manage-option.png)
 
-On the add new organization page, provide the organization name and email address. Organization accounts share the same namespace as accounts and hence you would require to key in a name that is not already an existing account on NuGet.org. Similarly the email address has to be unique one thats not already been used.
+On the next page, select the **Add new organization** button:
 
+![Button to create a new organization on nuget.org](media/org-add-new-option.png)
 
-![add new organization](./media/org-add-new-page.png)
+On the next page, provide the organization name and email address. Because nuget.org manages organization and user names together, the organization name must be different from any other existing organization or user accounts. The email address must also be unique across all accounts.
 
-Once the Organization account is created, you are the Administrator and you can add more members and submit packages against it.
+![Add new organization page on nuget.org](media/org-add-new-page.png)
 
-### Transform existing account to an Organization
-If you were managing your packages as a team using a single user account and would like to convert the user account into an organization, you can do so through the **Transform your account to an organization** option:
+Once the organization account is created, you are the administrator and can submit packages for the organization and add organization members.
 
-![transform existing account to an organization - option](./media/org-transform-option.png)
+### Transform existing account to an organization
 
-This will bring up the transform page that requires you to provide a user account who would be the Administrator to the newly transformed organization. Please be aware that this is an irreversible process i.e. you cannot transform back to a user account from an organization account you transformed to.
+If you're managing packages as a team using a single user account and would like to convert that account into an organization, use the **Transform your account to an organization** option on the **Manage Organizations** page:
 
-![transform existing account to an organization](./media/org-transform-page.png)
+![Option on nuget.org to transform an existing account to an organization](media/org-transform-option.png)
 
-## Managing Organizations 
+On the next page, specify different user account to assign as the administrator of the organization, then select **Transform**.
 
-### Adding members
-As the Organization Administrator, you can add more members to it. You would need to provide the NuGet.org's **user account names** to add them as members. You **cannot** add members through their email addresses.
+![Entering information for transforming a user account to an organization](media/org-transform-page.png)
 
-While adding members, you cwould need to select one of the following membership roles:
+> [!Warning]
+> Account conversion is irreversible: you cannot transform an organization back to a user account.
 
-### Collaborator
-A colloborator can manage all the organization's packages. He/She can submit new packages, update or unlist existing packages. A collaborator, however, cannot make changes to the organization i.e. a collaborator cannot modify the email address, change notification settings or add/remove members to the organization. A collaborator can also not request or act on co-ownership requests for the organization's packages. 
+## Managing organization members
 
-### Administrator
-An administrator has absolute permissions on the organization and its packages. Like a collaborator, he/she can manage all the organization's packages - submit new packages, update or unlist existing packages. In addition he/she can also make changes to the organization metadata and memberships. An administrator can also request or act on co-ownership requests for the organization's packages.
+As the organization administrator, you can add members by providing each member's nuget.org *user account name*; email addresses cannot be used. You then mark each member as a collaborator or administrator with the following permissions:
+
+| Permission | Collaborator | Administrator |
+| --- | --- | --- |
+| Manage the organization's packages<br/>(submit new packages, update or unlist existing packages) | Yes | Yes |
+| Change organization metadata<br/>(email address, notification settings) | No | Yes |
+| Manage organization members | No | Yes |
+| Request or act on co-ownership requests for organization packages | No | Yes |
 
 ## Managing packages
-As an organization member, you can see all the organization's packages in the `Packages` section of the Organization's details page. You can also view all your packages across your account and all organizations you are member of, on the `Manage Packages` page. You can select the account filter to view packages by your account or any specific organization.
 
-![manage packages with account filter](./media/org-manage-packages-option.png)
+As an organization member, you can see all the organization's packages in the **Packages** section of the organization's details page. On the **Manage Packages** page you can also view packages across your account and all organizations of which you're a member. You can select the account filter to view packages by your account or any specific organization.
+
+![Managing packages with the account filter](media/org-manage-packages-option.png)
 
 ## Publishing packages
-You can publish packages to an organzation in the same ways you can publish packages to your account i.e. either by directly uploading the NuGet package or by pushing the package through CLI.
+
+You publish packages to an organization like you publish packages to a user account, by directly uploading the package to nuget.org or by pushing the package through the `nuget push` or `dotnet nuget push` CLI commands.
 
 ### Uploading packages
-When you directly upload a new package on the [Upload](https://www.nuget.org/packages/manage/upload) page, you can select the account (your account) or organization it should be uploaded for:
 
-![upload package with account option](./media/org-upload-option.png)
+When you directly upload a new package on the [nuget.org Upload](https://www.nuget.org/packages/manage/upload) page, you assign the package owner to a user or organization account :
 
-For submitting any update to an existing package, you would not see this account/organization dropdown as the package ownership is already known to NuGet.org.
+![Upload package with account option](media/org-upload-option.png)
+
+When submitting updates to an existing package, you don't see the account dropdown because package ownership is already known to nuget.org.
 
 ### Using API keys
-To [push a package through CLI](https://docs.microsoft.com/en-us/nuget/create-packages/publish-a-package#command-line), you would need to get an API key that needs to be used with the [`push` command](https://docs.microsoft.com/en-us/nuget/tools/cli-ref-push). 
 
-While creating a new API key, please select the organization for which you need this API key for. Any API key you create would be only applicable to this organization that you choose here:
+To push a package through the `nuget push` or `dotnet nuget push` CLI commands, you must obtain the API key needed by those commands. For details, see [Publish a package](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio#publish-the-package).
 
-![api key with account option](./media/org-apikey-option.png)
+When creating a new API key, select the appropriate organization in the **Package Owner** drop down. Any API key you create is applicable only to the chosen organization:
 
-## Removing Organization
-You can remove yourself from an organization by clicking on the `X` button against your membership:
+![API key with account option](media/org-apikey-option.png)
 
-![remove from organization](./media/org-remove-self-option.png)
+## Removing an organization
 
-If you are an Administrator, you can remove any other member including another Administrator from the organization. If you are the sole Administrator for an Organization, you cannot remove yourself unless you add another member as an Organization administrator.
+As a user, you can remove yourself from an organization by selecting the `X` button shown by your organization membership:
 
-If you wish to delete an organization, you can do so:
-* If you are the sole member (Administrator) of the organization.
-* If your organization does not own any package.
+![Removing a user account from an organization](media/org-remove-self-option.png)
 
-If the above conditions are satisfied, you can request deletion of the organization. 
+Administrators can remove any member from the organization, including other administrators. If you're the sole administrator for an organization, you cannot remove yourself unless you first add another member as an administrator.
 
+You can delete an organization if the following criteria are met:
+
+- You're the organization administrator.
+- You're the sole member.
+- The organization doesn't own any packages.
