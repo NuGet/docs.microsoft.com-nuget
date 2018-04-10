@@ -23,9 +23,11 @@ An organization account would have one or more user accounts as its members. The
 
 ## Adding a new Organization
 
-To add a new Organization, go to **Manage Organizations** and click on **Add new organization**. 
+To add a new Organization, go to **Manage Organizations**... 
 
 ![manage org option](./media/org-manage-option.png)
+
+.. and click on **Add new organization**
 
 ![add new organization](./media/org-add-new-option.png)
 
