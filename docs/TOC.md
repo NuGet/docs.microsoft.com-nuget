@@ -76,7 +76,7 @@
 ## [Package references in project files](consume-packages/package-references-in-project-files.md)
 ## [packages.config](reference/packages-config.md)
 ## [Package versioning](reference/package-versioning.md)
-## [Nuget.Config file](reference/nuget-config-file.md)
+## [nuget.config file](reference/nuget-config-file.md)
 ## [MSBuild targets](reference/msbuild-targets.md)
 ## [Target frameworks](reference/target-frameworks.md)
 ## [Analyzers conventions](reference/analyzers-conventions.md)
