@@ -27,7 +27,7 @@ To add a new Organization, go to **Manage Organizations** and click on **Add new
 
 ![manage org option](./media/org-manage-option.png)
 
-![add new organization](TBD)
+![add new organization](./media/org-add-new-option.png)
 
 Once the Organization account is created, you are the Administrator and you can add more members and submit packages against it.
 
