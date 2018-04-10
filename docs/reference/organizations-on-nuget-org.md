@@ -54,13 +54,13 @@ As the Organization Administrator, you can add more members to it. You would nee
 
 While adding members, you cwould need to select one of the following membership roles:
 
-#### Collaborator
+### Collaborator
 A colloborator can manage all the organization's packages. He/She can submit new packages, update or unlist existing packages. A collaborator, however, cannot make changes to the organization i.e. a collaborator cannot modify the email address, change notification settings or add/remove members to the organization. A collaborator can also not request or act on co-ownership requests for the organization's packages. 
 
 ### Administrator
 An administrator has absolute permissions on the organization and its packages. Like a collaborator, he/she can manage all the organization's packages - submit new packages, update or unlist existing packages. In addition he/she can also make changes to the organization metadata and memberships. An administrator can also request or act on co-ownership requests for the organization's packages.
 
-### Managing packages
+## Managing packages
 As an organization member, you can see all the organization's packages in the `Packages` section of the Organization's details page. You can also view all your packages across your account and all organizations you are member of, on the `Manage Packages` page. You can select the account filter to view packages by your account or any specific organization.
 
 ![manage packages with account filter](./media/org-manage-packages-option.png)
