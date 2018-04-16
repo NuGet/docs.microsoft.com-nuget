@@ -77,7 +77,7 @@
 ## [Migrate packages.config to PackageReference](reference/migrate-packages-config-to-package-reference.md)
 ## [packages.config](reference/packages-config.md)
 ## [Package versioning](reference/package-versioning.md)
-## [Nuget.Config file](reference/nuget-config-file.md)
+## [nuget.config file](reference/nuget-config-file.md)
 ## [MSBuild targets](reference/msbuild-targets.md)
 ## [Target frameworks](reference/target-frameworks.md)
 ## [Analyzers conventions](reference/analyzers-conventions.md)
@@ -85,6 +85,7 @@
 ## [ID prefix reservation](reference/id-prefix-reservation.md)
 ## [NuGet client SDK](reference/nuget-client-sdk.md)
 ## [Signed packages reference](reference/signed-packages-reference.md)
+## [Organizations on nuget.org](reference/organizations-on-nuget-org.md)
 ## Extensibility
 ### [NuGet credential providers for Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [nuget.exe credential providers](reference/extensibility/nuget-exe-credential-providers.md)
