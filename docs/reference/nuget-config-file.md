@@ -1,5 +1,5 @@
 ---
-title: NuGet.Config File Reference | Microsoft Docs
+title: nuget.config File Reference | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -17,11 +17,11 @@ ms.workload:
  - "aspnet"
 ---
 
-# NuGet.Config reference
+# nuget.config reference
 
 NuGet behavior is controlled by settings in different `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).
 
-`NuGet.Config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic. Each section contains zero or more `<add>` elements with `key` and `value` attributes. See the [examples config file](#example-config-file). Setting names are case-insensitive, and values can use [environment variables](#using-environment-variables).
+`nuget.config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic. Each section contains zero or more `<add>` elements with `key` and `value` attributes. See the [examples config file](#example-config-file). Setting names are case-insensitive, and values can use [environment variables](#using-environment-variables).
 
 In this topic:
 
@@ -52,8 +52,8 @@ Contains miscellaneous configuration settings, which can be set using the [`nuge
 | Key | Value |
 | --- | --- |
 | dependencyVersion (`packages.config` only) | The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly. This value is also used by the NuGet Package Manager UI. Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
-| globalPackagesFolder (projects using PackageReference only) | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages` (Windows) or `~/.nuget/packages` (Mac/Linux). A relative path can be used in project-specific `Nuget.Config` files. This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence. |
-| repositoryPath (`packages.config` only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)/packages` folder. A relative path can be used in project-specific `Nuget.Config` files. This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence. |
+| globalPackagesFolder (projects using PackageReference only) | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages` (Windows) or `~/.nuget/packages` (Mac/Linux). A relative path can be used in project-specific `nuget.config` files. This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence. |
+| repositoryPath (`packages.config` only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)/packages` folder. A relative path can be used in project-specific `nuget.config` files. This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence. |
 | defaultPushSource | Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://<username>:<password>@<domain>`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the http_proxy and no_proxy environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
 
@@ -104,7 +104,7 @@ Controls package restore during builds.
 
 ## solution section
 
-Controls whether the `packages` folder of a solution is included in source control. This section works only in `Nuget.Config` files in a solution folder.
+Controls whether the `packages` folder of a solution is included in source control. This section works only in `nuget.config` files in a solution folder.
 
 | Key | Value |
 | --- | --- |
@@ -245,7 +245,7 @@ Identifies to the currently active source or indicates the aggregate of all sour
 
 ## Using environment variables
 
-You can use environment variables in `NuGet.Config` values (NuGet 3.4+) to apply settings at run time.
+You can use environment variables in `nuget.config` values (NuGet 3.4+) to apply settings at run time.
 
 For example, if the `HOME` environment variable on Windows is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file resolves to `c:\users\username\NuGetRepository`.
 
@@ -255,7 +255,7 @@ If an environment variable is not found, NuGet uses the literal value from the c
 
 ## Example config file
 
-Below is an example `NuGet.Config` file that illustrates a number of settings:
+Below is an example `nuget.config` file that illustrates a number of settings:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
