@@ -296,11 +296,11 @@ To directly specify files to include in the package, use the `<files>` node in t
     <!-- ... -->
     </metadata>
     <files>
-    <!-- Add a readme -->
-    <file src="readme.txt" target="" />
+        <!-- Add a readme -->
+        <file src="readme.txt" target="" />
 
-    <!-- Add files from an arbitrary folder that's not necessarily in the project -->
-    <file src="..\..\SomeRoot\**\*.*" target="" />
+        <!-- Add files from an arbitrary folder that's not necessarily in the project -->
+        <file src="..\..\SomeRoot\**\*.*" target="" />
     </files>
 </package>
 ```
@@ -338,11 +338,11 @@ Then in the `.nuspec` file, be sure to refer to these files in the `<files>` nod
     <!-- ... -->
     </metadata>
     <files>
-    <!-- Include everything in \build -->
-    <file src="build\**" target="build" />
+        <!-- Include everything in \build -->
+        <file src="build\**" target="build" />
 
-    <!-- Other files -->
-    <!-- ... -->
+        <!-- Other files -->
+        <!-- ... -->
     </files>
 </package>
 ```
