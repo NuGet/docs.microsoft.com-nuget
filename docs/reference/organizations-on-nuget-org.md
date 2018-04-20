@@ -69,6 +69,9 @@ You can view all the packages across your account and all organizations of which
 
 ![Managing packages with the account filter](media/org-manage-packages-option.png)
 
+### Transferring packages to an organization
+If you wish to transfer some of your packages to a newly created organization, you can do so by requesting the organization account to co-own the package and then removing yourself as the owner. If you are an administrator of the organization, there is no confirmation required to accept the ownership. However, if you are a collaborator, adding the organization as an owner requires one of the administrators to accept the ownership.
+
 ## Publishing packages
 
 You publish packages to an organization like you publish packages to a user account: by directly uploading the package to nuget.org or by pushing the package through the `nuget push` or `dotnet nuget push` CLI commands.
