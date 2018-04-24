@@ -1,24 +1,12 @@
 ---
-title: Catalog, NuGet V3 API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Catalog Resource, NuGet V3 API
+description: The catalog is an index of all packages created and deleted on nuget.org.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/30/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: The catalog is an index of all packages created and deleted on nuget.org.
-keywords: NuGet V3 API catalog, nuget.org transaction log, replicate nuget.org, clone nuget.org, append-only record of nuget.org
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.reviewer: kraigb
 ---
 
 # Catalog

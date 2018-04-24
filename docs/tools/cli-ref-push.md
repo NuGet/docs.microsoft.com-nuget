@@ -1,20 +1,11 @@
 ---
-title: NuGet CLI push command | Microsoft Docs
+title: NuGet CLI push command
+description: Reference for the nuget.exe push command
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for the nuget.exe push command
-keywords: nuget push reference, push command
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # push command (NuGet CLI)

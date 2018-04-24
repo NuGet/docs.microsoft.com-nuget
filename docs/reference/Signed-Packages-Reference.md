@@ -1,21 +1,12 @@
 ---
-title: Signed Packages Reference | Microsoft Docs
+title: Signed NuGet Packages Reference
+description: Requirements for NuGet package signing.
 author: rido-min
 ms.author: rido-min
-manager: unniravindranathan
+manager: unnir
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Signed Packages feature description.
-keywords: NuGet package sign, signature, certificate
-ms.reviewer:
-- ananguar
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.reviewer: ananguar
 ---
 
 # Signed packages

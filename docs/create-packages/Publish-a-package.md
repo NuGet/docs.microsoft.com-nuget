@@ -1,21 +1,12 @@
 ---
-title: How to Publish a NuGet Package | Microsoft Docs
+title: How to Publish a NuGet Package
+description: Detailed instructions for how to publish a NuGet package to nuget.org or private feeds, and how to manage package ownership on nuget.org.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/19/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Detailed instructions for how to publish a NuGet package to nuget.org or private feeds, and how to manage package ownership on nuget.org.
-keywords: NuGet package publishing, publish NuGet package, NuGet package ownership, publish to nuget.org, private NuGet feeds
-ms.reviewer:
-- anangaur
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
+ms.reviewer: anangaur
 ---
 
 # Publishing packages

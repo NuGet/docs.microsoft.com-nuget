@@ -1,20 +1,11 @@
 ---
-title: NuGet CLI environment variables | Microsoft Docs
+title: NuGet CLI environment variables
+description: Reference for the nuget.exe environment variables
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for the nuget.exe environment variables
-keywords: nuget environment variables
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # NuGet CLI environment variables

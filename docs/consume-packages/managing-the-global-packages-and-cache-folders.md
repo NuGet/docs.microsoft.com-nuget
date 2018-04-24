@@ -1,17 +1,11 @@
 ---
-title: How to manage the global packages, cache, temp folders in NuGet | Microsoft Docs
+title: How to manage the global packages, cache, temp folders in NuGet
+description: How to manage the global package installation folder, the package cache, and the temp folders that exist on a computer, which are used when installing, restoring, and updating packages.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/19/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: How to manage the global package installation folder, the package cache, and the temp folders that exist on a computer, which are used when installing, restoring, and updating packages.
-keywords: NuGet global packages folder, NuGet package cache, package caching, package installation folder, NuGet caches, managing caches, local NuGet cache, global NuGet cache, NuGet locals command, clearing a cache
-ms.reviewer:
-- karann-msft
-- unniravindranathan
+ms.topic: conceptual
 ---
 
 # Managing the global packages, cache, and temp folders

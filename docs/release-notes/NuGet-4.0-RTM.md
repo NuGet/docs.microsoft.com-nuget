@@ -1,20 +1,11 @@
 ---
-title: NuGet 4.0 RC Release Notes | Microsoft Docs
+title: NuGet 4.0 RC Release Notes
+description: Release notes for NuGet 4.0 RTM including known issues, bug fixes, added features, and DCRs.
 author: anangaur
 ms.author: anangaur
-manager: unniravindranathan
+manager: unnir
 ms.date: 03/03/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Release notes for NuGet 4.0 RTM including known issues, bug fixes, added features, and DCRs.
-keywords: NuGet 4.0 RTM release notes, bug fixes, known issues, added features, DCRs
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # NuGet 4.0 RTM Release Notes
@@ -161,7 +152,8 @@ There is no workaround at this time.
 
 - add package command should add version as attribute instead of element - [#4325](https://github.com/NuGet/Home/issues/4325)
 
-- Dotnet Restore foo.sln -- fails when configurations in SLN cause duplicate (but diff config) projects in restore graph - [#4316](https://github.com/NuGet/Home/issues/4316)
+- dotnet
+  - dotnetcore Restore foo.sln -- fails when configurations in SLN cause duplicate (but diff config) projects in restore graph - [#4316](https://github.com/NuGet/Home/issues/4316)
 
 - Content only packages - [#3668](https://github.com/NuGet/Home/issues/3668)
 
@@ -179,7 +171,8 @@ There is no workaround at this time.
 
 - PathTooLongException when trying to add a NuGet package to empty ASP.NET Core web application - [#4391](https://github.com/NuGet/Home/issues/4391)
 
-- Pack runs too often -- dotnet pack fails with There is a circular dependency in the target dependency graph involving target "Pack"  - [#4381](https://github.com/NuGet/Home/issues/4381)
+- Pack runs too often -- dotnet
+  - dotnetcore pack fails with There is a circular dependency in the target dependency graph involving target "Pack"  - [#4381](https://github.com/NuGet/Home/issues/4381)
 
 - Pack runs too often -- Generate NuGet package doesn't include all the configurations  - [#4380](https://github.com/NuGet/Home/issues/4380)
 
@@ -227,7 +220,8 @@ There is no workaround at this time.
 
 - NuGet 3.5.0 not unpacking `.targets` from package - [#4171](https://github.com/NuGet/Home/issues/4171)
 
-- dotnet pack does not support title in `.csproj` - [#4150](https://github.com/NuGet/Home/issues/4150)
+- dotnet
+  - dotnetcore pack does not support title in `.csproj` - [#4150](https://github.com/NuGet/Home/issues/4150)
 
 - Install-Package results in error dialog in VS2017 RC - [#4127](https://github.com/NuGet/Home/issues/4127)
 
@@ -235,7 +229,8 @@ There is no workaround at this time.
 
 - Improve unresolved reference warning - [#3955](https://github.com/NuGet/Home/issues/3955)
 
-- dotnet pack - ProjectReference loses version information - [#3953](https://github.com/NuGet/Home/issues/3953)
+- dotnet
+  - dotnetcore pack - ProjectReference loses version information - [#3953](https://github.com/NuGet/Home/issues/3953)
 
 - Create UWP app create project & rebuild total elapsed time regressions - [#3873](https://github.com/NuGet/Home/issues/3873)
 
@@ -273,7 +268,8 @@ There is no workaround at this time.
 
 - Migration Throws "Object reference Exception" in NuGet.PackageManagement.VisualStudio.SolutionRestoreWorker - [#4067](https://github.com/NuGet/Home/issues/4067)
 
-- dotnet pack should pack tools with the versions that the package was built against - [#4063](https://github.com/NuGet/Home/issues/4063)
+- dotnet
+  - dotnetcore pack should pack tools with the versions that the package was built against - [#4063](https://github.com/NuGet/Home/issues/4063)
 
 - New background restore writes milliseconds to status bar when it takes seconds to restore - [#4036](https://github.com/NuGet/Home/issues/4036)
 
@@ -283,7 +279,8 @@ There is no workaround at this time.
 
 - Can not find installed packages in package manager UI - [#4015](https://github.com/NuGet/Home/issues/4015)
 
-- dotnet pack fails when PackagePath is empty - [#3993](https://github.com/NuGet/Home/issues/3993)
+- dotnet
+  - dotnetcore pack fails when PackagePath is empty - [#3993](https://github.com/NuGet/Home/issues/3993)
 
 - Restore task fails in an multi user scenario - [#3897](https://github.com/NuGet/Home/issues/3897)
 
@@ -297,9 +294,11 @@ There is no workaround at this time.
 
 - Pack task puts content files in both 'content/' and 'contentFiles/' - [#3718](https://github.com/NuGet/Home/issues/3718)
 
-- dotnet pack3 does extra tag splitting - [#3701](https://github.com/NuGet/Home/issues/3701)
+- dotnet
+  - dotnetcore pack3 does extra tag splitting - [#3701](https://github.com/NuGet/Home/issues/3701)
 
-- dotnet pack: packing projects with package references results in duplicate import warning - [#3665](https://github.com/NuGet/Home/issues/3665)
+- dotnet
+  - dotnetcore pack: packing projects with package references results in duplicate import warning - [#3665](https://github.com/NuGet/Home/issues/3665)
 
 - Restore logging in VS doesn't always show - [#3633](https://github.com/NuGet/Home/issues/3633)
 
@@ -327,11 +326,14 @@ There is no workaround at this time.
 
 - Inspect PackTask for issues with trailing or leading whitespace - [#3906](https://github.com/NuGet/Home/issues/3906)
 
-- dotnet pack is packing from obj not bin - [#3880](https://github.com/NuGet/Home/issues/3880)
+- dotnet
+  - dotnetcore pack is packing from obj not bin - [#3880](https://github.com/NuGet/Home/issues/3880)
 
-- dotnet pack always seems to set ProjectReference version to 1.0.0 - [#3874](https://github.com/NuGet/Home/issues/3874)
+- dotnet
+  - dotnetcore pack always seems to set ProjectReference version to 1.0.0 - [#3874](https://github.com/NuGet/Home/issues/3874)
 
-- dotnet pack fails with project references and <TargetFramework> - [#3865](https://github.com/NuGet/Home/issues/3865)
+- dotnet
+  - dotnetcore pack fails with project references and <TargetFramework> - [#3865](https://github.com/NuGet/Home/issues/3865)
 
 - LockRecursionException in ProjectSystemCache.TryGetProjectNameByShortName - [#3861](https://github.com/NuGet/Home/issues/3861)
 

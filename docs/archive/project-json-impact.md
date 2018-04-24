@@ -1,20 +1,11 @@
 ---
-title: project.json impact on NuGet package authors | Microsoft Docs
+title: project.json impact on NuGet package authors
+description: Details on how the implementation of project.json in NuGet 3.x affects package authors, such as unsupported features, content, and package format.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Details on how the implementation of project.json in NuGet 3.x affects package authors, such as unsupported features, content, and package format.
-keywords: NuGet and project.json, project.json impact, package authoring considerations, project.json features
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # Impact of project.json when creating packages

@@ -1,20 +1,11 @@
 ---
-title: NuGet Package Restore | Microsoft Docs
+title: NuGet Package Restore
+description: An overview of how NuGet restores packages upon which a project depends, including how to disable restore and constrain versions.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/16/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: An overview of how NuGet restores packages upon which a project depends, including how to disable restore and constrain versions.
-keywords: NuGet package restore, NuGet package installation, installing package, restoring packages, dependency versions, disabling automatic restore, constraining package versions
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # Package Restore

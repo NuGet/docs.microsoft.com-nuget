@@ -1,20 +1,12 @@
 ---
-title: NuGet CLI sign command | Microsoft Docs
+title: NuGet CLI sign command
+description: Reference for the nuget.exe sign command
 author: dtivel
 ms.author: dtivel
 manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for the nuget.exe sign command
-keywords: nuget sign reference, sign command
-ms.reviewer:
-- karann
-- rmpablos
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.reviewer: rmpablos
 ---
 
 # sign command (NuGet CLI)

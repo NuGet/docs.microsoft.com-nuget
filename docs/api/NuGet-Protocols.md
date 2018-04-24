@@ -1,19 +1,12 @@
 ---
-title: nuget.org Protocols | Microsoft Docs
+title: nuget.org Protocols
+description: The evolving nuget.org protocols to interact with NuGet clients.
 author: anangaur
 ms.author: anangaur
-manager: unniravindranathan
+manager: unnir
 ms.date: 10/30/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: The evolving nuget.org protocols to interact with NuGet clients.
-ms.reviewer:
-- kraigb
-- karann-msft
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
+ms.reviewer: kraigb
 ---
 
 # nuget.org protocols

@@ -1,22 +1,11 @@
-
 ---
-title: NuGet 4.6 RTM Release Notes | Microsoft Docs
+title: NuGet 4.6 RTM Release Notes
+description: Release notes for NuGet 4.6.0 including known issues, bug fixes, added features, and DCRs.
 author: anangaur
 ms.author: anangaur
 manager: unnir
 ms.date: 3/7/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Release notes for NuGet 4.6.0 including known issues, bug fixes, added features, and DCRs.
-keywords: NuGet 4.6.0 release notes, bug fixes, known issues, added features, DCRs
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-- anangaur
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # NuGet 4.6 RTM Release Notes

@@ -1,20 +1,11 @@
 ---
-title: NuGet CLI mirror command | Microsoft Docs
+title: NuGet CLI mirror command
+description: Reference for the nuget.exe mirror command
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for the nuget.exe mirror command
-keywords: nuget mirror reference, mirror command
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # mirror command (NuGet CLI)

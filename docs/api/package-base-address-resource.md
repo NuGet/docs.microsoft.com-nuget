@@ -1,24 +1,12 @@
 ---
-title: Package Content, NuGet API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Package Content, NuGet API
+description: The package base address is a simple interface for fetching the package itself.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: The package base address is a simple interface for fetching the package itself.
-keywords: NuGet flat container, NuGet package base address, NuGet nupkg API, NuGet API package versions, NuGet API unlisted packages, NuGet API download nuspec
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.reviewer: kraigb
 ---
 
 # Package Content

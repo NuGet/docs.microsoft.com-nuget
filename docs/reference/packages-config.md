@@ -1,20 +1,11 @@
 ---
-title: NuGet packages.config File Reference | Microsoft Docs
+title: NuGet packages.config File Reference
+description: In some project types, packages.config maintains the list of NuGet packages used in the project.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/07/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: In some project types, packages.config maintains the list of NuGet packages used in the project.
-keywords: NuGet packages.config file, NuGet package references, NuGet dependencies
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # packages.config reference

@@ -1,20 +1,11 @@
 ---
-title: Overview of the NuGet Ecosystem | Microsoft Docs
+title: Overview of the NuGet Ecosystem
+description: Comprehensive resources in the NuGet ecosystem including NuGet sources, non-Microsoft NuGet projects, utilities, and training materials.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Comprehensive resources in the NuGet ecosystem including NuGet sources, non-Microsoft NuGet projects, utilities, and training materials.
-keywords: NuGet ecosystem, non-Microsoft NuGet projects, NuGet open source, NuGet utilities, NuGet training materials
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # An overview of the NuGet ecosystem

@@ -1,20 +1,11 @@
 ---
-title: NuGet Frequently-Asked Questions | Microsoft Docs
+title: NuGet Frequently-Asked Questions
+description: Common questions and answers for using NuGet on the command line and in Visual Studio, and working with the NuGet gallery.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/11/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Common questions and answers for using NuGet on the command line and in Visual Studio, and working with the NuGet gallery.
-keywords: NuGet Q&A, questions and answers, common problems, NuGet versions, package versions
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # NuGet frequently-asked questions

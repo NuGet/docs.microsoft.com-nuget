@@ -12,6 +12,7 @@ NuGet follows the [.NET Foundation Contributors Code of Conduct](https://github.
 - The docs/index.md file defines the landing (hub) page as it appears on docs.microsoft.com/nuget.
 - The docs/TOC.md file defines the left-hand navigation panel that appears when you navigate to any page other than the hub page.
 - Images are contained within media folders within each subfolder.
+- The docs/docfx.json file contains various defaults, especially for metadata.
 - The docs/.openpublishing.redirection.json file contains redirects for old filenames; if you rename a file, create an entry here that maps the old to the new.
 - The docs/_breadcrumb/toc.yml file defines the breadcrumbs that appear on the site and their target pages. Be mindful of this if you make changes to filenames or placement of articles.
 
@@ -31,11 +32,26 @@ No contribution is too big or too small--
 If you're creating a new topic, keep the following in mind as well:
 
 1. Always place the new topic in an appropriate subfolder, and follow the conventions for filenames as you see them used here.
-1. You must include a metadata block as you see on other topics. The fields you should change are the following: title, ms.date, description, and keywords.
-    1. Leave the ms.author and manager fields set as they are, because these are used to manage ownership internally.
-    1. Ideally for SEO, the title field and the top-level # heading of the topic are different; see various topics for examples.
+1. You must include a metadata block as you see on other topics. Typical defaults (such as for ms.workload and ms.reviewer) are set within docs/docjx.json, so you need only change the following:
+
+  - title: The title that appears in search results. For SEO, this ideally isn't the same as the top-level # (H1) of the article.
+  - description: The abstract of the article that appears in search results.
+  - author: the author's GitHub ID, to which issues files for this article are assigned.
+  - ms.author: if the author is a Microsoft employee, this is the Microsoft alias. Used for reporting and forwarding feedback from other channels.
+  - manager: Microsoft alias of the author's manager, if applicable.
+  - ms.date: the date of the last revision or review of the article in mm/dd/yyyy format (use leading zeros). This is a communication to the reader about freshness, so it's not updated for minor changes, only for more significant revisions OR when the article has reverified even if there are no changes.
+  - ms.topic: used to categorize the article in reports. See table below. Most articles are "conceptual". 
 1. In addition to adding your page, edit docs/TOC.md to add a link to that page.
 1. If you're adding a top-level node to the TOC, also make an entry for it in docs/index.md.
+
+| ms.topic category | Description |
+| --- | --- |
+| conceptual | Use for any content that doesn't fall into another. This is set as the default in docfx.json. |
+| overview | Use for any overview or user-guide articles, typically only those that live under an "Overview" node in the TOC. |
+| quickstart | Anything under the "Quickstart" node in the TOC that's authored according to Quickstart guidelines. |
+| tutorial | Anything under the "Tutorial" node in the TOC that's authored according to Tutorial guidelines. |
+| reference | Any reference-type article that isn't auto-generated. |
+| article | Use for community-contributed content (that is, anything from outside the engineering team or the docs team at Microsoft. |
 
 ## Conventions
 

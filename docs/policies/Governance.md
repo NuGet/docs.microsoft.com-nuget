@@ -1,20 +1,11 @@
 ---
-title: NuGet Project Governance | Microsoft Docs
+title: NuGet Project Governance
+description: The governance model for NuGet, including roles and responsibilities for committers, contributors, and users.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: The governance model for NuGet, including roles and responsibilities for committers, contributors, and users.
-keywords: NuGet governance, NuGet benevolent dictator, committer responsibilities, contributor responsibilities, user responsibilities
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # NuGet governance

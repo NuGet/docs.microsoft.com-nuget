@@ -1,20 +1,11 @@
 ---
-title: Overview and workflow of using NuGet packages | Microsoft Docs
+title: Overview and workflow of using NuGet packages
+description: An overview of the process of consuming NuGet packages in a project, with links to other specific parts of the process.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/22/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: An overview of the process of consuming NuGet packages in a project, with links to other specific parts of the process.
-keywords: NuGet package consumption, NuGet consumption overview, NuGet consumption workflow, package consumption workflow, package consumption overview
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # Package consumption workflow

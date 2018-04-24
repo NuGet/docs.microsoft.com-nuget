@@ -1,24 +1,12 @@
 ---
-title: Service Index, NuGet API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Service Index, NuGet API
+description: The service index is the entry point of the NuGet HTTP API and enumerates the capabilities of the server.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: The service index is the entry point of the NuGet HTTP API and enumerates the capabilities of the server.
-keywords: NuGet API entry point, NuGetA PI endpoint discovery
-ms.reviewer:
-- karann
-- unnir
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.reviewer: kraigb
 ---
 
 # Service index

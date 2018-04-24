@@ -1,20 +1,11 @@
 ---
-title: nuget.config File Reference | Microsoft Docs
+title: nuget.config File Reference
+description: NuGet.Config file reference including the config, bindingRedirects, packageRestore, solution, and packageSource sections.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 10/25/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: NuGet.Config file reference including the config, bindingRedirects, packageRestore, solution, and packageSource sections.
-keywords: NuGet.Config file, NuGet configuration reference, NuGet configuration options
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # nuget.config reference

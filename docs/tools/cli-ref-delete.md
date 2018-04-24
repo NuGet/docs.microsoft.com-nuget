@@ -1,20 +1,11 @@
 ---
-title: NuGet CLI delete command | Microsoft Docs
+title: NuGet CLI delete command
+description: Reference for the nuget.exe delete command
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for the nuget.exe delete command
-keywords: nuget delete reference, delete package command
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # delete command (NuGet CLI)

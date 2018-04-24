@@ -1,20 +1,11 @@
 ---
-title: NuGet CLI spec command | Microsoft Docs
+title: NuGet CLI spec command
+description: Reference for the nuget.exe spec command
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for the nuget.exe spec command
-keywords: nuget spec reference, spec command
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # spec command (NuGet CLI)

@@ -1,24 +1,12 @@
 ---
-title: Push and Delete, NuGet API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Push and Delete, NuGet API
+description: The publish service allows clients to publish new packages and unlist or delete existing packages.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: The publish service allows clients to publish new packages and unlist or delete existing packages.
-keywords: NuGet API push package, NuGet API delete package, NuGet API unlist package, NuGet API upload package, NuGet API create package
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.reviewer: kraigb
 ---
 
 # Push and Delete

@@ -1,20 +1,11 @@
 ---
-title: Ways to install NuGet packages | Microsoft Docs
+title: Ways to install NuGet packages
+description: Describes the process of installing NuGet packages into a project, including what happens on disk and to applicable project files.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 02/12/2018
 ms.topic: overview
-ms.prod: nuget
-ms.technology: null
-description: Describes the process of installing NuGet packages into a project, including what happens on disk and to applicable project files.
-keywords: install NuGet, NuGet package consumption, installing NuGet packages, NuGet package references
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # Different ways to install a NuGet Package
