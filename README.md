@@ -20,7 +20,7 @@ NuGet follows the [.NET Foundation Contributors Code of Conduct](https://github.
 
 No contribution is too big or too small--
 
-1. Visit the page to edit on [docs.microsoft.com/nuget](/en-us/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
+1. Visit the page to edit on [docs.microsoft.com/nuget](https://docs.microsoft.com/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
 1. Edit the markdown:
     1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
     1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
@@ -124,16 +124,16 @@ The only case when you should use ``` without a language tag is when creating a 
 
 docs.microsoft.com uses blockquotes for callouts, that is, lines starting with ">".
 
-Callout sections with ">" only will appear with a solid gray line to the left. See [Creating NuGet packages](/en-us/nuget/create-packages/creating-a-package) for examples.
+Callout sections with ">" only will appear with a solid gray line to the left. See [Creating NuGet packages](https://docs.microsoft.com/nuget/create-packages/creating-a-package) for examples.
 
 You can also use one of the following callout tags on the first line that will create a shaded callout in the indicated color:
 
 | Tag | Callout use | Topic with examples |
 | --- | --- | --- |
-| `> [!Note]` | Callouts without any special emphasis. | [Creating NuGet packages](/nuget/create-packages/creating-a-package) |
-| `> [!Tip]` | Callouts that share special tips and tricks or other helpful knowledge. | [Package consumption overview](/nuget/consume-packages/overview-and-workflow) | 
-| `> [!Important]` | Callouts that describe cautions. | [NuGet.Server](/nuget/hosting-packages/nuget-server) |
-| `> [!Warning]` | Callouts that warn readers about situations that could cause data loss or unexpected consequences. | [Dependency resolution](/nuget/consume-packages/dependency-resolution) |
+| `> [!Note]` | Callouts without any special emphasis. | [Creating NuGet packages](https://docs.microsoft.com/nuget/create-packages/creating-a-package) |
+| `> [!Tip]` | Callouts that share special tips and tricks or other helpful knowledge. | [Package consumption overview](https://docs.microsoft.com/nuget/consume-packages/overview-and-workflow) | 
+| `> [!Important]` | Callouts that describe cautions. | [NuGet.Server](https://docs.microsoft.com/nuget/hosting-packages/nuget-server) |
+| `> [!Warning]` | Callouts that warn readers about situations that could cause data loss or unexpected consequences. | [Dependency resolution](https://docs.microsoft.com/nuget/consume-packages/dependency-resolution) |
 
 ### Links
 
