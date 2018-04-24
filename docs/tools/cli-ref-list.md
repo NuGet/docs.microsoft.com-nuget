@@ -1,20 +1,11 @@
 ---
-title: NuGet CLI list command | Microsoft Docs
+title: NuGet CLI list command
+description: Reference for the nuget.exe list command
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for the nuget.exe list command
-keywords: nuget list reference, list packages command
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # list command (NuGet CLI)

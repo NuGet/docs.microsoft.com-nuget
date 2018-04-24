@@ -1,20 +1,11 @@
 ---
-title: How to create a NuGet package | Microsoft Docs
+title: How to create a NuGet package
+description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/12/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
-keywords: NuGet package creation, creating a package, nuspec manifest, NuGet package conventions, NuGet package version
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # Creating NuGet packages

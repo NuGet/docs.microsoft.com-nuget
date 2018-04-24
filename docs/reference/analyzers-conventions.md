@@ -1,20 +1,11 @@
 ---
-title: .NET Compiler Platform Analyzer Formats for NuGet | Microsoft Docs
+title: .NET Compiler Platform Analyzer Formats for NuGet
+description: Conventions for .NET analyzers that are packaged and distributed with NuGet packages that implement an API or library.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/09/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Conventions for .NET analyzers that are packaged and distributed with NuGet packages that implement an API or library.
-keywords: NuGet analyzer conventions, .NET analyzers, NuGet and .NET Compiler Platform, NuGet and Roslyn
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # Analyzer NuGet formats

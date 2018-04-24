@@ -1,20 +1,11 @@
 ---
-title: Installing NuGet client tools | Microsoft Docs
+title: Installing NuGet client tools
+description: Guidance on installing client tools, the dotnet and nuget command-line interfaces (CLI), and the Package Manager for Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 04/09/2018
 ms.topic: quickstart
-ms.prod: nuget
-ms.technology: null
-description: Guidance on installing client tools, the dotnet and nuget command-line interfaces (CLI), and the Package Manager for Visual Studio.
-keywords: dotnet.exe CLI, nuget.exe CLI, NuGet client tools, NuGet package manager, NuGet package manager console, NuGet for Visual Studio, NuGet beta channel
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # Installing NuGet client tools

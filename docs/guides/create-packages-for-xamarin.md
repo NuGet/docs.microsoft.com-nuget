@@ -1,20 +1,11 @@
 ---
-title: Create NuGet Packages for Xamarin (for iOS, Android, and Windows) with Visual Studio 2015 | Microsoft Docs
+title: Create NuGet Packages for Xamarin (for iOS, Android, and Windows) with Visual Studio 2015
+description: An end-to-end walkthrough of creating NuGet packages for Xamarin that use native APIs on iOS, Android, and Windows.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/09/2017
 ms.topic: tutorial
-ms.prod: nuget
-ms.technology: null
-description: An end-to-end walkthrough of creating NuGet packages for Xamarin that use native APIs on iOS, Android, and Windows.
-keywords: create a package, packages for Xamarin, cross-platform packages
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # Create packages for Xamarin with Visual Studio 2015

@@ -1,20 +1,11 @@
 ---
-title: dotNet NuGet commands | Microsoft Docs
+title: dotNet NuGet commands
+description: A short reference for NuGet-related commands using the dotnet command-line interface.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/23/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: A short reference for NuGet-related commands using the dotnet command-line interface.
-keywords: dotnet NuGet commands, dotnet pack, dotnet restore, dotnet nuget locals, dotnet nuget push, dotnet nuget delete
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # dotNet commands

@@ -1,24 +1,12 @@
 ---
-title: Search, NuGet API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Search, NuGet API
+description: The search service allows clients to query for packages by keyword and to filter results on certain package fields.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: The search service allows clients to query for packages by keyword and to filter results on certain package fields.
-keywords: NuGet search API, NuGet discover packages, API to query NuGet packages, API to browse NuGet packages
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.reviewer: kraigb
 ---
 
 # Search

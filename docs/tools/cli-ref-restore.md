@@ -1,20 +1,11 @@
 ---
-title: NuGet CLI restore command | Microsoft Docs
+title: NuGet CLI restore command
+description: Reference for the nuget.exe restore command
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for the nuget.exe restore command
-keywords: nuget restore reference, restore packages command
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # restore command (NuGet CLI)

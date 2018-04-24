@@ -1,20 +1,11 @@
 ---
-title: NuGet CLI help command | Microsoft Docs
+title: NuGet CLI help command
+description: Reference for the nuget.exe help command
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for the nuget.exe help command
-keywords: nuget help reference, help command
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # help or ? command (NuGet CLI)

@@ -1,23 +1,14 @@
 ---
-title: Introductory Guide to Using NuGet Packages from within Visual Studio | Microsoft Docs
+title: Introductory Guide to Using NuGet Packages from within Visual Studio
+description: A walkthrough tutorial on the process of installing and using a NuGet package in a Visual Studio project.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.prod: nuget
-ms.technology: null
-description: A walkthrough tutorial on the process of installing and using a NuGet package in a Visual Studio project.
-keywords: install NuGet, NuGet package consumption, installing NuGet packages, NuGet package references, using NuGet packages
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
-# Install and use a package in Visual Studio
+# Quickstart: Install and use a package in Visual Studio
 
 NuGet packages contain reusable code that other developers make available to you for use in your projects. See [What is NuGet?](../What-is-NuGet.md) for background. Packages are installed into a Visual Studio project using the Package Manager UI or the Package Manager Console. This article demonstrates the process using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package and a Universal Windows Platform (UWP) project. The same process applies to any other .NET or .NET Core project.
 

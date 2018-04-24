@@ -1,20 +1,11 @@
 ---
-title: Walkthrough of NuGet Package Restore with Team Foundation Build | Microsoft Docs
+title: Walkthrough of NuGet Package Restore with Team Foundation Build
+description: A walkthrough of how NuGet package restore with with Team Foundation Build (both TFS and Visual Studio Team Services).
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/09/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: A walkthrough of how NuGet package restore with with Team Foundation Build (both TFS and Visual Studio Team Services).
-keywords: NuGet package restore, NuGet and TFS, NuGet and VSTS, NuGet build systems, team foundation build, custom MSBuild projects, cloud build, continuous integration
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # Setting up package restore with Team Foundation Build

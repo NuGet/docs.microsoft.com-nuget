@@ -1,20 +1,12 @@
 ---
-title: Signing NuGet Packages | Microsoft Docs
-author: rido-min
-ms.author: rido-min
-manager: unniravindranathan
-ms.date: 03/06/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
+title: Signing NuGet Packages
 description: Explains how signed packages can be used to enable content integrity verification.
-keywords: NuGet package signing, NuGet security, creating signed packages
-ms.reviewer:
-- karann-msft
-- anangaur
-ms.workload: 
- - "dotnet"
- - "aspnet"
+author: rido-min
+ms.author: rmpablos
+manager: unnir
+ms.date: 03/06/2018
+ms.topic: conceptual
+ms.reviewer: anangaur
 ---
 
 # Signing NuGet Packages

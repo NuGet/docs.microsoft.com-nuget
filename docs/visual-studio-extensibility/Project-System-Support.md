@@ -1,20 +1,11 @@
 ---
-title: NuGet Support for the Visual Studio Project System | Microsoft Docs
+title: NuGet Support for the Visual Studio Project System
+description: Integration of NuGet into the Visual Studio project system for third-party project types.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/09/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Integration of NuGet into the Visual Studio project system for third-party project types.
-keywords: NuGet in Visual Studio, custom project types, Visual Studio projects
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # NuGet support for the Visual Studio project system

@@ -1,23 +1,14 @@
 ---
-title: Introductory Guide to Using NuGet Packages Through the dotnet CLI | Microsoft Docs
+title: Introductory Guide to Using NuGet Packages Through the dotnet CLI
+description: A walkthrough tutorial on the process of installing and using a NuGet package in a .NET Core project.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.prod: nuget
-ms.technology: null
-description: A walkthrough tutorial on the process of installing and using a NuGet package in a .NET Core project.
-keywords: install NuGet, NuGet package consumption, installing NuGet packages, NuGet package references, using NuGet packages
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
-# Install and use a package using the dotnet CLI
+# Quickstart: Install and use a package using the dotnet CLI
 
 NuGet packages contain reusable code that other developers make available to you for use in your projects. See [What is NuGet?](../What-is-NuGet.md) for background. Packages are installed into a .NET Core project using the `dotnet add package` command as described in this article for the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package.
 

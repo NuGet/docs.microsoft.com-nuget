@@ -1,20 +1,11 @@
 ---
-title: nuget.exe Credential Providers | Microsoft Docs
+title: nuget.exe Credential Providers
+description: nuget.exe credential providers authenticate with a feed, and are implemented as command-line executables that follow specific conventions.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/12/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: nuget.exe credential providers authenticate with a feed, and are implemented as command-line executables that follow specific conventions.
-keywords: nuget.exe credential providers, credential provider API, authenticate with feed, authenticate with gallery
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # Authenticating feeds with nuget.exe credential providers

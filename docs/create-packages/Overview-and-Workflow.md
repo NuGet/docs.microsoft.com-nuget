@@ -1,20 +1,11 @@
 ---
-title: Overview and workflow of creating NuGet packages | Microsoft Docs
+title: Overview and workflow of creating NuGet packages
+description: An overview of the process of creating and publishing a NuGet package, with links to other specific parts of the process.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 07/26/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: An overview of the process of creating and publishing a NuGet package, with links to other specific parts of the process.
-keywords: NuGet package creation, NuGet creation overview, NuGet creation workflow, package creation workflow, package creation overview.
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # Package creation workflow

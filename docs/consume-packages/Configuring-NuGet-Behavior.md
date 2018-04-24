@@ -1,20 +1,11 @@
 ---
-title: Configuring the behavior of NuGet | Microsoft Docs
+title: Configuring the behavior of NuGet
+description: NuGet.Config files control NuGet's behavior both globally and on a per-project basis, and are modified with nuget config command.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 10/25/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: NuGet.Config files control NuGet's behavior both globally and on a per-project basis, and are modified with nuget config command.
-keywords: NuGet config files, NuGet configuration, NuGet behavior settings, NuGet settings, Nuget.Config, NuGetDefaults.Config, defaults
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # Configuring NuGet behavior

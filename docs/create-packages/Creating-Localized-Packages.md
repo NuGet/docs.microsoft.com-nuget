@@ -1,20 +1,11 @@
 ---
-title: How to Create a Localized NuGet Package | Microsoft Docs
+title: How to Create a Localized NuGet Package
+description: Details on the two ways to create localized NuGet packages, either by including all assemblies in a single package or publishing separate assemblies.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Details on the two ways to create localized NuGet packages, either by including all assemblies in a single package or publishing separate assemblies.
-keywords: NuGet package localization, NuGet satellite assemblies, creating localized packages, NuGet localization conventions
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+ms.topic: conceptual
 ---
 
 # Creating localized NuGet packages

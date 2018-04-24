@@ -1,20 +1,11 @@
 ---
-title: NuGet 2.2.1 Release Notes | Microsoft Docs
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
+title: NuGet 2.2.1 Release Notes
 description: Release notes for NuGet 2.2.1 including known issues, bug fixes, added features, and DCRs.
-keywords: NuGet 2.2.1 release notes, bug fixes, known issues, added features, DCRs
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
 ---
 
 # NuGet 2.2.1 Release Notes
