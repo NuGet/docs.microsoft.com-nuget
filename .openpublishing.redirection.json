@@ -81,6 +81,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/Schema/packages-config.md",
+            "redirect_url": "/nuget/reference/packages-config",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/Schema/target-frameworks.md",
             "redirect_url": "/nuget/reference/target-frameworks",
             "redirect_document_id": false

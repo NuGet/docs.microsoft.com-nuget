@@ -21,7 +21,7 @@ No matter what your package does or what code it contains, you use `nuget.exe` t
 
 Technically speaking, a NuGet package is just a ZIP file that's been renamed with the `.nupkg` extension and whose contents match certain conventions. This topic describes the detailed process of creating a package that meets those conventions. For a focused walkthrough, refer to [Quickstart: create and publish a package](../quickstart/create-and-publish-a-package.md).
 
-Packaging begins with the compiled code (assemblies), symbols, and/or other files that you want to deliver as a package (see [Overview and workflow](overview-and-workflow.md)). This process is independent from compiling or otherwise generating the files that go into the package, although you can use draw from information in a project file to keep the compiled assemblies and packages in sync.
+Packaging begins with the compiled code (assemblies), symbols, and/or other files that you want to deliver as a package (see [Overview and workflow](overview-and-workflow.md)). This process is independent from compiling or otherwise generating the files that go into the package, although you can draw from information in a project file to keep the compiled assemblies and packages in sync.
 
 > [!Note]
 > This topic applies to project types other than .NET Core projects using Visual Studio 2017 and NuGet 4.0+. In those .NET Core projects, NuGet uses information in the project file directly. For details, see [Create .NET Standard Packages with Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) and [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
@@ -294,11 +294,11 @@ To directly specify files to include in the package, use the `<files>` node in t
     <!-- ... -->
     </metadata>
     <files>
-    <!-- Add a readme -->
-    <file src="readme.txt" target="" />
+        <!-- Add a readme -->
+        <file src="readme.txt" target="" />
 
-    <!-- Add files from an arbitrary folder that's not necessarily in the project -->
-    <file src="..\..\SomeRoot\**\*.*" target="" />
+        <!-- Add files from an arbitrary folder that's not necessarily in the project -->
+        <file src="..\..\SomeRoot\**\*.*" target="" />
     </files>
 </package>
 ```
@@ -336,18 +336,20 @@ Then in the `.nuspec` file, be sure to refer to these files in the `<files>` nod
     <!-- ... -->
     </metadata>
     <files>
-    <!-- Include everything in \build -->
-    <file src="build\**" target="build" />
+        <!-- Include everything in \build -->
+        <file src="build\**" target="build" />
 
-    <!-- Other files -->
-    <!-- ... -->
+        <!-- Other files -->
+        <!-- ... -->
     </files>
 </package>
 ```
 
 Including MSBuild props and targets in a package was [introduced with NuGet 2.5](../release-notes/NuGet-2.5.md#automatic-import-of-msbuild-targets-and-props-files), therefore it is recommended to add the `minClientVersion="2.5"` attribute to the `metadata` element, to indicate the minimum NuGet client version required to consume the package.
 
-When NuGet installs a package with `\build` files, it adds an MSBuild `<Import>` elements in the project file pointing to the `.targets` and `.props` files. (`.props` is added at the top of the project file; `.targets` is added at the bottom.)
+When NuGet installs a package with `\build` files, it adds MSBuild `<Import>` elements in the project file pointing to the `.targets` and `.props` files. (`.props` is added at the top of the project file; `.targets` is added at the bottom.) A separate conditional MSBuild `<Import>` element is added for each target framework.
+
+MSBuild `.props` and `.targets` files for cross-framework targeting can be placed in the `\buildCrossTargeting` folder. During package installation, NuGet adds the corresponding `<Import>` elements to the project file with the condition, that the target framework is not set (the MSBuild property `$(TargetFramework)` must be empty).
 
 With NuGet 3.x, targets are not added to the project but are instead made available through the `project.lock.json`.
 

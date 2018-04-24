@@ -44,7 +44,7 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 | ProjectName | The name of the project containing the packages to update, defaulting to all projects. |
 | Version | The version to use for the upgrade, defaulting to the latest version. In NuGet 3.0+, the version value must be one of *Lowest, Highest, HighestMinor*, or *HighestPatch* (equivalent to -Safe). |
 | Safe | Constrains upgrades to only versions with the same Major and Minor version as the currently installed package. |
-| Source | The URL or folder path for the package source to search. Local folder paths can be absolute, or relative to the current folder. If omitted, `Uninstall-Package` searches the currently selected package source. |
+| Source | The URL or folder path for the package source to search. Local folder paths can be absolute, or relative to the current folder. If omitted, `Update-Package` searches the currently selected package source. |
 | IncludePrerelease | Includes prerelease packages for updates. |
 | Reinstall | Resintalls packages using their currently installed versions. See [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md). |
 | FileConflictAction | The action to take when asked to overwrite or ignore existing files referenced by the project. Possible values are *Overwrite, Ignore, None, OverwriteAll*, and *IgnoreAll* (3.0+). |
