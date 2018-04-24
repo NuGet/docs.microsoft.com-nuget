@@ -1,20 +1,18 @@
 ---
-title: Deleting NuGet Packages from nuget.org | Microsoft Docs
+title: Deleting NuGet Packages from nuget.org
+description: Policies for unlisting packages from nuget.org; permanent deletion is not supported except when packages violate other policies.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Policies for unlisting packages from nuget.org; permanent deletion is not supported except when packages violate other policies.
-keywords: NuGet package deletion, NuGet package unlisting, prohibited uses of packages
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Deleting packages

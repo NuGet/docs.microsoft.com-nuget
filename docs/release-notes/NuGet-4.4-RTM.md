@@ -1,21 +1,18 @@
 ---
-title: NuGet 4.4 RTM Release Notes | Microsoft Docs
-author: karann-msft
-ms.author: karann-msft
-manager: unniravindranathan
-ms.date: 08/14/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
+title: NuGet 4.4 RTM Release Notes
 description: Release notes for NuGet 4.3 RTM including known issues, bug fixes, added features, and DCRs.
-keywords: NuGet 4.3 RTM release notes, bug fixes, known issues, added features, DCRs
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 08/14/2017
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
-- anangaur
+  - unnir
+  - anangaur
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # NuGet 4.4 RTM Release Notes
@@ -114,7 +111,8 @@ There is no workaround at this time.
 
 - GetRestoreDotnetCliToolsTask fails when missing version metadata - [#5716](https://github.com/NuGet/Home/issues/5716)
 
-- dotnet add package can clear empty lines from a csproj  - [#5697](https://github.com/NuGet/Home/issues/5697)
+- dotnet
+  - dotnetcore add package can clear empty lines from a csproj  - [#5697](https://github.com/NuGet/Home/issues/5697)
 
 - Source names of credential settings in NuGet.Config are case sensitive - [#5695](https://github.com/NuGet/Home/issues/5695)
 
@@ -128,7 +126,8 @@ There is no workaround at this time.
 
 - Update packages at solution updates/installs for all the projects - [#5508](https://github.com/NuGet/Home/issues/5508)
 
-- dotnet pack behaves differently depending on TargetFramework vs TargetFrameworks - [#5281](https://github.com/NuGet/Home/issues/5281)
+- dotnet
+  - dotnetcore pack behaves differently depending on TargetFramework vs TargetFrameworks - [#5281](https://github.com/NuGet/Home/issues/5281)
 
 - Included DLLs inside Tools folder throw warnings - [#5020](https://github.com/NuGet/Home/issues/5020)
 

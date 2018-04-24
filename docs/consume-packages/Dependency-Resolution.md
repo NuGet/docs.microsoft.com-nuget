@@ -1,20 +1,18 @@
 ---
-title: NuGet Package Dependency Resolution | Microsoft Docs
+title: NuGet Package Dependency Resolution
+description: Details on the process through which a NuGet package's dependencies are resolved and installed in both NuGet 2.x and NuGet 3.x+.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 08/14/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Details on the process through which a NuGet package's dependencies are resolved and installed in both NuGet 2.x and NuGet 3.x+.
-keywords: NuGet package dependencies, NuGet versioning, dependency versions, version graph, version resolution, transitive restore
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # How NuGet resolves package dependencies

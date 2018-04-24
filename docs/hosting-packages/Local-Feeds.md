@@ -1,20 +1,18 @@
 ---
-title: Setting up Local NuGet Feeds | Microsoft Docs
+title: Setting up Local NuGet Feeds
+description: How to create a local feed for NuGet packages using folders on your local network
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/06/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: How to create a local feed for NuGet packages using folders on your local network
-keywords: NuGet feed, NuGet gallery, local package feed
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Local feeds

@@ -1,20 +1,18 @@
 ---
-title: Multi-targeting for NuGet Packages | Microsoft Docs
+title: Multi-targeting for NuGet Packages
+description: Description of the various methods to target multiple .NET Framework versions from within a single NuGet package.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 09/27/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Description of the various methods to target multiple .NET Framework versions from within a single NuGet package.
-keywords: NuGet package targeting, .NET Framework versions, NuGet and .NET, targeting multiple frameworks, NuGet package creation
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Supporting multiple .NET framework versions

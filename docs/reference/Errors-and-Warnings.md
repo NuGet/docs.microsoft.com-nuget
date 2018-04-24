@@ -1,21 +1,19 @@
 ---
-title: NuGet Errors and Warnings Reference | Microsoft Docs
+title: NuGet Errors and Warnings Reference
+description: Complete reference for warnings and errors issued from NuGet during various NuGet operations.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Complete reference for warnings and errors issued from NuGet during various NuGet operations.
-keywords: NuGet errors, NuGet warnings, diagnostics
 ms.reviewer:
-- anangaur
-- karann-msft
-- unniravindranathan
+  - anangaur
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 
 f1_keywords:
   - "NU1000"

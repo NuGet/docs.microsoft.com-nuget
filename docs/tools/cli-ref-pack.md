@@ -1,20 +1,18 @@
 ---
-title: NuGet CLI pack command | Microsoft Docs
+title: NuGet CLI pack command
+description: Reference for the nuget.exe pack command
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for the nuget.exe pack command
-keywords: nuget pack reference, pack command
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # pack command (NuGet CLI)

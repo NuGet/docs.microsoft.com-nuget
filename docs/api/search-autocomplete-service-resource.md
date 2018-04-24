@@ -1,24 +1,19 @@
 ---
-title: Autocomplete, NuGet API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Autocomplete, NuGet API
+description: The search autocomplete service supports interactive discovery of package IDs and versions.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: The search autocomplete service supports interactive discovery of package IDs and versions.
-keywords: NuGet autocomplete API, NuGet search package ID, substring package ID
 ms.reviewer:
-- karann
-- unniravindranathan
+  - kraigb
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Autocomplete

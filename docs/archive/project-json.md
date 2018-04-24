@@ -1,20 +1,18 @@
 ---
-title: project.json File Reference for NuGet | Microsoft Docs
+title: project.json File Reference for NuGet
+description: In some project types, project.json maintains the list of NuGet packages used in the project.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 07/27/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: In some project types, project.json maintains the list of NuGet packages used in the project.
-keywords: NuGet project.json, NuGet package references, NuGet dependencies, project.lock.json
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # project.json reference

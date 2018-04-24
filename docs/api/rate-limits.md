@@ -1,23 +1,19 @@
 ---
-title: Rate Limits | Microsoft Docs
-author:
-- cmanu
-- anangaur
-ms.author:
-- cmanu
+title: Rate Limits, NuGet API
+description: The NuGet APIs will have enforced rate limits to prevent abuse.
+author: cmanu
+ms.author: cmanu
 manager: skofman
 ms.date: 03/20/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: The NuGet APIs will have enforced rate limits to prevent abuse.
-keywords: NuGet API, rate limiting
 ms.reviewer:
-- skofman
-- anangaur
+  - skofman
+  - anangaur
+  - kraigb
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Rate Limits

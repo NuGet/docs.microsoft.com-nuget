@@ -1,21 +1,19 @@
 ---
-title: NuGet Package Version Reference | Microsoft Docs
+title: NuGet Package Version Reference
+description: Exact details on specifying version numbers and ranges for other packages upon which a NuGet package depends, and how dependencies are installed.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/23/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Exact details on specifying version numbers and ranges for other packages upon which a NuGet package depends, and how dependencies are installed.
-keywords: versioning, NuGet package dependencies, NuGet dependency versions, NuGet version numbers, NuGet package version, version ranges, version specifications, normalized version numbers
 ms.reviewer:
-- anandr
-- karann-msft
-- unniravindranathan
+  - anangaur
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Package versioning
@@ -92,7 +90,8 @@ If you upload a SemVer v2.0.0-specific package to nuget.org, the package is invi
 - NuGet 4.3.0+
 - Visual Studio 2017 version 15.3+
 - Visual Studio 2015 with [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)
-- dotnet.exe (.NET SDK 2.0.0+)
+- dotnet
+  - dotnetcore.exe (.NET SDK 2.0.0+)
 
 Third-party clients:
 

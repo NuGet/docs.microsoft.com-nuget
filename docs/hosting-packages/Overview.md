@@ -1,21 +1,19 @@
 ---
-title: Overview of Hosting Your Own NuGet Feeds | Microsoft Docs
+title: Overview of Hosting Your Own NuGet Feeds
+description: An overview of opens for hosting your own NuGet package feeds or galleries either locally or remotely.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 08/25/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: An overview of opens for hosting your own NuGet package feeds or galleries either locally or remotely.
-keywords: NuGet feed, NuGet gallery, custom package feed, NuGet.Server
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
-- anangaur
+  - karann
+  - unnir
+  - anangaur
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Hosting your own NuGet feeds

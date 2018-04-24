@@ -1,23 +1,21 @@
 ---
-title: Creating and publishing a NuGet package using the dotnet CLI | Microsoft Docs
+title: Creating and publishing a NuGet package using the dotnet CLI
+description: A walkthrough tutorial on creating and publishing a NuGet package using the .NET Core CLI, dotnet.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/24/2018
 ms.topic: quickstart
-ms.prod: nuget
-ms.technology: null
-description: A walkthrough tutorial on creating and publishing a NuGet package using the .NET Core CLI, dotnet.
-keywords: NuGet package creation, NuGet package publishing, NuGet tutorial, dotnet publish NuGet package
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
-# Create and publish a package
+# Quickstart: Create and publish a package (dotnet CLI)
 
 It's a simple process to create a NuGet package from a .NET Class Library and publish it to nuget.org using the `dotnet` command-line interface (CLI).
 
@@ -110,6 +108,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nug
 
 - [Create a Package](../create-packages/creating-a-package.md)
 - [Publish a Package](../create-packages/publish-a-package.md)
+- [Pre-release Packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Package versioning](../reference/package-versioning.md)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)

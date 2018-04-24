@@ -1,23 +1,21 @@
 ---
-title: Introductory Guide to Creating and Publishing a .NET Framework NuGet Package using Visual Studio | Microsoft Docs
+title: Introductory Guide to Creating and Publishing a .NET Framework NuGet Package using Visual Studio
+description: A walkthrough tutorial on creating and publishing a .NET Framework NuGet package using Visual Studio 2017.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/13/2018
 ms.topic: quickstart
-ms.prod: nuget
-ms.technology: null
-description: A walkthrough tutorial on creating and publishing a .NET Framework NuGet package using Visual Studio 2017.
-keywords: NuGet package creation, NuGet package publishing, NuGet tutorial, Visual Studio create NuGet package, msbuild pack
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
-# Create and publish a package using Visual Studio (.NET Framework)
+# Quickstart: Create and publish a package using Visual Studio (.NET Framework)
 
 Creating a NuGet package from a .NET Framework Class Library involves creating the DLL in Visual Studio, then using the nuget.exe command line tool to create and publish the package.
 
@@ -178,6 +176,7 @@ See [nuget push](../tools/cli-ref-push.md).
 
 - [Create a Package](../create-packages/creating-a-package.md)
 - [Publish a Package](../create-packages/publish-a-package.md)
+- [Pre-release Packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Package versioning](../reference/package-versioning.md)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)

@@ -1,24 +1,22 @@
 ---
 # required metadata
 
-title: NuGet Package Manager Console Guide | Microsoft Docs
+title: NuGet Package Manager Console Guide
+description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
 author: kraigb
-hms.author: kraigb
-manager: ghogen
+ms.author: kraigb
+manager: douge
 ms.date: 01/23/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
+ms.topic: conceptual
 f1_keywords: 
   - "vs.nuget.packagemanager.console"
-description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
-keywords: NuGet package manager console, NuGet powershell, managing NuGet packages
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Package Manager Console

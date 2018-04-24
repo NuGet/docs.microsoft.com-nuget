@@ -1,20 +1,18 @@
 ---
-title: NuGet Get-Project PowerShell Reference | Microsoft Docs
+title: NuGet Get-Project PowerShell Reference
+description: Reference for GetProject PowerShell command in the NuGet Package Manager Console in Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/07/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for GetProject PowerShell command in the NuGet Package Manager Console in Visual Studio.
-keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Get-Project
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Get-Project (Package Manager Console in Visual Studio)

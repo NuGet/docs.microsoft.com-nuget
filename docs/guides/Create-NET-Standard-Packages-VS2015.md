@@ -1,20 +1,18 @@
 ---
-title: Create .NET Standard and .NET Framework NuGet Packages with Visual Studio 2015 | Microsoft Docs
+title: Create .NET Standard and .NET Framework NuGet Packages with Visual Studio 2015
+description: An end-to-end walkthrough of creating .NET Standard and .NET Framework NuGet packages using NuGet 3.x and Visual Studio 2015.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.prod: nuget
-ms.technology: null
-description: An end-to-end walkthrough of creating .NET Standard and .NET Framework NuGet packages using NuGet 3.x and Visual Studio 2015.
-keywords: create a package, .NET Standard packages, .NET Framework packages
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Create .NET Standard and .NET Framework packages with Visual Studio 2015

@@ -1,21 +1,17 @@
 ---
-title: NuGet Known Issues | Microsoft Docs
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-#ms.service:
-ms.technology: null
+title: Known Issues
 description: Known issues with NuGet including authentication, package installation, and tools.
-keywords: NuGet known issues, NuGet problems
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Known Issues with NuGet

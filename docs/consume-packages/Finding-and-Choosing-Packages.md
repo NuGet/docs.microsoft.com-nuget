@@ -1,20 +1,18 @@
 ---
-title: Finding and Choosing NuGet Packages | Microsoft Docs
+title: Finding and Choosing NuGet Packages
+description: An overview of how to find and choose the best NuGet packages for a project including details on the NuGet search syntax.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/16/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: An overview of how to find and choose the best NuGet packages for a project including details on the NuGet search syntax.
-keywords: NuGet package consumption, NuGet package discovery, best NuGet packages, deciding on packages, consuming packages, evaluating package, NuGet search syntax
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Finding and evaluating NuGet packages for your project

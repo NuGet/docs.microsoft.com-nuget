@@ -1,20 +1,18 @@
 ---
-title: Create NuGet Packages for the Universal Windows Platform | Microsoft Docs
+title: Create NuGet Packages for the Universal Windows Platform
+description: An end-to-end walkthrough of creating NuGet packages using a Windows Runtime Component for the Universal Windows Platform.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/21/2017
 ms.topic: tutorial
-ms.prod: nuget
-ms.technology: null
-description: An end-to-end walkthrough of creating NuGet packages using a Windows Runtime Component for the Universal Windows Platform.
-keywords: create a package, packages for UWP, Windows Runtime Components
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Create UWP packages

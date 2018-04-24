@@ -1,20 +1,18 @@
 ---
-title: NuGet Packages and Source Control | Microsoft Docs
+title: NuGet Packages and Source Control
+description: Considerations for how to treat NuGet packages within version control and source control systems, and how to omit packages with git and TFVC.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/16/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Considerations for how to treat NuGet packages within version control and source control systems, and how to omit packages with git and TFVC.
-keywords: NuGet source control, NuGet version control, NuGet and git, NuGet and TFS, NuGet and TFVC, omitting packages, source control repositories, version control repositories
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Omitting NuGet packages in source control systems

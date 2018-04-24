@@ -1,20 +1,17 @@
 ---
-title: NuGet Release Notes | Microsoft Docs
+title: Release Notes
+description: Index of NuGet release notes and known issues for all versions.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 08/14/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Index of NuGet release notes and known issues for all versions.
-keywords: NuGet release notes, NuGet known issues
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Release Notes

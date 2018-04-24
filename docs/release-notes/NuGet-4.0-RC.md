@@ -1,19 +1,15 @@
 ---
-title: NuGet 4.0 RC Release Notes | Microsoft Docs
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/17/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
+title: NuGet 4.0 RC Release Notes
 description: Release notes for NuGet 4.0 RC including known issues, bug fixes, added features, and DCRs.
-keywords: NuGet 4.0 RC release notes, bug fixes, known issues, added features, DCRs
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.reviewer:
-- kraigb
+  - ananguar
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # NuGet 4.0 RC Release Notes
@@ -38,7 +34,8 @@ ms.workload:
 
 - Modify the NuGet targets to log the package sources as High verbosity instead of Normal - [#3719](https://github.com/NuGet/Home/issues/3719)
 
-- dotnet pack3 should include XML documentation by default - [#3698](https://github.com/NuGet/Home/issues/3698)
+- dotnet
+  - dotnetcore pack3 should include XML documentation by default - [#3698](https://github.com/NuGet/Home/issues/3698)
 
 - Batch update fails from UI when source without the package is first and All source is selected - [#3696](https://github.com/NuGet/Home/issues/3696)
 
@@ -68,7 +65,8 @@ ms.workload:
 
 - Visual Studio crashed attempting after changing selection in Package Manager - [#2551](https://github.com/NuGet/Home/issues/2551)
 
-- Dotnet restore performs case sensitive Id lookups on flat-list local repositories when floating versions are used - [#2516](https://github.com/NuGet/Home/issues/2516)
+- dotnet
+  - dotnetcore restore performs case sensitive Id lookups on flat-list local repositories when floating versions are used - [#2516](https://github.com/NuGet/Home/issues/2516)
 
 - nuget.exe delete is broken for V2 feed - [#2509](https://github.com/NuGet/Home/issues/2509)
 
@@ -154,7 +152,8 @@ ms.workload:
 
 - Restore to project with single TargetFramework must not condition props - [#3588](https://github.com/NuGet/Home/issues/3588)
 
-- dotnet restore3 foo.csproj should follow projectref dependencies, and restore those too. Like build. - [#3577](https://github.com/NuGet/Home/issues/3577)
+- dotnet
+  - dotnetcore restore3 foo.csproj should follow projectref dependencies, and restore those too. Like build. - [#3577](https://github.com/NuGet/Home/issues/3577)
 
 - "type": "platform" Dependencies represented as "type":"package" in lock file - [#2695](https://github.com/NuGet/Home/issues/2695)
 

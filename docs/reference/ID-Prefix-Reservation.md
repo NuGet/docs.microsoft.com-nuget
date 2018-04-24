@@ -1,21 +1,19 @@
 ---
-title: ID Prefix Reservation Reference | Microsoft Docs
+title: ID Prefix Reservation Reference
+description: Package ID Prefix Reservation feature description and author guide.
 author: diverdan92
 ms.author: diverdan92
-manager: unniravindranathan
+manager: unnir
 ms.date: 10/09/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Package ID Prefix Reservation feature description and author guide.
-keywords: NuGet package ID, prefix, reservation
 ms.reviewer:
 - ananguar
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Package ID prefix reservation

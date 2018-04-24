@@ -1,20 +1,18 @@
 ---
-title: "NuGet Package Name Dispute Resolution | Microsoft Docs"
+title: "NuGet Package Name Dispute Resolution"
+description: The process for resolving disputes between NuGet package publishers related to branding, trademarks, and other conflict situations.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: The process for resolving disputes between NuGet package publishers related to branding, trademarks, and other conflict situations.
-keywords: NuGet package disputes, NuGet dispute resolution, dispute resolution process
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Resolving disputes over NuGet package names

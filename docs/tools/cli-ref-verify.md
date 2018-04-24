@@ -1,20 +1,18 @@
 ---
-title: NuGet CLI verify command | Microsoft Docs
+title: NuGet CLI verify command
+description: Reference for the nuget.exe verify command
 author: dtivel
 ms.author: dtivel
 manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for the nuget.exe verify command
-keywords: nuget verify reference, verify command
 ms.reviewer:
-- karann
-- rmpablos
+  - karann
+  - rmpablos
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # verify command (NuGet CLI)

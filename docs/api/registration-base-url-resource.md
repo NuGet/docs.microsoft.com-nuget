@@ -1,24 +1,19 @@
 ---
-title: Package Metadata, NuGet API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Package Metadata, NuGet API
+description: The package registration base URL allows fetching metadata about packages.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: The package registration base URL allows fetching metadata about packages.
-keywords: NuGet API package metadata, NuGet API registration, NuGet API unlisted packages
 ms.reviewer:
-- karann
-- unniravindranathan
+  - kraigb
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Package metadata

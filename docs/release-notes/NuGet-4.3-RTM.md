@@ -1,21 +1,18 @@
 ---
-title: NuGet 4.3 RTM Release Notes | Microsoft Docs
-author: karann-msft
-ms.author: karann-msft
-manager: unniravindranathan
-ms.date: 08/14/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
+title: NuGet 4.3 RTM Release Notes
 description: Release notes for NuGet 4.3 RTM including known issues, bug fixes, added features, and DCRs.
-keywords: NuGet 4.3 RTM release notes, bug fixes, known issues, added features, DCRs
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 08/14/2017
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
-- anangaur
+  - unnir
+  - anangaur
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # NuGet 4.3 RTM Release Notes
@@ -100,7 +97,8 @@ Do a manual restore.
 
 - RestoreManagerPackage being loaded synchronously which blocked UI thread and deadlocked VS - [#4679](https://github.com/NuGet/Home/issues/4679)
 
-- dotnet Restore (& therefore msbuild /t:restore) skips projects with an explicit solution project dependency [#4578](https://github.com/NuGet/Home/issues/4578)
+- dotnet
+  - dotnetcore Restore (& therefore msbuild /t:restore) skips projects with an explicit solution project dependency [#4578](https://github.com/NuGet/Home/issues/4578)
 
 - If your solution has projectreferences that refer to the same project, with different casing, restore may not work. This also affects different relative paths, without a difference in casing - [#4574](https://github.com/NuGet/Home/issues/4574)
 

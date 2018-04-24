@@ -1,20 +1,18 @@
 ---
-title: Using NuGet.Server to Host NuGet Feeds | Microsoft Docs
+title: Using NuGet.Server to Host NuGet Feeds
+description: How to create and host a NuGet package feed on any server running IIS using NuGet.Server, making packages available through HTTP and OData.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/13/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: How to create and host a NuGet package feed on any server running IIS using NuGet.Server, making packages available through HTTP and OData.
-keywords: NuGet feed, NuGet gallery, remote package feed, NuGet.Server
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # NuGet.Server

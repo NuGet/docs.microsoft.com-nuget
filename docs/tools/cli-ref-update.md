@@ -1,20 +1,18 @@
 ---
-title: NuGet CLI update command | Microsoft Docs
+title: NuGet CLI update command
+description: Reference for the nuget.exe update command
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/07/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for the nuget.exe update command
-keywords: nuget update reference, update package command
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # update command (NuGet CLI)

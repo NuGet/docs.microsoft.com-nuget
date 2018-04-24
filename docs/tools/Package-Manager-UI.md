@@ -1,25 +1,23 @@
 ---
-title: NuGet Package Manager UI Reference | Microsoft Docs
+title: NuGet Package Manager UI Reference
+description: Instructions for using the NuGet Package Manager UI in Visual Studio for working with NuGet packages.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/08/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
+ms.topic: conceptual
 f1_keywords: 
   - "vs.toolsoptionspages.nuget_package_manager"
   - "vs.toolsoptionspages.nuget_package_manager.general"
   - "vs.toolsoptionspages.nuget_package_manager.package_sources"
   - "vs.nuget.packagemanager.ui"
-description: Instructions for using the NuGet Package Manager UI in Visual Studio for working with NuGet packages.
-keywords: NuGet UI, NuGet package manager UI, NuGet in Visual Studio, managing NuGet packages, NuGet user interface, package manager in Visual Studio
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # NuGet Package Manager UI

@@ -1,23 +1,21 @@
 ---
-title: Introductory Guide to Creating and Publishing a .NET Standard NuGet Package using Visual Studio | Microsoft Docs
+title: Introductory Guide to Creating and Publishing a .NET Standard NuGet Package using Visual Studio
+description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio 2017.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/18/2018
 ms.topic: quickstart
-ms.prod: nuget
-ms.technology: null
-description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio 2017.
-keywords: NuGet package creation, NuGet package publishing, NuGet tutorial, Visual Studio create NuGet package, msbuild pack
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
-# Create and publish a package using Visual Studio (.NET Standard)
+# Quickstart: Create and publish a package using Visual Studio (.NET Standard)
 
 It's a simple process to create a NuGet package from a .NET Standard Class Library in Visual Studio, and then publish it to nuget.org using a CLI tool.
 
@@ -155,6 +153,7 @@ This step is an alternative to using `nuget.exe`.
 
 - [Create a Package](../create-packages/creating-a-package.md)
 - [Publish a Package](../create-packages/publish-a-package.md)
+- [Pre-release Packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Package versioning](../reference/package-versioning.md)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)

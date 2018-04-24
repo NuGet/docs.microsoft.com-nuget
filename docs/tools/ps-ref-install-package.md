@@ -1,20 +1,18 @@
 ---
-title: NuGet Install-Package PowerShell Reference | Microsoft Docs
+title: NuGet Install-Package PowerShell Reference
+description: Reference for Install-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 06/01/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: Reference for Install-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
-keywords: NuGet package manager console, NuGet Powershell commands, NuGet Powershell reference, Install-Package
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Install-Package (Package Manager Console in Visual Studio)

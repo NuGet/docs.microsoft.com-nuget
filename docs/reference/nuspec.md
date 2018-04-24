@@ -1,21 +1,19 @@
 ---
-title: .nuspec File Reference for NuGet | Microsoft Docs
+title: .nuspec File Reference for NuGet
+description: The .nuspec file contains package metadata used when building a package and to provide information to package consumers.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 08/29/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: The .nuspec file contains package metadata used when building a package and to provide information to package consumers.
-keywords: nuspec reference, NuGet package metadata, NuGet package manifest, nuspec schema
 ms.reviewer:
-- anangaur
-- karann-msft
-- unniravindranathan
+  - anangaur
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # .nuspec reference

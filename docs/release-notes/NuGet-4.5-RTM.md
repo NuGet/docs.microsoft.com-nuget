@@ -1,21 +1,18 @@
 ---
-title: NuGet 4.5 RTM Release Notes | Microsoft Docs
+title: NuGet 4.5 RTM Release Notes
+description: Release notes for NuGet 4.5 RTM including known issues, bug fixes, added features, and DCRs.
 author: anangaur
 ms.author: anangaur
-manager: unniravindranathan
+manager: unnir
 ms.date: 12/4/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Release notes for NuGet 4.5 RTM including known issues, bug fixes, added features, and DCRs.
-keywords: NuGet 4.5 RTM release notes, bug fixes, known issues, added features, DCRs
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
-- anangaur
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # NuGet 4.5 RTM Release Notes
@@ -72,7 +69,8 @@ For issues fixed in NuGet 4.4 RTM, please refer to [NuGet 4.4 RTM Release Notes]
 - Assets from packages are missing after restore - [#5995](https://github.com/NuGet/Home/issues/5995)
 - Plugin credential providers do not work with URIs containing spaces - [#5982](https://github.com/NuGet/Home/issues/5982)
 - If package failed to restore, error should be printed in the output even with Minimal verbosity ON - [#5658](https://github.com/NuGet/Home/issues/5658)
-- dotnet restore at solution-level doesn't follow ProjectReference with ReferenceOutputAssembly of false leading to random build failures - [#5490](https://github.com/NuGet/Home/issues/5490)
+- dotnet
+  - dotnetcore restore at solution-level doesn't follow ProjectReference with ReferenceOutputAssembly of false leading to random build failures - [#5490](https://github.com/NuGet/Home/issues/5490)
 - Auto-complete in PMC works incorrectly with object methods - [#4800](https://github.com/NuGet/Home/issues/4800)
 - nuget.exe restore fails with Visual Studio 2015 toolset - [#4713](https://github.com/NuGet/Home/issues/4713)
 - perf - pmc is expensive to instantiate in vs2017 - [#4205](https://github.com/NuGet/Home/issues/4205)

@@ -1,24 +1,19 @@
 ---
-title: Report Abuse URL Template, NuGet API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Report Abuse URL Template, NuGet API
+description: The report abuse URL template allows clients to display a report abuse link in their UI.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: The report abuse URL template allows clients to display a report abuse link in their UI.
-keywords: NuGet API report abuse, NuGet API file complaint, nuget.org report URL template
 ms.reviewer:
-- karann
-- unniravindranathan
+  - kraigb
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Report abuse URL template

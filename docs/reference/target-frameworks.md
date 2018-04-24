@@ -1,21 +1,19 @@
 ---
-title: Target Frameworks References for NuGet | Microsoft Docs
+title: Target Frameworks Reference for NuGet
+description: NuGet target framework references identify and isolate framework-dependent components of a package.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/11/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
-description: NuGet target framework references identify and isolate framework-dependent components of a package.
-keywords: NuGet package targeting, .NET framework targets, .NET framework versions
 ms.reviewer:
-- anangaur
-- karann-msft
-- unniravindranathan
+  - anangaur
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Target frameworks

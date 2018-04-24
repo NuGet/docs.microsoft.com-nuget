@@ -1,20 +1,18 @@
 ---
-title: NuGet credential providers for Visual Studio | Microsoft Docs
+title: NuGet credential providers for Visual Studio
+description: NuGet credential providers authenticate with feeds by implementing the IVsCredentialProvider interface in a Visual Studio extension.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/09/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: NuGet credential providers authenticate with feeds by implementing the IVsCredentialProvider interface in a Visual Studio extension.
-keywords: NuGet credential providers, authenticate with feed, authenticate with gallery, NuGet visual studio extension
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Authenticating feeds in Visual Studio with NuGet credential providers

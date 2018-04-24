@@ -1,20 +1,18 @@
 ﻿---
-title: NuGet pack and restore as MSBuild targets | Microsoft Docs
+title: NuGet pack and restore as MSBuild targets
+description: NuGet pack and restore can work directly as MSBuild targets with NuGet 4.0+.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/23/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: NuGet pack and restore can work directly as MSBuild targets with NuGet 4.0+.
-keywords: NuGet and MSBuild, NuGet pack target, NuGet restore target
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # NuGet pack and restore as MSBuild targets

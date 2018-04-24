@@ -1,20 +1,11 @@
 ---
-title: What is NuGet and what does it do? | Microsoft Docs
+title: What is NuGet and what does it do?
+description: A comprehensive introduction to what NuGet is and does
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/10/2018
 ms.topic: overview
-ms.prod: nuget
-ms.technology: null
-description: A comprehensive introduction to what NuGet is and does
-keywords: NuGet package manager, consumption, package creation, package hosting, .NET packages, .NET Core packages
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload: 
- - "dotnet"
- - "aspnet"
 ---
 
 # An introduction to NuGet

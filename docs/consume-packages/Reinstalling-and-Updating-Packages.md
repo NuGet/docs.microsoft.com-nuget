@@ -1,20 +1,18 @@
 ---
-title: Reinstalling and Updating NuGet Packages | Microsoft Docs
+title: Reinstalling and Updating NuGet Packages
+description: Details on when it's necessary to reinstall and update packages, as with broken package references in Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/07/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Details on when it's necessary to reinstall and update packages, as with broken package references in Visual Studio.
-keywords: NuGet package installation, NuGet package reinstallation, NuGet package restore, updating package, restoring packages, fixing broken references
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # How to reinstall and update packages

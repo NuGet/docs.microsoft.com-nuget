@@ -1,20 +1,18 @@
 ---
-title: NuGet Packages in Visual Studio templates | Microsoft Docs
+title: NuGet Packages in Visual Studio templates
+description: Instructions for including NuGet packages as part of Visual Studio project and item templates.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/03/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Instructions for including NuGet packages as part of Visual Studio project and item templates.
-keywords: NuGet in Visual Studio, Visual Studio project templates, Visual Studio item templates, packages in project templates, packages in item templates
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Packages in Visual Studio templates

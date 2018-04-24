@@ -1,20 +1,23 @@
 ---
-title: Organizations on nuget.org | Microsoft Docs
+title: Organizations on nuget.org
+description: Organizations on nuget.org helps you to manage packages published by group or in a team, company environment.
 author: anangaur
 ms.author: anangaur
 manager: unnir
 ms.date: 04/10/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Organizations on nuget.org helps you to manage packages published by group or in a team, company environment.
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- kraigb
-- camsoper
+  - karann
+  - kraigb
+  - camsoper
+ms.workload: 
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Organization on nuget.org
+
 Organizations enable businesses and open-source projects to collaborate on packages using a single nuget.org identity. For a package consumer, an organization account appears same as an existing user account on nuget.org.
 
 ## User accounts vs. organization accounts

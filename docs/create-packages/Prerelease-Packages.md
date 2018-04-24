@@ -1,20 +1,18 @@
 ---
-title: Pre-release versions in NuGet packages | Microsoft Docs
+title: Pre-release versions in NuGet packages
+description: Guidance for building pre-release packages
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 08/14/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: null
-description: Guidance for building pre-release packages
-keywords: versioning, NuGet package versioning, NuGet prerelease versions, NuGet prerelease packages, preview package versions, RC package versions, Beta package versions, NuGet semantic versioning
+ms.topic: conceptual
 ms.reviewer:
-- karann-msft
-- unniravindranathan
+  - karann
+  - unnir
 ms.workload: 
- - "dotnet"
- - "aspnet"
+  - dotnet
+  - dotnetcore
+  - aspnet
 ---
 
 # Building pre-release packages
