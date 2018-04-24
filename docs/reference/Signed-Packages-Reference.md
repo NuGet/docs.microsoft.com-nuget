@@ -26,6 +26,9 @@ For details on creating a signed package, see [Signing Packages](../create-packa
 > [!Important]
 > nuget.org does not presently accept signed packages. You can sign packages for publishing to custom feeds.
 
+> [!Important]
+> Package signing is currently only supported using NuGet.exe on Windows platforms. Verification of signed packages is currently only supported by NuGet.exe and Visual Studio on Windows platforms.
+
 ## Certificate requirements
 
 Package signing requires a code signing certificate, which is a special type of certificate that is valid for the `id-kp-codeSigning` purpose [[RFC 5280 section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]. Additionally, the certificate must have an RSA public key length of 2048 bits or higher.
