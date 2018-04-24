@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Troubleshooting package restore errors

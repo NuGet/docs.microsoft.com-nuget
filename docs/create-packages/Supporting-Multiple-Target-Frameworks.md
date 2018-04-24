@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 09/27/2017
 ms.topic: conceptual
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Supporting multiple .NET framework versions

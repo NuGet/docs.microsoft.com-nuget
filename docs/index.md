@@ -8,12 +8,6 @@ ms.date: 02/12/2018
 ms.topic: overview
 layout: HubPage
 hide_bc: true
-ms.reviewer:  
-  - karann
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 <div id="main" class="v2">
 <div class="container">

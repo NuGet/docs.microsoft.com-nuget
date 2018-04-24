@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 10/25/2017
 ms.topic: reference
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # nuget.config reference

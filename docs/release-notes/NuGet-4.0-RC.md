@@ -4,12 +4,9 @@ description: Release notes for NuGet 4.0 RC including known issues, bug fixes, a
 author: karann-msft
 ms.author: karann
 manager: unnir
-ms.reviewer:
-  - ananguar
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.date: 02/03/2017
+ms.topic: conceptual
+ms.reviewer: ananguar
 ---
 
 # NuGet 4.0 RC Release Notes

@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 01/24/2018
 ms.topic: quickstart
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Quickstart: Create and publish a package (dotnet CLI)

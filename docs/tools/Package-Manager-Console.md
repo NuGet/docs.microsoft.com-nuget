@@ -10,13 +10,6 @@ ms.date: 01/23/2018
 ms.topic: conceptual
 f1_keywords: 
   - "vs.nuget.packagemanager.console"
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Package Manager Console

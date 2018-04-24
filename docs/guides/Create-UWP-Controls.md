@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 03/14/2018
 ms.topic: tutorial
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Creating UWP controls as NuGet packages

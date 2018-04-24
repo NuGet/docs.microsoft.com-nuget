@@ -6,12 +6,6 @@ ms.author: karann
 manager: unnir
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.reviewer:
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # NuGet 2.1 Release Notes

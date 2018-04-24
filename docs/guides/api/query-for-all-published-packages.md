@@ -6,14 +6,7 @@ ms.author: jver
 manager: skofman
 ms.date: 11/02/2017
 ms.topic: tutorial
-ms.reviewer:
-  - kraigb
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: kraigb
 ---
 
 # Query for all packages published to nuget.org

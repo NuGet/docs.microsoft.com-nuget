@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Create .NET Standard and .NET Framework packages with Visual Studio 2015

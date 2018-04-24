@@ -32,12 +32,26 @@ No contribution is too big or too small--
 If you're creating a new topic, keep the following in mind as well:
 
 1. Always place the new topic in an appropriate subfolder, and follow the conventions for filenames as you see them used here.
-1. You must include a metadata block as you see on other topics. The fields you should change are the following: title, description, ms.topic, ms.date, ms.author (Microsoft alias if you have one), author (GitHub ID), manager (GitHub ID).
-    1. The author fields determine who gets feedback, verbatims, and ratings for an article.
-    1. Ideally for SEO, the title field and the top-level # heading of the topic are different; see various topics for examples.
-1. Note that default metadata is contained in the docfx.json file at the top level of the docs folder.
+1. You must include a metadata block as you see on other topics. Typical defaults (such as for ms.workload and ms.reviewer) are set within docs/docjx.json, so you need only change the following:
+
+  - title: The title that appears in search results. For SEO, this ideally isn't the same as the top-level # (H1) of the article.
+  - description: The abstract of the article that appears in search results.
+  - author: the author's GitHub ID, to which issues files for this article are assigned.
+  - ms.author: if the author is a Microsoft employee, this is the Microsoft alias. Used for reporting and forwarding feedback from other channels.
+  - manager: Microsoft alias of the author's manager, if applicable.
+  - ms.date: the date of the last revision or review of the article in mm/dd/yyyy format (use leading zeros). This is a communication to the reader about freshness, so it's not updated for minor changes, only for more significant revisions OR when the article has reverified even if there are no changes.
+  - ms.topic: used to categorize the article in reports. See table below. Most articles are "conceptual". 
 1. In addition to adding your page, edit docs/TOC.md to add a link to that page.
 1. If you're adding a top-level node to the TOC, also make an entry for it in docs/index.md.
+
+| ms.topic category | Description |
+| --- | --- |
+| conceptual | Use for any content that doesn't fall into another. This is set as the default in docfx.json. |
+| overview | Use for any overview or user-guide articles, typically only those that live under an "Overview" node in the TOC. |
+| quickstart | Anything under the "Quickstart" node in the TOC that's authored according to Quickstart guidelines. |
+| tutorial | Anything under the "Tutorial" node in the TOC that's authored according to Tutorial guidelines. |
+| reference | Any reference-type article that isn't auto-generated. |
+| article | Use for community-contributed content (that is, anything from outside the engineering team or the docs team at Microsoft. |
 
 ## Conventions
 

@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 01/09/2017
 ms.topic: tutorial
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Create packages for Xamarin with Visual Studio 2015

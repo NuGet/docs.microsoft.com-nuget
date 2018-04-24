@@ -6,13 +6,7 @@ ms.author: rmpablos
 manager: unnir
 ms.date: 03/06/2018
 ms.topic: conceptual
-ms.reviewer:
-  - karann
-  - anangaur
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: anangaur
 ---
 
 # Signing NuGet Packages

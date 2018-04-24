@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Managing the global packages, cache, and temp folders

@@ -6,13 +6,7 @@ ms.author: anangaur
 manager: unnir
 ms.date: 10/30/2017
 ms.topic: conceptual
-ms.reviewer:
-  - kraigb
-  - karann
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: kraigb
 ---
 
 # nuget.org protocols

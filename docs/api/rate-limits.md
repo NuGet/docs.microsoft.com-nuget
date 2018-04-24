@@ -10,10 +10,6 @@ ms.reviewer:
   - skofman
   - anangaur
   - kraigb
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Rate Limits

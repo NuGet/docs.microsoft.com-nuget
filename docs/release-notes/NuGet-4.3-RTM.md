@@ -6,13 +6,7 @@ ms.author: karann
 manager: unnir
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.reviewer:
-  - unnir
-  - anangaur
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: anangaur
 ---
 
 # NuGet 4.3 RTM Release Notes

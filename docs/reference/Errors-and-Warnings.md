@@ -6,15 +6,7 @@ ms.author: kraigb
 manager: douge
 ms.date: 03/06/2018
 ms.topic: reference
-ms.reviewer:
-  - anangaur
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
-
+ms.reviewer: anangaur
 f1_keywords:
   - "NU1000"
   - "NU1001"

@@ -6,13 +6,7 @@ ms.author: dtivel
 manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
-ms.reviewer:
-  - karann
-  - rmpablos
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: rmpablos
 ---
 
 # verify command (NuGet CLI)

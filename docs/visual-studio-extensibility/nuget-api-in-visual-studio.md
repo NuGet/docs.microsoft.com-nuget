@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 01/09/2017
 ms.topic: reference
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # NuGet API in Visual Studio

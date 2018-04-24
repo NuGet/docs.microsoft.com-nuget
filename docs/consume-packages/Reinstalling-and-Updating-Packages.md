@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # How to reinstall and update packages

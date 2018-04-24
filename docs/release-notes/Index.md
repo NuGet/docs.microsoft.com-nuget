@@ -6,12 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.reviewer:
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Release Notes

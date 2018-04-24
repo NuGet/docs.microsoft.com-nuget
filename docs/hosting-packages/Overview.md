@@ -6,14 +6,7 @@ ms.author: kraigb
 manager: douge
 ms.date: 08/25/2017
 ms.topic: conceptual
-ms.reviewer:
-  - karann
-  - unnir
-  - anangaur
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: anangaur
 ---
 
 # Hosting your own NuGet feeds

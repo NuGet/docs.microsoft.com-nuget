@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # NuGet frequently-asked questions

@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Setting up package restore with Team Foundation Build

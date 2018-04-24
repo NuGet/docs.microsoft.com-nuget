@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 12/07/2017
 ms.topic: reference
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Add-BindingRedirect (Package Manager Console in Visual Studio)

@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 02/12/2018
 ms.topic: overview
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Different ways to install a NuGet Package

@@ -6,14 +6,7 @@ ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.reviewer:
-  - kraigb
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: kraigb
 ---
 
 # Push and Delete

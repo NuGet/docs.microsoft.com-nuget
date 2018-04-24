@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 03/18/2018
 ms.topic: quickstart
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Quickstart: Create and publish a package using Visual Studio (.NET Standard)

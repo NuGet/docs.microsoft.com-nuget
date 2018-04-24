@@ -11,13 +11,6 @@ f1_keywords:
   - "vs.toolsoptionspages.nuget_package_manager.general"
   - "vs.toolsoptionspages.nuget_package_manager.package_sources"
   - "vs.nuget.packagemanager.ui"
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # NuGet Package Manager UI

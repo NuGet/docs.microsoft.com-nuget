@@ -6,13 +6,6 @@ ms.author: karann
 manager: unnir
 ms.date: 11/11/2016
 ms.topic: conceptual
-description: Release notes for NuGet 1.3 including known issues, bug fixes, added features, and DCRs.
-ms.reviewer:
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # NuGet 1.3 Release Notes

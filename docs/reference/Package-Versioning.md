@@ -6,14 +6,7 @@ ms.author: kraigb
 manager: douge
 ms.date: 03/23/2018
 ms.topic: reference
-ms.reviewer:
-  - anangaur
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: anangaur
 ---
 
 # Package versioning

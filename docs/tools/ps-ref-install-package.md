@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 06/01/2017
 ms.topic: reference
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Install-Package (Package Manager Console in Visual Studio)

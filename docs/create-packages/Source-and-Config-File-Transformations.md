@@ -6,14 +6,7 @@ ms.author: kraigb
 manager: douge
 ms.date: 04/24/2017
 ms.topic: conceptual
-ms.reviewer:
-  - karann
-  - unnir
-  - anangaur
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: anangaur
 ---
 
 # Transforming source code and configuration files

@@ -6,14 +6,7 @@ ms.author: kraigb
 manager: douge
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.reviewer:
-  - anangaur
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: anangaur
 ---
 
 # Publishing packages

@@ -6,14 +6,8 @@ ms.author: diverdan92
 manager: unnir
 ms.date: 10/09/2017
 ms.topic: reference
-ms.reviewer:
-- ananguar
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: ananguar
+
 ---
 
 # Package ID prefix reservation

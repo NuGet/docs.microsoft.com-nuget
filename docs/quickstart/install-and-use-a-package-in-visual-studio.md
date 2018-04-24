@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Quickstart: Install and use a package in Visual Studio

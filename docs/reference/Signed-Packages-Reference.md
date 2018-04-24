@@ -6,14 +6,7 @@ ms.author: rido-min
 manager: unnir
 ms.date: 03/06/2018
 ms.topic: reference
-ms.reviewer:
-  - ananguar
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: ananguar
 ---
 
 # Signed packages

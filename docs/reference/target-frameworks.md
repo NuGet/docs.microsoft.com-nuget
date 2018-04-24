@@ -6,14 +6,7 @@ ms.author: kraigb
 manager: douge
 ms.date: 12/11/2017
 ms.topic: reference
-ms.reviewer:
-  - anangaur
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
+ms.reviewer: anangaur
 ---
 
 # Target frameworks

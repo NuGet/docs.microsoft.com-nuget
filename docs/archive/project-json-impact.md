@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Impact of project.json when creating packages

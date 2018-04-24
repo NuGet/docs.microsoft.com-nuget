@@ -6,13 +6,6 @@ ms.author: anangaur
 manager: unnir
 ms.date: 12/4/2017
 ms.topic: conceptual
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # NuGet 4.5 RTM Release Notes

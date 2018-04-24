@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 03/21/2017
 ms.topic: tutorial
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Create UWP packages

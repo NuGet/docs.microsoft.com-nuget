@@ -7,13 +7,8 @@ manager: unnir
 ms.date: 04/10/2018
 ms.topic: conceptual
 ms.reviewer:
-  - karann
   - kraigb
   - camsoper
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Organization on nuget.org
