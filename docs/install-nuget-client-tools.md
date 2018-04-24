@@ -6,13 +6,6 @@ ms.author: kraigb
 manager: douge
 ms.date: 04/09/2018
 ms.topic: quickstart
-ms.reviewer:
-  - karann
-  - unnir
-ms.workload: 
-  - dotnet
-  - dotnetcore
-  - aspnet
 ---
 
 # Installing NuGet client tools
