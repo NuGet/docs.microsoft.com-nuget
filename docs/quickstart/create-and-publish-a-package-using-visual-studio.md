@@ -8,7 +8,7 @@ ms.date: 03/18/2018
 ms.topic: quickstart
 ---
 
-# Quickstart: Create and publish a package using Visual Studio (.NET Standard)
+# Quickstart: Create and publish a NuGet package using Visual Studio (.NET Standard)
 
 It's a simple process to create a NuGet package from a .NET Standard Class Library in Visual Studio, and then publish it to nuget.org using a CLI tool.
 
