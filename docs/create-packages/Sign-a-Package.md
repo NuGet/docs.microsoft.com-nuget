@@ -21,9 +21,6 @@ Signing a package is a process that makes sure the package has not been modified
 
 1. [A code signing certificate](../reference/signed-packages-reference.md#get-a-code-signing-certificate).
 
-> [!Warning]
-> nuget.org does not currently accept signed packages. You can sign packages for publishing to custom feeds.
-
 ## Sign a package
 
 To sign a package, use [nuget sign](../tools/cli-ref-sign.md):

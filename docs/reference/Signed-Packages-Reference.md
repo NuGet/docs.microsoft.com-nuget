@@ -19,12 +19,9 @@ Signed packages provide the strongest end-to-end validation. An author signature
 
 Consumers who demand a locked-down environment can require packages signed with a specific author certificate.
 
-Additionally, author-signed packages provide an extra authentication mechanism to the nuget.org publishing pipeline because the signing certificate must be registered ahead of time.
+Additionally, author-signed packages provide an extra authentication mechanism to the nuget.org publishing pipeline because the signing certificate must be registered ahead of time, see the [Register certificates](register-certificates.md) topic for more information.
 
 For details on creating a signed package, see [Signing Packages](../create-packages/Sign-a-package.md) and the [nuget sign command](../tools/cli-ref-sign.md).
-
-> [!Important]
-> nuget.org does not presently accept signed packages. You can sign packages for publishing to custom feeds.
 
 > [!Important]
 > Package signing is currently supported only when using nuget.exe on Windows. Verification of signed packages is currently supported only when using nuget.exe or Visual Studio on Windows.
