@@ -27,9 +27,8 @@ The NuGet.org account page includes a section to manage the certificates associa
 
 ![Registered Certificates](media/registered-certs.png)
 
-
->[!Tip] One user can submit multiple certificates and the same certificate can be registered by multiple users.
-
+>[!Tip]
+>One user can submit multiple certificates and the same certificate can be registered by multiple users.
 
 Once a user has a certificate registered, all future submissions must be signed with one of the certificates.
 
