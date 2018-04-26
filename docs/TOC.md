@@ -86,7 +86,6 @@
 ## [NuGet client SDK](reference/nuget-client-sdk.md)
 ## [Signed packages reference](reference/signed-packages-reference.md)
 ## [Organizations on nuget.org](reference/organizations-on-nuget-org.md)
-## [Register certificates](reference/register-certificates.md)
 ## Extensibility
 ### [NuGet credential providers for Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [nuget.exe credential providers](reference/extensibility/nuget-exe-credential-providers.md)

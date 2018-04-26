@@ -17,9 +17,7 @@ NuGet packages can include a digital signature that provides protection against 
 
 Signed packages provide the strongest end-to-end validation. An author signature guarantees that the package has not been modified since the author signed the package, no matter from which repository or what transport method the package is delivered.
 
-Consumers who demand a locked-down environment can require packages signed with a specific author certificate.
-
-Additionally, author-signed packages provide an extra authentication mechanism to the nuget.org publishing pipeline because the signing certificate must be registered ahead of time. For more information, see [Register certificates](register-certificates.md).
+Additionally, author-signed packages provide an extra authentication mechanism to the nuget.org publishing pipeline because the signing certificate must be registered ahead of time. For more information, see [Register certificates](#register-certificate-on-nuget.org).
 
 For details on creating a signed package, see [Signing Packages](../create-packages/Sign-a-package.md) and the [nuget sign command](../tools/cli-ref-sign.md).
 
@@ -61,6 +59,9 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 
 This command creates a testing certificate available in the current user's personal certificate store. You can open the certificate store by running `certmgr.msc` to see the newly created certificate.
 
+> [!Warning]
+> NuGet.org does not accept packages signed with self-issued certificates.
+
 ## Timestamp requirements
 
 Signed packages should include an RFC 3161 timestamp to ensure signature validity beyond the package signing certificate's validity period. The certificate used to sign the timestamp must be valid for the `id-kp-timeStamping` purpose [[RFC 5280 section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]. Additionally, the certificate must have an RSA public key length of 2048 bits or higher.
@@ -73,7 +74,7 @@ To submit a signed package, you must first register the certificate with nuget.o
 
 ![Certificate Export Wizard](media/CertificateExportWizard.png) 
 
-Advanced users can export the certificate using the [`Export-Certificate` powershell command]/powershell/module/pkiclient/export-certificate?view=win10-ps).
+Advanced users can export the certificate using the `Export-Certificate` [powershell command(/powershell/module/pkiclient/export-certificate).
 
 To register the certificate with nuget.org, go to `Certificates` section on `Account settings` page (or the Organization's settings page) and select `Register new certificate`. 
 
@@ -82,13 +83,15 @@ To register the certificate with nuget.org, go to `Certificates` section on `Acc
 > [!Tip]
 > One user can submit multiple certificates and the same certificate can be registered by multiple users.
 
-Once a user has a certificate registered, all future package submissions must be signed with one of the certificates.
+Once a user has a certificate registered, all future package submissions **must** be signed with one of the certificates.
 
 Users can also remove a registered certificate from the account. Once a certificate is removed, packages signed with that certificate fail at submission. Existing packages aren't affected.
 
 ## Configure package signing requirements
 
-If you are the sole owner of a package, you are the required signer. That is, you can use any of the registered certificates to sign your packages and submit to nuget.org. If a package has multiple owners, by default, "Any" owner's certificates can be used to sign the package. As a co-owner of the package, you can override "Any" with yourself or any other co-owner to be the required signer. If you make an owner a required signer who does not have any certificate registered, then nuget.org accepts only unsigned packages. 
+If you are the sole owner of a package, you are the required signer. That is, you can use any of the registered certificates to sign your packages and submit to nuget.org. 
+
+If a package has multiple owners, by default, "Any" owner's certificates can be used to sign the package. As a co-owner of the package, you can override "Any" with yourself or any other co-owner to be the required signer. If you make an owner  who does not have any certificate registered, then unsigned packages will be allowed. 
 
 Similarly, if the default "Any" option is selected for a package where one owner has a certificate registered and another owner does not have any certificate registered, then nuget.org accepts either a signed package with a signature registered by one of its owners or an unsigned package (because one of the owners does not have any certificate registered).
 
