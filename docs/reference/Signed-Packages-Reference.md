@@ -43,7 +43,7 @@ The complete list of certification authorities trusted by Windows can be obtaine
 
 ## Create a test certificate
 
-You can use self-issued certificates for testing purposes. To create a self-issued certificate, use the [New-SelfSignedCertificate](https://docs.microsoft.com/en-us/powershell/module/pkiclient/new-selfsignedcertificate) PowerShell command.
+You can use self-issued certificates for testing purposes. To create a self-issued certificate, use the [New-SelfSignedCertificate PowerShell command](/powershell/module/pkiclient/new-selfsignedcertificate).
 
 ```ps
 New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
@@ -60,7 +60,7 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 This command creates a testing certificate available in the current user's personal certificate store. You can open the certificate store by running `certmgr.msc` to see the newly created certificate.
 
 > [!Warning]
-> NuGet.org does not accept packages signed with self-issued certificates.
+> nuget.org does not accept packages signed with self-issued certificates.
 
 ## Timestamp requirements
 
@@ -72,11 +72,11 @@ Additional technical details can be found in the [package signature technical sp
 
 To submit a signed package, you must first register the certificate with nuget.org. You need the certificate as a `.cer` file in a binary DER format. You can export an existing certificate to a binary DER format by using the Certificate Export Wizard.
 
-![Certificate Export Wizard](media/CertificateExportWizard.png) 
+![Certificate Export Wizard](media/CertificateExportWizard.png)
 
-Advanced users can export the certificate using the `Export-Certificate` [powershell command(/powershell/module/pkiclient/export-certificate).
+Advanced users can export the certificate using the [Export-Certificate PowerShell command](/powershell/module/pkiclient/export-certificate).
 
-To register the certificate with nuget.org, go to `Certificates` section on `Account settings` page (or the Organization's settings page) and select `Register new certificate`. 
+To register the certificate with nuget.org, go to `Certificates` section on `Account settings` page (or the Organization's settings page) and select `Register new certificate`.
 
 ![Registered Certificates](media/registered-certs.png)
 
@@ -89,14 +89,10 @@ Users can also remove a registered certificate from the account. Once a certific
 
 ## Configure package signing requirements
 
-If you are the sole owner of a package, you are the required signer. That is, you can use any of the registered certificates to sign your packages and submit to nuget.org. 
+If you are the sole owner of a package, you are the required signer. That is, you can use any of the registered certificates to sign your packages and submit to nuget.org.
 
 If a package has multiple owners, by default, "Any" owner's certificates can be used to sign the package. As a co-owner of the package, you can override "Any" with yourself or any other co-owner to be the required signer. If you make an owner  who does not have any certificate registered, then unsigned packages will be allowed. 
 
 Similarly, if the default "Any" option is selected for a package where one owner has a certificate registered and another owner does not have any certificate registered, then nuget.org accepts either a signed package with a signature registered by one of its owners or an unsigned package (because one of the owners does not have any certificate registered).
 
 ![Configure package signers](media/configure-package-signers.png)
-
-
-
-

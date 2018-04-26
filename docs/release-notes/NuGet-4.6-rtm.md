@@ -13,11 +13,13 @@ ms.topic: conceptual
 [Visual Studio 2017 15.6 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with [NuGet 4.6.0](https://dist.nuget.org/win-x86-commandline/v4.6.0/nuget.exe).
 
 ## Summary: What's New in this Release
-* We have added support for [signing packages](https://docs.microsoft.com/en-us/nuget/create-packages/sign-a-package).  
-* Visual Studio 2017 and nuget.exe now verifies package integrity before installing, restoring packages for [signed packages](https://docs.microsoft.com/en-us/nuget/reference/signed-packages-reference).
+
+* We have added support for [signing packages](../create-packages/sign-a-package.md).
+* Visual Studio 2017 and nuget.exe now verifies package integrity before installing, restoring packages for [signed packages](../reference/signed-packages-reference.md).
 * We have improved performance of successive restores.
 
 ## Known issues
+
 ### Issues with .NET Standard 2.0 with .NET Framework & NuGet 
 
 .NET Standard & its tooling was designed such that projects targeting .NET Framework 4.6.1 can consume NuGet packages & projects targeting .NET Standard 2.0 or earlier. [This document](https://github.com/dotnet/standard/issues/481) summarizes the issues around that scenario, the plan for addressing them, and workarounds you can deploy with today's state of the tooling.
@@ -25,11 +27,13 @@ ms.topic: conceptual
 ## Top issues fixed in this release
 
 **Performance fixes**
+
 * Don't write asset files when there is no change - [#6491](https://github.com/NuGet/Home/issues/6491)
 * Restore causes extra MSBuild evaluations when child projects' TFM do not match with the parent project's - [#6311](https://github.com/NuGet/Home/issues/6311)
 * Improve NoOp restore perf by optimizing dependency graph spec creation - [#6252](https://github.com/NuGet/Home/issues/6252)
 
 **Bugs**
+
 * Push to local folder leaves nupkg locked - [#6325](https://github.com/NuGet/Home/issues/6325)
 * NuGet Plugin implementation:  multiple issues - [#6149](https://github.com/NuGet/Home/issues/6149)
 * UIHang - Remove query service call from MEF initialization in VSSolutionManager - [#6110](https://github.com/NuGet/Home/issues/6110)
@@ -56,6 +60,5 @@ ms.topic: conceptual
 * Nuget add hangs on CentOS - [#2708](https://github.com/NuGet/Home/issues/2708)
 * Restore with packagesavemode -nupkg fails for json.net - [#2706](https://github.com/NuGet/Home/issues/2706)
 * Package Manager filter not available in vs output window for restore command - [#2704](https://github.com/NuGet/Home/issues/2704)
-
 
 [List of all issues fixed in this release](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.6")
