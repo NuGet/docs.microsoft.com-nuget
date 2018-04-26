@@ -15,6 +15,8 @@ ms.reviewer: rmpablos
 
 Verifies a package.
 
+Verification of signed packages is not yet supported in .NET Core, under Mono, or on non-Windows platforms.
+
 ## Usage
 
 ```cli

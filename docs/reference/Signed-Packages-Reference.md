@@ -4,7 +4,7 @@ description: Requirements for NuGet package signing.
 author: rido-min
 ms.author: rido-min
 manager: unnir
-ms.date: 03/06/2018
+ms.date: 04/24/2018
 ms.topic: reference
 ms.reviewer: ananguar
 ---
@@ -25,6 +25,9 @@ For details on creating a signed package, see [Signing Packages](../create-packa
 
 > [!Important]
 > nuget.org does not presently accept signed packages. You can sign packages for publishing to custom feeds.
+
+> [!Important]
+> Package signing is currently supported only when using nuget.exe on Windows. Verification of signed packages is currently supported only when using nuget.exe or Visual Studio on Windows.
 
 ## Certificate requirements
 

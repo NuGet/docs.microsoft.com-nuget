@@ -1,5 +1,5 @@
 ---
-title: dotNet NuGet commands
+title: dotnet NuGet commands
 description: A short reference for NuGet-related commands using the dotnet command-line interface.
 author: kraigb
 ms.author: kraigb
@@ -8,7 +8,7 @@ ms.date: 01/23/2018
 ms.topic: conceptual
 ---
 
-# dotNet commands
+# dotnet commands
 
 The `dotnet` command-line interface, which runs on Windows, Mac OS X, and Linux, provides a number of essential nuget.exe commands as listed below. If dotnet satisfies your needs, it's not necessary to use `nuget.exe`.
 
