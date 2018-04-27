@@ -56,16 +56,13 @@ The restore command performs the following steps:
 
 1. Determine the operation mode of the restore command.
 
-   |                                          projectPath file type                                           |                                                                                    Behavior                                                                                     |
-   |----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   |                                             Solution (folder)                                            |                     NuGet looks for a `.sln` file and uses that if found; otherwise gives an error. `(SolutionDir)\.nuget` is used as the starting folder.                      |
-   |                                                `.sln` file                                               |              Restore packages identified by the solution; gives an error if `-SolutionDirectory` is used. `$(SolutionDir)\.nuget` is used as the starting folder.               |
-   |                                     `packages.config` or project file                                    |                                                   Restore packages listed in the file, resolving and installing dependencies.                                                   |
-   |                                              Other file type                                             |                                           File is assumed to be a `.sln` file as above; if it's not a solution, NuGet gives an error.                                           |
-   |                                        (projectPath not specified)                                       | - NuGet looks for solution files in the current folder. If a single file is found, that one is used to restore packages; if multiple solutions are found, NuGet gives an error. |
-   | - If there are no solution files, NuGet looks for a `packages.config` and uses that to restore packages. |                                                                                                                                                                                 |
-   |                - If no solution or `packages.config` file is found, NuGet gives an error.                |                                                                                                                                                                                 |
-
+   | projectPath file type | Behavior |
+   | --- | --- |
+   | Solution (folder) | NuGet looks for a `.sln` file and uses that if found; otherwise gives an error. `(SolutionDir)\.nuget` is used as the starting folder. |
+   | `.sln` file | Restore packages identified by the solution; gives an error if `-SolutionDirectory` is used. `$(SolutionDir)\.nuget` is used as the starting folder. |
+   | `packages.config` or project file | Restore packages listed in the file, resolving and installing dependencies. |
+   | Other file type | File is assumed to be a `.sln` file as above; if it's not a solution, NuGet gives an error. |
+   | (projectPath not specified) | <ul><li>NuGet looks for solution files in the current folder. If a single file is found, that one is used to restore packages; if multiple solutions are found, NuGet gives an error.</li><li>If there are no solution files, NuGet looks for a `packages.config` and uses that to restore packages.</li><li>If no solution or `packages.config` file is found, NuGet gives an error.</ul> |
 
 2. Determine the packages folder using the following priority order (NuGet gives an error if none of these folders are found):
 

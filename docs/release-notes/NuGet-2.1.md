@@ -92,21 +92,21 @@ In addition to adding support for targeting portable library projects, NuGet 2.1
 
 For Windows 8 Store applications, the identifiers look as follows:
 
-|NuGet 2.0 and earlier|NuGet 2.1|
-|----------------|-----------|
-|winRT45, .NETCore45|Windows, Windows8, win, win8|
+| NuGet 2.0 and earlier | NuGet 2.1 |
+| ---------------- | ----------- |
+| winRT45, .NETCore45 | Windows, Windows8, win, win8 |
 
 <br/>
 For Windows Phone projects, the identifiers look as follows:
 
 | Phone OS | NuGet 2.0 and earlier | NuGet 2.1 |
-|---------------------------|-----------------------|--------------------------------------|
+| --- | --- | --- |
 | Windows Phone 7 | silverlight3-wp | wp, wp7, WindowsPhone, WindowsPhone7 |
 | Windows Phone 7.5 (Mango) | silverlight4-wp71 | wp71, WindowsPhone71 |
 | Windows Phone 8 | (not supported) | wp8, WindowsPhone8 |
 
 <br/>
-In all of the above changes, the old framework names will continue to be fully supported by NuGet 2.1.  Moving forward, the new names should be used as they will be more stable across future versions of the respective platforms. The new names will <em>not</em> be supported in versions of NuGet prior to 2.1, however, so plan accordingly for when to make the switch.
+In all of the above changes, the old framework names will continue to be fully supported by NuGet 2.1.  Moving forward, the new names should be used as they will be more stable across future versions of the respective platforms. The new names will *not* be supported in versions of NuGet prior to 2.1, however, so plan accordingly for when to make the switch.
 
 ## Improved Search in Package Manager Dialog
 
