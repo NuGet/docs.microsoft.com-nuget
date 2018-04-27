@@ -26,8 +26,7 @@ hide_bc: true
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="" />        
-                                            </div>
+                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="" /><br/>                                            </div>
                                         </div>
                                         <div class="cardText">
                                             <h3>What is NuGet?</h3>
@@ -69,7 +68,7 @@ hide_bc: true
                                         </div>
                                         <div class="cardText">
                                             <h3>Quickstart: Creating a package</h3>
-                                            <p>Experience NuGet's tools and capabilities for package creation (walkthroughs are available for both the dotnet CLI and Visual Studio).</p>
+                                            <p>Experience NuGet&#39;s tools and capabilities for package creation (walkthroughs are available for both the dotnet CLI and Visual Studio).</p>
                                         </div>
                                     </div>
                                 </div>

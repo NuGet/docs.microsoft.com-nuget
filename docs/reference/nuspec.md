@@ -84,14 +84,14 @@ These elements may appear within a `<metadata>` element.
 | **owners** | A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in `authors`, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg). |
 | **projectUrl** | A URL for the package's home page, often shown in UI displays as well as nuget.org. |
 | **licenseUrl** | A URL for the package's license, often shown in UI displays as well as nuget.org. |
-| **iconUrl** | A URL for a 64x64 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like *https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\>*. |
+| **iconUrl** | A URL for a 64x64 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. |
 | **requireLicenseAcceptance** | A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package. |
 | **developmentDependency** | *(2.8+)* A Boolean value specifying whether the package is be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages. |
 | **summary** | A short description of the package for UI display. If omitted, a truncated version of `description` is used. |
 | **releaseNotes** | *(1.5+)* A description of the changes made in this release of the package, often used in UI like the **Updates** tab of the Visual Studio Package Manager in place of the package description. |
 | **copyright** | *(1.5+)* Copyright details for the package. |
 | **language** | The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md). |
-| **tags** | A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering. |
+| **tags**  | A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering. |
 | **serviceable** | *(3.3+)* For internal NuGet use only. |
 
 #### Collection elements
@@ -170,8 +170,8 @@ The `<dependencies>` element within `<metadata>` contains any number of `<depend
 
 | Include/Exclude tag | Affected folders of the target |
 | --- | --- |
-| contentFiles | Content  |
-| runtime | Runtime, Resources, and FrameworkAssemblies  |
+| contentFiles | Content |
+| runtime | Runtime, Resources, and FrameworkAssemblies |
 | compile | lib |
 | build | build (MSBuild props and targets) |
 | native | native |
