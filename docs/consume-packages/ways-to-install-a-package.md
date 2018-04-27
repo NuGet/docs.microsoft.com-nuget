@@ -36,7 +36,8 @@ The general process is as follows:
 
    - If the package cannot be successfully acquired from any sources, installation fails at this point with an error such as [NU1103](../reference/errors-and-warnings.md#nu1103). Note that errors from `nuget.exe` commands show only the last source checked, but implies that the package wasn't available from any source.
 
-     When acquiring the package, the order of sources in the NuGet configuration may apply:
+   When acquiring the package, the order of sources in the NuGet configuration may apply:
+
      - For projects using the PackageReference format, NuGet checks sources local folder and network shares before checking HTTP sources.
      - For projects using the `packages.config` management format, NuGet uses the order of the sources in the configuration. An exception is restore operations, in which case source ordering is ignored and NuGet uses the package from whichever source responds first.
      - In general, the order in which NuGet checks sources isn't particularly meaningful, because any given package with a specific identifier and version number is exactly the same on whatever source it's found.

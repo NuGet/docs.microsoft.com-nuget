@@ -105,6 +105,7 @@ A symbol package can be built by conventions, from a folder structure as describ
     ```cli
     nuget push MyPackage.symbols.nupkg
     ```
+
    > [!Note]
    > With nuget.exe 4.5.0 or above, the symbols packages are not automatically pushed to symbolsource.org. You would need to push the symbols packages separately as explained in the next step.
 

@@ -28,25 +28,25 @@ A framework is typically referenced by a short target framework moniker or TFM. 
 
 The NuGet clients support the frameworks in the table below. Equivalents are shown within brackets []. Note that some tools, such as `dotnet`, might use variations of canonical TFMs in some files. For example, `dotnet pack` uses  `.NETCoreApp2.0` in a `.nuspec` file rather than `netcoreapp2.0`. The various NuGet client tools handle these variations properly, but you should always use canonical TFMs when editing files directly.
 
-| Name           | Abbreviation | TFMs/TxMs |
-| -------------  | ------------ | --------- |
-|.NET Framework  | net          | net11     |
-|                |              | net20     |
-|                |              | net35     |
-|                |              | net40     |
-|                |              | net403    |
-|                |              | net45      |
-|                |              | net451     |
-|                |              | net452     |
-|                |              | net46      |
-|                |              | net461     |
-|                |              | net462     |
-|Microsoft Store (Windows Store) | netcore      | netcore [netcore45] |
-|                |              | netcore45 [win, win8] |
-|                |              | netcore451 [win81] |
-|                |              | netcore50 |
-|.NET MicroFramework | netmf    | netmf |
-|Windows         | win          | win [win8, netcore45] |
+| Name | Abbreviation | TFMs/TxMs |
+| ------------- | ------------ | --------- |
+|.NET Framework | net | net11 |
+| | | net20 |
+| | | net35 |
+| | | net40 |
+| | | net403 |
+| | | net45 |
+| | | net451 |
+| | | net452 |
+| | | net46 |
+| | | net461 |
+| | | net462 |
+|Microsoft Store (Windows Store) | netcore | netcore [netcore45] |
+| | | netcore45 [win, win8] |
+| | | netcore451 [win81] |
+| | | netcore50 |
+|.NET MicroFramework | netmf | netmf |
+|Windows | win | win [win8, netcore45] |
 | | | win8 [netcore45, win] |
 | | | win81 [netcore451] |
 | | | win10 (not supported by Windows 10 Platform) |
@@ -75,6 +75,7 @@ Tizen | tizen | tizen3 |
 | | | tizen4 |
 
 ## Deprecated frameworks
+
 The following frameworks are deprecated. Packages targeting these frameworks should migrate to the indicated replacements.
 
 | Deprecated framework | Replacement
@@ -100,14 +101,13 @@ The following frameworks are deprecated. Packages targeting these frameworks sho
 
 A number of frameworks are related to and compatible with one another, but not necessarily equivalent:
 
-
-|            Framework             |  Can use  |
-|----------------------------------|-----------|
-| uap (Universal Windows Platform) |   win81   |
-|                                  |   wpa81   |
-|                                  | netcore50 |
-|      win (Microsoft Store)       |   winrt   |
-|                                  |           |
+| Framework | Can use |
+| -- | --- |
+| uap (Universal Windows Platform) | win81 |
+| | wpa81 |
+| | netcore50 |
+| win (Microsoft Store) | winrt |
+| | |
 
 ## NET Platform Standard
 
