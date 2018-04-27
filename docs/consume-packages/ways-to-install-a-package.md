@@ -38,9 +38,11 @@ The general process is as follows:
 
    When acquiring the package, the order of sources in the NuGet configuration may apply:
 
-     - For projects using the PackageReference format, NuGet checks sources local folder and network shares before checking HTTP sources.
-     - For projects using the `packages.config` management format, NuGet uses the order of the sources in the configuration. An exception is restore operations, in which case source ordering is ignored and NuGet uses the package from whichever source responds first.
-     - In general, the order in which NuGet checks sources isn't particularly meaningful, because any given package with a specific identifier and version number is exactly the same on whatever source it's found.
+   - For projects using the PackageReference format, NuGet checks sources local folder and network shares before checking HTTP sources.
+
+   - For projects using the `packages.config` management format, NuGet uses the order of the sources in the configuration. An exception is restore operations, in which case source ordering is ignored and NuGet uses the package from whichever source responds first.
+
+   - In general, the order in which NuGet checks sources isn't particularly meaningful, because any given package with a specific identifier and version number is exactly the same on whatever source it's found.
 
 3. (All tools except `nuget.exe`) Save a copy of the package and other information in the *http-cache* folder as described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md).
 
