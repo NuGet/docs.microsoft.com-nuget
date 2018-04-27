@@ -95,13 +95,15 @@ For Windows 8 Store applications, the identifiers look as follows:
 <br/>
 For Windows Phone projects, the identifiers look as follows:
 
-|Phone OS|NuGet 2.0 and earlier|NuGet 2.1
-|----------------|-----------|-----------|
-|Windows Phone 7|silverlight3-wp|wp, wp7, WindowsPhone, WindowsPhone7|
-|Windows Phone 7.5 (Mango)|silverilght4-wp71|wp71, WindowsPhone71|
-|Windows Phone 8|(not supported)|wp8, WindowsPhone8|
+
+|         Phone OS          | NuGet 2.0 and earlier |              NuGet 2.1               |
+|---------------------------|-----------------------|--------------------------------------|
+|      Windows Phone 7      |    silverlight3-wp    | wp, wp7, WindowsPhone, WindowsPhone7 |
+| Windows Phone 7.5 (Mango) |   silverilght4-wp71   |         wp71, WindowsPhone71         |
+|      Windows Phone 8      |    (not supported)    |          wp8, WindowsPhone8          |
+
 <br/>
-In all of the above changes, the old framework names will continue to be fully supported by NuGet 2.1.  Moving forward, the new names should be used as they will be more stable across future versions of the respective platforms. The new names will *not* be supported in versions of NuGet prior to 2.1, however, so plan accordingly for when to make the switch.
+In all of the above changes, the old framework names will continue to be fully supported by NuGet 2.1.  Moving forward, the new names should be used as they will be more stable across future versions of the respective platforms. The new names will <em>not</em> be supported in versions of NuGet prior to 2.1, however, so plan accordingly for when to make the switch.
 
 ## Improved Search in Package Manager Dialog
 Over the past several iterations, changes have been introduced to the NuGet gallery that greatly improved the speed and relevance of package searches.  However, these improvements were limited to the nuget.org Web site.  NuGet 2.1 makes the improved search experience available through the NuGet package manager dialog.  As an example, imagine that you wanted to find the Windows Azure Caching Preview package.  A reasonable search query for this package may be “Azure Cache”.  In previous versions of the package manager dialog, the desired package would not even be listed on the first page of results.  However, in NuGet 2.1, the desired package now shows up at the top of the search results.

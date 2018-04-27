@@ -46,7 +46,7 @@ In this topic:
     ![References in Solution Explorer](media/References.png)
 
 > [!Tip]
-    > To include prerelease versions in the search, and to make prerelease versions available in the version drop-down, select the **Include prerelease** option.
+> To include prerelease versions in the search, and to make prerelease versions available in the version drop-down, select the **Include prerelease** option.
 
 ## Uninstalling a package
 

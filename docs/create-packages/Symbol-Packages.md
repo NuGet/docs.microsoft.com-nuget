@@ -100,21 +100,21 @@ A symbol package can be built by conventions, from a folder structure as describ
     nuget SetApiKey Your-API-Key
     ```
 
-1. After publishing your primary package to nuget.org, push the symbol package as follows, which will automatically use symbolsource.org as the target because of the `.symbols` in the filename:
+2. After publishing your primary package to nuget.org, push the symbol package as follows, which will automatically use symbolsource.org as the target because of the `.symbols` in the filename:
 
     ```cli
     nuget push MyPackage.symbols.nupkg
     ```
-> [!Note]
-> With nuget.exe 4.5.0 or above, the symbols packages are not automatically pushed to symbolsource.org. You would need to push the symbols packages separately as explained in the next step.
+   > [!Note]
+   > With nuget.exe 4.5.0 or above, the symbols packages are not automatically pushed to symbolsource.org. You would need to push the symbols packages separately as explained in the next step.
 
-1. To publish to a different symbol repository, or to push a symbol package that doesn't follow the naming convention, use the `-Source` option:
+3. To publish to a different symbol repository, or to push a symbol package that doesn't follow the naming convention, use the `-Source` option:
 
     ```cli
     nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
     ```
 
-1. You can also push both primary and symbol packages to both repositories at the same time using the following:
+4. You can also push both primary and symbol packages to both repositories at the same time using the following:
 
     ```cli
     nuget push MyPackage.nupkg

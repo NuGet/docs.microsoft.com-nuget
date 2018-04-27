@@ -100,13 +100,14 @@ The following frameworks are deprecated. Packages targeting these frameworks sho
 
 A number of frameworks are related to and compatible with one another, but not necessarily equivalent:
 
-| Framework | Can use |
-| --- | --- |
-| uap (Universal Windows Platform) | win81 |
-| | wpa81 |
-| | netcore50 |
-| win (Microsoft Store) | winrt |
-| | | winrt45 |
+
+|            Framework             |  Can use  |
+|----------------------------------|-----------|
+| uap (Universal Windows Platform) |   win81   |
+|                                  |   wpa81   |
+|                                  | netcore50 |
+|      win (Microsoft Store)       |   winrt   |
+|                                  |           |
 
 ## NET Platform Standard
 

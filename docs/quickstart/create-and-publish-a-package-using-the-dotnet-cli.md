@@ -79,23 +79,23 @@ To automatically run `dotnet pack` when you run `dotnet build`, add the followin
 
 Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nuget push` command along with an API key acquired from nuget.org.
 
-[!INCLUDE[publish-notes](includes/publish-notes.md)]
+[!INCLUDE [publish-notes](includes/publish-notes.md)]
 
 ### Acquire your API key
 
-[!INCLUDE[publish-api-key](includes/publish-api-key.md)]
+[!INCLUDE [publish-api-key](includes/publish-api-key.md)]
 
 ### Publish with dotnet nuget push
 
-[!INCLUDE[publish-dotnet](includes/publish-dotnet.md)]
+[!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
 ### Publish errors
 
-[!INCLUDE[publish-errors](includes/publish-errors.md)]
+[!INCLUDE [publish-errors](includes/publish-errors.md)]
 
 ### Manage the published package
 
-[!INCLUDE[publish-manage](includes/publish-manage.md)]
+[!INCLUDE [publish-manage](includes/publish-manage.md)]
 
 ## Related topics
 
