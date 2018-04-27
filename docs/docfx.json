@@ -33,23 +33,32 @@
     ],
     "overwrite": [],
     "externalReference": [],
-        "globalMetadata": {
-            "feedback_system": "GitHub",
-            "feedback_github_repo": "NuGet/docs.microsoft.com-nuget",
-            "feedback_product_url": "https://github.com/NuGet/Home/issues/",
-            "breadcrumb_path": "~/_breadcrumb/toc.yml",
-            "ROBOTS": "INDEX,FOLLOW",
-            "ms.topic": "conceptual",
-            "ms.prod": "nuget",
-            "ms.technology": null,
-            "ms.reviewer": ["karann", "unnir"],
-            "ms.workload": ["dotnet", "dotnetcore", "aspnet"],
-            "searchScope": ["NuGet"],
-            "uhfHeaderId": "MSDocsHeader-NuGet"
-            },
-        "fileMetadata": {            
-        },
+    "globalMetadata": {
+      "feedback_system": "GitHub",
+      "feedback_github_repo": "NuGet/docs.microsoft.com-nuget",
+      "feedback_product_url": "https://github.com/NuGet/Home/issues/",
+      "breadcrumb_path": "~/_breadcrumb/toc.yml",
+      "ROBOTS": "INDEX,FOLLOW",
+      "ms.topic": "conceptual",
+      "ms.prod": "nuget",
+      "ms.technology": null,
+      "ms.reviewer": [
+        "karann",
+        "unnir"
+      ],
+      "ms.workload": [
+        "dotnet",
+        "dotnetcore",
+        "aspnet"
+      ],
+      "searchScope": [
+        "NuGet"
+      ],
+      "uhfHeaderId": "MSDocsHeader-NuGet"
+    },
+    "fileMetadata": {},
     "template": [],
-    "dest": "nuget"
+    "dest": "nuget",
+    "markdownEngineName": "markdig"
   }
 }
