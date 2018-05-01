@@ -33,7 +33,7 @@ Users that are sole owners of packages are encouraged to find new owners before 
 
 The account delete action will be completed by the NuGet.org administrator in a maximum of 30 days from when the request was submitted.
 
-Upon account deletion, all of the users data will be removed for the NuGet system and the following actions will be taken:
+Upon account deletion, all of the users data will be removed from the NuGet.org system and the following actions will be taken:
 
 * The deleted account will become unregistered with https://www.nuget.org
 * All owned API Keys will be deleted
