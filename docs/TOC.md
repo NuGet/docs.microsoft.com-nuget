@@ -114,6 +114,7 @@
 ## [NuGet FAQ](policies/nuget-faq.md)
 ## [Governance](policies/governance.md)
 ## [Ecosystem](policies/ecosystem.md)
+## [Data Requests](policies/Data-requests.md)
 ## [Dispute resolution](policies/dispute-resolution.md)
 ## [Deleting packages](policies/deleting-packages.md)
 # Release notes
