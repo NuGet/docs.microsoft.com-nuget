@@ -215,11 +215,11 @@ Package details catalog items have the following properties in addition to those
 Name                    | Type                       | Required | Notes
 ----------------------- | -------------------------- | -------- | -----
 authors                 | string                     | no       |
-created                 | string                     | yes      | A timestamp of when the package was first created
+created                 | string                     | no       | A timestamp of when the package was first created. Fallback property: `published`.
 dependencyGroups        | array of objects           | no       | Same format as the [package metadata resource](registration-base-url-resource.md#package-dependency-group)
 description             | string                     | no       |
 iconUrl                 | string                     | no       |
-isPrerelease            | boolean                    | yes      | Whether or not the package version is prerelease
+isPrerelease            | boolean                    | no       | Whether or not the package version is prerelease. Can be detected from `version`.
 language                | string                     | no       |
 licenseUrl              | string                     | no       |
 listed                  | boolean                    | no       | Whether or not the package is listed
