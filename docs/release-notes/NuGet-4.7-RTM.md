@@ -13,23 +13,27 @@ ms.topic: conceptual
 [Visual Studio 2017 15.7 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with [NuGet 4.7.0](https://dist.nuget.org/win-x86-commandline/v4.7.0/nuget.exe).
 
 ## Summary: What's New in this Release
-* We have added support for [signing packages](https://docs.microsoft.com/en-us/nuget/create-packages/sign-a-package).  
+
+* We have added support for [signing packages](https://docs.microsoft.com/en-us/nuget/create-packages/sign-a-package).
 * Visual Studio 2017 and nuget.exe now verifies package integrity before installing, restoring packages for [signed packages](https://docs.microsoft.com/en-us/nuget/reference/signed-packages-reference).
 * We have improved performance of successive restores.
 
 ## Known issues
-### Issues with .NET Standard 2.0 with .NET Framework & NuGet 
+
+### Issues with .NET Standard 2.0 with .NET Framework & NuGet
 
 .NET Standard & its tooling was designed such that projects targeting .NET Framework 4.6.1 can consume NuGet packages & projects targeting .NET Standard 2.0 or earlier. [This document](https://github.com/dotnet/standard/issues/481) summarizes the issues around that scenario, the plan for addressing them, and workarounds you can deploy with today's state of the tooling.
 
 ## Top issues fixed in this release
 
-**Performance fixes**
+### Performance fixes
+
 * Don't write asset files when there is no change - [#6491](https://github.com/NuGet/Home/issues/6491)
 * Restore causes extra MSBuild evaluations when child projects' TFM do not match with the parent project's - [#6311](https://github.com/NuGet/Home/issues/6311)
 * Improve NoOp restore perf by optimizing dependency graph spec creation - [#6252](https://github.com/NuGet/Home/issues/6252)
 
-**Bugs**
+### Bugs
+
 * Migrator dialog title shows a {0} - [#6832](https://github.com/NuGet/Home/issues/6832)
 * [Accessibility] Package compatibility issues in migrator are not narrated - [#6831](https://github.com/NuGet/Home/issues/6831)
 * [Accessibility] Help icon in PR migrator do not scale well at high resolution and high DPI - [#6830](https://github.com/NuGet/Home/issues/6830)
@@ -54,7 +58,7 @@ ms.topic: conceptual
 * Installing packages takes a very long time in Package Manager Console - [#3480](https://github.com/NuGet/Home/issues/3480)
 * Install/update restore code and Restore code paths are not consistent - [#3471](https://github.com/NuGet/Home/issues/3471)
 * Solution PackageManager Version ComboBox can select separator via keyboard - [#2606](https://github.com/NuGet/Home/issues/2606)
-* Unable to load the service index for source https://www.myget.org/F/<id> ---> System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (Forbidden) - [#2530](https://github.com/NuGet/Home/issues/2530)
+* Unable to load the service index for source `https://www.myget.org/F/<id>` ---> System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (Forbidden) - [#2530](https://github.com/NuGet/Home/issues/2530)
 * dotnet restore puts packages in an unexpected location - [#2488](https://github.com/NuGet/Home/issues/2488)
 * Restore from a directory with inaccessible subdirectories fails - [#2485](https://github.com/NuGet/Home/issues/2485)
 * Convert_WithValidImageUrl_DownloadsImage fails on CI - [#2474](https://github.com/NuGet/Home/issues/2474)
@@ -68,6 +72,7 @@ ms.topic: conceptual
 * Install-Package fails for ps1 package due to permission? - [#640](https://github.com/NuGet/Home/issues/640)
 
 **Feature:**
+
 * Integrate Verification API with Zhi's PR on RepoSign - [#6700](https://github.com/NuGet/Home/issues/6700)
 * add the complete validation set in pc -> pr migrator - [#6632](https://github.com/NuGet/Home/issues/6632)
 * Signing: Add support for repository sign - [#6619](https://github.com/NuGet/Home/issues/6619)
@@ -94,6 +99,7 @@ ms.topic: conceptual
 * Feature request: validate TFMs - [#969](https://github.com/NuGet/Home/issues/969)
 
 **DCR:**
+
 * Signing:  enable removal of repository signature/countersignature - [#6646](https://github.com/NuGet/Home/issues/6646)
 * Signing:  API for stripping repository signature/countersignature - [#6589](https://github.com/NuGet/Home/issues/6589)
 * Log source information in VS - [#6527](https://github.com/NuGet/Home/issues/6527)
@@ -107,10 +113,11 @@ ms.topic: conceptual
 * Re-examine Framework Assembly References - [#794](https://github.com/NuGet/Home/issues/794)
 
 **Spec:**
+
 * Improve VS error experience for signed packages - [#6427](https://github.com/NuGet/Home/issues/6427)
 
 **Docs:**
-* Doc Request: Project.lock.json - [#3364](https://github.com/NuGet/Home/issues/3364)
 
+* Doc Request: Project.lock.json - [#3364](https://github.com/NuGet/Home/issues/3364)
 
 [List of all issues fixed in this release](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.7")
