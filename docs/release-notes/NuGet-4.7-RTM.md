@@ -10,7 +10,7 @@ ms.topic: conceptual
 
 # NuGet 4.7 RTM Release Notes
 
-[Visual Studio 2017 15.6 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with [NuGet 4.6.0](https://dist.nuget.org/win-x86-commandline/v4.6.0/nuget.exe).
+[Visual Studio 2017 15.7 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with [NuGet 4.7.0](https://dist.nuget.org/win-x86-commandline/v4.7.0/nuget.exe).
 
 ## Summary: What's New in this Release
 * We have added support for [signing packages](https://docs.microsoft.com/en-us/nuget/create-packages/sign-a-package).  
