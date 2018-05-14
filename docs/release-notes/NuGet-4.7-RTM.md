@@ -1,8 +1,8 @@
 ---
 title: NuGet 4.7 RTM Release Notes
-description: Release notes for NuGet 4.6.0 including known issues, bug fixes, added features, and DCRs.
+description: Release notes for NuGet 4.7.0 including known issues, bug fixes, added features, and DCRs.
 author: karann-msft
-ms.author: anangaur
+ms.author: karann
 manager: unnir
 ms.date: 5/14/2018
 ms.topic: conceptual
