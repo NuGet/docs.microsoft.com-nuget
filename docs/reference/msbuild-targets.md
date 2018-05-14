@@ -318,8 +318,8 @@ Project file:
 
 ```xml
 <PropertyGroup>
-  <RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
-<PropertyGroup>
+    <RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
+</PropertyGroup>
 ```
 
 ### Restore outputs
