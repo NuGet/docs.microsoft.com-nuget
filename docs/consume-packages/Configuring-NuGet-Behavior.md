@@ -50,7 +50,7 @@ nuget config -set repositoryPath=c:\packages -configfile c:\my.Config
 nuget config -set repositoryPath=c:\packages -configfile .\myApp\NuGet.Config
 
 # Set repositoryPath in the computer-level file (requires elevation)
-nuget config -set repositoryPath=c:\packages -configfile %ProgramFiles(x86)%\NuGet\NuGet.Config
+nuget config -set repositoryPath=c:\packages -configfile %ProgramFiles(x86)%\NuGet\Config\NuGet.Config
 ```
 
 Mac/Linux:
