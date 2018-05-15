@@ -374,7 +374,7 @@ Additionally, by default the [build assets do not flow transitively](../consume-
 
 ## Running nuget pack to generate the .nupkg file
 
-When using an assembly or the convention-based working directory, create a package by running `nuget pack` with your `.nuspec` file, replacing `<manifest-name>` with your specific filename:
+When using an assembly or the convention-based working directory, create a package by running `nuget pack` with your `.nuspec` file, replacing `<project-name>` with your specific filename:
 
 ```cli
 nuget pack <project-name>.nuspec
