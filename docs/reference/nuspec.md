@@ -384,9 +384,9 @@ Each `<file>` element specifies the following attributes:
 **Excluding files**
 
     Source files:
-        \tools\*.bak
-        \tools\*.log
-        \tools\build\*.log
+        \tools\file.bak
+        \tools\file.log
+        \tools\build\file.log
 
     .nuspec entries:
         <file src="tools\*.*" target="tools" exclude="tools\*.bak" />
