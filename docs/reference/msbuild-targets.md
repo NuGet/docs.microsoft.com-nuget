@@ -48,7 +48,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | Authors | Authors | Username of the current user | |
 | Owners | N/A | Not present in NuSpec | |
 | Title | Title | The PackageId| |
-| Description | PackageDescription | "Package Description" | |
+| Description | Description | "Package Description" | |
 | Copyright | Copyright | empty | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | LicenseUrl | PackageLicenseUrl | empty | |
