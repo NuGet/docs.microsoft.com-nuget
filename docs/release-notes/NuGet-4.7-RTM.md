@@ -14,7 +14,7 @@ ms.topic: conceptual
 
 ## Summary: What's New in this Release
 
-* We have augemented package signing to enable [Repository Signing packages](https://github.com/NuGet/Home/issues/6378)
+* We have augemented package signing to enable [Repository Signed packages](https://github.com/NuGet/Home/wiki/Repository-Signatures)
 
 * With Visual Studio Version 15.7, we have introduced the capability to [migrate existing projects that use the packages.config format to use PackageReference](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference) instead.
 
