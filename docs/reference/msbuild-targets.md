@@ -1,4 +1,4 @@
-﻿---
+---
 title: NuGet pack and restore as MSBuild targets
 description: NuGet pack and restore can work directly as MSBuild targets with NuGet 4.0+.
 author: kraigb
@@ -22,10 +22,10 @@ Because `pack` and `restore` are  MSBuild targets, you can access them to enhanc
 
 ```xml
 <Target Name="CopyPackage" AfterTargets="Pack">
-    <Copy
-        SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg"
-        DestinationFolder="\\myshare\packageshare\"
-        />
+  <Copy
+    SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg"
+    DestinationFolder="\\myshare\packageshare\"
+    />
 </Target>
 ```
 
@@ -48,7 +48,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | Authors | Authors | Username of the current user | |
 | Owners | N/A | Not present in NuSpec | |
 | Title | Title | The PackageId| |
-| Description | PackageDescription | "Package Description" | |
+| Description | Description | "Package Description" | |
 | Copyright | Copyright | empty | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | LicenseUrl | PackageLicenseUrl | empty | |
@@ -137,17 +137,17 @@ You can also add the following metadata to your project reference:
 To include content, add extra metadata to the existing `<Content>` item. By default everything of type "Content" gets included in the package unless you override with entries like the following:
 
  ```xml
-    <Content Include="..\win7-x64\libuv.txt">
-        <Pack>false</Pack>
-    </Content>
+<Content Include="..\win7-x64\libuv.txt">
+  <Pack>false</Pack>
+</Content>
  ```
 
 By default, everything gets added to the root of the `content` and `contentFiles\any\<target_framework>` folder within a package and preserves the relative folder structure, unless you specify a package path:
 
 ```xml
 <Content Include="..\win7-x64\libuv.txt">
-    <Pack>true</Pack>
-    <PackagePath>content\myfiles\</PackagePath>
+  <Pack>true</Pack>
+  <PackagePath>content\myfiles\</PackagePath>
 </Content>
 ```
 
@@ -157,8 +157,8 @@ If you want to copy all your content to only a specific root folder(s) (instead 
 
 ```xml
 <Content Include="..\win7-x64\libuv.txt">
-    <Pack>true</Pack>
-    <PackagePath>content\myfiles;content\sample;;</PackagePath>
+  <Pack>true</Pack>
+  <PackagePath>content\myfiles;content\sample;;</PackagePath>
 </Content>
 ```
 
@@ -209,7 +209,7 @@ Please note that packing a nuspec using dotnet.exe or msbuild also leads to buil
 
 An example of a csproj file to pack a nuspec file is:
 
-```
+```xml
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -238,7 +238,7 @@ Write a custom target and specify it as the value of the `$(TargetsForTfmSpecifi
 
 Example:
 
-```
+```xml
 <PropertyGroup>
   <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetMyPackageFiles</TargetsForTfmSpecificBuildOutput>
 </PropertyGroup>
@@ -260,21 +260,21 @@ Write a custom target and specify it as the value of the `$(TargetsForTfmSpecifi
 - `BuildAction`: The build action to assign to the file, required only if the package path is in the `contentFiles` folder. Defaults to "None".
 
 An example:
-```
+```xml
 <PropertyGroup>
-    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomContentTarget</TargetsForTfmSpecificContentInPackage>
+  <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomContentTarget</TargetsForTfmSpecificContentInPackage>
 </PropertyGroup>
 
 <Target Name=""CustomContentTarget"">
-    <ItemGroup>
-      <TfmSpecificPackageFile Include=""abc.txt"">
-        <PackagePath>mycontent/$(TargetFramework)</PackagePath>
-      </TfmSpecificPackageFile>
-      <TfmSpecificPackageFile Include=""Extensions/ext.txt"" Condition=""'$(TargetFramework)' == 'net46'"">
-        <PackagePath>net46content</PackagePath>
-      </TfmSpecificPackageFile>  
-    </ItemGroup>
-  </Target>  
+  <ItemGroup>
+    <TfmSpecificPackageFile Include=""abc.txt"">
+      <PackagePath>mycontent/$(TargetFramework)</PackagePath>
+    </TfmSpecificPackageFile>
+    <TfmSpecificPackageFile Include=""Extensions/ext.txt"" Condition=""'$(TargetFramework)' == 'net46'"">
+      <PackagePath>net46content</PackagePath>
+    </TfmSpecificPackageFile>  
+  </ItemGroup>
+</Target>  
 ```
 
 ## restore target
@@ -319,7 +319,7 @@ Project file:
 ```xml
 <PropertyGroup>
     <RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
-<PropertyGroup>
+</PropertyGroup>
 ```
 
 ### Restore outputs
@@ -358,7 +358,7 @@ If a restore is bringing the wrong assembly, it's possible to exclude that packa
 
 ```xml
 <PackageReference Include="Newtonsoft.Json" Version="9.0.1">
-    <ExcludeAssets>All</ExcludeAssets>
+  <ExcludeAssets>All</ExcludeAssets>
 </PackageReference>
 ```
 
