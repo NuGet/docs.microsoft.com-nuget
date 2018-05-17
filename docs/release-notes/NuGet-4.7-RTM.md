@@ -36,7 +36,6 @@ Peform any one of the following NuGet actions:
 
 You should now be able to see the migration option. Note that this option is not supported and will not show up for ASP.NET and C++ project types.
 
-
 ### Issues with .NET Standard 2.0 with .NET Framework & NuGet
 
 .NET Standard & its tooling was designed such that projects targeting .NET Framework 4.6.1 can consume NuGet packages & projects targeting .NET Standard 2.0 or earlier. [This document](https://github.com/dotnet/standard/issues/481) summarizes the issues around that scenario, the plan for addressing them, and workarounds you can deploy with today's state of the tooling.
