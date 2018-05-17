@@ -20,6 +20,23 @@ ms.topic: conceptual
 
 ## Known issues
 
+### The `Migrate packages.config to PackageReference...` option is not available in the right-click context menu
+
+#### Issue
+
+When a project is first opened, NuGet may not have initialized until a NuGet operation is performed. This causes the migration option to not show up in the right-click context menu on `packages.config` or `References`.
+
+#### Workaround
+
+Peform any one of the following NuGet actions:
+* Open the Package Manager UI - Right-click on `References` and select `Manage NuGet Packages...`
+* Open the Package Manager Console - From `Tools > NuGet Package Manager`, select `Package Manager Console`
+* Run NuGet restore - Right-click on the solution node in the Solution Explorer and select `Restore NuGet Packages`
+* Build the project which also triggers NuGet restore
+
+You should now be able to see the migration option. Note that this option is not supported and will not show up for ASP.NET and C++ project types.
+
+
 ### Issues with .NET Standard 2.0 with .NET Framework & NuGet
 
 .NET Standard & its tooling was designed such that projects targeting .NET Framework 4.6.1 can consume NuGet packages & projects targeting .NET Standard 2.0 or earlier. [This document](https://github.com/dotnet/standard/issues/481) summarizes the issues around that scenario, the plan for addressing them, and workarounds you can deploy with today's state of the tooling.
