@@ -4,7 +4,7 @@ description: Requirements for NuGet package signing.
 author: rido-min
 ms.author: rmpablos
 manager: unnir
-ms.date: 04/24/2018
+ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
 ---
@@ -43,7 +43,7 @@ The complete list of certification authorities trusted by Windows can be obtaine
 
 ## Create a test certificate
 
-You can use self-issued certificates for testing purposes. To create a self-issued certificate, use the [New-SelfSignedCertificate PowerShell command](/powershell/module/pkiclient/new-selfsignedcertificate).
+You can use self-issued certificates for testing purposes. To create a self-issued certificate, use the [New-SelfSignedCertificate PowerShell command](/powershell/module/pkiclient/new-selfsignedcertificate.md).
 
 ```ps
 New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
