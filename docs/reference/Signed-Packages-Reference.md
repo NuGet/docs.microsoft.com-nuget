@@ -89,7 +89,7 @@ To submit a signed package, you must first register the certificate with nuget.o
 
 ![Certificate Export Wizard](media/CertificateExportWizard.png)
 
-Advanced users can export the certificate using the [Export-Certificate PowerShell command](/powershell/module/pkiclient/export-certificate).
+Advanced users can export the certificate using the [Export-Certificate PowerShell command](/powershell/module/pkiclient/export-certificate.md).
 
 To register the certificate with nuget.org, go to `Certificates` section on `Account settings` page (or the Organization's settings page) and select `Register new certificate`.
 
