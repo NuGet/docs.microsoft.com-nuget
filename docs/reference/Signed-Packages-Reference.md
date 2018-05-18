@@ -68,6 +68,21 @@ Signed packages should include an RFC 3161 timestamp to ensure signature validit
 
 Additional technical details can be found in the [package signature technical specs](https://github.com/NuGet/Home/wiki/Package-Signatures-Technical-Details) (GitHub).
 
+## Signature requirements on nuget.org
+
+nuget.org has additional requirements for accepting a signed package, which include:
+
+- The primary signature must be an author signature.
+- The primary signature must have a single valid timestamp.
+- The X.509 certificates for both the author signature and its timestamp signature:
+  - must have an RSA public key 2048 bits or greater.
+  - must be within its validity period per current UTC time at time of package validation on nuget.org.
+  - must chain to a trusted root authority that is trusted by default on Windows.  Packages signed with self-issued certificates will be rejected.
+  - must be valid for its purpose: 
+    - the author signing certificate must be valid for code signing.
+    - the timestamp certificate must be valid for timestamping.
+  - must not be revoked at signing time. (This may not be knowable at submission time, so nuget.org will periodically recheck revocation status).
+
 ## Register certificate on nuget.org
 
 To submit a signed package, you must first register the certificate with nuget.org. You need the certificate as a `.cer` file in a binary DER format. You can export an existing certificate to a binary DER format by using the Certificate Export Wizard.
