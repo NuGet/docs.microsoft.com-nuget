@@ -82,7 +82,7 @@ When you directly upload a new package on the [nuget.org Upload](https://www.nug
 
 ### Using API keys
 
-To push a package through the `nuget push` or `dotnet nuget push` CLI commands, you must obtain an API key needed by those commands. For details, see [Publish a package](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio#publish-the-package).
+To push a package through the `nuget push` or `dotnet nuget push` CLI commands, you must obtain an API key needed by those commands. For details, see [Publish a package](../quickstart/create-and-publish-a-package-using-visual-studio.md#publish-the-package).
 
 When creating a new API key, select the appropriate organization in the **Package Owner** drop down. Any API key you create is applicable only to the chosen organization:
 
