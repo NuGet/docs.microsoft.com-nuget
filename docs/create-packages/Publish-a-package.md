@@ -4,7 +4,7 @@ description: Detailed instructions for how to publish a NuGet package to nuget.o
 author: kraigb
 ms.author: kraigb
 manager: douge
-ms.date: 03/19/2018
+ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
 ---
@@ -73,7 +73,7 @@ To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://w
 To submit signed packages, you must first [register the certificate](../reference/Signed-Packages-Reference.md#register-certificate-on-nugetorg) used for signing the packages. 
 
 > [!Warning]
-> nuget.org will reject packages that don't satisfy the [signed package requirements](../reference/Signed-Packages-Reference.md#signature-requirements-on-nugetorg).
+> nuget.org rejects packages that don't satisfy the [signed package requirements](../reference/Signed-Packages-Reference.md#signature-requirements-on-nugetorg).
 
 ### Package validation and indexing
 
