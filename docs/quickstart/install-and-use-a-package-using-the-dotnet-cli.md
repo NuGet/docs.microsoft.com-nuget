@@ -43,12 +43,12 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
     dotnet add package Newtonsoft.Json
     ```
 
-1. After the command completes, open the `.csproj` file to see the added reference:
+2. After the command completes, open the `.csproj` file to see the added reference:
 
     ```xml
-  <ItemGroup>
+   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-  </ItemGroup>
+   </ItemGroup>
     ```
 
 ## Use the Newtonsoft.Json API in the app

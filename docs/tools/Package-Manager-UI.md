@@ -46,7 +46,7 @@ In this topic:
     ![References in Solution Explorer](media/References.png)
 
 > [!Tip]
-    > To include prerelease versions in the search, and to make prerelease versions available in the version drop-down, select the **Include prerelease** option.
+> To include prerelease versions in the search, and to make prerelease versions available in the version drop-down, select the **Include prerelease** option.
 
 ## Uninstalling a package
 
@@ -66,7 +66,7 @@ In this topic:
 
     ![Updating a package](media/UpdatePackages.png)
 
-1. <a name="implicit_reference"></a>For some packages, the **Update** button is disabled and a message appears saying that it's "Implicitly referenced by an SDK" (or "AutoReferenced"). The message indicates that the package, such as Microsoft.NETCore.App or Microsoft.NETStandard.Library, is part of a larger framework or SDK and should not be updated independently. (Such packages are internally marked with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) To update the package, update the SDK to which it belongs.
+1. <a name="implicit_reference"></a>For some packages, the **Update** button is disabled and a message appears saying that it's "Implicitly referenced by an SDK" (or "AutoReferenced"). The message indicates that the package, such as Microsoft.NETCore.App or Microsoft.NETStandard.Library, is part of a larger framework or SDK and should not be updated independently. (Such packages are internally marked with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) To update the package, update the SDK to which it belongs, inferring the containing SDK from the package name. For example, a package like Microsoft.NETCore.App is part of the .NET Core SDK, therefore you need to update your  .NET Core SDK installation.
 
     ![Example package marked as Implicitly references or AutoReferenced](media/PackageManagerUIAutoReferenced.png)
 

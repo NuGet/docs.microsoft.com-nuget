@@ -43,7 +43,7 @@ The NuGet CLI, `nuget.exe`, is the command-line utility for Windows that provide
 
 Installation:
 
-[!INCLUDE[install-cli](includes/install-cli.md)]
+[!INCLUDE [install-cli](includes/install-cli.md)]
 
 > [!Tip]
 > Use `nuget update -self` on Windows to update an existing nuget.exe to the latest version.

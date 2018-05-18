@@ -21,5 +21,5 @@ By following the process below, Northwind and Nancy can work together to a suita
 ## Process
 
 1. Contact the owners of the package you have the dispute with using the **Contact Owners** link on the package details page. Explain your issue in a kind and direct manner.
-1. Send a copy of your message to [support@nuget.org](mailto:support@nuget.org) so that NuGet and the .NET Foundation are aware of your dispute.
-1. Wait a maximum of 30 days for a resolution, then notify [support@nuget.org](mailto:support@nuget.org) again. The nuget.org support team will get involved and try to work through the dispute with both parties.
+2. Send a copy of your message to [support@nuget.org](mailto:support@nuget.org) so that NuGet and the .NET Foundation are aware of your dispute.
+3. Wait a maximum of 30 days for a resolution, then notify [support@nuget.org](mailto:support@nuget.org) again. The nuget.org support team will get involved and try to work through the dispute with both parties.

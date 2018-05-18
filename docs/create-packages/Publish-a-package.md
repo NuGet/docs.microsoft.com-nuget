@@ -46,11 +46,11 @@ To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://w
 
 #### Create API keys
 
-[!INCLUDE[publish-api-key](../quickstart/includes/publish-api-key.md)]
+[!INCLUDE [publish-api-key](../quickstart/includes/publish-api-key.md)]
 
 #### Publish with dotnet nuget push
 
-[!INCLUDE[publish-dotnet](../quickstart/includes/publish-dotnet.md)]
+[!INCLUDE [publish-dotnet](../quickstart/includes/publish-dotnet.md)]
 
 #### Publish with nuget push
 

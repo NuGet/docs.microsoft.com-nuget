@@ -114,10 +114,12 @@
 ## [NuGet FAQ](policies/nuget-faq.md)
 ## [Governance](policies/governance.md)
 ## [Ecosystem](policies/ecosystem.md)
+## [Data Requests](policies/Data-requests.md)
 ## [Dispute resolution](policies/dispute-resolution.md)
 ## [Deleting packages](policies/deleting-packages.md)
 # Release notes
 ## [Known Issues](release-notes/known-issues.md)
+## [NuGet 4.7 RTM](release-notes/NuGet-4.7-RTM.md)
 ## [NuGet 4.6 RTM](release-notes/NuGet-4.6-RTM.md)
 ## [NuGet 4.5 RTM](release-notes/NuGet-4.5-RTM.md)
 ## [NuGet 4.4 RTM](release-notes/NuGet-4.4-RTM.md)
