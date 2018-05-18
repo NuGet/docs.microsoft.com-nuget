@@ -70,18 +70,18 @@ Additional technical details can be found in the [package signature technical sp
 
 ## Signature requirements on nuget.org
 
-nuget.org has additional requirements for accepting a signed package, which include:
+nuget.org has additional requirements for accepting a signed package:
 
 - The primary signature must be an author signature.
 - The primary signature must have a single valid timestamp.
 - The X.509 certificates for both the author signature and its timestamp signature:
-  - must have an RSA public key 2048 bits or greater.
-  - must be within its validity period per current UTC time at time of package validation on nuget.org.
-  - must chain to a trusted root authority that is trusted by default on Windows.  Packages signed with self-issued certificates will be rejected.
-  - must be valid for its purpose: 
-    - the author signing certificate must be valid for code signing.
-    - the timestamp certificate must be valid for timestamping.
-  - must not be revoked at signing time. (This may not be knowable at submission time, so nuget.org will periodically recheck revocation status).
+  - Must have an RSA public key 2048 bits or greater.
+  - Must be within its validity period per current UTC time at time of package validation on nuget.org.
+  - Must chain to a trusted root authority that is trusted by default on Windows. Packages signed with self-issued certificates are rejected.
+  - Must be valid for its purpose: 
+    - The author signing certificate must be valid for code signing.
+    - The timestamp certificate must be valid for timestamping.
+  - Must not be revoked at signing time. (This may not be knowable at submission time, so nuget.org periodically rechecks revocation status).
 
 ## Register certificate on nuget.org
 
