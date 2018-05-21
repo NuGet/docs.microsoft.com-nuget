@@ -1,16 +1,19 @@
 ---
-title: Introductory Guide to Creating and Publishing a .NET Standard NuGet Package using Visual Studio
-description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio 2017.
+title: Create and publish a .NET Standard package using Visual Studio on Windows
+description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio 2017 on Windows.
 author: kraigb
 ms.author: kraigb
 manager: douge
-ms.date: 03/18/2018
+ms.date: 05/18/2018
 ms.topic: quickstart
 ---
 
-# Quickstart: Create and publish a NuGet package using Visual Studio (.NET Standard)
+# Quickstart: Create and publish a NuGet package using Visual Studio (.NET Standard, Windows only)
 
-It's a simple process to create a NuGet package from a .NET Standard Class Library in Visual Studio, and then publish it to nuget.org using a CLI tool.
+It's a simple process to create a NuGet package from a .NET Standard Class Library in Visual Studio on Windows, and then publish it to nuget.org using a CLI tool.
+
+> [!Note]
+> This Quickstart applies to Visual Studio 2017 for Windows only. Visual Studio for Mac does not include the capabilities described here. Use the [dotnet CLI tools](create-and-publish-a-package-using-the-dotnet-cli.md) instead.
 
 ## Prerequisites
 
