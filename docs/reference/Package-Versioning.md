@@ -143,9 +143,6 @@ Always specify a version or version range for package dependencies in project fi
 
 <!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->
 <PackageReference Include="ExamplePackage" Version="[1.3.2,1.5)" />
-
-<!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->
-<PackageReference Include="ExamplePackage" Version="[1.3.2,1.5)" />
 ```
 
 **References in `packages.config`:**

@@ -1,16 +1,19 @@
 ---
-title: Introductory Guide to Creating and Publishing a .NET Framework NuGet Package using Visual Studio
-description: A walkthrough tutorial on creating and publishing a .NET Framework NuGet package using Visual Studio 2017.
+title: Create and publish a .NET Framework package using Visual Studio on Windows
+description: A walkthrough tutorial on creating and publishing a .NET Framework NuGet package using Visual Studio 2017 on Windows.
 author: kraigb
 ms.author: kraigb
 manager: douge
-ms.date: 03/13/2018
+ms.date: 05/13/2018
 ms.topic: quickstart
 ---
 
-# Quickstart: Create and publish a package using Visual Studio (.NET Framework)
+# Quickstart: Create and publish a package using Visual Studio (.NET Framework, Windows)
 
-Creating a NuGet package from a .NET Framework Class Library involves creating the DLL in Visual Studio, then using the nuget.exe command line tool to create and publish the package.
+Creating a NuGet package from a .NET Framework Class Library involves creating the DLL in Visual Studio on Windows, then using the nuget.exe command line tool to create and publish the package.
+
+> [!Note]
+> This Quickstart applies to Visual Studio 2017 for Windows only. Visual Studio for Mac does not include the capabilities described here. Use the [dotnet CLI tools](create-and-publish-a-package-using-the-dotnet-cli.md) instead.
 
 ## Prerequisites
 
