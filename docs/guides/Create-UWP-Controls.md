@@ -17,11 +17,11 @@ With Visual Studio 2017, you can take advantage of added capabilities for UWP co
 1. Visual Studio 2017
 1. Understanding of how to [Create UWP Packages](create-uwp-packages.md)
 
-## Set `GenerateLibraryLayout` to true
+## Generate Library Layout
 
-Setting this property ensures that the project build output is generated in a layout that is ready to be packaged without the need for individual file entries in the nuspec.
+Setting the `GenerateLibraryLayout` property ensures that the project build output is generated in a layout that is ready to be packaged without the need for individual file entries in the nuspec.
 
-From the project properties, go to the build tab and check the "Generate Library Layout" check box. This will set the `GenerateLibraryLayout` flag to true for your currently selected build configuration and platform.
+From the project properties, go to the build tab and check the "Generate Library Layout" check box. This will modify the project file and set the `GenerateLibraryLayout` flag to true for your currently selected build configuration and platform.
 
 Alternately, edit the the project file to add `<GenerateLibraryLayout>true</GenerateLibraryLayout>` to the first unconditional property group. This would apply the property irrespective of the build configuration and platform.
 
