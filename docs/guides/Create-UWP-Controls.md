@@ -17,6 +17,14 @@ With Visual Studio 2017, you can take advantage of added capabilities for UWP co
 1. Visual Studio 2017
 1. Understanding of how to [Create UWP Packages](create-uwp-packages.md)
 
+## Set `GenerateLibraryLayout` to true
+
+Setting this property ensures that the project build output is generated in a layout that is ready to be packaged without the need for individual file entries in the nuspec.
+
+From the project properties, go to the build tab and check the "Generate Library Layout" check box. This will set the `GenerateLibraryLayout` flag to true for your currently selected build configuration and platform.
+
+Alternately, edit the the project file to add `<GenerateLibraryLayout>true</GenerateLibraryLayout>` to the first unconditional property group. This would apply the property irrespective of the build configuration and platform.
+
 ## Add toolbox/assets pane support for XAML controls
 
 To have a XAML control appear in the XAML designer’s toolbox in Visual Studio and the Assets pane of Blend, create a `VisualStudioToolsManifest.xml` file in the root of the `tools` folder of your package project. This file is not required if you don’t need the control to appear in the toolbox or Assets pane.
@@ -87,33 +95,17 @@ UWP packages have a TargetPlatformVersion (TPV) and TargetPlatformMinVersion (TP
 
 For example, let’s say you’ve set the TPMinV for you controls package to Windows 10 Anniversary Edition (10.0; Build 14393), so you want to ensure that the package is consumed only by UWP projects that match that lower bound. To allow your package to be consumed by UWP projects, you must package your controls with the following folder names:
 
-    \lib\uap10.0\*
-    \ref\uap10.0\*
+    \lib\uap10.0.14393\*
+    \ref\uap10.0.14393\*
 
-To enforce the appropriate TPMinV check, create an [MSBuild targets file](/visualstudio/msbuild/msbuild-targets) and package it under the `build\uap10.0" folder as `<your_assembly_name>.targets`, replacing `<your_assembly_name>` with the name of your specific assembly.
-
-Here is an example of what the targets file should look like:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
-  <Target Name="TPMinVCheck" BeforeTargets="ResolveAssemblyReferences" Condition="'$(TargetPlatformMinVersion)' != ''">
-    <PropertyGroup>
-      <RequiredTPMinV>10.0.14393</RequiredTPMinV>
-      <ActualTPMinV>$(TargetPlatformMinVersion)</ActualTPMinV>
-    </PropertyGroup>
-    <Error Condition=" '$([System.Version]::Parse($(ActualTPMinV)).CompareTo($([System.Version]::Parse($(RequiredTPMinV)))))' == '-1' " 	   Text = "The INSERT_PACKAGE_ID_HERE nuget package cannot be used in the $(MSBuildProjectName) project since the project's TargetPlatformMinVersion - $(ActualTPMinV) does not match the Minimum Version - $(RequiredTPMinV) supported by the package" />
-  </Target>
-</Project>
-```
+NuGet will automatically check the TPMinV of the consuming project, and fail installation if it is lower than Windows 10 Anniversary Edition (10.0; Build 14393)
 
 ## Add design-time support
 
 To configure where the control properties show up in the property inspector, add custom adorners, etc., place your `design.dll` file inside the `lib\uap10.0\Design` folder as appropriate to the target platform. Also, to ensure that the **[Edit Template > Edit a Copy](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** feature works, you must include the `Generic.xaml` and any resource dictionaries that it merges in the `<your_assembly_name>\Themes` folder (again, using your actual assembly name). (This file has no impact on the runtime behavior of a control.) The folder structure would thus appear as follows:
 
     \lib
-      \uap10.0
+      \uap10.0.14393
         \Design
           \MyControl.design.dll
         \your_assembly_name
