@@ -1,21 +1,32 @@
 ---
-title: How to package UWP controls with NuGet
-description: How to create NuGet packages that contain UWP controls, including the necessary metadata and supporting files for the Visual Studio and Blend designers.
+title: How to package UI controls with NuGet
+description: How to create NuGet packages that contain UWP or WPF controls, including the necessary metadata and supporting files for the Visual Studio and Blend designers.
 author: kraigb
 ms.author: kraigb
 manager: douge
-ms.date: 03/14/2018
+ms.date: 05/23/2018
 ms.topic: tutorial
 ---
 
-# Creating UWP controls as NuGet packages
+# Creating UI controls as NuGet packages
 
-With Visual Studio 2017, you can take advantage of added capabilities for UWP controls that you deliver in NuGet packages. This guide walks you through these capabilities using the [ExtensionSDKasNuGetPackage sample](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage). 
+With Visual Studio 2017, you can take advantage of added capabilities for UWP and WPF controls that you deliver in NuGet packages. This guide walks you through these capabilities in context of UWP controls using the [ExtensionSDKasNuGetPackage sample](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage). The same applies to WPF controls unless mentioned otherwise.
 
 ## Prerequisites
 
 1. Visual Studio 2017
 1. Understanding of how to [Create UWP Packages](create-uwp-packages.md)
+
+## Generate Library Layout
+
+> [!Note]
+> This is applicable only to UWP controls.
+
+Setting the `GenerateLibraryLayout` property ensures that the project build output is generated in a layout that is ready to be packaged without the need for individual file entries in the nuspec.
+
+From the project properties, go to the build tab and check the "Generate Library Layout" check box. This will modify the project file and set the `GenerateLibraryLayout` flag to true for your currently selected build configuration and platform.
+
+Alternately, edit the the project file to add `<GenerateLibraryLayout>true</GenerateLibraryLayout>` to the first unconditional property group. This would apply the property irrespective of the build configuration and platform.
 
 ## Add toolbox/assets pane support for XAML controls
 
@@ -85,35 +96,35 @@ In the example below, the project contains an image file named “ManagedPackage
 
 UWP packages have a TargetPlatformVersion (TPV) and TargetPlatformMinVersion (TPMinV) that define the upper and lower bounds of the OS version where the app can be installed. TPV further specifies the version of the SDK against which the app is built. Be mindful of these properties when authoring a UWP package: using APIs outside the bounds of the platform versions defined in the app will cause either the build to fail or the app to fail at runtime.
 
-For example, let’s say you’ve set the TPMinV for you controls package to Windows 10 Anniversary Edition (10.0; Build 14393), so you want to ensure that the package is consumed only by UWP projects that match that lower bound. To allow your package to be consumed by UWP projects, you must package your controls with the following folder names:
+For example, let’s say you’ve set the TPMinV for your controls package to Windows 10 Anniversary Edition (10.0; Build 14393), so you want to ensure that the package is consumed only by UWP projects that match that lower bound. To allow your package to be consumed by UWP projects, you must package your controls with the following folder names:
 
-    \lib\uap10.0\*
-    \ref\uap10.0\*
+    \lib\uap10.0.14393\*
+    \ref\uap10.0.14393\*
 
-To enforce the appropriate TPMinV check, create an [MSBuild targets file](/visualstudio/msbuild/msbuild-targets) and package it under the `build\uap10.0" folder as `<your_assembly_name>.targets`, replacing `<your_assembly_name>` with the name of your specific assembly.
+NuGet will automatically check the TPMinV of the consuming project, and fail installation if it is lower than Windows 10 Anniversary Edition (10.0; Build 14393)
 
-Here is an example of what the targets file should look like:
+In case of WPF, let's say you would like your WPF controls package to be consumed by projects targeting .NET Framework v4.6.1 or higher. To enforce that, you must package your controls with the following folder names:
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
-  <Target Name="TPMinVCheck" BeforeTargets="ResolveAssemblyReferences" Condition="'$(TargetPlatformMinVersion)' != ''">
-    <PropertyGroup>
-      <RequiredTPMinV>10.0.14393</RequiredTPMinV>
-      <ActualTPMinV>$(TargetPlatformMinVersion)</ActualTPMinV>
-    </PropertyGroup>
-    <Error Condition=" '$([System.Version]::Parse($(ActualTPMinV)).CompareTo($([System.Version]::Parse($(RequiredTPMinV)))))' == '-1' " 	   Text = "The INSERT_PACKAGE_ID_HERE nuget package cannot be used in the $(MSBuildProjectName) project since the project's TargetPlatformMinVersion - $(ActualTPMinV) does not match the Minimum Version - $(RequiredTPMinV) supported by the package" />
-  </Target>
-</Project>
-```
+    \lib\net461\*
+    \ref\net461\*
 
 ## Add design-time support
 
-To configure where the control properties show up in the property inspector, add custom adorners, etc., place your `design.dll` file inside the `lib\uap10.0\Design` folder as appropriate to the target platform. Also, to ensure that the **[Edit Template > Edit a Copy](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** feature works, you must include the `Generic.xaml` and any resource dictionaries that it merges in the `<your_assembly_name>\Themes` folder (again, using your actual assembly name). (This file has no impact on the runtime behavior of a control.) The folder structure would thus appear as follows:
+To configure where the control properties show up in the property inspector, add custom adorners, etc., place your `design.dll` file inside the `lib\uap10.0.14393\Design` folder as appropriate to the target platform. Also, to ensure that the **[Edit Template > Edit a Copy](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** feature works, you must include the `Generic.xaml` and any resource dictionaries that it merges in the `<your_assembly_name>\Themes` folder (again, using your actual assembly name). (This file has no impact on the runtime behavior of a control.) The folder structure would thus appear as follows:
 
     \lib
-      \uap10.0
+      \uap10.0.14393
+        \Design
+          \MyControl.design.dll
+        \your_assembly_name
+          \Themes
+            Generic.xaml
+
+
+For WPF, continuing with the example where you would like your WPF controls package to be consumed by projects targeting .NET Framework v4.6.1 or higher:
+
+    \lib
+      \net461
         \Design
           \MyControl.design.dll
         \your_assembly_name
@@ -129,22 +140,8 @@ You can embed string resources (`.resw`) in your package that can be used by you
 
 For an example, refer to [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs) in the ExtensionSDKasNuGetPackage sample.
 
-## Package content such as images
-
-To package content such as images that can be used by your control or the consuming UWP project, place those files within the `lib\uap10.0` folder.
-
-You may also author an [MSBuild targets file](/visualstudio/msbuild/msbuild-targets) to ensure the asset is copied to the consuming project’s output folder:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
-        <Content Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0\contosoSampleImage.jpg">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-    </ItemGroup>
-</Project>
-```
+> [!Note]
+> This is applicable only to UWP controls.
 
 ## See also
 
