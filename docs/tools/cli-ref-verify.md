@@ -20,22 +20,32 @@ Verification of signed packages is not yet supported in .NET Core, under Mono, o
 ## Usage
 
 ```cli
-nuget verify <package(s)> [options]
+nuget verify <-All|-Signatures> <package(s)> [options]
 ```
 
 where `<package(s)>` is one or more `.nupkg` files.
+
+## nuget verify -All
+
+Specifies that all verifications possible should be performed on the package(s).
+
+## nuget verify -Signatures
+
+Specifies that package signature verification should be performed.
+
+## Options for "verify -Signatures"
+
+| Option | Description |
+| --- | --- |
+| CertificateFingerprint | Specifies one or more SHA-256 certificate fingerprints of certificates(s) which signed packages must be signed with. A certificate SHA-256 fingerprint is a SHA-256 hash of the certificate. Multiple inputs should be semicolon separated. |
 
 ## Options
 
 | Option | Description |
 | --- | --- |
-| All | Specifies that all verifications possible should be performed on the package(s). |
-| CertificateFingerprint | Specifies one or more SHA-256 certificate fingerprints of certificates(s) which signed packages must be signed with. A certificate SHA-256 fingerprint is a SHA-256 hash of the certificate. Multiple inputs should be semicolon separated. |
 | ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
 | ForceEnglishOutput | Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
-| NonInteractive | Suppresses prompts for user input or confirmations. |
-| Signatures | Specifies that package signature verification should be performed. |
 | Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
 
 ## Examples
@@ -48,4 +58,7 @@ nuget verify -Signatures c:\packages\MyPackage.nupkg -CertificateFingerprint CE4
 nuget verify -Signatures MyPackage.nupkg -Verbosity quiet
 
 nuget verify -Signatures .\*.nupkg
+
+nuget verify -All .\*.nupkg
+
 ```
