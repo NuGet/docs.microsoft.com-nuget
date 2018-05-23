@@ -4,7 +4,7 @@ description: How to create NuGet packages that contain UWP or WPF controls, incl
 author: kraigb
 ms.author: kraigb
 manager: douge
-ms.date: 03/14/2018
+ms.date: 05/23/2018
 ms.topic: tutorial
 ---
 
