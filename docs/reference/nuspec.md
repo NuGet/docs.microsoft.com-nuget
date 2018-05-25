@@ -94,6 +94,17 @@ These elements may appear within a `<metadata>` element.
 | **tags**  | A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering. |
 | **serviceable** | *(3.3+)* For internal NuGet use only. |
 
+#### Repository element
+
+The `<repository>` element is an optional child of `<metadata>` and specifies the package's source code location, allowing IDEs to download and debug the code.
+
+| Attribute | Description |
+| --- | --- |
+| **type** | The type of repository e.g. git. |
+| **url** | The repository's URL. |
+| **branch** | The name of the branch within the repository. |
+| **commit** | The corresponding commit ID for the specified version of the package. |
+
 #### Collection elements
 
 | Element | Description |
