@@ -4,7 +4,7 @@ description: A description of common NuGet restore errors in Visual Studio and h
 author: kraigb
 ms.author: kraigb
 manager: douge
-ms.date: 03/16/2018
+ms.date: 05/25/2018
 ms.topic: conceptual
 ---
 
@@ -45,8 +45,11 @@ This error occurs you attempt to build a project that contains references to one
 
 This situation commonly occurs when you obtain the project's source code from source control or another download. Packages are typically omitted from source control or downloads because they can be restored from package feeds like nuget.org (see [Packages and source control](Packages-and-Source-Control.md)). Including them would otherwise bloat the repository or create unnecessarily large .zip files.
 
+The error can also happen if your project file contains absolute paths to package locations, and you move the project.
+
 Use one of the following methods to restore the packages:
 
+- If you've moved the project file, edit the file directly to update the package references.
 - In Visual Studio, enable package restore by selecting the **Tools > NuGet Package Manager > Package Manager Settings** menu command, setting both options under **Package Restore**, and selecting **OK**. Then build the solution again.
 - For .NET Core projects, run `dotnet restore` or `dotnet build` (which automatically runs restore).
 - On the command line, run `nuget restore` (except for projects created with `dotnet`, in which case use `dotnet restore`).
