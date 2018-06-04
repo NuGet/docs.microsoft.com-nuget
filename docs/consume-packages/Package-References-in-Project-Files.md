@@ -14,7 +14,7 @@ Package references, using the `PackageReference` node, manage NuGet dependencies
 
 With PackageReference, you can also use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. (See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
 
-By default, PackageReference is used for .NET Core projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later, with the exception of C++ UWP projects. .NET full framework projects support PackageReference, but currently default to `packages.config`. To use PackageReference, migrate the dependencies from `packages.config` into your project file, then remove packages.config. 
+By default, PackageReference is used for .NET Core projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later, with the exception of C++ UWP projects. .NET full framework projects support PackageReference, but currently default to `packages.config`. To use PackageReference, migrate the dependencies from `packages.config` into your project file, then remove packages.config.
 
 ## Adding a PackageReference
 
