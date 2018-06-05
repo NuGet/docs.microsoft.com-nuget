@@ -54,7 +54,7 @@ Visual Studio 2017 Version 15.7 Preview 3 and later supports migrating a project
 
 1. Close the migrated project.
 
-1. Copy the project file and `packages.config` from the backup (typically `<solution_root>\MigrationBackup\<unique_guid>\<project_name>\`) to the project folder.
+1. Copy the project file and `packages.config` from the backup (typically `<solution_root>\MigrationBackup\<unique_guid>\<project_name>\`) to the project folder. Delete the obj folder if it exists in the project root directory.
 
 1. Open the project.
 
