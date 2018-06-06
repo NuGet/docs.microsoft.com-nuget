@@ -26,6 +26,24 @@ Visual Studio 2017 Version 15.7 Preview 3 and later supports migrating a project
 * Migration is not currently available for C++ and ASP.NET project.
 * Some packages may not be fully compatible with PackageReference. For more information, see [package compatibility issues](#package-compatibility-issues).
 
+### Known Issues
+
+1. The `Migrate packages.config to PackageReference...` option is not available in the right-click context menu 
+
+#### Issue 
+ 
+When a project is first opened, NuGet may not have initialized until a NuGet operation is performed. This causes the migration option to not show up in the right-click context menu on `packages.config` or `References`. 
+
+#### Workaround 
+
+Peform any one of the following NuGet actions: 
+* Open the Package Manager UI - Right-click on `References` and select `Manage NuGet Packages...` 
+* Open the Package Manager Console - From `Tools > NuGet Package Manager`, select `Package Manager Console` 
+* Run NuGet restore - Right-click on the solution node in the Solution Explorer and select `Restore NuGet Packages` 
+* Build the project which also triggers NuGet restore 
+
+You should now be able to see the migration option. Note that this option is not supported and will not show up for ASP.NET and C++ project types. 
+
 ## Migration steps
 
 > [!Note]
