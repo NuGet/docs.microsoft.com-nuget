@@ -1,9 +1,9 @@
 ---
 title: Introductory Guide to Using NuGet Packages from within Visual Studio
 description: A walkthrough tutorial on the process of installing and using a NuGet package in a Visual Studio project.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/23/2018
 ms.topic: quickstart
 ---

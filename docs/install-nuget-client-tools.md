@@ -1,9 +1,9 @@
 ---
 title: Installing NuGet client tools
 description: Guidance on installing client tools, the dotnet and nuget command-line interfaces (CLI), and the Package Manager for Visual Studio.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 04/09/2018
 ms.topic: quickstart
 ---

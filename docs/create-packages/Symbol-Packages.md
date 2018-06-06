@@ -1,9 +1,9 @@
 ---
 title: How to create NuGet symbol packages
 description: How to create NuGet packages that contain only symbols to support debugging of other NuGet packages in Visual Studio.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur

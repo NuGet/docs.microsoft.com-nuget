@@ -1,9 +1,9 @@
 ---
 title: NuGet Errors and Warnings Reference
 description: Complete reference for warnings and errors issued from NuGet during various NuGet operations.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur

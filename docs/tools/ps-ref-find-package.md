@@ -1,9 +1,9 @@
 ---
 title: NuGet Find-Package PowerShell Reference
 description: Reference for Find-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 6/1/2017
 ms.topic: reference
 ---

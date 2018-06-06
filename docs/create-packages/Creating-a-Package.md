@@ -1,9 +1,9 @@
 ---
 title: How to create a NuGet package
 description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 12/12/2017
 ms.topic: conceptual
 ---

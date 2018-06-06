@@ -1,9 +1,9 @@
 ---
 title: NuGet Frequently-Asked Questions
 description: Common questions and answers for using NuGet on the command line and in Visual Studio, and working with the NuGet gallery.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/11/2018
 ms.topic: conceptual
 ---

@@ -1,9 +1,9 @@
 ---
 title: NuGet CLI update command
 description: Reference for the nuget.exe update command
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
 ---
