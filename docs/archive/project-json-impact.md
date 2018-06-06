@@ -1,9 +1,9 @@
 ---
 title: project.json impact on NuGet package authors
 description: Details on how the implementation of project.json in NuGet 3.x affects package authors, such as unsupported features, content, and package format.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
 ---

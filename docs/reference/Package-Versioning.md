@@ -1,9 +1,9 @@
 ---
 title: NuGet Package Version Reference
 description: Exact details on specifying version numbers and ranges for other packages upon which a NuGet package depends, and how dependencies are installed.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur

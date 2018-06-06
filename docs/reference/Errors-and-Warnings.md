@@ -1,9 +1,9 @@
 ---
 title: NuGet Errors and Warnings Reference
 description: Complete reference for warnings and errors issued from NuGet during various NuGet operations.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
@@ -169,7 +169,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | --- | --- |
 | **Issue** | Unable to resolve dependency constraints between packages. |
 | **Example message** | *Version conflict detected for NuGet.Versioning. Reference the package directly from the project to resolve this issue.<br/>  NuGet.Packaging 3.5.0 -> NuGet.Versioning (= 3.5.0)<br/>  NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)* |
-| **Solution** | Packages with dependency constraints on exact versions do not allow other packages to increase the version if needed. Add a reference to the project directly (in the project file) with the exact version required. |
+| **Solution** | Packages with dependency constraints on exact versions do not allow other packages to increase the version if needed. Add a reference to the package directly (in the project file) with the exact version required. |
 
 <a name="nu1108"></a>
 

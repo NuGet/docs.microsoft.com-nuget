@@ -1,9 +1,9 @@
 ---
 title: nuget.config File Reference
 description: NuGet.Config file reference including the config, bindingRedirects, packageRestore, solution, and packageSource sections.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 10/25/2017
 ms.topic: reference
 ---

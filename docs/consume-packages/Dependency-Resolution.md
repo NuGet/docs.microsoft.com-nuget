@@ -1,9 +1,9 @@
 ---
 title: NuGet Package Dependency Resolution
 description: Details on the process through which a NuGet package's dependencies are resolved and installed in both NuGet 2.x and NuGet 3.x+.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 08/14/2017
 ms.topic: conceptual
 ---

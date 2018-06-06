@@ -1,9 +1,9 @@
 ---
 title: NuGet Documentation
 description: NuGet is the package manager for Microsoft development platforms including .NET. The NuGet client tools provide the ability to create and consume packages.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 02/12/2018
 ms.topic: overview
 layout: HubPage

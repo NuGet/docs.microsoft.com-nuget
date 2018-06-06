@@ -1,9 +1,9 @@
 ---
 title: NuGet Frequently-Asked Questions
 description: Common questions and answers for using NuGet on the command line and in Visual Studio, and working with the NuGet gallery.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/11/2018
 ms.topic: conceptual
 ---
@@ -156,9 +156,9 @@ If a package does not specify the licensing terms, contact the package owner dir
 
 ## Managing packages on nuget.org
 
-**Can I edit package metadata after it's been uploaded? Why do you require editing the nuspec and uploading a new package for making changes to package metadata?**
+**Can I edit package metadata after it's been uploaded?**
 
-NuGet requires all packages to be signed. A design principle of package signing is that signed package content must be immutable, which includes the nuspec. Editing the package metadata results in changes to the nuspec, invalidating existing signatures. We recommend modifying existing workflows to not require editing the package metadata after the package has been created.
+NuGet recommends all packages to be signed. A design principle of package signing is that signed package content must be immutable, which includes the nuspec. Editing the package metadata results in changes to the nuspec, invalidating existing signatures. We recommend modifying existing workflows to not require editing the package metadata after the package has been created.
 
 Note that dependencies listed for your package are generated automatically from the package itself and cannot be edited.
 

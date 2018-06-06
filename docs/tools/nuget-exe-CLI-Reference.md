@@ -1,9 +1,9 @@
 ---
 title: NuGet Command-Line Interface (CLI) Reference
 description: Command-line reference index for the nuget.exe CLI
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/23/2018
 ms.topic: reference
 ---

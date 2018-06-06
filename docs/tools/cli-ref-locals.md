@@ -1,9 +1,9 @@
 ---
 title: NuGet CLI locals command
 description: Reference for the nuget.exe locals command
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 03/19/2018
 ms.topic: reference
 ---

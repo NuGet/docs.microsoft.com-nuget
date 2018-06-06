@@ -1,10 +1,10 @@
 ---
 title: Finding and Choosing NuGet Packages
 description: An overview of how to find and choose the best NuGet packages for a project including details on the NuGet search syntax.
-author: kraigb
-ms.author: kraigb
-manager: douge
-ms.date: 03/16/2018
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 06/04/2018
 ms.topic: conceptual
 ---
 
@@ -101,7 +101,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 
 NuGet package search works the same on nuget.org, from the NuGet CLI, and within the NuGet Package Manager extension in Visual Studio. In general, search is applied to keywords as well as package descriptions.
 
-- **Keywords**: Search looks for relevant packages that contain all the provided keywords. Example: `modern UI javascript`
+- **Keywords**: Search looks for relevant packages that contain any of the provided keywords. Example: `modern UI`. To search for packages that contain all of the provided keywords, use "+" between the terms, such as `modern+UI`.
 - **Phrases**: Entering terms within quotation marks looks for exact case-insensitive matches to those terms. Example: `"modern UI" package`
 - **Filtering**: You can apply a search term to a specific property by using the syntax `<property>:<term>` where `<property>` (case-insensitive) can be `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary`, and `owner`. Terms can be contained in quotes if needed, and you can search for multiple properties at the same time. Also, searches on the `id` property are substring matches, whereas `packageid` uses an exact match. Examples:
 

@@ -1,9 +1,9 @@
 ---
 title: NuGet Register-TabExpansion PowerShell Reference
 description: Reference for Register-TabExpansion PowerShell command in the NuGet Package Manager Console in Visual Studio.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
 ---

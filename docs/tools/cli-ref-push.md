@@ -1,9 +1,9 @@
 ---
 title: NuGet CLI push command
 description: Reference for the nuget.exe push command
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
 ---
