@@ -93,6 +93,7 @@ These elements may appear within a `<metadata>` element.
 | **language** | The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md). |
 | **tags**  | A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering. |
 | **serviceable** | *(3.3+)* For internal NuGet use only. |
+| **repository** | *(3.5+)* An empty element with attributes that relate to the source used to build this package. At least one of "url" or "type" attributes must be specified. The other attributes are optional. "url" attribute indicates the URL of the repository. "type" attribute denotes the repository type, e.g. "git". *(4.6+)* "branch" attribute denotes the branch in that repository. *(4.6+)* "commit" attribute denotes the commit id within that repository. |
 
 #### Collection elements
 
