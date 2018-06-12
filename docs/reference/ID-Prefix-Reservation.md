@@ -87,3 +87,7 @@ When reviewing any application for ID prefix reservation, the [nuget.org](https:
 If a third party feed provider is interested in implementing their own service to provide prefix reservations, you can do so by modifying the search service in the NuGet V3 feed providers. The addition in the feed search service is to add the *verified* property, with examples for the V3 feeds below. The NuGet client will not support the added property in the V2 feed.
 
 For more information, see the [documentation about the API's search service](../api/search-query-service-resource.md).
+
+## Package ID Prefix Reservation Dispute Policy
+If you believe an owner on [NuGet.org](https://nuget.org) was assigned a package ID prefix reservation that goes against the above listed criteria, or infringes on any trademarks or copyrights, please email [support@nuget.org](mailto:support@nuget.org) with the ID prefix in question, the owner of the ID prefix, and the reason for disputing the assigned prefix reservation.
+
