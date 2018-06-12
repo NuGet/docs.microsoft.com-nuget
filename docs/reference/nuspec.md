@@ -93,6 +93,7 @@ These elements may appear within a `<metadata>` element.
 | **language** | The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md). |
 | **tags**  | A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering. |
 | **serviceable** | *(3.3+)* For internal NuGet use only. |
+| **repository** | Repository metadata, consisting of four optional attributes: *type* and *url* *(4.0+)*, and *branch* and *commit* *(4.6+)*. These attributes allow you to map the .nupkg to the repository that built it, with the potential to get as detailed as the individual branch or commit that built the package. |
 
 #### Collection elements
 
