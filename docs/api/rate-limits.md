@@ -23,7 +23,7 @@ The NuGet.org API enforces rate limiting to prevent abuse. Requests that exceed 
     }
   ~~~
 
-In addition to request throttling using rate limits, some API's also enforce quota. Requests that exceed the quota return the following error:
+In addition to request throttling using rate limits, some APIs also enforce quota. Requests that exceed the quota return the following error:
 
   ~~~
     {
