@@ -21,9 +21,9 @@ A versioned communication protocol between the NuGet Client and the plugin is de
 The high level workflow can be described as follows:
 
 1. NuGet discovers available plugins.
-2. When applicable, NuGet will iterate over the plugins in priority order and start them one by one.
-3. NuGet will use the first plugin that can service the request.
-4. The plugins will be shut down when they are no longer needed.
+1. When applicable, NuGet will iterate over the plugins in priority order and start them one by one.
+1. NuGet will use the first plugin that can service the request.
+1. The plugins will be shut down when they are no longer needed.
 
 ## General plugin requirements
 
@@ -40,15 +40,15 @@ Under this version, the requirements are as follows:
 The technical specification is described in more details in the following 2 specs:
 
 - [NuGet Package Download Plugin](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin)
-- [NuGet cross plat authentication plugin](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin).
+- [NuGet cross plat authentication plugin](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin)
 
 ## Plugin installation and discovery
 
 The plugins will be discovered via a convention based directory structure.
 CI/CD scenarios and power users can use an environment variable to override the behavior.
 
-1. `NUGET_PLUGIN_PATHS` - defines the plugins that will be used for that NuGet process, priority reserved. If this environment variable is set, it overrides the convention based discovery. 
-2. User-location, the NuGet Home location in `%UserProfile%/.nuget/plugins`. This location cannot be overriden. A different root directory will be used for .NET Core and .NET Framework plugins. 
+- `NUGET_PLUGIN_PATHS` - defines the plugins that will be used for that NuGet process, priority reserved. If this environment variable is set, it overrides the convention based discovery. 
+-  User-location, the NuGet Home location in `%UserProfile%/.nuget/plugins`. This location cannot be overriden. A different root directory will be used for .NET Core and .NET Framework plugins. 
 
 | Framework | Root discovery location  |
 | ------- | ------------------------ |
@@ -71,13 +71,23 @@ The plugin entry point will be the name of the installed folder, with the .dll e
                     nuget.protocol.dll
 ```
 
-3. Pre-installed plugins. These are plugins that ship with Visual Studio in box.
+- Pre-installed plugins. These are plugins that ship with Visual Studio in box.
+
+The following table describes the correlation NuGet products and the type of plugin they support.
+
+| Client tool  | Framework |
+| ------------ | --------- |
+| Visual Studio | .NET Framework |
+| dotnet.exe | .NET Core |
+| NuGet.exe | .NET Framework |
+| MSBuild.exe | .NET Framework |
+| NuGet.exe on Mono | .NET Framework |
 
 ## Supported operations
 
 Two operations are supported under the new plugin protocol.
 
-| Operation name | Minimum protocol vesion | Minimum NuGet version |
+| Operation name | Minimum protocol version | Minimum NuGet client version |
 | -------------- | ----------------------- | --------------------- |
 | Download Package | 1.0.0 | 4.3.0 |
 | Authentication | 2.0.0 | 4.8.0 |
@@ -87,3 +97,179 @@ Two operations are supported under the new plugin protocol.
 For the NuGet in dotnet.exe scenarios, plugins need to be able to execute under that specific runtime of the dotnet.exe.
 It's on the plugin provider and the consumer to make sure a compatible dotnet.exe/plugin combination is used.
 A potential issue could arise with the user-location plugins when for example, a dotnet.exe under the 2.0 runtime tries to use a plugin written for the 2.1 runtime.
+
+## Protocol messages
+
+Protocol Version **1.0.0** messages:
+
+1.  Close
+    * Request direction:  NuGet -> plugin
+    * The request will contain no payload
+    * No response is expected.  The proper response is for the plugin process to promptly exit.
+
+2.  Copy files in package
+    * Request direction:  NuGet -> plugin
+    * The request will contain:
+        * the package ID and version
+        * the package source repository location
+        * destination directory path
+        * an enumerable of files in the package to be copied to the destination directory path
+    * A response will contain:
+        * a response code indicating the outcome of the operation
+        * an enumerable of full paths for copied files in the destination directory if the operation was successful
+
+3.  Copy package file (.nupkg)
+    * Request direction:  NuGet -> plugin
+    * The request will contain:
+        * the package ID and version
+        * the package source repository location
+        * the destination file path
+    * A response will contain:
+        * a response code indicating the outcome of the operation
+
+4.  Get credentials
+    * Request direction:  plugin -> NuGet
+    * The request will contain:
+        * the package source repository location
+        * the HTTP status code obtained from the package source repository using current credentials
+    * A response will contain:
+        * a response code indicating the outcome of the operation
+        * a username, if available
+        * a password, if available
+
+5.  Get files in package
+    * Request direction:  NuGet -> plugin
+    * The request will contain:
+        * the package ID and version
+        * the package source repository location
+    * A response will contain:
+        * a response code indicating the outcome of the operation
+        * an enumerable of file paths in the package if the operation was successful
+
+6.  Get operation claims 
+    * Request direction:  NuGet -> plugin
+    * The request will contain:
+        * the service index.json for a package source
+        * the package source repository location
+    * A response will contain:
+        * a response code indicating the outcome of the operation
+        * an enumerable of supported operations (e.g.:  package download) if the operation was successful.  If a plugin does not support the package source, the plugin must return an empty set of supported operations.
+
+> [!Note]
+> This message has been amended in version **2.0.0**. It is still backwards compatible however.
+
+7.  Get package hash
+    * Request direction:  NuGet -> plugin
+    * The request will contain:
+        * the package ID and version
+        * the package source repository location
+        * the hash algorithm
+    * A response will contain:
+        * a response code indicating the outcome of the operation
+        * a package file hash using the requested hash algorithm if the operation was successful
+
+8.  Get package versions
+    * Request direction:  NuGet -> plugin
+    * The request will contain:
+        * the package ID
+        * the package source repository location
+    * A response will contain:
+        * a response code indicating the outcome of the operation
+        * an enumerable of package versions if the operation was successful
+
+9.  Get service index
+    * Request direction:  plugin -> NuGet
+    * The request will contain:
+        * the package source repository location
+    * A response will contain:
+        * a response code indicating the outcome of the operation
+        * the service index if the operation was successful
+
+10.  Handshake
+     * Request direction:  NuGet <-> plugin
+     * The request will contain:
+         * the current plugin protocol version
+         * the minimum supported plugin protocol version
+     * A response will contain:
+         * a response code indicating the outcome of the operation
+         * the negotiated protocol version if the operation was successful.  A failure will result in termination of the plugin.
+
+11.  Initialize
+     * Request direction:  NuGet -> plugin
+     * The request will contain:
+         * the NuGet client tool version
+         * the NuGet client tool effective language.  This takes into consideration the ForceEnglishOutput setting, if used.
+         * the default request timeout, which supersedes the protocol default.
+     * A response will contain:
+         * a response code indicating the outcome of the operation.  A failure will result in termination of the plugin.
+
+12.  Log
+     * Request direction:  plugin -> NuGet
+     * The request will contain:
+         * the log level for the request
+         * a message to log
+     * A response will contain:
+         * a response code indicating the outcome of the operation.
+
+13.  Monitor NuGet process exit
+     * Request direction:  NuGet -> plugin
+     * The request will contain:
+         * the NuGet process ID
+     * A response will contain:
+         * a response code indicating the outcome of the operation.
+
+14.  Prefetch package
+     * Request direction:  NuGet -> plugin
+     * The request will contain:
+         * the package ID and version
+         * the package source repository location
+     * A response will contain:
+         * a response code indicating the outcome of the operation
+
+15.  Set credentials
+     * Request direction:  NuGet -> plugin
+     * The request will contain:
+         * the package source repository location
+         * the last known package source username, if available
+         * the last known package source password, if available
+         * the last known proxy username, if available
+         * the last known proxy password, if available
+     * A response will contain:
+         * a response code indicating the outcome of the operation
+
+16.  Set log level
+     * Request direction:  NuGet -> plugin
+     * The request will contain:
+         * the default log level
+     * A response will contain:
+         * a response code indicating the outcome of the operation
+
+Protocol Version **2.0.0** messages
+
+17. Get Operation Claims
+
+* Request direction:  NuGet -> plugin
+    * The request will contain:
+        * the service index.json for a package source
+        * the package source repository location
+    * A response will contain:
+        * a response code indicating the outcome of the operation
+        * an enumerable of supported operations if the operation was successful.  If a plugin does not support the package source, the plugin must return an empty set of supported operations.
+
+    If the service index and package source are null, then the plugin can answer with authentication.
+
+    The following additional messages are required to support the authentication operation.
+
+18. Authentication Credentials
+
+* Request direction: NuGet -> plugin
+* The request will contain:
+    * Uri
+    * isRetry
+    * NonInteractive
+* A response will contain
+    * Username
+    * Password
+    * Message
+    * List of Auth Types
+    * MessageResponseCode
