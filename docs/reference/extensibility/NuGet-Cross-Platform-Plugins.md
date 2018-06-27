@@ -258,9 +258,7 @@ Protocol Version **2.0.0** messages
 
     If the service index and package source are null, then the plugin can answer with authentication.
 
-    The following additional messages are required to support the authentication operation.
-
-18. Authentication Credentials
+18. Get Authentication Credentials
 
 * Request direction: NuGet -> plugin
 * The request will contain:

@@ -15,10 +15,13 @@ After you install a NuGet credential provider for Visual Studio, the NuGet Visua
 
 A sample implementation can be found in [the VsCredentialProvider sample](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider).
 
+Starting with 4.8+ NuGet in Visual Studio supports the new cross platform authentication plugins as well, but they are not the recommended approach for performance reasons.
+
 > [!Note]
 > NuGet credential providers for Visual Studio must be installed as a regular Visual Studio extension and will require [Visual Studio 2017](https://aka.ms/vs/15/preview/vs_enterprise) (currently in preview) or above.
 >
-> NuGet credential providers for Visual Studio work only in Visual Studio (not in dotnet restore or nuget.exe). For credential providers with nuget.exe, see [nuget.exe Credential Providers](nuget-exe-Credential-providers.md). For credential providers with dotnet.exe and msbuild.exe see bla bla
+> NuGet credential providers for Visual Studio work only in Visual Studio (not in dotnet restore or nuget.exe). For credential providers with nuget.exe, see [nuget.exe Credential Providers](nuget-exe-Credential-providers.md).
+> For credential providers in dotnet and msbuild see [NuGet cross platform plugins](#NuGet-Cross-Platform-Authentication-Plugin.md)
 
 ## Available NuGet credential providers for Visual Studio
 
@@ -41,6 +44,9 @@ During credential acquisition, the credential service will try credential provid
 1. All other plug-in Visual Studio credential providers will be tried sequentially.
 1. Try to use all NuGet cross platform credential providers sequentially.
 1. If no credentials have been acquired yet, the user will be prompted for credentials using a standard basic authentication dialog.
+
+> [!Note]
+> While NuGet in Visual Studio supports [cross platform authentication plugins](NuGet-Cross-Platform-Authentication-Plugin.md), we recommend that 
 
 ### Implementing IVsCredentialProvider.GetCredentialsAsync
 
