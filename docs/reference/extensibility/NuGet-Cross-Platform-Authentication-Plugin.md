@@ -19,13 +19,16 @@ This plugin covers the MSBuild.exe scenarios and serves as a fallback in Visual 
 
 ## Creating a cross platform authentication plugin
 
-A sample implementation can be found in [Cross platform authentication plugin](https://github.com/NuGet/Samples/tree/master/CrossPlatformCredentialProviderTBD)
-It's very important that the plugins conform to the security requirement set forth by the NuGet client tools.
+A sample implementation can be found in [MSCredProvider plugin](https://github.com/Microsoft/mscredprovider).
 
+It's very important that the plugins conform to the security requirement set forth by the NuGet client tools.
 The minimum required version for a plugin to be an authentication plugin is **2.0.0**.
 NuGet will perform the handshake with the plugin and query for the supported operation claims.
-Please refer to the NuGet cross platform plugin [protocol messages](NuGet-Cross-Platform-Plugins.md#protocol-messages)
+Please refer to the NuGet cross platform plugin [protocol messages](NuGet-Cross-Platform-Plugins.md#protocol-messages) for more details about the specific messages.
 
-### .NET Framework plugins authentication behavior
+NuGet will set the log level and provide proxy information to the plugin when applicable.
+Logging to the NuGet console is only acceptable after NuGet has set the log level to the plugin.
 
-Please refer to the [authentication plugin spec](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin) and the [download plugin spec](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin) for more details about the specific messages. 
+When the client calls the plugin with a Get Authentication
+The plugins need to conform to the interactivity switch.
+1. .NET Framework plugins authentication behavior
