@@ -45,9 +45,6 @@ During credential acquisition, the credential service will try credential provid
 1. Try to use all NuGet cross platform credential providers sequentially.
 1. If no credentials have been acquired yet, the user will be prompted for credentials using a standard basic authentication dialog.
 
-> [!Note]
-> While NuGet in Visual Studio supports [cross platform authentication plugins](NuGet-Cross-Platform-Authentication-Plugin.md), we recommend that 
-
 ### Implementing IVsCredentialProvider.GetCredentialsAsync
 
 To create a NuGet credential provider for Visual Studio, create a Visual Studio Extension that exposes a public MEF Export implementing the `IVsCredentialProvider` type, and adheres to the principles outlined below.

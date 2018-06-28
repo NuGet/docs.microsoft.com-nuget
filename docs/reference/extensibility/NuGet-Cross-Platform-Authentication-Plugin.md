@@ -1,5 +1,5 @@
 ---
-title: NuGet cross authentication plugin
+title: NuGet cross platform authentication plugin
 description: NuGet cross platform authentication plugins for NuGet.exe, dotnet.exe, msbuild.exe and Visual Studio
 author: nkolev92
 ms.author: nikolev
@@ -10,19 +10,41 @@ ms.topic: conceptual
 
 # NuGet cross platform authentication plugin
 
-Starting with NuGet version 4.8, all NuGet clients (NuGet.exe, Visual Studio, dotnet.exe and MSBuild.exe) can use an authentication plugin built on top of the [NuGet cross platform plugins](NuGet-Cross-Platform-Plugins.md) model.
+In version 4.8+ all NuGet clients (NuGet.exe, Visual Studio, dotnet.exe and MSBuild.exe) can use an authentication plugin built on top of the [NuGet cross platform plugins](NuGet-Cross-Platform-Plugins.md) model.
 
 ## Available NuGet cross platform authentication plugins
 
-There is a an authentication provider built in Visual Studio (and the Build Tools SKU) to support Visual Studio Team Services.
+There is a .NET Framework based authentication plugin built in Visual Studio (and the Build Tools SKU) to support Visual Studio Team Services.
 This plugin covers the MSBuild.exe scenarios and serves as a fallback in Visual Studio.
+
+TBD - .NET Core based shipping strategy
+
+TBD - other providers
+
+## Authentication in dotnet.exe
+
+Visual Studio and NuGet.exe are by default interactive. NuGet.exe contains a switch to make it [non interactive](../../tools/nuget-exe-CLI-Reference.md).
+Additionally the NuGet.exe and Visual Studio plugins prompt the user for input.
+In dotnet.exe there is no prompting and the default is non interactive.
+
+The authentication mechanism in dotnet.exe is device flow. When the restore or add package operation is run interactively, the operation blocks and instructions to the user how to complete the authentications will be provided on the command line.
+When the user completes the authentication the operation will continue.
+
+To make the operation interactive, one should pass `--interactive`.
+Currently only the explicit `dotnet restore` and `dotnet add package` commands support an interactive switch.
+There is no interactive switch on `dotnet build` and `dotnet publish`.
+
+## Authentication in MSBuild
+
+Similar to dotnet.exe, MSBuild.exe is by default non interactive the MSBuild.exe authentication mechanism is device flow.
+To allow the restore to pause and wait for authentication, call restore with `msbuild /t:restore /p:NuGetInteractive="true"`.
 
 ## Creating a cross platform authentication plugin
 
 A sample implementation can be found in [MSCredProvider plugin](https://github.com/Microsoft/mscredprovider).
 
-It's very important that the plugins conform to the security requirement set forth by the NuGet client tools.
-The minimum required version for a plugin to be an authentication plugin is **2.0.0**.
+It's very important that the plugins conforms to the security requirement set forth by the NuGet client tools.
+The minimum required version for a plugin to be an authentication plugin is *2.0.0*.
 NuGet will perform the handshake with the plugin and query for the supported operation claims.
 Please refer to the NuGet cross platform plugin [protocol messages](NuGet-Cross-Platform-Plugins.md#protocol-messages) for more details about the specific messages.
 
@@ -43,5 +65,6 @@ Note that logging is available after the log level has been set to the plugin.
 NuGet will not take any interactive input from the command line.
 
 Please refer to the following specs before writing a plugin.
+
 - [NuGet Package Download Plugin](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin)
 - [NuGet cross plat authentication plugin](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin)

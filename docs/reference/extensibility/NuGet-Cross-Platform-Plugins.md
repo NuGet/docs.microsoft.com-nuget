@@ -10,9 +10,10 @@ ms.topic: conceptual
 
 # NuGet cross platform plugins
 
-Starting from version **4.8**, NuGet has added support for cross platform plugins.
-This is achieved with a new plugin extensibility model, that has to conform to a strict set of rules of operation.
-The plugins are self-contained executables (runnables in the .NET Core world), that the NuGet Client launches in a separate process.
+In NuGet 4.8+ support for cross platform plugins has been added.
+This was achieved with by building a new plugin extensibility model, that has to conform to a strict set of rules of operation.
+The plugins are self-contained executables (runnables in the .NET Core world), that the NuGet Clients launch in a separate process.
+This is a true write once, run everywhere plugin. It will work with all NuGet client tools.
 The plugins can be either .NET Framework (NuGet.exe, MSBuild.exe and Visual Studio), or .NET Core (dotnet.exe).
 A versioned communication protocol between the NuGet Client and the plugin is defined. During the startup handshake, the 2 processes negotiate the protocol version.
 
@@ -27,17 +28,17 @@ The high level workflow can be described as follows:
 
 ## General plugin requirements
 
-The current protocol version is 2.0.0.
+The current protocol version is *2.0.0*.
 Under this version, the requirements are as follows:
 
-- Have a valid, trusted Authenticode signature assemblies that will run on Windows and Mono. There is no special trust requirement for assemblies run on Linux and Mac. [Issue](https://github.com/nuget/home/issues/9000)
+- Have a valid, trusted Authenticode signature assemblies that will run on Windows and Mono. There is no special trust requirement for assemblies run on Linux and Mac yet. [Relevant task](https://github.com/nuget/home/issues/9000)
 - Support stateless launching under the current security context of NuGet client tools. For example, NuGet client tools will not perform elevation or additional initialization outside of the plugin protocol described later.
 - Be non interactive, unless explicitly specified.
 - Adhere to the negotiated plugin protocol version.
 - Respond to all requests within a reasonable time period.
 - Honor cancellation requests for any in-progress operation.
 
-The technical specification is described in more details in the following 2 specs:
+The technical specification is described in more detail in the following specs:
 
 - [NuGet Package Download Plugin](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin)
 - [NuGet cross plat authentication plugin](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin)
@@ -59,16 +60,16 @@ Each plugin should be installed in its own folder.
 The plugin entry point will be the name of the installed folder, with the .dll extensions for .NET Core, and .exe extension for .NET Framework.
 
 ```
-    .nuget
-        plugins
-            netfx
-                myFeedCredentialProvider
-                    myFeedCredentialProvider.exe
-                    nuget.protocol.dll
-            netcore
-                myFeedCredentialProvider
-                    myFeedCredentialProvider.dll
-                    nuget.protocol.dll
+.nuget
+    plugins
+        netfx
+            myFeedCredentialProvider
+                myFeedCredentialProvider.exe
+                nuget.protocol.dll
+        netcore
+            myFeedCredentialProvider
+                myFeedCredentialProvider.dll
+                nuget.protocol.dll
 ```
 
 - Pre-installed plugins. These are plugins that ship with Visual Studio in box.
@@ -90,7 +91,7 @@ Two operations are supported under the new plugin protocol.
 | Operation name | Minimum protocol version | Minimum NuGet client version |
 | -------------- | ----------------------- | --------------------- |
 | Download Package | 1.0.0 | 4.3.0 |
-| Authentication | 2.0.0 | 4.8.0 |
+| [Authentication](NuGet-Cross-Platform-Authentication-Plugin.md) | 2.0.0 | 4.8.0 |
 
 ## Running plugins under the correct runtime
 
@@ -98,9 +99,13 @@ For the NuGet in dotnet.exe scenarios, plugins need to be able to execute under 
 It's on the plugin provider and the consumer to make sure a compatible dotnet.exe/plugin combination is used.
 A potential issue could arise with the user-location plugins when for example, a dotnet.exe under the 2.0 runtime tries to use a plugin written for the 2.1 runtime.
 
-## Protocol messages
+## Capabilities caching
 
-Protocol Version **1.0.0** messages:
+TBD: Document the capabilities caching and update the locals doc information.
+
+## Protocol messages index
+
+Protocol Version *1.0.0* messages:
 
 1.  Close
     * Request direction:  NuGet -> plugin
@@ -156,7 +161,7 @@ Protocol Version **1.0.0** messages:
         * an enumerable of supported operations (e.g.:  package download) if the operation was successful.  If a plugin does not support the package source, the plugin must return an empty set of supported operations.
 
 > [!Note]
-> This message has been amended in version **2.0.0**. It is still backwards compatible however.
+> This message has been updated in version *2.0.0*. It is on the client to preserve backward compatibility.
 
 7.  Get package hash
     * Request direction:  NuGet -> plugin
@@ -244,7 +249,7 @@ Protocol Version **1.0.0** messages:
      * A response will contain:
          * a response code indicating the outcome of the operation
 
-Protocol Version **2.0.0** messages
+Protocol Version *2.0.0* messages
 
 17. Get Operation Claims
 
