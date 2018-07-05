@@ -34,7 +34,7 @@ The general process is as follows:
 
    - If the package is not in the cache, attempt to download it from the sources listed in the configuration. If a package is downloaded, "GET" and "OK" appear in the output.
 
-   - If the package cannot be successfully acquired from any sources, installation fails at this point with an error such as [NU1103](../reference/errors-and-warnings.md#nu1103). Note that errors from `nuget.exe` commands show only the last source checked, but implies that the package wasn't available from any source.
+   - If the package cannot be successfully acquired from any sources, installation fails at this point with an error such as [NU1103](../reference/errors-and-warnings/NU1103.md). Note that errors from `nuget.exe` commands show only the last source checked, but implies that the package wasn't available from any source.
 
    When acquiring the package, the order of sources in the NuGet configuration may apply:
 
