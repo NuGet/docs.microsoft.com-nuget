@@ -106,9 +106,6 @@ A symbol package can be built by conventions, from a folder structure as describ
     nuget push MyPackage.symbols.nupkg
     ```
 
-   > [!Note]
-   > With nuget.exe 4.5.0 or above, the symbols packages are not automatically pushed to symbolsource.org. You would need to push the symbols packages separately as explained in the next step.
-
 3. To publish to a different symbol repository, or to push a symbol package that doesn't follow the naming convention, use the `-Source` option:
 
     ```cli
@@ -121,6 +118,9 @@ A symbol package can be built by conventions, from a folder structure as describ
     nuget push MyPackage.nupkg
     ```
 
+   > [!Note]
+   > With nuget.exe 4.5.0 or above, the symbols packages are not automatically pushed to symbolsource.org. You would need to push the symbols packages separately as explained in the next step.
+   
 In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to https://nuget.smbsrc.net/ (the push URL for symbolsource.org), after it publishes the primary package to nuget.org.
 
 ## See Also
