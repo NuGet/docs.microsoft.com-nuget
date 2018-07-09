@@ -89,5 +89,5 @@ If a third party feed provider is interested in implementing their own service t
 For more information, see the [documentation about the API's search service](../api/search-query-service-resource.md).
 
 ## Package ID Prefix Reservation Dispute Policy
-If you believe an owner on [NuGet.org](https://nuget.org) was assigned a package ID prefix reservation that goes against the above listed criteria, or infringes on any trademarks or copyrights, please email [support@nuget.org](mailto:support@nuget.org) with the ID prefix in question, the owner of the ID prefix, and the reason for disputing the assigned prefix reservation.
+If you believe an owner on [NuGet.org](https://www.nuget.org) was assigned a package ID prefix reservation that goes against the above listed criteria, or infringes on any trademarks or copyrights, please email [support@nuget.org](mailto:support@nuget.org) with the ID prefix in question, the owner of the ID prefix, and the reason for disputing the assigned prefix reservation.
 
