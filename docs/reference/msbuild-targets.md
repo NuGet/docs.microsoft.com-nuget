@@ -265,12 +265,12 @@ An example:
   <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomContentTarget</TargetsForTfmSpecificContentInPackage>
 </PropertyGroup>
 
-<Target Name=""CustomContentTarget"">
+<Target Name="CustomContentTarget">
   <ItemGroup>
-    <TfmSpecificPackageFile Include=""abc.txt"">
+    <TfmSpecificPackageFile Include="abc.txt">
       <PackagePath>mycontent/$(TargetFramework)</PackagePath>
     </TfmSpecificPackageFile>
-    <TfmSpecificPackageFile Include=""Extensions/ext.txt"" Condition=""'$(TargetFramework)' == 'net46'"">
+    <TfmSpecificPackageFile Include="Extensions/ext.txt" Condition="'$(TargetFramework)' == 'net46'">
       <PackagePath>net46content</PackagePath>
     </TfmSpecificPackageFile>  
   </ItemGroup>
