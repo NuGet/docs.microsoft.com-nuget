@@ -95,6 +95,17 @@ These elements may appear within a `<metadata>` element.
 | **serviceable** | *(3.3+)* For internal NuGet use only. |
 | **repository** | Repository metadata, consisting of four optional attributes: *type* and *url* *(4.0+)*, and *branch* and *commit* *(4.6+)*. These attributes allow you to map the .nupkg to the repository that built it, with the potential to get as detailed as the individual branch or commit that built the package. |
 
+#### Repository element
+
+The `<repository>` element is an optional child of `<metadata>` and specifies the package's source code location, allowing IDEs to download and debug the code.
+
+| Attribute | Description |
+| --- | --- |
+| **type** | The type of repository e.g. git. |
+| **url** | The repository's URL. |
+| **branch** | The name of the branch within the repository. |
+| **commit** | The corresponding commit ID for the specified version of the package. |
+
 #### Collection elements
 
 | Element | Description |
