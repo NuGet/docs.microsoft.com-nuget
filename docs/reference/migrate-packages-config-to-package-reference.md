@@ -36,7 +36,7 @@ When a project is first opened, NuGet may not have initialized until a NuGet ope
 
 #### Workaround 
 
-Peform any one of the following NuGet actions: 
+Perform any one of the following NuGet actions: 
 * Open the Package Manager UI - Right-click on `References` and select `Manage NuGet Packages...` 
 * Open the Package Manager Console - From `Tools > NuGet Package Manager`, select `Package Manager Console` 
 * Run NuGet restore - Right-click on the solution node in the Solution Explorer and select `Restore NuGet Packages` 
@@ -51,7 +51,7 @@ You should now be able to see the migration option. Note that this option is not
 
 1. Open a solution containing project using `packages.config`.
 
-1. In **Solution Explorer**, right-click on the **References** node or the `packages.config` file and select **Migrate packages.config to PackageReference...**.
+1. In **Solution Explorer**, right-click on the **References** node or the `packages.config` file and select **Migrate packages.config to PackageReference...**. If that context menu entry doesn't show up, then open **Tools > Options > NuGet Package Manager** and ensure that the **Default package management format** is set to **PackageReference**.
 
 1. The migrator analyzes the project's NuGet package references and attempts to categorize them into **Top-level dependencies** (NuGet packages that you installed directly) and **Transitive dependencies** (packages that were installed as dependencies of top-level packages).
 
