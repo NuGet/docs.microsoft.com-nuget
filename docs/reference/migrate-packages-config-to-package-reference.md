@@ -36,7 +36,7 @@ When a project is first opened, NuGet may not have initialized until a NuGet ope
 
 #### Workaround 
 
-Peform any one of the following NuGet actions: 
+Perform any one of the following NuGet actions: 
 * Open the Package Manager UI - Right-click on `References` and select `Manage NuGet Packages...` 
 * Open the Package Manager Console - From `Tools > NuGet Package Manager`, select `Package Manager Console` 
 * Run NuGet restore - Right-click on the solution node in the Solution Explorer and select `Restore NuGet Packages` 
