@@ -39,7 +39,7 @@ As described in the command reference, you can use a certificate available in th
 - The timestamp server does not satisfy the certificate requirements.
 
 > [!Note]
-> Signed packages should include a timestamp to make sure the signature remains valid when the signing certificate has expired. The sign operation produce a [warning NU3002](../reference/Errors-and-Warnings.md#nu3002) when signing without a timestamp.
+> Signed packages should include a timestamp to make sure the signature remains valid when the signing certificate has expired. The sign operation produce a [warning NU3002](../reference/errors-and-warnings/NU3002.md) when signing without a timestamp.
 
 ## Verify a signed package
 
@@ -51,7 +51,7 @@ nuget verify -signature MyPackage.nupkg
 
 ## Install a signed package
 
-Signed packages don't require any specific action to be installed; however, if the content has been modified since it was signed, the installation be blocked and produces a [error NU3008](../reference/Errors-and-Warnings.md#nu3008).
+Signed packages don't require any specific action to be installed; however, if the content has been modified since it was signed, the installation be blocked and produces a [error NU3008](../reference/errors-and-warnings/NU3008.md).
 
 > [!Warning]
 > Packages signed with untrusted certificates are considered as unsigned and are installed without any warnings or errors like any other unsigned package.
