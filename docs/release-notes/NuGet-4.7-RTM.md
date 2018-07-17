@@ -14,7 +14,7 @@ ms.topic: conceptual
 
 ## Summary: What's New in this Release
 
-* We have augemented package signing to enable [Repository Signed packages](https://github.com/NuGet/Home/wiki/Repository-Signatures)
+* We have augmented package signing to enable [Repository Signed packages](https://github.com/NuGet/Home/wiki/Repository-Signatures)
 
 * With Visual Studio Version 15.7, we have introduced the capability to [migrate existing projects that use the packages.config format to use PackageReference](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference) instead.
 
@@ -28,7 +28,7 @@ When a project is first opened, NuGet may not have initialized until a NuGet ope
 
 #### Workaround
 
-Peform any one of the following NuGet actions:
+Perform any one of the following NuGet actions:
 * Open the Package Manager UI - Right-click on `References` and select `Manage NuGet Packages...`
 * Open the Package Manager Console - From `Tools > NuGet Package Manager`, select `Package Manager Console`
 * Run NuGet restore - Right-click on the solution node in the Solution Explorer and select `Restore NuGet Packages`
