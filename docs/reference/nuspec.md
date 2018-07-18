@@ -22,7 +22,7 @@ In this topic:
 - [Framework assembly references](#framework-assembly-references)
 - [Including assembly files](#including-assembly-files)
 - [Including content files](#including-content-files)
-- [Examples](#examples)
+- [Example nuspec files](#example-nuspec-files)
 
 ## General form and schema
 
@@ -589,7 +589,7 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 </contentFiles>
 ```
 
-## Example .nuspec files
+## Example nuspec files
 
 **A simple `.nuspec` that does not specify dependencies or files**
 
