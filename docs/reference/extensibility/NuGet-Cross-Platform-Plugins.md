@@ -104,7 +104,7 @@ A potential issue could arise with the user-location plugins when for example, a
 
 ## Capabilities caching
 
-The security verification and instantiation of the plugins is costly. The download operation happens way more frequently than the authentication operation, however the average NuGet user is only likely to have an authentication plugin. 
+The security verification and instantiation of the plugins is costly. The download operation happens way more frequently than the authentication operation, however the average NuGet user is only likely to have an authentication plugin.
 To improve the experience, NuGet will cache the operation claims for the given request. This cache is per plugin with the plugin key being the plugin path, and the expiration for this capabilities cache is 30 days. 
 
 The cache is located in `%LocalAppData%/NuGet/plugins-cache` and be overriden with the environment variable `NUGET_PLUGINS_CACHE_PATH`. 
