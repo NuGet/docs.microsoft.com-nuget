@@ -99,7 +99,6 @@ For the NuGet in dotnet.exe scenarios, plugins need to be able to execute under 
 It's on the plugin provider and the consumer to make sure a compatible dotnet.exe/plugin combination is used.
 A potential issue could arise with the user-location plugins when for example, a dotnet.exe under the 2.0 runtime tries to use a plugin written for the 2.1 runtime.
 
-
 ## Capabilities caching
 
 The security verification and instantiation of the plugins is costly. The download operation happens way more frequently than the authentication operation, however the average NuGet user is only likely to have an authentication plugin. 
