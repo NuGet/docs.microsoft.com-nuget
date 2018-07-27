@@ -84,6 +84,9 @@ The following table describes the correlation NuGet products and the type of plu
 | MSBuild.exe | .NET Framework |
 | NuGet.exe on Mono | .NET Framework |
 
+> [!Note]
+> There is currently no user story for the installation of the plugins. It's as simple as moving the required files into the predetermined location.
+
 ## Supported operations
 
 Two operations are supported under the new plugin protocol.

@@ -14,11 +14,7 @@ In version 4.8+, all NuGet clients (NuGet.exe, Visual Studio, dotnet.exe and MSB
 
 ## Available NuGet cross platform authentication plugins
 
-There is a .NET Framework based authentication plugin built in Visual Studio (and the Build Tools SKU) to support Visual Studio Team Services.
-This plugin covers the MSBuild.exe scenarios and serves as a fallback in Visual Studio.
-
-
-TBD - Link to the VSTS provider. 
+TBD - Link to the VSTS provider
 
 ## Authentication in dotnet.exe
 
