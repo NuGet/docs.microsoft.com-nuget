@@ -66,7 +66,7 @@ The following table summarizes how the plugin should behave for all combinations
 | true | true | The IsNonInteractive switch takes precedence over the dialog switch. The plugin is not allowed to pop a dialog. This combination is only valid for .NET Framework plugins |
 | true | false | The IsNonInteractive switch takes precedence over the dialog switch. The plugin is not allowed to block. This combination is only valid for .NET Core plugins |
 | false | true | The plugin should show a dialog. This combination is only valid for .NET Framework plugins |
-| false | false | The plugin should/can not a dialog. The plugin should use device flow to authenticate by logging an instruction message via the logger. This combination is only valid for .NET Core plugins |
+| false | false | The plugin should/can not show a dialog. The plugin should use device flow to authenticate by logging an instruction message via the logger. This combination is only valid for .NET Core plugins |
 
 Please refer to the following specs before writing a plugin.
 
