@@ -99,10 +99,15 @@ For the NuGet in dotnet.exe scenarios, plugins need to be able to execute under 
 It's on the plugin provider and the consumer to make sure a compatible dotnet.exe/plugin combination is used.
 A potential issue could arise with the user-location plugins when for example, a dotnet.exe under the 2.0 runtime tries to use a plugin written for the 2.1 runtime.
 
+
 ## Capabilities caching
 
-TODO NK 
-TBD: Document the capabilities caching and update the locals doc information.
+The security verification and instantiation of the plugins is costly. The download operation happens way more frequently than the authentication operation, however the average NuGet user is only likely to have an authentication plugin. 
+To improve the experience, NuGet will cache the operation claims for the given request. This cache is per plugin with the plugin key being the plugin path, and the expiration for this capabilities cache is 30 days. 
+
+The cache is located in `LocalAppData\NuGet\plugins-cache` and be overriden with the environment variable `NUGET_PLUGINS_CACHE_PATH`. 
+To clear this [cache](../../consume-packages/managing-the-global-packages-and-cache-folders.md), one can run the locals command with the `plugins-cache` option.
+The `all` locals option will now also delete the plugins cache. 
 
 ## Protocol messages index
 

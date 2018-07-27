@@ -17,9 +17,8 @@ In version 4.8+, all NuGet clients (NuGet.exe, Visual Studio, dotnet.exe and MSB
 There is a .NET Framework based authentication plugin built in Visual Studio (and the Build Tools SKU) to support Visual Studio Team Services.
 This plugin covers the MSBuild.exe scenarios and serves as a fallback in Visual Studio.
 
-TBD - .NET Core based shipping strategy
 
-TBD - other providers
+TBD - Link to the VSTS provider. 
 
 ## Authentication in dotnet.exe
 
@@ -43,15 +42,13 @@ To allow the restore to pause and wait for authentication, call restore with `ms
 
 A sample implementation can be found in [MSCredProvider plugin](https://github.com/Microsoft/mscredprovider).
 
-It's very important that the plugins conforms to the security requirement set forth by the NuGet client tools.
+It's very important that the plugins conforms to the security requirements set forth by the NuGet client tools.
 The minimum required version for a plugin to be an authentication plugin is *2.0.0*.
 NuGet will perform the handshake with the plugin and query for the supported operation claims.
-Please refer to the NuGet cross platform plugin [protocol messages](NuGet-Cross-Platform-Plugins.md#protocol-messages) for more details about the specific messages.
+Please refer to the NuGet cross platform plugin [protocol messages](NuGet-Cross-Platform-Plugins.md#protocol-messages-index) for more details about the specific messages.
 
 NuGet will set the log level and provide proxy information to the plugin when applicable.
 Logging to the NuGet console is only acceptable after NuGet has set the log level to the plugin.
-
-When the client calls the plugin with a Get Authentication Credentials, the plugins need to conform to the interactivity switch.
 
 - .NET Framework plugin authentication behavior
 
@@ -63,6 +60,17 @@ In .NET Core, a dialog cannot be shown. The plugins should use device flow to au
 The plugin can send log messages to NuGet with instructions to the user.
 Note that logging is available after the log level has been set to the plugin.
 NuGet will not take any interactive input from the command line.
+
+When the client calls the plugin with a Get Authentication Credentials, the plugins need to conform to the interactivity switch and respect the dialog switch. 
+
+The following table summarizes how the plugin should behave for all combinations.
+
+| IsNonInteractive | CanShowDialog | Plugin behavior |
+| ---------------- | ------------- | --------------- |
+| true | true | The IsNonInteractive switch takes precedence over the dialog switch. The plugin is not allowed to pop a dialog. This combination is only valid for .NET Framework plugins |
+| true | false | The IsNonInteractive switch takes precedence over the dialog switch. The plugin is not allowed to block. This combination is only valid for .NET Core plugins |
+| false | true | The plugin should show a dialog. This combination is only valid for .NET Framework plugins |
+| false | false | The plugin should/can not a dialog. The plugin should use device flow to authenticate by logging an instruction message via the logger. This combination is only valid for .NET Core plugins |
 
 Please refer to the following specs before writing a plugin.
 
