@@ -22,7 +22,7 @@ A versioned communication protocol between the NuGet Client and the plugin is de
 The high level workflow can be described as follows:
 
 1. NuGet discovers available plugins.
-1. When applicable, NuGet will iterate over the plugins in priority order and start them one by one.
+1. When applicable, NuGet will iterate over the plugins in priority order and starts them one by one.
 1. NuGet will use the first plugin that can service the request.
 1. The plugins will be shut down when they are no longer needed.
 
@@ -31,7 +31,7 @@ The high level workflow can be described as follows:
 The current protocol version is *2.0.0*.
 Under this version, the requirements are as follows:
 
-- Have a valid, trusted Authenticode signature assemblies that will run on Windows and Mono. There is no special trust requirement for assemblies run on Linux and Mac yet. [Relevant task](https://github.com/nuget/home/issues/9000)
+- Have a valid, trusted Authenticode signature assemblies that will run on Windows and Mono. There is no special trust requirement for assemblies run on Linux and Mac yet. [Relevant issue](https://github.com/NuGet/Home/issues/6702)
 - Support stateless launching under the current security context of NuGet client tools. For example, NuGet client tools will not perform elevation or additional initialization outside of the plugin protocol described later.
 - Be non interactive, unless explicitly specified.
 - Adhere to the negotiated plugin protocol version.
@@ -63,16 +63,16 @@ The plugin entry point will be the name of the installed folder, with the .dll e
 .nuget
     plugins
         netfx
-            myFeedCredentialProvider
-                myFeedCredentialProvider.exe
+            myPlugin
+                myPlugin.exe
                 nuget.protocol.dll
+                ...
         netcore
-            myFeedCredentialProvider
-                myFeedCredentialProvider.dll
+            myPlugin
+                myPlugin.dll
                 nuget.protocol.dll
+                ...
 ```
-
-- Pre-installed plugins. These are plugins that ship with Visual Studio in box.
 
 The following table describes the correlation NuGet products and the type of plugin they support.
 
@@ -101,6 +101,7 @@ A potential issue could arise with the user-location plugins when for example, a
 
 ## Capabilities caching
 
+TODO NK 
 TBD: Document the capabilities caching and update the locals doc information.
 
 ## Protocol messages index
@@ -270,6 +271,7 @@ Protocol Version *2.0.0* messages
     * Uri
     * isRetry
     * NonInteractive
+    * CanShowDialog
 * A response will contain
     * Username
     * Password
