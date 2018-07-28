@@ -17,6 +17,17 @@ This is a true write once, run everywhere plugin. It will work with all NuGet cl
 The plugins can be either .NET Framework (NuGet.exe, MSBuild.exe and Visual Studio), or .NET Core (dotnet.exe).
 A versioned communication protocol between the NuGet Client and the plugin is defined. During the startup handshake, the 2 processes negotiate the protocol version.
 
+In order to cover all NuGet client tools scenarios, one would need both a .NET Framework and a .NET Core plugin.
+The below describes the client/framework combinations of the plugins.
+
+| Client tool  | Framework |
+| ------------ | --------- |
+| Visual Studio | .NET Framework |
+| dotnet.exe | .NET Core |
+| NuGet.exe | .NET Framework |
+| MSBuild.exe | .NET Framework |
+| NuGet.exe on Mono | .NET Framework |
+
 ## How does it work
 
 The high level workflow can be described as follows:
@@ -43,7 +54,6 @@ The technical specification is described in more detail in the following specs:
 - [NuGet Package Download Plugin](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin)
 - [NuGet cross plat authentication plugin](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin)
 
-
 ## Client - Plugin interaction
 
 NuGet client tools and the plugins communicate with JSON over standard streams (stdin, stdout, stderr). All data must be UTF-8 encoded.
@@ -59,8 +69,8 @@ After 1 minute of inactivity a plugin is considered idle and is shut down.
 The plugins will be discovered via a convention based directory structure.
 CI/CD scenarios and power users can use an environment variable to override the behavior.
 
-- `NUGET_PLUGIN_PATHS` - defines the plugins that will be used for that NuGet process, priority reserved. If this environment variable is set, it overrides the convention based discovery. 
--  User-location, the NuGet Home location in `%UserProfile%/.nuget/plugins`. This location cannot be overriden. A different root directory will be used for .NET Core and .NET Framework plugins. 
+- `NUGET_PLUGIN_PATHS` - defines the plugins that will be used for that NuGet process, priority reserved. If this environment variable is set, it overrides the convention based discovery.
+-  User-location, the NuGet Home location in `%UserProfile%/.nuget/plugins`. This location cannot be overriden. A different root directory will be used for .NET Core and .NET Framework plugins.
 
 | Framework | Root discovery location  |
 | ------- | ------------------------ |
@@ -84,16 +94,6 @@ The plugin entry point will be the name of the installed folder, with the .dll e
                 nuget.protocol.dll
                 ...
 ```
-
-The following table describes the correlation NuGet products and the type of plugin they support.
-
-| Client tool  | Framework |
-| ------------ | --------- |
-| Visual Studio | .NET Framework |
-| dotnet.exe | .NET Core |
-| NuGet.exe | .NET Framework |
-| MSBuild.exe | .NET Framework |
-| NuGet.exe on Mono | .NET Framework |
 
 > [!Note]
 > There is currently no user story for the installation of the plugins. It's as simple as moving the required files into the predetermined location.
