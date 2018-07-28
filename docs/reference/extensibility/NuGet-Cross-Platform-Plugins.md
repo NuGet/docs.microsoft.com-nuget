@@ -43,6 +43,17 @@ The technical specification is described in more detail in the following specs:
 - [NuGet Package Download Plugin](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin)
 - [NuGet cross plat authentication plugin](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin)
 
+
+## Client - Plugin interaction
+
+NuGet client tools and the plugins communicate with JSON over standard streams (stdin, stdout, stderr). All data must be UTF-8 encoded.
+The plugins are launched with the argument "-Plugin". In case a user directly launches a plugin executable without this argument, the plugin can give an informative message instead of waiting for a protocol handshake.
+The protocol handshake timeout is 5 seconds. The plugin should complete the setup in as short of an amount as possible.
+NuGet client tools will query a plugin’s supported operations by passing in the service index for a NuGet source. A plugin may use the service index to check for the presence of supported service types.
+
+The communication between the NuGet client tools and the plugin is bidirectional. Each request has a timeout of 5 seconds. If operations are supposed to take longer the respective process should send out a progress message to prevent the request from timing out.
+After 1 minute of inactivity a plugin is considered idle and is shut down.
+
 ## Plugin installation and discovery
 
 The plugins will be discovered via a convention based directory structure.
