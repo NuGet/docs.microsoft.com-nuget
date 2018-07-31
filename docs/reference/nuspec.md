@@ -53,12 +53,6 @@ For a clear visual representation of the schema, open the schema file in Visual 
 
 ### Metadata attributes
 
-The `<metadata>` element supports the attributes described in the following table.
-
-| Attribute | Required | Description |
-| --- | --- | --- | 
-| **minClientVersion** | No | Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager. This is used whenever the package depends on specific features of the `.nuspec` file that were added in a particular version of the NuGet client. For example, a package using the `developmentDependency` attribute should specify "2.8" for `minClientVersion`. Similarly, a package using the `contentFiles` element (see the next section) should set `minClientVersion` to "3.3". Note also that because NuGet clients prior to 2.5 do not recognize this flag, they *always* refuse to install the package no matter what `minClientVersion` contains. |
-
 ### Required metadata elements
 
 Although the following elements are the minimum requirements for a package, you should consider adding the [optional metadata elements](#optional-metadata-elements) to improve the overall experience developers have with your package.
@@ -74,39 +68,51 @@ These elements must appear within a `<metadata>` element.
 
 ### Optional metadata elements
 
-These elements may appear within a `<metadata>` element.
+#### title
+A human-friendly title of the package, typically used in UI displays as on nuget.org and the Package Manager in Visual Studio. If not specified, the package ID is used. 
+#### owners
+A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in `authors`, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg). 
+#### projectUrl
+A URL for the package's home page, often shown in UI displays as well as nuget.org. 
+#### licenseUrl
+A URL for the package's license, often shown in UI displays as well as nuget.org.
+#### iconUrl
+A URL for a 64x64 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. 
 
-#### Single elements
-
-| Element | Description |
-| --- | --- |
-| **title** | A human-friendly title of the package, typically used in UI displays as on nuget.org and the Package Manager in Visual Studio. If not specified, the package ID is used. |
-| **owners** | A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in `authors`, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg). |
-| **projectUrl** | A URL for the package's home page, often shown in UI displays as well as nuget.org. |
-| **licenseUrl** | A URL for the package's license, often shown in UI displays as well as nuget.org. |
-| **iconUrl** | A URL for a 64x64 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. |
-| **requireLicenseAcceptance** | A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package. |
-| **developmentDependency** | *(2.8+)* A Boolean value specifying whether the package is be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages. |
-| **summary** | A short description of the package for UI display. If omitted, a truncated version of `description` is used. |
-| **releaseNotes** | *(1.5+)* A description of the changes made in this release of the package, often used in UI like the **Updates** tab of the Visual Studio Package Manager in place of the package description. |
-| **copyright** | *(1.5+)* Copyright details for the package. |
-| **language** | The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md). |
-| **tags**  | A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering. |
-| **serviceable** | *(3.3+)* For internal NuGet use only. |
-| **repository** | Repository metadata, consisting of four optional attributes: *type* and *url* *(4.0+)*, and *branch* and *commit* *(4.6+)*. These attributes allow you to map the .nupkg to the repository that built it, with the potential to get as detailed as the individual branch or commit that built the package. |
+#### requireLicenseAcceptance
+A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.
+#### developmentDependency
+*(2.8+)* A Boolean value specifying whether the package is be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages.
+#### summary
+A short description of the package for UI display. If omitted, a truncated version of `description` is used.
+#### releaseNotes
+*(1.5+)* A description of the changes made in this release of the package, often used in UI like the **Updates** tab of the Visual Studio Package Manager in place of the package description.
+#### copyright
+*(1.5+)* Copyright details for the package.
+#### language
+The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md).
+#### tags
+A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering. 
+#### serviceable 
+*(3.3+)* For internal NuGet use only.
+#### repository
+Repository metadata, consisting of four optional attributes: *type* and *url* *(4.0+)*, and *branch* and *commit* *(4.6+)*. These attributes allow you to map the .nupkg to the repository that built it, with the potential to get as detailed as the individual branch or commit that built the package. This should be a publicly available url that can be invoked directly by a version control software. It should not be an html page as this is meant for the computer. For linking to project page, use the `projectUrl` field, instead.|
+#### minClientVersion
+Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager. This is used whenever the package depends on specific features of the `.nuspec` file that were added in a particular version of the NuGet client. For example, a package using the `developmentDependency` attribute should specify "2.8" for `minClientVersion`. Similarly, a package using the `contentFiles` element (see the next section) should set `minClientVersion` to "3.3". Note also that because NuGet clients prior to 2.5 do not recognize this flag, they *always* refuse to install the package no matter what `minClientVersion` contains.
 
 #### Collection elements
 
-| Element | Description |
-| --- | --- |
-**packageTypes** | *(3.5+)* A collection of zero or more `<packageType>` elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of *name* and *version*. See [Setting a package type](../create-packages/creating-a-package.md#setting-a-package-type). |
-| **dependencies** | A collection of zero or more `<dependency>` elements specifying the dependencies for the package. Each dependency has attributes of *id*, *version*, *include* (3.x+), and *exclude* (3.x+). See [Dependencies](#dependencies) below. |
-| **frameworkAssemblies** | *(1.2+)* A collection of zero or more `<frameworkAssembly>` elements identifying .NET Framework assembly references that this package requires, which ensures that references are added to projects consuming the package. Each frameworkAssembly has *assemblyName* and *targetFramework* attributes. See [Specifying framework assembly references GAC](#specifying-framework-assembly-references-gac) below. |
-| **references** | *(1.5+)* A collection of zero or more `<reference>` elements naming assemblies in the package's `lib` folder that are added as project references. Each reference has a *file* attribute. `<references>` can also contain a `<group>` element with a *targetFramework* attribute, that then contains `<reference>` elements. If omitted, all references in `lib` are included. See [Specifying explicit assembly references](#specifying-explicit-assembly-references) below. |
-| **contentFiles** | *(3.3+)* A collection of `<files>` elements that identify content files to include in the consuming project. These files are specified with a set of attributes that describe how they should be used within the project system. See [Specifying files to include in the package](#specifying-files-to-include-in-the-package) below. |
-
-### Files element
-
+#### packageTypes
+*(3.5+)* A collection of zero or more `<packageType>` elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of *name* and *version*. See [Setting a package type](../create-packages/creating-a-package.md#setting-a-package-type).
+#### dependencies
+A collection of zero or more `<dependency>` elements specifying the dependencies for the package. Each dependency has attributes of *id*, *version*, *include* (3.x+), and *exclude* (3.x+). See [Dependencies](#dependencies-element) below.
+#### frameworkAssemblies
+*(1.2+)* A collection of zero or more `<frameworkAssembly>` elements identifying .NET Framework assembly references that this package requires, which ensures that references are added to projects consuming the package. Each frameworkAssembly has *assemblyName* and *targetFramework* attributes. See [Specifying framework assembly references GAC](#specifying-framework-assembly-references-gac) below. |
+#### references
+*(1.5+)* A collection of zero or more `<reference>` elements naming assemblies in the package's `lib` folder that are added as project references. Each reference has a *file* attribute. `<references>` can also contain a `<group>` element with a *targetFramework* attribute, that then contains `<reference>` elements. If omitted, all references in `lib` are included. See [Specifying explicit assembly references](#specifying-explicit-assembly-references) below.
+#### contentFiles
+*(3.3+)* A collection of `<files>` elements that identify content files to include in the consuming project. These files are specified with a set of attributes that describe how they should be used within the project system. See [Specifying files to include in the package](#specifying-files-to-include-in-the-package) below.
+#### files 
 The `<package>` node may contain a `<files>` node as a sibling to `<metadata>`, and a or `<contentFiles>` child under `<metadata>`, to specify which assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
 
 ## Replacement tokens
@@ -158,7 +164,7 @@ And you build an assembly whose `AssemblyName` is `LoggingLibrary` with the `Rel
 </files>
 ```
 
-## Dependencies
+## Dependencies element
 
 The `<dependencies>` element within `<metadata>` contains any number of `<dependency>` elements that identify other packages upon which the top-level package depends. The attributes for each `<dependency>` are as follows:
 
