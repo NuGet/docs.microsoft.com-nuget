@@ -27,7 +27,7 @@ There are also several other NuGet hosting products that support remote private 
 - [NuGet Server](http://nugetserver.net/), a community project from Inedo
 - [NuGet Server (Open Source)](http://nuget-server.net), an open-source implementation similar to Inedo's NuGet Server
 - [LiGet](https://github.com/ai-traders/liget), an open-source implementation of NuGet V2 server that runs on kestrel in docker
-- [BaGet](https://github.com/loic-sharma/BaGet), on open source implementation of NuGet V3 server using .NET Core
+- [BaGet](https://github.com/loic-sharma/BaGet), an open-source implementation of NuGet V3 server built on ASP.NET Core
 - [Artifactory](https://www.jfrog.com/artifactory/) from JFrog.
 - [Nexus](http://www.sonatype.org/nexus/) from Sonatype.
 - [TeamCity](https://www.jetbrains.com/teamcity/) from JetBrains.
