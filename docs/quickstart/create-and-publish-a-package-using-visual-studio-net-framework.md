@@ -109,7 +109,7 @@ You run `nuget spec` only once to generate the initial manifest. When updating t
 
 ## Edit the manifest
 
-1. NuGet produces an error if you try to create a package with default values in your `.nuspec` file, so you must edit the following fields before proceeding. See [.nuspec file reference - single elements](../reference/nuspec.md#single-elements) for a description of how these are used.
+1. NuGet produces an error if you try to create a package with default values in your `.nuspec` file, so you must edit the following fields before proceeding. See [.nuspec file reference - optional metadata elements](../reference/nuspec.md#optional-metadata-elements) for a description of how these are used.
 
     - licenseUrl
     - projectUrl

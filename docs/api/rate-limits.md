@@ -23,6 +23,15 @@ The NuGet.org API enforces rate limiting to prevent abuse. Requests that exceed 
     }
   ~~~
 
+In addition to request throttling using rate limits, some APIs also enforce quota. Requests that exceed the quota return the following error:
+
+  ~~~
+    {
+      "statusCode": 403,
+      "message": "Quota exceeded."
+    }
+  ~~~
+
 The following tables list the rate limits for the NuGet.org API.
 
 ## Package search
