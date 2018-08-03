@@ -130,12 +130,12 @@ For example, say you're targeting `netstandard1.4` as well as `net452` but have 
 ```xml
 <ItemGroup>
     <!-- ... -->
-    <PackageReference Include="Newtonsoft.json" Version="9.0.1" Condition="'$(TargetFramework)' == 'net452'" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" Condition="'$(TargetFramework)' == 'net452'" />
     <!-- ... -->
 </ItemGroup>
 ```
 
-A package built using this project will show that Newtonsoft.json is included as a dependency only for a `net452` target:
+A package built using this project will show that Newtonsoft.Json is included as a dependency only for a `net452` target:
 
 ![The result of applying a Condition on PackageReference with VS2017](media/PackageReference-Condition.png)
 
@@ -144,7 +144,7 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
 ```xml
 <ItemGroup Condition = "'$(TargetFramework)' == 'net452'">
     <!-- ... -->
-    <PackageReference Include="Newtonsoft.json" Version="9.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />
     <!-- ... -->
 </ItemGroup>
