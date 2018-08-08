@@ -27,6 +27,9 @@ whether a repository signed package has been tampered or has an unexpected signi
 The resource used for fetching this repository signature information is the `RepositorySignatures` resource found in
 the [service index](service-index.md).
 
+> [!Note]
+> NuGet.org will start announcing the `RepositorySignatures` resource in the near future.
+
 ## Versioning
 
 The following `@type` value is used:
