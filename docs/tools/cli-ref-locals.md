@@ -20,7 +20,7 @@ Clears or lists local NuGet resources such as the *http-cache*, *global-packages
 nuget locals <folder> [options]
 ```
 
-where `<folder>` is one of `all`, `http-cache`, `packages-cache` *(3.5 and earlier)*, `global-packages`, `temp` *(3.4+)*, and `plugins-cache` *(4.8+)*.
+where `<folder>` is one of `all`, `http-cache`, `packages-cache` *(3.5 and earlier)*, `global-packages`, and `temp` *(3.4+)*.
 
 ## Options
 
