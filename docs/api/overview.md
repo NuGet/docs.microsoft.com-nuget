@@ -60,6 +60,7 @@ Resource name                                                          | Require
 [`PackageBaseAddress`](package-base-address-resource.md)               | yes      | Get package content (.nupkg).
 [`SearchAutocompleteService`](search-autocomplete-service-resource.md) | no       | Discover package IDs and versions by substring.
 [`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | no       | Construct a URL to access a "report abuse" web page.
+[`RepositorySignatures`](repository-signatures-resource.md)            | no       | Get certificates used for repository signing.
 [`Catalog`](catalog-resource.md)                                       | no       | Full record of all package events.
 
 In general, all non-binary data returned by a API resource are serialized using JSON. The response schema
@@ -105,7 +106,7 @@ Code | Description
 503  | The service is temporarily unavailable.
 
 Any `GET` request made to a API endpoint may return an HTTP redirect (301 or 302). Clients should gracefully handle
-such redirects by observing the `Location` header and issueing a subsequent `GET`. Documentation concerning specific
+such redirects by observing the `Location` header and issuing a subsequent `GET`. Documentation concerning specific
 endpoints will not explicitly call out where redirects may be used.
 
 In the case of a 500-level status code, the client can implement a reasonable retry mechanism. The official NuGet
