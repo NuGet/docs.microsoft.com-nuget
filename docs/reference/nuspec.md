@@ -51,20 +51,19 @@ For a clear visual representation of the schema, open the schema file in Visual 
 
 ![Visual Studio Schema Explorer with nuspec.xsd open](media/SchemaExplorer.png)
 
-### Metadata attributes
-
 ### Required metadata elements
 
-Although the following elements are the minimum requirements for a package, you should consider adding the [optional metadata elements](#optional-metadata-elements) to improve the overall experience developers have with your package.
+Although the following elements are the minimum requirements for a package, you should consider adding the [optional metadata elements](#optional-metadata-elements) to improve the overall experience developers have with your package. 
 
 These elements must appear within a `<metadata>` element.
 
-| Element | Description |
-| --- | --- |
-| **id** | The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package resides in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number) for guidance. |
-| **version** | The version of the package, following the *major.minor.patch* pattern. Version numbers may include a pre-release suffix as described in [Package versioning](../reference/package-versioning.md#pre-release-versions). |
-| **description** | A long description of the package for UI display. |
-| **authors** | A comma-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors. |
+#### id 
+The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package resides in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number) for guidance. #### version
+The version of the package, following the *major.minor.patch* pattern. Version numbers may include a pre-release suffix as described in [Package versioning](../reference/package-versioning.md#pre-release-versions). 
+#### description
+A long description of the package for UI display. 
+#### authors
+A comma-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors. 
 
 ### Optional metadata elements
 
@@ -97,6 +96,7 @@ A space-delimited list of tags and keywords that describe the package and aid di
 *(3.3+)* For internal NuGet use only.
 #### repository
 Repository metadata, consisting of four optional attributes: *type* and *url* *(4.0+)*, and *branch* and *commit* *(4.6+)*. These attributes allow you to map the .nupkg to the repository that built it, with the potential to get as detailed as the individual branch or commit that built the package. This should be a publicly available url that can be invoked directly by a version control software. It should not be an html page as this is meant for the computer. For linking to project page, use the `projectUrl` field, instead.|
+
 #### minClientVersion
 Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager. This is used whenever the package depends on specific features of the `.nuspec` file that were added in a particular version of the NuGet client. For example, a package using the `developmentDependency` attribute should specify "2.8" for `minClientVersion`. Similarly, a package using the `contentFiles` element (see the next section) should set `minClientVersion` to "3.3". Note also that because NuGet clients prior to 2.5 do not recognize this flag, they *always* refuse to install the package no matter what `minClientVersion` contains.
 
