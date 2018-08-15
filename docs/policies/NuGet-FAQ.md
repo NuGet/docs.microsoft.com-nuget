@@ -205,7 +205,7 @@ First, make sure you're using the latest versions of NuGet. If that version cont
 - Your geographical area
 - Your operating system version
 - Machine configuration (CPU, Network, hard drive)
-- Whether is your machine behind a proxy or firewall
+- Whether your machine is behind a proxy or firewall
 - The versions of .NET that are installed on the machine
 - Versions of cross-platform tools such as .NET CLI, or DNU that you're using
 
