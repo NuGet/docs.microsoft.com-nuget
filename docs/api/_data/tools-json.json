@@ -1,0 +1,34 @@
+{
+    "nuget.exe": [
+        {
+            "version": "4.8.0-preview3",
+            "url": "https://dist.nuget.org/win-x86-commandline/v4.8.0-preview3/nuget.exe",
+            "stage": "EarlyAccessPreview",
+            "uploaded": "2018-07-06T23:00:00.0000000Z"
+        },
+        {
+            "version": "4.7.1",
+            "url": "https://dist.nuget.org/win-x86-commandline/v4.7.1/nuget.exe",
+            "stage": "ReleasedAndBlessed",
+            "uploaded": "2018-08-10T23:00:00.0000000Z"
+        },
+        {
+            "version": "4.6.1",
+            "url": "https://dist.nuget.org/win-x86-commandline/v4.6.1/nuget.exe",
+            "stage": "Released",
+            "uploaded": "2018-03-22T23:00:00.0000000Z"
+        },
+        {
+            "version": "3.5.0",
+            "url": "https://dist.nuget.org/win-x86-commandline/v3.5.0/nuget.exe",
+            "stage": "ReleasedAndBlessed",
+            "uploaded": "2016-12-19T15:30:00.0000000-08:00"
+        },
+        {
+            "version": "2.8.6",
+            "url": "https://dist.nuget.org/win-x86-commandline/v2.8.6/nuget.exe",
+            "stage": "ReleasedAndBlessed",
+            "uploaded": "2015-09-01T12:30:00.0000000-07:00"
+        }
+    ]
+}

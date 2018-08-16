@@ -176,6 +176,7 @@
 ## [Catalog](api/catalog-resource.md)
 ## [Rate limits](api/rate-limits.md)
 ## [nuget.org protocols](api/nuget-protocols.md)
+## [tools.json](api/tools-json.md)
 # Visual Studio extensibility
 ## [NuGet API in Visual Studio](visual-studio-extensibility/nuget-api-in-visual-studio.md)
 ## [Project system support](visual-studio-extensibility/project-system-support.md)
