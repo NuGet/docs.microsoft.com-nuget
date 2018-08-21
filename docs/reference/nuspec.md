@@ -58,7 +58,8 @@ Although the following elements are the minimum requirements for a package, you 
 These elements must appear within a `<metadata>` element.
 
 #### id 
-The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package resides in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number) for guidance. #### version
+The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package resides in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number) for guidance.
+#### version
 The version of the package, following the *major.minor.patch* pattern. Version numbers may include a pre-release suffix as described in [Package versioning](../reference/package-versioning.md#pre-release-versions). 
 #### description
 A long description of the package for UI display. 
