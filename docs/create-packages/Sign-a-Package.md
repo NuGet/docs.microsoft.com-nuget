@@ -51,7 +51,7 @@ nuget verify -signature MyPackage.nupkg
 
 ## Install a signed package
 
-Signed packages don't require any specific action to be installed; however, if the content has been modified since it was signed, the installation be blocked and produces a [error NU3008](../reference/errors-and-warnings/NU3008.md).
+Signed packages don't require any specific action to be installed; however, if the content has been modified since it was signed, the installation is blocked and produces an [error NU3008](../reference/errors-and-warnings/NU3008.md).
 
 > [!Warning]
 > Packages signed with untrusted certificates are considered as unsigned and are installed without any warnings or errors like any other unsigned package.
