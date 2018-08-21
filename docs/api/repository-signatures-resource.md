@@ -62,8 +62,7 @@ a certificate is removed from the list, that means that all package signatures c
 certificate should no longer be considered valid by the client. In this case, the package signature (but not
 necessarily the package) is invalid. A client policy may allow installing the package as unsigned.
 
-In the case of certificate revocation (e.g. key compromise), the package source is expected to resign all packages
-signed by the affected certificate. Additionally, the package source should remove the affected certificate from the
+In the case of certificate revocation (e.g. key compromise), the package source is expected to re-sign all packages signed by the affected certificate. Additionally, the package source should remove the affected certificate from the
 signing certificate list.
 
 The following request fetches the repository signatures index.

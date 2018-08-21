@@ -19,6 +19,8 @@ This API is used by the NuGet client in Visual Studio, nuget.exe, and the .NET C
 
 Note in some cases, nuget.org has additional requirements that are not enforced by other package sources. These differences are documented by the [nuget.org Protocols](nuget-protocols.md).
 
+For a simple enumeration and download of available nuget.exe versions, see the [tools.json](tools-json.md) endpoint.
+
 ## Service index
 
 The entry point for the API is a JSON document in a well known location. This document is called the **service index**. The location of the service index for nuget.org is `https://api.nuget.org/v3/index.json`.
