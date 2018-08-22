@@ -160,7 +160,7 @@ To directly specify files to include in the package, edit the project file and u
 
 This will include a file named `readme.txt` in the package root. Visual Studio displays the contents of that file as plain text immediately after installing the package directly. (Readme files are not displayed for packages installed as dependencies). For example, here's how the readme for the HtmlAgilityPack package appears:
 
-![The display of a readme file for a NuGet package upon installation](media/Create_01-ShowReadme.png)
+![The display of a readme file for a NuGet package upon installation](../create-packages/media/Create_01-ShowReadme.png)
 
 > [!Note]
 > Merely adding the readme.txt at the project root will not result in it being included in the resulting package.
