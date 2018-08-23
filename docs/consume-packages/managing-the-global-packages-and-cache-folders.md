@@ -17,6 +17,7 @@ Whenever you install, update, or restore a package, NuGet manages packages and p
 | global&#8209;packages | The *global-packages* folder is where NuGet installs any downloaded package. Each package is fully expanded into a subfolder that matches the package identifier and version number. Projects using the PackageReference format always use packages directly from this folder. When using the `packages.config`, packages are installed to the *global-packages* folder, then copied into the project's `packages` folder.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>Override using the NUGET_PACKAGES environment variable, the `globalPackagesFolder` or `repositoryPath` [configuration settings](../reference/nuget-config-file.md#config-section) (when using PackageReference and `packages.config`, respectively), or the `RestorePackagesPath` MSBuild property (MSBuild only). The environment variable takes precedence over the configuration setting.</li></ul> |
 | http&#8209;cache | The Visual Studio Package Manager (NuGet 3.x+) and the `dotnet` tool store copies of downloaded packages in this cache (saved as `.dat` files), organized into subfolders for each package source. Packages are not expanded, and the cache has an expiration time of 30 minutes.<br/><ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Override using the NUGET_HTTP_CACHE_PATH environment variable.</li></ul> |
 | temp | A folder where NuGet stores temporary files during its various operations.<br/><li>Windows: `%temp%\NuGetScratch`</li><li>Mac/Linux: `/tmp/NuGetScratch`</li></ul> |
+| plugins-cache **4.8+** | A folder where NuGet stores the results from the operation claims request.<br/><ul><li>Windows: `%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/plugins-cache`</li><li>Override using the NUGET_PLUGINS_CACHE_PATH environment variable.</li></ul> |
 
 > [!Note]
 > NuGet 3.5 and earlier uses *packages-cache* instead of the *http-cache*, which is located in `%localappdata%\NuGet\Cache`.
@@ -29,7 +30,25 @@ For more information, see [What happens when a package is installed](ways-to-ins
 
 ## Viewing folder locations
 
-You can view folder locations using the [dotnet nuget locals command](/dotnet/core/tools/dotnet-nuget-locals):
+You can view locations using the [nuget locals command](../tools/cli-ref-locals.md):
+
+```cli
+# Display locals for all folders: global-packages, http cache, temp and plugins cache
+nuget locals all -list
+```
+
+Typical output (Windows; "user1" is the current username):
+
+```output
+http-cache: C:\Users\user1\AppData\Local\NuGet\v3-cache
+global-packages: C:\Users\user1\.nuget\packages\
+temp: C:\Users\user1\AppData\Local\Temp\NuGetScratch
+plugins-cache: C:\Users\user1\AppData\Local\NuGet\plugins-cache
+```
+
+(`package-cache` is used in NuGet 2.x and appears with NuGet 3.5 and earlier.)
+
+You can also view folder locations using the [dotnet nuget locals command](/dotnet/core/tools/dotnet-nuget-locals):
 
 ```cli
 dotnet nuget locals all --list
@@ -41,26 +60,10 @@ Typical output (Mac/Linux; "user1" is the current username):
 info : http-cache: /home/user1/.local/share/NuGet/v3-cache
 info : global-packages: /home/user1/.nuget/packages/
 info : temp: /tmp/NuGetScratch
+info : plugins-cache: /home/user1/.local/share/NuGet/plugins-cache
 ```
 
-To display the location of a single folder, use `http-cache`, `global-packages`, or `temp` instead of `all`. 
-
-You also view locations using the [nuget locals command](../tools/cli-ref-locals.md):
-
-```cli
-# Display locals for all folders: global-packages, cache, and temp
-nuget locals all -list
-```
-
-Typical output (Windows; "user1" is the current username):
-
-```output
-http-cache: C:\Users\user1\AppData\Local\NuGet\v3-cache
-global-packages: C:\Users\user1\.nuget\packages\
-temp: C:\Users\user1\AppData\Local\Temp\NuGetScratch
-```
-
-(`package-cache` is used in NuGet 2.x and appears with NuGet 3.5 and earlier.)
+To display the location of a single folder, use `http-cache`, `global-packages`, `temp`, or `plugins-cache` instead of `all`.
 
 ## Clearing local folders
 
@@ -81,6 +84,10 @@ nuget locals global-packages -clear
 # Clear the temporary cache (use either command)
 dotnet nuget locals temp --clear
 nuget locals temp -clear
+
+# Clear the plugins cache (use either command)
+dotnet nuget locals plugins-cache --clear
+nuget locals plugins-cache -clear
 
 # Clear all caches (use either command)
 dotnet nuget locals all --clear

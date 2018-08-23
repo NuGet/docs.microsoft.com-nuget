@@ -42,5 +42,5 @@ nuget spec
 
 nuget spec MyPackage
 
-nuget spec -a MyAssembly.dll
+nuget spec -AssemblyPath MyAssembly.dll
 ```

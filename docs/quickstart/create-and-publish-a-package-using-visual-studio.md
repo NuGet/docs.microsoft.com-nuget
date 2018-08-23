@@ -145,6 +145,26 @@ This step is an alternative to using `nuget.exe`.
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
+## Adding a readme and other files
+
+To directly specify files to include in the package, edit the project file and use the `content` property:
+
+```xml
+<ItemGroup>
+  <Content Include="readme.txt">
+    <Pack>true</Pack>
+    <PackagePath>\</PackagePath>
+  </Content>
+</ItemGroup>
+```
+
+This will include a file named `readme.txt` in the package root. Visual Studio displays the contents of that file as plain text immediately after installing the package directly. (Readme files are not displayed for packages installed as dependencies). For example, here's how the readme for the HtmlAgilityPack package appears:
+
+![The display of a readme file for a NuGet package upon installation](../create-packages/media/Create_01-ShowReadme.png)
+
+> [!Note]
+> Merely adding the readme.txt at the project root will not result in it being included in the resulting package.
+
 ## Related topics
 
 - [Create a Package](../create-packages/creating-a-package.md)
