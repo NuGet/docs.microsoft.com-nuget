@@ -21,7 +21,7 @@ Starting with 4.8+ NuGet in Visual Studio supports the new cross platform authen
 > NuGet credential providers for Visual Studio must be installed as a regular Visual Studio extension and will require [Visual Studio 2017](http://aka.ms/vs/15/release/vs_enterprise.exe) or above.
 >
 > NuGet credential providers for Visual Studio work only in Visual Studio (not in dotnet restore or nuget.exe). For credential providers with nuget.exe, see [nuget.exe Credential Providers](nuget-exe-Credential-providers.md).
-> For credential providers in dotnet and msbuild see [NuGet cross platform plugins](#NuGet-Cross-Platform-Authentication-Plugin.md)
+> For credential providers in dotnet and msbuild see [NuGet cross platform plugins](nuget-cross-platform-authentication-plugin.md)
 
 ## Available NuGet credential providers for Visual Studio
 

@@ -187,6 +187,7 @@
 
 ## Extensibility
 ### [NuGet credential providers for Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
+### [NuGet cross platform authentication plugin](reference/extensibility/nuget-cross-platform-authentication-plugin.md)
 ### [nuget.exe credential providers](reference/extensibility/nuget-exe-credential-providers.md)
 ## Archived content
 ### [project.json management format](archive/project-json.md)
