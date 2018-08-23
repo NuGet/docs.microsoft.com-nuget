@@ -186,6 +186,8 @@
 ### [NuGet Warning NU5500](reference/errors-and-warnings/NU5500.md)
 
 ## Extensibility
+### [NuGet Cross Platform Plugins](reference/extensibility/NuGet-Cross-Platform-Plugins.md)
+### [NuGet cross platform authentication plugin](reference/extensibility/nuget-cross-platform-authentication-plugin.md)
 ### [NuGet credential providers for Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [nuget.exe credential providers](reference/extensibility/nuget-exe-credential-providers.md)
 ## Archived content
