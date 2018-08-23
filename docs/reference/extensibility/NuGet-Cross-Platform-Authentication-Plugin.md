@@ -12,10 +12,6 @@ ms.topic: conceptual
 
 In version 4.8+, all NuGet clients (NuGet.exe, Visual Studio, dotnet.exe and MSBuild.exe) can use an authentication plugin built on top of the [NuGet cross platform plugins](NuGet-Cross-Platform-Plugins.md) model.
 
-## Available NuGet cross platform authentication plugins
-
-TBD - Link to the VSTS provider
-
 ## Authentication in dotnet.exe
 
 Visual Studio and NuGet.exe are by default interactive. NuGet.exe contains a switch to make it [non interactive](../../tools/nuget-exe-CLI-Reference.md).
