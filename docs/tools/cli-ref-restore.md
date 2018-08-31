@@ -3,7 +3,6 @@ title: NuGet CLI restore command
 description: Reference for the nuget.exe restore command
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
 ---

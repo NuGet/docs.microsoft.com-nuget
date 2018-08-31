@@ -3,7 +3,6 @@ title: User Data Requests
 description: Policies for requesting user data export and delete
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/01/2018
 ms.topic: conceptual
 ---

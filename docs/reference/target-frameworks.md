@@ -3,7 +3,6 @@ title: Target Frameworks Reference for NuGet
 description: NuGet target framework references identify and isolate framework-dependent components of a package.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur

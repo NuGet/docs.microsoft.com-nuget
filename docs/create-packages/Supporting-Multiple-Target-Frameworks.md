@@ -3,7 +3,6 @@ title: Multi-targeting for NuGet Packages
 description: Description of the various methods to target multiple .NET Framework versions from within a single NuGet package.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 09/27/2017
 ms.topic: conceptual
 ---

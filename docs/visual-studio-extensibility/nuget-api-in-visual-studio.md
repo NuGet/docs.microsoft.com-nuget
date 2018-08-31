@@ -1,9 +1,8 @@
 ---
-title: NuGet API in Visual Studio 
+title: NuGet API in Visual Studio
 description: Interface reference for the API that NuGet exports through the Managed Extensibility Framework in Visual Studio
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/09/2017
 ms.topic: reference
 ---

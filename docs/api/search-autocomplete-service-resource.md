@@ -3,7 +3,6 @@ title: Autocomplete, NuGet API
 description: The search autocomplete service supports interactive discovery of package IDs and versions.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb

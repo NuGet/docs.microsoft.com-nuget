@@ -3,7 +3,6 @@ title: How to Publish a NuGet Package
 description: Detailed instructions for how to publish a NuGet package to nuget.org or private feeds, and how to manage package ownership on nuget.org.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur

@@ -3,7 +3,6 @@ title: NuGet 4.3 RTM Release Notes
 description: Release notes for NuGet 4.3 RTM including known issues, bug fixes, added features, and DCRs.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur

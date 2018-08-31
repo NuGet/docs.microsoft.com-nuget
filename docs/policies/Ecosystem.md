@@ -3,7 +3,6 @@ title: Overview of the NuGet Ecosystem
 description: Comprehensive resources in the NuGet ecosystem including NuGet sources, non-Microsoft NuGet projects, utilities, and training materials.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
 ---

@@ -3,11 +3,9 @@ title: ID Prefix Reservation Reference
 description: Package ID Prefix Reservation feature description and author guide.
 author: diverdan92
 ms.author: diverdan92
-manager: unnir
 ms.date: 10/09/2017
 ms.topic: reference
 ms.reviewer: ananguar
-
 ---
 
 # Package ID prefix reservation

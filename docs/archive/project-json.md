@@ -3,7 +3,6 @@ title: project.json File Reference for NuGet
 description: In some project types, project.json maintains the list of NuGet packages used in the project.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 07/27/2017
 ms.topic: reference
 ---

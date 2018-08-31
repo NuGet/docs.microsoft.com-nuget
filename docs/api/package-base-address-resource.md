@@ -3,7 +3,6 @@ title: Package Content, NuGet API
 description: The package base address is a simple interface for fetching the package itself.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb

@@ -3,7 +3,6 @@ title: nuget.exe Credential Providers
 description: nuget.exe credential providers authenticate with a feed, and are implemented as command-line executables that follow specific conventions.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/12/2017
 ms.topic: conceptual
 ---

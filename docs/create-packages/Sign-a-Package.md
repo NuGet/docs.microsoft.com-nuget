@@ -3,7 +3,6 @@ title: Signing NuGet Packages
 description: Explains how signed packages can be used to enable content integrity verification.
 author: rido-min
 ms.author: rmpablos
-manager: unnir
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
