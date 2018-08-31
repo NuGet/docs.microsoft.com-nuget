@@ -1,21 +1,13 @@
 ---
 title: Repository Signatures, NuGet API | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
-manager: skofman
+author: joelverhagen
+ms.author: jver
 ms.date: 3/2/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: null
 description: The repository signatures resource allows clients package sources to announce their repository signing capabilities.
-keywords: NuGet API repository signatures, nuget.org signing certificates, nuget.org package signing
-ms.reviewer:
-- karann
-- unniravindranathan
+ms.reviewer: 
+  - karann
+  - unniravindranathan
 ---
 
 # Repository signatures

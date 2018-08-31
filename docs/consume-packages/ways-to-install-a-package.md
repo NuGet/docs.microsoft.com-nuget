@@ -3,7 +3,6 @@ title: Ways to install NuGet packages
 description: Describes the process of installing NuGet packages into a project, including what happens on disk and to applicable project files.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 02/12/2018
 ms.topic: overview
 ---

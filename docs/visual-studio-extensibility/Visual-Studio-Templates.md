@@ -3,7 +3,6 @@ title: NuGet Packages in Visual Studio templates
 description: Instructions for including NuGet packages as part of Visual Studio project and item templates.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/03/2018
 ms.topic: conceptual
 ---

@@ -3,7 +3,6 @@ title: NuGet project.json archive content
 description: Miscellaneous bits of project.json content removed from other areas of the NuGet documentation.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/17/2018
 ms.topic: conceptual
 ---

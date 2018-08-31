@@ -3,7 +3,6 @@ title: Overview of the NuGet API
 description: The NuGet API is a set of HTTP endpoints that can be used to download packages, fetch metadata, publish new packages, etc.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb

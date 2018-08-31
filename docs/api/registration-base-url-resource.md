@@ -3,7 +3,6 @@ title: Package Metadata, NuGet API
 description: The package registration base URL allows fetching metadata about packages.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb

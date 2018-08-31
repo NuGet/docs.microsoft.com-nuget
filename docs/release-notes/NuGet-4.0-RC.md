@@ -3,7 +3,6 @@ title: NuGet 4.0 RC Release Notes
 description: Release notes for NuGet 4.0 RC including known issues, bug fixes, added features, and DCRs.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 02/03/2017
 ms.topic: conceptual
 ms.reviewer: ananguar

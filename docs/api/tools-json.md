@@ -1,9 +1,8 @@
 ---
 title: tools.json for discovering nuget.exe versions
-description: The endpoint for 
+description: The endpoint for
 author: jver
 ms.author: jver
-manager: skofman
 ms.date: 08/16/2018
 ms.topic: conceptual
 ms.reviewer: kraigb

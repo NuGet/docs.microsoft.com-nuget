@@ -3,7 +3,6 @@ title: NuGet 4.0 RC Release Notes
 description: Release notes for NuGet 4.0 RTM including known issues, bug fixes, added features, and DCRs.
 author: anangaur
 ms.author: anangaur
-manager: unnir
 ms.date: 03/03/2017
 ms.topic: conceptual
 ---

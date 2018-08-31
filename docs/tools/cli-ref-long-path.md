@@ -3,7 +3,6 @@ title: NuGet CLI Long Path Support
 description: Reference for nuget.exe long path support
 author: zhili1208
 ms.author: lzhi
-manager: rob
 ms.date: 07/12/2018
 ms.topic: reference
 ---

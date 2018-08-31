@@ -3,7 +3,6 @@ title: Overview of Hosting Your Own NuGet Feeds
 description: An overview of opens for hosting your own NuGet package feeds or galleries either locally or remotely.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur

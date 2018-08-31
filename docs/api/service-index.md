@@ -3,7 +3,6 @@ title: Service Index, NuGet API
 description: The service index is the entry point of the NuGet HTTP API and enumerates the capabilities of the server.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb

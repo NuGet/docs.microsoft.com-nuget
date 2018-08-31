@@ -3,7 +3,6 @@ title: Push and Delete, NuGet API
 description: The publish service allows clients to publish new packages and unlist or delete existing packages.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb

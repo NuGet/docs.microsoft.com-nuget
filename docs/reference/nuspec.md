@@ -3,7 +3,6 @@ title: .nuspec File Reference for NuGet
 description: The .nuspec file contains package metadata used when building a package and to provide information to package consumers.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur

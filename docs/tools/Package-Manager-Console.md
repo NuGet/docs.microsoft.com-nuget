@@ -1,11 +1,8 @@
 ---
-# required metadata
-
 title: NuGet Package Manager Console Guide
 description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/23/2018
 ms.topic: conceptual
 f1_keywords: 

@@ -3,7 +3,6 @@ title: Deleting NuGet Packages from nuget.org
 description: Policies for unlisting packages from nuget.org; permanent deletion is not supported except when packages violate other policies.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
 ---
