@@ -3,7 +3,6 @@ title: NuGet packages.config File Reference
 description: In some project types, packages.config maintains the list of NuGet packages used in the project.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/21/2018
 ms.topic: reference
 ---

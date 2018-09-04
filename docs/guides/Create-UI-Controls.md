@@ -3,7 +3,6 @@ title: How to package UI controls with NuGet
 description: How to create NuGet packages that contain UWP or WPF controls, including the necessary metadata and supporting files for the Visual Studio and Blend designers.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/23/2018
 ms.topic: tutorial
 ---

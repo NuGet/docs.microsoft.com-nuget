@@ -3,7 +3,6 @@ title: nuget.org Protocols
 description: The evolving nuget.org protocols to interact with NuGet clients.
 author: anangaur
 ms.author: anangaur
-manager: unnir
 ms.date: 10/30/2017
 ms.topic: conceptual
 ms.reviewer: kraigb

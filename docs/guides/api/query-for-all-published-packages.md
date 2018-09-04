@@ -3,7 +3,6 @@ title: Query for all packages published to nuget.org
 description: Using the NuGet API, you can query for all packages published to nuget.org and stay up-to-date over time.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 11/02/2017
 ms.topic: tutorial
 ms.reviewer: kraigb

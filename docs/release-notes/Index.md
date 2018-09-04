@@ -3,7 +3,6 @@ title: Release Notes
 description: Index of NuGet release notes and known issues for all versions.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 08/14/2017
 ms.topic: conceptual
 ---

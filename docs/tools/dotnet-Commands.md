@@ -3,7 +3,6 @@ title: dotnet NuGet commands
 description: A short reference for NuGet-related commands using the dotnet command-line interface.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/23/2018
 ms.topic: conceptual
 ---

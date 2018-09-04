@@ -3,7 +3,6 @@ title: Create NuGet Packages for Xamarin (for iOS, Android, and Windows) with Vi
 description: An end-to-end walkthrough of creating NuGet packages for Xamarin that use native APIs on iOS, Android, and Windows.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/09/2017
 ms.topic: tutorial
 ---

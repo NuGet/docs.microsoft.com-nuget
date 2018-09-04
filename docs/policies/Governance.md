@@ -3,7 +3,6 @@ title: NuGet Project Governance
 description: The governance model for NuGet, including roles and responsibilities for committers, contributors, and users.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
 ---

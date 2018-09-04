@@ -3,7 +3,6 @@ title: Report Abuse URL Template, NuGet API
 description: The report abuse URL template allows clients to display a report abuse link in their UI.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb

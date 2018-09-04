@@ -3,7 +3,6 @@ title: NuGet Packages and Source Control
 description: Considerations for how to treat NuGet packages within version control and source control systems, and how to omit packages with git and TFVC.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 03/16/2018
 ms.topic: conceptual
 ---

@@ -3,7 +3,6 @@ title: NuGet PowerShell Reference
 description: The complete reference to PowerShell commands available in the NuGet Package Manager Console in Visual Studio.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 10/02/2017
 ms.topic: reference
 ---

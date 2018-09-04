@@ -3,7 +3,6 @@ title: Pre-release versions in NuGet packages
 description: Guidance for building pre-release packages
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 08/14/2017
 ms.topic: conceptual
 ---

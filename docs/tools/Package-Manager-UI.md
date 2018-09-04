@@ -3,7 +3,6 @@ title: NuGet Package Manager UI Reference
 description: Instructions for using the NuGet Package Manager UI in Visual Studio for working with NuGet packages.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/08/2017
 ms.topic: conceptual
 f1_keywords: 

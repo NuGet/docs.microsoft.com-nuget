@@ -3,7 +3,6 @@ title: Catalog Resource, NuGet V3 API
 description: The catalog is an index of all packages created and deleted on nuget.org.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
