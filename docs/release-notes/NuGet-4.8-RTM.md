@@ -7,29 +7,31 @@ ms.date: 5/14/2018
 ms.topic: conceptual
 ---
 
-# NuGet 4.7 RTM Release Notes
+# NuGet 4.8 RTM Release Notes
 
-[Visual Studio 2017 15.8 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with [NuGet 4.8.0](https://dist.nuget.org/win-x86-commandline/v4.8.0/nuget.exe).
+[Visual Studio 2017 15.8 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with [NuGet 4.8] functionality.
+
+Command line versions of the same functionality are also available:
+* NuGet.exe 4.8 is available from [nuget.org/downloads(https://nuget.org/downloads)].
+* DotNet.exe also has NuGet functionality and is available with the .NET Core SDK 2.1.400 (https://www.microsoft.com/net/download/visual-studio-sdks)
+
 
 ## Summary: What's New in this Release
 
-* We have augmented package signing to enable [Repository Signed packages](https://github.com/NuGet/Home/wiki/Repository-Signatures)
 
+
+
+
+* We have augmented package signing to enable [Repository Signed packages](https://github.com/NuGet/Home/wiki/Repository-Signatures)
 * With Visual Studio Version 15.7, we have introduced the capability to [migrate existing projects that use the packages.config format to use PackageReference](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference) instead.
 
 ## Features
-**TODO - convert features to summary of what's new in this release**
+* NuGet now supports authenication plugins which work in all our code paths: MsBuild, DotNet.exe, NuGet.exe and Visual Studio - including cross platform. The first generation of authentication plugins were not supported in MsBuild, DotNet.exe -- including cross platform. Note: VS 2017 15.9 Preview builds have a VSTS authentication plugin included. [#6486](https://github.com/NuGet/Home/issues/6486)
+* MsBuild's SDK Resolver now builds as part of NuGet and installs with NuGet tools for VS. This will avoid versions getting out sync. [#6799](https://github.com/NuGet/Home/issues/6799)
+* NuGet.exe now supports longfilenames on Windows 10 - [#6937](https://github.com/NuGet/Home/issues/6937)
 
-* Consider how to solve the credential plugin + proxy scenario - [#6923](https://github.com/NuGet/Home/issues/6923)
-* Package 'Microsoft.ApplicationInsights.AzureWebSites' installing failing with ASP.NET project - [#6892](https://github.com/NuGet/Home/issues/6892)
-* Bug jail for 15.8 - [#6882](https://github.com/NuGet/Home/issues/6882)
-* NuGet client perf measurement - [#6879](https://github.com/NuGet/Home/issues/6879)
-* ship msbuild sdk resolver as part of nuget.client - [#6799](https://github.com/NuGet/Home/issues/6799)
-* Add caching of capabilities for the plugin - [#6796](https://github.com/NuGet/Home/issues/6796)
-* Consider adding a logging contract to the plugin protocol - [#6762](https://github.com/NuGet/Home/issues/6762)
-* Address perf cost of discovering plugins - [#6744](https://github.com/NuGet/Home/issues/6744)
-* Protocol Cleanup - timeouts, plugin ordering, instantiation xplat - [#6706](https://github.com/NuGet/Home/issues/6706)
-* Discovery of plugins - [#6704](https://github.com/NuGet/Home/issues/6704)
+
+
 
 ## Known issues
 **TODO - below is a sample known issue**
@@ -54,19 +56,22 @@ You should now be able to see the migration option. Note that this option is not
 **TODO - Triage the list below**
 
 ### Bugs
-
+#### Signing
 * Signing:  incorrect URL check - [#7174](https://github.com/NuGet/Home/issues/7174)
+* Repository signed package verification allows packages signed by different certificate - [#6884](https://github.com/NuGet/Home/issues/6884)
+* Signing:  contentUrl MUST be HTTPS - [#6777](https://github.com/NuGet/Home/issues/6777)
+* Signing:  SignedPackageVerifierSettings.VSClientDefaultPolicy is unused - [#6601](https://github.com/NuGet/Home/issues/6601)
+
+#### Pack
+* restore and build should not be needed when using dotnet.exe to pack nuspec - [#6866](https://github.com/NuGet/Home/issues/6866)
+* Allow empty replacement tokens in NuspecProperties  - [#6722](https://github.com/NuGet/Home/issues/6722)
+
+
 * The serialization of GetAuthenticationCredentialRequest is incorrect - [#6983](https://github.com/NuGet/Home/issues/6983)
 * NuGet Visual Studio AsyncPackage fails to load when initialized off the UI thread - [#6976](https://github.com/NuGet/Home/issues/6976)
-* Fix NuGet.exe to support longfilenames on Windows 10 - [#6937](https://github.com/NuGet/Home/issues/6937)
-* Repository signed package verification allows packages signed by different certificate - [#6884](https://github.com/NuGet/Home/issues/6884)
-* restore and build should not be needed when using dotnet.exe to pack nuspec - [#6866](https://github.com/NuGet/Home/issues/6866)
-* Signing:  contentUrl MUST be HTTPS - [#6777](https://github.com/NuGet/Home/issues/6777)
 * RestoreSources are ignored for project with p2p references - [#6776](https://github.com/NuGet/Home/issues/6776)
 * Update-Package ignores PackageReference version range - [#6775](https://github.com/NuGet/Home/issues/6775)
 * Creating unit test project using .NET Framework template will open older project model with packages.config - [#6736](https://github.com/NuGet/Home/issues/6736)
-* Allow empty replacement tokens in NuspecProperties  - [#6722](https://github.com/NuGet/Home/issues/6722)
-* Signing:  SignedPackageVerifierSettings.VSClientDefaultPolicy is unused - [#6601](https://github.com/NuGet/Home/issues/6601)
 * Expose NoDefaultExcludes in MSBuild task - [#6450](https://github.com/NuGet/Home/issues/6450)
 * PackTask throws NullReferenceException when NuspecProperties is specified - [#4649](https://github.com/NuGet/Home/issues/4649)
 * [Test Failure][Accessibility] String ‘Prerelease’ under package button is covered by its package description in PM UI - [#4504](https://github.com/NuGet/Home/issues/4504)
