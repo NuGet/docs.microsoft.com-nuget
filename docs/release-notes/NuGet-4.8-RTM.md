@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # NuGet 4.8 RTM Release Notes
 
-[Visual Studio 2017 15.8 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with [NuGet 4.8] functionality.
+[Visual Studio 2017 15.8 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.8 functionality.
 
 Command line versions of the same functionality are also available:
 * NuGet.exe 4.8 - [nuget.org/downloads](https://nuget.org/downloads)
