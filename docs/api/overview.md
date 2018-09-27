@@ -47,7 +47,7 @@ The NuGet V3 API is named as such because it's the successor of the V2 API, whic
 implemented by the 2.x version of the official NuGet client. The V3 API was first supported by the 3.0 version of the
 official NuGet client and is still the latest major protocol version supported by the NuGet client, 4.0 and on. 
 
-Non-breaking protocol changes have been made to the API since it was first release.
+Non-breaking protocol changes have been made to the API since it was first released.
 
 ## Resources and schema
 
