@@ -60,7 +60,11 @@ If you have architecture-specific assemblies, that is, separate assemblies that 
             \native
             \lib\uap10.0
 
+These assemblies will only be available at runtime, so if you want to provide the corresponding compile time assembly as well then have `AnyCPU` assembly in `/ref{tfm}` folder.
+
 See [Create UWP Packages](../guides/create-uwp-packages.md) for an example of referencing these files in the `.nuspec` manifest.
+
+Also, see [Packing a Windows store app component with NuGet](https://blogs.msdn.microsoft.com/mim/2013/09/02/packaging-a-windows-store-apps-component-with-nuget-part-2)
 
 ## Matching assembly versions and the target framework in a project
 
