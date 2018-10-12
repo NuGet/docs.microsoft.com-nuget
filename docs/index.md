@@ -14,8 +14,6 @@ hide_bc: true
     <ul class="pivots">
         <li>
             <a href="#start">Get Started</a>
-            <ul id="start">
-                <li>
                     <a href="#start-all"></a>
                     <ul id="start-all" class="cardsC">
                         <li>
@@ -130,8 +128,6 @@ hide_bc: true
                                 </div>
                             </div>
                             </a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </li>
@@ -140,8 +136,6 @@ hide_bc: true
             <ul id="tools">
                 <li>
                     <a href="#tools-all"></a>
-                    <ul id="tools-all" class="cardsC">
-                        <li>
                             <a href="tools/nuget-exe-cli-reference.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
@@ -237,8 +231,6 @@ hide_bc: true
                             </a>
                         </li>
                     </ul>
-                </li>
-            </ul>
         </li>
     </ul>
 </div>
