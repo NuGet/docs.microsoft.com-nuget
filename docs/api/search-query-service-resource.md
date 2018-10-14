@@ -107,7 +107,7 @@ totalDownloads | integer                    | no       | This value can be infer
 verified       | boolean                    | no       | A JSON boolean indicating whether the package is [verified](../reference/id-prefix-reservation.md)
 
 On nuget.org, a verified package is one which has a package ID matching a reserved ID prefix and owned by one of the
-reserved namespace's owners. For more information, see the
+reserved prefix's owners. For more information, see the
 [documentation about ID prefix reservation](../reference/id-prefix-reservation.md).
 
 The metadata contained in the search result object is taken from the latest package version. Each item in the
