@@ -19,8 +19,8 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
 - [`IVsPackageInstallerProjectEvents`](#ivspackageinstallerprojectevents-interface): Batch events for package install/uninstall.
 - [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface): Methods to retrieve installed packages in the current solution and to check whether a given package is installed in a project.
 - [`IVsPackageManagerProvider`](#ivspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package.
-- [`IVsPackageMetadata`](#ivspackagemetadata-interface); Methods to retrieve information about an installed package.
-- [`IVsPackageProjectMetadata`](#ivspackageprojectmetadata-interface); Methods to retrieve information about a project where NuGet actions are being executed.
+- [`IVsPackageMetadata`](#ivspackagemetadata-interface): Methods to retrieve information about an installed package.
+- [`IVsPackageProjectMetadata`](#ivspackageprojectmetadata-interface): Methods to retrieve information about a project where NuGet actions are being executed.
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface): Methods to restore packages installed in a project.
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface): Methods to retrieve a list of NuGet package sources.
 - [`IVsPackageUninstaller`](#ivspackageuninstaller-interface): Methods to uninstall NuGet packages from projects.
