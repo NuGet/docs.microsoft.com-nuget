@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Package references (PackageReference) with packages lock file (packages.lock.json)
 
-Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file) [PackageReference in Project file](../reference/Package-References-in-Project-Files.md). 
+Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file) [PackageReference in Project file](../../consume-packages/Package-References-in-Project-Files.md). 
 
 With PackageReference, Developers do not have confidence that NuGet will restore to the same full closure of package dependencies when they build it on Dev machine vs. CI/CD machines. They also doesn't know anything about their transitive dependencies coming through direct dependencies and when they get changed? (See for more details [Enable repeatable package restore using lock file](https://github.com/NuGet/Home/wiki/Enable-repeatable-package-restore-using-lock-file).)
 
