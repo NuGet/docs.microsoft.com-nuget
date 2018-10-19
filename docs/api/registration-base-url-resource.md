@@ -166,7 +166,9 @@ dependencyGroups         | array of objects           | no       | The dependenc
 description              | string                     | no       | 
 iconUrl                  | string                     | no       | 
 id                       | string                     | yes      | The ID of the package
-licenseUrl               | string                     | no       | 
+licenseUrl               | string                     | no       |
+licenseExpression        | string                     | no       | The license expression equivalent to the one specified in the `&lt;license type='expression'&gt;` node in the package manifest.
+licenseExpressionVersion | string                     | no       |
 listed                   | boolean                    | no       | Should be considered as listed if absent
 minClientVersion         | string                     | no       | 
 projectUrl               | string                     | no       | 
@@ -180,6 +182,11 @@ version                  | string                     | yes      | The version o
 The `dependencyGroups` property is an array of objects representing the dependencies of the package, grouped by target
 framework. If the package has no dependencies, the `dependencyGroups` property is missing, an empty array, or the
 `dependencies` property of all groups is empty or missing.
+
+`licenseExpression` and `licenseExpressionVersion` property may only appear in the `catalogEntry` if package's manifest
+contains `&lt;license type='expression'&gt;` node. The value of the `licenseExpression` property complies with NuGet's
+license expression syntax. The value of the `licenseExpressionVersion` property is a `System.Version` string that
+indicates the version of the expression syntax used. If it is omitted, it should be assumed to be `1.0`.
 
 #### Package dependency group
 
