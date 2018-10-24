@@ -45,7 +45,19 @@ To overwrite default packages lock file name and path, Set MSBuild property `NuG
 
 ## Controlling restore locked mode
 
-By default restore will always update this packages lock file (if needed) but developer can control this by setting another MSBuild property `RestoreLockedMode` in the project file like below:
+By default restore will always update this packages lock file (if needed) but but developers can control this either by `dotnet restore` property or equivalent MSBuild property. They can do either of the following:
+
+`dotnet restore --locked-mode`
+
+OR
+
+`dotnet restore /p:RestoreLockedMode=true`
+
+OR
+
+`msbuild /t:restore /p:RestoreLockedMode=true`
+
+OR
 
 ```xml
 <PropertyGroup>
