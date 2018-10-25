@@ -46,7 +46,7 @@ Required properties:
 
 - The package identifier, which must be unique across the gallery that hosts the package.
 - A specific version number in the form *Major.Minor.Patch[-Suffix]* where *-Suffix* identifies [pre-release versions](prerelease-packages.md)
-- The package title as it should appears on the host (like nuget.org)
+- The package title as it should appear on the host (like nuget.org)
 - Author and owner information.
 - A long description of the package.
 
@@ -152,7 +152,7 @@ You then edit the file by hand so that it describes the exact content you want i
 
 ### From a convention-based working directory
 
-Because a NuGet package is just a ZIP file that's been renamed with the `.nupkg` extension, its often easiest to create the folder structure you want on your local file system, then create the `.nuspec` file directly from that structure. The `nuget pack` command then automatically adds all files in that folder structure (excluding any folders that begin with `.`, allowing you keep private files in the same structure).
+Because a NuGet package is just a ZIP file that's been renamed with the `.nupkg` extension, it's often easiest to create the folder structure you want on your local file system, then create the `.nuspec` file directly from that structure. The `nuget pack` command then automatically adds all files in that folder structure (excluding any folders that begin with `.`, allowing you to keep private files in the same structure).
 
 The advantage to this approach is that you don't need to specify in the manifest which files you want to include in the package (as explained later in this topic). You can simply have your build process produce the exact folder structure that goes into the package, and you can easily include other files that might not be part of a project otherwise:
 
@@ -172,7 +172,7 @@ The folder conventions are as follows:
 | build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file or `project.lock.json` (NuGet 3.x+). |
 | tools | Powershell scripts and programs accessible from the Package Manager Console | The `tools` folder is added to the `PATH` environment variable for the Package Manager Console only (Specifically, *not* to the `PATH` as set for MSBuild when building the project). |
 
-Because your folder structure can contain any number of assemblies for any number of target frameworks, this method is necessary when creating packages that support multiple frameworks 
+Because your folder structure can contain any number of assemblies for any number of target frameworks, this method is necessary when creating packages that support multiple frameworks.
 
 In any case, once you have the desired folder structure in place, run the following command in that folder to create the `.nuspec` file:
 
@@ -316,7 +316,7 @@ When you include a file named `readme.txt` in the package root, Visual Studio di
 
 In some cases, you might want to add custom build targets or properties in projects that consume your package, such as running a custom tool or process during build. You do this by placing files in the form `<package_id>.targets` or `<package_id>.props` (such as `Contoso.Utility.UsefulStuff.targets`) within the `\build` folder of the project.
 
-Files in the root `\build` folder are considered suitable for all target frameworks. To provide framework-specific files, first place those within appropriate subfolders, such as the following:
+Files in the root `\build` folder are considered suitable for all target frameworks. To provide framework-specific files, first place them within appropriate subfolders, such as the following:
 
     \build
         \netstandard1.4
