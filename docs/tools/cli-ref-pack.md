@@ -33,6 +33,7 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 | Exclude | Specifies one or more wildcard patterns to exclude when creating a package. To specify more than one pattern, repeat the -Exclude flag. See example below. |
 | ExcludeEmptyDirectories | Prevents inclusion of empty directories when building the package. |
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
+| ConfigFile | Specify the configuration file for the pack command. |
 | Help | Displays help information for the command. |
 | IncludeReferencedProjects | Indicates that the built package should include referenced projects either as dependencies or as part of the package. If a referenced project has a corresponding `.nuspec` file that has the same name as the project, then that referenced project is added as a dependency. Otherwise, the referenced project is added as part of the package. |
 | MinClientVersion | Set the *minClientVersion* attribute for the created package. This value will override the value of the existing *minClientVersion* attribute (if any) in the `.nuspec` file. |
