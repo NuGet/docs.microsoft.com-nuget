@@ -85,7 +85,7 @@ Note: This has been fixed in VS 2017 15.9 Preview 3
 * Can update to unlisted NuGet package from the Package Manager Console - [#4553](https://github.com/NuGet/Home/issues/4553)
 
 #### Misc
-* To fix `NuGet update self` NuGet.Commandline nupkg should not be semver2.0 - [#7116](https://github.com/NuGet/Home/issues/7116)
+* To fix `NuGet update self` NuGet.Commandline nupkg should not be semver2.0 - [#7116](https://github.com/NuGet/Home/issues/7116) -- Fixed in 4.7.1
 * Improve experiences with NU1107 install failures - [#7107](https://github.com/NuGet/Home/issues/7107)
 * The serialization of GetAuthenticationCredentialRequest is incorrect - [#6983](https://github.com/NuGet/Home/issues/6983)
 * NuGet Visual Studio AsyncPackage fails to load when initialized off the UI thread - [#6976](https://github.com/NuGet/Home/issues/6976)
