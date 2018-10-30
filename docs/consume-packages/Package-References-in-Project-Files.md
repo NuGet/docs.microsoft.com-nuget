@@ -148,3 +148,32 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
     <!-- ... -->
 </ItemGroup>
 ```
+
+## Locking dependencies
+Input to NuGet restore is a set of Package References from the project file (top-level or direct dependenices) and the output is a full closure of all the package dependencies including transitive dependencies. NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed. However, there are some scenarios where it is unable to do so. For example:
+
+* When you use floating versions like `<PackageReference Include="My.Sample.Lib" Version="4.*"/>`. While the intention here is to float to the latest version on every restore of packages, there are scenarios where users require the graph to be locked to a certain latest version and float to a later version, if available, upon an explicit gesture.
+* A newer version of the package matching PackageReference version requirements is published. E.g. 
+
+  * Day 1: if you specified `<PackageReference Include="My.Sample.Lib" Version="4.0.0"/>` but the versions available on the 
+  NuGet repositories were 4.1.0, 4.2.0 and 4.3.0. In this case, NuGet would have resolved to  4.1.0 (nearest minimum version)
+
+  * Day 2: Version 4.0.0 gets published. NuGet will now find the exact match and start resolving to 4.0.0
+
+* A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraints. This results in NuGet finding the best match when it cannot resolve to the deleted version.
+
+### Enabling lock file
+In order to persist the full closure of package dependencies you can opt-in to the lock file feature by setting the MSBuild property `RestorePackagesWithLockFile` for your project:
+
+```xml
+<PropertyGroup>
+    <!--- ... -->
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <!--- ... -->
+</PropertyGroup>    
+```
+
+If this property is set, NuGet restore will generate a lock file - `packages.lock.json` file at the project root directory that lists all the package dependencies 
+
+### Lock file
+The lock file 
