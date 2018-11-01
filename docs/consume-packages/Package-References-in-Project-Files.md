@@ -178,7 +178,7 @@ In order to persist the full closure of package dependencies you can opt-in to t
 If this property is set, NuGet restore will generate a lock file - `packages.lock.json` file at the project root directory that lists all the package dependencies. 
 
 > [!Note]
-> Once a project has `packages.lock.json` file in its root directory, the lock file is always used with restore irrespective of the property `RestorePackagesWithLockFile` being set or not. So another way to opt-in to this feature is to create a dummy black `packages.lock.json` file in the project's root directory.
+> Once a project has `packages.lock.json` file in its root directory, the lock file is always used with restore even if the property `RestorePackagesWithLockFile` is not set. So another way to opt-in to this feature is to create a dummy blank `packages.lock.json` file in the project's root directory.
 
 ### `restore` behavior with lock file
 If a lock file is present for project, NuGet uses this lock file to run `restore`. NuGet does a quick check to see if there were any changes in the package dependencies as mentioned in the project file (or dependent projects' files) and if there were no changes it just restores the packages mentioned in the lock file. There is no re-evaluation of package dependencies.
