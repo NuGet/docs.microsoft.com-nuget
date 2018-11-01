@@ -206,10 +206,23 @@ You may also set this continional MSBuild property in your project file:
 </PropertyGroup> 
 ```
 
-If locked mode is true, restore will either restore the exact packages as listed in the lock file or fail if you updated the defined package dependencies for the project after lock file was created.
+If locked mode is `true`, restore will either restore the exact packages as listed in the lock file or fail if you updated the defined package dependencies for the project after lock file was created.
+
+### Make lock file part of your source repository
+If you are building an application, an executable and the project in question is at the end of the dependency chain then do check in the lock file to the source code repository so that NuGet can make use of it during restore.
+
+However, if your project is a library project that you do not ship or a common code project on which other projects depend upon, you **should not** check in the lock file as part of your source code. There is no harm in keeping the lock file but the locked package dependencies for the common code project may not be used, as listed in the lock file, during the restore/build of a project that depends on this common-code project.
+
+Eg.
+```
+ProjectA
+  |------> PackageX 2.0.0
+  |------> ProjectB
+             |------>PackageX 1.0.0
+```
+If `ProjectA` has a dependency on a `PackageX` version `2.0.0` and also references `ProjectB` that depends on `PackageX` version `1.0.0`, then the lock file for `ProjectB` will list a dependency on `PackageX` version `1.0.0`. However, when `ProjectA` is built, its lock file will contain a dependency on `PackageX` version **`2.0.0`** and **not** `1.0.0` as listed in the lock file for `ProjectB`. Thus, the lock file of a common code project has little say over the packages resolved for projects that depend on it.
 
 ### Lock file extensibility
-
 You can control various behaviors of restore with lock file as described below:
 
 | Option | MSBuild equivalent option | 
