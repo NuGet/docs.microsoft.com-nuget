@@ -16,7 +16,7 @@ keywords: NuGet symbol packages, NuGet package debugging, supporting NuGet debug
 ms.reviewer:
 - anangaur
 - karann
-- ---
+---
 
 
 # Creating symbol packages (.snupkg)
