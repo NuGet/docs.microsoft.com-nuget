@@ -31,7 +31,7 @@ To allow the restore to pause and wait for authentication, call restore with `ms
 
 ## Creating a cross platform authentication plugin
 
-A sample implementation can be found in [MSCredProvider plugin](https://github.com/Microsoft/mscredprovider).
+A sample implementation can be found in [Microsoft Credential Provider plugin](https://github.com/Microsoft/artifacts-credprovider).
 
 It's very important that the plugins conforms to the security requirements set forth by the NuGet client tools.
 The minimum required version for a plugin to be an authentication plugin is *2.0.0*.

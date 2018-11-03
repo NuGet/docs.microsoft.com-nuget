@@ -81,7 +81,7 @@ A URL for a 64x64 image with transparency background to use as the icon for the 
 #### requireLicenseAcceptance
 A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.
 #### developmentDependency
-*(2.8+)* A Boolean value specifying whether the package is be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages.
+*(2.8+)* A Boolean value specifying whether the package is be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages. With PackageReference (NuGet 4.8+), this flag also means that it will exclude compile-time assets from compilation. See [DevelopmentDependency support for PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
 #### summary
 A short description of the package for UI display. If omitted, a truncated version of `description` is used.
 #### releaseNotes
@@ -113,7 +113,7 @@ A collection of zero or more `<dependency>` elements specifying the dependencies
 #### contentFiles
 *(3.3+)* A collection of `<files>` elements that identify content files to include in the consuming project. These files are specified with a set of attributes that describe how they should be used within the project system. See [Specifying files to include in the package](#specifying-files-to-include-in-the-package) below.
 #### files 
-The `<package>` node may contain a `<files>` node as a sibling to `<metadata>`, and a or `<contentFiles>` child under `<metadata>`, to specify which assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
+The `<package>` node may contain a `<files>` node as a sibling to `<metadata>`, and a `<contentFiles>` child under `<metadata>`, to specify which assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
 
 ## Replacement tokens
 

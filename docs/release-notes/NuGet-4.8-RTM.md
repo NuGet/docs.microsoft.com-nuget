@@ -11,6 +11,7 @@ ms.topic: conceptual
 
 [Visual Studio 2017 15.8 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.8 functionality.
 
+
 Command line versions of the same functionality are also available:
 * NuGet.exe 4.8 - [nuget.org/downloads](https://nuget.org/downloads)
 * DotNet.exe - [.NET Core SDK 2.1.400](https://www.microsoft.com/net/download/visual-studio-sdks)
