@@ -66,13 +66,7 @@ values.
 
 ### Request body
 
-The request body must come in the following form:
-
-#### Multipart form data
-
-The request header `Content-Type` is `multipart/form-data` and the first item in the request body is the raw bytes of
-the .snupkg being pushed. Subsequent items in the multipart body are ignored. The file name or any other headers of the
-multipart items are ignored.
+The request body for the symbopl push is similar with the request body of a package push request(see [package push and delete](package-publish-resource.md)). 
 
 ### Response
 
