@@ -9,7 +9,13 @@ ms.topic: conceptual
 
 # Package references (PackageReference) in project files
 
-Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file). Using PackageReference, as it's called, doesn't affect other aspects of NuGet; for example, settings in `NuGet.Config` files (including package sources) are still applied as explained in [Configuring NuGet Behavior](configuring-nuget-behavior.md).
+Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file). Using PackageReference, as it's called, doesn't affect other aspects of NuGet; for example, settings in `NuGet.
+
+
+
+
+
+fig` files (including package sources) are still applied as explained in [Configuring NuGet Behavior](configuring-nuget-behavior.md).
 
 With PackageReference, you can also use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. (See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
 
@@ -148,3 +154,86 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
     <!-- ... -->
 </ItemGroup>
 ```
+
+## Locking dependencies
+*This feature is available with NuGet **4.9** or above and with Visual Studio 2017 **15.9 Preview 5** or above.*
+
+Input to NuGet restore is a set of Package References from the project file (top-level or direct dependenices) and the output is a full closure of all the package dependencies including transitive dependencies. NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed. However, there are some scenarios where it is unable to do so. For example:
+
+* When you use floating versions like `<PackageReference Include="My.Sample.Lib" Version="4.*"/>`. While the intention here is to float to the latest version on every restore of packages, there are scenarios where users require the graph to be locked to a certain latest version and float to a later version, if available, upon an explicit gesture.
+* A newer version of the package matching PackageReference version requirements is published. E.g. 
+
+  * Day 1: if you specified `<PackageReference Include="My.Sample.Lib" Version="4.0.0"/>` but the versions available on the 
+  NuGet repositories were 4.1.0, 4.2.0 and 4.3.0. In this case, NuGet would have resolved to  4.1.0 (nearest minimum version)
+
+  * Day 2: Version 4.0.0 gets published. NuGet will now find the exact match and start resolving to 4.0.0
+
+* A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraints. This results in NuGet finding the best match when it cannot resolve to the deleted version.
+
+### Enabling lock file
+In order to persist the full closure of package dependencies you can opt-in to the lock file feature by setting the MSBuild property `RestorePackagesWithLockFile` for your project:
+
+```xml
+<PropertyGroup>
+    <!--- ... -->
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <!--- ... -->
+</PropertyGroup>    
+```
+
+If this property is set, NuGet restore will generate a lock file - `packages.lock.json` file at the project root directory that lists all the package dependencies. 
+
+> [!Note]
+> Once a project has `packages.lock.json` file in its root directory, the lock file is always used with restore even if the property `RestorePackagesWithLockFile` is not set. So another way to opt-in to this feature is to create a dummy blank `packages.lock.json` file in the project's root directory.
+
+### `restore` behavior with lock file
+If a lock file is present for project, NuGet uses this lock file to run `restore`. NuGet does a quick check to see if there were any changes in the package dependencies as mentioned in the project file (or dependent projects' files) and if there were no changes it just restores the packages mentioned in the lock file. There is no re-evaluation of package dependencies.
+
+If NuGet detects a change in the defined dependenices as mentioned in the project file(s), it re-evaluates the package graph and updates the lock file to reflect the new package closure for the project.
+
+For CI/CD and other scenarios, where you would not want to change the package dependenies on the fly, you can do so by setting the `lockedmode` to `true`:
+
+For dotnet.exe, run:
+```
+> dotnet.exe restore --locked-mode
+```
+
+For msbuild.exe, run:
+```
+> msbuild.exe /t:restore /p:RestoreLockedMode=true
+```
+
+You may also set this conditional MSBuild property in your project file:
+```xml
+<PropertyGroup>
+    <!--- ... -->
+    <RestoreLockedMode>true</RestoreLockedMode>
+    <!--- ... -->
+</PropertyGroup> 
+```
+
+If locked mode is `true`, restore will either restore the exact packages as listed in the lock file or fail if you updated the defined package dependencies for the project after lock file was created.
+
+### Make lock file part of your source repository
+If you are building an application, an executable and the project in question is at the end of the dependency chain then do check in the lock file to the source code repository so that NuGet can make use of it during restore.
+
+However, if your project is a library project that you do not ship or a common code project on which other projects depend upon, you **should not** check in the lock file as part of your source code. There is no harm in keeping the lock file but the locked package dependencies for the common code project may not be used, as listed in the lock file, during the restore/build of a project that depends on this common-code project.
+
+Eg.
+```
+ProjectA
+  |------> PackageX 2.0.0
+  |------> ProjectB
+             |------>PackageX 1.0.0
+```
+If `ProjectA` has a dependency on a `PackageX` version `2.0.0` and also references `ProjectB` that depends on `PackageX` version `1.0.0`, then the lock file for `ProjectB` will list a dependency on `PackageX` version `1.0.0`. However, when `ProjectA` is built, its lock file will contain a dependency on `PackageX` version **`2.0.0`** and **not** `1.0.0` as listed in the lock file for `ProjectB`. Thus, the lock file of a common code project has little say over the packages resolved for projects that depend on it.
+
+### Lock file extensibility
+You can control various behaviors of restore with lock file as described below:
+
+| Option | MSBuild equivalent option | 
+|:---  |:--- |
+| `--use-lock-file` | Bootstraps use of lock file for a project. You can alternatively set `RestorePackagesWithLockFile` property in the project file | 
+| `--locked-mode` | Enables locked mode for restore. This is useful in CI/CD scenarios where you would like to get the erepeatable builds. This can be also by setting the `RestoreLockedMode` MSBuild property to `true` |  
+| `--force-evaluate` | This option is useful with packages with floating version defined in the project. By default, NuGet restore will not update the package version automatically upon each restore unless you run restore with `--force-evaluate` option. |
+| `--lock-file-path` | Defines a custom lock file location for a project. This can be also achieved by setting the MSBuild property `NuGetLockFilePath`. By default, NuGet supports `packages.lock.json` at the root directory. If you have multiple projects in the same directory, NuGet supports project specific lock file `packages.<project_name>.lock.json` |
