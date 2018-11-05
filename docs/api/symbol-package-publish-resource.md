@@ -1,5 +1,5 @@
 ---
-title: Push and Delete, NuGet API | Microsoft Docs
+title: Push Symbol Packages, NuGet API | Microsoft Docs
 author:
 - cristinamanu
 - kraigb
@@ -19,7 +19,7 @@ ms.reviewer:karann
 # Push Symbol Packages
 
 It is possible to push symbols packages ([snupkg](../create-packages/Symbol-Packages-V2.md)) using the NuGet V3 API.
-These operations are based off of the `PackagePublish` resource found in the [service index](service-index.md).
+These operations are based off of the `SymbolPackagePublish` resource found in the [service index](service-index.md).
 
 ## Versioning
 
@@ -42,18 +42,17 @@ The `PUT` HTTP method is supported by this resource.
 
 ## Push a symbol package
 
-> [!Note]
-> nuget.org has [additional requirements](NuGet-Protocols.md) for interacting with the push endpoint. For snupkg constraints see [symbol package constraints](../create-packages/Symbol-Packages-V2.md).
-
-nuget.org supports pushing new symbol packages format ([snupkg](../create-packages/Symbol-Packages-V2.md)) using the following API. Symbol package with the provided ID and version
-can be submitted multiple times. A symbol package will be rejected in the following cases.
-- A package with the same Id and Version does not exist.
-- A symbol package with the same Id and Version was pushed but is not yet published.
-- The symbol package ([snupkg](../create-packages/Symbol-Packages-V2.md)) is invalid (see [symbol package constraints](../create-packages/Symbol-Packages-V2.md)).
-
-Other package sources may support different contracts.
+nuget.org supports pushing new symbol packages format ([snupkg](../create-packages/Symbol-Packages-V2.md)) using the following API. 
 
     PUT https://www.nuget.org/api/v2/symbolpackage
+
+Symbol packages with the same ID and version
+can be submitted multiple times. A symbol package will be rejected in the following cases.
+- A package with the same ID and version does not exist.
+- A symbol package with the same ID and version was pushed but is not yet published.
+- The symbol package ([snupkg](../create-packages/Symbol-Packages-V2.md)) is invalid (see [symbol package constraints](../create-packages/Symbol-Packages-V2.md)).
+
+For snupkg constraints see [symbol package constraints](../create-packages/Symbol-Packages-V2.md).
 
 ### Request parameters
 
@@ -79,10 +78,10 @@ multipart items are ignored.
 
 Status Code | Meaning
 ----------- | -------
-201, 202    | The symbol package was successfully pushed.
+201         | The symbol package was successfully pushed.
 400         | The provided symbol package is invalid.
 401         | The user is not authorized to perform this action.
 404         | A coresponding package with the provided ID and version does not exist.
 409         | A symbol package with the provided ID and version was pushed but it is not available yet.
+413         | The package is too large.
 
-Server implementations vary on the success status code returned when a package is successfully pushed.

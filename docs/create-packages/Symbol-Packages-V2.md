@@ -11,7 +11,7 @@ ms.date: 10/30/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: null
-description: How to create NuGet packages that contain only symbols to support debugging of other NuGet packages in Visual Studio.
+description: How to create NuGet symbol packages (snupkg).
 keywords: NuGet symbol packages, NuGet package debugging, supporting NuGet debugging, package symbols, symbol package conventions
 ms.reviewer:
 - anangaur
@@ -27,8 +27,7 @@ ms.reviewer:
 Nuget.org supports its own symbols server repository. In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the symbol server repository.
 Package consumers can use the symbols published to nuget.org symbol server by adding `https://symbols.nuget.org/download/symbols` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger) for details on that process.
 
-Nuget.exe pack and msbuild /t:pack has an additional command line property called ```-SymbolsPackageFormat```. Since the symbols package will not be produced by default (as per current behavior), this option will only be applicable if passed along with ```-Symbols``` in nuget.exe or ```--include-symbols``` in dotnet.exe. SymbolsPackageFormat property can have one of the two values: snupkg, symbols.nupkg. The default value of this property would be snupkg.
-The option symbols.nupkg is only being provided for compat reasons with the current behavior. Using this in conjunction with -Symbols or --include-symbols will ensure the symbols.nupkg is created in the same way as it is today.
+Nuget.exe pack and msbuild /t:pack has an additional command line property called ```-SymbolsPackageFormat```. Since the symbols package will not be produced by default, so this option will only be applicable if passed along with ```-Symbols``` in nuget.exe or ```--include-symbols``` in dotnet.exe. SymbolsPackageFormat property can have one of the two values: symbols.nupkg(the default) or snupkg. If the SymbolsPackageFormat is not specified the symbols.nupkg is created in the same way as it is today.
 
 
 ## Creating a symbol package
@@ -65,7 +64,7 @@ The symbol packages supported on nuget.org have the following contraints
 
 - Only the following file extensions are allowed to be added to a symbol package. ```.pdb,.nuspec,.xml,.psmdcp,.rels,.p7s```
 - Only managed [Portable pdbs](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md) are currently supported on nuget symbol server.
-- The pdbs and associated nupkg dlls need to be build with compiler version 15.8 or above (see [pdb crypto hash](https://github.com/dotnet/roslyn/issues/24429))
+- The pdbs and associated nupkg dlls need to be built with the compiler in Visual Studio version 15.9 or above (see [pdb crypto hash](https://github.com/dotnet/roslyn/issues/24429))
 
 The symbol package publish on nuget.org will fail if any other file types are included in the .snupkg.
 

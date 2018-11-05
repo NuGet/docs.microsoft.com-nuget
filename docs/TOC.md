@@ -26,6 +26,7 @@
 ## [Prerelease packages](create-packages/prerelease-packages.md)
 ## [Native packages](create-packages/native-packages.md)
 ## [Symbol packages](create-packages/symbol-packages.md)
+## [Symbol packages-V2](create-packages/symbol-packages-v2.md)
 ## [Signing packages](create-packages/sign-a-package.md)
 ## [Publish a package](create-packages/publish-a-package.md)
 ## Guides
@@ -199,6 +200,7 @@
 ## [How-to: query for all packages using the API](guides/api/query-for-all-published-packages.md)
 ## [Service index](api/service-index.md)
 ## [Push and delete](api/package-publish-resource.md)
+## [Push symbol packages](api/symbol-package-publish-resource.md)
 ## [Search](api/search-query-service-resource.md)
 ## [Autocomplete](api/search-autocomplete-service-resource.md)
 ## [Package metadata](api/registration-base-url-resource.md)
