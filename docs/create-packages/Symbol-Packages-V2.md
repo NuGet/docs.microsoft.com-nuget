@@ -91,6 +91,13 @@ The symbol package publish on nuget.org will fail if any other file types are in
 
 In this case, NuGet will publish to nuget.org the `MyPackage.nupkg` first followed by `MyPackage.snupkg`.
 
+## Symbol package validation and indexing
+Symbol packages published to [NuGet.org](https://www.nuget.org/) undergo several validations, such as virus checks.
+
+When the package has passed has passed all validation checks, it might take a while for the symbols to index and be available for consumption from the NuGet.org symbol servers. If the package fails a validation check, the package details page for the .nupkg will update to display the associated error and you also receive an email notifying you about it.
+
+Package validation and indexing usually takes under 15 minutes. If the package publishing is taking longer than expected, visit [status.nuget.org](https://status.nuget.org/) to check if nuget.org is experiencing any interruptions. If all systems are operational and the package hasn't been successfully published within an hour, please login to nuget.org and contact us using the Contact Support link on the package page.
+
 ## See Also
 
 [NuGet-Package-Debugging-&-Symbols-Improvements](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)
