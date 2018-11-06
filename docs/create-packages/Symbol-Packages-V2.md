@@ -21,12 +21,12 @@ ms.reviewer:
 # Creating symbol packages (.snupkg)
 > [!Important]
 > This feature is available only with [nuget.exe v4.9.0 or above](https://www.nuget.org/downloads) or [dotnet.exe v2.2.0 or above](https://www.microsoft.com/net/download/dotnet-core/2.2), which implement the required [NuGet protocols](../api/nuget-protocols.md).
-> The new format for the symbol packages in .snupkg. The previous format .symbols.nupkg is still supported but only for compatibility reasons (see [Symbol-Packages](Symbol-Packages.md)).
+> The new format for the symbol packages is .snupkg. The previous format .symbols.nupkg is still supported but only for compatibility reasons (see [Symbol-Packages](Symbol-Packages.md)).
 
 Nuget.org supports its own symbols server repository. In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the symbol server repository.
 Package consumers can use the symbols published to nuget.org symbol server by adding `https://symbols.nuget.org/download/symbols` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](https://docs.microsoft.com/en-us/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger?view=vs-2017) for details on that process.
 
-Nuget.exe pack and msbuild /t:pack has an additional command line property called ```-SymbolsPackageFormat```. Since the symbols package will not be produced by default, so this option will only be applicable if passed along with ```-Symbols``` in nuget.exe or ```--include-symbols``` in dotnet.exe. SymbolsPackageFormat property can have one of the two values: symbols.nupkg(the default) or snupkg. If the SymbolsPackageFormat is not specified the symbols.nupkg is created in the same way as it is today.
+Nuget.exe pack and msbuild /t:pack has an additional command line property called ```-SymbolsPackageFormat```. Since the symbols package will not be produced by default, so this option will only be applicable if passed along with ```-Symbols``` in nuget.exe or ```--include-symbols``` in dotnet.exe. SymbolsPackageFormat property can have one of the two values: **symbols.nupkg**[the default] or **snupkg**. If the SymbolsPackageFormat is not specified the symbols.nupkg is created in the same way as it is today.
 
 
 ## Creating a symbol package
@@ -48,10 +48,10 @@ The .nupkg file would be exactly the same as it is today, but the .snupkg file w
 
 1) The .snupkg will have the same id and version as the corresponding .nupkg.
 2) The .snupkg will have the exact folder structure as the nupkg for any DLL or EXE files with the distinction that instead of DLLs/EXEs, their corresponding PDBs will be included in the same folder hierarchy. Files and folders with extensions other than PDB will be left out of the snupkg.
-3) The .nuspec file in the .snupkg will also specify a new PackageType as follows:
+3) The .nuspec file in the .snupkg will also specify a new PackageType as below. This should the only one PackageType specified. 
 ``` 
 <packageTypes>
-  <packageType name="SybmolsPackage"/>
+  <packageType name="SymbolsPackage"/>
 </packageTypes>
 ```
 4) If an author decides to use a custom nuspec to build their nupkg and snupkg, the snupkg should have the same folder hierarchy and files detailed in 2).
@@ -92,9 +92,9 @@ In this case, NuGet will publish to nuget.org the `MyPackage.nupkg` first follow
 ## Symbol package validation and indexing
 Symbol packages published to [NuGet.org](https://www.nuget.org/) undergo several validations, such as virus checks.
 
-When the package has passed all validation checks, it might take a while for the symbols to index and be available for consumption from the NuGet.org symbol servers. If the package fails a validation check, the package details page for the .nupkg will update to display the associated error and you also receive an email notifying you about it.
+When the package has passed all validation checks, it might take a while for the symbols to index and be available for consumption from the NuGet.org symbol servers. If the package fails a validation check, the package details page for the .nupkg will update to display the associated error and you will also receive an email notifying you about it.
 
-Package validation and indexing usually takes under 15 minutes. If the package publishing is taking longer than expected, visit [status.nuget.org](https://status.nuget.org/) to check if nuget.org is experiencing any interruptions. If all systems are operational and the package hasn't been successfully published within an hour, please login to nuget.org and contact us using the Contact Support link on the package page.
+Package validation and indexing usually takes under 15 minutes. If the package publishing is taking longer than expected, visit [status.nuget.org](https://status.nuget.org/) to check if nuget.org is experiencing any interruptions. If all systems are operational and the package hasn't been successfully published within an hour, please login to nuget.org and contact us using the Contact Support link on the package details page.
 
 ## See Also
 

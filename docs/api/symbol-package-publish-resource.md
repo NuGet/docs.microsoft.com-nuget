@@ -66,7 +66,7 @@ values.
 
 ### Request body
 
-The request body for the symbopl push is similar with the request body of a package push request(see [package push and delete](package-publish-resource.md)). 
+The request body for the symbol push is similar with the request body of a package push request(see [package push and delete](package-publish-resource.md)). 
 
 ### Response
 
@@ -75,7 +75,7 @@ Status Code | Meaning
 201         | The symbol package was successfully pushed.
 400         | The provided symbol package is invalid.
 401         | The user is not authorized to perform this action.
-404         | A coresponding package with the provided ID and version does not exist.
+404         | A corresponding package with the provided ID and version does not exist.
 409         | A symbol package with the provided ID and version was pushed but it is not available yet.
 413         | The package is too large.
 
