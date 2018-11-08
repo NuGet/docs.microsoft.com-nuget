@@ -84,7 +84,11 @@ In the following example, the control implemented in `ManagedPackage.winmd` will
 
 To display a custom icon in the toolbox/assets pane, add an image to your project or the corresponding `design.dll` project with the name “Namespace.ControlName.extension” and set the build action to “Embedded Resource”. You must also ensure that the associated `AssemblyInfo.cs` specifies the ProvideMetadata attribute - `[assembly: ProvideMetadata(typeof(RegisterMetadata))]`. See this [sample](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20).
 
-Supported formats are `.png`, `.jpg`, `.jpeg`, `.gif`, and `.bmp`. The recommended image size is 64 pixels by 64 pixels.
+Supported formats are `.png`, `.jpg`, `.jpeg`, `.gif`, and `.bmp`. The recommended format is BMP24 in 16 pixels by 16 pixels.
+
+![Tool box icon sample](media/)
+
+The pink background is replaced at runtime. The icons are recolored when the Visual Studio theme is changed and that background color is expected. For more information, please reference [Images and Icons for Visual Studio](https://docs.microsoft.com/en-us/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio)
 
 In the example below, the project contains an image file named “ManagedPackage.MyCustomControl.png”.
 
