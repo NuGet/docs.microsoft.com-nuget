@@ -88,7 +88,7 @@ Supported formats are `.png`, `.jpg`, `.jpeg`, `.gif`, and `.bmp`. The recommend
 
 ![Tool box icon sample](media/ColorPicker_16x16x24.bmp)
 
-The pink background is replaced at runtime. The icons are recolored when the Visual Studio theme is changed and that background color is expected. For more information, please reference [Images and Icons for Visual Studio](https://docs.microsoft.com/en-us/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio)
+The pink background is replaced at runtime. The icons are recolored when the Visual Studio theme is changed and that background color is expected. For more information, please reference [Images and Icons for Visual Studio](https://docs.microsoft.com/en-us/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio).
 
 In the example below, the project contains an image file named “ManagedPackage.MyCustomControl.png”.
 
