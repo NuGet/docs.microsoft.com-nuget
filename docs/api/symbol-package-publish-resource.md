@@ -25,16 +25,15 @@ These operations are based off of the `SymbolPackagePublish` resource found in t
 
 The following `@type` value is used:
 
-@type value          | Notes
--------------------- | -----
-SymbolPackagePublish/4.9.0 | The initial release
+@type value                 | Notes
+--------------------        | -----
+SymbolPackagePublish/4.9.0  | The initial release
 
 ## Base URL
 
 The base URL for the following APIs is the value of the `@id` property of the `SymbolPackagePublish/4.9.0` resource in the
 package source's [service index](service-index.md). For the documentation below, nuget.org's URL is used. Consider 
 `https://www.nuget.org/api/v2/symbolpackage` as a placeholder for the `@id` value found in the service index.
-
 
 ## HTTP methods
 
@@ -52,8 +51,6 @@ can be submitted multiple times. A symbol package will be rejected in the follow
 - A symbol package with the same ID and version was pushed but is not yet published.
 - The symbol package ([snupkg](../create-packages/Symbol-Packages-V2.md)) is invalid (see [symbol package constraints](../create-packages/Symbol-Packages-V2.md)).
 
-For snupkg constraints see [symbol package constraints](../create-packages/Symbol-Packages-V2.md).
-
 ### Request parameters
 
 Name           | In     | Type   | Required | Notes
@@ -66,7 +63,7 @@ values.
 
 ### Request body
 
-The request body for the symbol push is similar with the request body of a package push request(see [package push and delete](package-publish-resource.md)). 
+The request body for the symbol push is same as with the request body of a package push request (see [package push and delete](package-publish-resource.md)). 
 
 ### Response
 
