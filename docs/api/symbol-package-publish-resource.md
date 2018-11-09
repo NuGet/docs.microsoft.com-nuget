@@ -13,7 +13,7 @@ ms.prod: nuget
 ms.technology: null
 description: The publish service allows clients to publish new symbol packages.
 keywords: NuGet API push symbol package
-ms.reviewer:karann
+ms.reviewer: karann
 ---
 
 # Push Symbol Packages
