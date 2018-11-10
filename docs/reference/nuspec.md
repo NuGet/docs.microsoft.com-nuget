@@ -142,7 +142,7 @@ With the exception of `$configuration$`, values in the project are used in prefe
 | --- | --- | ---
 | **$id$** | Project file | AssemblyName (title) from the project file |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion if present, otherwise AssemblyVersion |
-| **$author$** | AssemblyInfo | AssemblyCompany |
+| **$authors$** | AssemblyInfo | AssemblyCompany |
 | **$title$** | AssemblyInfo | AssemblyTitle |
 | **$description$** | AssemblyInfo | AssemblyDescription |
 | **$copyright$** | AssemblyInfo | AssemblyCopyright |
