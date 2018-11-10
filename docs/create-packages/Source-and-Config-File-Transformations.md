@@ -109,7 +109,7 @@ To see the effect of installing and uninstalling the package, create a new ASP.N
 
 ### XDT transforms
 
-You can modify config files using [XDT syntax](https://msdn.microsoft.com/library/dd465326.aspx). You can also have NuGet replace tokens with [project properties](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7) by including the property name within `$` delimeters (case-insensitive).
+You can modify config files using [XDT syntax](https://msdn.microsoft.com/library/dd465326.aspx). You can also have NuGet replace tokens with [project properties](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7) by including the property name within `$` delimiters (case-insensitive).
 
 For example, the following `app.config.install.xdt` file will insert an `appSettings` element into `app.config` containing the `FullPath`, `FileName`, and `ActiveConfigurationSettings` values from the project:
 
