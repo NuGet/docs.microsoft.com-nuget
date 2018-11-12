@@ -22,7 +22,7 @@ ms.reviewer:
 # Creating symbol packages (.snupkg)
 > [!Important]
 > This feature is available only with [nuget.exe v4.9.0 or above](https://www.nuget.org/downloads) or [dotnet.exe v2.2.0 or above](https://www.microsoft.com/net/download/dotnet-core/2.2), which implement the required [NuGet protocols](../api/nuget-protocols.md).
-> The new format for the symbol packages is .snupkg. The previous format .symbols.nupkg is still supported but only for compatibility reasons (see [Symbol-Packages](Symbol-Packages.md)).
+> The new format for the symbol packages is .snupkg. The legacy format .symbols.nupkg is still supported but only for compatibility reasons (see [Legacy Symbol Packages](Symbol-Packages.md)).
 
 Nuget.org supports its own symbols server repository. In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the symbol server repository.
 Package consumers can use the symbols published to nuget.org symbol server by adding `https://symbols.nuget.org/download/symbols` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](https://docs.microsoft.com/en-us/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger?view=vs-2017) for details on that process.
