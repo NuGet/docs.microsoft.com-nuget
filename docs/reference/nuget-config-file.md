@@ -25,7 +25,7 @@ In this topic:
   - [apikeys](#apikeys)
   - [disabledPackageSources](#disabledpackagesources)
   - [activePackageSource](#activepackagesource)
-- [trustedSigners section](#trustedSigners-section)
+- [trustedSigners section](#trustedsigners-section)
 - [Using environment variables](#using-environment-variables)
 - [Example config file](#example-config-file)
 
