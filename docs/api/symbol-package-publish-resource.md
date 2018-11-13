@@ -18,7 +18,7 @@ ms.reviewer: karann
 
 # Push Symbol Packages
 
-It is possible to push symbols packages ([snupkg](../create-packages/Symbol-Packages-V2.md)) using the NuGet V3 API.
+It is possible to push symbols packages ([snupkg](../create-packages/Symbol-Packages-snupkg.md)) using the NuGet V3 API.
 These operations are based off of the `SymbolPackagePublish` resource found in the [service index](service-index.md).
 
 ## Versioning
@@ -41,7 +41,7 @@ The `PUT` HTTP method is supported by this resource.
 
 ## Push a symbol package
 
-nuget.org supports pushing new symbol packages format ([snupkg](../create-packages/Symbol-Packages-V2.md)) using the following API. 
+nuget.org supports pushing new symbol packages format ([snupkg](../create-packages/Symbol-Packages-snupkg.md)) using the following API. 
 
     PUT https://www.nuget.org/api/v2/symbolpackage
 
@@ -49,7 +49,7 @@ Symbol packages with the same ID and version
 can be submitted multiple times. A symbol package will be rejected in the following cases.
 - A package with the same ID and version does not exist.
 - A symbol package with the same ID and version was pushed but is not yet published.
-- The symbol package ([snupkg](../create-packages/Symbol-Packages-V2.md)) is invalid (see [symbol package constraints](../create-packages/Symbol-Packages-V2.md)).
+- The symbol package ([snupkg](../create-packages/Symbol-Packages-snupkg.md)) is invalid (see [symbol package constraints](../create-packages/Symbol-Packages-snupkg.md)).
 
 ### Request parameters
 
