@@ -161,7 +161,7 @@ NuGet recommends all packages to be signed. A design principle of package signin
 
 Note that dependencies listed for your package are generated automatically from the package itself and cannot be edited.
 
-In addition, uploading packages to [staging.nuget.org](http://staging.nuget.org) is a great way to test and validate your package without making a package available in the public gallery.
+In addition, uploading packages to [int.nugettest.org](https://int.nugettest.org) is a great way to test and validate your package without making a package available in the public gallery.
 
 **Is it possible to reserve names for packages that will be published in future?**
 
@@ -177,9 +177,9 @@ We encourage the NuGet community to work together to resolve any disputes that m
 
 **Is it recommended to upload my test packages to nuget.org?**
 
-For test purposes, you can use [staging.nuget.org](http://staging.nuget.org), or alternative public NuGet servers like [myget.org](https://myget.org) or [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/).
+For test purposes, you can use [int.nugettest.org](https://int.nugettest.org), or alternative public NuGet servers like [myget.org](https://myget.org) or [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/).
 
-Note that packages uploaded to staging.nuget.org may not be preserved. See [Goodbye preview](http://blog.nuget.org/20130419/goodbye-preview.html).
+Note that packages uploaded to int.nugettest.org may not be preserved.
 
 **What is the maximum size of packages I can upload to nuget.org?**
 

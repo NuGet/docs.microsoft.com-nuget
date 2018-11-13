@@ -33,6 +33,7 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 | Exclude | Specifies one or more wildcard patterns to exclude when creating a package. To specify more than one pattern, repeat the -Exclude flag. See example below. |
 | ExcludeEmptyDirectories | Prevents inclusion of empty directories when building the package. |
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
+| ConfigFile | Specify the configuration file for the pack command. |
 | Help | Displays help information for the command. |
 | IncludeReferencedProjects | Indicates that the built package should include referenced projects either as dependencies or as part of the package. If a referenced project has a corresponding `.nuspec` file that has the same name as the project, then that referenced project is added as a dependency. Otherwise, the referenced project is added as part of the package. |
 | MinClientVersion | Set the *minClientVersion* attribute for the created package. This value will override the value of the existing *minClientVersion* attribute (if any) in the `.nuspec` file. |
@@ -43,7 +44,7 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 | OutputDirectory | Specifies the folder in which the created package is stored. If no folder is specified, the current folder is used. |
 | Properties | Should appear last on the command line after other options. Specifies a list of properties that override values in the project file; see [Common MSBuild Project Properties](/visualstudio/msbuild/common-msbuild-project-properties) for property names. The Properties argument here is a list of token=value pairs, separated by semicolons, where each occurrence of `$token$` in the `.nuspec` file will be replaced with the given value. Values can be strings in quotation marks. Note that for the "Configuration" property, the default is "Debug". To change to a Release configuration, use `-Properties Configuration=Release`. |
 | Suffix | *(3.4.4+)* Appends a suffix to the internally generated version number, typically used for appending build or other pre-release identifiers. For example, using `-suffix nightly` will create a package with a version number like `1.2.3-nightly`. Suffixes must start with a letter to avoid warnings, errors, and potential incompatibilities with different versions of NuGet and the NuGet Package Manager. |
-| Symbols | Specifies that the package contains sources and symbols. When used with a `.nuspec` file, this creates a regular NuGet package file and the corresponding symbols package. |
+| Symbols | Specifies that the package contains sources and symbols. When used with a `.nuspec` file, this creates a regular NuGet package file and the corresponding symbols package. By default it creates a [legacy symbol package](../create-packages/Symbol-Packages.md). The new recommended format for symbol packages is .snupkg. See [Creating symbol packages (.snupkg)](../create-packages/Symbol-Packages-snupkg.md). |
 | Tool | Specifies that the output files of the project should be placed in the `tool` folder. |
 | Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
 | Version | Overrides the version number from the `.nuspec` file. |
@@ -84,6 +85,9 @@ nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="
 
 # Create a package from project foo.csproj, using MSBuild version 12 to build the project
 nuget pack foo.csproj -Build -Symbols -MSBuildVersion 12 -Properties owners=janedoe,xiaop;version="1.0.5
+
+# Create a package from project foo.nuspec and the corresponding symbol package using the new recommended format .snupkg
+nuget pack foo.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack foo.nuspec -Version 2.1.0
 
