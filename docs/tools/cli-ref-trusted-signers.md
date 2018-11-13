@@ -83,6 +83,8 @@ Removes any trusted signers that match the given name.
 
 Requests the latest list of certificates used in a currently trusted repository to update the the existing certificate list in the trusted signer.
 
+_Note_: This gesture will delete the current list of certificates and replace them with an up-to-date list from the repository.
+
 ## Options
 
 | Option | Description |
