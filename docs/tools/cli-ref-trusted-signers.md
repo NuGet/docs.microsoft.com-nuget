@@ -30,7 +30,7 @@ Lists all the trusted signers in the configuration. This option will include all
 
 Adds a trusted signer with the given name to the config. This option has different gestures to add a trusted author or repository.
 
-##Options for add based on a package
+## Options for add based on a package
 
 ```cli
 nuget trusted-signers add <package(s)> -Name <name> [options]
@@ -47,7 +47,7 @@ where `<package(s)>` is one or more `.nupkg` files.
 
 Providing both `-Author` and `-Repository` at the same time is not supported.
 
-##Options for add based on a service index
+## Options for add based on a service index
 
 ```cli
 nuget trusted-signers add -Name <name> [options]
@@ -61,7 +61,7 @@ _Note_: This option will only add trusted repositories.
 | AllowUntrustedRoot | Specifies if the certificate for the trusted signer should be allowed to chain to an untrusted root. |
 | Owners | Semi-colon separated list of trusted owners to further restrict the trust of a repository. |
 
-##Options for add based on the certificate information
+## Options for add based on the certificate information
 
 ```cli
 nuget trusted-signers add -Name <name> [options]
