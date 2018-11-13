@@ -8,7 +8,11 @@ ms.topic: conceptual
 ms.reviewer: anangaur
 ---
 
-# Creating symbol packages
+# Creating symbol packages (legacy)
+
+> [!Important]
+> The new recommended format for symbol packages is .snupkg. See [Creating symbol packages (.snupkg)](Symbol-Packages-snupkg.md). </br>
+> .symbols.nupkg is still supported but only for compatibility reasons.
 
 In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the SymbolSource repository.
 
