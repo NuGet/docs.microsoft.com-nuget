@@ -32,20 +32,24 @@ Package consumers can use the symbols published to nuget.org symbol server by ad
 > [!Important]
 > The new format for the symbol packages is .snupkg. The legacy format .symbols.nupkg is still supported but only for compatibility reasons (see [Legacy Symbol Packages](Symbol-Packages.md)).
 
-Nuget.exe pack and msbuild /t:pack has an additional command line property called ```-SymbolsPackageFormat```. Since the symbols package will not be produced by default, so this option will only be applicable if passed along with ```-Symbols``` in nuget.exe or ```--include-symbols``` in dotnet.exe. SymbolsPackageFormat property can have one of the two values: **symbols.nupkg**[the default] or **snupkg**. If the SymbolsPackageFormat is not specified the symbols.nupkg is created in the same way as it is today.
-
 ## Creating a symbol package
 
 A snupkg symbol package can be created from a .nuspec file or from a .csproj file. NuGet.exe and dotnet.exe are both supported. When the options ```-Symbols -SymbolPackageFormat snupkg``` are used on the nuget.exe pack command a .snupkg file will be created in additon to the .nupkg file.
 
 Example commands to create .snupkg files
 ```
-dotnet.exe pack MyPackage.csproj --include-symbols -p:SymbolPackageFormat=snupkg
+dotnet pack MyPackage.csproj --include-symbols -p:SymbolPackageFormat=snupkg
 
-nuget.exe pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
+nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
-nuget.exe pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
+nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
+
+msbuild /t:pack MyPackage.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
 ```
+
+`.snupkgs` are not produced by default. You must pass the `SymbolsPackageFormat` property along with `-Symbols` in case of nuget.exe, `--include-symbols` in case of dotnet.exe, or `/p:IncludeSymbols` in case of msbuild.
+
+SymbolsPackageFormat property can have one of the two values: `symbols.nupkg` (the default) or `snupkg`. If the SymbolsPackageFormat is not specified, it defaults to `symbols.nupkg` and a legacy symbol package will be created.
 
 ## Symbol package structure
 
