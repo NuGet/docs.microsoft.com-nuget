@@ -21,16 +21,9 @@ ms.reviewer:
 
 # Creating symbol packages (.snupkg)
 
-NuGet.org supports its own symbols server repository. In addition to building packages for NuGet.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the symbol server repository.
-
-Package consumers can use the symbols published to nuget.org symbol server by adding `https://symbols.nuget.org/download/symbols` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](https://docs.microsoft.com/en-us/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger?view=vs-2017) for details on that process.
-
 ## Prerequisites
 
 [nuget.exe v4.9.0 or above](https://www.nuget.org/downloads) or [dotnet.exe v2.2.0 or above](https://www.microsoft.com/net/download/dotnet-core/2.2), which implement the required [NuGet protocols](../api/nuget-protocols.md).
-
-> [!Important]
-> The new format for the symbol packages is .snupkg. The legacy format .symbols.nupkg is still supported but only for compatibility reasons (see [Legacy Symbol Packages](Symbol-Packages.md)).
 
 ## Creating a symbol package
 
@@ -51,30 +44,8 @@ msbuild /t:pack MyPackage.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=s
 
 SymbolsPackageFormat property can have one of the two values: `symbols.nupkg` (the default) or `snupkg`. If the SymbolsPackageFormat is not specified, it defaults to `symbols.nupkg` and a legacy symbol package will be created.
 
-## Symbol package structure
-
-The .nupkg file would be exactly the same as it is today, but the .snupkg file would have the following characteristics:
-
-1) The .snupkg will have the same id and version as the corresponding .nupkg.
-2) The .snupkg will have the exact folder structure as the nupkg for any DLL or EXE files with the distinction that instead of DLLs/EXEs, their corresponding PDBs will be included in the same folder hierarchy. Files and folders with extensions other than PDB will be left out of the snupkg.
-3) The .nuspec file in the .snupkg will also specify a new PackageType as below. This should the only one PackageType specified. 
-``` 
-<packageTypes>
-  <packageType name="SymbolsPackage"/>
-</packageTypes>
-```
-4) If an author decides to use a custom nuspec to build their nupkg and snupkg, the snupkg should have the same folder hierarchy and files detailed in 2).
-5) ```authors``` and ```owners``` field will be excluded from the snupkg's nuspec.
-
-
-## Nuget.org symbol package constraints
-The symbol packages supported on nuget.org have the following contraints
-
-- Only the following file extensions are allowed to be added to a symbol package. ```.pdb,.nuspec,.xml,.psmdcp,.rels,.p7s```
-- Only managed [Portable pdbs](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md) are currently supported on nuget symbol server.
-- The pdbs and associated nupkg dlls need to be built with the compiler in Visual Studio version 15.9 or above (see [pdb crypto hash](https://github.com/dotnet/roslyn/issues/24429))
-
-The symbol package publish on nuget.org will fail if any other file types are included in the .snupkg.
+> [!Note]
+> The legacy format `.symbols.nupkg` is still supported but only for compatibility reasons (see [Legacy Symbol Packages](Symbol-Packages.md)). NuGet.org symbols server only accepts the new symbol package format - `.snupkg`.
 
 ## Publishing a symbol package
 
@@ -98,12 +69,42 @@ The symbol package publish on nuget.org will fail if any other file types are in
 
 In this case, NuGet will publish to nuget.org the `MyPackage.nupkg` first followed by `MyPackage.snupkg`.
 
-## Symbol package validation and indexing
+## NuGet.org symbol server
+
+NuGet.org supports its own symbols server repository and only accepts the new symbol package format - `.snupkg`. Package consumers can use the symbols published to nuget.org symbol server by adding `https://symbols.nuget.org/download/symbols` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](https://docs.microsoft.com/en-us/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger?view=vs-2017) for details on that process.
+
+### Nuget.org symbol package constraints
+
+The symbol packages supported on nuget.org have the following contraints
+
+- Only the following file extensions are allowed to be added to a symbol package. ```.pdb,.nuspec,.xml,.psmdcp,.rels,.p7s```
+- Only managed [Portable pdbs](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md) are currently supported on nuget symbol server.
+- The pdbs and associated nupkg dlls need to be built with the compiler in Visual Studio version 15.9 or above (see [pdb crypto hash](https://github.com/dotnet/roslyn/issues/24429))
+
+The symbol package publish on nuget.org will fail if any other file types are included in the .snupkg.
+
+### Symbol package validation and indexing
+
 Symbol packages published to [NuGet.org](https://www.nuget.org/) undergo several validations, such as virus checks.
 
 When the package has passed all validation checks, it might take a while for the symbols to index and be available for consumption from the NuGet.org symbol servers. If the package fails a validation check, the package details page for the .nupkg will update to display the associated error and you will also receive an email notifying you about it.
 
 Package validation and indexing usually takes under 15 minutes. If the package publishing is taking longer than expected, visit [status.nuget.org](https://status.nuget.org/) to check if nuget.org is experiencing any interruptions. If all systems are operational and the package hasn't been successfully published within an hour, please login to nuget.org and contact us using the Contact Support link on the package details page.
+
+## Symbol package structure
+
+The .nupkg file would be exactly the same as it is today, but the .snupkg file would have the following characteristics:
+
+1) The .snupkg will have the same id and version as the corresponding .nupkg.
+2) The .snupkg will have the exact folder structure as the nupkg for any DLL or EXE files with the distinction that instead of DLLs/EXEs, their corresponding PDBs will be included in the same folder hierarchy. Files and folders with extensions other than PDB will be left out of the snupkg.
+3) The .nuspec file in the .snupkg will also specify a new PackageType as below. This should the only one PackageType specified. 
+``` 
+<packageTypes>
+  <packageType name="SymbolsPackage"/>
+</packageTypes>
+```
+4) If an author decides to use a custom nuspec to build their nupkg and snupkg, the snupkg should have the same folder hierarchy and files detailed in 2).
+5) ```authors``` and ```owners``` field will be excluded from the snupkg's nuspec.
 
 ## See Also
 
