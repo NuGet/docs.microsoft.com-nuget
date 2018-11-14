@@ -101,7 +101,7 @@ Once a user has a certificate registered, all future package submissions **must*
 
 Users can also remove a registered certificate from the account. Once a certificate is removed, packages signed with that certificate fail at submission. Existing packages aren't affected.
 
-## Configure package signing requirements
+## Configure package signing submission requirements
 
 If you are the sole owner of a package, you are the required signer. That is, you can use any of the registered certificates to sign your packages and submit to nuget.org.
 
@@ -110,3 +110,76 @@ If a package has multiple owners, by default, "Any" owner's certificates can be 
 Similarly, if the default "Any" option is selected for a package where one owner has a certificate registered and another owner does not have any certificate registered, then nuget.org accepts either a signed package with a signature registered by one of its owners or an unsigned package (because one of the owners does not have any certificate registered).
 
 ![Configure package signers](media/configure-package-signers.png)
+
+## Customize package consumption requirements
+
+*NuGet 4.9.0+ and Visual Studio version 15.9 and later*
+
+You can customize how NuGet clients validate package signatures by enabling the `signatureValidationMode` to `required`. 
+
+```xml
+  <config>
+    <add key="signatureValidationMode" value="require" />    
+  </config>
+```
+
+This mode will verify that all packages are signed by any of the certificates trusted in the `nuget.config` file. This file allows you to specify which authors and/or repositories are trusted based on the certificate fingerprint. 
+
+### Trust package author
+
+To trust packages based on the author signature use the `authors` element:
+
+```xml
+<trustedSigners>
+  <author name="MyCompanyCert">
+    <certificate fingerprint="AFD34FD..." hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+  </author>
+</trustedSigners>
+```
+
+>[!TIP]
+>Use the `nuget.exe` [verify command](https://docs.microsoft.com/en-us/nuget/tools/cli-ref-verify) to get the `SHA256` value of the certificate fingerprint.
+
+
+### Trust all packages from a repository
+
+To trust packages based on the repository signature use the `repository` element:
+
+```xml
+<trustedSigners>  
+  <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
+    <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B4676070...." 
+                  hashAlgorithm="SHA256" 
+                allowUntrustedRoot="false" />
+  </repository>
+</trustedSigners>
+```
+
+### Trust Package Owners
+
+Repository signatures include additional metadata to identify who were the package owners at the time of submission. You can restrict packages from a repository based on a list owners:
+
+
+```xml
+<trustedSigners>  
+  <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
+    <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B4676070...." 
+                  hashAlgorithm="SHA256" 
+                allowUntrustedRoot="false" />
+      <owners>microsoft;nuget</owners>
+  </repository>
+</trustedSigners>
+```
+
+
+### Untrusted Root certificates
+
+In some situations you might want to enable signing and verification using certificates that do not trust to a trusted root in the local machine. You can use the `allowUntrustedRoot` attribute to customize this behavior.
+
+### Sync repository certificates
+
+Package repositories must announce the certificates they use in their [service index](https://docs.microsoft.com/en-us/nuget/api/service-index). Eventually the repository will update these certificates, e.g. when the certificate  expires. When that happens, clients with specific policies will require to update the configuration to include the new added certificate. You can easily upgrade the trusted signers associated to a repository by using the `nuget.exe` [trusted-signers sync command](tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-).
+
+### Schema reference
+
+The complete schema reference for the client policies can be found in the [nuget.config reference](reference/nuget-config-file#trustedsigners-section)
