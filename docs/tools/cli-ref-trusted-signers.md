@@ -26,6 +26,28 @@ if none of `list|add|remove|sync` is specified, the command will default to `lis
 
 Lists all the trusted signers in the configuration. This option will include all the certificates (with fingerprint and fingerprint algorithm) each signer has. If a certificate has a preceding `[U]`, it means that certificate entry has `allowUntrustedRoot` set as `true`.
 
+Below is an example output from this command:
+
+```cli
+$ nuget trusted-signers
+Registered trusted signers:
+
+
+ 1.   nuget.org [repository]
+      Service Index: https://api.nuget.org/v3/index.json
+      Certificate fingerprint(s):
+        SHA256 - 0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D
+
+ 2.   microsoft [author]
+      Certificate fingerprint(s):
+        SHA256 - 3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE
+
+ 3.   myUntrustedAuthorSignature [author]
+      Certificate fingerprint(s):
+        [U] SHA256 - 518F9CF082C0872025EFB2587B6A6AB198208F63EA58DD54D2B9FF6735CA4434
+        
+```
+
 ## nuget trusted-signers add [options]
 
 Adds a trusted signer with the given name to the config. This option has different gestures to add a trusted author or repository.
