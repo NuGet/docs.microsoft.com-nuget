@@ -295,7 +295,7 @@ Additional restore settings may come from MSBuild properties in the project file
 
 | Property | Description |
 |--------|--------|
-| RestoreSources | Semicolon-delimited list of package sources. When provided on the command line the semicolons may need to be escaped with %3B. Due to the way the property is parsed, local folder sources must be in the url format (i.e. prefixed with file://) and may need to be placed after all internet sources.|
+| RestoreSources | Semicolon-delimited list of package sources. <br />When provided on the command line the semicolons may need to be replaced by escaped value %3B. <br />Due to the way the property is parsed, local folder sources must be in the url format (i.e. prefixed with file://) and may need to be placed after all internet sources. |
 | RestorePackagesPath | User packages folder path. |
 | RestoreDisableParallel | Limit downloads to one at a time. |
 | RestoreConfigFile | Path to a `Nuget.Config` file to apply. |
