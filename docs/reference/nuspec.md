@@ -74,7 +74,8 @@ A comma-separated list of the package creators using profile names on nuget.org.
 #### projectUrl
 A URL for the package's home page, often shown in UI displays as well as nuget.org. 
 #### licenseUrl
-> [!Important] licenseUrl is being deprecated. Use license instead.
+> [!Important]
+> licenseUrl is being deprecated. Use license instead.
 A URL for the package's license, often shown in UI displays as well as nuget.org.
 #### license
 An SPDX license expression or path to a license file within the package, often shown in UI displays as well as nuget.org.
