@@ -56,7 +56,8 @@ Common optional properties:
 - Copyright information
 - A short description for the [Package Manager UI in Visual Studio](../tools/package-manager-ui.md)
 - A locale ID
-- Home page and license URLs
+- Project URL
+- License as an expression or file (`licenseUrl` is being deprecated, use the [`license` nuspec metadata element](../reference/nuspec#license))
 - An icon URL
 - Lists of dependencies and references
 - Tags that assist in gallery searches
@@ -81,10 +82,13 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
             users to easily find other packages by the same owners.  
         -->
         <owners>dejanatc, rjdey</owners>
-
-         <!-- License and project URLs provide links for the gallery -->
-        <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+        
+         <!-- Project URL provides a link for the gallery -->
         <projectUrl>http://github.com/contoso/UsefulStuff</projectUrl>
+
+         <!-- License information is displayed on the gallery -->
+        <license type="expression">Apache-2.0</license>
+        
 
         <!-- The icon is used in Visual Studio's package manager UI -->
         <iconUrl>http://github.com/contoso/UsefulStuff/nuget_icon.png</iconUrl>
