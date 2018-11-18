@@ -89,7 +89,7 @@ If your package is licensed under multiple common licenses, you can specify a co
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
 If you are using a license that hasn’t been assigned an SPDX identifier, or it is a custom license, you can package a file with the license text. For example:
-```
+```xml
 <package>
   <metadata>
     ...
@@ -104,7 +104,7 @@ If you are using a license that hasn’t been assigned an SPDX identifier, or it
 </package>
 ```
 The exact syntax of NuGet's license expressions is described below in [ABNF](https://tools.ietf.org/html/rfc5234).
-```
+```cli
 license-id            = <short form license identifier from https://spdx.org/spdx-specification-21-web-version#h.luq9dgcle9mo>
 
 license-exception-id  = <short form license exception identifier from https://spdx.org/spdx-specification-21-web-version#h.ruv3yl8g6czd>
