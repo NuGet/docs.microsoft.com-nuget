@@ -74,7 +74,52 @@ A comma-separated list of the package creators using profile names on nuget.org.
 #### projectUrl
 A URL for the package's home page, often shown in UI displays as well as nuget.org. 
 #### licenseUrl
+> [!Important] licenseUrl is being deprecated. Use license instead.
 A URL for the package's license, often shown in UI displays as well as nuget.org.
+#### license
+An SPDX license expression or path to a license file within the package, often shown in UI displays as well as nuget.org.
+If you’re licensing the package under a common license such as BSD-2-Clause or MIT, use the associated SPDX license identifier. For example:
+`<license type="expression">MIT</license>`
+
+Here is the complete list of [SPDX license identifiers](https://spdx.org/licenses/). NuGet.org accepts only OSI or FSF approved licenses when using license type expression.
+
+If your package is licensed under multiple common licenses, you can specify a composite license using the [SPDX expression syntax version 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60). For example:
+`<license type="expression">BSD-2-Clause OR MIT</license>`
+
+If you are using a license that hasn’t been assigned an SPDX identifier, or it is a custom license, you can package a file with the license text. For example:
+
+```
+<package>
+  <metadata>
+    ...
+    <license type="file">LICENSE.txt</license>
+    ...
+  </metadata>
+  <files>
+    ...
+    <file src="licenses\LICENSE.txt" target="" />
+    ...
+  </files>
+</package>
+```
+The exact syntax of NuGet's license expressions is described below in [ABNF](https://tools.ietf.org/html/rfc5234).
+
+```
+license-id            = <short form license identifier from https://spdx.org/spdx-specification-21-web-version#h.luq9dgcle9mo>
+
+license-exception-id  = <short form license exception identifier from https://spdx.org/spdx-specification-21-web-version#h.ruv3yl8g6czd>
+
+simple-expression = license-id / license-id”+”
+
+compound-expression =  1*1(simple-expression /
+                simple-expression "WITH" license-exception-id /
+                compound-expression "AND" compound-expression /
+                compound-expression "OR" compound-expression ) /                
+                "(" compound-expression ")" )
+
+license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
+```
+
 #### iconUrl
 A URL for a 64x64 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. 
 
