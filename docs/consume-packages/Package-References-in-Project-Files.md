@@ -234,6 +234,6 @@ You can control various behaviors of restore with lock file as described below:
 | Option | MSBuild equivalent option | 
 |:---  |:--- |
 | `--use-lock-file` | Bootstraps use of lock file for a project. You can alternatively set `RestorePackagesWithLockFile` property in the project file | 
-| `--locked-mode` | Enables locked mode for restore. This is useful in CI/CD scenarios where you would like to get the erepeatable builds. This can be also by setting the `RestoreLockedMode` MSBuild property to `true` |  
+| `--locked-mode` | Enables locked mode for restore. This is useful in CI/CD scenarios where you would like to get the repeatable builds. This can be also by setting the `RestoreLockedMode` MSBuild property to `true` |  
 | `--force-evaluate` | This option is useful with packages with floating version defined in the project. By default, NuGet restore will not update the package version automatically upon each restore unless you run restore with `--force-evaluate` option. |
 | `--lock-file-path` | Defines a custom lock file location for a project. This can be also achieved by setting the MSBuild property `NuGetLockFilePath`. By default, NuGet supports `packages.lock.json` at the root directory. If you have multiple projects in the same directory, NuGet supports project specific lock file `packages.<project_name>.lock.json` |
