@@ -57,7 +57,7 @@ Common optional properties:
 - A short description for the [Package Manager UI in Visual Studio](../tools/package-manager-ui.md)
 - A locale ID
 - Project URL
-- License as an expression or file (`licenseUrl` is being deprecated, use the [`license` nuspec metadata element](../reference/nuspec#license))
+- License as an expression or file (`licenseUrl` is being deprecated, use the [`license` nuspec metadata element](../reference/nuspec.md#license))
 - An icon URL
 - Lists of dependencies and references
 - Tags that assist in gallery searches
