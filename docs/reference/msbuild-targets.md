@@ -50,7 +50,9 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | Description | Description | "Package Description" | |
 | Copyright | Copyright | empty | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
-| LicenseUrl | PackageLicenseUrl | empty | |
+| license | PackageLicenseExpression | empty | Corresponds to <license type="expression"> |
+| license | PackageLicenseFile | empty | Corresponds to <license type="file">. You may need to explicitly pack the referenced license file. |
+| LicenseUrl | PackageLicenseUrl | empty | `licenseUrl` is being deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
 | ProjectUrl | PackageProjectUrl | empty | |
 | IconUrl | PackageIconUrl | empty | |
 | Tags | PackageTags | empty | Tags are semi-colon delimited. |
@@ -72,6 +74,8 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
+- PackageLicenseExpression
+- PackageLicenseFile
 - PackageLicenseUrl
 - PackageProjectUrl
 - PackageIconUrl
@@ -179,6 +183,20 @@ When using `MSBuild /t:pack /p:IncludeSymbols=true`, the corresponding `.pdb` fi
 This is the same as `IncludeSymbols`, except that it copies source files along with `.pdb` files as well. All files of type `Compile` are copied over to `src\<ProjectName>\` preserving the relative path folder structure in the resulting package. The same also happens for source files of any `ProjectReference` which has `TreatAsPackageReference` set to `false`.
 
 If a file of type Compile, is outside the project folder, then it's just added to `src\<ProjectName>\`.
+
+### Packing a license file
+
+When packing a license file, you need to use PackageLicenseFile property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. For example:
+
+```xml
+<PropertyGroup>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+</PropertyGroup>
+
+<ItemGroup>
+    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+</ItemGroup>
+```
 
 ### IsTool
 
