@@ -94,7 +94,7 @@ You run `nuget spec` only once to generate the initial manifest. When updating t
         <title>$title$</title>
         <authors>$author$</authors>
         <owners>$author$</owners>
-        <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+        <license type=""></license>
         <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
         <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -110,7 +110,7 @@ You run `nuget spec` only once to generate the initial manifest. When updating t
 
 1. NuGet produces an error if you try to create a package with default values in your `.nuspec` file, so you must edit the following fields before proceeding. See [.nuspec file reference - optional metadata elements](../reference/nuspec.md#optional-metadata-elements) for a description of how these are used.
 
-    - licenseUrl
+    - license
     - projectUrl
     - iconUrl
     - releaseNotes
