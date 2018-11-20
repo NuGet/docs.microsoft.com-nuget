@@ -27,7 +27,7 @@ There is no interactive switch on `dotnet build` and `dotnet publish`.
 ## Authentication in MSBuild
 
 Similar to dotnet.exe, MSBuild.exe is by default non interactive the MSBuild.exe authentication mechanism is device flow.
-To allow the restore to pause and wait for authentication, call restore with `msbuild /t:restore /p:NuGetInteractive="true"`.
+To allow the restore to pause and wait for authentication, call restore with `msbuild -t:restore -p:NuGetInteractive="true"`.
 
 ## Creating a cross platform authentication plugin
 
