@@ -177,8 +177,8 @@ In some situations you may want to enable signing and verification using certifi
 
 ### Sync repository certificates
 
-Package repositories should announce the certificates they use in their [service index](https://docs.microsoft.com/en-us/nuget/api/service-index). Eventually the repository will update these certificates, e.g. when the certificate expires. When that happens, clients with specific policies will require an update to the configuration to include the newly added certificate. You can easily upgrade the trusted signers associated to a repository by using the `nuget.exe` [trusted-signers sync command](tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-).
+Package repositories should announce the certificates they use in their [service index](https://docs.microsoft.com/en-us/nuget/api/service-index). Eventually the repository will update these certificates, e.g. when the certificate expires. When that happens, clients with specific policies will require an update to the configuration to include the newly added certificate. You can easily upgrade the trusted signers associated to a repository by using the `nuget.exe` [trusted-signers sync command](/nuget/tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-).
 
 ### Schema reference
 
-The complete schema reference for the client policies can be found in the [nuget.config reference](reference/nuget-config-file#trustedsigners-section)
+The complete schema reference for the client policies can be found in the [nuget.config reference](/nuget/reference/nuget-config-file#trustedsigners-section)
