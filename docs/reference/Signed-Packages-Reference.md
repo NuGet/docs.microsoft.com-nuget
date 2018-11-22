@@ -115,7 +115,7 @@ Similarly, if the default "Any" option is selected for a package where one owner
 
 *NuGet 4.9.0+ and Visual Studio version 15.9 and later*
 
-You can customize how NuGet clients validate package signatures by enabling the `signatureValidationMode` to `required`. 
+You can customize how NuGet clients validate package signatures by setting the `signatureValidationMode` to `require`. 
 
 ```xml
   <config>
@@ -123,7 +123,7 @@ You can customize how NuGet clients validate package signatures by enabling the 
   </config>
 ```
 
-This mode will verify that all packages are signed by any of the certificates trusted in the `nuget.config` file. This file allows you to specify which authors and/or repositories are trusted based on the certificate fingerprint. 
+This mode will verify that all packages are signed by any of the certificates trusted in the `nuget.config` file. This file allows you to specify which authors and/or repositories are trusted based on the certificate's fingerprint. 
 
 ### Trust package author
 
@@ -138,7 +138,7 @@ To trust packages based on the author signature use the `authors` element:
 ```
 
 >[!TIP]
->Use the `nuget.exe` [verify command](https://docs.microsoft.com/en-us/nuget/tools/cli-ref-verify) to get the `SHA256` value of the certificate fingerprint.
+>Use the `nuget.exe` [verify command](https://docs.microsoft.com/en-us/nuget/tools/cli-ref-verify) to get the `SHA256` value of the certificate's fingerprint.
 
 
 ### Trust all packages from a repository
@@ -157,8 +157,7 @@ To trust packages based on the repository signature use the `repository` element
 
 ### Trust Package Owners
 
-Repository signatures include additional metadata to identify who were the package owners at the time of submission. You can restrict packages from a repository based on a list owners:
-
+Repository signatures include additional metadata to determine the owners of the package at the time of submission. You can restrict packages from a repository based on a list of owners:
 
 ```xml
 <trustedSigners>  
@@ -174,11 +173,11 @@ Repository signatures include additional metadata to identify who were the packa
 
 ### Untrusted Root certificates
 
-In some situations you might want to enable signing and verification using certificates that do not trust to a trusted root in the local machine. You can use the `allowUntrustedRoot` attribute to customize this behavior.
+In some situations you may want to enable signing and verification using certificates that do not chain to a trusted root in the local machine. You can use the `allowUntrustedRoot` attribute to customize this behavior.
 
 ### Sync repository certificates
 
-Package repositories must announce the certificates they use in their [service index](https://docs.microsoft.com/en-us/nuget/api/service-index). Eventually the repository will update these certificates, e.g. when the certificate  expires. When that happens, clients with specific policies will require to update the configuration to include the new added certificate. You can easily upgrade the trusted signers associated to a repository by using the `nuget.exe` [trusted-signers sync command](tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-).
+Package repositories should announce the certificates they use in their [service index](https://docs.microsoft.com/en-us/nuget/api/service-index). Eventually the repository will update these certificates, e.g. when the certificate expires. When that happens, clients with specific policies will require an update to the configuration to include the newly added certificate. You can easily upgrade the trusted signers associated to a repository by using the `nuget.exe` [trusted-signers sync command](tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-).
 
 ### Schema reference
 
