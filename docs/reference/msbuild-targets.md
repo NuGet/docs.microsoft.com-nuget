@@ -184,7 +184,10 @@ This is the same as `IncludeSymbols`, except that it copies source files along w
 
 If a file of type Compile, is outside the project folder, then it's just added to `src\<ProjectName>\`.
 
-### Packing a license file
+### Packing a license expression or a license file
+
+When using a license expression, the PackageLicenseExpression property should be used. 
+[License expression sample](#https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample).
 
 When packing a license file, you need to use PackageLicenseFile property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. For example:
 
@@ -197,6 +200,7 @@ When packing a license file, you need to use PackageLicenseFile property to spec
     <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
 </ItemGroup>
 ```
+[License life sample](#https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
 ### IsTool
 
