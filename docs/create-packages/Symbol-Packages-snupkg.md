@@ -61,13 +61,13 @@ SymbolsPackageFormat property can have one of the two values: `symbols.nupkg` (t
     nuget push MyPackage.snupkg
     ```
 
-1. You can also push both primary and symbol packages at the same time using the below command. Both, .nupkg and .snupkg files need to be present in the current folder.
+1. You can also push both primary and symbol packages at the same time using the below command. Both .nupkg and .snupkg files need to be present in the current folder.
 
     ```cli
     nuget push MyPackage.nupkg
     ```
 
-In this case, NuGet will publish to nuget.org the `MyPackage.nupkg` first followed by `MyPackage.snupkg`.
+NuGet will publish to nuget.org the `MyPackage.nupkg` first, followed by `MyPackage.snupkg`.
 
 ## NuGet.org symbol server
 
