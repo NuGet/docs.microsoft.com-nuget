@@ -50,8 +50,8 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | Description | Description | "Package Description" | |
 | Copyright | Copyright | empty | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
-| license | PackageLicenseExpression | empty | Corresponds to <license type="expression"> |
-| license | PackageLicenseFile | empty | Corresponds to <license type="file">. You may need to explicitly pack the referenced license file. |
+| license | PackageLicenseExpression | empty | Corresponds to `<license type="expression">` |
+| license | PackageLicenseFile | empty | Corresponds to `<license type="file">`. You may need to explicitly pack the referenced license file. |
 | LicenseUrl | PackageLicenseUrl | empty | `licenseUrl` is being deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
 | ProjectUrl | PackageProjectUrl | empty | |
 | IconUrl | PackageIconUrl | empty | |
