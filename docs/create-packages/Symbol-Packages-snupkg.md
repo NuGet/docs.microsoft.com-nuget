@@ -67,7 +67,7 @@ SymbolsPackageFormat property can have one of the two values: `symbols.nupkg` (t
     nuget push MyPackage.nupkg
     ```
 
-NuGet will publish to nuget.org the `MyPackage.nupkg` first, followed by `MyPackage.snupkg`.
+NuGet will publish both packages to nuget.org. `MyPackage.nupkg` will be published first, followed by `MyPackage.snupkg`.
 
 ## NuGet.org symbol server
 
