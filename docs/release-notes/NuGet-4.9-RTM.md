@@ -18,85 +18,85 @@ Command line versions of the same functionality are also available:
 
 
 ## Summary: What's New in this Release
-* NuGet.exe now supports longfilenames on Windows 10 - [#6937](https://github.com/NuGet/Home/issues/6937)
-* Authenication plugins now work across MsBuild, DotNet.exe, NuGet.exe and Visual Studio, including cross platform. The first generation of authentication plugins were not supported in MsBuild, DotNet.exe. Note: VS 2017 15.9 Preview builds have a VSTS authentication plugin included. [#6486](https://github.com/NuGet/Home/issues/6486)
-* MsBuild's SDK Resolver now builds as part of NuGet and installs with NuGet tools for VS. This will avoid versions getting out sync. [#6799](https://github.com/NuGet/Home/issues/6799)
-* PackageReference now supports DevelopmentDependency metadata - [#4125](https://github.com/NuGet/Home/issues/4125)
+
+* NuGet License Expression Model - [#7301](https://github.com/NuGet/Home/issues/7301)
+
+* Improve customer success with NuGet operations - [#7108](https://github.com/NuGet/Home/issues/7108)
+
+* Signing: Enable ClientPolicies to require use of a set of Trusted Authors and Repos listed in NuGet.Config - [#6961](https://github.com/NuGet/Home/issues/6961)
+
+* Enable opt-in "GeneratePathProperty" metadata on a PackageReference to generate a per package MSBuild property to "Foo.Bar\1.0\" directory - [#6949](https://github.com/NuGet/Home/issues/6949)
+
+* create ".snupkg" files to contain symbols in pack -- enhance push to understand nuget protocol to accept snupkg files for symbol server - [#6878](https://github.com/NuGet/Home/issues/6878)
+
+* NuGet credential plugin V2 - [#6642](https://github.com/NuGet/Home/issues/6642)
+
+* Self-Contained NuGet Packages - License - [#4628](https://github.com/NuGet/Home/issues/4628)
 
 ## Known issues
-### Installing signed packages on a CI machine or in an offline environment takes longer than usual
+### Foo bar something
 
 #### Issue
-If the machine has restricted internet access (such as a build machine in a CI/CD scenario), installing/restoring a signed nuget package will result a warning ([NU3028](https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu3028)) since the revocation servers are not reachable. This is expected. However, in some cases, this may have unintended concequences such as the package install/restore taking longer than usual.
+Some more foo bar
 
 #### Workaround
-Update to Visual Studio 15.8.4 and NuGet.exe 4.8.1 where we introduced an environment variable to switch the revocation check mode.
-Setting the `NUGET_CERT_REVOCATION_MODE` environment variable to `offline` will force NuGet to check the revocation status of the certificate only against the cached certificate revocation list, and NuGet will not attempt to reach revocation servers. When the revocation check mode is set to `offline`, the warning will be downgraded to an info.
-
-> [!Warning]
-> It is not recommended to switch the revocation check mode to offline under normal cirumstances. Doing so will cause NuGet to skip online revocation check and perform only an offline revocation check against the cached certificate revocation list which may be out of date. This means packages where the signing certificate may have been revoked, will continue to be installed/restored, which otherwise would have failed revocation check and would not have been installed.
-
-### The `Migrate packages.config to PackageReference...` option is not available in the right-click context menu
-
-#### Issue
-
-When a project is first opened, NuGet may not have initialized until a NuGet operation is performed. This causes the migration option to not show up in the right-click context menu on `packages.config` or `References`.
-
-#### Workaround
-
-Perform any one of the following NuGet actions:
-* Open the Package Manager UI - Right-click on `References` and select `Manage NuGet Packages...`
-* Open the Package Manager Console - From `Tools > NuGet Package Manager`, select `Package Manager Console`
-* Run NuGet restore - Right-click on the solution node in the Solution Explorer and select `Restore NuGet Packages`
-* Build the project which also triggers NuGet restore
-
-You should now be able to see the migration option. Note that this option is not supported and will not show up for ASP.NET and C++ project types.
-Note: This has been fixed in VS 2017 15.9 Preview 3
+Foo bar workarond
 
 ## Issues fixed in this release
 
 ### Bugs
-#### Signing
-* Signing: Installing signed package in offline environment [#7008](https://github.com/NuGet/Home/issues/7008) -- Fixed in 4.8.1
-* Signing:  incorrect URL check - [#7174](https://github.com/NuGet/Home/issues/7174)
-* Signing:  check package integrity in RepositorySignatureVerifier when package is repository countersigned - [#6926](https://github.com/NuGet/Home/issues/6926)
-* "Package Integrity check failed." should have package ID in message (and error code) - [#6944](https://github.com/NuGet/Home/issues/6944)
-* Repository signed package verification allows packages signed by different certificate - [#6884](https://github.com/NuGet/Home/issues/6884)
-* NuGet - Signing - Timestamp URL can not be https:// ? - [#6871](https://github.com/NuGet/Home/issues/6871)
-* Don't NullRef in NuSpec packing scenario, also improve options - [#6866](https://github.com/NuGet/Home/issues/6866)
-* Memory is invalid while updating signer info when adding timestamp to countersignature - [#6840](https://github.com/NuGet/Home/issues/6840)
-* Signing:  remove CTL exceptions - [#6794](https://github.com/NuGet/Home/issues/6794)
-* Signing:  contentUrl MUST be HTTPS - [#6777](https://github.com/NuGet/Home/issues/6777)
-* Signing:  SignedPackageVerifierSettings.VSClientDefaultPolicy is unused - [#6601](https://github.com/NuGet/Home/issues/6601)
+
+* Warnings elevated to errors (via WarnAsErrors) raised by PackageExtraction should never leave extracted package around - [#7445](https://github.com/NuGet/Home/issues/7445)
+
+* Badly signed packages should not end up in the global packages folder - [#7423](https://github.com/NuGet/Home/issues/7423)
+
+* binding redirect generation should not skip facade assemblies - [#7393](https://github.com/NuGet/Home/issues/7393)
+
+* VersionRange Equals doesn't compare floating ranges - [#7324](https://github.com/NuGet/Home/issues/7324)
+
+* Restore:  performance regression using new .NET Core 2.1 HTTP stack - [#7314](https://github.com/NuGet/Home/issues/7314)
+
+* Update of a Package should not modify PrivateAssets of a PackageReference - [#7285](https://github.com/NuGet/Home/issues/7285)
+
+* Signing:  signing should fail if a package has too many package entries (>65534) - [#7248](https://github.com/NuGet/Home/issues/7248)
+
+* "dotnet nuget push" codepath should support the new credential provider - [#7233](https://github.com/NuGet/Home/issues/7233)
+
+* Support executing plugins with invariant culture (as happens in docker) - [#7223](https://github.com/NuGet/Home/issues/7223)
+
+* nuget sources add should not delete credentials from NuGet.config - [#7200](https://github.com/NuGet/Home/issues/7200)
+
+* installing a devDependency PackageReference should default to excludeassets=compile - [#7084](https://github.com/NuGet/Home/issues/7084)
+
+* fix migrator option to be displayed for all projects and show error if project is incompatible - [#6958](https://github.com/NuGet/Home/issues/6958)
+
+* "dotnet add package" should commit the restore it performs to the assets file - [#6928](https://github.com/NuGet/Home/issues/6928)
+
+* [Test Failure][zh-TW]String "Package Manager Console" doesn't localize on Package Manager Console  - [#6381](https://github.com/NuGet/Home/issues/6381)
+
+* Error message around "Unable to find project information" should be a little more specific inside VS - [#5350](https://github.com/NuGet/Home/issues/5350)
+
+* Unhelpful error message when incorrectly using nuspec version tag of nuget pack - [#2714](https://github.com/NuGet/Home/issues/2714)
+
+### DCR
+
+* Signing:  support NuGet protocol: RepositorySignatures/4.9.0 resource - [#7421](https://github.com/NuGet/Home/issues/7421)
+
+* .nupkg.metadata file will now be created during package extraction - contains "content-hash" - [#7283](https://github.com/NuGet/Home/issues/7283)
+
+* Skip authenticode verification for plugins while executing on Mono - [#7222](https://github.com/NuGet/Home/issues/7222)
+
+### None
+
+* Signing:  improve signing related error messages - [#6906](https://github.com/NuGet/Home/issues/6906)
+
+* PackageReference projects cannot find SemVer 2.0.0 packages  - [#6625](https://github.com/NuGet/Home/issues/6625)
+
+### Problem Data - should be marked as Feature/Bug/DCR or closedAs something
+* 7105 Fix flaky test in package manager related to data analytics count labels: Octokit.Label Octokit.Label Octokit.Label 
+* 6906 Signing:  improve signing related error messages labels: Octokit.Label Octokit.Label Octokit.Label 
+* 6625 PackageReference projects cannot find SemVer 2.0.0 packages  labels: Octokit.Label Octokit.Label Octokit.Label 
+* 6518 Fix NuGet's packages' metadata labels: Octokit.Label Octokit.Label Octokit.Label Octokit.Label 
 
 
-#### Pack
-* restore and build should not be needed when using dotnet.exe to pack nuspec - [#6866](https://github.com/NuGet/Home/issues/6866)
-* Allow empty replacement tokens in NuspecProperties  - [#6722](https://github.com/NuGet/Home/issues/6722)
-* PackTask throws NullReferenceException when NuspecProperties is specified - [#4649](https://github.com/NuGet/Home/issues/4649)
-
-#### Accessibility
-* [Accessibility] String ‘Prerelease’ under package button is covered by its package description in PM UI - [#4504](https://github.com/NuGet/Home/issues/4504)
-* [Accessibility] Package source drop down and settings button truncated when selecting ‘Microsoft Visual Studio Offline Packages’ in PM UI - [#4502](https://github.com/NuGet/Home/issues/4502)
-
-#### Powershell Management Console (PMC)
-* `Update-Package` ignores PackageReference version range - [#6775](https://github.com/NuGet/Home/issues/6775)
-* `Update-Package -reinstall` solution wide issue - [#3127](https://github.com/NuGet/Home/issues/3127)
-* `Update-Package [packagename] -reinstall` reinstalls all packages instead of just the named one - [#737](https://github.com/NuGet/Home/issues/737)
-* Can update to unlisted NuGet package from the Package Manager Console - [#4553](https://github.com/NuGet/Home/issues/4553)
-
-#### Misc
-* To fix `NuGet update self` NuGet.Commandline nupkg should not be semver2.0 - [#7116](https://github.com/NuGet/Home/issues/7116)
-* Improve experiences with NU1107 install failures - [#7107](https://github.com/NuGet/Home/issues/7107)
-* The serialization of GetAuthenticationCredentialRequest is incorrect - [#6983](https://github.com/NuGet/Home/issues/6983)
-* NuGet Visual Studio AsyncPackage fails to load when initialized off the UI thread - [#6976](https://github.com/NuGet/Home/issues/6976)
-* Restore is reporting misleading errors stating project.json is needed - [#6959](https://github.com/NuGet/Home/issues/6959)
-* Package manager UI : preview changes, ok button not automatically useable by keyboard - [#6893](https://github.com/NuGet/Home/issues/6893)
-* RestoreSources are ignored for project with p2p references - [#6776](https://github.com/NuGet/Home/issues/6776)
-* Creating unit test project using .NET Framework template will open older project model with packages.config - [#6736](https://github.com/NuGet/Home/issues/6736)
-* allow project reference to override package dependency - [#6536](https://github.com/NuGet/Home/issues/6536)
-* Expose NoDefaultExcludes in MSBuild task - [#6450](https://github.com/NuGet/Home/issues/6450)
-* Status message for "Clear All NuGet Cache(s)" can be hidden on window resize - [#5938](https://github.com/NuGet/Home/issues/5938)
-
-
-[List of all issues fixed in this release](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.8")
+[List of all issues fixed in this release](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9")
