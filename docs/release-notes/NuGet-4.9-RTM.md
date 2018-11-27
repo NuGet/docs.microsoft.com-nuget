@@ -1,13 +1,13 @@
 ---
-title: NuGet 4.9.0 RTM Release Notes
-description: Release notes for NuGet 4.9.0 including known issues, bug fixes, added features, and DCRs.
+title: NuGet 4.9 RTM Release Notes
+description: Release notes for NuGet 4.9 including known issues, bug fixes, new features, and DCRs.
 author: karann-msft
 ms.author: karann
 ms.date: 11/20/2018
 ms.topic: conceptual
 ---
 
-# NuGet 4.9.1 RTM Release Notes
+# NuGet 4.9 Release Notes
 
 [Visual Studio 2017 15.9 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.9.1 functionality.
 
