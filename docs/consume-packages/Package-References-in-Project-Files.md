@@ -194,7 +194,7 @@ For dotnet.exe, run:
 
 For msbuild.exe, run:
 ```
-> msbuild.exe /t:restore /p:RestoreLockedMode=true
+> msbuild.exe -t:restore -p:RestoreLockedMode=true
 ```
 
 You may also set this conditional MSBuild property in your project file:

@@ -52,7 +52,7 @@ Use one of the following methods to restore the packages:
 - In Visual Studio, enable package restore by selecting the **Tools > NuGet Package Manager > Package Manager Settings** menu command, setting both options under **Package Restore**, and selecting **OK**. Then build the solution again.
 - For .NET Core projects, run `dotnet restore` or `dotnet build` (which automatically runs restore).
 - On the command line, run `nuget restore` (except for projects created with `dotnet`, in which case use `dotnet restore`).
-- On the command line with projects using the PackageReference format, run `msbuild /t:restore`.
+- On the command line with projects using the PackageReference format, run `msbuild -t:restore`.
 
 After a successful restore, the package should be present in the *global-packages* folder. For projects using PackageReference, a restore should recreate the `obj/project.assets.json` file; for projects using `packages.config`, the package should appear in the project's `packages` folder. The project should now build successfully. If not, [file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so we can follow up with you.
 
@@ -68,7 +68,7 @@ Assets file '<path>\project.assets.json' not found. Run a NuGet package restore 
 
 The `project.assets.json` file maintains a project's dependency graph when using the PackageReference management format, which is used to make sure that all necessary packages are installed on the computer. Because this file is generated dynamically through package restore, it's typically not added to source control. As a result, this error occurs when building a project with a tool such as `msbuild` that does not automatically restore packages.
 
-In this case, run `msbuild /t:restore` followed by `msbuild`, or use `dotnet build` (which restores packages automatically). You can also use any of the package restore methods in the [previous section](#missing).
+In this case, run `msbuild -t:restore` followed by `msbuild`, or use `dotnet build` (which restores packages automatically). You can also use any of the package restore methods in the [previous section](#missing).
 
 <a name="consent"></a>
 
