@@ -19,17 +19,17 @@ Command line versions of the same functionality are also available:
 
 ## Summary: What's New in 4.9.0
 
-* Improve customer success with NuGet operations - [#7108](https://github.com/NuGet/Home/issues/7108)
-
 * Signing: Enable ClientPolicies to require use of a set of Trusted Authors and Repos listed in NuGet.Config - [#6961](https://github.com/NuGet/Home/issues/6961)
-
-* Enable opt-in "GeneratePathProperty" metadata on a PackageReference to generate a per package MSBuild property to "Foo.Bar\1.0\" directory - [#6949](https://github.com/NuGet/Home/issues/6949)
 
 * create ".snupkg" files to contain symbols in pack -- enhance push to understand nuget protocol to accept snupkg files for symbol server - [#6878](https://github.com/NuGet/Home/issues/6878)
 
 * NuGet credential plugin V2 - [#6642](https://github.com/NuGet/Home/issues/6642)
 
 * Self-Contained NuGet Packages - License - [#4628](https://github.com/NuGet/Home/issues/4628)
+
+* Enable opt-in "GeneratePathProperty" metadata on a PackageReference to generate a per package MSBuild property to "Foo.Bar\1.0\" directory - [#6949](https://github.com/NuGet/Home/issues/6949)
+
+* Improve customer success with NuGet operations - [#7108](https://github.com/NuGet/Home/issues/7108)
 
 ### Issues fixed in this release
 
