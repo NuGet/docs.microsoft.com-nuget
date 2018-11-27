@@ -87,7 +87,7 @@ Foo bar workarond
 * 7105 Fix flaky test in package manager related to data analytics count labels: Octokit.Label Octokit.Label Octokit.Label 
 * 6518 Fix NuGet's packages' metadata labels: Octokit.Label Octokit.Label Octokit.Label Octokit.Label 
 
-[List of all issues fixed in this release 4.9](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9")
+[List of all issues fixed in this release 4.9.0](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9")
 
 ## Summary: What's New in 4.9.1
 
@@ -128,4 +128,4 @@ Foo bar workarond
 * 7379 NuGet.Build.Tasks.Pack package does not have license information labels: 
 * 7316 Should assemblies in /runtimes/{rid}/lib/{tfm} be added as references to target project? labels: Octokit.Label Octokit.Label Octokit.Label 
 
-[List of all issues fixed in this release 4.9.x](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.x")
+[List of all issues fixed in this release 4.9.1](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.x")
