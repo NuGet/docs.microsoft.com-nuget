@@ -99,28 +99,11 @@ Foo bar workarond
 
 ## Issues fixed in this release
 
-* 401 Unauthorized during build restore step - [#7527](https://github.com/NuGet/Home/issues/7527)
-
-* [4.9.0] dotnet.exe/nuget.exe doesn't use credentials when source name contains a whitespace - [#7517](https://github.com/NuGet/Home/issues/7517)
-
-* Unable to dotnet restore from a private VSTS feed w/ SDK 2.1.500 - the credentials are not encoded - [#7516](https://github.com/NuGet/Home/issues/7516)
-
 * Fix license link generation - [#7515](https://github.com/NuGet/Home/issues/7515)
 
 * Error codes regression for validating signatures - [#7492](https://github.com/NuGet/Home/issues/7492)
 
-### None
-
-* LicenseAcceptanceWindow and LicenseFileWindow Accessibility issues - [#7452](https://github.com/NuGet/Home/issues/7452)
-
 * NuGet.Build.Tasks.Pack package does not have license information - [#7379](https://github.com/NuGet/Home/issues/7379)
 
-* Should assemblies in /runtimes/{rid}/lib/{tfm} be added as references to target project? - [#7316](https://github.com/NuGet/Home/issues/7316)
-
-### Problem Data - should be marked as Feature/Bug/DCR or closedAs something
-
-* 7452 LicenseAcceptanceWindow and LicenseFileWindow Accessibility issues labels: Octokit.Label Octokit.Label Octokit.Label 
-* 7379 NuGet.Build.Tasks.Pack package does not have license information labels: 
-* 7316 Should assemblies in /runtimes/{rid}/lib/{tfm} be added as references to target project? labels: Octokit.Label Octokit.Label Octokit.Label 
 
 [List of all issues fixed in this release 4.9.1](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.x")
