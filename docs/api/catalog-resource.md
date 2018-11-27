@@ -234,7 +234,7 @@ tags                    | array of strings           | no       |
 title                   | string                     | no       |
 verbatimVersion         | string                     | no       | The version string as it's originally found in the .nuspec
 
-The package `version` property is the full, normalized version string. This means that SemVer 2.0.0 build data can
+The package `version` property is the full version string after normalization. This means that SemVer 2.0.0 build data can
 be included here.
 
 The `created` timestamp is when the package was first received by the package source, which is typically a short
