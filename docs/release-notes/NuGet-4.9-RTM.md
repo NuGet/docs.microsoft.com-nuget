@@ -17,7 +17,7 @@ Command line versions of the same functionality are also available:
 * DotNet.exe - [.NET Core SDK 2.1.500](https://www.microsoft.com/net/download/visual-studio-sdks)
 
 
-## Summary: What's New 4.9.0
+## Summary: What's New in 4.9.0
 
 * Improve customer success with NuGet operations - [#7108](https://github.com/NuGet/Home/issues/7108)
 
@@ -89,7 +89,7 @@ Foo bar workarond
 
 [List of all issues fixed in this release 4.9](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9")
 
-## Summary: What's New 4.9.1
+## Summary: What's New in 4.9.1
 
 * Add support for reading a writing to the nuget.config via a new command trusted-signers - [#7480](https://github.com/NuGet/Home/issues/7480)
 
