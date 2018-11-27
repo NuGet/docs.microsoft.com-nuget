@@ -17,9 +17,7 @@ Command line versions of the same functionality are also available:
 * DotNet.exe - [.NET Core SDK 2.1.500](https://www.microsoft.com/net/download/visual-studio-sdks)
 
 
-## Summary: What's New in this Release
-
-**4.9**
+## Summary: What's New 4.9.0
 
 * Improve customer success with NuGet operations - [#7108](https://github.com/NuGet/Home/issues/7108)
 
@@ -33,10 +31,6 @@ Command line versions of the same functionality are also available:
 
 * Self-Contained NuGet Packages - License - [#4628](https://github.com/NuGet/Home/issues/4628)
 
-**4.9.x**
-
-* Add support for reading a writing to the nuget.config via a new command trusted-signers - [#7480](https://github.com/NuGet/Home/issues/7480)
-
 ## Known issues
 ### Foo bar something
 
@@ -48,9 +42,6 @@ Foo bar workarond
 
 ## Issues fixed in this release
 
-### Bugs
-
-**4.9**
 * Warnings elevated to errors (via WarnAsErrors) raised by PackageExtraction should never leave extracted package around - [#7445](https://github.com/NuGet/Home/issues/7445)
 
 * Badly signed packages should not end up in the global packages folder - [#7423](https://github.com/NuGet/Home/issues/7423)
@@ -85,7 +76,33 @@ Foo bar workarond
 
 * Unhelpful error message when incorrectly using nuspec version tag of nuget pack - [#2714](https://github.com/NuGet/Home/issues/2714)
 
-**4.9.x**
+* DCR - Signing:  support NuGet protocol: RepositorySignatures/4.9.0 resource - [#7421](https://github.com/NuGet/Home/issues/7421)
+
+* DCR - .nupkg.metadata file will now be created during package extraction - contains "content-hash" - [#7283](https://github.com/NuGet/Home/issues/7283)
+
+* DCR - Skip authenticode verification for plugins while executing on Mono - [#7222](https://github.com/NuGet/Home/issues/7222)
+
+### Problem Data - should be marked as Feature/Bug/DCR or closedAs something
+
+* 7105 Fix flaky test in package manager related to data analytics count labels: Octokit.Label Octokit.Label Octokit.Label 
+* 6518 Fix NuGet's packages' metadata labels: Octokit.Label Octokit.Label Octokit.Label Octokit.Label 
+
+[List of all issues fixed in this release 4.9](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9")
+
+## Summary: What's New 4.9.1
+
+* Add support for reading a writing to the nuget.config via a new command trusted-signers - [#7480](https://github.com/NuGet/Home/issues/7480)
+
+## Known issues
+### Foo bar something
+
+#### Issue
+Some more foo bar
+
+#### Workaround
+Foo bar workarond
+
+## Issues fixed in this release
 
 * 401 Unauthorized during build restore step - [#7527](https://github.com/NuGet/Home/issues/7527)
 
@@ -97,29 +114,7 @@ Foo bar workarond
 
 * Error codes regression for validating signatures - [#7492](https://github.com/NuGet/Home/issues/7492)
 
-
-### DCR
-
-**4.9**
-
-* Signing:  support NuGet protocol: RepositorySignatures/4.9.0 resource - [#7421](https://github.com/NuGet/Home/issues/7421)
-
-* .nupkg.metadata file will now be created during package extraction - contains "content-hash" - [#7283](https://github.com/NuGet/Home/issues/7283)
-
-* Skip authenticode verification for plugins while executing on Mono - [#7222](https://github.com/NuGet/Home/issues/7222)
-
-
-**4.9.x**
-* NA
-
-
 ### None
-
-**4.9**
-* NA
-
-
-**4.9.x**
 
 * LicenseAcceptanceWindow and LicenseFileWindow Accessibility issues - [#7452](https://github.com/NuGet/Home/issues/7452)
 
@@ -127,22 +122,10 @@ Foo bar workarond
 
 * Should assemblies in /runtimes/{rid}/lib/{tfm} be added as references to target project? - [#7316](https://github.com/NuGet/Home/issues/7316)
 
-
-
 ### Problem Data - should be marked as Feature/Bug/DCR or closedAs something
-
-**4.9**
-
-* 7105 Fix flaky test in package manager related to data analytics count labels: Octokit.Label Octokit.Label Octokit.Label 
-* 6518 Fix NuGet's packages' metadata labels: Octokit.Label Octokit.Label Octokit.Label Octokit.Label 
-
-**4.9.x**
 
 * 7452 LicenseAcceptanceWindow and LicenseFileWindow Accessibility issues labels: Octokit.Label Octokit.Label Octokit.Label 
 * 7379 NuGet.Build.Tasks.Pack package does not have license information labels: 
 * 7316 Should assemblies in /runtimes/{rid}/lib/{tfm} be added as references to target project? labels: Octokit.Label Octokit.Label Octokit.Label 
-
-
-[List of all issues fixed in this release 4.9](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9")
 
 [List of all issues fixed in this release 4.9.x](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.x")
