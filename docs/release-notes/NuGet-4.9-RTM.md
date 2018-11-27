@@ -9,11 +9,11 @@ ms.topic: conceptual
 
 # NuGet 4.9 Release Notes
 
-[Visual Studio 2017 15.9 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.9.1 functionality.
+[Visual Studio 2017 15.9.0 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.9.0 functionality.
 
 
 Command line versions of the same functionality are also available:
-* NuGet.exe 4.9.0 - [nuget.org/downloads](https://nuget.org/downloads)
+* NuGet.exe 4.9.x - [nuget.org/downloads](https://nuget.org/downloads)
 * DotNet.exe - [.NET Core SDK 2.1.500](https://www.microsoft.com/net/download/visual-studio-sdks)
 
 
@@ -81,11 +81,6 @@ Foo bar workarond
 * DCR - .nupkg.metadata file will now be created during package extraction - contains "content-hash" - [#7283](https://github.com/NuGet/Home/issues/7283)
 
 * DCR - Skip authenticode verification for plugins while executing on Mono - [#7222](https://github.com/NuGet/Home/issues/7222)
-
-### Problem Data - should be marked as Feature/Bug/DCR or closedAs something
-
-* 7105 Fix flaky test in package manager related to data analytics count labels: Octokit.Label Octokit.Label Octokit.Label 
-* 6518 Fix NuGet's packages' metadata labels: Octokit.Label Octokit.Label Octokit.Label Octokit.Label 
 
 [List of all issues fixed in this release 4.9.0](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9")
 
