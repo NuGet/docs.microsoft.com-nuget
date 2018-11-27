@@ -31,16 +31,7 @@ Command line versions of the same functionality are also available:
 
 * Self-Contained NuGet Packages - License - [#4628](https://github.com/NuGet/Home/issues/4628)
 
-## Known issues
-### Foo bar something
-
-#### Issue
-Some more foo bar
-
-#### Workaround
-Foo bar workarond
-
-## Issues fixed in this release
+### Issues fixed in this release
 
 * Warnings elevated to errors (via WarnAsErrors) raised by PackageExtraction should never leave extracted package around - [#7445](https://github.com/NuGet/Home/issues/7445)
 
@@ -88,16 +79,7 @@ Foo bar workarond
 
 * Add support for reading a writing to the nuget.config via a new command trusted-signers - [#7480](https://github.com/NuGet/Home/issues/7480)
 
-## Known issues
-### Foo bar something
-
-#### Issue
-Some more foo bar
-
-#### Workaround
-Foo bar workarond
-
-## Issues fixed in this release
+### Issues fixed in this release
 
 * Fix license link generation - [#7515](https://github.com/NuGet/Home/issues/7515)
 
@@ -105,5 +87,38 @@ Foo bar workarond
 
 * NuGet.Build.Tasks.Pack package does not have license information - [#7379](https://github.com/NuGet/Home/issues/7379)
 
+[List of all issues fixed in this release 4.9.1](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.1")
 
-[List of all issues fixed in this release 4.9.1](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.x")
+## Known issues
+
+### dotnet.exe/nuget.exe doesn't use credentials when source name contains a whitespace - [#7517](https://github.com/NuGet/Home/issues/7517)
+
+#### Issue
+Some more foo bar
+
+#### Workaround
+Foo bar workarond
+
+### dotnet nuget push --interactive gives an error on Mac. - [#7519](https://github.com/NuGet/Home/issues/7519)
+
+#### Issue
+Some more foo bar
+
+#### Workaround
+Foo bar workarond
+
+### LicenseAcceptanceWindow and LicenseFileWindow Accessibility issues - [#7452](https://github.com/NuGet/Home/issues/7452)
+
+#### Issue
+Some more foo bar
+
+#### Workaround
+Foo bar workarond
+
+### Packages in FallbackFolders installed by .NET Core SDK are custom installed, and fail signature validation. - [#7414](https://github.com/NuGet/Home/issues/7414)
+
+#### Issue
+Some more foo bar
+
+#### Workaround
+Foo bar workarond
