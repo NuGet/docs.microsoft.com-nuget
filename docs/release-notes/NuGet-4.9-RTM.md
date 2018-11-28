@@ -94,26 +94,26 @@ Command line versions of the same functionality are also available:
 ### dotnet.exe/nuget.exe doesn't use credentials when source name contains a whitespace - [#7517](https://github.com/NuGet/Home/issues/7517)
 
 #### Issue
-Some more foo bar
+When there is a whitespace in the source name, nuget.exe throws an error like `The ' ' character, hexadecimal value 0x20, cannot be included in a name.`
 
 #### Workaround
-change the name of the source to not contain a space (pato)
+Change the name of the source to not contain a whitespace.
 
 ### dotnet nuget push --interactive gives an error on Mac. - [#7519](https://github.com/NuGet/Home/issues/7519)
 
 #### Issue
-Some more foo bar
+The `--interactive` argument is not being forwarded by the dotnet cli and results in the error `error: Missing value for option 'interactive'`
 
 #### Workaround
-No workaorund (check with Nikolche)
+No workaorund
 
 ### LicenseAcceptanceWindow and LicenseFileWindow Accessibility issues - [#7452](https://github.com/NuGet/Home/issues/7452)
 
 #### Issue
-Some more foo bar
+The license acceptance window and license file window have accessiblity issues with keyboard navigation and narration with screen reader and JAWS.
 
 #### Workaround
-No workaround (check with Nikolche)
+No workaround.
 
 ### Packages in FallbackFolders installed by .NET Core SDK are custom installed, and fail signature validation. - [#7414](https://github.com/NuGet/Home/issues/7414)
 
