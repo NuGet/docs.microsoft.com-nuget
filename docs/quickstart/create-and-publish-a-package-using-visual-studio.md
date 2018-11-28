@@ -90,12 +90,12 @@ namespace AppLogger
 As an alternate to using the **Pack** menu command, NuGet 4.x+ and MSBuild 15.1+ supports a `pack` target when the project contains the necessary package data. Open a command prompt, navigate to your project folder and run the following command. (You typically want to start the "Developer Command Prompt for Visual Studio" from the Start menu, as it will be configured with all the necessary paths for MSBuild.)
 
 ```cli
-msbuild /t:pack /p:Configuration=Release
+msbuild -t:pack -p:Configuration=Release
 ```
 
 The package can then be found in the `bin\Release` folder.
 
-For additional options with `msbuild /t:pack`, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md#pack-target).
+For additional options with `msbuild -t:pack`, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md#pack-target).
 
 ## Publish the package
 

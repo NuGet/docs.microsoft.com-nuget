@@ -175,7 +175,10 @@ requireLicenseAcceptance | boolean                    | no       |
 summary                  | string                     | no       | 
 tags                     | string or array of string  | no       | 
 title                    | string                     | no       | 
-version                  | string                     | yes      | The version of the package
+version                  | string                     | yes      | The full version string after normalization
+
+The package `version` property is the full version string after normalization. This means that SemVer 2.0.0 build data
+can be included here.
 
 The `dependencyGroups` property is an array of objects representing the dependencies of the package, grouped by target
 framework. If the package has no dependencies, the `dependencyGroups` property is missing, an empty array, or the

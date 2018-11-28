@@ -32,7 +32,7 @@ Similarly, you can write an MSBuild task, write your own target and consume NuGe
 
 ## pack target
 
-For .NET Standard projects using the PackageReference format, using `msbuild /t:pack` draws inputs from the project file to use in creating a NuGet package.
+For .NET Standard projects using the PackageReference format, using `msbuild -t:pack` draws inputs from the project file to use in creating a NuGet package.
 
 The table below describes the MSBuild properties that can be added to a project file within the first `<PropertyGroup>` node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience the table is organized by the equivalent property in a [`.nuspec` file](../reference/nuspec.md).
 
@@ -50,7 +50,9 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | Description | Description | "Package Description" | |
 | Copyright | Copyright | empty | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
-| LicenseUrl | PackageLicenseUrl | empty | |
+| license | PackageLicenseExpression | empty | Corresponds to `<license type="expression">` |
+| license | PackageLicenseFile | empty | Corresponds to `<license type="file">`. You may need to explicitly pack the referenced license file. |
+| LicenseUrl | PackageLicenseUrl | empty | `licenseUrl` is being deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
 | ProjectUrl | PackageProjectUrl | empty | |
 | IconUrl | PackageIconUrl | empty | |
 | Tags | PackageTags | empty | Tags are semi-colon delimited. |
@@ -72,6 +74,8 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
+- PackageLicenseExpression
+- PackageLicenseFile
 - PackageLicenseUrl
 - PackageProjectUrl
 - PackageIconUrl
@@ -172,7 +176,7 @@ Other pack specific metadata that you can set on any of the above items includes
 
 ### IncludeSymbols
 
-When using `MSBuild /t:pack /p:IncludeSymbols=true`, the corresponding `.pdb` files are copied along with other output files (`.dll`, `.exe`, `.winmd`, `.xml`, `.json`, `.pri`). Note that setting `IncludeSymbols=true` creates a regular package *and* a symbols package.
+When using `MSBuild -t:pack -p:IncludeSymbols=true`, the corresponding `.pdb` files are copied along with other output files (`.dll`, `.exe`, `.winmd`, `.xml`, `.json`, `.pri`). Note that setting `IncludeSymbols=true` creates a regular package *and* a symbols package.
 
 ### IncludeSource
 
@@ -180,28 +184,46 @@ This is the same as `IncludeSymbols`, except that it copies source files along w
 
 If a file of type Compile, is outside the project folder, then it's just added to `src\<ProjectName>\`.
 
+### Packing a license expression or a license file
+
+When using a license expression, the PackageLicenseExpression property should be used. 
+[License expression sample](#https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample).
+
+When packing a license file, you need to use PackageLicenseFile property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. For example:
+
+```xml
+<PropertyGroup>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+</PropertyGroup>
+
+<ItemGroup>
+    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+</ItemGroup>
+```
+[License life sample](#https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
+
 ### IsTool
 
-When using `MSBuild /t:pack /p:IsTool=true`, all output files, as specified in the [Output Assemblies](#output-assemblies) scenario, are copied to the `tools` folder instead of the `lib` folder. Note that this is different from a `DotNetCliTool` which is specified by setting the `PackageType` in `.csproj` file.
+When using `MSBuild -t:pack -p:IsTool=true`, all output files, as specified in the [Output Assemblies](#output-assemblies) scenario, are copied to the `tools` folder instead of the `lib` folder. Note that this is different from a `DotNetCliTool` which is specified by setting the `PackageType` in `.csproj` file.
 
 ### Packing using a .nuspec
 
 You can use a `.nuspec` file to pack your project provided that you have a SDK project file to import `NuGet.Build.Tasks.Pack.targets` so that the pack task can be executed. You still need to restore the project before you can pack a nuspec file. The target framework of the project file is irrelevant and not used when packing a nuspec. The following three MSBuild properties are relevant to packing using a `.nuspec`:
 
 1. `NuspecFile`: relative or absolute path to the `.nuspec` file being used for packing.
-1. `NuspecProperties`: a semicolon-separated list of key=value pairs. Due to the way MSBuild command-line parsing works, multiple properties must be specified as follows: `/p:NuspecProperties=\"key1=value1;key2=value2\"`.  
+1. `NuspecProperties`: a semicolon-separated list of key=value pairs. Due to the way MSBuild command-line parsing works, multiple properties must be specified as follows: `-p:NuspecProperties=\"key1=value1;key2=value2\"`.  
 1. `NuspecBasePath`: Base path for the `.nuspec` file.
 
 If using `dotnet.exe` to pack your project, use a command like the following:
 
 ```cli
-dotnet pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
+dotnet pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:NuspecProperties=<> -p:NuspecBasePath=<Base path> 
 ```
 
 If using MSBuild to pack your project, use a command like the following:
 
 ```cli
-msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
+msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:NuspecProperties=<> -p:NuspecBasePath=<Base path> 
 ```
 
 Please note that packing a nuspec using dotnet.exe or msbuild also leads to building the project by default. This can be avoided by passing ```--no-build``` property to dotnet.exe, which is the equivalent of setting ```<NoBuild>true</NoBuild> ``` in your project file, along with setting ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` in the project file
@@ -278,7 +300,7 @@ An example:
 
 ## restore target
 
-`MSBuild /t:restore` (which `nuget restore` and `dotnet restore` use with .NET Core projects), restores packages referenced in the project file as follows:
+`MSBuild -t:restore` (which `nuget restore` and `dotnet restore` use with .NET Core projects), restores packages referenced in the project file as follows:
 
 1. Read all project to project references
 1. Read the project properties to find the intermediate folder and target frameworks
@@ -291,7 +313,7 @@ The `restore` target works **only** for projects using the PackageReference form
 
 ### Restore properties
 
-Additional restore settings may come from MSBuild properties in the project file. Values can also be set from the command line using the `/p:` switch (see Examples below).
+Additional restore settings may come from MSBuild properties in the project file. Values can also be set from the command line using the `-p:` switch (see Examples below).
 
 | Property | Description |
 |--------|--------|
@@ -310,7 +332,7 @@ Additional restore settings may come from MSBuild properties in the project file
 Command line:
 
 ```cli
-msbuild /t:restore /p:RestoreConfigFile=<path>
+msbuild -t:restore -p:RestoreConfigFile=<path>
 ```
 
 Project file:

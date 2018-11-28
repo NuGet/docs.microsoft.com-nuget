@@ -225,6 +225,7 @@
 ## [Deleting packages](policies/deleting-packages.md)
 # Release notes
 ## [Known Issues](release-notes/known-issues.md)
+## [NuGet 4.9 RTM](release-notes/NuGet-4.9-RTM.md)
 ## [NuGet 4.8 RTM](release-notes/NuGet-4.8-RTM.md)
 ## [NuGet 4.7 RTM](release-notes/NuGet-4.7-RTM.md)
 ## [NuGet 4.6 RTM](release-notes/NuGet-4.6-RTM.md)

@@ -37,10 +37,10 @@ nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 
-msbuild /t:pack MyPackage.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
+msbuild -t:pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
 ```
 
-`.snupkgs` are not produced by default. You must pass the `SymbolPackageFormat` property along with `-Symbols` in case of nuget.exe, `--include-symbols` in case of dotnet.exe, or `/p:IncludeSymbols` in case of msbuild.
+`.snupkgs` are not produced by default. You must pass the `SymbolPackageFormat` property along with `-Symbols` in case of nuget.exe, `--include-symbols` in case of dotnet.exe, or `-p:IncludeSymbols` in case of msbuild.
 
 SymbolPackageFormat property can have one of the two values: `symbols.nupkg` (the default) or `snupkg`. If the SymbolPackageFormat is not specified, it defaults to `symbols.nupkg` and a legacy symbol package will be created.
 
@@ -61,13 +61,13 @@ SymbolPackageFormat property can have one of the two values: `symbols.nupkg` (th
     nuget push MyPackage.snupkg
     ```
 
-1. You can also push both primary and symbol packages at the same time using the below command. Both, .nupkg and .snupkg files need to be present in the current folder.
+1. You can also push both primary and symbol packages at the same time using the below command. Both .nupkg and .snupkg files need to be present in the current folder.
 
     ```cli
     nuget push MyPackage.nupkg
     ```
 
-In this case, NuGet will publish to nuget.org the `MyPackage.nupkg` first followed by `MyPackage.snupkg`.
+NuGet will publish both packages to nuget.org. `MyPackage.nupkg` will be published first, followed by `MyPackage.snupkg`.
 
 ## NuGet.org symbol server
 
