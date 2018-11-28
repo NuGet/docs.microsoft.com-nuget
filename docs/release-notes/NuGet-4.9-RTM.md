@@ -73,7 +73,7 @@ Command line versions of the same functionality are also available:
 
 * DCR - Skip authenticode verification for plugins while executing on Mono - [#7222](https://github.com/NuGet/Home/issues/7222)
 
-[List of all issues fixed in this release 4.9.0](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9")
+[List of all issues fixed in this release 4.9.0](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9") <br>
 
 ## Summary: What's New in 4.9.1
 
