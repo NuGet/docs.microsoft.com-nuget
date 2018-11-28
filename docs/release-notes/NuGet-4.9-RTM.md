@@ -19,7 +19,7 @@ Command line versions of the same functionality are also available:
 
 ## Summary: What's New in 4.9.0
 
-* Signing: Enable ClientPolicies to require use of a set of Trusted Authors and Repos listed in NuGet.Config - [#6961](https://github.com/NuGet/Home/issues/6961)
+* Signing: Enable ClientPolicies to require use of a set of Trusted Authors and Repositories listed in NuGet.Config - [#6961](https://github.com/NuGet/Home/issues/6961)
 
 * create ".snupkg" files to contain symbols in pack -- enhance push to understand nuget protocol to accept snupkg files for symbol server - [#6878](https://github.com/NuGet/Home/issues/6878)
 
