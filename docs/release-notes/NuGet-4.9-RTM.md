@@ -97,7 +97,7 @@ Command line versions of the same functionality are also available:
 Some more foo bar
 
 #### Workaround
-Foo bar workarond
+change the name of the source to not contain a space (pato)
 
 ### dotnet nuget push --interactive gives an error on Mac. - [#7519](https://github.com/NuGet/Home/issues/7519)
 
@@ -105,7 +105,7 @@ Foo bar workarond
 Some more foo bar
 
 #### Workaround
-Foo bar workarond
+No workaorund (check with Nikolche)
 
 ### LicenseAcceptanceWindow and LicenseFileWindow Accessibility issues - [#7452](https://github.com/NuGet/Home/issues/7452)
 
@@ -113,12 +113,12 @@ Foo bar workarond
 Some more foo bar
 
 #### Workaround
-Foo bar workarond
+No workaround (check with Nikolche)
 
 ### Packages in FallbackFolders installed by .NET Core SDK are custom installed, and fail signature validation. - [#7414](https://github.com/NuGet/Home/issues/7414)
 
 #### Issue
-Some more foo bar
+
 
 #### Workaround
-Foo bar workarond
+
