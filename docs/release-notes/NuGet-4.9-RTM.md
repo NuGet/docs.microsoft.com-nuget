@@ -14,7 +14,7 @@ ms.topic: conceptual
 
 Command line versions of the same functionality are also available:
 * NuGet.exe 4.9.x - [nuget.org/downloads](https://nuget.org/downloads)
-* DotNet.exe - [.NET Core SDK 2.1.500](https://www.microsoft.com/net/download/visual-studio-sdks)
+* dotnet.exe - [.NET Core SDK 2.1.500](https://www.microsoft.com/net/download/visual-studio-sdks)
 
 
 ## Summary: What's New in 4.9.0
