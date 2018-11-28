@@ -105,12 +105,12 @@ Change the name of the source to not contain a whitespace.
 The `--interactive` argument is not being forwarded by the dotnet cli and results in the error `error: Missing value for option 'interactive'`
 
 #### Workaround
-No workaorund
+No workaround.
 
 ### LicenseAcceptanceWindow and LicenseFileWindow Accessibility issues - [#7452](https://github.com/NuGet/Home/issues/7452)
 
 #### Issue
-The license acceptance window and license file window have accessiblity issues with keyboard navigation and narration with screen reader and JAWS.
+The license acceptance window and license file window have accessibility issues with keyboard navigation and narration with screen reader and JAWS.
 
 #### Workaround
 No workaround.
