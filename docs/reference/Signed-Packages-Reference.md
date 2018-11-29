@@ -47,3 +47,9 @@ nuget.org has additional requirements for accepting a signed package:
     - The author signing certificate must be valid for code signing.
     - The timestamp certificate must be valid for timestamping.
   - Must not be revoked at signing time. (This may not be knowable at submission time, so nuget.org periodically rechecks revocation status).
+  
+  
+## Related articles
+
+- [Signing NuGet Packages](../create-packages/Sign-a-Package.md)
+- [Installing signed packages](installing-signed-packages.md)
