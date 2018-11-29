@@ -12,9 +12,6 @@ ms.reviewer: anangaur
 
 Signed packages allows for content integrity verification checks which provides protection against content tampering. The package signature also serves as the single source of truth about the actual origin of the package and bolsters package authenticity for the consumer. This guide assumes you have already [created a package](creating-a-package.md).
 
-> [!Important]
-> Package signing is currently supported only when using nuget.exe on Windows. Verification of signed packages is currently supported only when using nuget.exe or Visual Studio on Windows.
-
 ## Get a code signing certificate
 
 Valid certificates may be obtained from a public certificate authority like such as [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml), etc. The complete list of certification authorities trusted by Windows can be obtained from [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners).
@@ -96,13 +93,7 @@ This command creates a testing certificate available in the current user's perso
 
 * Similarly, if the default "Any" option is selected for a package where one owner has a certificate registered and another owner does not have any certificate registered, then NuGet.org accepts either a signed package with a signature registered by one of its owners or an unsigned package (because one of the owners does not have any certificate registered).
 
-## Install a signed package
+## Related articles
 
-Signed packages don't require any specific action to be installed; however, if the content has been modified since it was signed, the installation is blocked and produces an [error NU3008](../reference/errors-and-warnings/NU3008.md).
-
-> [!Warning]
-> Packages signed with untrusted certificates are considered as unsigned and are installed without any warnings or errors like any other unsigned package.
-
-## Related Topics
-
-[Signed Packages Reference](../reference/Signed-Packages-Reference.md)
+- [Installing signed packages](installing-signed-packages.md)
+- [Signed Packages Reference](../reference/Signed-Packages-Reference.md)
