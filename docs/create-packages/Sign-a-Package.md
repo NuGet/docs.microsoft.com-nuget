@@ -81,7 +81,7 @@ This command creates a testing certificate available in the current user's perso
 > [!Warning]
 > nuget.org does not accept packages signed with self-issued certificates.
 
-## Managing package signing requirements on NuGet.org
+## Managing signing requirements for your package on NuGet.org
 1. [Sign in](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) to NuGet.org.
 
 1. Go to `Manage Packages` 
