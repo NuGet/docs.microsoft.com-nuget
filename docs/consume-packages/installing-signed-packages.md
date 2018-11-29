@@ -84,3 +84,8 @@ Package repositories should announce the certificates they use in their [service
 ### Schema reference
 
 The complete schema reference for the client policies can be found in the [nuget.config reference](/nuget/reference/nuget-config-file#trustedsigners-section)
+
+## Related articles
+
+- [Signing NuGet Packages](../create-packages/Sign-a-Package.md)
+- [Signed Packages Reference](../reference/Signed-Packages-Reference.md)
