@@ -59,6 +59,7 @@ The general process is as follows:
 
 ## Related articles
 
+- [Installing signed packages](installing-signed-packages.md)
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
 - [Finding and choosing packages](../consume-packages/finding-and-choosing-packages.md)
 - [Managing the NuGet cache and global-packages folders](managing-the-global-packages-and-cache-folders.md)
