@@ -93,7 +93,7 @@ If you are using a license that hasn’t been assigned an SPDX identifier, or it
 <package>
   <metadata>
     ...
-    <license type="file">LICENSE.txt</license>
+    <license type="file">licenses/LICENSE.txt</license>
     ...
   </metadata>
   <files>
