@@ -16,7 +16,7 @@ Signed packages don't require any specific action to be installed; however, if t
 
 ## Configure package signature requirements
 
-*NuGet 4.9.0+ and Visual Studio version 15.9 and later*
+*NuGet 4.9.0+ and Visual Studio version 15.9 and later on Windows*
 
 You can configure how NuGet clients validate package signatures by setting the `signatureValidationMode` to `require`. 
 
