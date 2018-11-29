@@ -102,7 +102,7 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 1. Even though you added the Newtonsoft.Json package to the project, red squiggles appears under `JsonConvert` because you need a `using` statement at the top of the code file:
 
     ```cs
-    using Newtonsoft.json;
+    using Newtonsoft.Json;
     ```
 
 1. Build and run the app by pressing F5 or selecting **Debug > Start Debugging**:
