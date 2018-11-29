@@ -10,11 +10,13 @@ ms.reviewer: anangaur
 
 # Signing NuGet Packages
 
-Signing a package is a process that makes sure the package has not been modified since its creation.
+Signed packages allows for content integrity verification checks which provides protection against content tampering. The package signature also serves as the single source of truth about the actual origin of the package and bolsters package authenticity for the consumer. This guide assumes you have already [created a package](creating-a-package.md).
 
-## Prerequisites
+## Get a code signing certificate
 
-1. The package (a `.nupkg` file) to sign. See [Creating a package](creating-a-package.md).
+Valid certificates may be obtained from a public certificate authority like such as [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml), etc. The complete list of certification authorities trusted by Windows can be obtained from [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners).
+
+You can use self-issued certificates for testing purposes. However, packages signed using self-issued certificates are not accepted by NuGet.org. Learn more about [creating a test certificate]()
 
 1. nuget.exe 4.6.0 or later. See how to [Install NuGet CLI](../install-nuget-client-tools.md#nugetexe-cli).
 
@@ -54,6 +56,27 @@ Signed packages don't require any specific action to be installed; however, if t
 
 > [!Warning]
 > Packages signed with untrusted certificates are considered as unsigned and are installed without any warnings or errors like any other unsigned package.
+
+## Create a test certificate
+
+You can use self-issued certificates for testing purposes. To create a self-issued certificate, use the [New-SelfSignedCertificate PowerShell command](/powershell/module/pkiclient/new-selfsignedcertificate.md).
+
+```ps
+New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
+                          -FriendlyName "NuGetTestDeveloper" `
+                          -Type CodeSigning `
+                          -KeyUsage DigitalSignature `
+                          -KeyLength 2048 `
+                          -KeyAlgorithm RSA `
+                          -HashAlgorithm SHA256 `
+                          -Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
+                          -CertStoreLocation "Cert:\CurrentUser\My" 
+```
+
+This command creates a testing certificate available in the current user's personal certificate store. You can open the certificate store by running `certmgr.msc` to see the newly created certificate.
+
+> [!Warning]
+> nuget.org does not accept packages signed with self-issued certificates.
 
 ## See also
 
