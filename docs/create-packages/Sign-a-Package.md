@@ -22,7 +22,7 @@ You can use self-issued certificates for testing purposes. However, packages sig
 
 * You can export an existing certificate to a binary DER format by using the Certificate Export Wizard.
 
-![Certificate Export Wizard](../reference/media/CertificateExportWizard.png)
+  ![Certificate Export Wizard](../reference/media/CertificateExportWizard.png)
 
 * You can also export the certificate using the [Export-Certificate PowerShell command](/powershell/module/pkiclient/export-certificate.md).
 
