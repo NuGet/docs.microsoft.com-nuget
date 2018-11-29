@@ -52,4 +52,4 @@ nuget.org has additional requirements for accepting a signed package:
 ## Related articles
 
 - [Signing NuGet Packages](../create-packages/Sign-a-Package.md)
-- [Installing signed packages](installing-signed-packages.md)
+- [Installing signed packages](../consume-packages/installing-signed-packages.md)
