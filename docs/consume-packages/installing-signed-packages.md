@@ -87,5 +87,6 @@ The complete schema reference for the client policies can be found in the [nuget
 
 ## Related articles
 
+- [Different ways to install a NuGet Package](ways-to-install-a-package.md)
 - [Signing NuGet Packages](../create-packages/Sign-a-Package.md)
 - [Signed Packages Reference](../reference/Signed-Packages-Reference.md)
