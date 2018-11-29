@@ -53,7 +53,7 @@ To publish a signed package, you must first register the certificate with NuGet.
 
 **Note**
 * One user can submit multiple certificates and the same certificate can be registered by multiple users.
-* Once a user has a certificate registered, all future package submissions **must** be signed with one of the certificates. See [Managing package signing requirements on NuGet.org]()
+* Once a user has a certificate registered, all future package submissions **must** be signed with one of the certificates. See [Manage signing requirements for your package on NuGet.org](#manage-signing-requirements-for-your-package-on-nugetorg)
 * Users can also remove a registered certificate from the account. Once a certificate is removed, new packages signed with that certificate will fail at submission. Existing packages aren't affected.
 
 ## Publish the package
@@ -79,9 +79,9 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 This command creates a testing certificate available in the current user's personal certificate store. You can open the certificate store by running `certmgr.msc` to see the newly created certificate.
 
 > [!Warning]
-> nuget.org does not accept packages signed with self-issued certificates.
+> NuGet.org does not accept packages signed with self-issued certificates.
 
-## Managing signing requirements for your package on NuGet.org
+## Manage signing requirements for your package on NuGet.org
 1. [Sign in](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) to NuGet.org.
 
 1. Go to `Manage Packages` 
@@ -91,7 +91,7 @@ This command creates a testing certificate available in the current user's perso
 
 * If a package has multiple owners, by default, "Any" owner's certificates can be used to sign the package. As a co-owner of the package, you can override "Any" with yourself or any other co-owner to be the required signer. If you make an owner  who does not have any certificate registered, then unsigned packages will be allowed. 
 
-* Similarly, if the default "Any" option is selected for a package where one owner has a certificate registered and another owner does not have any certificate registered, then nuget.org accepts either a signed package with a signature registered by one of its owners or an unsigned package (because one of the owners does not have any certificate registered).
+* Similarly, if the default "Any" option is selected for a package where one owner has a certificate registered and another owner does not have any certificate registered, then NuGet.org accepts either a signed package with a signature registered by one of its owners or an unsigned package (because one of the owners does not have any certificate registered).
 
 ## Install a signed package
 
