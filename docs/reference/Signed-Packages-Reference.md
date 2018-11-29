@@ -111,7 +111,7 @@ Similarly, if the default "Any" option is selected for a package where one owner
 
 ![Configure package signers](media/configure-package-signers.png)
 
-## Customize package consumption requirements
+## Configure package consumption requirements
 
 *NuGet 4.9.0+ and Visual Studio version 15.9 and later*
 
