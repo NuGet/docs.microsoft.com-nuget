@@ -70,27 +70,25 @@ Installation:
 | Feature | dotnet CLI | nuget CLI (Windows) | nuget CLI (Mono) | Visual Studio (Windows) | Visual Studio for Mac |
 | --- | --- | --- | --- | --- | --- |
 | Search packages |  | &#10004; | &#10004; | &#10004; | &#10004; |
-| Install/uninstall packages | &#10004;(1) | &#10004;(2) | &#10004; | &#10004; | &#10004; |
+| Install/uninstall packages | &#10004; | &#10004;(1) | &#10004; | &#10004; | &#10004; |
 | Update packages | &#10004; | &#10004; | | &#10004; | &#10004; |
-| Restore packages | &#10004; | &#10004; | &#10004;(3) | &#10004; | &#10004; |
+| Restore packages | &#10004; | &#10004; | &#10004;(2) | &#10004; | &#10004; |
 | Manage package feeds (sources) | | &#10004; | &#10004; | &#10004; | &#10004; |
-| Manage packages on a feed | &#10004;(1) | &#10004; | &#10004; | | |
+| Manage packages on a feed | &#10004; | &#10004; | &#10004; | | |
 | Set API keys for feeds | | &#10004; | &#10004; | | |
-| Create packages(4) | &#10004; | &#10004; | &#10004;(5) | &#10004; | |
-| Publish packages | &#10004;(1) | &#10004; | &#10004; | &#10004; |  |
+| Create packages(3) | &#10004; | &#10004; | &#10004;(4) | &#10004; | |
+| Publish packages | &#10004; | &#10004; | &#10004; | &#10004; |  |
 | Replicate packages |  | &#10004; | &#10004; | | |
 | Manage *global-package* and cache folders | &#10004; | &#10004; | &#10004; | | |
 | Manage NuGet configuration | | &#10004; | &#10004; | | |
 
-(1) Packages on nuget.org only
+(1) Does not affect project files; use `dotnet.exe` instead.
 
-(2) Does not affect project files; use `dotnet.exe` instead.
+(2) Works only with `packages.config` file and not with solution (`.sln`) files.
 
-(3) Works only with `packages.config` file and not with solution (`.sln`) files.
+(3) Various advanced package features are available through the CLI only as they aren't represented in the Visual Studio UI tools.
 
-(4) Various advanced package features are available through the CLI only as they aren't represented in the Visual Studio UI tools.
-
-(5) Works with `.nuspec` files but not with project files.
+(4) Works with `.nuspec` files but not with project files.
 
 ### Related topics
 
