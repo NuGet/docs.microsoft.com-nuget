@@ -97,7 +97,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 > Always be mindful of a package's license terms, which you can see by selecting **License Info** on a package's listing page on nuget.org. If a package does not specify license terms, contact the package owner directly using the **Contact owners** link on the package page. Microsoft does not license any intellectual property to you from third party package providers and is not responsible for information provided by third parties.
 
 ## License URL deprecation
-As we transition from [licenseUrl](../reference/nuspec#licenseurl) to [license](../reference/nuspec#license), some NuGet clients and NuGet feeds may not yet have the ability to surface licensing information in some cases. To maintain backward compatibility in such cases, the license URL points to this document which talks about how to retrieve the license information in such cases.
+As we transition from [licenseUrl](../reference/nuspec#licenseurl) to [license](../reference/nuspec#license), some NuGet clients and NuGet feeds may not yet have the ability to surface licensing information in some cases. To maintain backward compatibility, the license URL points to this document which talks about how to retrieve the license information in such cases.
 
 If clicking on the license URL for a package brought you to this page, it implies the package contains a license file and
 * You are connected to a feed that does not yet know how to interpret and surface the new license information to the client
