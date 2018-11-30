@@ -96,6 +96,23 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 > [!Note]
 > Always be mindful of a package's license terms, which you can see by selecting **License Info** on a package's listing page on nuget.org. If a package does not specify license terms, contact the package owner directly using the **Contact owners** link on the package page. Microsoft does not license any intellectual property to you from third party package providers and is not responsible for information provided by third parties.
 
+## License URL deprecation
+As we transition from [licenseUrl](../reference/nuspec#licenseurl) to [license](../reference/nuspec#license), some NuGet clients and NuGet feeds may not yet have the ability to surface licensing information in some cases. To maintain backward compatibility in such cases, the license URL points to this document which talks about how to retrieve the license information in such cases.
+
+If clicking on the license URL for a package brought you to this page, it implies the package contains a license file and
+* You are connected to a feed that does not yet know how to interpret and surface the new license information to the client
+**OR**
+* You are using a client that does not yet know how to interpret and read the new license information that is potentially provided by the feed
+**OR**
+* A combination of both
+
+Here is how you could read the information contained in the license file inside the package:
+1. Download the NuGet package, and unzip its contents to a folder.
+1. Open the `.nuspec` file which would be at the root of that folder.
+1. It should have a tag like `<license type="file">license\license.txt</license>`. This implies the license file is named `license.txt` and it is inside a folder called `license` which would also be at the root of that folder.
+1. Navigate to the `license` folder and open the `license.txt` file.
+
+
 ## Search Syntax
 
 NuGet package search works the same on nuget.org, from the NuGet CLI, and within the NuGet Package Manager extension in Visual Studio. In general, search is applied to keywords as well as package descriptions.
