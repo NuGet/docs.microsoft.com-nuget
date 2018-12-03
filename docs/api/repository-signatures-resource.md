@@ -29,6 +29,7 @@ The following `@type` value is used:
 @type value                | Notes
 -------------------------- | -----
 RepositorySignatures/4.7.0 | The initial release
+RepositorySignatures/4.9.0 | Allows enabling `allRepositorySigned`
 
 ## Base URL
 
@@ -63,14 +64,15 @@ The following request fetches the repository signatures index.
 
 The repository signature index is a JSON document that contains an object with the following properties:
 
-Name                | Type             | Required
-------------------- | ---------------- | --------
-allRepositorySigned | boolean          | yes
-signingCertificates | array of objects | yes
+Name                | Type             | Required | Notes
+------------------- | ---------------- | -------- | -----
+allRepositorySigned | boolean          | yes      | Must be `false` on 4.7.0
+signingCertificates | array of objects | yes      | 
 
-The `allRepositorySigned` boolean is set to false if the package source has some packages that have no repository
-signature. If the boolean is set to true, all packages available on the source must have a repository
-signature produced by one of the signing certificates mentioned in `signingCertificates`.
+The `allRepositorySigned` boolean is set to false if the `RepositorySignatures` resource is version 4.7.0 or
+if the package source has some packages that have no repository signature. If the boolean is set to true, all
+packages available on the source must have a repository signature produced by one of the signing certificates
+mentioned in `signingCertificates`.
 
 There should be one or more signing certificates in the `signingCertificates` array if the `allRepositorySigned` boolean
 is set to true. If the array is empty and `allRepositorySigned` is set to true, all packages from the source should be
