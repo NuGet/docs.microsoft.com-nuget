@@ -66,9 +66,9 @@ Name                | Type             | Required | Notes
 allRepositorySigned | boolean          | yes      | Must be `false` on 4.7.0 resource
 signingCertificates | array of objects | yes      | 
 
-The `allRepositorySigned` boolean is set to false if the package source has some packages that have no repository signature.
-If the boolean is set to true, all packages available on the source must have a repository signature produced by one of the
-signing certificates mentioned in `signingCertificates`.
+The `allRepositorySigned` boolean is set to false if the package source has some packages that have no repository
+signature. If the boolean is set to true, all packages available on the source must have a repository
+signature produced by one of the signing certificates mentioned in `signingCertificates`.
 
 > [!Warning]
 > The `allRepositorySigned` boolean should be false on the 4.7.0 resource. NuGet v4.7 and v4.8 clients have known bugs that
