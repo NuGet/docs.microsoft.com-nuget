@@ -19,9 +19,6 @@ whether a repository signed package has been tampered or has an unexpected signi
 The resource used for fetching this repository signature information is the `RepositorySignatures` resource found in
 the [service index](service-index.md).
 
-> [!Note]
-> NuGet.org will start announcing the `RepositorySignatures` resource in the near future.
-
 ## Versioning
 
 The following `@type` value is used:
@@ -66,13 +63,16 @@ The repository signature index is a JSON document that contains an object with t
 
 Name                | Type             | Required | Notes
 ------------------- | ---------------- | -------- | -----
-allRepositorySigned | boolean          | yes      | Must be `false` on 4.7.0
+allRepositorySigned | boolean          | yes      | Must be `false` on 4.7.0 resource
 signingCertificates | array of objects | yes      | 
 
-The `allRepositorySigned` boolean is set to false if the `RepositorySignatures` resource is version 4.7.0 or
-if the package source has some packages that have no repository signature. If the boolean is set to true, all
-packages available on the source must have a repository signature produced by one of the signing certificates
-mentioned in `signingCertificates`.
+The `allRepositorySigned` boolean is set to false if the package source has some packages that have no repository signature.
+If the boolean is set to true, all packages available on the source must have a repository signature produced by one of the
+signing certificates mentioned in `signingCertificates`.
+
+> [!Warning]
+> The `allRepositorySigned` boolean should be false on the 4.7.0 resource. NuGet v4.7 and v4.8 clients have known bugs that
+> prevent them from restoring packages from sources that have `allRepositorySigned` set to true.
 
 There should be one or more signing certificates in the `signingCertificates` array if the `allRepositorySigned` boolean
 is set to true. If the array is empty and `allRepositorySigned` is set to true, all packages from the source should be
