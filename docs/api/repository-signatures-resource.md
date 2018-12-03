@@ -71,7 +71,7 @@ signature. If the boolean is set to true, all packages available on the source m
 signature produced by one of the signing certificates mentioned in `signingCertificates`.
 
 > [!Warning]
-> The `allRepositorySigned` boolean should be false on the 4.7.0 resource. NuGet v4.7 and v4.8 clients cannot install packages
+> The `allRepositorySigned` boolean must be false on the 4.7.0 resource. NuGet v4.7 and v4.8 clients cannot install packages
 > from sources that have `allRepositorySigned` set to true.
 
 There should be one or more signing certificates in the `signingCertificates` array if the `allRepositorySigned` boolean
