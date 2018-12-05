@@ -16,26 +16,35 @@ Signed packages don't require any specific action to be installed; however, if t
 
 ## Configure package signature requirements
 
-*NuGet 4.9.0+ and Visual Studio version 15.9 and later on Windows*
+> [!Note]
+> Requires NuGet 4.9.0+ and Visual Studio version 15.9 and later on Windows
 
-You can configure how NuGet clients validate package signatures by setting the `signatureValidationMode` to `require`. 
+You can configure how NuGet clients validate package signatures by setting the `signatureValidationMode` to `require` in the [nuget.config](../reference/nuget-config-file) file using the [`nuget config`](../tools/cli-ref-config) command.
+
+```cmd
+nuget.exe config -set signatureValidationMode=require
+```
 
 ```xml
   <config>
-    <add key="signatureValidationMode" value="require" />    
+    <add key="signatureValidationMode" value="require" />
   </config>
 ```
 
-This mode will verify that all packages are signed by any of the certificates trusted in the `nuget.config` file. This file allows you to specify which authors and/or repositories are trusted based on the certificate's fingerprint. 
+This mode will verify that all packages are signed by any of the certificates trusted in the `nuget.config` file. This file allows you to specify which authors and/or repositories are trusted based on the certificate's fingerprint.
 
 ### Trust package author
 
-To trust packages based on the author signature use the `authors` element:
+To trust packages based on the author signature use the [`trusted-signers`](..tools/cli-ref-trusted-signers) command to set the `author` property in the nuget.config.
+
+```cmd
+nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE40881FF5F0AD3E58965DA20A9F571EF1651A56933748E1BF1C99E537C4E039 -FingerprintAlgorithm SHA256
+```
 
 ```xml
 <trustedSigners>
   <author name="MyCompanyCert">
-    <certificate fingerprint="AFD34FD..." hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+    <certificate fingerprint="CE40881FF5F0AD3E58965DA20A9F571EF1651A56933748E1BF1C99E537C4E039" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
   </author>
 </trustedSigners>
 ```
@@ -73,9 +82,11 @@ Repository signatures include additional metadata to determine the owners of the
 </trustedSigners>
 ```
 
+If a package has multiple owners, and any one of those owners is in the trusted list, the package installation will succeed.
+
 ### Untrusted Root certificates
 
-In some situations you may want to enable signing and verification using certificates that do not chain to a trusted root in the local machine. You can use the `allowUntrustedRoot` attribute to customize this behavior.
+In some situations you may want to enable verification using certificates that do not chain to a trusted root in the local machine. You can use the `allowUntrustedRoot` attribute to customize this behavior.
 
 ### Sync repository certificates
 
