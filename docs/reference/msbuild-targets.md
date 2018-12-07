@@ -67,6 +67,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 ### pack target inputs
 
 - IsPackable
+- SuppressDependenciesWhenPacking
 - PackageVersion
 - PackageId
 - Authors
@@ -101,6 +102,10 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 - NuspecProperties
 
 ## pack scenarios
+
+### Suppress dependencies
+
+To suppress package dependencies from generated NuGet package, set `SuppressDependenciesWhenPacking` to `true` which will allow skipping all the dependencies from generated nupkg file.
 
 ### PackageIconUrl
 
