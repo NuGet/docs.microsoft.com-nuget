@@ -150,7 +150,7 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
 ```
 
 ## Locking dependencies
-*This feature is available with NuGet **4.9** or above and with Visual Studio 2017 **15.9 Preview 5** or above.*
+*This feature is available with NuGet **4.9** or above and with Visual Studio 2017 **15.9** or above.*
 
 Input to NuGet restore is a set of Package References from the project file (top-level or direct dependencies) and the output is a full closure of all the package dependencies including transitive dependencies. NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed. However, there are some scenarios where it is unable to do so. For example:
 
