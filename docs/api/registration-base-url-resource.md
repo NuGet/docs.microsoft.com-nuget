@@ -167,8 +167,7 @@ description              | string                     | no       |
 iconUrl                  | string                     | no       | 
 id                       | string                     | yes      | The ID of the package
 licenseUrl               | string                     | no       |
-licenseExpression        | string                     | no       | The license expression equivalent to the one specified in the `&lt;license type='expression'&gt;` node in the package manifest.
-licenseExpressionVersion | string                     | no       |
+licenseExpression        | string                     | no       | The license expression specified in the package manifest.
 listed                   | boolean                    | no       | Should be considered as listed if absent
 minClientVersion         | string                     | no       | 
 projectUrl               | string                     | no       | 
@@ -183,10 +182,12 @@ The `dependencyGroups` property is an array of objects representing the dependen
 framework. If the package has no dependencies, the `dependencyGroups` property is missing, an empty array, or the
 `dependencies` property of all groups is empty or missing.
 
-`licenseExpression` and `licenseExpressionVersion` property may only appear in the `catalogEntry` if package's manifest
-contains `&lt;license type='expression'&gt;` node. The value of the `licenseExpression` property complies with NuGet's
-license expression syntax. The value of the `licenseExpressionVersion` property is a `System.Version` string that
-indicates the version of the expression syntax used. If it is omitted, it should be assumed to be `1.0`.
+`licenseExpression` property may only have value specified if package's manifest
+contains `&lt;license type='expression'&gt;` element. The value of the `licenseExpression` property complies with
+[SPDX license expression syntax](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60).
+
+`licenseExpression` property may have an empty value or property may not exist under `catalogEntry`. In both
+cases it is an indication that the original package did not have license expression specified.
 
 #### Package dependency group
 
