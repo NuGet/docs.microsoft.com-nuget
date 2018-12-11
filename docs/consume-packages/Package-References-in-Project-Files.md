@@ -150,7 +150,7 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
 ```
 
 ## Locking dependencies
-*This feature is available with NuGet **4.9** or above and with Visual Studio 2017 **15.9 Preview 5** or above.*
+*This feature is available with NuGet **4.9** or above and with Visual Studio 2017 **15.9** or above.*
 
 Input to NuGet restore is a set of Package References from the project file (top-level or direct dependencies) and the output is a full closure of all the package dependencies including transitive dependencies. NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed. However, there are some scenarios where it is unable to do so. For example:
 
@@ -209,7 +209,7 @@ You may also set this conditional MSBuild property in your project file:
 If locked mode is `true`, restore will either restore the exact packages as listed in the lock file or fail if you updated the defined package dependencies for the project after lock file was created.
 
 ### Make lock file part of your source repository
-If you are building an application, an executable and the project in question is at the end of the dependency chain then do check in the lock file to the source code repository so that NuGet can make use of it during restore.
+If you are building an application, an executable and the project in question is at the start of the dependency chain then do check in the lock file to the source code repository so that NuGet can make use of it during restore.
 
 However, if your project is a library project that you do not ship or a common code project on which other projects depend upon, you **should not** check in the lock file as part of your source code. There is no harm in keeping the lock file but the locked package dependencies for the common code project may not be used, as listed in the lock file, during the restore/build of a project that depends on this common-code project.
 

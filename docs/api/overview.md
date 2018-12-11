@@ -69,6 +69,10 @@ In general, all non-binary data returned by a API resource are serialized using 
 returned by each resource in the service index is defined individually for that resource. For more information about
 each resource, see the topics listed above.
 
+In the future, as the protocol evolves, new properties may be added to JSON responses. For the client to be future-proof,
+the implementation should not assume that the response schema is final and cannot include extra data. All properties
+that the implementation does not understand should be ignored.
+
 > [!Note]
 > When a source does not implement `SearchAutocompleteService` any autocomplete behavior should be disabled
 > gracefully. When `ReportAbuseUriTemplate` is not implemented, the official NuGet client falls back to nuget.org's
