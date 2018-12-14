@@ -59,7 +59,7 @@ In this convention, each version has three parts, `Major.Minor.Patch`, with the 
 - `Minor`: New features, but backwards compatible
 - `Patch`: Backwards compatible bug fixes only
 
-Pre-release versions are then denoted by appending a hyphen and a string after the patch number. Technically speaking, you can use *any *string after the hyphen and NuGet will treat the package as pre-release. NuGet then displays the full version number in the applicable UI, leaving consumers to interpret the meaning for themselves.
+Pre-release versions are then denoted by appending a hyphen and a string after the patch number. Technically speaking, you can use *any* string after the hyphen and NuGet will treat the package as pre-release. NuGet then displays the full version number in the applicable UI, leaving consumers to interpret the meaning for themselves.
 
 With this in mind, it's generally good to follow recognized naming conventions such as the following:
 
