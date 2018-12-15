@@ -183,7 +183,7 @@ framework. If the package has no dependencies, the `dependencyGroups` property i
 `dependencies` property of all groups is empty or missing.
 
 The value of the `licenseExpression` property complies with
-[SPDX license expression syntax](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60).
+[NuGet license expression syntax](https://docs.microsoft.com/en-us/nuget/reference/nuspec#license).
 
 #### Package dependency group
 
