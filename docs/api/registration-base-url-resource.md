@@ -167,7 +167,7 @@ description              | string                     | no       |
 iconUrl                  | string                     | no       | 
 id                       | string                     | yes      | The ID of the package
 licenseUrl               | string                     | no       |
-licenseExpression        | string                     | no       | The license expression specified in the package manifest.
+licenseExpression        | string                     | no       | 
 listed                   | boolean                    | no       | Should be considered as listed if absent
 minClientVersion         | string                     | no       | 
 projectUrl               | string                     | no       | 
@@ -182,12 +182,8 @@ The `dependencyGroups` property is an array of objects representing the dependen
 framework. If the package has no dependencies, the `dependencyGroups` property is missing, an empty array, or the
 `dependencies` property of all groups is empty or missing.
 
-The `licenseExpression` property may only have a value specified if the package manifest
-contains `&lt;license type='expression'&gt;` element. The value of the `licenseExpression` property complies with
+The value of the `licenseExpression` property complies with
 [SPDX license expression syntax](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60).
-
-The `licenseExpression` property may be an empty string or property may not exist under `catalogEntry`. In both
-cases it is an indication that the original package did not have a license expression specified.
 
 #### Package dependency group
 
