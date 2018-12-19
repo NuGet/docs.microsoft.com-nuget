@@ -27,7 +27,7 @@ ms.reviewer:
 
 ## Creating a symbol package
 
-A snupkg symbol package can be created from a .nuspec file or from a .csproj file. NuGet.exe and dotnet.exe are both supported. When the options ```-Symbols -SymbolPackageFormat snupkg``` are used on the nuget.exe pack command a .snupkg file will be created in additon to the .nupkg file.
+A snupkg symbol package can be created from a .nuspec file or from a .csproj file. NuGet.exe and dotnet.exe are both supported. When the options ```-Symbols -SymbolPackageFormat snupkg``` are used on the nuget.exe pack command a .snupkg file will be created in addition to the .nupkg file.
 
 Example commands to create .snupkg files
 ```
