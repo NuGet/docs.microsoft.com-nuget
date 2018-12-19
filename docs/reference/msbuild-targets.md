@@ -197,7 +197,7 @@ When packing a license file, you need to use PackageLicenseFile property to spec
 </PropertyGroup>
 
 <ItemGroup>
-    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
 [License file sample](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
