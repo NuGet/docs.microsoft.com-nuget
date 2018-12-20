@@ -9,23 +9,23 @@ ms.topic: conceptual
 
 # NuGet 4.9 Release Notes
 
-[Visual Studio 2017 15.9.0 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.9.0 functionality.
+NuGet distribution vehicles:
 
-
-Command line versions of the same functionality are also available:
-* NuGet.exe 4.9.x - [nuget.org/downloads](https://nuget.org/downloads)
-* dotnet.exe - [.NET Core SDK 2.1.500](https://www.microsoft.com/net/download/visual-studio-sdks)
-
+| NuGet version | Available in Visual Studio version| Available in .NET SDK(s)|
+|:---|:---|:---|
+| **4.9.0** | Visual Studio 2017 version 15.9.0 | 2.1.500, 2.2.100 |
+| **4.9.1** | n/a | n/a |
+| [**4.9.2**](https://nuget.org/downloads) |[Visual Studio 2017 version 15.9.4](https://visualstudio.microsoft.com/downloads/) | [2.1.502, 2.2.101](https://www.microsoft.com/net/download/visual-studio-sdks) |
 
 ## Summary: What's New in 4.9.0
 
-* Signing: Enable ClientPolicies to require use of a set of Trusted Authors and Repositories listed in NuGet.Config - [#6961](https://github.com/NuGet/Home/issues/6961)
+* Signing: Enable ClientPolicies to require use of a set of Trusted Authors and Repositories listed in NuGet.Config - [#6961](https://github.com/NuGet/Home/issues/6961), [blog post](https://blog.nuget.org/20181205/Lock-down-your-dependencies-using-configurable-trust-policies.html)
 
-* create ".snupkg" files to contain symbols in pack -- enhance push to understand nuget protocol to accept snupkg files for symbol server - [#6878](https://github.com/NuGet/Home/issues/6878)
+* create ".snupkg" files to contain symbols in pack -- enhance push to understand nuget protocol to accept snupkg files for symbol server - [#6878](https://github.com/NuGet/Home/issues/6878), [blog post](https://blog.nuget.org/20181116/Improved-debugging-experience-with-the-NuGet-org-symbol-server-and-snupkg.html)
 
 * NuGet credential plugin V2 - [#6642](https://github.com/NuGet/Home/issues/6642)
 
-* Self-Contained NuGet Packages - License - [#4628](https://github.com/NuGet/Home/issues/4628)
+* Self-Contained NuGet Packages - License - [#4628](https://github.com/NuGet/Home/issues/4628), [announcement](https://github.com/NuGet/Announcements/issues/32)
 
 * Enable opt-in "GeneratePathProperty" metadata on a PackageReference to generate a per package MSBuild property to "Foo.Bar\1.0\" directory - [#6949](https://github.com/NuGet/Home/issues/6949)
 
@@ -89,15 +89,19 @@ Command line versions of the same functionality are also available:
 
 [List of all issues fixed in this release 4.9.1](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.1")
 
+## Summary: What's New in 4.9.2
+
+### Issues fixed in this release
+
+* VS/dotnet.exe/nuget.exe/msbuild.exe restore doesn't use credentials when source name contains a whitespace - [#7517](https://github.com/NuGet/Home/issues/7517)
+
+* LicenseAcceptanceWindow and LicenseFileWindow Accessibility issues - [#7452](https://github.com/NuGet/Home/issues/7452)
+
+* Fix FormatException in DateTime.Parse from DateTimeConverter - [#7539](https://github.com/NuGet/Home/issues/7539)
+
+[List of all issues fixed in this release 4.9.2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
+
 ## Known issues
-
-### dotnet.exe/nuget.exe doesn't use credentials when source name contains a whitespace - [#7517](https://github.com/NuGet/Home/issues/7517)
-
-#### Issue
-When there is a whitespace in the source name, nuget.exe throws an error like `The ' ' character, hexadecimal value 0x20, cannot be included in a name.`
-
-#### Workaround
-Change the name of the source to not contain a whitespace.
 
 ### dotnet nuget push --interactive gives an error on Mac. - [#7519](https://github.com/NuGet/Home/issues/7519)
 
@@ -106,14 +110,6 @@ The `--interactive` argument is not being forwarded by the dotnet cli and result
 
 #### Workaround
 Run any other dotnet command with the interactive option such as `dotnet restore --interactive` and authenticate. The authentication then might be cached by the credential provider. Then run `dotnet nuget push`.
-
-### LicenseAcceptanceWindow and LicenseFileWindow Accessibility issues - [#7452](https://github.com/NuGet/Home/issues/7452)
-
-#### Issue
-The license acceptance window and license file window have accessibility issues with keyboard navigation and narration with screen reader and JAWS.
-
-#### Workaround
-No workaround.
 
 ### Packages in FallbackFolders installed by .NET Core SDK are custom installed, and fail signature validation. - [#7414](https://github.com/NuGet/Home/issues/7414)
 
