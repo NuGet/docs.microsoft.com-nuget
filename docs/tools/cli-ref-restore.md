@@ -34,7 +34,7 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
 | MSBuildPath | *(4.0+)* Specifies the path of MSBuild to use with the command, taking precedence over `-MSBuildVersion`. |
-| MSBuildVersion | *(3.2+)* Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild. |
+| MSBuildVersion | *(3.2+)* Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild. |
 | NoCache | Prevents NuGet from using cached packages. See [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
 | OutputDirectory | Specifies the folder in which packages are installed. If no folder is specified, the current folder is used. Required when restoring with a `packages.config` file unless `PackagesDirectory` or `SolutionDirectory` is used.|

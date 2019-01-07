@@ -38,7 +38,7 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 | IncludeReferencedProjects | Indicates that the built package should include referenced projects either as dependencies or as part of the package. If a referenced project has a corresponding `.nuspec` file that has the same name as the project, then that referenced project is added as a dependency. Otherwise, the referenced project is added as part of the package. |
 | MinClientVersion | Set the *minClientVersion* attribute for the created package. This value will override the value of the existing *minClientVersion* attribute (if any) in the `.nuspec` file. |
 | MSBuildPath | *(4.0+)* Specifies the path of MSBuild to use with the command, taking precedence over `-MSBuildVersion`. |
-| MSBuildVersion | *(3.2+)* Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild. |
+| MSBuildVersion | *(3.2+)* Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild. |
 | NoDefaultExcludes | Prevents default exclusion of NuGet package files and files and folders starting with a dot, such as `.svn` and `.gitignore`. |
 | NoPackageAnalysis | Specifies that pack should not run package analysis after building the package. |
 | OutputDirectory | Specifies the folder in which the created package is stored. If no folder is specified, the current folder is used. |
