@@ -305,3 +305,4 @@
 ## [NuGet 1.2](release-notes/NuGet-1.2.md)
 ## [NuGet 1.1](release-notes/NuGet-1.1.md)
 # Overview FAQs
+## [NuGet FAQ](faqs/nuget-faq.md)
