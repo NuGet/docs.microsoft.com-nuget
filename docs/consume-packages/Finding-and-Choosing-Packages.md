@@ -31,6 +31,8 @@ At this time, search results are sorted only by relevance, so you generally want
 
 NuGet installs a package into a project only if that package's supported frameworks include the project's target framework. If the package is not compatible, NuGet issues an error.
 
+A note on compatibility: with PackageReference based projects, the AssetTargetFallback project property can be set to one or more targetframeworks. When determining package compatibility, if the package is not determined to have compatible assets for the project based on the projects targetframework, compatibility will be rechecked using each targetframework from the AssetTargetFramework project of the hosting project.
+
 Some packages list their supported frameworks directly in the nuget.org gallery, but because such data is not required, many packages do not include that list. At present there is no means to search nuget.org for packages that support a specific target framework (the feature is under consideration, see [NuGet Issue 2936](https://github.com/NuGet/NuGetGallery/issues/2936)).
 
 Fortunately, you can determine supported frameworks through two other means:
