@@ -195,7 +195,7 @@ When using a license expression, the PackageLicenseExpression property should be
 </PropertyGroup>
 ```
 
-[Learn more about license expressions and licenses that are accepted by NuGet.org](/nuspec.md#license).
+[Learn more about license expressions and licenses that are accepted by NuGet.org](nuspec.md#license).
 
 When packing a license file, you need to use PackageLicenseFile property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. For example:
 
