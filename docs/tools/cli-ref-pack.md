@@ -84,7 +84,7 @@ nuget pack foo.csproj -Properties Configuration=Release
 nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="1.0.5"
 
 # Create a package from project foo.csproj, using MSBuild version 12 to build the project
-nuget pack foo.csproj -Build -Symbols -MSBuildVersion 12 -Properties owners=janedoe,xiaop;version="1.0.5
+nuget pack foo.csproj -Build -Symbols -MSBuildVersion 12 -Properties owners=janedoe,xiaop;version="1.0.5"
 
 # Create a package from project foo.nuspec and the corresponding symbol package using the new recommended format .snupkg
 nuget pack foo.nuspec -Symbols -SymbolPackageFormat snupkg

@@ -46,7 +46,7 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
 
     ```xml
    <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
    </ItemGroup>
     ```
 
