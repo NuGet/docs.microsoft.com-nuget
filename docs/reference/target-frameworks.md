@@ -23,7 +23,7 @@ NuGet uses target framework references in a variety of places to specifically id
 
 ## Supported frameworks
 
-A framework is typically referenced by a short target framework moniker or TFM. In .NET Standard this is also is generalized to *TxM* to allow a single reference to multiple frameworks.
+A framework is typically referenced by a short target framework moniker or TFM. In .NET Standard this is also generalized to *TxM* to allow a single reference to multiple frameworks.
 
 The NuGet clients support the frameworks in the table below. Equivalents are shown within brackets []. Note that some tools, such as `dotnet`, might use variations of canonical TFMs in some files. For example, `dotnet pack` uses  `.NETCoreApp2.0` in a `.nuspec` file rather than `netcoreapp2.0`. The various NuGet client tools handle these variations properly, but you should always use canonical TFMs when editing files directly.
 
