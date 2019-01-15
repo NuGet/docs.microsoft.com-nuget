@@ -10,7 +10,7 @@ ms.reviewer: rmpablos
 
 # trusted-signers command (NuGet CLI)
 
-**Applies to:** package consumption &bullet; **Supported versions:** 4.9+
+**Applies to:** package consumption &bullet; **Supported versions:** 4.9.1+
 
 Gets or sets trusted signers to the NuGet configuration. For additional usage, see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). For details on how the nuget.config schema looks like, refer to the [NuGet config file reference](../reference/nuget-config-file.md).
 
