@@ -166,7 +166,8 @@ dependencyGroups         | array of objects           | no       | The dependenc
 description              | string                     | no       | 
 iconUrl                  | string                     | no       | 
 id                       | string                     | yes      | The ID of the package
-licenseUrl               | string                     | no       | 
+licenseUrl               | string                     | no       |
+licenseExpression        | string                     | no       | 
 listed                   | boolean                    | no       | Should be considered as listed if absent
 minClientVersion         | string                     | no       | 
 projectUrl               | string                     | no       | 
@@ -175,11 +176,17 @@ requireLicenseAcceptance | boolean                    | no       |
 summary                  | string                     | no       | 
 tags                     | string or array of string  | no       | 
 title                    | string                     | no       | 
-version                  | string                     | yes      | The version of the package
+version                  | string                     | yes      | The full version string after normalization
+
+The package `version` property is the full version string after normalization. This means that SemVer 2.0.0 build data
+can be included here.
 
 The `dependencyGroups` property is an array of objects representing the dependencies of the package, grouped by target
 framework. If the package has no dependencies, the `dependencyGroups` property is missing, an empty array, or the
 `dependencies` property of all groups is empty or missing.
+
+The value of the `licenseExpression` property complies with
+[NuGet license expression syntax](https://docs.microsoft.com/en-us/nuget/reference/nuspec#license).
 
 #### Package dependency group
 

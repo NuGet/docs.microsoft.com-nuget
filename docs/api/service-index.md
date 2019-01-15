@@ -65,7 +65,7 @@ compatible `@type` can be used in a round-robin fashion in case of connection fa
 
 ### Sample request
 
-GET https://api.nuget.org/v3/index.json
+    GET https://api.nuget.org/v3/index.json
 
 ### Sample response
 

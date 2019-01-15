@@ -59,7 +59,7 @@ To install the package, you can use either the Package Manager UI or the Package
 
     ![Locating Newtonsoft.Json package](media/QS_Use-08-Console1.png)
 
-1. Enter the command `Install-Package Newtonsoft.json` (see [Install-Package](../tools/ps-ref-install-package.md)). The console window shows output for the command. Errors typically indicate that the package isn't compatible with the project's target framework.
+1. Enter the command `Install-Package Newtonsoft.Json` (see [Install-Package](../tools/ps-ref-install-package.md)). The console window shows output for the command. Errors typically indicate that the package isn't compatible with the project's target framework.
 
 ## Use the Newtonsoft.Json API in the app
 
@@ -102,7 +102,7 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 1. Even though you added the Newtonsoft.Json package to the project, red squiggles appears under `JsonConvert` because you need a `using` statement at the top of the code file:
 
     ```cs
-    using Newtonsoft.json;
+    using Newtonsoft.Json;
     ```
 
 1. Build and run the app by pressing F5 or selecting **Debug > Start Debugging**:

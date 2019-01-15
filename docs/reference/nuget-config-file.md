@@ -11,7 +11,7 @@ ms.topic: reference
 
 NuGet behavior is controlled by settings in different `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).
 
-`nuget.config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic. Each section contains zero or more `<add>` elements with `key` and `value` attributes. See the [examples config file](#example-config-file). Setting names are case-insensitive, and values can use [environment variables](#using-environment-variables).
+`nuget.config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic. Each section contains zero or more items. See the [examples config file](#example-config-file). Setting names are case-insensitive, and values can use [environment variables](#using-environment-variables).
 
 In this topic:
 
@@ -25,6 +25,7 @@ In this topic:
   - [apikeys](#apikeys)
   - [disabledPackageSources](#disabledpackagesources)
   - [activePackageSource](#activepackagesource)
+- [trustedSigners section](#trustedsigners-section)
 - [Using environment variables](#using-environment-variables)
 - [Example config file](#example-config-file)
 
@@ -46,6 +47,7 @@ Contains miscellaneous configuration settings, which can be set using the [`nuge
 | repositoryPath (`packages.config` only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)/packages` folder. A relative path can be used in project-specific `nuget.config` files. This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence. |
 | defaultPushSource | Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://<username>:<password>@<domain>`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the http_proxy and no_proxy environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
+| signatureValidationMode | Specifies the validation mode used to verify package signatures for package install, and restore. Values are `accept`, `require`. Defaults to `accept`.
 
 **Example**:
 
@@ -55,6 +57,7 @@ Contains miscellaneous configuration settings, which can be set using the [`nuge
     <add key="globalPackagesFolder" value="c:\packages" />
     <add key="repositoryPath" value="c:\installed_packages" />
     <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
+    <add key="signatureValidationMode" value="require" />
 </config>
 ```
 
@@ -110,9 +113,9 @@ Controls whether the `packages` folder of a solution is included in source contr
 
 ## Package source sections
 
-The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, and `disabledPackageSources` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
+The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources` and `trustedSigners` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
 
-The [`nuget sources` command](../tools/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/cli-ref-setapikey.md).
+The [`nuget sources` command](../tools/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/cli-ref-setapikey.md), and `trustedSigners` which is managed using the [`nuget trusted-signers` command](../tools/cli-ref-trusted-signers.md).
 
 Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 
@@ -232,6 +235,35 @@ Identifies to the currently active source or indicates the aggregate of all sour
     <add key="All" value="(Aggregate source)" />
 </activePackageSource>
 ```
+## trustedSigners section
+
+Stores trusted signers used to allow package while installing or restoring. This list cannot be empty when the user sets `signatureValidationMode` to `require`. 
+
+This section can be updated with the [`nuget trusted-signers` command](../tools/cli-ref-trusted-signers.md).
+
+**Schema**:
+
+A trusted signer has a collection of `certificate` items that enlist all the certificates that identify a given signer. A trusted signer can be either an `Author` or a `Repository`.
+
+A trusted *repository* also specifies the `serviceIndex` for the repository (which has to be a valid `https` uri) and can optionally specify a semi-colon delimited list of `owners` to restrict even more who is trusted from that specific repository.
+
+The supported hash algorithms used for a certificate fingerprint are `SHA256`, `SHA384` and `SHA512`.
+
+If a `certificate` specifies `allowUntrustedRoot` as `true` the given certificate is allowed to chain to an untrusted root while building the certificate chain as part of the signature verification.
+
+**Example**:
+
+```xml
+<trustedSigners>
+	<author name="microsoft">
+		<certificate fingerprint="3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+	</author>
+	<repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
+		<certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+		<owners>microsoft;aspnet;nuget</owners>
+	</repository>
+</trustedSigners>
+```
 
 ## Using environment variables
 
@@ -308,5 +340,19 @@ Below is an example `nuget.config` file that illustrates a number of settings:
     <apikeys>
         <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
     </apikeys>
+
+    <!--
+        Used to specify trusted signers to allow during signature verification.
+        See: nuget.exe help trusted-signers
+    -->
+    <trustedSigners>
+        <author name="microsoft">
+		    <certificate fingerprint="3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+	    </author>
+	    <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
+		    <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+		    <owners>microsoft;aspnet;nuget</owners>
+	    </repository>
+    </trustedSigners>
 </configuration>
 ```

@@ -82,7 +82,7 @@ data      | array of strings | yes      | The package IDs matched by the request
 
 ### Sample request
 
-GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+    GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
 
 ### Sample response
 

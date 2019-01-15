@@ -14,7 +14,7 @@ The NuGet API is a set of HTTP endpoints that can be used to download packages, 
 and perform most other operations available in the official NuGet clients.
 
 This API is used by the NuGet client in Visual Studio, nuget.exe, and the .NET CLI to perform NuGet operations such as
-[`dotnet restore`](/dotnet/articles/core/preview3/tools/dotnet-restore), search in the Visual Studio UI, and [`nuget.exe push`](../tools/cli-ref-push.md).
+[`dotnet restore`](/dotnet/core/tools/dotnet-restore?tabs=netcore2x), search in the Visual Studio UI, and [`nuget.exe push`](../tools/cli-ref-push.md).
 
 Note in some cases, nuget.org has additional requirements that are not enforced by other package sources. These differences are documented by the [nuget.org Protocols](nuget-protocols.md).
 
@@ -34,7 +34,7 @@ For more information about the service index, see [its API reference](service-in
 
 ## Versioning
 
-The API is version 3 of NuGet's HTTP protocol. This protocol is sometimes referred to as "the V3 API." These reference
+The API is version 3 of NuGet's HTTP protocol. This protocol is sometimes referred to as "the V3 API". These reference
 documents will refer to this version of the protocol simply as "the API."
 
 The service index schema version is indicated by the `version` property in the service index. The API mandates that
@@ -47,7 +47,7 @@ The NuGet V3 API is named as such because it's the successor of the V2 API, whic
 implemented by the 2.x version of the official NuGet client. The V3 API was first supported by the 3.0 version of the
 official NuGet client and is still the latest major protocol version supported by the NuGet client, 4.0 and on. 
 
-Non-breaking protocol changes have been made to the API since it was first release.
+Non-breaking protocol changes have been made to the API since it was first released.
 
 ## Resources and schema
 
@@ -68,6 +68,10 @@ Resource name                                                           | Requir
 In general, all non-binary data returned by a API resource are serialized using JSON. The response schema
 returned by each resource in the service index is defined individually for that resource. For more information about
 each resource, see the topics listed above.
+
+In the future, as the protocol evolves, new properties may be added to JSON responses. For the client to be future-proof,
+the implementation should not assume that the response schema is final and cannot include extra data. All properties
+that the implementation does not understand should be ignored.
 
 > [!Note]
 > When a source does not implement `SearchAutocompleteService` any autocomplete behavior should be disabled
