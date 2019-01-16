@@ -39,6 +39,6 @@
     - name: Release notes
       tocHref: /nuget/release-notes/
       topicHref: /nuget/release-notes/index
-    - name: Overview FAQs
+    - name: FAQs
       tocHref: /nuget/faqs/
       topicHref: /nuget/faqs/nuget-faq

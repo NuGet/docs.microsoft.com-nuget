@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # NuGet frequently-asked questions
 
-## NuGet Account Management
+## NuGet.org Account Management
 
 ### How to create a new NuGet account?
 
@@ -135,9 +135,11 @@ If you see an error like below during your login flow with your email account do
 ### How do I change my NuGet account username?
 
 - You cannot. As a matter of policy we do not allow the change of usernames as of yet.
+- The only way to change your username is to create a new account with the desired username. We recommend you delete your existing account before you create a new one, otherwise you will not be able to reuse your registered microsoft account.
 > [!Important]
 > Deleting the user will still **reserve** the `username`. You will not be able to reuse the same username again and **this includes the change of casings**. As an example if you created a user with username `mycoolname` and you want to change this to `MyCoolName`(casing changes), it will not be possible after deleting the user.
-- The only way to change your NuGet username is [delete your NuGet account](#how-to-delete-my-nuget-account) and to [register a new account](how-to-create-a-new-nuget-account) with correct username.
+
+- Follow the steps given in [delete your NuGet account](#how-to-delete-my-nuget-account) section and to [register a new account](#how-to-create-a-new-nuget-account) with correct username.
 
 ### How to delete my NuGet account?
 
