@@ -90,7 +90,7 @@ If you tried using the [sign in assistance](#which-microsoft-account-is-linked-t
 1. [Login](https://www.nuget.org/users/account/LogOnNuGetAccount?returnUrl=%2F) to NuGet using the username/password login.
 1. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box.
 
-![Link MSA Dialog](media/link-msa-dialog.png)
+![Link MSA Dialog](../media/link-msa-dialog.png)
 
 1. **Important**: please ignore the instruction to login with the specified microsoft account. You can now link your NuGet account to any other Microsoft login.
 1. Click on the button `Sign in with Microsoft` and login with the microsoft account that you have an access to, as mentioned in step 1.
@@ -106,7 +106,7 @@ If however, you NuGet account is not associated/linked with a Microsof account, 
 1. [Login](https://www.nuget.org/users/account/LogOnNuGetAccount?returnUrl=%2F) to NuGet using the username/password login.
 1. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box. **IMPORTANT** Ignore this dialog box, **do not** click on the `Sign in with microsoft` button.
 
-![Link MSA Dialog](media/link-msa-dialog.png)
+![Link MSA Dialog](../media/link-msa-dialog.png)
 
 1. Go to https://www.nuget.org/account/transform. This will allow you to convert the NuGet account to an org without linking to a Microsoft account.
 1. Specify the admin username for your personal NuGet account/the account you created in Step 1.
@@ -116,7 +116,7 @@ If however, you NuGet account is not associated/linked with a Microsof account, 
 
 If you see an error like below during your login flow with your email account domain(@yourdomain.com), see the steps below to recover your NuGet account.
 
-![Unamanaged AAD Tenant Error](media/unmanaged-aad-tenant.png)
+![Unamanaged AAD Tenant Error](../media/unmanaged-aad-tenant.png)
 
 - **What is this unmanaged state thing during login? And why is this happening now?** 
   - Your account seems to be previously registered as a personal Microsoft account and it worked fine, however, now it seems like your account has been registered as an "Unmanaged" tenant in the Azure active directory(the identity service which we use to authenticate Microsoft accounts). 
@@ -126,13 +126,27 @@ If you see an error like below during your login flow with your email account do
   - If you want to login to nuget.org with your Microsoft account(@yourdomain.com), you(or an administrator at your company) will need to claim the ownership of the AAD by doing a DNS validation to authenticate users with email address "@yourdomain.com". Please follow the steps for [domains admin takeover](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/domains-admin-takeover) documented by the Azure Active directory. 
   - Once this is done, your normal login should start working.
 - **I don’t want to do all that, what is the other way to recover my account?**
-  - You can create a new Microsoft account(with an email **not** associated with @yourdomain.com).
-  - Link this new Microsoft account with your NuGet profile, see steps below.
+  - You can [create](https://www.microsoft.com/en-us/account) a new Microsoft account (with an email **not** associated with @yourdomain.com).
+  - Follow steps given in [recover your NuGet account](#unable-to-use-microsoft-login-how-do-i-recover-my-nuget-account) section.
 
 ### How do I change my NuGet account username?
 
-details 
+- You cannot. As a matter of policy we do not allow the change of usernames as of yet.
+> [!Important]
+> Deleting the user will still **reserve** the `username`. You will not be able to reuse the same username again and **this includes the change of casings**. As an example if you created a user with username `mycoolname` and you want to change this to `MyCoolName`(casing changes), it will not be possible after deleting the user.
+- The only way to change your NuGet username is [delete your NuGet account](#how-to-delete-my-nuget-account) and to [register a new account](how-to-create-a-new-nuget-account) with correct username.
 
 ### How to delete my NuGet account?
 
-details
+- To delete your account, please note that we recommend that you transfer the ownership of any packages where you are the sole owner. You can read more about [managing package owners](https://docs.microsoft.com/en-us/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg) on how to do it. This will also help us expedite your request.
+
+> [!Important]
+> Deleting the user will result in following:
+>1. Revoke associated API key(s). 
+>2. Remove the account as an owner for any child packages.
+>3. Dissociate all previously existent ID prefix reservations with this account.
+>4. Remove the account as a member of any organizations.
+>5. Your username will be reserved and no one will be able to re-use it again without our permissions.
+
+- To proceed with account deletion, [login](https://www.nuget.org/users/account/LogOn?returnUrl=%2F# "login page") to NuGet with the account you wish to delete.
+- Click on this url: [https://www.nuget.org/account/delete](https://www.nuget.org/account/delete) and follow the steps to submit the request for deleting the account.
