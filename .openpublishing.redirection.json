@@ -111,7 +111,7 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "policies/nuget-faq.md",
+            "source_path": "docs/policies/nuget-faq.md",
             "redirect_url": "/nuget/faqs/nuget-faq",
             "redirect_document_id": false
         }
