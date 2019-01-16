@@ -112,7 +112,7 @@ If however, you NuGet account is not associated/linked with a Microsof account, 
 
 ![Link MSA Dialog](../media/link-msa-dialog.png)
 
-### NuGet login issues with unmanaged AAD tenant?
+### NuGet login issues for AAD accounts with unmanaged tenant?
 
 If you see an error like below during your login flow with your email account domain(@yourdomain.com), see the steps below to recover your NuGet account.
 <p align="center">
