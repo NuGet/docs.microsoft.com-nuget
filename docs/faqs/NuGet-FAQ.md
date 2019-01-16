@@ -347,7 +347,9 @@ If however, you NuGet account is not associated/linked with a Microsof account, 
 
 If you see an error like below during your login flow with your email account domain(@yourdomain.com), see the steps below to recover your NuGet account.
 
-![Unmanaged AAD Tenant](media/unmanaged-aad-tenant.png)
+<p align="center">
+    <img src="media/unmanaged-aad-tenant.png" />
+</p>
 
 - **What is this unmanaged state thing during login? And why is this happening now?** 
   - Your account seems to be previously registered as a personal Microsoft account and it worked fine, however, now it seems like your account has been registered as an "Unmanaged" tenant in the Azure active directory(the identity service which we use to authenticate Microsoft accounts). 
