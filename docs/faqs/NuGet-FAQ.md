@@ -66,7 +66,7 @@ On NuGet with the [recent change](https://blog.nuget.org/20180515/NuGet.org-will
 Lets say you were trying to change Microsoft account login from `account1@outlook.com` for NuGet user with username `MyNuGetAccount1` to another microsoft account with email `account2@outlook.com`. And you see the error above.
 
 **What does the error above mean?**
-- It means that there is another NuGet account/profile which is associated with the Microsoft account that you are trying to change it i.e. in above example the Microsoft account with email `<account2@outlook.com>` is associated with another NuGet account with, say, username `MyNuGetAccount2`.
+- It means that there is another NuGet account/profile which is associated with the Microsoft account that you are trying to change it to i.e. in above example the Microsoft account with email `<account2@outlook.com>` is associated with another NuGet account with, say, username `MyNuGetAccount2`.
 - You cannot change the associated login to another Microsoft account which is linked to a different NuGet account. This would otherwise leave the other NuGet account orphaned.
 
 **I forgot I had another NuGet account, how do I find out which NuGet account it is?**
@@ -76,6 +76,7 @@ Lets say you were trying to change Microsoft account login from `account1@outloo
 **I do not care about this second NuGet account, I want to change my login for first NuGet account with the second microsoft account. What do I do?**
 - If you wish to not care about the second NuGet account and still want to re-use the associated Microsoft account with email `account2@outlook.com`. You will first need to get rid of the other account.
 - Follow the steps to [delete user](#how-to-delete-my-nuget-account) for the second NuGet account `MyNuGetAccount2`.
+- Once your other account is deleted, you can retry the steps to [change microsoft account login](#how-to-change-my-microsoft-account-for-nuget-login).
 
 **Wait, I care about this second account too. I do not want to lose this account but change my associated account logins for first account**
 - You will need to create/use a third Microsoft account, say, with email `account3@outlook.com`. 
@@ -106,6 +107,7 @@ If however, you NuGet account is not associated/linked with a Microsof account, 
 4. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box. 
 > [!Important]
 > Ignore this dialog box, **do not** click on the `Sign in with microsoft` button.
+
 5. Go to [https://www.nuget.org/account/transform](https://www.nuget.org/account/transform). This will allow you to convert the NuGet account to an org without linking to a Microsoft account.
 6. Specify the admin username for your personal NuGet account/the account you created in Step 1.
 7. Follow the instructions to complete transformation of this account to an organization.
