@@ -323,7 +323,7 @@ If you tried using the [sign in assistance](#which-microsoft-account-is-linked-t
 6. Click on the button `Sign in with Microsoft` and login with the microsoft account that you have an access to, as mentioned in step 1.
 7. Your account will now be linked to the new Microsoft account, which you can use to log into nuget.org going forward.
 
-![Link MSA Dialog](../media/link-msa-dialog.png)
+![Link MSA Dialog](media\link-msa-dialog.png)
 
 ### How to transform my NuGet account to an organization?
 
@@ -341,14 +341,13 @@ If however, you NuGet account is not associated/linked with a Microsof account, 
 6. Specify the admin username for your personal NuGet account/the account you created in Step 1.
 7. Follow the instructions to complete transformation of this account to an organization.
 
-![Link MSA Dialog](../media/link-msa-dialog.png)
+![Link MSA Dialog](media\link-msa-dialog.png)
 
 ### NuGet login issues for AAD accounts with unmanaged tenant?
 
 If you see an error like below during your login flow with your email account domain(@yourdomain.com), see the steps below to recover your NuGet account.
-<p align="center">
-    <img src="../media/unmanaged-aad-tenant.png" />
-</p>
+
+![Unmanaged AAD Tenant](media\unmanaged-aad-tenant.png)
 
 - **What is this unmanaged state thing during login? And why is this happening now?** 
   - Your account seems to be previously registered as a personal Microsoft account and it worked fine, however, now it seems like your account has been registered as an "Unmanaged" tenant in the Azure active directory(the identity service which we use to authenticate Microsoft accounts). 
