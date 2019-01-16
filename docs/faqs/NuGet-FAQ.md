@@ -86,15 +86,14 @@ Lets say you were trying to change Microsoft account login from `account1@outloo
 
 If you tried using the [sign in assistance](#which-microsoft-account-is-linked-to-my-nuget-account) and you do not have access to the microsoft account that is associated with your NuGet account, please follow the steps below to link a new microsoft account to your NuGet account.
 1. **Requirement**: You will need an access to a microsoft account(which is not associated with any existing NuGet accounts). If you do not have one, you can [create](https://www.microsoft.com/en-us/account) one.
-1. Follow the [steps to recover your password login](#how-to-recover-nuget-password-login), if you have the password login skip this step.
-1. [Login](https://www.nuget.org/users/account/LogOnNuGetAccount?returnUrl=%2F) to NuGet using the username/password login.
-1. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box.
+2. Follow the [steps to recover your password login](#how-to-recover-nuget-password-login), if you have the password login skip this step.
+3. [Login](https://www.nuget.org/users/account/LogOnNuGetAccount?returnUrl=%2F) to NuGet using the username/password login.
+4. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box.
+5. **NOTE**: Please ignore the instruction to login with the specified microsoft account. You can now link your NuGet account to any other Microsoft login.
+6. Click on the button `Sign in with Microsoft` and login with the microsoft account that you have an access to, as mentioned in step 1.
+7. Your account will now be linked to the new Microsoft account, which you can use to log into nuget.org going forward.
 
 ![Link MSA Dialog](../media/link-msa-dialog.png)
-
-1. **Important**: please ignore the instruction to login with the specified microsoft account. You can now link your NuGet account to any other Microsoft login.
-1. Click on the button `Sign in with Microsoft` and login with the microsoft account that you have an access to, as mentioned in step 1.
-1. Your account will now be linked to the new Microsoft account, which you can use to log into nuget.org going forward.
 
 ### How to transform my NuGet account to an organization?
 
@@ -102,21 +101,23 @@ If you want to transform your account to an organization, and this account is al
 
 If however, you NuGet account is not associated/linked with a Microsof account, you can follow the steps below to transform this account to an organization.
 1. **Requirement**: You need to have an individual account first created on NuGet to be used as an admin on the org account. If you do not have one, please [create a new NuGet account](#how-to-create-a-nuget-account)
-1. Follow the [steps to recover your password login](#how-to-recover-nuget-password-login) for your NuGet account if you do not have password login for it, if you do, skip this step.
-1. [Login](https://www.nuget.org/users/account/LogOnNuGetAccount?returnUrl=%2F) to NuGet using the username/password login.
-1. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box. **IMPORTANT** Ignore this dialog box, **do not** click on the `Sign in with microsoft` button.
+2. Follow the [steps to recover your password login](#how-to-recover-nuget-password-login) for your NuGet account if you do not have password login for it, if you do, skip this step.
+3. [Login](https://www.nuget.org/users/account/LogOnNuGetAccount?returnUrl=%2F) to NuGet using the username/password login.
+4. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box. 
+> [!Important]
+> Ignore this dialog box, **do not** click on the `Sign in with microsoft` button.
+5. Go to [https://www.nuget.org/account/transform](https://www.nuget.org/account/transform). This will allow you to convert the NuGet account to an org without linking to a Microsoft account.
+6. Specify the admin username for your personal NuGet account/the account you created in Step 1.
+7. Follow the instructions to complete transformation of this account to an organization.
 
 ![Link MSA Dialog](../media/link-msa-dialog.png)
-
-1. Go to https://www.nuget.org/account/transform. This will allow you to convert the NuGet account to an org without linking to a Microsoft account.
-1. Specify the admin username for your personal NuGet account/the account you created in Step 1.
-1. Follow the instructions to complete transformation of this account to an organization.
 
 ### NuGet login issues with unmanaged AAD tenant?
 
 If you see an error like below during your login flow with your email account domain(@yourdomain.com), see the steps below to recover your NuGet account.
-
-![Unamanaged AAD Tenant Error](../media/unmanaged-aad-tenant.png)
+<p align="center">
+    <img src="../media/unmanaged-aad-tenant.png" />
+</p>
 
 - **What is this unmanaged state thing during login? And why is this happening now?** 
   - Your account seems to be previously registered as a personal Microsoft account and it worked fine, however, now it seems like your account has been registered as an "Unmanaged" tenant in the Azure active directory(the identity service which we use to authenticate Microsoft accounts). 
@@ -142,11 +143,11 @@ If you see an error like below during your login flow with your email account do
 
 > [!Important]
 > Deleting the user will result in following:
->1. Revoke associated API key(s). 
->2. Remove the account as an owner for any child packages.
->3. Dissociate all previously existent ID prefix reservations with this account.
->4. Remove the account as a member of any organizations.
->5. Your username will be reserved and no one will be able to re-use it again without our permissions.
+>  1. Revoke associated API key(s). 
+>  2. Remove the account as an owner for any child packages.
+>  3. Dissociate all previously existent ID prefix reservations with this account.
+>  4. Remove the account as a member of any organizations.
+>  5. Your username will be reserved and no one will be able to re-use it again without our permissions.
 
 - To proceed with account deletion, [login](https://www.nuget.org/users/account/LogOn?returnUrl=%2F# "login page") to NuGet with the account you wish to delete.
 - Click on this url: [https://www.nuget.org/account/delete](https://www.nuget.org/account/delete) and follow the steps to submit the request for deleting the account.
