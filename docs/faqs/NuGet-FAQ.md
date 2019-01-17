@@ -202,11 +202,8 @@ First, make sure you're using the latest versions of NuGet. If that version cont
 - A restore log with detailed verbosity
 - MTR or a Fiddler traces (see below)
 - Your geographical area
-- Your operating system version
-- Machine configuration (CPU, Network, hard drive)
-- Whether your machine is behind a proxy or firewall
-- The versions of .NET that are installed on the machine
-- Versions of cross-platform tools such as .NET CLI, or DNU that you're using
+- Whether your machine is behind a proxy or firewall?
+- Is your machine located on a cloud providers' data center (Azure, AWS etc)? If yes, please provide the name of the provider and the region.
 
 *To capture MTR:*
 
@@ -238,7 +235,7 @@ If that fails, try the [tips mentioned in this StackOverflow post](http://stacko
 - V3: `https://api.nuget.org/v3/index.json`
 - V2: `https://www.nuget.org/api/v2/` (Note that the V2 API is deprecated and does not work with NuGet 4+.)
 
-## NuGet.org Account Management
+## nuget.org Account Management
 
 ### How to create a new nuget.org account?
 
