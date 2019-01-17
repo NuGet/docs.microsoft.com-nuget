@@ -276,15 +276,14 @@ If you wish to change the associated Microsoft account for nuget.org login, foll
 1. Expand the section for **Login Account**. Click on the **Change Account** button.
 1. You will now be redirected to the microsoft login page. Please sign in with the account that you wish to change the association to i.e. `account2@outlook.com`. **Note**: you might need to click on **Sign out and sign in with different account** during the sign in flow to be able to login with a different Microsoft account.
 1. If you see an error like below, see [Microsoft account is linked with another nuget.org account](#microsoft-account-is-linked-with-another-nugetorg-account) for more details.
-    ```
-    Failed to update the Microsoft account with 'account2 <account2@outlook.com>'. This could happen if it is already linked to another NuGet account. Contact support for more information.
-    ```
+    >_Failed to update the Microsoft account with 'account2 <account2@outlook.com>'. This could happen if it is already linked to another NuGet account. Contact support for more information._
+
 1. Once you have successfully signed in with your second account, you will be redirected back to your nuget.org account settings page and you should now see the new Microsoft account associated as the login account. Going forward you should use this account when signing into nuget.org.
 
 ### Microsoft account is linked with another nuget.org account.
 
 If you tried changing your Microsoft login and saw the error below:
-> Failed to update the Microsoft account with 'account2 <account2@outlook.com>'. This could happen if it is already linked to another NuGet account. Contact support for more information.
+> _Failed to update the Microsoft account with 'account2 <account2@outlook.com>'. This could happen if it is already linked to another NuGet account. Contact support for more information._
 
 On nuget.org with the [recent change](https://blog.nuget.org/20180515/NuGet.org-will-only-support-MSA-AAD-starting-June.html)  there can always be a single Microsoft account (MSA or AAD) that is associated with a given nuget.org account or profile.
 
@@ -312,10 +311,10 @@ You will need to create/use a third Microsoft account, say, with email `account3
 1. Once done, your second Microsoft account with email `account2@outlook.com` is free to be associated to your first nuget.org account, `MyNuGetAccount1`. Follow the same steps above to change microsoft logins to the second Microsoft account.
 
 ### Signing in with Microsoft account shows me my email is linked to another Microsoft account
-If you tried to sign in with your microsoft account, say, with email `account1@outlook.com` and you see an error like below:
-> The account with email account1@outlook.com is linked with another microsoft account.
+If you tried to sign in with your Microsoft account, say, with email `account1@outlook.com` and you see an error like below:
+> _The account with email 'account1@outlook.com' is linked with another microsoft account._
 >
-> If you would like to update the linked Microsoft account you can do so from the account settings page.
+> _If you would like to update the linked Microsoft account you can do so from the account settings page._
 
 **What does the error above mean?**
 
@@ -337,7 +336,7 @@ If you tried using the [sign in assistance](#which-microsoft-account-is-linked-t
 3. [Login to nuget.org](https://www.nuget.org/users/account/LogOnNuGetAccount) using the username/password login.
 4. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box.
 5. **NOTE**: Please ignore the instruction to login with the specified Microsoft account. You can now link your nuget.org account to any other Microsoft login.
-6. Click on the button `Sign in with Microsoft` and login with the Microsoft account that you have an access to, as mentioned in step 1.
+6. Click on the button **Sign in with Microsoft** and login with the Microsoft account that you have an access to, as mentioned in step 1.
 7. Your account will now be linked to the new Microsoft account, which you can use to log into nuget.org going forward.
 
     ![Link MSA Dialog](media/link-msa-dialog.png)
@@ -376,7 +375,7 @@ This could have happened if you or someone from your organization(with @yourdoma
 
 **What can I do to recover my account?**
 
-At this moment there is not a way for us (NuGet) to authenticate accounts with such "Unmanaged" tenant accounts in Azure Active directory. We are looking in to a better way to authenticate such accounts.
+At this moment there is not a way for us (nuget.org) to authenticate accounts with such "Unmanaged" tenant accounts in Azure Active directory. We are looking in to a better way to authenticate such accounts.
 
 If you want to login to nuget.org with your Microsoft account(@yourdomain.com), you(or an administrator at your company) will need to claim the ownership of the AAD by doing a DNS validation to authenticate users with email address "@yourdomain.com". Please follow the steps for [domains admin takeover](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/domains-admin-takeover) documented by the Azure Active directory. Once this is done, your normal login should start working.
 
