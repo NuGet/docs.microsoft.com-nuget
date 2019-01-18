@@ -236,25 +236,6 @@ hide_bc: true
                             </div>
                             </a>
                         </li>
-                        <li>
-                            <a href="faqs/nuget-faq.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-policies.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>FAQs</h3>
-                                            <p>Frequently-asked questions along with information about NuGet as an open-source project, deleting packages and account management.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </li>
                     </ul>
                 </li>
             </ul>

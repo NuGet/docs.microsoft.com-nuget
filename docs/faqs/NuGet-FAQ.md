@@ -235,7 +235,7 @@ If that fails, try the [tips mentioned in this StackOverflow post](http://stacko
 - V3: `https://api.nuget.org/v3/index.json`
 - V2: `https://www.nuget.org/api/v2/` (Note that the V2 API is deprecated and does not work with NuGet 4+.)
 
-## nuget.org Account Management
+## nuget.org account management
 
 ### How to create a new nuget.org account?
 
