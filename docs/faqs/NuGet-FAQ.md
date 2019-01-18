@@ -239,7 +239,7 @@ If that fails, try the [tips mentioned in this StackOverflow post](http://stacko
 
 ### How to create a new nuget.org account?
 
-To create a nuget.org account, you need to have a personal Microsoft account (MSA) or an Azure Active Directory (AAD) account. If you do not have one, you can [create](https://www.microsoft.com/en-us/account) one. Follow the following steps if you have a MSA or AAD account.
+To create a nuget.org account, you need to have a personal Microsoft account (MSA) or an Azure Active Directory (AAD) account. If you do not have one, you can [create](https://signup.live.com) one. Follow the following steps if you have a MSA or AAD account.
 1. Go to the [nuget.org login page](https://www.nuget.org/users/account/LogOn).
 1. Click on **Sign in with Microsoft** button.
 1. Enter your MSA/AAD account details.
@@ -252,14 +252,12 @@ You now have a nuget.org account. You can perfrom account management on the [acc
 
 ### How to recover nuget.org password login?
 
-Please note that the [nuget.org Password login has been discontinued](https://blog.nuget.org/20180515/NuGet.org-will-only-support-MSA-AAD-starting-June.html) and the only way to log in to nuget.org will be with a personal Microsoft account (MSA) or Azure Active Directory (AAD) account. However, in cases when you are unable to access your associated MSA/AAD accounts you might need to use password logins for recovering your nuget.org account. In such situations follow the steps below.
+Please note that the [nuget.org Password login has been discontinued](https://blog.nuget.org/20180515/NuGet.org-will-only-support-MSA-AAD-starting-June.html) and the only way to log in to nuget.org is with a personal Microsoft account (MSA) or Azure Active Directory (AAD) account. However, in case you are unable to access your associated MSA/AAD accounts you might need to use password login for recovering your nuget.org account. In this situation follow the steps below.
 - **Requirement:** You will need to have access to the email that is associated with the account for which you need to recover the password.
-- Go to the [nuget.org login page](https://www.nuget.org/users/account/LogOn)
-- Click on **Sign in using NuGet.org account**
-- Click on **Forgot password?** link.
+- Go to the [Forgot password page](https://www.nuget.org/account/ForgotPassword)
 - Enter the **email** address that is associated with the nuget.org account you wish to recover.
-- Click **Send** button.
-- You should get an email in the specified email address account with a link to reset your password. Click on this link and set the new password you wish.
+- Click the **Send** button.
+- You will get an email to the specified email address account with a link to reset your password. Click on this link and set the new password. If you can't find the mail check your "junk" folder.
 - Once done, you can now login with username/password on NuGet.
 - To login with username/password, use the **Sign in using Nuget.org account** link on the  [nuget.org login page](https://www.nuget.org/users/account/LogOn).
 
@@ -269,8 +267,8 @@ If you have forgotten which Microsoft account is associated with your nuget.org 
 1. Go to [nuget.org login page](https://www.nuget.org/users/account/LogOn) and click on **Need assistance signing in?** link.
 1. This will show you the pop-up dialog box for assistance. Follow the steps in this dialog box to understand the associated Microsoft account(s) for your nuget.org account.
 
-### How to change my Microsoft account for nuget.org login?
-If you wish to change the associated Microsoft account for nuget.org login, follow the steps below. Lets say your Microsoft account with email `account1@outlook.com` is associated with your nuget.org account with username `MyNuGetAccount`. You wish to change the login to another Microsoft account with email `account2@outlook.com`
+### How to change the Microsoft account I use for nuget.org login?
+If you wish to change the Microsoft account for nuget.org user, follow the steps below. Lets say your Microsoft account with email `account1@outlook.com` is associated with your nuget.org account with username `MyNuGetAccount`. You wish to change the login to another Microsoft account with email `account2@outlook.com`
 1. Please sign in using **currently associated Microsoft account** i.e. `account1@outlook.com` on the [login page](https://www.nuget.org/users/account/LogOn) after clicking **Sign in with Microsoft**.
 1. Once logged in, go to your [account settings](https://www.nuget.org/account) page.
 1. Expand the section for **Login Account**. Click on the **Change Account** button.
@@ -285,14 +283,13 @@ If you wish to change the associated Microsoft account for nuget.org login, foll
 If you tried changing your Microsoft login and saw the error below:
 > _Failed to update the Microsoft account with 'account2 <account2@outlook.com>'. This could happen if it is already linked to another NuGet account. Contact support for more information._
 
-On nuget.org with the [recent change](https://blog.nuget.org/20180515/NuGet.org-will-only-support-MSA-AAD-starting-June.html)  there can always be a single Microsoft account (MSA or AAD) that is associated with a given nuget.org account or profile.
-
 Lets say you were trying to change Microsoft account login from `account1@outlook.com` for nuget.org user with username `MyNuGetAccount1` to another Microsoft account with email `account2@outlook.com`. And you see the error above.
 
 **What does the error above mean?**
 
-It means that there is another nuget.org account/profile which is associated with the Microsoft account that you are trying to change it to i.e. in above example the Microsoft account with email `<account2@outlook.com>` is associated with another nuget.org account with, say, username `MyNuGetAccount2`.
-You cannot change the associated login to another Microsoft account which is linked to a different nuget.org account. This would otherwise leave the other nuget.org account orphaned.
+It means that there is another nuget.org account which is associated with the Microsoft account that you are trying to change it to i.e. in above example the Microsoft account with email `<account2@outlook.com>` is associated with another nuget.org account with, say, username `MyNuGetAccount2`.
+
+You cannot change the associated login with a Microsoft account that is linked to a different nuget.org account.
 
 **I forgot I had another nuget.org account, how do I find out which nuget.org account it is?**
 
@@ -301,8 +298,10 @@ Login with the second Microsoft account on the [login page](https://www.nuget.or
 **I do not care about this second nuget.org account, I want to change my login for first nuget.org account with the second Microsoft account. What do I do?**
 
 If you wish to not care about the second nuget.org account and still want to re-use the associated Microsoft account with email `account2@outlook.com`. 
-1. You will first need to get rid of the other account. Follow the steps to [delete user](#how-to-delete-my-nugetorg-account) for the second nuget.org account `MyNuGetAccount2`. 
-1. Once your other account is deleted, you can retry the steps to [change Microsoft account login](#how-to-change-my-microsoft-account-for-nugetorg-login).
+
+You can release the association between the Microsoft account and nuget.org account by deleting the nuget.org account.
+1. Follow the steps to [delete user](#how-to-delete-my-nugetorg-account) for the second nuget.org account `MyNuGetAccount2`. 
+1. Once this account is deleted, you can retry the steps to [change Microsoft account login](#how-to-change-the-microsoft-account-i-use-for-nugetorg-login).
 
 **Wait, I care about this second account too. I do not want to lose this account but change my associated account logins for first account.**
 
@@ -318,9 +317,9 @@ If you tried to sign in with your Microsoft account, say, with email `account1@o
 
 **What does the error above mean?**
 
-When an account is created on nuget.org, there is a communication email address associated with that account. This is usually same as the email address that is used for associated Microsoft account. However, you could choose to specify a different email address for communication. This is the primary email address that is associated with the account. So, technically, you could have a different Microsoft account, say with `account2@outlook.com` that is linked to nuget.org account with primary email address as `account1@outlook.com`.
+When an account is created on nuget.org, there is a communication email address associated with that account. This is usually same as the email address that is used for associated Microsoft account. However, you could choose to specify a different email address for communication. So, technically, you could have a different Microsoft account, say with `account2@outlook.com` that is linked to nuget.org account with communication email address as `account1@outlook.com`.
 
-So the error above means that there already exists nuget.org account with primary email `account1@outlook.com` but is associated with another Microsoft account with email **that is not** `account1@outlook.com`.
+So the error above means that there already exists nuget.org account with communication email address `account1@outlook.com` but is associated with another Microsoft account with email **that is not** `account1@outlook.com`.
 
 **How do I find which Microsoft account is linked to this nuget.org account?**
 
@@ -333,7 +332,7 @@ Follow the steps in [Unable to use microsoft login, how do I recover my nuget.or
 ### Unable to use microsoft login, how do I recover my nuget.org account?
 
 If you tried using the [sign in assistance](#which-microsoft-account-is-linked-to-my-nugetorg-account) and you do not have access to the Microsoft account that is associated with your nuget.org account, please follow the steps below to link a new Microsoft account to your nuget.org account.
-1. **Requirement**: You will need an access to a Microsoft account(which is not associated with any existing nuget.org accounts). If you do not have one, you can [create](https://www.microsoft.com/en-us/account) one.
+1. **Requirement**: You will need an access to a Microsoft account(which is not associated with any existing nuget.org accounts). If you do not have one, you can [create](https://signup.live.com) one.
 2. Follow the [steps to recover your password login](#how-to-recover-nugetorg-password-login), if you have the password login skip this step.
 3. [Login to nuget.org](https://www.nuget.org/users/account/LogOnNuGetAccount) using the username/password login.
 4. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box.
