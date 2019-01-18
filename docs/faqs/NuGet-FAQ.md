@@ -320,12 +320,14 @@ If you tried to sign in with your Microsoft account, say, with email `account1@o
 
 When an account is created on nuget.org, there is a communication email address associated with that account. This is usually same as the email address that is used for associated Microsoft account. However, you could choose to specify a different email address for communication. This is the primary email address that is associated with the account. So, technically, you could have a different Microsoft account, say with `account2@outlook.com` that is linked to nuget.org account with primary email address as `account1@outlook.com`.
 
-So the error above means that there already exists nuget.org account with primary email `account1@outlook.com` but is associated with another Microsoft account with email **not** `account1@outlook.com`.
+So the error above means that there already exists nuget.org account with primary email `account1@outlook.com` but is associated with another Microsoft account with email **that is not** `account1@outlook.com`.
 
 **How do I find which Microsoft account is linked to this nuget.org account?**
+
 You should use the [sign in assistance](#which-microsoft-account-is-linked-to-my-nugetorg-account) flow to figure out which Microsoft account is linked to the nuget.org account with the email address `account1@outlook.com`.
 
 **I want to override that account with my Microsoft account**
+
 Follow the steps in [Unable to use microsoft login, how do I recover my nuget.org account](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account) section to associate your Microsoft account with the existing nuget.org account.
 
 ### Unable to use microsoft login, how do I recover my nuget.org account?
