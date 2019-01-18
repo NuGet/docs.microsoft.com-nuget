@@ -239,7 +239,6 @@
 ## [Project system support](visual-studio-extensibility/project-system-support.md)
 ## [Visual Studio templates](visual-studio-extensibility/visual-studio-templates.md)
 # Policies
-## [NuGet FAQ](policies/nuget-faq.md)
 ## [Governance](policies/governance.md)
 ## [Ecosystem](policies/ecosystem.md)
 ## [Data Requests](policies/Data-requests.md)
@@ -305,3 +304,4 @@
 ## [NuGet 1.3](release-notes/NuGet-1.3.md)
 ## [NuGet 1.2](release-notes/NuGet-1.2.md)
 ## [NuGet 1.1](release-notes/NuGet-1.1.md)
+# [FAQs](faqs/nuget-faq.md)
