@@ -35,7 +35,7 @@
       topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
     - name: Policies
       tocHref: /nuget/policies/
-      topicHref: /nuget/policies/nuget-faq
+      topicHref: /nuget/policies/governance
     - name: Release notes
       tocHref: /nuget/release-notes/
       topicHref: /nuget/release-notes/index

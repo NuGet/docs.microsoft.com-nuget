@@ -218,7 +218,7 @@ hide_bc: true
                             </a>
                         </li>
                         <li>
-                            <a href="policies/nuget-faq.md">
+                            <a href="policies/governance.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -229,7 +229,7 @@ hide_bc: true
                                         </div>
                                         <div class="cardText">
                                             <h3>Policies</h3>
-                                            <p>Frequently-asked questions along with information about NuGet as an open-source project, deleting packages, and resolving disputes.</p>
+                                            <p>Information about NuGet as an open-source project, governance, ecosystem and dispute resolution.</p>
                                         </div>
                                     </div>
                                 </div>
