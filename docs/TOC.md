@@ -181,6 +181,7 @@
 ### [NU5033](reference/errors-and-warnings/NU5033.md)
 ### [NU5034](reference/errors-and-warnings/NU5034.md)
 ### [NU5035](reference/errors-and-warnings/NU5035.md)
+### [NU5036](reference/errors-and-warnings/NU5036.md)
 ### [NU5100](reference/errors-and-warnings/NU5100.md)
 ### [NU5101](reference/errors-and-warnings/NU5101.md)
 ### [NU5102](reference/errors-and-warnings/NU5102.md)

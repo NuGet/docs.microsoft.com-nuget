@@ -67,6 +67,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 ### pack target inputs
 
 - IsPackable
+- SuppressDependenciesWhenPacking
 - PackageVersion
 - PackageId
 - Authors
@@ -101,6 +102,10 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 - NuspecProperties
 
 ## pack scenarios
+
+### Suppress dependencies
+
+To suppress package dependencies from generated NuGet package, set `SuppressDependenciesWhenPacking` to `true` which will allow skipping all the dependencies from generated nupkg file.
 
 ### PackageIconUrl
 
@@ -188,6 +193,14 @@ If a file of type Compile, is outside the project folder, then it's just added t
 
 When using a license expression, the PackageLicenseExpression property should be used. 
 [License expression sample](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample).
+
+```xml
+<PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+</PropertyGroup>
+```
+
+[Learn more about license expressions and licenses that are accepted by NuGet.org](nuspec.md#license).
 
 When packing a license file, you need to use PackageLicenseFile property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. For example:
 

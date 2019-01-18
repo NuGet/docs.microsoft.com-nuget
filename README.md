@@ -59,11 +59,11 @@ In general, if you don't see something described here, look in editing markdown 
 
 ## Language level and terms
 
-Because our docs can be localized into many languages other than English, topics should be written at what's called the "fifth-grade" reading level, or what a typical 11-12 year old child would understand. In other words, avoid using college-level words if possible.
+Because our docs can be localized into many languages other than English, topics should be written at what's called the "fifth-grade" reading level, or what a typical 11-12-year-old child would understand. In other words, avoid using college-level words if possible.
 
 To keep the tone more casual, use contractions like "you'll" and "don't".
 
-Also avoid any cultural references or idioms that do not translate easily. 
+Also, avoid any cultural references or idioms that do not translate easily. 
 
 When describing UI actions, use terms like "select" instead of "click" or "check" because "select" translates better. Use "clear" instead of "uncheck", and prefer "run" over "execute".
 
@@ -102,7 +102,7 @@ Items in the first column are bolded by default, so you don't need to do that ex
 
 ### Screenshots and images
 
-Make all images purposeful and easy to consume; avoid graphics for the sake of graphics. When using a screenshot, include a red rounded-rectangle outline of where the reader's eyes should go. That is, do the work to help the reader look at what you want them to look at, rather than burdening them with having to figure that our for themselves.
+Make all images purposeful and easy to consume; avoid graphics for the sake of graphics. When using a screenshot, include a red rounded-rectangle outline of where the reader's eyes should go. That is, do the work to help the reader look at what you want them to look at, rather than burdening them with having to figure that out for themselves.
 
 If an image has white bleed areas on the edges, draw a 1-pixel gray outline around the entire graphic.
 
@@ -161,7 +161,7 @@ You can also use one of the following callout tags on the first line that will c
 
 ### Inline HTML
 
-If you need to do something that markdown can't handle, use inline HTML. An example is creating a bullet list inside a table.
+If you need to do something that Markdown can't handle, use inline HTML. An example is creating a bullet list inside a table.
 
 Use `&lt;` and `&gt;` for < and > characters outside a code block or inline code (delimited by backticks `).
 

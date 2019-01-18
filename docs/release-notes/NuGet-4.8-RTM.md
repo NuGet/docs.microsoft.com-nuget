@@ -19,7 +19,7 @@ Command line versions of the same functionality are also available:
 
 ## Summary: What's New in this Release
 * NuGet.exe now supports longfilenames on Windows 10 - [#6937](https://github.com/NuGet/Home/issues/6937)
-* Authenication plugins now work across MsBuild, DotNet.exe, NuGet.exe and Visual Studio, including cross platform. The first generation of authentication plugins were not supported in MsBuild, DotNet.exe. Note: VS 2017 15.9 Preview builds have a VSTS authentication plugin included. [#6486](https://github.com/NuGet/Home/issues/6486)
+* Authentication plugins now work across MsBuild, DotNet.exe, NuGet.exe and Visual Studio, including cross platform. The first generation of authentication plugins were not supported in MsBuild, DotNet.exe. Note: VS 2017 15.9 Preview builds have a VSTS authentication plugin included. [#6486](https://github.com/NuGet/Home/issues/6486)
 * MsBuild's SDK Resolver now builds as part of NuGet and installs with NuGet tools for VS. This will avoid versions getting out sync. [#6799](https://github.com/NuGet/Home/issues/6799)
 * PackageReference now supports DevelopmentDependency metadata - [#4125](https://github.com/NuGet/Home/issues/4125)
 

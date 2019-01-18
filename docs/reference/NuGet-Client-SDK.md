@@ -31,3 +31,7 @@ You can find examples and documentation for some of the API in the following blo
 > [!Note]
 > These blog posts were written shortly after the **3.4.3** version of the NuGet client SDK packages were released.
 > Newer versions of the packages may be incompatible with the information in the blog posts.
+
+Martin Björkström did a follow-up blog post to Dave Glick's blog series where he introduces a different approach on using the NuGet Client SDK for installing NuGet packages:
+
+- [Revisiting the NuGet v3 Libraries](https://martinbjorkstrom.com/posts/2018-09-19-revisiting-nuget-client-libraries)
