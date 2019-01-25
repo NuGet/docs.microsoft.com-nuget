@@ -88,6 +88,7 @@
 ## [Signed packages](reference/signed-packages-reference.md)
 ## [Organizations on NuGet.org](reference/organizations-on-nuget-org.md)
 ## [Errors and Warnings](reference/Errors-and-Warnings.md)
+## [licenses.nuget.org](reference/licenses.nuget.org)
 ### [NU1000](reference/errors-and-warnings/NU1000.md)
 ### [NU1001](reference/errors-and-warnings/NU1001.md)
 ### [NU1002](reference/errors-and-warnings/NU1002.md)
