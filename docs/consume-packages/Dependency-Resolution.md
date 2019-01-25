@@ -21,8 +21,7 @@ When installing packages into projects using the PackageReference format, NuGet 
 
 When the NuGet restore process runs prior to a build, it resolves dependencies first in memory, then writes the resulting graph to a file called `project.assets.json`. 
 The assets file is located at `MSBuildProjectExtensionsPath`, which defaults to the 'obj' of the project. 
-
- MSBuild then reads this file and translates it into a set of folders where potential references can be found, and then adds them to the project tree in memory.
+MSBuild then reads this file and translates it into a set of folders where potential references can be found, and then adds them to the project tree in memory.
 
 The lock file is temporary and should not be added to source control. It's listed by default in both `.gitignore` and `.tfignore`. See [Packages and source control](packages-and-source-control.md).
 
