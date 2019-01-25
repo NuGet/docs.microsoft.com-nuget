@@ -123,7 +123,7 @@ When using dotnet.exe 2.x to restore a project that multi-targets netcoreapp 1.x
 #### Workaround
 Disable the usage of the fallback folder by setting the `RestoreAdditionalProjectSources` to nothing. `<RestoreAdditionalProjectSources/>` Use this with caution as it will cause a lot of packages to be downloaded from NuGet.org which otherwise would be have been restored from the fallback folder.
 
-## 4.9.3 Release Notes
+## Summary: What's New in 4.9.3
 
 ### Issues fixed in this release
 #### "Repeatable Package Restores Using a Lock File" Issues
@@ -151,4 +151,4 @@ Disable the usage of the fallback folder by setting the `RestoreAdditionalProjec
 
 * Error building symbol .snupkg package when using embedded license file - [#7591](https://github.com/NuGet/Home/issues/7591)
 
-[Issues List](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.3")
+[List of all issues fixed in this release 4.9.3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.3")
