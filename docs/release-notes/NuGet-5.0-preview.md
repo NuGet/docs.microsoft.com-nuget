@@ -7,9 +7,9 @@ ms.date: 1/25/2019
 ms.topic: conceptual
 ---
 
-# NuGet 5.0.0-preview Release Notes
+# NuGet 5.0 Preview 2 Release Notes
 
-## Summary: What's New in 5.0.0-preview2
+## Summary: What's New in 5.0 Preview 2
 
 ### Issues fixed in this release
 
