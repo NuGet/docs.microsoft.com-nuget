@@ -1,5 +1,5 @@
 ---
-title: NuGet 5.0 preview Release Notes
+title: NuGet 5.0-preview Release Notes
 description: Release notes for NuGet 5.0 previews including known issues, bug fixes, new features, and DCRs.
 author: anangaur
 ms.author: anangaur
@@ -7,9 +7,9 @@ ms.date: 1/25/2019
 ms.topic: conceptual
 ---
 
-# NuGet 5.0 preview Release Notes
+# NuGet 5.0.0-preview Release Notes
 
-## Summary: What's New in 5.0 preview 2
+## Summary: What's New in 5.0.0-preview2
 
 ### Issues fixed in this release
 
@@ -69,7 +69,7 @@ ms.topic: conceptual
 
 * Enable EmbedInteropTypes for PackageReference (matching Packages.Config capability) - [#2365](https://github.com/NuGet/Home/issues/2365)
 
-[List of all issues fixed in this release 4.9.2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
+[List of all issues fixed in this release 5.0.0-preview2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
 
 
 ## Known issues
