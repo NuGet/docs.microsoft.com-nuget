@@ -230,10 +230,15 @@ Note: it may be required to set the `HTTP_PROXY` environment variable to `http:/
 
 If that fails, try the [tips mentioned in this StackOverflow post](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
 
-**What are the API endpoints for nuget.org?**
+## What is the API endpoint for nuget.org?
+
+### Strongly Recommended
 
 - V3: `https://api.nuget.org/v3/index.json`
-- V2: `https://www.nuget.org/api/v2/` (Note that the V2 API is deprecated and does not work with NuGet 4+.)
+
+### What is a slower, less reliable, but works in ancient versions of NuGet.exe (< 4.0)
+
+- V2: `https://www.nuget.org/api/v2/` (DEPRECATED!!!)
 
 ## nuget.org account management
 
