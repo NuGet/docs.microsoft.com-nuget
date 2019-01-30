@@ -1,13 +1,13 @@
 # licenses.nuget.org
 
-## Why
+## Rationale
 
-With introduction of [license expressions](nuspec.md#license) a requirement to have a reliable service that would
-provide a reference license text for individual license IDs, exception IDs or license expression arose. The one that
-is not be susceptible to the link rot and the one that we can safely link to provide backwards compatibility for
-older clients.
+With the introduction of [license expressions](nuspec.md#license) a requirement to have a reliable service that would
+provide a reference license text for individual license IDs, exception IDs or license expression arose. The one with a
+stable URL schema, that is not be susceptible to the link rot, so that we can safely use it to provide backwards
+compatibility for older clients.
 
-[Licenses.nuget.org](https://licenses.nuget.org) fulfulls that role. Gallery web site uses it to provide the license
+[Licenses.nuget.org](https://licenses.nuget.org) fulfulls that role. Gallery uses it to provide the license
 text reference for the pacakages that specify their license using license expression and `nuget.exe pack` operation
 generates links to `licenses.nuget.org` for the [`licenseUrl`](nuspec.md#licenseurl) element to provide backwards
 compatibility with the older clients that don't know how to handle the `license` element.
@@ -15,7 +15,7 @@ compatibility with the older clients that don't know how to handle the `license`
 ## Protocol
 
 `licenses.nuget.org` is intended to be viewed by people in their browsers. HTTPS protocol must be used and requests
-constructed in a certain way.
+constructed in a certain way. It only responds to `GET` requests.
 
 ### License expressions
 
@@ -33,18 +33,18 @@ MIT OR Apache-2.0 | https://licenses.nuget.org/MIT%20OR%20Apache-2.0
 
 #### Response
 
-`licenses.nuget.org` will respond with two kinds of responses:
+`licenses.nuget.org` responds with a web page containing a description of the license expression:
 * if supplied license expression contains a single license ID a web page is returned that contains that
 license's reference text;
 * if supplied license expression is a composite license expression, a web page is returned that contains
-the license expression with links to individual license or exception references.
+the license expression with links to individual licenses or exceptions references.
 
 ### License exceptions
 
 #### Request
 
 License exception IDs have to be URL-encoded and used as a path in the request to `licenses.nuget.org`.
-Only one license exception ID can be supplied in a single request. No additional characters besides
+Only single license exception ID can be supplied in a single request. No additional characters besides
 exception ID may present in path portion of the URL.
 
 | License exception ID | Url to use |
@@ -54,5 +54,5 @@ openvpn-openssl-exception | https://licenses.nuget.org/openvpn-openssl-exception
 
 #### Response
 
-`licenses.nuget.org` will respond with a web page containing the reference text for the specified
+`licenses.nuget.org` responds with a web page containing the reference text for the specified
 license exception.
