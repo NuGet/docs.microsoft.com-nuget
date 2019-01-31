@@ -233,12 +233,14 @@ If that fails, try the [tips mentioned in this StackOverflow post](http://stacko
 ## What is the API endpoint for nuget.org?
 
 ### Strongly Recommended
-
+- For the vast majority of uses, we strongly recommend you access nuget.org via the v3 protocol uri.
 - V3: `https://api.nuget.org/v3/index.json`
 
-### What is a slower, less reliable, but works in ancient versions of NuGet.exe (< 4.0)
-
+### Useful for NuGet Clients before 3.0 or *NuGet.exe List* Users
+- Older clients can still use the v2 protocol to reach nuget.org. However, please note, NuGet clients 3.0 or later will have slower and less-reliable service using the v2 protocol.
+- *NuGet.exe List* only works with the v2 protocol.
 - V2: `https://www.nuget.org/api/v2/` (DEPRECATED!!!)
+- Note: the "www." is important.
 
 ## nuget.org account management
 
