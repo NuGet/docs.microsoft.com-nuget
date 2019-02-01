@@ -230,10 +230,17 @@ Note: it may be required to set the `HTTP_PROXY` environment variable to `http:/
 
 If that fails, try the [tips mentioned in this StackOverflow post](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
 
-**What are the API endpoints for nuget.org?**
+## What is the API endpoint for nuget.org?
 
-- V3: `https://api.nuget.org/v3/index.json`
-- V2: `https://www.nuget.org/api/v2/` (Note that the V2 API is deprecated and does not work with NuGet 4+.)
+To use  nuget.org as a package repository with NuGet clients, you would need to use the following V3 API endpoint: 
+
+**`https://api.nuget.org/v3/index.json`**
+
+Older clients can still use the v2 protocol to reach nuget.org. However, please note, NuGet clients 3.0 or later will have slower and less-reliable service using the v2 protocol:
+
+`https://www.nuget.org/api/v2/` (DEPRECATED!!!) **Note:** the "www." is important.
+
+Additionally, *NuGet.exe List* only works with the v2 protocol.
 
 ## nuget.org account management
 
