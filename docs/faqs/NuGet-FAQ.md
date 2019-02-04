@@ -232,15 +232,13 @@ If that fails, try the [tips mentioned in this StackOverflow post](http://stacko
 
 ## What is the API endpoint for nuget.org?
 
-To use  nuget.org as a package repository with NuGet clients, you would need to use the following V3 API endpoint: 
+To use nuget.org as a package repository with NuGet clients, you should use the following V3 API endpoint: 
 
 **`https://api.nuget.org/v3/index.json`**
 
-Older clients can still use the v2 protocol to reach nuget.org. However, please note, NuGet clients 3.0 or later will have slower and less-reliable service using the v2 protocol:
+Older clients can still use the V2 protocol to reach nuget.org. However, please note, NuGet clients 3.0 or later will have slower and less-reliable service using the V2 protocol:
 
-`https://www.nuget.org/api/v2/` (DEPRECATED!!!) **Note:** the "www." is important.
-
-Additionally, *NuGet.exe List* only works with the v2 protocol.
+`https://www.nuget.org/api/v2` (DEPRECATED!!!) **Note:** use "www." for the best reliability.
 
 ## nuget.org account management
 
