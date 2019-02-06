@@ -7,7 +7,7 @@ provide a reference text for individual license identifiers, exception identifie
 The one with a stable URL schema, that is not susceptible to the link rot, so that we can safely use it to provide
 backwards compatibility for older clients.
 
-[`licenses.nuget.org`](https://licenses.nuget.org) fulfills that role. Gallery uses it to provide the license
+`licenses.nuget.org` fulfills that role. Gallery uses it to provide the license
 text reference for the pacakages that specify their license using license expression and `nuget.exe pack` operation
 generates links to `licenses.nuget.org` for the [`licenseUrl`](nuspec.md#licenseurl) element to provide backwards
 compatibility with older clients that don't support the `license` element.
