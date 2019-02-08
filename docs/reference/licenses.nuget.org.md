@@ -2,8 +2,8 @@
 
 ## Rationale
 
-With introduction of the [license expressions](nuspec.md#license) a requirement emergd to have a reliable service
-that would provide a reference text for individual license identifiers, exception identifiers or license expression.
+With introduction of the [license expressions](nuspec.md#license) a requirement emerged to have a reliable service
+that would provide a reference text for individual license identifiers, exception identifiers or license expressions.
 An additional requirement for this service is to have a stable URL schema, that is not susceptible to the link rot,
 so that we can safely use it to provide backwards compatibility for older clients.
 
@@ -26,6 +26,11 @@ License expressions (including the trivial cases when expression consists of a s
 [URL-encoded](https://tools.ietf.org/html/rfc3986#section-2.1) and used as a path in the request to
 licenses.nuget.org.
 
+Service supports only license identifiers and license expression identifiers that are accepted by 
+[nuget.org](https://www.nuget.org/). All license expressions that contain unsupported license identifiers
+or license exception identifiers or that does not conform to license expression syntax are considered 
+invalid.
+
 | License expression | URL to use |
 |:---|:---|
 MIT                                                | https://licenses.nuget.org/MIT
@@ -34,11 +39,14 @@ MIT                                                | https://licenses.nuget.org/
 
 #### Response
 
-Licenses.nuget.org responds with a web page containing a description of the license expression:
+Licenses.nuget.org responds to a requests containing valid license expressions with an HTTP 200 status code and
+a web page containing a description of the license expression:
 * if supplied license expression contains a single license identifier a web page is returned that contains that
 license reference text;
 * if supplied license expression is a composite license expression, a web page is returned that contains
 the license expression with links to individual license or license exception references.
+
+Any requests that contain invalid license expression result in a HTTP 404 response.
 
 ### License exceptions
 
@@ -55,5 +63,7 @@ openvpn-openssl-exception | https://licenses.nuget.org/openvpn-openssl-exception
 
 #### Response
 
-Licenses.nuget.org responds with a web page containing the reference text for the specified
-license exception.
+Licenses.nuget.org responds to a request with a known license exception identifier with a HTTP 200 response and
+a web page containing the reference text for the specified license exception.
+
+Any request containing unsupported license exception identifier results in HTTP 404 response.
