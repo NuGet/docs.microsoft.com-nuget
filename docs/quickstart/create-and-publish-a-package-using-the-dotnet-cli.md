@@ -104,4 +104,5 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nug
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Package versioning](../reference/package-versioning.md)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)
+- [Creating symbol packages](../create-packages/symbol-packages-snupkg.md)
 - [Signing packages](../create-packages/Sign-a-package.md)
