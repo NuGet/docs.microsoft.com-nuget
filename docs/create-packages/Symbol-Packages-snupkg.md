@@ -50,7 +50,7 @@ If you're using dotnet.exe or MSBuild, use the following steps to create a .snup
 
 2. Pack your project with `dotnet pack MyPackage.csproj` or `msbuild -t:pack MyPackage.csproj`.
 
-The `SymbolPackageFormat` property can have one of the two values: `symbols.nupkg` (the default) or `snupkg`. If the SymbolPackageFormat is not specified, it defaults to `symbols.nupkg` and a legacy symbol package will be created.
+The `SymbolPackageFormat` property can have one of the two values: `symbols.nupkg` (the default) or `snupkg`. If the `SymbolPackageFormat` property is not specified, it defaults to `symbols.nupkg` and a legacy symbol package will be created.
 
 > [!Note]
 > The legacy format `.symbols.nupkg` is still supported but only for compatibility reasons (see [Legacy Symbol Packages](Symbol-Packages.md)). NuGet.org symbols server only accepts the new symbol package format - `.snupkg`.
