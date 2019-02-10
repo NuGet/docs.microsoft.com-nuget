@@ -21,7 +21,7 @@ ms.reviewer:
 
 # Creating symbol packages (.snupkg)
 
-Symbol packages allow you to improve the debugging experience of your NuGet package.
+Symbol packages allow you to improve the debugging experience of your NuGet packages.
 
 ## Prerequisites
 
