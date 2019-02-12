@@ -37,7 +37,7 @@ where `<configPath>` identifies either a `packages.config` or solution file that
 | Help | Displays help information for the command. |
 | Id | Specifies a list of package IDs to update. |
 | MSBuildPath | *(4.0+)* Specifies the path of MSBuild to use with the command, taking precedence over `-MSBuildVersion`. |
-| MSBuildVersion | *(3.2+)* Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild. |
+| MSBuildVersion | *(3.2+)* Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
 | PreRelease | Allows updating to prerelease versions. This flag is not required when updating prerelease packages that are already installed. |
 | RepositoryPath | Specifies the local folder where packages are installed. |
