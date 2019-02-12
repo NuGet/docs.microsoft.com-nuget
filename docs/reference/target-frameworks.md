@@ -62,6 +62,7 @@ Windows Phone (SL) | wp | wp [wp7] |
 Windows Phone (UWP) | | wpa81 |
 Universal Windows Platform | uap | uap [uap10.0] |
 | | | uap10.0 |
+| | | uap10.0.xxxxx  (where xxxxx is the build number of the min target version) |
 .NET Standard | netstandard | netstandard1.0 |
 | | | netstandard1.1 |
 | | | netstandard1.2 |
