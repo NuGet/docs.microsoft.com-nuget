@@ -53,17 +53,17 @@ Non-breaking protocol changes have been made to the API since it was first relea
 
 The **service index** describes a variety of resources. The current set of supported resources are as follows:
 
-Resource name                                                           | Required | Description
-----------------------------------------------------------------------  | -------- | -----------
+Resource name                                                          | Required | Description
+---------------------------------------------------------------------- | -------- | -----------
 [`PackagePublish`](package-publish-resource.md)                        | yes      | Push and delete (or unlist) packages.
 [`SearchQueryService`](search-query-service-resource.md)               | yes      | Filter and search for packages by keyword.
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | yes      | Get package metadata.
 [`PackageBaseAddress`](package-base-address-resource.md)               | yes      | Get package content (.nupkg).
 [`SearchAutocompleteService`](search-autocomplete-service-resource.md) | no       | Discover package IDs and versions by substring.
 [`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | no       | Construct a URL to access a "report abuse" web page.
-[`RepositorySignatures`](repository-signatures-resource.md)             | no      | Get certificates used for repository signing.
-[`Catalog`](catalog-resource.md)                                         | no      | Full record of all package events.
-[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | no      | Push symbol packages.
+[`RepositorySignatures`](repository-signatures-resource.md)            | no       | Get certificates used for repository signing.
+[`Catalog`](catalog-resource.md)                                       | no       | Full record of all package events.
+[`SymbolPackagePublish`](symbol-package-publish-resource.md)           | no       | Push symbol packages.
 
 In general, all non-binary data returned by a API resource are serialized using JSON. The response schema
 returned by each resource in the service index is defined individually for that resource. For more information about
@@ -78,6 +78,26 @@ that the implementation does not understand should be ignored.
 > gracefully. When `ReportAbuseUriTemplate` is not implemented, the official NuGet client falls back to nuget.org's
 > report abuse URL (tracked by [NuGet/Home#4924](https://github.com/NuGet/Home/issues/4924)). Other clients may opt
 > to simply not show a report abuse URL to the user.
+
+### Undocumented resources on nuget.org
+
+The V3 service index on nuget.org has some resources that are not documented above. There are a few reasons for not
+documenting a resource.
+
+First, we don't document resources used as an implementation detail of nuget.org. The `SearchGalleryQueryService`
+falls into this category. [NuGetGallery](https://github.com/NuGet/NuGetGallery) uses this resource to delegate some V2
+(OData) queries to our search index instead of using the database. This resource was introduced for scalability reasons
+and is not intended for external use.
+
+Second, we don't document resources that never shipped in an RTM version of the official client.
+`PackageDisplayMetadataUriTemplate` and `PackageVersionDisplayMetadataUriTemplate` fall into this category.
+
+Thirdly, we don't document resources that are tightly coupled with the V2 protocol, which itself is intentionally
+undocumented. The `LegacyGallery` resource falls into this category. This resource allows a V3 service index to point to
+a corresponding V2 source URL. This resource supports the `nuget.exe list`.
+
+If a resource is not documented here, we *strongly* recommend that you do not take a dependency on them. We may remove
+or change the behavior of these undocumented resources which could break your implementation in unexpected ways.
 
 ## Timestamps
 
