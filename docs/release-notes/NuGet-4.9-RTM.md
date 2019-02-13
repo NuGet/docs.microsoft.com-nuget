@@ -16,7 +16,7 @@ NuGet distribution vehicles:
 | [**4.9.0**](https://nuget.org/downloads) | [Visual Studio 2017 version 15.9.0](https://visualstudio.microsoft.com/downloads/) | [2.1.500, 2.2.100](https://www.microsoft.com/net/download/visual-studio-sdks) |
 | [**4.9.1**](https://nuget.org/downloads) | n/a | n/a |
 | [**4.9.2**](https://nuget.org/downloads) |[Visual Studio 2017 version 15.9.4](https://visualstudio.microsoft.com/downloads/) | [2.1.502, 2.2.101](https://www.microsoft.com/net/download/visual-studio-sdks) |
-| [**4.9.3**](https://nuget.org/downloads) |[Visual Studio 2017 version 15.9.6](https://visualstudio.microsoft.com/downloads/) | n/a |
+| [**4.9.3**](https://nuget.org/downloads) |[Visual Studio 2017 version 15.9.6](https://visualstudio.microsoft.com/downloads/) | [2.1.504, 2.2.104](https://www.microsoft.com/net/download/visual-studio-sdks) |
 
 
 ## Summary: What's New in 4.9.0
