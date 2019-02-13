@@ -41,14 +41,14 @@ If you're using dotnet.exe or MSBuild, use the following steps to create a .snup
 
 1. Add the following properties to your .csproj file:
 
-```
-<PropertyGroup>
-  <IncludeSymbols>true</IncludeSymbols>
-  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-</PropertyGroup>
-```
+    ```xml
+    <PropertyGroup>
+      <IncludeSymbols>true</IncludeSymbols>
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+    ```
 
-2. Pack your project with `dotnet pack MyPackage.csproj` or `msbuild -t:pack MyPackage.csproj`.
+1. Pack your project with `dotnet pack MyPackage.csproj` or `msbuild -t:pack MyPackage.csproj`.
 
 The `SymbolPackageFormat` property can have one of the two values: `symbols.nupkg` (the default) or `snupkg`. If the `SymbolPackageFormat` property is not specified, it defaults to `symbols.nupkg` and a legacy symbol package will be created.
 
