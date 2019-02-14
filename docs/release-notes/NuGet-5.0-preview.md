@@ -103,7 +103,6 @@ ms.topic: conceptual
 
 [List of all issues fixed in this release 5.0.0-preview2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
 
-
 ### Known issues
 
 #### dotnet nuget push --interactive gives an error on Mac. - [#7519](https://github.com/NuGet/Home/issues/7519)
