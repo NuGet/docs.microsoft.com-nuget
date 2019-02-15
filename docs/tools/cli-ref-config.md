@@ -31,7 +31,7 @@ In NuGet 3.4+, `<value>` can use [environment variables](cli-ref-environment-var
 | Option | Description |
 | --- | --- |
 | AsPath | Returns the config value as a path, ignored when `-Set` is used. |
-| ConfigFile | The NuGet configuration file to modify. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
+| ConfigFile | The NuGet configuration file to modify. If not specified, the default file is used. Depending on your operating system that will be (Windows): `%AppData%\NuGet\NuGet.Config` or (Mac/Linux): `~/.config/NuGet/NuGet.Config` or `~/.nuget/NuGet/NuGet.Config` (varies by OS distribution).|
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
