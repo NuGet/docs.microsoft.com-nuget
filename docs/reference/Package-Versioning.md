@@ -183,9 +183,6 @@ The `version` attribute in a `<dependency>` element describes the range versions
 <!-- Accepts any version 6.1 and above. -->
 <dependency id="ExamplePackage" version="6.1" />
 
-<!-- Accepts any 6.x.y version. -->
-<dependency id="ExamplePackage" version="6.*" />
-
 <!-- Accepts any version above, but not including 4.1.3. Could be
      used to guarantee a dependency with a specific bug fix. -->
 <dependency id="ExamplePackage" version="(4.1.3,)" />
