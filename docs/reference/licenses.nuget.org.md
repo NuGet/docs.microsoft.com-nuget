@@ -16,7 +16,8 @@ the `license` element.
 
 Licenses.nuget.org is intended to be viewed by people in their browsers, no machine-readable responses are provided.
 HTTPS protocol must be used and requests are expected to be constructed in a certain way. It only supports `GET` requests.
-It accepts license expressions or license exception identifiers as an input in a way specified below.
+It accepts license expressions or license exception identifiers as an input in a way specified below. Please note, that all
+elements of license expressions are case sensitive, and therefore all input to licenses.nuget.org is case sensitive as well.
 
 ### License expressions
 
