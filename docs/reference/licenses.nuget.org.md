@@ -7,10 +7,11 @@ that would provide a reference text for individual license identifiers, exceptio
 An additional requirement for this service is to have a stable URL schema, that is not susceptible to link rot,
 so that we can safely use it to provide backwards compatibility for older clients.
 
-Licenses.nuget.org fulfills that role. Gallery uses it to provide the license text reference for packages that
-specify their license using a license expression. `nuget.exe pack` operation sets the [`licenseUrl`](nuspec.md#licenseurl)
-element to point to licenses.nuget.org to provide backwards compatibility with older clients that don't support
-the `license` element.
+Licenses.nuget.org fulfills that role. Nuget.org uses it to provide the license text reference for packages that
+specify their license using a license expression. `nuget pack` or packing with other
+[client tools](https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools) set
+the [`licenseUrl`](nuspec.md#licenseurl) element to point to licenses.nuget.org to provide backwards
+compatibility with older clients that don't support the `license` element.
 
 ## Protocol
 
@@ -33,7 +34,7 @@ MIT                                                | https://licenses.nuget.org/
 (MIT)                                              | https://licenses.nuget.org/(MIT)
 (LGPL-2.0-only WITH FLTK-exception OR Apache-2.0+) | https://licenses.nuget.org/(LGPL-2.0-only%20WITH%20FLTK-exception%20OR%20Apache-2.0+)
 
-Service supports only license identifiers and license exception identifiers that are accepted by
+The service supports only license identifiers and license exception identifiers that are accepted by
 nuget.org. All license expressions that contain unsupported license identifiers
 or license exception identifiers or that does not conform to license expression syntax are considered
 invalid.
