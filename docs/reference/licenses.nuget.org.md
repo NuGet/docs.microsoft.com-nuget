@@ -48,7 +48,7 @@ license reference text;
 * if supplied license expression is a composite license expression, a web page is returned that contains
 the license expression with links to individual license or license exception references.
 
-Any requests that contain an invalid license expression result in a HTTP 404 response.
+Any requests that contain an invalid license expression result in an HTTP 404 response.
 
 ### License exceptions
 
@@ -68,4 +68,4 @@ openvpn-openssl-exception | https://licenses.nuget.org/openvpn-openssl-exception
 Licenses.nuget.org responds to a request with a known license exception identifier with a HTTP 200 response and
 a web page containing the reference text for the specified license exception.
 
-Any request containing an unsupported license exception identifier results in HTTP 404 response.
+Any request containing an unsupported license exception identifier results in an HTTP 404 response.
