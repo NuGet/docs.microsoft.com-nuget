@@ -52,12 +52,17 @@ Name     | Type   | Required | Notes
 version  | string | yes      | A SemVer 2.0.0 string
 url      | string | yes      | An absolute URL for downloading this version of nuget.exe
 stage    | string | yes      | An enum string
-uploaded | string | yes      | An approximate timestamp of when the version was made available
+uploaded | string | yes      | An approximate ISO 8601 timestamp of when the version was made available
 
-The items in the array will be sorted in descending, SemVer 2.0.0 order. This guarantee is meant to ease the burden on
-a client looking for the latest version. 
+The items in the array will be sorted in descending, SemVer 2.0.0 order. This guarantee is meant to reduce the burden
+of a client that is interested in highest version number. However this does mean that the list is not sorted in
+chronological order. For example, if a lower major version is serviced at a date later than a higher major version, 
+this serviced version will not appear at the top of the list. If you want the latest version released by
+*timestamp*, simply sort the array by the `uploaded` string. This works because the `uploaded` timestamp is in the
+[ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format which can be sorted chronologically by
+using a lexicographical sort (i.e. a simple string sort).
 
-The `stage` property indicates how vettect this version of the tool is. 
+The `stage` property indicates how vetted this version of the tool is. 
 
 Stage              | Meaning
 ------------------ | ------
@@ -66,7 +71,7 @@ Released           | Available on the download site but is not yet recommended f
 ReleasedAndBlessed | Available on the download site and is recommended for consumption
 
 One simple approach for having the latest, recommended version is to take the first version in the list that has the
-`stage` value of `ReleasedAndBlessed`.
+`stage` value of `ReleasedAndBlessed`. This works because the versions are sorted in SemVer 2.0.0 order.
 
 The `NuGet.CommandLine` package on nuget.org is typically only updated with `ReleasedAndBlessed` versions.
 
