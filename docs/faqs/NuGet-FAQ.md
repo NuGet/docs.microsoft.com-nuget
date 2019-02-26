@@ -414,3 +414,7 @@ Follow the following steps to proceed with account deletion.
 2. Click on this url: [https://www.nuget.org/account/delete](https://www.nuget.org/account/delete) and follow the steps to submit the request for deleting the account.
 
 Our customer support will process this request and perform the account deletion.
+
+### How to delete a package published to NuGet.org?
+In general, we do not support deleting packages published to NuGet.org. Read more about our [policy on deleting packages](../policies/deleting-packages).
+
