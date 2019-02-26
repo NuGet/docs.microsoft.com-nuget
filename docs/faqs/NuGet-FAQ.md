@@ -164,6 +164,7 @@ Note that dependencies listed for your package are generated automatically from 
 In addition, uploading packages to [int.nugettest.org](https://int.nugettest.org) is a great way to test and validate your package without making a package available in the public gallery. API Endpoint: https://apiint.nugettest.org/v3/index.json
 
 **Can I delete a package published to NuGet.org?**
+
 In general, we do not support deleting a package published to NuGet.org. Read more about our [policy on deleting packages](../policies/deleting-packages).
 
 **Is it possible to reserve names for packages that will be published in future?**
