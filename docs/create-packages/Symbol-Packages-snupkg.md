@@ -21,28 +21,36 @@ ms.reviewer:
 
 # Creating symbol packages (.snupkg)
 
+Symbol packages allow you to improve the debugging experience of your NuGet packages.
+
 ## Prerequisites
 
 [nuget.exe v4.9.0 or above](https://www.nuget.org/downloads) or [dotnet.exe v2.2.0 or above](https://www.microsoft.com/net/download/dotnet-core/2.2), which implement the required [NuGet protocols](../api/nuget-protocols.md).
 
 ## Creating a symbol package
 
-A snupkg symbol package can be created from a .nuspec file or from a .csproj file. NuGet.exe and dotnet.exe are both supported. When the options ```-Symbols -SymbolPackageFormat snupkg``` are used on the nuget.exe pack command a .snupkg file will be created in addition to the .nupkg file.
+You can create a snupkg symbol package using dotnet.exe, NuGet.exe, or MSBuild. If you're using NuGet.exe, you can use the following commands to create a .snupkg file in addition to the .nupkg file:
 
-Example commands to create .snupkg files
 ```
-dotnet pack MyPackage.csproj --include-symbols -p:SymbolPackageFormat=snupkg
-
 nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
-
-msbuild -t:pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
 ```
 
-`.snupkgs` are not produced by default. You must pass the `SymbolPackageFormat` property along with `-Symbols` in case of nuget.exe, `--include-symbols` in case of dotnet.exe, or `-p:IncludeSymbols` in case of msbuild.
+If you're using dotnet.exe or MSBuild, use the following steps to create a .snupkg file in addition to the .nupkg file:
 
-SymbolPackageFormat property can have one of the two values: `symbols.nupkg` (the default) or `snupkg`. If the SymbolPackageFormat is not specified, it defaults to `symbols.nupkg` and a legacy symbol package will be created.
+1. Add the following properties to your .csproj file:
+
+    ```xml
+    <PropertyGroup>
+      <IncludeSymbols>true</IncludeSymbols>
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+    ```
+
+1. Pack your project with `dotnet pack MyPackage.csproj` or `msbuild -t:pack MyPackage.csproj`.
+
+The `SymbolPackageFormat` property can have one of the two values: `symbols.nupkg` (the default) or `snupkg`. If the `SymbolPackageFormat` property is not specified, it defaults to `symbols.nupkg` and a legacy symbol package will be created.
 
 > [!Note]
 > The legacy format `.symbols.nupkg` is still supported but only for compatibility reasons (see [Legacy Symbol Packages](Symbol-Packages.md)). NuGet.org symbols server only accepts the new symbol package format - `.snupkg`.
