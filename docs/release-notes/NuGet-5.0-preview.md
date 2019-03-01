@@ -11,8 +11,50 @@ ms.topic: conceptual
 
 ## NuGet 5.0 Preview Releases
 
+* February 27, 2010 - [NuGet 5.0 Preview 4](#summary-whats-new-in-50-preview-4)
 * February 13, 2019 - [NuGet 5.0 Preview 3](#summary-whats-new-in-50-preview-3)
 * January 23, 2019 - [NuGet 5.0 Preview 2](#summary-whats-new-in-50-preview-2)
+
+## Summary: What's New in NuGet 5.0 Preview 4
+
+### Issues fixed in this release
+
+**Bugs:**
+
+* NuGet.VisualStudio.IVsPackageInstaller - calling on a project with no package references always uses packages.config, even if the default is set to PackageReference - [#7005](https://github.com/NuGet/Home/issues/7005)
+
+* PMC: Update-Package reinstall fails ("Unable to find package") on delisted packages. - [#7268](https://github.com/NuGet/Home/issues/7268)
+
+* Add third party notice in our repo and VSIX - [#7409](https://github.com/NuGet/Home/issues/7409)
+
+* NuGet.VisualStudio.IVsPackageInstaller.InstallPackage should install latest version when no version given - [#7493](https://github.com/NuGet/Home/issues/7493)
+
+* --interactive support for dotnet nuget push - [#7519](https://github.com/NuGet/Home/issues/7519)
+
+* When restoring with lock file, NU1603 warning shouldn't be raised. - [#7529](https://github.com/NuGet/Home/issues/7529)
+
+* NuGet should not print project path during restore with minimal logging - [#7647](https://github.com/NuGet/Home/issues/7647)
+
+* --interactive support for dotnet remove package - [#7727](https://github.com/NuGet/Home/issues/7727)
+
+* Add back NuGet.Packaging.Core with TypeForwardedTo attrs - [#7768](https://github.com/NuGet/Home/issues/7768)
+
+* plugins_cache needs shorter path to work well - [#7770](https://github.com/NuGet/Home/issues/7770)
+
+* Prefer path for msbuild discovery if user didn't ask for specific msbuild version - [#7786](https://github.com/NuGet/Home/issues/7786)
+
+**DCRs:**
+
+* limit http request number per source through NuGet.Config - [#4538](https://github.com/NuGet/Home/issues/4538)
+
+* NuGet should target Net472 (to help Cleanup the 16.0 build of the VSIX) - [#7143](https://github.com/NuGet/Home/issues/7143)
+
+* PMC: Remove OpenPackagePage command - [#7384](https://github.com/NuGet/Home/issues/7384)
+
+* Make NetCoreApp 3.0 map to NetStandard 2.1 - [#7762](https://github.com/NuGet/Home/issues/7762)
+
+* Add netstandard2.0 support to NuGet.* packages - [#6516](https://github.com/NuGet/Home/issues/6516)
+
 
 ## Summary: What's New in NuGet 5.0 Preview 3
 
@@ -34,7 +76,7 @@ ms.topic: conceptual
 
 * msbuild /t:restore minimal verbosity should be more minimal - [#4695](https://github.com/NuGet/Home/issues/4695)
 
-**DCRs**
+**DCRs:**
 
 * Allow package authors to define build assets transitive behavior - [#6091](https://github.com/NuGet/Home/issues/6091)
 
@@ -87,7 +129,7 @@ ms.topic: conceptual
 
 * dotnet restore fails due to disabled machine wide feed - [#5410](https://github.com/NuGet/Home/issues/5410)
 
-**DCRs**
+**DCRs:**
 
 * NuGet 5.0 assemblies to require .NET 4.7.2 (via TFM change) - [#7510](https://github.com/NuGet/Home/issues/7510)
 
@@ -104,12 +146,6 @@ ms.topic: conceptual
 [List of all issues fixed in this release 5.0.0-preview2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
 
 ### Known issues
-
-#### dotnet nuget push --interactive gives an error on Mac. - [#7519](https://github.com/NuGet/Home/issues/7519)
-**Issue**
-The `--interactive` argument is not being forwarded by the dotnet cli and results in the error `error: Missing value for option 'interactive'`
-**Workaround**
-Run any other dotnet command with the interactive option such as `dotnet restore --interactive` and authenticate. The authentication then might be cached by the credential provider. Then run `dotnet nuget push`.
 
 #### Packages in FallbackFolders installed by .NET Core SDK are custom installed, and fail signature validation. - [#7414](https://github.com/NuGet/Home/issues/7414)
 **Issue**
