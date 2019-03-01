@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 ## NuGet 5.0 Preview Releases
 
-* February 27, 2010 - [NuGet 5.0 Preview 4](#summary-whats-new-in-50-preview-4)
+* February 27, 2019 - [NuGet 5.0 Preview 4](#summary-whats-new-in-50-preview-4)
 * February 13, 2019 - [NuGet 5.0 Preview 3](#summary-whats-new-in-50-preview-3)
 * January 23, 2019 - [NuGet 5.0 Preview 2](#summary-whats-new-in-50-preview-2)
 
