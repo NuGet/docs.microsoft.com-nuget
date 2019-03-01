@@ -13,7 +13,7 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version| Available in .NET SDK(s)|
 |:---|:---|:---|
-| [**5.0.0-p4**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.0.0-preview4/rc](https://visualstudio.microsoft.com/downloads/) | [2.1.600, 2.2.200](https://www.microsoft.com/net/download/visual-studio-sdks) |
+| [**5.0.0-p4**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.0.0-preview4/rc](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes-preview) | [2.1.600, 2.2.200](https://www.microsoft.com/net/download/visual-studio-sdks) |
 
 ## NuGet 5.0 Preview Releases
 
