@@ -18,7 +18,7 @@ nuget.org does supports *unlisting* a package, which can be done in the package 
 
 ## Exceptions
 
-In exceptional situations such as copyright infringement and potentially harmful content, packages can be deleted manually by the NuGet team. Submit a support request through [NuGet Gallery](http://www.nuget.org) to start the process.
+In exceptional situations such as copyright infringement and potentially harmful content, packages can be deleted manually by the NuGet team. You can report a package using the "Report abuse" button on the NuGet.org package details page. If you are the package owner, login to your NuGet.org account to reach NuGet support using the "Contact support" button on the NuGet.org package details page.
 
 ## Prohibited use
 
