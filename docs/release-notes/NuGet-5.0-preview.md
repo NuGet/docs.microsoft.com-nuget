@@ -59,6 +59,8 @@ NuGet distribution vehicles:
 
 * Make NetCoreApp 3.0 map to NetStandard 2.1 - [#7762](https://github.com/NuGet/Home/issues/7762)
 
+* Add netstandard2.0 support to NuGet.* packages - [#6516](https://github.com/NuGet/Home/issues/6516)
+
 
 ## Summary: What's New in NuGet 5.0 Preview 3
 
