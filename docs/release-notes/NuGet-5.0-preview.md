@@ -11,15 +11,15 @@ ms.topic: conceptual
 
 ## NuGet 5.0 Preview Releases
 
-* February 27, 2010 - [NuGet 5.0 Preview 4](#summary-whats-new-in-50-preview-4)
-* February 13, 2019 - [NuGet 5.0 Preview 3](#summary-whats-new-in-50-preview-3)
-* January 23, 2019 - [NuGet 5.0 Preview 2](#summary-whats-new-in-50-preview-2)
+* February 27, 2019 - [NuGet 5.0 Preview 4](#whats-new-in-nuget-50-preview-4)
+* February 13, 2019 - [NuGet 5.0 Preview 3](#whats-new-in-nuget-50-preview-3)
+* January 23, 2019 - [NuGet 5.0 Preview 2](#whats-new-in-nuget-50-preview-2)
 
-## Summary: What's New in NuGet 5.0 Preview 4
+## What's New in NuGet 5.0 Preview 4
 
 ### Issues fixed in this release
 
-**Bugs:**
+**Bugs**
 
 * NuGet.VisualStudio.IVsPackageInstaller - calling on a project with no package references always uses packages.config, even if the default is set to PackageReference - [#7005](https://github.com/NuGet/Home/issues/7005)
 
@@ -43,7 +43,7 @@ ms.topic: conceptual
 
 * Prefer path for msbuild discovery if user didn't ask for specific msbuild version - [#7786](https://github.com/NuGet/Home/issues/7786)
 
-**DCRs:**
+**DCRs**
 
 * limit http request number per source through NuGet.Config - [#4538](https://github.com/NuGet/Home/issues/4538)
 
@@ -56,11 +56,11 @@ ms.topic: conceptual
 * Add netstandard2.0 support to NuGet.* packages - [#6516](https://github.com/NuGet/Home/issues/6516)
 
 
-## Summary: What's New in NuGet 5.0 Preview 3
+## What's New in NuGet 5.0 Preview 3
 
 ### Issues fixed in this release 
 
-**Bugs:**
+**Bugs**
 
 * nuget.exe /? should list correct msbuild versions - [#7794](https://github.com/NuGet/Home/issues/7794)
 
@@ -76,18 +76,18 @@ ms.topic: conceptual
 
 * msbuild /t:restore minimal verbosity should be more minimal - [#4695](https://github.com/NuGet/Home/issues/4695)
 
-**DCRs:**
+**DCRs**
 
 * Allow package authors to define build assets transitive behavior - [#6091](https://github.com/NuGet/Home/issues/6091)
 
 * Enable restore in VS to succeed if a project is not part of solution or is not loaded, but has previously been restored - [#5820](https://github.com/NuGet/Home/issues/5820)
 
 
-## Summary: What's New in 5.0 Preview 2
+## What's New in NuGet 5.0 Preview 2
 
 ### Issues fixed in this release
 
-**Bugs:**
+**Bugs**
 
 * VS 16.0's NuGet UI has unreadable tabs due to color problems - [#7735](https://github.com/NuGet/Home/issues/7735)
 
@@ -129,7 +129,7 @@ ms.topic: conceptual
 
 * dotnet restore fails due to disabled machine wide feed - [#5410](https://github.com/NuGet/Home/issues/5410)
 
-**DCRs:**
+**DCRs**
 
 * NuGet 5.0 assemblies to require .NET 4.7.2 (via TFM change) - [#7510](https://github.com/NuGet/Home/issues/7510)
 
