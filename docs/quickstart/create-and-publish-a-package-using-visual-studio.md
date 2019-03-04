@@ -22,7 +22,7 @@ It's a simple process to create a NuGet package from a .NET Standard Class Libra
 
     Alternately, if you have the [.NET Core SDK](https://www.microsoft.com/net/download/) installed, you can use the `dotnet` CLI.
 
-1. [Register for a free account on nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) if you don't have one already. Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
+1. [Use your Microsoft account to sign in to nuget.org](https://www.nuget.org/users/account/LogOn). If you don't have a Microsoft account already, you can [create](https://signup.live.com/) one. Please accept the permissions to be given to the NuGet.org application. You will then be redirected to nuget.org, and asked to register a username. Once you specify the username in the input box, click on the Register button.
 
 ## Create a class library project
 
