@@ -80,6 +80,8 @@ When reviewing any application for ID prefix reservation, the [nuget.org](https:
 
 1. Are the identifying properties of the packages that match the package ID prefix clear and consistent (especially the package author)?
 
+1. Do the packages have a license (using the [license](https://docs.microsoft.com/en-us/nuget/reference/nuspec#license) metadata element and NOT licenseUrl which is being deprecated)?
+
 ## Third party feed provider scenarios
 
 If a third party feed provider is interested in implementing their own service to provide prefix reservations, you can do so by modifying the search service in the NuGet V3 feed providers. The addition in the feed search service is to add the *verified* property, with examples for the V3 feeds below. The NuGet client will not support the added property in the V2 feed.
