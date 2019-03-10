@@ -69,7 +69,7 @@ To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://w
 
 #### Publish signed packages
 
-To submit signed packages, you must first [register the certificate](../reference/Signed-Packages-Reference.md#register-certificate-on-nugetorg) used for signing the packages. 
+To submit signed packages, you must first [register the certificate](../Sign-a-Package.md#register-the-certificate-on-nugetorg) used for signing the packages. 
 
 > [!Warning]
 > nuget.org rejects packages that don't satisfy the [signed package requirements](../reference/Signed-Packages-Reference.md#signature-requirements-on-nugetorg).
