@@ -51,7 +51,7 @@ By default, NuGet does not include pre-release versions when working with packag
 
 ## Semantic versioning
 
-The [Semantic Versioning or SemVer convention](http://semver.org/spec/v1.0.0.html) describes how to utilize strings in version numbers to convey they meaning of the underlying code.
+The [Semantic Versioning or SemVer convention](http://semver.org/spec/v1.0.0.html) describes how to utilize strings in version numbers to convey the meaning of the underlying code.
 
 In this convention, each version has three parts, `Major.Minor.Patch`, with the following meaning:
 
