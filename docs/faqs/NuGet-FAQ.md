@@ -341,8 +341,8 @@ Follow the steps in [Unable to use microsoft login, how do I recover my nuget.or
 ### Unable to use microsoft login, how do I recover my nuget.org account?
 
 If you tried using the [sign in assistance](#which-microsoft-account-is-linked-to-my-nugetorg-account) and you do not have access to the Microsoft account that is associated with your nuget.org account, please follow the steps below to link a new Microsoft account to your nuget.org account.
-1. **Requirement**: You will need an access to a Microsoft account(which is not associated with any existing nuget.org accounts). If you do not have one, you can [create](https://signup.live.com) one.
-2. Follow the [steps to recover your password login](#how-to-recover-nugetorg-password-login), if you have the password login skip this step.
+1. **Requirement**: You will need access to a Microsoft account which is not associated with any existing nuget.org accounts. If you do not have one, you can [create](https://signup.live.com) one.
+2. If you've forgotten your username and password for your nuget.org account, follow the [steps to recover your password login](#how-to-recover-nugetorg-password-login).
 3. [Login to nuget.org](https://www.nuget.org/users/account/LogOnNuGetAccount) using the username/password login.
 4. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box.
 5. **NOTE**: Please ignore the instruction to login with the specified Microsoft account. You can now link your nuget.org account to any other Microsoft login.
