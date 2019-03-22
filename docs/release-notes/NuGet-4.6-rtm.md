@@ -7,15 +7,20 @@ ms.date: 3/7/2018
 ms.topic: conceptual
 ---
 
-# NuGet 4.6 RTM Release Notes
+# NuGet 4.6 Release Notes
 
 [Visual Studio 2017 15.6 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with [NuGet 4.6.0](https://dist.nuget.org/win-x86-commandline/v4.6.0/nuget.exe).
 
-## Summary: What's New in this Release
+## Summary: What's New in 4.6.0
 
 * We have added support for [signing packages](../create-packages/sign-a-package.md).
 * Visual Studio 2017 and nuget.exe now verifies package integrity before installing, restoring packages for [signed packages](../reference/signed-packages-reference.md).
 * We have improved performance of successive restores.
+
+## Summary: What's New in 4.6.4
+
+* Security Fix: Permissions on files created inside ~/.nuget are too open [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* Security Fix: Files inside of NUPKGs can have a relative path above the NUPKG directory [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## Known issues
 

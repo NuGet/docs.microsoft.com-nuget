@@ -8,9 +8,16 @@ ms.topic: conceptual
 ms.reviewer: anangaur
 ---
 
-# NuGet 4.4 RTM Release Notes
+# NuGet 4.4 Release Notes
 
 [Visual Studio 2017 15.4 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with NuGet 4.4 RTM.
+
+## Summary: What's New in 4.4.0
+
+## Summary: What's New in 4.4.3
+
+* Security Fix: Permissions on files created inside ~/.nuget are too open [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* Security Fix: Files inside of NUPKGs can have a relative path above the NUPKG directory [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## Known issues
 
