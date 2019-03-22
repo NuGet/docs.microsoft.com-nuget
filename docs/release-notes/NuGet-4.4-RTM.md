@@ -14,9 +14,12 @@ ms.reviewer: anangaur
 
 ## Summary: What's New in 4.4.0
 
-## Summary: What's New in 4.4.3
+## Summary: What's New in 4.4.2
 
 * Security Fix: Permissions on files created inside ~/.nuget are too open [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## Summary: What's New in 4.4.3
+
 * Security Fix: Files inside of NUPKGs can have a relative path above the NUPKG directory [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## Known issues

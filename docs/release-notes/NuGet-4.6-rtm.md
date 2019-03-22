@@ -17,9 +17,12 @@ ms.topic: conceptual
 * Visual Studio 2017 and nuget.exe now verifies package integrity before installing, restoring packages for [signed packages](../reference/signed-packages-reference.md).
 * We have improved performance of successive restores.
 
-## Summary: What's New in 4.6.4
+## Summary: What's New in 4.6.3
 
 * Security Fix: Permissions on files created inside ~/.nuget are too open [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## Summary: What's New in 4.6.4
+
 * Security Fix: Files inside of NUPKGs can have a relative path above the NUPKG directory [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## Known issues
