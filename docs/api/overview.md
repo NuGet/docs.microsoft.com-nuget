@@ -60,11 +60,10 @@ Resource name                                                          | Require
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | yes      | Get package metadata.
 [`PackageBaseAddress`](package-base-address-resource.md)               | yes      | Get package content (.nupkg).
 [`SearchAutocompleteService`](search-autocomplete-service-resource.md) | no       | Discover package IDs and versions by substring.
+[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | no       | Construct a URL to access a "report abuse" web page.
 [`RepositorySignatures`](repository-signatures-resource.md)            | no       | Get certificates used for repository signing.
 [`Catalog`](catalog-resource.md)                                       | no       | Full record of all package events.
 [`SymbolPackagePublish`](symbol-package-publish-resource.md)           | no       | Push symbol packages.
-[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | no       | Construct a URL to access a report abuse web page.
-[`PackageDetailsUriTemplate`](package-details-template-resource.md)    | no       | Construct a URL to access a package details web page.
 
 In general, all non-binary data returned by a API resource are serialized using JSON. The response schema
 returned by each resource in the service index is defined individually for that resource. For more information about
