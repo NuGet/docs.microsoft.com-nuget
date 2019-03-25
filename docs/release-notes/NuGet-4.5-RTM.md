@@ -7,9 +7,19 @@ ms.date: 12/4/2017
 ms.topic: conceptual
 ---
 
-# NuGet 4.5 RTM Release Notes
+# NuGet 4.5 Release Notes
 
 [Visual Studio 2017 15.5 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with [NuGet 4.5 RTM](https://dist.nuget.org/win-x86-commandline/v4.5.0/nuget.exe).
+
+## Summary: What's New in 4.5.0
+
+## Summary: What's New in 4.5.2
+
+* Security Fix: Permissions on files created inside ~/.nuget are too open [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## Summary: What's New in 4.5.3
+
+* Security Fix: Files inside of NUPKGs can have a relative path above the NUPKG directory [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## Known issues
 

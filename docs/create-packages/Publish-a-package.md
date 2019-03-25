@@ -69,7 +69,7 @@ To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://w
 
 #### Publish signed packages
 
-To submit signed packages, you must first [register the certificate](../reference/Signed-Packages-Reference.md#register-certificate-on-nugetorg) used for signing the packages. 
+To submit signed packages, you must first [register the certificate](../create-packages/Sign-a-Package.md#register-the-certificate-on-nugetorg) used for signing the packages. 
 
 > [!Warning]
 > nuget.org rejects packages that don't satisfy the [signed package requirements](../reference/Signed-Packages-Reference.md#signature-requirements-on-nugetorg).
@@ -78,7 +78,7 @@ To submit signed packages, you must first [register the certificate](../referenc
 
 Packages pushed to nuget.org undergo several validations, such as virus checks. (All packages on nuget.org are periodically scanned.)
 
-. When the package has passed all validation checks, it might take a while for it to be indexed and appear in search results. Once indexing is complete, you receive an email confirming that the package was successfully published. If the package fails a validation check, the package details page will update to display the associated error and you also receive an email notifying you about it.
+When the package has passed all validation checks, it might take a while for it to be indexed and appear in search results. Once indexing is complete, you receive an email confirming that the package was successfully published. If the package fails a validation check, the package details page will update to display the associated error and you also receive an email notifying you about it.
 
 Package validation and indexing usually takes under 15 minutes. If the package publishing is taking longer than expected, visit [status.nuget.org](https://status.nuget.org/) to check if nuget.org is experiencing any interruptions. If all systems are operational and the package hasn't been successfully published within an hour, please login to nuget.org and contact us using the Contact Support link on the package page.
 
