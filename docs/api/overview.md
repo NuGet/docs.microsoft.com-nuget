@@ -53,18 +53,18 @@ Non-breaking protocol changes have been made to the API since it was first relea
 
 The **service index** describes a variety of resources. The current set of supported resources are as follows:
 
-Resource name                                                          | Required | Description
----------------------------------------------------------------------- | -------- | -----------
-[`PackagePublish`](package-publish-resource.md)                        | yes      | Push and delete (or unlist) packages.
-[`SearchQueryService`](search-query-service-resource.md)               | yes      | Filter and search for packages by keyword.
-[`RegistrationsBaseUrl`](registration-base-url-resource.md)            | yes      | Get package metadata.
-[`PackageBaseAddress`](package-base-address-resource.md)               | yes      | Get package content (.nupkg).
-[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | no       | Discover package IDs and versions by substring.
-[`RepositorySignatures`](repository-signatures-resource.md)            | no       | Get certificates used for repository signing.
-[`Catalog`](catalog-resource.md)                                       | no       | Full record of all package events.
-[`SymbolPackagePublish`](symbol-package-publish-resource.md)           | no       | Push symbol packages.
-[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | no       | Construct a URL to access a report abuse web page.
-[`PackageDetailsUriTemplate`](package-details-template-resource.md)    | no       | Construct a URL to access a package details web page.
+Resource name                                                        | Required | Description
+-------------------------------------------------------------------- | -------- | -----------
+[Catalog](catalog-resource.md)                                       | no       | Full record of all package events.
+[PackageBaseAddress](package-base-address-resource.md)               | yes      | Get package content (.nupkg).
+[PackageDetailsUriTemplate](package-details-template-resource.md)    | no       | Construct a URL to access a package details web page.
+[PackagePublish](package-publish-resource.md)                        | yes      | Push and delete (or unlist) packages.
+[RegistrationsBaseUrl](registration-base-url-resource.md)            | yes      | Get package metadata.
+[ReportAbuseUriTemplate](report-abuse-resource.md)                   | no       | Construct a URL to access a report abuse web page.
+[RepositorySignatures](repository-signatures-resource.md)            | no       | Get certificates used for repository signing.
+[SearchAutocompleteService](search-autocomplete-service-resource.md) | no       | Discover package IDs and versions by substring.
+[SearchQueryService](search-query-service-resource.md)               | yes      | Filter and search for packages by keyword.
+[SymbolPackagePublish](symbol-package-publish-resource.md)           | no       | Push symbol packages.
 
 In general, all non-binary data returned by a API resource are serialized using JSON. The response schema
 returned by each resource in the service index is defined individually for that resource. For more information about
@@ -141,12 +141,12 @@ client retries three times when encountering any 500-level status code or TCP/DN
 
 ## HTTP request headers
 
-Name                     | Description
------------------------- | -----------
-X-NuGet-ApiKey           | Required for push and delete, see [`PackagePublish` resource](package-publish-resource.md)
-X-NuGet-Client-Version   | **Deprecated** and replaced by `X-NuGet-Protocol-Version`
-X-NuGet-Protocol-Version | Required in certain cases only on nuget.org, see [nuget.org protocols](NuGet-Protocols.md)
-X-NuGet-Session-Id       | *Optional*. NuGet clients v4.7+ identify HTTP requests that are part of the same NuGet client session. For `PackageReference` restore operations there is a single session id, for other scenarios such as auto complete, and `packages.config` restore there may be several different session id's due to how the code is factored.
+Name                       | Description
+-------------------------- | -----------
+`X-NuGet-ApiKey`           | Required for push and delete, see [`PackagePublish` resource](package-publish-resource.md)
+`X-NuGet-Client-Version`   | **Deprecated** and replaced by `X-NuGet-Protocol-Version`
+`X-NuGet-Protocol-Version` | Required in certain cases only on nuget.org, see [nuget.org protocols](NuGet-Protocols.md)
+`X-NuGet-Session-Id`       | *Optional*. NuGet clients v4.7+ identify HTTP requests that are part of the same NuGet client session. For `PackageReference` restore operations there is a single session id, for other scenarios such as auto complete, and `packages.config` restore there may be several different session id's due to how the code is factored.
 
 ## Authentication
 

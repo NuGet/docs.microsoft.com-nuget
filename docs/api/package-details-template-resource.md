@@ -11,8 +11,8 @@ ms.reviewer: ananguar
 # Package details URL template
 
 It is possible for a client to build a URL that can be used by the user to see more package details in their web
-browser. This is useful when a package source wants show additional information about a package that may not fit within
-the scope of what the NuGet client application shows.
+browser. This is useful when a package source wants to show additional information about a package that may not fit
+within the scope of what the NuGet client application shows.
 
 The resource used for building this URL is the `PackageDetailsUriTemplate` resource found in the
 [service index](service-index.md).
