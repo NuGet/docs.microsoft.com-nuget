@@ -141,12 +141,16 @@ client retries three times when encountering any 500-level status code or TCP/DN
 
 ## HTTP request headers
 
-Name                       | Description
--------------------------- | -----------
-`X-NuGet-ApiKey`           | Required for push and delete, see [`PackagePublish` resource](package-publish-resource.md)
-`X-NuGet-Client-Version`   | **Deprecated** and replaced by `X-NuGet-Protocol-Version`
-`X-NuGet-Protocol-Version` | Required in certain cases only on nuget.org, see [nuget.org protocols](NuGet-Protocols.md)
-`X-NuGet-Session-Id`       | *Optional*. NuGet clients v4.7+ identify HTTP requests that are part of the same NuGet client session. For `PackageReference` restore operations there is a single session id, for other scenarios such as auto complete, and `packages.config` restore there may be several different session id's due to how the code is factored.
+Name                     | Description
+------------------------ | -----------
+X-NuGet-ApiKey           | Required for push and delete, see [`PackagePublish` resource](package-publish-resource.md)
+X-NuGet-Client-Version   | **Deprecated** and replaced by `X-NuGet-Protocol-Version`
+X-NuGet-Protocol-Version | Required in certain cases only on nuget.org, see [nuget.org protocols](NuGet-Protocols.md)
+X-NuGet-Session-Id       | *Optional*. NuGet clients v4.7+ identify HTTP requests that are part of the same NuGet client session.
+
+The `X-NuGet-Session-Id` has a single value for all operations related to a single restore in `PackageReference`. For
+other scenarios such as autocomplete and `packages.config` restore there may be several different session ID's due to
+how the code is factored.
 
 ## Authentication
 
