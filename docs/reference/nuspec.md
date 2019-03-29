@@ -88,7 +88,7 @@ Here is the complete list of [SPDX license identifiers](https://spdx.org/license
 If your package is licensed under multiple common licenses, you can specify a composite license using the [SPDX expression syntax version 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60).<br>For example:
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-If you are using a license that hasn’t been assigned an SPDX identifier, or it is a custom license, you can package a file (only `.txt.` or `.md`) with the license text. For example:
+If you are using a license that hasn’t been assigned an SPDX identifier, or it is a custom license, you can package a file (only `.txt` or `.md`) with the license text. For example:
 ```xml
 <package>
   <metadata>
