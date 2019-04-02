@@ -3,7 +3,7 @@ title: NuGet 5.0 RTM Release Notes
 description: Release notes for NuGet 5.0 including known issues, bug fixes, new features, and DCRs.
 author: karann-msft
 ms.author: karann
-ms.date: 11/20/2018
+ms.date: 04/02/2019
 ms.topic: conceptual
 ---
 
@@ -129,16 +129,8 @@ NuGet distribution vehicles:
 
 ### Known issues
 
-### Foo bar isn't foo enough - [#7519](https://github.com/NuGet/Home/issues/7519)
-
-#### Issue
-Foo bar :(
-
-#### Workaround
-FOO BAR !! :) 
-
 #### Packages in FallbackFolders installed by .NET Core SDK are custom installed, and fail signature validation. - [#7414](https://github.com/NuGet/Home/issues/7414)
-**Issue**
-When using dotnet.exe 2.x to restore a project that multi-targets netcoreapp 1.x and netcoreapp 2.x, the fallback folder is treated as a file feed. This means, when restoring, NuGet will pick the package from the fallback folder and try to install it into the global packages folder and do the usual signing validation which fails.
-**Workaround**
+**Issue**<br>
+When using dotnet.exe 2.x to restore a project that multi-targets netcoreapp 1.x and netcoreapp 2.x, the fallback folder is treated as a file feed. This means, when restoring, NuGet will pick the package from the fallback folder and try to install it into the global packages folder and do the usual signing validation which fails.<br>
+**Workaround**<br>
 Disable the usage of the fallback folder by setting the `RestoreAdditionalProjectSources` to nothing. `<RestoreAdditionalProjectSources/>` Use this with caution as it will cause a lot of packages to be downloaded from NuGet.org which otherwise would be have been restored from the fallback folder.
