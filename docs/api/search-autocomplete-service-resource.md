@@ -123,8 +123,8 @@ Name      | Type             | Required | Notes
 --------- | ---------------- | -------- | -----
 data      | array of strings | yes      | The package versions matched by the request
 
-The package versions in the `data` array could contain SemVer 2.0.0 build metadata (e.g. `1.0.0+metadata`) if the
-`semVerLevel=2.0.0` was provided in the query string.
+The package versions in the `data` array may contain SemVer 2.0.0 build metadata (e.g. `1.0.0+metadata`) if the
+`semVerLevel=2.0.0` is provided in the query string.
 
 ### Sample request
 
