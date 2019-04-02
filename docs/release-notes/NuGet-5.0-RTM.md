@@ -23,6 +23,12 @@ NuGet distribution vehicles:
 
 **Bugs**
 
+* When doing a NoOp restore, avoid obj\*dgspec.json write - [#7854](https://github.com/NuGet/Home/issues/7854)
+
+* Permissions on files created inside ~/.nuget are too open - [#7673](https://github.com/NuGet/Home/issues/7673)
+
+* dotnet list package --outdated doesn't work with sources that need auth - [#7605](https://github.com/NuGet/Home/issues/7605)
+
 * NuGet.VisualStudio.IVsPackageInstaller - calling on a project with no package references always uses packages.config, even if the default is set to PackageReference - [#7005](https://github.com/NuGet/Home/issues/7005)
 
 * PMC: Update-Package reinstall fails ("Unable to find package") on delisted packages. - [#7268](https://github.com/NuGet/Home/issues/7268)
@@ -100,6 +106,12 @@ NuGet distribution vehicles:
 * dotnet restore fails due to disabled machine wide feed - [#5410](https://github.com/NuGet/Home/issues/5410)
 
 **DCRs**
+
+* Warn of future removal of "dotnet pack project.json" - [#7928](https://github.com/NuGet/Home/issues/7928)
+ 
+* Add a deprecation warning for Gen1 credential plugin - [#7819](https://github.com/NuGet/Home/issues/7819)
+ 
+* Signing: Enabled Repo to require client verification of every package as repo signed -- via RepositorySignatures/5.0.0 resource - [#7759](https://github.com/NuGet/Home/issues/7759)
 
 * limit http request number per source through NuGet.Config - [#4538](https://github.com/NuGet/Home/issues/4538)
 
