@@ -31,7 +31,7 @@ NuGet distribution vehicles:
 
 **Bugs**
 
-* When doing a NoOp restore, avoid obj\*dgspec.json write - [#7854](https://github.com/NuGet/Home/issues/7854)
+* When doing a NoOp restore, avoid *.dgspec.json write in obj directory - [#7854](https://github.com/NuGet/Home/issues/7854)
 
 * Permissions on files created inside ~/.nuget are too open - [#7673](https://github.com/NuGet/Home/issues/7673)
 
