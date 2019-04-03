@@ -153,4 +153,8 @@ NuGet distribution vehicles:
 #### Issue
 When using dotnet.exe 2.x to restore a project that multi-targets netcoreapp 1.x and netcoreapp 2.x, the fallback folder is treated as a file feed. This means, when restoring, NuGet will pick the package from the fallback folder and try to install it into the global packages folder and do the usual signing validation which fails.<br>
 #### Workaround
-Disable the usage of the fallback folder by setting the `RestoreAdditionalProjectSources` to nothing. `<RestoreAdditionalProjectSources/>` Use this with caution as it will cause a lot of packages to be downloaded from NuGet.org which otherwise would be have been restored from the fallback folder.
+Disable the usage of the fallback folder by setting the `RestoreAdditionalProjectSources` to nothing:
+
+`<RestoreAdditionalProjectSources />`
+
+Use this with caution as packages that would be restored from the fallback folder will now be downloaded from NuGet.org.
