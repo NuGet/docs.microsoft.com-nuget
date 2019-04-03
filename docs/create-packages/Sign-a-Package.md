@@ -24,7 +24,7 @@ You can use self-issued certificates for testing purposes. However, packages sig
 
   ![Certificate Export Wizard](../reference/media/CertificateExportWizard.png)
 
-* You can also export the certificate using the [Export-Certificate PowerShell command](/powershell/module/pkiclient/export-certificate.md).
+* You can also export the certificate using the [Export-Certificate PowerShell command](/powershell/module/pkiclient/export-certificate).
 
 ## Sign the package
 
@@ -34,7 +34,7 @@ You can use self-issued certificates for testing purposes. However, packages sig
 Sign the package using [nuget sign](../tools/cli-ref-sign.md):
 
 ```cli
-nuget sign MyPackage.nupkg -CertificateFilePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
+nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
 ```
 
 * You can use a certificate available in the certificate store or use a certificate from a file. See CLI reference for [nuget sign](../tools/cli-ref-sign.md).
@@ -62,7 +62,7 @@ You are now ready to publish the package to NuGet.org. See [Publishing packages]
 
 ## Create a test certificate
 
-You can use self-issued certificates for testing purposes. To create a self-issued certificate, use the [New-SelfSignedCertificate PowerShell command](/powershell/module/pkiclient/new-selfsignedcertificate.md).
+You can use self-issued certificates for testing purposes. To create a self-issued certificate, use the [New-SelfSignedCertificate PowerShell command](/powershell/module/pkiclient/new-selfsignedcertificate).
 
 ```ps
 New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
