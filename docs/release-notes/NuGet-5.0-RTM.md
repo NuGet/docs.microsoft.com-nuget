@@ -21,7 +21,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.0
 
-* Support solution filter when restoring the solution via CLI or in Visual Studio - [#5820](https://github.com/NuGet/Home/issues/5820)
+* Support for restoring [filtered solutions](https://docs.microsoft.com/en-us/visualstudio/ide/filtered-solutions?view=vs-2019) in Visual Studio 2019 - [#5820](https://github.com/NuGet/Home/issues/5820)
 * `BuildTransitive` folder enables packages to transitively contribute targets/props to the host project - [#6091](https://github.com/NuGet/Home/issues/6091)
 * Better support for PackageReference scenarios in NuGet IVs APIs - [#7005](https://github.com/NuGet/Home/issues/7005), [#7493](https://github.com/NuGet/Home/issues/7493)
 * `nuget.exe pack project.json` has been deprecated - [#7928](https://github.com/NuGet/Home/issues/7928)
@@ -133,7 +133,7 @@ NuGet distribution vehicles:
 
 * Allow package authors to define build assets transitive behavior - [#6091](https://github.com/NuGet/Home/issues/6091)
 
-* Enable restore in VS to succeed if a project is not part of solution or is not loaded, but has previously been restored - [#5820](https://github.com/NuGet/Home/issues/5820)
+* Support VS 2019 Solution Filter feature. Also supports project not in solution, or unloaded projects. Need to restore complete solution (via CLI or VS) first - [#5820](https://github.com/NuGet/Home/issues/5820)
 
 * NuGet 5.0 assemblies to require .NET 4.7.2 (via TFM change) - [#7510](https://github.com/NuGet/Home/issues/7510)
 
