@@ -24,8 +24,8 @@ NuGet distribution vehicles:
 * Support solution filter when restoring the solution via CLI or in Visual Studio - [#5820](https://github.com/NuGet/Home/issues/5820)
 * `BuildTransitive` folder enables packages to transitively contribute targets/props to the host project - [#6091](https://github.com/NuGet/Home/issues/6091)
 * Better support for PackageReference scenarios in NuGet IVs APIs - [#7005](https://github.com/NuGet/Home/issues/7005), [#7493](https://github.com/NuGet/Home/issues/7493)
-* `dotnet pack project.json` has been deprecated - [#7928](https://github.com/NuGet/Home/issues/7928)
-* Gen 1 Credential Provider plugin is no longer supported - [#7819](https://github.com/NuGet/Home/issues/7819)
+* `nuget.exe pack project.json` has been deprecated - [#7928](https://github.com/NuGet/Home/issues/7928)
+* Gen 1 Credential Provider plugin has been superseded by [Gen 2](https://aka.ms/nuget-cross-platform-authentication-plugin) and will soon be deprecated - [#7819](https://github.com/NuGet/Home/issues/7819)
 
 ## Issues fixed in this release
 
