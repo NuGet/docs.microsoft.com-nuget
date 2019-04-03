@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 [Known Issues](../release-notes/known-issues.md)
 
-[NuGet 5.0 preview](../release-notes/NuGet-5.0-preview.md)
+[NuGet 5.0 RTM](../release-notes/NuGet-5.0-RTM.md)
 
 [NuGet 4.9 RTM](../release-notes/NuGet-4.9-RTM.md)
 
