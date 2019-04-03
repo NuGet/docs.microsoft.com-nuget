@@ -37,6 +37,9 @@ Sign the package using [nuget sign](../tools/cli-ref-sign.md):
 nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
 ```
 
+> [!note]
+> For the `Timestamper` optional argument, often times the provider of your certificate authority you will use has a timestamping server URL for you to use.  Consult with your provider's documentation and/or support for that service URL.
+
 * You can use a certificate available in the certificate store or use a certificate from a file. See CLI reference for [nuget sign](../tools/cli-ref-sign.md).
 * Signed packages should include a timestamp to make sure the signature remains valid when the signing certificate has expired. Else the sign operation will produce a [warning](../reference/errors-and-warnings/NU3002.md).
 * You can see the signature details of a given package using [nuget verify](../tools/cli-ref-verify.md).
