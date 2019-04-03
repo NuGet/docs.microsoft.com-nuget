@@ -35,7 +35,7 @@ NuGet distribution vehicles:
 
 * Permissions on files created inside ~/.nuget are too open - [#7673](https://github.com/NuGet/Home/issues/7673)
 
-* dotnet list package --outdated doesn't work with sources that need auth - [#7605](https://github.com/NuGet/Home/issues/7605)
+* `dotnet list package --outdated` doesn't work with sources that need auth - [#7605](https://github.com/NuGet/Home/issues/7605)
 
 * NuGet.VisualStudio.IVsPackageInstaller - calling on a project with no package references always uses packages.config, even if the default is set to PackageReference - [#7005](https://github.com/NuGet/Home/issues/7005)
 
@@ -59,7 +59,7 @@ NuGet distribution vehicles:
 
 * Prefer path for msbuild discovery if user didn't ask for specific msbuild version - [#7786](https://github.com/NuGet/Home/issues/7786)
 
-* nuget.exe /? should list correct msbuild versions - [#7794](https://github.com/NuGet/Home/issues/7794)
+* `nuget.exe /?` should list correct msbuild versions - [#7794](https://github.com/NuGet/Home/issues/7794)
 
 * NuGet.targets(498,5): error : Could not find a part of the path '/tmp/NuGetScratch - on mono - [#7793](https://github.com/NuGet/Home/issues/7793)
 
@@ -83,33 +83,33 @@ NuGet distribution vehicles:
 
 * Fix NuGet.Configuration issues - [#7326](https://github.com/NuGet/Home/issues/7326)
 
-* Adapt to MSBuild updating it's install location.  - [#7325](https://github.com/NuGet/Home/issues/7325)
+* Adapt to MSBuild updating its install location - [#7325](https://github.com/NuGet/Home/issues/7325)
 
 * NuGet.Build.Tasks.Pack should be a development dependency - [#7249](https://github.com/NuGet/Home/issues/7249)
 
 * Add pack extension point for including debug symbols - [#7234](https://github.com/NuGet/Home/issues/7234)
 
-* dotnet pack should preserve dependency version range in the created nupkg. (even if floating version is used) - [#7232](https://github.com/NuGet/Home/issues/7232)
+* `dotnet pack` should preserve dependency version range in the created nupkg (even if floating version is used) - [#7232](https://github.com/NuGet/Home/issues/7232)
 
-* dotnet restore fails on authenticated source when user-level config also has source - [#7209](https://github.com/NuGet/Home/issues/7209)
+* `dotnet restore` fails on authenticated source when user-level config also has source - [#7209](https://github.com/NuGet/Home/issues/7209)
 
 * Pack should not restrict the set of BuildActions for content files - [#7155](https://github.com/NuGet/Home/issues/7155)
 
-* Using a projectreference which requires AssetTargetFallback to succeed, should warn. - [#7137](https://github.com/NuGet/Home/issues/7137)
+* Using a ProjectReference which requires AssetTargetFallback to succeed, should warn. - [#7137](https://github.com/NuGet/Home/issues/7137)
 
 * Deadlock due to threading issues when calling into CPS (CommonProjectSystem) - [#7103](https://github.com/NuGet/Home/issues/7103)
 
-* dotnet add package won't use credentials from global config for a source specified in local config - [#6935](https://github.com/NuGet/Home/issues/6935)
+* `dotnet add package` doesn't use credentials from global config for a source specified in local config - [#6935](https://github.com/NuGet/Home/issues/6935)
 
-* Threading issues with MEF being called on async codepaths - [#6771](https://github.com/NuGet/Home/issues/6771)
+* Threading issues with MEF being called on async code paths - [#6771](https://github.com/NuGet/Home/issues/6771)
 
-* Signing:  error reported twice and without call stack - [#6455](https://github.com/NuGet/Home/issues/6455)
+* Signing: error reported twice and without call stack - [#6455](https://github.com/NuGet/Home/issues/6455)
 
 * Installing a signed package with untrusted signing certificate should show error - [#6318](https://github.com/NuGet/Home/issues/6318)
 
 * NuGet restore improperly NoOps when 2 projects are sharing obj directory - [#6114](https://github.com/NuGet/Home/issues/6114)
 
-* Cannot use PAT with dotnet restore on Linux with packages from authenticated feed - [#5651](https://github.com/NuGet/Home/issues/5651)
+* Cannot use PAT with `dotnet restore` on Linux with packages from authenticated feed - [#5651](https://github.com/NuGet/Home/issues/5651)
 
 * dotnet restore fails due to disabled machine wide feed - [#5410](https://github.com/NuGet/Home/issues/5410)
 
