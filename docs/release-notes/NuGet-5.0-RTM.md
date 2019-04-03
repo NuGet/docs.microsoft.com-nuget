@@ -13,7 +13,7 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version| Available in .NET SDK(s)|
 |:---|:---|:---|
-| [**5.0.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.0.0](https://visualstudio.microsoft.com/downloads/) | 2.1.602<sup>1</sup>, 2.2.202<sup>2</sup> |
+| [**5.0.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.0](https://visualstudio.microsoft.com/downloads/) | 2.1.602<sup>1</sup>, 2.2.202<sup>2</sup> |
 
 <sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload 
 
@@ -21,7 +21,11 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.0
 
-* Foo bar - [#6961](https://github.com/NuGet/Home/issues/6961), [blog post](https://blog.nuget.org/20181205/Lock-down-your-dependencies-using-configurable-trust-policies.html)
+* Support solution filter when restoring the solution via CLI or in Visual Studio - [#5820](https://github.com/NuGet/Home/issues/5820)
+* `BuildTransitive` folder enables packages to transitively contribute targets/props to the host project - [#6091](https://github.com/NuGet/Home/issues/6091)
+* Better support for PackageReference scenarios in NuGet IVs APIs - [#7005](https://github.com/NuGet/Home/issues/7005), [#7493](https://github.com/NuGet/Home/issues/7493)
+* `dotnet pack project.json` has been deprecated - [#7928](https://github.com/NuGet/Home/issues/7928)
+* Gen 1 Credential Provider plugin is no longer supported - [#7819](https://github.com/NuGet/Home/issues/7819)
 
 ## Issues fixed in this release
 
