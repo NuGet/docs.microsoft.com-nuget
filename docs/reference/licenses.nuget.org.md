@@ -1,8 +1,13 @@
+---
+title: licenses.nuget.org
+author: agr
+ms.date: 02/22/2019
+---
 # licenses.nuget.org
 
 ## Rationale
 
-With the introduction of the [license expressions](nuspec.md#license) a requirement emerged to have a reliable service
+With the introduction of the [license expressions](nuspec.md#license), a requirement emerged to have a reliable service
 that would provide a reference text for individual license identifiers, exception identifiers or license expressions.
 An additional requirement for this service is to have a stable URL schema, that is not susceptible to link rot,
 so that we can safely use it to provide backwards compatibility for older clients.
@@ -30,9 +35,9 @@ licenses.nuget.org.
 
 | License expression | URL to use |
 |:---|:---|
-MIT                                                | https://licenses.nuget.org/MIT
-(MIT)                                              | https://licenses.nuget.org/(MIT)
-(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0+) | https://licenses.nuget.org/(LGPL-2.0-only%20WITH%20FLTK-exception%20OR%20Apache-2.0+)
+| MIT                                                | <https://licenses.nuget.org/MIT> |
+| (MIT)                                              | <https://licenses.nuget.org/(MIT)> |
+| (LGPL-2.0-only WITH FLTK-exception OR Apache-2.0+) | <https://licenses.nuget.org/(LGPL-2.0-only%20WITH%20FLTK-exception%20OR%20Apache-2.0+)> |
 
 The service supports only license identifiers and license exception identifiers that are accepted by
 nuget.org. All license expressions that contain unsupported license identifiers
@@ -43,6 +48,7 @@ invalid.
 
 Licenses.nuget.org responds to requests containing valid license expressions with an HTTP 200 status code and
 a web page containing a description of the license expression:
+
 * if supplied license expression contains a single license identifier a web page is returned that contains that
 license reference text;
 * if supplied license expression is a composite license expression, a web page is returned that contains
@@ -60,8 +66,8 @@ license exception identifier may present in the path portion of the URL.
 
 | License exception identifier | URL to use |
 |:---|:---|
-FLTK-exception            | https://licenses.nuget.org/FLTK-exception
-openvpn-openssl-exception | https://licenses.nuget.org/openvpn-openssl-exception
+|FLTK-exception            | <https://licenses.nuget.org/FLTK-exception> |
+|openvpn-openssl-exception | <https://licenses.nuget.org/openvpn-openssl-exception> |
 
 #### Response
 
