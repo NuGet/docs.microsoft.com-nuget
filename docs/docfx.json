@@ -41,7 +41,8 @@
       "ROBOTS": "INDEX,FOLLOW",
       "ms.topic": "conceptual",
       "ms.prod": "nuget",
-      "ms.technology": null,
+      "author": "karann-msft",
+      "ms.author": "karann",
       "ms.reviewer": [
         "karann",
         "unnir"
