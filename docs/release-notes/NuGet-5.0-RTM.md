@@ -13,7 +13,7 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version| Available in .NET SDK(s)|
 |:---|:---|:---|
-| [**5.0.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.0](https://visualstudio.microsoft.com/downloads/) | 2.1.602<sup>1</sup>, 2.2.202<sup>2</sup> |
+| [**5.0.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.0](https://visualstudio.microsoft.com/downloads/) | [2.1.602](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.202](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
 
 <sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload 
 
@@ -147,6 +147,8 @@ NuGet distribution vehicles:
 
 * Enable EmbedInteropTypes for PackageReference (matching Packages.Config capability) - [#2365](https://github.com/NuGet/Home/issues/2365)
 
+**[List of all issues fixed in this release - 5.0 RTM](https://github.com/NuGet/Home/milestone/84?closed=1)**
+
 ## Known issues
 
 ### Packages in FallbackFolders installed by .NET Core SDK are custom installed, and fail signature validation. - [#7414](https://github.com/NuGet/Home/issues/7414)
@@ -155,6 +157,6 @@ When using dotnet.exe 2.x to restore a project that multi-targets netcoreapp 1.x
 #### Workaround
 Disable the usage of the fallback folder by setting the `RestoreAdditionalProjectSources` to nothing:
 
-`<RestoreAdditionalProjectSources />`
+`<RestoreAdditionalProjectSources></RestoreAdditionalProjectSources>`
 
 Use this with caution as packages that would be restored from the fallback folder will now be downloaded from NuGet.org.
