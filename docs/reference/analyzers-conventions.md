@@ -49,6 +49,8 @@ The use of the `analyzers` folder is similar to that used for [target frameworks
 
 If the user's project is using `packages.config`, the MSBuild script that picks up the analyzer does not come into play, so you should place `install.ps1` and `uninstall.ps1` in the `tools` folder with the contents that are described below.
 
+> [!Important] `Install.ps1` and `uninstall.ps1` is not supported by PackageReference and is deprecated when using packages.config. Thus, this is not recommened for use in new packages.
+
 **install.ps1 file contents**
 
 ```ps
