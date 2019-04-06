@@ -148,6 +148,8 @@ Some packages install new commands for the console. For example, `MvcScaffolding
 
 ![Installing and using MvcScaffold](media/PackageManagerConsoleInstall.png)
 
+[Learn more about extending the package manager console.](../create-packages/Extending-the-Package-Manager-Console.md)
+
 ## Setting up a NuGet PowerShell profile
 
 A PowerShell profile lets you make commonly-used commands available wherever you use PowerShell. NuGet supports a NuGet-specific profile typically found at the following location:
