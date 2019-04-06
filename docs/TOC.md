@@ -25,6 +25,7 @@
 ## [Source and config file transformations](create-packages/source-and-config-file-transformations.md)
 ## [Creating localized packages](create-packages/creating-localized-packages.md)
 ## [Prerelease packages](create-packages/prerelease-packages.md)
+## [Extending the Package Manager Console](create-packages/extending-the-package-manager-console.md)
 ## [Creating Native packages](create-packages/native-packages.md)
 ## [Creating Symbol packages](create-packages/symbol-packages-snupkg.md)
 ## [Signing packages](create-packages/sign-a-package.md)
