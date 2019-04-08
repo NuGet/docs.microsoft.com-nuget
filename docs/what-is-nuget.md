@@ -32,7 +32,7 @@ A "compatible" package means that it contains assemblies built for at least one 
 Package developers who require APIs outside of .NET Standard, on the other hand, create separate assemblies for the different target frameworks they want to support and include all of those assemblies in the same package (which is called "multi-targeting"). When a consumer installs such a package, NuGet extracts only those assemblies that are needed by the project. This minimizes the package's footprint in the final application and/or assemblies produced by that project. A multi-targeting package is, of course, more difficult for its creator to maintain.
 
 > [!Note]
-> Targeting .NET Standard supercedes the previous approach of using various portable class library (PCL) targets. This documentation therefore focuses on creating packages for .NET Standard.
+> Targeting .NET Standard supersedes the previous approach of using various portable class library (PCL) targets. This documentation therefore focuses on creating packages for .NET Standard.
 
 ## NuGet tools
 
