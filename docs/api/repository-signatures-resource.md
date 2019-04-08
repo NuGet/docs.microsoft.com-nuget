@@ -26,7 +26,7 @@ The following `@type` value is used:
 @type value                | Notes
 -------------------------- | -----
 RepositorySignatures/4.7.0 | The initial release
-RepositorySignatures/4.9.0 | Allows enabling `allRepositorySigned`
+RepositorySignatures/5.0.0 | Allows enabling `allRepositorySigned`
 
 ## Base URL
 
