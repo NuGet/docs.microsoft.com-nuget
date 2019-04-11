@@ -371,20 +371,18 @@ Restore creates the following files in the build `obj` folder:
 | `{projectName}.projectFileExtension.nuget.g.props` | References to MSBuild props contained in packages |
 | `{projectName}.projectFileExtension.nuget.g.targets` | References to MSBuild targets contained in packages |
 
-### Invoke restore and build in the same MSBuild call
+### Restore and build in the same MSBuild invocation
 
 Due to the fact that NuGet can restore packages that bring down MSBuild targets and props, the restore and build evaluations are run with different global properties.
 This means that the following will have an unpredictable and often incorrect behavior.
 
 ```cli
-
 msbuild -t:restore,build
 ```
 
  Instead the recommended approach is:
 
 ```cli
-
 msbuild -t:build -restore
 ```
 
