@@ -726,5 +726,4 @@ In this example, the following are installed for specific project targets:
 - .NET4 -> `System.Web`, `System.Net`
 - .NET4 Client Profile -> `System.Net`
 - Silverlight 3 -> `System.Json`
-- Silverlight 4 -> `System.Windows.Controls.DomainServices`
 - WindowsPhone -> `Microsoft.Devices.Sensors`
