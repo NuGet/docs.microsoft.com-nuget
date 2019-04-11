@@ -31,5 +31,5 @@ In general, options specified directly on the command line or in NuGet configura
 | NUGET_XMLDOC_MODE | Determines how assemblies XML documentation file extraction should be handled. | Supported modes are *skip* (do not extract XML documentation files), *compress* (store XML doc files as a zip archive) or *none* (default, treat XML doc files as regular files). |
 | NUGET_CERT_REVOCATION_MODE | Determines how the revocation status check of the certificate used to sign a package, is performed when a signed package is installed or restored. When not set, defaults to `online`.| Possible values *online* (default), *offline*.  Related to [NU3028](../reference/errors-and-warnings/NU3028.md) |
 
-The NuGet CLI uses MSBuild to read the project files. All environment variables are available as properties during the MSBuild evaluation.
+The NuGet CLI uses MSBuild to read the project files. All environment variables are available as [properties](#https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-command-line-reference) during the MSBuild evaluation.
 The list of properties documented in [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md#restore-properties) can also be set as environment variables.
