@@ -32,6 +32,7 @@ where `<packagePath>` identifies the package to push to the server.
 | --- | --- |
 | ApiKey | The API key for the target repository. If not present,  the one specified in the config file is used. |
 | ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
+| ContinueOnError | Specifies the Error Code(s) which will not halt the push: `duplicate` and/or `invalid`. Multiple parameters must be separated by semicolons.|
 | DisableBuffering | Disables buffering when pushing to an HTTP(s) server to decrease memory usages. Caution: when this option is used, integrated Windows authentication might not work. |
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
@@ -62,5 +63,9 @@ nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source https://api.nu
 
 nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
-nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/
+nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://customsource/
+
+nuget push *.nupkg -ContinueOnError "duplicate" -src https://customsource/
+
+nuget push *.nupkg -ContinueOnError "duplicate;invalid" -src https://customsource/
 ```
