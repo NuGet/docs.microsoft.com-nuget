@@ -13,7 +13,7 @@ The behavior of the nuget.exe CLI can be configured through a number of environm
 
 In general, options specified directly on the command line or in NuGet configuration files have precedence, but there are a few exceptions such as *FORCE_NUGET_EXE_INTERACTIVE*. If you find that nuget.exe behaves differently between different computers, an environment variable could be the cause. For example, Azure Web Apps Kudu (used during deployment) has *NUGET_XMLDOC_MODE* set to *skip* to speed up package restore performance and save disk space.
 
-The NuGet CLI uses MSBuild to read the project files. All environment variables are available as [properties](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-command-line-reference) during the MSBuild evaluation.
+The NuGet CLI uses MSBuild to read the project files. All environment variables are available as [properties](/visualstudio/msbuild/msbuild-command-line-reference) during the MSBuild evaluation.
 The list of properties documented in [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md#restore-properties) can also be set as environment variables.
 
 | Variable | Description | Remarks |
