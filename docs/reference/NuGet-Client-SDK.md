@@ -9,12 +9,12 @@ ms.topic: conceptual
 
 # NuGet Client SDK
 
-> [!Note]
-> Not to be confused with the [NuGet *Web* API](https://docs.microsoft.com/en-us/nuget/api/overview)
-
-The *NuGet Client SDK* refers to a group of .NET libraries centered around [NuGet.Commands](https://www.nuget.org/packages/NuGet.Commands), [Nuget.Packaging](https://www.nuget.org/packages/NuGet.Packaging), and [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol). These packages replace the earlier [NuGet.Core](https://www.nuget.org/packages/NuGet.Core/) library.
+The *NuGet Client SDK* refers to a group of NuGet packages centered around [NuGet.Commands](https://www.nuget.org/packages/NuGet.Commands), [NuGet.Packaging](https://www.nuget.org/packages/NuGet.Packaging), and [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol). These packages replace the earlier [NuGet.Core](https://www.nuget.org/packages/NuGet.Core/) library.
 
 We are working on having a stable surface area that we can document soon.
+
+> [!Note]
+>  For documentation on the NuGet protocol, please refer to the [NuGet Server API](https://docs.microsoft.com/en-us/nuget/api/overview)
 
 ## Source code
 
