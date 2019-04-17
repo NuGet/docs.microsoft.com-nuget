@@ -66,7 +66,7 @@ The restore command performs the following steps:
 2. Determine the packages folder using the following priority order (NuGet gives an error if none of these folders are found):
 
     - The folder specified with `-PackagesDirectory`.
-    - The `repositoryPath` vale in `Nuget.Config`
+    - The `repositoryPath` value in `Nuget.Config`
     - The folder specified with `-SolutionDirectory`
     - `$(SolutionDir)\packages`
 
