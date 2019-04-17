@@ -337,12 +337,12 @@ Additional restore settings may come from MSBuild properties in the project file
 | RestoreNoCache | If true, avoids using cached packages. See [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | RestoreIgnoreFailedSources | If true, ignores failing or missing package sources. |
 | RestoreFallbackFolders | Fallback folders, used in the same way the user packages folder is used. |
-| RestoreAdditionalProjectSources | Additional sources to the resulting list of sources |
-| RestoreAdditionalProjectFallbackFolders | Additional fallback folders appended to the resulting list of fallback folders |
+| RestoreAdditionalProjectSources | Additional sources to use during restore. |
+| RestoreAdditionalProjectFallbackFolders | Additional fallback folders to use during restore. |
 | RestoreAdditionalProjectFallbackFoldersExcludes | Excludes fallback folders specified in `RestoreAdditionalProjectFallbackFolders` |
 | RestoreTaskAssemblyFile | Path to `NuGet.Build.Tasks.dll`. |
 | RestoreGraphProjectInput | Semicolon-delimited list of projects to restore, which should contain absolute paths. |
-| RestoreUseSkipNonexistentTargets  | When the projects are collected via MSBuild it determines whether they collected using the `SkipNonexistentTargets` optimization. When not set, defaults to `true`. Consequence is fail-fast behavior when a project's targets cannot be imported. |
+| RestoreUseSkipNonexistentTargets  | When the projects are collected via MSBuild it determines whether they are collected using the `SkipNonexistentTargets` optimization. When not set, defaults to `true`. The consequence is a fail-fast behavior when a project's targets cannot be imported. |
 | MSBuildProjectExtensionsPath | Output folder, defaulting to `BaseIntermediateOutputPath` and the `obj` folder. |
 
 #### Examples
