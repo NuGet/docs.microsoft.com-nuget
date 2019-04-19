@@ -24,5 +24,5 @@ For complete information on `dotnet`, see [.NET Core command-line interface (CLI
 ## Package creation
 
 - [**dotnet pack**](/dotnet/core/tools/dotnet-pack?tabs=netcore2x): Packs the code into a NuGet package.
-- [**dotnet nuget push**](/dotnet/core/tools/dotnet-nuget-push): Publishes a package to a NuGet server. Applicable to nuget.org, Azure Artifacts, and [third-party NuGet servers](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview).
-- [**dotnet nuget delete**](/dotnet/core/tools/dotnet-nuget-delete): Deletes or unlists a package from a NuGet server. Applicable to nuget.org, Azure Artifacts, and [third-party NuGet servers](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview).
+- [**dotnet nuget push**](/dotnet/core/tools/dotnet-nuget-push): Publishes a package to a NuGet server. Applicable to nuget.org, Azure Artifacts, and [third-party NuGet servers](/nuget/hosting-packages/overview).
+- [**dotnet nuget delete**](/dotnet/core/tools/dotnet-nuget-delete): Deletes or unlists a package from a NuGet server. Applicable to nuget.org, Azure Artifacts, and [third-party NuGet servers](/nuget/hosting-packages/overview).
