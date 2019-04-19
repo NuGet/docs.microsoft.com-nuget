@@ -14,7 +14,7 @@ The *NuGet Client SDK* refers to a group of NuGet packages centered around [NuGe
 We are working on having a stable surface area that we can document soon.
 
 > [!Note]
->  For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview).
+>  For documentation on the NuGet server protocol, please refer to the [NuGet Server API](/nuget/api/overview).
 
 ## Source code
 
