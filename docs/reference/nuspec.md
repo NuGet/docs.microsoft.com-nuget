@@ -624,23 +624,29 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 #### Example contentFiles section
 
 ```xml
-<contentFiles>
-    <!-- Embed image resources -->
-    <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
-    <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        ...
+        <contentFiles>
+            <!-- Embed image resources -->
+            <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
+            <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
 
-    <!-- Embed all image resources under contentFiles/cs/ -->
-    <files include="cs/**/*.png" buildAction="EmbeddedResource" />
+            <!-- Embed all image resources under contentFiles/cs/ -->
+            <files include="cs/**/*.png" buildAction="EmbeddedResource" />
 
-    <!-- Copy config.xml to the root of the output folder -->
-    <files include="cs/uap/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
+            <!-- Copy config.xml to the root of the output folder -->
+            <files include="cs/uap/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
 
-    <!-- Copy run.cmd to the output folder and keep the directory structure -->
-    <files include="cs/commands/run.cmd" buildAction="None" copyToOutput="true" flatten="false" />
+            <!-- Copy run.cmd to the output folder and keep the directory structure -->
+            <files include="cs/commands/run.cmd" buildAction="None" copyToOutput="true" flatten="false" />
 
-    <!-- Include everything in the scripts folder except exe files -->
-    <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
-</contentFiles>
+            <!-- Include everything in the scripts folder except exe files -->
+            <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
+        </contentFiles>
+        </metadata>
+</package>
 ```
 
 ## Example nuspec files
