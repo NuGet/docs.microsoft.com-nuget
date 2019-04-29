@@ -17,7 +17,7 @@ A stable release is one that's considered reliable enough to be used in producti
 
 To support the software release lifecycle, NuGet 1.6 and later allows for the distribution of pre-release packages, where the version number includes a semantic versioning suffix such as `-alpha`, `-beta`, or `-rc`. For more information, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
 
-You can specify such versions in two ways:
+You can specify such versions in three ways:
 
 - `.nuspec` file: include the semantic version suffix in the `version` element:
 
@@ -25,7 +25,15 @@ You can specify such versions in two ways:
     <version>1.0.1-alpha</version>
     ```
 
-- Assembly attributes: when building a package from a Visual Studio project (`.csproj` or `.vbproj`), use the `AssemblyInformationalVersionAttribute` to specify the version:
+- `.csproj` file: include the semantic version suffix in the `PackageVersion` element:
+
+    ```xml
+    <PropertyGroup>
+        <PackageVersion>1.0.1-alpha</PackageVersion>
+    </PropertyGroup>
+    ```
+
+- Assembly attributes: specify the version using `AssemblyInformationalVersionAttribute`:
 
     ```cs
     [assembly: AssemblyInformationalVersion("1.0.1-beta")]
