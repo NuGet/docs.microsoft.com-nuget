@@ -19,13 +19,13 @@ To support the software release lifecycle, NuGet 1.6 and later allows for the di
 
 You can specify such versions using one of the following ways:
 
-- `nuget.exe`: include the semantic version suffix in the `.nuspec` file's `version` element:
+- [`nuget.exe`](../tools/nuget-exe-cli-reference.md): include the semantic version suffix in the `.nuspec` file's `version` element:
 
     ```xml
     <version>1.0.1-alpha</version>
     ```
 
-- `dotnet.exe`: include the semantic version suffix in the `.csproj` file's  `PackageVersion` element:
+- [dotnet CLI](/dotnet/articles/core/tools/index): include the semantic version suffix in the `.csproj` file's  `PackageVersion` element:
 
     ```xml
     <PropertyGroup>
