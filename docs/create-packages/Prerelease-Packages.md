@@ -19,7 +19,7 @@ To support the software release lifecycle, NuGet 1.6 and later allows for the di
 
 You can specify such versions using one of the following ways:
 
-- **If your project uses [`PackageReference`](../consume-packages/package-references-in-project-files)**: include the semantic version suffix in the `.csproj` file's `PackageVersion` element:
+- **If your project uses [`PackageReference`](../consume-packages/package-references-in-project-files.md)**: include the semantic version suffix in the `.csproj` file's [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion) element:
 
     ```xml
     <PropertyGroup>
@@ -27,7 +27,7 @@ You can specify such versions using one of the following ways:
     </PropertyGroup>
     ```
 
-- **If your project has a [`packages.config`](../reference/packages-config) file**: include the semantic version suffix in the [`.nuspec`](../reference/nuspec) file's [`version`](../reference/nuspec#version) element:
+- **If your project has a [`packages.config`](../reference/packages-config.md) file**: include the semantic version suffix in the [`.nuspec`](../reference/nuspec.md) file's [`version`](../reference/nuspec.md#version) element:
 
     ```xml
     <version>1.0.1-alpha</version>
