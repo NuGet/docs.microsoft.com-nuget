@@ -12,8 +12,6 @@
 ### Install and manage packages
 #### [Using Visual Studio](tools/package-manager-ui.md)
 #### [Using PowerShell](tools/package-manager-console.md)
-#### Using the dotnet CLI
-#### Using the NuGet CLI
 #### [Using Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
 #### [Install a signed package](consume-packages/installing-signed-packages.md)
 ### Manage installed packages
