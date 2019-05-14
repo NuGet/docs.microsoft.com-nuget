@@ -161,7 +161,7 @@ Because a NuGet package is just a ZIP file that's been renamed with the `.nupkg`
 The advantage to this approach is that you don't need to specify in the manifest which files you want to include in the package (as explained later in this topic). You can simply have your build process produce the exact folder structure that goes into the package, and you can easily include other files that might not be part of a project otherwise:
 
 - Content and source code that should be injected into the target project.
-- PowerShell scripts (packages used in NuGet 2.x can include installation scripts as well, which is not supported in NuGet 3.x and later).
+- PowerShell scripts
 - Transformations to existing configuration and source code files in a project.
 
 The folder conventions are as follows:
