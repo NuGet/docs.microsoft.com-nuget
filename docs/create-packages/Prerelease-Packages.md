@@ -17,15 +17,9 @@ A stable release is one that's considered reliable enough to be used in producti
 
 To support the software release lifecycle, NuGet 1.6 and later allows for the distribution of pre-release packages, where the version number includes a semantic versioning suffix such as `-alpha`, `-beta`, or `-rc`. For more information, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
 
-You can specify such versions in three ways:
+You can specify such versions using one of the following ways:
 
-- `.nuspec` file: include the semantic version suffix in the `version` element:
-
-    ```xml
-    <version>1.0.1-alpha</version>
-    ```
-
-- `.csproj` file: include the semantic version suffix in the `PackageVersion` element:
+- **If your project uses [`PackageReference`](../consume-packages/package-references-in-project-files.md)**: include the semantic version suffix in the `.csproj` file's [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion) element:
 
     ```xml
     <PropertyGroup>
@@ -33,15 +27,13 @@ You can specify such versions in three ways:
     </PropertyGroup>
     ```
 
-- Assembly attributes: specify the version using `AssemblyInformationalVersionAttribute`:
+- **If your project has a [`packages.config`](../reference/packages-config.md) file**: include the semantic version suffix in the [`.nuspec`](../reference/nuspec.md) file's [`version`](../reference/nuspec.md#version) element:
 
-    ```cs
-    [assembly: AssemblyInformationalVersion("1.0.1-beta")]
+    ```xml
+    <version>1.0.1-alpha</version>
     ```
 
-    NuGet picks up this value instead of the one specified in the `AssemblyVersion` attribute, which does not support semantic versioning.
-
-When you’re ready to release a stable version, just remove the suffix and the package takes precedence over any pre-release versions. Again, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
+When you're ready to release a stable version, just remove the suffix and the package takes precedence over any pre-release versions. Again, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
 
 ## Installing and updating pre-release packages
 
