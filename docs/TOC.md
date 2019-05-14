@@ -20,13 +20,13 @@
 #### [Reinstall and update packages](consume-packages/reinstalling-and-updating-packages.md)
 #### [Manage global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md)
 #### [Work with source control systems](consume-packages/packages-and-source-control.md)
-### Configure NuGet
-#### [Configure NuGet behavior](consume-packages/configuring-nuget-behavior.md)
-### Package references
+### Reference packages in your project
 #### [Package references in project files](consume-packages/package-references-in-project-files.md)
 #### [Migrate packages.config to PackageReference](reference/migrate-packages-config-to-package-reference.md)
 #### [packages.config](reference/packages-config.md)
 #### [Dependency resolution](consume-packages/dependency-resolution.md)
+### Configure NuGet
+#### [Configure NuGet behavior](consume-packages/configuring-nuget-behavior.md)
 # Create packages
 ## Overview
 ### [Overview and workflow](create-packages/overview-and-workflow.md)
