@@ -21,7 +21,7 @@ Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 nuget sources <operation> -Name <name> -Source <source>
 ```
 
-where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*, `<name>` is the name of the source, and `<source>` is the source's URL.
+where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*, `<name>` is the name of the source, and `<source>` is the source's URL. You can operate on only one source at a time.
 
 ## Options
 
@@ -49,7 +49,7 @@ nuget sources Add -Name "MyServer" -Source \\myserver\packages
 
 nuget sources Disable -Name "MyServer"
 
-nuget source Enable -Name "nuget.org"
+nuget sources Enable -Name "nuget.org"
 
 nuget sources add -name foo.bar -source C:\NuGet\local -username foo -password bar -StorePasswordInClearText -configfile %AppData%\NuGet\my.config
 ```
