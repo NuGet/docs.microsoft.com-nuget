@@ -16,18 +16,19 @@
 #### Using the NuGet CLI
 #### [Using Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
 #### [Install a signed package](consume-packages/installing-signed-packages.md)
+### Manage installed packages
 #### [Restore packages](consume-packages/package-restore.md)
 ##### [Troubleshooting](consume-packages/package-restore-troubleshooting.md)
 #### [Reinstall and update packages](consume-packages/reinstalling-and-updating-packages.md)
 #### [Manage global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md)
-#### [Packages and source control](consume-packages/packages-and-source-control.md)
+#### [Work with source control systems](consume-packages/packages-and-source-control.md)
+### Configure NuGet
+#### [Configure NuGet behavior](consume-packages/configuring-nuget-behavior.md)
 ### Package references
 #### [Package references in project files](consume-packages/package-references-in-project-files.md)
 #### [Migrate packages.config to PackageReference](reference/migrate-packages-config-to-package-reference.md)
 #### [packages.config](reference/packages-config.md)
 #### [Dependency resolution](consume-packages/dependency-resolution.md)
-### Configure NuGet
-#### [Configure NuGet behavior](consume-packages/configuring-nuget-behavior.md)
 # Create packages
 ## Overview
 ### [Overview and workflow](create-packages/overview-and-workflow.md)
