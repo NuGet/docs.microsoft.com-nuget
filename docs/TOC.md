@@ -9,13 +9,13 @@
 ### [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
 ## How-to guides
 ### [Find and choose packages](consume-packages/finding-and-choosing-packages.md)
-### [Include packages in Visual Studio](tools/package-manager-ui.md)
-### [Include packages in PowerShell](tools/package-manager-console.md)
-### Include packages using the dotnet CLI
-### Include packages using the NuGet CLI
-### [Include packages in Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
-### [Install a signed package](consume-packages/installing-signed-packages.md)
-### Manage and update packages
+### Install and manage packages
+#### [Using Visual Studio](tools/package-manager-ui.md)
+#### [Using PowerShell](tools/package-manager-console.md)
+#### Using the dotnet CLI
+#### Using the NuGet CLI
+#### [Using Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
+#### [Install a signed package](consume-packages/installing-signed-packages.md)
 #### [Restore packages](consume-packages/package-restore.md)
 ##### [Troubleshooting](consume-packages/package-restore-troubleshooting.md)
 #### [Reinstall and update packages](consume-packages/reinstalling-and-updating-packages.md)
@@ -37,19 +37,22 @@
 ### [Create and publish a NET Framework package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)
 ## How-to guides
 ### [Create a package](create-packages/creating-a-package.md)
-### [Create a C++ package](create-packages/native-packages.md)
 ### [Create a UWP package](guides/create-uwp-packages.md)
 ### [Create a package using MSBuild](reference/msbuild-targets.md)
 ### [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
-### [Modify source files and config files](create-packages/source-and-config-file-transformations.md)
-### Create other package types
+### Configure packages
 #### [Build a prerelease package](create-packages/prerelease-packages.md)
+#### [Modify source files and config files](create-packages/source-and-config-file-transformations.md)
 #### [Create a localized package](create-packages/creating-localized-packages.md)
 #### [Create a symbol package](create-packages/symbol-packages-snupkg.md)
+### Create packages for specific content
+#### [Create a native package](create-packages/native-packages.md)
 #### [Create UI controls as a NuGet package](guides/create-UI-controls.md)
 #### [Create an analyzer as a NuGet package](reference/analyzers-conventions.md)
 #### [Create a package for Xamarin with Visual Studio 2015](guides/create-packages-for-xamarin.md)
-### [Sign a package](create-packages/sign-a-package.md)
+### Sign packages
+#### [Sign a package](create-packages/sign-a-package.md)
+#### [Signed packages](reference/signed-packages-reference.md)
 ### Publish packages
 #### [Publish a package](create-packages/publish-a-package.md)
 ### Host packages
@@ -109,7 +112,6 @@
 ### [Uninstall-Package](tools/ps-ref-uninstall-package.md)
 ### [Update-Package](tools/ps-ref-update-package.md)
 ## [NuGet client SDK](reference/nuget-client-sdk.md)
-## [Signed packages](reference/signed-packages-reference.md)
 ## [Errors and Warnings](reference/Errors-and-Warnings.md)
 ### [NU1000](reference/errors-and-warnings/NU1000.md)
 ### [NU1001](reference/errors-and-warnings/NU1001.md)
@@ -243,9 +245,10 @@
 ### [NU5125](reference/errors-and-warnings/NU5125.md)
 ### [NU5500](reference/errors-and-warnings/NU5500.md)
 # NuGet.org
-## [ID prefix reservation](reference/id-prefix-reservation.md)
-## [Organizations on NuGet.org](reference/organizations-on-nuget-org.md)
-## [licenses.nuget.org](reference/licenses.nuget.org.md)
+## Overview
+### [Organizations on NuGet.org](reference/organizations-on-nuget-org.md)
+### [ID prefix reservation](reference/id-prefix-reservation.md)
+### [licenses.nuget.org](reference/licenses.nuget.org.md)
 ## Policies
 ### [Governance](policies/governance.md)
 ### [Ecosystem](policies/ecosystem.md)
@@ -253,24 +256,24 @@
 ### [Dispute resolution](policies/dispute-resolution.md)
 ### [Deleting packages](policies/deleting-packages.md)
 ## Reference
-## NuGet API
-### [Overview](api/overview.md)
-### Resources
-#### [Autocomplete](api/search-autocomplete-service-resource.md)
-#### [Catalog](api/catalog-resource.md)
-#### [Package content](api/package-base-address-resource.md)
-#### [Package details URL](api/package-details-template-resource.md)
-#### [Package metadata](api/registration-base-url-resource.md)
-#### [Push and delete](api/package-publish-resource.md)
-#### [Push symbol packages](api/symbol-package-publish-resource.md)
-#### [Report abuse URL](api/report-abuse-resource.md)
-#### [Repository signatures](api/repository-signatures-resource.md)
-#### [Search](api/search-query-service-resource.md)
-#### [Service index](api/service-index.md)
-### [How-to: query for all packages using the API](guides/api/query-for-all-published-packages.md)
-### [Rate limits](api/rate-limits.md)
-### [nuget.org protocols](api/nuget-protocols.md)
-### [tools.json](api/tools-json.md)
+### NuGet API
+#### [Overview](api/overview.md)
+#### Resources
+##### [Autocomplete](api/search-autocomplete-service-resource.md)
+##### [Catalog](api/catalog-resource.md)
+##### [Package content](api/package-base-address-resource.md)
+##### [Package details URL](api/package-details-template-resource.md)
+##### [Package metadata](api/registration-base-url-resource.md)
+##### [Push and delete](api/package-publish-resource.md)
+##### [Push symbol packages](api/symbol-package-publish-resource.md)
+##### [Report abuse URL](api/report-abuse-resource.md)
+##### [Repository signatures](api/repository-signatures-resource.md)
+##### [Search](api/search-query-service-resource.md)
+##### [Service index](api/service-index.md)
+#### [How-to: query for all packages using the API](guides/api/query-for-all-published-packages.md)
+#### [Rate limits](api/rate-limits.md)
+#### [nuget.org protocols](api/nuget-protocols.md)
+#### [tools.json](api/tools-json.md)
 # Resources
 ## Policies
 ### [Governance](policies/governance.md)
