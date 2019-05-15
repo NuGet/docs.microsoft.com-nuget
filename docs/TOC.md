@@ -1,3 +1,4 @@
+# [NuGet documentation](index.md)
 # [What is NuGet?](what-is-nuget.md)
 # [Install NuGet client tools](install-nuget-client-tools.md)
 # Consume packages
@@ -38,11 +39,12 @@
 ### [Create a package](create-packages/creating-a-package.md)
 ### [Create a UWP package](guides/create-uwp-packages.md)
 ### [Create a package using MSBuild](reference/msbuild-targets.md)
-### [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
 ### Configure packages
-#### [Build a prerelease package](create-packages/prerelease-packages.md)
-#### [Modify source files and config files](create-packages/source-and-config-file-transformations.md)
+#### [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
+#### [Modify source code and config files](create-packages/source-and-config-file-transformations.md)
 #### [Create a localized package](create-packages/creating-localized-packages.md)
+### Create other package types
+#### [Build a prerelease package](create-packages/prerelease-packages.md)
 #### [Create a symbol package](create-packages/symbol-packages-snupkg.md)
 ### Create packages for specific content
 #### [Create a native package](create-packages/native-packages.md)
@@ -51,7 +53,7 @@
 #### [Create a package for Xamarin with Visual Studio 2015](guides/create-packages-for-xamarin.md)
 ### Sign packages
 #### [Sign a package](create-packages/sign-a-package.md)
-#### [Signed packages](reference/signed-packages-reference.md)
+#### [Signed package types and requirements](reference/signed-packages-reference.md)
 ### Publish packages
 #### [Publish a package](create-packages/publish-a-package.md)
 ### Host packages
