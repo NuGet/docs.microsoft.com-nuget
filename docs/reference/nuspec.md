@@ -313,6 +313,9 @@ Explicit references are typically used for design-time only assemblies. When usi
 
 Similarly, explicit references can be used for unit test frameworks, such as XUnit, which needs its tools assemblies located next to the runtime assemblies, but does not need them included as project references.
 
+> [!Important]
+> The `<references>` element is only supported correctly by projects using NuGet packages with `packages.config`. In order to support projects using `PackageReference` (such as .NET Core projects), the reference assemblies should also be copied to the `ref/<TFM>/` directory in the package.
+
 ### Reference groups
 
 As an alternative to a single flat list, references can be specified according to the framework profile of the target project using `<group>` elements within `<references>`.
