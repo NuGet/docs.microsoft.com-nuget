@@ -315,6 +315,8 @@ Similarly, explicit references can be used for unit test frameworks, such as XUn
 
 > [!Important]
 > The `<references>` element is only supported correctly by projects using NuGet packages with `packages.config`. In order to support projects using `PackageReference` (such as .NET Core projects), the reference assemblies should also be copied to the `ref/<TFM>/` directory in the package.
+>
+> For example, if your package contains `lib\netstandard2.0\A.dll` and `lib\netstandard2.0\B.dll`, and you have `<reference file="A.dll" />` in your nuspec, then you should copy `lib\netstandard2.0\A.dll` to `ref\netstandard2.0\A.dll` and have both in your package.
 
 ### Reference groups
 
