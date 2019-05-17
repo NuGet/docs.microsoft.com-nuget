@@ -37,7 +37,6 @@
 ### [Create and publish a NET Framework package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)
 ## How-to guides
 ### [Create a package](create-packages/creating-a-package.md)
-### [Create a UWP package](guides/create-uwp-packages.md)
 ### [Create a package using MSBuild](reference/msbuild-targets.md)
 ### Configure packages
 #### [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
@@ -47,6 +46,7 @@
 #### [Build a prerelease package](create-packages/prerelease-packages.md)
 #### [Create a symbol package](create-packages/symbol-packages-snupkg.md)
 ### Create packages for specific content
+#### [Create a UWP package](guides/create-uwp-packages.md)
 #### [Create a native package](create-packages/native-packages.md)
 #### [Create UI controls as a NuGet package](guides/create-UI-controls.md)
 #### [Create an analyzer as a NuGet package](reference/analyzers-conventions.md)

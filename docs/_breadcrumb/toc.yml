@@ -39,3 +39,6 @@
     - name: Release notes
       tocHref: /nuget/release-notes/
       topicHref: /nuget/release-notes/index
+    - name: NuGet.org
+      tocHref: /nuget/nuget-org/
+      topicHref: /nuget/nuget-org/organizations-on-nuget-org
