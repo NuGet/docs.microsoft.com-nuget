@@ -1,6 +1,5 @@
 # [NuGet documentation](index.md)
 # [What is NuGet?](what-is-nuget.md)
-# [Install NuGet client tools](install-nuget-client-tools.md)
 # Consume packages
 ## Overview
 ### [Overview and workflow](consume-packages/overview-and-workflow.md)
@@ -9,6 +8,7 @@
 ### [Install and use a package (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
 ### [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
 ## How-to guides
+### [Install NuGet client tools](install-nuget-client-tools.md)
 ### [Find and choose packages](consume-packages/finding-and-choosing-packages.md)
 ### Install and manage packages
 #### [Using Visual Studio](tools/package-manager-ui.md)
@@ -36,6 +36,7 @@
 ### [Create and publish a NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
 ### [Create and publish a NET Framework package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)
 ## How-to guides
+### [Install NuGet client tools](install-nuget-client-tools.md)
 ### [Create a package](create-packages/creating-a-package.md)
 ### [Create a package using MSBuild](reference/msbuild-targets.md)
 ### Configure packages
