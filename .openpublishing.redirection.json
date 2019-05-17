@@ -114,6 +114,21 @@
             "source_path": "docs/policies/nuget-faq.md",
             "redirect_url": "/nuget/faqs/nuget-faq",
             "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/ID-Prefix-Reservation.md",
+            "redirect_url": "/nuget-org/id-prefix-reservation",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/licenses-nuget-org.md",
+            "redirect_url": "/nuget-org/licenses-nuget-org",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/organizations-on-nuget-org.md",
+            "redirect_url": "/nuget-org/organizations-on-nuget-org",
+            "redirect_document_id": false
         }
     ]
 }
