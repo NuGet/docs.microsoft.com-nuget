@@ -1,18 +1,19 @@
-# [NuGet documentation](../index.md)
+# [NuGet client documentation](../index.md)
 # NuGet.org documentation
 ## Overview
 ### [Organizations on NuGet.org](organizations-on-nuget-org.md)
 ### [ID prefix reservation](id-prefix-reservation.md)
 ### [licenses.nuget.org](licenses.nuget.org.md)
 ## Policies
-### [Governance](../policies/governance.md)
-### [Ecosystem](../policies/ecosystem.md)
-### [Data Requests](../policies/Data-requests.md)
-### [Dispute resolution](../policies/dispute-resolution.md)
-### [Deleting packages](../policies/deleting-packages.md)
+### [Data Requests](../policies/Data-requests?toc=/nuget/nuget-org/toc.json)
+### [Dispute resolution](../policies/dispute-resolution?toc=/nuget/nuget-org/toc.json)
+### [Deleting packages](../policies/deleting-packages?toc=/nuget/nuget-org/toc.json)
+### General policies
+#### [Governance](../policies/governance.md)
+#### [Ecosystem](../policies/ecosystem.md)
 ## Reference
 ### NuGet API
-#### [Overview](../api/overview.md)
+#### [Overview](../api/overview?toc=/nuget/nuget-org/toc.json)
 #### Resources
 ##### [Autocomplete](../api/search-autocomplete-service-resource.md)
 ##### [Catalog](../api/catalog-resource.md)
