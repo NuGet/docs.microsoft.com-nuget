@@ -1,8 +1,8 @@
 # [NuGet client documentation](../index.md)
 # NuGet.org documentation
 ## Overview
-### [Organizations on NuGet.org](organizations-on-nuget-org.md)
-### [ID prefix reservation](id-prefix-reservation.md)
+### [Your organization on NuGet.org](organizations-on-nuget-org.md)
+### [Package ID prefix reservation](id-prefix-reservation.md)
 ### [licenses.nuget.org](licenses.nuget.org.md)
 ## Policies
 ### [Data Requests](../policies/Data-requests?toc=/nuget/nuget-org/toc.json)

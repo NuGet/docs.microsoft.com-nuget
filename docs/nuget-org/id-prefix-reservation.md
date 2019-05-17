@@ -1,5 +1,5 @@
 ---
-title: ID Prefix Reservation Reference
+title: ID Prefix Reservation
 description: Package ID Prefix Reservation feature description and author guide.
 author: diverdan92
 ms.author: diverdan92

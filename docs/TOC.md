@@ -245,11 +245,11 @@
 ### [NU5124](reference/errors-and-warnings/NU5124.md)
 ### [NU5125](reference/errors-and-warnings/NU5125.md)
 ### [NU5500](reference/errors-and-warnings/NU5500.md)
-# [NuGet.org](nuget-org/organizations-on-nuget-org)
 # Resources
 ## Policies
 ### [Governance](policies/governance.md)
 ### [Ecosystem](policies/ecosystem.md)
+### [NuGet.org policies](policies/Data-requests?toc=/nuget/nuget-org/toc.json)
 ## Release notes
 ### [Known Issues](release-notes/known-issues.md)
 ### [NuGet 5.0 RTM](release-notes/NuGet-5.0-RTM.md)
@@ -316,3 +316,4 @@
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
 ## [FAQs](faqs/nuget-faq.md)
+# [NuGet.org](nuget-org/organizations-on-nuget-org)
