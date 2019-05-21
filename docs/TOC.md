@@ -1,79 +1,78 @@
-# [NuGet documentation](index.md)
+# [Docs at a glance](index.md)
 # [What is NuGet?](what-is-nuget.md)
+## Quickstarts
+### [Install and use a package (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
+### [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
+### [Create and publish a NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
+### [Create and publish a NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
+### [Create and publish a NET Framework package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)
 # Consume packages
 ## Overview
 ### [Overview and workflow](consume-packages/overview-and-workflow.md)
 ### [Ways to install a package](consume-packages/ways-to-install-a-package.md)
-## Quickstarts
-### [Install and use a package (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
-### [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
-## How-to guides
-### [Install NuGet client tools](install-nuget-client-tools.md)
-### [Find and choose packages](consume-packages/finding-and-choosing-packages.md)
-### Install and manage packages
-#### [Using Visual Studio](tools/package-manager-ui.md)
-#### [Using PowerShell](tools/package-manager-console.md)
-#### [Using Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
-#### [Install a signed package](consume-packages/installing-signed-packages.md)
-### Manage installed packages
-#### [Restore packages](consume-packages/package-restore.md)
-##### [Troubleshooting](consume-packages/package-restore-troubleshooting.md)
-#### [Reinstall and update packages](consume-packages/reinstalling-and-updating-packages.md)
-#### [Manage global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md)
-#### [Work with source control systems](consume-packages/packages-and-source-control.md)
-### Reference packages in your project
-#### [Package references in project files](consume-packages/package-references-in-project-files.md)
-#### [Migrate packages.config to PackageReference](reference/migrate-packages-config-to-package-reference.md)
-#### [packages.config](reference/packages-config.md)
-#### [Dependency resolution](consume-packages/dependency-resolution.md)
-### Configure NuGet
-#### [Configure NuGet behavior](consume-packages/configuring-nuget-behavior.md)
+## [Install NuGet client tools](install-nuget-client-tools.md)
+## [Find and choose packages](consume-packages/finding-and-choosing-packages.md)
+## Install and manage packages
+### [Using Visual Studio](tools/package-manager-ui.md)
+### [Using PowerShell](tools/package-manager-console.md)
+### [Using Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
+### [Install a signed package](consume-packages/installing-signed-packages.md)
+## Manage installed packages
+### [Restore packages](consume-packages/package-restore.md)
+#### [Troubleshooting](consume-packages/package-restore-troubleshooting.md)
+### [Reinstall and update packages](consume-packages/reinstalling-and-updating-packages.md)
+### [Manage global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md)
+### [Work with source control systems](consume-packages/packages-and-source-control.md)
+## Reference packages in your project
+### [Package references in project files](consume-packages/package-references-in-project-files.md)
+### [Migrate packages.config to PackageReference](reference/migrate-packages-config-to-package-reference.md)
+### [packages.config](reference/packages-config.md)
+### [Dependency resolution](consume-packages/dependency-resolution.md)
+## Configure NuGet
+### [Configure NuGet behavior](consume-packages/configuring-nuget-behavior.md)
+## Archived content
+### [project.json management format](archive/project-json.md)
+### [project.json and UWP](archive/project-json-and-uwp.md)
+### [project.json impact](archive/project-json-impact.md)
 # Create packages
 ## Overview
 ### [Overview and workflow](create-packages/overview-and-workflow.md)
-## Quickstarts
-### [Create and publish a NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
-### [Create and publish a NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
-### [Create and publish a NET Framework package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)
-## How-to guides
-### [Install NuGet client tools](install-nuget-client-tools.md)
-### [Create a package](create-packages/creating-a-package.md)
-### [Create a package using MSBuild](reference/msbuild-targets.md)
-### Configure packages
-#### [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
-#### [Modify source code and config files](create-packages/source-and-config-file-transformations.md)
-#### [Create a localized package](create-packages/creating-localized-packages.md)
-### Create other package types
-#### [Build a prerelease package](create-packages/prerelease-packages.md)
-#### [Create a symbol package](create-packages/symbol-packages-snupkg.md)
-### Create packages for specific content
-#### [Create a UWP package](guides/create-uwp-packages.md)
-#### [Create a native package](create-packages/native-packages.md)
-#### [Create UI controls as a NuGet package](guides/create-UI-controls.md)
-#### [Create an analyzer as a NuGet package](reference/analyzers-conventions.md)
-#### [Create a package for Xamarin with Visual Studio 2015](guides/create-packages-for-xamarin.md)
-### Sign packages
-#### [Sign a package](create-packages/sign-a-package.md)
-#### [Signed package types and requirements](reference/signed-packages-reference.md)
-### Publish packages
-#### [Publish a package](create-packages/publish-a-package.md)
-### Host packages
-#### [Overview](hosting-packages/overview.md)
-#### [Local feeds](hosting-packages/local-feeds.md)
-#### [NuGet.Server](hosting-packages/nuget-server.md)
-### Extensibility
-#### [NuGet Cross Platform Plugins](reference/extensibility/NuGet-Cross-Platform-Plugins.md)
-#### [NuGet cross platform authentication plugin](reference/extensibility/nuget-cross-platform-authentication-plugin.md)
-#### [NuGet credential providers for Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
-#### [nuget.exe credential providers](reference/extensibility/nuget-exe-credential-providers.md)
-### Visual Studio extensibility
-#### [NuGet API in Visual Studio](visual-studio-extensibility/nuget-api-in-visual-studio.md)
-#### [Project system support](visual-studio-extensibility/project-system-support.md)
-#### [Visual Studio templates](visual-studio-extensibility/visual-studio-templates.md)
-### Archived content
-#### [project.json management format](archive/project-json.md)
-#### [project.json and UWP](archive/project-json-and-uwp.md)
-#### [project.json impact](archive/project-json-impact.md)
+## [Install NuGet client tools](install-nuget-client-tools.md)
+## [Create a package](create-packages/creating-a-package.md)
+## [Create a package using MSBuild](reference/msbuild-targets.md)
+## Configure packages
+### [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
+### [Modify source code and config files](create-packages/source-and-config-file-transformations.md)
+### [Create a localized package](create-packages/creating-localized-packages.md)
+## Create other package types
+### [Build a prerelease package](create-packages/prerelease-packages.md)
+### [Create a symbol package](create-packages/symbol-packages-snupkg.md)
+## Create packages for specific content
+### [Create a UWP package](guides/create-uwp-packages.md)
+### [Create a native package](create-packages/native-packages.md)
+### [Create UI controls as a NuGet package](guides/create-UI-controls.md)
+### [Create an analyzer as a NuGet package](reference/analyzers-conventions.md)
+### [Create a package for Xamarin with Visual Studio 2015](guides/create-packages-for-xamarin.md)
+## Sign packages
+### [Sign a package](create-packages/sign-a-package.md)
+### [Signed package types and requirements](reference/signed-packages-reference.md)
+## [Publish to NuGet.org](create-packages/publish-a-package.md)
+### API keys
+## Publish to a private feed
+### [Overview](hosting-packages/overview.md)
+### [Azure artifacts](/azure/devops/artifacts/nuget/publish?view=azure-devops)
+### [GitHub package registry](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
+### [NuGet.Server](hosting-packages/nuget-server.md)
+### [Local feeds](hosting-packages/local-feeds.md)
+## Extensibility
+### [NuGet Cross Platform Plugins](reference/extensibility/NuGet-Cross-Platform-Plugins.md)
+### [NuGet cross platform authentication plugin](reference/extensibility/nuget-cross-platform-authentication-plugin.md)
+### [NuGet credential providers for Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
+### [nuget.exe credential providers](reference/extensibility/nuget-exe-credential-providers.md)
+## Visual Studio extensibility
+### [NuGet API in Visual Studio](visual-studio-extensibility/nuget-api-in-visual-studio.md)
+### [Project system support](visual-studio-extensibility/project-system-support.md)
+### [Visual Studio templates](visual-studio-extensibility/visual-studio-templates.md)
 # Concepts
 ## [Package versioning](reference/package-versioning.md)
 # Reference

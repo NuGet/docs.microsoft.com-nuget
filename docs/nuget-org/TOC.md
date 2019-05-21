@@ -1,9 +1,10 @@
 # [NuGet client documentation](../index.md)
 # NuGet.org documentation
 ## Overview
-### [Your organization on NuGet.org](organizations-on-nuget-org.md)
-### [Package ID prefix reservation](id-prefix-reservation.md)
-### [licenses.nuget.org](licenses.nuget.org.md)
+## Account management
+### Individual accounts
+### [Organizations](organizations-on-nuget-org.md)
+### API key
 ## Policies
 ### [Data Requests](../policies/Data-requests?toc=/nuget/nuget-org/toc.json)
 ### [Dispute resolution](../policies/dispute-resolution?toc=/nuget/nuget-org/toc.json)
@@ -30,3 +31,5 @@
 #### [Rate limits](../api/rate-limits.md)
 #### [nuget.org protocols](../api/nuget-protocols.md)
 #### [tools.json](../api/tools-json.md)
+### [ID prefix reservation](id-prefix-reservation.md)
+### [licenses.nuget.org](licenses.nuget.org.md)
