@@ -35,8 +35,7 @@
 ### [project.json and UWP](archive/project-json-and-uwp.md)
 ### [project.json impact](archive/project-json-impact.md)
 # Create packages
-## Overview
-### [Overview and workflow](create-packages/overview-and-workflow.md)
+## [Overview and workflow](create-packages/overview-and-workflow.md)
 ## [Install NuGet client tools](install-nuget-client-tools.md)
 ## [Create a package](create-packages/creating-a-package.md)
 ## [Create a package using MSBuild](reference/msbuild-targets.md)
