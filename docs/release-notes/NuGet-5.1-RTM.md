@@ -21,7 +21,7 @@ NuGet distribution vehicles:
   * Support "download only" package scenario with PackageDownload - [#7339](https://github.com/NuGet/Home/issues/7339)
   * Exlcude runtime and targeting packs from search results & restore graph using PackageType - [#7337](https://github.com/NuGet/Home/issues/7337)
 
-## Issues fixed in this release
+### Issues fixed in this release
 
 **Bugs**
 
