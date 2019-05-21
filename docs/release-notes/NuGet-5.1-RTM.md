@@ -1,30 +1,29 @@
-# 5.1 Release Notes
+# NuGet 5.1 Release Notes
 
-[Full Changelog]()
+NuGet distribution vehicles:
 
-[Issues List](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.1")
+| NuGet version | Available in Visual Studio version| Available in .NET SDK(s)|
+|:---|:---|:---|
+| [**5.1.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.1](https://visualstudio.microsoft.com/downloads/) | [2.1.70X](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.30X](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
 
-### Feature
+<sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload 
 
-* Skip Duplicate switch added to nuget.exe push command - [#1630](https://github.com/NuGet/Home/issues/1630)
+<sup>2</sup>Available as an optional install with Visual Studio 2019 with .NET Core workload
 
-* Represent FrameworkReferences in NuGet - pack & restore support - [#7342](https://github.com/NuGet/Home/issues/7342)
+## Summary: What's New in 5.1
 
-* Support "download only" package scenario with PackageDownload - [#7339](https://github.com/NuGet/Home/issues/7339)
+* Support to skip a package push if it already exists to allow for better integration with CI/CD workflows - [#1630](https://github.com/NuGet/Home/issues/1630#issuecomment-483461100)
 
-* Add PackageType for runtime and targeting packs to exclude them from search results & restore graph. - [#7337](https://github.com/NuGet/Home/issues/7337)
+* Visual Studio now provides a convenient link to the the package's nuget.org gallery page - [#5299](https://github.com/NuGet/Home/issues/5299#issuecomment-494458510)
 
-* Link VS Package Entries to Gallery Package Pages - [#5299](https://github.com/NuGet/Home/issues/5299)
+* Support for new .NET Core 3.0 assets such as [Targeting Packs](https://github.com/dotnet/cli/issues/10006) and [Runtime Packs](https://github.com/dotnet/cli/issues/10007)
+  * NuGet pack and restore support for FrameworkReferences to enable targeting and runtime package references - [#7342](https://github.com/NuGet/Home/issues/7342)
+  * Support "download only" package scenario with PackageDownload - [#7339](https://github.com/NuGet/Home/issues/7339)
+  * Exlcude runtime and targeting packs from search results & restore graph using PackageType - [#7337](https://github.com/NuGet/Home/issues/7337)
 
+## Issues fixed in this release
 
-### DCR
-
-* Plugins:  enable diagnostic logging - [#7859](https://github.com/NuGet/Home/issues/7859)
-
-* Make Tizen 6 map to NetStandard 2.1 - [#7773](https://github.com/NuGet/Home/issues/7773)
-
-
-### Bug
+**Bugs**
 
 * Plugins:  exception details lost during plugin creation - [#8057](https://github.com/NuGet/Home/issues/8057)
 
@@ -79,3 +78,11 @@
 * Update Errors and warning docs to reflect signing related scenarios - [#6498](https://github.com/NuGet/Home/issues/6498)
 
 * Assets file should use relative paths to enable moving projects more easily - [#4582](https://github.com/NuGet/Home/issues/4582)
+
+**DCRs**
+
+* Plugins:  enable diagnostic logging - [#7859](https://github.com/NuGet/Home/issues/7859)
+
+* Make Tizen 6 map to NetStandard 2.1 - [#7773](https://github.com/NuGet/Home/issues/7773)
+
+**[List of all issues fixed in this release - 5.1 RTM](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.1")**
