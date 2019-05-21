@@ -1,10 +1,30 @@
-#5.1 Release Notes
+# 5.1 Release Notes
 
 [Full Changelog]()
 
 [Issues List](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.1")
 
-**Bug:**
+### Feature
+
+* Skip Duplicate switch added to nuget.exe push command - [#1630](https://github.com/NuGet/Home/issues/1630)
+
+* Represent FrameworkReferences in NuGet - pack & restore support - [#7342](https://github.com/NuGet/Home/issues/7342)
+
+* Support "download only" package scenario with PackageDownload - [#7339](https://github.com/NuGet/Home/issues/7339)
+
+* Add PackageType for runtime and targeting packs to exclude them from search results & restore graph. - [#7337](https://github.com/NuGet/Home/issues/7337)
+
+* Link VS Package Entries to Gallery Package Pages - [#5299](https://github.com/NuGet/Home/issues/5299)
+
+
+### DCR
+
+* Plugins:  enable diagnostic logging - [#7859](https://github.com/NuGet/Home/issues/7859)
+
+* Make Tizen 6 map to NetStandard 2.1 - [#7773](https://github.com/NuGet/Home/issues/7773)
+
+
+### Bug
 
 * Plugins:  exception details lost during plugin creation - [#8057](https://github.com/NuGet/Home/issues/8057)
 
@@ -59,23 +79,3 @@
 * Update Errors and warning docs to reflect signing related scenarios - [#6498](https://github.com/NuGet/Home/issues/6498)
 
 * Assets file should use relative paths to enable moving projects more easily - [#4582](https://github.com/NuGet/Home/issues/4582)
-
-
-**DCR:**
-
-* Plugins:  enable diagnostic logging - [#7859](https://github.com/NuGet/Home/issues/7859)
-
-* Make Tizen 6 map to NetStandard 2.1 - [#7773](https://github.com/NuGet/Home/issues/7773)
-
-**Feature:**
-
-* Represent FrameworkReferences in NuGet - pack & restore support - [#7342](https://github.com/NuGet/Home/issues/7342)
-
-* Support "download only" package scenario with PackageDownload - [#7339](https://github.com/NuGet/Home/issues/7339)
-
-* Add PackageType for runtime and targeting packs to exclude them from search results & restore graph. - [#7337](https://github.com/NuGet/Home/issues/7337)
-
-* Link VS Package Entries to Gallery Package Pages - [#5299](https://github.com/NuGet/Home/issues/5299)
-
-* Skip Duplicate switch added to nuget.exe push command - [#1630](https://github.com/NuGet/Home/issues/1630)
-
