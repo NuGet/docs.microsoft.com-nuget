@@ -29,6 +29,8 @@ The two NuGet CLI tools are `dotnet.exe` and `nuget.exe`. See [feature availabil
 
 The .NET Core 2.0 CLI, `dotnet.exe`, works on all platforms (Windows, Mac, and Linux) and provides core NuGet features such as installing, restoring, and publishing packages. `dotnet` provides direct integration with .NET Core project files (such as `.csproj`), which is helpful in most scenarios. `dotnet` is also built directly for each platform and does not require you to install Mono.
 
+You must use to dotnet CLI to target .NET Core in your project. You can also use the dotnet CLI to target .NET Standard in your project.
+
 Installation:
 
 - On developer computers, install the [.NET Core SDK](https://aka.ms/dotnetcoregs).
@@ -39,6 +41,8 @@ For more information, see [.NET Core command-line interface tools](/dotnet/core/
 ### nuget.exe CLI
 
 The NuGet CLI, `nuget.exe`, is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux using [Mono](http://www.mono-project.com/docs/getting-started/install/) with some limitations. Unlike `dotnet`, the `nuget.exe` CLI does not affect project files and does not update `packages.config` when installing packages.
+
+Use the nuget.exe CLI to target either .NET Framework or .NET Standard.
 
 Installation:
 
