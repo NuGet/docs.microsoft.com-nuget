@@ -15,8 +15,8 @@ To work with NuGet, as a package consumer or creator, you can use command-line i
 
 | Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Download&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
-| [dotnet.exe](#dotnetexe-cli) | CLI tool for .NET Core and .NET Standard. Included with the .NET Core SDK and provides core NuGet features on all platforms. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
-| [nuget.exe](#nugetexe-cli) | CLI tool for .NET Framework and .NET Standard. Provides all NuGet capabilities on Windows, provides most features on Mac and Linux when running under Mono. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [dotnet.exe](#dotnetexe-cli) | CLI tool for .NET Core and .NET Standard libraries. Included with the .NET Core SDK and provides core NuGet features on all platforms. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
+| [nuget.exe](#nugetexe-cli) | CLI tool for .NET Framework and .NET Standard libraries. Provides all NuGet capabilities on Windows, provides most features on Mac and Linux when running under Mono. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
 | [Visual Studio](#visual-studio) | On Windows, provides NuGet capabilities through the Package Manager UI and Package Manager Console; included with .NET-related workloads. On Mac, provides certain features through the UI. In Visual Studio Code, NuGet features are provided through extensions. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 The [MSBuild CLI](reference/msbuild-targets.md) also provides the ability to restore and create packages, which is primarily useful on build servers. MSBuild is not a general-purpose tool for working with NuGet.
@@ -25,9 +25,9 @@ The [MSBuild CLI](reference/msbuild-targets.md) also provides the ability to res
 
 The two NuGet CLI tools are `dotnet.exe` and `nuget.exe`. See [feature availability](#feature-availability) for a comparison.
 
-* You must use to dotnet CLI to target .NET Core in your project. You can also use the dotnet CLI to target .NET Standard in your project.
+* To target .NET Core in your project, you must use to dotnet CLI. The dotnet CLI is also recommended for targeting .NET Standard.
 
-* You must use the nuget.exe CLI to target .NET Framework in your project. You can also use the nuget.exe CLI to target .NET Standard in your project.
+* To target .NET Framework in your project, you must use the nuget.exe CLI. You can also use the nuget.exe CLI to target .NET Standard in your project.
 
 ### dotnet.exe CLI
 
