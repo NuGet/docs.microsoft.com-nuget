@@ -27,11 +27,11 @@ In this topic:
 
 - Use `.nuspec` with `nuget.exe pack` for non-SDK-style projects that use `packages.config`.
 
-- A `.nuspec` file is not required for SDK-style projects (.NET Core and .NET Standard projects that use the [SDK attribute](/dotnet/core/tools/csproj#additions)).
+- A `.nuspec` file is not required to create packages for SDK-style projects (.NET Core and .NET Standard projects that use the [SDK attribute](/dotnet/core/tools/csproj#additions)). (Note that a `.nuspec` is generated when you create the package.)
 
-   If you are creating a package using `dotnet.exe pack` or `msbuild pack target`, we recommend that you [include all the properties](msbuild-targets#pack-target) that are usually in the `.nuspec` in the project file instead. However, you can instead choose to [use a `.nuspec` file to pack using `dotnet.exe` or `msbuild pack target`](msbuild-targets#packing-using-a-nuspec.md).
+   If you are creating a package using `dotnet.exe pack` or `msbuild pack target`, we recommend that you [include all the properties](msbuild-targets#pack-target) that are usually in the `.nuspec` file in the project file instead. However, you can instead choose to [use a `.nuspec` file to pack using `dotnet.exe` or `msbuild pack target`](msbuild-targets#packing-using-a-nuspec.md).
 
-- For projects migrated from `packages.config` to [PackageReference](../consume-packages/package-references-in-project-files.md), a `.nuspec` file is not required. Instead, use [msbuild pack](../reference/migrate-packages-config-to-package-reference#create-a-package-after-migration.md).
+- For projects migrated from `packages.config` to [PackageReference](../consume-packages/package-references-in-project-files.md), a `.nuspec` file is not required to create the package. Instead, use [msbuild pack](../reference/migrate-packages-config-to-package-reference#create-a-package-after-migration.md).
 
 ## General form and schema
 
