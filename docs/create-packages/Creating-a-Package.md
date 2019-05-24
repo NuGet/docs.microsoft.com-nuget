@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 No matter what your package does or what code it contains, you use one of the NuGet CLI tools, either `nuget.exe` or `dotnet.exe`, to package that functionality into a component that can be shared with and used by any number of other developers. To install NuGet CLI tools, see [Install NuGet client tools](../install-nuget-client-tools.md). Note that Visual Studio does not automatically include a CLI tool.
 
-- For .NET Core and .NET Standard projects that use the SDK-style format ([SDK attribute](/dotnet/core/tools/csproj#additions), NuGet uses information in the project file directly to create a package. For details, see [Create .NET Standard Packages with Visual Studio 2017](../quickstart/create-and-publish-a-package-using-visual-studio.md) and [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
+- For .NET Core and .NET Standard projects that use the SDK-style format ([SDK attribute](/dotnet/core/tools/csproj#additions)), NuGet uses information in the project file directly to create a package. For details, see [Create .NET Standard Packages with Visual Studio 2017](../quickstart/create-and-publish-a-package-using-visual-studio.md) and [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
 - For non-SDK-style projects, follow the steps described in this article to create a package.
 
