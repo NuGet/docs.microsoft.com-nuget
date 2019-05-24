@@ -22,7 +22,7 @@ It's a simple process to create a NuGet package from a .NET Standard Class Libra
 
    * For the `dotnet` CLI, install the [.NET Core SDK](https://www.microsoft.com/net/download/). The dotnet CLI is required for .NET Standard projects that use the SDK-style format (SDK attribute).
 
-   * For the `nuget.exe` CLI, download it from [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), saving the `.exe` file to a suitable folder, and adding that folder to your PATH environment variable. The nuget.exe CLI is used for .NET Standard libraries in the legacy project format (`project.json`).
+   * For the `nuget.exe` CLI, download it from [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), saving the `.exe` file to a suitable folder, and adding that folder to your PATH environment variable. The nuget.exe CLI is used for .NET Standard libraries in the non-SDK-style format.
 
 1. [Register for a free account on nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) if you don't have one already. Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
 
