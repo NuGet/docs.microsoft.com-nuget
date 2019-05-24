@@ -3,7 +3,7 @@ title: .nuspec File Reference for NuGet
 description: The .nuspec file contains package metadata used when building a package and to provide information to package consumers.
 author: karann-msft
 ms.author: karann
-ms.date: 08/29/2017
+ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
 ---
@@ -22,6 +22,16 @@ In this topic:
 - [Including assembly files](#including-assembly-files)
 - [Including content files](#including-content-files)
 - [Example nuspec files](#example-nuspec-files)
+
+## Project type compatibility
+
+- Use `.nuspec` with `nuget.exe pack` for non-SDK-style projects that use `packages.config`.
+
+- A `.nuspec` file is not required for SDK-style projects (.NET Core and .NET Standard projects that use the [SDK attribute](/dotnet/core/tools/csproj#additions)).
+
+   If you are creating a package using `dotnet.exe pack` or `msbuild pack target`, we recommend that you [include all the properties](msbuild-targets#pack-target) that are usually in the `.nuspec` in the project file instead. However, you can instead choose to [use a `.nuspec` file to pack using `dotnet.exe` or `msbuild pack target`](msbuild-targets#packing-using-a-nuspec.md).
+
+- For projects migrated from `packages.config` to [PackageReference](../consume-packages/package-references-in-project-files.md), a `.nuspec` file is not required. Instead, use [msbuild pack](../reference/migrate-packages-config-to-package-reference#create-a-package-after-migration.md).
 
 ## General form and schema
 

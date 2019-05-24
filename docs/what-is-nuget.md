@@ -3,7 +3,7 @@ title: What is NuGet and what does it do?
 description: A comprehensive introduction to what NuGet is and does
 author: karann-msft
 ms.author: karann
-ms.date: 01/10/2018
+ms.date: 05/24/2019
 ms.topic: overview
 ---
 
@@ -41,7 +41,7 @@ In addition to hosting support, NuGet also provides a variety of tools used by b
 | Tool | Platforms | Applicable Scenarios | Description |
 | --- | --- | --- | --- |
 | [dotnet CLI](tools/dotnet-Commands.md) | All | Creation, Consumption | CLI tool for .NET Core and .NET Standard libraries. Provides certain NuGet CLI capabilities directly within the .NET Core tool chain. As with the NuGet CLI, the dotnet CLI does not interact with Visual Studio projects. |
-| [nuget.exe CLI](tools/nuget-exe-cli-reference.md) | All | Creation, Consumption | CLI tool for .NET Framework and .NET Standard libraries. Provides all NuGet capabilities, with some commands applying specifically to package creators, some applying only to consumers, and others applying to both. For example, package creators use the `nuget pack` command to create a package from various assemblies and related files, package consumers use `nuget install` to include packages in a project folder, and everyone uses `nuget config` to set NuGet configuration variables. As a platform-agnostic tool, the NuGet CLI does not interact with Visual Studio projects. |
+| [nuget.exe CLI](tools/nuget-exe-cli-reference.md) | All | Creation, Consumption | CLI tool for .NET Framework. Provides all NuGet capabilities, with some commands applying specifically to package creators, some applying only to consumers, and others applying to both. For example, package creators use the `nuget pack` command to create a package from various assemblies and related files, package consumers use `nuget install` to include packages in a project folder, and everyone uses `nuget config` to set NuGet configuration variables. As a platform-agnostic tool, the NuGet CLI does not interact with Visual Studio projects. |
 | [Package Manager Console](tools/package-manager-console.md) | Visual Studio on Windows | Consumption | Provides [PowerShell commands](tools/Powershell-Reference.md) for installing and managing packages in Visual Studio projects. |
 | [Package Manager UI](tools/package-manager-ui.md) | Visual Studio on Windows | Consumption | Provides an easy-to-use UI for installing and managing packages in Visual Studio projects. |
 | [Manage NuGet UI](/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | Consumption | Provide an easy-to-use UI for installing and managing packages in Visual Studio for Mac projects. |

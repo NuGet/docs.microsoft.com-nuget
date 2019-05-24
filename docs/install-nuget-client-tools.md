@@ -3,7 +3,7 @@ title: Installing NuGet client tools
 description: Guidance on installing client tools, the dotnet and nuget command-line interfaces (CLI), and the Package Manager for Visual Studio.
 author: karann-msft
 ms.author: karann
-ms.date: 04/09/2018
+ms.date: 05/24/2019
 ms.topic: quickstart
 ---
 
@@ -25,8 +25,8 @@ The [MSBuild CLI](reference/msbuild-targets.md) also provides the ability to res
 
 The two NuGet CLI tools are `dotnet.exe` and `nuget.exe`. See [feature availability](#feature-availability) for a comparison.
 
-* To target .NET Core or .NET Standard projects, the dotnet CLI is recommended.
-* To target .NET Framework in your project, you must use the nuget.exe CLI. You can also use the nuget.exe CLI to target .NET Standard in your project.
+* To target .NET Core or .NET Standard, use the dotnet CLI. The dotnet CLI is required for the SDK-style project format, which uses the [SDK attribute](/dotnet/core/tools/csproj#additions).
+* To target .NET Framework in your project, use the `nuget.exe CLI`.
 
 ### dotnet.exe CLI
 
