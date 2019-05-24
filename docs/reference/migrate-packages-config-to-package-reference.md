@@ -85,7 +85,7 @@ You should now be able to see the migration option. Note that this option is not
 
 ## Create a package after migration
 
-Once the migration is complete, we recommend that you add a reference to the [nuget.build.tasks.pack](https://www.nuget.org/packages/nuget.build.tasks.pack) nuget package, and then use [msbuild pack](msbuild-targets#packing-using-a-nuspec) to create the package. Although in some scenarios you could use `dotnet.exe pack` instead of `msbuild pack`, it is not recommended.
+Once the migration is complete, we recommend that you add a reference to the [nuget.build.tasks.pack](https://www.nuget.org/packages/nuget.build.tasks.pack) nuget package, and then use [msbuild pack](../reference/msbuild-targets.md#packing-using-a-nuspec) to create the package. Although in some scenarios you could use `dotnet.exe pack` instead of `msbuild pack`, it is not recommended.
 
 ## Package compatibility issues
 

@@ -15,7 +15,7 @@ No matter what your package does or what code it contains, you use one of the Nu
 
 - For non-SDK-style projects, follow the steps described in this article to create a package.
 
-- For projects migrated from `packages.config` to [PackageReference](../consume-packages/package-references-in-project-files.md), use [msbuild pack](../reference/migrate-packages-config-to-package-reference#create-a-package-after-migration.md).
+- For projects migrated from `packages.config` to [PackageReference](../consume-packages/package-references-in-project-files.md), use [msbuild pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
 Technically speaking, a NuGet package is just a ZIP file that's been renamed with the `.nupkg` extension and whose contents match certain conventions. This topic describes the detailed process of creating a package that meets those conventions. For a focused walkthrough, refer to [Quickstart: create and publish a package](../quickstart/create-and-publish-a-package.md).
 
