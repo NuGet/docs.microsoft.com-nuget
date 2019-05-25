@@ -12,12 +12,12 @@
 ### [Ways to install a package](consume-packages/ways-to-install-a-package.md)
 ## [Install NuGet client tools](install-nuget-client-tools.md)
 ## [Find and choose packages](consume-packages/finding-and-choosing-packages.md)
-## Install and update packages
-### [Using Visual Studio](tools/package-manager-ui.md)
-### [Using Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
-### Using dotnet CLI
-### Using nuget.exe CLI
-### [Using PowerShell](tools/package-manager-console.md)
+## Install and use packages
+### [Visual Studio](tools/package-manager-ui.md)
+### [Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
+### dotnet CLI
+### nuget.exe CLI
+### [PowerShell](tools/package-manager-console.md)
 ### [Install a signed package](consume-packages/installing-signed-packages.md)
 ## Manage installed packages
 ### [Restore packages](consume-packages/package-restore.md)
