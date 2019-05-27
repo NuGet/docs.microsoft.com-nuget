@@ -10,7 +10,7 @@ ms.reviewer: kraigb
 
 # Catalog
 
-The **catalog** is a resource that records all package operations on a package source, such as creations and deletions. The catalog resource has the `Catalog` type in the [service index](service-index.md). You can use this resource to [query for all published packages](query-for-all-published-packages.md).
+The **catalog** is a resource that records all package operations on a package source, such as creations and deletions. The catalog resource has the `Catalog` type in the [service index](service-index.md). You can use this resource to [query for all published packages](../guides/api/query-for-all-published-packages.md).
 
 > [!Note]
 > Because the catalog is not used by the official NuGet client, not all package sources implement the catalog.
