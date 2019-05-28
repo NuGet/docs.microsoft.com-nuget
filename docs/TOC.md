@@ -58,7 +58,8 @@
 ## Sign packages
 ### [Sign a package](create-packages/sign-a-package.md)
 ### [Signed package types and requirements](reference/signed-packages-reference.md)
-## [Publish to NuGet.org](create-packages/publish-a-package.md)
+### Publish to NuGet.org
+### [Publish a package](create-packages/publish-a-package.md)
 ### API keys
 ## Publish to a private feed
 ### [Overview](hosting-packages/overview.md)
