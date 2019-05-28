@@ -20,7 +20,8 @@
 ### [PowerShell](tools/package-manager-console.md)
 ### [Install a signed package](consume-packages/installing-signed-packages.md)
 ## Manage installed packages
-### [Restore packages](consume-packages/package-restore.md)
+### Restore packages
+#### [Package restore](consume-packages/package-restore.md)
 #### [Troubleshooting](consume-packages/package-restore-troubleshooting.md)
 ### [Reinstall and update packages](consume-packages/reinstalling-and-updating-packages.md)
 ### [Manage global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md)
