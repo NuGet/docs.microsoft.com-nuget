@@ -14,7 +14,7 @@
 ## [Find and choose packages](consume-packages/finding-and-choosing-packages.md)
 ## Install and use packages
 ### [Visual Studio](tools/package-manager-ui.md)
-### [Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
+### [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
 ### dotnet CLI
 ### nuget.exe CLI
 ### [PowerShell](tools/package-manager-console.md)
