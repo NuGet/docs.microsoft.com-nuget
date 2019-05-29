@@ -3,7 +3,7 @@ title: Create and publish a .NET Standard package using Visual Studio on Windows
 description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio 2017 on Windows.
 author: karann-msft
 ms.author: karann
-ms.date: 05/18/2018
+ms.date: 05/24/2019
 ms.topic: quickstart
 ---
 
@@ -18,9 +18,11 @@ It's a simple process to create a NuGet package from a .NET Standard Class Libra
 
 1. Install any edition of Visual Studio 2017 from [visualstudio.com](https://www.visualstudio.com/) with any .NET-related workload. Visual Studio 2017 automatically includes NuGet capabilities when a .NET workload is installed.
 
-1. Install the `nuget.exe` CLI by downloading it from [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), saving that `.exe` file to a suitable folder, and adding that folder to your PATH environment variable.
+1. Install one of the NuGet CLI tools.
 
-    Alternately, if you have the [.NET Core SDK](https://www.microsoft.com/net/download/) installed, you can use the `dotnet` CLI.
+   * For the `dotnet` CLI, install the [.NET Core SDK](https://www.microsoft.com/net/download/). The dotnet CLI is required for .NET Standard projects that use the SDK-style format (SDK attribute).
+
+   * For the `nuget.exe` CLI, download it from [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), saving the `.exe` file to a suitable folder, and adding that folder to your PATH environment variable. The nuget.exe CLI is used for .NET Standard libraries in the non-SDK-style format.
 
 1. [Register for a free account on nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) if you don't have one already. Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
 
@@ -107,7 +109,13 @@ Once you have a `.nupkg` file, you publish it to nuget.org using either the `nug
 
 [!INCLUDE [publish-api-key](includes/publish-api-key.md)]
 
-### Publish with nuget push
+### Publish with dotnet nuget push (dotnet CLI)
+
+This step is an alternative to using `nuget.exe`.
+
+[!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
+
+### Publish with nuget push (nuget.exe CLI)
 
 This step is an alternative to using `dotnet.exe`.
 
@@ -129,12 +137,6 @@ This step is an alternative to using `dotnet.exe`.
     ```
 
 See [nuget push](../tools/cli-ref-push.md).
-
-### Publish with dotnet nuget push
-
-This step is an alternative to using `nuget.exe`.
-
-[!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
 ### Publish errors
 
