@@ -9,7 +9,6 @@
 ### [Data Requests](../policies/Data-requests?toc=/nuget/nuget-org/toc.json)
 ### [Dispute resolution](../policies/dispute-resolution?toc=/nuget/nuget-org/toc.json)
 ### [Deleting packages](../policies/deleting-packages?toc=/nuget/nuget-org/toc.json)
-### [General policies](../policies/governance.md)
 ## Reference
 ### NuGet API
 #### [Overview](../api/overview?toc=/nuget/nuget-org/toc.json)

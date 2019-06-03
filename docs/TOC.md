@@ -1,16 +1,15 @@
 # [Docs at a glance](index.md)
 # [What is NuGet?](what-is-nuget.md)
-# Quickstarts
+## [Install NuGet client tools](install-nuget-client-tools.md)
+## [Ways to install a package](consume-packages/ways-to-install-a-package.md)
+# Get started
 ## [Install and use a package (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
 ## [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
 ## [Create and publish a NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
 ## [Create and publish a NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
 ## [Create and publish a NET Framework package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)
 # Consume packages
-## Overview
-### [Overview and workflow](consume-packages/overview-and-workflow.md)
-### [Ways to install a package](consume-packages/ways-to-install-a-package.md)
-## [Install NuGet client tools](install-nuget-client-tools.md)
+## [Overview and workflow](consume-packages/overview-and-workflow.md)
 ## [Find and choose packages](consume-packages/finding-and-choosing-packages.md)
 ## Install and use packages
 ### [Visual Studio](tools/package-manager-ui.md)
@@ -18,29 +17,26 @@
 ### dotnet CLI
 ### nuget.exe CLI
 ### [PowerShell](tools/package-manager-console.md)
-### [Install a signed package](consume-packages/installing-signed-packages.md)
-## Manage installed packages
-### Restore packages
-#### [Package restore](consume-packages/package-restore.md)
+## Configure NuGet
+### Package restore options
+#### [Restore options](consume-packages/package-restore.md)
+#### Locking package dependencies
+#### Offline restore
+#### ATF and PTF
 #### [Troubleshooting](consume-packages/package-restore-troubleshooting.md)
 ### [Reinstall and update packages](consume-packages/reinstalling-and-updating-packages.md)
 ### [Manage global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md)
+### [Manage package trust boundaries](consume-packages/installing-signed-packages.md)
 ### [Work with source control systems](consume-packages/packages-and-source-control.md)
+### [Common NuGet configurations](consume-packages/configuring-nuget-behavior.md)
 ## Reference packages in your project
 ### [Package references in project files](consume-packages/package-references-in-project-files.md)
 ### [Migrate packages.config to PackageReference](reference/migrate-packages-config-to-package-reference.md)
 ### [packages.config](reference/packages-config.md)
-### [Dependency resolution](consume-packages/dependency-resolution.md)
-## Configure NuGet
-### [Configure NuGet behavior](consume-packages/configuring-nuget-behavior.md)
-## Archived content
-### [project.json management format](archive/project-json.md)
-### [project.json and UWP](archive/project-json-and-uwp.md)
-### [project.json impact](archive/project-json-impact.md)
 # Create packages
 ## [Overview and workflow](create-packages/overview-and-workflow.md)
-## [Install NuGet client tools](install-nuget-client-tools.md)
-## [Create a package](create-packages/creating-a-package.md)
+## Create a package - dotnet CLI
+## [Create a package - nuget.exe CLI](create-packages/creating-a-package.md)
 ## [Create a package using MSBuild](reference/msbuild-targets.md)
 ## Configure packages
 ### [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
@@ -58,7 +54,8 @@
 ## Sign packages
 ### [Sign a package](create-packages/sign-a-package.md)
 ### [Signed package types and requirements](reference/signed-packages-reference.md)
-### Publish to NuGet.org
+# Publish packages
+## Publish to NuGet.org
 ### [Publish a package](create-packages/publish-a-package.md)
 ### API keys
 ## Publish to a private feed
@@ -67,17 +64,9 @@
 ### [GitHub package registry](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 ### [NuGet.Server](hosting-packages/nuget-server.md)
 ### [Local feeds](hosting-packages/local-feeds.md)
-## Extensibility
-### [NuGet Cross Platform Plugins](reference/extensibility/NuGet-Cross-Platform-Plugins.md)
-### [NuGet cross platform authentication plugin](reference/extensibility/nuget-cross-platform-authentication-plugin.md)
-### [NuGet credential providers for Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
-### [nuget.exe credential providers](reference/extensibility/nuget-exe-credential-providers.md)
-## Visual Studio extensibility
-### [NuGet API in Visual Studio](visual-studio-extensibility/nuget-api-in-visual-studio.md)
-### [Project system support](visual-studio-extensibility/project-system-support.md)
-### [Visual Studio templates](visual-studio-extensibility/visual-studio-templates.md)
 # Concepts
 ## [Package versioning](reference/package-versioning.md)
+## [Dependency resolution](consume-packages/dependency-resolution.md)
 # Reference
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config file](reference/nuget-config-file.md)
@@ -248,6 +237,20 @@
 ### [NU5124](reference/errors-and-warnings/NU5124.md)
 ### [NU5125](reference/errors-and-warnings/NU5125.md)
 ### [NU5500](reference/errors-and-warnings/NU5500.md)
+## Archived content
+### [project.json management format](archive/project-json.md)
+### [project.json and UWP](archive/project-json-and-uwp.md)
+### [project.json impact](archive/project-json-impact.md)
+# Extensibility
+## Extensibility - NuGet plugins
+### [NuGet Cross Platform Plugins](reference/extensibility/NuGet-Cross-Platform-Plugins.md)
+### [NuGet cross platform authentication plugin](reference/extensibility/nuget-cross-platform-authentication-plugin.md)
+### [NuGet credential providers for Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
+### [nuget.exe credential providers](reference/extensibility/nuget-exe-credential-providers.md)
+## Visual Studio extensibility
+### [NuGet API in Visual Studio](visual-studio-extensibility/nuget-api-in-visual-studio.md)
+### [Project system support](visual-studio-extensibility/project-system-support.md)
+### [Visual Studio templates](visual-studio-extensibility/visual-studio-templates.md)
 # Resources
 ## Policies
 ### [Governance](policies/governance.md)
