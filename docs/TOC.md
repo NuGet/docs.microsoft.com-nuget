@@ -1,5 +1,6 @@
 # [Docs at a glance](index.md)
-# [What is NuGet?](what-is-nuget.md)
+# Introduction to NuGet
+## [What is NuGet?](what-is-nuget.md)
 ## [Install NuGet client tools](install-nuget-client-tools.md)
 ## [Ways to install a package](consume-packages/ways-to-install-a-package.md)
 # Get started
