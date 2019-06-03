@@ -38,14 +38,13 @@
 ## Create a package - dotnet CLI
 ## [Create a package - nuget.exe CLI](create-packages/creating-a-package.md)
 ## [Create a package using MSBuild](reference/msbuild-targets.md)
-## Configure packages
-### [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
+## [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
+## [Build a prerelease package](create-packages/prerelease-packages.md)
+## [Create a symbol package](create-packages/symbol-packages-snupkg.md)
+## Advanced package creation scenarios
 ### [Modify source code and config files](create-packages/source-and-config-file-transformations.md)
 ### [Create a localized package](create-packages/creating-localized-packages.md)
-## Create other package types
-### [Build a prerelease package](create-packages/prerelease-packages.md)
-### [Create a symbol package](create-packages/symbol-packages-snupkg.md)
-## Create packages for specific content
+## Guides for specific content
 ### [Create a UWP package](guides/create-uwp-packages.md)
 ### [Create a native package](create-packages/native-packages.md)
 ### [Create UI controls as a NuGet package](guides/create-UI-controls.md)

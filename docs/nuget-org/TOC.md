@@ -5,6 +5,9 @@
 ### Individual accounts
 ### [Organizations](organizations-on-nuget-org.md)
 ### API key
+## Manage packages on NuGet.org
+### [Packaging ID prefix reservation](id-prefix-reservation.md)
+### Topics refactored from FAQ
 ## Policies
 ### [Data Requests](../policies/Data-requests?toc=/nuget/nuget-org/toc.json)
 ### [Dispute resolution](../policies/dispute-resolution?toc=/nuget/nuget-org/toc.json)
@@ -28,5 +31,4 @@
 #### [Rate limits](../api/rate-limits.md)
 #### [nuget.org protocols](../api/nuget-protocols.md)
 #### [tools.json](../api/tools-json.md)
-### [ID prefix reservation](id-prefix-reservation.md)
 ### [licenses.nuget.org](licenses.nuget.org.md)
