@@ -41,9 +41,10 @@
 ## [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
 ## [Build a prerelease package](create-packages/prerelease-packages.md)
 ## [Create a symbol package](create-packages/symbol-packages-snupkg.md)
-## Advanced package creation scenarios
+## Advanced tasks
 ### [Modify source code and config files](create-packages/source-and-config-file-transformations.md)
 ### [Create a localized package](create-packages/creating-localized-packages.md)
+### Stub - Some refactored content
 ## Guides for specific content
 ### [Create a UWP package](guides/create-uwp-packages.md)
 ### [Create a native package](create-packages/native-packages.md)

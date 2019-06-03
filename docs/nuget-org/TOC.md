@@ -7,7 +7,7 @@
 ### API key
 ## Manage packages on NuGet.org
 ### [Packaging ID prefix reservation](id-prefix-reservation.md)
-### Topics refactored from FAQ
+### Stub - Topics refactored from FAQ
 ## Policies
 ### [Data Requests](../policies/Data-requests?toc=/nuget/nuget-org/toc.json)
 ### [Dispute resolution](../policies/dispute-resolution?toc=/nuget/nuget-org/toc.json)
