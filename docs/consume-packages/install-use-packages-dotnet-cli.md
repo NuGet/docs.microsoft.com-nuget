@@ -99,7 +99,3 @@ To restore a package using `dotnet restore`:
 ```cli
 dotnet restore 
 ```
-
-## List the location of 
-
-dotnet nuget locals: Lists locations of the global-packages, http-cache, and temp folders and clears the contents of those folders.
