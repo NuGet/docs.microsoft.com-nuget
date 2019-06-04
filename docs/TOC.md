@@ -16,7 +16,7 @@
 ### [Visual Studio](tools/package-manager-ui.md)
 ### [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
 ### [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)
-### nuget.exe CLI
+### [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md)
 ### [PowerShell](tools/package-manager-console.md)
 ## Configure NuGet
 ### Package restore options
