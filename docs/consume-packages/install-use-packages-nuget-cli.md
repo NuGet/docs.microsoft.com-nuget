@@ -1,0 +1,105 @@
+---
+title: Install and manage packages using the nuget.exe CLI
+description: Instructions for using the nuget.exe CLI to work with NuGet packages.
+author: mikejo5000
+ms.author: mikejo
+ms.date: 06/03/2019
+ms.topic: conceptual
+---
+
+# Install and use packages using the nuget.exe CLI
+
+The CLI tool allows you to easily install, uninstall, and update NuGet packages in projects and solutions. This tool provides all NuGet capabilities on Windows, and also provides most features on Mac and Linux when running under Mono.
+
+The nuget.exe CLI is for .NET Framework libraries and non-SDK-style projects that target .NET Standard libraries.
+
+This article shows you how to use a few of the most common nuget.exe CLI commands. For most of these commands, the CLI tool looks for a project file in the current directory, unless a project file is specified in the command. For a complete list of commands and the arguments you may use, see the [nuget.exe CLI reference](../tools/nuget-exe-cli-reference.md).
+
+## Prerequisites
+
+- Install the `nuget.exe` CLI by downloading it from [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), saving that `.exe` file to a suitable folder, and adding that folder to your PATH environment variable.
+
+## Install a package
+
+The [install](../tools/cli-ref-install.md) command downloads and installs a package into a project, defaulting to the current folder, using specified package sources.
+
+The `install` command does not modify a project file or the `packages.config`. To add the package to project dependencies, modify `packages.config`, then use `install` or `restore`.
+
+> [!NOTE]
+> A quick way to create the `packages.config` file initially is to install a package from the NuGet Package Manager or Package Manager Console in your IDE.
+
+1. Use the following command to install a Nuget package:
+
+    ```cli
+    nuget install <packageID | configFilePath>
+    ```
+
+    To install the `Newtonsoft.json` package, switch to the *packages* folder in your project, and then use the following command:
+
+    ```cli
+    nuget install Newtonsoft.Json
+    ```
+
+## Install a specific version of a package
+
+If the version is not specified, NuGet installs the latest version of the package. You can also use the [install](../tools/cli-ref-install.md) command to install a specific version of a Nuget package:
+
+```cli
+nuget install <packageID | configFilePath> -Version <version>
+```
+
+For example, to add version 12.0.1 of the `Newtonsoft.json` package, use this command:
+
+```cli
+nuget install Newtonsoft.Json -Version 12.0.1
+```
+
+## Remove a package
+
+To delete one or more packages, delete the packages you want to remove from the *packages* folder.
+
+If you want to reinstall packages, use the `restore` or `install` command.
+
+## List packages
+
+You can display a list of packages from a given source using the [list](../tools/cli-ref-list) command. Use the `-Source` option to restrict the search.
+
+```cli
+nuget list -Source <source>
+```
+
+For example, list packages in the *packages* folder.
+
+```cli
+nuget list -Source C:\Users\username\source\repos\MyProject\packages
+```
+
+If you use a search term, the search includes names of packages, tags, and package descriptions.
+
+```cli
+nuget list <search term>
+```
+
+## Update an individual package
+
+NuGet installs the latest version of the package when you use the `install` command unless you specify the package version.
+
+## Update all packages
+
+Use the [update](../tools/cli-ref-update.md) command to update all packages. Updates all packages in a project (using `packages.config`) to their latest available versions. It is recommended to run `restore` before running `update`.
+
+```cli
+nuget update
+```
+
+## Restore packages
+
+Use the [restore](../tools/cli-ref-restore.md) command, which downloads and installs any packages missing from the *packages* folder.
+
+`restore` only adds packages to disk but does not change a project's dependencies. To restore project dependencies, modify `packages.config`, then use the `restore` command.
+
+To restore a package using `restore`:
+
+```cli
+nuget restore MySolution.sln
+```
