@@ -1,9 +1,7 @@
 # [Docs at a glance](index.md)
-# Introduction to NuGet
-## [What is NuGet?](what-is-nuget.md)
-## [Install NuGet client tools](install-nuget-client-tools.md)
-## [Ways to install a package](consume-packages/ways-to-install-a-package.md)
+# [What is NuGet?](what-is-nuget.md)
 # Get started
+## [Install NuGet client tools](install-nuget-client-tools.md)
 ## [Install and use a package (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
 ## [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
 ## [Create and publish a NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
@@ -13,6 +11,7 @@
 ## [Overview and workflow](consume-packages/overview-and-workflow.md)
 ## [Find and choose packages](consume-packages/finding-and-choosing-packages.md)
 ## Install and use packages
+### [Ways to install a package](consume-packages/ways-to-install-a-package.md)
 ### [Visual Studio](tools/package-manager-ui.md)
 ### [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
 ### [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)
