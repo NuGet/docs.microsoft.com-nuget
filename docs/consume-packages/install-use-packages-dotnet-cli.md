@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 The dotnet CLI allows you to easily install, uninstall, and update NuGet packages in projects and solutions. It runs on Windows, Mac OS X, and Linux.
 
-This tool is required for .NET Core, .NET Standard, and also for SDK-style projects that target the .NET Framework.
+This is the CLI tool for .NET Core and .NET Standard libraries, and for SDK-style projects that target .NET Framework (see [SDK attribute](/dotnet/core/tools/csproj#additions)).
 
 This article shows you how to use a few of the most common dotnet CLI commands. For most of these commands, the CLI tool looks for a project file in the current directory, unless a project file is specified in the command (the project file is an optional switch). For a complete list of commands and the arguments you may use, see the [.NET Core command-line interface (CLI) tools](/dotnet/core/tools/?tabs=netcore2x).
 
