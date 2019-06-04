@@ -13,7 +13,7 @@ The CLI tool allows you to easily install, uninstall, and update NuGet packages 
 
 The nuget.exe CLI is for .NET Framework libraries and non-SDK-style projects that target .NET Standard libraries. If you are using a non-SDK-style project that has been migrated to `PackageReference`, use the dotnet CLI instead.
 
-This article shows you how to use a few of the most common nuget.exe CLI commands. For most of these commands, the CLI tool looks for a project file in the current directory, unless a project file is specified in the command. For a complete list of commands and the arguments you may use, see the [nuget.exe CLI reference](../tools/nuget-exe-cli-reference.md). The NuGet CLI requires a [packages.config](../reference/packages-config.md) file for packages references.
+This article shows you basic usage for a few of the most common nuget.exe CLI commands. For most of these commands, the CLI tool looks for a project file in the current directory, unless a project file is specified in the command. For a complete list of commands and the arguments you may use, see the [nuget.exe CLI reference](../tools/nuget-exe-cli-reference.md). The NuGet CLI requires a [packages.config](../reference/packages-config.md) file for packages references.
 
 ## Prerequisites
 
