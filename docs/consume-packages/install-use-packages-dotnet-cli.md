@@ -1,24 +1,19 @@
 ---
-title: NuGet Package Manager UI Reference
-description: Instructions for using the NuGet Package Manager UI in Visual Studio for working with NuGet packages.
-author: karann-msft
-ms.author: karann
-ms.date: 12/08/2017
+title: Install and manage packages using the dotnet CLI
+description: Instructions for using the dotnet CLI to work with NuGet packages.
+author: mikejo5000
+ms.author: mikejo
+ms.date: 06/03/2019
 ms.topic: conceptual
-f1_keywords: 
-  - "vs.toolsoptionspages.nuget_package_manager"
-  - "vs.toolsoptionspages.nuget_package_manager.general"
-  - "vs.toolsoptionspages.nuget_package_manager.package_sources"
-  - "vs.nuget.packagemanager.ui"
 ---
 
 # Install and use packages using the dotnet CLI
 
-The dotnet CLI allows you to easily install, uninstall, and update NuGet packages in projects and solutions. It runs on Windows, Mac OS X, and Linux. 
+The dotnet CLI allows you to easily install, uninstall, and update NuGet packages in projects and solutions. It runs on Windows, Mac OS X, and Linux.
 
-The dotnet CLI is required for .NET Core, .NET Standard, and also for SDK-style projects that target the .NET Framework. (These projects use the SDK attribute.)
+This tool is required for .NET Core, .NET Standard, and also for SDK-style projects that target the .NET Framework.
 
-For most of these commands, the CLI tool looks for a project file in the current directory, unless a project file is specified in the command (the project file is an optional switch). See the [dotnet CLI command reference](/dotnet/core/tools/?tabs=netcore2x) for a complete list of 
+This article shows you how to use a few of the most common dotnet CLI commands. For most of these commands, the CLI tool looks for a project file in the current directory, unless a project file is specified in the command (the project file is an optional switch). For a complete list of commands and the arguments you may use, see the [.NET Core command-line interface (CLI) tools](/dotnet/core/tools/?tabs=netcore2x).
 
 ## Prerequisites
 
