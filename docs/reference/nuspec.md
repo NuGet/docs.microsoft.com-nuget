@@ -298,7 +298,7 @@ The following example shows different variations of the `<group>` element:
 
 ## Explicit assembly references
 
-The `<references>` element is used by projects using `packages.config` to explicitly specify the assemblies that the target project should reference when using the package. Explicit references are typically used for design-time only assemblies. Please see the page on [eExplicit assembles references](../create-packages/explicit-assembly-reference.md) for more information.
+The `<references>` element is used by projects using `packages.config` to explicitly specify the assemblies that the target project should reference when using the package. Explicit references are typically used for design-time only assemblies. Please see the page on [explicit assembles references](../create-packages/explicit-assembly-reference.md) for more information.
 
 For example, the following `<references>` element instructs NuGet to add references to only `xunit.dll` and `xunit.extensions.dll` even if there are additional assemblies in the package:
 
