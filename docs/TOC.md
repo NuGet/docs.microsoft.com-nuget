@@ -15,7 +15,7 @@
 ## Install and use packages
 ### [Visual Studio](tools/package-manager-ui.md)
 ### [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
-### [dotnet CLI](install-use-packages-dotnet-cli.md)
+### [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)
 ### nuget.exe CLI
 ### [PowerShell](tools/package-manager-console.md)
 ## Configure NuGet
