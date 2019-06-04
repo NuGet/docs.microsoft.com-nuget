@@ -37,7 +37,7 @@ Projects using `packages.config` to use NuGet packages normally add references t
 ```
 
 > [!Note]
-> The details of how assemblies are copied to the `bin\<configuration>\` directory is though a process called ???. Your project's assembly is copied, then the build system looks at the assembly manifest for referenced assemblies, then copies those assemblies and recursively repeats for all assemblies. This means if your `lib\<tfm>` directory contains 3 assemblies, `a.dll`, `b.dll`, and `c.dll` and you specify `a.dll` as an explicit assembly reference, `a.dll` has an assembly reference to `b.dll`, but `c.dll` is loaded though MEF or `Assembly.Load`, then `c.dll` may not be selected as part of ??? and therefore may not be copied to `bin\<configuration>\` despite being in `bin\<tfm>\`.
+> The details of how assemblies are copied to the `bin\<configuration>\` directory is though a process called [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/master/documentation/wiki/ResolveAssemblyReference.md). Your project's assembly is copied, then the build system looks at the assembly manifest for referenced assemblies, then copies those assemblies and recursively repeats for all assemblies. This means if your `lib\<tfm>` directory contains 3 assemblies, `a.dll`, `b.dll`, and `c.dll` and you specify `a.dll` as an explicit assembly reference, `a.dll` has an assembly reference to `b.dll`, but `c.dll` is loaded though MEF or `Assembly.Load`, then `c.dll` may not be selected as part of ResolveAssemblyReference and therefore may not be copied to `bin\<configuration>\` despite being in `bin\<tfm>\`.
 
 ## Example
 
