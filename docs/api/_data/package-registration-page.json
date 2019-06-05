@@ -35,7 +35,7 @@
       "catalogEntry": {
         "@id": "https://api.nuget.org/v3/catalog0/data/2015.02.01.18.22.05/nuget.protocol.v3.example.1.0.729-unstable.json",
         "@type": "PackageDetails",
-        "authors": "Hibernating Rhinos",
+        "authors": "NuGet.org Team",
         "deprecation": {
           "reasons": [
             "HasCriticalBugs"
