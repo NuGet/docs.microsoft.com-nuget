@@ -231,7 +231,7 @@ The `reasons` property should only contains strings from the following table:
 
 Reason       | Description             
 ------------ | -----------
-Legacy       | The package is no longer being maintained
+Legacy       | The package is no longer maintained
 CriticalBugs | The package has bugs which make it unsuitable for usage
 Other        | The package was deprecated due to a reason not on this list
 
