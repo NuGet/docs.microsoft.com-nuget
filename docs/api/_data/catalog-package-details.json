@@ -3,23 +3,35 @@
     "PackageDetails",
     "catalog:Permalink"
   ],
-  "authors": "Microsoft DPE",
+  "authors": "Nuget.org Team",
   "catalog:commitId": "49fe04d8-5694-45a5-9822-3be61bda871b",
   "catalog:commitTimeStamp": "2015-02-01T11:18:40.8589193Z",
   "created": "2011-12-02T20:21:23.74Z",
-  "description": "This package contains a class library with the Windows Azure Storage Proxy Cloud Services, and a WebActivator enabled class with the default configuration.",
-  "iconUrl": "http://wazmobiletoolkit.blob.core.windows.net/nuget/logos/WinAzure_rgb.png",
-  "id": "WindowsAzure.Storage",
+  "description": "This package is an example for the V3 protocol.",
+  "deprecation": {
+    "reasons": [
+      "Legacy",
+      "HasCriticalBugs",
+      "Other"
+    ],
+    "message": "This package is an example--it should not be used!",
+    "alternatePackage": {
+      "id": "Newtonsoft.JSON",
+      "range": "12.0.2"
+    }
+  },
+  "iconUrl": "https://www.nuget.org/Content/gallery/img/default-package-icon.svg",
+  "id": "NuGet.Protocol.V3.Example",
   "isPrerelease": false,
   "language": "en-US",
   "licenseUrl": "http://www.opensource.org/licenses/ms-pl",
   "packageHash": "2edCwKLcbcgFJpsAwa883BLtOy8bZpWwbQpiIb71E74k5t2f2WzXEGWbPwntRleUEgSrcxJrh9Orm/TAmgO4NQ==",
   "packageHashAlgorithm": "SHA512",
   "packageSize": 118348,
-  "projectUrl": "http://watwp.codeplex.com",
+  "projectUrl": "https://github.com/NuGet/NuGetGallery",
   "published": "1900-01-01T00:00:00Z",
   "requireLicenseAcceptance": false,
-  "title": "Windows Azure Storage Proxy Cloud Services",
+  "title": "NuGet V3 Protocol Example",
   "version": "1.0.0",
   "dependencyGroups": [
     {
@@ -48,8 +60,9 @@
     }
   ],
   "tags": [
-    "Storage",
-    "WindowsAzure",
-    "DPE"
+    "NuGet",
+    "V3",
+    "Protocol",
+    "Example"
   ]
 }
