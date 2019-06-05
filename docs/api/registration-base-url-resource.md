@@ -227,7 +227,7 @@ reasons          | array of strings | yes      | The reasons why the package was
 message          | string           | no       | The additional details about this deprecation
 alternatePackage | object           | no       | The package dependency that should be used instead
 
-The `reasons` property should only contains strings from the following table:
+The `reasons` property must contain at least one string and should only contains strings from the following table:
 
 Reason       | Description             
 ------------ | -----------
