@@ -33,11 +33,15 @@ With scoped API keys, we have tried to address the problems stated above and at 
 
 You can now create multiple API keys based on your requirements. An API key can apply to one or more packages, have varying scopes that grant specific privileges, and have an expiration date associated with it.
 
+![Create API keys](media/scoped-api-keys-create-new.png)
+
 In the screenshot above, you can have an API key named ‘Contoso service CI’ that can be used to push packages for certain ‘Contoso.Service’ packages, and is valid for 365 days. This is a typical scenario where different teams within the same organization work on different packages and the members of the team are provided the key which grants them privileges only on the package they are working on. The expiration serves as a mechanism to prevent stale or forgotten keys.
 
 ## Using glob patterns
 
 If you are working on multiple packages and have a large list of packages to manage, you may choose to use globbing patterns to select multiple packages together. For example, if you wish to grant some key certain scopes on all packages whose ID starts with Fabrikam.Service, you could do so by specifying “fabrikam.service.*” in the Glob pattern text box.
+
+![Create API keys](media/scoped-api-keys-glob-pattern.png)
 
 Using glob patterns to determine API key permissions will also apply to new packages matching the glob pattern. For example, if you try to push a new package named ‘Fabrikam.Service.Framework’, you can do so with the key you would have created in the above step, since the package matches the glob pattern “fabrikam.service*”
 
@@ -45,13 +49,19 @@ Using glob patterns to determine API key permissions will also apply to new pack
 
 For security, a newly created key is never shown on the screen and is only available with the copy button. Similarly, it will not be accessible again after the page is refreshed.
 
+![Create API keys](media/scoped-api-keys-obtain-keys.png)
+
 ## Edit existing API keys
 
 Another use case is being able to update the key permissions and scopes without changing the key itself. If you have a key with specific scope(s) for a single package, you may choose to apply the same scope(s) on one or many other packages.
 
+![Create API keys](media/scoped-api-keys-edit.png)
+
 ## Refresh or delete existing API keys
 
 The account owner can choose to refresh the key, in which case the permission (on packages), scope and expiry remain the same but a new key is issued making the old key unusable. This is helpful in dealing with stale keys or where there is any potential of an API key leakage.
+
+![Create API keys](media/scoped-api-keys-refresh.png)
 
 You can also choose to delete these keys if they are not needed anymore. Deletion will remove the key and make it unusable.
 
