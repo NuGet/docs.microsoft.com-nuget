@@ -42,7 +42,7 @@ The `install` command doesn't modify a project file or the `packages.config`. To
 
 ## Install a specific version of a package
 
-If the version is not specified, NuGet installs the latest version of the package. You can also use the [install](../tools/cli-ref-install.md) command to install a specific version of a Nuget package:
+If the version is not specified when you use the [install](../tools/cli-ref-install.md) command, NuGet installs the latest version of the package. You can also install a specific version of a Nuget package:
 
 ```cli
 nuget install <packageID | configFilePath> -Version <version>
@@ -53,6 +53,8 @@ For example, to add version 12.0.1 of the `Newtonsoft.json` package, use this co
 ```cli
 nuget install Newtonsoft.Json -Version 12.0.1
 ```
+
+For more information on the behavior of `install`, see [Install a package](#install-a-package).
 
 ## Remove a package
 
