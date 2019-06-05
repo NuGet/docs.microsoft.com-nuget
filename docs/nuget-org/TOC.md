@@ -4,7 +4,7 @@
 ## Account management
 ### Individual accounts
 ### [Organizations](organizations-on-nuget-org.md)
-### API key
+### [API key](scoped-api-keys.md)
 ## Manage packages on NuGet.org
 ### [Packaging ID prefix reservation](id-prefix-reservation.md)
 ### Stub - Topics refactored from FAQ
