@@ -227,12 +227,15 @@ reasons          | array of strings | yes      | The reasons why the package was
 message          | string           | no       | The additional details about this deprecation
 alternatePackage | object           | no       | The package dependency that should be used instead
 
-The `reasons` property should only contains strings from the following set:
-- "Legacy" - The package is no longer being maintained
-- "CriticalBugs" - The package has bugs which make it unsuitable for usage
-- "Other" - The package was deprecated due to a reason not on this list
+The `reasons` property should only contains strings from the following table:
 
-If the `reasons` property contains strings that are not from the known set, they should be ignored. Additionally, if the `reasons` property contains only strings that are not from the known set, the deprecation should be treated as if the property only contained the "Other" string.
+Reason       | Description             
+------------ | -----------
+Legacy       | The package is no longer being maintained
+CriticalBugs | The package has bugs which make it unsuitable for usage
+Other        | The package was deprecated due to a reason not on this list
+
+If the `reasons` property contains strings that are not from the known set, they should be ignored. Additionally, if the `reasons` property contains only strings that are not from the known set, the property should be treated as if it only contained the "Other" string.
 
 ### Sample request
 
