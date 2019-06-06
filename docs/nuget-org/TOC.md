@@ -1,4 +1,3 @@
-# [NuGet client documentation](../index.md)
 # NuGet.org documentation
 ## Overview
 ## Account management
