@@ -163,7 +163,7 @@ Name                     | Type                       | Required | Notes
 @id                      | string                     | yes      | The URL to document used to produce this object
 authors                  | string or array of strings | no       | 
 dependencyGroups         | array of objects           | no       | The dependencies of the package, grouped by target framework
-deprecation              | object                     | no       | The deprecation associated with this package
+deprecation              | object                     | no       | The deprecation associated with the package
 description              | string                     | no       | 
 iconUrl                  | string                     | no       | 
 id                       | string                     | yes      | The ID of the package
