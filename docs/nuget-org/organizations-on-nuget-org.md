@@ -12,27 +12,27 @@ ms.reviewer:
 
 # Your organization on nuget.org
 
-Organizations enable businesses and open-source projects to collaborate on packages using a single nuget.org identity. For a package consumer, an organization account appears same as an existing user account on nuget.org.
+Organizations enable businesses and open-source projects to collaborate on packages using a single NuGet.org identity. For a package consumer, an organization account appears same as an existing user account on NuGet.org.
 
-## User accounts vs. organization accounts
+## Organization accounts vs. user accounts
 
-Your user account is your identity on nuget.org and can be a member of any number of organizations. A package can belong to an organization account like it can belong to a user account. Package consumers don't see any difference between an user account or the organization account: both appear as package `owners`.
+Your user account is your identity on NuGet.org and can be a member of any number of organizations. A package can belong to an organization account like it can belong to a user account. Package consumers don't see any difference between a user account or the organization account: both appear as package `owners`.
 
 An organization account has one or more user accounts as its members. These members can manage a set of packages while maintaining a single identity for ownership.
 
 ## Adding a new organization
 
-To add a new organization, select your account on nuget.org, then select the **Manage Organizations...** menu command:
+To add a new organization, select your account on NuGet.org, then select the **Manage Organizations...** menu command:
 
-![Menu option on nuget.org for Manager Organizations](media/org-manage-option.png)
+![Menu option on NuGet.org for Manager Organizations](media/org-manage-option.png)
 
 On the next page, select the **Add new organization** button:
 
-![Button to create a new organization on nuget.org](media/org-add-new-option.png)
+![Button to create a new organization on NuGet.org](media/org-add-new-option.png)
 
 On the next page, provide the organization name and email address. Since organization accounts share the same namespace as user accounts, the organization name must be different from any other existing organization or user accounts. The email address must also be unique across all accounts.
 
-![Add new organization page on nuget.org](media/org-add-new-page.png)
+![Add new organization page on NuGet.org](media/org-add-new-page.png)
 
 Once the organization account is created, you are the administrator and can submit packages for the organization and add organization members.
 
@@ -43,7 +43,7 @@ Once the organization account is created, you are the administrator and can subm
 
 If you're managing packages as a team using a single user account and would like to convert that account into an organization, use the **Transform your account to an organization** option on the **Manage Organizations** page:
 
-![Option on nuget.org to transform an existing account to an organization](media/org-transform-option.png)
+![Option on NuGet.org to transform an existing account to an organization](media/org-transform-option.png)
 
 On the next page, specify different user account to assign as the administrator of the organization, then select **Transform**.
 
@@ -51,7 +51,7 @@ On the next page, specify different user account to assign as the administrator 
 
 ## Managing organization members
 
-As the organization administrator, you can add members by providing each member's nuget.org *user account name*; email addresses cannot be used. You then mark each member as a collaborator or administrator with the following permissions:
+As the organization administrator, you can add members by providing each member's NuGet.org *user account name*; email addresses cannot be used. You then mark each member as a collaborator or administrator with the following permissions:
 
 | Permission | Collaborator | Administrator |
 | --- | --- | --- |
@@ -71,11 +71,11 @@ If you wish to transfer some of your packages to a newly created organization, y
 
 ## Publishing packages
 
-You publish packages to an organization like you publish packages to a user account: by directly uploading the package to nuget.org or by pushing the package through the `nuget push` or `dotnet nuget push` CLI commands.
+You publish packages to an organization like you publish packages to a user account: by directly uploading the package to NuGet.org or by pushing the package through the `nuget push` or `dotnet nuget push` CLI commands.
 
 ### Uploading packages
 
-When you directly upload a new package on the [nuget.org Upload](https://www.nuget.org/packages/manage/upload) page, you assign the package owner to a user or organization account :
+When you directly upload a new package on the [NuGet.org Upload](https://www.nuget.org/packages/manage/upload) page, you assign the package owner to a user or organization account :
 
 ![Upload package with account option](media/org-upload-option.png)
 
