@@ -9,9 +9,7 @@ ms.topic: conceptual
 
 # Scoped API keys
 
-To make NuGet a more secure environment for package distribution, you can take control of the API keys that you use to push packages.
-
-## Feature summary
+To make NuGet a more secure environment for package distribution, you can take control of the API keys by adding scopes.
 
 The ability to provide scope to your API keys give you better control on your APIs. You can:
 
@@ -25,7 +23,7 @@ The ability to provide scope to your API keys give you better control on your AP
 We support scopes for API keys to allow you to have more fine-grained permissions. Previously, NuGet offered a single API key for an account, and that approach had several drawbacks:
 
 - **One API key to control all packages**. With a single API key that is used to manage all packages, it is difficult to securely share the key when multiple developers are involved with different packages, and when they share a publisher account.
-- **All permissions or none**. Anyone with access to the API key has all permissions (publish, push and un-list) on the packages. This is often not desirable in a multiple team environment.
+- **All permissions or none**. Anyone with access to the API key has all permissions (publish, push and un-list) on the packages. This is often not desirable in environment with multiple teams.
 - **Single point of failure**. A single API key also means a single point of failure. If the key is compromised, all packages associated with the account could potentially be compromised. Refreshing the API key is the only way to plug the leak and avoid an interruption to your CI/CD workflow. In addition, there may be cases when you want to revoke access to the API key for an individual (for example, when an employee leaves the organization). There isn’t a clean way to handle this today.
 
 With scoped API keys, we try to address these problems while making sure that none of the existing workflows break.
