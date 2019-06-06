@@ -13,7 +13,7 @@ To make NuGet a more secure environment for package distribution, you can take c
 
 ## Feature summary
 
-Scoped API keys give you better control on your APIs. You can:
+The ability to provide scope to your API keys give you better control on your APIs. You can:
 
 - Create multiple scoped API keys that can be used for different packages with varying expiration timeframes.
 - Obtain API keys securely.
