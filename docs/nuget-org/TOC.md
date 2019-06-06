@@ -31,3 +31,4 @@
 #### [nuget.org protocols](../api/nuget-protocols.md)
 #### [tools.json](../api/tools-json.md)
 ### [licenses.nuget.org](licenses.nuget.org.md)
+### [FAQ](nuget-org-faq.md)
