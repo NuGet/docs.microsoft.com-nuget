@@ -11,11 +11,11 @@ ms.topic: conceptual
 
 You must create an individual account to publish and manage packages on NuGet.org.
 
-## User accounts vs. organization accounts
+## Individual accounts vs. organization accounts
 
-Your user account is your identity on NuGet.org and can be a member of any number of organizations. A package can belong to an organization account like it can belong to a user account. Package consumers don't see any difference between a user account or the organization account: both appear as package `owners`.
+Your individual (user) account is your identity on NuGet.org and can be a member of any number of organizations. A package can belong to an organization account like it can belong to an individual account. Package consumers don't see any difference between an individual account or the organization account: both appear as package `owners`.
 
-An organization account has one or more user accounts as its members. These members can manage a set of packages while maintaining a single identity for ownership.
+An organization account has one or more indivdual accounts as its members. These members can manage a set of packages while maintaining a single identity for ownership.
 
 ## Add a new individual account
 
