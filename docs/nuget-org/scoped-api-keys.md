@@ -38,7 +38,7 @@ You can now create multiple API keys based on your requirements. An API key can 
 
 In the screenshot above, you can have an API key named ‘Contoso service CI’ that can be used to push packages for certain ‘Contoso.Service’ packages, and is valid for 365 days. This is a typical scenario where different teams within the same organization work on different packages and the members of the team are provided the key which grants them privileges only on the package they are working on. The expiration serves as a mechanism to prevent stale or forgotten keys.
 
-## Using glob patterns
+## Use glob patterns
 
 If you are working on multiple packages and have a large list of packages to manage, you may choose to use globbing patterns to select multiple packages together. For example, if you wish to grant some key certain scopes on all packages whose ID starts with Fabrikam.Service, you could do so by specifying “fabrikam.service.*” in the Glob pattern text box.
 
