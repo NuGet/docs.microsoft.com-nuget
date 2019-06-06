@@ -1,7 +1,7 @@
 # NuGet.org documentation
 ## Overview
 ## Account management
-### Individual accounts
+### [Individual accounts](individual-accounts.md)
 ### [Organizations](organizations-on-nuget-org.md)
 ### [API keys](scoped-api-keys.md)
 ## Manage packages on NuGet.org
