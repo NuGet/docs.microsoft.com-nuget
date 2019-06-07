@@ -28,6 +28,10 @@ We support scopes for API keys to allow you to have more fine-grained permission
 
 With scoped API keys, we try to address these problems while making sure that none of the existing workflows break.
 
+## Acquire an API key
+
+[!INCLUDE [publish-api-key](../includes/publish-api-key.md)]
+
 ## Create scoped API keys
 
 You can create multiple API keys based on your requirements. An API key can apply to one or more packages, have varying scopes that grant specific privileges, and have an expiration date associated with it.
