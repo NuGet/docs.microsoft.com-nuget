@@ -18,7 +18,7 @@ It's a simple process to create a NuGet package from a .NET Standard Class Libra
 
 1. Install any edition of Visual Studio 2017 from [visualstudio.com](https://www.visualstudio.com/) with any .NET-related workload. Visual Studio 2017 automatically includes NuGet capabilities when a .NET workload is installed.
 
-1. Install one of the NuGet CLI tools.
+1. Install one of the CLI tools.
 
    * For the `dotnet` CLI, install the [.NET Core SDK](https://www.microsoft.com/net/download/). The dotnet CLI is required for .NET Standard projects that use the SDK-style format (SDK attribute).
 
