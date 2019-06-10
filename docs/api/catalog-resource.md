@@ -262,7 +262,7 @@ Catalog items with the type `PackageDelete` contain a minimal set of information
 package has been deleted from the package source and is no longer available for any package operation (such as
 restore).
 
-> [!Note]
+> [!NOTE]
 > It is possible for a package to be deleted and later republished using the same package ID and version. On nuget.org,
 > this is a very rare case as it breaks the official client's assumption that a package ID and version imply a specific
 > package content. For more information about package deletion on nuget.org, see
