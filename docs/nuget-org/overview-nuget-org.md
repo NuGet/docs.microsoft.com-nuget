@@ -11,13 +11,13 @@ ms.topic: conceptual
 
 NuGet.org is a public host of NuGet packages that are employed by millions of .NET and .NET Core developers every day.
 
-## Hosts, creators, and consumers
+## Role of the NuGet.org host
 
 In its role as a public host, NuGet.org itself maintains the central repository of over 100,000 unique packages at [nuget.org](https://www.nuget.org). NuGet.org is not the only possible host for packages. The NuGet technology also enables you to host packages privately in the cloud (such as on Azure DevOps), on a private network, or even on just your local file system. If you are interested in a different host or hosting option, see [Hosting your own NuGet feeds](../hosting-packages/overview.md).
 
 NuGet.org, like any host for NuGet packages, serves as the point of connection between package *creators* and package *consumers*. Creators build useful NuGet packages and publish them. Consumers then search for useful and compatible packages on accessible hosts, downloading and including those packages in their projects. Once installed in a project, the packages' APIs are available to the rest of the project code.
 
-![Relationship between package creators, package hosts, and package consumers](../media/nuget-roles.png)
+![Relationship between package creators, package hosts, and package consumers](media/nuget-roles.png)
 
 ## Accounts
 
@@ -31,7 +31,11 @@ A package can belong to an organization account like it can belong to an individ
 
 Once you have a NuGet package (*.nupkg* file) to publish, you publish it to NuGet.org using either the nuget.exe CLI or the dotnet.exe CLI, along with an [API key](scoped-api-keys.md) acquired from NuGet.org.
 
-When you [publish a package](../create-packages/creating-a-package.md), you specify your package name and include the API key value in the command.
+When you [publish a package](../create-packages/creating-a-package.md), you include the API key value in the CLI command.
+
+## ID prefixes
+
+When you publish packages, you can reserve and protect your identity by [reserving ID prefixes](id-prefix-reservation.md). When installing a package, package consumers are provided with additional information indicating that the package they are consuming is not deceptive in its identifying properties.
 
 ## API endpoint for NuGet.org
 
