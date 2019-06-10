@@ -64,7 +64,7 @@ If you want to reinstall packages, use the `restore` or `install` command.
 
 ## List packages
 
-You can display a list of packages from a given source using the [list](../tools/cli-ref-list) command. Use the `-Source` option to restrict the search.
+You can display a list of packages from a given source using the [list](../tools/cli-ref-list.md) command. Use the `-Source` option to restrict the search.
 
 ```cli
 nuget list -Source <source>
