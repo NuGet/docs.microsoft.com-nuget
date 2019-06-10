@@ -36,7 +36,7 @@ Occasionally it's necessary to reinstall packages that are already included in a
 
 Finally, NuGet's behavior is driven by `Nuget.Config` files. Multiple files can be used to centralize certain settings at different levels, as explained in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).
 
-# Ways to install a NuGet Package
+## Ways to install a NuGet Package
 
 NuGet packages are downloaded and installed using any of the methods in the following table. The package may be retrieved from a cache instead of downloaded.
 

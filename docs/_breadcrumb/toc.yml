@@ -18,12 +18,6 @@
     - name: Consume packages
       tocHref: /nuget/consume-packages/
       topicHref: /nuget/consume-packages/overview-and-workflow
-    - name: Hosting packages
-      tocHref: /nuget/hosting-packages/
-      topicHref: /nuget/hosting-packages/overview
-    - name: Tools
-      tocHref: /nuget/tools/
-      topicHref: /nuget/tools/nuget-exe-cli-reference
     - name: Reference
       tocHref: /nuget/reference/
       topicHref: /nuget/reference/nuspec
