@@ -94,7 +94,7 @@ hide_bc: true
                             </a>
                         </li>
                         <li>
-                            <a href="consume-packages/ways-to-install-a-package.md">
+                            <a href="consume-packages/overview-and-workflow.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">

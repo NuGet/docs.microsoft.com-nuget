@@ -1,5 +1,5 @@
 ---
-title: Install and manage packages using the dotnet CLI
+title: Install and manage NuGet packages using the dotnet CLI
 description: Instructions for using the dotnet CLI to work with NuGet packages.
 author: mikejo5000
 ms.author: mikejo
@@ -7,7 +7,7 @@ ms.date: 06/03/2019
 ms.topic: conceptual
 ---
 
-# Install and use packages using the dotnet CLI
+# Install and manage packages using the dotnet CLI
 
 The CLI tool allows you to easily install, uninstall, and update NuGet packages in projects and solutions. It runs on Windows, Mac OS X, and Linux.
 

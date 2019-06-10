@@ -25,7 +25,7 @@ By using the cache and *global-packages* folders, NuGet generally avoids downloa
 
 When asked to retrieve a package, NuGet first looks in the *global-packages* folder. If the exact version of package is not there, then NuGet checks all non-HTTP package sources. If the package is still not found, NuGet looks for the package in the *http-cache* unless you specify `--no-cache` with `dotnet.exe` commands or `-NoCache` with `nuget.exe` commands. If the package is not in the cache, or the cache isn't used, NuGet then retrieves the package over HTTP .
 
-For more information, see [What happens when a package is installed](ways-to-install-a-package.md#what-happens-when-a-package-is-installed).
+For more information, see [What happens when a package is installed?](overview-and-workflow.md#what-happens-when-a-package-is-installed).
 
 ## Viewing folder locations
 

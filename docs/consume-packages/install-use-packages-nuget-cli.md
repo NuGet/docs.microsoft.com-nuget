@@ -1,5 +1,5 @@
 ---
-title: Install and manage packages using the nuget.exe CLI
+title: Install and manage NuGet packages using the nuget.exe CLI
 description: Instructions for using the nuget.exe CLI to work with NuGet packages.
 author: mikejo5000
 ms.author: mikejo
@@ -7,7 +7,7 @@ ms.date: 06/03/2019
 ms.topic: conceptual
 ---
 
-# Install and use packages using the nuget.exe CLI
+# Install and manage packages using the nuget.exe CLI
 
 The CLI tool allows you to easily install, uninstall, and update NuGet packages in projects and solutions. This tool provides all NuGet capabilities on Windows, and also provides most features on Mac and Linux when running under Mono.
 

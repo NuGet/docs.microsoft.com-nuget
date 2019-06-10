@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 NuGet.org is a public host of NuGet packages that are employed by millions of .NET and .NET Core developers every day.
 
-## Role of the NuGet.org host
+## Role of NuGet.org in the NuGet ecosystem
 
 In its role as a public host, NuGet.org itself maintains the central repository of over 100,000 unique packages at [nuget.org](https://www.nuget.org). NuGet.org is not the only possible host for packages. The NuGet technology also enables you to host packages privately in the cloud (such as on Azure DevOps), on a private network, or even on just your local file system. If you are interested in a different host or hosting option, see [Hosting your own NuGet feeds](../hosting-packages/overview.md).
 

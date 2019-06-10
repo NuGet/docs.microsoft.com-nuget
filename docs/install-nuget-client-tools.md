@@ -9,7 +9,7 @@ ms.topic: quickstart
 
 # Installing NuGet client tools
 
-> **Looking to install a package? See [Ways to install NuGet packages](consume-packages/ways-to-install-a-package.md).**
+> **Looking to install a package? See [Ways to install NuGet packages](consume-packages/overview-and-workflow.md#ways-to-install-a-package.md).**
 
 To work with NuGet, as a package consumer or creator, you can use command-line interface (CLI) tools as well as NuGet features in Visual Studio. This article briefly outlines the capabilities of the different tools, how to install them, and their comparative [feature availability](#feature-availability). To get started using NuGet to consume packages, see [Install and use a package (.NET CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) and [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md). To get started creating NuGet packages, see [Create and publish a NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) and [Create and publish a NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md).
 
@@ -37,7 +37,7 @@ Installation:
 - On developer computers, install the [.NET Core SDK](https://aka.ms/dotnetcoregs).
 - For build servers, follow the instructions on [Using .NET Core SDK and tools in Continuous Integration](/dotnet/core/tools/using-ci-with-cli).
 
-For more information, see [.NET Core command-line interface tools](/dotnet/core/tools/index?tabs=netcore2x#tabpanel_fXL5YCOYDa_netcore2x).
+For more information, see [Install and use packages using the dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md).
 
 ### nuget.exe CLI
 
@@ -49,6 +49,8 @@ Installation:
 
 > [!Tip]
 > Use `nuget update -self` on Windows to update an existing nuget.exe to the latest version.
+
+For more information, see [Install and use packages using the nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md).
 
 > [!Note]
 > The latest recommended NuGet CLI is always available at `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`. For compatibility purposes  with older continuous integration systems, a previous URL, `https://nuget.org/nuget.exe` currently provides the [deprecated 2.8.6 CLI tool](https://github.com/NuGet/NuGetGallery/issues/5381).

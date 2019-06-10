@@ -1,5 +1,5 @@
 ---
-title: NuGet Package Manager Console Guide
+title: Install and manage NuGet packages using PowerShell in Visual Studio
 description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
 author: karann-msft
 ms.author: karann
@@ -9,7 +9,7 @@ f1_keywords:
   - "vs.nuget.packagemanager.console"
 ---
 
-# Install and use packages using PowerShell in Visual Studio
+# Install and manage packages using PowerShell in Visual Studio
 
 The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later. (It is not included with Visual Studio for Mac or Visual Studio Code.)
 

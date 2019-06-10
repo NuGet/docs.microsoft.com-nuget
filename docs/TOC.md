@@ -10,10 +10,10 @@
 # Consume packages
 ## [Overview and workflow](consume-packages/overview-and-workflow.md)
 ## [Find and choose packages](consume-packages/finding-and-choosing-packages.md)
-## Install and use packages
+## Install and manage packages
 ### [Ways to install a package](consume-packages/ways-to-install-a-package.md)
 ### [Visual Studio](tools/package-manager-ui.md)
-### [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough?view=vsmac-2019)
+### [Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
 ### [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)
 ### [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md)
 ### [PowerShell](tools/package-manager-console.md)

@@ -144,6 +144,11 @@
             "source_path": "docs/policies/dispute-resolution.md",
             "redirect_url": "/nuget-org/policies/dispute-resolution",
             "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/consume-packages/ways-to-install-a-package.md",
+            "redirect_url": "/consume-packages/overview-and-workflow",
+            "redirect_document_id": false
         }
     ]
 }
