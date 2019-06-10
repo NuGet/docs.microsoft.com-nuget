@@ -1,5 +1,4 @@
-# NuGet.org documentation
-# [Overview](overview-nuget-org.md)
+# [Overview of NuGet.org](overview-nuget-org.md)
 # Account management
 ## [Individual accounts](individual-accounts.md)
 ## [Organizations](organizations-on-nuget-org.md)
