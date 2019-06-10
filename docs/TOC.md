@@ -255,7 +255,7 @@
 ## Policies
 ### [Governance](policies/governance.md)
 ### [Ecosystem](policies/ecosystem.md)
-### [NuGet.org policies](policies/data-requests.md)
+### [NuGet.org policies](nuget-org/policies/data-requests.md)
 ## Release notes
 ### [Known Issues](release-notes/known-issues.md)
 ### [NuGet 5.0 RTM](release-notes/NuGet-5.0-RTM.md)

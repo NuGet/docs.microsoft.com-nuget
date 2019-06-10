@@ -197,8 +197,8 @@ If you tried using the [sign in assistance](#which-microsoft-account-is-linked-t
 
 If you want to transform your account to an organization, and this account is already associated with a Microsoft account login, please follow the steps given in the documentation for [organizations on nuget org](organizations-on-nuget-org.md).
 
-If however, your nuget.org account is not associated/linked with a Microsoft account, you can follow the steps below to transform this account to an organization.
-1. **Requirement**: You need to have an individual account first created on nuget.org to be used as an admin on the org account. If you do not have one, please [create a new nuget.org account](#how-to-create-a-nugetorg-account)
+If, however, your nuget.org account is not associated/linked with a Microsoft account, you can follow the steps below to transform this account to an organization.
+1. **Requirement**: You need to have an individual account first created on nuget.org to be used as an admin on the org account. If you do not have one, please [create a new nuget.org account](individual-accounts.md)
 2. Follow the [steps to recover your password login](#how-to-recover-nugetorg-password-login) for your nuget.org account if you do not have password login for it, if you do, skip this step.
 3. [Login to nuget.org](https://www.nuget.org/users/account/LogOnNuGetAccount) using the username/password login.
 4. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box. 
@@ -241,7 +241,7 @@ You cannot. As a matter of policy we do not allow the change of usernames as of 
 > [!Important]
 > Deleting the user will still **reserve** the `username`. You will not be able to reuse the same username again and **this includes the change of casings**. As an example if you created a user with username `mycoolname` and you want to change this to `MyCoolName`(casing changes), it will not be possible after deleting the user.
 
-Follow the steps given in [delete your nuget.org account](#how-to-delete-my-nugetorg-account) section and to [register a new account](#how-to-create-a-new-nugetorg-account) with correct username.
+Follow the steps given in [delete your nuget.org account](#how-to-delete-my-nugetorg-account) section and to [register a new account](individual-accounts.md) with correct username.
 
 ### How to delete my nuget.org account?
 
