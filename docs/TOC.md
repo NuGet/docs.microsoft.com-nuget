@@ -11,7 +11,6 @@
 ## [Overview and workflow](consume-packages/overview-and-workflow.md)
 ## [Find and choose packages](consume-packages/finding-and-choosing-packages.md)
 ## Install and manage packages
-### [Ways to install a package](consume-packages/ways-to-install-a-package.md)
 ### [Visual Studio](tools/package-manager-ui.md)
 ### [Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
 ### [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)

@@ -440,7 +440,7 @@ The following options are a few that are common with Visual Studio projects:
 
 Before publishing a package, you typically want to test the process of installing a package into a project. The tests make sure that the necessarily files all end up in their correct places in the project.
 
-You can test installations manually in Visual Studio or on the command line using the normal [package installation steps](../consume-packages/overview-and-workflow.md#ways-to-install-a-package.md).
+You can test installations manually in Visual Studio or on the command line using the normal [package installation steps](../consume-packages/overview-and-workflow.md#ways-to-install-a-package).
 
 For automated testing, the basic process is as follows:
 

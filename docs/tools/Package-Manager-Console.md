@@ -69,7 +69,7 @@ Install-Package Elmah -ProjectName UtilitiesLib
 
 See [Install-Package](../tools/ps-ref-install-package.md).
 
-Installing a package in the console performs the same steps as described on [What happens when a package is installed](../consume-packages/ways-to-install-a-package.md#what-happens-when-a-package-is-installed), with the following additions:
+Installing a package in the console performs the same steps as described on [What happens when a package is installed](../consume-packages/overview-and-workflow.md#what-happens-when-a-package-is-installed), with the following additions:
 
 - The Console displays applicable license terms in its window with implied agreement. If you do not agree to the terms, you should uninstall the package immediately.
 - Also a reference to the package is added to the project file and appears in **Solution Explorer** under the **References** node, you need to save the project to see the changes in the project file directly.
