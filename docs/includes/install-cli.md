@@ -1,5 +1,8 @@
 #### Windows
 
+> [!Note]
+> NuGet.exe 5.0 and later require .NET Framework 4.7.2 or later to execute.
+
 1. Visit [nuget.org/downloads](https://nuget.org/downloads) and select NuGet 3.3 or higher (2.8.6 is not compatible with Mono). The latest version is always recommended, and 4.1.0+ is required to publish packages to nuget.org.
 1. Each download is the `nuget.exe` file directly. Instruct your browser to save the file to a folder of your choice. The file is *not* an installer; you won't see anything if you run it directly from the browser.
 1. Add the folder where you placed `nuget.exe` to your PATH environment variable to use the CLI tool from anywhere.
