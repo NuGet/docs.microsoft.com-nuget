@@ -119,4 +119,4 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
 - [Finding and choosing packages](../consume-packages/finding-and-choosing-packages.md)
-- [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md)
+- [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md)

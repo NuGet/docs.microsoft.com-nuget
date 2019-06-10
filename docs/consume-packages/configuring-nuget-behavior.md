@@ -1,5 +1,5 @@
 ---
-title: Configuring the behavior of NuGet
+title: Common NuGet configurations
 description: NuGet.Config files control NuGet's behavior both globally and on a per-project basis, and are modified with nuget config command.
 author: karann-msft
 ms.author: karann
@@ -7,7 +7,7 @@ ms.date: 10/25/2017
 ms.topic: conceptual
 ---
 
-# Configuring NuGet behavior
+# Common NuGet configurations
 
 NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Config` (XML) files that can exist at project-, user-, and computer-wide levels. A global `NuGetDefaults.Config` file also specifically configures package sources. Settings apply to all commands issued in the CLI, the Package Manager Console, and the Package Manager UI.
 

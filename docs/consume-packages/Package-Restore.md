@@ -17,7 +17,7 @@ Package restore makes sure that all a project's dependencies are available witho
 
 Restoring packages first installs the direct dependencies of a project as needed, then installs any dependencies of those packages throughout the entire dependency graph.
 
-If a package is not already installed, NuGet first attempts to retrieve it from the [cache](../consume-packages/managing-the-global-packages-and-cache-folders.md). If the package is not in the cache, NuGet then attempts to download the package from all enabled sources (see [Configuring NuGet behavior](Configuring-NuGet-Behavior.md); sources also appear in the  **Tools > Options > NuGet Package Manager > Package Sources** list in Visual Studio). During restore, NuGet ignores the order of package sources, using the package from whichever source is first to respond to requests.
+If a package is not already installed, NuGet first attempts to retrieve it from the [cache](../consume-packages/managing-the-global-packages-and-cache-folders.md). If the package is not in the cache, NuGet then attempts to download the package from all enabled sources (see [Common NuGet configurations](Configuring-NuGet-Behavior.md); sources also appear in the  **Tools > Options > NuGet Package Manager > Package Sources** list in Visual Studio). During restore, NuGet ignores the order of package sources, using the package from whichever source is first to respond to requests.
 
 > [!Note]
 > NuGet does not indicate a failure to restore a package until all the sources have been checked. At that time, NuGet reports a failure for only the last source in the list. The error implies that the package wasn't present on *any* of the other sources, even though errors are not shown for each of those sources individually.
@@ -77,7 +77,7 @@ Package restore is primarily enabled through **Tools > Options > NuGet Package M
 
 For reference, see the [NuGet config file - packageRestore section](../reference/nuget-config-file.md#packagerestore-section).
 
-In some cases, a developer or company might want to enable or disable package restore for all users on a computer. To do this, add the same settings above to the global NuGet configuration file located in `%ProgramData%\NuGet\Config` (Windows, potentially under a specific `\{IDE}\{Version}\{SKU}\` folder for Visual Studio) or `~/.local/share` (Mac/Linux). Individual users can then selectively enable restore as needed on a project level. See [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied) for exact details on how NuGet prioritizes multiple config files.
+In some cases, a developer or company might want to enable or disable package restore for all users on a computer. To do this, add the same settings above to the global NuGet configuration file located in `%ProgramData%\NuGet\Config` (Windows, potentially under a specific `\{IDE}\{Version}\{SKU}\` folder for Visual Studio) or `~/.local/share` (Mac/Linux). Individual users can then selectively enable restore as needed on a project level. See [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied) for exact details on how NuGet prioritizes multiple config files.
 
 > [!Important]
 > If you edit the `packageRestore` settings directly in `nuget.config`, restart Visual Studio so that the options dialog box shows the current values.

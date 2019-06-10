@@ -98,5 +98,5 @@ This command creates a testing certificate available in the current user's perso
 
 ## Related articles
 
-- [Installing signed packages](../consume-packages/installing-signed-packages.md)
+- [Manage package trust boundaries](../consume-packages/installing-signed-packages.md)
 - [Signed Packages Reference](../reference/Signed-Packages-Reference.md)

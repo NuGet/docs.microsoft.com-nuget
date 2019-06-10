@@ -1,5 +1,5 @@
 ---
-title: Install a signed NuGet package
+title: Manage package trust boundaries
 description: Describes the process of installing signed NuGet packages and configuring package signature trust settings.
 author: karann-msft
 ms.author: karann
@@ -7,7 +7,7 @@ ms.date: 11/29/2018
 ms.topic: conceptual
 ---
 
-# Install a signed package
+# Manage package trust boundaries
 
 Signed packages don't require any specific action to be installed; however, if the content has been modified since it was signed, the installation is blocked with error [NU3008](../reference/errors-and-warnings/NU3008.md).
 

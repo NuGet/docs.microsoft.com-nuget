@@ -125,7 +125,7 @@ To manage package sources:
 1. Using the up and down arrow buttons does not change the priority order of the package sources. Visual Studio ignores the order of package sources, using the package from whichever source is first to respond to requests. For more information, see [Package restore](../consume-packages/package-restore.md).
 
 > [!Tip]
-> If a package source reappears after deleting it, it may be listed in a computer-level or user-level `NuGet.Config` files. See [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md) for the location of these files, then remove the source by editing the files manually or using the [nuget sources command](../tools/nuget-exe-CLI-reference.md).
+> If a package source reappears after deleting it, it may be listed in a computer-level or user-level `NuGet.Config` files. See [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md) for the location of these files, then remove the source by editing the files manually or using the [nuget sources command](../tools/nuget-exe-CLI-reference.md).
 
 ## Package manager Options control
 

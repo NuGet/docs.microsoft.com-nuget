@@ -16,7 +16,7 @@ ms.topic: reference
 
 Pushes a package to a package source and publishes it.
 
-NuGet's default configuration is obtained by loading `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), then loading any `Nuget.Config` or `.nuget\Nuget.Config` files starting from root of drive and ending in current directory (see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md))
+NuGet's default configuration is obtained by loading `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), then loading any `Nuget.Config` or `.nuget\Nuget.Config` files starting from root of drive and ending in current directory (see [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md))
 
 ## Usage
 
@@ -37,7 +37,7 @@ where `<packagePath>` identifies the package to push to the server.
 | Help | Displays help information for the command. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
 | NoSymbols | *(3.5+)* If a symbols package exists, it will not be pushed to a symbol server. |
-| Source | Specifies the server URL. NuGet identifies a UNC or local folder source and simply copies the file there instead of pushing it using HTTP.  Also, starting with NuGet 3.4.2, this is a mandatory parameter unless the `NuGet.Config` file specifies a *DefaultPushSource* value (see [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md)). |
+| Source | Specifies the server URL. NuGet identifies a UNC or local folder source and simply copies the file there instead of pushing it using HTTP.  Also, starting with NuGet 3.4.2, this is a mandatory parameter unless the `NuGet.Config` file specifies a *DefaultPushSource* value (see [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md)). |
 | SkipDuplicate | If a package and version already exists, skip it and continue with the next package in the push, if any. |
 | SymbolSource | *(3.5+)* Specifies the symbol server URL; nuget.smbsrc.net is used when pushing to nuget.org |
 | SymbolApiKey | *(3.5+)* Specifies the API key for the URL specified in `-SymbolSource`. |
