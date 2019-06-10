@@ -255,7 +255,7 @@
 ## Policies
 ### [Governance](policies/governance.md)
 ### [Ecosystem](policies/ecosystem.md)
-### [NuGet.org policies](policies/Data-requests?toc=/nuget/nuget-org/toc.json)
+### [NuGet.org policies](policies/data-requests.md)
 ## Release notes
 ### [Known Issues](release-notes/known-issues.md)
 ### [NuGet 5.0 RTM](release-notes/NuGet-5.0-RTM.md)
@@ -322,4 +322,4 @@
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
 ## [FAQs](faqs/nuget-faq.md)
-# [NuGet.org](nuget-org/organizations-on-nuget-org)
+# [NuGet.org](nuget-org/overview.md)

@@ -30,7 +30,7 @@ With scoped API keys, we try to address these problems while making sure that no
 
 ## Acquire an API key
 
-[!INCLUDE [publish-api-key](../includes/publish-api-key.md)]
+[!INCLUDE [publish-api-key](../quickstart/includes/publish-api-key.md)]
 
 ## Create scoped API keys
 

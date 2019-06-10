@@ -266,7 +266,7 @@ restore).
 > It is possible for a package to be deleted and later republished using the same package ID and version. On nuget.org,
 > this is a very rare case as it breaks the official client's assumption that a package ID and version imply a specific
 > package content. For more information about package deletion on nuget.org, see
-> [our policy](../policies/deleting-packages.md).
+> [our policy](../nuget-org/policies/deleting-packages.md).
 
 Package delete catalog items have no additional properties in addition to those
 [included on all catalog leaves](#catalog-leaf).

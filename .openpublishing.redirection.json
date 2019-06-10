@@ -129,6 +129,21 @@
             "source_path": "docs/reference/organizations-on-nuget-org.md",
             "redirect_url": "/nuget-org/organizations-on-nuget-org",
             "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/policies/data-requests.md",
+            "redirect_url": "/nuget-org/policies/data-requests",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/policies/deleting-packages.md",
+            "redirect_url": "/nuget-org/policies/deleting-packages",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/policies/dispute-resolution.md",
+            "redirect_url": "/nuget-org/policies/dispute-resolution",
+            "redirect_document_id": false
         }
     ]
 }
