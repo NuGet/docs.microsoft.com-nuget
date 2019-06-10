@@ -31,7 +31,6 @@
 ### [packages.config](reference/packages-config.md)
 # Create packages
 ## [Overview and workflow](create-packages/overview-and-workflow.md)
-## Create a package - dotnet CLI
 ## [Create a package - nuget.exe CLI](create-packages/creating-a-package.md)
 ## [Create a package using MSBuild](reference/msbuild-targets.md)
 ## [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
@@ -40,7 +39,6 @@
 ## Advanced tasks
 ### [Modify source code and config files](create-packages/source-and-config-file-transformations.md)
 ### [Create a localized package](create-packages/creating-localized-packages.md)
-### Stub - Some refactored content
 ## Guides for specific content
 ### [Create a UWP package](guides/create-uwp-packages.md)
 ### [Create a native package](create-packages/native-packages.md)
@@ -49,11 +47,11 @@
 ### [Create a package for Xamarin with Visual Studio 2015](guides/create-packages-for-xamarin.md)
 ## Sign packages
 ### [Sign a package](create-packages/sign-a-package.md)
-### [Signed package types and requirements](reference/signed-packages-reference.md)
+### [Signed package signatures and requirements](reference/signed-packages-reference.md)
 # Publish packages
 ## Publish to NuGet.org
 ### [Publish a package](create-packages/publish-a-package.md)
-### API keys
+### [API keys](nuget-org/scoped-api-keys.md)
 ## Publish to a private feed
 ### [Overview](hosting-packages/overview.md)
 ### [Azure artifacts](/azure/devops/artifacts/nuget/publish?view=azure-devops)
