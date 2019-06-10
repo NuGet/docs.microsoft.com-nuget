@@ -23,6 +23,8 @@ Once installed, refer to the package in code with `using <namespace>` where \<na
 
 You can install the 2017 Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions.
 
+If you're using Visual Studio for Mac, see [Include a NuGet package in your project](/visualstudio/mac/nuget-walkthrough).
+
 ## Create a project
 
 NuGet packages can be installed into any .NET project, provided that the package supports the same target framework as the project.

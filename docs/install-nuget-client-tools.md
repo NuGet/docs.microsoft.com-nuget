@@ -3,7 +3,7 @@ title: Installing NuGet client tools
 description: Guidance on installing client tools, the dotnet and nuget command-line interfaces (CLI), and the Package Manager for Visual Studio.
 author: karann-msft
 ms.author: karann
-ms.date: 04/09/2018
+ms.date: 05/24/2019
 ms.topic: quickstart
 ---
 
@@ -11,12 +11,12 @@ ms.topic: quickstart
 
 > **Looking to install a package? See [Ways to install NuGet packages](consume-packages/ways-to-install-a-package.md).**
 
-To work with NuGet, as a package consumer or creator, you can use [command-line interface (CLI) tools](#cli-tools) as well as [NuGet features in Visual Studio](#visual-studio). This article briefly outlines the capabilities of the different tools, how to install them, and their comparative [feature availability](#feature-availability). To get started using NuGet to consume packages, see [Install and use a package (.NET CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) and [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md). To get started creating NuGet packages, see [Create and publish a NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) and [Create and publish a NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md).
+To work with NuGet, as a package consumer or creator, you can use command-line interface (CLI) tools as well as NuGet features in Visual Studio. This article briefly outlines the capabilities of the different tools, how to install them, and their comparative [feature availability](#feature-availability). To get started using NuGet to consume packages, see [Install and use a package (.NET CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) and [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md). To get started creating NuGet packages, see [Create and publish a NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) and [Create and publish a NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md).
 
 | Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Download&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
-| [dotnet.exe](#dotnetexe-cli) | Included with the .NET Core SDK and provides core NuGet features on all platforms. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
-| [nuget.exe](#nugetexe-cli) | Provides all NuGet capabilities on Windows, provides most features on Mac and Linux when running under Mono. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [dotnet.exe](#dotnetexe-cli) | CLI tool for .NET Core and .NET Standard libraries, and for SDK-style projects that target .NET Framework (see [SDK attribute](/dotnet/core/tools/csproj#additions)). Included with the .NET Core SDK and provides core NuGet features on all platforms. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
+| [nuget.exe](#nugetexe-cli) | CLI tool for .NET Framework libraries and non-SDK-style projects that target .NET Standard libraries. Provides all NuGet capabilities on Windows, provides most features on Mac and Linux when running under Mono. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
 | [Visual Studio](#visual-studio) | On Windows, provides NuGet capabilities through the Package Manager UI and Package Manager Console; included with .NET-related workloads. On Mac, provides certain features through the UI. In Visual Studio Code, NuGet features are provided through extensions. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 The [MSBuild CLI](reference/msbuild-targets.md) also provides the ability to restore and create packages, which is primarily useful on build servers. MSBuild is not a general-purpose tool for working with NuGet.
@@ -24,6 +24,9 @@ The [MSBuild CLI](reference/msbuild-targets.md) also provides the ability to res
 ## CLI tools
 
 The two NuGet CLI tools are `dotnet.exe` and `nuget.exe`. See [feature availability](#feature-availability) for a comparison.
+
+* To target .NET Core or .NET Standard, use the dotnet CLI. The dotnet CLI is required for the SDK-style project format, which uses the [SDK attribute](/dotnet/core/tools/csproj#additions).
+* To target .NET Framework in your project, use the `nuget.exe CLI`.
 
 ### dotnet.exe CLI
 
@@ -59,7 +62,7 @@ Installation:
 - Visual Studio on Windows: The **NuGet Package Manager** is included with Visual Studio 2012 and later. The Package Manager provides the [Package Manager UI](tools/package-manager-ui.md) and the [Package Manager Console](tools/package-manager-console.md), through which you can run most NuGet operations.
   - The Visual Studio 2017 installer includes the NuGet Package Manager with any workload that employs .NET. To install separately, or to verify that the Package Manager is installed, run the Visual Studio 2017 installer and check the option under **Individual Components > Code tools > NuGet package manager**.
   - The Package Manager UI and Console are unique to Visual Studio on Windows. They are not presently available on Visual Studio for Mac.
-  - Visual Studio does not automatically include the `nuget.exe` CLI, which must be installed separately as described earlier.
+  - A CLI tool is required to support NuGet features in the IDE. You can use either the `dotnet` CLI or the the `nuget.exe` CLI. The `dotnet` CLI is installed with some Visual Studio workloads, such as .NET Core. The `nuget.exe` CLI must be installed separately as described earlier.
   - Package Manager Console commands work only within Visual Studio on Windows and do not work within other PowerShell environments.
   - For Visual Studio 2010 and earlier, install the "NuGet Package Manager for Visual Studio" extension.
   - NuGet Extensions for Visual Studio 2013 and 2015 can also be downloaded from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
