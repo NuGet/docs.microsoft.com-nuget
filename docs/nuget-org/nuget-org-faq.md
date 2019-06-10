@@ -29,7 +29,7 @@ In addition, uploading packages to [int.nugettest.org](https://int.nugettest.org
 
 **Can I delete a package published to NuGet.org?**
 
-In general, we do not support deleting a package published to NuGet.org. Read more about our [policy on deleting packages](../nuget-org/policies/deleting-packages).
+In general, we do not support deleting a package published to NuGet.org. Read more about our [policy on deleting packages](policies/deleting-packages.md).
 
 **Is it possible to reserve names for packages that will be published in future?**
 
