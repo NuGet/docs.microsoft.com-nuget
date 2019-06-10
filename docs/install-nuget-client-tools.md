@@ -61,7 +61,7 @@ For more information, see [Install and use packages using the nuget.exe CLI](con
 
 - Visual Studio for Mac: certain NuGet capabilities are built in directly. See [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough) for a walkthrough. For other capabilities, use the `dotnet.exe` or `nuget.exe` CLI tools.
 
-- Visual Studio on Windows: The **NuGet Package Manager** is included with Visual Studio 2012 and later. The Package Manager provides the [Package Manager UI](tools/package-manager-ui.md) and the [Package Manager Console](tools/package-manager-console.md), through which you can run most NuGet operations.
+- Visual Studio on Windows: The **NuGet Package Manager** is included with Visual Studio 2012 and later. Visual Studio provides the [Package Manager UI](tools/package-manager-ui.md) and the [Package Manager Console](tools/package-manager-console.md), through which you can run most NuGet operations.
   - The Visual Studio 2017 installer includes the NuGet Package Manager with any workload that employs .NET. To install separately, or to verify that the Package Manager is installed, run the Visual Studio 2017 installer and check the option under **Individual Components > Code tools > NuGet package manager**.
   - The Package Manager UI and Console are unique to Visual Studio on Windows. They are not presently available on Visual Studio for Mac.
   - A CLI tool is required to support NuGet features in the IDE. You can use either the `dotnet` CLI or the the `nuget.exe` CLI. The `dotnet` CLI is installed with some Visual Studio workloads, such as .NET Core. The `nuget.exe` CLI must be installed separately as described earlier.
@@ -99,8 +99,8 @@ For more information, see [Install and use packages using the nuget.exe CLI](con
 
 - [dotnet commands](tools/dotnet-commands.md)
 - [NuGet CLI reference](tools/nuget-exe-cli-reference.md)
-- [Package Manager UI reference](tools/package-manager-ui.md)
-- [Package Manager Console reference](tools/package-manager-console.md)
+- [Install and manage packages using Visual Studio](tools/package-manager-ui.md)
+- [Install and manage packages using PowerShell](tools/package-manager-console.md)
 - [Package Manager Console PowerShell reference](tools/powershell-reference.md)
 - [Creating a package](create-packages/creating-a-package.md)
 - [Publishing a Package](create-packages/publish-a-package.md)
