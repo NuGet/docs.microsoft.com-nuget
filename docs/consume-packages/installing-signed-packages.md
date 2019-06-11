@@ -19,7 +19,7 @@ Signed packages don't require any specific action to be installed; however, if t
 > [!Note]
 > Requires NuGet 4.9.0+ and Visual Studio version 15.9 and later on Windows
 
-You can configure how NuGet clients validate package signatures by setting the `signatureValidationMode` to `require` in the [nuget.config](../reference/nuget-config-file) file using the [`nuget config`](../tools/cli-ref-config) command.
+You can configure how NuGet clients validate package signatures by setting the `signatureValidationMode` to `require` in the [nuget.config](../reference/nuget-config-file.md) file using the [`nuget config`](../tools/cli-ref-config.md) command.
 
 ```cmd
 nuget.exe config -set signatureValidationMode=require
@@ -35,7 +35,7 @@ This mode will verify that all packages are signed by any of the certificates tr
 
 ### Trust package author
 
-To trust packages based on the author signature use the [`trusted-signers`](..tools/cli-ref-trusted-signers) command to set the `author` property in the nuget.config.
+To trust packages based on the author signature use the [`trusted-signers`](../tools/cli-ref-trusted-signers.md) command to set the `author` property in the nuget.config.
 
 ```cmd
 nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE40881FF5F0AD3E58965DA20A9F571EF1651A56933748E1BF1C99E537C4E039 -FingerprintAlgorithm SHA256
@@ -50,7 +50,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 ```
 
 >[!TIP]
->Use the `nuget.exe` [verify command](https://docs.microsoft.com/en-us/nuget/tools/cli-ref-verify) to get the `SHA256` value of the certificate's fingerprint.
+>Use the `nuget.exe` [verify command](../tools/cli-ref-verify.md) to get the `SHA256` value of the certificate's fingerprint.
 
 
 ### Trust all packages from a repository
@@ -90,11 +90,11 @@ In some situations you may want to enable verification using certificates that d
 
 ### Sync repository certificates
 
-Package repositories should announce the certificates they use in their [service index](https://docs.microsoft.com/en-us/nuget/api/service-index). Eventually the repository will update these certificates, e.g. when the certificate expires. When that happens, clients with specific policies will require an update to the configuration to include the newly added certificate. You can easily upgrade the trusted signers associated to a repository by using the `nuget.exe` [trusted-signers sync command](/nuget/tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-).
+Package repositories should announce the certificates they use in their [service index](../api/service-index.md). Eventually the repository will update these certificates, e.g. when the certificate expires. When that happens, clients with specific policies will require an update to the configuration to include the newly added certificate. You can easily upgrade the trusted signers associated to a repository by using the `nuget.exe` [trusted-signers sync command](../tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-).
 
 ### Schema reference
 
-The complete schema reference for the client policies can be found in the [nuget.config reference](/nuget/reference/nuget-config-file#trustedsigners-section)
+The complete schema reference for the client policies can be found in the [nuget.config reference](../reference/nuget-config-file#trustedsigners-section.md)
 
 ## Related articles
 

@@ -15,7 +15,7 @@ Between nuget.org and private package galleries that your organization might est
 
 \* _Visual Studio and `dotnet.exe` only. The `nuget install` command does not modify project files or the `packages.config` file; entries must be managed manually._
 
-For further details, see [Finding and Choosing Packages](../consume-packages/finding-and-choosing-packages.md) and [What happens when a package is installed?](#what-happens-when-a-package-is-installed?).
+For further details, see [Finding and Choosing Packages](../consume-packages/finding-and-choosing-packages.md) and [What happens when a package is installed?](#what-happens-when-a-package-is-installed).
 
 NuGet remembers the identity and version number of each installed package, recording it in either the project file (using [PackageReference](../consume-packages/package-references-in-project-files.md)) or [`packages.config`](../reference/packages-config.md), depending on project type and your version of NuGet. With NuGet 4.0+, PackageReference is preferred, although this is configurable in Visual Studio through the [Package Manager UI](../tools/package-manager-ui.md). In any case, you can look in the appropriate file at any time to see the full list of dependencies for your project.
 
