@@ -21,9 +21,6 @@
     - name: Reference
       tocHref: /nuget/reference/
       topicHref: /nuget/reference/nuspec
-    - name: API
-      tocHref: /nuget/api/
-      topicHref: /nuget/api/overview
     - name: Visual Studio extensibility
       tocHref: /nuget/visual-studio-extensibility/
       topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
