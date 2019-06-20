@@ -34,7 +34,7 @@ Package restore is triggered in the following ways:
 
 - **NuGet CLI**: use the [nuget restore](../tools/cli-ref-restore.md) command, which restores packages listed in the project file or in `packages.config`. You can also specify a solution file.
 
-- **MSBuild**: use the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command, which restores packages packages listed in the project file (PackageReference only). Available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017. `nuget restore` and `dotnet restore` both use this command for applicable projects.
+- **MSBuild**: use the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command, which restores packages packages listed in the project file (PackageReference only). Available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017 and higher versions. `nuget restore` and `dotnet restore` both use this command for applicable projects.
 
 - **Visual Studio Team Services**: When creating a build definition on Team Services, include the [NuGet restore](/vsts/build-release/tasks/package/nuget#restore-nuget-packages) or [.NET Core Restore](/vsts/build-release/tasks/build/dotnet-core#restore-nuget-packages) task in the definition before any build task. This task is included by default in a number of build templates.
 

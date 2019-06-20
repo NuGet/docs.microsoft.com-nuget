@@ -50,15 +50,15 @@
 ### [Signed package signatures and requirements](reference/signed-packages-reference.md)
 # Publish packages
 ## Publish to NuGet.org
-### [Publish a package](create-packages/publish-a-package.md)
+### [Publish a package](nuget-org/publish-a-package.md)
 ### [API keys](nuget-org/scoped-api-keys.md)
 ## Publish to a private feed
 ### [Overview](hosting-packages/overview.md)
 ### [Azure artifacts](/azure/devops/artifacts/nuget/publish?view=azure-devops)
-### [GitHub package registry](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 ### [NuGet.Server](hosting-packages/nuget-server.md)
 ### [Local feeds](hosting-packages/local-feeds.md)
 # Concepts
+## [Package installation process](consume/package-installation-process.md)
 ## [Package versioning](reference/package-versioning.md)
 ## [Dependency resolution](consume-packages/dependency-resolution.md)
 # Reference

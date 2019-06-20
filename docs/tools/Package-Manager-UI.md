@@ -16,19 +16,10 @@ f1_keywords:
 
 The NuGet Package Manager UI in Visual Studio on Windows allows you to easily install, uninstall, and update NuGet packages in projects and solutions. For the experience in Visual Studio for Mac, see [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough). The Package Manager UI is not included with Visual Studio Code.
 
-In this topic:
-
-- [Finding and installing a package (Browse tab)](#finding-and-installing-a-package)
-- [Uninstalling a package (Installed tab)](#uninstalling-a-package)
-- [Updating a package (Installed and Updates tabs)](#updating-a-package) (includes the ["Implicitly referenced by an SDK" or "AutoReferenced" message](#implicit_reference))
-- [Managing packages for the solution](#managing-packages-for-the-solution) (working with multiple projects at the same time).
-- [Package sources](#package-sources)
-- [Package manager Options control](#package-manager-options-control)
-
-> [!Note]
+> [!NOTE]
 > If you're missing the NuGet Package Manager in Visual Studio 2015, check **Tools > Extensions and Updates...** and search for the *NuGet Package Manager* extension. If you're unable to use the extensions installer in Visual Studio, download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 >
-> In Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed with any .NET-related workloads. Install it individually by selecting the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.
+> Starting in Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed with any .NET-related workloads. Install it individually by selecting the **Individual components > Code tools > NuGet package manager** option in the Visual Studio installer.
 
 ## Finding and installing a package
 

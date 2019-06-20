@@ -11,19 +11,21 @@ ms.topic: conceptual
 
 The CLI tool allows you to easily install, uninstall, and update NuGet packages in projects and solutions. It runs on Windows, Mac OS X, and Linux.
 
-The dotnet CLI is for .NET Core and .NET Standard libraries, and for SDK-style projects that target .NET Framework (see [SDK attribute](/dotnet/core/tools/csproj#additions)).
+The dotnet CLI is for use in your .NET Core and .NET Standard project (SDK-style project types), and for any SDK-style project (for example, one that targets .NET Framework). For more information, see [SDK attribute](/dotnet/core/tools/csproj#additions)).
 
-This article shows you basic usage for a few of the most common dotnet CLI commands. For most of these commands, the CLI tool looks for a project file in the current directory, unless a project file is specified in the command (the project file is an optional switch). For a complete list of commands and the arguments you may use, see the [.NET Core command-line interface (CLI) tools](/dotnet/core/tools/?tabs=netcore2x).
+This article shows you basic usage for a few of the most common dotnet CLI commands. For most of these commands, the CLI tool looks for a project file in the current directory, unless a project file is specified in the command (the project file is an optional switch). For a complete list of commands and the arguments you may use, see the [.NET Core command-line interface (CLI) tools](../tools/dotnet-commands.md).
 
 ## Prerequisites
 
-- The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool. In Visual Studio 2017, the dotnet CLI is automatically installed with any .NET Core related workloads.
+- The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool. Starting in Visual Studio 2017, the dotnet CLI is automatically installed with any .NET Core related workloads.
 
 ## Install a package
 
 [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x) adds a package reference to the project file, then runs `dotnet restore` to install the package.
 
-1. Use the following command to install a Nuget package:
+1. Open a command line and switch to the directory that contains your project file.
+
+2. Use the following command to install a Nuget package:
 
     ```cli
     dotnet add package <PACKAGE_NAME>
@@ -35,7 +37,7 @@ This article shows you basic usage for a few of the most common dotnet CLI comma
     dotnet add package Newtonsoft.Json
     ```
 
-2. After the command completes, look at the solution or project file to make sure the package was installed.
+3. After the command completes, look at the solution or project file to make sure the package was installed.
 
    For example, in Visual Studio, you can open the `.csproj` file to see the added reference:
 

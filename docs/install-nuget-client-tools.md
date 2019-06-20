@@ -3,11 +3,11 @@ title: Installing NuGet client tools
 description: Guidance on installing client tools, the dotnet and nuget command-line interfaces (CLI), and the Package Manager for Visual Studio.
 author: karann-msft
 ms.author: karann
-ms.date: 05/24/2019
+ms.date: 06/20/2019
 ms.topic: quickstart
 ---
 
-# Installing NuGet client tools
+# Install NuGet client tools
 
 > **Looking to install a package? See [Ways to install NuGet packages](consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package).**
 
@@ -15,8 +15,8 @@ To work with NuGet, as a package consumer or creator, you can use command-line i
 
 | Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Download&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
-| [dotnet.exe](#dotnetexe-cli) | CLI tool for .NET Core and .NET Standard libraries, and for SDK-style projects that target .NET Framework (see [SDK attribute](/dotnet/core/tools/csproj#additions)). Included with the .NET Core SDK and provides core NuGet features on all platforms. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
-| [nuget.exe](#nugetexe-cli) | CLI tool for .NET Framework libraries and non-SDK-style projects that target .NET Standard libraries. Provides all NuGet capabilities on Windows, provides most features on Mac and Linux when running under Mono. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [dotnet.exe](#dotnetexe-cli) | CLI tool for .NET Core and .NET Standard libraries, and for any SDK-style project such as one that targets .NET Framework (see [SDK attribute](/dotnet/core/tools/csproj#additions)). Included with the .NET Core SDK and provides core NuGet features on all platforms. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
+| [nuget.exe](#nugetexe-cli) | CLI tool for .NET Framework libraries and for non-SDK-style projects that target .NET Standard libraries. Provides all NuGet capabilities on Windows, provides most features on Mac and Linux when running under Mono. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
 | [Visual Studio](#visual-studio) | On Windows, provides NuGet capabilities through the Package Manager UI and Package Manager Console; included with .NET-related workloads. On Mac, provides certain features through the UI. In Visual Studio Code, NuGet features are provided through extensions. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 The [MSBuild CLI](reference/msbuild-targets.md) also provides the ability to restore and create packages, which is primarily useful on build servers. MSBuild is not a general-purpose tool for working with NuGet.
@@ -26,7 +26,7 @@ The [MSBuild CLI](reference/msbuild-targets.md) also provides the ability to res
 The two NuGet CLI tools are `dotnet.exe` and `nuget.exe`. See [feature availability](#feature-availability) for a comparison.
 
 * To target .NET Core or .NET Standard, use the dotnet CLI. The dotnet CLI is required for the SDK-style project format, which uses the [SDK attribute](/dotnet/core/tools/csproj#additions).
-* To target .NET Framework in your project, use the `nuget.exe CLI`.
+* To target .NET Framework (non-SDK-style project only), use the `nuget.exe CLI`. If the project is migrated to `packages.config`, use the dotnet CLI.
 
 ### dotnet.exe CLI
 
@@ -37,11 +37,11 @@ Installation:
 - On developer computers, install the [.NET Core SDK](https://aka.ms/dotnetcoregs).
 - For build servers, follow the instructions on [Using .NET Core SDK and tools in Continuous Integration](/dotnet/core/tools/using-ci-with-cli).
 
-For more information, see [Install and use packages using the dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md).
+To learn how to use basic commands with the dotnet CLI, see [Install and use packages using the dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md).
 
 ### nuget.exe CLI
 
-The NuGet CLI, `nuget.exe`, is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux using [Mono](http://www.mono-project.com/docs/getting-started/install/) with some limitations. Unlike `dotnet`, the `nuget.exe` CLI does not affect project files and does not update `packages.config` when installing packages.
+The `nuget.exe` CLI, `nuget.exe`, is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux using [Mono](http://www.mono-project.com/docs/getting-started/install/) with some limitations.
 
 Installation:
 
@@ -50,7 +50,7 @@ Installation:
 > [!Tip]
 > Use `nuget update -self` on Windows to update an existing nuget.exe to the latest version.
 
-For more information, see [Install and use packages using the nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md).
+To learn how to use basic commands with the `nuget.exe` CLI, see [Install and use packages using the nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md).
 
 > [!Note]
 > The latest recommended NuGet CLI is always available at `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`. For compatibility purposes  with older continuous integration systems, a previous URL, `https://nuget.org/nuget.exe` currently provides the [deprecated 2.8.6 CLI tool](https://github.com/NuGet/NuGetGallery/issues/5381).

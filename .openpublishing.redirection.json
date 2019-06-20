@@ -149,6 +149,11 @@
             "source_path": "docs/consume-packages/ways-to-install-a-package.md",
             "redirect_url": "/consume-packages/overview-and-workflow",
             "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/consume-packages/publish-a-package.md",
+            "redirect_url": "/nuget-org/publish-a-package",
+            "redirect_document_id": false
         }
     ]
 }

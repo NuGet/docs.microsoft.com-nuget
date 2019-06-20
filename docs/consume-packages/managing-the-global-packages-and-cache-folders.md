@@ -25,7 +25,7 @@ By using the cache and *global-packages* folders, NuGet generally avoids downloa
 
 When asked to retrieve a package, NuGet first looks in the *global-packages* folder. If the exact version of package is not there, then NuGet checks all non-HTTP package sources. If the package is still not found, NuGet looks for the package in the *http-cache* unless you specify `--no-cache` with `dotnet.exe` commands or `-NoCache` with `nuget.exe` commands. If the package is not in the cache, or the cache isn't used, NuGet then retrieves the package over HTTP .
 
-For more information, see [What happens when a package is installed?](overview-and-workflow.md#what-happens-when-a-package-is-installed).
+For more information, see [What happens when a package is installed?](../concepts/package-installation-process.md).
 
 ## Viewing folder locations
 
@@ -95,7 +95,7 @@ nuget locals all -clear
 
 Any packages used by projects that are currently open in Visual Studio are not cleared from the *global-packages* folder.
 
-In Visual Studio 2017, use the **Tools > NuGet Package Manager > Package Manager Settings** menu command, then select **Clear All NuGet Cache(s)**. Managing the cache isn't presently available through the Package Manager Console. In Visual Studio 2015, use the CLI commands instead.
+Starting in Visual Studio 2017, use the **Tools > NuGet Package Manager > Package Manager Settings** menu command, then select **Clear All NuGet Cache(s)**. Managing the cache isn't presently available through the Package Manager Console. In Visual Studio 2015, use the CLI commands instead.
 
 ![NuGet option command for clearing caches](media/options-clear-caches.png)
 
