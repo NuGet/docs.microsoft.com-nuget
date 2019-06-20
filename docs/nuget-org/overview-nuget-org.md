@@ -43,7 +43,7 @@ To use NuGet.org as a package repository with NuGet clients, you should use the 
 
 `https://api.nuget.org/v3/index.json`
 
-Older clients can still use the V2 protocol to reach NuGet.org. However, please note, NuGet clients 3.0 or later will have slower and less-reliable service using the V2 protocol:
+Older clients can still use the V2 protocol to reach NuGet.org. However, please note, NuGet clients 3.0 or later will have slower and less reliable service using the V2 protocol:
 
 `https://www.nuget.org/api/v2` (The V2 prototcol is deprecated!)
 
