@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # What happens when a NuGet package is installed?
 
-Simply said, the different NuGet tools typically create a reference to a package in the project file or `packages.config`, then perform a package restore, which effectively installs the package. The exception is `nuget install`, which only expands the package into a `packages` folder and does not modify any other files.
+Simply said, the different NuGet tools typically create a reference to a package in the project file or `packages.config`, then perform a package restore, which effectively installs the package. The exception is `nuget install`, which only expands the package into a `packages` folder and does not modify any other files, unless you specify options such as `-OutputDirectory` or `packages.config` as value for the `-ConfigFile` option.
 
 The general process is as follows:
 
@@ -18,7 +18,7 @@ The general process is as follows:
 2. Acquire the package:
    - Check if the package (by exact identifer and version number) is already installed in the *global-packages* folder as described on [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
-   - If the package is not in the *global-packages* folder, attempt to retrieve it from the sources listed listed in the [configuration files](..consume-packages/Configuring-NuGet-Behavior.md). For online sources, attempt first to retrieve the package from the cache unless `-NoCache` is specified with `nuget.exe` commands or `--no-cache` is specified with `dotnet restore`. (Visual Studio and `dotnet add package` always use the cache.) If a package is used from the cache, "CACHE" appears in the output. The cache has an expiration time of 30 minutes.
+   - If the package is not in the *global-packages* folder, attempt to retrieve it from the sources listed listed in the [configuration files](../consume-packages/Configuring-NuGet-Behavior.md). For online sources, attempt first to retrieve the package from the cache unless `-NoCache` is specified with `nuget.exe` commands or `--no-cache` is specified with `dotnet restore`. (Visual Studio and `dotnet add package` always use the cache.) If a package is used from the cache, "CACHE" appears in the output. The cache has an expiration time of 30 minutes.
 
    - If the package is not in the cache, attempt to download it from the sources listed in the configuration. If a package is downloaded, "GET" and "OK" appear in the output.
 
@@ -30,7 +30,7 @@ The general process is as follows:
 
    - For projects using the `packages.config` management format, NuGet uses the order of the sources in the configuration. An exception is restore operations, in which case source ordering is ignored and NuGet uses the package from whichever source responds first.
 
-   - In general, the order in which NuGet checks sources isn't particularly meaningful, because any given package with a specific identifier and version number is exactly the same on whatever source it's found.
+   - In general, the order in which NuGet checks sources isn't particularly meaningful, because any given package with a specific identifier and version number is typically the same on whatever source it's found (this is not guaranteed).
 
 3. (All tools except `nuget.exe`) Save a copy of the package and other information in the *http-cache* folder as described on [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
