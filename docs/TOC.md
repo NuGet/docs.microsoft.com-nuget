@@ -58,7 +58,7 @@
 ### [NuGet.Server](hosting-packages/nuget-server.md)
 ### [Local feeds](hosting-packages/local-feeds.md)
 # Concepts
-## [Package installation process](consume/package-installation-process.md)
+## [Package installation process](concepts/package-installation-process.md)
 ## [Package versioning](reference/package-versioning.md)
 ## [Dependency resolution](consume-packages/dependency-resolution.md)
 # Reference
