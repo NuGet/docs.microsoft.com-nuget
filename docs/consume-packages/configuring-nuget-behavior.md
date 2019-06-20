@@ -15,7 +15,7 @@ NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Con
 
 | Scope | NuGet.Config file location | Description |
 | --- | --- | --- |
-| Solution | Current folder (aka Solution folder) or any folder up to the drive root.| In a solution folder, settings apply apply to all projects in subfolders. Note that if a config file is placed in a project folder, it has no effect on that project. |
+| Solution | Current folder (aka Solution folder) or any folder up to the drive root.| In a solution folder, settings apply to all projects in subfolders. Note that if a config file is placed in a project folder, it has no effect on that project. |
 | User | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.config/NuGet/NuGet.Config` or `~/.nuget/NuGet/NuGet.Config` (varies by OS distribution) | Settings apply to all operations, but are overridden by any project-level settings. |
 | Computer | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`. If `$XDG_DATA_HOME` is null or empty, `~/.local/share` or `/usr/local/share` will be used (varies by OS distribution)  | Settings apply to all operations on the computer, but are overridden by any user- or project-level settings. |
 
