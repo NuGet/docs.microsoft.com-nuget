@@ -36,6 +36,6 @@ From there, you can consider a number of other options for your package:
 - [Native Packages](../create-packages/native-packages.md) describes the process for creating a package for C++ consumers.
 - [Signing Packages](../create-packages/sign-a-package.md) describes the process for adding a digital signature to a package.
 
-When you're then ready to publish a package to nuget.org, follow the simple process in [Publish a package](../create-packages/publish-a-package.md).
+When you're then ready to publish a package to nuget.org, follow the simple process in [Publish a package](../nuget-org/publish-a-package.md).
 
 If you want to use a private feed instead of nuget.org, see the [Hosting Packages Overview](../hosting-packages/overview.md)
