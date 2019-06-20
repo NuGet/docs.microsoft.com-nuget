@@ -80,7 +80,7 @@ A comma-separated list of packages authors, matching the profile names on nuget.
 #### title
 A human-friendly title of the package, typically used in UI displays as on nuget.org and the Package Manager in Visual Studio. If not specified, the package ID is used. 
 #### owners
-A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in `authors`, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg). 
+A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in `authors`, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
 #### projectUrl
 A URL for the package's home page, often shown in UI displays as well as nuget.org. 
 #### licenseUrl

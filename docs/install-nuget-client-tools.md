@@ -103,6 +103,6 @@ To learn how to use basic commands with the `nuget.exe` CLI, see [Install and us
 - [Install and manage packages using PowerShell](tools/package-manager-console.md)
 - [Package Manager Console PowerShell reference](tools/powershell-reference.md)
 - [Creating a package](create-packages/creating-a-package.md)
-- [Publishing a Package](create-packages/publish-a-package.md)
+- [Publishing a Package](nuget-org/publish-a-package.md)
 
 Developers working on Windows can also explore the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), an open-source, stand-alone tool to visually explore, create, and edit NuGet packages. It's very helpful, for example, to make experimental changes to a package structure without rebuilding the package.

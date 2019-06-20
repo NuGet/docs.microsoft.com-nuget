@@ -61,7 +61,7 @@ To publish a signed package, you must first register the certificate with NuGet.
 
 ## Publish the package
 
-You are now ready to publish the package to NuGet.org. See [Publishing packages](Publish-a-package.md).
+You are now ready to publish the package to NuGet.org. See [Publishing packages](../nuget-org/Publish-a-package.md).
 
 ## Create a test certificate
 

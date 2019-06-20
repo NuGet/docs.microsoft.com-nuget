@@ -37,7 +37,7 @@ Yes. You can reserve IDs for packages on [nuget.org](https://www.nuget.org/) by 
 
 **How do I claim ownership for packages ?**
 
-See [Managing package owners on nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg).
+See [Managing package owners on nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg).
 
 **How do I deal with a package owner who is violating my software license?**
 
