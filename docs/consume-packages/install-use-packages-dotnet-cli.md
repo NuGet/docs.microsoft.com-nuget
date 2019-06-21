@@ -37,9 +37,9 @@ This article shows you basic usage for a few of the most common dotnet CLI comma
     dotnet add package Newtonsoft.Json
     ```
 
-3. After the command completes, look at the solution or project file to make sure the package was installed.
+3. After the command completes, look at the project file to make sure the package was installed.
 
-   For example, in Visual Studio, you can open the `.csproj` file to see the added reference:
+   You can open the `.csproj` file to see the added reference:
 
     ```xml
    <ItemGroup>
