@@ -55,7 +55,7 @@ If the version is not specified, NuGet installs the latest version of the packag
 dotnet add package <PACKAGE_NAME> -v <VERSION>
 ```
 
-For example, to add version 12.0.1 of the `Newtonsoft.json` package, use this command:
+For example, to add version 12.0.1 of the `Newtonsoft.Json` package, use this command:
 
 ```cli
 dotnet add package Newtonsoft.Json -v 12.0.1
