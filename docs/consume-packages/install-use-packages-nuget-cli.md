@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 The CLI tool allows you to easily install, uninstall, and update NuGet packages in projects and solutions. This tool provides all NuGet capabilities on Windows, and also provides most features on Mac and Linux when running under Mono.
 
-The nuget.exe CLI is for your .NET Framework project and non-SDK-style projects (for example, one that targets .NET Standard libraries). If you are using a non-SDK-style project that has been migrated to `PackageReference`, use the dotnet CLI instead. The NuGet CLI requires a [packages.config](../reference/packages-config.md) file for packages references.
+The nuget.exe CLI is for your .NET Framework project and non-SDK-style projects (for example, one that targets .NET Standard libraries). If you are using a non-SDK-style project that has been migrated to `PackageReference`, use the dotnet CLI instead. The NuGet CLI requires a [packages.config](../reference/packages-config.md) file for package references.
 
 > [!NOTE]
 > In most scenarios, we recommend [migrating non-SDK-style projects](../reference/migrate-packages-config-to-package-reference.md) that use `packages.config` to PackageReference, and then you can use the dotnet CLI instead of the `nuget.exe` CLI. Migration is not currently available for C++ and ASP.NET projects.
@@ -36,13 +36,13 @@ The `install` command doesn't modify a project file or the `packages.config` unl
 2. Use the following command to install a NuGet package.
 
     ```cli
-    nuget install <packageID> -OutputDirectory c:\proj
+    nuget install <packageID> -OutputDirectory c:\packages
     ```
 
-    To install the `Newtonsoft.json` package, switch to the *packages* folder in your project (or use the `OutputDirectory` option instead), and then use the following command:
+    To install the `Newtonsoft.json` package, use the following command:
 
     ```cli
-    nuget install Newtonsoft.Json -OutputDirectory c:\proj
+    nuget install Newtonsoft.Json -OutputDirectory c:\packages
     ```
 
 Alternatively, use the following command to install a NuGet package using `packages.config`.

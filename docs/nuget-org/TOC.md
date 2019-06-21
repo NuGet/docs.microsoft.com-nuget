@@ -11,6 +11,6 @@
 ## [Dispute resolution](policies/dispute-resolution.md)
 ## [Deleting packages](policies/deleting-packages.md)
 # Reference
-## NuGet API(../api/overview.md)
+## [NuGet API](../api/overview.md)
 ## [licenses.nuget.org](licenses.nuget.org.md)
 ## [FAQ](nuget-org-faq.md)
