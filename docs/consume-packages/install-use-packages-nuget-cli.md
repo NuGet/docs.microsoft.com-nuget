@@ -1,5 +1,5 @@
 ---
-title: Install and manage NuGet packages using the nuget.exe CLI
+title: Manage NuGet packages using the nuget.exe CLI
 description: Instructions for using the nuget.exe CLI to work with NuGet packages.
 author: mikejo5000
 ms.author: mikejo
@@ -7,9 +7,9 @@ ms.date: 06/03/2019
 ms.topic: conceptual
 ---
 
-# Install and manage packages using the nuget.exe CLI
+# Manage packages using the nuget.exe CLI
 
-The CLI tool allows you to easily install, uninstall, and update NuGet packages in projects and solutions. This tool provides all NuGet capabilities on Windows, and also provides most features on Mac and Linux when running under Mono.
+The CLI tool allows you to easily update and restore NuGet packages in projects and solutions. This tool provides all NuGet capabilities on Windows, and also provides most features on Mac and Linux when running under Mono.
 
 The nuget.exe CLI is for your .NET Framework project and non-SDK-style projects (for example, one that targets .NET Standard libraries). If you are using a non-SDK-style project that has been migrated to `PackageReference`, use the dotnet CLI instead. The NuGet CLI requires a [packages.config](../reference/packages-config.md) file for package references.
 
@@ -26,29 +26,27 @@ This article shows you basic usage for a few of the most common nuget.exe CLI co
 
 The [install](../tools/cli-ref-install.md) command downloads and installs a package into a project, defaulting to the current folder, using specified package sources. Install new packages into the *packages* folder in your project root directory.
 
-The `install` command doesn't modify a project file or the `packages.config` unless you specify this in the `install` command using the `-OutputDirectory` option or `packages.config` as the value for the `-ConfigFile` option. (Alternatively, to add the package to your project dependencies, modify `packages.config`, then use either `install` or `restore`.)
-
-> [!NOTE]
-> A quick way to create the `packages.config` file initially is to install a package from the NuGet Package Manager or Package Manager Console in your IDE. This also creates the *packages* folder.
+> [!IMPORTANT]
+> The `install`command does not modify a project file or *packages.config*; in this way it's similar to `restore` in that it only adds packages to disk but does not change a project's dependencies. To add a dependency, either add a package through the Package Manager UI or Console in Visual Studio, or modify *packages.config* and then run either `install` or `restore`.
 
 1. Open a command line and switch to the directory that contains your project file.
 
-2. Use the following command to install a NuGet package.
+2. Use the following command to install a NuGet package to the *packages* folder.
 
     ```cli
-    nuget install <packageID> -OutputDirectory c:\packages
+    nuget install <packageID> -OutputDirectory packages
     ```
 
-    To install the `Newtonsoft.json` package, use the following command:
+    To install the `Newtonsoft.json` package to the *packages* folder, use the following command:
 
     ```cli
-    nuget install Newtonsoft.Json -OutputDirectory c:\packages
+    nuget install Newtonsoft.Json -OutputDirectory packages
     ```
 
-Alternatively, use the following command to install a NuGet package using `packages.config`.
+Alternatively, you can use the following command to install a NuGet package using an existing `packages.config` file to the *packages* folder. This does not add the package to your project dependencies, but installs it locally.
 
 ```cli
-nuget install packages.config
+nuget install packages.config -OutputDirectory packages
 ```
 
 ## Install a specific version of a package
@@ -65,7 +63,7 @@ For example, to add version 12.0.1 of the `Newtonsoft.json` package, use this co
 nuget install Newtonsoft.Json -Version 12.0.1
 ```
 
-For more information on the behavior of `install`, see [Install a package](#install-a-package).
+For more information on the limitations and behavior of `install`, see [Install a package](#install-a-package).
 
 ## Remove a package
 

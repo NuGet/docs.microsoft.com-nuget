@@ -31,19 +31,11 @@ To create a NuGet.org account, you need to have a personal Microsoft account (MS
 
    ![Giving permissions to NuGet.org](media/nuget-org-permissions.png)
 
-      ![Giving permissions to NuGet.org](media/nuget-org-permissions-resized.png)
-
 1. You will be redirected to *nuget.org*, and asked to register a username.
 
 1. Specify the username in the input box. Please note that the username **is** case sensitive and cannot be changed or renamed later.
 
    ![Specify a username on NuGet.org](media/nuget-org-register.png) 
-
-   ![Specify a username on NuGet.org](media/nuget-org-register-2-200.png) 
-
-   ![Specify a username on NuGet.org](media/nuget-org-register-3-125.png) 
-
-   ![Specify a username on NuGet.org](media/nuget-org-register-4-big-screen.png) 
 
 1. Click the **Register** button.
 
