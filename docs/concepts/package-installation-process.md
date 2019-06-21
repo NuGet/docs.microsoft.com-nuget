@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # What happens when a NuGet package is installed?
 
-Simply said, the different NuGet tools typically create a reference to a package in the project file or `packages.config`, then perform a package restore, which effectively installs the package. The exception is `nuget install`, which only expands the package into a `packages` folder and does not modify any other files, unless you specify options such as `-OutputDirectory` or `packages.config` as value for the `-ConfigFile` option.
+Simply said, the different NuGet tools typically create a reference to a package in the project file or `packages.config`, then perform a package restore, which effectively installs the package. The exception is `nuget install`, which only expands the package into a `packages` folder and does not modify any other files, unless you specify options to make that happen.
 
 The general process is as follows:
 
