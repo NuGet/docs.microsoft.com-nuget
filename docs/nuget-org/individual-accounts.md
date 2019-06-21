@@ -25,7 +25,7 @@ To create a NuGet.org account, you need to have a personal Microsoft account (MS
 
 1. Click on **Sign in with Microsoft** button.
 
-1. Enter your Microsoft account or Azure ActiveDirectory account details.
+1. Enter your Microsoft account or Azure Active Directory account details.
 
 1. Please click **Yes** to accept the permissions to be given to the *NuGet.org* application.
 
