@@ -89,7 +89,7 @@ When creating a new API key, select the appropriate organization in the **Packag
 
 ## Removing an organization
 
-As a user, you can remove yourself from an organization by selecting the `X` button shown by your organization membership:
+As a user, you can remove yourself from an organization by selecting the **X** button shown by your organization membership:
 
 ![Removing a user account from an organization](media/org-remove-self-option.png)
 
@@ -97,4 +97,8 @@ Administrators can remove any member from the organization, including other admi
 
 ### Deleting an organization account
 
-This feature is coming soon.
+You can delete an organization account by clicking the **Delete** button shown in your organization page.
+
+![Deleting an organization](media/org-delete-option.png)
+
+To delete the organizaiton, you must confirm it by clicking the **Delete organization** confirmation button.
