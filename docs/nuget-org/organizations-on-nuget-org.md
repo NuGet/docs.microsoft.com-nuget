@@ -1,6 +1,6 @@
 ---
-title: Your organization on nuget.org
-description: Organizations on nuget.org helps you to manage packages published by group or in a team, company environment.
+title: Your organization on NuGet.org
+description: Organizations on NuGet.org helps you to manage packages published by group or in a team, company environment.
 author: anangaur
 ms.author: anangaur
 ms.date: 04/10/2018
@@ -10,7 +10,7 @@ ms.reviewer:
   - camsoper
 ---
 
-# Your organization on nuget.org
+# Your organization on NuGet.org
 
 Organizations enable businesses and open-source projects to collaborate on packages using a single NuGet.org identity. For a package consumer, an organization account appears same as an existing user account on NuGet.org.
 
