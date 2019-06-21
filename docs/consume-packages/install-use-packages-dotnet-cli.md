@@ -31,7 +31,7 @@ This article shows you basic usage for a few of the most common dotnet CLI comma
     dotnet add package <PACKAGE_NAME>
     ```
 
-    For example, to install the `Newtonsoft.json` package, use the following command
+    For example, to install the `Newtonsoft.Json` package, use the following command
 
     ```cli
     dotnet add package Newtonsoft.Json
@@ -55,7 +55,7 @@ If the version is not specified, NuGet installs the latest version of the packag
 dotnet add package <PACKAGE_NAME> -v <VERSION>
 ```
 
-For example, to add version 12.0.1 of the `Newtonsoft.json` package, use this command:
+For example, to add version 12.0.1 of the `Newtonsoft.Json` package, use this command:
 
 ```cli
 dotnet add package Newtonsoft.Json -v 12.0.1
@@ -77,7 +77,7 @@ Use the [dotnet remove package](/dotnet/core/tools/dotnet-remove-package?tabs=ne
 dotnet remove package <PACKAGE_NAME>
 ```
 
-For example, to remove the `Newtonsoft.json` package, use the following command
+For example, to remove the `Newtonsoft.Json` package, use the following command
 
 ```cli
 dotnet remove package Newtonsoft.Json
