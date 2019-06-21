@@ -31,7 +31,7 @@ This article shows you basic usage for a few of the most common dotnet CLI comma
     dotnet add package <PACKAGE_NAME>
     ```
 
-    For example, to install the `Newtonsoft.json` package, use the following command
+    For example, to install the `Newtonsoft.Json` package, use the following command
 
     ```cli
     dotnet add package Newtonsoft.Json
