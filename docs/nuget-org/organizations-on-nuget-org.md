@@ -14,7 +14,7 @@ ms.reviewer:
 
 Organizations enable businesses and open-source projects to collaborate on packages using a single NuGet.org identity. For a package consumer, an organization account appears same as an existing user account on NuGet.org.
 
-## Organization accounts vs. individual acounts
+## Organization accounts vs. individual accounts
 
 An organization account has one or more individual (user) accounts as its members. These members can manage a set of packages while maintaining a single identity for ownership.
 
