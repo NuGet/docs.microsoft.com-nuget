@@ -77,7 +77,7 @@ Use the [dotnet remove package](/dotnet/core/tools/dotnet-remove-package?tabs=ne
 dotnet remove package <PACKAGE_NAME>
 ```
 
-For example, to remove the `Newtonsoft.json` package, use the following command
+For example, to remove the `Newtonsoft.Json` package, use the following command
 
 ```cli
 dotnet remove package Newtonsoft.Json
