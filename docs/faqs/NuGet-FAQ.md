@@ -130,7 +130,7 @@ Set the [`disableSourceControlIntegration`](../reference/nuget-config-file.md#so
 
 **How do I turn off package restore?**
 
-See [Enabling and disabling package restore](../consume-packages/package-restore.md#enabling-and-disabling-package-restore).
+See [Enable and disable package restore](../consume-packages/package-restore.md#enable-and-disable-package-restore).
 
 **Why do I get an "Unable to resolve dependency error" when installing a local package with remote dependencies?**
 
@@ -165,7 +165,7 @@ In addition, uploading packages to [int.nugettest.org](https://int.nugettest.org
 
 **Can I delete a package published to NuGet.org?**
 
-In general, we do not support deleting a package published to NuGet.org. Read more about our [policy on deleting packages](../policies/deleting-packages).
+In general, we do not support deleting a package published to NuGet.org. Read more about our [policy on deleting packages](../policies/deleting-packages.md).
 
 **Is it possible to reserve names for packages that will be published in future?**
 
@@ -356,7 +356,7 @@ If you tried using the [sign in assistance](#which-microsoft-account-is-linked-t
 If you want to transform your account to an organization, and this account is already associated with a Microsoft account login, please follow the steps given in the documentation for [organizations on nuget org](https://docs.microsoft.com/en-us/nuget/reference/organizations-on-nuget-org).
 
 If however, your nuget.org account is not associated/linked with a Microsoft account, you can follow the steps below to transform this account to an organization.
-1. **Requirement**: You need to have an individual account first created on nuget.org to be used as an admin on the org account. If you do not have one, please [create a new nuget.org account](#how-to-create-a-nugetorg-account)
+1. **Requirement**: You need to have an individual account first created on nuget.org to be used as an admin on the org account. If you do not have one, please [create a new nuget.org account](#how-to-create-a-new-nugetorg-account).
 2. Follow the [steps to recover your password login](#how-to-recover-nugetorg-password-login) for your nuget.org account if you do not have password login for it, if you do, skip this step.
 3. [Login to nuget.org](https://www.nuget.org/users/account/LogOnNuGetAccount) using the username/password login.
 4. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box. 
