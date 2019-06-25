@@ -17,7 +17,7 @@ Package Restore makes sure that all a project's dependencies are available, with
 
 Package Restore first installs the direct dependencies of a project as needed, then installs any dependencies of those packages throughout the entire dependency graph.
 
-If a package isn't already installed, NuGet first attempts to retrieve it from the [cache](../consume-packages/managing-the-global-packages-and-cache-folders.md). If the package isn't in the cache, NuGet tries to download the package from all enabled sources in the list at **Tools** > **Options** > **NuGet Package Manager** > **Package Sources** in Visual Studio. During restore, NuGet ignores the order of package sources, and uses the package from whichever source is first to respond to requests. For more information about how NuGet behaves, see [Configure NuGet behavior](Configuring-NuGet-Behavior.md). 
+If a package isn't already installed, NuGet first attempts to retrieve it from the [cache](../consume-packages/managing-the-global-packages-and-cache-folders.md). If the package isn't in the cache, NuGet tries to download the package from all enabled sources in the list at **Tools** > **Options** > **NuGet Package Manager** > **Package Sources** in Visual Studio. During restore, NuGet ignores the order of package sources, and uses the package from whichever source is first to respond to requests. For more information about how NuGet behaves, see [Common NuGet configurations](Configuring-NuGet-Behavior.md). 
 
 > [!Note]
 > NuGet doesn't indicate a failure to restore a package until all the sources have been checked. At that time, NuGet reports a failure for only the last source in the list. The error implies that the package wasn't present on *any* of the other sources, even though errors aren't shown for each of those sources individually.
@@ -34,7 +34,8 @@ You can trigger Package Restore in any of the following ways:
 
 - **nuget.exe CLI**: Use the [nuget restore](../tools/cli-ref-restore.md) command to restore packages listed in a project or solution file, or in `packages.config`. 
 
-- **MSBuild**: Use the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command to restore packages listed in the project file with PackageReference. This command is available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017. Both `nuget restore` and `dotnet restore` use this command for applicable projects.
+<<<<<<< HEAD
+- **MSBuild**: Use the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command to restore packages listed in the project file with PackageReference. This command is available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017 and higher versions. Both `nuget restore` and `dotnet restore` use this command for applicable projects.
 
 - **Azure Pipelines**: When you create a build definition in Azure Pipelines, include the NuGet [restore](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) or .NET Core [restore](/azure/devops/pipelines/tasks/build/dotnet-core#restore-nuget-packages) task in the definition before any build tasks. Some build templates include the restore task by default.
 
@@ -75,7 +76,7 @@ In Visual Studio, you control Package Restore primarily through **Tools** > **Op
     </configuration>
     ```
 
-To enable or disable Package Restore for all users on a computer, a developer or company can add the configuration settings to the global `nuget.config` file. The global `nuget.config` is in Windows at `%ProgramData%\NuGet\Config`, sometimes under a specific `\{IDE}\{Version}\{SKU}\` Visual Studio folder, or in Mac/Linux at `~/.local/share`. Individual users can then selectively enable restore as needed on a project level. For more details on how NuGet prioritizes multiple config files, see [Configure NuGet behavior](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
+To enable or disable Package Restore for all users on a computer, a developer or company can add the configuration settings to the global `nuget.config` file. The global `nuget.config` is in Windows at `%ProgramData%\NuGet\Config`, sometimes under a specific `\{IDE}\{Version}\{SKU}\` Visual Studio folder, or in Mac/Linux at `~/.local/share`. Individual users can then selectively enable restore as needed on a project level. For more details on how NuGet prioritizes multiple config files, see [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
 
 > [!Important]
 > If you edit the `packageRestore` settings directly in `nuget.config`, restart Visual Studio, so that the **Options** dialog box shows the current values.

@@ -104,7 +104,7 @@ summary        | string                     | no       |
 tags           | string or array of strings | no       | 
 title          | string                     | no       | 
 totalDownloads | integer                    | no       | This value can be inferred by the sum of downloads in the `versions` array
-verified       | boolean                    | no       | A JSON boolean indicating whether the package is [verified](../reference/id-prefix-reservation.md)
+verified       | boolean                    | no       | A JSON boolean indicating whether the package is [verified](../nuget-org/id-prefix-reservation.md)
 
 On nuget.org, a verified package is one which has a package ID matching a reserved ID prefix and owned by one of the
 reserved prefix's owners. For more information, see the

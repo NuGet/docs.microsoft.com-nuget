@@ -18,18 +18,9 @@
     - name: Consume packages
       tocHref: /nuget/consume-packages/
       topicHref: /nuget/consume-packages/overview-and-workflow
-    - name: Hosting packages
-      tocHref: /nuget/hosting-packages/
-      topicHref: /nuget/hosting-packages/overview
-    - name: Tools
-      tocHref: /nuget/tools/
-      topicHref: /nuget/tools/nuget-exe-cli-reference
     - name: Reference
       tocHref: /nuget/reference/
       topicHref: /nuget/reference/nuspec
-    - name: API
-      tocHref: /nuget/api/
-      topicHref: /nuget/api/overview
     - name: Visual Studio extensibility
       tocHref: /nuget/visual-studio-extensibility/
       topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
@@ -39,3 +30,6 @@
     - name: Release notes
       tocHref: /nuget/release-notes/
       topicHref: /nuget/release-notes/index
+    - name: NuGet.org
+      tocHref: /nuget/nuget-org/
+      topicHref: /nuget/nuget-org/organizations-on-nuget-org

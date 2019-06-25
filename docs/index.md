@@ -75,7 +75,7 @@ hide_bc: true
                             </a>
                         </li>
                         <li>
-                            <a href="create-packages/overview-and-workflow.md">
+                            <a href="create-packages/creating-a-package.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -142,7 +142,7 @@ hide_bc: true
                     <a href="#tools-all"></a>
                     <ul id="tools-all" class="cardsC">
                         <li>
-                            <a href="tools/nuget-exe-cli-reference.md">
+                            <a href="install-nuget-client-tools.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -153,7 +153,7 @@ hide_bc: true
                                         </div>
                                         <div class="cardText">
                                             <h3>Tools</h3>
-                                            <p>The complete guides to the nuget.exe command-line tool, and the Package Manager UI and Package Manager Console in Visual Studio.</p>
+                                            <p>Information about the tools you can use to work with NuGet and how to get them.</p>
                                         </div>
                                     </div>
                                 </div>

@@ -9,7 +9,7 @@ ms.topic: tutorial
 
 # Creating UI controls as NuGet packages
 
-With Visual Studio 2017, you can take advantage of added capabilities for UWP and WPF controls that you deliver in NuGet packages. This guide walks you through these capabilities in context of UWP controls using the [ExtensionSDKasNuGetPackage sample](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage). The same applies to WPF controls unless mentioned otherwise.
+Starting with Visual Studio 2017, you can take advantage of added capabilities for UWP and WPF controls that you deliver in NuGet packages. This guide walks you through these capabilities in context of UWP controls using the [ExtensionSDKasNuGetPackage sample](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage). The same applies to WPF controls unless mentioned otherwise.
 
 ## Prerequisites
 

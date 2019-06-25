@@ -15,6 +15,8 @@ To use any command, open a command window or bash shell, then run `nuget` follow
 
 This documentation reflects the latest version of the NuGet CLI. For exact details for any given version that you're using,  run `nuget help` for the desired command.
 
+To learn how to use basic commands with the `nuget.exe` CLI, see [Install and use packages using the nuget.exe CLI](../consume-packages/install-use-packages-nuget-cli.md).
+
 ## Installing nuget.exe
 
 [!INCLUDE [install-cli](../includes/install-cli.md)]

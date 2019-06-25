@@ -23,6 +23,7 @@ There are also several other NuGet hosting products that support remote private 
 - [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish), which is also available on Team Foundation Server 2017 and later.
 - [MyGet](http://myget.org)
 - [ProGet](http://inedo.com/proget) from Inedo
+- [GitHub package registry](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [NuGet Server](http://nugetserver.net/), a community project from Inedo
 - [NuGet Server (Open Source)](http://nuget-server.net), an open-source implementation similar to Inedo's NuGet Server
 - [LiGet](https://github.com/ai-traders/liget), an open-source implementation of NuGet V2 server that runs on kestrel in docker
