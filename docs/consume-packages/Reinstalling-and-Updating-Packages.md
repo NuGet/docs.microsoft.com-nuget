@@ -19,6 +19,9 @@ Updating and reinstalling packages is accomplished as follows:
 | Package Manager UI | On the **Updates** tab, select one or more packages and select **Update** | On the **Installed** tab, select a package, record its name, then select **Uninstall**. Switch to the **Browse** tab, search for the package name, select it, then select **Install**). |
 | nuget.exe CLI | `nuget update` command | For all packages, delete the package folder, then run `nuget install`. For a single package, delete the package folder and use `nuget install <id>` to reinstall the same one. |
 
+> [!NOTE]
+> For the dotnet CLI, the equivalent procedure is not required. In a similar scenario, you can [restore packages with the dotnet CLI](../consume-packages/install-use-packages-dotnet-cli.md#restore-packages).
+
 In this article:
 
 - [When to Reinstall a Package](#when-to-reinstall-a-package)

@@ -3,7 +3,7 @@ title: Install and manage NuGet packages using PowerShell in Visual Studio
 description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
 author: karann-msft
 ms.author: karann
-ms.date: 01/23/2018
+ms.date: 06/24/2019
 ms.topic: conceptual
 f1_keywords: 
   - "vs.nuget.packagemanager.console"
@@ -11,9 +11,11 @@ f1_keywords:
 
 # Install and manage packages using PowerShell in Visual Studio
 
-The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later. (It is not included with Visual Studio for Mac or Visual Studio Code.)
+The NuGet Package Manager Console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. To use `nuget.exe` CLI commands in the console, see [Using the nuget.exe CLI in the console](#using-the-nugetexe-cli-in-the-console).
 
-The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. To use `nuget.exe` commands in the console, see [Using the nuget.exe CLI in the console](#using-the-nugetexe-cli-in-the-console).
+The console is built into Visual Studio on Windows. It is not included with Visual Studio for Mac or Visual Studio Code.
+
+## Find and install a package
 
 For example, finding and installing a package is done with three easy steps:
 
