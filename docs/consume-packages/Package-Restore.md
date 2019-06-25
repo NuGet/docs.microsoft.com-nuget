@@ -9,22 +9,22 @@ ms.topic: conceptual
 
 # Package Restore
 
-To promote a cleaner development environment and to reduce repository size, NuGet **Package Restore** installs all of a project's dependencies as listed in either the project file or `packages.config`. Visual Studio can restore packages automatically when a project is built. The `dotnet build` and `dotnet run` commands (.NET Core 2.0+) also perform an automatic restore. You can also restore packages at any time through Visual Studio, `nuget restore`, `dotnet restore`, and xbuild on Mono.
+To promote a cleaner development environment and to reduce repository size, NuGet **Package Restore** installs all of a project's dependencies listed in either the project file or `packages.config`. Visual Studio can restore packages automatically when a project is built. In .NET Core 2.0+, the `dotnet build` and `dotnet run` commands also perform an automatic restore. You can also restore packages at any time through Visual Studio, `nuget restore`, `dotnet restore`, and xbuild on Mono.
 
-Package Restore makes sure that all a project's dependencies are available without storing those packages in source control. See [Packages and source control](../consume-packages/packages-and-source-control.md) on how to configure your repository to exclude package binaries.
+Package Restore makes sure that all a project's dependencies are available without storing them in source control. To configure your repository to exclude package binaries, see [Packages and source control](../consume-packages/packages-and-source-control.md). 
 
 ## Package Restore overview
 
 Package Restore first installs the direct dependencies of a project as needed, then installs any dependencies of those packages throughout the entire dependency graph.
 
-If a package isn't already installed, NuGet first attempts to retrieve it from the [cache](../consume-packages/managing-the-global-packages-and-cache-folders.md). If the package isn't in the cache, NuGet then attempts to download the package from all enabled sources, which appear in the  **Tools** > **Options** > **NuGet Package Manager** > **Package Sources** list in Visual Studio. During restore, NuGet ignores the order of package sources, using the package from whichever source is first to respond to requests. For more information, see [Configure NuGet behavior](Configuring-NuGet-Behavior.md). 
+If a package isn't already installed, NuGet first attempts to retrieve it from the [cache](../consume-packages/managing-the-global-packages-and-cache-folders.md). If the package isn't in the cache, NuGet then attempts to download the package from all enabled sources in the list at **Tools** > **Options** > **NuGet Package Manager** > **Package Sources** in Visual Studio. During restore, NuGet ignores the order of package sources, using the package from whichever source is first to respond to requests. For more information about how NuGet behaves, see [Configure NuGet behavior](Configuring-NuGet-Behavior.md). 
 
 > [!Note]
 > NuGet doesn't indicate a failure to restore a package until all the sources have been checked. At that time, NuGet reports a failure for only the last source in the list. The error implies that the package wasn't present on *any* of the other sources, even though errors aren't shown for each of those sources individually.
 
-You can trigger Package Restore in the following ways:
+You can trigger Package Restore any of the following ways:
 
-- **Dotnet command line**: Use the [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x) command to restore packages listed in the project file. With .NET Core 2.0 and later, restore happens automatically with `dotnet build` and `dotnet run`. For more information, see [PackageReference](../consume-packages/package-references-in-project-files.md). 
+- **Dotnet command line**: Use the [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x) command to restore packages listed in the project file with [PackageReference](../consume-packages/package-references-in-project-files.md). With .NET Core 2.0 and later, restore happens automatically with `dotnet build` and `dotnet run`.  
 
 - **Package Manager** in Visual Studio for Windows: Package Restore happens automatically when you create a project from a template or build a project, subject to the options in [Enable and disable package restore](#enable-and-disable-package-restore)). In NuGet 4.0+, restore also happens automatically when you make changes to a .NET Core SDK-based project.
 
@@ -78,7 +78,7 @@ In Visual Studio, you control Package Restore primarily through **Tools** > **Op
 To enable or disable Package Restore for all users on a computer, a developer or company can add the previous settings to the global `nuget.config` file, in Windows at `%ProgramData%\NuGet\Config`, sometimes under a specific `\{IDE}\{Version}\{SKU}\` Visual Studio folder, or in Mac/Linux at `~/.local/share`. Individual users can then selectively enable restore as needed on a project level. For more details on how NuGet prioritizes multiple config files, see [Configure NuGet behavior](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
 
 > [!Important]
-> If you edit the `packageRestore` settings in `nuget.config` directly, restart Visual Studio so that the **Options** dialog box shows the current values.
+> If you edit the `packageRestore` settings directly in `nuget.config`, restart Visual Studio so that the **Options** dialog box shows the current values.
 
 ## Constrain package versions with restore
 
