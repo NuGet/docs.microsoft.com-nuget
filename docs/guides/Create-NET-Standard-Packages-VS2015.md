@@ -154,7 +154,7 @@ This generates `AppLogger.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool li
 > [!Tip]
 > A `.nupkg` file is just a ZIP file with a different extension. You can also examine package contents, then, by changing `.nupkg` to `.zip`, but remember to restore the extension before uploading a package to nuget.org.
 
-To make your package available to other developers, follow the instructions on [Publish a package](../create-packages/publish-a-package.md).
+To make your package available to other developers, follow the instructions on [Publish a package](../nuget-org/publish-a-package.md).
 
 Note that `pack` requires Mono 4.4.2 on Mac OS X and does not work on Linux systems. On a Mac, you must also convert Windows pathnames in the `.nuspec` file to Unix-style paths.
 

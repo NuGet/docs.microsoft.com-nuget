@@ -255,7 +255,7 @@ This will generate `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Opening this file in 
 > [!Tip]
 > A `.nupkg` file is just a ZIP file with a different extension. You can also examine package contents, then, by changing `.nupkg` to `.zip`, but remember to restore the extension before uploading a package to nuget.org.
 
-To make your package available to other developers,  follow the instructions on [Publish a package](../create-packages/publish-a-package.md).
+To make your package available to other developers,  follow the instructions on [Publish a package](../nuget-org/publish-a-package.md).
 
 ## Related topics
 

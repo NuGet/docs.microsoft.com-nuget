@@ -64,7 +64,7 @@ Framework. The following table lists attributes of the `frameworkAssembly` eleme
 
 When using the nuget.exe command line tool, you can now use the SetApiKey command to store your API key. That way,
 you won’t need to specify it every time you push a package. For more details on saving your API key with nuget.exe,
-[read the documentation on publishing a package](../create-packages/publish-a-package.md).
+[read the documentation on publishing a package](../nuget-org/publish-a-package.md).
 
 ### Package Explorer
 Package Explorer has been updated to support NuGet 1.2. For more information, check out the
