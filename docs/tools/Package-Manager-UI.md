@@ -1,5 +1,5 @@
 ---
-title: NuGet Package Manager UI Reference
+title: Install and manage NuGet packages in Visual Studio
 description: Instructions for using the NuGet Package Manager UI in Visual Studio for working with NuGet packages.
 author: karann-msft
 ms.author: karann
@@ -12,23 +12,14 @@ f1_keywords:
   - "vs.nuget.packagemanager.ui"
 ---
 
-# NuGet Package Manager UI
+# Install and manage packages in Visual Studio
 
 The NuGet Package Manager UI in Visual Studio on Windows allows you to easily install, uninstall, and update NuGet packages in projects and solutions. For the experience in Visual Studio for Mac, see [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough). The Package Manager UI is not included with Visual Studio Code.
 
-In this topic:
-
-- [Finding and installing a package (Browse tab)](#finding-and-installing-a-package)
-- [Uninstalling a package (Installed tab)](#uninstalling-a-package)
-- [Updating a package (Installed and Updates tabs)](#updating-a-package) (includes the ["Implicitly referenced by an SDK" or "AutoReferenced" message](#implicit_reference))
-- [Managing packages for the solution](#managing-packages-for-the-solution) (working with multiple projects at the same time).
-- [Package sources](#package-sources)
-- [Package manager Options control](#package-manager-options-control)
-
-> [!Note]
+> [!NOTE]
 > If you're missing the NuGet Package Manager in Visual Studio 2015, check **Tools > Extensions and Updates...** and search for the *NuGet Package Manager* extension. If you're unable to use the extensions installer in Visual Studio, download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 >
-> In Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed with any .NET-related workloads. Install it individually by selecting the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.
+> Starting in Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed with any .NET-related workloads. Install it individually by selecting the **Individual components > Code tools > NuGet package manager** option in the Visual Studio installer.
 
 ## Finding and installing a package
 
@@ -125,7 +116,7 @@ To manage package sources:
 1. Using the up and down arrow buttons does not change the priority order of the package sources. Visual Studio ignores the order of package sources, using the package from whichever source is first to respond to requests. For more information, see [Package restore](../consume-packages/package-restore.md).
 
 > [!Tip]
-> If a package source reappears after deleting it, it may be listed in a computer-level or user-level `NuGet.Config` files. See [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md) for the location of these files, then remove the source by editing the files manually or using the [nuget sources command](../tools/nuget-exe-CLI-reference.md).
+> If a package source reappears after deleting it, it may be listed in a computer-level or user-level `NuGet.Config` files. See [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md) for the location of these files, then remove the source by editing the files manually or using the [nuget sources command](../tools/nuget-exe-CLI-reference.md).
 
 ## Package manager Options control
 

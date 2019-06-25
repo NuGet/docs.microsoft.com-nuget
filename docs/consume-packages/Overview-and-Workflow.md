@@ -15,9 +15,9 @@ Between nuget.org and private package galleries that your organization might est
 
 \* _Visual Studio and `dotnet.exe` only. The `nuget install` command does not modify project files or the `packages.config` file; entries must be managed manually._
 
-For further details, see [Finding and Choosing Packages](../consume-packages/finding-and-choosing-packages.md) and [Different ways to install a NuGet package](ways-to-install-a-package.md).
+For further details, see [Finding and Choosing Packages](../consume-packages/finding-and-choosing-packages.md) and [What happens when a package is installed?](../concepts/package-installation-process.md).
 
-NuGet remembers the identity and version number of each installed package, recording it in either the project file (using [PackageReference](../consume-packages/package-references-in-project-files.md)) or [`packages.config`](../reference/packages-config.md), depending on project type and your version of NuGet. With NuGet 4.0+, PackageReference is preferred, although this is configurable in Visual Studio through the [Package Manager UI options](../tools/package-manager-ui.md). In any case, you can look in the appropriate file at any time to see the full list of dependencies for your project.
+NuGet remembers the identity and version number of each installed package, recording it in either the project file (using [PackageReference](../consume-packages/package-references-in-project-files.md)) or [`packages.config`](../reference/packages-config.md), depending on project type and your version of NuGet. With NuGet 4.0+, PackageReference is preferred, although this is configurable in Visual Studio through the [Package Manager UI](../tools/package-manager-ui.md). In any case, you can look in the appropriate file at any time to see the full list of dependencies for your project.
 
 > [!Tip]
 > It's prudent to always check the license for each package you intend to use in your software. On nuget.org, you find a **License Info** link on the right side of each package's description page. If a package does not specify license terms, contact the package owner directly using the **Contact owners** link on the package page. Microsoft does not license any intellectual property to you from third party package providers and is not responsible for information provided by third parties.
@@ -36,4 +36,13 @@ Occasionally it's necessary to reinstall packages that are already included in a
 
 Finally, NuGet's behavior is driven by `Nuget.Config` files. Multiple files can be used to centralize certain settings at different levels, as explained in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).
 
-Enjoy your productive coding with NuGet packages!
+## Ways to install a NuGet Package
+
+NuGet packages are downloaded and installed using any of the methods in the following table.
+
+| Tool | Description |
+| --- | --- |
+| [dotnet.exe CLI](install-use-packages-dotnet-cli.md) | (All platforms) CLI tool for .NET Core and .NET Standard libraries, and for SDK-style projects that target .NET Framework (see [SDK attribute](/dotnet/core/tools/csproj#additions)). Retrieves the package identified by \<package_name\> and adds a reference to the project file. Also retrieves and installs dependencies. |
+| Visual Studio | (Windows and Mac) Provides a UI through which you can browse, select, and install packages and their dependencies into a project from a specified package source. Adds references to installed packages to the project file.<ul><li>[Install and manage packages using Visual Studio](../tools/package-manager-ui.md)</li><li>[Including a NuGet package in your project (Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |
+| [PowerShell in Visual Studio](../tools/package-manager-console.md) | (Windows only) Retrieves and installs the package identified by \<package_name\> from a selected source into a specified project in the solution, then adds a reference to the project file. Also retrieves and installs dependencies. |
+| [nuget.exe CLI](install-use-packages-dotnet-cli.md) | (All platforms) CLI tool for .NET Framework libraries and non-SDK-style projects that target .NET Standard libraries. Retrieves the package identified by \<package_name\> and expands its contents into a folder in the current directory; can also retrieve all packages listed in a `packages.config` file. Also retrieves and installs dependencies, but makes no changes to project files or `packages.config`. |
