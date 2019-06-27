@@ -298,7 +298,7 @@ The following example shows different variations of the `<group>` element:
 
 ## Explicit assembly references
 
-The `<references>` element explicitly specifies the assemblies that the target project should reference when using the package. When this element is present, NuGet add references to only the listed assemblies; it does not add references for any other assemblies in the package's `lib` folder.
+The `<references>` element is used by projects using `packages.config` to explicitly specify the assemblies that the target project should reference when using the package. Explicit references are typically used for design-time only assemblies. For more information, see the page on [selecting assemblies referenced by projects](../create-packages/select-assemblies-referenced-by-projects.md) for more information.
 
 For example, the following `<references>` element instructs NuGet to add references to only `xunit.dll` and `xunit.extensions.dll` even if there are additional assemblies in the package:
 
@@ -308,10 +308,6 @@ For example, the following `<references>` element instructs NuGet to add referen
     <reference file="xunit.extensions.dll" />
 </references>
 ```
-
-Explicit references are typically used for design-time only assemblies. When using [Code Contracts](/dotnet/framework/debug-trace-profile/code-contracts), for example, contract assemblies need to be next to the runtime assemblies that they augment so that Visual Studio can find them, but the contract assemblies need not be referenced by the project or copied into the project's `bin` folder.
-
-Similarly, explicit references can be used for unit test frameworks, such as XUnit, which needs its tools assemblies located next to the runtime assemblies, but does not need them included as project references.
 
 ### Reference groups
 
