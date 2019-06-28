@@ -33,7 +33,7 @@ Works with `project.json`.
 
 ## Constraining package versions with restore
 
-*Originally in [Package restore](../consume-packages/package-restore.md#constraining-package-versions-with-restore).*
+*Originally in [Package restore](../consume-packages/package-restore.md#constrain-package-versions-with-restore).*
 
 - `project.json`: Specify a version range directly with the dependency's version number. For example:
 
