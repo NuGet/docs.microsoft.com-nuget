@@ -45,7 +45,7 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 | RequireConsent | Verifies that restoring packages is enabled before downloading and installing the packages. For details, see [Package Restore](../consume-packages/package-restore.md). |
 | SolutionDirectory | Specifies the solution folder. Not valid when restoring packages for a solution. Required when restoring with a `packages.config` file unless `PackagesDirectory` or `OutputDirectory` is used. |
 | Source | Specifies the list of package sources (as URLs) to use for the restore. If omitted, the command uses the sources provided in configuration files, see [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md). |
-| Verbosity |>Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
+| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
@@ -66,7 +66,7 @@ The restore command performs the following steps:
 2. Determine the packages folder using the following priority order (NuGet gives an error if none of these folders are found):
 
     - The folder specified with `-PackagesDirectory`.
-    - The `repositoryPath` vale in `Nuget.Config`
+    - The `repositoryPath` value in `Nuget.Config`
     - The folder specified with `-SolutionDirectory`
     - `$(SolutionDir)\packages`
 

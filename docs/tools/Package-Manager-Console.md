@@ -1,19 +1,21 @@
 ---
-title: NuGet Package Manager Console Guide
+title: Install and manage NuGet packages using PowerShell in Visual Studio
 description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
 author: karann-msft
 ms.author: karann
-ms.date: 01/23/2018
+ms.date: 06/24/2019
 ms.topic: conceptual
 f1_keywords: 
   - "vs.nuget.packagemanager.console"
 ---
 
-# Package Manager Console
+# Install and manage packages using PowerShell in Visual Studio
 
-The NuGet Package Manager Console is built into Visual Studio on Windows version 2012 and later. (It is not included with Visual Studio for Mac or Visual Studio Code.)
+The NuGet Package Manager Console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. To use `nuget.exe` CLI commands in the console, see [Using the nuget.exe CLI in the console](#using-the-nugetexe-cli-in-the-console).
 
-The console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. To use `nuget.exe` commands in the console, see [Using the nuget.exe CLI in the console](#using-the-nugetexe-cli-in-the-console).
+The console is built into Visual Studio on Windows. It is not included with Visual Studio for Mac or Visual Studio Code.
+
+## Find and install a package
 
 For example, finding and installing a package is done with three easy steps:
 
@@ -69,7 +71,7 @@ Install-Package Elmah -ProjectName UtilitiesLib
 
 See [Install-Package](../tools/ps-ref-install-package.md).
 
-Installing a package in the console performs the same steps as described on [What happens when a package is installed](../consume-packages/ways-to-install-a-package.md#what-happens-when-a-package-is-installed), with the following additions:
+Installing a package in the console performs the same steps as described on [What happens when a package is installed](../concepts/package-installation-process.md), with the following additions:
 
 - The Console displays applicable license terms in its window with implied agreement. If you do not agree to the terms, you should uninstall the package immediately.
 - Also a reference to the package is added to the project file and appears in **Solution Explorer** under the **References** node, you need to save the project to see the changes in the project file directly.
@@ -134,7 +136,7 @@ See [Find-Package](../tools/ps-ref-find-package.md). In Visual Studio 2013 and e
 
 ## Availability of the console
 
-In Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed when you select any .NET-related workloads; you can also install it individually by checking the **Individual components > Code tools > NuGet package manager** option in the Visual Studio 2017 installer.
+Starting in Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed when you select any .NET-related workloads; you can also install it individually by checking the **Individual components > Code tools > NuGet package manager** option in the Visual Studio installer.
 
 Also, if you're missing the NuGet Package Manager in Visual Studio 2015 and earlier, check **Tools > Extensions and Updates...** and search for the NuGet Package Manager extension. If you're unable to use the extensions installer in Visual Studio, you can download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 

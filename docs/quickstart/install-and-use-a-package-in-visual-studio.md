@@ -23,6 +23,8 @@ Once installed, refer to the package in code with `using <namespace>` where \<na
 
 You can install the 2017 Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions.
 
+If you're using Visual Studio for Mac, see [Include a NuGet package in your project](/visualstudio/mac/nuget-walkthrough).
+
 ## Create a project
 
 NuGet packages can be installed into any .NET project, provided that the package supports the same target framework as the project.
@@ -116,6 +118,6 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 ## Related articles
 
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
+- [Install and manage packages using Visual Studio](../tools/package-manager-ui.md)
 - [Finding and choosing packages](../consume-packages/finding-and-choosing-packages.md)
-- [Ways to install a package](../consume-packages/ways-to-install-a-package.md)
-- [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md)
+- [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md)

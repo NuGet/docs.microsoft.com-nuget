@@ -317,7 +317,7 @@ An example:
 
 1. Read all project to project references
 1. Read the project properties to find the intermediate folder and target frameworks
-1. Pass msbuild data to NuGet.Build.Tasks.dll
+1. Pass MSBuild data to NuGet.Build.Tasks.dll
 1. Run restore
 1. Download packages
 1. Write assets file, targets, and props
@@ -336,9 +336,14 @@ Additional restore settings may come from MSBuild properties in the project file
 | RestoreConfigFile | Path to a `Nuget.Config` file to apply. |
 | RestoreNoCache | If true, avoids using cached packages. See [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | RestoreIgnoreFailedSources | If true, ignores failing or missing package sources. |
+| RestoreFallbackFolders | Fallback folders, used in the same way the user packages folder is used. |
+| RestoreAdditionalProjectSources | Additional sources to use during restore. |
+| RestoreAdditionalProjectFallbackFolders | Additional fallback folders to use during restore. |
+| RestoreAdditionalProjectFallbackFoldersExcludes | Excludes fallback folders specified in `RestoreAdditionalProjectFallbackFolders` |
 | RestoreTaskAssemblyFile | Path to `NuGet.Build.Tasks.dll`. |
 | RestoreGraphProjectInput | Semicolon-delimited list of projects to restore, which should contain absolute paths. |
-| RestoreOutputPath | Output folder, defaulting to the `obj` folder. |
+| RestoreUseSkipNonexistentTargets  | When the projects are collected via MSBuild it determines whether they are collected using the `SkipNonexistentTargets` optimization. When not set, defaults to `true`. The consequence is a fail-fast behavior when a project's targets cannot be imported. |
+| MSBuildProjectExtensionsPath | Output folder, defaulting to `BaseIntermediateOutputPath` and the `obj` folder. |
 
 #### Examples
 
@@ -365,6 +370,23 @@ Restore creates the following files in the build `obj` folder:
 | `project.assets.json` | Contains the dependency graph of all package references. |
 | `{projectName}.projectFileExtension.nuget.g.props` | References to MSBuild props contained in packages |
 | `{projectName}.projectFileExtension.nuget.g.targets` | References to MSBuild targets contained in packages |
+
+### Restoring and building with one MSBuild command
+
+Due to the fact that NuGet can restore packages that bring down MSBuild targets and props, the restore and build evaluations are run with different global properties.
+This means that the following will have an unpredictable and often incorrect behavior.
+
+```cli
+msbuild -t:restore,build
+```
+
+ Instead the recommended approach is:
+
+```cli
+msbuild -t:build -restore
+```
+
+The same logic applies to other targets similar to `build`.
 
 ### PackageTargetFallback
 

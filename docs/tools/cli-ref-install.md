@@ -16,7 +16,7 @@ Downloads and installs a package into a project, defaulting to the current folde
 > [!Tip]
 > To download a package directly outside the context of a project, visit the package's page on [nuget.org](https://www.nuget.org) and select the **Download** link.
 
-If no sources are specified, those listed in the global configuration file, `%appdata%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), are used. See [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md) for additional details.
+If no sources are specified, those listed in the global configuration file, `%appdata%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), are used. See [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md) for additional details.
 
 If no specific packages are specified, `install` installs all packages listed in the project's `packages.config` file, making it similar to [`restore`](cli-ref-restore.md).
 
@@ -51,7 +51,7 @@ where `<packageID>` names the package to install (using the latest version), or 
 | PreRelease | Allows prerelease packages to be installed. This flag is not required when restoring packages with `packages.config`. |
 | RequireConsent | Verifies that restoring packages is enabled before downloading and installing the packages. For details, see [Package Restore](../consume-packages/package-restore.md). |
 | SolutionDirectory | Specifies root folder of the solution for which to restore packages. |
-| Source | Specifies the list of package sources (as URLs) to use. If omitted, the command uses the sources provided in configuration files, see [Configuring NuGet behavior](../consume-packages/configuring-nuget-behavior.md). |
+| Source | Specifies the list of package sources (as URLs) to use. If omitted, the command uses the sources provided in configuration files, see [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md). |
 | Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
 | Version | Specifies the version of the package to install. |
 

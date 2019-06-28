@@ -1,6 +1,6 @@
 ---
 title: Create and publish a .NET Framework package using Visual Studio on Windows
-description: A walkthrough tutorial on creating and publishing a .NET Framework NuGet package using Visual Studio 2017 on Windows.
+description: A walkthrough tutorial on creating and publishing a .NET Framework NuGet package using Visual Studio on Windows.
 author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
@@ -170,7 +170,7 @@ See [nuget push](../tools/cli-ref-push.md).
 ## Related topics
 
 - [Create a Package](../create-packages/creating-a-package.md)
-- [Publish a Package](../create-packages/publish-a-package.md)
+- [Publish a Package](../nuget-org/publish-a-package.md)
 - [Pre-release Packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Package versioning](../reference/package-versioning.md)

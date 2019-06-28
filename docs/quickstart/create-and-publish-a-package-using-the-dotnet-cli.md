@@ -3,7 +3,7 @@ title: Creating and publishing a NuGet package using the dotnet CLI
 description: A walkthrough tutorial on creating and publishing a NuGet package using the .NET Core CLI, dotnet.
 author: karann-msft
 ms.author: karann
-ms.date: 01/24/2018
+ms.date: 05/24/2019
 ms.topic: quickstart
 ---
 
@@ -99,7 +99,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nug
 ## Related topics
 
 - [Create a Package](../create-packages/creating-a-package.md)
-- [Publish a Package](../create-packages/publish-a-package.md)
+- [Publish a Package](../nuget-org/publish-a-package.md)
 - [Pre-release Packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Package versioning](../reference/package-versioning.md)

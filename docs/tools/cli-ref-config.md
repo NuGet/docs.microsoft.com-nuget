@@ -11,7 +11,7 @@ ms.topic: reference
 
 **Applies to:** all &bullet; **Supported versions**: all
 
-Gets or sets NuGet configuration values. For additional usage, see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md). For details on allowable key names, refer to the [NuGet config file reference](../reference/nuget-config-file.md).
+Gets or sets NuGet configuration values. For additional usage, see [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md). For details on allowable key names, refer to the [NuGet config file reference](../reference/nuget-config-file.md).
 
 ## Usage
 

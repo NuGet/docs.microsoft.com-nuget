@@ -3,7 +3,7 @@ title: What is NuGet and what does it do?
 description: A comprehensive introduction to what NuGet is and does
 author: karann-msft
 ms.author: karann
-ms.date: 01/10/2018
+ms.date: 05/24/2019
 ms.topic: overview
 ---
 
@@ -11,7 +11,7 @@ ms.topic: overview
 
 An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful code. Often such code is bundled into "packages" that contain compiled code (as DLLs) along with other content needed in the projects that consume these packages.
 
-For .NET (including .NET Core), the Microsoft-supported mechanism for sharing code is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles.
+For .NET (including .NET Core), the Microsoft-supported mechanism for sharing code is **NuGet**, which defines how packages for .NET are created, hosted, and consumed, and [provides the tools](install-nuget-client-tools.md) for each of those roles.
 
 Put simply, a NuGet package is a single ZIP file with the `.nupkg` extension that contains compiled code (DLLs), other files related to that code, and a descriptive manifest that includes information like the package's version number. Developers with code to share create packages and publish them to a public or private host. Package consumers obtain those packages from suitable hosts, add them to their projects, and then call a package's functionality in their project code. NuGet itself then handles all of the intermediate details.
 
@@ -40,8 +40,8 @@ In addition to hosting support, NuGet also provides a variety of tools used by b
 
 | Tool | Platforms | Applicable Scenarios | Description |
 | --- | --- | --- | --- |
-| [nuget.exe CLI](tools/nuget-exe-cli-reference.md) | All | Creation, Consumption | Provides all NuGet capabilities, with some commands applying specifically to package creators, some applying only to consumers, and others applying to both. For example, package creators use the `nuget pack` command to create a package from various assemblies and related files, package consumers use `nuget install` to include packages in a project folder, and everyone uses `nuget config` to set NuGet configuration variables. As a platform-agnostic tool, the NuGet CLI does not interact with Visual Studio projects. |
-| [dotnet CLI](tools/dotnet-Commands.md) | All | Creation, Consumption | Provides certain NuGet CLI capabilities directly within the .NET Core tool chain. As with the NuGet CLI, the dotnet CLI does not interact with Visual Studio projects. |
+| [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md) | All | Creation, Consumption | CLI tool for .NET Core and .NET Standard libraries, and for SDK-style projects that target .NET Framework (see [SDK attribute](/dotnet/core/tools/csproj#additions)). Provides certain NuGet CLI capabilities directly within the .NET Core tool chain. As with the NuGet CLI, the dotnet CLI does not interact with Visual Studio projects. |
+| [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md) | All | Creation, Consumption | CLI tool for .NET Framework libraries and non-SDK-style projects that target .NET Standard libraries. Provides all NuGet capabilities, with some commands applying specifically to package creators, some applying only to consumers, and others applying to both. For example, package creators use the `nuget pack` command to create a package from various assemblies and related files, package consumers use `nuget install` to include packages in a project folder, and everyone uses `nuget config` to set NuGet configuration variables. As a platform-agnostic tool, the NuGet CLI does not interact with Visual Studio projects. |
 | [Package Manager Console](tools/package-manager-console.md) | Visual Studio on Windows | Consumption | Provides [PowerShell commands](tools/Powershell-Reference.md) for installing and managing packages in Visual Studio projects. |
 | [Package Manager UI](tools/package-manager-ui.md) | Visual Studio on Windows | Consumption | Provides an easy-to-use UI for installing and managing packages in Visual Studio projects. |
 | [Manage NuGet UI](/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | Consumption | Provide an easy-to-use UI for installing and managing packages in Visual Studio for Mac projects. |
@@ -77,9 +77,9 @@ The computer that receives a project, such as a build server obtaining a copy of
 
 Clearly, then, NuGet's primary role where developers are concerned is maintaining that reference list on behalf of your project and providing the means to efficiently restore (and update) those referenced packages. This list is maintained in one of two *package management formats*, as they're called:
 
-- [`packages.config`](reference/packages-config.md): *(NuGet 1.0+)* An XML file that maintains a flat list of all dependencies in the project, including the dependencies of other installed packages. Installed or restored packages are stored in a `packages` folder.
-
 - [PackageReference](consume-packages/package-references-in-project-files.md) (or "package references in project files") | *(NuGet 4.0+)* Maintains a list of a project's top-level dependencies directly within the project file, so no separate file is needed. An associated file, `obj/project.assets.json`, is dynamically generated to manage the overall dependency graph of the packages that a project uses along with all down-level dependencies. PackageReference is always used by .NET Core projects.
+
+- [`packages.config`](reference/packages-config.md): *(NuGet 1.0+)* An XML file that maintains a flat list of all dependencies in the project, including the dependencies of other installed packages. Installed or restored packages are stored in a `packages` folder.
 
 Which package management format is employed in any given project depends on the project type, and the available version of NuGet (and/or Visual Studio). To check what format is being used, simply look for `packages.config` in the project root after installing your first package. If you don't have that file, look in the project file directly for a \<PackageReference\> element.
 

@@ -3,7 +3,7 @@ title: Migrating from package.config to PackageReference formats
 description: Details on how to migrate a project from the package.config management format to PackageReference as supported by NuGet 4.0+ and VS2017 and .NET Core 2.0
 author: karann-msft
 ms.author: karann
-ms.date: 03/27/2018
+ms.date: 05/24/2019
 ms.topic: conceptual
 ---
 
@@ -82,6 +82,10 @@ You should now be able to see the migration option. Note that this option is not
    ```ps
    update-package -reinstall
    ```
+
+## Create a package after migration
+
+Once the migration is complete, we recommend that you add a reference to the [nuget.build.tasks.pack](https://www.nuget.org/packages/nuget.build.tasks.pack) nuget package, and then use [msbuild pack](../reference/msbuild-targets.md#pack-target) to create the package. Although in some scenarios you could use `dotnet.exe pack` instead of `msbuild pack`, it is not recommended.
 
 ## Package compatibility issues
 

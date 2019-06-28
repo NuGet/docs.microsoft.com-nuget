@@ -1,5 +1,5 @@
 ---
-title: Configuring the behavior of NuGet
+title: Common NuGet configurations
 description: NuGet.Config files control NuGet's behavior both globally and on a per-project basis, and are modified with nuget config command.
 author: karann-msft
 ms.author: karann
@@ -7,7 +7,7 @@ ms.date: 10/25/2017
 ms.topic: conceptual
 ---
 
-# Configuring NuGet behavior
+# Common NuGet configurations
 
 NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Config` (XML) files that can exist at project-, user-, and computer-wide levels. A global `NuGetDefaults.Config` file also specifically configures package sources. Settings apply to all commands issued in the CLI, the Package Manager Console, and the Package Manager UI.
 
@@ -15,7 +15,7 @@ NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Con
 
 | Scope | NuGet.Config file location | Description |
 | --- | --- | --- |
-| Project | Current folder (aka Project folder) or any folder up to the drive root.| In a project folder, settings apply only to that project. In parent folders that contain multiple projects subfolders, settings apply to all projects in those subfolders. |
+| Solution | Current folder (aka Solution folder) or any folder up to the drive root.| In a solution folder, settings apply to all projects in subfolders. Note that if a config file is placed in a project folder, it has no effect on that project. |
 | User | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.config/NuGet/NuGet.Config` or `~/.nuget/NuGet/NuGet.Config` (varies by OS distribution) | Settings apply to all operations, but are overridden by any project-level settings. |
 | Computer | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`. If `$XDG_DATA_HOME` is null or empty, `~/.local/share` or `/usr/local/share` will be used (varies by OS distribution)  | Settings apply to all operations on the computer, but are overridden by any user- or project-level settings. |
 
@@ -191,7 +191,7 @@ NuGet then loads and applies settings as follows, depending on where it's invoke
 
 ## NuGet defaults file
 
-The `NuGetDefaults.Config` file exists to specify package sources from which packages are installed and updated, and to control the default target for publishing packages with `nuget push`. Because administrators can conveniently (using Group Policy, for example) deploy consistent `NuGetDefaults.Config` files to developer and build machines, they can ensuring that everyone in the organization is using the correct package sources rather than nuget.org.
+The `NuGetDefaults.Config` file exists to specify package sources from which packages are installed and updated, and to control the default target for publishing packages with `nuget push`. Because administrators can conveniently (using Group Policy, for example) deploy consistent `NuGetDefaults.Config` files to developer and build machines, they can ensure that everyone in the organization is using the correct package sources rather than nuget.org.
 
 > [!Important]
 > The `NuGetDefaults.Config` file never causes a package source to be removed from a developer's NuGet configuration. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a `NuGetDefaults.Config` file.

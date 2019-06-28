@@ -50,14 +50,14 @@ If you're using dotnet.exe or MSBuild, use the following steps to create a .snup
 
 1. Pack your project with `dotnet pack MyPackage.csproj` or `msbuild -t:pack MyPackage.csproj`.
 
-The `SymbolPackageFormat` property can have one of the two values: `symbols.nupkg` (the default) or `snupkg`. If the `SymbolPackageFormat` property is not specified, it defaults to `symbols.nupkg` and a legacy symbol package will be created.
+The [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) property can have one of two values: `symbols.nupkg` (the default) or `snupkg`. If the [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) property is not specified, a legacy symbol package will be created.
 
 > [!Note]
-> The legacy format `.symbols.nupkg` is still supported but only for compatibility reasons (see [Legacy Symbol Packages](Symbol-Packages.md)). NuGet.org symbols server only accepts the new symbol package format - `.snupkg`.
+> The legacy format `.symbols.nupkg` is still supported but only for compatibility reasons (see [Legacy Symbol Packages](Symbol-Packages.md)). NuGet.org's symbol server only accepts the new symbol package format - `.snupkg`.
 
 ## Publishing a symbol package
 
-1. For convenience, first save your API key with NuGet (see [publish a package](../create-packages/publish-a-package.md)).
+1. For convenience, first save your API key with NuGet (see [publish a package](../nuget-org/publish-a-package.md)).
 
     ```cli
     nuget SetApiKey Your-API-Key
@@ -76,6 +76,9 @@ The `SymbolPackageFormat` property can have one of the two values: `symbols.nupk
     ```
 
 NuGet will publish both packages to nuget.org. `MyPackage.nupkg` will be published first, followed by `MyPackage.snupkg`.
+
+> [!Note]
+> If the symbol package isn't published, check that you've configured the NuGet.org source as `https://api.nuget.org/v3/index.json`. Symbol package publishing is only supported by [the NuGet V3 API](../api/overview.md#versioning).
 
 ## NuGet.org symbol server
 
