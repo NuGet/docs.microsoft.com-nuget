@@ -99,7 +99,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nug
 ## Related topics
 
 - [Create a Package](../create-packages/creating-a-package.md)
-- [Publish a Package](../create-packages/publish-a-package.md)
+- [Publish a Package](../nuget-org/publish-a-package.md)
 - [Pre-release Packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Package versioning](../reference/package-versioning.md)

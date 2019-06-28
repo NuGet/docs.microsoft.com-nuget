@@ -57,7 +57,7 @@ The [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) pr
 
 ## Publishing a symbol package
 
-1. For convenience, first save your API key with NuGet (see [publish a package](../create-packages/publish-a-package.md)).
+1. For convenience, first save your API key with NuGet (see [publish a package](../nuget-org/publish-a-package.md)).
 
     ```cli
     nuget SetApiKey Your-API-Key

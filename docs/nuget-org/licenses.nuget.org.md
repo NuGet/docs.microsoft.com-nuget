@@ -7,15 +7,15 @@ ms.date: 02/22/2019
 
 ## Rationale
 
-With the introduction of the [license expressions](nuspec.md#license), a requirement emerged to have a reliable service
+With the introduction of the [license expressions](../reference/nuspec.md#license), a requirement emerged to have a reliable service
 that would provide a reference text for individual license identifiers, exception identifiers or license expressions.
 An additional requirement for this service is to have a stable URL schema, that is not susceptible to link rot,
 so that we can safely use it to provide backwards compatibility for older clients.
 
 Licenses.nuget.org fulfills that role. Nuget.org uses it to provide the license text reference for packages that
 specify their license using a license expression. `nuget pack` or packing with other
-[client tools](https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools) set
-the [`licenseUrl`](nuspec.md#licenseurl) element to point to licenses.nuget.org to provide backwards
+[client tools](../install-nuget-client-tools.md) set
+the [`licenseUrl`](../reference/nuspec.md#licenseurl) element to point to licenses.nuget.org to provide backwards
 compatibility with older clients that don't support the `license` element.
 
 ## Protocol

@@ -79,7 +79,7 @@ Server implementations vary on the success status code returned when a package i
 nuget.org interprets the package delete request as an "unlist". This means that the package is still available for
 existing consumers of the package but the package no longer appears in search results or in the web interface. For
 more information about this practice, see the
-[Deleted Packages](../policies/deleting-packages.md) policy. Other server
+[Deleted Packages](../nuget-org/policies/deleting-packages.md) policy. Other server
 implementations are free to interpret this signal as a hard delete, soft delete, or unlist. For example,
 [NuGet.Server](https://www.nuget.org/packages/NuGet.Server) (a server implementation only supporting the older V2 API)
 supports handling this request as either an unlist or a hard delete based on a configuration option.

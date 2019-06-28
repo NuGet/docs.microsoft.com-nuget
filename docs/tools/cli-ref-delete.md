@@ -11,7 +11,7 @@ ms.topic: reference
 
 **Applies to:** package publishing &bullet; **Supported versions:** all
 
-Deletes or unlists a package from a package source. For nuget.org, the delete command [unlists the package](../policies/deleting-packages.md).
+Deletes or unlists a package from a package source. For nuget.org, the delete command [unlists the package](../nuget-org/policies/deleting-packages.md).
 
 ## Usage
 

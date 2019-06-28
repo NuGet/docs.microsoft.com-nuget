@@ -1,5 +1,5 @@
 ---
-title: Configuring the behavior of NuGet
+title: Common NuGet configurations
 description: NuGet.Config files control NuGet's behavior both globally and on a per-project basis, and are modified with nuget config command.
 author: karann-msft
 ms.author: karann
@@ -7,7 +7,7 @@ ms.date: 10/25/2017
 ms.topic: conceptual
 ---
 
-# Configuring NuGet behavior
+# Common NuGet configurations
 
 NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Config` (XML) files that can exist at project-, user-, and computer-wide levels. A global `NuGetDefaults.Config` file also specifically configures package sources. Settings apply to all commands issued in the CLI, the Package Manager Console, and the Package Manager UI.
 
@@ -15,7 +15,7 @@ NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Con
 
 | Scope | NuGet.Config file location | Description |
 | --- | --- | --- |
-| Solution | Current folder (aka Solution folder) or any folder up to the drive root.| In a solution folder, settings apply apply to all projects in subfolders. Note that if a config file is placed in a project folder, it has no effect on that project. |
+| Solution | Current folder (aka Solution folder) or any folder up to the drive root.| In a solution folder, settings apply to all projects in subfolders. Note that if a config file is placed in a project folder, it has no effect on that project. |
 | User | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.config/NuGet/NuGet.Config` or `~/.nuget/NuGet/NuGet.Config` (varies by OS distribution) | Settings apply to all operations, but are overridden by any project-level settings. |
 | Computer | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`. If `$XDG_DATA_HOME` is null or empty, `~/.local/share` or `/usr/local/share` will be used (varies by OS distribution)  | Settings apply to all operations on the computer, but are overridden by any user- or project-level settings. |
 
