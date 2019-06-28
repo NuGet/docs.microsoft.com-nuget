@@ -121,8 +121,8 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/reference/licenses-nuget-org.md",
-            "redirect_url": "/nuget/nuget-org/licenses-nuget-org",
+            "source_path": "docs/reference/licenses.nuget.org.md",
+            "redirect_url": "/nuget/nuget-org/licenses.nuget.org",
             "redirect_document_id": false
         },
         {
@@ -151,7 +151,7 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/consume-packages/publish-a-package.md",
+            "source_path": "docs/create-packages/publish-a-package.md",
             "redirect_url": "/nuget/nuget-org/publish-a-package",
             "redirect_document_id": false
         }
