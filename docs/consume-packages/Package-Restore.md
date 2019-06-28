@@ -36,9 +36,9 @@ Package restore is triggered in the following ways:
 
 - **MSBuild**: use the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command, which restores packages packages listed in the project file (PackageReference only). Available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017 and higher versions. `nuget restore` and `dotnet restore` both use this command for applicable projects.
 
-- **Visual Studio Team Services**: When creating a build definition on Team Services, include the [NuGet restore](/vsts/build-release/tasks/package/nuget#restore-nuget-packages) or [.NET Core Restore](/vsts/build-release/tasks/build/dotnet-core#restore-nuget-packages) task in the definition before any build task. This task is included by default in a number of build templates.
+- **Azure Pipelines**: When you create a build definition in Azure Pipelines, include the NuGet [restore](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) or .NET Core [restore](/azure/devops/pipelines/tasks/build/dotnet-core#restore-nuget-packages) task in the definition before any build tasks. Some build templates include the restore task by default.
 
-- **Team Foundation Server**: TFS 2013 and later automatically restores packages during build, provided that you're using a Team Build Template for TFS 2013 or later. For earlier version of TFS, you can include a build step to invoke one of the command-line restore options above. You can optionally migrate the build template to TFS 2013. For more information, see the [Walkthrough of package restore with Team Foundation Build](../consume-packages/team-foundation-build.md).
+- **Azure DevOps Server**: Azure DevOps Server and TFS 2013 and later automatically restore packages during build, if you're using a TFS 2013 or later Team Build template. For earlier TFS versions, you can include a build step to run a command-line restore option, or optionally migrate the build template to a later version. For more information, see [Set up package restore](../consume-packages/team-foundation-build.md).
 
 ## Enabling and disabling package restore
 
@@ -116,7 +116,7 @@ To avoid using the cache for HTTP sources, do one of the following:
 
 - Use the `-NoCache` option with `nuget restore` or the `--no-cache` option with `dotnet restore`. These options do not affect restore operations through the Visual Studio Package Manager UI or Console.
 - Clear the cache using `nuget locals http-cache -clear` or `dotnet nuget locals http-cache --clear`.
-- Temporarily set of the NUGET_HTTP_CACHE_PATH environment variable to a different folder.
+- Temporarily set the NUGET_HTTP_CACHE_PATH environment variable to a different folder.
 
 ## Troubleshooting
 
