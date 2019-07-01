@@ -87,18 +87,22 @@ A URL for the package's home page, often shown in UI displays as well as nuget.o
 > [!Important]
 > licenseUrl is being deprecated. Use license instead.
 
-A URL for the package's license, often shown in UI displays as well as nuget.org.
+A URL for the package's license, often shown in UI displays such as nuget.org.
 #### license
-An SPDX license expression or path to a license file within the package, often shown in UI displays as well as nuget.org.
-If you’re licensing the package under a common license such as BSD-2-Clause or MIT, use the associated SPDX license identifier.<br>For example:
+An SPDX license expression or path to a license file within the package, often shown in UI displays such as nuget.org.
+If you're licensing the package under a common license, like MIT or BSD-2-Clause, use the associated [SPDX license identifier](https://spdx.org/licenses/). For example:
+
 `<license type="expression">MIT</license>`
 
-Here is the complete list of [SPDX license identifiers](https://spdx.org/licenses/). NuGet.org accepts only OSI or FSF approved licenses when using license type expression.
+> [!Note]
+> NuGet.org only accepts license expressions that are approved by the Open Source Initiative or the Free Software Foundation.
 
-If your package is licensed under multiple common licenses, you can specify a composite license using the [SPDX expression syntax version 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60).<br>For example:
+If your package is licensed under multiple common licenses, you can specify a composite license using the [SPDX expression syntax version 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60). For example:
+
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-If you are using a license that hasn’t been assigned an SPDX identifier, or it is a custom license, you can package a file (only `.txt` or `.md`) with the license text. For example:
+If you use a custom license that isn't supported by license expressions, you can package a `.txt` or `.md` file with the license's text. For example:
+
 ```xml
 <package>
   <metadata>
