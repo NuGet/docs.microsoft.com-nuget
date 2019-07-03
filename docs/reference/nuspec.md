@@ -87,9 +87,9 @@ A URL for the package's home page, often shown in UI displays as well as nuget.o
 > [!Important]
 > licenseUrl is being deprecated. Use license instead.
 
-A URL for the package's license, often shown in UI displays such as nuget.org.
+A URL for the package's license, often shown in UIs like nuget.org.
 #### license
-An SPDX license expression or path to a license file within the package, often shown in UI displays such as nuget.org.
+An SPDX license expression or path to a license file within the package, often shown in UIs like nuget.org.
 If you're licensing the package under a common license, like MIT or BSD-2-Clause, use the associated [SPDX license identifier](https://spdx.org/licenses/). For example:
 
 `<license type="expression">MIT</license>`
