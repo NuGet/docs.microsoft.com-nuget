@@ -77,17 +77,18 @@ A comma-separated list of packages authors, matching the profile names on nuget.
 
 ### Optional metadata elements
 
-#### title
-A human-friendly title of the package, typically used in UI displays as on nuget.org and the Package Manager in Visual Studio. If not specified, the package ID is used. 
 #### owners
 A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in `authors`, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
+
 #### projectUrl
 A URL for the package's home page, often shown in UI displays as well as nuget.org. 
+
 #### licenseUrl
 > [!Important]
 > licenseUrl is being deprecated. Use license instead.
 
 A URL for the package's license, often shown in UIs like nuget.org.
+
 #### license
 An SPDX license expression or path to a license file within the package, often shown in UIs like nuget.org.
 If you're licensing the package under a common license, like MIT or BSD-2-Clause, use the associated [SPDX license identifier](https://spdx.org/licenses/). For example:
@@ -142,25 +143,36 @@ A URL for a 64x64 image with transparency background to use as the icon for the 
 
 #### requireLicenseAcceptance
 A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.
+
 #### developmentDependency
 *(2.8+)* A Boolean value specifying whether the package is be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages. With PackageReference (NuGet 4.8+), this flag also means that it will exclude compile-time assets from compilation. See [DevelopmentDependency support for PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
+
 #### summary
 A short description of the package for UI display. If omitted, a truncated version of `description` is used.
+
 #### releaseNotes
 *(1.5+)* A description of the changes made in this release of the package, often used in UI like the **Updates** tab of the Visual Studio Package Manager in place of the package description.
+
 #### copyright
 *(1.5+)* Copyright details for the package.
+
 #### language
 The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md).
+
 #### tags
 A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering. 
+
 #### serviceable 
 *(3.3+)* For internal NuGet use only.
+
 #### repository
 Repository metadata, consisting of four optional attributes: *type* and *url* *(4.0+)*, and *branch* and *commit* *(4.6+)*. These attributes allow you to map the .nupkg to the repository that built it, with the potential to get as detailed as the individual branch or commit that built the package. This should be a publicly available url that can be invoked directly by a version control software. It should not be an html page as this is meant for the computer. For linking to project page, use the `projectUrl` field, instead.
 
 #### minClientVersion
 Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager. This is used whenever the package depends on specific features of the `.nuspec` file that were added in a particular version of the NuGet client. For example, a package using the `developmentDependency` attribute should specify "2.8" for `minClientVersion`. Similarly, a package using the `contentFiles` element (see the next section) should set `minClientVersion` to "3.3". Note also that because NuGet clients prior to 2.5 do not recognize this flag, they *always* refuse to install the package no matter what `minClientVersion` contains.
+
+#### title
+A human-friendly title of the package which may be used in some UI displays. (nuget.org and the Package Manager in Visual Studio do not show title)
 
 #### Collection elements
 
