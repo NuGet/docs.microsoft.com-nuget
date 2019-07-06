@@ -26,11 +26,11 @@ You can trigger Package Restore in any of the following ways:
 
 - **dotnet CLI**: In the command line, switch to the folder that contains your project, and then use the [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x) command to restore packages listed in the project file with [PackageReference](../consume-packages/package-references-in-project-files.md). With .NET Core 2.0 and later, restore happens automatically with the `dotnet build` and `dotnet run` commands.  
 
-- **Visual Studio**: In Visual Studio on Windows, Package Restore happens automatically when you create a project from a template or build a project, subject to the options in [Enable and disable package restore](#enable-and-disable-package-restore). In NuGet 4.0+, restore also happens automatically when you make changes to a .NET Core SDK-based project.
+- **Visual Studio**: In Visual Studio on Windows, Package Restore happens automatically when you create a project from a template or build a project, subject to the options in [Enable and disable package restore](#enable-and-disable-package-restore-visual-studio). In NuGet 4.0+, restore also happens automatically when you make changes to a .NET Core SDK-based project.
 
     To restore packages manually, right-click the solution in **Solution Explorer** and select **Restore NuGet Packages**. If one or more individual packages still aren't installed properly, **Solution Explorer** shows an error icon. Right-click and select **Manage NuGet Packages**, and use **Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md)
 
-    If you see the error "This project references NuGet package(s) that are missing on this computer," or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," [enable automatic restore](#enable-and-disable-package-restore). Also see [Package Restore troubleshooting](Package-restore-troubleshooting.md).
+    If you see the error "This project references NuGet package(s) that are missing on this computer," or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," [enable automatic restore](#enable-and-disable-package-restore-visual-studio). Also see [Package Restore troubleshooting](Package-restore-troubleshooting.md).
 
 - **nuget.exe CLI**: In the command line, switch to the folder that contains your project, and then use the [nuget restore](../tools/cli-ref-restore.md) command to restore packages listed in a project or solution file, or in `packages.config`. 
 
