@@ -10,6 +10,7 @@
 ## [Data Requests](policies/Data-requests.md)
 ## [Dispute resolution](policies/dispute-resolution.md)
 ## [Deleting packages](policies/deleting-packages.md)
+## [Export Controls](policies/export-control.md)
 # Reference
 ## [NuGet API](../api/overview.md)
 ## [licenses.nuget.org](licenses.nuget.org.md)

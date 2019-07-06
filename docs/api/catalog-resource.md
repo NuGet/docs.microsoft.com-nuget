@@ -215,7 +215,8 @@ Name                    | Type                       | Required | Notes
 ----------------------- | -------------------------- | -------- | -----
 authors                 | string                     | no       |
 created                 | string                     | no       | A timestamp of when the package was first created. Fallback property: `published`.
-dependencyGroups        | array of objects           | no       | Same format as the [package metadata resource](registration-base-url-resource.md#package-dependency-group)
+dependencyGroups        | array of objects           | no       | The dependencies of the package, grouped by target framework ([same format as the package metadata resource](registration-base-url-resource.md#package-dependency-group))
+deprecation             | object                     | no       | The deprecation associated with the package ([same format as the package metadata resource](registration-base-url-resource.md#package-deprecation))
 description             | string                     | no       |
 iconUrl                 | string                     | no       |
 isPrerelease            | boolean                    | no       | Whether or not the package version is prerelease. Can be detected from `version`.
