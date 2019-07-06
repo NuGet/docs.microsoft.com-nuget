@@ -109,6 +109,8 @@ Use the [restore](../tools/cli-ref-restore.md) command, which downloads and inst
 
 `restore` only adds packages to disk but does not change a project's dependencies. To restore project dependencies, modify `packages.config`, then use the `restore` command.
 
+As with the other `dotnet` CLI commands, first open a command line and switch to the directory that contains your project file.
+
 To restore a package using `restore`:
 
 ```cli
