@@ -18,7 +18,7 @@ Once installed, refer to the package in code with `using <namespace>` where \<na
 
 ## Prerequisites
 
-- The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool.
+- The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool. Starting in Visual Studio 2017, the dotnet CLI is automatically installed with any .NET Core related workloads.
 
 ## Create a project
 

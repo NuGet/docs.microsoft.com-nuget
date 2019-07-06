@@ -13,7 +13,7 @@ It's a simple process to create a NuGet package from a .NET Class Library and pu
 
 ## Prerequisites
 
-1. Install the [.NET Core SDK](https://www.microsoft.com/net/download/), which includes the `dotnet` CLI.
+1. Install the [.NET Core SDK](https://www.microsoft.com/net/download/), which includes the `dotnet` CLI. Starting in Visual Studio 2017, the dotnet CLI is automatically installed with any .NET Core related workloads.
 
 1. [Register for a free account on nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) if you don't have one already. Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
 

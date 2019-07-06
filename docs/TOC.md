@@ -31,7 +31,7 @@
 ### [packages.config](reference/packages-config.md)
 # Create packages
 ## [Overview and workflow](create-packages/overview-and-workflow.md)
-## [Create a package - nuget.exe CLI](create-packages/creating-a-package.md)
+## [Create a package](create-packages/creating-a-package.md)
 ## [Create a package using MSBuild](reference/msbuild-targets.md)
 ## [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
 ## [Build a prerelease package](create-packages/prerelease-packages.md)
