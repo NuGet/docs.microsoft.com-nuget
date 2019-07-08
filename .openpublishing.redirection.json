@@ -164,6 +164,21 @@
             "source_path": "docs/tools/package-manager-console.md",
             "redirect_url": "/nuget/consume-packages/install-use-packages-powershell",
             "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/dotnet-commands.md",
+            "redirect_url": "/nuget/reference/dotnet-commands",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/powershell-reference.md",
+            "redirect_url": "/nuget/reference/powershell-reference",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/nuget-cli-reference.md",
+            "redirect_url": "/nuget/reference/nuget-cli-reference",
+            "redirect_document_id": false
         }
     ]
 }

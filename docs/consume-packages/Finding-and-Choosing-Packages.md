@@ -53,9 +53,9 @@ In Visual Studio, and when using the NuGet and dotnet CLI tools, NuGet does not 
 
     ![The Include prerelease checkbox in Visual Studio](media/Prerelease_02-CheckPrerelease.png)
 
-- **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../tools/powershell-reference.md).
+- **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../reference/powershell-reference.md).
 
-- **nuget.exe CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../tools/nuget-exe-cli-reference.md)
+- **nuget.exe CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../reference/nuget-exe-cli-reference.md)
 
 - **dotnet.exe CLI**: Specify the exact pre-release version using the `-v` argument. Refer to the [dotnet add package reference](/dotnet/core/tools/dotnet-add-package).
 

@@ -101,7 +101,7 @@ Installation:
 - [Install and manage packages using PowerShell](consume-packages/install-use-packages-powershell.md)
 - [Install and manage packages using dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)
 - [Install and manage packages using nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md)
-- [Package Manager Console PowerShell reference](tools/powershell-reference.md)
+- [Package Manager Console PowerShell reference](reference/powershell-reference.md)
 - [Creating a package](create-packages/creating-a-package.md)
 - [Publishing a Package](nuget-org/publish-a-package.md)
 
