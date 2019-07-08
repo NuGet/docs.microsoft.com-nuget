@@ -69,7 +69,7 @@ Install-Package Elmah
 Install-Package Elmah -ProjectName UtilitiesLib
 ```
 
-See [Install-Package](../tools/ps-ref-install-package.md).
+See [Install-Package](../reference/ps-reference/ps-ref-install-package.md).
 
 Installing a package in the console performs the same steps as described on [What happens when a package is installed](../concepts/package-installation-process.md), with the following additions:
 
@@ -89,7 +89,7 @@ Uninstall-Package Elmah -RemoveDependencies
 Uninstall-Package Elmah -Force
 ```
 
-See [Uninstall-Package](../tools/ps-ref-uninstall-package.md). Use [Get-Package](../tools/ps-ref-get-package.md) to see all packages currently installed in the default project if you need to find an identifier.
+See [Uninstall-Package](../reference/ps-reference/ps-ref-uninstall-package.md). Use [Get-Package](../reference/ps-reference/ps-ref-get-package.md) to see all packages currently installed in the default project if you need to find an identifier.
 
 Uninstalling a package performs the following actions:
 
@@ -113,7 +113,7 @@ Update-Package -ProjectName MyProject
 Update-Package
 ```
 
-See [Get-Package](../tools/ps-ref-get-package.md) and [Update-Package](../tools/ps-ref-update-package.md)
+See [Get-Package](../reference/ps-reference/ps-ref-get-package.md) and [Update-Package](../reference/ps-reference/ps-ref-update-package.md)
 
 ## Find a package
 
@@ -132,7 +132,7 @@ Find-Package logging -First 100
 Find-Package jquery -AllVersions -ExactMatch
 ```
 
-See [Find-Package](../tools/ps-ref-find-package.md). In Visual Studio 2013 and earlier, use [Get-Package](../tools/ps-ref-get-package.md) instead.
+See [Find-Package](../reference/ps-reference/ps-ref-find-package.md). In Visual Studio 2013 and earlier, use [Get-Package](../reference/ps-reference/ps-ref-get-package.md) instead.
 
 ## Availability of the console
 

@@ -61,7 +61,7 @@ To install the package, you can use either the Package Manager UI or the Package
 
     ![Locating Newtonsoft.Json package](media/QS_Use-08-Console1.png)
 
-1. Enter the command `Install-Package Newtonsoft.Json` (see [Install-Package](../tools/ps-ref-install-package.md)). The console window shows output for the command. Errors typically indicate that the package isn't compatible with the project's target framework.
+1. Enter the command `Install-Package Newtonsoft.Json` (see [Install-Package](../reference/ps-reference/ps-ref-install-package.md)). The console window shows output for the command. Errors typically indicate that the package isn't compatible with the project's target framework.
 
 ## Use the Newtonsoft.Json API in the app
 
