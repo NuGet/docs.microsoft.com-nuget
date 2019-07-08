@@ -179,6 +179,111 @@
             "source_path": "docs/tools/nuget-cli-reference.md",
             "redirect_url": "/nuget/reference/nuget-cli-reference",
             "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-add.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-add",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-config.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-config",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-delete.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-delete",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-environment-variables.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-environment-variables",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-help.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-help",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-init.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-init",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-install.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-install",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-list.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-list",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-locals.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-locals",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-long-path.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-long-path",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-mirror.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-mirror",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-pack.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-pack",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-push.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-push",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-restore.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-restore",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-setapikey.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-setapikey",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-sign.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-sign",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-sources.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-sources",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-spec.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-spec",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-trusted-signers.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-trusted-signers",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-update.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-update",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/cli-ref-verify.md",
+            "redirect_url": "/nuget/reference/cli-reference/cli-ref-verify",
+            "redirect_document_id": false
         }
     ]
 }

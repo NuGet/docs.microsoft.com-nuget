@@ -36,7 +36,7 @@ In this topic:
 
 ## config section
 
-Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/cli-ref-config.md).
+Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../reference/cli-reference/cli-ref-config.md).
 
 `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using the PackageReference format.
 
@@ -115,7 +115,7 @@ Controls whether the `packages` folder of a solution is included in source contr
 
 The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources` and `trustedSigners` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
 
-The [`nuget sources` command](../tools/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/cli-ref-setapikey.md), and `trustedSigners` which is managed using the [`nuget trusted-signers` command](../tools/cli-ref-trusted-signers.md).
+The [`nuget sources` command](../reference/cli-reference/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../reference/cli-reference/cli-ref-setapikey.md), and `trustedSigners` which is managed using the [`nuget trusted-signers` command](../reference/cli-reference/cli-ref-trusted-signers.md).
 
 Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 
@@ -181,7 +181,7 @@ When using unencrypted passwords:
 
 ### apikeys
 
-Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../tools/cli-ref-setapikey.md).
+Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../reference/cli-reference/cli-ref-setapikey.md).
 
 | Key | Value |
 | --- | --- |
@@ -239,7 +239,7 @@ Identifies to the currently active source or indicates the aggregate of all sour
 
 Stores trusted signers used to allow package while installing or restoring. This list cannot be empty when the user sets `signatureValidationMode` to `require`. 
 
-This section can be updated with the [`nuget trusted-signers` command](../tools/cli-ref-trusted-signers.md).
+This section can be updated with the [`nuget trusted-signers` command](../reference/cli-reference/cli-ref-trusted-signers.md).
 
 **Schema**:
 

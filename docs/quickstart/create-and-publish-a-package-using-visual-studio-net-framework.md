@@ -157,7 +157,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using `nuget.exe` wit
     Your package was pushed.
     ```
 
-See [nuget push](../tools/cli-ref-push.md).
+See [nuget push](../reference/cli-reference/cli-ref-push.md).
 
 ### Publish errors
 

@@ -40,7 +40,7 @@ Content is now supported in `project.json` managed projects through the new `con
 
 ## NuGet Locals Cache Management
 
-The NuGet command-line has been updated to include information about how to manage the local caches on a workstation.  More information about the locals command is available in the [NuGet command-line reference](../tools/cli-ref-locals.md).
+The NuGet command-line has been updated to include information about how to manage the local caches on a workstation.  More information about the locals command is available in the [NuGet command-line reference](../reference/cli-reference/cli-ref-locals.md).
 
 ## Fixed Issues
 

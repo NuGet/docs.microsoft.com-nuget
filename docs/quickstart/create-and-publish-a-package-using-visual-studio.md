@@ -136,7 +136,7 @@ This step is an alternative to using `dotnet.exe`.
     Your package was pushed.
     ```
 
-See [nuget push](../tools/cli-ref-push.md).
+See [nuget push](../reference/cli-reference/cli-ref-push.md).
 
 ### Publish errors
 

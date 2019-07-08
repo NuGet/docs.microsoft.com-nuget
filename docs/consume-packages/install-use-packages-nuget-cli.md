@@ -24,7 +24,7 @@ This article shows you basic usage for a few of the most common nuget.exe CLI co
 
 ## Install a package
 
-The [install](../tools/cli-ref-install.md) command downloads and installs a package into a project, defaulting to the current folder, using specified package sources. Install new packages into the *packages* folder in your project root directory.
+The [install](../reference/cli-reference/cli-ref-install.md) command downloads and installs a package into a project, defaulting to the current folder, using specified package sources. Install new packages into the *packages* folder in your project root directory.
 
 > [!IMPORTANT]
 > The `install`command does not modify a project file or *packages.config*; in this way it's similar to `restore` in that it only adds packages to disk but does not change a project's dependencies. To add a dependency, either add a package through the Package Manager UI or Console in Visual Studio, or modify *packages.config* and then run either `install` or `restore`.
@@ -51,7 +51,7 @@ nuget install packages.config -OutputDirectory packages
 
 ## Install a specific version of a package
 
-If the version is not specified when you use the [install](../tools/cli-ref-install.md) command, NuGet installs the latest version of the package. You can also install a specific version of a Nuget package:
+If the version is not specified when you use the [install](../reference/cli-reference/cli-ref-install.md) command, NuGet installs the latest version of the package. You can also install a specific version of a Nuget package:
 
 ```cli
 nuget install <packageID | configFilePath> -Version <version>
@@ -73,7 +73,7 @@ If you want to reinstall packages, use the `restore` or `install` command.
 
 ## List packages
 
-You can display a list of packages from a given source using the [list](../tools/cli-ref-list.md) command. Use the `-Source` option to restrict the search.
+You can display a list of packages from a given source using the [list](../reference/cli-reference/cli-ref-list.md) command. Use the `-Source` option to restrict the search.
 
 ```cli
 nuget list -Source <source>
@@ -97,7 +97,7 @@ NuGet installs the latest version of the package when you use the `install` comm
 
 ## Update all packages
 
-Use the [update](../tools/cli-ref-update.md) command to update all packages. Updates all packages in a project (using `packages.config`) to their latest available versions. It is recommended to run `restore` before running `update`.
+Use the [update](../reference/cli-reference/cli-ref-update.md) command to update all packages. Updates all packages in a project (using `packages.config`) to their latest available versions. It is recommended to run `restore` before running `update`.
 
 ```cli
 nuget update
@@ -105,7 +105,7 @@ nuget update
 
 ## Restore packages
 
-Use the [restore](../tools/cli-ref-restore.md) command, which downloads and installs any packages missing from the *packages* folder.
+Use the [restore](../reference/cli-reference/cli-ref-restore.md) command, which downloads and installs any packages missing from the *packages* folder.
 
 `restore` only adds packages to disk but does not change a project's dependencies. To restore project dependencies, modify `packages.config`, then use the `restore` command.
 
