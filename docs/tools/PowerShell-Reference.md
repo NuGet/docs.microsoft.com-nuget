@@ -9,7 +9,7 @@ ms.topic: reference
 
 # PowerShell reference
 
-The Package Manager Console provides a PowerShell interface within Visual Studio on Windows to interact with NuGet through the specific commands listed below. (The console is not presently available in Visual Studio for Mac.) For a guide to using the console, see [Install and manage packages using PowerShell](../tools/package-manager-console.md) topic.
+The Package Manager Console provides a PowerShell interface within Visual Studio on Windows to interact with NuGet through the specific commands listed below. (The console is not presently available in Visual Studio for Mac.) For a guide to using the console, see [Install and manage packages using PowerShell](../consume-packages/install-use-packages-powershell.md) topic.
 
 > [!Tip]
 > All PowerShell commands relate only to package consumption. No PowerShell commands relate to creating and publishing packages except to the extent that a package can also be a consumer of other packages.

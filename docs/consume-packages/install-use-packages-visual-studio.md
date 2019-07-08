@@ -3,7 +3,7 @@ title: Install and manage NuGet packages in Visual Studio
 description: Instructions for using the NuGet Package Manager UI in Visual Studio for working with NuGet packages.
 author: karann-msft
 ms.author: karann
-ms.date: 12/08/2017
+ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords: 
   - "vs.toolsoptionspages.nuget_package_manager"
@@ -14,14 +14,14 @@ f1_keywords:
 
 # Install and manage packages in Visual Studio
 
-The NuGet Package Manager UI in Visual Studio on Windows allows you to easily install, uninstall, and update NuGet packages in projects and solutions. For the experience in Visual Studio for Mac, see [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough). The Package Manager UI is not included with Visual Studio Code.
+The NuGet Package Manager UI in Visual Studio on Windows allows you to easily install, uninstall, and update NuGet packages in projects and solutions. For the experience in Visual Studio for Mac, see [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json). The Package Manager UI is not included with Visual Studio Code.
 
 > [!NOTE]
 > If you're missing the NuGet Package Manager in Visual Studio 2015, check **Tools > Extensions and Updates...** and search for the *NuGet Package Manager* extension. If you're unable to use the extensions installer in Visual Studio, download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 >
 > Starting in Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed with any .NET-related workloads. Install it individually by selecting the **Individual components > Code tools > NuGet package manager** option in the Visual Studio installer.
 
-## Finding and installing a package
+## Find and install a package
 
 1. In **Solution Explorer**, right-click either **References**  or a project and select **Manage NuGet Packages...**.
 
@@ -38,7 +38,7 @@ The NuGet Package Manager UI in Visual Studio on Windows allows you to easily in
 > [!Tip]
 > To include prerelease versions in the search, and to make prerelease versions available in the version drop-down, select the **Include prerelease** option.
 
-## Uninstalling a package
+## Uninstall a package
 
 1. In **Solution Explorer**, right-click either **References** or the desired project, and select **Manage NuGet Packages...**.
 1. Select the **Installed** tab.
@@ -48,7 +48,7 @@ The NuGet Package Manager UI in Visual Studio on Windows allows you to easily in
 
 1. Note that the **Include prerelease** and **Package source** controls have no effect when uninstalling packages.
 
-## Updating a package
+## Update a package
 
 1. In **Solution Explorer**, right-click either **References** or the desired project, and select **Manage NuGet Packages...**. (In web site projects, right-click the **Bin** folder.)
 1. Select the **Updates** tab to see packages that have available updates from the selected package sources. Select **Include prerelease** to include prerelease packages in the update list.
@@ -67,7 +67,7 @@ The NuGet Package Manager UI in Visual Studio on Windows allows you to easily in
 1. To update multiple packages to their newest versions, select  them in the list and select the **Update** button above the list.
 1. You can also update an individual package from the **Installed** tab. In this case, the details for the package include a version selector (subject to the **Include prerelease** option) and an **Update** button.
 
-## Managing packages for the solution
+## Manage packages for the solution
 
 Managing packages for a solution is a convenient means to work with multiple projects simultaneously.
 

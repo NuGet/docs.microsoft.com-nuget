@@ -22,7 +22,7 @@ To learn how to use basic commands with the `nuget.exe` CLI, see [Install and us
 [!INCLUDE [install-cli](../includes/install-cli.md)]
 
 > [!Tip]
-> To make the NuGet CLI available within the Package Manager Console in Visual Studio, see [Using the nuget.exe CLI in the console](package-manager-console.md#using-the-nugetexe-cli-in-the-console).
+> To make the NuGet CLI available within the Package Manager Console in Visual Studio, see [Using the nuget.exe CLI in the console](../consume-packages/install-use-packages-powershell.md#use-the-nugetexe-cli-in-the-console).
 
 ## Availability
 

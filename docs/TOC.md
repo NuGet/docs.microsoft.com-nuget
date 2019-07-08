@@ -11,11 +11,11 @@
 ## [Overview and workflow](consume-packages/overview-and-workflow.md)
 ## [Find and choose packages](consume-packages/finding-and-choosing-packages.md)
 ## Install and manage packages
-### [Visual Studio](tools/package-manager-ui.md)
+### [Visual Studio](consume-packages/install-use-packages-visual-studio.md)
 ### [Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
 ### [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)
 ### [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md)
-### [PowerShell](tools/package-manager-console.md)
+### [PowerShell](consume-packages/install-use-packages-powershell.md)
 ## Configure NuGet
 ### Package restore options
 #### [Restore options](consume-packages/package-restore.md)

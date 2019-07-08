@@ -60,7 +60,7 @@ Common optional properties:
 
 - Release notes
 - Copyright information
-- A short description for the [Package Manager UI in Visual Studio](../tools/package-manager-ui.md)
+- A short description for the [Package Manager UI in Visual Studio](../consume-packages/install-use-packages-visual-studio.md)
 - A locale ID
 - Project URL
 - License as an expression or file (`licenseUrl` is being deprecated, use the [`license` nuspec metadata element](../reference/nuspec.md#license))

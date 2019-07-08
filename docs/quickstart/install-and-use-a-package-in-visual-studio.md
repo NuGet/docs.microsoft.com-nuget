@@ -118,6 +118,5 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 ## Related articles
 
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
-- [Install and manage packages using Visual Studio](../tools/package-manager-ui.md)
 - [Finding and choosing packages](../consume-packages/finding-and-choosing-packages.md)
 - [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md)

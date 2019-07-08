@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 Local NuGet package feeds are simply hierarchical folder structures on your local network (or even just your own computer) in which you place packages. These feeds can then be used as package sources with all other NuGet operations using the CLI, the Package Manager UI, and the Package Manager Console.
 
-To enable the source, add its pathname (such as `\\myserver\packages`) to the list of sources using the [Package Manager UI](../tools/package-manager-ui.md#package-sources) or the [`nuget sources`](../tools/cli-ref-sources.md) command.
+To enable the source, add its pathname (such as `\\myserver\packages`) to the list of sources using the [Package Manager UI](../consume-packages/install-use-packages-visual-studio.md#package-sources) or the [`nuget sources`](../tools/cli-ref-sources.md) command.
 
 > [!Note]
 > Hierarchical folder structures are supported in NuGet 3.3+. Older versions of NuGet use only a single folder containing packages, with which performance is much lower than the hierarchical structure.
