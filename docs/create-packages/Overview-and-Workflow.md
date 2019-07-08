@@ -18,7 +18,7 @@ A package can also serve to only pull in any number of other dependencies, witho
 
 Whatever the case, creating a package begins with deciding what it should contain along with its identifier, version number, copyright information, etc...
 
-When you've prepared all the necessary content, you can use the "pack" comamnd to put everything together into a `.nupkg` file. You're then ready to deploy the package to whatever host makes it available to other developers.
+When you've prepared all the necessary content, you can use the "pack" command to put everything together into a `.nupkg` file. Then you're ready to deploy the package to whatever host makes it available to other developers.
 
 > [!Tip]
 > A NuGet package with the `.nupkg` extension is simply a ZIP file. To easily examine any package's contents, change the extension to `.zip` and expand its contents as usual. Just be sure to change the extension back to `.nupkg` before attempting to upload it to a host.
