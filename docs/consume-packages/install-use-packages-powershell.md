@@ -11,7 +11,7 @@ f1_keywords:
 
 # Install and manage packages using PowerShell in Visual Studio
 
-The NuGet Package Manager Console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. To use `nuget.exe` CLI commands in the console, see [Using the nuget.exe CLI in the console](#using-the-nugetexe-cli-in-the-console).
+The NuGet Package Manager Console lets you use [NuGet PowerShell commands](../tools/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. To use `nuget.exe` CLI commands in the console, see [Using the nuget.exe CLI in the console](#use-the-nugetexe-cli-in-the-console).
 
 The console is built into Visual Studio on Windows. It is not included with Visual Studio for Mac or Visual Studio Code.
 
@@ -140,7 +140,7 @@ Starting in Visual Studio 2017, NuGet and the NuGet Package Manager are automati
 
 Also, if you're missing the NuGet Package Manager in Visual Studio 2015 and earlier, check **Tools > Extensions and Updates...** and search for the NuGet Package Manager extension. If you're unable to use the extensions installer in Visual Studio, you can download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 
-The Package Manager Console is not presently available with Visual Studio for Mac. The equivalent commands, however, are available through the [NuGet CLI](nuget-exe-CLI-reference.md). Visual Studio for Mac does have a UI for managing NuGet packages. See [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough).
+The Package Manager Console is not presently available with Visual Studio for Mac. The equivalent commands, however, are available through the [NuGet CLI](../tools/nuget-exe-CLI-reference.md). Visual Studio for Mac does have a UI for managing NuGet packages. See [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough).
 
 The Package Manager Console is not included with Visual Studio Code.
 
@@ -167,7 +167,7 @@ For more details, refer to [Windows PowerShell Profiles](https://technet.microso
 
 ## Use the nuget.exe CLI in the console
 
-To make the [`nuget.exe` CLI](nuget-exe-cli-reference.md) available in the Package Manager Console, install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the console:
+To make the [`nuget.exe` CLI](../tools/nuget-exe-cli-reference.md) available in the Package Manager Console, install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the console:
 
 ```ps
 # Other versions are available, see http://www.nuget.org/packages/NuGet.CommandLine/
