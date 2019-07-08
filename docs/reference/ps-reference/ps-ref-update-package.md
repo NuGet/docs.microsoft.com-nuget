@@ -9,7 +9,7 @@ ms.topic: reference
 
 # Update-Package (Package Manager Console in Visual Studio)
 
-*Available only within the [NuGet Package Manager Console](../consume-packages/install-use-packages-powershell.md) in Visual Studio on Windows.*
+*Available only within the [NuGet Package Manager Console](../../consume-packages/install-use-packages-powershell.md) in Visual Studio on Windows.*
 
 Updates a package and its dependencies, or all packages in a project, to a newer version.
 
@@ -38,9 +38,9 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 | Safe | Constrains upgrades to only versions with the same Major and Minor version as the currently installed package. |
 | Source | The URL or folder path for the package source to search. Local folder paths can be absolute, or relative to the current folder. If omitted, `Update-Package` searches the currently selected package source. |
 | IncludePrerelease | Includes prerelease packages for updates. |
-| Reinstall | Resintalls packages using their currently installed versions. See [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md). |
+| Reinstall | Resintalls packages using their currently installed versions. See [Reinstalling and updating packages](../../consume-packages/reinstalling-and-updating-packages.md). |
 | FileConflictAction | The action to take when asked to overwrite or ignore existing files referenced by the project. Possible values are *Overwrite, Ignore, None, OverwriteAll*, and *IgnoreAll* (3.0+). |
-| DependencyVersion | The version of the dependency packages to use, which can be one of the following:<br/><ul><li>*Lowest* (default): the lowest version</li><li>*HighestPatch*: the version with the lowest major, lowest minor, highest patch</li><li>*HighestMinor*: the version with the lowest major, highest minor, highest patch</li><li>*Highest* (default for Update-Package with no parameters): the highest version</li></ul>You can set the default value using the [`dependencyVersion`](../reference/nuget-config-file.md#config-section) setting in the `Nuget.Config` file. |
+| DependencyVersion | The version of the dependency packages to use, which can be one of the following:<br/><ul><li>*Lowest* (default): the lowest version</li><li>*HighestPatch*: the version with the lowest major, lowest minor, highest patch</li><li>*HighestMinor*: the version with the lowest major, highest minor, highest patch</li><li>*Highest* (default for Update-Package with no parameters): the highest version</li></ul>You can set the default value using the [`dependencyVersion`](../nuget-config-file.md#config-section) setting in the `Nuget.Config` file. |
 | ToHighestPatch | equivalent to -Safe. |
 | ToHighestMinor | Constrains upgrades to only versions with the same Major version as the currently installed package. |
 | WhatIf | Shows what would happen when running the command without actually performing the update. |

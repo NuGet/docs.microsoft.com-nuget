@@ -12,7 +12,7 @@ ms.reviewer: rmpablos
 
 **Applies to:** package consumption &bullet; **Supported versions:** 4.9.1+
 
-Gets or sets trusted signers to the NuGet configuration. For additional usage, see [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md). For details on how the nuget.config schema looks like, refer to the [NuGet config file reference](../reference/nuget-config-file.md).
+Gets or sets trusted signers to the NuGet configuration. For additional usage, see [Common NuGet configurations](../../consume-packages/configuring-nuget-behavior.md). For details on how the nuget.config schema looks like, refer to the [NuGet config file reference](../nuget-config-file.md).
 
 ## Usage
 

@@ -11,7 +11,7 @@ ms.topic: reference
 
 **Applies to:** all &bullet; **Supported versions**: all
 
-Gets or sets NuGet configuration values. For additional usage, see [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md). For details on allowable key names, refer to the [NuGet config file reference](../reference/nuget-config-file.md).
+Gets or sets NuGet configuration values. For additional usage, see [Common NuGet configurations](../../consume-packages/configuring-nuget-behavior.md). For details on allowable key names, refer to the [NuGet config file reference](../nuget-config-file.md).
 
 ## Usage
 
@@ -22,7 +22,7 @@ nuget config -AsPath <name> [options]
 
 where `<name>` and `<value>` specify a key-value pair to be set in the configuration. You can specify as many pairs as desired. To remove a value, specify the name and the `=` sign but no value.
 
-For allowable key names, see the [NuGet config file reference](../reference/nuget-config-file.md).
+For allowable key names, see the [NuGet config file reference](../nuget-config-file.md).
 
 In NuGet 3.4+, `<value>` can use [environment variables](cli-ref-environment-variables.md).
 
