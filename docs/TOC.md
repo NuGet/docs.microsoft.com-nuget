@@ -38,10 +38,10 @@
 ## [Create a symbol package](create-packages/symbol-packages-snupkg.md)
 ## Advanced tasks
 ### [Modify source code and config files](create-packages/source-and-config-file-transformations.md)
+### [Select assemblies referenced by projects](create-packages/select-assemblies-referenced-by-projects.md)
 ### [Set package type](create-packages/set-package-type.md)
 ### [Create a localized package](create-packages/creating-localized-packages.md)
-### [Select assemblies referenced by projects](create-packages/select-assemblies-referenced-by-projects.md)
-### [Create packages with COM interop assemblies](author-packages-with-COM-interop-assemblies.md)
+### [Create packages with COM interop assemblies](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## Guides for specific content
 ### [Create a UWP package](guides/create-uwp-packages.md)
 ### [Create a native package](create-packages/native-packages.md)
