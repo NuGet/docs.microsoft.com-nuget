@@ -12,7 +12,7 @@ ms.topic: quickstart
 It's a simple process to create a NuGet package from a .NET Standard Class Library in Visual Studio on Windows, and then publish it to nuget.org using a CLI tool.
 
 > [!Note]
-> This Quickstart applies to Visual Studio 2017 for Windows only. Visual Studio for Mac does not include the capabilities described here. Use the [dotnet CLI tools](create-and-publish-a-package-using-the-dotnet-cli.md) instead.
+> If you are using Visual Studio for Mac, refer to [this information](/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library) on creating a NuGet package, or use the [dotnet CLI tools](create-and-publish-a-package-using-the-dotnet-cli.md).
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ It's a simple process to create a NuGet package from a .NET Standard Class Libra
 
 1. Install one of the CLI tools.
 
-   * For the `dotnet` CLI, install the [.NET Core SDK](https://www.microsoft.com/net/download/). The dotnet CLI is required for .NET Standard projects that use the SDK-style format (SDK attribute).
+   * For the `dotnet` CLI, install the [.NET Core SDK](https://www.microsoft.com/net/download/). Starting in Visual Studio 2017, the dotnet CLI is automatically installed with any .NET Core related workloads. The dotnet CLI is required for .NET Standard projects that use the SDK-style format (SDK attribute). The default class library template in Visual Studio 2017 and higher uses the SDK attribute.
 
    * For the `nuget.exe` CLI, download it from [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), saving the `.exe` file to a suitable folder, and adding that folder to your PATH environment variable. The nuget.exe CLI is used for .NET Standard libraries in the non-SDK-style format.
 
