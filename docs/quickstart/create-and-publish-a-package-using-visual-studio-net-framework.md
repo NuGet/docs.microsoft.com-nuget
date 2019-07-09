@@ -140,7 +140,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using `nuget.exe` wit
 
 ### Publish with nuget push
 
-1. Change to the folder containing the `.nupkg` file.
+1. Open a command line and change to the folder containing the `.nupkg` file.
 
 1. Run the following command, specifying your package name and replacing the key value with your API key:
 

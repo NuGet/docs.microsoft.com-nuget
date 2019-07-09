@@ -122,13 +122,15 @@ Once you have a `.nupkg` file, you publish it to nuget.org using either the `nug
 
 This step is the recommended alternative to using `nuget.exe`.
 
+Before you can publish the package, you must first open a command line.
+
 [!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
 ### Publish with nuget push (nuget.exe CLI)
 
 This step is an alternative to using `dotnet.exe`.
 
-1. Change to the folder containing the `.nupkg` file.
+1. Open a command line and change to the folder containing the `.nupkg` file.
 
 1. Run the following command, specifying your package name (unique package ID) and replacing the key value with your API key:
 
