@@ -11,7 +11,14 @@ ms.topic: conceptual
 
 No matter what your package does or what code it contains, you use one of the CLI tools, either `nuget.exe` or `dotnet.exe`, to package that functionality into a component that can be shared with and used by any number of other developers. To install NuGet CLI tools, see [Install NuGet client tools](../install-nuget-client-tools.md). Note that Visual Studio does not automatically include a CLI tool.
 
-- For .NET Core and .NET Standard projects that use the SDK-style format ([SDK attribute](/dotnet/core/tools/csproj#additions)), and any other SDK-style projects, NuGet uses information in the project file directly to create a package. For details, see [Create .NET Standard Packages with dotet CLI](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md), [Create .NET Standard Packages with Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md) or [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
+| Project format&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Project type | Tool | Download&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+|:------------- |:-------------|:-----|:-----|
+| [SDK-style]((/dotnet/core/tools/csproj#additions)) | .NET Core, .NET Standard (typically) | `dotnet` CLI |  |
+| Non-SDK-style | .NET Framework (typically) | `nuget.exe` CLI |  |
+| [Migrated](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration) | .NET Framework | `dotnet` CLI |  |
+
+
+- For .NET Core and .NET Standard projects that use the SDK-style format ([SDK attribute](/dotnet/core/tools/csproj#additions)), and any other SDK-style projects, NuGet uses information in the project file directly to create a package. For detailed steps, see [Create .NET Standard Packages with dotnet CLI](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md), [Create .NET Standard Packages with Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md) or [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
 - For non-SDK-style projects, typically .NET Framework projects, follow the steps described in this article to create a package, or see [Create and publish a package](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md) for steps to create a package using the `nuget.exe` CLI.
 
