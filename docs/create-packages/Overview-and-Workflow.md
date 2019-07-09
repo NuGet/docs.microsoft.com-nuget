@@ -16,9 +16,7 @@ A package can also serve to only pull in any number of other dependencies, witho
 > [!Note]
 > When you create a package for use by other developers, it's important to understand that they are taking a dependency on your work. As such, creating and publishing a package also implies a commitment to fixing bugs and making other updates, or at the very least making the package available as open source so others can help to maintain it.
 
-Whatever the case, creating a package begins with deciding what it should contain along with its identifier, version number, copyright information, etc...
-
-When you've prepared all the necessary content, you can use the "pack" command to put everything together into a `.nupkg` file. Then you're ready to deploy the package to whatever host makes it available to other developers.
+Whatever the case, creating a package begins with deciding its identifier, version number, license, copyright information, and any other necessary content. Once done, you can use the "pack" command to put everything together into a `.nupkg` file. This file can be published to a NuGet feed, like nuget.org.
 
 > [!Tip]
 > A NuGet package with the `.nupkg` extension is simply a ZIP file. To easily examine any package's contents, change the extension to `.zip` and expand its contents as usual. Just be sure to change the extension back to `.nupkg` before attempting to upload it to a host.
