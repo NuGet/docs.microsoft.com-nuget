@@ -337,4 +337,5 @@
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
 ## [FAQs](faqs/nuget-faq.md)
+## [Project format](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)
