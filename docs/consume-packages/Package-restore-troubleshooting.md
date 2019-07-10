@@ -24,7 +24,7 @@ If you're using Visual Studio, first enable package restore as follows. Otherwis
 
 ![Enable NuGet package restore in Tool/Options](../consume-packages/media/restore-01-autorestoreoptions.png)
 
-These settings can also be changed in your `NuGet.config` file; see the [consent](#consent) section.
+These settings can also be changed in your `NuGet.config` file; see the [consent](#consent) section. If your project is an older project that uses the MSBuild-integrated package restore, you may need to [migrate](package-restore.md#migrate-to-automatic-package-restore-visual-studio) to automatic package restore.
 
 <a name="missing"></a>
 

@@ -28,11 +28,11 @@ You can trigger Package Restore in any of the following ways:
 
 - **Visual Studio**: In Visual Studio on Windows, use one of the following methods.
 
-    - Restore packages automatically. Package Restore happens automatically when you create a project from a template or build a project, subject to the options in [Enable and disable package restore](#enable-and-disable-package-restore-visual-studio). In NuGet 4.0+, restore also happens automatically when you make changes to a .NET Core SDK-based project.
+    - Restore packages automatically. Package Restore happens automatically when you create a project from a template or build a project, subject to the options in [Enable and disable package restore](#enable-and-disable-package-restore-visual-studio). In NuGet 4.0+, restore also happens automatically when you make changes to a SDK-style project (typically a .NET Core or .NET Standard project).
 
     - Restore packages manually. To restore manually, right-click the solution in **Solution Explorer** and select **Restore NuGet Packages**. If one or more individual packages still aren't installed properly, **Solution Explorer** shows an error icon. Right-click and select **Manage NuGet Packages**, and use **Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md)
 
-    If you see the error "This project references NuGet package(s) that are missing on this computer," or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," [enable automatic restore](#enable-and-disable-package-restore-visual-studio). Also see [Package Restore troubleshooting](Package-restore-troubleshooting.md).
+    If you see the error "This project references NuGet package(s) that are missing on this computer," or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," [enable automatic restore](#enable-and-disable-package-restore-visual-studio). Also, see [Migrate to automatic package restore](#migrate-to-automatic-package-restore-visual-studio) and [Package Restore troubleshooting](Package-restore-troubleshooting.md).
 
 - **dotnet CLI**: In the command line, switch to the folder that contains your project, and then use the [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x) command to restore packages listed in the project file with [PackageReference](../consume-packages/package-references-in-project-files.md). With .NET Core 2.0 and later, restore happens automatically with the `dotnet build` and `dotnet run` commands.  
 
@@ -119,6 +119,25 @@ To avoid using the cache for HTTP sources, do one of the following:
 - Use the `-NoCache` option with `nuget restore`, or the `--no-cache` option with `dotnet restore`. These options don't affect restore operations through the Visual Studio Package Manager or console.
 - Clear the cache using `nuget locals http-cache -clear` or `dotnet nuget locals http-cache --clear`.
 - Temporarily set the NUGET_HTTP_CACHE_PATH environment variable to a different folder.
+
+## <a name="migrating-to-automatic-restore"></a> Migrate to automatic package restore (Visual Studio)
+
+For NuGet 2.6 and earlier, an MSBuild-integrated package restore was previously supported but that is no longer true. (It was typically enabled by right-clicking a solution in Visual Studio and selecting **Enable NuGet Package Restore**). If your project uses the deprecated MSBuild-integrated package restore, please migrate to automatic package restore.
+
+Projects that use MSBuild-Integrated package restore typically contain a *.nuget* folder with three files: *NuGet.config*, *nuget.exe*, and *NuGet.targets*. The presence of a *NuGet.targets* file determines whether NuGet will continue to use the MSBuild-untegrated approach, so this file must be removed during the migration.
+
+To migrate to automatic package restore:
+
+1. Close Visual Studio.
+2. Delete *.nuget/nuget.exe* and *.nuget/NuGet.targets*.
+3. For each project file, remove the `<RestorePackages>` element and remove any reference to *NuGet.targets*.
+
+To test the automatic package restore:
+
+1. Remove the *packages* folder from the solution.
+2. Open the solution in Visual Studio and start a build.
+
+   Automatic package restore should download and install each dependency package, without adding them to source control.
 
 ## Troubleshooting
 
