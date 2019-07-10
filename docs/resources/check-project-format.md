@@ -61,5 +61,5 @@ If you are working in Visual Studio, you can quickly check the project format us
 
 - [Create .NET Standard Packages with dotnet CLI](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
 - [Create .NET Standard Packages with Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md)
+- [Create and publish a .NET Framework package (Visual Studio)](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)
 - [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md)
-- [Create and publish a .NET Framework package (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md)
