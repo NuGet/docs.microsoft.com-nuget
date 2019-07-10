@@ -1,9 +1,9 @@
 ---
 title: Create and publish a .NET Standard package using Visual Studio on Windows
-description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio 2017 on Windows.
+description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio on Windows.
 author: karann-msft
 ms.author: karann
-ms.date: 05/24/2019
+ms.date: 07/09/2019
 ms.topic: quickstart
 ---
 
@@ -16,14 +16,14 @@ It's a simple process to create a NuGet package from a .NET Standard Class Libra
 
 ## Prerequisites
 
-1. Install any edition of Visual Studio 2017 or higher from [visualstudio.com](https://www.visualstudio.com/) with any .NET-related workload. Visual Studio 2017 automatically includes NuGet capabilities when a .NET workload is installed.
+1. Install any edition of Visual Studio 2017 or higher from [visualstudio.com](https://www.visualstudio.com/) with any .NET-related workload. Visual Studio 2017 and higher automatically include NuGet capabilities when a .NET workload is installed.
 
 1. Install the `dotnet` CLI.
 
-   For the `dotnet` CLI, starting in Visual Studio 2017, the `dotnet` CLI is automatically installed with any .NET Core related workloads. Otherwise, install the [.NET Core SDK](https://www.microsoft.com/net/download/) to get the `dotnet` CLI. The `dotnet` CLI is required for .NET Standard projects that use the SDK-style format (SDK attribute). The default class library template in Visual Studio 2017 and higher, which is used in this article, uses the SDK attribute.
+   For the `dotnet` CLI, starting in Visual Studio 2017, the `dotnet` CLI is automatically installed with any .NET Core related workloads. Otherwise, install the [.NET Core SDK](https://www.microsoft.com/net/download/) to get the `dotnet` CLI. The `dotnet` CLI is required for .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md) (SDK attribute). The default class library template in Visual Studio 2017 and higher, which is used in this article, uses the SDK attribute.
    
    > [!Important]
-   > For this article, the `dotnet` CLI is recommended. Although you can publish any NuGet package using the `nuget.exe` CLI, some of the steps in this article are specific to SDK-style projects and the dotnet CLI. The nuget.exe CLI is used for non-SDK-style projects (typically .NET Framework). If you are using non-SDK-style project, either [migrate the project](../reference/migrate-packages-config-to-package-reference.md) and use `dotnet` CLI (described in this article), or follow the procedures in [Create and publish a .NET Framework package (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md) to create and publish the package.
+   > For this article, the `dotnet` CLI is recommended. Although you can publish any NuGet package using the `nuget.exe` CLI, some of the steps in this article are specific to SDK-style projects and the dotnet CLI. The nuget.exe CLI is used for [non-SDK-style projects](../resources/check-project-format.md) (typically .NET Framework). If you are working with a non-SDK-style project, follow the procedures in [Create and publish a .NET Framework package (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md) to create and publish the package.
 
 1. [Register for a free account on nuget.org](https://docs.microsoft.com/en-us/nuget/nuget-org/individual-accounts#add-a-new-individual-account) if you don't have one already. Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
 
