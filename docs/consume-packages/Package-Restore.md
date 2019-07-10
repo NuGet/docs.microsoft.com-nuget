@@ -120,7 +120,7 @@ To avoid using the cache for HTTP sources, do one of the following:
 - Clear the cache using `nuget locals http-cache -clear` or `dotnet nuget locals http-cache --clear`.
 - Temporarily set the NUGET_HTTP_CACHE_PATH environment variable to a different folder.
 
-## <a name="migrating-to-automatic-restore"></a> Migrate to automatic package restore (Visual Studio)
+## Migrate to automatic package restore (Visual Studio)
 
 For NuGet 2.6 and earlier, an MSBuild-integrated package restore was previously supported but that is no longer true. (It was typically enabled by right-clicking a solution in Visual Studio and selecting **Enable NuGet Package Restore**). If your project uses the deprecated MSBuild-integrated package restore, please migrate to automatic package restore.
 
