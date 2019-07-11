@@ -15,7 +15,11 @@
 ### [Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
 ### [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)
 ### [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md)
+<<<<<<< HEAD
 ### [PowerShell](consume-packages/install-use-packages-powershell.md)
+=======
+### [Package Manager Console (PowerShell)](tools/package-manager-console.md)
+>>>>>>> 9ffebf021bc0ac15672abcc15625cab89417a879
 ## Configure NuGet
 ### Package restore options
 #### [Restore options](consume-packages/package-restore.md)
@@ -38,14 +42,16 @@
 ## [Create a symbol package](create-packages/symbol-packages-snupkg.md)
 ## Advanced tasks
 ### [Modify source code and config files](create-packages/source-and-config-file-transformations.md)
-### [Create a localized package](create-packages/creating-localized-packages.md)
 ### [Select assemblies referenced by projects](create-packages/select-assemblies-referenced-by-projects.md)
+### [Set package type](create-packages/set-package-type.md)
+### [Create a localized package](create-packages/creating-localized-packages.md)
 ## Guides for specific content
 ### [Create a UWP package](guides/create-uwp-packages.md)
 ### [Create a native package](create-packages/native-packages.md)
 ### [Create UI controls as a NuGet package](guides/create-UI-controls.md)
 ### [Create an analyzer as a NuGet package](reference/analyzers-conventions.md)
 ### [Create a package for Xamarin with Visual Studio 2015](guides/create-packages-for-xamarin.md)
+### [Create a package with COM interop assemblies](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## Sign packages
 ### [Sign a package](create-packages/sign-a-package.md)
 ### [Signed package signatures and requirements](reference/signed-packages-reference.md)
@@ -335,4 +341,5 @@
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
 ## [FAQs](faqs/nuget-faq.md)
+## [Project format](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)

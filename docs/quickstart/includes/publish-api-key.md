@@ -2,7 +2,7 @@
 
 1. Select your user name (on the upper right), then select **API Keys**.
 
-1. Select **Create**, provide a name for your key, select **Select Scopes > Push**. Under **API Key**, enter * for **Glob pattern**, then select **Create**. (See below for more about scopes.)
+1. Select **Create**, provide a name for your key, select **Select Scopes > Push**. Enter * for **Glob pattern**, then select **Create**. (See below for more about scopes.)
 
 1. Once the key is created, select **Copy** to retrieve the access key you need in the CLI:
 
