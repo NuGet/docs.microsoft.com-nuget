@@ -30,7 +30,7 @@
 
 * dotnet-list-package in a UnitTest project returns an error - [#8154](https://github.com/NuGet/Home/issues/8154)
 
-* Fix tests related to lowercase ids in packages lock file - [#8114](https://github.com/NuGet/Home/issues/8114)
+* Don't lowercase projects with custom assembly names in packages lock file - [#8114](https://github.com/NuGet/Home/issues/8114)
 
 * Ensure all projects use the same version of Newtonsoft.Json - [#8108](https://github.com/NuGet/Home/issues/8108)
 
