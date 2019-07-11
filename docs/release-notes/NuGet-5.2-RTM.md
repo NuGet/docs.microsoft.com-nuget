@@ -26,8 +26,6 @@
 
 * '--locked-mode' restore flag not respected if lock file is empty or malformed - [#8160](https://github.com/NuGet/Home/issues/8160)
 
-* Make the Settings reading in VS lazy - [#8156](https://github.com/NuGet/Home/issues/8156)
-
 * dotnet-list-package in a UnitTest project returns an error - [#8154](https://github.com/NuGet/Home/issues/8154)
 
 * Don't lowercase projects with custom assembly names in packages lock file - [#8114](https://github.com/NuGet/Home/issues/8114)
