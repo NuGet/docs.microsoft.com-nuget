@@ -15,11 +15,7 @@
 ### [Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
 ### [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)
 ### [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md)
-<<<<<<< HEAD
-### [PowerShell](consume-packages/install-use-packages-powershell.md)
-=======
-### [Package Manager Console (PowerShell)](tools/package-manager-console.md)
->>>>>>> 9ffebf021bc0ac15672abcc15625cab89417a879
+### [Package Manager Console (PowerShell)](consume-packages/install-use-packages-powershell.md)
 ## Configure NuGet
 ### Package restore options
 #### [Restore options](consume-packages/package-restore.md)
