@@ -14,7 +14,7 @@ The NuGet API is a set of HTTP endpoints that can be used to download packages, 
 and perform most other operations available in the official NuGet clients.
 
 This API is used by the NuGet client in Visual Studio, nuget.exe, and the .NET CLI to perform NuGet operations such as
-[`dotnet restore`](/dotnet/core/tools/dotnet-restore?tabs=netcore2x), search in the Visual Studio UI, and [`nuget.exe push`](../tools/cli-ref-push.md).
+[`dotnet restore`](/dotnet/core/tools/dotnet-restore?tabs=netcore2x), search in the Visual Studio UI, and [`nuget.exe push`](../reference/cli-reference/cli-ref-push.md).
 
 Note in some cases, nuget.org has additional requirements that are not enforced by other package sources. These differences are documented by the [nuget.org Protocols](nuget-protocols.md).
 
