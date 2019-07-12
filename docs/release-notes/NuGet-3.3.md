@@ -32,7 +32,7 @@ NuGet 3.3 was released November 30, 2015 with a significant number of user inter
 
 ## New Command-line Features
 
-In this version we introduced the `add` and `init` commands to initialize folder-based repositories as described in the [nuget.exe reference](../tools/nuget-exe-cli-reference.md). Repositories that are constructed and maintained with this folder structure will [deliver significant performance benefits](http://blog.nuget.org/20150922/Accelerate-Package-Source.html) as outlined on our blog.
+In this version we introduced the `add` and `init` commands to initialize folder-based repositories as described in the [nuget.exe reference](../reference/nuget-exe-cli-reference.md). Repositories that are constructed and maintained with this folder structure will [deliver significant performance benefits](http://blog.nuget.org/20150922/Accelerate-Package-Source.html) as outlined on our blog.
 
 ## ContentFiles
 
@@ -40,7 +40,7 @@ Content is now supported in `project.json` managed projects through the new `con
 
 ## NuGet Locals Cache Management
 
-The NuGet command-line has been updated to include information about how to manage the local caches on a workstation.  More information about the locals command is available in the [NuGet command-line reference](../tools/cli-ref-locals.md).
+The NuGet command-line has been updated to include information about how to manage the local caches on a workstation.  More information about the locals command is available in the [NuGet command-line reference](../reference/cli-reference/cli-ref-locals.md).
 
 ## Fixed Issues
 

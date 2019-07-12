@@ -36,7 +36,7 @@ You can trigger Package Restore in any of the following ways:
 
 - **dotnet CLI**: In the command line, switch to the folder that contains your project, and then use the [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x) command to restore packages listed in the project file with [PackageReference](../consume-packages/package-references-in-project-files.md). With .NET Core 2.0 and later, restore happens automatically with the `dotnet build` and `dotnet run` commands.  
 
-- **nuget.exe CLI**: In the command line, switch to the folder that contains your project, and then use the [nuget restore](../tools/cli-ref-restore.md) command to restore packages listed in a project or solution file, or in `packages.config`. 
+- **nuget.exe CLI**: In the command line, switch to the folder that contains your project, and then use the [nuget restore](../reference/cli-reference/cli-ref-restore.md) command to restore packages listed in a project or solution file, or in `packages.config`. 
 
 - **MSBuild**: Use the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command to restore packages listed in the project file with PackageReference. This command is available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017 and higher versions. Both `nuget restore` and `dotnet restore` use this command for applicable projects.
 
