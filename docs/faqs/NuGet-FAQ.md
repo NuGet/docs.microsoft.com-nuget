@@ -130,7 +130,7 @@ Set the [`disableSourceControlIntegration`](../reference/nuget-config-file.md#so
 
 **How do I turn off package restore?**
 
-See [Enabling and disabling package restore](../consume-packages/package-restore.md#enable-and-disable-package-restore).
+See [Enabling and disabling package restore](../consume-packages/package-restore.md#enable-and-disable-package-restore-visual-studio).
 
 **Why do I get an "Unable to resolve dependency error" when installing a local package with remote dependencies?**
 

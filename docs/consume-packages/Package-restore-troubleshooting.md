@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Troubleshooting package restore errors
 
-This article focuses on common errors when restoring packages and steps to resolve them. For complete details on restoring packages, see [Package restore](../consume-packages/package-restore.md#enable-and-disable-package-restore).
+This article focuses on common errors when restoring packages and steps to resolve them. For complete details on restoring packages, see [Package restore](../consume-packages/package-restore.md#enable-and-disable-package-restore-visual-studio).
 
 If the instructions here do not work for you, [please file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so that we can examine your scenario more carefully. Do not use the "Is this page helpful?" control that may appear on this page because it doesn't give us the ability to contact you for more information.
 
@@ -24,7 +24,7 @@ If you're using Visual Studio, first enable package restore as follows. Otherwis
 
 ![Enable NuGet package restore in Tool/Options](../consume-packages/media/restore-01-autorestoreoptions.png)
 
-These settings can also be changed in your `NuGet.config` file; see the [consent](#consent) section.
+These settings can also be changed in your `NuGet.config` file; see the [consent](#consent) section. If your project is an older project that uses the MSBuild-integrated package restore, you may need to [migrate](package-restore.md#migrate-to-automatic-package-restore-visual-studio) to automatic package restore.
 
 <a name="missing"></a>
 
@@ -49,10 +49,10 @@ The error can also happen if your project file contains absolute paths to packag
 Use one of the following methods to restore the packages:
 
 - If you've moved the project file, edit the file directly to update the package references.
-- In Visual Studio, enable package restore by selecting the **Tools > NuGet Package Manager > Package Manager Settings** menu command, setting both options under **Package Restore**, and selecting **OK**. Then build the solution again.
-- For .NET Core projects, run `dotnet restore` or `dotnet build` (which automatically runs restore).
-- On the command line, run `nuget restore` (except for projects created with `dotnet`, in which case use `dotnet restore`).
-- On the command line with projects using the PackageReference format, run `msbuild -t:restore`.
+- (Visual Studio) Enable package restore by selecting the **Tools > NuGet Package Manager > Package Manager Settings** menu command, setting both options under **Package Restore**, and selecting **OK**. Then build the solution again.
+- (dotnet CLI) In the command line, switch to the folder that contains your project, and then run `dotnet restore` or `dotnet build` (which automatically runs restore).
+- (nuget.exe CLI) In the command line, switch to the folder that contains your project, and then run `nuget restore` (except for projects created with `dotnet` CLI, in which case use `dotnet restore`).
+- (Projects migrated to PackageReference) On the command line, run `msbuild -t:restore`.
 
 After a successful restore, the package should be present in the *global-packages* folder. For projects using PackageReference, a restore should recreate the `obj/project.assets.json` file; for projects using `packages.config`, the package should appear in the project's `packages` folder. The project should now build successfully. If not, [file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so we can follow up with you.
 
