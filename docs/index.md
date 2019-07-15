@@ -50,6 +50,9 @@ hide_bc: true
                     <div class="cardText">
                         <h3>Get started - Consume packages</h3>
                         <p>
+                            <a href="consume-packages/finding-and-choosing-packages.md">Find and choose packages</a>
+                        </p>
+                        <p>
                             <a href="quickstart/install-and-use-a-package-using-the-dotnet-cli.md">Install and use a package (dotnet CLI)</a>
                         </p>
                         <p>
@@ -85,6 +88,9 @@ hide_bc: true
                         </p>
                         <p>
                             <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages (Package Manager Console)</a>
+                        </p>
+                        <p>
+                            <a href="consume-packages/package-references-in-project-files.md">Package references in project files</a>
                         </p>
                     </div>
                 </div>
@@ -136,6 +142,9 @@ hide_bc: true
                         <p>
                             <a href="create-packages/creating-a-package.md">Create a package (nuget.exe CLI)</a>
                         </p>
+                        <p>
+                            <a href="create-packages/supporting-multiple-target-frameworks.md">Support multiple target frameworks</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -153,7 +162,10 @@ hide_bc: true
                     <div class="cardText">
                         <h3>Publish packages</h3>
                         <p>
-                            <a href="nuget-org/publish-a-package.md">Publish a package</a>
+                            <a href="nuget-org/publish-a-package.md">Publish to NuGet.org</a>
+                        </p>
+                        <p>
+                            <a href="host-packages/overview.md">Publish to a private feed - Overview</a>
                         </p>
                     </div>
                 </div>
