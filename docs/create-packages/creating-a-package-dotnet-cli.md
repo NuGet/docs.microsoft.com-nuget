@@ -47,7 +47,7 @@ In Visual Studio, you can set these values in the project properties (right-clic
     ```
 
 > [!Important]
-> Give the package an identifier that's unique across nuget.org or whatever host you're using.
+> Give the package an identifier that's unique across nuget.org or whatever package source you're using.
 
 You can also set the optional properties, such as `Title`, `PackageDescription`, and `PackageTags`, as described in [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets) and [NuGet metadata properties](/dotnet/core/tools/csproj#nuget-metadata-properties).
 
