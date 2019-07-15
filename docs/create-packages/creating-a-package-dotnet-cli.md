@@ -62,7 +62,7 @@ The package identifier and the version number are the two most important values 
 
 **Best practices for the package version:**
 
-- In general, set the version of the package to match the project (or assembly), though this is not strictly required. This is a simple matter when you limit a package to a single assembly, as described earlier in [Deciding which assemblies to package](#decide-which-assemblies-to-package). Overall, remember that NuGet itself deals with package versions when resolving dependencies, not assembly versions.
+- In general, set the version of the package to match the project (or assembly), though this is not strictly required. This is a simple matter when you limit a package to a single assembly. Overall, remember that NuGet itself deals with package versions when resolving dependencies, not assembly versions.
 - When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Package versioning](../reference/package-versioning.md).
 
 > The following series of brief blog posts are also helpful to understand versioning:
