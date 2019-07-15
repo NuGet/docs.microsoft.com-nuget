@@ -22,7 +22,7 @@ hide_bc: true
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_get-started.svg" alt="Get started icon" />
+                            <img src="https://docs.microsoft.com/media/logos/logo_nuget.svg" alt="NuGet logo" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -69,7 +69,7 @@ hide_bc: true
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_get-started.svg" alt="Get started icon" />
+                            <img src="https://docs.microsoft.com//media/common/i_download-install.svg" alt="Download and install icon" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -128,7 +128,7 @@ hide_bc: true
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_get-started.svg" alt="Get started icon" />
+                            <img src="https://docs.microsoft.com/media/common/i_build.svg" alt="Build icon" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -156,7 +156,7 @@ hide_bc: true
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_get-started.svg" alt="Get started icon" />
+                            <img src="https://docs.microsoft.com/media/common/i_delivery.svg" alt="Delivery icon" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -178,7 +178,7 @@ hide_bc: true
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_get-started.svg" alt="Get started icon" />
+                            <img src="https://docs.microsoft.com/media/logos/logo_nuget.svg" alt="NuGet logo" />
                         </div>
                     </div>
                     <div class="cardText">
