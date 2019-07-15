@@ -60,7 +60,7 @@ Common optional properties:
 
 - Release notes
 - Copyright information
-- A short description for the [Package Manager UI in Visual Studio](../tools/package-manager-ui.md)
+- A short description for the [Package Manager UI in Visual Studio](../consume-packages/install-use-packages-visual-studio.md)
 - A locale ID
 - Project URL
 - License as an expression or file (`licenseUrl` is being deprecated, use the [`license` nuspec metadata element](../reference/nuspec.md#license))
@@ -364,7 +364,7 @@ Once `nuget pack` succeeds, you have a `.nupkg` file that you can publish to a s
 
 ### Additional options
 
-You can use various command-line switches with `nuget pack` to exclude files, override the version number in the manifest, and change the output folder, among other features. For a complete list, refer to the [pack command reference](../tools/cli-ref-pack.md).
+You can use various command-line switches with `nuget pack` to exclude files, override the version number in the manifest, and change the output folder, among other features. For a complete list, refer to the [pack command reference](../reference/cli-reference/cli-ref-pack.md).
 
 The following options are a few that are common with Visual Studio projects:
 
@@ -399,7 +399,7 @@ You can test installations manually in Visual Studio or on the command line usin
 For automated testing, the basic process is as follows:
 
 1. Copy the `.nupkg` file to a local folder.
-1. Add the folder to your package sources using the `nuget sources add -name <name> -source <path>` command (see [nuget sources](../tools/cli-ref-sources.md)). Note that you need only set this local source once on any given computer.
+1. Add the folder to your package sources using the `nuget sources add -name <name> -source <path>` command (see [nuget sources](../reference/cli-reference/cli-ref-sources.md)). Note that you need only set this local source once on any given computer.
 1. Install the package from that source using `nuget install <packageID> -source <name>` where `<name>` matches the name of your source as given to `nuget sources`. Specifying the source ensures that the package is installed from that source alone.
 1. Examine your file system to check that files are installed correctly.
 

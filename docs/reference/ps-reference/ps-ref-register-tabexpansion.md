@@ -9,7 +9,7 @@ ms.topic: reference
 
 # Register-TabExpansion (Package Manager Console in Visual Studio)
 
-*Available only within the [NuGet Package Manager Console](package-manager-console.md) in Visual Studio on Windows.*
+*Available only within the [Package Manager Console](../../consume-packages/install-use-packages-powershell.md) in Visual Studio on Windows.*
 
 Registers a tab expansion for the parameters of the specified command, such that when Tab is used when entering a command, the expanded values appear as available options for the parameter in question. Any previous expansions for the command are overwritten.
 

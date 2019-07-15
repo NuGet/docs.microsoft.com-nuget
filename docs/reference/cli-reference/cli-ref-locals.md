@@ -11,7 +11,7 @@ ms.topic: reference
 
 **Applies to:** package consumption &bullet; **Supported versions:** 3.3+
 
-Clears or lists local NuGet resources such as the *http-cache*, *global-packages* folder, and the temp folder. The `locals` command can also be used to display a list of those locations. For more information, see [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md).
+Clears or lists local NuGet resources such as the *http-cache*, *global-packages* folder, and the temp folder. The `locals` command can also be used to display a list of those locations. For more information, see [Managing the global packages and cache folders](../../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
 ## Usage
 
@@ -42,4 +42,4 @@ nuget locals all -list
 nuget locals http-cache -clear
 ```
 
-For additional examples, see [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md).
+For additional examples, see [Managing the global packages and cache folders](../../consume-packages/managing-the-global-packages-and-cache-folders.md).

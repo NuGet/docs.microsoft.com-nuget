@@ -137,7 +137,7 @@ The `<contentFiles>` element is used instead of `<files>` with `project.json`.
 
 ### Package manager options control
 
-*Originally in [Package Manager UI reference](../tools/package-manager-ui.md).*
+*Originally in [Package Manager UI reference](../consume-packages/install-use-packages-visual-studio.md).*
 
 Projects using `project.json` management format show only the **Show preview window** option.
 

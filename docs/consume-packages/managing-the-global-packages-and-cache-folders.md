@@ -29,7 +29,7 @@ For more information, see [What happens when a package is installed?](../concept
 
 ## Viewing folder locations
 
-You can view locations using the [nuget locals command](../tools/cli-ref-locals.md):
+You can view locations using the [nuget locals command](../reference/cli-reference/cli-ref-locals.md):
 
 ```cli
 # Display locals for all folders: global-packages, http cache, temp and plugins cache

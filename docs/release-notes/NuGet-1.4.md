@@ -56,7 +56,7 @@ Package operations now provide a list of checkboxes with the list of projects th
 
 ![Manage NuGet Packages Project Selection](./media/manage-nuget-packages-project-selection.png)
 
-For more details, see the topic on [Managing Packages for the Solution](../tools/package-manager-ui.md#managing-packages-for-the-solution).
+For more details, see the topic on [Managing Packages for the Solution](../consume-packages/install-use-packages-visual-studio.md#manage-packages-for-the-solution).
 
 ### Constraining Upgrades To Allowed Versions
 By default, when running the `Update-Package` command on a package (or updating the package using dialog), it will be
