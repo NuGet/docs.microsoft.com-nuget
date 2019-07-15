@@ -13,7 +13,7 @@ hide_bc: true
 <div id="main" class="v2">
     <div class="container">
         <h1>NuGet Documentation</h1>
-        <p>NuGet allows developers to create, share, and consume useful code. With NuGet, you can bundle code into "packages" that contain compiled code, such as DLLs.</p> 
+        <p>NuGet allows developers to create, share, and consume useful .NET code. With NuGet, you can bundle code into "packages" that contain compiled code, such as DLLs.</p> 
 
 <ul id="index1" class="cardsF panelContent singlePanelContent cols cols4" style="float: left; display: flex!important;">
     <li>
@@ -26,7 +26,7 @@ hide_bc: true
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Get started with NuGet</h3>
+                        <h3>Introduction to NuGet</h3>
                         <p>
                             <a href="what-is-nuget.md">What is NuGet?</a>
                         </p>
@@ -165,7 +165,7 @@ hide_bc: true
                             <a href="nuget-org/publish-a-package.md">Publish to NuGet.org</a>
                         </p>
                         <p>
-                            <a href="hosting-packages/overview.md">Publish to a private feed - Overview</a>
+                            <a href="hosting-packages/overview.md">Publish to a private feed</a>
                         </p>
                     </div>
                 </div>
