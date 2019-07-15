@@ -13,7 +13,7 @@ hide_bc: true
 <div id="main" class="v2">
     <div class="container">
         <h1>NuGet Documentation</h1>
-        <p>TBD TBD</p> 
+        <p>NuGet allows developers to create, share, and consume useful code. With NuGet, you can bundle code into "packages" that contain compiled code, such as DLLs.</p> 
 
 <ul id="index1" class="cardsF panelContent singlePanelContent cols cols4" style="float: left; display: flex!important;">
     <li>
@@ -63,41 +63,7 @@ hide_bc: true
             </div>
         </div>
     </li>
-        <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="https://docs.microsoft.com//media/common/i_download-install.svg" alt="Download and install icon" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Consume packages</h3>
-                        <p>
-                            <a href="consume-packages/overview-and-workflow.md">Overview and workflow</a>
-                        </p>
-                        <p>
-                            <a href="consume-packages/install-use-packages-visual-studio.md">Manage packages (Visual Studio)</a>
-                        </p>
-                        <p>
-                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages (dotnet CLI)</a>
-                        </p>
-                        <p>
-                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages (nuget.exe CLI)</a>
-                        </p>
-                        <p>
-                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages (Package Manager Console)</a>
-                        </p>
-                        <p>
-                            <a href="consume-packages/package-references-in-project-files.md">Package references in project files</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-        <li>
+    <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -122,6 +88,40 @@ hide_bc: true
             </div>
         </div>
     </li>
+        <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com//media/common/i_download-install.svg" alt="Download and install icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Consume packages</h3>
+                        <p>
+                            <a href="consume-packages/overview-and-workflow.md">Workflow (overview)</a>
+                        </p>
+                        <p>
+                            <a href="consume-packages/install-use-packages-visual-studio.md">Manage packages (Visual Studio)</a>
+                        </p>
+                        <p>
+                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages (dotnet CLI)</a>
+                        </p>
+                        <p>
+                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages (nuget.exe CLI)</a>
+                        </p>
+                        <p>
+                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages (Package Manager Console)</a>
+                        </p>
+                        <p>
+                            <a href="consume-packages/package-references-in-project-files.md">Package references in project files</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -134,7 +134,7 @@ hide_bc: true
                     <div class="cardText">
                         <h3>Create packages</h3>
                         <p>
-                            <a href="create-packages/overview-and-workflow.md">Workflow - overview</a>
+                            <a href="create-packages/overview-and-workflow.md">Workflow (overview)</a>
                         </p>
                         <p>
                             <a href="create-packages/creating-a-package-dotnet-cli.md">Create a package (dotnet CLI)</a>
@@ -165,7 +165,7 @@ hide_bc: true
                             <a href="nuget-org/publish-a-package.md">Publish to NuGet.org</a>
                         </p>
                         <p>
-                            <a href="host-packages/overview.md">Publish to a private feed - Overview</a>
+                            <a href="hosting-packages/overview.md">Publish to a private feed - Overview</a>
                         </p>
                     </div>
                 </div>
