@@ -209,7 +209,7 @@ hide_bc: true
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_api.svg" alt="API icon" />
+                            <img src="https://docs.microsoft.com/media/common/i_reference.svg" alt="API icon" />
                         </div>
                     </div>
                     <div class="cardText">
