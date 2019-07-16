@@ -15,7 +15,7 @@ For .NET Core and .NET Standard projects that use the [SDK-style format](../reso
 
 `msbuild -t:pack` is functionality equivalent to `dotnet pack`. To build with MSBuild, the concepts are the same as described in this article, but the command line commands are slightly different.
 
-> [!Important]
+> [!IMPORTANT]
 > This topic applies to [SDK-style](../resources/check-project-format.md) projects, typically .NET Core and .NET Standard projects.
 
 ## Set properties
