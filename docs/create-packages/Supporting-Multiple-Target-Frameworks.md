@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Supporting multiple .NET versions
 
-*For .NET Core projects using NuGet 4.0+, see [Support multiple .NET Framework versions in your project file](support-multiple-target-frameworks-project-file.md) and [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md) for details on cross-targeting.*
+*For .NET Core projects using NuGet 4.0+, see [Support multiple .NET Framework versions in your project file](multiple-target-frameworks-project-file.md) and [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md) for details on cross-targeting.*
 
 Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's specific to UWP, and another version that takes advantage of features in .NET Framework 4.6.
 
