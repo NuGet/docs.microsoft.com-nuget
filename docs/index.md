@@ -53,10 +53,10 @@ hide_bc: true
                             <a href="consume-packages/finding-and-choosing-packages.md">Find and choose packages</a>
                         </p>
                         <p>
-                            <a href="quickstart/install-and-use-a-package-using-the-dotnet-cli.md">Install and use a package (dotnet CLI)</a>
+                            <a href="quickstart/install-and-use-a-package-using-the-dotnet-cli.md">Install and use a package - dotnet CLI</a>
                         </p>
                         <p>
-                            <a href="quickstart/install-and-use-a-package-in-visual-studio.md">Install and use a package (Visual Studio)</a>
+                            <a href="quickstart/install-and-use-a-package-in-visual-studio.md">Install and use a package - Visual Studio</a>
                         </p>
                     </div>
                 </div>
@@ -75,13 +75,13 @@ hide_bc: true
                     <div class="cardText">
                         <h3>Get started - Create packages</h3>
                         <p>
-                            <a href="quickstart/create-and-publish-a-package-using-the-dotnet-cli.md">Create a package (dotnet CLI)</a>
+                            <a href="quickstart/create-and-publish-a-package-using-the-dotnet-cli.md">Create a package - dotnet CLI</a>
                         </p>
                         <p>
-                            <a href="quickstart/create-and-publish-a-package-using-visual-studio.md">Create a package (Visual Studio)</a>
+                            <a href="quickstart/create-and-publish-a-package-using-visual-studio.md">Create a package - Visual Studio</a>
                         </p>
                         <p>
-                            <a href="quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md">Create a .NET Framework package (Visual Studio)</a>
+                            <a href="quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md">Create a .NET Framework package - Visual Studio</a>
                         </p>
                     </div>
                 </div>
@@ -103,16 +103,16 @@ hide_bc: true
                             <a href="consume-packages/overview-and-workflow.md">Workflow (overview)</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-visual-studio.md">Manage packages (Visual Studio)</a>
+                            <a href="consume-packages/install-use-packages-visual-studio.md">Manage packages - Visual Studio</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages (dotnet CLI)</a>
+                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages - dotnet CLI</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages (nuget.exe CLI)</a>
+                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages - nuget.exe CLI</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages (Package Manager Console)</a>
+                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages - Package Manager Console</a>
                         </p>
                         <p>
                             <a href="consume-packages/package-references-in-project-files.md">Package references in project files</a>
@@ -184,7 +184,7 @@ hide_bc: true
                     <div class="cardText">
                         <h3>NuGet.org</h3>
                         <p>
-                            <a href="nuget-org/overview-nuget-org.md">Overview of NuGet.org</a>
+                            <a href="nuget-org/overview-nuget-org.md">Overview</a>
                         </p>
                         <p>
                             <a href="nuget-org/individual-accounts.md">Individual accounts</a>
@@ -197,6 +197,37 @@ hide_bc: true
                         </p>
                         <p>
                             <a href="nuget-org/publish-a-package.md">Publish a package</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+        <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/media/common/i_api.svg" alt="API icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Reference</h3>
+                        <p>
+                            <a href="reference/dotnet-commands.md">dotnet CLI</a>
+                        </p>
+                        <p>
+                            <a href="refernence/nuget-exe-cli-reference.md">nuget.exe CLI</a>
+                        </p>
+                        <p>
+                            <a href="reference/nuspec.md">.nuspec</a>
+                        </p>
+                        <p>
+                            <a href="reference/nuget-config-file.md">nuget.config</a>
+                        </p>
+                        <p>
+                            <a href="reference/api/overview.md">NuGet API</a>
                         </p>
                     </div>
                 </div>
