@@ -137,10 +137,10 @@ hide_bc: true
                             <a href="create-packages/overview-and-workflow.md">Workflow (overview)</a>
                         </p>
                         <p>
-                            <a href="create-packages/creating-a-package-dotnet-cli.md">Create a package (dotnet CLI)</a>
+                            <a href="create-packages/creating-a-package-dotnet-cli.md">Create a package - dotnet CLI</a>
                         </p>
                         <p>
-                            <a href="create-packages/creating-a-package.md">Create a package (nuget.exe CLI)</a>
+                            <a href="create-packages/creating-a-package.md">Create a package - nuget.exe CLI</a>
                         </p>
                         <p>
                             <a href="create-packages/supporting-multiple-target-frameworks.md">Support multiple target frameworks</a>
