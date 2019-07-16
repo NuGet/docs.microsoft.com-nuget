@@ -33,7 +33,7 @@
 ## [Overview and workflow](create-packages/overview-and-workflow.md)
 ## [Create a package](create-packages/creating-a-package.md)
 ## [Create a package using MSBuild](reference/msbuild-targets.md)
-## [Support multipe target frameworks in your project file](multiple-target-frameworks-project-file.md)
+## [Support multipe target frameworks in your project file](create-packages/multiple-target-frameworks-project-file.md)
 ## [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
 ## [Build a prerelease package](create-packages/prerelease-packages.md)
 ## [Create a symbol package](create-packages/symbol-packages-snupkg.md)
