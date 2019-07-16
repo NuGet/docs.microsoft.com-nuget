@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Support multiple .NET Framework versions in your project file
 
-When you first create a project, we recommend you create a .NET Standard class library, as it provides compatibility with the widest range of consuming projects. By using .NET Standard, you enable some support for multiple frameworks by default. However, in some scenarios, you may also need to include code that targets a particular framework. This article shows you how to do that for [SDK-style](../resources/check-project-format.md) projects.
+When you first create a project, we recommend you create a .NET Standard class library, as it provides compatibility with the widest range of consuming projects. By using .NET Standard, you add [cross-platform support](/dotnet/standard/library-guidance/cross-platform-targeting) to a .NET library by default. However, in some scenarios, you may also need to include code that targets a particular framework. This article shows you how to do that for [SDK-style](../resources/check-project-format.md) projects.
 
 For SDK-style projects, you can configure support for multiple targets frameworks ([TFM](/dotnet/standard/frameworks)) in your project file, then use `dotnet pack` or `msbuild /t:pack` to create the package.
 
@@ -18,9 +18,9 @@ For SDK-style projects, you can configure support for multiple targets framework
 
 ## Create a project that supports multiple .NET Framework versions
 
-1. Create a new class library either in Visual Studio or use `dotnet new classlib`.
+1. Create a new .NET Standard class library either in Visual Studio or use `dotnet new classlib`.
 
-   We recommend that you create a .NET Standard class library for maximum compatibility.
+   We recommend that you create a .NET Standard class library for best compatibility.
 
 2. Edit the *.csproj* file to support the target frameworks.
 
@@ -33,13 +33,13 @@ For SDK-style projects, you can configure support for multiple targets framework
    ```csharp
    public string Platform {
       get {
-         #if NET45
+   #if NET45
          return ".NET Framework"
-         #elseif NETSTANDARD2_0
+   #elif NETSTANDARD2_0
          return ".NET Standard"
-         #else
-         #error This code block does not match csproj TargetFrameworks list
-         #endif
+   #else
+   #error This code block does not match csproj TargetFrameworks list
+   #endif
       }
    }
    ```
@@ -64,3 +64,8 @@ Here is the *.csproj* file that is generated using the preceding steps and .NET 
 
 </Project>
 ```
+
+## See also
+
+[How to specify target frameworks](/dotnet/standard/frameworks#how-to-specify-target-frameworks)
+[Cross-platform targeting](/dotnet/standard/library-guidance/cross-platform-targeting)
