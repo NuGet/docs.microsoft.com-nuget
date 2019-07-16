@@ -218,7 +218,7 @@ hide_bc: true
                             <a href="reference/dotnet-commands.md">dotnet CLI</a>
                         </p>
                         <p>
-                            <a href="refernence/nuget-exe-cli-reference.md">nuget.exe CLI</a>
+                            <a href="reference/nuget-exe-cli-reference.md">nuget.exe CLI</a>
                         </p>
                         <p>
                             <a href="reference/nuspec.md">.nuspec</a>
@@ -227,7 +227,7 @@ hide_bc: true
                             <a href="reference/nuget-config-file.md">nuget.config</a>
                         </p>
                         <p>
-                            <a href="reference/api/overview.md">NuGet API</a>
+                            <a href="api/overview.md">NuGet API</a>
                         </p>
                     </div>
                 </div>
