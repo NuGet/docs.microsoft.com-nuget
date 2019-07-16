@@ -3,13 +3,13 @@ title: Multi-targeting for NuGet Packages
 description: Description of the various methods to target multiple .NET Framework versions from within a single NuGet package.
 author: karann-msft
 ms.author: karann
-ms.date: 09/27/2017
+ms.date: 07/15/2019
 ms.topic: conceptual
 ---
 
-# Supporting multiple .NET framework versions
+# Supporting multiple .NET versions
 
-*For .NET Core projects using NuGet 4.0+, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md) for details on cross-targeting.*
+*For .NET Core projects using NuGet 4.0+, see [Support multiple .NET Framework versions in your project file](multitargeting-sdk-projects.md) and [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md) for details on cross-targeting.*
 
 Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's specific to UWP, and another version that takes advantage of features in .NET Framework 4.6.
 
