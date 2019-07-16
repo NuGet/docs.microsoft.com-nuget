@@ -109,10 +109,10 @@ hide_bc: true
                             <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages - dotnet CLI</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages - nuget.exe CLI</a>
+                            <a href="consume-packages/install-use-packages-nuget-cli.md">Manage packages - nuget.exe CLI</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages - Package Manager Console</a>
+                            <a href="consume-packages/install-use-packages-powershell.md">Manage packages - Package Manager Console</a>
                         </p>
                         <p>
                             <a href="consume-packages/package-references-in-project-files.md">Package references in project files</a>
