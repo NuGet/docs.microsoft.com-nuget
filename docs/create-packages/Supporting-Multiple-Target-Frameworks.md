@@ -7,13 +7,13 @@ ms.date: 07/15/2019
 ms.topic: conceptual
 ---
 
-# Supporting multiple .NET versions
+# Support multiple .NET versions
 
-*For .NET Core projects using NuGet 4.0+, see [Support multiple .NET Framework versions in your project file](multiple-target-frameworks-project-file.md) and [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md) for details on cross-targeting.*
+Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's specific to UWP, and another version that takes advantage of features in .NET Framework 4.6. To accommodate this, NuGet supports putting multiple versions of the same library in a single package.
 
-Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's specific to UWP, and another version that takes advantage of features in .NET Framework 4.6.
+This article describes the layout of a NuGet package, regardless of how the package or assemblies are built (that is, the layout is the same whether using multiple non-SDK-style *.csproj* files and a custom *.nuspec* file, or a single multi-targetecd SDK-style *.csproj*). For an SDK-style project, NuGet [pack targets](../reference/msbuild-targets.md) knows how the package must be layed out and automates putting the assemblies in the correct lib folders and creating dependency groups for each target framework (TFM). For detailed instructions, see [Support multiple .NET Framework versions in your project file](multiple-target-frameworks-project-file.md).
 
-To accommodate this, NuGet supports putting multiple versions of the same library in a single package when using the convention-based working directory method described in [Creating a package](../create-packages/creating-a-package.md#from-a-convention-based-working-directory).
+You must manually lay out the package as described in this article when using the convention-based working directory method described in [Creating a package](../create-packages/creating-a-package.md#from-a-convention-based-working-directory). For an SDK-style project, the automated method is recommended, but you may also choose to manually lay out the package as described in this article.
 
 ## Framework version folder structure
 
