@@ -46,7 +46,7 @@ For SDK-style projects, you can configure support for multiple targets framework
 
 4. Add any NuGet metadata you want to the *.csproj* as MSBuild properties.
 
-   For the list of available metadata and the MSBuild property names, see [pack target](../reference/msbuild-targets.md#pack-target). Also see [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+   For the list of available package metadata and the MSBuild property names, see [pack target](../reference/msbuild-targets.md#pack-target). Also see [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
 
    If you want to separate build-related properties from NuGet metadata, you can use a different `PropertyGroup`, or put the NuGet properties in another file and use MSBuild's `Import` directive to include it.
 
