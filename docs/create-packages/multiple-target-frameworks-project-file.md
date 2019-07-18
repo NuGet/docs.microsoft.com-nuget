@@ -28,7 +28,7 @@ For SDK-style projects, you can configure support for multiple targets framework
 
    Make sure that you change the XML element changed from singular to plural (add the "s" to both the open and close tags).
 
-3. If you have any code that only works in one TFM, you can use `#if NET45` or `#if NETSTANDARD20` to separate TFM-dependent code. For example, you can use the following code:
+3. If you have any code that only works in one TFM, you can use `#if NET45` or `#if NETSTANDARD20` to separate TFM-dependent code. (For more information, see [How to multitarget](/dotnet/core/tutorials/libraries#how-to-multitarget).) For example, you can use the following code:
 
    ```csharp
    public string Platform {
@@ -48,7 +48,7 @@ For SDK-style projects, you can configure support for multiple targets framework
 
    For the list of available package metadata and the MSBuild property names, see [pack target](../reference/msbuild-targets.md#pack-target). Also see [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
 
-   If you want to separate build-related properties from NuGet metadata, you can use a different `PropertyGroup`, or put the NuGet properties in another file and use MSBuild's `Import` directive to include it.
+   If you want to separate build-related properties from NuGet metadata, you can use a different `PropertyGroup`, or put the NuGet properties in another file and use MSBuild's `Import` directive to include it. `Directory.Build.Props` and `Directory.Build.Targets` are also supported starting with MSBuild 15.0.
 
 5. Now, use `dotnet pack` and the resulting *.nupkg* targets both .NET Standard 2.0 and .NET Framework 4.5.
 
