@@ -13,7 +13,7 @@ No matter what your package does or what code it contains, you use one of the CL
 
 For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, NuGet uses information in the project file directly to create a package. For detailed steps, see [Create .NET Standard Packages with dotnet CLI](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md), [Create .NET Standard Packages with Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md) or [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
-`msbuild -t:pack` is functionality equivalent to `dotnet pack`. To build with MSBuild, the concepts are the same as described in this article, but the command line commands are slightly different.
+`msbuild -t:pack` is functionality equivalent to `dotnet pack`. To build with MSBuild, the concepts are the same as described in this article, but the command line commands are slightly different. Similarly, with a non-SDK-style project and `<PackageReference>`, you can use `msbuild /t:pack`. In these scenarios, you need to add the NuGet.Build.Tasks.Pack package to their dependencies.
 
 > [!IMPORTANT]
 > This topic applies to [SDK-style](../resources/check-project-format.md) projects, typically .NET Core and .NET Standard projects.
@@ -22,11 +22,11 @@ For .NET Core and .NET Standard projects that use the [SDK-style format](../reso
 
 The following properties are required to create a package.
 
-- `PackageId`, the package identifier, which must be unique across the gallery that hosts the package.
-- `Version`, a specific version number in the form *Major.Minor.Patch[-Suffix]* where *-Suffix* identifies [pre-release versions](prerelease-packages.md)
+- `PackageId`, the package identifier, which must be unique across the gallery that hosts the package. If not specified, the default value is `AssemblyName`.
+- `Version`, a specific version number in the form *Major.Minor.Patch[-Suffix]* where *-Suffix* identifies [pre-release versions](prerelease-packages.md). If not specified, the default value is 1.0.0.
 - The package title as it should appear on the host (like nuget.org)
-- `Authors`, author and owner information.
-- `Company`, your company name.
+- `Authors`, author and owner information. If not specified, the default value is `AssemblyName`.
+- `Company`, your company name. If not specified, the default value is `AssemblyName`.
 
 In Visual Studio, you can set these values in the project properties (right-click the project in Solution Explorer, choose **Properties**, and select the **Package** tab). You can also set these properties directly in the project files (`.csproj`).
 
@@ -63,29 +63,13 @@ The package identifier and the version number are the two most important values 
 **Best practices for the package version:**
 
 - In general, set the version of the package to match the project (or assembly), though this is not strictly required. This is a simple matter when you limit a package to a single assembly. Overall, remember that NuGet itself deals with package versions when resolving dependencies, not assembly versions.
-- When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Package versioning](../reference/package-versioning.md).
+- When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Package versioning](../reference/package-versioning.md). NuGet is mostly [semver 2 compliant](../reference/package-versioning#semantic-versioning-200).
 
-> The following series of brief blog posts are also helpful to understand versioning:
+> For information on dependency resolution, see [Dependency resolution with PackageReference](../consume-packages/dependency-resolution#dependency-resolution-with-packagereference). For older information that may also be helpful to better understand versioning, see this series of blog posts.
 >
 > - [Part 1: Taking on DLL Hell](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
 > - [Part 2: The core algorithm](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)
 > - [Part 3: Unification via Binding Redirects](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)
-
-## Include MSBuild props and targets in a package (Advanced)
-
-In some cases, you might want to add custom build targets or properties in projects that consume your package, such as running a custom tool or process during build. You can do this by placing files in the form `<package_id>.targets` or `<package_id>.props` (such as `Contoso.Utility.UsefulStuff.targets`) within the `\build` folder of the project.
-
-In the project file, use `<IncludeAssets>` or `<PrivateAssets>` and set the value to `build`. For more information, see [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets) and [Additions to the csproj format](/dotnet/core/tools/csproj#additions).
-
-Files in the root `\build` folder are considered suitable for all target frameworks. To provide framework-specific files, first place them within appropriate subfolders, such as the following:
-
-    \build
-        \netstandard2.0
-            \Contoso.Utility.UsefulStuff.props
-            \Contoso.Utility.UsefulStuff.targets
-        \net462
-            \Contoso.Utility.UsefulStuff.props
-            \Contoso.Utility.UsefulStuff.targets
 
 ## Run the pack command
 
