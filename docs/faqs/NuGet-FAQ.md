@@ -31,9 +31,9 @@ For more information, see [Finding and choosing packages](../consume-packages/fi
 
 **How is NuGet supported in different Visual Studio products?**
 
-- Visual Studio on Windows supports the [Package Manager UI](../tools/package-manager-ui.md) and the [Package Manager Console](../tools/package-manager-console.md).
+- Visual Studio on Windows supports the [Package Manager UI](../consume-packages/install-use-packages-visual-studio.md) and the [Package Manager Console](../consume-packages/install-use-packages-powershell.md).
 - Visual Studio for Mac has built-in NuGet capabilities as described on [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough).
-- Visual Studio Code (all platforms) does not have any direct NuGet integration. Use the [NuGet CLI](../tools/nuget-exe-cli-reference.md) or the [dotnet CLI](../tools/dotnet-commands.md).
+- Visual Studio Code (all platforms) does not have any direct NuGet integration. Use the [NuGet CLI](../reference/nuget-exe-cli-reference.md) or the [dotnet CLI](../reference/dotnet-commands.md).
 - Azure DevOps provides [a build step to restore NuGet packages](/vsts/build-release/tasks/package/nuget). You can also [host private NuGet package feeds on Azure DevOps](https://docs.microsoft.com/azure/devops/artifacts/nuget/publish).
 
 **How do I check the exact version of the NuGet tools that are installed?**
@@ -54,13 +54,13 @@ NuGet has full support for a variety of project templates like Windows, Web, Clo
 
 **How do I update packages that are part of Visual Studio templates?**
 
-Go to the **Updates** tab in the Package Manager UI and select **Update All**, or use the [`Update-Package` command](../tools/ps-ref-update-package.md) from the Package Manager Console.
+Go to the **Updates** tab in the Package Manager UI and select **Update All**, or use the [`Update-Package` command](../reference/ps-reference/ps-ref-update-package.md) from the Package Manager Console.
 
 To update the template itself, you need to manually update the template repository. See [Xavier Decoster's blog](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages) on this subject. Note that this is done at your own risk, because manual updates might corrupt the template if the latest version of all dependencies are not compatible with each other.
 
 **Can I use NuGet outside of Visual Studio?**
 
-Yes, NuGet works directly from the command line. See the [Install guide](../install-nuget-client-tools.md) and the [CLI reference](../tools/nuget-exe-cli-reference.md).
+Yes, NuGet works directly from the command line. See the [Install guide](../install-nuget-client-tools.md) and the [CLI reference](../reference/nuget-exe-cli-reference.md).
 
 ## NuGet command line
 

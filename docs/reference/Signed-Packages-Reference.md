@@ -18,7 +18,7 @@ Signed packages provide the strongest end-to-end validation. There are two diffe
 - **Author Signature**. An author signature guarantees that the package has not been modified since the author signed the package, no matter from which repository or what transport method the package is delivered. Additionally, author-signed packages provide an extra authentication mechanism to the nuget.org publishing pipeline because the signing certificate must be registered ahead of time. For more information, see [Register certificates](#signature-requirements-on-nugetorg).
 - **Repository Signature**. Repository signatures provide an integrity guarantee for **all** packages in a repository whether they are author signed or not, even if those packages are obtained from a different location than the original repository where they were signed.   
 
-For details on creating an author signed package, see [Signing Packages](../create-packages/Sign-a-package.md) and the [nuget sign command](../tools/cli-ref-sign.md).
+For details on creating an author signed package, see [Signing Packages](../create-packages/Sign-a-package.md) and the [nuget sign command](../reference/cli-reference/cli-ref-sign.md).
 
 > [!Important]
 > Package signing is currently supported only when using nuget.exe on Windows. Verification of signed packages is currently supported only when using nuget.exe or Visual Studio on Windows.

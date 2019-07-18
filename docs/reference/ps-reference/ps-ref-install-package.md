@@ -9,7 +9,7 @@ ms.topic: reference
 
 # Install-Package (Package Manager Console in Visual Studio)
 
-*This topic describes the command within the [Package Manager Console](package-manager-console.md) in Visual Studio on Windows. For the generic PowerShell Install-Package command, see the [PowerShell PackageManagement reference](/powershell/module/packagemanagement/?view=powershell-6).*
+*This topic describes the command within the [Package Manager Console](../../consume-packages/install-use-packages-powershell.md) in Visual Studio on Windows. For the generic PowerShell Install-Package command, see the [PowerShell PackageManagement reference](/powershell/module/packagemanagement/?view=powershell-6).*
 
 Installs a package and its dependencies into a project.
 
@@ -38,7 +38,7 @@ Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 | Version | The version of the package to install, defaulting to the latest version. |
 | IncludePrerelease | Considers prerelease packages for the install. If omitted, only stable packages are considered. |
 | FileConflictAction | The action to take when asked to overwrite or ignore existing files referenced by the project. Possible values are *Overwrite, Ignore, None, OverwriteAll*, and *(3.0+)* *IgnoreAll*. |
-| DependencyVersion | The version of the dependency packages to use, which can be one of the following:<br/><ul><li>*Lowest* (default): the lowest version</li><li>*HighestPatch*: the version with the lowest major, lowest minor, highest patch</li><li>*HighestMinor*: the version with the lowest major, highest minor, highest patch</li><li>*Highest* (default for Update-Package with no parameters): the highest version</li></ul>You can set the default value using the [`dependencyVersion`](../reference/nuget-config-file.md#config-section) setting in the `Nuget.Config` file. |
+| DependencyVersion | The version of the dependency packages to use, which can be one of the following:<br/><ul><li>*Lowest* (default): the lowest version</li><li>*HighestPatch*: the version with the lowest major, lowest minor, highest patch</li><li>*HighestMinor*: the version with the lowest major, highest minor, highest patch</li><li>*Highest* (default for Update-Package with no parameters): the highest version</li></ul>You can set the default value using the [`dependencyVersion`](../nuget-config-file.md#config-section) setting in the `Nuget.Config` file. |
 | WhatIf | Shows what would happen when running the command without actually performing the install. |
 
 None of these parameters accept pipeline input or wildcard characters.
@@ -60,11 +60,13 @@ Install-Package Glimpse -Version 1.0.0 -Project MvcApplication1
 Install-Package Ninject.Mvc3 -IgnoreDependencies -Source c:\temp\packages
 
 # Installs the package listed on the online packages.config into the current project
-Install-package https://raw.githubusercontent.com/json-ld.net/master/src/JsonLD/packages.config
+# Note: the URL must end with "packages.config"
+Install-Package https://raw.githubusercontent.com/linked-data-dotnet/json-ld.net/master/.nuget/packages.config
 
 # Installs jquery 1.10.2 package, using the .nupkg file under local path of c:\temp\packages
-Install-package c:\temp\packages\jQuery.1.10.2.nupkg
+Install-Package c:\temp\packages\jQuery.1.10.2.nupkg
 
 # Installs the specific online package
-Install-package https://az320820.vo.msecnd.net/packages/microsoft.aspnet.mvc.5.2.3.nupkg
+# Note: the URL must end with ".nupkg"
+Install-Package https://globalcdn.nuget.org/packages/microsoft.aspnet.mvc.5.2.3.nupkg
 ```

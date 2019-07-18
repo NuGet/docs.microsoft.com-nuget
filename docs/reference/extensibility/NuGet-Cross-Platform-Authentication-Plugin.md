@@ -13,7 +13,7 @@ In version 4.8+, all NuGet clients (NuGet.exe, Visual Studio, dotnet.exe and MSB
 
 ## Authentication in dotnet.exe
 
-Visual Studio and NuGet.exe are by default interactive. NuGet.exe contains a switch to make it [non interactive](../../tools/nuget-exe-CLI-Reference.md).
+Visual Studio and NuGet.exe are by default interactive. NuGet.exe contains a switch to make it [non interactive](../nuget-exe-CLI-Reference.md).
 Additionally the NuGet.exe and Visual Studio plugins prompt the user for input.
 In dotnet.exe there is no prompting and the default is non interactive.
 
