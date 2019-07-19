@@ -96,9 +96,15 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
     }
     ```
 
-## Related articles
+## Next steps
 
-- [Install and use packages using the dotnet CLI](../consume-packages/install-use-packages-dotnet-cli.md)
+Congratulations on installing and using your first NuGet package!
+
+> [!div class="nextstepaction"]
+> [Install and use packages using the dotnet CLI](../consume-packages/install-use-packages-dotnet-cli.md)
+
+To explore more that NuGet has to offer, select the links below.
+
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
 - [Finding and choosing packages](../consume-packages/finding-and-choosing-packages.md)
 - [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md)

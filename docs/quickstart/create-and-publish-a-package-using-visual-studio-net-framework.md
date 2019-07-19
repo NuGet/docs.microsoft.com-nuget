@@ -167,9 +167,15 @@ See [nuget push](../reference/cli-reference/cli-ref-push.md).
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## Related topics
+## Next steps
 
-- [Create a Package](../create-packages/creating-a-package.md)
+Congratulations on creating your first NuGet package!
+
+> [!div class="nextstepaction"]
+> [Create a Package](../create-packages/creating-a-package.md)
+
+To explore more that NuGet has to offer, select the links below.
+
 - [Publish a Package](../nuget-org/publish-a-package.md)
 - [Pre-release Packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
