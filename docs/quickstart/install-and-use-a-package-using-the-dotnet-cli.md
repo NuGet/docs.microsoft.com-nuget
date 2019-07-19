@@ -1,5 +1,5 @@
 ---
-title: Introductory Guide to Using NuGet Packages Through the dotnet CLI
+title: Install and use a NuGet package using the dotnet CLI
 description: A walkthrough tutorial on the process of installing and using a NuGet package in a .NET Core project.
 author: karann-msft
 ms.author: karann
@@ -96,9 +96,15 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
     }
     ```
 
-## Related articles
+## Next steps
 
-- [Install and use packages using the dotnet CLI](../consume-packages/install-use-packages-dotnet-cli.md)
+Congratulations on installing and using your first NuGet package!
+
+> [!div class="nextstepaction"]
+> [Install and use packages using the dotnet CLI](../consume-packages/install-use-packages-dotnet-cli.md)
+
+To explore more that NuGet has to offer, select the links below.
+
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
 - [Finding and choosing packages](../consume-packages/finding-and-choosing-packages.md)
-- [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md)
+- [Package references in project files](../consume-packages/package-references-in-project-files.md)
