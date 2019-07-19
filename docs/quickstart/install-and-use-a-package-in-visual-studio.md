@@ -78,7 +78,7 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
     </Grid>
     ```
 
-1. Open the `MainPage.xaml.cs` file (located in Solution Explorer under the `MainPage.xaml` node), and insert the following code inside the `MainPage` constructor:
+1. Open the `MainPage.xaml.cs` file (located in Solution Explorer under the `MainPage.xaml` node), and insert the following code inside the `MainPage` class:
 
     ```cs
     public class Account

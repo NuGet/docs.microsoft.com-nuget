@@ -1,5 +1,5 @@
 ---
-title: How to create a NuGet package using nuget.exe CLI
+title: Create a NuGet package using nuget.exe CLI
 description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
 author: karann-msft
 ms.author: karann
@@ -7,7 +7,7 @@ ms.date: 07/09/2019
 ms.topic: conceptual
 ---
 
-# Create NuGet packages using the nuget.exe CLI
+# Create a package using the nuget.exe CLI
 
 No matter what your package does or what code it contains, you use one of the CLI tools, either `nuget.exe` or `dotnet.exe`, to package that functionality into a component that can be shared with and used by any number of other developers. To install NuGet CLI tools, see [Install NuGet client tools](../install-nuget-client-tools.md). Note that Visual Studio does not automatically include a CLI tool.
 
