@@ -1,5 +1,5 @@
 ---
-title: Create and publish a NuGet package using Visual Studio on Windows
+title: Create and publish a .NET Standard NuGet package using Visual Studio on Windows
 description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio on Windows.
 author: karann-msft
 ms.author: karann
@@ -16,9 +16,9 @@ It's a simple process to create a NuGet package from a .NET Standard Class Libra
 
 ## Prerequisites
 
-1. Install any edition of Visual Studio 2017 or higher from [visualstudio.com](https://www.visualstudio.com/) with any .NET-related workload. Visual Studio 2017 and higher automatically include NuGet capabilities when a .NET workload is installed.
+1. Install any edition of Visual Studio 2017 or higher from [visualstudio.com](https://www.visualstudio.com/) with a .NET Core related workload.
 
-1. Install the `dotnet` CLI.
+1. If it's not already installed, install the `dotnet` CLI.
 
    For the `dotnet` CLI, starting in Visual Studio 2017, the `dotnet` CLI is automatically installed with any .NET Core related workloads. Otherwise, install the [.NET Core SDK](https://www.microsoft.com/net/download/) to get the `dotnet` CLI. The `dotnet` CLI is required for .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md) (SDK attribute). The default class library template in Visual Studio 2017 and higher, which is used in this article, uses the SDK attribute.
    
