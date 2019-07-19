@@ -107,7 +107,7 @@ To explore more that NuGet has to offer, select the links below.
 
 - [Publish a Package](../nuget-org/publish-a-package.md)
 - [Pre-release Packages](../create-packages/Prerelease-Packages.md)
-- [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
+- [Support multiple target frameworks](../create-packages/multiple-target-frameworks-project-file.md)
 - [Package versioning](../reference/package-versioning.md)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)
 - [Creating symbol packages](../create-packages/symbol-packages-snupkg.md)
