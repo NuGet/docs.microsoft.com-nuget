@@ -1,10 +1,32 @@
-#5.2 Release Notes
+---
+title: NuGet 5.2 RTM Release Notes
+description: Release notes for NuGet 5.2 including new features, bug fixes, and DCRs.
+author: karann-msft
+ms.author: karann
+ms.date: 07/23/2019
+ms.topic: conceptual
+---
 
-[Full Changelog]()
+# NuGet 5.2 Release Notes
 
-[Issues List](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.2")
+NuGet distribution vehicles:
 
-**Bug:**
+| NuGet version | Available in Visual Studio version| Available in .NET SDK(s)|
+|:---|:---|:---|
+| [**5.2.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.1](https://visualstudio.microsoft.com/downloads/) | [2.1.70X](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.30X](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
+
+<sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload 
+
+<sup>2</sup>Available as an optional install with Visual Studio 2019 with .NET Core workload
+
+## Summary: What's New in 5.2
+
+**TODO**
+* Support to skip a package push if it already exists to allow for better integration with CI/CD workflows - [#1630](https://github.com/NuGet/Home/issues/1630#issuecomment-483461100)
+
+### Issues fixed in this release
+
+**Bugs**
 
 * Plugin:  NuGet waits full handshake timeout if plugin fails to launch or terminates early - [#8300](https://github.com/NuGet/Home/issues/8300)
 
@@ -57,4 +79,7 @@
 * FrameworkReference suppress dependency flow via FrameworkReference.PrivateAssets - [#7988](https://github.com/NuGet/Home/issues/7988)
 
 * Mechanism for supplying runtime.json outside of a package - [#7351](https://github.com/NuGet/Home/issues/7351)
+
+**[List of all issues fixed in this release - 5.2 RTM](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.2")**
+
 
