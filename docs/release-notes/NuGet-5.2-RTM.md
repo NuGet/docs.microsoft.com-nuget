@@ -21,7 +21,9 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.2
 
-**TODO**
+* Fixed occasional nuget operation failures caused by path issues on Linux & Ma
+
+
 * Support to skip a package push if it already exists to allow for better integration with CI/CD workflows - [#1630](https://github.com/NuGet/Home/issues/1630#issuecomment-483461100)
 
 ### Issues fixed in this release
