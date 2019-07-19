@@ -1,5 +1,5 @@
 ---
-title: Introductory Guide to Using NuGet Packages from within Visual Studio
+title: Install and use a NuGet package in Visual Studio
 description: A walkthrough tutorial on the process of installing and using a NuGet package in a Visual Studio project.
 author: karann-msft
 ms.author: karann
@@ -115,8 +115,15 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 
     ![Output of the UWP app after selecting the button](media/QS_Use-07-AppEnd.png)
 
-## Related articles
+## Next steps
+
+Congratulations on installing and using your first NuGet package!
+
+> [!div class="nextstepaction"]
+> [Install and manage packages using Visual Studio](../consume-packages/install-use-packages-visual-studio.md)
+
+To explore more that NuGet has to offer, select the links below.
 
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
 - [Finding and choosing packages](../consume-packages/finding-and-choosing-packages.md)
-- [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md)
+- [Package references in project files](../consume-packages/package-references-in-project-files.md)
