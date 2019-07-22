@@ -1,5 +1,7 @@
 1. [Sign into your nuget.org account](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) or create an account if you don't have one already.
 
+   For more information on creating your account, see [Individual accounts](../../nuget-org/individual-accounts.md).
+
 1. Select your user name (on the upper right), then select **API Keys**.
 
 1. Select **Create**, provide a name for your key, select **Select Scopes > Push**. Enter * for **Glob pattern**, then select **Create**. (See below for more about scopes.)
