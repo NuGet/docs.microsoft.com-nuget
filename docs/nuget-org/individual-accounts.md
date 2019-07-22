@@ -37,7 +37,7 @@ To create a NuGet.org account, you need to have a personal Microsoft account (MS
 
    test two - surf
 
-   ![Giving permissions to NuGet.org](media/let-this-app-surface.png)
+   ![Giving permissions to NuGet.org](media/let-this-app-surface.png) 
 
 1. You will be redirected to *nuget.org*, and asked to register a username.
 
