@@ -13,7 +13,7 @@ hide_bc: true
 <div id="main" class="v2">
     <div class="container">
         <h1>NuGet Documentation</h1>
-        <p>NuGet allows developers to create, share, and consume useful .NET code. With NuGet, you can bundle code into "packages" that contain compiled code, such as DLLs.</p> 
+        <p>NuGet is the package manager for .NET. It enables developers to create, share, and consume useful .NET libraries. NuGet client tools provide the ability to produce and consume these libraries as "packages".</p> 
 
 <ul id="index1" class="cardsF panelContent singlePanelContent cols cols4" style="float: left; display: flex!important;">
     <li>
