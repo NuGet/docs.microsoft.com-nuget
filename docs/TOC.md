@@ -31,12 +31,14 @@
 ### [packages.config](reference/packages-config.md)
 # Create packages
 ## [Overview and workflow](create-packages/overview-and-workflow.md)
-## [Create a package](create-packages/creating-a-package.md)
+## [Create a package (dotnet CLI)](create-packages/creating-a-package-dotnet-cli.md)
+## [Create a package (nuget.exe CLI)](create-packages/creating-a-package.md)
 ## [Create a package using MSBuild](reference/msbuild-targets.md)
-## [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
+## [Support multiple target frameworks in your project file](create-packages/multiple-target-frameworks-project-file.md)
 ## [Build a prerelease package](create-packages/prerelease-packages.md)
 ## [Create a symbol package](create-packages/symbol-packages-snupkg.md)
 ## Advanced tasks
+### [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
 ### [Modify source code and config files](create-packages/source-and-config-file-transformations.md)
 ### [Select assemblies referenced by projects](create-packages/select-assemblies-referenced-by-projects.md)
 ### [Set package type](create-packages/set-package-type.md)
@@ -273,7 +275,9 @@
 ### [NuGet.org policies](nuget-org/policies/data-requests.md)
 ## Release notes
 ### [Known Issues](release-notes/known-issues.md)
-### [NuGet 5.0 RTM](release-notes/NuGet-5.0-RTM.md)
+### NuGet 5.x
+#### [NuGet 5.1 RTM](release-notes/NuGet-5.1-RTM.md)
+#### [NuGet 5.0 RTM](release-notes/NuGet-5.0-RTM.md)
 ### NuGet 4.x
 #### [NuGet 4.9 RTM](release-notes/NuGet-4.9-RTM.md)
 #### [NuGet 4.8 RTM](release-notes/NuGet-4.8-RTM.md)

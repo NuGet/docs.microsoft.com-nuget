@@ -60,11 +60,13 @@ Install-Package Glimpse -Version 1.0.0 -Project MvcApplication1
 Install-Package Ninject.Mvc3 -IgnoreDependencies -Source c:\temp\packages
 
 # Installs the package listed on the online packages.config into the current project
-Install-package https://raw.githubusercontent.com/json-ld.net/master/src/JsonLD/packages.config
+# Note: the URL must end with "packages.config"
+Install-Package https://raw.githubusercontent.com/linked-data-dotnet/json-ld.net/master/.nuget/packages.config
 
 # Installs jquery 1.10.2 package, using the .nupkg file under local path of c:\temp\packages
-Install-package c:\temp\packages\jQuery.1.10.2.nupkg
+Install-Package c:\temp\packages\jQuery.1.10.2.nupkg
 
 # Installs the specific online package
-Install-package https://az320820.vo.msecnd.net/packages/microsoft.aspnet.mvc.5.2.3.nupkg
+# Note: the URL must end with ".nupkg"
+Install-Package https://globalcdn.nuget.org/packages/microsoft.aspnet.mvc.5.2.3.nupkg
 ```

@@ -12,6 +12,7 @@ ms.reviewer: anangaur
 
 NuGet uses target framework references in a variety of places to specifically identify and isolate framework-dependent components of a package:
 
+- [project file](../create-packages/multiple-target-frameworks-project-file.md): For SDK-style projects, the *.csproj* contains the target framework references.
 - [.nuspec manifest](../reference/nuspec.md): A package can indicate distinct packages to be included in a project depending on the project's target framework.
 - [.nupkg folder name](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): The folders inside a package's `lib` folder can be named according to the target framework, each of which contains the DLLs and other content appropriate to that framework.
 - [packages.config](../reference/packages-config.md): The `targetframework` attribute of a dependency specifies the variant of a package to install.
@@ -115,9 +116,9 @@ A number of frameworks are related to and compatible with one another, but not n
 | win (Microsoft Store) | winrt |
 | | |
 
-## NET Platform Standard
+## NET Standard
 
-The [.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) simplifies references between binary-compatible frameworks, allowing a single target framework to reference a combination of others. (For background, see the [.NET Primer](/dotnet/articles/standard/index).)
+[.NET Standard](/dotnet/standard/net-standard) simplifies references between binary-compatible frameworks, allowing a single target framework to reference a combination of others. (For background, see the [.NET Primer](/dotnet/articles/standard/index).)
 
 The [NuGet Get Nearest Framework Tool](https://aka.ms/s2m3th) simulates what NuGet uses to select one framework from many available framework assets in a package based on the project's framework.
 
