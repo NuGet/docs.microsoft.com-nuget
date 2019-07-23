@@ -40,3 +40,27 @@ To create a NuGet.org account, you need to have a personal Microsoft account (MS
 1. Click the **Register** button.
 
 You now have a NuGet.org account. You can perform account management on the [account settings](https://www.nuget.org/account) page.
+
+## Enable two-factor authentication (2FA)
+
+To better protect your account, enable two-factor authentication (recommended).
+
+1. When logged into your account, open your profile and choose **Enable** under **Login Account**.
+
+   ![Enable 2FA](media/nuget-org-register-2fa.png)
+
+   You will see a message that tells you that the next time you sign in to *nuget.org*, you will be asked for additional credentials.
+
+2. To complete the authentication at this time, sign out and then sign in again.
+
+3. When you sign in, choose either text or e-mail as a second form of authentication.
+
+   Verify the phone number or e-mail that is already associated with your Microsoft account. You may need to enter a new phone number or e-mail for your account. If so, enter the required information as instructed, and click **Next**.
+
+   ![Enable 2FA](media/nuget-org-sign-in-2fa.png)
+
+4. Check your device or e-mail account, and enter the code that you were just sent.
+
+   ![Enable 2FA](media/nuget-org-enter-code-2fa.png)
+
+5. Follow any additional instructions to complete Two-factor authentication.

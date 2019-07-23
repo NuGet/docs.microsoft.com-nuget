@@ -120,7 +120,7 @@ Once you've created a package, which is a `.nupkg` file, you can publish it to t
 You might also want to extend the capabilities of your package or otherwise support other scenarios as described in the following topics:
 
 - [Package versioning](../reference/package-versioning.md)
-- [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
+- [Support multiple target frameworks](../create-packages/multiple-target-frameworks-project-file.md)
 - [Transformations of source and configuration files](../create-packages/source-and-config-file-transformations.md)
 - [Localization](../create-packages/creating-localized-packages.md)
 - [Pre-release versions](../create-packages/prerelease-packages.md)
