@@ -143,7 +143,7 @@ hide_bc: true
                             <a href="create-packages/creating-a-package.md">Create a package - nuget.exe CLI</a>
                         </p>
                         <p>
-                            <a href="create-packages/supporting-multiple-target-frameworks.md">Support multiple target frameworks</a>
+                            <a href="create-packages/multiple-target-frameworks-project-file.md">Support multiple target frameworks</a>
                         </p>
                     </div>
                 </div>
