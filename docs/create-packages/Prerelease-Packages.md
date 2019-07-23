@@ -77,9 +77,11 @@ Whatever suffixes you use, however, NuGet will give them precedence in reverse a
     1.0.1-rc
     1.0.1-open
     1.0.1-beta.12
-    1.0.1-beta.05
+    1.0.1-beta.5
     1.0.1-beta
     1.0.1-alpha.2
     1.0.1-alpha
 
-As shown, the version without any suffix will always take precedence over pre-release versions. Note also that if you use numerical suffixes with pre-release tags that might use double-digit numbers (or more), use leading zeroes as in beta.01 and beta.05 to ensure that they sort correctly when the numbers get larger.
+As shown, the version without any suffix will always take precedence over pre-release versions.
+
+Leading 0s are not needed with semver2, but they are with the old version schema. If you use numerical suffixes with pre-release tags that might use double-digit numbers (or more), use leading zeroes as in beta.01 and beta.05 to ensure that they sort correctly when the numbers get larger. This recommendation only applies to the old version schema.
