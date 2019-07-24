@@ -48,7 +48,7 @@ hide_bc: true
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><a href="quickstart/install-and-use-a-package-using-the-dotnet-cli.md">Get started</a></h3>
+                        <h3><a href="install-nuget-client-tools.md">Get started</a></h3>
                         <p>
                             <a href="consume-packages/finding-and-choosing-packages.md">Find and choose packages</a>
                         </p>
@@ -97,9 +97,6 @@ hide_bc: true
                         </p>
                         <p>
                             <a href="consume-packages/install-use-packages-powershell.md">Using Package Manager Console</a>
-                        </p>
-                        <p>
-                            <a href="consume-packages/package-references-in-project-files.md">Package references in project files</a>
                         </p>
                     </div>
                 </div>
@@ -203,6 +200,9 @@ hide_bc: true
                         </p>
                         <p>
                             <a href="reference/nuget-exe-cli-reference.md">nuget.exe CLI</a>
+                        <p>
+                            <a href="consume-packages/package-references-in-project-files.md">Package references</a>
+                        </p>
                         </p>
                         <p>
                             <a href="reference/nuspec.md">.nuspec</a>
@@ -228,7 +228,7 @@ hide_bc: true
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Resources</h3>
+                        <h3><a href="policies/governance.md">Resource</a></h3>
                         <p>
                             <a href="policies/governance.md">Policies - NuGet</a>
                         </p>
