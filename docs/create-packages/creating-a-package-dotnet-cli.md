@@ -50,7 +50,7 @@ You can also set the optional properties, such as `Title`, `PackageDescription`,
 
 For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `<IncludeAssets>` and `<ExcludeAssets>` attributes. For more information, seee [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
 
-## Choose a unique package identifier and setting the version number
+## Choose a unique package identifier and set the version number
 
 The package identifier and the version number are the two most important values in the project because they uniquely identify the exact code that's contained in the package.
 
