@@ -103,7 +103,7 @@
 ### [Sync-Package](reference/ps-reference/ps-ref-sync-package.md)
 ### [Uninstall-Package](reference/ps-reference/ps-ref-uninstall-package.md)
 ### [Update-Package](reference/ps-reference/ps-ref-update-package.md)
-## NuGet API
+## NuGet Server API
 ### [Overview](api/overview.md)
 ### Resources
 #### [Autocomplete](api/search-autocomplete-service-resource.md)
