@@ -228,7 +228,7 @@ hide_bc: true
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><a href="policies/governance.md">Resource</a></h3>
+                        <h3><a href="policies/governance.md">Resources</a></h3>
                         <p>
                             <a href="policies/governance.md">Policies - NuGet</a>
                         </p>
