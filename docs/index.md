@@ -50,9 +50,6 @@ hide_bc: true
                     <div class="cardText">
                         <h3><a href="install-nuget-client-tools.md">Get started</a></h3>
                         <p>
-                            <a href="consume-packages/finding-and-choosing-packages.md">Find and choose packages</a>
-                        </p>
-                        <p>
                             <a href="quickstart/install-and-use-a-package-using-the-dotnet-cli.md">Install and use a package - dotnet CLI</a>
                         </p>
                         <p>
@@ -87,16 +84,19 @@ hide_bc: true
                             <a href="consume-packages/overview-and-workflow.md">Workflow (overview)</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-visual-studio.md">Using Visual Studio</a>
+                            <a href="consume-packages/finding-and-choosing-packages.md">Find and choose packages</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Using dotnet CLI</a>
+                            <a href="consume-packages/install-use-packages-visual-studio.md">Use Visual Studio</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-nuget-cli.md">Using nuget.exe CLI</a>
+                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Use dotnet CLI</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-powershell.md">Using Package Manager Console</a>
+                            <a href="consume-packages/install-use-packages-nuget-cli.md">Use nuget.exe CLI</a>
+                        </p>
+                        <p>
+                            <a href="consume-packages/install-use-packages-powershell.md">Use Package Manager Console</a>
                         </p>
                     </div>
                 </div>
