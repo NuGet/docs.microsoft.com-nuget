@@ -233,7 +233,7 @@ hide_bc: true
                             <a href="policies/governance.md">Policies - NuGet</a>
                         </p>
                         <p>
-                            <a href="nuget-org/data-requests.md">Policies - NuGet.org</a>
+                            <a href="nuget-org/policies/data-requests.md">Policies - NuGet.org</a>
                         </p>
                         <p>
                             <a href="release-notes/known-issues.md">Release notes</a>
