@@ -3,13 +3,13 @@ title: Install and use a NuGet package in Visual Studio
 description: A walkthrough tutorial on the process of installing and using a NuGet package in a Visual Studio project.
 author: karann-msft
 ms.author: karann
-ms.date: 01/23/2018
+ms.date: 07/24/2018
 ms.topic: quickstart
 ---
 
 # Quickstart: Install and use a package in Visual Studio
 
-NuGet packages contain reusable code that other developers make available to you for use in your projects. See [What is NuGet?](../What-is-NuGet.md) for background. Packages are installed into a Visual Studio project using the Package Manager UI or the Package Manager Console. This article demonstrates the process using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package and a Universal Windows Platform (UWP) project. The same process applies to any other .NET or .NET Core project.
+NuGet packages contain reusable code that other developers make available to you for use in your projects. See [What is NuGet?](../What-is-NuGet.md) for background. Packages are installed into a Visual Studio project using the Package Manager UI or the Package Manager Console. This article demonstrates the process using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package and a Windows Presentation Foundation (WPF) project. The same process applies to any other .NET or .NET Core project.
 
 Once installed, refer to the package in code with `using <namespace>` where \<namespace\> is specific to the package you're using. Once the reference is made, you can call the package through its API.
 
@@ -18,10 +18,9 @@ Once installed, refer to the package in code with `using <namespace>` where \<na
 
 ## Prerequisites
 
-- Visual Studio 2017 with the Universal Windows Platform development workload, or
-- Visual Studio 2015 Update 3 with Tools for Universal Windows Apps.
+- Visual Studio 2019 with the .NET Desktop Development workload.
 
-You can install the 2017 Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions.
+You can install the 2019 Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions.
 
 If you're using Visual Studio for Mac, see [Include a NuGet package in your project](/visualstudio/mac/nuget-walkthrough).
 
@@ -29,11 +28,13 @@ If you're using Visual Studio for Mac, see [Include a NuGet package in your proj
 
 NuGet packages can be installed into any .NET project, provided that the package supports the same target framework as the project.
 
-For this walkthrough, use a simple Universal Windows (UWP) app. Create a project in Visual Studio using **File > New Project...** and selecting the **Windows Universal > Blank App (Universal Windows)**. Accept the default values for Target Version and Minimum Version when prompted.
+For this walkthrough, use a simple WPF app. Create a project in Visual Studio using **File > New Project...**, typing **.NET** in the search box, and then selecting the **WPF App (.NET Framework)**. Click **Next**. Accept the default values for **Framework** when prompted.
+
+Visual Studio creates the project, which opens in Solution Explorer.
 
 ## Add the Newtonsoft.Json NuGet package
 
-To install the package, you can use either the Package Manager UI or the Package Manager Console. When you install a package, NuGet records the dependency in either your project file or a `packages.config` file. For more information, see [Package consumption overview and workflow](../consume-packages/Overview-and-Workflow.md).
+To install the package, you can use either the Package Manager UI or the Package Manager Console. When you install a package, NuGet records the dependency in either your project file or a `packages.config` file (depending on the project format). For more information, see [Package consumption overview and workflow](../consume-packages/Overview-and-Workflow.md).
 
 ### Package Manager UI
 
@@ -47,7 +48,7 @@ To install the package, you can use either the Package Manager UI or the Package
 
 1. Accept any license prompts.
 
-1. (Visual Studio 2017) If prompted to select a package management format, select **PackageReference in project file**:
+1. (Visual Studio 2017 only) If prompted to select a package management format, select **PackageReference in project file**:
 
     ![Selecting a package management format](media/QS_Use-03b-SelectFormat.png)
 
@@ -67,18 +68,18 @@ To install the package, you can use either the Package Manager UI or the Package
 
 With the Newtonsoft.Json package in the project, you can call its `JsonConvert.SerializeObject` method to convert an object to a human-readable string.
 
-1. Open `MainPage.xaml` and replace the existing `Grid` element with the following:
+1. Open `MainWindow.xaml` and replace the existing `Grid` element with the following:
 
     ```xaml
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="White">
         <StackPanel VerticalAlignment="Center">
-            <Button Click="Button_Click" Content="Click Me" Margin="10"/>
-            <TextBlock Name="TextBlock" Text="TextBlock" Margin="10"/>
+            <Button Click="Button_Click" Width="100px" HorizontalAlignment="Center" Content="Click Me" Margin="10"/>
+            <TextBlock Name="TextBlock" HorizontalAlignment="Center" Text="TextBlock" Margin="10"/>
         </StackPanel>
     </Grid>
     ```
 
-1. Open the `MainPage.xaml.cs` file (located in Solution Explorer under the `MainPage.xaml` node), and insert the following code inside the `MainPage` class:
+1. Open the `MainWindow.xaml.cs` file (located in Solution Explorer under the `MainWindow.xaml` node), and insert the following code inside the `MainWindow` class:
 
     ```cs
     public class Account
@@ -109,11 +110,11 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 
 1. Build and run the app by pressing F5 or selecting **Debug > Start Debugging**:
 
-    ![Initial output of the UWP app](media/QS_Use-06-AppStart.png)
+    ![Initial output of the WPF app](media/QS_Use-06-AppStart.png)
 
 1. Select on the button to see the contents of the TextBlock replaced with some JSON text:
 
-    ![Output of the UWP app after selecting the button](media/QS_Use-07-AppEnd.png)
+    ![Output of the WPF app after selecting the button](media/QS_Use-07-AppEnd.png)
 
 ## Next steps
 
@@ -121,6 +122,9 @@ Congratulations on installing and using your first NuGet package!
 
 > [!div class="nextstepaction"]
 > [Install and manage packages using Visual Studio](../consume-packages/install-use-packages-visual-studio.md)
+
+> [!div class="nextstepaction"]
+> [Install and manage packages using Package Manager Console](../consume-packages/install-use-packages-powershell.md)
 
 To explore more that NuGet has to offer, select the links below.
 
