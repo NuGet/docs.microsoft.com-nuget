@@ -26,7 +26,7 @@ hide_bc: true
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Introduction to NuGet</h3>
+                        <h3><a href="what-is-nuget.md">Introduction to NuGet</a></h3>
                         <p>
                             <a href="what-is-nuget.md">What is NuGet?</a>
                         </p>
@@ -48,7 +48,7 @@ hide_bc: true
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Get started - Consume packages</h3>
+                        <h3><a href="quickstart/install-and-use-a-package-using-the-dotnet-cli.md">Get started</a></h3>
                         <p>
                             <a href="consume-packages/finding-and-choosing-packages.md">Find and choose packages</a>
                         </p>
@@ -58,22 +58,6 @@ hide_bc: true
                         <p>
                             <a href="quickstart/install-and-use-a-package-in-visual-studio.md">Install and use a package - Visual Studio</a>
                         </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="https://docs.microsoft.com/media/common/i_get-started.svg" alt="Get started icon" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Get started - Create packages</h3>
                         <p>
                             <a href="quickstart/create-and-publish-a-package-using-the-dotnet-cli.md">Create a package - dotnet CLI</a>
                         </p>
@@ -88,7 +72,7 @@ hide_bc: true
             </div>
         </div>
     </li>
-        <li>
+    <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -98,21 +82,21 @@ hide_bc: true
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Consume packages</h3>
+                        <h3><a href="consume-packages/overview-and-workflow.md">Consume packages</a></h3>
                         <p>
                             <a href="consume-packages/overview-and-workflow.md">Workflow (overview)</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-visual-studio.md">Manage packages - Visual Studio</a>
+                            <a href="consume-packages/install-use-packages-visual-studio.md">Using Visual Studio</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Manage packages - dotnet CLI</a>
+                            <a href="consume-packages/install-use-packages-dotnet-cli.md">Using dotnet CLI</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-nuget-cli.md">Manage packages - nuget.exe CLI</a>
+                            <a href="consume-packages/install-use-packages-nuget-cli.md">Using nuget.exe CLI</a>
                         </p>
                         <p>
-                            <a href="consume-packages/install-use-packages-powershell.md">Manage packages - Package Manager Console</a>
+                            <a href="consume-packages/install-use-packages-powershell.md">Using Package Manager Console</a>
                         </p>
                         <p>
                             <a href="consume-packages/package-references-in-project-files.md">Package references in project files</a>
@@ -132,7 +116,7 @@ hide_bc: true
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Create packages</h3>
+                        <h3><a href="create-packages/overview-and-workflow.md">Create packages</a></h3>
                         <p>
                             <a href="create-packages/overview-and-workflow.md">Workflow (overview)</a>
                         </p>
@@ -160,7 +144,7 @@ hide_bc: true
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Publish packages</h3>
+                        <h3><a href="nuget-org/publish-a-package.md">Publish packages</a></h3>
                         <p>
                             <a href="nuget-org/publish-a-package.md">Publish to NuGet.org</a>
                         </p>
@@ -182,7 +166,7 @@ hide_bc: true
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>NuGet.org</h3>
+                        <h3><a href="nuget-org/overview-nuget-org.md">NuGet.org</a></h3>
                         <p>
                             <a href="nuget-org/overview-nuget-org.md">Overview</a>
                         </p>
@@ -213,7 +197,7 @@ hide_bc: true
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Reference</h3>
+                        <h3><a href="reference/nuspec.md">Reference</a></h3>
                         <p>
                             <a href="reference/dotnet-commands.md">dotnet CLI</a>
                         </p>
@@ -228,6 +212,37 @@ hide_bc: true
                         </p>
                         <p>
                             <a href="api/overview.md">NuGet API</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com//media/common/i_multi-connect.svg" alt="Multi-connect icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Resources</h3>
+                        <p>
+                            <a href="policies/governance.md">Policies - NuGet</a>
+                        </p>
+                        <p>
+                            <a href="nuget-org/data-requests.md">Policies - NuGet.org</a>
+                        </p>
+                        <p>
+                            <a href="release-notes/known-issues.md">Release notes</a>
+                        </p>
+                        <p>
+                            <a href="faqs/nuget-faq.md">FAQ - NuGet</a>
+                        </p>
+                        <p>
+                            <a href="nuget-org/nuget-org-faq.md">FAQ - NuGet.org</a>
                         </p>
                     </div>
                 </div>
