@@ -3,7 +3,7 @@ title: What happens when a package is installed?
 description: Detailed information about the package installation process
 author: karann-msft
 ms.author: karann
-ms.date: 0/20/2019
+ms.date: 06/20/2019
 ms.topic: conceptual
 ---
 

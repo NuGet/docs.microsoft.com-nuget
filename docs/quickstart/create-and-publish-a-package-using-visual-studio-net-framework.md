@@ -1,5 +1,5 @@
 ---
-title: Create and publish a .NET Framework package using Visual Studio on Windows
+title: Create and publish a .NET Framework NuGet package using Visual Studio on Windows
 description: A walkthrough tutorial on creating and publishing a .NET Framework NuGet package using Visual Studio on Windows.
 author: karann-msft
 ms.author: karann
@@ -140,7 +140,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using `nuget.exe` wit
 
 ### Publish with nuget push
 
-1. Change to the folder containing the `.nupkg` file.
+1. Open a command line and change to the folder containing the `.nupkg` file.
 
 1. Run the following command, specifying your package name and replacing the key value with your API key:
 
@@ -157,7 +157,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using `nuget.exe` wit
     Your package was pushed.
     ```
 
-See [nuget push](../tools/cli-ref-push.md).
+See [nuget push](../reference/cli-reference/cli-ref-push.md).
 
 ### Publish errors
 
@@ -167,9 +167,15 @@ See [nuget push](../tools/cli-ref-push.md).
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## Related topics
+## Next steps
 
-- [Create a Package](../create-packages/creating-a-package.md)
+Congratulations on creating your first NuGet package!
+
+> [!div class="nextstepaction"]
+> [Create a Package](../create-packages/creating-a-package.md)
+
+To explore more that NuGet has to offer, select the links below.
+
 - [Publish a Package](../nuget-org/publish-a-package.md)
 - [Pre-release Packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)

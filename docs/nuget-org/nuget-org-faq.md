@@ -247,13 +247,15 @@ Follow the steps given in [delete your nuget.org account](#how-to-delete-my-nuge
 
 To delete your account, please note that we recommend that you transfer the ownership of any packages where you are the sole owner. You can read more about [managing package owners](https://docs.microsoft.com/en-us/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg) on how to do it. This will also help us expedite your request.
 
+If you are looking to transform your account to an organization, follow the steps given in [transform my nuget.org account to an organization](#how-to-transform-my-nugetorg-account-to-an-organization).
+
 > [!Important]
 > Deleting the user will result in following:
+>  1. Your username will be reserved and no one will be able to re-use it to create an individual account or an organization account
 >  1. Revoke associated API key(s). 
->  2. Remove the account as an owner for any child packages.
->  3. Dissociate all previously existent ID prefix reservations with this account.
->  4. Remove the account as a member of any organizations.
->  5. Your username will be reserved and no one will be able to re-use it again without our permissions.
+>  1. Remove the account as an owner for any child packages.
+>  1. Dissociate all previously existent ID prefix reservations with this account.
+>  1. Remove the account as a member of any organizations.
 
 Follow the following steps to proceed with account deletion.
 1. [Login to nuget.org](https://www.nuget.org/users/account/LogOn) with the account you wish to delete.
