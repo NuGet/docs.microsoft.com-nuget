@@ -67,5 +67,5 @@ Here is the *.csproj* file that is generated using the preceding steps and .NET 
 
 ## See also
 
-[How to specify target frameworks](/dotnet/standard/frameworks#how-to-specify-target-frameworks)
-[Cross-platform targeting](/dotnet/standard/library-guidance/cross-platform-targeting)
+* [How to specify target frameworks](/dotnet/standard/frameworks#how-to-specify-target-frameworks)
+* [Cross-platform targeting](/dotnet/standard/library-guidance/cross-platform-targeting)
