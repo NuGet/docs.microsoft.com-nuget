@@ -72,6 +72,8 @@ When reviewing any application for ID prefix reservation, the [nuget.org](https:
 
 1. Does the package ID prefix properly and clearly identify the package owner?
 
+1. Has the package owner [enabled 2FA for their NuGet.org account](individual-accounts.md#enable-two-factor-authentication-2fa)?
+
 1. Are a significant number of the packages that have already been submitted by the owner under the package ID prefix?
 
 1. Is the package ID prefix something common that should not belong to any individual owner or organization?
