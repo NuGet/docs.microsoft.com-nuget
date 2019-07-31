@@ -112,7 +112,7 @@ Here is how you could read the information contained in the license file inside 
 1. It should have a tag like `<license type="file">license\license.txt</license>`. This implies the license file is named `license.txt` and it is inside a folder called `license` which would also be at the root of that folder.
 1. Navigate to the `license` folder and open the `license.txt` file.
 
-For the MSBuild equivalent to setting the license in the `.nuspec`, take a look at [Packing a license expression or a license file](../reference/msbuild-targets.md#packing-a-license-expression-or-a-license-file.).
+For the MSBuild equivalent to setting the license in the `.nuspec`, take a look at [Packing a license expression or a license file](../reference/msbuild-targets#packing-a-license-expression-or-a-license-file.).
 
 ## Search Syntax
 
