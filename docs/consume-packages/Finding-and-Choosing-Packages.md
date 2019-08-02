@@ -77,7 +77,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 
     ![Download statistics on a package's listing page](media/Finding-03-Downloads.png)
 
-- *GitHub Usage*: on the package page, the **GitHub Usage** sections lists the top GitHub repositories that depend on this package. A package that is depended on by many popular GitHub repositories is typically a better choice.
+- *GitHub Usage*: on the package page, the **GitHub Usage** section lists the top GitHub repositories that depend on this package. A package that many popular GitHub repositories depend on is typically a better choice.
 
     ![GitHub Usage](media/GitHub-Usage.png)
 
