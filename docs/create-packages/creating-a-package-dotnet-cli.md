@@ -75,14 +75,14 @@ The package identifier and the version number are the two most important values 
 
 To build a NuGet package (a `.nupkg` file) from the project, run the `dotnet pack` command, which also builds the project automatically:
 
-#### [dotnet CLI](#tab/dotnet-cli)
+# [.NET Core CLI](#tab/netcore-cli)
 
 ```cli
 # Uses the project file in the current folder by default
 dotnet pack
 ```
 
-#### [MSBuild](#tab/msbuild)
+# [MSBuild](#tab/msbuild)
 
 1. Open the project file and include the following:
 
@@ -94,23 +94,23 @@ dotnet pack
    </ItemGroup>
   ```
 
-1. Open a Developer command prompt (In the **Search** box, type **Developer command prompt**).
+2. Open a Developer command prompt (In the **Search** box, type **Developer command prompt**).
 
-1. Switch to the folder containing the project file and type the following command to install the NuGet.Build.Tasks.Pack package.
+3. Switch to the folder containing the project file and type the following command to install the NuGet.Build.Tasks.Pack package.
 
    ```cmd
    # Uses the project file in the current folder by default
    msbuild -t:restore
    ```
 
-1. Type the following command:
+4. Type the following command:
 
    ```cmd
    # Uses the project file in the current folder by default
    msbuild -t:pack
    ```
-
-* * * 
+   
+--- 
 
 The output shows the path to the `.nupkg` file. Here's the output for the dotnet CLI:
 
