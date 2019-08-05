@@ -55,7 +55,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | LicenseUrl | PackageLicenseUrl | empty | `licenseUrl` is being deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
 | ProjectUrl | PackageProjectUrl | empty | |
 | IconUrl | PackageIconUrl | empty | |
-| Tags | PackageTags | empty | Tags are semi-colon delimited. |
+| Tags | PackageTags | empty | Tags are space delimited. |
 | ReleaseNotes | PackageReleaseNotes | empty | |
 | Repository/Url | RepositoryUrl | empty | Repository URL used to clone or retrieve source code. Example: *https://github.com/NuGet/NuGet.Client.git* |
 | Repository/Type | RepositoryType | empty | Repository type. Examples: *git*, *tfs*. |
