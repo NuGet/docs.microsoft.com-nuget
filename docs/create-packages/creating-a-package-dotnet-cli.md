@@ -84,9 +84,26 @@ dotnet pack
 
 #### [MSBuild](#tab/msbuild)
 
+1. Open the project file and include the following:
+
+   ```xml
+   <ItemGroup>
+     <!-- ... -->
+     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.2.0"/>
+     <!-- ... -->
+   </ItemGroup>
+  ```
+
 1. Open a Developer command prompt (In the **Search** box, type **Developer command prompt**).
 
-2. Switch to the folder containing the project file and type the following command:
+1. Switch to the folder containing the project file and type the following command to install the NuGet.Build.Tasks.Pack package.
+
+   ```cmd
+   # Uses the project file in the current folder by default
+   msbuild -t:restore
+   ```
+
+1. Type the following command:
 
    ```cmd
    # Uses the project file in the current folder by default
