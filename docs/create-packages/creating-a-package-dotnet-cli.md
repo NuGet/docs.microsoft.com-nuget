@@ -92,7 +92,7 @@ dotnet pack
      <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.2.0"/>
      <!-- ... -->
    </ItemGroup>
-  ```
+   ```
 
 2. Open a Developer command prompt (In the **Search** box, type **Developer command prompt**).
 
@@ -109,7 +109,7 @@ dotnet pack
    # Uses the project file in the current folder by default
    msbuild -t:pack
    ```
-   
+
 --- 
 
 The output shows the path to the `.nupkg` file. Here's the output for the dotnet CLI:
