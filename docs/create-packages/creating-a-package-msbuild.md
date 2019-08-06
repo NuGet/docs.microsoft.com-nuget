@@ -85,6 +85,8 @@ To use MSBuild, add the NuGet.Build.Tasks.Pack package to your project.
 
 2. Open a Developer command prompt (In the **Search** box, type **Developer command prompt**).
 
+   You typically want to start the Developer Command Prompt for Visual Studio from the **Start** menu, as it will be configured with all the necessary paths for MSBuild.
+
 3. Switch to the folder containing the project file and type the following command to install the NuGet.Build.Tasks.Pack package.
 
    ```cmd
