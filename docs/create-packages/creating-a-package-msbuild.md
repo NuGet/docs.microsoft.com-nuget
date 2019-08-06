@@ -9,13 +9,13 @@ ms.topic: conceptual
 
 # Create a NuGet package using MSBuild
 
-No matter what your package does or what code it contains, you need to package that functionality into a component that can be shared with and used by any number of other developers. This article describes how to create a package using MSBuild. To use MSBuild, first install the `dotnet` CLI, see [Install NuGet client tools](../install-nuget-client-tools.md). Starting in Visual Studio 2017, the dotnet CLI is included with .NET Core workloads.
+When you create a NuGet package from your code, you package that functionality into a component that can be shared with and used by any number of other developers. This article describes how to create a package using MSBuild. To use MSBuild, included with Visual Studio or installed separately, you must also install the `dotnet` CLI, see [Install NuGet client tools](../install-nuget-client-tools.md). Starting in Visual Studio 2017, the dotnet CLI is included with .NET Core workloads.
 
-For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, NuGet uses information in the project file directly to create a package.  For a non-SDK-style project that uses `<PackageReference>`, you can also use MSBuild (`msbuild /t:pack`).
+For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, NuGet uses information in the project file directly to create a package.  For a non-SDK-style project that uses `<PackageReference>`, NuGet also uses the project file to create a package.
 
 To build with MSBuild, you need to add the NuGet.Build.Tasks.Pack package to the project dependencies. For detailed information about MSBuild pack targets, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
-`msbuild -t:pack` is functionality equivalent to `dotnet pack`. For step-by-step tutorials using the `dotnet` CLI instead, see [Create .NET Standard Packages with dotnet CLI](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md).
+The command that creates a package, `msbuild -t:pack`, is functionality equivalent to `dotnet pack`.
 
 > [!IMPORTANT]
 > This topic applies to [SDK-style](../resources/check-project-format.md) projects, typically .NET Core and .NET Standard projects.
@@ -30,7 +30,7 @@ The following properties are required to create a package.
 - `Authors`, author and owner information. If not specified, the default value is `AssemblyName`.
 - `Company`, your company name. If not specified, the default value is `AssemblyName`.
 
-In Visual Studio, you can set these values in the project properties (right-click the project in Solution Explorer, choose **Properties**, and select the **Package** tab). You can also set these properties directly in the project files (`.csproj`).
+In Visual Studio, you can set these values in the project properties (right-click the project in Solution Explorer, choose **Properties**, and select the **Package** tab). You can also set these properties directly in the project files (*.csproj*).
 
 ```xml
 <PropertyGroup>
@@ -92,7 +92,7 @@ To use MSBuild, add the NuGet.Build.Tasks.Pack package to your project.
    msbuild -t:restore
    ```
 
-   Make sure that the MSBuild output indicates that the built completed successfully.
+   Make sure that the MSBuild output indicates that the build completed successfully.
 
 ## Run the msbuild -t:pack command
 
@@ -126,7 +126,6 @@ CopyFilesToOutputDirectory:
 GenerateNuspec:
   Successfully created package 'C:\Users\username\source\repos\ClassLib_DotNetStandard\bin\Debug\AppLogger.1.0.0.nupkg'.
 Done Building Project "C:\Users\username\source\repos\ClassLib_DotNetStandard\ClassLib_DotNetStandard.csproj" (pack target(s)).
-
 
 Build succeeded.
     0 Warning(s)
