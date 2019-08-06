@@ -21,9 +21,15 @@ It's a simple process to create a NuGet package from a .NET Class Library and pu
 
 You can use an existing .NET Class Library project for the code you want to package, or create a simple one as follows:
 
-1. Create a folder called `AppLogger` and change into it.
+1. Create a folder called `AppLogger`.
 
-1. Create the project using `dotnet new classlib`, which uses the name of the current folder for the project.
+1. Open a command prompt and switch to the `AppLogger` folder.
+
+1. Type `dotnet new classlib`, which uses the name of the current folder for the project.
+
+   This creates the new project.
+
+1. Use `dotnet run` to test that the app has been created properly.
 
 ## Add package metadata to the project file
 
