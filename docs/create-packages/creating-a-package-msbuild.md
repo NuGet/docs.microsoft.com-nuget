@@ -9,11 +9,11 @@ ms.topic: conceptual
 
 # Create a NuGet package using MSBuild
 
-No matter what your package does or what code it contains, you need to package that functionality into a component that can be shared with and used by any number of other developers. This article describes how to create a package using MSBuild and the dotnet CLI. To install the `dotnet` CLI, see [Install NuGet client tools](../install-nuget-client-tools.md). Starting in Visual Studio 2017, the dotnet CLI is included with .NET Core workloads.
+No matter what your package does or what code it contains, you need to package that functionality into a component that can be shared with and used by any number of other developers. This article describes how to create a package using MSBuild. To use MSBuild, first install the `dotnet` CLI, see [Install NuGet client tools](../install-nuget-client-tools.md). Starting in Visual Studio 2017, the dotnet CLI is included with .NET Core workloads.
 
 For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, NuGet uses information in the project file directly to create a package.  For a non-SDK-style project that uses `<PackageReference>`, you can also use MSBuild (`msbuild /t:pack`).
 
-To build with MSBuild, you need to add the NuGet.Build.Tasks.Pack package to their dependencies. See [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
+To build with MSBuild, you need to add the NuGet.Build.Tasks.Pack package to the project dependencies. For detailed information about MSBuild pack targets, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
 `msbuild -t:pack` is functionality equivalent to `dotnet pack`. For step-by-step tutorials using the `dotnet` CLI instead, see [Create .NET Standard Packages with dotnet CLI](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md).
 
