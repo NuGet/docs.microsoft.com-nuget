@@ -26,6 +26,8 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
 
 1. Create a folder for the project.
 
+1. Open a command prompt and switch to the new folder.
+
 1. Create the project using the following command:
 
     ```cli
