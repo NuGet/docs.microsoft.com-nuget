@@ -1,8 +1,6 @@
 ---
 title: How to publish NuGet symbol packages using the new symbol package format '.snupkg'| Microsoft Docs
-author:
-- cristinamanu
-- kraigb
+author: cristinamanu
 ms.author:
 - cristinamanu
 - kraigb
