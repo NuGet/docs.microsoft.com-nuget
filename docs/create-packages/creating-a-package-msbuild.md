@@ -9,16 +9,16 @@ ms.topic: conceptual
 
 # Create a NuGet package using MSBuild
 
-When you create a NuGet package from your code, you package that functionality into a component that can be shared with and used by any number of other developers. This article describes how to create a package using MSBuild. To use MSBuild, included with Visual Studio or installed separately, you must also install the `dotnet` CLI, see [Install NuGet client tools](../install-nuget-client-tools.md). Starting in Visual Studio 2017, the dotnet CLI is included with .NET Core workloads.
+When you create a NuGet package from your code, you package that functionality into a component that can be shared with and used by any number of other developers. This article describes how to create a package using MSBuild. MSBuild comes preinstalled with every Visual Studio workload that contains NuGet. Additionally you can also use MSBuild through the dotnet CLI with [dotnet msbuild](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-msbuild)
 
 For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, NuGet uses information in the project file directly to create a package.  For a non-SDK-style project that uses `<PackageReference>`, NuGet also uses the project file to create a package.
 
-To build with MSBuild, you need to add the NuGet.Build.Tasks.Pack package to the project dependencies. For detailed information about MSBuild pack targets, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
+SDK-style projects have the pack functionality available by default. For non SDK-style PackageReference projects, you need to add the NuGet.Build.Tasks.Pack package to the project dependencies. For detailed information about MSBuild pack targets, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
 The command that creates a package, `msbuild -t:pack`, is functionality equivalent to `dotnet pack`.
 
 > [!IMPORTANT]
-> This topic applies to [SDK-style](../resources/check-project-format.md) projects, typically .NET Core and .NET Standard projects.
+> This topic applies to [SDK-style](../resources/check-project-format.md) projects, typically .NET Core and .NET Standard projects, and to non-SDK-style projects that use PackageReference.
 
 ## Set properties
 
@@ -63,7 +63,7 @@ You can also set the optional properties, such as `Title`, `PackageDescription`,
 > [!NOTE]
 > For packages built for public consumption, pay special attention to the **PackageTags** property, as tags help others find your package and understand what it does.
 
-For details on declaring dependencies and specifying version numbers, see see [Package references in project files](../consume-packages/package-references-in-project-files.md) and [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `<IncludeAssets>` and `<ExcludeAssets>` attributes. For more information, seee [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+For details on declaring dependencies and specifying version numbers, see [Package references in project files](../consume-packages/package-references-in-project-files.md) and [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `<IncludeAssets>` and `<ExcludeAssets>` attributes. For more information, seee [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
 
 ## Choose a unique package identifier and set the version number
 
@@ -71,7 +71,7 @@ For details on declaring dependencies and specifying version numbers, see see [P
 
 ## Add the NuGet.Build.Tasks.Pack package
 
-To use MSBuild, add the NuGet.Build.Tasks.Pack package to your project.
+If you are using MSBuild with a non-SDK-style project and PackageReference, add the NuGet.Build.Tasks.Pack package to your project.
 
 1. Open the project file and add the following after the `<PropertyGroup>` element:
 
@@ -144,7 +144,7 @@ To automatically run `msbuild -t:pack` when you build or restore the project, ad
 <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 ```
 
-When you run `msbuild -t:pack` on a solution, this packs all the projects in the solution that are packable ([<IsPackable>](/dotnet/core/tools/csproj#nuget-metadata-properties) property is set to `true`.
+When you run `msbuild -t:pack` on a solution, this packs all the projects in the solution that are packable ([<IsPackable>](/dotnet/core/tools/csproj#nuget-metadata-properties) property is set to `true`).
 
 > [!NOTE]
 > When you automatically generate the package, the time to pack increases the build time for your project.
