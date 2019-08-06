@@ -63,7 +63,7 @@ You can also set the optional properties, such as `Title`, `PackageDescription`,
 > [!NOTE]
 > For packages built for public consumption, pay special attention to the **PackageTags** property, as tags help others find your package and understand what it does.
 
-For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `<IncludeAssets>` and `<ExcludeAssets>` attributes. For more information, seee [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+For details on declaring dependencies and specifying version numbers, see see [Package references in project files](../consume-packages/package-references-in-project-files.md) and [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `<IncludeAssets>` and `<ExcludeAssets>` attributes. For more information, seee [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
 
 ## Choose a unique package identifier and set the version number
 
@@ -84,6 +84,8 @@ To use MSBuild, add the NuGet.Build.Tasks.Pack package to your project.
    ```
 
 2. Open a Developer command prompt (In the **Search** box, type **Developer command prompt**).
+
+   You typically want to start the Developer Command Prompt for Visual Studio from the **Start** menu, as it will be configured with all the necessary paths for MSBuild.
 
 3. Switch to the folder containing the project file and type the following command to install the NuGet.Build.Tasks.Pack package.
 
