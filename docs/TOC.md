@@ -39,7 +39,6 @@
 ## [Create a symbol package](create-packages/symbol-packages-snupkg.md)
 ## Advanced tasks
 ### [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
-### [Specify MSBuild pack and restore targets](reference/msbuild-targets.md)
 ### [Modify source code and config files](create-packages/source-and-config-file-transformations.md)
 ### [Select assemblies referenced by projects](create-packages/select-assemblies-referenced-by-projects.md)
 ### [Set package type](create-packages/set-package-type.md)
@@ -71,6 +70,7 @@
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config file](reference/nuget-config-file.md)
 ## [Target frameworks](reference/target-frameworks.md)
+## [pack and restore as MSBuild targets](reference/msbuild-targets.md)
 ## [dotnet CLI](reference/dotnet-Commands.md)
 ## [nuget.exe CLI reference](reference/nuget-exe-cli-reference.md)
 ### [add](reference/cli-reference/cli-ref-add.md)

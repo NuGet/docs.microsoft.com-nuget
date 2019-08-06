@@ -209,6 +209,8 @@ hide_bc: true
                         <p>
                             <a href="consume-packages/package-references-in-project-files.md">Package references</a>
                         </p>
+                        <p>
+                            <a href="reference/msbuild-targets.md">pack and restore as MSBuild targets</a>
                         </p>
                         <p>
                             <a href="reference/nuspec.md">.nuspec</a>
