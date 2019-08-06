@@ -124,6 +124,9 @@ hide_bc: true
                             <a href="create-packages/creating-a-package.md">Create a package - nuget.exe CLI</a>
                         </p>
                         <p>
+                            <a href="create-packages/creating-a-package.md">Create a package - MSBuild</a>
+                        </p>
+                        <p>
                             <a href="create-packages/multiple-target-frameworks-project-file.md">Support multiple target frameworks</a>
                         </p>
                     </div>
@@ -236,7 +239,7 @@ hide_bc: true
                             <a href="nuget-org/policies/data-requests.md">Policies - NuGet.org</a>
                         </p>
                         <p>
-                            <a href="release-notes/">Release notes</a>
+                            <a href="release-notes/known-issues.md">Release notes</a>
                         </p>
                         <p>
                             <a href="faqs/nuget-faq.md">FAQ - NuGet</a>
