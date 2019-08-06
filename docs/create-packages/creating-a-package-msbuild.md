@@ -73,7 +73,7 @@ For details on declaring dependencies and specifying version numbers, see [Packa
 
 To use MSBuild, add the NuGet.Build.Tasks.Pack package to your project.
 
-1. Open the project file and include the following after the `<PropertyGroup>` element:
+1. Open the project file and add the following after the `<PropertyGroup>` element:
 
    ```xml
    <ItemGroup>
@@ -92,7 +92,7 @@ To use MSBuild, add the NuGet.Build.Tasks.Pack package to your project.
    msbuild -t:restore
    ```
 
-   Make sure that the output indicates that the built completed successfully.
+   Make sure that the MSBuild output indicates that the built completed successfully.
 
 ## Run the msbuild -t:pack command
 
@@ -163,6 +163,7 @@ Once you've created a package, which is a `.nupkg` file, you can publish it to t
 
 You might also want to extend the capabilities of your package or otherwise support other scenarios as described in the following topics:
 
+- [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md)
 - [Package versioning](../reference/package-versioning.md)
 - [Support multiple target frameworks](../create-packages/multiple-target-frameworks-project-file.md)
 - [Transformations of source and configuration files](../create-packages/source-and-config-file-transformations.md)

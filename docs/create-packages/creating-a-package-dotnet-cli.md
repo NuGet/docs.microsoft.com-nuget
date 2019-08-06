@@ -42,7 +42,7 @@ In Visual Studio, you can set these values in the project properties (right-clic
 > [!Important]
 > Give the package an identifier that's unique across nuget.org or whatever package source you're using.
 
-The following example shows a simple, complete project file with these properties included.
+The following example shows a simple, complete project file with these properties included. (You can create a new default project using the `dotnet new classlib` command.)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
