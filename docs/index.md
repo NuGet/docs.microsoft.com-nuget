@@ -239,7 +239,7 @@ hide_bc: true
                             <a href="nuget-org/policies/data-requests.md">Policies - NuGet.org</a>
                         </p>
                         <p>
-                            <a href="release-notes/">Release notes</a>
+                            <a href="release-notes/known-issues.md">Release notes</a>
                         </p>
                         <p>
                             <a href="faqs/nuget-faq.md">FAQ - NuGet</a>

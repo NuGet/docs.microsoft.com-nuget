@@ -33,7 +33,7 @@
 ## [Overview and workflow](create-packages/overview-and-workflow.md)
 ## [Create a package (dotnet CLI)](create-packages/creating-a-package-dotnet-cli.md)
 ## [Create a package (nuget.exe CLI)](create-packages/creating-a-package.md)
-## [Create a package (MSBuild)](creating-a-package-msbuild.md)
+## [Create a package (MSBuild)](create-packages/creating-a-package-msbuild.md)
 ## [Support multiple target frameworks in your project file](create-packages/multiple-target-frameworks-project-file.md)
 ## [Build a prerelease package](create-packages/prerelease-packages.md)
 ## [Create a symbol package](create-packages/symbol-packages-snupkg.md)
