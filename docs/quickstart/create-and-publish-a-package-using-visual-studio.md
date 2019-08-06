@@ -94,17 +94,24 @@ namespace AppLogger
     ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
     ```
 
-### Alternate option: pack with MSBuild
+### (Optional) Generate package on build
+
+You can configure Visual Studio to automatically generate the NuGet package when you build the project.
+
+1. In Solution Explorer, right-click the project and choose **Properties**.
+
+2. In the **Package** tab, select **Generate NuGet package on build**.
+
+   ![Automatically generate package on build](media/qs_create-vs-05-generate-on-build.png)
+
+> [!NOTE]
+> When you automatically generate the package, the time to pack increases the build time for your project.
+
+### (Optional) pack with MSBuild
 
 As an alternate to using the **Pack** menu command, NuGet 4.x+ and MSBuild 15.1+ supports a `pack` target when the project contains the necessary package data. Open a command prompt, navigate to your project folder and run the following command. (You typically want to start the "Developer Command Prompt for Visual Studio" from the Start menu, as it will be configured with all the necessary paths for MSBuild.)
 
-```cli
-msbuild -t:pack -p:Configuration=Release
-```
-
-The package can then be found in the `bin\Release` folder.
-
-For additional options with `msbuild -t:pack`, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md#pack-target).
+For more information, see [Create a package using MSBuild](../create-packages/creating-a-package-msbuild.md).
 
 ## Publish the package
 
