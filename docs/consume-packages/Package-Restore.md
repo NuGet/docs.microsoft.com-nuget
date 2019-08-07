@@ -26,19 +26,16 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
 
 1. If the project references in your project file (*.csproj*) or your *packages.config* file are up to date, use your preferred tools to restore packages.
 
-   [Visual Studio](#restore-packages-using-visual-studio) ([automatic restore](#restore-packages-automatically-using-visual-studio) or [manual restore](#restore-packages-manually-using-visual-studio))
-   [dotnet CLI](#restore-packages-using-the-dotnet-cli)
-   [nuget.exe CLI](#restore-packages-using-the-nuget-exe-cli)
-   [MSBuild](#restore-packages-using-msbuild)
-   [Azure Pipelines](#restore-packages-using-azure-pipelines)
-   [Azure DevOps Server](#restore-packages-using-azure-devops-server)
+   - [Visual Studio](#restore-packages-using-visual-studio) ([automatic restore](#restore-packages-automatically-using-visual-studio) or [manual restore](#restore-packages-manually-using-visual-studio))
+   - [dotnet CLI](#restore-packages-using-the-dotnet-cli)
+   - [nuget.exe CLI](#restore-packages-using-the-nuget-exe-cli)
+   - [MSBuild](#restore-packages-using-msbuild)
+   - [Azure Pipelines](#restore-packages-using-azure-pipelines)
+   - [Azure DevOps Server](#restore-packages-using-azure-devops-server)
 
-   > [!IMPORTANT]
-   > The `install`command does not modify a project file or *packages.config*; in this way it's similar to `restore` in that it only adds packages to disk but does not change a project's dependencies. To add a dependency, either add a package through the Package Manager UI or Console in Visual Studio, or modify *packages.config* and then run either `install` or `restore`.
+2. If you still experience missing packages or package-related errors (such as error icons in Solution Explorer in Visual Studio), you may need to [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md).
 
-2. If you still experience package-related errors (such as error icons in Solution Explorer in Visual Studio), you may need to [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md).
-
-## Restore packages using Visual Studio
+## Restore using Visual Studio
 
 In Visual Studio on Windows, either:
 
@@ -64,11 +61,11 @@ Package Restore happens automatically when you create a project from a template 
 
 - In **Solution Explorer**, right click the solution and select **Restore NuGet Packages**.
 
-   If one or more individual packages still aren't installed properly, **Solution Explorer** shows an error icon. Right-click and select **Manage NuGet Packages**, and use **Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md)
+   If one or more individual packages still aren't installed properly, **Solution Explorer** shows an error icon. Right-click and select **Manage NuGet Packages**, and then use **Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md)
 
    If you see the error "This project references NuGet package(s) that are missing on this computer," or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," [enable automatic restore](#enable-and-disable-package-restore-visual-studio). For older projects, also see [Migrate to automatic package restore](#migrate-to-automatic-package-restore-visual-studio). Also see [Package Restore troubleshooting](Package-restore-troubleshooting.md).
 
-### Enable and disable package restore (Visual Studio)
+### Enable and disable package restore in Visual Studio
 
 In Visual Studio, you control Package Restore primarily through **Tools** > **Options** > **NuGet Package Manager**:
 
@@ -108,21 +105,21 @@ To enable or disable Package Restore for all users on a computer, a developer or
 > [!Important]
 > If you edit the `packageRestore` settings directly in `nuget.config`, restart Visual Studio, so that the **Options** dialog box shows the current values.
 
-## Restore packages using the dotnet CLI
+## Restore using the dotnet CLI
 
 [!INCLUDE [restore-dotnet-cli](includes/restore-dotnet-cli.md)]
 
 > [!IMPORTANT]
-> To add a package reference to the project file, [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x), which also runs the `restore` command.
+> To add a missing package reference to the project file, use [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x), which also runs the `restore` command.
 
-## Restore packages using the nuget.exe CLI
+## Restore using the nuget.exe CLI
 
 [!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
 
 > [!IMPORTANT]
 > The `restore`command does not modify a project file or *packages.config*. To add a dependency, either add a package through the Package Manager UI or Console in Visual Studio, or modify *packages.config* and then run either `install` or `restore`.
 
-## Restore packages using MSBuild
+## Restore using MSBuild
 
 Use the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command to restore packages listed in the project file with PackageReference. This command is available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017 and higher versions. Both `nuget restore` and `dotnet restore` use this command for applicable projects.
 
@@ -139,11 +136,11 @@ Use the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) com
 
    Make sure that the MSBuild output indicates that the build completed successfully.
 
-## Restore packages using Azure Pipelines
+## Restore using Azure Pipelines
 
 When you create a build definition in Azure Pipelines, include the NuGet [restore](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) or .NET Core [restore](/azure/devops/pipelines/tasks/build/dotnet-core-cli?view=azure-devops) task in the definition before any build tasks. Some build templates include the restore task by default.
 
-## Restore packages using Azure DevOps Server
+## Restore using Azure DevOps Server
 
 Azure DevOps Server and TFS 2013 and later automatically restore packages during build, if you're using a TFS 2013 or later Team Build template. For earlier TFS versions, you can include a build step to run a command-line restore option, or optionally migrate the build template to a later version. For more information, see [Set up package restore with Team Foundation Build](../consume-packages/team-foundation-build.md).
 
