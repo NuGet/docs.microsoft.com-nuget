@@ -140,6 +140,12 @@ To restore packages listed in the project file with PackageReference, use the th
    msbuild -t:restore
    ```
 
+3. Type the following command to rebuild the project.
+
+   ```cmd
+   msbuild
+   ```
+
    Make sure that the MSBuild output indicates that the build completed successfully.
 
 ## Restore using Azure Pipelines
