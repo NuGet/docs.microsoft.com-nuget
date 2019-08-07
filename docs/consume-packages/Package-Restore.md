@@ -28,12 +28,12 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
 
    - [Visual Studio](#restore-using-visual-studio) ([automatic restore](#restore-packages-automatically-using-visual-studio) or [manual restore](#restore-packages-manually-using-visual-studio))
    - [dotnet CLI](#restore-using-the-dotnet-cli)
-   - [nuget.exe CLI](#restore-using-the-nuget-exe-cli)
+   - [nuget.exe CLI](#restore-using-the-nugetexe-cli)
    - [MSBuild](#restore-using-msbuild)
    - [Azure Pipelines](#restore-using-azure-pipelines)
    - [Azure DevOps Server](#restore-using-azure-devops-server)
 
-   If the project references in your project file (*.csproj*) or your *packages.config* file are *not* up to date, you need to either install, update, or reinstall packages instead.
+   If the project references in your project file (*.csproj*) or your *packages.config* file are incorrect, you need to either install, update, or reinstall packages instead.
 
    For projects using PackageReference, after a successful restore, the package should be present in the *global-packages* folder and the `obj/project.assets.json` file is recreated; for projects using `packages.config`, the package should appear in the project's `packages` folder. The project should now build successfully. 
 
@@ -51,13 +51,13 @@ In Visual Studio on Windows, either:
 
 ### Restore packages automatically using Visual Studio
 
-Package Restore happens automatically when you create a project from a template or build a project, subject to the options in [Enable and disable package restore](#enable-and-disable-package-restore-visual-studio). In NuGet 4.0+, restore also happens automatically when you make changes to a SDK-style project (typically a .NET Core or .NET Standard project).
+Package Restore happens automatically when you create a project from a template or build a project, subject to the options in [Enable and disable package restore](#enable-and-disable-package-restore-in-visual-studio). In NuGet 4.0+, restore also happens automatically when you make changes to a SDK-style project (typically a .NET Core or .NET Standard project).
 
 1. Enable automatic package restore by choosing **Tools** > **Options** > **NuGet Package Manager**, and then selecting **Automatically check for missing packages during build in Visual Studio** under **Package Restore**.
 
    If you want Visual Studio to download the packages on restore, also select **Allow NuGet to download missing packages**.
 
-2. Build the project.
+1. Build the project.
 
    If one or more individual packages still aren't installed properly, **Solution Explorer** shows an error icon. Right-click and select **Manage NuGet Packages**, and use **Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md)
 
