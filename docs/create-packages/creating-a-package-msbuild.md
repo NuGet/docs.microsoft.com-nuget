@@ -100,7 +100,7 @@ If you are using MSBuild with a non-SDK-style project and PackageReference, add 
 
 To build a NuGet package (a `.nupkg` file) from the project, run the `msbuild -t:pack` command, which also builds the project automatically:
 
-In the Developer command prompt, type the following command:
+In the Developer command prompt for Visual Studio, type the following command:
 
 ```cmd
 # Uses the project file in the current folder by default
