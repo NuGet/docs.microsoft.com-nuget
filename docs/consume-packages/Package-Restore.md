@@ -35,6 +35,8 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
 
    If the project references in your project file (*.csproj*) or your *packages.config* file are *not* up to date, you need to either install, update, or reinstall packages instead.
 
+   After a successful restore, the package should be present in the *global-packages* folder. For projects using PackageReference, a restore should recreate the `obj/project.assets.json` file; for projects using `packages.config`, the package should appear in the project's `packages` folder. The project should now build successfully. 
+
 2. If you still experience missing packages or package-related errors (such as error icons in Solution Explorer in Visual Studio), you may need to [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md).
 
 ## Restore using Visual Studio
