@@ -1,6 +1,6 @@
 Use the [restore](../../reference/cli-reference/cli-ref-restore.md) command, which downloads and installs any packages missing from the *packages* folder.
 
-For projects migrated to PackageReference, use [msbuild -t:restore](package-restore.md#restore-packages-using-msbuild) to restore packages instead.
+For projects migrated to PackageReference, use [msbuild -t:restore](package-restore.md#restore-using-msbuild) to restore packages instead.
 
 `restore` only adds packages to disk but does not change a project's dependencies. To restore project dependencies, modify `packages.config`, then use the `restore` command.
 

@@ -22,7 +22,7 @@ Updating and reinstalling packages is accomplished as follows:
 | nuget.exe CLI | `nuget update` command | For all packages, delete the package folder, then run `nuget install`. For a single package, delete the package folder and use `nuget install <id>` to reinstall the same one. |
 
 > [!NOTE]
-> For the dotnet CLI, the equivalent procedure is not required. In a similar scenario, you can [restore packages with the dotnet CLI](package-restore.md#restore-packages-using-the-dotnet-cli).
+> For the dotnet CLI, the equivalent procedure is not required. In a similar scenario, you can [restore packages with the dotnet CLI](package-restore.md#restore-using-the-dotnet-cli).
 
 In this article:
 

@@ -49,12 +49,12 @@ The error can also happen if your project file contains absolute paths to packag
 Use one of the following methods to restore the packages:
 
 - If you've moved the project file, edit the file directly to update the package references.
-- [Visual Studio](package-restore.md#restore-packages-using-visual-studio) ([automatic restore](package-restore.md#restore-packages-automatically-using-visual-studio) or [manual restore](package-restore.md#restore-packages-manually-using-visual-studio))
-- [dotnet CLI](package-restore.md#restore-packages-using-the-dotnet-cli)
-- [nuget.exe CLI](package-restore.md#restore-packages-using-the-nuget-exe-cli)
-- [MSBuild](package-restore.md#restore-packages-using-msbuild)
-- [Azure Pipelines](package-restore.md#restore-packages-using-azure-pipelines)
-- [Azure DevOps Server](package-restore.md#restore-packages-using-azure-devops-server)
+- [Visual Studio](package-restore.md#restore-using-visual-studio) ([automatic restore](package-restore.md#restore-packages-automatically-using-visual-studio) or [manual restore](package-restore.md#restore-packages-manually-using-visual-studio))
+- [dotnet CLI](package-restore.md#restore-using-the-dotnet-cli)
+- [nuget.exe CLI](package-restore.md#restore-using-the-nuget-exe-cli)
+- [MSBuild](package-restore.md#restore-using-msbuild)
+- [Azure Pipelines](package-restore.md#restore-using-azure-pipelines)
+- [Azure DevOps Server](package-restore.md#restore-using-azure-devops-server)
 
 After a successful restore, the package should be present in the *global-packages* folder. For projects using PackageReference, a restore should recreate the `obj/project.assets.json` file; for projects using `packages.config`, the package should appear in the project's `packages` folder. The project should now build successfully. If not, [file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so we can follow up with you.
 

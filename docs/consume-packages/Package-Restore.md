@@ -26,12 +26,12 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
 
 1. If the project references in your project file (*.csproj*) or your *packages.config* file are up to date, use your preferred tool to restore packages.
 
-   - [Visual Studio](#restore-packages-using-visual-studio) ([automatic restore](#restore-packages-automatically-using-visual-studio) or [manual restore](#restore-packages-manually-using-visual-studio))
-   - [dotnet CLI](#restore-packages-using-the-dotnet-cli)
-   - [nuget.exe CLI](#restore-packages-using-the-nuget-exe-cli)
-   - [MSBuild](#restore-packages-using-msbuild)
-   - [Azure Pipelines](#restore-packages-using-azure-pipelines)
-   - [Azure DevOps Server](#restore-packages-using-azure-devops-server)
+   - [Visual Studio](#restore-using-visual-studio) ([automatic restore](#restore-packages-automatically-using-visual-studio) or [manual restore](#restore-packages-manually-using-visual-studio))
+   - [dotnet CLI](#restore-using-the-dotnet-cli)
+   - [nuget.exe CLI](#restore-using-the-nuget-exe-cli)
+   - [MSBuild](#restore-using-msbuild)
+   - [Azure Pipelines](#restore-using-azure-pipelines)
+   - [Azure DevOps Server](#restore-using-azure-devops-server)
 
    If the project references in your project file (*.csproj*) or your *packages.config* file are *not* up to date, you need to either install, update, or reinstall packages instead.
 
@@ -61,7 +61,7 @@ Package Restore happens automatically when you create a project from a template 
 
    If one or more individual packages still aren't installed properly, **Solution Explorer** shows an error icon. Right-click and select **Manage NuGet Packages**, and use **Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md)
 
-   If you see the error "This project references NuGet package(s) that are missing on this computer," or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," [enable automatic restore](#enable-and-disable-package-restore-visual-studio). For older projects, also see [Migrate to automatic package restore](#migrate-to-automatic-package-restore-visual-studio). Also see [Package Restore troubleshooting](Package-restore-troubleshooting.md).
+   If you see the error "This project references NuGet package(s) that are missing on this computer," or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," [enable automatic restore](#enable-and-disable-package-restore-in-visual-studio). For older projects, also see [Migrate to automatic package restore](#migrate-to-automatic-package-restore-visual-studio). Also see [Package Restore troubleshooting](Package-restore-troubleshooting.md).
 
 ### Restore packages manually using Visual Studio
 
@@ -69,7 +69,7 @@ Package Restore happens automatically when you create a project from a template 
 
    If one or more individual packages still aren't installed properly, **Solution Explorer** shows an error icon. Right-click and select **Manage NuGet Packages**, and then use **Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md)
 
-   If you see the error "This project references NuGet package(s) that are missing on this computer," or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," [enable automatic restore](#enable-and-disable-package-restore-visual-studio). For older projects, also see [Migrate to automatic package restore](#migrate-to-automatic-package-restore-visual-studio). Also see [Package Restore troubleshooting](Package-restore-troubleshooting.md).
+   If you see the error "This project references NuGet package(s) that are missing on this computer," or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," [enable automatic restore](#enable-and-disable-package-restore-in-visual-studio). For older projects, also see [Migrate to automatic package restore](#migrate-to-automatic-package-restore-visual-studio). Also see [Package Restore troubleshooting](Package-restore-troubleshooting.md).
 
 ### Enable and disable package restore in Visual Studio
 
