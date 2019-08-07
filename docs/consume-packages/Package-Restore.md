@@ -3,7 +3,7 @@ title: NuGet Package Restore
 description: An overview of how NuGet restores packages a project depends on, including how to disable restore and constrain versions.
 author: karann-msft
 ms.author: karann
-ms.date: 06/24/2019
+ms.date: 08/05/2019
 ms.topic: conceptual
 ---
 
@@ -26,14 +26,15 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
 
 1. If the project references in your project file (*.csproj*) or your *packages.config* file are up to date, use your preferred tools to restore packages.
 
-   [Visual Studio](#restore-packages-using-visual-studio)
+   [Visual Studio](#restore-packages-using-visual-studio) ([automatic restore](#restore-packages-automatically-using-visual-studio) or [manual restore](#restore-packages-manually-using-visual-studio))
    [dotnet CLI](#restore-packages-using-the-dotnet-cli)
    [nuget.exe CLI](#restore-packages-using-the-nuget-exe-cli)
    [MSBuild](#restore-packages-using-msbuild)
    [Azure Pipelines](#restore-packages-using-azure-pipelines)
    [Azure DevOps Server](#restore-packages-using-azure-devops-server)
 
-   If the project dependencies are not up to date, either install or [reinstall](../consume-packages/reinstalling-and-updating-packages.md) packages.
+   > [!IMPORTANT]
+   > The `install`command does not modify a project file or *packages.config*; in this way it's similar to `restore` in that it only adds packages to disk but does not change a project's dependencies. To add a dependency, either add a package through the Package Manager UI or Console in Visual Studio, or modify *packages.config* and then run either `install` or `restore`.
 
 2. If you still experience package-related errors (such as error icons in Solution Explorer in Visual Studio), you may need to [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md).
 
@@ -41,11 +42,31 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
 
 In Visual Studio on Windows, either:
 
-- Restore packages automatically. Package Restore happens automatically when you create a project from a template or build a project, subject to the options in [Enable and disable package restore](#enable-and-disable-package-restore-visual-studio). In NuGet 4.0+, restore also happens automatically when you make changes to a SDK-style project (typically a .NET Core or .NET Standard project).
+- Restore packages automatically, or
 
-- Restore packages manually. To restore manually, right-click the solution in **Solution Explorer** and select **Restore NuGet Packages**. If one or more individual packages still aren't installed properly, **Solution Explorer** shows an error icon. Right-click and select **Manage NuGet Packages**, and use **Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md)
+- Restore packages manually
 
-If you see the error "This project references NuGet package(s) that are missing on this computer," or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," [enable automatic restore](#enable-and-disable-package-restore-visual-studio). Also, see [Migrate to automatic package restore](#migrate-to-automatic-package-restore-visual-studio) and [Package Restore troubleshooting](Package-restore-troubleshooting.md).
+### Restore packages automatically using Visual Studio
+
+Package Restore happens automatically when you create a project from a template or build a project, subject to the options in [Enable and disable package restore](#enable-and-disable-package-restore-visual-studio). In NuGet 4.0+, restore also happens automatically when you make changes to a SDK-style project (typically a .NET Core or .NET Standard project).
+
+1. Enable automatic package restore by choosing **Tools** > **Options** > **NuGet Package Manager**, and then selecting **Automatically check for missing packages during build in Visual Studio** under **Package Restore**.
+
+   If you want Visual Studio to download the packages on restore, also select **Allow NuGet to download missing packages**.
+
+2. Build the project.
+
+   If one or more individual packages still aren't installed properly, **Solution Explorer** shows an error icon. Right-click and select **Manage NuGet Packages**, and use **Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md)
+
+   If you see the error "This project references NuGet package(s) that are missing on this computer," or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," [enable automatic restore](#enable-and-disable-package-restore-visual-studio). For older projects, also see [Migrate to automatic package restore](#migrate-to-automatic-package-restore-visual-studio). Also see [Package Restore troubleshooting](Package-restore-troubleshooting.md).
+
+### Restore packages manually using Visual Studio
+
+- In **Solution Explorer**, right click the solution and select **Restore NuGet Packages**.
+
+   If one or more individual packages still aren't installed properly, **Solution Explorer** shows an error icon. Right-click and select **Manage NuGet Packages**, and use **Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md)
+
+   If you see the error "This project references NuGet package(s) that are missing on this computer," or "One or more NuGet packages need to be restored but couldn't be because consent has not been granted," [enable automatic restore](#enable-and-disable-package-restore-visual-studio). For older projects, also see [Migrate to automatic package restore](#migrate-to-automatic-package-restore-visual-studio). Also see [Package Restore troubleshooting](Package-restore-troubleshooting.md).
 
 ### Enable and disable package restore (Visual Studio)
 
@@ -91,9 +112,15 @@ To enable or disable Package Restore for all users on a computer, a developer or
 
 [!INCLUDE [restore-dotnet-cli](includes/restore-dotnet-cli.md)]
 
+> [!IMPORTANT]
+> To add a package reference to the project file, [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x), which also runs the `restore` command.
+
 ## Restore packages using the nuget.exe CLI
 
 [!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
+
+> [!IMPORTANT]
+> The `restore`command does not modify a project file or *packages.config*. To add a dependency, either add a package through the Package Manager UI or Console in Visual Studio, or modify *packages.config* and then run either `install` or `restore`.
 
 ## Restore packages using MSBuild
 
