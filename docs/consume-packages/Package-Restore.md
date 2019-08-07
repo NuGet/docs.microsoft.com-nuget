@@ -24,7 +24,7 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
 
 ## Restore packages
 
-1. If the project references in your project file (*.csproj*) or your *packages.config* file are up to date, use your preferred tools to restore packages.
+1. If the project references in your project file (*.csproj*) or your *packages.config* file are up to date, use your preferred tool to restore packages.
 
    - [Visual Studio](#restore-packages-using-visual-studio) ([automatic restore](#restore-packages-automatically-using-visual-studio) or [manual restore](#restore-packages-manually-using-visual-studio))
    - [dotnet CLI](#restore-packages-using-the-dotnet-cli)
@@ -32,6 +32,8 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
    - [MSBuild](#restore-packages-using-msbuild)
    - [Azure Pipelines](#restore-packages-using-azure-pipelines)
    - [Azure DevOps Server](#restore-packages-using-azure-devops-server)
+
+   If the project references in your project file (*.csproj*) or your *packages.config* file are *not* up to date, you need to either install, update, or reinstall packages instead.
 
 2. If you still experience missing packages or package-related errors (such as error icons in Solution Explorer in Visual Studio), you may need to [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md).
 
@@ -114,6 +116,8 @@ To enable or disable Package Restore for all users on a computer, a developer or
 
 ## Restore using the nuget.exe CLI
 
+For projects migrated to PackageReference, use MSBuild to restore packages.
+
 [!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
 
 > [!IMPORTANT]
@@ -121,7 +125,7 @@ To enable or disable Package Restore for all users on a computer, a developer or
 
 ## Restore using MSBuild
 
-Use the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command to restore packages listed in the project file with PackageReference. This command is available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017 and higher versions. Both `nuget restore` and `dotnet restore` use this command for applicable projects.
+To restore packages listed in the project file with PackageReference, use the the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command. This command is available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017 and higher versions. Both `nuget restore` and `dotnet restore` use this command for applicable projects.
 
 1. Open a Developer command prompt (In the **Search** box, type **Developer command prompt**).
 

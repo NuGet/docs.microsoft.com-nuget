@@ -49,10 +49,12 @@ The error can also happen if your project file contains absolute paths to packag
 Use one of the following methods to restore the packages:
 
 - If you've moved the project file, edit the file directly to update the package references.
-- (Visual Studio) Enable package restore by selecting the **Tools > NuGet Package Manager > Package Manager Settings** menu command, setting both options under **Package Restore**, and selecting **OK**. Then build the solution again.
-- (dotnet CLI) In the command line, switch to the folder that contains your project, and then run `dotnet restore` or `dotnet build` (which automatically runs restore).
-- (nuget.exe CLI) In the command line, switch to the folder that contains your project, and then run `nuget restore` (except for projects created with `dotnet` CLI, in which case use `dotnet restore`).
-- (Projects migrated to PackageReference) On the command line, run `msbuild -t:restore`.
+- [Visual Studio](package-restore.md#restore-packages-using-visual-studio) ([automatic restore](package-restore.md#restore-packages-automatically-using-visual-studio) or [manual restore](package-restore.md#restore-packages-manually-using-visual-studio))
+- [dotnet CLI](package-restore.md#restore-packages-using-the-dotnet-cli)
+- [nuget.exe CLI](package-restore.md#restore-packages-using-the-nuget-exe-cli)
+- [MSBuild](package-restore.md#restore-packages-using-msbuild)
+- [Azure Pipelines](package-restore.md#restore-packages-using-azure-pipelines)
+- [Azure DevOps Server](package-restore.md#restore-packages-using-azure-devops-server)
 
 After a successful restore, the package should be present in the *global-packages* folder. For projects using PackageReference, a restore should recreate the `obj/project.assets.json` file; for projects using `packages.config`, the package should appear in the project's `packages` folder. The project should now build successfully. If not, [file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so we can follow up with you.
 
