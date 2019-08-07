@@ -11,6 +11,8 @@ ms.topic: conceptual
 
 There are a number of situations, described below under [When to Reinstall a Package](#when-to-reinstall-a-package), where references to a package might get broken within a Visual Studio project. In these cases, uninstalling and then reinstalling the same version of the package will restore those references to working order. Updating a package simply means installing an updated version, which often restores a package to working order.
 
+In Visual Studio, the Package Manager Console provides many flexible options for updating and reinstalling packages.
+
 Updating and reinstalling packages is accomplished as follows:
 
 | Method | Update | Reinstall |
@@ -20,7 +22,7 @@ Updating and reinstalling packages is accomplished as follows:
 | nuget.exe CLI | `nuget update` command | For all packages, delete the package folder, then run `nuget install`. For a single package, delete the package folder and use `nuget install <id>` to reinstall the same one. |
 
 > [!NOTE]
-> For the dotnet CLI, the equivalent procedure is not required. In a similar scenario, you can [restore packages with the dotnet CLI](../consume-packages/install-use-packages-dotnet-cli.md#restore-packages).
+> For the dotnet CLI, the equivalent procedure is not required. In a similar scenario, you can [restore packages with the dotnet CLI](package-restore.md#restore-using-the-dotnet-cli).
 
 In this article:
 
@@ -56,7 +58,7 @@ In all cases, use the notation described in [Package versioning](../reference/pa
 
 ## Using Update-Package
 
-Being mindful of the [Considerations](#considerations) described below, you can easily reinstall any package using the [Update-Package command](../reference/ps-reference/ps-ref-update-package.md) in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
+Being mindful of the [Considerations](#considerations) described below, you can easily reinstall any package using the [Update-Package command](../reference/ps-reference/ps-ref-update-package.md) in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**).
 
 ```ps
 Update-Package -Id <package_name> –reinstall
