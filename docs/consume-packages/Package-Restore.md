@@ -118,8 +118,6 @@ To enable or disable Package Restore for all users on a computer, a developer or
 
 ## Restore using the nuget.exe CLI
 
-For projects migrated to PackageReference, use MSBuild to restore packages.
-
 [!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
 
 > [!IMPORTANT]
