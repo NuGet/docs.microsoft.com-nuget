@@ -39,7 +39,7 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
 
 2. If you still experience missing packages or package-related errors (such as error icons in Solution Explorer in Visual Studio), you may need to [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md).
 
-   In Visual Studio, the Package Manager Console is a very flexible tool for reinstalling packages. See [Using Package-Update](reinstalling-and-updating-packages.md#using-update-package).
+   In Visual Studio, the Package Manager Console provides flexible options for reinstalling packages. See [Using Package-Update](reinstalling-and-updating-packages.md#using-update-package).
 
 ## Restore using Visual Studio
 
