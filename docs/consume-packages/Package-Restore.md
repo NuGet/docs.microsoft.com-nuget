@@ -24,7 +24,7 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
 
 ## Restore packages
 
-Package Restore tries to install all package dependencies to the correct state matching the package references in your project file (*.csproj*) or your *packages.config* file. (In Visual Studio, the references appear in Solution Explorer under the **Dependencies \ NuGet** node.)
+Package Restore tries to install all package dependencies to the correct state matching the package references in your project file (*.csproj*) or your *packages.config* file. (In Visual Studio, the references appear in Solution Explorer under the **Dependencies \ NuGet** or the **References** node.)
 
 1. If the package references in your project file are correct, use your preferred tool to restore packages.
 
@@ -57,7 +57,7 @@ Package Restore happens automatically when you create a project from a template 
 
 1. Enable automatic package restore by choosing **Tools** > **Options** > **NuGet Package Manager**, and then selecting **Automatically check for missing packages during build in Visual Studio** under **Package Restore**.
 
-   If you want Visual Studio to download the packages on restore, also select **Allow NuGet to download missing packages**.
+   For non-SDK-style projects, you first need to select **Allow NuGet to download missing packages** to enable the automatic restore option.
 
 1. Build the project.
 
@@ -67,7 +67,9 @@ Package Restore happens automatically when you create a project from a template 
 
 ### Restore packages manually using Visual Studio
 
-- In **Solution Explorer**, right click the solution and select **Restore NuGet Packages**.
+1. Enable package restore by choosing **Tools** > **Options** > **NuGet Package Manager**. Under **Package Restore** options, select **Allow NuGet to download missing packages**.
+
+1. In **Solution Explorer**, right click the solution and select **Restore NuGet Packages**.
 
    If one or more individual packages still aren't installed properly, **Solution Explorer** shows an error icon. Right-click and select **Manage NuGet Packages**, and then use **Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md)
 
