@@ -289,7 +289,8 @@ The following lines indicate dependencies on the same packages, but specify to i
 </dependencies>
 ```
 
-Note: When creating a `.nuspec` from a project using `nuget spec`, dependencies that exist in that project are automatically included in the resulting `.nuspec` file.
+> [!Important]
+> When creating a `.nuspec` from a project using `nuget spec`, dependencies that exist in that project are not automatically included in the resulting `.nuspec` file. Instead, use `nuget pack myproject.csproj`, and get the *.nuspec* file from within the generated *.nupkg* file. This *.nuspec* contains the dependencies.
 
 ### Dependency groups
 
