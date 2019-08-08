@@ -41,8 +41,8 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 This error occurs when you attempt to build a project that contains references to one or more NuGet packages, but those packages are not presently installed on the computer or in the project.
 
-- When using the PackageReference management format, the error means that the package is not installed in the *global-packages* folder as described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md).
-- When using `packages.config`, the error means that the package is not installed in the `packages` folder at the solution root.
+- When using the [PackageReference](package-references-in-project-files.md) management format, the error means that the package is not installed in the *global-packages* folder as described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md).
+- When using [packages.config](../reference/packages-config.md), the error means that the package is not installed in the `packages` folder at the solution root.
 
 This situation commonly occurs when you obtain the project's source code from source control or another download. Packages are typically omitted from source control or downloads because they can be restored from package feeds like nuget.org (see [Packages and source control](Packages-and-Source-Control.md)). Including them would otherwise bloat the repository or create unnecessarily large .zip files.
 
