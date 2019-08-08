@@ -24,7 +24,7 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
 
 ## Restore packages
 
-1. If the project references in your project file (*.csproj*) or your *packages.config* file are up to date, use your preferred tool to restore packages.
+1. If the package references in your project file (*.csproj*) or your *packages.config* file are correct, use your preferred tool to restore packages.
 
    - [Visual Studio](#restore-using-visual-studio) ([automatic restore](#restore-packages-automatically-using-visual-studio) or [manual restore](#restore-packages-manually-using-visual-studio))
    - [dotnet CLI](#restore-using-the-dotnet-cli)
@@ -33,7 +33,7 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
    - [Azure Pipelines](#restore-using-azure-pipelines)
    - [Azure DevOps Server](#restore-using-azure-devops-server)
 
-   If the project references in your project file (*.csproj*) or your *packages.config* file are incorrect, you need to either install, update, or reinstall packages instead.
+   If the package references in your project file (*.csproj*) or your *packages.config* file are incorrect (they do not match your expected state following Package Restore), then you need to either install, update, or reinstall packages instead.
 
    For projects using PackageReference, after a successful restore, the package should be present in the *global-packages* folder and the `obj/project.assets.json` file is recreated; for projects using `packages.config`, the package should appear in the project's `packages` folder. The project should now build successfully. 
 
