@@ -127,7 +127,7 @@ hide_bc: true
                             <a href="create-packages/creating-a-package.md">Use nuget.exe CLI</a>
                         </p>
                         <p>
-                            <a href="create-packages/creating-a-package.md">Use MSBuild</a>
+                            <a href="create-packages/creating-a-package-msbuild.md">Use MSBuild</a>
                         </p>
                         <p>
                             <a href="create-packages/multiple-target-frameworks-project-file.md">Support multiple target frameworks</a>
