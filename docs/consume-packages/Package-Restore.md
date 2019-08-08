@@ -24,7 +24,9 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
 
 ## Restore packages
 
-1. If the package references in your project file (*.csproj*) or your *packages.config* file are correct, use your preferred tool to restore packages.
+Package Restore tries to install all package dependencies to the correct state matching the package references in your project file (*.csproj*) or your *packages.config* file. (In Visual Studio, the references appear in Solution Explorer under the **Dependencies \ NuGet** or the **References** node.)
+
+1. If the package references in your project file are correct, use your preferred tool to restore packages.
 
    - [Visual Studio](#restore-using-visual-studio) ([automatic restore](#restore-packages-automatically-using-visual-studio) or [manual restore](#restore-packages-manually-using-visual-studio))
    - [dotnet CLI](#restore-using-the-dotnet-cli)
@@ -33,13 +35,13 @@ If a package isn't already installed, NuGet first attempts to retrieve it from t
    - [Azure Pipelines](#restore-using-azure-pipelines)
    - [Azure DevOps Server](#restore-using-azure-devops-server)
 
-   If the package references in your project file (*.csproj*) or your *packages.config* file are incorrect (they do not match your expected state following Package Restore), then you need to either install, update, or reinstall packages instead.
+   If the package references in your project file (*.csproj*) or your *packages.config* file are incorrect (they do not match your desired state following Package Restore), then you need to either install or update packages instead.
 
-   For projects using PackageReference, after a successful restore, the package should be present in the *global-packages* folder and the `obj/project.assets.json` file is recreated; for projects using `packages.config`, the package should appear in the project's `packages` folder. The project should now build successfully. 
+   For projects using PackageReference, after a successful restore, the package should be present in the *global-packages* folder and the `obj/project.assets.json` file is recreated. For projects using `packages.config`, the package should appear in the project's `packages` folder. The project should now build successfully. 
 
-2. If you still experience missing packages or package-related errors (such as error icons in Solution Explorer in Visual Studio), you may need to [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md).
+2. After running Package Restore, if you still experience missing packages or package-related errors (such as error icons in Solution Explorer in Visual Studio), you may need to [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md).
 
-   In Visual Studio, the Package Manager Console provides many flexible options for reinstalling packages. See [Using Package-Update](reinstalling-and-updating-packages.md#using-update-package).
+   In Visual Studio, the Package Manager Console provides several flexible options for reinstalling packages. See [Using Package-Update](reinstalling-and-updating-packages.md#using-update-package).
 
 ## Restore using Visual Studio
 
@@ -55,7 +57,7 @@ Package Restore happens automatically when you create a project from a template 
 
 1. Enable automatic package restore by choosing **Tools** > **Options** > **NuGet Package Manager**, and then selecting **Automatically check for missing packages during build in Visual Studio** under **Package Restore**.
 
-   If you want Visual Studio to download the packages on restore, also select **Allow NuGet to download missing packages**.
+   For non-SDK-style projects, you first need to select **Allow NuGet to download missing packages** to enable the automatic restore option.
 
 1. Build the project.
 
@@ -65,7 +67,9 @@ Package Restore happens automatically when you create a project from a template 
 
 ### Restore packages manually using Visual Studio
 
-- In **Solution Explorer**, right click the solution and select **Restore NuGet Packages**.
+1. Enable package restore by choosing **Tools** > **Options** > **NuGet Package Manager**. Under **Package Restore** options, select **Allow NuGet to download missing packages**.
+
+1. In **Solution Explorer**, right click the solution and select **Restore NuGet Packages**.
 
    If one or more individual packages still aren't installed properly, **Solution Explorer** shows an error icon. Right-click and select **Manage NuGet Packages**, and then use **Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md)
 

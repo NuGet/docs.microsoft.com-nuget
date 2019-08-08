@@ -9,7 +9,9 @@ ms.topic: conceptual
 
 # Troubleshooting package restore errors
 
-This article focuses on common errors when restoring packages and steps to resolve them. For complete details on restoring packages, see [Package restore](../consume-packages/package-restore.md#enable-and-disable-package-restore-in-visual-studio).
+This article focuses on common errors when restoring packages and steps to resolve them. 
+
+Package Restore tries to install all package dependencies to the correct state matching the package references in your project file (*.csproj*) or your *packages.config* file. (In Visual Studio, the references appear in Solution Explorer under the **Dependencies \ NuGet** or the **References** node.) To follow the required steps to restore packages, see [Restore packages](../consume-packages/package-restore.md#restore-packages). If the package references in your project file (*.csproj*) or your *packages.config* file are incorrect (they do not match your desired state following Package Restore), then you need to either install or update packages instead of using Package Restore.
 
 If the instructions here do not work for you, [please file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so that we can examine your scenario more carefully. Do not use the "Is this page helpful?" control that may appear on this page because it doesn't give us the ability to contact you for more information.
 
@@ -39,8 +41,8 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 This error occurs when you attempt to build a project that contains references to one or more NuGet packages, but those packages are not presently installed on the computer or in the project.
 
-- When using the PackageReference management format, the error means that the package is not installed in the *global-packages* folder as described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md).
-- When using `packages.config`, the error means that the package is not installed in the `packages` folder at the solution root.
+- When using the [PackageReference](package-references-in-project-files.md) management format, the error means that the package is not installed in the *global-packages* folder as described on [Managing the global packages and cache folders](managing-the-global-packages-and-cache-folders.md).
+- When using [packages.config](../reference/packages-config.md), the error means that the package is not installed in the `packages` folder at the solution root.
 
 This situation commonly occurs when you obtain the project's source code from source control or another download. Packages are typically omitted from source control or downloads because they can be restored from package feeds like nuget.org (see [Packages and source control](Packages-and-Source-Control.md)). Including them would otherwise bloat the repository or create unnecessarily large .zip files.
 
