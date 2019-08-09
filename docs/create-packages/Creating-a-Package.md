@@ -180,6 +180,7 @@ The folder conventions are as follows:
 | runtimes | Architecture-specific assembly (`.dll`), symbol (`.pdb`), and native resource (`.pri`) files | Assemblies are added as references only for runtime; other files are copied into project folders. There should always be a corresponding (TFM) `AnyCPU` specific assembly under `/ref/{tfm}` folder to provide corresponding compile time assembly. See [Supporting multiple target frameworks](supporting-multiple-target-frameworks.md). |
 | content | Arbitrary files | Contents are copied to the project root. Think of the **content** folder as the root of the target application that ultimately consumes the package. To have the package add an image in the application's */images* folder, place it in the package's *content/images* folder. |
 | build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file or `project.lock.json` (NuGet 3.x+). |
+| buildMultiTargeting | MSBuild `.targets` and `.props` files for cross-framework targeting | Automatically inserted into the project file or `project.lock.json` |
 | tools | Powershell scripts and programs accessible from the Package Manager Console | The `tools` folder is added to the `PATH` environment variable for the Package Manager Console only (Specifically, *not* to the `PATH` as set for MSBuild when building the project). |
 
 Because your folder structure can contain any number of assemblies for any number of target frameworks, this method is necessary when creating packages that support multiple frameworks.
@@ -341,6 +342,14 @@ Including MSBuild props and targets in a package was [introduced with NuGet 2.5]
 When NuGet installs a package with `\build` files, it adds MSBuild `<Import>` elements in the project file pointing to the `.targets` and `.props` files. (`.props` is added at the top of the project file; `.targets` is added at the bottom.) A separate conditional MSBuild `<Import>` element is added for each target framework.
 
 MSBuild `.props` and `.targets` files for cross-framework targeting can be placed in the `\buildMultiTargeting` folder. During package installation, NuGet adds the corresponding `<Import>` elements to the project file with the condition, that the target framework is not set (the MSBuild property `$(TargetFramework)` must be empty).
+
+    \buildMultiTargeting
+        \netstandard1.4
+            \Contoso.Utility.UsefulStuff.props
+            \Contoso.Utility.UsefulStuff.targets
+        \net462
+            \Contoso.Utility.UsefulStuff.props
+            \Contoso.Utility.UsefulStuff.targets
 
 With NuGet 3.x, targets are not added to the project but are instead made available through the `project.lock.json`.
 
