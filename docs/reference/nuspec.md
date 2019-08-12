@@ -180,9 +180,6 @@ For example:
 </package>
 ```
 
-#### minClientVersion
-Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager. This is used whenever the package depends on specific features of the `.nuspec` file that were added in a particular version of the NuGet client. For example, a package using the `developmentDependency` attribute should specify "2.8" for `minClientVersion`. Similarly, a package using the `contentFiles` element (see the next section) should set `minClientVersion` to "3.3". Note also that because NuGet clients prior to 2.5 do not recognize this flag, they *always* refuse to install the package no matter what `minClientVersion` contains.
-
 #### title
 A human-friendly title of the package which may be used in some UI displays. (nuget.org and the Package Manager in Visual Studio do not show title)
 
@@ -200,6 +197,29 @@ A collection of zero or more `<dependency>` elements specifying the dependencies
 *(3.3+)* A collection of `<files>` elements that identify content files to include in the consuming project. These files are specified with a set of attributes that describe how they should be used within the project system. See [Specifying files to include in the package](#specifying-files-to-include-in-the-package) below.
 #### files 
 The `<package>` node may contain a `<files>` node as a sibling to `<metadata>`, and a `<contentFiles>` child under `<metadata>`, to specify which assembly and content files to include in the package. See [Including assembly files](#including-assembly-files) and [Including content files](#including-content-files) later in this topic for details.
+
+### metadata attributes
+
+#### minClientVersion
+Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager. This is used whenever the package depends on specific features of the `.nuspec` file that were added in a particular version of the NuGet client. For example, a package using the `developmentDependency` attribute should specify "2.8" for `minClientVersion`. Similarly, a package using the `contentFiles` element (see the next section) should set `minClientVersion` to "3.3". Note also that because NuGet clients prior to 2.5 do not recognize this flag, they *always* refuse to install the package no matter what `minClientVersion` contains.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+    <metadata minClientVersion="100.0.0.1">
+        <id>dasdas</id>
+        <version>2.0.0</version>
+        <title />
+        <authors>dsadas</authors>
+        <owners />
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>My package description.</description>
+    </metadata>
+    <files>
+        <file src="content\one.txt" target="content\one.txt" />
+    </files>
+</package>
+```
 
 ## Replacement tokens
 
@@ -257,7 +277,7 @@ The `<dependencies>` element within `<metadata>` contains any number of `<depend
 | Attribute | Description |
 | --- | --- |
 | `id` | (Required) The package ID of the dependency, such as "EntityFramework" and "NUnit", which is the name of the package nuget.org shows on a package page. |
-| `version` | (Required) The range of versions acceptable as a dependency. See [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards) for exact syntax. |
+| `version` | (Required) The range of versions acceptable as a dependency. See [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards) for exact syntax. Wildcard (floating) versions are not supported. |
 | include | A comma-delimited list of include/exclude tags (see below) indicating of the dependency to include in the final package. The default value is `all`. |
 | exclude | A comma-delimited list of include/exclude tags (see below) indicating of the dependency to exclude in the final package. The  default value is `build,analyzers` which can be over-written. But `content/ ContentFiles` are also implicitly excluded in the final package which can't be over-written. Tags specified with `exclude` take precedence over those specified with `include`. For example, `include="runtime, compile" exclude="compile"` is the same as `include="runtime"`. |
 
@@ -314,8 +334,8 @@ The following example shows different variations of the `<group>` element:
     </group>
 
     <group targetFramework="net40">
-        <dependency id="jQuery" />
-        <dependency id="WebActivator" />
+        <dependency id="jQuery" version="1.6.2" />
+        <dependency id="WebActivator" version="1.4.4" />
     </group>
 
     <group targetFramework="sl30">
@@ -622,7 +642,7 @@ These files are specified with a set of attributes that describe how they should
 
 | Attribute | Description |
 | --- | --- |
-| **include** | (Required) The location of the file or files to include, subject to exclusions specified by the `exclude` attribute. The path is relative to the `.nuspec` file unless an absolute path is specified. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
+| **include** | (Required) The location of the file or files to include, subject to exclusions specified by the `exclude` attribute. The path is relative to the `contentFiles` folder unless an absolute path is specified. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
 | **exclude** | A semicolon-delimited list of files or file patterns to exclude from the `src` location. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
 | **buildAction** | The build action to assign to the content item for MSBuild, such as `Content`, `None`, `Embedded Resource`, `Compile`, etc. The default is `Compile`. |
 | **copyToOutput** | A Boolean indicating whether to copy content items to the build (or publish) output folder. The default is false. |

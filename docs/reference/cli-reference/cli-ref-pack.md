@@ -11,7 +11,7 @@ ms.topic: reference
 
 **Applies to:** package creation &bullet; **Supported versions:** 2.7+
 
-Creates a NuGet package based on the specified `.nuspec` or project file. The `dotnet pack` command (see [dotnet Commands](../dotnet-Commands.md)) and `msbuild -t:pack` (see [MSBuild targets](../msbuild-targets.md)) may be used as alternates.
+Creates a NuGet package based on the specified [.nuspec](../nuspec.md) or project file. The `dotnet pack` command (see [dotnet Commands](../dotnet-Commands.md)) and `msbuild -t:pack` (see [MSBuild targets](../msbuild-targets.md)) may be used as alternates.
 
 > [!Important]
 > Under Mono, creating a package from a project file is not supported. You also need to adjust non-local paths in the `.nuspec` file to Unix-style paths, as nuget.exe doesn't convert Windows pathnames itself.
@@ -28,7 +28,7 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 
 | Option | Description |
 | --- | --- |
-| BasePath | Sets the base path of the files defined in the `.nuspec` file. |
+| BasePath | Sets the base path of the files defined in the [.nuspec](../nuspec.md) file. |
 | Build | Specifies that the project should be built before building the package. |
 | Exclude | Specifies one or more wildcard patterns to exclude when creating a package. To specify more than one pattern, repeat the -Exclude flag. See example below. |
 | ExcludeEmptyDirectories | Prevents inclusion of empty directories when building the package. |
