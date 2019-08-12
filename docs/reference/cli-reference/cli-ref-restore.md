@@ -30,7 +30,7 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 | ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
 | DirectDownload | *(4.0+)* Downloads packages directly without populating caches with any binaries or metadata. |
 | DisableParallelProcessing | Disables restoring multiple packages in parallel. |
-| FallbackSource | *(3.2+)* A list of package sources to use as fallbacks in case the package isn't found in the primary or default source. |
+| FallbackSource | *(3.2+)* A list of package sources to use as fallbacks in case the package isn't found in the primary or default source. Use a semicolon to separate list entries. |
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
 | Help | Displays help information for the command. |
 | MSBuildPath | *(4.0+)* Specifies the path of MSBuild to use with the command, taking precedence over `-MSBuildVersion`. |
@@ -44,7 +44,7 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 | Recursive | *(4.0+)* Restores all references projects for UWP and .NET Core projects. Does not apply to projects using `packages.config`. |
 | RequireConsent | Verifies that restoring packages is enabled before downloading and installing the packages. For details, see [Package Restore](../../consume-packages/package-restore.md). |
 | SolutionDirectory | Specifies the solution folder. Not valid when restoring packages for a solution. Required when restoring with a `packages.config` file unless `PackagesDirectory` or `OutputDirectory` is used. |
-| Source | Specifies the list of package sources (as URLs) to use for the restore. If omitted, the command uses the sources provided in configuration files, see [Configuring NuGet behavior](../../consume-packages/configuring-nuget-behavior.md). |
+| Source | Specifies the list of package sources (as URLs) to use for the restore. If omitted, the command uses the sources provided in configuration files, see [Configuring NuGet behavior](../../consume-packages/configuring-nuget-behavior.md). Use a semicolon to separate list entries. |
 | Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
 
 Also see [Environment variables](cli-ref-environment-variables.md)
