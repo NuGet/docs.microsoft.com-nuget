@@ -264,11 +264,35 @@ If either lookup is successful, then no download is necessary.
 
 If a match is not found, then NuGet checks file sources, and then http sources, and then it downloads the packages.
 
+| Key | Value |
+| --- | --- |
+| (name of fallback folder) | Path to fallback folder. |
+
+**Example**:
+
 ```xml
 <fallbackPackageFolders>
    <add key="XYZ Offline Packages" value="C:\somePath\someFolder\"/>
 </fallbackPackageFolders>
 ```
+
+## packageManagement section
+
+Sets the default package management format, either *packages.config* or PackageReference. SDK-style projects always use PackageReference.
+
+| Key | Value |
+| --- | --- |
+| format | A Boolean indicating the default package management format. If `1`, format is PackageReference. If `0`, format is *packages.config*. |
+| disabled | A Boolean indicating whether to show the prompt to select a default package format on first package install. `False` hides the prompt. |
+
+**Example**:
+
+```xml
+<packageManagement>
+   <add key="format" value="1" />
+   <add key="disabled" value="False" />
+</packageManagement>
+``
 
 ## Using environment variables
 
