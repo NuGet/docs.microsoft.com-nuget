@@ -292,7 +292,7 @@ Sets the default package management format, either *packages.config* or PackageR
    <add key="format" value="1" />
    <add key="disabled" value="False" />
 </packageManagement>
-``
+```
 
 ## Using environment variables
 
