@@ -112,7 +112,7 @@ When referring to package dependencies, NuGet supports using interval notation f
 When using the PackageReference format, NuGet also supports using a wildcard notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number. Wildcards are not supported with the `packages.config` format.
 
 > [!Note]
-> Pre-release versions are not included when resolving version ranges. Pre-release versions *are* included when using a wildcard (\*). The version range *[1.0,2.0]*, for example, does not include 2.0-beta, but the wildcard notation _2.0-*_ does. See [issue 912](https://github.com/NuGet/Home/issues/912) for further discussion on pre-release wildcards.
+> Version ranges in PackageReference include pre-release versions. By design, floating versions do not resolve prerelease versions unless opted into. For the status of the related feature request, see [issue 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297).
 
 ### Examples
 
