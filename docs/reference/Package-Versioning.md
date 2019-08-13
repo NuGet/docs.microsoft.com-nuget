@@ -217,6 +217,6 @@ When obtaining packages from a repository during install, reinstall, or restore 
         1.0.0.0 is treated as 1.0.0
         1.0.01.0 is treated as 1.0.1
 
-This normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions when resolving dependencies.
+`pack` and `restore` operations normalize versions whenever possible. For packages already built, this normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions when resolving dependencies.
 
 However, NuGet package repositories must treat these values in the same way as NuGet to prevent package version duplication. Thus a repository that contains version *1.0* of a package should not also host version *1.0.0* as a separate and different package.
