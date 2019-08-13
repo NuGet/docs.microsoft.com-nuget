@@ -252,7 +252,7 @@ If a `certificate` specifies `allowUntrustedRoot` as `true` the given certificat
 
 ## fallbackPackageFolders section
 
-*(5.0+)* Provides a way to preinstall packages so that no work needs to be done if the package is found in the fallback folders. Fallback package folders have the exact same folder and file structure as the global package folder: *.nupkg* is present, and all files are extracted.
+*(3.5+)* Provides a way to preinstall packages so that no work needs to be done if the package is found in the fallback folders. Fallback package folders have the exact same folder and file structure as the global package folder: *.nupkg* is present, and all files are extracted.
 
 The lookup logic for this configuration is:
 
