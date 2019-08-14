@@ -102,7 +102,7 @@ Allowable values for these tags are as follows, with multiple values separated b
 | contentFiles | Contents of the `contentfiles` folder |
 | build | `.props` and `.targets` in the `build` folder |
 | buildMultitargeting | `.props` and `.targets` in the `buildMultitargeting` folder, for cross-framework targeting |
-| buildTransitive | *(5.0+)* `.props` and `.targets` in the `buildTransitive` folder, for assets that flow transitively to any consuming project. |
+| buildTransitive | *(5.0+)* `.props` and `.targets` in the `buildTransitive` folder, for assets that flow transitively to any consuming project. See the [feature](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) page. |
 | analyzers | .NET analyzers |
 | native | Contents of the `native` folder |
 | none | None of the above are used. |
