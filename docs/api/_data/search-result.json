@@ -2,8 +2,6 @@
   "totalHits": 2,
   "data": [
     {
-      "@id": "https://api.nuget.org/v3/registration3/nuget.versioning/index.json",
-      "@type": "Package",
       "registration": "https://api.nuget.org/v3/registration3/nuget.versioning/index.json",
       "id": "NuGet.Versioning",
       "version": "4.4.0",
