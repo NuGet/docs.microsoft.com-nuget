@@ -116,6 +116,32 @@ The supported profiles are as follows:
 - `wp`: Windows Phone
 - `cf`: Compact Framework
 
+## Declaring dependencies (Advanced)
+
+When packing a project file, NuGet tries to automatically generate the dependencies from the project. The information in this section about using a *.nuspec* file to declare dependencies is typically necessary for advanced scenarios only.
+
+*(Version 2.0+)* You can declare package dependencies in the *.nuspec* corresponding to the target framework of the target project using `<group>` elements within the `<dependencies>` element. For more information, see [dependencies element](../reference/nuspec.md#dependencies-element).
+
+Each group has an attribute named `targetFramework` and contains zero or more `<dependency>` elements. Those dependencies are installed together when the target framework is compatible with the project's framework profile. See [Target frameworks](../reference/target-frameworks.md) for the exact framework identifiers.
+
+We recommend using one group per Target Framework Moniker (TFM) for files in the *lib/* and *ref/* folders.
+
+The following example shows different variations of the `<group>` element:
+
+```xml
+<dependencies>
+
+    <group targetFramework="net472">
+        <dependency id="jQuery" version="1.10.2" />
+        <dependency id="WebActivatorEx" version="2.2.0" />
+    </group>
+
+    <group targetFramework="net20">
+    </group>
+
+</dependencies>
+```
+
 ## Determining which NuGet target to use
 
 When packaging libraries targeting the Portable Class Library it can be tricky to determine which NuGet target you should use in your folder names and `.nuspec` file, especially if targeting only a subset of the PCL. The following external resources will help you with this:
