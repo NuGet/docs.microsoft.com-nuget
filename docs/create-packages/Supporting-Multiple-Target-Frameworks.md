@@ -15,6 +15,32 @@ This article describes the layout of a NuGet package, regardless of how the pack
 
 You must manually lay out the package as described in this article when using the convention-based working directory method described in [Creating a package](../create-packages/creating-a-package.md#from-a-convention-based-working-directory). For an SDK-style project, the automated method is recommended, but you may also choose to manually lay out the package as described in this article.
 
+## Declaring dependencies
+
+*(Version 2.0+)* You can declare package dependencies in the *.nuspec* according to the target framework of the target project using `<group>` elements within `<dependencies>`. For more information, see [dependencies element](../reference/nuspec.md#dependencies-element).
+
+Each group has an attribute named `targetFramework` and contains zero or more `<dependency>` elements. Those dependencies are installed together when the target framework is compatible with the project's framework profile. See [Target frameworks](../reference/target-frameworks.md) for the exact framework identifiers.
+
+When no `targetFramework` attribute is used, the `<group>` element is used as the default or fallback list of dependencies.
+
+The following example shows different variations of the `<group>` element:
+
+```xml
+<dependencies>
+    <group>
+        <dependency id="RouteMagic" version="1.1.0" />
+    </group>
+
+    <group targetFramework="net472">
+        <dependency id="jQuery" version="1.10.2" />
+        <dependency id="WebActivatorEx" version="2.2.0" />
+    </group>
+
+    <group targetFramework="net20">
+    </group>
+</dependencies>
+```
+
 ## Framework version folder structure
 
 When building a package that contains only one version of a library or target multiple frameworks, you always make subfolders under `lib` using different case-sensitive framework names with the following convention:
