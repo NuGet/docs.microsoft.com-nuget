@@ -27,6 +27,9 @@
     - name: API
       tocHref: /nuget/api/
       topicHref: /nuget/api/overview
+    - name: Extensibility
+      tocHref: /nuget/reference/extensibility
+      topicHref: /nuget/reference/extensibility/nuget-cross-platform-plugins
     - name: Visual Studio extensibility
       tocHref: /nuget/visual-studio-extensibility/
       topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
