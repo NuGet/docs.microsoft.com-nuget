@@ -22,9 +22,13 @@ For SDK-style projects, you can configure support for multiple targets framework
 
    We recommend that you create a .NET Standard class library for best compatibility.
 
-2. Edit the *.csproj* file to support the target frameworks.
-
-   For example, change `<TargetFramework>netstandard2.0</TargetFramework>` to `<TargetFrameworks>netstandard2.0;net45</TargetFrameworks>`.
+2. Edit the *.csproj* file to support the target frameworks. For example, change
+   
+   `<TargetFramework>netstandard2.0</TargetFramework>`
+   
+   to:
+   
+   `<TargetFrameworks>netstandard2.0;net45</TargetFrameworks>`
 
    Make sure that you change the XML element changed from singular to plural (add the "s" to both the open and close tags).
 

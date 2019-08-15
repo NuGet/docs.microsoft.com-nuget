@@ -15,7 +15,7 @@ No matter what your package does or what code it contains, you use one of the CL
 
 - For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, see [Create a NuGet package using the dotnet CLI](creating-a-package-dotnet-cli.md).
 
-- For projects migrated from `packages.config` to [PackageReference](../consume-packages/package-references-in-project-files.md), use [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
+- For projects migrated from `packages.config` to [PackageReference](../consume-packages/package-references-in-project-files.md), use [msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
 Technically speaking, a NuGet package is just a ZIP file that's been renamed with the `.nupkg` extension and whose contents match certain conventions. This topic describes the detailed process of creating a package that meets those conventions.
 
@@ -133,7 +133,7 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
 </package>
 ```
 
-For details on declaring dependencies and specifying version numbers, see [packages.config](../reference/packages-config.md) and [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `include` and `exclude` attributes on the `dependency` element. See [.nuspec Reference - Dependencies](../reference/nuspec.md#dependencies).
+For details on declaring dependencies and specifying version numbers, see [packages.config](../reference/packages-config.md) and [Package versioning](../concepts/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `include` and `exclude` attributes on the `dependency` element. See [.nuspec Reference - Dependencies](../reference/nuspec.md#dependencies).
 
 Because the manifest is included in the package created from it, you can find any number of additional examples by examining existing packages. A good source is the *global-packages* folder on your computer, the location of which is returned by the following command:
 
@@ -221,7 +221,6 @@ If you have package dependencies to include in the *.nuspec*, instead use `nuget
 # Use in a folder containing a project file <project-name>.csproj or <project-name>.vbproj
 nuget pack myproject.csproj
 ```
-```
 
 A token is delimited by `$` symbols on both sides of the project property. For example, the `<id>` value in a manifest generated in this way typically appears as follows:
 
@@ -268,7 +267,7 @@ The package identifier (`<id>` element) and the version number (`<version>` elem
 **Best practices for the package version:**
 
 - In general, set the version of the package to match the library, though this is not strictly required. This is a simple matter when you limit a package to a single assembly, as described earlier in [Deciding which assemblies to package](#decide-which-assemblies-to-package). Overall, remember that NuGet itself deals with package versions when resolving dependencies, not assembly versions.
-- When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Package versioning](../reference/package-versioning.md).
+- When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Package versioning](../concepts/package-versioning.md).
 
 > The following series of brief blog posts are also helpful to understand versioning:
 >
@@ -419,7 +418,7 @@ Once you've created a package, which is a `.nupkg` file, you can publish it to t
 
 You might also want to extend the capabilities of your package or otherwise support other scenarios as described in the following topics:
 
-- [Package versioning](../reference/package-versioning.md)
+- [Package versioning](../concepts/package-versioning.md)
 - [Supporting multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Transformations of source and configuration files](../create-packages/source-and-config-file-transformations.md)
 - [Localization](../create-packages/creating-localized-packages.md)
@@ -429,5 +428,5 @@ You might also want to extend the capabilities of your package or otherwise supp
 
 Finally, there are additional package types to be aware of:
 
-- [Native Packages](../create-packages/native-packages.md)
+- [Native Packages](../guides/native-packages.md)
 - [Symbol Packages](../create-packages/symbol-packages.md)

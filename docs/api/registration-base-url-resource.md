@@ -124,7 +124,7 @@ upper  | string           | yes      | The highest SemVer 2.0.0 version in the p
 
 The `lower` and `upper` bounds of the page object are useful when the metadata for a specific page version is needed.
 These bounds can be used to fetch the only registration page needed. The version strings adhere to
-[NuGet's version rules](../reference/package-versioning.md). The version strings are normalized and do not include
+[NuGet's version rules](../concepts/package-versioning.md). The version strings are normalized and do not include
 build metadata. As with all versions in the NuGet ecosystem, comparison of version strings is implemented using
 [SemVer 2.0.0's version precedence rules](http://semver.org/spec/v2.0.0.html#spec-item-11).
 
@@ -211,7 +211,7 @@ Each package dependency has the following properties:
 Name         | Type   | Required | Notes
 ------------ | ------ | -------- | -----
 id           | string | yes      | The ID of the package dependency
-range        | object | no       | The allowed [version range](../reference/package-versioning.md#version-ranges-and-wildcards) of the dependency
+range        | object | no       | The allowed [version range](../concepts/package-versioning.md#version-ranges-and-wildcards) of the dependency
 registration | string | no       | The URL to the registration index for this dependency
 
 If the `range` property is excluded or an empty string, the client should default to the version range `(, )`. That is,

@@ -14,7 +14,7 @@ ms.topic: reference
 Mirrors a package and its dependencies from the specified source repositories to the target repository.
 
 > [!NOTE]
-> To enable this command for NuGet versions before 3.2, go to [https://nuget.codeplex.com/releases](https://nuget.codeplex.com/releases), select the newest stable release, download `NuGet.ServerExtensions.dll` and `Nuget-Signed.exe` to your local disk and rename `Nuget-Signed.exe` to `nuget.exe`.
+> NuGet.ServerExtensions.dll and NuGet-Signed.exe that previously supported this command in NuGet 2.x (by renaming NuGet-Signed.exe to nuget.exe) are no longer available for download. To use a command similar to this, try [NuGetMirror](https://www.nuget.org/packages/NuGetMirror/).
 
 ## Usage
 

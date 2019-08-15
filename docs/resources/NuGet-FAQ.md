@@ -66,7 +66,7 @@ Yes, NuGet works directly from the command line. See the [Install guide](../inst
 
 **How do I get the latest version of NuGet command line tool?**
 
-See the [Install guide](../install-nuget-client-tools.md).
+See the [Install guide](../install-nuget-client-tools.md). To check the current installed version of the tool, use `nuget help`.
 
 **What is the license for nuget.exe?**
 

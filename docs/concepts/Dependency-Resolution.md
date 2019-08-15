@@ -23,7 +23,7 @@ When the NuGet restore process runs prior to a build, it resolves dependencies f
 The assets file is located at `MSBuildProjectExtensionsPath`, which defaults to the project's 'obj' folder. 
 MSBuild then reads this file and translates it into a set of folders where potential references can be found, and then adds them to the project tree in memory.
 
-The `project.assets.json` file is temporary and should not be added to source control. It's listed by default in both `.gitignore` and `.tfignore`. See [Packages and source control](packages-and-source-control.md).
+The `project.assets.json` file is temporary and should not be added to source control. It's listed by default in both `.gitignore` and `.tfignore`. See [Packages and source control](../consume-packages/packages-and-source-control.md).
 
 ### Dependency resolution rules
 
@@ -58,7 +58,7 @@ When using a wildcard, NuGet resolves the highest version of a package that matc
 ![Choosing version 6.0.1 when a floating version 6.0.* is requested](media/projectJson-dependency-4.png)
 
 > [!Note]
-> For information on the behavior of wildcards and pre-release versions, see [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards).
+> For information on the behavior of wildcards and pre-release versions, see [Package versioning](package-versioning.md#version-ranges-and-wildcards).
 
 
 <a name="nearest-wins"></a>
@@ -104,7 +104,7 @@ The `packages.config` process for resolving dependencies gets complicated for la
 
 ## Managing dependency assets
 
-When using the PackageReference format, you can control which assets from dependencies flow into the top-level project. For details, see [PackageReference](package-references-in-project-files.md#controlling-dependency-assets).
+When using the PackageReference format, you can control which assets from dependencies flow into the top-level project. For details, see [PackageReference](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
 
 When the top-level project is itself a package, you also have control over this flow by using the `include` and `exclude` attributes with dependencies listed in the `.nuspec` file. See [.nuspec Reference - Dependencies](../reference/nuspec.md#dependencies).
 

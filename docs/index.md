@@ -247,7 +247,7 @@ hide_bc: true
                             <a href="release-notes/known-issues.md">Release notes</a>
                         </p>
                         <p>
-                            <a href="faqs/nuget-faq.md">FAQ - NuGet</a>
+                            <a href="resources/nuget-faq.md">FAQ - NuGet</a>
                         </p>
                         <p>
                             <a href="nuget-org/nuget-org-faq.md">FAQ - NuGet.org</a>

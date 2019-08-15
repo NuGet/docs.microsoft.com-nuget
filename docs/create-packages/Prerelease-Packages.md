@@ -15,7 +15,7 @@ Whenever you release an updated package with a new version number, NuGet conside
 
 A stable release is one that's considered reliable enough to be used in production. The latest stable release is also the one that will be installed as a package update or during package restore (subject to constraints as described in [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md)).
 
-To support the software release lifecycle, NuGet 1.6 and later allows for the distribution of pre-release packages, where the version number includes a semantic versioning suffix such as `-alpha`, `-beta`, or `-rc`. For more information, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
+To support the software release lifecycle, NuGet 1.6 and later allows for the distribution of pre-release packages, where the version number includes a semantic versioning suffix such as `-alpha`, `-beta`, or `-rc`. For more information, see [Package versioning](../concepts/package-versioning.md#pre-release-versions).
 
 You can specify such versions using one of the following ways:
 
@@ -33,7 +33,7 @@ You can specify such versions using one of the following ways:
     <version>1.0.1-alpha</version>
     ```
 
-When you're ready to release a stable version, just remove the suffix and the package takes precedence over any pre-release versions. Again, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
+When you're ready to release a stable version, just remove the suffix and the package takes precedence over any pre-release versions. Again, see [Package versioning](../concepts/package-versioning.md#pre-release-versions).
 
 ## Installing and updating pre-release packages
 

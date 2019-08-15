@@ -6,30 +6,45 @@
     tocHref: /nuget/
     topicHref: /nuget
     items:
-    - name: Quickstart
+    - name: Get started
       tocHref: /nuget/quickstart/
       topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
-    - name: Guides
-      tocHref: /nuget/guides/ 
-      topicHref: /nuget/guides/create-net-standard-packages-vs2017
-    - name: Create packages
-      tocHref: /nuget/create-packages/
-      topicHref: /nuget/create-packages/overview-and-workflow
     - name: Consume packages
       tocHref: /nuget/consume-packages/
       topicHref: /nuget/consume-packages/overview-and-workflow
+    - name: Create packages
+      tocHref: /nuget/create-packages/
+      topicHref: /nuget/create-packages/overview-and-workflow
+    - name: Guides
+      tocHref: /nuget/guides/ 
+      topicHref: /nuget/guides/create-net-standard-packages-vs2017
+    - name: Concepts
+      tocHref: /nuget/concepts/
+      topicHref: /nuget/concepts/package-installation-process
     - name: Reference
       tocHref: /nuget/reference/
       topicHref: /nuget/reference/nuspec
+    - name: API
+      tocHref: /nuget/api/
+      topicHref: /nuget/api/overview
+    - name: Extensibility
+      tocHref: /nuget/reference/extensibility
+      topicHref: /nuget/reference/extensibility/nuget-cross-platform-plugins
     - name: Visual Studio extensibility
       tocHref: /nuget/visual-studio-extensibility/
       topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
+    - name: Publish
+      tocHref: /nuget/hosting-packages/
+      topicHref: /nuget/hosting-packages/overview
     - name: Policies
       tocHref: /nuget/policies/
       topicHref: /nuget/policies/governance
     - name: Release notes
       tocHref: /nuget/release-notes/
-      topicHref: /nuget/release-notes/index
+      topicHref: /nuget/release-notes/known-issues
+    - name: Resources
+      tocHref: /nuget/resources/
+      topicHref: /nuget/resources/nuget-faq
     - name: NuGet.org
       tocHref: /nuget/nuget-org/
       topicHref: /nuget/nuget-org/organizations-on-nuget-org

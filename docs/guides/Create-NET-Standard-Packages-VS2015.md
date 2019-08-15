@@ -120,7 +120,7 @@ If you have any dependencies on other NuGet packages, list those in the manifest
 </dependencies>
 ```
 
-The syntax of the *version* attribute here indicates that version 8.0.3 or above is acceptable. To specify different version ranges, refer to [Package versioning](../reference/package-versioning.md).
+The syntax of the *version* attribute here indicates that version 8.0.3 or above is acceptable. To specify different version ranges, refer to [Package versioning](../concepts/package-versioning.md).
 
 ### Adding a readme
 
@@ -165,6 +165,6 @@ Note that `pack` requires Mono 4.4.2 on Mac OS X and does not work on Linux syst
 - [Include MSBuild props and targets in a package](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)
 - [Symbol packages](../create-packages/symbol-packages.md)
-- [Package versioning](../reference/package-versioning.md)
+- [Package versioning](../concepts/package-versioning.md)
 - [.NET Standard Library documentation](/dotnet/articles/standard/library)
 - [Porting to .NET Core from .NET Framework](/dotnet/articles/core/porting/index)

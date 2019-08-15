@@ -261,7 +261,7 @@ To make your package available to other developers,  follow the instructions on 
 
 - [Nuspec Reference](../reference/nuspec.md)
 - [Symbol packages](../create-packages/symbol-packages.md)
-- [Package versioning](../reference/package-versioning.md)
+- [Package versioning](../concepts/package-versioning.md)
 - [Supporting Multiple .NET Framework Versions](../create-packages/supporting-multiple-target-frameworks.md)
 - [Include MSBuild props and targets in a package](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [Creating Localized Packages](../create-packages/creating-localized-packages.md)
