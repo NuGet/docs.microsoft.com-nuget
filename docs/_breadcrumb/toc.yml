@@ -9,18 +9,21 @@
     - name: Get started
       tocHref: /nuget/quickstart/
       topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
-    - name: Guides
-      tocHref: /nuget/guides/ 
-      topicHref: /nuget/guides/create-net-standard-packages-vs2017
-    - name: Create packages
-      tocHref: /nuget/create-packages/
-      topicHref: /nuget/create-packages/overview-and-workflow
     - name: Consume packages
       tocHref: /nuget/consume-packages/
       topicHref: /nuget/consume-packages/overview-and-workflow
+    - name: Create packages
+      tocHref: /nuget/create-packages/
+      topicHref: /nuget/create-packages/overview-and-workflow
+    - name: Guides
+      tocHref: /nuget/guides/ 
+      topicHref: /nuget/guides/create-net-standard-packages-vs2017
     - name: Reference
       tocHref: /nuget/reference/
       topicHref: /nuget/reference/nuspec
+    - name: API
+      tocHref: /nuget/api/
+      topicHref: /nuget/api/overview
     - name: Visual Studio extensibility
       tocHref: /nuget/visual-studio-extensibility/
       topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio

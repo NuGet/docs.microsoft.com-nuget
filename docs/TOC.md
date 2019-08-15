@@ -45,9 +45,9 @@
 ### [Create a localized package](create-packages/creating-localized-packages.md)
 ## Guides for specific content
 ### [Create a UWP package](guides/create-uwp-packages.md)
-### [Create a native package](create-packages/native-packages.md)
+### [Create a native package](guides/native-packages.md)
 ### [Create UI controls as a NuGet package](guides/create-UI-controls.md)
-### [Create an analyzer as a NuGet package](reference/analyzers-conventions.md)
+### [Create an analyzer as a NuGet package](guides/analyzers-conventions.md)
 ### [Create a package for Xamarin with Visual Studio 2015](guides/create-packages-for-xamarin.md)
 ### [Create a package with COM interop assemblies](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## Sign packages
