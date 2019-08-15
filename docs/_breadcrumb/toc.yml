@@ -33,6 +33,9 @@
     - name: Visual Studio extensibility
       tocHref: /nuget/visual-studio-extensibility/
       topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
+    - name: Publish
+      tocHref: /nuget/hosting-packages/
+      topicHref: /nuget/hosting-packages/overview
     - name: Policies
       tocHref: /nuget/policies/
       topicHref: /nuget/policies/governance
