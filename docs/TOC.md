@@ -27,7 +27,7 @@
 ### [Common NuGet configurations](consume-packages/configuring-nuget-behavior.md)
 ## Reference packages in your project
 ### [Package references in project files](consume-packages/package-references-in-project-files.md)
-### [Migrate packages.config to PackageReference](reference/migrate-packages-config-to-package-reference.md)
+### [Migrate packages.config to PackageReference](consume-packages/migrate-packages-config-to-package-reference.md)
 ### [packages.config](reference/packages-config.md)
 # Create packages
 ## [Overview and workflow](create-packages/overview-and-workflow.md)
@@ -342,6 +342,6 @@
 #### [NuGet 1.3](release-notes/NuGet-1.3.md)
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
-## [FAQs](faqs/nuget-faq.md)
+## [FAQs](resources/nuget-faq.md)
 ## [Project format](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)
