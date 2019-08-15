@@ -30,7 +30,7 @@ When adding project code to a source repository, you typically don't include NuG
 
 ![Flow of restoring NuGet packages by cloning a repository and using either a restore command](media/Overview-02-RestoreFlow.png)
 
-[Package Restore](../consume-packages/package-restore.md) uses the information in the project file or `packages.config` to reinstall all dependencies. Note that there are differences in the process involved, as described in [Dependency Resolution](../consume-packages/dependency-resolution.md). Also, the diagram above does not show a restore command for the Package Manager Console because if you're with the Console you're already in the context of Visual Studio, which typically restores packages automatically and provides the solution-level command as shown.
+[Package Restore](../consume-packages/package-restore.md) uses the information in the project file or `packages.config` to reinstall all dependencies. Note that there are differences in the process involved, as described in [Dependency Resolution](../concepts/dependency-resolution.md). Also, the diagram above does not show a restore command for the Package Manager Console because if you're with the Console you're already in the context of Visual Studio, which typically restores packages automatically and provides the solution-level command as shown.
 
 Occasionally it's necessary to reinstall packages that are already included in a project, which may also reinstall dependencies. This is easy to do using the `nuget reinstall` command or the NuGet Package Manager Console. For details, see [Reinstalling and Updating Packages](../consume-packages/reinstalling-and-updating-packages.md).
 

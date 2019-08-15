@@ -64,8 +64,8 @@
 ### [Local feeds](hosting-packages/local-feeds.md)
 # Concepts
 ## [Package installation process](concepts/package-installation-process.md)
-## [Package versioning](reference/package-versioning.md)
-## [Dependency resolution](consume-packages/dependency-resolution.md)
+## [Package versioning](concepts/package-versioning.md)
+## [Dependency resolution](concepts/dependency-resolution.md)
 # Reference
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config file](reference/nuget-config-file.md)

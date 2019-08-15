@@ -43,7 +43,7 @@ The convention for specifying the version of a package is the same as when using
 </ItemGroup>
 ```
 
-In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards).
+In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../concepts/package-versioning.md#version-ranges-and-wildcards).
 
 ## Using PackageReference for a project with no PackageReferences
 Advanced: If you have no packages installed in a project (no PackageReferences in project file and no packages.config file), but want the project to be restored as PackageReference style, you can set a Project property RestoreProjectStyle to PackageReference in your project file.
@@ -58,7 +58,7 @@ This may be useful, if you reference projects which are PackageReference styled 
 
 ## Floating Versions
 
-[Floating versions](../consume-packages/dependency-resolution.md#floating-versions) are supported with `PackageReference`:
+[Floating versions](../concepts/dependency-resolution.md#floating-versions) are supported with `PackageReference`:
 
 ```xml
 <ItemGroup>

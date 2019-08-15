@@ -188,7 +188,7 @@ This will include a file named `readme.txt` in the package root. Visual Studio d
 - [Publish a Package](../nuget-org/publish-a-package.md)
 - [Pre-release Packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple target frameworks](../create-packages/multiple-target-frameworks-project-file.md)
-- [Package versioning](../reference/package-versioning.md)
+- [Package versioning](../concepts/package-versioning.md)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)
 - [.NET Standard Library documentation](/dotnet/articles/standard/library)
 - [Porting to .NET Core from .NET Framework](/dotnet/articles/core/porting/index)

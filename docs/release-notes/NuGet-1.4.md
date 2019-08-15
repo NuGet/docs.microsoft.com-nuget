@@ -67,7 +67,7 @@ only work with version 2.* of a package, but not 3.0 and above. In order to prev
 `packages.config` file using the new `allowedVersions` attribute.
 
 For example, the following example shows how to lock the `SomePackage` package the version range 2.0 - 3.0 (exclusive).
-The `allowedVersions` attribute accepts values using the [version range format](../reference/package-versioning.md#version-ranges-and-wildcards).
+The `allowedVersions` attribute accepts values using the [version range format](../concepts/package-versioning.md#version-ranges-and-wildcards).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
