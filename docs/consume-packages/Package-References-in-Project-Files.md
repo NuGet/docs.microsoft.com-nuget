@@ -101,7 +101,7 @@ Allowable values for these tags are as follows, with multiple values separated b
 | runtime | Contents of the `lib` and `runtimes` folder and controls whether these assemblies will be copied out to the build output directory |
 | contentFiles | Contents of the `contentfiles` folder |
 | build | `.props` and `.targets` in the `build` folder |
-| buildMultitargeting | `.props` and `.targets` in the `buildMultitargeting` folder, for cross-framework targeting |
+| buildMultitargeting | *(4.0)* `.props` and `.targets` in the `buildMultitargeting` folder, for cross-framework targeting |
 | buildTransitive | *(5.0+)* `.props` and `.targets` in the `buildTransitive` folder, for assets that flow transitively to any consuming project. See the [feature](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) page. |
 | analyzers | .NET analyzers |
 | native | Contents of the `native` folder |
