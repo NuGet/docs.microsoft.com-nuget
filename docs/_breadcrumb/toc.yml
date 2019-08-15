@@ -6,7 +6,7 @@
     tocHref: /nuget/
     topicHref: /nuget
     items:
-    - name: Quickstart
+    - name: Get started
       tocHref: /nuget/quickstart/
       topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
     - name: Guides
@@ -29,7 +29,10 @@
       topicHref: /nuget/policies/governance
     - name: Release notes
       tocHref: /nuget/release-notes/
-      topicHref: /nuget/release-notes/index
+      topicHref: /nuget/release-notes/known-issues
+    - name: Resources
+      tocHref: /nuget/resources/
+      topicHref: /nuget/resources/nuget-faq
     - name: NuGet.org
       tocHref: /nuget/nuget-org/
       topicHref: /nuget/nuget-org/organizations-on-nuget-org

@@ -112,7 +112,17 @@
         },
         {
             "source_path": "docs/policies/nuget-faq.md",
-            "redirect_url": "/nuget/faqs/nuget-faq",
+            "redirect_url": "/nuget/resources/nuget-faq",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/faqs/nuget-faq.md",
+            "redirect_url": "/nuget/resources/nuget-faq",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/migrate-packages-config-to-package-reference.md",
+            "redirect_url": "/nuget/consume-packages/migrate-packages-config-to-package-reference",
             "redirect_document_id": false
         },
         {
