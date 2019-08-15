@@ -14,7 +14,7 @@ The CLI tool allows you to easily update and restore NuGet packages in projects 
 The `nuget.exe` CLI is for your .NET Framework project and non-SDK-style projects (for example, a non-SDK style project that targets .NET Standard libraries). If you are using a non-SDK-style project that has been migrated to `PackageReference`, use the `dotnet` CLI instead. The `nuget.exe` CLI requires a [packages.config](../reference/packages-config.md) file for package references.
 
 > [!NOTE]
-> In most scenarios, we recommend [migrating non-SDK-style projects](../reference/migrate-packages-config-to-package-reference.md) that use `packages.config` to PackageReference, and then you can use the `dotnet` CLI instead of the `nuget.exe` CLI. Migration is not currently available for C++ and ASP.NET projects.
+> In most scenarios, we recommend [migrating non-SDK-style projects](../consume-packages/migrate-packages-config-to-package-reference.md) that use `packages.config` to PackageReference, and then you can use the `dotnet` CLI instead of the `nuget.exe` CLI. Migration is not currently available for C++ and ASP.NET projects.
 
 This article shows you basic usage for a few of the most common `nuget.exe` CLI commands. For most of these commands, the CLI tool looks for a project file in the current directory, unless a project file is specified in the command. For a complete list of commands and the arguments you may use, see the [nuget.exe CLI reference](../reference/nuget-exe-cli-reference.md).
 
@@ -106,3 +106,13 @@ nuget update
 ## Restore packages
 
 [!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
+
+## Get the CLI version
+
+Use this command:
+
+```cli
+nuget help
+```
+
+The first line in the help output shows the version. To avoid scrolling up, use `nuget help | more` instead.

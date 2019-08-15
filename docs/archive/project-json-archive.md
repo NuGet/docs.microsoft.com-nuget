@@ -49,19 +49,19 @@ Works with `project.json`.
 
 ## Dependency resolution with PackageReference
 
-*Originally in [Dependency resolution](../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference).*
+*Originally in [Dependency resolution](../concepts/dependency-resolution.md#dependency-resolution-with-packagereference).*
 
 The behavior of PackageReference applies also to `project.json`. NuGet restore writes the dependency graph into a file named `project.lock.json` alongside `project.json`.
 
 ## Managing dependency assets
 
-*Originally in [Dependency resolution](../consume-packages/dependency-resolution.md#managing-dependency-assets).*
+*Originally in [Dependency resolution](../concepts/dependency-resolution.md#managing-dependency-assets).*
 
 When using the `project.json` format, you can control which assets from dependencies flow into the top-level project. For details, see [project.json](project-json.md).
 
 ## Excluding references
 
-*Originally in [Dependency resolution](../consume-packages/dependency-resolution.md#excluding-references).*
+*Originally in [Dependency resolution](../concepts/dependency-resolution.md#excluding-references).*
 
 - `project.json`: add `"exclude" : "all"` in the dependency for PackageC:
 
@@ -78,7 +78,7 @@ When using the `project.json` format, you can control which assets from dependen
 
 ## Resolving incompatible package errors
 
-*Originally in [Dependency resolution](../consume-packages/dependency-resolution.md#resolving-incompatible-package-errors).*
+*Originally in [Dependency resolution](../concepts/dependency-resolution.md#resolving-incompatible-package-errors).*
 
 An added means of resolving errors:
 
@@ -119,7 +119,7 @@ When using `project.json`, targets are not added to the project but are made ava
 
 ### Package versioning
 
-*Originally in [Package versioning](../reference/package-versioning.md).*
+*Originally in [Package versioning](../concepts/package-versioning.md).*
 
 When using the `project.json` format, NuGet also supports using a wildcard notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number.
 
