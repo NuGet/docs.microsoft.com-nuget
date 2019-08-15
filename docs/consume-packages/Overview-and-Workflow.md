@@ -24,13 +24,13 @@ NuGet remembers the identity and version number of each installed package, recor
 
 When installing packages, NuGet typically checks if the package is already available from its cache. You can manually clear this cache from the command line, as described on [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
-NuGet also makes sure that the target frameworks supported by the package are compatible with your project. If the package does not contain compatible assemblies, NuGet displays an error. See [Resolving incompatible package errors](dependency-resolution.md#resolving-incompatible-package-errors).
+NuGet also makes sure that the target frameworks supported by the package are compatible with your project. If the package does not contain compatible assemblies, NuGet displays an error. See [Resolving incompatible package errors](../concepts/dependency-resolution.md#resolving-incompatible-package-errors).
 
 When adding project code to a source repository, you typically don't include NuGet packages. Those who later clone the repository or otherwise acquire the project, including build agents on systems like Visual Studio Team Services, must restore the necessary packages prior to running a build:
 
 ![Flow of restoring NuGet packages by cloning a repository and using either a restore command](media/Overview-02-RestoreFlow.png)
 
-[Package Restore](../consume-packages/package-restore.md) uses the information in the project file or `packages.config` to reinstall all dependencies. Note that there are differences in the process involved, as described in [Dependency Resolution](../consume-packages/dependency-resolution.md). Also, the diagram above does not show a restore command for the Package Manager Console because if you're with the Console you're already in the context of Visual Studio, which typically restores packages automatically and provides the solution-level command as shown.
+[Package Restore](../consume-packages/package-restore.md) uses the information in the project file or `packages.config` to reinstall all dependencies. Note that there are differences in the process involved, as described in [Dependency Resolution](../concepts/dependency-resolution.md). Also, the diagram above does not show a restore command for the Package Manager Console because if you're with the Console you're already in the context of Visual Studio, which typically restores packages automatically and provides the solution-level command as shown.
 
 Occasionally it's necessary to reinstall packages that are already included in a project, which may also reinstall dependencies. This is easy to do using the `nuget reinstall` command or the NuGet Package Manager Console. For details, see [Reinstalling and Updating Packages](../consume-packages/reinstalling-and-updating-packages.md).
 

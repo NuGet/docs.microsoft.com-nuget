@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Migrate from packages.config to PackageReference
 
-Visual Studio 2017 Version 15.7 and later supports migrating a project from the [packages.config](./packages-config.md) management format to the [PackageReference](../consume-packages/Package-References-in-Project-Files.md) format.
+Visual Studio 2017 Version 15.7 and later supports migrating a project from the [packages.config](../reference/packages-config.md) management format to the [PackageReference](../consume-packages/Package-References-in-Project-Files.md) format.
 
 ## Benefits of using PackageReference
 
