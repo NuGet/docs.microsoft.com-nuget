@@ -126,6 +126,16 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/reference/analyzers-conventions.md",
+            "redirect_url": "/nuget/create-packages/analyzers-conventions",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/create-packages/native-packages.md",
+            "redirect_url": "/nuget/guides/native-packages",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/reference/ID-Prefix-Reservation.md",
             "redirect_url": "/nuget/nuget-org/id-prefix-reservation",
             "redirect_document_id": false
