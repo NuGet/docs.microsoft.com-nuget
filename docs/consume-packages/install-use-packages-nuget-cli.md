@@ -106,3 +106,13 @@ nuget update
 ## Restore packages
 
 [!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
+
+## Get the CLI version
+
+Use this command:
+
+```cli
+nuget help
+```
+
+The first line in the help output shows the version. To avoid scrolling up, use `nuget help | more` instead.
