@@ -127,7 +127,7 @@
         },
         {
             "source_path": "docs/reference/analyzers-conventions.md",
-            "redirect_url": "/nuget/create-packages/analyzers-conventions",
+            "redirect_url": "/nuget/guides/analyzers-conventions",
             "redirect_document_id": false
         },
         {
