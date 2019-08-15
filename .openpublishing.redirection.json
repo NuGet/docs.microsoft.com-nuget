@@ -136,6 +136,16 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/consume-packages/dependency-resolution.md",
+            "redirect_url": "/nuget/concepts/dependency-resolution",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/package-versioning.md",
+            "redirect_url": "/nuget/concepts/package-versioning",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/reference/ID-Prefix-Reservation.md",
             "redirect_url": "/nuget/nuget-org/id-prefix-reservation",
             "redirect_document_id": false

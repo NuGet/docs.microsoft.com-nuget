@@ -18,6 +18,9 @@
     - name: Guides
       tocHref: /nuget/guides/ 
       topicHref: /nuget/guides/create-net-standard-packages-vs2017
+    - name: Concepts
+      tocHref: /nuget/concepts/
+      topicHref: /nuget/concepts/package-installation-process
     - name: Reference
       tocHref: /nuget/reference/
       topicHref: /nuget/reference/nuspec
