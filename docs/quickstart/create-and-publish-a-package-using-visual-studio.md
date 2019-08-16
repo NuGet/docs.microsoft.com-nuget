@@ -57,21 +57,21 @@ namespace AppLogger
 
 1. Right-click the project in Solution Explorer, and choose **Properties** menu command, then select the **Package** tab.
 
-   The **Package** tab appears only for SDK-style projects in Visual Studio, typically .NET Standard or .NET Core class library projects; if you are targeting a non-SDK style project (typically .NET Framework), either [migrate the project](../consume-packages/migrate-packages-config-to-package-reference.md) and use `dotnet` CLI, or see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) or see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) instead for step-by-step instructions.
+   The **Package** tab appears only for SDK-style projects in Visual Studio, typically .NET Standard or .NET Core class library projects; if you are targeting a non-SDK style project (typically .NET Framework), either [migrate the project](../consume-packages/migrate-packages-config-to-package-reference.md) and use `dotnet` CLI, or see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) instead for step-by-step instructions.
 
     ![NuGet package properties in a Visual Studio project](media/qs_create-vs-01-package-properties.png)
 
     > [!Note]
     > For packages built for public consumption, pay special attention to the **Tags** property, as tags help others find your package and understand what it does.
 
-1. Give your package a unique identifier and fill out any other desired properties. For a description of the different properties, see [.nuspec file reference](../reference/nuspec.md). All of the properties here go into the `.nuspec` manifest that Visual Studio creates for the project.
+1. Give your package a unique identifier and fill out any other desired properties. For a mapping of MSBuild properties (SDK-style project) to properties in a *.nuspec*, see [pack targets](../reference/msbuild-targets.md#pack-target). For descriptions of properties, see the [.nuspec file reference](../reference/nuspec.md). All of the properties here go into the `.nuspec` manifest that Visual Studio creates for the project.
 
     > [!Important]
     > You must give the package an identifier that's unique across nuget.org or whatever host you're using. For this walkthrough we recommend including "Sample" or "Test" in the name as the later publishing step does make the package publicly visible (though it's unlikely anyone will actually use it).
     >
     > If you attempt to publish a package with a name that already exists, you see an error.
 
-1. Optional: to see the properties directly in the project file, right-click the project in Solution Explorer and select **Edit AppLogger.csproj**.
+1. (Optional) To see the properties directly in the project file, right-click the project in Solution Explorer and select **Edit AppLogger.csproj**.
 
    This option is only available starting in Visual Studio 2017 for projects that use the SDK-style attribute. Otherwise, right-click the project and choose **Unload Project**. Then right-click the unloaded project and choose **Edit AppLogger.csproj**.
 
@@ -123,7 +123,11 @@ Once you have a `.nupkg` file, you publish it to nuget.org using either the `nug
 
 [!INCLUDE [publish-api-key](includes/publish-api-key.md)]
 
-### Publish with dotnet nuget push (dotnet CLI)
+### Publish with the dotnet CLI or nuget.exe CLI
+
+Select the tab for your CLI tool, either **.NET Core CLI** (dotnet CLI) or **NuGet** (nuget.exe CLI).
+
+# [.NET Core CLI](#tab/netcore-cli)
 
 This step is the recommended alternative to using `nuget.exe`.
 
@@ -131,7 +135,7 @@ Before you can publish the package, you must first open a command line.
 
 [!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
-### Publish with nuget push (nuget.exe CLI)
+# [NuGet](#tab/nuget)
 
 This step is an alternative to using `dotnet.exe`.
 
@@ -153,6 +157,8 @@ This step is an alternative to using `dotnet.exe`.
     ```
 
 See [nuget push](../reference/cli-reference/cli-ref-push.md).
+
+---
 
 ### Publish errors
 
