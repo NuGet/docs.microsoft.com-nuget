@@ -179,8 +179,8 @@ The folder conventions are as follows:
 | ref/{tfm} | Assembly (`.dll`), and symbol (`.pdb`) files for the given Target Framework Moniker (TFM) | Assemblies are added as references only for compile time; So nothing will be copied into project bin folder. |
 | runtimes | Architecture-specific assembly (`.dll`), symbol (`.pdb`), and native resource (`.pri`) files | Assemblies are added as references only for runtime; other files are copied into project folders. There should always be a corresponding (TFM) `AnyCPU` specific assembly under `/ref/{tfm}` folder to provide corresponding compile time assembly. See [Supporting multiple target frameworks](supporting-multiple-target-frameworks.md). |
 | content | Arbitrary files | Contents are copied to the project root. Think of the **content** folder as the root of the target application that ultimately consumes the package. To have the package add an image in the application's */images* folder, place it in the package's *content/images* folder. |
-| build | MSBuild `.targets` and `.props` files | *(3.x+)* Automatically inserted into the project. |
-| buildMultiTargeting | *(3.x+)* MSBuild `.targets` and `.props` files for cross-framework targeting | Automatically inserted into the project. |
+| build | *(3.x+)* MSBuild `.targets` and `.props` files | Automatically inserted into the project. |
+| buildMultiTargeting | *(4.0+)* MSBuild `.targets` and `.props` files for cross-framework targeting | Automatically inserted into the project. |
 | buildTransitive | *(5.0+)* MSBuild `.targets` and `.props` files that flow transitively to any consuming project. See the [feature](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) page. | Automatically inserted into the project. |
 | tools | Powershell scripts and programs accessible from the Package Manager Console | The `tools` folder is added to the `PATH` environment variable for the Package Manager Console only (Specifically, *not* to the `PATH` as set for MSBuild when building the project). |
 
