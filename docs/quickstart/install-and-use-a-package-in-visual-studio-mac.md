@@ -22,7 +22,7 @@ Once installed, refer to the package in code with `using <namespace>` where \<na
 
 You can install the 2019 Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions.
 
-If you're using Visual Studio on Windows, see [Install and use a package in Visual Studio (Windows Only)](./install-and-use-a-package-in-visual-studio).
+If you're using Visual Studio on Windows, see [Install and use a package in Visual Studio (Windows Only)](install-and-use-a-package-in-visual-studio).
 
 ## Create a project
 
@@ -46,7 +46,7 @@ To install the package, you use the NuGet Package Manager. When you install a pa
 
     ![Locating Newtonsoft.Json package](media/QS_Use_Mac-03-NewtonsoftJson.png)
 
-    If you want more information on the NuGet Package Manager, see [Install and manage packages using Visual Studio for Mac](./install-and-use-a-package-in-visual-studio-mac).
+    If you want more information on the NuGet Package Manager, see [Install and manage packages using Visual Studio for Mac](../consume-packages/install-use-packages-visual-studio.md).
 
 ## Use the Newtonsoft.Json API in the app
 
