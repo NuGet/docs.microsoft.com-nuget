@@ -22,7 +22,7 @@ Once installed, refer to the package in code with `using <namespace>` where \<na
 
 You can install the 2019 Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions.
 
-If you're using Visual Studio for Mac, see [Include a NuGet package in your project](/visualstudio/mac/nuget-walkthrough).
+If you're using Visual Studio for Mac, see [Install and use a package in Visual Studio for Mac](./install-and-use-a-package-in-visual-studio-mac).
 
 ## Create a project
 
