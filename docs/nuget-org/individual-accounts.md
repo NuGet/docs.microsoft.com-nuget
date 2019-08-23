@@ -67,4 +67,4 @@ To better protect your account, enable two-factor authentication (recommended).
 
 ## Delete a NuGet.org account
 
-For help with additional account-related tasks, such as [deleting a NuGet.org account](nuget-org-faq.md#how-to-delete-my-nuget.org-account?), see [NuGet.org account management](nuget-org-faq.md#nugetorg-account-management).
+For help with additional account-related tasks, such as deleting a NuGet.org account, see [NuGet.org account management](nuget-org-faq.md#nugetorg-account-management).

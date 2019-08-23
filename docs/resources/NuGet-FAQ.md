@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # NuGet frequently-asked questions
 
-For frequently-asked questions pertaining to NuGet.org, such as NuGet.org account questions, see [NuGet.org frequently-asked questions](../nuget-org/nuget-org-faq).
+For frequently-asked questions pertaining to NuGet.org, such as NuGet.org account questions, see [NuGet.org frequently-asked questions](../nuget-org/nuget-org-faq.md).
 
 **What is required to run NuGet?**
 
