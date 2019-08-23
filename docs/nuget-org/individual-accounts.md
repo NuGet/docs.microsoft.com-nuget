@@ -1,5 +1,5 @@
 ---
-title: Individual accounts
+title: Individual accounts - NuGet.org
 description: Individual acccounts on NuGet.org are required to publish packages
 author: mikejo5000
 ms.author: mikejo
@@ -7,7 +7,7 @@ ms.date: 06/05/2019
 ms.topic: conceptual
 ---
 
-# Individual accounts
+# Individual accounts on NuGet.org
 
 You must create an individual account to publish and manage packages on NuGet.org.
 
@@ -64,3 +64,7 @@ To better protect your account, enable two-factor authentication (recommended).
    ![Enable 2FA](media/nuget-org-enter-code-2fa.png)
 
 5. Follow any additional instructions to complete Two-factor authentication.
+
+## Delete a NuGet.org account
+
+For help with additional account-related tasks, such as [deleting a NuGet.org account](nuget-org-faq.md#how-to-delete-my-nuget.org-account?), see [NuGet.org account management](nuget-org-faq.md#nugetorg-account-management).
