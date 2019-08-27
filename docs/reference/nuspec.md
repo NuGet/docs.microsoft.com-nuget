@@ -151,6 +151,8 @@ A Boolean value specifying whether the client must prompt the consumer to accept
 > [!Important]
 > `summary` is being deprecated. Use `description` instead.
 
+A short description of the package for UI display. If omitted, a truncated version of `description` is used.
+
 #### releaseNotes
 *(1.5+)* A description of the changes made in this release of the package, often used in UI like the **Updates** tab of the Visual Studio Package Manager in place of the package description.
 
