@@ -71,7 +71,7 @@ The case-insensitive package identifier, which must be unique across nuget.org o
 #### version
 The version of the package, following the *major.minor.patch* pattern. Version numbers may include a pre-release suffix as described in [Package versioning](../concepts/package-versioning.md#pre-release-versions). 
 #### description
-A long description of the package for UI display. 
+A description of the package for UI display.
 #### authors
 A comma-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors. 
 
@@ -148,7 +148,8 @@ A Boolean value specifying whether the client must prompt the consumer to accept
 *(2.8+)* A Boolean value specifying whether the package is be marked as a development-only-dependency, which prevents the package from being included as a dependency in other packages. With PackageReference (NuGet 4.8+), this flag also means that it will exclude compile-time assets from compilation. See [DevelopmentDependency support for PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
 
 #### summary
-A short description of the package for UI display. If omitted, a truncated version of `description` is used.
+> [!Important]
+> `summary` is being deprecated. Use `description` instead.
 
 #### releaseNotes
 *(1.5+)* A description of the changes made in this release of the package, often used in UI like the **Updates** tab of the Visual Studio Package Manager in place of the package description.
