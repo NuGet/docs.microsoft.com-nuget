@@ -94,7 +94,7 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 Congratulations on installing and using your first NuGet package!
 
 > [!div class="nextstepaction"]
-> [Install and manage packages using Visual Studio for Mac](../consume-packages/install-use-packages-visual-studio.md)
+> [Install and manage packages using Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
 
 To explore more that NuGet has to offer, select the links below.
 
