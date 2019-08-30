@@ -3,7 +3,7 @@ title: nuget.config File Reference
 description: NuGet.Config file reference including the config, bindingRedirects, packageRestore, solution, and packageSource sections.
 author: karann-msft
 ms.author: karann
-ms.date: 10/25/2017
+ms.date: 08/13/2019
 ms.topic: reference
 ---
 
@@ -12,22 +12,6 @@ ms.topic: reference
 NuGet behavior is controlled by settings in different `NuGet.Config` files as described in [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md).
 
 `nuget.config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic. Each section contains zero or more items. See the [examples config file](#example-config-file). Setting names are case-insensitive, and values can use [environment variables](#using-environment-variables).
-
-In this topic:
-
-- [config section](#config-section)
-- [bindingRedirects section](#bindingredirects-section)
-- [packageRestore section](#packagerestore-section)
-- [solution section](#solution-section)
-- [Package source sections](#package-source-sections):
-  - [packageSources](#packagesources)
-  - [packageSourceCredentials](#packagesourcecredentials)
-  - [apikeys](#apikeys)
-  - [disabledPackageSources](#disabledpackagesources)
-  - [activePackageSource](#activepackagesource)
-- [trustedSigners section](#trustedsigners-section)
-- [Using environment variables](#using-environment-variables)
-- [Example config file](#example-config-file)
 
 <a name="dependencyVersion"></a>
 <a name="globalPackagesFolder"></a>
@@ -235,6 +219,7 @@ Identifies to the currently active source or indicates the aggregate of all sour
     <add key="All" value="(Aggregate source)" />
 </activePackageSource>
 ```
+
 ## trustedSigners section
 
 Stores trusted signers used to allow package while installing or restoring. This list cannot be empty when the user sets `signatureValidationMode` to `require`. 
@@ -263,6 +248,50 @@ If a `certificate` specifies `allowUntrustedRoot` as `true` the given certificat
 		<owners>microsoft;aspnet;nuget</owners>
 	</repository>
 </trustedSigners>
+```
+
+## fallbackPackageFolders section
+
+*(3.5+)* Provides a way to preinstall packages so that no work needs to be done if the package is found in the fallback folders. Fallback package folders have the exact same folder and file structure as the global package folder: *.nupkg* is present, and all files are extracted.
+
+The lookup logic for this configuration is:
+
+- Look in global package folder to see if the package/version is already downloaded.
+
+- Look in the fallback folders for a package/version match.
+
+If either lookup is successful, then no download is necessary.
+
+If a match is not found, then NuGet checks file sources, and then http sources, and then it downloads the packages.
+
+| Key | Value |
+| --- | --- |
+| (name of fallback folder) | Path to fallback folder. |
+
+**Example**:
+
+```xml
+<fallbackPackageFolders>
+   <add key="XYZ Offline Packages" value="C:\somePath\someFolder\"/>
+</fallbackPackageFolders>
+```
+
+## packageManagement section
+
+Sets the default package management format, either *packages.config* or PackageReference. SDK-style projects always use PackageReference.
+
+| Key | Value |
+| --- | --- |
+| format | A Boolean indicating the default package management format. If `1`, format is PackageReference. If `0`, format is *packages.config*. |
+| disabled | A Boolean indicating whether to show the prompt to select a default package format on first package install. `False` hides the prompt. |
+
+**Example**:
+
+```xml
+<packageManagement>
+   <add key="format" value="1" />
+   <add key="disabled" value="False" />
+</packageManagement>
 ```
 
 ## Using environment variables

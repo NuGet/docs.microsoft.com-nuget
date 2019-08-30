@@ -1,9 +1,7 @@
 ---
 title: How to publish NuGet symbol packages using the new symbol package format '.snupkg'| Microsoft Docs
 author: cristinamanu
-ms.author:
-- cristinamanu
-- kraigb
+ms.author: cristinamanu
 manager: skofman
 ms.date: 10/30/2018
 ms.topic: reference
@@ -106,14 +104,17 @@ The .nupkg file would be exactly the same as it is today, but the .snupkg file w
 
 1) The .snupkg will have the same id and version as the corresponding .nupkg.
 2) The .snupkg will have the exact folder structure as the nupkg for any DLL or EXE files with the distinction that instead of DLLs/EXEs, their corresponding PDBs will be included in the same folder hierarchy. Files and folders with extensions other than PDB will be left out of the snupkg.
-3) The .nuspec file in the .snupkg will also specify a new PackageType as below. This should the only one PackageType specified. 
-``` 
-<packageTypes>
-  <packageType name="SymbolsPackage"/>
-</packageTypes>
-```
+3) The .nuspec file in the .snupkg will also specify a new PackageType as below. This should the only one PackageType specified.
+
+   ```xml
+   <packageTypes>
+      <packageType name="SymbolsPackage"/>
+   </packageTypes>
+   ```
+
 4) If an author decides to use a custom nuspec to build their nupkg and snupkg, the snupkg should have the same folder hierarchy and files detailed in 2).
 5) ```authors``` and ```owners``` field will be excluded from the snupkg's nuspec.
+6) Do not use the <license> element. A .snupkg is covered under the same license as the corresponding .nupkg.
 
 ## See Also
 

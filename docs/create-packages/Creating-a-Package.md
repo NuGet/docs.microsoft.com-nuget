@@ -15,7 +15,7 @@ No matter what your package does or what code it contains, you use one of the CL
 
 - For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, see [Create a NuGet package using the dotnet CLI](creating-a-package-dotnet-cli.md).
 
-- For projects migrated from `packages.config` to [PackageReference](../consume-packages/package-references-in-project-files.md), use [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
+- For projects migrated from `packages.config` to [PackageReference](../consume-packages/package-references-in-project-files.md), use [msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
 Technically speaking, a NuGet package is just a ZIP file that's been renamed with the `.nupkg` extension and whose contents match certain conventions. This topic describes the detailed process of creating a package that meets those conventions.
 
@@ -133,7 +133,7 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
 </package>
 ```
 
-For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `include` and `exclude` attributes on the `dependency` element. See [.nuspec Reference - Dependencies](../reference/nuspec.md#dependencies).
+For details on declaring dependencies and specifying version numbers, see [packages.config](../reference/packages-config.md) and [Package versioning](../concepts/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `include` and `exclude` attributes on the `dependency` element. See [.nuspec Reference - Dependencies](../reference/nuspec.md#dependencies).
 
 Because the manifest is included in the package created from it, you can find any number of additional examples by examining existing packages. A good source is the *global-packages* folder on your computer, the location of which is returned by the following command:
 
@@ -179,7 +179,9 @@ The folder conventions are as follows:
 | ref/{tfm} | Assembly (`.dll`), and symbol (`.pdb`) files for the given Target Framework Moniker (TFM) | Assemblies are added as references only for compile time; So nothing will be copied into project bin folder. |
 | runtimes | Architecture-specific assembly (`.dll`), symbol (`.pdb`), and native resource (`.pri`) files | Assemblies are added as references only for runtime; other files are copied into project folders. There should always be a corresponding (TFM) `AnyCPU` specific assembly under `/ref/{tfm}` folder to provide corresponding compile time assembly. See [Supporting multiple target frameworks](supporting-multiple-target-frameworks.md). |
 | content | Arbitrary files | Contents are copied to the project root. Think of the **content** folder as the root of the target application that ultimately consumes the package. To have the package add an image in the application's */images* folder, place it in the package's *content/images* folder. |
-| build | MSBuild `.targets` and `.props` files | Automatically inserted into the project file or `project.lock.json` (NuGet 3.x+). |
+| build | *(3.x+)* MSBuild `.targets` and `.props` files | Automatically inserted into the project. |
+| buildMultiTargeting | *(4.0+)* MSBuild `.targets` and `.props` files for cross-framework targeting | Automatically inserted into the project. |
+| buildTransitive | *(5.0+)* MSBuild `.targets` and `.props` files that flow transitively to any consuming project. See the [feature](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) page. | Automatically inserted into the project. |
 | tools | Powershell scripts and programs accessible from the Package Manager Console | The `tools` folder is added to the `PATH` environment variable for the Package Manager Console only (Specifically, *not* to the `PATH` as set for MSBuild when building the project). |
 
 Because your folder structure can contain any number of assemblies for any number of target frameworks, this method is necessary when creating packages that support multiple frameworks.
@@ -212,6 +214,13 @@ nuget spec
 ```
 
 The resulting `<project-name>.nuspec` file contains *tokens* that are replaced at packaging time with values from the project, including references to any other packages that have already been installed.
+
+If you have package dependencies to include in the *.nuspec*, instead use `nuget pack`, and get the *.nuspec* file from within the generated *.nupkg* file. For example, use the following command.
+
+```cli
+# Use in a folder containing a project file <project-name>.csproj or <project-name>.vbproj
+nuget pack myproject.csproj
+```
 
 A token is delimited by `$` symbols on both sides of the project property. For example, the `<id>` value in a manifest generated in this way typically appears as follows:
 
@@ -258,7 +267,7 @@ The package identifier (`<id>` element) and the version number (`<version>` elem
 **Best practices for the package version:**
 
 - In general, set the version of the package to match the library, though this is not strictly required. This is a simple matter when you limit a package to a single assembly, as described earlier in [Deciding which assemblies to package](#decide-which-assemblies-to-package). Overall, remember that NuGet itself deals with package versions when resolving dependencies, not assembly versions.
-- When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Package versioning](../reference/package-versioning.md).
+- When using a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Package versioning](../concepts/package-versioning.md).
 
 > The following series of brief blog posts are also helpful to understand versioning:
 >
@@ -334,7 +343,7 @@ When NuGet installs a package with `\build` files, it adds MSBuild `<Import>` el
 
 MSBuild `.props` and `.targets` files for cross-framework targeting can be placed in the `\buildMultiTargeting` folder. During package installation, NuGet adds the corresponding `<Import>` elements to the project file with the condition, that the target framework is not set (the MSBuild property `$(TargetFramework)` must be empty).
 
-With NuGet 3.x, targets are not added to the project but are instead made available through the `project.lock.json`.
+With NuGet 3.x, targets are not added to the project but are instead made available through `{projectName}.nuget.g.targets` and `{projectName}.nuget.g.props`.
 
 ## Run nuget pack to generate the .nupkg file
 
@@ -409,7 +418,7 @@ Once you've created a package, which is a `.nupkg` file, you can publish it to t
 
 You might also want to extend the capabilities of your package or otherwise support other scenarios as described in the following topics:
 
-- [Package versioning](../reference/package-versioning.md)
+- [Package versioning](../concepts/package-versioning.md)
 - [Supporting multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
 - [Transformations of source and configuration files](../create-packages/source-and-config-file-transformations.md)
 - [Localization](../create-packages/creating-localized-packages.md)
@@ -419,5 +428,5 @@ You might also want to extend the capabilities of your package or otherwise supp
 
 Finally, there are additional package types to be aware of:
 
-- [Native Packages](../create-packages/native-packages.md)
+- [Native Packages](../guides/native-packages.md)
 - [Symbol Packages](../create-packages/symbol-packages.md)

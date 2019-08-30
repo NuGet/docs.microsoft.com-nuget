@@ -14,7 +14,7 @@ The CLI tool allows you to easily update and restore NuGet packages in projects 
 The `nuget.exe` CLI is for your .NET Framework project and non-SDK-style projects (for example, a non-SDK style project that targets .NET Standard libraries). If you are using a non-SDK-style project that has been migrated to `PackageReference`, use the `dotnet` CLI instead. The `nuget.exe` CLI requires a [packages.config](../reference/packages-config.md) file for package references.
 
 > [!NOTE]
-> In most scenarios, we recommend [migrating non-SDK-style projects](../reference/migrate-packages-config-to-package-reference.md) that use `packages.config` to PackageReference, and then you can use the `dotnet` CLI instead of the `nuget.exe` CLI. Migration is not currently available for C++ and ASP.NET projects.
+> In most scenarios, we recommend [migrating non-SDK-style projects](../consume-packages/migrate-packages-config-to-package-reference.md) that use `packages.config` to PackageReference, and then you can use the `dotnet` CLI instead of the `nuget.exe` CLI. Migration is not currently available for C++ and ASP.NET projects.
 
 This article shows you basic usage for a few of the most common `nuget.exe` CLI commands. For most of these commands, the CLI tool looks for a project file in the current directory, unless a project file is specified in the command. For a complete list of commands and the arguments you may use, see the [nuget.exe CLI reference](../reference/nuget-exe-cli-reference.md).
 
@@ -105,14 +105,14 @@ nuget update
 
 ## Restore packages
 
-Use the [restore](../reference/cli-reference/cli-ref-restore.md) command, which downloads and installs any packages missing from the *packages* folder.
+[!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
 
-`restore` only adds packages to disk but does not change a project's dependencies. To restore project dependencies, modify `packages.config`, then use the `restore` command.
+## Get the CLI version
 
-As with the other `nuget.exe` CLI commands, first open a command line and switch to the directory that contains your project file.
-
-To restore a package using `restore`:
+Use this command:
 
 ```cli
-nuget restore MySolution.sln
+nuget help
 ```
+
+The first line in the help output shows the version. To avoid scrolling up, use `nuget help | more` instead.

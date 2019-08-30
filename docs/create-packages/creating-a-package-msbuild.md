@@ -9,16 +9,16 @@ ms.topic: conceptual
 
 # Create a NuGet package using MSBuild
 
-When you create a NuGet package from your code, you package that functionality into a component that can be shared with and used by any number of other developers. This article describes how to create a package using MSBuild. To use MSBuild, first install the `dotnet` CLI, see [Install NuGet client tools](../install-nuget-client-tools.md). Starting in Visual Studio 2017, the dotnet CLI is included with .NET Core workloads.
+When you create a NuGet package from your code, you package that functionality into a component that can be shared with and used by any number of other developers. This article describes how to create a package using MSBuild. MSBuild comes preinstalled with every Visual Studio workload that contains NuGet. Additionally you can also use MSBuild through the dotnet CLI with [dotnet msbuild](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-msbuild)
 
-For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, NuGet uses information in the project file directly to create a package.  For a non-SDK-style project that uses `<PackageReference>`, you can also use MSBuild (`msbuild /t:pack`).
+For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, NuGet uses information in the project file directly to create a package.  For a non-SDK-style project that uses `<PackageReference>`, NuGet also uses the project file to create a package.
 
-To build with MSBuild, you need to add the NuGet.Build.Tasks.Pack package to the project dependencies. For detailed information about MSBuild pack targets, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
+SDK-style projects have the pack functionality available by default. For non SDK-style PackageReference projects, you need to add the NuGet.Build.Tasks.Pack package to the project dependencies. For detailed information about MSBuild pack targets, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
-`msbuild -t:pack` is functionality equivalent to `dotnet pack`. For step-by-step tutorials using the `dotnet` CLI instead, see [Create .NET Standard Packages with dotnet CLI](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md).
+The command that creates a package, `msbuild -t:pack`, is functionality equivalent to `dotnet pack`.
 
 > [!IMPORTANT]
-> This topic applies to [SDK-style](../resources/check-project-format.md) projects, typically .NET Core and .NET Standard projects.
+> This topic applies to [SDK-style](../resources/check-project-format.md) projects, typically .NET Core and .NET Standard projects, and to non-SDK-style projects that use PackageReference.
 
 ## Set properties
 
@@ -30,7 +30,7 @@ The following properties are required to create a package.
 - `Authors`, author and owner information. If not specified, the default value is `AssemblyName`.
 - `Company`, your company name. If not specified, the default value is `AssemblyName`.
 
-In Visual Studio, you can set these values in the project properties (right-click the project in Solution Explorer, choose **Properties**, and select the **Package** tab). You can also set these properties directly in the project files (`.csproj`).
+In Visual Studio, you can set these values in the project properties (right-click the project in Solution Explorer, choose **Properties**, and select the **Package** tab). You can also set these properties directly in the project files (*.csproj*).
 
 ```xml
 <PropertyGroup>
@@ -63,7 +63,7 @@ You can also set the optional properties, such as `Title`, `PackageDescription`,
 > [!NOTE]
 > For packages built for public consumption, pay special attention to the **PackageTags** property, as tags help others find your package and understand what it does.
 
-For details on declaring dependencies and specifying version numbers, see [Package versioning](../reference/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `<IncludeAssets>` and `<ExcludeAssets>` attributes. For more information, seee [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+For details on declaring dependencies and specifying version numbers, see [Package references in project files](../consume-packages/package-references-in-project-files.md) and [Package versioning](../concepts/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `<IncludeAssets>` and `<ExcludeAssets>` attributes. For more information, seee [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
 
 ## Choose a unique package identifier and set the version number
 
@@ -71,7 +71,7 @@ For details on declaring dependencies and specifying version numbers, see [Packa
 
 ## Add the NuGet.Build.Tasks.Pack package
 
-To use MSBuild, add the NuGet.Build.Tasks.Pack package to your project.
+If you are using MSBuild with a non-SDK-style project and PackageReference, add the NuGet.Build.Tasks.Pack package to your project.
 
 1. Open the project file and add the following after the `<PropertyGroup>` element:
 
@@ -85,6 +85,8 @@ To use MSBuild, add the NuGet.Build.Tasks.Pack package to your project.
 
 2. Open a Developer command prompt (In the **Search** box, type **Developer command prompt**).
 
+   You typically want to start the Developer Command Prompt for Visual Studio from the **Start** menu, as it will be configured with all the necessary paths for MSBuild.
+
 3. Switch to the folder containing the project file and type the following command to install the NuGet.Build.Tasks.Pack package.
 
    ```cmd
@@ -92,13 +94,13 @@ To use MSBuild, add the NuGet.Build.Tasks.Pack package to your project.
    msbuild -t:restore
    ```
 
-   Make sure that the MSBuild output indicates that the built completed successfully.
+   Make sure that the MSBuild output indicates that the build completed successfully.
 
 ## Run the msbuild -t:pack command
 
 To build a NuGet package (a `.nupkg` file) from the project, run the `msbuild -t:pack` command, which also builds the project automatically:
 
-In the Developer command prompt, type the following command:
+In the Developer command prompt for Visual Studio, type the following command:
 
 ```cmd
 # Uses the project file in the current folder by default
@@ -127,7 +129,6 @@ GenerateNuspec:
   Successfully created package 'C:\Users\username\source\repos\ClassLib_DotNetStandard\bin\Debug\AppLogger.1.0.0.nupkg'.
 Done Building Project "C:\Users\username\source\repos\ClassLib_DotNetStandard\ClassLib_DotNetStandard.csproj" (pack target(s)).
 
-
 Build succeeded.
     0 Warning(s)
     0 Error(s)
@@ -143,7 +144,7 @@ To automatically run `msbuild -t:pack` when you build or restore the project, ad
 <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 ```
 
-When you run `msbuild -t:pack` on a solution, this packs all the projects in the solution that are packable ([<IsPackable>](/dotnet/core/tools/csproj#nuget-metadata-properties) property is set to `true`.
+When you run `msbuild -t:pack` on a solution, this packs all the projects in the solution that are packable ([<IsPackable>](/dotnet/core/tools/csproj#nuget-metadata-properties) property is set to `true`).
 
 > [!NOTE]
 > When you automatically generate the package, the time to pack increases the build time for your project.
@@ -164,7 +165,7 @@ Once you've created a package, which is a `.nupkg` file, you can publish it to t
 You might also want to extend the capabilities of your package or otherwise support other scenarios as described in the following topics:
 
 - [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md)
-- [Package versioning](../reference/package-versioning.md)
+- [Package versioning](../concepts/package-versioning.md)
 - [Support multiple target frameworks](../create-packages/multiple-target-frameworks-project-file.md)
 - [Transformations of source and configuration files](../create-packages/source-and-config-file-transformations.md)
 - [Localization](../create-packages/creating-localized-packages.md)
@@ -174,5 +175,5 @@ You might also want to extend the capabilities of your package or otherwise supp
 
 Finally, there are additional package types to be aware of:
 
-- [Native Packages](../create-packages/native-packages.md)
+- [Native Packages](../guides/native-packages.md)
 - [Symbol Packages](../create-packages/symbol-packages.md)

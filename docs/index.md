@@ -118,13 +118,16 @@ hide_bc: true
                             <a href="create-packages/overview-and-workflow.md">Workflow (overview)</a>
                         </p>
                         <p>
-                            <a href="create-packages/creating-a-package-dotnet-cli.md">Create a package - dotnet CLI</a>
+                            <a href="quickstart/create-and-publish-a-package-using-visual-studio.md">Use Visual Studio</a>
                         </p>
                         <p>
-                            <a href="create-packages/creating-a-package.md">Create a package - nuget.exe CLI</a>
+                            <a href="create-packages/creating-a-package-dotnet-cli.md">Use dotnet CLI</a>
                         </p>
                         <p>
-                            <a href="create-packages/creating-a-package.md">Create a package - MSBuild</a>
+                            <a href="create-packages/creating-a-package.md">Use nuget.exe CLI</a>
+                        </p>
+                        <p>
+                            <a href="create-packages/creating-a-package-msbuild.md">Use MSBuild</a>
                         </p>
                         <p>
                             <a href="create-packages/multiple-target-frameworks-project-file.md">Support multiple target frameworks</a>
@@ -206,6 +209,8 @@ hide_bc: true
                         <p>
                             <a href="consume-packages/package-references-in-project-files.md">Package references</a>
                         </p>
+                        <p>
+                            <a href="reference/msbuild-targets.md">pack and restore as MSBuild targets</a>
                         </p>
                         <p>
                             <a href="reference/nuspec.md">.nuspec</a>
@@ -242,7 +247,7 @@ hide_bc: true
                             <a href="release-notes/known-issues.md">Release notes</a>
                         </p>
                         <p>
-                            <a href="faqs/nuget-faq.md">FAQ - NuGet</a>
+                            <a href="resources/nuget-faq.md">FAQ - NuGet</a>
                         </p>
                         <p>
                             <a href="nuget-org/nuget-org-faq.md">FAQ - NuGet.org</a>

@@ -18,7 +18,7 @@
 ### [Package Manager Console (PowerShell)](consume-packages/install-use-packages-powershell.md)
 ## Configure NuGet
 ### Package restore options
-#### [Restore options](consume-packages/package-restore.md)
+#### [Restore packages](consume-packages/package-restore.md)
 #### [Troubleshooting](consume-packages/package-restore-troubleshooting.md)
 ### [Reinstall and update packages](consume-packages/reinstalling-and-updating-packages.md)
 ### [Manage global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md)
@@ -27,7 +27,7 @@
 ### [Common NuGet configurations](consume-packages/configuring-nuget-behavior.md)
 ## Reference packages in your project
 ### [Package references in project files](consume-packages/package-references-in-project-files.md)
-### [Migrate packages.config to PackageReference](reference/migrate-packages-config-to-package-reference.md)
+### [Migrate packages.config to PackageReference](consume-packages/migrate-packages-config-to-package-reference.md)
 ### [packages.config](reference/packages-config.md)
 # Create packages
 ## [Overview and workflow](create-packages/overview-and-workflow.md)
@@ -39,16 +39,15 @@
 ## [Create a symbol package](create-packages/symbol-packages-snupkg.md)
 ## Advanced tasks
 ### [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
-### [Specify MSBuild pack and restore targets](reference/msbuild-targets.md)
 ### [Modify source code and config files](create-packages/source-and-config-file-transformations.md)
 ### [Select assemblies referenced by projects](create-packages/select-assemblies-referenced-by-projects.md)
 ### [Set package type](create-packages/set-package-type.md)
 ### [Create a localized package](create-packages/creating-localized-packages.md)
 ## Guides for specific content
 ### [Create a UWP package](guides/create-uwp-packages.md)
-### [Create a native package](create-packages/native-packages.md)
+### [Create a native package](guides/native-packages.md)
 ### [Create UI controls as a NuGet package](guides/create-UI-controls.md)
-### [Create an analyzer as a NuGet package](reference/analyzers-conventions.md)
+### [Create an analyzer as a NuGet package](guides/analyzers-conventions.md)
 ### [Create a package for Xamarin with Visual Studio 2015](guides/create-packages-for-xamarin.md)
 ### [Create a package with COM interop assemblies](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## Sign packages
@@ -65,12 +64,13 @@
 ### [Local feeds](hosting-packages/local-feeds.md)
 # Concepts
 ## [Package installation process](concepts/package-installation-process.md)
-## [Package versioning](reference/package-versioning.md)
-## [Dependency resolution](consume-packages/dependency-resolution.md)
+## [Package versioning](concepts/package-versioning.md)
+## [Dependency resolution](concepts/dependency-resolution.md)
 # Reference
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config file](reference/nuget-config-file.md)
 ## [Target frameworks](reference/target-frameworks.md)
+## [pack and restore as MSBuild targets](reference/msbuild-targets.md)
 ## [dotnet CLI](reference/dotnet-Commands.md)
 ## [nuget.exe CLI reference](reference/nuget-exe-cli-reference.md)
 ### [add](reference/cli-reference/cli-ref-add.md)
@@ -229,6 +229,7 @@
 ### [NU5034](reference/errors-and-warnings/NU5034.md)
 ### [NU5035](reference/errors-and-warnings/NU5035.md)
 ### [NU5036](reference/errors-and-warnings/NU5036.md)
+### [NU5037](reference/errors-and-warnings/NU5037.md)
 ### [NU5100](reference/errors-and-warnings/NU5100.md)
 ### [NU5101](reference/errors-and-warnings/NU5101.md)
 ### [NU5102](reference/errors-and-warnings/NU5102.md)
@@ -342,6 +343,6 @@
 #### [NuGet 1.3](release-notes/NuGet-1.3.md)
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
-## [FAQs](faqs/nuget-faq.md)
+## [FAQs](resources/nuget-faq.md)
 ## [Project format](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)

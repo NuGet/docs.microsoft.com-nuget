@@ -9,6 +9,8 @@ ms.topic: conceptual
 
 # NuGet frequently-asked questions
 
+For frequently-asked questions pertaining to NuGet.org, such as NuGet.org account questions, see [NuGet.org frequently-asked questions](../nuget-org/nuget-org-faq.md).
+
 **What is required to run NuGet?**
 
 All the information around both UI and command-line tools is available in the [Install guide](../install-nuget-client-tools.md).
@@ -66,7 +68,7 @@ Yes, NuGet works directly from the command line. See the [Install guide](../inst
 
 **How do I get the latest version of NuGet command line tool?**
 
-See the [Install guide](../install-nuget-client-tools.md).
+See the [Install guide](../install-nuget-client-tools.md). To check the current installed version of the tool, use `nuget help`.
 
 **What is the license for nuget.exe?**
 
@@ -130,7 +132,7 @@ Set the [`disableSourceControlIntegration`](../reference/nuget-config-file.md#so
 
 **How do I turn off package restore?**
 
-See [Enabling and disabling package restore](../consume-packages/package-restore.md#enable-and-disable-package-restore-visual-studio).
+See [Enabling and disabling package restore](../consume-packages/package-restore.md#enable-and-disable-package-restore-in-visual-studio).
 
 **Why do I get an "Unable to resolve dependency error" when installing a local package with remote dependencies?**
 

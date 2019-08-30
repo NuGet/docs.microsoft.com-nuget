@@ -30,6 +30,9 @@ Because `pack` and `restore` are  MSBuild targets, you can access them to enhanc
 
 Similarly, you can write an MSBuild task, write your own target and consume NuGet properties in the MSBuild task.
 
+> [!NOTE]
+> `$(OutputPath)` is relative and expects that you are running the command from the project root.
+
 ## pack target
 
 For .NET Standard projects using the PackageReference format, using `msbuild -t:pack` draws inputs from the project file to use in creating a NuGet package.

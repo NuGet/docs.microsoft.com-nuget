@@ -34,7 +34,7 @@ The general process is as follows:
 
 4. If downloaded, install the package into the per-user *global-packages* folder. NuGet creates a subfolder for each package identifier, then creates subfolders for each installed version of the package.
 
-5. NuGet installs package dependencies as required. This process might update package versions in the process, as described in [Dependency Resolution](../consume-packages/dependency-resolution.md).
+5. NuGet installs package dependencies as required. This process might update package versions in the process, as described in [Dependency Resolution](../concepts/dependency-resolution.md).
 
 6. Update other project files and folders:
 

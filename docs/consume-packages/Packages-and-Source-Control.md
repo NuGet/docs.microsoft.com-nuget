@@ -85,9 +85,6 @@ To disable source control integration with TFVC for selected files:
    # with additional folder names if it's not in the same folder as .tfignore.   
    packages
 
-   # Exclude package target files which may be required for MSBuild, again prefixing the folder name as needed.
-   !packages/*.targets
-
    # Omit temporary files
    project.lock.json
    project.assets.json
