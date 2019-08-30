@@ -9,6 +9,8 @@ ms.topic: conceptual
 
 # NuGet frequently-asked questions
 
+For frequently-asked questions pertaining to NuGet.org, such as NuGet.org account questions, see [NuGet.org frequently-asked questions](../nuget-org/nuget-org-faq.md).
+
 **What is required to run NuGet?**
 
 All the information around both UI and command-line tools is available in the [Install guide](../install-nuget-client-tools.md).
