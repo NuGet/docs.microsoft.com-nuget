@@ -121,7 +121,7 @@ downloads | integer | yes      | The number of downloads for this specific packa
 
 ### Sample request
 
-    GET https://api-v2v3search-0.nuget.org/query?q=NuGet.Versioning&prerelease=false
+    GET https://azuresearch-usnc.nuget.org/query?q=NuGet.Versioning&prerelease=false&semVerLevel=2.0.0
 
 ### Sample response
 
