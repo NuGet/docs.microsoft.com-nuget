@@ -21,6 +21,7 @@ For all such purposes, NuGet supports setting up private package sources in the 
 There are also several other NuGet hosting products that support remote private feeds, including the following:
 
 - [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish), which is also available on Team Foundation Server 2017 and later.
+- [Cloudsmith](https://cloudsmith.io/l/nuget-feed/), a fully managed package management SaaS
 - [MyGet](http://myget.org)
 - [ProGet](http://inedo.com/proget) from Inedo
 - [GitHub package registry](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
