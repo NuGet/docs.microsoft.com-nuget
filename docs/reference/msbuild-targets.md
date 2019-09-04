@@ -55,9 +55,10 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | license | PackageLicenseExpression | empty | Corresponds to `<license type="expression">` |
 | license | PackageLicenseFile | empty | Corresponds to `<license type="file">`. You may need to explicitly pack the referenced license file. |
-| LicenseUrl | PackageLicenseUrl | empty | `licenseUrl` is being deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
+| LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` is being deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
 | ProjectUrl | PackageProjectUrl | empty | |
-| IconUrl | PackageIconUrl | empty | |
+| icon | PackageIcon | empty | You may need to explicitly pack the referenced icon image file.|
+| IconUrl | PackageIconUrl | empty | `PackageIconUrl` is being deprecated, use the PackageIcon property |
 | Tags | PackageTags | empty | Tags are semi-colon delimited. |
 | ReleaseNotes | PackageReleaseNotes | empty | |
 | Repository/Url | RepositoryUrl | empty | Repository URL used to clone or retrieve source code. Example: *https://github.com/NuGet/NuGet.Client.git* |
