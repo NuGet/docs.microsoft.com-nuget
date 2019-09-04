@@ -165,10 +165,7 @@ For example, if you are using nuget.exe to create a package from a nuspec:
 </package>
 ```
 
-> [!Note]
-> NuGet.org accepts max image size of 1 Mb.
-
-
+For the MSBuild equivalent, take a look at [Packing an icon image file](msbuild-targets.md#packing-an-icon-image-file).
 
 #### requireLicenseAcceptance
 A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.
