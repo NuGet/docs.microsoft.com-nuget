@@ -165,6 +165,8 @@ For example, if you are using nuget.exe to create a package from a nuspec:
 </package>
 ```
 
+[Package Icon nuspec sample.](https://github.com/NuGet/Samples/tree/master/PackageIconNuspecExample)
+
 For the MSBuild equivalent, take a look at [Packing an icon image file](msbuild-targets.md#packing-an-icon-image-file).
 
 #### requireLicenseAcceptance
