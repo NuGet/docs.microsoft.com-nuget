@@ -221,7 +221,9 @@ When packing a license file, you need to use PackageLicenseFile property to spec
 
 ### Packing an icon image file
 
-When packing an icon image file, you need to use PackageIcon property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. For example:
+When packing an icon image file, you need to use PackageIcon property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resoulution of 64x64.
+
+For example:
 
 ```xml
 <PropertyGroup>
@@ -232,6 +234,9 @@ When packing an icon image file, you need to use PackageIcon property to specify
     <None Include="images\icon.png" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
+
+
+
 [Package Icon sample](https://github.com/NuGet/Samples/tree/master/PackageIconExample).
 
 ### IsTool
