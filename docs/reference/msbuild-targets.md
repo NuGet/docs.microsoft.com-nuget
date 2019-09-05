@@ -55,9 +55,10 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | license | PackageLicenseExpression | empty | Corresponds to `<license type="expression">` |
 | license | PackageLicenseFile | empty | Corresponds to `<license type="file">`. You may need to explicitly pack the referenced license file. |
-| LicenseUrl | PackageLicenseUrl | empty | `licenseUrl` is being deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
+| LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` is deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
 | ProjectUrl | PackageProjectUrl | empty | |
-| IconUrl | PackageIconUrl | empty | |
+| Icon | PackageIcon | empty | You may need to explicitly pack the referenced icon image file.|
+| IconUrl | PackageIconUrl | empty | `PackageIconUrl` is deprecated, use the PackageIcon property |
 | Tags | PackageTags | empty | Tags are semi-colon delimited. |
 | ReleaseNotes | PackageReleaseNotes | empty | |
 | Repository/Url | RepositoryUrl | empty | Repository URL used to clone or retrieve source code. Example: *https://github.com/NuGet/NuGet.Client.git* |
@@ -112,7 +113,34 @@ To suppress package dependencies from generated NuGet package, set `SuppressDepe
 
 ### PackageIconUrl
 
+> [!Important]
+> PackageIconUrl is deprecated. Use [PackageIcon](#packing-an-icon-image-file) instead.
+
 As part of the change for [NuGet Issue 352](https://github.com/NuGet/Home/issues/352), `PackageIconUrl` will eventually be changed to `PackageIconUri` and can be relative path to a icon file which will included at the root of the resulting package.
+
+### Packing an icon image file
+
+When packing an icon image file, you need to use PackageIcon property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resolution of 64x64.
+
+For example:
+
+```xml
+<PropertyGroup>
+    ...
+    <PackageIcon>icon.png</PackageIcon>
+    ...
+</PropertyGroup>
+
+<ItemGroup>
+    ...
+    <None Include="images\icon.png" Pack="true" PackagePath=""/>
+    ...
+</ItemGroup>
+```
+
+[Package Icon sample](https://github.com/NuGet/Samples/tree/master/PackageIconExample).
+
+For the nuspec equivalent, take a look at [nuspec reference for icon](nuspec.md#icon).
 
 ### Output assemblies
 
@@ -216,6 +244,7 @@ When packing a license file, you need to use PackageLicenseFile property to spec
     <None Include="licenses\LICENSE.txt" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
+
 [License file sample](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
 ### IsTool
