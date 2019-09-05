@@ -146,9 +146,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 A URL for a 64x64 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. 
    
 #### icon
-Path to an image file within the package, often shown in UIs like nuget.org as the package icon.
-
-`<icon>icon.png</icon>`
+Path to an image file within the package, often shown in UIs like nuget.org as the package icon. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resoulution of 64x64.
 
 For example, if you are using nuget.exe to create a package from a nuspec:
 
@@ -167,10 +165,9 @@ For example, if you are using nuget.exe to create a package from a nuspec:
 </package>
 ```
 
-> [!Note]
-> NuGet.org accepts max image size of 1 Mb.
+[Package Icon nuspec sample.](https://github.com/NuGet/Samples/tree/master/PackageIconNuspecExample)
 
-
+For the MSBuild equivalent, take a look at [Packing an icon image file](msbuild-targets.md#packing-an-icon-image-file).
 
 #### requireLicenseAcceptance
 A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.

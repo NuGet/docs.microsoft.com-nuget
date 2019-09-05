@@ -219,6 +219,26 @@ When packing a license file, you need to use PackageLicenseFile property to spec
 ```
 [License file sample](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
+### Packing an icon image file
+
+When packing an icon image file, you need to use PackageIcon property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resoulution of 64x64.
+
+For example:
+
+```xml
+<PropertyGroup>
+    <PackageIcon>icon.png</PackageIcon>
+</PropertyGroup>
+
+<ItemGroup>
+    <None Include="images\icon.png" Pack="true" PackagePath=""/>
+</ItemGroup>
+```
+
+
+
+[Package Icon sample](https://github.com/NuGet/Samples/tree/master/PackageIconExample).
+
 ### IsTool
 
 When using `MSBuild -t:pack -p:IsTool=true`, all output files, as specified in the [Output Assemblies](#output-assemblies) scenario, are copied to the `tools` folder instead of the `lib` folder. Note that this is different from a `DotNetCliTool` which is specified by setting the `PackageType` in `.csproj` file.
