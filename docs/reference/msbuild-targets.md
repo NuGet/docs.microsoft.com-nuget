@@ -217,6 +217,7 @@ When packing a license file, you need to use PackageLicenseFile property to spec
     <None Include="licenses\LICENSE.txt" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
+
 [License file sample](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
 ### Packing an icon image file
@@ -234,8 +235,6 @@ For example:
     <None Include="images\icon.png" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
-
-
 
 [Package Icon sample](https://github.com/NuGet/Samples/tree/master/PackageIconExample).
 

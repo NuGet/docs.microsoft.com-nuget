@@ -141,7 +141,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 #### iconUrl
 
 > [!Important]
-> licenseUrl is being deprecated. Use license instead.
+> iconUrl is being deprecated. Use icon instead.
 
 A URL for a 64x64 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. 
    
