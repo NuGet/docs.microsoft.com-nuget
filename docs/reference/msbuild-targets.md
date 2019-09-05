@@ -55,10 +55,10 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | license | PackageLicenseExpression | empty | Corresponds to `<license type="expression">` |
 | license | PackageLicenseFile | empty | Corresponds to `<license type="file">`. You may need to explicitly pack the referenced license file. |
-| LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` is being deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
+| LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` is deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
 | ProjectUrl | PackageProjectUrl | empty | |
-| icon | PackageIcon | empty | You may need to explicitly pack the referenced icon image file.|
-| IconUrl | PackageIconUrl | empty | `PackageIconUrl` is being deprecated, use the PackageIcon property |
+| Icon | PackageIcon | empty | You may need to explicitly pack the referenced icon image file.|
+| IconUrl | PackageIconUrl | empty | `PackageIconUrl` is deprecated, use the PackageIcon property |
 | Tags | PackageTags | empty | Tags are semi-colon delimited. |
 | ReleaseNotes | PackageReleaseNotes | empty | |
 | Repository/Url | RepositoryUrl | empty | Repository URL used to clone or retrieve source code. Example: *https://github.com/NuGet/NuGet.Client.git* |
@@ -221,7 +221,7 @@ When packing a license file, you need to use PackageLicenseFile property to spec
 
 ### Packing an icon image file
 
-When packing an icon image file, you need to use PackageIcon property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resoulution of 64x64.
+When packing an icon image file, you need to use PackageIcon property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resolution of 64x64.
 
 For example:
 
