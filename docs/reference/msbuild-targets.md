@@ -116,8 +116,6 @@ To suppress package dependencies from generated NuGet package, set `SuppressDepe
 > [!Important]
 > PackageIconUrl is deprecated. Use [PackageIcon](#packing-an-icon-image-file) instead.
 
-As part of the change for [NuGet Issue 352](https://github.com/NuGet/Home/issues/352), `PackageIconUrl` will eventually be changed to `PackageIconUri` and can be relative path to a icon file which will included at the root of the resulting package.
-
 ### Packing an icon image file
 
 When packing an icon image file, you need to use PackageIcon property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resolution of 64x64.
@@ -133,7 +131,7 @@ For example:
 
 <ItemGroup>
     ...
-    <None Include="images\icon.png" Pack="true" PackagePath=""/>
+    <None Include="images\icon.png" Pack="true" PackagePath="\"/>
     ...
 </ItemGroup>
 ```
