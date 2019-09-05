@@ -114,7 +114,7 @@ To suppress package dependencies from generated NuGet package, set `SuppressDepe
 ### PackageIconUrl
 
 > [!Important]
-> PackageIconUrl is deprecated. Use icon instead.
+> PackageIconUrl is deprecated. Use [PackageIcon](#packing-an-icon-image-file) instead.
 
 As part of the change for [NuGet Issue 352](https://github.com/NuGet/Home/issues/352), `PackageIconUrl` will eventually be changed to `PackageIconUri` and can be relative path to a icon file which will included at the root of the resulting package.
 
