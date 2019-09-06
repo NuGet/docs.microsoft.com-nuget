@@ -13,11 +13,9 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version| Available in .NET SDK(s)|
 |:---|:---|:---|
-| [**5.3.0-preview3**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.3 Preview 3](https://visualstudio.microsoft.com/vs/preview/) | [2.1.80X](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup>, [2.2.40X](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup>, [3.0.100-preview9](https://dotnet.microsoft.com/download/dotnet-core/3.0) |
+| [**5.3.0-preview3**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.3 Preview 3](https://visualstudio.microsoft.com/vs/preview/) | [3.0.100-preview9](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
 
 <sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload 
-
-<sup>2</sup>Available as an optional install with Visual Studio 2019 with .NET Core workload
 
 ## Summary: What's New in 5.3 preview 3
 
