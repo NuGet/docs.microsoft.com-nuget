@@ -104,6 +104,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 - NuspecFile
 - NuspecBasePath
 - NuspecProperties
+- Deterministic
 
 ## pack scenarios
 
@@ -168,6 +169,12 @@ You can also add the following metadata to your project reference:
 <ExcludeAssets>
 <PrivateAssets>
 ```
+
+### Deterministic
+
+When using `MSBuild -t:pack -p:Deterministic=true`, multiple invocations of the pack command will generate the exact same package.
+The output of pack is not affected by the ambient state of the machine. 
+Specifically, package internal psmdcp will be generated based on the package files, and the zip entries will be timestamped as 1/1/1980.
 
 ### Including content in a package
 
