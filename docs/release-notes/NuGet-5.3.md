@@ -1,26 +1,35 @@
-#5.3 Release Notes
+---
+title: NuGet 5.3 Release Notes
+description: Release notes for NuGet 5.3 including new features, bug fixes, and DCRs.
+author: karann-msft
+ms.author: karann
+ms.date: 09/06/2019
+ms.topic: conceptual
+---
 
-[Full Changelog]()
+# NuGet 5.3 Release Notes
 
-[Issues List](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")
+NuGet distribution vehicles:
 
-**DCR:**
+| NuGet version | Available in Visual Studio version| Available in .NET SDK(s)|
+|:---|:---|:---|
+| [**5.3.0-preview3**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.3 Preview 3](https://visualstudio.microsoft.com/vs/preview/) | [2.1.80X](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup>, [2.2.40X](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup>, [3.0.100-preview9](https://dotnet.microsoft.com/download/dotnet-core/3.0) |
 
-* Update Xamarin frameworks to map to NetStandard 2.1 - [#8368](https://github.com/NuGet/Home/issues/8368)
+<sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload 
 
-* Enable copying the contents of package manager "preview window" for install/update - [#8324](https://github.com/NuGet/Home/issues/8324)
+<sup>2</sup>Available as an optional install with Visual Studio 2019 with .NET Core workload
 
-* Enable restore on .proj files - [#8212](https://github.com/NuGet/Home/issues/8212)
+## Summary: What's New in 5.3 preview 3
 
-* Introduce `NUGET_NETFX_PLUGIN_PATHS` and `NUGET_NETCORE_PLUGIN_PATHS` to support configuration of both at same time - [#8151](https://github.com/NuGet/Home/issues/8151)
+* Enable SHA tracking and enforcement for Packages.Config scenarios - [#7281](https://github.com/NuGet/Home/issues/7281)
 
-* Enable multiple versions for a PackageDownload via Version attribute - [#8074](https://github.com/NuGet/Home/issues/8074)
+* Enable server side deprecation of obsolete/legacy NuGet Packages - [#2867](https://github.com/NuGet/Home/issues/2867)
 
-* Add -SolutionDirectory and -PackageDirectory options to nuget.exe pack - [#7163](https://github.com/NuGet/Home/issues/7163)
+* Package Icons should be embedded in Packages, instead of an external URL. - [#352](https://github.com/NuGet/Home/issues/352)
 
-* Enable NuGet Pack to be deterministic - [#6229](https://github.com/NuGet/Home/issues/6229)
+### Issues fixed in this release
 
-**Bug:**
+**Bugs**
 
 * VS:  assemblies are fully ngen-ed not partially ngen-ed - [#8513](https://github.com/NuGet/Home/issues/8513)
 
@@ -62,11 +71,20 @@
 
 * Reduce UI refreshes in install and update tabs of Package Manager UI - [#6570](https://github.com/NuGet/Home/issues/6570)
 
-**Feature:**
+**DCR:**
 
-* Enable SHA tracking and enforcement for Packages.Config scenarios - [#7281](https://github.com/NuGet/Home/issues/7281)
+* Update Xamarin frameworks to map to NetStandard 2.1 - [#8368](https://github.com/NuGet/Home/issues/8368)
 
-* Enable server side deprecation of obsolete/legacy NuGet Packages - [#2867](https://github.com/NuGet/Home/issues/2867)
+* Enable copying the contents of package manager "preview window" for install/update - [#8324](https://github.com/NuGet/Home/issues/8324)
 
-* Package Icons should be embedded in Packages, instead of an external URL. - [#352](https://github.com/NuGet/Home/issues/352)
+* Enable restore on .proj files - [#8212](https://github.com/NuGet/Home/issues/8212)
 
+* Introduce `NUGET_NETFX_PLUGIN_PATHS` and `NUGET_NETCORE_PLUGIN_PATHS` to support configuration of both at same time - [#8151](https://github.com/NuGet/Home/issues/8151)
+
+* Enable multiple versions for a PackageDownload via Version attribute - [#8074](https://github.com/NuGet/Home/issues/8074)
+
+* Add -SolutionDirectory and -PackageDirectory options to nuget.exe pack - [#7163](https://github.com/NuGet/Home/issues/7163)
+
+* Enable NuGet Pack to be deterministic - [#6229](https://github.com/NuGet/Home/issues/6229)
+
+**[List of all issues fixed in this release - 5.3 preview 3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
