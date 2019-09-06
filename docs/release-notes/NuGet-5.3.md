@@ -19,11 +19,11 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.3 preview 3
 
-* Enable SHA tracking and enforcement for Packages.Config scenarios - [#7281](https://github.com/NuGet/Home/issues/7281)
+* [Package Icon can be embedded in the package](../reference/msbuild-targets.md#packing-an-icon-image-file), instead of needing an external URL. - [#352](https://github.com/NuGet/Home/issues/352)
 
-* Enable server side deprecation of obsolete/legacy NuGet Packages - [#2867](https://github.com/NuGet/Home/issues/2867)
+* Improved security with SHA tracking and enforcement for Packages.Config - [#7281](https://github.com/NuGet/Home/issues/7281)
 
-* Package Icons should be embedded in Packages, instead of an external URL. - [#352](https://github.com/NuGet/Home/issues/352)
+* **TODO** (what did we really enable?) Enable server side deprecation of obsolete/legacy NuGet Packages - [#2867](https://github.com/NuGet/Home/issues/2867)
 
 ### Issues fixed in this release
 
