@@ -30,6 +30,7 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 | --- | --- |
 | BasePath | Sets the base path of the files defined in the [.nuspec](../nuspec.md) file. |
 | Build | Specifies that the project should be built before building the package. |
+| Deterministic | Multiple invocations of the pack command will generate the exact same package. The output of pack is not affected by the ambient state of the machine. Specifically, package internal psmdcp will be generated based on the package files, and the zip entries will be timestamped as 1/1/1980. |
 | Exclude | Specifies one or more wildcard patterns to exclude when creating a package. To specify more than one pattern, repeat the -Exclude flag. See example below. |
 | ExcludeEmptyDirectories | Prevents inclusion of empty directories when building the package. |
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
