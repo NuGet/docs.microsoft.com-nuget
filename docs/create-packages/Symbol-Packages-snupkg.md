@@ -25,36 +25,36 @@ Symbol packages allow you to improve the debugging experience of your NuGet pack
 
 ## Creating a symbol package
 
-You can create a snupkg symbol package using dotnet.exe, NuGet.exe, or MSBuild. If you're using NuGet.exe, you can use the following commands to create a .snupkg file in addition to the .nupkg file:
-
-```
-nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
-
-nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
-```
-
 If you're using dotnet.exe or MSBuild, you need to set the `IncludeSymbols` and `SymbolPackageFormat` properties to create a .snupkg file in addition to the .nupkg file.
 
 * Either add the following properties to your .csproj file:
 
-```xml
-<PropertyGroup>
-   <IncludeSymbols>true</IncludeSymbols>	
-   <SymbolPackageFormat>snupkg</SymbolPackageFormat>	
-</PropertyGroup>
-```
+   ```xml
+   <PropertyGroup>
+      <IncludeSymbols>true</IncludeSymbols>	
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat>	
+   </PropertyGroup>
+   ```
 
 * Or specify these properties on the command-line:
 
-  ```cli
-  dotnet pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
-  ```
+     ```cli
+     dotnet pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
+     ```
 
   or
 
   ```cli
   msbuild MyPackage.csproj /t:pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
   ```
+
+If you're using NuGet.exe, you can use the following commands to create a .snupkg file in addition to the .nupkg file:
+
+```
+nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
+
+nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
+```
 
 The [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) property can have one of two values: `symbols.nupkg` (the default) or `snupkg`. If this property is not specified, a legacy symbol package will be created.
 
