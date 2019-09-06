@@ -15,7 +15,7 @@ NuGet distribution vehicles:
 |:---|:---|:---|
 | [**5.3.0-preview3**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.3 Preview 3](https://visualstudio.microsoft.com/vs/preview/) | [3.0.100-preview9](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
 
-<sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload 
+<sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload
 
 ## Summary: What's New in 5.3 preview 3
 
@@ -23,13 +23,11 @@ NuGet distribution vehicles:
 
 * Improved security with SHA tracking and enforcement for Packages.Config - [#7281](https://github.com/NuGet/Home/issues/7281)
 
-* **TODO** (what did we really enable?) Enable server side deprecation of obsolete/legacy NuGet Packages - [#2867](https://github.com/NuGet/Home/issues/2867)
-
 ### Issues fixed in this release
 
 **Bugs**
 
-* VS:  assemblies are fully ngen-ed not partially ngen-ed - [#8513](https://github.com/NuGet/Home/issues/8513)
+* VS: assemblies are fully ngen-ed not partially ngen-ed - [#8513](https://github.com/NuGet/Home/issues/8513)
 
 * Reduce memory usage (unsubscribe from events) - [#8471](https://github.com/NuGet/Home/issues/8471)
 
