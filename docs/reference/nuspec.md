@@ -85,7 +85,7 @@ A URL for the package's home page, often shown in UI displays as well as nuget.o
 
 #### licenseUrl
 > [!Important]
-> licenseUrl is being deprecated. Use license instead.
+> licenseUrl is deprecated. Use license instead.
 
 A URL for the package's license, often shown in UIs like nuget.org.
 
@@ -139,7 +139,36 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 ```
 
 #### iconUrl
+
+> [!Important]
+> iconUrl is deprecated. Use icon instead.
+
 A URL for a 64x64 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. 
+   
+#### icon
+
+It is a path to an image file within the package, often shown in UIs like nuget.org as the package icon. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resoulution of 64x64.
+
+For example, you would add the following to your nuspec when creating a package using nuget.exe:
+
+```xml
+<package>
+  <metadata>
+    ...
+    <icon>images\icon.png</icon>
+    ...
+  </metadata>
+  <files>
+    ...
+    <file src="..\icon.png" target="images\" />
+    ...
+  </files>
+</package>
+```
+
+[Package Icon nuspec sample.](https://github.com/NuGet/Samples/tree/master/PackageIconNuspecExample)
+
+For the MSBuild equivalent, take a look at [Packing an icon image file](msbuild-targets.md#packing-an-icon-image-file).
 
 #### requireLicenseAcceptance
 A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.
