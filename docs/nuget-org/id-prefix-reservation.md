@@ -1,11 +1,11 @@
 ---
 title: ID Prefix Reservation
 description: Package ID Prefix Reservation feature description and author guide.
-author: diverdan92
-ms.author: diverdan92
-ms.date: 10/09/2017
+author: karann-msft
+ms.author: karann
+ms.date: 09/07/2019
 ms.topic: reference
-ms.reviewer: ananguar
+ms.reviewer: karann
 ---
 
 # Package ID prefix reservation
@@ -83,6 +83,8 @@ When reviewing any application for ID prefix reservation, the [nuget.org](https:
 1. Are the identifying properties of the packages that match the package ID prefix clear and consistent (especially the package author)?
 
 1. Do the packages have a license (using the [license](../reference/nuspec.md#license) metadata element and NOT licenseUrl which is being deprecated)?
+
+1. If the packages have an icon (using the iconUrl metadata element), are they also using the [icon](../reference/nuspec.md#icon) metadata element (it is not a requirement to remove the iconUrl)?
 
 ## Third party feed provider scenarios
 
