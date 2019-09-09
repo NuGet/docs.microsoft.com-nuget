@@ -11,9 +11,9 @@ ms.topic: conceptual
 
 *NuGet 4.0+*
 
-With the PackageReference format, NuGet 4.0+ can store all manifest metadata directly within a project file rather than using a separate `.nuspec` file.
+With the [PackageReference](../consume-packages/package-references-in-project-files.md) format, NuGet 4.0+ can store all manifest metadata directly within a project file rather than using a separate `.nuspec` file.
 
-With MSBuild 15.1+, NuGet is also a first-class MSBuild citizen with the `pack` and `restore` targets as described below. These targets allow you to work with NuGet as you would with any other MSBuild task or target. (For NuGet 3.x and earlier, you use the [pack](../tools/cli-ref-pack.md) and [restore](../tools/cli-ref-restore.md) commands through the NuGet CLI instead.)
+With MSBuild 15.1+, NuGet is also a first-class MSBuild citizen with the `pack` and `restore` targets as described below. These targets allow you to work with NuGet as you would with any other MSBuild task or target. For instructions creating a NuGet package using MSBuild, see [Create a NuGet package using MSBuild](../create-packages/creating-a-package-msbuild.md). (For NuGet 3.x and earlier, you use the [pack](../reference/cli-reference/cli-ref-pack.md) and [restore](../reference/cli-reference/cli-ref-restore.md) commands through the NuGet CLI instead.)
 
 ## Target build order
 
@@ -29,6 +29,9 @@ Because `pack` and `restore` are  MSBuild targets, you can access them to enhanc
 ```
 
 Similarly, you can write an MSBuild task, write your own target and consume NuGet properties in the MSBuild task.
+
+> [!NOTE]
+> `$(OutputPath)` is relative and expects that you are running the command from the project root.
 
 ## pack target
 
@@ -52,9 +55,10 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | license | PackageLicenseExpression | empty | Corresponds to `<license type="expression">` |
 | license | PackageLicenseFile | empty | Corresponds to `<license type="file">`. You may need to explicitly pack the referenced license file. |
-| LicenseUrl | PackageLicenseUrl | empty | `licenseUrl` is being deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
+| LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` is deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
 | ProjectUrl | PackageProjectUrl | empty | |
-| IconUrl | PackageIconUrl | empty | |
+| Icon | PackageIcon | empty | You may need to explicitly pack the referenced icon image file.|
+| IconUrl | PackageIconUrl | empty | `PackageIconUrl` is deprecated, use the PackageIcon property |
 | Tags | PackageTags | empty | Tags are semi-colon delimited. |
 | ReleaseNotes | PackageReleaseNotes | empty | |
 | Repository/Url | RepositoryUrl | empty | Repository URL used to clone or retrieve source code. Example: *https://github.com/NuGet/NuGet.Client.git* |
@@ -100,6 +104,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 - NuspecFile
 - NuspecBasePath
 - NuspecProperties
+- Deterministic
 
 ## pack scenarios
 
@@ -109,7 +114,32 @@ To suppress package dependencies from generated NuGet package, set `SuppressDepe
 
 ### PackageIconUrl
 
-As part of the change for [NuGet Issue 352](https://github.com/NuGet/Home/issues/352), `PackageIconUrl` will eventually be changed to `PackageIconUri` and can be relative path to a icon file which will included at the root of the resulting package.
+> [!Important]
+> PackageIconUrl is deprecated. Use [PackageIcon](#packing-an-icon-image-file) instead.
+
+### Packing an icon image file
+
+When packing an icon image file, you need to use PackageIcon property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resolution of 64x64.
+
+For example:
+
+```xml
+<PropertyGroup>
+    ...
+    <PackageIcon>icon.png</PackageIcon>
+    ...
+</PropertyGroup>
+
+<ItemGroup>
+    ...
+    <None Include="images\icon.png" Pack="true" PackagePath="\"/>
+    ...
+</ItemGroup>
+```
+
+[Package Icon sample](https://github.com/NuGet/Samples/tree/master/PackageIconExample).
+
+For the nuspec equivalent, take a look at [nuspec reference for icon](nuspec.md#icon).
 
 ### Output assemblies
 
@@ -138,6 +168,18 @@ You can also add the following metadata to your project reference:
 <IncludeAssets>
 <ExcludeAssets>
 <PrivateAssets>
+```
+
+### Deterministic
+
+When using `MSBuild -t:pack -p:Deterministic=true`, multiple invocations of the the pack target will generate the exact same package.
+The output of the pack command is not affected by the ambient state of the machine. Specifically zip entries will be timestamped as 1980-01-01. To achieve full determinism, the assemblies should be built with the respective compiler option [-deterministic](/dotnet/csharp/language-reference/compiler-options/deterministic-compiler-option).
+It is recommended that you specify the deterministic property like following, so both the compiler and NuGet will respect it.
+
+```xml
+<PropertyGroup>
+  <Deterministic>true</Deterministic>
+</PropertyGroup>
 ```
 
 ### Including content in a package
@@ -213,6 +255,7 @@ When packing a license file, you need to use PackageLicenseFile property to spec
     <None Include="licenses\LICENSE.txt" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
+
 [License file sample](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
 ### IsTool
@@ -221,7 +264,9 @@ When using `MSBuild -t:pack -p:IsTool=true`, all output files, as specified in t
 
 ### Packing using a .nuspec
 
-You can use a `.nuspec` file to pack your project provided that you have a SDK project file to import `NuGet.Build.Tasks.Pack.targets` so that the pack task can be executed. You still need to restore the project before you can pack a nuspec file. The target framework of the project file is irrelevant and not used when packing a nuspec. The following three MSBuild properties are relevant to packing using a `.nuspec`:
+Although it is recommended that you [include all the properties](../reference/msbuild-targets.md#pack-target) that are usually in the `.nuspec` file in the project file instead, you can choose to use a `.nuspec` file to pack your project. For a non-SDK-style project that uses `PackageReference`, you must import `NuGet.Build.Tasks.Pack.targets` so that the pack task can be executed. You still need to restore the project before you can pack a nuspec file. (An SDK-style project includes the pack targets by default.)
+
+The target framework of the project file is irrelevant and not used when packing a nuspec. The following three MSBuild properties are relevant to packing using a `.nuspec`:
 
 1. `NuspecFile`: relative or absolute path to the `.nuspec` file being used for packing.
 1. `NuspecProperties`: a semicolon-separated list of key=value pairs. Due to the way MSBuild command-line parsing works, multiple properties must be specified as follows: `-p:NuspecProperties=\"key1=value1;key2=value2\"`.  
@@ -239,9 +284,9 @@ If using MSBuild to pack your project, use a command like the following:
 msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:NuspecProperties=<> -p:NuspecBasePath=<Base path> 
 ```
 
-Please note that packing a nuspec using dotnet.exe or msbuild also leads to building the project by default. This can be avoided by passing ```--no-build``` property to dotnet.exe, which is the equivalent of setting ```<NoBuild>true</NoBuild> ``` in your project file, along with setting ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` in the project file
+Please note that packing a nuspec using dotnet.exe or msbuild also leads to building the project by default. This can be avoided by passing ```--no-build``` property to dotnet.exe, which is the equivalent of setting ```<NoBuild>true</NoBuild> ``` in your project file, along with setting ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` in the project file.
 
-An example of a csproj file to pack a nuspec file is:
+An example of a *.csproj* file to pack a nuspec file is:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -317,12 +362,12 @@ An example:
 
 1. Read all project to project references
 1. Read the project properties to find the intermediate folder and target frameworks
-1. Pass msbuild data to NuGet.Build.Tasks.dll
+1. Pass MSBuild data to NuGet.Build.Tasks.dll
 1. Run restore
 1. Download packages
 1. Write assets file, targets, and props
 
-The `restore` target works **only** for projects using the PackageReference format. It does **not** work for projects using the `packages.config` format; use [nuget restore](../tools/cli-ref-restore.md) instead.
+The `restore` target works **only** for projects using the PackageReference format. It does **not** work for projects using the `packages.config` format; use [nuget restore](../reference/cli-reference/cli-ref-restore.md) instead.
 
 ### Restore properties
 
@@ -336,9 +381,14 @@ Additional restore settings may come from MSBuild properties in the project file
 | RestoreConfigFile | Path to a `Nuget.Config` file to apply. |
 | RestoreNoCache | If true, avoids using cached packages. See [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | RestoreIgnoreFailedSources | If true, ignores failing or missing package sources. |
+| RestoreFallbackFolders | Fallback folders, used in the same way the user packages folder is used. |
+| RestoreAdditionalProjectSources | Additional sources to use during restore. |
+| RestoreAdditionalProjectFallbackFolders | Additional fallback folders to use during restore. |
+| RestoreAdditionalProjectFallbackFoldersExcludes | Excludes fallback folders specified in `RestoreAdditionalProjectFallbackFolders` |
 | RestoreTaskAssemblyFile | Path to `NuGet.Build.Tasks.dll`. |
 | RestoreGraphProjectInput | Semicolon-delimited list of projects to restore, which should contain absolute paths. |
-| RestoreOutputPath | Output folder, defaulting to the `obj` folder. |
+| RestoreUseSkipNonexistentTargets  | When the projects are collected via MSBuild it determines whether they are collected using the `SkipNonexistentTargets` optimization. When not set, defaults to `true`. The consequence is a fail-fast behavior when a project's targets cannot be imported. |
+| MSBuildProjectExtensionsPath | Output folder, defaulting to `BaseIntermediateOutputPath` and the `obj` folder. |
 
 #### Examples
 
@@ -365,6 +415,23 @@ Restore creates the following files in the build `obj` folder:
 | `project.assets.json` | Contains the dependency graph of all package references. |
 | `{projectName}.projectFileExtension.nuget.g.props` | References to MSBuild props contained in packages |
 | `{projectName}.projectFileExtension.nuget.g.targets` | References to MSBuild targets contained in packages |
+
+### Restoring and building with one MSBuild command
+
+Due to the fact that NuGet can restore packages that bring down MSBuild targets and props, the restore and build evaluations are run with different global properties.
+This means that the following will have an unpredictable and often incorrect behavior.
+
+```cli
+msbuild -t:restore,build
+```
+
+ Instead the recommended approach is:
+
+```cli
+msbuild -t:build -restore
+```
+
+The same logic applies to other targets similar to `build`.
 
 ### PackageTargetFallback
 

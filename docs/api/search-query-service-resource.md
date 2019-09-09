@@ -67,7 +67,7 @@ If `prerelease` is not provided, pre-release packages are excluded.
 The `semVerLevel` query parameter is used to opt-in to
 [SemVer 2.0.0 packages](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29#identifying-semver-v200-packages).
 If this query parameter is excluded, only packages with SemVer 1.0.0 compatible versions will be returned (with the 
-[standard NuGet versioning](../reference/package-versioning.md) caveats, such as version strings with 4 integer pieces).
+[standard NuGet versioning](../concepts/package-versioning.md) caveats, such as version strings with 4 integer pieces).
 If `semVerLevel=2.0.0` is provided, both SemVer 1.0.0 and SemVer 2.0.0 compatible packages will be returned. See the
 [SemVer 2.0.0 support for nuget.org](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29)
 for more information.
@@ -104,7 +104,7 @@ summary        | string                     | no       |
 tags           | string or array of strings | no       | 
 title          | string                     | no       | 
 totalDownloads | integer                    | no       | This value can be inferred by the sum of downloads in the `versions` array
-verified       | boolean                    | no       | A JSON boolean indicating whether the package is [verified](../reference/id-prefix-reservation.md)
+verified       | boolean                    | no       | A JSON boolean indicating whether the package is [verified](../nuget-org/id-prefix-reservation.md)
 
 On nuget.org, a verified package is one which has a package ID matching a reserved ID prefix and owned by one of the
 reserved prefix's owners. For more information, see the
@@ -121,7 +121,7 @@ downloads | integer | yes      | The number of downloads for this specific packa
 
 ### Sample request
 
-    GET https://api-v2v3search-0.nuget.org/query?q=NuGet.Versioning&prerelease=false
+    GET https://azuresearch-usnc.nuget.org/query?q=NuGet.Versioning&prerelease=false&semVerLevel=2.0.0
 
 ### Sample response
 

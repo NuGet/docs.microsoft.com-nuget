@@ -63,7 +63,7 @@ This guide walks you through creating a NuGet package targeting .NET Standard Li
     nuget spec
     ```
 
-1. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number). Also note that you must also update the author and description tags or you get an error during the packing step.
+1. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number). Also note that you must also update the author and description tags or you get an error during the packing step.
 
     ```xml
     <?xml version="1.0"?>
@@ -120,7 +120,7 @@ If you have any dependencies on other NuGet packages, list those in the manifest
 </dependencies>
 ```
 
-The syntax of the *version* attribute here indicates that version 8.0.3 or above is acceptable. To specify different version ranges, refer to [Package versioning](../reference/package-versioning.md).
+The syntax of the *version* attribute here indicates that version 8.0.3 or above is acceptable. To specify different version ranges, refer to [Package versioning](../concepts/package-versioning.md).
 
 ### Adding a readme
 
@@ -154,7 +154,7 @@ This generates `AppLogger.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool li
 > [!Tip]
 > A `.nupkg` file is just a ZIP file with a different extension. You can also examine package contents, then, by changing `.nupkg` to `.zip`, but remember to restore the extension before uploading a package to nuget.org.
 
-To make your package available to other developers, follow the instructions on [Publish a package](../create-packages/publish-a-package.md).
+To make your package available to other developers, follow the instructions on [Publish a package](../nuget-org/publish-a-package.md).
 
 Note that `pack` requires Mono 4.4.2 on Mac OS X and does not work on Linux systems. On a Mac, you must also convert Windows pathnames in the `.nuspec` file to Unix-style paths.
 
@@ -162,9 +162,9 @@ Note that `pack` requires Mono 4.4.2 on Mac OS X and does not work on Linux syst
 
 - [.nuspec reference](../reference/nuspec.md)
 - [Supporting multiple .NET framework versions](../create-packages/supporting-multiple-target-frameworks.md)
-- [Include MSBuild props and targets in a package](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
+- [Include MSBuild props and targets in a package](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)
 - [Symbol packages](../create-packages/symbol-packages.md)
-- [Package versioning](../reference/package-versioning.md)
+- [Package versioning](../concepts/package-versioning.md)
 - [.NET Standard Library documentation](/dotnet/articles/standard/library)
 - [Porting to .NET Core from .NET Framework](/dotnet/articles/core/porting/index)

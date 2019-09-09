@@ -35,7 +35,7 @@ Some packages list their supported frameworks directly in the nuget.org gallery,
 
 Fortunately, you can determine supported frameworks through two other means:
 
-1. Attempt to install a package into a project using the [`Install-Package`](../tools/ps-ref-install-package.md) command in the NuGet Package Manager Console. If the package is incompatible, this command shows you the package's supported frameworks.
+1. Attempt to install a package into a project using the [`Install-Package`](../reference/ps-reference/ps-ref-install-package.md) command in the NuGet Package Manager Console. If the package is incompatible, this command shows you the package's supported frameworks.
 
 1. Download the package from its page on nuget.org using the **Manual download** link under **Info**. Change the extension from `.nupkg` to `.zip`, and open the file to examine the content of its `lib` folder. There you see subfolders for each of the supported frameworks, where each subfolder is named with a target framework moniker (TFM; see [Target Frameworks](../reference/target-frameworks.md)). If you see no subfolders under `lib` and only a single DLL, then you must attempt to install the package in your project to discover its compatibility.
 
@@ -53,9 +53,9 @@ In Visual Studio, and when using the NuGet and dotnet CLI tools, NuGet does not 
 
     ![The Include prerelease checkbox in Visual Studio](media/Prerelease_02-CheckPrerelease.png)
 
-- **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../tools/powershell-reference.md).
+- **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../reference/powershell-reference.md).
 
-- **nuget.exe CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../tools/nuget-exe-cli-reference.md)
+- **nuget.exe CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../reference/nuget-exe-cli-reference.md)
 
 - **dotnet.exe CLI**: Specify the exact pre-release version using the `-v` argument. Refer to the [dotnet add package reference](/dotnet/core/tools/dotnet-add-package).
 
@@ -77,6 +77,10 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 
     ![Download statistics on a package's listing page](media/Finding-03-Downloads.png)
 
+- *GitHub Usage*: on the package page, the **GitHub Usage** section lists the top GitHub repositories that depend on this package. A package that many popular GitHub repositories depend on is typically a better choice.
+
+    ![GitHub Usage](media/GitHub-Usage.png)
+
 - *Version history*: on the package page, look under **Info** for the date of the most recent update and examine the **Version History**. A well-maintained package has recent updates and a rich version history. Neglected packages have few updates and often haven't been updated in some time.
 
     ![Version history on a package's listing page](media/Finding-04-VersionHistory.png)
@@ -91,13 +95,13 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 
 - *Interview the owners*: new developers can certainly be equally committed to producing great packages for you to use, and it's good to give them a chance to bring something new to the NuGet ecosystem. With this in mind, reach out directly to the package developers through the **Contact Owners** option under **Info** on the listing page. Chances are, they'll be happy to work with you to serve your needs!
 
-- *Reserved Package ID Prefixes*: many package owners have applied for and have been granted a [reserved package ID prefix](../reference/id-prefix-reservation.md). When you see the visual checkmark next to a package ID on [nuget.org](https://www.nuget.org/), or in Visual Studio, that means that the package owner has met our [criteria](../reference/id-prefix-reservation.md#id-prefix-reservation-criteria) for ID prefix reservation. This means the package owner is being clear on identifying themselves and their package.
+- *Reserved Package ID Prefixes*: many package owners have applied for and have been granted a [reserved package ID prefix](../nuget-org/id-prefix-reservation.md). When you see the visual checkmark next to a package ID on [nuget.org](https://www.nuget.org/), or in Visual Studio, that means that the package owner has met our [criteria](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria) for ID prefix reservation. This means the package owner is being clear on identifying themselves and their package.
 
 > [!Note]
 > Always be mindful of a package's license terms, which you can see by selecting **License Info** on a package's listing page on nuget.org. If a package does not specify license terms, contact the package owner directly using the **Contact owners** link on the package page. Microsoft does not license any intellectual property to you from third party package providers and is not responsible for information provided by third parties.
 
 ## License URL deprecation
-As we transition from [licenseUrl](../reference/nuspec#licenseurl) to [license](../reference/nuspec#license), some NuGet clients and NuGet feeds may not yet have the ability to surface licensing information in some cases. To maintain backward compatibility, the license URL points to this document which talks about how to retrieve the license information in such cases.
+As we transition from [licenseUrl](../reference/nuspec.md#licenseurl) to [license](../reference/nuspec.md#license), some NuGet clients and NuGet feeds may not yet have the ability to surface licensing information in some cases. To maintain backward compatibility, the license URL points to this document which talks about how to retrieve the license information in such cases.
 
 If clicking on the license URL for a package brought you to this page, it implies the package contains a license file and
 * You are connected to a feed that does not yet know how to interpret and surface the new license information to the client
@@ -112,6 +116,7 @@ Here is how you could read the information contained in the license file inside 
 1. It should have a tag like `<license type="file">license\license.txt</license>`. This implies the license file is named `license.txt` and it is inside a folder called `license` which would also be at the root of that folder.
 1. Navigate to the `license` folder and open the `license.txt` file.
 
+For the MSBuild equivalent to setting the license in the `.nuspec`, take a look at [Packing a license expression or a license file](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
 
 ## Search Syntax
 

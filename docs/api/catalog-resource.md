@@ -10,7 +10,7 @@ ms.reviewer: kraigb
 
 # Catalog
 
-The **catalog** is a resource that records all package operations on a package source, such as creations and deletions. The catalog resource has the `Catalog` type in the [service index](service-index.md).
+The **catalog** is a resource that records all package operations on a package source, such as creations and deletions. The catalog resource has the `Catalog` type in the [service index](service-index.md). You can use this resource to [query for all published packages](../guides/api/query-for-all-published-packages.md).
 
 > [!Note]
 > Because the catalog is not used by the official NuGet client, not all package sources implement the catalog.
@@ -215,7 +215,8 @@ Name                    | Type                       | Required | Notes
 ----------------------- | -------------------------- | -------- | -----
 authors                 | string                     | no       |
 created                 | string                     | no       | A timestamp of when the package was first created. Fallback property: `published`.
-dependencyGroups        | array of objects           | no       | Same format as the [package metadata resource](registration-base-url-resource.md#package-dependency-group)
+dependencyGroups        | array of objects           | no       | The dependencies of the package, grouped by target framework ([same format as the package metadata resource](registration-base-url-resource.md#package-dependency-group))
+deprecation             | object                     | no       | The deprecation associated with the package ([same format as the package metadata resource](registration-base-url-resource.md#package-deprecation))
 description             | string                     | no       |
 iconUrl                 | string                     | no       |
 isPrerelease            | boolean                    | no       | Whether or not the package version is prerelease. Can be detected from `version`.
@@ -262,11 +263,11 @@ Catalog items with the type `PackageDelete` contain a minimal set of information
 package has been deleted from the package source and is no longer available for any package operation (such as
 restore).
 
-> [!Note]
+> [!NOTE]
 > It is possible for a package to be deleted and later republished using the same package ID and version. On nuget.org,
 > this is a very rare case as it breaks the official client's assumption that a package ID and version imply a specific
 > package content. For more information about package deletion on nuget.org, see
-> [our policy](../policies/deleting-packages.md).
+> [our policy](../nuget-org/policies/deleting-packages.md).
 
 Package delete catalog items have no additional properties in addition to those
 [included on all catalog leaves](#catalog-leaf).

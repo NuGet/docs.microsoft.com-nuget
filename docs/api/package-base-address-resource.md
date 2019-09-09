@@ -66,7 +66,7 @@ Name     | Type             | Required | Notes
 versions | array of strings | yes      | The package IDs available
 
 The strings in the `versions` array are all lowercased, 
-[normalized NuGet version strings](../reference/package-versioning.md#normalized-version-numbers). The version
+[normalized NuGet version strings](../concepts/package-versioning.md#normalized-version-numbers). The version
 strings do not contain any SemVer 2.0.0 build metadata.
 
 The intent is that the version strings found in this array can be used verbatim for the `LOWER_VERSION` tokens found
@@ -99,7 +99,7 @@ Both `LOWER_ID` and `LOWER_VERSION` are lowercased using the rules implemented b
 method.
 
 The `LOWER_VERSION` is the desired package version normalized using NuGet's version
-[normalization rules](../reference/package-versioning.md#normalized-version-numbers). This means that build metadata
+[normalization rules](../concepts/package-versioning.md#normalized-version-numbers). This means that build metadata
 that is allowed by the SemVer 2.0.0 specification must be excluded in this case.
 
 ### Response body
@@ -126,16 +126,16 @@ following URL:
 
 ### Request parameters
 
-Name          | In     | Type    | Required | Notes
-------------- | ------ | ------- | -------- | -----
-LOWER_ID      | URL    | string  | yes      | The package ID, lowercase
-LOWER_VERSION | URL    | integer | yes      | The package version, normalized and lowercased
+Name          | In     | Type   | Required | Notes
+------------- | ------ | ------ | -------- | -----
+LOWER_ID      | URL    | string | yes      | The package ID, lowercase
+LOWER_VERSION | URL    | string | yes      | The package version, normalized and lowercased
 
 Both `LOWER_ID` and `LOWER_VERSION` are lowercased using the rules implemented by .NET's
 [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) method.
 
 The `LOWER_VERSION` is the desired package version normalized using NuGet's version
-[normalization rules](../reference/package-versioning.md#normalized-version-numbers). This means that build metadata
+[normalization rules](../concepts/package-versioning.md#normalized-version-numbers). This means that build metadata
 that is allowed by the SemVer 2.0.0 specification must be excluded in this case.
 
 ### Response body

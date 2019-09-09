@@ -11,6 +11,8 @@ ms.topic: conceptual
 
 There are a number of situations, described below under [When to Reinstall a Package](#when-to-reinstall-a-package), where references to a package might get broken within a Visual Studio project. In these cases, uninstalling and then reinstalling the same version of the package will restore those references to working order. Updating a package simply means installing an updated version, which often restores a package to working order.
 
+In Visual Studio, the Package Manager Console provides many flexible options for updating and reinstalling packages.
+
 Updating and reinstalling packages is accomplished as follows:
 
 | Method | Update | Reinstall |
@@ -18,6 +20,9 @@ Updating and reinstalling packages is accomplished as follows:
 | Package Manager console (described in [Using Update-Package](#using-update-package)) | `Update-Package` command | `Update-Package -reinstall` command |
 | Package Manager UI | On the **Updates** tab, select one or more packages and select **Update** | On the **Installed** tab, select a package, record its name, then select **Uninstall**. Switch to the **Browse** tab, search for the package name, select it, then select **Install**). |
 | nuget.exe CLI | `nuget update` command | For all packages, delete the package folder, then run `nuget install`. For a single package, delete the package folder and use `nuget install <id>` to reinstall the same one. |
+
+> [!NOTE]
+> For the dotnet CLI, the equivalent procedure is not required. In a similar scenario, you can [restore packages with the dotnet CLI](package-restore.md#restore-using-the-dotnet-cli).
 
 In this article:
 
@@ -49,11 +54,11 @@ To set a constraint, open `packages.config` in a text editor, locate the depende
 </packages>
 ```
 
-In all cases, use the notation described in [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards).
+In all cases, use the notation described in [Package versioning](../concepts/package-versioning.md#version-ranges-and-wildcards).
 
 ## Using Update-Package
 
-Being mindful of the [Considerations](#considerations) described below, you can easily reinstall any package using the [Update-Package command](../Tools/ps-ref-update-package.md) in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**):
+Being mindful of the [Considerations](#considerations) described below, you can easily reinstall any package using the [Update-Package command](../reference/ps-reference/ps-ref-update-package.md) in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**).
 
 ```ps
 Update-Package -Id <package_name> –reinstall
@@ -89,7 +94,7 @@ Update-Package
 
 Updating packages in a project or solution using [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding pre-release packages). Projects that use `packages.config` can, if desired, limit update versions as described below in [Constraining upgrade versions](#constraining-upgrade-versions).
 
-For full details on the command, see the [Update-Package](../Tools/ps-ref-update-package.md) reference.
+For full details on the command, see the [Update-Package](../reference/ps-reference/ps-ref-update-package.md) reference.
 
 ### Considerations
 

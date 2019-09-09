@@ -64,7 +64,7 @@ If `prerelease` is not provided, pre-release packages are excluded.
 The `semVerLevel` query parameter is used to opt-in to
 [SemVer 2.0.0 packages](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29#identifying-semver-v200-packages).
 If this query parameter is excluded, only package IDs with SemVer 1.0.0 compatible versions will be returned (with the 
-[standard NuGet versioning](../reference/package-versioning.md) caveats, such as version strings with 4 integer pieces).
+[standard NuGet versioning](../concepts/package-versioning.md) caveats, such as version strings with 4 integer pieces).
 If `semVerLevel=2.0.0` is provided, both SemVer 1.0.0 and SemVer 2.0.0 compatible packages will be returned. See the
 [SemVer 2.0.0 support for nuget.org](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29)
 for more information.
@@ -123,8 +123,8 @@ Name      | Type             | Required | Notes
 --------- | ---------------- | -------- | -----
 data      | array of strings | yes      | The package versions matched by the request
 
-The package versions in the `data` array could contain SemVer 2.0.0 build metadata (e.g. `1.0.0+metadata`) if the
-`semVerLevel=2.0.0` was provided in the query string.
+The package versions in the `data` array may contain SemVer 2.0.0 build metadata (e.g. `1.0.0+metadata`) if the
+`semVerLevel=2.0.0` is provided in the query string.
 
 ### Sample request
 

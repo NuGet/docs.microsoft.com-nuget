@@ -57,7 +57,7 @@ The Package id corresponds to the id of the package on nuget.org , the same as t
 
 When restoring packages, the version constraint of `"5.0.0"` implies `>= 5.0.0`. That is, if 5.0.0 is not available on the server but 5.0.1 is, NuGet installs  5.0.1 and warns you about the upgrade. NuGet otherwise picks the lowest possible version on the server matching the constraint.
 
-See [Dependency resolution](../consume-packages/dependency-resolution.md) for more details on resolution rules.
+See [Dependency resolution](../concepts/dependency-resolution.md) for more details on resolution rules.
 
 ### Managing dependency assets
 

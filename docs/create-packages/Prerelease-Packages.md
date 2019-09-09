@@ -15,25 +15,25 @@ Whenever you release an updated package with a new version number, NuGet conside
 
 A stable release is one that's considered reliable enough to be used in production. The latest stable release is also the one that will be installed as a package update or during package restore (subject to constraints as described in [Reinstalling and updating packages](../consume-packages/reinstalling-and-updating-packages.md)).
 
-To support the software release lifecycle, NuGet 1.6 and later allows for the distribution of pre-release packages, where the version number includes a semantic versioning suffix such as `-alpha`, `-beta`, or `-rc`. For more information, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
+To support the software release lifecycle, NuGet 1.6 and later allows for the distribution of pre-release packages, where the version number includes a semantic versioning suffix such as `-alpha`, `-beta`, or `-rc`. For more information, see [Package versioning](../concepts/package-versioning.md#pre-release-versions).
 
-You can specify such versions in two ways:
+You can specify such versions using one of the following ways:
 
-- `.nuspec` file: include the semantic version suffix in the `version` element:
+- **If your project uses [`PackageReference`](../consume-packages/package-references-in-project-files.md)**: include the semantic version suffix in the `.csproj` file's [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion) element:
+
+    ```xml
+    <PropertyGroup>
+        <PackageVersion>1.0.1-alpha</PackageVersion>
+    </PropertyGroup>
+    ```
+
+- **If your project has a [`packages.config`](../reference/packages-config.md) file**: include the semantic version suffix in the [`.nuspec`](../reference/nuspec.md) file's [`version`](../reference/nuspec.md#version) element:
 
     ```xml
     <version>1.0.1-alpha</version>
     ```
 
-- Assembly attributes: when building a package from a Visual Studio project (`.csproj` or `.vbproj`), use the `AssemblyInformationalVersionAttribute` to specify the version:
-
-    ```cs
-    [assembly: AssemblyInformationalVersion("1.0.1-beta")]
-    ```
-
-    NuGet picks up this value instead of the one specified in the `AssemblyVersion` attribute, which does not support semantic versioning.
-
-When you’re ready to release a stable version, just remove the suffix and the package takes precedence over any pre-release versions. Again, see [Package versioning](../reference/package-versioning.md#pre-release-versions).
+When you're ready to release a stable version, just remove the suffix and the package takes precedence over any pre-release versions. Again, see [Package versioning](../concepts/package-versioning.md#pre-release-versions).
 
 ## Installing and updating pre-release packages
 
@@ -45,9 +45,9 @@ By default, NuGet does not include pre-release versions when working with packag
 
     Setting or clearing this box will refresh the Package Manager UI and the list of available versions you can install.
 
-- **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../tools/powershell-reference.md).
+- **Package Manager Console**: Use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. Refer to the [PowerShell Reference](../reference/powershell-reference.md).
 
-- **NuGet CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../tools/nuget-exe-cli-reference.md)
+- **NuGet CLI**: Use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. Refer to the [NuGet CLI reference](../reference/nuget-exe-cli-reference.md)
 
 ## Semantic versioning
 
@@ -76,10 +76,12 @@ Whatever suffixes you use, however, NuGet will give them precedence in reverse a
     1.0.1-zzz
     1.0.1-rc
     1.0.1-open
-    1.0.1-beta12
-    1.0.1-beta05
+    1.0.1-beta.12
+    1.0.1-beta.5
     1.0.1-beta
-    1.0.1-alpha2
+    1.0.1-alpha.2
     1.0.1-alpha
 
-As shown, the version without any suffix will always take precedence over pre-release versions. Note also that if you use numerical suffixes with pre-release tags that might use double-digit numbers (or more), use leading zeroes as in beta01 and beta05 to ensure that they sort correctly when the numbers get larger.
+As shown, the version without any suffix will always take precedence over pre-release versions.
+
+Leading 0s are not needed with semver2, but they are with the old version schema. If you use numerical suffixes with pre-release tags that might use double-digit numbers (or more), use leading zeroes as in beta.01 and beta.05 to ensure that they sort correctly when the numbers get larger. This recommendation only applies to the old version schema.

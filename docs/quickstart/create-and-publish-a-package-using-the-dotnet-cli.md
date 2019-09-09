@@ -1,9 +1,9 @@
 ---
-title: Creating and publishing a NuGet package using the dotnet CLI
+title: Create and publish a NuGet package using the dotnet CLI
 description: A walkthrough tutorial on creating and publishing a NuGet package using the .NET Core CLI, dotnet.
 author: karann-msft
 ms.author: karann
-ms.date: 01/24/2018
+ms.date: 05/24/2019
 ms.topic: quickstart
 ---
 
@@ -13,7 +13,7 @@ It's a simple process to create a NuGet package from a .NET Class Library and pu
 
 ## Prerequisites
 
-1. Install the [.NET Core SDK](https://www.microsoft.com/net/download/), which includes the `dotnet` CLI.
+1. Install the [.NET Core SDK](https://www.microsoft.com/net/download/), which includes the `dotnet` CLI. Starting in Visual Studio 2017, the dotnet CLI is automatically installed with any .NET Core related workloads.
 
 1. [Register for a free account on nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) if you don't have one already. Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
 
@@ -21,9 +21,15 @@ It's a simple process to create a NuGet package from a .NET Class Library and pu
 
 You can use an existing .NET Class Library project for the code you want to package, or create a simple one as follows:
 
-1. Create a folder called `AppLogger` and change into it.
+1. Create a folder called `AppLogger`.
 
-1. Create the project using `dotnet new classlib`, which uses the name of the current folder for the project.
+1. Open a command prompt and switch to the `AppLogger` folder.
+
+1. Type `dotnet new classlib`, which uses the name of the current folder for the project.
+
+   This creates the new project.
+
+1. Use `dotnet run` to test that the app has been created properly.
 
 ## Add package metadata to the project file
 
@@ -96,13 +102,19 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nug
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## Related topics
+## Next steps
 
-- [Create a Package](../create-packages/creating-a-package.md)
-- [Publish a Package](../create-packages/publish-a-package.md)
+Congratulations on creating your first NuGet package!
+
+> [!div class="nextstepaction"]
+> [Create a Package](../create-packages/creating-a-package-dotnet-cli.md)
+
+To explore more that NuGet has to offer, select the links below.
+
+- [Publish a Package](../nuget-org/publish-a-package.md)
 - [Pre-release Packages](../create-packages/Prerelease-Packages.md)
-- [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
-- [Package versioning](../reference/package-versioning.md)
+- [Support multiple target frameworks](../create-packages/multiple-target-frameworks-project-file.md)
+- [Package versioning](../concepts/package-versioning.md)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)
 - [Creating symbol packages](../create-packages/symbol-packages-snupkg.md)
 - [Signing packages](../create-packages/Sign-a-package.md)

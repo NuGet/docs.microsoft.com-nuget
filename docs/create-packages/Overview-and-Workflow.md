@@ -16,9 +16,7 @@ A package can also serve to only pull in any number of other dependencies, witho
 > [!Note]
 > When you create a package for use by other developers, it's important to understand that they are taking a dependency on your work. As such, creating and publishing a package also implies a commitment to fixing bugs and making other updates, or at the very least making the package available as open source so others can help to maintain it.
 
-Whatever the case, creating a package begins with deciding which assemblies and other files to package. You then create a manifest file, referred to as a `.nuspec` file, to describe the package's contents along with its identifier, version number, copyright information, MSBuild props and targets, and much more.
-
-When you've prepared all the necessary files in the appropriate folders and have created the appropriate `.nuspec` file, you then use the `nuget pack` command (or the [MSBuild pack target](../reference/msbuild-targets.md)) to put everything together into a `.nupkg` file. You're then ready to deploy the package to whatever host makes it available to other developers.
+Whatever the case, creating a package begins with deciding its identifier, version number, license, copyright information, and any other necessary content. Once done, you can use the "pack" command to put everything together into a `.nupkg` file. This file can be published to a NuGet feed, like nuget.org.
 
 > [!Tip]
 > A NuGet package with the `.nupkg` extension is simply a ZIP file. To easily examine any package's contents, change the extension to `.zip` and expand its contents as usual. Just be sure to change the extension back to `.nupkg` before attempting to upload it to a host.
@@ -32,10 +30,10 @@ From there, you can consider a number of other options for your package:
 - [Pre-release Packages](../create-packages/prerelease-packages.md) demonstrates how to release alpha, beta, and rc packages to those customers who are interested.
 - [Source and Config File Transformations](../create-packages/source-and-config-file-transformations.md) describes how you can do both one-way token replacements in files that are added to a project, and modify `web.config` and `app.config` with settings that are also backed out when the package is uninstalled.
 - [Symbol Packages](../create-packages/symbol-packages-snupkg.md) offers guidance for supplying symbols for your library that allow consumers to step into your code while debugging.
-- [Package versioning](../reference/package-versioning.md) discusses how to identify the exact versions that you allow for your dependencies (other packages that you consume from your package).
-- [Native Packages](../create-packages/native-packages.md) describes the process for creating a package for C++ consumers.
+- [Package versioning](../concepts/package-versioning.md) discusses how to identify the exact versions that you allow for your dependencies (other packages that you consume from your package).
+- [Native Packages](../guides/native-packages.md) describes the process for creating a package for C++ consumers.
 - [Signing Packages](../create-packages/sign-a-package.md) describes the process for adding a digital signature to a package.
 
-When you're then ready to publish a package to nuget.org, follow the simple process in [Publish a package](../create-packages/publish-a-package.md).
+When you're then ready to publish a package to nuget.org, follow the simple process in [Publish a package](../nuget-org/publish-a-package.md).
 
 If you want to use a private feed instead of nuget.org, see the [Hosting Packages Overview](../hosting-packages/overview.md)

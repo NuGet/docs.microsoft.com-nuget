@@ -24,22 +24,25 @@ You can use self-issued certificates for testing purposes. However, packages sig
 
   ![Certificate Export Wizard](../reference/media/CertificateExportWizard.png)
 
-* You can also export the certificate using the [Export-Certificate PowerShell command](/powershell/module/pkiclient/export-certificate.md).
+* You can also export the certificate using the [Export-Certificate PowerShell command](/powershell/module/pkiclient/export-certificate).
 
 ## Sign the package
 
 > [!note]
 > Requires nuget.exe 4.6.0 or later
 
-Sign the package using [nuget sign](../tools/cli-ref-sign.md):
+Sign the package using [nuget sign](../reference/cli-reference/cli-ref-sign.md):
 
 ```cli
-nuget sign MyPackage.nupkg -CertificateFilePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
+nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
 ```
 
-* You can use a certificate available in the certificate store or use a certificate from a file. See CLI reference for [nuget sign](../tools/cli-ref-sign.md).
+> [!Tip]
+> The certificate provider often also provides a timestamping server URL which you can use for the `Timestamper` optional argument show above. Consult with your provider's documentation and/or support for that service URL.
+
+* You can use a certificate available in the certificate store or use a certificate from a file. See CLI reference for [nuget sign](../reference/cli-reference/cli-ref-sign.md).
 * Signed packages should include a timestamp to make sure the signature remains valid when the signing certificate has expired. Else the sign operation will produce a [warning](../reference/errors-and-warnings/NU3002.md).
-* You can see the signature details of a given package using [nuget verify](../tools/cli-ref-verify.md).
+* You can see the signature details of a given package using [nuget verify](../reference/cli-reference/cli-ref-verify.md).
 
 ## Register the certificate on NuGet.org
 
@@ -58,11 +61,11 @@ To publish a signed package, you must first register the certificate with NuGet.
 
 ## Publish the package
 
-You are now ready to publish the package to NuGet.org. See [Publishing packages](Publish-a-package.md).
+You are now ready to publish the package to NuGet.org. See [Publishing packages](../nuget-org/Publish-a-package.md).
 
 ## Create a test certificate
 
-You can use self-issued certificates for testing purposes. To create a self-issued certificate, use the [New-SelfSignedCertificate PowerShell command](/powershell/module/pkiclient/new-selfsignedcertificate.md).
+You can use self-issued certificates for testing purposes. To create a self-issued certificate, use the [New-SelfSignedCertificate PowerShell command](/powershell/module/pkiclient/new-selfsignedcertificate).
 
 ```ps
 New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
@@ -95,5 +98,5 @@ This command creates a testing certificate available in the current user's perso
 
 ## Related articles
 
-- [Installing signed packages](../consume-packages/installing-signed-packages.md)
+- [Manage package trust boundaries](../consume-packages/installing-signed-packages.md)
 - [Signed Packages Reference](../reference/Signed-Packages-Reference.md)

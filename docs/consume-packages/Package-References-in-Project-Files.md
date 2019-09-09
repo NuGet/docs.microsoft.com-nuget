@@ -9,11 +9,15 @@ ms.topic: conceptual
 
 # Package references (PackageReference) in project files
 
-Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file). Using PackageReference, as it's called, doesn't affect other aspects of NuGet; for example, settings in `NuGet.config` files (including package sources) are still applied as explained in [Configuring NuGet Behavior](configuring-nuget-behavior.md).
+Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file). Using PackageReference, as it's called, doesn't affect other aspects of NuGet; for example, settings in `NuGet.config` files (including package sources) are still applied as explained in [Common NuGet configurations](configuring-nuget-behavior.md).
 
 With PackageReference, you can also use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. (See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
 
-By default, PackageReference is used for .NET Core projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later, with the exception of C++ UWP projects. .NET Framework projects support PackageReference, but currently default to `packages.config`. To use PackageReference, migrate the dependencies from `packages.config` into your project file, then remove packages.config.
+## Project type support
+
+By default, PackageReference is used for .NET Core projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later, with the exception of C++ UWP projects. .NET Framework projects support PackageReference, but currently default to `packages.config`. To use PackageReference, [migrate](../consume-packages/migrate-packages-config-to-package-reference.md) the dependencies from `packages.config` into your project file, then remove packages.config.
+
+ASP.NET apps targeting the full .NET Framework include only [limited support](https://github.com/NuGet/Home/issues/5877) for PackageReference. C++ and JavaScript project types are unsupported.
 
 ## Adding a PackageReference
 
@@ -39,7 +43,7 @@ The convention for specifying the version of a package is the same as when using
 </ItemGroup>
 ```
 
-In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards).
+In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../concepts/package-versioning.md#version-ranges-and-wildcards).
 
 ## Using PackageReference for a project with no PackageReferences
 Advanced: If you have no packages installed in a project (no PackageReferences in project file and no packages.config file), but want the project to be restored as PackageReference style, you can set a Project property RestoreProjectStyle to PackageReference in your project file.
@@ -54,7 +58,7 @@ This may be useful, if you reference projects which are PackageReference styled 
 
 ## Floating Versions
 
-[Floating versions](../consume-packages/dependency-resolution.md#floating-versions) are supported with `PackageReference`:
+[Floating versions](../concepts/dependency-resolution.md#floating-versions) are supported with `PackageReference`:
 
 ```xml
 <ItemGroup>
@@ -96,7 +100,9 @@ Allowable values for these tags are as follows, with multiple values separated b
 | compile | Contents of the `lib` folder and controls whether your project can compile against the assemblies within the folder |
 | runtime | Contents of the `lib` and `runtimes` folder and controls whether these assemblies will be copied out to the build output directory |
 | contentFiles | Contents of the `contentfiles` folder |
-| build | Props and targets in the `build` folder |
+| build | `.props` and `.targets` in the `build` folder |
+| buildMultitargeting | *(4.0)* `.props` and `.targets` in the `buildMultitargeting` folder, for cross-framework targeting |
+| buildTransitive | *(5.0+)* `.props` and `.targets` in the `buildTransitive` folder, for assets that flow transitively to any consuming project. See the [feature](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) page. |
 | analyzers | .NET analyzers |
 | native | Contents of the `native` folder |
 | none | None of the above are used. |
@@ -119,6 +125,9 @@ In the following example, everything except the content files from the package w
 ```
 
 Note that because `build` is not included with `PrivateAssets`, targets and props *will* flow to the parent project. Consider, for example, that the reference above is used in a project that builds a NuGet package called AppLogger. AppLogger can consume the targets and props from `Contoso.Utility.UsefulStuff`, as can projects that consume AppLogger.
+
+> [!NOTE]
+> When `developmentDependency` is set to `true` in a `.nuspec` file, this marks a package as a development-only dependency, which prevents the package from being included as a dependency in other packages. With PackageReference *(NuGet 4.8+)*, this flag also means that it will exclude compile-time assets from compilation. For more information, see [DevelopmentDependency support for PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference).
 
 ## Adding a PackageReference condition
 

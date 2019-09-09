@@ -18,18 +18,20 @@ For all such purposes, NuGet supports setting up private package sources in the 
 - NuGet.Server: Packages are made available through a local HTTP server. For details, see [NuGet.Server](../hosting-packages/nuget-server.md).
 - NuGet Gallery: Packages are hosted on an Internet server using the [NuGet Gallery Project](https://github.com/NuGet/NuGetGallery#build-and-run-the-gallery-in-arbitrary-number-easy-steps) (github.com). NuGet Gallery provides user management and features such as an extensive web UI that allows searching and exploring packages from within the browser, similar to nuget.org.
 
-There are also several other NuGet hosting products that support remote private feeds, including the following:
+There are also several other NuGet hosting products such as [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) and [GitHub package registry](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry) that support remote private feeds. Below is a list of such products:
 
-- [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish), which is also available on Team Foundation Server 2017 and later.
-- [MyGet](http://myget.org)
-- [ProGet](http://inedo.com/proget) from Inedo
-- [NuGet Server](http://nugetserver.net/), a community project from Inedo
-- [NuGet Server (Open Source)](http://nuget-server.net), an open-source implementation similar to Inedo's NuGet Server
-- [LiGet](https://github.com/ai-traders/liget), an open-source implementation of NuGet V2 server that runs on kestrel in docker
-- [BaGet](https://github.com/loic-sharma/BaGet), an open-source implementation of NuGet V3 server built on ASP.NET Core
-- [Sleet](https://github.com/emgarten/sleet), an open-source NuGet V3 static feed generator
 - [Artifactory](https://www.jfrog.com/artifactory/) from JFrog.
+- [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish), which is also available on Team Foundation Server 2017 and later.
+- [BaGet](https://github.com/loic-sharma/BaGet), an open-source implementation of NuGet V3 server built on ASP.NET Core
+- [Cloudsmith](https://cloudsmith.io/l/nuget-feed/), a fully managed package management SaaS
+- [GitHub package registry](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
+- [LiGet](https://github.com/ai-traders/liget), an open-source implementation of NuGet V2 server that runs on kestrel in docker
+- [MyGet](http://myget.org)
 - [Nexus](http://www.sonatype.org/nexus/) from Sonatype.
+- [NuGet Server (Open Source)](http://nuget-server.net), an open-source implementation similar to Inedo's NuGet Server
+- [NuGet Server](http://nugetserver.net/), a community project from Inedo
+- [ProGet](http://inedo.com/proget) from Inedo
+- [Sleet](https://github.com/emgarten/sleet), an open-source NuGet V3 static feed generator
 - [TeamCity](https://www.jetbrains.com/teamcity/) from JetBrains.
 
-Regardless of how packages are hosted, you access them by adding them to the list of available sources in `NuGet.Config`. This can be done in Visual Studio as described in [Package Sources](../tools/package-manager-ui.md#package-sources), or from the command line using [`nuget sources`](../tools/cli-ref-sources.md). The path to a source can be a local folder pathname, a network name, or a URL.
+Regardless of how packages are hosted, you access them by adding them to the list of available sources in `NuGet.Config`. This can be done in Visual Studio as described in [Package Sources](../consume-packages/install-use-packages-visual-studio.md#package-sources), or from the command line using [`nuget sources`](../reference/cli-reference/cli-ref-sources.md). The path to a source can be a local folder pathname, a network name, or a URL.

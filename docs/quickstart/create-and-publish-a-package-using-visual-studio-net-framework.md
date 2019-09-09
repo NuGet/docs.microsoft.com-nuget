@@ -1,6 +1,6 @@
 ---
-title: Create and publish a .NET Framework package using Visual Studio on Windows
-description: A walkthrough tutorial on creating and publishing a .NET Framework NuGet package using Visual Studio 2017 on Windows.
+title: Create and publish a .NET Framework NuGet package using Visual Studio on Windows
+description: A walkthrough tutorial on creating and publishing a .NET Framework NuGet package using Visual Studio on Windows.
 author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
@@ -12,11 +12,11 @@ ms.topic: quickstart
 Creating a NuGet package from a .NET Framework Class Library involves creating the DLL in Visual Studio on Windows, then using the nuget.exe command line tool to create and publish the package.
 
 > [!Note]
-> This Quickstart applies to Visual Studio 2017 for Windows only. Visual Studio for Mac does not include the capabilities described here. Use the [dotnet CLI tools](create-and-publish-a-package-using-the-dotnet-cli.md) instead.
+> This Quickstart applies to Visual Studio 2017 and higher versions for Windows only. Visual Studio for Mac does not include the capabilities described here. Use the [dotnet CLI tools](create-and-publish-a-package-using-the-dotnet-cli.md) instead.
 
 ## Prerequisites
 
-1. Install any edition of Visual Studio 2017 from [visualstudio.com](https://www.visualstudio.com/) with any .NET-related workload. Visual Studio 2017 automatically includes NuGet capabilities when a .NET workload is installed.
+1. Install any edition of Visual Studio 2017 or higher from [visualstudio.com](https://www.visualstudio.com/) with any .NET-related workload. Visual Studio 2017 automatically includes NuGet capabilities when a .NET workload is installed.
 
 1. Install the `nuget.exe` CLI by downloading it from [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), saving that `.exe` file to a suitable folder, and adding that folder to your PATH environment variable.
 
@@ -140,7 +140,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using `nuget.exe` wit
 
 ### Publish with nuget push
 
-1. Change to the folder containing the `.nupkg` file.
+1. Open a command line and change to the folder containing the `.nupkg` file.
 
 1. Run the following command, specifying your package name and replacing the key value with your API key:
 
@@ -157,7 +157,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using `nuget.exe` wit
     Your package was pushed.
     ```
 
-See [nuget push](../tools/cli-ref-push.md).
+See [nuget push](../reference/cli-reference/cli-ref-push.md).
 
 ### Publish errors
 
@@ -167,11 +167,17 @@ See [nuget push](../tools/cli-ref-push.md).
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## Related topics
+## Next steps
 
-- [Create a Package](../create-packages/creating-a-package.md)
-- [Publish a Package](../create-packages/publish-a-package.md)
+Congratulations on creating your first NuGet package!
+
+> [!div class="nextstepaction"]
+> [Create a Package](../create-packages/creating-a-package.md)
+
+To explore more that NuGet has to offer, select the links below.
+
+- [Publish a Package](../nuget-org/publish-a-package.md)
 - [Pre-release Packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple target frameworks](../create-packages/supporting-multiple-target-frameworks.md)
-- [Package versioning](../reference/package-versioning.md)
+- [Package versioning](../concepts/package-versioning.md)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)

@@ -30,7 +30,7 @@ The NuGet Visual Studio Extension uses an internal `VsCredentialProviderImporter
 
 Available plug-in credential providers include:
 
-- [MyGet Credential Provider for Visual Studio 2017](http://docs.myget.org/docs/reference/credential-provider-for-visual-studio)
+- [MyGet Credential Provider for Visual Studio](http://docs.myget.org/docs/reference/credential-provider-for-visual-studio)
 
 ## Creating a NuGet credential provider for Visual Studio
 

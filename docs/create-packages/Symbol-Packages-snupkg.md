@@ -1,11 +1,7 @@
 ---
 title: How to publish NuGet symbol packages using the new symbol package format '.snupkg'| Microsoft Docs
-author:
-- cristinamanu
-- kraigb
-ms.author:
-- cristinamanu
-- kraigb
+author: cristinamanu
+ms.author: cristinamanu
 manager: skofman
 ms.date: 10/30/2018
 ms.topic: reference
@@ -29,7 +25,30 @@ Symbol packages allow you to improve the debugging experience of your NuGet pack
 
 ## Creating a symbol package
 
-You can create a snupkg symbol package using dotnet.exe, NuGet.exe, or MSBuild. If you're using NuGet.exe, you can use the following commands to create a .snupkg file in addition to the .nupkg file:
+If you're using dotnet.exe or MSBuild, you need to set the `IncludeSymbols` and `SymbolPackageFormat` properties to create a .snupkg file in addition to the .nupkg file.
+
+* Either add the following properties to your .csproj file:
+
+   ```xml
+   <PropertyGroup>
+      <IncludeSymbols>true</IncludeSymbols>	
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat>	
+   </PropertyGroup>
+   ```
+
+* Or specify these properties on the command-line:
+
+     ```cli
+     dotnet pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
+     ```
+
+  or
+
+  ```cli
+  msbuild MyPackage.csproj /t:pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
+  ```
+
+If you're using NuGet.exe, you can use the following commands to create a .snupkg file in addition to the .nupkg file:
 
 ```
 nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
@@ -37,27 +56,14 @@ nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 ```
 
-If you're using dotnet.exe or MSBuild, use the following steps to create a .snupkg file in addition to the .nupkg file:
-
-1. Add the following properties to your .csproj file:
-
-    ```xml
-    <PropertyGroup>
-      <IncludeSymbols>true</IncludeSymbols>
-      <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    </PropertyGroup>
-    ```
-
-1. Pack your project with `dotnet pack MyPackage.csproj` or `msbuild -t:pack MyPackage.csproj`.
-
-The `SymbolPackageFormat` property can have one of the two values: `symbols.nupkg` (the default) or `snupkg`. If the `SymbolPackageFormat` property is not specified, it defaults to `symbols.nupkg` and a legacy symbol package will be created.
+The [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) property can have one of two values: `symbols.nupkg` (the default) or `snupkg`. If this property is not specified, a legacy symbol package will be created.
 
 > [!Note]
-> The legacy format `.symbols.nupkg` is still supported but only for compatibility reasons (see [Legacy Symbol Packages](Symbol-Packages.md)). NuGet.org symbols server only accepts the new symbol package format - `.snupkg`.
+> The legacy format `.symbols.nupkg` is still supported but only for compatibility reasons (see [Legacy Symbol Packages](Symbol-Packages.md)). NuGet.org's symbol server only accepts the new symbol package format - `.snupkg`.
 
 ## Publishing a symbol package
 
-1. For convenience, first save your API key with NuGet (see [publish a package](../create-packages/publish-a-package.md)).
+1. For convenience, first save your API key with NuGet (see [publish a package](../nuget-org/publish-a-package.md)).
 
     ```cli
     nuget SetApiKey Your-API-Key
@@ -76,6 +82,9 @@ The `SymbolPackageFormat` property can have one of the two values: `symbols.nupk
     ```
 
 NuGet will publish both packages to nuget.org. `MyPackage.nupkg` will be published first, followed by `MyPackage.snupkg`.
+
+> [!Note]
+> If the symbol package isn't published, check that you've configured the NuGet.org source as `https://api.nuget.org/v3/index.json`. Symbol package publishing is only supported by [the NuGet V3 API](../api/overview.md#versioning).
 
 ## NuGet.org symbol server
 
@@ -105,15 +114,18 @@ The .nupkg file would be exactly the same as it is today, but the .snupkg file w
 
 1) The .snupkg will have the same id and version as the corresponding .nupkg.
 2) The .snupkg will have the exact folder structure as the nupkg for any DLL or EXE files with the distinction that instead of DLLs/EXEs, their corresponding PDBs will be included in the same folder hierarchy. Files and folders with extensions other than PDB will be left out of the snupkg.
-3) The .nuspec file in the .snupkg will also specify a new PackageType as below. This should the only one PackageType specified. 
-``` 
-<packageTypes>
-  <packageType name="SymbolsPackage"/>
-</packageTypes>
-```
+3) The .nuspec file in the .snupkg will also specify a new PackageType as below. This should the only one PackageType specified.
+
+   ```xml
+   <packageTypes>
+      <packageType name="SymbolsPackage"/>
+   </packageTypes>
+   ```
+
 4) If an author decides to use a custom nuspec to build their nupkg and snupkg, the snupkg should have the same folder hierarchy and files detailed in 2).
 5) ```authors``` and ```owners``` field will be excluded from the snupkg's nuspec.
+6) Do not use the ```<license>``` element. A .snupkg is covered under the same license as the corresponding .nupkg.
 
 ## See Also
 
-[NuGet-Package-Debugging-&-Symbols-Improvements](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)
+[NuGet Package Debugging & Symbols Improvements](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)

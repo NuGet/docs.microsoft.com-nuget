@@ -124,7 +124,7 @@ upper  | string           | yes      | The highest SemVer 2.0.0 version in the p
 
 The `lower` and `upper` bounds of the page object are useful when the metadata for a specific page version is needed.
 These bounds can be used to fetch the only registration page needed. The version strings adhere to
-[NuGet's version rules](../reference/package-versioning.md). The version strings are normalized and do not include
+[NuGet's version rules](../concepts/package-versioning.md). The version strings are normalized and do not include
 build metadata. As with all versions in the NuGet ecosystem, comparison of version strings is implemented using
 [SemVer 2.0.0's version precedence rules](http://semver.org/spec/v2.0.0.html#spec-item-11).
 
@@ -163,6 +163,7 @@ Name                     | Type                       | Required | Notes
 @id                      | string                     | yes      | The URL to document used to produce this object
 authors                  | string or array of strings | no       | 
 dependencyGroups         | array of objects           | no       | The dependencies of the package, grouped by target framework
+deprecation              | object                     | no       | The deprecation associated with the package
 description              | string                     | no       | 
 iconUrl                  | string                     | no       | 
 id                       | string                     | yes      | The ID of the package
@@ -210,11 +211,31 @@ Each package dependency has the following properties:
 Name         | Type   | Required | Notes
 ------------ | ------ | -------- | -----
 id           | string | yes      | The ID of the package dependency
-range        | object | no       | The allowed [version range](../reference/package-versioning.md#version-ranges-and-wildcards) of the dependency
+range        | object | no       | The allowed [version range](../concepts/package-versioning.md#version-ranges-and-wildcards) of the dependency
 registration | string | no       | The URL to the registration index for this dependency
 
 If the `range` property is excluded or an empty string, the client should default to the version range `(, )`. That is,
 any version of the dependency is allowed.
+
+#### Package deprecation
+
+Each package deprecation has the following properties:
+
+Name             | Type             | Required | Notes
+---------------- | ---------------- | -------- | -----
+reasons          | array of strings | yes      | The reasons why the package was deprecated
+message          | string           | no       | The additional details about this deprecation
+alternatePackage | object           | no       | The package dependency that should be used instead
+
+The `reasons` property must contain at least one string and should only contains strings from the following table:
+
+Reason       | Description             
+------------ | -----------
+Legacy       | The package is no longer maintained
+CriticalBugs | The package has bugs which make it unsuitable for usage
+Other        | The package is deprecated due to a reason not on this list
+
+If the `reasons` property contains strings that are not from the known set, they should be ignored. The strings are case-insensitive, so `legacy` should be treated the same as `Legacy`. There is no ordering restriction on the array, so the strings can arranged in any arbitrary order. Additionally, if the property contains only strings that are not from the known set, it should be treated as if it only contained the "Other" string.
 
 ### Sample request
 

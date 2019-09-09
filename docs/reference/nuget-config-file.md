@@ -3,31 +3,15 @@ title: nuget.config File Reference
 description: NuGet.Config file reference including the config, bindingRedirects, packageRestore, solution, and packageSource sections.
 author: karann-msft
 ms.author: karann
-ms.date: 10/25/2017
+ms.date: 08/13/2019
 ms.topic: reference
 ---
 
 # nuget.config reference
 
-NuGet behavior is controlled by settings in different `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).
+NuGet behavior is controlled by settings in different `NuGet.Config` files as described in [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md).
 
 `nuget.config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic. Each section contains zero or more items. See the [examples config file](#example-config-file). Setting names are case-insensitive, and values can use [environment variables](#using-environment-variables).
-
-In this topic:
-
-- [config section](#config-section)
-- [bindingRedirects section](#bindingredirects-section)
-- [packageRestore section](#packagerestore-section)
-- [solution section](#solution-section)
-- [Package source sections](#package-source-sections):
-  - [packageSources](#packagesources)
-  - [packageSourceCredentials](#packagesourcecredentials)
-  - [apikeys](#apikeys)
-  - [disabledPackageSources](#disabledpackagesources)
-  - [activePackageSource](#activepackagesource)
-- [trustedSigners section](#trustedsigners-section)
-- [Using environment variables](#using-environment-variables)
-- [Example config file](#example-config-file)
 
 <a name="dependencyVersion"></a>
 <a name="globalPackagesFolder"></a>
@@ -36,7 +20,7 @@ In this topic:
 
 ## config section
 
-Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/cli-ref-config.md).
+Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../reference/cli-reference/cli-ref-config.md).
 
 `dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`. `globalPackagesFolder` applies only to projects using the PackageReference format.
 
@@ -115,7 +99,7 @@ Controls whether the `packages` folder of a solution is included in source contr
 
 The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources` and `trustedSigners` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
 
-The [`nuget sources` command](../tools/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/cli-ref-setapikey.md), and `trustedSigners` which is managed using the [`nuget trusted-signers` command](../tools/cli-ref-trusted-signers.md).
+The [`nuget sources` command](../reference/cli-reference/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../reference/cli-reference/cli-ref-setapikey.md), and `trustedSigners` which is managed using the [`nuget trusted-signers` command](../reference/cli-reference/cli-ref-trusted-signers.md).
 
 Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 
@@ -181,7 +165,7 @@ When using unencrypted passwords:
 
 ### apikeys
 
-Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../tools/cli-ref-setapikey.md).
+Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../reference/cli-reference/cli-ref-setapikey.md).
 
 | Key | Value |
 | --- | --- |
@@ -235,11 +219,12 @@ Identifies to the currently active source or indicates the aggregate of all sour
     <add key="All" value="(Aggregate source)" />
 </activePackageSource>
 ```
+
 ## trustedSigners section
 
 Stores trusted signers used to allow package while installing or restoring. This list cannot be empty when the user sets `signatureValidationMode` to `require`. 
 
-This section can be updated with the [`nuget trusted-signers` command](../tools/cli-ref-trusted-signers.md).
+This section can be updated with the [`nuget trusted-signers` command](../reference/cli-reference/cli-ref-trusted-signers.md).
 
 **Schema**:
 
@@ -263,6 +248,50 @@ If a `certificate` specifies `allowUntrustedRoot` as `true` the given certificat
 		<owners>microsoft;aspnet;nuget</owners>
 	</repository>
 </trustedSigners>
+```
+
+## fallbackPackageFolders section
+
+*(3.5+)* Provides a way to preinstall packages so that no work needs to be done if the package is found in the fallback folders. Fallback package folders have the exact same folder and file structure as the global package folder: *.nupkg* is present, and all files are extracted.
+
+The lookup logic for this configuration is:
+
+- Look in global package folder to see if the package/version is already downloaded.
+
+- Look in the fallback folders for a package/version match.
+
+If either lookup is successful, then no download is necessary.
+
+If a match is not found, then NuGet checks file sources, and then http sources, and then it downloads the packages.
+
+| Key | Value |
+| --- | --- |
+| (name of fallback folder) | Path to fallback folder. |
+
+**Example**:
+
+```xml
+<fallbackPackageFolders>
+   <add key="XYZ Offline Packages" value="C:\somePath\someFolder\"/>
+</fallbackPackageFolders>
+```
+
+## packageManagement section
+
+Sets the default package management format, either *packages.config* or PackageReference. SDK-style projects always use PackageReference.
+
+| Key | Value |
+| --- | --- |
+| format | A Boolean indicating the default package management format. If `1`, format is PackageReference. If `0`, format is *packages.config*. |
+| disabled | A Boolean indicating whether to show the prompt to select a default package format on first package install. `False` hides the prompt. |
+
+**Example**:
+
+```xml
+<packageManagement>
+   <add key="format" value="1" />
+   <add key="disabled" value="False" />
+</packageManagement>
 ```
 
 ## Using environment variables
@@ -347,12 +376,12 @@ Below is an example `nuget.config` file that illustrates a number of settings:
     -->
     <trustedSigners>
         <author name="microsoft">
-		    <certificate fingerprint="3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
-	    </author>
-	    <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
-		    <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
-		    <owners>microsoft;aspnet;nuget</owners>
-	    </repository>
+            <certificate fingerprint="3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+        </author>
+        <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
+            <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+            <owners>microsoft;aspnet;nuget</owners>
+        </repository>
     </trustedSigners>
 </configuration>
 ```
