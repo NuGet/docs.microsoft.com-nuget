@@ -22,7 +22,7 @@ Symbol packages allow you to improve the debugging experience of your NuGet pack
 
 [nuget.exe v4.9.0 or above](https://www.nuget.org/downloads) or [dotnet.exe v2.2.0 or above](https://www.microsoft.com/net/download/dotnet-core/2.2), which implement the required [NuGet protocols](../api/nuget-protocols.md).
 
-> [!Suggestion]
+> [!Tip]
 > Consider using Source Link to enable source code debugging of .NET assemblies. For more information, please refer to the [Source Link](/dotnet/standard/library-guidance/sourcelink.md) guidance.
 
 ## Creating a symbol package
