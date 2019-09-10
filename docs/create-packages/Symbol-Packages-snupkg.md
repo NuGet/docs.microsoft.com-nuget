@@ -25,7 +25,6 @@ Symbol packages allow you to improve the debugging experience of your NuGet pack
 > [!Suggestion]
 > Consider using Source Link to enable source code debugging of .NET assemblies. For more information, please refer to the [Source Link](/dotnet/standard/library-guidance/sourcelink.md) guidance.
 
-
 ## Creating a symbol package
 
 If you're using dotnet.exe or MSBuild, you need to set the `IncludeSymbols` and `SymbolPackageFormat` properties to create a .snupkg file in addition to the .nupkg file.
