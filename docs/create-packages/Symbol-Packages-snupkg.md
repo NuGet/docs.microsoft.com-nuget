@@ -22,9 +22,6 @@ Symbol packages allow you to improve the debugging experience of your NuGet pack
 
 [nuget.exe v4.9.0 or above](https://www.nuget.org/downloads) or [dotnet.exe v2.2.0 or above](https://www.microsoft.com/net/download/dotnet-core/2.2), which implement the required [NuGet protocols](../api/nuget-protocols.md).
 
-> [!Tip]
-> Consider using Source Link to enable source code debugging of .NET assemblies. For more information, please refer to the [Source Link guidance](/dotnet/standard/library-guidance/sourcelink.md).
-
 ## Creating a symbol package
 
 If you're using dotnet.exe or MSBuild, you need to set the `IncludeSymbols` and `SymbolPackageFormat` properties to create a .snupkg file in addition to the .nupkg file.
@@ -130,4 +127,6 @@ The .nupkg file would be exactly the same as it is today, but the .snupkg file w
 
 ## See Also
 
-[NuGet Package Debugging & Symbols Improvements](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)
+Consider using Source Link to enable source code debugging of .NET assemblies. For more information, please refer to the [Source Link guidance](/dotnet/standard/library-guidance/sourcelink.md).
+
+For more information on symbol packages, please refer to the [NuGet Package Debugging & Symbols Improvements](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements) design spec.
