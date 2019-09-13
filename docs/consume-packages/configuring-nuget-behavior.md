@@ -20,7 +20,7 @@ NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Con
 | Computer | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`. If `$XDG_DATA_HOME` is null or empty, `~/.local/share` or `/usr/local/share` will be used (varies by OS distribution)  | Settings apply to all operations on the computer, but are overridden by any user- or project-level settings. |
 
 Notes for earlier versions of NuGet:
-- NuGet 3.3 and earlier used a `.nuget` folder for solution-wide settings. This file is not used in NuGet 3.4+.
+- NuGet 3.3 and earlier used a `.nuget` folder for solution-wide settings. This folder is not used in NuGet 3.4+.
 - For NuGet 2.6 to 3.x, the computer-level config file on Windows was located in %ProgramData%\NuGet\Config[\\{IDE}[\\{Version}[\\{SKU}]]]\NuGet.Config, where *{IDE}* can be *VisualStudio*, *{Version}* was the Visual Studio version such as *14.0*, and *{SKU}* is either *Community*, *Pro*, or *Enterprise*. To migrate settings to NuGet 4.0+, simply copy the config file to %ProgramFiles(x86)%\NuGet\Config. On Linux, this previous location was /etc/opt, and on Mac, /Library/Application Support.
 
 ## Changing config settings
