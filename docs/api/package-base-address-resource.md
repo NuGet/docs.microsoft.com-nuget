@@ -49,7 +49,7 @@ listing" for the package content API mentioned below.
 
 Name     | In     | Type    | Required | Notes
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | URL    | string  | yes      | The package ID, lowercase
+LOWER_ID | URL    | string  | yes      | The package ID, lowercased
 
 The `LOWER_ID` value is the desired package ID lowercased using the rules implemented by .NET's
 [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) method.
@@ -63,7 +63,7 @@ the following property:
 
 Name     | Type             | Required | Notes
 -------- | ---------------- | -------- | -----
-versions | array of strings | yes      | The package IDs available
+versions | array of strings | yes      | The versions available
 
 The strings in the `versions` array are all lowercased, 
 [normalized NuGet version strings](../concepts/package-versioning.md#normalized-version-numbers). The version
