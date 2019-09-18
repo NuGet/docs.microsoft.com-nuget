@@ -104,7 +104,6 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 - NuspecFile
 - NuspecBasePath
 - NuspecProperties
-- Deterministic
 
 ## pack scenarios
 
@@ -168,18 +167,6 @@ You can also add the following metadata to your project reference:
 <IncludeAssets>
 <ExcludeAssets>
 <PrivateAssets>
-```
-
-### Deterministic
-
-When using `MSBuild -t:pack -p:Deterministic=true`, multiple invocations of the the pack target will generate the exact same package.
-The output of the pack command is not affected by the ambient state of the machine. Specifically zip entries will be timestamped as 1980-01-01. To achieve full determinism, the assemblies should be built with the respective compiler option [-deterministic](/dotnet/csharp/language-reference/compiler-options/deterministic-compiler-option).
-It is recommended that you specify the deterministic property like following, so both the compiler and NuGet will respect it.
-
-```xml
-<PropertyGroup>
-  <Deterministic>true</Deterministic>
-</PropertyGroup>
 ```
 
 ### Including content in a package
