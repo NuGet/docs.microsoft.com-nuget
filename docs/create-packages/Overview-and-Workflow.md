@@ -7,7 +7,7 @@ ms.date: 07/26/2017
 ms.topic: conceptual
 ---
 
-# Package creation workflow
+# Package creation workflow - Check
 
 Creating a package starts with the compiled code (typically .NET assemblies) that you want to package and share with others, either through the public nuget.org gallery or a private gallery within your organization. The package can also include additional files such as a readme that is displayed when the package is installed, and can include transformations to certain project files.
 
