@@ -2,7 +2,7 @@
 title: Overview and workflow of creating NuGet packages
 description: An overview of the process of creating and publishing a NuGet package, with links to other specific parts of the process.
 author: karann-msft
-ms.author: karann
+ms.author: karann, chgill
 ms.date: 07/26/2017
 ms.topic: conceptual
 ---
