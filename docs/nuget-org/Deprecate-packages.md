@@ -17,7 +17,7 @@ Package deprecation is different than **unlisting** your package as explained be
 * **Deprecating** a package lets your package's existing consumers find out if they have it installed or used in their projects. It also lets them know the reason for deprecation and an alternate recommended package as specified by you (the package publisher). 
 
 ## Deprecation workflow
-1. To deprecate a package, go to `Manage packages` and select `Deprecation`:
+1. To deprecate a package, go to **Manage packages** and select **Deprecation**:
 
     ![Go to deprecate package option](media/deprecation-select-option.png)
 
