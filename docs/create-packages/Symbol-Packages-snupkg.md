@@ -51,8 +51,6 @@ If you're using NuGet.exe, you can use the following commands to create a .snupk
 
 ```
 nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
-
-nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 ```
 
 The [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) property can have one of two values: `symbols.nupkg` (the default) or `snupkg`. If this property is not specified, a legacy symbol package will be created.
