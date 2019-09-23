@@ -25,10 +25,10 @@ As a package publisher, if you no longer want to maintain a package or would lik
 
 3. Choose a reason for deprecation. If the package is no longer maintained, choose `Legacy` option. If a specific version has a critical bug, choose the second option. For any other reason, select `Other`. You can always specify an alternate recommended package (and version) and a custom message to the owners. 
 
+    ![Select reasons alternate package recommendation and custom message](media/deprecation-save.png)
+
 > [!Note]
 > Custom message is only shown on nuget.org but not from the clients. Selecting a reason constructs a good messaging for that reason and is shown to the package consumers.
-
-    ![Select reasons alternate package recommendation and custom message](media/deprecation-save.png)
 
 ## Client experience for deprecated packages
 Once a package has been deprecated, it's package consumers would get to know about it in following ways (depending upon the client used).
@@ -38,7 +38,7 @@ Once a package has been deprecated, it's package consumers would get to know abo
 
 If you use any of the deprecated packages in your project, Visual Studio will warn you about its usage on the `Installed` tab. It will lead you to the package and the deprecation information (reason and an alternate package recommendation, if present)
 
-    ![Deprecated packages on Visual Studio installed tab of package manager](media/deprecation-vs.png)
+   ![Deprecated packages on Visual Studio installed tab of package manager](media/deprecation-vs.png)
 
 ### dotnet.exe
 *Available with .NET SDK 3.0+*
