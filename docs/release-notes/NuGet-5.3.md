@@ -29,6 +29,8 @@ NuGet distribution vehicles:
 
 * NuGet packages produced with 3.0.100-preview9 SDK cannot be used by 2.2 SDK users...depending on your timezone [#8603](https://github.com/NuGet/Home/issues/8603)
 
+* Quote " characters in PATH cause "Illegal characters in path" failure in `nuget restore` [#8168](https://github.com/NuGet/Home/issues/8168)
+
 * VS: assemblies are fully ngen-ed not partially ngen-ed - [#8513](https://github.com/NuGet/Home/issues/8513)
 
 * Reduce memory usage (unsubscribe from events) - [#8471](https://github.com/NuGet/Home/issues/8471)
@@ -37,7 +39,7 @@ NuGet distribution vehicles:
 
 * NU1403 improvements - validate all packages, include the expected/actual sha values - [#8424](https://github.com/NuGet/Home/issues/8424)
 
-* Multiple enumeration in NuGetPackageManager.PreviewUpdatePackagesAsync - [#8401](https://github.com/NuGet/Home/issues/8401)
+* Multiple enumeration in `NuGetPackageManager.PreviewUpdatePackagesAsync` - [#8401](https://github.com/NuGet/Home/issues/8401)
 
 * Revert "public -> internal" change in PluginProcess - [#8390](https://github.com/NuGet/Home/issues/8390)
 
@@ -61,7 +63,7 @@ NuGet distribution vehicles:
 
 * Make the Settings reading in VS lazy - [#8156](https://github.com/NuGet/Home/issues/8156)
 
-* Regression in 'Nuget sources add' causes "The ':' character, hexadecimal value 0x3A, cannot be included in a name" errors - [#7948](https://github.com/NuGet/Home/issues/7948)
+* Regression in `Nuget sources add` causes "The ':' character, hexadecimal value 0x3A, cannot be included in a name" errors - [#7948](https://github.com/NuGet/Home/issues/7948)
 
 * NuGet plugin credential providers - hide the process window - [#7511](https://github.com/NuGet/Home/issues/7511)
 
