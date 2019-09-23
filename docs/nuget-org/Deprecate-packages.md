@@ -36,7 +36,7 @@ Package deprecation is different than **unlisting** your package as explained be
 Once a package has been deprecated, it's consumers get to know about it in following ways (depending upon the client used).
 
 ### Visual Studio 
-*Available on Visual Studio 2019 version 16.3+*
+*Available starting in Visual Studio 2019 version 16.3+*
 
 Visual Studio warns about a deprecated package's usage on the `Installed` tab. It will lead you to the package and the deprecation information (reason and an alternate package recommendation, if present)
 
