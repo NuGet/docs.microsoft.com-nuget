@@ -28,7 +28,7 @@ As a package publisher, if you no longer want to maintain a package or would lik
 > [!Note]
 > Custom message is only shown on nuget.org but not from the clients. Selecting a reason constructs a good messaging for that reason and is shown to the package consumers.
 
-    ![Select reasons, alternate package recommendation and custom message](media/deprecation-save.png)
+    ![Select reasons alternate package recommendation and custom message](media/deprecation-save.png)
 
 ## Client experience for deprecated packages
 Once a package has been deprecated, it's package consumers would get to know about it in following ways (depending upon the client used).
@@ -37,6 +37,8 @@ Once a package has been deprecated, it's package consumers would get to know abo
 *Available on Visual Studio 2019 version 16.3+*
 
 If you use any of the deprecated packages in your project, Visual Studio will warn you about its usage on the `Installed` tab. It will lead you to the package and the deprecation information (reason and an alternate package recommendation, if present)
+
+    ![Deprecated packages on Visual Studio installed tab of package manager](media/deprecation-vs.png)
 
 ### dotnet.exe
 *Available with .NET SDK 3.0+*
