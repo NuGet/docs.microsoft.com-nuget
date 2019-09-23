@@ -10,9 +10,11 @@ ms.reviewer: karann-msft
 
 # Deprecating packages
 
-As a package publisher, if you no longer want to maintain a package or would like to move your package consumers to move to another package due to various reasons, deprecate your package. Package deprecation is different than `unlisting` your package as explained below:
-* `Unlisting` a package prevents its discovery as its hidden in search results. Hence it prevents new installs of the package.
-* `Deprecating` a package lets your package's existing consumers find out if they have it installed or used in their projects. It also lets them know the reason and alternate recommended package as specified by you (the package publisher). 
+As a package publisher, if you no longer want to maintain a package or would like to move your package consumers to another package for various reasons, you can now deprecate the package. 
+
+Package deprecation is different than **unlisting** your package as explained below:
+* **Unlisting** a package prevents its discovery as its hidden in search results. Hence it prevents new installs of the package.
+* **Deprecating** a package lets your package's existing consumers find out if they have it installed or used in their projects. It also lets them know the reason and alternate recommended package as specified by you (the package publisher). 
 
 ## Deprecation workflow
 1. To deprecate a package, go to `Manage packages` and select `Deprecation`:
@@ -28,15 +30,15 @@ As a package publisher, if you no longer want to maintain a package or would lik
     ![Select reasons alternate package recommendation and custom message](media/deprecation-save.png)
 
 > [!Note]
-> Custom message is only shown on nuget.org but not from the clients. Selecting a reason constructs a good messaging for that reason and is shown to the package consumers.
+> Custom message is only shown on nuget.org but not from the clients.
 
 ## Client experience for deprecated packages
-Once a package has been deprecated, it's package consumers would get to know about it in following ways (depending upon the client used).
+Once a package has been deprecated, it's consumers get to know about it in following ways (depending upon the client used).
 
 ### Visual Studio 
 *Available on Visual Studio 2019 version 16.3+*
 
-If you use any of the deprecated packages in your project, Visual Studio will warn you about its usage on the `Installed` tab. It will lead you to the package and the deprecation information (reason and an alternate package recommendation, if present)
+Visual Studio warns about a deprecated package's usage on the `Installed` tab. It will lead you to the package and the deprecation information (reason and an alternate package recommendation, if present)
 
    ![Deprecated packages on Visual Studio installed tab of package manager](media/deprecation-vs.png)
 
