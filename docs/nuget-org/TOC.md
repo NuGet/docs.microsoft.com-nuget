@@ -5,7 +5,8 @@
 ## [API keys](scoped-api-keys.md)
 # Manage packages on NuGet.org
 ## [Publish a package](publish-a-package.md)
-## [Packaging ID prefix reservation](id-prefix-reservation.md)
+## [Package ID prefix reservation](id-prefix-reservation.md)
+## [Package deprecation](deprecate-packages.md)
 # Policies
 ## [Data Requests](policies/Data-requests.md)
 ## [Dispute resolution](policies/dispute-resolution.md)
