@@ -36,14 +36,14 @@ Package deprecation is different than **unlisting** your package as explained be
 Once a package has been deprecated, it's consumers get to know about it in following ways (depending upon the client used).
 
 ### Visual Studio 
-*Available starting in Visual Studio 2019 version 16.3+*
+*Available starting in Visual Studio 2019 version 16.3*
 
 Visual Studio warns about a deprecated package's usage on the `Installed` tab. It will lead you to the package and the deprecation information (reason and an alternate package recommendation, if present)
 
    ![Deprecated packages on Visual Studio installed tab of package manager](media/deprecation-vs.png)
 
 ### dotnet.exe
-*Available with .NET SDK 3.0+*
+*Available starting with .NET SDK 3.0*
 
 If you use dotnet.exe, you can run the command `dotnet list package --deprecated` on the solution or project folder to get a list of deprecated packages along with the deprecation information:
 
