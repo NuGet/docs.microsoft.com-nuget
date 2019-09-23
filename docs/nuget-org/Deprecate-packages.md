@@ -14,7 +14,7 @@ As a package publisher, if you no longer want to maintain a package or would lik
 
 Package deprecation is different than **unlisting** your package as explained below:
 * **Unlisting** a package prevents its discovery because it is hidden in search results. This prevents new installs of the package.
-* **Deprecating** a package lets your package's existing consumers find out if they have it installed or used in their projects. It also lets them know the reason and alternate recommended package as specified by you (the package publisher). 
+* **Deprecating** a package lets your package's existing consumers find out if they have it installed or used in their projects. It also lets them know the reason for deprecation and an alternate recommended package as specified by you (the package publisher). 
 
 ## Deprecation workflow
 1. To deprecate a package, go to `Manage packages` and select `Deprecation`:
