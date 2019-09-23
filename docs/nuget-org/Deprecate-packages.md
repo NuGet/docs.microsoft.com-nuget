@@ -13,7 +13,7 @@ ms.reviewer: karann-msft
 You can deprecate a package if you no longer maintain a package or if would like to encourage your package's consumers to move to another package. 
 
 Package deprecation is different than **unlisting** your package as explained below:
-* **Unlisting** a package prevents its discovery because it is hidden in search results. This prevents new installs of the package.
+* **Unlisting** a package prevents its discovery because it is hidden in search results. 
 * **Deprecating** a package lets your package's existing consumers find out if they have it installed or used in their projects. It also lets them know the reason for deprecation and an alternate recommended package as specified by you (the package publisher). 
 
 ## Deprecation workflow
