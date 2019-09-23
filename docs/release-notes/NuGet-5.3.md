@@ -13,11 +13,11 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version| Available in .NET SDK(s)|
 |:---|:---|:---|
-| [**5.3.0-preview3**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.3 Preview 3](https://visualstudio.microsoft.com/vs/preview/) | [3.0.100-preview9](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
+| [**5.3.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.3](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
 
 <sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload
 
-## Summary: What's New in 5.3 preview 3
+## Summary: What's New in 5.3
 
 * [Package Icon can be embedded in the package](../reference/msbuild-targets.md#packing-an-icon-image-file), instead of needing an external URL. - [#352](https://github.com/NuGet/Home/issues/352)
 
@@ -26,6 +26,8 @@ NuGet distribution vehicles:
 ### Issues fixed in this release
 
 **Bugs**
+
+* NuGet packages produced with 3.0.100-preview9 SDK cannot be used by 2.2 SDK users...depending on your timezone [#8603](https://github.com/NuGet/Home/issues/8603)
 
 * VS: assemblies are fully ngen-ed not partially ngen-ed - [#8513](https://github.com/NuGet/Home/issues/8513)
 
@@ -81,6 +83,4 @@ NuGet distribution vehicles:
 
 * Add -SolutionDirectory and -PackageDirectory options to nuget.exe pack - [#7163](https://github.com/NuGet/Home/issues/7163)
 
-* Enable NuGet Pack to be deterministic - [#6229](https://github.com/NuGet/Home/issues/6229)
-
-**[List of all issues fixed in this release - 5.3 preview 3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
+**[List of all issues fixed in this release - 5.3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
