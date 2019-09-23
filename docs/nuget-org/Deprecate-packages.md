@@ -33,7 +33,7 @@ Package deprecation is different than **unlisting** your package as explained be
 > Custom message is only shown on nuget.org but not from the clients.
 
 ## Client experience for deprecated packages
-Once a package has been deprecated, it's consumers get to know about it in following ways (depending upon the client used).
+Once a package has been deprecated, its consumers get to know about it in following ways (depending upon the client used).
 
 ### Visual Studio 
 *Available starting in Visual Studio 2019 version 16.3*
