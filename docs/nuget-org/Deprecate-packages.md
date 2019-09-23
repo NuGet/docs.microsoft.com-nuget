@@ -27,20 +27,20 @@ As a publisher, you may choose to both unlist as well as deprecate packages.
 
     ![Select package versions to deprecate](media/deprecation-select-version.png)
 
-3. Choose a reason for deprecation. If the package is no longer maintained, choose **Legacy** option. If a specific version has a critical bug, choose the second option. For any other reason, select **Other**. You can always specify an alternate recommended package (and version) and a custom message to the owners. 
+3. Choose a reason for deprecation. If the package is no longer maintained, choose the **Legacy** option. If the specific version has a critical bug, choose the **has critical bugs** option. For any other reason, select **Other**. You can always specify an alternate recommended package (and version) and a custom message to the owners. 
 
     ![Select reasons alternate package recommendation and custom message](media/deprecation-save.png)
 
 > [!Note]
-> Custom message is only shown on nuget.org but not from the clients.
+> Custom message is only shown on nuget.org but not from the clients. Currently, clients such as `dotnet.exe` and the NuGet Package Manager do not show the custom message.
 
 ## Client experience for deprecated packages
-Once a package has been deprecated, its consumers get to know about it in following ways (depending upon the client used).
+Once a package has been deprecated, its consumers are notified about it in the following ways (depending upon the client used).
 
 ### Visual Studio 
 *Available starting in Visual Studio 2019 version 16.3*
 
-Visual Studio warns about a deprecated package's usage on the `Installed` tab. It will lead you to the package and the deprecation information (reason and an alternate package recommendation, if present)
+Visual Studio warns about a deprecated package's usage on the `Installed` tab.It will lead you to the package and its deprecation information (including the reason it was deprecated and the alternate package to use instead, if present).
 
    ![Deprecated packages on Visual Studio installed tab of package manager](media/deprecation-vs.png)
 
