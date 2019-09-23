@@ -10,7 +10,7 @@ ms.reviewer: karann-msft
 
 # Deprecating packages
 
-As a package publisher, if you no longer want to maintain a package or would like to move your package consumers to another package for various reasons, you can now deprecate the package. 
+As a package publisher, if you no longer want to maintain a package or would like to encourage your package's consumers to move to another package for various reasons, you can now deprecate the package. 
 
 Package deprecation is different than **unlisting** your package as explained below:
 * **Unlisting** a package prevents its discovery because it is hidden in search results. This prevents new installs of the package.
