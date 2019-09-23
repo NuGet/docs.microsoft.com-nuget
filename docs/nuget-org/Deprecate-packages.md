@@ -21,7 +21,7 @@ Package deprecation is different than **unlisting** your package as explained be
 
     ![Go to deprecate package option](media/deprecation-select-option.png)
 
-2. Select the version you would like to deprecate. If you want to deprecate all version, choose `Select all versions` option.
+2. Select the version you would like to deprecate. If you want to deprecate all version, choose **Select all versions** option.
 
     ![Select package versions to deprecate](media/deprecation-select-version.png)
 
