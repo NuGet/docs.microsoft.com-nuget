@@ -25,7 +25,7 @@ Package deprecation is different than **unlisting** your package as explained be
 
     ![Select package versions to deprecate](media/deprecation-select-version.png)
 
-3. Choose a reason for deprecation. If the package is no longer maintained, choose `Legacy` option. If a specific version has a critical bug, choose the second option. For any other reason, select `Other`. You can always specify an alternate recommended package (and version) and a custom message to the owners. 
+3. Choose a reason for deprecation. If the package is no longer maintained, choose **Legacy** option. If a specific version has a critical bug, choose the second option. For any other reason, select **Other**. You can always specify an alternate recommended package (and version) and a custom message to the owners. 
 
     ![Select reasons alternate package recommendation and custom message](media/deprecation-save.png)
 
