@@ -23,6 +23,8 @@ NuGet distribution vehicles:
 
 * Improved security with SHA tracking and enforcement for Packages.Config - [#7281](https://github.com/NuGet/Home/issues/7281)
 
+* Enable server side deprecation of obsolete/legacy NuGet Packages [#2867](https://github.com/NuGet/Home/issues/2867)
+
 ### Issues fixed in this release
 
 **Bugs**
