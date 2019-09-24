@@ -30,7 +30,6 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 | --- | --- |
 | BasePath | Sets the base path of the files defined in the [.nuspec](../nuspec.md) file. |
 | Build | Specifies that the project should be built before building the package. |
-| Deterministic | Specify if the command should create a deterministic package. Multiple invocations of the pack command will generate the exact same byte-to-byte package. The output of the pack command is not affected by the ambient state of the machine. Specifically zip entries will be timestamped as 1980-01-01. To achieve full determinism, the assemblies should be built with the respective compiler option [-deterministic](/dotnet/csharp/language-reference/compiler-options/deterministic-compiler-option). |
 | Exclude | Specifies one or more wildcard patterns to exclude when creating a package. To specify more than one pattern, repeat the -Exclude flag. See example below. |
 | ExcludeEmptyDirectories | Prevents inclusion of empty directories when building the package. |
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
