@@ -10,7 +10,7 @@ ms.reviewer: karann
 
 # Package ID prefix reservation
 
-Package owners can reserve and protect their identity by reserving ID prefixes. Package consumers are provided with additional information when consuming packages that the package they are consuming are not deceptive in their identifying properties. 
+Package owners can reserve and protect their identity by reserving ID prefixes. Package consumers are provided with additional information when the packages that they are consuming are not deceptive in their identifying properties. 
 
 [nuget.org](https://www.nuget.org/) and Visual Studio 2017 version 15.4 or later show a visual indicator for packages that are submitted by owners with a reserved package ID prefix, as long as the package matches the reserved ID prefix naming pattern. The below reference explains what the ID prefix reservation entails, and how an owner can apply for an ID prefix.
 
