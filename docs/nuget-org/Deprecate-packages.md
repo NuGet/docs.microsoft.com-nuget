@@ -34,7 +34,7 @@ As a publisher, you may choose to both unlist as well as deprecate packages.
 > [!Note]
 > Custom message is only shown on nuget.org but not from the clients. Currently, clients such as `dotnet.exe` and the NuGet Package Manager do not show the custom message.
 
-## Client experience for deprecated packages
+## Client experience
 Once a package has been deprecated, its consumers are notified about it in the following ways (depending upon the client used).
 
 ### Visual Studio 
