@@ -127,6 +127,6 @@ The .nupkg file would be exactly the same as it is today, but the .snupkg file w
 
 ## See Also
 
-Consider using Source Link to enable source code debugging of .NET assemblies. For more information, please refer to the [Source Link guidance](/dotnet/standard/library-guidance/sourcelink.md).
+Consider using Source Link to enable source code debugging of .NET assemblies. For more information, please refer to the [Source Link guidance](/dotnet/standard/library-guidance/sourcelink).
 
 For more information on symbol packages, please refer to the [NuGet Package Debugging & Symbols Improvements](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements) design spec.
