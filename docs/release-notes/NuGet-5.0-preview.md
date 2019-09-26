@@ -58,7 +58,7 @@ ms.topic: conceptual
 
 ## What's New in NuGet 5.0 Preview 3
 
-### Issues fixed in this release
+### Issues fixed in this release 
 
 **Bugs**
 
