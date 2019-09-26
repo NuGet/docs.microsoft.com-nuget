@@ -87,7 +87,7 @@ NuGet will publish both packages to nuget.org. `MyPackage.nupkg` will be publish
 
 ## NuGet.org symbol server
 
-NuGet.org supports its own symbols server repository and only accepts the new symbol package format - `.snupkg`. Package consumers can use the symbols published to nuget.org symbol server by adding `https://symbols.nuget.org/download/symbols` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md) for details on that process.
+NuGet.org supports its own symbols server repository and only accepts the new symbol package format - `.snupkg`. Package consumers can use the symbols published to nuget.org symbol server by adding `https://symbols.nuget.org/download/symbols` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger) for details on that process.
 
 ### NuGet.org symbol package constraints
 
@@ -127,6 +127,6 @@ The .nupkg file would be exactly the same as it is today, but the .snupkg file w
 
 ## See Also
 
-Consider using Source Link to enable source code debugging of .NET assemblies. For more information, please refer to the [Source Link guidance](/dotnet/standard/library-guidance/sourcelink.md).
+Consider using Source Link to enable source code debugging of .NET assemblies. For more information, please refer to the [Source Link guidance](/dotnet/standard/library-guidance/sourcelink).
 
 For more information on symbol packages, please refer to the [NuGet Package Debugging & Symbols Improvements](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements) design spec.
