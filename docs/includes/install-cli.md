@@ -7,6 +7,13 @@
 1. Each download is the `nuget.exe` file directly. Instruct your browser to save the file to a folder of your choice. The file is *not* an installer; you won't see anything if you run it directly from the browser.
 1. Add the folder where you placed `nuget.exe` to your PATH environment variable to use the CLI tool from anywhere.
 
+    - Open the CMD
+    - Run the following command:
+        ```bash
+        # Move the downloaded nuget.exe to the .dotnet\tools\ directory, which is already added to the PATH
+        move %USERPROFILE%\downloads\nuget.exe %USERPROFILE%\.dotnet\tools
+        ```
+
 #### macOS/Linux
 
 Behaviors may vary slightly by OS distribution.
