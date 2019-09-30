@@ -32,7 +32,7 @@ For SDK-style projects, you can configure support for multiple targets framework
 
    Make sure that you change the XML element changed from singular to plural (add the "s" to both the open and close tags).
 
-3. If you have any code that only works in one TFM, you can use `#if NET45` or `#if NETSTANDARD20` to separate TFM-dependent code. (For more information, see [How to multitarget](/dotnet/core/tutorials/libraries#how-to-multitarget).) For example, you can use the following code:
+3. If you have any code that only works in one TFM, you can use `#if NET45` or `#if NETSTANDARD2_0` to separate TFM-dependent code. (For more information, see [How to multitarget](/dotnet/core/tutorials/libraries#how-to-multitarget).) For example, you can use the following code:
 
    ```csharp
    public string Platform {
