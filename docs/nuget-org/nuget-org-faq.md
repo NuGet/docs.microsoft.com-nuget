@@ -75,7 +75,7 @@ First, make sure you're using the latest versions of NuGet. If that version cont
 
 *To capture MTR:*
 
-- Download WinMTR from [http://winmtr.net/download/](http://winmtr.net/)
+- Download [WinMTR](https://sourceforge.net/projects/winmtr/files/WinMTR-v092.zip/download).
 - Enter `api.nuget.org` as the hostname and click **Start**.
 - Wait until the **Sent** column is >= 100.
 
