@@ -248,7 +248,7 @@ To make your package available to other developers,  follow the instructions on 
 ## Related topics
 
 - [.nuspec Reference](../reference/nuspec.md)
-- [Symbol packages](../create-packages/symbol-packages.md)
+- [Symbol packages](../create-packages/symbol-packages-snupkg.md)
 - [Package versioning](../concepts/package-versioning.md)
 - [Supporting Multiple .NET Framework Versions](../create-packages/supporting-multiple-target-frameworks.md)
 - [Include MSBuild props and targets in a package](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
