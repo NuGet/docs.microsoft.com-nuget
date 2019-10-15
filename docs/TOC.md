@@ -261,7 +261,7 @@
 ### [NU5125](reference/errors-and-warnings/NU5125.md)
 ### [NU5127](reference/errors-and-warnings/NU5127.md)
 ### [NU5128](reference/errors-and-warnings/NU5128.md)
-### [NU5128](reference/errors-and-warnings/NU5129.md)
+### [NU5129](reference/errors-and-warnings/NU5129.md)
 ### [NU5130](reference/errors-and-warnings/NU5130.md)
 ### [NU5131](reference/errors-and-warnings/NU5131.md)
 ### [NU5500](reference/errors-and-warnings/NU5500.md)
