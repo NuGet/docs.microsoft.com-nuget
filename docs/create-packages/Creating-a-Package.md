@@ -429,4 +429,4 @@ You might also want to extend the capabilities of your package or otherwise supp
 Finally, there are additional package types to be aware of:
 
 - [Native Packages](../guides/native-packages.md)
-- [Symbol Packages](../create-packages/symbol-packages.md)
+- [Symbol Packages](../create-packages/symbol-packages-snupkg.md)
