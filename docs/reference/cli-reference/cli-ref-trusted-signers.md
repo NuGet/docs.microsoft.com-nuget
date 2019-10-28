@@ -97,11 +97,11 @@ _Note_: If a trusted signer with the given name already exists, the certificate 
 | FingerprintAlgorithm | Specifies the hash algorithm used to calculate the certificate fingerprint. Defaults to `SHA256`. Values supported are `SHA256`, `SHA384` and `SHA512` |
 | AllowUntrustedRoot | Specifies if the certificate for the trusted signer should be allowed to chain to an untrusted root. |
 
-## nuget trusted-signers remove -Name <name>
+## nuget trusted-signers remove -Name \<name\>
 
 Removes any trusted signers that match the given name.
 
-## nuget trusted-signers sync -Name <name>
+## nuget trusted-signers sync -Name \<name\>
 
 Requests the latest list of certificates used in a currently trusted repository to update the the existing certificate list in the trusted signer.
 

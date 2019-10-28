@@ -90,7 +90,7 @@ In some situations you may want to enable verification using certificates that d
 
 ### Sync repository certificates
 
-Package repositories should announce the certificates they use in their [service index](../api/service-index.md). Eventually the repository will update these certificates, e.g. when the certificate expires. When that happens, clients with specific policies will require an update to the configuration to include the newly added certificate. You can easily upgrade the trusted signers associated to a repository by using the `nuget.exe` [trusted-signers sync command](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-).
+Package repositories should announce the certificates they use in their [service index](../api/service-index.md). Eventually the repository will update these certificates, e.g. when the certificate expires. When that happens, clients with specific policies will require an update to the configuration to include the newly added certificate. You can easily upgrade the trusted signers associated to a repository by using the `nuget.exe` [trusted-signers sync command](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-name
 
 ### Schema reference
 
