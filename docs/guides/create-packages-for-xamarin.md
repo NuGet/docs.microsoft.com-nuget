@@ -1,5 +1,5 @@
 ---
-title: Create NuGet Packages for Xamarin (for iOS, Android, and Windows) with Visual Studio 2015
+title: Create NuGet Packages for Xamarin (for iOS, Android, and Windows) with Visual Studio 2017 or 2019
 description: An end-to-end walkthrough of creating NuGet packages for Xamarin that use native APIs on iOS, Android, and Windows.
 author: karann-msft
 ms.author: karann
@@ -7,11 +7,11 @@ ms.date: 01/09/2017
 ms.topic: tutorial
 ---
 
-# Create packages for Xamarin with Visual Studio 2015
+# Create packages for Xamarin with Visual Studio 2017 or 2019
 
 A package for Xamarin contains code that uses native APIs on iOS, Android, and Windows, depending on the run-time operating system. Although this is straightforward to do, it's preferable to let developers consume the package from a PCL or .NET Standard libraries through a common API surface area.
 
-In this walkthrough you use Visual Studio 2019 to create a cross-platform NuGet package that can be used in mobile projects on iOS, Android, and Windows.
+In this walkthrough you use Visual Studio 2017 or 2019 to create a cross-platform NuGet package that can be used in mobile projects on iOS, Android, and Windows.
 
 1. [Prerequisites](#prerequisites)
 1. [Create the project structure and abstraction code](#create-the-project-structure-and-abstraction-code)
@@ -22,7 +22,7 @@ In this walkthrough you use Visual Studio 2019 to create a cross-platform NuGet 
 
 ## Prerequisites
 
-1. Visual Studio 2019 with Universal Windows Platform (UWP) and Xamarin. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well, of course. To include UWP and Xamarin tools, select a Custom install and check the appropriate options.
+1. Visual Studio 2017 or 2019 with Universal Windows Platform (UWP) and Xamarin. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well, of course. To include UWP and Xamarin tools, select a Custom install and check the appropriate options.
 1. NuGet CLI. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice. Then add that location to your PATH environment variable if it isn't already.
 
 > [!Note]
