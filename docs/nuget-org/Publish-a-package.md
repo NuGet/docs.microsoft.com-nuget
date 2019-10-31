@@ -59,7 +59,7 @@ To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://w
     nuget setApiKey <your_API_key>
     ```
 
-    This command stores your API key in your NuGet configuration so that you need repeat this step again on the same computer.
+    This command stores your API key in your NuGet configuration so that you don't need to repeat this step again on the same computer.
 
 1. Push your package to NuGet Gallery using the following command:
 
