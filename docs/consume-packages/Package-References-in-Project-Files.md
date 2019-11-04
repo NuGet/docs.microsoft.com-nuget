@@ -47,6 +47,7 @@ In the example above, 3.6.0 means any version that is >=3.6.0 with preference fo
 
 ## Using PackageReference for a project with no PackageReferences
 Advanced: If you have no packages installed in a project (no PackageReferences in project file and no packages.config file), but want the project to be restored as PackageReference style, you can set a Project property RestoreProjectStyle to PackageReference in your project file.
+
 ```xml
 <PropertyGroup>
     <!--- ... -->
@@ -54,6 +55,7 @@ Advanced: If you have no packages installed in a project (no PackageReferences i
     <!--- ... -->
 </PropertyGroup>    
 ```
+
 This may be useful, if you reference projects which are PackageReference styled (existing csproj or SDK-style projects). This will enable packages that those projects refer to, to be "transitively" referenced by your project.
 
 ## Floating Versions
@@ -197,16 +199,19 @@ If NuGet detects a change in the defined dependencies as mentioned in the projec
 For CI/CD and other scenarios, where you would not want to change the package dependencies on the fly, you can do so by setting the `lockedmode` to `true`:
 
 For dotnet.exe, run:
+
 ```
 > dotnet.exe restore --locked-mode
 ```
 
 For msbuild.exe, run:
+
 ```
 > msbuild.exe -t:restore -p:RestoreLockedMode=true
 ```
 
 You may also set this conditional MSBuild property in your project file:
+
 ```xml
 <PropertyGroup>
     <!--- ... -->
@@ -223,12 +228,14 @@ If you are building an application, an executable and the project in question is
 However, if your project is a library project that you do not ship or a common code project on which other projects depend upon, you **should not** check in the lock file as part of your source code. There is no harm in keeping the lock file but the locked package dependencies for the common code project may not be used, as listed in the lock file, during the restore/build of a project that depends on this common-code project.
 
 Eg.
+
 ```
 ProjectA
   |------> PackageX 2.0.0
   |------> ProjectB
              |------>PackageX 1.0.0
 ```
+
 If `ProjectA` has a dependency on a `PackageX` version `2.0.0` and also references `ProjectB` that depends on `PackageX` version `1.0.0`, then the lock file for `ProjectB` will list a dependency on `PackageX` version `1.0.0`. However, when `ProjectA` is built, its lock file will contain a dependency on `PackageX` version **`2.0.0`** and **not** `1.0.0` as listed in the lock file for `ProjectB`. Thus, the lock file of a common code project has little say over the packages resolved for projects that depend on it.
 
 ### Lock file extensibility
