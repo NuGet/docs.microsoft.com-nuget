@@ -4,6 +4,6 @@ As with the other `dotnet` CLI commands, first open a command line and switch to
 
 To restore a package using `dotnet restore`:
 
-```cli
+```dotnetcli
 dotnet restore 
 ```
