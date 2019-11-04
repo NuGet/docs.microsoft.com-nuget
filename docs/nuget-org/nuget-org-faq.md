@@ -85,7 +85,7 @@ First, make sure you're using the latest versions of NuGet. If that version cont
 
 *To capture Fiddler:*
 
-- Install the latest version of [Fiddler](http://www.telerik.com/download/fiddler).
+- Install the latest version of [Fiddler](https://www.telerik.com/download/fiddler).
 - Start Fiddler and disable capturing traffic using the **File > Capture Traffic** menu.
 - Remove all sessions (select all items in the list, press the **Delete** key).
 - Configure Fiddler to capture HTTPS traffic by checking **Decrypt HTTPS traffic** in the **HTTPS** tab of the **Tools > Fiddler Options...** menu.
@@ -96,7 +96,7 @@ First, make sure you're using the latest versions of NuGet. If that version cont
 
 Note: it may be required to set the `HTTP_PROXY` environment variable to `http://127.0.0.1:8888` for routing NuGet traffic through Fiddler.
 
-If that fails, try the [tips mentioned in this StackOverflow post](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
+If that fails, try the [tips mentioned in this StackOverflow post](https://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
 
 ## NuGet.org account management
 

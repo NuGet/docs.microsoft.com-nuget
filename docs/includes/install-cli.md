@@ -11,7 +11,7 @@
 
 Behaviors may vary slightly by OS distribution.
 
-1. Install [Mono 4.4.2 or later](http://www.mono-project.com/docs/getting-started/install/).
+1. Install [Mono 4.4.2 or later](https://www.mono-project.com/docs/getting-started/install/).
 
 1. Execute the following command at a shell prompt:
 
