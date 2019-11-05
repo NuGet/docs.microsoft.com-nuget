@@ -85,7 +85,7 @@ First, make sure you're using the latest versions of NuGet. If that version cont
 
 *To capture Fiddler:*
 
-- Install the latest version of [Fiddler](http://www.telerik.com/download/fiddler).
+- Install the latest version of [Fiddler](https://www.telerik.com/download/fiddler).
 - Start Fiddler and disable capturing traffic using the **File > Capture Traffic** menu.
 - Remove all sessions (select all items in the list, press the **Delete** key).
 - Configure Fiddler to capture HTTPS traffic by checking **Decrypt HTTPS traffic** in the **HTTPS** tab of the **Tools > Fiddler Options...** menu.
@@ -96,7 +96,7 @@ First, make sure you're using the latest versions of NuGet. If that version cont
 
 Note: it may be required to set the `HTTP_PROXY` environment variable to `http://127.0.0.1:8888` for routing NuGet traffic through Fiddler.
 
-If that fails, try the [tips mentioned in this StackOverflow post](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
+If that fails, try the [tips mentioned in this StackOverflow post](https://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
 
 ## NuGet.org account management
 
@@ -223,7 +223,7 @@ If you see an error like below during your login flow with your email account do
 
 Your account seems to be previously registered as a personal Microsoft account and it worked fine, however, now it seems like your account has been registered as an "Unmanaged" tenant in the Azure Active Directory (the identity service which we use to authenticate Microsoft accounts). 
 
-This could have happened if you or someone from your organization(with @yourdomain.com email address) registered with one of the AAD integrated services or did a [self-service signup for Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-self-service-signup), which creates such an "Unmanaged" tenant for the used Microsoft account domain(@yourdomain.com in your case).
+This could have happened if you or someone from your organization(with @yourdomain.com email address) registered with one of the AAD integrated services or did a [self-service signup for Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-self-service-signup), which creates such an "Unmanaged" tenant for the used Microsoft account domain(@yourdomain.com in your case). 
 
 **What can I do to recover my account?**
 

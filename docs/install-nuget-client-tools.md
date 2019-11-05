@@ -41,7 +41,7 @@ To learn how to use basic commands with the dotnet CLI, see [Install and use pac
 
 ### nuget.exe CLI
 
-The `nuget.exe` CLI, `nuget.exe`, is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux using [Mono](http://www.mono-project.com/docs/getting-started/install/) with some limitations.
+The `nuget.exe` CLI, `nuget.exe`, is the command-line utility for Windows that provides all NuGet capabilities; it can also be run on Mac OSX and Linux using [Mono](https://www.mono-project.com/docs/getting-started/install/) with some limitations.
 
 To learn how to use basic commands with the `nuget.exe` CLI, see [Install and use packages using the nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md).
 

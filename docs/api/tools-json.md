@@ -31,7 +31,7 @@ The endpoint can be fetched using the `GET` method:
 
 	GET https://dist.nuget.org/tools.json
 
-The [JSON schema](http://json-schema.org/) for the endpoint is available here:
+The [JSON schema](https://json-schema.org/) for the endpoint is available here:
 
 	GET https://dist.nuget.org/tools.schema.json
 
