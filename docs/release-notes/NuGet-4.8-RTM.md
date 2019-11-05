@@ -31,7 +31,7 @@ Command line versions of the same functionality are also available:
 ### Installing signed packages on a CI machine or in an offline environment takes longer than usual
 
 #### Issue
-If the machine has restricted internet access (such as a build machine in a CI/CD scenario), installing/restoring a signed nuget package will result a warning ([NU3028](https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu3028)) since the revocation servers are not reachable. This is expected. However, in some cases, this may have unintended concequences such as the package install/restore taking longer than usual.
+If the machine has restricted internet access (such as a build machine in a CI/CD scenario), installing/restoring a signed nuget package will result a warning ([NU3028](https://docs.microsoft.com/nuget/reference/errors-and-warnings/nu3028)) since the revocation servers are not reachable. This is expected. However, in some cases, this may have unintended concequences such as the package install/restore taking longer than usual.
 
 #### Workaround
 Update to Visual Studio 15.8.4 and NuGet.exe 4.8.1 where we introduced an environment variable to switch the revocation check mode.
