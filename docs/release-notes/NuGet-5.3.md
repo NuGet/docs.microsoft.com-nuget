@@ -15,6 +15,7 @@ NuGet distribution vehicles:
 |:---|:---|:---|
 | [**5.3.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.3](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
 | [**5.3.1**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.3.6](https://visualstudio.microsoft.com/downloads/) | [Future version: 3.0.101](https://dotnet.microsoft.com/download/dotnet-core/3.0) |
+
 <sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload
 
 ## Summary: What's New in 5.3

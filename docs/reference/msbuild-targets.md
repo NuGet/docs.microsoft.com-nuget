@@ -376,6 +376,11 @@ Additional restore settings may come from MSBuild properties in the project file
 | RestoreGraphProjectInput | Semicolon-delimited list of projects to restore, which should contain absolute paths. |
 | RestoreUseSkipNonexistentTargets  | When the projects are collected via MSBuild it determines whether they are collected using the `SkipNonexistentTargets` optimization. When not set, defaults to `true`. The consequence is a fail-fast behavior when a project's targets cannot be imported. |
 | MSBuildProjectExtensionsPath | Output folder, defaulting to `BaseIntermediateOutputPath` and the `obj` folder. |
+| RestoreForce | In PackageReference based projects, forces all dependencies to be resolved even if the last restore was successful. Specifying this flag is similar to deleting the `project.assets.json` file. This does not bypass the http-cache. |
+| RestorePackagesWithLockFile | Opts into the usage of a lock file. |
+| RestoreLockedMode | Run restore in locked mode. This means that restore will not reevaluate the dependencies. |
+| NuGetLockFilePath | A custom location for the lock file. The default location is next to the project and is named `packages.lock.json`. |
+| RestoreForceEvaluate | Forces restore to recompute the dependencies and update the lock file without any warning. | 
 
 #### Examples
 
