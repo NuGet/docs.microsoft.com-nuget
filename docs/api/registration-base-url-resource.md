@@ -187,7 +187,7 @@ framework. If the package has no dependencies, the `dependencyGroups` property i
 `dependencies` property of all groups is empty or missing.
 
 The value of the `licenseExpression` property complies with
-[NuGet license expression syntax](https://docs.microsoft.com/en-us/nuget/reference/nuspec#license).
+[NuGet license expression syntax](https://docs.microsoft.com/nuget/reference/nuspec#license).
 
 #### Package dependency group
 
