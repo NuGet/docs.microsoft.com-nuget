@@ -233,7 +233,7 @@ If you want to login to NuGet.org with your Microsoft account(@yourdomain.com), 
 
 **I don’t want to do all that, what is the other way to recover my account?**
 
-You can [create](https://www.microsoft.com/en-us/account) a new Microsoft account (with an email **not** associated with @yourdomain.com). Follow steps given in [recover your NuGet.org account](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account) section.
+You can [create](https://www.microsoft.com/account) a new Microsoft account (with an email **not** associated with @yourdomain.com). Follow steps given in [recover your NuGet.org account](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account) section.
 
 ### How do I change my NuGet.org account username?
 
