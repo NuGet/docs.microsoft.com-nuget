@@ -88,7 +88,7 @@ When reviewing any application for ID prefix reservation, the [nuget.org](https:
 
 ## Third party feed provider scenarios
 
-If a third party feed provider is interested in implementing their own service to provide prefix reservations, you can do so by modifying the search service in the NuGet V3 feed providers. The addition in the feed search service is to add the *verified* property, with examples for the V3 feeds below. The NuGet client will not support the added property in the V2 feed.
+If a third party feed provider is interested in implementing their own service to provide prefix reservations, they can do so by modifying the search service in the NuGet V3 feed providers. The change in the feed search service is to add the `verified` property. The NuGet client will not support the added property in the V2 feed.
 
 For more information, see the [documentation about the API's search service](../api/search-query-service-resource.md).
 

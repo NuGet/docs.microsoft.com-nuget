@@ -48,7 +48,7 @@ If you have further questions about NuGet.Server, create an issue on [https://gi
 
 1. Click on **here** in the area outlined above to see the OData feed of packages.
 
-1. The first time you run the application, NuGet.Server restructures the `Packages` folder to contain a folder for each package. This matches the [local storage layout](http://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands) introduced with NuGet 3.3 to improve performance. When adding more packages, continue to follow this structure.
+1. The first time you run the application, NuGet.Server restructures the `Packages` folder to contain a folder for each package. This matches the [local storage layout](https://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands) introduced with NuGet 3.3 to improve performance. When adding more packages, continue to follow this structure.
 
 1. Once you've tested your local deployment, deploy the application to any other internal or external site as needed.
 

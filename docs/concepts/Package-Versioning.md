@@ -27,7 +27,7 @@ A specific version number is in the form *Major.Minor.Patch[-Suffix]*, where the
 - *Major*: Breaking changes
 - *Minor*: New features, but backwards compatible
 - *Patch*: Backwards compatible bug fixes only
-- *-Suffix* (optional): a hyphen followed by a string denoting a pre-release version (following the [Semantic Versioning or SemVer 1.0 convention](http://semver.org/spec/v1.0.0.html)).
+- *-Suffix* (optional): a hyphen followed by a string denoting a pre-release version (following the [Semantic Versioning or SemVer 1.0 convention](https://semver.org/spec/v1.0.0.html)).
 
 **Examples:**
 
@@ -50,7 +50,7 @@ That said, package developers generally follow recognized naming conventions:
 - `-rc`: Release candidate, typically a release that's potentially final (stable) unless significant bugs emerge.
 
 > [!Note]
-> NuGet 4.3.0+ supports [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html), which supports pre-release numbers with dot notation, as in *1.0.1-build.23*. Dot notation is not supported with NuGet versions before 4.3.0. You can use a form like *1.0.1-build23*.
+> NuGet 4.3.0+ supports [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html), which supports pre-release numbers with dot notation, as in *1.0.1-build.23*. Dot notation is not supported with NuGet versions before 4.3.0. You can use a form like *1.0.1-build23*.
 
 When resolving package references and multiple package versions differ only by suffix, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order. For example, the following versions would be chosen in the exact order shown:
 
@@ -65,7 +65,7 @@ When resolving package references and multiple package versions differ only by s
 
 ## Semantic Versioning 2.0.0
 
-With NuGet 4.3.0+ and Visual Studio 2017 version 15.3+, NuGet supports [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.html).
+With NuGet 4.3.0+ and Visual Studio 2017 version 15.3+, NuGet supports [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).
 
 Certain semantics of SemVer v2.0.0 are not supported in older clients. NuGet considers a package version to be SemVer v2.0.0 specific if either of the following statements is true:
 

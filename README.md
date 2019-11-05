@@ -6,7 +6,7 @@ Contributions to this docset are welcome. Please submit PRs to the *master* bran
 
 NuGet follows the [.NET Foundation Contributors Code of Conduct](https://github.com/dotnet/home/blob/master/guidance/be-nice.md). Please take a few minutes to review it.
 
-## Respository structure
+## Repository structure
 
 - All markdown files are in the docs folder and various subfolders.
 - The docs/index.md file defines the landing (hub) page as it appears on docs.microsoft.com/nuget.

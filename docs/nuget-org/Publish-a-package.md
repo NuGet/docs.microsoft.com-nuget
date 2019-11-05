@@ -59,7 +59,7 @@ To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://w
     nuget setApiKey <your_API_key>
     ```
 
-    This command stores your API key in your NuGet configuration so that you need repeat this step again on the same computer.
+    This command stores your API key in your NuGet configuration so that you don't need to repeat this step again on the same computer.
 
 1. Push your package to NuGet Gallery using the following command:
 
@@ -110,7 +110,7 @@ From here you have several options:
 1. Add an owner under **Add Owner** by entering their user name, a message, and selecting **Add**. This action sends an email to that new co-owner with a confirmation link. Once confirmed, that person has full permissions to add and remove owners. (Until confirmed, the **Current Owners** section indicates pending approval for that person.)
 1. To transfer ownership (as when ownership changes or a package was published under the wrong account), add the new owner, and once they've confirmed ownership they can remove you from the list.
 
-To assign ownership to a company or group, create a nuget.org account using an email alias that is forwarded to the appropriate team members. For example, various Microsoft ASP.NET packages are co-owned by the [microsoft](http://nuget.org/profiles/microsoft) and [aspnet](http://nuget.org/profiles/aspnet) accounts, which simply such aliases.
+To assign ownership to a company or group, create a nuget.org account using an email alias that is forwarded to the appropriate team members. For example, various Microsoft ASP.NET packages are co-owned by the [microsoft](https://nuget.org/profiles/microsoft) and [aspnet](https://nuget.org/profiles/aspnet) accounts, which simply such aliases.
 
 ### Recovering package ownership
 
