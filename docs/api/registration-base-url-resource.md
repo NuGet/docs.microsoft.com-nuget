@@ -225,7 +225,7 @@ Name             | Type             | Required | Notes
 ---------------- | ---------------- | -------- | -----
 reasons          | array of strings | yes      | The reasons why the package was deprecated
 message          | string           | no       | The additional details about this deprecation
-alternatePackage | object           | no       | The [package dependency](#package-dependency) that should be used instead
+alternatePackage | object           | no       | The alternate package that should be used instead
 
 The `reasons` property must contain at least one string and should only contains strings from the following table:
 
@@ -234,6 +234,14 @@ Reason       | Description
 Legacy       | The package is no longer maintained
 CriticalBugs | The package has bugs which make it unsuitable for usage
 Other        | The package is deprecated due to a reason not on this list
+
+The `alternatePackage` property has the following properties:
+
+Name         | Type   | Required | Notes
+------------ | ------ | -------- | -----
+id           | string | yes      | The ID of the package dependency
+range        | object | no       | The allowed [version range](../concepts/package-versioning.md#version-ranges-and-wildcards), or `*` if all versions are allowed
+registration | string | no       | The URL to the registration index for this dependency
 
 If the `reasons` property contains strings that are not from the known set, they should be ignored. The strings are case-insensitive, so `legacy` should be treated the same as `Legacy`. There is no ordering restriction on the array, so the strings can arranged in any arbitrary order. Additionally, if the property contains only strings that are not from the known set, it should be treated as if it only contained the "Other" string.
 
