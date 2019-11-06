@@ -225,7 +225,7 @@ Name             | Type             | Required | Notes
 ---------------- | ---------------- | -------- | -----
 reasons          | array of strings | yes      | The reasons why the package was deprecated
 message          | string           | no       | The additional details about this deprecation
-alternatePackage | object           | no       | The package dependency that should be used instead
+alternatePackage | object           | no       | The [package dependency](#package-dependency) that should be used instead
 
 The `reasons` property must contain at least one string and should only contains strings from the following table:
 
