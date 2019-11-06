@@ -242,7 +242,7 @@ The `alternatePackage` property has the following properties:
 Name         | Type   | Required | Notes
 ------------ | ------ | -------- | -----
 id           | string | yes      | The ID of the alternate package
-range        | object | no       | The allowed [version range](../concepts/package-versioning.md#version-ranges-and-wildcards), or `*` if all versions are allowed
+range        | object | no       | The allowed [version range](../concepts/package-versioning.md#version-ranges-and-wildcards), or `*` if any version is allowed
 registration | string | no       | The URL to the registration index for this alternate package
 
 ### Sample request
