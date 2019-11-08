@@ -323,6 +323,9 @@ packageContent | string  | no       | The URL to the package content (.nupkg)
 published      | string  | no       | A string containing a ISO 8601 timestamp of when the package was published
 registration   | string  | no       | The URL to the registration index
 
+> [!Note]
+> On nuget.org, the `published` value is set to year 1900 when the package is unlisted.
+
 ### Sample request
 
     GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
