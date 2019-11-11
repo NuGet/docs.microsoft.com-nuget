@@ -85,7 +85,8 @@ other hand, if the server implementation immediately stores registration leaves 
 must perform more HTTP requests to get the information it needs.
 
 The heuristic that nuget.org uses is as follows: if there are 128 or more versions of a package, break the leaves
-into pages of size 64. If there are less than 128 versions, inline all leaves into the registration index.
+into pages of size 64. If there are less than 128 versions, inline all leaves into the registration index. Note that
+this means packages with 65 to 127 versions will have two pages in the index but both pages will be inlined.
 
     GET {@id}/{LOWER_ID}/index.json
 
@@ -160,7 +161,7 @@ The `catalogEntry` property in the registration leaf object has the following pr
 
 Name                     | Type                       | Required | Notes
 ------------------------ | -------------------------- | -------- | -----
-@id                      | string                     | yes      | The URL to document used to produce this object
+@id                      | string                     | yes      | The URL to the document used to produce this object
 authors                  | string or array of strings | no       | 
 dependencyGroups         | array of objects           | no       | The dependencies of the package, grouped by target framework
 deprecation              | object                     | no       | The deprecation associated with the package
@@ -188,6 +189,9 @@ framework. If the package has no dependencies, the `dependencyGroups` property i
 
 The value of the `licenseExpression` property complies with
 [NuGet license expression syntax](https://docs.microsoft.com/nuget/reference/nuspec#license).
+
+> [!Note]
+> On nuget.org, the `published` value is set to year 1900 when the package is unlisted.
 
 #### Package dependency group
 
@@ -261,7 +265,13 @@ fetch metadata about individual package versions.
 ## Registration page
 
 The registration page contains registration leaves. The URL to fetch a registration page is determined by the `@id`
-property in the [registration page object](#registration-page-object) mentioned above.
+property in the [registration page object](#registration-page-object) mentioned above. The URL is not meant to be
+predictable and should always be discovered by means of the index document.
+
+> [!Warning]
+> On nuget.org, the URL for the registration page document coincidentally contains the lower and upper bound of the 
+> page. However this assumption should never be made by a client since server implementations are free to change the
+> shape of the URL as long as the index document has a valid link.
 
 When the `items` array is not provided in the registration index, an HTTP GET request of the `@id` value will return a
 JSON document which has an object as its root. The object has the following properties:
@@ -294,7 +304,13 @@ version may not be available in this document. Package metadata should be fetche
 the registration index).
 
 The URL to fetch a registration leaf is obtained from the `@id` property of a registration leaf object in either a
-registration index or registration page.
+registration index or registration page. As with the page document. the URL is not meant to be predictable and should
+always be discovered by means of the registration page object.
+
+> [!Warning]
+> On nuget.org, the URL for the registration leaf document coincidentally contains the package version. However this
+> assumption should never be made by a client since server implementations are free to change the shape of the URL as
+> long as the parent document has a valid link. 
 
 The registration leaf is a JSON document with a root object with the following properties:
 
