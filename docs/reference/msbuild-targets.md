@@ -141,7 +141,7 @@ For example:
 For the nuspec equivalent, take a look at [nuspec reference for icon](nuspec.md#icon).
 
 > [!Tip]
-> You can specify both PackageIcon and PackageIconUrl to maintain backward compatibility with sources that do not support PackageIcon. Visual Studio will support PackageIcon for packages coming from a folder-based source in a future release.
+> You can specify both `PackageIcon` and `PackageIconUrl` to maintain backward compatibility with sources that do not support `PackageIcon`. Visual Studio will support `PackageIcon` for packages coming from a folder-based source in a future release.
 
 ### Output assemblies
 
