@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file). Using PackageReference, as it's called, doesn't affect other aspects of NuGet; for example, settings in `NuGet.config` files (including package sources) are still applied as explained in [Common NuGet configurations](configuring-nuget-behavior.md).
 
-With PackageReference, you can also use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. (See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
+With PackageReference, you can also use MSBuild conditions to choose package references per target framework, or other groupings. It also allows for fine-grained control over dependencies and content flow. (See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
 
 ## Project type support
 
@@ -46,6 +46,7 @@ The convention for specifying the version of a package is the same as when using
 In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../concepts/package-versioning.md#version-ranges-and-wildcards).
 
 ## Using PackageReference for a project with no PackageReferences
+
 Advanced: If you have no packages installed in a project (no PackageReferences in project file and no packages.config file), but want the project to be restored as PackageReference style, you can set a Project property RestoreProjectStyle to PackageReference in your project file.
 ```xml
 <PropertyGroup>
@@ -55,6 +56,10 @@ Advanced: If you have no packages installed in a project (no PackageReferences i
 </PropertyGroup>    
 ```
 This may be useful, if you reference projects which are PackageReference styled (existing csproj or SDK-style projects). This will enable packages that those projects refer to, to be "transitively" referenced by your project.
+
+## PackageReference and sources
+
+In PackageReference projects, the transitive dependency versions are resolved at restore time. As such, in PackageReference projects all sources need to be available for all restores. 
 
 ## Floating Versions
 

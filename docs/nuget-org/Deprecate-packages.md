@@ -40,7 +40,7 @@ Once a package has been deprecated, its consumers are notified about it in the f
 ### Visual Studio 
 *Available starting in Visual Studio 2019 version 16.3*
 
-Visual Studio warns about a deprecated package's usage on the `Installed` tab.It will lead you to the package and its deprecation information (including the reason it was deprecated and the alternate package to use instead, if present).
+Visual Studio warns about a deprecated package's usage on the `Installed` tab. It will show a warning for the package and its deprecation information (including the reason it was deprecated and the alternate package to use instead, if present).
 
    ![Deprecated packages on Visual Studio installed tab of package manager](media/deprecation-vs.png)
 
