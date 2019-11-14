@@ -54,11 +54,11 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | Copyright | Copyright | empty | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | license | PackageLicenseExpression | empty | Corresponds to `<license type="expression">` |
-| license | PackageLicenseFile | empty | Corresponds to `<license type="file">`. You may need to explicitly pack the referenced license file. |
+| license | PackageLicenseFile | empty | Corresponds to `<license type="file">`. You need to explicitly pack the referenced license file. |
 | LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` is deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
 | ProjectUrl | PackageProjectUrl | empty | |
-| Icon | PackageIcon | empty | You may need to explicitly pack the referenced icon image file.|
-| IconUrl | PackageIconUrl | empty | `PackageIconUrl` is deprecated, use the PackageIcon property |
+| Icon | PackageIcon | empty | You need to explicitly pack the referenced icon image file.|
+| IconUrl | PackageIconUrl | empty | For the best downlevel experience, `PackageIconUrl` should be specified in addition to `PackageIcon`. Longer term, `PackageIconUrl` will be deprecated. |
 | Tags | PackageTags | empty | Tags are semi-colon delimited. |
 | ReleaseNotes | PackageReleaseNotes | empty | |
 | Repository/Url | RepositoryUrl | empty | Repository URL used to clone or retrieve source code. Example: *https://github.com/NuGet/NuGet.Client.git* |
@@ -113,12 +113,18 @@ To suppress package dependencies from generated NuGet package, set `SuppressDepe
 
 ### PackageIconUrl
 
-> [!Important]
-> PackageIconUrl is deprecated with NuGet 5.3+ & Visual Studio 2019 version 16.3+. Use [PackageIcon](#packing-an-icon-image-file) instead.
+`PackageIconUrl` will be deprecated in favor of the new [`PackageIcon`](#PackageIcon) property.
 
-### Packing an icon image file
+Starting with NuGet 5.3 & Visual Studio 2019 version 16.3, `pack` will raise [NU5048](errors-and-warnings/nu5048) warning if the package only has `PackageIconUrl`.
 
-When packing an icon image file, you need to use PackageIcon property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resolution of 64x64.
+### PackageIcon
+
+> [!Tip]
+> You should specify both `PackageIcon` and `PackageIconUrl` to maintain backward compatibility with clients and sources that do not yet support `PackageIcon`. Visual Studio will support `PackageIcon` for packages coming from a folder-based source in a future release.
+
+#### Packing an icon image file
+
+When packing an icon image file, you need to use `PackageIcon` property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resolution of 64x64.
 
 For example:
 
@@ -139,9 +145,6 @@ For example:
 [Package Icon sample](https://github.com/NuGet/Samples/tree/master/PackageIconExample).
 
 For the nuspec equivalent, take a look at [nuspec reference for icon](nuspec.md#icon).
-
-> [!Tip]
-> You can specify both `PackageIcon` and `PackageIconUrl` to maintain backward compatibility with sources that do not support `PackageIcon`. Visual Studio will support `PackageIcon` for packages coming from a folder-based source in a future release.
 
 ### Output assemblies
 
