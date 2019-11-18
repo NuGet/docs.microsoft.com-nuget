@@ -79,8 +79,6 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 
 - *GitHub Usage*: on the package page, the **GitHub Usage** section lists public GitHub repositories that depend on this package and that have a high number of stars on GitHub. A GitHub repository's number of stars generally indicates how popular that repository is with GitHub users (more stars usually means more popular). Please visit [here](https://help.github.com/en/github/getting-started-with-github/saving-repositories-with-stars#about-stars) for more information on GitHub's star and repository ranking system.
 
-    **Please note**: A package's GitHub Usage section is generated automatically, periodically, without human review of individual repositories, and solely for informational purposes in order to show you GitHub repositories that depend on the package and that are popular with GitHub users.
-
     ![GitHub Usage](media/GitHub-Usage.png)
 
     > [!Note]
