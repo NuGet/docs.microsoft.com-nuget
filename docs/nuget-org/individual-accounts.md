@@ -66,7 +66,7 @@ Two-factor authentication, or 2FA, is an extra layer of security used when loggi
 5. Follow any additional instructions to complete Two-factor authentication.
 
 > [!Tip]
-> Enabling 2FA for your NuGet.org account does not impact authenitcation settings for other accounts or services that may be linked to the Microsoft account you use to login to NuGet.org.
+> Enabling 2FA for your NuGet.org account does not impact authentication settings for other accounts or services that may be linked to the Microsoft account you use to login to NuGet.org.
 
 ## Delete a NuGet.org account
 
