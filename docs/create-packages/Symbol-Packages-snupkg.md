@@ -125,7 +125,7 @@ The .nupkg file would be exactly the same as it is today, but the .snupkg file w
 5) ```authors``` and ```owners``` field will be excluded from the snupkg's nuspec.
 6) Do not use the ```<license>``` element. A .snupkg is covered under the same license as the corresponding .nupkg.
 
-## See Also
+## See also
 
 Consider using Source Link to enable source code debugging of .NET assemblies. For more information, please refer to the [Source Link guidance](/dotnet/standard/library-guidance/sourcelink).
 
