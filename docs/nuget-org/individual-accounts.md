@@ -43,7 +43,7 @@ You now have a NuGet.org account. You can perform account management on the [acc
 
 ## Enable two-factor authentication (2FA)
 
-To better protect your account, enable two-factor authentication (recommended).
+Two-factor authentication, or 2FA, is an extra layer of security used when logging into websites or apps. With 2FA, you have to log in with your Microsoft Account (MSA) and provide another form of authentication that only you know or have access to. To better protect your account, enable two-factor authentication (recommended).
 
 1. When logged into your account, open your profile and choose **Enable** under **Login Account**.
 
@@ -64,6 +64,9 @@ To better protect your account, enable two-factor authentication (recommended).
    ![Enable 2FA](media/nuget-org-enter-code-2fa.png)
 
 5. Follow any additional instructions to complete Two-factor authentication.
+
+> [!Tip]
+> Enabling 2FA for your NuGet.org account does not impact authenitcation settings for other accounts or services that may be linked to the Microsoft account you use to login to NuGet.org.
 
 ## Delete a NuGet.org account
 
