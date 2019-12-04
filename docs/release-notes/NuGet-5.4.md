@@ -19,7 +19,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.4
 
-* TODO partial-ngen nuget DLLs which ship in VS to reduce JIT cost in core scenarios - [#6007](https://github.com/NuGet/Home/issues/6007)
+* Faster solution load time - Overhead running NuGet code during first solution load has been reduced via partial-ngen to reduce JIT cost - [#6007](https://github.com/NuGet/Home/issues/6007)
 
 * New helper function - given a list of package ids and versions, get the likely top level packages. - [#8316](https://github.com/NuGet/Home/issues/8316)
 
