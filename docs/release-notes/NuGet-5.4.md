@@ -19,11 +19,9 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.4
 
-* Improve network diagnostics to understand real world http download perf in VS - [#8592](https://github.com/NuGet/Home/issues/8592)
+* TODO partial-ngen nuget DLLs which ship in VS to reduce JIT cost in core scenarios - [#6007](https://github.com/NuGet/Home/issues/6007)
 
-* New helper function - get the top level packages given a package graph. - [#8316](https://github.com/NuGet/Home/issues/8316)
-
-* partial-ngen nuget DLLs which ship in VS to reduce JIT cost in core scenarios - [#6007](https://github.com/NuGet/Home/issues/6007)
+* New helper function - given a list of package ids and versions, get the likely top level packages. - [#8316](https://github.com/NuGet/Home/issues/8316)
 
 ### Issues fixed in this release
 
