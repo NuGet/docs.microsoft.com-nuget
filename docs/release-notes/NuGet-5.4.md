@@ -13,13 +13,17 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version| Available in .NET SDK(s)|
 |:---|:---|:---|
-| [**5.4.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.4](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
+| [**5.4.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.4](https://visualstudio.microsoft.com/downloads/) | [3.1.100](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
 
 <sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload
 
 ## Summary: What's New in 5.4
 
-* TO DO [Package Icon can be embedded in the package](../reference/msbuild-targets.md#packing-an-icon-image-file), instead of needing an external URL. - [#352](https://github.com/NuGet/Home/issues/352)
+* Improve network diagnostics to understand real world http download perf in VS - [#8592](https://github.com/NuGet/Home/issues/8592)
+
+* New helper function - get the top level packages given a package graph. - [#8316](https://github.com/NuGet/Home/issues/8316)
+
+* partial-ngen nuget DLLs which ship in VS to reduce JIT cost in core scenarios - [#6007](https://github.com/NuGet/Home/issues/6007)
 
 ### Issues fixed in this release
 
@@ -39,16 +43,8 @@ NuGet distribution vehicles:
 
 * Update the license list - [#8544](https://github.com/NuGet/Home/issues/8544)
 
-**Feature:**
-
-* Improve network diagnostics to understand real world http download perf in VS - [#8592](https://github.com/NuGet/Home/issues/8592)
-
-* New helper function - get the top level packages given a package graph. - [#8316](https://github.com/NuGet/Home/issues/8316)
-
-* partial-ngen nuget DLLs which ship in VS to reduce JIT cost in core scenarios - [#6007](https://github.com/NuGet/Home/issues/6007)
-
-**DCR:**
+**DCRs**
 
 * Onboarding diagnostic files to IFeedbackDiagnosticFileProvider - [#8535](https://github.com/NuGet/Home/issues/8535)
 
-**[List of all issues fixed in this release - 5.3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.4")**
+**[List of all issues fixed in this release - 5.4](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.4")**
