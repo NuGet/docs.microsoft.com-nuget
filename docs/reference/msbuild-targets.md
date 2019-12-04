@@ -267,7 +267,7 @@ The target framework of the project file is irrelevant and not used when packing
 
 If using `dotnet.exe` to pack your project, use a command like the following:
 
-```cli
+```dotnetcli
 dotnet pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:NuspecProperties=<> -p:NuspecBasePath=<Base path> 
 ```
 

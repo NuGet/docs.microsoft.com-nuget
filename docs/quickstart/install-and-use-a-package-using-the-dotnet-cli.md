@@ -30,7 +30,7 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
 
 1. Create the project using the following command:
 
-    ```cli
+    ```dotnetcli
     dotnet new console
     ```
 
@@ -40,7 +40,7 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
 
 1. Use the following command to install the `Newtonsoft.json` package:
 
-    ```cli
+    ```dotnetcli
     dotnet add package Newtonsoft.Json
     ```
 

@@ -27,13 +27,13 @@ This article shows you basic usage for a few of the most common dotnet CLI comma
 
 2. Use the following command to install a Nuget package:
 
-    ```cli
+    ```dotnetcli
     dotnet add package <PACKAGE_NAME>
     ```
 
     For example, to install the `Newtonsoft.Json` package, use the following command
 
-    ```cli
+    ```dotnetcli
     dotnet add package Newtonsoft.Json
     ```
 
@@ -51,13 +51,13 @@ This article shows you basic usage for a few of the most common dotnet CLI comma
 
 If the version is not specified, NuGet installs the latest version of the package. You can also use the [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x) command to install a specific version of a Nuget package:
 
-```cli
+```dotnetcli
 dotnet add package <PACKAGE_NAME> -v <VERSION>
 ```
 
 For example, to add version 12.0.1 of the `Newtonsoft.Json` package, use this command:
 
-```cli
+```dotnetcli
 dotnet add package Newtonsoft.Json -v 12.0.1
 ```
 
@@ -65,7 +65,7 @@ dotnet add package Newtonsoft.Json -v 12.0.1
 
 You can list the package references for your project using the [dotnet list package](/dotnet/core/tools/dotnet-list-package?tabs=netcore2x) command.
 
-```cli
+```dotnetcli
 dotnet list package
 ```
 
@@ -73,13 +73,13 @@ dotnet list package
 
 Use the [dotnet remove package](/dotnet/core/tools/dotnet-remove-package?tabs=netcore2x) command to remove a package reference from the project file.
 
-```cli
+```dotnetcli
 dotnet remove package <PACKAGE_NAME>
 ```
 
 For example, to remove the `Newtonsoft.Json` package, use the following command
 
-```cli
+```dotnetcli
 dotnet remove package Newtonsoft.Json
 ```
 

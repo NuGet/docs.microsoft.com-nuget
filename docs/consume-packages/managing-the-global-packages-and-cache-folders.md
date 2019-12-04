@@ -49,7 +49,7 @@ plugins-cache: C:\Users\user1\AppData\Local\NuGet\plugins-cache
 
 You can also view folder locations using the [dotnet nuget locals command](/dotnet/core/tools/dotnet-nuget-locals):
 
-```cli
+```dotnetcli
 dotnet nuget locals all --list
 ```
 
