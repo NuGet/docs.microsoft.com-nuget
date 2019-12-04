@@ -1,10 +1,29 @@
-#5.4 Release Notes
+---
+title: NuGet 5.4 Release Notes
+description: Release notes for NuGet 5.4 including new features, bug fixes, and DCRs.
+author: karann-msft
+ms.author: karann
+ms.date: 09/06/2019
+ms.topic: conceptual
+---
 
-[Full Changelog]()
+# NuGet 5.4 Release Notes
 
-[Issues List](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.4")
+NuGet distribution vehicles:
 
-**Bug:**
+| NuGet version | Available in Visual Studio version| Available in .NET SDK(s)|
+|:---|:---|:---|
+| [**5.4.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.4](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
+
+<sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload
+
+## Summary: What's New in 5.4
+
+* TO DO [Package Icon can be embedded in the package](../reference/msbuild-targets.md#packing-an-icon-image-file), instead of needing an external URL. - [#352](https://github.com/NuGet/Home/issues/352)
+
+### Issues fixed in this release
+
+**Bugs**
 
 * Plugin: Logging time accuracy is off on linux/Mac - [#8747](https://github.com/NuGet/Home/issues/8747)
 
@@ -32,3 +51,4 @@
 
 * Onboarding diagnostic files to IFeedbackDiagnosticFileProvider - [#8535](https://github.com/NuGet/Home/issues/8535)
 
+**[List of all issues fixed in this release - 5.3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.4")**
