@@ -54,7 +54,7 @@ Every NuGet package needs a manifest that describes the package's contents and d
 
 To build a NuGet package (a `.nupkg` file) from the project, run the `dotnet pack` command, which also builds the project automatically:
 
-```cli
+```dotnetcli
 # Uses the project file in the current folder by default
 dotnet pack
 ```

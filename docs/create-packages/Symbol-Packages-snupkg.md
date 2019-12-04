@@ -37,7 +37,7 @@ If you're using dotnet.exe or MSBuild, you need to set the `IncludeSymbols` and 
 
 * Or specify these properties on the command-line:
 
-     ```cli
+     ```dotnetcli
      dotnet pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
      ```
 
@@ -49,7 +49,7 @@ If you're using dotnet.exe or MSBuild, you need to set the `IncludeSymbols` and 
 
 If you're using NuGet.exe, you can use the following commands to create a .snupkg file in addition to the .nupkg file:
 
-```
+```cli
 nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
