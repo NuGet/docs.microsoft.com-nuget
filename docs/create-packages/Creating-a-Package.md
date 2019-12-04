@@ -271,9 +271,9 @@ The package identifier (`<id>` element) and the version number (`<version>` elem
 
 > The following series of brief blog posts are also helpful to understand versioning:
 >
-> - [Part 1: Taking on DLL Hell](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
-> - [Part 2: The core algorithm](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)
-> - [Part 3: Unification via Binding Redirects](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)
+> - [Part 1: Taking on DLL Hell](https://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
+> - [Part 2: The core algorithm](https://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)
+> - [Part 3: Unification via Binding Redirects](https://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)
 
 ## Add a readme and other files
 
@@ -429,4 +429,4 @@ You might also want to extend the capabilities of your package or otherwise supp
 Finally, there are additional package types to be aware of:
 
 - [Native Packages](../guides/native-packages.md)
-- [Symbol Packages](../create-packages/symbol-packages.md)
+- [Symbol Packages](../create-packages/symbol-packages-snupkg.md)

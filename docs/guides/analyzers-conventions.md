@@ -40,7 +40,7 @@ The use of the `analyzers` folder is similar to that used for [target frameworks
 
     $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
 
-- **framework_name**: the *optional* API surface area of the .NET Framework that the contained DLLs need to run. `dotnet` is presently the only valid value because Roslyn is the only host that can run analyzers. If no target is specified, DLLs are assumed to apply to *all* targets.
+- **framework_name** and **version**: the *optional* API surface area of the .NET Framework that the contained DLLs need to run. `dotnet` is presently the only valid value because Roslyn is the only host that can run analyzers. If no target is specified, DLLs are assumed to apply to *all* targets.
 - **supported_language**: the language for which the DLL applies, one of `cs` (C#) and `vb` (Visual Basic), and `fs` (F#). The language indicates that the analyzer should be loaded only for a project using that language. If no language is specified then the DLL is assumed to apply to *all* languages that support analyzers.
 - **analyzer_name**: specifies the DLLs of the analyzer. If you need additional files beyond DLLs, they must be included through a targets or properties files.
 

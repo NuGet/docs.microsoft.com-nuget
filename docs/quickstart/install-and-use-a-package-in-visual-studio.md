@@ -28,7 +28,7 @@ If you're using Visual Studio for Mac, see [Install and use a package in Visual 
 
 NuGet packages can be installed into any .NET project, provided that the package supports the same target framework as the project.
 
-For this walkthrough, use a simple WPF app. Create a project in Visual Studio using **File > New Project...**, typing **.NET** in the search box, and then selecting the **WPF App (.NET Framework)**. Click **Next**. Accept the default values for **Framework** when prompted.
+For this walkthrough, use a simple WPF app. Create a project in Visual Studio using **File** > **New Project**, typing **.NET** in the search box, and then selecting the **WPF App (.NET Framework)**. Click **Next**. Accept the default values for **Framework** when prompted.
 
 Visual Studio creates the project, which opens in Solution Explorer.
 
@@ -58,7 +58,7 @@ To install the package, you can use either the NuGet Package Manager or the Pack
 
 ### Package Manager Console
 
-1. Select the **Tools > NuGet Package Manager > Package Manager Console** menu command.
+1. Select the **Tools** > **NuGet Package Manager** > **Package Manager Console** menu command.
 
 1. Once the console opens, check that the **Default project** drop-down list shows the project into which you want to install the package. If you have a single project in the solution, it is already selected.
 
@@ -112,7 +112,7 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
     using Newtonsoft.Json;
     ```
 
-1. Build and run the app by pressing F5 or selecting **Debug > Start Debugging**:
+1. Build and run the app by pressing F5 or selecting **Debug** > **Start Debugging**:
 
     ![Initial output of the WPF app](media/QS_Use-06-AppStart.png)
 

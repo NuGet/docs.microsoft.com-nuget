@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file). Using PackageReference, as it's called, doesn't affect other aspects of NuGet; for example, settings in `NuGet.config` files (including package sources) are still applied as explained in [Common NuGet configurations](configuring-nuget-behavior.md).
 
-With PackageReference, you can also use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. (See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
+With PackageReference, you can also use MSBuild conditions to choose package references per target framework, or other groupings. It also allows for fine-grained control over dependencies and content flow. (See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
 
 ## Project type support
 
@@ -46,7 +46,9 @@ The convention for specifying the version of a package is the same as when using
 In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../concepts/package-versioning.md#version-ranges-and-wildcards).
 
 ## Using PackageReference for a project with no PackageReferences
+
 Advanced: If you have no packages installed in a project (no PackageReferences in project file and no packages.config file), but want the project to be restored as PackageReference style, you can set a Project property RestoreProjectStyle to PackageReference in your project file.
+
 ```xml
 <PropertyGroup>
     <!--- ... -->
@@ -54,7 +56,12 @@ Advanced: If you have no packages installed in a project (no PackageReferences i
     <!--- ... -->
 </PropertyGroup>    
 ```
+
 This may be useful, if you reference projects which are PackageReference styled (existing csproj or SDK-style projects). This will enable packages that those projects refer to, to be "transitively" referenced by your project.
+
+## PackageReference and sources
+
+In PackageReference projects, the transitive dependency versions are resolved at restore time. As such, in PackageReference projects all sources need to be available for all restores. 
 
 ## Floating Versions
 
@@ -197,16 +204,19 @@ If NuGet detects a change in the defined dependencies as mentioned in the projec
 For CI/CD and other scenarios, where you would not want to change the package dependencies on the fly, you can do so by setting the `lockedmode` to `true`:
 
 For dotnet.exe, run:
+
 ```
 > dotnet.exe restore --locked-mode
 ```
 
 For msbuild.exe, run:
+
 ```
 > msbuild.exe -t:restore -p:RestoreLockedMode=true
 ```
 
 You may also set this conditional MSBuild property in your project file:
+
 ```xml
 <PropertyGroup>
     <!--- ... -->
@@ -223,20 +233,23 @@ If you are building an application, an executable and the project in question is
 However, if your project is a library project that you do not ship or a common code project on which other projects depend upon, you **should not** check in the lock file as part of your source code. There is no harm in keeping the lock file but the locked package dependencies for the common code project may not be used, as listed in the lock file, during the restore/build of a project that depends on this common-code project.
 
 Eg.
+
 ```
 ProjectA
   |------> PackageX 2.0.0
   |------> ProjectB
              |------>PackageX 1.0.0
 ```
+
 If `ProjectA` has a dependency on a `PackageX` version `2.0.0` and also references `ProjectB` that depends on `PackageX` version `1.0.0`, then the lock file for `ProjectB` will list a dependency on `PackageX` version `1.0.0`. However, when `ProjectA` is built, its lock file will contain a dependency on `PackageX` version **`2.0.0`** and **not** `1.0.0` as listed in the lock file for `ProjectB`. Thus, the lock file of a common code project has little say over the packages resolved for projects that depend on it.
 
 ### Lock file extensibility
+
 You can control various behaviors of restore with lock file as described below:
 
-| Option | MSBuild equivalent option | 
-|:---  |:--- |
-| `--use-lock-file` | Bootstraps use of lock file for a project. You can alternatively set `RestorePackagesWithLockFile` property in the project file | 
-| `--locked-mode` | Enables locked mode for restore. This is useful in CI/CD scenarios where you would like to get the repeatable builds. This can be also by setting the `RestoreLockedMode` MSBuild property to `true` |  
-| `--force-evaluate` | This option is useful with packages with floating version defined in the project. By default, NuGet restore will not update the package version automatically upon each restore unless you run restore with `--force-evaluate` option. |
-| `--lock-file-path` | Defines a custom lock file location for a project. This can be also achieved by setting the MSBuild property `NuGetLockFilePath`. By default, NuGet supports `packages.lock.json` at the root directory. If you have multiple projects in the same directory, NuGet supports project specific lock file `packages.<project_name>.lock.json` |
+| Option | MSBuild equivalent option | Description|
+|:---  |:--- |:--- |
+| `--use-lock-file` | RestorePackagesWithLockFile | Opts into the usage of a lock file. | 
+| `--locked-mode` | RestoreLockedMode | Enables locked mode for restore. This is useful in CI/CD scenarios where you want repeatable builds.|   
+| `--force-evaluate` | RestoreForceEvaluate | This option is useful with packages with floating version defined in the project. By default, NuGet restore will not update the package version automatically upon each restore unless you run restore with this option. |
+| `--lock-file-path` | NuGetLockFilePath | Defines a custom lock file location for a project. By default, NuGet supports `packages.lock.json` at the root directory. If you have multiple projects in the same directory, NuGet supports project specific lock file `packages.<project_name>.lock.json` |

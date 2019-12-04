@@ -14,7 +14,6 @@ ms.reviewer:
 - karann
 ---
 
-
 # Creating symbol packages (.snupkg)
 
 Symbol packages allow you to improve the debugging experience of your NuGet packages.
@@ -25,28 +24,38 @@ Symbol packages allow you to improve the debugging experience of your NuGet pack
 
 ## Creating a symbol package
 
-You can create a snupkg symbol package using dotnet.exe, NuGet.exe, or MSBuild. If you're using NuGet.exe, you can use the following commands to create a .snupkg file in addition to the .nupkg file:
+If you're using dotnet.exe or MSBuild, you need to set the `IncludeSymbols` and `SymbolPackageFormat` properties to create a .snupkg file in addition to the .nupkg file.
 
-```
+* Either add the following properties to your .csproj file:
+
+   ```xml
+   <PropertyGroup>
+      <IncludeSymbols>true</IncludeSymbols>	
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat>	
+   </PropertyGroup>
+   ```
+
+* Or specify these properties on the command-line:
+
+     ```dotnetcli
+     dotnet pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
+     ```
+
+  or
+
+  ```cli
+  msbuild MyPackage.csproj /t:pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
+  ```
+
+If you're using NuGet.exe, you can use the following commands to create a .snupkg file in addition to the .nupkg file:
+
+```cli
 nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 ```
 
-If you're using dotnet.exe or MSBuild, use the following steps to create a .snupkg file in addition to the .nupkg file:
-
-1. Add the following properties to your .csproj file:
-
-    ```xml
-    <PropertyGroup>
-      <IncludeSymbols>true</IncludeSymbols>
-      <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    </PropertyGroup>
-    ```
-
-1. Pack your project with `dotnet pack MyPackage.csproj` or `msbuild -t:pack MyPackage.csproj`.
-
-The [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) property can have one of two values: `symbols.nupkg` (the default) or `snupkg`. If the [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) property is not specified, a legacy symbol package will be created.
+The [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) property can have one of two values: `symbols.nupkg` (the default) or `snupkg`. If this property is not specified, a legacy symbol package will be created.
 
 > [!Note]
 > The legacy format `.symbols.nupkg` is still supported but only for compatibility reasons (see [Legacy Symbol Packages](Symbol-Packages.md)). NuGet.org's symbol server only accepts the new symbol package format - `.snupkg`.
@@ -78,25 +87,25 @@ NuGet will publish both packages to nuget.org. `MyPackage.nupkg` will be publish
 
 ## NuGet.org symbol server
 
-NuGet.org supports its own symbols server repository and only accepts the new symbol package format - `.snupkg`. Package consumers can use the symbols published to nuget.org symbol server by adding `https://symbols.nuget.org/download/symbols` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](https://docs.microsoft.com/en-us/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger?view=vs-2017) for details on that process.
+NuGet.org supports its own symbols server repository and only accepts the new symbol package format - `.snupkg`. Package consumers can use the symbols published to nuget.org symbol server by adding `https://symbols.nuget.org/download/symbols` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger) for details on that process.
 
-### Nuget.org symbol package constraints
+### NuGet.org symbol package constraints
 
-The symbol packages supported on nuget.org have the following contraints
+NuGet.org has the following constraints for symbol packages:
 
-- Only the following file extensions are allowed to be added to a symbol package. ```.pdb,.nuspec,.xml,.psmdcp,.rels,.p7s```
-- Only managed [Portable pdbs](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md) are currently supported on nuget symbol server.
-- The pdbs and associated nupkg dlls need to be built with the compiler in Visual Studio version 15.9 or above (see [pdb crypto hash](https://github.com/dotnet/roslyn/issues/24429))
+- Only the following file extensions are allowed in symbol packages: `.pdb`, `.nuspec`, `.xml`, `.psmdcp`, `.rels`, `.p7s`
+- Only managed [Portable PDBs](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md) are supported on NuGet.org's symbol server.
+- The PDBs and their associated .nupkg DLLs need to be built with the compiler in Visual Studio version 15.9 or above (see [PDB crypto hash](https://github.com/dotnet/roslyn/issues/24429))
 
-The symbol package publish on nuget.org will fail if any other file types are included in the .snupkg.
+Symbol packages published to NuGet.org will fail validation if these constraints aren't met. 
 
 ### Symbol package validation and indexing
 
-Symbol packages published to [NuGet.org](https://www.nuget.org/) undergo several validations, such as virus checks.
+Symbol packages published to [NuGet.org](https://www.nuget.org/) undergo several validations, including malware scanning. If a package fails a validation check, its package details page will display an error message. In addition, the package's owners will receive an email with instructions on how to fix the identified issues.
 
-When the package has passed all validation checks, it might take a while for the symbols to index and be available for consumption from the NuGet.org symbol servers. If the package fails a validation check, the package details page for the .nupkg will update to display the associated error and you will also receive an email notifying you about it.
+When the symbol package has passed all validations, the symbols will be indexed by NuGet.org's symbol servers. Once indexed, the symbol will be available for consumption from the NuGet.org symbol servers.
 
-Package validation and indexing usually takes under 15 minutes. If the package publishing is taking longer than expected, visit [status.nuget.org](https://status.nuget.org/) to check if nuget.org is experiencing any interruptions. If all systems are operational and the package hasn't been successfully published within an hour, please login to nuget.org and contact us using the Contact Support link on the package details page.
+Package validation and indexing usually takes under 15 minutes. If the package publishing is taking longer than expected, visit [status.nuget.org](https://status.nuget.org/) to check if NuGet.org is experiencing any interruptions. If all systems are operational and the package hasn't been successfully published within an hour, please login to nuget.org and contact us using the Contact Support link on the package details page.
 
 ## Symbol package structure
 
@@ -114,8 +123,10 @@ The .nupkg file would be exactly the same as it is today, but the .snupkg file w
 
 4) If an author decides to use a custom nuspec to build their nupkg and snupkg, the snupkg should have the same folder hierarchy and files detailed in 2).
 5) ```authors``` and ```owners``` field will be excluded from the snupkg's nuspec.
-6) Do not use the <license> element. A .snupkg is covered under the same license as the corresponding .nupkg.
+6) Do not use the ```<license>``` element. A .snupkg is covered under the same license as the corresponding .nupkg.
 
-## See Also
+## See also
 
-[NuGet-Package-Debugging-&-Symbols-Improvements](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)
+Consider using Source Link to enable source code debugging of .NET assemblies. For more information, please refer to the [Source Link guidance](/dotnet/standard/library-guidance/sourcelink).
+
+For more information on symbol packages, please refer to the [NuGet Package Debugging & Symbols Improvements](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements) design spec.

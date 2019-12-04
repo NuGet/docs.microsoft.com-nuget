@@ -29,8 +29,6 @@ You can use an existing .NET Class Library project for the code you want to pack
 
    This creates the new project.
 
-1. Use `dotnet run` to test that the app has been created properly.
-
 ## Add package metadata to the project file
 
 Every NuGet package needs a manifest that describes the package's contents and dependencies. In a final package, the manifest is a `.nuspec` file that is generated from the NuGet metadata properties that you include in the project file.
@@ -56,7 +54,7 @@ Every NuGet package needs a manifest that describes the package's contents and d
 
 To build a NuGet package (a `.nupkg` file) from the project, run the `dotnet pack` command, which also builds the project automatically:
 
-```cli
+```dotnetcli
 # Uses the project file in the current folder by default
 dotnet pack
 ```

@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Finding and evaluating NuGet packages for your project
 
-When starting any .NET project, or whenever you identify a functional need for your app or service, you can save yourself lots of time and trouble by using existing NuGet packages that fulfill that need. These packages can come from the public collection on [nuget.org](http://www.nuget.org/packages/), or a private source that's provided by your organization or another third party.
+When starting any .NET project, or whenever you identify a functional need for your app or service, you can save yourself lots of time and trouble by using existing NuGet packages that fulfill that need. These packages can come from the public collection on [nuget.org](https://www.nuget.org/packages/), or a private source that's provided by your organization or another third party.
 
 ## Finding packages
 
@@ -77,9 +77,12 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 
     ![Download statistics on a package's listing page](media/Finding-03-Downloads.png)
 
-- *GitHub Usage*: on the package page, the **GitHub Usage** section lists the top GitHub repositories that depend on this package. A package that many popular GitHub repositories depend on is typically a better choice.
+- *GitHub Usage*: on the package page, the **GitHub Usage** section lists public GitHub repositories that depend on this package and that have a high number of stars on GitHub. A GitHub repository's number of stars generally indicates how popular that repository is with GitHub users (more stars usually means more popular). Please visit [GitHub's Getting Started page](https://help.github.com/en/github/getting-started-with-github/saving-repositories-with-stars#about-stars) for more information on GitHub's star and repository ranking system.
 
     ![GitHub Usage](media/GitHub-Usage.png)
+
+    > [!Note]
+    > A package's GitHub Usage section is generated automatically, periodically, without human review of individual repositories, and solely for informational purposes in order to show you GitHub repositories that depend on the package and that are popular with GitHub users.
 
 - *Version history*: on the package page, look under **Info** for the date of the most recent update and examine the **Version History**. A well-maintained package has recent updates and a rich version history. Neglected packages have few updates and often haven't been updated in some time.
 
