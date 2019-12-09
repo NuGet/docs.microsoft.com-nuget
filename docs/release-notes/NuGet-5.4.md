@@ -23,7 +23,7 @@ NuGet distribution vehicles:
 
 * New helper function - given a list of package ids and versions, get the likely top level packages. - [#8316](https://github.com/NuGet/Home/issues/8316)
 
-* New [`nuget/setup-nuget`](https://github.com/marketplace/actions/setup-nuget-exe-for-use-with-actions) action for installing and configuring NuGet.exe on [GitHub Actions](https://github.com/features/actions).
+* New [`nuget/setup-nuget`](https://github.com/marketplace/actions/setup-nuget-exe-for-use-with-actions) action for installing and configuring NuGet.exe on [GitHub Actions](https://github.com/features/actions). - [#8818](https://github.com/NuGet/Home/issues/8818)
 
 ### Issues fixed in this release
 
