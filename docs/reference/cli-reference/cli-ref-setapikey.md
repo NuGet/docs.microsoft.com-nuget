@@ -21,6 +21,9 @@ nuget setapikey <key> -Source <url> [options]
 
 where `<source>` identifies the server and `<key>` is the key or password to save. If `<source>` is omitted, nuget.org is assumed.
 
+> [!NOTE]
+> Refer to [`nuget sources` command](../reference/cli-reference/cli-ref-sources.md) to manage credentials for authenticating with the source.
+
 ## Options
 
 | Option | Description |
