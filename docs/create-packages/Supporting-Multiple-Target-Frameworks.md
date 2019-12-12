@@ -62,7 +62,7 @@ If you have architecture-specific assemblies, that is, separate assemblies that 
 
 These assemblies will only be available at runtime, so if you want to provide the corresponding compile time assembly as well then have `AnyCPU` assembly in `/ref/{tfm}` folder. 
 
-Please note, NuGet always picks these compile or runtime assets from one folder so if there are some compatible assets from `/ref` then `/lib` will be ignored to add compile-time assemblies. Similarly, if there are some compatible assets from `/runtime` then also `/lib` will be ignored for runtime.
+Please note, NuGet always picks these compile or runtime assets from one folder so if there are some compatible assets from `/ref` then `/lib` will be ignored to add compile-time assemblies. Similarly, if there are some compatible assets from `/runtimes` then also `/lib` will be ignored for runtime.
 
 See [Create UWP Packages](../guides/create-uwp-packages.md) for an example of referencing these files in the `.nuspec` manifest.
 
