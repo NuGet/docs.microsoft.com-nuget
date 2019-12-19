@@ -87,7 +87,7 @@ If you are running VS 2010 SP1, you might run into the following error message w
 When viewing the logs, you might see a mention of a `SignatureMismatchException`.
 
 To prevent this from occurring, there is a [Visual Studio 2010 SP1 hotfix](http://bit.ly/vsixcertfix) you can install.
-Alternatively, the workaround is to simply uninstall NuGet (while running Visual Studio as Administrator) and then install it from the VS Extension Gallery.  See [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019) for more information.
+Alternatively, the workaround is to simply uninstall NuGet (while running Visual Studio as Administrator) and then install it from the VS Extension Gallery. See <https://support.microsoft.com/kb/2581019> for more information.
 
 ## Package Manager Console throws an exception when the Reflector Visual Studio Add-In is also installed.
 
@@ -156,7 +156,7 @@ If you try to uninstall NuGet via the Visual Studio Extension Manager, you may n
 
 ## The Package Manager Console crashes when I open it in Windows XP. What's wrong?
 
-NuGet requires Powershell 2.0 runtime. Windows XP, by default, doesn't have Powershell 2.0. You can download the Powershell 2.0 runtime from [http://support.microsoft.com/kb/968929](http://support.microsoft.com/kb/968929). After you install it, restart Visual Studio and you should be able to open Package Manager Console.
+NuGet requires Powershell 2.0 runtime. Windows XP, by default, doesn't have Powershell 2.0. You can download the Powershell 2.0 runtime from <https://support.microsoft.com/kb/968929>. After you install it, restart Visual Studio and you should be able to open Package Manager Console.
 
 ## Visual Studio 2010 SP1 Beta crashes on exit if the Package Manager Console is open.
 

@@ -115,7 +115,7 @@ To suppress package dependencies from generated NuGet package, set `SuppressDepe
 
 `PackageIconUrl` will be deprecated in favor of the new [`PackageIcon`](#packageicon) property.
 
-Starting with NuGet 5.3 & Visual Studio 2019 version 16.3, `pack` will raise [NU5048](errors-and-warnings/nu5048) warning if the package metadata only specifies `PackageIconUrl`.
+Starting with NuGet 5.3 & Visual Studio 2019 version 16.3, `pack` will raise [NU5048](./errors-and-warnings/nu5048.md) warning if the package metadata only specifies `PackageIconUrl`.
 
 ### PackageIcon
 

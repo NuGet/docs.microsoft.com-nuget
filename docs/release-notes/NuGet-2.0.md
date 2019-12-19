@@ -18,7 +18,7 @@ If you are running VS 2010 SP1, you might run into an installation error when at
 NuGet if you have an older version installed.
 
 The workaround is to simply uninstall NuGet and then install it from the VS Extension Gallery.  See
-[http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019) for more information, or [go directly to the VS hotfix](http://bit.ly/vsixcertfix).
+<https://support.microsoft.com/kb/2581019> for more information, or [go directly to the VS hotfix](http://bit.ly/vsixcertfix).
 
 Note: If Visual Studio won't allow you to uninstall the extension (the Uninstall button is disabled),
 then you likely need to restart Visual Studio using "Run as Administrator."
