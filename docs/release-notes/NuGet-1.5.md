@@ -24,7 +24,7 @@ when the project template is invoked. This ability to include NuGet packages wit
 project template is now a feature of NuGet that _any_ project template can now take
 advantage of.
 
-For more details about this feature, read this [blog post by the developer of the feature](http://blogs.msdn.com/b/marcinon/archive/2011/07/08/project-templates-and-preinstalled-nuget-packages.aspx).
+For more details about this feature, read this [blog post by the developer of the feature](https://blogs.msdn.com/b/marcinon/archive/2011/07/08/project-templates-and-preinstalled-nuget-packages.aspx).
 
 ### Explicit Assembly References
 
