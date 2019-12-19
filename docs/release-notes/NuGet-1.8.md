@@ -18,7 +18,7 @@ If you are running VS 2010 SP1, you might run into an installation error when at
 NuGet if you have an older version installed.
 
 The workaround is to simply uninstall NuGet and then install it from the VS Extension Gallery.  See
-[http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019) for more information, or [go directly to the VS hotfix](http://bit.ly/vsixcertfix).
+<https://support.microsoft.com/kb/2581019> for more information, or [go directly to the VS hotfix](http://bit.ly/vsixcertfix).
 
 Note: If Visual Studio won't allow you to uninstall the extension (the Uninstall button is disabled),
 then you likely need to restart Visual Studio using "Run as Administrator."
@@ -34,7 +34,7 @@ We have since released a hotfix that addresses this issue.  By updating NuGet th
 ### Satellite Packages for Localized Resources
 NuGet 1.8 now supports the ability to create separate packages for localized resources, similar to the satellite assembly capabilities of the .NET Framework.  A satellite package is created in the same way as any other NuGet package with the addition of a few conventions:
 
-* The satellite package ID and file name should include a suffix that matches one of the standard [culture strings used by the .NET Framework](http://msdn.microsoft.com/goglobal/bb896001.aspx).
+* The satellite package ID and file name should include a suffix that matches one of the standard [culture strings used by the .NET Framework](https://msdn.microsoft.com/goglobal/bb896001.aspx).
 * In its `.nuspec` file, the satellite package should define a language element with the same culture string used in the ID
 * The satellite package should define a dependency in its `.nuspec` file to its core package, which is simply the package with the same ID minus the language suffix.  The core package needs to be available in the repository for successful installation.
 
