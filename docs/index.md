@@ -4,7 +4,6 @@ description: NuGet is the package manager for Microsoft development platforms in
 author: karann-msft
 ms.author: karann
 ms.date: 02/12/2018
-ms.topic: overview
 layout: HubPage 
 ms.topic: hub-page
 hide_bc: true
