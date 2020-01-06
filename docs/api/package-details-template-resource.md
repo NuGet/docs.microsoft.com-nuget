@@ -55,7 +55,7 @@ Name        | Type    | Required | Notes
 
 The server should accept `{id}` and `{version}` values with any casing. In addition, the server should not be sensitive
 to whether the version is
-[normalized](/nuget/concepts/package-versioning#normalized-version-numbers). In other
+[normalized](../concepts/package-versioning.md#normalized-version-numbers). In other
 words, the server should accept also accept non-normalized versions.
 
 For example, nuget.org's package details template looks like this:

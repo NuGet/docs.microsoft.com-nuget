@@ -188,7 +188,7 @@ framework. If the package has no dependencies, the `dependencyGroups` property i
 `dependencies` property of all groups is empty or missing.
 
 The value of the `licenseExpression` property complies with
-[NuGet license expression syntax](/nuget/reference/nuspec#license).
+[NuGet license expression syntax](../reference/nuspec.md#license).
 
 > [!Note]
 > On nuget.org, the `published` value is set to year 1900 when the package is unlisted.
