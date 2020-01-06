@@ -30,8 +30,8 @@ If you're using dotnet.exe or MSBuild, you need to set the `IncludeSymbols` and 
 
    ```xml
    <PropertyGroup>
-      <IncludeSymbols>true</IncludeSymbols>	
-      <SymbolPackageFormat>snupkg</SymbolPackageFormat>	
+      <IncludeSymbols>true</IncludeSymbols>
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat>
    </PropertyGroup>
    ```
 

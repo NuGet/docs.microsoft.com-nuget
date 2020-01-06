@@ -14,7 +14,8 @@ ms.reviewer: rmpablos
 
 Signs all the packages matching the first argument with a certificate. The certificate with the private key can be obtained from a file or from a certificate installed in a certificate store by providing a subject name or a thumbprint.
 
-Package signing is not yet supported in .NET Core, under Mono, or on non-Windows platforms.
+> [!Note]
+> Package signing is not yet supported in .NET Core, under Mono, or on non-Windows platforms.
 
 ## Usage
 
