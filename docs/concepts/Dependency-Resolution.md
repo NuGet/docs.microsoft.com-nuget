@@ -19,7 +19,7 @@ When multiple packages have the same dependency, then the same package ID can ap
 
 When installing packages into projects using the PackageReference format, NuGet adds references to a flat package graph in the appropriate file and resolves conflicts ahead of time. This process is referred to as *transitive restore*. Reinstalling or restoring packages is then a process of downloading the packages listed in the graph, resulting in faster and more predictable builds. You can also take advantage of wildcard (floating) versions, such as 2.8.\*, avoiding expensive and error prone calls to `nuget update` on the client machines and build servers.
 
-When the NuGet restore process runs prior to a build, it resolves dependencies first in memory, then writes the resulting graph to a file called `project.assets.json`. It also writes the resolved dependencies to a lock file named `packages.lock.json`, if the [lock file functionality is enabled](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files#locking-dependencies).
+When the NuGet restore process runs prior to a build, it resolves dependencies first in memory, then writes the resulting graph to a file called `project.assets.json`. It also writes the resolved dependencies to a lock file named `packages.lock.json`, if the [lock file functionality is enabled](/nuget/consume-packages/package-references-in-project-files#locking-dependencies).
 The assets file is located at `MSBuildProjectExtensionsPath`, which defaults to the project's 'obj' folder. 
 MSBuild then reads this file and translates it into a set of folders where potential references can be found, and then adds them to the project tree in memory.
 
@@ -152,4 +152,3 @@ To resolve incompatibilities, do one of the following:
 
 - Retarget your project to a framework that is supported by the packages you want to use.
 - Contact the author of the packages and work with them to add support for your chosen framework. Each package listing page on [nuget.org](https://www.nuget.org/) has a **Contact Owners** link for this purpose.
-
