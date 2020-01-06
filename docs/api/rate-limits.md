@@ -36,7 +36,7 @@ The following tables list the rate limits for the NuGet.org API.
 ## Package search
 
 > [!Note]
-> We recommend using NuGet.org's [V3 search APIs](https://docs.microsoft.com/nuget/api/search-query-service-resource) as it is not rate limited currently. For V1 and V2 search APIs, the following limits apply:
+> We recommend using NuGet.org's [V3 search APIs](/search-query-service-resource.md) as it is not rate limited currently. For V1 and V2 search APIs, the following limits apply:
 
 
 | API | Limit Type | Limit Value | API usecase |
