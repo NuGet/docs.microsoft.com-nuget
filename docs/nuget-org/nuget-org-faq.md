@@ -245,7 +245,7 @@ Follow the steps given in [delete your NuGet.org account](#how-to-delete-my-nuge
 
 ### How to delete my NuGet.org account?
 
-To delete your account, please note that we recommend that you transfer the ownership of any packages where you are the sole owner. You can read more about [managing package owners](https://docs.microsoft.com/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg) on how to do it. This will also help us expedite your request.
+To delete your account, please note that we recommend that you transfer the ownership of any packages where you are the sole owner. You can read more about [managing package owners](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg) on how to do it. This will also help us expedite your request.
 
 If you are looking to transform your account to an organization, follow the steps given in [transform my NuGet.org account to an organization](#how-to-transform-my-nugetorg-account-to-an-organization).
 
