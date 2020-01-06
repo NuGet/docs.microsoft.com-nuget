@@ -237,7 +237,7 @@ You can [create](https://www.microsoft.com/account) a new Microsoft account (wit
 
 ### How do I change my NuGet.org account username?
 
-You cannot. As a matter of policy we do not allow the change of usernames as of yet. The only way to change your username is to create a new account with the desired username. We recommend you delete your existing account before you create a new one, otherwise you will not be able to reuse your registered Microsoft account.
+You cannot. As a matter of policy we do not allow the change of usernames. Also, doing so is a breaking change for users that may have defined [package trust policies based on the package owner](../consume-packages/installing-signed-packages.md#trust-package-owners). The only way to change your username is to create a new account with the desired username. We recommend you delete your existing account before you create a new one, otherwise you will not be able to reuse your registered Microsoft account.
 > [!Important]
 > Deleting the user will still **reserve** the `username`. You will not be able to reuse the same username again and **this includes the change of casings**. As an example if you created a user with username `mycoolname` and you want to change this to `MyCoolName`(casing changes), it will not be possible after deleting the user.
 
