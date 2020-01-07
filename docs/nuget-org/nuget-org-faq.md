@@ -237,7 +237,7 @@ You can [create](https://www.microsoft.com/account) a new Microsoft account (wit
 
 ### How do I change my NuGet.org account username?
 
-You cannot. As a matter of policy we do not allow the change of usernames as of yet. The only way to change your username is to create a new account with the desired username. We recommend you delete your existing account before you create a new one, otherwise you will not be able to reuse your registered Microsoft account.
+You cannot. As a matter of policy we do not allow the change of usernames. Also, doing so is a breaking change for users that may have defined [package trust policies based on the package owner](../consume-packages/installing-signed-packages.md#trust-package-owners). The only way to change your username is to create a new account with the desired username. We recommend you delete your existing account before you create a new one, otherwise you will not be able to reuse your registered Microsoft account.
 > [!Important]
 > Deleting the user will still **reserve** the `username`. You will not be able to reuse the same username again and **this includes the change of casings**. As an example if you created a user with username `mycoolname` and you want to change this to `MyCoolName`(casing changes), it will not be possible after deleting the user.
 
@@ -245,7 +245,7 @@ Follow the steps given in [delete your NuGet.org account](#how-to-delete-my-nuge
 
 ### How to delete my NuGet.org account?
 
-To delete your account, please note that we recommend that you transfer the ownership of any packages where you are the sole owner. You can read more about [managing package owners](https://docs.microsoft.com/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg) on how to do it. This will also help us expedite your request.
+To delete your account, please note that we recommend that you transfer the ownership of any packages where you are the sole owner. You can read more about [managing package owners](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg) on how to do it. This will also help us expedite your request.
 
 If you are looking to transform your account to an organization, follow the steps given in [transform my NuGet.org account to an organization](#how-to-transform-my-nugetorg-account-to-an-organization).
 
