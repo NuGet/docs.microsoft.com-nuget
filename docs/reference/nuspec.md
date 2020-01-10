@@ -147,7 +147,7 @@ A URL for a 64x64 image with transparency background to use as the icon for the 
    
 #### icon
 
-It is a path to an image file within the package, often shown in UIs like nuget.org as the package icon. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resoulution of 64x64.
+It is a path to an image file within the package, often shown in UIs like nuget.org as the package icon. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resolution of 64x64.
 
 For example, you would add the following to your nuspec when creating a package using nuget.exe:
 
