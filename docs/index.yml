@@ -132,8 +132,16 @@ additionalContent:
               url: /nuget/api/overview
         - title: Resources
           links:
-            - text: tbd
-              url: /nuget/
+            - text: Policies - NuGet
+              url: /nuget/policies/governance
+            - text: Policies - NuGet.org
+              url: /nuget/nuget-org/policies/data-requests
+            - text: Release notes
+              url: /nuget/release-notes/known-issues
+            - text: FAQ - NuGet
+              url: /nuget/resources/nuget-faq
+            - text: FAQ - NuGet.org
+              url: /nuget/nuget-org/nuget-org-faq
 
 
-   footer: "[Blogs](https://devblogs.microsoft.com/visualstudio/) - [Twitter](https://twitter.com/VisualStudio) - [Stack Overflow](https://stackoverflow.com/questions/tagged/visual-studio) - [Issue Reporting](../ide/talk-to-us.md) - [Developer Community](https://developercommunity.visualstudio.com/spaces/8/index.html)"
+   footer: "[Blogs](https://devblogs.microsoft.com/nuget/) - [Twitter](https://twitter.com/nuget) - [Stack Overflow](https://stackoverflow.com/questions/tagged/nuget)"
