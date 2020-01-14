@@ -28,7 +28,7 @@ highlightedContent:
 
 
 conceptualContent:
-  title: NuGet: Consume, create, and publish packages
+  title: "NuGet: Consume, create, and publish packages"
   items:
     - title: Get started
       links:
