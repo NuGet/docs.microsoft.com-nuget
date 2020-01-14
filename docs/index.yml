@@ -110,7 +110,7 @@ additionalContent:
               url: /nuget/nuget-org/individual-accounts
             - text: Organizations
               url: /nuget/nuget-org/organizations-on-nuget-org
-           - text: API keys
+            - text: API keys
               url: /nuget/nuget-org/scoped-api-keys
             - text: Publish a package
               url: /nuget/nuget-org/publish-a-package
