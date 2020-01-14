@@ -122,7 +122,7 @@ The .nupkg file would be exactly the same as it is today, but the .snupkg file w
    ```
 
 4) If an author decides to use a custom nuspec to build their nupkg and snupkg, the snupkg should have the same folder hierarchy and files detailed in 2).
-5) ```authors``` and ```owners``` field will be excluded from the snupkg's nuspec.
+5) ```authors```, ```owners```, ```icon```, and ```requireLicenseAcceptance``` fields will be excluded from the snupkg's nuspec.
 6) Do not use the ```<license>``` element. A .snupkg is covered under the same license as the corresponding .nupkg.
 
 ## See also
