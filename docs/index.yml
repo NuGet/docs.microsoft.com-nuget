@@ -28,7 +28,7 @@ highlightedContent:
 
 
 conceptualContent:
-  title: Get started
+  title: NuGet: Consume, create, and publish packages
   items:
     - title: Get started
       links:
@@ -101,7 +101,7 @@ conceptualContent:
 
 additionalContent:
    sections:
-   - title: Links
+   - title: Reference and resources
      items:
         - title: NuGet.org
           links:
