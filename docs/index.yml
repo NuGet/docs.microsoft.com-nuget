@@ -23,6 +23,7 @@ highlightedContent:
      itemType: get-started
      url: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
    - title: NuGet.org
+     itemType: overview
      url: /nuget/nuget-org/overview-nuget-org
 
 
@@ -31,7 +32,7 @@ conceptualContent:
   items:
     - title: Get started
       links:
-        - title: Install NuGet client tools
+        - text: Install NuGet client tools
           itemType: download
           url: /nuget/install-nuget-client-tools
         - text: Install and use a package - dotnet CLI
