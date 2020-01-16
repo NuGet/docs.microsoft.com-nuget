@@ -40,9 +40,13 @@ Also see [Environment variables](cli-ref-environment-variables.md)
 ## Examples
 
 ```cli
-nuget list
+nuget list //list all packages from configured feeds
 
-nuget list chinese korean -Verbosity detailed
+nuget list azure -Verbosity detailed //List azure-related packages with detailed verbosity
 
-nuget list couchbase -AllVersions
+nuget list azure -AllVersions //list all versions of azure-related packages from configured feeds
+
+nuget list json -AllVersions -Source "https://nuget.org/api/v2" //list all versions of json-related packages from specified source/feed
+
+nuget list json -Source "https://nuget.org/api/v2" -Source "https://other-feed-url-goes-here" //list json-related packages from multiple sources/feeds
 ```
