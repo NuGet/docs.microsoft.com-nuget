@@ -43,19 +43,19 @@ List all packages from configured feeds:
 ```
 nuget list
 ```
-List azure-related packages with detailed verbosity:
+List Azure-related packages with detailed verbosity:
 ```
 nuget list Azure -Verbosity detailed
 ```
-List all versions of azure-related packages from configured feeds:
+List all versions of Azure-related packages from configured feeds:
 ```
 nuget list Azure -AllVersions
 ```
-List all versions of json-related packages from specified source/feed:
+List all versions of JSON-related packages from specified source/feed:
 ```
 nuget list JSON -AllVersions -Source "https://nuget.org/api/v2"
 ```
-List json-related packages from multiple sources/feeds:
+List JSON-related packages from multiple sources/feeds:
 ```
 nuget list JSON -Source "https://nuget.org/api/v2" -Source "https://other-feed-url-goes-here"
 ```
