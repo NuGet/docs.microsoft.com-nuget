@@ -19,9 +19,9 @@ highlightedContent:
    - title: Install NuGet client tools
      itemType: download
      url: /nuget/install-nuget-client-tools
-   - title: Install and use a package
-     itemType: get-started
-     url: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
+   - title: Learn NuGet
+     itemType: video
+     url: https://aka.ms/Nuget101
    - title: NuGet.org
      itemType: overview
      url: /nuget/nuget-org/overview-nuget-org
@@ -77,7 +77,7 @@ conceptualContent:
           url: /nuget/create-packages/overview-and-workflow
         - text: Use Visual Studio
           itemType: how-to-guide
-          url: /nuget/create-packages/create-and-publish-a-package-using-visual-studio
+          url: /nuget/quickstart/create-and-publish-a-package-using-visual-studio
         - text: Use dotnet CLI
           itemType: how-to-guide
           url: /nuget/create-packages/creating-a-package-dotnet-cli
