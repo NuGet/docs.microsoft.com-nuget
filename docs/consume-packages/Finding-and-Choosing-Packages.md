@@ -123,21 +123,27 @@ For the MSBuild equivalent to setting the license in the `.nuspec`, take a look 
 
 ## Search Syntax
 
-NuGet package search works the same on nuget.org, from the NuGet CLI, and within the NuGet Package Manager extension in Visual Studio. In general, search is applied to keywords as well as package descriptions.
+NuGet package search works the same on nuget.org, from the NuGet CLI, and within the NuGet Package Manager extension in
+Visual Studio. In general, search is applied to keywords as well as package descriptions.
 
-- **Keywords**: Search looks for relevant packages that contain any of the provided keywords. Example: `modern UI`. To search for packages that contain all of the provided keywords, use "+" between the terms, such as `modern+UI`.
-- **Phrases**: Entering terms within quotation marks looks for exact case-insensitive matches to those terms. Example: `"modern UI" package`
-- **Filtering**: You can apply a search term to a specific property by using the syntax `<property>:<term>` where `<property>` (case-insensitive) can be `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary`, and `owner`. Terms can be contained in quotes if needed, and you can search for multiple properties at the same time. Also, searches on the `id` property are substring matches, whereas `packageid` uses an exact match. Examples:
+- **Filtering**: You can apply a search term to a specific property by using the syntax `<property>:<term>` where
+  `<property>` (case-insensitive) can be `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`,
+  `summary`, and `owner`. You can search for multiple properties at the same time. Searches on the `id` property are
+  substring matches, whereas `packageid` and `owner` uses an exact, case-insensitive match. Examples:
 
-    ```
-    id:NuGet.Core                # Match any part of the id property
-    Id:"Nuget.Core"
-    ID:jQuery
-    title:jquery                 # Searches title as shown on the package listing
-    PackageId:jquery             # Match the package id exactly
-    id:jquery id:ui              # Search for multiple terms in the id
-    id:jquery tags:validation    # Search multiple properties
-    id:"jquery.ui"               # Phrase search
-    invalid:jquery ui            # Unsupported properties are ignored, so this
-                                 # is the same as searching on jquery ui
-    ```
+```
+PackageId:jquery             # Match the package ID in an exact, case-insensitive manner
+
+owner:microsoft              # Match the owner in an exact, case-insensitive manner
+
+id:NuGet.Core                # Match any part of the ID property
+Id:"Nuget.Core"
+ID:jQuery
+id:jquery id:ui              # Search for multiple terms in the ID
+id:jquery tags:validation    # Search multiple properties
+
+title:jquery                 # Searches title as shown on the package listing
+
+invalid:jquery ui            # Unsupported properties are ignored, so this
+                             # is the same as searching on ui
+```
