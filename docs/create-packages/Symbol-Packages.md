@@ -1,5 +1,5 @@
 ---
-title: How to create NuGet symbol packages
+title: Creating legacy symbol packdages (.symbols.nupkg)
 description: How to create NuGet packages that contain only symbols to support debugging of other NuGet packages in Visual Studio.
 author: karann-msft
 ms.author: karann
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.reviewer: anangaur
 ---
 
-# Creating symbol packages (legacy)
+# Creating legacy symbol packages (.symbols.nupkg)
 
 > [!Important]
 > The new recommended format for symbol packages is .snupkg. See [Creating symbol packages (.snupkg)](Symbol-Packages-snupkg.md). </br>
@@ -18,12 +18,12 @@ In addition to building packages for nuget.org or other sources, NuGet also supp
 
 Package consumers can then add `https://nuget.smbsrc.net` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger) for details on that process.
 
-## Creating a symbol package
+## Creating a legacy symbol package
 
-To create a symbol package, follow these conventions:
+To create a legacy symbol package, follow these conventions:
 
 - Name the primary package (with your code) `{identifier}.nupkg` and include all your files except `.pdb` files.
-- Name the symbol package `{identifier}.symbols.nupkg` and include your assembly DLL, `.pdb` files, XMLDOC files, source files (see the sections that follow).
+- Name the legacy symbol package `{identifier}.symbols.nupkg` and include your assembly DLL, `.pdb` files, XMLDOC files, source files (see the sections that follow).
 
 You can create both packages with the `-Symbols` option, either from a `.nuspec` file or a project file:
 
@@ -35,11 +35,11 @@ nuget pack MyProject.csproj -Symbols
 
 Note that `pack` requires Mono 4.4.2 on Mac OS X and does not work on Linux systems. On a Mac, you must also convert Windows pathnames in the `.nuspec` file to Unix-style paths.
 
-## Symbol package structure
+## Legacy symbol package structure
 
-A symbol package can target multiple target frameworks in the same way that a library package does, so the structure of the `lib` folder should be exactly the same as the primary package, only including `.pdb` files alongside the DLL.
+A legacy symbol package can target multiple target frameworks in the same way that a library package does, so the structure of the `lib` folder should be exactly the same as the primary package, only including `.pdb` files alongside the DLL.
 
-For example, a symbol package that targets .NET 4.0 and Silverlight 4 would have this layout:
+For example, a legacy symbol package that targets .NET 4.0 and Silverlight 4 would have this layout:
 
     \lib
         \net40
@@ -65,7 +65,7 @@ Source files are then placed in a separate special folder named `src`, which mus
                 \MySilverlightExtensions.cs
                 \MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
 
-Apart from the `lib` folder, a symbol package would need to contain this layout:
+Apart from the `lib` folder, a legacy symbol package would need to contain this layout:
 
     \src
         \Common
@@ -80,7 +80,7 @@ Apart from the `lib` folder, a symbol package would need to contain this layout:
 
 ## Referring to files in the nuspec
 
-A symbol package can be built by conventions, from a folder structure as described in the previous section, or by specifying its contents in the `files` section of the manifest. For example, to build the package shown in the previous section, use the following in the `.nuspec` file:
+A legacy symbol package can be built by conventions, from a folder structure as described in the previous section, or by specifying its contents in the `files` section of the manifest. For example, to build the package shown in the previous section, use the following in the `.nuspec` file:
 
 ```xml
 <files>
@@ -92,7 +92,7 @@ A symbol package can be built by conventions, from a folder structure as describ
 </files>
 ```
 
-## Publishing a symbol package
+## Publishing a legacy symbol package
 
 > [!Important]
 > To push packages to nuget.org you must use [nuget.exe v4.9.1 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](../api/nuget-protocols.md).
@@ -103,13 +103,13 @@ A symbol package can be built by conventions, from a folder structure as describ
     nuget SetApiKey Your-API-Key
     ```
 
-2. After publishing your primary package to nuget.org, push the symbol package as follows, which will automatically use symbolsource.org as the target because of the `.symbols` in the filename:
+2. After publishing your primary package to nuget.org, push the legacy symbol package as follows, which will automatically use symbolsource.org as the target because of the `.symbols` in the filename:
 
     ```cli
     nuget push MyPackage.symbols.nupkg
     ```
 
-3. To publish to a different symbol repository, or to push a symbol package that doesn't follow the naming convention, use the `-Source` option:
+3. To publish to a different symbol repository, or to push a legacy symbol package that doesn't follow the naming convention, use the `-Source` option:
 
     ```cli
     nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
@@ -128,4 +128,5 @@ In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to https
 
 ## See also
 
-[Moving to the new SymbolSource engine](https://tripleemcoder.com/2015/10/04/moving-to-the-new-symbolsource-engine/) (symbolsource.org)
+* [Creating symbol packages (.snupkg)](Symbol-Packages-snupkg.md) - The new recommended format for symbol packages
+* [Moving to the new SymbolSource engine](https://tripleemcoder.com/2015/10/04/moving-to-the-new-symbolsource-engine/) (symbolsource.org)
