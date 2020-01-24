@@ -1,5 +1,5 @@
 ---
-title: Creating legacy symbol packdages (.symbols.nupkg)
+title: Creating legacy symbol packages (.symbols.nupkg)
 description: How to create NuGet packages that contain only symbols to support debugging of other NuGet packages in Visual Studio.
 author: karann-msft
 ms.author: karann
