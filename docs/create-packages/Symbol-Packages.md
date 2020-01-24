@@ -14,7 +14,7 @@ ms.reviewer: anangaur
 > The new recommended format for symbol packages is .snupkg. See [Creating symbol packages (.snupkg)](Symbol-Packages-snupkg.md). </br>
 > .symbols.nupkg is still supported but only for compatibility reasons.
 
-In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the SymbolSource repository.
+In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages that can be published to symbol servers. The legacy symbol package format, .symbols.nupkg, can be pushed to the SymbolSource repository.
 
 Package consumers can then add `https://nuget.smbsrc.net` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger) for details on that process.
 
