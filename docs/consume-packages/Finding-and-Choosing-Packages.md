@@ -142,8 +142,6 @@ ID:jQuery
 id:jquery id:ui              # Search for multiple terms in the ID
 id:jquery tags:validation    # Search multiple properties
 
-title:jquery                 # Searches title as shown on the package listing
-
 invalid:jquery ui            # Unsupported properties are ignored, so this
                              # is the same as searching on ui
 ```
