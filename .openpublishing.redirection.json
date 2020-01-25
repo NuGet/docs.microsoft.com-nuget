@@ -27,7 +27,7 @@
         },
         {
             "source_path": "docs/create-packages/Dependency-Versions.md",
-            "redirect_url": "/nuget/reference/package-versioning",
+            "redirect_url": "/nuget/concepts/package-versioning",
             "redirect_document_id": false
         },
         {
@@ -62,7 +62,7 @@
         },
         {
             "source_path": "docs/Schema/analyzers-conventions.md",
-            "redirect_url": "/nuget/reference/analyzers-conventions",
+            "redirect_url": "/nuget/guides/analyzers-conventions",
             "redirect_document_id": false
         },
         {
@@ -107,7 +107,7 @@
         },
         {
             "source_path": "docs/policies/command-line-reference.md",
-            "redirect_url": "/nuget/tools/nuget-exe-cli-reference",
+            "redirect_url": "/nuget/reference/nuget-exe-cli-reference",
             "redirect_document_id": false
         },
         {
