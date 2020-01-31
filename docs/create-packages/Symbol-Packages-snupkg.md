@@ -16,7 +16,7 @@ ms.reviewer:
 
 # Creating symbol packages (.snupkg)
 
-A good debugging experience relies on the presence of debug symbols as they provide critical information like the association between the compiled and the source code, names of local variables, stack traces, and more. By default, these symbols are are built as separate files to minimize the size of shipping binaries. You can use symbol packages (.snupkg) to distribute these symbols and improve the debugging experience of your NuGet packages.
+A good debugging experience relies on the presence of debug symbols as they provide critical information like the association between the compiled and the source code, names of local variables, stack traces, and more. You can use symbol packages (.snupkg) to distribute these symbols and improve the debugging experience of your NuGet packages.
 
 ## Prerequisites
 
