@@ -63,7 +63,7 @@ conceptualContent:
           url: /nuget/consume-packages/install-use-packages-visual-studio
         - text: Use dotnet CLI
           itemType: how-to-guide
-          url: /nuget/install-use-packages-dotnet-cli
+          url: /nuget/consume-packages/install-use-packages-dotnet-cli
         - text: Use nuget.exe CLI
           itemType: how-to-guide
           url: /nuget/consume-packages/install-use-packages-nuget-cli
