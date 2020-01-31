@@ -1,7 +1,7 @@
 ### YamlMime:Hub
 title: NuGet documentation
 summary: NuGet is the package manager for .NET. It enables developers to create, share, and consume useful .NET libraries. NuGet client tools provide the ability to produce and consume these libraries as "packages".
-brand: dotnet
+brand: nuget
 metadata:
    title: NuGet documentation | Microsoft Docs
    titleSuffix: ""
