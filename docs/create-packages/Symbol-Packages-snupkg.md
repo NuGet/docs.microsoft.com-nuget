@@ -103,7 +103,7 @@ Symbol packages published to NuGet.org will fail validation if these constraints
 
 Symbol packages published to [NuGet.org](https://www.nuget.org/) undergo several validations, including malware scanning. If a package fails a validation check, its package details page will display an error message. In addition, the package's owners will receive an email with instructions on how to fix the identified issues.
 
-When the symbol package has passed all validations, the symbols will be indexed by NuGet.org's symbol servers and will available for consumption.
+When the symbol package has passed all validations, the symbols will be indexed by NuGet.org's symbol servers and will be available for consumption.
 
 Package validation and indexing usually takes under 15 minutes. If the package publishing takes longer than expected, visit [status.nuget.org](https://status.nuget.org/) to check if NuGet.org is experiencing any interruptions. If all systems are operational and the package hasn't been successfully published within an hour, please login to nuget.org and contact us using the Contact Support link on the package details page.
 
