@@ -34,6 +34,6 @@ Steps:
 > Enabling Other NuGet Tools to Support Long Paths
 >
 > -   Dotnet CLI supports long paths regardless of the operating system or version.
-> -   Visual Studio or msbuild -t:restore does not yet support long paths.
-> -   Software that uses NuGet Libraries to execute restore and other commands, will support long paths on the same systems that NuGet.exe works on, if they also set longPathAware in their windows manifest and configure UseLegacyPathHandling to false via App.Config [See more information](https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/)
+> -   Visual Studio or `msbuild -t:restore` does not yet support long paths.
+> -   Software that uses NuGet Libraries to execute restore and other commands, will support long paths on the same systems that NuGet.exe works on, if they also set `longPathAware` in their windows manifest and configure `UseLegacyPathHandling` to `false` via App.Config [See more information](https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/)
 
