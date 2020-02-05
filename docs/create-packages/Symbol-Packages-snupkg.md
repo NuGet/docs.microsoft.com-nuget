@@ -16,15 +16,15 @@ ms.reviewer:
 
 # Creating symbol packages (.snupkg)
 
-Symbol packages allow you to improve the debugging experience of your NuGet packages.
+A good debugging experience relies on the presence of debug symbols as they provide critical information like the association between the compiled and the source code, names of local variables, stack traces, and more. You can use symbol packages (.snupkg) to distribute these symbols and improve the debugging experience of your NuGet packages.
 
 ## Prerequisites
 
-[nuget.exe v4.9.0 or above](https://www.nuget.org/downloads) or [dotnet.exe v2.2.0 or above](https://www.microsoft.com/net/download/dotnet-core/2.2), which implement the required [NuGet protocols](../api/nuget-protocols.md).
+[nuget.exe v4.9.0 or above](https://www.nuget.org/downloads) or [dotnet CLI v2.2.0 or above](https://www.microsoft.com/net/download/dotnet-core/2.2), which implement the required [NuGet protocols](../api/nuget-protocols.md).
 
 ## Creating a symbol package
 
-If you're using dotnet.exe or MSBuild, you need to set the `IncludeSymbols` and `SymbolPackageFormat` properties to create a .snupkg file in addition to the .nupkg file.
+If you're using dotnet CLI or MSBuild, you need to set the `IncludeSymbols` and `SymbolPackageFormat` properties to create a .snupkg file in addition to the .nupkg file.
 
 * Either add the following properties to your .csproj file:
 
@@ -103,17 +103,17 @@ Symbol packages published to NuGet.org will fail validation if these constraints
 
 Symbol packages published to [NuGet.org](https://www.nuget.org/) undergo several validations, including malware scanning. If a package fails a validation check, its package details page will display an error message. In addition, the package's owners will receive an email with instructions on how to fix the identified issues.
 
-When the symbol package has passed all validations, the symbols will be indexed by NuGet.org's symbol servers. Once indexed, the symbol will be available for consumption from the NuGet.org symbol servers.
+When the symbol package has passed all validations, the symbols will be indexed by NuGet.org's symbol servers and will be available for consumption.
 
-Package validation and indexing usually takes under 15 minutes. If the package publishing is taking longer than expected, visit [status.nuget.org](https://status.nuget.org/) to check if NuGet.org is experiencing any interruptions. If all systems are operational and the package hasn't been successfully published within an hour, please login to nuget.org and contact us using the Contact Support link on the package details page.
+Package validation and indexing usually takes under 15 minutes. If the package publishing takes longer than expected, visit [status.nuget.org](https://status.nuget.org/) to check if NuGet.org is experiencing any interruptions. If all systems are operational and the package hasn't been successfully published within an hour, please login to nuget.org and contact us using the Contact Support link on the package details page.
 
 ## Symbol package structure
 
-The .nupkg file would be exactly the same as it is today, but the .snupkg file would have the following characteristics:
+The symbol package (.snupkg) has the following characteristics:
 
-1) The .snupkg will have the same id and version as the corresponding .nupkg.
-2) The .snupkg will have the exact folder structure as the nupkg for any DLL or EXE files with the distinction that instead of DLLs/EXEs, their corresponding PDBs will be included in the same folder hierarchy. Files and folders with extensions other than PDB will be left out of the snupkg.
-3) The .nuspec file in the .snupkg will also specify a new PackageType as below. This should the only one PackageType specified.
+1) The .snupkg has the same id and version as its corresponding NuGet package (.nupkg).
+2) The .snupkg has the same folder structure as its corresponding .nupkg for any DLL or EXE files with the distinction that instead of DLLs/EXEs, their corresponding PDBs will be included in the same folder hierarchy. Files and folders with extensions other than PDB will be left out of the snupkg.
+3) The symbol package's .nuspec file has the `SymbolsPackage` package type:
 
    ```xml
    <packageTypes>
