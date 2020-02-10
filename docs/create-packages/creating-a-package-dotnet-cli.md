@@ -117,6 +117,7 @@ You might also want to extend the capabilities of your package or otherwise supp
 
 - [Package versioning](../concepts/package-versioning.md)
 - [Support multiple target frameworks](../create-packages/multiple-target-frameworks-project-file.md)
+- [Add a package icon](../reference/nuspec.md#icon)
 - [Transformations of source and configuration files](../create-packages/source-and-config-file-transformations.md)
 - [Localization](../create-packages/creating-localized-packages.md)
 - [Pre-release versions](../create-packages/prerelease-packages.md)
