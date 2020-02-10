@@ -135,3 +135,9 @@ To explore more that NuGet has to offer, select the links below.
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
 - [Finding and choosing packages](../consume-packages/finding-and-choosing-packages.md)
 - [Package references in project files](../consume-packages/package-references-in-project-files.md)
+
+## Related video
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/What-is-NuGet-2-of-5/player]
+
+Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
