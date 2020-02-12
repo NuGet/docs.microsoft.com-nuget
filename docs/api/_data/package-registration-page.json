@@ -38,7 +38,7 @@
         "authors": "NuGet.org Team",
         "deprecation": {
           "reasons": [
-            "HasCriticalBugs"
+            "CriticalBugs"
           ],
           "message": "This package is unstable and broken!",
           "alternatePackage": {
