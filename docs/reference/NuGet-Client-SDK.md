@@ -9,14 +9,50 @@ ms.topic: conceptual
 
 # NuGet Client SDK
 
-The *NuGet Client SDK* refers to a group of NuGet packages centered around [NuGet.Commands](https://www.nuget.org/packages/NuGet.Commands), [NuGet.Packaging](https://www.nuget.org/packages/NuGet.Packaging), and [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol). These packages replace the earlier [NuGet.Core](https://www.nuget.org/packages/NuGet.Core/) library.
+The *NuGet Client SDK* refers to a group of NuGet packages centered around [NuGet.Commands](https://www.nuget.org/packages/NuGet.Commands), [NuGet.Packaging](https://www.nuget.org/packages/NuGet.Packaging), and [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol). These packages replace the legacy [NuGet.Core](https://www.nuget.org/packages/NuGet.Core/) library. You can find the source code for these packages on GitHub in the project [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client).
 
 > [!Note]
 >  For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).
 
-## Source code
+## Getting started
 
-The source code is published on GitHub in the project [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client).
+### Install the package
+
+```
+dotnet add NuGet.Protocol
+```
+
+## Examples
+
+### List package versions
+
+```csharp
+var foo = "bar";
+```
+
+### Download a package
+
+```csharp
+var foo = "bar";
+```
+
+### Get package metadata 
+
+```csharp
+var foo = "bar";
+```
+
+### Get package downloads
+
+```csharp
+var foo = "bar";
+```
+
+### Search packages
+
+```csharp
+var foo = "bar";
+```
 
 ## Third-party documentation
 
