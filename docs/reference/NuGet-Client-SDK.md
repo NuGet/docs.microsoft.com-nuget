@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # NuGet Client SDK
 
-The *NuGet Client SDK* refers to a group of NuGet packages centered around [NuGet.Commands](https://www.nuget.org/packages/NuGet.Commands), [NuGet.Packaging](https://www.nuget.org/packages/NuGet.Packaging), and [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol). These packages replace the legacy [NuGet.Core](https://www.nuget.org/packages/NuGet.Core/) library. You can find the source code for these packages on GitHub in the project [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client).
+The *NuGet Client SDK* refers to a group of NuGet packages centered around the [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol) and the [NuGet.Packaging](https://www.nuget.org/packages/NuGet.Packaging) packages from the [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client) GitHub repository.
 
 > [!Note]
 >  For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).
@@ -24,24 +24,86 @@ dotnet add NuGet.Protocol
 
 ## Examples
 
+You can find these examples on the [NuGet.Protocol.Samples](TODO) project on GitHub.
+
 ### List package versions
 
 ```csharp
-Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
+ILogger logger = NullLogger.Instance;
+CancellationToken cancellationToken = CancellationToken.None;
 
+SourceCacheContext cache = new SourceCacheContext();
+SourceRepository repository = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
+FindPackageByIdResource resource = await repository.GetResourceAsync<FindPackageByIdResource>();
 
+IEnumerable<NuGetVersion> versions = await resource.GetAllVersionsAsync(
+    "Newtonsoft.Json",
+    cache,
+    logger,
+    cancellationToken);
+
+foreach (NuGetVersion version in versions)
+{
+    Console.WriteLine($"Found version {version}");
+}
 ```
 
 ### Download a package
 
 ```csharp
-var foo = "bar";
+ILogger logger = NullLogger.Instance;
+CancellationToken cancellationToken = CancellationToken.None;
+
+SourceCacheContext cache = new SourceCacheContext();
+SourceRepository repository = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
+FindPackageByIdResource resource = await repository.GetResourceAsync<FindPackageByIdResource>();
+
+string packageId = "Newtonsoft.Json";
+NuGetVersion packageVersion = new NuGetVersion("12.0.1");
+using MemoryStream packageStream = new MemoryStream();
+
+await resource.CopyNupkgToStreamAsync(
+    packageId,
+    packageVersion,
+    packageStream,
+    cache,
+    logger,
+    cancellationToken);
+
+Console.WriteLine($"Downloaded package {packageId} {packageVersion}");
+
+using PackageArchiveReader packageReader = new PackageArchiveReader(packageStream);
+NuspecReader nuspecReader = await packageReader.GetNuspecReaderAsync(cancellationToken);
+
+Console.WriteLine($"Tags: {nuspecReader.GetTags()}");
+Console.WriteLine($"Description: {nuspecReader.GetDescription()}");
 ```
 
 ### Get package metadata 
 
 ```csharp
-var foo = "bar";
+ILogger logger = NullLogger.Instance;
+CancellationToken cancellationToken = CancellationToken.None;
+
+SourceCacheContext cache = new SourceCacheContext();
+SourceRepository repository = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
+PackageMetadataResource resource = await repository.GetResourceAsync<PackageMetadataResource>();
+
+IEnumerable<IPackageSearchMetadata> packages = await resource.GetMetadataAsync(
+    "Newtonsoft.Json",
+    includePrerelease: true,
+    includeUnlisted: false,
+    cache,
+    logger,
+    cancellationToken);
+
+foreach (IPackageSearchMetadata package in packages)
+{
+    Console.WriteLine($"Version: {package.Identity.Version}");
+    Console.WriteLine($"Listed: {package.IsListed}");
+    Console.WriteLine($"Tags: {package.Tags}");
+    Console.WriteLine($"Description: {package.Description}");
+}
 ```
 
 ### Search packages
@@ -82,6 +144,6 @@ You can find examples and documentation for some of the API in the following blo
 > These blog posts were written shortly after the **3.4.3** version of the NuGet client SDK packages were released.
 > Newer versions of the packages may be incompatible with the information in the blog posts.
 
-Martin Björkström did a follow-up blog post to Dave Glick's blog series where he introduces a different approach on using the NuGet Client SDK for installing NuGet packages:
+Martin Björkström did a follow-up blog post to Dave Glick's blog series where he introduces a different approach on using the NuGet Client SDK to install NuGet packages:
 
 - [Revisiting the NuGet v3 Libraries](https://martinbjorkstrom.com/posts/2018-09-19-revisiting-nuget-client-libraries)
