@@ -46,7 +46,7 @@ var foo = "bar";
 
 ### Search packages
 
-Search for "json" packages:
+Search for "json" packages using the [NuGet V3 Search API](../api/search-query-service-resource.md):
 
 ```csharp
 var logger = NullLogger.Instance;
