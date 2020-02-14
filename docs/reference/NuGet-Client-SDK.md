@@ -27,7 +27,9 @@ dotnet add NuGet.Protocol
 ### List package versions
 
 ```csharp
-var foo = "bar";
+Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
+
+
 ```
 
 ### Download a package
@@ -42,16 +44,30 @@ var foo = "bar";
 var foo = "bar";
 ```
 
-### Get package downloads
-
-```csharp
-var foo = "bar";
-```
-
 ### Search packages
 
+Search for "json" packages:
+
 ```csharp
-var foo = "bar";
+var logger = NullLogger.Instance;
+var cancellationToken = CancellationToken.None;
+
+var repository = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
+var search = await repository.GetResourceAsync<PackageSearchResource>();
+var searchFilter = new SearchFilter(includePrerelease: true);
+
+var results = await search.SearchAsync(
+    "json",
+    searchFilter,
+    skip: 0,
+    take: 20,
+    logger,
+    cancellationToken);
+
+foreach (var result in results)
+{
+    Console.WriteLine($"Found package {result.Identity.Id} {result.Identity.Version}");
+}
 ```
 
 ## Third-party documentation
