@@ -28,6 +28,8 @@ You can find these examples on the [NuGet.Protocol.Samples](TODO) project on Git
 
 ### List package versions
 
+Find all versions of Newtonsoft.Json using the [NuGet V3 Package Content API](../api/package-base-address-resource.md#enumerate-package-versions):
+
 ```csharp
 ILogger logger = NullLogger.Instance;
 CancellationToken cancellationToken = CancellationToken.None;
@@ -49,6 +51,8 @@ foreach (NuGetVersion version in versions)
 ```
 
 ### Download a package
+
+Download Newtonsoft.Json v12.0.1 using the [NuGet V3 Package Content API](../api/package-base-address-resource.md):
 
 ```csharp
 ILogger logger = NullLogger.Instance;
@@ -80,6 +84,8 @@ Console.WriteLine($"Description: {nuspecReader.GetDescription()}");
 ```
 
 ### Get package metadata 
+
+Get the metadata for the "Newtonsoft.Json" package using the [NuGet V3 Package Metadata API](../api/registration-base-url-resource.md):
 
 ```csharp
 ILogger logger = NullLogger.Instance;
