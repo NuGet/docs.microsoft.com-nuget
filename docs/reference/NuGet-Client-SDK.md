@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # NuGet Client SDK
 
-The *NuGet Client SDK* refers to a group of NuGet packages centered around the [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol) and the [NuGet.Packaging](https://www.nuget.org/packages/NuGet.Packaging) packages from the [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client) GitHub repository.
+The *NuGet Client SDK* refers to a group of NuGet packages centered around the [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol) and [NuGet.Packaging](https://www.nuget.org/packages/NuGet.Packaging) packages from the [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client) GitHub repository.
 
 > [!Note]
 >  For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).
