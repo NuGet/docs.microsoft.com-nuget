@@ -30,9 +30,9 @@ You can find these examples on the [NuGet.Protocol.Samples](TODO) project on Git
 
 Find all versions of Newtonsoft.Json using the [NuGet V3 Package Content API](../api/package-base-address-resource.md#enumerate-package-versions):
 
-[!code-csharp[ListPackageVersions](~/_samples/NuGetProtocolSamples/Program.cs?name=ListPackageVersions)]
+[!code-csharp[ListPackageVersions](~/nuget-samples/NuGetProtocolSamples/Program.cs?name=ListPackageVersions)]
 
-[!code-csharp[DownloadPackage](~/_samples/NuGetProtocolSamples/Program.cs?name=DownloadPackage)]
+[!code-csharp[DownloadPackage](~/nuget-samples/NuGetProtocolSamples/Program.cs?name=DownloadPackage)]
 
 ```csharp
 ILogger logger = NullLogger.Instance;
