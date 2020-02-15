@@ -26,8 +26,6 @@ dotnet add NuGet.Protocol
 
 You can find these examples on the [NuGet.Protocol.Samples](TODO) project on GitHub.
 
-:::code language="csharp" source="~/nuget-samples/NuGetProtocolSamples/Program.cs" id="tEST":::
-
 ### List package versions
 
 Find all versions of Newtonsoft.Json using the [NuGet V3 Package Content API](../api/package-base-address-resource.md#enumerate-package-versions):
