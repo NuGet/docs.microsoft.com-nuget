@@ -49,7 +49,7 @@ Get the metadata for the "Newtonsoft.Json" package using the [NuGet V3 Package M
 Search for "json" packages using the [NuGet V3 Search API](../api/search-query-service-resource.md):
 
 [!code-csharp[SearchPackages](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=SearchPackages)]
-
+ 
 ## Third-party documentation
 
 You can find examples and documentation for some of the API in the following blog series by Dave Glick, published 2016:
