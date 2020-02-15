@@ -12,13 +12,13 @@ ms.topic: conceptual
 The *NuGet Client SDK* refers to a group of NuGet packages centered around the [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol) and [NuGet.Packaging](https://www.nuget.org/packages/NuGet.Packaging) packages from the [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client) GitHub repository.
 
 > [!Note]
->  For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).
+> For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).
 
 ## Getting started
 
 ### Install the package
 
-```
+```ps1
 dotnet add NuGet.Protocol
 ```
 
@@ -32,115 +32,23 @@ Find all versions of Newtonsoft.Json using the [NuGet V3 Package Content API](..
 
 [!code-csharp[ListPackageVersions](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=ListPackageVersions)]
 
-[!code-csharp[DownloadPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=DownloadPackage)]
-
-```csharp
-ILogger logger = NullLogger.Instance;
-CancellationToken cancellationToken = CancellationToken.None;
-
-SourceCacheContext cache = new SourceCacheContext();
-SourceRepository repository = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
-FindPackageByIdResource resource = await repository.GetResourceAsync<FindPackageByIdResource>();
-
-IEnumerable<NuGetVersion> versions = await resource.GetAllVersionsAsync(
-    "Newtonsoft.Json",
-    cache,
-    logger,
-    cancellationToken);
-
-foreach (NuGetVersion version in versions)
-{
-    Console.WriteLine($"Found version {version}");
-}
-```
-
 ### Download a package
 
 Download Newtonsoft.Json v12.0.1 using the [NuGet V3 Package Content API](../api/package-base-address-resource.md):
 
-```csharp
-ILogger logger = NullLogger.Instance;
-CancellationToken cancellationToken = CancellationToken.None;
+[!code-csharp[DownloadPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=DownloadPackage)]
 
-SourceCacheContext cache = new SourceCacheContext();
-SourceRepository repository = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
-FindPackageByIdResource resource = await repository.GetResourceAsync<FindPackageByIdResource>();
-
-string packageId = "Newtonsoft.Json";
-NuGetVersion packageVersion = new NuGetVersion("12.0.1");
-using MemoryStream packageStream = new MemoryStream();
-
-await resource.CopyNupkgToStreamAsync(
-    packageId,
-    packageVersion,
-    packageStream,
-    cache,
-    logger,
-    cancellationToken);
-
-Console.WriteLine($"Downloaded package {packageId} {packageVersion}");
-
-using PackageArchiveReader packageReader = new PackageArchiveReader(packageStream);
-NuspecReader nuspecReader = await packageReader.GetNuspecReaderAsync(cancellationToken);
-
-Console.WriteLine($"Tags: {nuspecReader.GetTags()}");
-Console.WriteLine($"Description: {nuspecReader.GetDescription()}");
-```
-
-### Get package metadata 
+### Get package metadata
 
 Get the metadata for the "Newtonsoft.Json" package using the [NuGet V3 Package Metadata API](../api/registration-base-url-resource.md):
 
-```csharp
-ILogger logger = NullLogger.Instance;
-CancellationToken cancellationToken = CancellationToken.None;
-
-SourceCacheContext cache = new SourceCacheContext();
-SourceRepository repository = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
-PackageMetadataResource resource = await repository.GetResourceAsync<PackageMetadataResource>();
-
-IEnumerable<IPackageSearchMetadata> packages = await resource.GetMetadataAsync(
-    "Newtonsoft.Json",
-    includePrerelease: true,
-    includeUnlisted: false,
-    cache,
-    logger,
-    cancellationToken);
-
-foreach (IPackageSearchMetadata package in packages)
-{
-    Console.WriteLine($"Version: {package.Identity.Version}");
-    Console.WriteLine($"Listed: {package.IsListed}");
-    Console.WriteLine($"Tags: {package.Tags}");
-    Console.WriteLine($"Description: {package.Description}");
-}
-```
+[!code-csharp[GetPackageMetadata](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=GetPackageMetadata)]
 
 ### Search packages
 
 Search for "json" packages using the [NuGet V3 Search API](../api/search-query-service-resource.md):
 
-```csharp
-var logger = NullLogger.Instance;
-var cancellationToken = CancellationToken.None;
-
-var repository = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
-var search = await repository.GetResourceAsync<PackageSearchResource>();
-var searchFilter = new SearchFilter(includePrerelease: true);
-
-var results = await search.SearchAsync(
-    "json",
-    searchFilter,
-    skip: 0,
-    take: 20,
-    logger,
-    cancellationToken);
-
-foreach (var result in results)
-{
-    Console.WriteLine($"Found package {result.Identity.Id} {result.Identity.Version}");
-}
-```
+[!code-csharp[SearchPackages](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=SearchPackages)]
 
 ## Third-party documentation
 
