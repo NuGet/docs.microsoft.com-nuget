@@ -37,7 +37,7 @@
       "branch_mapping": {}
     },
     {
-      "path_to_root": "nuget-samples",
+      "path_to_root": "_samples",
       "url": "https://github.com/NuGet/Samples",
       "branch": "nuget-protocol-samples",
       "branch_mapping": {}
