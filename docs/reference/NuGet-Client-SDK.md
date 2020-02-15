@@ -26,9 +26,13 @@ dotnet add NuGet.Protocol
 
 You can find these examples on the [NuGet.Protocol.Samples](TODO) project on GitHub.
 
+:::code language="csharp" source="~/nuget-samples/NuGetProtocolSamples/Program.cs" id="tEST":::
+
 ### List package versions
 
 Find all versions of Newtonsoft.Json using the [NuGet V3 Package Content API](../api/package-base-address-resource.md#enumerate-package-versions):
+
+:::code language="csharp" source="~/nuget-samples/NuGetProtocolSamples/Program.cs" id="ListPackageVersions":::
 
 ```csharp
 ILogger logger = NullLogger.Instance;
@@ -53,6 +57,8 @@ foreach (NuGetVersion version in versions)
 ### Download a package
 
 Download Newtonsoft.Json v12.0.1 using the [NuGet V3 Package Content API](../api/package-base-address-resource.md):
+
+:::code language="csharp" source="~/nuget-samples/NuGetProtocolSamples/Program.cs" id="DownloadPackage":::
 
 ```csharp
 ILogger logger = NullLogger.Instance;
@@ -87,6 +93,8 @@ Console.WriteLine($"Description: {nuspecReader.GetDescription()}");
 
 Get the metadata for the "Newtonsoft.Json" package using the [NuGet V3 Package Metadata API](../api/registration-base-url-resource.md):
 
+:::code language="csharp" source="~/nuget-samples/NuGetProtocolSamples/Program.cs" id="GetPackageMetadata":::
+
 ```csharp
 ILogger logger = NullLogger.Instance;
 CancellationToken cancellationToken = CancellationToken.None;
@@ -115,6 +123,8 @@ foreach (IPackageSearchMetadata package in packages)
 ### Search packages
 
 Search for "json" packages using the [NuGet V3 Search API](../api/search-query-service-resource.md):
+
+:::code language="csharp" source="~/nuget-samples/NuGetProtocolSamples/Program.cs" id="SearchPackages":::
 
 ```csharp
 var logger = NullLogger.Instance;
