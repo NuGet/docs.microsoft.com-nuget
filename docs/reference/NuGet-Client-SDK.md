@@ -14,10 +14,10 @@ The *NuGet Client SDK* refers to a group of NuGet packages:
 * [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) - Used to interact with HTTP and file-based NuGet feeds
 * [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) - Used to interact with NuGet packages. `NuGet.Protocol` depends on this package
 
+You can find the source code for these packages on the [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client) GitHub repository.
+
 > [!Note]
 > For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).
-
-You can find the source code for these packages on the [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client) GitHub repository.
 
 ## Getting started
 
