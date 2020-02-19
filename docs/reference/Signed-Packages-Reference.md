@@ -21,7 +21,7 @@ Signed packages provide the strongest end-to-end validation. There are two diffe
 For details on creating an author signed package, see [Signing Packages](../create-packages/Sign-a-package.md) and the [nuget sign command](../reference/cli-reference/cli-ref-sign.md).
 
 > [!Important]
-> Package signing is currently supported only when using nuget.exe on Windows. Verification of signed packages is currently supported only when using nuget.exe or Visual Studio on Windows.
+> Package signing is currently supported only when using nuget.exe on Windows. [Verification of signed packages is currently supported only when using nuget.exe](cli-reference/cli-ref-verify) or Visual Studio on Windows.
 
 ## Certificate requirements
 
