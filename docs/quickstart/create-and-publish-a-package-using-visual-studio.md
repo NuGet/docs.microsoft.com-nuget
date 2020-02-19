@@ -188,6 +188,12 @@ This will include a file named `readme.txt` in the package root. Visual Studio d
 > [!Note]
 > Merely adding the readme.txt at the project root will not result in it being included in the resulting package.
 
+## Related video
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/Create-and-Publish-a-NuGet-Package-with-Visual-Studio-4-of-5/player]
+
+Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+
 ## Related topics
 
 - [Create a Package](../create-packages/creating-a-package-dotnet-cli.md)
