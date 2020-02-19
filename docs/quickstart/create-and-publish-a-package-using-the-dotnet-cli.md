@@ -100,6 +100,12 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nug
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
+## Related video
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/Create-and-Publish-a-NuGet-Package-with-the-NET-CLI-5-of-5/player]
+
+Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+
 ## Next steps
 
 Congratulations on creating your first NuGet package!
@@ -116,9 +122,3 @@ To explore more that NuGet has to offer, select the links below.
 - [Creating localized packages](../create-packages/creating-localized-packages.md)
 - [Creating symbol packages](../create-packages/symbol-packages-snupkg.md)
 - [Signing packages](../create-packages/Sign-a-package.md)
-
-## Related video
-
-> [!Video https://channel9.msdn.com/Series/NuGet-101/Create-and-Publish-a-NuGet-Package-with-the-NET-CLI-5-of-5/player]
-
-Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
