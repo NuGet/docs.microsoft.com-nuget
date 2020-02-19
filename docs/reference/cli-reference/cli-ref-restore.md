@@ -51,7 +51,7 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 Also see [Environment variables](cli-ref-environment-variables.md)
 
 ## Lock file options
-With version 5.3.1, `nuget.exe` supports [lock file as an optional feature](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#locking-dependencies). The lock file can be enabled by setting the MSBuild property `RestorePackagesWithLockFile` for your project.
+With version 5.3.1, `nuget.exe` supports [lock file as an optional feature](../../consume-packages/Package-References-in-Project-Files.md#locking-dependencies). The lock file can be enabled by setting the MSBuild property `RestorePackagesWithLockFile` for your project.
 ```
 <PropertyGroup>
     <!--- ... -->
