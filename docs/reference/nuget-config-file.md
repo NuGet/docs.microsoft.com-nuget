@@ -309,7 +309,7 @@ If an environment variable is not found, NuGet uses the literal value from the c
 
 ## Example config file
 
-Below is an example `nuget.config` file that illustrates a number of settings:
+Below is an example `nuget.config` file that illustrates a number of settings including optional ones:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
