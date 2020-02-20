@@ -123,7 +123,7 @@
 ### [Rate limits](api/rate-limits.md)
 ### [nuget.org protocols](api/nuget-protocols.md)
 ### [tools.json](api/tools-json.md)
-## [NuGet client SDK](reference/nuget-client-sdk.md)
+## [NuGet Client SDK](reference/nuget-client-sdk.md)
 ## [Errors and Warnings](reference/Errors-and-Warnings.md)
 ### [NU1000](reference/errors-and-warnings/NU1000.md)
 ### [NU1001](reference/errors-and-warnings/NU1001.md)
