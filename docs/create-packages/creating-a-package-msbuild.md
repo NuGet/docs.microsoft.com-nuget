@@ -3,7 +3,7 @@ title: Create a NuGet package using MSBuild
 description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
 author: karann-msft
 ms.author: karann
-ms.date: 08/05/2019
+ms.date: 02/20/2020
 ms.topic: conceptual
 ---
 
@@ -64,6 +64,10 @@ You can also set the optional properties, such as `Title`, `PackageDescription`,
 > For packages built for public consumption, pay special attention to the **PackageTags** property, as tags help others find your package and understand what it does.
 
 For details on declaring dependencies and specifying version numbers, see [Package references in project files](../consume-packages/package-references-in-project-files.md) and [Package versioning](../concepts/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `<IncludeAssets>` and `<ExcludeAssets>` attributes. For more information, seee [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+
+## Add an optional description field
+
+[!INCLUDE [add description to package](includes/add-description.md)]
 
 ## Choose a unique package identifier and set the version number
 
