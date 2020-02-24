@@ -9,7 +9,6 @@ An example of a _description_ field with links is shown shown in the following X
   <PropertyGroup>
     <AssemblyTitle>Microsoft Azure.Storage.Blobs client library</AssemblyTitle>
     <Version>12.4.0-preview.1</Version>
-    <DefineConstants>BlobSDK;$(DefineConstants)</DefineConstants>
     <PackageTags>Microsoft Azure Storage Blobs;Microsoft;Azure;Blobs;Blob;Storage;StorageScalable;$(PackageCommonTags)</PackageTags>
     <Description>
       This client library enables working with the Microsoft Azure Storage Blob service for storing binary and text data.
