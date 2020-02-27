@@ -73,6 +73,7 @@ Universal Windows Platform | uap | uap [uap10.0] |
 | | | netstandard1.5 |
 | | | netstandard1.6 |
 | | | netstandard2.0 |
+| | | netstandard2.1 |
 .NET Core App | netcoreapp | netcoreapp1.0 |
 | | | netcoreapp1.1 |
 | | | netcoreapp2.0 |
