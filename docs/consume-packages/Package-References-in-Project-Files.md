@@ -166,6 +166,7 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
 ```
 
 ## Locking dependencies
+
 *This feature is available with NuGet **4.9** or above and with Visual Studio 2017 **15.9** or above.*
 
 Input to NuGet restore is a set of Package References from the project file (top-level or direct dependencies) and the output is a full closure of all the package dependencies including transitive dependencies. NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed. However, there are some scenarios where it is unable to do so. For example:
@@ -181,6 +182,7 @@ Input to NuGet restore is a set of Package References from the project file (top
 * A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraints. This results in NuGet finding the best match when it cannot resolve to the deleted version.
 
 ### Enabling lock file
+
 In order to persist the full closure of package dependencies you can opt-in to the lock file feature by setting the MSBuild property `RestorePackagesWithLockFile` for your project:
 
 ```xml
@@ -247,9 +249,9 @@ If `ProjectA` has a dependency on a `PackageX` version `2.0.0` and also referenc
 
 You can control various behaviors of restore with lock file as described below:
 
-| Option | MSBuild equivalent option | Description|
-|:---  |:--- |:--- |
-| `--use-lock-file` | RestorePackagesWithLockFile | Opts into the usage of a lock file. | 
-| `--locked-mode` | RestoreLockedMode | Enables locked mode for restore. This is useful in CI/CD scenarios where you want repeatable builds.|   
-| `--force-evaluate` | RestoreForceEvaluate | This option is useful with packages with floating version defined in the project. By default, NuGet restore will not update the package version automatically upon each restore unless you run restore with this option. |
-| `--lock-file-path` | NuGetLockFilePath | Defines a custom lock file location for a project. By default, NuGet supports `packages.lock.json` at the root directory. If you have multiple projects in the same directory, NuGet supports project specific lock file `packages.<project_name>.lock.json` |
+| NuGet.exe option | dotnet option | MSBuild equivalent option | Description |
+|:--- |:--- |:--- |:--- |
+| `-UseLockFile` |`--use-lock-file` | RestorePackagesWithLockFile | Opts into the usage of a lock file. |
+| `-LockedMode` | `--locked-mode` | RestoreLockedMode | Enables locked mode for restore. This is useful in CI/CD scenarios where you want repeatable builds.|   
+| `-ForceEvaluate` | `--force-evaluate` | RestoreForceEvaluate | This option is useful with packages with floating version defined in the project. By default, NuGet restore will not update the package version automatically upon each restore unless you run restore with this option. |
+| `-LockFilePath` | `--lock-file-path` | NuGetLockFilePath | Defines a custom lock file location for a project. By default, NuGet supports `packages.lock.json` at the root directory. If you have multiple projects in the same directory, NuGet supports project specific lock file `packages.<project_name>.lock.json` |
