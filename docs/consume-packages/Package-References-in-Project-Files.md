@@ -225,7 +225,7 @@ Examples:
 </PropertyGroup>
 ...
 <PropertyGroup>
-    <NoWarn>$(NoWarn);NU5124</WarningsAsErrors>
+    <NoWarn>$(NoWarn);NU5124</NoWarn>
 </PropertyGroup>
 ...
 <ItemGroup>
@@ -241,7 +241,7 @@ To suppress a warning project wide, consider doing:
 ```xml
 <PropertyGroup>
     <PackageVersion>5.0.0</PackageVersion>
-    <NoWarn>$(NoWarn);NU5104</WarningsAsErrors>
+    <NoWarn>$(NoWarn);NU5104</NoWarn>
 </PropertyGroup>
 <ItemGroup>
     <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1"/>
