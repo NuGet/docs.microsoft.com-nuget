@@ -377,6 +377,8 @@ The following example shows different variations of the `<group>` element:
     </group>
 </dependencies>
 ```
+> [!Note]
+> The format of TFM identifier used in `assembly paths` is different when compared to the TFM identifier used in `dependency groups`. If the target frameworks declared in the dependencies group of the `nuspec` and the `lib/ref` folder do not have exact matches then `pack` command will raise [NuGet Warning NU5128](../reference/errors-and-warnings/nu5128).
 
 <a name="specifying-explicit-assembly-references"></a>
 
