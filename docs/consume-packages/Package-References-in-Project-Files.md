@@ -165,7 +165,44 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
 </ItemGroup>
 ```
 
+## GeneratePathProperty
+
+*Version **4.9** or above*
+
+Not all packages are authored in conventional manner. Very often authors would include tools in packages, and the usage story for those packages is unclear.
+In `packages.config` based projects, the packages are installed in a folder relative to the project file. However in PackageReference, the packages are [consumed](../concepts/package-installation-process.md) from the *global-packages* folder, which can vary from machine to machine.
+
+To bridge that gap, NuGet has introduce property that points to the location from which the package will be consumed.
+
+Example:
+
+```xml
+  <ItemGroup>
+      <PackageReference Include="Some.Package" Version="1.0.0" GeneratePathProperty="true" />
+  </ItemGroup>
+
+  <Target Name="TakeAction" AfterTargets="Build">
+    <Exec Command="$(PkgSome_Package)\something.exe" />
+  </Target>
+````
+
+Additionally NuGet will automatically generate properties for packages containing a tools folder.
+
+```xml
+  <ItemGroup>
+      <PackageReference Include="Package.With.Tools" Version="1.0.0" />
+  </ItemGroup>
+
+  <Target Name="TakeAction" AfterTargets="Build">
+    <Exec Command="$(PkgPackage_With_Tools)\tools\tool.exe" />
+  </Target>
+````
+
+MSBuild properties and package identities do not have the same restrictions so the package identity needs to be changed to an MSBuild friendly name, prefixed by the word `Pkg`.
+To verify the exact name of the property generated, look at the generated [nuget.g.props](../reference/msbuild-targets.md#Restore-outputs) file.
+
 ## Locking dependencies
+
 *This feature is available with NuGet **4.9** or above and with Visual Studio 2017 **15.9** or above.*
 
 Input to NuGet restore is a set of Package References from the project file (top-level or direct dependencies) and the output is a full closure of all the package dependencies including transitive dependencies. NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed. However, there are some scenarios where it is unable to do so. For example:
