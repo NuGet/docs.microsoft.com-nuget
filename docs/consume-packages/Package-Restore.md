@@ -119,10 +119,12 @@ To enable or disable Package Restore for all users on a computer, a developer or
 
 ![Control default package management format though NuGet Package Manager options](media/Restore-02-PackageFormatOptions.png)
 
-NuGet has two formats in which a project may use packages, `PackageReference` and `packages.config`. The default format can be selected from the drop down under the **Package Management** heading. An option to be prompted when the first package is installed in a project is also available.
+NuGet has two formats in which a project may use packages: [`PackageReference`](package-references-in-project-files.md) and [`packages.config`](../reference/packages-config.md). The default format can be selected from the drop down under the **Package Management** heading. An option to be prompted when the first package is installed in a project is also available.
 
 > [!Note]
-> If a project does not support both package management formats, the package management format used will be the one that's compatible with the project, and therefore may not be the default set in the options. When a project does not support both package management formats, NuGet will not prompt for selection on first package installation, even if the option is selected in options.
+> If a project does not support both package management formats, the package management format used will be the one that's compatible with the project, and therefore may not be the default set in the options. When a project does not support both package management formats, NuGet will not prompt for selection on first package installation, even if the option is selected in the options window.
+>
+> If Package Manager Console is used to install the first package in a project, NuGet will not prompt for format selection, even if the option is selected in the options window.
 
 ## Restore using the dotnet CLI
 
