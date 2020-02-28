@@ -25,10 +25,11 @@ The [MSBuild CLI](reference/msbuild-targets.md) also provides the ability to res
 
 Package Manager Console commands work only within Visual Studio on Windows and do not work within other PowerShell environments.
 
-## Install on Visual Studio 2017 and newer
+## Visual Studio
+### Install on Visual Studio 2017 and newer
 Starting in Visual Studio 2017, the installer includes the NuGet Package Manager with any workload that employs .NET. To install separately, or to verify that the Package Manager is installed, run the Visual Studio installer and check the option under **Individual Components > Code tools > NuGet package manager**.
 
-## Install on Visual Studio 2015 and older
+### Install on Visual Studio 2015 and older
 NuGet Extensions for Visual Studio 2013 and 2015 can be downloaded from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 
 For Visual Studio 2010 and earlier, install the "NuGet Package Manager for Visual Studio" extension. Note, if you can't see the extension in the first page of search results, try changing the Sort By dropdown to "Most Downloads", or an alphabetical sort.
