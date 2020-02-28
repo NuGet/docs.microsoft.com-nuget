@@ -1,1 +1,0 @@
-This folder a holding location for content being removed from the main documentation, typically material that applies to earlier versions that will likely be moved into a permanent archive location.

@@ -121,6 +121,9 @@ Lists all known package sources. The order is ignored during restore operations 
 </packageSources>
 ```
 
+> [!Tip]
+> When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
+
 ### packageSourceCredentials
 
 Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`. Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.
@@ -300,13 +303,13 @@ You can use environment variables in `nuget.config` values (NuGet 3.4+) to apply
 
 For example, if the `HOME` environment variable on Windows is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file resolves to `c:\users\username\NuGetRepository`.
 
-Similarly, if `HOME` on Mac/Linux is set to `/home/myStuff`, then `%HOME%/NuGetRepository` in the configuration file resolves to `/home/myStuff/NuGetRepository`.
+Similarly, if `HOME` on Mac/Linux is set to `/home/myStuff`, then `$HOME/NuGetRepository` in the configuration file resolves to `/home/myStuff/NuGetRepository`.
 
 If an environment variable is not found, NuGet uses the literal value from the configuration file.
 
 ## Example config file
 
-Below is an example `nuget.config` file that illustrates a number of settings:
+Below is an example `nuget.config` file that illustrates a number of settings including optional ones:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

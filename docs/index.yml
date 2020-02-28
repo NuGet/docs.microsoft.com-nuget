@@ -1,0 +1,148 @@
+### YamlMime:Hub
+title: NuGet documentation
+summary: NuGet is the package manager for .NET. It enables developers to create, share, and consume useful .NET libraries. NuGet client tools provide the ability to produce and consume these libraries as "packages".
+brand: nuget
+metadata:
+   title: NuGet documentation | Microsoft Docs
+   titleSuffix: ""
+   description: NuGet is the package manager for Microsoft development platforms including .NET. The NuGet client tools provide the ability to create and consume packages.
+   ms.topic: hub-page
+   author: karann-msft
+   ms.author: karann
+   ms.date: 01/13/2020
+
+highlightedContent:
+   items:
+   - title: What is NuGet?
+     itemType: overview
+     url: /nuget/what-is-nuget
+   - title: Install NuGet client tools
+     itemType: download
+     url: /nuget/install-nuget-client-tools
+   - title: Learn NuGet
+     itemType: video
+     url: https://aka.ms/Nuget101
+   - title: NuGet.org
+     itemType: overview
+     url: /nuget/nuget-org/overview-nuget-org
+
+
+conceptualContent:
+  title: Consume, create, and publish packages
+  items:
+    - title: Get started
+      links:
+        - text: Install NuGet client tools
+          itemType: download
+          url: /nuget/install-nuget-client-tools
+        - text: Install and use a package - dotnet CLI
+          itemType: quickstart
+          url: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
+        - text: Install and use a package - Visual Studio
+          itemType: quickstart
+          url: /nuget/quickstart/install-and-use-a-package-in-visual-studio
+        - text: Create a package - dotnet CLI
+          itemType: quickstart
+          url: /nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli
+        - text: Create a package - Visual Studio
+          itemType: quickstart
+          url: /nuget/quickstart/create-and-publish-a-package-using-visual-studio
+        - text: Create a .NET Framework package - Visual Studio
+          itemType: quickstart
+          url: /nuget/quickstart/create-and-publish-a-package-using-visual-studio-net-framework
+    - title: Consume packages
+      links:
+        - text: Workflow (overview)
+          itemType: overview
+          url: /nuget/consume-packages/overview-and-workflow
+        - text: Find and choose packages
+          itemType: get-started
+          url: /nuget/consume-packages/finding-and-choosing-packages
+        - text: Use Visual Studio
+          itemType: how-to-guide
+          url: /nuget/consume-packages/install-use-packages-visual-studio
+        - text: Use dotnet CLI
+          itemType: how-to-guide
+          url: /nuget/consume-packages/install-use-packages-dotnet-cli
+        - text: Use nuget.exe CLI
+          itemType: how-to-guide
+          url: /nuget/consume-packages/install-use-packages-nuget-cli
+        - text: Use Package Manager Console
+          itemType: how-to-guide
+          url: /nuget/consume-packages/install-use-packages-powershell
+    - title: Create packages
+      links:
+        - text: Workflow (overview)
+          itemType: overview
+          url: /nuget/create-packages/overview-and-workflow
+        - text: Use Visual Studio
+          itemType: how-to-guide
+          url: /nuget/quickstart/create-and-publish-a-package-using-visual-studio
+        - text: Use dotnet CLI
+          itemType: how-to-guide
+          url: /nuget/create-packages/creating-a-package-dotnet-cli
+        - text: Use nuget.exe CLI
+          itemType: how-to-guide
+          url: /nuget/create-packages/creating-a-package
+        - text: Use MSBuild
+          itemType: how-to-guide
+          url: /nuget/create-packages/creating-a-package-msbuild
+        - text: Support multiple target frameworks
+          itemType: reference
+          url: /nuget/create-packages/multiple-target-frameworks-project-file
+    - title: Publish packages
+      links:
+        - text: Publish to NuGet.org
+          itemType: overview
+          url: /nuget/nuget-org/publish-a-package
+        - text: Publish to a private feed
+          itemType: overview
+          url: /nuget/hosting-packages/overview
+
+additionalContent:
+   sections:
+   - title: Reference and resources
+     items:
+        - title: NuGet.org
+          links:
+            - text: Overview
+              url: /nuget/nuget-org/overview-nuget-org
+            - text: Individual accounts
+              url: /nuget/nuget-org/individual-accounts
+            - text: Organizations
+              url: /nuget/nuget-org/organizations-on-nuget-org
+            - text: API keys
+              url: /nuget/nuget-org/scoped-api-keys
+            - text: Publish a package
+              url: /nuget/nuget-org/publish-a-package
+        - title: Reference
+          links:
+            - text: dotnet CLI
+              url: /nuget/reference/dotnet-commands
+            - text: nuget.exe CLI
+              url: /nuget/reference/nuget-exe-cli-reference
+            - text: Package references
+              url: /nuget/consume-packages/package-references-in-project-files
+            - text: pack and restore as MSBuild targets
+              url: /nuget/reference/msbuild-targets
+            - text: .nuspec
+              url: /nuget/reference/nuspec
+            - text: nuget.config
+              url: /nuget/reference/nuget-config-file
+            - text: NuGet API
+              url: /nuget/api/overview
+        - title: Resources
+          links:
+            - text: Policies - NuGet
+              url: /nuget/policies/governance
+            - text: Policies - NuGet.org
+              url: /nuget/nuget-org/policies/data-requests
+            - text: Release notes
+              url: /nuget/release-notes/known-issues
+            - text: FAQ - NuGet
+              url: /nuget/resources/nuget-faq
+            - text: FAQ - NuGet.org
+              url: /nuget/nuget-org/nuget-org-faq
+
+
+   footer: "[Blogs](https://devblogs.microsoft.com/nuget/) - [Twitter](https://twitter.com/nuget) - [Stack Overflow](https://stackoverflow.com/questions/tagged/nuget)"

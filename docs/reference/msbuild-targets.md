@@ -115,7 +115,7 @@ To suppress package dependencies from generated NuGet package, set `SuppressDepe
 
 `PackageIconUrl` will be deprecated in favor of the new [`PackageIcon`](#packageicon) property.
 
-Starting with NuGet 5.3 & Visual Studio 2019 version 16.3, `pack` will raise [NU5048](errors-and-warnings/nu5048) warning if the package metadata only specifies `PackageIconUrl`.
+Starting with NuGet 5.3 & Visual Studio 2019 version 16.3, `pack` will raise [NU5048](./errors-and-warnings/nu5048.md) warning if the package metadata only specifies `PackageIconUrl`.
 
 ### PackageIcon
 
@@ -124,7 +124,7 @@ Starting with NuGet 5.3 & Visual Studio 2019 version 16.3, `pack` will raise [NU
 
 #### Packing an icon image file
 
-When packing an icon image file, you need to use `PackageIcon` property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resolution of 64x64.
+When packing an icon image file, you need to use `PackageIcon` property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resolution of 128x128.
 
 For example:
 

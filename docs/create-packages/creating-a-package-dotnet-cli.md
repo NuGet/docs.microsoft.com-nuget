@@ -3,7 +3,7 @@ title: Create a NuGet package using the dotnet CLI
 description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
 author: karann-msft
 ms.author: karann
-ms.date: 07/09/2019
+ms.date: 02/20/2020
 ms.topic: conceptual
 ---
 
@@ -63,6 +63,10 @@ You can also set the optional properties, such as `Title`, `PackageDescription`,
 
 For details on declaring dependencies and specifying version numbers, see [Package references in project files](../consume-packages/package-references-in-project-files.md) and [Package versioning](../concepts/package-versioning.md). It is also possible to surface assets from dependencies directly in the package by using the `<IncludeAssets>` and `<ExcludeAssets>` attributes. For more information, seee [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
 
+## Add an optional description field
+
+[!INCLUDE [add description to package](includes/add-description.md)]
+
 ## Choose a unique package identifier and set the version number
 
 [!INCLUDE [choose-package-id](includes/choose-package-id.md)]
@@ -117,6 +121,7 @@ You might also want to extend the capabilities of your package or otherwise supp
 
 - [Package versioning](../concepts/package-versioning.md)
 - [Support multiple target frameworks](../create-packages/multiple-target-frameworks-project-file.md)
+- [Add a package icon](../reference/nuspec.md#icon)
 - [Transformations of source and configuration files](../create-packages/source-and-config-file-transformations.md)
 - [Localization](../create-packages/creating-localized-packages.md)
 - [Pre-release versions](../create-packages/prerelease-packages.md)

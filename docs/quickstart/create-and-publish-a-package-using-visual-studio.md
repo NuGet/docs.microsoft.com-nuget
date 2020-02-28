@@ -25,7 +25,7 @@ It's a simple process to create a NuGet package from a .NET Standard Class Libra
    > [!Important]
    > If you are working with a non-SDK-style project, follow the procedures in [Create and publish a .NET Framework package (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md) to create and publish the package instead. For this article, the `dotnet` CLI is recommended. Although you can publish any NuGet package using the `nuget.exe` CLI, some of the steps in this article are specific to SDK-style projects and the dotnet CLI. The nuget.exe CLI is used for [non-SDK-style projects](../resources/check-project-format.md) (typically .NET Framework).
 
-1. [Register for a free account on nuget.org](https://docs.microsoft.com/nuget/nuget-org/individual-accounts#add-a-new-individual-account) if you don't have one already. Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
+1. [Register for a free account on nuget.org](../nuget-org/individual-accounts.md#add-a-new-individual-account) if you don't have one already. Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
 
 ## Create a class library project
 
@@ -187,6 +187,12 @@ This will include a file named `readme.txt` in the package root. Visual Studio d
 
 > [!Note]
 > Merely adding the readme.txt at the project root will not result in it being included in the resulting package.
+
+## Related video
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/Create-and-Publish-a-NuGet-Package-with-Visual-Studio-4-of-5/player]
+
+Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
 ## Related topics
 
