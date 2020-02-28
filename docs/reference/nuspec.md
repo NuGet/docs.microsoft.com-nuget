@@ -393,19 +393,6 @@ For example, the following `<references>` element instructs NuGet to add referen
 </references>
 ```
 
-## Explicit assembly references
-
-The `<references>` element is used by projects using `packages.config` to explicitly specify the assemblies that the target project should reference when using the package. Explicit references are typically used for design-time only assemblies. For more information, see the page on [selecting assemblies referenced by projects](../create-packages/select-assemblies-referenced-by-projects.md) for more information.
-
-For example, the following `<references>` element instructs NuGet to add references to only `xunit.dll` and `xunit.extensions.dll` even if there are additional assemblies in the package:
-
-```xml
-<references>
-    <reference file="xunit.dll" />
-    <reference file="xunit.extensions.dll" />
-</references>
-```
-
 ### Reference groups
 
 As an alternative to a single flat list, references can be specified according to the framework profile of the target project using `<group>` elements within `<references>`.
