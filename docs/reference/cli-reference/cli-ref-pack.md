@@ -71,6 +71,14 @@ For example, consider the following `packages.config` file in the source project
 
 For this project, the package created by `nuget pack` will have a dependency on `jQuery` and `microsoft-web-helpers` but not `netfx-Guard`.
 
+## Suppressing pack warnings
+
+While it is recommended that you resolve all NuGet warnings during your pack operations, in certain situations suppressing them is warranted.
+
+You can achieve that in the following way: 
+
+> nuget.exe pack package.nuspec -Properties NoWarn=NU5104
+
 ## Examples
 
 ```cli
