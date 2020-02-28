@@ -201,6 +201,69 @@ Additionally NuGet will automatically generate properties for packages containin
 MSBuild properties and package identities do not have the same restrictions so the package identity needs to be changed to an MSBuild friendly name, prefixed by the word `Pkg`.
 To verify the exact name of the property generated, look at the generated [nuget.g.props](../reference/msbuild-targets.md#restore-outputs) file.
 
+## NuGet warnings and errors
+
+*This feature is available with NuGet **4.3** or above and with Visual Studio 2017 **15.3** or above.*
+
+For many pack and restore scenarios, all NuGet warnings and errors are coded, and start with `NU****`. All NuGet warnings and errors are listed in the [reference](../reference/errors-and-warnings) documentation.
+
+NuGet observes the following warning properties:
+
+- `TreatWarningsAsErrors`, treat all warnings as errors
+- `WarningsAsErrors`, treat specific warnings as errors
+- `NoWarn`, hide specific warnings, either project-wide or package-wide.
+
+Examples:
+
+```xml
+<PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+</PropertyGroup>
+...
+<PropertyGroup>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1603;NU1605</WarningsAsErrors>
+</PropertyGroup>
+...
+<PropertyGroup>
+    <NoWarn>$(NoWarn);NU5124</WarningsAsErrors>
+</PropertyGroup>
+...
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0" NoWarn="NU1605" />
+</ItemGroup>
+```
+
+### Suppressing NuGet warnings
+
+While it is recommended that you resolve all NuGet warnings during your pack and restore operations, in certain situations suppressing them is warranted.
+To suppress a warning project wide, consider doing:
+
+```xml
+<PropertyGroup>
+    <PackageVersion>5.0.0</PackageVersion>
+    <NoWarn>$(NoWarn);NU5104</WarningsAsErrors>
+</PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1"/>
+</ItemGroup>
+```
+
+Sometimes warnings apply only to a certain package in the graph. We can choose to suppress that warning more selectively by adding a `NoWarn` on the PackageReference item. 
+
+```xml
+<PropertyGroup>
+    <PackageVersion>5.0.0</PackageVersion>
+</PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1" NoWarn="NU1603" />
+</ItemGroup>
+```
+
+#### Suppressing NuGet package warnings in Visual Studio
+
+When in Visual Studio, you can also [suppress warnings](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages
+) through the IDE.
+
 ## Locking dependencies
 
 *This feature is available with NuGet **4.9** or above and with Visual Studio 2017 **15.9** or above.*
