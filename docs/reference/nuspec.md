@@ -226,8 +226,6 @@ A human-friendly title of the package which may be used in some UI displays. (nu
 A collection of zero or more `<dependency>` elements specifying the dependencies for the package. Each dependency has attributes of *id*, *version*, *include* (3.x+), and *exclude* (3.x+). See [Dependencies](#dependencies-element) below.
 #### frameworkAssemblies
 *(1.2+)* A collection of zero or more `<frameworkAssembly>` elements identifying .NET Framework assembly references that this package requires, which ensures that references are added to projects consuming the package. Each frameworkAssembly has *assemblyName* and *targetFramework* attributes. See [Specifying framework assembly references GAC](#specifying-framework-assembly-references-gac) below.
-#### frameworkReferences
-*(5.1+)* A collection of one or more `<frameworkReference>` elements identifying the shared frameworks that this package requires, and ensures they are included in the consuming projects.. Each frameworkAssembly has *assemblyName* and *targetFramework* attributes. See [Specifying framework assembly references GAC](#specifying-framework-assembly-references-gac) below.
 #### references
 *(1.5+)* A collection of zero or more `<reference>` elements naming assemblies in the package's `lib` folder that are added as project references. Each reference has a *file* attribute. `<references>` can also contain a `<group>` element with a *targetFramework* attribute, that then contains `<reference>` elements. If omitted, all references in `lib` are included. See [Specifying explicit assembly references](#specifying-explicit-assembly-references) below.
 #### contentFiles
