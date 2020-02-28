@@ -61,6 +61,10 @@ To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://w
 
     This command stores your API key in your NuGet configuration so that you don't need to repeat this step again on the same computer.
 
+    > [!NOTE]
+    > API key is not used for authenticating with the private feed. Refer to [`nuget sources` command](../reference/cli-reference/cli-ref-sources.md) to manage credentials for authenticating with the source.
+    > API keys can be obtained from the individual NuGet servers. To create and manange APIKeys for nuget.org refer to [publish-api-key](../quickstart/includes/publish-api-key.md)
+
 1. Push your package to NuGet Gallery using the following command:
 
     ```cli
