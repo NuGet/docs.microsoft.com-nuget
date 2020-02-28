@@ -39,7 +39,7 @@ The NuGet Package Manager UI in Visual Studio on Windows allows you to easily in
 > To include prerelease versions in the search, and to make prerelease versions available in the version drop-down, select the **Include prerelease** option.
 
 > [!Note]
-> NuGet has two formats in which a project may use packages: [`PackageReference`](package-references-in-project-files.md) and [`packages.config`](../reference/packages-config.md). [The default can be set in Visual Studio's options window](Package-Restore.md#Choose-default-package-management-format).
+> NuGet has two formats in which a project may use packages: [`PackageReference`](package-references-in-project-files.md) and [`packages.config`](../reference/packages-config.md). [The default can be set in Visual Studio's options window](Package-Restore.md#choose-default-package-management-format).
 
 ## Uninstall a package
 
