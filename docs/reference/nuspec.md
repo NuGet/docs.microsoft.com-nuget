@@ -349,7 +349,52 @@ The following lines indicate dependencies on the same packages, but specify to i
 > [!Important]
 > When creating a `.nuspec` from a project using `nuget spec`, dependencies that exist in that project are not automatically included in the resulting `.nuspec` file. Instead, use `nuget pack myproject.csproj`, and get the *.nuspec* file from within the generated *.nupkg* file. This *.nuspec* contains the dependencies.
 
-F
+### Dependency groups
+
+*Version 2.0+*
+
+As an alternative to a single flat list, dependencies can be specified according to the framework profile of the target project using `<group>` elements within `<dependencies>`.
+
+Each group has an attribute named `targetFramework` and contains zero or more `<dependency>` elements. Those dependencies are installed together when  the target framework is compatible with the project's framework profile.
+
+The `<group>` element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](../reference/target-frameworks.md) for the exact framework identifiers.
+
+> [!Important]
+> The group format cannot be intermixed with a flat list.
+
+The following example shows different variations of the `<group>` element:
+
+```xml
+<dependencies>
+    <group>
+        <dependency id="RouteMagic" version="1.1.0" />
+    </group>
+
+    <group targetFramework="net40">
+        <dependency id="jQuery" version="1.6.2" />
+        <dependency id="WebActivator" version="1.4.4" />
+    </group>
+
+    <group targetFramework="sl30">
+    </group>
+</dependencies>
+```
+
+<a name="specifying-explicit-assembly-references"></a>
+
+## Explicit assembly references
+
+The `<references>` element is used by projects using `packages.config` to explicitly specify the assemblies that the target project should reference when using the package. Explicit references are typically used for design-time only assemblies. For more information, see the page on [selecting assemblies referenced by projects](../create-packages/select-assemblies-referenced-by-projects.md) for more information.
+
+For example, the following `<references>` element instructs NuGet to add references to only `xunit.dll` and `xunit.extensions.dll` even if there are additional assemblies in the package:
+
+```xml
+<references>
+    <reference file="xunit.dll" />
+    <reference file="xunit.extensions.dll" />
+</references>
+```
+
 ## Explicit assembly references
 
 The `<references>` element is used by projects using `packages.config` to explicitly specify the assemblies that the target project should reference when using the package. Explicit references are typically used for design-time only assemblies. For more information, see the page on [selecting assemblies referenced by projects](../create-packages/select-assemblies-referenced-by-projects.md) for more information.
