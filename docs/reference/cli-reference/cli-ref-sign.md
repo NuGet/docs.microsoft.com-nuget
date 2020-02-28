@@ -37,7 +37,7 @@ where `<package(s)>` is one or more `.nupkg` files.
 | CertificateSubjectName | Specifies the subject name of the certificate used to search a local certificate store for the certificate.  The search is a case-insensitive string comparison using the supplied value, which will find all certificates with the subject name containing that string, regardless of other subject values.  The certificate store can be specified by -CertificateStoreName and -CertificateStoreLocation options. |
 | ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
 | ForceEnglishOutput | Forces nuget.exe to run using an invariant, English-based culture. |
-| HashAlgorithm | Hash algorithm to be used to sign the package. Defaults to SHA256. |
+| HashAlgorithm | Hash algorithm to be used to sign the package. Defaults to SHA256. Possible values are SHA256, SHA384, and SHA512. |
 | Help | Displays help information for the command. |
 | NonInteractive | Suppresses prompts for user input or confirmations. |
 | OutputDirectory | Specifies the directory where the signed package should be saved. By default the original package is overwritten by the signed package. |
