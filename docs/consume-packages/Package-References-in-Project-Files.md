@@ -199,7 +199,7 @@ Additionally NuGet will automatically generate properties for packages containin
 ````
 
 MSBuild properties and package identities do not have the same restrictions so the package identity needs to be changed to an MSBuild friendly name, prefixed by the word `Pkg`.
-To verify the exact name of the property generated, look at the generated [nuget.g.props](../reference/msbuild-targets.md#Restore-outputs) file.
+To verify the exact name of the property generated, look at the generated [nuget.g.props](../reference/msbuild-targets.md#restore-outputs) file.
 
 ## Locking dependencies
 
