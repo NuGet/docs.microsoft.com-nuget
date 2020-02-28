@@ -18,7 +18,7 @@ NuGet uses target framework references in a variety of places to specifically id
 - [packages.config](../reference/packages-config.md): The `targetframework` attribute of a dependency specifies the variant of a package to install.
 
 > [!Note]
-> NuGet client source code that calculates the tables below is found in the following locations:
+> The NuGet client source code that calculates the tables below is found in the following locations:
 > - Supported framework names: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
 > - Framework precedence and mapping: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
