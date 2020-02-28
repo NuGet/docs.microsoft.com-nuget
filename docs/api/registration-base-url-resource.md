@@ -215,7 +215,7 @@ Each package dependency has the following properties:
 Name         | Type   | Required | Notes
 ------------ | ------ | -------- | -----
 id           | string | yes      | The ID of the package dependency
-range        | object | no       | The allowed [version range](../concepts/package-versioning.md#version-ranges-and-wildcards) of the dependency
+range        | object | no       | The allowed [version range](../concepts/package-versioning.md#version-ranges) of the dependency
 registration | string | no       | The URL to the registration index for this dependency
 
 If the `range` property is excluded or an empty string, the client should default to the version range `(, )`. That is,
@@ -248,7 +248,7 @@ The alternate package object has the following properties:
 Name         | Type   | Required | Notes
 ------------ | ------ | -------- | -----
 id           | string | yes      | The ID of the alternate package
-range        | object | no       | The allowed [version range](../concepts/package-versioning.md#version-ranges-and-wildcards), or `*` if any version is allowed
+range        | object | no       | The allowed [version range](../concepts/package-versioning.md#version-ranges), or `*` if any version is allowed
 
 ### Sample request
 

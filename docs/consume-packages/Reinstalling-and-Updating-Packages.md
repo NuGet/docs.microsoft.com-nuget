@@ -54,7 +54,7 @@ To set a constraint, open `packages.config` in a text editor, locate the depende
 </packages>
 ```
 
-In all cases, use the notation described in [Package versioning](../concepts/package-versioning.md#version-ranges-and-wildcards).
+In all cases, use the notation described in [Package versioning](../concepts/package-versioning.md#version-ranges).
 
 ## Using Update-Package
 

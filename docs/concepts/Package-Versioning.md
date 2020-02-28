@@ -17,7 +17,7 @@ When creating a package, you assign a specific version number with an optional p
 In this topic:
 
 - [Version basics](#version-basics) including pre-release suffixes.
-- [Version ranges and wildcards](#version-ranges-and-wildcards)
+- [Version ranges](#version-ranges)
 - [Normalized version numbers](#normalized-version-numbers)
 
 ## Version basics
@@ -93,7 +93,7 @@ Third-party clients:
 <!-- For compatibility with previous dependency-versions page -->
 <a name="version-ranges"></a>
 
-## Version ranges and wildcards
+## Version ranges
 
 When referring to package dependencies, NuGet supports using interval notation for specifying version ranges, summarized as follows:
 
@@ -109,7 +109,7 @@ When referring to package dependencies, NuGet supports using interval notation f
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | Mixed inclusive minimum and exclusive maximum version |
 | (1.0)    | invalid | invalid |
 
-When using the PackageReference format, NuGet also supports using a wildcard notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number. Wildcards are not supported with the `packages.config` format.
+When using the PackageReference format, NuGet also supports using a floating notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number. Floating versions are not supported with the `packages.config` format.
 
 > [!Note]
 > Version ranges in PackageReference include pre-release versions. By design, floating versions do not resolve prerelease versions unless opted into. For the status of the related feature request, see [issue 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297).
