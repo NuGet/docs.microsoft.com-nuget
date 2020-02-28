@@ -739,6 +739,33 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
 </package>
 ```
 
+## Framework reference groups
+
+*Version 5.1+ wih PackageReference only*
+
+Framework References are a .NET Core concept representing shared frameworks such as WPF or Windows Forms.
+By specifying a shared framework, the package ensures that all its framework dependencies are included in the referencing project.
+
+Each `<group>` element requires a `targetFramework` attribute and zero or more `<frameworkReference>` elements.
+
+The following example shows a nuspec generated for a .NET Core WPF project.
+Note that hand authoring nuspecs that contain framework references is not recommended. Consider using the [targets](msbuild-targets.md) pack instead, which will automatically infer them from the project.
+
+```xml
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+</package>
+```
+
 ## Example nuspec files
 
 **A simple `.nuspec` that does not specify dependencies or files**
