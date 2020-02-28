@@ -368,12 +368,12 @@ The following example shows different variations of the `<group>` element:
         <dependency id="RouteMagic" version="1.1.0" />
     </group>
 
-    <group targetFramework="net40">
+    <group targetFramework=".NETFramework4.7.2">
         <dependency id="jQuery" version="1.6.2" />
         <dependency id="WebActivator" version="1.4.4" />
     </group>
 
-    <group targetFramework="sl30">
+    <group targetFramework="Silverlight4.0">
     </group>
 </dependencies>
 ```
