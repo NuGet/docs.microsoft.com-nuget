@@ -47,7 +47,7 @@ The resulting solution contains two Shared projects, along with a variety of pla
 
 - The `ILoggingLibrary` project, which is contained in the `ILoggingLibrary.shared.cs` file, defines the public interface (the API surface area) of the component. This is where you define the interface to your library.
 - The other Shared project contains code in `CrossLoggingLibrary.shared.cs` that will locate a platform-specific implementation of the abstract interface at run time. You typically don't need to modify this file.
-- The platform-specific projects, such as `LoggingLibrary.android.cs`, each contain contain a native implementation of the interface in their respective `LoggingLibraryImplementation.cs` (VS 2017) or `LoggingLibrary.<PLATFORM>.cs` (VS 2019) files. This is where you build out your library's code.
+- The platform-specific projects, such as `LoggingLibrary.android.cs`, each contain a native implementation of the interface in their respective `LoggingLibraryImplementation.cs` (VS 2017) or `LoggingLibrary.<PLATFORM>.cs` (VS 2019) files. This is where you build out your library's code.
 
 By default, the ILoggingLibrary.shared.cs file of the `ILoggingLibrary` project contains an interface definition, but no methods. For the purposes of this walkthrough, add a `Log` method as follows:
 
