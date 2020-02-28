@@ -249,7 +249,7 @@ If `ProjectA` has a dependency on a `PackageX` version `2.0.0` and also referenc
 
 You can control various behaviors of restore with lock file as described below:
 
-| NuGet.exe option | dotnet pption | MSBuild equivalent option | Description |
+| NuGet.exe option | dotnet option | MSBuild equivalent option | Description |
 |:--- |:--- |:--- |:--- |
 | `-UseLockFile` |`--use-lock-file` | RestorePackagesWithLockFile | Opts into the usage of a lock file. |
 | `-LockedMode` | `--locked-mode` | RestoreLockedMode | Enables locked mode for restore. This is useful in CI/CD scenarios where you want repeatable builds.|   
