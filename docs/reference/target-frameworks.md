@@ -19,7 +19,7 @@ NuGet uses target framework references in a variety of places to specifically id
 
 > [!Note]
 > The format of TFM identifier used in `assembly paths` is different when compared to the TFM identifier used in `dependency groups`. If the target frameworks declared in the dependencies group of the `nuspec` and the `lib/ref` folder do not have exact matches then `pack` command will raise [NuGet Warning NU5128](../reference/errors-and-warnings/nu5128).
-
+>
 > NuGet client source code that calculates the tables below is found in the following locations:
 > - Supported framework names: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
 > - Framework precedence and mapping: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
