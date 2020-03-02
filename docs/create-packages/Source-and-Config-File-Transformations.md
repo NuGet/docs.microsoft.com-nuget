@@ -10,8 +10,6 @@ ms.reviewer: anangaur
 
 # Transforming source code and configuration files
 
-For projects using `packages.config`, NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times. Only Source code transformations are applied when a package is installed in a project using [PackageReference](../consume-packages/package-references-in-project-files.md).
-
 A **source code transformation** applies one-way token replacement to files in the package's `content` or `contentFiles` folder (`content` for customers using `packages.config` and `contentFiles` for `PackageReference`) when the package is installed, where tokens refer to Visual Studio [project properties](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7). This allows you to insert a file into the project's namespace, or to customize code that would typically go into `global.asax` in an ASP.NET project.
 
 A **config file transformation** allows you to modify files that already exist in a target project, such as `web.config` and `app.config`. For example, your package might need to add an item to the `modules` section in the config file. This transformation is done by including special files in the package that describe the sections to add to the configuration files. When a package is uninstalled, those same changes are then reversed, making this a two-way transformation.
@@ -108,6 +106,9 @@ To examine its `web.config.transform` file, download the ELMAH package from the 
 To see the effect of installing and uninstalling the package, create a new ASP.NET project in Visual Studio (the template is under **Visual C# > Web** in the New Project dialog), and select an empty ASP.NET application. Open `web.config` to see its initial state. Then right-click the project, select **Manage NuGet Packages**, browse for ELMAH on nuget.org, and install the latest version. Notice all the changes to `web.config`. Now uninstall the package and you see `web.config` revert to its prior state.
 
 ### XDT transforms
+
+> [!Note]
+> As mentioned in the [package compatibility issues section of the docs for migrating from `packages.config` to `PackageReference`](../consume-packages/migrate-packages-config-to-package-reference.md#package-compatibility-issues), XDT transformations as described below are only supported by `packages.config`. If you add the below files to your package, consumers using your package with `PackageReference` will not have the transformations applied (refer to [this sample](https://github.com/NuGet/Samples/tree/master/XDTransformExample) to make XDT transforms work with`PackageReference`).
 
 You can modify config files using [XDT syntax](https://msdn.microsoft.com/library/dd465326.aspx). You can also have NuGet replace tokens with [project properties](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7) by including the property name within `$` delimiters (case-insensitive).
 

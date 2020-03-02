@@ -9,15 +9,11 @@ ms.topic: conceptual
 
 # Authenticating feeds with nuget.exe credential providers
 
-*NuGet 3.3+*
+In version `3.3` support was added for `nuget.exe` specific credential providers. Since then, in version `4.8` [support for credential providers](NuGet-Cross-Platform-Authentication-Plugin.md) that work across all command line scenarios (`nuget.exe`, `dotnet.exe`, `msbuild.exe`) was added.
 
-When `nuget.exe` needs credentials to authenticate with a feed, it looks for them in the following manner:
+See [Consuming Packages from authenticated feeds](../../consume-packages/consuming-packages-authenticated-feeds.md#nugetexe) for more details on all authentication approaches for `nuget.exe`
 
-1. NuGet first looks for credentials in `Nuget.Config` files.
-1. NuGet then uses plug-in credential providers, subject to the order given below. (And example is the [Visual Studio Team Services Credential Provider](https://www.visualstudio.com/docs/package/get-started/nuget/auth#vsts-credential-provider).)
-1. NuGet then prompts the user for credentials on the command line.
-
-Note that the credential providers described here work only in `nuget.exe` and not in 'dotnet restore' or Visual Studio. For credential providers with Visual Studio, see [nuget.exe Credential Providers for Visual Studio](nuget-credential-providers-for-visual-studio.md)
+## nuget.exe credential provider discovery
 
 nuget.exe credential providers can be used in 3 ways:
 
@@ -91,5 +87,3 @@ You can also do the following:
     }
     Debugger.Break();
     ```
-
-For further help, [submit a support request a nuget.org](https://www.nuget.org/policies/Contact).

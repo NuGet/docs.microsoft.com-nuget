@@ -43,7 +43,7 @@ The convention for specifying the version of a package is the same as when using
 </ItemGroup>
 ```
 
-In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../concepts/package-versioning.md#version-ranges-and-wildcards).
+In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../concepts/package-versioning.md#version-ranges).
 
 ## Using PackageReference for a project with no PackageReferences
 
@@ -165,7 +165,107 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
 </ItemGroup>
 ```
 
+## GeneratePathProperty
+
+This feature is available with NuGet **5.0** or above and with Visual Studio 2019 **16.0** or above.
+
+Sometimes it is desirable to reference files in a package from an MSBuild target.
+In `packages.config` based projects, the packages are installed in a folder relative to the project file. However in PackageReference, the packages are [consumed](../concepts/package-installation-process.md) from the *global-packages* folder, which can vary from machine to machine.
+
+To bridge that gap, NuGet introduced a property that points to the location from which the package will be consumed.
+
+Example:
+
+```xml
+  <ItemGroup>
+      <PackageReference Include="Some.Package" Version="1.0.0" GeneratePathProperty="true" />
+  </ItemGroup>
+
+  <Target Name="TakeAction" AfterTargets="Build">
+    <Exec Command="$(PkgSome_Package)\something.exe" />
+  </Target>
+````
+
+Additionally NuGet will automatically generate properties for packages containing a tools folder.
+
+```xml
+  <ItemGroup>
+      <PackageReference Include="Package.With.Tools" Version="1.0.0" />
+  </ItemGroup>
+
+  <Target Name="TakeAction" AfterTargets="Build">
+    <Exec Command="$(PkgPackage_With_Tools)\tools\tool.exe" />
+  </Target>
+````
+
+MSBuild properties and package identities do not have the same restrictions so the package identity needs to be changed to an MSBuild friendly name, prefixed by the word `Pkg`.
+To verify the exact name of the property generated, look at the generated [nuget.g.props](../reference/msbuild-targets.md#restore-outputs) file.
+
+## NuGet warnings and errors
+
+*This feature is available with NuGet **4.3** or above and with Visual Studio 2017 **15.3** or above.*
+
+For many pack and restore scenarios, all NuGet warnings and errors are coded, and start with `NU****`. All NuGet warnings and errors are listed in the [reference](../reference/errors-and-warnings.md) documentation.
+
+NuGet observes the following warning properties:
+
+- `TreatWarningsAsErrors`, treat all warnings as errors
+- `WarningsAsErrors`, treat specific warnings as errors
+- `NoWarn`, hide specific warnings, either project-wide or package-wide.
+
+Examples:
+
+```xml
+<PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+</PropertyGroup>
+...
+<PropertyGroup>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1603;NU1605</WarningsAsErrors>
+</PropertyGroup>
+...
+<PropertyGroup>
+    <NoWarn>$(NoWarn);NU5124</NoWarn>
+</PropertyGroup>
+...
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0" NoWarn="NU1605" />
+</ItemGroup>
+```
+
+### Suppressing NuGet warnings
+
+While it is recommended that you resolve all NuGet warnings during your pack and restore operations, in certain situations suppressing them is warranted.
+To suppress a warning project wide, consider doing:
+
+```xml
+<PropertyGroup>
+    <PackageVersion>5.0.0</PackageVersion>
+    <NoWarn>$(NoWarn);NU5104</NoWarn>
+</PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1"/>
+</ItemGroup>
+```
+
+Sometimes warnings apply only to a certain package in the graph. We can choose to suppress that warning more selectively by adding a `NoWarn` on the PackageReference item. 
+
+```xml
+<PropertyGroup>
+    <PackageVersion>5.0.0</PackageVersion>
+</PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1" NoWarn="NU1603" />
+</ItemGroup>
+```
+
+#### Suppressing NuGet package warnings in Visual Studio
+
+When in Visual Studio, you can also [suppress warnings](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages
+) through the IDE.
+
 ## Locking dependencies
+
 *This feature is available with NuGet **4.9** or above and with Visual Studio 2017 **15.9** or above.*
 
 Input to NuGet restore is a set of Package References from the project file (top-level or direct dependencies) and the output is a full closure of all the package dependencies including transitive dependencies. NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed. However, there are some scenarios where it is unable to do so. For example:
@@ -181,6 +281,7 @@ Input to NuGet restore is a set of Package References from the project file (top
 * A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraints. This results in NuGet finding the best match when it cannot resolve to the deleted version.
 
 ### Enabling lock file
+
 In order to persist the full closure of package dependencies you can opt-in to the lock file feature by setting the MSBuild property `RestorePackagesWithLockFile` for your project:
 
 ```xml
@@ -247,9 +348,9 @@ If `ProjectA` has a dependency on a `PackageX` version `2.0.0` and also referenc
 
 You can control various behaviors of restore with lock file as described below:
 
-| Option | MSBuild equivalent option | Description|
-|:---  |:--- |:--- |
-| `--use-lock-file` | RestorePackagesWithLockFile | Opts into the usage of a lock file. | 
-| `--locked-mode` | RestoreLockedMode | Enables locked mode for restore. This is useful in CI/CD scenarios where you want repeatable builds.|   
-| `--force-evaluate` | RestoreForceEvaluate | This option is useful with packages with floating version defined in the project. By default, NuGet restore will not update the package version automatically upon each restore unless you run restore with this option. |
-| `--lock-file-path` | NuGetLockFilePath | Defines a custom lock file location for a project. By default, NuGet supports `packages.lock.json` at the root directory. If you have multiple projects in the same directory, NuGet supports project specific lock file `packages.<project_name>.lock.json` |
+| NuGet.exe option | dotnet option | MSBuild equivalent option | Description |
+|:--- |:--- |:--- |:--- |
+| `-UseLockFile` |`--use-lock-file` | RestorePackagesWithLockFile | Opts into the usage of a lock file. |
+| `-LockedMode` | `--locked-mode` | RestoreLockedMode | Enables locked mode for restore. This is useful in CI/CD scenarios where you want repeatable builds.|   
+| `-ForceEvaluate` | `--force-evaluate` | RestoreForceEvaluate | This option is useful with packages with floating version defined in the project. By default, NuGet restore will not update the package version automatically upon each restore unless you run restore with this option. |
+| `-LockFilePath` | `--lock-file-path` | NuGetLockFilePath | Defines a custom lock file location for a project. By default, NuGet supports `packages.lock.json` at the root directory. If you have multiple projects in the same directory, NuGet supports project specific lock file `packages.<project_name>.lock.json` |

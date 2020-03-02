@@ -24,6 +24,7 @@
 ### [Reinstall and update packages](consume-packages/reinstalling-and-updating-packages.md)
 ### [Manage global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ### [Manage package trust boundaries](consume-packages/installing-signed-packages.md)
+### [Work with authenticated Feeds](consume-packages/consuming-packages-authenticated-feeds.md)
 ### [Work with source control systems](consume-packages/packages-and-source-control.md)
 ### [Common NuGet configurations](consume-packages/configuring-nuget-behavior.md)
 ## Reference packages in your project
@@ -45,7 +46,8 @@
 ### [Set package type](create-packages/set-package-type.md)
 ### [Create a localized package](create-packages/creating-localized-packages.md)
 ## Guides for specific content
-### [Create a UWP package](guides/create-uwp-packages.md)
+### [Create a UWP package (C++)](guides/create-uwp-packages.md)
+### [Create a UWP package (C#)](guides/create-uwp-packages-CS.md)
 ### [Create a native package](guides/native-packages.md)
 ### [Create UI controls as a NuGet package](guides/create-UI-controls.md)
 ### [Create an analyzer as a NuGet package](guides/analyzers-conventions.md)
@@ -123,7 +125,7 @@
 ### [Rate limits](api/rate-limits.md)
 ### [nuget.org protocols](api/nuget-protocols.md)
 ### [tools.json](api/tools-json.md)
-## [NuGet client SDK](reference/nuget-client-sdk.md)
+## [NuGet Client SDK](reference/nuget-client-sdk.md)
 ## [Errors and Warnings](reference/Errors-and-Warnings.md)
 ### [NU1000](reference/errors-and-warnings/NU1000.md)
 ### [NU1001](reference/errors-and-warnings/NU1001.md)

@@ -31,8 +31,12 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 | DirectDownload | *(4.0+)* Downloads packages directly without populating caches with any binaries or metadata. |
 | DisableParallelProcessing | Disables restoring multiple packages in parallel. |
 | FallbackSource | *(3.2+)* A list of package sources to use as fallbacks in case the package isn't found in the primary or default source. Use a semicolon to separate list entries. |
+| Force | In PackageReference based projects, forces all dependencies to be resolved even if the last restore was successful. Specifying this flag is similar to deleting the `project.assets.json` file. This does not bypass the http-cache. |
 | ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
+| ForceEvaluate | Forces restore to reevaluate all dependencies even if a lock file already exists. |
 | Help | Displays help information for the command. |
+| LockFilePath | Output location where project lock file is written. By default, this is 'PROJECT_ROOT\packages.lock.json'. |
+| LockedMode | Don't allow updating project lock file. |
 | MSBuildPath | *(4.0+)* Specifies the path of MSBuild to use with the command, taking precedence over `-MSBuildVersion`. |
 | MSBuildVersion | *(3.2+)* Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild. |
 | NoCache | Prevents NuGet from using cached packages. See [Managing the global packages and cache folders](../../consume-packages/managing-the-global-packages-and-cache-folders.md). |
@@ -45,7 +49,7 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 | RequireConsent | Verifies that restoring packages is enabled before downloading and installing the packages. For details, see [Package Restore](../../consume-packages/package-restore.md). |
 | SolutionDirectory | Specifies the solution folder. Not valid when restoring packages for a solution. Required when restoring with a `packages.config` file unless `PackagesDirectory` or `OutputDirectory` is used. |
 | Source | Specifies the list of package sources (as URLs) to use for the restore. If omitted, the command uses the sources provided in configuration files, see [Configuring NuGet behavior](../../consume-packages/configuring-nuget-behavior.md). Use a semicolon to separate list entries. |
-| Force | In PackageReference based projects, forces all dependencies to be resolved even if the last restore was successful. Specifying this flag is similar to deleting the `project.assets.json` file. This does not bypass the http-cache. |
+| UseLockFile | Enables project lock file to be generated and used with restore. |
 | Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
 
 Also see [Environment variables](cli-ref-environment-variables.md)

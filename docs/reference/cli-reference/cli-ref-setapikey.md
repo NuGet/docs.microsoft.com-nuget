@@ -19,10 +19,11 @@ Saves an API key for a given server URL into `NuGet.Config` so that it doesn't n
 nuget setapikey <key> -Source <url> [options]
 ```
 
-where `<source>` identifies the server and `<key>` is the key or password to save. If `<source>` is omitted, nuget.org is assumed.
+where `<source>` identifies the server and `<key>` is the key to save. If `<source>` is omitted, nuget.org is assumed. 
 
 > [!NOTE]
 > API key is not used for authenticating with the private feed. Refer to [`nuget sources` command](../cli-reference/cli-ref-sources.md) to manage credentials for authenticating with the source.
+> API keys can be obtained from the individual NuGet servers. To create and manage APIKeys for nuget.org refer to [publish-api-key](../../quickstart/includes/publish-api-key.md)
 
 ## Options
 

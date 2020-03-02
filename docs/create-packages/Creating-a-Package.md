@@ -72,7 +72,7 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
 
 ```xml
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <!-- The identifier that must be unique within the hosting gallery -->
         <id>Contoso.Utility.UsefulStuff</id>
@@ -281,7 +281,7 @@ To directly specify files to include in the package, use the `<files>` node in t
 
 ```xml
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
     <!-- ... -->
     </metadata>

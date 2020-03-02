@@ -206,7 +206,7 @@ Repository metadata, consisting of four optional attributes: `type` and `url` *(
 For example:
 ```xml
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         ...
         <repository type="git" url="https://github.com/NuGet/NuGet.Client.git" branch="dev" commit="e1c65e4524cd70ee6e22abe33e6cb6ec73938cb3" />
@@ -240,7 +240,7 @@ Specifies the minimum version of the NuGet client that can install this package,
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata minClientVersion="100.0.0.1">
         <id>dasdas</id>
         <version>2.0.0</version>
@@ -312,7 +312,7 @@ The `<dependencies>` element within `<metadata>` contains any number of `<depend
 | Attribute | Description |
 | --- | --- |
 | `id` | (Required) The package ID of the dependency, such as "EntityFramework" and "NUnit", which is the name of the package nuget.org shows on a package page. |
-| `version` | (Required) The range of versions acceptable as a dependency. See [Package versioning](../concepts/package-versioning.md#version-ranges-and-wildcards) for exact syntax. Wildcard (floating) versions are not supported. |
+| `version` | (Required) The range of versions acceptable as a dependency. See [Package versioning](../concepts/package-versioning.md#version-ranges) for exact syntax. Floating versions are not supported. |
 | include | A comma-delimited list of include/exclude tags (see below) indicating of the dependency to include in the final package. The default value is `all`. |
 | exclude | A comma-delimited list of include/exclude tags (see below) indicating of the dependency to exclude in the final package. The  default value is `build,analyzers` which can be over-written. But `content/ ContentFiles` are also implicitly excluded in the final package which can't be over-written. Tags specified with `exclude` take precedence over those specified with `include`. For example, `include="runtime, compile" exclude="compile"` is the same as `include="runtime"`. |
 
@@ -360,6 +360,9 @@ The `<group>` element without a `targetFramework` attribute is used as the defau
 > [!Important]
 > The group format cannot be intermixed with a flat list.
 
+> [!Note]
+> The format of [Target Framework Moniker (TFM)](../reference/target-frameworks.md) used in `lib/ref` folder is different when compared to the TFM used in `dependency groups`. If the target frameworks declared in the `dependencies group` and the `lib/ref` folder of `.nuspec` file do not have exact matches then `pack` command will raise [NuGet Warning NU5128](../reference/errors-and-warnings/nu5128.md).
+
 The following example shows different variations of the `<group>` element:
 
 ```xml
@@ -368,12 +371,12 @@ The following example shows different variations of the `<group>` element:
         <dependency id="RouteMagic" version="1.1.0" />
     </group>
 
-    <group targetFramework="net40">
+    <group targetFramework=".NETFramework4.7.2">
         <dependency id="jQuery" version="1.6.2" />
         <dependency id="WebActivator" version="1.4.4" />
     </group>
 
-    <group targetFramework="sl30">
+    <group targetFramework="netcoreapp3.1">
     </group>
 </dependencies>
 ```
@@ -736,6 +739,33 @@ Empty folders can use `.` to opt out of providing content for certain combinatio
             <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
         </contentFiles>
         </metadata>
+</package>
+```
+
+## Framework reference groups
+
+*Version 5.1+ wih PackageReference only*
+
+Framework References are a .NET Core concept representing shared frameworks such as WPF or Windows Forms.
+By specifying a shared framework, the package ensures that all its framework dependencies are included in the referencing project.
+
+Each `<group>` element requires a `targetFramework` attribute and zero or more `<frameworkReference>` elements.
+
+The following example shows a nuspec generated for a .NET Core WPF project.
+Note that hand authoring nuspecs that contain framework references is not recommended. Consider using the [targets](msbuild-targets.md) pack instead, which will automatically infer them from the project.
+
+```xml
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
 </package>
 ```
 
