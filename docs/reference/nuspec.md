@@ -360,6 +360,9 @@ The `<group>` element without a `targetFramework` attribute is used as the defau
 > [!Important]
 > The group format cannot be intermixed with a flat list.
 
+> [!Note]
+> The format of [Target Framework Moniker (TFM)](../reference/target-frameworks.md) used in `lib/ref` folder is different when compared to the TFM used in `dependency groups`. If the target frameworks declared in the `dependencies group` and the `lib/ref` folder of `.nuspec` file do not have exact matches then `pack` command will raise [NuGet Warning NU5128](../reference/errors-and-warnings/nu5128.md).
+
 The following example shows different variations of the `<group>` element:
 
 ```xml
@@ -368,12 +371,12 @@ The following example shows different variations of the `<group>` element:
         <dependency id="RouteMagic" version="1.1.0" />
     </group>
 
-    <group targetFramework="net40">
+    <group targetFramework=".NETFramework4.7.2">
         <dependency id="jQuery" version="1.6.2" />
         <dependency id="WebActivator" version="1.4.4" />
     </group>
 
-    <group targetFramework="sl30">
+    <group targetFramework="netcoreapp3.1">
     </group>
 </dependencies>
 ```
