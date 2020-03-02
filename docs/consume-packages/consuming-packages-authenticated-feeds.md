@@ -18,8 +18,9 @@ To authenticate with private feeds, the 2 approaches are:
 
 ## NuGet clients' authentication extensibility
 
-In the NuGet clients' the authentication responsibility is pushed to the private feed provider.
-Specifically all NuGet clients have extensibility methods, that's either a Visual Studio extension or a plugin that can communicates with NuGet to retrieve credentials.
+For the various NuGet clients, the private feed provider itself is responsible for authentication.
+All NuGet clients have extensibility methods to support this. These are either a Visual Studio extension or a plugin that can communicate with NuGet to retrieve credentials.
+
 
 ### Visual Studio
 
