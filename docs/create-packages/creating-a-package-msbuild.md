@@ -30,6 +30,10 @@ The following properties are required to create a package.
 - `Authors`, author and owner information. If not specified, the default value is `AssemblyName`.
 - `Company`, your company name. If not specified, the default value is `AssemblyName`.
 
+Additionally if you are packing non-SDK-style projects that use PackageReference, the following is required:
+
+- `PackageOutputPath`, the output folder for the package generated when calling pack.
+
 In Visual Studio, you can set these values in the project properties (right-click the project in Solution Explorer, choose **Properties**, and select the **Package** tab). You can also set these properties directly in the project files (*.csproj*).
 
 ```xml
