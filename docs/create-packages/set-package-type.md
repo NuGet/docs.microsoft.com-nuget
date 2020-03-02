@@ -25,7 +25,7 @@ Package types are set in the `.nuspec` file. It's best for backwards compatibili
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
         <metadata>
         <!-- ... -->
         <packageTypes>
