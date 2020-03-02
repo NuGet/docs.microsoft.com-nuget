@@ -39,7 +39,7 @@ Available plug-in credential providers include:
 
 When `nuget.exe` needs credentials to authenticate with a feed, it looks for them in the following manner:
 
-1. Look for credentials in `Nuget.Config` files.
+1. Look for credentials in `NuGet.config` files.
 1. Use V2 plug-in credential providers subject to the ordering below.
 1. Use V1 plug-in credential providers, subject to the ordering below.
 1. NuGet then prompts the user for credentials on the command line.
