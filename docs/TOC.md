@@ -45,7 +45,8 @@
 ### [Set package type](create-packages/set-package-type.md)
 ### [Create a localized package](create-packages/creating-localized-packages.md)
 ## Guides for specific content
-### [Create a UWP package](guides/create-uwp-packages.md)
+### [Create a UWP package (C++)](guides/create-uwp-packages.md)
+### [Create a UWP package (C#)](guides/create-uwp-packages-CS.md)
 ### [Create a native package](guides/native-packages.md)
 ### [Create UI controls as a NuGet package](guides/create-UI-controls.md)
 ### [Create an analyzer as a NuGet package](guides/analyzers-conventions.md)
