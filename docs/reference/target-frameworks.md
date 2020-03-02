@@ -80,6 +80,7 @@ Universal Windows Platform | uap | uap [uap10.0] |
 | | | netcoreapp2.1 |
 | | | netcoreapp2.2 |
 | | | netcoreapp3.0 |
+| | | netcoreapp3.1 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
 
