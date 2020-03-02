@@ -35,7 +35,7 @@ NuGet Extensions for Visual Studio 2013 and 2015 can be downloaded from [https:/
 For Visual Studio 2010 and earlier, install the "NuGet Package Manager for Visual Studio" extension. Note, if you can't see the extension in the first page of search results, try changing the Sort By dropdown to "Most Downloads", or an alphabetical sort.
 
 ## CLI tools
-A CLI tool is required to support NuGet features in the IDE. You can use either the `dotnet` CLI or the the `nuget.exe` CLI. The `dotnet` CLI is installed with some Visual Studio workloads, such as .NET Core. The `nuget.exe` CLI must be installed separately as described earlier.
+You can use either the `dotnet` CLI or the `nuget.exe` CLI to support NuGet features in the IDE. The `dotnet` CLI is installed with some Visual Studio workloads, such as .NET Core. The `nuget.exe` CLI must be installed separately as described earlier.
 
 The two NuGet CLI tools are `dotnet.exe` and `nuget.exe`. See [feature availability](#feature-availability) for a comparison.
 
