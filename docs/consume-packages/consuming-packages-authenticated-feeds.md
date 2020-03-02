@@ -9,7 +9,8 @@ ms.topic: conceptual
 
 # Consuming packages from authenticated feeds
 
-In addition to the nuget.org [public feeds](https://api.nuget.org/v3/index.json), the NuGet clients have the ability to interact with file feeds and private http feeds.
+In addition to the nuget.org [public feed](https://api.nuget.org/v3/index.json), NuGet clients have the ability to interact with file feeds and private http feeds.
+
 
 To authenticate with private http feeds, the 2 approaches are:
 
