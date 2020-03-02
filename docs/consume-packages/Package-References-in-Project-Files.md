@@ -167,7 +167,7 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
 
 ## GeneratePathProperty
 
-This feature is available with NuGet **5.0** or above and with Visual Studio 2019 **16.0** or above.*
+This feature is available with NuGet **5.0** or above and with Visual Studio 2019 **16.0** or above.
 
 Sometimes it is desirable to reference files in a package from an MSBuild target.
 In `packages.config` based projects, the packages are installed in a folder relative to the project file. However in PackageReference, the packages are [consumed](../concepts/package-installation-process.md) from the *global-packages* folder, which can vary from machine to machine.
