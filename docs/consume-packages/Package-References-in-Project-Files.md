@@ -205,7 +205,7 @@ To verify the exact name of the property generated, look at the generated [nuget
 
 *This feature is available with NuGet **4.3** or above and with Visual Studio 2017 **15.3** or above.*
 
-For many pack and restore scenarios, all NuGet warnings and errors are coded, and start with `NU****`. All NuGet warnings and errors are listed in the [reference](../reference/errors-and-warnings) documentation.
+For many pack and restore scenarios, all NuGet warnings and errors are coded, and start with `NU****`. All NuGet warnings and errors are listed in the [reference](../reference/errors-and-warnings.md) documentation.
 
 NuGet observes the following warning properties:
 
