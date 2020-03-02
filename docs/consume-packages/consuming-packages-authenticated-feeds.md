@@ -28,7 +28,8 @@ In Visual Studio, NuGet exposes an interface that feed providers can implement a
 
 #### Available NuGet credential providers for Visual Studio
 
-There is a credential provider built into the Visual Studio to support Azure DevOps.
+There is a credential provider built into Visual Studio to support Azure DevOps.
+
 
 Available plug-in credential providers include:
 
