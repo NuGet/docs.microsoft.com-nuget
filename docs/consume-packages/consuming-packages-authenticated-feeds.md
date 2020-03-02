@@ -24,7 +24,8 @@ All NuGet clients have extensibility methods to support this. These are either a
 
 ### Visual Studio
 
-In Visual Studio, NuGet exposes an interface that feed providers can implement and provide to their customers. For more information on [how to create](../reference/extensibility/NuGet-Credential-Providers-for-Visual-Studio.md) a Visual Studio credential provider.
+In Visual Studio, NuGet exposes an interface that feed providers can implement and provide to their customers. For more details, please refer to the documentation on [how to create a Visual Studio credential provider](../reference/extensibility/NuGet-Credential-Providers-for-Visual-Studio.md).
+
 
 #### Available NuGet credential providers for Visual Studio
 
