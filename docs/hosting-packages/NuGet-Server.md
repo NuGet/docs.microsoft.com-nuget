@@ -97,7 +97,7 @@ If you want to change the behavior to delist the package instead (leaving it ava
 
 ## Configuring the Packages folder
 
-With `NuGet.Server` 1.5 and later, you can more specifically configure the package folder using the `appSetting/packagesPath` value in `web.config`:
+With `NuGet.Server` 1.5 and later, you can customize the package folder using the `appSettings/packagesPath` value in `web.config`:
 
 ```xml
 <appSettings>
