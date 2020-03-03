@@ -114,7 +114,7 @@ When `packagesPath` is omitted or left blank, the packages folder is the default
 
 To make packages available in the feed when you publish the application to a server, add each `.nupkg` files to the `Packages` folder in Visual Studio, then set each one's **Build Action** to **Content** and **Copy to Output Directory** to **Copy always**:
 
-    ![Copying packages to the Packages folder in the project](media/Hosting_05-NuGet.Server-Package-Folder.png)
+![Copying packages to the Packages folder in the project](media/Hosting_05-NuGet.Server-Package-Folder.png)
 
 ## Release Notes
 
