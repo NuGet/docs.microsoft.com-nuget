@@ -54,5 +54,5 @@ You will now see all the versions on that package.
 ** Verification **
 The specific package version has now been unlisted. In order to verify this open a incognito instance of your browser and move to the url of the package (without the version part) e.g.: https://www.nuget.org/packages/YOUR-PACKAGE-NAME/. You will see all versions of that package that have * * not * * been unlisted. However if you see the same page while logged in you will see all packages with their status; listed or unlisted. 
 
-It's also possible to deprecate a package version (incase you can't delete a pacage version). Further information about deprecating package versions can be viewed at following page: https://docs.microsoft.com/en-us/nuget/nuget-org/deprecate-packages
+It's also possible to deprecate a package version (incase you can't delete a package version). Further information about deprecating package versions can be viewed at following page: https://docs.microsoft.com/en-us/nuget/nuget-org/deprecate-packages
 
