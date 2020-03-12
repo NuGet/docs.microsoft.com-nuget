@@ -47,12 +47,12 @@ In order to unlist a specific package version please follow these steps:
 - Click the package name which version you want to unlist
 You will now see all the versions on that package. 
 - Under the `Status` column click the `Listed` link on that package version you want to unlist.
-- You will now be transferred to the "Manage" page of that specific nuget package version. The "Manage" page will display following sections: "Owners", "Deprecation", "Listing" and "Documentation".
-- Click the plus sign beside "Listing" and uncheck the checkbox that says: “List in search results”.
+- You will now be transferred to the "Manage" page of that specific nuget package version. 
+- Click the plus sign beside the "Listing" and uncheck the checkbox that says: “List in search results”.
 - Click the “Save” button.
 
 ** Verification **
-The specific package version has now been unlisted. In order to verify this open a incognito instance of your browser and move to the url of the package (without the version part) e.g.: https://www.nuget.org/packages/YOUR-PACKAGE-NAME/. You will see all versions of that package that have * * not * * been unlisted. However if you see the same page while logged in you will see all packages with their status; listed or unlisted. 
+The specific package version has now been unlisted. In order to verify this open a incognito instance of your browser and move to the URL of the package (without the version part) e.g.: https://www.nuget.org/packages/YOUR-PACKAGE-NAME/. You will see all versions of that package that have * * not * * been unlisted. However if you see the same page while logged in you will see all packages with their status; listed or unlisted. 
 
-It's also possible to deprecate a package version (incase you can't delete a package version). Further information about deprecating package versions can be viewed at following page: https://docs.microsoft.com/nuget/nuget-org/deprecate-packages
+It's also possible to deprecate a package version (incase you can't delete a package version). For more information about deprecating package versions, see [Deprecating packages](Deprecate-packages.md).
 
