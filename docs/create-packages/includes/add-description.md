@@ -1,4 +1,4 @@
-The package's optional description, displayed on the package's NuGet.org page, is either pulled in from the `<description></description` used in the `.csproj` file or pulled in via the `$description` in the [.nuspec file](../../reference/nuspec.md).
+The package's optional description, displayed on the package's NuGet.org page, is either pulled in from the `<description></description>` used in the `.csproj` file or pulled in via the `$description` in the [.nuspec file](../../reference/nuspec.md).
 
 An example of a _description_ field is shown in the following XML text of the `.csproj` file for a .NET package:
 
