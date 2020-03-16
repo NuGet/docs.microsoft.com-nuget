@@ -216,6 +216,10 @@ When obtaining packages from a repository during install, reinstall, or restore 
 
         1.0.0.0 is treated as 1.0.0
         1.0.01.0 is treated as 1.0.1
+        
+- SemVer 2.0.0 build metadata is removed
+
+        1.0.7+r3456 is treated as 1.0.7
 
 `pack` and `restore` operations normalize versions whenever possible. For packages already built, this normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions when resolving dependencies.
 
