@@ -1,8 +1,25 @@
-# 5.5 Release Notes
+---
+title: NuGet 5.5 Release Notes
+description: Release notes for NuGet 5.5 including new features, bug fixes, and DCRs.
+author: karann-msft
+ms.author: karann
+ms.date: 03/18/2020
+ms.topic: conceptual
+---
 
-[Full Changelog]("")
+# NuGet 5.5 Release Notes
 
-[Issues List](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5e0e5fbd021f7aa0ec95db18)
+NuGet distribution vehicles:
+
+| NuGet version | Available in Visual Studio version| Available in .NET SDK(s)|
+|:---|:---|:---|
+| [**5.5.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.5](https://visualstudio.microsoft.com/downloads/) | [3.1.200](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
+
+<sup>1</sup>Installed with Visual Studio 2019 with .NET Core workload
+
+## Summary: What's New in 5.5
+
+* Accessibility Fixes in PM UI
 
 **Bug:**
 
