@@ -164,5 +164,3 @@ NuGet distribution vehicles:
 * Add unit tests for RestoreTaskExe - [#9067](https://github.com/NuGet/Home/issues/9067)
 
 * Delete TestEnvironment class in SDK resolver test assembly - [#9102](https://github.com/NuGet/Home/issues/9102)
-
-* PackageReference output missing libs - [#7652](https://github.com/NuGet/Home/issues/7652)
