@@ -25,7 +25,7 @@ NuGet distribution vehicles:
 
 * msbuild /restore works with Packages.Config
 
-* Safely handling untrusted XML in the client code
+* Change the way we read XML files
 
 **Bug:**
 
@@ -140,8 +140,6 @@ NuGet distribution vehicles:
 * Temporary fix on patching SDK for System.Security.Cryptography.Pkcs.dll  - [#8508](https://github.com/NuGet/Home/issues/8508)
 
 * Code files (.pp) in ContentFiles folder not added to consuming PackageReference project - [#8718](https://github.com/NuGet/Home/issues/8718)
-
-* Safely handling untrusted XML in the client code - [#2769](https://github.com/NuGet/Engineering/issues/2769)
 
 * ExcludeRestorePackageImports=true should not exclude package path properties - [#8840](https://github.com/NuGet/Home/issues/8840)
 
