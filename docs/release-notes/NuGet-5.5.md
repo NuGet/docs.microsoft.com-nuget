@@ -21,11 +21,31 @@ NuGet distribution vehicles:
 
 * Several accessibility fixes in PM UI
 
-* --skip-duplicate support for dotnet nuget push
+* dotnet.exe reliability fixes with cross platform authentication plugins
 
 * msbuild /restore works with Packages.Config
 
 * Change the way we read XML files
+
+**Feature:**
+
+* add `dotnet nuget <add|remove|update|disable|enable|list> source` command - [#4126](https://github.com/NuGet/Home/issues/4126)
+
+* Improve network diagnostics to understand real world http download perf in VS - [#8592](https://github.com/NuGet/Home/issues/8592)
+
+* --skip-duplicate support for dotnet nuget push - [#8778](https://github.com/NuGet/Home/issues/8778)
+
+* msbuild /restore works with Packages.Config - [#8506](https://github.com/NuGet/Home/issues/8506)
+
+**DCR:**
+
+* nuget.exe pack should no longer warn about packing a SemVer 2.0.0 package - [#5201](https://github.com/NuGet/Home/issues/5201)
+
+* Embedded Icons support in NuGet PackageManager UI - [#8189](https://github.com/NuGet/Home/issues/8189)
+
+* Logic in _GetRestoreProjectStyle should be in a task - [#8804](https://github.com/NuGet/Home/issues/8804)
+
+* Deprecation info is not visible, by default, on installed tab - [#8541](https://github.com/NuGet/Home/issues/8541)
 
 **Bug:**
 
@@ -34,8 +54,6 @@ NuGet distribution vehicles:
 * Wrong package dependency version If package dependency version is set to '*' - [#6697](https://github.com/NuGet/Home/issues/6697)
 
 * ErrorUnsafePackageEntry error message is not pointing to source of problem - [#7505](https://github.com/NuGet/Home/issues/7505)
-
-* NuGet 4.9.2 fails to install packages from nuget.org with "Canceled" error - [#7699](https://github.com/NuGet/Home/issues/7699)
 
 * dotnet restore failing with TaskCanceledException - [#7842](https://github.com/NuGet/Home/issues/7842)
 
@@ -49,25 +67,13 @@ NuGet distribution vehicles:
 
 * Improve ConcurrencyUtilities (reduce CPU usage) - [#8653](https://github.com/NuGet/Home/issues/8653)
 
-* vs/nuget/nugetaction telemetry doesn't adequately capture cancellation - [#8782](https://github.com/NuGet/Home/issues/8782)
-
-* vs/nuget/nugetaction doesn't log the packages added, removed, or updated - [#8783](https://github.com/NuGet/Home/issues/8783)
-
 * DG Spec for unloaded project scenarios should not be written in preview restores - [#8793](https://github.com/NuGet/Home/issues/8793)
 
 * The Visual Studio NuGet packages (RestoreManagerPackage) needs to auto load on solution build events - [#8796](https://github.com/NuGet/Home/issues/8796)
 
-*  [Test Failure] Package icon becomes a default icon after installing ‘Newtonsoft.Json’ with latest versoin - [#8814](https://github.com/NuGet/Home/issues/8814)
-
-* Logic in RestoreTask should be refactored into a utility - [#8829](https://github.com/NuGet/Home/issues/8829)
+* [Test Failure] Package icon becomes a default icon after installing ‘Newtonsoft.Json’ with latest versoin - [#8814](https://github.com/NuGet/Home/issues/8814)
 
 * Deadlock in VSSettings init - [#8842](https://github.com/NuGet/Home/issues/8842)
-
-* "An item with the same key has already been added" when restoring in Visual Studio - [#8847](https://github.com/NuGet/Home/issues/8847)
-
-* DownloadTimeoutStream should not block by calling .Result - [#8853](https://github.com/NuGet/Home/issues/8853)
-
-* RestoreSettingsUtils needs overload to use new SettingsLoadingContext - [#8855](https://github.com/NuGet/Home/issues/8855)
 
 * VisualStudio ToolBox is not populated from a NuGet package if a project is placed in a solution folder - [#8868](https://github.com/NuGet/Home/issues/8868)
 
@@ -75,19 +81,7 @@ NuGet distribution vehicles:
 
 * Constant "loading.." on installed tab, and "searching <term>.." on updates tab - [#8890](https://github.com/NuGet/Home/issues/8890)
 
-* ProjectReference becomes dependency in nuspec instead of including it in nupkg - [#8960](https://github.com/NuGet/Home/issues/8960)
-
-* Update the NuGet VS depedencies to the recent 16.4 ones so we can use the Service Broker APIs. - [#8967](https://github.com/NuGet/Home/issues/8967)
-
-* Address VSSDK004, VSSDK005 & VSSDK006 analyzer warnings - [#8974](https://github.com/NuGet/Home/issues/8974)
-
-* Address VSTHRD100 - [#8975](https://github.com/NuGet/Home/issues/8975)
-
-* Address VSTHRD010 and VSTHRD109 warnings - [#8978](https://github.com/NuGet/Home/issues/8978)
-
 * NuGet client tools strategy with multiple feeds on packages with version floats - [#8992](https://github.com/NuGet/Home/issues/8992)
-
-* hashed package names in telemetry should be lower cased - [#8995](https://github.com/NuGet/Home/issues/8995)
 
 * Accessibility Fixes in PM UI - altText, etc... - [#9059](https://github.com/NuGet/Home/issues/9059)
 
@@ -99,37 +93,13 @@ NuGet distribution vehicles:
 
 * PMUI Tabs have Accessibility Issues - [#9078](https://github.com/NuGet/Home/issues/9078)
 
-* Review JoinableTaskFactory.Run( usage - [#9096](https://github.com/NuGet/Home/issues/9096)
-
 * FireAndForget PM UI startup - [#9112](https://github.com/NuGet/Home/issues/9112)
-
-* Missing Icon in PM UI Details Pane - [#9113](https://github.com/NuGet/Home/issues/9113)
 
 * Accessibility Fixes in PM UI - [#9157](https://github.com/NuGet/Home/issues/9157)
 
-* Restore:  IncludeExcludeFiles.Equals(...) implementation is incorrect - [#9167](https://github.com/NuGet/Home/issues/9167)
+* Restore: IncludeExcludeFiles.Equals(...) implementation is incorrect - [#9167](https://github.com/NuGet/Home/issues/9167)
 
-* Restore:  PackageSpec.Clone() creates unequal clone - [#9211](https://github.com/NuGet/Home/issues/9211)
-
-**Feature:**
-
-* add `dotnet nuget <add|remove|update|disable|enable|list> source` command - [#4126](https://github.com/NuGet/Home/issues/4126)
-
-* Deprecation info is not visible, by default, on installed tab - [#8541](https://github.com/NuGet/Home/issues/8541)
-
-* Improve network diagnostics to understand real world http download perf in VS - [#8592](https://github.com/NuGet/Home/issues/8592)
-
-* --skip-duplicate support for dotnet nuget push - [#8778](https://github.com/NuGet/Home/issues/8778)
-
-* msbuild /restore works with Packages.Config - [#8506](https://github.com/NuGet/Home/issues/8506)
-
-**DCR:**
-
-* nuget.exe pack should no longer warn about packing a SemVer 2.0.0 package - [#5201](https://github.com/NuGet/Home/issues/5201)
-
-* NuGet PackageManager UI handles icons from <icon/> and <iconUrl/> - [#8189](https://github.com/NuGet/Home/issues/8189)
-
-* Logic in _GetRestoreProjectStyle should be in a task - [#8804](https://github.com/NuGet/Home/issues/8804)
+* Restore: PackageSpec.Clone() creates unequal clone - [#9211](https://github.com/NuGet/Home/issues/9211)
 
 **None:**
 
@@ -151,13 +121,13 @@ NuGet distribution vehicles:
 
 * SpecCommand tests depend on the current year - [#8984](https://github.com/NuGet/Home/issues/8984)
 
-* Restore:  large strings created on large object heap (LOH) - [#9031](https://github.com/NuGet/Home/issues/9031)
+* Restore: large strings created on large object heap (LOH) - [#9031](https://github.com/NuGet/Home/issues/9031)
 
 * Make the dotnet.exe functional tests runnable from Visual Studio, speed up the Dotnet.Integration.Test suite by 40% - [#9036](https://github.com/NuGet/Home/issues/9036)
 
-* Restore:  DependencyGraphSpec.Load(...) does not need JObject - [#9040](https://github.com/NuGet/Home/issues/9040)
+* Restore: DependencyGraphSpec.Load(...) does not need JObject - [#9040](https://github.com/NuGet/Home/issues/9040)
 
-* Restore:  closure computed for each project 4 times - [#9042](https://github.com/NuGet/Home/issues/9042)
+* Restore: closure computed for each project 4 times - [#9042](https://github.com/NuGet/Home/issues/9042)
 
 * Static Graph restore should not pass empty SolutionPath - [#9061](https://github.com/NuGet/Home/issues/9061)
 
