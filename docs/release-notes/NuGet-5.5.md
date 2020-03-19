@@ -3,7 +3,7 @@ title: NuGet 5.5 Release Notes
 description: Release notes for NuGet 5.5 including new features, bug fixes, and DCRs.
 author: karann-msft
 ms.author: karann
-ms.date: 03/18/2020
+ms.date: 03/19/2020
 ms.topic: conceptual
 ---
 
@@ -19,13 +19,13 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.5
 
-* Accessibility Fixes in PM UI
+* Several accessibility fixes in PM UI
+
+* --skip-duplicate support for dotnet nuget push
+
+* msbuild /restore works with Packages.Config
 
 **Bug:**
-
-* nuget pack forcefully adds .tt files to content folder no matter what - [#3203](https://github.com/NuGet/Home/issues/3203)
-
-* Alt+S in VS Tools->Options->NuGet Package Manager->"Package Sources" jumps to wrong text box - [#1518](https://github.com/NuGet/Home/issues/1518)
 
 * Rework Self-Updater with V3 Apis - [#4197](https://github.com/NuGet/Home/issues/4197)
 
@@ -36,8 +36,6 @@ NuGet distribution vehicles:
 * NuGet 4.9.2 fails to install packages from nuget.org with "Canceled" error - [#7699](https://github.com/NuGet/Home/issues/7699)
 
 * dotnet restore failing with TaskCanceledException - [#7842](https://github.com/NuGet/Home/issues/7842)
-
-* Upgrade fails with "Unable to find metadata of <somepackageid>" if a package is in fallback folder, but not remote feed - [#7881](https://github.com/NuGet/Home/issues/7881)
 
 * Lock file is not honored in "*" scenarios  - [#8073](https://github.com/NuGet/Home/issues/8073)
 
@@ -119,9 +117,9 @@ NuGet distribution vehicles:
 
 * Improve network diagnostics to understand real world http download perf in VS - [#8592](https://github.com/NuGet/Home/issues/8592)
 
-* Test and Fix Auto-Restore (SDK) for VS in Live Share & cloud environments - [#8674](https://github.com/NuGet/Home/issues/8674)
-
 * --skip-duplicate support for dotnet nuget push - [#8778](https://github.com/NuGet/Home/issues/8778)
+
+* msbuild /restore works with Packages.Config - [#8506](https://github.com/NuGet/Home/issues/8506)
 
 **DCR:**
 
@@ -133,43 +131,23 @@ NuGet distribution vehicles:
 
 **None:**
 
-* msbuild /restore support for all NuGet use cases - [#6410](https://github.com/NuGet/Home/issues/6410)
-
-* PackageReference output missing libs - [#7652](https://github.com/NuGet/Home/issues/7652)
-
-* Signing:  add .NET Standard 2.1 Targeting for NuGet.Packaging, fix tests, create nupkg for pack sdk - [#8043](https://github.com/NuGet/Home/issues/8043)
-
 * Error list shown although "Always show Error List if build finishes with errors" is not checked - [#8190](https://github.com/NuGet/Home/issues/8190)
 
 * Floating version "*" retrieves incorrect nuget package version (not latest) - [#8333](https://github.com/NuGet/Home/issues/8333)
-
-* Analyze the refresh metrics - [#8370](https://github.com/NuGet/Home/issues/8370)
 
 * Temporary fix on patching SDK for System.Security.Cryptography.Pkcs.dll  - [#8508](https://github.com/NuGet/Home/issues/8508)
 
 * Code files (.pp) in ContentFiles folder not added to consuming PackageReference project - [#8718](https://github.com/NuGet/Home/issues/8718)
 
-* Dotnet pack does not respect floating version. - [#8742](https://github.com/NuGet/Home/issues/8742)
-
-* retarget signing/verification project to netcoreapp5.0 - [#8835](https://github.com/NuGet/Home/issues/8835)
-
 * ExcludeRestorePackageImports=true should not exclude package path properties - [#8840](https://github.com/NuGet/Home/issues/8840)
 
 * Nuget package can be installed multiple times in different versions - [#8865](https://github.com/NuGet/Home/issues/8865)
 
-* [Centrally managing NuGet packages and versions] MsBuild targets necessary to flow the CPVM information from Directory.Packages.props  to NuGet internals - [#8909](https://github.com/NuGet/Home/issues/8909)
-
-* SignedPackageIntegrityVerificationTests is disabled for netcore, we need to enable it. - [#8918](https://github.com/NuGet/Home/issues/8918)
-
 * Add more settings tests - completely cover project\sln level support across products - [#8927](https://github.com/NuGet/Home/issues/8927)
-
-* Broken test in SigningUtilityTests(unit test) - [#8939](https://github.com/NuGet/Home/issues/8939)
 
 * [Test Failure]Confusing supported .NET Framework version v0.0 show in the error NU1202 message when installing a package into a project with incompatible framework - [#8965](https://github.com/NuGet/Home/issues/8965)
 
 * SpecCommand tests depend on the current year - [#8984](https://github.com/NuGet/Home/issues/8984)
-
-* rebase main signing branch on top of latest dev - [#9012](https://github.com/NuGet/Home/issues/9012)
 
 * Restore:  large strings created on large object heap (LOH) - [#9031](https://github.com/NuGet/Home/issues/9031)
 
@@ -187,6 +165,4 @@ NuGet distribution vehicles:
 
 * Delete TestEnvironment class in SDK resolver test assembly - [#9102](https://github.com/NuGet/Home/issues/9102)
 
-* [Test Failure] PMC and PM UI were disappeared after installing NuGet client dev-cmanu-cpvm01\5.5.0.10112  - [#9138](https://github.com/NuGet/Home/issues/9138)
-
-* NuGet: "The path is not of a legal form" while installing packages in an Android solution - [#9165](https://github.com/NuGet/Home/issues/9165)
+* PackageReference output missing libs - [#7652](https://github.com/NuGet/Home/issues/7652)
