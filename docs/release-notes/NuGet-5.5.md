@@ -19,13 +19,23 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.5
 
-* Several accessibility fixes in PM UI
+* Several accessibility fixes in the NuGet package manager UI in Visual Studio
+
+    * Accessibility Fixes in PM UI - altText, etc... - [#9059](https://github.com/NuGet/Home/issues/9059)
+
+    * Review Accessibility bugs - [#9077](https://github.com/NuGet/Home/issues/9077)
+
+    * PMUI Tabs have Accessibility Issues - [#9078](https://github.com/NuGet/Home/issues/9078)
+
+    * Accessibility Fixes in PM UI - [#9157](https://github.com/NuGet/Home/issues/9157)
+
+* Embedded Icons support in the NuGet package manager UI in Visual Studio - [#8189](https://github.com/NuGet/Home/issues/8189)
 
 * dotnet.exe reliability fixes with cross platform authentication plugins
 
-* msbuild /restore works with Packages.Config
+    * dotnet restore failing with TaskCanceledException - [#7842](https://github.com/NuGet/Home/issues/7842)
 
-**Feature:**
+    * Plugin:  "A task was cancelled" - problem with ADO authentication due to this. - [#8528](https://github.com/NuGet/Home/issues/8528)
 
 * add `dotnet nuget <add|remove|update|disable|enable|list> source` command - [#4126](https://github.com/NuGet/Home/issues/4126)
 
@@ -35,17 +45,11 @@ NuGet distribution vehicles:
 
 * msbuild /restore works with Packages.Config - [#8506](https://github.com/NuGet/Home/issues/8506)
 
-* Embedded Icons support in NuGet PackageManager UI - [#8189](https://github.com/NuGet/Home/issues/8189)
-
-**DCR:**
-
 * nuget.exe pack should no longer warn about packing a SemVer 2.0.0 package - [#5201](https://github.com/NuGet/Home/issues/5201)
 
-* Logic in _GetRestoreProjectStyle should be in a task - [#8804](https://github.com/NuGet/Home/issues/8804)
+### Issues fixed in this release
 
-* Deprecation info is not visible, by default, on installed tab - [#8541](https://github.com/NuGet/Home/issues/8541)
-
-**Bug:**
+**Bugs**
 
 * Rework Self-Updater with V3 Apis - [#4197](https://github.com/NuGet/Home/issues/4197)
 
@@ -53,15 +57,11 @@ NuGet distribution vehicles:
 
 * ErrorUnsafePackageEntry error message is not pointing to source of problem - [#7505](https://github.com/NuGet/Home/issues/7505)
 
-* dotnet restore failing with TaskCanceledException - [#7842](https://github.com/NuGet/Home/issues/7842)
-
 * Lock file is not honored in "*" scenarios  - [#8073](https://github.com/NuGet/Home/issues/8073)
 
 * NuGet.exe does not resolve to the latest version of a package when using * in PackageReference (MSBuild/Dotnet/VS restore do) - [#8432](https://github.com/NuGet/Home/issues/8432)
 
 * dotnet list package with multi targeting WPF project - [#8463](https://github.com/NuGet/Home/issues/8463)
-
-* Plugin:  "A task was cancelled" - problem with ADO authentication due to this. - [#8528](https://github.com/NuGet/Home/issues/8528)
 
 * Improve ConcurrencyUtilities (reduce CPU usage) - [#8653](https://github.com/NuGet/Home/issues/8653)
 
@@ -77,17 +77,9 @@ NuGet distribution vehicles:
 
 * Constant "loading.." on installed tab, and "searching <term>.." on updates tab - [#8890](https://github.com/NuGet/Home/issues/8890)
 
-* Accessibility Fixes in PM UI - altText, etc... - [#9059](https://github.com/NuGet/Home/issues/9059)
-
 * Missing Embedded Icons in VS PM UI after cache expires - [#9069](https://github.com/NuGet/Home/issues/9069)
 
-* Review Accessibility bugs - [#9077](https://github.com/NuGet/Home/issues/9077)
-
-* PMUI Tabs have Accessibility Issues - [#9078](https://github.com/NuGet/Home/issues/9078)
-
 * FireAndForget PM UI startup - [#9112](https://github.com/NuGet/Home/issues/9112)
-
-* Accessibility Fixes in PM UI - [#9157](https://github.com/NuGet/Home/issues/9157)
 
 * Restore: IncludeExcludeFiles.Equals(...) implementation is incorrect - [#9167](https://github.com/NuGet/Home/issues/9167)
 
@@ -102,3 +94,11 @@ NuGet distribution vehicles:
 * Restore: DependencyGraphSpec.Load(...) does not need JObject - [#9040](https://github.com/NuGet/Home/issues/9040)
 
 * Restore: large strings created on large object heap (LOH) - [#9031](https://github.com/NuGet/Home/issues/9031)
+
+**DCR**
+
+* Logic in _GetRestoreProjectStyle should be in a task - [#8804](https://github.com/NuGet/Home/issues/8804)
+
+* Add deprecation information by default on the installed tab - [#8541](https://github.com/NuGet/Home/issues/8541)
+
+**[List of all issues fixed in this release - 5.5](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5e0e5fbd021f7aa0ec95db18)**
