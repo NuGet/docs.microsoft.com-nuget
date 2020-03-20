@@ -25,7 +25,7 @@ NuGet distribution vehicles:
 
 * msbuild /restore works with Packages.Config
 
-* Change the way we read XML files
+* Change the way how XML files are read
 
 **Feature:**
 
@@ -37,11 +37,11 @@ NuGet distribution vehicles:
 
 * msbuild /restore works with Packages.Config - [#8506](https://github.com/NuGet/Home/issues/8506)
 
+* Embedded Icons support in NuGet PackageManager UI - [#8189](https://github.com/NuGet/Home/issues/8189)
+
 **DCR:**
 
 * nuget.exe pack should no longer warn about packing a SemVer 2.0.0 package - [#5201](https://github.com/NuGet/Home/issues/5201)
-
-* Embedded Icons support in NuGet PackageManager UI - [#8189](https://github.com/NuGet/Home/issues/8189)
 
 * Logic in _GetRestoreProjectStyle should be in a task - [#8804](https://github.com/NuGet/Home/issues/8804)
 
@@ -71,8 +71,6 @@ NuGet distribution vehicles:
 
 * The Visual Studio NuGet packages (RestoreManagerPackage) needs to auto load on solution build events - [#8796](https://github.com/NuGet/Home/issues/8796)
 
-* [Test Failure] Package icon becomes a default icon after installing ‘Newtonsoft.Json’ with latest versoin - [#8814](https://github.com/NuGet/Home/issues/8814)
-
 * Deadlock in VSSettings init - [#8842](https://github.com/NuGet/Home/issues/8842)
 
 * VisualStudio ToolBox is not populated from a NuGet package if a project is placed in a solution folder - [#8868](https://github.com/NuGet/Home/issues/8868)
@@ -81,13 +79,9 @@ NuGet distribution vehicles:
 
 * Constant "loading.." on installed tab, and "searching <term>.." on updates tab - [#8890](https://github.com/NuGet/Home/issues/8890)
 
-* NuGet client tools strategy with multiple feeds on packages with version floats - [#8992](https://github.com/NuGet/Home/issues/8992)
-
 * Accessibility Fixes in PM UI - altText, etc... - [#9059](https://github.com/NuGet/Home/issues/9059)
 
 * Missing Embedded Icons in VS PM UI after cache expires - [#9069](https://github.com/NuGet/Home/issues/9069)
-
-* Icon missing after package install in VS PM UI - [#9072](https://github.com/NuGet/Home/issues/9072)
 
 * Review Accessibility bugs - [#9077](https://github.com/NuGet/Home/issues/9077)
 
@@ -103,16 +97,10 @@ NuGet distribution vehicles:
 
 * Error list shown although "Always show Error List if build finishes with errors" is not checked - [#8190](https://github.com/NuGet/Home/issues/8190)
 
-**None:**
-
-* Add more settings tests - completely cover project\sln level support across products - [#8927](https://github.com/NuGet/Home/issues/8927)
-
-* Restore: large strings created on large object heap (LOH) - [#9031](https://github.com/NuGet/Home/issues/9031)
-
-* Make the dotnet.exe functional tests runnable from Visual Studio, speed up the Dotnet.Integration.Test suite by 40% - [#9036](https://github.com/NuGet/Home/issues/9036)
-
-* Restore: DependencyGraphSpec.Load(...) does not need JObject - [#9040](https://github.com/NuGet/Home/issues/9040)
+* Static Graph restore should not pass empty SolutionPath - [#9061](https://github.com/NuGet/Home/issues/9061)
 
 * Restore: closure computed for each project 4 times - [#9042](https://github.com/NuGet/Home/issues/9042)
 
-* Static Graph restore should not pass empty SolutionPath - [#9061](https://github.com/NuGet/Home/issues/9061)
+* Restore: DependencyGraphSpec.Load(...) does not need JObject - [#9040](https://github.com/NuGet/Home/issues/9040)
+
+* Restore: large strings created on large object heap (LOH) - [#9031](https://github.com/NuGet/Home/issues/9031)
