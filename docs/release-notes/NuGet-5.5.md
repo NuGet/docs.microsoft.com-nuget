@@ -101,25 +101,11 @@ NuGet distribution vehicles:
 
 * Restore: PackageSpec.Clone() creates unequal clone - [#9211](https://github.com/NuGet/Home/issues/9211)
 
-**None:**
-
 * Error list shown although "Always show Error List if build finishes with errors" is not checked - [#8190](https://github.com/NuGet/Home/issues/8190)
 
-* Floating version "*" retrieves incorrect nuget package version (not latest) - [#8333](https://github.com/NuGet/Home/issues/8333)
-
-* Temporary fix on patching SDK for System.Security.Cryptography.Pkcs.dll  - [#8508](https://github.com/NuGet/Home/issues/8508)
-
-* Code files (.pp) in ContentFiles folder not added to consuming PackageReference project - [#8718](https://github.com/NuGet/Home/issues/8718)
-
-* ExcludeRestorePackageImports=true should not exclude package path properties - [#8840](https://github.com/NuGet/Home/issues/8840)
-
-* Nuget package can be installed multiple times in different versions - [#8865](https://github.com/NuGet/Home/issues/8865)
+**None:**
 
 * Add more settings tests - completely cover project\sln level support across products - [#8927](https://github.com/NuGet/Home/issues/8927)
-
-* [Test Failure]Confusing supported .NET Framework version v0.0 show in the error NU1202 message when installing a package into a project with incompatible framework - [#8965](https://github.com/NuGet/Home/issues/8965)
-
-* SpecCommand tests depend on the current year - [#8984](https://github.com/NuGet/Home/issues/8984)
 
 * Restore: large strings created on large object heap (LOH) - [#9031](https://github.com/NuGet/Home/issues/9031)
 
@@ -130,9 +116,3 @@ NuGet distribution vehicles:
 * Restore: closure computed for each project 4 times - [#9042](https://github.com/NuGet/Home/issues/9042)
 
 * Static Graph restore should not pass empty SolutionPath - [#9061](https://github.com/NuGet/Home/issues/9061)
-
-* NuGet.Build.Tasks.Console should have its own unit test assembly - [#9065](https://github.com/NuGet/Home/issues/9065)
-
-* Add unit tests for RestoreTaskExe - [#9067](https://github.com/NuGet/Home/issues/9067)
-
-* Delete TestEnvironment class in SDK resolver test assembly - [#9102](https://github.com/NuGet/Home/issues/9102)
