@@ -25,8 +25,6 @@ NuGet distribution vehicles:
 
 * msbuild /restore works with Packages.Config
 
-* Change the way how XML files are read
-
 **Feature:**
 
 * add `dotnet nuget <add|remove|update|disable|enable|list> source` command - [#4126](https://github.com/NuGet/Home/issues/4126)
