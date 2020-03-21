@@ -23,7 +23,7 @@ NuGet distribution vehicles:
 
     * Accessibility Fixes in PM UI - altText, etc... - [#9059](https://github.com/NuGet/Home/issues/9059)
 
-    * Review Accessibility bugs - [#9077](https://github.com/NuGet/Home/issues/9077)
+    * Accessibility issues in Screen Reader experiences in Packages List  - [#9077](https://github.com/NuGet/Home/issues/9077)
 
     * PMUI Tabs have Accessibility Issues - [#9078](https://github.com/NuGet/Home/issues/9078)
 
