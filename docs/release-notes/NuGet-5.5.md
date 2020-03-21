@@ -19,7 +19,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.5
 
-* NuGet Package Manager is more accessible using assitive Screen Readers
+* NuGet Package Manager in Visual Studio is more accessible using assitive Screen Readers
 
     * Accessibility Fixes in PM UI - altText, etc... - [#9059](https://github.com/NuGet/Home/issues/9059)
 
