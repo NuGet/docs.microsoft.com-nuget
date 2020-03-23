@@ -19,17 +19,19 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.5
 
-* NuGet Package Manager in Visual Studio is more accessible using assitive Screen Readers
+* Several accessibility fixes in the NuGet package manager UI in Visual Studio
 
-    * Accessibility Fixes in PM UI - altText, etc... - [#9059](https://github.com/NuGet/Home/issues/9059)
+    * Accessibility issues in Screen Reader experiences, missing altText and accessible name for Installed textbox, etc., - [#9059](https://github.com/NuGet/Home/issues/9059)
 
-    * Accessibility issues in Screen Reader experiences in Packages List  - [#9077](https://github.com/NuGet/Home/issues/9077)
+    * Accessibility issues in Screen Reader experiences in Packages List - [#9077](https://github.com/NuGet/Home/issues/9077)
 
-    * PMUI Tabs have Accessibility Issues - [#9078](https://github.com/NuGet/Home/issues/9078)
+    * Accessibility issues in Screen Reader experiences related to "browse","install","update" Tabs - [#9078](https://github.com/NuGet/Home/issues/9078)
 
-    * Accessibility Fixes in PM UI - [#9157](https://github.com/NuGet/Home/issues/9157)
+    * Narrator does not announce "Blank","No Dependencies","nuget.org","MIT" link label [#9157](https://github.com/NuGet/Home/issues/9157
 
 * Embedded Icons support in the NuGet package manager UI in Visual Studio - [#8189](https://github.com/NuGet/Home/issues/8189)
+
+* Make noop restore faster - speed up evaluations by calling MSBuild Static Graph apis - [8791](https://github.com/NuGet/Home/issues/8791)
 
 * dotnet.exe reliability fixes with cross platform authentication plugins
 
@@ -94,6 +96,10 @@ NuGet distribution vehicles:
 * Restore: DependencyGraphSpec.Load(...) does not need JObject - [#9040](https://github.com/NuGet/Home/issues/9040)
 
 * Restore: large strings created on large object heap (LOH) - [#9031](https://github.com/NuGet/Home/issues/9031)
+
+* Custom nuget.exe on newer mono might break due to the MSBuild SDK Resolver - [8848](https://github.com/NuGet/Home/issues/8848)
+
+* restore fails when nuget.dgspec.json is "used by another process" - [8692](https://github.com/NuGet/Home/issues/8692)
 
 **DCR**
 
