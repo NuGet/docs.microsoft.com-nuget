@@ -19,35 +19,25 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.5
 
-* Several accessibility fixes in the NuGet package manager UI in Visual Studio
-
+* Improved accessibility and screen reader experience for the NuGet package manager UI in Visual Studio
     * Accessibility issues in Screen Reader experiences, missing altText and accessible name for Installed textbox, etc., - [#9059](https://github.com/NuGet/Home/issues/9059)
-
     * Accessibility issues in Screen Reader experiences in Packages List - [#9077](https://github.com/NuGet/Home/issues/9077)
-
     * Accessibility issues in Screen Reader experiences related to "browse","install","update" Tabs - [#9078](https://github.com/NuGet/Home/issues/9078)
-
     * Narrator does not announce "Blank","No Dependencies","nuget.org","MIT" link label [#9157](https://github.com/NuGet/Home/issues/9157
 
-* Embedded Icons support in the NuGet package manager UI in Visual Studio - [#8189](https://github.com/NuGet/Home/issues/8189)
+* Support for surfacing self-contained icons in Visual Studio package manager UI for packages hosted on local feeds - [#8189](https://github.com/NuGet/Home/issues/8189)
 
-* Make noop restore faster - speed up evaluations by calling MSBuild Static Graph apis - [8791](https://github.com/NuGet/Home/issues/8791)
+* Significantly improved no-op restore performance using `RestoreUseStaticGraphEvaluation` which speeds up evaluations by calling MSBuild Static Graph APIs - [8791](https://github.com/NuGet/Home/issues/8791)
 
-* dotnet.exe reliability fixes with cross platform authentication plugins
-
+* Improved dotnet.exe reliability with cross-platform authentication plugins
     * dotnet restore failing with TaskCanceledException - [#7842](https://github.com/NuGet/Home/issues/7842)
-
     * Plugin:  "A task was cancelled" - problem with ADO authentication due to this. - [#8528](https://github.com/NuGet/Home/issues/8528)
 
 * add `dotnet nuget <add|remove|update|disable|enable|list> source` command - [#4126](https://github.com/NuGet/Home/issues/4126)
 
-* Improve network diagnostics to understand real world http download perf in VS - [#8592](https://github.com/NuGet/Home/issues/8592)
+* Suport for `--skip-duplicate`  using dotnet nuget push - [#8778](https://github.com/NuGet/Home/issues/8778)
 
-* --skip-duplicate support for dotnet nuget push - [#8778](https://github.com/NuGet/Home/issues/8778)
-
-* msbuild /restore works with Packages.Config - [#8506](https://github.com/NuGet/Home/issues/8506)
-
-* nuget.exe pack should no longer warn about packing a SemVer 2.0.0 package - [#5201](https://github.com/NuGet/Home/issues/5201)
+* Support `packages.config` with msbuild /restore - [#8506](https://github.com/NuGet/Home/issues/8506)
 
 ### Issues fixed in this release
 
