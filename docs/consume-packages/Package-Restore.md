@@ -162,6 +162,14 @@ To restore packages listed in the project file with PackageReference, use the th
    ```
 
    Make sure that the MSBuild output indicates that the build completed successfully.
+   
+> [!Note]
+> msbuild has a `-restore` switch which will run `Restore` and then build. See [Restoring and building with one MSBuild command](/nuget/reference/msbuild-targets#restoring-and-building-with-one-msbuild-command).
+
+```cmd
+# Will restore the project, then build, since build is the default target.
+msbuild -restore
+```
 
 ## Restore using Azure Pipelines
 
