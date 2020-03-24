@@ -91,7 +91,7 @@ NuGet distribution vehicles:
 
 * restore fails when nuget.dgspec.json is "used by another process" - [8692](https://github.com/NuGet/Home/issues/8692)
 
-**DCR**
+**DCRs**
 
 * Logic in _GetRestoreProjectStyle should be in a task - [#8804](https://github.com/NuGet/Home/issues/8804)
 
