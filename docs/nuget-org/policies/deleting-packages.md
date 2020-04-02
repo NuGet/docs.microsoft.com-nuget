@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 nuget.org does not support permanent deletion of packages. Doing so would break every project depending on the availability of the package, especially with build workflows that involve package restore.
 
-nuget.org does supports *unlisting* a package, which can be done in the package management page on the web site. Unlisted packages don't appear on nuget.org or in the Visual Studio UI, and do not appear in search results. Unlisted packages, however, can still be downloaded and installed by using an exact version number, which supports package restore. In addition, unlisted packages may still be discovered in the following specific scenarios:
+nuget.org does supports [unlisting a package](#unlisting-a-package), which can be done in the package management page on the web site. Unlisted packages don't appear on nuget.org or in the Visual Studio UI, and do not appear in search results. Unlisted packages, however, can still be downloaded and installed by using an exact version number, which supports package restore. In addition, unlisted packages may still be discovered in the following specific scenarios:
 
 - Package restore using floating versions (for example, `1.0.0-*`), if the latest available package matching the version or dependency constraints is an unlisted package.
 - Replication of packages through the catalog (as the catalog also contains unlisted packages).
@@ -47,4 +47,4 @@ Steps to unlist a package:
 
 The specific package version has now been unlisted. In order to verify this, logout of your account and navigate to the package page (without the version part) e.g.: https://www.nuget.org/packages/YOUR-PACKAGE-NAME/. You will see all versions of that package that have **not** been unlisted. However, the package owner, when logged in, can see all versions and their listing status.
 
-It's also possible to deprecate a package version (in case you can't delete a package version). For more information about deprecating package versions, see [Deprecating packages](Deprecate-packages.md).
+It's also possible to deprecate a package version (in case you can't delete a package version). For more information about deprecating package versions, see [Deprecating packages](../deprecate-packages.md).
