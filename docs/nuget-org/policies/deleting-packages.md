@@ -45,6 +45,6 @@ Steps to unlist a package:
 1. Expand the "Listing" section and select the package version
 1. Uncheck “List in search results” and select "Save"
 
-The specific package version has now been unlisted. In order to verify this open an incognito instance of your browser and navigate to the package page (without the version part) e.g.: https://www.nuget.org/packages/YOUR-PACKAGE-NAME/. You will see all versions of that package that have **not** been unlisted. However, if you see the same page while logged in you will see all packages with their status; listed or unlisted. 
+The specific package version has now been unlisted. In order to verify this, logout of your account and navigate to the package page (without the version part) e.g.: https://www.nuget.org/packages/YOUR-PACKAGE-NAME/. You will see all versions of that package that have **not** been unlisted. However, the package owner, when logged in, can see all versions and their listing status.
 
 It's also possible to deprecate a package version (in case you can't delete a package version). For more information about deprecating package versions, see [Deprecating packages](Deprecate-packages.md).
