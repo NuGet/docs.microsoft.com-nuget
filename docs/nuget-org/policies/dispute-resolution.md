@@ -15,7 +15,7 @@ For example, suppose that Northwind Traders makes a CRM system for which they pr
 
 In this scenario, Nancy does not appear to be acting with bad intentions, but is rather supporting Northwind's tools and customers by contributing her own time and code. At the same time, Northwind is the legitimate owner of the Northwind name.
 
-By following the process below, Northwind and Nancy can work together to a suitable resolution, because both are interested in serving the developer community. It's typically not necessary for the NuGet team to become involved; collaboration usually works out best. In fact, every dispute brought to the NuGet team's attention to date has been worked out without the team needing to pass judgment.
+By following the process below, Northwind and Nancy can work together to a suitable resolution, because both are interested in serving the developer community. It's typically not necessary for the NuGet team to become involved; collaboration usually works out best.
 
 ## Process
 
