@@ -54,7 +54,7 @@ The following tables list the rate limits for the NuGet.org API.
 
 ## NuGet Gallery page views
 
-If you are accessing the NuGet Gallery web pages programmatically, consider investigating our documented [V3 search APIs](search-query-service-resource.md). These endpoints allow for simpler access to package metadata and content. The V3 API has better availability and has higher performance than accessing the NuGet Gallery web pages, which are designed for web browser interaction.
+If you are accessing the NuGet Gallery web pages programmatically, consider investigating our documented [V3 APIs](https://docs.microsoft.com/en-us/nuget/api/overview). These endpoints allow for simpler access to package metadata and content. The V3 API has better availability and has higher performance than accessing the NuGet Gallery web pages, which are designed for web browser interaction.
 
 | API | Limit Type | Limit Value | API use case | 
 |:---|:---|:---|:--- |
