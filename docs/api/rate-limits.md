@@ -52,9 +52,9 @@ The following tables list the rate limits for the NuGet.org API.
 **PUT** `/api/v2/package` | API Key | 350 / hour | Upload a new NuGet package (version) via v2 push endpoint 
 **DELETE** `/api/v2/package/{id}/{version}` | API Key | 250 / hour | Unlist a NuGet package (version) via v2 endpoint 
 
-## NuGet Gallery page views
+## nuget.org page views
 
-If you are accessing the NuGet Gallery web pages programmatically, consider investigating our documented [V3 APIs](overview.md). These endpoints allow for simpler access to package metadata and content. The V3 API has better availability and has higher performance than accessing the NuGet Gallery web pages, which are designed for web browser interaction.
+If you are accessing the nuget.org web pages programmatically, consider investigating our documented [V3 APIs](overview.md). These endpoints allow for simpler access to package metadata and content. The V3 API has better availability and has higher performance than accessing the NuGet Gallery web pages, which are designed for web browser interaction.
 
 | API | Limit Type | Limit Value | API Use Case | 
 |:---|:---|:---|:--- |
