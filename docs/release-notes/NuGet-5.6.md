@@ -25,8 +25,6 @@ NuGet distribution vehicles:
 
 **Bug:**
 
-* `dotnet nuget push` - Missing value for option - [#4864](https://github.com/NuGet/Home/issues/4864)
-
 * `nuget push *.nupkg` fails wheh snupkg does not exist - [#8148](https://github.com/NuGet/Home/issues/8148)
 
 * Pack, and several other code paths, fails dependant on locale. Use RegexOptions.CultureInvariant - [#8246](https://github.com/NuGet/Home/issues/8246)
