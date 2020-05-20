@@ -67,7 +67,7 @@ NuGet distribution vehicles:
 * add support to `NuGet.exe update` for -DependencyVersion parameter, like install command - [#7694](https://github.com/NuGet/Home/issues/7694)
 
 
-**DCR:**
+**DCRs:**
 
 * net5.0 tfm - initial support - [#9584](https://github.com/NuGet/Home/issues/9584)
 
