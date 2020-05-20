@@ -23,7 +23,7 @@ NuGet distribution vehicles:
 
 ### Issues fixed in this release
 
-**Bug:**
+**Bugs:**
 
 * `nuget push *.nupkg` fails when snupkg does not exist - [#8148](https://github.com/NuGet/Home/issues/8148)
 
