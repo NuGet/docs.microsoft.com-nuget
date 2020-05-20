@@ -25,7 +25,8 @@ NuGet distribution vehicles:
 
 **Bug:**
 
-* `nuget push *.nupkg` fails wheh snupkg does not exist - [#8148](https://github.com/NuGet/Home/issues/8148)
+* `nuget push *.nupkg` fails when snupkg does not exist - [#8148](https://github.com/NuGet/Home/issues/8148)
+
 
 * Pack, and several other code paths, fails dependant on locale. Use RegexOptions.CultureInvariant - [#8246](https://github.com/NuGet/Home/issues/8246)
 
