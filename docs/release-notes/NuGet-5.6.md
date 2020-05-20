@@ -53,7 +53,7 @@ NuGet distribution vehicles:
 
 * Make IOutputConsole async - [#9268](https://github.com/NuGet/Home/issues/9268)
 
-* MsBuild version picking works badly on some non-english cultures - [#9322](https://github.com/NuGet/Home/issues/9322)
+* MSBuild version picking works poorly on some non-english cultures - [#9322](https://github.com/NuGet/Home/issues/9322)
 
 * Missing format default on `dotnet nuget list source` - [#9337](https://github.com/NuGet/Home/issues/9337)
 
