@@ -19,7 +19,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.6
 
-* Support pre-release packages with floating versions. `Version="*-*"`, `Version="1.*-*"`, and similar float to latest versions, including prerelease versions, within specified range  - [#912](https://github.com/NuGet/Home/issues/912)
+* Support prerelease packages with floating versions. `Version="*-*"`, `Version="1.*-*"`, and similar float to latest versions, including prerelease versions, within specified range  - [#912](https://github.com/NuGet/Home/issues/912)
 
 ### Issues fixed in this release
 
@@ -27,7 +27,7 @@ NuGet distribution vehicles:
 
 * `nuget push *.nupkg` fails when snupkg does not exist - [#8148](https://github.com/NuGet/Home/issues/8148)
 
-* Pack, and several other code paths, fails dependant on locale. Use RegexOptions.CultureInvariant - [#8246](https://github.com/NuGet/Home/issues/8246)
+* Pack, and several other code paths, fail dependent on locale. Use RegexOptions.CultureInvariant - [#8246](https://github.com/NuGet/Home/issues/8246)
 
 * Perf: DG Spec for unloaded project scenarios should not be written in preview restores - [#8793](https://github.com/NuGet/Home/issues/8793)
 
