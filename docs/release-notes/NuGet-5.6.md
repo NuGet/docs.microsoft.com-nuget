@@ -19,7 +19,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.6
 
-* Support pre-release packages with floating versions. `Version="*-*"` and similar - [#912](https://github.com/NuGet/Home/issues/912)
+* Support pre-release packages with floating versions. `Version="*-*"`, `Version="1.*-*"`, and similar float to latest versions, including prerelease versions, within specified range  - [#912](https://github.com/NuGet/Home/issues/912)
 
 ### Issues fixed in this release
 
@@ -33,23 +33,23 @@ NuGet distribution vehicles:
 
 * Restore: Improve performance by caching solution dependency graph spec - [#9201](https://github.com/NuGet/Home/issues/9201)
 
-* Package Manager UI doesn't work for SDK style projects after installing a package with PMConsole - [#9203](https://github.com/NuGet/Home/issues/9203)
+* PM UI doesn't work for SDK style projects after installing a package with PM Console - [#9203](https://github.com/NuGet/Home/issues/9203)
 
-* [Test Failure] Embedded icon can’t be shown in Package Manager UI with local package feed - depending on / vs \ - [#9225](https://github.com/NuGet/Home/issues/9225)
+* [Test Failure] Embedded icon can’t be shown in PM UI with local package feed - depending on / vs \ - [#9225](https://github.com/NuGet/Home/issues/9225)
 
 * NuGetVersion.TryParseStrict() should return false if it fails to parse - [#9255](https://github.com/NuGet/Home/issues/9255)
 
-* `nuget.exe push` help for `-source`, should be source name, not source uri - [#9265](https://github.com/NuGet/Home/issues/9265)
+* `nuget.exe push` help for `-source`, should suggest usage of source name, not source URL - [#9265](https://github.com/NuGet/Home/issues/9265)
 
 * `dotnet nuget add package SourceUri`  creates bad default package source name - [#9277](https://github.com/NuGet/Home/issues/9277)
 
 * Screen reader doesn't announce "Searching..." message when switching tabs - [#9307](https://github.com/NuGet/Home/issues/9307)
 
-* [Test Failure] Focus-rect color in themes for Package Manager UI tabs - [#9336](https://github.com/NuGet/Home/issues/9336)
+* Accessibility: Focus-rectangle color is not accessible PM UI tabs in dark theme - [#9336](https://github.com/NuGet/Home/issues/9336)
 
 * nuget.exe 5.5 fails to restore with MSBuild 14 or below - [#9458](https://github.com/NuGet/Home/issues/9458)
 
-* Don't bother logging small millisecond times in restore messages - [#8977](https://github.com/NuGet/Home/issues/8977)
+* Don't log millisecond times in restore messages - [#8977](https://github.com/NuGet/Home/issues/8977)
 
 * Make IOutputConsole async - [#9268](https://github.com/NuGet/Home/issues/9268)
 
@@ -63,14 +63,14 @@ NuGet distribution vehicles:
 
 * Default verbosity should not report each project's noop restore - [#8792](https://github.com/NuGet/Home/issues/8792)
 
-* Add support for `-DependencyVersion` parameter to `NuGet.exe update`, similar to install command - [#7694](https://github.com/NuGet/Home/issues/7694)
+* Support `-DependencyVersion` parameter for `NuGet.exe update`, similar to install command - [#7694](https://github.com/NuGet/Home/issues/7694)
 
 
 **DCRs:**
 
 * Add initial support for net5.0 target framework - [#9584](https://github.com/NuGet/Home/issues/9584)
 
-* Sort packages by ID in the Updates tab of the Package Manager UI - [#9278](https://github.com/NuGet/Home/issues/9278)
+* Sort packages by ID in the Updates tab of the PM UI - [#9278](https://github.com/NuGet/Home/issues/9278)
 
 
 **[List of all issues fixed in this release - 5.6](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5e3b2080c4b30708e48bf9f3)**
