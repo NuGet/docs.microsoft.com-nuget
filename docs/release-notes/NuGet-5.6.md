@@ -48,8 +48,6 @@ NuGet distribution vehicles:
 
 * [Test Failure] Focus-rect color in themes for PM UI tabs - [#9336](https://github.com/NuGet/Home/issues/9336)
 
-* Several accessibility bugs reported by users - [#9393](https://github.com/NuGet/Home/issues/9393)
-
 * nuget.exe 5.5 fails to restore with MSBuild 14 or below - [#9458](https://github.com/NuGet/Home/issues/9458)
 
 * Don't bother logging small millisecond times in restore messages - [#8977](https://github.com/NuGet/Home/issues/8977)
