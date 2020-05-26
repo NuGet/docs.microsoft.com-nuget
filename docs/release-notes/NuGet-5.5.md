@@ -97,4 +97,4 @@ NuGet distribution vehicles:
 
 * Add deprecation information by default on the installed tab - [#8541](https://github.com/NuGet/Home/issues/8541)
 
-**[List of all issues fixed in this release - 5.5](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5e0e5fbd021f7aa0ec95db18)**
+**[List of all issues fixed in this release - 5.5](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.5%22)**
