@@ -73,4 +73,4 @@ NuGet distribution vehicles:
 * Sort packages by ID in the Updates tab of the PM UI - [#9278](https://github.com/NuGet/Home/issues/9278)
 
 
-**[List of all issues fixed in this release - 5.6](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5e3b2080c4b30708e48bf9f3)**
+**[List of all issues fixed in this release - 5.6](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.6%22)**
