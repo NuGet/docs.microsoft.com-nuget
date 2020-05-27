@@ -251,6 +251,25 @@ When packing a license file, you need to use PackageLicenseFile property to spec
 
 [License file sample](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
+### Packing a file without an extension
+
+In some scenarios, like when packing a license file, you might want to include a file without an extension.
+For historical reasons, NuGet & MSBuild treat paths without an extension as directories
+
+```xml
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" Visible="false" PackagePath=""/>
+  </ItemGroup>  
+```
+
+[File without an extension sample](https://github.com/NuGet/Samples/blob/master/PackageLicenseFileExtensionlessExample/).
+
+
 ### IsTool
 
 When using `MSBuild -t:pack -p:IsTool=true`, all output files, as specified in the [Output Assemblies](#output-assemblies) scenario, are copied to the `tools` folder instead of the `lib` folder. Note that this is different from a `DotNetCliTool` which is specified by setting the `PackageType` in `.csproj` file.
