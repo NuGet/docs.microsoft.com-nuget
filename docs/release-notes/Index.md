@@ -1,8 +1,8 @@
 ---
 title: Release Notes
 description: Index of NuGet release notes and known issues for all versions.
-author: karann-msft
-ms.author: karann
+author: anangaur
+ms.author: anangaur
 ms.date: 08/14/2017
 ms.topic: conceptual
 ---
@@ -10,6 +10,8 @@ ms.topic: conceptual
 # Release Notes
 
 [Known Issues](../release-notes/known-issues.md)
+
+[NuGet 5.6](../release-notes/NuGet-5.6.md)
 
 [NuGet 5.5](../release-notes/NuGet-5.5.md)
 
