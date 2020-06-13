@@ -19,7 +19,7 @@ This article covers publishing to nuget.org; for publishing to Azure Artifacts, 
 
 ## Publish to nuget.org
 
-For nuget.org, you must sign in with a Microsoft account, with which you'll be asked to register the account with nuget.org. You can also sign in with a nuget.org account created using older versions of the portal.
+For nuget.org, you must sign in with a Microsoft account, with which you'll be asked to register the account with nuget.org. ~~You can also sign in with a nuget.org account created using older versions of the portal.~~ no longer service
 
 ![NuGet sign in location](media/publish_NuGetSignIn.png)
 
