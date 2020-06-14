@@ -61,6 +61,8 @@ namespace AppLogger
 
     ![NuGet package properties in a Visual Studio project](media/qs_create-vs-01-package-properties.png)
 
+above png outdated. and license info is required. how to add license? it should not be ignored.
+
     > [!Note]
     > For packages built for public consumption, pay special attention to the **Tags** property, as tags help others find your package and understand what it does.
 
