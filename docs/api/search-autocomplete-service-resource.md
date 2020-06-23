@@ -22,6 +22,10 @@ The following `@type` values are used:
 SearchAutocompleteService            | The initial release
 SearchAutocompleteService/3.0.0-beta | Alias of `SearchAutocompleteService`
 SearchAutocompleteService/3.0.0-rc   | Alias of `SearchAutocompleteService`
+SearchAutocompleteService/3.5.0      | Includes support for `packageType` query parameter
+
+### SearchAutocompleteService/3.5.0
+This version introduces support for the `packageType` query parameter, allowing filtering by author defined package types. It is fully backwards compatible with queries to `SearchAutocompleteService`.
 
 ## Base URL
 
@@ -50,7 +54,7 @@ skip        | URL    | integer | no       | The number of results to skip, for p
 take        | URL    | integer | no       | The number of results to return, for pagination
 prerelease  | URL    | boolean | no       | `true` or `false` determining whether to include [pre-release packages](../create-packages/prerelease-packages.md)
 semVerLevel | URL    | string  | no       | A SemVer 1.0.0 version string 
-packageType | URL    | string  | no       | The package type to use to filter packages
+packageType | URL    | string  | no       | The package type to use to filter packages (added in `SearchAutocompleteService/3.5.0`)
 
 The autocomplete query `q` is parsed in a manner that is defined by the server implementation. nuget.org supports
 querying for the prefix of package ID tokens, which are pieces of the ID produced by spliting the original by camel
@@ -70,9 +74,9 @@ If `semVerLevel=2.0.0` is provided, both SemVer 1.0.0 and SemVer 2.0.0 compatibl
 [SemVer 2.0.0 support for nuget.org](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29)
 for more information.
 
-The `packageType` parameter is used to futher filter the search results to only results that are of the provided type.
+The `packageType` parameter is used to further filter the autocomplete results to only packages that have at least one package type matching the package type name.
 If the provided package type is not a valid package type as defined by the [Package Type document](https://github.com/NuGet/Home/wiki/Package-Type-%5BPacking%5D), an empty result will returned.
-If the provided package type is empty, no filter will be applied. In other words, passing no value to the packageType parameter will behave as if the parameter was not passed.
+If the provided package type is empty, no filter will be applied. In other words, passing no value to the `packageType` parameter will behave as if the parameter was not passed.
 
 ### Response
 

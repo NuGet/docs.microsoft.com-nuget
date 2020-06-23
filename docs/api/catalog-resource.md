@@ -227,7 +227,7 @@ minClientVersion        | string                     | no       |
 packageHash             | string                     | yes      | The hash of the package, encoding using [standard base 64](https://tools.ietf.org/html/rfc4648#section-4)
 packageHashAlgorithm    | string                     | yes      |
 packageSize             | integer                    | yes      | The size of the package .nupkg in bytes
-packageTypes            | array of object            | no       | The package types specified by the author.
+packageTypes            | array of objects           | no       | The package types specified by the author.
 projectUrl              | string                     | no       |
 releaseNotes            | string                     | no       |
 requireLicenseAgreement | boolean                    | no       | Assume `false` if excluded
@@ -249,10 +249,8 @@ The `packageTypes` property will only be present if a package type was specified
 
 Name      | Type    | Required | Notes
 --------- | ------- | -------- | -----
-@id       | string  | yes      | The URL to fetch the package type item
-@type     | string  | yes      | Type of package type. Currently will always be "PackageType"
 name      | string  | yes      | The name of the package type.
-verion    | string  | no       | The version of the package type. Only present if the author explicitly specified a version in the nuspec.
+version    | string  | no       | The version of the package type. Only present if the author explicitly specified a version in the nuspec.
 
 The `published` timestamp is the time when the package was last listed.
 
