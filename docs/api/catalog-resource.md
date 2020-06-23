@@ -227,6 +227,7 @@ minClientVersion        | string                     | no       |
 packageHash             | string                     | yes      | The hash of the package, encoding using [standard base 64](https://tools.ietf.org/html/rfc4648#section-4)
 packageHashAlgorithm    | string                     | yes      |
 packageSize             | integer                    | yes      | The size of the package .nupkg in bytes
+packageTypes            | array of object            | no       | The package types specified by the author.
 projectUrl              | string                     | no       |
 releaseNotes            | string                     | no       |
 requireLicenseAgreement | boolean                    | no       | Assume `false` if excluded
@@ -243,6 +244,15 @@ time before the catalog item's commit timestamp.
 
 The `packageHashAlgorithm` is a string defined by the server implementation representing the hashing algorithm used to
 produce the `packageHash`. nuget.org always used the `packageHashAlgorithm` value of `SHA512`.
+
+The `packageTypes` property will only be present if a package type was specified by the author. If it is present, it will always have at least one (1) entry. Each item in the `packageTypes` array is a JSON object with the following properties:
+
+Name      | Type    | Required | Notes
+--------- | ------- | -------- | -----
+@id       | string  | yes      | The URL to fetch the package type item
+@type     | string  | yes      | Type of package type. Currently will always be "PackageType"
+name      | string  | yes      | The name of the package type.
+verion    | string  | no       | The version of the package type. Only present if the author explicitly specified a version in the nuspec.
 
 The `published` timestamp is the time when the package was last listed.
 
