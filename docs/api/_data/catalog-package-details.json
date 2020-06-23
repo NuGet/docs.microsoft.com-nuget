@@ -34,7 +34,7 @@
       "@type": "PackageType",
       "name": "DotnetTool"
     }
-  ]
+  ],
   "projectUrl": "https://github.com/NuGet/NuGetGallery",
   "published": "1900-01-01T00:00:00Z",
   "requireLicenseAcceptance": false,
