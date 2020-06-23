@@ -43,7 +43,7 @@ a package typeahead feature in a user interface integrated with a NuGet package 
 
 A package with only unlisted versions will not appear in the results.
 
-    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
+    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
 
 ### Request parameters
 
