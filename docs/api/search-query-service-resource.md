@@ -22,6 +22,10 @@ The following `@type` values are used:
 SearchQueryService            | The initial release
 SearchQueryService/3.0.0-beta | Alias of `SearchQueryService`
 SearchQueryService/3.0.0-rc   | Alias of `SearchQueryService`
+SearchQueryService/3.5.0      | Includes support for `packageType` query parameter
+
+### SearchQueryService/3.5.0
+This version introduces support for the `packageType` query parameter and the `packageTypes` response property, allowing filtering by author defined package types. It is fully backwards compatible with queries to `SearchQueryService`.
 
 ## Base URL
 
@@ -41,7 +45,7 @@ package metadata fields may also be considered.
 
 An unlisted package should never appear in search results.
 
-    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
+    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
 
 ### Request parameters
 
@@ -52,6 +56,7 @@ skip        | URL    | integer | no       | The number of results to skip, for p
 take        | URL    | integer | no       | The number of results to return, for pagination
 prerelease  | URL    | boolean | no       | `true` or `false` determining whether to include [pre-release packages](../create-packages/prerelease-packages.md)
 semVerLevel | URL    | string  | no       | A SemVer 1.0.0 version string 
+packageType | URL    | string  | no       | The package type to use to filter packages (added in `SearchQueryService/3.5.0`)
 
 The search query `q` is parsed in a manner that is defined by the server implementation. nuget.org supports basic
 filtering on a [variety of fields](../consume-packages/finding-and-choosing-packages.md#search-syntax). If no
@@ -71,6 +76,10 @@ If this query parameter is excluded, only packages with SemVer 1.0.0 compatible 
 If `semVerLevel=2.0.0` is provided, both SemVer 1.0.0 and SemVer 2.0.0 compatible packages will be returned. See the
 [SemVer 2.0.0 support for nuget.org](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29)
 for more information.
+
+The `packageType` parameter is used to further filter the search results to only packages that have at least one package type matching the package type name.
+If the provided package type is not a valid package type as defined by the [Package Type document](https://github.com/NuGet/Home/wiki/Package-Type-%5BPacking%5D), an empty result will returned.
+If the provided package type is empty, no filter will be applied. In other words, passing no value to the packageType parameter will behave as if the parameter was not passed.
 
 ### Response
 
@@ -105,6 +114,7 @@ tags           | string or array of strings | no       |
 title          | string                     | no       | 
 totalDownloads | integer                    | no       | This value can be inferred by the sum of downloads in the `versions` array
 verified       | boolean                    | no       | A JSON boolean indicating whether the package is [verified](../nuget-org/id-prefix-reservation.md)
+packageTypes   | array of objects           | yes      | The package types defined by the package author (added in `SearchQueryService/3.5.0`)
 
 On nuget.org, a verified package is one which has a package ID matching a reserved ID prefix and owned by one of the
 reserved prefix's owners. For more information, see the
@@ -118,6 +128,12 @@ Name      | Type    | Required | Notes
 @id       | string  | yes      | The absolute URL to the associated [registration leaf](registration-base-url-resource.md#registration-leaf)
 version   | string  | yes      | The full SemVer 2.0.0 version string of the package (could contain build metadata)
 downloads | integer | yes      | The number of downloads for this specific package version
+
+The `packageTypes` array will always consist of at least one (1) item. Package type for a given package ID is considered to be the package types defined by the latest version of the package with respect to the other search parameters. Each item in the `packageTypes` array is a JSON object with the following properties:
+
+Name      | Type    | Required | Notes
+--------- | ------- | -------- | -----
+name      | string  | yes      | The name of the package type.
 
 ### Sample request
 
