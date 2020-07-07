@@ -88,6 +88,7 @@
 ### [pack](reference/cli-reference/cli-ref-pack.md)
 ### [push](reference/cli-reference/cli-ref-push.md)
 ### [restore](reference/cli-reference/cli-ref-restore.md)
+### [search](reference/cli-reference/cli-ref-search.md)
 ### [setapikey](reference/cli-reference/cli-ref-setapikey.md)
 ### [sign](reference/cli-reference/cli-ref-sign.md)
 ### [sources](reference/cli-reference/cli-ref-sources.md)
