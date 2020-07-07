@@ -9,7 +9,7 @@ ms.topic: reference
 
 # search command (NuGet CLI)
 
-**Applies to:** package consumption &bullet; **Supported versions:** all
+**Applies to:** package consumption &bullet; **Supported versions:** *TODO*
 
 Searches a given source using the query string provided. If no sources are specified, all sources defined in %AppData%\NuGet\NuGet.config are used.
 
