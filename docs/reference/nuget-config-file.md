@@ -131,8 +131,8 @@ Stores usernames and passwords for sources, typically specified with the `-usern
 | Key | Value |
 | --- | --- |
 | username | The user name for the source in plain text. |
-| password | The encrypted password for the source. |
-| cleartextpassword | The unencrypted password for the source. |
+| password | The encrypted password for the source. Encrypted passwords are only supported on Windows, and only can be decrypted when used on the same machine and via the same user as the original encryption. |
+| cleartextpassword | The unencrypted password for the source. Note: environment variables can be used for improved security. |
 
 **Example:**
 
@@ -147,6 +147,21 @@ In the config file, the `<packageSourceCredentials>` element contains child node
     <Test_x0020_Source>
         <add key="Username" value="user" />
         <add key="Password" value="..." />
+    </Test_x0020_Source>
+</packageSourceCredentials>
+```
+
+When using unencrypted passwords stored in an environment variable:
+
+```xml
+<packageSourceCredentials>
+    <Contoso>
+        <add key="Username" value="user@contoso.com" />
+        <add key="ClearTextPassword" value="%ContosoPassword%" />
+    </Contoso>
+    <Test_x0020_Source>
+        <add key="Username" value="user" />
+        <add key="ClearTextPassword" value="%TestSourcePassword%" />
     </Test_x0020_Source>
 </packageSourceCredentials>
 ```
