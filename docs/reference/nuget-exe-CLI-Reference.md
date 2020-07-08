@@ -55,6 +55,7 @@ Available commands and applicability to package creation, package consumption, a
 | [install](cli-reference/cli-ref-install.md) | Consumption | All | Installs a package into the current project but does not modify projects or reference files. |
 | [list](cli-reference/cli-ref-list.md) | Consumption, perhaps Publishing | All | Displays packages from a given source. |
 | [mirror](cli-reference/cli-ref-mirror.md) | Publishing | Deprecated in 3.2+ | Mirrors a package and its dependencies from a source to a target repository. |
+| [search](cli-reference/cli-ref-search.md) | Consumption | *TODO* | Searches a given source using the query string provided. |
 | [sources](cli-reference/cli-ref-sources.md) | Consumption, Publishing | All | Manages package sources in configuration files. |
 | [update](cli-reference/cli-ref-update.md) | Consumption | All | Updates a project's packages to the latest available versions. Not supported when running on Mono. |
 
@@ -64,7 +65,7 @@ NuGet CLI commands by applicable roles:
 
 | Role | Commands |
 | --- | --- |
-| Consumption | `config`, `help`, `install`, `list`, `locals`, `restore`, `setapikey`, `sources`, `update` |
+| Consumption | `config`, `help`, `install`, `list`, `locals`, `restore`, `search`, `setapikey`, `sources`, `update` |
 | Creation | `config`, `help`, `init`, `pack`, `spec` |
 | Publishing | `add`, `config`, `delete`, `help`, `list`, `push`, `setapikey`, `sources` |
 
