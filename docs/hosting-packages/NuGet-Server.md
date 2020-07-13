@@ -21,7 +21,7 @@ If you have further questions about NuGet.Server, create an issue on [https://gi
 
 ## Create and deploy an ASP.NET Web application with NuGet.Server
 
-1. In Visual Studio, select **File > New > Project**, search for "ASP.NET Web Application (.NET Framework)", select the matching template for C#.
+1. In Visual Studio, select **File > New > Project**, search for "ASP.NET Web Application (.NET Framework)", select the matching template for **C#**.
 
     ![Select the .NET Framework web project template](media/Hosting_00-NuGet.Server-ProjectType.png)
 
