@@ -181,6 +181,7 @@ summary                  | string                     | no       |
 tags                     | string or array of string  | no       | 
 title                    | string                     | no       | 
 version                  | string                     | yes      | The full version string after normalization
+vulnerabilities          | array of objects           | no       | The security vulnerabilities of the package
 
 The package `version` property is the full version string after normalization. This means that SemVer 2.0.0 build data
 can be included here.
@@ -251,6 +252,15 @@ Name         | Type   | Required | Notes
 ------------ | ------ | -------- | -----
 id           | string | yes      | The ID of the alternate package
 range        | object | no       | The allowed [version range](../concepts/package-versioning.md#version-ranges), or `*` if any version is allowed
+
+#### Vulnerabilities
+
+An array of `vulnerability` objects. Each vulnerability has the following properties:
+
+Name         | Type   | Required | Notes
+------------ | ------ | -------- | -----
+advisoryUrl  | string | yes      | Location of security advisory for the package
+severity     | string | yes      | Severity of advisory: "0" = Low, "1" = Moderate, "2" = High, "3" = Critical
 
 ### Sample request
 
