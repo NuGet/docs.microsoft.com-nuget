@@ -24,7 +24,7 @@ Notice the **Filter** button on the upper right of the page. When clicked, the A
 You can use the **Package type** filter to only show packages of a specific type.
 To sort the search results, you can use the **Sort by** section of the panel to select your preferred method of sorting:
 - **`Relevance`**: This is the default behavior. It sorts results according to an internal scoring algorithm.
-- **`Downloads`**: Sorts the search results by the total number of downloads, starting with the higher download count.
+- **`Downloads`**: Sorts the search results by the total number of downloads in descending order.
 - **`Recently updated`**: Sorts the search results by their latest version's creation date, in descending chronological order.
 
 In the **Options** section, we can find the **`Include prerelease`** checkbox.
