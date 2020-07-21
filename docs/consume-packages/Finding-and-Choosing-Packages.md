@@ -13,7 +13,7 @@ When starting any .NET project, or whenever you identify a functional need for y
 
 ## Finding packages
 
-When you visit nuget.org or open the Package Manager UI in Visual Studio, you see a list of packages sorted by relevancy. This immediately shows you the most widely-used packages across the millions of .NET projects. There's a good chance, then, that at least some of the packages listed on the first few pages will be useful in your projects.
+When you visit nuget.org or open the Package Manager UI in Visual Studio, you see a list of packages sorted by relevancy. This shows you the most widely used packages across all .NET projects. There's a good chance that some of these packages may be useful for your own projects!
 
 ![Default view of nuget.org/packages showing the most popular packages](media/Finding-01-Popularity.png)
 
@@ -33,13 +33,11 @@ To sort the search results, you can use the **Sort by** section of the panel to 
 - **`Recently updated`**: Sorts the search results by their latest version's creation date, in descending chronological order.
 
 In the **Options** section, we can find the **`Include prerelease`** checkbox.
-When checked, nuget.org shows all versions of packages including beta and other early releases. To show only stable released, clear the option.
+When checked, nuget.org shows all versions of packages including pre-releases. To show only stable versions, clear the option.
 
 To apply the search filters, click on the **`Apply`** button. You can always get back to the default behavior by clicking on the **`Reset`** button.
 
-For specific needs, searching by tags (within the Visual Studio Package Manager or on a portal like nuget.org) is the most common means of discovering a suitable package. For example, searching on "json" lists all NuGet packages that are tagged with that keyword and thus have some relationship to the JSON data format.
-
-You can also search using the package ID, if you know it. See [Search Syntax](#search-syntax) below.
+You can also use the [search syntax](#search-syntax) to filter on tags, owners, and package IDs.
 
 ### Does the package support my project's target framework?
 
