@@ -32,9 +32,7 @@ When checked, nuget.org shows all versions of packages including pre-releases. T
 
 To apply the search filters, click on the **`Apply`** button. You can always get back to the default behavior by clicking on the **`Reset`** button.
 
-For specific needs, searching by tags (within the Visual Studio Package Manager or on a portal like nuget.org) is the most common means of discovering a suitable package. For example, searching on "json" lists all NuGet packages that are tagged with that keyword and thus have some relationship to the JSON data format.
-
-You can also search using the package ID, if you know it. See [Search Syntax](#search-syntax) below.
+You can also use the [search syntax](#search-syntax) to filter on tags, owners, and package IDs.
 
 ### Does the package support my project's target framework?
 
