@@ -13,19 +13,28 @@ When starting any .NET project, or whenever you identify a functional need for y
 
 ## Finding packages
 
-When you visit nuget.org or open the Package Manager UI in Visual Studio, you see a list of packages sorted by total downloads. This immediately shows you the most widely-used packages across the millions of .NET projects. There's a good chance, then, that at least some of the packages listed on the first few pages will be useful in your projects.
+When you visit nuget.org or open the Package Manager UI in Visual Studio, you see a list of packages sorted by relevancy. This immediately shows you the most widely-used packages across the millions of .NET projects. There's a good chance, then, that at least some of the packages listed on the first few pages will be useful in your projects.
 
 ![Default view of nuget.org/packages showing the most popular packages](media/Finding-01-Popularity.png)
 
-Notice the **Include prerelease** option on the upper right of the page. When selected, nuget.org shows all versions of packages including beta and other early releases. To show only stable released, clear the option.
-
-For specific needs, searching by tags (within the Visual Studio Package Manager or on a portal like nuget.org) is the most common means of discovering a suitable package. For example, searching on "json" lists all NuGet packages that are tagged with that keyword and thus have some relationship to the JSON data format.
+Notice the **Filter** button on the upper right of the page. When clicked, you will expand the Advanced Search panel which will present you with more precise soriting and filtering options.
 
 ![Search results for 'json' on nuget.org](media/Finding-02-SearchResults.png)
 
-You can also search using the package ID, if you know it. See [Search Syntax](#search-syntax) below.
+You can use the **Package type** filter to only show packages of a specific type.
+To sort the search results, you can use the **Sort by** section of the panel to select your preferred method of sorting:
+- **`Relevance`**: This is the default behavior. It sorts results according to an internal scoring algorithm.
+- **`Downloads`**: Sorts the search results by the total number of downloads, starting with the higher download count.
+- **`Recently updated`**: Sorts the search results by their latest version's creation date, in descending chronological order.
 
-At this time, search results are sorted only by relevance, so you generally want to look through at least the first few pages of results for packages that suit your needs, or refine your search terms to be more specific.
+In the **Options** section, we can find the **`Include prerelease`** checkbox.
+When checked, nuget.org shows all versions of packages including beta and other early releases. To show only stable released, clear the option.
+
+To apply the search filters, click on the **`Apply`** button. You can always get back to the default behavior by clicking on the **`Reset`** button.
+
+For specific needs, searching by tags (within the Visual Studio Package Manager or on a portal like nuget.org) is the most common means of discovering a suitable package. For example, searching on "json" lists all NuGet packages that are tagged with that keyword and thus have some relationship to the JSON data format.
+
+You can also search using the package ID, if you know it. See [Search Syntax](#search-syntax) below.
 
 ### Does the package support my project's target framework?
 
@@ -43,7 +52,7 @@ Fortunately, you can determine supported frameworks through two other means:
 
 Many package authors make preview and beta releases available as they continue to make improvements and seek feedback on their latest revisions.
 
-By default, nuget.org shows pre-release packages in search results. To search only stable releases, clear the **Include prerelease** option on the upper right of the page
+By default, nuget.org shows pre-release packages in search results. To search only stable releases, clear the **Include prerelease** option in the Advanced Search panel that is accessible from the **Filter** button on the upper right of the page
 
 ![Include prerelease checkbox on nuget.org](media/Finding-06-include-prerelease.png)
 
