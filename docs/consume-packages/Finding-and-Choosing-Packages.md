@@ -13,7 +13,7 @@ When starting any .NET project, or whenever you identify a functional need for y
 
 ## Finding packages
 
-When you visit nuget.org or open the Package Manager UI in Visual Studio, you see a list of packages sorted by relevancy. This immediately shows you the most widely-used packages across the millions of .NET projects. There's a good chance, then, that at least some of the packages listed on the first few pages will be useful in your projects.
+When you visit nuget.org or open the Package Manager UI in Visual Studio, you see a list of packages sorted by relevancy. This shows you the most widely used packages across all .NET projects. There's a good chance that some of these packages may be useful for your own projects!
 
 ![Default view of nuget.org/packages showing the most popular packages](media/Finding-01-Popularity.png)
 
