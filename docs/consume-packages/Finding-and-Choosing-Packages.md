@@ -28,7 +28,7 @@ To sort the search results, you can use the **Sort by** section of the panel to 
 - **`Recently updated`**: Sorts the search results by their latest version's creation date, in descending chronological order.
 
 In the **Options** section, we can find the **`Include prerelease`** checkbox.
-When checked, nuget.org shows all versions of packages including beta and other early releases. To show only stable released, clear the option.
+When checked, nuget.org shows all versions of packages including pre-releases. To show only stable versions, clear the option.
 
 To apply the search filters, click on the **`Apply`** button. You can always get back to the default behavior by clicking on the **`Reset`** button.
 
