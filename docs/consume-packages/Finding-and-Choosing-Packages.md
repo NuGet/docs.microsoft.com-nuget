@@ -17,7 +17,7 @@ When you visit nuget.org or open the Package Manager UI in Visual Studio, you se
 
 ![Default view of nuget.org/packages showing the most popular packages](media/Finding-01-Popularity.png)
 
-Notice the **Filter** button on the upper right of the page. When clicked, you will expand the Advanced Search panel which will present you with more precise soriting and filtering options.
+Notice the **Filter** button on the upper right of the page. When clicked, the Advanced Search panel expands to present sorting and filtering options.
 
 ![Search results for 'json' on nuget.org](media/Finding-02-SearchResults.png)
 
