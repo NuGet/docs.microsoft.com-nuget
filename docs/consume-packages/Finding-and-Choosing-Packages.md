@@ -24,7 +24,7 @@ Notice the **Filter** button on the upper right of the page. When clicked, the A
 You can use the **Package type** filter to only show packages of a specific type:
 - **`All types`**: This is the default behavior. It shows all packages regarding of their type.
 - **`Dependency`**: This only shows NuGet dependency packages which represent libraries.
-- **`.NET tool`**: This filters to .NET tools. For more info: [How to manage .NET Core tools](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools)
+- **`.NET tool`**: This filters to [.NET tools](/dotnet/core/tools/global-tools), a NuGet package that contains a console application.
 - **`Template`**: This filters to packages that are project and item templates. For more info: [manage .NET project and item templates](https://docs.microsoft.com/en-us/dotnet/core/install/templates?pivots=os-windows)
 
 To sort the search results, you can use the **Sort by** section of the panel to select your preferred method of sorting:
