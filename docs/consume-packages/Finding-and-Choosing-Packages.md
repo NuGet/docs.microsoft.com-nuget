@@ -27,7 +27,7 @@ You can use the **Package type** filter to only show packages of a specific type
 - **`.NET tool`**: This filters to [.NET tools](/dotnet/core/tools/global-tools), a NuGet package that contains a console application.
 - **`Template`**: This filters to packages that are project and item templates. For more info: [manage .NET project and item templates](https://docs.microsoft.com/en-us/dotnet/core/install/templates?pivots=os-windows)
 
-To sort the search results, you can use the **Sort by** section of the panel to select your preferred method of sorting:
+You can use the **Sort by** option to sort the search results:
 - **`Relevance`**: This is the default behavior. It sorts results according to an internal scoring algorithm.
 - **`Downloads`**: Sorts the search results by the total number of downloads in descending order.
 - **`Recently updated`**: Sorts the search results by their latest version's creation date, in descending chronological order.
