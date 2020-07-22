@@ -21,7 +21,7 @@ Notice the **Filter** button on the upper right of the page. When clicked, the A
 
 ![Search results for 'json' on nuget.org](media/Finding-02-SearchResults.png)
 
-You can use the **Package type** filter to only show packages of a specific type:
+You can use the **Package type** filter to show packages of a specific type:
 - **`All types`**: This is the default behavior. It shows all packages regarding of their type.
 - **`Dependency`**: This only shows NuGet dependency packages which represent libraries.
 - **`.NET tool`**: This filters to [.NET tools](/dotnet/core/tools/global-tools), a NuGet package that contains a console application.
