@@ -25,7 +25,7 @@ You can use the **Package type** filter to show packages of a specific type:
 - **`All types`**: This is the default behavior. It shows all packages regardless of their type.
 - **`Dependency`**: Regular NuGet packages that can be installed into your project.
 - **`.NET tool`**: This filters to [.NET tools](/dotnet/core/tools/global-tools), a NuGet package that contains a console application.
-- **`Template`**: This filters to packages that are project and item templates. For more info: [manage .NET project and item templates](/dotnet/core/install/templates)
+- **`Template`**: This filters to packages that are project and item templates. See [Manage .NET project and item templates](/dotnet/core/install/templates) for more info.
 
 You can use the **Sort by** option to sort the search results:
 - **`Relevance`**: This is the default behavior. It sorts results according to an internal scoring algorithm.
