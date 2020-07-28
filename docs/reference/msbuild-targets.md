@@ -59,6 +59,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | ProjectUrl | PackageProjectUrl | empty | |
 | Icon | PackageIcon | empty | You need to explicitly pack the referenced icon image file.|
 | IconUrl | PackageIconUrl | empty | For the best downlevel experience, `PackageIconUrl` should be specified in addition to `PackageIcon`. Longer term, `PackageIconUrl` will be deprecated. |
+| Readme | PackageReadmeFile | empty | You need to explicitly pack the referenced readme file.|
 | Tags | PackageTags | empty | Tags are semi-colon delimited. |
 | ReleaseNotes | PackageReleaseNotes | empty | |
 | Repository/Url | RepositoryUrl | empty | Repository URL used to clone or retrieve source code. Example: *https://github.com/NuGet/NuGet.Client.git* |
@@ -84,6 +85,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 - PackageLicenseUrl
 - PackageProjectUrl
 - PackageIconUrl
+- PackageReadmeFile
 - PackageReleaseNotes
 - PackageTags
 - PackageOutputPath
@@ -145,6 +147,28 @@ For example:
 [Package Icon sample](https://github.com/NuGet/Samples/tree/master/PackageIconExample).
 
 For the nuspec equivalent, take a look at [nuspec reference for icon](nuspec.md#icon).
+
+### PackageReadmeFile
+
+When packing a readme file, you need to use the `PackageReadmeFile` property to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Readme file size is limited to 1 MB. Supported file formats include only Markdown (*.md*).
+
+For example:
+
+```xml
+<PropertyGroup>
+    ...
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    ...
+</PropertyGroup>
+
+<ItemGroup>
+    ...
+    <None Include="docs\readme.md" Pack="true" PackagePath="\"/>
+    ...
+</ItemGroup>
+```
+
+For the nuspec equivalent, take a look at [nuspec reference for readme](nuspec.md#readme).
 
 ### Output assemblies
 

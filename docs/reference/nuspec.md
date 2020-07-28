@@ -173,6 +173,29 @@ For the MSBuild equivalent, take a look at [Packing an icon image file](msbuild-
 > [!Tip]
 > You can specify both `icon` and `iconUrl` to maintain backward compatibility with sources that do not support `icon`. Visual Studio will support `icon` for packages coming from a folder-based source in a future release.
 
+#### readme
+
+When packing a readme file, you need to use the `readme` element to specify the package path, relative to the root of the package. In addition, you need to make sure that the file is included in the package. Readme file size is limited to 1 MB. Supported file formats include only Markdown (*.md*).
+
+For example, you would add the following to your nuspec when creating a package using nuget.exe:
+
+```xml
+<package>
+  <metadata>
+    ...
+    <readme>docs\readme.md</readme>
+    ...
+  </metadata>
+  <files>
+    ...
+    <file src="..\readme.md" target="docs\" />
+    ...
+  </files>
+</package>
+```
+
+For the MSBuild equivalent, take a look at [Packing a readme file](msbuild-targets.md#packagereadmefile).
+
 #### requireLicenseAcceptance
 A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.
 
