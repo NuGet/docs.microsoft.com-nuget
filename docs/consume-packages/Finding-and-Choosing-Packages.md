@@ -29,7 +29,7 @@ You can use the **Package type** filter to show packages of a specific type:
 
 You can use the **Sort by** option to sort the search results:
 - **`Relevance`**: This is the default behavior. It sorts results according to an internal scoring algorithm.
-- **`Downloads`**: Sorts the search results by the total number of downloads in descending order.
+- **`Downloads`**: Sorts the search results by the total number of downloads, in descending order.
 - **`Recently updated`**: Sorts the search results by their latest version's creation date, in descending chronological order.
 
 In the **Options** section, we can find the **`Include prerelease`** checkbox.
