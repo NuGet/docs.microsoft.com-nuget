@@ -106,7 +106,7 @@ When you run `dotnet pack` on a solution, this packs all the projects in the sol
 
 ### Test package installation
 
-Before publishing a package, you typically want to test the process of installing a package into a project. The tests make sure that the necessarily files all end up in their correct places in the project.
+Before publishing a package, you typically want to test the process of installing a package into a project. The tests make sure that the necessary files all end up in their correct places in the project.
 
 You can test installations manually in Visual Studio or on the command line using the normal [package installation steps](../consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package).
 
