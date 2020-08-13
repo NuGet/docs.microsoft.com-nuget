@@ -60,6 +60,10 @@ For a clear visual representation of the schema, open the schema file in Visual 
 
 ![Visual Studio Schema Explorer with nuspec.xsd open](media/SchemaExplorer.png)
 
+All XML element names in the .nuspec file are case-sensitive, as is the case for XML in general. For example, using the
+metadata element `<description>` is correct and `<Description>` is not correct. The proper casing for each element name
+is documented below.
+
 ### Required metadata elements
 
 Although the following elements are the minimum requirements for a package, you should consider adding the [optional metadata elements](#optional-metadata-elements) to improve the overall experience developers have with your package. 
