@@ -68,7 +68,7 @@ Create a package, set metadata, and add dependencies using [`NuGet.Packaging`](h
 > 
 > For more information about creating NuGet packages, see the overview of the
 > [package creation workflow](../create-packages/overview-and-workflow.md) and the documentation for official pack
-> tooling (e.g. [using the dotnet CLI](../create-packages/creating-a-package-dotnet-cli.md)).
+> tooling (For example, [Using the dotnet CLI](../create-packages/creating-a-package-dotnet-cli.md)).
 
 [!code-csharp[CreatePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=CreatePackage)]
 
