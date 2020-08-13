@@ -109,7 +109,7 @@ When referring to package dependencies, NuGet supports using interval notation f
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | Mixed inclusive minimum and exclusive maximum version |
 | (1.0)    | invalid | invalid |
 
-When using the PackageReference format, NuGet also supports using a floating notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number. Floating versions are not supported with the `packages.config` format.
+When using the PackageReference format, NuGet also supports using a floating notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number. Floating versions are not supported with the `packages.config` format. When a floating version is specified the rule is to resolve to the highest existent version that match the version description. Examples of loating versions and the resolutions are below.
 
 > [!Note]
 > Version ranges in PackageReference include pre-release versions. By design, floating versions do not resolve prerelease versions unless opted into. For the status of the related feature request, see [issue 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297).
@@ -121,28 +121,43 @@ Always specify a version or version range for package dependencies in project fi
 #### References in project files (PackageReference)
 
 ```xml
-<!-- Accepts any version 6.1 and above. -->
+<!-- Accepts any version 6.1 and above.
+     Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="6.1" />
 
-<!-- Accepts any 6.x.y version. -->
+<!-- Accepts any 6.x.y version.
+     Will resolve to the highest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="6.*" />
-<PackageReference Include="ExamplePackage" Version="[6,7)" />
 
 <!-- Accepts any version above, but not including 4.1.3. Could be
-     used to guarantee a dependency with a specific bug fix. -->
+     used to guarantee a dependency with a specific bug fix. 
+     Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="(4.1.3,)" />
 
 <!-- Accepts any version up below 5.x, which might be used to prevent pulling in a later
      version of a dependency that changed its interface. However, this form is not
-     recommended because it can be difficult to determine the lowest version. -->
+     recommended because it can be difficult to determine the lowest version. 
+     Will resolve to the smallest acceptable stable version.
+     -->
 <PackageReference Include="ExamplePackage" Version="(,5.0)" />
 
-<!-- Accepts any 1.x or 2.x version, but not 0.x or 3.x and higher. -->
+<!-- Accepts any 1.x or 2.x version, but not 0.x or 3.x and higher.
+     Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="[1,3)" />
 
-<!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->
+<!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher.
+     Will resolve to the smallest acceptable stable version. -->
 <PackageReference Include="ExamplePackage" Version="[1.3.2,1.5)" />
 ```
+
+#### Floating version resolutions 
+
+| Version | Versions present on server | Resolution | Reason | Notes |
+|----------|--------------|-------------|-------------|-------------|
+| * | 1.1.0 <br> 1.1.1 <br> 1.2.0 <br> 1.3.0-alpha  | 1.2.0 | The highest stable version. |
+| 1.1.* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.2.0-alpha | 1.1.1 | The highest stable version that respects the specified pattern.|
+| * - * | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.3.0-beta  | 1.3.0-beta | The highest version including the not stable versions. | Available in Visual Studio version 16.6, NuGet version 5.6, .NET Core SDK version 3.1.300 |
+| 1.1.* - * | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.1.2-beta <br> 1.3.0-beta  | 1.1.2-beta | The highest version respecting the pattern and including the not stable versions. | Available in Visual Studio version 16.6, NuGet version 5.6, .NET Core SDK version 3.1.300 |
 
 **References in `packages.config`:**
 
