@@ -69,22 +69,22 @@ These elements must appear within a `<metadata>` element.
 #### id 
 The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package resides in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number) for guidance.
 
-When uploading a package to nuget.org, the `<id>` field is limited to 128 characters.
+When uploading a package to nuget.org, the `id` field is limited to 128 characters.
 
 #### version
 The version of the package, following the *major.minor.patch* pattern. Version numbers may include a pre-release suffix as described in [Package versioning](../concepts/package-versioning.md#pre-release-versions). 
 
-When uploading a package to nuget.org, the `<version>` field is limited to 64 characters.
+When uploading a package to nuget.org, the `version` field is limited to 64 characters.
 
 #### description
 A description of the package for UI display.
 
-When uploading a package to nuget.org, the `<description>` field is limited to 4000 characters.
+When uploading a package to nuget.org, the `description` field is limited to 4000 characters.
 
 #### authors
 A comma-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors. 
 
-When uploading a package to nuget.org, the `<authors>` field is limited to 4000 characters.
+When uploading a package to nuget.org, the `authors` field is limited to 4000 characters.
 
 ### Optional metadata elements
 
@@ -94,7 +94,7 @@ A comma-separated list of the package creators using profile names on nuget.org.
 #### projectUrl
 A URL for the package's home page, often shown in UI displays as well as nuget.org. 
 
-When uploading a package to nuget.org, the `<projectUrl>` field is limited to 4000 characters.
+When uploading a package to nuget.org, the `projectUrl` field is limited to 4000 characters.
 
 #### licenseUrl
 > [!Important]
@@ -102,7 +102,7 @@ When uploading a package to nuget.org, the `<projectUrl>` field is limited to 40
 
 A URL for the package's license, often shown in UIs like nuget.org.
 
-When uploading a package to nuget.org, the `<licenseUrl>` field is limited to 4000 characters.
+When uploading a package to nuget.org, the `licenseUrl` field is limited to 4000 characters.
 
 #### license
 An SPDX license expression or path to a license file within the package, often shown in UIs like nuget.org.
@@ -160,7 +160,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 A URL for a 128x128 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. 
    
-When uploading a package to nuget.org, the `<iconUrl>` field is limited to 4000 characters.
+When uploading a package to nuget.org, the `iconUrl` field is limited to 4000 characters.
 
 #### icon
 
@@ -202,17 +202,17 @@ A Boolean value specifying whether the client must prompt the consumer to accept
 
 A short description of the package for UI display. If omitted, a truncated version of `description` is used.
 
-When uploading a package to nuget.org, the `<summary>` field is limited to 4000 characters.
+When uploading a package to nuget.org, the `summary` field is limited to 4000 characters.
 
 #### releaseNotes
 *(1.5+)* A description of the changes made in this release of the package, often used in UI like the **Updates** tab of the Visual Studio Package Manager in place of the package description.
 
-When uploading a package to nuget.org, the `<releaseNotes>` field is limited to 35,000 characters.
+When uploading a package to nuget.org, the `releaseNotes` field is limited to 35,000 characters.
 
 #### copyright
 *(1.5+)* Copyright details for the package.
 
-When uploading a package to nuget.org, the `<copyright>` field is limited to 4000 characters.
+When uploading a package to nuget.org, the `copyright` field is limited to 4000 characters.
 
 #### language
 The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md).
@@ -220,7 +220,7 @@ The locale ID for the package. See [Creating localized packages](../create-packa
 #### tags
 A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering. 
 
-When uploading a package to nuget.org, the `<tags>` field is limited to 4000 characters.
+When uploading a package to nuget.org, the `tags` field is limited to 4000 characters.
 
 #### serviceable 
 *(3.3+)* For internal NuGet use only.
@@ -246,7 +246,7 @@ When uploading a package to nuget.org, the `type` attribute is limited to 100 ch
 #### title
 A human-friendly title of the package which may be used in some UI displays. (nuget.org and the Package Manager in Visual Studio do not show title)
 
-When uploading a package to nuget.org, the `<title>` field is limited to 256 characters but is not used for any
+When uploading a package to nuget.org, the `title` field is limited to 256 characters but is not used for any
 > display purposes.
 
 #### Collection elements
