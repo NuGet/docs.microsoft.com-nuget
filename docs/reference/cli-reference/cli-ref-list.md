@@ -19,7 +19,7 @@ Displays a list of packages from a given source. If no sources are specified, al
 nuget list [search terms] [options]
 ```
 
-where the optional search terms will filter the displayed list. [Search terms](../../consume-packages/finding-and-choosing-packages#search-syntax) are applied to the names of packages, tags, and package descriptions just as they are when using them on nuget.org. 
+where the optional search terms will filter the displayed list. [Search terms](https://docs.microsoft.com/nuget/consume-packages/finding-and-choosing-packages#search-syntax) are applied to the names of packages, tags, and package descriptions just as they are when using them on nuget.org. 
 
 ## Options
 
