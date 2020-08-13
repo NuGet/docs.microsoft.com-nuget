@@ -114,10 +114,6 @@ See [Bulk publishing NuGet packages](http://jeffhandley.com/archive/2012/12/13/B
 
 ## Working with packages
 
-**What is the difference between a project-level package and a solution-level package?**
-
-A solution-level package (NuGet 3.x+) is installed only once in a solution and is then available for all projects in the solution. A project-level package is installed in each project that uses it. A solution-level package might also install new commands that can be called from within the Package Manager Console.
-
 **Is it possible to install NuGet packages without Internet connectivity?**
 
 Yes, see Scott Hanselman's Blog post [How to access NuGet when nuget.org is down (or you're on a plane)](http://www.hanselman.com/blog/HowToAccessNuGetWhenNuGetorgIsDownOrYoureOnAPlane.aspx) (hanselman.com).
