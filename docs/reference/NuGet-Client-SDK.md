@@ -61,6 +61,13 @@ Search for "json" packages using the [NuGet V3 Search API](../api/search-query-s
 
 Create a package, set metadata, and add dependencies using [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging).
 
+> [!IMPORTANT]
+> It is strongly recommended that NuGet packages are created using the official NuGet tooling and **not** using this
+> low level API. There are a variety of characteristics important for a well-formed package and the latest version of
+> tooling helps incorporate these best practices. For more information about creating NuGet packages, see the
+> overview of the [package creation workflow](../create-packages/overview-and-workflow.md) and the documentation
+> for official pack tooling (e.g. [using the dotnet CLI](../create-packages/creating-a-package-dotnet-cli.md)).
+
 [!code-csharp[CreatePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=CreatePackage)]
 
 ### Read a package
