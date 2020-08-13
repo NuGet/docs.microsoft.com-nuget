@@ -21,10 +21,12 @@ You can find the source code for these packages in the [NuGet/NuGet.Client](http
 
 ## Getting started
 
-### Install the package
+### Install the packages
 
 ```ps1
-dotnet add package NuGet.Protocol
+dotnet add package NuGet.Protocol  # interact with HTTP and folder based NuGet package feeds, includes NuGet.Packaging
+
+dotnet add package NuGet.Packaging # interact with .nupkg and .nuspec files from a stream
 ```
 
 ## Examples
@@ -54,6 +56,18 @@ Get the metadata for the "Newtonsoft.Json" package using the [NuGet V3 Package M
 Search for "json" packages using the [NuGet V3 Search API](../api/search-query-service-resource.md):
 
 [!code-csharp[SearchPackages](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=SearchPackages)]
+
+### Create a package
+
+Create a package, set metadata, and add dependencies using [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging).
+
+[!code-csharp[CreatePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=CreatePackage)]
+
+### Read a package
+
+Read a package from a file stream using [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging).
+
+[!code-csharp[ReadPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=ReadPackage)]
 
 ## Third-party documentation
 
