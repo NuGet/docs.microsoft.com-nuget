@@ -63,7 +63,7 @@ Create a package, set metadata, and add dependencies using [`NuGet.Packaging`](h
 
 > [!IMPORTANT]
 > It is strongly recommended that NuGet packages are created using the official NuGet tooling and **not** using this
-> low level API. There are a variety of characteristics important for a well-formed package and the latest version of
+> low-level API. There are a variety of characteristics important for a well-formed package and the latest version of
 > tooling helps incorporate these best practices.
 > 
 > For more information about creating NuGet packages, see the overview of the
