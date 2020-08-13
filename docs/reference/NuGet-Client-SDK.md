@@ -24,7 +24,7 @@ You can find the source code for these packages in the [NuGet/NuGet.Client](http
 ### Install the packages
 
 ```ps1
-dotnet add package NuGet.Protocol  # interact with HTTP and folder based NuGet package feeds, includes NuGet.Packaging
+dotnet add package NuGet.Protocol  # interact with HTTP and folder-based NuGet package feeds, includes NuGet.Packaging
 
 dotnet add package NuGet.Packaging # interact with .nupkg and .nuspec files from a stream
 ```
