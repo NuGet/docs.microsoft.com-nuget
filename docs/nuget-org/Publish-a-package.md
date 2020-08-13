@@ -41,7 +41,7 @@ Next, you can either upload the package through the nuget.org web portal, push t
 
 ### Command line
 
-To push packages to nuget.org you must use [dotnet.exe (.NET Core)](https://docs.microsoft.com/en-us/dotnet/core/install/) or [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implement the required [NuGet protocols](../api/nuget-protocols.md). You also need an API key, which is created on nuget.org.
+To push packages to nuget.org you must use [dotnet.exe (.NET Core)](https://docs.microsoft.com/dotnet/core/install/) or [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implement the required [NuGet protocols](../api/nuget-protocols.md). You also need an API key, which is created on nuget.org.
 
 #### Create API keys
 
