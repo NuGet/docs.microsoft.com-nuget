@@ -1,0 +1,110 @@
+---
+title: NuGet 5.7 Release Notes
+description: Release notes for NuGet 5.7 including new features, bug fixes, and DCRs.
+author: chgill-msft
+ms.author: chgill
+ms.date: 8/14/2020
+ms.topic: conceptual
+---
+
+# NuGet 5.7 Release Notes
+
+NuGet distribution vehicles:
+
+| NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
+|:---|:---|:---|
+| [**<NuGetVersion>**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.7](https://visualstudio.microsoft.com/downloads/) | [3.1.401](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
+
+<sup>1</sup> Installed with Visual Studio 2019 with.NET Core workload
+
+## Summary: What's New in 5.7
+
+* Test and Fix Auto-Restore (SDK) for VS in Live Share & cloud environments - [#8674](https://github.com/NuGet/Home/issues/8674)
+
+* Use the output channel service to propagate NuGet output for VSO.  - [#9269](https://github.com/NuGet/Home/issues/9269)
+
+* Add the restore service functionality for online environments  - [#9308](https://github.com/NuGet/Home/issues/9308)
+
+* nuget.exe update -self -Source https://feed - [#1783](https://github.com/NuGet/Home/issues/1783)
+
+* Add a context menu for PM UI in VS OE - [#9428](https://github.com/NuGet/Home/issues/9428)
+
+* [Centrally managing NuGet packages and versions] Integrate PackageVersion information for non-sdk style projects in VS restore  - [#9236](https://github.com/NuGet/Home/issues/9236)
+
+* Make noop restore faster - speed up evaluations by calling MSBuild Static Graph apis (dotnet.exe) - [#9644](https://github.com/NuGet/Home/issues/9644)
+
+* NuGet should support multiple config files in %APPDATA%\NuGet directory - [#9394](https://github.com/NuGet/Home/issues/9394)
+
+* DeterministicSourcePaths doesn't take NuGet source packages into account - [#9431](https://github.com/NuGet/Home/issues/9431)
+
+* extern alias support for NuGet package references - [#4989](https://github.com/NuGet/Home/issues/4989)
+
+* Create INuGetProjectService.GetInstalledPackagesAsync extensibility API - [#9702](https://github.com/NuGet/Home/issues/9702)
+
+* Add interop API to enumerate fallback folders without requiring a solution/project - [#9395](https://github.com/NuGet/Home/issues/9395)
+
+* Add "latest" option for -MSBuildVersion  - [#8808](https://github.com/NuGet/Home/issues/8808)
+
+### Issues fixed in this release
+
+**DCRs:**
+
+* Suppress the <owners> element when it is redundant - [#5134](https://github.com/NuGet/Home/issues/5134)
+
+* Log IntervalTrackers as ETW events - [#9593](https://github.com/NuGet/Home/issues/9593)
+
+* Add an information message on restore to inform the CPVM users that the feature is in preview - [#9340](https://github.com/NuGet/Home/issues/9340)
+
+* Populate Solution Explorer package/project transitive dependencies from assets file - [#9580](https://github.com/NuGet/Home/issues/9580)
+
+* Searching in PMUI with Static / Sleet package sources causes OutOfMemoryException - [#8478](https://github.com/NuGet/Home/issues/8478)
+
+* Visual Studio partial restore for PR projects (noop++) prototype - [#9513](https://github.com/NuGet/Home/issues/9513)
+
+* Installed packages tab shouldn't paginate the list - [#6995](https://github.com/NuGet/Home/issues/6995)
+
+**Bugs:**
+
+* Add an Online Environment assembly, basic NuGet menu items & ingest required dependencies - [#9331](https://github.com/NuGet/Home/issues/9331)
+
+* Write to the Package Manager output in VS OE scenarios - [#9362](https://github.com/NuGet/Home/issues/9362)
+
+* WorkspaceCommandHandler.Exec should return unsupported - [#9381](https://github.com/NuGet/Home/issues/9381)
+
+* Improve DOTNET_HOST_PATH environment variable handling - [#7438](https://github.com/NuGet/Home/issues/7438)
+
+* nuget.exe spec Generates a copyright Tag with Hard-Coded Text of Copyright yyyy Instead of $copyright$ - [#8696](https://github.com/NuGet/Home/issues/8696)
+
+* nuget cli 3.5.0 throws exception 'authors required' during pack of a csproj ignoring placeholders and assemblyinfo attributes if the assembly name is changed - [#4234](https://github.com/NuGet/Home/issues/4234)
+
+* Consider updating the libraries to use newer versions of Newtonsoft.Json - [#9263](https://github.com/NuGet/Home/issues/9263)
+
+* HttpSourceAuthenticationHandler SemaphoreSlim future proofing - [#9463](https://github.com/NuGet/Home/issues/9463)
+
+* HttpRequestMessage gets reused multiple times which is not supported with the SocketHttpHandler - [#8661](https://github.com/NuGet/Home/issues/8661)
+
+* NuGet.Indexing 5.6.0 preview 3 and later use a different public key token - [#9481](https://github.com/NuGet/Home/issues/9481)
+
+* Honor TreatWarningsAsErrors during NuGet Package creation - [#7404](https://github.com/NuGet/Home/issues/7404)
+
+* [CPVM] Spurious package downgrades for multiple p2p projects  - [#9549](https://github.com/NuGet/Home/issues/9549)
+
+* [Bug Bash][Test Failure] The “Browse” tab is not aligned left with search box - [#9559](https://github.com/NuGet/Home/issues/9559)
+
+* [Test Failure] The installed version is inconsistent with the embedded icon in the solution level PM UI for one package id with multiple versions installed - [#9321](https://github.com/NuGet/Home/issues/9321)
+
+* Auth in Visual Studio should not always be interactive - [#9659](https://github.com/NuGet/Home/issues/9659)
+
+* Leak: PartCreationPolicy(CreationPolicy.NonShared) NuGet.SolutionRestoreManager.RestoreOperationLogger - [#9595](https://github.com/NuGet/Home/issues/9595)
+
+* Avoid reading the assets file in no-op restores - [#9693](https://github.com/NuGet/Home/issues/9693)
+
+* Current Source Link package is not working - [#9695](https://github.com/NuGet/Home/issues/9695)
+
+* NuGet.Protocol does not support getting a version's download count from search - [#9086](https://github.com/NuGet/Home/issues/9086)
+
+* Improve memory performance of PackageMetadataResourceV3 by reducing the JObject dependencies - [#9719](https://github.com/NuGet/Home/issues/9719)
+
+* Revert "shared compilation of XmlUtility" - [#9733](https://github.com/NuGet/Home/issues/9733)
+
+**[List of all issues fixed in this release - 5.7](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5ea77f51ab1a972297db2e92)**
