@@ -23,14 +23,30 @@ where `<packageID>` is an optional package identifier to save in the `.nuspec` f
 
 ## Options
 
-| Option | Description |
-| --- | --- |
-| AssemblyPath | Specifies the path to the assembly to use for metadata. |
-| Force | Overwrites any existing `.nuspec` file. |
-| ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
-| Help | Displays help information for the command. |
-| NonInteractive | Suppresses prompts for user input or confirmations. |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
+- **`-a|-AssemblyPath`**
+
+  Specifies the path to the assembly to use for metadata.
+
+- **`-Force`**
+
+  Overwrites any existing `.nuspec` file.
+
+
+- **`-ForceEnglishOutput`**
+
+  *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
+
+- **`-?|-h|-help`**
+
+  Displays help information for the command.
+
+- **`-n|-NonInteractive`**
+
+  Suppresses prompts for user input or confirmations.
+
+- **`-v|-Verbosity [normal|quiet|detailed]`**
+
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
