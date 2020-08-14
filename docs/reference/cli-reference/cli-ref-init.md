@@ -45,9 +45,9 @@ where `<source>` is the folder containing packages and `<destination>` is the lo
 
   Suppresses prompts for user input or confirmations.
 
-- **`-v|-Verbosity <LEVEL>`**
+- **`-v|-Verbosity [normal|quiet|detailed]`**
 
-  Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 

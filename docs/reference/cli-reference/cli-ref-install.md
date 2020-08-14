@@ -102,9 +102,9 @@ where `<packageID>` names the package to install (using the latest version), or 
 
    Specifies the list of package sources (as URLs) to use. If omitted, the command uses the sources provided in configuration files, see [Common NuGet configurations](../../consume-packages/configuring-nuget-behavior.md).
 
-- **`-Verbosity <LEVEL>`**
+- **`-v|-Verbosity [normal|quiet|detailed]`**
 
-  Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 - **`-Version`**
 

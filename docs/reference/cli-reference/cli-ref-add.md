@@ -59,10 +59,9 @@ Forces nuget.exe to run using an invariant, English-based culture.
 
    Specifies the package source, which is a folder or UNC share, to which the nupkg will be added. Http sources are not supported.
 
-- **`-v|-Verbosity <LEVEL>`**
+- **`-v|-Verbosity [normal|quiet|detailed]`**
 
-  Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.
-
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 

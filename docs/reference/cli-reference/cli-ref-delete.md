@@ -54,9 +54,9 @@ where `<packageID>` and `<packageVersion>` identify the exact package to delete 
 
   Specifies the server URL. The URL for nuget.org is `https://api.nuget.org/v3/index.json`. For private feeds, substitute the host name, for example, *%hostname%/api/v3*.
 
-- **`-v|-Verbosity <LEVEL>`**
+- **`-v|-Verbosity [normal|quiet|detailed]`**
 
-  Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 

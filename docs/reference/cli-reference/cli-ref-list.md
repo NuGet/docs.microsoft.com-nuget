@@ -55,9 +55,9 @@ where the optional search terms will filter the displayed list. Search terms are
 
   Specifies a list of packages sources to search.
 
-- **`-v|-Verbosity <LEVEL>`**
+- **`-v|-Verbosity [normal|quiet|detailed]`**
 
-  Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
