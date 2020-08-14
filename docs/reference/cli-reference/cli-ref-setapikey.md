@@ -43,6 +43,10 @@ where `<source>` identifies the server and `<key>` is the key to save. If `<sour
 
   Suppresses prompts for user input or confirmations.
 
+- **`-s|-src|-Source`**
+
+  Server URL where the API key is valid.
+
 - **`-v|-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
