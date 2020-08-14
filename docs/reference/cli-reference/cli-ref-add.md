@@ -34,14 +34,31 @@ where `<packagePath>` is the pathname to the package to add, and `<sourcePath>` 
 
 ## Options
 
-| Option | Description |
-| --- | --- |
-| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
-| Expand | Adds all the files in the package to the package source. |
-| ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
-| Help | Displays help information for the command. |
-| NonInteractive | Suppresses prompts for user input or confirmations. |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
+- **`-ConfigFile`**
+
+  The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
+
+- **`-e|-Expand`**
+
+  Adds all the files in the package to the package source.
+
+- **`-f|-ForceEnglishOutput`**
+
+  *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
+Forces nuget.exe to run using an invariant, English-based culture.
+
+- **`-?|-h|-help`**
+
+  Displays help information for the command.
+
+- **`-n|-NonInteractive`**
+
+  Suppresses prompts for user input or confirmations.
+
+- **`-v|-Verbosity <LEVEL>`**
+
+  Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.
+
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
