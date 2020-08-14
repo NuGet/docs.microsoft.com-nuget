@@ -34,18 +34,31 @@ Specifies that package signature verification should be performed.
 
 ## Options for "verify -Signatures"
 
-| Option | Description |
-| --- | --- |
-| CertificateFingerprint | Specifies one or more SHA-256 certificate fingerprints of certificates(s) which signed packages must be signed with. A certificate SHA-256 fingerprint is a SHA-256 hash of the certificate. Multiple inputs should be semicolon separated. |
+- **`-CertificateFingerprint`**
+
+  Specifies one or more SHA-256 certificate fingerprints of certificates(s) which signed packages must be signed with. A certificate SHA-256 fingerprint is a SHA-256 hash of the certificate. Multiple inputs should be semicolon separated.
 
 ## Options
 
-| Option | Description |
-| --- | --- |
-| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
-| ForceEnglishOutput | Forces nuget.exe to run using an invariant, English-based culture. |
-| Help | Displays help information for the command. |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
+- **`-c|-ConfigFile`**
+
+  The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
+
+- **`-f|-ForceEnglishOutput`**
+
+  Forces nuget.exe to run using an invariant, English-based culture.
+
+- **`-?|-h|-help`**
+
+  Displays help information for the command.
+
+- **`-n|-NonInteractive`**
+
+  Suppresses prompts for user input or confirmations.
+
+- **`-v|-Verbosity [normal|quiet|detailed]`**
+
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 ## Examples
 
