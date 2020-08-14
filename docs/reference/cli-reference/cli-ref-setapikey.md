@@ -23,7 +23,7 @@ where `<source>` identifies the server and `<key>` is the key to save. If `<sour
 
 > [!NOTE]
 > API key is not used for authenticating with the private feed. Refer to [`nuget sources` command](../cli-reference/cli-ref-sources.md) to manage credentials for authenticating with the source.
-> API keys can be obtained from the individual NuGet servers. To create and manage APIKeys for nuget.org refer to [acquire-an-api-key](../../nuget-org/scoped-api-keys#acquire-an-api-key)
+> API keys can be obtained from the individual NuGet servers. To create and manage APIKeys for nuget.org refer to [acquire-an-api-key](../../nuget-org/scoped-api-keys.md#acquire-an-api-key)
 
 ## Options
 
