@@ -13,12 +13,14 @@ ms.topic: reference
 
 Adds a specified package to a non-HTTP package source (a folder or UNC path) in a hierarchical layout, wherein folders are created for the package ID and version number. For example:
 
-    \\myserver\packages
-      └─<packageID>
-        └─<version>
-          ├─<packageID>.<version>.nupkg
-          ├─<packageID>.<version>.nupkg.sha512
-          └─<packageID>.nuspec
+```
+\\myserver\packages
+  └─<packageID>
+    └─<version>
+      ├─<packageID>.<version>.nupkg
+      ├─<packageID>.<version>.nupkg.sha512
+      └─<packageID>.nuspec
+```
 
 When restoring or updating against the package source, hierarchical layout provides significantly better performance.
 
