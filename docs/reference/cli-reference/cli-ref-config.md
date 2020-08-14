@@ -33,7 +33,7 @@ In NuGet 3.4+, `<value>` can use [environment variables](cli-ref-environment-var
 
   Returns the config value as a path, ignored when `-Set` is used.
 
-- **`-ConfigFile`**
+- **`-c|-ConfigFile`**
 
   The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
 

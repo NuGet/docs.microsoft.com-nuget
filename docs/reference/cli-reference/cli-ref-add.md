@@ -34,7 +34,7 @@ where `<packagePath>` is the pathname to the package to add, and `<sourcePath>` 
 
 ## Options
 
-- **`-ConfigFile`**
+- **`-c|-ConfigFile`**
 
   The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
 

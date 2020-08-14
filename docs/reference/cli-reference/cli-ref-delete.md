@@ -27,7 +27,7 @@ where `<packageID>` and `<packageVersion>` identify the exact package to delete 
 
   The API key for the target repository. If not present, the one specified in the config file is used.
 
-- **`-ConfigFile`**
+- **`-c|-ConfigFile`**
 
   The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
 
