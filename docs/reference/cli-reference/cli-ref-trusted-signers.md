@@ -60,12 +60,21 @@ nuget trusted-signers add <package(s)> -Name <name> [options]
 
 where `<package(s)>` is one or more `.nupkg` files.
 
-| Option | Description |
-| --- | --- |
-| Author | Specifies that the author signature of the package(s) should be trusted. |
-| Repository | Specifies that the repository signature or countersignature of the package(s) should be trusted. |
-| AllowUntrustedRoot | Specifies if the certificate for the trusted signer should be allowed to chain to an untrusted root. |
-| Owners | Semi-colon separated list of trusted owners to further restrict the trust of a repository. Only valid when using the `-Repository` option. |
+- **`-Author`**
+
+  Specifies that the author signature of the package(s) should be trusted.
+
+- **`-AllowUntrustedRoot`**
+
+  Specifies if the certificate for the trusted signer should be allowed to chain to an untrusted root.
+
+- **`-Owners`**
+
+  Semi-colon separated list of trusted owners to further restrict the trust of a repository. Only valid when using the `-Repository` option.
+
+- **`-Repository`**
+
+  Specifies that the repository signature or countersignature of the package(s) should be trusted.
 
 Providing both `-Author` and `-Repository` at the same time is not supported.
 
@@ -77,11 +86,17 @@ nuget trusted-signers add -Name <name> [options]
 
 _Note_: This option will only add trusted repositories. 
 
-| Option | Description |
-| --- | --- |
-| ServiceIndex | Specifies the V3 service index of the repository to be trusted. This repository has to support the repository signatures resource. If not provided, the command will look for a package source with the same `-Name` and get the service index from there. |
-| AllowUntrustedRoot | Specifies if the certificate for the trusted signer should be allowed to chain to an untrusted root. |
-| Owners | Semi-colon separated list of trusted owners to further restrict the trust of a repository. |
+- **`-AllowUntrustedRoot`**
+
+  Specifies if the certificate for the trusted signer should be allowed to chain to an untrusted root.
+
+- **`-Owners`**
+
+  Semi-colon separated list of trusted owners to further restrict the trust of a repository.
+
+- **`-ServiceIndex`**
+
+  Specifies the V3 service index of the repository to be trusted. This repository has to support the repository signatures resource. If not provided, the command will look for a package source with the same `-Name` and get the service index from there.
 
 ## Options for add based on the certificate information
 
@@ -91,11 +106,18 @@ nuget trusted-signers add -Name <name> [options]
 
 _Note_: If a trusted signer with the given name already exists, the certificate item will be added to that signer. Otherwise a trusted author will be created with a certificate item from given certificate information.
 
-| Option | Description |
-| --- | --- |
-| CertificateFingerprint | Specifies a certificate fingerprints of a certificate which signed packages must be signed with. A certificate fingerprint is a hash of the certificate. The hash algorithm used for calculating this hash should be specifies in the `FingerprintAlgorithm` option. |
-| FingerprintAlgorithm | Specifies the hash algorithm used to calculate the certificate fingerprint. Defaults to `SHA256`. Values supported are `SHA256`, `SHA384` and `SHA512` |
-| AllowUntrustedRoot | Specifies if the certificate for the trusted signer should be allowed to chain to an untrusted root. |
+
+- **`-AllowUntrustedRoot`**
+
+  Specifies if the certificate for the trusted signer should be allowed to chain to an untrusted root.
+
+- **`-CertificateFingerprint`**
+
+  Specifies a certificate fingerprints of a certificate which signed packages must be signed with. A certificate fingerprint is a hash of the certificate. The hash algorithm used for calculating this hash should be specifies in the `FingerprintAlgorithm` option.
+
+- **`-FingerprintAlgorithm`**
+
+  Specifies the hash algorithm used to calculate the certificate fingerprint. Defaults to `SHA256`. Values supported are `SHA256`, `SHA384` and `SHA512`.
 
 ## nuget trusted-signers remove -Name \<name\>
 
@@ -109,12 +131,30 @@ _Note_: This gesture will delete the current list of certificates and replace th
 
 ## Options
 
-| Option | Description |
-| --- | --- |
-| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
-| ForceEnglishOutput | Forces nuget.exe to run using an invariant, English-based culture. |
-| Help | Displays help information for the command. |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
+- **`-ConfigFile`**
+
+  The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
+
+- **`-ForceEnglishOutput`**
+
+  Forces nuget.exe to run using an invariant, English-based culture.
+
+- **`-?|-h|-help`**
+
+  Displays help information for the command.
+
+- **`-Name`**
+
+  Name of the trusted signer.
+
+- **`-NonInteractive`**
+
+  Suppresses prompts for user input or confirmations.
+
+- **`-v|-Verbosity [normal|quiet|detailed]`**
+
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
+
 
 ## Examples
 
