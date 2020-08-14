@@ -55,6 +55,10 @@ Forces nuget.exe to run using an invariant, English-based culture.
 
   Suppresses prompts for user input or confirmations.
 
+- **`-s|-src|-Source`**
+
+   Specifies the package source, which is a folder or UNC share, to which the nupkg will be added. Http sources are not supported.
+
 - **`-v|-Verbosity <LEVEL>`**
 
   Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.

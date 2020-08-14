@@ -40,7 +40,6 @@ In NuGet 3.4+, `<value>` can use [environment variables](cli-ref-environment-var
 - **`-f|-ForceEnglishOutput`**
 
   *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
-Forces nuget.exe to run using an invariant, English-based culture.
 
 - **`-?|-h|-help`**
 
