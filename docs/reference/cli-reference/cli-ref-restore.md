@@ -89,7 +89,7 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 
   Specifies the types of files to save after package installation: one of `nuspec`, `nupkg`, or `nuspec;nupkg`.
 
-- **`-PackagesDirectory`**
+- **`-OutputDirectory|-PackagesDirectory`**
 
   Same as `OutputDirectory`. Required when restoring with a `packages.config` file unless `OutputDirectory` or `SolutionDirectory` is used.
 
