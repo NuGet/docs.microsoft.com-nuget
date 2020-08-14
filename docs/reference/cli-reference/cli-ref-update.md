@@ -29,23 +29,67 @@ where `<configPath>` identifies either a `packages.config` or solution file that
 
 ## Options
 
-| Option | Description |
-| --- | --- |
-| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
-| FileConflictAction | Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Values are *overwrite, ignore, none*. |
-| ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
-| Help | Displays help information for the command. |
-| Id | Specifies a list of package IDs to update. |
-| MSBuildPath | *(4.0+)* Specifies the path of MSBuild to use with the command, taking precedence over `-MSBuildVersion`. |
-| MSBuildVersion | *(3.2+)* Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild. |
-| NonInteractive | Suppresses prompts for user input or confirmations. |
-| PreRelease | Allows updating to prerelease versions. This flag is not required when updating prerelease packages that are already installed. |
-| RepositoryPath | Specifies the local folder where packages are installed. |
-| Safe | Specifies that only updates with the highest version available within the same major and minor version as the installed package will be installed. |
-| Self | Updates nuget.exe to the latest version; all other arguments are ignored. |
-| Source | Specifies the list of package sources (as URLs) to use for the updates. If omitted, the command uses the sources provided in configuration files, see [Common NuGet configurations](../../consume-packages/configuring-nuget-behavior.md). |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
-| Version | When used with one package ID, specifies the version of the package to update. |
+- **`-c|-ConfigFile`**
+
+  The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
+
+- **`-FileConflictAction [PromptUser, Overwrite, Ignore]`**
+
+  Specifies the default action when a file from a package already exists in the target project. Set to `Overwrite` to always overwrite files. Set to `Ignore` to skip files.
+
+  The `PromptUser` action, the default, will prompt for each conflicting file unless `OverwriteAll` or `IgnoreAll` is provided, which will apply to all remaining files.
+
+- **`-ForceEnglishOutput`**
+
+  *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
+
+- **`-?|-h|-help`**
+
+  Displays help information for the command.
+
+- **`-i|-Id`**
+
+  Specifies a list of package IDs to update.
+
+- **`-MSBuildPath`**
+
+  *(4.0+)* Specifies the path of MSBuild to use with the command, taking precedence over `-MSBuildVersion`.
+
+- **`-MSBuildVersion`**
+
+  *(3.2+)* Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.
+
+- **`-n|-NonInteractive`**
+
+  Suppresses prompts for user input or confirmations.
+
+- **`-p|-PreRelease`**
+
+  Allows updating to prerelease versions. This flag is not required when updating prerelease packages that are already installed.
+
+- **`-r|-RepositoryPath`**
+
+  Specifies the local folder where packages are installed.
+
+- **`-Safe`**
+
+  Specifies that only updates with the highest version available within the same major and minor version as the installed package will be installed.
+
+- **`-Self`**
+
+  Updates nuget.exe to the latest version; all other arguments are ignored.
+
+- **`-Source`**
+
+  Specifies the list of package sources (as URLs) to use for the updates. If omitted, the command uses the sources provided in configuration files, see [Common NuGet configurations](../../consume-packages/configuring-nuget-behavior.md).
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
+
+- **`-Version`**
+
+  When used with one package ID, specifies the version of the package to update.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
