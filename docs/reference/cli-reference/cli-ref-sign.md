@@ -49,7 +49,7 @@ where `<package(s)>` is one or more `.nupkg` files.
 ## Examples
 
 ```cli
-nuget sign MyPackage.nupkg -Timestamper http://timestamp.test
+nuget sign MyPackage.nupkg -CertificatePath .\..\certificate.pfx -Timestamper http://timestamp.test
 
-nuget sign .\..\MyPackage.nupkg -Timestamper http://timestamp.test -OutputDirectory .\..\Signed
+nuget sign .\..\MyPackage.nupkg -CertificateStoreLocation CurrentUser -CertificateStoreName My -CertificateSubjectName 'subject name' -Timestamper http://timestamp.test -OutputDirectory .\..\Signed
 ```
