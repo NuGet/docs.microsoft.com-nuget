@@ -177,7 +177,7 @@ Additionally, valid authentication methods can be supplied:
         <add key="Password" value="..." />
         <add key="ValidAuthenticationTypes" value="basic" />
     </Contoso>
-        <Test_x0020_Source>
+    <Test_x0020_Source>
         <add key="Username" value="user" />
         <add key="ClearTextPassword" value="hal+9ooo_da!sY" />
         <add key="ValidAuthenticationTypes" value="basic, negotiate" />
