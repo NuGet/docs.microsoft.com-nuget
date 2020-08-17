@@ -127,12 +127,14 @@ Lists all known package sources. The order is ignored during restore operations 
 ### packageSourceCredentials
 
 Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`. Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.
+Optionally, valid authentication types can be specified with the `-validauthenticationtypes` switch.
 
 | Key | Value |
 | --- | --- |
 | username | The user name for the source in plain text. |
 | password | The encrypted password for the source. Encrypted passwords are only supported on Windows, and only can be decrypted when used on the same machine and via the same user as the original encryption. |
 | cleartextpassword | The unencrypted password for the source. Note: environment variables can be used for improved security. |
+| validauthenticationtypes | Comma-separated list of valid authentication types for this source. Set this to `basic` if the server advertises NTLM or Negotiate and your credentials must be sent using the Basic mechanism, for instance when using a PAT with on-premises Azure DevOps Server. Other valid values include `negotiate`, `kerberos`, `ntlm`, and `digest`, but these values are unlikely to be useful. |
 
 **Example:**
 
@@ -177,6 +179,23 @@ When using unencrypted passwords:
     <Test_x0020_Source>
         <add key="Username" value="user" />
         <add key="ClearTextPassword" value="hal+9ooo_da!sY" />
+    </Test_x0020_Source>
+</packageSourceCredentials>
+```
+
+Additionally, valid authentication methods can be supplied:
+
+```xml
+<packageSourceCredentials>
+    <Contoso>
+        <add key="Username" value="user@contoso.com" />
+        <add key="Password" value="..." />
+        <add key="ValidAuthenticationTypes" value="basic" />
+    </Contoso>
+    <Test_x0020_Source>
+        <add key="Username" value="user" />
+        <add key="ClearTextPassword" value="hal+9ooo_da!sY" />
+        <add key="ValidAuthenticationTypes" value="basic, negotiate" />
     </Test_x0020_Source>
 </packageSourceCredentials>
 ```
