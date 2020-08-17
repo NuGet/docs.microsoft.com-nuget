@@ -3,13 +3,13 @@ title: NuGet CLI search command
 description: Reference for the nuget.exe search command
 author: advay26
 ms.author: t-adtand
-ms.date: 07/07/2020
+ms.date: 08/17/2020
 ms.topic: reference
 ---
 
 # search command (NuGet CLI)
 
-**Applies to:** package consumption &bullet; **Supported versions:** *TODO*
+**Applies to:** package consumption &bullet; **Supported versions:** 5.8+
 
 Searches a given source using the query string provided. If no sources are specified, all sources defined in %AppData%\NuGet\NuGet.config are used.
 
