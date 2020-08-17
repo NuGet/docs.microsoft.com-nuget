@@ -29,7 +29,7 @@ In NuGet 3.4+, `<value>` can use [environment variables](cli-ref-environment-var
 ## Options
 
 
-- **`-a|AsPath`**
+- **`AsPath`**
 
   Returns the config value as a path, ignored when `-Set` is used.
 

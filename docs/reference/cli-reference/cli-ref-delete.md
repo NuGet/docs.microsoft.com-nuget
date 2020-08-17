@@ -23,7 +23,7 @@ where `<packageID>` and `<packageVersion>` identify the exact package to delete 
 
 ## Options
 
-- **`-a|-ApiKey`**
+- **`-ApiKey`**
 
   The API key for the target repository. If not present, the one specified in the config file is used.
 
