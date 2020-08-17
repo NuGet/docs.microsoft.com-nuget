@@ -241,13 +241,13 @@ For example:
 ```
 
 When uploading a package to nuget.org, the `type` attribute is limited to 100 characters and the `url` attribute is
-> limited to 4000 characters.
+limited to 4000 characters.
 
 #### title
 A human-friendly title of the package which may be used in some UI displays. (nuget.org and the Package Manager in Visual Studio do not show title)
 
 When uploading a package to nuget.org, the `title` field is limited to 256 characters but is not used for any
-> display purposes.
+display purposes.
 
 #### Collection elements
 
@@ -348,7 +348,7 @@ The `<dependencies>` element within `<metadata>` contains any number of `<depend
 | exclude | A comma-delimited list of include/exclude tags (see below) indicating of the dependency to exclude in the final package. The  default value is `build,analyzers` which can be over-written. But `content/ ContentFiles` are also implicitly excluded in the final package which can't be over-written. Tags specified with `exclude` take precedence over those specified with `include`. For example, `include="runtime, compile" exclude="compile"` is the same as `include="runtime"`. |
 
 When uploading a package to nuget.org, each dependency's `id` attribute is limited to 128 characters and the `version`
-> attribute is limited to 256 characters.
+attribute is limited to 256 characters.
 
 | Include/Exclude tag | Affected folders of the target |
 | --- | --- |
