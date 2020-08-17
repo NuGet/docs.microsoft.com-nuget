@@ -41,7 +41,8 @@ Next, you can either upload the package through the nuget.org web portal, push t
 
 ### Command line
 
-To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](../api/nuget-protocols.md). You also need an API key, which is created on nuget.org.
+To push packages to nuget.org, you first need an API key, which is created on nuget.org. You must use either dotnet.exe (.NET Core), or nuget.exe v4.1.0 or above, which implement the required NuGet protocols.
+For more information, see [.NET Core](https://docs.microsoft.com/dotnet/core/install/), [nuget.exe](https://www.nuget.org/downloads), and [NuGet protocols](../api/nuget-protocols.md).
 
 #### Create API keys
 
@@ -63,7 +64,7 @@ To push packages to nuget.org you must use [nuget.exe v4.1.0 or above](https://w
 
     > [!NOTE]
     > API key is not used for authenticating with the private feed. Refer to [`nuget sources` command](../reference/cli-reference/cli-ref-sources.md) to manage credentials for authenticating with the source.
-    > API keys can be obtained from the individual NuGet servers. To create and manange APIKeys for nuget.org refer to [publish-api-key](../quickstart/includes/publish-api-key.md)
+    > API keys can be obtained from the individual NuGet servers. To create and manange APIKeys for nuget.org refer to [Create API keys](#create-api-keys).
 
 1. Push your package to NuGet Gallery using the following command:
 
