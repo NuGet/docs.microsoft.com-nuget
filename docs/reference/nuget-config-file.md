@@ -132,8 +132,8 @@ Optionally, valid authentication types can be specified with the `-validauthenti
 | Key | Value |
 | --- | --- |
 | username | The user name for the source in plain text. |
-| password | The encrypted password for the source. |
-| cleartextpassword | The unencrypted password for the source. |
+| password | The encrypted password for the source. Encrypted passwords are only supported on Windows, and only can be decrypted when used on the same machine and via the same user as the original encryption. |
+| cleartextpassword | The unencrypted password for the source. Note: environment variables can be used for improved security. |
 | validauthenticationtypes | Comma-separated list of valid authentication types for this source. Set this to `basic` if the server advertises NTLM or Negotiate and your credentials must be sent using the Basic mechanism, for instance when using a PAT with on-premises Azure DevOps Server. Other valid values include `negotiate`, `kerberos`, `ntlm`, and `digest`, but these values are unlikely to be useful. |
 
 **Example:**
@@ -149,6 +149,21 @@ In the config file, the `<packageSourceCredentials>` element contains child node
     <Test_x0020_Source>
         <add key="Username" value="user" />
         <add key="Password" value="..." />
+    </Test_x0020_Source>
+</packageSourceCredentials>
+```
+
+When using unencrypted passwords stored in an environment variable:
+
+```xml
+<packageSourceCredentials>
+    <Contoso>
+        <add key="Username" value="user@contoso.com" />
+        <add key="ClearTextPassword" value="%ContosoPassword%" />
+    </Contoso>
+    <Test_x0020_Source>
+        <add key="Username" value="user" />
+        <add key="ClearTextPassword" value="%TestSourcePassword%" />
     </Test_x0020_Source>
 </packageSourceCredentials>
 ```
@@ -322,9 +337,21 @@ You can use environment variables in `nuget.config` values (NuGet 3.4+) to apply
 
 For example, if the `HOME` environment variable on Windows is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file resolves to `c:\users\username\NuGetRepository`.
 
-Note that you have to use Windows-style environment variables (starts and ends with %) even on Mac/Linux. Having `$HOME/NuGetRepository` in a configuration file will not resolve. On Mac/Linux the value of `%HOME%\NuGetRepository` will resolve to `/home/myStuff/NuGetRepository`.
+Note that you have to use Windows-style environment variables (starts and ends with %) even on Mac/Linux. Having `$HOME/NuGetRepository` in a configuration file will not resolve. On Mac/Linux the value of `%HOME%/NuGetRepository` will resolve to `/home/myStuff/NuGetRepository`.
 
-If an environment variable is not found, NuGet uses the literal value from the configuration file.
+If an environment variable is not found, NuGet uses the literal value from the configuration file. For example `%MY_UNDEFINED_VAR%/NuGetRepository` will be resolved as `path/to/current_working_dir/$MY_UNDEFINED_VAR/NuGetRepository`
+
+The table below show environnment variable syntax and path separator support for NuGet.Config files.
+
+### NuGet.Config environment variable support
+
+| Syntax | Dir separator | Windows nuget.exe | Windows dotnet.exe | Mac nuget.exe (in Mono) | Mac dotnet.exe |
+|---|---|---|---|---|---|
+| `%MY_VAR%` | `/`  | Yes | Yes | Yes | Yes |
+| `%MY_VAR%` | `\`  | Yes | Yes | No | No |
+| `$MY_VAR` | `/`  | No | No | No | No |
+| `$MY_VAR` | `\`  | No | No | No | No |
+
 
 ## Example config file
 
@@ -339,10 +366,10 @@ Below is an example `nuget.config` file that illustrates a number of settings in
             See: nuget.exe help install
             See: nuget.exe help update
 
-            In this example, %PACKAGEHOME% is an environment variable. On Mac/Linux,
-            use $PACKAGE_HOME/External as the value.
+            In this example, %PACKAGEHOME% is an environment variable.
+            This syntax works on Windows/Mac/Linux
         -->
-        <add key="repositoryPath" value="%PACKAGEHOME%\External" />
+        <add key="repositoryPath" value="%PACKAGEHOME%/External" />
 
         <!--
             Used to specify default source for the push command.

@@ -262,7 +262,7 @@ Although it is recommended that you [include all the properties](../reference/ms
 The target framework of the project file is irrelevant and not used when packing a nuspec. The following three MSBuild properties are relevant to packing using a `.nuspec`:
 
 1. `NuspecFile`: relative or absolute path to the `.nuspec` file being used for packing.
-1. `NuspecProperties`: a semicolon-separated list of key=value pairs. Due to the way MSBuild command-line parsing works, multiple properties must be specified as follows: `-p:NuspecProperties=\"key1=value1;key2=value2\"`.  
+1. `NuspecProperties`: a semicolon-separated list of key=value pairs. Due to the way MSBuild command-line parsing works, multiple properties must be specified as follows: `-p:NuspecProperties="key1=value1;key2=value2"`.  
 1. `NuspecBasePath`: Base path for the `.nuspec` file.
 
 If using `dotnet.exe` to pack your project, use a command like the following:

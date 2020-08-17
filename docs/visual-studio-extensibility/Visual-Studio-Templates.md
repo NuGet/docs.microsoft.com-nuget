@@ -88,7 +88,7 @@ If you are distributing only a single project/item template and do not need to p
 1. Modify the `<packages>` element in the `.vstemplate` file as follows:
 
     ```xml
-    <packages repository="template"">
+    <packages repository="template">
         <!-- ... -->
     </packages>
     ```

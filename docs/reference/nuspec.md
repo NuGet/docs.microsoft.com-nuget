@@ -60,6 +60,10 @@ For a clear visual representation of the schema, open the schema file in Visual 
 
 ![Visual Studio Schema Explorer with nuspec.xsd open](media/SchemaExplorer.png)
 
+All XML element names in the .nuspec file are case-sensitive, as is the case for XML in general. For example, using the
+metadata element `<description>` is correct and `<Description>` is not correct. The proper casing for each element name
+is documented below.
+
 ### Required metadata elements
 
 Although the following elements are the minimum requirements for a package, you should consider adding the [optional metadata elements](#optional-metadata-elements) to improve the overall experience developers have with your package. 
@@ -90,6 +94,9 @@ A URL for the package's home page, often shown in UI displays as well as nuget.o
 A URL for the package's license, often shown in UIs like nuget.org.
 
 #### license
+
+*Supported with **NuGet 4.9.0** and above*
+
 An SPDX license expression or path to a license file within the package, often shown in UIs like nuget.org.
 If you're licensing the package under a common license, like MIT or BSD-2-Clause, use the associated [SPDX license identifier](https://spdx.org/licenses/). For example:
 
@@ -146,6 +153,8 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 A URL for a 128x128 image with transparency background to use as the icon for the package in UI display. Be sure this element contains the *direct image URL* and not the URL of a web page containing the image. For example, to use an image from GitHub, use the raw file URL like <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. 
    
 #### icon
+
+*Supported with **NuGet 5.3.0** and above*
 
 It is a path to an image file within the package, often shown in UIs like nuget.org as the package icon. Image file size is limited to 1 MB. Supported file formats include JPEG and PNG. We recommend an image resolution of 128x128.
 

@@ -13,6 +13,11 @@
       "authors": [ "NuGet" ],
       "totalDownloads": 141896,
       "verified": true,
+      "packageTypes": [
+        {
+          "name": "Dependency"
+        }
+      ],
       "versions": [
         {
           "version": "3.3.0",
