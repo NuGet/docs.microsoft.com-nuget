@@ -19,7 +19,7 @@ Displays a list of packages from a given source. If no sources are specified, al
 nuget list [search terms] [options]
 ```
 
-where the optional search terms will filter the displayed list. Search terms are applied to the names of packages, tags, and package descriptions just as they are when using them on nuget.org.
+where the optional search terms will filter the displayed list. [Search terms](/nuget/consume-packages/finding-and-choosing-packages#search-syntax) are applied to the names of packages, tags, and package descriptions just as they are when using them on nuget.org. 
 
 ## Options
 
@@ -59,4 +59,3 @@ List JSON-related packages from multiple sources/feeds:
 ```
 nuget list JSON -Source "https://nuget.org/api/v2" -Source "https://other-feed-url-goes-here"
 ```
-
