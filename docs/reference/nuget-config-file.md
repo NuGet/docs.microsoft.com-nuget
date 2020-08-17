@@ -127,7 +127,7 @@ Lists all known package sources. The order is ignored during restore operations 
 ### packageSourceCredentials
 
 Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`. Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.
-Optionally, valida authentication types can be specified with the `-validauthenticationtypes` switch.
+Optionally, valid authentication types can be specified with the `-validauthenticationtypes` switch.
 
 | Key | Value |
 | --- | --- |
