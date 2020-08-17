@@ -33,29 +33,29 @@ In NuGet 3.4+, `<value>` can use [environment variables](cli-ref-environment-var
 
   Returns the config value as a path, ignored when `-Set` is used.
 
-- **`-c|-ConfigFile`**
+- **`-ConfigFile`**
 
   The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
 
-- **`-f|-ForceEnglishOutput`**
+- **`-ForceEnglishOutput`**
 
   *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
 
-- **`-?|-h|-help`**
+- **`-?|-help`**
 
   Displays help information for the command.
 
-- **`-n|-NonInteractive`**
+- **`-NonInteractive`**
 
   Suppresses prompts for user input or confirmations.
 
-- **`-s|-Set`**
+- **`-Set`**
 
   One on more key-value pairs to be set in config.
 
-- **`-v|-Verbosity <LEVEL>`**
+- **`-Verbosity [normal|quiet|detailed]`**
 
-  Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 

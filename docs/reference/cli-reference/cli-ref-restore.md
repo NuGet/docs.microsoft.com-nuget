@@ -25,7 +25,7 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 
 ## Options
 
-- **`-c|-ConfigFile`**
+- **`-ConfigFile`**
 
   The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
 
@@ -53,7 +53,7 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 
   Forces restore to reevaluate all dependencies even if a lock file already exists.
 
-- **`-?|-h|-help`**
+- **`-?|-help`**
 
   Displays help information for the command.
 
@@ -81,7 +81,7 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 
   Suppresses prompts for user input or confirmations.
 
-- **`-o|-OutputDirectory`**
+- **`-OutputDirectory`**
 
   Specifies the folder in which packages are installed. If no folder is specified, the current folder is used. Required when restoring with a `packages.config` file unless `PackagesDirectory` or `SolutionDirectory` is used.
 
@@ -89,7 +89,7 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 
   Specifies the types of files to save after package installation: one of `nuspec`, `nupkg`, or `nuspec;nupkg`.
 
-- **`-OutputDirectory|-PackagesDirectory`**
+- **`-PackagesDirectory`**
 
   Same as `OutputDirectory`. Required when restoring with a `packages.config` file unless `OutputDirectory` or `SolutionDirectory` is used.
 
@@ -113,11 +113,11 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 
   Specifies the list of package sources (as URLs) to use for the restore. If omitted, the command uses the sources provided in configuration files, see [Configuring NuGet behavior](../../consume-packages/configuring-nuget-behavior.md). Use a semicolon to separate list entries.
 
-- **`-u|-UseLockFile`**
+- **`-UseLockFile`**
 
   Enables project lock file to be generated and used with restore.
 
-- **`-v|-Verbosity [normal|quiet|detailed]`**
+- **`-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 

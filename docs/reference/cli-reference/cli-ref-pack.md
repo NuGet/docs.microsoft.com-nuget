@@ -34,7 +34,7 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 
   Specifies that the project should be built before building the package.
 
-- **`-c|-ConfigFile`**
+- **`-ConfigFile`**
 
   The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
 
@@ -46,11 +46,11 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 
   Prevents inclusion of empty directories when building the package.
 
-- **`-f|-ForceEnglishOutput`**
+- **`-ForceEnglishOutput`**
 
   *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
 
-- **`-?|-h|-help`**
+- **`-?|-help`**
 
   Displays help information for the command.
 

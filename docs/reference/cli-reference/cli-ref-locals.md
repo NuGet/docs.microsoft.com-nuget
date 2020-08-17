@@ -31,23 +31,23 @@ where `<folder>` is one of `all`, `http-cache`, `packages-cache` *(3.5 and earli
 
   The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
 
-- **`-f|-ForceEnglishOutput`**
+- **`-ForceEnglishOutput`**
 
   *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
 
-- **`-?|-h|-help`**
+- **`-?|-help`**
 
   Displays help information for the command.
 
-- **`-l|-List`**
+- **`-List`**
 
   Lists the location of the specified folder, or the locations of all folders when used with *all*.
 
-- **`-n|-NonInteractive`**
+- **`-NonInteractive`**
 
   Suppresses prompts for user input or confirmations.
 
-- **`-v|-Verbosity [normal|quiet|detailed]`**
+- **`-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 

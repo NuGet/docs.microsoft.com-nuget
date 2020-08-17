@@ -23,7 +23,7 @@ where `<packageID>` is an optional package identifier to save in the `.nuspec` f
 
 ## Options
 
-- **`-a|-AssemblyPath`**
+- **`-AssemblyPath`**
 
   Specifies the path to the assembly to use for metadata.
 
@@ -36,15 +36,15 @@ where `<packageID>` is an optional package identifier to save in the `.nuspec` f
 
   *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
 
-- **`-?|-h|-help`**
+- **`-?|-help`**
 
   Displays help information for the command.
 
-- **`-n|-NonInteractive`**
+- **`-NonInteractive`**
 
   Suppresses prompts for user input or confirmations.
 
-- **`-v|-Verbosity [normal|quiet|detailed]`**
+- **`-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 

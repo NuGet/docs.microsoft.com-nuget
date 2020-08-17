@@ -139,7 +139,7 @@ _Note_: This gesture will delete the current list of certificates and replace th
 
   Forces nuget.exe to run using an invariant, English-based culture.
 
-- **`-?|-h|-help`**
+- **`-?|-help`**
 
   Displays help information for the command.
 
@@ -151,7 +151,7 @@ _Note_: This gesture will delete the current list of certificates and replace th
 
   Suppresses prompts for user input or confirmations.
 
-- **`-v|-Verbosity [normal|quiet|detailed]`**
+- **`-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 

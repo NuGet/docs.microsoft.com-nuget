@@ -25,7 +25,7 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
 ## Options
 
-- **`-c|-ConfigFile`**
+- **`-ConfigFile`**
 
   The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
 
@@ -37,7 +37,7 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
   Applies to the `list` action and can be `Detailed` (the default) or `Short`.
 
-- **`-?|-h|-help`**
+- **`-?|-help`**
 
   Displays help information for the command.
 
@@ -49,7 +49,7 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
   Suppresses prompts for user input or confirmations.
 
-- **`-p|-Password`**
+- **`-Password`**
 
   Specifies the password for authenticating with the source.
 
@@ -61,7 +61,7 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
   Indicates to store the password in unencrypted text instead of the default behavior of storing an encrypted form.
 
-- **`-u|-UserName`**
+- **`-UserName`**
 
   Specifies the user name for authenticating with the source.
 

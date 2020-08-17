@@ -36,32 +36,32 @@ where `<packagePath>` is the pathname to the package to add, and `<sourcePath>` 
 
 ## Options
 
-- **`-c|-ConfigFile`**
+- **`-ConfigFile`**
 
   The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
 
-- **`-e|-Expand`**
+- **`-Expand`**
 
   Adds all the files in the package to the package source.
 
-- **`-f|-ForceEnglishOutput`**
+- **`-ForceEnglishOutput`**
 
   *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
 Forces nuget.exe to run using an invariant, English-based culture.
 
-- **`-?|-h|-help`**
+- **`-?|-help`**
 
   Displays help information for the command.
 
-- **`-n|-NonInteractive`**
+- **`-NonInteractive`**
 
   Suppresses prompts for user input or confirmations.
 
-- **`-s|-src|-Source`**
+- **`-src|-Source`**
 
    Specifies the package source, which is a folder or UNC share, to which the nupkg will be added. Http sources are not supported.
 
-- **`-v|-Verbosity [normal|quiet|detailed]`**
+- **`-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 

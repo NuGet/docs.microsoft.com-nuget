@@ -34,7 +34,7 @@ where `<packageID>` names the package to install (using the latest version), or 
 
 ## Options
 
-- **`-c|-ConfigFile`**
+- **`-ConfigFile`**
 
   The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
 
@@ -66,7 +66,7 @@ where `<packageID>` names the package to install (using the latest version), or 
 
   *(4.4+)* Target framework used for selecting dependencies. Defaults to 'Any' if not specified.
 
-- **`-?|-h|-help`**
+- **`-?|-help`**
 
   Displays help information for the command.
 
@@ -102,7 +102,7 @@ where `<packageID>` names the package to install (using the latest version), or 
 
    Specifies the list of package sources (as URLs) to use. If omitted, the command uses the sources provided in configuration files, see [Common NuGet configurations](../../consume-packages/configuring-nuget-behavior.md).
 
-- **`-v|-Verbosity [normal|quiet|detailed]`**
+- **`-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 

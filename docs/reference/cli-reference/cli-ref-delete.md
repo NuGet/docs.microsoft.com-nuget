@@ -27,15 +27,15 @@ where `<packageID>` and `<packageVersion>` identify the exact package to delete 
 
   The API key for the target repository. If not present, the one specified in the config file is used.
 
-- **`-c|-ConfigFile`**
+- **`-ConfigFile`**
 
   The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
 
-- **`-f|-ForceEnglishOutput`**
+- **`-ForceEnglishOutput`**
 
   *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
 
-- **`-?|-h|-help`**
+- **`-?|-help`**
 
   Displays help information for the command.
 
@@ -50,11 +50,11 @@ where `<packageID>` and `<packageVersion>` identify the exact package to delete 
  - **`-NoServiceEndpoint`**
    Does not append "api/v2/packages" to the source URL.
 
-- **`-s|-src|-Source`**
+- **`-src|-Source`**
 
   Specifies the server URL. The URL for nuget.org is `https://api.nuget.org/v3/index.json`. For private feeds, substitute the host name, for example, *%hostname%/api/v3*.
 
-- **`-v|-Verbosity [normal|quiet|detailed]`**
+- **`-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
