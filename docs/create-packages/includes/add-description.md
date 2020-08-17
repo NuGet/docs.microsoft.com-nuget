@@ -17,5 +17,5 @@ An example of a _description_ field is shown in the following XML text of the `.
       REST API Reference for Blob Service - https://docs.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api
     </Description>
   </PropertyGroup>
-</PropertyGroup>
+</Project>
 ```
