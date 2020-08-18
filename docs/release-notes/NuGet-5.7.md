@@ -13,47 +13,53 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**<NuGetVersion>**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.7](https://visualstudio.microsoft.com/downloads/) | [3.1.401](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
+| [**5.7.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.7](https://visualstudio.microsoft.com/downloads/) | [3.1.401](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio 2019 with.NET Core workload
+<sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
 
 ## Summary: What's New in 5.7
 
-* Test and Fix Auto-Restore (SDK) for VS in Live Share & cloud environments - [#8674](https://github.com/NuGet/Home/issues/8674)
-
-* Use the output channel service to propagate NuGet output for VSO.  - [#9269](https://github.com/NuGet/Home/issues/9269)
-
-* Add the restore service functionality for online environments  - [#9308](https://github.com/NuGet/Home/issues/9308)
+### Features added in this release
 
 * nuget.exe update -self -Source https://feed - [#1783](https://github.com/NuGet/Home/issues/1783)
 
-* Add a context menu for PM UI in VS OE - [#9428](https://github.com/NuGet/Home/issues/9428)
+* Added support for multiple config files in %APPDATA%\NuGet directory - [#9394](https://github.com/NuGet/Home/issues/9394)
 
-* [Centrally managing NuGet packages and versions] Integrate PackageVersion information for non-sdk style projects in VS restore  - [#9236](https://github.com/NuGet/Home/issues/9236)
+* DeterministicSourcePaths now takes NuGet source packages into account - [#9431](https://github.com/NuGet/Home/issues/9431)
 
-* Make noop restore faster - speed up evaluations by calling MSBuild Static Graph apis (dotnet.exe) - [#9644](https://github.com/NuGet/Home/issues/9644)
+* Added extern alias support for NuGet package references - [#4989](https://github.com/NuGet/Home/issues/4989)
 
-* NuGet should support multiple config files in %APPDATA%\NuGet directory - [#9394](https://github.com/NuGet/Home/issues/9394)
+* Added INuGetProjectService.GetInstalledPackagesAsync extensibility API - [#9702](https://github.com/NuGet/Home/issues/9702)
 
-* DeterministicSourcePaths doesn't take NuGet source packages into account - [#9431](https://github.com/NuGet/Home/issues/9431)
+* Added interop API to enumerate fallback folders without requiring a solution/project - [#9395](https://github.com/NuGet/Home/issues/9395)
 
-* extern alias support for NuGet package references - [#4989](https://github.com/NuGet/Home/issues/4989)
+* Added "latest" option for -MSBuildVersion - [#8808](https://github.com/NuGet/Home/issues/8808)
 
-* Create INuGetProjectService.GetInstalledPackagesAsync extensibility API - [#9702](https://github.com/NuGet/Home/issues/9702)
+**Performance:**
 
-* Add interop API to enumerate fallback folders without requiring a solution/project - [#9395](https://github.com/NuGet/Home/issues/9395)
+* Made noop restore faster - sped up evaluations by calling MSBuild Static Graph apis (dotnet.exe) - [#9644](https://github.com/NuGet/Home/issues/9644)
 
-* Add "latest" option for -MSBuildVersion  - [#8808](https://github.com/NuGet/Home/issues/8808)
+**Codespaces:**
+
+* Added a context menu for VS NuGet UI in VS Codespaces - [#9428](https://github.com/NuGet/Home/issues/9428)
+
+* Use the output channel service to propagate NuGet output for VS Codespaces - [#9269](https://github.com/NuGet/Home/issues/9269)
+
+* Added the restore service functionality for online environments - [#9308](https://github.com/NuGet/Home/issues/9308)
+
+**Central Package Version Management:**
+
+* Added integration of PackageVersion information for non-sdk style projects in VS restore  - [#9236](https://github.com/NuGet/Home/issues/9236)
 
 ### Issues fixed in this release
 
 **DCRs:**
 
-* Suppress the <owners> element when it is redundant - [#5134](https://github.com/NuGet/Home/issues/5134)
+* Suppressed the <owners> element when it is redundant - [#5134](https://github.com/NuGet/Home/issues/5134)
 
 * Log IntervalTrackers as ETW events - [#9593](https://github.com/NuGet/Home/issues/9593)
 
-* Add an information message on restore to inform the CPVM users that the feature is in preview - [#9340](https://github.com/NuGet/Home/issues/9340)
+* Added an informational message on restore to inform CPVM users that the feature is in preview - [#9340](https://github.com/NuGet/Home/issues/9340)
 
 * Populate Solution Explorer package/project transitive dependencies from assets file - [#9580](https://github.com/NuGet/Home/issues/9580)
 
