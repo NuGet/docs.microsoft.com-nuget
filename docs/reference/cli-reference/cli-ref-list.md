@@ -23,17 +23,41 @@ where the optional search terms will filter the displayed list. [Search terms](/
 
 ## Options
 
-| Option | Description |
-| --- | --- |
-| AllVersions | List all versions of a package. By default, only the latest package version is displayed. |
-| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
-| ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
-| Help | Displays help information for the command. |
-| IncludeDelisted | *(3.2+)* Display unlisted packages. |
-| NonInteractive | Suppresses prompts for user input or confirmations. |
-| PreRelease | Includes prerelease packages in the list. |
-| Source | Specifies a list of packages sources to search. |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
+- **`-AllVersions`**
+
+  List all versions of a package. By default, only the latest package version is displayed.
+
+- **`-ConfigFile`**
+
+  The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
+
+- **`-ForceEnglishOutput`**
+
+  *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
+
+- **`-?|-help`**
+
+  Displays help information for the command.
+
+- **`-IncludeDelisted`**
+
+  *(3.2+)* Display unlisted packages.
+
+- **`-NonInteractive`**
+
+  Suppresses prompts for user input or confirmations.
+
+- **`-PreRelease`**
+
+  Includes prerelease packages in the list.
+
+- **`-Source`**
+
+  Specifies a list of packages sources to search.
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 

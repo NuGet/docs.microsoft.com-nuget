@@ -3,7 +3,7 @@
 1. Run the following command, specifying your package name (unique package ID) and replacing the key value with your API key:
 
     ```dotnetcli
-    dotnet nuget push AppLogger.1.0.0.nupkg -k qz2jga8pl3dvn2akksyquwcs9ygggg4exypy3bhxy6w6x6 -s https://api.nuget.org/v3/index.json
+    dotnet nuget push AppLogger.1.0.0.nupkg --api-key qz2jga8pl3dvn2akksyquwcs9ygggg4exypy3bhxy6w6x6 --source https://api.nuget.org/v3/index.json
     ```
 
 1. dotnet displays the results of the publishing process:
