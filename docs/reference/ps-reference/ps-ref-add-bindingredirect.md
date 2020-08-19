@@ -13,6 +13,9 @@ ms.topic: reference
 
 Examines all assemblies within the output path for a project and adds binding redirects to the application or web configuration file where necessary. This command is run automatically when installing a package.
 
+> [!NOTE]
+> This only applies to scenarios using a packages.config file. For more information, see [NuGet packages.config file reference](~/reference/packages-config.md).
+
 For details on binding redirects and why they are used, see [Redirecting Assembly Versions](/dotnet/framework/configure-apps/redirect-assembly-versions) in the .NET documentation.
 
 ## Syntax

@@ -21,10 +21,12 @@ You can find the source code for these packages in the [NuGet/NuGet.Client](http
 
 ## Getting started
 
-### Install the package
+### Install the packages
 
 ```ps1
-dotnet add package NuGet.Protocol
+dotnet add package NuGet.Protocol  # interact with HTTP and folder-based NuGet package feeds, includes NuGet.Packaging
+
+dotnet add package NuGet.Packaging # interact with .nupkg and .nuspec files from a stream
 ```
 
 ## Examples
@@ -54,6 +56,27 @@ Get the metadata for the "Newtonsoft.Json" package using the [NuGet V3 Package M
 Search for "json" packages using the [NuGet V3 Search API](../api/search-query-service-resource.md):
 
 [!code-csharp[SearchPackages](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=SearchPackages)]
+
+### Create a package
+
+Create a package, set metadata, and add dependencies using [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging).
+
+> [!IMPORTANT]
+> It is strongly recommended that NuGet packages are created using the official NuGet tooling and **not** using this
+> low-level API. There are a variety of characteristics important for a well-formed package and the latest version of
+> tooling helps incorporate these best practices.
+> 
+> For more information about creating NuGet packages, see the overview of the
+> [package creation workflow](../create-packages/overview-and-workflow.md) and the documentation for official pack
+> tooling (for example, [using the dotnet CLI](../create-packages/creating-a-package-dotnet-cli.md)).
+
+[!code-csharp[CreatePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=CreatePackage)]
+
+### Read a package
+
+Read a package from a file stream using [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging).
+
+[!code-csharp[ReadPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=ReadPackage)]
 
 ## Third-party documentation
 
