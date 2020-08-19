@@ -89,12 +89,21 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 
     ![Download statistics on a package's listing page](media/Finding-03-Downloads.png)
 
-- *GitHub Usage*: on the package page, the **GitHub Usage** section lists public GitHub repositories that depend on this package and that have a high number of stars on GitHub. A GitHub repository's number of stars generally indicates how popular that repository is with GitHub users (more stars usually means more popular). Please visit [GitHub's Getting Started page](https://help.github.com/en/github/getting-started-with-github/saving-repositories-with-stars#about-stars) for more information on GitHub's star and repository ranking system.
+- *Used By*: on the package page, the **Used By** section lists the top 5 most popular NuGet.org packages and popular GitHub repositories that depend on this package, known as dependents. Dependents can be seen as "endorsements" of this package, as package authors have chosen to trust and depend on it.
+  - A dependent package must depend on *any version* of this package in its *latest stable listed version*. This definition ensures that displayed dependent packages are an up-to-date reflection of package author's decision to trust and depend on this package. Prerelease dependents are not listed as they are not considered whole-hearted endoresements yet. See the following table for examples:
 
-    ![GitHub Usage](media/GitHub-Usage.png)
+    | Package A versions | Package A is a listed as a dependent of Package B? |
+    |-|-|
+    | v1.0.0<br>v1.1.0 (latest stable) --> Package B<br>v1.2.0-preview | TRUE, latest stable version depends on Package B |
+    | v1.0.0 --> Package B<br>v1.1.0 (latest stable)<br>v1.2.0-preview | FALSE, latest stable version does not depend on Package B |
+    | v1.0.0 --> Package B<br>v1.1.0 (latest stable)<br>v1.2.0-preview --> Package B | FALSE, latest stable version does not depend on Package B |
+
+  - A GitHub repository's number of stars generally indicates how popular that repository is with GitHub users (more stars usually means more popular). Please visit [GitHub's Getting Started page](https://help.github.com/en/github/getting-started-with-github/saving-repositories-with-stars#about-stars) for more information on GitHub's star and repository ranking system.
+
+    ![Used By](media/Used-By-section-Humanizer.png)
 
     > [!Note]
-    > A package's GitHub Usage section is generated automatically, periodically, without human review of individual repositories, and solely for informational purposes in order to show you GitHub repositories that depend on the package and that are popular with GitHub users.
+    > A package's Used By section is generated automatically, periodically, without human review of individual repositories, and solely for informational purposes in order to show you NuGet.org packages and popular GitHub repositories that depend on the package.
 
 - *Version history*: on the package page, look under **Info** for the date of the most recent update and examine the **Version History**. A well-maintained package has recent updates and a rich version history. Neglected packages have few updates and often haven't been updated in some time.
 
