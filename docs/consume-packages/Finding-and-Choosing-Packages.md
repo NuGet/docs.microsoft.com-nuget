@@ -105,7 +105,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
     > [!Note]
     > A package's Used By section is generated automatically, periodically, without human review of individual repositories, and solely for informational purposes in order to show you NuGet.org packages and popular GitHub repositories that depend on the package.
 
-- **Version history**: on the package page, look under **Info** for the date of the most recent update and examine the **Version History**. A well-maintained package has recent updates and a rich version history. Neglected packages have few updates and often haven't been updated in some time.
+- **Version History**: on the package page, look under **Info** for the date of the most recent update and examine the **Version History**. A well-maintained package has recent updates and a rich version history. Neglected packages have few updates and often haven't been updated in some time.
 
     ![Version history on a package's listing page](media/Finding-04-VersionHistory.png)
 
