@@ -85,32 +85,41 @@ The best way to evaluate the usefulness of a package is to download it and try i
 
 At the same time, using a NuGet package means taking a dependency on it, so you want to make sure it's robust and reliable. Because installing and directly testing a package is time-consuming, you can also learn a lot about a package's quality by using the information on a package's listing page:
 
-- *Downloads statistics*: on the package page on nuget.org, the **Statistics** section shows total downloads, downloads of the most recent version, and average downloads per day. Larger numbers indicate that many other developers have taken a dependency on the package, which means that it has proven itself.
+- **Downloads statistics**: on the package page on nuget.org, the **Statistics** section shows total downloads, downloads of the most recent version, and average downloads per day. Larger numbers indicate that many other developers have taken a dependency on the package, which means that it has proven itself.
 
     ![Download statistics on a package's listing page](media/Finding-03-Downloads.png)
 
-- *GitHub Usage*: on the package page, the **GitHub Usage** section lists public GitHub repositories that depend on this package and that have a high number of stars on GitHub. A GitHub repository's number of stars generally indicates how popular that repository is with GitHub users (more stars usually means more popular). Please visit [GitHub's Getting Started page](https://help.github.com/en/github/getting-started-with-github/saving-repositories-with-stars#about-stars) for more information on GitHub's star and repository ranking system.
+- **Used By**: on the package page, the **Used By** section lists the top 5 most popular NuGet.org packages and popular GitHub repositories that depend on this package. Packages and repos that depend on this package can be called "dependents" of this package. Dependent packages and repos can be seen as "endorsements" of this package, as package authors have chosen to trust and depend on it.
+  - A dependent package must depend on *any version* of this package in its *latest stable listed version*. This definition ensures that displayed dependent packages are an up-to-date reflection of package author's decision to trust and depend on this package. Prerelease dependents are not listed as they are not considered whole-hearted endoresements yet. See the following table for examples:
 
-    ![GitHub Usage](media/GitHub-Usage.png)
+    | Package A versions | Package A is a listed as a dependent of Package B? |
+    |-|-|
+    | v1.0.0<br>v1.1.0 (latest stable) --> Package B<br>v1.2.0-preview | TRUE, latest stable version depends on Package B |
+    | v1.0.0 --> Package B<br>v1.1.0 (latest stable)<br>v1.2.0-preview | FALSE, latest stable version does not depend on Package B |
+    | v1.0.0 --> Package B<br>v1.1.0 (latest stable)<br>v1.2.0-preview --> Package B | FALSE, latest stable version does not depend on Package B |
+
+  - A GitHub repository's number of stars generally indicates how popular that repository is with GitHub users (more stars usually means more popular). Please visit [GitHub's Getting Started page](https://help.github.com/en/github/getting-started-with-github/saving-repositories-with-stars#about-stars) for more information on GitHub's star and repository ranking system.
+
+    ![Used By](media/Used-By-section-Humanizer.png)
 
     > [!Note]
-    > A package's GitHub Usage section is generated automatically, periodically, without human review of individual repositories, and solely for informational purposes in order to show you GitHub repositories that depend on the package and that are popular with GitHub users.
+    > A package's Used By section is generated automatically, periodically, without human review of individual repositories, and solely for informational purposes in order to show you NuGet.org packages and popular GitHub repositories that depend on the package.
 
-- *Version history*: on the package page, look under **Info** for the date of the most recent update and examine the **Version History**. A well-maintained package has recent updates and a rich version history. Neglected packages have few updates and often haven't been updated in some time.
+- **Version History**: on the package page, look under **Info** for the date of the most recent update and examine the **Version History**. A well-maintained package has recent updates and a rich version history. Neglected packages have few updates and often haven't been updated in some time.
 
     ![Version history on a package's listing page](media/Finding-04-VersionHistory.png)
 
-- *Recent installs*: on the package page under **Statistics**, select **View full stats**. The full stats page shows the package installs over the last six weeks by version number. A package that other developers are actively using is typically a better choice than one that's not.
+- **Recent installs**: on the package page under **Statistics**, select **View full stats**. The full stats page shows the package installs over the last six weeks by version number. A package that other developers are actively using is typically a better choice than one that's not.
 
-- *Support*: on the package page under **Info**, select **Project Site** (if available) to see what support options the author provides. A project with a dedicated site is generally better supported.
+- **Support**: on the package page under **Info**, select **Project Site** (if available) to see what support options the author provides. A project with a dedicated site is generally better supported.
 
-- *Developer history*: on the package page under **Owners**, select an owner to see what other packages they've published. Those with multiple packages are more likely to continue supporting their work in the future.
+- **Developer history**: on the package page under **Owners**, select an owner to see what other packages they've published. Those with multiple packages are more likely to continue supporting their work in the future.
 
-- *Open source contributions*: many packages are maintained in open-source repositories, making it possible for developers depending on them to directly contribute bug fixes and feature improvements. The contribution history of any given package is also a good indicator of how many developers are actively involved.
+- **Open source contributions**: many packages are maintained in open-source repositories, making it possible for developers depending on them to directly contribute bug fixes and feature improvements. The contribution history of any given package is also a good indicator of how many developers are actively involved.
 
-- *Interview the owners*: new developers can certainly be equally committed to producing great packages for you to use, and it's good to give them a chance to bring something new to the NuGet ecosystem. With this in mind, reach out directly to the package developers through the **Contact Owners** option under **Info** on the listing page. Chances are, they'll be happy to work with you to serve your needs!
+- **Interview the owners**: new developers can certainly be equally committed to producing great packages for you to use, and it's good to give them a chance to bring something new to the NuGet ecosystem. With this in mind, reach out directly to the package developers through the **Contact Owners** option under **Info** on the listing page. Chances are, they'll be happy to work with you to serve your needs!
 
-- *Reserved Package ID Prefixes*: many package owners have applied for and have been granted a [reserved package ID prefix](../nuget-org/id-prefix-reservation.md). When you see the visual checkmark next to a package ID on [nuget.org](https://www.nuget.org/), or in Visual Studio, that means that the package owner has met our [criteria](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria) for ID prefix reservation. This means the package owner is being clear on identifying themselves and their package.
+- **Reserved Package ID Prefixes**: many package owners have applied for and have been granted a [reserved package ID prefix](../nuget-org/id-prefix-reservation.md). When you see the visual checkmark next to a package ID on [nuget.org](https://www.nuget.org/), or in Visual Studio, that means that the package owner has met our [criteria](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria) for ID prefix reservation. This means the package owner is being clear on identifying themselves and their package.
 
 > [!Note]
 > Always be mindful of a package's license terms, which you can see by selecting **License Info** on a package's listing page on nuget.org. If a package does not specify license terms, contact the package owner directly using the **Contact owners** link on the package page. Microsoft does not license any intellectual property to you from third party package providers and is not responsible for information provided by third parties.
