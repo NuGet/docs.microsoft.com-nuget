@@ -89,7 +89,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you 
 
     ![Download statistics on a package's listing page](media/Finding-03-Downloads.png)
 
-- **Used By**: on the package page, the **Used By** section lists the top 5 most popular NuGet.org packages and popular GitHub repositories that depend on this package. Dependent packages and repos can be seen as "endorsements" of this package, as package authors have chosen to trust and depend on it.
+- **Used By**: on the package page, the **Used By** section lists the top 5 most popular NuGet.org packages and popular GitHub repositories that depend on this package. Packages and repos that depend on this package can be called "dependents" of this package. Dependent packages and repos can be seen as "endorsements" of this package, as package authors have chosen to trust and depend on it.
   - A dependent package must depend on *any version* of this package in its *latest stable listed version*. This definition ensures that displayed dependent packages are an up-to-date reflection of package author's decision to trust and depend on this package. Prerelease dependents are not listed as they are not considered whole-hearted endoresements yet. See the following table for examples:
 
     | Package A versions | Package A is a listed as a dependent of Package B? |
