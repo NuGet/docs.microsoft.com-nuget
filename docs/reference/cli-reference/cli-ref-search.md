@@ -41,7 +41,7 @@ Also see [Environment variables](cli-ref-environment-variables.md)
 
 > [!NOTE]
 > API key is not used for authenticating with the private feed. Refer to [`nuget sources` command](../cli-reference/cli-ref-sources.md) to manage credentials for authenticating with the source.
-> API keys can be obtained from the individual NuGet servers. To create and manage APIKeys for nuget.org refer to [publish-api-key](../../quickstart/includes/publish-api-key.md)
+> API keys can be obtained from the individual NuGet servers. To create and manage APIKeys for nuget.org refer to.
 
 ## Examples
 
