@@ -33,11 +33,15 @@ where the search terms are applied to the names of packages, tags, and package d
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
-> [!NOTE]
+> [!NOTE] 
 > Verbosity Levels:
 > * _quiet_ - Package ID, Version
 > * _normal_ - Package ID, Version, Downloads, Preview of Description
 > * _detailed_ - Package ID, Version, Downloads, Full Description, Other information such as the query URL
+
+> [!NOTE]
+> API key is not used for authenticating with the private feed. Refer to [`nuget sources` command](../cli-reference/cli-ref-sources.md) to manage credentials for authenticating with the source.
+> API keys can be obtained from the individual NuGet servers. To create and manage APIKeys for nuget.org refer to [publish-api-key](../../quickstart/includes/publish-api-key.md)
 
 ## Examples
 
