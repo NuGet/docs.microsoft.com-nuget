@@ -34,9 +34,7 @@ where the search terms are applied to the names of packages, tags, and package d
 Also see [Environment variables](cli-ref-environment-variables.md)
 
 > [!NOTE]
-
 > Verbosity Levels:
-
 > * _quiet_ - Package ID, Version
 > * _normal_ - Package ID, Version, Downloads, Preview of Description
 > * _detailed_ - Package ID, Version, Downloads, Full Description, Other information such as the query URL
