@@ -21,6 +21,10 @@ NuGet distribution vehicles:
 
 ### Features added in this release
 
+* Made noop restore faster - sped up evaluations by calling MSBuild Static Graph apis (dotnet.exe) - [#9644](https://github.com/NuGet/Home/issues/9644)
+
+* Added integration of PackageVersion information for non-sdk style projects in VS restore  - [#9236](https://github.com/NuGet/Home/issues/9236)
+
 * nuget.exe update -self -Source https://feed - [#1783](https://github.com/NuGet/Home/issues/1783)
 
 * Added support for multiple config files in %APPDATA%\NuGet directory - [#9394](https://github.com/NuGet/Home/issues/9394)
@@ -35,39 +39,11 @@ NuGet distribution vehicles:
 
 * Added "latest" option for -MSBuildVersion - [#8808](https://github.com/NuGet/Home/issues/8808)
 
-**Performance:**
-
-* Made noop restore faster - sped up evaluations by calling MSBuild Static Graph apis (dotnet.exe) - [#9644](https://github.com/NuGet/Home/issues/9644)
-
-**Central Package Version Management:**
-
-* Added integration of PackageVersion information for non-sdk style projects in VS restore  - [#9236](https://github.com/NuGet/Home/issues/9236)
-
 ### Issues fixed in this release
-
-**DCRs:**
-
-* Suppressed the <owners> element when it is redundant - [#5134](https://github.com/NuGet/Home/issues/5134)
-
-* Log IntervalTrackers as ETW events - [#9593](https://github.com/NuGet/Home/issues/9593)
-
-* Added an informational message on restore to inform CPVM users that the feature is in preview - [#9340](https://github.com/NuGet/Home/issues/9340)
-
-* Populate Solution Explorer package/project transitive dependencies from assets file - [#9580](https://github.com/NuGet/Home/issues/9580)
-
-* Searching in PMUI with Static / Sleet package sources causes OutOfMemoryException - [#8478](https://github.com/NuGet/Home/issues/8478)
-
-* Visual Studio partial restore for PR projects (noop++) prototype - [#9513](https://github.com/NuGet/Home/issues/9513)
-
-* Installed packages tab shouldn't paginate the list - [#6995](https://github.com/NuGet/Home/issues/6995)
 
 **Bugs:**
 
-* Add an Online Environment assembly, basic NuGet menu items & ingest required dependencies - [#9331](https://github.com/NuGet/Home/issues/9331)
-
-* Write to the Package Manager output in VS OE scenarios - [#9362](https://github.com/NuGet/Home/issues/9362)
-
-* WorkspaceCommandHandler.Exec should return unsupported - [#9381](https://github.com/NuGet/Home/issues/9381)
+* Searching in PMUI with Static / Sleet package sources causes OutOfMemoryException - [#8478](https://github.com/NuGet/Home/issues/8478)
 
 * Improve DOTNET_HOST_PATH environment variable handling - [#7438](https://github.com/NuGet/Home/issues/7438)
 
@@ -87,11 +63,9 @@ NuGet distribution vehicles:
 
 * [CPVM] Spurious package downgrades for multiple p2p projects  - [#9549](https://github.com/NuGet/Home/issues/9549)
 
-* [Bug Bash][Test Failure] The “Browse” tab is not aligned left with search box - [#9559](https://github.com/NuGet/Home/issues/9559)
+* The “Browse” tab is not aligned left with search box - [#9559](https://github.com/NuGet/Home/issues/9559)
 
-* [Test Failure] The installed version is inconsistent with the embedded icon in the solution level PM UI for one package id with multiple versions installed - [#9321](https://github.com/NuGet/Home/issues/9321)
-
-* Auth in Visual Studio should not always be interactive - [#9659](https://github.com/NuGet/Home/issues/9659)
+* The installed version is inconsistent with the embedded icon in the solution level PM UI for one package id with multiple versions installed - [#9321](https://github.com/NuGet/Home/issues/9321)
 
 * Leak: PartCreationPolicy(CreationPolicy.NonShared) NuGet.SolutionRestoreManager.RestoreOperationLogger - [#9595](https://github.com/NuGet/Home/issues/9595)
 
@@ -103,6 +77,18 @@ NuGet distribution vehicles:
 
 * Improve memory performance of PackageMetadataResourceV3 by reducing the JObject dependencies - [#9719](https://github.com/NuGet/Home/issues/9719)
 
-* Revert "shared compilation of XmlUtility" - [#9733](https://github.com/NuGet/Home/issues/9733)
+**DCRs:**
+
+* Suppressed the <owners> element when it is redundant - [#5134](https://github.com/NuGet/Home/issues/5134)
+
+* Log IntervalTrackers as ETW events - [#9593](https://github.com/NuGet/Home/issues/9593)
+
+* Added an informational message on restore to inform CPVM users that the feature is in preview - [#9340](https://github.com/NuGet/Home/issues/9340)
+
+* Populate Solution Explorer package/project transitive dependencies from assets file - [#9580](https://github.com/NuGet/Home/issues/9580)
+
+* Visual Studio partial restore for PackageReference projects (noop++) prototype - [#9513](https://github.com/NuGet/Home/issues/9513)
+
+* Installed packages tab shouldn't paginate the list - [#6995](https://github.com/NuGet/Home/issues/6995)
 
 **[List of all issues fixed in this release - 5.7](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5ea77f51ab1a972297db2e92)**
