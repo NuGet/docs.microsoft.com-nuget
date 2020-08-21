@@ -39,14 +39,6 @@ NuGet distribution vehicles:
 
 * Made noop restore faster - sped up evaluations by calling MSBuild Static Graph apis (dotnet.exe) - [#9644](https://github.com/NuGet/Home/issues/9644)
 
-**Codespaces:**
-
-* Added a context menu for VS NuGet UI in VS Codespaces - [#9428](https://github.com/NuGet/Home/issues/9428)
-
-* Use the output channel service to propagate NuGet output for VS Codespaces - [#9269](https://github.com/NuGet/Home/issues/9269)
-
-* Added the restore service functionality for online environments - [#9308](https://github.com/NuGet/Home/issues/9308)
-
 **Central Package Version Management:**
 
 * Added integration of PackageVersion information for non-sdk style projects in VS restore  - [#9236](https://github.com/NuGet/Home/issues/9236)
