@@ -21,7 +21,7 @@ NuGet distribution vehicles:
 
 ### Features added in this release
 
-* Made noop restore faster - sped up evaluations by calling MSBuild Static Graph apis (dotnet.exe) - [#9644](https://github.com/NuGet/Home/issues/9644)
+* Made no-op restore faster - sped up evaluations by calling MSBuild Static Graph APIs (dotnet.exe) - [#9644](https://github.com/NuGet/Home/issues/9644)
 
 * Added integration of PackageVersion information for non-SDK style projects in VS restore  - [#9236](https://github.com/NuGet/Home/issues/9236)
 
