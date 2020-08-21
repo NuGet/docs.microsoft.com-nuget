@@ -22,6 +22,7 @@ NuGet distribution vehicles:
 ### Features added in this release
 
 * Made no-op restore faster - sped up evaluations by calling MSBuild Static Graph APIs (dotnet.exe) - [#9644](https://github.com/NuGet/Home/issues/9644)
+* Added Visual Studio partial restore for PackageReference projects (noop++) - [#9513](https://github.com/NuGet/Home/issues/9513)
 
 * Added integration of PackageVersion information for non-SDK style projects in VS restore  - [#9236](https://github.com/NuGet/Home/issues/9236)
 
@@ -51,10 +52,6 @@ NuGet distribution vehicles:
 
 * nuget cli 3.5.0 throws exception 'authors required' during pack of a csproj ignoring placeholders and assemblyinfo attributes if the assembly name is changed - [#4234](https://github.com/NuGet/Home/issues/4234)
 
-* Consider updating the libraries to use newer versions of Newtonsoft.Json - [#9263](https://github.com/NuGet/Home/issues/9263)
-
-* HttpSourceAuthenticationHandler SemaphoreSlim future proofing - [#9463](https://github.com/NuGet/Home/issues/9463)
-
 * HttpRequestMessage gets reused multiple times which is not supported with the SocketHttpHandler - [#8661](https://github.com/NuGet/Home/issues/8661)
 
 * NuGet.Indexing 5.6.0 preview 3 and later use a different public key token - [#9481](https://github.com/NuGet/Home/issues/9481)
@@ -71,8 +68,6 @@ NuGet distribution vehicles:
 
 * Avoid reading the assets file in no-op restores - [#9693](https://github.com/NuGet/Home/issues/9693)
 
-* Current Source Link package is not working - [#9695](https://github.com/NuGet/Home/issues/9695)
-
 * NuGet.Protocol does not support getting a version's download count from search - [#9086](https://github.com/NuGet/Home/issues/9086)
 
 * Improve memory performance of PackageMetadataResourceV3 by reducing the JObject dependencies - [#9719](https://github.com/NuGet/Home/issues/9719)
@@ -86,8 +81,6 @@ NuGet distribution vehicles:
 * Added an informational message on restore to inform CPVM users that the feature is in preview - [#9340](https://github.com/NuGet/Home/issues/9340)
 
 * Populate Solution Explorer package/project transitive dependencies from assets file - [#9580](https://github.com/NuGet/Home/issues/9580)
-
-* Visual Studio partial restore for PackageReference projects (noop++) prototype - [#9513](https://github.com/NuGet/Home/issues/9513)
 
 * Installed packages tab shouldn't paginate the packages list - [#6995](https://github.com/NuGet/Home/issues/6995)
 
