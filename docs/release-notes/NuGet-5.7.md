@@ -47,7 +47,7 @@ NuGet distribution vehicles:
 
 * Improve DOTNET_HOST_PATH environment variable handling - [#7438](https://github.com/NuGet/Home/issues/7438)
 
-* nuget.exe spec Generates a copyright Tag with Hard-Coded Text of Copyright yyyy Instead of $copyright$ - [#8696](https://github.com/NuGet/Home/issues/8696)
+* nuget.exe spec generates a copyright tag with hard-coded text of Copyright YYYY Instead of $copyright$ - [#8696](https://github.com/NuGet/Home/issues/8696)
 
 * nuget cli 3.5.0 throws exception 'authors required' during pack of a csproj ignoring placeholders and assemblyinfo attributes if the assembly name is changed - [#4234](https://github.com/NuGet/Home/issues/4234)
 
