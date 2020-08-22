@@ -21,11 +21,13 @@ NuGet distribution vehicles:
 
 ### Features added in this release
 
+* Added extern alias support for NuGet package references - [#4989](https://github.com/NuGet/Home/issues/4989)
+
+* Made switching between Installed and Updates tabs faster by allowing them to share a data source and reducing resfreshing - [#8294](https://github.com/NuGet/Home/issues/8294)
+
 * Make restore faster - speed up evaluations by calling MSBuild Static Graph apis (dotnet.exe) - [#9644](https://github.com/NuGet/Home/issues/9644)
 
 * Added Visual Studio partial restore for PackageReference projects (no-op++) - [#9513](https://github.com/NuGet/Home/issues/9513)
-
-* Made switching between Installed and Updates tabs faster by allowing them to share a data source and reducing resfreshing - [#8294](https://github.com/NuGet/Home/issues/8294)
 
 * Added integration of PackageVersion information for non-SDK style projects in VS restore  - [#9236](https://github.com/NuGet/Home/issues/9236)
 
@@ -34,8 +36,6 @@ NuGet distribution vehicles:
 * Added support for multiple config files in %APPDATA%\NuGet directory - [#9394](https://github.com/NuGet/Home/issues/9394)
 
 * DeterministicSourcePaths now takes NuGet source packages into account - [#9431](https://github.com/NuGet/Home/issues/9431)
-
-* Added extern alias support for NuGet package references - [#4989](https://github.com/NuGet/Home/issues/4989)
 
 * Added INuGetProjectService.GetInstalledPackagesAsync extensibility API - [#9702](https://github.com/NuGet/Home/issues/9702)
 
