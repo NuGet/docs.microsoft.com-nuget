@@ -21,7 +21,7 @@ NuGet distribution vehicles:
 
 ### Features added in this release
 
-* Made no-op restore faster - sped up evaluations by calling MSBuild Static Graph APIs (dotnet.exe) - [#9644](https://github.com/NuGet/Home/issues/9644)
+* Make restore faster - speed up evaluations by calling MSBuild Static Graph apis (dotnet.exe) - [#9644](https://github.com/NuGet/Home/issues/9644)
 
 * Added Visual Studio partial restore for PackageReference projects (no-op++) - [#9513](https://github.com/NuGet/Home/issues/9513)
 
@@ -49,7 +49,7 @@ NuGet distribution vehicles:
 
 * Searching in PMUI with Static / Sleet package sources causes OutOfMemoryException - [#8478](https://github.com/NuGet/Home/issues/8478)
 
-* Improve DOTNET_HOST_PATH environment variable handling - [#7438](https://github.com/NuGet/Home/issues/7438)
+* In a dotnet CLI restore, when launching credential plugins, try the dotnet CLI on the system path if the `DOTNET_HOST_PATH`  environment variable is not defined. - [#7438](https://github.com/NuGet/Home/issues/7438)
 
 * nuget.exe spec generates a copyright tag with hard-coded text of Copyright YYYY Instead of $copyright$ - [#8696](https://github.com/NuGet/Home/issues/8696)
 
