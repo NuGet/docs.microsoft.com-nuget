@@ -25,6 +25,8 @@ NuGet distribution vehicles:
 
 * Added Visual Studio partial restore for PackageReference projects (no-op++) - [#9513](https://github.com/NuGet/Home/issues/9513)
 
+* Made switching between Installed and Updates tabs faster by allowing them to share a data source and reducing resfreshing - [#8294](https://github.com/NuGet/Home/issues/8294)
+
 * Added integration of PackageVersion information for non-SDK style projects in VS restore  - [#9236](https://github.com/NuGet/Home/issues/9236)
 
 * nuget.exe update -self -Source https://feed - [#1783](https://github.com/NuGet/Home/issues/1783)
