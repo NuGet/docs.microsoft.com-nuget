@@ -29,7 +29,7 @@ NuGet distribution vehicles:
 
 * Added integration of PackageVersion information for non-SDK style projects in VS restore  - [#9236](https://github.com/NuGet/Home/issues/9236)
 
-* nuget.exe update -self -Source https://feed - [#1783](https://github.com/NuGet/Home/issues/1783)
+* Added support for nuget.exe update -self -Source https://feed - [#1783](https://github.com/NuGet/Home/issues/1783)
 
 * Added support for multiple config files in %APPDATA%\NuGet directory - [#9394](https://github.com/NuGet/Home/issues/9394)
 
