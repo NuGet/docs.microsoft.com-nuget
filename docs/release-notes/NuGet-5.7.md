@@ -53,7 +53,7 @@ NuGet distribution vehicles:
 
 * nuget.exe spec generates a copyright tag with hard-coded text of Copyright YYYY Instead of $copyright$ - [#8696](https://github.com/NuGet/Home/issues/8696)
 
-* nuget cli 3.5.0 throws exception 'authors required' during pack of a csproj ignoring placeholders and assemblyinfo attributes if the assembly name is changed - [#4234](https://github.com/NuGet/Home/issues/4234)
+NuGet.exe throws exception 'authors required' during pack of a csproj ignoring placeholders and assemblyinfo attributes if the assembly name is changed - [#4234](https://github.com/NuGet/Home/issues/4234)
 
 * HttpRequestMessage gets reused multiple times which is not supported with the SocketHttpHandler - [#8661](https://github.com/NuGet/Home/issues/8661)
 
