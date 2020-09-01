@@ -89,7 +89,7 @@ NuGet distribution vehicles:
 
 **[List of all issues fixed in this release - 5.7](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5ea77f51ab1a972297db2e92)**
 
-### Contributors
+### Community contributions
 
 Thank you to all the contributors who helped make this NuGet release awesome!
 
