@@ -29,6 +29,8 @@ NuGet distribution vehicles:
 
 * Added Visual Studio partial restore for PackageReference projects (no-op++) - [#9513](https://github.com/NuGet/Home/issues/9513)
 
+* Visual Studio Package Manager UI will crash less often when searching misbehaving package sources that return more than the requested number of results per HTTP request. - [#8478](https://github.com/NuGet/Home/issues/8478)
+
 * Added integration of PackageVersion information for non-SDK style projects in VS restore  - [#9236](https://github.com/NuGet/Home/issues/9236)
 
 * Added support for nuget.exe update `-self -Source` https://feed - [#1783](https://github.com/NuGet/Home/issues/1783)
@@ -46,8 +48,6 @@ NuGet distribution vehicles:
 ### Issues fixed in this release
 
 **Bugs:**
-
-* Searching in PMUI with Static / Sleet package sources causes OutOfMemoryException - [#8478](https://github.com/NuGet/Home/issues/8478)
 
 * In a dotnet CLI restore, when launching credential plugins, try the dotnet CLI on the system path if the `DOTNET_HOST_PATH`  environment variable is not defined. - [#7438](https://github.com/NuGet/Home/issues/7438)
 
