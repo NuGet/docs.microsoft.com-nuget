@@ -28,18 +28,16 @@ where the search terms are applied to the names of packages, tags, and package d
 | PreRelease | Pre-release packages are not included by default, but can be included by using this argument | -PreRelease |
 | Source | Specific package source(s) to search instead of querying the default sources in __nuget.config__ | -Source `<Source URL>`|
 | Take | The number of results to return. The default value is 20. | -Take `<positive integer>` |
-| Verbosity | The level of detail to display in the output. The default is _normal_. (See the note below)  | -Verbosity `<quiet\|normal\|detailed>` |
+| Verbosity | The level of detail to display in the output. The default is _normal_. (See the note below)  | -Verbosity `<quiet|normal|detailed>` |
 | Help | Displays help information for the command | -Help |
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
-__NOTE__
-
-Verbosity Levels:
-
-* _quiet_ - Package ID, Version
-* _normal_ - Package ID, Version, Downloads, Preview of Description
-* _detailed_ - Package ID, Version, Downloads, Full Description, Other information such as the query URL
+> [!NOTE] 
+> Verbosity Levels:
+> * _quiet_ - Package ID, Version
+> * _normal_ - Package ID, Version, Downloads, Preview of Description
+> * _detailed_ - Package ID, Version, Downloads, Full Description, Other information such as the query URL
 
 ## Examples
 
