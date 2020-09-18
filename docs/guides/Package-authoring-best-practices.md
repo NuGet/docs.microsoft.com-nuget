@@ -73,7 +73,7 @@ Below is a table mapping and describing all the available packages metadata elem
 If you're publishing a completely new package:
 
 ✔️ DO choose a package ID that is unique and clearly differentiated from existing packages on NuGet.org.
-> You can make sure a package ID is unique and differntiable by searching for the ID on NuGet.org or checking if the following link exists: https://www.nuget.org/packages/<package name\>.
+> You can check if a package ID is unique and differentiable by searching for the ID on NuGet.org or checking if the following link exists: https://www.nuget.org/packages/<package name\>.
 
 ✔️ CONSIDER choosing a NuGet package name with a prefix that meets NuGet's prefix reservation [criteria](https://docs.microsoft.com/en-us/nuget/nuget-org/id-prefix-reservation#id-prefix-reservation-criteria).
 > Reserving the prefix ID for your package will let you get the verified check mark:
