@@ -13,7 +13,7 @@ This guidance is intended to give NuGet.org package authors a light-weight end t
 
 ## Types of recommendations
 
-Each article presents four types of recommendations: **Do**, **Consider**, **Avoid**, and **Do not**. The type of recommendation indicates how strongly it should be followed.
+Each article presents four types of recommendations: **Do**, **Consider**, **Avoid**, and **Do not**. The type of recommendation indicates how closely it should be followed.
 
 You should almost always follow a **Do** recommendation. For example:
 
