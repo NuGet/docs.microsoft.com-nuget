@@ -31,6 +31,10 @@ And finally, **Do not** recommendations indicate something you should almost nev
 
 ❌ DO NOT use the `LicenseUrl` metadataproperty.
 
+## Where do I define my package?
+
+TODO: Talk about how and where to make the suggested changes through out the guide (Visual Studio properties, project file, packages.config)
+
 ## Framework targeting
 
 Authors should consider making their packages as inclusive as possible if they would like to maximize the number of potential consumers and overall impact in the .NET ecosystem.
