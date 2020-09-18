@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Package authoring best practices
 
-This guidance is intended to give NuGet.org package authors a light-weight end to end reference for creating and publishing high quality packages. It will primarily focus on package-specific best practices such as metadata and packing. For more in depth suggestions for building high quality libraries, see the .NET [Open-source library guidance](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/).
+This guidance is intended to give NuGet.org package authors a lightweight end to end reference for creating and publishing high quality packages. It will primarily focus on package-specific best practices such as metadata and packing. For more in-depth suggestions for building high quality libraries, see the .NET [Open-source library guidance](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/).
 
 ## Types of recommendations
 
@@ -19,7 +19,7 @@ You should almost always follow a **Do** recommendation. For example:
 
 ✔️ DO include a short description for your package that describes what it's for.
 
-On the other hand, **Consider** recommendations should generally be followed, but there are legitimate exceptions to the rule and you shouldn't feel bad about not following the guidance:
+On the other hand, **Consider** recommendations should generally be followed, but there are legitimate exceptions to the rule:
 
 ✔️ CONSIDER choosing a NuGet package name with a prefix that meets NuGet's prefix reservation [criteria](https://docs.microsoft.com/en-us/nuget/reference/id-prefix-reservation).
 
@@ -50,7 +50,7 @@ In Visual Studio, the recommended way to specify package metadata is to go Proje
 
 Package metadata elements can also be specified directly in the project file (.csproj).
 
-Below is a table mapping and describing all the available packages metadata elements:
+Below is a table mapping and describing available packages metadata elements:
 
 | Visual Studio property name | csproj/MSBuild property name | Nuspec property name        | Description                                                                                                       |
 |-----------------------------|------------------------------|-----------------------------|-------------------------------------------------------------------------------------------------------------------|
@@ -75,7 +75,7 @@ If you're publishing a completely new package:
 ✔️ DO choose a package ID that is unique and clearly differentiated from existing packages on NuGet.org.
 > You can check if a package ID is unique and differentiable by searching for the ID on NuGet.org or checking if the following link exists: https://www.nuget.org/packages/<package name\>.
 
-✔️ CONSIDER choosing a NuGet package name with a prefix that meets NuGet's prefix reservation [criteria](https://docs.microsoft.com/en-us/nuget/nuget-org/id-prefix-reservation#id-prefix-reservation-criteria).
+✔️ CONSIDER choosing a NuGet package name with a prefix that meets NuGet's [prefix reservation criteria](https://docs.microsoft.com/en-us/nuget/nuget-org/id-prefix-reservation#id-prefix-reservation-criteria).
 > Reserving the prefix ID for your package will let you get the verified check mark:
 > ![image](media/Verified-check-mark.png)
 > Check out the [Package ID prefix reservation docs](https://docs.microsoft.com/en-us/nuget/nuget-org/id-prefix-reservation) to learn more.
@@ -87,7 +87,7 @@ If you're publishing a completely new package:
 
 ✔️ DO include a pre-release suffix when releasing a non-stable package.
 
-See the [.NET library versioning guide](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/versioning) for more advanced guidance including aseembly versioning.
+See the [.NET library versioning guide](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/versioning) for more advanced guidance including assembly versioning.
 
 ### Authors
 
@@ -102,7 +102,7 @@ See the [.NET library versioning guide](https://docs.microsoft.com/en-us/dotnet/
 ### Copyright
 
 ✔️ CONSIDER copyrighting your package with "Copyright (c) <name/company\> <year\>."
->A copyright notice essentially indicates that your work cannot be copied without your permission. Including, a copyright notice in your package is easy and won't do any harm!
+>A copyright notice essentially indicates that your work cannot be copied without your permission. Including a copyright notice in your package is easy and won't do any harm!
 
 Example: Copyright (c) Contoso 2020
 
@@ -118,7 +118,7 @@ Example: Copyright (c) Contoso 2020
 ✔️ CONSIDER specifying an MIT license.
 > If you want your package as to be usable by as many consumers as possible, the MIT license is a very well known non-restrictive license.
 
-❌ DO NOT use the deprecated `LicenseUrl` metadataproperty.
+❌ DO NOT use the deprecated `LicenseUrl` metadata property.
 > This presents legal ambiguity as license changes at the URL will retroactively change the displayed license for previous package versions.
 
 ### Project URL
@@ -168,7 +168,7 @@ Example: Copyright (c) Contoso 2020
 ✔️ DO review your package for unnecessary dependencies.
 > Unnecessary dependencies needlessly increase the size of your package as well as increase likelihood of version conflicts for both yourself and your consumers!
 
-### Depencency version ranges
+### Dependency version ranges
 
 ❌ DO NOT have NuGet package references with no minimum version.
 
