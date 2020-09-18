@@ -40,11 +40,12 @@
       "ROBOTS": "INDEX,FOLLOW",
       "ms.topic": "conceptual",
       "ms.prod": "nuget",
-      "author": "karann-msft",
-      "ms.author": "karann",
+      "author": "JonDouglas",
+      "ms.author": "jodou",
       "ms.reviewer": [
-        "karann",
-        "unnir"
+        "jodou",
+        "chgill",
+        "jiacjian"
       ],
       "ms.workload": [
         "dotnet",
