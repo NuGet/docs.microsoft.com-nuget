@@ -29,7 +29,7 @@ On the other hand, **Consider** recommendations should generally be followed, bu
 
 And finally, **Do not** recommendations indicate something you should almost never do:
 
-❌ DO NOT use the `LicenseUrl` metadataproperty.
+❌ DO NOT use the `LicenseUrl` metadata property.
 
 ## Framework targeting
 
@@ -140,7 +140,7 @@ Example: Copyright (c) Contoso 2020
 
 ### Repository Type and URL
 
-✔️ CONSIDER including a repository type and URL to make it easy for package consumers to view sourecode and package documentation (only if public).
+✔️ CONSIDER including a repository type and URL to make it easy for package consumers to view source code, report issues, and view repository documentation (only if public).
 
 ✔️ CONSIDER setting up [Source Link](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink) to add source control metadata to your assemblies and NuGet package.
 > Source Link will automatically adds `Repository URL` and `Repository Type` to the package metadata. It also adds the specific commit associated with your package version.
