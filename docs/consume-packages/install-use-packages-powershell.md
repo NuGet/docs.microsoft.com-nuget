@@ -163,7 +163,7 @@ $profile
 C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
-For more details, refer to [Windows PowerShell Profiles](https://technet.microsoft.com/library/bb613488.aspx).
+For more details, refer to [Windows PowerShell Profiles](/previous-versions//bb613488(v=vs.85)).
 
 ## Use the nuget.exe CLI in the console
 
