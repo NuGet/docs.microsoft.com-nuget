@@ -211,7 +211,7 @@ To avoid using the cache for HTTP sources, do one of the following:
 
 For NuGet 2.6 and earlier, an MSBuild-integrated package restore was previously supported but that is no longer true. (It was typically enabled by right-clicking a solution in Visual Studio and selecting **Enable NuGet Package Restore**). If your project uses the deprecated MSBuild-integrated package restore, please migrate to automatic package restore.
 
-Projects that use MSBuild-Integrated package restore typically contain a *.nuget* folder with three files: *NuGet.config*, *nuget.exe*, and *NuGet.targets*. The presence of a *NuGet.targets* file determines whether NuGet will continue to use the MSBuild-untegrated approach, so this file must be removed during the migration.
+Projects that use MSBuild-Integrated package restore typically contain a *.nuget* folder with three files: *NuGet.config*, *nuget.exe*, and *NuGet.targets*. The presence of a *NuGet.targets* file determines whether NuGet will continue to use the MSBuild-integrated approach, so this file must be removed during the migration.
 
 To migrate to automatic package restore:
 
