@@ -39,7 +39,7 @@ For complete, detailed help on any of these commands within the console, just ru
 Get-Help <command> -full
 ```
 
-All Package Manager Console commands support the following [common PowerShell parameters](https://go.microsoft.com/fwlink/?LinkID=113216):
+All Package Manager Console commands support the following [common PowerShell parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters):
 
 - Debug
 - ErrorAction
@@ -51,4 +51,4 @@ All Package Manager Console commands support the following [common PowerShell pa
 - WarningAction
 - WarningVariable
 
-For details, refer to [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216) in the PowerShell documentation.
+For details, refer to [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters) in the PowerShell documentation.

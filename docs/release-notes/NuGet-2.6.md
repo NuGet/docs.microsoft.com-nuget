@@ -67,7 +67,7 @@ applications in your project.
 
 #### What you can do with XDT
 
-One of XDT’s greatest strengths is its [simple but powerful syntax](https://docs.microsoft.com/previous-versions/aspnet/dd465326(v=vs.110))
+One of XDT’s greatest strengths is its [simple but powerful syntax](/previous-versions/aspnet/dd465326(v=vs.110))
 for manipulating the structure of an XML DOM. Rather than simply overlaying one fixed document
 structure onto another structure, XDT provides controls for matching elements in a variety of
 ways, from simple attribute name matching to full XPath support. Once a matching element or
