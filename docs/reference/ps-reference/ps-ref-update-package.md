@@ -76,11 +76,11 @@ Update-Package Elmah -ProjectName MvcApplication1 -Safe
 # (subject to version constraints). If this command rolls a dependency back to an earlier version,
 # use Update-Package <dependency_name> to reinstall that one dependency without affecting the
 # dependent package.
-Update-Package ELmah –reinstall 
+Update-Package Elmah –reinstall 
 
 # Reinstall the Elmah package in just MyProject
 Update-Package Elmah -ProjectName MyProject -reinstall
 
 # Reinstall the same version of the original package without touching dependencies.
-Update-Package ELmah –reinstall -ignoreDependencies
+Update-Package Elmah –reinstall -ignoreDependencies
 ```
