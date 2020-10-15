@@ -1,8 +1,8 @@
 # docs.microsoft.com-nuget
 
-The NuGet documentation contained in this repository is hosted on docs.microsoft.com/nuget. This repository was migrated from the former NuGetDocs repository, https://github.com/NuGet/NuGetDocs, which is no longer in active use.
+The NuGet documentation contained in this repository is hosted on [docs.microsoft.com/nuget](https://docs.microsoft.com/nuget/). This repository was migrated from the former NuGetDocs repository, https://github.com/NuGet/NuGetDocs, which is no longer in active use.
 
-Contributions to this docset are welcome. Please submit PRs to the *master* branch. (The master branch is used for staging changes which is periodically merged into the *live* branch which is what's published to the live docs site.)
+Contributions to this docset are welcome. Please submit PRs to the *master* branch. The master branch is used for staging changes which is periodically merged into the *live* branch which is what's published to the live docs site.
 
 NuGet follows the [.NET Foundation Contributors Code of Conduct](https://github.com/dotnet/home/blob/master/guidance/be-nice.md). Please take a few minutes to review it.
 
@@ -18,7 +18,7 @@ NuGet follows the [.NET Foundation Contributors Code of Conduct](https://github.
 
 ## Contribution workflow
 
-No contribution is too big or too small--
+No contribution is too big or too small.
 
 1. Visit the page to edit on [docs.microsoft.com/nuget](https://docs.microsoft.com/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
 1. Edit the markdown:
