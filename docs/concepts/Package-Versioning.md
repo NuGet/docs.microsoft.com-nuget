@@ -109,7 +109,7 @@ When referring to package dependencies, NuGet supports using interval notation f
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | Mixed inclusive minimum and exclusive maximum version |
 | (1.0)    | invalid | invalid |
 
-When using the PackageReference format, NuGet also supports using a floating notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number. Floating versions are not supported with the `packages.config` format. When a floating version is specified the rule is to resolve to the highest existent version that match the version description. Examples of loating versions and the resolutions are below.
+When using the PackageReference format, NuGet also supports using a floating notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number. Floating versions are not supported with the `packages.config` format. When a floating version is specified, the rule is to resolve to the highest existent version that matches the version description. Examples of floating versions and the resolutions are below.
 
 > [!Note]
 > Version ranges in PackageReference include pre-release versions. By design, floating versions do not resolve prerelease versions unless opted into. For the status of the related feature request, see [issue 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297).
