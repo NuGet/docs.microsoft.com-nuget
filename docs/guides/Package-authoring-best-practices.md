@@ -116,7 +116,7 @@ Example: Copyright (c) Contoso 2020
 > [!IMPORTANT]
 > A project without a license defaults to [exclusive copyright](https://choosealicense.com/no-permission/), making it legally impossible for other people to use.
 
-✔️ CONSIDER using a license expression (SPDX identifier).
+✔️ CONSIDER using a license expression ([SPDX license](https://spdx.org/licenses/) identifier).
 > License expressions are surfaced the most clearly to package consumers and make it more obvious if the license has changed with a new release.
 
 ✔️ CONSIDER specifying an MIT license.
