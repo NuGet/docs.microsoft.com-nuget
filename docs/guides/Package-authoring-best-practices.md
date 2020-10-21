@@ -58,7 +58,7 @@ Below is a table mapping and describing available packages metadata elements:
 
 | Visual Studio property name | csproj/MSBuild property name | Nuspec property name        | Description                                                                                                       |
 |-----------------------------|------------------------------|-----------------------------|-------------------------------------------------------------------------------------------------------------------|
-| `Package id`                | `PackageId`                  | `id`                        | The package identifier. A prefix from the identifier can be reserved if it meets the  criteria.                   |
+| `Package id`                | `PackageId`                  | `id`                        | The package identifier. A prefix from the identifier can be reserved if it meets the criteria.                   |
 | `Package Version`           | `Version`                    | `version`                   | NuGet package version. For more information, see NuGet package version.                                           |
 | `Authors`                   | `Authors`                    | `authors`                   | A comma-separated list of package authors, matching the profile names on NuGet.org.                               |
 | `Description`               | `Description`                | `description`               | A long description of the package displayed in UI.                                                                |
