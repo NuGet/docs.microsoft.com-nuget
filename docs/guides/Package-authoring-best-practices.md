@@ -113,18 +113,27 @@ Example: Copyright (c) Contoso 2020
 
 ### Licensing
 
-✔️ DO specify a valid license for your package.
+✔️ DO [include a valid license expression or license file in your package](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
 > [!IMPORTANT]
 > A project without a license defaults to [exclusive copyright](https://choosealicense.com/no-permission/), making it legally impossible for other people to use.
 
-✔️ CONSIDER using a license expression ([SPDX license](https://spdx.org/licenses/) identifier).
-> License expressions are surfaced the most clearly to package consumers and make it more obvious if the license has changed with a new release.
-
-✔️ CONSIDER [choosing an open source license](https://choosealicense.com/) if your project is open source.
-> If you want your package as to be usable by as many consumers as possible, the MIT license is a very well known non-restrictive license.
-
 ❌ DO NOT use the deprecated `LicenseUrl` metadata property.
 > This presents legal ambiguity as license changes at the URL will retroactively change the displayed license for previous package versions.
+
+#### If your package is open source:
+
+✔️ DO [choose an open source license](https://choosealicense.com/) to make your package open source.
+> *"Open source licenses are licenses that comply with the Open Source Definition — in brief, they allow software to be freely used, modified, and shared."* - Open Source Initiative. To learn more about open source software and the Open Source Initiative, check out https://opensource.org/.
+
+✔️ CONSIDER [including a license expression in your package](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
+> License expressions are surfaced the most clearly and make it more obvious to consumers if they can use your package or if the license has changed. 
+> [!Note]
+> NuGet.org only accepts license expressions that are approved by the Open Source Initiative or the Free Software Foundation.
+
+#### If your package is not open source
+
+✔️ [include a license file in your package](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
+> Any valid license file can be added to your package, including non-standard licenses. 
 
 ### Project URL
 
