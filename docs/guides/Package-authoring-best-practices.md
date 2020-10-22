@@ -132,7 +132,7 @@ Example: Copyright (c) Contoso 2020
 
 #### If your package is not open source
 
-✔️ [include a license file in your package](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
+✔️ DO [include a license file in your package](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
 > Any valid license file can be added to your package, including non-standard licenses. 
 
 ### Project URL
