@@ -120,7 +120,7 @@ Example: Copyright (c) Contoso 2020
 ❌ DO NOT use the deprecated `LicenseUrl` metadata property.
 > This presents legal ambiguity as license changes at the URL will retroactively change the displayed license for previous package versions.
 
-#### If your package is open source:
+#### If your package is [open source](https://opensource.org/osd)
 
 ✔️ DO [choose an open source license](https://choosealicense.com/) to make your package open source.
 > *"Open source licenses are licenses that comply with the Open Source Definition — in brief, they allow software to be freely used, modified, and shared."* - Open Source Initiative. To learn more about open source software and the Open Source Initiative, check out https://opensource.org/.
