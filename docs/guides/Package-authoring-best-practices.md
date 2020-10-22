@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Package authoring best practices
 
-This guidance is intended to give NuGet.org package authors a lightweight end to end reference for creating and publishing high quality packages. It will primarily focus on package-specific best practices such as metadata and packing. For more in-depth suggestions for building high quality libraries, see the .NET [Open-source library guidance](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/).
+This guidance is intended to give NuGet.org package authors a lightweight end to end reference for creating and publishing high quality packages. It will primarily focus on package-specific best practices such as metadata and packing. For more in-depth suggestions for building high quality libraries, see the .NET [Open-source library guidance](https://docs.microsoft.com/dotnet/standard/library-guidance/).
 
 ## Types of recommendations
 
@@ -21,7 +21,7 @@ You should almost always follow a **Do** recommendation. For example:
 
 On the other hand, **Consider** recommendations should generally be followed, but there are legitimate exceptions to the rule:
 
-✔️ CONSIDER choosing a NuGet package name with a prefix that meets NuGet's prefix reservation [criteria](https://docs.microsoft.com/en-us/nuget/reference/id-prefix-reservation).
+✔️ CONSIDER choosing a NuGet package name with a prefix that meets NuGet's prefix reservation [criteria](https://docs.microsoft.com/nuget/reference/id-prefix-reservation).
 
 **Avoid** recommendations mention things that are generally not a good idea, but breaking the rule sometimes makes sense:
 
@@ -44,7 +44,7 @@ Highly inclusive packages are cross-platform and compatible with as many framewo
 ✔️ DO start with including a `netstandard2.0` target.
 > Most general-purpose libraries should not need APIs outside of .NET Standard 2.0. .NET Standard 2.0 is supported by all modern platforms and is the recommended way to support multiple platforms with one target.
 
-See the .NET [Cross-platform targeting guidance](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/cross-platform-targeting) for more advanced suggestions regarding cross-platform and multitargeting scenarios.
+See the .NET [Cross-platform targeting guidance](https://docs.microsoft.com/dotnet/standard/library-guidance/cross-platform-targeting) for more advanced suggestions regarding cross-platform and multitargeting scenarios.
 
 ## Package metadata
 
@@ -79,10 +79,10 @@ If you're publishing a completely new package:
 ✔️ DO choose a package ID that is unique and clearly differentiated from existing packages on NuGet.org.
 > You can check if a package ID is unique and differentiable by searching for the ID on NuGet.org or checking if the following link exists: https://www.nuget.org/packages/<package name\>.
 
-✔️ CONSIDER choosing a NuGet package name with a prefix that meets NuGet's [prefix reservation criteria](https://docs.microsoft.com/en-us/nuget/nuget-org/id-prefix-reservation#id-prefix-reservation-criteria).
+✔️ CONSIDER choosing a NuGet package name with a prefix that meets NuGet's [prefix reservation criteria](https://docs.microsoft.com/nuget/nuget-org/id-prefix-reservation#id-prefix-reservation-criteria).
 > Reserving the prefix ID for your package will let you get the verified check mark:
 > ![image](media/Verified-check-mark.png)
-> Check out the [Package ID prefix reservation docs](https://docs.microsoft.com/en-us/nuget/nuget-org/id-prefix-reservation) to learn more.
+> Check out the [Package ID prefix reservation docs](https://docs.microsoft.com/nuget/nuget-org/id-prefix-reservation) to learn more.
 
 ### Package Version
 
@@ -90,9 +90,9 @@ If you're publishing a completely new package:
 > Essentially, this means using the Major.Minor.Patch[-prerelease] format.
 
 ✔️ DO include a pre-release suffix when releasing a non-stable package.
-TODO: Include and example and link to https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/nuget#pre-release-packages somewhere
+TODO: Include and example and link to https://docs.microsoft.com/dotnet/standard/library-guidance/nuget#pre-release-packages somewhere
 
-See the [.NET library versioning guide](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/versioning) for more advanced guidance including assembly versioning.
+See the [.NET library versioning guide](https://docs.microsoft.com/dotnet/standard/library-guidance/versioning) for more advanced guidance including assembly versioning.
 
 ### Authors
 
@@ -113,7 +113,7 @@ Example: Copyright (c) Contoso 2020
 
 ### Licensing
 
-✔️ DO [include a valid license expression or license file in your package](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
+✔️ DO [include a valid license expression or license file in your package](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
 > [!IMPORTANT]
 > A project without a license defaults to [exclusive copyright](https://choosealicense.com/no-permission/), making it legally impossible for other people to use.
 
@@ -125,14 +125,14 @@ Example: Copyright (c) Contoso 2020
 ✔️ DO [choose an open source license](https://choosealicense.com/) to make your package open source.
 > *"Open source licenses are licenses that comply with the Open Source Definition — in brief, they allow software to be freely used, modified, and shared."* - Open Source Initiative. To learn more about open source software and the Open Source Initiative, check out https://opensource.org/.
 
-✔️ CONSIDER [including a license expression in your package](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
+✔️ CONSIDER [including a license expression in your package](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
 > License expressions are surfaced the most clearly and make it more obvious to consumers if they can use your package or if the license has changed. 
 > [!Note]
 > NuGet.org only accepts license expressions that are approved by the Open Source Initiative or the Free Software Foundation.
 
 #### If your package is not open source
 
-✔️ DO [include a license file in your package](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
+✔️ DO [include a license file in your package](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
 > Any valid license file can be added to your package, including non-standard licenses. 
 
 ### Project URL
@@ -156,7 +156,7 @@ Example: Copyright (c) Contoso 2020
 
 ✔️ CONSIDER including a repository type and URL to make it easy for package consumers to view source code, report issues, and view repository documentation (only if public).
 
-✔️ CONSIDER setting up [Source Link](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink) to add source control metadata to your assemblies and NuGet package.
+✔️ CONSIDER setting up [Source Link](https://docs.microsoft.com/dotnet/standard/library-guidance/sourcelink) to add source control metadata to your assemblies and NuGet package.
 > Source Link will automatically adds `Repository URL` and `Repository Type` to the package metadata. It also adds the specific commit associated with your package version.
 
 ### Tags
