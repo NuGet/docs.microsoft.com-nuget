@@ -86,10 +86,11 @@ If you're publishing a completely new package:
 
 ### Package Version
 
-✔️ CONSIDER using [SemVer 2.0.0](https://semver.org/) to version your NuGet package.
+✔️ CONSIDER using [SemVer](https://semver.org/) to version your NuGet package.
 > Essentially, this means using the Major.Minor.Patch[-prerelease] format.
 
 ✔️ DO include a pre-release suffix when releasing a non-stable package.
+TODO: Include and example and link to https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/nuget#pre-release-packages somewhere
 
 See the [.NET library versioning guide](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/versioning) for more advanced guidance including assembly versioning.
 
@@ -119,7 +120,7 @@ Example: Copyright (c) Contoso 2020
 ✔️ CONSIDER using a license expression ([SPDX license](https://spdx.org/licenses/) identifier).
 > License expressions are surfaced the most clearly to package consumers and make it more obvious if the license has changed with a new release.
 
-✔️ CONSIDER specifying an MIT license.
+✔️ CONSIDER [choosing an open source license](https://choosealicense.com/) if your project is open source.
 > If you want your package as to be usable by as many consumers as possible, the MIT license is a very well known non-restrictive license.
 
 ❌ DO NOT use the deprecated `LicenseUrl` metadata property.
