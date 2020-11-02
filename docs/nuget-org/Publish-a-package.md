@@ -19,7 +19,7 @@ This article covers publishing to nuget.org; for publishing to Azure Artifacts, 
 
 ## Publish to nuget.org
 
-For nuget.org, you must sign in with a Microsoft account, with which you'll be asked to register the account with nuget.org. You can also sign in with a nuget.org account created using older versions of the portal.
+For nuget.org, you must sign in with a Microsoft account, with which you'll be asked to register the account with nuget.org.
 
 ![NuGet sign in location](media/publish_NuGetSignIn.png)
 
@@ -42,7 +42,7 @@ Next, you can either upload the package through the nuget.org web portal, push t
 ### Command line
 
 To push packages to nuget.org, you first need an API key, which is created on nuget.org. You must use either dotnet.exe (.NET Core), or nuget.exe v4.1.0 or above, which implement the required NuGet protocols.
-For more information, see [.NET Core](https://docs.microsoft.com/dotnet/core/install/), [nuget.exe](https://www.nuget.org/downloads), and [NuGet protocols](../api/nuget-protocols.md).
+For more information, see [.NET Core](/dotnet/core/install/), [nuget.exe](https://www.nuget.org/downloads), and [NuGet protocols](../api/nuget-protocols.md).
 
 #### Create API keys
 

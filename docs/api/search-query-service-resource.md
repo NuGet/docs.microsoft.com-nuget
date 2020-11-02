@@ -118,7 +118,7 @@ packageTypes   | array of objects           | yes      | The package types defin
 
 On nuget.org, a verified package is one which has a package ID matching a reserved ID prefix and owned by one of the
 reserved prefix's owners. For more information, see the
-[documentation about ID prefix reservation](../reference/id-prefix-reservation.md).
+[documentation about ID prefix reservation](../nuget-org/id-prefix-reservation.md).
 
 The metadata contained in the search result object is taken from the latest package version. Each item in the
 `versions` array is a JSON object with the following properties:

@@ -36,7 +36,7 @@ For more information, see [Finding and choosing packages](../consume-packages/fi
 - Visual Studio on Windows supports the [Package Manager UI](../consume-packages/install-use-packages-visual-studio.md) and the [Package Manager Console](../consume-packages/install-use-packages-powershell.md).
 - Visual Studio for Mac has built-in NuGet capabilities as described on [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough).
 - Visual Studio Code (all platforms) does not have any direct NuGet integration. Use the [NuGet CLI](../reference/nuget-exe-cli-reference.md) or the [dotnet CLI](../reference/dotnet-commands.md).
-- Azure DevOps provides [a build step to restore NuGet packages](/vsts/build-release/tasks/package/nuget). You can also [host private NuGet package feeds on Azure DevOps](https://docs.microsoft.com/azure/devops/artifacts/nuget/publish).
+- Azure DevOps provides [a build step to restore NuGet packages](/vsts/build-release/tasks/package/nuget). You can also [host private NuGet package feeds on Azure DevOps](/azure/devops/artifacts/nuget/publish).
 
 **How do I check the exact version of the NuGet tools that are installed?**
 
@@ -98,7 +98,7 @@ This is a known issue with how PowerShell interacts with a COM object. Try the f
 
 **How do I list my package in a feed?**
 
-See [Creating and publishing a package](../quickstart/create-and-publish-a-package.md).
+See [Creating and publishing a package](../quickstart/create-and-publish-a-package-using-visual-studio.md).
 
 **I have multiple versions of my library that target different versions of the .NET Framework. How do I build a single package that supports this?**
 

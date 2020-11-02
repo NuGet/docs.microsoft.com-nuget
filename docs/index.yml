@@ -15,16 +15,16 @@ highlightedContent:
    items:
    - title: What is NuGet?
      itemType: overview
-     url: /nuget/what-is-nuget
+     url: ./what-is-nuget.md
    - title: Install NuGet client tools
      itemType: download
-     url: /nuget/install-nuget-client-tools
+     url: ./install-nuget-client-tools.md
    - title: Learn NuGet
      itemType: video
      url: https://aka.ms/Nuget101
    - title: NuGet.org
      itemType: overview
-     url: /nuget/nuget-org/overview-nuget-org
+     url: ./nuget-org/overview-nuget-org.md
 
 
 conceptualContent:
@@ -34,70 +34,70 @@ conceptualContent:
       links:
         - text: Install NuGet client tools
           itemType: download
-          url: /nuget/install-nuget-client-tools
+          url: ./install-nuget-client-tools.md
         - text: Install and use a package - dotnet CLI
           itemType: quickstart
-          url: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
+          url: ./quickstart/install-and-use-a-package-using-the-dotnet-cli.md
         - text: Install and use a package - Visual Studio
           itemType: quickstart
-          url: /nuget/quickstart/install-and-use-a-package-in-visual-studio
+          url: ./quickstart/install-and-use-a-package-in-visual-studio.md
         - text: Create a package - dotnet CLI
           itemType: quickstart
-          url: /nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli
+          url: ./quickstart/create-and-publish-a-package-using-the-dotnet-cli.md
         - text: Create a package - Visual Studio
           itemType: quickstart
-          url: /nuget/quickstart/create-and-publish-a-package-using-visual-studio
+          url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
         - text: Create a .NET Framework package - Visual Studio
           itemType: quickstart
-          url: /nuget/quickstart/create-and-publish-a-package-using-visual-studio-net-framework
+          url: ./quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md
     - title: Consume packages
       links:
         - text: Workflow (overview)
           itemType: overview
-          url: /nuget/consume-packages/overview-and-workflow
+          url: ./consume-packages/overview-and-workflow.md
         - text: Find and choose packages
           itemType: get-started
-          url: /nuget/consume-packages/finding-and-choosing-packages
+          url: ./consume-packages/finding-and-choosing-packages.md
         - text: Use Visual Studio
           itemType: how-to-guide
-          url: /nuget/consume-packages/install-use-packages-visual-studio
+          url: ./consume-packages/install-use-packages-visual-studio.md
         - text: Use dotnet CLI
           itemType: how-to-guide
-          url: /nuget/consume-packages/install-use-packages-dotnet-cli
+          url: ./consume-packages/install-use-packages-dotnet-cli.md
         - text: Use nuget.exe CLI
           itemType: how-to-guide
-          url: /nuget/consume-packages/install-use-packages-nuget-cli
+          url: ./consume-packages/install-use-packages-nuget-cli.md
         - text: Use Package Manager Console
           itemType: how-to-guide
-          url: /nuget/consume-packages/install-use-packages-powershell
+          url: ./consume-packages/install-use-packages-powershell.md
     - title: Create packages
       links:
         - text: Workflow (overview)
           itemType: overview
-          url: /nuget/create-packages/overview-and-workflow
+          url: ./create-packages/overview-and-workflow.md
         - text: Use Visual Studio
           itemType: how-to-guide
-          url: /nuget/quickstart/create-and-publish-a-package-using-visual-studio
+          url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
         - text: Use dotnet CLI
           itemType: how-to-guide
-          url: /nuget/create-packages/creating-a-package-dotnet-cli
+          url: ./create-packages/creating-a-package-dotnet-cli.md
         - text: Use nuget.exe CLI
           itemType: how-to-guide
-          url: /nuget/create-packages/creating-a-package
+          url: ./create-packages/creating-a-package.md
         - text: Use MSBuild
           itemType: how-to-guide
-          url: /nuget/create-packages/creating-a-package-msbuild
+          url: ./create-packages/creating-a-package-msbuild.md
         - text: Support multiple target frameworks
           itemType: reference
-          url: /nuget/create-packages/multiple-target-frameworks-project-file
+          url: ./create-packages/multiple-target-frameworks-project-file.md
     - title: Publish packages
       links:
         - text: Publish to NuGet.org
           itemType: overview
-          url: /nuget/nuget-org/publish-a-package
+          url: ./nuget-org/publish-a-package.md
         - text: Publish to a private feed
           itemType: overview
-          url: /nuget/hosting-packages/overview
+          url: ./hosting-packages/overview.md
 
 additionalContent:
    sections:
@@ -106,43 +106,43 @@ additionalContent:
         - title: NuGet.org
           links:
             - text: Overview
-              url: /nuget/nuget-org/overview-nuget-org
+              url: ./nuget-org/overview-nuget-org.md
             - text: Individual accounts
-              url: /nuget/nuget-org/individual-accounts
+              url: ./nuget-org/individual-accounts.md
             - text: Organizations
-              url: /nuget/nuget-org/organizations-on-nuget-org
+              url: ./nuget-org/organizations-on-nuget-org.md
             - text: API keys
-              url: /nuget/nuget-org/scoped-api-keys
+              url: ./nuget-org/scoped-api-keys.md
             - text: Publish a package
-              url: /nuget/nuget-org/publish-a-package
+              url: ./nuget-org/publish-a-package.md
         - title: Reference
           links:
             - text: dotnet CLI
-              url: /nuget/reference/dotnet-commands
+              url: ./reference/dotnet-commands.md
             - text: nuget.exe CLI
-              url: /nuget/reference/nuget-exe-cli-reference
+              url: ./reference/nuget-exe-cli-reference.md
             - text: Package references
-              url: /nuget/consume-packages/package-references-in-project-files
+              url: ./consume-packages/package-references-in-project-files.md
             - text: pack and restore as MSBuild targets
-              url: /nuget/reference/msbuild-targets
+              url: ./reference/msbuild-targets.md
             - text: .nuspec
-              url: /nuget/reference/nuspec
+              url: ./reference/nuspec.md
             - text: nuget.config
-              url: /nuget/reference/nuget-config-file
+              url: ./reference/nuget-config-file.md
             - text: NuGet API
-              url: /nuget/api/overview
+              url: ./api/overview.md
         - title: Resources
           links:
             - text: Policies - NuGet
-              url: /nuget/policies/governance
+              url: ./policies/governance.md
             - text: Policies - NuGet.org
-              url: /nuget/nuget-org/policies/data-requests
+              url: ./nuget-org/policies/data-requests.md
             - text: Release notes
-              url: /nuget/release-notes/known-issues
+              url: ./release-notes/known-issues.md
             - text: FAQ - NuGet
-              url: /nuget/resources/nuget-faq
+              url: ./resources/nuget-faq.md
             - text: FAQ - NuGet.org
-              url: /nuget/nuget-org/nuget-org-faq
+              url: ./nuget-org/nuget-org-faq.md
 
 
    footer: "[Blogs](https://devblogs.microsoft.com/nuget/) - [Twitter](https://twitter.com/nuget) - [Stack Overflow](https://stackoverflow.com/questions/tagged/nuget)"
