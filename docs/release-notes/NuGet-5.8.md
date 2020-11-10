@@ -13,16 +13,17 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**5.8**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.8](https://visualstudio.microsoft.com/downloads/) | [<SDKVersion>](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
+| [**5.8**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.8](https://visualstudio.microsoft.com/downloads/) | [<SDKVersion>](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio <VSYear> with.NET Core workload
   
 > [!NOTE]
 > For maximum compatibility of NuGet 5.8, it is recommended to use Visual Studio 16.8, MSBuild 16.8, and .NET 5.0.
 
+
 ## Summary: What's New in 5.8
 
-* Package manager sources use remote types from server - [#9608](https://github.com/NuGet/Home/issues/9608)
+* Package Manager sources use remote types from server - [#9608](https://github.com/NuGet/Home/issues/9608)
 
 * Search CLI Tool for NuGet.exe - [#9704](https://github.com/NuGet/Home/issues/9704)
 
@@ -34,9 +35,9 @@ NuGet distribution vehicles:
 
 * Replay the warnings for LegacyPackageReference projects when a project no-ops in partial restore  - [#9565](https://github.com/NuGet/Home/issues/9565)
 
-* dotnet list should support --verbosity - [#9600](https://github.com/NuGet/Home/issues/9600)
+* `dotnet list` command supports `--verbosity` flag - [#9600](https://github.com/NuGet/Home/issues/9600)
 
-* Add "prerelease" option to dotnet add package - [#4699](https://github.com/NuGet/Home/issues/4699)
+* Add `--prerelease` option to `dotnet add package` - [#4699](https://github.com/NuGet/Home/issues/4699)
 
 * recommend packages for 'All' sources - [#9872](https://github.com/NuGet/Home/issues/9872)
 
@@ -47,6 +48,8 @@ NuGet distribution vehicles:
 ### Issues fixed in this release
 
 **DCRs:**
+
+* FileAndForget posts a new event for every point of usage - [#9812](https://github.com/NuGet/Home/issues/9812)
 
 * Net5 TFM: Framework Precedence Rules - [#9436](https://github.com/NuGet/Home/issues/9436)
 
@@ -65,6 +68,8 @@ NuGet distribution vehicles:
 * vs: consolidate or update packages should not be blocked due to resulting errors (Detected package downgrade error Nu1605, etc..) - [#9224](https://github.com/NuGet/Home/issues/9224)
 
 * NuGet features should light up for projects that have the capability; "PackageReferences" - [#9957](https://github.com/NuGet/Home/issues/9957)
+
+* Suppress messages for No-Op Restore in Visual Studio - [#6384](https://github.com/NuGet/Home/issues/6384)
 
 **Bugs:**
 
@@ -149,22 +154,6 @@ NuGet distribution vehicles:
 * VS OE:  should not use object data type for project metadata values  - [#10055](https://github.com/NuGet/Home/issues/10055)
 
 * Dotnet Pack mistakenly uses alias for WPF Library projects - [#10020](https://github.com/NuGet/Home/issues/10020)
-
-**Nones:**
-
-* FileAndForget posts a new event for every point of usage - [#9812](https://github.com/NuGet/Home/issues/9812)
-
-* Document RPS tests, including a playbook for investigating issues. - [#9781](https://github.com/NuGet/Home/issues/9781)
-
-* Suppress restore messages for noop restore in VS - [#6384](https://github.com/NuGet/Home/issues/6384)
-
-**StillOpens:**
-
-* Implement a pre-registration mechanism for legacy PR projects that call restore at solution open - [#9986](https://github.com/NuGet/Home/issues/9986)
-
-* Remove temporary fix on HttpRequestMessage.Options - [#9981](https://github.com/NuGet/Home/issues/9981)
-
-* Telemetry: Replace EmitTelemetryEvent with proper telemetry activities - [#9581](https://github.com/NuGet/Home/issues/9581)
 
 **[List of all issues fixed in this release - 5.8](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f03519b777e78b4ffb2edeb)**
 
