@@ -16,6 +16,9 @@ NuGet distribution vehicles:
 | [**5.8**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.8](https://visualstudio.microsoft.com/downloads/) | [<SDKVersion>](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio <VSYear> with.NET Core workload
+  
+> [!NOTE]
+> For maximum compatibility of NuGet 5.8, it is recommended to use Visual Studio 16.8, MSBuild 16.8, and .NET 5.0.
 
 ## Summary: What's New in 5.8
 
@@ -164,3 +167,14 @@ NuGet distribution vehicles:
 * Telemetry: Replace EmitTelemetryEvent with proper telemetry activities - [#9581](https://github.com/NuGet/Home/issues/9581)
 
 **[List of all issues fixed in this release - 5.8](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f03519b777e78b4ffb2edeb)**
+
+## Feedback welcome
+
+Your feedback is important to us.  If there are any problems with this release, check our
+[GitHub Issues](https://github.com/NuGet/Home/issues) and
+[Visual Studio Developer Community](https://developercommunity.visualstudio.com/)
+for existing issues.  For new issues within NuGet, please report a
+[GitHub Issue](hhttps://github.com/NuGet/Home/issues/new).
+For general NuGet experience issues, let us know via the
+[Report a Problem](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio)
+option found in your favorite IDE under **Help > Report a Problem**.
