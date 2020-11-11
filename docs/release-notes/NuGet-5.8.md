@@ -77,8 +77,6 @@ NuGet distribution vehicles:
 
 * Restore signed packages on Big Endian CPUs - [#9547](https://github.com/NuGet/Home/issues/9547)
 
-* Typo in error message. "administator" instead of "administrator" - [#9662](https://github.com/NuGet/Home/issues/9662)
-
 * OutputConsoleLogger should not call affinitized methods in MEF constructors - [#9591](https://github.com/NuGet/Home/issues/9591)
 
 * [CPVM-OnBoard] Rejected transitive central dependencies should be removed from the restore graph. - [#9483](https://github.com/NuGet/Home/issues/9483)
@@ -93,11 +91,7 @@ NuGet distribution vehicles:
 
 * Reduce resource contention at Solution Load time caused by blocking a threaded-pool thread with `BlockingCollection.Take()` - [#9822](https://github.com/NuGet/Home/issues/9822)
 
-* NuGet Pack with invalid AssemblyInformationalVersion reports "description is required" - [#5548](https://github.com/NuGet/Home/issues/5548)
-
 * Enable PM UI experiment: Package Recommender - [#9845](https://github.com/NuGet/Home/issues/9845)
-
-* `RepositoryMetadata.Equals()` does not account for Branch and Commit properties - [#9613](https://github.com/NuGet/Home/issues/9613)
 
 * In command line restore, with multi targeted projects, NuGet should read the target framework related information from the inner build - [#9869](https://github.com/NuGet/Home/issues/9869)
 
@@ -111,7 +105,7 @@ NuGet distribution vehicles:
 
 * Display the resolved version in the PM UI - [#9826](https://github.com/NuGet/Home/issues/9826)
 
-* Solution Explorer not showing all NuGet package dependencies - [#9898](https://github.com/NuGet/Home/issues/9898)
+* Solution Explorer is not showing all NuGet package dependencies - [#9898](https://github.com/NuGet/Home/issues/9898)
 
 * Unnecessary assets file writes can lead to extra design time builds - [#9903](https://github.com/NuGet/Home/issues/9903)
 
@@ -127,13 +121,7 @@ NuGet distribution vehicles:
 
 * Packing with ContinuePackingAfterGeneratingNuspec=false should not fail when there are no errors - [#9786](https://github.com/NuGet/Home/issues/9786)
 
-* Clicking NU code in Visual Studio Error List window should go to https://docs.microsoft.com/nuget/reference/errors-and-warnings/ - [#9934](https://github.com/NuGet/Home/issues/9934)
-
-* Use 'https://' when adding new package source through Visual Studio options - [#9974](https://github.com/NuGet/Home/issues/9974)
-
 * [CPVM] Cannot import packages file from a custom directory - [#9841](https://github.com/NuGet/Home/issues/9841)
-
-* `RuntimeEnvironmentHelper.IsRunningOnVisualStudio` performance issue on Mono - [#9989](https://github.com/NuGet/Home/issues/9989)
 
 * Solution Load Restore runs after first 50 nominations instead of waiting for all nominations - [#9982](https://github.com/NuGet/Home/issues/9982)
 
@@ -145,7 +133,7 @@ NuGet distribution vehicles:
 
 * Using /p:RestoreUseStaticGraphEvaluation=true Results in Value Cannot Be Null - [#9280](https://github.com/NuGet/Home/issues/9280)
 
-* PM UI:  NullReferenceException when signature validation fails - [#10042](https://github.com/NuGet/Home/issues/10042)
+* PM UI: NullReferenceException when signature validation fails - [#10042](https://github.com/NuGet/Home/issues/10042)
 
 * Instead of waiting for nominations or 20 seconds (whichever comes first), implement a sliding window at Solution Load, which allow to run exactly 1 restore even for large solutions - [#9984](https://github.com/NuGet/Home/issues/9984)
 
@@ -157,6 +145,19 @@ NuGet distribution vehicles:
 
 
 **[List of all issues fixed in this release - 5.8](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f03519b777e78b4ffb2edeb)**
+
+### Community contributions
+
+Thank you to all the contributors who helped make this NuGet release awesome!
+
+|Who|PRs|Issues|
+|----|----|----|
+[omajid](https://github.com/omajid) | [3437](https://github.com/NuGet/NuGet.Client/pull/3437) | Typo in error message. "administator" instead of "administrator" - [#9662](https://github.com/NuGet/Home/issues/9662)
+[odalet](https://github.com/odalet) | [3341](https://github.com/NuGet/NuGet.Client/pull/3341) | NuGet Pack with invalid AssemblyInformationalVersion reports "description is required" - [#5548](https://github.com/NuGet/Home/issues/5548)
+[campersau](https://github.com/campersau) | [3501](https://github.com/NuGet/NuGet.Client/pull/3501) | `RepositoryMetadata.Equals()` does not account for Branch and Commit properties - [#9613](https://github.com/NuGet/Home/issues/9613)
+[Youssef1313](https://github.com/Youssef1313) | [3599](https://github.com/NuGet/NuGet.Client/pull/3599) | Clicking NU code in Visual Studio Error List window should go to https://docs.microsoft.com/nuget/reference/errors-and-warnings/ - [#9934](https://github.com/NuGet/Home/issues/9934)
+[ChrisMaddock](https://github.com/ChrisMaddock) | [3624](https://github.com/NuGet/NuGet.Client/pull/3624) | Use 'https://' when adding new package source through Visual Studio options - [#9974](https://github.com/NuGet/Home/issues/9974)
+[Therzok](https://github.com/Therzok) | [3636](https://github.com/NuGet/NuGet.Client/pull/3636) | `RuntimeEnvironmentHelper.IsRunningOnVisualStudio` performance issue on Mono - [#9989](https://github.com/NuGet/Home/issues/9989)
 
 ## Feedback welcome
 
