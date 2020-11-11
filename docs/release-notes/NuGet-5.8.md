@@ -13,9 +13,9 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**5.8**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.8](https://visualstudio.microsoft.com/downloads/) | [<SDKVersion>](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.8**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.8](https://visualstudio.microsoft.com/downloads/) | [5.0](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio <VSYear> with.NET Core workload
+<sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
   
 > [!NOTE]
 > For maximum compatibility of NuGet 5.8, it is recommended to use Visual Studio 16.8, MSBuild 16.8, and .NET 5.0.
