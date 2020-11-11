@@ -23,31 +23,26 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.8
 
-* Package Manager sources use remote types from server - [#9608](https://github.com/NuGet/Home/issues/9608)
-
-* Search CLI Tool for NuGet.exe - [#9704](https://github.com/NuGet/Home/issues/9704)
+* Search for packages in the CLI with ['nuget.exe search` command](https://docs.microsoft.com/en-us/nuget/reference/cli-reference/cli-ref-search) - [#9704](https://github.com/NuGet/Home/issues/9704)
 
 * Improve the CPVM Visual Studio experience for the case when PackageReference items have version. - [#9507](https://github.com/NuGet/Home/issues/9507)
 
-* VSOE saving package sources in tools options will overwrite credentials - [#9711](https://github.com/NuGet/Home/issues/9711)
-
-* Replay the warnings for LegacyPackageReference projects when a project no-ops in partial restore  - [#9565](https://github.com/NuGet/Home/issues/9565)
+* Enable fast No-Op restore optimization for csproj-style, PackageReference-based projects in Visual Studio - [#9565](https://github.com/NuGet/Home/issues/9565)
 
 * `dotnet list` command supports `--verbosity` option - [#9600](https://github.com/NuGet/Home/issues/9600)
 
 * Add `--prerelease` option to `dotnet add package` - [#4699](https://github.com/NuGet/Home/issues/4699)
 
-* Recommend packages from any NuGet sources - [#9872](https://github.com/NuGet/Home/issues/9872)
-
 * Surface basic vulnerability metadata in PM UI view models - [#9850](https://github.com/NuGet/Home/issues/9850)
 
-* Signing: implement `dotnet verify` command - [#8051](https://github.com/NuGet/Home/issues/8051)
+* Signing: implement [`dotnet nuget verify` command](https://docs.microsoft.com/dotnet/core/tools/dotnet-nuget-verify) - [#8051](https://github.com/NuGet/Home/issues/8051)
+
+* NuGet performance improvements in Visual Studio - [#9982](https://github.com/NuGet/Home/issues/9982), [#9984](https://github.com/NuGet/Home/issues/9984), [#10052](https://github.com/NuGet/Home/issues/10052), [#9903](https://github.com/NuGet/Home/issues/9903)
+
 
 ### Issues fixed in this release
 
 **DCRs:**
-
-* FileAndForget posts a new event for every point of usage - [#9812](https://github.com/NuGet/Home/issues/9812)
 
 * .NET 5.0 TFM: Framework Precedence Rules - [#9436](https://github.com/NuGet/Home/issues/9436)
 
@@ -61,8 +56,6 @@ NuGet distribution vehicles:
 
 * .NET 5.0 Visual Studio APIs - [#9650](https://github.com/NuGet/Home/issues/9650)
 
-* NuGet Package Manager UI for Solution is slow because restore is run for every project instead of after all projects are updated - [#6010](https://github.com/NuGet/Home/issues/6010)
-
 * PM UI: Consolidate or Update packages operations should not be blocked due to errors (Package Downgrade, etc.) - [#9224](https://github.com/NuGet/Home/issues/9224)
 
 * NuGet features should light up for projects that have the capability; "PackageReferences" - [#9957](https://github.com/NuGet/Home/issues/9957)
@@ -70,6 +63,8 @@ NuGet distribution vehicles:
 * Suppress No-Op Restore messages in Visual Studio - [#6384](https://github.com/NuGet/Home/issues/6384)
 
 **Bugs:**
+
+* NuGet Package Manager UI for Solution is slow because restore is run for every project instead of after all projects are updated - [#6010](https://github.com/NuGet/Home/issues/6010)
 
 * OutputWindowTextWriter constructor should not be called on background thread - [#9764](https://github.com/NuGet/Home/issues/9764)
 
@@ -89,8 +84,6 @@ NuGet distribution vehicles:
 
 * Reduce resource contention at Solution Load time caused by blocking a threaded-pool thread with `BlockingCollection.Take()` - [#9822](https://github.com/NuGet/Home/issues/9822)
 
-* Enable PM UI experiment: Package Recommender - [#9845](https://github.com/NuGet/Home/issues/9845)
-
 * In command line restore, with multi targeted projects, NuGet should read the target framework related information from the inner build - [#9869](https://github.com/NuGet/Home/issues/9869)
 
 * Read Runtime Identifier graph through TargetFrameworkInformation item - [#9874](https://github.com/NuGet/Home/issues/9874)
@@ -104,8 +97,6 @@ NuGet distribution vehicles:
 * Display the resolved version in the PM UI - [#9826](https://github.com/NuGet/Home/issues/9826)
 
 * Solution Explorer is not showing all NuGet package dependencies - [#9898](https://github.com/NuGet/Home/issues/9898)
-
-* Unnecessary assets file writes can lead to extra design time builds - [#9903](https://github.com/NuGet/Home/issues/9903)
 
 * [CPVM] Error on floating transitive dependencies defined in Directory.Packages.props - [#9384](https://github.com/NuGet/Home/issues/9384)
 
@@ -121,8 +112,6 @@ NuGet distribution vehicles:
 
 * [CPVM] Cannot import packages file from a custom directory - [#9841](https://github.com/NuGet/Home/issues/9841)
 
-* Solution Load Restore runs after first 50 nominations instead of waiting for all nominations - [#9982](https://github.com/NuGet/Home/issues/9982)
-
 * Central Package Management throws errors regarding duplicate dictionary keys when attempting to create the lock file - [#9965](https://github.com/NuGet/Home/issues/9965)
 
 * PM UI Icons aren't inverting colors properly - [#10017](https://github.com/NuGet/Home/issues/10017)
@@ -133,16 +122,16 @@ NuGet distribution vehicles:
 
 * PM UI: NullReferenceException when signature validation fails - [#10042](https://github.com/NuGet/Home/issues/10042)
 
-* Instead of waiting for nominations or 20 seconds (whichever comes first), implement a sliding window at Solution Load, which allow to run exactly 1 restore even for large solutions - [#9984](https://github.com/NuGet/Home/issues/9984)
-
-* Restore: excessive deep cloning of ProjectSpec, remove cloning in No-Op hash creation for PackageReference projects - [#10052](https://github.com/NuGet/Home/issues/10052)
-
 * VS OE: dot not use `object` type for project metadata values  - [#10055](https://github.com/NuGet/Home/issues/10055)
+
+* VS OE saving package sources in tools options will overwrite credentials - [#9711](https://github.com/NuGet/Home/issues/9711)
 
 * `dotnet pack` mistakenly uses alias for WPF Library projects - [#10020](https://github.com/NuGet/Home/issues/10020)
 
 
 **[List of all issues fixed in this release - 5.8](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f03519b777e78b4ffb2edeb)**
+
+**[List of issues/commits fixed in this release - 5.8](https://github.com/NuGet/NuGet.Client/compare/5.7.0.6726...5.8.0.6930)**
 
 ### Community contributions
 
