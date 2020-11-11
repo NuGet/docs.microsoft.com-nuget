@@ -22,6 +22,7 @@ NuGet distribution vehicles:
 
 
 ## Summary: What's New in 5.8
+🎉 **This is the first release to offer full authoring and restoring support for NuGet packages targeting .NET 5.0** 🎉
 
 * Display package vulnerability details in the Package Manager UI package details pane - [#9850](https://github.com/NuGet/Home/issues/9850)
 
