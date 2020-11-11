@@ -23,19 +23,19 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.8
 
-* Search for packages in the CLI with ['nuget.exe search` command](https://docs.microsoft.com/nuget/reference/cli-reference/cli-ref-search) - [#9704](https://github.com/NuGet/Home/issues/9704)
+* Display package vulnerability details in the Package Manager UI package details pane - [#9850](https://github.com/NuGet/Home/issues/9850)
 
-* Improve the CPVM Visual Studio experience for the case when PackageReference items have version. - [#9507](https://github.com/NuGet/Home/issues/9507)
+* Verify signed NuGet packages with the new [`dotnet nuget verify`](https://docs.microsoft.com/dotnet/core/tools/dotnet-nuget-verify) command - [#8051](https://github.com/NuGet/Home/issues/8051)
 
-* Enable fast No-Op restore optimization for csproj-style, PackageReference-based projects in Visual Studio - [#9565](https://github.com/NuGet/Home/issues/9565)
+* `dotnet add package` supports `--prerelease` option to add the latest version of a package, including prerelease versions - [#4699](https://github.com/NuGet/Home/issues/4699)
+
+* Add the latest version of a package, including prereleases, by including the `--prerelease` with `dotnet add package` - [#4699](https://github.com/NuGet/Home/issues/4699)
+
+* Search for packages in the CLI with ['nuget.exe search`](https://docs.microsoft.com/nuget/reference/cli-reference/cli-ref-search) command - [#9704](https://github.com/NuGet/Home/issues/9704)
 
 * `dotnet list` command supports `--verbosity` option - [#9600](https://github.com/NuGet/Home/issues/9600)
 
-* Add `--prerelease` option to `dotnet add package` - [#4699](https://github.com/NuGet/Home/issues/4699)
-
-* Surface basic vulnerability metadata in PM UI view models - [#9850](https://github.com/NuGet/Home/issues/9850)
-
-* Signing: implement [`dotnet nuget verify` command](https://docs.microsoft.com/dotnet/core/tools/dotnet-nuget-verify) - [#8051](https://github.com/NuGet/Home/issues/8051)
+* Enable fast No-Op restore optimization for csproj-style, PackageReference-based projects in Visual Studio - [#9565](https://github.com/NuGet/Home/issues/9565)
 
 * NuGet performance improvements in Visual Studio - [#9982](https://github.com/NuGet/Home/issues/9982), [#9984](https://github.com/NuGet/Home/issues/9984), [#10052](https://github.com/NuGet/Home/issues/10052), [#9903](https://github.com/NuGet/Home/issues/9903)
 
@@ -56,7 +56,7 @@ NuGet distribution vehicles:
 
 * .NET 5.0 Visual Studio APIs - [#9650](https://github.com/NuGet/Home/issues/9650)
 
-* PM UI: Consolidate or Update packages operations should not be blocked due to errors (Package Downgrade, etc.) - [#9224](https://github.com/NuGet/Home/issues/9224)
+* Package Manager UI: Consolidate or Update packages operations should not be blocked due to errors (Package Downgrade, etc.) - [#9224](https://github.com/NuGet/Home/issues/9224)
 
 * NuGet features should light up for projects that have the capability; "PackageReferences" - [#9957](https://github.com/NuGet/Home/issues/9957)
 
@@ -72,13 +72,11 @@ NuGet distribution vehicles:
 
 * OutputConsoleLogger should not call affinitized methods in MEF constructors - [#9591](https://github.com/NuGet/Home/issues/9591)
 
-* [CPVM-OnBoard] Rejected transitive central dependencies should be removed from the restore graph. - [#9483](https://github.com/NuGet/Home/issues/9483)
-
 * Bug in NuGet.CommandLine.Console `PrintJustified()` method - [#9737](https://github.com/NuGet/Home/issues/9737)
 
 * Package Manager UI memory leak when package metadata is garbage collected due to a bad binding - [#9757](https://github.com/NuGet/Home/issues/9757)
 
-* [Test Failure][Signing] No warning is showed in Error List when installing a signed package with packages.config format in PM UI - [#9798](https://github.com/NuGet/Home/issues/9798)
+* [Signing] No warning is showed in Error List when installing a signed package with packages.config format in Package Manager UI - [#9798](https://github.com/NuGet/Home/issues/9798)
 
 * NuGet.CommandLine.XPlat should not have public APIs - [#9821](https://github.com/NuGet/Home/issues/9821)
 
@@ -94,15 +92,11 @@ NuGet distribution vehicles:
 
 * Allow `net5.0-platform` projects to be loaded and restored in Visual Studio - [#9863](https://github.com/NuGet/Home/issues/9863)
 
-* Display the resolved version in the PM UI - [#9826](https://github.com/NuGet/Home/issues/9826)
+* Display the resolved version in the Package Manager UI - [#9826](https://github.com/NuGet/Home/issues/9826)
 
-* Solution Explorer is not showing all NuGet package dependencies - [#9898](https://github.com/NuGet/Home/issues/9898)
-
-* [CPVM] Error on floating transitive dependencies defined in Directory.Packages.props - [#9384](https://github.com/NuGet/Home/issues/9384)
+* Package Manager UI: Solution Explorer is not showing all NuGet package dependencies - [#9898](https://github.com/NuGet/Home/issues/9898)
 
 * Update the SPDX license list - [#9946](https://github.com/NuGet/Home/issues/9946)
-
-* Error when a Project has CPVM enabled but there are not any PackageVersion items defined - [#9341](https://github.com/NuGet/Home/issues/9341)
 
 * VS 2019 crashes after opening Manage NuGet Packages: icon causes unhandled exception in image conversio - [#9696](https://github.com/NuGet/Home/issues/9696)
 
@@ -110,21 +104,17 @@ NuGet distribution vehicles:
 
 * Packing with ContinuePackingAfterGeneratingNuspec=false should not fail when there are no errors - [#9786](https://github.com/NuGet/Home/issues/9786)
 
-* [CPVM] Cannot import packages file from a custom directory - [#9841](https://github.com/NuGet/Home/issues/9841)
-
-* Central Package Management throws errors regarding duplicate dictionary keys when attempting to create the lock file - [#9965](https://github.com/NuGet/Home/issues/9965)
-
-* PM UI Icons aren't inverting colors properly - [#10017](https://github.com/NuGet/Home/issues/10017)
+* Package Manager UI: Icons aren't inverting colors properly - [#10017](https://github.com/NuGet/Home/issues/10017)
 
 * Incorrect project counts for Up-To-Date and No-Op projects at Restore - [#10026](https://github.com/NuGet/Home/issues/10026)
 
-* Using /p:RestoreUseStaticGraphEvaluation=true Results in Value Cannot Be Null - [#9280](https://github.com/NuGet/Home/issues/9280)
+* Using `/p:RestoreUseStaticGraphEvaluation=true` Results in Value Cannot Be Null - [#9280](https://github.com/NuGet/Home/issues/9280)
 
-* PM UI: NullReferenceException when signature validation fails - [#10042](https://github.com/NuGet/Home/issues/10042)
+* Package Manager UI: NullReferenceException when signature validation fails - [#10042](https://github.com/NuGet/Home/issues/10042)
 
-* VS OE: dot not use `object` type for project metadata values  - [#10055](https://github.com/NuGet/Home/issues/10055)
+* Codespaces: do not use `object` type for project metadata values  - [#10055](https://github.com/NuGet/Home/issues/10055)
 
-* VS OE saving package sources in tools options will overwrite credentials - [#9711](https://github.com/NuGet/Home/issues/9711)
+* Codespaces: saving package sources in tools options will overwrite credentials - [#9711](https://github.com/NuGet/Home/issues/9711)
 
 * `dotnet pack` mistakenly uses alias for WPF Library projects - [#10020](https://github.com/NuGet/Home/issues/10020)
 
