@@ -23,7 +23,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.8
 
-* Search for packages in the CLI with ['nuget.exe search` command](https://docs.microsoft.com/en-us/nuget/reference/cli-reference/cli-ref-search) - [#9704](https://github.com/NuGet/Home/issues/9704)
+* Search for packages in the CLI with ['nuget.exe search` command](https://docs.microsoft.com/nuget/reference/cli-reference/cli-ref-search) - [#9704](https://github.com/NuGet/Home/issues/9704)
 
 * Improve the CPVM Visual Studio experience for the case when PackageReference items have version. - [#9507](https://github.com/NuGet/Home/issues/9507)
 
