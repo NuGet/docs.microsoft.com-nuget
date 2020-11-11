@@ -18,7 +18,7 @@ NuGet distribution vehicles:
 <sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
   
 > [!NOTE]
-> For maximum compatibility of NuGet 5.8, it is recommended to use Visual Studio 16.8, MSBuild 16.8, and .NET 5.0.
+> For maximum compatibility with NuGet 5.8, we recommend using Visual Studio 16.8, MSBuild 16.8, and .NET 5.0.
 
 
 ## Summary: What's New in 5.8
