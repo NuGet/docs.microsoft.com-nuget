@@ -24,6 +24,8 @@ NuGet distribution vehicles:
 ## Summary: What's New in 5.8
 🎉 **This is the first release to offer full authoring and restoring support for NuGet packages targeting .NET 5.0** 🎉
 
+* Speed up nupkg extraction using mmap/CreateFileMapping - [#9807](https://github.com/NuGet/Home/issues/9807)
+
 * Display package vulnerability details in the Package Manager UI package details pane - [#9850](https://github.com/NuGet/Home/issues/9850)
 
 * Verify signed NuGet packages with the new [`dotnet nuget verify`](https://docs.microsoft.com/dotnet/core/tools/dotnet-nuget-verify) command - [#8051](https://github.com/NuGet/Home/issues/8051)
