@@ -40,7 +40,7 @@ NuGet distribution vehicles:
 
 * Several other NuGet performance improvements in Visual Studio - [#9982](https://github.com/NuGet/Home/issues/9982), [#9984](https://github.com/NuGet/Home/issues/9984), [#10052](https://github.com/NuGet/Home/issues/10052), [#9903](https://github.com/NuGet/Home/issues/9903)
 
-* Non-No-Op restore performance was improved drastically (on the order of 50% faster) by using `MemoryMappedFile`s during extraction - [#9807](https://github.com/NuGet/Home/issues/9807)
+* Regular NuGet restore performance was improved up significantly (32% for OrchardCore; 40% for our own Nuget.Client repo) by using `MemoryMappedFile`s during package extraction - [#9807](https://github.com/NuGet/Home/issues/9807)
 
 ### Issues fixed in this release
 
