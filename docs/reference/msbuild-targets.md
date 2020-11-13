@@ -360,7 +360,8 @@ An example:
 1. Download packages
 1. Write assets file, targets, and props
 
-The `restore` target works **only** for projects using the PackageReference format. It does **not** work for projects using the `packages.config` format; use [nuget restore](../reference/cli-reference/cli-ref-restore.md) instead.
+The `restore` target works for projects using the PackageReference format.
+`MSBuild 16.5+` also has [opt-in support](#restoring-packagereference-and-packages.config-with-msbuild) for the `packages.config` format.
 
 ### Restore properties
 
@@ -386,7 +387,8 @@ Additional restore settings may come from MSBuild properties in the project file
 | RestorePackagesWithLockFile | Opts into the usage of a lock file. |
 | RestoreLockedMode | Run restore in locked mode. This means that restore will not reevaluate the dependencies. |
 | NuGetLockFilePath | A custom location for the lock file. The default location is next to the project and is named `packages.lock.json`. |
-| RestoreForceEvaluate | Forces restore to recompute the dependencies and update the lock file without any warning. | 
+| RestoreForceEvaluate | Forces restore to recompute the dependencies and update the lock file without any warning. |
+| RestorePackagesConfig | An opt in switch, that restores projects with packages.config. Support with `MSBuild -t:restore` only. |
 
 #### Examples
 
@@ -430,6 +432,17 @@ msbuild -t:build -restore
 ```
 
 The same logic applies to other targets similar to `build`.
+
+### Restoring PackageReference and packages.config with MSBuild
+
+With MSBuild 16.5+, packages.config are also supported for `msbuild -t:restore`.
+
+```cli
+msbuild -t:restore -p:RestorePackagesConfig=true
+```
+
+> [!NOTE]
+> `packages.config` restore is only available with `MSBuild 16.5+`, and not with `dotnet.exe`
 
 ### PackageTargetFallback
 
