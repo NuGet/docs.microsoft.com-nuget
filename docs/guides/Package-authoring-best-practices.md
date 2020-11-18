@@ -89,8 +89,7 @@ If you're publishing a completely new package:
 ✔️ CONSIDER using [SemVer](https://semver.org/) to version your NuGet package.
 > Essentially, this means using the Major.Minor.Patch[-prerelease] format.
 
-✔️ DO include a pre-release suffix when releasing a non-stable package.
-TODO: Include and example and link to https://docs.microsoft.com/dotnet/standard/library-guidance/nuget#pre-release-packages somewhere
+✔️ DO publish a package as a [pre-release package](https://docs.microsoft.com/dotnet/standard/library-guidance/nuget#pre-release-packages) if it is non-stable or a preview.
 
 See the [.NET library versioning guide](https://docs.microsoft.com/dotnet/standard/library-guidance/versioning) for more advanced guidance including assembly versioning.
 
@@ -101,7 +100,7 @@ See the [.NET library versioning guide](https://docs.microsoft.com/dotnet/standa
 
 ### Description
 
-✔️ DO include a short description for your package that describes what it's for.
+✔️ DO include a short description (up to 4000 characters) for your package that describes what it's for.
 > Package descriptions are one of the most prominent fields surfaced in NuGet search and will likely be the first thing a potential consumers looks at to determine if a package is right for them.
 
 ### Copyright
@@ -113,9 +112,9 @@ Example: Copyright (c) Contoso 2020
 
 ### Licensing
 
-✔️ DO [include a valid license expression or license file in your package](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
+✔️ DO [include a license expression or license file in your package](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
 > [!IMPORTANT]
-> A project without a license defaults to [exclusive copyright](https://choosealicense.com/no-permission/), making it legally impossible for other people to use.
+> A project without a license defaults to [exclusive copyright](https://choosealicense.com/no-permission/), meaning that you have not granted anyone permission to use your project.
 
 ❌ DO NOT use the deprecated `LicenseUrl` metadata property.
 > This presents legal ambiguity as license changes at the URL will retroactively change the displayed license for previous package versions.
@@ -128,19 +127,17 @@ Example: Copyright (c) Contoso 2020
 ✔️ CONSIDER [including a license expression in your package](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
 > License expressions are surfaced the most clearly and make it more obvious to consumers if they can use your package or if the license has changed. 
 > [!Note]
-> NuGet.org only accepts license expressions that are approved by the Open Source Initiative or the Free Software Foundation.
+> NuGet.org only accepts license expressions for licenses that are approved by the Open Source Initiative or the Free Software Foundation.
 
 #### If your package is not open source
 
 ✔️ DO [include a license file in your package](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
-> Any valid license file can be added to your package, including non-standard licenses. 
+> Any license file (.txt or .md) can be added to your package, including non-standard licenses. 
 
 ### Project URL
 
-✔️ CONSIDER including a link to an associated project or company website.
+✔️ CONSIDER including a link to an associated project, repository, or company website.
 > Company website links, even if not specific to the package/project, still improve consumer trust.
-
-❌ DO NOT put a repository URL (GitHub, BitBucket, etc.) in the `Project URL` field, as consumers will expect to find it in the `Repository URL` field.
 
 ### Icon
 
@@ -154,15 +151,16 @@ Example: Copyright (c) Contoso 2020
 
 ### Repository Type and URL
 
-✔️ CONSIDER including a repository type and URL to make it easy for package consumers to view source code, report issues, and view repository documentation (only if public).
+✔️ CONSIDER including a repository type and URL to make it easy for package consumers to view source code, report issues, and view repository documentation.
 
 ✔️ CONSIDER setting up [Source Link](https://docs.microsoft.com/dotnet/standard/library-guidance/sourcelink) to add source control metadata to your assemblies and NuGet package.
 > Source Link will automatically adds `Repository URL` and `Repository Type` to the package metadata. It also adds the specific commit associated with your package version.
-
 ### Tags
 
 ✔️ DO include several tags with key terms related to your package to enhance discoverability.
-> Tags are taken into account in NuGet's search algorithm and are especially helpful for terms that are not in the Package ID.
+> Tags are taken into account in NuGet's search algorithm and are especially helpful for terms that are not in the Package ID but are relevant.
+
+For example, if I published a package to log strings to the console, I would include: "logging, log, console, string, output"
 
 ### Release notes
 
@@ -173,7 +171,7 @@ Example: Copyright (c) Contoso 2020
 > 2. New features
 > 3. Bug fixes
 > 
-> If you already track release notes in your repo, you can also include a link to your release notes file.
+> If you already track release notes or a changelog in your repo, you can also include a link to the relevant file.
 
 ## Dependencies
 
