@@ -93,6 +93,9 @@ When uploading a package to nuget.org, the `authors` field is limited to 4000 ch
 ### Optional metadata elements
 
 #### owners
+> [!Important]
+> owners is deprecated. Use authors instead.
+
 A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in `authors`, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
 
 #### projectUrl

@@ -1,9 +1,7 @@
 ---
 title: Push Symbol Packages, NuGet API | Microsoft Docs
 author: cristinamanum
-ms.author:
-- cmanu
-- kraigb
+ms.author: cmanu
 manager: skofman
 ms.date: 10/30/2018
 ms.topic: reference
