@@ -143,7 +143,7 @@ Your feedback is important to us.  If there are any problems with this release, 
 [GitHub Issues](https://github.com/NuGet/Home/issues) and
 [Visual Studio Developer Community](https://developercommunity.visualstudio.com/)
 for existing issues.  For new issues within NuGet, please report a
-[GitHub Issue](hhttps://github.com/NuGet/Home/issues/new).
+[GitHub Issue](https://github.com/NuGet/Home/issues/new).
 For general NuGet experience issues, let us know via the
 [Report a Problem](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio)
 option found in your favorite IDE under **Help > Report a Problem**.
