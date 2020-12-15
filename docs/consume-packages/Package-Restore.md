@@ -1,8 +1,8 @@
 ---
 title: NuGet Package Restore
 description: An overview of how NuGet restores packages a project depends on, including how to disable restore and constrain versions.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/05/2019
 ms.topic: conceptual
 ---
@@ -142,7 +142,7 @@ NuGet has two formats in which a project may use packages: [`PackageReference`](
 
 ## Restore using MSBuild
 
-Use the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command to restore packages listed in the project file (see [PackageReference](../../consume-packages/package-references-in-project-files.md)) and starting with MSBuild 16.5+, `packages.config` projects.
+Use the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command to restore packages listed in the project file (see [PackageReference](package-references-in-project-files.md)) and starting with MSBuild 16.5+, `packages.config` projects.
 
  This command is available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017 and higher versions.
  Starting with MSBuild 16.5+, this command can also restore `packages.config` based projects when run with `-p:RestorePackagesConfig=true`.
