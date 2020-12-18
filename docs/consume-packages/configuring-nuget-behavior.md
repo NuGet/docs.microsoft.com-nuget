@@ -196,6 +196,9 @@ These configuration files are found in the standard user wide configuration fold
 All files ending with `.config` or `.Config` will be considered.
 These files cannot be edited by the standard tooling.
 
+**Windows:** `%appdata%\NuGet\config\*.Config`
+**Mac/Linux:** `~/.config/NuGet/config/*.config`
+
 ## NuGet defaults file
 
 The `NuGetDefaults.Config` file exists to specify package sources from which packages are installed and updated, and to control the default target for publishing packages with `nuget push`. Because administrators can conveniently (using Group Policy, for example) deploy consistent `NuGetDefaults.Config` files to developer and build machines, they can ensure that everyone in the organization is using the correct package sources rather than nuget.org.
