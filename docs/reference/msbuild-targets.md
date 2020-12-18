@@ -254,7 +254,7 @@ When packing a license file, you need to use PackageLicenseFile property to spec
 ### Packing a file without an extension
 
 In some scenarios, like when packing a license file, you might want to include a file without an extension.
-For historical reasons, NuGet & MSBuild treat paths without an extension as directories
+For historical reasons, NuGet & MSBuild treat paths without an extension as directories.
 
 ```xml
   <PropertyGroup>
