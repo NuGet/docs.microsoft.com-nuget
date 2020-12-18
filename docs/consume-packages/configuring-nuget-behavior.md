@@ -196,8 +196,10 @@ These configuration files are found in the standard user wide configuration fold
 All files ending with `.config` or `.Config` will be considered.
 These files cannot be edited by the standard tooling.
 
-**Windows:** `%appdata%\NuGet\config\*.Config`
-**Mac/Linux:** `~/.config/NuGet/config/*.config`
+| OS Platform  | Additional Configurations |
+| --- | --- |
+| Windows      | `%appdata%\NuGet\config\*.Config` |
+| Mac/Linux    | `~/.config/NuGet/config/*.config`|
 
 ## NuGet defaults file
 
