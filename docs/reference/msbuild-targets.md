@@ -263,7 +263,7 @@ For historical reasons, NuGet & MSBuild treat paths without an extension as dire
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="LICENSE" Pack="true" Visible="false" PackagePath=""/>
+    <None Include="LICENSE" Pack="true" PackagePath=""/>
   </ItemGroup>  
 ```
 
