@@ -1,8 +1,8 @@
 ---
 title: NuGet API in Visual Studio
 description: Interface reference for the API that NuGet exports through the Managed Extensibility Framework in Visual Studio
-author: karann-msft
-ms.author: karann
+author: nkolev92
+ms.author: nikolev
 ms.date: 01/09/2017
 ms.topic: reference
 ---
@@ -21,7 +21,7 @@ As of NuGet 3.3+, NuGet exports the following
 - [`IVsFrameworkCompatibility2`](#ivsframeworkcompatibility2-interface) Contains methods to discover frameworks and compatibility between frameworks. (4.0+)
 - [`IVsFrameworkCompatibility3`](#ivsframeworkcompatibility3-interface) Contains methods to discover frameworks and compatibility between frameworks. (5.8+)
 - [`IVsFrameworkParser`](#ivsframeworkparser-interface) An interface for dealing with the conversion between strings and [FrameworkName](#dotnet/api/system.runtime.versioning.frameworkname) (4.0+)
-- [`IVsFrameworkParser2`](#ivsframeworkparser2-interface) An interface to parse .NET Framework strings. See [NuGet-IVsFrameworkParser](http://aka.ms/NuGet-IVsFrameworkParser). (5.8+)
+- [`IVsFrameworkParser2`](#ivsframeworkparser2-interface) An interface to parse .NET Framework strings. See [NuGet-IVsFrameworkParser](https://aka.ms/NuGet-IVsFrameworkParser). (5.8+)
 - [`IVsGlobalPackagesInitScriptExecutor`](#ivsglobalpackagesinitscriptexecutor-interface) Execute powershell scripts from package(s) in a solution (4.0+)
 - [`IVsNuGetFramework`](#ivsnugetframework-interface) A type that represents the components of a .NET Target Framework Moniker. (5.8+)
 - [`IVsPackageInstaller`](#ivspackageinstaller-interface): Methods to install NuGet packages into projects. (3.3+)
@@ -39,7 +39,7 @@ As of NuGet 3.3+, NuGet exports the following
 - [`IVsPathContext2`](#ivspathcontext2-interface) NuGet path information specific to the current context (e.g. project context). (5.0+)
 - [`IVsPathContextProvider`](#ivspathcontextprovider-interface) A factory to initialize [IVsPathContext](#ivspathcontext-interface) instances. (4.0+)
 - [`IVsPathContextProvider2`](#ivspathcontextprovider2-interface) A factory to initialize [IVsPathContext2](#ivspathcontext2-interface) instances. (5.0+)
-- [`IVsProjectJsonToPackageReferenceMigrateResult`](#ivsprojectjsontopackagereferencemmigrateresult-interface)  Contains the result of the migrate operation on a legacy project.json project (4.3+)
+- [`IVsProjectJsonToPackageReferenceMigrateResult`](#ivsprojectjsontopackagereferencemigrateresult-interface)  Contains the result of the migrate operation on a legacy project.json project (4.3+)
 - [`IVsProjectJsonToPackageReferenceMigrator`](#ivsprojectjsontopackagereferencemigrator-interface) Contains methods to migrate a project.json based legacy project to PackageReference based project. (4.3+)
 - [`IVsSemanticVersionComparer`](#ivssemanticversioncomparer-interface) An interface for comparing two opaque version strings by treating them as NuGet semantic (4.0+)
 - [`IVsTemplateWizard`](#ivstemplatewizard-interface): Designed for project/item templates to include pre-installed packages; this interface is *not* meant to be invoked from code and has no public methods. (3.3+)
@@ -53,7 +53,7 @@ As of NuGet 3.3+, NuGet exports the following
 > [!Warning]
 > Do not use any other types besides the public interfaces in your code, and do not reference any other NuGet assemblies, including `NuGet.Core.dll`.
 
-1. To use a service, import it through the [MEF Import attribute](/dotnet/framework/mef/index#imports-and-exports-with-attributes), or through the [IComponentModel service](/dotnet/api/microsoft.visualstudio.componentmodelhost.icomponentmodel?redirectedfrom=MSDN&view=visualstudiosdk-2017).
+1. To use a service, import it through the [MEF Import attribute](/dotnet/framework/mef/index#imports-and-exports-with-attributes), or through the [IComponentModel service](/dotnet/api/microsoft.visualstudio.componentmodelhost.icomponentmodel).
 
     ```cs
     //Using the Import attribute
