@@ -15,6 +15,9 @@ The NuGet Package Manager Console lets you use [NuGet PowerShell commands](../re
 
 The console is built into Visual Studio on Windows. It is not included with Visual Studio for Mac or Visual Studio Code.
 
+> [!Important]
+> The commands listed here are specific to the Package Manager Console in Visual Studio, and differ from the [Package Management module commands](/powershell/module/packagemanagement/?view=powershell-6) that are available in a general PowerShell environment. Specifically, each environment has commands that are not available in the other, and commands with the same name may also differ in their specific arguments. When using the Package Management Console in Visual Studio, the commands and arguments documented in this present topic apply.
+
 ## Find and install a package
 
 For example, finding and installing a package is done with three easy steps:
