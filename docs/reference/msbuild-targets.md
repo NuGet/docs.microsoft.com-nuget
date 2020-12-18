@@ -379,6 +379,7 @@ An example:
 
 The `restore` target works for projects using the PackageReference format.
 `MSBuild 16.5+` also has [opt-in support](#restoring-packagereference-and-packagesconfig-with-msbuild) for the `packages.config` format.
+Note that the `restore` target [should not be run](#restoring-and-building-with-one-msbuild-command) in combination with the `build` target.
 
 ### Restore properties
 
