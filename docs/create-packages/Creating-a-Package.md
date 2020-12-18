@@ -1,8 +1,8 @@
 ---
 title: Create a NuGet package using nuget.exe CLI
-description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
+description: A detailed guide on designing and creating a NuGet package, including files and versioning.
 author: karann-msft
-ms.author: karann
+ms.author: feaguila
 ms.date: 07/09/2019
 ms.topic: conceptual
 ---
@@ -312,6 +312,7 @@ In some cases, you might want to add custom build targets or properties in proje
 
 Files in the root `\build` folder are considered suitable for all target frameworks. To provide framework-specific files, first place them within appropriate subfolders, such as the following:
 
+```
     \build
         \netstandard1.4
             \Contoso.Utility.UsefulStuff.props
@@ -319,6 +320,7 @@ Files in the root `\build` folder are considered suitable for all target framewo
         \net462
             \Contoso.Utility.UsefulStuff.props
             \Contoso.Utility.UsefulStuff.targets
+```
 
 Then in the `.nuspec` file, be sure to refer to these files in the `<files>` node:
 
