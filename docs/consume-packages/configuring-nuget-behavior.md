@@ -191,7 +191,7 @@ NuGet then loads and applies settings as follows, depending on where it's invoke
 
 ## Additional user wide configuration
 
-Starting with 5.7, NuGet has added support for extra user wide configuration files. This capability was added in order to allow 3rd party vendors to add additional user configuration files without elevation.
+Starting with 5.7, NuGet has added support for additional user wide configuration files. This allows third-party vendors to add additional user configuration files without elevation.
 These configuration files are found in the standard user wide configuration folder within a `config` subfolder.
 All files ending with `.config` or `.Config` will be considered.
 These files cannot be edited by the standard tooling.
