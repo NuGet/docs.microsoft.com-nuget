@@ -1,8 +1,8 @@
 ---
 title: NuGet pack and restore as MSBuild targets
 description: NuGet pack and restore can work directly as MSBuild targets with NuGet 4.0+.
-author: karann-msft
-ms.author: karann
+author: nkolev92
+ms.author: nikolev
 ms.date: 03/23/2018
 ms.topic: conceptual
 ---
@@ -378,7 +378,7 @@ An example:
 1. Write assets file, targets, and props
 
 The `restore` target works for projects using the PackageReference format.
-`MSBuild 16.5+` also has [opt-in support](#restoring-packagereference-and-packages.config-with-msbuild) for the `packages.config` format.
+`MSBuild 16.5+` also has [opt-in support](#restoring-packagereference-and-packagesconfig-with-msbuild) for the `packages.config` format.
 
 ### Restore properties
 
