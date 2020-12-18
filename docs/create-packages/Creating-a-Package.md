@@ -63,8 +63,8 @@ Common optional properties:
 - A short description for the [Package Manager UI in Visual Studio](../consume-packages/install-use-packages-visual-studio.md)
 - A locale ID
 - Project URL
-- License as an expression or file (`licenseUrl` is being deprecated, use the [`license` nuspec metadata element](../reference/nuspec.md#license))
-- An icon URL
+- License as an expression or file (`licenseUrl` is deprecated, use [`license` nuspec metadata element](../reference/nuspec.md#license) instead)
+- An icon file (`iconUrl` is deprecated use [`icon` nuspec metadata element](../reference/nuspec.md#icon) instead)
 - Lists of dependencies and references
 - Tags that assist in gallery searches
 
@@ -74,11 +74,11 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <!-- The identifier that must be unique within the hosting gallery -->
+        <!-- Identifier that must be unique within the hosting gallery -->
         <id>Contoso.Utility.UsefulStuff</id>
 
-        <!-- The package version number that is used when resolving dependencies -->
-        <version>1.8.3-beta</version>
+        <!-- Package version number that is used when resolving dependencies -->
+        <version>1.8.3</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Dejana Tesic, Rajeev Dey</authors>
@@ -96,8 +96,8 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
         <license type="expression">Apache-2.0</license>
         
 
-        <!-- The icon is used in Visual Studio's package manager UI -->
-        <iconUrl>http://github.com/contoso/UsefulStuff/nuget_icon.png</iconUrl>
+        <!-- Icon is used in Visual Studio's package manager UI -->
+        <icon>icon.png</icon>
 
         <!-- 
             If true, this value prompts the user to accept the license when
@@ -129,6 +129,7 @@ The following is a typical (but fictitious) `.nuspec` file, with comments descri
     <!-- A readme.txt to display when the package is installed -->
     <files>
         <file src="readme.txt" target="" />
+        <file src="icon.png" target="" />
     </files>
 </package>
 ```
