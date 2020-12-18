@@ -20,7 +20,7 @@ As of NuGet 3.3+, NuGet exports the following
 - [`IVsFrameworkCompatibility`](#ivsframeworkcompatibility-interface) Contains methods to discover frameworks and compatibility between frameworks. (4.0+)
 - [`IVsFrameworkCompatibility2`](#ivsframeworkcompatibility2-interface) Contains methods to discover frameworks and compatibility between frameworks. (4.0+)
 - [`IVsFrameworkCompatibility3`](#ivsframeworkcompatibility3-interface) Contains methods to discover frameworks and compatibility between frameworks. (5.8+)
-- [`IVsFrameworkParser`](#ivsframeworkparser-interface) An interface for dealing with the conversion between strings and [FrameworkName](#dotnet/api/system.runtime.versioning.frameworkname) (4.0+)
+- [`IVsFrameworkParser`](#ivsframeworkparser-interface) An interface for dealing with the conversion between strings and [FrameworkName](/dotnet/api/system.runtime.versioning.frameworkname) (4.0+)
 - [`IVsFrameworkParser2`](#ivsframeworkparser2-interface) An interface to parse .NET Framework strings. See [NuGet-IVsFrameworkParser](https://aka.ms/NuGet-IVsFrameworkParser). (5.8+)
 - [`IVsGlobalPackagesInitScriptExecutor`](#ivsglobalpackagesinitscriptexecutor-interface) Execute powershell scripts from package(s) in a solution (4.0+)
 - [`IVsNuGetFramework`](#ivsnugetframework-interface) A type that represents the components of a .NET Target Framework Moniker. (5.8+)
