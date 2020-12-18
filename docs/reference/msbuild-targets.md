@@ -268,8 +268,6 @@ For historical reasons, NuGet & MSBuild treat paths without an extension as dire
 ```
 
 [File without an extension sample](https://github.com/NuGet/Samples/blob/master/PackageLicenseFileExtensionlessExample/).
-
-
 ### IsTool
 
 When using `MSBuild -t:pack -p:IsTool=true`, all output files, as specified in the [Output Assemblies](#output-assemblies) scenario, are copied to the `tools` folder instead of the `lib` folder. Note that this is different from a `DotNetCliTool` which is specified by setting the `PackageType` in `.csproj` file.
