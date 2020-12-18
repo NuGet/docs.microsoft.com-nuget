@@ -16,7 +16,16 @@ Over the years, NuGet has added many services all of which reside in the `NuGet.
 As of NuGet 3.3+, NuGet exports the following
 
 - [`IRegistryKey`](#iregistrykey-interface): Method to retrieve a value from a registry subkey. (3.3+)
+- [`IVsCredentialProvider`](#ivscredentialprovider-interface) Contains methods to get credentials for NuGet operations. (4.0+)
+- [`IVsFrameworkCompatibility`](#ivsframeworkcompatibility-interface) Contains methods to discover frameworks and compatibility between frameworks. (4.0+)
+- [`IVsFrameworkCompatibility2`](#ivsframeworkcompatibility2-interface) Contains methods to discover frameworks and compatibility between frameworks. (4.0+)
+- [`IVsFrameworkCompatibility3`](#ivsframeworkcompatibility3-interface) Contains methods to discover frameworks and compatibility between frameworks. (5.8+)
+- [`IVsFrameworkParser`](#ivsframeworkparser-interface) An interface for dealing with the conversion between strings and [FrameworkName](#dotnet/api/system.runtime.versioning.frameworkname) (4.0+)
+- [`IVsFrameworkParser2`](#ivsframeworkparser2-interface) An interface to parse .NET Framework strings. See [NuGet-IVsFrameworkParser](http://aka.ms/NuGet-IVsFrameworkParser). (5.8+)
+- [`IVsGlobalPackagesInitScriptExecutor`](#ivsglobalpackagesinitscriptexecutor-interface) Execute powershell scripts from package(s) in a solution (4.0+)
+- [`IVsNuGetFramework`](#ivsnugetframework-interface) A type that represents the components of a .NET Target Framework Moniker. (5.8+)
 - [`IVsPackageInstaller`](#ivspackageinstaller-interface): Methods to install NuGet packages into projects. (3.3+)
+- [`IVsPackageInstaller2](#ivspackageinstaller2-interface) Contains method to install latest version of a single package into a project within the current solution.
 - [`IVsPackageInstallerEvents`](#ivspackageinstallerevents-interface): Events for package install/uninstall. (3.3+)
 - [`IVsPackageInstallerProjectEvents`](#ivspackageinstallerprojectevents-interface): Batch events for package install/uninstall. (3.3+)
 - [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface): Methods to retrieve installed packages in the current solution and to check whether a given package is installed in a project. (3.3+)
@@ -26,16 +35,6 @@ As of NuGet 3.3+, NuGet exports the following
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface): Methods to restore packages installed in a project. (3.3+)
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface): Methods to retrieve a list of NuGet package sources. (3.3+)
 - [`IVsPackageUninstaller`](#ivspackageuninstaller-interface): Methods to uninstall NuGet packages from projects. (3.3+)
-- [`IVsTemplateWizard`](#ivstemplatewizard-interface): Designed for project/item templates to include pre-installed packages; this interface is *not* meant to be invoked from code and has no public methods. (3.3+)
-- [`IVsFrameworkCompatibility`](#ivsframeworkcompatibility-interface) Contains methods to discover frameworks and compatibility between frameworks. (4.0+)
-- [`IVsFrameworkCompatibility2`](#ivsframeworkcompatibility2-interface) Contains methods to discover frameworks and compatibility between frameworks. (4.0+)
-- [`IVsFrameworkCompatibility3`](#ivsframeworkcompatibility3-interface) Contains methods to discover frameworks and compatibility between frameworks. (5.8+)
-- [`IVsCredentialProvider`](#ivscredentialprovider-interface) Contains methods to get credentials for NuGet operations. (4.0+)
-- [`IVsFrameworkParser`](#ivsframeworkparser-interface) An interface for dealing with the conversion between strings and [FrameworkName](#dotnet/api/system.runtime.versioning.frameworkname) (4.0+)
-- [`IVsFrameworkParser`](#ivsframeworkparser2-interface) An interface to parse .NET Framework strings. See [NuGet-IVsFrameworkParser](http://aka.ms/NuGet-IVsFrameworkParser). (5.8+)
-- [`IVsGlobalPackagesInitScriptExecutor`](#ivsglobalpackagesinitscriptexecutor-interface) Execute powershell scripts from package(s) in a solution (4.0+)
-- [`IVsNuGetFramework`](#ivsnugetframework-interface) A type that represents the components of a .NET Target Framework Moniker. (5.8+)
-- [`IVsPackageInstaller2](#ivspackageinstaller2-interface) Contains method to install latest version of a single package into a project within the current solution.
 - [`IVsPathContext`](#ivspathcontext-interface) NuGet path information specific to the current context (e.g. project context). (4.0+)
 - [`IVsPathContext2`](#ivspathcontext2-interface) NuGet path information specific to the current context (e.g. project context). (5.0+)
 - [`IVsPathContextProvider`](#ivspathcontextprovider-interface) A factory to initialize [IVsPathContext](#ivspathcontext-interface) instances. (4.0+)
@@ -43,6 +42,7 @@ As of NuGet 3.3+, NuGet exports the following
 - [`IVsProjectJsonToPackageReferenceMigrateResult`](#ivsprojectjsontopackagereferencemmigrateresult-interface)  Contains the result of the migrate operation on a legacy project.json project (4.3+)
 - [`IVsProjectJsonToPackageReferenceMigrator`](#ivsprojectjsontopackagereferencemigrator-interface) Contains methods to migrate a project.json based legacy project to PackageReference based project. (4.3+)
 - [`IVsSemanticVersionComparer`](#ivssemanticversioncomparer-interface) An interface for comparing two opaque version strings by treating them as NuGet semantic (4.0+)
+- [`IVsTemplateWizard`](#ivstemplatewizard-interface): Designed for project/item templates to include pre-installed packages; this interface is *not* meant to be invoked from code and has no public methods. (3.3+)
 
 ## Using NuGet services
 
@@ -101,6 +101,257 @@ public interface IRegistryKey
     /// </summary>
     void Close();
 }
+```
+
+## IVsCredentialProvider interface
+
+```cs
+    /// <summary>
+    /// Contains methods to get credentials for NuGet operations.
+    /// </summary>
+    public interface IVsCredentialProvider
+    {
+        /// <summary>
+        /// Get credentials for the supplied package source Uri.
+        /// </summary>
+        /// <param name="uri">The NuGet package source Uri for which credentials are being requested. Implementors are
+        /// expected to first determine if this is a package source for which they can supply credentials.
+        /// If not, then Null should be returned.</param>
+        /// <param name="proxy">Web proxy to use when comunicating on the network.  Null if there is no proxy
+        /// authentication configured.</param>
+        /// <param name="isProxyRequest">True if if this request is to get proxy authentication
+        /// credentials. If the implementation is not valid for acquiring proxy credentials, then
+        /// null should be returned.</param>
+        /// <param name="isRetry">True if credentials were previously acquired for this uri, but
+        /// the supplied credentials did not allow authorized access.</param>
+        /// <param name="nonInteractive">If true, then interactive prompts must not be allowed.</param>
+        /// <param name="cancellationToken">This cancellation token should be checked to determine if the
+        /// operation requesting credentials has been cancelled.</param>
+        /// <returns>Credentials acquired by this provider for the given package source uri.
+        /// If the provider does not handle requests for the input parameter set, then null should be returned.
+        /// If the provider does handle the request, but cannot supply credentials, an exception should be thrown.</returns>
+        Task<ICredentials> GetCredentialsAsync(Uri uri,
+            IWebProxy proxy,
+            bool isProxyRequest,
+            bool isRetry,
+            bool nonInteractive,
+            CancellationToken cancellationToken);
+    }
+```
+
+## IVsFrameworkCompatibility interface
+
+```cs
+    /// <summary>
+    /// Contains methods to discover frameworks and compatibility between frameworks.
+    /// </summary>
+    public interface IVsFrameworkCompatibility
+    {
+        /// <summary>
+        /// Gets all .NETStandard frameworks currently supported, in ascending order by version.
+        /// </summary>
+        IEnumerable<FrameworkName> GetNetStandardFrameworks();
+
+        /// <summary>
+        /// Gets frameworks that support packages of the provided .NETStandard version.
+        /// </summary>
+        /// <remarks>
+        /// The result list is not exhaustive as it is meant to human-readable. For example,
+        /// equivalent frameworks are not returned. Additionally, a framework name with version X
+        /// in the result implies that framework names with versions greater than or equal to X
+        /// but having the same <see cref="FrameworkName.Identifier"/> are also supported.
+        /// </remarks>
+        /// <param name="frameworkName">The .NETStandard version to get supporting frameworks for.</param>
+        IEnumerable<FrameworkName> GetFrameworksSupportingNetStandard(FrameworkName frameworkName);
+
+        /// <summary>
+        /// Selects the framework from <paramref name="frameworks"/> that is nearest
+        /// to the <paramref name="targetFramework"/>, according to NuGet's framework
+        /// compatibility rules. <c>null</c> is returned of none of the frameworks
+        /// are compatible.
+        /// </summary>
+        /// <param name="targetFramework">The target framework.</param>
+        /// <param name="frameworks">The list of frameworks to choose from.</param>
+        /// <exception cref="ArgumentException">If any of the arguments are <c>null</c>.</exception>
+        /// <returns>The nearest framework.</returns>
+        FrameworkName GetNearest(FrameworkName targetFramework, IEnumerable<FrameworkName> frameworks);
+    }
+```
+
+## IVsFrameworkCompatibility2 interface
+
+```cs
+    /// <summary>
+    /// Gets all .NETStandard frameworks currently supported, in ascending order by version.
+    /// </summary>
+    public interface IVsFrameworkCompatibility2 : IVsFrameworkCompatibility
+    {
+        /// <summary>
+        /// Selects the framework from <paramref name="frameworks"/> that is nearest
+        /// to the <paramref name="targetFramework"/>, according to NuGet's framework
+        /// compatibility rules. <c>null</c> is returned of none of the frameworks
+        /// are compatible.
+        /// </summary>
+        /// <param name="targetFramework">The target framework.</param>
+        /// <param name="fallbackTargetFrameworks">
+        /// Target frameworks to use if the provided <paramref name="targetFramework"/> is not compatible.
+        /// These fallback frameworks are attempted in sequence after <paramref name="targetFramework"/>.
+        /// </param>
+        /// <param name="frameworks">The list of frameworks to choose from.</param>
+        /// <exception cref="ArgumentException">If any of the arguments are <c>null</c>.</exception>
+        /// <returns>The nearest framework.</returns>
+        FrameworkName GetNearest(
+            FrameworkName targetFramework,
+            IEnumerable<FrameworkName> fallbackTargetFrameworks,
+            IEnumerable<FrameworkName> frameworks);
+    }
+```
+
+## IVsFrameworkCompatibility3 interface
+
+```cs
+    /// <summary>
+    /// Gets all .NETStandard frameworks currently supported, in ascending order by version.
+    /// </summary>
+    public interface IVsFrameworkCompatibility3
+    {
+        /// <summary>
+        /// Selects the framework from <paramref name="frameworks"/> that is nearest
+        /// to the <paramref name="targetFramework"/>, according to NuGet's framework
+        /// compatibility rules. <c>null</c> is returned of none of the frameworks
+        /// are compatible.
+        /// </summary>
+        /// <param name="targetFramework">The target framework.</param>
+        /// <param name="frameworks">The list of frameworks to choose from.</param>
+        /// <exception cref="ArgumentNullException">If any of the arguments are null.</exception>
+        /// <exception cref="ArgumentException">If any of the frameworks cannot be parsed.</exception>
+        /// <returns>The nearest framework.</returns>
+        /// <remarks>This API is <a href="https://github.com/microsoft/vs-threading/blob/9f065f155525c4561257e02ad61e66e93e073886/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded</a>.</remarks>
+        IVsNuGetFramework GetNearest(IVsNuGetFramework targetFramework, IEnumerable<IVsNuGetFramework> frameworks);
+
+        /// <summary>
+        /// Selects the framework from <paramref name="frameworks"/> that is nearest
+        /// to the <paramref name="targetFramework"/>, according to NuGet's framework
+        /// compatibility rules. <c>null</c> is returned of none of the frameworks
+        /// are compatible.
+        /// </summary>
+        /// <param name="targetFramework">The target framework.</param>
+        /// <param name="fallbackTargetFrameworks">
+        /// Target frameworks to use if the provided <paramref name="targetFramework"/> is not compatible.
+        /// These fallback frameworks are attempted in sequence after <paramref name="targetFramework"/>.
+        /// </param>
+        /// <param name="frameworks">The list of frameworks to choose from.</param>
+        /// <exception cref="ArgumentNullException">If any of the arguments are null.</exception>
+        /// <exception cref="ArgumentException">If any of the frameworkscannot be parsed.</exception>
+        /// <returns>The nearest framework.</returns>
+        /// <remarks>This API is <a href="https://github.com/microsoft/vs-threading/blob/9f065f155525c4561257e02ad61e66e93e073886/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded</a>.</remarks>
+        IVsNuGetFramework GetNearest(
+            IVsNuGetFramework targetFramework,
+            IEnumerable<IVsNuGetFramework> fallbackTargetFrameworks,
+            IEnumerable<IVsNuGetFramework> frameworks);
+    }
+```
+
+## IVsFrameworkParser interface
+
+```cs
+    /// <summary>
+    /// An interface for dealing with the conversion between strings and <see cref="FrameworkName"/>
+    /// instances.
+    /// </summary>
+    public interface IVsFrameworkParser
+    {
+        /// <summary>
+        /// Parses a short framework name (e.g. "net45") or a full framework name
+        /// (e.g. ".NETFramework,Version=v4.5") into a <see cref="FrameworkName"/>
+        /// instance.
+        /// </summary>
+        /// <param name="shortOrFullName">The framework string.</param>
+        /// <exception cref="ArgumentNullException">If the provided string is null.</exception>
+        /// <exception cref="ArgumentException">If the provided string cannot be parsed.</exception>
+        /// <returns>The parsed framework.</returns>
+        FrameworkName ParseFrameworkName(string shortOrFullName);
+
+        /// <summary>
+        /// Gets the shortened version of the framework name from a <see cref="FrameworkName"/>
+        /// instance.
+        /// </summary>
+        /// <remarks>
+        /// For example, ".NETFramework,Version=v4.5" is converted to "net45". This is the value
+        /// used inside of .nupkg folder structures as well as in project.json files.
+        /// </remarks>
+        /// <param name="frameworkName">The framework name.</param>
+        /// <exception cref="ArgumentNullException">If the input is null.</exception>
+        /// <exception cref="ArgumentException">
+        /// If the provided framework name cannot be converted to a short name.
+        /// </exception>
+        /// <returns>The short framework name. </returns>
+        string GetShortFrameworkName(FrameworkName frameworkName);
+    }
+```
+
+## IVsFrameworkParser2 interface
+
+```cs
+    /// <summary>An interface to parse .NET Framework strings. See <a href="http://aka.ms/NuGet-IVsFrameworkParser">http://aka.ms/NuGet-IVsFrameworkParser</a>.</summary>
+    public interface IVsFrameworkParser2
+    {
+        /// <summary>
+        /// Parses a short framework name (e.g. "net45") or a full Target Framework Moniker
+        /// (e.g. ".NETFramework,Version=v4.5") into a <see cref="IVsNuGetFramework"/>
+        /// instance.
+        /// </summary>
+        /// <param name="input">The framework string</param>
+        /// <param name="nuGetFramework">The resulting <see cref="IVsNuGetFramework"/>. If the method returns false, this return NuGet's "Unsupported" framework details.</param>
+        /// <returns>A boolean to specify whether the input could be parsed into a valid <see cref="IVsNuGetFramework"/> object.</returns>
+        /// <remarks>This API is not needed to get framework information about loaded projects, and should not be used to parse the project's TargetFramework property. See <a href="http://aka.ms/NuGet-IVsFrameworkParser">http://aka.ms/NuGet-IVsFrameworkParser</a>.<br/>
+        /// This API is <a href="https://github.com/microsoft/vs-threading/blob/9f065f155525c4561257e02ad61e66e93e073886/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded</a>.</remarks>
+        bool TryParse(string input, out IVsNuGetFramework nuGetFramework);
+    }
+```
+
+## IVsGlobalPackagesInitScriptExecutor interface
+
+```cs
+    /// <summary>
+    /// Execute powershell scripts from package(s) in a solution
+    /// </summary>
+    /// <remarks>Intended for internal use only.</remarks>
+    public interface IVsGlobalPackagesInitScriptExecutor
+    {
+        /// <summary>
+        /// Executes the init script of the given package if available.
+        /// 1) If the init.ps1 script has already been executed by the powershell host, it will not be executed again.
+        /// True is returned.
+        /// 2) If the package is found in the global packages folder it will be used.
+        /// If not, it will return false and do nothing.
+        /// 3) Also, note if other scripts are executing while this call was made, it will wait for them to complete.
+        /// </summary>
+        /// <param name="packageId">Id of the package whose init.ps1 will be executed.</param>
+        /// <param name="packageVersion">Version of the package whose init.ps1 will be executed.</param>
+        /// <returns>Returns true if the script was executed or has been executed already.</returns>
+        /// <remarks>This method throws if the init.ps1 being executed throws.</remarks>
+        Task<bool> ExecuteInitScriptAsync(string packageId, string packageVersion);
+    }
+```
+
+## IVsNuGetFramework interface
+
+```cs
+    /// <summary>A type that represents the components of a .NET Target Framework Moniker.</summary>
+    /// <remarks><see cref="System.Runtime.Versioning.FrameworkName"/> does not support .NET 5 Target Framework Monikers with a platform, but this type does.</remarks>
+    public interface IVsNuGetFramework
+    {
+        /// <summary>The framework moniker.</summary>
+        string TargetFrameworkMoniker { get; }
+
+        /// <summary>The platform moniker.</summary>
+        string TargetPlatformMoniker { get; }
+
+        /// <summary>The platform minimum version.</summary>
+        /// <remarks>This property is read by <see cref="IVsFrameworkCompatibility3" />, but will always have a null value when returned from <see cref="IVsFrameworkParser2"/>.</remarks>
+        string TargetPlatformMinVersion { get; }
+    }
 ```
 
 ## IVsPackageInstaller interface
@@ -598,269 +849,6 @@ public interface IVsPackageUninstaller
 }
 ```
 
-## IVsTemplateWizard interface
-
-```cs
-/// <summary>
-/// Defines the logic for a template wizard extension.
-/// </summary>
-
-public interface IVsTemplateWizard : IWizard
-{
-}
-```
-
-## IVsFrameworkCompatibility interface
-
-```cs
-    /// <summary>
-    /// Contains methods to discover frameworks and compatibility between frameworks.
-    /// </summary>
-    public interface IVsFrameworkCompatibility
-    {
-        /// <summary>
-        /// Gets all .NETStandard frameworks currently supported, in ascending order by version.
-        /// </summary>
-        IEnumerable<FrameworkName> GetNetStandardFrameworks();
-
-        /// <summary>
-        /// Gets frameworks that support packages of the provided .NETStandard version.
-        /// </summary>
-        /// <remarks>
-        /// The result list is not exhaustive as it is meant to human-readable. For example,
-        /// equivalent frameworks are not returned. Additionally, a framework name with version X
-        /// in the result implies that framework names with versions greater than or equal to X
-        /// but having the same <see cref="FrameworkName.Identifier"/> are also supported.
-        /// </remarks>
-        /// <param name="frameworkName">The .NETStandard version to get supporting frameworks for.</param>
-        IEnumerable<FrameworkName> GetFrameworksSupportingNetStandard(FrameworkName frameworkName);
-
-        /// <summary>
-        /// Selects the framework from <paramref name="frameworks"/> that is nearest
-        /// to the <paramref name="targetFramework"/>, according to NuGet's framework
-        /// compatibility rules. <c>null</c> is returned of none of the frameworks
-        /// are compatible.
-        /// </summary>
-        /// <param name="targetFramework">The target framework.</param>
-        /// <param name="frameworks">The list of frameworks to choose from.</param>
-        /// <exception cref="ArgumentException">If any of the arguments are <c>null</c>.</exception>
-        /// <returns>The nearest framework.</returns>
-        FrameworkName GetNearest(FrameworkName targetFramework, IEnumerable<FrameworkName> frameworks);
-    }
-```
-
-## IVsFrameworkCompatibility2 interface
-
-```cs
-    /// <summary>
-    /// Gets all .NETStandard frameworks currently supported, in ascending order by version.
-    /// </summary>
-    public interface IVsFrameworkCompatibility2 : IVsFrameworkCompatibility
-    {
-        /// <summary>
-        /// Selects the framework from <paramref name="frameworks"/> that is nearest
-        /// to the <paramref name="targetFramework"/>, according to NuGet's framework
-        /// compatibility rules. <c>null</c> is returned of none of the frameworks
-        /// are compatible.
-        /// </summary>
-        /// <param name="targetFramework">The target framework.</param>
-        /// <param name="fallbackTargetFrameworks">
-        /// Target frameworks to use if the provided <paramref name="targetFramework"/> is not compatible.
-        /// These fallback frameworks are attempted in sequence after <paramref name="targetFramework"/>.
-        /// </param>
-        /// <param name="frameworks">The list of frameworks to choose from.</param>
-        /// <exception cref="ArgumentException">If any of the arguments are <c>null</c>.</exception>
-        /// <returns>The nearest framework.</returns>
-        FrameworkName GetNearest(
-            FrameworkName targetFramework,
-            IEnumerable<FrameworkName> fallbackTargetFrameworks,
-            IEnumerable<FrameworkName> frameworks);
-    }
-```
-
-## IVsFrameworkCompatibility3 interface
-
-```cs
-    /// <summary>
-    /// Gets all .NETStandard frameworks currently supported, in ascending order by version.
-    /// </summary>
-    public interface IVsFrameworkCompatibility3
-    {
-        /// <summary>
-        /// Selects the framework from <paramref name="frameworks"/> that is nearest
-        /// to the <paramref name="targetFramework"/>, according to NuGet's framework
-        /// compatibility rules. <c>null</c> is returned of none of the frameworks
-        /// are compatible.
-        /// </summary>
-        /// <param name="targetFramework">The target framework.</param>
-        /// <param name="frameworks">The list of frameworks to choose from.</param>
-        /// <exception cref="ArgumentNullException">If any of the arguments are null.</exception>
-        /// <exception cref="ArgumentException">If any of the frameworks cannot be parsed.</exception>
-        /// <returns>The nearest framework.</returns>
-        /// <remarks>This API is <a href="https://github.com/microsoft/vs-threading/blob/9f065f155525c4561257e02ad61e66e93e073886/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded</a>.</remarks>
-        IVsNuGetFramework GetNearest(IVsNuGetFramework targetFramework, IEnumerable<IVsNuGetFramework> frameworks);
-
-        /// <summary>
-        /// Selects the framework from <paramref name="frameworks"/> that is nearest
-        /// to the <paramref name="targetFramework"/>, according to NuGet's framework
-        /// compatibility rules. <c>null</c> is returned of none of the frameworks
-        /// are compatible.
-        /// </summary>
-        /// <param name="targetFramework">The target framework.</param>
-        /// <param name="fallbackTargetFrameworks">
-        /// Target frameworks to use if the provided <paramref name="targetFramework"/> is not compatible.
-        /// These fallback frameworks are attempted in sequence after <paramref name="targetFramework"/>.
-        /// </param>
-        /// <param name="frameworks">The list of frameworks to choose from.</param>
-        /// <exception cref="ArgumentNullException">If any of the arguments are null.</exception>
-        /// <exception cref="ArgumentException">If any of the frameworkscannot be parsed.</exception>
-        /// <returns>The nearest framework.</returns>
-        /// <remarks>This API is <a href="https://github.com/microsoft/vs-threading/blob/9f065f155525c4561257e02ad61e66e93e073886/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded</a>.</remarks>
-        IVsNuGetFramework GetNearest(
-            IVsNuGetFramework targetFramework,
-            IEnumerable<IVsNuGetFramework> fallbackTargetFrameworks,
-            IEnumerable<IVsNuGetFramework> frameworks);
-    }
-```
-
-## IVsCredentialProvider interface
-
-```cs
-    /// <summary>
-    /// Contains methods to get credentials for NuGet operations.
-    /// </summary>
-    public interface IVsCredentialProvider
-    {
-        /// <summary>
-        /// Get credentials for the supplied package source Uri.
-        /// </summary>
-        /// <param name="uri">The NuGet package source Uri for which credentials are being requested. Implementors are
-        /// expected to first determine if this is a package source for which they can supply credentials.
-        /// If not, then Null should be returned.</param>
-        /// <param name="proxy">Web proxy to use when comunicating on the network.  Null if there is no proxy
-        /// authentication configured.</param>
-        /// <param name="isProxyRequest">True if if this request is to get proxy authentication
-        /// credentials. If the implementation is not valid for acquiring proxy credentials, then
-        /// null should be returned.</param>
-        /// <param name="isRetry">True if credentials were previously acquired for this uri, but
-        /// the supplied credentials did not allow authorized access.</param>
-        /// <param name="nonInteractive">If true, then interactive prompts must not be allowed.</param>
-        /// <param name="cancellationToken">This cancellation token should be checked to determine if the
-        /// operation requesting credentials has been cancelled.</param>
-        /// <returns>Credentials acquired by this provider for the given package source uri.
-        /// If the provider does not handle requests for the input parameter set, then null should be returned.
-        /// If the provider does handle the request, but cannot supply credentials, an exception should be thrown.</returns>
-        Task<ICredentials> GetCredentialsAsync(Uri uri,
-            IWebProxy proxy,
-            bool isProxyRequest,
-            bool isRetry,
-            bool nonInteractive,
-            CancellationToken cancellationToken);
-    }
-```
-
-## IVsFrameworkParser
-
-```cs
-    /// <summary>
-    /// An interface for dealing with the conversion between strings and <see cref="FrameworkName"/>
-    /// instances.
-    /// </summary>
-    public interface IVsFrameworkParser
-    {
-        /// <summary>
-        /// Parses a short framework name (e.g. "net45") or a full framework name
-        /// (e.g. ".NETFramework,Version=v4.5") into a <see cref="FrameworkName"/>
-        /// instance.
-        /// </summary>
-        /// <param name="shortOrFullName">The framework string.</param>
-        /// <exception cref="ArgumentNullException">If the provided string is null.</exception>
-        /// <exception cref="ArgumentException">If the provided string cannot be parsed.</exception>
-        /// <returns>The parsed framework.</returns>
-        FrameworkName ParseFrameworkName(string shortOrFullName);
-
-        /// <summary>
-        /// Gets the shortened version of the framework name from a <see cref="FrameworkName"/>
-        /// instance.
-        /// </summary>
-        /// <remarks>
-        /// For example, ".NETFramework,Version=v4.5" is converted to "net45". This is the value
-        /// used inside of .nupkg folder structures as well as in project.json files.
-        /// </remarks>
-        /// <param name="frameworkName">The framework name.</param>
-        /// <exception cref="ArgumentNullException">If the input is null.</exception>
-        /// <exception cref="ArgumentException">
-        /// If the provided framework name cannot be converted to a short name.
-        /// </exception>
-        /// <returns>The short framework name. </returns>
-        string GetShortFrameworkName(FrameworkName frameworkName);
-    }
-```
-
-## IVsFrameworkParser2 interface
-
-```cs
-    /// <summary>An interface to parse .NET Framework strings. See <a href="http://aka.ms/NuGet-IVsFrameworkParser">http://aka.ms/NuGet-IVsFrameworkParser</a>.</summary>
-    public interface IVsFrameworkParser2
-    {
-        /// <summary>
-        /// Parses a short framework name (e.g. "net45") or a full Target Framework Moniker
-        /// (e.g. ".NETFramework,Version=v4.5") into a <see cref="IVsNuGetFramework"/>
-        /// instance.
-        /// </summary>
-        /// <param name="input">The framework string</param>
-        /// <param name="nuGetFramework">The resulting <see cref="IVsNuGetFramework"/>. If the method returns false, this return NuGet's "Unsupported" framework details.</param>
-        /// <returns>A boolean to specify whether the input could be parsed into a valid <see cref="IVsNuGetFramework"/> object.</returns>
-        /// <remarks>This API is not needed to get framework information about loaded projects, and should not be used to parse the project's TargetFramework property. See <a href="http://aka.ms/NuGet-IVsFrameworkParser">http://aka.ms/NuGet-IVsFrameworkParser</a>.<br/>
-        /// This API is <a href="https://github.com/microsoft/vs-threading/blob/9f065f155525c4561257e02ad61e66e93e073886/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded</a>.</remarks>
-        bool TryParse(string input, out IVsNuGetFramework nuGetFramework);
-    }
-```
-
-## IVsGlobalPackagesInitScriptExecutor interface
-
-```cs
-    /// <summary>
-    /// Execute powershell scripts from package(s) in a solution
-    /// </summary>
-    /// <remarks>Intended for internal use only.</remarks>
-    public interface IVsGlobalPackagesInitScriptExecutor
-    {
-        /// <summary>
-        /// Executes the init script of the given package if available.
-        /// 1) If the init.ps1 script has already been executed by the powershell host, it will not be executed again.
-        /// True is returned.
-        /// 2) If the package is found in the global packages folder it will be used.
-        /// If not, it will return false and do nothing.
-        /// 3) Also, note if other scripts are executing while this call was made, it will wait for them to complete.
-        /// </summary>
-        /// <param name="packageId">Id of the package whose init.ps1 will be executed.</param>
-        /// <param name="packageVersion">Version of the package whose init.ps1 will be executed.</param>
-        /// <returns>Returns true if the script was executed or has been executed already.</returns>
-        /// <remarks>This method throws if the init.ps1 being executed throws.</remarks>
-        Task<bool> ExecuteInitScriptAsync(string packageId, string packageVersion);
-    }
-```
-
-## IVsNuGetFramework
-
-```cs
-    /// <summary>A type that represents the components of a .NET Target Framework Moniker.</summary>
-    /// <remarks><see cref="System.Runtime.Versioning.FrameworkName"/> does not support .NET 5 Target Framework Monikers with a platform, but this type does.</remarks>
-    public interface IVsNuGetFramework
-    {
-        /// <summary>The framework moniker.</summary>
-        string TargetFrameworkMoniker { get; }
-
-        /// <summary>The platform moniker.</summary>
-        string TargetPlatformMoniker { get; }
-
-        /// <summary>The platform minimum version.</summary>
-        /// <remarks>This property is read by <see cref="IVsFrameworkCompatibility3" />, but will always have a null value when returned from <see cref="IVsFrameworkParser2"/>.</remarks>
-        string TargetPlatformMinVersion { get; }
-    }
-```
-
 ## IVsPathContext interface
 
 ```cs
@@ -1082,4 +1070,16 @@ public interface IVsTemplateWizard : IWizard
         /// </returns>
         int Compare(string versionA, string versionB);
     }
+```
+
+## IVsTemplateWizard interface
+
+```cs
+/// <summary>
+/// Defines the logic for a template wizard extension.
+/// </summary>
+
+public interface IVsTemplateWizard : IWizard
+{
+}
 ```
