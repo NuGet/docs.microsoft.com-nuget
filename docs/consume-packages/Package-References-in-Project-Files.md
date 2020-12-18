@@ -196,10 +196,44 @@ Additionally NuGet will automatically generate properties for packages containin
   <Target Name="TakeAction" AfterTargets="Build">
     <Exec Command="$(PkgPackage_With_Tools)\tools\tool.exe" />
   </Target>
-````
+```
 
 MSBuild properties and package identities do not have the same restrictions so the package identity needs to be changed to an MSBuild friendly name, prefixed by the word `Pkg`.
 To verify the exact name of the property generated, look at the generated [nuget.g.props](../reference/msbuild-targets.md#restore-outputs) file.
+
+## PackageReference Aliases
+
+In some rare instances different packages will contain classes in the same namespace. Starting with NuGet 5.7 & Visual Studio 2019 Update 7, equivalent to ProjectReference, PackageReference supports [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases).
+By default no aliases are provided. When an alias is specified, *all* assemblies coming from the annotated package with need to be referenced with an alias.
+
+You can look at sample usage at [NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample)
+
+In the project file, specify the aliases as follows:
+
+```xml
+  <ItemGroup>
+    <PackageReference Include="NuGet.Versioning" Version="5.8.0" Aliases="ExampleAlias" />
+  </ItemGroup>
+```
+
+and in the code use it as follows:
+
+```cs
+extern alias ExampleAlias;
+
+namespace PackageReferenceAliasesExample
+{
+...
+        {
+            ...
+            var version = ExampleAlias.NuGet.Versioning.NuGetVersion.Parse("5.0.0");
+            Console.WriteLine($"Version : {version}");
+            ...
+        }
+...
+}
+
+```
 
 ## NuGet warnings and errors
 
