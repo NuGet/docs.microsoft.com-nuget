@@ -53,7 +53,7 @@ where the optional search terms will filter the displayed list. [Search terms](.
 
 - **`-Source`**
 
-  Specifies a list of packages sources to search.
+  The package source to search. You can specify multiple sources by using the `-Source` option multiple times.
 
 - **`-Verbosity [normal|quiet|detailed]`**
 
