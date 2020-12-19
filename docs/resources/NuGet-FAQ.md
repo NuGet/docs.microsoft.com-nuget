@@ -144,3 +144,10 @@ This is not an issue when using PackageReference, as each project file contains 
 
 - Add `https://api.nuget.org/v3/index.json` to your list of sources, or
 - Delete `%appdata%\.nuget\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) and let NuGet re-create it.
+
+**I migrated to PackageReference, why is my build failing `This project references NuGet package(s) that are missing on this computer.`?**
+
+In packages.config projects, when a package with `build` props or targets was installed, NuGet would add an `EnsureNuGetPackageBuildImports` target to verify that the packages msbuild content has been imported before building.
+If the `target` has been modified manually, NuGet might not be able to detect that it needs removed when migrating.
+
+If your project is `PackageReference` and you still have this target in project file, it should be safe to remove.
