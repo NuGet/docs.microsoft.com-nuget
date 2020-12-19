@@ -382,7 +382,7 @@ The `restore` target works for projects using the PackageReference format.
 
 > [!NOTE]
 > The `restore` target [should not be run](#restoring-and-building-with-one-msbuild-command) in combination with the `build` target.
-
+ 
 ### Restore properties
 
 Additional restore settings may come from MSBuild properties in the project file. Values can also be set from the command line using the `-p:` switch (see Examples below).
