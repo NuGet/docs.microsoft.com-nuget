@@ -57,6 +57,12 @@ Search for "json" packages using the [NuGet V3 Search API](../api/search-query-s
 
 [!code-csharp[SearchPackages](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=SearchPackages)]
 
+### Work with authenticated feeds
+
+Use [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) to work with authenticated feeds.
+
+[!code-csharp[UseNuGetProtocolWithAnAuthenticatedFeed](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=UseNuGetProtocolWithAnAuthenticatedFeed)]
+
 ### Create a package
 
 Create a package, set metadata, and add dependencies using [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging).
