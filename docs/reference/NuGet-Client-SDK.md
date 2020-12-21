@@ -61,7 +61,7 @@ Search for "json" packages using the [NuGet V3 Search API](../api/search-query-s
 
 Use [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) to work with authenticated feeds.
 
-[!code-csharp[UseNuGetProtocolWithAnAuthenticatedFeed](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=UseNuGetProtocolWithAnAuthenticatedFeed)]
+[!code-csharp[AuthenticatedFeed](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=AuthenticatedFeed)]
 
 ### Create a package
 
