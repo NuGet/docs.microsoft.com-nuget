@@ -403,7 +403,7 @@ Refer to the table below for examples of how `AssetTargetFallback` affects compa
 | .NET Core App 3.1 | | .NET Framework 4.7.2 | Incompatible, fail with [`NU1202`](../reference/errors-and-warnings/NU1202.md) |
 | .NET Core App 3.1 | net472;net471 | .NET Framework 4.7.2 | .NET Framework 4.7.2 with [`NU1701`](../reference/errors-and-warnings/NU1701.md) |
 
-Multiple frameworks can be specified using `;` as a delimiter. To add a fallback framework you can do the following. 
+Multiple frameworks can be specified using `;` as a delimiter. To add a fallback framework you can do the following:
 
 ```xml
 <AssetTargetFallback Condition=" '$(TargetFramework)'=='netcoreapp3.1' ">
