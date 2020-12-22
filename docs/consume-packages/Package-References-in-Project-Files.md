@@ -394,7 +394,7 @@ The `AssetTargetFallback` property lets you specify additional compatible framew
 If you specify a package dependency using `PackageReference` but that package doesn't contain assets that are compatible with your projects's target framework, the `AssetTargetFallback` property comes into play. The compatibility of the referenced package is rechecked using each target framework that's specified in `AssetTargetFallback`.
 When a `project` or a `package` is referenced through `AssetTargetFallback`, the [NU1701](../reference/errors-and-warnings/NU1701.md) warning will be raised.
 
-Refer to the below table for examples of how `AssetTargetFallback` affects compatibility.
+Refer to the table below for examples of how `AssetTargetFallback` affects compatibility.
 
 | Project framework | AssetTargetFallback | Package frameworks | Result |
 |-------------------|---------------------|--------------------|--------|
