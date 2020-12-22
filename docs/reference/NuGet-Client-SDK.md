@@ -97,7 +97,7 @@ Delete a package using the [NuGet V3 Push and Delete API](../api/package-publish
 > [!Note]
 > NuGet servers are free to interpret a package delete request as a "hard delete", "soft delete", or "unlist".
 > For example, nuget.org interprets the package delete request as an "unlist". For more information about this
-> practice, see the [Deleted Packages](../nuget-org/policies/deleting-packages.md) policy.
+> practice, see the [Deleting Packages](../nuget-org/policies/deleting-packages.md) policy.
 
 [!code-csharp[DeletePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=DeletePackage)]
 
