@@ -411,7 +411,7 @@ To add a fallback framework you can do the following:
 </AssetTargetFallback>
 ```
 
-You can leave of `$(AssetTargetFallback)` if you wish to overwrite, instead of add to the existing `AssetTargetFallback` values.
+You can leave off `$(AssetTargetFallback)` if you wish to overwrite, instead of add to the existing `AssetTargetFallback` values.
 
 > [!NOTE]
 > If you are using a [.NET SDK based project](/dotnet/core/sdk), appropriate `$(AssetTargetFallback)` values are configured and you do not need to set them manually.
