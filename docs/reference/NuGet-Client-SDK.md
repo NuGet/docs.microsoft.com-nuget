@@ -28,17 +28,6 @@ Install the `NuGet.Protocol` package to interact with HTTP and folder-based NuGe
 dotnet add package NuGet.Protocol
 ```
 
-### Install the package
-
-```ps1
-  # interact with HTTP and folder-based NuGet package feeds, includes NuGet.Packaging
-
-```
-
-## Examples
-
-You can find these examples on the [NuGet.Protocol.Samples](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples) project on GitHub.
-
 ### List package versions
 
 Find all versions of Newtonsoft.Json using the [NuGet V3 Package Content API](../api/package-base-address-resource.md#enumerate-package-versions):
