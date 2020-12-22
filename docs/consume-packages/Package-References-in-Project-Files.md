@@ -416,4 +416,4 @@ You can leave off `$(AssetTargetFallback)` if you wish to overwrite, instead of 
 > [!NOTE]
 > If you are using a [.NET SDK based project](/dotnet/core/sdk), appropriate `$(AssetTargetFallback)` values are configured and you do not need to set them manually.
 >
-> `$(PackageTargetFallback)` was an earlier feature that attempted to adress this challenge, but is fundamentally broken and as such *should* not  be used. To migrate from `$(PackageTargetFallback)` to `$(AssetTargetFallback)`, simply change the property name.
+> `$(PackageTargetFallback)` was an earlier feature that attempted to address this challenge, but it is fundamentally broken and *should* not be used. To migrate from `$(PackageTargetFallback)` to `$(AssetTargetFallback)`, simply change the property name.
