@@ -52,12 +52,6 @@ Search for "json" packages using the [NuGet V3 Search API](../api/search-query-s
 
 [!code-csharp[SearchPackages](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=SearchPackages)]
 
-### Work with authenticated feeds
-
-Use [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) to work with authenticated feeds.
-
-[!code-csharp[AuthenticatedFeed](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=AuthenticatedFeed)]
-
 ### Push a package
 
 Push a package using the [NuGet V3 Push and Delete API](../api/package-publish-resource.md):
@@ -74,6 +68,12 @@ Delete a package using the [NuGet V3 Push and Delete API](../api/package-publish
 > practice, see the [Deleting Packages](../nuget-org/policies/deleting-packages.md) policy.
 
 [!code-csharp[DeletePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=DeletePackage)]
+
+### Work with authenticated feeds
+
+Use [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) to work with authenticated feeds.
+
+[!code-csharp[AuthenticatedFeed](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=AuthenticatedFeed)]
 
 ## NuGet.Packaging
 
