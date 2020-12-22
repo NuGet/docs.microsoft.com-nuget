@@ -1,8 +1,8 @@
 ---
 title: NuGet PackageReference format (package references in project files)
 description: Details on NuGet PackageReference in project files as supported by NuGet 4.0+ and VS2017 and .NET Core 2.0
-author: karann-msft
-ms.author: karann
+author: nkolev92
+ms.author: nikolev
 ms.date: 03/16/2018
 ms.topic: conceptual
 ---
@@ -392,15 +392,16 @@ You can control various behaviors of restore with lock file as described below:
 The `AssetTargetFallback` property lets you specify additional compatible framework versions for projects that your project references and NuGet packages that your project consumes.
 
 If you specify a package dependency using `PackageReference` but that package doesn't contain assets that are compatible with your projects's target framework, the `AssetTargetFallback` property comes into play. The compatibility of the referenced package is rechecked using each target framework that's specified in `AssetTargetFallback`.
-When a `project` or a `package` is referenced through `AssetTargetFallback`, the [NU1701](../reference/errors-and-warnings/nu1701) warning will be raised.
+When a `project` or a `package` is referenced through `AssetTargetFallback`, the [NU1701](../reference/errors-and-warnings/NU1701.md) warning will be raised.
 
 Refer to the below table for examples of how `AssetTargetFallback` affects compatibility.
 
 | Project framework | AssetTargetFallback | Package frameworks | Result |
+|-------------------|---------------------|--------------------|--------|
 | .NET Framework 4.7.2 | | .NET Standard 2.0, .NET Standard 1.6 | .NET Standard 2.0 |
 | .NET Core App 3.1 | | .NET Standard 2.0, .NET Framework 4.7.2 | .NET Standard 2.0 |
-| .NET Core App 3.1 | | .NET Framework 4.7.2, .NET Framework 4.7.1 | Incompatible, fail with [`NU1202`](../reference/errors-and-warnings/NU1202) |
-| .NET Core App 3.1 | net472;net471;net462;net461 | .NET Framework 4.7.2, .NET Framework 4.7.1 | .NET Framework 4.7.2 with [`NU1701`](../reference/errors-and-warnings/nu1701) |
+| .NET Core App 3.1 | | .NET Framework 4.7.2, .NET Framework 4.7.1 | Incompatible, fail with [`NU1202`](../reference/errors-and-warnings/NU1202.md) |
+| .NET Core App 3.1 | net472;net471;net462;net461 | .NET Framework 4.7.2, .NET Framework 4.7.1 | .NET Framework 4.7.2 with [`NU1701`](../reference/errors-and-warnings/NU1701.md) |
 
 To add a fallback framework you can do the following:
 
