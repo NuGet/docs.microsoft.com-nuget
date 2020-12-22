@@ -84,6 +84,23 @@ Read a package from a file stream using [`NuGet.Packaging`](https://www.nuget.or
 
 [!code-csharp[ReadPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=ReadPackage)]
 
+### Push a package
+
+Push a package using the [NuGet V3 Push and Delete API](../api/package-publish-resource.md):
+
+[!code-csharp[PushPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=PushPackage)]
+
+### Delete a package
+
+Delete a package using the [NuGet V3 Push and Delete API](../api/package-publish-resource.md):
+
+> [!Note]
+> NuGet servers are free to interpret a package delete request as a "hard delete", "soft delete", or "unlist".
+> For example, nuget.org interprets the package delete request as an "unlist". For more information about this
+> practice, see the [Deleted Packages](../nuget-org/policies/deleting-packages) policy.
+
+[!code-csharp[DeletePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=DeletePackage)]
+
 ## Third-party documentation
 
 You can find examples and documentation for some of the API in the following blog series by Dave Glick, published 2016:
