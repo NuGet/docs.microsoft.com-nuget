@@ -15,18 +15,24 @@ The *NuGet Client SDK* refers to a group of NuGet packages:
 * [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) - Used to interact with NuGet packages. `NuGet.Protocol` depends on this package
 
 You can find the source code for these packages in the [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client) GitHub repository.
+You can find the source code for these examples on the [NuGet.Protocol.Samples](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples) project on GitHub.
 
 > [!Note]
 > For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).
 
-## Getting started
+## NuGet.Protocol
 
-### Install the packages
+Install the `NuGet.Protocol` package to interact with HTTP and folder-based NuGet package feeds:
 
 ```ps1
-dotnet add package NuGet.Protocol  # interact with HTTP and folder-based NuGet package feeds, includes NuGet.Packaging
+dotnet add package NuGet.Protocol
+```
 
-dotnet add package NuGet.Packaging # interact with .nupkg and .nuspec files from a stream
+### Install the package
+
+```ps1
+  # interact with HTTP and folder-based NuGet package feeds, includes NuGet.Packaging
+
 ```
 
 ## Examples
@@ -63,6 +69,31 @@ Use [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) to work wi
 
 [!code-csharp[AuthenticatedFeed](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=AuthenticatedFeed)]
 
+### Push a package
+
+Push a package using the [NuGet V3 Push and Delete API](../api/package-publish-resource.md):
+
+[!code-csharp[PushPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=PushPackage)]
+
+### Delete a package
+
+Delete a package using the [NuGet V3 Push and Delete API](../api/package-publish-resource.md):
+
+> [!Note]
+> NuGet servers are free to interpret a package delete request as a "hard delete", "soft delete", or "unlist".
+> For example, nuget.org interprets the package delete request as an "unlist". For more information about this
+> practice, see the [Deleting Packages](../nuget-org/policies/deleting-packages.md) policy.
+
+[!code-csharp[DeletePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=DeletePackage)]
+
+## NuGet.Packaging
+
+Install the `NuGet.Packaging` package to interact with `.nupkg` and `.nuspec` files from a stream:
+
+```ps1
+dotnet add package NuGet.Packaging
+```
+
 ### Create a package
 
 Create a package, set metadata, and add dependencies using [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging).
@@ -83,23 +114,6 @@ Create a package, set metadata, and add dependencies using [`NuGet.Packaging`](h
 Read a package from a file stream using [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging).
 
 [!code-csharp[ReadPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=ReadPackage)]
-
-### Push a package
-
-Push a package using the [NuGet V3 Push and Delete API](../api/package-publish-resource.md):
-
-[!code-csharp[PushPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=PushPackage)]
-
-### Delete a package
-
-Delete a package using the [NuGet V3 Push and Delete API](../api/package-publish-resource.md):
-
-> [!Note]
-> NuGet servers are free to interpret a package delete request as a "hard delete", "soft delete", or "unlist".
-> For example, nuget.org interprets the package delete request as an "unlist". For more information about this
-> practice, see the [Deleting Packages](../nuget-org/policies/deleting-packages.md) policy.
-
-[!code-csharp[DeletePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=DeletePackage)]
 
 ## Third-party documentation
 
