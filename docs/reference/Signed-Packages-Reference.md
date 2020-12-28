@@ -15,13 +15,13 @@ ms.reviewer: ananguar
 NuGet packages can include a digital signature that provides protection against tampered content. This signature is produced from an X.509 certificate that also adds authenticity proofs to the actual origin of the package.
 
 Signed packages provide the strongest end-to-end validation. There are two different types of NuGet signatures:
-- **Author Signature**. An author signature guarantees that the package has not been modified since the author signed the package, no matter from which repository or what transport method the package is delivered. Additionally, author-signed packages provide an extra authentication mechanism to the nuget.org publishing pipeline because the signing certificate must be registered ahead of time. For more information, see [Register certificates](#signature-requirements-on-nugetorg).
-- **Repository Signature**. Repository signatures provide an integrity guarantee for **all** packages in a repository whether they are author signed or not, even if those packages are obtained from a different location than the original repository where they were signed.   
+- **Author signature**. An author signature guarantees that the package has not been modified since the author signed the package, no matter from which repository or what transport method the package is delivered. Additionally, author-signed packages provide an extra authentication mechanism to the nuget.org publishing pipeline because the signing certificate must be registered ahead of time. For more information, see [Register certificates](#signature-requirements-on-nugetorg).
+- **Repository signature**. Repository signatures provide an integrity guarantee for **all** packages in a repository whether they are author signed or not, even if those packages are obtained from a different location than the original repository where they were signed.   
 
-For details on creating an author signed package, see [Signing Packages](../create-packages/Sign-a-package.md) and the [nuget sign command](../reference/cli-reference/cli-ref-sign.md).
+For details on creating an author signed package, see [Signing Packages](../create-packages/Sign-a-package.md) and the [nuget sign command](../reference/cli-reference/cli-ref-sign.md). You can verify packages' signatures using the [dotnet nuget verify](/dotnet/core/tools/dotnet-nuget-verify.md) or [nuget verify](../reference/cli-reference/cli-ref-verify.md) commands.
 
 > [!Important]
-> Package signing is currently supported only when using nuget.exe on Windows. [Verification of signed packages is currently supported only when using nuget.exe](../reference/cli-reference/cli-ref-verify.md) or Visual Studio on Windows.
+> Author signing packages is only supported by nuget.exe on Windows at this time. However, all packages uploaded to nuget.org are automatically repository signed.
 
 ## Certificate requirements
 
@@ -52,4 +52,6 @@ nuget.org has additional requirements for accepting a signed package:
 ## Related articles
 
 - [Signing NuGet Packages](../create-packages/Sign-a-Package.md)
+- [Verify signed packages using the dotnet CLI](/dotnet/core/tools/dotnet-nuget-verify.md)
+- [Verify signed packages using nuget.exe](../reference/cli-reference/cli-ref-verify.md)
 - [Manage package trust boundaries](../consume-packages/installing-signed-packages.md)
