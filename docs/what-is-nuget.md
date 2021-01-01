@@ -61,7 +61,7 @@ The following image shows a project that depends on five packages, which in turn
 
 Notice that some packages appear multiple times in the dependency graph. For example, there are three different consumers of package B, and each consumer might also specify a different version for that package (not shown). This is a common occurrence, especially for widely-used packages. NuGet fortunately does all the hard work to determine exactly which version of package B satisfies all consumers. NuGet then does the same for all other packages, no matter how deep the dependency graph.
 
-For more details on how NuGet performs this service, see [Dependency resolution](concepts/dependency-resolution.md).
+For more details on how NuGet performs this service, see [Dependency resolution](https://docs.microsoft.com/en-us/nuget/concepts/dependency-resolution).
 
 ## Tracking references and restoring packages
 
@@ -92,13 +92,14 @@ When you have a choice, we recommend using PackageReference. `packages.config` i
 
 So far you've learned the following characteristics of NuGet:
 
-- NuGet provides the central nuget.org repository with support for private hosting.
+- NuGet provides access to a public package repository, nuget.org, but also supports privately hosted respositories even on the local system.
 - NuGet provides the tools developers need for creating, publishing, and consuming packages.
 - Most importantly, NuGet maintains a reference list of packages used in a project and the ability to restore and update those packages from that list.
+- Nuget automatically manages the secondary dependencies of packages and resolves possible version conflict when a dependency is referenced multiple times by finding a compatible common version (if it can).
 
 To make these processes work efficiently, NuGet does some behind-the-scenes optimizations. Most notably, NuGet manages a package cache and a global packages folder to shortcut installation and reinstallation. The cache avoids downloading a package that's already been installed on the machine. The global packages folder allows multiple projects to share the same installed package, thereby reducing NuGet's overall footprint on the computer. The cache and global packages folder are also very helpful when you're frequently restoring a larger number of packages, as on a build server. For more details on these mechanisms, see [Managing the global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md).
 
-Within an individual project, NuGet manages the overall dependency graph, which again includes resolving multiple references to different versions of the same package. It's quite common that a project takes a dependency on one or more packages that themselves have the same dependencies. Some of the most useful utility packages on nuget.org are employed by many other packages. In the entire dependency graph, then, you could easily have ten different references to different versions of the same package. To avoid bringing multiple versions of that package into the application itself, NuGet sorts out which single version can be used by all consumers. (For more information, see [Dependency Resolution](concepts/dependency-resolution.md).)
+Within an individual project, NuGet manages the overall dependency graph, which again includes resolving multiple references to different versions of the same package. It's quite common that a project takes a dependency on one or more packages that themselves have the same dependencies. Some of the most useful utility packages on nuget.org are employed by many other packages. In the entire dependency graph, then, you could easily have ten different references to different versions of the same package. To avoid bringing multiple versions of that package into the application itself, NuGet sorts out which single version can be used by all consumers. (For more information, see [Dependency Resolution](https://docs.microsoft.com/en-us/nuget/concepts/dependency-resolution).)
 
 Beyond that, NuGet maintains all the specifications related to how packages are structured (including [localization](create-packages/creating-localized-packages.md) and [debug symbols](create-packages/symbol-packages-snupkg.md)) and how they are [referenced](consume-packages/package-references-in-project-files.md) (including [version ranges](concepts/package-versioning.md#version-ranges) and [pre-release versions](create-packages/prerelease-packages.md).) NuGet also provides various APIs to work with its services programmatically, and provides support for developers who write Visual Studio extensions and project templates.
 
