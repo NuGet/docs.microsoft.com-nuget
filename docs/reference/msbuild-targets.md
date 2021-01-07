@@ -474,6 +474,24 @@ This is an experimental feature that signficantly decreases the msbuild overhead
 msbuild -t:restore -p:RestoreUseStaticGraphEvaluation=true
 ```
 
+Alternatively you can enable it by setting the property in a Directory.Build.Props.
+
+> [!NOTE]
+> As of Visual Studio 2019.x and NuGet 5.x, this feature is considered experimental and opt-in. Follow [NuGet/Home#9803](https://github.com/NuGet/Home/issues/9803) for details on when this feature will be enabled by default.
+
+Static graph restore changes the msbuild part of restore, the project reading and evaluation, but not the restore algorithm! The restore algorithm is the same across all NuGet tools (NuGet.exe, MSBuild.exe, dotnet.exe and Visual Studio).
+
+In very few scenarios, static graph restore may behave differently from current restore and certain declared PackageReferences or ProjectReferences might be missing.
+
+To ease your mind and determine whether static graph works correctly for your scenario, consider running:
+
+```cli
+msbuild.exe -t:restore -p:RestoreUseStaticGraphEvaluation
+msbuild.exe -t:restore
+```
+
+NuGet should *not* report any changes. If you do see a discrepancy, please file an issue at [NuGet/Home](https://github.com/nuget/home/issues/new).
+
 ### Replacing one library from a restore graph
 
 If a restore is bringing the wrong assembly, it's possible to exclude that packages default choice, and replace it with your own choice. First with a top level `PackageReference`, exclude all assets:
