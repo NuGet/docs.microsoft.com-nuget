@@ -408,8 +408,8 @@ Additional restore settings may come from MSBuild properties in the project file
 | RestoreLockedMode | Run restore in locked mode. This means that restore will not reevaluate the dependencies. |
 | NuGetLockFilePath | A custom location for the lock file. The default location is next to the project and is named `packages.lock.json`. |
 | RestoreForceEvaluate | Forces restore to recompute the dependencies and update the lock file without any warning. |
-| RestorePackagesConfig | An opt in switch, that restores projects with packages.config. Support with `MSBuild -t:restore` only. |
-| RestoreUseStaticGraphEvaluation | Tells commandline restore to use static graph MSBuild evaluation instead of the standard evaluation. Static graph evaluation is an experimental feature that's significantly faster for large repos and solutions. |
+| RestorePackagesConfig | An opt-in switch, that restores projects with packages.config. Support with `MSBuild -t:restore` only. |
+| RestoreUseStaticGraphEvaluation | An opt-in switch to use static graph MSBuild evaluation instead of the standard evaluation. Static graph evaluation is an experimental feature that's significantly faster for large repos and solutions. |
 
 #### Examples
 
