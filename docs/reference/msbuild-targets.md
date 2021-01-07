@@ -467,14 +467,22 @@ msbuild -t:restore -p:RestorePackagesConfig=true
 
 ### Restoring with MSBuild static graph evaluation
 
-With MSBuild 16.6+, NuGet has added the capability to use static graph evaluation from the commandline.
-This is an experimental feature that signficantly decreases the msbuild overhead of restore for large repos.
+> [!NOTE]
+> With MSBuild 16.6+, NuGet has added an experimental feature to use static graph evaluation from the commandline that significantly decreases the restore time for large repositories.
 
 ```cli
 msbuild -t:restore -p:RestoreUseStaticGraphEvaluation=true
 ```
 
 Alternatively you can enable it by setting the property in a Directory.Build.Props.
+
+```xml
+<Project>
+  <PropertyGroup>
+    <RestoreUseStaticGraphEvaluation>true</RestoreUseStaticGraphEvaluation>
+  </PropertyGroup>
+</Project>
+```
 
 > [!NOTE]
 > As of Visual Studio 2019.x and NuGet 5.x, this feature is considered experimental and opt-in. Follow [NuGet/Home#9803](https://github.com/NuGet/Home/issues/9803) for details on when this feature will be enabled by default.
