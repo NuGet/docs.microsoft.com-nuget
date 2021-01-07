@@ -409,6 +409,7 @@ Additional restore settings may come from MSBuild properties in the project file
 | NuGetLockFilePath | A custom location for the lock file. The default location is next to the project and is named `packages.lock.json`. |
 | RestoreForceEvaluate | Forces restore to recompute the dependencies and update the lock file without any warning. |
 | RestorePackagesConfig | An opt in switch, that restores projects with packages.config. Support with `MSBuild -t:restore` only. |
+| RestoreUseStaticGraphEvaluation | Tells commandline restore to use static graph MSBuild evaluation instead of the standard evaluation. Static graph evaluation is an experimental feature that's significantly faster for large repos and solutions. |
 
 #### Examples
 
@@ -463,6 +464,15 @@ msbuild -t:restore -p:RestorePackagesConfig=true
 
 > [!NOTE]
 > `packages.config` restore is only available with `MSBuild 16.5+`, and not with `dotnet.exe`
+
+### Restoring with MSBuild static graph evaluation
+
+With MSBuild 16.6+, NuGet has added the capability to use static graph evaluation from the commandline.
+This is an experimental feature that signficantly decreases the msbuild overhead of restore for large repos.
+
+```cli
+msbuild -t:restore -p:RestoreUseStaticGraphEvaluation=true
+```
 
 ### Replacing one library from a restore graph
 
