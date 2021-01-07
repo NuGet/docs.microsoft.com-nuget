@@ -491,7 +491,7 @@ Static graph restore changes the msbuild part of restore, the project reading an
 
 In very few scenarios, static graph restore may behave differently from current restore and certain declared PackageReferences or ProjectReferences might be missing.
 
-To ease your mind and determine whether static graph works correctly for your scenario, consider running:
+To ease your mind, as a one time check, when migrating to static graph restore, consider running:
 
 ```cli
 msbuild.exe -t:restore -p:RestoreUseStaticGraphEvaluation
