@@ -468,7 +468,7 @@ msbuild -t:restore -p:RestorePackagesConfig=true
 ### Restoring with MSBuild static graph evaluation
 
 > [!NOTE]
-> With MSBuild 16.6+, NuGet has added an experimental feature to use static graph evaluation from the commandline that significantly decreases the restore time for large repositories.
+> With MSBuild 16.6+, NuGet has added an experimental feature to use static graph evaluation from the command line that significantly improves the restore time for large repositories.
 
 ```cli
 msbuild -t:restore -p:RestoreUseStaticGraphEvaluation=true
