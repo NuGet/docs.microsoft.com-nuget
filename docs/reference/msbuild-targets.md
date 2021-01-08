@@ -57,7 +57,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | license | PackageLicenseFile | empty | Path to a license file within the package if you're using a custom license or a license that hasn't been assigned an SPDX identifier. You need to explicitly pack the referenced license file. Corresponds to `<license type="file">`. See [Packing a license expression or a license file](#packing-a-license-expression-or-a-license-file). |
 | LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` is deprecated. Use `PackageLicenseExpression` or `PackageLicenseFile` instead. |
 | ProjectUrl | PackageProjectUrl | empty | |
-| Icon | PackageIcon | empty | A path to an image in the package to use as a package icon. You need to explicitly pack the referenced icon image file. For more information, see [`icon` metadata](/nuget/reference/nuspec#icon). |
+| Icon | PackageIcon | empty | A path to an image in the package to use as a package icon. You need to explicitly pack the referenced icon image file. For more information, see [Packing an icon image file](#packing-an-icon-image-file) and [`icon` metadata](/nuget/reference/nuspec#icon). |
 | IconUrl | PackageIconUrl | empty | For the best downlevel experience, `PackageIconUrl` should be specified in addition to `PackageIcon`. Longer term, `PackageIconUrl` will be deprecated. |
 | Tags | PackageTags | empty | A semicolon-delimited list of tags that designates the package. |
 | ReleaseNotes | PackageReleaseNotes | empty | Release notes for the package. |
@@ -86,7 +86,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | PackageLicenseFile | Path to a license file within the package if you're using a custom license or a license that hasn't been assigned an SPDX identifier. |
 | PackageLicenseUrl | `PackageLicenseUrl` is deprecated. Use `PackageLicenseExpression` or `PackageLicenseFile` instead. |
 | PackageProjectUrl | |
-| PackageIcon | Specifies the package icon path, relative to the root of the package. |
+| PackageIcon | Specifies the package icon path, relative to the root of the package. For more information, see [Packing an icon image file](#packing-an-icon-image-file). |
 | PackageReleaseNotes| Release notes for the package. |
 | PackageTags | A semicolon-delimited list of tags that designates the package. |
 | PackageOutputPath | Determines the output path in which the packed package will be dropped. Default is `$(OutputPath)`. |
