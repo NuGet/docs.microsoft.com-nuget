@@ -58,7 +58,7 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 | LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` is deprecated, use the PackageLicenseExpression or PackageLicenseFile property |
 | ProjectUrl | PackageProjectUrl | empty | |
 | Icon | PackageIcon | empty | You need to explicitly pack the referenced icon image file.|
-| IconUrl | PackageIconUrl | empty | For the best downlevel experience, `PackageIconUrl` should be specified in addition to `PackageIcon`. Longer term, `PackageIconUrl` will be deprecated. |
+| IconUrl | PackageIconUrl | empty | `PackageIconUrl` is deprecated in favor of `PackageIcon`. However, for the best downlevel experience, you should specify `PackageIconUrl` in addition to `PackageIcon`. |
 | Tags | PackageTags | empty | Tags are semi-colon delimited. |
 | ReleaseNotes | PackageReleaseNotes | empty | |
 | Repository/Url | RepositoryUrl | empty | Repository URL used to clone or retrieve source code. Example: *https://github.com/NuGet/NuGet.Client.git* |
@@ -113,14 +113,12 @@ To suppress package dependencies from generated NuGet package, set `SuppressDepe
 
 ### PackageIconUrl
 
-`PackageIconUrl` will be deprecated in favor of the new [`PackageIcon`](#packageicon) property.
-
-Starting with NuGet 5.3 & Visual Studio 2019 version 16.3, `pack` will raise [NU5048](./errors-and-warnings/nu5048.md) warning if the package metadata only specifies `PackageIconUrl`.
+`PackageIconUrl` is deprecated in favor of the [`PackageIcon`](#packageicon) property. Starting with NuGet 5.3 and Visual Studio 2019 version 16.3, `pack` raises the [NU5048](./errors-and-warnings/nu5048.md) warning if the package metadata only specifies `PackageIconUrl`.
 
 ### PackageIcon
 
 > [!Tip]
-> You should specify both `PackageIcon` and `PackageIconUrl` to maintain backward compatibility with clients and sources that do not yet support `PackageIcon`. Visual Studio will support `PackageIcon` for packages coming from a folder-based source in a future release.
+> To maintain backward compatibility with clients and sources that don't yet support `PackageIcon`, specify both `PackageIcon` and `PackageIconUrl`. Visual Studio supports `PackageIcon` for packages coming from a folder-based source.
 
 #### Packing an icon image file
 
