@@ -408,7 +408,8 @@ Additional restore settings may come from MSBuild properties in the project file
 | RestoreLockedMode | Run restore in locked mode. This means that restore will not reevaluate the dependencies. |
 | NuGetLockFilePath | A custom location for the lock file. The default location is next to the project and is named `packages.lock.json`. |
 | RestoreForceEvaluate | Forces restore to recompute the dependencies and update the lock file without any warning. |
-| RestorePackagesConfig | An opt in switch, that restores projects with packages.config. Support with `MSBuild -t:restore` only. |
+| RestorePackagesConfig | An opt-in switch, that restores projects with packages.config. Support with `MSBuild -t:restore` only. |
+| RestoreUseStaticGraphEvaluation | An opt-in switch to use static graph MSBuild evaluation instead of the standard evaluation. Static graph evaluation is an experimental feature that's significantly faster for large repos and solutions. |
 
 #### Examples
 
@@ -464,25 +465,40 @@ msbuild -t:restore -p:RestorePackagesConfig=true
 > [!NOTE]
 > `packages.config` restore is only available with `MSBuild 16.5+`, and not with `dotnet.exe`
 
-### PackageTargetFallback
+### Restoring with MSBuild static graph evaluation
 
-The `PackageTargetFallback` element allows you to specify a set of compatible targets to be used when restoring packages. It's designed to allow packages that use a dotnet [TxM](../reference/target-frameworks.md) to work with compatible packages that don't declare a dotnet TxM. That is, if your project uses the dotnet TxM, then all the packages it depends on must also have a dotnet TxM, unless you add the `<PackageTargetFallback>` to your project in order to allow non-dotnet platforms to be compatible with dotnet.
+> [!NOTE]
+> With MSBuild 16.6+, NuGet has added an experimental feature to use static graph evaluation from the command line that significantly improves the restore time for large repositories.
 
-For example, if the project is using the `netstandard1.6` TxM, and a dependent package contains only `lib/net45/a.dll` and `lib/portable-net45+win81/a.dll`, then the project will fail to build. If what you want to bring in is the latter DLL, then you can add a `PackageTargetFallback` as follows to say that the `portable-net45+win81` DLL is compatible:
-
-```xml
-<PackageTargetFallback Condition="'$(TargetFramework)'=='netstandard1.6'">
-    portable-net45+win81
-</PackageTargetFallback>
+```cli
+msbuild -t:restore -p:RestoreUseStaticGraphEvaluation=true
 ```
 
-To declare a fallback for all targets in your project, leave off the `Condition` attribute. You can also extend any existing `PackageTargetFallback` by including `$(PackageTargetFallback)` as shown here:
+Alternatively you can enable it by setting the property in a Directory.Build.Props.
 
 ```xml
-<PackageTargetFallback>
-    $(PackageTargetFallback);portable-net45+win81
-</PackageTargetFallback >
+<Project>
+  <PropertyGroup>
+    <RestoreUseStaticGraphEvaluation>true</RestoreUseStaticGraphEvaluation>
+  </PropertyGroup>
+</Project>
 ```
+
+> [!NOTE]
+> As of Visual Studio 2019.x and NuGet 5.x, this feature is considered experimental and opt-in. Follow [NuGet/Home#9803](https://github.com/NuGet/Home/issues/9803) for details on when this feature will be enabled by default.
+
+Static graph restore changes the msbuild part of restore, the project reading and evaluation, but not the restore algorithm! The restore algorithm is the same across all NuGet tools (NuGet.exe, MSBuild.exe, dotnet.exe and Visual Studio).
+
+In very few scenarios, static graph restore may behave differently from current restore and certain declared PackageReferences or ProjectReferences might be missing.
+
+To ease your mind, as a one time check, when migrating to static graph restore, consider running:
+
+```cli
+msbuild.exe -t:restore -p:RestoreUseStaticGraphEvaluation
+msbuild.exe -t:restore
+```
+
+NuGet should *not* report any changes. If you do see a discrepancy, please file an issue at [NuGet/Home](https://github.com/nuget/home/issues/new).
 
 ### Replacing one library from a restore graph
 
