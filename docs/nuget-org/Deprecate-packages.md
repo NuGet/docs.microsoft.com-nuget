@@ -61,3 +61,43 @@ Project `My.Test.Project` has the following deprecated packages
    > My.Sample.Lib        6.0.0      Legacy      My.Awesome.Package
 
 ```
+
+## Transfer popularity to a newer package
+
+Package authors who have deprecated a legacy package in favor of a newer package can choose to transfer the "popularity" of the legacy to the newer package to boost the its search ranking. 
+
+A common problem that package authors run into when they deprecate a legacy package in favor of a newer package is that the newer, less-popular package will rank lower in search results than the incumbent package for most queries.
+
+For example, let's say I have two packages for the same task: 
+* My deprecated legacy package, Contoso.Legacy with 3M downloads
+* My latest package, Contoso.Latest with 100K downloads
+
+NuGet.org heavily considers downloads/popularity when ranking search results. Given the search query "Contoso," Contoso.Legacy will likely rank above Contoso.Latest in the results, making it more difficult for users to discover my latest package.
+
+To solve this problem, I can apply to transfer the popularity of my deprecated legacy package to my latest package. This would cause Contoso.Latest to rank higher in search results as if had Contoso.Legacy's 3M downloads added to its existing 100K downloads. Contoso.Legacy would rank much lower, as if it had almost all of its downloads removed.  Only the internal popularity scores for the packages will be impacted, the actual download count shown for each package will not change on NuGet.org or on any client.
+
+> [!Note]
+> Popularity transfers can make it significantly harder for consumers to find the legacy package.
+
+See the table below to get a concrete idea of how a popularity transfer may impact search rankings for the query "Contoso":
+
+| Search ranking 	| Before popularity transfer     	| After popularity transfer      	|
+|----------------	|--------------------------------	|--------------------------------	|
+| 1              	| *Contoso.Legacy, 3M downloads*  	| *Contoso.Latest, 100K downloads* 	|
+| 2              	| Contoso.Scanner, 2M downloads  	| Contoso.Scanner, 2M downloads  	|
+| 3              	| Contoso.Core,  1.5M downloads  	| Contoso.Core,  1.5M downloads  	|
+| 4              	| Contoso.UI, 1M downloads       	| Contoso.UI, 1M downloads       	|
+| ...            	| ...                            	| ...                            	|
+| 20             	| *Contoso.Latest, 100K downloads* 	| *Contoso.Legacy, 3M downloads*   	|
+
+### Popularity transfer application process
+
+* The legacy packages and new packages must share all owners.
+* The new packages must be clearly related to the legacy packages in naming and function (i.e. an evolution or next generation).
+* All versions of the legacy packages must be deprecated and point to the new packages receiving the transfer.
+* The popularity transfer must not cause confusion for NuGet users or worsen the NuGet search experience.
+* The new packages must have stable version.
+
+### Advanced popularity transfer scenarios
+
+
