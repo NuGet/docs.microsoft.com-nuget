@@ -119,7 +119,7 @@ To explore more that NuGet has to offer, select the links below.
 - [Pre-release Packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple target frameworks](../create-packages/multiple-target-frameworks-project-file.md)
 - [Package versioning](../concepts/package-versioning.md)
-- [Adding a license expression or file](../reference/msbuild-targets#packing-a-license-expression-or-a-license-file)
+- [Adding a license expression or file](../reference/msbuild-targets.md#packing-a-license-expression-or-a-license-file)
 - [Creating localized packages](../create-packages/creating-localized-packages.md)
 - [Creating symbol packages](../create-packages/symbol-packages-snupkg.md)
 - [Signing packages](../create-packages/Sign-a-package.md)
