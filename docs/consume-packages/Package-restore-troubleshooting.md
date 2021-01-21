@@ -1,8 +1,8 @@
 ---
 title: Troubleshooting NuGet Package Restore in Visual Studio
 description: A description of common NuGet restore errors in Visual Studio and how to troubleshoot them.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/25/2018
 ms.topic: conceptual
 ---

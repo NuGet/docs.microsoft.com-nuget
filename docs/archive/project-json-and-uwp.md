@@ -1,8 +1,8 @@
 ---
 title: NuGet project.json file with UWP projects
 description: Description of how the project.json file is used to track NuGet dependencies in Universal Windows Platform (UWP) projects.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/17/2017
 ms.topic: conceptual
 ---

@@ -1,8 +1,8 @@
 ---
 title: Create and publish a NuGet package using the dotnet CLI
 description: A walkthrough tutorial on creating and publishing a NuGet package using the .NET Core CLI, dotnet.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: quickstart
 ---

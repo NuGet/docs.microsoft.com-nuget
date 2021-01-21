@@ -1,8 +1,8 @@
 ---
 title: NuGet 5.0 RTM Release Notes
 description: Release notes for NuGet 5.0 including known issues, bug fixes, new features, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 04/02/2019
 ms.topic: conceptual
 ---

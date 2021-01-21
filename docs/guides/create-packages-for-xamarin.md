@@ -1,8 +1,8 @@
 ---
 title: Create NuGet Packages for Xamarin (for iOS, Android, and Windows) with Visual Studio 2017 or 2019
 description: An end-to-end walkthrough of creating NuGet packages for Xamarin that use native APIs on iOS, Android, and Windows.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/05/2019
 ms.topic: tutorial
 ---

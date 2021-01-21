@@ -1,8 +1,8 @@
 ---
 title: Source and config file transformations for NuGet packages
 description: Details on the ability for NuGet packages to transform source code and configuration (XML) files when installed.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur

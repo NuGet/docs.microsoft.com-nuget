@@ -1,8 +1,8 @@
 ---
 title: NuGet 4.9 RTM Release Notes
 description: Release notes for NuGet 4.9 including known issues, bug fixes, new features, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/20/2018
 ms.topic: conceptual
 ---

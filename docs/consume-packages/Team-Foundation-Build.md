@@ -1,8 +1,8 @@
 ---
 title: Walkthrough of NuGet Package Restore with Team Foundation Build
 description: A walkthrough of how NuGet package restore with with Team Foundation Build (both TFS and Visual Studio Team Services).
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
 ---

@@ -1,8 +1,8 @@
 ---
 title: Migrating from packages.config to PackageReference formats
 description: Details on how to migrate a project from the packages.config management format to PackageReference as supported by NuGet 4.0+ and VS2017 and .NET Core 2.0
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: conceptual
 ---
