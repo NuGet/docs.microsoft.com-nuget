@@ -62,7 +62,7 @@ To install the package, you can use either the NuGet Package Manager or the Pack
 
 1. Once the console opens, check that the **Default project** drop-down list shows the project into which you want to install the package. If you have a single project in the solution, it is already selected.
 
-    ![Locating Newtonsoft.Json package](media/QS_Use-08-Console1.png)
+    ![Select a project for the package](media/QS_Use-08-Console1.png)
 
 1. Enter the command `Install-Package Newtonsoft.Json` (see [Install-Package](../reference/ps-reference/ps-ref-install-package.md)). The console window shows output for the command. Errors typically indicate that the package isn't compatible with the project's target framework.
 
