@@ -1,8 +1,8 @@
 ---
 title: "NuGet Package Name Dispute Resolution"
 description: The process for resolving disputes between NuGet package publishers related to branding, trademarks, and other conflict situations.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: conceptual
 ---

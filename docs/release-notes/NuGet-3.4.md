@@ -1,8 +1,8 @@
 ---
 title: NuGet 3.4 Release Notes
 description: Release notes for NuGet 3.4 including known issues, bug fixes, added features, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
 ---

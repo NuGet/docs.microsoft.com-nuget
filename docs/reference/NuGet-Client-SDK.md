@@ -1,8 +1,8 @@
 ---
 title: NuGet Client SDK
 description: The API is evolving and not yet documented, but examples are available on Dave Glick's blog.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2018
 ms.topic: conceptual
 ---

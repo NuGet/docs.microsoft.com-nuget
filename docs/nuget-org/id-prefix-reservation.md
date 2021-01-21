@@ -1,8 +1,8 @@
 ---
 title: ID Prefix Reservation
 description: Package ID Prefix Reservation feature description and author guide.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 09/07/2019
 ms.topic: reference
 ms.reviewer: karann

@@ -1,8 +1,8 @@
 ---
 title: NuGet CLI mirror command
 description: Reference for the nuget.exe mirror command
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
 ---

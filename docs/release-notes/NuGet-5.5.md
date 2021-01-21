@@ -1,8 +1,8 @@
 ---
 title: NuGet 5.5 Release Notes
 description: Release notes for NuGet 5.5 including new features, bug fixes, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/19/2020
 ms.topic: conceptual
 ---

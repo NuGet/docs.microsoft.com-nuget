@@ -1,8 +1,8 @@
 ---
 title: Install and use a NuGet package in Visual Studio
 description: A walkthrough tutorial on the process of installing and using a NuGet package in a Visual Studio project.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/24/2018
 ms.topic: quickstart
 ---

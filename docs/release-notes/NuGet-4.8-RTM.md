@@ -1,8 +1,8 @@
 ---
 title: NuGet 4.8 RTM Release Notes
 description: Release notes for NuGet 4.8.1 including known issues, bug fixes, added features, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 5/14/2018
 ms.topic: conceptual
 ---

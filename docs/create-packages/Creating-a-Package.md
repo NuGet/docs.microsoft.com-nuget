@@ -1,7 +1,7 @@
 ---
 title: Create a NuGet package using nuget.exe CLI
 description: A detailed guide on designing and creating a NuGet package, including files and versioning.
-author: karann-msft
+author: JonDouglas
 ms.author: feaguila
 ms.date: 07/09/2019
 ms.topic: conceptual

@@ -1,8 +1,8 @@
 ---
 title: Set a NuGet package type
 description: Describes packages types to indicate intended use of a package.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/09/2019
 ms.topic: conceptual
 ---

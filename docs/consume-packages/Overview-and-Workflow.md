@@ -1,8 +1,8 @@
 ---
 title: Overview and workflow of using NuGet packages
 description: An overview of the process of consuming NuGet packages in a project, with links to other specific parts of the process.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/22/2018
 ms.topic: conceptual
 ---
