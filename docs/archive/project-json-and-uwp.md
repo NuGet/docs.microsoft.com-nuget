@@ -68,11 +68,13 @@ The behavior of the `lib` folder hasn't changed significantly in NuGet v3. Howev
 
 An example lib structure:
 
+```
 lib
 ├───net40
 │       MyLibrary.dll
 └───wp81
         MyLibrary.dll
+```
 
 The `lib` folder contains assemblies that are used at runtime. For most packages a folder under `lib` for each of the target TxMs is all that is required.
 
@@ -86,6 +88,7 @@ Mechanically, the assemblies included in the `ref` folder are the reference asse
 
 The structure of the `ref` folder is the same as `lib`, for example:
 
+```
 └───MyImageProcessingLib
         ├───lib
         │   ├───net40
@@ -103,6 +106,7 @@ The structure of the `ref` folder is the same as `lib`, for example:
             │
             └───portable-net451-win81
                     MyImageProcessingLibrary.dll
+```
 
 In this example the assemblies in the `ref` directories would all be identical.
 
@@ -114,6 +118,7 @@ The runtimes folder contains assemblies and native libraries required to run on 
 
 The following example shows a package that has a purely managed implementation for several platforms, but uses native helpers on Windows 8 where it can call into Windows 8-specific native APIs.
 
+```
 └───MyLibrary
         ├───lib
         │   └───net40
@@ -135,6 +140,7 @@ The following example shows a package that has a purely managed implementation f
                 │
                 └───native
                         MyNativeLibrary.dll
+```
 
 Given the above package the following things happen:
 
@@ -150,6 +156,7 @@ Only a single `lib` folder is ever be picked, so if there is a runtime specific 
 
 Another way to use runtimes is to ship a package that is purely a managed wrapper over a native assembly. In this scenario you create a package like the following:
 
+```
 └───MyLibrary
         └───runtimes
             ├───win8-x64
@@ -167,6 +174,7 @@ Another way to use runtimes is to ship a package that is purely a managed wrappe
                 │
                 └───native
                         MyImplementation.dll
+```
 
 In this case there is no top-level `lib` folder as that folder as there is no implementation of this package that doesn't rely on the corresponding native assembly. If the managed assembly, `MyLibrary.dll`, was exactly the same in both of these cases then we could put it in a top level `lib` folder, but because the lack of a native assembly doesn't cause the package to fail installing if it was installed on a platform that wasn't win-x86 or win-x64 then the top level lib would be used but no native assembly would be copied.
 

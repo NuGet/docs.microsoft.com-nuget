@@ -31,10 +31,12 @@ A specific version number is in the form *Major.Minor.Patch[-Suffix]*, where the
 
 **Examples:**
 
+```
 1.0.1
 6.11.1231
 4.3.1-rc
 2.2.44-beta1
+```
 
 > [!Important]
 > nuget.org rejects any package upload that lacks an exact version number. The version must be specified in the `.nuspec` or project file used to create the package.
@@ -54,6 +56,7 @@ That said, package developers generally follow recognized naming conventions:
 
 When resolving package references and multiple package versions differ only by suffix, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order. For example, the following versions would be chosen in the exact order shown:
 
+```
 1.0.1
 1.0.1-zzz
 1.0.1-rc
@@ -62,6 +65,7 @@ When resolving package references and multiple package versions differ only by s
 1.0.1-alpha2
 1.0.1-alpha
 1.0.1-aaa
+```
 
 ## Semantic Versioning 2.0.0
 
