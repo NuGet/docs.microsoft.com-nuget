@@ -59,7 +59,7 @@ Catalog items are always added to the catalog in a monotonically increasing, chr
 
 The following request fetches the catalog index.
 
-    GET {@id}
+   GET {@id}
 
 The catalog index is a JSON document that contains an object with the following properties:
 
@@ -96,7 +96,7 @@ URL.
 
 ### Sample request
 
-    GET https://api.nuget.org/v3/catalog0/index.json
+GET https://api.nuget.org/v3/catalog0/index.json
 
 ### Sample response
 
@@ -158,7 +158,7 @@ For more details about what each type means, see the [corresponding items type](
 
 ### Sample request
 
-    GET https://api.nuget.org/v3/catalog0/page2926.json
+GET https://api.nuget.org/v3/catalog0/page2926.json
 
 ### Sample response
 
