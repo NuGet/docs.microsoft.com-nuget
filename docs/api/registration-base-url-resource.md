@@ -252,7 +252,7 @@ range        | object | no       | The allowed [version range](../concepts/packa
 
 ### Sample request
 
-    GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
+GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
 
 ### Sample response
 
@@ -289,7 +289,7 @@ The shape of the registration leaf objects is the same as in the registration in
 
 ## Sample request
 
-    GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
+GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
 
 ## Sample response
 
@@ -327,7 +327,7 @@ registration   | string  | no       | The URL to the registration index
 
 ### Sample request
 
-    GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
+GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
 
 ### Sample response
 

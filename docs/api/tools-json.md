@@ -77,7 +77,7 @@ The `NuGet.CommandLine` package on nuget.org is typically only updated with `Rel
 
 ### Sample request
 
-    GET https://dist.nuget.org/tools.json
+GET https://dist.nuget.org/tools.json
 
 ### Sample response
 

@@ -19,7 +19,7 @@ You must manually lay out the package as described in this article when using th
 
 When building a package that contains only one version of a library or target multiple frameworks, you always make subfolders under `lib` using different case-sensitive framework names with the following convention:
 
-    lib\{framework name}[{version}]
+lib\{framework name}[{version}]
 
 For a complete list of supported names, see the [Target Frameworks reference](../reference/target-frameworks.md#supported-frameworks).
 
@@ -107,7 +107,7 @@ If you want `MyAssembly.Core.dll` to be installed for .NET Framework 4.5, place 
 
 NuGet also supports targeting a specific framework profile by appending a dash and the profile name to the end of the folder.
 
-    lib\{framework name}-{profile}
+lib\{framework name}-{profile}
 
 The supported profiles are as follows:
 
@@ -157,22 +157,22 @@ When packaging libraries targeting the Portable Class Library it can be tricky t
 
 With `packages.config`, content files and PowerShell scripts can be grouped by target framework using the same folder convention inside the `content` and `tools` folders. For example:
 
-    \content
-        \net46
-            \MyContent.txt
-        \net461
-            \MyContent461.txt
-        \uap
-            \MyUWPContent.html
-        \netcore
-    \tools
-        init.ps1
-        \net46
-            install.ps1
-            uninstall.ps1
-        \uap
-            install.ps1
-            uninstall.ps1
+\content
+    \net46
+        \MyContent.txt
+    \net461
+        \MyContent461.txt
+    \uap
+        \MyUWPContent.html
+    \netcore
+\tools
+    init.ps1
+    \net46
+        install.ps1
+        uninstall.ps1
+    \uap
+        install.ps1
+        uninstall.ps1
 
 If a framework folder is left empty, NuGet doesn't add assembly references or content files or run the PowerShell scripts for that framework.
 
