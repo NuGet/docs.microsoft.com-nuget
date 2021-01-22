@@ -1,5 +1,5 @@
 ---
-title: NuGet 3.5 Beta Release Notes
+title: NuGet 3.5 RTM Release Notes
 description: Release notes for NuGet 3.5 including known issues, bug fixes, added features, and DCRs.
 author: JonDouglas
 ms.author: jodou

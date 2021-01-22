@@ -1,8 +1,8 @@
 ---
 title: NuGet CLI search command
 description: Reference for the nuget.exe search command
-author: advay26
-ms.author: t-adtand
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/17/2020
 ms.topic: reference
 ---
