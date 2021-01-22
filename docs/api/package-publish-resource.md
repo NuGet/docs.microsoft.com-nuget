@@ -42,7 +42,7 @@ endpoint, see below.
 nuget.org supports pushing new packages using the following API. If the package with the provided ID and version
 already exists, nuget.org will reject the push. Other package sources may support replacing an existing package.
 
-    PUT https://www.nuget.org/api/v2/package
+PUT https://www.nuget.org/api/v2/package
 
 ### Request parameters
 
@@ -109,7 +109,7 @@ HTTP method instead of the `DELETE` method.
 
 If the package is already listed, the request still succeeds.
 
-    POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
+POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### Request parameters
 

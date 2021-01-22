@@ -115,14 +115,14 @@ As NuGet finds settings in these files, they are applied as follows:
 
 Let's say you have the following folder structure on two separate drives:
 
-    disk_drive_1
-        User
-    disk_drive_2
-       Project1
-         Source
-       Project2
-         Source
-       tmp
+disk_drive_1
+    User
+disk_drive_2
+    Project1
+        Source
+    Project2
+        Source
+    tmp
 
 You then have four `NuGet.Config` files in the following locations with the given content. (The computer-level file is not included in this example, but would behave similarly to the user-level file.)
 

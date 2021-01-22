@@ -137,7 +137,7 @@ name      | string  | yes      | The name of the package type.
 
 ### Sample request
 
-    GET https://azuresearch-usnc.nuget.org/query?q=NuGet.Versioning&prerelease=false&semVerLevel=2.0.0
+GET https://azuresearch-usnc.nuget.org/query?q=NuGet.Versioning&prerelease=false&semVerLevel=2.0.0
 
 ### Sample response
 
