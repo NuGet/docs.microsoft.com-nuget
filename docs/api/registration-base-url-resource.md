@@ -88,7 +88,9 @@ The heuristic that nuget.org uses is as follows: if there are 128 or more versio
 into pages of size 64. If there are less than 128 versions, inline all leaves into the registration index. Note that
 this means packages with 65 to 127 versions will have two pages in the index but both pages will be inlined.
 
-    GET {@id}/{LOWER_ID}/index.json
+```
+GET {@id}/{LOWER_ID}/index.json
+```
 
 ### Request parameters
 
@@ -252,7 +254,9 @@ range        | object | no       | The allowed [version range](../concepts/packa
 
 ### Sample request
 
+```
 GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
+```
 
 ### Sample response
 
@@ -289,7 +293,9 @@ The shape of the registration leaf objects is the same as in the registration in
 
 ## Sample request
 
+```
 GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
+```
 
 ## Sample response
 
@@ -327,7 +333,9 @@ registration   | string  | no       | The URL to the registration index
 
 ### Sample request
 
+```
 GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
+```
 
 ### Sample response
 
