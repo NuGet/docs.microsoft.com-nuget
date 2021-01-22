@@ -157,7 +157,7 @@ Some packages install new commands for the console. For example, `MvcScaffolding
 
 A PowerShell profile lets you make commonly-used commands available wherever you use PowerShell. NuGet supports a NuGet-specific profile typically found at the following location:
 
-    %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
+*%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1*
 
 To find the profile, type `$profile` in the console:
 

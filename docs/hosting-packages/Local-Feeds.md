@@ -20,11 +20,11 @@ To enable the source, add its pathname (such as `\\myserver\packages`) to the li
 
 The hierarchical versioned folder tree has the following general structure:
 
-    \\myserver\packages
-      └─<packageID>
-        └─<version>
-          ├─<packageID>.<version>.nupkg
-          └─<other files>
+\\myserver\packages
+  └─<packageID>
+    └─<version>
+      ├─<packageID>.<version>.nupkg
+      └─<other files>
 
 NuGet creates this structure automatically when you use the [`nuget add`](../reference/cli-reference/cli-ref-add.md) command to copy a package to the feed:
 
