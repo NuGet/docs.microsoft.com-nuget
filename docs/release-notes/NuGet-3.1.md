@@ -52,7 +52,9 @@ The NuGet command-line executable was updated and moved to a new distributable l
 
 The new distributable location resides on the dist.nuget.org host, with a folder structure that follows this template:
 
-     {platform supported}/{version}/nuget.exe
+```
+{platform supported}/{version}/nuget.exe
+```
 
 ### New Features
 

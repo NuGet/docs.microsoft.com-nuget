@@ -43,7 +43,9 @@ listing" for the package content API mentioned below.
 > [!Note]
 > This list contains both listed and unlisted package versions.
 
+```
 GET {@id}/{LOWER_ID}/index.json
+```
 
 ### Request parameters
 
@@ -52,7 +54,7 @@ Name     | In     | Type    | Required | Notes
 LOWER_ID | URL    | string  | yes      | The package ID, lowercased
 
 The `LOWER_ID` value is the desired package ID lowercased using the rules implemented by .NET's
-[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) method.
+[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant&preserve-view=true) method.
 
 ### Response
 
@@ -74,7 +76,9 @@ in the following endpoints.
 
 ### Sample request
 
+```
 GET https://api.nuget.org/v3-flatcontainer/owin/index.json
+```
 
 ### Sample response
 
@@ -85,7 +89,9 @@ GET https://api.nuget.org/v3-flatcontainer/owin/index.json
 If the client knows a package ID and version and wants to download the package content, they only need to construct the
 following URL:
 
+```
 GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
+```
 
 ### Request parameters
 
@@ -95,7 +101,7 @@ LOWER_ID      | URL    | string | yes      | The package ID, lowercase
 LOWER_VERSION | URL    | string | yes      | The package version, normalized and lowercased
 
 Both `LOWER_ID` and `LOWER_VERSION` are lowercased using the rules implemented by .NET's
-[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant)
+[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant&preserve-view=true)
 method.
 
 The `LOWER_VERSION` is the desired package version normalized using NuGet's version
@@ -111,7 +117,9 @@ If the package does not exist on the package source, a 404 status code is return
 
 ### Sample request
 
+```
 GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
+```
 
 ### Sample response
 
@@ -122,7 +130,9 @@ The binary stream that is the .nupkg for Newtonsoft.Json 9.0.1.
 If the client knows a package ID and version and wants to download the package manifest, they only need to construct the
 following URL:
 
+```
 GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
+```
 
 ### Request parameters
 
@@ -132,7 +142,7 @@ LOWER_ID      | URL    | string | yes      | The package ID, lowercase
 LOWER_VERSION | URL    | string | yes      | The package version, normalized and lowercased
 
 Both `LOWER_ID` and `LOWER_VERSION` are lowercased using the rules implemented by .NET's
-[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) method.
+[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant&preserve-view=true) method.
 
 The `LOWER_VERSION` is the desired package version normalized using NuGet's version
 [normalization rules](../concepts/package-versioning.md#normalized-version-numbers). This means that build metadata
@@ -147,7 +157,9 @@ If the package does not exist on the package source, a 404 status code is return
 
 ### Sample request
 
+```
 GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/6.0.4/newtonsoft.json.nuspec
+```
 
 ### Sample response
 

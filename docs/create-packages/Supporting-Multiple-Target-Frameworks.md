@@ -19,7 +19,9 @@ You must manually lay out the package as described in this article when using th
 
 When building a package that contains only one version of a library or target multiple frameworks, you always make subfolders under `lib` using different case-sensitive framework names with the following convention:
 
+```
 lib\{framework name}[{version}]
+```
 
 For a complete list of supported names, see the [Target Frameworks reference](../reference/target-frameworks.md#supported-frameworks).
 
@@ -27,6 +29,7 @@ You should never have a version of the library that is not specific to a framewo
 
 For example, the following folder structure supports four versions of an assembly that are framework-specific:
 
+```
 \lib
     \net46
         \MyAssembly.dll
@@ -36,6 +39,7 @@ For example, the following folder structure supports four versions of an assembl
         \MyAssembly.dll
     \netcore
         \MyAssembly.dll
+```
 
 To easily include all these files when building the package, use a recursive `**` wildcard in the `<files>` section of your `.nuspec`:
 
@@ -49,6 +53,7 @@ To easily include all these files when building the package, use a recursive `**
 
 If you have architecture-specific assemblies, that is, separate assemblies that target ARM, x86, and x64, you must place them in a folder named `runtimes` within sub-folders named `{platform}-{architecture}\lib\{framework}` or `{platform}-{architecture}\native`. For example, the following folder structure would accommodate both native and managed DLLs targeting Windows 10 and the `uap10.0` framework:
 
+```
 \runtimes
     \win10-arm
         \native
@@ -59,6 +64,7 @@ If you have architecture-specific assemblies, that is, separate assemblies that 
     \win10-x64
         \native
         \lib\uap10.0
+```
 
 These assemblies will only be available at runtime, so if you want to provide the corresponding compile time assembly as well then have `AnyCPU` assembly in `/ref/{tfm}` folder. 
 
@@ -76,11 +82,13 @@ If a match is not found, NuGet copies the assembly for the highest version that 
 
 For example, consider the following folder structure in a package:
 
+```
 \lib
     \net45
         \MyAssembly.dll
     \net461
         \MyAssembly.dll
+```
 
 When installing this package in a project that targets .NET Framework 4.6, NuGet installs the assembly in the `net45` folder, because that's the highest available version that's less than or equal to 4.6.
 
@@ -92,12 +100,14 @@ If the project targets .NET framework 4.0 and earlier, NuGet throws an appropria
 
 NuGet copies assemblies from only a single library folder in the package. For example, suppose a package has the following folder structure:
 
+```
 \lib
     \net40
         \MyAssembly.dll (v1.0)
         \MyAssembly.Core.dll (v1.0)
     \net45
         \MyAssembly.dll (v2.0)
+```
 
 When the package is installed in a project that targets .NET Framework 4.5, `MyAssembly.dll` (v2.0) is the only assembly installed. `MyAssembly.Core.dll` (v1.0) is not installed because it's not listed in the `net45` folder. NuGet behaves this way because `MyAssembly.Core.dll` might have merged into version 2.0 of `MyAssembly.dll`.
 
@@ -157,6 +167,7 @@ When packaging libraries targeting the Portable Class Library it can be tricky t
 
 With `packages.config`, content files and PowerShell scripts can be grouped by target framework using the same folder convention inside the `content` and `tools` folders. For example:
 
+```
 \content
     \net46
         \MyContent.txt
@@ -173,6 +184,7 @@ With `packages.config`, content files and PowerShell scripts can be grouped by t
     \uap
         install.ps1
         uninstall.ps1
+```
 
 If a framework folder is left empty, NuGet doesn't add assembly references or content files or run the PowerShell scripts for that framework.
 

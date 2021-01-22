@@ -159,23 +159,23 @@ We added some new APIs to our extensibility services to fill the gap of missing 
 
 #### IVsPackageInstallerServices
 
-    ```cs
-    // Checks if a NuGet package with the specified Id and version is installed in the specified project.
-    bool IsPackageInstalledEx(Project project, string id, string versionString);
+```cs
+// Checks if a NuGet package with the specified Id and version is installed in the specified project.
+bool IsPackageInstalledEx(Project project, string id, string versionString);
 
-    // Get the list of NuGet packages installed in the specified project.
-    IEnumerable<IVsPackageMetadata> GetInstalledPackages(Project project);
-    ```
+// Get the list of NuGet packages installed in the specified project.
+IEnumerable<IVsPackageMetadata> GetInstalledPackages(Project project);
+```
 
 #### IVsPackageInstaller
 
-    ```cs
-    // Installs one or more packages that exist on disk in a folder defined in the registry.
-    void InstallPackagesFromRegistryRepository(string keyName, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
+```cs
+// Installs one or more packages that exist on disk in a folder defined in the registry.
+void InstallPackagesFromRegistryRepository(string keyName, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
 
-    // Installs one or more packages that are embedded in a Visual Studio Extension Package.
-    void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
-    ```
+// Installs one or more packages that are embedded in a Visual Studio Extension Package.
+void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
+```
 
 ### Development-Only Dependencies
 

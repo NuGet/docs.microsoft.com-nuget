@@ -94,7 +94,9 @@ dependencies along with the package.
 ### `Get-Package` command improvement
 The `Get-Package` command now supports a `-ProjectName` parameter. So the command
 
-    Get-Package –ProjectName A
+```
+Get-Package –ProjectName A
+```
 
 will list all packages installed in project A.
 

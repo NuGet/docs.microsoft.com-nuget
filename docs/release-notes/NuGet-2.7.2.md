@@ -20,11 +20,13 @@ For quite some time, Microsoft has included the NuGet packages for several popul
 
 To mitigate this issue, NuGet 2.7.2 allows the script author to include the license text block within a specially marked section which looks as follows.
 
-    /************** NUGET: BEGIN LICENSE TEXT **************
-     * The following code is licensed under the MIT license
-     * Additional license information below is informational
-     * only.
-     ************** NUGET: END LICENSE TEXT ***************/
+```
+/************** NUGET: BEGIN LICENSE TEXT **************
+    * The following code is licensed under the MIT license
+    * Additional license information below is informational
+    * only.
+    ************** NUGET: END LICENSE TEXT ***************/
+```
 
 When updating packages with content files containing this block, NuGet does not factor the contents of the block into the comparison with the version on the NuGet gallery, and can therefore delete and update the content file as though it matches the original copy.
 

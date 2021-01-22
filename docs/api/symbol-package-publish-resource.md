@@ -39,7 +39,9 @@ The `PUT` HTTP method is supported by this resource.
 
 nuget.org supports pushing new symbol packages format ([snupkg](../create-packages/Symbol-Packages-snupkg.md)) using the following API. 
 
-    PUT https://www.nuget.org/api/v2/symbolpackage
+```
+PUT https://www.nuget.org/api/v2/symbolpackage
+```
 
 Symbol packages with the same ID and version
 can be submitted multiple times. A symbol package will be rejected in the following cases.

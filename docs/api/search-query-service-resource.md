@@ -45,7 +45,9 @@ package metadata fields may also be considered.
 
 An unlisted package should never appear in search results.
 
-    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
+GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
 
 ### Request parameters
 
@@ -137,7 +139,9 @@ name      | string  | yes      | The name of the package type.
 
 ### Sample request
 
+```
 GET https://azuresearch-usnc.nuget.org/query?q=NuGet.Versioning&prerelease=false&semVerLevel=2.0.0
+```
 
 ### Sample response
 
