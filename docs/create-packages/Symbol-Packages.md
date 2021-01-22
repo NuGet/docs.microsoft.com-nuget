@@ -41,6 +41,7 @@ A legacy symbol package can target multiple target frameworks in the same way th
 
 For example, a legacy symbol package that targets .NET 4.0 and Silverlight 4 would have this layout:
 
+```
 \lib
     \net40
         \MyAssembly.dll
@@ -48,9 +49,11 @@ For example, a legacy symbol package that targets .NET 4.0 and Silverlight 4 wou
     \sl40
         \MyAssembly.dll
         \MyAssembly.pdb
+```
 
 Source files are then placed in a separate special folder named `src`, which must follow the relative structure of your source repository. This is because PDBs contain absolute paths to source files used to compile the matching DLL, and they need to be found during the publishing process. A base path (common path prefix) can be stripped out. For example, consider a library built from these files:
 
+```
 C:\Projects
     \MyProject
         \Common
@@ -64,9 +67,11 @@ C:\Projects
                 \AssemblyInfo.cs
             \MySilverlightExtensions.cs
             \MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
+```
 
 Apart from the `lib` folder, a legacy symbol package would need to contain this layout:
 
+```
 \src
     \Common
         \MyClass.cs
@@ -77,6 +82,7 @@ Apart from the `lib` folder, a legacy symbol package would need to contain this 
         \Properties
             \AssemblyInfo.cs
         \MySilverlightExtensions.cs
+```
 
 ## Referring to files in the nuspec
 

@@ -535,6 +535,7 @@ Each `<file>` element specifies the following attributes:
 
 **Single assembly**
 
+```
 Source file:
     library.dll
 
@@ -543,9 +544,11 @@ Source file:
 
 Packaged result:
     lib\library.dll
+```
 
 **Single assembly specific to a target framework**
 
+```
 Source file:
     library.dll
 
@@ -554,9 +557,11 @@ Source file:
 
 Packaged result:
     lib\net40\library.dll
+```
 
 **Set of DLLs using a wildcard**
 
+```
 Source files:
     bin\release\libraryA.dll
     bin\release\libraryB.dll
@@ -567,9 +572,11 @@ Source files:
 Packaged result:
     lib\libraryA.dll
     lib\libraryB.dll
+```
 
 **DLLs for different frameworks**
 
+```
 Source files:
     lib\net40\library.dll
     lib\net20\library.dll
@@ -580,9 +587,11 @@ Source files:
 Packaged result:
     lib\net40\library.dll
     lib\net20\library.dll
+```
 
 **Excluding files**
 
+```
 Source files:
     \tools\fileA.bak
     \tools\fileB.bak
@@ -595,6 +604,7 @@ Source files:
 
 Package result:
     (no files)
+```
 
 ## Including content files
 
@@ -615,6 +625,7 @@ For content files, simply use the same format as for assembly files, but specify
 
 **Basic content files**
 
+```
 Source files:
     css\mobile\style1.css
     css\mobile\style2.css
@@ -625,9 +636,11 @@ Source files:
 Packaged result:
     content\css\mobile\style1.css
     content\css\mobile\style2.css
+```
 
 **Content files with directory structure**
 
+```
 Source files:
     css\mobile\style.css
     css\mobile\wp7\style.css
@@ -640,9 +653,11 @@ Packaged result:
     content\css\mobile\style.css
     content\css\mobile\wp7\style.css
     content\css\browser\style.css
+```
 
 **Content file specific to a target framework**
 
+```
 Source file:
     css\cool\style.css
 
@@ -651,11 +666,13 @@ Source file:
 
 Packaged result:
     content\style.css
+```
 
 **Content file copied to a folder with dot in name**
 
 In this case, NuGet sees that the extension in `target` does not match the extension in `src` and thus treats that part of the name in `target` as a folder:
 
+```
 Source file:
     images\picture.png
 
@@ -664,11 +681,13 @@ Source file:
 
 Packaged result:
     content\images\package.icons\picture.png
+```
 
 **Content files without extensions**
 
 To include files without an extension, use the `*` or `**` wildcards:
 
+```
 Source file:
     flags\installed
 
@@ -677,11 +696,13 @@ Source file:
 
 Packaged result:
     flags\installed
+```
 
 **Content files with deep path and deep target**
 
 In this case, because the file extensions of the source and target match, NuGet assumes that the target is a file name and not a folder:
 
+```
 Source file:
     css\cool\style.css
 
@@ -692,9 +713,11 @@ Source file:
 
 Packaged result:
     content\css\cool\style.css
+```
 
 **Renaming a content file in the package**
 
+```
 Source file:
     ie\css\style.css
 
@@ -703,9 +726,11 @@ Source file:
 
 Packaged result:
     content\css\ie.css
+```
 
 **Excluding files**
 
+```
 Source file:
     docs\*.txt (multiple files)
 
@@ -717,6 +742,7 @@ Source file:
 Packaged result:
     All .txt files from docs except admin.txt (first example)
     All .txt files from docs except admin.txt and log.txt (second example)
+```
 
 <a name="using-contentfiles-element-for-content-files"></a>
 
@@ -744,7 +770,9 @@ When installing a package, NuGet applies the child elements of `<contentFiles>` 
 
 The package project should structure content using the following pattern:
 
-    /contentFiles/{codeLanguage}/{TxM}/{any?}
+```
+/contentFiles/{codeLanguage}/{TxM}/{any?}
+```
 
 - `codeLanguages` may be `cs`, `vb`, `fs`, `any`, or the lowercase equivalent of a given `$(ProjectLanguage)`
 - `TxM` is any legal target framework moniker that NuGet supports (see [Target frameworks](../reference/target-frameworks.md)).
@@ -752,6 +780,7 @@ The package project should structure content using the following pattern:
 
 For example:
 
+```
 Language- and framework-agnostic:
     /contentFiles/any/any/config.xml
 
@@ -760,11 +789,14 @@ net45 content for all languages
 
 C#-specific content for net45 and up
     /contentFiles/cs/net45/sample.cs
+```
 
 Empty folders can use `.` to opt out of providing content for certain combinations of language and TxM, for example:
 
+```
 /contentFiles/vb/any/code.vb
 /contentFiles/cs/any/.
+```
 
 #### Example contentFiles section
 

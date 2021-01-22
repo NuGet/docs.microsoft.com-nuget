@@ -72,6 +72,7 @@ With this in mind, it's generally good to follow recognized naming conventions s
 
 Whatever suffixes you use, however, NuGet will give them precedence in reverse alphabetical order:
 
+```
 1.0.1
 1.0.1-zzz
 1.0.1-rc
@@ -81,6 +82,7 @@ Whatever suffixes you use, however, NuGet will give them precedence in reverse a
 1.0.1-beta
 1.0.1-alpha.2
 1.0.1-alpha
+```
 
 As shown, the version without any suffix will always take precedence over pre-release versions.
 
