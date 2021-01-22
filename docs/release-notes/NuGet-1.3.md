@@ -31,35 +31,35 @@ This command makes it easy to get to the project page for a package from within 
 Console. It also provides options to open the license URL and the report abuse page for the package.
 The syntax for the command is:
 
-    ```
-    Open-PackagePage -Id <string> [-Version] [-Source] [-License] [-ReportAbuse] [-PassThru]
-    ```
+```
+Open-PackagePage -Id <string> [-Version] [-Source] [-License] [-ReportAbuse] [-PassThru]
+```
 
 The `-PassThru` option is used to return the value of the specified URL.
 
 Examples:
 
-    ```
-    PM> Open-PackagePage Ninject
-    ```
+```
+PM> Open-PackagePage Ninject
+```
 
 Opens a browser to the project URL specified in the Ninject package.
 
-    ```
-    PM> Open-PackagePage Ninject -License
-    ```
+```
+PM> Open-PackagePage Ninject -License
+```
 
 Opens a browser to the license URL specified in the Ninject package.
 
-    ```
-    PM> Open-PackagePage Ninject -ReportAbuse
-    ```
+```
+PM> Open-PackagePage Ninject -ReportAbuse
+```
 
 Opens a browser to the URL at the current package source used to report abuse for the specified package.
 
-    ```
-    PM> $url = Open-PackagePage Ninject -License -WhatIf -PassThru
-    ```
+```
+PM> $url = Open-PackagePage Ninject -License -WhatIf -PassThru
+```
 
 Assigns the license URL to the variable, $url, without opening the URL in a browser.
 
