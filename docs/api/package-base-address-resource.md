@@ -54,7 +54,7 @@ Name     | In     | Type    | Required | Notes
 LOWER_ID | URL    | string  | yes      | The package ID, lowercased
 
 The `LOWER_ID` value is the desired package ID lowercased using the rules implemented by .NET's
-[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) method.
+[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant&preserve-view=true) method.
 
 ### Response
 
@@ -101,7 +101,7 @@ LOWER_ID      | URL    | string | yes      | The package ID, lowercase
 LOWER_VERSION | URL    | string | yes      | The package version, normalized and lowercased
 
 Both `LOWER_ID` and `LOWER_VERSION` are lowercased using the rules implemented by .NET's
-[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant)
+[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant&preserve-view=true)
 method.
 
 The `LOWER_VERSION` is the desired package version normalized using NuGet's version
@@ -142,7 +142,7 @@ LOWER_ID      | URL    | string | yes      | The package ID, lowercase
 LOWER_VERSION | URL    | string | yes      | The package version, normalized and lowercased
 
 Both `LOWER_ID` and `LOWER_VERSION` are lowercased using the rules implemented by .NET's
-[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) method.
+[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant&preserve-view=true) method.
 
 The `LOWER_VERSION` is the desired package version normalized using NuGet's version
 [normalization rules](../concepts/package-versioning.md#normalized-version-numbers). This means that build metadata

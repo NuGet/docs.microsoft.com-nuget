@@ -99,7 +99,7 @@ Name     | In     | Type    | Required | Notes
 LOWER_ID | URL    | string  | yes      | The package ID, lowercased
 
 The `LOWER_ID` value is the desired package ID lowercased using the rules implemented by .NET's
-[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) method.
+[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant&preserve-view=true) method.
 
 ### Response
 
