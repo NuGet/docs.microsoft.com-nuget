@@ -52,7 +52,7 @@ If a client interacts with external services and needs to validate whether a pac
 
 This API is used to get a verify-scope key for a nuget.org author to validate a package owned by him/her.
 
-    `POST api/v2/package/create-verification-key/{ID}/{VERSION}`
+    POST api/v2/package/create-verification-key/{ID}/{VERSION}
 
 #### Request parameters
 
