@@ -57,9 +57,13 @@ whether the version is normalized.
 
 For example, nuget.org's report abuse template looks like this:
 
-    https://www.nuget.org/packages/{id}/{version}/ReportAbuse
+```
+https://www.nuget.org/packages/{id}/{version}/ReportAbuse
+```
 
 If the client implementation needs to display a link to the report abuse form for NuGet.Versioning 4.3.0, it would
 produce the following URL and provide it to the user:
 
-    https://www.nuget.org/packages/NuGet.Versioning/4.3.0/ReportAbuse
+```
+https://www.nuget.org/packages/NuGet.Versioning/4.3.0/ReportAbuse
+```

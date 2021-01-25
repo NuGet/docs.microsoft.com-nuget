@@ -1,8 +1,8 @@
 ---
 title: NuGet 3.1 Release Notes
 description: Release notes for NuGet 3.1 including known issues, bug fixes, added features, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
 ---
@@ -52,7 +52,9 @@ The NuGet command-line executable was updated and moved to a new distributable l
 
 The new distributable location resides on the dist.nuget.org host, with a folder structure that follows this template:
 
-     {platform supported}/{version}/nuget.exe
+```
+{platform supported}/{version}/nuget.exe
+```
 
 ### New Features
 

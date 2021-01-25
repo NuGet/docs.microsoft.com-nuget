@@ -1,8 +1,8 @@
 ---
 title: Install and manage NuGet packages using the console in Visual Studio
 description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords: 
@@ -157,7 +157,7 @@ Some packages install new commands for the console. For example, `MvcScaffolding
 
 A PowerShell profile lets you make commonly-used commands available wherever you use PowerShell. NuGet supports a NuGet-specific profile typically found at the following location:
 
-    %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
+*%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1*
 
 To find the profile, type `$profile` in the console:
 

@@ -1,8 +1,8 @@
 ---
 title: NuGet 5.1 RTM Release Notes
 description: Release notes for NuGet 5.1 including new features, bug fixes, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/21/2019
 ms.topic: conceptual
 ---

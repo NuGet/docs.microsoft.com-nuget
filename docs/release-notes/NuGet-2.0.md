@@ -1,8 +1,8 @@
 ---
 title: NuGet 2.0 Release Notes
 description: Release notes for NuGet 2.0 including known issues, bug fixes, added features, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
 ---
@@ -68,23 +68,25 @@ Note that mixing the two formats is not allowed. For example, the following snip
 
 In addition to assembly references, content files and PowerShell scripts can also be grouped by target framework. The same folder structure found in the `lib` folder for specifying target framework can  now be applied in the same way to the `content` and `tools` folders. For example:
 
-    \content
-        \net11
-            \MyContent.txt
-        \net20
-            \MyContent20.txt
-        \net40
-        \sl40
-            \MySilverlightContent.html
+```
+\content
+    \net11
+        \MyContent.txt
+    \net20
+        \MyContent20.txt
+    \net40
+    \sl40
+        \MySilverlightContent.html
 
-    \tools
-        \init.ps1
-        \net40
-            \install.ps1
-            \uninstall.ps1
-        \sl40
-            \install.ps1
-            \uninstall.ps1
+\tools
+    \init.ps1
+    \net40
+        \install.ps1
+        \uninstall.ps1
+    \sl40
+        \install.ps1
+        \uninstall.ps1
+```
 
 **Note**: Because `init.ps1` is executed at the solution level and is not dependent on any individual project, it must be placed directly under the `tools` folder. If placed within a framework-specific folder, it will be ignored.
 

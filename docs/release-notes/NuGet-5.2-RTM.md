@@ -1,8 +1,8 @@
 ---
 title: NuGet 5.2 RTM Release Notes
 description: Release notes for NuGet 5.2 including new features, bug fixes, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/23/2019
 ms.topic: conceptual
 ---

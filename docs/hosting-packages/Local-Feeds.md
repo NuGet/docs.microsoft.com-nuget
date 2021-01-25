@@ -1,8 +1,8 @@
 ---
 title: Setting up Local NuGet Feeds
 description: How to create a local feed for NuGet packages using folders on your local network
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/06/2017
 ms.topic: conceptual
 ---
@@ -20,11 +20,13 @@ To enable the source, add its pathname (such as `\\myserver\packages`) to the li
 
 The hierarchical versioned folder tree has the following general structure:
 
-    \\myserver\packages
-      └─<packageID>
-        └─<version>
-          ├─<packageID>.<version>.nupkg
-          └─<other files>
+```
+\\myserver\packages
+  └─<packageID>
+    └─<version>
+      ├─<packageID>.<version>.nupkg
+      └─<other files>
+```
 
 NuGet creates this structure automatically when you use the [`nuget add`](../reference/cli-reference/cli-ref-add.md) command to copy a package to the feed:
 

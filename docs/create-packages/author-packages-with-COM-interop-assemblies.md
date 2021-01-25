@@ -1,8 +1,8 @@
 ---
 title: Create packages with COM interop assemblies
 description: Describes how to create packages that contain COM interop assemblies 
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/09/2019
 ms.topic: conceptual
 ---

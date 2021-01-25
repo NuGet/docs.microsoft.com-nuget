@@ -43,7 +43,9 @@ a package typeahead feature in a user interface integrated with a NuGet package 
 
 A package with only unlisted versions will not appear in the results.
 
-    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
+GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
 
 ### Request parameters
 
@@ -91,7 +93,9 @@ data      | array of strings | yes      | The package IDs matched by the request
 
 ### Sample request
 
-    GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+```
+GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+```
 
 ### Sample response
 
@@ -104,7 +108,9 @@ versions for a provided package ID.
 
 A package version that is unlisted will not appear in the results.
 
-    GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
+```
+GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
+```
 
 ### Request parameters
 
@@ -137,7 +143,9 @@ The package versions in the `data` array may contain SemVer 2.0.0 build metadata
 
 ### Sample request
 
-    GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
+```
+GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
+```
 
 ### Sample response
 

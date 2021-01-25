@@ -1,8 +1,8 @@
 ---
 title: NuGet 5.3 Release Notes
 description: Release notes for NuGet 5.3 including new features, bug fixes, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 09/06/2019
 ms.topic: conceptual
 ---

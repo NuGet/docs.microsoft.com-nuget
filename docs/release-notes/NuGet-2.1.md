@@ -1,8 +1,8 @@
 ---
 title: NuGet 2.1 Release Notes
 description: Release notes for NuGet 2.1 including known issues, bug fixes, added features, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
 ---
@@ -17,14 +17,18 @@ NuGet 2.1 was released on October 4, 2012.
 
 NuGet 2.1 gives you greater flexibility in controlling NuGet settings by way of recursively walking up the folder structure looking for `NuGet.Config` files and then building the configuration from the set of all found files.  As an example, consider the scenario where a team has an internal package repository for CI builds of other internal dependencies. The folder structure for an individual project might look like the following:
 
-    C:\
-    C:\myteam\
-    C:\myteam\solution1
-    C:\myteam\solution1\project1
+```
+C:\
+C:\myteam\
+C:\myteam\solution1
+C:\myteam\solution1\project1
+```
 
 Additionally, if package restore is enabled for the solution, the following folder will also exist:
 
-    C:\myteam\solution1\.nuget
+```
+C:\myteam\solution1\.nuget
+```
 
 In order to have the team’s internal package repository available for all projects that the team works on, while not making it available for every project on the machine, we can create a new Nuget.Config file and place it in the c:\myteam folder. There is no way to specificy a packages folder per project.
 
@@ -117,16 +121,20 @@ Over the past several iterations, changes have been introduced to the NuGet gall
 
 Prior to NuGet 2.1, NuGet would skip updating a package when there was a not a high version number.  This introduced friction for certain scenarios – particularly in the case of build or CI scenarios where the team did not want to increment the package version number with each build.  The desired behavior was to force an update regardless.  NuGet 2.1 addresses this with the ‘reinstall’ flag.  For example, previous versions of NuGet would result in the following when attempting to update a package that did not have a more recent package version:
 
-    PM> Update-Package Moq
-    No updates available for 'Moq' in project 'MySolution.MyConsole'.
+```
+PM> Update-Package Moq
+No updates available for 'Moq' in project 'MySolution.MyConsole'.
+```
 
 With the reinstall flag, the package will be updated regardless of whether there is a newer version.
 
-    PM> Update-Package Moq -Reinstall
-    Successfully removed 'Moq 4.0.10827' from MySolution.MyConsole.
-    Successfully uninstalled 'Moq 4.0.10827'.
-    Successfully installed 'Moq 4.0.10827'.
-    Successfully added 'Moq 4.0.10827' to MySolution.MyConsole.
+```
+PM> Update-Package Moq -Reinstall
+Successfully removed 'Moq 4.0.10827' from MySolution.MyConsole.
+Successfully uninstalled 'Moq 4.0.10827'.
+Successfully installed 'Moq 4.0.10827'.
+Successfully added 'Moq 4.0.10827' to MySolution.MyConsole.
+```
 
 Another scenario where the reinstall flag proves beneficial is that of framework re-targeting. When changing the target framework of a project (for example, from .NET 4 to .NET 4.5), Update-Package -Reinstall can update references to the correct assemblies for all NuGet packages installed in the project.
 

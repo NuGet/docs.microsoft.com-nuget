@@ -60,9 +60,13 @@ words, the server should accept also accept non-normalized versions.
 
 For example, nuget.org's package details template looks like this:
 
-    https://www.nuget.org/packages/{id}/{version}
+```http
+https://www.nuget.org/packages/{id}/{version}
+```
 
 If the client implementation needs to display a link to the package details for NuGet.Versioning 4.3.0, it would
 produce the following URL and provide it to the user:
 
-    https://www.nuget.org/packages/NuGet.Versioning/4.3.0
+```http
+https://www.nuget.org/packages/NuGet.Versioning/4.3.0
+```

@@ -1,8 +1,8 @@
 ---
 title: Create and publish a .NET Standard NuGet package - Visual Studio on Windows
 description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio on Windows.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/16/2019
 ms.topic: quickstart
 ---

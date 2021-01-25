@@ -1,8 +1,8 @@
 ---
 title: Install and use a NuGet package using the dotnet CLI
 description: A walkthrough tutorial on the process of installing and using a NuGet package in a .NET Core project.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/23/2018
 ms.topic: quickstart
 ---

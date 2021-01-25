@@ -1,8 +1,8 @@
 ---
 title: NuGet Package Version Reference
 description: Exact details on specifying version numbers and ranges for other packages upon which a NuGet package depends, and how dependencies are installed.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
@@ -31,10 +31,12 @@ A specific version number is in the form *Major.Minor.Patch[-Suffix]*, where the
 
 **Examples:**
 
-    1.0.1
-    6.11.1231
-    4.3.1-rc
-    2.2.44-beta1
+```
+1.0.1
+6.11.1231
+4.3.1-rc
+2.2.44-beta1
+```
 
 > [!Important]
 > nuget.org rejects any package upload that lacks an exact version number. The version must be specified in the `.nuspec` or project file used to create the package.
@@ -54,14 +56,16 @@ That said, package developers generally follow recognized naming conventions:
 
 When resolving package references and multiple package versions differ only by suffix, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order. For example, the following versions would be chosen in the exact order shown:
 
-    1.0.1
-    1.0.1-zzz
-    1.0.1-rc
-    1.0.1-open
-    1.0.1-beta
-    1.0.1-alpha2
-    1.0.1-alpha
-    1.0.1-aaa
+```
+1.0.1
+1.0.1-zzz
+1.0.1-rc
+1.0.1-open
+1.0.1-beta
+1.0.1-alpha2
+1.0.1-alpha
+1.0.1-aaa
+```
 
 ## Semantic Versioning 2.0.0
 
@@ -223,18 +227,18 @@ When obtaining packages from a repository during install, reinstall, or restore 
 
 - Leading zeroes are removed from version numbers:
 
-        1.00 is treated as 1.0
-        1.01.1 is treated as 1.1.1
-        1.00.0.1 is treated as 1.0.0.1
+  1.00 is treated as 1.0
+  1.01.1 is treated as 1.1.1
+  1.00.0.1 is treated as 1.0.0.1
 
 - A zero in the fourth part of the version number will be omitted
 
-        1.0.0.0 is treated as 1.0.0
-        1.0.01.0 is treated as 1.0.1
-        
+  1.0.0.0 is treated as 1.0.0
+  1.0.01.0 is treated as 1.0.1
+
 - SemVer 2.0.0 build metadata is removed
 
-        1.0.7+r3456 is treated as 1.0.7
+  1.0.7+r3456 is treated as 1.0.7
 
 `pack` and `restore` operations normalize versions whenever possible. For packages already built, this normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions when resolving dependencies.
 

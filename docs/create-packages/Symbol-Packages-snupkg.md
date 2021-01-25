@@ -1,7 +1,7 @@
 ---
 title: How to publish NuGet symbol packages using the new symbol package format '.snupkg'| Microsoft Docs
-author: cristinamanu
-ms.author: cristinamanu
+author: JonDouglas
+ms.author: jodou
 manager: skofman
 ms.date: 10/30/2018
 ms.topic: reference
@@ -17,6 +17,9 @@ ms.reviewer:
 # Creating symbol packages (.snupkg)
 
 A good debugging experience relies on the presence of debug symbols as they provide critical information like the association between the compiled and the source code, names of local variables, stack traces, and more. You can use symbol packages (.snupkg) to distribute these symbols and improve the debugging experience of your NuGet packages.
+
+> Note that symbol package isn't the only strategy to make the debug symbols available to the consumers of your library. It's also [possible to `embed`](https://docs.microsoft.com/dotnet/core/deploying/single-file#include-pdb-files-inside-the-bundle) them in the `dll` or `exe` with the following project property:
+> `<DebugType>embedded</DebugType>`
 
 ## Prerequisites
 

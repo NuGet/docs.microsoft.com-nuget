@@ -215,9 +215,7 @@ If, however, your NuGet.org account is not associated/linked with a Microsoft ac
 
 If you see an error like below during your login flow with your email account domain(@yourdomain.com), see the steps below to recover your NuGet.org account.
 
-<p align="center">
-    <img src="media/unmanaged-aad-tenant.png" />
-</p>
+![Error during login for AAD accounts](media/unmanaged-aad-tenant.png)
 
 **What is this unmanaged state thing during login? And why is this happening now?** 
 

@@ -59,7 +59,9 @@ Catalog items are always added to the catalog in a monotonically increasing, chr
 
 The following request fetches the catalog index.
 
-    GET {@id}
+```
+GET {@id}
+```
 
 The catalog index is a JSON document that contains an object with the following properties:
 
@@ -96,7 +98,9 @@ URL.
 
 ### Sample request
 
-    GET https://api.nuget.org/v3/catalog0/index.json
+```
+GET https://api.nuget.org/v3/catalog0/index.json
+```
 
 ### Sample response
 
@@ -158,7 +162,9 @@ For more details about what each type means, see the [corresponding items type](
 
 ### Sample request
 
-    GET https://api.nuget.org/v3/catalog0/page2926.json
+```
+GET https://api.nuget.org/v3/catalog0/page2926.json
+```
 
 ### Sample response
 
@@ -259,7 +265,9 @@ The `published` timestamp is the time when the package was last listed.
 
 #### Sample request
 
+```
 GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
+```
 
 #### Sample response
 
@@ -287,7 +295,9 @@ item's commit timestamp.
 
 #### Sample request
 
+```
 GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
+```
 
 #### Sample response
 
