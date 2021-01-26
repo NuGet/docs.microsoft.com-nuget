@@ -31,24 +31,24 @@ And finally, **Do not** recommendations indicate something you should almost nev
 
 ❌ DO NOT use the `LicenseUrl` metadata property.
 
-## Where do I define my package?
+## Create a NuGet package
 
-TODO: Talk about how and where to make the suggested changes through out the guide (Visual Studio properties, project file, packages.config)
+The latest recommended way to to create a NuGet package is from an [SDK-style project](https://docs.microsoft.com/en-us/nuget/resources/check-project-format). SDK-style project properties, including target [framework](#framework-targeting) and [package metadata](#package-metadata), are defined in the project file (.csproj). 
 
+Create package from your SDK-style project by defining the required properties and packing in [Visual Studio](https://docs.microsoft.com/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli) or the [dotnet CLI](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli).
+
+✔️ DO create an SDK-style project and create (pack) your package using Visual Studio or the dotnet CLI.
+
+For more detailed guidance regarding package creation including necessary client tools, project file example, and commands, see [Create a NuGet package using the dotnet CLI](https://docs.microsoft.com/nuget/create-packages/creating-a-package-dotnet-cli).
 ## Framework targeting
 
-Authors should consider making their packages as inclusive as possible if they would like to maximize the number of potential consumers and overall impact in the .NET ecosystem.
+Understanding the differences between target frameworks and deciding which one or ones that are right for your library can be very confusing given the wide variety of options available from .NET Framework to .NET 5. So let's try to make it as straightforward as possible.
 
-Highly inclusive packages are cross-platform and compatible with as many frameworks as possible. Today, that means using .NET Standard. .NET Standard is a specification of .NET APIs that are available on all .NET implementations.
-
-✔️ DO start with including a `netstandard2.0` target.
-> Most general-purpose libraries should not need APIs outside of .NET Standard 2.0. .NET Standard 2.0 is supported by all modern platforms and is the recommended way to support multiple platforms with one target.
-
-See the .NET [Cross-platform targeting guidance](https://docs.microsoft.com/dotnet/standard/library-guidance/cross-platform-targeting) for more advanced suggestions regarding cross-platform and multitargeting scenarios.
-
+✔️ CONSIDER starting with [the latest .NET target framework](https://docs.microsoft.com/dotnet/standard/frameworks#latest-versions).
+> Using the latest .NET target framework will allow you to take advantage of the latest .NET technology and language features.
 ## Package metadata
 
-Metadata is a foundational component of any NuGet package. The quality of your metadata can vastly influence the discoverability and usability of your package.
+Metadata is a foundational component of any NuGet package. The quality of your metadata can vastly influence the discoverability, usability, adn trustworthiness of your package.
 
 In Visual Studio, the recommended way to specify package metadata is to go Project > [Project Name] Properties > Package.
 
@@ -137,7 +137,7 @@ Example: Copyright (c) Contoso 2020
 ### Project URL
 
 ✔️ CONSIDER including a link to an associated project, repository, or company website.
-> Company website links, even if not specific to the package/project, still improve consumer trust.
+> Your project site should have everything users need to know about your package and will likely be where users look for documentation.
 
 ### Icon
 
@@ -153,12 +153,12 @@ Example: Copyright (c) Contoso 2020
 
 ✔️ CONSIDER including a repository type and URL to make it easy for package consumers to view source code, report issues, and view repository documentation.
 
-✔️ CONSIDER setting up [Source Link](https://docs.microsoft.com/dotnet/standard/library-guidance/sourcelink) to add source control metadata to your assemblies and NuGet package.
-> Source Link will automatically adds `Repository URL` and `Repository Type` to the package metadata. It also adds the specific commit associated with your package version.
+✔️ CONSIDER setting up [Source Link](https://docs.microsoft.com/dotnet/standard/library-guidance/sourcelink) to add source control metadata to your NuGet package and make your library easier to debug.
+> Source Link automatically adds `Repository URL` and `Repository Type` to the package metadata. It also adds the specific commit associated with your package version.
 ### Tags
 
 ✔️ DO include several tags with key terms related to your package to enhance discoverability.
-> Tags are taken into account in NuGet's search algorithm and are especially helpful for terms that are not in the Package ID but are relevant.
+> Tags are taken into account in NuGet.org's search algorithm and are especially helpful for terms that are not in the Package ID but are relevant.
 
 For example, if I published a package to log strings to the console, I would include: "logging, log, console, string, output"
 
@@ -173,17 +173,7 @@ For example, if I published a package to log strings to the console, I would inc
 > 
 > If you already track release notes or a changelog in your repo, you can also include a link to the relevant file.
 
-## Dependencies
+## Related topics
 
-### Lean packages
-
-✔️ DO review your package for unnecessary dependencies.
-> Unnecessary dependencies needlessly increase the size of your package as well as increase likelihood of version conflicts for both yourself and your consumers!
-
-### Dependency version ranges
-
-❌ DO NOT have NuGet package references with no minimum version.
-
-❌ AVOID NuGet package references that demand an exact version.
-
-❌ AVOID NuGet package references with a version upper limit.
+- [Create and publish a package (dotnet CLI)](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli)
+- [Create and publish a package (Visual Studio)](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli)
