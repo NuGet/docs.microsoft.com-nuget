@@ -99,7 +99,7 @@ See the [.NET library versioning guide](https://docs.microsoft.com/dotnet/standa
 > For example, if my NuGet.org username is "jdoe" then using "Jane Doe" for the author field may help consumers recognize me as an author. If my organization's NuGet.org username is "ContosoToolkit" then using "Contoso Corporation" may be more recognizable and inspire more consumer trust.
 ### Description
 
-✔️ DO include a short description (up to 4000 characters) for your package that describes what it's for.
+✔️ DO include a short description (up to 4000 characters) to describe your package.
 > Package descriptions are one of the most prominent fields surfaced in NuGet search and will likely be the first thing a potential consumers looks at to determine if a package is right for them.
 
 ### Copyright
