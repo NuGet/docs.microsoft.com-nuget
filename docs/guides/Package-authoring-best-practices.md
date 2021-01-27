@@ -60,7 +60,7 @@ Below is a table mapping and describing available packages metadata elements:
 |-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | [`Package id`](#package-id)                   | [`PackageId`](https://docs.microsoft.com/dotnet/core/tools/csproj#packageid)                                                            | [`id`](https://docs.microsoft.com/nuget/reference/nuspec#id)                                      | The package name or identifier.                    |
 | [`Package version`](#package-version)         | [`PackageVersion`](https://docs.microsoft.com/dotnet/core/tools/csproj#packageversion)                                                  | [`version`](https://docs.microsoft.com/nuget/reference/nuspec#version)                            | NuGet package version.                                           |
-| [`Authors`](#authors)                         | [`Authors`](https://docs.microsoft.com/dotnet/core/tools/csproj#authors)                                                                | [`authors`](https://docs.microsoft.com/nuget/reference/nuspec#authors)                            | A comma-separated list of package authors.                               |
+| [`Authors`](#authors)                         | [`Authors`](https://docs.microsoft.com/dotnet/core/tools/csproj#authors)                                                                | [`authors`](https://docs.microsoft.com/nuget/reference/nuspec#authors)                            | A comma-separated list of package authors, often using the author's real name or organization name.                               |
 | [`Description`](#description)                 | [`Description`](https://docs.microsoft.com/dotnet/core/tools/csproj#description)                                                        | [`description`](https://docs.microsoft.com/nuget/reference/nuspec#description)                    | A description of the package.                                                                |
 | [`Copyright`](#copyright)                     | [`Copyright`](https://docs.microsoft.com/dotnet/core/tools/csproj#copyright)                                                            | [`copyright`](https://docs.microsoft.com/nuget/reference/nuspec#copyright)                        | Copyright details for the package.                                                                      |
 | [`Licensing - Expression`](#licensing)        | [`PackageLicenseExpression`](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file) | [`license type="expression"`](https://docs.microsoft.com/nuget/reference/nuspec#license)          | An SPDX license expression.       |
@@ -95,9 +95,8 @@ See the [.NET library versioning guide](https://docs.microsoft.com/dotnet/standa
 
 ### Authors
 
-✔️ CONSIDER including the current NuGet.org owners for consistency across NuGet clients.
-> Visual Studio currently displayed `Authors` on the Browse tab. It is also in the criteria for ID prefix reservation.
-
+✔️ DO use the author field for you or your organization's "pretty name."
+> For example, if my NuGet.org username is "jdoe" then using "Jane Doe" for the author field may help consumers recognize me as an author. If my organization's NuGet.org username is "ContosoToolkit" then using "Contoso Corporation" may be more recognizable and inspire more consumer trust.
 ### Description
 
 ✔️ DO include a short description (up to 4000 characters) for your package that describes what it's for.
@@ -141,7 +140,7 @@ Example: Copyright (c) Contoso 2020
 
 ### Icon
 
-✔️ CONSIDER including an icon with your package to help visually differentiate it. It's a relatively small addition that can improve perception of package quality.
+✔️ CONSIDER [including an icon with your package](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-an-icon-image-file) to help visually differentiate it. It's a relatively small addition that can improve perception of package quality.
 > Icons can be specific to individual packages or be a brand logo.
 
 ✔️ DO use an image that is 128x128 and has a transparent background (PNG) for best viewing results.
