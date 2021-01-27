@@ -35,17 +35,14 @@ And finally, **Do not** recommendations indicate something you should almost nev
 
 The latest recommended way to to create a NuGet package is from an [SDK-style project](https://docs.microsoft.com/nuget/resources/check-project-format). SDK-style project properties, including target [framework](#framework-targeting) and [package metadata](#package-metadata), are defined in the project file (.csproj).
 
-Create package from your SDK-style project by defining the required properties and packing in [Visual Studio](https://docs.microsoft.com/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli) or the [dotnet CLI](https://docs.microsoft.com/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli).
+Create a package from your SDK-style project by defining the required properties and packing in [Visual Studio](https://docs.microsoft.com/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli) or the [dotnet CLI](https://docs.microsoft.com/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli).
 
 ✔️ DO create an SDK-style project and create (pack) your package using Visual Studio or the dotnet CLI.
 
 For more detailed guidance regarding package creation including necessary client tools, project file example, and commands, see [Create a NuGet package using the dotnet CLI](https://docs.microsoft.com/nuget/create-packages/creating-a-package-dotnet-cli).
-## Framework targeting
 
-Understanding the differences between target frameworks and deciding which one or ones that are right for your library can be very confusing given the wide variety of options available from .NET Framework to .NET 5. So let's try to make it as straightforward as possible.
+To help decide which .NET frameworks to target, see our [latest guidance for cross-platform targeting](https://docs.microsoft.com/dotnet/standard/library-guidance/cross-platform-targeting).
 
-✔️ CONSIDER starting with [the latest .NET target framework](https://docs.microsoft.com/dotnet/standard/frameworks#latest-versions).
-> Using the latest .NET target framework will allow you to take advantage of the latest .NET technology and language features.
 ## Package metadata
 
 Metadata is a foundational component of any NuGet package. The quality of your metadata can vastly influence the discoverability, usability, adn trustworthiness of your package.
