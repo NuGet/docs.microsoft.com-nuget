@@ -38,6 +38,7 @@
 ## [Support multiple target frameworks in your project file](create-packages/multiple-target-frameworks-project-file.md)
 ## [Build a prerelease package](create-packages/prerelease-packages.md)
 ## [Create a symbol package](create-packages/symbol-packages-snupkg.md)
+## [NuGet.org package authoring best practices](create-packages/Package-authoring-best-practices.md)
 ## Advanced tasks
 ### [Support multiple target frameworks](create-packages/supporting-multiple-target-frameworks.md)
 ### [Modify source code and config files](create-packages/source-and-config-file-transformations.md)
