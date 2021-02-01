@@ -87,7 +87,7 @@ If you're publishing a completely new package:
 ✔️ CONSIDER using [SemVer](https://semver.org/) to version your NuGet package.
 > Essentially, this means using the Major.Minor.Patch[-prerelease] format.
 
-✔️ DO publish a package as a [pre-release package](https://docs.microsoft.com/dotnet/standard/library-guidance/nuget#pre-release-packages) if it is non-stable or a preview.
+✔️ DO publish a package as a [pre-release package](https://docs.microsoft.com/nuget/create-packages/prerelease-packages) if it is non-stable or a preview.
 
 See the [.NET library versioning guide](https://docs.microsoft.com/dotnet/standard/library-guidance/versioning) for more advanced guidance.
 
