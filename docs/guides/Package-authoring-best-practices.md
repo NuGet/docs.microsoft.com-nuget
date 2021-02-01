@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Package authoring best practices
 
-This guidance is intended to give NuGet.org package authors a lightweight end to end reference for creating and publishing high quality packages. It will primarily focus on package-specific best practices such as metadata and packing. For more in-depth suggestions for building high quality libraries, see the .NET [Open-source library guidance](https://docs.microsoft.com/dotnet/standard/library-guidance/).
+This guidance is intended to give NuGet package authors a lightweight reference to create and publish high-quality packages. It will primarily focus on package-specific best practices such as metadata and packing. For more in-depth suggestions for building high quality libraries, see the .NET [Open-source library guidance](https://docs.microsoft.com/dotnet/standard/library-guidance/).
 
 ## Types of recommendations
 
@@ -33,7 +33,7 @@ And finally, **Do not** recommendations indicate something you should almost nev
 
 ## Create a NuGet package
 
-The latest recommended way to to create a NuGet package is from an [SDK-style project](https://docs.microsoft.com/nuget/resources/check-project-format). SDK-style project properties, including target [framework](#framework-targeting) and [package metadata](#package-metadata), are defined in the project file (.csproj).
+The latest recommended way to to create a NuGet package is from an [SDK-style project](https://docs.microsoft.com/nuget/resources/check-project-format). SDK-style project properties, including target [framework](#framework-targeting) and [package metadata](#package-metadata), are defined in the [project file](https://docs.microsoft.com/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#project-file).
 
 Create a package from your SDK-style project by defining the required properties and packing in [Visual Studio](https://docs.microsoft.com/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli) or the [dotnet CLI](https://docs.microsoft.com/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli).
 
@@ -45,13 +45,13 @@ To help decide which .NET frameworks to target, see our [latest guidance for cro
 
 ## Package metadata
 
-Metadata is a foundational component of any NuGet package. The quality of your metadata can vastly influence the discoverability, usability, adn trustworthiness of your package.
+Metadata is a foundational component of any NuGet package. The quality of your metadata can vastly influence the discoverability, usability, and trustworthiness of your package.
 
 In Visual Studio, the recommended way to specify package metadata is to go Project > [Project Name] Properties > Package.
 
 Package metadata elements can also be [specified directly in the project file](https://docs.microsoft.com/nuget/create-packages/creating-a-package-msbuild#set-properties).
 
-Below is a table mapping and describing available packages metadata elements:
+Below is a table mapping and describing available package metadata elements:
 
 | Visual Studio property name                   | [Project file/ MSBuild property name](https://docs.microsoft.com/dotnet/core/tools/csproj#packagereleasenotes)                          | [Nuspec property name](https://docs.microsoft.com/nuget/reference/nuspec#general-form-and-schema) | Description                                                                                                       |
 |-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
@@ -79,6 +79,7 @@ If you're publishing a completely new package:
 ✔️ CONSIDER choosing a NuGet package name with a prefix that meets NuGet's [prefix reservation criteria](https://docs.microsoft.com/nuget/nuget-org/id-prefix-reservation#id-prefix-reservation-criteria).
 > Reserving the prefix ID for your package will let you get the verified check mark:
 > ![image](media/Verified-check-mark.png)
+> 
 > Check out the [Package ID prefix reservation docs](https://docs.microsoft.com/nuget/nuget-org/id-prefix-reservation) to learn more.
 
 ### Package Version
@@ -88,7 +89,7 @@ If you're publishing a completely new package:
 
 ✔️ DO publish a package as a [pre-release package](https://docs.microsoft.com/dotnet/standard/library-guidance/nuget#pre-release-packages) if it is non-stable or a preview.
 
-See the [.NET library versioning guide](https://docs.microsoft.com/dotnet/standard/library-guidance/versioning) for more advanced guidance including assembly versioning.
+See the [.NET library versioning guide](https://docs.microsoft.com/dotnet/standard/library-guidance/versioning) for more advanced guidance.
 
 ### Authors
 
@@ -97,7 +98,7 @@ See the [.NET library versioning guide](https://docs.microsoft.com/dotnet/standa
 ### Description
 
 ✔️ DO include a short description (up to 4000 characters) to describe your package.
-> Package descriptions are one of the most prominent fields surfaced in NuGet search and will likely be the first thing a potential consumers looks at to determine if a package is right for them.
+> Package descriptions are one of the most prominent fields surfaced in NuGet search and will likely be the first thing potential consumers looks at to determine if a package is right for them.
 
 ### Copyright
 
@@ -147,10 +148,9 @@ Example: Copyright (c) Contoso 2020
 
 ### Repository Type and URL
 
-✔️ CONSIDER including a repository type and URL to make it easy for package consumers to view source code, report issues, and view repository documentation.
-
-✔️ CONSIDER setting up [Source Link](https://docs.microsoft.com/dotnet/standard/library-guidance/sourcelink) to add source control metadata to your NuGet package and make your library easier to debug.
+✔️ CONSIDER setting up [Source Link](https://docs.microsoft.com/dotnet/standard/library-guidance/sourcelink) to automatically add source control metadata to your NuGet package and make your library easier to debug.
 > Source Link automatically adds `Repository URL` and `Repository Type` to the package metadata. It also adds the specific commit associated with your package version.
+
 ### Tags
 
 ✔️ DO include several tags with key terms related to your package to enhance discoverability.
