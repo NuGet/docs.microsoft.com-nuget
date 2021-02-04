@@ -8,6 +8,8 @@ ms.topic: quickstart
 zone_pivot_groups: client
 ---
 
+# Quickstart: Install and use a package
+
 ::: zone pivot="nugetexe"
 
 > [!Warning]
@@ -35,9 +37,6 @@ TODO
 ::: zone pivot="vs"
 
 It's a simple process to create a NuGet package from a .NET Standard Class Library in Visual Studio on Windows, and then publish it to nuget.org using a CLI tool.
-
-> [!Note]
-> If you are using Visual Studio for Mac, refer to [this information](/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library) on creating a NuGet package, or use the [dotnet CLI tools](create-and-publish-a-package-using-the-dotnet-cli.md).
 
 ::: zone-end
 
