@@ -12,8 +12,8 @@ zone_pivot_groups: client
 
 ::: zone pivot="nugetexe"
 
-> [!Warning]
-> TODO: Recommend using dotnet CLI instead.
+> [!Tip]
+> We recommend using the **dotnet CLI** if you are creating a project for the first time.
 
 ::: zone-end
 
@@ -155,13 +155,57 @@ TODO
 
 ::: zone pivot="vs"
 
-TODO
+To install the package, you can use either the NuGet Package Manager or the Package Manager Console. When you install a package, NuGet records the dependency in either your project file or a `packages.config` file (depending on the project format). For more information, see [Package consumption overview and workflow](../consume-packages/Overview-and-Workflow.md).
+
+### NuGet Package Manager
+
+1. In Solution Explorer, right-click **References** and choose **Manage NuGet Packages**.
+
+    ![Manage NuGet Packages command for project References](media/QS_Use-02-ManageNuGetPackages.png)
+
+1. Choose "nuget.org" as the **Package source**, select the **Browse** tab, search for **Newtonsoft.Json**, select that package in the list, and select **Install**:
+
+    ![Locating Newtonsoft.Json package](media/QS_Use-03-NewtonsoftJson.png)
+
+    If you want more information on the NuGet Package Manager, see [Install and manage packages using Visual Studio](../consume-packages/install-use-packages-visual-studio.md).
+
+1. Accept any license prompts.
+
+1. (Visual Studio 2017 only) If prompted to select a package management format, select **PackageReference in project file**:
+
+    ![Selecting a package management format](media/QS_Use-03b-SelectFormat.png)
+
+1. If prompted to review changes, select **OK**.
+
+### Package Manager Console
+
+1. Select the **Tools** > **NuGet Package Manager** > **Package Manager Console** menu command.
+
+1. Once the console opens, check that the **Default project** drop-down list shows the project into which you want to install the package. If you have a single project in the solution, it is already selected.
+
+    ![Select a project for the package](media/QS_Use-08-Console1.png)
+
+1. Enter the command `Install-Package Newtonsoft.Json` (see [Install-Package](../reference/ps-reference/ps-ref-install-package.md)). The console window shows output for the command. Errors typically indicate that the package isn't compatible with the project's target framework.
+
+   If you want more information on the Package Manager Console, see [Install and manage packages using Package Manager Console](../consume-packages/install-use-packages-powershell.md).
 
 ::: zone-end
 
 ::: zone pivot="vs4mac"
 
-TODO
+To install the package, you use the NuGet Package Manager. When you install a package, NuGet records the dependency in  either your project file or a `packages.config` file (depending on the project format). For more information, see [Package consumption overview and workflow](../consume-packages/Overview-and-Workflow.md).
+
+### NuGet Package Manager
+
+1. In Solution Explorer, right-click **Dependencies** and choose **Add Packages...**.
+
+    ![Manage NuGet Packages command for project References](media/QS_Use_Mac-02-ManageNuGetPackages.png)
+
+1. Choose "nuget.org" as the **Package source** in the top left corner of the dialog, and search for **Newtonsoft.Json**, select that package in the list, and select **Add Packages...**:
+
+    ![Locating Newtonsoft.Json package](media/QS_Use_Mac-03-NewtonsoftJson.png)
+
+    If you want more information on the NuGet Package Manager, see [Install and manage packages using Visual Studio for Mac](../consume-packages/install-use-packages-visual-studio.md).
 
 ::: zone-end
 
@@ -223,21 +267,121 @@ TODO
 
 ::: zone pivot="vs"
 
-TODO
+With the Newtonsoft.Json package in the project, you can call its `JsonConvert.SerializeObject` method to convert an object to a human-readable string.
+
+1. Open `MainWindow.xaml` and replace the existing `Grid` element with the following:
+
+    ```xaml
+    <Grid Background="White">
+        <StackPanel VerticalAlignment="Center">
+            <Button Click="Button_Click" Width="100px" HorizontalAlignment="Center" Content="Click Me" Margin="10"/>
+            <TextBlock Name="TextBlock" HorizontalAlignment="Center" Text="TextBlock" Margin="10"/>
+        </StackPanel>
+    </Grid>
+    ```
+
+1. Open the `MainWindow.xaml.cs` file (located in Solution Explorer under the `MainWindow.xaml` node), and insert the following code inside the `MainWindow` class:
+
+    ```cs
+    public class Account
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public DateTime DOB { get; set; }
+    }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        Account account = new Account
+        {
+            Name = "John Doe",
+            Email = "john@microsoft.com",
+            DOB = new DateTime(1980, 2, 20, 0, 0, 0, DateTimeKind.Utc),
+        };
+        string json = JsonConvert.SerializeObject(account, Formatting.Indented);
+        TextBlock.Text = json;
+    }
+    ```
+
+1. Even though you added the Newtonsoft.Json package to the project, red squiggles appears under `JsonConvert` because you need a `using` statement at the top of the code file:
+
+    ```cs
+    using Newtonsoft.Json;
+    ```
+
+1. Build and run the app by pressing F5 or selecting **Debug** > **Start Debugging**:
+
+    ![Initial output of the WPF app](media/QS_Use-06-AppStart.png)
+
+1. Select on the button to see the contents of the TextBlock replaced with some JSON text:
+
+    ![Output of the WPF app after selecting the button](media/QS_Use-07-AppEnd.png)
 
 ::: zone-end
 
 ::: zone pivot="vs4mac"
 
-TODO
+With the Newtonsoft.Json package in the project, you can call its `JsonConvert.SerializeObject` method to convert an object to a human-readable string.
+
+1. Open the `Program.cs` file (located in the Solution Pad) and replace the file contents with the following code:
+
+    ```cs
+    using System;
+    using Newtonsoft.Json;
+
+    namespace NuGetDemo
+    {
+        public class Account
+        {
+            public string Name { get; set; }
+            public string Email { get; set; }
+            public DateTime DOB { get; set; }
+        }
+    
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Account account = new Account()
+                {
+                    Name = "Joe Doe",
+                    Email = "joe@test.com",
+                    DOB = new DateTime(1976, 3, 24)
+                };
+                string json = JsonConvert.SerializeObject(account);
+                Console.WriteLine(json);
+            }
+        }
+    }
+    ```
+
+1. Build and run the app by selecting **Run > Start Debugging**:
+
+1. Once the app runs, you'll see the serialized JSON output appear in the console:
+
+  ![Output of the Console app](media/QS_Use_Mac-06-AppStart.png)
 
 ::: zone-end
+
+::: zone pivot="dotnet"
 
 ## Related video
 
 > [!Video https://channel9.msdn.com/Series/NuGet-101/Install-and-Use-a-NuGet-Package-with-the-NET-CLI-3-of-5/player]
 
 Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+
+::: zone-end
+
+::: zone pivot="vs"
+
+## Related video
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/Install-and-Use-a-NuGet-Package-with-Visual-Studio-2-of-5/player]
+
+Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+
+::: zone-end
 
 ## Next steps
 
