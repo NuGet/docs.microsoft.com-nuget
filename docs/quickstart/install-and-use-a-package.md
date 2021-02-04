@@ -387,8 +387,35 @@ Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101
 
 Congratulations on installing and using your first NuGet package!
 
+::: zone pivot="dotnet"
+
 > [!div class="nextstepaction"]
 > [Install and use packages using the dotnet CLI](../consume-packages/install-use-packages-dotnet-cli.md)
+
+::: zone-end
+
+::: zone pivot="nugetexe"
+
+TODO
+
+::: zone-end
+
+::: zone pivot="vs"
+
+> [!div class="nextstepaction"]
+> [Install and manage packages using Visual Studio](../consume-packages/install-use-packages-visual-studio.md)
+
+> [!div class="nextstepaction"]
+> [Install and manage packages using Package Manager Console](../consume-packages/install-use-packages-powershell.md)
+
+::: zone-end
+
+::: zone pivot="vs4mac"
+
+> [!div class="nextstepaction"]
+> [Install and manage packages using Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
+
+::: zone-end
 
 To explore more that NuGet has to offer, select the links below.
 
