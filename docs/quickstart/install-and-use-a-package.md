@@ -53,7 +53,33 @@ Once installed, refer to the package in code with `using <namespace>` where \<na
 
 ## Prerequisites
 
+::: zone pivot="dotnet"
+
 - The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool. Starting in Visual Studio 2017, the dotnet CLI is automatically installed with any .NET Core related workloads.
+
+::: zone-end
+
+::: zone pivot="nugetexe"
+
+TODO
+
+::: zone-end
+
+::: zone pivot="vs"
+
+- Visual Studio 2019 with the .NET Desktop Development workload.
+
+You can install the 2019 Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions.
+
+::: zone-end
+
+::: zone pivot="vs4mac"
+
+- Visual Studio 2019 for Mac.
+
+You can install the 2019 Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions.
+
+::: zone-end
 
 ## Create a project
 
