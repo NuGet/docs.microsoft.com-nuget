@@ -1,3 +1,5 @@
+### YamlMime:ZonePivotGroups
+groups:
 - id: client
   title: NuGet Client
   prompt: Choose your preferred NuGet client
