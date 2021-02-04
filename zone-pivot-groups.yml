@@ -1,0 +1,12 @@
+- id: client
+  title: NuGet Client
+  prompt: Choose your preferred NuGet client
+  pivots:
+    - id: dotnet
+      title: dotnet CLI
+    - id: nugetexe
+      title: nuget.exe CLI
+    - id: vs
+      title: Visual Studio
+    - id: vs4mac
+      title: Visual Studio for Mac
