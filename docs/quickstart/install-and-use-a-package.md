@@ -99,13 +99,13 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
 
 1. Use `dotnet run` to test that the app has been created properly.
 
-::: end-zone
+::: zone-end
 
 ::: zone pivot="nugetexe"
 
 TODO
 
-::: end-zone
+::: zone-end
 
 ::: zone pivot="vs"
 
@@ -115,7 +115,7 @@ For this walkthrough, use a simple WPF app. Create a project in Visual Studio us
 
 Visual Studio creates the project, which opens in Solution Explorer.
 
-::: end-zone
+::: zone-end
 
 ::: zone pivot="vs4mac"
 
@@ -125,7 +125,7 @@ For this walkthrough, use a simple .NET Core Console app. Create a project in Vi
 
 Visual Studio creates the project, which opens in Solution Explorer.
 
-::: end-zone
+::: zone-end
 
 ## Add the Newtonsoft.Json NuGet package
 
