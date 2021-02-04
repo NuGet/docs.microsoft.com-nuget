@@ -2,11 +2,10 @@
 title: Install and use a NuGet package
 description: A tutorial on the process of installing and using a NuGet package.
 author: loic-sharma
-metadata:
-  zone_pivot_groups: client
 ms.author: loshar
 ms.date: 02/03/2021
 ms.topic: quickstart
+zone_pivot_groups: client
 ---
 
 # Everyone
