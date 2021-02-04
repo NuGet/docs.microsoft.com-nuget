@@ -83,6 +83,8 @@ You can install the 2019 Community edition for free from [visualstudio.com](http
 
 ## Create a project
 
+::: zone pivot="dotnet"
+
 NuGet packages can be installed into a .NET project of some kind. For this walkthrough, create a simple .NET Core console project as follows:
 
 1. Create a folder for the project.
@@ -96,6 +98,34 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
     ```
 
 1. Use `dotnet run` to test that the app has been created properly.
+
+::: end-zone
+
+::: zone pivot="nugetexe"
+
+TODO
+
+::: end-zone
+
+::: zone pivot="vs"
+
+NuGet packages can be installed into any .NET project, provided that the package supports the same target framework as the project.
+
+For this walkthrough, use a simple WPF app. Create a project in Visual Studio using **File** > **New Project**, typing **.NET** in the search box, and then selecting the **WPF App (.NET Framework)**. Click **Next**. Accept the default values for **Framework** when prompted.
+
+Visual Studio creates the project, which opens in Solution Explorer.
+
+::: end-zone
+
+::: zone pivot="vs4mac"
+
+NuGet packages can be installed into any .NET project, provided that the package supports the same target framework as the project.
+
+For this walkthrough, use a simple .NET Core Console app. Create a project in Visual Studio for Mac using **File > New Solution...**, select the **.NET Core > App > Console Application** template. Click **Next**. Accept the default values for **Target Framework** when prompted.
+
+Visual Studio creates the project, which opens in Solution Explorer.
+
+::: end-zone
 
 ## Add the Newtonsoft.Json NuGet package
 
