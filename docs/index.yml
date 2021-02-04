@@ -35,12 +35,9 @@ conceptualContent:
         - text: Install NuGet client tools
           itemType: download
           url: ./install-nuget-client-tools.md
-        - text: Install and use a package - dotnet CLI
+        - text: Install and use a package
           itemType: quickstart
-          url: ./quickstart/install-and-use-a-package-using-the-dotnet-cli.md
-        - text: Install and use a package - Visual Studio
-          itemType: quickstart
-          url: ./quickstart/install-and-use-a-package-in-visual-studio.md
+          url: ./quickstart/install-and-use-a-package.md
         - text: Create a package - dotnet CLI
           itemType: quickstart
           url: ./quickstart/create-and-publish-a-package-using-the-dotnet-cli.md
