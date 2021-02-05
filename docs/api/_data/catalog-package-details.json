@@ -72,5 +72,13 @@
     "V3",
     "Protocol",
     "Example"
+  ],
+  "vulnerabilities": [
+    {
+      "@id": "https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json#vulnerability/GitHub/999",
+      "@type": "Vulnerability",
+      "advisoryUrl": "https://github.com/advisories/ABCD-1234-5678-9012",
+      "severity": "2"
+    }
   ]
 }

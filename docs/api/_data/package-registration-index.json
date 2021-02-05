@@ -37,7 +37,13 @@
             "summary": "",
             "tags": [ "" ],
             "title": "",
-            "version": "3.0.0-beta"
+            "version": "3.0.0-beta",
+            "vulnerabilities": [
+              {
+                "advisoryUrl": "https://github.com/advisories/ABCD-1234-5678-9012",
+                "severity": "2"
+              }
+            ]
           },
           "packageContent": "https://api.nuget.org/v3-flatcontainer/nuget.server.core/3.0.0-beta/nuget.server.core.3.0.0-beta.nupkg",
           "registration": "https://api.nuget.org/v3/registration3/nuget.server.core/index.json"
