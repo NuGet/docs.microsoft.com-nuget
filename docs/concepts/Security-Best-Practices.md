@@ -43,7 +43,7 @@ One example of a software supply chain attack occurs when malicious code is purp
 
 Software supply chain attacks are in and of itself rarely the end goal, rather it is the beginning of an opportunity for an attacker to insert malware or provide a backdoor for future access.
 
-![The State of the Octoverse 2020 - Vulnerability Lifecycle](media/vulernability-lifecycle.png)
+![The State of the Octoverse 2020 - Vulnerability Lifecycle](media/vulnerability-lifecycle.png)
 
 ## Unpatched Software
 
@@ -65,14 +65,14 @@ You can view your NuGet dependencies in your project by looking directly at the 
 
 This is typically found in one of two places:
 
--	[`packages.config`](https://docs.microsoft.com/en-us/nuget/reference/packages-config) – Located in the project root.
--	[`<PackageReference>`](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files) – Located in the project file. 
+-	[`packages.config`](https://docs.microsoft.com/nuget/reference/packages-config) – Located in the project root.
+-	[`<PackageReference>`](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) – Located in the project file. 
 
-Depending on what method you use to manage your NuGet dependencies, you can also use Visual Studio to view your dependencies directly in the [Solution Explorer](https://docs.microsoft.com/en-us/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#solution-explorer) or [NuGet Package Manager](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio).
+Depending on what method you use to manage your NuGet dependencies, you can also use Visual Studio to view your dependencies directly in the [Solution Explorer](https://docs.microsoft.com/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#solution-explorer) or [NuGet Package Manager](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio).
 
-For CLI environments, you can use the [`dotnet list package`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-list-package) command to list out your project or solution’s dependencies. 
+For CLI environments, you can use the [`dotnet list package`](https://docs.microsoft.com/dotnet/core/tools/dotnet-list-package) command to list out your project or solution’s dependencies. 
 
-For more information on managing NuGet dependencies, [see the following documentation](https://docs.microsoft.com/en-us/nuget/consume-packages/overview-and-workflow).
+For more information on managing NuGet dependencies, [see the following documentation](https://docs.microsoft.com/nuget/consume-packages/overview-and-workflow).
 
 ### GitHub Dependency Graph 
 
@@ -87,13 +87,13 @@ To ensure a secure supply chain of dependencies, you will want to ensure that al
 -	[Visual Studio](https://visualstudio.microsoft.com/downloads/)
 -	[.NET SDK & Runtime](https://dotnet.microsoft.com/download)
 -	[NuGet](https://www.nuget.org/downloads)
--	[NuGet Packages](https://docs.microsoft.com/en-us/nuget/consume-packages/reinstalling-and-updating-packages)
+-	[NuGet Packages](https://docs.microsoft.com/nuget/consume-packages/reinstalling-and-updating-packages)
 
 ## Manage your dependencies
 
 ### NuGet Deprecated & Vulnerable Dependencies
 
-You can use the [dotnet CLI](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-list-package) to list any known deprecated or vulnerable dependencies you may have inside your project or solution. You can use the command `dotnet list package --deprecated` or `dotnet list package --vulnerable` to provide you a list of any known deprecations or vulnerabilities.
+You can use the [dotnet CLI](https://docs.microsoft.com/dotnet/core/tools/dotnet-list-package) to list any known deprecated or vulnerable dependencies you may have inside your project or solution. You can use the command `dotnet list package --deprecated` or `dotnet list package --vulnerable` to provide you a list of any known deprecations or vulnerabilities.
 
 ### GitHub Vulnerable Dependencies
 
@@ -107,27 +107,27 @@ For more information about Dependabot alerts & security updates, [see the follow
 
 Packages can come from different feeds. To ensure you are secure, knowing what feed your packages are coming from is a best practice. One such best practice is the use of a single feed. You can accomplish this by using multiple upstream source feeds to bring your packages into a single feed.
 
-For more information about single NuGet feeds, [see the following documentation](https://docs.microsoft.com/en-us/azure/devops/artifacts/concepts/upstream-sources?view=azure-devops).
+For more information about single NuGet feeds, [see the following documentation](https://docs.microsoft.com/azure/devops/artifacts/concepts/upstream-sources?view=azure-devops).
 
 ### Client Trust Policies
 
 There are policies that you can opt-into in which you require the packages you use to be signed. This allows you to trust a package author so long as it is author signed or trust a package if it is owned by a specific user or account that is repository signed by NuGet.org.
 
-To configure client trust policies, [see the following documentation](https://docs.microsoft.com/en-us/nuget/consume-packages/installing-signed-packages).
+To configure client trust policies, [see the following documentation](https://docs.microsoft.com/nuget/consume-packages/installing-signed-packages).
 
 ### Lock Files
 
 Lock files store the hash of your package’s content. If the content hash of a package you want to install matches with the lock file, it will ensure you package repeatability.
 
-To enable lock files, [see the following documentation](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#locking-dependencies).
+To enable lock files, [see the following documentation](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files#locking-dependencies).
 
 ## Monitor your supply chain
 
 ### Publish to NuGet.org
 
-NuGet.org serves as a central repository to over 200,000 unique packages. Whenever you publish a package, NuGet.org will go through numerous validations and indexing that can benefit you in the long term. These can include scanning the package for viruses, [providing a repository signature](https://docs.microsoft.com/en-us/nuget/reference/signed-packages-reference) on the package, and even protecting your package ID so only you can push updates to it.
+NuGet.org serves as a central repository to over 200,000 unique packages. Whenever you publish a package, NuGet.org will go through numerous validations and indexing that can benefit you in the long term. These can include scanning the package for viruses, [providing a repository signature](https://docs.microsoft.com/nuget/reference/signed-packages-reference) on the package, and even protecting your package ID so only you can push updates to it.
 
-To learn more about the benefits of publishing on NuGet.org, [see the following documentation](https://docs.microsoft.com/en-us/nuget/nuget-org/publish-a-package#package-validation-and-indexing).
+To learn more about the benefits of publishing on NuGet.org, [see the following documentation](https://docs.microsoft.com/nuget/nuget-org/publish-a-package#package-validation-and-indexing).
 
 ### GitHub Secret Scanning
 
@@ -137,28 +137,28 @@ To learn more about secrete scanning, [see the following documentation](https://
 
 ### Author Package Signing
 
-[Author signing](https://docs.microsoft.com/en-us/nuget/reference/signed-packages-reference) allows a package author to stamp their identity on a package and for a consumer to verify it came from you. This protects you against content tampering & serves as a single source of truth about the origin of the package and the package authenticity. 
+[Author signing](https://docs.microsoft.com/nuget/reference/signed-packages-reference) allows a package author to stamp their identity on a package and for a consumer to verify it came from you. This protects you against content tampering & serves as a single source of truth about the origin of the package and the package authenticity. 
 
-To author sign a package, [see the following documentation](https://docs.microsoft.com/en-us/nuget/create-packages/sign-a-package).
+To author sign a package, [see the following documentation](https://docs.microsoft.com/nuget/create-packages/sign-a-package).
 
 ### Two-Factor Authentication (2FA)
 
-Enabling two-factor authentication (2FA) can add an extra layer of security when [logging into your GitHub account](https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa) or the [NuGet.org public package repository](https://docs.microsoft.com/en-us/nuget/nuget-org/individual-accounts#enable-two-factor-authentication-2fa). It is recommended to enable two-factor authentication to protect your account.
+Enabling two-factor authentication (2FA) can add an extra layer of security when [logging into your GitHub account](https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa) or the [NuGet.org public package repository](https://docs.microsoft.com/nuget/nuget-org/individual-accounts#enable-two-factor-authentication-2fa). It is recommended to enable two-factor authentication to protect your account.
 
 ### Package ID Prefix Reservation 
 
-To protect the identity of your packages, you can reserve a package ID prefix to associate a matching owner if your package ID prefix properly falls [under the following criteria](https://docs.microsoft.com/en-us/nuget/nuget-org/id-prefix-reservation#id-prefix-reservation-criteria).
+To protect the identity of your packages, you can reserve a package ID prefix to associate a matching owner if your package ID prefix properly falls [under the following criteria](https://docs.microsoft.com/nuget/nuget-org/id-prefix-reservation#id-prefix-reservation-criteria).
 
-To learn about reserving ID prefixes, [see the following documentation](https://docs.microsoft.com/en-us/nuget/nuget-org/id-prefix-reservation).
+To learn about reserving ID prefixes, [see the following documentation](https://docs.microsoft.com/nuget/nuget-org/id-prefix-reservation).
 
 ### Deprecating & Unlisting a Vulnerable Package
 
 To protect the .NET package ecosystem. When you are aware of a vulnerability in a package you have authored, do your best to deprecate & unlist the package so it is hidden from users searching for packages. If you are consuming a package that is deprecated & unlisted, you should avoid using the package.
 
-To learn how to deprecate & unlist a package, see the following documentation on [deprecating](https://docs.microsoft.com/en-us/nuget/nuget-org/deprecate-packages) & [unlisting packages](https://docs.microsoft.com/en-us/nuget/nuget-org/policies/deleting-packages#unlisting-a-package).
+To learn how to deprecate & unlist a package, see the following documentation on [deprecating](https://docs.microsoft.com/nuget/nuget-org/deprecate-packages) & [unlisting packages](https://docs.microsoft.com/nuget/nuget-org/policies/deleting-packages#unlisting-a-package).
 
 ## Summary
 
 Your software supply chain is anything that goes into or affects your code. Even though supply chain compromises are real and growing in popularity, they are still rare – and so the most important thing you can do is protect your supply chain by **being aware of your dependencies, managing your dependencies** and **monitoring your supply chain.**
 
-You learned about various methods NuGet & [GitHub](https://docs.microsoft.com/en-us/learn/modules/maintain-secure-repository-github/) provides that are available to you today to be more effective in viewing, managing, and monitoring your supply chain.
+You learned about various methods NuGet & [GitHub](https://docs.microsoft.com/learn/modules/maintain-secure-repository-github/) provides that are available to you today to be more effective in viewing, managing, and monitoring your supply chain.
