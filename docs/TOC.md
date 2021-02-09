@@ -69,7 +69,7 @@
 ## [Package installation process](concepts/package-installation-process.md)
 ## [Package versioning](concepts/package-versioning.md)
 ## [Dependency resolution](concepts/dependency-resolution.md)
-## [Best Practices for a Secure Supply Chain](concepts/Security-Best-Practices.md)
+## [Best practices for a secure supply chain](concepts/Security-Best-Practices.md)
 # Reference
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config file](reference/nuget-config-file.md)
