@@ -241,6 +241,7 @@ summary                 | string                     | no       |
 tags                    | array of strings           | no       |
 title                   | string                     | no       |
 verbatimVersion         | string                     | no       | The version string as it's originally found in the .nuspec
+vulnerabilities         | array of objects           | no       | The security vulnerabilities of the package
 
 The package `version` property is the full version string after normalization. This means that SemVer 2.0.0 build data can
 be included here.
@@ -262,6 +263,17 @@ The `published` timestamp is the time when the package was last listed.
 
 > [!Note]
 > On nuget.org, the `published` value is set to the year 1900 when the package is unlisted.
+
+#### Vulnerabilities
+
+An array of `vulnerability` objects. Each vulnerability has the following properties:
+
+Name         | Type   | Required | Notes
+------------ | ------ | -------- | -----
+advisoryUrl  | string | yes      | Location of security advisory for the package
+severity     | string | yes      | Severity of advisory: "0" = Low, "1" = Moderate, "2" = High, "3" = Critical
+
+If the `severity` property contains values other than those listed here, the severity of the advisory is to be treated as Low.
 
 #### Sample request
 
