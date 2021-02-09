@@ -129,7 +129,7 @@ NuGet.org serves as a central repository to over 200,000 unique packages. Whenev
 
 To learn more about the benefits of publishing on NuGet.org, [see the following documentation](https://docs.microsoft.com/nuget/nuget-org/publish-a-package#package-validation-and-indexing).
 
-### GitHub Secret Scanning
+### GitHub secret scanning
 
 GitHub will scan repositories for NuGet API keys to prevent fraudulent uses of secrets that were accidentally committed. 
 
