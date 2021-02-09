@@ -55,7 +55,7 @@ The use of open source today is significant and is not expected to slow down any
 
 ![The State of the Octoverse 2020 - Advisories](media/advisories.png)
 
-We will cover various tools & techniques that NuGet & GitHub provides that you can use today to address potential risks inside your project. 
+We will cover various tools and techniques that NuGet and GitHub provides, which you can use today to address potential risks inside your project. 
 
 ## Knowing what is in your environment
 
