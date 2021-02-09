@@ -107,7 +107,7 @@ For more information about Dependabot alerts & security updates, [see the follow
 
 Packages can come from different feeds. To ensure you are secure, knowing what feed your packages are coming from is a best practice. One such best practice is the use of a single feed. You can accomplish this by using multiple upstream source feeds to bring your packages into a single feed.
 
-For more information about single NuGet feeds, [see the following documentation](https://docs.microsoft.com/azure/devops/artifacts/concepts/upstream-sources?view=azure-devops).
+For more information about single NuGet feeds, [see the following documentation](/azure/devops/artifacts/concepts/upstream-sources?view=azure-devops).
 
 ### Client trust policies
 
