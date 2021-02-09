@@ -68,23 +68,25 @@ After the application is submitted, you are notified of acceptance or rejection 
 
 ### ID prefix reservation criteria
 
-When reviewing any application for ID prefix reservation, the [nuget.org](https://www.nuget.org/) team will evaluate the application against the below criteria. Not all criteria needs to be met for a prefix to be reserved, but the application may be denied if there is not substantial evidence of the criteria being met (with an explanation given):
+When reviewing any application for ID prefix reservation, the [NuGet.org](https://www.nuget.org) team will evaluate the application against the below criteria. Please note that not all criteria need to be met for a prefix to be reserved, but the application may be denied if there is not substantial evidence of the criteria being met (with an explanation given):
 
-1. Does the package ID prefix properly and clearly identify the package owner?
+1. Does the package ID prefix properly and clearly identify the reservation owner?
 
-1. Has the package owner [enabled 2FA for their NuGet.org account](individual-accounts.md#enable-two-factor-authentication-2fa)?
-
-1. Are a significant number of the packages that have already been submitted by the owner under the package ID prefix?
+1. Has the owner [enabled 2FA for their NuGet.org account](individual-accounts.md#enable-two-factor-authentication-2fa)?
 
 1. Is the package ID prefix something common that should not belong to any individual owner or organization?
 
-1. Would *not* reserving the package ID prefix cause ambiguity and confusion for the community?
+1. Would *not* reserving the package ID prefix cause ambiguity, confusion, or other harm to the community?
+
+When publishing packages to NuGet.org within your ID prefix reservation, the following best practices must be considered:
 
 1. Are the identifying properties of the packages that match the package ID prefix clear and consistent (especially the package author)?
 
 1. Do the packages have a license (using the [license](../reference/nuspec.md#license) metadata element and NOT licenseUrl which is being deprecated)?
 
-1. If the packages have an icon (using the iconUrl metadata element), are they also using the [icon](../reference/nuspec.md#icon) metadata element (it is not a requirement to remove the iconUrl)?
+1. If the packages have an icon (using the iconUrl metadata element), are they also using the [icon](../reference/nuspec.md#icon) metadata element? It is not a requirement to remove the iconUrl but embedded icons must be used.
+ 
+Consider reviewing the full [package authoring best practices guide](../create-packages/package-authoring-best-practices.md) in addition to the points above.
 
 ## Third party feed provider scenarios
 
