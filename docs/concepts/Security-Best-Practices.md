@@ -87,7 +87,7 @@ To ensure a secure supply chain of dependencies, you will want to ensure that al
 -	[Visual Studio](https://visualstudio.microsoft.com/downloads/)
 -	[.NET SDK & Runtime](https://dotnet.microsoft.com/download)
 -	[NuGet](https://www.nuget.org/downloads)
--	[NuGet Packages](https://docs.microsoft.com/nuget/consume-packages/reinstalling-and-updating-packages)
+-	[NuGet packages](../consume-packages/reinstalling-and-updating-packages.md)
 
 ## Manage your dependencies
 
