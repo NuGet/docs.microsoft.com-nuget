@@ -115,7 +115,7 @@ There are policies that you can opt-into in which you require the packages you u
 
 To configure client trust policies, [see the following documentation](https://docs.microsoft.com/nuget/consume-packages/installing-signed-packages).
 
-### Lock Files
+### Lock files
 
 Lock files store the hash of your package’s content. If the content hash of a package you want to install matches with the lock file, it will ensure you package repeatability.
 
