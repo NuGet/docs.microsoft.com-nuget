@@ -80,7 +80,7 @@ You can use GitHub’s dependency graph to see the packages your project depends
 
 For more information on GitHub repository dependencies, [see the following documentation](https://github.co/dependency-graph).
 
-### Dependency Versions
+### Dependency versions
 
 To ensure a secure supply chain of dependencies, you will want to ensure that all your dependencies are regularly updated to the latest stable version. Your dependencies can include code you depend on, binaries you consume, tooling you use, and other components. This can include:
 
