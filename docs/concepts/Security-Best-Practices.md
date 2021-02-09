@@ -21,7 +21,7 @@ The term software supply chain is used to refer to everything that goes into you
 
 It includes who wrote the code, when it was contributed, how it was reviewed for security issues, known vulnerabilities, supported versions, license information, and just about anything that touches it at any point of the process.
 
-Your supply chain also encompasses other parts of your stack beyond a single application such as your build and packaging scripts or the software that runs the infrastructure your application relies on.
+Your supply chain also encompasses other parts of your stack beyond a single application, such as your build and packaging scripts or the software that runs the infrastructure your application relies on.
 
 ## Vulnerabilities
 
