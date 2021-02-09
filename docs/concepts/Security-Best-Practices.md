@@ -109,7 +109,7 @@ Packages can come from different feeds. To ensure you are secure, knowing what f
 
 For more information about single NuGet feeds, [see the following documentation](https://docs.microsoft.com/azure/devops/artifacts/concepts/upstream-sources?view=azure-devops).
 
-### Client Trust Policies
+### Client trust policies
 
 There are policies that you can opt-into in which you require the packages you use to be signed. This allows you to trust a package author so long as it is author signed or trust a package if it is owned by a specific user or account that is repository signed by NuGet.org.
 
