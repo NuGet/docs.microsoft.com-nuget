@@ -66,7 +66,7 @@ You can view your NuGet dependencies in your project by looking directly at the 
 This is typically found in one of two places:
 
 -	[`packages.config`](../reference/packages-config.md) – Located in the project root.
--	[`<PackageReference>`](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) – Located in the project file. 
+-	[`<PackageReference>`](../consume-packages/package-references-in-project-files.md) – Located in the project file. 
 
 Depending on what method you use to manage your NuGet dependencies, you can also use Visual Studio to view your dependencies directly in the [Solution Explorer](https://docs.microsoft.com/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#solution-explorer) or [NuGet Package Manager](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio).
 
