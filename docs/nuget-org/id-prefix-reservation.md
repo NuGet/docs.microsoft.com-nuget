@@ -76,7 +76,7 @@ When reviewing any application for ID prefix reservation, the [NuGet.org](https:
 
 1. Is the package ID prefix something common that should not belong to any individual owner or organization?
 
-1. Would *not* reserving the package ID prefix cause ambiguity, confusion, other harm to the community?
+1. Would *not* reserving the package ID prefix cause ambiguity, confusion, or other harm to the community?
 
 When publishing packages to NuGet.org within your ID prefix reservation, the following best practices must be considered:
 
