@@ -7,7 +7,7 @@ ms.date: 02/08/2021
 ms.topic: conceptual
 ---
 
-# Best Practices for a Secure Supply Chain
+# Best practices for a secure supply chain
 
 Open Source is everywhere. It is in many proprietary codebases and community projects. For organizations and individuals, the question today is not whether you are or are not using open-source code, but what open-source code you are using, and how much.
 
