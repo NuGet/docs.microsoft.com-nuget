@@ -145,7 +145,7 @@ To author sign a package, [see the following documentation](https://docs.microso
 
 Enabling two-factor authentication (2FA) can add an extra layer of security when [logging into your GitHub account](https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa) or the [NuGet.org public package repository](https://docs.microsoft.com/nuget/nuget-org/individual-accounts#enable-two-factor-authentication-2fa). It is recommended to enable two-factor authentication to protect your account.
 
-### Package ID Prefix Reservation 
+### Package ID prefix reservation 
 
 To protect the identity of your packages, you can reserve a package ID prefix to associate a matching owner if your package ID prefix properly falls [under the following criteria](https://docs.microsoft.com/nuget/nuget-org/id-prefix-reservation#id-prefix-reservation-criteria).
 
