@@ -35,7 +35,7 @@ If one of these dependencies has a vulnerability, the chances are you have a vul
 
 Being able to leverage the work of thousands of open-source developers and library authors means that thousands of strangers can effectively contribute directly to your production code. Your product, through your software supply chain, is affected by unpatched vulnerabilities, innocent mistakes, or even malicious attacks against dependencies.
 
-## Supply Chain Compromises
+## Supply chain compromises
 
 The traditional definition of a supply chain comes from manufacturing; it is the chain of processes required to make and supply something. It includes planning, supply of materials, manufacturing, and retail. A software supply chain is similar, except instead of materials, it is code. Instead of manufacturing, it is development. Instead of digging ore from the ground, code is sourced from suppliers, commercial or open source, and, in general, the open-source code comes from repositories. Adding code from a repository means your product takes a dependency on that code.
 
