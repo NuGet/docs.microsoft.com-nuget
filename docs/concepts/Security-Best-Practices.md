@@ -74,7 +74,7 @@ For CLI environments, you can use the [`dotnet list package`](/dotnet/core/tools
 
 For more information on managing NuGet dependencies, [see the following documentation](../consume-packages/overview-and-workflow.md).
 
-### GitHub Dependency Graph 
+### GitHub dependency graph 
 
 You can use GitHub’s dependency graph to see the packages your project depends on and the repositories that depend on it. This can help you see any vulnerabilities detected in its dependencies.
 
