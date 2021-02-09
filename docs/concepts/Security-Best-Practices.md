@@ -91,11 +91,11 @@ To ensure a secure supply chain of dependencies, you will want to ensure that al
 
 ## Manage your dependencies
 
-### NuGet Deprecated & Vulnerable Dependencies
+### NuGet deprecated and vulnerable dependencies
 
 You can use the [dotnet CLI](/dotnet/core/tools/dotnet-list-package) to list any known deprecated or vulnerable dependencies you may have inside your project or solution. You can use the command `dotnet list package --deprecated` or `dotnet list package --vulnerable` to provide you a list of any known deprecations or vulnerabilities.
 
-### GitHub Vulnerable Dependencies
+### GitHub vulnerable dependencies
 
 If your project is hosted on GitHub, you can leverage [GitHub Security](https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/automatically-scanning-your-code-for-vulnerabilities-and-errors) to find security vulnerabilities and errors in your project and Dependabot will fix them by opening up a pull request against your codebase. 
 
@@ -103,7 +103,7 @@ Catching vulnerable dependencies before they are introduced is one goal of the [
 
 For more information about Dependabot alerts & security updates, [see the following documentation](https://docs.github.com/en/github/managing-security-vulnerabilities/about-alerts-for-vulnerable-dependencies).
 
-### NuGet Feeds
+### NuGet feeds
 
 Packages can come from different feeds. To ensure you are secure, knowing what feed your packages are coming from is a best practice. One such best practice is the use of a single feed. You can accomplish this by using multiple upstream source feeds to bring your packages into a single feed.
 
@@ -117,41 +117,41 @@ To configure client trust policies, [see the following documentation](../consume
 
 ### Lock files
 
-Lock files store the hash of your package’s content. If the content hash of a package you want to install matches with the lock file, it will ensure you package repeatability.
+Lock files store the hash of your package’s content. If the content hash of a package you want to install matches with the lock file, it will ensure package repeatability.
 
-To enable lock files, [see the following documentation](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files#locking-dependencies).
+To enable lock files, [see the following documentation](../consume-packages/package-references-in-project-files#locking-dependencies.md).
 
 ## Monitor your supply chain
 
 ### Publish to NuGet.org
 
-NuGet.org serves as a central repository to over 200,000 unique packages. Whenever you publish a package, NuGet.org will go through numerous validations and indexing that can benefit you in the long term. These can include scanning the package for viruses, [providing a repository signature](https://docs.microsoft.com/nuget/reference/signed-packages-reference) on the package, and even protecting your package ID so only you can push updates to it.
+NuGet.org serves as a central repository to over 200,000 unique packages. Whenever you publish a package, NuGet.org will go through numerous validations and indexing that can benefit you in the long term. These can include scanning the package for viruses, [providing a repository signature](../reference/signed-packages-reference.md) on the package, and even protecting your package ID so only you can push updates to it.
 
-To learn more about the benefits of publishing on NuGet.org, [see the following documentation](https://docs.microsoft.com/nuget/nuget-org/publish-a-package#package-validation-and-indexing).
+To learn more about the benefits of publishing on NuGet.org, see [Package validation and indexing](../nuget-org/publish-a-package.md#package-validation-and-indexing).
 
 ### GitHub secret scanning
 
-GitHub will scan repositories for NuGet API keys to prevent fraudulent uses of secrets that were accidentally committed. 
+GitHub scans repositories for NuGet API keys to prevent fraudulent uses of secrets that were accidentally committed. 
 
-To learn more about secrete scanning, [see the following documentation](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning).
+To learn more about secret scanning, see [About secret scanning](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning).
 
 ### Author Package Signing
 
-[Author signing](https://docs.microsoft.com/nuget/reference/signed-packages-reference) allows a package author to stamp their identity on a package and for a consumer to verify it came from you. This protects you against content tampering & serves as a single source of truth about the origin of the package and the package authenticity. 
+[Author signing](../reference/signed-packages-reference.md) allows a package author to stamp their identity on a package and for a consumer to verify it came from you. This protects you against content tampering and serves as a single source of truth about the origin of the package and the package authenticity. 
 
-To author sign a package, [see the following documentation](https://docs.microsoft.com/nuget/create-packages/sign-a-package).
+To author sign a package, see [Sign a package](../create-packages/sign-a-package.md).
 
 ### Two-Factor Authentication (2FA)
 
-Enabling two-factor authentication (2FA) can add an extra layer of security when [logging into your GitHub account](https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa) or the [NuGet.org public package repository](https://docs.microsoft.com/nuget/nuget-org/individual-accounts#enable-two-factor-authentication-2fa). It is recommended to enable two-factor authentication to protect your account.
+Enabling two-factor authentication (2FA) can add an extra layer of security when [logging into your GitHub account](https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa) or the [NuGet.org public package repository](../nuget-org/individual-accounts.md#enable-two-factor-authentication-2fa). It is recommended that you enable two-factor authentication to protect your account.
 
 ### Package ID prefix reservation 
 
-To protect the identity of your packages, you can reserve a package ID prefix to associate a matching owner if your package ID prefix properly falls [under the following criteria](https://docs.microsoft.com/nuget/nuget-org/id-prefix-reservation#id-prefix-reservation-criteria).
+To protect the identity of your packages, you can reserve a package ID prefix to associate a matching owner if your package ID prefix properly falls under the [specified criteria](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria).
 
-To learn about reserving ID prefixes, [see the following documentation](https://docs.microsoft.com/nuget/nuget-org/id-prefix-reservation).
+To learn about reserving ID prefixes, see [Package ID prefix reservation](../nuget-org/id-prefix-reservation.md).
 
-### Deprecating & Unlisting a Vulnerable Package
+### Deprecating and unlisting a vulnerable package
 
 To protect the .NET package ecosystem when you are aware of a vulnerability in a package you have authored, do your best to deprecate and unlist the package so it is hidden from users searching for packages. If you are consuming a package that is deprecated and unlisted, you should avoid using the package.
 
@@ -161,6 +161,6 @@ To learn how to deprecate and unlist a package, see the following documentation 
 
 Your software supply chain is anything that goes into or affects your code. Even though supply chain compromises are real and growing in popularity, they are still rare; so the most important thing you can do is protect your supply chain by **being aware of your dependencies, managing your dependencies** and **monitoring your supply chain.**
 
-You learned about various methods NuGet & [GitHub](https://docs.microsoft.com/learn/modules/maintain-secure-repository-github/) provides that are available to you today to be more effective in viewing, managing, and monitoring your supply chain.
+You learned about various methods that NuGet and [GitHub](/learn/modules/maintain-secure-repository-github/) provide that are available to you today to be more effective in viewing, managing, and monitoring your supply chain.
 
 For more information about securing the world's software, see [The State of the Octoverse 2020 Security Report](https://octoverse.github.com/static/github-octoverse-2020-security-report.pdf).
