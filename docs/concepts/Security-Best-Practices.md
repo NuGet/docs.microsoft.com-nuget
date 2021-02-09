@@ -72,7 +72,7 @@ Depending on what method you use to manage your NuGet dependencies, you can also
 
 For CLI environments, you can use the [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) command to list out your project or solution’s dependencies. 
 
-For more information on managing NuGet dependencies, [see the following documentation](https://docs.microsoft.com/nuget/consume-packages/overview-and-workflow).
+For more information on managing NuGet dependencies, [see the following documentation](../consume-packages/overview-and-workflow.md).
 
 ### GitHub Dependency Graph 
 
