@@ -159,7 +159,7 @@ To learn how to deprecate and unlist a package, see the following documentation 
 
 ## Summary
 
-Your software supply chain is anything that goes into or affects your code. Even though supply chain compromises are real and growing in popularity, they are still rare – and so the most important thing you can do is protect your supply chain by **being aware of your dependencies, managing your dependencies** and **monitoring your supply chain.**
+Your software supply chain is anything that goes into or affects your code. Even though supply chain compromises are real and growing in popularity, they are still rare; so the most important thing you can do is protect your supply chain by **being aware of your dependencies, managing your dependencies** and **monitoring your supply chain.**
 
 You learned about various methods NuGet & [GitHub](https://docs.microsoft.com/learn/modules/maintain-secure-repository-github/) provides that are available to you today to be more effective in viewing, managing, and monitoring your supply chain.
 
