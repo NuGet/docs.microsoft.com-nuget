@@ -17,7 +17,7 @@ If you are not aware of what is in your software supply chain, an upstream vulne
 
 ## Dependencies 
 
-The term software supply chain is used to refer to everything that goes into your software and where it comes from. It is the dependencies and properties of your dependencies that your software supply chain depends on. A dependency is what your software needs to run. It can be code, binaries, or other components, and where they come from such as a repository or package manager.
+The term software supply chain is used to refer to everything that goes into your software and where it comes from. It is the dependencies and properties of your dependencies that your software supply chain depends on. A dependency is what your software needs to run. It can be code, binaries, or other components, and where they come from, such as a repository or package manager.
 
 It includes who wrote the code, when it was contributed, how it was reviewed for security issues, known vulnerabilities, supported versions, license information, and just about anything that touches it at any point of the process.
 
