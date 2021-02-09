@@ -33,7 +33,7 @@ Possible vulnerabilities in your third-party or open-source dependencies, are pr
 
 If one of these dependencies has a vulnerability, the chances are you have a vulnerability as well. This can be scary as one of your dependencies may change without you even knowing. Even if a vulnerability exists in a dependency today, but is not exploitable, it can be exploitable in the future. 
 
-Being able to leverage the work of thousands of open-source developers & library authors means that thousands of strangers can effectively contribute directly to your production code. Your product, through your software supply chain, is affected by unpatched vulnerabilities, innocent mistakes, or even malicious attacks against dependencies.
+Being able to leverage the work of thousands of open-source developers and library authors means that thousands of strangers can effectively contribute directly to your production code. Your product, through your software supply chain, is affected by unpatched vulnerabilities, innocent mistakes, or even malicious attacks against dependencies.
 
 ## Supply Chain Compromises
 
