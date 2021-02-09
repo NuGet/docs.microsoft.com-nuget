@@ -59,7 +59,7 @@ We will cover various tools and techniques that NuGet and GitHub provides, which
 
 ## Knowing what is in your environment
 
-### NuGet Dependency Graph
+### NuGet dependency graph
 
 You can view your NuGet dependencies in your project by looking directly at the respective project file.
 
