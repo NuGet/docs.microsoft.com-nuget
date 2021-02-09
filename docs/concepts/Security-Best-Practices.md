@@ -45,7 +45,7 @@ A software supply chain attack is in and of itself rarely the end goal, rather i
 
 ![The State of the Octoverse 2020 - Vulnerability Lifecycle](media/vulnerability-lifecycle.png)
 
-## Unpatched Software
+## Unpatched software
 
 The use of open source today is significant and is not expected to slow down anytime soon. Given that we are not going to stop using open-source software, the threat to supply chain security is unpatched software. Knowing that, how can you address the risk that a dependency of your project has a vulnerability?
 
