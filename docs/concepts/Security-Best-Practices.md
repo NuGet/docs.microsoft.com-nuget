@@ -41,7 +41,7 @@ The traditional definition of a supply chain comes from manufacturing; it is the
 
 One example of a software supply chain attack occurs when malicious code is purposefully added to a dependency, using the supply chain of that dependency to distribute the code to its victims. Supply chain attacks are real. There are many methods to attack a supply chain, from directly inserting malicious code as a new contributor, to taking over a contributor’s account without others noticing, or even compromising a signing key to distribute software that is not officially part of the dependency.
 
-Software supply chain attacks are in and of itself rarely the end goal, rather it is the beginning of an opportunity for an attacker to insert malware or provide a backdoor for future access.
+A software supply chain attack is in and of itself rarely the end goal, rather it is the beginning of an opportunity for an attacker to insert malware or provide a backdoor for future access.
 
 ![The State of the Octoverse 2020 - Vulnerability Lifecycle](media/vulnerability-lifecycle.png)
 
