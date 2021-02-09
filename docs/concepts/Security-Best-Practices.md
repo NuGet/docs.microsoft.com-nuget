@@ -155,7 +155,7 @@ To learn about reserving ID prefixes, [see the following documentation](https://
 
 To protect the .NET package ecosystem when you are aware of a vulnerability in a package you have authored, do your best to deprecate and unlist the package so it is hidden from users searching for packages. If you are consuming a package that is deprecated and unlisted, you should avoid using the package.
 
-To learn how to deprecate & unlist a package, see the following documentation on [deprecating](https://docs.microsoft.com/nuget/nuget-org/deprecate-packages) & [unlisting packages](https://docs.microsoft.com/nuget/nuget-org/policies/deleting-packages#unlisting-a-package).
+To learn how to deprecate and unlist a package, see the following documentation on [deprecating](../nuget-org/deprecate-packages.md) and [unlisting packages](../nuget-org/policies/deleting-packages.md#unlisting-a-package).
 
 ## Summary
 
