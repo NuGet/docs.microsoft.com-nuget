@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 Open Source is everywhere. It is in many proprietary codebases and community projects. For organizations and individuals, the question today is not whether you are or are not using open-source code, but what open-source code you are using, and how much.
 
-If you are not aware of what is in your software supply chain, an upstream vulnerability in one of your dependencies can be fatal, making you, and your customers, vulnerable to a potential compromise. In this document, we will dive deeper into what the term “software supply chain” means, why it matters, and how you can help secure your project’s supply chain with best practices.
+If you're not aware of what is in your software supply chain, an upstream vulnerability in one of your dependencies can be fatal, making you, and your customers, vulnerable to a potential compromise. In this document, we will dive deeper into what the term “software supply chain” means, why it matters, and how you can help secure your project’s supply chain with best practices.
 
 ![The State of the Octoverse 2020 - Open Source](media/opensource-percent.png)
 
