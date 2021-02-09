@@ -93,7 +93,7 @@ To ensure a secure supply chain of dependencies, you will want to ensure that al
 
 ### NuGet Deprecated & Vulnerable Dependencies
 
-You can use the [dotnet CLI](https://docs.microsoft.com/dotnet/core/tools/dotnet-list-package) to list any known deprecated or vulnerable dependencies you may have inside your project or solution. You can use the command `dotnet list package --deprecated` or `dotnet list package --vulnerable` to provide you a list of any known deprecations or vulnerabilities.
+You can use the [dotnet CLI](/dotnet/core/tools/dotnet-list-package) to list any known deprecated or vulnerable dependencies you may have inside your project or solution. You can use the command `dotnet list package --deprecated` or `dotnet list package --vulnerable` to provide you a list of any known deprecations or vulnerabilities.
 
 ### GitHub Vulnerable Dependencies
 
