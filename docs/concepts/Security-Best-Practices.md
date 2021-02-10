@@ -107,7 +107,7 @@ For more information about Dependabot alerts & security updates, [see the follow
 
 Packages can come from different feeds. To ensure you are secure, knowing what feed your packages are coming from is a best practice. One such best practice is the use of a single feed. You can accomplish this by using multiple upstream source feeds to bring your packages into a single feed.
 
-For more information about single NuGet feeds, [see the following documentation](/azure/devops/artifacts/concepts/upstream-sources?view=azure-devops).
+For more information to secure your package feeds, see [3 Ways to Mitigate Risk When Using Private Package Feeds](https://azure.microsoft.com/en-us/resources/3-ways-to-mitigate-risk-using-private-package-feeds/).
 
 ### Client trust policies
 
@@ -162,7 +162,5 @@ To learn how to deprecate and unlist a package, see the following documentation 
 Your software supply chain is anything that goes into or affects your code. Even though supply chain compromises are real and growing in popularity, they are still rare; so the most important thing you can do is protect your supply chain by **being aware of your dependencies, managing your dependencies** and **monitoring your supply chain.**
 
 You learned about various methods that NuGet and [GitHub](/learn/modules/maintain-secure-repository-github/) provide that are available to you today to be more effective in viewing, managing, and monitoring your supply chain.
-
-To secure your package feeds, see [3 Ways to Mitigate Risk When Using Private Package Feeds](https://azure.microsoft.com/en-us/resources/3-ways-to-mitigate-risk-using-private-package-feeds/).
 
 For more information about securing the world's software, see [The State of the Octoverse 2020 Security Report](https://octoverse.github.com/static/github-octoverse-2020-security-report.pdf).
