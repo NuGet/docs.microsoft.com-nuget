@@ -1,13 +1,13 @@
 ---
-title: Best practices for a secure supply chain
-description: Best practices for securing your supply chain software using NuGet & GitHub.
+title: Best practices for a secure software supply chain
+description: Best practices for securing your software supply chain using NuGet & GitHub.
 author: JonDouglas
 ms.author: jodou
 ms.date: 02/08/2021
 ms.topic: conceptual
 ---
 
-# Best practices for a secure supply chain
+# Best practices for a secure software supply chain
 
 Open Source is everywhere. It is in many proprietary codebases and community projects. For organizations and individuals, the question today is not whether you are or are not using open-source code, but what open-source code you are using, and how much.
 
