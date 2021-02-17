@@ -61,7 +61,7 @@ We will cover various tools and techniques that NuGet and GitHub provides, which
 
 ### NuGet dependency graph
 
-📦 Package Consumer 
+**📦 Package Consumer**
 
 You can view your NuGet dependencies in your project by looking directly at the respective project file.
 
@@ -78,7 +78,7 @@ For more information on managing NuGet dependencies, [see the following document
 
 ### GitHub dependency graph 
 
-📦 Package Consumer | 📦🖊 Package Author
+**📦 Package Consumer | 📦🖊 Package Author**
 
 You can use GitHub’s dependency graph to see the packages your project depends on and the repositories that depend on it. This can help you see any vulnerabilities detected in its dependencies.
 
@@ -86,7 +86,7 @@ For more information on GitHub repository dependencies, [see the following docum
 
 ### Dependency versions
 
-📦 Package Consumer | 📦🖊 Package Author
+**📦 Package Consumer | 📦🖊 Package Author**
 
 To ensure a secure supply chain of dependencies, you will want to ensure that all of your dependencies & tooling are regularly updated to the latest stable version as they will often include the latest functionality and security patches to known vulnerabilities. Your dependencies can include code you depend on, binaries you consume, tooling you use, and other components. This may include:
 
@@ -99,13 +99,13 @@ To ensure a secure supply chain of dependencies, you will want to ensure that al
 
 ### NuGet deprecated and vulnerable dependencies
 
-📦 Package Consumer | 📦🖊 Package Author
+**📦 Package Consumer | 📦🖊 Package Author**
 
 You can use the [dotnet CLI](/dotnet/core/tools/dotnet-list-package) to list any known deprecated or vulnerable dependencies you may have inside your project or solution. You can use the command `dotnet list package --deprecated` or `dotnet list package --vulnerable` to provide you a list of any known deprecations or vulnerabilities.
 
 ### GitHub vulnerable dependencies
 
-📦 Package Consumer | 📦🖊 Package Author
+**📦 Package Consumer | 📦🖊 Package Author**
 
 If your project is hosted on GitHub, you can leverage [GitHub Security](https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/automatically-scanning-your-code-for-vulnerabilities-and-errors) to find security vulnerabilities and errors in your project and Dependabot will fix them by opening up a pull request against your codebase. 
 
@@ -115,7 +115,7 @@ For more information about Dependabot alerts & security updates, [see the follow
 
 ### NuGet feeds
 
-📦 Package Consumer
+**📦 Package Consumer**
 
 When using multiple public & private NuGet source feeds, a package can be downloaded from any of the feeds. To ensure your build is predictable and secure from known attacks such as [Dependency Confusion](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610), knowing what specific feed(s) your packages are coming from is a best practice. You can use a single feed or private feed with upstreaming capabilities for protection.
 
@@ -123,7 +123,7 @@ For more information to secure your package feeds, see [3 Ways to Mitigate Risk 
 
 ### Client trust policies
 
-📦 Package Consumer
+**📦 Package Consumer**
 
 There are policies that you can opt-into in which you require the packages you use to be signed. This allows you to trust a package author, as long as it is author signed, or trust a package if it is owned by a specific user or account that is repository signed by NuGet.org.
 
@@ -131,7 +131,7 @@ To configure client trust policies, [see the following documentation](../consume
 
 ### Lock files
 
-📦 Package Consumer
+**📦 Package Consumer**
 
 Lock files store the hash of your package’s content. If the content hash of a package you want to install matches with the lock file, it will ensure package repeatability.
 
@@ -141,7 +141,7 @@ To enable lock files, [see the following documentation](../consume-packages/pack
 
 ### GitHub secret scanning
 
-📦🖊 Package Author
+**📦🖊 Package Author**
 
 GitHub scans repositories for NuGet API keys to prevent fraudulent uses of secrets that were accidentally committed. 
 
@@ -149,7 +149,7 @@ To learn more about secret scanning, see [About secret scanning](https://docs.gi
 
 ### Author Package Signing
 
-📦🖊 Package Author
+**📦🖊 Package Author**
 
 [Author signing](../reference/signed-packages-reference.md) allows a package author to stamp their identity on a package and for a consumer to verify it came from you. This protects you against content tampering and serves as a single source of truth about the origin of the package and the package authenticity. When combined with client trust policies, you can verify a package came from a specific author.
 
@@ -157,13 +157,13 @@ To author sign a package, see [Sign a package](../create-packages/sign-a-package
 
 ### Two-Factor Authentication (2FA)
 
-📦🖊 Package Author
+**📦🖊 Package Author**
 
 Enabling two-factor authentication (2FA) can add an extra layer of security when [logging into your GitHub account](https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa) or the [NuGet.org public package repository](../nuget-org/individual-accounts.md#enable-two-factor-authentication-2fa). It is recommended that you enable two-factor authentication to protect your account.
 
 ### Package ID prefix reservation 
 
-📦🖊 Package Author
+**📦🖊 Package Author**
 
 To protect the identity of your packages, you can reserve a package ID prefix with your respective namespace to associate a matching owner if your package ID prefix properly falls under the [specified criteria](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria). 
 
@@ -171,7 +171,7 @@ To learn about reserving ID prefixes, see [Package ID prefix reservation](../nug
 
 ### Deprecating and unlisting a vulnerable package
 
-📦🖊 Package Author
+**📦🖊 Package Author**
 
 To protect the .NET package ecosystem when you are aware of a vulnerability in a package you have authored, do your best to deprecate and unlist the package so it is hidden from users searching for packages. If you are consuming a package that is deprecated and unlisted, you should avoid using the package.
 
