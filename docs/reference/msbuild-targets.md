@@ -43,9 +43,9 @@ Note that the `Owners` and `Summary` properties from `.nuspec` are not supported
 
 | Attribute/NuSpec Value | MSBuild Property | Default | Notes |
 |--------|--------|--------|--------|
-| Id | PackageId | AssemblyName | $(AssemblyName) from MSBuild |
-| Version | PackageVersion | Version | This is semver compatible, for example “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345” |
-| VersionPrefix | PackageVersionPrefix | empty | Setting PackageVersion overwrites PackageVersionPrefix |
+| `Id` | `PackageId` | AssemblyName | $(AssemblyName) from MSBuild |
+| :::no-loc text="Version"::: | :::no-loc text="PackageVersion"::: | Version | This is semver compatible, for example “1.0.0”, “1.0.0-beta”, or “1.0.0-beta-00345” |
+| :::no-loc text="`VersionPrefix`"::: | :::no-loc text="`PackageVersionPrefix`"::: | empty | Setting PackageVersion overwrites PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | empty | $(VersionSuffix) from MSBuild. Setting PackageVersion overwrites PackageVersionSuffix |
 | Authors | Authors | Username of the current user | A semicolon-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors. |
 | Owners | N/A | Not present in NuSpec | |
