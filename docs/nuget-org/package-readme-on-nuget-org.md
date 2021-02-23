@@ -1,5 +1,5 @@
 ---
-title: Package Readme
+title: Package Readme on NuGet.org
 description: Detailed explanation of how Readme files on NuGet.org are rendered and what to do when you run into issues.
 author: chgill-MSFT
 ms.author: chgill
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.reviewer: anangaur
 ---
 
-# Readme files on NuGet.org
+# Package Readme on NuGet.org
 
 [Include a Readme file in your NuGet package](https://docs.microsoft.com/nuget/reference/msbuild-targets#packagereadmefile) to make your package details richer and more informative for your users!
 
