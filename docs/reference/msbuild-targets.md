@@ -5,6 +5,7 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/23/2018
 ms.topic: conceptual
+no-loc: [NuGet, MSBuild, .nuspec, nuspec]
 ---
 
 # NuGet pack and restore as MSBuild targets
@@ -273,11 +274,12 @@ For historical reasons, NuGet & MSBuild treat paths without an extension as dire
 ```
 
 [File without an extension sample](https://github.com/NuGet/Samples/blob/master/PackageLicenseFileExtensionlessExample/).
+
 ### IsTool
 
 When using `MSBuild -t:pack -p:IsTool=true`, all output files, as specified in the [Output Assemblies](#output-assemblies) scenario, are copied to the `tools` folder instead of the `lib` folder. Note that this is different from a `DotNetCliTool` which is specified by setting the `PackageType` in `.csproj` file.
 
-### Packing using a .nuspec file
+### Packing using a :::no-loc text=".nuspec"::: file
 
 Although it is recommended that you [include all the properties](../reference/msbuild-targets.md#pack-target) that are usually in the `.nuspec` file in the project file instead, you can choose to use a `.nuspec` file to pack your project. For a non-SDK-style project that uses `PackageReference`, you must import `NuGet.Build.Tasks.Pack.targets` so that the pack task can be executed. You still need to restore the project before you can pack a nuspec file. (An SDK-style project includes the pack targets by default.)
 
@@ -323,7 +325,7 @@ The `pack` target provides two extension points that run in the inner, target fr
 - `TargetsForTfmSpecificBuildOutput` target: Use for files inside the `lib` folder or a folder specified using `BuildOutputTargetFolder`.
 - `TargetsForTfmSpecificContentInPackage` target: Use for files outside the `BuildOutputTargetFolder`.
 
-#### TargetsForTfmSpecificBuildOutput
+#### `TargetsForTfmSpecificBuildOutput`
 
 Write a custom target and specify it as the value of the `$(TargetsForTfmSpecificBuildOutput)` property. For any files that need to go into the `BuildOutputTargetFolder` (lib by default), the target should write those files into the ItemGroup `BuildOutputInPackage` and set the following two metadata values:
 
