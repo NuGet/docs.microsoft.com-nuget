@@ -34,8 +34,6 @@ To preview your Readme file before it's live on NuGet.org, upload your package u
 
 Due to security and privacy concerns, NuGet.org restricts the domains from which images and badges can be rendered to trusted hosts. 
 
-TODO: Reorder the allow-list by popularity
-
 NuGet.org allows all images (including badges) from the following trusted domains to be rendered:
 * api.bintray.com
 * api.codacy.com
