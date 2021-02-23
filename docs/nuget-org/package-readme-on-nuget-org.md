@@ -1,5 +1,5 @@
 ---
-title: How to Publish a NuGet Package
+title: Package Readme
 description: Detailed explanation of how Readme files on NuGet.org are rendered and what to do when you run into issues.
 author: chgill-MSFT
 ms.author: chgill
