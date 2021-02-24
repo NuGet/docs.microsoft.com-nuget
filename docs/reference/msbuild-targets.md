@@ -34,7 +34,7 @@ Similarly, you can write an MSBuild task, write your own target and consume NuGe
 > [!NOTE]
 > `$(OutputPath)` is relative and expects that you are running the command from the project root.
 
-## NuGet pack target
+## pack target
 
 For .NET projects that use the `PackageReference` format, using `msbuild -t:pack` draws inputs from the project file to use in creating a NuGet package.
 
@@ -70,7 +70,7 @@ The following table describes the MSBuild properties that can be added to a proj
 | `PackageType` | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | `Summary` | Not supported | | |
 
-### NuGet pack target inputs
+### pack target inputs
 
 | Property | Description |
 | - | - |
@@ -111,7 +111,7 @@ The following table describes the MSBuild properties that can be added to a proj
 | `NuspecBasePath` | Base path for the *.nuspec* file. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec). |
 | `NuspecProperties` | Semicolon separated list of key=value pairs. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec). |
 
-## NuGet pack scenarios
+## pack scenarios
 
 ### Suppressing dependencies
 
@@ -373,7 +373,7 @@ An example:
 </Target>  
 ```
 
-## NuGet restore target
+## restore target
 
 `MSBuild -t:restore` (which `nuget restore` and `dotnet restore` use with .NET Core projects), restores packages referenced in the project file as follows:
 
