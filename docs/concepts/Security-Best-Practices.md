@@ -135,7 +135,7 @@ To configure client trust policies, [see the following documentation](../consume
 
 Lock files store the hash of your package’s content. If the content hash of a package you want to install matches with the lock file, it will ensure package repeatability.
 
-To enable lock files, [see the following documentation](../consume-packages/package-references-in-project-files#locking-dependencies).
+To enable lock files, [see the following documentation](../consume-packages/package-references-packagereference-in-project-files#locking-dependencies).
 
 ## Monitor your supply chain
 
