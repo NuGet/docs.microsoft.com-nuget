@@ -70,7 +70,7 @@ This is typically found in one of two places:
 -	[`packages.config`](../reference/packages-config.md) – Located in the project root.
 -	[`<PackageReference>`](../consume-packages/package-references-in-project-files.md) – Located in the project file. 
 
-Depending on what method you use to manage your NuGet dependencies, you can also use Visual Studio to view your dependencies directly in [Solution Explorer](/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#solution-explorer) or [NuGet Package Manager](../consume-packages/install-use-packages-visual-studio.md).
+Depending on what method you use to manage your NuGet dependencies, you can also use Visual Studio to view your dependencies directly in [Solution Explorer](/visualstudio/ide/solutions-and-projects-in-visual-studio#solution-explorer) or [NuGet Package Manager](../consume-packages/install-use-packages-visual-studio.md).
 
 For CLI environments, you can use the [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) command to list out your project or solution’s dependencies. 
 
@@ -135,7 +135,7 @@ To configure client trust policies, [see the following documentation](../consume
 
 Lock files store the hash of your package’s content. If the content hash of a package you want to install matches with the lock file, it will ensure package repeatability.
 
-To enable lock files, [see the following documentation](../consume-packages/package-references-packagereference-in-project-files#locking-dependencies).
+To enable lock files, [see the following documentation](../consume-packages/package-references-in-project-files.md#locking-dependencies).
 
 ## Monitor your supply chain
 
