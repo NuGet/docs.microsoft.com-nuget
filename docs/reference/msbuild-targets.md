@@ -107,9 +107,9 @@ The following table describes the MSBuild properties that can be added to a proj
 | `IncludeContentInPack` | This Boolean value specifies whether any items that have a type of `Content` are included in the resulting package automatically. The default is `true`. |
 | `BuildOutputTargetFolder` | Specifies the folder where to place the output assemblies. The output assemblies (and other output files) are copied into their respective framework folders. For more information, see [Output assemblies](#output-assemblies). |
 | `ContentTargetFolders` | Specifies the default location of where all the content files should go if `PackagePath` is not specified for them. The default value is "content;contentFiles". For more information, see [Including content in a package](#including-content-in-a-package). |
-| `NuspecFile` | Relative or absolute path to the *.nuspec* file being used for packing. If specified, it's used **exclusively** for packaging information, and any information in the projects is not used. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec). |
-| `NuspecBasePath` | Base path for the *.nuspec* file. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec). |
-| `NuspecProperties` | Semicolon separated list of key=value pairs. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec). |
+| `NuspecFile` | Relative or absolute path to the *.nuspec* file being used for packing. If specified, it's used **exclusively** for packaging information, and any information in the projects is not used. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec-file). |
+| `NuspecBasePath` | Base path for the *.nuspec* file. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec-file). |
+| `NuspecProperties` | Semicolon separated list of key=value pairs. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec-file). |
 
 ## pack scenarios
 
@@ -279,7 +279,7 @@ For historical reasons, NuGet & MSBuild treat paths without an extension as dire
 
 When using `MSBuild -t:pack -p:IsTool=true`, all output files, as specified in the [Output Assemblies](#output-assemblies) scenario, are copied to the `tools` folder instead of the `lib` folder. Note that this is different from a `DotNetCliTool` which is specified by setting the `PackageType` in `.csproj` file.
 
-### Packing using a :::no-loc text=".nuspec"::: file
+### Packing using a `.nuspec` file
 
 Although it is recommended that you [include all the properties](../reference/msbuild-targets.md#pack-target) that are usually in the `.nuspec` file in the project file instead, you can choose to use a `.nuspec` file to pack your project. For a non-SDK-style project that uses `PackageReference`, you must import `NuGet.Build.Tasks.Pack.targets` so that the pack task can be executed. You still need to restore the project before you can pack a nuspec file. (An SDK-style project includes the pack targets by default.)
 
@@ -385,7 +385,7 @@ An example:
 1. Write assets file, targets, and props
 
 The `restore` target works for projects using the PackageReference format.
-`MSBuild 16.5+` also has [opt-in support](#restoring-packagereference-and-packagesconfig-with-msbuild) for the `packages.config` format.
+`MSBuild 16.5+` also has [opt-in support](#restoring-packagereference-and-packagesconfig-projects-with-msbuild) for the `packages.config` format.
 
 > [!NOTE]
 > The `restore` target [should not be run](#restoring-and-building-with-one-msbuild-command) in combination with the `build` target.
