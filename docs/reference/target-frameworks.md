@@ -19,7 +19,7 @@ NuGet uses target framework references in a variety of places to specifically id
 
 > [!Note]
 > NuGet supports all of the modern .NET target frameworks:
-> - For a list of the latest target frameworks, see the [Target frameworks in SDK-style projects](https://docs.microsoft.com/dotnet/standard/frameworks) documentation.
+> - For a list of the latest target frameworks, see the [Target frameworks in SDK-style projects](/dotnet/standard/frameworks) documentation.
 
 ## Supported frameworks
 
