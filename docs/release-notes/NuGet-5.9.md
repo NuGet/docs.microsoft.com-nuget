@@ -18,19 +18,21 @@ NuGet distribution vehicles:
 <sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
   
 > [!NOTE]
-> Visual Studio 16.9, MSBuild 16.9, and .NET 5.0 require NuGet.exe 5.9 or later.
+> Visual Studio 16.9, MSBuild 16.9, and .NET 5.0.3 requires NuGet.exe 5.9 or later.
 
 ## Summary: What's New in 5.9
 
+* Add "Update" context menu item for package dependencies that launches Package Manager UI with preselected packages to update - [#10378](https://github.com/NuGet/Home/issues/10378)
+
+    ![Right-click package "Update" experience gif](media/releasenotes-59-context-update.gif)
+
 * Show the requested version (including floating version or version range request) in the "Version" column of the project list in the solution level Package Manager UI - [#9827](https://github.com/NuGet/Home/issues/9827)
+
+    ![Requested version in solution level Package Manager UI](media/releasenotes-59-requested-version.png)
 
 * Extend the `.nupkg.metadata` file to include the installation source - [#10354](https://github.com/NuGet/Home/issues/10354)
 
-* Add Update context menu item for package dependencies that launches Package Manager UI with preselected packages to update - [#10378](https://github.com/NuGet/Home/issues/10378)
-
-* Enable recommender for PackageReference style projects - [#10053](https://github.com/NuGet/Home/issues/10053)
-
-* Introduce a new msbuild property to exclude build output for specific tfms during pack task - [#10396](https://github.com/NuGet/Home/issues/10396)
+* Introduce a new msbuild property to exclude build output for specific TFMs during pack task - [#10396](https://github.com/NuGet/Home/issues/10396)
 
 * INuGetPackageFileService - Fetch Images and embedded licenses for Codespaces-connected and standalone - [#10151](https://github.com/NuGet/Home/issues/10151)
 
@@ -46,7 +48,7 @@ NuGet distribution vehicles:
 
 * [CPVM] Disable pinning of the central transitive dependencies  - [#10132](https://github.com/NuGet/Home/issues/10132)
 
-* net5 tfm: produce error when missing TPV - [#9441](https://github.com/NuGet/Home/issues/9441)
+* net5 TFM: produce error when missing TPV - [#9441](https://github.com/NuGet/Home/issues/9441)
 
 * Log package contenthash during restore logging (during extraction) - [#10384](https://github.com/NuGet/Home/issues/10384)
 
