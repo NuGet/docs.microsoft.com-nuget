@@ -22,7 +22,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.9
 
-* Show requested version in the Solution Level UI - [#9827](https://github.com/NuGet/Home/issues/9827)
+* Show the requested version (including floating version or version range request) in the "Version" column of the project list in the solution level Package Manager UI - [#9827](https://github.com/NuGet/Home/issues/9827)
 
 * Extend the `.nupkg.metadata` file to include the installation source - [#10354](https://github.com/NuGet/Home/issues/10354)
 
