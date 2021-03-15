@@ -36,11 +36,11 @@ NuGet distribution vehicles:
 
 * Introduce a new msbuild property to exclude build output for specific TFMs during pack task - [#10396](https://github.com/NuGet/Home/issues/10396)
 
-* INuGetPackageFileService - Fetch Images and embedded licenses for Codespaces-connected and standalone - [#10151](https://github.com/NuGet/Home/issues/10151)
-
 ### Issues fixed in this release
 
 **DCRs:**
+
+* INuGetPackageFileService - Fetch Images and embedded licenses for Codespaces-connected and standalone - [#10151](https://github.com/NuGet/Home/issues/10151)
 
 * The down icon icon when the latest package version is installed is not intuitive. The old green tick was perfect - [#9789](https://github.com/NuGet/Home/issues/9789)
 
