@@ -30,6 +30,8 @@ NuGet distribution vehicles:
 
     ![Requested version in solution level Package Manager UI](media/releasenotes-59-requested-version.png)
 
+* IntelliCode package suggestions in the Package Manager UI Browse tab released as an A/B test - [#10053](https://github.com/NuGet/Home/issues/10053)
+
 * Extend the `.nupkg.metadata` file to include the installation source - [#10354](https://github.com/NuGet/Home/issues/10354)
 
 * Introduce a new msbuild property to exclude build output for specific TFMs during pack task - [#10396](https://github.com/NuGet/Home/issues/10396)
@@ -87,8 +89,6 @@ NuGet distribution vehicles:
 * Performance: Reduce UIDelays in GetPackageSpecsAsync for Legacy projects and non PR projects - [#9953](https://github.com/NuGet/Home/issues/9953)
 
 * ``dotnet nuget push *.nupkg`` doesn't push more than one file - [#4393](https://github.com/NuGet/Home/issues/4393)
-
-* Remove LSL related code - [#9301](https://github.com/NuGet/Home/issues/9301)
 
 * Output is wrapped at 80 characters on macOS when redirected - [#10198](https://github.com/NuGet/Home/issues/10198)
 
@@ -182,47 +182,10 @@ NuGet distribution vehicles:
 
 * NuGetPackageFileService fix - use using for disposable memorystream - [#10503](https://github.com/NuGet/Home/issues/10503)
 
-**Nones:**
 
-* Relative links are broken in NuGet.Client debugging guide - [#10100](https://github.com/NuGet/Home/issues/10100)
+**[List of all issues fixed in this release - 5.9.0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f6be8c10485c0236b7ef889)**
 
-* Windows SDK 10 link is broken in NuGet.Client Contribution guide - [#10099](https://github.com/NuGet/Home/issues/10099)
-
-* Build of NuGet libraries is broken when assembly signing is disabled  - [#10173](https://github.com/NuGet/Home/issues/10173)
-
-* [Test Failure][Localization] The information from command ‘get-help NuGet’ in PMC is not localized - [#4604](https://github.com/NuGet/Home/issues/4604)
-
-* Design for warning on improper casing for PackageLicenseFile and PackageIcon - [#10049](https://github.com/NuGet/Home/pull/10049)
-
-* No error occurred after packing and installing a package with an invalid .txt format icon - [#9311](https://github.com/NuGet/Home/issues/9311)
-
-* Remove Temp fix on patching - [#8952](https://github.com/NuGet/Home/issues/8952)
-
-* Cannot run Nuget.Client library - [#10390](https://github.com/NuGet/Home/issues/10390)
-
-* Clean-up the contributing docs - [#10399](https://github.com/NuGet/Home/issues/10399)
-
-* Enhance the coding guidelines - add rule for parameter names & namespace names - [#10485](https://github.com/NuGet/Home/issues/10485)
-
-* tfm_raw error happening for some TFMs during pack - [#10656](https://github.com/NuGet/Home/issues/10656)
-
-**StillOpens:**
-
-* PM UI:  not automatically closed when project unloaded/removed - [#9935](https://github.com/NuGet/Home/issues/9935)
-
-* E2E test GetPackageUpdatesAfterSwitchToSourceThatDoesNotContainInstalledPackageId is flaky - [#10254](https://github.com/NuGet/Home/issues/10254)
-
-* Race condition during restore for DotnetCliToolReference packages in the default parallel processing mode - [#10075](https://github.com/NuGet/Home/issues/10075)
-
-* Test:  TestPackageManager_UpgradePackageFor_TopParentProject_Success is flaky - [#10208](https://github.com/NuGet/Home/issues/10208)
-
-* Test: TestPacMan_PreviewInstallPackage_BuildIntegrated_RaiseTelemetryEventsWithWarningCode is flaky - [#10093](https://github.com/NuGet/Home/issues/10093)
-
-* Telemetry: Replace EmitTelemetryEvent with proper telemetry activities - [#9581](https://github.com/NuGet/Home/issues/9581)
-
-**[List of all issues fixed in this release - 5.9](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f6be8c10485c0236b7ef889)**
-
-**[List of commits in this release - 5.8.1](https://github.com/NuGet/NuGet.Client/compare/5.8.1.7021...5.9.0.7134)**
+**[List of commits in this release - 5.9.0](https://github.com/NuGet/NuGet.Client/compare/5.8.1.7021...5.9.0.7134)**
 
 ### Community contributions
 
