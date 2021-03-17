@@ -47,9 +47,9 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
 2. After the command completes, open the `.csproj` file to see the added reference:
 
     ```xml
-   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-   </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    </ItemGroup>
     ```
 
 ## Use the Newtonsoft.Json API in the app

@@ -42,9 +42,9 @@ This article shows you basic usage for a few of the most common dotnet CLI comma
    You can open the `.csproj` file to see the added reference:
 
     ```xml
-   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-   </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    </ItemGroup>
     ```
 
 ## Install a specific version of a package
