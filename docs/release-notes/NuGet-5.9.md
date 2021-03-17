@@ -24,7 +24,7 @@ NuGet distribution vehicles:
 
 * Add "Update" context menu item for package dependencies that launches Package Manager UI with preselected packages to update - [#10378](https://github.com/NuGet/Home/issues/10378)
 
-    ![Right-click package "Update" experience gif](media/releasenotes-59-context-update.gif)
+    ![Right-click package "Update" experience](media/releasenotes-59-update.png)
 
 * Show the requested version (including floating version or version range request) in the "Version" column of the project list in the solution level Package Manager UI - [#9827](https://github.com/NuGet/Home/issues/9827)
 
