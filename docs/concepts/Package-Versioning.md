@@ -243,3 +243,13 @@ When obtaining packages from a repository during install, reinstall, or restore 
 `pack` and `restore` operations normalize versions whenever possible. For packages already built, this normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions when resolving dependencies.
 
 However, NuGet package repositories must treat these values in the same way as NuGet to prevent package version duplication. Thus a repository that contains version *1.0* of a package should not also host version *1.0.0* as a separate and different package.
+
+## Where NuGetVersion diverges from Semantic Versioning
+
+If you want to programatically use NuGet package versions, it is strongly recommended to use [the package NuGet.Versioning](https://www.nuget.org/packages/NuGet.Versioning). The static method `NuGetVersion.Parse(string)` can be used to parse the version strings, and `VersionComparer` can be used to sort `NuGetVersion` instances.
+
+If you are implementing NuGet functionality in a language that does not run on .NET, here are the known list of differences between `NuGetVersion` and Semantic Versioning, and the reasons why an existing Semantic Versioning library might not work for packages already published on nuget.org.
+
+1. `NuGetVersion` supports a 4th version segment, `Revision`, to be compatible with, or a superset of, [`System.Version`](/dotnet/api/system.version). Therefore, excluding prerelease and metadata labels, a version string is `Major.Minor.Patch.Revision`. As per version normalization described above, if `Revision` is zero, it is omit from the normalized version string.
+2. `NuGetVersion` only requires the major segment to be defined. All others are optional, and are equivalent to zero. This means that `1`, `1.0`, `1.0.0`, and `1.0.0.0` are all accepted and equal.
+3. `NuGetVersion` uses case insenstive string comparisons for pre-release components. This means that `1.0.0-alpha` and `1.0.0-Alpha` are equal.
