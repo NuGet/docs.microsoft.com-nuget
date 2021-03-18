@@ -59,6 +59,17 @@ It is possible to share dependencies between multiple packages, making the total
 
 Dependencies are mostly static and never change. When fixing a bug in code, the dependencies may not need to be updated. If you bundle dependencies, you end up reshipping larger packages every time. By splitting NuGet packages into related dependencies, upgrades are much more fine-grained for consumers of your package.
 
+**How do I change my package ID casing?**
+
+NuGet.org displays the package's original casing (see [NuGetGallery#3349](https://github.com/NuGet/NuGetGallery/issues/3349)). If you'd like to change your package ID from `foo.bar` to `Foo.Bar`, please follow these steps:
+
+1. Ensure that the latest version of your package on nuget.org has the desired package ID casing. If needed, please upload a new version of your package with the desired casing.
+2. Login to nuget.org.
+3. Navigate to your package's page.
+4. Select the "Contact support" link in the sidebar and request a package ID case change.
+
+Our customer support will verify that your package's latest version has the desired package ID casing.
+
 ## NuGet.org not accessible
 
 **Why can't I download packages from or upload packages to NuGet.org?**
