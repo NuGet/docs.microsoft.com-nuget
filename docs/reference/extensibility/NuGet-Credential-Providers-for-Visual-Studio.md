@@ -73,4 +73,4 @@ A custom NuGet credential provider for Visual Studio must implement the `IVsCred
 | bool nonInteractive | If true, the credential provider must suppress all user prompts and use default values instead. |
 | CancellationToken cancellationToken | This cancellation token should be checked to determine if the operation requesting credentials has been cancelled. |
 
-**Return value**: A credentials object implementing the [`System.Net.ICredentials` interface](/dotnet/api/system.net.icredentials?view=netstandard-2.0).
+**Return value**: A credentials object implementing the [`System.Net.ICredentials` interface](/dotnet/api/system.net.icredentials).
