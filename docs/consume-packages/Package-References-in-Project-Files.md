@@ -206,7 +206,7 @@ To verify the exact name of the property generated, look at the generated [nuget
 In some rare instances different packages will contain classes in the same namespace. Starting with NuGet 5.7 & Visual Studio 2019 Update 7, equivalent to ProjectReference, PackageReference supports [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases).
 By default no aliases are provided. When an alias is specified, *all* assemblies coming from the annotated package with need to be referenced with an alias.
 
-You can look at sample usage at [NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample)
+You can look at sample usage at [NuGet\Samples](https://github.com/NuGet/Samples/tree/main/PackageReferenceAliasesExample)
 
 In the project file, specify the aliases as follows:
 
