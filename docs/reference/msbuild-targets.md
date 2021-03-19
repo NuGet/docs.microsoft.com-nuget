@@ -146,7 +146,7 @@ For example:
 </ItemGroup>
 ```
 
-[Package Icon sample](https://github.com/NuGet/Samples/tree/master/PackageIconExample).
+[Package Icon sample](https://github.com/NuGet/Samples/tree/main/PackageIconExample).
 
 For the nuspec equivalent, take a look at [nuspec reference for icon](nuspec.md#icon).
 
@@ -230,7 +230,7 @@ If a file of type Compile, is outside the project folder, then it's just added t
 
 ### Packing a license expression or a license file
 
-When using a license expression, use the `PackageLicenseExpression` property. For a sample, see [License expression sample](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample).
+When using a license expression, use the `PackageLicenseExpression` property. For a sample, see [License expression sample](https://github.com/NuGet/Samples/tree/main/PackageLicenseExpressionExample).
 
 ```xml
 <PropertyGroup>
@@ -252,7 +252,7 @@ When packing a license file, use `PackageLicenseFile` property to specify the pa
 </ItemGroup>
 ```
 
-For a sample, see [License file sample](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
+For a sample, see [License file sample](https://github.com/NuGet/Samples/tree/main/PackageLicenseFileExample).
 
 > [!NOTE]
 > Only one of `PackageLicenseExpression`, `PackageLicenseFile`, and `PackageLicenseUrl` can be specified at a time.
@@ -273,7 +273,7 @@ For historical reasons, NuGet & MSBuild treat paths without an extension as dire
   </ItemGroup>  
 ```
 
-[File without an extension sample](https://github.com/NuGet/Samples/blob/master/PackageLicenseFileExtensionlessExample/).
+[File without an extension sample](https://github.com/NuGet/Samples/blob/main/PackageLicenseFileExtensionlessExample/).
 
 ### IsTool
 

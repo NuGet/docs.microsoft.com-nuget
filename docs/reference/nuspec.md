@@ -196,7 +196,7 @@ For example, you would add the following to your nuspec when creating a package 
 </package>
 ```
 
-[Package Icon nuspec sample.](https://github.com/NuGet/Samples/tree/master/PackageIconNuspecExample)
+[Package Icon nuspec sample.](https://github.com/NuGet/Samples/tree/main/PackageIconNuspecExample)
 
 For the MSBuild equivalent, take a look at [Packing an icon image file](msbuild-targets.md#packing-an-icon-image-file).
 
