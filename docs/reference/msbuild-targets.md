@@ -59,7 +59,7 @@ The following table describes the MSBuild properties that can be added to a proj
 | `license` | `PackageLicenseFile` | empty | Path to a license file within the package if you're using a custom license or a license that hasn't been assigned an SPDX identifier. You need to explicitly pack the referenced license file. Corresponds to `<license type="file">`. See [Packing a license expression or a license file](#packing-a-license-expression-or-a-license-file). |
 | `LicenseUrl` | `PackageLicenseUrl` | empty | `PackageLicenseUrl` is deprecated. Use `PackageLicenseExpression` or `PackageLicenseFile` instead. |
 | `ProjectUrl` | `PackageProjectUrl` | empty | |
-| `Icon` | `PackageIcon` | empty | A path to an image in the package to use as a package icon. You need to explicitly pack the referenced icon image file. For more information, see [Packing an icon image file](#packing-an-icon-image-file) and [`icon` metadata](/nuget/reference/nuspec#icon). |
+| `Icon` | `PackageIcon` | empty | A path to an image in the package to use as a package icon. You need to explicitly pack the referenced icon image file. For more information, see [Packing an icon image file](#packing-an-icon-image-file) and [`icon` metadata](./nuspec.md#icon). |
 | `IconUrl` | `PackageIconUrl` | empty | `PackageIconUrl` is deprecated in favor of `PackageIcon`. However, for the best downlevel experience, you should specify `PackageIconUrl` in addition to `PackageIcon`. |
 | `Tags` | `PackageTags` | empty | A semicolon-delimited list of tags that designates the package. |
 | `ReleaseNotes` | `PackageReleaseNotes` | empty | Release notes for the package. |
