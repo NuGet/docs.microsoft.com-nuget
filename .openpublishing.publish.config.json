@@ -20,7 +20,7 @@
   "notification_subscribers": [],
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/NuGet/docs.microsoft.com-nuget",
-  "git_repository_branch_open_to_public_contributors": "master",
+  "git_repository_branch_open_to_public_contributors": "main",
   "skip_source_output_uploading": false,
   "contribution_branch_mappings": {},
   "dependent_repositories": [
@@ -39,7 +39,7 @@
     {
       "path_to_root": "nuget-samples",
       "url": "https://github.com/NuGet/Samples",
-      "branch": "master",
+      "branch": "main",
       "branch_mapping": {}
     }
   ],
@@ -48,7 +48,7 @@
       "Publish",
       "Pdf"
     ],
-    "master": [
+    "main": [
       "Publish",
       "PDF"
     ]

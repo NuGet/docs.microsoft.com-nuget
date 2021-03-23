@@ -105,7 +105,7 @@ If, for some reason, you have a bug in how you process catalog leaves, you can s
 
 Because the catalog is a set of JSON documents available over HTTP, it can be interacted with using any programming language that has an HTTP client and JSON deserializer.
 
-C# samples are available in the [NuGet/Samples repository](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample).
+C# samples are available in the [NuGet/Samples repository](https://github.com/NuGet/Samples/tree/main/CatalogReaderExample).
 
 ```cli
 git clone https://github.com/NuGet/Samples.git
@@ -117,7 +117,7 @@ The easiest way to consume the catalog is to use the pre-release .NET catalog SD
 
 You can install this package to a project compatible with `netstandard1.3` or greater (such as .NET Framework 4.6).
 
-A sample using this package is available on GitHub in the [NuGet.Protocol.Catalog.Sample project](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/NuGet.Protocol.Catalog.Sample).
+A sample using this package is available on GitHub in the [NuGet.Protocol.Catalog.Sample project](https://github.com/NuGet/Samples/tree/main/CatalogReaderExample/NuGet.Protocol.Catalog.Sample).
 
 #### Sample output
 
@@ -155,9 +155,9 @@ warn: NuGet.Protocol.Catalog.CatalogProcessor[0]
 
 ### Minimal sample
 
-For an example with fewer dependencies that illustrates the interaction with the catalog in more detail, see the [CatalogReaderExample sample project](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/CatalogReaderExample). The project targets `netcoreapp2.0` and depends on the [NuGet.Protocol 4.4.0](https://www.nuget.org/packages/NuGet.Protocol/4.4.0) (for resolving the service index) and [Newtonsoft.Json 9.0.1](https://www.nuget.org/packages/Newtonsoft.Json/9.0.1) (for JSON deserialization).
+For an example with fewer dependencies that illustrates the interaction with the catalog in more detail, see the [CatalogReaderExample sample project](https://github.com/NuGet/Samples/tree/main/CatalogReaderExample/CatalogReaderExample). The project targets `netcoreapp2.0` and depends on the [NuGet.Protocol 4.4.0](https://www.nuget.org/packages/NuGet.Protocol/4.4.0) (for resolving the service index) and [Newtonsoft.Json 9.0.1](https://www.nuget.org/packages/Newtonsoft.Json/9.0.1) (for JSON deserialization).
 
-The main logic of the code is visible in the [Program.cs file](https://github.com/NuGet/Samples/blob/master/CatalogReaderExample/CatalogReaderExample/Program.cs).
+The main logic of the code is visible in the [Program.cs file](https://github.com/NuGet/Samples/blob/main/CatalogReaderExample/CatalogReaderExample/Program.cs).
 
 #### Sample output
 

@@ -283,6 +283,7 @@ If a `certificate` specifies `allowUntrustedRoot` as `true` the given certificat
     </author>
     <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
         <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+        <certificate fingerprint="5A2901D6ADA3D18260B9C6DFE2133C95D74B9EEF6AE0E5DC334C8454D1477DF4" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
         <owners>microsoft;aspnet;nuget</owners>
     </repository>
 </trustedSigners>
@@ -431,6 +432,7 @@ Below is an example `nuget.config` file that illustrates a number of settings in
         </author>
         <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
             <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+            <certificate fingerprint="5A2901D6ADA3D18260B9C6DFE2133C95D74B9EEF6AE0E5DC334C8454D1477DF4" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
             <owners>microsoft;aspnet;nuget</owners>
         </repository>
     </trustedSigners>

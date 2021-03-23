@@ -37,6 +37,7 @@ Registered trusted signers:
       Service Index: https://api.nuget.org/v3/index.json
       Certificate fingerprint(s):
         SHA256 - 0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D
+        SHA256 - 5A2901D6ADA3D18260B9C6DFE2133C95D74B9EEF6AE0E5DC334C8454D1477DF4
 
  2.   microsoft [author]
       Certificate fingerprint(s):
