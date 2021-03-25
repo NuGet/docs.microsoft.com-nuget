@@ -64,10 +64,10 @@ When a package is extracted into the *global-packages* folder, a file `.nupkg.me
 }
 ```
 
-> ![Note]
+> [!Note]
 > If your *global-packages* folder has packages extracted before you upgraded to a newer version of tools that has NuGet 5.9.0, the `.nupkg.metadata` file will be version 1 and will not contain the package source. You can [clear your *global-packages* folder](../consume-packages/managing-the-global-packages-and-cache-folders.md#clearing-local-folders) to ensure all packages will contain the package source.
 
-> ![Information]
+> [!Tip]
 > NuGet writes the `.nupkg.metadata` file to the *global-packages* folder only. Projects using `packages.config` use a solution packages folder, which does not create a `.nupkg.metadata` file. Unless `-NoCache` or `--no-cache` was used on the command line, the package will be in both the *global-packages* and solution packages folders.
 
 ### Installed package log message
@@ -78,7 +78,7 @@ Starting from NuGet 5.9.0, NuGet outputs the package source in the restore messa
 Installed Moq 4.16.1 from https://api.nuget.org/v3/index.json with content hash bw3R9q8cVNhWXNpnvWb0OGP4HadS4zvClq+T1zf7AF+tLY1haZ2AvbHidQekf4PDv1T40c6brZeT/V0IBq7cEQ==.
 ```
 
-> ![Information]
+> [!Tip]
 > This message is output at normal/informational verbosity. Visual Studio and the `dotnet` CLI default to minimal verbosity, so this message will not be visible by default. The `msbuild` and `nuget` CLI tools default to normal verbosity, so this message will be visible by default.
 
 ### HTTP log message
