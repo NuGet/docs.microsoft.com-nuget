@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting Installed Packages
-description: Detailed information about the package installation process
+description: How to find which package source was used for individual packages
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/26/2021
