@@ -30,11 +30,12 @@ To preview your Readme file before it's live on NuGet.org, upload your package u
 
 ![Readme File preview](media\readme-upload-preview.PNG)
 
-## Domain allow-list for images and badges
+Consider taking time to review and preview your Readme file for [image compliance](#allowed-domains-for-images-and-badges) and formatting to make sure gives a great first impression to potential users! To correct mistakes on a Readme file on NuGet.org, you will need to push an updated package version, so making sure everything looks good in advance may save you headache down the road.
+## Allowed domains for images and badges
 
 Due to security and privacy concerns, NuGet.org restricts the domains from which images and badges can be rendered to trusted hosts. 
 
-NuGet.org allows all images (including badges) from the following trusted domains to be rendered:
+NuGet.org allows all images, including badges, from the following trusted domains to be rendered:
 * api.bintray.com
 * api.codacy.com
 * api.codeclimate.com
@@ -52,7 +53,6 @@ NuGet.org allows all images (including badges) from the following trusted domain
 * codecov.io
 * codefactor.io
 * coveralls.io
-* dev.azure.com
 * gitlab.com
 * img.shields.io
 * isitmaintained.com
@@ -64,6 +64,4 @@ NuGet.org allows all images (including badges) from the following trusted domain
 * user-images.githubusercontent.com
 * camo.githubusercontent.com
 
-If you feel that a another domain should be added to the allow-list, please feel free to [file an issue](https://github.com/NuGet/NuGetGallery/issues) and it will be reviewed by our engineering team.
-
-Images with relative local paths and images hosted from unsupported domains will not be rendered and will produce a warning on the Readme file preview and package details page. 
+If you feel that a another domain should be added to the allow-list, please feel free to [file an issue](https://github.com/NuGet/NuGetGallery/issues) and it will be reviewed by our engineering team. Images with relative local paths and images hosted from unsupported domains will not be rendered and will produce a warning on the Readme file preview and package details page that is only visible to the package owners.
