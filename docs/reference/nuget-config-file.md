@@ -345,7 +345,7 @@ If an environment variable is not found, NuGet uses the literal value from the c
 
 The table below show environnment variable syntax and path separator support for NuGet.Config files.
 
-### NuGet.Config environment variable support
+### `NuGet.Config` environment variable support
 
 | Syntax | Dir separator | Windows nuget.exe | Windows dotnet.exe | Mac nuget.exe (in Mono) | Mac dotnet.exe |
 |---|---|---|---|---|---|
