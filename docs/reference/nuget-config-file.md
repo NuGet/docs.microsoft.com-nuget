@@ -7,7 +7,7 @@ ms.date: 08/13/2019
 ms.topic: reference
 ---
 
-# nuget.config reference
+# `nuget.config` reference
 
 NuGet behavior is controlled by settings in different `NuGet.Config` or `nuget.config` files as described in [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md).
 
