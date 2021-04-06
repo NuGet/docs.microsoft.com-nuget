@@ -75,6 +75,9 @@ PackageSignatureVerificationLog: PackageIdentity: Moq.4.16.1 Source: https://api
 
 This message will be reported whether the package was downloaded from an HTTP package source, or copied from a local package source. It will not be output if the package is already available in the *global-packages* folder or a fallback folder.
 
+> [!Important]
+> Due to [removal of trust of VeriSign CA](https://github.com/dotnet/announcements/issues/180) NuGet has disabled signed package verification on certain platforms, in certain versions of NuGet and the .NET SDK. Therefore, the same packages may have `PackageSignatureVerificationLog` logs, or those logs may be missing, depending on what platform you're running restore on, and which version of .NET or NuGet you're using.
+
 ## NuGet Version Map
 
 The following versions of NuGet have important changes regarding package source logging:
