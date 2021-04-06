@@ -11,6 +11,9 @@ ms.topic: conceptual
 
 Sometimes you might want to validate which source a specific package was installed from. Here are some ways you can check.
 
+> [!Note]
+> Some package sources support a concept known as upstream sources. For example, [Azure Artifacts upstream sources](/azure/devops/artifacts/concepts/upstream-sources). NuGet clients do not know whether a package came from an upstream source. Therefore, any logging of the package source will list the configured source, not the upstream source.
+
 ## `.nupkg.metadata` file in global packages folder
 
 When a package is extracted into the *global-packages* folder, a file `.nupkg.metadata` is written. Starting from NuGet 5.9.0, NuGet will add the package source. See below to map NuGet versions to Visual Studio or .NET SDK versions. For example:
