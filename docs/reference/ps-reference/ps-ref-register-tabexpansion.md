@@ -1,8 +1,8 @@
 ---
 title: NuGet Register-TabExpansion PowerShell Reference
 description: Reference for Register-TabExpansion PowerShell command in the NuGet Package Manager Console in Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
 ---
@@ -30,7 +30,7 @@ None of these parameters accept pipeline input or wildcard characters.
 
 ## Common Parameters
 
-`Register-TabExpansion` supports the following [common PowerShell parameters](https://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.
+`Register-TabExpansion` supports the following [common PowerShell parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.
 
 ## Examples
 

@@ -1,8 +1,8 @@
 ---
 title: NuGet CLI list command
 description: Reference for the nuget.exe list command
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
 ---
@@ -19,21 +19,45 @@ Displays a list of packages from a given source. If no sources are specified, al
 nuget list [search terms] [options]
 ```
 
-where the optional search terms will filter the displayed list. Search terms are applied to the names of packages, tags, and package descriptions just as they are when using them on nuget.org.
+where the optional search terms will filter the displayed list. [Search terms](../../consume-packages/finding-and-choosing-packages.md#search-syntax) are applied to the names of packages, tags, and package descriptions just as they are when using them on nuget.org. 
 
 ## Options
 
-| Option | Description |
-| --- | --- |
-| AllVersions | List all versions of a package. By default, only the latest package version is displayed. |
-| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
-| ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
-| Help | Displays help information for the command. |
-| IncludeDelisted | *(3.2+)* Display unlisted packages. |
-| NonInteractive | Suppresses prompts for user input or confirmations. |
-| PreRelease | Includes prerelease packages in the list. |
-| Source | Specifies a list of packages sources to search. |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
+- **`-AllVersions`**
+
+  List all versions of a package. By default, only the latest package version is displayed.
+
+- **`-ConfigFile`**
+
+  The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
+
+- **`-ForceEnglishOutput`**
+
+  *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
+
+- **`-?|-help`**
+
+  Displays help information for the command.
+
+- **`-IncludeDelisted`**
+
+  *(3.2+)* Display unlisted packages.
+
+- **`-NonInteractive`**
+
+  Suppresses prompts for user input or confirmations.
+
+- **`-PreRelease`**
+
+  Includes prerelease packages in the list.
+
+- **`-Source`**
+
+  The package source to search. You can specify multiple sources by using the `-Source` option multiple times.
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
@@ -59,4 +83,3 @@ List JSON-related packages from multiple sources/feeds:
 ```
 nuget list JSON -Source "https://nuget.org/api/v2" -Source "https://other-feed-url-goes-here"
 ```
-

@@ -1,7 +1,7 @@
 ---
 title: How to publish NuGet symbol packages using the new symbol package format '.snupkg'| Microsoft Docs
-author: cristinamanu
-ms.author: cristinamanu
+author: JonDouglas
+ms.author: jodou
 manager: skofman
 ms.date: 10/30/2018
 ms.topic: reference
@@ -17,6 +17,9 @@ ms.reviewer:
 # Creating symbol packages (.snupkg)
 
 A good debugging experience relies on the presence of debug symbols as they provide critical information like the association between the compiled and the source code, names of local variables, stack traces, and more. You can use symbol packages (.snupkg) to distribute these symbols and improve the debugging experience of your NuGet packages.
+
+> Note that symbol package isn't the only strategy to make the debug symbols available to the consumers of your library. It's also [possible to `embed`](/dotnet/core/deploying/single-file#include-pdb-files-inside-the-bundle) them in the `dll` or `exe` with the following project property:
+> `<DebugType>embedded</DebugType>`
 
 ## Prerequisites
 
@@ -58,7 +61,7 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 The [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) property can have one of two values: `symbols.nupkg` (the default) or `snupkg`. If this property is not specified, a legacy symbol package will be created.
 
 > [!Note]
-> The legacy format `.symbols.nupkg` is still supported but only for compatibility reasons (see [Legacy Symbol Packages](Symbol-Packages.md)). NuGet.org's symbol server only accepts the new symbol package format - `.snupkg`.
+> The legacy format `.symbols.nupkg` is still supported but only for compatibility reasons like native packages (see [Legacy Symbol Packages](Symbol-Packages.md)). NuGet.org's symbol server only accepts the new symbol package format - `.snupkg`.
 
 ## Publishing a symbol package
 
@@ -98,6 +101,9 @@ NuGet.org has the following constraints for symbol packages:
 - The PDBs and their associated .nupkg DLLs need to be built with the compiler in Visual Studio version 15.9 or above (see [PDB crypto hash](https://github.com/dotnet/roslyn/issues/24429))
 
 Symbol packages published to NuGet.org will fail validation if these constraints aren't met. 
+
+> [!NOTE]
+> Native projects, such as C++ projects, produce Windows PDBs instead of Portable PDBs. These are not supported by NuGet.org's symbol server. Please use [Legacy Symbol Packages](Symbol-Packages.md) instead.
 
 ### Symbol package validation and indexing
 

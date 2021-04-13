@@ -1,8 +1,8 @@
 ---
-title: Migrating from package.config to PackageReference formats
-description: Details on how to migrate a project from the package.config management format to PackageReference as supported by NuGet 4.0+ and VS2017 and .NET Core 2.0
-author: karann-msft
-ms.author: karann
+title: Migrating from packages.config to PackageReference formats
+description: Details on how to migrate a project from the packages.config management format to PackageReference as supported by NuGet 4.0+ and VS2017 and .NET Core 2.0
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: conceptual
 ---
@@ -95,31 +95,27 @@ Some aspects that were supported in packages.config are not supported in Package
 
 ### "install.ps1" scripts are ignored when the package is installed after the migration
 
-| | |
-| --- | --- |
-| **Description** | With PackageReference, install.ps1 and uninstall.ps1 PowerShell scripts are not executed while installing or uninstalling a package. |
-| **Potential impact** | Packages that depend on these scripts to configure some behavior in the destination project might not work as expected. |
+* **Description**: With PackageReference, install.ps1 and uninstall.ps1 PowerShell scripts are not executed while installing or uninstalling a package.
+
+* **Potential impact**: Packages that depend on these scripts to configure some behavior in the destination project might not work as expected.
 
 ### "content" assets are not available when the package is installed after the migration
 
-| | |
-| --- | --- |
-| **Description** | Assets in a package's `content` folder are not supported with PackageReference and are ignored. PackageReference adds support for `contentFiles` to have better transitive support and shared content.  |
-| **Potential impact** | Assets in `content` are not copied into the project and project code that depends on the presence of those assets requires refactoring.  |
+* **Description**: Assets in a package's `content` folder are not supported with PackageReference and are ignored. PackageReference adds support for `contentFiles` to have better transitive support and shared content.
+
+* **Potential impact**: Assets in `content` are not copied into the project and project code that depends on the presence of those assets requires refactoring.
 
 ### XDT transforms are not applied when the package is installed after the upgrade
 
-| | |
-| --- | --- |
-| **Description** | XDT transforms are not supported with PackageReference and `.xdt` files are ignored when installing or uninstalling a package.   |
-| **Potential impact** | XDT transforms are not applied to any project XML files, most commonly, `web.config.install.xdt` and `web.config.uninstall.xdt`, which means the project's` web.config` file is not updated when the package is installed or uninstalled. |
+* **Description**: XDT transforms are not supported with PackageReference and `.xdt` files are ignored when installing or uninstalling a package.
+
+* **Potential impact**: XDT transforms are not applied to any project XML files, most commonly, `web.config.install.xdt` and `web.config.uninstall.xdt`, which means the project's` web.config` file is not updated when the package is installed or uninstalled.
 
 ### Assemblies in the lib root are ignored when the package is installed after the migration
 
-| | |
-| --- | --- |
-| **Description** | With PackageReference, assemblies present at the root of `lib` folder without a target framework specific sub-folder are ignored. NuGet looks for a sub-folder matching the target framework moniker (TFM) corresponding to the project’s target framework and installs the matching assemblies into the project. |
-| **Potential impact** | Packages that do not have a sub-folder matching the target framework moniker (TFM) corresponding to the project’s target framework may not behave as expected after the transition or fail installation during the migration |
+* **Description**: With PackageReference, assemblies present at the root of `lib` folder without a target framework specific sub-folder are ignored. NuGet looks for a sub-folder matching the target framework moniker (TFM) corresponding to the project’s target framework and installs the matching assemblies into the project.
+
+* **Potential impact**: Packages that do not have a sub-folder matching the target framework moniker (TFM) corresponding to the project’s target framework may not behave as expected after the transition or fail installation during the migration.
 
 ## Found an issue? Report it!
 

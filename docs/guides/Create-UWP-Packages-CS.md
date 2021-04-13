@@ -1,5 +1,5 @@
 ---
-title: Create NuGet Packages for the Universal Windows Platform
+title: Create NuGet Packages for the UWP Platform (C#)
 description: An end-to-end walkthrough of creating NuGet packages using a Windows Runtime Component for the Universal Windows Platform in C#.
 author: rrelyea
 ms.author: rrelyea
@@ -17,7 +17,7 @@ In this walkthrough you create a NuGet package with a C# UWP component (includin
 
 1. Visual Studio 2019. Install the 2019 Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well.
 
-1. NuGet CLI. Download the latest version of `nuget.exe` from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice (the download is the `.exe` directly). Then add that location to your PATH environment variable if it isn't already. [More details](/nuget/reference/nuget-exe-cli-reference#windows).
+1. NuGet CLI. Download the latest version of `nuget.exe` from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice (the download is the `.exe` directly). Then add that location to your PATH environment variable if it isn't already. [More details](../reference/nuget-exe-cli-reference.md#windows).
 
 ## Create a UWP Windows Runtime component
 
@@ -47,7 +47,7 @@ In this walkthrough you create a NuGet package with a C# UWP component (includin
 To create the initial `.nuspec` file, do the three steps below. The sections that follow then guide you through other necessary updates.
 
 1. Open a command prompt and navigate to the folder containing `ImageEnhancer.csproj` (this will be a subfolder below where the solution file is).
-1. Run the [`NuGet spec`](/nuget/reference/cli-reference/cli-ref-spec) command to generate `ImageEnhancer.nuspec` (the name of the file is taken from the name of the `.csroj` file):
+1. Run the [`NuGet spec`](../reference/cli-reference/cli-ref-spec.md) command to generate `ImageEnhancer.nuspec` (the name of the file is taken from the name of the `.csroj` file):
 
     ```cli
     nuget spec
@@ -192,7 +192,7 @@ Your final `.nuspec` file should now look like the following, where again YOUR_N
 
 ## Package the component
 
-With the completed `.nuspec` referencing all the files you need to include in the package, you're ready to run the [`nuget pack`](/nuget/reference/cli-reference/cli-ref-pack) command:
+With the completed `.nuspec` referencing all the files you need to include in the package, you're ready to run the [`nuget pack`](../reference/cli-reference/cli-ref-pack.md) command:
 
 ```cli
 nuget pack ImageEnhancer.nuspec

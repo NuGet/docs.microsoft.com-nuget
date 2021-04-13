@@ -1,8 +1,8 @@
 ---
 title: NuGet Packages in Visual Studio templates
 description: Instructions for including NuGet packages as part of Visual Studio project and item templates.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/03/2018
 ms.topic: conceptual
 ---
@@ -88,7 +88,7 @@ If you are distributing only a single project/item template and do not need to p
 1. Modify the `<packages>` element in the `.vstemplate` file as follows:
 
     ```xml
-    <packages repository="template"">
+    <packages repository="template">
         <!-- ... -->
     </packages>
     ```

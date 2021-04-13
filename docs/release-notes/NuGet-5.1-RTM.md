@@ -1,8 +1,8 @@
 ---
 title: NuGet 5.1 RTM Release Notes
 description: Release notes for NuGet 5.1 including new features, bug fixes, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/21/2019
 ms.topic: conceptual
 ---
@@ -28,7 +28,7 @@ NuGet distribution vehicles:
 * Support for new .NET Core 3.0 assets such as [Targeting Packs](https://github.com/dotnet/cli/issues/10006) and [Runtime Packs](https://github.com/dotnet/cli/issues/10007)
   * NuGet pack and restore support for FrameworkReferences to enable targeting and runtime package references - [#7342](https://github.com/NuGet/Home/issues/7342)
   * Support "download only" package scenario with PackageDownload - [#7339](https://github.com/NuGet/Home/issues/7339)
-  * Exlcude runtime and targeting packs from search results & restore graph using PackageType - [#7337](https://github.com/NuGet/Home/issues/7337)
+  * Exclude runtime and targeting packs from search results & restore graph using PackageType - [#7337](https://github.com/NuGet/Home/issues/7337)
 
 ### Issues fixed in this release
 

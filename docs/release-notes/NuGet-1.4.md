@@ -1,8 +1,8 @@
 ---
 title: NuGet 1.4 Release Notes
 description: Release notes for NuGet 1.4 including known issues, bug fixes, added features, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
 ---
@@ -24,15 +24,21 @@ The `Update-Package` command now makes it easier to:
 
 #### Update all packages in a single project
 
-    Update-Package -Project MvcApplication1
+```
+Update-Package -Project MvcApplication1
+```
 
 #### Update a package in all projects
 
-    Update-Package PackageId
+```
+Update-Package PackageId
+```
 
 #### Update all packages in all projects
 
-    Update-Package
+```
+Update-Package
+```
 
 #### Perform a "safe" update on all packages
 The `-Safe` flag constrains upgrades to only versions with the same Major and Minor version component. For example,
@@ -40,7 +46,9 @@ if version 1.0.0 of a package is installed, and versions 1.0.1, 1.0.2, and 1.1 a
 flag updates the package to 1.0.2. Upgrading without the `-Safe` flag would upgrade the package to the latest version,
 1.1.
 
-    Update-Package -Safe
+```
+Update-Package -Safe
+```
 
 ### Managing Packages at the Solution Level
 Prior to NuGet 1.4, installing a package into multiple projects was cumbersome using the dialog. It required launching
@@ -152,7 +160,9 @@ so to install NuGet for Windows Phone Tools, you may need to download and run th
 
 To uninstall NuGet for Windows Phone Tools, run the following command.
 
-     vsixinstaller.exe /uninstall:NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5
+```
+vsixinstaller.exe /uninstall:NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5
+```
 
 ## Bug Fixes
 NuGet 1.4 had a total of 88 work items fixed. 71 of those were marked as bugs.

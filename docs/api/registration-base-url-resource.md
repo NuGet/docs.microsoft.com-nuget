@@ -88,7 +88,9 @@ The heuristic that nuget.org uses is as follows: if there are 128 or more versio
 into pages of size 64. If there are less than 128 versions, inline all leaves into the registration index. Note that
 this means packages with 65 to 127 versions will have two pages in the index but both pages will be inlined.
 
-    GET {@id}/{LOWER_ID}/index.json
+```
+GET {@id}/{LOWER_ID}/index.json
+```
 
 ### Request parameters
 
@@ -97,7 +99,7 @@ Name     | In     | Type    | Required | Notes
 LOWER_ID | URL    | string  | yes      | The package ID, lowercased
 
 The `LOWER_ID` value is the desired package ID lowercased using the rules implemented by .NET's
-[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) method.
+[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant&preserve-view=true) method.
 
 ### Response
 
@@ -179,6 +181,7 @@ summary                  | string                     | no       |
 tags                     | string or array of string  | no       | 
 title                    | string                     | no       | 
 version                  | string                     | yes      | The full version string after normalization
+vulnerabilities          | array of objects           | no       | The security vulnerabilities of the package
 
 The package `version` property is the full version string after normalization. This means that SemVer 2.0.0 build data
 can be included here.
@@ -250,9 +253,20 @@ Name         | Type   | Required | Notes
 id           | string | yes      | The ID of the alternate package
 range        | object | no       | The allowed [version range](../concepts/package-versioning.md#version-ranges), or `*` if any version is allowed
 
+#### Vulnerabilities
+
+An array of `vulnerability` objects. Each vulnerability has the following properties:
+
+Name         | Type   | Required | Notes
+------------ | ------ | -------- | -----
+advisoryUrl  | string | yes      | Location of security advisory for the package
+severity     | string | yes      | Severity of advisory: "0" = Low, "1" = Moderate, "2" = High, "3" = Critical
+
 ### Sample request
 
-    GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
+```
+GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
+```
 
 ### Sample response
 
@@ -289,7 +303,9 @@ The shape of the registration leaf objects is the same as in the registration in
 
 ## Sample request
 
-    GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
+```
+GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
+```
 
 ## Sample response
 
@@ -327,7 +343,9 @@ registration   | string  | no       | The URL to the registration index
 
 ### Sample request
 
-    GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
+```
+GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
+```
 
 ### Sample response
 

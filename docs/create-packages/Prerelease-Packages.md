@@ -1,8 +1,8 @@
 ---
 title: Pre-release versions in NuGet packages
 description: Guidance for building pre-release packages
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
 ---
@@ -19,7 +19,7 @@ To support the software release lifecycle, NuGet 1.6 and later allows for the di
 
 You can specify such versions using one of the following ways:
 
-- **If your project uses [`PackageReference`](../consume-packages/package-references-in-project-files.md)**: include the semantic version suffix in the `.csproj` file's [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion) element:
+- **If your project uses [`PackageReference`](../consume-packages/package-references-in-project-files.md)**: include the semantic version suffix in the `.csproj` file's [`PackageVersion`](/dotnet/core/tools/csproj#packageversion) element:
 
     ```xml
     <PropertyGroup>
@@ -72,15 +72,17 @@ With this in mind, it's generally good to follow recognized naming conventions s
 
 Whatever suffixes you use, however, NuGet will give them precedence in reverse alphabetical order:
 
-    1.0.1
-    1.0.1-zzz
-    1.0.1-rc
-    1.0.1-open
-    1.0.1-beta.12
-    1.0.1-beta.5
-    1.0.1-beta
-    1.0.1-alpha.2
-    1.0.1-alpha
+```
+1.0.1
+1.0.1-zzz
+1.0.1-rc
+1.0.1-open
+1.0.1-beta.12
+1.0.1-beta.5
+1.0.1-beta
+1.0.1-alpha.2
+1.0.1-alpha
+```
 
 As shown, the version without any suffix will always take precedence over pre-release versions.
 

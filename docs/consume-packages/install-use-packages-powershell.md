@@ -1,8 +1,8 @@
 ---
 title: Install and manage NuGet packages using the console in Visual Studio
 description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords: 
@@ -14,6 +14,9 @@ f1_keywords:
 The NuGet Package Manager Console lets you use [NuGet PowerShell commands](../reference/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. To use `nuget.exe` CLI commands in the console, see [Using the nuget.exe CLI in the console](#use-the-nugetexe-cli-in-the-console).
 
 The console is built into Visual Studio on Windows. It is not included with Visual Studio for Mac or Visual Studio Code.
+
+> [!Important]
+> The commands listed here are specific to the Package Manager Console in Visual Studio, and differ from the [Package Management module commands](/powershell/module/packagemanagement/) that are available in a general PowerShell environment. Specifically, each environment has commands that are not available in the other, and commands with the same name may also differ in their specific arguments. When using the Package Management Console in Visual Studio, the commands and arguments documented in this present topic apply.
 
 ## Find and install a package
 
@@ -154,7 +157,7 @@ Some packages install new commands for the console. For example, `MvcScaffolding
 
 A PowerShell profile lets you make commonly-used commands available wherever you use PowerShell. NuGet supports a NuGet-specific profile typically found at the following location:
 
-    %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
+*%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1*
 
 To find the profile, type `$profile` in the console:
 
@@ -163,7 +166,7 @@ $profile
 C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
-For more details, refer to [Windows PowerShell Profiles](https://technet.microsoft.com/library/bb613488.aspx).
+For more details, refer to [Windows PowerShell Profiles](/previous-versions//bb613488(v=vs.85)).
 
 ## Use the nuget.exe CLI in the console
 

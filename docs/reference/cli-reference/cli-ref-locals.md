@@ -1,8 +1,8 @@
 ---
 title: NuGet CLI locals command
 description: Reference for the nuget.exe locals command
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/19/2018
 ms.topic: reference
 ---
@@ -23,15 +23,33 @@ where `<folder>` is one of `all`, `http-cache`, `packages-cache` *(3.5 and earli
 
 ## Options
 
-| Option | Description |
-| --- | --- |
-| Clear | Clears the specified folder. |
-| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
-| ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
-| Help | Displays help information for the command. |
-| List | Lists the location of the specified folder, or the locations of all folders when used with *all*. |
-| NonInteractive | Suppresses prompts for user input or confirmations. |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
+- **`-Clear`**
+
+  Clears the specified folder.
+
+- **`-ConfigFile`**
+
+  The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
+
+- **`-ForceEnglishOutput`**
+
+  *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
+
+- **`-?|-help`**
+
+  Displays help information for the command.
+
+- **`-List`**
+
+  Lists the location of the specified folder, or the locations of all folders when used with *all*.
+
+- **`-NonInteractive`**
+
+  Suppresses prompts for user input or confirmations.
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 

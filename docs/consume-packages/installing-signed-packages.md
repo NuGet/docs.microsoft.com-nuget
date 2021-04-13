@@ -1,8 +1,8 @@
 ---
 title: Manage package trust boundaries
 description: Describes the process of installing signed NuGet packages and configuring package signature trust settings.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/29/2018
 ms.topic: conceptual
 ---

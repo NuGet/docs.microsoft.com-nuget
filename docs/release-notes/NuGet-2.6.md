@@ -1,8 +1,8 @@
 ---
 title: NuGet 2.6 Release Notes
 description: Release notes for NuGet 2.6.1 for WebMatrix including known issues, bug fixes, added features, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
 ---
@@ -67,7 +67,7 @@ applications in your project.
 
 #### What you can do with XDT
 
-One of XDT’s greatest strengths is its [simple but powerful syntax](https://docs.microsoft.com/previous-versions/aspnet/dd465326(v=vs.110))
+One of XDT’s greatest strengths is its [simple but powerful syntax](/previous-versions/aspnet/dd465326(v=vs.110))
 for manipulating the structure of an XML DOM. Rather than simply overlaying one fixed document
 structure onto another structure, XDT provides controls for matching elements in a variety of
 ways, from simple attribute name matching to full XPath support. Once a matching element or

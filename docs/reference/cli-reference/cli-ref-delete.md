@@ -1,8 +1,8 @@
 ---
 title: NuGet CLI delete command
 description: Reference for the nuget.exe delete command
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
 ---
@@ -23,15 +23,40 @@ where `<packageID>` and `<packageVersion>` identify the exact package to delete 
 
 ## Options
 
-| Option | Description |
-| --- | --- |
-| ApiKey | The API key for the target repository. If not present, the one specified in the config file is used. |
-| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
-| ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
-| Help | Displays help information for the command. |
-| NonInteractive | Suppresses prompts for user input or confirmations. |
-| Source | Specifies the server URL. The URL for nuget.org is `https://api.nuget.org/v3/index.json`. For private feeds, substitute the host name, for example, *%hostname%/api/v3*. |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
+- **`-ApiKey`**
+
+  The API key for the target repository. If not present, the one specified in the config file is used.
+
+- **`-ConfigFile`**
+
+  The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
+
+- **`-ForceEnglishOutput`**
+
+  *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
+
+- **`-?|-help`**
+
+  Displays help information for the command.
+
+- **`-NonInteractive`**
+
+  Suppresses prompts for user input or confirmations.
+
+ - **`-np|-NoPrompt`**
+
+   Do not prompt when deleting.
+
+ - **`-NoServiceEndpoint`**
+   Does not append "api/v2/packages" to the source URL.
+
+- **`-src|-Source`**
+
+  Specifies the server URL. The URL for nuget.org is `https://api.nuget.org/v3/index.json`. For private feeds, substitute the host name, for example, *%hostname%/api/v3*.
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 

@@ -1,8 +1,8 @@
 ---
 title: Creating Native NuGet Packages
 description: Details on creating native NuGet packages that contains C++ code instead of managed code, for use in C++ projects.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
 ---

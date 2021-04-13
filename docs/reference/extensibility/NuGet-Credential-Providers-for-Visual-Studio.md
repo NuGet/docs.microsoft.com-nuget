@@ -1,8 +1,8 @@
 ---
 title: NuGet credential providers for Visual Studio
 description: NuGet credential providers authenticate with feeds by implementing the IVsCredentialProvider interface in a Visual Studio extension.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
 ---
@@ -12,7 +12,7 @@ ms.topic: conceptual
 The NuGet Visual Studio Extension 3.6+ supports credential providers, which enable NuGet to work with authenticated feeds.
 After you install a NuGet credential provider for Visual Studio, the NuGet Visual Studio extension will automatically acquire and refresh credentials for authenticated feeds as necessary.
 
-A sample implementation can be found in [the VsCredentialProvider sample](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider).
+A sample implementation can be found in [the VsCredentialProvider sample](https://github.com/NuGet/Samples/tree/main/VsCredentialProvider).
 
 Within Visual Studio, NuGet uses an internal `VsCredentialProviderImporter` which also scans for plug-in credential providers. These plug-in credential providers must be discoverable as a MEF Export of type `IVsCredentialProvider`.
 
@@ -53,7 +53,7 @@ public interface IVsCredentialProvider
 }
 ```
 
-A sample implementation can be found in [the VsCredentialProvider sample](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider).
+A sample implementation can be found in [the VsCredentialProvider sample](https://github.com/NuGet/Samples/tree/main/VsCredentialProvider).
 
 Each NuGet credential provider for Visual Studio must:
 
@@ -73,4 +73,4 @@ A custom NuGet credential provider for Visual Studio must implement the `IVsCred
 | bool nonInteractive | If true, the credential provider must suppress all user prompts and use default values instead. |
 | CancellationToken cancellationToken | This cancellation token should be checked to determine if the operation requesting credentials has been cancelled. |
 
-**Return value**: A credentials object implementing the [`System.Net.ICredentials` interface](/dotnet/api/system.net.icredentials?view=netstandard-2.0).
+**Return value**: A credentials object implementing the [`System.Net.ICredentials` interface](/dotnet/api/system.net.icredentials).

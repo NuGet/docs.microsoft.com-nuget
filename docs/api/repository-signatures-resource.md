@@ -58,7 +58,9 @@ signing certificate list.
 
 The following request fetches the repository signatures index.
 
-    GET {@id}
+```
+GET {@id}
+```
 
 The repository signature index is a JSON document that contains an object with the following properties:
 
@@ -107,7 +109,9 @@ All hash values must be lowercase, hex-encoded string representations of the has
 
 ### Sample request
 
-    GET https://api.nuget.org/v3-index/repository-signatures/index.json
+```
+GET https://api.nuget.org/v3-index/repository-signatures/index.json
+```
 
 ### Sample response
 

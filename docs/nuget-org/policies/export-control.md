@@ -1,8 +1,8 @@
 ---
 title: Export Control Policy
 description: Policies governing export control laws
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 06/27/2019
 ms.topic: conceptual
 ---

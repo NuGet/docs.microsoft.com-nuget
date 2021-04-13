@@ -1,8 +1,8 @@
 ---
 title: NuGet 3.1.1 Release Notes
 description: Release notes for NuGet 3.1.1 including known issues, bug fixes, added features, and DCRs.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
 ---

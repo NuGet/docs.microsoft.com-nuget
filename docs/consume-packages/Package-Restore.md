@@ -1,8 +1,8 @@
 ---
 title: NuGet Package Restore
 description: An overview of how NuGet restores packages a project depends on, including how to disable restore and constrain versions.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/05/2019
 ms.topic: conceptual
 ---
@@ -142,7 +142,10 @@ NuGet has two formats in which a project may use packages: [`PackageReference`](
 
 ## Restore using MSBuild
 
-To restore packages listed in the project file with PackageReference, use the the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command. This command is available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017 and higher versions. Both `nuget restore` and `dotnet restore` use this command for applicable projects.
+Use the [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) command to restore packages listed in the project file (see [PackageReference](package-references-in-project-files.md)) and starting with MSBuild 16.5+, `packages.config` projects.
+
+ This command is available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017 and higher versions.
+ Starting with MSBuild 16.5+, this command can also restore `packages.config` based projects when run with `-p:RestorePackagesConfig=true`.
 
 1. Open a Developer command prompt (In the **Search** box, type **Developer command prompt**).
 
@@ -162,6 +165,14 @@ To restore packages listed in the project file with PackageReference, use the th
    ```
 
    Make sure that the MSBuild output indicates that the build completed successfully.
+   
+> [!Note]
+> msbuild has a `-restore` switch which will run `Restore`, reload the project, and then build. See [Restoring and building with one MSBuild command](../reference/msbuild-targets.md#restoring-and-building-with-one-msbuild-command).
+
+```cmd
+# Will restore the project, then build, since build is the default target.
+msbuild -restore
+```
 
 ## Restore using Azure Pipelines
 
@@ -211,7 +222,7 @@ To avoid using the cache for HTTP sources, do one of the following:
 
 For NuGet 2.6 and earlier, an MSBuild-integrated package restore was previously supported but that is no longer true. (It was typically enabled by right-clicking a solution in Visual Studio and selecting **Enable NuGet Package Restore**). If your project uses the deprecated MSBuild-integrated package restore, please migrate to automatic package restore.
 
-Projects that use MSBuild-Integrated package restore typically contain a *.nuget* folder with three files: *NuGet.config*, *nuget.exe*, and *NuGet.targets*. The presence of a *NuGet.targets* file determines whether NuGet will continue to use the MSBuild-untegrated approach, so this file must be removed during the migration.
+Projects that use MSBuild-Integrated package restore typically contain a *.nuget* folder with three files: *NuGet.config*, *nuget.exe*, and *NuGet.targets*. The presence of a *NuGet.targets* file determines whether NuGet will continue to use the MSBuild-integrated approach, so this file must be removed during the migration.
 
 To migrate to automatic package restore:
 
@@ -228,4 +239,4 @@ To test the automatic package restore:
 
 ## Troubleshooting
 
-See [Troubleshoot package restore](package-restore-troubleshooting.md).
+See [Troubleshoot package restore](Package-restore-troubleshooting.md).

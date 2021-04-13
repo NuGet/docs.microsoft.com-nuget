@@ -1,8 +1,8 @@
 ---
 title: nuget.exe Credential Providers
 description: nuget.exe credential providers authenticate with a feed, and are implemented as command-line executables that follow specific conventions.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/12/2017
 ms.topic: conceptual
 ---
@@ -65,9 +65,11 @@ A provider must do the following:
 
 Example stdout:
 
-    { "Username" : "freddy@example.com",
-      "Password" : "bwm3bcx6txhprzmxhl2x63mdsul6grctazoomtdb6kfbof7m3a3z",
-      "Message"  : "" }
+```
+{ "Username" : "freddy@example.com",
+    "Password" : "bwm3bcx6txhprzmxhl2x63mdsul6grctazoomtdb6kfbof7m3a3z",
+    "Message"  : "" }
+```
 
 ## Troubleshooting a credential provider
 

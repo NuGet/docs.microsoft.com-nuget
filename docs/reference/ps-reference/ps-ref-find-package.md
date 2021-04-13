@@ -1,8 +1,8 @@
 ---
 title: NuGet Find-Package PowerShell Reference
 description: Reference for Find-Package PowerShell command in the NuGet Package Manager Console in Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 6/1/2017
 ms.topic: reference
 ---
@@ -37,7 +37,7 @@ None of these parameters accept pipeline input or wildcard characters.
 
 ## Common Parameters
 
-`Find-Package` supports the following [common PowerShell parameters](https://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.
+`Find-Package` supports the following [common PowerShell parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.
 
 ## Examples
 

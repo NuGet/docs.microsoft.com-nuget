@@ -36,7 +36,7 @@ For more information, see [Finding and choosing packages](../consume-packages/fi
 - Visual Studio on Windows supports the [Package Manager UI](../consume-packages/install-use-packages-visual-studio.md) and the [Package Manager Console](../consume-packages/install-use-packages-powershell.md).
 - Visual Studio for Mac has built-in NuGet capabilities as described on [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough).
 - Visual Studio Code (all platforms) does not have any direct NuGet integration. Use the [NuGet CLI](../reference/nuget-exe-cli-reference.md) or the [dotnet CLI](../reference/dotnet-commands.md).
-- Azure DevOps provides [a build step to restore NuGet packages](/vsts/build-release/tasks/package/nuget). You can also [host private NuGet package feeds on Azure DevOps](https://docs.microsoft.com/azure/devops/artifacts/nuget/publish).
+- Azure DevOps provides [a build step to restore NuGet packages](/vsts/build-release/tasks/package/nuget). You can also [host private NuGet package feeds on Azure DevOps](/azure/devops/artifacts/nuget/publish).
 
 **How do I check the exact version of the NuGet tools that are installed?**
 
@@ -98,7 +98,7 @@ This is a known issue with how PowerShell interacts with a COM object. Try the f
 
 **How do I list my package in a feed?**
 
-See [Creating and publishing a package](../quickstart/create-and-publish-a-package.md).
+See [Creating and publishing a package](../quickstart/create-and-publish-a-package-using-visual-studio.md).
 
 **I have multiple versions of my library that target different versions of the .NET Framework. How do I build a single package that supports this?**
 
@@ -113,10 +113,6 @@ See the [Hosting packages overview](../hosting-packages/overview.md).
 See [Bulk publishing NuGet packages](http://jeffhandley.com/archive/2012/12/13/Bulk-Publishing-NuGet-Packages.aspx) (jeffhandly.com).
 
 ## Working with packages
-
-**What is the difference between a project-level package and a solution-level package?**
-
-A solution-level package (NuGet 3.x+) is installed only once in a solution and is then available for all projects in the solution. A project-level package is installed in each project that uses it. A solution-level package might also install new commands that can be called from within the Package Manager Console.
 
 **Is it possible to install NuGet packages without Internet connectivity?**
 
@@ -148,3 +144,10 @@ This is not an issue when using PackageReference, as each project file contains 
 
 - Add `https://api.nuget.org/v3/index.json` to your list of sources, or
 - Delete `%appdata%\.nuget\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) and let NuGet re-create it.
+
+**I migrated to PackageReference, why is my build failing `This project references NuGet package(s) that are missing on this computer.`?**
+
+In packages.config projects, when a package with `build` props or targets was installed, NuGet would add an `EnsureNuGetPackageBuildImports` target to verify that the packages msbuild content has been imported before building.
+If the `target` has been modified manually, NuGet might not be able to detect that it needs removed when migrating.
+
+If your project is `PackageReference` and you still have this target in project file, it should be safe to remove.

@@ -42,7 +42,9 @@ endpoint, see below.
 nuget.org supports pushing new packages using the following API. If the package with the provided ID and version
 already exists, nuget.org will reject the push. Other package sources may support replacing an existing package.
 
-    PUT https://www.nuget.org/api/v2/package
+```
+PUT https://www.nuget.org/api/v2/package
+```
 
 ### Request parameters
 
@@ -84,7 +86,9 @@ implementations are free to interpret this signal as a hard delete, soft delete,
 [NuGet.Server](https://www.nuget.org/packages/NuGet.Server) (a server implementation only supporting the older V2 API)
 supports handling this request as either an unlist or a hard delete based on a configuration option.
 
-    DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
+```
+DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
+```
 
 ### Request parameters
 
@@ -109,7 +113,9 @@ HTTP method instead of the `DELETE` method.
 
 If the package is already listed, the request still succeeds.
 
-    POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
+```
+POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
+```
 
 ### Request parameters
 

@@ -1,8 +1,8 @@
 ---
 title: NuGet CLI sources command
 description: Reference for the nuget.exe sources command
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
 ---
@@ -25,17 +25,53 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
 ## Options
 
-| Option | Description |
-| --- | --- |
-| ConfigFile | The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.|
-| ForceEnglishOutput | *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture. |
-| Format | Applies to the `list` action and can be `Detailed` (the default) or `Short`. |
-| Help | Displays help information for the command. |
-| NonInteractive | Suppresses prompts for user input or confirmations. |
-| Password | Specifies the password for authenticating with the source. |
-| StorePasswordInClearText | Indicates to store the password in unencrypted text instead of the default behavior of storing an encrypted form. |
-| UserName | Specifies the user name for authenticating with the source. |
-| Verbosity | Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*. |
+- **`-ConfigFile`**
+
+  The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
+
+- **`-ForceEnglishOutput`**
+
+  *(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.
+
+- **`-Format`**
+
+  Applies to the `list` action and can be `Detailed` (the default) or `Short`.
+
+- **`-?|-help`**
+
+  Displays help information for the command.
+
+- **`-Name`**
+
+  Name of the source.
+
+- **`-NonInteractive`**
+
+  Suppresses prompts for user input or confirmations.
+
+- **`-Password`**
+
+  Specifies the password for authenticating with the source.
+
+- **`-src|-Source`**
+
+  Path to the package(s) source.
+
+- **`-StorePasswordInClearText`**
+
+  Indicates to store the password in unencrypted text instead of the default behavior of storing an encrypted form.
+
+- **`-UserName`**
+
+  Specifies the user name for authenticating with the source.
+
+- **`-ValidAuthenticationTypes`**
+
+  Comma-separated list of valid authentication types for this source. By default, all authentication types are valid. Example: `basic,negotiate`.
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 > [!Note]
 > Make sure to add the sources' password under the same user context as the nuget.exe is later used to access the package source. The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted. So for example when you use a build server to restore NuGet packages the password must be encrypted with the same Windows user under which  the build server task will run.

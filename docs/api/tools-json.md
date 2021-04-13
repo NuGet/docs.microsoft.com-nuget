@@ -29,11 +29,15 @@ unauthenticated HTTP requests.
 
 The endpoint can be fetched using the `GET` method:
 
-	GET https://dist.nuget.org/tools.json
+```
+GET https://dist.nuget.org/tools.json
+```
 
 The [JSON schema](https://json-schema.org/) for the endpoint is available here:
 
-	GET https://dist.nuget.org/tools.schema.json
+```
+GET https://dist.nuget.org/tools.schema.json
+```
 
 ## Response
 
@@ -77,7 +81,9 @@ The `NuGet.CommandLine` package on nuget.org is typically only updated with `Rel
 
 ### Sample request
 
-    GET https://dist.nuget.org/tools.json
+```
+GET https://dist.nuget.org/tools.json
+```
 
 ### Sample response
 

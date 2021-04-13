@@ -215,21 +215,19 @@ If, however, your NuGet.org account is not associated/linked with a Microsoft ac
 
 If you see an error like below during your login flow with your email account domain(@yourdomain.com), see the steps below to recover your NuGet.org account.
 
-<p align="center">
-    <img src="media/unmanaged-aad-tenant.png" />
-</p>
+![Error during login for AAD accounts](media/unmanaged-aad-tenant.png)
 
 **What is this unmanaged state thing during login? And why is this happening now?** 
 
 Your account seems to be previously registered as a personal Microsoft account and it worked fine, however, now it seems like your account has been registered as an "Unmanaged" tenant in the Azure Active Directory (the identity service which we use to authenticate Microsoft accounts). 
 
-This could have happened if you or someone from your organization(with @yourdomain.com email address) registered with one of the AAD integrated services or did a [self-service signup for Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-self-service-signup), which creates such an "Unmanaged" tenant for the used Microsoft account domain(@yourdomain.com in your case). 
+This could have happened if you or someone from your organization(with @yourdomain.com email address) registered with one of the AAD integrated services or did a [self-service signup for Azure Active Directory](/azure/active-directory/users-groups-roles/directory-self-service-signup), which creates such an "Unmanaged" tenant for the used Microsoft account domain(@yourdomain.com in your case). 
 
 **What can I do to recover my account?**
 
 At this moment there is not a way for us (NuGet.org) to authenticate accounts with such "Unmanaged" tenant accounts in Azure Active directory. We are looking in to a better way to authenticate such accounts.
 
-If you want to login to NuGet.org with your Microsoft account(@yourdomain.com), you(or an administrator at your company) will need to claim the ownership of the AAD by doing a DNS validation to authenticate users with email address "@yourdomain.com". Please follow the steps for [domains admin takeover](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover) documented by the Azure Active directory. Once this is done, your normal login should start working.
+If you want to login to NuGet.org with your Microsoft account(@yourdomain.com), you(or an administrator at your company) will need to claim the ownership of the AAD by doing a DNS validation to authenticate users with email address "@yourdomain.com". Please follow the steps for [domains admin takeover](/azure/active-directory/users-groups-roles/domains-admin-takeover) documented by the Azure Active directory. Once this is done, your normal login should start working.
 
 **I don’t want to do all that, what is the other way to recover my account?**
 

@@ -1,8 +1,8 @@
 ---
 title: NuGet Support for the Visual Studio Project System
 description: Integration of NuGet into the Visual Studio project system for third-party project types.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: reference
 ---

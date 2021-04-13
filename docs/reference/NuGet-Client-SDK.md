@@ -1,8 +1,8 @@
 ---
 title: NuGet Client SDK
 description: The API is evolving and not yet documented, but examples are available on Dave Glick's blog.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2018
 ms.topic: conceptual
 ---
@@ -15,21 +15,21 @@ The *NuGet Client SDK* refers to a group of NuGet packages:
 * [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) - Used to interact with NuGet packages. `NuGet.Protocol` depends on this package
 
 You can find the source code for these packages in the [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client) GitHub repository.
+You can find the source code for these examples on the [NuGet.Protocol.Samples](https://github.com/NuGet/Samples/tree/main/NuGetProtocolSamples) project on GitHub.
 
 > [!Note]
 > For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).
 
-## Getting started
+## NuGet.Protocol
 
-### Install the package
+Install the `NuGet.Protocol` package to interact with HTTP and folder-based NuGet package feeds:
 
 ```ps1
 dotnet add package NuGet.Protocol
 ```
 
-## Examples
-
-You can find these examples on the [NuGet.Protocol.Samples](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples) project on GitHub.
+> [!Tip]
+> `Repository.Factory` is defined in the `NuGet.Protocol.Core.Types` namespace, and the `GetCoreV3` method is an extension method defined in the `NuGet.Protocol` namespace. Therefore, you will need to add `using` statements for both namespaces.
 
 ### List package versions
 
@@ -54,6 +54,58 @@ Get the metadata for the "Newtonsoft.Json" package using the [NuGet V3 Package M
 Search for "json" packages using the [NuGet V3 Search API](../api/search-query-service-resource.md):
 
 [!code-csharp[SearchPackages](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=SearchPackages)]
+
+### Push a package
+
+Push a package using the [NuGet V3 Push and Delete API](../api/package-publish-resource.md):
+
+[!code-csharp[PushPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=PushPackage)]
+
+### Delete a package
+
+Delete a package using the [NuGet V3 Push and Delete API](../api/package-publish-resource.md):
+
+> [!Note]
+> NuGet servers are free to interpret a package delete request as a "hard delete", "soft delete", or "unlist".
+> For example, nuget.org interprets the package delete request as an "unlist". For more information about this
+> practice, see the [Deleting Packages](../nuget-org/policies/deleting-packages.md) policy.
+
+[!code-csharp[DeletePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=DeletePackage)]
+
+### Work with authenticated feeds
+
+Use [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) to work with authenticated feeds.
+
+[!code-csharp[AuthenticatedFeed](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=AuthenticatedFeed)]
+
+## NuGet.Packaging
+
+Install the `NuGet.Packaging` package to interact with `.nupkg` and `.nuspec` files from a stream:
+
+```ps1
+dotnet add package NuGet.Packaging
+```
+
+### Create a package
+
+Create a package, set metadata, and add dependencies using [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging).
+
+> [!IMPORTANT]
+> It is strongly recommended that NuGet packages are created using the official NuGet tooling and **not** using this
+> low-level API. There are a variety of characteristics important for a well-formed package and the latest version of
+> tooling helps incorporate these best practices.
+> 
+> For more information about creating NuGet packages, see the overview of the
+> [package creation workflow](../create-packages/overview-and-workflow.md) and the documentation for official pack
+> tooling (for example, [using the dotnet CLI](../create-packages/creating-a-package-dotnet-cli.md)).
+
+[!code-csharp[CreatePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=CreatePackage)]
+
+### Read a package
+
+Read a package from a file stream using [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging).
+
+[!code-csharp[ReadPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=ReadPackage)]
 
 ## Third-party documentation
 
