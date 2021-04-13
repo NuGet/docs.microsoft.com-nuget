@@ -16,13 +16,15 @@ This is likely one of the first elements users will see when they view your pack
 
 ## What should my Readme include?
 
-The information you include in your Readme will vary depending on the type, purpose, and scope of your package. It doesn't need be a single comprehensive document for how to use your package, but it should contain the following items at minimum:
-* An introduction to what your package is and what it does. What problems does it solve?
-* How to get started with your package. Are there any specific requirements (framework, project type, OS)?
-* A link to comprehensive documentation if applicable.
-* Code snippets/samples or example images/screenshots.
+Consider including the following items in your readmes:
+* An introduction to what your package is and does - what problems does it solve?
+* How to get started with your package - are there any specific requirements?
+* Links to more comprehensive documentation if not included in the readme itself.
+* At least a few code snippets/samples or example images.
 * Where and how to leave feedback such as link to the project issues, Twitter, bug tracker, or other platform.
 * How to contribute, if applicable.
+
+Keep in mind, high quality readmes can come in a wide variety of formats, shapes, and sizes! If you already have a package available on NuGet.org, chances are that you already have a `readme.md` file at in your repository that would be a great addition to your NuGet.org details page.
 
 ## Preview your Readme
 
@@ -64,4 +66,4 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * user-images.githubusercontent.com
 * camo.githubusercontent.com
 
-If you feel that a another domain should be added to the allow-list, please feel free to [file an issue](https://github.com/NuGet/NuGetGallery/issues) and it will be reviewed by our engineering team. Images with relative local paths and images hosted from unsupported domains will not be rendered and will produce a warning on the Readme file preview and package details page that is only visible to the package owners.
+If you feel that a another domain should be added to the allow-list, please feel free to [file an issue](https://github.com/NuGet/NuGetGallery/issues) and it will be reviewed by our engineering team for privacy and security compliance. Images with relative local paths and images hosted from unsupported domains will not be rendered and will produce a warning on the Readme file preview and package details page that is only visible to the package owners.
