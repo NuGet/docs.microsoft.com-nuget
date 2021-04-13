@@ -19,7 +19,7 @@ NuGet distribution vehicles:
 <sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
   
 > [!NOTE]
-> Visual Studio 16.9, MSBuild 16.9, and .NET 5.0.2+ requires NuGet.exe 5.9 or later.
+> Visual Studio 16.9, MSBuild 16.9, and .NET 5.0.200+ requires NuGet.exe 5.9 or later.
 
 ## Summary: What's New in 5.9
 
