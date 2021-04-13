@@ -61,6 +61,7 @@ The following table describes the MSBuild properties that can be added to a proj
 | `ProjectUrl` | `PackageProjectUrl` | empty | |
 | `Icon` | `PackageIcon` | empty | A path to an image in the package to use as a package icon. You need to explicitly pack the referenced icon image file. For more information, see [Packing an icon image file](#packing-an-icon-image-file) and [`icon` metadata](./nuspec.md#icon). |
 | `IconUrl` | `PackageIconUrl` | empty | `PackageIconUrl` is deprecated in favor of `PackageIcon`. However, for the best downlevel experience, you should specify `PackageIconUrl` in addition to `PackageIcon`. |
+| `Readme` | `PackageReadmeFile` | empty | You need to explicitly pack the referenced readme file.|
 | `Tags` | `PackageTags` | empty | A semicolon-delimited list of tags that designates the package. |
 | `ReleaseNotes` | `PackageReleaseNotes` | empty | Release notes for the package. |
 | `Repository/Url` | `RepositoryUrl` | empty | Repository URL used to clone or retrieve source code. Example: *https://github.com/NuGet/NuGet.Client.git*. |
@@ -90,6 +91,7 @@ The following table describes the MSBuild properties that can be added to a proj
 | `PackageProjectUrl` | |
 | `PackageIcon` | Specifies the package icon path, relative to the root of the package. For more information, see [Packing an icon image file](#packing-an-icon-image-file). |
 | `PackageReleaseNotes` | Release notes for the package. |
+| `PackageReadmeFile` | Readme for the package. |
 | `PackageTags` | A semicolon-delimited list of tags that designates the package. |
 | `PackageOutputPath` | Determines the output path in which the packed package will be dropped. Default is `$(OutputPath)`. |
 | `IncludeSymbols` | This Boolean value indicates whether the package should create an additional symbols package when the project is packed. The symbols package's format is controlled by the `SymbolPackageFormat` property. For more information, see [IncludeSymbols](#includesymbols). |
@@ -149,6 +151,28 @@ For example:
 [Package Icon sample](https://github.com/NuGet/Samples/tree/main/PackageIconExample).
 
 For the nuspec equivalent, take a look at [nuspec reference for icon](nuspec.md#icon).
+
+### PackageReadmeFile
+
+When packing a readme file, you need to use the `PackageReadmeFile` property to specify the package path, relative to the root of the package. In addition to this, you need to make sure that the file is included in the package. Supported file formats include only Markdown (*.md*).
+
+For example:
+
+```xml
+<PropertyGroup>
+    ...
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    ...
+</PropertyGroup>
+
+<ItemGroup>
+    ...
+    <None Include="docs\readme.md" Pack="true" PackagePath="\"/>
+    ...
+</ItemGroup>
+```
+
+For the nuspec equivalent, take a look at [nuspec reference for readme](nuspec.md#readme).
 
 ### Output assemblies
 
