@@ -28,6 +28,9 @@ Install the `NuGet.Protocol` package to interact with HTTP and folder-based NuGe
 dotnet add package NuGet.Protocol
 ```
 
+> [!Tip]
+> `Repository.Factory` is defined in the `NuGet.Protocol.Core.Types` namespace, and the `GetCoreV3` method is an extension method defined in the `NuGet.Protocol` namespace. Therefore, you will need to add `using` statements for both namespaces.
+
 ### List package versions
 
 Find all versions of Newtonsoft.Json using the [NuGet V3 Package Content API](../api/package-base-address-resource.md#enumerate-package-versions):
