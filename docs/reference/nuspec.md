@@ -29,7 +29,7 @@ In this topic:
 
 - A `.nuspec` file is not required to create packages for [SDK-style projects](../resources/check-project-format.md) (typically .NET Core and .NET Standard projects that use the [SDK attribute](/dotnet/core/tools/csproj#additions)). (Note that a `.nuspec` is generated when you create the package.)
 
-   If you are creating a package using `dotnet.exe pack` or `msbuild pack target`, we recommend that you [include all the properties](../reference/msbuild-targets.md#pack-target) that are usually in the `.nuspec` file in the project file instead. However, you can instead choose to [use a `.nuspec` file to pack using `dotnet.exe` or `msbuild pack target`](../reference/msbuild-targets.md#packing-using-a-nuspec).
+   If you are creating a package using `dotnet.exe pack` or `msbuild pack target`, we recommend that you [include all the properties](../reference/msbuild-targets.md#pack-target) that are usually in the `.nuspec` file in the project file instead. However, you can instead choose to [use a `.nuspec` file to pack using `dotnet.exe` or `msbuild pack target`](../reference/msbuild-targets.md#packing-using-a-nuspec-file).
 
 - For projects migrated from `packages.config` to [PackageReference](../consume-packages/package-references-in-project-files.md), a `.nuspec` file is not required to create the package. Instead, use [msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
@@ -196,12 +196,35 @@ For example, you would add the following to your nuspec when creating a package 
 </package>
 ```
 
-[Package Icon nuspec sample.](https://github.com/NuGet/Samples/tree/master/PackageIconNuspecExample)
+[Package Icon nuspec sample.](https://github.com/NuGet/Samples/tree/main/PackageIconNuspecExample)
 
 For the MSBuild equivalent, take a look at [Packing an icon image file](msbuild-targets.md#packing-an-icon-image-file).
 
 > [!Tip]
 > You can specify both `icon` and `iconUrl` to maintain backward compatibility with sources that do not support `icon`. Visual Studio will support `icon` for packages coming from a folder-based source in a future release.
+
+#### readme
+
+When packing a readme file, you need to use the `readme` element to specify the package path, relative to the root of the package. In addition to this, you need to make sure that the file is included in the package. Supported file formats include only Markdown (*.md*).
+
+For example, you would add the following to your nuspec in order to pack a readme file with your project:
+
+```xml
+<package>
+  <metadata>
+    ...
+    <readme>docs\readme.md</readme>
+    ...
+  </metadata>
+  <files>
+    ...
+    <file src="..\readme.md" target="docs\" />
+    ...
+  </files>
+</package>
+```
+
+For the MSBuild equivalent, take a look at [Packing a readme file](msbuild-targets.md#packagereadmefile).
 
 #### requireLicenseAcceptance
 A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.

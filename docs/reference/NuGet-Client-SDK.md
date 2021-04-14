@@ -15,7 +15,7 @@ The *NuGet Client SDK* refers to a group of NuGet packages:
 * [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) - Used to interact with NuGet packages. `NuGet.Protocol` depends on this package
 
 You can find the source code for these packages in the [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client) GitHub repository.
-You can find the source code for these examples on the [NuGet.Protocol.Samples](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples) project on GitHub.
+You can find the source code for these examples on the [NuGet.Protocol.Samples](https://github.com/NuGet/Samples/tree/main/NuGetProtocolSamples) project on GitHub.
 
 > [!Note]
 > For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).
@@ -27,6 +27,9 @@ Install the `NuGet.Protocol` package to interact with HTTP and folder-based NuGe
 ```ps1
 dotnet add package NuGet.Protocol
 ```
+
+> [!Tip]
+> `Repository.Factory` is defined in the `NuGet.Protocol.Core.Types` namespace, and the `GetCoreV3` method is an extension method defined in the `NuGet.Protocol` namespace. Therefore, you will need to add `using` statements for both namespaces.
 
 ### List package versions
 

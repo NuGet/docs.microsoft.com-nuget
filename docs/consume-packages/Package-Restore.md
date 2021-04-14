@@ -239,4 +239,4 @@ To test the automatic package restore:
 
 ## Troubleshooting
 
-See [Troubleshoot package restore](package-restore-troubleshooting.md).
+See [Troubleshoot package restore](Package-restore-troubleshooting.md).
