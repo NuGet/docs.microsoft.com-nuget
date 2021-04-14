@@ -70,6 +70,7 @@
 ## [Package versioning](concepts/package-versioning.md)
 ## [Dependency resolution](concepts/dependency-resolution.md)
 ## [Best practices for a secure software supply chain](concepts/Security-Best-Practices.md)
+## [Troubleshooting Installed Packages](concepts/troubleshooting-installed-packages.md)
 # Reference
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config file](reference/nuget-config-file.md)
@@ -291,6 +292,7 @@
 ## Release notes
 ### [Known Issues](release-notes/known-issues.md)
 ### NuGet 5.x
+#### [NuGet 5.9](release-notes/NuGet-5.9.md)
 #### [NuGet 5.8](release-notes/NuGet-5.8.md)
 #### [NuGet 5.7](release-notes/NuGet-5.7.md)
 #### [NuGet 5.6](release-notes/NuGet-5.6.md)
