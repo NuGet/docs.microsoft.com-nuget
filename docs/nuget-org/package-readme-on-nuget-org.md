@@ -1,6 +1,6 @@
 ---
 title: Package readme on NuGet.org
-description: Detailed explanation of how Readme files on NuGet.org are rendered and what to do when you run into issues.
+description: Detailed explanation of how readme files on NuGet.org are rendered and what to do when you run into issues.
 author: chgill-MSFT
 ms.author: chgill
 ms.date: 02/23/2021
@@ -90,5 +90,4 @@ NuGet.org currently supports the following Markdown features:
 * [Tables](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/PipeTableSpecs.md)
 * [Emojis](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/EmojiSpecs.md)
 * [Auto-links](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/AutoLinks.md)
-
 
