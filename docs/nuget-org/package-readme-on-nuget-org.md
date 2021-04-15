@@ -35,7 +35,7 @@ To preview your readme file before it's live on NuGet.org, upload your package u
 
 ![Readme File preview](media\readme-upload-preview.PNG)
 
-Consider taking time to review and preview your Readme file for [image compliance](#allowed-domains-for-images-and-badges) and [supported formatting](#supported-markdown-features) to make sure it gives a great first impression to potential users! To correct mistakes on your package readme once it's published to NuGet.org, you will need to push an updated package version with the fix. Making sure everything looks good in advance may save you headache down the road.
+Consider taking time to review and preview your readme file for [image compliance](#allowed-domains-for-images-and-badges) and [supported formatting](#supported-markdown-features) to make sure it gives a great first impression to potential users! To correct mistakes on your package readme once it's published to NuGet.org, you will need to push an updated package version with the fix. Making sure everything looks good in advance may save you headache down the road.
 ## Allowed domains for images and badges
 
 Due to security and privacy concerns, NuGet.org restricts the domains from which images and badges can be rendered to trusted hosts. 
