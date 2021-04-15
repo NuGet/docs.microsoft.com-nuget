@@ -85,7 +85,6 @@ NuGet.org currently supports the following Markdown features:
 * [Block quotes](https://spec.commonmark.org/0.29/#block-quotes)
 * [Backslash escapes](https://spec.commonmark.org/0.29/#backslash-escapes)
 * [Code spans](https://spec.commonmark.org/0.29/#code-spans)
-* Code 
 * [Task lists](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/TaskListSpecs.md)
 * [Tables](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/PipeTableSpecs.md)
 * [Emojis](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/EmojiSpecs.md)
