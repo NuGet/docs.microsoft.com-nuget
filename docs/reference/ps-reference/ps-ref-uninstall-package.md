@@ -4,7 +4,7 @@ description: Reference for Uninstall-Package PowerShell command in the NuGet Pac
 author: JonDouglas
 ms.author: jodou
 ms.date: 06/01/2017
-ms.topic: reference
+ms.topic:  reference
 ---
 
 # Uninstall-Package (Package Manager Console in Visual Studio)

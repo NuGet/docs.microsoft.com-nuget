@@ -4,7 +4,7 @@ description: Interface reference for the API that NuGet exports through the Mana
 author: nkolev92
 ms.author: nikolev
 ms.date: 01/09/2017
-ms.topic: reference
+ms.topic:  reference
 ---
 
 # NuGet API in Visual Studio

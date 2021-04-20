@@ -4,7 +4,7 @@ description: A walkthrough tutorial on the process of installing and using a NuG
 author: jmatthiesen
 ms.author: jomatthi
 ms.date: 08/14/2019
-ms.topic: quickstart
+ms.topic:  quickstart
 ---
 
 # Quickstart: Install and use a package in Visual Studio for Mac

@@ -4,7 +4,7 @@ description: Reference for Open-PackagePage PowerShell command in the NuGet Pack
 author: JonDouglas
 ms.author: jodou
 ms.date: 12/07/2017
-ms.topic: reference
+ms.topic:  reference
 ---
 
 # Open-PackagePage (Package Manager Console in Visual Studio)

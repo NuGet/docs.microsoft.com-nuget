@@ -4,7 +4,7 @@ description: An overview of how NuGet restores packages a project depends on, in
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/05/2019
-ms.topic: conceptual
+ms.topic:  conceptual
 ---
 
 # Restore packages using Package Restore

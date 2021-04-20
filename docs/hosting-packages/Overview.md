@@ -4,7 +4,7 @@ description: An overview of opens for hosting your own NuGet package feeds or ga
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/25/2017
-ms.topic: conceptual
+ms.topic:  conceptual
 ms.reviewer: anangaur
 ---
 

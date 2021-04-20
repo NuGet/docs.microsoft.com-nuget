@@ -4,7 +4,7 @@ description: Integration of NuGet into the Visual Studio project system for thir
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
-ms.topic: reference
+ms.topic:  reference
 ---
 
 # NuGet support for the Visual Studio project system

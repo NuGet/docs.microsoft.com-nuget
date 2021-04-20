@@ -4,7 +4,7 @@ description: Common questions and answers for working with the NuGet gallery.
 author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
-ms.topic: conceptual
+ms.topic:  conceptual
 ---
 
 # NuGet.org frequently-asked questions

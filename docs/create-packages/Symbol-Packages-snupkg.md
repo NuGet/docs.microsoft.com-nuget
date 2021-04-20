@@ -4,7 +4,7 @@ author: JonDouglas
 ms.author: jodou
 manager: skofman
 ms.date: 10/30/2018
-ms.topic: reference
+ms.topic:  reference
 ms.prod: nuget
 ms.technology: null
 description: How to create NuGet symbol packages (snupkg).

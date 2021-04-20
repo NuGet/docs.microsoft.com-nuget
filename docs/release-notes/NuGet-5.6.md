@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.6 including new features, bug fixes, and 
 author: chgill-msft
 ms.author: chgill
 ms.date: 05/19/2020
-ms.topic: conceptual
+ms.topic:  conceptual
 ---
 
 # NuGet 5.6 Release Notes

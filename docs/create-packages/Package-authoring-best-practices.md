@@ -4,7 +4,7 @@ description: A general guide of best practices for creating high quality NuGet p
 author: chgill-MSFT
 ms.author: chgill
 ms.date: 09/17/2020
-ms.topic: conceptual
+ms.topic:  conceptual
 ---
 
 # Package authoring best practices

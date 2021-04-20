@@ -4,7 +4,7 @@ description: A walkthrough tutorial on the process of installing and using a NuG
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/23/2018
-ms.topic: quickstart
+ms.topic:  quickstart
 ---
 
 # Quickstart: Install and use a package using the dotnet CLI

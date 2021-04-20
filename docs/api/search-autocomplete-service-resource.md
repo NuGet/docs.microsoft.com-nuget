@@ -4,7 +4,7 @@ description: The search autocomplete service supports interactive discovery of p
 author: joelverhagen
 ms.author: jver
 ms.date: 10/26/2017
-ms.topic: reference
+ms.topic:  reference
 ms.reviewer: kraigb
 ---
 

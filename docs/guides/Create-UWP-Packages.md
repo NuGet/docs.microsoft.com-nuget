@@ -4,7 +4,7 @@ description: An end-to-end walkthrough of creating NuGet packages using a Window
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/21/2017
-ms.topic: tutorial
+ms.topic:  tutorial
 ---
 
 # Create UWP packages

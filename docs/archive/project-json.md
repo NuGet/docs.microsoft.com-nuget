@@ -4,7 +4,7 @@ description: In some project types, project.json maintains the list of NuGet pac
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/27/2017
-ms.topic: reference
+ms.topic:  reference
 ---
 
 # project.json reference

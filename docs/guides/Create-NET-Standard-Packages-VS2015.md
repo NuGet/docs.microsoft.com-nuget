@@ -4,7 +4,7 @@ description: An end-to-end walkthrough of creating .NET Standard and .NET Framew
 author: JonDouglas
 ms.author: jodou
 ms.date: 02/02/2018
-ms.topic: tutorial
+ms.topic:  tutorial
 ---
 
 # Create .NET Standard and .NET Framework packages with Visual Studio 2015

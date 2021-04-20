@@ -4,7 +4,7 @@ description: Reference for Get-Package PowerShell command in the NuGet Package M
 author: JonDouglas
 ms.author: jodou
 ms.date: 12/07/2017
-ms.topic: reference
+ms.topic:  reference
 ---
 
 # Get-Package (Package Manager Console in Visual Studio)

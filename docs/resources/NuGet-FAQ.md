@@ -4,7 +4,7 @@ description: Common questions and answers for using NuGet on the command line an
 author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
-ms.topic: conceptual
+ms.topic:  conceptual
 ---
 
 # NuGet frequently-asked questions

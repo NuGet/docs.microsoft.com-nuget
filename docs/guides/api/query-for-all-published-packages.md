@@ -4,7 +4,7 @@ description: Using the NuGet API, you can query for all packages published to nu
 author: joelverhagen
 ms.author: jver
 ms.date: 11/02/2017
-ms.topic: tutorial
+ms.topic:  tutorial
 ms.reviewer: kraigb
 ---
 

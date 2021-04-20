@@ -4,7 +4,7 @@ description: Reference for nuget.exe long path support
 author: zhili1208
 ms.author: lzhi
 ms.date: 07/12/2018
-ms.topic: reference
+ms.topic:  reference
 ---
 
 # Long Path Support (NuGet CLI)

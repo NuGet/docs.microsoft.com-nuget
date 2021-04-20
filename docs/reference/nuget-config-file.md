@@ -4,7 +4,7 @@ description: NuGet.Config file reference including the config, bindingRedirects,
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/13/2019
-ms.topic: reference
+ms.topic:  reference
 ---
 
 # `nuget.config` reference

@@ -4,7 +4,7 @@ description: Reference for the nuget.exe list command
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/18/2018
-ms.topic: reference
+ms.topic:  reference
 ---
 
 # list command (NuGet CLI)
