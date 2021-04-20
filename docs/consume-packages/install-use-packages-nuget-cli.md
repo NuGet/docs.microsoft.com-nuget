@@ -4,7 +4,7 @@ description: Instructions for using the nuget.exe CLI to work with NuGet package
 author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
-ms.topic:  conceptual
+ms.topic: conceptual
 ---
 
 # Manage packages using the nuget.exe CLI

@@ -4,7 +4,7 @@ description: Reference for Register-TabExpansion PowerShell command in the NuGet
 author: JonDouglas
 ms.author: jodou
 ms.date: 12/07/2017
-ms.topic:  reference
+ms.topic: reference
 ---
 
 # Register-TabExpansion (Package Manager Console in Visual Studio)

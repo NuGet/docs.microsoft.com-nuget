@@ -4,7 +4,7 @@ description: Detailed instructions for how to publish a NuGet package to nuget.o
 author: JonDouglas
 ms.author: jodou
 ms.date: 05/18/2018
-ms.topic:  conceptual
+ms.topic: conceptual
 ms.reviewer: anangaur
 ---
 

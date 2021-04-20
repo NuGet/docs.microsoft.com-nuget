@@ -4,7 +4,7 @@ description: Reference for the nuget.exe trusted-signers command
 author: patbel
 ms.author: patbel
 ms.date: 11/12/2018
-ms.topic:  reference
+ms.topic: reference
 ms.reviewer: rmpablos
 ---
 

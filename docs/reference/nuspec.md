@@ -4,7 +4,7 @@ description: The .nuspec file contains package metadata used when building a pac
 author: JonDouglas
 ms.author: jodou
 ms.date: 05/24/2019
-ms.topic:  reference
+ms.topic: reference
 ms.reviewer: anangaur
 ---
 

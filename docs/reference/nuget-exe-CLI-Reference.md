@@ -4,7 +4,7 @@ description: Command-line reference index for the nuget.exe CLI
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/23/2018
-ms.topic:  reference
+ms.topic: reference
 ---
 
 # NuGet CLI reference

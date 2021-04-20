@@ -4,7 +4,7 @@ description: Index of NuGet release notes and known issues for all versions.
 author: anangaur
 ms.author: anangaur
 ms.date: 08/14/2017
-ms.topic:  conceptual
+ms.topic: conceptual
 ---
 
 # Release Notes

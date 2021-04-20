@@ -4,7 +4,7 @@ description: Reference for the nuget.exe verify command
 author: dtivel
 ms.author: dtivel
 ms.date: 03/06/2018
-ms.topic:  reference
+ms.topic: reference
 ms.reviewer: rmpablos
 ---
 

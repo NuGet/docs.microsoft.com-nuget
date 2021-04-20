@@ -4,7 +4,7 @@ description: Details on when it's necessary to reinstall and update packages, as
 author: JonDouglas
 ms.author: jodou
 ms.date: 12/07/2017
-ms.topic:  conceptual
+ms.topic: conceptual
 ---
 
 # How to reinstall and update packages

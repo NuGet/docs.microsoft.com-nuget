@@ -4,7 +4,7 @@ description: Requirements for NuGet package signing.
 author: rido-min
 ms.author: rmpablos
 ms.date: 05/18/2018
-ms.topic:  reference
+ms.topic: reference
 ms.reviewer: ananguar
 ---
 

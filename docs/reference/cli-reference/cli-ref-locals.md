@@ -4,7 +4,7 @@ description: Reference for the nuget.exe locals command
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/19/2018
-ms.topic:  reference
+ms.topic: reference
 ---
 
 # locals command (NuGet CLI)

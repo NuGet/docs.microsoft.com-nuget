@@ -4,7 +4,7 @@ description: NuGet pack and restore can work directly as MSBuild targets with Nu
 author: nkolev92
 ms.author: nikolev
 ms.date: 03/23/2018
-ms.topic:  conceptual
+ms.topic: conceptual
 no-loc: [NuGet, MSBuild, .nuspec, nuspec]
 ---
 

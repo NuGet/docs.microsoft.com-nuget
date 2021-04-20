@@ -4,7 +4,7 @@ description: Best practices for securing your software supply chain using NuGet 
 author: JonDouglas
 ms.author: jodou
 ms.date: 02/08/2021
-ms.topic:  conceptual
+ms.topic: conceptual
 ---
 
 # Best practices for a secure software supply chain

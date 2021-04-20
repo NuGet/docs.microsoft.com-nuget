@@ -4,7 +4,7 @@ description: Guidance on installing client tools, the dotnet and nuget command-l
 author: JonDouglas
 ms.author: jodou
 ms.date: 06/20/2019
-ms.topic:  quickstart
+ms.topic: quickstart
 ---
 
 # Install NuGet client tools

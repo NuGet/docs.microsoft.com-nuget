@@ -4,7 +4,7 @@ description: The package base address is a simple interface for fetching the pac
 author: joelverhagen
 ms.author: jver
 ms.date: 10/26/2017
-ms.topic:  reference
+ms.topic: reference
 ms.reviewer: kraigb
 ---
 

@@ -4,7 +4,7 @@ description: Individual acccounts on NuGet.org are required to publish packages
 author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
-ms.topic:  conceptual
+ms.topic: conceptual
 ---
 
 # Individual accounts on NuGet.org
@@ -57,11 +57,11 @@ Two-factor authentication, or 2FA, is an extra layer of security used when loggi
 
    Verify the phone number or e-mail that is already associated with your Microsoft account. You may need to enter a new phone number or e-mail for your account. If so, enter the required information as instructed, and click **Next**.
 
-   ![Enable 2FA](media/nuget-org-sign-in-2fa.png)
+   ![Enable 2FA and enter phone](media/nuget-org-sign-in-2fa.png)
 
 4. Check your device or e-mail account, and enter the code that you were just sent.
 
-   ![Enable 2FA](media/nuget-org-enter-code-2fa.png)
+   ![Enable 2FA and enter code](media/nuget-org-enter-code-2fa.png)
 
 5. Follow any additional instructions to complete Two-factor authentication.
 

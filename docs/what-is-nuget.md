@@ -4,7 +4,7 @@ description: A comprehensive introduction to what NuGet is and does
 author: JonDouglas
 ms.author: jodou
 ms.date: 05/24/2019
-ms.topic:  overview
+ms.topic: overview
 ---
 
 # An introduction to NuGet

@@ -4,7 +4,7 @@ description: A walkthrough tutorial on creating and publishing a .NET Standard N
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/16/2019
-ms.topic:  quickstart
+ms.topic: quickstart
 ---
 
 # Quickstart: Create and publish a NuGet package using Visual Studio (.NET Standard, Windows only)

@@ -4,7 +4,7 @@ description: Complete reference for warnings and errors issued from NuGet during
 author: JonDouglas
 ms.author: jodou
 ms.date: 05/18/2018
-ms.topic:  reference
+ms.topic: reference
 ms.reviewer: anangaur
 ---
 

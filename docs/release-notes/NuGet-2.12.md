@@ -4,7 +4,7 @@ description: Release notes for NuGet 2.12 including known issues, bug fixes, add
 author: JonDouglas
 ms.author: jodou
 ms.date: 11/11/2016
-ms.topic:  conceptual
+ms.topic: conceptual
 ---
 
 # NuGet 2.12 Release Notes

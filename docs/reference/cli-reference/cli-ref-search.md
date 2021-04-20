@@ -4,7 +4,7 @@ description: Reference for the nuget.exe search command
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/17/2020
-ms.topic:  reference
+ms.topic: reference
 ---
 
 # search command (NuGet CLI)

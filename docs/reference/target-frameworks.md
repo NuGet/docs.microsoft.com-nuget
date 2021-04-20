@@ -4,7 +4,7 @@ description: NuGet target framework references identify and isolate framework-de
 author: JonDouglas
 ms.author: jodou
 ms.date: 12/11/2017
-ms.topic:  reference
+ms.topic: reference
 ms.reviewer: anangaur
 ---
 

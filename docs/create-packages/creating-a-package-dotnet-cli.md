@@ -4,7 +4,7 @@ description: A detailed guide to the process of designing and creating a NuGet p
 author: JonDouglas
 ms.author: jodou
 ms.date: 02/20/2020
-ms.topic:  conceptual
+ms.topic: conceptual
 ---
 
 # Create a NuGet package using the dotnet CLI
