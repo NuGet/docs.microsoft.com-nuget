@@ -109,6 +109,6 @@ case __VSHPROPID8.VSHPROPID_ProjectCapabilitiesChecker:
 
 ## DTE Support
 
-NuGet drives the project system to add references, content items, and MSBuild imports by calling into [DTE](/dotnet/api/envdte.dte?view=visualstudiosdk-2017), which is the top-level Visual Studio automation interface. DTE is a set of COM interfaces that you may already implement.
+NuGet drives the project system to add references, content items, and MSBuild imports by calling into [DTE](/dotnet/api/envdte.dte), which is the top-level Visual Studio automation interface. DTE is a set of COM interfaces that you may already implement.
 
 If your project type is based on CPS, DTE is implemented for you.

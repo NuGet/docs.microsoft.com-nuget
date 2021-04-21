@@ -1,6 +1,6 @@
 ---
 title: NuGet 4.4 RTM Release Notes
-description: Release notes for NuGet 4.3 RTM including known issues, bug fixes, added features, and DCRs.
+description: Release notes for NuGet 4.4 RTM including known issues, bug fixes, added features, and DCRs.
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/14/2017
