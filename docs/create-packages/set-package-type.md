@@ -21,7 +21,8 @@ Packages can be marked with one more more *package types* to indicate its intend
 
 > [!NOTE]
 > Support for package types was added in NuGet 3.5.
-> If you don't need a custom package type, it's best to *not* explicitly set the package type. NuGet defaults to `Dependency` this type when no type is specified.
+> If you don't need a custom package type, it's best to *not* explicitly set the package type.
+> NuGet defaults to the `Dependency` type when no type is specified.
 
 # [Using dotnet CLI](#tab/dotnet)
 
