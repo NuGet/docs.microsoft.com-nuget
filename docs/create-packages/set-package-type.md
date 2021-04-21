@@ -34,7 +34,7 @@ Package types can be set in the project file (`.csproj`):
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     
-    <PackageType>MyCustomType, 1.0.0.0;Dependency, 1.0.0.0</PackageType>
+    <PackageType>MyCustomType, 1.0.0.0;Dependency</PackageType>
   </PropertyGroup>
 
 </Project>
