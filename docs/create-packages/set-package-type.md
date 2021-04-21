@@ -42,11 +42,7 @@ Package types can be set in the project file (`.csproj`):
 
 # [Using nuget.exe](#tab/nugetexe)
 
-Package types are set in the `.nuspec` file. It's best for backwards compatibility to *not* explicitly set the `Dependency` type and to instead rely on NuGet assuming this type when no type is specified.
-
-With NuGet 3.5+
-
-Indicate the package type within a `packageTypes\packageType` node under the `<metadata>` element:
+Package types are set in the `.nuspec` file within a `packageTypes\packageType` node under the `<metadata>` element:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
