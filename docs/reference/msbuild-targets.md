@@ -68,7 +68,7 @@ The following table describes the MSBuild properties that can be added to a proj
 | `Repository/Type` | `RepositoryType` | empty | Repository type. Examples: `git` (default), `tfs`. |
 | `Repository/Branch` | `RepositoryBranch` | empty | Optional repository branch information. `RepositoryUrl` must also be specified for this property to be included. Example: *master* (NuGet 4.7.0+). |
 | `Repository/Commit` | `RepositoryCommit` | empty | Optional repository commit or changeset to indicate which source the package was built against. `RepositoryUrl` must also be specified for this property to be included. Example: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+). |
-| `PackageType` | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
+| `PackageType` | `<PackageType>MyCustomType, 1.0.0.0;Dependency</PackageType>` | | Indicates the packages intended use. See [Set a NuGet package type](../create-packages/set-package-type) (NuGet 3.5.0+). |
 | `Summary` | Not supported | | |
 
 ### pack target inputs
