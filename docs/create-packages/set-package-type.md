@@ -128,4 +128,4 @@ Package types can be versioned:
 
 The format of a package type string is exactly like a package ID. That is, a package type is a case-insensitive string matching the regular expression `^\w+([_.-]\w+)*$` having at least one character and at most 100 characters.
 
-The format of a package type version is exactly like a [`Version`](/dotnet/api/system.version).
+The format of a package type version is exactly like a [`Version`](/dotnet/api/system.version) string. The package type version is optional and defaults to `0.0`.
