@@ -75,7 +75,6 @@ Package types can be versioned using a `,` delimiter between the package type an
   </PropertyGroup>
 
 </Project>
-
 ```
 
 # [Using nuget.exe](#tab/nugetexe)
