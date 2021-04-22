@@ -1,6 +1,6 @@
 ---
 title: Create a NuGet package using MSBuild
-description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
+description: A detailed guide to the process of designing and creating a NuGet package using MSBuild, including key decision points like files and versioning.
 author: JonDouglas
 ms.author: jodou
 ms.date: 02/20/2020

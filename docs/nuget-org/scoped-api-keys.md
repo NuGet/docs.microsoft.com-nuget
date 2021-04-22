@@ -44,7 +44,7 @@ In the following example, you have an API key named `Contoso service CI` that ca
 
 If you are working on multiple packages and have a large list of packages to manage, you can choose to use globbing patterns to select multiple packages together. For example, if you wish to grant specific scopes to a key for all packages whose ID starts with `Fabrikam.Service`, you could do this by specifying `fabrikam.service.*` in the **Glob pattern** text box.
 
-![Create API keys](media/scoped-api-keys-glob-pattern.png)
+![Create API keys - 2](media/scoped-api-keys-glob-pattern.png)
 
 Using glob patterns to determine API key permissions also applies to new packages matching the glob pattern. For example, if you try to push a new package named `Fabrikam.Service.Framework`, you can do that with the key created previously, since the package matches the glob pattern `fabrikam.service.*`.
 
@@ -52,19 +52,19 @@ Using glob patterns to determine API key permissions also applies to new package
 
 For security, a newly created key is never shown on the screen and is only available using the **Copy** button. Similarly, the key is not accessible after the page is refreshed.
 
-![Create API keys](media/scoped-api-keys-obtain-keys.png)
+![Create API keys - 3](media/scoped-api-keys-obtain-keys.png)
 
 ## Edit existing API keys
 
 You may also want to update the key permissions and scopes without changing the key itself. If you have a key with specific scope(s) for a single package, you can choose to apply the same scope(s) on one or many other packages.
 
-![Create API keys](media/scoped-api-keys-edit.png)
+![Create API keys - 4](media/scoped-api-keys-edit.png)
 
 ## Refresh or delete existing API keys
 
 The account owner can choose to refresh the key, in which case the permission (on packages), scope, and expiry remain the same, but a new key is issued making the old key unusable. This is helpful in managing stale keys or where there is any potential for an API key leakage.
 
-![Create API keys](media/scoped-api-keys-refresh.png)
+![Create API keys - 5](media/scoped-api-keys-refresh.png)
 
 You may also choose to delete these keys if they are not needed anymore. Deleting a key removes the key and makes it unusable.
 

@@ -56,7 +56,7 @@ For the installation and discovery of those providers refer to [nuget.exe creden
 
 #### Available credential providers for nuget.exe
 
-* [Azure DevOps V2 Credential Providers](/azure/devops/artifacts/nuget/nuget-exe?view=azure-devops#add-a-feed-to-nuget-482-or-later) or [Azure Artifacts Credential Provider](https://github.com/microsoft/artifacts-credprovider)
+* [Azure DevOps V2 Credential Providers](/azure/devops/artifacts/nuget/nuget-exe#add-a-feed-to-nuget-482-or-later) or [Azure Artifacts Credential Provider](https://github.com/microsoft/artifacts-credprovider)
 
 With Visual Studio 2017 version 15.9 and later, the Azure DevOps credential provider is bundled in Visual Studio.
 If `nuget.exe` uses MSBuild from that specific Visual Studio toolset, then the plugin will be discovered automatically.

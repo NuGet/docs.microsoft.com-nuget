@@ -1,6 +1,6 @@
 ---
 title: NuGet 2.6 Release Notes
-description: Release notes for NuGet 2.6.1 for WebMatrix including known issues, bug fixes, added features, and DCRs.
+description: Release notes for NuGet 2.6 including known issues, bug fixes, added features, and DCRs.
 author: JonDouglas
 ms.author: jodou
 ms.date: 11/11/2016
