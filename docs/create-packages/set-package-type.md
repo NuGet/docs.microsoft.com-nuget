@@ -28,7 +28,9 @@ Packages not marked with a type, including all packages created with earlier ver
 
 ## Custom package types
 
-You can mark your package with one or more custom package types if its use does not fit the [known package types](#known-package-types). For example, imagine if customers of the `Contoso` app can install extensions. Extension authors could use the custom package type `ContosoExtension` to identify these packages as `Contoso` app extensions.
+You can mark your package with one or more custom package types if its use does not fit the [known package types](#known-package-types).
+
+For example, imagine that customers of the `Contoso` app can install extensions. The app could require extension authors to use the custom package type `ContosoExtension` to identify their packages as proper extensions that follow the required conventions.
 
 > [!WARNING]
 > A package with a custom package type cannot be installed by Visual Studio or nuget.exe. See [NuGet/Home#10468](https://github.com/NuGet/Home/issues/10468) for more information.
