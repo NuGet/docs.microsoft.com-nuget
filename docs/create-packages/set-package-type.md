@@ -87,10 +87,10 @@ Package types are set in the `.nuspec` file within a `packageTypes\packageType` 
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-    <!-- ... -->
-    <packageTypes>
-        <packageType name="ContosoExtension" />
-    </packageTypes>
+        <!-- ... -->
+        <packageTypes>
+            <packageType name="ContosoExtension" />
+        </packageTypes>
     </metadata>
 </package>
 ```
@@ -101,11 +101,11 @@ Packages with multiple intended uses may be marked with multiple package types:
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-    <!-- ... -->
-    <packageTypes>
-        <packageType name="PackageType1" />
-        <packageType name="PackageType2" />
-    </packageTypes>
+        <!-- ... -->
+        <packageTypes>
+            <packageType name="PackageType1" />
+            <packageType name="PackageType2" />
+        </packageTypes>
     </metadata>
 </package>
 ```
@@ -116,11 +116,11 @@ Package types can be versioned using a [`Version`](/dotnet/api/system.version) s
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-    <!-- ... -->
-    <packageTypes>
-        <packageType name="PackageType1" version="1.0.0.0" />
-        <packageType name="PackageType2" />
-    </packageTypes>
+        <!-- ... -->
+        <packageTypes>
+            <packageType name="PackageType1" version="1.0.0.0" />
+            <packageType name="PackageType2" />
+        </packageTypes>
     </metadata>
 </package>
 ```
