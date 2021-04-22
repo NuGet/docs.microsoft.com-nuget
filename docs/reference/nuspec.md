@@ -205,6 +205,8 @@ For the MSBuild equivalent, take a look at [Packing an icon image file](msbuild-
 
 #### readme
 
+*Supported with **NuGet 5.10.0 preview 2** and above*
+
 When packing a readme file, you need to use the `readme` element to specify the package path, relative to the root of the package. In addition to this, you need to make sure that the file is included in the package. Supported file formats include only Markdown (*.md*).
 
 For example, you would add the following to your nuspec in order to pack a readme file with your project:
@@ -224,7 +226,7 @@ For example, you would add the following to your nuspec in order to pack a readm
 </package>
 ```
 
-For the MSBuild equivalent, take a look at [Packing a readme file](msbuild-targets.md#packagereadmefile).
+For the MSBuild equivalent, take a look at [Packing a readme file](msbuild-targets.md#packagereadmefile). 
 
 #### requireLicenseAcceptance
 A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.
