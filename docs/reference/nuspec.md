@@ -226,7 +226,7 @@ For example, you would add the following to your nuspec in order to pack a readm
 </package>
 ```
 
-For the MSBuild equivalent, take a look at [Packing a readme file](msbuild-targets.md#packagereadmefile).
+For the MSBuild equivalent, take a look at [Packing a readme file](msbuild-targets.md#packagereadmefile). 
 
 #### requireLicenseAcceptance
 A Boolean value specifying whether the client must prompt the consumer to accept the package license before installing the package.
