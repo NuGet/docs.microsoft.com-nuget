@@ -28,7 +28,7 @@ Packages not marked with a type, including all packages created with earlier ver
 
 ## Custom package types
 
-You can mark your package with one or more custom package types if its use does not fit the known package types. For example, imagine if customers of the `Contoso` app can install extensions. Extension authors could use the custom package type `ContosoExtension` to identify these packages as `Contoso` app extensions.
+You can mark your package with one or more custom package types if its use does not fit the [known package types](#known-package-types). For example, imagine if customers of the `Contoso` app can install extensions. Extension authors could use the custom package type `ContosoExtension` to identify these packages as `Contoso` app extensions.
 
 > [!WARNING]
 > A package with a custom package type cannot be installed by Visual Studio or nuget.exe. See [NuGet/Home#10468](https://github.com/NuGet/Home/issues/10468) for more information.
@@ -63,7 +63,7 @@ Packages with multiple intended uses can be marked with multiple package types u
 </Project>
 ```
 
-Package types can be versioned using a `,` delimiter between the package type and its version:
+Package types can be versioned using a `,` delimiter between the package type and its [`Version`](/dotnet/api/system.version) string:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -108,7 +108,7 @@ Packages with multiple intended uses may be marked with multiple package types:
 </package>
 ```
 
-Package types can be versioned:
+Package types can be versioned using a [`Version`](/dotnet/api/system.version) string:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -124,7 +124,6 @@ Package types can be versioned:
 ```
 
 ---
-
 
 The format of a package type string is exactly like a package ID. That is, a package type is a case-insensitive string matching the regular expression `^\w+([_.-]\w+)*$` having at least one character and at most 100 characters.
 
