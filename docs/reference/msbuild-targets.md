@@ -68,7 +68,7 @@ The following table describes the MSBuild properties that can be added to a proj
 | `Repository/Type` | `RepositoryType` | empty | Repository type. Examples: `git` (default), `tfs`. |
 | `Repository/Branch` | `RepositoryBranch` | empty | Optional repository branch information. `RepositoryUrl` must also be specified for this property to be included. Example: *master* (NuGet 4.7.0+). |
 | `Repository/Commit` | `RepositoryCommit` | empty | Optional repository commit or changeset to indicate which source the package was built against. `RepositoryUrl` must also be specified for this property to be included. Example: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+). |
-| `PackageType` | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
+| `PackageType` | `<PackageType>CustomType1, 1.0.0.0;CustomType2</PackageType>` | | Indicates the package's intended use. Package types use the same format as package IDs and are delimited by `;`. Package types may be versioned by appending a `,` and a [`Version`](/dotnet/api/system.version) string. See [Set a NuGet package type](../create-packages/set-package-type.md) (NuGet 3.5.0+). |
 | `Summary` | Not supported | | |
 
 ### pack target inputs
@@ -154,7 +154,7 @@ For the nuspec equivalent, take a look at [nuspec reference for icon](nuspec.md#
 
 ### PackageReadmeFile
 
-*Supported with **NuGet 5.10.0 preview 2** / **.NET 5.0.3** and above*
+*Supported with **NuGet 5.10.0 preview 2** / **.NET SDK 5.0.300** and above*
 
 When packing a readme file, you need to use the `PackageReadmeFile` property to specify the package path, relative to the root of the package. In addition to this, you need to make sure that the file is included in the package. Supported file formats include only Markdown (*.md*).
 
