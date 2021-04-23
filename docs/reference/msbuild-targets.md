@@ -154,7 +154,7 @@ For the nuspec equivalent, take a look at [nuspec reference for icon](nuspec.md#
 
 ### PackageReadmeFile
 
-*Supported with **NuGet 5.10.0 preview 2** / **.NET 5.0.3** and above*
+*Supported with **NuGet 5.10.0 preview 2** / **.NET SDK 5.0.300** and above*
 
 When packing a readme file, you need to use the `PackageReadmeFile` property to specify the package path, relative to the root of the package. In addition to this, you need to make sure that the file is included in the package. Supported file formats include only Markdown (*.md*).
 
