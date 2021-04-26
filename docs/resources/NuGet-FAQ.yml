@@ -9,11 +9,11 @@ metadata:
     
 title: NuGet frequently-asked questions
 summary: |
-  For frequently-asked questions pertaining to NuGet.org, such as NuGet.org account questions, see [NuGet.org frequently-asked questions](../nuget-org/nuget-org-faq.md).
+  For frequently-asked questions pertaining to NuGet.org, such as NuGet.org account questions, see [NuGet.org frequently-asked questions](../nuget-org/nuget-org-faq.yml).
   
 
 sections:
-  - name: Ignored
+  - name: General
     questions:
       - question: |
           What is required to run NuGet?
