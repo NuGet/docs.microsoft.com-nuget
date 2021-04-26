@@ -126,7 +126,7 @@ sections:
           1. Once logged in, go to your [account settings](https://www.nuget.org/account) page.
           1. Expand the section for **Login Account**. Click on the **Change Account** button.
           1. You will now be redirected to the microsoft login page. Please sign in with the account that you wish to change the association to i.e. `account2@outlook.com`. **Note**: you might need to click on **Sign out and sign in with different account** during the sign in flow to be able to login with a different Microsoft account.
-          1. If you see an error like below, see [Microsoft account is linked with another NuGet.org account](#microsoft-account-is-linked-with-another-nugetorg-account) for more details.
+          1. If you see an error like below, see [Microsoft account is linked with another NuGet.org account](#microsoft-account-is-linked-with-another-nuget-org-account) for more details.
               >_Failed to update the Microsoft account with 'account2 <account2@outlook.com>'. This could happen if it is already linked to another NuGet account. Contact support for more information._
           
           1. Once you have successfully signed in with your second account, you will be redirected back to your NuGet.org account settings page and you should now see the new Microsoft account associated as the login account. Going forward you should use this account when signing into NuGet.org.
@@ -153,8 +153,8 @@ sections:
           If you wish to not care about the second NuGet.org account and still want to re-use the associated Microsoft account with email `account2@outlook.com`. 
           
           You can release the association between the Microsoft account and NuGet.org account by deleting the NuGet.org account.
-          1. Follow the steps to [delete user](#how-to-delete-my-nugetorg-account) for the second NuGet.org account `MyNuGetAccount2`. 
-          1. Once this account is deleted, you can retry the steps to [change Microsoft account login](#how-to-change-the-microsoft-account-i-use-for-nugetorg-login).
+          1. Follow the steps to [delete user](#how-to-delete-my-nuget-org-account) for the second NuGet.org account `MyNuGetAccount2`. 
+          1. Once this account is deleted, you can retry the steps to [change Microsoft account login](#how-to-change-the-microsoft-account-i-use-for-nuget-org-login).
           
       - question: Wait, I care about this second account too. I do not want to lose this account but change my associated account logins for first account.
         answer: |
@@ -177,17 +177,17 @@ sections:
           
       - question: How do I find which Microsoft account is linked to this NuGet.org account?
         answer: |
-          You should use the [sign in assistance](#which-microsoft-account-is-linked-to-my-nugetorg-account) flow to figure out which Microsoft account is linked to the NuGet.org account with the email address `account1@outlook.com`.
+          You should use the [sign in assistance](#which-microsoft-account-is-linked-to-my-nuget-org-account) flow to figure out which Microsoft account is linked to the NuGet.org account with the email address `account1@outlook.com`.
           
       - question: I want to override that account with my Microsoft account
         answer: |
-          Follow the steps in [Unable to use microsoft login, how do I recover my NuGet.org account](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account) section to associate your Microsoft account with the existing NuGet.org account.
+          Follow the steps in [Unable to use microsoft login, how do I recover my NuGet.org account](#unable-to-use-microsoft-login--how-do-i-recover-my-nuget-org-account) section to associate your Microsoft account with the existing NuGet.org account.
           
       - question: Unable to use microsoft login, how do I recover my NuGet.org account?
         answer: |
-          If you tried using the [sign in assistance](#which-microsoft-account-is-linked-to-my-nugetorg-account) and you do not have access to the Microsoft account that is associated with your NuGet.org account, please follow the steps below to link a new Microsoft account to your NuGet.org account.
+          If you tried using the [sign in assistance](#which-microsoft-account-is-linked-to-my-nuget-org-account) and you do not have access to the Microsoft account that is associated with your NuGet.org account, please follow the steps below to link a new Microsoft account to your NuGet.org account.
           1. **Requirement**: You will need access to a Microsoft account which is not associated with any existing NuGet.org accounts. If you do not have one, you can [create](https://signup.live.com) one.
-          2. If you've forgotten your username and password for your NuGet.org account, follow the [steps to recover your password login](#how-to-recover-nugetorg-password-login).
+          2. If you've forgotten your username and password for your NuGet.org account, follow the [steps to recover your password login](#how-to-recover-nuget-org-password-login).
           3. [Login to NuGet.org](https://www.nuget.org/users/account/LogOnNuGetAccount) using the username/password login.
           4. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box.
           5. **NOTE**: Please ignore the instruction to login with the specified Microsoft account. You can now link your NuGet.org account to any other Microsoft login.
@@ -202,7 +202,7 @@ sections:
           
           If, however, your NuGet.org account is not associated/linked with a Microsoft account, you can follow the steps below to transform this account to an organization.
           1. **Requirement**: You need to have an individual account first created on NuGet.org to be used as an admin on the org account. If you do not have one, please [create a new NuGet.org account](individual-accounts.md)
-          2. Follow the [steps to recover your password login](#how-to-recover-nugetorg-password-login) for your NuGet.org account if you do not have password login for it, if you do, skip this step.
+          2. Follow the [steps to recover your password login](#how-to-recover-nuget-org-password-login) for your NuGet.org account if you do not have password login for it, if you do, skip this step.
           3. [Login to NuGet.org](https://www.nuget.org/users/account/LogOnNuGetAccount) using the username/password login.
           4. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box. 
               > [!Important]
@@ -234,7 +234,7 @@ sections:
           
       - question: I don’t want to do all that, what is the other way to recover my account?
         answer: |
-          You can [create](https://www.microsoft.com/account) a new Microsoft account (with an email **not** associated with @yourdomain.com). Follow steps given in [recover your NuGet.org account](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account) section.
+          You can [create](https://www.microsoft.com/account) a new Microsoft account (with an email **not** associated with @yourdomain.com). Follow steps given in [recover your NuGet.org account](#unable-to-use-microsoft-login--how-do-i-recover-my-nuget-org-account) section.
           
       - question: How do I change my NuGet.org account username?
         answer: |
@@ -242,13 +242,13 @@ sections:
           > [!Important]
           > Deleting the user will still **reserve** the `username`. You will not be able to reuse the same username again and **this includes the change of casings**. As an example if you created a user with username `mycoolname` and you want to change this to `MyCoolName`(casing changes), it will not be possible after deleting the user.
           
-          Follow the steps given in [delete your NuGet.org account](#how-to-delete-my-nugetorg-account) section and to [register a new account](individual-accounts.md) with correct username.
+          Follow the steps given in [delete your NuGet.org account](#how-to-delete-my-nuget-org-account) section and to [register a new account](individual-accounts.md) with correct username.
           
       - question: How to delete my NuGet.org account?
         answer: |
           To delete your account, please note that we recommend that you transfer the ownership of any packages where you are the sole owner. You can read more about [managing package owners](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg) on how to do it. This will also help us expedite your request.
           
-          If you are looking to transform your account to an organization, follow the steps given in [transform my NuGet.org account to an organization](#how-to-transform-my-nugetorg-account-to-an-organization).
+          If you are looking to transform your account to an organization, follow the steps given in [transform my NuGet.org account to an organization](#how-to-transform-my-nuget-org-account-to-an-organization).
           
           > [!Important]
           > Deleting the user will result in following:
