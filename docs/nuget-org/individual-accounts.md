@@ -70,4 +70,4 @@ Two-factor authentication, or 2FA, is an extra layer of security used when loggi
 
 ## Delete a NuGet.org account
 
-For help with additional account-related tasks, such as deleting a NuGet.org account, see [NuGet.org account management](/nuget/nuget-org/nuget-org-faq#nugetorg-account-management).
+For help with additional account-related tasks, such as deleting a NuGet.org account, see [NuGet.org account management](/nuget/nuget-org/nuget-org-faq#nuget.org-account-management).
