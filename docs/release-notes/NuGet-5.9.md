@@ -216,6 +216,16 @@ Thank you to all the contributors who helped make this NuGet release awesome!
 
 **[List of commits in this release - 5.9.1](https://github.com/NuGet/NuGet.Client/compare/5.9.0.7134...5.9.1.8)**
 
+## Known issues
+
+### nuget 5.9 pack raises `Null Reference` exception. - [#10685](https://github.com/NuGet/Home/issues/10685)
+
+#### Issue
+When tring to `pack` using a `.nuspec` file, `NuGet 5.9` version raises a `null reference` exception if [explicit assembly references](https://docs.microsoft.com/en-us/nuget/reference/nuspec#explicit-assembly-references) are specified without adding any `reference groups` for projects that target `multiple frameworks`.
+
+#### Workaround
+Use `nuget.exe` [5.8.1](https://dist.nuget.org/win-x86-commandline/v5.8.1/nuget.exe)  or latest version other than `5.9.1`.
+
 ## Feedback welcome
 
 Your feedback is important to us.  If there are any problems with this release, check our
