@@ -221,7 +221,7 @@ Thank you to all the contributors who helped make this NuGet release awesome!
 ### nuget 5.9 pack raises `Null Reference` exception. - [#10685](https://github.com/NuGet/Home/issues/10685)
 
 #### Issue
-When tring to `pack` using a `.nuspec` file, `NuGet 5.9` version raises a `null reference` exception if [explicit assembly references](https://docs.microsoft.com/en-us/nuget/reference/nuspec#explicit-assembly-references) are specified without adding any `reference groups` for projects that target `multiple frameworks`.
+When tring to `pack` using a `.nuspec` file, `NuGet 5.9` version raises a `null reference` exception if [explicit assembly references](https://docs.microsoft.com/nuget/reference/nuspec#explicit-assembly-references) are specified without adding any `reference groups` for projects that target `multiple frameworks`.
 
 #### Workaround
 Use `nuget.exe` [5.8.1](https://dist.nuget.org/win-x86-commandline/v5.8.1/nuget.exe)  or latest version other than `5.9.1`.
