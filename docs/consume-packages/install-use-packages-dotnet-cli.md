@@ -25,7 +25,7 @@ This article shows you basic usage for a few of the most common dotnet CLI comma
 
 1. Open a command line and switch to the directory that contains your project file.
 
-2. Use the following command to install a Nuget package:
+2. Use the following command to install a NuGet package:
 
     ```dotnetcli
     dotnet add package <PACKAGE_NAME>
@@ -49,7 +49,7 @@ This article shows you basic usage for a few of the most common dotnet CLI comma
 
 ## Install a specific version of a package
 
-If the version is not specified, NuGet installs the latest version of the package. You can also use the [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x) command to install a specific version of a Nuget package:
+If the version is not specified, NuGet installs the latest version of the package. You can also use the [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x) command to install a specific version of a NuGet package:
 
 ```dotnetcli
 dotnet add package <PACKAGE_NAME> --version <VERSION>
