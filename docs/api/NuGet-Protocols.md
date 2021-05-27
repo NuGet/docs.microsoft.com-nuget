@@ -14,6 +14,10 @@ To interact with nuget.org, clients need to follow certain protocols. Because th
 must identify the protocol version they use when calling specific nuget.org APIs. This allows nuget.org to introduce
 changes in a non-breaking way for the old clients.
 
+> [!Warning]
+> TODO REMOVE THIS!!!
+
+
 > [!Note]
 > The APIs documented on this page are specific to nuget.org and there is no expectation for other NuGet server
 > implementations to introduce these APIs. 
