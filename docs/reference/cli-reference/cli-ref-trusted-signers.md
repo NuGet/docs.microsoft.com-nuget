@@ -57,14 +57,14 @@ Adds a trusted signer with the given name to the config. This option has differe
 ## Options for add based on a package
 
 ```cli
-nuget trusted-signers add <package(s)> -Name <name> [options]
+nuget trusted-signers add <package> -Name <name> [options]
 ```
 
-where `<package(s)>` is one or more `.nupkg` files.
+where `<package>` is one signed `.nupkg` file.
 
 - **`-Author`**
 
-  Specifies that the author signature of the package(s) should be trusted.
+  Specifies that the author signature of the signed package should be trusted.
 
 - **`-AllowUntrustedRoot`**
 
@@ -76,7 +76,7 @@ where `<package(s)>` is one or more `.nupkg` files.
 
 - **`-Repository`**
 
-  Specifies that the repository signature or countersignature of the package(s) should be trusted.
+  Specifies that the repository signature or countersignature of the signed package should be trusted.
 
 Providing both `-Author` and `-Repository` at the same time is not supported.
 
