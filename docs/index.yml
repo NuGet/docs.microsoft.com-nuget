@@ -140,9 +140,9 @@ additionalContent:
             - text: Release notes
               url: ./release-notes/known-issues.md
             - text: FAQ - NuGet
-              url: ./resources/nuget-faq.md
+              url: ./resources/nuget-faq.yml
             - text: FAQ - NuGet.org
-              url: ./nuget-org/nuget-org-faq.md
+              url: ./nuget-org/nuget-org-faq.yml
 
 
    footer: "[Blogs](https://devblogs.microsoft.com/nuget/) - [Twitter](https://twitter.com/nuget) - [Stack Overflow](https://stackoverflow.com/questions/tagged/nuget)"
