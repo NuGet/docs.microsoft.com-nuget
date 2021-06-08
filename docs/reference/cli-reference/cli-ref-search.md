@@ -11,7 +11,7 @@ ms.topic: reference
 
 **Applies to:** package consumption &bullet; **Supported versions:** 5.8+
 
-Searches a given source using the query string provided. If no sources are specified, all sources defined in %AppData%\NuGet\NuGet.config are used.
+Searches a given source using the query string provided. If no sources are specified, all sources defined in %AppData%\NuGet\NuGet.Config are used.
 
 ## Usage
 
