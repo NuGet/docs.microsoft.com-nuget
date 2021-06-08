@@ -81,7 +81,7 @@ where `<configPath>` identifies either a `packages.config` or solution file that
 
 - **`-Self`**
 
-  Updates nuget.exe to the latest version; all other arguments are ignored.
+  Updates `nuget.exe` to the latest version. `-Source` can be used however all other arguments are ignored. If no source is provided, checks `nuget.org` for updates regardless of `NuGet.Config` settings.
 
 - **`-Source`**
 
