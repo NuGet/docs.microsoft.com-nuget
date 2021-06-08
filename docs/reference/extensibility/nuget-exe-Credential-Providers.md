@@ -32,7 +32,7 @@ A credential provider is a command-line executable, named in the form `Credentia
 A provider must do the following:
 
 - Determine whether it can provide credentials for the targeted URI before initiating credential acquisition. If not, it should return status code 1 with no credentials.
-- Not modify `Nuget.Config` (such as setting credentials there).
+- Not modify `NuGet.Config` (such as setting credentials there).
 - Handle HTTP proxy configuration on its own, as NuGet does not provide proxy information to the plugin.
 - Return credentials or error details to `nuget.exe` by writing a JSON response object (see below) to stdout, using UTF-8 encoding.
 - Optionally emit additional trace logging to stderr. No secrets should ever be written to stderr, since at verbosity levels "normal" or "detailed" such traces are echoed by NuGet to the console.
