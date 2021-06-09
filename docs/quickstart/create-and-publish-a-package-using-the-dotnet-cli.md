@@ -33,7 +33,7 @@ You can use an existing .NET Class Library project for the code you want to pack
 
 Every NuGet package needs a manifest that describes the package's contents and dependencies. In a final package, the manifest is a `.nuspec` file that is generated from the NuGet metadata properties that you include in the project file.
 
-1. Open your project file (`.csproj`) and add the following minimal properties inside the existing `<PropertyGroup>` tag, changing the values as appropriate:
+1. Open your project file (`.csproj`, `.fsproj` or `.vbproj` depending on the language you're using) and add the following minimal properties inside the existing `<PropertyGroup>` tag, changing the values as appropriate:
 
     ```xml
     <PackageId>AppLogger</PackageId>
