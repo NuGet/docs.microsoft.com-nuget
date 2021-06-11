@@ -292,6 +292,7 @@
 ## Release notes
 ### [Known Issues](release-notes/known-issues.md)
 ### NuGet 5.x
+#### [NuGet 5.10](release-notes/NuGet-5.10.md)
 #### [NuGet 5.9](release-notes/NuGet-5.9.md)
 #### [NuGet 5.8](release-notes/NuGet-5.8.md)
 #### [NuGet 5.7](release-notes/NuGet-5.7.md)
