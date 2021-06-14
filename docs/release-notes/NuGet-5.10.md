@@ -1,7 +1,7 @@
 ---
 title: NuGet 5.10 Release Notes
 description: Release notes for NuGet 5.10 including new features, bug fixes, and DCRs.
-author: @zkat
+author: zkat
 ms.author: kmarchan
 ms.date: 6/11/2021
 ms.topic: conceptual
@@ -13,9 +13,12 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**<NuGetVersion>**](https://nuget.org/downloads) | [Visual Studio <VSYear> version <VSVersion>](https://visualstudio.microsoft.com/downloads/) | [<SDKVersion>](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
+| [**5.10.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.10](https://visualstudio.microsoft.com/downloads/) | [5.0.300](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio <VSYear> with.NET Core workload
+<sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
+  
+> [!NOTE]
+> Visual Studio 16.10, MSBuild 16.10, and .NET 5.0.300+ requires NuGet.exe 5.10 or later.
 
 ## Summary: What's New in 5.10
 
@@ -29,7 +32,7 @@ NuGet distribution vehicles:
 
 ### Issues fixed in this release
 
-**DCRs:**
+**DCRs(Design Change Request):**
 
 * Suppress the <requireLicenseAcceptance> element when packing a project - [#5133](https://github.com/NuGet/Home/issues/5133)
 
@@ -134,3 +137,36 @@ NuGet distribution vehicles:
 * Update the SPDX license list - [#10806](https://github.com/NuGet/Home/issues/10806)
 
 **[List of all issues fixed in this release - 5.10](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=Z2lkOi8vcmFwdG9yL1JlbGVhc2UvNTY2MTQ)**
+  
+**[List of commits in this release - 5.10.0](https://github.com/NuGet/NuGet.Client/compare/5.9.0.7134...5.10.0.7240)**
+  
+### Community contributions
+
+Thank you to all the contributors who helped make this NuGet release awesome!
+
+|Who|PRs|Issues|
+|----|----|----|
+[omajid](https://github.com/omajid) | [3865](https://github.com/NuGet/NuGet.Client/pull/3865) | Copy-paste error in V2FeedPackageInfo - [#10480](https://github.com/NuGet/Home/issues/10480)
+[marcin-krystianc](https://github.com/marcin-krystianc) | [3812](https://github.com/NuGet/NuGet.Client/pull/3812) | Missing tests for the case where packages are referenced with PrivateAssets="All" attribute - [#10397](https://github.com/NuGet/Home/issues/10397)
+[marcin-krystianc](https://github.com/marcin-krystianc) | [3739](https://github.com/NuGet/NuGet.Client/pull/3739) | Adding support for pushing multiple packages - [#4393](https://github.com/NuGet/Home/issues/4393)
+[marcin-krystianc](https://github.com/marcin-krystianc) | [3723](https://github.com/NuGet/NuGet.Client/pull/3723) | Build of NuGet libraries is broken when assembly signing is disabled - [#10173](https://github.com/NuGet/Home/issues/10173)
+[kant2002](https://github.com/kant2002) | [3807](https://github.com/NuGet/NuGet.Client/pull/3807) | Clean-up the contributing docs - [#10399](https://github.com/NuGet/Home/issues/10399)
+[PathogenDavid](https://github.com/PathogenDavid) | [3754](https://github.com/NuGet/NuGet.Client/pull/3754) | License and icon file existence check should always use a case-sensitive comparison - [#9817](https://github.com/NuGet/Home/issues/9817)
+[campersau](https://github.com/campersau) | [3677](https://github.com/NuGet/NuGet.Client/pull/3677) | Use BitmapCreateOptions.IgnoreColorProfile to workaround WPF issue when using DecodePixelWidth - [#10037](https://github.com/NuGet/Home/issues/10037)
+[bjorkstromm](https://github.com/bjorkstromm) | [3697](https://github.com/NuGet/NuGet.Client/pull/3697) | Windows SDK 10 link is broken in NuGet.Client Contribution guide - [#10099](https://github.com/NuGet/Home/issues/10099)
+[bjorkstromm](https://github.com/bjorkstromm) | [3696](https://github.com/NuGet/NuGet.Client/pull/3696) | Relative links are broken in NuGet.Client debugging guide - [#10100](https://github.com/NuGet/Home/issues/10100)
+[Nirmal4G](https://github.com/Nirmal4G) | [3637](https://github.com/NuGet/NuGet.Client/pull/3637) | Improve test fixtures and related code - [#9996](https://github.com/NuGet/Home/issues/9996)
+[rolfbjarne](https://github.com/rolfbjarne) | [3743](https://github.com/NuGet/NuGet.Client/pull/3743) | Output is wrapped at 80 characters on macOS when redirected - [#10198](https://github.com/NuGet/Home/issues/10198)
+[xen2](https://github.com/xen2) | [2861](https://github.com/NuGet/NuGet.Client/pull/2861) | Make NuGet.PackageManagement available as a .NET Standard package - [#6150](https://github.com/NuGet/Home/issues/6150)
+[Anipik](https://github.com/Anipik) | [3810](https://github.com/NuGet/NuGet.Client/pull/3810) | Introduce a new msbuild property to exclude build output for specific tfms during pack task - [#10396](https://github.com/NuGet/Home/issues/10396)
+
+## Feedback welcome
+
+Your feedback is important to us.  If there are any problems with this release, check our
+[GitHub Issues](https://github.com/NuGet/Home/issues) and
+[Visual Studio Developer Community](https://developercommunity.visualstudio.com/)
+for existing issues.  For new issues within NuGet, please report a
+[GitHub Issue](https://github.com/NuGet/Home/issues/new).
+For general NuGet experience issues, let us know via the
+[Report a Problem](/visualstudio/ide/how-to-report-a-problem-with-visual-studio)
+option found in your favorite IDE under **Help > Report a Problem**.
