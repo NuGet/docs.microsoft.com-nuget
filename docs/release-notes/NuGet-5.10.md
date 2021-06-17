@@ -24,15 +24,13 @@ NuGet distribution vehicles:
 
 * Signing: implement dotnet trusted-signers command - [#8053](https://github.com/NuGet/Home/issues/8053)
 
-* Add the project type `nfproj` to the list of supportedProjectExtensions for Nuget CLI. - [#10562](https://github.com/NuGet/Home/issues/10562)
-
 * Make default validation disabled on Linux, but enabled by default on Windows - [#10713](https://github.com/NuGet/Home/issues/10713)
 
 * Add an ENV Variable for Package Signing Verification on .NET 5+ Linux/MAC - [#10742](https://github.com/NuGet/Home/issues/10742)
 
-### Issues fixed in this release
+* Add the project type `nfproj` to the list of supportedProjectExtensions for Nuget CLI. - [#10562](https://github.com/NuGet/Home/issues/10562)
 
-**DCRs(Design Change Request):**
+### Issues fixed in this release
 
 * Suppress the <requireLicenseAcceptance> element when packing a project - [#5133](https://github.com/NuGet/Home/issues/5133)
 
@@ -42,13 +40,7 @@ NuGet distribution vehicles:
 
 * [Bug Bash] Error “operation canceled by user” show in Error List window when switching between tabs quickly in PM UI - [#10671](https://github.com/NuGet/Home/issues/10671)
 
-**Bugs:**
-
 * PM UI:  Improve package installation performance on the solution level - [#10210](https://github.com/NuGet/Home/issues/10210)
-
-* Config entries being forced add into nuget.config - [#2053](https://github.com/NuGet/Home/issues/2053)
-
-* Missing nuget.org source after updating to NuGet 3.4.1 - [#2445](https://github.com/NuGet/Home/issues/2445)
 
 * Replace GetService with GetServiceAsync everywhere in NuGet.Clients - [#3784](https://github.com/NuGet/Home/issues/3784)
 
@@ -101,8 +93,6 @@ NuGet distribution vehicles:
 * PMUI initialization fails with exception during debug session - [#10559](https://github.com/NuGet/Home/issues/10559)
 
 * nuget restore results in a package integrity check failure on big endian system - [#10567](https://github.com/NuGet/Home/issues/10567)
-
-* Remove unreachable code calling EventTrigger.dll - [#10584](https://github.com/NuGet/Home/issues/10584)
 
 * FormatException is thrown instead of PackagingException - [#10595](https://github.com/NuGet/Home/issues/10595)
 
