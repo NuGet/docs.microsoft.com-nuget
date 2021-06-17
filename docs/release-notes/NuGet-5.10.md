@@ -28,6 +28,8 @@ NuGet distribution vehicles:
 
 * Add an ENV Variable for Package Signing Verification on .NET 5+ Linux/MAC - [#10742](https://github.com/NuGet/Home/issues/10742)
 
+* Improve install new package performance for large solutions - [#10166](https://github.com/NuGet/Home/issues/10166)
+
 * Add the project type `nfproj` to the list of supportedProjectExtensions for Nuget CLI. - [#10562](https://github.com/NuGet/Home/issues/10562)
 
 ### Issues fixed in this release
@@ -67,8 +69,6 @@ NuGet distribution vehicles:
 * Details Pane Versions Dropdown default selection should be Installed/LatestStable on Installed/Updates tabs - [#9887](https://github.com/NuGet/Home/issues/9887)
 
 * Remove workaround account for some .NET 5 SDKs report TargetPlatformMoniker of ` ,Version= ` - [#9913](https://github.com/NuGet/Home/issues/9913)
-
-* Improve install new package performance for large solutions - [#10166](https://github.com/NuGet/Home/issues/10166)
 
 * dotnet nuget verify is too quiet - [#10316](https://github.com/NuGet/Home/issues/10316)
 
