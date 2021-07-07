@@ -52,6 +52,6 @@ nuget.org has additional requirements for accepting a signed package:
 ## Related articles
 
 - [Signing NuGet Packages](../create-packages/Sign-a-Package.md)
-- [Verify signed packages using the dotnet CLI](/dotnet/core/tools/dotnet-nuget-verify)
+- [Verify signed packages using the dotnet CLI](https://github.com/dotnet/docs/blob/main/docs/core/tools/dotnet-nuget-verify.md)
 - [Verify signed packages using nuget.exe](../reference/cli-reference/cli-ref-verify.md)
 - [Manage package trust boundaries](../consume-packages/installing-signed-packages.md)
