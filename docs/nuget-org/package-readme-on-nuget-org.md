@@ -43,6 +43,7 @@ Due to security and privacy concerns, NuGet.org restricts the domains from which
 NuGet.org allows all images, including badges, from the following trusted domains to be rendered:
 * api.bintray.com
 * api.codacy.com
+* app.codacy.com
 * api.codeclimate.com
 * api.dependabot.com
 * api.travis-ci.com
