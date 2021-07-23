@@ -4,7 +4,7 @@ description: The package details URL template allows clients to display in their
 author: joelverhagen
 ms.author: jver
 ms.date: 3/1/2019
-ms.topic: reference
+ms.topic:   reference
 ms.reviewer: ananguar
 ---
 

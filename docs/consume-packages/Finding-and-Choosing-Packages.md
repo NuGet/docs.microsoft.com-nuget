@@ -4,7 +4,7 @@ description: An overview of how to find and choose the best NuGet packages for a
 author: JonDouglas
 ms.author: jodou
 ms.date: 06/04/2018
-ms.topic: conceptual
+ms.topic:   conceptual
 ---
 
 # Finding and evaluating NuGet packages for your project

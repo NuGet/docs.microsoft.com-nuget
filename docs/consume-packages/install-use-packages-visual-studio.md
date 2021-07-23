@@ -4,7 +4,7 @@ description: Instructions for using the NuGet Package Manager UI in Visual Studi
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/08/2019
-ms.topic: conceptual
+ms.topic:   conceptual
 f1_keywords: 
   - "vs.toolsoptionspages.nuget_package_manager"
   - "vs.toolsoptionspages.nuget_package_manager.general"

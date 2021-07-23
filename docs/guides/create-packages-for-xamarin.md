@@ -4,7 +4,7 @@ description: An end-to-end walkthrough of creating NuGet packages for Xamarin th
 author: JonDouglas
 ms.author: jodou
 ms.date: 11/05/2019
-ms.topic: tutorial
+ms.topic:   tutorial
 ---
 
 # Create packages for Xamarin with Visual Studio 2017 or 2019

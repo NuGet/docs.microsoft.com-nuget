@@ -4,7 +4,7 @@ description: Reference for the nuget.exe update command
 author: JonDouglas
 ms.author: jodou
 ms.date: 12/07/2017
-ms.topic: reference
+ms.topic:   reference
 ---
 
 # update command (NuGet CLI)

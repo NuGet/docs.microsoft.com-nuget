@@ -4,7 +4,7 @@ description: A walkthrough tutorial on creating and publishing a .NET Framework 
 author: JonDouglas
 ms.author: jodou
 ms.date: 05/13/2018
-ms.topic: quickstart
+ms.topic:   quickstart
 ---
 
 # Quickstart: Create and publish a package using Visual Studio (.NET Framework, Windows)

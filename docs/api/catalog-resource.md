@@ -4,7 +4,7 @@ description: The catalog is an index of all packages created and deleted on nuge
 author: joelverhagen
 ms.author: jver
 ms.date: 10/30/2017
-ms.topic: reference
+ms.topic:   reference
 ms.reviewer: kraigb
 ---
 

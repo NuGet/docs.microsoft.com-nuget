@@ -4,7 +4,7 @@ description: Instructions for using the dotnet CLI to work with NuGet packages.
 author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
-ms.topic: conceptual
+ms.topic:   conceptual
 ---
 
 # Install and manage packages using the dotnet CLI

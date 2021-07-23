@@ -4,7 +4,7 @@ description: The report abuse URL template allows clients to display a report ab
 author: joelverhagen
 ms.author: jver
 ms.date: 10/26/2017
-ms.topic: reference
+ms.topic:   reference
 ms.reviewer: kraigb
 ---
 

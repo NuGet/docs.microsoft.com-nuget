@@ -40,7 +40,7 @@ If you're creating a new topic, keep the following in mind as well:
   - ms.author: if the author is a Microsoft employee, this is the Microsoft alias. Used for reporting and forwarding feedback from other channels.
   - manager: Microsoft alias of the author's manager, if applicable.
   - ms.date: the date of the last revision or review of the article in mm/dd/yyyy format (use leading zeros). This is a communication to the reader about freshness, so it's not updated for minor changes, only for more significant revisions OR when the article has reverified even if there are no changes.
-  - ms.topic: used to categorize the article in reports. See table below. Most articles are "conceptual". 
+  - ms.topic:   used to categorize the article in reports. See table below. Most articles are "conceptual". 
 1. In addition to adding your page, edit docs/TOC.md to add a link to that page.
 1. If you're adding a top-level node to the TOC, also make an entry for it in docs/index.md.
 

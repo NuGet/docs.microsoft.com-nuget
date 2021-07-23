@@ -4,7 +4,7 @@ description: In some project types, packages.config maintains the list of NuGet 
 author: JonDouglas
 ms.author: jodou
 ms.date: 05/21/2018
-ms.topic: reference
+ms.topic:   reference
 ---
 
 # packages.config reference

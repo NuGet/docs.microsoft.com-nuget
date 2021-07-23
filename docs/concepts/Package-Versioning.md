@@ -4,7 +4,7 @@ description: Exact details on specifying version numbers and ranges for other pa
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/23/2018
-ms.topic: reference
+ms.topic:   reference
 ms.reviewer: anangaur
 ---
 

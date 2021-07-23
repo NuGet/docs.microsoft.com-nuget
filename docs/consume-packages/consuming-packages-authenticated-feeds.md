@@ -4,7 +4,7 @@ description: Consuming packages from authenticated feeds in all NuGet client sce
 author: nkolev92
 ms.author: nikolev
 ms.date: 02/28/2020
-ms.topic: conceptual
+ms.topic:   conceptual
 ---
 
 # Consuming packages from authenticated feeds

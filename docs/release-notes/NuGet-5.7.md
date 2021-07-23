@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.7 including new features, bug fixes, and 
 author: chgill-msft
 ms.author: chgill
 ms.date: 8/14/2020
-ms.topic: conceptual
+ms.topic:   conceptual
 ---
 
 # NuGet 5.7 Release Notes

@@ -4,7 +4,7 @@ description: Detailed explanation of how readme files on NuGet.org are rendered 
 author: chgill-MSFT
 ms.author: chgill
 ms.date: 02/23/2021
-ms.topic: conceptual
+ms.topic:   conceptual
 ms.reviewer: anangaur
 ---
 

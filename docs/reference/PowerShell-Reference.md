@@ -4,7 +4,7 @@ description: The complete reference to PowerShell commands available in the NuGe
 author: JonDouglas
 ms.author: jodou
 ms.date: 10/02/2017
-ms.topic: reference
+ms.topic:   reference
 ---
 
 # PowerShell reference

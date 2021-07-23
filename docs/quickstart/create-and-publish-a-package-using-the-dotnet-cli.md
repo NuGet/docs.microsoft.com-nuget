@@ -4,7 +4,7 @@ description: A walkthrough tutorial on creating and publishing a NuGet package u
 author: JonDouglas
 ms.author: jodou
 ms.date: 05/24/2019
-ms.topic: quickstart
+ms.topic:   quickstart
 ---
 
 # Quickstart: Create and publish a package (dotnet CLI)
