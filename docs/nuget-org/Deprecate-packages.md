@@ -129,8 +129,8 @@ A deprecated package's popularity can be transferred to up to 5 packages. This i
 
 After I deprecate `Contoso.Legacy`, I can apply to transfer its popularity to `Contoso.Web` and `Contoso.Cloud`.
 
-> [!Note]
-> The popularity will be split evenly between all new packages. The new packages will not be as popular as the deprecated package in search rankings. As a result, we recommend transferring your deprecated package's popularity to just a single package if possible.
+> [!Warning]
+> The transferred popularity will be split evenly between all new packages. As a result, we recommend transferring your deprecated package's popularity to as few packages as possible.
 
 #### Popularity transfer chains
 
