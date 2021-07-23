@@ -132,8 +132,6 @@ After I deprecate `Contoso.Legacy`, I can apply to transfer its popularity to `C
 > [!Note]
 > The popularity will be split evenly between all new packages. The new packages will not be as popular as the deprecated package in search rankings. As a result, we recommend transferring your deprecated package's popularity to just a single package if possible.
 
-Package authors who have deprecated a legacy package can choose to transfer its "popularity" to a newer package to boost its search ranking
-
 #### Popularity transfer chains
 
 A package that is receiving popularity may not transfer its own popularity to another package. For example, say I have 3 packages:
