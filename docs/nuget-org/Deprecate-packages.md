@@ -100,4 +100,6 @@ See the table below to get a concrete idea of how a popularity transfer may impa
 
 ### Advanced popularity transfer scenarios
 
-
+TODO topics:
+* Transfer the popularity of several packages to a consolidated package.
+* Transfer the popularity of a single package to multiple separate packages.
