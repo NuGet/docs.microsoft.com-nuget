@@ -121,7 +121,7 @@ After I deprecate `Contoso.Legacy1` and `Contoso.Legacy2`, I can apply to transf
 
 #### Package splits
 
-If a package is deprecated in favor of multiple new packages, its popularity can be transferred to up to 5 packages. For example, let's say I have 3 packages:
+A deprecated package's popularity can be transferred to up to 5 packages. This is useful if a package is deprecated of multiple new packages. For example, let's say I have 3 packages:
 
 * My deprecated legacy package, `Contoso.Legacy`
 * My first new package, `Contoso.Web`
@@ -134,7 +134,7 @@ After I deprecate `Contoso.Legacy`, I can apply to transfer its popularity to `C
 
 #### Popularity transfer chains
 
-A package that is receiving popularity may not transfer its own popularity to another package. For example, say I have 3 packages:
+A deprecated package cannot transfer its popularity if it is already receiving popularity from another deprecated package. For example, say I have 3 packages:
 
 * My deprecated legacy package, `Contoso.First`
 * My deprecated legacy package, `Contoso.Second`
