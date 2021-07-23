@@ -64,14 +64,14 @@ Project `My.Test.Project` has the following deprecated packages
 
 ## Transfer popularity to a newer package
 
-Package authors who have deprecated a legacy package can choose to transfer its "popularity" to a newer package to boost its search ranking. This helps customers discover the newer package instead of the deprecated package.
+Package authors who have deprecated a legacy package can choose to transfer its "popularity" to a newer package to boost the newer package's search ranking. This helps customers discover the newer package instead of the deprecated package.
 
 For example, let's say I have two packages:
 
 * My deprecated legacy package, `Contoso.Legacy` with 3 million downloads
 * My latest package, `Contoso.Latest` with 5 downloads
 
-NuGet.org prefers search results with higher downloads/popularity. Given the search query "Contoso", my deprecated package `Contoso.Legacy` would likely rank above my latest package `Contoso.Latest` in search results. However, I'd like my customers to install `Contoso.Latest`!
+NuGet.org prefers search results with higher downloads/popularity. Given the search query "Contoso", my deprecated package `Contoso.Legacy` would likely rank above my latest package `Contoso.Latest` in search results.
 
 To solve this problem, I can apply to transfer the popularity of my deprecated legacy package to my latest package. This would cause `Contoso.Latest` to rank higher in search results, while `Contoso.Legacy` would rank lower. Only the internal popularity scores for the packages is impacted, the actual download count for each package will not be affected.
 
@@ -92,7 +92,8 @@ See the table below to get a concrete idea of how a popularity transfer may impa
 ### Popularity transfer application process
 
 1. Review the [popularity transfer requirements](#popularity-transfer-requirements).
-2. Determine the deprecated package whose popularity should be transferred. Determine the stable package(s) that should receive the popularity transfer. package you would like to transfer  which deprecated packages you would like  
+2. Determine the deprecated package whose popularity should be transferred, and, the stable package(s) that should receive the popularity transfer.
+3. Email account@nuget.org with the package whose popularity should be transferred, and, the list of stable package(s) that should receive the popularity transfer.
 
 After the application is submitted, we will notify you of your application's acceptance or rejection (with the criteria that caused rejection). We may need to ask additional identifying questions to confirm owner identity.
 
@@ -108,7 +109,7 @@ After the application is submitted, we will notify you of your application's acc
 
 ### Advanced popularity transfer scenarios
 
-### Package consolidations
+#### Package consolidations
 
 I can transfer the popularity of multiple deprecated packages in favor of a single new package. For example, let's say I have 3 packages:
 
@@ -118,7 +119,7 @@ I can transfer the popularity of multiple deprecated packages in favor of a sing
 
 After I deprecate `Contoso.Legacy1` and `Contoso.Legacy2`, I can apply to transfer their popularity to `Contoso.Latest`.
 
-### Package splits
+#### Package splits
 
 If a package is deprecated in favor of multiple new packages, its popularity can be transferred to up to 5 packages. For example, let's say I have 3 packages:
 
@@ -133,7 +134,7 @@ After I deprecate `Contoso.Legacy`, I can apply to transfer its popularity to `C
 
 Package authors who have deprecated a legacy package can choose to transfer its "popularity" to a newer package to boost its search ranking
 
-### Popularity transfer chains
+#### Popularity transfer chains
 
 A package that is receiving popularity may not transfer its own popularity to another package. For example, say I have 3 packages:
 
