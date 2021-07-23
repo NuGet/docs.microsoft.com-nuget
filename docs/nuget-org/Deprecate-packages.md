@@ -64,17 +64,16 @@ Project `My.Test.Project` has the following deprecated packages
 
 ## Transfer popularity to a newer package
 
-Package authors who have deprecated a legacy package in favor of a newer package can choose to transfer the "popularity" of the legacy to the newer package to boost the its search ranking. 
+Package authors who have deprecated a legacy package can choose to transfer its "popularity" to a newer package to boost its search ranking. This helps customers discover the newer package instead of the deprecated package.
 
-A common problem that package authors experience when they deprecate a legacy package in favor of a newer package is that the newer, less-popular package will rank lower in search results than the incumbent package for most queries.
+For example, let's say I have two packages:
 
-For example, let's say I have two packages for the same task: 
-* My deprecated legacy package, Contoso.Legacy with 3M downloads
-* My latest package, Contoso.Latest with 100K downloads
+* My deprecated legacy package, `Contoso.Legacy` with 3 million downloads
+* My latest package, `Contoso.Latest` with 100 thousand downloads
 
-NuGet.org heavily considers downloads/popularity when ranking search results. Given the search query "Contoso," Contoso.Legacy will likely rank above Contoso.Latest in the results, making it more difficult for users to discover.
+NuGet.org prefers search results with higher downloads/popularity. Given the search query "Contoso", my deprecated package `Contoso.Legacy` would likely rank above my latest package `Contoso.Latest` in search results. However, I'd like my customers to install `Contoso.Latest`!
 
-To solve this problem, I can apply to transfer the popularity of my deprecated legacy package to my latest package. This would cause Contoso.Latest to rank higher in search results as if had Contoso.Legacy's 3M downloads added to its existing 100K downloads. Contoso.Legacy would rank much lower, as if it had almost all of its downloads removed.  Only the internal popularity scores for the packages will be impacted, the actual download count shown for each package will not change on NuGet.org or on any client.
+To solve this problem, I can apply to transfer the popularity of my deprecated legacy package to my latest package. This would cause `Contoso.Latest` to rank higher in search results, while `Contoso.Legacy` would rank lower. Only the internal popularity scores for the packages is impacted, the actual download count for each package will not be affected.
 
 > [!Note]
 > Popularity transfers can make it significantly harder for consumers to find the legacy package.
@@ -92,14 +91,24 @@ See the table below to get a concrete idea of how a popularity transfer may impa
 
 ### Popularity transfer application process
 
+1. Review the [popularity transfer requirements](#popularity-transfer-requirements).
+2. Determine the deprecated package whose popularity should be transferred. Determine the stable package(s) that should receive the popularity transfer. package you would like to transfer  which deprecated packages you would like  
+
+After the application is submitted, we will notify you of your application's acceptance or rejection (with the criteria that caused rejection). We may need to ask additional identifying questions to confirm owner identity.
+
+#### Popularity transfer requirements
+
 * The legacy packages and new packages must share all owners.
 * The new packages must be clearly related to the legacy packages in naming and function (i.e. an evolution or next generation).
 * All versions of the legacy packages must be deprecated and point to the new packages receiving the transfer.
 * The popularity transfer must not cause confusion for NuGet users or worsen the NuGet search experience.
 * The new packages must have a stable version.
+* The legacy package must have fewer than 5 new packages.
+* The legacy package must not receive popularity transfers from another deprecated package.
 
 ### Advanced popularity transfer scenarios
 
 TODO topics:
 * Transfer the popularity of several packages to a consolidated package.
 * Transfer the popularity of a single package to multiple separate packages.
+* Daisy chaining
