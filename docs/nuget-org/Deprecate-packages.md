@@ -69,7 +69,7 @@ Package authors who have deprecated a legacy package can choose to transfer its 
 For example, let's say I have two packages:
 
 * My deprecated legacy package, `Contoso.Legacy` with 3 million downloads
-* My latest package, `Contoso.Latest` with 100 thousand downloads
+* My latest package, `Contoso.Latest` with 5 downloads
 
 NuGet.org prefers search results with higher downloads/popularity. Given the search query "Contoso", my deprecated package `Contoso.Legacy` would likely rank above my latest package `Contoso.Latest` in search results. However, I'd like my customers to install `Contoso.Latest`!
 
@@ -82,12 +82,12 @@ See the table below to get a concrete idea of how a popularity transfer may impa
 
 | Search ranking 	| Before popularity transfer     	| After popularity transfer      	|
 |----------------	|--------------------------------	|--------------------------------	|
-| 1              	| *Contoso.Legacy, 3M downloads*  	| *Contoso.Latest, 100K downloads* 	|
+| 1              	| *Contoso.Legacy, 3M downloads*  	| *Contoso.Latest, 5 downloads* 	|
 | 2              	| Contoso.Scanner, 2M downloads  	| Contoso.Scanner, 2M downloads  	|
 | 3              	| Contoso.Core,  1.5M downloads  	| Contoso.Core,  1.5M downloads  	|
 | 4              	| Contoso.UI, 1M downloads       	| Contoso.UI, 1M downloads       	|
 | ...            	| ...                            	| ...                            	|
-| 20             	| *Contoso.Latest, 100K downloads* 	| *Contoso.Legacy, 3M downloads*   	|
+| 20             	| *Contoso.Latest, 5 downloads* 	| *Contoso.Legacy, 3M downloads*   	|
 
 ### Popularity transfer application process
 
@@ -108,7 +108,37 @@ After the application is submitted, we will notify you of your application's acc
 
 ### Advanced popularity transfer scenarios
 
-TODO topics:
-* Transfer the popularity of several packages to a consolidated package.
-* Transfer the popularity of a single package to multiple separate packages.
-* Daisy chaining
+### Package consolidations
+
+I can transfer the popularity of multiple deprecated packages in favor of a single new package. For example, let's say I have 3 packages:
+
+* My first deprecated legacy package, `Contoso.Legacy1`
+* My second deprecated legacy package, `Contoso.Legacy2`
+* My new consolidated package, `Contoso.Latest`
+
+After I deprecate `Contoso.Legacy1` and `Contoso.Legacy2`, I can apply to transfer their popularity to `Contoso.Latest`.
+
+### Package splits
+
+If a package is deprecated in favor of multiple new packages, its popularity can be transferred to up to 5 packages. For example, let's say I have 3 packages:
+
+* My deprecated legacy package, `Contoso.Legacy`
+* My first new package, `Contoso.Web`
+* My second new package, `Contoso.Cloud`
+
+After I deprecate `Contoso.Legacy`, I can apply to transfer its popularity to `Contoso.Web` and `Contoso.Cloud`.
+
+> [!Note]
+> The popularity will be split evenly between all new packages. The new packages will not be as popular as the deprecated package in search rankings. As a result, we recommend transferring your deprecated package's popularity to just a single package if possible.
+
+Package authors who have deprecated a legacy package can choose to transfer its "popularity" to a newer package to boost its search ranking
+
+### Popularity transfer chains
+
+A package that is receiving popularity may not transfer its own popularity to another package. For example, say I have 3 packages:
+
+* My deprecated legacy package, `Contoso.First`
+* My deprecated legacy package, `Contoso.Second`
+* My new package, `Contoso.Latest`
+
+If `Contoso.First` transfers its popularity to `Contoso.Second,` then `Contoso.Second` cannot transfer its popularity to `Contoso.Latest`. Instead, we recommend transferring the popularity of both `Contoso.First` and `Contoso.Second` to `Contoso.Latest`, as per the [Package consolidations](#package-consolidations) scenario.
