@@ -93,7 +93,7 @@ See the table below to get a concrete idea of how a popularity transfer may impa
 
 1. Review the [popularity transfer requirements](#popularity-transfer-requirements).
 2. Determine the deprecated package whose popularity should be transferred, and, the stable package(s) that should receive the popularity transfer.
-3. Email account@nuget.org with the package whose popularity should be transferred, and, the list of stable package(s) that should receive the popularity transfer.
+3. Email [account@nuget.org](mailto:account@nuget.org) with the package whose popularity should be transferred, and, the list of stable package(s) that should receive the popularity transfer.
 
 After the application is submitted, we will notify you of your application's acceptance or rejection (with the criteria that caused rejection). We may need to ask additional identifying questions to confirm owner identity.
 
