@@ -10,7 +10,7 @@ ms.reviewer: anangaur
 
 # Package readme on NuGet.org
 
-[Include a readme file in your NuGet package](https://docs.microsoft.com/nuget/reference/msbuild-targets#packagereadmefile) to make your package details richer and more informative for your users!
+[Include a readme file in your NuGet package](../reference/msbuild-targets.md#packagereadmefile) to make your package details richer and more informative for your users!
 
 This is likely one of the first elements users will see when they view your package details page on NuGet.org and is essential to making a good impression!
 
@@ -31,7 +31,7 @@ Keep in mind, high quality readmes can come in a wide variety of formats, shapes
 
 ## Preview your readme
 
-To preview your readme file before it's live on NuGet.org, upload your package using the [Upload Package web portal on NuGet.org](https://docs.microsoft.com/nuget/nuget-org/publish-a-package#web-portal-use-the-upload-package-tab-on-nugetorg) and scroll down to the "Readme File" section of the metadata preview. It should look something like this:
+To preview your readme file before it's live on NuGet.org, upload your package using the [Upload Package web portal on NuGet.org](./publish-a-package.md#web-portal-use-the-upload-package-tab-on-nugetorg) and scroll down to the "Readme File" section of the metadata preview. It should look something like this:
 
 ![Readme File preview](media\readme-upload-preview.PNG)
 
@@ -90,4 +90,3 @@ NuGet.org currently supports the following Markdown features:
 * [Tables](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/PipeTableSpecs.md)
 * [Emojis](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/EmojiSpecs.md)
 * [Auto-links](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/AutoLinks.md)
-
