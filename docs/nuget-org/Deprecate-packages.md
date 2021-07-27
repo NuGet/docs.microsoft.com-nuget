@@ -103,7 +103,6 @@ After the application is submitted, we will notify you of your application's acc
 * All versions of the legacy packages must be deprecated and point to the new packages receiving the transfer.
 * The popularity transfer must not cause confusion for NuGet users or worsen the NuGet search experience.
 * The new packages must have a stable version.
-* The legacy package must have fewer than 5 new packages.
 * The legacy package must not receive popularity transfers from another deprecated package.
 
 ### Advanced popularity transfer scenarios
