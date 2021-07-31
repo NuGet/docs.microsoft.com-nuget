@@ -15,7 +15,7 @@ For .NET Core and .NET Standard projects that use the [SDK-style format](../reso
 
 SDK-style projects have the pack functionality available by default. For non SDK-style PackageReference projects, you need to add the NuGet.Build.Tasks.Pack package to the project dependencies. For detailed information about MSBuild pack targets, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
-The command that creates a package, `msbuild -t:pack`, is functionality equivalent to `dotnet pack`.
+The command that creates a package, `msbuild -t:pack`, is functionally equivalent to `dotnet pack`.
 
 > [!IMPORTANT]
 > This topic applies to [SDK-style](../resources/check-project-format.md) projects, typically .NET Core and .NET Standard projects, and to non-SDK-style projects that use PackageReference.
