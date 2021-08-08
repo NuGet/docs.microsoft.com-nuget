@@ -5,7 +5,7 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 10/25/2017
 ms.topic: conceptual
----
+--- 
 
 # Common NuGet configurations
 
