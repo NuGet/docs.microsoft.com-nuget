@@ -34,7 +34,7 @@ NuGet distribution vehicles:
 
 ### Issues fixed in this release
 
-* Suppress the <requireLicenseAcceptance> element when packing a project - [#5133](https://github.com/NuGet/Home/issues/5133)
+* Suppress the `<requireLicenseAcceptance>` element when packing a project - [#5133](https://github.com/NuGet/Home/issues/5133)
 
 * [CPVM] preview warning should be shown on dotnet cli - [#10226](https://github.com/NuGet/Home/issues/10226)
 
