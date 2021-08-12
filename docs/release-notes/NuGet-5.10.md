@@ -118,8 +118,6 @@ NuGet distribution vehicles:
 
 * Nuget blocks a threadpool thread in an async method making a synchronous call to the UI thread - [#10775](https://github.com/NuGet/Home/issues/10775)
 
-* Tools -> Options -> NuGet Package Manager string is truncated - [#10779](https://github.com/NuGet/Home/issues/10779)
-
 * `PackageLoadContext.GetInstalledAndTransitivePackagesAsync` is dead code and hurting performance - [#10790](https://github.com/NuGet/Home/issues/10790)
 
 * Use embedded icon in NuGet SDK packages - [#10795](https://github.com/NuGet/Home/issues/10795)
