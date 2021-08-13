@@ -36,8 +36,6 @@ NuGet distribution vehicles:
 
 **[List of commits in this release - 5.11](https://github.com/NuGet/NuGet.Client/compare/5.10.0.7240...5.11.0.17)**
 
-### Community contributions
-
 ## Feedback welcome
 
 Your feedback is important to us.  If there are any problems with this release, check our
