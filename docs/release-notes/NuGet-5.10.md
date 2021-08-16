@@ -34,7 +34,7 @@ NuGet distribution vehicles:
 
 ### Issues fixed in this release
 
-* Suppress the <requireLicenseAcceptance> element when packing a project - [#5133](https://github.com/NuGet/Home/issues/5133)
+* Suppress the `<requireLicenseAcceptance>` element when packing a project - [#5133](https://github.com/NuGet/Home/issues/5133)
 
 * [CPVM] preview warning should be shown on dotnet cli - [#10226](https://github.com/NuGet/Home/issues/10226)
 
@@ -117,8 +117,6 @@ NuGet distribution vehicles:
 * "dotnet nuget remove source nuget.org" doesn't work the first time - [#10745](https://github.com/NuGet/Home/issues/10745)
 
 * Nuget blocks a threadpool thread in an async method making a synchronous call to the UI thread - [#10775](https://github.com/NuGet/Home/issues/10775)
-
-* Tools -> Options -> NuGet Package Manager string is truncated - [#10779](https://github.com/NuGet/Home/issues/10779)
 
 * `PackageLoadContext.GetInstalledAndTransitivePackagesAsync` is dead code and hurting performance - [#10790](https://github.com/NuGet/Home/issues/10790)
 
