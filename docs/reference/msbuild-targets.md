@@ -527,7 +527,7 @@ In very few scenarios, static graph restore may behave differently from current 
 To ease your mind, as a one time check, when migrating to static graph restore, consider running:
 
 ```cli
-msbuild.exe -t:restore -p:RestoreUseStaticGraphEvaluation
+msbuild.exe -t:restore -p:RestoreUseStaticGraphEvaluation=true
 msbuild.exe -t:restore
 ```
 
