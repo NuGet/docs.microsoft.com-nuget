@@ -310,9 +310,9 @@ Input to NuGet restore is a set of Package References from the project file (top
 
   * Day 2: Version 4.0.0 gets published. NuGet will now find the exact match and start resolving to 4.0.0
 
-* A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraints. This results in NuGet finding the best match when it cannot resolve to the deleted version.
+* A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraint. This results in NuGet finding the best match when it cannot resolve to the deleted version.
 
-### Enabling lock file
+### Enabling the lock file
 
 In order to persist the full closure of package dependencies you can opt-in to the lock file feature by setting the MSBuild property `RestorePackagesWithLockFile` for your project:
 
