@@ -10,7 +10,7 @@ ms.topic: conceptual
 # How to reinstall and update packages
 
 > [!NOTE]
-> The following section applies to [packages.config](../reference/packages-config.md) based projects only. [PackageReference]((../consume-packages/Package-References-in-Project-Files.md) projects automatically fix broken references when restore is run.
+> The following section applies to [packages.config](../reference/packages-config.md) based projects only. [PackageReference](../consume-packages/Package-References-in-Project-Files.md) projects automatically fix broken references when restore is run.
 
 There are a number of situations, described below under [When to Reinstall a Package](#when-to-reinstall-a-package), where references to a package might get broken within a Visual Studio project. In these cases, uninstalling and then reinstalling the same version of the package will restore those references to working order. Updating a package simply means installing an updated version, which often restores a package to working order.
 
