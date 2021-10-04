@@ -152,7 +152,7 @@ To automatically run `msbuild -t:pack` when you build or restore the project, ad
 <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 ```
 
-When you run `msbuild -t:pack` on a solution, this packs all the projects in the solution that are packable ([<IsPackable>](/dotnet/core/tools/csproj#nuget-metadata-properties) property is set to `true`).
+When you run `msbuild -t:pack` on a solution, this packs all the projects in the solution that are packable ([`<IsPackable>`](/dotnet/core/tools/csproj#nuget-metadata-properties) property is set to `true`).
 
 > [!NOTE]
 > When you automatically generate the package, the time to pack increases the build time for your project.
