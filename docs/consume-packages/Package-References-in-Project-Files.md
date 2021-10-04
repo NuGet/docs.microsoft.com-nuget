@@ -71,7 +71,7 @@ In PackageReference projects, the transitive dependency versions are resolved at
 <ItemGroup>
     <!-- ... -->
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.*" />
-    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0-beta*" />
+    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0-beta.*" />
     <!-- ... -->
 </ItemGroup>
 ```
