@@ -292,6 +292,9 @@
 ### [NuGet.org policies](nuget-org/policies/data-requests.md)
 ## Release notes
 ### [Known Issues](release-notes/known-issues.md)
+
+### NuGet 6.x
+#### [NuGet 6.0](release-notes/NuGet-6.0.md)
 ### NuGet 5.x
 #### [NuGet 5.11](release-notes/NuGet-5.11.md)
 #### [NuGet 5.10](release-notes/NuGet-5.10.md)
