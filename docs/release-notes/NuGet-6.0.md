@@ -77,7 +77,7 @@ NuGet distribution vehicles:
 
 * Installing with package save mode "nuspec" always reinstalls - [#2402](https://github.com/NuGet/Home/issues/2402)
 
-* Update-Package -reinstall -ProjectName <project> does not work for PR - [#6088](https://github.com/NuGet/Home/issues/6088)
+* Update-Package -reinstall -ProjectName `<project>` does not work for PR - [#6088](https://github.com/NuGet/Home/issues/6088)
 
 * "An item with the same key has already been added" - when project graph has projectName == packageRef name (of same version) - [#6795](https://github.com/NuGet/Home/issues/6795)
 
@@ -191,7 +191,7 @@ NuGet distribution vehicles:
 
 * Add time since last restore metric  - [#11124](https://github.com/NuGet/Home/issues/11124)
 
-* [Bug]: nuget.exe regression in handling of recursive <files> entries between 5.9.1 and 5.10.0 - [#11125](https://github.com/NuGet/Home/issues/11125)
+* [Bug]: nuget.exe regression in handling of recursive `<files>` entries between 5.9.1 and 5.10.0 - [#11125](https://github.com/NuGet/Home/issues/11125)
 
 * Await WhenNominated when a project has a pending nomination - [#11132](https://github.com/NuGet/Home/issues/11132)
 
@@ -199,7 +199,7 @@ NuGet distribution vehicles:
 
 * [Bug]: VS PM UI does not display JPEG icons for packages - [#11144](https://github.com/NuGet/Home/issues/11144)
 
-* UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VsCoreProjectSystemReferenceReader+<GetProjectReferencesAsync>d__  - CPS projects - [#11162](https://github.com/NuGet/Home/issues/11162)
+* UIDelay: `nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VsCoreProjectSystemReferenceReader+<GetProjectReferencesAsync>d__`  - CPS projects - [#11162](https://github.com/NuGet/Home/issues/11162)
 
 * [Bug]: `dotnet list package --outdated --interactive` makes credential provider invalidate cache for every package listed - [#11169](https://github.com/NuGet/Home/issues/11169)
 
