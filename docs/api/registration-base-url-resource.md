@@ -15,7 +15,11 @@ metadata can be fetched using the `RegistrationsBaseUrl` resource found in the [
 
 The collection of the documents found under `RegistrationsBaseUrl` are often called "registrations" or "registration
 blobs". The set of documents under a single `RegistrationsBaseUrl` is referred to as a "registration hive". A
-registration hive contains all metadata about every package available on a package source.
+registration hive contains metadata about every package available on a package source.
+
+> [!Note]
+> The package metadata resource does not contain all metadata for packages.
+> Use the [search resource](search-query-service-resource.md) to find packages' owners, downloads, or prefix reservation status.
 
 ## Versioning
 
