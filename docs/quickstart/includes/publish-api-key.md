@@ -11,7 +11,7 @@
     ![Copying the API key to the clipboard](../media/QS_Create-02-APIKey.png)
 
 > [!Warning]
-> **Always keep your API key a secret!** If your key is accidentally revealed, you can always regenerate it at any time.
+> **Always keep your API key a secret!** Treat your API key as a password that allows anyone to manage packages on your behalf. You should delete or regenerate your API key if it is accidentally revealed.
 
 > [!Important]
 > Save your key in a secure location because you cannot copy the key again later on. If you return to the API key page, you need to regenerate the key to copy it. You can also remove the API key if you no longer want to push packages.
