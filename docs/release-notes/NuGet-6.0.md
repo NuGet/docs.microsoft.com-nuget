@@ -17,7 +17,12 @@ NuGet distribution vehicles:
 
 <sup>1</sup> Installed with Visual Studio 2022 with.NET Core workload
 
+> [!NOTE]
+> Visual Studio 17.0, MSBuild 17.0, and .NET 6.0 require NuGet.exe 6.0 or later.
+
 ## Summary: What's New in 6.0
+
+🎉 **This is the first release to offer full authoring and restoring support for NuGet packages targeting .NET 6.0** 🎉
 
 * Add  hook for excluding certain build output extensions from the nuget package  - [#10690](https://github.com/NuGet/Home/issues/10690)
 
@@ -262,3 +267,14 @@ NuGet distribution vehicles:
 **[List of all issues fixed in this release - 6.0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=Z2lkOi8vcmFwdG9yL1JlbGVhc2UvNDMwMDQ)**
 
 **[List of commits in this release - 6.0](https://github.com/NuGet/NuGet.Client/compare/5.11.0.17...6.0.0.262)**
+
+## Feedback welcome
+
+Your feedback is important to us.  If there are any problems with this release, check our
+[GitHub Issues](https://github.com/NuGet/Home/issues) and
+[Visual Studio Developer Community](https://developercommunity.visualstudio.com/)
+for existing issues.  For new issues within NuGet, please report a
+[GitHub Issue](https://github.com/NuGet/Home/issues/new/choose).
+For general NuGet experience issues, let us know via the
+[Report a Problem](/visualstudio/ide/how-to-report-a-problem-with-visual-studio)
+option found in your favorite IDE under **Help > Report a Problem**.
