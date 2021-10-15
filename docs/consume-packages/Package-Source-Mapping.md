@@ -91,8 +91,6 @@ If your team doesn't use standard prefixes for internal package IDs or vets `nug
 
 ### Get started
 
-Start by downloading the compatible tooling.
-
 To fully onboard your repository you may take the following steps:
 
 1. Declare a new [global packages folder for your repo](../reference/nuget-config-file#config-section).
