@@ -77,6 +77,8 @@ All requested packages must map to one or more sources by matching a defined pac
 
 When multiple unique patterns match a package ID, the most specific one will be preferred. Package ID patterns always have the highest precedence while the generic `*` always has the lowest precedence. For package prefix patterns, the longest has precedence.
 
+![Package Pattern Precedence Examples](media/Package-Pattern-Examples.png)
+
 ### Setting default sources
 
 The `*` pattern can be used to make a declare a de-facto default source - meaning any package that doesn't match other specified patterns will be restored from that source without throwing an error.
