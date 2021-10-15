@@ -333,6 +333,10 @@ Sets the default package management format, either *packages.config* or PackageR
 </packageManagement>
 ```
 
+## packageSourceMapping section
+
+TODO NK - Addd
+
 ## Using environment variables
 
 You can use environment variables in `nuget.config` values (NuGet 3.4+) to apply settings at run time.
