@@ -88,13 +88,9 @@ If your team doesn't use standard prefixes for internal package IDs or vets `nug
 
 > [!Note]
 > When the requested package already exists in the global packages folder, no source look-up will happen and the mappings will be ignored. Consider declaring a [global packages folder for your repo](../reference/nuget-config-file.md#config-section) to gain the full security benefits of this feature. Work to improve the experience with the default global packages folder in planned for a next iteration.
+To learn more about how package installation works, see [the conceptual document.](../concepts/package-installation-process.md)
 
 ### Get started
-
-> [!Note]
-> This feature is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
-> There are no nuget.exe or dotnet.exe commands for managing the package source mapping configuration, see [NuGet/Home#10735](https://github.com/NuGet/Home/issues/10735).
-> There are no means of mapping packages at package installation time, see [NuGet/Home#10730](https://github.com/NuGet/Home/issues/10730).
 
 To fully onboard your repository you may take the following steps:
 
@@ -108,3 +104,10 @@ To fully onboard your repository you may take the following steps:
     * verifying the source each package was restored from by checking the [metadata files in the global packages folder or reviewing the restore logs](https://devblogs.microsoft.com/nuget/performance-and-polish-with-nuget-5-9/).
 
 For an idea of how your source mappings may look like, refer to our [samples repo](https://github.com/NuGet/Samples/tree/main/PackageSourceMappingExample).
+
+
+> [!Note]
+> This feature is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
+>
+> * There are no nuget.exe or dotnet.exe commands for managing the package source mapping configuration, see [NuGet/Home#10735](https://github.com/NuGet/Home/issues/10735).
+> * There are no means of mapping packages at package installation time, see [NuGet/Home#10730](https://github.com/NuGet/Home/issues/10730).
