@@ -26,7 +26,7 @@ Package Source Mappings will apply to all project types – including .NET Frame
 
 ## Enabling Package Source Mapping
 
-To opt into this feature, you must have a `nuget.config` file. Having a single `nuget.config` at the root of your repository is considered a best practice. See [nuget.config documentation](../reference/nuget-config-file) to learn more.
+To opt into this feature, you must have a `nuget.config` file. Having a single `nuget.config` at the root of your repository is considered a best practice. See [nuget.config documentation](../reference/nuget-config-file.md) to learn more.
 
 Declare your desired package sources in your `nuget.config` file. Following your source declarations, add a `<packageSourceMapping>` element that specifies the desired mappings for each source.
 
@@ -53,7 +53,7 @@ Declare your desired package sources in your `nuget.config` file. Following your
 </packageSourceMapping>
 ```
 
-Package Source Mapping settings are applied following [nuget.config precedence rules](configuring-nuget-behavior#how-settings-are-applied) when multiple `nuget.config` files at various levels (machine-level, user-level, repo-level) are present.
+Package Source Mapping settings are applied following [nuget.config precedence rules](configuring-nuget-behavior.md#how-settings-are-applied) when multiple `nuget.config` files at various levels (machine-level, user-level, repo-level) are present.
 
 ## Package Source Mapping rules
 
@@ -68,7 +68,7 @@ All requested packages must map to one or more sources by matching a defined pac
 
 ### Package Pattern Syntax
 
-| | Example syntax | Description |
+| Pattern | Example syntax | Description |
 |-|--------|---------|-------------|
 | Package prefix pattern | `*`, `NuGet.*`, `NuGet.*` | Must end with a `*`, where `*` matches 0 or more characters. `*` is the shortest allowed prefix pattern and matches all packages ids. |
 | Package ID pattern | `NuGet.Common`, `Contoso.Contracts` | Exact package ID. |
@@ -87,7 +87,7 @@ This configuration is advantageous if you primarily use packages from say, `nuge
 If your team doesn't use standard prefixes for internal package IDs or vets `nuget.org` packages prior to installation, then making a private source the default will suit your needs better.
 
 > [!Note]
-> When the requested package already exists in the global packages folder, no source look-up will happen and the mappings will be ignored. Consider declaring a [global packages folder for your repo](../reference/nuget-config-file#config-section) to gain the full security benefits of this feature. Work to improve the experience with the default global packages folder in planned for a next iteration.
+> When the requested package already exists in the global packages folder, no source look-up will happen and the mappings will be ignored. Consider declaring a [global packages folder for your repo](../reference/nuget-config-file.md#config-section) to gain the full security benefits of this feature. Work to improve the experience with the default global packages folder in planned for a next iteration.
 
 ### Get started
 
@@ -98,9 +98,9 @@ If your team doesn't use standard prefixes for internal package IDs or vets `nug
 
 To fully onboard your repository you may take the following steps:
 
-1. Declare a new [global packages folder for your repo](../reference/nuget-config-file#config-section).
+1. Declare a new [global packages folder for your repo](../reference/nuget-config-file.md#config-section).
 1. Run [`dotnet list package --include-transitive`](/dotnet/core/tools/dotnet-list-package#synopsis) to view all top-level and transitive packages in your solution.
-    * For .NET framework projects using [`packages.config`](../reference/packages-config), the `packages.config` file will have a flat list of all direct and transitive packages.
+    * For .NET framework projects using [`packages.config`](../reference/packages-config.md), the `packages.config` file will have a flat list of all direct and transitive packages.
 1. Define mappings such that every package ID in your solution - *including transitive packages* - matches a pattern for the target source.
 1. Run restore to validate that you have configured your mappings correctly. If your mappings don't fully cover every package ID in your solution, the error messages will help you identify the issue.
 1. When restore succeeds, you are done! Optionally consider:

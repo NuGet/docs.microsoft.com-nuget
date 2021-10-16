@@ -329,13 +329,13 @@ A sub section of the [`packageSourceMapping`](#package-source-mapping-section) s
 
 | Key |
 | --- |
-| Name of a package source declared in the [`packageSources`](#packageSources) section. The key must exactly match the the key of the package source. |
+| Name of a package source declared in the [`packageSources`](#packagesources) section. The key must exactly match the the key of the package source. |
 
 The `packageSource` sections under `packageSourceMapping` are uniquely identified by the `key`.
 
 ### package
 
-The `package` is part of the [`packageSource`](#packageSource) section.
+The `package` is part of the [`packageSource`](#packagesource) section.
 
 | Pattern |
 | --- |
