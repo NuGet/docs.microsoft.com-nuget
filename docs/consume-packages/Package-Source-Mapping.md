@@ -92,7 +92,7 @@ If your team doesn't use standard prefixes for internal package IDs or vets `nug
 ### Get started
 
 > [!Note]
-> This feature is currently in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
+> This feature is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
 > There are no nuget.exe or dotnet.exe commands for managing the package source mapping configuration, see [NuGet/Home#10735](https://github.com/NuGet/Home/issues/10735).
 > There are no means of mapping packages at package installation time, see [NuGet/Home#10730](https://github.com/NuGet/Home/issues/10730).
 
