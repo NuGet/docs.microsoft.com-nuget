@@ -103,3 +103,9 @@ To fully onboard your repository you may take the following steps:
     * verifying the source each package was restored from by checking the [metadata files in the global packages folder or reviewing the restore logs](https://devblogs.microsoft.com/nuget/performance-and-polish-with-nuget-5-9/).
 
 For an idea of how your source mappings may look like, refer to our [samples repo](https://github.com/NuGet/Samples/tree/main/PackageSourceMappingExample).
+
+### Disclaimer (TODO)
+
+* Add a big disclaimer that this is a feature actively in development.
+* Add a disclaimer that only restore is support.
+* There's no means of pinning through Visual Studio or at installation time, the configurations have to be managed manually.

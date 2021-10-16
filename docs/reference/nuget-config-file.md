@@ -97,7 +97,7 @@ Controls whether the `packages` folder of a solution is included in source contr
 
 ## Package source sections
 
-The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources` and `trustedSigners` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
+The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources`, `trustedSigners` and `packageSourceMapping` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
 
 The [`nuget sources` command](../reference/cli-reference/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../reference/cli-reference/cli-ref-setapikey.md), and `trustedSigners` which is managed using the [`nuget trusted-signers` command](../reference/cli-reference/cli-ref-trusted-signers.md).
 
@@ -315,6 +315,42 @@ If a match is not found, then NuGet checks file sources, and then http sources, 
 </fallbackPackageFolders>
 ```
 
+## Package source mapping section
+
+The `packageSourceMapping` section contains the details that help the NuGet package operations determine where a package id should be downloaded from.
+
+This section can only be managed manually right now.
+
+A `packageSourceMapping` section can only contain `packageSource` sections.
+
+### packageSource
+
+A sub section of the [`packageSourceMapping`](#package-source-mapping-section) section. Contains a mapping to help NuGet determine whether the source should be considered for downloading the package of interest.
+
+| Key |
+| --- |
+| Name of a package source declared in the [`packageSources`](#packageSources) section. The key must exactly match the the key of the package source. |
+
+The `packageSource` sections under `packageSourceMapping` are uniquely identified by the `key`.
+
+### package
+
+The `package` is part of the [`packageSource`](#packageSource) section.
+
+| Pattern |
+| --- |
+| A pattern as defined by the [syntax](../consume-packages/package-source-mapping.md) of Package Source mapping. |
+
+**Example**:
+
+```xml
+<packageSourceMapping>
+  <packageSource key="contoso.com">
+    <package pattern="Contoso.*" />
+  </packageSource>
+</packageSourceMapping>
+```
+
 ## packageManagement section
 
 Sets the default package management format, either *packages.config* or PackageReference. SDK-style projects always use PackageReference.
@@ -333,9 +369,8 @@ Sets the default package management format, either *packages.config* or PackageR
 </packageManagement>
 ```
 
-## packageSourceMapping section
-
-TODO NK - Addd
+> [!Tip]
+> When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
 
 ## Using environment variables
 
