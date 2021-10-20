@@ -125,7 +125,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 | --- | --- |
 | **Issue** | The package cannot be found on any sources. |
 | **Example message** | *Unable to find package System.Missing. No packages exist with this id in source(s): dotnet-core, dotnet-roslyn, nuget.org* |
-| **Solution** | Examine the project's dependencies in Visual Studio to be sure you're using the correct package identifier and version number. Also check that the [NuGet configuration](../consume-packages/Configuring-NuGet-Behavior.md) identifies the package sources your expect to be using. If you use packages that have [Semantic Versioning 2.0.0](https://docs.microsoft.com/en-us/nuget/reference/package-versioning#semantic-versioning-200), please make sure that you are using the [V3 feed](https://api.nuget.org/v3/index.json) in the [NuGet configuration](../consume-packages/Configuring-NuGet-Behavior.md). |
+| **Solution** | Examine the project's dependencies in Visual Studio to be sure you're using the correct package identifier and version number. Also check that the [NuGet configuration](../consume-packages/Configuring-NuGet-Behavior.md) identifies the package sources your expect to be using. If you use packages that have [Semantic Versioning 2.0.0](./package-versioning.md#semantic-versioning-200), please make sure that you are using the [V3 feed](https://api.nuget.org/v3/index.json) in the [NuGet configuration](../consume-packages/Configuring-NuGet-Behavior.md). |
 
 ### NU1102
 

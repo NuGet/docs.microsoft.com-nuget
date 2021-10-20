@@ -103,7 +103,7 @@ This is a known issue with how PowerShell interacts with a COM object. Try the f
 
 **How do I list my package in a feed?**
 
-See [Creating and publishing a package](../quickstart/create-and-publish-a-package.md).
+See [Creating and publishing a package](../quickstart/create-and-publish-a-package-using-visual-studio.md).
 
 **I have multiple versions of my library that target different versions of the .NET Framework. How do I build a single package that supports this?**
 
@@ -172,7 +172,7 @@ In addition, uploading packages to [staging.nuget.org](http://staging.nuget.org)
 
 **Is it possible to reserve names for packages that will be published in future?**
 
-Yes. You can reserve IDs for packages on [nuget.org](https://www.nuget.org/) by requesting a package ID prefix for your account. In order to request a package ID prefix, follow the instructions in the [documentation](https://docs.microsoft.com/nuget/reference/id-prefix-reservation).
+Yes. You can reserve IDs for packages on [nuget.org](https://www.nuget.org/) by requesting a package ID prefix for your account. In order to request a package ID prefix, follow the instructions in the [documentation](../reference/id-prefix-reservation.md).
 
 **How do I claim ownership for packages ?**
 

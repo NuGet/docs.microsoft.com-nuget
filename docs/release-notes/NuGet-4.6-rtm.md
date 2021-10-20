@@ -1,4 +1,3 @@
-
 ---
 title: NuGet 4.6 RTM Release Notes | Microsoft Docs
 author: anangaur
@@ -21,8 +20,8 @@ ms.reviewer:
 [Visual Studio 2017 15.6 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) comes with [NuGet 4.6.0](https://dist.nuget.org/win-x86-commandline/v4.6.0/nuget.exe).
 
 ## Summary: What's New in this Release
-* We have added support for [signing packages](https://docs.microsoft.com/en-us/nuget/create-packages/sign-a-package).  
-* Visual Studio 2017 and nuget.exe now verifies package integrity before installing, restoring packages for [signed packages](https://docs.microsoft.com/en-us/nuget/reference/signed-packages-reference).
+* We have added support for [signing packages](../create-packages/sign-a-package.md).  
+* Visual Studio 2017 and nuget.exe now verifies package integrity before installing, restoring packages for [signed packages](../reference/signed-packages-reference.md).
 * We have improved performance of successive restores.
 
 ## Known issues
