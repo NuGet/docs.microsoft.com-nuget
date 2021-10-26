@@ -16,9 +16,9 @@ Starting with [NuGet 6.0](..\release-notes\NuGet-6.0.md), you can centrally decl
 
 The feature is available across all NuGet integrated tooling.
 
-* [Visual Studio 2022 preview 4 and later](https://visualstudio.microsoft.com/downloads/)
-* [.NET SDK 6.0.100-rc.1 and later](https://dotnet.microsoft.com/download/dotnet/6.0)
-* [nuget.exe 6.0.0-preview.4 and later](https://www.nuget.org/downloads)
+* [Visual Studio 2022 and later](https://visualstudio.microsoft.com/downloads/)
+* [.NET SDK 6.0.100 and later](https://dotnet.microsoft.com/download/dotnet/6.0)
+* [nuget.exe 6.0.0 and later](https://www.nuget.org/downloads)
 
 Older tooling will ignore the Package Source Mapping configuration. To use this feature, ensure all your build environments use compatible tooling versions.
 
@@ -100,8 +100,8 @@ To fully onboard your repository you may take the following steps:
 1. Define mappings such that every package ID in your solution - *including transitive packages* - matches a pattern for the target source.
 1. Run restore to validate that you have configured your mappings correctly. If your mappings don't fully cover every package ID in your solution, the error messages will help you identify the issue.
 1. When restore succeeds, you are done! Optionally consider:
-    * simplifying the configuration to fewer declarations by using broader package ID prefixes or [setting a default source](#setting-default-sources) where possible.
-    * verifying the source each package was restored from by checking the [metadata files in the global packages folder or reviewing the restore logs](https://devblogs.microsoft.com/nuget/performance-and-polish-with-nuget-5-9/).
+    * Simplifying the configuration to fewer declarations by using broader package ID prefixes or [setting a default source](#setting-default-sources) where possible.
+    * Verifying the source each package was restored from by checking the [metadata files in the global packages folder or reviewing the restore logs](https://devblogs.microsoft.com/nuget/performance-and-polish-with-nuget-5-9/).
 
 For an idea of how your source mappings may look like, refer to our [samples repo](https://github.com/NuGet/Samples/tree/main/PackageSourceMappingExample).
 
