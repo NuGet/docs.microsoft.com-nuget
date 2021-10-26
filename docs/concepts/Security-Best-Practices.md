@@ -137,6 +137,14 @@ Lock files store the hash of your package’s content. If the content hash of a 
 
 To enable lock files, [see the following documentation](../consume-packages/package-references-in-project-files.md#locking-dependencies).
 
+### Package Source mapping
+
+**📦 Package Consumer**
+
+Package Source Mapping allows you to centrally declare which source each package in your solution should restore from in your nuget.config file.
+
+To enable package source mapping, [see the following documentation](../consume-packages/package-source-mapping.md).
+
 ## Monitor your supply chain
 
 ### GitHub secret scanning

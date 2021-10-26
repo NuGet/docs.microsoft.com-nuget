@@ -20,6 +20,7 @@
 ### Package restore options
 #### [Restore packages](consume-packages/package-restore.md)
 #### [Troubleshooting](consume-packages/package-restore-troubleshooting.md)
+### [Package source mapping](consume-packages/package-source-mapping.md)
 ### [Reinstall and update packages](consume-packages/reinstalling-and-updating-packages.md)
 ### [Manage global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ### [Manage package trust boundaries](consume-packages/installing-signed-packages.md)
