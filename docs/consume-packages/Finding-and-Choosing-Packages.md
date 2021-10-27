@@ -147,7 +147,8 @@ For the MSBuild equivalent to setting the license in the `.nuspec`, take a look 
 NuGet package search works the same on nuget.org, from the NuGet CLI, and within the NuGet Package Manager extension in
 Visual Studio. In general, search is applied to keywords as well as package descriptions.
 
-- **Filtering**: You can apply a search term to a specific property by using the syntax `<property>:<term>` where
+- **Filtering**: Nuget.org supports search filters. Other package sources depend on server implementation.
+  You can apply a search term to a specific property by using the syntax `<property>:<term>` where
   `<property>` (case-insensitive) can be `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`,
   `summary`, and `owner`. You can search for multiple properties at the same time. Searches on the `id` property are
   substring matches, whereas `packageid` and `owner` uses an exact, case-insensitive match. Examples:
