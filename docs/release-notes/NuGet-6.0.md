@@ -268,6 +268,23 @@ NuGet distribution vehicles:
 
 **[List of commits in this release - 6.0](https://github.com/NuGet/NuGet.Client/compare/5.11.0.17...6.0.0.262)**
 
+### Community contributions
+
+Thank you to all the contributors who helped make this NuGet release awesome!
+
+|Who|PRs|Issues|
+|----|----|----|
+[omajid](https://github.com/omajid) | [3866](https://github.com/NuGet/NuGet.Client/pull/3866) | Handle nonce being null in Rfc3161TimestampTokenInfo - [#10484](https://github.com/NuGet/Home/issues/10484)
+[marcin-krystianc](https://github.com/marcin-krystianc) | [3934](https://github.com/NuGet/NuGet.Client/pull/3934) | Adding a cache for LockFileTargetLibrary - [#10614](https://github.com/NuGet/Home/issues/10614)
+[krafs](https://github.com/krafs) | [4151](https://github.com/NuGet/NuGet.Client/pull/4151) | Removed return value from docs on ISettings.AddOrUpdate - [#10980](https://github.com/NuGet/Home/issues/10980)
+[huangqinjin](https://github.com/huangqinjin) | [4148](https://github.com/NuGet/NuGet.Client/pull/4148) | Fix PackageSaveMode nuspec always reinstalls - [#2402](https://github.com/NuGet/Home/issues/2402)
+[Insomniak47](https://github.com/Insomniak47) | [4190](https://github.com/NuGet/NuGet.Client/pull/4190) | fix(docs): Remove link to closed/dead-end link in Contributing guidelines - [#8987](https://github.com/NuGet/Home/issues/8987)
+[marcin-krystianc](https://github.com/marcin-krystianc) | [4194](https://github.com/NuGet/NuGet.Client/pull/4194) | Make the performance scripts account for restore operation failures - [#9968](https://github.com/NuGet/Home/issues/9968)
+[eriawan](https://github.com/eriawan) | [4159](https://github.com/NuGet/NuGet.Client/pull/4159) | Fixes Surround ($IsPackable) with single quotes - [#11025](https://github.com/NuGet/Home/issues/11025)
+[huangqinjin](https://github.com/huangqinjin) | [4193](https://github.com/NuGet/NuGet.Client/pull/4193) | Install packages.config should honor PackageSaveMode - [#11018](https://github.com/NuGet/Home/issues/11018)
+[mfkl](https://github.com/mfkl) | [4199](https://github.com/NuGet/NuGet.Client/pull/4199) | test: use new DependencyGraphSpec - [#11168](https://github.com/NuGet/Home/issues/11168)
+[omajid](https://github.com/omajid) | [4254](https://github.com/NuGet/NuGet.Client/pull/4254) | Use --work-tree with git apply - [#11227](https://github.com/NuGet/Home/issues/11227)
+
 ## Feedback welcome
 
 Your feedback is important to us.  If there are any problems with this release, check our
