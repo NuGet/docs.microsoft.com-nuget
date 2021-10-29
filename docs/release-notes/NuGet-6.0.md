@@ -24,6 +24,96 @@ NuGet distribution vehicles:
 
 🎉 **This is the first release to offer full authoring and restoring support for NuGet packages targeting .NET 6.0** 🎉
 
+### .NET 6 Support
+
+NuGet 6.0 is the first release to offer full authoring and restoring support for NuGet packages targeting .NET 6.0. You can now target the following target frameworks:
+
+*   net6.0
+*   net6.0-windows
+*   net6.0-android
+*   net6.0-ios
+*   net6.0-macos
+*   net6.0-maccatalyst
+*   net6.0-tvos
+*   net6.0-tizen
+
+<img src="https://devblogs.microsoft.com/nuget/wp-content/uploads/sites/49/2020/11/dotnet.png" alt="Image dotnet" width="227" height="227" class="aligncenter size-full wp-image-1788" />
+
+If you aren’t familiar with the .NET 6.0 targets today or what it will look like in the future, don’t forget to check out the [.NET 6.0 TFM spec](https://github.com/dotnet/designs/blob/main/accepted/2021/net6.0-tfms/net6.0-tfms.md).
+
+### Source Mapping
+
+Earlier this year, many package managers became aware of [dependency confusion](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610) attacks in which a user to be tricked into installing a malicious dependency instead of the one they intended to. To fortify your software supply chain against these attacks, the NuGet team has developed a new feature that allows you to map your dependencies to specific sources. Below is an example of how you can use source mapping to protect your projects.
+
+<pre><code class="xml">&lt;!-- Define a global packages folder for your repository. --&gt;
+&lt;!-- This is where installed packages will be stored locally. --&gt;
+&lt;config&gt;
+  &lt;add key="globalPackagesFolder" value="globalPackagesFolder" /&gt;
+&lt;/config&gt;
+
+&lt;!-- Define my package sources, nuget.org and contoso.com. --&gt;
+&lt;!-- `clear` ensures no additional sources are inherited from another config file. --&gt;
+&lt;packageSources&gt;
+  &lt;clear /&gt;
+  &lt;!-- `key` can be any identifier for your source. --&gt;
+  &lt;add key="nuget.org" value="https://api.nuget.org/v3/index.json" /&gt;
+  &lt;add key="contoso.com" value="https://contoso.com/packages/" /&gt;
+&lt;/packageSources&gt;
+
+&lt;!-- Define mappings by adding package ID patterns beneath the target source. --&gt;
+&lt;!-- Contoso.* packages will be restored from contoso.com, everything else from nuget.org. --&gt;
+&lt;packageSourceMapping&gt;
+  &lt;!-- key value for &lt;packageSource&gt; should match key values from &lt;packageSources&gt; element --&gt;
+  &lt;packageSource key="nuget.org"&gt;
+    &lt;package pattern="*" /&gt;
+  &lt;/packageSource&gt;
+  &lt;packageSource key="contoso.com"&gt;
+    &lt;package pattern="Contoso.*" /&gt;
+  &lt;/packageSource&gt;
+&lt;/packageSourceMapping&gt;
+</code></pre>
+
+You can read more about source mapping in our [blog released earlier this year](https://devblogs.microsoft.com/nuget/introducing-package-source-mapping/).
+
+### Package Vulnerabilities in Visual Studio
+
+When using the NuGet Package Manager within Visual Studio, you will now see package vulnerabilities for your packages including details such as the number and severity of vulnerabilities as well as direct links to learn more about the advisories.
+
+<img src="https://devblogs.microsoft.com/nuget/wp-content/uploads/sites/49/2021/10/vulnerability-1120x189.png" alt="Image vulnerability" width="640" height="108" class="aligncenter size-large wp-image-2165" />
+
+### Retry & Backoff Behavior
+
+There is now a `NUGET_ENABLE_EXPERIMENTAL_HTTP_RETRY` flag to improve the retry & backoff behavior of NuGet clients such as increasing the maximum amount of retries and increasing the delay for a more resilient experience when encountering a weaker internet connection.
+
+### Exclude Default File Extensions
+
+You can now use the MSBuild flag `<AllowedOutputExtensionsInPackageBuildOutputFolder>` to edit the file extensions included in the build output of your package. This gives you more control over the extensions being included in your build output folder.
+
+### Improved Deprecation Information in Visual Studio
+
+Deprecated packages in Visual Studio now include a link to the suggested alternate package to use. You can use this feature to quickly browse and install packages that are actively maintained.
+
+<img src="https://devblogs.microsoft.com/nuget/wp-content/uploads/sites/49/2021/10/deprecation-1120x345.png" alt="Image deprecation" width="640" height="197" class="aligncenter size-large wp-image-2164" />
+
+### Add a Package README in Visual Studio
+
+You can now add a package README.md file directly within Visual Studio. A README helps communicate important information about your package. It is often the first item a visitor will see when visiting your package on NuGet.org. README files typically include information on:
+
+*   What the package does
+*   Why the package is useful
+*   How users can get started with the package
+*   Where users can get help or contribute to your package
+
+You can read more about [adding a README to your NuGet package on our blog](https://devblogs.microsoft.com/nuget/add-a-readme-to-your-nuget-package/).
+
+### Faster Solution Load & Branch Switching in Visual Studio
+
+In Visual Studio 2022, NuGet has redefined the contract between NuGet package restore and common Visual Studio components to improve performance for large solutions by only calling restore once instead of multiple times. This improves the time it takes for background processes to complete significantly.
+
+Install the [Visual Studio 2022 Preview](https://visualstudio.microsoft.com/downloads/) and let us know if you notice a faster experience when loading your large solutions or switching between branches!
+
+**Features:**
+
 * Add  hook for excluding certain build output extensions from the nuget package  - [#10690](https://github.com/NuGet/Home/issues/10690)
 
 * Implement new precedence for xamarin TFMs when using net6.0+ - [#10717](https://github.com/NuGet/Home/issues/10717)
