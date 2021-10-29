@@ -37,7 +37,7 @@ NuGet 6.0 is the first release to offer full authoring and restoring support for
 *   net6.0-tvos
 *   net6.0-tizen
 
-<img src="https://devblogs.microsoft.com/nuget/wp-content/uploads/sites/49/2020/11/dotnet.png" alt="Image dotnet" width="227" height="227" class="aligncenter size-full wp-image-1788" />
+  ![.NET 6](media/NuGet-6.0/dotnet.png)
 
 If you aren’t familiar with the .NET 6.0 targets today or what it will look like in the future, don’t forget to check out the [.NET 6.0 TFM spec](https://github.com/dotnet/designs/blob/main/accepted/2021/net6.0-tfms/net6.0-tfms.md).
 
@@ -79,7 +79,7 @@ You can read more about source mapping in our [blog released earlier this year](
 
 When using the NuGet Package Manager within Visual Studio, you will now see package vulnerabilities for your packages including details such as the number and severity of vulnerabilities as well as direct links to learn more about the advisories.
 
-<img src="https://devblogs.microsoft.com/nuget/wp-content/uploads/sites/49/2021/10/vulnerability-1120x189.png" alt="Image vulnerability" width="640" height="108" class="aligncenter size-large wp-image-2165" />
+  ![Visual Studio Package Vulnerabilities](media/NuGet-6.0/VS-Vulnerability.png)
 
 ### Retry & Backoff Behavior
 
@@ -93,7 +93,7 @@ You can now use the MSBuild flag `<AllowedOutputExtensionsInPackageBuildOutputFo
 
 Deprecated packages in Visual Studio now include a link to the suggested alternate package to use. You can use this feature to quickly browse and install packages that are actively maintained.
 
-<img src="https://devblogs.microsoft.com/nuget/wp-content/uploads/sites/49/2021/10/deprecation-1120x345.png" alt="Image deprecation" width="640" height="197" class="aligncenter size-large wp-image-2164" />
+  ![Visual Studio Package Deprecations](media/NuGet-6.0/VS-Deprecation.png)
 
 ### Add a Package README in Visual Studio
 
