@@ -167,5 +167,5 @@ invalid:jquery ui            # Unsupported properties are ignored, so this
                              # is the same as searching on ui
 ```
 
-> [Note]
+> [!Note]
 > This advanced filtering syntax is supported by nuget.org. Other package sources, like Azure Artifacts or GitHub Package Repository, may use different syntax or may not support advanced filtering.
