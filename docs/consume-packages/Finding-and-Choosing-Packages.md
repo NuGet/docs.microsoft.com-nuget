@@ -144,10 +144,10 @@ For the MSBuild equivalent to setting the license in the `.nuspec`, take a look 
 
 ## Search Syntax
 
-NuGet package search works the same on nuget.org, from the NuGet CLI, and within the NuGet Package Manager extension in
-Visual Studio. In general, search is applied to keywords as well as package descriptions.
+Search queries on nuget.org, from the NuGet CLI, and within the NuGet Package Manager extension in
+Visual Studio, all use the same syntax. In general, search is applied to keywords as well as package descriptions.
 
-- **Filtering**: You can apply a search term to a specific property by using the syntax `<property>:<term>` where
+- **Advanced Filtering**: You can apply a search term to a specific property by using the syntax `<property>:<term>` where
   `<property>` (case-insensitive) can be `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`,
   `summary`, and `owner`. You can search for multiple properties at the same time. Searches on the `id` property are
   substring matches, whereas `packageid` and `owner` uses an exact, case-insensitive match. Examples:
@@ -166,3 +166,6 @@ id:jquery tags:validation    # Search multiple properties
 invalid:jquery ui            # Unsupported properties are ignored, so this
                              # is the same as searching on ui
 ```
+
+> [!Note]
+> This advanced filtering syntax is supported by nuget.org. Other package sources, like Azure Artifacts or GitHub Package Repository, may use different syntax or may not support advanced filtering.

@@ -3,7 +3,7 @@ title: NuGet pack and restore as MSBuild targets
 description: NuGet pack and restore can work directly as MSBuild targets with NuGet 4.0+.
 author: nkolev92
 ms.author: nikolev
-ms.date: 03/23/2018
+ms.date: 09/02/2021
 ms.topic: conceptual
 no-loc: [NuGet, MSBuild, .nuspec, nuspec]
 ---
@@ -46,9 +46,9 @@ The following table describes the MSBuild properties that can be added to a proj
 | Attribute/nuspec Value | MSBuild Property | Default | Notes |
 |--------|--------|--------|--------|
 | `Id` | `PackageId` | `$(AssemblyName)` | `$(AssemblyName)` from MSBuild |
-| `Version` | `PackageVersion` | Version | This is semver compatible, for example `1.0.0`, `1.0.0-beta`, or `1.0.0-beta-00345` |
-| `VersionPrefix` | `PackageVersionPrefix` | empty | Setting `PackageVersion` overwrites `PackageVersionPrefix` |
-| `VersionSuffix` | `PackageVersionSuffix` | empty | `$(VersionSuffix)` from MSBuild. Setting `PackageVersion` overwrites `PackageVersionSuffix` |
+| `Version` | `PackageVersion` | Version | This is semver compatible, for example `1.0.0`, `1.0.0-beta`, or `1.0.0-beta-00345`. Defaults to `Version` if not set. |
+| `VersionPrefix` | `VersionPrefix` | empty | Setting `PackageVersion` overwrites `VersionPrefix` |
+| `VersionSuffix` | `VersionSuffix` | empty | Setting `PackageVersion` overwrites `VersionSuffix` |
 | `Authors` | `Authors` | Username of the current user | A semicolon-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors. |
 | `Owners` | N/A | Not present in nuspec | |
 | `Title` | `Title` | The `PackageId` | A human-friendly title of the package, typically used in UI displays as on nuget.org and the Package Manager in Visual Studio. |
@@ -527,7 +527,7 @@ In very few scenarios, static graph restore may behave differently from current 
 To ease your mind, as a one time check, when migrating to static graph restore, consider running:
 
 ```cli
-msbuild.exe -t:restore -p:RestoreUseStaticGraphEvaluation
+msbuild.exe -t:restore -p:RestoreUseStaticGraphEvaluation=true
 msbuild.exe -t:restore
 ```
 

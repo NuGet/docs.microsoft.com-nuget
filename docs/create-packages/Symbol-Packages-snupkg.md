@@ -65,6 +65,9 @@ The [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) prope
 
 ## Publishing a symbol package
 
+> [!Note]
+> [Azure Devops Artifacts](https://azure.microsoft.com/services/devops/artifacts) does not currently support debugging via `.snupkg` files.
+
 1. For convenience, first save your API key with NuGet (see [publish a package](../nuget-org/publish-a-package.md)).
 
     ```cli

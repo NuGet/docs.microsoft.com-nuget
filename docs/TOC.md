@@ -20,6 +20,7 @@
 ### Package restore options
 #### [Restore packages](consume-packages/package-restore.md)
 #### [Troubleshooting](consume-packages/package-restore-troubleshooting.md)
+### [Package source mapping](consume-packages/package-source-mapping.md)
 ### [Reinstall and update packages](consume-packages/reinstalling-and-updating-packages.md)
 ### [Manage global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ### [Manage package trust boundaries](consume-packages/installing-signed-packages.md)
@@ -27,7 +28,7 @@
 ### [Work with source control systems](consume-packages/packages-and-source-control.md)
 ### [Common NuGet configurations](consume-packages/configuring-nuget-behavior.md)
 ## Reference packages in your project
-### [Package references in project files](consume-packages/package-references-in-project-files.md)
+### [PackageReference in project files](consume-packages/package-references-in-project-files.md)
 ### [Migrate packages.config to PackageReference](consume-packages/migrate-packages-config-to-package-reference.md)
 ### [packages.config](reference/packages-config.md)
 # Create packages
@@ -292,6 +293,9 @@
 ### [NuGet.org policies](nuget-org/policies/data-requests.md)
 ## Release notes
 ### [Known Issues](release-notes/known-issues.md)
+
+### NuGet 6.x
+#### [NuGet 6.0](release-notes/NuGet-6.0.md)
 ### NuGet 5.x
 #### [NuGet 5.11](release-notes/NuGet-5.11.md)
 #### [NuGet 5.10](release-notes/NuGet-5.10.md)

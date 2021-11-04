@@ -69,6 +69,9 @@ The `skip` parameter defaults to 0.
 
 The `take` parameter should be an integer greater than zero. The server implementation may impose a maximum value.
 
+> [!Note]
+> nuget.org limits the `skip` parameter to 3,000 and the `take` parameter to 1,000.
+
 If `prerelease` is not provided, pre-release packages are excluded.
 
 The `semVerLevel` query parameter is used to opt-in to
