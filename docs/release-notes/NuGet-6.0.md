@@ -318,14 +318,6 @@ Install the [Visual Studio 2022 Preview](https://visualstudio.microsoft.com/down
 
 * dotnet list package --vulnerable, --deprecated, --outdated does not work for transitive-only positives - [#10767](https://github.com/NuGet/Home/issues/10767)
 
-**Nones:**
-
-* Clarify documentation guideline - do no include empty xml docs - [#10857](https://github.com/NuGet/Home/issues/10857)
-
-* Add telemetry for tracking vulnerable packages installed through PMUI - [#10986](https://github.com/NuGet/Home/issues/10986)
-
-* Document which VS extensibility APIs can be called from a background thread - [#11021](https://github.com/NuGet/Home/issues/11021)
-
 **[List of all issues fixed in this release - 6.0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=Z2lkOi8vcmFwdG9yL1JlbGVhc2UvNDMwMDQ)**
 
 **[List of commits in this release - 6.0](https://github.com/NuGet/NuGet.Client/compare/5.11.0.17...6.0.0.262)**
