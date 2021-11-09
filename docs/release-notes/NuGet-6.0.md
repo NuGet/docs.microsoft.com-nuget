@@ -316,43 +316,7 @@ Install the [Visual Studio 2022 Preview](https://visualstudio.microsoft.com/down
 
 * [Bug]: ArPow build doesn't work well when in a subdirectory of an unrelated git repository - [#11227](https://github.com/NuGet/Home/issues/11227)
 
-**StillOpens:**
-
-* Clean up Package Spec redudant APIs - [#6231](https://github.com/NuGet/Home/issues/6231)
-
-* Remove project.json support - [#7199](https://github.com/NuGet/Home/issues/7199)
-
-* Deprecate and remove the old nuget.exe credential plugin model - [#7586](https://github.com/NuGet/Home/issues/7586)
-
-* Remove net40 support from NuGet.Framework - [#8416](https://github.com/NuGet/Home/issues/8416)
-
-* Remove .NET Framework TFM from NuGet.CommandLine.XPlat - [#8452](https://github.com/NuGet/Home/issues/8452)
-
-* Remove or improve configuration change events - [#8479](https://github.com/NuGet/Home/issues/8479)
-
-* Remove from public members parameter types that leak implementation details - [#9197](https://github.com/NuGet/Home/issues/9197)
-
-* Make static graph restore the default experience. - [#9803](https://github.com/NuGet/Home/issues/9803)
-
-* Allow to user to input custom (floating) versions through the PM UI - [#9829](https://github.com/NuGet/Home/issues/9829)
-
-* ``nuget.exe push *.nupkg`` doesn't push more than one file - [#10217](https://github.com/NuGet/Home/issues/10217)
-
-* Test PackageUpdateResource_SourceAndSymbolNuGetOrgPushingAsync is flaky - [#10706](https://github.com/NuGet/Home/issues/10706)
-
 * dotnet list package --vulnerable, --deprecated, --outdated does not work for transitive-only positives - [#10767](https://github.com/NuGet/Home/issues/10767)
-
-* [Feature]: Create More Consumable Library Interfaces (or SDK Documentation, or both!) - [#11142](https://github.com/NuGet/Home/issues/11142)
-
-* 9 signing tests failed on MacOS, as root certificate is removed from trusted store on MacOS - [#11178](https://github.com/NuGet/Home/issues/11178)
-
-**Nones:**
-
-* Clarify documentation guideline - do no include empty xml docs - [#10857](https://github.com/NuGet/Home/issues/10857)
-
-* Add telemetry for tracking vulnerable packages installed through PMUI - [#10986](https://github.com/NuGet/Home/issues/10986)
-
-* Document which VS extensibility APIs can be called from a background thread - [#11021](https://github.com/NuGet/Home/issues/11021)
 
 **[List of all issues fixed in this release - 6.0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=Z2lkOi8vcmFwdG9yL1JlbGVhc2UvNDMwMDQ)**
 
