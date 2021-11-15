@@ -103,10 +103,52 @@ See the [.NET library versioning guide](/dotnet/standard/library-guidance/versio
 
 ### Copyright
 
-✔️ CONSIDER copyrighting your package with "Copyright (c) <name/company\> <year\>."
->A copyright notice essentially indicates that your work cannot be copied without your permission. Including a copyright notice in your package is easy and won't do any harm!
+✔️ DO copyrighting your package with "Copyright (c) <name/company\> <year\>."
+> A copyright notice essentially indicates that your work cannot be copied without your permission. Including a copyright notice in your package is easy and won't do any harm!
 
 Example: Copyright (c) Contoso 2020
+
+### Project URL
+
+✔️ DO include a link to an associated project, repository, or company website.
+> Your project site should have everything users need to know about your package and will likely be where users look for documentation.
+
+### Icon
+
+✔️ CONSIDER [including an icon with your package](../reference/msbuild-targets.md#packing-an-icon-image-file) to help visually differentiate it. It's a relatively small addition that can improve perception of package quality.
+> Icons can be specific to individual packages or be a brand logo.
+
+✔️ DO use an image that is 128x128 and has a transparent background (PNG) for best viewing results.
+> NuGet will automatically scale your image to the client it is being displayed on.
+
+❌ DO NOT use the deprecated `IconUrl` metadata property.
+
+### README
+✔️ DO add a README markdown file that provides an overview of what your package does and how to get started.
+> A package README will significantly improve the quality perception of your package as well as new user onboarding. Also consider [previewing your README](../nuget-org/package-readme-on-nuget-org.md#preview-your-readme) before you upload it!
+
+### Repository Type and URL
+
+✔️ CONSIDER setting up [Source Link](/dotnet/standard/library-guidance/sourcelink) to automatically add source control metadata to your NuGet package and make your library easier to debug.
+> Source Link automatically adds `Repository URL` and `Repository Type` to the package metadata. It also adds the specific commit associated with your package version.
+
+### Tags
+
+✔️ DO include several tags with key terms related to your package to enhance discoverability.
+> Tags are taken into account in NuGet.org's search algorithm and are especially helpful for terms that are not in the Package ID but are relevant.
+
+For example, if I published a package to log strings to the console, I would include: "logging, log, console, string, output"
+
+### Release notes
+
+✔️ DO include release notes with each update describing what changes were made.
+> While there is no specific format required for release notes, we recommend including:
+>
+> 1. Breaking changes
+> 2. New features
+> 3. Bug fixes
+> 
+> If you already track release notes or a changelog in your repo, you can also include a link to the relevant file.
 
 ### Licensing
 
@@ -131,44 +173,6 @@ Example: Copyright (c) Contoso 2020
 
 ✔️ DO [include a license file in your package](../reference/msbuild-targets.md#packing-a-license-expression-or-a-license-file).
 > Any license file (.txt or .md) can be added to your package, including non-standard licenses. 
-
-### Project URL
-
-✔️ CONSIDER including a link to an associated project, repository, or company website.
-> Your project site should have everything users need to know about your package and will likely be where users look for documentation.
-
-### Icon
-
-✔️ CONSIDER [including an icon with your package](../reference/msbuild-targets.md#packing-an-icon-image-file) to help visually differentiate it. It's a relatively small addition that can improve perception of package quality.
-> Icons can be specific to individual packages or be a brand logo.
-
-✔️ DO use an image that is 128x128 and has a transparent background (PNG) for best viewing results.
-> NuGet will automatically scale your image to the client it is being displayed on.
-
-❌ DO NOT use the deprecated `IconUrl` metadata property.
-
-### Repository Type and URL
-
-✔️ CONSIDER setting up [Source Link](/dotnet/standard/library-guidance/sourcelink) to automatically add source control metadata to your NuGet package and make your library easier to debug.
-> Source Link automatically adds `Repository URL` and `Repository Type` to the package metadata. It also adds the specific commit associated with your package version.
-
-### Tags
-
-✔️ DO include several tags with key terms related to your package to enhance discoverability.
-> Tags are taken into account in NuGet.org's search algorithm and are especially helpful for terms that are not in the Package ID but are relevant.
-
-For example, if I published a package to log strings to the console, I would include: "logging, log, console, string, output"
-
-### Release notes
-
-✔️ CONSIDER including release notes with each update describing what changes were made.
-> While there is no specific format required for release notes, we recommend including:
->
-> 1. Breaking changes
-> 2. New features
-> 3. Bug fixes
-> 
-> If you already track release notes or a changelog in your repo, you can also include a link to the relevant file.
 
 ## Related topics
 
