@@ -103,7 +103,7 @@ See the [.NET library versioning guide](/dotnet/standard/library-guidance/versio
 
 ### Copyright
 
-✔️ DO copyrighting your package with "Copyright (c) <name/company\> <year\>."
+✔️ DO add a copyright notice to your package with "Copyright (c) <name/company\> <year\>."
 > A copyright notice essentially indicates that your work cannot be copied without your permission. Including a copyright notice in your package is easy and won't do any harm!
 
 Example: Copyright (c) Contoso 2020
