@@ -60,14 +60,15 @@ Below is a table mapping and describing available package metadata elements:
 | [`Authors`](#authors)                         	| [`Authors`](/nuget/reference/msbuild-targets#pack-target)                                                                	| [`authors`](/nuget/reference/nuspec#authors)                            	| A comma-separated list of package authors, often using the individual's or an organization's "pretty name."       	|
 | [`Description`](#description)                 	| [`Description`](/nuget/reference/msbuild-targets#pack-target)                                                        	| [`description`](/nuget/reference/nuspec#description)                    	| A description of the package.                                                                                     	|
 | [`Copyright`](#copyright)                     	| [`Copyright`](/nuget/reference/msbuild-targets#pack-target)                                                            	| [`copyright`](/nuget/reference/nuspec#copyright)                        	| Copyright details for the package.                                                                                	|
-| [`Licensing - Expression`](#licensing)        	| [`PackageLicenseExpression`](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file) 	| [`license type="expression"`](/nuget/reference/nuspec#license)          	| An SPDX license expression.                                                                                       	|
-| [`Licensing - File`](#licensing)              	| [`PackageLicenseFile`](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file)       	| [`license type="file"`](/nuget/reference/nuspec#license)                	| Path to a custom license file.                                                                                    	|
 | [`Project URL`](#project-url)                 	| `PackageProjectUrl`                                                                                                                     	| [`projectUrl`](/nuget/reference/nuspec#projecturl)                      	| A URL for the project homepage.                                                                                   	|
 | [`Icon File`](#icon)                          	| [`PackageIcon`](/nuget/reference/msbuild-targets#packing-an-icon-image-file)                                  	| [`icon`](/nuget/reference/nuspec#icon)                                  	| Path to the package icon image file.                                                                              	|
+| [`README`](#readme)                          	| [`PackageReadmeFile`](/nuget/reference/msbuild-targets#packagereadmefile)                                  	| [`readme`](/nuget/reference/nuspec#readme)                                  	| Path to the package README markdown file.                                                                              	|
 | [`Repository URL`](#repository-type-and-url)  	| [`RepositoryUrl`](/nuget/reference/msbuild-targets#pack-target)                                                    	| [`repository url`](/nuget/reference/nuspec#repository)                  	| URL to the repository from which the package was built.                                                           	|
 | [`Repository type`](#repository-type-and-url) 	| [`RespositoryType`](/nuget/reference/msbuild-targets#pack-target)                                                 	| [`repository type`](/nuget/reference/nuspec#repository)                 	| Type of repository the repository URL is pointing to (i.e. "git").                                                	|
 | [`Tags`](#tags)                               	| [`PackageTags`](/nuget/reference/msbuild-targets#pack-target)                                                        	| [`tags`](/nuget/reference/nuspec#tags)                                  	| A space-delimited list of tags and keywords that describe the package. Tags are used when searching for packages. 	|
 | [`Release notes`](#release-notes)             	| [`PackageReleaseNotes`](/nuget/reference/msbuild-targets#pack-target)                                        	| [`releaseNotes`](/nuget/reference/nuspec#releasenotes)                  	| A description of the changes made in this release of the package.                                                 	|
+| [`Licensing - Expression`](#licensing)        	| [`PackageLicenseExpression`](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file) 	| [`license type="expression"`](/nuget/reference/nuspec#license)          	| An SPDX license expression.                                                                                       	|
+| [`Licensing - File`](#licensing)              	| [`PackageLicenseFile`](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file)       	| [`license type="file"`](/nuget/reference/nuspec#license)                	| Path to a custom license file.                                                                                    	|
 ### Package ID
 
 If you're publishing a completely new package:
@@ -94,6 +95,7 @@ See the [.NET library versioning guide](/dotnet/standard/library-guidance/versio
 
 ✔️ DO use the author field for your or your organization's "pretty name."
 > For example, if my NuGet.org username is "jdoe" then using "Jane Doe" for the author field may help consumers recognize me as an author. If my organization's NuGet.org username is "ContosoToolkit" then using "Contoso Corporation" may be more recognizable and inspire more consumer trust.
+
 ### Description
 
 ✔️ DO include a short description (up to 4000 characters) to describe your package.
@@ -101,10 +103,52 @@ See the [.NET library versioning guide](/dotnet/standard/library-guidance/versio
 
 ### Copyright
 
-✔️ CONSIDER copyrighting your package with "Copyright (c) <name/company\> <year\>."
->A copyright notice essentially indicates that your work cannot be copied without your permission. Including a copyright notice in your package is easy and won't do any harm!
+✔️ DO add a copyright notice to your package with "Copyright (c) <name/company\> <year\>."
+> A copyright notice essentially indicates that your work cannot be copied without your permission. Including a copyright notice in your package is easy and won't do any harm!
 
 Example: Copyright (c) Contoso 2020
+
+### Project URL
+
+✔️ DO include a link to an associated project, repository, or company website.
+> Your project site should have everything users need to know about your package and will likely be where users look for documentation.
+
+### Icon
+
+✔️ CONSIDER [including an icon with your package](../reference/msbuild-targets.md#packing-an-icon-image-file) to help visually differentiate it. It's a relatively small addition that can improve perception of package quality.
+> Icons can be specific to individual packages or be a brand logo.
+
+✔️ DO use an image that is 128x128 and has a transparent background (PNG) for best viewing results.
+> NuGet will automatically scale your image to the client it is being displayed on.
+
+❌ DO NOT use the deprecated `IconUrl` metadata property.
+
+### README
+✔️ DO add a README markdown file that provides an overview of what your package does and how to get started.
+> A package README will significantly improve the quality perception of your package as well as new user onboarding. Also consider [previewing your README](../nuget-org/package-readme-on-nuget-org.md#preview-your-readme) before you upload it!
+
+### Repository Type and URL
+
+✔️ CONSIDER setting up [Source Link](/dotnet/standard/library-guidance/sourcelink) to automatically add source control metadata to your NuGet package and make your library easier to debug.
+> Source Link automatically adds `Repository URL` and `Repository Type` to the package metadata. It also adds the specific commit associated with your package version.
+
+### Tags
+
+✔️ DO include several tags with key terms related to your package to enhance discoverability.
+> Tags are taken into account in NuGet.org's search algorithm and are especially helpful for terms that are not in the Package ID but are relevant.
+
+For example, if I published a package to log strings to the console, I would include: "logging, log, console, string, output"
+
+### Release notes
+
+✔️ DO include release notes with each update describing what changes were made.
+> While there is no specific format required for release notes, we recommend including:
+>
+> 1. Breaking changes
+> 2. New features
+> 3. Bug fixes
+> 
+> If you already track release notes or a changelog in your repo, you can also include a link to the relevant file.
 
 ### Licensing
 
@@ -129,44 +173,6 @@ Example: Copyright (c) Contoso 2020
 
 ✔️ DO [include a license file in your package](../reference/msbuild-targets.md#packing-a-license-expression-or-a-license-file).
 > Any license file (.txt or .md) can be added to your package, including non-standard licenses. 
-
-### Project URL
-
-✔️ CONSIDER including a link to an associated project, repository, or company website.
-> Your project site should have everything users need to know about your package and will likely be where users look for documentation.
-
-### Icon
-
-✔️ CONSIDER [including an icon with your package](../reference/msbuild-targets.md#packing-an-icon-image-file) to help visually differentiate it. It's a relatively small addition that can improve perception of package quality.
-> Icons can be specific to individual packages or be a brand logo.
-
-✔️ DO use an image that is 128x128 and has a transparent background (PNG) for best viewing results.
-> NuGet will automatically scale your image to the client it is being displayed on.
-
-❌ DO NOT use the deprecated `IconUrl` metadata property.
-
-### Repository Type and URL
-
-✔️ CONSIDER setting up [Source Link](/dotnet/standard/library-guidance/sourcelink) to automatically add source control metadata to your NuGet package and make your library easier to debug.
-> Source Link automatically adds `Repository URL` and `Repository Type` to the package metadata. It also adds the specific commit associated with your package version.
-
-### Tags
-
-✔️ DO include several tags with key terms related to your package to enhance discoverability.
-> Tags are taken into account in NuGet.org's search algorithm and are especially helpful for terms that are not in the Package ID but are relevant.
-
-For example, if I published a package to log strings to the console, I would include: "logging, log, console, string, output"
-
-### Release notes
-
-✔️ CONSIDER including release notes with each update describing what changes were made.
-> While there is no specific format required for release notes, we recommend including:
->
-> 1. Breaking changes
-> 2. New features
-> 3. Bug fixes
-> 
-> If you already track release notes or a changelog in your repo, you can also include a link to the relevant file.
 
 ## Related topics
 
