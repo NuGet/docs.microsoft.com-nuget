@@ -29,7 +29,7 @@ You can use self-issued certificates for testing purposes. However, packages sig
 ## Sign the package
 
 ### .Net (requires .NET 6 SDK and later versions)
-Use [dotnet nuget sign](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-sign).
+Use [dotnet nuget sign](https://docs.microsoft.com/dotnet/core/tools/dotnet-nuget-sign).
 
 ### On .Net Framework (requires nuget.exe 4.6.0 or later)
 
