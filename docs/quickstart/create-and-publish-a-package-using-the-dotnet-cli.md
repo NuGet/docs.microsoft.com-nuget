@@ -104,7 +104,7 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nug
 
 > [!Video https://docs.microsoft.com/en-us/shows/NuGet-101/Create-and-Publish-a-NuGet-Package-with-the-NET-CLI-5-of-5/player]
 
-Find more NuGet videos on [Channel 9](https://docs.microsoft.com/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+Find more NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
 ## Next steps
 
