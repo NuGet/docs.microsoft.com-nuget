@@ -106,9 +106,9 @@ Take a moment to browse the table of contents for this documentation, and you se
 
 ## Related video
 
-> [!Video https://channel9.msdn.com/Series/NuGet-101/What-is-NuGet-1-of-5/player]
+> [!Video https://docs.microsoft.com/en-us/shows/NuGet-101/What-is-NuGet-1-of-5/player]
 
-Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+Find more NuGet videos on [Channel 9](https://docs.microsoft.com/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
 ## Comments, contributions, and issues
 
