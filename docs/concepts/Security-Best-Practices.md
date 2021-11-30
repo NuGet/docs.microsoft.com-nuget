@@ -162,6 +162,14 @@ To learn more about secret scanning, see [About secret scanning](https://docs.gi
 [Author signing](../reference/signed-packages-reference.md) allows a package author to stamp their identity on a package and for a consumer to verify it came from you. This protects you against content tampering and serves as a single source of truth about the origin of the package and the package authenticity. When combined with client trust policies, you can verify a package came from a specific author.
 
 To author sign a package, see [Sign a package](../create-packages/sign-a-package.md).
+githg
+### Reproducible Builds
+
+**📦🖊 Package Author**
+
+Reproducible builds creates binaries that are binary identical each time you build it, and contain source code links and compiler metadata that enable a package consumer to recreate the binary directly and validate that the build environment has not been compromised.
+
+To learn more about reproducible builds, see [Producing Packages with Source Link](https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/) and the [Reproducible Build Validation](https://github.com/dotnet/designs/blob/main/accepted/2020/reproducible-builds.md) spec.
 
 ### Two-Factor Authentication (2FA)
 
