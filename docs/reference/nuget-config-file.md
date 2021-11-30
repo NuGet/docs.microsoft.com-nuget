@@ -235,7 +235,7 @@ Identified currently disabled sources. May be empty. Unless specific sources are
 <disabledPackageSources />
 ```
 
-In the above eample, `Contoso` source is disabled and this source will not be used to download or install packages.
+In the example above, the package source `Contoso` is disabled and will not be used to download or install packages.
 
 ### activePackageSource
 
