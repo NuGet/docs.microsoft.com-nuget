@@ -25,7 +25,7 @@ Starting from Visual Studio 17.1, NuGet's Visual Studio extensibility API packag
 
 These services are available in the package [NuGet.VisualStudio.Contracts](https://nuget.org/packages/NuGet.VisualStudio.Contracts/).
 
-- [`INuGetProjectService`](inugetprojectservice): Methods to interact with a project. (5.7+)
+- [`INuGetProjectService`](#inugetprojectservice-interface): Methods to interact with a project. (5.7+)
 
 ### MEF Services
 
@@ -127,7 +127,7 @@ If you would like a new NuGet related API in Visual Studio, please search [NuGet
 
 For reference, the source code for NuGet.VisualStudio is contained within the [NuGet.Clients repository](https://github.com/NuGet/NuGet.Client/tree/dev/src/NuGet.Clients/NuGet.VisualStudio).
 
-## INuGetProjectService
+## INuGetProjectService interface
 
 ```cs
     /// <summary>Service to interact with projects in a solution</summary>
