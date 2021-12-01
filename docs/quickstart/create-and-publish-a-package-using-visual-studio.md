@@ -59,18 +59,18 @@ To start, create a .NET class library. This project type comes with all the temp
 
 1. You can already pack the template code as-is, but let's make it do something interesting! Replace the existing AppLogger code with code below so our AppLogger library has a method to write text to the console.
 
-```cs
-namespace AppLogger
-{
-    public class Logger
+    ```cs
+    namespace AppLogger
     {
-        public void Log(string text)
+        public class Logger
         {
-            Console.WriteLine(text);
+            public void Log(string text)
+            {
+                Console.WriteLine(text);
+            }
         }
     }
-}
-```
+    ```
 
 ## Configure package properties
 
@@ -82,10 +82,10 @@ namespace AppLogger
 
 1. Visual Studio sets default values for some package properties such as **Package ID** and **Package Version**, however you can input your own values. 
 
-    Give your package a **Package ID** that is unique on nuget.org, such as *<AccountName\>.Sample.AppLogger*, and save (CTRL + S). You can confirm the ID is unique by checking if the following link exists: https://www.nuget.org/packages/<package name\>.
+    Input your **Package ID** as *<AccountName\>.Sample.AppLogger*, and save (CTRL + S). 
 
     > [!TIP]
-    > Check out our [best practices guide](../create-packages/Package-authoring-best-practices.md) for a detailed walkthrough of all the important package properties.
+    > Check out our [best practices guide](../create-packages/Package-authoring-best-practices.md) for a detailed walkthrough of all the other important package properties.
 
 ## Create the package
 
@@ -106,11 +106,11 @@ namespace AppLogger
 
 ## Publish your package to nuget.org
 
-In this walthrough, we'll publish the package using the nuget.org **Upload** page. You can learn about other ways to publish your package ...
+In this walthrough, we'll publish the package using the nuget.org **Upload** page. However, you can also publish package from the command line for more advanced scenarios.
 
 
 
-## Advanced
+## Advanced --------------------------------------
 
 ### (Optional) Generate package on build
 
