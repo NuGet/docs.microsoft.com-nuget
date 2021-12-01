@@ -38,6 +38,8 @@ In this tutorial, you:
 
 1. [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
 
+---
+
 ## Create a class library project
 
 To start, create a .NET class library. This project type comes with all the template files you need.
@@ -109,6 +111,8 @@ To start, create a .NET class library. This project type comes with all the temp
     }
     ```
 
+---
+
 ## Configure package properties
 
 # [Visual Studio](#tab/visual-studio)
@@ -159,6 +163,8 @@ Open the `.csproj` project file and add the following group of properties within
 > [!TIP]
 > Check out our [best practices guide](../create-packages/Package-authoring-best-practices.md) for a detailed walkthrough of all the other important package properties.
 
+---
+
 ## Publish your package to nuget.org
 
 In this walthrough, we'll publish the package using the nuget.org **Upload** page. However, you can also publish package from the command line for more advanced scenarios.
@@ -178,6 +184,8 @@ Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101
 > [!Video https://channel9.msdn.com/Series/NuGet-101/Create-and-Publish-a-NuGet-Package-with-the-NET-CLI-5-of-5/player]
 
 Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+
+---
 
 ## Related topics
 
