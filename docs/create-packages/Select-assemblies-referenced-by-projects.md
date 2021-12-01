@@ -28,7 +28,7 @@ This gives your package consumers the flexibility to directly reference the pack
 
 `PackageReference` and `packages.config` have different features available. Whether you want to support your package consumers who use `PackageReference`, `packages.config`, or both, changes how you must author your package.
 
-NuGet's MSBuild Pack target does not support automatically including project references in the package. See [this issue](https://github.com/NuGet/Home/issues/3891), which lists some ways different developers have achieved their goal, or consider community developed tools such as [NuGetizer](https://github.com/devlooped/nugetizer). See the docs on [including content in a package](../reference/msbuild-targets#including-content-in-a-package) for how to use the `PackagePath` MSBuild item metadata to put files in any location in the package.
+NuGet's MSBuild Pack target does not support automatically including project references in the package. See [this issue](https://github.com/NuGet/Home/issues/3891), which lists some ways different developers have achieved their goal, or consider community developed tools such as [NuGetizer](https://github.com/devlooped/nugetizer). See the docs on [including content in a package](../reference/msbuild-targets.md#including-content-in-a-package) for how to use the `PackagePath` MSBuild item metadata to put files in any location in the package.
 
 ### `PackageReference` support
 
@@ -55,7 +55,7 @@ Projects using `packages.config` to manage NuGet packages normally add reference
 </references>
 ```
 
-The MSBuild pack targets don't support the `<references>` element. See the docs on [packing using a .nuspec file](../reference/msbuild-targets#packing-using-a-nuspec-file) when using MSBuild pack.
+The MSBuild pack targets don't support the `<references>` element. See the docs on [packing using a .nuspec file](../reference/msbuild-targets.md#packing-using-a-nuspec-file) when using MSBuild pack.
 
 > [!Note]
 > `packages.config` project use a process called [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/main/documentation/wiki/ResolveAssemblyReference.md) to copy assemblies to the `bin\<configuration>\` output directory. Your project's assembly is copied, then the build system looks at the assembly manifest for referenced assemblies, then copies those assemblies and recursively repeats for all assemblies. This means that if any of the assemblies loaded only by reflection (`Assembly.Load`, MEF or another dependency injection framework), then it may not be copied to your project's `bin\<configuration>\` output directory despite being in `bin\<tfm>\`.
