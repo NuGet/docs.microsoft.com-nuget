@@ -93,7 +93,7 @@ To start, create a .NET class library. This project type comes with all the temp
 
    This creates your new `AppLogger` project.
 
-1. Select the file Class1.cs in the left hand explorer to view the code template.
+1. Open the `Class1.cs` in the left hand explorer to view the code template.
 
     You can already pack the template code as-is, but let's make it do something interesting! Replace the existing AppLogger code with the following code, so our AppLogger library has a method to write text to the console.
 
@@ -111,6 +111,8 @@ To start, create a .NET class library. This project type comes with all the temp
 
 ## Configure package properties
 
+# [Visual Studio](#tab/visual-studio)
+
 1. Right-click the **AppLogger** project in Solution Explorer and select the **Properties** menu command. Within the project properties window, select the **Package** tab on the left.
 
    The **Package** tab appears only for SDK-style projects in Visual Studio, typically .NET Standard or .NET Core class library projects; if you are targeting a non-SDK style project (typically .NET Framework), either [migrate the project](../consume-packages/migrate-packages-config-to-package-reference.md) or see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) instead for step-by-step instructions.
@@ -119,7 +121,7 @@ To start, create a .NET class library. This project type comes with all the temp
 
 1. Visual Studio sets default values for some package properties such as **Package ID** and **Package Version**, however you can input your own values. 
 
-    Input your **Package ID** as *<AccountName\>.Sample.AppLogger*, and save (CTRL + S). 
+    Input your **Package ID** as `[nuget_username].Sample.AppLogger`, and save (CTRL + S). Subsitute your nuget.org username for `[nuget_username]`.
 
     > [!TIP]
     > Check out our [best practices guide](../create-packages/Package-authoring-best-practices.md) for a detailed walkthrough of all the other important package properties.
@@ -135,50 +137,45 @@ To start, create a .NET class library. This project type comes with all the temp
     ```output
     1>------ Build started: Project: AppLogger, Configuration: Debug Any CPU ------
     1>AppLogger -> C:\Users\UserName\source\repos\AppLogger\AppLogger\bin\Debug\net6.0\AppLogger.dll
-    1>Successfully created package 'C:\Users\UserName\source\repos\AppLogger\AppLogger\bin\Debug\AccountName.Sample.AppLogger.1.0.0.nupkg'.
+    1>Successfully created package 'C:\Users\UserName\source\repos\AppLogger\AppLogger\bin\Debug\nuget_username.Sample.AppLogger.1.0.0.nupkg'.
     ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
     ```
 
-    From our example output, we can see the path to the generated package is `C:\Users\UserName\source\repos\AppLogger\AppLogger\bin\Debug\AccountName.Sample.AppLogger.1.0.0.nupkg`.
+    From our example output, we can see the path to the generated package is `C:\Users\UserName\source\repos\AppLogger\AppLogger\bin\Debug\nuget_username.Sample.AppLogger.1.0.0.nupkg`.
+
+# [Visual Studio Code](#tab/visual-studio-code)
+
+Open the `.csproj` project file and add the following group of properties within the <Project> tag. Change the values in straight brackets `[]` to match your info.
+
+```xml
+<!--Package properties-->
+<PropertyGroup>
+    <PackageId>[nuget_username].Sample.AppLogger</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>[your_name]</Authors>
+</PropertyGroup>
+```
+
+> [!TIP]
+> Check out our [best practices guide](../create-packages/Package-authoring-best-practices.md) for a detailed walkthrough of all the other important package properties.
 
 ## Publish your package to nuget.org
 
 In this walthrough, we'll publish the package using the nuget.org **Upload** page. However, you can also publish package from the command line for more advanced scenarios.
 
+## Related video
 
+# [Visual Studio](#tab/visual-studio)
 
-## Advanced --------------------------------------
+> [!Video https://channel9.msdn.com/Series/NuGet-101/Create-and-Publish-a-NuGet-Package-with-Visual-Studio-4-of-5/player]
 
-### (Optional) Generate package on build
+Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
-You can configure Visual Studio to automatically generate the NuGet package when you build the project.
-
-1. In Solution Explorer, right-click the project and choose **Properties**.
-
-2. In the **Package** tab, select **Generate NuGet package on build**.
-
-   ![Automatically generate package on build](media/qs_create-vs-05-generate-on-build.png)
-
-> [!NOTE]
-> When you automatically generate the package, the time to pack increases the build time for your project.
-
-### (Optional) pack with MSBuild
-
-As an alternate to using the **Pack** menu command, NuGet 4.x+ and MSBuild 15.1+ supports a `pack` target when the project contains the necessary package data. Open a command prompt, navigate to your project folder and run the following command. (You typically want to start the "Developer Command Prompt for Visual Studio" from the Start menu, as it will be configured with all the necessary paths for MSBuild.)
-
-For more information, see [Create a package using MSBuild](../create-packages/creating-a-package-msbuild.md).
-
-### Publish errors
-
-[!INCLUDE [publish-errors](includes/publish-errors.md)]
-
-### Manage the published package
-
-[!INCLUDE [publish-manage](includes/publish-manage.md)]
+# [Visual Studio Code](#tab/visual-studio-code)
 
 ## Related video
 
-> [!Video https://channel9.msdn.com/Series/NuGet-101/Create-and-Publish-a-NuGet-Package-with-Visual-Studio-4-of-5/player]
+> [!Video https://channel9.msdn.com/Series/NuGet-101/Create-and-Publish-a-NuGet-Package-with-the-NET-CLI-5-of-5/player]
 
 Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 

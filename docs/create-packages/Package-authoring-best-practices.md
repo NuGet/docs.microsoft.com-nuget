@@ -68,7 +68,8 @@ Below is a table mapping and describing available package metadata elements:
 | [`Tags`](#tags)                               	| [`PackageTags`](/nuget/reference/msbuild-targets#pack-target)                                                        	| [`tags`](/nuget/reference/nuspec#tags)                                  	| A space-delimited list of tags and keywords that describe the package. Tags are used when searching for packages. 	|
 | [`Release notes`](#release-notes)             	| [`PackageReleaseNotes`](/nuget/reference/msbuild-targets#pack-target)                                        	| [`releaseNotes`](/nuget/reference/nuspec#releasenotes)                  	| A description of the changes made in this release of the package.                                                 	|
 | [`Licensing - Expression`](#licensing)        	| [`PackageLicenseExpression`](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file) 	| [`license type="expression"`](/nuget/reference/nuspec#license)          	| An SPDX license expression.                                                                                       	|
-| [`Licensing - File`](#licensing)              	| [`PackageLicenseFile`](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file)       	| [`license type="file"`](/nuget/reference/nuspec#license)                	| Path to a custom license file.                                                                                    	|
+| [`Licensing - File`](#licensing) | [`PackageLicenseFile`](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file) | [`license type="file"`](/nuget/reference/nuspec#license) | Path to a custom license file.             
+
 ### Package ID
 
 If you're publishing a completely new package:
