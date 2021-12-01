@@ -321,18 +321,18 @@ Install the [Visual Studio 2022 Preview](https://visualstudio.microsoft.com/down
 
 **[List of all issues fixed in this release - 6.0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=Z2lkOi8vcmFwdG9yL1JlbGVhc2UvNDMwMDQ)**
 
-**[List of commits in this release - 6.0.0](https://github.com/NuGet/NuGet.Client/compare/5.11.0.17...6.0.0.262)**
+**[List of commits in this release - 6.0.0](https://github.com/NuGet/NuGet.Client/compare/5.11.0.17...6.0.0.280)**
 
 ## Summary: What's New in 6.0.1
 
-Note: As this version only contains changes in Visual Studio, NuGet.exe, packages on nuget.org, and the .NET SDK were not updated.
+Only Visual Studio was updated with this version of NuGet.
 
 ### Issues fixed in this release
 
 * [Bug]: Cannot get INuGetProjectService from the service broker in Visual Studio 17 - [#11367](https://github.com/NuGet/Home/issues/11367)
 * [Bug]: Package Manager Console initialization might cause deadlocks - [#11320](https://github.com/NuGet/Home/issues/11320)
 
-**[List of commits in this release - 6.0.1](https://github.com/NuGet/NuGet.Client/compare/6.0.0.262...6.0.1.1)**
+**[List of commits in this release - 6.0.1](https://github.com/NuGet/NuGet.Client/compare/6.0.0.280...6.0.1.1)**
 
 ### Community contributions
 
