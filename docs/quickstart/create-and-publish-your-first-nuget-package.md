@@ -42,6 +42,8 @@ In this tutorial, you:
 
 To start, create a .NET class library. This project type comes with all the template files you need.
 
+# [Visual Studio](#tab/visual-studio)
+
 1. Open Visual Studio, and choose **Create a new project** in the Start window.
 
    ![Screenshot that shows the Create a new project window.](media/create-new-project.png)
@@ -67,17 +69,42 @@ To start, create a .NET class library. This project type comes with all the temp
 
    ![Screenshot that shows .NET 6.0 selected in the Additional information window.](media/csharp-target-framework.png)
 
-1. You can already pack the template code as-is, but let's make it do something interesting! Replace the existing AppLogger code with code below so our AppLogger library has a method to write text to the console.
+1. You can already pack the template code as-is, but let's make it do something interesting! Replace the existing AppLogger code with the following code, so our AppLogger library has a method to write text to the console.
 
     ```cs
-    namespace AppLogger
+    namespace AppLogger;
+    
+    public class Logger
     {
-        public class Logger
+        public void Log(string text)
         {
-            public void Log(string text)
-            {
-                Console.WriteLine(text);
-            }
+            Console.WriteLine(text);
+        }
+    }
+    ```
+
+# [Visual Studio Code](#tab/visual-studio-code)
+
+1. Create a folder named `AppLogger` where your project will live. 
+
+1. Open Visual Studio Code to your `AppLogger` folder, and open the [integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal) (`Ctrl+`\`).
+
+1. In the terminal, enter `dotnet new classlib`, which uses the name of the current folder for the project.
+
+   This creates your new `AppLogger` project.
+
+1. Select the file Class1.cs in the left hand explorer to view the code template.
+
+    You can already pack the template code as-is, but let's make it do something interesting! Replace the existing AppLogger code with the following code, so our AppLogger library has a method to write text to the console.
+
+    ```cs
+    namespace AppLogger;
+    
+    public class Logger
+    {
+        public void Log(string text)
+        {
+            Console.WriteLine(text);
         }
     }
     ```
