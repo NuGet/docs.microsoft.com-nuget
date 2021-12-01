@@ -1,13 +1,13 @@
 ---
-title: Create and publisher your first package with Visual Studio
-description: A walkthrough tutorial on creating and publishing a NuGet package using Visual Studio on Windows.
+title: Create and publish your first NuGet package
+description: A tutorial for creating your first NuGet package with a .NET library.
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/16/2019
 ms.topic: quickstart
 ---
 
-# Quickstart: Create and publish a NuGet package using Visual Studio (Windows only)
+# Quickstart: Create and publish your first NuGet package
 
 In this tutorial, you learn how to create a NuGet package with Visual Studio and publish it to nuget.org.
 
@@ -15,7 +15,8 @@ In this tutorial, you:
 
 > [!div class="checklist"]
 > * Create a class library project.
-> * Configure the package properties.
+> * Configure package properties.
+> * Create the package.
 > * Publish your package to nuget.org.
 
 > [!Note]
@@ -39,14 +40,14 @@ To start, create a .NET class library. This project type comes with all the temp
 
    ![Screenshot that shows the class library project selection in the Create new project window.](media/select-class-library-project.png)
 
-   > [!NOTE]
-   > If you don't see the **Class Library** template, select **Install more tools and features**.
-   >
-   > ![Screenshot that shows the Install more tools and features link.](media/not-finding-what-looking-for.png)
-   >
-   > In the Visual Studio Installer, choose the **.NET desktop development** workload, and then select **Modify**.
-   >
-   > ![Screenshot showing the .NET desktop development workload in the Visual Studio Installer.](media/dot-net-development-workload.png)
+    > [!NOTE]
+    > If you don't see the **Class Library** template, select **Install more tools and features**.
+    >
+    > ![Screenshot that shows the Install more tools and features link.](media/not-finding-what-looking-for.png)
+    >
+    > In the Visual Studio Installer, choose the **.NET desktop development** workload, and then select **Modify**.
+    >
+    > ![Screenshot showing the .NET desktop development workload in the Visual Studio Installer.](media/dot-net-development-workload.png)
 
 1. In the **Configure your new project** window, type or enter *AppLogger* in the **Project name** box, and then select **Next**.
 
@@ -81,38 +82,33 @@ namespace AppLogger
 
 1. Visual Studio sets default values for some package properties such as **Package ID** and **Package Version**, however you can input your own values. 
 
-Give your package a **Package ID** that is unique on nuget.org, such as *<UserName\>.AppLogger.Sample*. You can confirm the ID is unique taken by checking if the following link exists: https://www.nuget.org/packages/<package name\>.
+    Give your package a **Package ID** that is unique on nuget.org, such as *<AccountName\>.Sample.AppLogger*, and save (CTRL + S). You can confirm the ID is unique by checking if the following link exists: https://www.nuget.org/packages/<package name\>.
 
-1. (Optional) To see the properties directly in the project file, right-click the project in Solution Explorer and select **Edit AppLogger.csproj**.
-
-   This option is only available starting in Visual Studio 2017 for projects that use the SDK-style attribute. Otherwise, right-click the project and choose **Unload Project**. Then right-click the unloaded project and choose **Edit AppLogger.csproj**.
+    > [!TIP]
+    > Check out our [best practices guide](../create-packages/Package-authoring-best-practices.md) for a detailed walkthrough of all the important package properties.
 
 ## Create the package
 
-1. Set the configuration to **Release**.
-
 1. Right click the project in **Solution Explorer** and select the **Pack** command:
 
-    ![NuGet pack command on the Visual Studio project context menu](media/qs_create-vs-02-pack-command.png)
+    ![NuGet pack command on the Visual Studio project context menu](media/right-click-pack.png)
 
-    If you don't see the **Pack** command, your project is probably not an SDK-style project and you need to use the `nuget.exe` CLI. Either [migrate the project](../consume-packages/migrate-packages-config-to-package-reference.md) and use `dotnet` CLI, or see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) instead for step-by-step instructions.
-
-1. Visual Studio builds the project and creates the `.nupkg` file. Examine the **Output** window for details (similar to the following), which contains the path to the package file. Note also that the built assembly is in `bin\Release\netstandard2.0` as befits the .NET Standard 2.0 target.
+1. Visual Studio builds the project and creates the `.nupkg` package file. Examine the **Output** window for details, including the path to the package file.
 
     ```output
-    1>------ Build started: Project: AppLogger, Configuration: Release Any CPU ------
-    1>AppLogger -> d:\proj\AppLogger\AppLogger\bin\Release\netstandard2.0\AppLogger.dll
-    1>Successfully created package 'd:\proj\AppLogger\AppLogger\bin\Release\AppLogger.1.0.0.nupkg'.
+    1>------ Build started: Project: AppLogger, Configuration: Debug Any CPU ------
+    1>AppLogger -> C:\Users\UserName\source\repos\AppLogger\AppLogger\bin\Debug\net6.0\AppLogger.dll
+    1>Successfully created package 'C:\Users\UserName\source\repos\AppLogger\AppLogger\bin\Debug\AccountName.Sample.AppLogger.1.0.0.nupkg'.
     ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
     ```
 
-TODO: Moved the below to an advanced section
+    From the output, we can see the the path to the genearted package is `C:\Users\UserName\source\repos\AppLogger\AppLogger\bin\Debug\AccountName.Sample.AppLogger.1.0.0.nupkg`.
 
-## Publish the package
+## Publish your package to nuget.org
 
-Once you have a `.nupkg` file, you publish it to nuget.org using either the `nuget.exe` CLI or the `dotnet.exe` CLI along with an API key acquired from nuget.org.
+In this walthrough, we'll publish the package using the nuget.org **Upload** page. You can learn about other ways to publish your package ...
 
-[!INCLUDE [publish-notes](includes/publish-notes.md)]
+
 
 ## Advanced
 
