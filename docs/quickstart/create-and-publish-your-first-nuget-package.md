@@ -9,7 +9,7 @@ ms.topic: quickstart
 
 # Quickstart: Create and publish your first NuGet package
 
-In this tutorial, you learn how to create a NuGet package with Visual Studio and publish it to nuget.org.
+In this tutorial, you learn how to create a NuGet package with Visual Studio or Visual Studio Code, and then publish it to nuget.org.
 
 In this tutorial, you:
 
@@ -24,9 +24,19 @@ In this tutorial, you:
 
 ## Prerequisites
 
-1. You must have Visual Studio installed. You can go to [visualstudio.com](https://www.visualstudio.com/) to install it for free!
+# [Visual Studio](#tab/visual-studio)
 
-1. Have or [register for a free account on nuget.org](../nuget-org/individual-accounts.md#add-a-new-individual-account). Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
+1. [Visual Sutdio 2022](https://www.visualstudio.com/) - you can install it for free!
+
+1. [A free account on nuget.org](../nuget-org/individual-accounts.md#add-a-new-individual-account). Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
+
+# [Visual Studio Code](#tab/visual-studio-code)
+
+1. [Visual Studio Code](https://code.visualstudio.com/download)
+
+1. [C# for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
+
+1. [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
 
 ## Create a class library project
 
