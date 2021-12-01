@@ -13,14 +13,15 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.0.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.0](https://visualstudio.microsoft.com/downloads/) | [6.0.0](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
+| [**6.0.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.0.0](https://visualstudio.microsoft.com/downloads/) | [6.0.0](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
+| **6.0.1** | [Visual Studio 2022 version 17.0.2](https://visualstudio.microsoft.com/downloads/) | N/A |
 
 <sup>1</sup> Installed with Visual Studio 2022 with.NET Core workload
 
 > [!NOTE]
 > Visual Studio 17.0, MSBuild 17.0, and .NET 6.0 require NuGet.exe 6.0 or later.
 
-## Summary: What's New in 6.0
+## Summary: What's New in 6.0.0
 
 🎉 **This is the first release to offer full authoring and restoring support for NuGet packages targeting .NET 6.0** 🎉
 
@@ -320,7 +321,18 @@ Install the [Visual Studio 2022 Preview](https://visualstudio.microsoft.com/down
 
 **[List of all issues fixed in this release - 6.0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=Z2lkOi8vcmFwdG9yL1JlbGVhc2UvNDMwMDQ)**
 
-**[List of commits in this release - 6.0](https://github.com/NuGet/NuGet.Client/compare/5.11.0.17...6.0.0.262)**
+**[List of commits in this release - 6.0.0](https://github.com/NuGet/NuGet.Client/compare/5.11.0.17...6.0.0.280)**
+
+## Summary: What's New in 6.0.1
+
+Only Visual Studio was updated with this version of NuGet.
+
+### Issues fixed in this release
+
+* [Bug]: Cannot get INuGetProjectService from the service broker in Visual Studio 17 - [#11367](https://github.com/NuGet/Home/issues/11367)
+* [Bug]: Package Manager Console initialization might cause deadlocks - [#11320](https://github.com/NuGet/Home/issues/11320)
+
+**[List of commits in this release - 6.0.1](https://github.com/NuGet/NuGet.Client/compare/6.0.0.280...6.0.1.1)**
 
 ### Community contributions
 
