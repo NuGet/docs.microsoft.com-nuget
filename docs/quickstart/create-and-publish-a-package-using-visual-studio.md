@@ -114,6 +114,8 @@ Once you have a `.nupkg` file, you publish it to nuget.org using either the `nug
 
 [!INCLUDE [publish-notes](includes/publish-notes.md)]
 
+## Advanced
+
 ### (Optional) Generate package on build
 
 You can configure Visual Studio to automatically generate the NuGet package when you build the project.
