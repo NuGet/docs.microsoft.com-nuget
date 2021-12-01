@@ -28,7 +28,7 @@ This gives your package consumers the flexibility to directly reference the pack
 
 `PackageReference` and `packages.config` have different features available. Whether you want to support your package consumers who use `PackageReference`, `packages.config`, or both, changes how you must author your package.
 
-NuGet's MSBuild Pack target does not support automatically including project references in the package. See [this issue](https://github.com/NuGet/Home/issues/3891), which lists some ways different developers have achieved their goal, or consider community developed tools such as [NuGetizer](https://github.com/devlooped/nugetizer). See the docs on [including content in a package](../reference/msbuild-targets.md#including-content-in-a-package) for how to use the `PackagePath` MSBuild item metadata to put files in any location in the package.
+NuGet's MSBuild Pack target does not support automatically including project references in the package. There is [an issue on GitHub](https://github.com/NuGet/Home/issues/3891), where community members shared ways they achieved this outcome, which usually involves using `PackagePath` MSBuild item metadata to place files anywhere in the package, as described in the the docs on [including content in a package](../reference/msbuild-targets.md#including-content-in-a-package), and using [`SuppressDependenciesWhenPacking` to avoid the project references becoming package dependencies](../reference/msbuild-targets.md#pack-target-inputs). Also consider community developed tools such as [NuGetizer](https://github.com/devlooped/nugetizer).
 
 ### `PackageReference` support
 
