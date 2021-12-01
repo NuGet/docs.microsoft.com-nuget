@@ -20,7 +20,9 @@ The remainder of this section describes the specific steps to take when authorin
 - [Adding packages to a template](#adding-packages-to-a-template)
 - [Best practices](#best-practices)
 
-For an example, see the [NuGetInVsTemplates sample](https://bitbucket.org/marcind/nugetinvstemplates).
+## Samples
+
+The [Preinstalled-Packages](https://github.com/NuGet/Samples/tree/main/Preinstalled-Packages) sample is available in the NuGet/Samples repository on GitHub.
 
 ## Adding packages to a template
 
