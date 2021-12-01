@@ -81,20 +81,13 @@ namespace AppLogger
 
 1. Visual Studio sets default values for some package properties such as **Package ID** and **Package Version**, however you can input your own values. 
 
-Give your package a **Package ID** that is unique on nuget.org. You can check if a package ID is unique by searching for the ID on NuGet.org or checking if the following link exists: https://www.nuget.org/packages/<package name\>.
-
-Give your package a unique package ID and fill out any other desired properties. For a mapping of MSBuild properties (SDK-style project) to properties in a *.nuspec*, see [pack targets](../reference/msbuild-targets.md#pack-target). For descriptions of properties, see the [.nuspec file reference](../reference/nuspec.md). All of the properties here go into the `.nuspec` manifest that Visual Studio creates for the project.
-
-    > [!Important]
-    > You must give the package an identifier that's unique across nuget.org or whatever host you're using. For this walkthrough we recommend including "Sample" or "Test" in the name as the later publishing step does make the package publicly visible (though it's unlikely anyone will actually use it).
-    >
-    > If you attempt to publish a package with a name that already exists, you see an error.
+Give your package a **Package ID** that is unique on nuget.org, such as *<UserName\>.AppLogger.Sample*. You can confirm the ID is unique taken by checking if the following link exists: https://www.nuget.org/packages/<package name\>.
 
 1. (Optional) To see the properties directly in the project file, right-click the project in Solution Explorer and select **Edit AppLogger.csproj**.
 
    This option is only available starting in Visual Studio 2017 for projects that use the SDK-style attribute. Otherwise, right-click the project and choose **Unload Project**. Then right-click the unloaded project and choose **Edit AppLogger.csproj**.
 
-## Run the pack command
+## Create the package
 
 1. Set the configuration to **Release**.
 
@@ -112,6 +105,14 @@ Give your package a unique package ID and fill out any other desired properties.
     1>Successfully created package 'd:\proj\AppLogger\AppLogger\bin\Release\AppLogger.1.0.0.nupkg'.
     ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
     ```
+
+TODO: Moved the below to an advanced section
+
+## Publish the package
+
+Once you have a `.nupkg` file, you publish it to nuget.org using either the `nuget.exe` CLI or the `dotnet.exe` CLI along with an API key acquired from nuget.org.
+
+[!INCLUDE [publish-notes](includes/publish-notes.md)]
 
 ### (Optional) Generate package on build
 
@@ -132,53 +133,6 @@ As an alternate to using the **Pack** menu command, NuGet 4.x+ and MSBuild 15.1+
 
 For more information, see [Create a package using MSBuild](../create-packages/creating-a-package-msbuild.md).
 
-## Publish the package
-
-Once you have a `.nupkg` file, you publish it to nuget.org using either the `nuget.exe` CLI or the `dotnet.exe` CLI along with an API key acquired from nuget.org.
-
-[!INCLUDE [publish-notes](includes/publish-notes.md)]
-
-### Acquire your API key
-
-[!INCLUDE [publish-api-key](includes/publish-api-key.md)]
-
-### Publish with the dotnet CLI or nuget.exe CLI
-
-Select the tab for your CLI tool, either **.NET Core CLI** (dotnet CLI) or **NuGet** (nuget.exe CLI).
-
-# [.NET Core CLI](#tab/netcore-cli)
-
-This step is the recommended alternative to using `nuget.exe`.
-
-Before you can publish the package, you must first open a command line.
-
-[!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
-
-# [NuGet](#tab/nuget)
-
-This step is an alternative to using `dotnet.exe`.
-
-1. Open a command line and change to the folder containing the `.nupkg` file.
-
-1. Run the following command, specifying your package name (unique package ID) and replacing the key value with your API key:
-
-    ```cli
-    nuget push AppLogger.1.0.0.nupkg qz2jga8pl3dvn2akksyquwcs9ygggg4exypy3bhxy6w6x6 -Source https://api.nuget.org/v3/index.json
-    ```
-
-1. nuget.exe displays the results of the publishing process:
-
-    ```output
-    Pushing AppLogger.1.0.0.nupkg to 'https://www.nuget.org/api/v2/package'...
-        PUT https://www.nuget.org/api/v2/package/
-        Created https://www.nuget.org/api/v2/package/ 6829ms
-    Your package was pushed.
-    ```
-
-See [nuget push](../reference/cli-reference/cli-ref-push.md).
-
----
-
 ### Publish errors
 
 [!INCLUDE [publish-errors](includes/publish-errors.md)]
@@ -186,26 +140,6 @@ See [nuget push](../reference/cli-reference/cli-ref-push.md).
 ### Manage the published package
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
-
-## Adding a readme and other files
-
-To directly specify files to include in the package, edit the project file and use the `content` property:
-
-```xml
-<ItemGroup>
-  <Content Include="readme.txt">
-    <Pack>true</Pack>
-    <PackagePath>\</PackagePath>
-  </Content>
-</ItemGroup>
-```
-
-This will include a file named `readme.txt` in the package root. Visual Studio displays the contents of that file as plain text immediately after installing the package directly. (Readme files are not displayed for packages installed as dependencies). For example, here's how the readme for the HtmlAgilityPack package appears:
-
-![The display of a readme file for a NuGet package upon installation](../create-packages/media/Create_01-ShowReadme.png)
-
-> [!Note]
-> Merely adding the readme.txt at the project root will not result in it being included in the resulting package.
 
 ## Related video
 
