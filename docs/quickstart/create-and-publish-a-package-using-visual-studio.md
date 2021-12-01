@@ -1,44 +1,62 @@
 ---
-title: Create and publish a .NET Standard NuGet package - Visual Studio on Windows
-description: A walkthrough tutorial on creating and publishing a .NET Standard NuGet package using Visual Studio on Windows.
+title: Create and publisher your first package with Visual Studio
+description: A walkthrough tutorial on creating and publishing a NuGet package using Visual Studio on Windows.
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/16/2019
 ms.topic: quickstart
 ---
 
-# Quickstart: Create and publish a NuGet package using Visual Studio (.NET Standard, Windows only)
+# Quickstart: Create and publish a NuGet package using Visual Studio (Windows only)
 
-It's a simple process to create a NuGet package from a .NET Standard Class Library in Visual Studio on Windows, and then publish it to nuget.org using a CLI tool.
+In this tutorial, you learn how to create a NuGet package with Visual Studio and publish it to nuget.org.
+
+In this tutorial, you:
+
+> [!div class="checklist"]
+> * Create a class library project.
+> * Configure the package properties.
+> * Publish your package to nuget.org.
 
 > [!Note]
-> If you are using Visual Studio for Mac, refer to [this information](/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library) on creating a NuGet package, or use the [dotnet CLI tools](create-and-publish-a-package-using-the-dotnet-cli.md).
+> On platforms other than Windows, you can [create packages using dotnet CLI tools](create-and-publish-a-package-using-the-dotnet-cli.md). On macOS, you can also [create packages with Visual Studio for Mac](/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library).
 
 ## Prerequisites
 
-1. Install any edition of Visual Studio 2019 from [visualstudio.com](https://www.visualstudio.com/) with a .NET Core related workload.
+1. You must have Visual Studio installed. You can go to [visualstudio.com](https://www.visualstudio.com/) to install it for free!
 
-1. If it's not already installed, install the `dotnet` CLI.
-
-   For the `dotnet` CLI, starting in Visual Studio 2017, the `dotnet` CLI is automatically installed with any .NET Core related workloads. Otherwise, install the [.NET Core SDK](https://www.microsoft.com/net/download/) to get the `dotnet` CLI. The `dotnet` CLI is required for .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md) (SDK attribute). The default .NET Standard class library template in Visual Studio 2017 and higher, which is used in this article, uses the SDK attribute.
-   
-   > [!Important]
-   > If you are working with a non-SDK-style project, follow the procedures in [Create and publish a .NET Framework package (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md) to create and publish the package instead. For this article, the `dotnet` CLI is recommended. Although you can publish any NuGet package using the `nuget.exe` CLI, some of the steps in this article are specific to SDK-style projects and the dotnet CLI. The nuget.exe CLI is used for [non-SDK-style projects](../resources/check-project-format.md) (typically .NET Framework).
-
-1. [Register for a free account on nuget.org](../nuget-org/individual-accounts.md#add-a-new-individual-account) if you don't have one already. Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
+1. Have or [register for a free account on nuget.org](../nuget-org/individual-accounts.md#add-a-new-individual-account). Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
 
 ## Create a class library project
 
-You can use an existing .NET Standard Class Library project for the code you want to package, or create a simple one as follows:
+To start, create a .NET class library. This project type comes with all the template files you need.
 
-1. In Visual Studio, choose **File > New > Project**, expand the **Visual C# > .NET Standard** node, select the "Class Library (.NET Standard)" template, name the project AppLogger, and click **OK**.
+1. Open Visual Studio, and choose **Create a new project** in the Start window.
 
-   > [!Tip]
-   > Unless you have a reason to choose otherwise, .NET Standard is the preferred target for NuGet packages, as it provides compatibility with the widest range of consuming projects.
+   ![Screenshot that shows the Create a new project window.](media/create-new-project.png)
 
-1. Right-click on the resulting project file and select **Build** to make sure the project was created properly. The DLL is found within the Debug folder (or Release if you build that configuration instead).
+1. In the **Create a new project** window, search for *C# Class Library*. Select the C# Class Library template, then selct **Next**.
 
-Within a real NuGet package, of course, you implement many useful features with which others can build applications. For this walkthrough, however, you won't write any additional code because a class library from the template is sufficient to create a package. Still, if you'd like some functional code for the package, use the following:
+   ![Screenshot that shows the class library project selection in the Create new project window.](media/select-class-library-project.png)
+
+   > [!NOTE]
+   > If you don't see the **Class Library** template, select **Install more tools and features**.
+   >
+   > ![Screenshot that shows the Install more tools and features link.](media/not-finding-what-looking-for.png)
+   >
+   > In the Visual Studio Installer, choose the **.NET desktop development** workload, and then select **Modify**.
+   >
+   > ![Screenshot showing the .NET desktop development workload in the Visual Studio Installer.](media/dot-net-development-workload.png)
+
+1. In the **Configure your new project** window, type or enter *AppLogger* in the **Project name** box, and then select **Next**.
+
+   ![Screenshot that shows naming the project AppLogger in the Configure your new project window.](media/configure-your-new-project-applogger.png)
+
+1. In the **Additional information** window select **Create**. For this tutorial, you can use the default selected framework.
+
+   ![Screenshot that shows .NET 6.0 selected in the Additional information window.](media/csharp-target-framework.png)
+
+1. You can already pack the template code as-is, but let's make it do something interesting! Replace the existing AppLogger code with code below so our AppLogger library has a method to write text to the console.
 
 ```cs
 namespace AppLogger
@@ -55,16 +73,17 @@ namespace AppLogger
 
 ## Configure package properties
 
-1. Right-click the project in Solution Explorer, and choose **Properties** menu command, then select the **Package** tab.
+1. Right-click the **AppLogger** project in Solution Explorer and select the **Properties** menu command. Within the project properties window, select the **Package** tab on the left.
 
    The **Package** tab appears only for SDK-style projects in Visual Studio, typically .NET Standard or .NET Core class library projects; if you are targeting a non-SDK style project (typically .NET Framework), either [migrate the project](../consume-packages/migrate-packages-config-to-package-reference.md) or see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) instead for step-by-step instructions.
 
-    ![NuGet package properties in a Visual Studio project](media/qs_create-vs-01-package-properties.png)
+    ![NuGet package properties in a Visual Studio project](media/view-package-properties.png)
 
-    > [!Note]
-    > For packages built for public consumption, pay special attention to the **Tags** property, as tags help others find your package and understand what it does.
+1. Visual Studio sets default values for some package properties such as **Package ID** and **Package Version**, however you can input your own values. 
 
-1. Give your package a unique identifier and fill out any other desired properties. For a mapping of MSBuild properties (SDK-style project) to properties in a *.nuspec*, see [pack targets](../reference/msbuild-targets.md#pack-target). For descriptions of properties, see the [.nuspec file reference](../reference/nuspec.md). All of the properties here go into the `.nuspec` manifest that Visual Studio creates for the project.
+Give your package a **Package ID** that is unique on nuget.org. You can check if a package ID is unique by searching for the ID on NuGet.org or checking if the following link exists: https://www.nuget.org/packages/<package name\>.
+
+Give your package a unique package ID and fill out any other desired properties. For a mapping of MSBuild properties (SDK-style project) to properties in a *.nuspec*, see [pack targets](../reference/msbuild-targets.md#pack-target). For descriptions of properties, see the [.nuspec file reference](../reference/nuspec.md). All of the properties here go into the `.nuspec` manifest that Visual Studio creates for the project.
 
     > [!Important]
     > You must give the package an identifier that's unique across nuget.org or whatever host you're using. For this walkthrough we recommend including "Sample" or "Test" in the name as the later publishing step does make the package publicly visible (though it's unlikely anyone will actually use it).
