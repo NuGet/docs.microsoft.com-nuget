@@ -139,7 +139,7 @@ To start, create a .NET class library. This project type comes with all the temp
     ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
     ```
 
-    From the output, we can see the the path to the genearted package is `C:\Users\UserName\source\repos\AppLogger\AppLogger\bin\Debug\AccountName.Sample.AppLogger.1.0.0.nupkg`.
+    From our example output, we can see the path to the generated package is `C:\Users\UserName\source\repos\AppLogger\AppLogger\bin\Debug\AccountName.Sample.AppLogger.1.0.0.nupkg`.
 
 ## Publish your package to nuget.org
 

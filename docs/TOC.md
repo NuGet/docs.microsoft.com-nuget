@@ -4,9 +4,7 @@
 ## [Install and use a package (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
 ## [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
 ## [Install and use a package (Visual Studio for Mac)](quickstart/install-and-use-a-package-in-visual-studio-mac.md)
-## [Create and publish a NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
-## [Create and publish your first NuGet package](quickstart/create-and-publish-a-package-using-visual-studio.md)
-## [Create and publish a NET Framework package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)
+## [Create and publish your first NuGet package](quickstart/create-and-publish-your-first-nuget-package.md)
 # Consume packages
 ## [Overview and workflow](consume-packages/overview-and-workflow.md)
 ## [Find and choose packages](consume-packages/finding-and-choosing-packages.md)
