@@ -13,12 +13,12 @@ Assemblies are used in two different ways during a build. The first is for compi
 
 ## Recommendation: Package dependencies and include/exclude assets
 
-Our recommendation is to have one package per assembly, in which case you can use `PrivateAssets="compile"` in your `PackageReference` or `ProjectReference`. This provides more flexibility and minimizes risk that two different packages will contain different versions of the same assembly, preventing NuGet from being able to manage versions.
+Our recommendation is to have one package per assembly, in which case you can add `compile` to the private assets. Note that the default private assets when none is supplied is `build;analyzers`. Therefore, you should use `PrivateAssets="compile;build;analyzers"` in your `PackageReference` or `ProjectReference`. This provides more flexibility and minimizes risk that two different packages will contain different versions of the same assembly, preventing NuGet from being able to manage versions.
 
 ```xml
 <ItemGroup>
-  <ProjectReference Include="..\OtherProject\OtherProject.csproj" PrivateAssets="compile" />
-  <PackageReference Include="SomePackage" Version="1.2.3" PrivateAssets="compile" />
+  <ProjectReference Include="..\OtherProject\OtherProject.csproj" PrivateAssets="compile;build;analyzers" />
+  <PackageReference Include="SomePackage" Version="1.2.3" PrivateAssets="compile;build;analyzers" />
 </ItemGroup>
 ```
 
