@@ -80,10 +80,10 @@ If you would like a new NuGet related API in Visual Studio, please search [NuGet
 
 1. Install the [`NuGet.VisualStudio.Contracts`](https://www.nuget.org/packages/NuGet.VisualStudio.Contracts/) package into your project, as well as [`Microsoft.VisualStudio.SDK`](https://www.nuget.org/packages/Microsoft.VisualStudio.SDK).
 
-1. Use the `IAsyncServiceProvider` to get Visual Studio's service broker, and use that to get NuGet's service. Note that [`AsyncPackage` extends `IVsAsyncServiceProvider2`](/dotnet/api/microsoft.visualstudio.shell.asyncpackage?view=visualstudiosdk-2022), so your class that implements `AsyncPackage` can be used as the `IAsyncServiceProvider`.
+1. Use the `IAsyncServiceProvider` to get Visual Studio's service broker, and use that to get NuGet's service. Note that [`AsyncPackage` extends `IVsAsyncServiceProvider2`](/dotnet/api/microsoft.visualstudio.shell.asyncpackage), so your class that implements `AsyncPackage` can be used as the `IAsyncServiceProvider`.
 
    ```cs
-   // Your [AsyncPackage]((/dotnet/api/microsoft.visualstudio.shell.asyncpackage?view=visualstudiosdk-2022)) implements IAsyncServiceProvider
+   // Your AsyncPackage implements IAsyncServiceProvider
    IAsyncServiceProvider asyncServiceProvider = this;
    var brokeredServiceContainer = await asyncServiceProvider.GetServiceAsync<SVsBrokeredServiceContainer, IBrokeredServiceContainer>();
    var serviceBroker = brokeredServiceContainer.GetFullAccessServiceBroker();
@@ -105,7 +105,7 @@ If you would like a new NuGet related API in Visual Studio, please search [NuGet
 
 1. Install the [`NuGet.VisualStudio`](https://www.nuget.org/packages/NuGet.VisualStudio) package into your project, which contains the `NuGet.VisualStudio.dll` assembly.
 
-    In NuGet 5.11 and earlier, the package automatically sets the [**Embed Interop Types**](/dotnet/framework/interop/type-equivalence-and-embedded-interop-types) property of the assembly reference to **True**. [Visual Studio 2022 policy regarding embed interop types changed](/visualstudio/extensibility/migration/migrated-assemblies?view=vs-2022), so NuGet.VisualStudio package version 6.0.0 and above no longer use this.
+    In NuGet 5.11 and earlier, the package automatically sets the [**Embed Interop Types**](/dotnet/framework/interop/type-equivalence-and-embedded-interop-types) property of the assembly reference to **True**. [Visual Studio 2022 policy regarding embed interop types changed](/visualstudio/extensibility/migration/migrated-assemblies?view=vs-2022&preserve-view=true), so NuGet.VisualStudio package version 6.0.0 and above no longer use this.
 
 1. To use a service, import it through the [MEF Import attribute](/dotnet/framework/mef/index#imports-and-exports-with-attributes), or through the [IComponentModel service](/dotnet/api/microsoft.visualstudio.componentmodelhost.icomponentmodel).
 
