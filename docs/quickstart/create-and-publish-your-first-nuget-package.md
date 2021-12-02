@@ -67,7 +67,7 @@ To start, create a .NET class library. This project type comes with all the temp
 
    ![Screenshot that shows naming the project AppLogger in the Configure your new project window.](media/configure-your-new-project-applogger.png)
 
-1. In the **Additional information** window select **Create**. For this tutorial, you can use the default selected framework.
+1. In the **Additional information** window select **Create**. For this tutorial, you can use the default selected framework (.NET 6 for Visual Studio).
 
    ![Screenshot that shows .NET 6.0 selected in the Additional information window.](media/csharp-target-framework.png)
 
@@ -167,6 +167,8 @@ Open the `.csproj` project file and add the following group of properties within
 
 ## Publish your package to nuget.org
 
+<!-- TODO -->
+
 In this walthrough, we'll publish the package using the nuget.org **Upload** page. However, you can also publish package from the command line for more advanced scenarios.
 
 ## Related video
@@ -180,6 +182,8 @@ Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101
 # [Visual Studio Code](#tab/visual-studio-code)
 
 ## Related video
+
+<!--Move video to the top with a cool header-->
 
 > [!Video https://channel9.msdn.com/Series/NuGet-101/Create-and-Publish-a-NuGet-Package-with-the-NET-CLI-5-of-5/player]
 

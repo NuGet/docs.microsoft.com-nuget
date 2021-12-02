@@ -1,15 +1,17 @@
 ---
-title: Install and use a NuGet package in Visual Studio
-description: A walkthrough tutorial on the process of installing and using a NuGet package in a Visual Studio project.
+title: Install and use a NuGet package
+description: A walkthrough tutorial on the process of installing and using a NuGet package in a project.
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/24/2018
 ms.topic: quickstart
 ---
 
-# Quickstart: Install and use a package in Visual Studio (Windows only)
+# Quickstart: Install and use a package
 
-NuGet packages contain reusable code that other developers make available to you for use in your projects. See [What is NuGet?](../What-is-NuGet.md) for background. Packages are installed into a Visual Studio project using the NuGet Package Manager, the [Package Manager Console](../consume-packages/install-use-packages-powershell.md), or the [dotnet CLI](install-and-use-a-package-using-the-dotnet-cli.md). This article demonstrates the process using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package and a Windows Presentation Foundation (WPF) project. The same process applies to any other .NET or .NET Core project.
+NuGet packages contain reusable code that other developers make available to you for use in your projects. See [What is NuGet?](../What-is-NuGet.md) for background.
+
+Packages are installed into a Visual Studio project using the NuGet Package Manager, the [Package Manager Console](../consume-packages/install-use-packages-powershell.md), or the [dotnet CLI](install-and-use-a-package-using-the-dotnet-cli.md). This article demonstrates the process using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package and a Windows Presentation Foundation (WPF) project. The same process applies to any other .NET or .NET Core project.
 
 Once installed, refer to the package in code with `using <namespace>` where \<namespace\> is specific to the package you're using. Once the reference is made, you can call the package through its API.
 
