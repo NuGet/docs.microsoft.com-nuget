@@ -65,7 +65,6 @@ The MSBuild pack targets don't support the `<references>` element. See the docs 
 > [!Important]
 > If a package contains the nuspec `<references>` element and does not contain assemblies in `ref\<tfm>\`, NuGet will advertise the assemblies listed in the nuspec `<references>` element as both the compile and runtime assets. This means there will be runtime exceptions when the referenced assemblies need to load any other assembly in the `lib\<tfm>\` directory. Therefore, it is important to use both the nuspec `<references>` for `packages.config` support, as well as duplicating assemblies in the `ref/` folder for `PackageReference` support.
 
-
 #### Example
 
 My package will contain three assemblies, `MyLib.dll`, `MyHelpers.dll` and `MyUtilities.dll`, which are targeting the .NET Framework 4.7.2. `MyUtilities.dll` contains classes intended to be used only by the other two assemblies, so I don't want to make those classes available in IntelliSense or at compile time to projects using my package. My `nuspec` file needs to contain the following XML elements:
