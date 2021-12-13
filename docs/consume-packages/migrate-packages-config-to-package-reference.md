@@ -25,7 +25,7 @@ Visual Studio 2017 Version 15.7 and later supports migrating a project from the 
 * Migration is not currently available for C++ and ASP.NET projects.
 * Some packages may not be fully compatible with PackageReference. For more information, see [package compatibility issues](#package-compatibility-issues).
 
-In addition, there are some differences in how PackageReferences work compared to packages.config. For example - [constraining upgrade versions](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions) is not supprted by PackageReference but add support for [Floating Versions](../consume-packages/package-references-in-project-files.md#floating-versions).
+In addition, there are some differences in how PackageReferences work compared to packages.config. For example, [constraining upgrade versions](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions) is not supported by PackageReference, but PackageReference adds support for [Floating Versions](../consume-packages/package-references-in-project-files.md#floating-versions).
 
 ### Known Issues
 
