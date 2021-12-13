@@ -218,7 +218,7 @@ Stores keys for sources that use API key authentication, as set with the [`nuget
 
 ### disabledPackageSources
 
-Identified currently disabled sources. May be empty.
+Identified currently disabled sources. May be empty. Unless specific sources are disabled in this section, they are enabled.
 
 | Key | Value |
 | --- | --- |
@@ -234,6 +234,8 @@ Identified currently disabled sources. May be empty.
 <!-- Empty list -->
 <disabledPackageSources />
 ```
+
+In the example above, the package source `Contoso` is disabled and will not be used to download or install packages.
 
 ### activePackageSource
 
