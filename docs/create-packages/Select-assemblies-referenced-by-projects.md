@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Select Assemblies Referenced By Projects
 
-Assemblies are used in two different ways during a build. The first is for compile, which allows the package consumer's code to compile against APIs in the assembly, and for Intellisense to give suggestions. The second is runtime, where the assembly is copied to the `bin` directory and is used at runtime. Some package authors would like only their own assemblies (or a subset of their assemblies) available to their package consumers at compile time, but need to provide all their dependencies for runtime. This document looks at ways to achieve this outcome.
+Assemblies are used in two different ways during a build. The first is for compile, which allows the package consumer's code to compile against APIs in the assembly, and for Intellisense to give suggestions. The second is runtime, where the assembly is copied to the `bin` directory and is used during program execution. Some package authors would like only their own assemblies (or a subset of their assemblies) available to their package consumers at compile time, but need to provide all their dependencies for runtime. This document looks at ways to achieve this outcome.
 
 ## Recommended: One assembly per package
 
@@ -22,15 +22,26 @@ Our recommendation is to have one package per assembly, and package dependencies
 </ItemGroup>
 ```
 
+If you are creating a package from a custom `nuspec` file, rather than letting NuGet auto-generate one for you, your `nuspec` should use the `exclude` XML attribute .
+
+```xml
+<dependencies>
+  <group targetFramework=".NETFramework4.8">
+    <dependency id="OtherProject" version="3.2.1" exclude="Compile,Build,Analyzers" />
+    <dependency id="SomePackage" version="1.2.3" exclude="Compile,Build,Analyzers" />
+  </group>
+</dependencies>
+```
+
 There are three reasons why this is the recommended solution.
 
-Firstly, useful assemblies often get referenced by new assemblies/packages. While a utility assembly might be intended to only be used by a single package today, making it tempting to ship both assemblies in a single package, if a second package wants to use the "private" utility assembly in the future, either the utility assembly needs to be moved into a new package and the old package needs to be updated to declare it as a dependency, or the utility package needs to ship in both the existing and the new package. If the assembly ships in two different packages, and a project references both packages, then NuGet will be unable to assist in helping manage versions.
+Firstly, useful assemblies often get referenced by new assemblies/packages. While a utility assembly might be intended to only be used by a single package today, making it tempting to ship both assemblies in a single package, if a second package wants to use the "private" utility assembly in the future, either the utility assembly needs to be moved into a new package and the old package needs to be updated to declare it as a dependency, or the utility package needs to ship in both the existing and the new package. If the assembly ships in two different packages, and a project references both packages, if there are different versions of the utility assembly in the two packages, NuGet will be unable to assist in version management.
 
 Secondly, there may be times that the developers using your package want to also use APIs from your dependencies. For example, consider the package [Microsoft.ServiceHub.Client version 3.0.3078](https://www.nuget.org/packages/Microsoft.ServiceHub.Client/3.0.3078). If you download the package and check the `nuspec` file, you can see that it lists two packages starting with `Microsoft.VisualStudio.` as dependencies, meaning it needs them at runtime, but it also excludes their compile assets. This means that projects using Microsoft.ServiceHub.Client will not have the Visual Studio APIs available in IntelliSense or if they build the project, unless the project explicit installs those packages. And this is the advantage that a package dependency with an exclude asset has. Projects using your package, if they want to use your dependencies as well, they can add a reference to the package to make the APIs available to themselves.
 
-Finally, some package authors have been confused in the past about NuGet's assembly selection for packages supporting more than one target framework. If your main assembly supports different target frameworks to your utility assembly, it may not be obvious which `lib/` directories to put all of the assemblies into. By separating each package by assembly name, it's more intuitive which `lib/` folders each assembly should go into. Note, this does not mean having `Package1.net48` and `Package1.net6.0` packages. It means having `lib/net48/Package1.dll` and `lib/net6.0/Package6.0` in `Package1`, and `lib/netstandard2.0/Package2.dll` and `lib/net5.0/Package2.dll` in `Package2`.
+Finally, some package authors have been confused in the past about NuGet's assembly selection for packages supporting more than one target framework when their package also contains multiple assemblies. If your main assembly supports different target frameworks to your utility assembly, it may not be obvious which `lib/` directories to put all of the assemblies into. By separating each package by assembly name, it's more intuitive which `lib/` folders each assembly should go into. Note, this does not mean having `Package1.net48` and `Package1.net6.0` packages. It means having `lib/net48/Package1.dll` and `lib/net6.0/Package6.0` in `Package1`, and `lib/netstandard2.0/Package2.dll` and `lib/net5.0/Package2.dll` in `Package2`. When Nuget restores a project, Nuget will independently do asset selection for the two packages.
 
-Also note that dependency include/exclude assets is only used by projects using PackageReference. Any project installing your package using `packages.config` will install your dependency and have its APIs available as well. `packages.config` is only supported by Visual Studio's older .NET Framework project templates. SDK style projects, even those targeting .NET Framework, do not support `packages.config`, and therefore do support dependency include/exclude assets.
+Also note that dependency include/exclude assets is only used by projects using PackageReference. Any project installing your package using `packages.config` will install your dependencies and have its APIs available as well. `packages.config` is only supported by Visual Studio's older .NET Framework project templates. SDK style projects, even those targeting .NET Framework, do not support `packages.config`, and therefore do support dependency include/exclude assets.
 
 ## Not recommended: Multiple assemblies in one package
 
