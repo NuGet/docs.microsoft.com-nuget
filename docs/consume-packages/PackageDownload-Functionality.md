@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # PackageDownload
 
-Starting with Visual Studio 2017 and .NET SDK 1.0.0, NuGet [PackageReference](..\Package-References-in-Project-Files.md) functionality was added.
+Starting with Visual Studio 2017 and .NET SDK 1.0.0, NuGet [PackageReference](Package-References-in-Project-Files.md) functionality was added.
 
 `PackageReference` allows you to manage your package dependencies directly in your project file.
 When you run restore, the transitive dependencies are resolved automatically and the applicable references are chosen for each package in the project graph.
@@ -26,11 +26,11 @@ PackageDownload is a utility feature for all .NET SDK-style projects, and it wor
 |------------|-------------|---------|
 | Version | Only exact versions, surrounded with `[]` are supported. Multiple versions can be specified separated by `;` | `[1.0.0]`, `[1.0.0];[2.0.0]` |
 
-Packages acquired through PackageDownload will undergo the same [installation process](..concepts\package-installation-process.md) as packages acquired through PackageReference.
+Packages acquired through PackageDownload will undergo the same [installation process](..\concepts\package-installation-process.md) as packages acquired through PackageReference.
 This means [package signatures](installing-signed-packages.md) are validated, [package source mapping](Package-Source-Mapping.md) is considered.
 All newly acquired PackageDownload packages will be installed in the global packages folder.
 
-| | PackageReference | PackageDownload |
+| Feature | PackageReference | PackageDownload |
 |-|------------------|-----------------|
 | Package assets selection | Assemblies from packages are automatically added to the project and can be used for compile and runtime | Assemblies or any other assets from the package are not included in the project. |
 | Dependencies | Automatically resolved, and flattened to a single version | Not considered at all |
