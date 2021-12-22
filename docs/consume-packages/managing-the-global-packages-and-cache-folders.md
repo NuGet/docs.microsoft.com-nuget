@@ -103,11 +103,11 @@ Starting in Visual Studio 2017, use the **Tools > NuGet Package Manager > Packag
 
 The following errors can occur when using `nuget locals` or `dotnet nuget locals`:
 
-- *Error: The process cannot access the file <package> because it is being used by another process* or *Clearing local resources failed: Unable to delete one or more files*
+- *Error: The process cannot access the file \<package\> because it is being used by another process* or *Clearing local resources failed: Unable to delete one or more files*
 
     One or more files in the folder are in use by another process; for example, a Visual Studio project is open that refers to packages in the *global-packages* folder. Close those processes and try again.
 
-- *Error: Access to the path <path> is denied* or *The directory is not empty*
+- *Error: Access to the path \<path\> is denied* or *The directory is not empty*
 
     You don't have permission to delete files in the cache. Change the folder permissions, if possible, and try again. Otherwise, contact your system administrator.
 
