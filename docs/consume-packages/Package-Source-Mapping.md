@@ -1,6 +1,6 @@
 ---
 title: Package Source Mapping
-description: Describes  Describes the process of installing signed NuGet packages and configuring package signature trust settings.
+description: Describes package source mapping functionality and how to onboard
 author: nkolev92
 ms.author: nikolev
 ms.date: 10/15/2021
