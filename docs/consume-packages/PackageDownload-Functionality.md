@@ -20,21 +20,57 @@ In [5.3 of NuGet](..\release-notes\NuGet-5.3.md) a companion functionality was i
 
 PackageDownload is a utility feature for all .NET SDK-style projects, and it works along side `PackageReference`.
 
-- Packages acquired through PackageDownload will undergo the same [installation process](..concepts\package-installation-process.md) as packages acquired through PackageReference.
+`PackageDownload` items support different attributes compared to `PackageReference`. Only attributes listed in the below table are supported.
+
+| Attributes | Description | Example |
+|------------|-------------|---------|
+| Version | Only exact versions, surrounded with `[]` are supported. Multiple versions can be specified separated by `;` | `[1.0.0]`, `[1.0.0];[2.0.0]` |
+
+Packages acquired through PackageDownload will undergo the same [installation process](..concepts\package-installation-process.md) as packages acquired through PackageReference.
 This means [package signatures](installing-signed-packages.md) are validated, [package source mapping](Package-Source-Mapping.md) is considered.
-- When a package is specified using a PackageDownload item, its assemblies will not be automatically included in the project.
-  - For example: If you installed Newtonsoft.Json as a PackageReference, you will be able to use its APIs in your project. If you installed Newtonsoft.jSon as a PackageDownload, you will not be able to use its APIs.
-- When a package is specified using a PackageDownload item, its dependencies will not be automatically resolved.
-- Packages specified using PackageDownload will not part of packages created using the pack command.
-- Given that no transitive dependency resolution and no asset seletion is happening, attributes such as `PrivateAssets`, `ExcludeAssets`, `IncludeAssets` and `GeneratePathProperty` are *not* supported in PackageDownload. Only the version attribute is supported.
-- PackageDownload only allows an exact version specification.
-- PackageDownload allows you to download multiple versions of the same package. 
+All newly acquired PackageDownload packages will be installed in the global packages folder.
+
+| | PackageReference | PackageDownload |
+|-|------------------|-----------------|
+| Package assets selection | Assemblies from packages are automatically added to the project and can be used for compile and runtime | Assemblies or any other assets from the package are not included in the project. |
+| Dependencies | Automatically resolved, and flattened to a single version | Not considered at all |
+| pack | Included in the package specification | Not included in the package specification. |
+| Transitivity | PackageReference items are automatically propagated to dependant projects | PackageDownload items are ignored by dependant projects |
+| Version | Version ranges such as `1.0.0` or `[1.0.0, )` are supported. Exactly 1 version is allowed. | Only exact versions are supported. More than 1 version can be downloaded. |
+| dotnet list package | All dependencies are included | PackageDownload packages are not shown by `dotnet list package`. |
+
+Due to the fact that PackageDownload are not tied to the project in any way beyond acquisition, multiple versions of the same package can be downloaded.
 
 ### PackageDownload limitations
 
-Given that this is an advanced feature with limited applicability, it doesn't have support equivalent to PackageReference.
+Given that this is an advanced feature with limited applicability, it doesn't have a tooling support equivalent to PackageReference.
 
 - There is no VisualStudio or dotnet.exe functionality to modify PackageDownload items. You can only change them manually in your project files.
-- Commands such as `dotnet list package` will not indicate the presence of PackageDownload items.
-- PackageDownload packages are *not* included in the packages lock file. 
-- PackageDownload packages are *not* part of the packages created using the pack command. 
+- dotnet add, remove, and list commands do not account for PackageDownload items.
+
+### PackageDownload applications
+
+The primary application of PackageDownload is downloading packages that do not follow the traditional NuGet package structure and primarily carry build time dependencies.
+
+Ideally, all your dependencies are expressed through PackageReference, but in scenarios where that's not possible, or often times not practical yet, you can use this feature to simply `download` packages to a certain location, in a similar way that you could achieve that with a `packages.config` file not tied to a project. 
+
+Example:
+
+```xml
+
+<Project Sdk="Microsoft.Build.NoTargets/1.0.80"> <!-- This is not a project we want to build. -->
+
+    <PropertyGroup>
+        <RestorePackagesPath>packages/</RestorePackagesPath> <!-- Changes the global packages folder-->
+        <MSBuildProjectExtensionsPath>$(RestorePackagesPath)obj/</MSBuildProjectExtensionsPath> <!-- It's still PackageReference, so project intermediates are still created. -->
+        <TargetFramework>net5.0</TargetFramework> <!-- This is not super relevant, as long as your SDK version supports it. -->
+        <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder> <!-- If a package is resolved to a fallback folder, it may not be downloaded.-->
+        <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages> <!-- We don't want to build this project, so we do not need the reference assemblies for the framework we chose.-->
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageDownload Include="MySpecialPackage" version="[6.0.0]" />
+    </ItemGroup>
+
+</Project>
+```
