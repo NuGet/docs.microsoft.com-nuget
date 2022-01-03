@@ -14,7 +14,7 @@ Starting with Visual Studio 2017 and .NET SDK 1.0.0, NuGet [PackageReference](Pa
 `PackageReference` allows you to manage your package dependencies directly in your project file.
 When you run restore, the transitive dependencies are resolved automatically and the applicable references are chosen for each package in the project graph.
 
-In [5.3 of NuGet](..\release-notes\NuGet-5.3.md) a companion functionality was introduced for [.NET SDK-style projects](..\resources\check-project-format.md) called `PackageDownload`.
+In [5.3 of NuGet](..\release-notes\NuGet-5.3.md) a companion functionality was introduced for [.NET SDK-style projects](..\resources\check-project-format.md) called `PackageDownload`, which allows you to simply download a package without its dependencies or files included in the project.
 
 ## PackageDownload specification
 
@@ -47,6 +47,7 @@ Given that this is an advanced feature with limited applicability, it doesn't ha
 
 - There is no VisualStudio or dotnet.exe functionality to modify PackageDownload items. You can only change them manually in your project files.
 - dotnet add, remove, and list commands do not account for PackageDownload items.
+- PackageDownload items are *not* part of the [packages lock file](package-references-in-project-files.md#locking-dependencies).
 
 ### PackageDownload applications
 
