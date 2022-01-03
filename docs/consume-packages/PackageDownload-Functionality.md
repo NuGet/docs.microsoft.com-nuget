@@ -14,7 +14,8 @@ Starting with Visual Studio 2017 and .NET SDK 1.0.0, NuGet [PackageReference](Pa
 `PackageReference` allows you to manage your package dependencies directly in your project file.
 When you run restore, the transitive dependencies are resolved automatically and the applicable references are chosen for each package in the project graph.
 
-In [5.3 of NuGet](..\release-notes\NuGet-5.3.md) a companion functionality was introduced for [.NET SDK-style projects](..\resources\check-project-format.md) called `PackageDownload`.
+In [NuGet version 5.3](..\release-notes\NuGet-5.3.md) a companion feature was introduced for [.NET SDK-style projects](..\resources\check-project-format.md) called `PackageDownload`.
+
 
 ## PackageDownload specification
 
