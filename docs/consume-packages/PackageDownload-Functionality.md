@@ -1,5 +1,5 @@
 ---
-title: PackageDownload
+title: Download packages with PackageDownload
 description: Describes the PackageDownload feature, which is a complement to PackageReference.
 author: nkolev92
 ms.author: nikolev
