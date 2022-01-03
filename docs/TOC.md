@@ -27,6 +27,7 @@
 ### [Work with authenticated Feeds](consume-packages/consuming-packages-authenticated-feeds.md)
 ### [Work with source control systems](consume-packages/packages-and-source-control.md)
 ### [Common NuGet configurations](consume-packages/configuring-nuget-behavior.md)
+### [PackageDownload functionality](consume-packages/packagedownload-functionality.md)
 ## Reference packages in your project
 ### [PackageReference in project files](consume-packages/package-references-in-project-files.md)
 ### [Migrate packages.config to PackageReference](consume-packages/migrate-packages-config-to-package-reference.md)
