@@ -33,7 +33,8 @@ All newly acquired PackageDownload packages will be installed in the global pack
 
 | Feature | PackageReference | PackageDownload |
 |-|------------------|-----------------|
-| Package assets selection | Assemblies from packages are automatically added to the project and can be used for compile and runtime | Assemblies or any other assets from the package are not included in the project. |
+| Package assets selection | Assemblies from packages are automatically added to the project and can be used for compile and runtime | No assets from the package are included in the project. |
+
 | Dependencies | Automatically resolved, and flattened to a single version | Not considered at all |
 | pack | Included in the package specification | Not included in the package specification. |
 | Transitivity | PackageReference items are automatically propagated to dependant projects | PackageDownload items are ignored by dependant projects |
