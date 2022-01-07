@@ -67,7 +67,7 @@ NuGet distribution vehicles:
 
 * VS:  solution restore perpetually fails due to race condition - [#8881](https://github.com/NuGet/Home/issues/8881)
 
-* Constant "loading.." on installed tab, and "searching <term>.." on updates tab - [#8890](https://github.com/NuGet/Home/issues/8890)
+* Constant "loading.." on installed tab, and "searching \<term\>.." on updates tab - [#8890](https://github.com/NuGet/Home/issues/8890)
 
 * Missing Embedded Icons in VS PM UI after cache expires - [#9069](https://github.com/NuGet/Home/issues/9069)
 
