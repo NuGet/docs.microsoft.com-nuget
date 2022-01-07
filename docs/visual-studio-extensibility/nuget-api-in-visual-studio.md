@@ -80,7 +80,7 @@ If you would like a new NuGet related API in Visual Studio, please search [NuGet
 
 1. Install the [`NuGet.VisualStudio.Contracts`](https://www.nuget.org/packages/NuGet.VisualStudio.Contracts/) package into your project, as well as [`Microsoft.VisualStudio.SDK`](https://www.nuget.org/packages/Microsoft.VisualStudio.SDK).
 
-1. Use the `IAsyncServiceProvider` to get Visual Studio's service broker, and use that to get NuGet's service. Note that [`AsyncPackage` extends `IVsAsyncServiceProvider2`](/dotnet/api/microsoft.visualstudio.shell.asyncpackage), so your class that implements `AsyncPackage` can be used as the `IAsyncServiceProvider`.
+1. Use the `IAsyncServiceProvider` to get Visual Studio's service broker, and use that to get NuGet's service. Note that [`AsyncPackage` extends `IVsAsyncServiceProvider2`](/dotnet/api/microsoft.visualstudio.shell.asyncpackage), so your class that implements `AsyncPackage` can be used as the `IAsyncServiceProvider`. Also see the docs on [`IBrokeredServiceContainer`](/dotnet/api/microsoft.visualstudio.shell.servicebroker.ibrokeredservicecontainer) and [`IServiceBroker`](/dotnet/api/microsoft.servicehub.framework.iservicebroker)
 
    ```cs
    // Your AsyncPackage implements IAsyncServiceProvider
