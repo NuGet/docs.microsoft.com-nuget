@@ -18,6 +18,10 @@ NuGet behavior is controlled by settings in different `NuGet.Config` or `nuget.c
 <a name="repositoryPath"></a>
 <a name="proxy-settings"></a>
 
+> [!Tip]
+> Add a `nuget.config` file in the root of your project repository. This is considered a best practice as it promotes repeatability and ensures that different users have the same NuGet configuration.
+> You may need to configure `clear` elements to ensure no user or machine specific configuration is applied. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
+
 ## config section
 
 Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../reference/cli-reference/cli-ref-config.md).
