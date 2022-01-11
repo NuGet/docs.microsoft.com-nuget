@@ -1258,7 +1258,7 @@ This interface was primarily used by the ASP.NET team, to suggest that Javascrip
 ## IVsNuGetProjectUpdateEvents interface
 
 ```cs
-/// <summary>
+    /// <summary>
     /// NuGet project update events.
     /// This API provides means of tracking project updates by NuGet.
     /// In particular, for PackageReference projects, updates to the assets file and nuget generated props/targets.
