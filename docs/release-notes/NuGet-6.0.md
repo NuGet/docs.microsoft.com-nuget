@@ -122,6 +122,17 @@ The namespaces and classes remain the same, so it's compatible from an API persp
 Additionally, following [Visual Studio's change in policy](/visualstudio/extensibility/migration/migrated-assemblies?view=vs-2022&preserve-view=true), NuGet.VisualStudio no longer uses `EmbedInteropTypes`.
 Therefore, your extension will have a compile time reference to NuGet.VisualStudio.dll.
 Nuget instructs Visual Studio to use binding redirects, so your extension will not be affected when NuGet updates to newer versions and your extension is compiled against an older version of our assembly.
+For this reason, you can supress NuGet's assemblies from your vsix to reduce the download size.
+NuGet's packages will be updated to do this automatically in NuGet 6.2 (for Visual Studio 17.2).
+
+To supress NuGet's assemblies from your vsix, add the following to your project file:
+
+```xml
+<ItemGroup>
+  <SuppressFromVsix Include="NuGet.VisualStudio.dll" Visible="false" />
+  <SuppressFromVsix Include="NuGet.VisualStudio.Contracts.dll" Visible="false" />
+</ItemGroup>
+``
 
 **Features:**
 
