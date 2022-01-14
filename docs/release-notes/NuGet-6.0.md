@@ -113,6 +113,27 @@ In Visual Studio 2022, NuGet has redefined the contract between NuGet package re
 
 Install the [Visual Studio 2022 Preview](https://visualstudio.microsoft.com/downloads/) and let us know if you notice a faster experience when loading your large solutions or switching between branches!
 
+### NuGet's SolutionRestoreManager Visual Studio APIs moved into NuGet.VisualStudio package
+
+NuGet.SolutionRestoreManager.Interop is no longer updated, and its APIs have been merged into the NuGet.VisualStudio package.
+If you are updating an existing Visual Studio extension to work with Visual Studio 2022 (17.0), and you were previously using NuGet.SolutionRestoreManager.Interop, you should uninstall that package and upgrade/install NuGet.VisualStudio to version 6.0.0.
+The namespaces and classes remain the same, so it's compatible from an API perspective.
+
+Additionally, following [Visual Studio's change in policy](/visualstudio/extensibility/migration/migrated-assemblies?view=vs-2022&preserve-view=true), NuGet.VisualStudio no longer uses `EmbedInteropTypes`.
+Therefore, your extension will have a compile time reference to NuGet.VisualStudio.dll.
+Nuget instructs Visual Studio to use binding redirects, so your extension will not be affected when NuGet updates to newer versions and your extension is compiled against an older version of our assembly.
+For this reason, you can suppress NuGet's assemblies from your vsix to reduce the download size.
+NuGet's packages will be updated to do this automatically in NuGet 6.2 (for Visual Studio 17.2).
+
+To suppress NuGet's assemblies from your vsix, add the following to your project file:
+
+```xml
+<ItemGroup>
+  <SuppressFromVsix Include="NuGet.VisualStudio.dll" Visible="false" />
+  <SuppressFromVsix Include="NuGet.VisualStudio.Contracts.dll" Visible="false" />
+</ItemGroup>
+```
+
 **Features:**
 
 * Add  hook for excluding certain build output extensions from the nuget package  - [#10690](https://github.com/NuGet/Home/issues/10690)
