@@ -424,12 +424,15 @@ public interface IRegistryKey
     /// <summary>
     /// Contains methods to install packages into a project within the current solution.
     /// </summary>
+    [ComImport]
+    [Guid("4F3B122B-A53B-432C-8D85-0FAFB8BE4FF4")]
     public interface IVsPackageInstaller
     {
         /// <summary>
         /// Installs a single package from the specified package source.
         /// </summary>
-        /// <remarks>Can be called from a background thread.</remarks>
+        /// <remarks>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></remarks>
         /// <param name="source">
         /// The package source to install the package from. This value can be <c>null</c>
         /// to indicate that the user's configured sources should be used. Otherwise,
@@ -453,7 +456,8 @@ public interface IRegistryKey
         /// <summary>
         /// Installs a single package from the specified package source.
         /// </summary>
-        /// <remarks>Can be called from a background thread.</remarks>
+        /// <remarks>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></remarks>
         /// <param name="source">
         /// The package source to install the package from. This value can be <c>null</c>
         /// to indicate that the user's configured sources should be used. Otherwise,
@@ -519,7 +523,8 @@ public interface IRegistryKey
         /// <para>
         /// Dependencies are always ignored.
         /// </para>
-        /// <para>Can be called from a background thread.</para>
+        /// <para>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></para>
         /// </remarks>
         void InstallPackagesFromRegistryRepository(string keyName, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
 
@@ -546,7 +551,8 @@ public interface IRegistryKey
         /// </param>
         /// <remarks>
         /// If any version of the package is already installed, no action will be taken.
-        /// <para>Can be called from a background thread.</para>
+        /// <para>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></para>
         /// </remarks>
         void InstallPackagesFromRegistryRepository(string keyName, bool isPreUnzipped, bool skipAssemblyReferences, bool ignoreDependencies, Project project, IDictionary<string, string> packageVersions);
 
@@ -572,7 +578,8 @@ public interface IRegistryKey
         /// <para>
         /// Dependencies are always ignored.
         /// </para>
-        /// <para>Can be called from a background thread.</para>
+        /// <para>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></para>
         /// </remarks>
         void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
 
@@ -596,7 +603,8 @@ public interface IRegistryKey
         /// </param>
         /// <remarks>
         /// If any version of the package is already installed, no action will be taken.
-        /// <para>Can be called from a background thread.</para>
+        /// <para>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></para>
         /// </remarks>
         void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, bool ignoreDependencies, Project project, IDictionary<string, string> packageVersions);
     }
@@ -614,7 +622,8 @@ public interface IRegistryKey
         /// <summary>
         /// Installs the latest version of a single package from the specified package source.
         /// </summary>
-        /// <remarks>Can be called from a background thread.</remarks>
+        /// <remarks>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></remarks>
         /// <param name="source">
         /// The package source to install the package from. This value can be <c>null</c>
         /// to indicate that the user's configured sources should be used. Otherwise,
@@ -880,7 +889,8 @@ This interface was primarily used by the ASP.NET team, to suggest that Javascrip
         /// Uninstall the specified package from a project and specify whether to uninstall its dependency packages
         /// too.
         /// </summary>
-        /// <remarks>Can be called from a background thread.</remarks>
+        /// <remarks>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></remarks>
         /// <param name="project">The project from which the package is uninstalled.</param>
         /// <param name="packageId">The package to be uninstalled</param>
         /// <param name="removeDependencies">
