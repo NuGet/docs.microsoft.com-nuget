@@ -24,7 +24,7 @@ Older tooling will ignore the Package Source Mapping configuration. To use this 
 
 Package Source Mappings will apply to all project types – including .NET Framework – as long as compatible tooling is used.
 
-## Video walkthough
+## Video walkthrough
 
 For a video-based overview of the Package Source Mapping feature, consider watching the [Secure your NuGet packages with Package Source Mapping](https://www.youtube.com/watch?v=G6P38Dn69Ro) video on YouTube.
 
