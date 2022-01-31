@@ -125,6 +125,9 @@ Lists all known package sources. The order is ignored during restore operations 
 </packageSources>
 ```
 
+> [!NOTE]
+> When using the CLI, you can express a `RestoreSources` argument to override the `<packageSources>` defined in the NuGet.config.
+
 > [!Tip]
 > When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
 
