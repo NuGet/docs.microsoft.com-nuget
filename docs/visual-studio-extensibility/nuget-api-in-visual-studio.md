@@ -56,6 +56,7 @@ From NuGet 6.0, all of these APIs are available in the package [NuGet.VisualStud
 - [`IVsPathContextProvider2`](#ivspathcontextprovider2-interface) A factory to initialize [IVsPathContext2](#ivspathcontext2-interface) instances. (5.0+)
 - [`IVsProjectJsonToPackageReferenceMigrator`](#ivsprojectjsontopackagereferencemigrator-interface) Contains methods to migrate a project.json based legacy project to PackageReference based project. (4.3+)
 - [`IVsSemanticVersionComparer`](#ivssemanticversioncomparer-interface) An interface for comparing two opaque version strings by treating them as NuGet semantic (4.0+)
+- [`IVsNuGetProjectUpdateEvents`](#ivsnugetprojectupdateevents-interface) (6.2+)
 
 #### NuGet.SolutionRestoreManager
 
@@ -66,7 +67,6 @@ These interfaces are designed for project systems to interact with NuGet, allowi
 - [`IVsSolutionRestoreService3`](#ivssolutionrestoreservice3-interface) (5.1+)
 - [`IVsSolutionRestoreService4`](#ivssolutionrestoreservice4-interface) (6.0+)
 - [`IVsSolutionRestoreStatusProvider`](#ivssolutionrestorestatusprovider-interface) (6.0+)
-- [`IVsNuGetProjectUpdateEvents`](#ivsnugetprojectupdateevents-interface) (6.2+)
 
 ## Using NuGet Services
 
