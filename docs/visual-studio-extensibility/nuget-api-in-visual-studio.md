@@ -56,6 +56,7 @@ From NuGet 6.0, all of these APIs are available in the package [NuGet.VisualStud
 - [`IVsPathContextProvider2`](#ivspathcontextprovider2-interface) A factory to initialize [IVsPathContext2](#ivspathcontext2-interface) instances. (5.0+)
 - [`IVsProjectJsonToPackageReferenceMigrator`](#ivsprojectjsontopackagereferencemigrator-interface) Contains methods to migrate a project.json based legacy project to PackageReference based project. (4.3+)
 - [`IVsSemanticVersionComparer`](#ivssemanticversioncomparer-interface) An interface for comparing two opaque version strings by treating them as NuGet semantic (4.0+)
+- [`IVsNuGetProjectUpdateEvents`](#ivsnugetprojectupdateevents-interface) (6.2+)
 
 #### NuGet.SolutionRestoreManager
 
@@ -1105,6 +1106,74 @@ This interface was primarily used by the ASP.NET team, to suggest that Javascrip
         /// </returns>
         int Compare(string versionA, string versionB);
     }
+```
+
+## IVsNuGetProjectUpdateEvents interface
+
+```cs
+    /// <summary>
+    /// NuGet project update events.
+    /// This API provides means of tracking project updates by NuGet.
+    /// In particular, for PackageReference projects, updates to the assets file and nuget generated props/targets.
+    /// For packages.config projects, package installations will be tracked.
+    /// All events are fired from a threadpool thread.
+    /// </summary>
+    public interface IVsNuGetProjectUpdateEvents
+    {
+        /// <summary>
+        /// Raised when solution restore starts with the list of projects that will be restored.
+        /// The list will not include all projects. Some projects may have been skipped in earlier up to date check, and other projects may no-op.
+        /// </summary>
+        /// <remarks>
+        /// Just because a project is being restored that doesn't necessarily mean any actual updates will happen.
+        /// No heavy computation should happen in any of these methods as it'll block the NuGet progress.
+        /// </remarks>
+        event SolutionRestoreEventHandler SolutionRestoreStarted;
+
+        /// <summary>
+        /// Raised when solution restore finishes with the list of projects that were restored.
+        /// The list will not include all projects. Some projects may have been skipped in earlier up to date check, and other projects may no-op.
+        /// </summary>
+        /// <remarks>
+        /// Just because a project is being restored that doesn't necessarily mean any actual updates will happen.
+        /// No heavy computation should happen in any of these methods as it'll block the NuGet progress.
+        /// </remarks>
+        event SolutionRestoreEventHandler SolutionRestoreFinished;
+
+        /// <summary>
+        /// Raised when particular project is about to be updated.
+        /// For PackageReference projects, this means an assets file or a nuget temp msbuild file write (nuget.g.props or nuget.g.targets). The list of updated files will include the aforementioned.
+        /// If a project was restore, but no file updates happen, this event will not be fired.
+        /// </summary>
+        /// <remarks>
+        /// No heavy computation should happen in any of these methods as it'll block the NuGet progress.
+        /// </remarks>
+        event ProjectUpdateEventHandler ProjectUpdateStarted;
+
+        /// <summary>
+        /// Raised when particular project update has been completed.
+        /// For PackageReference projects, this means an assets file or a nuget temp msbuild file write (nuget.g.props or nuget.g.targets). The list of updated files will include the aforementioned.
+        /// If a project was restore, but no file updates happen, this event will not be fired.
+        /// </summary>
+        /// <remarks>
+        /// No heavy computation should happen in any of these methods as it'll block the NuGet progress.
+        /// </remarks>
+        event ProjectUpdateEventHandler ProjectUpdateFinished;
+    }
+
+    /// <summary>
+    /// Defines an event handler delegate for solution restore start and end.
+    /// </summary>
+    /// <param name="projects">List of projects that will run restore. Never <see langword="null"/>.</param>
+    public delegate void SolutionRestoreEventHandler(IReadOnlyList<string> projects);
+
+    /// <summary>
+    /// Defines an event handler delegate for project updates.
+    /// </summary>
+    /// <param name="projectUniqueName">Project full path. Never <see langword="null"/>. </param>
+    /// <param name="updatedFiles">NuGet output files that may be updated. Never <see langword="null"/>.</param>
+    public delegate void ProjectUpdateEventHandler(string projectUniqueName, IReadOnlyList<string> updatedFiles);
+}
 ```
 
 ## IVsSolutionRestoreService interface
