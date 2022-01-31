@@ -92,7 +92,7 @@ sections:
       - question: |
           Is it possible to extend the NuGet command line tool?
         answer: |
-          Yes, it's possible to add custom commands to `nuget.exe`, as described in [Rob Reynold's post](http://geekswithblogs.net/robz/archive/2011/07/15/extend-nuget-command-line.aspx).
+          Yes, it's possible to add custom commands to `nuget.exe`, as described in [Rob Reynold's post](https://web.archive.org/web/20200814172907/http://geekswithblogs.net/robz/archive/2011/07/15/extend-nuget-command-line.aspx) available via Archive.org.
           
   - name: NuGet Package Manager Console (Visual Studio on Windows)
     questions:
