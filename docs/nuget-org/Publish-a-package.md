@@ -33,7 +33,7 @@ Next, you can either upload the package through the nuget.org web portal, push t
 
 1. nuget.org tells you if the package name is available. If it isn't, change the package identifier in your project, rebuild, and try the upload again.
 
-1. If the package name is available, nuget.org opens a **Verify** section in which you can review the metadata from the package manifest. If you included a [readme file](/docs/nuget-org/package-readme-on-nuget-org.md) in your package, check out the preview to ensure all content is being rendered properly. To change any of the metadata, edit your project (project file or `.nuspec` file), rebuild, recreate the package, and upload again.
+1. If the package name is available, nuget.org opens a **Verify** section in which you can review the metadata from the package manifest. If you included a [readme file](../nuget-org/package-readme-on-nuget-org.md) in your package, check out the preview to ensure all content is being rendered properly. To change any of the metadata, edit your project (project file or `.nuspec` file), rebuild, recreate the package, and upload again.
 
 2. When all the information is ready, select the **Submit** button
 
