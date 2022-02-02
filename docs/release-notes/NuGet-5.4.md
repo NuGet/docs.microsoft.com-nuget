@@ -37,7 +37,7 @@ NuGet distribution vehicles:
 
 * Lock File not properly generated - framework ordering should not impact the restore with lockedmode - [#8645](https://github.com/NuGet/Home/issues/8645)
 
-* LockFile validation fails for projects with <RuntimeIdentifiers> set in SDK 3.0.100 - [#8639](https://github.com/NuGet/Home/issues/8639)
+* LockFile validation fails for projects with \<RuntimeIdentifiers\> set in SDK 3.0.100 - [#8639](https://github.com/NuGet/Home/issues/8639)
 
 * Signing Validation will now properly reject signatures with timestamps which have 2 values under the same OID - [#8629](https://github.com/NuGet/Home/issues/8629)
 

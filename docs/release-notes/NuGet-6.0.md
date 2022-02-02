@@ -13,14 +13,15 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.0.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.0](https://visualstudio.microsoft.com/downloads/) | [6.0.0](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
+| [**6.0.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.0.0](https://visualstudio.microsoft.com/downloads/) | [6.0.0](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
+| **6.0.1** | [Visual Studio 2022 version 17.0.2](https://visualstudio.microsoft.com/downloads/) | N/A |
 
 <sup>1</sup> Installed with Visual Studio 2022 with.NET Core workload
 
 > [!NOTE]
 > Visual Studio 17.0, MSBuild 17.0, and .NET 6.0 require NuGet.exe 6.0 or later.
 
-## Summary: What's New in 6.0
+## Summary: What's New in 6.0.0
 
 🎉 **This is the first release to offer full authoring and restoring support for NuGet packages targeting .NET 6.0** 🎉
 
@@ -111,6 +112,27 @@ You can read more about [adding a README to your NuGet package on our blog](http
 In Visual Studio 2022, NuGet has redefined the contract between NuGet package restore and common Visual Studio components to improve performance for large solutions by only calling restore once instead of multiple times. This improves the time it takes for background processes to complete significantly.
 
 Install the [Visual Studio 2022 Preview](https://visualstudio.microsoft.com/downloads/) and let us know if you notice a faster experience when loading your large solutions or switching between branches!
+
+### NuGet's SolutionRestoreManager Visual Studio APIs moved into NuGet.VisualStudio package
+
+NuGet.SolutionRestoreManager.Interop is no longer updated, and its APIs have been merged into the NuGet.VisualStudio package.
+If you are updating an existing Visual Studio extension to work with Visual Studio 2022 (17.0), and you were previously using NuGet.SolutionRestoreManager.Interop, you should uninstall that package and upgrade/install NuGet.VisualStudio to version 6.0.0.
+The namespaces and classes remain the same, so it's compatible from an API perspective.
+
+Additionally, following [Visual Studio's change in policy](/visualstudio/extensibility/migration/migrated-assemblies?view=vs-2022&preserve-view=true), NuGet.VisualStudio no longer uses `EmbedInteropTypes`.
+Therefore, your extension will have a compile time reference to NuGet.VisualStudio.dll.
+Nuget instructs Visual Studio to use binding redirects, so your extension will not be affected when NuGet updates to newer versions and your extension is compiled against an older version of our assembly.
+For this reason, you can suppress NuGet's assemblies from your vsix to reduce the download size.
+NuGet's packages will be updated to do this automatically in NuGet 6.2 (for Visual Studio 17.2).
+
+To suppress NuGet's assemblies from your vsix, add the following to your project file:
+
+```xml
+<ItemGroup>
+  <SuppressFromVsix Include="NuGet.VisualStudio.dll" Visible="false" />
+  <SuppressFromVsix Include="NuGet.VisualStudio.Contracts.dll" Visible="false" />
+</ItemGroup>
+```
 
 **Features:**
 
@@ -320,7 +342,18 @@ Install the [Visual Studio 2022 Preview](https://visualstudio.microsoft.com/down
 
 **[List of all issues fixed in this release - 6.0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=Z2lkOi8vcmFwdG9yL1JlbGVhc2UvNDMwMDQ)**
 
-**[List of commits in this release - 6.0](https://github.com/NuGet/NuGet.Client/compare/5.11.0.17...6.0.0.262)**
+**[List of commits in this release - 6.0.0](https://github.com/NuGet/NuGet.Client/compare/5.11.0.17...6.0.0.280)**
+
+## Summary: What's New in 6.0.1
+
+Only Visual Studio was updated with this version of NuGet.
+
+### Issues fixed in this release
+
+* [Bug]: Cannot get INuGetProjectService from the service broker in Visual Studio 17 - [#11367](https://github.com/NuGet/Home/issues/11367)
+* [Bug]: Package Manager Console initialization might cause deadlocks - [#11320](https://github.com/NuGet/Home/issues/11320)
+
+**[List of commits in this release - 6.0.1](https://github.com/NuGet/NuGet.Client/compare/6.0.0.280...6.0.1.1)**
 
 ### Community contributions
 

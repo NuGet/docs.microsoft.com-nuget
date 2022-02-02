@@ -93,7 +93,7 @@ NuGet distribution vehicles:
 
 * Output is wrapped at 80 characters on macOS when redirected - [#10198](https://github.com/NuGet/Home/issues/10198)
 
-* Restore fails with -Source <Relative Path> - [#9406](https://github.com/NuGet/Home/issues/9406)
+* Restore fails with -Source \<Relative Path\> - [#9406](https://github.com/NuGet/Home/issues/9406)
 
 * netcoreapp5.0-windows does not round trip and does not parse platform information - [#10177](https://github.com/NuGet/Home/issues/10177)
 

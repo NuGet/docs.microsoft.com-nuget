@@ -163,6 +163,14 @@ To learn more about secret scanning, see [About secret scanning](https://docs.gi
 
 To author sign a package, see [Sign a package](../create-packages/sign-a-package.md).
 
+### Reproducible Builds
+
+**📦🖊 Package Author**
+
+Reproducible builds creates binaries that are byte-for-byte identical each time you build it, and contain source code links and compiler metadata that enable a package consumer to recreate the binary directly and validate that the build environment has not been compromised.
+
+To learn more about reproducible builds, see [Producing Packages with Source Link](https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/) and the [Reproducible Build Validation](https://github.com/dotnet/designs/blob/main/accepted/2020/reproducible-builds.md) spec.
+
 ### Two-Factor Authentication (2FA)
 
 **📦🖊 Package Author**

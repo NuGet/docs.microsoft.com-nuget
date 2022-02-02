@@ -1,6 +1,6 @@
 ---
 title: Package Source Mapping
-description: Describes  Describes the process of installing signed NuGet packages and configuring package signature trust settings.
+description: Describes package source mapping functionality and how to onboard
 author: nkolev92
 ms.author: nikolev
 ms.date: 10/15/2021
@@ -23,6 +23,10 @@ The feature is available across all NuGet integrated tooling.
 Older tooling will ignore the Package Source Mapping configuration. To use this feature, ensure all your build environments use compatible tooling versions.
 
 Package Source Mappings will apply to all project types – including .NET Framework – as long as compatible tooling is used.
+
+## Video walkthrough
+
+For a video-based overview of the Package Source Mapping feature, consider watching the [Secure your NuGet packages with Package Source Mapping](https://www.youtube.com/watch?v=G6P38Dn69Ro) video on YouTube.
 
 ## Enabling Package Source Mapping
 
@@ -111,3 +115,4 @@ For an idea of how your source mappings may look like, refer to our [samples rep
 >
 > * There are no nuget.exe or dotnet.exe commands for managing the package source mapping configuration, see [NuGet/Home#10735](https://github.com/NuGet/Home/issues/10735).
 > * There are no means of mapping packages at package installation time, see [NuGet/Home#10730](https://github.com/NuGet/Home/issues/10730).
+> * There is a limitation when using the `DotNetCoreCLI@2` Azure Pipelines task which can be worked around by using `feed-` prefixes in your source mapping configuration. It is recommended however to use `NuGetAuthenticate` for your authentication needs and call the dotnet cli directly from a script task. See [microsoft/azure-pipelines-tasks#15542](https://github.com/microsoft/azure-pipelines-tasks/issues/15542).

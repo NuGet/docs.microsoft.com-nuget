@@ -109,6 +109,9 @@ As NuGet finds settings in these files, they are applied as follows:
 1. For collection elements (such as `<packageSources>`), NuGet combines the values from all configuration files into a single collection.
 1. When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node.
 
+> [!Tip]
+> Add a `nuget.config` file in the root of your project repository. This is considered a best practice as it promotes repeatability and ensures that different users have the same NuGet configuration.
+
 ### Settings walkthrough
 
 Let's say you have the following folder structure on two separate drives:

@@ -9,11 +9,29 @@ ms.topic: reference
 
 # NuGet API in Visual Studio
 
-In addition to the Package Manager UI and Console in Visual Studio, NuGet also exports some useful services through the [Managed Extensibility Framework (MEF)](/dotnet/framework/mef/index). This interface allows other components in Visual Studio to interact with NuGet, which can be used to install and uninstall packages, and to obtain information about installed packages.
+In addition to the Package Manager UI and Console in Visual Studio, NuGet also exports some useful services that other extensions can use. These interfaces allow other components in Visual Studio to interact with NuGet, which can be used to install and uninstall packages, and to obtain information about installed packages.
 
-Over the years, NuGet has added many services all of which reside in the `NuGet.VisualStudio` namespace in the `NuGet.VisualStudio.dll` assembly:
+NuGet provides services via two different technologies, each of which have their interfaces defined in a different NuGet package. NuGet's older services are available via [the Managed Extensibility Framework (MEF)](/dotnet/framework/mef/), which are available in the package [NuGet.VisualStudio](https://www.nuget.org/packages/NuGet.VisualStudio) ([go to NuGet's MEF services](#mef-services)). There are newer APIs, designed to be usable with `async` code, available in the package `NuGet.VisualStudio.Contracts`, using a Visual Studio's `IServiceBroker` ([go to NuGet's Brokered Services](#brokered-services)).
 
-As of NuGet 3.3+, NuGet exports the following
+## Package Versions
+
+NuGet's product follows Visual Studio's version, but is 11.0 versions behind. For example, NuGet 6.0 corresponds to Visual Studio 2022 17.0, NuGet 5.11 corresponds to Visual Studio 2019 16.11, and so on.
+
+Starting from Visual Studio 17.1, NuGet's Visual Studio extensibility API packages match the version of Visual Studio that the APIs are targeting. For example, NuGet.VisualStudio and NuGet.VisualStudio.Contracts package version 17.1.0 should be used when your extension targets Visual Studio 17.1 and higher. In Visual Studio 17.0 and earlier, NuGet's package versions are the same as NuGet's product version. For example, if your extension targets Visual Studio 2022 version 17.0, you should use version 6.0 of NuGet's Visual Studio extensibility packages.
+
+## Services List
+
+### Brokered Services
+
+These services are available in the package [NuGet.VisualStudio.Contracts](https://nuget.org/packages/NuGet.VisualStudio.Contracts/).
+
+- [`INuGetProjectService`](#inugetprojectservice-interface): Methods to interact with a project. (5.7+)
+
+### MEF Services
+
+From NuGet 6.0, all of these APIs are available in the package [NuGet.VisualStudio](https://nuget.org/packages/NuGet.VisualStudio/). In NuGet 5.11 and earlier, the APIs in the namespace `NuGet.VisualStudio` are available in the package [NuGet.VisualStudio](https://nuget.org/packages.NuGet.VisualStudio/), and APIs in the namespace `NuGet.SolutionRestoreManager` are available in the package [NuGet.SolutionRestoreManager.Interop](https://www.nuget.org/packages/NuGet.SolutionRestoreManager.Interop/).
+
+#### NuGet.VisualStudio
 
 - [`IRegistryKey`](#iregistrykey-interface): Method to retrieve a value from a registry subkey. (3.3+)
 - [`IVsCredentialProvider`](#ivscredentialprovider-interface) Contains methods to get credentials for NuGet operations. (4.0+)
@@ -23,15 +41,12 @@ As of NuGet 3.3+, NuGet exports the following
 - [`IVsFrameworkParser`](#ivsframeworkparser-interface) An interface for dealing with the conversion between strings and [FrameworkName](/dotnet/api/system.runtime.versioning.frameworkname) (4.0+)
 - [`IVsFrameworkParser2`](#ivsframeworkparser2-interface) An interface to parse .NET Framework strings. See [NuGet-IVsFrameworkParser](https://aka.ms/NuGet-IVsFrameworkParser). (5.8+)
 - [`IVsGlobalPackagesInitScriptExecutor`](#ivsglobalpackagesinitscriptexecutor-interface) Execute powershell scripts from package(s) in a solution (4.0+)
-- [`IVsNuGetFramework`](#ivsnugetframework-interface) A type that represents the components of a .NET Target Framework Moniker. (5.8+)
 - [`IVsPackageInstaller`](#ivspackageinstaller-interface): Methods to install NuGet packages into projects. (3.3+)
 - [`IVsPackageInstaller2](#ivspackageinstaller2-interface) Contains method to install latest version of a single package into a project within the current solution.
 - [`IVsPackageInstallerEvents`](#ivspackageinstallerevents-interface): Events for package install/uninstall. (3.3+)
 - [`IVsPackageInstallerProjectEvents`](#ivspackageinstallerprojectevents-interface): Batch events for package install/uninstall. (3.3+)
 - [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface): Methods to retrieve installed packages in the current solution and to check whether a given package is installed in a project. (3.3+)
-- [`IVsPackageManagerProvider`](#ivspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package. (3.3+)
-- [`IVsPackageMetadata`](#ivspackagemetadata-interface): Methods to retrieve information about an installed package. (3.3+)
-- [`IVsPackageProjectMetadata`](#ivspackageprojectmetadata-interface): Methods to retrieve information about a project where NuGet actions are being executed. (3.3+)
+- [`IVsPackageManagerProvider`](#ivspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package. (3.3 - 5.11)
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface): Methods to restore packages installed in a project. (3.3+)
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface): Methods to retrieve a list of NuGet package sources. (3.3+)
 - [`IVsPackageUninstaller`](#ivspackageuninstaller-interface): Methods to uninstall NuGet packages from projects. (3.3+)
@@ -39,19 +54,59 @@ As of NuGet 3.3+, NuGet exports the following
 - [`IVsPathContext2`](#ivspathcontext2-interface) NuGet path information specific to the current context (e.g. project context). (5.0+)
 - [`IVsPathContextProvider`](#ivspathcontextprovider-interface) A factory to initialize [IVsPathContext](#ivspathcontext-interface) instances. (4.0+)
 - [`IVsPathContextProvider2`](#ivspathcontextprovider2-interface) A factory to initialize [IVsPathContext2](#ivspathcontext2-interface) instances. (5.0+)
-- [`IVsProjectJsonToPackageReferenceMigrateResult`](#ivsprojectjsontopackagereferencemigrateresult-interface)  Contains the result of the migrate operation on a legacy project.json project (4.3+)
 - [`IVsProjectJsonToPackageReferenceMigrator`](#ivsprojectjsontopackagereferencemigrator-interface) Contains methods to migrate a project.json based legacy project to PackageReference based project. (4.3+)
 - [`IVsSemanticVersionComparer`](#ivssemanticversioncomparer-interface) An interface for comparing two opaque version strings by treating them as NuGet semantic (4.0+)
-- [`IVsTemplateWizard`](#ivstemplatewizard-interface): Designed for project/item templates to include pre-installed packages; this interface is *not* meant to be invoked from code and has no public methods. (3.3+)
+- [`IVsNuGetProjectUpdateEvents`](#ivsnugetprojectupdateevents-interface) (6.2+)
 
-## Using NuGet services
+#### NuGet.SolutionRestoreManager
+
+These interfaces are designed for project systems to interact with NuGet, allowing the project system to notify NuGet of changes to `PackageReference`s, and orchestrate batch updates. Visual Studio extensions that are not project systems probably will not benefit from these APIs.
+
+- [`IVsSolutionRestoreService`](#ivssolutionrestoreservice-interface) (4.0+)
+- [`IVsSolutionRestoreService2`](#ivssolutionrestoreservice2-interface) (4.3+)
+- [`IVsSolutionRestoreService3`](#ivssolutionrestoreservice3-interface) (5.1+)
+- [`IVsSolutionRestoreService4`](#ivssolutionrestoreservice4-interface) (6.0+)
+- [`IVsSolutionRestoreStatusProvider`](#ivssolutionrestorestatusprovider-interface) (6.0+)
+
+## Using NuGet Services
+
+> [!Warning]
+> Do not use any other types besides the public interfaces in your code, and do not reference any other NuGet assemblies, such as `NuGet.Protocol.dll`, `NuGet.Frameworks.dll`, and so on.
+
+In order to maximize the backwards compatibility promises we make, but also providing ourselves the flexibility to implement new features, performance improvements, and bug fixes in Visual Studio, we do not support the NuGet Client SDK being used in Visual Studio, and we do not provide binding redirects in `devenv.exe.config` to assemblies other than our VS extensibility contracts.
+
+If you would like a new NuGet related API in Visual Studio, please search [NuGet's Home repo](https://github.com/NuGet/Home/) and upvote any existing issues if you find a similar one. If you can't find an existing feature request to upvote, please create one.
+
+### Brokered Services
+
+1. Install the [`NuGet.VisualStudio.Contracts`](https://www.nuget.org/packages/NuGet.VisualStudio.Contracts/) package into your project, as well as [`Microsoft.VisualStudio.SDK`](https://www.nuget.org/packages/Microsoft.VisualStudio.SDK).
+
+1. Use the `IAsyncServiceProvider` to get Visual Studio's service broker, and use that to get NuGet's service. Note that [`AsyncPackage` extends `IVsAsyncServiceProvider2`](/dotnet/api/microsoft.visualstudio.shell.asyncpackage), so your class that implements `AsyncPackage` can be used as the `IAsyncServiceProvider`. Also see the docs on [`IBrokeredServiceContainer`](/dotnet/api/microsoft.visualstudio.shell.servicebroker.ibrokeredservicecontainer) and [`IServiceBroker`](/dotnet/api/microsoft.servicehub.framework.iservicebroker)
+
+   ```cs
+   // Your AsyncPackage implements IAsyncServiceProvider
+   IAsyncServiceProvider asyncServiceProvider = this;
+   var brokeredServiceContainer = await asyncServiceProvider.GetServiceAsync<SVsBrokeredServiceContainer, IBrokeredServiceContainer>();
+   var serviceBroker = brokeredServiceContainer.GetFullAccessServiceBroker();
+   var nugetProjectService = await serviceBroker.GetProxyAsync<INuGetProjectService>(NuGetServices.NuGetProjectServiceV1);
+   ```
+
+1. When your code no longer needs NuGet's brokered service, dispose it. For example, if you only need NuGet's brokered service during a single method call, you can wrap it in a C#`using` statement:
+
+   ```cs
+   InstalledPackagesResult installedPackagesResult;
+   using (nugetProjectService as IDisposable)
+   {
+       installedPackagesResult = await nugetProjectService.GetInstalledPackages(projectGuid, cancellationToken);
+   }
+   ```
+
+
+### MEF Services
 
 1. Install the [`NuGet.VisualStudio`](https://www.nuget.org/packages/NuGet.VisualStudio) package into your project, which contains the `NuGet.VisualStudio.dll` assembly.
 
-    When installed, the package automatically sets the **Embed Interop Types** property of the assembly reference to **True**. This makes your code  resilient against version changes when users update to newer versions of NuGet.
-
-> [!Warning]
-> Do not use any other types besides the public interfaces in your code, and do not reference any other NuGet assemblies, including `NuGet.Core.dll`.
+    In NuGet 5.11 and earlier, the package automatically sets the [**Embed Interop Types**](/dotnet/framework/interop/type-equivalence-and-embedded-interop-types) property of the assembly reference to **True**. [Visual Studio 2022 policy regarding embed interop types changed](/visualstudio/extensibility/migration/migrated-assemblies?view=vs-2022&preserve-view=true), so NuGet.VisualStudio package version 6.0.0 and above no longer use this.
 
 1. To use a service, import it through the [MEF Import attribute](/dotnet/framework/mef/index#imports-and-exports-with-attributes), or through the [IComponentModel service](/dotnet/api/microsoft.visualstudio.componentmodelhost.icomponentmodel).
 
@@ -71,6 +126,21 @@ As of NuGet 3.3+, NuGet exports the following
     ```
 
 For reference, the source code for NuGet.VisualStudio is contained within the [NuGet.Clients repository](https://github.com/NuGet/NuGet.Client/tree/dev/src/NuGet.Clients/NuGet.VisualStudio).
+
+## INuGetProjectService interface
+
+```cs
+    /// <summary>Service to interact with projects in a solution</summary>
+    /// <remarks>This interface should not be implemented. New methods may be added over time.</remarks>
+    public interface INuGetProjectService
+    {
+        /// <Summary>Gets the list of packages installed in a project.</Summary>
+        /// <param name="projectId">Project ID (GUID).</param>
+        /// <param name="cancellationToken">Cancellation token.</param>
+        /// <returns>The list of packages in the project.</returns>
+        Task<InstalledPackagesResult> GetInstalledPackagesAsync(Guid projectId, CancellationToken cancellationToken);
+    }
+```
 
 ## IRegistryKey interface
 
@@ -150,6 +220,7 @@ public interface IRegistryKey
         /// <summary>
         /// Gets all .NETStandard frameworks currently supported, in ascending order by version.
         /// </summary>
+        /// <remarks>This API is <a href="https://github.com/microsoft/vs-threading/blob/main/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded.</a></remarks>
         IEnumerable<FrameworkName> GetNetStandardFrameworks();
 
         /// <summary>
@@ -160,8 +231,11 @@ public interface IRegistryKey
         /// equivalent frameworks are not returned. Additionally, a framework name with version X
         /// in the result implies that framework names with versions greater than or equal to X
         /// but having the same <see cref="FrameworkName.Identifier"/> are also supported.
+        ///
+        /// <para>This API is <a href="https://github.com/microsoft/vs-threading/blob/main/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded.</a></para>
         /// </remarks>
         /// <param name="frameworkName">The .NETStandard version to get supporting frameworks for.</param>
+        [Obsolete("This API does not support .NET 5 and higher target frameworks with platforms. Use IVsFrameworkCompatibility3 instead.")]
         IEnumerable<FrameworkName> GetFrameworksSupportingNetStandard(FrameworkName frameworkName);
 
         /// <summary>
@@ -170,10 +244,12 @@ public interface IRegistryKey
         /// compatibility rules. <c>null</c> is returned of none of the frameworks
         /// are compatible.
         /// </summary>
+        /// <remarks>This API is <a href="https://github.com/microsoft/vs-threading/blob/main/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded.</a></remarks>
         /// <param name="targetFramework">The target framework.</param>
         /// <param name="frameworks">The list of frameworks to choose from.</param>
         /// <exception cref="ArgumentException">If any of the arguments are <c>null</c>.</exception>
         /// <returns>The nearest framework.</returns>
+        [Obsolete("This API does not support .NET 5 and higher target frameworks with platforms. Use IVsFrameworkCompatibility3 instead.")]
         FrameworkName GetNearest(FrameworkName targetFramework, IEnumerable<FrameworkName> frameworks);
     }
 ```
@@ -182,8 +258,9 @@ public interface IRegistryKey
 
 ```cs
     /// <summary>
-    /// Gets all .NETStandard frameworks currently supported, in ascending order by version.
+    /// Contains methods to discover frameworks and compatibility between frameworks.
     /// </summary>
+    [Obsolete("This API does not support .NET 5 and higher target frameworks with platforms. Use IVsFrameworkCompatibility3 instead.")]
     public interface IVsFrameworkCompatibility2 : IVsFrameworkCompatibility
     {
         /// <summary>
@@ -192,6 +269,7 @@ public interface IRegistryKey
         /// compatibility rules. <c>null</c> is returned of none of the frameworks
         /// are compatible.
         /// </summary>
+        /// <remarks>This API is <a href="https://github.com/microsoft/vs-threading/blob/main/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded.</a></remarks>
         /// <param name="targetFramework">The target framework.</param>
         /// <param name="fallbackTargetFrameworks">
         /// Target frameworks to use if the provided <paramref name="targetFramework"/> is not compatible.
@@ -200,6 +278,7 @@ public interface IRegistryKey
         /// <param name="frameworks">The list of frameworks to choose from.</param>
         /// <exception cref="ArgumentException">If any of the arguments are <c>null</c>.</exception>
         /// <returns>The nearest framework.</returns>
+        [Obsolete("This API does not support .NET 5 and higher target frameworks with platforms. Use IVsFrameworkCompatibility3 instead.")]
         FrameworkName GetNearest(
             FrameworkName targetFramework,
             IEnumerable<FrameworkName> fallbackTargetFrameworks,
@@ -211,7 +290,7 @@ public interface IRegistryKey
 
 ```cs
     /// <summary>
-    /// Gets all .NETStandard frameworks currently supported, in ascending order by version.
+    /// Contains methods to discover frameworks and compatibility between frameworks.
     /// </summary>
     public interface IVsFrameworkCompatibility3
     {
@@ -259,6 +338,7 @@ public interface IRegistryKey
     /// An interface for dealing with the conversion between strings and <see cref="FrameworkName"/>
     /// instances.
     /// </summary>
+    [Obsolete("This API does not support .NET 5 and higher target frameworks with platforms. Use IVsFrameworkParser2 instead.")]
     public interface IVsFrameworkParser
     {
         /// <summary>
@@ -266,10 +346,12 @@ public interface IRegistryKey
         /// (e.g. ".NETFramework,Version=v4.5") into a <see cref="FrameworkName"/>
         /// instance.
         /// </summary>
+        /// <remarks>This API is <a href="https://github.com/microsoft/vs-threading/blob/main/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded.</a></remarks>
         /// <param name="shortOrFullName">The framework string.</param>
         /// <exception cref="ArgumentNullException">If the provided string is null.</exception>
         /// <exception cref="ArgumentException">If the provided string cannot be parsed.</exception>
         /// <returns>The parsed framework.</returns>
+        [Obsolete("This API does not support .NET 5 and higher target frameworks with platforms. Use IVsFrameworkParser2 instead.")]
         FrameworkName ParseFrameworkName(string shortOrFullName);
 
         /// <summary>
@@ -279,6 +361,7 @@ public interface IRegistryKey
         /// <remarks>
         /// For example, ".NETFramework,Version=v4.5" is converted to "net45". This is the value
         /// used inside of .nupkg folder structures as well as in project.json files.
+        /// <para>This API is <a href="https://github.com/microsoft/vs-threading/blob/main/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded.</a></para>
         /// </remarks>
         /// <param name="frameworkName">The framework name.</param>
         /// <exception cref="ArgumentNullException">If the input is null.</exception>
@@ -286,6 +369,7 @@ public interface IRegistryKey
         /// If the provided framework name cannot be converted to a short name.
         /// </exception>
         /// <returns>The short framework name. </returns>
+        [Obsolete("This API does not support .NET 5 and higher target frameworks with platforms. Use IVsFrameworkParser2 instead.")]
         string GetShortFrameworkName(FrameworkName frameworkName);
     }
 ```
@@ -335,207 +419,212 @@ public interface IRegistryKey
     }
 ```
 
-## IVsNuGetFramework interface
-
-```cs
-    /// <summary>A type that represents the components of a .NET Target Framework Moniker.</summary>
-    /// <remarks><see cref="System.Runtime.Versioning.FrameworkName"/> does not support .NET 5 Target Framework Monikers with a platform, but this type does.</remarks>
-    public interface IVsNuGetFramework
-    {
-        /// <summary>The framework moniker.</summary>
-        string TargetFrameworkMoniker { get; }
-
-        /// <summary>The platform moniker.</summary>
-        string TargetPlatformMoniker { get; }
-
-        /// <summary>The platform minimum version.</summary>
-        /// <remarks>This property is read by <see cref="IVsFrameworkCompatibility3" />, but will always have a null value when returned from <see cref="IVsFrameworkParser2"/>.</remarks>
-        string TargetPlatformMinVersion { get; }
-    }
-```
-
 ## IVsPackageInstaller interface
 
 ```cs
-public interface IVsPackageInstaller
-{
     /// <summary>
-    /// Installs a single package from the specified package source.
+    /// Contains methods to install packages into a project within the current solution.
     /// </summary>
-    /// <param name="source">
-    /// The package source to install the package from. This value can be <c>null</c>
-    /// to indicate that the user's configured sources should be used. Otherwise,
-    /// this should be the source path as a string. If the user has credentials
-    /// configured for a source, this value must exactly match the configured source
-    /// value.
-    /// </param>
-    /// <param name="project">The target project for package installation.</param>
-    /// <param name="packageId">The package ID of the package to install.</param>
-    /// <param name="version">
-    /// The version of the package to install. <c>null</c> can be provided to
-    /// install the latest version of the package.
-    /// </param>
-    /// <param name="ignoreDependencies">
-    /// A boolean indicating whether or not to ignore the package's dependencies
-    /// during installation.
-    /// </param>
-    void InstallPackage(string source, Project project, string packageId, Version version, bool ignoreDependencies);
+    [ComImport]
+    [Guid("4F3B122B-A53B-432C-8D85-0FAFB8BE4FF4")]
+    public interface IVsPackageInstaller
+    {
+        /// <summary>
+        /// Installs a single package from the specified package source.
+        /// </summary>
+        /// <remarks>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></remarks>
+        /// <param name="source">
+        /// The package source to install the package from. This value can be <c>null</c>
+        /// to indicate that the user's configured sources should be used. Otherwise,
+        /// this should be the source path as a string. If the user has credentials
+        /// configured for a source, this value must exactly match the configured source
+        /// value.
+        /// </param>
+        /// <param name="project">The target project for package installation.</param>
+        /// <param name="packageId">The package ID of the package to install.</param>
+        /// <param name="version">
+        /// The version of the package to install. <c>null</c> can be provided to
+        /// install the latest version of the package.
+        /// </param>
+        /// <param name="ignoreDependencies">
+        /// A boolean indicating whether or not to ignore the package's dependencies
+        /// during installation.
+        /// </param>
+        [Obsolete("System.Version does not support SemVer pre-release versions. Use the overload with string version instead.")]
+        void InstallPackage(string source, Project project, string packageId, Version version, bool ignoreDependencies);
 
-    /// <summary>
-    /// Installs a single package from the specified package source.
-    /// </summary>
-    /// <param name="source">
-    /// The package source to install the package from. This value can be <c>null</c>
-    /// to indicate that the user's configured sources should be used. Otherwise,
-    /// this should be the source path as a string. If the user has credentials
-    /// configured for a source, this value must exactly match the configured source
-    /// value.
-    /// </param>
-    /// <param name="project">The target project for package installation.</param>
-    /// <param name="packageId">The package ID of the package to install.</param>
-    /// <param name="version">
-    /// The version of the package to install. <c>null</c> can be provided to
-    /// install the latest version of the package.
-    /// </param>
-    /// <param name="ignoreDependencies">
-    /// A boolean indicating whether or not to ignore the package's dependencies
-    /// during installation.
-    /// </param>
-    void InstallPackage(string source, Project project, string packageId, string version, bool ignoreDependencies);
+        /// <summary>
+        /// Installs a single package from the specified package source.
+        /// </summary>
+        /// <remarks>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></remarks>
+        /// <param name="source">
+        /// The package source to install the package from. This value can be <c>null</c>
+        /// to indicate that the user's configured sources should be used. Otherwise,
+        /// this should be the source path as a string. If the user has credentials
+        /// configured for a source, this value must exactly match the configured source
+        /// value.
+        /// </param>
+        /// <param name="project">The target project for package installation.</param>
+        /// <param name="packageId">The package ID of the package to install.</param>
+        /// <param name="version">
+        /// The version of the package to install. <c>null</c> can be provided to
+        /// install the latest version of the package.
+        /// </param>
+        /// <param name="ignoreDependencies">
+        /// A boolean indicating whether or not to ignore the package's dependencies
+        /// during installation.
+        /// </param>
+        void InstallPackage(string source, Project project, string packageId, string version, bool ignoreDependencies);
 
-    /// <summary>
-    /// Installs a single package from the specified package source.
-    /// </summary>
-    /// <param name="repository">The package repository to install the package from.</param>
-    /// <param name="project">The target project for package installation.</param>
-    /// <param name="packageId">The package id of the package to install.</param>
-    /// <param name="version">
-    /// The version of the package to install. <c>null</c> can be provided to
-    /// install the latest version of the package.
-    /// </param>
-    /// <param name="ignoreDependencies">
-    /// A boolean indicating whether or not to ignore the package's dependencies
-    /// during installation.
-    /// </param>
-    /// <param name="skipAssemblyReferences">
-    /// A boolean indicating if assembly references from the package should be
-    /// skipped.
-    /// </param>
-    void InstallPackage(IPackageRepository repository, Project project, string packageId, string version, bool ignoreDependencies, bool skipAssemblyReferences);
+        /// <summary>
+        /// Installs a single package from the specified package source.
+        /// </summary>
+        /// <param name="repository">The package repository to install the package from.</param>
+        /// <param name="project">The target project for package installation.</param>
+        /// <param name="packageId">The package id of the package to install.</param>
+        /// <param name="version">
+        /// The version of the package to install. <c>null</c> can be provided to
+        /// install the latest version of the package.
+        /// </param>
+        /// <param name="ignoreDependencies">
+        /// A boolean indicating whether or not to ignore the package's dependencies
+        /// during installation.
+        /// </param>
+        /// <param name="skipAssemblyReferences">
+        /// A boolean indicating if assembly references from the package should be
+        /// skipped.
+        /// </param>
+        [Obsolete]
+        void InstallPackage(IPackageRepository repository, Project project, string packageId, string version, bool ignoreDependencies, bool skipAssemblyReferences);
 
-    /// <summary>
-    /// Installs one or more packages that exist on disk in a folder defined in the registry.
-    /// </summary>
-    /// <param name="keyName">
-    /// The registry key name (under NuGet's repository key) that defines the folder on disk
-    /// containing the packages.
-    /// </param>
-    /// <param name="isPreUnzipped">
-    /// A boolean indicating whether the folder contains packages that are
-    /// pre-unzipped.
-    /// </param>
-    /// <param name="skipAssemblyReferences">
-    /// A boolean indicating whether the assembly references from the packages
-    /// should be skipped.
-    /// </param>
-    /// <param name="project">The target project for package installation.</param>
-    /// <param name="packageVersions">
-    /// A dictionary of packages/versions to install where the key is the package id
-    /// and the value is the version.
-    /// </param>
-    /// <remarks>
-    /// If any version of the package is already installed, no action will be taken.
-    /// <para>
-    /// Dependencies are always ignored.
-    /// </para>
-    /// </remarks>
-    void InstallPackagesFromRegistryRepository(string keyName, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
+        /// <summary>
+        /// Installs one or more packages that exist on disk in a folder defined in the registry.
+        /// </summary>
+        /// <param name="keyName">
+        /// The registry key name (under NuGet's repository key) that defines the folder on disk
+        /// containing the packages.
+        /// </param>
+        /// <param name="isPreUnzipped">
+        /// A boolean indicating whether the folder contains packages that are
+        /// pre-unzipped.
+        /// </param>
+        /// <param name="skipAssemblyReferences">
+        /// A boolean indicating whether the assembly references from the packages
+        /// should be skipped.
+        /// </param>
+        /// <param name="project">The target project for package installation.</param>
+        /// <param name="packageVersions">
+        /// A dictionary of packages/versions to install where the key is the package id
+        /// and the value is the version.
+        /// </param>
+        /// <remarks>
+        /// If any version of the package is already installed, no action will be taken.
+        /// <para>
+        /// Dependencies are always ignored.
+        /// </para>
+        /// <para>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></para>
+        /// </remarks>
+        void InstallPackagesFromRegistryRepository(string keyName, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
 
-    /// <summary>
-    /// Installs one or more packages that exist on disk in a folder defined in the registry.
-    /// </summary>
-    /// <param name="keyName">
-    /// The registry key name (under NuGet's repository key) that defines the folder on disk
-    /// containing the packages.
-    /// </param>
-    /// <param name="isPreUnzipped">
-    /// A boolean indicating whether the folder contains packages that are
-    /// pre-unzipped.
-    /// </param>
-    /// <param name="skipAssemblyReferences">
-    /// A boolean indicating whether the assembly references from the packages
-    /// should be skipped.
-    /// </param>
-    /// <param name="ignoreDependencies">A boolean indicating whether the package's dependencies should be ignored</param>
-    /// <param name="project">The target project for package installation.</param>
-    /// <param name="packageVersions">
-    /// A dictionary of packages/versions to install where the key is the package id
-    /// and the value is the version.
-    /// </param>
-    /// <remarks>
-    /// If any version of the package is already installed, no action will be taken.
-    /// </remarks>
-    void InstallPackagesFromRegistryRepository(string keyName, bool isPreUnzipped, bool skipAssemblyReferences, bool ignoreDependencies, Project project, IDictionary<string, string> packageVersions);
+        /// <summary>
+        /// Installs one or more packages that exist on disk in a folder defined in the registry.
+        /// </summary>
+        /// <param name="keyName">
+        /// The registry key name (under NuGet's repository key) that defines the folder on disk
+        /// containing the packages.
+        /// </param>
+        /// <param name="isPreUnzipped">
+        /// A boolean indicating whether the folder contains packages that are
+        /// pre-unzipped.
+        /// </param>
+        /// <param name="skipAssemblyReferences">
+        /// A boolean indicating whether the assembly references from the packages
+        /// should be skipped.
+        /// </param>
+        /// <param name="ignoreDependencies">A boolean indicating whether the package's dependencies should be ignored</param>
+        /// <param name="project">The target project for package installation.</param>
+        /// <param name="packageVersions">
+        /// A dictionary of packages/versions to install where the key is the package id
+        /// and the value is the version.
+        /// </param>
+        /// <remarks>
+        /// If any version of the package is already installed, no action will be taken.
+        /// <para>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></para>
+        /// </remarks>
+        void InstallPackagesFromRegistryRepository(string keyName, bool isPreUnzipped, bool skipAssemblyReferences, bool ignoreDependencies, Project project, IDictionary<string, string> packageVersions);
 
-    /// <summary>
-    /// Installs one or more packages that are embedded in a Visual Studio Extension Package.
-    /// </summary>
-    /// <param name="extensionId">The Id of the Visual Studio Extension Package.</param>
-    /// <param name="isPreUnzipped">
-    /// A boolean indicating whether the folder contains packages that are
-    /// pre-unzipped.
-    /// </param>
-    /// <param name="skipAssemblyReferences">
-    /// A boolean indicating whether the assembly references from the packages
-    /// should be skipped.
-    /// </param>
-    /// <param name="project">The target project for package installation</param>
-    /// <param name="packageVersions">
-    /// A dictionary of packages/versions to install where the key is the package id
-    /// and the value is the version.
-    /// </param>
-    /// <remarks>
-    /// If any version of the package is already installed, no action will be taken.
-    /// <para>
-    /// Dependencies are always ignored.
-    /// </para>
-    /// </remarks>
-    void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
+        /// <summary>
+        /// Installs one or more packages that are embedded in a Visual Studio Extension Package.
+        /// </summary>
+        /// <param name="extensionId">The Id of the Visual Studio Extension Package.</param>
+        /// <param name="isPreUnzipped">
+        /// A boolean indicating whether the folder contains packages that are
+        /// pre-unzipped.
+        /// </param>
+        /// <param name="skipAssemblyReferences">
+        /// A boolean indicating whether the assembly references from the packages
+        /// should be skipped.
+        /// </param>
+        /// <param name="project">The target project for package installation</param>
+        /// <param name="packageVersions">
+        /// A dictionary of packages/versions to install where the key is the package id
+        /// and the value is the version.
+        /// </param>
+        /// <remarks>
+        /// If any version of the package is already installed, no action will be taken.
+        /// <para>
+        /// Dependencies are always ignored.
+        /// </para>
+        /// <para>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></para>
+        /// </remarks>
+        void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, Project project, IDictionary<string, string> packageVersions);
 
-    /// <summary>
-    /// Installs one or more packages that are embedded in a Visual Studio Extension Package.
-    /// </summary>
-    /// <param name="extensionId">The Id of the Visual Studio Extension Package.</param>
-    /// <param name="isPreUnzipped">
-    /// A boolean indicating whether the folder contains packages that are
-    /// pre-unzipped.
-    /// </param>
-    /// <param name="skipAssemblyReferences">
-    /// A boolean indicating whether the assembly references from the packages
-    /// should be skipped.
-    /// </param>
-    /// <param name="ignoreDependencies">A boolean indicating whether the package's dependencies should be ignored</param>
-    /// <param name="project">The target project for package installation</param>
-    /// <param name="packageVersions">
-    /// A dictionary of packages/versions to install where the key is the package id
-    /// and the value is the version.
-    /// </param>
-    /// <remarks>
-    /// If any version of the package is already installed, no action will be taken.
-    /// </remarks>
-    void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, bool ignoreDependencies, Project project, IDictionary<string, string> packageVersions);
-}
+        /// <summary>
+        /// Installs one or more packages that are embedded in a Visual Studio Extension Package.
+        /// </summary>
+        /// <param name="extensionId">The Id of the Visual Studio Extension Package.</param>
+        /// <param name="isPreUnzipped">
+        /// A boolean indicating whether the folder contains packages that are
+        /// pre-unzipped.
+        /// </param>
+        /// <param name="skipAssemblyReferences">
+        /// A boolean indicating whether the assembly references from the packages
+        /// should be skipped.
+        /// </param>
+        /// <param name="ignoreDependencies">A boolean indicating whether the package's dependencies should be ignored</param>
+        /// <param name="project">The target project for package installation</param>
+        /// <param name="packageVersions">
+        /// A dictionary of packages/versions to install where the key is the package id
+        /// and the value is the version.
+        /// </param>
+        /// <remarks>
+        /// If any version of the package is already installed, no action will be taken.
+        /// <para>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></para>
+        /// </remarks>
+        void InstallPackagesFromVSExtensionRepository(string extensionId, bool isPreUnzipped, bool skipAssemblyReferences, bool ignoreDependencies, Project project, IDictionary<string, string> packageVersions);
+    }
 ```
 
 ## IVsPackageinstaller2 interface
 
 ```cs
-   [Guid("4F3B122B-A53B-432C-8D85-0FAFB8BE4FF4")]
+
+    /// <summary>
+    /// Contains method to install latest version of a single package into a project within the current solution.
+    /// </summary>
     public interface IVsPackageInstaller2 : IVsPackageInstaller
     {
         /// <summary>
         /// Installs the latest version of a single package from the specified package source.
         /// </summary>
+        /// <remarks>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></remarks>
         /// <param name="source">
         /// The package source to install the package from. This value can be <c>null</c>
         /// to indicate that the user's configured sources should be used. Otherwise,
@@ -569,296 +658,258 @@ public interface IVsPackageInstaller
 ## IVsPackageInstallerEvents interface
 
 ```cs
-public interface IVsPackageInstallerEvents
-{
     /// <summary>
-    /// Raised when a package is about to be installed into the current solution.
+    /// Contains events which are raised when packages are installed or uninstalled from projects and the current
+    /// solution.
     /// </summary>
-    event VsPackageEventHandler PackageInstalling;
+    public interface IVsPackageInstallerEvents
+    {
+        /// <summary>
+        /// Raised when a package is about to be installed into the current solution.
+        /// </summary>
+        event VsPackageEventHandler PackageInstalling;
 
-    /// <summary>
-    /// Raised after a package has been installed into the current solution.
-    /// </summary>
-    event VsPackageEventHandler PackageInstalled;
+        /// <summary>
+        /// Raised after a package has been installed into the current solution.
+        /// </summary>
+        event VsPackageEventHandler PackageInstalled;
 
-    /// <summary>
-    /// Raised when a package is about to be uninstalled from the current solution.
-    /// </summary>
-    event VsPackageEventHandler PackageUninstalling;
+        /// <summary>
+        /// Raised when a package is about to be uninstalled from the current solution.
+        /// </summary>
+        event VsPackageEventHandler PackageUninstalling;
 
-    /// <summary>
-    /// Raised after a package has been uninstalled from the current solution.
-    /// </summary>
-    event VsPackageEventHandler PackageUninstalled;
+        /// <summary>
+        /// Raised after a package has been uninstalled from the current solution.
+        /// </summary>
+        event VsPackageEventHandler PackageUninstalled;
 
-    /// <summary>
-    /// Raised after a package has been installed into a project within the current solution.
-    /// </summary>
-    event VsPackageEventHandler PackageReferenceAdded;
+        /// <summary>
+        /// Raised after a package has been installed into a project within the current solution.
+        /// </summary>
+        event VsPackageEventHandler PackageReferenceAdded;
 
-    /// <summary>
-    /// Raised after a package has been uninstalled from a project within the current solution.
-    /// </summary>
-    event VsPackageEventHandler PackageReferenceRemoved;
-}
+        /// <summary>
+        /// Raised after a package has been uninstalled from a project within the current solution.
+        /// </summary>
+        event VsPackageEventHandler PackageReferenceRemoved;
+    }
 ```
 
 ## IVsPackageInstallerProjectEvents interface
 
 ```cs
-public interface IVsPackageInstallerProjectEvents
-{
     /// <summary>
-    /// Raised before any IVsPackageInstallerEvents events are raised for a project.
+    /// Contains batch events which are raised when packages are installed or uninstalled from projects with packages.config
+    /// and the current solution.
     /// </summary>
-    event VsPackageProjectEventHandler BatchStart;
+    public interface IVsPackageInstallerProjectEvents
+    {
+        /// <summary>
+        /// Raised before any IVsPackageInstallerEvents events are raised for a project.
+        /// </summary>
+        event VsPackageProjectEventHandler BatchStart;
 
-    /// <summary>
-    /// Raised after all IVsPackageInstallerEvents events are raised for a project.
-    /// </summary>
-    event VsPackageProjectEventHandler BatchEnd;
-}
+        /// <summary>
+        /// Raised after all IVsPackageInstallerEvents events are raised for a project.
+        /// </summary>
+        event VsPackageProjectEventHandler BatchEnd;
+
+    }
 ```
 
 ## IVsPackageInstallerServices interface
 
 ```cs
-public interface IVsPackageInstallerServices
-{
-    // IMPORTANT: do NOT rearrange the methods here. The order is important to maintain
-    // backwards compatibility with clients that were compiled against old versions of NuGet.
-
     /// <summary>
-    /// Get the list of NuGet packages installed in the current solution.
+    /// Contains methods to query for installed packages within the current solution.
     /// </summary>
-    IEnumerable<IVsPackageMetadata> GetInstalledPackages();
+    [Obsolete("Use INuGetProjectService in the NuGet.VisualStudio.Contracts package instead.")]
+    public interface IVsPackageInstallerServices
+    {
+        /// <summary>
+        /// Get the list of NuGet packages installed in the current solution.
+        /// </summary>
+        [Obsolete("This method can cause UI delays if called on the UI thread. Use INuGetProjectService.GetInstalledPackagesAsync in the NuGet.VisualStudio.Contracts package instead, and iterate all projects in the solution")]
+        IEnumerable<IVsPackageMetadata> GetInstalledPackages();
 
-    /// <summary>
-    /// Checks if a NuGet package with the specified Id is installed in the specified project.
-    /// </summary>
-    /// <param name="project">The project to check for NuGet package.</param>
-    /// <param name="id">The id of the package to check.</param>
-    /// <returns><c>true</c> if the package is install. <c>false</c> otherwise.</returns>
-    bool IsPackageInstalled(Project project, string id);
+        /// <summary>
+        /// Checks if a NuGet package with the specified Id is installed in the specified project.
+        /// </summary>
+        /// <param name="project">The project to check for NuGet package.</param>
+        /// <param name="id">The id of the package to check.</param>
+        /// <returns><c>true</c> if the package is install. <c>false</c> otherwise.</returns>
+        [Obsolete("This method can cause UI delays if called on the UI thread. Use INuGetProjectService.GetInstalledPackagesAsync in the NuGet.VisualStudio.Contracts package instead, and check the specific package you're interested in")]
+        bool IsPackageInstalled(Project project, string id);
 
-    /// <summary>
-    /// Checks if a NuGet package with the specified Id and version is installed in the specified project.
-    /// </summary>
-    /// <param name="project">The project to check for NuGet package.</param>
-    /// <param name="id">The id of the package to check.</param>
-    /// <param name="version">The version of the package to check.</param>
-    /// <returns><c>true</c> if the package is install. <c>false</c> otherwise.</returns>
-    bool IsPackageInstalled(Project project, string id, SemanticVersion version);
+        /// <summary>
+        /// Checks if a NuGet package with the specified Id and version is installed in the specified project.
+        /// </summary>
+        /// <param name="project">The project to check for NuGet package.</param>
+        /// <param name="id">The id of the package to check.</param>
+        /// <param name="version">The version of the package to check.</param>
+        /// <returns><c>true</c> if the package is install. <c>false</c> otherwise.</returns>
+        [Obsolete("This method can cause UI delays if called on the UI thread. Use INuGetProjectService.GetInstalledPackagesAsync in the NuGet.VisualStudio.Contracts package instead, and check the specific package you're interested in")]
+        bool IsPackageInstalled(Project project, string id, SemanticVersion version);
 
-    /// <summary>
-    /// Checks if a NuGet package with the specified Id and version is installed in the specified project.
-    /// </summary>
-    /// <param name="project">The project to check for NuGet package.</param>
-    /// <param name="id">The id of the package to check.</param>
-    /// <param name="versionString">The version of the package to check.</param>
-    /// <returns><c>true</c> if the package is install. <c>false</c> otherwise.</returns>
-    /// <remarks>
-    /// The reason this method is named IsPackageInstalledEx, instead of IsPackageInstalled, is that
-    /// when client project compiles against this assembly, the compiler would attempt to bind against
-    /// the other overload which accepts SemanticVersion and would require client project to reference NuGet.Core.
-    /// </remarks>
-    bool IsPackageInstalledEx(Project project, string id, string versionString);
+        /// <summary>
+        /// Checks if a NuGet package with the specified Id and version is installed in the specified project.
+        /// </summary>
+        /// <param name="project">The project to check for NuGet package.</param>
+        /// <param name="id">The id of the package to check.</param>
+        /// <param name="versionString">The version of the package to check.</param>
+        /// <returns><c>true</c> if the package is install. <c>false</c> otherwise.</returns>
+        /// <remarks>
+        /// The reason this method is named IsPackageInstalledEx, instead of IsPackageInstalled, is that
+        /// when client project compiles against this assembly, the compiler would attempt to bind against
+        /// the other overload which accepts SemanticVersion and would require client project to reference NuGet.Core.
+        /// </remarks>
+        [Obsolete("This method can cause UI delays if called on the UI thread. Use INuGetProjectService.GetInstalledPackagesAsync in the NuGet.VisualStudio.Contracts package instead, and check the specific package you're interested in")]
+        bool IsPackageInstalledEx(Project project, string id, string versionString);
 
-    /// <summary>
-    /// Get the list of NuGet packages installed in the specified project.
-    /// </summary>
-    /// <param name="project">The project to get NuGet packages from.</param>
-    IEnumerable<IVsPackageMetadata> GetInstalledPackages(Project project);
-}
+        /// <summary>
+        /// Get the list of NuGet packages installed in the specified project.
+        /// </summary>
+        /// <param name="project">The project to get NuGet packages from.</param>
+        [Obsolete("This method can cause UI delays if called on the UI thread. Use INuGetProjectService.GetInstalledPackagesAsync in the NuGet.VisualStudio.Contracts package instead")]
+        IEnumerable<IVsPackageMetadata> GetInstalledPackages(Project project);
+    }
 ```
 
 ## IVsPackageManagerProvider interface
 
-```cs
-public interface IVsPackageManagerProvider
-{
-    /// <summary>
-    /// Localized display package manager name.
-    /// </summary>
-    string PackageManagerName { get; }
-
-    /// <summary>
-    /// Package manager unique id.
-    /// </summary>
-    string PackageManagerId { get; }
-
-    /// <summary>
-    /// The tool tip description for the package
-    /// </summary>
-    string Description { get; }
-
-    /// <summary>
-    /// Check if a recommendation should be surfaced for an alternate package manager.
-    /// This code should not rely on slow network calls, and should return rapidly.
-    /// </summary>
-    /// <param name="packageId">Current package id</param>
-    /// <param name="projectName">Unique project name for finding the project through VS dte</param>
-    /// <param name="token">Cancellation Token</param>
-    /// <returns>return true if need to direct to integrated package manager for this package</returns>
-    Task<bool> CheckForPackageAsync(string packageId, string projectName, CancellationToken token);
-
-    /// <summary>
-    /// This Action should take the user to the other package manager.
-    /// </summary>
-    /// <param name="packageId">Current package id</param>
-    /// <param name="projectName">Unique project name for finding the project through VS dte</param>
-    void GoToPackage(string packageId, string projectName);
-}
-```
-
-## IVsPackageMetadata interface
+This interface was primarily used by the ASP.NET team, to suggest that Javascript and CSS packages like `jQuery` and `bootstrap` are installed with Bower instead of NuGet. Since they removed that functionality From Visual Studio, NuGet has obsolete this interface, and it will no longer be used by the Package Manager UI in Visual Studio 2022 (version 17.0) and later.
 
 ```cs
-public interface IVsPackageMetadata
-{
     /// <summary>
-    /// Id of the package.
+    /// Interface allowing integration of alternate package manager suggestion for a NuGet package. 
+    /// For example jQuery may appear on Bower and npm,
+    /// it might be more appropriate to install a package from them for certain projects. 
     /// </summary>
-    string Id { get; }
+    [Obsolete]
+    public interface IVsPackageManagerProvider
+    {
+        /// <summary>
+        /// Localized display package manager name.
+        /// </summary>
+        string PackageManagerName { get; }
 
-    /// <summary>
-    /// Version of the package.
-    /// </summary>
-    /// <remarks>
-    /// Do not use this property because it will require referencing NuGet.Core.dll assembly. Use the VersionString
-    /// property instead.
-    /// </remarks>
-    [Obsolete("Do not use this property because it will require referencing NuGet.Core.dll assembly. Use the VersionString property instead.")]
-    NuGet.SemanticVersion Version { get; }
+        /// <summary>
+        /// Package manager unique id.
+        /// </summary>
+        string PackageManagerId { get; }
 
-    /// <summary>
-    /// Title of the package.
-    /// </summary>
-    string Title { get; }
+        /// <summary>
+        /// The tool tip description for the package
+        /// </summary>
+        string Description { get; }
 
-    /// <summary>
-    /// Description of the package.
-    /// </summary>
-    string Description { get; }
+        /// <summary>
+        /// Check if a recommendation should be surfaced for an alternate package manager. 
+        /// This code should not rely on slow network calls, and should return rapidly.
+        /// </summary>
+        /// <param name="packageId">Current package id</param>
+        /// <param name="projectName">Unique project name for finding the project through VS dte</param>
+        /// <param name="token">Cancellation Token</param>
+        /// <returns>return true if need to direct to integrated package manager for this package</returns>
+        Task<bool> CheckForPackageAsync(string packageId, string projectName, CancellationToken token);
 
-    /// <summary>
-    /// The authors of the package.
-    /// </summary>
-    IEnumerable<string> Authors { get; }
-
-    /// <summary>
-    /// The location where the package is installed on disk.
-    /// </summary>
-    string InstallPath { get; }
-
-    // IMPORTANT: This property must come LAST, because it was added in 2.5. Having it declared
-    // LAST will avoid breaking components that compiled against earlier versions which doesn't
-    // have this property.
-    /// <summary>
-    /// The version of the package.
-    /// </summary>
-    /// <remarks>
-    /// Use this property instead of the Version property becase with the type string,
-    /// it doesn't require referencing NuGet.Core.dll assembly.
-    /// </remarks>
-    string VersionString { get; }
-}
-```
-
-## IVsPackageProjectMetadata interface
-
-```cs
-public interface IVsPackageProjectMetadata
-{
-    /// <summary>
-    /// Unique batch id for batch start/end events of the project.
-    /// </summary>
-    string BatchId { get; }
-
-    /// <summary>
-    /// Name of the project.
-    /// </summary>
-    string ProjectName { get; }
-}
+        /// <summary>
+        /// This Action should take the user to the other package manager.
+        /// </summary>
+        /// <param name="packageId">Current package id</param>
+        /// <param name="projectName">Unique project name for finding the project through VS dte</param>
+        void GoToPackage(string packageId, string projectName);
+    }
 ```
 
 ## IVsPackageRestorer interface
 
 ```cs
-public interface IVsPackageRestorer
-{
-    /// <summary>
-    /// Returns a value indicating whether the user consent to download NuGet packages
-    /// has been granted.
-    /// </summary>
-    /// <returns>true if the user consent has been granted; otherwise, false.</returns>
-    bool IsUserConsentGranted();
 
     /// <summary>
-    /// Restores NuGet packages installed in the given project within the current solution.
+    /// Contains methods to restore packages installed in a project within the current solution.
     /// </summary>
-    /// <param name="project">The project whose NuGet packages to restore.</param>
-    void RestorePackages(Project project);
-}
+    public interface IVsPackageRestorer
+    {
+        /// <summary>
+        /// Returns a value indicating whether the user consent to download NuGet packages
+        /// has been granted.
+        /// </summary>
+        /// <remarks>Can be called from a background thread.</remarks>
+        /// <returns>true if the user consent has been granted; otherwise, false.</returns>
+        bool IsUserConsentGranted();
+
+        /// <summary>
+        /// Restores NuGet packages installed in the given project within the current solution.
+        /// </summary>
+        /// <remarks>Can be called from a background thread.</remarks>
+        /// <param name="project">The project whose NuGet packages to restore.</param>
+        void RestorePackages(Project project);
+    }
 ```
 
 ## IVsPackageSourceProvider interface
 
 ```cs
-/// <summary>
-/// A public API for retrieving the list of NuGet package sources.
-/// </summary>
-public interface IVsPackageSourceProvider
-{
     /// <summary>
-    /// Provides the list of package sources.
+    /// A public API for retrieving the list of NuGet package sources.
     /// </summary>
-    /// <param name="includeUnOfficial">Unofficial sources will be included in the results</param>
-    /// <param name="includeDisabled">Disabled sources will be included in the results</param>
-    /// <remarks>Does not require the UI thread.</remarks>
-    /// <exception cref="ArgumentException">Thrown if a NuGet configuration file is invalid.</exception>
-    /// <exception cref="ArgumentNullException">Thrown if a NuGet configuration file is invalid.</exception>
-    /// <exception cref="InvalidOperationException">Thrown if a NuGet configuration file is invalid.</exception>
-    /// <exception cref="InvalidDataException">Thrown if a NuGet configuration file is invalid.</exception>
-    /// <returns>Key: source name Value: source URI</returns>
-    IEnumerable<KeyValuePair<string, string>> GetSources(bool includeUnOfficial, bool includeDisabled);
+    public interface IVsPackageSourceProvider
+    {
+        /// <summary>
+        /// Provides the list of package sources.
+        /// </summary>
+        /// <remarks>Can be called from a background thread.</remarks>
+        /// <param name="includeUnOfficial">Unofficial sources will be included in the results</param>
+        /// <param name="includeDisabled">Disabled sources will be included in the results</param>
+        /// <remarks>Does not require the UI thread.</remarks>
+        /// <exception cref="ArgumentException">Thrown if a NuGet configuration file is invalid.</exception>
+        /// <exception cref="ArgumentNullException">Thrown if a NuGet configuration file is invalid.</exception>
+        /// <exception cref="InvalidOperationException">Thrown if a NuGet configuration file is invalid.</exception>
+        /// <exception cref="InvalidDataException">Thrown if a NuGet configuration file is invalid.</exception>
+        /// <returns>Key: source name Value: source URI</returns>
+        IEnumerable<KeyValuePair<string, string>> GetSources(bool includeUnOfficial, bool includeDisabled);
 
-    /// <summary>
-    /// Raised when sources are added, removed, disabled, or modified.
-    /// </summary>
-    event EventHandler SourcesChanged;
-}
+        /// <summary>
+        /// Raised when sources are added, removed, disabled, or modified.
+        /// </summary>
+        event EventHandler SourcesChanged;
+    }
 ```
 
 ## IVsPackageUninstaller interface
 
 ```cs
-public interface IVsPackageUninstaller
-{
     /// <summary>
-    /// Uninstall the specified package from a project and specify whether to uninstall its dependency packages
-    /// too.
+    /// Contains methods to uninstall packages from a project within the current solution.
     /// </summary>
-    /// <param name="project">The project from which the package is uninstalled.</param>
-    /// <param name="packageId">The package to be uninstalled</param>
-    /// <param name="removeDependencies">
-    /// A boolean to indicate whether the dependency packages should be
-    /// uninstalled too.
-    /// </param>
-    void UninstallPackage(Project project, string packageId, bool removeDependencies);
-}
+    public interface IVsPackageUninstaller
+    {
+        /// <summary>
+        /// Uninstall the specified package from a project and specify whether to uninstall its dependency packages
+        /// too.
+        /// </summary>
+        /// <remarks>Can be called from a background thread, if the UI thread is not blocked waiting for this to finish.
+        /// See <a href="https://github.com/nuget/home/issues/11476">https://github.com/nuget/home/issues/11476</a></remarks>
+        /// <param name="project">The project from which the package is uninstalled.</param>
+        /// <param name="packageId">The package to be uninstalled</param>
+        /// <param name="removeDependencies">
+        /// A boolean to indicate whether the dependency packages should be
+        /// uninstalled too.
+        /// </param>
+        void UninstallPackage(Project project, string packageId, bool removeDependencies);
+    }
 ```
 
 ## IVsPathContext interface
 
 ```cs
-/// <summary>
+    /// <summary>
     /// NuGet path information specific to the current context (e.g. project context).
     /// Represents captured snapshot associated with current project/solution settings.
     /// Should be discarded immediately after all queries are done.
     /// </summary>
-    [ComImport]
-    [Guid("24A1A187-75EE-4296-A8B3-59F0E0707119")]
     public interface IVsPathContext
     {
         /// <summary>
@@ -871,6 +922,7 @@ public interface IVsPackageUninstaller
         /// fallback package folders are configured, an empty list is returned. The item type of this sequence is
         /// <see cref="string"/>.
         /// </summary>
+        /// <remarks>Can be called from a background thread.</remarks>
         IEnumerable FallbackPackageFolders { get; }
 
         /// <summary>
@@ -906,7 +958,7 @@ public interface IVsPackageUninstaller
 ## IVsPathContext2 interface
 
 ```cs
-/// <summary>
+    /// <summary>
     /// NuGet path information specific to the current context (e.g. project context) or solution context
     /// Represents captured snapshot associated with current project/solution settings.
     /// Should be discarded immediately after all queries are done.
@@ -932,6 +984,7 @@ public interface IVsPackageUninstaller
         /// <summary>
         /// Attempts to create an instance of <see cref="IVsPathContext"/>.
         /// </summary>
+        /// <remarks>Can be called from a background thread.</remarks>
         /// <param name="projectUniqueName">
         /// Unique identificator of the project. Should be a full path to project file.
         /// </param>
@@ -959,6 +1012,7 @@ public interface IVsPackageUninstaller
         /// <summary>
         /// Attempts to create an instance of <see cref="IVsPathContext2"/> for the solution.
         /// </summary>
+        /// <remarks>This API is free-threaded, but APIs on the returned IVsPathContext2 may not be.</remarks>
         /// <param name="context">The path context associated with this solution.</param>
         /// <returns>
         /// <code>True</code> if operation has succeeded and context was created.
@@ -972,6 +1026,7 @@ public interface IVsPackageUninstaller
         /// <summary>
         /// Attempts to create an instance of <see cref="IVsPathContext2"/> for the solution.
         /// </summary>
+        /// <remarks>This API is free-threaded, but APIs on the returned IVsPathContext2 may not be.</remarks>
         /// <param name="solutionDirectory">
         /// path to the solution directory. Must be an absolute path.
         /// It will be performant to pass the solution directory if it's available.
@@ -1001,26 +1056,6 @@ public interface IVsPackageUninstaller
         /// This method can be safely invoked from a background thread. Do note that this method might switch to the UI thread internally, so be mindful of blocking the UI thread on this.
         /// </remarks>
         bool TryCreateNoSolutionContext(out IVsPathContext vsPathContext);
-
-```
-
-## IVsProjectJsonToPackageReferenceMigrateResult interface
-
-```cs
-    /// <summary>
-    /// Contains the result of the migrate operation on a legacy project.json project
-    /// </summary>
-    public interface IVsProjectJsonToPackageReferenceMigrateResult
-    {
-        /// <summary>
-        /// Returns the success value of the migration operation.
-        /// </summary>
-        bool IsSuccess { get; }
-
-        /// <summary>
-        /// If migrate operation was unsuccessful, stores the error message in the exception.
-        /// </summary>
-        string ErrorMessage { get; }
     }
 ```
 
@@ -1060,6 +1095,7 @@ public interface IVsPackageUninstaller
         /// are equivalent. Returns a number greater than zero if <paramref name="versionA"/>
         /// is greater than <paramref name="versionB"/>.
         /// </summary>
+        /// <remarks>This API is free-threaded.</remarks>
         /// <param name="versionA">The first version string.</param>
         /// <param name="versionB">The second version string.</param>
         /// <exception cref="ArgumentNullException">If either version string is null.</exception>
@@ -1072,14 +1108,261 @@ public interface IVsPackageUninstaller
     }
 ```
 
-## IVsTemplateWizard interface
+## IVsNuGetProjectUpdateEvents interface
 
 ```cs
-/// <summary>
-/// Defines the logic for a template wizard extension.
-/// </summary>
+    /// <summary>
+    /// NuGet project update events.
+    /// This API provides means of tracking project updates by NuGet.
+    /// In particular, for PackageReference projects, updates to the assets file and nuget generated props/targets.
+    /// For packages.config projects, package installations will be tracked.
+    /// All events are fired from a threadpool thread.
+    /// </summary>
+    public interface IVsNuGetProjectUpdateEvents
+    {
+        /// <summary>
+        /// Raised when solution restore starts with the list of projects that will be restored.
+        /// The list will not include all projects. Some projects may have been skipped in earlier up to date check, and other projects may no-op.
+        /// </summary>
+        /// <remarks>
+        /// Just because a project is being restored that doesn't necessarily mean any actual updates will happen.
+        /// No heavy computation should happen in any of these methods as it'll block the NuGet progress.
+        /// </remarks>
+        event SolutionRestoreEventHandler SolutionRestoreStarted;
 
-public interface IVsTemplateWizard : IWizard
-{
+        /// <summary>
+        /// Raised when solution restore finishes with the list of projects that were restored.
+        /// The list will not include all projects. Some projects may have been skipped in earlier up to date check, and other projects may no-op.
+        /// </summary>
+        /// <remarks>
+        /// Just because a project is being restored that doesn't necessarily mean any actual updates will happen.
+        /// No heavy computation should happen in any of these methods as it'll block the NuGet progress.
+        /// </remarks>
+        event SolutionRestoreEventHandler SolutionRestoreFinished;
+
+        /// <summary>
+        /// Raised when particular project is about to be updated.
+        /// For PackageReference projects, this means an assets file or a nuget temp msbuild file write (nuget.g.props or nuget.g.targets). The list of updated files will include the aforementioned.
+        /// If a project was restore, but no file updates happen, this event will not be fired.
+        /// </summary>
+        /// <remarks>
+        /// No heavy computation should happen in any of these methods as it'll block the NuGet progress.
+        /// </remarks>
+        event ProjectUpdateEventHandler ProjectUpdateStarted;
+
+        /// <summary>
+        /// Raised when particular project update has been completed.
+        /// For PackageReference projects, this means an assets file or a nuget temp msbuild file write (nuget.g.props or nuget.g.targets). The list of updated files will include the aforementioned.
+        /// If a project was restore, but no file updates happen, this event will not be fired.
+        /// </summary>
+        /// <remarks>
+        /// No heavy computation should happen in any of these methods as it'll block the NuGet progress.
+        /// </remarks>
+        event ProjectUpdateEventHandler ProjectUpdateFinished;
+    }
+
+    /// <summary>
+    /// Defines an event handler delegate for solution restore start and end.
+    /// </summary>
+    /// <param name="projects">List of projects that will run restore. Never <see langword="null"/>.</param>
+    public delegate void SolutionRestoreEventHandler(IReadOnlyList<string> projects);
+
+    /// <summary>
+    /// Defines an event handler delegate for project updates.
+    /// </summary>
+    /// <param name="projectUniqueName">Project full path. Never <see langword="null"/>. </param>
+    /// <param name="updatedFiles">NuGet output files that may be updated. Never <see langword="null"/>.</param>
+    public delegate void ProjectUpdateEventHandler(string projectUniqueName, IReadOnlyList<string> updatedFiles);
 }
+```
+
+## IVsSolutionRestoreService interface
+
+```cs
+    /// <summary>
+    /// Represents a package restore service API for integration with a project system.
+    /// </summary>
+    public interface IVsSolutionRestoreService
+    {
+        /// <summary>
+        /// A task providing last/current restore operation status.
+        /// Could be null if restore has not started yet.
+        /// </summary>
+        /// <remarks>
+        /// This task is a reflection of the current state of the current-restore-operation or
+        /// recently-completed-restore. The usage of this property will be to continue,
+        /// e.g. to build solution or something) on completion of this task.
+        /// Also, on completion, if the task returns false then it means the restore failed and
+        /// the build task will be terminated.
+        /// </remarks>
+        Task<bool> CurrentRestoreOperation { get; }
+
+        /// <summary>
+        /// An entry point used by CPS to indicate given project needs to be restored.
+        /// </summary>
+        /// <param name="projectUniqueName">
+        /// Unique identifier of the project. Should be a full path to project file.
+        /// </param>
+        /// <param name="projectRestoreInfo">Metadata <see cref="IVsProjectRestoreInfo"/> needed for restoring the project.</param>
+        /// <param name="token">Cancellation token.</param>
+        /// <returns>
+        /// Returns a restore task corresponding to the nominated project request.
+        /// NuGet will batch restore requests so it's possible the same restore task will be returned for multiple projects.
+        /// When the requested restore operation for the given project completes the task will indicate operation success or failure.
+        /// </returns>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="projectUniqueName" /> is not the path of a project file.</exception>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="projectRestoreInfo" /> is <c>null</c>.</exception>
+        /// <exception cref="OperationCanceledException">Thrown if <paramref name="token" /> is cancelled.</exception>
+        Task<bool> NominateProjectAsync(string projectUniqueName, IVsProjectRestoreInfo projectRestoreInfo, CancellationToken token);
+    }
+```
+
+## IVsSolutionRestoreService2 interface
+
+```cs
+    /// <summary>
+    /// Represents a package restore service API for integration with a project system.
+    /// </summary>
+    public interface IVsSolutionRestoreService2
+    {
+        /// <summary>
+        /// An entry point which allows non-NETCore SDK based projects to indicate given project needs to be restored.
+        /// </summary>
+        /// <param name="projectUniqueName">
+        /// Unique identificator of the project. Should be a full path to project file.
+        /// </param>
+        /// <param name="token">Cancellation token.</param>
+        /// <returns>
+        /// Returns a restore task corresponding to the nominated project request.
+        /// NuGet will batch restore requests so it's possible the same restore task will be returned for multiple projects.
+        /// When the requested restore operation for the given project completes the task will indicate operation success or failure.
+        /// </returns>
+        Task<bool> NominateProjectAsync(string projectUniqueName, CancellationToken token);
+    }
+```
+
+## IVsSolutionRestoreService3 interface
+
+```cs
+    /// <summary>
+    /// Represents a package restore service API for integration with a project system.
+    /// </summary>
+    public interface IVsSolutionRestoreService3
+    {
+        /// <summary>
+        /// A task providing last/current restore operation status.
+        /// Could be null if restore has not started yet.
+        /// </summary>
+        /// <remarks>
+        /// This task is a reflection of the current state of the current-restore-operation or
+        /// recently-completed-restore. The usage of this property will be to continue,
+        /// e.g. to build solution or something) on completion of this task.
+        /// Also, on completion, if the task returns false then it means the restore failed and
+        /// the build task will be terminated.
+        /// </remarks>
+        Task<bool> CurrentRestoreOperation { get; }
+
+        /// <summary>
+        /// An entry point used by CPS to indicate given project needs to be restored.
+        /// This entry point also handles PackageDownload items
+        /// </summary>
+        /// <param name="projectUniqueName">
+        /// Unique identifier of the project. Should be a full path to project file.
+        /// </param>
+        /// <param name="projectRestoreInfo">Metadata <see cref="IVsProjectRestoreInfo2"/> needed for restoring the project.</param>
+        /// <param name="token">Cancellation token.</param>
+        /// <returns>
+        /// Returns a restore task corresponding to the nominated project request.
+        /// NuGet will batch restore requests so it's possible the same restore task will be returned for multiple projects.
+        /// When the requested restore operation for the given project completes the task will indicate operation success or failure.
+        /// </returns>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="projectUniqueName" /> is not the path of a project file.</exception>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="projectRestoreInfo" /> is <c>null</c>.</exception>
+        /// <exception cref="OperationCanceledException">Thrown if <paramref name="token" /> is cancelled.</exception>
+        Task<bool> NominateProjectAsync(string projectUniqueName, IVsProjectRestoreInfo2 projectRestoreInfo, CancellationToken token);
+    }
+```
+
+## IVsSolutionRestoreService4 interface
+
+```cs
+    /// <summary>
+    /// Represents a package restore service API for integration with a project system.
+    /// Implemented by NuGet.
+    /// </summary>
+    public interface IVsSolutionRestoreService4 : IVsSolutionRestoreService3
+    {
+        /// <summary>
+        /// A project system can call this service (optionally) to register itself to coordinate restore. <br/>
+        /// Each project can only register once. NuGet will call into the source to wait for nominations for restore. <br/>
+        /// NuGet will remove the registered object when a project is unloaded.
+        /// </summary>
+        /// <param name="restoreInfoSource">Represents a project specific info source</param>
+        /// <param name="cancellationToken">Cancellation token.</param>
+        /// <exception cref="InvalidOperationException">If the project has already been registered.</exception>
+        /// <exception cref="ArgumentNullException">If <paramref name="restoreInfoSource"/> is null. </exception>
+        /// <exception cref="ArgumentException">If <paramref name="restoreInfoSource"/>'s <see cref="IVsProjectRestoreInfoSource.Name"/> is <see langword="null"/>. </exception>
+        Task RegisterRestoreInfoSourceAsync(IVsProjectRestoreInfoSource restoreInfoSource, CancellationToken cancellationToken);
+    }
+```
+
+## IVsProjectRestoreInfoSource interface
+
+```cs
+    /// <summary>
+    /// Represents a package restore service API for integration with a project system.
+    /// Implemented by the project-system.
+    /// </summary>
+    public interface IVsProjectRestoreInfoSource
+    {
+        /// <summary>
+        /// Project Unique Name.
+        /// Must be equivalent to the name provided in the <see cref="IVsSolutionRestoreService3.NominateProjectAsync(string, IVsProjectRestoreInfo2, CancellationToken)"/> or equivalent.
+        /// </summary>
+        /// <remarks>Never <see langword="null"/>.</remarks>
+        string Name { get; }
+
+        /// <summary>
+        /// Whether the source needs to do some work that could lead to a nomination. <br/>
+        /// Called frequently, so it should be very efficient.
+        /// </summary>
+        bool HasPendingNomination { get; }
+
+        /// <summary>
+        /// NuGet calls this method to wait on a potential nomination. <br/>
+        /// If the project has no pending restore data, it will return a completed task. <br/>
+        /// Otherwise, the task will be completed once the project nominates. <br/>
+        /// The task will be cancelled, if the source decide it no longer needs to nominate (for example: the restore state has no change) <br/>
+        /// The task will be failed, if the source runs into a problem, and it cannot get the correct data to nominate (for example: DT build failed) <br/>
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token.</param>
+        Task WhenNominated(CancellationToken cancellationToken);
+    }
+```
+
+## IVsSolutionRestoreStatusProvider interface
+
+```cs
+    /// <summary>
+    /// Provides the status of IVsSolutionRestore.
+    /// </summary>
+    public interface IVsSolutionRestoreStatusProvider
+    {
+        /// <summary>
+        /// IsRestoreCompleteAsync indicates whether or not automatic package restore has pending work.
+        /// Automatic package restore applies for both packages.config and PackageReference projects.
+        ///
+        /// Returns true if all projects in the solution that require nomination have been nominated for restore and all pending restores have completed.
+        /// The result does not indicate that restore completed successfully, a failed restore will still return true.
+        /// </summary>
+        /// <remarks>
+        /// Special cases:
+        /// * An empty solution will return true.
+        /// * If no solution is open this will true.
+        /// * An invalid project that does not provide restore details will cause this to return false since restore will not run for that project.
+        ///
+        /// Restores running due to Install/Update/Uninstall operations are NOT included in this status. Status here is limited to IVsSolutionRestoreService.
+        /// </remarks>
+        Task<bool> IsRestoreCompleteAsync(CancellationToken token);
+    }
 ```
