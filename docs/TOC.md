@@ -139,6 +139,7 @@
 ### [NU1004](reference/errors-and-warnings/NU1004.md)
 ### [NU1005](reference/errors-and-warnings/NU1005.md)
 ### [NU1006](reference/errors-and-warnings/NU1006.md)
+### [NU1007](reference/errors-and-warnings/NU1007.md)
 ### [NU1100](reference/errors-and-warnings/NU1100.md)
 ### [NU1101](reference/errors-and-warnings/NU1101.md)
 ### [NU1102](reference/errors-and-warnings/NU1102.md)
