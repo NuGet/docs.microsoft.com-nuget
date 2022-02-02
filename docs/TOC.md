@@ -244,6 +244,7 @@
 ### [NU5035](reference/errors-and-warnings/NU5035.md)
 ### [NU5036](reference/errors-and-warnings/NU5036.md)
 ### [NU5037](reference/errors-and-warnings/NU5037.md)
+### [NU5045](reference/errors-and-warnings/NU5045.md)
 ### [NU5046](reference/errors-and-warnings/NU5046.md)
 ### [NU5047](reference/errors-and-warnings/NU5047.md)
 ### [NU5048](reference/errors-and-warnings/NU5048.md)
