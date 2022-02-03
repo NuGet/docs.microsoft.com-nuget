@@ -153,6 +153,7 @@
 ### [NU1201](reference/errors-and-warnings/NU1201.md)
 ### [NU1202](reference/errors-and-warnings/NU1202.md)
 ### [NU1203](reference/errors-and-warnings/NU1203.md)
+### [NU1204](reference/errors-and-warnings/NU1204.md)
 ### [NU1211](reference/errors-and-warnings/NU1211.md)
 ### [NU1212](reference/errors-and-warnings/NU1212.md)
 ### [NU1213](reference/errors-and-warnings/NU1213.md)
