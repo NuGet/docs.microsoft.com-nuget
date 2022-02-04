@@ -445,8 +445,8 @@ Additional restore settings may come from MSBuild properties in the project file
 | `RestoreRepositoryPath` | packages.config only. Specifies the packages directory to which the packages should be restored. `SolutionDirectory` will be used if not specified. |
 | `RestoreUseStaticGraphEvaluation` | An opt-in switch to use static graph MSBuild evaluation instead of the standard evaluation. Static graph evaluation is an experimental feature that's significantly faster for large repos and solutions. |
 
-The `ExcludeRestorePackageImports` property is used by NuGet in PackageReference to ensure that build targets from packages brought in by restore cannot affect the next restore.
-As such, this is not a property that should be modified or set in any MSBuild files.
+The `ExcludeRestorePackageImports` property is an internal property used by NuGet.
+It should not be modified or set in any MSBuild files.
 
 #### Examples
 
