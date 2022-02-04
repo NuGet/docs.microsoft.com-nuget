@@ -23,6 +23,7 @@ There are also several other NuGet hosting products such as [Azure Artifacts](ht
 - [Artifactory](https://www.jfrog.com/artifactory/) from JFrog.
 - [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish), which is also available on Team Foundation Server 2017 and later.
 - [BaGet](https://github.com/loic-sharma/BaGet), an open-source implementation of NuGet V3 server built on ASP.NET Core
+- [Bytesafe](https://bytesafe.dev/nuget/) A fully managed package and supply chain security platform
 - [Cloudsmith](https://cloudsmith.io/l/nuget-feed/), a fully managed package management SaaS
 - [GitHub package registry](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [GitLab Package Registry](https://docs.gitlab.com/ee/user/packages/nuget_repository/)
