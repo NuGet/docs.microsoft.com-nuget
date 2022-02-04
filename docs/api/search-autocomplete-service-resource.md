@@ -59,7 +59,7 @@ semVerLevel | URL    | string  | no       | A SemVer 1.0.0 version string
 packageType | URL    | string  | no       | The package type to use to filter packages (added in `SearchAutocompleteService/3.5.0`)
 
 The autocomplete query `q` is parsed in a manner that is defined by the server implementation. nuget.org supports
-querying for the prefix of package ID tokens, which are pieces of the ID produced by spliting the original by camel
+querying for the prefix of package ID tokens, which are pieces of the ID produced by splitting the original by camel
 case and symbol characters.
 
 The `skip` parameter defaults to 0.
