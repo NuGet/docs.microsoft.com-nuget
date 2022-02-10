@@ -316,7 +316,7 @@ To suppress NuGet's assemblies from your vsix, add the following to your project
 
 * [Bug]: VS PM UI does not display JPEG icons for packages - [#11144](https://github.com/NuGet/Home/issues/11144)
 
-* UIDelay: `nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VsCoreProjectSystemReferenceReader.GetProjectReferencesAsync`  - CPS projects - [#11162](https://github.com/NuGet/Home/issues/11162)
+* UIDelay: `nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VsCoreProjectSystemReferenceReader+<GetProjectReferencesAsync>d__`  - CPS projects - [#11162](https://github.com/NuGet/Home/issues/11162)
 
 * [Bug]: `dotnet list package --outdated --interactive` makes credential provider invalidate cache for every package listed - [#11169](https://github.com/NuGet/Home/issues/11169)
 

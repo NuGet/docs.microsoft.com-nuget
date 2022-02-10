@@ -63,7 +63,7 @@ NuGet distribution vehicles:
 
 * ContentItemCollection uses yield return which is causing over-allocation of Enumerators - [#10921](https://github.com/NuGet/Home/issues/10921)
 
-* UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VsCoreProjectSystemReferenceReader+<GetProjectReferencesAsync>d__ - managed projects - [#11163](https://github.com/NuGet/Home/issues/11163)
+* UIDelay: `nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VsCoreProjectSystemReferenceReader+<GetProjectReferencesAsync>d__` - managed projects - [#11163](https://github.com/NuGet/Home/issues/11163)
 
 * [Bug]: MSBuild restore is logging exception as warning - [#11179](https://github.com/NuGet/Home/issues/11179)
 
