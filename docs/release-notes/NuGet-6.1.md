@@ -1,8 +1,8 @@
 ---
 title: NuGet 6.1 Release Notes
 description: Release notes for NuGet 6.1 including new features, bug fixes, and DCRs.
-author: zivkan
-ms.author: zivkan
+author: <GithubAlias>
+ms.author: <MicrosoftAlias>
 ms.date: 2/10/2022
 ms.topic: conceptual
 ---
@@ -13,9 +13,9 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.1.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.1](https://visualstudio.microsoft.com/downloads/) | [6.0.200](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
+| [**<NuGetVersion>**](https://nuget.org/downloads) | [Visual Studio <VSYear> version <VSVersion>](https://visualstudio.microsoft.com/downloads/) | [<SDKVersion>](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio 2022 with.NET Core workload
+<sup>1</sup> Installed with Visual Studio <VSYear> with.NET Core workload
 
 ## Summary: What's New in 6.1
 
@@ -29,17 +29,39 @@ NuGet distribution vehicles:
 
 * Disable nuget.exe pack for project.json by default, add a fallback env var to enable it - [#11214](https://github.com/NuGet/Home/issues/11214)
 
+* [DCR]: Adjust compatibility rules for Apple TFMs in .NET  - [#11338](https://github.com/NuGet/Home/issues/11338)
+
 * [DCR][No Customer Impact]: NuGetPackage (VS extension entry point) should not use DTEEvents - [#11360](https://github.com/NuGet/Home/issues/11360)
+
+* [DCR]: Improve NuGet.Client build and debugging speed by making ilmerge targets use MSBuild up to date checks - [#11386](https://github.com/NuGet/Home/issues/11386)
+
+* [DCR]: Mitigate missing nuget.org when non-NuGet tool creates nuget.config without any sources - [#11387](https://github.com/NuGet/Home/issues/11387)
+
+* [DCR]: NuGet.VisualStudio and NuGet.VisualStudio.Contracts to follow Visual Studio version numbers - [#11394](https://github.com/NuGet/Home/issues/11394)
+
+* [DCR]: Deprecate VS Extensibility APIs that use System.Version - [#11412](https://github.com/NuGet/Home/issues/11412)
+
+* [DCR]: Obsolete VS extensibility APIs that use System.Runtime.Versioning.FrameworkName - [#11419](https://github.com/NuGet/Home/issues/11419)
 
 * Remove Mac Catalyst warning - [#11438](https://github.com/NuGet/Home/issues/11438)
 
 **Bugs:**
 
+* Confusing restore output: it did some restore on one of the projects, but at the end it still prints "All packages are already installed and there is nothing to restore" - [#4376](https://github.com/NuGet/Home/issues/4376)
+
+* dotnet nuget push - Missing value for option - [#4864](https://github.com/NuGet/Home/issues/4864)
+
+* Restore does not print enough info in the output when fails - [#6047](https://github.com/NuGet/Home/issues/6047)
+
 * Minimal VS install has broken NuGet UI - [#8414](https://github.com/NuGet/Home/issues/8414)
+
+* Visual Studio hangs at "Clear All NuGet cache(s) - [#9831](https://github.com/NuGet/Home/issues/9831)
 
 * Versions List in Details Pane is not kept in sync when changing Selected Package - [#10557](https://github.com/NuGet/Home/issues/10557)
 
 * File Conflict dialog does not have access keys - [#10691](https://github.com/NuGet/Home/issues/10691)
+
+* ContentItemCollection uses yield return which is causing over-allocation of Enumerators - [#10921](https://github.com/NuGet/Home/issues/10921)
 
 * UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VsCoreProjectSystemReferenceReader+<GetProjectReferencesAsync>d__ - managed projects - [#11163](https://github.com/NuGet/Home/issues/11163)
 
@@ -47,13 +69,21 @@ NuGet distribution vehicles:
 
 * [Bug]: String comparison approach used for Source and Namespaces is not consistent - [#11182](https://github.com/NuGet/Home/issues/11182)
 
+* There is no tooltip for the “install” button on the right of a package in "Browse" tab - [#11189](https://github.com/NuGet/Home/issues/11189)
+
 * Async Service Provider should be invoked on threadpool threads via the built in TService,TInterface extensions instead of custom casting - [#11200](https://github.com/NuGet/Home/issues/11200)
 
 * [Bug]: VS crashes when package sources dropdown in PM UI has multiple package sources whose names are equal when compared using Culture Ignore Case - [#11241](https://github.com/NuGet/Home/issues/11241)
 
 * The strings "ms"  and "sec" are not localized on Output - Package Manager window. - [#11297](https://github.com/NuGet/Home/issues/11297)
 
+* Sort Package Source dropdown list using locale/culture setttings in PM UI - [#11298](https://github.com/NuGet/Home/issues/11298)
+
 * Update SDPX license list from da7ecca to fafa781 - [#11309](https://github.com/NuGet/Home/issues/11309)
+
+* [Bug]: NuGet.Localization isn't generated - [#11328](https://github.com/NuGet/Home/issues/11328)
+
+* [Bug]:  assembly-loading MEF composition in NuGet.Tools VS package's synchronous event handlers can cause responsiveness delays - [#11334](https://github.com/NuGet/Home/issues/11334)
 
 * [Bug]: NuGet SDK resolver should not throw if project path is NULL - [#11376](https://github.com/NuGet/Home/issues/11376)
 
@@ -79,6 +109,12 @@ NuGet distribution vehicles:
 
 **Nones:**
 
+* NuGet no longer uses CPS's JTF - [#8317](https://github.com/NuGet/Home/issues/8317)
+
 * [5.x] Make restore types that are project.json-specific obsolete - [#9149](https://github.com/NuGet/Home/issues/9149)
+
+* [Bug]:  Use IAsyncServiceProvider extension methods instead of type casting ourselves - [#11339](https://github.com/NuGet/Home/issues/11339)
+
+* Remove NUGET_FRAMEWORKS_INTERNAL compiler constant - [#11418](https://github.com/NuGet/Home/issues/11418)
 
 **[List of all issues fixed in this release - 6.1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=Z2lkOi8vcmFwdG9yL1JlbGVhc2UvNjY5ODY)**
