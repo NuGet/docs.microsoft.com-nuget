@@ -1,9 +1,9 @@
 ---
 title: NuGet 6.1 Release Notes
 description: Release notes for NuGet 6.1 including new features, bug fixes, and DCRs.
-author: <GithubAlias>
-ms.author: <MicrosoftAlias>
-ms.date: 2/10/2022
+author: zivkan
+ms.author: zivkan
+ms.date: 2/15/2022
 ms.topic: conceptual
 ---
 
@@ -13,9 +13,9 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**<NuGetVersion>**](https://nuget.org/downloads) | [Visual Studio <VSYear> version <VSVersion>](https://visualstudio.microsoft.com/downloads/) | [<SDKVersion>](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
+| [**6.1.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.1](https://visualstudio.microsoft.com/downloads/) | [6.0.200](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio <VSYear> with.NET Core workload
+<sup>1</sup> Installed with Visual Studio 2022 with.NET Core workload
 
 ## Summary: What's New in 6.1
 
