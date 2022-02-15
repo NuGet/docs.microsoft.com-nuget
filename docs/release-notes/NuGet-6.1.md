@@ -33,8 +33,6 @@ NuGet distribution vehicles:
 
 * [DCR][No Customer Impact]: NuGetPackage (VS extension entry point) should not use DTEEvents - [#11360](https://github.com/NuGet/Home/issues/11360)
 
-* [DCR]: Improve NuGet.Client build and debugging speed by making ilmerge targets use MSBuild up to date checks - [#11386](https://github.com/NuGet/Home/issues/11386)
-
 * [DCR]: Mitigate missing nuget.org when non-NuGet tool creates nuget.config without any sources - [#11387](https://github.com/NuGet/Home/issues/11387)
 
 * [DCR]: NuGet.VisualStudio and NuGet.VisualStudio.Contracts to follow Visual Studio version numbers - [#11394](https://github.com/NuGet/Home/issues/11394)
@@ -100,21 +98,5 @@ NuGet distribution vehicles:
 * [Bug]: Package Source options in VS does not announce package sources or checkbox status - [#11482](https://github.com/NuGet/Home/issues/11482)
 
 * [Bug]: VS package source options clears all checkboxes when adding or removing sources - [#11521](https://github.com/NuGet/Home/issues/11521)
-
-**StillOpens:**
-
-* Remove project.json pack - [#7931](https://github.com/NuGet/Home/issues/7931)
-
-* Async implementation of IVS Package Installer/Uninstaller services - [#8896](https://github.com/NuGet/Home/issues/8896)
-
-**Nones:**
-
-* NuGet no longer uses CPS's JTF - [#8317](https://github.com/NuGet/Home/issues/8317)
-
-* [5.x] Make restore types that are project.json-specific obsolete - [#9149](https://github.com/NuGet/Home/issues/9149)
-
-* [Bug]:  Use IAsyncServiceProvider extension methods instead of type casting ourselves - [#11339](https://github.com/NuGet/Home/issues/11339)
-
-* Remove NUGET_FRAMEWORKS_INTERNAL compiler constant - [#11418](https://github.com/NuGet/Home/issues/11418)
 
 **[List of all issues fixed in this release - 6.1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=Z2lkOi8vcmFwdG9yL1JlbGVhc2UvNjY5ODY)**
