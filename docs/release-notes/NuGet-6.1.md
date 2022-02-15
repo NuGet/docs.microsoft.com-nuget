@@ -100,3 +100,22 @@ NuGet distribution vehicles:
 * [Bug]: VS package source options clears all checkboxes when adding or removing sources - [#11521](https://github.com/NuGet/Home/issues/11521)
 
 **[List of all issues fixed in this release - 6.1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=Z2lkOi8vcmFwdG9yL1JlbGVhc2UvNjY5ODY)**
+
+### Community contributions
+
+Thank you to all the contributors who helped make this NuGet release awesome!
+
+|Who|PRs|Issues|
+|----|----|----|
+[mairaw](https://github.com/mairaw) | [4336](https://github.com/NuGet/NuGet.Client/pull/4336) | Fix broken NuGet logo image - [#11390](https://github.com/NuGet/Home/issues/11390)
+
+## Feedback welcome
+
+Your feedback is important to us.  If there are any problems with this release, check our
+[GitHub Issues](https://github.com/NuGet/Home/issues) and
+[Visual Studio Developer Community](https://developercommunity.visualstudio.com/)
+for existing issues.  For new issues within NuGet, please report a
+[GitHub Issue](https://github.com/NuGet/Home/issues/new/choose).
+For general NuGet experience issues, let us know via the
+[Report a Problem](/visualstudio/ide/how-to-report-a-problem-with-visual-studio)
+option found in your favorite IDE under **Help > Report a Problem**.
