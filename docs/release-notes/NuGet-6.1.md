@@ -53,7 +53,7 @@ NuGet distribution vehicles:
 
 * Minimal VS install has broken NuGet UI - [#8414](https://github.com/NuGet/Home/issues/8414)
 
-* Visual Studio hangs at "Clear All NuGet cache(s) - [#9831](https://github.com/NuGet/Home/issues/9831)
+* Visual Studio is unresponsive while using `Clear All NuGet cache(s)` feature - [#9831](https://github.com/NuGet/Home/issues/9831)
 
 * Versions List in Details Pane is not kept in sync when changing Selected Package - [#10557](https://github.com/NuGet/Home/issues/10557)
 
