@@ -19,7 +19,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.1
 
-* Show help only for the error itself has to do with a command, argument, or option being invalid with `dotnet nuget` command - [#10788](https://github.com/NuGet/Home/issues/10788)
+* show subcommand help instead of main `dotnet nuget trust` command help for all cases - [#10788](https://github.com/NuGet/Home/issues/10788)
 
 * Sort the package vulnerabilities in descending order in PMUI details pane - [#11091](https://github.com/NuGet/Home/issues/11091)
 
