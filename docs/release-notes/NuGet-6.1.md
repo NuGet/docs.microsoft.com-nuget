@@ -19,7 +19,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.1
 
-* show subcommand help instead of main `dotnet nuget trust` command help for all cases - [#10788](https://github.com/NuGet/Home/issues/10788)
+* Show subcommand help instead of main `dotnet nuget trust` command help for all cases - [#10788](https://github.com/NuGet/Home/issues/10788)
 
 * Sort the package vulnerabilities in descending order in PMUI details pane - [#11091](https://github.com/NuGet/Home/issues/11091)
 
