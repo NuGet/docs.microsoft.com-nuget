@@ -47,7 +47,7 @@ NuGet distribution vehicles:
 
 * Confusing restore output: it did some restore on one of the projects, but at the end it still prints "All packages are already installed and there is nothing to restore" - [#4376](https://github.com/NuGet/Home/issues/4376)
 
-* dotnet nuget push - Missing value for option - [#4864](https://github.com/NuGet/Home/issues/4864)
+* dotnet nuget push - Missing value for option - [#4864](https://github.com/NuGet/Home/issues/4864) Removal of unnecessary option make break your script if check return value from push, so need to unnecessary option in that case. Otherwise it assumes `true` as another path where `nupkg` resides.
 
 * Restore does not print enough info in the output when fails - [#6047](https://github.com/NuGet/Home/issues/6047)
 
