@@ -153,6 +153,10 @@
 ### [NU1201](reference/errors-and-warnings/NU1201.md)
 ### [NU1202](reference/errors-and-warnings/NU1202.md)
 ### [NU1203](reference/errors-and-warnings/NU1203.md)
+### [NU1204](reference/errors-and-warnings/NU1204.md)
+### [NU1211](reference/errors-and-warnings/NU1211.md)
+### [NU1212](reference/errors-and-warnings/NU1212.md)
+### [NU1213](reference/errors-and-warnings/NU1213.md)
 ### [NU1401](reference/errors-and-warnings/NU1401.md)
 ### [NU1500](reference/errors-and-warnings/NU1500.md)
 ### [NU1501](reference/errors-and-warnings/NU1501.md)
@@ -244,6 +248,7 @@
 ### [NU5035](reference/errors-and-warnings/NU5035.md)
 ### [NU5036](reference/errors-and-warnings/NU5036.md)
 ### [NU5037](reference/errors-and-warnings/NU5037.md)
+### [NU5045](reference/errors-and-warnings/NU5045.md)
 ### [NU5046](reference/errors-and-warnings/NU5046.md)
 ### [NU5047](reference/errors-and-warnings/NU5047.md)
 ### [NU5048](reference/errors-and-warnings/NU5048.md)
@@ -272,6 +277,7 @@
 ### [NU5123](reference/errors-and-warnings/NU5123.md)
 ### [NU5124](reference/errors-and-warnings/NU5124.md)
 ### [NU5125](reference/errors-and-warnings/NU5125.md)
+### [NU5126](reference/errors-and-warnings/NU5126.md)
 ### [NU5127](reference/errors-and-warnings/NU5127.md)
 ### [NU5128](reference/errors-and-warnings/NU5128.md)
 ### [NU5129](reference/errors-and-warnings/NU5129.md)
@@ -301,6 +307,7 @@
 ### [Known Issues](release-notes/known-issues.md)
 
 ### NuGet 6.x
+#### [NuGet 6.1](release-notes/NuGet-6.1.md)
 #### [NuGet 6.0](release-notes/NuGet-6.0.md)
 ### NuGet 5.x
 #### [NuGet 5.11](release-notes/NuGet-5.11.md)

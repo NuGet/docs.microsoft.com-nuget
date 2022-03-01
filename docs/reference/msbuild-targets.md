@@ -442,7 +442,11 @@ Additional restore settings may come from MSBuild properties in the project file
 | `NuGetLockFilePath` | A custom location for the lock file. The default location is next to the project and is named `packages.lock.json`. |
 | `RestoreForceEvaluate` | Forces restore to recompute the dependencies and update the lock file without any warning. |
 | `RestorePackagesConfig` | An opt-in switch, that restores projects with packages.config. Support with `MSBuild -t:restore` only. |
+| `RestoreRepositoryPath` | packages.config only. Specifies the packages directory to which the packages should be restored. `SolutionDirectory` will be used if not specified. |
 | `RestoreUseStaticGraphEvaluation` | An opt-in switch to use static graph MSBuild evaluation instead of the standard evaluation. Static graph evaluation is an experimental feature that's significantly faster for large repos and solutions. |
+
+The `ExcludeRestorePackageImports` property is an internal property used by NuGet.
+It should not be modified or set in any MSBuild files.
 
 #### Examples
 
