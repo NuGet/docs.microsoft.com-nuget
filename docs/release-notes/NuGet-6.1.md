@@ -106,7 +106,7 @@ NuGet distribution vehicles:
 ### dotnet nuget push -n|--no-symbols or -d|--disable-buffering raises `error: File does not exist ...` exception. - [#11601](https://github.com/NuGet/Home/issues/11601)
 
 #### Issue
-Previously in order to use `-n|--no-symbols` and `-d|--disable-buffering` options with `dotnet nuget push` command requires passing unnecessary passing of random value after it. Removal of this unnecessary value can break your script by throwing exception with `error: File does not exist ...` even though actual push operation was successful.
+Previously in order to use `-n|--no-symbols` and `-d|--disable-buffering` options with `dotnet nuget push` command requires passing of unnecessary random value after it. Removal of this unnecessary value can break your script by throwing exception with `error: File does not exist ...` even though actual push operation was successful.
 
 #### Workaround
 Use `-n|--no-symbols` and `-d|--disable-buffering` options standalone without any additional value parameter.
