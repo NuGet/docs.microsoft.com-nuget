@@ -43,11 +43,11 @@ NuGet distribution vehicles:
 
 * Remove Mac Catalyst warning - [#11438](https://github.com/NuGet/Home/issues/11438)
 
+* dotnet nuget push - Missing value for option - [#4864](https://github.com/NuGet/Home/issues/4864)
+
 **Bugs:**
 
 * Confusing restore output: it did some restore on one of the projects, but at the end it still prints "All packages are already installed and there is nothing to restore" - [#4376](https://github.com/NuGet/Home/issues/4376)
-
-* dotnet nuget push - Missing value for option - [#4864](https://github.com/NuGet/Home/issues/4864) Previously in order to use `-n|--no-symbols` and `-d|--disable-buffering` options with `dotnet nuget push`  command requires passing unnecessary passing of random value after it, even though it's not mentioned in our doc. Removal of this unnecessary value can break your script by throwing exception with `error: File does not exist {somevalue}` even though push operation was successful, so it's recommended to stop passing that unnecessary value.
 
 * Restore does not print enough info in the output when fails - [#6047](https://github.com/NuGet/Home/issues/6047)
 
@@ -100,6 +100,16 @@ NuGet distribution vehicles:
 * [Bug]: VS package source options clears all checkboxes when adding or removing sources - [#11521](https://github.com/NuGet/Home/issues/11521)
 
 **[List of all issues fixed in this release - 6.1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=Z2lkOi8vcmFwdG9yL1JlbGVhc2UvNjY5ODY)**
+
+## Known issues
+
+### dotnet nuget push raises `error: File does not exist ...` exception. - [#10601](https://github.com/NuGet/Home/issues/11601)
+
+#### Issue
+Previously in order to use `-n|--no-symbols` and `-d|--disable-buffering` options with `dotnet nuget push`  command requires passing unnecessary passing of random value after it, even though it's not mentioned in our doc. Removal of this unnecessary value can break your script by throwing exception with `error: File does not exist ...` even though actual push operation was successful.
+
+#### Workaround
+Use `-n|--no-symbols` and `-d|--disable-buffering` options standalone without any additional value parameter.
 
 ### Community contributions
 
