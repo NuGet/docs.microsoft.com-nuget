@@ -202,7 +202,7 @@ version combination). A package details catalog item is produced when a package 
 following scenarios:
 
 1. A package is **pushed**.
-1. A package is **listed**.
+1. A package is **relisted**.
 1. A package is **unlisted**.
 1. A package is **deprecated**.
 1. A package is **undeprecated**.
