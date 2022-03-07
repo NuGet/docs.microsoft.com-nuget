@@ -422,7 +422,7 @@ Additional restore settings may come from MSBuild properties in the project file
 
 | Property | Description |
 |--------|--------|
-| `RestoreSources` | Semicolon-delimited list of package sources. |
+| `RestoreSources` | Semicolon-delimited list of package sources (and a space after the semicolon). |
 | `RestorePackagesPath` | User packages folder path. |
 | `RestoreDisableParallel` | Limit downloads to one at a time. |
 | `RestoreConfigFile` | Path to a `Nuget.Config` file to apply. |
