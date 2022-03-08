@@ -32,6 +32,7 @@
 ### [PackageReference in project files](consume-packages/package-references-in-project-files.md)
 ### [Migrate packages.config to PackageReference](consume-packages/migrate-packages-config-to-package-reference.md)
 ### [packages.config](reference/packages-config.md)
+### [Central Package Management](consume-packages/Central-Package-Management.md)
 # Create packages
 ## [Overview and workflow](create-packages/overview-and-workflow.md)
 ## [Create a package (dotnet CLI)](create-packages/creating-a-package-dotnet-cli.md)
