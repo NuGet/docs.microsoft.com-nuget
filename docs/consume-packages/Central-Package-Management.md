@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Central Package Management
 
-Dependency management is a core feature of NuGet. Managing depdendencies for a single project can be easy. Managing dependencies for multi-project solutions can prove to be difficult as they start to scale in size and complexity. In situations where you manage common dependencies for many different projects, you can leverage NuGet's central package management features to do all of this from the ease of a single location.
+Dependency management is a core feature of NuGet. Managing dependencies for a single project can be easy. Managing dependencies for multi-project solutions can prove to be difficult as they start to scale in size and complexity. In situations where you manage common dependencies for many different projects, you can leverage NuGet's central package management features to do all of this from the ease of a single location.
 
 Historically, NuGet package dependencies have been managed in two main locations:
 
