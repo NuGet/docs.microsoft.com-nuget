@@ -47,7 +47,7 @@ You can add as many patterns as you find necessary.
 </packageSources>
 
 <!-- Define mappings by adding package patterns beneath the target source. -->
-<!-- Contoso.* packages will be restored from contoso.com, everything else from nuget.org. -->
+<!-- Contoso.* packages and NuGet.Common will be restored from contoso.com, everything else from nuget.org. -->
 <packageSourceMapping>
   <!-- key value for <packageSource> should match key values from <packageSources> element -->
   <packageSource key="nuget.org">
@@ -55,6 +55,7 @@ You can add as many patterns as you find necessary.
   </packageSource>
   <packageSource key="contoso.com">
     <package pattern="Contoso.*" />
+    <package pattern="NuGet.Common" />
   </packageSource>
 </packageSourceMapping>
 ```
