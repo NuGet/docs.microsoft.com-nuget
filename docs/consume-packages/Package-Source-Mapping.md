@@ -32,7 +32,10 @@ For a video-based overview of the Package Source Mapping feature, consider watch
 
 To opt into this feature, you must have a `nuget.config` file. Having a single `nuget.config` at the root of your repository is considered a best practice. See [nuget.config documentation](../reference/nuget-config-file.md) to learn more.
 
-Declare your desired package sources in your `nuget.config` file. Following your source declarations, add a `<packageSourceMapping>` element that specifies the desired mappings for each source.
+* Declare your desired package sources in your `nuget.config` file.
+* Following your source declarations, add a `<packageSourceMapping>` element that specifies the desired mappings for each source.
+* Declare exactly one `packageSource` element for each source in use.
+  * Add as many patterns as you find necessary.
 
 ```xml
 <!-- Define the package sources, nuget.org and contoso.com. -->
@@ -45,7 +48,7 @@ Declare your desired package sources in your `nuget.config` file. Following your
 </packageSources>
 
 <!-- Define mappings by adding package patterns beneath the target source. -->
-<!-- Contoso.* packages will be restored from contoso.com, everything else from nuget.org. -->
+<!-- Contoso.* packages and NuGet.Common will be restored from contoso.com, everything else from nuget.org. -->
 <packageSourceMapping>
   <!-- key value for <packageSource> should match key values from <packageSources> element -->
   <packageSource key="nuget.org">
@@ -53,6 +56,7 @@ Declare your desired package sources in your `nuget.config` file. Following your
   </packageSource>
   <packageSource key="contoso.com">
     <package pattern="Contoso.*" />
+    <package pattern="NuGet.Common" />
   </packageSource>
 </packageSourceMapping>
 ```
