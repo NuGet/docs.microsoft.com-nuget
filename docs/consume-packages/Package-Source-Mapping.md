@@ -32,9 +32,10 @@ For a video-based overview of the Package Source Mapping feature, consider watch
 
 To opt into this feature, you must have a `nuget.config` file. Having a single `nuget.config` at the root of your repository is considered a best practice. See [nuget.config documentation](../reference/nuget-config-file.md) to learn more.
 
-Declare your desired package sources in your `nuget.config` file. Following your source declarations, add a `<packageSourceMapping>` element that specifies the desired mappings for each source.
-Declare exactly one `packageSource` element for each source in use.
-You can add as many patterns as you find necessary.
+* Declare your desired package sources in your `nuget.config` file.
+* Following your source declarations, add a `<packageSourceMapping>` element that specifies the desired mappings for each source.
+* Declare exactly one `packageSource` element for each source in use.
+  * Add as many patterns as you find necessary.
 
 ```xml
 <!-- Define the package sources, nuget.org and contoso.com. -->
