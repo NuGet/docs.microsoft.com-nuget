@@ -9,7 +9,7 @@ ms.topic: reference
 
 # packages.config reference
 
-The `packages.config` file is used in some project types (e.g. C++) to maintain the list of packages referenced by the project. This allows NuGet to easily restore the project's dependencies when the project is to be transported to a different machine, such as a build server, without all those packages.
+The `packages.config` file is used in some project types to maintain the list of packages referenced by the project. This allows NuGet to easily restore the project's dependencies when the project is to be transported to a different machine, such as a build server, without all those packages.
 
 If used, `packages.config` must be located in a project root. It's automatically created when the first NuGet operation is run, but can also be created manually before running any commands such as `nuget restore`.
 
