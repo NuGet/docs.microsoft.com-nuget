@@ -284,6 +284,7 @@
 ### [NU5130](reference/errors-and-warnings/NU5130.md)
 ### [NU5131](reference/errors-and-warnings/NU5131.md)
 ### [NU5500](reference/errors-and-warnings/NU5500.md)
+### [NU5501](reference/errors-and-warnings/NU5501.md)
 ## Archived content
 ### [project.json management format](archive/project-json.md)
 ### [project.json and UWP](archive/project-json-and-uwp.md)
