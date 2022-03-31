@@ -115,18 +115,23 @@ Allowable values for these tags are as follows, with multiple values separated b
 | none | None of the above are used. |
 | all | All of the above (except `none`) |
 
-In the following example, everything except the content files from the package would be consumed by the project and everything except content files and analyzers would flow to the parent project.
-
 ```xml
 <ItemGroup>
     <!-- ... -->
-
+    <!-- Everything except the content files will be consumed by the project -->
+    <!-- Everythign except content files and analyzers will flow to the parent project-->
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0">
-        <IncludeAssets>all</IncludeAssets>
+        <IncludeAssets>all</IncludeAssets> <!-- Default is `all`, can be omitted-->
         <ExcludeAssets>contentFiles</ExcludeAssets>
         <PrivateAssets>contentFiles;analyzers</PrivateAssets>
     </PackageReference>
-
+    <!-- ... -->
+    <!-- Everything except the compile will be consumed by the project -->
+    <!-- Everythign except contentFiles will flow to the parent project-->
+    <PackageReference Include="Contoso.Utility.SomeOtherUsefulStuff" Version="3.6.0">
+        <ExcludeAssets>compile</ExcludeAssets>
+        <PrivateAssets>contentFiles</PrivateAssets>
+    </PackageReference>
     <!-- ... -->
 </ItemGroup>
 ```
