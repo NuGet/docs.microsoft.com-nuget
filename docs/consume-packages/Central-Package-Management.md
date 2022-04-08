@@ -26,7 +26,7 @@ The feature is available across all NuGet integrated tooling.
 
 Older tooling will ignore Central Package Management configurations and features. To use this feature to the fullest extent, ensure all your build environments use the latest compatible tooling versions.
 
-Central Package Management will apply to all project types – including .NET Framework – as long as compatible tooling is used.
+Central Package Management will apply to all `<PackageReference>` projects – including [legacy .csproj](https://github.com/dotnet/project-system/blob/main/docs/feature-comparison.md) – as long as compatible tooling is used.
 
 ## Enabling Central Package Management
 
@@ -92,9 +92,9 @@ To fully onboard your repository, consider taking these steps:
 
 ## Transitive pinning
 
-You can automatically override a transitive package version even without an explicit top-level `<PackageReference />` by opting into a feature known as transitive pinning. This promotes a transitive dependency to a top-level dependency implicitly on your behalf.
+You can automatically override a transitive package version even without an explicit top-level `<PackageReference />` by opting into a feature known as transitive pinning. This promotes a transitive dependency to a top-level dependency implicitly on your behalf when necessary.
 
-You can enable this feature by setting the MSBuild property `CentralPackageTransitivePinningEnabled` to `true` in a project or `Directory.Build.props` import file:
+You can enable this feature by setting the MSBuild property `CentralPackageTransitivePinningEnabled` to `true` in a project or in a `Directory.Packages.props` or `Directory.Build.props` import file:
 
 ```xml
   <PropertyGroup>
@@ -126,7 +126,7 @@ You can override an individual package version by using the `VersionOverride` pr
 <Project>
 ```
 
-You can disable this feature by setting the MSBuild property `EnablePackageVersionOverride` to `false` in a project or `Directory.Build.props` import file:
+You can disable this feature by setting the MSBuild property `EnablePackageVersionOverride` to `false` in a project or in a `Directory.Packages.props` or `Directory.Build.props` import file:
 
 ```xml
   <PropertyGroup>
