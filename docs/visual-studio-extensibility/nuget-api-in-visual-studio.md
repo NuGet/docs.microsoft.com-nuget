@@ -101,7 +101,6 @@ If you would like a new NuGet related API in Visual Studio, please search [NuGet
    }
    ```
 
-
 ### MEF Services
 
 1. Install the [`NuGet.VisualStudio`](https://www.nuget.org/packages/NuGet.VisualStudio) package into your project, which contains the `NuGet.VisualStudio.dll` assembly.
@@ -657,6 +656,9 @@ public interface IRegistryKey
 
 ## IVsPackageInstallerEvents interface
 
+> [!Note]
+> These events are only raised for packages.config projects. To get updates for both packages.config and PackageReference use [`IVsNuGetProjectUpdateEvents`](#ivsnugetprojectupdateevents-interface) instead.
+
 ```cs
     /// <summary>
     /// Contains events which are raised when packages are installed or uninstalled from projects and the current
@@ -697,6 +699,9 @@ public interface IRegistryKey
 ```
 
 ## IVsPackageInstallerProjectEvents interface
+
+> [!Note]
+> These events are only raised for packages.config projects. To get updates for both packages.config and PackageReference use [`IVsNuGetProjectUpdateEvents`](#ivsnugetprojectupdateevents-interface) instead.
 
 ```cs
     /// <summary>
@@ -1143,7 +1148,8 @@ This interface was primarily used by the ASP.NET team, to suggest that Javascrip
         /// <summary>
         /// Raised when particular project is about to be updated.
         /// For PackageReference projects, this means an assets file or a nuget temp msbuild file write (nuget.g.props or nuget.g.targets). The list of updated files will include the aforementioned.
-        /// If a project was restore, but no file updates happen, this event will not be fired.
+        /// If a project was restored, but no file updates happen, this event will not be fired.
+        /// For packages.config projects, this means that the project file was changed.
         /// </summary>
         /// <remarks>
         /// No heavy computation should happen in any of these methods as it'll block the NuGet progress.
@@ -1153,7 +1159,8 @@ This interface was primarily used by the ASP.NET team, to suggest that Javascrip
         /// <summary>
         /// Raised when particular project update has been completed.
         /// For PackageReference projects, this means an assets file or a nuget temp msbuild file write (nuget.g.props or nuget.g.targets). The list of updated files will include the aforementioned.
-        /// If a project was restore, but no file updates happen, this event will not be fired.
+        /// If a project was restored, but no file updates happen, this event will not be fired.
+        /// For packages.config projects, this means that the project file was changed.
         /// </summary>
         /// <remarks>
         /// No heavy computation should happen in any of these methods as it'll block the NuGet progress.
