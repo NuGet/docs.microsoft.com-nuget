@@ -146,7 +146,7 @@ If you'd like to disable central package management for any reason, you can disa
 
 ## Warning when using multiple package sources
 
-When using central package management, you will see a warning if you have more than one package source defined in your configuration. To resolve this warning, map your package sources with [package source mapping](https://aka.ms/nuget-package-source-mapping) or specify a single package source.
+When using central package management, you will see a `NU1507` warning if you have more than one package source defined in your configuration. To resolve this warning, map your package sources with [package source mapping](https://aka.ms/nuget-package-source-mapping) or specify a single package source.
 
 ```
 There are {0} package sources defined in your configuration. When using central package management, please map your package sources with package source mapping (https://aka.ms/nuget-package-source-mapping) or specify a single package source.
