@@ -28,10 +28,15 @@ You can use self-issued certificates for testing purposes. However, packages sig
 
 ## Sign the package
 
-> [!note]
-> Requires nuget.exe 4.6.0 or later. dotnet.exe support is coming soon - [#7939](https://github.com/NuGet/Home/issues/7939)
+Sign the package using [dotnet nuget sign](/dotnet/core/tools/dotnet-nuget-sign) (requires .NET 6.0.100 SDK or later).
 
-Sign the package using [nuget sign](../reference/cli-reference/cli-ref-sign.md):
+```cli
+dotnet nuget sign MyPackage.nupkg --certificate-path <PathToTheCertificate> --timestamper <TimestampServiceURL>
+```
+
+or
+
+Sign the package using [nuget sign](../reference/cli-reference/cli-ref-sign.md) (requires nuget.exe 4.6.0 or later):
 
 ```cli
 nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
