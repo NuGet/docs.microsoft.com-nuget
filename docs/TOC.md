@@ -157,6 +157,7 @@
 ### [NU1211](reference/errors-and-warnings/NU1211.md)
 ### [NU1212](reference/errors-and-warnings/NU1212.md)
 ### [NU1213](reference/errors-and-warnings/NU1213.md)
+### [NU1301](reference/errors-and-warnings/NU1301.md)
 ### [NU1401](reference/errors-and-warnings/NU1401.md)
 ### [NU1500](reference/errors-and-warnings/NU1500.md)
 ### [NU1501](reference/errors-and-warnings/NU1501.md)
