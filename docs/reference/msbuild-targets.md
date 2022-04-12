@@ -50,8 +50,8 @@ The following table describes the MSBuild properties that can be added to a proj
 | `VersionPrefix` | `VersionPrefix` | empty | Setting `PackageVersion` overwrites `VersionPrefix` |
 | `VersionSuffix` | `VersionSuffix` | empty | Setting `PackageVersion` overwrites `VersionSuffix` |
 | `Authors` | `Authors` | Username of the current user | A semicolon-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors. |
-| `Owners` | N/A | Not present in nuspec | |
-| `Title` | `Title` | The `PackageId` | A human-friendly title of the package, typically used in UI displays as on nuget.org and the Package Manager in Visual Studio. |
+| `Owners` | N/A | Not present in nuspec |
+| `Title` | `Title` | `$(PackageId)` | A human-friendly title of the package, typically used in UI displays as on nuget.org and the Package Manager in Visual Studio. |
 | `Description` | `Description` | "Package Description" | A long description for the assembly. If `PackageDescription` is not specified, then this property is also used as the description of the package. |
 | `Copyright` | `Copyright` | empty | Copyright details for the package. |
 | `RequireLicenseAcceptance` | `PackageRequireLicenseAcceptance` | `false` | A Boolean value that specifies whether the client must prompt the consumer to accept the package license before installing the package. |
