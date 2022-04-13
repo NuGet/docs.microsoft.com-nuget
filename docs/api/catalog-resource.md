@@ -202,9 +202,12 @@ version combination). A package details catalog item is produced when a package 
 following scenarios:
 
 1. A package is **pushed**.
-1. A package is **listed**.
+1. A package is **relisted**.
 1. A package is **unlisted**.
+1. A package is **deprecated**.
+1. A package is **undeprecated**.
 1. A package is **reflowed**.
+1. A package's **vulnerability status** is updated.
 
 A package reflow is an administrative gesture that essentially generates a fake push of an existing package with no
 changes to the package itself. On nuget.org, a reflow is used after fixing a bug in one of the background jobs
