@@ -164,7 +164,8 @@ Always specify a version or version range for package dependencies in project fi
 | 1.1.\*-\* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.1.2-beta <br> 1.3.0-beta  | 1.1.2-beta | The highest version respecting the pattern and including the not stable versions. | Available in Visual Studio version 16.6, NuGet version 5.6, .NET Core SDK version 3.1.300 |
 
 > [!Note]
-> Floating version resolution does not take into account whether or not a package is listed.
+> Floating version resolution does not take into account whether or not a package is listed. 
+> Floating version resolution will be resolved locally if the conditions can be satisfied with packages in the Global Package Folder.
 
 **References in `packages.config`:**
 
