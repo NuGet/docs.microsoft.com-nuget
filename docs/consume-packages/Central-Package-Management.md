@@ -184,6 +184,7 @@ this warning, map your package sources with [package source mapping](https://aka
 There are 3 package sources defined in your configuration. When using central package management, please map your package sources with package source mapping (https://aka.ms/nuget-package-source-mapping) or specify a single package source.
 ```
 
-## Additional Notes
-1. This feature is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
-2. There is currently no support in Visual Studio or the .NET CLI for Central Package Management.
+> [!Note]
+> This feature is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
+>
+> * There is currently no support in Visual Studio or the .NET CLI for Central Package Management.
