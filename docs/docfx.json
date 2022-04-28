@@ -39,7 +39,7 @@
       "breadcrumb_path": "~/_breadcrumb/toc.yml",
       "ROBOTS": "INDEX,FOLLOW",
       "ms.topic": "conceptual",
-      "ms.prod": "nuget",
+      "ms.service": "nuget",
       "author": "JonDouglas",
       "ms.author": "jodou",
       "ms.reviewer": [
