@@ -23,9 +23,9 @@ Starting with [NuGet 6.2](..\release-notes\NuGet-6.2.md), you can centrally mana
 
 The feature is available across all NuGet integrated tooling.
 
-* [Visual Studio 2022 17.2 and later](https://visualstudio.microsoft.com/downloads/)
-* [.NET SDK 6.0.300 and later](https://dotnet.microsoft.com/download/dotnet/6.0)
-* [nuget.exe 6.2.0 and later](https://www.nuget.org/downloads)
+* [Visual Studio 2022 17.2 (Preview) and later](https://visualstudio.microsoft.com/downloads/)
+* [.NET SDK 6.0.300 and later (Preview)](https://dotnet.microsoft.com/download/dotnet/6.0)
+* [nuget.exe 6.2.0 and later (Preview)](https://www.nuget.org/downloads)
 
 Older tooling will ignore central package management configurations and features. To use this feature to the fullest extent, ensure all your build environments
 use the latest compatible tooling versions.
