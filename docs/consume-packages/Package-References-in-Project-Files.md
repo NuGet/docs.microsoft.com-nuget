@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # `PackageReference` in project files
 
-Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file). Using PackageReference, as it's called, doesn't affect other aspects of NuGet; for example, settings in `NuGet.Config` files (including package sources) are still applied as explained in [Common NuGet configurations](configuring-nuget-behavior.md).
+Package references, using `<PackageReference>` MSBuild items, specify NuGet package dependencies directly within project files, as opposed to having a separate `packages.config` file. Use of PackageReference doesn't affect other aspects of NuGet; for example, settings in `NuGet.Config` files (including package sources) are still applied as explained in [Common NuGet configurations](configuring-nuget-behavior.md).
 
 With PackageReference, you can also use MSBuild conditions to choose package references per target framework, or other groupings. It also allows for fine-grained control over dependencies and content flow. (See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
 
