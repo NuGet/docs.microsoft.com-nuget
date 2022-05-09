@@ -119,7 +119,7 @@ Allowable values for these tags are as follows, with multiple values separated b
 <ItemGroup>
     <!-- ... -->
     <!-- Everything except the content files will be consumed by the project -->
-    <!-- Everythign except content files and analyzers will flow to the parent project-->
+    <!-- Everything except content files and analyzers will flow to the parent project-->
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0">
         <IncludeAssets>all</IncludeAssets> <!-- Default is `all`, can be omitted-->
         <ExcludeAssets>contentFiles</ExcludeAssets>
@@ -127,7 +127,7 @@ Allowable values for these tags are as follows, with multiple values separated b
     </PackageReference>
     <!-- ... -->
     <!-- Everything except the compile will be consumed by the project -->
-    <!-- Everythign except contentFiles will flow to the parent project-->
+    <!-- Everything except contentFiles will flow to the parent project-->
     <PackageReference Include="Contoso.Utility.SomeOtherUsefulStuff" Version="3.6.0">
         <ExcludeAssets>compile</ExcludeAssets>
         <PrivateAssets>contentFiles</PrivateAssets>
