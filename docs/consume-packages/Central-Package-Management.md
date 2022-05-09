@@ -25,6 +25,7 @@ The feature is available across all NuGet integrated tooling.
 
 * [Visual Studio 2022 17.2 and later](https://visualstudio.microsoft.com/downloads/)
 * [.NET SDK 6.0.300 and later](https://dotnet.microsoft.com/download/dotnet/6.0)
+* [.NET SDK 7.0.0-preview.4 and later](https://dotnet.microsoft.com/download/dotnet/7.0)
 * [nuget.exe 6.2.0 and later](https://www.nuget.org/downloads)
 
 Older tooling will ignore central package management configurations and features. To use this feature to the fullest extent, ensure all your build environments
