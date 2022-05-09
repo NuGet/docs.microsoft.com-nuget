@@ -1,9 +1,9 @@
 ---
 title: NuGet 6.2 Release Notes
 description: Release notes for NuGet 6.2 including new features, bug fixes, and DCRs.
-author: <GithubAlias>
-ms.author: <MicrosoftAlias>
-ms.date: 5/5/2022
+author: martinrrm
+ms.author: mruizmares
+ms.date: 5/9/2022
 ms.topic: conceptual
 ---
 
@@ -13,9 +13,9 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**<NuGetVersion>**](https://nuget.org/downloads) | [Visual Studio <VSYear> version <VSVersion>](https://visualstudio.microsoft.com/downloads/) | [<SDKVersion>](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
+| [**6.2.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.2](https://visualstudio.microsoft.com/downloads/) | [6.0.202](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio <VSYear> with.NET Core workload
+<sup>1</sup> Installed with Visual Studio 2022 with.NET Core workload
 
 ## Summary: What's New in 6.2
 
@@ -27,7 +27,7 @@ NuGet distribution vehicles:
 
 * [Feature]: Add support for a dedicated environment variable providing the NuGetScratch path. - [#11671](https://github.com/NuGet/Home/issues/11671)
 
-* [Feature]: Add IVsNuGetProjectUpdateEvents in Visual Studio, reporting of restore changes for PackageReference based projects.  - [#9782](https://github.com/NuGet/Home/issues/9782)
+* [Feature]: Add IVsNuGetProjectUpdateEvents in Visual Studio, reporting of restore changes for PackageReference based projects.  - [#9782](https://github.com/NuGet/Home/issues/9782)  - [See documentation](https://docs.microsoft.com/en-us/nuget/visual-studio-extensibility/nuget-api-in-visual-studio#ivsnugetprojectupdateevents-interface)
 
 ### Issues fixed in this release
 
