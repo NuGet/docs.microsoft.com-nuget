@@ -29,6 +29,8 @@ NuGet distribution vehicles:
 
 * [Feature]: Add IVsNuGetProjectUpdateEvents in Visual Studio, reporting of restore changes for PackageReference based projects.  - [#9782](https://github.com/NuGet/Home/issues/9782)  - [See documentation](https://docs.microsoft.com/nuget/visual-studio-extensibility/nuget-api-in-visual-studio#ivsnugetprojectupdateevents-interface)
 
+* Project A referencing package B via AssetTargetFallback, doesn't use that same AssetTargetFallback to pull B's dependency package C - [#5957](https://github.com/NuGet/Home/issues/5957) - [More information](https://github.com/NuGet/Samples/tree/main/AssetTargetFallbackTransitiveDependencies)
+
 ### Issues fixed in this release
 
 **DCRs:**
@@ -58,8 +60,6 @@ NuGet distribution vehicles:
 * Surface the transitive packages and its transitive origins through the search layer - [#11486](https://github.com/NuGet/Home/issues/11486)
 
 * NuGet.exe list from local packages folder does not work with the AllVersion flag - [#4537](https://github.com/NuGet/Home/issues/4537)
-
-* Project A referencing package B via AssetTargetFallback, doesn't use that same AssetTargetFallback to pull B's dependency package C - [#5957](https://github.com/NuGet/Home/issues/5957)
 
 * Errors due to missing/failing sources are inconsistently shown in solution explorer vs the error list  - [#7245](https://github.com/NuGet/Home/issues/7245)
 
