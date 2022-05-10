@@ -27,7 +27,7 @@ NuGet distribution vehicles:
 
 * [Feature]: Add support for a dedicated environment variable providing the NuGetScratch path. - [#11671](https://github.com/NuGet/Home/issues/11671)
 
-* [Feature]: Add IVsNuGetProjectUpdateEvents in Visual Studio, reporting of restore changes for PackageReference based projects.  - [#9782](https://github.com/NuGet/Home/issues/9782)  - [See documentation](https://docs.microsoft.com/nuget/visual-studio-extensibility/nuget-api-in-visual-studio#ivsnugetprojectupdateevents-interface)
+* [Feature]: Add IVsNuGetProjectUpdateEvents in Visual Studio, reporting of restore changes for PackageReference based projects.  - [#9782](https://github.com/NuGet/Home/issues/9782)  - [See documentation](../visual-studio-extensibility/nuget-api-in-visual-studio#ivsnugetprojectupdateevents-interface)
 
 * Project A referencing package B via AssetTargetFallback, doesn't use that same AssetTargetFallback to pull B's dependency package C - [#5957](https://github.com/NuGet/Home/issues/5957) - [More information](https://github.com/NuGet/Samples/tree/main/AssetTargetFallbackTransitiveDependencies)
 
