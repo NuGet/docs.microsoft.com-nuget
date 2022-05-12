@@ -49,6 +49,8 @@ NuGet distribution vehicles:
 
 **Bugs:**
 
+* Revert mitigation of missing nuget.org when other tools create nuget.config [#11616](https://github.com/NuGet/Home/issues/11616)
+
 * Add support for grouping to the InfiniteScrollList, allowing it to be enabled or disabled - [#10748](https://github.com/NuGet/Home/issues/10748)
 
 * Make the InfiniteScrollList grouping sections expandable and collapsible - [#10749](https://github.com/NuGet/Home/issues/10749)
@@ -94,3 +96,26 @@ NuGet distribution vehicles:
 * [Bug]: NU1004 in Visual Studio, but not command line (lock files in locked mode) - [#11639](https://github.com/NuGet/Home/issues/11639)
 
 * [Bug]: new warning for package source mappings doesn't pass a value for the resource string placeholder - [#11709](https://github.com/NuGet/Home/issues/11709)
+
+
+**[List of commits in this release - `release-6.1.x` branch](https://github.com/NuGet/NuGet.Client/compare/release-6.2.x...release-6.1.x)**
+
+### Community contributions
+
+|Who|PRs|Issues|
+|----|----|----|
+
+
+Thank you to all the contributors who helped make this NuGet release awesome!
+
+
+## Feedback welcome
+
+Your feedback is important to us. If there are any problems with this release, check our
+[GitHub Issues](https://github.com/NuGet/Home/issues) and
+[Visual Studio Developer Community](https://developercommunity.visualstudio.com/)
+for existing issues.  For new issues within NuGet, please report a
+[GitHub Issue](https://github.com/NuGet/Home/issues/new/choose).
+For general NuGet experience issues, let us know via the
+[Report a Problem](/visualstudio/ide/how-to-report-a-problem-with-visual-studio)
+option found in your favorite IDE under **Help > Report a Problem**.
