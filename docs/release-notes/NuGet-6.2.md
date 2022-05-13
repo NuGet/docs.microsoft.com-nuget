@@ -43,7 +43,7 @@ NuGet distribution vehicles:
 
 * Add Author to the tooltip for a package in the packages list of PM UI - [#11499](https://github.com/NuGet/Home/issues/11499)
 
-* Remove NU5049  - [#11598](https://github.com/NuGet/Home/issues/11598)
+* Remove NU5049 - [#11598](https://github.com/NuGet/Home/issues/11598)
 
 **Bugs:**
 
@@ -73,19 +73,13 @@ NuGet distribution vehicles:
 
 * NuGet again throwing exceptions "authors is required" "description is required", ignoring csproj/nuspec replacement tokens - [#9954](https://github.com/NuGet/Home/issues/9954)
 
-* [Regression]: Performance regression for cold restores in .NET 5.0.x - [#11031](https://github.com/NuGet/Home/issues/11031)
-
 * [Bug]: Package extraction sometimes fails with "file in use by another process" - [#11373](https://github.com/NuGet/Home/issues/11373)
 
 * Add progress reporting during package installation - [#11432](https://github.com/NuGet/Home/issues/11432)
 
 * [Bug]: Reduce string allocations in restore code path - [#11475](https://github.com/NuGet/Home/issues/11475)
 
-* [Bug]: Errors NU3028 and NU3037 when restoring NuGet packages on FreeBSD - [#11481](https://github.com/NuGet/Home/issues/11481)
-
 * [Responsiveness] RestoreOperationLogger blocking large number of thread pool threads trying to get access to the output window pane - [#11501](https://github.com/NuGet/Home/issues/11501)
-
-* [Bug]: Race Condition Creating Plugin Log Files - [#11517](https://github.com/NuGet/Home/issues/11517)
 
 * [Responsiveness] Package Management UI can consume large number of threads all searching the disk, it needs to run from long running thread - [#11570](https://github.com/NuGet/Home/issues/11570)
 
@@ -121,11 +115,9 @@ Thank you to all the contributors who helped make this NuGet release awesome!
 [drewnoakes](https://github.com/drewnoakes) | [4390](https://github.com/nuget/nuget.client/pull/4390) | Show package .props and .targets files in Solution Explorer [#7838](https://github.com/dotnet/project-system/issues/7838)
 [drewnoakes](https://github.com/drewnoakes) | [4386](https://github.com/nuget/nuget.client/pull/4386) | Solution Explorer search is not showing package contents - [#7834](https://github.com/dotnet/project-system/issues/7834)
 [marcin-krystianc](https://github.com/marcin-krystianc) | [4186](https://github.com/nuget/nuget.client/pull/4186) | [Regression]: Performance regression for cold restores in .NET 5.0.x [#11031](https://github.com/NuGet/Home/issues/11031)
-joperator | [4389](https://github.com/nuget/nuget.client/pull/4389)
-AndreiTimisescu | [3779](https://github.com/nuget/nuget.client/pull/3779)
-Tom Deseyn | [4123](https://github.com/nuget/nuget.client/pull/4123)
-
-
+[joperator](https://github.com/joperator) | [4389](https://github.com/nuget/nuget.client/pull/4389) | [Bug]: Errors NU3028 and NU3037 when restoring NuGet packages on FreeBSD - [#11481](https://github.com/NuGet/Home/issues/11481)
+[AndreiTimisescu](https://github.com/AndreiTimisescu) | [3779](https://github.com/nuget/nuget.client/pull/3779) | Make LocalPackageFileCache methods virtual - [#10325](https://github.com/NuGet/Home/issues/10325)
+[tmds](https://github.com/tmds) | [4123](https://github.com/nuget/nuget.client/pull/4123) | NuGetScratch lock files are not cleaned up - [#10679](https://github.com/NuGet/Home/issues/10679)
 
 ## Feedback welcome
 
