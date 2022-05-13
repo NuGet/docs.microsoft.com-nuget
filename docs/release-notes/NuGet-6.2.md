@@ -25,8 +25,6 @@ NuGet distribution vehicles:
 
 * [Feature]: Allow overriding a centrally defined package version - [#11516](https://github.com/NuGet/Home/issues/11516)
 
-* [Feature]: Add support for a dedicated environment variable providing the NuGetScratch path. - [#11671](https://github.com/NuGet/Home/issues/11671)
-
 * [Feature]: Add IVsNuGetProjectUpdateEvents in Visual Studio, reporting of restore changes for PackageReference based projects.  - [#9782](https://github.com/NuGet/Home/issues/9782)  - [See documentation](../visual-studio-extensibility/nuget-api-in-visual-studio.md#ivsnugetprojectupdateevents-interface)
 
 * Project A referencing package B via AssetTargetFallback, doesn't use that same AssetTargetFallback to pull B's dependency package C - [#5957](https://github.com/NuGet/Home/issues/5957) - [More information](https://github.com/NuGet/Samples/tree/main/AssetTargetFallbackTransitiveDependencies)
@@ -98,15 +96,35 @@ NuGet distribution vehicles:
 * [Bug]: new warning for package source mappings doesn't pass a value for the resource string placeholder - [#11709](https://github.com/NuGet/Home/issues/11709)
 
 
-**[List of commits in this release - `release-6.1.x` branch](https://github.com/NuGet/NuGet.Client/compare/release-6.2.x...release-6.1.x)**
+**[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.1.0.80%5E...6.2.0.146)**
 
 ### Community contributions
 
+Thank you to all the contributors who helped make this NuGet release awesome!
+
 |Who|PRs|Issues|
 |----|----|----|
+[MarkKharitonov](https://github.com/MarkKharitonov)	| [4511](https://github.com/nuget/nuget.client/pull/4511) | [Feature]: Add support for a dedicated environment variable providing the NuGetScratch path. - [#11671](https://github.com/NuGet/Home/issues/11671)
+[mfkl](https://github.com/mfkl)	| [4222](https://github.com/nuget/nuget.client/pull/4222) | A better cache clean-up and expiration policy - [#4980](https://github.com/NuGet/Home/issues/4980)
+[David Federman](https://github.com/dfederm) | [4504](https://github.com/nuget/nuget.client/pull/4504) | Static Graph restore uses Project.FromFile + Project.CreateInstance instead of ProjectInstance.FromFile directly - [#11675](https://github.com/NuGet/Home/issues/11675)
+[crummel](https://github.com/crummel) | [4404](https://github.com/nuget/nuget.client/pull/4404) | [main] Backport source-build patches to repos. [#2708](https://github.com/dotnet/source-build/issues/2708)
+[mjolka](https://github.com/mjolka)	| [4475](https://github.com/nuget/nuget.client/pull/4475) | Very slow restore when using NoWarn in single project that has lots of dependents - [#11222](https://github.com/NuGet/Home/issues/11222)
+Marcin Krystianc	| [4488](https://github.com/nuget/nuget.client/pull/4488) | dotnet integration pack test IL issue - [#11454](https://github.com/NuGet/Home/issues/11454)
+Marcin Krystianc	| [4025](https://github.com/nuget/nuget.client/pull/4025)
+David Kean	| [4483](https://github.com/nuget/nuget.client/pull/4483)
+Bobby Reynolds	| [4458](https://github.com/nuget/nuget.client/pull/4458)
+Adam Friedman	| [4287](https://github.com/nuget/nuget.client/pull/4287)
+David Kean	| [4440](https://github.com/nuget/nuget.client/pull/4440)
+David Kean	| [4439](https://github.com/nuget/nuget.client/pull/4439)
+David Kean	| [4432](https://github.com/nuget/nuget.client/pull/4432)
+David Federman	| [4393](https://github.com/nuget/nuget.client/pull/4393)
+Drew Noakes	| [4390](https://github.com/nuget/nuget.client/pull/4390)
+Drew Noakes	| [4386](https://github.com/nuget/nuget.client/pull/4386)
+Marcin Krystianc	| [4186](https://github.com/nuget/nuget.client/pull/4186)
+joperator	| [4389](https://github.com/nuget/nuget.client/pull/4389)
+AndreiTimisescu	| [3779](https://github.com/nuget/nuget.client/pull/3779)
+Tom Deseyn	| [4123](https://github.com/nuget/nuget.client/pull/4123)
 
-
-Thank you to all the contributors who helped make this NuGet release awesome!
 
 
 ## Feedback welcome
