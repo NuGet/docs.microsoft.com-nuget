@@ -74,7 +74,7 @@ When reviewing any application for ID prefix reservation, the [NuGet.org](https:
 
 1. Has the owner [enabled 2FA for their NuGet.org account](individual-accounts.md#enable-two-factor-authentication-2fa)?
 
-1. Is the package ID prefix something common that should not belong to any individual owner or organization?
+1. Is the package ID prefix something common that should not belong to any individual owner or organization? Avoid ID prefix reservations that are shorter than four characters and avoid common or generic words.
 
 1. Would *not* reserving the package ID prefix cause ambiguity, confusion, or other harm to the community?
 

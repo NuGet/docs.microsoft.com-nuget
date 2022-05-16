@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # `PackageReference` in project files
 
-Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file). Using PackageReference, as it's called, doesn't affect other aspects of NuGet; for example, settings in `NuGet.Config` files (including package sources) are still applied as explained in [Common NuGet configurations](configuring-nuget-behavior.md).
+Package references, using `<PackageReference>` MSBuild items, specify NuGet package dependencies directly within project files, as opposed to having a separate `packages.config` file. Use of PackageReference doesn't affect other aspects of NuGet; for example, settings in `NuGet.Config` files (including package sources) are still applied as explained in [Common NuGet configurations](configuring-nuget-behavior.md).
 
 With PackageReference, you can also use MSBuild conditions to choose package references per target framework, or other groupings. It also allows for fine-grained control over dependencies and content flow. (See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
 
@@ -119,7 +119,7 @@ Allowable values for these tags are as follows, with multiple values separated b
 <ItemGroup>
     <!-- ... -->
     <!-- Everything except the content files will be consumed by the project -->
-    <!-- Everythign except content files and analyzers will flow to the parent project-->
+    <!-- Everything except content files and analyzers will flow to the parent project-->
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0">
         <IncludeAssets>all</IncludeAssets> <!-- Default is `all`, can be omitted-->
         <ExcludeAssets>contentFiles</ExcludeAssets>
@@ -127,7 +127,7 @@ Allowable values for these tags are as follows, with multiple values separated b
     </PackageReference>
     <!-- ... -->
     <!-- Everything except the compile will be consumed by the project -->
-    <!-- Everythign except contentFiles will flow to the parent project-->
+    <!-- Everything except contentFiles will flow to the parent project-->
     <PackageReference Include="Contoso.Utility.SomeOtherUsefulStuff" Version="3.6.0">
         <ExcludeAssets>compile</ExcludeAssets>
         <PrivateAssets>contentFiles</PrivateAssets>
