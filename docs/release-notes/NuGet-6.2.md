@@ -39,11 +39,9 @@ NuGet distribution vehicles:
 
 * AutoCompleteResourceV3 does not use the supplied logger - [#11272](https://github.com/NuGet/Home/issues/11272)
 
-* [DCR]: Mitigate missing nuget.org when non-NuGet tool creates nuget.config without any sources - [#11387](https://github.com/NuGet/Home/issues/11387)
-
 * Add Author to the tooltip for a package in the packages list of PM UI - [#11499](https://github.com/NuGet/Home/issues/11499)
 
-* Remove NU5049 - [#11598](https://github.com/NuGet/Home/issues/11598)
+* Remove unused code NU5049 - [#11598](https://github.com/NuGet/Home/issues/11598)
 
 **Bugs:**
 
