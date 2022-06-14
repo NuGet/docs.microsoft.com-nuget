@@ -14,11 +14,16 @@ NuGet distribution vehicles:
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
 | [**5.11.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.11](https://visualstudio.microsoft.com/downloads/) | [5.0.400](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.11.2**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.11.16](https://visualstudio.microsoft.com/downloads/) | [5.0.400](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
   
 > [!NOTE]
 > Visual Studio 16.11, MSBuild 16.11, and .NET 5.0.400+ requires NuGet.exe 5.11 or later.
+
+## Summary: What's New in 5.11.2
+
+* [Security]: Microsoft Security Advisory CVE 2022-30184 | .NET Information Disclosure Vulnerability - [#11883](https://github.com/NuGet/Home/issues/1188
 
 ## Summary: What's New in 5.11
 
