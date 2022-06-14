@@ -14,8 +14,13 @@ NuGet distribution vehicles:
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
 | [**6.2.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.2](https://visualstudio.microsoft.com/downloads/) | [6.0.300](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
+| [**6.2.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.2.4](https://visualstudio.microsoft.com/downloads/) | [6.0.301](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio 2022 with.NET Core workload
+<sup>1</sup> Installed with Visual Studio 2022 with .NET Core workload
+
+## Summary: What's New in 6.2.1
+
+* [Security]: Microsoft Security Advisory CVE 2022-30184 | .NET Information Disclosure Vulnerability - [#11883](https://github.com/NuGet/Home/issues/11883)
 
 ## Summary: What's New in 6.2
 
