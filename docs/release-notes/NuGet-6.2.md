@@ -20,7 +20,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.2.1
 
-* [Security]: Microsoft Security Advisory CVE 2022-30184 | .NET Information Disclosure Vulnerability - [#62](https://github.com/NuGet/Announcements/issues/62)
+* [Security]: Microsoft Security Advisory CVE 2022-30184 | .NET Information Disclosure Vulnerability - [#11883](https://github.com/NuGet/Home/issues/11883)
 
 ## Summary: What's New in 6.2
 
