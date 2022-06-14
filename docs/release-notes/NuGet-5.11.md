@@ -14,7 +14,7 @@ NuGet distribution vehicles:
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
 | [**5.11.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.11](https://visualstudio.microsoft.com/downloads/) | [5.0.400](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
-| [**5.11.2**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.11.16](https://visualstudio.microsoft.com/downloads/) | [5.0.400](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.11.2**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.11.16](https://visualstudio.microsoft.com/downloads/) | N/A |
 
 <sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
   
