@@ -17,7 +17,7 @@ NuGet distribution vehicles:
 | [**4.9.1**](https://nuget.org/downloads) | n/a | n/a |
 | [**4.9.2**](https://nuget.org/downloads) |[Visual Studio 2017 version 15.9.4](https://visualstudio.microsoft.com/downloads/) | [2.1.502, 2.2.101](https://www.microsoft.com/net/download/visual-studio-sdks) |
 | [**4.9.3**](https://nuget.org/downloads) |[Visual Studio 2017 version 15.9.6](https://visualstudio.microsoft.com/downloads/) | [2.1.504, 2.2.104](https://www.microsoft.com/net/download/visual-studio-sdks) |
-| [**4.9.5**](https://nuget.org/downloads) |[Visual Studio 2017 version 15.9.49](https://visualstudio.microsoft.com/downloads/) | [.NET Core 2.1 is out of support as of August 21, 2021](https://docs.microsoft.com/en-us/visualstudio/releasenotes/vs2017-relnotes#whats-new-in-159)
+| [**4.9.5**](https://nuget.org/downloads) |N/A| [.NET Core 2.1 is out of support as of August 21, 2021](https://docs.microsoft.com/en-us/visualstudio/releasenotes/vs2017-relnotes#whats-new-in-159)
 
 ## Summary: What's New in 4.9.5
 
