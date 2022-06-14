@@ -20,7 +20,7 @@ NuGet distribution vehicles:
 
 <sup>2</sup>Available as an optional install with Visual Studio 2019 with .NET Core workload
 
-## Summary: What's New in 4.9.5
+## Summary: What's New in 5.2.1
 
 * [Security]: Microsoft Security Advisory CVE 2022-30184 | .NET Information Disclosure Vulnerability - [#11883](https://github.com/NuGet/Home/issues/11883)
 
