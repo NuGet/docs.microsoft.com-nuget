@@ -15,7 +15,7 @@ NuGet distribution vehicles:
 |:---|:---|:---|
 | [**5.9.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.9](https://visualstudio.microsoft.com/downloads/) | [5.0.200](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
 | [**5.9.1**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.9](https://visualstudio.microsoft.com/downloads/) | [5.0.202](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
-| [**5.9.2**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.9.22](https://visualstudio.microsoft.com/downloads/) | [5.0.202](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.9.2**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.9.22](https://visualstudio.microsoft.com/downloads/) | n/a |
 
 <sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
   
