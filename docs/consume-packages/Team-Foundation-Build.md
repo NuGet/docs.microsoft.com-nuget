@@ -81,7 +81,7 @@ The source code is under the `src` folder. Although our demo only uses a single 
 ### Ignore files
 
 > [!Note]
-> There is currently a [known bug in the NuGet client](https://nuget.codeplex.com/workitem/4072) that causes the client to still add the `packages` folder to version control. A workaround is to disable the source control integration. In order to do that, you need a `Nuget.Config ` file in the  `.nuget` folder that is parallel to your solution. If this folder doesn't exist yet, you need to create it. In [`Nuget.Config`](../consume-packages/configuring-nuget-behavior.md), add the following content:
+> There is currently a known bug in the NuGet client that causes the client to still add the `packages` folder to version control. A workaround is to disable the source control integration. In order to do that, you need a `Nuget.Config ` file in the  `.nuget` folder that is parallel to your solution. If this folder doesn't exist yet, you need to create it. In [`Nuget.Config`](../consume-packages/configuring-nuget-behavior.md), add the following content:
 
 ```xml
 <configuration>

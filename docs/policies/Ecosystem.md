@@ -54,7 +54,7 @@ Many other individuals and companies have made significant contributions to the 
 
 These are tools and utilities built on NuGet:
 
-- [Glimpse Extensions](http://getglimpse.com/Packages) (plug-ins are packages)
+- [Glimpse Extensions](https://www.nuget.org/packages/Glimpse) (plug-ins are packages)
 - [NuGetMustHaves.com](http://nugetmusthaves.com/)
 - [Orchard](http://www.orchardproject.net/) (CMS modules are fetched from a v1 NuGet feed hosted in the Orchard Gallery)
 - [Java implementation of NuGet Server](http://jonnyzzz.com/blog/2012/03/07/nuget-server-in-pure-java/)
@@ -71,7 +71,7 @@ That said, authoring packages–and especially good packages–along with  embra
 - [NuGet team on Twitter, @nuget](http://twitter.com/nuget)
 - Books:
   - [Apress Pro NuGet](http://bit.ly/ProNuGet)
-  - [NuGet 2 Essentials](http://www.amazon.com/NuGet-2-Essentials-Damir-Arh-ebook/dp/B00GTQD5M4)
+  - [NuGet 2 Essentials](https://www.amazon.com/NuGet-2-Essentials-Damir-Arh/dp/178216586X)
 
 ## Documentation for individual packages
 
