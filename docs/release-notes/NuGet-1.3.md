@@ -100,10 +100,6 @@ _Note: the pattern is not recursive by default._
 
 Thanks to community contributions, NuGet includes support for WiX project types as well as the .NET Micro Framework.
 
-## Bug Fixes
-
-For a full list of bug fixes, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.3&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
-
 ## Bug fixes worth noting
 
 * Packages with source files work in both Websites and in Web Application Projects.

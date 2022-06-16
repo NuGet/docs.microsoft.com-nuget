@@ -61,5 +61,3 @@ nuget.exe or the handy NuGet Package Explorer to create packages.
 ## Bug Fixes
 NuGet 1.7 has fixed many bugs around the Package Restore workflow and Network/Source Control
 scenarios.
-
-For a full list of work items fixed in NuGet 1.7, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.7&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0).

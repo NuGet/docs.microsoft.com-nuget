@@ -167,19 +167,17 @@ vsixinstaller.exe /uninstall:NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-f
 ## Bug Fixes
 NuGet 1.4 had a total of 88 work items fixed. 71 of those were marked as bugs.
 
-For a full list of work items fixed in NuGet 1.4, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.4&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
-
 ## Bug fixes worth noting:
 
-* [Issue 603](http://nuget.codeplex.com/workitem/603): Package dependencies across different repositories resolves
+* Issue 603): Package dependencies across different repositories resolves
 correctly when specifying a specific package source.
-* [Issue 1036](http://nuget.codeplex.com/workitem/1036): Adding `NuGet Pack SomeProject.csproj` to post-build event no longer causes an infinite loop.
-* [Issue 961](http://nuget.codeplex.com/workitem/961): `-Source` flag supports relative paths.
+* Issue 1036: Adding `NuGet Pack SomeProject.csproj` to post-build event no longer causes an infinite loop.
+* Issue 961: `-Source` flag supports relative paths.
 
 ## NuGet 1.4 Update
 Shortly after the release of NuGet 1.4, we found a couple of issues that were important to fix.
 The specific version number of this update to 1.4 is 1.4.20615.9020.
 
 ### Bug Fixes
-* [Issue 1220](http://nuget.codeplex.com/workitem/1220): Update-Package doesnt execute `install.ps1`/`uninstall.ps1` in all projects when there is more than one project
-* [Issue 1156](http://nuget.codeplex.com/workitem/1156): Package Manager Consol stuck on W2K3/XP (when Powershell 2 is not installed)
+* Issue 1220: Update-Package doesnt execute `install.ps1`/`uninstall.ps1` in all projects when there is more than one project
+* Issue 1156: Package Manager Consol stuck on W2K3/XP (when Powershell 2 is not installed)
