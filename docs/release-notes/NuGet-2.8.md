@@ -15,23 +15,23 @@ NuGet 2.8 was released on January 29, 2014.
 
 ## Acknowledgements
 
-1. [Llewellyn Pritchard](https://www.codeplex.com/site/users/view/leppie) ([@leppie](https://twitter.com/leppie))
-    - [#3466](https://nuget.codeplex.com/workitem/3466) - When packing packages, verifying Id of dependency packages.
-2. [Maarten Balliauw](https://www.codeplex.com/site/users/view/maartenba) ([@maartenballiauw](https://twitter.com/maartenballiauw))
-    - [#2379](https://nuget.codeplex.com/workitem/2379) - Remove the $metadata suffix when persistening feed credentials.
-3. [Filip De Vos](https://www.codeplex.com/site/users/view/FilipDeVos) ([@foxtricks](https://twitter.com/foxtricks))
-    - [#3538](http://nuget.codeplex.com/workitem/3538) - Support specifying project file for the nuget.exe update command.
-4. [Juan Gonzalez](https://www.codeplex.com/site/users/view/jjgonzalez)
-    - [#3536](http://nuget.codeplex.com/workitem/3536) - Replacement tokens not passed with -IncludeReferencedProjects.
-5. [David Poole](https://www.codeplex.com/site/users/view/Sarkie) ([@Sarkie_Dave](https://twitter.com/Sarkie_Dave))
-    - [#3677](http://nuget.codeplex.com/workitem/3677) - Fix nuget.push throwing OutOfMemoryException when pushing large package.
+1. Llewellyn Pritchard ([@leppie](https://twitter.com/leppie))
+    - #3466 - When packing packages, verifying Id of dependency packages.
+2. Maarten Balliauw ([@maartenballiauw](https://twitter.com/maartenballiauw))
+    - #2379 - Remove the $metadata suffix when persistening feed credentials.
+3. Filip De Vos ([@foxtricks](https://twitter.com/foxtricks))
+    - #3538 - Support specifying project file for the nuget.exe update command.
+4. Juan Gonzalez
+    - #3536 - Replacement tokens not passed with -IncludeReferencedProjects.
+5. David Poole ([@Sarkie_Dave](https://twitter.com/Sarkie_Dave))
+    - #3677 - Fix nuget.push throwing OutOfMemoryException when pushing large package.
 6. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
-    - [#3666](http://nuget.codeplex.com/workitem/3666) - Fix incorrect target path when project references another CLI/C++ project.
-7. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
-    - [#3639](https://nuget.codeplex.com/workitem/3639) - Allow packages to be installed as development dependencies by default
-8. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
-    - [#3717](https://nuget.codeplex.com/workitem/3717) - Remove implicit upgrades to the latest patch version
-9. [Gregory Vandenbrouck](https://www.codeplex.com/site/users/view/vdbg)
+    - #3666 - Fix incorrect target path when project references another CLI/C++ project.
+7. Adam Ralph ([@adamralph](https://twitter.com/adamralph))
+    - #3639 - Allow packages to be installed as development dependencies by default
+8. David Fowler ([@davidfowl](https://twitter.com/davidfowl))
+    - #3717 - Remove implicit upgrades to the latest patch version
+9. Gregory Vandenbrouck
     - Several bug fixes and improvements for NuGet.Server, the nuget.exe mirror command, and others.
     - This work was done over several months, with Gregory working with us on the right timing to integrate into master for 2.8.
 
@@ -131,4 +131,4 @@ This is the NuGet team's first release of the NuGet Package Manager extension fo
 
 One of the major bug fixes made was performance improvement in the  update-package -reinstall    command.
 
-In addition to these features and the aforementioned performance fix, this release of NuGet also includes many other bug fixes. There were 181 total issues addressed in the release. For a full list of the work items fixed in NuGet 2.8, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.8&status=all).
+In addition to these features and the aforementioned performance fix, this release of NuGet also includes many other bug fixes. There were 181 total issues addressed in the release.

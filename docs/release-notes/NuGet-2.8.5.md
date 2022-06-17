@@ -20,6 +20,4 @@ In this release, the support for NuGet Package Manager dialog was added for [DNX
 * **dnx46** - A TFM specific to DNX-based apps using the full 4.6 version of the framework
 * **dnxcore50** - A TFM specific to DNX-based apps using the Core 5.0 version of the framework
 
-One bug was fixed that prevented packages from installing into FSharp projects properly:
-
-https://nuget.codeplex.com/workitem/4400
+One bug was fixed that prevented packages from installing into FSharp projects properly.
