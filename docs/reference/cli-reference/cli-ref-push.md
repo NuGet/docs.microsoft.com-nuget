@@ -31,7 +31,7 @@ where `<packagePath>` identifies the package to push to the server.
 - **`-ApiKey`**
 
   The API key for the target repository. If not present,  the one specified in the config file is used. 
-  - Azure DevOps Artifacts feeds doesn't accept PAT(personal access tokens) passed directly in cli as apikey. For dev box, you need have the [cred provider](https://github.com/microsoft/artifacts-credprovider) installed and that would work for both push and download (see example below). For CI, you need use the NuGet Authenticate task for Azure DevOps.
+  - Azure DevOps Artifacts feeds doesn't accept PAT(personal access tokens) passed directly in cli as apikey. For dev box, you need have the [cred provider](https://github.com/microsoft/artifacts-credprovider) installed and that would work for both push and download (see example below). For CI, you need use the [NuGet Authenticate](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/package/nuget-authenticate?view=azure-devops) task with NuGet service connection for both internal and external Azure DevOps Artifacts.
 
 - **`-ConfigFile`**
 
@@ -110,6 +110,6 @@ nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://customsou
 :: In the example below -SkipDuplicate will skip pushing the package if package "Foo" version "5.0.2" already exists on NuGet.org
 nuget push Foo.5.0.2.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://api.nuget.org/v3/index.json -SkipDuplicate
 
-:: In the example below AZ is just a placeholder for ApiKey when pushing "Foo" version "5.0.2" to Azure DevOps Artifacts, this prevents authentication fail prematurely, in order to authentication to work you need to install [cred provider](https://github.com/microsoft/artifacts-credprovider). Below command trigger open Cred Provider window if authentication is necessary, it's not suitable for CI.
+:: In the example below AZ is just a placeholder for ApiKey when pushing "Foo" version "5.0.2" to Azure DevOps Artifacts, this prevents authentication fail prematurely, in order to authentication to work you need to install [cred provider](https://github.com/microsoft/artifacts-credprovider). Below command trigger open Cred Provider window if authentication is necessary, it's not suitable for CI. For CI use [NuGet Authenticate task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/package/nuget-authenticate?view=azure-devops) with NuGet service connection.
 nuget push Foo.5.0.2.nupkg -src https://dev.azure.com/yourAzureDevOpsFeed/nuget/v3/index.json AZ
 ```
