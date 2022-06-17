@@ -30,7 +30,8 @@ where `<packagePath>` identifies the package to push to the server.
 
 - **`-ApiKey`**
 
-  The API key for the target repository. If not present,  the one specified in the config file is used.
+  The API key for the target repository. If not present,  the one specified in the config file is used. 
+  - Azure DevOps Artifacts feeds doesn't accept PAT(personal access tokens) passed directly in cli as apikey. For dev box, you need have the [cred provider](https://github.com/microsoft/artifacts-credprovider) installed and that would work for both push and download. For CI, you need use the NuGet Authenticate task for Azure DevOps.
 
 - **`-ConfigFile`**
 
@@ -108,4 +109,7 @@ nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://customsou
 
 :: In the example below -SkipDuplicate will skip pushing the package if package "Foo" version "5.0.2" already exists on NuGet.org
 nuget push Foo.5.0.2.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://api.nuget.org/v3/index.json -SkipDuplicate
+
+:: In the example below AZ is just random placeholder for ApiKey pushing "Foo" version "5.0.2" to Azure DevOps Artifacts, you need to you need have the [cred provider](https://github.com/microsoft/artifacts-credprovider) installed for authentication to work.
+nuget push Foo.5.0.2.nupkg -src https://dev.azure.com/yourAzureDevOpsFeed/nuget/v3/index.json AZ
 ```
