@@ -35,7 +35,7 @@ This latest release provides compatibility with the newest NuGet packages, preve
 
 Some users have reported that after installing NuGet packages in WebMatrix that include DLLs that get copied to bin, that the DLLs show up in the `bin` folder as 0-byte files.  This breaks the application at runtime.
 
-[This issue](https://nuget.codeplex.com/workitem/4060) has now been fixed.
+This issue has now been fixed.
 
 ## Other Recent Improvements
 

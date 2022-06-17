@@ -143,7 +143,3 @@ Another scenario where the reinstall flag proves beneficial is that of framework
 In previous versions of NuGet, updating a package source from within the Visual Studio options dialog required deleting and re-adding the package source.  NuGet 2.1 improves this workflow by supporting update as a first class function of the configuration user interface.
 
 ![Package manager configuration dialog](./media/releasenotes-21-edit-pkg-source.png)
-
-## Bug Fixes
-
-NuGet 2.1 includes many bug fixes. For a full list of work items fixed in NuGet 2.0, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Fixed&type=All&priority=All&release=NuGet%202.1&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).

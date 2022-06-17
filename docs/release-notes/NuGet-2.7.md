@@ -17,37 +17,37 @@ NuGet 2.7 was released on August 22, 2013.
 
 We would like to thank the following external contributors for their significant contributions to NuGet 2.7:
 
-1. [Mike Roth](http://www.codeplex.com/site/users/view/mxrss) ([@mxrss](https://twitter.com/mxrss))
+1. Mike Roth ([@mxrss](https://twitter.com/mxrss))
     - Show License url when listing packages and verbosity is detailed.
-2. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
-    - [#1956](http://nuget.codeplex.com/workitem/1956) - Add developmentDependency attribute to `packages.config` and use it in pack command to only include runtime packages
-3. [Rafael Nicoletti](http://www.codeplex.com/site/users/view/tkrafael) ([@tkrafael](https://twitter.com/tkrafael))
+2. Adam Ralph ([@adamralph](https://twitter.com/adamralph))
+    - #1956 - Add developmentDependency attribute to `packages.config` and use it in pack command to only include runtime packages
+3. Rafael Nicoletti ([@tkrafael](https://twitter.com/tkrafael))
     - Avoid duplicate Properties key in nuget.exe pack command.
-4. [Ben Phegan](http://www.codeplex.com/site/users/view/benphegan) ([@BenPhegan](https://twitter.com/benphegan))
-    - [#2610](http://nuget.codeplex.com/workitem/2610) - Increase machine cache size to 200.
-5. [Slava Trenogin](http://www.codeplex.com/site/users/view/derigel) ([@derigel](https://twitter.com/derigel))
-    - [#3217](http://nuget.codeplex.com/workitem/3217) - Fix NuGet dialog showing updates in the wrong tab
+4. Ben Phegan ([@BenPhegan](https://twitter.com/benphegan))
+    - #2610 - Increase machine cache size to 200.
+5. Slava Trenogin ([@derigel](https://twitter.com/derigel))
+    - #3217 - Fix NuGet dialog showing updates in the wrong tab
     - Fix Project.TargetFramework can be null in ProjectManager
-    - [#3248](http://nuget.codeplex.com/workitem/3248) - Fix SharedPackageRepository FindPackage/FindPackagesById will fail on non-existent packageId
-6. [Kevin Boyle](http://www.codeplex.com/site/users/view/KevinBoyleRG) ([@kevfromireland](https://twitter.com/kevfromireland))
-    - [#3234](http://nuget.codeplex.com/workitem/3234) - Enable support for Nomad project
-7. [Corin Blaikie](http://www.codeplex.com/site/users/view/corinblaikie) ([@corinblaikie](https://twitter.com/corinblaikie))
-    - [#3252](http://nuget.codeplex.com/workitem/3252) - Fix push command fails with exit code 0 when file doesn't exist.
-8. [Martin Veselý](http://www.codeplex.com/site/users/view/veselkamartin)
-    - [#3226](http://nuget.codeplex.com/workitem/3226) - Fix bug with Add-BindingRedirect command when a project references a database project.
-9. [Miroslav Bajtos](http://www.codeplex.com/site/users/view/miroslavbajtos) ([@bajtos](https://twitter.com/bajtos))
-    - [#2891](http://nuget.codeplex.com/workitem/2891) - Fix bug of nuget.pack parsing wildcard in the 'exclude' attribute incorrectly.
-10. [Justin Dearing](http://www.codeplex.com/site/users/view/zippy1981) ([@zippy1981](https://twitter.com/zippy1981))
-     - [#3307](http://nuget.codeplex.com/workitem/3307) - Fix bug `NuGet.targets` does not pass $(Platform) to nuget.exe when restoring packages.
-11. [Brian Federici](http://www.codeplex.com/site/users/view/benerdin)
-     - [#3294](http://nuget.codeplex.com/workitem/3294) - Fix bug in nuget.exe package command which would allow adding files with the same name but different casing, eventually causing "Item already exists" exception.
-12. [Daniel Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
-     - [#2990](http://nuget.codeplex.com/workitem/2990) - Add Version property to NetPortableProfile class.
-13. [David Simner](https://www.codeplex.com/site/users/view/DavidSimner)
-     - [#3460](https://nuget.codeplex.com/workitem/3460) - Fix bug NullReferenceException if requireApiKey = true, but the header X-NUGET-APIKEY isn't present
-14. [Michael Friis](https://www.codeplex.com/site/users/view/friism) ([@friism](https://twitter.com/friism))
-     - [#3278](https://nuget.codeplex.com/workitem/3278) - Fixes NuGet.Build targets file to so that it works correctly on MonoDevelop
-15. [Pranav Krishnamoorthy](https://www.codeplex.com/site/users/view/pranavkm) ([@pranav_km](https://twitter.com/pranav_km))
+    - #3248 - Fix SharedPackageRepository FindPackage/FindPackagesById will fail on non-existent packageId
+6. Kevin Boyle ([@kevfromireland](https://twitter.com/kevfromireland))
+    - #3234 - Enable support for Nomad project
+7. Corin Blaikie ([@corinblaikie](https://twitter.com/corinblaikie))
+    - #3252 - Fix push command fails with exit code 0 when file doesn't exist.
+8. Martin Veselý
+    - #3226 - Fix bug with Add-BindingRedirect command when a project references a database project.
+9. Miroslav Bajtos ([@bajtos](https://twitter.com/bajtos))
+    - #2891 - Fix bug of nuget.pack parsing wildcard in the 'exclude' attribute incorrectly.
+10. Justin Dearing ([@zippy1981](https://twitter.com/zippy1981))
+     - #3307 - Fix bug `NuGet.targets` does not pass $(Platform) to nuget.exe when restoring packages.
+11. Brian Federici
+     - #3294 - Fix bug in nuget.exe package command which would allow adding files with the same name but different casing, eventually causing "Item already exists" exception.
+12. Daniel Cazzulino ([@kzu](https://twitter.com/kzu))
+     - #2990 - Add Version property to NetPortableProfile class.
+13. David Simner
+     - #3460 - Fix bug NullReferenceException if requireApiKey = true, but the header X-NUGET-APIKEY isn't present
+14. Michael Friis ([@friism](https://twitter.com/friism))
+     - #3278 - Fixes NuGet.Build targets file to so that it works correctly on MonoDevelop
+15. Pranav Krishnamoorthy ([@pranav_km](https://twitter.com/pranav_km))
      - Improve Restore command performance by increasing parallelization
 
 ## Notable features in the release
@@ -112,14 +112,14 @@ With each of the partners above, they would use their own copy of nuget.exe and 
 
 #### Known Issues
 
-There were two known issues with nuget.exe restore with the initial 2.7 release, but they were fixed on 9/6/2013 with an update to the [NuGet.CommandLine package](http://www.nuget.org/packages/NuGet.CommandLine/).  This update is also available on the [NuGet 2.7 download page](https://nuget.codeplex.com/releases/view/107605) on CodePlex.  Running `nuget.exe update -self` will update to the latest release.
+There were two known issues with nuget.exe restore with the initial 2.7 release, but they were fixed on 9/6/2013 with an update to the NuGet.CommandLine package. Running `nuget.exe update -self` will update to the latest release.
 
 The fixed were:
 
-1. [New package restore doesn't work on Mono when using SLN file](https://nuget.codeplex.com/workitem/3596)
-1. [New package restore doesn't work with Wix projects](https://nuget.codeplex.com/workitem/3598)
+1. New package restore doesn't work on Mono when using SLN file
+1. New package restore doesn't work with Wix projects
 
-There is also a known issue with the new package restore workflow whereby [Automatic Package Restore does not work for projects under a solution folder](https://nuget.codeplex.com/workitem/3625). This issue was fixed in NuGet 2.7.1.
+There is also a known issue with the new package restore workflow whereby Automatic Package Restore does not work for projects under a solution folder. This issue was fixed in NuGet 2.7.1.
 
 ### Project Retargeting and Upgrade Build Errors/Warnings
 
@@ -187,8 +187,6 @@ The new package restore model in 2.7 is implemented by a new VSPackage which is 
 
 Since we are unsure how many developers are still using NuGet in that version/edition of Visual Studio, we are publishing a separate Visual Studio extension specifically for those users and publishing it on CodePlex (rather than the Visual Studio Extension Gallery). We don't plan to continue to maintain that extension, but if this affects you please let us know by filing an issue on CodePlex.
 
-To download the NuGet Package Manager (for Visual Studio 2010 Express for Windows Phone), visit the [NuGet 2.7 Downloads](https://nuget.codeplex.com/releases/view/107605) page.
-
 ### Bug Fixes
 
-In addition to these features, this release of NuGet also includes many other bug fixes. There were 97 total issues addressed in the release. For a full list of work items fixed in NuGet 2.7, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.7&status=all).
+In addition to these features, this release of NuGet also includes many other bug fixes. There were 97 total issues addressed in the release.
