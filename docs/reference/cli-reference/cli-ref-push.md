@@ -31,7 +31,7 @@ where `<packagePath>` identifies the package to push to the server.
 - **`-ApiKey`**
 
   The API key for the target repository. If not present,  the one specified in the config file is used. 
-  - Azure DevOps Artifacts feeds doesn't accept PAT(personal access tokens) passed directly in cli as apikey. For dev box, you need have the [cred provider](https://github.com/microsoft/artifacts-credprovider) installed and that would work for both push and download (see examples section). For CI, you need use the [NuGet Authenticate](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/package/nuget-authenticate?view=azure-devops) task with [NuGet service connection](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml#nuget-service-connection) for pushing to Azure DevOps Artifacts.
+  - Azure DevOps Artifacts feeds doesn't accept PAT(personal access tokens) passed directly in cli as `-ApiKey`. For dev box, you need have the [cred provider](https://github.com/microsoft/artifacts-credprovider) installed and that would work for both push and download (see examples section). For CI, you need use the [NuGet Authenticate](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/package/nuget-authenticate?view=azure-devops) task with [NuGet service connection](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml#nuget-service-connection) for pushing to Azure DevOps Artifacts.
 
 - **`-ConfigFile`**
 
