@@ -110,6 +110,6 @@ nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://customsou
 :: In the example below -SkipDuplicate will skip pushing the package if package "Foo" version "5.0.2" already exists on NuGet.org
 nuget push Foo.5.0.2.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://api.nuget.org/v3/index.json -SkipDuplicate
 
-:: In the example below AZ is just a placeholder for ApiKey when pushing "Foo" version "5.0.2" to Azure DevOps Artifacts, this prevents authentication fail prematurely, in order to authentication to work you need to install [cred provider](https://github.com/microsoft/artifacts-credprovider).
+:: In the example below AZ is just a placeholder for ApiKey when pushing "Foo" version "5.0.2" to Azure DevOps Artifacts, this prevents authentication fail prematurely, in order to authentication to work you need to install [cred provider](https://github.com/microsoft/artifacts-credprovider). Below command trigger open Cred Provider window if authentication is necessary.
 nuget push Foo.5.0.2.nupkg -src https://dev.azure.com/yourAzureDevOpsFeed/nuget/v3/index.json AZ
 ```
