@@ -30,7 +30,7 @@ where `<packagePath>` identifies the package to push to the server.
 
 - **`-ApiKey`**
 
-  The API key for the target repository. If not present,  the one specified in the config file is used. 
+  The API key for the target repository. If not present,  the one specified in the config file is used.
 
 - **`-ConfigFile`**
 
@@ -106,6 +106,8 @@ nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
 nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://customsource/
 
+:: In the example below -SkipDuplicate will skip pushing the package if package "Foo" version "5.0.2" already exists on NuGet.org
+nuget push Foo.5.0.2.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://api.nuget.org/v3/index.json -SkipDuplicate
 ```
 
 - For Azure DevOps Artifacts push examples, see [Azure Devops examples](https://docs.microsoft.com/en-us/azure/devops/artifacts/nuget/publish?view=azure-devops#examples).
