@@ -110,4 +110,4 @@ nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://customsou
 nuget push Foo.5.0.2.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://api.nuget.org/v3/index.json -SkipDuplicate
 ```
 
-- For Azure DevOps Artifacts push examples, see [Azure Devops examples](https://docs.microsoft.com/en-us/azure/devops/artifacts/nuget/publish?view=azure-devops#examples).
+- For Azure Artifacts push examples, see [Azure Devops examples](https://docs.microsoft.com/azure/devops/artifacts/nuget/publish?view=azure-devops#examples).
