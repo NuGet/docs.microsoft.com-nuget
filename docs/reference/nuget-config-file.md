@@ -142,8 +142,8 @@ Optionally, valid authentication types can be specified with the `-validauthenti
 | cleartextpassword | The unencrypted password for the source. Note: environment variables can be used for improved security. |
 | validauthenticationtypes | Comma-separated list of valid authentication types for this source. Set this to `basic` if the server advertises NTLM or Negotiate and your credentials must be sent using the Basic mechanism, for instance when using a PAT with on-premises Azure DevOps Server. Other valid values include `negotiate`, `kerberos`, `ntlm`, and `digest`, but these values are unlikely to be useful. |
 
-**If a non-encrypted password is passed for `password` the error message ["The parameter is incorrect" will occur](https://github.com/NuGet/Home/issues/3245).**
-
+> [!Tip]
+> If a non-encrypted password is passed for `password` the error message ["The parameter is incorrect" will occur](https://github.com/NuGet/Home/issues/3245).
 
 **Example:**
 
