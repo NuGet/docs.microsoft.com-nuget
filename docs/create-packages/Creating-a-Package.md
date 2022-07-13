@@ -348,6 +348,11 @@ MSBuild `.props` and `.targets` files for cross-framework targeting can be place
 
 With NuGet 3.x, targets are not added to the project but are instead made available through `{projectName}.nuget.g.targets` and `{projectName}.nuget.g.props`.
 
+> [!Note]
+> The props and targets must not specify properties and items that affect restore, as those will be automatically excluded during restore with ExcludeRestorePackageImports.
+> Some examples of properties that must not be added or updated: TargetFramework, TargetFrameworkMoniker, TargetPlatforMoniker, AssetTargetFallback etc.
+> Some examples of items that must not be added or updated: PackageReference, PackageVersion, PackageDownload etc.
+
 ## Run nuget pack to generate the .nupkg file
 
 When using an assembly or the convention-based working directory, create a package by running `nuget pack` with your `.nuspec` file, replacing `<project-name>` with your specific filename:
