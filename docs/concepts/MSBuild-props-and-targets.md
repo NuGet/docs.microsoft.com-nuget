@@ -45,7 +45,8 @@ Note that if a package does not have any files in the `lib` or `ref` folders and
 
 ### PackageReference projects
 
-Props and targets are not added to the project file but are instead are made available through `{projectName}.nuget.g.targets` and `{projectName}.nuget.g.props`. These files are automatically generated when restore is run.
+Props and targets are not added to the project file but are instead made available through `{projectName}.nuget.g.targets` and `{projectName}.nuget.g.props`. These files are automatically generated when restore is run.
+
 When a project targets more than one framework, the imports to these files are conditioned on the target framework name.
 
 MSBuild `.props` and `.targets` files for multi-framework targeting can be placed in the `\buildMultiTargeting` folder.
