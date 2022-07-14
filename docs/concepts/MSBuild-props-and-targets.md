@@ -75,4 +75,5 @@ There are a few things that must not be done in packages' props and targets, suc
 
 - Some examples of properties that must not be added or updated: TargetFramework, TargetFrameworkMoniker, TargetPlatformMoniker, AssetTargetFallback etc.
 
-- Some examples of items that must not be added or updated: PackageReference, PackageVersion, PackageDownload etc.
+- Some examples of items that must not be added or updated: PackageReference, PackageVersion, PackageDownload, etc.
+
