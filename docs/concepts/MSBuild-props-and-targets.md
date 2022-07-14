@@ -58,8 +58,10 @@ When NuGet installs a package with `\build` files, it adds MSBuild `<Import>` el
 
 You can use your tool of choice to include MSBuild props and targets your package.
 
-- [Including MSBuild props and targets with NuGet.exe pack](..\create-packages\Creating-a-Package.md#include-msbuild-props-and-targets-in-a-package
-)
+- [NuGet.exe pack](..\create-packages\Creating-a-Package.md#include-msbuild-props-and-targets-in-a-package)
+- [dotnet.exe pack](..\create-packages\creating-a-package-dotnet-cli.md)
+- [MSBuild.exe pack](..\create-packages\creating-a-package-msbuild.md)
+
 
 ### Guidance for the content of MSBuild props and targets
 
