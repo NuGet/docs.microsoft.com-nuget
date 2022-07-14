@@ -1,6 +1,6 @@
 ---
 title: MSBuild props and targets in a package
-description: Describes package source mapping functionality and how to onboard
+description: Describes MSBuild props and targets in NuGet packages
 author: nkolev92
 ms.author: nikolev
 ms.date: 07/13/2022
@@ -17,6 +17,7 @@ This can be achieved by adding a valid MSBuild file, in the form `<package_id>.t
 As NuGet has evolved, various different folders for build props and targets have been added.
 
 | Folder | NuGet Version | Use |
+|--------|---------------|-----|
 | build | 2.5+ | Build logic for every framework of a project. |
 | buildMultiTargetting | 4.0+ | Build logic for the `outer build` for projects that target multiple frameworks. PackageReference only. |
 | buildTransitive | 5.0+ | Build logic for assets that flow transitively to any consuming project. See the [feature](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) page. PackageReference only. |
