@@ -67,7 +67,8 @@ You can use your tool of choice to include MSBuild props and targets your packag
 
 ### Guidance for the content of MSBuild props and targets
 
-The tooling itself cannot provide explicit guidance for how to author these props and targets as they will vary based on the need of the package author and the target projects themselves.
+NuGet does not limit how you author props and targets as they will vary based on the need of the package author and the target projects themselves.
+
 
 There are a few things that must not be done in packages' props and targets, such as not specifying properties and items that affect restore, as those will be automatically excluded.
 
