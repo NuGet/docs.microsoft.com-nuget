@@ -39,7 +39,8 @@ To provide framework-specific files, first place them within appropriate subfold
             \Contoso.Utility.UsefulStuff.targets
 ```
 
-Note that if a package does not have any files in the `lib` or `ref` folders and only files under a framework specific build folder, that package will be considered compatible with all files. Up to date versions of the pack tooling, raise the  [NU5127](..\reference\errors-and-warnings\NU5127.md) warning when such packages are created.
+Note that if a package does not have any files in the `lib` or `ref` folders and only files under a framework specific build folder, that package will be considered compatible with all projects. Up to date versions of the pack tooling, raise the  [NU5127](..\reference\errors-and-warnings\NU5127.md) warning when such packages are created.
+
 
 ## Projects consuming packages with build files
 
