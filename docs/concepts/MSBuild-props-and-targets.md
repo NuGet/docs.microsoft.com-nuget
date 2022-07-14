@@ -71,5 +71,6 @@ The tooling itself cannot provide explicit guidance for how to author these prop
 There are a few things that must not be done in packages' props and targets, such as not specifying properties and items that affect restore, as those will be automatically excluded.
 
 
-- Some examples of properties that must not be added or updated: TargetFramework, TargetFrameworkMoniker, TargetPlatforMoniker, AssetTargetFallback etc.
+- Some examples of properties that must not be added or updated: TargetFramework, TargetFrameworkMoniker, TargetPlatformMoniker, AssetTargetFallback etc.
+
 - Some examples of items that must not be added or updated: PackageReference, PackageVersion, PackageDownload etc.
