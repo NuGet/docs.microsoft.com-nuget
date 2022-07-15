@@ -179,6 +179,7 @@ You might also want to extend the capabilities of your package or otherwise supp
 - [Localization](../create-packages/creating-localized-packages.md)
 - [Pre-release versions](../create-packages/prerelease-packages.md)
 - [Set package type](../create-packages/set-package-type.md)
+- [MSBuild props and targets](../concepts/MSBuild-props-and-targets.md)
 - [Create packages with COM interop assemblies](../create-packages/author-packages-with-COM-interop-assemblies.md)
 
 Finally, there are additional package types to be aware of:
