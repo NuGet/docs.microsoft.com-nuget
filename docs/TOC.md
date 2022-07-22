@@ -177,6 +177,8 @@
 ### [NU1701](reference/errors-and-warnings/NU1701.md)
 ### [NU1703](reference/errors-and-warnings/NU1703.md)
 ### [NU1801](reference/errors-and-warnings/NU1801.md)
+### [NU1802](reference/errors-and-warnings/NU1802.md)
+### [NU1803](reference/errors-and-warnings/NU1803.md)
 ### [NU3000](reference/errors-and-warnings/NU3000.md)
 ### [NU3001](reference/errors-and-warnings/NU3001.md)
 ### [NU3002](reference/errors-and-warnings/NU3002.md)
