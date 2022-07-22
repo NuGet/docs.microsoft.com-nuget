@@ -94,7 +94,7 @@ Repository
   <Project>
     <Import Project="..\Directory.Packages.props">
     <ItemGroup>
-      <PackageVersion Update="Newtonsoft.Json" Version="12.0.1" />
+      <PackageVersion Include="Newtonsoft.Json" Version="12.0.1" />
     </ItemGroup>
   </Project>
   ```
