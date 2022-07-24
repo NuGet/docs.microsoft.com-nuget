@@ -121,6 +121,8 @@ When using multiple public & private NuGet source feeds, a package can be downlo
 
 For more information to secure your package feeds, see [3 Ways to Mitigate Risk When Using Private Package Feeds](https://azure.microsoft.com/resources/3-ways-to-mitigate-risk-using-private-package-feeds/).
 
+To declare which source each package in your solution should restore from, [see the following documentation](../consume-packages/package-source-mapping).
+
 ### Client trust policies
 
 **📦 Package Consumer**
