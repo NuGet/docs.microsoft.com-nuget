@@ -230,19 +230,16 @@ The `version` attribute in a `<dependency>` element describes the range versions
 When obtaining packages from a repository during install, reinstall, or restore operations, NuGet 3.4+ treats version numbers as follows:
 
 - Leading zeroes are removed from version numbers:
-
-  1.00 is treated as 1.0
-  1.01.1 is treated as 1.1.1
-  1.00.0.1 is treated as 1.0.0.1
+  - 1.00 is treated as 1.0
+  - 1.01.1 is treated as 1.1.1
+  - 1.00.0.1 is treated as 1.0.0.1
 
 - A zero in the fourth part of the version number will be omitted
-
-  1.0.0.0 is treated as 1.0.0
-  1.0.01.0 is treated as 1.0.1
+  - 1.0.0.0 is treated as 1.0.0
+  - 1.0.01.0 is treated as 1.0.1
 
 - SemVer 2.0.0 build metadata is removed
-
-  1.0.7+r3456 is treated as 1.0.7
+  - 1.0.7+r3456 is treated as 1.0.7
 
 `pack` and `restore` operations normalize versions whenever possible. For packages already built, this normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions when resolving dependencies.
 
