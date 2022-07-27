@@ -67,7 +67,7 @@
           "eventNames": [
             "issue_comment"
           ],
-          "taskName": "[Manage \"WaitingFor\" labels] [4-2] Replace tag \"WaitingForCustomer\" with \"WaitingForNuGetTeam\" when the author comments on an issue. Also remove `Status:No recent activity` if it's been set.",
+          "taskName": "[Manage \"WaitingFor\" labels] Replace tag \"WaitingForCustomer\" with \"WaitingForNuGetTeam\" when the author comments on an issue. Also remove `Status:No recent activity` if it's been set.",
           "actions": [
             {
               "name": "removeLabel",
@@ -130,7 +130,7 @@
             "issues",
             "project_card"
           ],
-          "taskName": "[Manage \"WaitingFor\" labels] [4-3] Remove any \"WaitingFor\" label when the issue is closed",
+          "taskName": "[Manage \"WaitingFor\" labels] Remove any \"WaitingFor\" label when the issue is closed",
           "actions": [
             {
               "name": "removeLabel",
@@ -185,7 +185,7 @@
           "eventNames": [
             "issue_comment"
           ],
-          "taskName": "[Manage \"WaitingFor\" labels] [4-4] Replace tag \"WaitingForNuGetTeam\" with \"WaitingForCustomer\" when NuGet team comments on an issue.",
+          "taskName": "[Manage \"WaitingFor\" labels] Replace tag \"WaitingForNuGetTeam\" with \"WaitingForCustomer\" when NuGet team comments on an issue.",
           "actions": [
             {
               "name": "removeLabel",
