@@ -25,15 +25,16 @@ NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Con
 ### On Mac/Linux, the user-level config file location varies by tooling. 
 On Mac/Linux, the user config file location varies by tooling. 
 Majority users uses tools looking for user config file under `~/.nuget/NuGet` folder. 
-While following tools looks for user config files under `~/.config/NuGet` folder:
+While following tools look for user config files under `~/.config/NuGet` folder:
 * Mono
 * NuGet.exe
 * Visual Studio 2019 for Mac (and earlier versions)
-* Visual Studio 2022 for Mac, only when working on classic Mono projects.
+* Visual Studio 2022 for Mac (and later versions), only when working on classic Mono projects.
 
 If the tooling you use involves both locations, consolidating them by following steps allows you to work with only one user-level config file:  
 1. Check the contents of the two user-level config files and keep the one you want under `~/.nuget/NuGet` folder. 
 2. Set symbolic link from `~/.nuget/NuGet` to `~/.config/Nuget`. E.g. Run bash command: `ln -s ~/.nuget/NuGet ~/.config/Nuget`.
+
 
 Notes for earlier versions of NuGet:
 - NuGet 3.3 and earlier used a `.nuget` folder for solution-wide settings. This folder is not used in NuGet 3.4+.
