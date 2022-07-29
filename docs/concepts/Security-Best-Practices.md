@@ -119,7 +119,7 @@ For more information about Dependabot alerts & security updates, [see the follow
 
 When using multiple public & private NuGet source feeds, a package can be downloaded from any of the feeds. To ensure your build is predictable and secure from known attacks such as [Dependency Confusion](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610), knowing what specific feed(s) your packages are coming from is a best practice. You can use a single feed or private feed with upstreaming capabilities for protection.
 
-For more information to secure your package feeds, see [3 Ways to Mitigate Risk When Using Private Package Feeds](https://azure.microsoft.com/en-us/resources/3-ways-to-mitigate-risk-using-private-package-feeds/).
+For more information to secure your package feeds, see [3 Ways to Mitigate Risk When Using Private Package Feeds](https://azure.microsoft.com/resources/3-ways-to-mitigate-risk-using-private-package-feeds/).
 
 ### Client trust policies
 
@@ -136,6 +136,14 @@ To configure client trust policies, [see the following documentation](../consume
 Lock files store the hash of your package’s content. If the content hash of a package you want to install matches with the lock file, it will ensure package repeatability.
 
 To enable lock files, [see the following documentation](../consume-packages/package-references-in-project-files.md#locking-dependencies).
+
+### Package Source mapping
+
+**📦 Package Consumer**
+
+Package Source Mapping allows you to centrally declare which source each package in your solution should restore from in your nuget.config file.
+
+To enable package source mapping, [see the following documentation](../consume-packages/package-source-mapping.md).
 
 ## Monitor your supply chain
 
@@ -154,6 +162,14 @@ To learn more about secret scanning, see [About secret scanning](https://docs.gi
 [Author signing](../reference/signed-packages-reference.md) allows a package author to stamp their identity on a package and for a consumer to verify it came from you. This protects you against content tampering and serves as a single source of truth about the origin of the package and the package authenticity. When combined with client trust policies, you can verify a package came from a specific author.
 
 To author sign a package, see [Sign a package](../create-packages/sign-a-package.md).
+
+### Reproducible Builds
+
+**📦🖊 Package Author**
+
+Reproducible builds creates binaries that are byte-for-byte identical each time you build it, and contain source code links and compiler metadata that enable a package consumer to recreate the binary directly and validate that the build environment has not been compromised.
+
+To learn more about reproducible builds, see [Producing Packages with Source Link](https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/) and the [Reproducible Build Validation](https://github.com/dotnet/designs/blob/main/accepted/2020/reproducible-builds.md) spec.
 
 ### Two-Factor Authentication (2FA)
 

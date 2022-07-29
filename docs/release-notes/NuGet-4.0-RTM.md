@@ -332,7 +332,7 @@ There is no workaround at this time.
   - dotnetcore pack always seems to set ProjectReference version to 1.0.0 - [#3874](https://github.com/NuGet/Home/issues/3874)
 
 - dotnet
-  - dotnetcore pack fails with project references and <TargetFramework> - [#3865](https://github.com/NuGet/Home/issues/3865)
+  - dotnetcore pack fails with project references and \<TargetFramework\> - [#3865](https://github.com/NuGet/Home/issues/3865)
 
 - LockRecursionException in ProjectSystemCache.TryGetProjectNameByShortName - [#3861](https://github.com/NuGet/Home/issues/3861)
 

@@ -17,7 +17,7 @@ Visual Studio 2017 Version 15.7 and later supports migrating a project from the 
 * **Uncluttered view of top-level dependencies**: Unlike packages.config, PackageReference lists only those NuGet packages you directly installed in the project. As a result, the NuGet Package Manager UI and the project file aren't cluttered with down-level dependencies.
 * **Performance improvements**: When using PackageReference, packages are maintained in the *global-packages* folder (as described on [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md) rather than in a `packages` folder within the solution. As a result, PackageReference performs faster and consumes less disk space.
 * **Fine control over dependencies and content flow**: Using the existing features of MSBuild allows you to [conditionally reference a NuGet package](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition) and choose package references per target framework, configuration, platform, or other pivots.
-* **PackageReference is under active development**: See [PackageReference issues on GitHub](https://aka.ms/nuget-pr-improvements). packages.config is no longer under active development.
+
 
 ### Limitations
 
@@ -25,7 +25,7 @@ Visual Studio 2017 Version 15.7 and later supports migrating a project from the 
 * Migration is not currently available for C++ and ASP.NET projects.
 * Some packages may not be fully compatible with PackageReference. For more information, see [package compatibility issues](#package-compatibility-issues).
 
-In addition, there are some differences in how PackageReferences work compared to packages.config. For example - [constraining upgrade versions](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions) is not supprted by PackageReference but add support for [Floating Versions](../consume-packages/package-references-in-project-files.md#floating-versions).
+In addition, there are some differences in how PackageReferences work compared to packages.config. For example, [constraining upgrade versions](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions) is not supported by PackageReference, but PackageReference adds support for [Floating Versions](../consume-packages/package-references-in-project-files.md#floating-versions).
 
 ### Known Issues
 

@@ -47,7 +47,7 @@ ms.reviewer: ananguar
 
 - TFS issue: "[file]not be found in your workspace, or you do not have permission to access it" - [#2805](https://github.com/NuGet/Home/issues/2805)
 
-- Typing "nuget <packagename>" in vs quicklaunch search box keeps "nuget " prefix - [#2719](https://github.com/NuGet/Home/issues/2719)
+- Typing "nuget \<packagename\>" in vs quicklaunch search box keeps "nuget " prefix - [#2719](https://github.com/NuGet/Home/issues/2719)
 
 - System.Xml.XmlException: Unrecognized root element in Core Properties part. Line 2, position 2. - [#2718](https://github.com/NuGet/Home/issues/2718)
 

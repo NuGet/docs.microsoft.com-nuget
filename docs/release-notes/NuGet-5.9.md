@@ -15,11 +15,16 @@ NuGet distribution vehicles:
 |:---|:---|:---|
 | [**5.9.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.9](https://visualstudio.microsoft.com/downloads/) | [5.0.200](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
 | [**5.9.1**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.9](https://visualstudio.microsoft.com/downloads/) | [5.0.202](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.9.2**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.9.22](https://visualstudio.microsoft.com/downloads/) | n/a |
 
 <sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
   
 > [!NOTE]
 > Visual Studio 16.9, MSBuild 16.9, and .NET 5.0.200+ requires NuGet.exe 5.9 or later.
+
+## Summary: What's New in 5.9.2
+
+* [Security]: Microsoft Security Advisory CVE 2022-30184 | .NET Information Disclosure Vulnerability - [#11883](https://github.com/NuGet/Home/issues/1188
 
 ## Summary: What's New in 5.9
 
@@ -93,7 +98,7 @@ NuGet distribution vehicles:
 
 * Output is wrapped at 80 characters on macOS when redirected - [#10198](https://github.com/NuGet/Home/issues/10198)
 
-* Restore fails with -Source <Relative Path> - [#9406](https://github.com/NuGet/Home/issues/9406)
+* Restore fails with -Source \<Relative Path\> - [#9406](https://github.com/NuGet/Home/issues/9406)
 
 * netcoreapp5.0-windows does not round trip and does not parse platform information - [#10177](https://github.com/NuGet/Home/issues/10177)
 

@@ -10,6 +10,10 @@
 
     ![Copying the API key to the clipboard](../media/QS_Create-02-APIKey.png)
 
-1. **Important**: Save your key in a secure location because you cannot copy the key again later on. If you return to the API key page, you need to regenerate the key to copy it. You can also remove the API key if you no longer want to push packages via the CLI.
+> [!Warning]
+> **Always keep your API key a secret!** Treat your API key as a password that allows anyone to manage packages on your behalf. You should delete or regenerate your API key if it is accidentally revealed.
+
+> [!Important]
+> Save your key in a secure location because you cannot copy the key again later on. If you return to the API key page, you need to regenerate the key to copy it. You can also remove the API key if you no longer want to push packages.
 
 Scoping allows you to create separate API keys for different purposes. Each key has its expiration timeframe and can be scoped to specific packages (or glob patterns). Each key is also scoped to specific operations: push of new packages and updates, push of updates only, or delisting. Through scoping, you can create API keys for different people who manage packages for your organization such that they have only the permissions they need. For more information, see [scoped API keys](../../nuget-org/scoped-api-keys.md).

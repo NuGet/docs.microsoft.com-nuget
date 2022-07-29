@@ -160,8 +160,12 @@ Always specify a version or version range for package dependencies in project fi
 |----------|--------------|-------------|-------------|-------------|
 | * | 1.1.0 <br> 1.1.1 <br> 1.2.0 <br> 1.3.0-alpha  | 1.2.0 | The highest stable version. |
 | 1.1.* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.2.0-alpha | 1.1.1 | The highest stable version that respects the specified pattern.|
-| * - * | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.3.0-beta  | 1.3.0-beta | The highest version including the not stable versions. | Available in Visual Studio version 16.6, NuGet version 5.6, .NET Core SDK version 3.1.300 |
-| 1.1.* - * | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.1.2-beta <br> 1.3.0-beta  | 1.1.2-beta | The highest version respecting the pattern and including the not stable versions. | Available in Visual Studio version 16.6, NuGet version 5.6, .NET Core SDK version 3.1.300 |
+| \*-\* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.3.0-beta  | 1.3.0-beta | The highest version including the not stable versions. | Available in Visual Studio version 16.6, NuGet version 5.6, .NET Core SDK version 3.1.300 |
+| 1.1.\*-\* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.1.2-beta <br> 1.3.0-beta  | 1.1.2-beta | The highest version respecting the pattern and including the not stable versions. | Available in Visual Studio version 16.6, NuGet version 5.6, .NET Core SDK version 3.1.300 |
+
+> [!Note]
+> Floating version resolution does not take into account whether or not a package is listed. 
+> Floating version resolution will be resolved locally if the conditions can be satisfied with packages in the Global Package Folder.
 
 **References in `packages.config`:**
 
@@ -226,19 +230,16 @@ The `version` attribute in a `<dependency>` element describes the range versions
 When obtaining packages from a repository during install, reinstall, or restore operations, NuGet 3.4+ treats version numbers as follows:
 
 - Leading zeroes are removed from version numbers:
-
-  1.00 is treated as 1.0
-  1.01.1 is treated as 1.1.1
-  1.00.0.1 is treated as 1.0.0.1
+  - 1.00 is treated as 1.0
+  - 1.01.1 is treated as 1.1.1
+  - 1.00.0.1 is treated as 1.0.0.1
 
 - A zero in the fourth part of the version number will be omitted
-
-  1.0.0.0 is treated as 1.0.0
-  1.0.01.0 is treated as 1.0.1
+  - 1.0.0.0 is treated as 1.0.0
+  - 1.0.01.0 is treated as 1.0.1
 
 - SemVer 2.0.0 build metadata is removed
-
-  1.0.7+r3456 is treated as 1.0.7
+  - 1.0.7+r3456 is treated as 1.0.7
 
 `pack` and `restore` operations normalize versions whenever possible. For packages already built, this normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions when resolving dependencies.
 

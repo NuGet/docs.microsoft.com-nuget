@@ -1,5 +1,5 @@
 ---
-title: NuGet PackageReference format (package references in project files)
+title: NuGet PackageReference in project files
 description: Details on NuGet PackageReference in project files as supported by NuGet 4.0+ and VS2017 and .NET Core 2.0
 author: nkolev92
 ms.author: nikolev
@@ -7,9 +7,9 @@ ms.date: 03/16/2018
 ms.topic: conceptual
 ---
 
-# Package references (`PackageReference`) in project files
+# `PackageReference` in project files
 
-Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file). Using PackageReference, as it's called, doesn't affect other aspects of NuGet; for example, settings in `NuGet.Config` files (including package sources) are still applied as explained in [Common NuGet configurations](configuring-nuget-behavior.md).
+Package references, using `<PackageReference>` MSBuild items, specify NuGet package dependencies directly within project files, as opposed to having a separate `packages.config` file. Use of PackageReference doesn't affect other aspects of NuGet; for example, settings in `NuGet.Config` files (including package sources) are still applied as explained in [Common NuGet configurations](configuring-nuget-behavior.md).
 
 With PackageReference, you can also use MSBuild conditions to choose package references per target framework, or other groupings. It also allows for fine-grained control over dependencies and content flow. (See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
 
@@ -45,7 +45,7 @@ The convention for specifying the version of a package is the same as when using
 
 In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../concepts/package-versioning.md#version-ranges).
 
-## Using PackageReference for a project with no PackageReferences
+## Using PackageReference for a project with no package dependencies
 
 Advanced: If you have no packages installed in a project (no PackageReferences in project file and no packages.config file), but want the project to be restored as PackageReference style, you can set a Project property RestoreProjectStyle to PackageReference in your project file.
 
@@ -71,7 +71,7 @@ In PackageReference projects, the transitive dependency versions are resolved at
 <ItemGroup>
     <!-- ... -->
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.*" />
-    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0-beta*" />
+    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0-beta.*" />
     <!-- ... -->
 </ItemGroup>
 ```
@@ -115,18 +115,23 @@ Allowable values for these tags are as follows, with multiple values separated b
 | none | None of the above are used. |
 | all | All of the above (except `none`) |
 
-In the following example, everything except the content files from the package would be consumed by the project and everything except content files and analyzers would flow to the parent project.
-
 ```xml
 <ItemGroup>
     <!-- ... -->
-
+    <!-- Everything except the content files will be consumed by the project -->
+    <!-- Everything except content files and analyzers will flow to the parent project-->
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0">
-        <IncludeAssets>all</IncludeAssets>
+        <IncludeAssets>all</IncludeAssets> <!-- Default is `all`, can be omitted-->
         <ExcludeAssets>contentFiles</ExcludeAssets>
         <PrivateAssets>contentFiles;analyzers</PrivateAssets>
     </PackageReference>
-
+    <!-- ... -->
+    <!-- Everything except the compile will be consumed by the project -->
+    <!-- Everything except contentFiles will flow to the parent project-->
+    <PackageReference Include="Contoso.Utility.SomeOtherUsefulStuff" Version="3.6.0">
+        <ExcludeAssets>compile</ExcludeAssets>
+        <PrivateAssets>contentFiles</PrivateAssets>
+    </PackageReference>
     <!-- ... -->
 </ItemGroup>
 ```
@@ -300,7 +305,7 @@ When in Visual Studio, you can also [suppress warnings](/visualstudio/ide/how-to
 
 *This feature is available with NuGet **4.9** or above and with Visual Studio 2017 **15.9** or above.*
 
-Input to NuGet restore is a set of Package References from the project file (top-level or direct dependencies) and the output is a full closure of all the package dependencies including transitive dependencies. NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed. However, there are some scenarios where it is unable to do so. For example:
+Input to NuGet restore is a set of `PackageReference` items from the project file (top-level or direct dependencies) and the output is a full closure of all the package dependencies including transitive dependencies. NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed. However, there are some scenarios where it is unable to do so. For example:
 
 * When you use floating versions like `<PackageReference Include="My.Sample.Lib" Version="4.*"/>`. While the intention here is to float to the latest version on every restore of packages, there are scenarios where users require the graph to be locked to a certain latest version and float to a later version, if available, upon an explicit gesture.
 * A newer version of the package matching PackageReference version requirements is published. E.g. 
@@ -310,9 +315,9 @@ Input to NuGet restore is a set of Package References from the project file (top
 
   * Day 2: Version 4.0.0 gets published. NuGet will now find the exact match and start resolving to 4.0.0
 
-* A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraints. This results in NuGet finding the best match when it cannot resolve to the deleted version.
+* A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraint. This results in NuGet finding the best match when it cannot resolve to the deleted version.
 
-### Enabling lock file
+### Enabling the lock file
 
 In order to persist the full closure of package dependencies you can opt-in to the lock file feature by setting the MSBuild property `RestorePackagesWithLockFile` for your project:
 

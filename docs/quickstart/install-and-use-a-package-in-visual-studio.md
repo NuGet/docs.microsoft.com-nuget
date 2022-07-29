@@ -30,7 +30,7 @@ NuGet packages can be installed into any .NET project, provided that the package
 
 For this walkthrough, use a simple WPF app. Create a project in Visual Studio using **File** > **New Project**, typing **.NET** in the search box, and then selecting the **WPF App (.NET Framework)**. Click **Next**. Accept the default values for **Framework** when prompted.
 
-Visual Studio creates the project, which opens in Solution Explorer.
+Visual Studio creates the project, which can be found in Solution Explorer. For more information, see [Learn about Solution Explorer](/visualstudio/ide/use-solution-explorer).
 
 ## Add the Newtonsoft.Json NuGet package
 
@@ -122,9 +122,9 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 
 ## Related video
 
-> [!Video https://channel9.msdn.com/Series/NuGet-101/Install-and-Use-a-NuGet-Package-with-Visual-Studio-2-of-5/player]
+> [!Video https://docs.microsoft.com/shows/NuGet-101/Install-and-Use-a-NuGet-Package-with-Visual-Studio-2-of-5/player]
 
-Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+Find more NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
 ## Next steps
 

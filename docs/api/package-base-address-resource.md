@@ -32,7 +32,7 @@ resource `@type` value. In the following document, the placeholder base URL `{@i
 
 ## HTTP methods
 
-All URLs found in the registration resource support the HTTP methods `GET` and `HEAD`.
+All URLs found in the package content resource support the HTTP methods `GET` and `HEAD`.
 
 ## Enumerate package versions
 
