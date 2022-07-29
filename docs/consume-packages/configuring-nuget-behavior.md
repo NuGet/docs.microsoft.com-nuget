@@ -20,7 +20,7 @@ NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Con
 | Computer | **Windows:** `%ProgramFiles(x86)%\NuGet\Config`<br/>**Mac/Linux:** `$XDG_DATA_HOME`. If `$XDG_DATA_HOME` is null or empty, `~/.local/share` or `/usr/local/share` will be used (varies by OS distribution)  | Settings apply to all operations on the computer, but are overridden by any user- or project-level settings. |
 
 > [!Note]
-> On Mac/Linux, the user config file location varies by tooling. Dotnet CLI uses `~/.nuget/NuGet` folder, while Mono uses `~/.config/NuGet` folder. 
+> On Mac/Linux, the user config file location varies by tooling. .NET CLI uses `~/.nuget/NuGet` folder, while Mono uses `~/.config/NuGet` folder. 
 
 ### On Mac/Linux, the user-level config file location varies by tooling. 
 On Mac/Linux, the user config file location varies by tooling. 
