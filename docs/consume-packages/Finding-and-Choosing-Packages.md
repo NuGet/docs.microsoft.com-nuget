@@ -3,7 +3,7 @@ title: Finding and Choosing NuGet Packages
 description: An overview of how to find and choose the best NuGet packages for a project including details on the NuGet search syntax.
 author: JonDouglas
 ms.author: jodou
-ms.date: 06/04/2018
+ms.date: 11/03/2021
 ms.topic: conceptual
 ---
 

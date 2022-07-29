@@ -3,7 +3,7 @@ title: What is NuGet and what does it do?
 description: A comprehensive introduction to what NuGet is and does
 author: JonDouglas
 ms.author: jodou
-ms.date: 05/24/2019
+ms.date: 11/30/21
 ms.topic: overview
 ---
 

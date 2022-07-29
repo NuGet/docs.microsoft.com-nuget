@@ -3,7 +3,7 @@ title: Package Source Mapping
 description: Describes package source mapping functionality and how to onboard
 author: nkolev92
 ms.author: nikolev
-ms.date: 10/15/2021
+ms.date: 03/15/2022
 ms.topic: conceptual
 ---
 
