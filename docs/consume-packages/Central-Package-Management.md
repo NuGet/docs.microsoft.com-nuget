@@ -54,7 +54,7 @@ version.
 ```
 
 For each project, you then define a `<PackageReference />` but omit the `Version` attribute since the version will be attained from a corresponding
-`<PackageVersion `> item.
+`<PackageVersion />` item.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
