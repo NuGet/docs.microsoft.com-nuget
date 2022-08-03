@@ -25,6 +25,7 @@ There are also several other NuGet hosting products such as [Azure Artifacts](ht
 - [BaGet](https://github.com/loic-sharma/BaGet), an open-source implementation of NuGet V3 server built on ASP.NET Core
 - [Bytesafe](https://docs.bytesafe.dev/package-managers/nuget/) A fully managed package and supply chain security platform
 - [Cloudsmith](https://cloudsmith.io/l/nuget-feed/), a fully managed package management SaaS
+- [Gitea](https://gitea.io), an open-source, self-hostable Git service supports NuGet as a [package registry](https://docs.gitea.io/en-us/packages/nuget/)
 - [GitHub package registry](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [GitLab Package Registry](https://docs.gitlab.com/ee/user/packages/nuget_repository/)
 - [LiGet](https://github.com/ai-traders/liget), an open-source implementation of NuGet V2 server that runs on kestrel in docker
@@ -35,6 +36,5 @@ There are also several other NuGet hosting products such as [Azure Artifacts](ht
 - [ProGet](https://inedo.com/proget) from Inedo
 - [Sleet](https://github.com/emgarten/sleet), an open-source NuGet V3 static feed generator
 - [TeamCity](https://www.jetbrains.com/teamcity/) from JetBrains.
-- [Gitea](https://gitea.io), an open-source, self-hostable Git service supports NuGet as a [package registry](https://docs.gitea.io/en-us/packages/nuget/)
 
 Regardless of how packages are hosted, you access them by adding them to the list of available sources in `NuGet.Config`. This can be done in Visual Studio as described in [Package Sources](../consume-packages/install-use-packages-visual-studio.md#package-sources), or from the command line using [`nuget sources`](../reference/cli-reference/cli-ref-sources.md). The path to a source can be a local folder pathname, a network name, or a URL.
