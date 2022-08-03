@@ -22,7 +22,7 @@ NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Con
 > [!Note]
 > On Mac/Linux, the user config file location varies by tooling. .NET CLI uses `~/.nuget/NuGet` folder, while Mono uses `~/.config/NuGet` folder. 
 
-### On Mac/Linux, the user-level config file location varies by tooling. 
+### On Mac/Linux, the user-level config file location varies by tooling
 On Mac/Linux, the user config file location varies by tooling. 
 Majority of users use tools that look for the user config file under the `~/.nuget/NuGet` folder. 
 These other tools look for the user config file under the `~/.config/NuGet` folder:
