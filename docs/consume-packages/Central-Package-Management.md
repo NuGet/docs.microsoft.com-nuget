@@ -3,7 +3,7 @@ title: Central Package Management
 description: Manage your dependencies in a central location and how you can get started with central package management.
 author: jondouglas
 ms.author: jodou
-ms.date: 2/25/2022
+ms.date: 05/09/2022
 ms.topic: conceptual
 ---
 

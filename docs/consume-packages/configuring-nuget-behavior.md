@@ -3,7 +3,7 @@ title: Common NuGet configurations
 description: NuGet.Config files control NuGet's behavior both globally and on a per-project basis, and are modified with nuget config command.
 author: JonDouglas
 ms.author: jodou
-ms.date: 10/25/2017
+ms.date: 01/10/2022
 ms.topic: conceptual
 ---
 
