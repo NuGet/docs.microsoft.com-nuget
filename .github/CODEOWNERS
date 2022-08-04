@@ -1,0 +1,13 @@
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence,
+# review when someone opens a pull request.
+# For more on how to customize the CODEOWNERS file - https://help.github.com/en/articles/about-code-owners
+*   @NuGet/nuget-client @NuGet/nuget-pm
+
+# @NuGet/core-team owns any file in the `/docs/nuget-org/` directory
+# in the root of your repository and any of its subdirectories.
+/docs/nuget-org/ @NuGet/core-team
+
+# @NuGet/core-team owns any file in the `/docs/policies/` directory
+# in the root of your repository and any of its subdirectories.
+/docs/policies/ @NuGet/core-team
