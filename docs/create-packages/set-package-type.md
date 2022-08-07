@@ -19,6 +19,8 @@ Packages can be marked with one more more *package types* to indicate its intend
 
 - `Template` type packages provide [custom templates](/dotnet/core/tools/custom-templates) that can be used to create files or projects like an app, service, tool, or class library.
 
+- `MSBuildSdk` type packages provides [MSBuild SDK](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk) that can be used to augment behaviour of projects. Examples of such SDK can be found on [following GitHub repo](https://github.com/microsoft/MSBuildSdks).
+
 Packages not marked with a type, including all packages created with earlier versions of NuGet, default to the `Dependency` type.
 
 > [!NOTE]
