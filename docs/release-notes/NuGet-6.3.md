@@ -1,8 +1,8 @@
 ---
 title: NuGet 6.3 Release Notes
 description: Release notes for NuGet 6.3 including new features, bug fixes, and DCRs.
-author: <GithubAlias>
-ms.author: <MicrosoftAlias>
+author: mruizmares
+ms.author: mruizmares
 ms.date: 8/2/2022
 ms.topic: conceptual
 ---
@@ -13,25 +13,25 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**<NuGetVersion>**](https://nuget.org/downloads) | [Visual Studio <VSYear> version <VSVersion>](https://visualstudio.microsoft.com/downloads/) | [<SDKVersion>](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
+| [**6.3**](https://nuget.org/downloads) | [Visual Studio 17.4 version <VSVersion>](https://visualstudio.microsoft.com/downloads/) | [6.0.400](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio <VSYear> with.NET Core workload
+<sup>1</sup> Installed with Visual Studio 17.4 with.NET Core workload
 
 ## Summary: What's New in 6.3
 
 * Implement "consuming pdbs from packages in PackageReference" - [#11352](https://github.com/NuGet/Home/issues/11352)
 
-* Create experimentation metrics to measure engagement of transitive dependencies - [#10759](https://github.com/NuGet/Home/issues/10759)
-
-* Enhance the experimentation infrastructure in NuGet code to support transitive dependencies - [#10758](https://github.com/NuGet/Home/issues/10758)
-
 * Allow to user to input custom (floating) versions through the PM UI - [#9829](https://github.com/NuGet/Home/issues/9829)
 
 * [Feature] Error on multiple entries for the same package ids in Directory.Packages.props - [#9467](https://github.com/NuGet/Home/issues/9467)
 
+* Add opt-out escape hatch on Linux and macOS - [#11264](https://github.com/NuGet/Home/issues/11264)
+
 ### Issues fixed in this release
 
 **DCRs:**
+
+* [DCR]: Print sources in NU1507 - [#11715](https://github.com/NuGet/Home/issues/11715)
 
 * [DCR]: Only cancel VS cred provider requests if VS is closing - [#11970](https://github.com/NuGet/Home/issues/11970)
 
@@ -41,13 +41,9 @@ NuGet distribution vehicles:
 
 * [DCR]: Include caught exceptions as inner exceptions when rethrowing (in MsBuildUtility) - [#11766](https://github.com/NuGet/Home/issues/11766)
 
-* [DCR]: Print sources in NU1507 - [#11715](https://github.com/NuGet/Home/issues/11715)
-
 * Specifying both -f ... and -r ... to dotnet build fails to restore if multiple frameworks are present in the project file - [#11653](https://github.com/NuGet/Home/issues/11653)
 
 * PackageSourceMapping public constructor - [#11609](https://github.com/NuGet/Home/issues/11609)
-
-* Add opt-out escape hatch on Linux and macOS - [#11264](https://github.com/NuGet/Home/issues/11264)
 
 * Add support for system and fallback certificate bundles - [#11263](https://github.com/NuGet/Home/issues/11263)
 
@@ -119,7 +115,4 @@ NuGet distribution vehicles:
 
 * Transitive lock files (with wildcard) result in NU1004 - [#8465](https://github.com/NuGet/Home/issues/8465)
 
-**StillOpens:**
-
-* [Bug]: PM UI Updates tab shows incorrect packages in multitargeting projects - [#11945](https://github.com/NuGet/Home/issues/11945)
-
+* Enhance the experimentation infrastructure in NuGet code to support transitive dependencies - [#10758](https://github.com/NuGet/Home/issues/10758)
