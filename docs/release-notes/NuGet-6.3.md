@@ -23,6 +23,8 @@ NuGet distribution vehicles:
 
 * Allow to user to input custom (floating) versions through the PM UI - [#9829](https://github.com/NuGet/Home/issues/9829)
 
+* [Feature] PackageReference with a star in version is displayed under the updates tab/incorrectly represented in the installed tab - [#3788]https://github.com/NuGet/Home/issues/3788
+
 * [Feature] Error on multiple entries for the same package ids in Directory.Packages.props - [#9467](https://github.com/NuGet/Home/issues/9467)
 
 * Add opt-out escape hatch on Linux and macOS - [#11264](https://github.com/NuGet/Home/issues/11264)
