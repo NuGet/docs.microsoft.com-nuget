@@ -1,7 +1,7 @@
 ---
 title: NuGet 6.3 Release Notes
 description: Release notes for NuGet 6.3 including new features, bug fixes, and DCRs.
-author: mruizmares
+author: martinrrm
 ms.author: mruizmares
 ms.date: 8/2/2022
 ms.topic: conceptual
@@ -13,19 +13,17 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.3**](https://nuget.org/downloads) | [Visual Studio 17.4 version <VSVersion>](https://visualstudio.microsoft.com/downloads/) | [6.0.400](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
+| [**6.3**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.3](https://visualstudio.microsoft.com/downloads/) | [6.0.400](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio 17.4 with.NET Core workload
+<sup>1</sup> Installed with Visual Studio 17.3 with.NET Core workload
 
 ## Summary: What's New in 6.3
 
-* Implement "consuming pdbs from packages in PackageReference" - [#11352](https://github.com/NuGet/Home/issues/11352)
-
-* Allow to user to input custom (floating) versions through the PM UI - [#9829](https://github.com/NuGet/Home/issues/9829)
-
-* [Feature] PackageReference with a star in version is displayed under the updates tab/incorrectly represented in the installed tab - [#3788]https://github.com/NuGet/Home/issues/3788
+* [Feature] Allow to user to input custom (floating) versions through the PM UI - [#9829](https://github.com/NuGet/Home/issues/9829) [#3788](https://github.com/NuGet/Home/issues/3788)
 
 * [Feature] Error on multiple entries for the same package ids in Directory.Packages.props - [#9467](https://github.com/NuGet/Home/issues/9467)
+
+* When using Central Package Management, Visual Studio no longer errors when installing packages and instead the project and central package management file are updated - [#11828](https://github.com/NuGet/Home/issues/11828)
 
 ### Issues fixed in this release
 
@@ -68,8 +66,6 @@ NuGet distribution vehicles:
 * When restore raises an NU1301, build might fail with a `project.assets.json doesn't have a target for 'net6.0-windows10.0.19041.0` like error that's a red herring - [#11862](https://github.com/NuGet/Home/issues/11862)
 
 * [Bug]: Package source option "All" appears unsorted in the in the list when using VS in non-English languages - [#11857](https://github.com/NuGet/Home/issues/11857)
-
-* [Bug]: Installing a package in Visual Studio when using central package management results in an error before projects can be modified - [#11828](https://github.com/NuGet/Home/issues/11828)
 
 * [Bug]: [Bug Bash] The “Version” dropdown box is blank in “Consolidate” tab of solution-level PM UI - [#11806](https://github.com/NuGet/Home/issues/11806)
 
