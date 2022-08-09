@@ -103,13 +103,13 @@ To learn more about how package installation works, see [the conceptual document
 To fully onboard your repository you may take the following steps:
 
 1. Declare a new [global packages folder for your repo](../reference/nuget-config-file.md#config-section).
-2. Run [dotnet restore](/dotnet/core/tools/dotnet-restore) to restore dependencies.
-3. Run [`dotnet list package --include-transitive`](/dotnet/core/tools/dotnet-list-package#synopsis) to view all top-level and transitive packages in your solution.
+1. Run [dotnet restore](/dotnet/core/tools/dotnet-restore) to restore dependencies.
+1. Run [`dotnet list package --include-transitive`](/dotnet/core/tools/dotnet-list-package#synopsis) to view all top-level and transitive packages in your solution.
     * For .NET framework projects using [`packages.config`](../reference/packages-config.md), the `packages.config` file will have a flat list of all direct and transitive packages.
-4. Define mappings such that every package ID in your solution - *including transitive packages* - matches a pattern for the target source.
-5. Run [dotnet nuget locals global-packages -c](/dotnet/core/tools/dotnet-nuget-locals) to clear global-packages directory.
-6. Run restore to validate that you have configured your mappings correctly. If your mappings don't fully cover every package ID in your solution, the error messages will help you identify the issue.
-7. When restore succeeds, you are done! Optionally consider:
+1. Define mappings such that every package ID in your solution - *including transitive packages* - matches a pattern for the target source.
+1. Run [dotnet nuget locals global-packages -c](/dotnet/core/tools/dotnet-nuget-locals) to clear global-packages directory.
+1. Run restore to validate that you have configured your mappings correctly. If your mappings don't fully cover every package ID in your solution, the error messages will help you identify the issue.
+1. When restore succeeds, you are done! Optionally consider:
     * Simplifying the configuration to fewer declarations by using broader package ID prefixes or [setting a default source](#setting-default-sources) where possible.
     * Verifying the source each package was restored from by checking the [metadata files in the global packages folder or reviewing the restore logs](https://devblogs.microsoft.com/nuget/performance-and-polish-with-nuget-5-9/).
 
