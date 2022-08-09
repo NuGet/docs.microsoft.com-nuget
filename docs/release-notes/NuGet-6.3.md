@@ -25,7 +25,7 @@ NuGet distribution vehicles:
 
 * When using Central Package Management, Visual Studio no longer errors when installing packages and instead the project and central package management file are updated - [#11828](https://github.com/NuGet/Home/issues/11828)
 
-* Remove net45 and net40 targets from the NuGet build - [#11830](https://github.com/NuGet/Home/issues/11830)
+* NuGet.Common, NuGet.Configuration, NuGet.Frameworks, NuGet.Packaging.Extraction and NuGet.Versioning no longer support net45 or net40 - [#11830](https://github.com/NuGet/Home/issues/11830)
 
 ### Issues fixed in this release
 
