@@ -177,6 +177,8 @@
 ### [NU1701](reference/errors-and-warnings/NU1701.md)
 ### [NU1703](reference/errors-and-warnings/NU1703.md)
 ### [NU1801](reference/errors-and-warnings/NU1801.md)
+### [NU1802](reference/errors-and-warnings/NU1802.md)
+### [NU1803](reference/errors-and-warnings/NU1803.md)
 ### [NU3000](reference/errors-and-warnings/NU3000.md)
 ### [NU3001](reference/errors-and-warnings/NU3001.md)
 ### [NU3002](reference/errors-and-warnings/NU3002.md)
@@ -314,6 +316,7 @@
 ### [Known Issues](release-notes/known-issues.md)
 
 ### NuGet 6.x
+#### [NuGet 6.3](release-notes/NuGet-6.3.md)
 #### [NuGet 6.2](release-notes/NuGet-6.2.md)
 #### [NuGet 6.1](release-notes/NuGet-6.1.md)
 #### [NuGet 6.0](release-notes/NuGet-6.0.md)
