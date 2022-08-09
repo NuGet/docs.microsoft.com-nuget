@@ -100,7 +100,7 @@ To learn more about how package installation works, see [the conceptual document
 
 ### Get started
 
-There are 2 ways you can fully onboard your repository, manually or using the NuGet.PackageSourceMapper tool.
+There are 2 ways you can fully onboard your repository, [manually](#manual-onboarding) or using the [NuGet.PackageSourceMapper tool](#automated-onboarding-using-tool).
 
 #### Manual onboarding
 
@@ -117,7 +117,10 @@ For manual onboarding you may take the following steps:
 
 #### Automated onboarding using tool
 
-For large solution with a many packages above manual onboarding could be time consuming and error prone. We developed [NuGet.PackageSourceMapper tool](https://www.nuget.org/packages/NuGet.PackageSourceMapper) automatically generate a NuGet.config for you based on your project’s known packages and sources. The package source mapper tool requires you to have completed a successful package restore in which it will read each respective `.nupkg.metadata` file generated as part of your build to best understand how you map your respective packages and sources. Tool not only covers top dependencies it also considers all the transitive dependencies when generating mapping.
+Many repositories have a large number of packages and doing the work manually can be time consuming. The [NuGet.PackageSourceMapper tool](https://www.nuget.org/packages/NuGet.PackageSourceMapper) can automatically generate a NuGet.config for you, based on your project's known packages and sources. 
+
+The package source mapper tool requires you to have completed a successful package restore in which it will read each respective `.nupkg.metadata` file generated as part of your build to best understand how you map your respective packages and sources. Tool not only covers top dependencies it also considers all the transitive dependencies when generating mapping.
+
 Tool has several option how to generate mapping pattern depending on your need, please check [blog post](https://devblogs.microsoft.com/nuget/quickly-map-your-nuget-packages-to-sources) and tool's [readme instruction](https://www.nuget.org/packages/NuGet.PackageSourceMapper#readme-body-tab) for more details.
 
 For an idea of how your source mappings may look like, refer to our [samples repo](https://github.com/NuGet/Samples/tree/main/PackageSourceMappingExample).
