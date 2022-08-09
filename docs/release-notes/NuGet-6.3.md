@@ -21,9 +21,11 @@ NuGet distribution vehicles:
 
 * [Feature] Allow to user to input custom (floating) versions through the PM UI - [#9829](https://github.com/NuGet/Home/issues/9829) [#3788](https://github.com/NuGet/Home/issues/3788)
 
-* [Feature] Error on multiple entries for the same package ids in Directory.Packages.props - [#9467](https://github.com/NuGet/Home/issues/9467)
+* [Feature] NuGet warns when duplicate PackageReference, PackageVersion or PackageDownload items are specified - [#9467](https://github.com/NuGet/Home/issues/9467) [#9864](https://github.com/NuGet/Home/issues/9864)
 
 * When using Central Package Management, Visual Studio no longer errors when installing packages and instead the project and central package management file are updated - [#11828](https://github.com/NuGet/Home/issues/11828)
+
+* Remove net45 and net40 targets from the NuGet build - [#11830](https://github.com/NuGet/Home/issues/11830)
 
 ### Issues fixed in this release
 
@@ -32,8 +34,6 @@ NuGet distribution vehicles:
 * [DCR]: Print sources in NU1507 - [#11715](https://github.com/NuGet/Home/issues/11715)
 
 * [DCR]: Only cancel VS cred provider requests if VS is closing - [#11970](https://github.com/NuGet/Home/issues/11970)
-
-* Remove net45 and net40 targets from the NuGet build - [#11830](https://github.com/NuGet/Home/issues/11830)
 
 * For C++/CLI PackageReference projects, NuGet should ignore the TargetPlatformMoniker - [#11808](https://github.com/NuGet/Home/issues/11808)
 
@@ -44,8 +44,6 @@ NuGet distribution vehicles:
 * PackageSourceMapping public constructor - [#11609](https://github.com/NuGet/Home/issues/11609)
 
 * Add support for system and fallback certificate bundles - [#11263](https://github.com/NuGet/Home/issues/11263)
-
-* Duplicate PackageReference includes are handled inconsistently by all restores, leading to unnecessary full restores - [#9864](https://github.com/NuGet/Home/issues/9864)
 
 **Bugs:**
 
