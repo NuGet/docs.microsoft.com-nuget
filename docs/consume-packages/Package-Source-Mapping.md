@@ -100,7 +100,7 @@ To learn more about how package installation works, see [the conceptual document
 
 ### Get started
 
-To fully onboard your repository you can do it 2 ways either manually or automated tool.
+There are 2 ways you can fully onboard your repository, manually or using the NuGet.PackageSourceMapper tool.
 
 #### Manual onboarding
 
