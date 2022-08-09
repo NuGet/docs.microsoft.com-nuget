@@ -100,7 +100,7 @@ To learn more about how package installation works, see [the conceptual document
 
 ### Get started
 
-To fully onboard your repository you may take the following steps:
+To fully onboard your repository you can do it 2 ways either manually or automated [NuGet.PackageSourceMapper tool](https://www.nuget.org/packages/NuGet.PackageSourceMapper/0.1.3-preview.22218.1#readme-body-tab), for manual onboarding you may take the following steps.
 
 1. Declare a new [global packages folder for your repo](../reference/nuget-config-file.md#config-section).
 1. Run [`dotnet list package --include-transitive`](/dotnet/core/tools/dotnet-list-package#synopsis) to view all top-level and transitive packages in your solution.
