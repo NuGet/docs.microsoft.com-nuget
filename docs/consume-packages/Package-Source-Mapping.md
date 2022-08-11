@@ -107,9 +107,11 @@ There are 2 ways you can fully onboard your repository, [manually](#manual-onboa
 For manual onboarding you may take the following steps:
 
 1. Declare a new [global packages folder for your repo](../reference/nuget-config-file.md#config-section).
+1. Run [dotnet restore](/dotnet/core/tools/dotnet-restore) to restore dependencies.
 1. Run [`dotnet list package --include-transitive`](/dotnet/core/tools/dotnet-list-package#synopsis) to view all top-level and transitive packages in your solution.
     * For .NET framework projects using [`packages.config`](../reference/packages-config.md), the `packages.config` file will have a flat list of all direct and transitive packages.
 1. Define mappings such that every package ID in your solution - *including transitive packages* - matches a pattern for the target source.
+1. Run [dotnet nuget locals global-packages -c](/dotnet/core/tools/dotnet-nuget-locals) to clear global-packages directory.
 1. Run restore to validate that you have configured your mappings correctly. If your mappings don't fully cover every package ID in your solution, the error messages will help you identify the issue.
 1. When restore succeeds, you are done! Optionally consider:
     * Simplifying the configuration to fewer declarations by using broader package ID prefixes or [setting a default source](#setting-default-sources) where possible.
