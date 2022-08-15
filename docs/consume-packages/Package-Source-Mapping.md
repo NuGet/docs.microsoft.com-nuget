@@ -100,19 +100,32 @@ To learn more about how package installation works, see [the conceptual document
 
 ### Get started
 
-To fully onboard your repository you may take the following steps:
+There are 2 ways you can fully onboard your repository, [manually](#manual-onboarding) or using the [NuGet.PackageSourceMapper tool](#automated-onboarding-using-tool).
+
+#### Manual onboarding
+
+For manual onboarding you may take the following steps:
 
 1. Declare a new [global packages folder for your repo](../reference/nuget-config-file.md#config-section).
+1. Run [dotnet restore](/dotnet/core/tools/dotnet-restore) to restore dependencies.
 1. Run [`dotnet list package --include-transitive`](/dotnet/core/tools/dotnet-list-package#synopsis) to view all top-level and transitive packages in your solution.
     * For .NET framework projects using [`packages.config`](../reference/packages-config.md), the `packages.config` file will have a flat list of all direct and transitive packages.
 1. Define mappings such that every package ID in your solution - *including transitive packages* - matches a pattern for the target source.
+1. Run [dotnet nuget locals global-packages -c](/dotnet/core/tools/dotnet-nuget-locals) to clear global-packages directory.
 1. Run restore to validate that you have configured your mappings correctly. If your mappings don't fully cover every package ID in your solution, the error messages will help you identify the issue.
 1. When restore succeeds, you are done! Optionally consider:
     * Simplifying the configuration to fewer declarations by using broader package ID prefixes or [setting a default source](#setting-default-sources) where possible.
     * Verifying the source each package was restored from by checking the [metadata files in the global packages folder or reviewing the restore logs](https://devblogs.microsoft.com/nuget/performance-and-polish-with-nuget-5-9/).
 
-For an idea of how your source mappings may look like, refer to our [samples repo](https://github.com/NuGet/Samples/tree/main/PackageSourceMappingExample).
+#### Automated onboarding using tool
 
+Many repositories have a large number of packages and doing the work manually can be time consuming. The [NuGet.PackageSourceMapper tool](https://www.nuget.org/packages/NuGet.PackageSourceMapper) can automatically generate a NuGet.config for you, based on your project's known packages and sources. 
+
+The package source mapper tool requires you to have completed a successful package restore in which it will read each respective `.nupkg.metadata` file generated as part of your build to best understand how you map your respective packages and sources. Tool not only covers top dependencies it also considers all the transitive dependencies when generating mapping.
+
+Tool has several option how to generate mapping pattern depending on your need, please check [blog post](https://devblogs.microsoft.com/nuget/quickly-map-your-nuget-packages-to-sources) and tool's [readme instruction](https://www.nuget.org/packages/NuGet.PackageSourceMapper#readme-body-tab) for more details.
+
+For an idea of how your source mappings may look like, refer to our [samples repo](https://github.com/NuGet/Samples/tree/main/PackageSourceMappingExample).
 
 > [!Note]
 > This feature is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
