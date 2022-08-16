@@ -2,9 +2,8 @@ The [dotnet restore](/dotnet/core/tools/dotnet-restore) command restores package
 
 .NET Core 2.0 and later restore packages automatically with the `dotnet build` and `dotnet run` commands. As of NuGet 4.0, `dotnet restore` runs the same code as `nuget restore`.
 
-To restore packages:
+To restore a package with `dotnet restore`:
 
 1. Open a command line and switch to the directory that contains your project file.
-
 1. Run `dotnet restore`.
 

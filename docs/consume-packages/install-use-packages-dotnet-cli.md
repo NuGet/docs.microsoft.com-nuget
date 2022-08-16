@@ -9,15 +9,15 @@ ms.topic: conceptual
 
 # Install and manage packages with the dotnet CLI
 
-You can use the dotnet CLI tool on Windows, MacOS, or Linux to easily install, uninstall, and update NuGet packages in .NET projects and solutions. This article shows basic usage for the most common dotnet CLI commands for managing NuGet packages.
+You can use the dotnet CLI tool on Windows, MacOS, or Linux to easily install, uninstall, and update NuGet packages in .NET projects and solutions. This article describes the most common dotnet CLI commands for managing NuGet packages.
 
 The dotnet CLI runs on .NET, .NET Core, .NET Standard SDK-style projects, and any other SDK-style projects, for example those that target .NET Framework. For more information, see [.NET project SDKs](/dotnet/core/project-sdk/overview).
 
-For most commands, the CLI tool looks for a project file in the current directory, unless a different project file is specified as an optional switch in the command. For a complete list of commands and their arguments, see the [dotnet CLI commands](../reference/dotnet-commands.md).
+For most commands, the CLI tool looks for a project file in the current directory, unless a different project file is specified as an optional switch in the command. For a complete list of commands and their arguments, see the [dotnet CLI command reference](../reference/dotnet-commands.md).
 
 ## Prerequisites
 
-- The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool. Starting in Visual Studio 2017, the dotnet CLI automatically installs with any .NET Core related workloads.
+- The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool. Starting in Visual Studio 2017, the dotnet CLI automatically installs with all .NET Core related workloads.
 
 ## Install or update a package
 
@@ -28,7 +28,7 @@ The [dotnet add package](/dotnet/core/tools/dotnet-add-package) command adds a p
 1. Use the following command to install a NuGet package:
 
     ```dotnetcli
-    dotnet add package <PACKAGE_NAME>
+    dotnet add package <package.name>
     ```
 
     For example, to install the `Newtonsoft.Json` package, use the following command
@@ -39,11 +39,11 @@ The [dotnet add package](/dotnet/core/tools/dotnet-add-package) command adds a p
 
 1. After the command completes, open the project file to make sure the package installed.
 
-   For example, you can open the *.csproj* file to see the added `Newtonsoft.Json` package reference:
+   For example, open the *.csproj* file to see the added `Newtonsoft.Json` package reference:
 
     ```xml
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>
     ```
 
@@ -51,10 +51,10 @@ The [dotnet add package](/dotnet/core/tools/dotnet-add-package) command adds a p
 
 NuGet installs the latest version of the package when you use the `dotnet add package` command, unless you specify a different version.
 
-To install a specific version of a NuGet package, use the optional `-v` switch:
+To install a specific version of a NuGet package, use the optional `-v` or `--version` switch:
 
 ```dotnetcli
-dotnet add package <PACKAGE_NAME> --version <VERSION>
+dotnet add package <package.name> -v <version>
 ```
 
 For example, to add version 12.0.1 of the `Newtonsoft.Json` package, use this command:
@@ -76,7 +76,7 @@ dotnet list package
 Use the [dotnet remove package](/dotnet/core/tools/dotnet-remove-package) command to remove a package reference from the project file.
 
 ```dotnetcli
-dotnet remove package <PACKAGE_NAME>
+dotnet remove package <package.name>
 ```
 
 For example, to remove the `Newtonsoft.Json` package, use the following command:
@@ -92,4 +92,4 @@ dotnet remove package Newtonsoft.Json
 ## Next steps
 
 - [Install and manage packages with the Package Manager Console](install-use-packages-powershell.md)
-- [Restore packages using Package Restore](package-restore.md)
+- [Install and manage packages in Visual Studio using the NuGet Package Manager](install-use-packages-visual-studio.md)
