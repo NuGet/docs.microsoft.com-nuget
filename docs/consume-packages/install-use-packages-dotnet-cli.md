@@ -3,7 +3,7 @@ title: Install and manage NuGet packages with the dotnet CLI
 description: See how to use the dotnet CLI to install, list, remove, and update NuGet packages.
 author: mikejo5000
 ms.author: mikejo
-ms.date: 08/15/2022
+ms.date: 08/16/2022
 ms.topic: conceptual
 ---
 
@@ -13,11 +13,11 @@ You can use the dotnet CLI tool on Windows, MacOS, or Linux to easily install, u
 
 The dotnet CLI runs on .NET, .NET Core, .NET Standard SDK-style projects, and any other SDK-style projects, for example those that target .NET Framework. For more information, see [.NET project SDKs](/dotnet/core/project-sdk/overview).
 
-For most commands, the CLI tool looks for a project file in the current directory, unless a different project file is specified as an optional switch in the command. For a complete list of commands and their arguments, see the [dotnet CLI command reference](../reference/dotnet-commands.md).
+For most commands, the CLI tool looks for a project file in the current directory, unless a different project file is specified as an optional switch in the command. For a complete list of commands and their arguments, see [dotnet CLI commands](../reference/dotnet-commands.md).
 
 ## Prerequisites
 
-- The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool. Starting in Visual Studio 2017, the dotnet CLI automatically installs with all .NET Core related workloads.
+- The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool. Starting in Visual Studio 2017, the dotnet CLI automatically installs with all .NET and .NET Core related workloads.
 
 ## Install or update a package
 
@@ -28,7 +28,7 @@ The [dotnet add package](/dotnet/core/tools/dotnet-add-package) command adds a p
 1. Use the following command to install a NuGet package:
 
     ```dotnetcli
-    dotnet add package <package.name>
+    dotnet add package <PackageName>
     ```
 
     For example, to install the `Newtonsoft.Json` package, use the following command
@@ -49,12 +49,12 @@ The [dotnet add package](/dotnet/core/tools/dotnet-add-package) command adds a p
 
 ## Install a specific version of a package
 
-NuGet installs the latest version of the package when you use the `dotnet add package` command, unless you specify a different version.
+The `dotnet add package` command installs the latest version of the package, unless you specify a different version.
 
 To install a specific version of a NuGet package, use the optional `-v` or `--version` switch:
 
 ```dotnetcli
-dotnet add package <package.name> -v <version>
+dotnet add package <PackageName> -v <version>
 ```
 
 For example, to add version 12.0.1 of the `Newtonsoft.Json` package, use this command:
@@ -76,7 +76,7 @@ dotnet list package
 Use the [dotnet remove package](/dotnet/core/tools/dotnet-remove-package) command to remove a package reference from the project file.
 
 ```dotnetcli
-dotnet remove package <package.name>
+dotnet remove package <PackageName>
 ```
 
 For example, to remove the `Newtonsoft.Json` package, use the following command:

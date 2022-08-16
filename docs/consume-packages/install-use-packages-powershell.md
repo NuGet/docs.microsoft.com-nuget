@@ -15,6 +15,9 @@ The Package Manager Console in Visual Studio uses PowerShell commands to interac
 
 This article describes how to find, install, update, and uninstall NuGet packages with PowerShell commands in the Package Manager Console. For the complete Package Manager Console PowerShell command reference, see [PowerShell reference](../reference/powershell-reference.md).
 
+> [!IMPORTANT]
+> The PowerShell commands and arguments in this article are specific to the Visual Studio Package Manager Console. These commands differ from the [PackageManagement module commands](/powershell/module/packagemanagement) you can use in a general PowerShell environment. Each environment has commands that aren't available in the other, and commands with the same name might differ in their specific arguments.
+
 ## Console availability
 
 Starting in Visual Studio 2017, NuGet and the NuGet Package Manager install automatically when you create any .NET-related workloads in Visual Studio. You can also install the Package Manager by selecting **Individual components** > **Code tools** > **NuGet package manager** in the Visual Studio Installer. 
@@ -22,9 +25,6 @@ Starting in Visual Studio 2017, NuGet and the NuGet Package Manager install auto
 You can also search for the NuGet Package Manager extension under the **Tools** > **Extensions and Updates** or **Extensions** menus. If you're unable to use the extensions installer in Visual Studio, you can download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 
 The Package Manager Console is built into the Package Manager for Visual Studio on Windows. Visual Studio Code and Visual Studio for Mac don't include the console. Visual Studio for Mac has a UI for managing NuGet packages, and the equivalent console commands are available through the [NuGet CLI](../reference/nuget-exe-CLI-reference.md). For more information, see [Install and manage NuGet packages in Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough).
-
-> [!IMPORTANT]
-> The PowerShell commands and arguments in this article are specific to the Visual Studio Package Manager Console. These commands differ from the [PackageManagement module commands](/powershell/module/packagemanagement) you can use in a general PowerShell environment. Each environment has commands that aren't available in the other, and commands with the same name might differ in their specific arguments.
 
 ## Find and install a package
 
@@ -134,7 +134,7 @@ Uninstall-Package <PackageName> -Force
 
 ## Update a package
 
-To update a package, see [Get-Package](../reference/ps-reference/ps-ref-get-package.md) and [Update-Package](../reference/ps-reference/ps-ref-update-package.md). You can run the following commands:
+To update a package, use [Get-Package](../reference/ps-reference/ps-ref-get-package.md) and [Update-Package](../reference/ps-reference/ps-ref-update-package.md). You can run the following commands:
 
 - To check if there are newer versions available for any installed packages:
 
@@ -182,9 +182,9 @@ After you install the `NuGet.CommandLine` package, you can run all NuGet CLI com
 
 ## Set up a NuGet PowerShell profile
 
-Rather than losing your PowerShell settings between sessions, you can create a PowerShell profile to make your commonly-used commands available in all PowerShell contexts. NuGet supports a NuGet-specific profile usually found at *%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1*.
+Rather than losing your PowerShell settings between sessions, you can create a PowerShell profile to make your commonly-used commands available in all PowerShell contexts. NuGet supports a NuGet-specific profile, which is usually found at *%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1*.
 
-To find your profile's location enter `$profile` in the console:
+To find your profile's location, enter `$profile` in the console:
 
 ```powershell
 $profile
@@ -192,6 +192,8 @@ C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
 To create the PowerShell profile, create a text file with the specified name in the specified location. For more information, see [Windows PowerShell Profiles](/previous-versions//bb613488(v=vs.85)).
+
+## Next steps
 
 - [Install and manage NuGet packages with the dotnet CLI](install-use-packages-dotnet-cli.md)
 - [Manage packages using the nuget.exe CLI](install-use-packages-nuget-cli.md)
