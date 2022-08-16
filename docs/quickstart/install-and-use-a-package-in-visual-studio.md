@@ -48,13 +48,13 @@ To use the [NuGet Package Manager](../consume-packages/install-use-packages-visu
 
 1. In **Solution Explorer**, right-click **References** and choose **Manage NuGet Packages**.
 
-    ![Screenshot showing Solution Explorer with References selected and Manage NuGet Packages highlighted in shortcut menu.](media/qs-use-01-manage-nuget-packages.png)
+    :::image type="content" source="media/qs-use-01-manage-nuget-packages.png" alt-text="Screenshot showing Solution Explorer with References selected and Manage NuGet Packages highlighted in shortcut menu.":::
 
 1. Choose **nuget.org** as the **Package source**.
 
 1. From the **Browse** tab, search for *Newtonsoft.Json*, select **Newtonsoft.Json** in the list, and then select **Install**.
 
-    ![Screenshot showing the NuGet Package Manager page with the Newtonsoft.Json package selected.](media/qs-use-02-install-package.png)
+    :::image type="content" source="media/qs-use-02-install-package.png" alt-text="Screenshot showing the NuGet Package Manager window with the Newtonsoft.Json package selected.":::
 
 1. (Visual Studio 2017 only) If you're prompted to select a package management format, select **PackageReference in project file**:
 
@@ -70,7 +70,7 @@ To use the [Package Manager Console](../consume-packages/install-use-packages-po
 
 1. After the **Package Manager Console** pane opens, verify that the **Default project** drop-down list shows the project in which you want to install the package. If you have a single project in the solution, it's already selected.
 
-    ![Screenshot showing the Package Manager Console window with Default project highlighted.](media/qs-use-04-package-manager-console.png)
+    :::image type="content" source="media/qs-use-04-package-manager-console.png" alt-text="media/qs-use-04-package-manager-console.png":::
 
 1. At the console prompt, enter the command `Install-Package Newtonsoft.Json`. For more information about this command, see [Install-Package](../reference/ps-reference/ps-ref-install-package.md).
 
