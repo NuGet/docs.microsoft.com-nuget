@@ -1,5 +1,5 @@
 ---
-title: Install and use a NuGet package using the dotnet CLI
+title: Install and use a NuGet package with the dotnet CLI
 description: Get a quick tutorial on how to use the dotnet CLI to install and use a NuGet package in a .NET project.
 author: JonDouglas
 ms.author: jodou
@@ -7,9 +7,9 @@ ms.date: 08/15/2022
 ms.topic: quickstart
 ---
 
-# Quickstart: Install and use a package using the dotnet CLI
+# Quickstart: Install and use a package with the dotnet CLI
 
-NuGet packages contain compiled binary code that developers make available for other developers to use in their projects. For more information, see [What is NuGet](../What-is-NuGet.md). This quickstart describes how to install the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) NuGet package into a .NET project by using the `dotnet add package` command.
+NuGet packages contain compiled binary code that developers make available for other developers to use in their projects. For more information, see [What is NuGet](../What-is-NuGet.md). This quickstart describes how to install the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) NuGet package into a .NET project by using the [dotnet add package](/dotnet/core/tools/dotnet-add-package) command.
 
 You refer to installed packages in code with a `using <namespace>` directive, where `<namespace>` is the package name. You can then use the package's API in your project.
 
@@ -22,7 +22,7 @@ You refer to installed packages in code with a `using <namespace>` directive, wh
 
 ## Create a project
 
-You can install NuGet packages into a .NET project. For this walkthrough, create a simple .NET console project by using the dotnet CLI as follows:
+You can install NuGet packages into a .NET project. For this walkthrough, create a simple .NET console project by using the dotnet CLI, as follows:
 
 1. Create a folder for the project.
 
@@ -108,7 +108,7 @@ Find more NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://w
 Learn more about installing and using NuGet packages with the dotnet CLI:
 
 > [!div class="nextstepaction"]
-> [Install and use packages using the dotnet CLI](../consume-packages/install-use-packages-dotnet-cli.md)
+> [Install and use packages by using the dotnet CLI](../consume-packages/install-use-packages-dotnet-cli.md)
 
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
 - [Find and choose packages](../consume-packages/finding-and-choosing-packages.md)

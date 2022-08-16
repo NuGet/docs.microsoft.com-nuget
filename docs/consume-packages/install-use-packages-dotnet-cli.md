@@ -7,7 +7,7 @@ ms.date: 08/15/2022
 ms.topic: conceptual
 ---
 
-# Install and manage packages with the dotnet CLI
+# Install and manage NuGet packages with the dotnet CLI
 
 You can use the dotnet CLI tool on Windows, MacOS, or Linux to easily install, uninstall, and update NuGet packages in .NET projects and solutions. This article describes the most common dotnet CLI commands for managing NuGet packages.
 
@@ -91,5 +91,6 @@ dotnet remove package Newtonsoft.Json
 
 ## Next steps
 
+- [Manage packages using the nuget.exe CLI](install-use-packages-nuget-cli.md)
 - [Install and manage packages with the Package Manager Console](install-use-packages-powershell.md)
 - [Install and manage packages in Visual Studio using the NuGet Package Manager](install-use-packages-visual-studio.md)
