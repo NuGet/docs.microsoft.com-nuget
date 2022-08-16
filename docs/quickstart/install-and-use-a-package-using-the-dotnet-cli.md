@@ -1,40 +1,40 @@
 ---
 title: Install and use a NuGet package using the dotnet CLI
-description: A walkthrough tutorial on the process of installing and using a NuGet package in a .NET Core project.
+description: Get a quick tutorial on how to use the dotnet CLI to install and use a NuGet package in a .NET project.
 author: JonDouglas
 ms.author: jodou
-ms.date: 01/23/2018
+ms.date: 08/15/2022
 ms.topic: quickstart
 ---
 
 # Quickstart: Install and use a package using the dotnet CLI
 
-NuGet packages contain reusable code that other developers make available to you for use in your projects. See [What is NuGet?](../What-is-NuGet.md) for background. Packages are installed into a .NET Core project using the `dotnet add package` command as described in this article for the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package.
+NuGet packages contain compiled binary code that developers make available for other developers to use in their projects. For more information, see [What is NuGet](../What-is-NuGet.md). This quickstart describes how to install the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) NuGet package into a .NET project by using the `dotnet add package` command.
 
-Once installed, refer to the package in code with `using <namespace>` where \<namespace\> is specific to the package you're using. You can then use the package's API.
+You refer to installed packages in code with a `using <namespace>` directive, where `<namespace>` is the package name. You can then use the package's API in your project.
 
 > [!Tip]
-> **Start with nuget.org**: Browsing nuget.org is how .NET developers typically find components they can reuse in their own applications. You can search nuget.org directly or find and install packages within Visual Studio as shown in this article.
+> Browse [nuget.org/packages](https://nuget.org/packages) to find packages you can reuse in your own applications. You can search nuget.org directly, or find and install packages from within Visual Studio. For more information, see [Find and choose packages](../consume-packages/finding-and-choosing-packages.md).
 
 ## Prerequisites
 
-- The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool. Starting in Visual Studio 2017, the dotnet CLI is automatically installed with any .NET Core related workloads.
+- The [.NET SDK](https://www.microsoft.com/net/download), which provides the `dotnet` command-line tool. Starting in Visual Studio 2017, the dotnet CLI automatically installs with any .NET Core related workloads.
 
 ## Create a project
 
-NuGet packages can be installed into a .NET project of some kind. For this walkthrough, create a simple .NET Core console project as follows:
+You can install NuGet packages into a .NET project. For this walkthrough, create a simple .NET console project by using the dotnet CLI as follows:
 
 1. Create a folder for the project.
 
 1. Open a command prompt and switch to the new folder.
 
-1. Create the project using the following command:
+1. Create the project by using the following command:
 
     ```dotnetcli
     dotnet new console
     ```
 
-1. Use `dotnet run` to test that the app has been created properly.
+1. Use `dotnet run` to test the app. You should see the output `Hello, World!`.
 
 ## Add the Newtonsoft.Json NuGet package
 
@@ -44,23 +44,23 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
     dotnet add package Newtonsoft.Json
     ```
 
-2. After the command completes, open the `.csproj` file to see the added reference:
+2. After the command completes, open the *.csproj* file in the project folder to see the added NuGet package reference:
 
     ```xml
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>
     ```
 
 ## Use the Newtonsoft.Json API in the app
 
-1. Open the `Program.cs` file and add the following line at the top of the file:
+1. Open the *Program.cs* file and add the following line at the top of the file:
 
     ```cs
     using Newtonsoft.Json;
     ```
 
-1. Add the following code before the `class Program` line:
+1. Add the following code after the `using` line:
 
     ```cs
     public class Account
@@ -71,11 +71,9 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
     }
     ```
 
-1. Replace the `Main` function with the following:
+1. Insert the following code before the `class` declaration:
 
     ```cs
-    static void Main(string[] args)
-    {
         Account account = new Account
         {
             Name = "John Doe",
@@ -85,10 +83,9 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
 
         string json = JsonConvert.SerializeObject(account, Formatting.Indented);
         Console.WriteLine(json);
-    }
     ```
 
-1. Build and run the app by using the `dotnet run` command. The output should be the JSON representation of the `Account` object in the code:
+1. Build and run the app by using the `dotnet run` command. The output is the JSON representation of the `Account` object in the code:
 
     ```output
     {
@@ -97,6 +94,9 @@ NuGet packages can be installed into a .NET project of some kind. For this walkt
       "DOB": "1980-02-20T00:00:00Z"
     }
     ```
+
+Congratulations on installing and using your first NuGet package!
+
 ## Related video
 
 > [!Video https://docs.microsoft.com/shows/NuGet-101/Install-and-Use-a-NuGet-Package-with-the-NET-CLI-3-of-5/player]
@@ -105,13 +105,11 @@ Find more NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://w
 
 ## Next steps
 
-Congratulations on installing and using your first NuGet package!
+Learn more about installing and using NuGet packages with the dotnet CLI:
 
 > [!div class="nextstepaction"]
 > [Install and use packages using the dotnet CLI](../consume-packages/install-use-packages-dotnet-cli.md)
 
-To explore more that NuGet has to offer, select the links below.
-
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
-- [Finding and choosing packages](../consume-packages/finding-and-choosing-packages.md)
+- [Find and choose packages](../consume-packages/finding-and-choosing-packages.md)
 - [Package references in project files](../consume-packages/package-references-in-project-files.md)
