@@ -14,7 +14,7 @@ NuGet packages contain compiled binary code that developers make available for o
 You refer to installed packages in code with a `using <namespace>` directive, where `<namespace>` is the package name. You can then use the package's API in your project.
 
 > [!Tip]
-> Browse [nuget.org/packages](https://nuget.org/packages) to find packages you can reuse in your own applications. You can search directly at [https://nuget.org](https://nuget.org/packages), or find and install packages from within Visual Studio. For more information, see [Find and evaluate NuGet packages for your project](finding-and-choosing-packages.md).
+> Browse [nuget.org/packages](https://nuget.org/packages) to find packages you can reuse in your own applications. You can search directly at [https://nuget.org](https://nuget.org/packages), or find and install packages from within Visual Studio. For more information, see [Find and evaluate NuGet packages for your project](../consume-packages/finding-and-choosing-packages.md).
 
 ## Prerequisites
 
@@ -115,5 +115,5 @@ Learn more about installing and using NuGet packages with the dotnet CLI:
 > [Install and use packages by using the dotnet CLI](../consume-packages/install-use-packages-dotnet-cli.md)
 
 - [Overview and workflow of package consumption](../consume-packages/overview-and-workflow.md)
-- [Find and choose packages](../consume-packages/Finding-and-Choosing-Packages.md)
+- [Find and choose packages](../consume-packages/finding-and-choosing-packages.md)
 - [Package references in project files](../consume-packages/package-references-in-project-files.md)
