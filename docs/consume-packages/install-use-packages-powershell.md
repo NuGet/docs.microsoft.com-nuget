@@ -162,9 +162,7 @@ To update a package, use [Get-Package](../reference/ps-reference/ps-ref-get-pack
 
 ## Use the NuGet CLI in the console
 
-All operations that are available in the console can also be done with the NuGet CLI. However, console commands operate within the context of Visual Studio and a saved project/solution and often accomplish more than their equivalent CLI commands. For example, installing a package through the console adds a reference to the project file, but the NuGet CLI command doesn't. For this reason, developers working in Visual Studio typically prefer using the console to the CLI.
-
-You can use the [NuGet CLI](../reference/nuget-exe-cli-reference.md) to do all operations that are available in the console. However, console commands operate within the context of a Visual Studio saved project and solution, and often do more than the equivalent NuGet CLI commands. For example, installing a package through the console adds a package reference to the project file, but the NuGet CLI command doesn't. For this reason, developers working in Visual Studio usually prefer to use the console commands rather than the NuGet CLI.
+All operations that are available in the console can also be done with the [NuGet CLI](../reference/nuget-exe-cli-reference.md). However, console commands operate within the context of Visual Studio saved project and solution, and often do more than their equivalent CLI commands. For example, installing a package through the console adds a reference to the project file, but the NuGet CLI command doesn't. For this reason, developers working in Visual Studio typically prefer to use the console commands rather than the NuGet CLI.
 
 To use NuGet CLI commands in the Package Manager Console, install the [NuGet.CommandLine](https://www.nuget.org/packages/NuGet.CommandLine) package.
 
