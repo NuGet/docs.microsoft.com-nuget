@@ -38,7 +38,7 @@ To use the Package Manager Console to quickly find and install a package:
     Find-Package elmah
     ```
 
-1. Use the `Install-Package` command to install the package. For example, to install the `Elmah.MVC` package, enter:
+1. Once you find the name, use the `Install-Package` command to install the package. For example, to install the `Elmah.MVC` package, enter:
 
     ```powershell
     Install-Package Elmah.MVC

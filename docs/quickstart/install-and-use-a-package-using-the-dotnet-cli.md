@@ -18,7 +18,7 @@ You refer to installed packages in code with a `using <namespace>` directive, wh
 
 ## Prerequisites
 
-- The [.NET SDK](https://www.microsoft.com/net/download), which provides the `dotnet` command-line tool. Starting in Visual Studio 2017, the dotnet CLI automatically installs with any .NET Core related workloads.
+- The [.NET SDK](https://www.microsoft.com/net/download), which provides the `dotnet` command-line tool. Starting in Visual Studio 2017, the dotnet CLI automatically installs with any .NET or .NET Core related workloads.
 
 ## Create a project
 

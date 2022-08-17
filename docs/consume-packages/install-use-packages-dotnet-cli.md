@@ -37,7 +37,7 @@ The [dotnet add package](/dotnet/core/tools/dotnet-add-package) command adds a p
     dotnet add package Newtonsoft.Json
     ```
 
-1. After the command completes, open the project file to make sure the package installed.
+1. After the command completes and you save the project, you can open the project file to see the package reference.
 
    For example, open the *.csproj* file to see the added `Newtonsoft.Json` package reference:
 
