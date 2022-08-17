@@ -3,7 +3,7 @@ title: Install and use a NuGet package with the dotnet CLI
 description: Get a quick tutorial on how to use the dotnet CLI to install and use a NuGet package in a .NET project.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/15/2022
+ms.date: 08/16/2022
 ms.topic: quickstart
 ---
 
@@ -14,7 +14,7 @@ NuGet packages contain compiled binary code that developers make available for o
 You refer to installed packages in code with a `using <namespace>` directive, where `<namespace>` is the package name. You can then use the package's API in your project.
 
 > [!Tip]
-> Browse [nuget.org/packages](https://nuget.org/packages) to find packages you can reuse in your own applications. You can search nuget.org directly, or find and install packages from within Visual Studio. For more information, see [Find and choose packages](../consume-packages/finding-and-choosing-packages.md).
+> Browse [nuget.org/packages](https://nuget.org/packages) to find packages you can reuse in your own applications. You can search directly at [https://nuget.org](https://nuget.org/packages), or find and install packages from within Visual Studio. For more information, see [Find and evaluate NuGet packages for your project](finding-and-choosing-packages.md).
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ You refer to installed packages in code with a `using <namespace>` directive, wh
 
 You can install NuGet packages into a .NET project. For this walkthrough, create a simple .NET console project by using the dotnet CLI, as follows:
 
-1. Create a folder for the project.
+1. Create a folder named *nuget1* for the project.
 
 1. Open a command prompt and switch to the new folder.
 
@@ -44,7 +44,7 @@ You can install NuGet packages into a .NET project. For this walkthrough, create
     dotnet add package Newtonsoft.Json
     ```
 
-2. After the command completes, open the *.csproj* file in the project folder to see the added NuGet package reference:
+2. After the command completes, open the *nuget1.csproj* file in Visual Studio to see the added NuGet package reference:
 
     ```xml
     <ItemGroup>
@@ -54,38 +54,42 @@ You can install NuGet packages into a .NET project. For this walkthrough, create
 
 ## Use the Newtonsoft.Json API in the app
 
-1. Open the *Program.cs* file and add the following line at the top of the file:
+1. In Visual Studio, open the *Program.cs* file and add the following lines at the top of the file:
 
     ```cs
+    using nuget1;
     using Newtonsoft.Json;
     ```
 
-1. Add the following code after the `using` line:
+1. Add the following code to replace the `Console.WriteLine("Hello, World!");` statement:
 
     ```cs
-    public class Account
+    Account account = new Account
     {
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public DateTime DOB { get; set; }
+        Name = "John Doe",
+        Email = "john@nuget.org",
+        DOB = new DateTime(1980, 2, 20, 0, 0, 0, DateTimeKind.Utc),
+    };
+    
+    string json = JsonConvert.SerializeObject(account, Formatting.Indented);
+    Console.WriteLine(json);
+    ```
+
+1. Add the following class definition after the `Console.WriteLine(json);` line:
+
+    ```cs
+    namespace nuget1
+    {
+        public class Account
+        {
+            public string? Name { get; set; }
+            public string? Email { get; set; }
+            public DateTime DOB { get; set; }
+        }
     }
     ```
 
-1. Insert the following code before the `class` declaration:
-
-    ```cs
-        Account account = new Account
-        {
-            Name = "John Doe",
-            Email = "john@nuget.org",
-            DOB = new DateTime(1980, 2, 20, 0, 0, 0, DateTimeKind.Utc),
-        };
-
-        string json = JsonConvert.SerializeObject(account, Formatting.Indented);
-        Console.WriteLine(json);
-    ```
-
-1. Build and run the app by using the `dotnet run` command. The output is the JSON representation of the `Account` object in the code:
+1. Save the file, then build and run the app by using the `dotnet run` command. The output is the JSON representation of the `Account` object in the code:
 
     ```output
     {

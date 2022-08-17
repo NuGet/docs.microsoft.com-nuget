@@ -11,7 +11,7 @@ f1_keywords:
 
 # Manage packages with the Visual Studio Package Manager Console (PowerShell)
 
-The Package Manager Console in Visual Studio uses PowerShell commands to interact with NuGet packages. You can use the console when there's no way to do an operation through the [Package Manager UI](install-use-packages-visual-studio.md). You can also [use nuget.exe CLI commands in the console](#use-the-nugetexe-cli-in-the-console).
+The Package Manager Console in Visual Studio uses PowerShell commands to interact with NuGet packages. You can use the console when there's no way to do an operation through the [Package Manager UI](install-use-packages-visual-studio.md). You can also use [dotnet CLI](../reference/dotnet-commands.md) or [NuGet CLI](#use-the-nugetexe-cli-in-the-console) commands in the console.
 
 This article describes how to find, install, update, and uninstall NuGet packages with PowerShell commands in the Package Manager Console. For the complete Package Manager Console PowerShell command reference, see [PowerShell reference](../reference/powershell-reference.md).
 
@@ -26,13 +26,13 @@ You can also search for the NuGet Package Manager extension under the **Tools** 
 
 The Package Manager Console is built into the Package Manager for Visual Studio on Windows. Visual Studio Code and Visual Studio for Mac don't include the console. Visual Studio for Mac has a UI for managing NuGet packages, and the equivalent console commands are available through the [NuGet CLI](../reference/nuget-exe-CLI-reference.md). For more information, see [Install and manage NuGet packages in Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough).
 
-## Find and install a package
+## Quickly find and install a package
 
 To use the Package Manager Console to quickly find and install a package:
 
 1. Open your project or solution in Visual Studio, and select **Tools** > **NuGet Package Manager** > **Package Manager Console** to open the Package Manager Console window.
 
-1. In the console, enter `Find-Package` with a keyword to find the package you want to install. For example, to find packages that contain the keyword `elmah`, run the following command. If you already know your package name, skip this step.
+1. In the console, enter `Find-Package` with a keyword to find the package you want to install. For example, to find packages that contain the keyword `elmah`, run the following command. If you already know the package name you want, skip this step.
 
     ```powershell
     Find-Package elmah
@@ -102,7 +102,7 @@ To install a package into the default project, use `Install-Package <PackageName
 
 - Does the steps in [What happens when a NuGet package is installed](../concepts/package-installation-process.md).
 - Displays applicable license terms in the console window with implied agreement. If you don't agree to the terms, you should uninstall the package.
-- Adds a reference to the package in the project file and in **Solution Explorer** under the **References** node. You must save the project to see the changes in the project file directly.
+- Adds a reference to the package in the project file and in **Solution Explorer** under the **References** node. You must save the project before you can see the changes in the project file.
 
 By default, `Install-Package` adds the package to the default project the console window specifies. To add the package to a project that isn't the default, use the `-ProjectName` option. For example, to add the `Elmah.MVC` package to the non-default `UtilitiesLib` project, run the following command:
 
@@ -116,7 +116,7 @@ To uninstall a package from the default project, use `Uninstall-Package <Package
 
 [Uninstall-Package](../reference/ps-reference/ps-ref-uninstall-package.md) takes the following actions:
 
-- Removes references to the package from the project and any management formats. References no longer appear in **Solution Explorer**. You might need to rebuild the project to remove the reference in the **Bin** folder.
+- Removes references to the package from the project and any management formats. References no longer appear in **Solution Explorer**. You might need to rebuild the project to remove the reference in the *bin* folder.
 - Reverses any changes that installing the package made to *app.config* or *web.config*.
 - Removes previously-installed dependencies if no remaining packages use those dependencies.
 
@@ -160,11 +160,13 @@ To update a package, use [Get-Package](../reference/ps-reference/ps-ref-get-pack
   Update-Package
   ```
 
-## Use the nuget.exe CLI in the console
+## Use the NuGet CLI in the console
 
-You can use the [NuGet CLI](../reference/nuget-exe-cli-reference.md) to do all console operations. However, console commands operate within the context of a Visual Studio saved project and solution, and often do more than the equivalent NuGet CLI commands. For example, installing a package through the console adds a package reference to the project, but the NuGet CLI command alone doesn't add this reference. For this reason, developers working in Visual Studio usually prefer to use the console rather than the NuGet CLI.
+All operations that are available in the console can also be done with the NuGet CLI. However, console commands operate within the context of Visual Studio and a saved project/solution and often accomplish more than their equivalent CLI commands. For example, installing a package through the console adds a reference to the project file, but the NuGet CLI command doesn't. For this reason, developers working in Visual Studio typically prefer using the console to the CLI.
 
-Some NuGet packages extend the console by making new commands available. You can install the [NuGet.CommandLine](https://www.nuget.org/packages/NuGet.CommandLine) package to use NuGet CLI commands in the Package Manager Console.
+You can use the [NuGet CLI](../reference/nuget-exe-cli-reference.md) to do all operations that are available in the console. However, console commands operate within the context of a Visual Studio saved project and solution, and often do more than the equivalent NuGet CLI commands. For example, installing a package through the console adds a package reference to the project file, but the NuGet CLI command doesn't. For this reason, developers working in Visual Studio usually prefer to use the console commands rather than the NuGet CLI.
+
+To use NuGet CLI commands in the Package Manager Console, install the [NuGet.CommandLine](https://www.nuget.org/packages/NuGet.CommandLine) package.
 
 ```powershell
 Install-Package NuGet.CommandLine
@@ -176,22 +178,26 @@ The preceding command installs the latest version of the NuGet CLI. To install a
 Install-Package NuGet.CommandLine -Version 4.4.1
 ```
 
-After you install the `NuGet.CommandLine` package, you can run all NuGet CLI commands through the Package Manager Console. For example, `nuget spec` generates a *.nuspec* file for a new package.
+After you install the `NuGet.CommandLine` package, you can run all NuGet CLI commands through the Package Manager Console.
+
+## Extend the Package Manager Console
+
+Some packages install new commands for the console. For example, `MvcScaffolding` creates commands like `Scaffold`, which generates ASP.NET MVC controllers and views:
 
 :::image type="content" source="media/PackageManagerConsoleInstall.png" alt-text="Screenshot that shows NuGet CLI commands available after installing the NuGet.CommandLine package.":::
 
 ## Set up a NuGet PowerShell profile
 
-Rather than losing your PowerShell settings between sessions, you can create a PowerShell profile to make your commonly-used commands available in all PowerShell contexts. NuGet supports a NuGet-specific profile, which is usually found at *%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1*.
+You can create a PowerShell profile to make your commonly-used commands available in all PowerShell contexts, so you don't lose your PowerShell settings between sessions. NuGet supports a NuGet-specific profile, usually at *%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1*.
 
-To find your profile's location, enter `$profile` in the console:
+To find your user profile location, enter `$profile` in the console:
 
 ```powershell
 $profile
 C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
-To create the PowerShell profile, create a text file with the specified name in the specified location. For more information, see [Windows PowerShell Profiles](/previous-versions//bb613488(v=vs.85)).
+To determine whether a profile exists at that location, enter `test-path $profile`. If the command returns `False`, you need to create the profile with the specified name at that location. For more information, see [Windows PowerShell Profiles](/previous-versions//bb613488(v=vs.85)).
 
 ## Next steps
 
