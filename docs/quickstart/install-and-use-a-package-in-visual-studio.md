@@ -1,9 +1,9 @@
 ---
 title: "Quickstart: Install and use a NuGet package in Visual Studio (Windows only)"
-description: In this quickstart, you learn how to install and use a NuGet package in a Visual Studio project.
+description: In this quickstart, you learn how to install and use a NuGet package in a Visual Studio project for Windows.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/19/2022
+ms.date: 08/22/2022
 ms.topic: quickstart
 ---
 
@@ -26,15 +26,17 @@ The article is for Windows users only. If you're using Visual Studio for Mac, se
 
 ## Create a project
 
-You can install a NuGet package into any .NET project if that package supports the same target framework as the project. However, for this quickstart you'll create a Windows Presentation Foundation (WPF) app project.
+You can install a NuGet package into any .NET project if that package supports the same target framework as the project. However, for this quickstart you'll create a Windows Presentation Foundation (WPF) Application project.
 
-To create a WPF app project, follow these steps:
+Follow these steps:
 
 1. In Visual Studio, select **File** > **New** > **Project**.
 
 1. In the **Create a new project** window, enter *WPF* in the search box and select **C#** and **Windows** in the dropdown lists. In the resulting list of project templates, select **WPF Application**, and then select **Next**.
 
-1. In the **Configure your new project** window, optionally update the **Project name** and the **Solution name**. Accept the default value for **Framework**, and then select **Create**.
+1. In the **Configure your new project** window, optionally update the **Project name** and the **Solution name**, and then select **Next**.
+
+1. In the **Additional information** window, select **.NET 6.0** (or the latest version) for **Framework**, and then select **Create**.
 
    Visual Studio creates the project, and it appears in [Solution Explorer](/visualstudio/ide/use-solution-explorer).
 
@@ -52,23 +54,19 @@ To use the [NuGet Package Manager](../consume-packages/install-use-packages-visu
 
 1. From the **Browse** tab, search for *Newtonsoft.Json*, select **Newtonsoft.Json** in the list, and then select **Install**.
 
-    :::image type="content" source="media/qs-use-02-install-package.png" alt-text="Screenshot showing the NuGet Package Manager window with the Newtonsoft.Json package selected.":::
-
-1. (Visual Studio 2017 and later) If you're prompted to select a package management format, select **PackageReference in project file**:
-
-    ![Screenshot showing the Choose NuGet Package Manager Format window with PackageReference in project file selected.](media/qs-use-03-package-management-format.png)
+    :::image type="content" source="media/qs-use-install-package.png" alt-text="Screenshot showing the NuGet Package Manager window with the Newtonsoft.Json package selected.":::
 
 1. If you're prompted to verify the installation, select **OK**.
 
 ### Package Manager Console
 
-To use the [Package Manager Console](../consume-packages/install-use-packages-powershell.md) to install the `Newtonsoft.Json` package in Visual Studio, follow these steps:
+Alternatively, to use the [Package Manager Console](../consume-packages/install-use-packages-powershell.md) in Visual Studio to install the `Newtonsoft.Json` package, follow these steps:
 
 1. From Visual Studio, select **Tools** > **NuGet Package Manager** > **Package Manager Console**.
 
 1. After the **Package Manager Console** pane opens, verify that the **Default project** drop-down list shows the project in which you want to install the package. If you have a single project in the solution, it's preselected.
 
-    :::image type="content" source="media/qs-use-04-package-manager-console.png" alt-text="media/qs-use-04-package-manager-console.png":::
+    :::image type="content" source="media/qs-use-package-manager-console.png" alt-text="Screenshot showing the Package Manage Console window with Default project highlighted.":::
 
 1. At the console prompt, enter the command `Install-Package Newtonsoft.Json`. For more information about this command, see [Install-Package](../reference/ps-reference/ps-ref-install-package.md).
 
@@ -122,11 +120,11 @@ With the `Newtonsoft.Json` package in the project, call its `JsonConvert.Seriali
 
    The following window appears:
 
-    ![Screenshot showing the initial output of the WPF app.](media/qs-use-05-wpf-app-start.png)
+    ![Screenshot showing the initial output of the WPF app.](media/qs-use-wpf-app-start.png)
 
 1. Select the **Click Me** button to see the contents of the `TextBlock` object replaced with JSON text.
 
-    ![Screenshot showing the output of the WPF app after selecting the button.](media/qs-use-06-wpf-app-end.png)
+    ![Screenshot showing the output of the WPF app after selecting the button.](media/qs-use-wpf-app-end.png)
 
 ## Related video
 
