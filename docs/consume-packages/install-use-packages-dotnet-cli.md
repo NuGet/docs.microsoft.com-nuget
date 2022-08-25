@@ -91,6 +91,6 @@ dotnet remove package Newtonsoft.Json
 
 ## Next steps
 
-- [Manage packages by using the nuget.exe CLI](install-use-packages-nuget-cli.md)
-- [Install and manage packages with the Package Manager Console](install-use-packages-powershell.md)
+- [.NET CLI overview](/dotnet/core/tools)
 - [Install and manage packages in Visual Studio using the NuGet Package Manager](install-use-packages-visual-studio.md)
+- [Install and manage packages with the Package Manager Console](install-use-packages-powershell.md)

@@ -10,10 +10,10 @@ nuget restore <projectPath>
 
 The `restore` command looks for a solution file or a *package.config* file in the specified project path.
 
-For example, to restore all packages for a solution file in the current directory, run:
+For example, to restore all packages for MySolution in the current directory, run:
 
 ```cli
-nuget restore <solutionName>.sln
+nuget restore MySolution.sln
 ```
 
 > [!NOTE]

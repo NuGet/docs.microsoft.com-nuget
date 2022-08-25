@@ -26,7 +26,7 @@ To find out your NuGet CLI version, open a command line and run `nuget help`, or
 
 ## Install a package
 
-The NuGet [install](../reference/cli-reference/cli-ref-install.md) command downloads and installs specified NuGet packages.
+The NuGet CLI [install](../reference/cli-reference/cli-ref-install.md) command downloads and installs specified NuGet packages.
 
 > [!IMPORTANT]
 > The `install` command doesn't modify the project file or *packages.config* file. The `install` and `restore` commands only add packages to disk, but don't add dependencies to projects. To add project dependencies, you must either:
@@ -35,7 +35,7 @@ The NuGet [install](../reference/cli-reference/cli-ref-install.md) command downl
 >   or
 > - Modify *packages.config* manually, then run `install` or `restore`.
 
-Use the `-OutputDirectory` option to install a package to a specific directory. If you don't specify a directory, `install` uses the current directory.
+Use the `-OutputDirectory` option to install packages to a specific directory. If you don't specify an output directory, `install` uses the current directory.
 
 ```cli
 nuget install <packageID | configFilePath> -OutputDirectory <outputDirectory>
@@ -47,10 +47,16 @@ For example, use the following command to install the `Newtonsoft.json` package 
 nuget install Newtonsoft.Json -OutputDirectory packages
 ```
 
-Instead of specifying a package, you can specify an existing *packages.config* file in the current or another directory. The `install` command installs all the packages listed in the *packages.config* file.
+Instead of specifying a package to install, you can specify an existing *packages.config* file in the current or another directory. The `install` command installs all the packages listed in the *packages.config* file.
 
 ```cli
 nuget install packages.config
+```
+
+For example, the following command installs all the packages listed in the *packages.config* file at *C:\myPath* to the *packages* subdirectory in the current directory:
+
+```cli
+nuget install C:\myPath\packages.config -OutputDirectory packages
 ```
 
 ## Install a specific version of a package
@@ -107,6 +113,7 @@ To remove a package, delete that package from the project folder. To reinstall p
 
 ## Next steps
 
-- [Manage packages with the dotnet CLI](install-use-packages-dotnet-cli.md)
-- [Install and manage packages with the Package Manager Console](install-use-packages-powershell.md)
+- [NuGet CLI reference](../reference/nuget-exe-cli-reference.md)
 - [Install and manage packages in Visual Studio using the NuGet Package Manager](install-use-packages-visual-studio.md)
+- [Migrate from packages.config to PackageReference](migrate-packages-config-to-package-reference.md)
+- [Manage packages with the dotnet CLI](install-use-packages-dotnet-cli.md)
