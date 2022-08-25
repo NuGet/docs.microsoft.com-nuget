@@ -1,13 +1,21 @@
-Use the [restore](../../reference/cli-reference/cli-ref-restore.md) command, which downloads and installs any packages missing from the *packages* folder.
+The NuGet CLI [restore](../../reference/cli-reference/cli-ref-restore.md) command downloads and installs any packages that are missing from the packages directory.
 
-For projects migrated to PackageReference, use [msbuild -t:restore](../package-restore.md#restore-using-msbuild) to restore packages instead.
+Like `install`, the `restore` command only adds packages to disk, but doesn't change the project's dependencies. To change project dependencies, modify the *packages.config* file manually, then use `restore`.
 
-`restore` only adds packages to disk but does not change a project's dependencies. To restore project dependencies, modify `packages.config`, then use the `restore` command.
-
-As with the other `nuget.exe` CLI commands, first open a command line and switch to the directory that contains your project file.
-
-To restore a package using `restore`:
+To restore packages, run the following command:
 
 ```cli
-nuget restore MySolution.sln
+nuget restore <projectPath>
 ```
+
+The `restore` command looks for a solution file or a *package.config* file in the specified project path.
+
+For example, to restore all packages for a solution file in the current directory, run:
+
+```cli
+nuget restore <solutionName>.sln
+```
+
+> [!NOTE]
+> For projects migrated to `PackageReference`, use [msbuild -t:restore](../package-restore.md#restore-using-msbuild) to restore packages instead.
+
