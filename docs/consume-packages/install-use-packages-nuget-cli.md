@@ -7,63 +7,61 @@ ms.date: 08/25/2022
 ms.topic: conceptual
 ---
 
-# Manage NuGet packages by using the NuGet CLI
+# Manage NuGet packages with the NuGet CLI
 
-You can use the `nuget.exe` CLI tool to easily install, list, update, remove, and restore NuGet packages in Visual Studio projects and solutions. The NuGet CLI provides all NuGet capabilities on Windows, and provides most NuGet capabilities on Mac and on Linux with Mono. This article describes the most common NuGet CLI commands for managing NuGet packages.
+You can use the `nuget.exe` CLI tool to install, list, update, remove, and restore NuGet packages in Visual Studio projects and solutions. The NuGet CLI provides all NuGet capabilities on Windows, and provides most NuGet capabilities on Mac and on Linux with Mono. This article describes the most common NuGet CLI commands for managing NuGet packages.
 
-The NuGet CLI runs on .NET Framework and non-SDK-style projects, for example non-SDK style projects that target .NET Standard libraries. The NuGet CLI requires a [packages.config](../reference/packages-config.md) file for package references. For non-SDK-style projects that use `PackageReference` for package references, use the [dotnet CLI](install-use-packages-dotnet-cli.md) instead.
+The NuGet CLI runs on .NET Framework and non-SDK-style projects, for example non-SDK style projects that target .NET Standard libraries. The NuGet CLI commands can use a project [packages.config](../reference/packages-config.md) file that lists package references. For non-SDK-style projects that use `PackageReference` instead of *packages.config* for package references, use the [dotnet CLI](install-use-packages-dotnet-cli.md) instead.
 
 > [!NOTE]
-> For most non-SDK-style projects that use *packages.config*, it's best to [migrate packages.config to PackageReference](../consume-packages/migrate-packages-config-to-package-reference.md), and then use the dotnet CLI instead of the NuGet CLI. You can't migrate C++ or ASP.NET projects.
+> For most non-SDK-style projects that use *packages.config*, it's best to [migrate packages.config to PackageReference](migrate-packages-config-to-package-reference.md), and then use the dotnet CLI instead of the NuGet CLI to manage packages. However, you can't migrate C++ or ASP.NET projects.
 
-For most commands, the CLI tool looks for a project file in the current directory, unless you specify a different project file in the command. To run the following NuGet CLI commands, open a command line and switch to the directory that contains your project file.
-
-For a complete list of commands and their arguments, see the [NuGet CLI reference](../reference/nuget-exe-cli-reference.md).
+For most commands, the NuGet CLI tool uses the current directory, unless you specify a different location in the command. To run NuGet CLI commands, open a command line and switch to the directory that contains your project file. For a complete list of commands and their arguments, see the [NuGet CLI reference](../reference/nuget-exe-cli-reference.md).
 
 ## Prerequisites
 
-Download the NuGet CLI from [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe). Save the *.exe* file to a folder, and add the folder to your PATH environment variable.
+Download the NuGet CLI from [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe). Save the *nuget.exe* file to a suitable directory, and make sure the directory is in your PATH environment variable.
 
-To find out the NuGet CLI version, open a command line and run `nuget help`. The first line in the help output shows the version. To avoid scrolling up, you can use `nuget help | more`.
+To find out your NuGet CLI version, open a command line and run `nuget help`, or to avoid having to scroll up, use `nuget help | more`. The first line in the help output shows the version.
 
 ## Install a package
 
-The NuGet [install](../reference/cli-reference/cli-ref-install.md) command downloads the package you specify and installs it into the *packages* folder in your project root directory.
+The NuGet [install](../reference/cli-reference/cli-ref-install.md) command downloads and installs specified NuGet packages.
 
 > [!IMPORTANT]
-> The `install` command doesn't modify the project file or *packages.config* file. The `install` and `restore` commands only add the packages to disk, but don't change the project dependencies. To add a dependency, you can either:
+> The `install` command doesn't modify the project file or *packages.config* file. The `install` and `restore` commands only add packages to disk, but don't add dependencies to projects. To add project dependencies, you must either:
 > 
-> - Add the package through the [Visual Studio Package Manager UI](install-use-packages-visual-studio.md) or [Package Manager Console](install-use-packages-powershell.md).
+> - Add packages through the [Visual Studio Package Manager UI](install-use-packages-visual-studio.md) or [Package Manager Console](install-use-packages-powershell.md).
 >   or
-> - Modify *packages.config* manually, and then run `install` or `restore`.
+> - Modify *packages.config* manually, then run `install` or `restore`.
 
-Use the following command to install a NuGet package to the *packages* folder.
+Use the `-OutputDirectory` option to install a package to a specific directory. If you don't specify a directory, `install` uses the current directory.
 
 ```cli
-nuget install <packageID> -OutputDirectory packages
+nuget install <packageID | configFilePath> -OutputDirectory <outputDirectory>
 ```
 
-For example, to install the `Newtonsoft.json` package to the *packages* folder, use the following command:
+For example, use the following command to install the `Newtonsoft.json` package to the *packages* subdirectory:
 
 ```cli
 nuget install Newtonsoft.Json -OutputDirectory packages
 ```
 
-You can also use the following command to install an existing *packages.config* file to a project *packages* folder.
+Instead of specifying a package, you can specify an existing *packages.config* file in the current or another directory. The `install` command installs all the packages listed in the *packages.config* file.
 
 ```cli
-nuget install packages.config -OutputDirectory packages
+nuget install packages.config
 ```
 
 ## Install a specific version of a package
 
-The `install` command installs the latest version of the package, unless you specify a different version. To install a specific version of a package, use the `-Version` switch:
+The `install` command installs the latest version of a package, unless you specify a different version. To install a specific version of a package, use the `-Version` option:
 
 ```cli
 nuget install <packageID | configFilePath> -Version <version>
 ```
 
-For example, to add version 12.0.1 of the `Newtonsoft.json` package, use this command:
+For example, to install version 12.0.1 of the `Newtonsoft.json` package, use:
 
 ```cli
 nuget install Newtonsoft.Json -Version 12.0.1
@@ -71,21 +69,21 @@ nuget install Newtonsoft.Json -Version 12.0.1
 
 ## List packages
 
-Use the [list](../reference/cli-reference/cli-ref-list.md) command to display a list of packages. Use the `-Source` option to restrict the search.
+Use the [list](../reference/cli-reference/cli-ref-list.md) command to display a list of packages. Use the `-Source` option to restrict the list.
 
 ```cli
 nuget list -Source <source>
 ```
 
-For example, to list packages in the *packages* folder, use:
+For example, to list packages in the *packages* subdirectory, use:
 
 ```cli
-nuget list -Source C:\Users\<username>\<projectFolder>\packages
+nuget list -Source packages
 ```
 
-If you don't specify a source, `list` uses all sources defined in the global configuration file *%AppData%\NuGet\NuGet.Config* (Windows) or *~/.nuget/NuGet/NuGet.Config*. If *NuGet.Config* specifies no sources, `list` uses the default feed, for example nuget.org.
+If you don't specify a source, `list` uses all sources defined in the *NuGet.Config* global configuration file. If *NuGet.Config* doesn't specify any sources, `list` uses the default feed, for example nuget.org.
 
-You can also use a search term to specify names of packages, tags, and package descriptions:
+You can also use a search term to search for package names, tags, or descriptions:
 
 ```cli
 nuget list <search term>
@@ -93,7 +91,7 @@ nuget list <search term>
 
 ## Update all packages
 
-Use the [update](../reference/cli-reference/cli-ref-update.md) command to update all packages in a project *packages.config* to their latest available versions. It's best to run `restore` before you run `update`.
+Use the [update](../reference/cli-reference/cli-ref-update.md) command to update all packages in a project *packages.config* file to their latest available versions. It's best to run `restore` before you run `update`.
 
 ```cli
 nuget update
@@ -101,7 +99,7 @@ nuget update
 
 ## Remove a package
 
-To remove a package, delete that package from the *packages* folder. To reinstall packages, use the `restore` or `install` commands.
+To remove a package, delete that package from the project folder. To reinstall packages, use the `restore` or `install` commands.
 
 ## Restore packages
 
