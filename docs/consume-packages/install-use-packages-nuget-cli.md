@@ -16,7 +16,9 @@ The NuGet CLI runs on .NET Framework and non-SDK-style projects, for example non
 > [!NOTE]
 > For most non-SDK-style projects that use *packages.config*, it's best to [migrate packages.config to PackageReference](migrate-packages-config-to-package-reference.md), and then use the dotnet CLI instead of the NuGet CLI to manage packages. However, you can't migrate C++ or ASP.NET projects.
 
-For most commands, the NuGet CLI tool uses the current directory, unless you specify a different location in the command. To run NuGet CLI commands, open a command line and switch to the directory that contains your project file. For a complete list of commands and their arguments, see the [NuGet CLI reference](../reference/nuget-exe-cli-reference.md).
+For most commands, the NuGet CLI tool uses the current directory, unless you specify a different location in the command. To run NuGet CLI commands, open a command line and switch to the directory that contains your project file.
+
+For a complete list of commands and their arguments, see the [NuGet CLI reference](../reference/nuget-exe-cli-reference.md).
 
 ## Prerequisites
 
@@ -33,7 +35,7 @@ The NuGet CLI [install](../reference/cli-reference/cli-ref-install.md) command d
 > 
 > - Add packages through the [Visual Studio Package Manager UI](install-use-packages-visual-studio.md) or [Package Manager Console](install-use-packages-powershell.md).
 >   or
-> - Modify *packages.config* manually, then run `install` or `restore`.
+> - Modify [packages.config](../reference/packages-config.md) manually, then run `install` or `restore`.
 
 Use the `-OutputDirectory` option to install packages to a specific directory. If you don't specify an output directory, `install` uses the current directory.
 
@@ -41,7 +43,7 @@ Use the `-OutputDirectory` option to install packages to a specific directory. I
 nuget install <packageID | configFilePath> -OutputDirectory <outputDirectory>
 ```
 
-For example, use the following command to install the `Newtonsoft.json` package to the *packages* subdirectory:
+For example, to install the `Newtonsoft.json` package to the *packages* subdirectory, use the following command:
 
 ```cli
 nuget install Newtonsoft.Json -OutputDirectory packages
