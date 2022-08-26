@@ -54,10 +54,11 @@ Instead of specifying a package to install, you can specify an existing *package
 nuget install packages.config
 ```
 
-For example, the following command installs all the packages listed in the *packages.config* file at *C:\myPath* to the *packages* subdirectory in the current directory:
+For example, the following command installs all the packages listed in *packages.config* in the *config* subdirectory to the *packages* subdirectory:
 
 ```cli
-nuget install C:\myPath\packages.config -OutputDirectory packages
+nuget install config\packages.config -OutputDirectory packages
+
 ```
 
 ## Install a specific version of a package
@@ -82,10 +83,10 @@ Use the [list](../reference/cli-reference/cli-ref-list.md) command to display a 
 nuget list -Source <source>
 ```
 
-For example, to list packages in the *packages* subdirectory, use:
+For example, to list packages in the *packages* subdirectory of *MyProject*, use:
 
 ```cli
-nuget list -Source packages
+nuget list -Source C:\Users\<username>\source\repos\MyProject\packages
 ```
 
 If you don't specify a source, `list` uses all sources defined in the *NuGet.Config* global configuration file. If *NuGet.Config* doesn't specify any sources, `list` uses the default feed, for example nuget.org.
@@ -93,7 +94,7 @@ If you don't specify a source, `list` uses all sources defined in the *NuGet.Con
 You can also use a search term to search for package names, tags, or descriptions:
 
 ```cli
-nuget list <"search term">
+nuget list <"search term"> -Source <source>
 ```
 
 ## Update all packages
