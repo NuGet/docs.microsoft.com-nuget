@@ -17,5 +17,5 @@ nuget restore MySolution.sln
 ```
 
 > [!NOTE]
-> For projects migrated to `PackageReference`, use [msbuild -t:restore](../package-restore.md#restore-using-msbuild) to restore packages instead.
+> For projects migrated to `PackageReference`, you can use [msbuild -t:restore](../package-restore.md#restore-using-msbuild) to restore packages instead.
 
