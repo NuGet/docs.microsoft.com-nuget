@@ -110,6 +110,8 @@ To remove a package, delete that package from the project folder. To reinstall p
 
 [!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
 
+For more information, see [Restore packages](package-restore.md).
+
 ## Next steps
 
 - [NuGet CLI reference](../reference/nuget-exe-cli-reference.md)
