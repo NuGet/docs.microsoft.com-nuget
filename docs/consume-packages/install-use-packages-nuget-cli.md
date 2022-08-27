@@ -31,10 +31,7 @@ To find out your NuGet CLI version, open a command line and run `nuget help`, or
 The NuGet CLI [install](../reference/cli-reference/cli-ref-install.md) command downloads and installs specified NuGet packages.
 
 > [!IMPORTANT]
-> The `install` command doesn't modify the project file or *packages.config* file. The `install` and `restore` commands only add packages to disk, but don't add dependencies to projects. To add project dependencies, you must either:
-> 
-> - Add packages through the [Visual Studio Package Manager UI](install-use-packages-visual-studio.md) or [Package Manager Console](install-use-packages-powershell.md), or
-> - Modify [packages.config](../reference/packages-config.md) manually, then run `install` or `restore`.
+> The `install` command doesn't modify the project file or *packages.config* file. The `install` and `restore` commands only add packages to disk, but don't add dependencies to projects. To add project dependencies, add packages through the [Visual Studio Package Manager UI](install-use-packages-visual-studio.md) or [Package Manager Console](install-use-packages-powershell.md), then run `install` or `restore`.
 
 Use the `-OutputDirectory` option to install packages to a specific directory. If you don't specify an output directory, `install` uses the current directory.
 
