@@ -3,13 +3,13 @@ title: Find and evaluate NuGet packages
 description: Find and evaluate publicly available NuGet packages for your project by using advanced nuget.org search filters and syntax.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/26/2022
+ms.date: 08/29/2022
 ms.topic: conceptual
 ---
 
 # Find and evaluate NuGet packages for your project
 
-When you start a .NET project, or identify a functional need for your app or service, you can often install existing NuGet packages to save the time and trouble of [creating your own packages](../create-packages/overview-and-workflow.md). Existing packages can come from the [nuget.org](https://www.nuget.org/packages) public collection, or from private sources that your organization or another party provide.
+When you start a .NET project, or identify a functional need in your app or service, you can often install existing NuGet packages to save the time and trouble of [creating your own packages](../create-packages/overview-and-workflow.md). Existing packages can come from the [nuget.org](https://www.nuget.org/packages) public collection, or from private sources that your organization or another party provide.
 
 ## Find packages
 
@@ -23,7 +23,7 @@ To search for a package, enter the package name or search terms in the Search bo
 
 ### Advanced filtering and sorting
 
-At nuget.org, you can select the **Filter** button at upper-right to expand advanced sorting and filtering options.
+At nuget.org/packages, you can select the **Filter** button at upper-right to expand advanced sorting and filtering options.
 
 ![Screenshot that shows the Advanced Search panel on nuget.org.](media/Finding-02-SearchResults.png)
 
@@ -40,17 +40,17 @@ Use the **Sort by** option to sort the list by several criteria:
 - **Downloads** sorts the search results by the total number of downloads, in descending order.
 - **Recently updated** sorts the search results by the latest package version creation date, in descending chronological order.
 
-By default, NuGet lists all versions of packages, including prereleases. In the **Options** section, deselect the **Include prerelease** checkbox to list only stable, released package versions.
+By default, NuGet lists all versions of packages, including prerelease and beta versions. In the **Options** section, deselect the **Include prerelease** checkbox to list only stable, released package versions.
 
-To apply options, select **Apply**. To get back to the defaults, select **Reset**.
+To apply changes, select **Apply**. To get back to the defaults, select **Reset**.
 
 ### Search syntax
 
 Package search queries at nuget.org, from the NuGet CLI, and from within Visual Studio all use the same syntax. Other package sources, like Azure Artifacts or GitHub Package Repository, might use different syntax or might not support advanced filtering.
 
-- You can apply a search term to a specific property by using the syntax `<property>:<term>`, where `<property>` can be `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary`, or `owner`.
+- You can search the package `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary`, or `owner` properties by using the syntax `<property>:<term>`.
 
-- Search applies to keywords and package descriptions, and is case-insensitive. For example, the following strings all search the `id` property for strings that contain `nuget.core`:
+- Search applies to keywords and descriptions, and is case-insensitive. For example, the following strings all search the `id` property for the string `nuget.core`:
 
   `id:NuGet.Core`<br/>  `ID:nuget.core`<br/>  `Id:NUGET.CORE`
 
@@ -62,21 +62,21 @@ Package search queries at nuget.org, from the NuGet CLI, and from within Visual 
 
   `id:jquery id:ui` searches for multiple terms in the `id` property.<br/>  `id:jquery tags:validation` searches multiple properties.
 
-- Search ignores unsupported properties, so `invalid:jquery ui` is the same as searching for `ui`.
+- Search ignores unsupported properties, so `invalid:jquery ui` is the same as searching for `ui`, and `invalid:jquery` returns all packages.
 
 ### Determine supported frameworks
 
 NuGet installs a package into a project only if the package's supported .NET frameworks include the project's target frameworks. If the package isn't compatible, NuGet issues an error.
 
-There are several ways to determine the frameworks packages support:
+There are several ways to determine the frameworks that a package supports:
 
-- On the package's page at nuget.org, supported frameworks show below the package ID and on the **Frameworks** tab. Not all packages show supported frameworks.
+- On the package's page at nuget.org, supported frameworks appear below the package ID and on the **Frameworks** tab, but not all packages show supported frameworks.
 
   ![Screenshot of the Frameworks UI and tab on the package page at nuget.org.](media/supported-frameworks.png)
 
-- Download the package by selecting **Download package** under **About**. Change the downloaded file extension from *.nupkg* to *.zip*, open the *.zip* folder, and examine its *lib* folder. There are subfolders for each supported framework, each named with a target framework moniker (TFM). For more information, see [Target Frameworks](../reference/target-frameworks.md). If there aren't any subfolders under *lib* and there's only a single DLL, try to install the package to discover its compatibility.
+- Download the package manually by selecting **Download package** under **About**. Change the file extension of the downloaded package from *.nupkg* to *.zip*, open the *.zip* folder, and examine its *lib* folder. There are subfolders for each supported framework, each named with a target framework moniker (TFM). For more information, see [Target Frameworks](../reference/target-frameworks.md). If there aren't any subfolders under *lib* and there's only a single DLL, try to install the package to discover its compatibility.
 
-- Try to install the package into a project by using [Install-Package](../reference/ps-reference/ps-ref-install-package.md) in the Visual Studio Package Manager Console. If the package is incompatible, the output shows its supported frameworks.
+- Try to install the package into a project by using [Install-Package](../reference/ps-reference/ps-ref-install-package.md) in the Visual Studio Package Manager Console. If the package is incompatible, the console output shows the package's supported frameworks.
 
 ### Prerelease packages
 
@@ -98,15 +98,15 @@ The Visual Studio Package Manager Console, NuGet CLI, and dotnet CLI tools don't
 <a name="native-cpp-packages"></a>
 ### Native C++ packages
 
-Visual Studio C++ projects can use native C++ NuGet packages. Installing these packages enables the **Manage NuGet Packages** context-menu command, introduces a `native` target framework, and provides MSBuild integration.
+Visual Studio C++ projects can use native C++ NuGet packages. Installing these packages enables the **Manage NuGet Packages** context-menu command, exposes a `native` target framework, and provides MSBuild integration.
 
-To find native packages on [nuget.org](https://www.nuget.org/packages), search by using `tag:native`. Such packages typically provide *.targets* and *.props* files, which NuGet imports automatically when adding the packages.
+To find native packages on nuget.org/packages, search by using `tag:native`. Such packages typically provide *.targets* and *.props* files, which NuGet imports automatically when adding the packages.
 
 ## Evaluate packages
 
-The best way to evaluate a package's usefulness is to try it out. You take a dependency on a package when you use it, so you must make sure it's robust and reliable. However, installing a package and directly testing it is time-consuming. You can learn a lot about a package's quality by using the information on the package's page at nuget.org.
+The best way to evaluate a package's usefulness is to try it out. You take a dependency on a package when you use it, so you must make sure it's robust and reliable. However, installing a package and directly testing it is time-consuming. You can learn a lot about a package's quality by using the information on the package's page at nuget.org/packages.
 
-- The **Prefix Reserved** checkmark next to the package ID on the packages listing and the package page means the package owners have applied for and been granted a [reserved package ID prefix](../nuget-org/id-prefix-reservation.md). To meet the [ID prefix reservation criteria](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria), package owners must clearly identify themselves and their packages.
+- The **Prefix Reserved** checkmark next to the package ID on the packages list and the package page means the package owners have applied for and been granted a [reserved package ID prefix](../nuget-org/id-prefix-reservation.md). To meet the [ID prefix reservation criteria](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria), package owners must clearly identify themselves and their packages.
 
   ![Screenshot that shows Prefix Reserved on a package's page.](media/prefix-reserved.png)
   
@@ -114,7 +114,7 @@ The best way to evaluate a package's usefulness is to try it out. You take a dep
 
   ![Screenshot that shows Download statistics on a package's page.](media/Finding-03-Downloads.png)
   
-  Select **Full stats** next to **Downloads** to see a page that shows package downloads for the past six weeks by version number. Packages that more developers are actively using are typically better choices.
+  Select **Full stats** next to **Downloads** to see a page that shows package downloads for the past six weeks by version number. Versions that more developers are using are typically better choices.
 
 - The **Used By** tab on the package page shows the top five most popular nuget.org packages and GitHub repositories that depend on this package. Packages and repos that depend on this package are called *dependents*. Dependent packages and repos can be seen as endorsing this package, because they chose to trust and depend on it.
 
@@ -155,7 +155,7 @@ The right column of the package page has other informative links:
    :::column-end:::
 :::row-end:::  
 
-### Retrieve license information
+## Retrieve license information
 
 Some NuGet clients and NuGet feeds might not be able to surface licensing information. To maintain backward compatibility in such cases, the license URL points to this document about how to retrieve the license information.
 
