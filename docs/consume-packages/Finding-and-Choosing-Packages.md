@@ -15,7 +15,7 @@ When you start a .NET project, or identify a functional need for your app or ser
 
 You can find packages directly at [https://nuget.org/packages](https://www.nuget.org/packages), or from the [Visual Studio Package Manager UI](install-use-packages-visual-studio.md) or [Package Manager Console](install-use-packages-powershell.md) with nuget.org as a source. All packages from nuget.org are routinely scanned for viruses.
 
-At [nuget.org/packages](https://www.nuget.org/packages), you see a list of NuGet packages with the most popular packages across all .NET projects first. Some of these packages might be useful for your projects.
+At [nuget.org/packages](https://www.nuget.org/packages), you see a list of NuGet packages with the most popular packages across all .NET projects listed first. Some of these packages might be useful for your projects.
 
 ![Screenshot that shows the default view of nuget.org/packages with the most popular packages at the top.](media/Finding-01-Popularity.png)
 
@@ -40,13 +40,13 @@ Use the **Sort by** option to sort the list by several criteria:
 - **Downloads** sorts the search results by the total number of downloads, in descending order.
 - **Recently updated** sorts the search results by the latest package version creation date, in descending chronological order.
 
-In the **Options** section, deselect the **Include prerelease** checkbox to list only stable, released package versions. By default, NuGet lists all versions of packages, including prereleases.
+By default, NuGet lists all versions of packages, including prereleases. In the **Options** section, deselect the **Include prerelease** checkbox to list only stable, released package versions.
 
 To apply options, select **Apply**. To get back to the defaults, select **Reset**.
 
 ### Search syntax
 
-Search queries at nuget.org, from the NuGet CLI, and from within Visual Studio all use the same syntax. Other package sources, like Azure Artifacts or GitHub Package Repository, might use different syntax or might not support advanced filtering.
+Package search queries at nuget.org, from the NuGet CLI, and from within Visual Studio all use the same syntax. Other package sources, like Azure Artifacts or GitHub Package Repository, might use different syntax or might not support advanced filtering.
 
 - You can apply a search term to a specific property by using the syntax `<property>:<term>`, where `<property>` can be `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary`, or `owner`.
 
@@ -68,7 +68,7 @@ Search queries at nuget.org, from the NuGet CLI, and from within Visual Studio a
 
 NuGet installs a package into a project only if the package's supported .NET frameworks include the project's target frameworks. If the package isn't compatible, NuGet issues an error.
 
-There are several ways to determine supported frameworks for packages:
+There are several ways to determine the frameworks packages support:
 
 - On the package's page at nuget.org, supported frameworks show below the package ID and on the **Frameworks** tab. Not all packages show supported frameworks.
 
@@ -108,7 +108,7 @@ The best way to evaluate a package's usefulness is to try it out. You take a dep
 
 - The **Prefix Reserved** checkmark next to the package ID on the packages listing and the package page means the package owners have applied for and been granted a [reserved package ID prefix](../nuget-org/id-prefix-reservation.md). To meet the [ID prefix reservation criteria](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria), package owners must clearly identify themselves and their packages.
 
-  ![Screenshot that shows Prefix Reserved on a package's page.](media/Finding-03-Downloads.png)
+  ![Screenshot that shows Prefix Reserved on a package's page.](media/prefix-reserved.png)
   
 - **Downloads** in the package page's right column shows **Total**, **Current version**, and **Per day average** downloads. Large numbers indicate that the package has proven itself among many developers.
 
@@ -139,8 +139,11 @@ The best way to evaluate a package's usefulness is to try it out. You take a dep
 
 The right column of the package page has other informative links:
 
-  ![Screenshot that shows the right column of the package page.](media/right-column.png)
-
+:::row:::
+   :::column span="":::
+![Screenshot that shows the right column of the package page.](media/right-column.png)
+   :::column-end:::
+   :::column span="2":::
 - Select **Project website**, if available, to see what support options the author provides. A project with a dedicated site is generally well supported.
 
 - Select **Source repository** to go to the Git source code repository for the package. Many authors maintain their packages in open-source repositories, so users can directly contribute bug fixes and feature improvements. The package's contribution history is a good indicator of how many developers are actively involved.
@@ -148,6 +151,9 @@ The right column of the package page has other informative links:
 - Select **\<license type> license** to see the package's MIT or other license. If a package doesn't specify license terms, contact the package owner.
 
 - Select any of the package owners under **Owners** to see other packages they've published. Owners with multiple packages are more likely to continue supporting their work. Select **Contact owners** next to **Owners** to reach out directly to the package developers.
+
+   :::column-end:::
+:::row-end:::  
 
 ### Retrieve license information
 
