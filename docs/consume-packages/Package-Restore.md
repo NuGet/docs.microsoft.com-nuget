@@ -37,8 +37,8 @@ If the package references in your project file or *packages.config* file are cor
 
 After a successful restore:
 
-- For projects that use `<PackageReference>`, the package is present in the *global-packages* folder, and the `obj/project.assets.json` file is recreated.
-- For projects that use *packages.config*, the package appears in the project's `packages` folder.
+- For projects that use `<PackageReference>`, the package is present in the local *global-packages* folder, and the project *obj/project.assets.json* file is recreated.
+- For projects that use *packages.config*, the package appears in the project's *packages* folder.
 - The project should now build successfully.
 
 If the package references in your project file or your *packages.config* file are incorrect and don't match your desired state, install or update the correct packages instead of using Package Restore.
@@ -52,7 +52,6 @@ In Visual Studio, the Package Manager Console provides several options for reins
 
 In Visual Studio on Windows, you can restore packages automatically or manually. First, configure Package Restore through **Tools** > **Options** > **NuGet Package Manager**.
 
-<a name="choose-default-package-management-format"></a>
 ### Configure Visual Studio Package Restore options
 
 Configure the following Package Restore options at **Tools** > **Options** > **NuGet Package Manager** > **General**.
@@ -93,6 +92,7 @@ Select **Automatically check for missing packages during build in Visual Studio*
 
 For non-SDK-style projects, you must select **Allow NuGet to download missing packages** as well as **Automatically check for missing packages during build in Visual Studio** in **Options** to enable automatic restore.
 
+<a name="choose-default-package-management-format"></a>
 #### Choose the default package management format
 
 NuGet has two package management formats, [PackageReference](Package-References-in-Project-Files.md) and [packages.config](../reference/packages-config.md). Select the format from the dropdown list under **Package Management**. You can also select whether to allow format selection on first package install.
@@ -102,8 +102,8 @@ NuGet has two package management formats, [PackageReference](Package-References-
 >
 > - If you use Package Manager Console to install the first package in a project, NuGet doesn't prompt for format selection, even if that option is selected in **Options**.
 
-<a name="restore-packages-automatically-using-visual-studio></a>
-<a name="restore-packages-manually-using-visual-studio></a>
+<a name="restore-packages-automatically-using-visual-studio"></a>
+<a name="restore-packages-manually-using-visual-studio"></a>
 ### Restore packages manually or automatically
 
 After you enable package restore in **Options**, you can right-click the solution in **Solution Explorer** and select **Restore NuGet Packages** to restore packages manually.
@@ -117,16 +117,7 @@ If you see the error **This project references NuGet package(s) that are missing
 <a name="restore-using-the-dotnet-cli"></a>
 ## Restore by using the dotnet CLI
 
-???temp text from PR 2852.
-
-The [dotnet restore](/dotnet/core/tools/dotnet-restore) command restores packages that the project file lists with `<PackageReference>`. For more information, see [PackageReference in project files](package-references-in-project-files.md).
-
-.NET Core 2.0 and later `dotnet build` and `dotnet run` commands restore packages automatically. As of NuGet 4.0, `dotnet restore` runs the same code as `nuget restore`.
-
-To restore a package with `dotnet restore`:
-
-1. Open a command line and switch to the directory that contains your project file.
-1. Run `dotnet restore`.
+!!!USE INCLUDE TEXT from PR 2852!!!
 
 <!--[!INCLUDE [restore-dotnet-cli](includes/restore-dotnet-cli.md)]-->
 
@@ -136,28 +127,7 @@ To restore a package with `dotnet restore`:
 <a name="restore-using-the-nugetexe-cli"></a>
 ## Restore by using the NuGet CLI
 
-???temp text from PR 2852.
-
-The NuGet CLI [restore](../reference/cli-reference/cli-ref-restore.md) command downloads and installs any packages that are missing from project package directories. The command works on projects that use either `PackageReference` or *packages.config* for package references.
-
-Like `install`, the `restore` command only adds packages to disk, but doesn't modify the project file or *packages.config*. To add project dependencies, use the Visual Studio Package Manager UI or Console, then run `install` or `restore`.
-
-To restore packages, run the following command:
-
-```cli
-nuget restore <projectPath>
-```
-
-The `restore` command uses a solution file or a *package.config* file in the specified project path.
-
-For example, to restore all packages for *MySolution.sln* in the current directory, run:
-
-```cli
-nuget restore MySolution.sln
-```
-
-> [!NOTE]
-> For non-SDK-style projects that use `PackageReference`, use `msbuild -t:restore` to restore packages instead.
+!!!USE INCLUDE TEXT from PR 2852!!!
 
 <!--[!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]-->
 
@@ -166,11 +136,11 @@ nuget restore MySolution.sln
 
 You can use [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) to restore packages in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017 and higher.
 
-This command restores packages in projects that use [PackageReference](package-references-in-project-files.md) for package references. Starting with MSBuild 16.5+, the command also supports *packages.config* package references, when used with `-p:RestorePackagesConfig=true`.
+This command restores packages in projects that use [PackageReference](package-references-in-project-files.md) for package references. Starting with MSBuild 16.5+, the command also supports [packages.config](/nuget/reference/packages-config) package references, when used with `-p:RestorePackagesConfig=true`.
 
 To use MSBuild restore:
 
-1. Open a Developer Command Prompt by searching for *developer command prompt* and starting the prompt from the **Start** menu. The Developer Command Prompt for Visual Studio from the **Start** menu is configured with all the necessary paths for MSBuild.
+1. Open a Developer Command Prompt by searching for *developer command prompt* and starting the prompt from the **Start** menu, which configures all the necessary paths for MSBuild.
 
 1. Switch to the folder containing the project or *packages.config* file, and enter `msbuild -t:restore`.
 
@@ -180,7 +150,7 @@ To use MSBuild restore:
 > You can use `msbuild -restore` to run `restore`, reload the project, and build, since build is the default target. For more information, see [Restore and build with one MSBuild command](../reference/msbuild-targets.md#restoring-and-building-with-one-msbuild-command).
 
 <a name="restore-using-azure-pipelines"></a>
-<a name="restore-using-azure-devops-server></a>
+<a name="restore-using-azure-devops-server"></a>
 ## Restore with Azure Pipelines or Azure DevOps Server
 
 When you create a build definition in Azure Pipelines, you can include the [NuGet CLI restore](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) or [dotnet CLI restore](/azure/devops/pipelines/tasks/build/dotnet-core-cli) task in the definition before any build tasks. Some build templates include the restore task by default.
@@ -200,7 +170,7 @@ NuGet restore through any method honors any version constraints you specify in *
 - In a project file, you can specify the version range in the `Version` property of the dependency. For example:
 
   ```xml
-  <PackageReference Include="Newtonsoft.json" Version="[6, 7)" />
+  <PackageReference Include="Newtonsoft.json" Version="[6,7)" />
   ```
 
 In both cases, use the notation described in [Package versioning](../concepts/package-versioning.md).
@@ -250,3 +220,4 @@ To test automatic package restore:
 ## Next steps
 
 - [Troubleshoot package restore](Package-restore-troubleshooting.md)
+- [Manage the global packages, cache, and temp folders](managing-the-global-packages-and-cache-folders.md)
