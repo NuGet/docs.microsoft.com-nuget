@@ -11,4 +11,4 @@ You receive an error message from the `push` command if the following situations
 
    You might also receive this same message if you're using a valid API key that you've recently created when there's a naming conflict.
 
-   To fix the error, change the package identifier, rebuild the project, recreate the `.nupkg` file, and then retry the `push` command.
+   To fix the error, change the package identifier, rebuild the project, recreate the *.nupkg* file, and then retry the `push` command.

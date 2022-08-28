@@ -1,6 +1,8 @@
 1. Open a command prompt and change to the folder containing your NuGet package file.
 
-1. Run the following command. Replace \<package filename> with the file name of your package and replace \<api key value> with your API key. The package filename is a concatenation of your package ID and version number. For example, *AppLogger.1.0.0.nupkg*:
+1. Run the following command. Replace \<package filename> with the file name of your package and replace \<api key value> with your API key.
+
+    The .NET CLI generates a *.nupkg* file in the form of *package ID-version.nupkg*. For example, *AppLogger.1.0.0.nupkg*:
 
     ```dotnetcli
     dotnet nuget push <package filename> --api-key <api key value> --source https://api.nuget.org/v3/index.json

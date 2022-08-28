@@ -76,7 +76,7 @@ After you've created your project, you can configure the NuGet package propertie
 
    The **Package** node appears only for SDK-style projects in Visual Studio, typically .NET Standard or .NET Core class library projects. If you're' targeting a non-SDK style project (typically .NET Framework), either [migrate the project](../consume-packages/migrate-packages-config-to-package-reference.md), or see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) for step-by-step instructions.
 
-    :::image type="content" source="media/qs-create-vs-project-properties.png" alt-text="NuGet package properties in a Visual Studio project":::
+    :::image type="content" source="media/qs-create-vs-project-properties.png" alt-text="Screenshot showing NuGet package properties in a Visual Studio project.":::
 
 1. For packages built for public consumption, pay special attention to the **Tags** property, as tags help others find your package and understand what it does.
 
@@ -120,7 +120,7 @@ You can configure Visual Studio to automatically generate the NuGet package when
 
 1. Expand the **Package** node, select **General**, and then select **Generate NuGet package on build**.
 
-    :::image type="content" source="media/qs-create-vs-generate-on-build.png" alt-text="Screenshot showing package properties with Generate package on build selected.":::
+    :::image type="content" source="media/qs-create-vs-generate-on-build.png" alt-text="Screenshot showing package properties with Generate NuGet package on build selected.":::
 
 > [!NOTE]
 > When you automatically generate the package, the extra time to pack increases the overall build time for your project.
@@ -165,9 +165,11 @@ Using the NuGet CLI (*nuget.exe*) is an alternative to using the .NET CLI:
 
 1. Open a command prompt and change to the folder containing the *.nupkg* file.
 
-1. Run the following command. Replace \<package filename> with the file name of your package and replace \<api key value> with your API key. The package filename is a concatenation of your package ID and version number with a *.nupkg* extension. For example, *AppLogger.1.0.0.nupkg*:
+1. Run the following command. Replace \<package filename> with the file name of your package and replace \<api key value> with your API key.
 
-    ```cli
+   The NuGet CLI generates a *.nupkg* file in the form of *package ID-version.nupkg*. For example, *AppLogger.1.0.0.nupkg*:
+
+    ```nuget
     nuget push <package filename> <api key value> -Source https://api.nuget.org/v3/index.json
     ```
 

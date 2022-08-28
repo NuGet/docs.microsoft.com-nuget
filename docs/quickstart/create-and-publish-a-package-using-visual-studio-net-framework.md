@@ -9,7 +9,9 @@ ms.topic: quickstart
 
 # Quickstart: Create and publish a package using Visual Studio (.NET Framework, Windows)
 
-With Microsoft Visual Studio, you can create a NuGet package from a .NET Standard class library, and then using the NuGet command-line tool to create and publish the package.
+With Microsoft Visual Studio, you can create a NuGet package from a .NET Framework class library, and then publish it to nuget.org using the NuGet CLI tool.
+
+However, unless you have a reason to choose otherwise, .NET Standard is the preferred target for NuGet packages, as it provides compatibility with the widest range of consuming projects. For more information, see [Create and publish a package using Visual Studio (.NET Standard)](create-and-publish-a-package-using-visual-studio.md).
 
 The quickstart is for Windows users only. If you're using Visual Studio for Mac, see [dotnet CLI tools](create-and-publish-a-package-using-the-dotnet-cli.md) instead.
 
@@ -39,7 +41,7 @@ You can use an existing .NET Standard Class Library project for the code you wan
 
 1. To ensure the project was created properly, select **Build** > **Build Solution**. The DLL is found within the Debug folder (or Release if you build that configuration instead).
 
-1. (Optional) Within a real NuGet package, you'd implement many useful features with which others can build applications. You can also set the target frameworks however you like. For example, see [UWP](../guides/create-uwp-packages.md) and [Xamarin](../guides/create-packages-for-xamarin.md). For this quickstart, you don't need to write any additional code for the NuGet package because the template class library is sufficient to create a package. However, if you'd like some functional code for the package, include the following code:
+1. (Optional) For this quickstart, you don't need to write any additional code for the NuGet package because the template class library is sufficient to create a package. However, if you'd like some functional code for this sample package, include the following code:
 
    ```csharp
    namespace AppLogger
@@ -54,8 +56,7 @@ You can use an existing .NET Standard Class Library project for the code you wan
    }
    ```
 
-   > [!TIP]
-   > Unless you have a reason to choose otherwise, .NET Standard is the preferred target for NuGet packages, as it provides compatibility with the widest range of consuming projects. For more information, see [Create and publish a package using Visual Studio (.NET Standard)](create-and-publish-a-package-using-visual-studio.md).
+   Within a real-world NuGet package, you'd likely implement many useful features with which others can build applications. You can also set the target frameworks. For examples, see [UWP](../guides/create-uwp-packages.md) and [Xamarin](../guides/create-packages-for-xamarin.md).
 
 ## Configure project properties for the package
 
@@ -68,11 +69,11 @@ A NuGet package is a manifest in a *.nuspec* file that contains relevant metadat
      > [!IMPORTANT]
     > You must give the package an identifier that's unique across nuget.org or whatever host you're using. Otherwise, an error occurs. For this quickstart we recommend including *Sample* or *Test* in the name because the publishing step makes the package publicly visible.
 
-1. Select **Assembly Information**, which displays a dialog box in which you can enter other properties that carry into the manifest (see [.nuspec file reference - replacement tokens](../reference/nuspec.md#replacement-tokens)). The most commonly used fields are **Title**, **Description**, **Company**, **Copyright**, and **Assembly version**. These properties ultimately appear with your package on a host like nuget.org, so make sure they're fully descriptive.
+1. Select **Assembly Information**, which displays a dialog box in which you can enter other properties that carry into the manifest (see [Replacement tokens](../reference/nuspec.md#replacement-tokens)). The most commonly used fields are **Title**, **Description**, **Company**, **Copyright**, and **Assembly version**. Because these properties appear with your package on a host like nuget.org after you publish it, make sure they're fully descriptive.
 
-    ![Screenshot showing the Assembly Information page in a .NET Framework project in Visual Studio.](media/qs-create-vs-assembly-information.png)
+    :::image type="content" source="media/qs-create-vs-assembly-information.png" alt-text="Screenshot showing the Assembly Information page in a .NET Framework project in Visual Studio.":::
 
-1. (Optional) To see and edit the properties directly, open the *Properties/AssemblyInfo.cs* file in the project.
+1. (Optional) To see and edit the properties directly, open the *Properties/AssemblyInfo.cs* file in the project by selecting select **Project** > **Edit Project File**.
 
 1. After you've set these properties, set the **Active solution configuration** in **Build** > **Configuration Manager** to **Release** and rebuild the project to generate the updated DLL.
 
@@ -80,13 +81,15 @@ A NuGet package is a manifest in a *.nuspec* file that contains relevant metadat
 
 After you've set the project properties and created the DLL, you can now generate an initial *.nuspec* file from the project. This step includes the relevant replacement tokens to draw information from the project file.
 
-Run `nuget spec` only once to generate the initial manifest. When you update the package, either change values in your project or edit the manifest directly:
+Run `nuget spec` only once to generate the initial manifest. If you update the package, either change values in your project, or edit the manifest directly:
 
-1. 1. With your project open in **Solution Explorer**, open a command prompt by selecting **Tools** > **Command Line** >  **Developer Command Prompt**.
+1. With your project open in **Solution Explorer**, open a command prompt by selecting **Tools** > **Command Line** >  **Developer Command Prompt**.
 
    The command prompt opens in your project directory where the `AppLogger.csproj` file is located.
 
-1. Run the following command: `nuget spec AppLogger.csproj`. NuGet creates a manifest that matches the name of the project, in this case `AppLogger.nuspec`. It also includes replacement tokens in the manifest.
+1. Run the following command: `nuget spec AppLogger.csproj`.
+
+   NuGet creates a manifest that matches the name of the project, in this case `AppLogger.nuspec`. It also includes replacement tokens in the manifest.
 
 1. Open `AppLogger.nuspec` in a text editor to examine its contents, which will be similar to the following code:
 
@@ -96,11 +99,11 @@ Run `nuget spec` only once to generate the initial manifest. When you update the
       <metadata>
         <id>Package</id>
         <version>1.0.0</version>
-        <authors>YourUsername</authors>
-        <owners>YourUsername</owners>
+        <authors>Your username</authors>
+        <owners>Your username</owners>
         <license type="expression">MIT</license>
-        <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-        <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+        <projectUrl>http://ENTER_PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+        <iconUrl>http://ENTER_ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Package description</description>
         <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
@@ -112,7 +115,7 @@ Run `nuget spec` only once to generate the initial manifest. When you update the
 
 ## Edit the manifest
 
-1. Edit the following properties before proceeding. Otherwise, if you try to create a NuGet package using the default values in your `.nuspec` file, an error occurs. For information about these properties, see [.nuspec file reference - optional metadata elements](../reference/nuspec.md#optional-metadata-elements):
+1. Edit the following properties before proceeding. Otherwise, if you try to create a NuGet package with the default values in your `.nuspec` file, an error occurs. For information about these properties, see [Optional metadata elements](../reference/nuspec.md#optional-metadata-elements):
 
     - licenseUrl
     - projectUrl
@@ -134,7 +137,7 @@ Run `nuget spec` only once to generate the initial manifest. When you update the
 
 1. Run the following command: `nuget pack`.
 
-   NuGet generates a `.nupkg` file in the form of *identifier-version.nupkg*, which you'll find in the current folder.
+   NuGet generates a *.nupkg* file in the form of *identifier-version.nupkg* in the current folder.
 
 ## Publish the package
 
