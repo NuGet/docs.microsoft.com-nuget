@@ -1,17 +1,16 @@
-From your profile on nuget.org, select **Manage Packages** to see the one you just published. You also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it. During that time your package page shows the message below:
+When your package successfully publishes, you receive a confirmation email. On nuget.org, select your user name at upper right, and then select **Manage Packages** to see the package you just published.
 
-![This package has not been indexed yet. It will appear in search results and will be available for install/restore after indexing is complete.](../media/QS_Create-03-NotIndexed.png)
+> [!NOTE]
+> It might take awhile for your package to be indexed and appear in search results where others can find it. During that time your package page shows the following message:
+> 
+> ![This package has not been indexed yet. It will appear in search results and will be available for install/restore after indexing is complete.](../media/QS_Create-03-NotIndexed.png)
 
-And that's it! You've just published your first NuGet package to nuget.org that other developers can use in their own projects.
+You've just published a NuGet package to nuget.org so other developers can use it in their own projects. This quickstart created a package with an empty class library that isn't actually useful. To *unlist* the package and hide it from search results:
 
-If in this walkthrough you created a package that isn't actually useful (such as a package created with an empty class library), you should *unlist* the package to hide it from search results:
+1. From **Manage Packages**, under **Published Packages**, select pencil icon next to the package you want to unlist.
 
-1. On nuget.org, select your user name (upper right of the page), then select **Manage Packages**.
+   ![Screenshot that shows the Edit icon for a package listing on nuget.org.](../media/qs_create-vs-03-trash-can.png)
 
-1. Locate the package you want to unlist under **Published** and select the trash can icon on the right:
+1. On the next page, under **Listing**, deselect the **List in search results** checkbox, and then select **Save**.
 
-    ![Trash can icon shown for a package listing on nuget.org](../media/qs_create-vs-03-trash-can.png)
-
-1. On the subsequent page, clear the box labeled **List (package-name) in search results** and select **Save**:
-
-    ![Clearing the List checkbox for a package on nuget.org](../media/qs_create-vs-04-unlist.png)
+   ![Screenshot that shows clearing the List checkbox for a package on nuget.org.](../media/qs_create-vs-04-unlist.png)
