@@ -1,17 +1,23 @@
-From your profile on nuget.org, select **Manage Packages** to see the one you just published. You also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it. During that time your package page shows the message below:
+To manage your package after you've published it, follow these steps:
 
-![This package has not been indexed yet. It will appear in search results and will be available for install/restore after indexing is complete.](../media/QS_Create-03-NotIndexed.png)
+1. Sign into your nuget.org account, select your user name on the upper right of the page, and then select **API Keys** from the drop-down menu.
 
-And that's it! You've just published your first NuGet package to nuget.org that other developers can use in their own projects.
+1. From the drop-down menu, select **Manage Packages** and then expand **Published Packages** to view your published packages. Each published package generates a confirmation email.
 
-If in this walkthrough you created a package that isn't actually useful (such as a package created with an empty class library), you should *unlist* the package to hide it from search results:
+   It might take a while for your package to be indexed and appear in search results where others can find it. During that time, your package page displays the following message:
 
-1. On nuget.org, select your user name (upper right of the page), then select **Manage Packages**.
+   ![Screenshot showing the publishing message that's displayed when you upload a package to nuget.org.](../media/qs-create-not-indexed.png)
 
-1. Locate the package you want to unlist under **Published** and select the trash can icon on the right:
+You've now published your first NuGet package to nuget.org that other developers can use in their own projects.
 
-    ![Trash can icon shown for a package listing on nuget.org](../media/qs_create-vs-03-trash-can.png)
+If you've created a package that isn't useful (such as a package created with an empty class library) or you decide you don't want the package to be visible, you can *unlist* the package to hide it from search results:
 
-1. On the subsequent page, clear the box labeled **List (package-name) in search results** and select **Save**:
+1. On nuget.org, select your user name, and then select **Manage Packages** from the drop-down menu.
 
-    ![Clearing the List checkbox for a package on nuget.org](../media/qs_create-vs-04-unlist.png)
+1. Locate the package you want to unlist under **Published** and select the edit icon on the right:
+
+    :::image type="content" source="../media/qs-create-vs-edit.png" alt-text="Screenshot showing a package listing on nuget.org.":::
+
+1. On the next page, expand **Listing**, clear the box labeled **List in search results**, and then select **Save**:
+
+    :::image type="content" source="../media/qs-create-vs-unlist.png" alt-text="Screenshot showing how to clear the List in search results checkbox for a package on nuget.org.":::

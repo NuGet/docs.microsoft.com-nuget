@@ -1,4 +1,4 @@
-> [!Note]
-> **Virus scanning**: All packages uploaded to nuget.org are scanned for viruses and rejected if any viruses are found. All packages listed on nuget.org are also scanned periodically.
+> [!NOTE]
+> **Virus scanning**: Every package you upload to nuget.org is scanned for viruses and is rejected if any are found. Each package listed on nuget.org is also scanned periodically.
 >
-> Packages published to nuget.org are also publicly visible to other developers unless you unlist them. To host packages privately, see [Hosting packages](../../hosting-packages/overview.md).
+> Each package you publish to nuget.org is publicly visible to other developers unless you unlist it. To host a package privately, see [Hosting packages](../../hosting-packages/overview.md).

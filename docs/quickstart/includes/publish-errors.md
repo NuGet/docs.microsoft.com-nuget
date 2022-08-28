@@ -1,10 +1,14 @@
-Errors from the `push` command typically indicate the problem. For example, you may have forgotten to update the version number in your project and are therefore trying to publish a package that already exists.
+You receive an error message from the `push` command if the following situations occur:
 
-You also see errors when trying to publish a package using an identifier that already exists on the host. The name "AppLogger", for example, already exists. In such a case, the `push` command gives the following error:
+- You haven't updated the version number in your project and are therefore attempting to publish a package that already exists.
 
-```output
-Response status code does not indicate success: 403 (The specified API key is invalid,
-has expired, or does not have permission to access the specified package.).
-```
+- You attempt to publish a package with an identifier that already exists on the host, causing a naming conflict. For example, if the name *AppLogger* already exists the `push` command produces the following error:
 
-If you're using a valid API key that you just created, then this message indicates a naming conflict, which isn't entirely clear from the "permission" part of the error. Change the package identifier, rebuild the project, recreate the `.nupkg` file, and retry the `push` command.
+   ```output
+   Response status code does not indicate success: 403 (The specified API key is invalid,
+   has expired, or does not have permission to access the specified package.).
+   ```
+
+   You might also receive this same message if you're using a valid API key that you've recently created when there's a naming conflict.
+
+   To fix the error, change the package identifier, rebuild the project, recreate the `.nupkg` file, and then retry the `push` command.
