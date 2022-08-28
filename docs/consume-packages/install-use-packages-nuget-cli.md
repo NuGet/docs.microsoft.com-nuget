@@ -3,7 +3,7 @@ title: Manage NuGet packages with the NuGet CLI
 description: Instructions for using the NuGet CLI, nuget.exe, to install, list, update, remove, and restore NuGet packages.
 author: mikejo5000
 ms.author: mikejo
-ms.date: 08/25/2022
+ms.date: 08/29/2022
 ms.topic: conceptual
 ---
 
@@ -23,6 +23,9 @@ For a complete list of commands and their arguments, see the [NuGet CLI referenc
 ## Prerequisites
 
 Download the NuGet CLI from [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe). Save the *nuget.exe* file to a suitable directory, and make sure the directory is in your PATH environment variable.
+
+> [!NOTE]
+> You can also use the [winget](/windows/package-manager/winget) tool for Windows or [Homebrew](https://brew.sh/) for macOS.
 
 To find out your NuGet CLI version, open a command line and run `nuget help`, or to avoid having to scroll up, use `nuget help | more`. The first line in the help output shows the version.
 
@@ -60,7 +63,7 @@ nuget install config\packages.config -OutputDirectory packages
 
 ## Install a specific version of a package
 
-The `install` command installs the latest version of a package, unless you specify a different version. To install a specific version of a package, use the `-Version` option:
+The `install` command installs the latest version of a package unless you specify a different version. To install a specific version of a package, use the `-Version` option:
 
 ```cli
 nuget install <packageID | configFilePath> -Version <version>
@@ -83,10 +86,10 @@ nuget list -Source <source>
 For example, to list packages in the *packages* subdirectory of *MyProject*, use:
 
 ```cli
-nuget list -Source C:\Users\<username>\source\repos\MyProject\packages
+nuget list -Source C:\Users\%USERNAME%\source\repos\MyProject\packages
 ```
 
-If you don't specify a source, `list` uses all sources defined in the *NuGet.Config* global configuration file. If *NuGet.Config* doesn't specify any sources, `list` uses the default feed, for example nuget.org.
+If you don't specify a source, `list` uses all sources defined in the *NuGet.Config* global configuration file. If *NuGet.Config* doesn't specify any sources, `list` uses a default feed of nuget.org.
 
 You can also use a search term to search for package names, tags, or descriptions:
 

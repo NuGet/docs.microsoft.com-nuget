@@ -1,4 +1,4 @@
-The NuGet CLI [restore](../../reference/cli-reference/cli-ref-restore.md) command downloads and installs any packages that are missing from project package directories. The command works on projects that use either `PackageReference` or *packages.config* for package references.
+The NuGet CLI [restore](../../reference/cli-reference/cli-ref-restore.md) command downloads and installs any packages that are missing from project package directories. The command works on projects that use either [PackageReference](/nuget/consume-packages/package-references-in-project-files) or [packages.config](/nuget/reference/packages-config) for package references.
 
 Like `install`, the `restore` command only adds packages to disk, but doesn't modify the project file or *packages.config*. To add project dependencies, use the Visual Studio Package Manager UI or Console, then run `install` or `restore`.
 

@@ -3,7 +3,7 @@ title: Install and use a NuGet package with the dotnet CLI
 description: Get a quick tutorial on how to use the dotnet CLI to install and use a NuGet package in a .NET project.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/17/2022
+ms.date: 08/29/2022
 ms.topic: quickstart
 ---
 
@@ -24,7 +24,7 @@ You refer to installed packages in code with a `using <namespace>` directive, wh
 
 You can install NuGet packages into a .NET project. For this walkthrough, create a simple .NET console project by using the dotnet CLI, as follows:
 
-1. Create a folder named *nuget1* for the project.
+1. Create a folder named *Nuget.Quickstart* for the project.
 
 1. Open a command prompt and switch to the new folder.
 
@@ -44,7 +44,7 @@ You can install NuGet packages into a .NET project. For this walkthrough, create
     dotnet add package Newtonsoft.Json
     ```
 
-2. After the command completes, open the *nuget1.csproj* file in Visual Studio to see the added NuGet package reference:
+2. After the command completes, open the *Nuget.Quickstart.csproj* file in Visual Studio to see the added NuGet package reference:
 
     ```xml
     <ItemGroup>
@@ -57,7 +57,7 @@ You can install NuGet packages into a .NET project. For this walkthrough, create
 1. In Visual Studio, open the *Program.cs* file and add the following lines at the top of the file:
 
     ```cs
-    using nuget1;
+    using Nuget.Quickstart;
     using Newtonsoft.Json;
     ```
 
@@ -78,7 +78,7 @@ You can install NuGet packages into a .NET project. For this walkthrough, create
 1. Add the following class definition after the `Console.WriteLine(json);` line:
 
     ```cs
-    namespace nuget1
+    namespace Nuget.Quickstart
     {
         public class Account
         {
