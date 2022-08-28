@@ -58,6 +58,7 @@ Configure the following Package Restore options at **Tools** > **Options** > **N
 
 ![Screenshot that shows the NuGet Package Manager options.](media/Restore-01-AutoRestoreOptions.png)
 
+<a name="enable-and-disable-package-restore-in-visual-studio"></a>
 #### Allow NuGet to download missing packages
 
 Select **Allow NuGet to download missing packages** to enable package restore and the **Restore NuGet Packages** command. This selection sets the `packageRestore/enabled` setting to `True` in the [packageRestore section](../reference/nuget-config-file.md#packagerestore-section) of the global *NuGet.Config* file, at *%AppData%\\Roaming\\NuGet* on Windows or *~/.nuget/NuGet/* on Mac or Linux.
@@ -140,7 +141,7 @@ This command restores packages in projects that use [PackageReference](package-r
 
 To use MSBuild restore:
 
-1. Open a Developer Command Prompt by searching for *developer command prompt* and starting the prompt from the **Start** menu, which configures all the necessary paths for MSBuild.
+1. Open a Developer Command Prompt by searching for *developer command prompt* and starting the prompt from the Windows **Start** menu, which configures all the necessary paths for MSBuild.
 
 1. Switch to the folder containing the project or *packages.config* file, and enter `msbuild -t:restore`.
 
