@@ -1,4 +1,4 @@
-When your package successfully publishes, you receive a confirmation email. On nuget.org, select your user name at upper right, and then select **Manage Packages** to see the package you just published.
+When your package successfully publishes, you receive a confirmation email. To see the package you just published, on [nuget.org](https://www.nuget.org/), select your user name at upper right, and then select **Manage Packages**.
 
 > [!NOTE]
 > It might take awhile for your package to be indexed and appear in search results where others can find it. During that time, your package appears under **Unlisted Packages**, and the package page shows the following message:
@@ -15,4 +15,4 @@ You've now published a NuGet package to nuget.org that other developers can use 
 
    ![Screenshot that shows clearing the List checkbox for a package on nuget.org.](../media/qs_create-vs-04-unlist.png)
 
-The package now appears under **Unlisted Packages** in **Manage Packages**.
+The package now appears under **Unlisted Packages** in **Manage Packages** and no longer appears in search results.

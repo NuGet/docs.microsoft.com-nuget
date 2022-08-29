@@ -9,7 +9,7 @@ ms.topic: quickstart
 
 # Quickstart: Create and publish a package with the dotnet CLI
 
-This quickstart shows you how to quickly create a NuGet package from a .NET class library and publish it to nuget.org by using the .NET command-line interface, or dotnet CLI.
+This quickstart shows you how to quickly create a NuGet package from a .NET class library and publish it to nuget.org by using the .NET command-line interface, or [dotnet CLI](/dotnet/core/tools).
 
 ## Prerequisites
 
