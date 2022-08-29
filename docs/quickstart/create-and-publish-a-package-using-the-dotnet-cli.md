@@ -41,7 +41,7 @@ Open the *.csproj*, *.fproj*, or *.vbproj* project file, and add the following p
 ```
 
 > [!Important]
-> The package identifier must be unique across nuget.org or other host. Publishing makes the package publicly visible, so if you use the example AppLogger library or other test library, use a unique name that includes `Sample` or `Test`.
+> The package identifier must be unique across nuget.org and other package sources. Publishing makes the package publicly visible, so if you use the example AppLogger library or other test library, use a unique name that includes `Sample` or `Test`.
 
 You can add any optional properties described in [NuGet metadata properties](/dotnet/core/tools/csproj#nuget-metadata-properties).
 

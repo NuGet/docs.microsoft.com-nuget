@@ -15,3 +15,6 @@ Your package was pushed.
 ```
 
 For more information, see [dotnet nuget push](/dotnet/core/tools/dotnet-nuget-push).
+
+> [!NOTE]
+> If you want to avoid your test package being live on nuget.org, you can push to the nuget.org test site at [https://int.nugettest.org](https://int.nugettest.org). Note that packages uploaded to int.nugettest.org might not be preserved.

@@ -16,3 +16,6 @@ You've now published a NuGet package to nuget.org that other developers can use 
    ![Screenshot that shows clearing the List checkbox for a package on nuget.org.](../media/qs_create-vs-04-unlist.png)
 
 The package now appears under **Unlisted Packages** in **Manage Packages** and no longer appears in search results.
+
+> [!NOTE]
+> To avoid your test package being live on nuget.org, you can push to the nuget.org test site at [https://int.nugettest.org](https://int.nugettest.org). Note that packages uploaded to int.nugettest.org might not be preserved.
