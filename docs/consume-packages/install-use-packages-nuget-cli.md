@@ -89,8 +89,6 @@ For example, to list packages in the *packages* subdirectory of *MyProject*, use
 nuget list -Source C:\Users\%USERNAME%\source\repos\MyProject\packages
 ```
 
-If you don't specify a source, `list` uses all sources defined in the *NuGet.Config* global configuration file. If *NuGet.Config* doesn't specify any sources, `list` uses a default feed of nuget.org.
-
 You can also use a search term to search for package names, tags, or descriptions:
 
 ```cli
