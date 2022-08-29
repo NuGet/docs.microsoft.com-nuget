@@ -31,17 +31,17 @@ For more information, see [dotnet new](/dotnet/core/tools/dotnet-new).
 
 Every NuGet package has a manifest that describes the package's contents and dependencies. In the final package, the manifest is a *.nuspec* file, which uses the NuGet metadata properties you include in the project file.
 
-1. Open the *.csproj*, *.fproj*, or *.vbproj* project file, and add the following properties inside the existing `<PropertyGroup>` tag. Use your own values for name and company, and replace the `AppLogger` package identifier with a unique identifier.
+Open the *.csproj*, *.fproj*, or *.vbproj* project file, and add the following properties inside the existing `<PropertyGroup>` tag. Use your own values for name and company, and replace the package identifier with a unique value.
 
-    ```xml
-    <PackageId>unique_id-test</PackageId>
-    <Version>1.0.0</Version>
-    <Authors>your_name</Authors>
-    <Company>your_company</Company>
-    ```
+```xml
+<PackageId>8-28-22-001-test</PackageId>
+<Version>1.0.0</Version>
+<Authors>your_name</Authors>
+<Company>your_company</Company>
+```
 
-   > [!Important]
-   > The package identifier must be unique across nuget.org or other host. Publishing makes the package publicly visible, so if you use the example AppLogger library or other test library, use a unique name that includes `sample` or `test`.
+> [!Important]
+> The package identifier must be unique across nuget.org or other host. Publishing makes the package publicly visible, so if you use the example AppLogger library or other test library, use a unique name that includes `sample` or `test`.
 
 You can add any optional properties described in [NuGet metadata properties](/dotnet/core/tools/csproj#nuget-metadata-properties).
 
@@ -63,7 +63,7 @@ MSBuild version 17.3.0+92e077650 for .NET
   Determining projects to restore...
   Restored C:\Users\myname\source\repos\AppLogger\AppLogger.csproj (in 64 ms).
   AppLogger -> C:\Users\myname\source\repos\AppLogger\bin\Debug\net6.0\AppLogger.dll
-  Successfully created package 'C:\Users\myname\source\repos\AppLogger\bin\Debug\unique_id-test.1.0.0.nupkg'.
+  Successfully created package 'C:\Users\myname\source\repos\AppLogger\bin\Debug\8-28-22-001-test.1.0.0.nupkg'.
   ```
 
 ### Automatically generate package on build

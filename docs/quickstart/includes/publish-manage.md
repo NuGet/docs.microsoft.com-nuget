@@ -5,7 +5,7 @@ When your package successfully publishes, you receive a confirmation email. On n
 > 
 > ![This package has not been indexed yet. It will appear in search results and will be available for install/restore after indexing is complete.](../media/QS_Create-03-NotIndexed.png)
 
-You've now published a NuGet package to nuget.org that other developers can use in their projects, but the package in this quickstart uses an empty class library that isn't actually useful. To *unlist* this test package and hide it from search results:
+You've now published a NuGet package to nuget.org that other developers can use in their projects, but the sample package uses an empty class library that isn't useful. To *unlist* this test package and hide it from search results:
 
 1. Once the package appears under **Published Packages** on the **Manage Packages** page, select the pencil icon next to the package listing.
 
