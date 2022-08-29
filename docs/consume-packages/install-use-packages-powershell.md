@@ -3,7 +3,7 @@ title: Manage NuGet packages with the Visual Studio Package Manager Console
 description: See how to work with NuGet packages by using PowerShell commands in the Visual Studio Package Manager Console.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/17/2020
+ms.date: 08/29/2020
 ms.topic: conceptual
 f1_keywords: 
   - "vs.nuget.packagemanager.console"
@@ -84,7 +84,7 @@ To find a package in the default source, use [Find-Package](../reference/ps-refe
   Find-Package <string> -StartWith
   ```
 
-- By default, `Get-Package` returns a list of 20 packages. Use `-First` to show more packages. For example, to show the first 100 packages, use:
+- By default, `Find-Package` returns a list of 20 packages. Use `-First` to show more packages. For example, to show the first 100 packages, use:
 
   ```powershell
   Find-Package <keyword> -First 100
@@ -163,7 +163,7 @@ To update a package, use [Get-Package](../reference/ps-reference/ps-ref-get-pack
 <a name="use-the-nugetexe-cli-in-the-console"></a>
 ## Use the NuGet CLI in the console
 
-You can also do all operations that are available in the console with the [NuGet CLI](../reference/nuget-exe-cli-reference.md). However, console commands operate within the context of Visual Studio saved project and solution, and often do more than their equivalent NuGet CLI commands. For example, installing a package through the console adds a reference to the project file, but the NuGet CLI command doesn't. For this reason, developers working in Visual Studio typically prefer to use the console commands rather than the NuGet CLI.
+You can also do most console operations with the [NuGet CLI](../reference/nuget-exe-cli-reference.md). However, the PowerShell console commands operate within the context of Visual Studio saved project and solution, and often do more than their equivalent NuGet CLI commands. For example, installing a package through `Install-Package` adds a reference to the project file, but the NuGet CLI command doesn't. For this reason, developers working in Visual Studio typically prefer to use the console commands rather than the NuGet CLI.
 
 To use NuGet CLI commands in the Package Manager Console, install the [NuGet.CommandLine](https://www.nuget.org/packages/NuGet.CommandLine) package.
 

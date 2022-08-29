@@ -1,6 +1,6 @@
 ---
 title: Manage NuGet packages with the NuGet CLI
-description: Instructions for using the NuGet CLI, nuget.exe, to install, list, update, remove, and restore NuGet packages.
+description: Instructions for using the NuGet CLI, nuget.exe, to manage NuGet packages.
 author: mikejo5000
 ms.author: mikejo
 ms.date: 08/29/2022
@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Manage NuGet packages with the NuGet CLI
 
-You can use the `nuget.exe` CLI tool to install, list, update, remove, and restore NuGet packages in Visual Studio projects and solutions. The NuGet CLI provides all NuGet capabilities on Windows, and provides most NuGet capabilities on Mac and on Linux with Mono. This article describes the most common NuGet CLI commands for managing NuGet packages.
+You can use the `nuget.exe` CLI tool to manage NuGet packages in Visual Studio projects and solutions. This article describes the most common NuGet CLI commands for managing NuGet packages. All these commands work on Windows, and most work on Mac and on Linux with Mono. 
 
 The NuGet CLI runs on .NET Framework and non-SDK-style projects, for example non-SDK style projects that target .NET Standard libraries. The NuGet CLI commands can use a project [packages.config](../reference/packages-config.md) file that lists package references. For non-SDK-style projects that use `PackageReference` instead of *packages.config* for package references, use the [dotnet CLI](install-use-packages-dotnet-cli.md) instead.
 
@@ -77,7 +77,7 @@ nuget install Newtonsoft.Json -Version 12.0.1
 
 ## List packages
 
-Use the [list](../reference/cli-reference/cli-ref-list.md) command to display a list of packages. Use the `-Source` option to restrict the list.
+Use the [list](../reference/cli-reference/cli-ref-list.md) command to display a list of packages installed in the packages folders. Use the `-Source` option to restrict the list.
 
 ```cli
 nuget list -Source <source>
@@ -108,6 +108,8 @@ nuget update
 ## Remove a package
 
 To remove a package, delete that package from the project folder. To reinstall packages, use the `restore` or `install` commands.
+
+Deleting packages from disk doesn't update the project, *packages.config*, or *NuGet.Config* files. The best way to remove packages is through the Visual Studio [Package Manager UI](install-use-packages-visual-studio.md) or [Package Manager Console](install-use-packages-powershell.md).
 
 ## Restore packages
 

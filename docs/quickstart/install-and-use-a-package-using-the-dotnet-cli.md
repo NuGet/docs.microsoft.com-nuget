@@ -63,7 +63,7 @@ You can install NuGet packages into a .NET project. For this walkthrough, create
 1. Add the following code to replace the `Console.WriteLine("Hello, World!");` statement:
 
     ```cs
-    namespace Nuget.Quickstart.Oldstyle
+    namespace Nuget.Quickstart
     {
         public class Account
         {
