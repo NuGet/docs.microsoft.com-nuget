@@ -54,37 +54,37 @@ You can install NuGet packages into a .NET project. For this walkthrough, create
 
 ## Use the Newtonsoft.Json API in the app
 
-1. In Visual Studio, open the *Program.cs* file and add the following lines at the top of the file:
+1. In Visual Studio, open the *Program.cs* file and add the following line at the top of the file:
 
     ```cs
-    using Nuget.Quickstart;
     using Newtonsoft.Json;
     ```
 
 1. Add the following code to replace the `Console.WriteLine("Hello, World!");` statement:
 
     ```cs
-    Account account = new Account
-    {
-        Name = "John Doe",
-        Email = "john@nuget.org",
-        DOB = new DateTime(1980, 2, 20, 0, 0, 0, DateTimeKind.Utc),
-    };
-    
-    string json = JsonConvert.SerializeObject(account, Formatting.Indented);
-    Console.WriteLine(json);
-    ```
-
-1. Add the following class definition after the `Console.WriteLine(json);` line:
-
-    ```cs
-    namespace Nuget.Quickstart
+    namespace Nuget.Quickstart.Oldstyle
     {
         public class Account
         {
-            public string? Name { get; set; }
-            public string? Email { get; set; }
+            public string Name { get; set; }
+            public string Email { get; set; }
             public DateTime DOB { get; set; }
+        }
+        internal class Program
+        {
+            static void Main(string[] args)
+            {
+                Account account = new Account
+                {
+                    Name = "John Doe",
+                    Email = "john@nuget.org",
+                    DOB = new DateTime(1980, 2, 20, 0, 0, 0, DateTimeKind.Utc),
+                };
+    
+                string json = JsonConvert.SerializeObject(account, Formatting.Indented);
+                Console.WriteLine(json);
+            }
         }
     }
     ```
