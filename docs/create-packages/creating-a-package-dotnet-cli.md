@@ -1,22 +1,23 @@
 ---
-title: Create a NuGet package using the dotnet CLI
-description: A detailed guide to the process of designing and creating a NuGet package, including key decision points like files and versioning.
+title: Create a NuGet package with the dotnet CLI
+description: Read a detailed guide about the process of designing and creating a NuGet package, including key decision points like files and versioning.
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/14/2022
 ms.topic: conceptual
 ---
 
-# Create a NuGet package using the dotnet CLI
+# Create a NuGet package with the dotnet CLI
 
-No matter what your package does or what code it contains, you use one of the CLI tools, either `nuget.exe` or `dotnet.exe`, to package that functionality into a component that can be shared with and used by any number of other developers. This article describes how to create a package using the dotnet CLI. To install the `dotnet` CLI, see [Install NuGet client tools](../install-nuget-client-tools.md). Starting in Visual Studio 2017, the dotnet CLI is included with .NET Core workloads.
+You create NuGet packages to share code with other developers to use in their projects. No matter what your code does or contains, you use a CLI tool, either `nuget.exe` or `dotnet.exe`, to package the code. For more information, see [Install NuGet client tools](../install-nuget-client-tools.md).
 
-For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, NuGet uses information in the project file directly to create a package. For step-by-step tutorials, see [Create .NET Standard Packages with dotnet CLI](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) or [Create .NET Standard Packages with Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md).
+This article describes how to create a package by using the [dotnet CLI](). Starting in Visual Studio 2017, the dotnet CLI is included with all .NET and .NET Core workloads.
 
-`msbuild -t:pack` is functionality equivalent to `dotnet pack`. To build with MSBuild, see [Create a NuGet package using MSBuild](creating-a-package-msbuild.md).
+This topic applies only to .NET and other projects that use the [SDK-style format](../resources/check-project-format.md). For these projects, NuGet uses information from the project file to create a package. For quickstart tutorials, see [Create packages with the dotnet CLI](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) or [Create packages with Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md).
+The MSBuild `msbuild -t:pack` command is functionally equivalent to `dotnet pack`. To build with MSBuild, see [Create a NuGet package using MSBuild](creating-a-package-msbuild.md).
 
-> [!IMPORTANT]
-> This topic applies to [SDK-style](../resources/check-project-format.md) projects, typically .NET Core and .NET Standard projects.
+> [!NOTE]
+> To create and publish packages for non-SDK-style projects, typically .NET Framework projects, see [Create a package using the nuget.exe CLI](create-package.md) or [Create and publish a package using Visual Studio (.NET Framework)](create-and-publish-a-package-using-visual-studio-net-framework.md).
 
 ## Set properties
 
@@ -73,14 +74,13 @@ For details on declaring dependencies and specifying version numbers, see [Packa
 
 ## Run the pack command
 
-To build a NuGet package (a `.nupkg` file) from the project, run the `dotnet pack` command, which also builds the project automatically:
+To build the NuGet package or *.nupkg* file, run the `dotnet pack` command from the project folder, which also builds the project automatically.
 
 ```dotnetcli
-# Uses the project file in the current folder by default
 dotnet pack
 ```
 
-The output shows the path to the `.nupkg` file.
+The output shows the path to the *.nupkg* file:
 
 ```output
 Microsoft (R) Build Engine version 15.5.180.51428 for .NET Core
@@ -113,9 +113,11 @@ You can test installations manually in Visual Studio or on the command line usin
 > [!IMPORTANT]
 > Packages are immutable. If you correct a problem, change the contents of the package and pack again, when you retest you will still be using the old version of the package until you [clear your global packages](../consume-packages/managing-the-global-packages-and-cache-folders.md#clearing-local-folders) folder. This is especially relevant when testing packages that don't use a unique prerelease label on every build.
 
-## Next Steps
+## Next steps
 
-Once you've created a package, which is a `.nupkg` file, you can publish it to the gallery of your choice as described on [Publishing a Package](../nuget-org/publish-a-package.md).
+Once you create the package, you can publish the *.nupkg* file to the host of your choice.
+
+[Publish a package](../nuget-org/publish-a-package.md).
 
 You might also want to extend the capabilities of your package or otherwise support other scenarios as described in the following topics:
 
