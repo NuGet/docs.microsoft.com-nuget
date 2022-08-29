@@ -23,7 +23,7 @@ You can use an existing .NET Class Library project for the code you want to pack
 
 1. Create a folder named *AppLogger*.
 1. Open a command prompt and switch to the *AppLogger* folder. All the dotnet CLI commands in this quickstart run on the current folder by default.
-1. Enter `dotnet new classlib`, which uses the current folder name for the project.
+1. Enter `dotnet new classlib`, which creates a project with the current folder name.
 
 For more information, see [dotnet new](/dotnet/core/tools/dotnet-new).
 
