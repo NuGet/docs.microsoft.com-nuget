@@ -21,7 +21,7 @@ Package Restore first installs the direct dependencies of a project as needed, t
 
 If a needed package isn't already installed, NuGet first attempts to retrieve it from the [NuGet cache](../consume-packages/managing-the-global-packages-and-cache-folders.md). If the package isn't in the cache, NuGet tries to download it from all sources configured in Visual Studio at **Tools** > **Options** > **NuGet Package Manager** > **Package Sources**.
 
-During restore, NuGet ignores the order of package sources, and uses the package from the first source that responds to requests. NuGet doesn't indicate a restore failure until after it checks all sources. NuGet then reports a failure for only the last source in the list. The error implies that the package wasn't present on any of the sources, even though it doesn't list the other failures individually.
+During restore, NuGet ignores the order of package sources, and uses the package from the first source that responds to requests. If restore fails, NuGet doesn't indicate the failure until after it checks all sources. NuGet then reports a failure for only the last source in the list. The error implies that the package wasn't present on any of the sources, even though it doesn't list the other failures individually.
 
 For more information about NuGet behavior, see [Common NuGet configurations](Configuring-NuGet-Behavior.md).
 
@@ -43,9 +43,7 @@ After a successful restore:
 
 If the package references in your project file or your *packages.config* file are incorrect and don't match your desired state, install or update the correct packages instead of using Package Restore.
 
-If you have missing packages or package-related errors after you run Package Restore, such as error icons in Solution Explorer, follow the instructions in [Troubleshooting Package Restore errors](package-restore-troubleshooting.md), or [reinstall or update](../consume-packages/reinstalling-and-updating-packages.md) the packages.
-
-In Visual Studio, the Package Manager Console provides several options for reinstalling packages. For more information, see [Use Package-Update](reinstalling-and-updating-packages.md#using-update-package).
+If you have missing packages or package-related errors after you run Package Restore, such as error icons in Solution Explorer, follow the instructions in [Troubleshooting Package Restore errors](package-restore-troubleshooting.md), or [reinstall or update](../consume-packages/reinstalling-and-updating-packages.md) the packages. In Visual Studio, the Package Manager Console provides several options for reinstalling packages. For more information, see [Use Package-Update](reinstalling-and-updating-packages.md#using-update-package).
 
 <a name="restore-using-visual-studio"></a>
 ## Restore packages in Visual Studio
@@ -96,7 +94,7 @@ For non-SDK-style projects, you must select **Allow NuGet to download missing pa
 <a name="choose-default-package-management-format"></a>
 #### Choose the default package management format
 
-NuGet has two package management formats, [PackageReference](Package-References-in-Project-Files.md) and [packages.config](../reference/packages-config.md). Select the format from the dropdown list under **Package Management**. You can also select whether to allow format selection on first package install.
+NuGet has two package management formats, [PackageReference](Package-References-in-Project-Files.md) and [packages.config](../reference/packages-config.md). Select the format you want to use from the dropdown list under **Package Management**. You can also select whether to allow format selection on first package install.
 
 > [!Note]
 > - If a project doesn't support both package management formats, NuGet uses the package management format that's compatible with the project, which might not be the default you set in the options. NuGet then won't prompt for selection on first install, even if you selected that option.
@@ -107,7 +105,7 @@ NuGet has two package management formats, [PackageReference](Package-References-
 <a name="restore-packages-manually-using-visual-studio"></a>
 ### Restore packages manually or automatically
 
-After you enable package restore in **Options**, you can right-click the solution in **Solution Explorer** and select **Restore NuGet Packages** to restore packages manually.
+After you enable package restore in **Options**, you can right-click the solution in **Solution Explorer** and select **Restore NuGet Packages** to restore packages anytime.
 
 If you enabled automatic restore in **Options**, Package Restore happens automatically when you create a project from a template or build a project. For NuGet 4.0+, restore also happens automatically when you make changes to a SDK-style project.
 
