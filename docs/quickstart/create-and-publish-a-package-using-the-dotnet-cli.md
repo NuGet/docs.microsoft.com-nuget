@@ -34,14 +34,14 @@ Every NuGet package has a manifest that describes the package's contents and dep
 Open the *.csproj*, *.fproj*, or *.vbproj* project file, and add the following properties inside the existing `<PropertyGroup>` tag. Use your own values for name and company, and replace the package identifier with a unique value.
 
 ```xml
-<PackageId>8-28-22-001-test</PackageId>
+<PackageId>Contoso.08.28.22.001.Test</PackageId>
 <Version>1.0.0</Version>
 <Authors>your_name</Authors>
 <Company>your_company</Company>
 ```
 
 > [!Important]
-> The package identifier must be unique across nuget.org or other host. Publishing makes the package publicly visible, so if you use the example AppLogger library or other test library, use a unique name that includes `sample` or `test`.
+> The package identifier must be unique across nuget.org or other host. Publishing makes the package publicly visible, so if you use the example AppLogger library or other test library, use a unique name that includes `Sample` or `Test`.
 
 You can add any optional properties described in [NuGet metadata properties](/dotnet/core/tools/csproj#nuget-metadata-properties).
 
@@ -63,7 +63,7 @@ MSBuild version 17.3.0+92e077650 for .NET
   Determining projects to restore...
   Restored C:\Users\myname\source\repos\AppLogger\AppLogger.csproj (in 64 ms).
   AppLogger -> C:\Users\myname\source\repos\AppLogger\bin\Debug\net6.0\AppLogger.dll
-  Successfully created package 'C:\Users\myname\source\repos\AppLogger\bin\Debug\8-28-22-001-test.1.0.0.nupkg'.
+  Successfully created package 'C:\Users\myname\source\repos\AppLogger\bin\Debug\Contoso.08.28.22.001.Test.1.0.0.nupkg'.
   ```
 
 ### Automatically generate package on build
