@@ -107,16 +107,14 @@ After you enable package restore in **Options**, you can right-click the solutio
 
 If you enabled automatic restore in **Options**, Package Restore happens automatically when you create a project from a template or build a project. For NuGet 4.0+, restore also happens automatically when you make changes to a SDK-style project.
 
-In Visual Studio **Solution Explorer**, you can see `<PackageReference>` references under **Dependencies** > **Packages**. If one or more packages don't install properly when you manually restore or run a build, it displays an error icon in **Solution Explorer**. Right-click the project, select **Manage NuGet Packages**, and use the **NuGet Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md).
+For projects that use `<PackageReference>`, you can see the package references in Visual Studio **Solution Explorer** under **Dependencies** > **Packages**. Packages that don't install properly when you manually restore or run a build display error icons in **Solution Explorer**. Right-click the project, select **Manage NuGet Packages**, and use the **NuGet Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md).
 
 If you see the error **This project references NuGet package(s) that are missing on this computer**, or **One or more NuGet packages need to be restored but couldn't be because consent has not been granted**, make sure you enabled automatic restore. For older projects, see [Migrate to automatic package restore](#migrate-to-automatic-package-restore-visual-studio). Also see [Troubleshooting package restore errors](Package-restore-troubleshooting.md).
 
 <a name="restore-using-the-dotnet-cli"></a>
 ## Restore by using the dotnet CLI
 
-!!!USE INCLUDE TEXT from PR 2852!!!
-
-<!--[!INCLUDE [restore-dotnet-cli](includes/restore-dotnet-cli.md)]-->
+[!INCLUDE [restore-dotnet-cli](includes/restore-dotnet-cli.md)]
 
 > [!IMPORTANT]
 > To add a missing package reference to the project file, use [dotnet add package](/dotnet/core/tools/dotnet-add-package), which also runs `restore`.
@@ -124,9 +122,7 @@ If you see the error **This project references NuGet package(s) that are missing
 <a name="restore-using-the-nugetexe-cli"></a>
 ## Restore by using the NuGet CLI
 
-!!!USE INCLUDE TEXT from PR 2852!!!
-
-<!--[!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]-->
+[!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
 
 <a name="restore-using-msbuild"></a>
 ## Restore by using MSBuild
