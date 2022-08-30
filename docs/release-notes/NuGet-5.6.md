@@ -1,8 +1,8 @@
 ---
 title: NuGet 5.6 Release Notes
 description: Release notes for NuGet 5.6 including new features, bug fixes, and DCRs.
-author: chgill-msft
-ms.author: chgill
+author: nkolev92
+ms.author: nikolev
 ms.date: 05/19/2020
 ms.topic: conceptual
 ---
