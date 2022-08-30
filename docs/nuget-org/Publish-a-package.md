@@ -24,7 +24,7 @@ Once you have an account, you can publish a package to nuget.org by using the nu
 
 ### Upload to the nuget.org web portal
 
-To upload a package on the nuget.org website:
+To upload a package to the nuget.org website:
 
 1. Select **Upload** on the top menu at nuget.org, browse to the package on your computer, and select **Open**.
 
@@ -34,7 +34,7 @@ To upload a package on the nuget.org website:
 
 1. If the package name is available, the **Verify** section opens so you can review the metadata from the package manifest. If you included a [readme file](../nuget-org/package-readme-on-nuget-org.md) in your package, select  **Preview** to make sure all content renders properly.
 
-   To change any of the metadata, edit your project file or `.nuspec` file, rebuild, repack, and upload again.
+   To change any of the metadata, edit your project file or *.nuspec* file, rebuild, repack, and upload again.
 
 1. When all the information is ready, select **Submit**.
 
@@ -76,7 +76,7 @@ Use include from PR https://github.com/NuGet/docs.microsoft.com-nuget/pull/2862
 
 ### Publish with Azure Pipelines
 
-You can push packages to nuget.org with Azure Pipelines as part of your continuous integration/continuous deployment (CI/CD) process. For more information, see [Publish NuGet packages with Azure Pipelines](/devops/pipelines/artifacts/nuget).
+You can push packages to nuget.org with Azure Pipelines as part of your continuous integration/continuous deployment (CI/CD) process. For more information, see [Publish NuGet packages with Azure Pipelines](/azure/devops/pipelines/artifacts/nuget).
 
 ### Publish a signed package
 
@@ -94,6 +94,7 @@ Package validation and indexing usually take less than 15 minutes. If package pu
 
 To see package status, select **Manage packages** under your account name at upper right on nuget.org, and select the package from **Published Packages** or **Unlisted Packages**.
 
+<a name="managing-package-owners-on-nugetorg"></a>
 ## Manage package owners on nuget.org
 
 Package owners have full permissions for the package, including adding and removing other owners and publishing updates.
@@ -113,7 +114,7 @@ To change ownership of a package:
 
      This action sends an email to the new co-owner with a confirmation link. Once confirmed, that person has full permissions to add and remove owners. Until confirmed, the **Current owners** section shows pending approval for that person.
 
-To transfer ownership, as when ownership changes or a package publishes under the wrong account, add the new owner. Once they confirm ownership, they can remove you from the list.
+To transfer ownership, as when ownership changes or a package publishes under the wrong account, add the new owner. Once they confirm ownership, they can remove the old owner from the list.
 
 To assign ownership to a company or group, create a nuget.org account with an email alias that forwards to the appropriate team members. For example, various Microsoft ASP.NET packages are co-owned by the [microsoft](https://nuget.org/profiles/microsoft) and [aspnet](https://nuget.org/profiles/aspnet) accounts.
 
