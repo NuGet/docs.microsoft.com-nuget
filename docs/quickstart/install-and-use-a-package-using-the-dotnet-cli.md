@@ -11,7 +11,7 @@ ms.topic: quickstart
 
 NuGet packages contain compiled binary code that developers make available for other developers to use in their projects. For more information, see [What is NuGet](../What-is-NuGet.md). This quickstart describes how to install the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) NuGet package into a .NET project by using the [dotnet add package](/dotnet/core/tools/dotnet-add-package) command.
 
-You refer to installed packages in code with a `using <namespace>` directive, where `<namespace>` is the package name. You can then use the package's API in your project.
+You refer to installed packages in code with a `using <namespace>` directive, where `<namespace>` is often the package name. You can then use the package's API in your project.
 
 > [!Tip]
 > Browse [nuget.org/packages](https://nuget.org/packages) to find packages you can reuse in your own applications. You can search directly at [https://nuget.org](https://nuget.org/packages), or find and install packages from within Visual Studio. For more information, see [Find and evaluate NuGet packages for your project](../consume-packages/finding-and-choosing-packages.md).
