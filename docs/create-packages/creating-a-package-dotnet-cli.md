@@ -26,8 +26,8 @@ To create a package, add the following required properties to your project file:
 
 - `PackageId`, the package identifier, must be unique across all targets that host the package. If not specified, the default value is `AssemblyName`.
 - `Version` must be a specific version number in the form `Major.Minor.Patch[-Suffix]` where `-Suffix` identifies [pre-release versions](prerelease-packages.md). If not specified, the default value is `1.0.0`.
-- `Authors` is the author and owner information. If not specified, the default value is `AssemblyName`.
-- `Company` is the company name. If not specified, the default value is `Authors`.
+- `Authors` is the author and owner information. If not specified, the default value is the package ID.
+- `Company` is the company name. If not specified, the default value is the package ID.
 
 In Visual Studio, you can set these values in the project properties. Right-click the project in Solution Explorer, select **Properties**, and then select the **Package** section. You can also set these properties directly in the *.csproj* or other project file.
 
