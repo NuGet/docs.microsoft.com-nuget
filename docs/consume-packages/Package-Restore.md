@@ -9,17 +9,15 @@ ms.topic: conceptual
 
 # Restore packages with NuGet Package Restore
 
-NuGet Package Restore restores all of a project's dependencies that are listed in either a project file or a *packages.config* file. You can restore packages at any time with `nuget restore`, `dotnet restore`, or through Visual Studio. The `dotnet build` and `dotnet run` commands automatically restore packages, and you can configure Visual Studio to restore packages automatically when it builds a project.
+NuGet Package Restore restores all of a project's dependencies that are listed in either a project file or a *packages.config* file. You can restore packages manually with `nuget restore`, `dotnet restore`, `msbuild -t:restore`, or through Visual Studio. The `dotnet build` and `dotnet run` commands automatically restore packages, and you can configure Visual Studio to restore packages automatically when it builds a project.
 
 To promote a cleaner development environment and to reduce repository size, Package Restore makes all of a project's dependencies available without having to store them in source control. To configure your source control repository to exclude package binaries, see [Packages and source control](../consume-packages/packages-and-source-control.md).
 
 ## Package Restore behavior
 
-Package Restore tries to install all package dependencies to the state that matches the `<PackageReference>`s in a project file, such as *.csproj*, or `<package>`s in a *packages.config* file. In Visual Studio **Solution Explorer**, you can see the package references under **Dependencies** > **Packages**.
+Package Restore tries to install all package dependencies to the state that matches the `<PackageReference>`s in a project file, such as *.csproj*, or `<package>`s in a *packages.config* file. Package Restore first installs the direct dependencies of a project as needed, then installs any dependencies of those packages throughout the entire dependency graph.
 
-Package Restore first installs the direct dependencies of a project as needed, then installs any dependencies of those packages throughout the entire dependency graph.
-
-If a needed package isn't already installed, NuGet first attempts to retrieve it from the [NuGet cache](../consume-packages/managing-the-global-packages-and-cache-folders.md). If the package isn't in the cache, NuGet tries to download it from all sources configured in Visual Studio at **Tools** > **Options** > **NuGet Package Manager** > **Package Sources**.
+If a needed package isn't already installed, NuGet first attempts to retrieve it from the local [global packages or HTTP cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). If the package isn't in the local folders, NuGet tries to download it from all sources configured in Visual Studio at **Tools** > **Options** > **NuGet Package Manager** > **Package Sources**.
 
 During restore, NuGet ignores the order of package sources, and uses the package from the first source that responds to requests. If restore fails, NuGet doesn't indicate the failure until after it checks all sources. NuGet then reports a failure for only the last source in the list. The error implies that the package wasn't present on any of the sources, even though it doesn't list the other failures individually.
 
@@ -109,7 +107,7 @@ After you enable package restore in **Options**, you can right-click the solutio
 
 If you enabled automatic restore in **Options**, Package Restore happens automatically when you create a project from a template or build a project. For NuGet 4.0+, restore also happens automatically when you make changes to a SDK-style project.
 
-If one or more packages don't install properly when you manually restore or run a build, **Solution Explorer** shows an error icon. Right-click the project, select **Manage NuGet Packages**, and use the **NuGet Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md).
+In Visual Studio **Solution Explorer**, you can see `<PackageReference>` references under **Dependencies** > **Packages**. If one or more packages don't install properly when you manually restore or run a build, it displays an error icon in **Solution Explorer**. Right-click the project, select **Manage NuGet Packages**, and use the **NuGet Package Manager** to uninstall and reinstall the affected packages. For more information, see [Reinstall and update packages](../consume-packages/reinstalling-and-updating-packages.md).
 
 If you see the error **This project references NuGet package(s) that are missing on this computer**, or **One or more NuGet packages need to be restored but couldn't be because consent has not been granted**, make sure you enabled automatic restore. For older projects, see [Migrate to automatic package restore](#migrate-to-automatic-package-restore-visual-studio). Also see [Troubleshooting package restore errors](Package-restore-troubleshooting.md).
 
@@ -141,7 +139,7 @@ To use MSBuild restore:
 
 1. Open a Developer Command Prompt by searching for *developer command prompt* and starting the prompt from the Windows **Start** menu, which configures all the necessary paths for MSBuild.
 
-1. Switch to the folder containing the project or *packages.config* file, and enter `msbuild -t:restore`.
+1. Switch to the project folder, and enter `msbuild -t:restore`.
 
 1. After the restore completes, enter `msbuild` to rebuild the project. Make sure the MSBuild output indicates that the build completed successfully.
 
