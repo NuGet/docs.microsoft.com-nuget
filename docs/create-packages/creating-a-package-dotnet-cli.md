@@ -54,7 +54,7 @@ You can create a new default project by using the `dotnet new classlib` command.
 </Project>
 ```
 
-You can add optional properties, such as `Title`, `PackageDescription`, and `PackageTags`. You can also surface assets from dependencies directly in the package by using the `<IncludeAssets>` and `<ExcludeAssets>` attributes.
+You can add optional properties, such as `Title`, `PackageDescription`, and `PackageTags`. You can also surface assets from dependencies directly in the package by using the `IncludeAssets` and `ExcludeAssets` attributes.
 
 For more information about declaring dependencies, adding optional properties, and specifying version numbers, see:
 
@@ -107,21 +107,21 @@ Running `dotnet pack` on a solution packs all the projects in the solution that 
 
 ### Test package installation
 
-Before you publish a package, you should test the process of installing the package into a project. Testing ensures that the necessary files end up in their correct places in the project.
+Before you publish a package, you should test installing the package into a project. Testing ensures that the necessary files end up in their correct places in the project.
 
 Test the installation manually in Visual Studio or on the command line by using the normal [package installation process](../consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package).
 
 > [!IMPORTANT]
-> You can't change packages once created. If you correct a problem, change the package contents and repack.
+> - You can't change packages once created. If you correct a problem, change the package contents and repack.
 > 
-> After you recreate the package, retesting still uses the old version of the package until you [clear your global packages folder](../consume-packages/managing-the-global-packages-and-cache-folders.md#clearing-local-folders). Clearing the folder is especially important for packages that don't use a unique prerelease label on every build.
+> - After you recreate the package, retesting still uses the old version of the package until you [clear your global packages folder](../consume-packages/managing-the-global-packages-and-cache-folders.md#clearing-local-folders). Clearing the folder is especially important for packages that don't use a unique prerelease label on every build.
 
 ## Next steps
 
 Once you create the package, you can publish the *.nupkg* file to the host of your choice.
 
 > [!div class="nextstepaction"]
-> [Publish a package](../nuget-org/publish-a-package.md).
+> [Publish a package](../nuget-org/publish-a-package.md)
 
 See the following articles for ways to extend the capabilities of your package or support other scenarios:
 
