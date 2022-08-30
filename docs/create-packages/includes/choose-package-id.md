@@ -12,10 +12,10 @@ Follow these best practices to set the package version:
 
 - In general, set the package version to *match the project or assembly version*, although this isn't strictly required. Matching the version is simple when you limit a package to a single assembly. NuGet itself deals with package versions when resolving dependencies, not assembly versions.
 
-- If you use a non-standard version scheme, be sure to consider the NuGet versioning rules as explained in [Package versioning](../../concepts/package-versioning.md). NuGet is mostly [Semantic Versioning 2.0.0](../../concepts/package-versioning.md#semantic-versioning-200)-compliant.
+- If you use a non-standard version scheme, be sure to consider the *NuGet versioning rules* as explained in [Package versioning](../../concepts/package-versioning.md). NuGet is mostly [Semantic Versioning 2.0.0](../../concepts/package-versioning.md#semantic-versioning-200)-compliant.
 
 >[!NOTE]
-> For more information about dependency resolution, see [Dependency resolution with PackageReference](../../concepts/dependency-resolution.md#dependency-resolution-with-packagereference). For older information that might help you understand versioning, see this series of blog posts:
+> For more information about dependency resolution, see [Dependency resolution with PackageReference](../../concepts/dependency-resolution.md#dependency-resolution-with-packagereference). For information that might help you understand versioning, see this series of blog posts:
 >
 > - [Part 1: Taking on DLL Hell](https://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
 > - [Part 2: The core algorithm](https://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)
