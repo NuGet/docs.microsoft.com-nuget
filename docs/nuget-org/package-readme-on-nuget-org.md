@@ -49,8 +49,8 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * api.travis-ci.com
 * api.travis-ci.org
 * api.reuse.software
-* app.fossa.io
 * app.fossa.com
+* app.fossa.io
 * badge.fury.io
 * badgen.net
 * badges.gitter.im
