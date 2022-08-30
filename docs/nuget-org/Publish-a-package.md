@@ -46,14 +46,11 @@ To use either command line, you first need to get an API key from nuget.org.
 
 #### Create an API key
 
-<!--[!INCLUDE [publish-api-key](../quickstart/includes/publish-api-key.md)]-->
-
-Use include from PR https://github.com/NuGet/docs.microsoft.com-nuget/pull/2862
+[!INCLUDE [publish-api-key](../quickstart/includes/publish-api-key.md)]
 
 #### Use the dotnet CLI
 
-Use include from PR https://github.com/NuGet/docs.microsoft.com-nuget/pull/2862
-<!--[!INCLUDE [publish-dotnet](../quickstart/includes/publish-dotnet.md)]-->
+[!INCLUDE [publish-dotnet](../quickstart/includes/publish-dotnet.md)]
 
 #### Use the NuGet CLI
 
