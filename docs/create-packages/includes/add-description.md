@@ -1,6 +1,6 @@
-The package's optional description appears on the **README** tab on the package's nuget.org page. The description pulls from the `<Description>` in the project file or the `$description` in the [.nuspec file](../../reference/nuspec.md).
+The package's optional description appears on the **README** tab of the package's nuget.org page. The description pulls from the `<Description>` in the project file or the `$description` in the [.nuspec file](../../reference/nuspec.md).
 
-The following example `Description` is in the *.csproj* file for a .NET package:
+The following example shows a `Description` in the *.csproj* file for a .NET package:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
