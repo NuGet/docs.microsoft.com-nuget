@@ -14,9 +14,9 @@ f1_keywords:
 
 # Install and manage packages in Visual Studio using the NuGet Package Manager
 
-The NuGet Package Manager UI in Visual Studio on Windows allows you to install, uninstall, and update NuGet packages in projects and solutions. The NuGet Package Manager isn't included with Visual Studio Code.
+The NuGet Package Manager UI in Microsoft Visual Studio for Windows allows you to easily install, uninstall, and update NuGet packages in projects and solutions.
 
-The article is for Windows users only. If you're using Visual Studio for Mac, see [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json). 
+The article is for Windows users only. If you're using Visual Studio for Mac, see [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json).
 
 ## Prerequisites
 
@@ -24,31 +24,35 @@ The article is for Windows users only. If you're using Visual Studio for Mac, se
 
   You can install the 2022 Community edition for free from [visualstudio.microsoft.com](https://visualstudio.microsoft.com/), or use the Professional or Enterprise edition.
 
-  Visual Studio 2017 and higher automatically includes NuGet Package Manager  when a .NET-related workload is installed. Install it individually by selecting the **Individual components** > **Code tools** > **NuGet package manager** option in the Visual Studio installer.
+  Visual Studio 2017 and higher automatically includes NuGet Package Manager  when a .NET-related workload is installed. To install it individually in Visual Studio Installer, select the **Individual components** tab, and then select **NuGet package manager** under **Code tools** .
 
-  If you're missing the NuGet Package Manager in Visual Studio 2015, check **Tools** > **Extensions and Updates** and search for the *NuGet Package Manager* extension. If you're unable to use the extensions installer in Visual Studio, download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
+  For Visual Studio 2015, if you're missing the NuGet Package Manager, check **Tools** > **Extensions and Updates** and search for the *NuGet Package Manager* extension. If you're unable to use the extensions installer in Visual Studio, download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 
 - [Register for a free account on nuget.org](../nuget-org/individual-accounts.md#add-a-new-individual-account) if you don't have one already. You must register and confirm the account before you can upload a NuGet package.
 
 ## Find and install a package
 
+To find and install a NuGet package with Visual Studio, follow these steps:
+
 1. Load a project in **Solution Explorer**, and then select **Project** > **Manage NuGet Packages**.
 
    The **Nuget Package Manager** window opens.
 
-1. Select the **Browse** tab to display packages by popularity from the currently selected source (see [package sources](#package-sources)). To search for a specific package, use the search box on the upper left. Select a package from the list to display its information on the right pane, which enables you to select a version to install.
+1. Select the **Browse** tab to display packages by popularity from the currently selected source (see [Package sources](#package-sources)). To search for a specific package, use the search box on the upper left. Select a package from the list to display its information on the right pane, which enables you to select a version to install.
 
     :::image type="content" source="media/package-manager-install-tab.png" alt-text="Screenshot showing the NuGet Package Manager window with the Browse tab selected.":::
 
-1. In the right pane, select the desired **Version** from the dropdown list. Select **Include prerelease** to include prerelease versions in the search, and make them available in the version dropdown list.
+1. In the right pane, select a **Version** from the dropdown list. If you want to include prerelease versions in the **Version** list, select **Include prerelease**.
 
 1. To install the NuGet package, select **Install**. You might be asked to accept license terms or prompted to verify the installation.
 
-   Visual Studio installs the package and its dependencies into the project. When installation is complete, the added packages appear on the **Installed** tab. Packages are also listed in the **Dependencies** > **Packages** node of your project in **Solution Explorer**, indicating that you can refer to each package in the project with a `using` statement.
+   Visual Studio installs the package and its dependencies in the project. When installation is complete, the added packages appear on the **Installed** tab. You can also find packages in the **Dependencies** > **Packages** node of your project in **Solution Explorer**. After you install a package, you can refer to it in the project with a `using` statement.
 
 1. (Optional) NuGet has two formats in which a project can use packages: [PackageReference](package-references-in-project-files.md) and [packages.config](../reference/packages-config.md). To set the default format, select **Tools** > **Options**, expand **NuGet Package Manager**, select **General**, and then choose the **Default package management format**. For more information, see [Choose default package management format](package-restore.md#choose-default-package-management-format).
 
 ## Uninstall a package
+
+To uninstall a NuGet package, follow these steps:
 
 1. With your project loaded in **Solution Explorer**, select **Manage NuGet Packages** and select the **Installed** tab.
 
@@ -58,15 +62,17 @@ The article is for Windows users only. If you're using Visual Studio for Mac, se
 
 ## Update a package
 
-1. With your project loaded in **Solution Explorer**, select **Manage NuGet Packages**. (For website projects, right-click the **Bin** folder.)
+To update a NuGet package, follow these steps:
+
+1. With your project loaded in **Solution Explorer**, select **Manage NuGet Packages**. For website projects, select the **Bin** folder first.
 
 1. Select the **Updates** tab to see packages that have available updates from the selected **Package source**. Select **Include prerelease** to include prerelease packages in the update list.
 
-1. Select the package to update, select the desired **Version** from the dropdown list on the right pane, and then select **Update**.
+1. Select the package to update. On the right pane, select the desired **Version** from the dropdown list, and then select **Update**.
 
     ![Screenshot showing the NuGet Package Manager with a package selected and its Update button highlighted.](media/update-package.png)
 
-1. For some packages, the **Update** button is disabled and the following message appears: *Implicitly referenced by an SDK. To update the package, update the SDK to which it belongs.* This message indicates that the package is part of a larger framework or SDK and can't be updated independently. Such packages are internally marked with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`. For example, `Microsoft.NETCore.App` is part of the .NET Core SDK, and the package version is different than the version of the runtime framework used by the application. To get a new version of the ASP.NET Core and .NET Core runtime, [update your .NET Core installation](https://aka.ms/dotnet-download). For more information, see [.NET Core metapackages and versioning](/dotnet/core/packages). This scenario applies to the following commonly used packages:
+1. For some packages, the **Update** button is disabled and the following message appears: *Implicitly referenced by an SDK. To update the package, update the SDK to which it belongs.* This message indicates that the package is part of a larger framework or SDK and can't be updated independently. Such packages are internally marked with `<IsImplicitlyDefined>True</IsImplicitlyDefined>`. For example, `Microsoft.NETCore.App` is part of the .NET Core SDK, and the package version is different than the version of the runtime framework used by the application. To download a new version of the .NET Core, [update your .NET Core installation](https://aka.ms/dotnet-download). For more information, see [.NET Core metapackages and versioning](/dotnet/core/packages). This scenario applies to the following commonly used packages:
    - Microsoft.AspNetCore.All
    - Microsoft.AspNetCore.App
    - Microsoft.NETCore.App
@@ -76,13 +82,13 @@ The article is for Windows users only. If you're using Visual Studio for Mac, se
 
 1. To update multiple packages to their latest versions, choose them in the NuGet package list, and then select **Update**.
 
-1. You can also update an individual package from the **Installed** tab. For this case, the details for the package include a **Version** selector, subject to the **Include prerelease** option, and an **Update** button.
+1. You can also update an individual package from the **Installed** tab. For this case, you can also select a **Version** and the **Include prerelease** option.
 
 ## Manage packages for the solution
 
 Managing packages for a solution is a convenient means to work with multiple projects simultaneously:
 
-1. Select the solution in **Solution Manager**, and then select **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
+1. Select a solution in **Solution Manager**, and then select **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
 
 1. In the **Manage NuGet Packages for Solution** window, select the projects that are affected by the operations.
 
@@ -90,29 +96,29 @@ Managing packages for a solution is a convenient means to work with multiple pro
 
 ### Consolidate tab
 
-Developers typically consider it bad practice to use different versions of the same NuGet package across different projects in the same solution. When you choose to manage packages for a solution, use the **Consolidate** tab of the **NuGet Package Manager** window to discover where packages with distinct version numbers are used by different projects in the solution.
+Developers typically consider it bad practice to use different versions of the same NuGet package across different projects in the same solution. Visual Studio allows you to use a common version for your NuGet packages. To do so, use the **Consolidate** tab of the **NuGet Package Manager** window to discover where packages with distinct version numbers are used by different projects in the solution.
 
 ![Screenshot showing the Manage Packages for Solution window with the Consolidate tab selected.](media/consolidate-tab.png)
 
-In this example, the ClassLibrary1 project is using EntityFramework 6.2.0, whereas ConsoleApp1 is using EntityFramework 6.1.0. To consolidate package versions, do the following steps:
+In this example, the ClassLibrary1 project is using EntityFramework 6.2.0, whereas ConsoleApp1 is using EntityFramework 6.1.0. To consolidate package versions, follow these steps:
 
 1. From the **Consolidate** tab, select the projects to update in the project list.
 
-1. Select the version to use for all those projects in the **Version** control. For example, **EntityFramework v6.2.0**.
+1. Select the version to use for all these projects in the **Version** list.
 
 1. Select **Install**.
 
-   The NuGet Package Manager installs the selected package version into all selected projects, after which the package no longer appears on the **Consolidate** tab.
+   The NuGet Package Manager installs the selected package version into all the selected projects, after which the package no longer appears on the **Consolidate** tab.
 
 ## Package sources
 
-To manage NuGet package sources:
+To manage NuGet package sources, follow these steps:
 
 1. To change the source from which Visual Studio obtains packages, select a source from the **Package source** selector.
 
    ![Screenshot showing the Package source selector highlighted.](media/package-source-selector.png)
 
-1. To change the package source options, select the **Settings** icon in the NuGet Package Manager or use the **Tools > Options** command.
+1. To change the package source options, select the **Settings** icon or select **Tools** > **Options**.
 
     ![Screenshot showing the Package source settings icon highlighted.](media/package-source-settings.png)
 
@@ -130,9 +136,9 @@ To manage NuGet package sources:
 
 1. To remove a package source, select it, and then select the **X** button.
 
-   If a package source reappears after you delete it, it might be because it's listed in a computer-level or user-level *NuGet.config* file. For the location of these files, see [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md). Remove the package source in the files by editing them manually or using the [nuget sources command](../reference/nuget-exe-CLI-reference.md).
+   If a package source reappears after you delete it, it might be listed in a computer-level or user-level *NuGet.config* file. For the location of these files, see [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md). Remove the package source in the files by editing them manually or using the [nuget sources command](../reference/nuget-exe-CLI-reference.md).
 
-Using the up and down arrow buttons doesn't change the priority order of the package sources. Visual Studio ignores the order of package sources, and uses the package from whichever source is the first to respond to a request. For more information, see [Package restore](../consume-packages/package-restore.md).
+Using the up and down arrow buttons doesn't change the priority order of the package sources. Visual Studio ignores the order of package sources, and uses the package from whichever source is the first to respond to a request. For more information, see [Restore packages](../consume-packages/package-restore.md).
 
 ## NuGet Package Manager Options control
 
@@ -173,3 +179,18 @@ These options are available only for certain project types:
 - **Remove dependencies**: When selected, removes any dependent packages if they're not referenced elsewhere in the project.
 
 - **Force uninstall even if there are dependencies on it**: When selected, uninstalls a package even if it's still being referenced in the project. This option is typically used in combination with **Remove dependencies** to remove a package and whatever dependencies it installed. Using this option may, however, lead to broken references in the project. In such a case, you might need to [reinstall those other packages](../consume-packages/reinstalling-and-updating-packages.md).
+
+## Related video
+
+- [Install and Use a NuGet Package with Visual Studio](/shows/nuget-101/install-and-use-a-nuget-package-with-visual-studio-2-of-5/player)
+- Find more NuGet videos on [Channel 9](/shows/nuget-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+
+## See also
+
+For more information about NuGet, see the following articles:
+
+- [What is NuGet?](../what-is-nuget.md)
+- [Package consumption workflow](../consume-packages/overview-and-workflow.md)
+- [Find and choose packages](../consume-packages/finding-and-choosing-packages.md)
+- [Package references in project files](../consume-packages/package-references-in-project-files.md)
+- [Install and use a package using the .NET CLI](install-and-use-a-package-using-the-dotnet-cli.md).
