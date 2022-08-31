@@ -18,54 +18,50 @@ This topic applies only to .NET and other projects that use the [SDK-style forma
 The MSBuild `msbuild -t:pack` command is functionally equivalent to `dotnet pack`. To build with MSBuild, see [Create a NuGet package using MSBuild](creating-a-package-msbuild.md).
 
 > [!NOTE]
-> To create and publish packages for non-SDK-style projects, typically .NET Framework projects, see [Create a package using the nuget.exe CLI](Creating-a-Package.md) or [Create and publish a package using Visual Studio (.NET Framework)](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md).
+> - To create and publish packages for non-SDK-style projects, typically .NET Framework projects, see [Create a package using the nuget.exe CLI](Creating-a-Package.md) or [Create and publish a package using Visual Studio (.NET Framework)](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md).
+> 
+> - For projects migrated from *packages.config* to [PackageReference](../consume-packages/package-references-in-project-files.md), use `msbuild -t:pack`. For more information, see [Create a package after migration](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
 ## Set properties
 
-To create a package, add the following required properties to your project file:
+You can create an example class library project by using the `dotnet new classlib` command. To create a NuGet package, add a `<PackageId>` tag to your project file. This package identifier must be unique across nuget.org and any other targets that host the package. If you don't specify a value, the `pack` command uses the `AssemblyName`.
 
-- `PackageId`, the package identifier, must be unique across all targets that host the package. If not specified, the default value is `AssemblyName`.
-- `Version` must be a specific version number in the form `Major.Minor.Patch[-Suffix]` where `-Suffix` identifies [pre-release versions](prerelease-packages.md). If not specified, the default value is `1.0.0`.
-- `Authors` is the author and owner information. If not specified, the default value is the package ID.
-- `Company` is the company name. If not specified, the default value is the package ID.
+The `pack` command also uses the following properties. If you don't supply values in the project file, the command uses default values.
 
-In Visual Studio, you can set these values in the project properties. Right-click the project in Solution Explorer, select **Properties**, and then select the **Package** section. You can also set these properties directly in the *.csproj* or other project file.
+- `Version` is a specific version number in the form `Major.Minor.Patch[-Suffix]`, where `-Suffix` identifies [prerelease versions](prerelease-packages.md). If not specified, the default value is `1.0.0`.
+- `Authors` are the authors of the package. If not specified, the default value is the `AssemblyName`.
+- `Company` is company information. If not specified, the default value is the `Authors` value.
+- `Product` is product information. If not specified, the default value is the `AssemblyName`.
 
-```xml
-<PropertyGroup>
-  <PackageId>Unique.Name</PackageId>
-  <Version>1.0.0</Version>
-  <Authors>your_name</Authors>
-  <Company>your_company</Company>
-</PropertyGroup>
-```
+In Visual Studio, you can set these values in the project properties. Right-click the project in **Solution Explorer**, select **Properties**, and then select the **Package** section. You can also add the properties directly to the *.csproj* or other project file.
 
-You can create a new default project by using the `dotnet new classlib` command. The following example shows the project file with the required package properties added.
+The following example shows a project file with package properties added.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>AppLogger</PackageId>
+    <PackageId>UniqueName</PackageId>
     <Version>1.0.0</Version>
-    <Authors>your_name</Authors>
-    <Company>your_company</Company>
+    <Authors>My Name</Authors>
+    <Company>Contoso</Company>
   </PropertyGroup>
 </Project>
 ```
 
-You can add optional properties, such as `Title`, `PackageDescription`, and `PackageTags`. You can also surface assets from dependencies directly in the package by using the `IncludeAssets` and `ExcludeAssets` attributes.
+You can add other optional properties, such as `Title`, `PackageDescription`, and `PackageTags`.
 
-For more information about declaring dependencies, adding optional properties, and specifying version numbers, see:
+>[!NOTE]
+> For packages you build for public consumption, pay special attention to the `PackageTags` property. Tags help others find your package and understand what it does.
+
+The `dotnet pack` command automatically converts `PackageReference`s  in your project files to dependencies in the created package. You can control which assets to include through the `IncludeAssets` and `ExcludeAssets` tags. For more information, see [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+
+For more information about dependencies, optional properties, and versioning, see:
 
 - [Package references in project files](../consume-packages/package-references-in-project-files.md)
 - [Package versioning](../concepts/package-versioning.md)
 - [NuGet metadata properties](/dotnet/core/tools/csproj#nuget-metadata-properties)
-- [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets)
 - [MSBuild pack targets](../reference/msbuild-targets.md#pack-target)
-
->[!NOTE]
-> For packages you build for public consumption, pay special attention to the `PackageTags` property. Tags help others find your package and understand what it does.
 
 ### Choose a unique package identifier and set the version number
 
@@ -77,7 +73,7 @@ For more information about declaring dependencies, adding optional properties, a
 
 ## Run the pack command
 
-To build the NuGet package or *.nupkg* file, run the [dotnet pack]() command from the project folder, which also builds the project automatically.
+To build the NuGet package or *.nupkg* file, run the [dotnet pack](/dotnet/core/tools/dotnet-pack) command from the project folder, which also builds the project automatically.
 
 ```dotnetcli
 dotnet pack
