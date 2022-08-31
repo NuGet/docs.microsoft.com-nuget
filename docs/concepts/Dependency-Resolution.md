@@ -17,19 +17,20 @@ When multiple packages have the same dependency, then the same package ID can ap
 
 ## Dependency resolution with PackageReference
 
-When installing packages into projects using the PackageReference format, NuGet adds references to a flat package graph in the appropriate file and resolves conflicts ahead of time. This process is referred to as *transitive restore*. Reinstalling or restoring packages is then a process of downloading the packages listed in the graph, resulting in faster and more predictable builds. You can also take advantage of floating versions, such as 2.8.\*,  to avoid modifying the project to use the latest version of a package.
+When installing packages into projects using the PackageReference format, NuGet adds references to a flat package graph in the appropriate file and resolves conflicts ahead of time. This process is referred to as *transitive restore*. Reinstalling or restoring packages is then a process of downloading the packages listed in the graph, resulting in faster and more predictable builds.
 
-When the NuGet restore process runs prior to a build, it resolves dependencies first in memory, then writes the resulting graph to a file called `project.assets.json`. It also writes the resolved dependencies to a lock file named `packages.lock.json`, if the [lock file functionality is enabled](../consume-packages/package-references-in-project-files.md#locking-dependencies).
-The assets file is located at `MSBuildProjectExtensionsPath`, which defaults to the project's 'obj' folder. 
+You can also take advantage of floating versions, such as 2.8.\*,  to avoid modifying the project to use the latest version of a package. When using floating versions, we recommend enabling the [lock file functionality](../consume-packages/package-references-in-project-files.md#locking-dependencies) to ensure repeatability.
+
+When the NuGet restore process runs prior to a build, it resolves dependencies first in memory, then writes the resulting graph to a file called `project.assets.json`.
+
+The assets file is located at `MSBuildProjectExtensionsPath`, which defaults to the project's 'obj' folder.
 MSBuild then reads this file and translates it into a set of folders where potential references can be found, and then adds them to the project tree in memory.
 
 The `project.assets.json` file is temporary and should not be added to source control. It's listed by default in both `.gitignore` and `.tfignore`. See [Packages and source control](../consume-packages/packages-and-source-control.md).
 
 ### Dependency resolution rules
 
-Transitive restore applies four main rules to resolve dependencies: lowest applicable version, floating versions, nearest-wins, and cousin dependencies.
-
-<a name="lowest-applicable-version"></a>
+Transitive restore applies four main rules to resolve dependencies: [lowest applicable version](#lowest-applicable-version), [floating versions](#floating-versions), [direct-dependency-wins](#direct-dependency-wins), and [cousin dependencies](#cousin-dependencies).
 
 #### Lowest applicable version
 
@@ -37,60 +38,71 @@ The lowest applicable version rule restores the lowest possible version of a pac
 
 In the following figure, for example, 1.0-beta is considered lower than 1.0 so NuGet chooses the 1.0 version:
 
-![Choosing the lowest applicable version](media/projectJson-dependency-1.png)
+![Choosing the lowest applicable version](media/lowest-applicable-version-1.png)
 
 In the next figure, version 2.1 is not available on the feed but because the version constraint is >= 2.1 NuGet picks the next lowest version it can find, in this case 2.2:
 
-![Choosing the next lowest version available on the feed](media/projectJson-dependency-2.png)
+![Choosing the next lowest version available on the feed](media/lowest-applicable-version-2.png)
 
 When an application specifies an exact version number, such as 1.2, that is not available on the feed, NuGet fails with an error when attempting to install or restore the package:
 
-![NuGet generates an error when an exact package version is not available](media/projectJson-dependency-3.png)
-
-<a name="floating-versions"></a>
+![NuGet generates an error when an exact package version is not available](media/lowest-applicable-version-3.png)
 
 #### Floating versions
 
 A floating dependency version is specified with the \* character. For example, `6.0.*`. This version specification says "use the latest 6.0.x version"; `4.*` means "use the latest 4.x version." Using a floating version reduces changes to the project file, while keeping up to date with the latest version of a dependency.
+Floating versions can only be specified at the project level.
 
 When using a floating version, NuGet resolves the highest version of a package that matches the version pattern, for example `6.0.*` gets the highest version of a package that starts with 6.0:
 
-![Choosing version 6.0.1 when a floating version 6.0.* is requested](media/projectJson-dependency-4.png)
+![Choosing version 6.0.1 when a floating version 6.0.* is requested](media/floating-versions-1.png)
 
 > [!Note]
 > For information on the behavior of floating versions and pre-release versions, see [Package versioning](package-versioning.md#version-ranges).
 
+#### Direct dependency wins
 
-<a name="nearest-wins"></a>
+When the package graph for an application contains different versions of a package in the same subgraph, and one of those versions is a direct dependency in that subgraph, that version would be chosen for that subgraph and the rest will be ignored.
+This behavior allows an application to override any particular package version in the dependency graph.
 
-#### Nearest wins
+In the example below, the application depends directly on Package B with a version constraint of >=2.0. The application also depends on Package A which in turn also depends on Package B, but with a >=1.0 constraint. Because the dependency on Package B 2.0 is direct dependency to the application in the graph, that version is used:
 
-When the package graph for an application contains different versions of the same package, NuGet chooses the package that's closest to the application in the graph and ignores all others. This behavior allows an application to override any particular package version in the dependency graph.
-
-In the example below, the application depends directly on Package B with a version constraint of >=2.0. The application also depends on Package A which in turn also depends on Package B, but with a >=1.0 constraint. Because the dependency on Package B 2.0 is nearer to the application in the graph, that version is used:
-
-![Application using the Nearest Wins rule](media/projectJson-dependency-5.png)
+![Application using the Direct dependency wins rule](media/direct-dependency-1.png)
 
 >[!Warning]
-> The Nearest Wins rule can result in a downgrade of the package version, thus potentially breaking other dependencies in the graph. Hence this rule is applied with a warning to alert the user.
+> The Direct dependency wins rule can result in a downgrade of the package version, thus potentially breaking other dependencies in the graph. When a package is downgraded, NuGet adds a [warning to alert the user](..\reference\errors-and-warnings\NU1605.md).
 
-This rule also results in greater efficiency with a large dependency graph (such as those with the BCL packages) because once a given dependency is ignored, NuGet also ignores all remaining dependencies on that branch of the graph. In the diagram below, for example, because Package C 2.0 is used, NuGet ignores any branches in the graph that refer to an older version of Package C:
+This rule also results in greater efficiency with a large dependency graph.
+When a closer dependency in the same subgraph has a higher version than a further one, when NuGet ignores that dependency, NuGet also ignores all remaining dependencies on that branch of the graph.
 
-![When NuGet ignores a package in the graph, it ignores that entire branch](media/projectJson-dependency-6.png)
+In the diagram below, for example, because Package C 2.0 is used, NuGet ignores any branches in that subgraph that refer to an older version of Package C:
 
-<a name="cousin-dependencies"></a>
+![When NuGet ignores a package in the graph, it ignores that entire branch](media/direct-dependency-2.png)
+
+Through this rule, NuGet tries to honor the intent of the package author.
+In the diagram below, the author of Package A has explicitly downgraded to Package C 1.0.0 from Package B 2.0.0.
+
+![When a package author explicitly downgrades, NuGet honors that.](media/direct-dependency-3.png)
+
+The application owner can choose to upgrade Package C to a version higher than 2.0.0, thus no further downgrading the version for Package C. In this case, no warning is raised.
+
+![When an application honor adds a direct dependency for a downgraded package, NuGet honors that.](media/direct-dependency-4.png)
 
 #### Cousin dependencies
 
-When different package versions are referred to at the same distance in the graph from the application, NuGet uses the lowest version that satisfies all version requirements (as with the [lowest applicable version](#lowest-applicable-version) and [floating versions](#floating-versions) rules). In the image below, for example, version 2.0 of Package B satisfies the other >=1.0 constraint, and is thus used:
+When different package versions are referred in different subgraphs in the graph from the application, NuGet uses the lowest version that satisfies all version requirements (as with the [lowest applicable version](#lowest-applicable-version) and [floating versions](#floating-versions) rules). In the image below, for example, version 2.0 of Package B satisfies the other >=1.0 constraint, and is thus used:
 
-![Resolving cousin dependencies using the lower version that satisfies all constraints](media/projectJson-dependency-7.png)
+![Resolving cousin dependencies using the lower version that satisfies all constraints](media/cousin-dependencies-1.png)
+
+Note that the packages do not need to be on the same distance for the cousin dependencies rule to apply. In the diagram below, Package D 2.0.0 is chosen in the Package C subgraph and Package D 3.0.0 is chosen in the subgraph of Package A. In the Application subgraph, there is no direct dependency to Package D, so the the [lowest applicable version](#lowest-applicable-version) rule is applied and version 3.0.0 is chosen.
+
+![Resolving cousin dependencies using the lower version that satisfies all constraints at different distances](media/cousin-dependencies-2.png)
 
 In some cases, it's not possible to meet all version requirements. As shown below, if Package A requires exactly Package B 1.0 and Package C requires Package B >=2.0, then NuGet cannot resolve the dependencies and gives an error.
 
-![Unresolvable dependencies due to an exact version requirement](media/projectJson-dependency-8.png)
+![Unresolvable dependencies due to an exact version requirement](media/cousin-dependencies-3.png)
 
-In these situations, the top-level consumer (the application or package) should add its own direct dependency on Package B so that the [Nearest Wins](#nearest-wins) rule applies.
+In these situations, the top-level consumer (the application or package) should add its own direct dependency on Package B so that the [Direct dependency wins](#direct-dependency-wins) rule applies.
 
 ## Dependency resolution with packages.config
 
