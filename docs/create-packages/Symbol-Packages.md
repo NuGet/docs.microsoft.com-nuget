@@ -14,9 +14,7 @@ ms.reviewer: anangaur
 > The new recommended format for symbol packages is .snupkg. See [Creating symbol packages (.snupkg)](Symbol-Packages-snupkg.md). </br>
 > .symbols.nupkg is still supported but only for compatibility reasons.
 
-In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages that can be published to symbol servers. The legacy symbol package format, .symbols.nupkg, can be pushed to the SymbolSource repository.
-
-Package consumers can then add `https://nuget.smbsrc.net` to their symbol sources in Visual Studio, which allows stepping into package code in the Visual Studio debugger. See [Specify symbol (.pdb) and source files in the Visual Studio debugger](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger) for details on that process.
+In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages that can be published to symbol servers. 
 
 ## Creating a legacy symbol package
 
@@ -98,41 +96,6 @@ A legacy symbol package can be built by conventions, from a folder structure as 
 </files>
 ```
 
-## Publishing a legacy symbol package
-
-> [!Important]
-> To push packages to nuget.org you must use [nuget.exe v4.9.1 or above](https://www.nuget.org/downloads), which implements the required [NuGet protocols](../api/nuget-protocols.md).
-
-1. For convenience, first save your API key with NuGet (see [publish a package](../nuget-org/publish-a-package.md), which will apply to both nuget.org and symbolsource.org, because symbolsource.org will check with nuget.org to verify that you are the package owner.
-
-    ```cli
-    nuget SetApiKey Your-API-Key
-    ```
-
-2. After publishing your primary package to nuget.org, push the legacy symbol package as follows, which will automatically use symbolsource.org as the target because of the `.symbols` in the filename:
-
-    ```cli
-    nuget push MyPackage.symbols.nupkg
-    ```
-
-3. To publish to a different symbol repository, or to push a legacy symbol package that doesn't follow the naming convention, use the `-Source` option:
-
-    ```cli
-    nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
-    ```
-
-4. You can also push both primary and symbol packages to both repositories at the same time using the following:
-
-    ```cli
-    nuget push MyPackage.nupkg
-    ```
-
-   > [!Note]
-   > With nuget.exe 4.5.0 or above, the symbols packages are not automatically pushed to symbolsource.org. You would need to push the symbols packages separately as explained in the earlier steps.
-   
-In this case, NuGet will publish `MyPackage.symbols.nupkg`, if present, to https://nuget.smbsrc.net/ (the push URL for symbolsource.org), after it publishes the primary package to nuget.org.
-
 ## See also
 
 * [Creating symbol packages (.snupkg)](Symbol-Packages-snupkg.md) - The new recommended format for symbol packages
-* [Moving to the new SymbolSource engine](https://tripleemcoder.com/2015/10/04/moving-to-the-new-symbolsource-engine/) (symbolsource.org)
