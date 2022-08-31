@@ -18,7 +18,7 @@ You can also make private packages available to only a team or organization by h
 
 To publish on nuget.org, sign in to nuget.org with a Microsoft account, and use it to create a free nuget.org account. Follow the instructions at [Add a new individual account](individual-accounts.md#add-a-new-individual-account).
 
-![Screenshot that shows the NuGet sign in link.](media/publish_NuGetSignIn.png)
+![Screenshot that shows the NuGet sign in link.](media/publish-nuget-signin.png)
 
 Once you have an account, you can publish a package to nuget.org by using the nuget.org web portal, the dotnet CLI, or the NuGet CLI version 4.1.0 or above. You can also publish packages through Azure Pipelines.
 
@@ -28,7 +28,7 @@ To upload a package to the nuget.org website:
 
 1. Select **Upload** on the top menu at nuget.org, browse to the package on your computer, and select **Open**.
 
-   ![Screenshot that shows the Upload dialog on nuget.org](media/publish_UploadYourPackage.PNG)
+   ![Screenshot that shows the Upload dialog on nuget.org](media/publish-upload-package.png)
 
    If the package ID already exists on nuget.org, you get an error. Change the package identifier in your project, repack, and try the upload again.
 
