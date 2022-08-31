@@ -15,7 +15,7 @@ This article describes how to create a package by using the [dotnet CLI](). Star
 
 This topic applies only to .NET and other projects that use the [SDK-style format](../resources/check-project-format.md). For these projects, NuGet uses information from the project file to create a package. For quickstart tutorials, see [Create packages with the dotnet CLI](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) or [Create packages with Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md).
 
-The MSBuild [msbuild -t:pack](creating-a-package-msbuild.md#run-the-msbuild--tpack-command) command is functionally equivalent to `dotnet pack`. For more information about creating a package with MSBuild, see [Create a NuGet package using MSBuild](creating-a-package-msbuild.md).
+The MSBuild [msbuild -t:pack](creating-a-package-msbuild.md#run-the-msbuild--tpack-command) command is functionally equivalent to [dotnet pack](/dotnet/core/tools/dotnet-pack). For more information about creating a package with MSBuild, see [Create a NuGet package using MSBuild](creating-a-package-msbuild.md).
 
 > [!NOTE]
 > - To create and publish packages for non-SDK-style projects, typically .NET Framework projects, see [Create a package using the nuget.exe CLI](Creating-a-Package.md) or [Create and publish a package using Visual Studio (.NET Framework)](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md).
@@ -24,10 +24,9 @@ The MSBuild [msbuild -t:pack](creating-a-package-msbuild.md#run-the-msbuild--tpa
 
 ## Set properties
 
-You can create an example class library project by using the `dotnet new classlib` command. To create a NuGet package, add a `<PackageId>` tag to your project file. This package identifier must be unique across nuget.org and any other targets that host the package. If you don't specify a value, the `pack` command uses the `AssemblyName`.
+You can create an example class library project by using the `dotnet new classlib` command, and package the project by using `dotnet pack`. The `dotnet pack` command uses the following properties. If you don't specify values in the project file, the command uses default values.
 
-The `pack` command also uses the following properties. If you don't supply values in the project file, the command uses default values.
-
+- `PackageId`, the package identifier, must be unique across nuget.org and any other targets that host the package. If you don't specify a value, the command uses the `AssemblyName`.
 - `Version` is a specific version number in the form `Major.Minor.Patch[-Suffix]`, where `-Suffix` identifies [prerelease versions](prerelease-packages.md). If not specified, the default value is `1.0.0`.
 - `Authors` are the authors of the package. If not specified, the default value is the `AssemblyName`.
 - `Company` is company information. If not specified, the default value is the `Authors` value.
