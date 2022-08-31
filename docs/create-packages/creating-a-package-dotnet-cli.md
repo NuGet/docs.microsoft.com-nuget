@@ -15,7 +15,7 @@ This article describes how to create a package by using the [dotnet CLI](). Star
 
 This topic applies only to .NET and other projects that use the [SDK-style format](../resources/check-project-format.md). For these projects, NuGet uses information from the project file to create a package. For quickstart tutorials, see [Create packages with the dotnet CLI](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) or [Create packages with Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md).
 
-The MSBuild `msbuild -t:pack` command is functionally equivalent to `dotnet pack`. To build with MSBuild, see [Create a NuGet package using MSBuild](creating-a-package-msbuild.md).
+The MSBuild [msbuild -t:pack](creating-a-package-msbuild.md#run-the-msbuild--tpack-command) command is functionally equivalent to `dotnet pack`. For more information about creating a package with MSBuild, see [Create a NuGet package using MSBuild](creating-a-package-msbuild.md).
 
 > [!NOTE]
 > - To create and publish packages for non-SDK-style projects, typically .NET Framework projects, see [Create a package using the nuget.exe CLI](Creating-a-Package.md) or [Create and publish a package using Visual Studio (.NET Framework)](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md).
@@ -41,10 +41,11 @@ The following example shows a project file with package properties added.
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>UniqueName</PackageId>
+    <PackageId>UniqueID</PackageId>
     <Version>1.0.0</Version>
-    <Authors>My Name</Authors>
-    <Company>Contoso</Company>
+    <Authors>Author Name</Authors>
+    <Company>Company Name</Company>
+    <Product>Product Name</Product>
   </PropertyGroup>
 </Project>
 ```
