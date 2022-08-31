@@ -54,7 +54,7 @@ You can add other optional properties, such as `Title`, `PackageDescription`, an
 >[!NOTE]
 > For packages you build for public consumption, pay special attention to the `PackageTags` property. Tags help others find your package and understand what it does.
 
-The `dotnet pack` command automatically converts `PackageReference`s  in your project files to dependencies in the created package. You can control which assets to include through the `IncludeAssets` and `ExcludeAssets` tags. For more information, see [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+The `dotnet pack` command automatically converts `PackageReference`s  in your project files to dependencies in the created package. You can control which assets to include through the `IncludeAssets`, `ExcludeAssets` and `PrivateAssets` tags. For more information, see [Controlling dependency assets](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
 
 For more information about dependencies, optional properties, and versioning, see:
 
