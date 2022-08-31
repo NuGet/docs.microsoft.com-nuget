@@ -1,22 +1,24 @@
-1. [Sign into your nuget.org account](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) or create an account if you don't have one already.
+1. [Sign into your nuget.org account](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) or [create an account](../../nuget-org/individual-accounts.md#add-a-new-individual-account) if you don't have one already.
 
-   For more information about creating your account, see [Individual accounts on NuGet.org](../../nuget-org/individual-accounts.md).
+1. Select your user name at upper right, and then select **API Keys**.
 
-1. Select your user name on the upper right of the page, and then select **API Keys** from the drop-down menu.
+1. Select **Create**, and provide a name for your key.
 
-1. Expand **Create** and enter a **Key Name** for your key.
+1. Under **Select Scopes**, select **Push**.
 
-1. Under **Select Scopes**, select **Push**, and then enter _*_ for **Glob Pattern**.
+1. Under **Select Packages** > **Glob Pattern**, enter \*.
 
-1. Select **Create** to create the key.
+1. Select **Create**.
 
-1. After the key is created, select **Copy** to retrieve the access key you need in the CLI.
+1. Select **Copy** to copy the new key.
 
-    :::image type="content" source="../media/qs-create-api-key.png" alt-text="Screenshot showing a NuGet API key with the Copy button highlighted.":::
+   ![Screenshot that shows the new API key with the Copy link.](../media/qs-create-api-key.png)
 
-> [!WARNING]
-> **Always keep your API key a secret**. Treat your API key as a password that allows anyone to manage packages on your behalf. You should delete or regenerate your API key if it's ever accidentally revealed.
+> [!IMPORTANT]
 >
-> Because you can't copy your key again later, be sure to save it in a secure location. If you return to the API key page, regenerate the key to copy it. You can remove the API key if you no longer want to push packages.
+> - Always keep your API key a secret. The API key is like a password that allows anyone to manage packages on your behalf. Delete or regenerate your API key if it's accidentally revealed.
+> - Save your key in a secure location, because you can't copy the key again later. If you return to the API key page, you need to regenerate the key to copy it. You can also remove the API key if you no longer want to push packages.
 
-Scoping allows you to create separate API keys for different purposes. Each key has an expiration timeframe and can be scoped to specific packages (or glob patterns). Each key is also scoped to specific operations: push new packages and package versions, push only new package versions, or unlist packages. Through scoping, you can create API keys for different people who manage packages for your organization such that they have only the permissions they need. For more information, see [Scoped API keys](../../nuget-org/scoped-api-keys.md).
+*Scoping* lets you create separate API keys for different purposes. Each key has an expiration timeframe, and you can scope the key to specific packages or glob patterns. You also scope each key to specific operations: Push new packages and package versions, push only new package versions, or unlist.
+
+Through scoping, you can create API keys for different people who manage packages for your organization so they have only the permissions they need. For more information, see [scoped API keys](../../nuget-org/scoped-api-keys.md).

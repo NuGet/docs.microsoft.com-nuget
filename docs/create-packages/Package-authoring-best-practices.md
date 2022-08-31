@@ -1,8 +1,8 @@
 ---
 title: Package authoring best practices
 description: A general guide of best practices for creating high quality NuGet packages.
-author: chgill-MSFT
-ms.author: chgill
+author: nkolev92
+ms.author: nikolev
 ms.date: 11/15/2021
 ms.topic: conceptual
 ---
