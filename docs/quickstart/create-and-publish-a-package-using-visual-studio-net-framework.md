@@ -11,8 +11,6 @@ ms.topic: quickstart
 
 With Microsoft Visual Studio, you can create a NuGet package from a .NET Framework class library, and then publish it to nuget.org using the NuGet CLI tool.
 
-However, unless you have a reason to choose otherwise, .NET Standard is the preferred target for NuGet packages, as it provides compatibility with the widest range of consuming projects. For more information, see [Create and publish a package using Visual Studio (.NET Standard)](create-and-publish-a-package-using-visual-studio.md).
-
 The quickstart is for Windows users only. If you're using Visual Studio for Mac, see [dotnet CLI tools](create-and-publish-a-package-using-the-dotnet-cli.md) instead.
 
 ## Prerequisites
@@ -29,7 +27,7 @@ The quickstart is for Windows users only. If you're using Visual Studio for Mac,
 
 ## Create a class library project
 
-You can use an existing .NET Standard Class Library project for the code you want to package, or create one as follows:
+To create a class library project, follow these steps:
 
 1. In Visual Studio, select **File** > **New** > **Project**.
 
@@ -60,7 +58,7 @@ You can use an existing .NET Standard Class Library project for the code you wan
 
 ## Configure project properties for the package
 
-A NuGet package is a manifest in a *.nuspec* file that contains relevant metadata, such as the package identifier, version number, and description. Some of this metadata can be drawn from the project properties directly, which avoids having to separately update them in both the project and the manifest. The following steps describe how to set the applicable properties:
+A NuGet package includes a manifest (a `.nuspec` file), that contains relevant metadata such as the package identifier, version number, description, and more. Some of this metadata can be drawn from the project properties directly, which avoids having to separately update them in both the project and the manifest. The following steps describe how to set the applicable properties:
 
 1. Select **Project > Properties**, and then select the **Application** tab.
 
@@ -102,8 +100,7 @@ Run `nuget spec` only once to generate the initial manifest. If you update the p
         <authors>Your username</authors>
         <owners>Your username</owners>
         <license type="expression">MIT</license>
-        <projectUrl>http://ENTER_PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-        <iconUrl>http://ENTER_ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+        <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Package description</description>
         <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
@@ -119,7 +116,6 @@ Run `nuget spec` only once to generate the initial manifest. If you update the p
 
     - licenseUrl
     - projectUrl
-    - iconUrl
     - releaseNotes
     - tags
 
@@ -137,11 +133,13 @@ Run `nuget spec` only once to generate the initial manifest. If you update the p
 
 1. Run the following command: `nuget pack`.
 
-   NuGet generates a *.nupkg* file in the form of *identifier-version.nupkg* in the current folder.
+   NuGet generates a *.nupkg* file in the form of *identifier.version.nupkg* in the current folder.
 
 ## Publish the package
 
 After you've created a *.nupkg* file, publish it to nuget.org by using the NuGet CLI with an API key acquired from nuget.org. For nuget.org, you must use `nuget.exe` 4.1.0 or higher.
+
+If you'd like to test and validate your package before publishing it a public gallery, you can upload it to a test environment like [int.nugettest.org](https://int.nugettest.org) instead of nuget.org. Note that packages uploaded to int.nugettest.org may not be preserved.
 
 [!INCLUDE [publish-notes](includes/publish-notes.md)]
 

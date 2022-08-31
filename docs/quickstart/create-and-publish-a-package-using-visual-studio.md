@@ -46,9 +46,6 @@ You can use an existing .NET Standard Class Library project for the code you wan
 
 1. In the **Additional information** window, select **.NET Standard 2.1** (or the latest version) for **Framework**, and then select **Create**.
 
-   > [!TIP]
-   > Unless you have a reason to choose otherwise, .NET Standard is the preferred target for NuGet packages, as it provides compatibility with the widest range of consuming projects. For more information, see [Create and publish a package using Visual Studio (.NET Standard)](create-and-publish-a-package-using-visual-studio.md).
-
 1. To ensure the project was created properly, select **Build** > **Build Solution**. The DLL is found within the Debug folder (or Release if you build that configuration instead).
 
 1. (Optional) For this quickstart, you don't need to write any additional code for the NuGet package because the template class library is sufficient to create a package. However, if you'd like some functional code for the package, include the following code:
