@@ -1,15 +1,15 @@
 ---
-title: "Quickstart: Create and publish a NuGet package using Visual Studio (.NET Standard, Windows only)"
-description: A quickstart that shows how to create and publish a .NET Standard NuGet package using Visual Studio on Windows.
+title: "Quickstart: Create and publish a NuGet package using Visual Studio (Windows only)"
+description: A quickstart that shows how to create and publish a .NET NuGet package using Visual Studio for Windows.
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/29/2022
 ms.topic: quickstart
 ---
 
-# Quickstart: Create and publish a NuGet package using Visual Studio (.NET Standard, Windows only)
+# Quickstart: Create and publish a NuGet package using Visual Studio (Windows only)
 
-With Microsoft Visual Studio, you can create a NuGet package from a .NET Standard class library, and then publish it to nuget.org using a CLI tool.
+With Microsoft Visual Studio, you can create a NuGet package from a .NET class library, and then publish it to nuget.org using a CLI tool.
 
 The quickstart is for Windows users only. If you're using Visual Studio for Mac, see [Create a NuGet package from existing library projects](/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library) or use the [.NET CLI](create-and-publish-a-package-using-the-dotnet-cli.md).
 
@@ -19,11 +19,11 @@ The quickstart is for Windows users only. If you're using Visual Studio for Mac,
 
   You can install the 2022 Community edition for free from [visualstudio.microsoft.com](https://visualstudio.microsoft.com/), or use the Professional or Enterprise edition.
 
-  Visual Studio 2017 and higher automatically includes NuGet capabilities when you install a .NET-related workload.
+  Visual Studio 2017 and later automatically includes NuGet capabilities when you install a .NET-related workload.
 
 - Install the .NET CLI, if it's not already installed.
 
-   For Visual Studio 2017 and later, the .NET CLI is automatically installed with any .NET Core-related workload. Otherwise, install the [.NET Core SDK](https://www.microsoft.com/net/download/) to get the .NET CLI. The .NET CLI is required for .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md) (SDK attribute). The default .NET Standard class library template in Visual Studio 2017 and later uses the SDK attribute.
+   For Visual Studio 2017 and later, the .NET CLI is automatically installed with any .NET Core-related workload. Otherwise, install the [.NET Core SDK](https://www.microsoft.com/net/download/) to get the .NET CLI. The .NET CLI is required for .NET projects that use the [SDK-style format](../resources/check-project-format.md) (SDK attribute). The default .NET class library template in Visual Studio 2017 and later uses the SDK attribute.
 
    > [!IMPORTANT]
    > If you're working with a non-SDK-style project, follow the procedures in [Create and publish a .NET Framework package (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md) instead to create and publish the package. For this article, the .NET CLI is recommended. Although you can publish any NuGet package using the NuGet CLI, some of the steps in this article are specific to SDK-style projects and the .NET CLI. The NuGet CLI is used for [non-SDK-style projects](../resources/check-project-format.md) (typically .NET Framework).
@@ -34,17 +34,19 @@ The quickstart is for Windows users only. If you're using Visual Studio for Mac,
 
 ## Create a class library project
 
-You can use an existing .NET Standard Class Library project for the code you want to package, or create one as follows:
+You can use an existing .NET Class Library project for the code you want to package, or create one as follows:
 
 1. In Visual Studio, select **File** > **New** > **Project**.
 
 1. In the **Create a new project** window, select **C#**, **Windows**, and **Library** in the dropdown lists.
 
-1. In the resulting list of project templates, select **Class Library** (with the description, *A project for creating a class library that targets .NET or .NET standard*), and then select **Next**.
+1. In the resulting list of project templates, select **Class Library** (with the description, *A project for creating a class library that targets .NET or .NET Standard*), and then select **Next**.
 
 1. In the **Configure your new project** window, enter *AppLogger* for the **Project name**, and then select **Next**.
 
-1. In the **Additional information** window, select **.NET Standard 2.1** (or the latest version) for **Framework**, and then select **Create**.
+1. In the **Additional information** window, select an appropriate **Framework**, and then select **Create**.
+
+   If you're unsure which framework to select, the latest is a good choice, and can be easily changed later. For information about which framework to use, see [When to target .NET 5.0 or .NET 6.0 vs. .NET Standard](/dotnet/standard/net-standard#when-to-target-net50-or-net60-vs-netstandard).
 
 1. To ensure the project was created properly, select **Build** > **Build Solution**. The DLL is found within the Debug folder (or Release if you build that configuration instead).
 
@@ -67,11 +69,11 @@ You can use an existing .NET Standard Class Library project for the code you wan
 
 After you've created your project, you can configure the NuGet package properties by following these steps:
 
-1. Select your project in **Solution Explorer**, and then select **Project** > **\<project name> Properties**, where \<project name> is the name of your project. 
+1. Select your project in **Solution Explorer**, and then select **Project** > **\<project name> Properties**, where \<project name> is the name of your project.
 
 1. Expand the **Package** node, and then select **General**.
 
-   The **Package** node appears only for SDK-style projects in Visual Studio, typically .NET Standard or .NET Core class library projects. If you're' targeting a non-SDK style project (typically .NET Framework), either [migrate the project](../consume-packages/migrate-packages-config-to-package-reference.md), or see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) for step-by-step instructions.
+   The **Package** node appears only for SDK-style projects in Visual Studio. If you're' targeting a non-SDK style project (typically .NET Framework), either [migrate the project](../consume-packages/migrate-packages-config-to-package-reference.md), or see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) for step-by-step instructions.
 
     :::image type="content" source="media/qs-create-vs-project-properties.png" alt-text="Screenshot showing NuGet package properties in a Visual Studio project.":::
 
@@ -98,11 +100,11 @@ To create a NuGet package from your project, follow these steps:
 
     Visual Studio builds the project and creates the *.nupkg* file.
 
-1. Examine the **Output** window for details, which contains the path to the package file. In this example, the built assembly is in *bin\Release\netstandard2.1* as befits the .NET Standard 2.1 target:
+1. Examine the **Output** window for details, which contains the path to the package file. In this example, the built assembly is in *bin\Release\net6.0* as befits a .NET 6.0 target:
 
     ```output
     1>------ Build started: Project: AppLogger, Configuration: Release Any CPU ------
-    1>AppLogger -> d:\proj\AppLogger\AppLogger\bin\Release\netstandard2.1\AppLogger.dll
+    1>AppLogger -> d:\proj\AppLogger\AppLogger\bin\Release\net6.0\AppLogger.dll
     1>Successfully created package 'd:\proj\AppLogger\AppLogger\bin\Release\AppLogger.1.0.0.nupkg'.
     ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
     ```
@@ -235,7 +237,7 @@ In this example, the property specifies a file named *readme.txt* in the project
 
 Find more NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
-Congratulations on creating a NuGet package by using a Visual Studio .NET Standard class library. Advance to the next article to learn how to create a NuGet package with the Visual Studio .NET Framework.
+Congratulations on creating a NuGet package by using a Visual Studio .NET class library. Advance to the next article to learn how to create a NuGet package with the Visual Studio .NET Framework.
 
 > [!div class="nextstepaction"]
 > [Create a package using the NuGet CLI](../create-packages/creating-a-package.md)
@@ -248,5 +250,4 @@ To explore more that NuGet has to offer, see the following articles:
 - [Support multiple .NET Framework versions](../create-packages/multiple-target-frameworks-project-file.md)
 - [Package versioning](../concepts/package-versioning.md)
 - [Create localized NuGet packages](../create-packages/creating-localized-packages.md)
-- [.NET Standard overview](/dotnet/articles/standard/library)
 - [Porting to .NET Core from .NET Framework](/dotnet/articles/core/porting/index)
