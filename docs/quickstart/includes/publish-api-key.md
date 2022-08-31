@@ -12,9 +12,10 @@
 
 1. Select **Copy** to copy the new key.
 
-   ![Screenshot that shows the new API key with the Copy link.](../media/QS_Create-02-APIKey.png)
+   ![Screenshot that shows the new API key with the Copy link.](../media/qs-create-api-key.png)
 
-> [!Important]
+> [!IMPORTANT]
+>
 > - Always keep your API key a secret. The API key is like a password that allows anyone to manage packages on your behalf. Delete or regenerate your API key if it's accidentally revealed.
 > - Save your key in a secure location, because you can't copy the key again later. If you return to the API key page, you need to regenerate the key to copy it. You can also remove the API key if you no longer want to push packages.
 
