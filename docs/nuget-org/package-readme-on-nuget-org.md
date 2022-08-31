@@ -1,8 +1,8 @@
 ---
 title: Package readme on NuGet.org
 description: Detailed explanation of how readme files on NuGet.org are rendered and what to do when you run into issues.
-author: clairernovotny
-ms.author: cnov
+author: nkolev92
+ms.author: nikolev
 ms.date: 08/31/2022
 ms.topic: conceptual
 ms.reviewer: anangaur
