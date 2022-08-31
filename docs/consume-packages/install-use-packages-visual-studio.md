@@ -190,7 +190,7 @@ These options are available only for certain project types:
 For more information about NuGet, see the following articles:
 
 - [What is NuGet?](../what-is-nuget.md)
-- [Package consumption workflow](../consume-packages/overview-and-workflow.md)
-- [Find and choose packages](../consume-packages/finding-and-choosing-packages.md)
-- [Package references in project files](../consume-packages/package-references-in-project-files.md)
-- [Install and use a package using the .NET CLI](install-and-use-a-package-using-the-dotnet-cli.md).
+- [Package consumption workflow](overview-and-workflow.md)
+- [Find and choose packages](finding-and-choosing-packages.md)
+- [Package references in project files](package-references-in-project-files.md)
+- [Install and use a package using the .NET CLI](../quickstart/install-and-use-a-package-using-the-dotnet-cli.md).
