@@ -36,7 +36,7 @@ To find and install a NuGet package with Visual Studio, follow these steps:
 
 1. Load a project in **Solution Explorer**, and then select **Project** > **Manage NuGet Packages**.
 
-   The **Nuget Package Manager** window opens.
+   The **NuGet Package Manager** window opens.
 
 1. Select the **Browse** tab to display packages by popularity from the currently selected source (see [Package sources](#package-sources)). To search for a specific package, use the search box on the upper left. Select a package from the list to display its information on the right pane, which enables you to select a version to install.
 
@@ -54,9 +54,9 @@ To find and install a NuGet package with Visual Studio, follow these steps:
 
 To uninstall a NuGet package, follow these steps:
 
-1. With your project loaded in **Solution Explorer**, select **Manage NuGet Packages** and select the **Installed** tab.
+1. Load a project in **Solution Explorer**, select **Project** > **Manage NuGet Packages**, and then select the **Installed** tab.
 
-1. Select the package to uninstall in the left pane (use the **Search** box to find it, if necessary) and select **Uninstall** from the right pane.
+1. Select the package to uninstall in the left pane (use the **Search** box to find it, if necessary), and then select **Uninstall** from the right pane.
 
     ![Screenshot showing the NuGet Package Manager with a package selected and its Uninstall button highlighted.](media/uninstall-package.png)
 
@@ -64,7 +64,7 @@ To uninstall a NuGet package, follow these steps:
 
 To update a NuGet package, follow these steps:
 
-1. With your project loaded in **Solution Explorer**, select **Manage NuGet Packages**. For website projects, select the **Bin** folder first.
+1. Load a project in **Solution Explorer**, and then select **Project** > **Manage NuGet Packages**. For website projects, select the **Bin** folder first.
 
 1. Select the **Updates** tab to see packages that have available updates from the selected **Package source**. Select **Include prerelease** to include prerelease packages in the update list.
 
@@ -112,13 +112,15 @@ In this example, the ClassLibrary1 project is using EntityFramework 6.2.0, where
 
 ## Package sources
 
+Visual Studio ignores the order of package sources, and uses the package from whichever source is the first to respond to a request. For more information, see [Restore packages](package-restore.md). For information about how to load a package from a specific source, see [Package source mapping](package-source-mapping.md).
+
 To manage NuGet package sources, follow these steps:
 
-1. To change the source from which Visual Studio obtains packages, select a source from the **Package source** selector.
+1. To change the source from which Visual Studio loads package metadata, select a source from the **Package source** selector.
 
    ![Screenshot showing the Package source selector highlighted.](media/package-source-selector.png)
 
-1. To change the package source options, select the **Settings** icon or select **Tools** > **Options**.
+1. To manage your package sources, select the **Settings** icon or select **Tools** > **Options**.
 
     ![Screenshot showing the Package source settings icon highlighted.](media/package-source-settings.png)
 
@@ -137,8 +139,6 @@ To manage NuGet package sources, follow these steps:
 1. To remove a package source, select it, and then select the **X** button.
 
    If a package source reappears after you delete it, it might be listed in a computer-level or user-level *NuGet.config* file. For the location of these files, see [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md). Remove the package source in the files by editing them manually or using the [nuget sources command](../reference/nuget-exe-CLI-reference.md).
-
-Using the up and down arrow buttons doesn't change the priority order of the package sources. Visual Studio ignores the order of package sources, and uses the package from whichever source is the first to respond to a request. For more information, see [Restore packages](../consume-packages/package-restore.md).
 
 ## NuGet Package Manager Options control
 
