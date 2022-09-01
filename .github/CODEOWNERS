@@ -7,6 +7,7 @@
 # @NuGet/core-team owns any file in the `/docs/nuget-org/` directory
 # in the root of your repository and any of its subdirectories.
 /docs/nuget-org/ @NuGet/nuget-client @NuGet/nuget-pm @NuGet/gallery-team
+/docs/api/ @NuGet/nuget-client @NuGet/nuget-pm @NuGet/gallery-team
 
 # @NuGet/core-team owns any file in the `/docs/policies/` directory
 # in the root of your repository and any of its subdirectories.
