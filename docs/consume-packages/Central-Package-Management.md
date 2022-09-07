@@ -176,6 +176,28 @@ If you'd like to disable central package management for any a particular project
 </PropertyGroup>
 ```
 
+## Global Package References
+> [!Note]
+> This feature is only available in Visual Studio 2022 17.4 or higher, .NET SDK 7.0.100.preview7 or higher, and NuGet 6.4 or higher.
+
+A global package reference is used to specify that a package will be used by every project in a repository. This includes packages that do versioning, extend your build, or do any other package that is needed by all projects. Global package references are added to the PackageReference item group with the following metadata:
+
+* `IncludeAssets="Runtime;Build;Native;contentFiles;Analyzers"`<br/>
+  This ensures that the package is only used as a development dependency and prevents any compile-time assembly references.
+* `PrivateAssets="All"`<br/>
+  This prevents global package references from being picked up by downstream dependencies.
+
+
+`GlobalPackageReference` items should be placed in your `Directory.Packages.props`:
+
+```xml
+<Project>
+  <ItemGroup>
+    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.5.109" />
+  </ItemGroup>
+</Project>
+```
+
 ## Warning when using multiple package sources
 
 When using central package management, you will see a `NU1507` warning if you have more than one package source defined in your configuration. To resolve
@@ -185,7 +207,9 @@ this warning, map your package sources with [package source mapping](https://aka
 There are 3 package sources defined in your configuration. When using central package management, please map your package sources with package source mapping (https://aka.ms/nuget-package-source-mapping) or specify a single package source.
 ```
 
+
+
 > [!Note]
-> This feature is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
+> Central package management is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
 >
 > * There is currently no support in Visual Studio or the .NET CLI for Central Package Management.
