@@ -73,9 +73,9 @@ In the example below, the application depends directly on Package B with a versi
 > The Direct dependency wins rule can result in a downgrade of the package version, thus potentially breaking other dependencies in the graph. When a package is downgraded, NuGet adds a [warning to alert the user](..\reference\errors-and-warnings\NU1605.md).
 
 This rule also results in greater efficiency with a large dependency graph.
-When a closer dependency in the same subgraph has a higher version than a further one, when NuGet ignores that dependency, NuGet also ignores all remaining dependencies on that branch of the graph.
+When a closer dependency in the same subgraph has a higher version than a further one, then NuGet ignores that dependency, NuGet also ignores all remaining dependencies on that branch of the graph.
 
-In the diagram below, for example, because Package C 2.0 is used, NuGet ignores any branches in that subgraph that refer to an older version of Package C:
+In the diagram below, for example, because Package C 2.0 is used, NuGet ignores any branches in that subgraph that refer to an earlier version of Package C:
 
 ![When NuGet ignores a package in the graph, it ignores that entire branch](media/direct-dependency-2.png)
 
