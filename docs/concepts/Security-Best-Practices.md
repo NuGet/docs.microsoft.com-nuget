@@ -175,7 +175,7 @@ To learn more about reproducible builds, see [Producing Packages with Source Lin
 
 **📦🖊 Package Author**
 
-Enabling two-factor authentication (2FA) can add an extra layer of security when [logging into your GitHub account](https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa) or the [NuGet.org public package repository](../nuget-org/individual-accounts.md#enable-two-factor-authentication-2fa). It is recommended that you enable two-factor authentication to protect your account.
+Every account on nuget.org has 2FA enabled. This adds an extra layer of security when [logging into your GitHub account](https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa) or the [NuGet.org public package repository](../nuget-org/individual-accounts.md#enable-two-factor-authentication-2fa).
 
 ### Package ID prefix reservation 
 
