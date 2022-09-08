@@ -188,7 +188,7 @@ A global package reference is used to specify that a package will be used by eve
   This prevents global package references from being picked up by downstream dependencies.
 
 
-`GlobalPackageReference` items should be placed in your `Directory.Packages.props`:
+`GlobalPackageReference` items should be placed in your `Directory.Packages.props` to be used by every project in a repository:
 
 ```xml
 <Project>
