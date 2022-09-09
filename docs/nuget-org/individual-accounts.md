@@ -31,6 +31,18 @@ To create a NuGet.org account, you need to have a personal Microsoft account (MS
 
    ![Giving permissions to NuGet.org](media/nuget-org-permissions.png)
 
+1. Follow two-factor authentication (2FA) setup steps, choose either text or e-mail as a second form of authentication.
+
+   Verify the phone number or e-mail that is already associated with your Microsoft account. You may need to enter a new phone number or e-mail for your account. If so, enter the required information as instructed, and click **Next**.
+
+   ![Enable 2FA and enter phone](media/nuget-org-sign-in-2fa.png)
+
+1. Check your device or e-mail account, and enter the code that you were just sent.
+
+   ![Enable 2FA and enter code](media/nuget-org-enter-code-2fa.png)
+
+1. Follow any additional instructions to complete Two-factor authentication.
+
 1. You will be redirected to *nuget.org*, and asked to register a username.
 
 1. Specify the username in the input box. Please note that the username **is** case sensitive and cannot be changed or renamed later.
@@ -41,32 +53,11 @@ To create a NuGet.org account, you need to have a personal Microsoft account (MS
 
 You now have a NuGet.org account. You can perform account management on the [account settings](https://www.nuget.org/account) page.
 
-## Enable two-factor authentication (2FA)
+> [!Note]
+> Two-factor authentication, or 2FA, is an extra layer of security used when logging into websites or apps. With 2FA, you have to log in with your Microsoft Account (MSA) and provide another form of authentication that only you know or have access to.
 
-Two-factor authentication, or 2FA, is an extra layer of security used when logging into websites or apps. With 2FA, you have to log in with your Microsoft Account (MSA) and provide another form of authentication that only you know or have access to. To better protect your account, enable two-factor authentication (recommended).
-
-1. When logged into your account, open your profile and choose **Enable** under **Login Account**.
-
-   ![Enable 2FA](media/nuget-org-register-2fa.png)
-
-   You will see a message that tells you that the next time you sign in to *nuget.org*, you will be asked for additional credentials.
-
-2. To complete the authentication at this time, sign out and then sign in again.
-
-3. When you sign in, choose either text or e-mail as a second form of authentication.
-
-   Verify the phone number or e-mail that is already associated with your Microsoft account. You may need to enter a new phone number or e-mail for your account. If so, enter the required information as instructed, and click **Next**.
-
-   ![Enable 2FA and enter phone](media/nuget-org-sign-in-2fa.png)
-
-4. Check your device or e-mail account, and enter the code that you were just sent.
-
-   ![Enable 2FA and enter code](media/nuget-org-enter-code-2fa.png)
-
-5. Follow any additional instructions to complete Two-factor authentication.
-
-> [!Tip]
-> Enabling 2FA for your NuGet.org account does not impact authentication settings for other accounts or services that may be linked to the Microsoft account you use to login to NuGet.org.
+> [!Note]
+> 2FA for your NuGet.org account does not impact authentication settings for other accounts or services that may be linked to the Microsoft account you use to login to NuGet.org.
 
 ## Delete a NuGet.org account
 

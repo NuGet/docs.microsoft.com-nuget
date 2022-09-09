@@ -104,10 +104,9 @@ sections:
     questions:
       - question: How to recover NuGet.org password login?
         answer: |
-          Please note that the [NuGet.org Password login has been discontinued](https://blog.nuget.org/20180515/NuGet.org-will-only-support-MSA-AAD-starting-June.html). The only way to log in to NuGet.org is with a personal Microsoft account (MSA) or Azure Active Directory (AAD) account. 
-          [Forgot password has been disabled](https://www.nuget.org/account/ForgotPassword), and NuGet.org has no way to recover password accounts. 
+          Please note that the [NuGet.org Password login has been discontinued](https://blog.nuget.org/20180515/NuGet.org-will-only-support-MSA-AAD-starting-June.html). Unfortunately, NuGet.org has no way to recover password accounts, you can only log in to NuGet.org with a personal Microsoft account (MSA) or Azure Active Directory (AAD) account. 
           
-          If you want to transfer the ownership of packages on your previous account, please follow our [dispute resolution process](https://docs.microsoft.com/en-us/nuget/nuget-org/policies/dispute-resolution).
+          If you want to transfer the ownership of your packages from your previous account, please follow our [dispute resolution process](https://docs.microsoft.com/en-us/nuget/nuget-org/policies/dispute-resolution).
 
           If you are unable to use Microsoft login, [please follow the steps to recover your NuGet.org account](#unable-to-use-microsoft-login--how-do-i-recover-my-nuget-org-account)
       
