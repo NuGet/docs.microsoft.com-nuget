@@ -175,11 +175,7 @@ sections:
       - question: How do I find which Microsoft account is linked to this NuGet.org account?
         answer: |
           You should use the [sign in assistance](#which-microsoft-account-is-linked-to-my-nuget-org-account) flow to figure out which Microsoft account is linked to the NuGet.org account with the email address `account1@outlook.com`.
-          
-      - question: I want to override that account with my Microsoft account
-        answer: |
-          Follow the steps in [Unable to use microsoft login, how do I recover my NuGet.org account](#unable-to-use-microsoft-login--how-do-i-recover-my-nuget-org-account) section to associate your Microsoft account with the existing NuGet.org account.
-          
+
       - question: Unable to use microsoft login, how do I recover my NuGet.org account?
         answer: |
           If you tried using the [sign in assistance](#which-microsoft-account-is-linked-to-my-nuget-org-account) and you do not have access to the Microsoft account that is associated with your NuGet.org account, please contact your Microsoft account support:
