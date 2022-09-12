@@ -185,7 +185,7 @@ sections:
 
       - question: How to transform my NuGet.org account to an organization?
         answer: |
-          If you want to transform your account to an organization, please follow the steps given in the documentation for [organizations on nuget org](organizations-on-nuget-org.md).
+          If you want to transform your account to an organization, please follow the steps given in the documentation for [organizations on nuget.org](organizations-on-nuget-org.md).
           
       - question: NuGet.org login issues for AAD accounts with unmanaged tenant?
         answer: |
