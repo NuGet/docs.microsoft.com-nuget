@@ -176,7 +176,7 @@ sections:
         answer: |
           You should use the [sign in assistance](#which-microsoft-account-is-linked-to-my-nuget-org-account) flow to figure out which Microsoft account is linked to the NuGet.org account with the email address `account1@outlook.com`.
 
-      - question: Unable to use microsoft login, how do I recover my NuGet.org account?
+      - question: Unable to use Microsoft login, how do I recover my NuGet.org account?
         answer: |
           If you tried using the [sign in assistance](#which-microsoft-account-is-linked-to-my-nuget-org-account) and you do not have access to the Microsoft account that is associated with your NuGet.org account, please contact your Microsoft account support:
           
