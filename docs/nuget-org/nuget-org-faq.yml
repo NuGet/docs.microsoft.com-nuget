@@ -264,7 +264,7 @@ sections:
           
           Our customer support will process this request and perform the account deletion.
           
-        - question: Error connecting to nuget.org or restoring packages from https://api.nuget.org/v3/index.json?
+        - question: Error connecting to nuget.org or restoring packages from `https://api.nuget.org/v3/index.json`?
           answer: |
             If you are experiencing connectivity issues while connecting to nuget.org or restoring packages from https://api.nuget.org/v3/index.json, such as:
 
