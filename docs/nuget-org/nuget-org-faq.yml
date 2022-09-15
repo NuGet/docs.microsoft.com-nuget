@@ -106,10 +106,10 @@ sections:
         answer: |
           Please note that the [NuGet.org Password login has been discontinued](https://blog.nuget.org/20180515/NuGet.org-will-only-support-MSA-AAD-starting-June.html). Unfortunately, NuGet.org has no way to recover password accounts, you can only log in to NuGet.org with a personal Microsoft account (MSA) or Azure Active Directory (AAD) account. 
           
-          If you want to transfer the ownership of your packages from your previous account, please follow our [dispute resolution process](https://docs.microsoft.com/en-us/nuget/nuget-org/policies/dispute-resolution).
-
-          If you are unable to use Microsoft login, [please follow the steps to recover your NuGet.org account](#unable-to-use-microsoft-login--how-do-i-recover-my-nuget-org-account)
+          If you are unable to use Microsoft login, [please follow the steps to recover your NuGet.org account](#unable-to-use-microsoft-login--how-do-i-recover-my-nuget-org-account).
       
+          Please let us know if you need assistance in transferring ownership of your packages to a different account by sending an email to [support@nuget.org](mailto:support@nuget.org).
+
       - question: Which Microsoft account is linked to my NuGet.org account?
         answer: |
           If you have forgotten which Microsoft account is associated with your NuGet.org account, please follow the steps below to get assistance.
@@ -180,8 +180,8 @@ sections:
         answer: |
           If you tried using the [sign in assistance](#which-microsoft-account-is-linked-to-my-nuget-org-account) and you do not have access to the Microsoft account that is associated with your NuGet.org account, please contact your Microsoft account support:
           
-          - Microsoft Account (MSA): [Get help with your Microsoft account](https://support.microsoft.com/en-us/account-billing/get-help-with-your-microsoft-account-ace6f3b3-e2d3-aeb1-6b96-d2e9e7e52133)
-          - Work or school account (AAD): [Work or school account help](https://support.microsoft.com/en-us/account-billing/work-or-school-account-help-718b3d92-a8a7-4656-8a05-c0228d346b7d) or contact your admin tenant.
+          - Microsoft Account (MSA): [Get help with your Microsoft account](https://support.microsoft.com/account-billing/get-help-with-your-microsoft-account-ace6f3b3-e2d3-aeb1-6b96-d2e9e7e52133)
+          - Work or school account (AAD): [Work or school account help](https://support.microsoft.com/account-billing/work-or-school-account-help-718b3d92-a8a7-4656-8a05-c0228d346b7d) or contact your admin tenant.
 
       - question: How to transform my NuGet.org account to an organization?
         answer: |
