@@ -21,8 +21,8 @@ An organization account has one or more individual accounts as its members. Thes
 
 To create a NuGet.org account, you need to have a personal Microsoft account (MSA) or an Azure Active Directory (AAD) account. If you do not have one, you can [create](https://signup.live.com) one. NuGet.org requires all accounts to have two-factor authentication (2FA) enabled on your MSA or AAD account. You can update your settings in advance using the following links:
 
-MSA: https://support.microsoft.com/account-billing/turning-two-step-verification-on-or-off-for-your-microsoft-account-b1a56fc2-caf3-a5a1-f7e3-4309e99987ca
-Work or school Account: https://support.microsoft.com/account-billing/set-up-security-info-from-a-sign-in-page-28180870-c256-4ebf-8bd7-5335571bf9a8
+* Microsoft Account (MSA): [Turning two-step verification on or off for your Microsoft account](https://support.microsoft.com/account-billing/turning-two-step-verification-on-or-off-for-your-microsoft-account-b1a56fc2-caf3-a5a1-f7e3-4309e99987ca).
+* Work or school Account: [Set up Security info from a sign-in page](https://support.microsoft.com/account-billing/set-up-security-info-from-a-sign-in-page-28180870-c256-4ebf-8bd7-5335571bf9a8).
 
 Follow the following steps if you have an MSA or AAD account.
 
