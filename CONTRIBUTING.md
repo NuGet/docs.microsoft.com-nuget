@@ -1,6 +1,6 @@
 No contribution is too big or too small.
 
-1. Visit the page to edit in the [NuGet documentation](https://docs.microsoft.com/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
+1. Visit the page to edit in the [NuGet documentation](https://learn.microsoft.com/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
 1. Edit the markdown:
     1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
     1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.

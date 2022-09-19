@@ -1,6 +1,6 @@
-# docs.microsoft.com-nuget
+# learn.microsoft.com-nuget
 
-The NuGet documentation contained in this repository is hosted in [NuGet documentation](https://docs.microsoft.com/nuget/). This repository was migrated from the former NuGetDocs repository, https://github.com/NuGet/NuGetDocs, which is no longer in active use.
+The NuGet documentation contained in this repository is hosted in [NuGet documentation](https://learn.microsoft.com/nuget/). This repository was migrated from the former NuGetDocs repository, https://github.com/NuGet/NuGetDocs, which is no longer in active use.
 
 Contributions to this docset are welcome. Please submit PRs to the *main* branch. The main branch is used for staging changes which is periodically merged into the *live* branch which is what's published to the live docs site.
 
@@ -9,7 +9,7 @@ NuGet follows the [.NET Foundation Contributors Code of Conduct](https://github.
 ## Repository structure
 
 - All markdown files are in the docs folder and various subfolders.
-- The docs/index.md file defines the landing (hub) page as it appears in the [NuGet documentation](https://docs.microsoft.com/nuget).
+- The docs/index.md file defines the landing (hub) page as it appears in the [NuGet documentation](https://learn.microsoft.com/nuget).
 - The docs/TOC.md file defines the left-hand navigation panel that appears when you navigate to any page other than the hub page.
 - Images are contained within media folders within each subfolder.
 - The docs/docfx.json file contains various defaults, especially for metadata.
@@ -20,7 +20,7 @@ NuGet follows the [.NET Foundation Contributors Code of Conduct](https://github.
 
 No contribution is too big or too small.
 
-1. Visit the page to edit in [NuGet documentation](https://docs.microsoft.com/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
+1. Visit the page to edit in [NuGet documentation](https://learn.microsoft.com/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
 1. Edit the markdown:
     1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
     1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
@@ -140,16 +140,16 @@ The only case when you should use ``` without a language tag is when creating a 
 
 Microsoft Docs uses blockquotes for callouts, that is, lines starting with ">".
 
-Callout sections with ">" only will appear with a solid gray line to the left. See [Creating NuGet packages](https://docs.microsoft.com/nuget/create-packages/creating-a-package) for examples.
+Callout sections with ">" only will appear with a solid gray line to the left. See [Creating NuGet packages](https://learn.microsoft.com/nuget/create-packages/creating-a-package) for examples.
 
 You can also use one of the following callout tags on the first line that will create a shaded callout in the indicated color:
 
 | Tag | Callout use | Topic with examples |
 | --- | --- | --- |
-| `> [!Note]` | Callouts without any special emphasis. | [Creating NuGet packages](https://docs.microsoft.com/nuget/create-packages/creating-a-package) |
-| `> [!Tip]` | Callouts that share special tips and tricks or other helpful knowledge. | [Package consumption overview](https://docs.microsoft.com/nuget/consume-packages/overview-and-workflow) | 
-| `> [!Important]` | Callouts that describe cautions. | [NuGet.Server](https://docs.microsoft.com/nuget/hosting-packages/nuget-server) |
-| `> [!Warning]` | Callouts that warn readers about situations that could cause data loss or unexpected consequences. | [Dependency resolution](https://docs.microsoft.com/nuget/consume-packages/dependency-resolution) |
+| `> [!Note]` | Callouts without any special emphasis. | [Creating NuGet packages](https://learn.microsoft.com/nuget/create-packages/creating-a-package) |
+| `> [!Tip]` | Callouts that share special tips and tricks or other helpful knowledge. | [Package consumption overview](https://learn.microsoft.com/nuget/consume-packages/overview-and-workflow) | 
+| `> [!Important]` | Callouts that describe cautions. | [NuGet.Server](https://learn.microsoft.com/nuget/hosting-packages/nuget-server) |
+| `> [!Warning]` | Callouts that warn readers about situations that could cause data loss or unexpected consequences. | [Dependency resolution](https://learn.microsoft.com/nuget/consume-packages/dependency-resolution) |
 
 ### Links
 
