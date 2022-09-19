@@ -12,9 +12,9 @@ The following example shows a `Description` in the *.csproj* file for a .NET pac
       This client library enables working with the Microsoft Azure Storage Blob service for storing binary and text data.
       For this release see notes - https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/storage/Azure.Storage.Blobs/README.md and https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/storage/Azure.Storage.Blobs/CHANGELOG.md
       in addition to the breaking changes https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/storage/Azure.Storage.Blobs/BreakingChanges.txt
-      Microsoft Azure Storage quickstarts and tutorials - https://docs.microsoft.com/en-us/azure/storage/
-      Microsoft Azure Storage REST API Reference - https://docs.microsoft.com/en-us/rest/api/storageservices/
-      REST API Reference for Blob Service - https://docs.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api
+      Microsoft Azure Storage quickstarts and tutorials - https://learn.microsoft.com/azure/storage/
+      Microsoft Azure Storage REST API Reference - https://learn.microsoft.com/rest/api/storageservices/
+      REST API Reference for Blob Service - https://learn.microsoft.com/rest/api/storageservices/blob-service-rest-api
     </Description>
   </PropertyGroup>
 </Project>

@@ -89,7 +89,7 @@ To display a custom icon in the toolbox/assets pane, add an image to your projec
 
 Supported formats are `.png`, `.jpg`, `.jpeg`, `.gif`, and `.bmp`. The recommended format is BMP24 in 16 pixels by 16 pixels.
 
-![Tool box icon sample](https://raw.githubusercontent.com/NuGet/docs.microsoft.com-nuget/live/docs/guides/media/ColorPicker_16x16x24.bmp)
+![Tool box icon sample](https://raw.githubusercontent.com/NuGet/learn.microsoft.com-nuget/live/docs/guides/media/ColorPicker_16x16x24.bmp)
 
 The pink background is replaced at runtime. The icons are recolored when the Visual Studio theme is changed and that background color is expected. For more information, please reference [Images and Icons for Visual Studio](/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio).
 

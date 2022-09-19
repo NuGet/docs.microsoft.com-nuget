@@ -13,7 +13,7 @@ This article focuses on common errors when restoring packages and steps to resol
 
 Package Restore tries to install all package dependencies to the correct state matching the package references in your project file (*.csproj*) or your *packages.config* file. (In Visual Studio, the references appear in Solution Explorer under the **Dependencies \ NuGet** or the **References** node.) To follow the required steps to restore packages, see [Restore packages](../consume-packages/package-restore.md#restore-packages). If the package references in your project file (*.csproj*) or your *packages.config* file are incorrect (they do not match your desired state following Package Restore), then you need to either install or update packages instead of using Package Restore.
 
-If the instructions here do not work for you, [please file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so that we can examine your scenario more carefully. Do not use the "Is this page helpful?" control that may appear on this page because it doesn't give us the ability to contact you for more information.
+If the instructions here do not work for you, [please file an issue on GitHub](https://github.com/NuGet/learn.microsoft.com-nuget/issues) so that we can examine your scenario more carefully. Do not use the "Is this page helpful?" control that may appear on this page because it doesn't give us the ability to contact you for more information.
 
 ## Quick solution for Visual Studio users
 
@@ -58,7 +58,7 @@ Use one of the following methods to restore the packages:
 - [Azure Pipelines](package-restore.md#restore-using-azure-pipelines)
 - [Azure DevOps Server](package-restore.md#restore-using-azure-devops-server)
 
-After a successful restore, the package should be present in the *global-packages* folder. For projects using PackageReference, a restore should recreate the `obj/project.assets.json` file; for projects using `packages.config`, the package should appear in the project's `packages` folder. The project should now build successfully. If not, [file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so we can follow up with you.
+After a successful restore, the package should be present in the *global-packages* folder. For projects using PackageReference, a restore should recreate the `obj/project.assets.json` file; for projects using `packages.config`, the package should appear in the project's `packages` folder. The project should now build successfully. If not, [file an issue on GitHub](https://github.com/NuGet/learn.microsoft.com-nuget/issues) so we can follow up with you.
 
 <a name="assets"></a>
 
@@ -115,4 +115,4 @@ You can also edit these settings directly in the applicable `nuget.config` file 
 
 - You may be using an old version of NuGet. Check [nuget.org/downloads](https://www.nuget.org/downloads) for the latest recommended versions. For Visual Studio 2015, we recommend 3.6.0.
 
-If you encounter other problems, [file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so we can get more details from you.
+If you encounter other problems, [file an issue on GitHub](https://github.com/NuGet/learn.microsoft.com-nuget/issues) so we can get more details from you.

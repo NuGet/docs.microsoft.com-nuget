@@ -106,13 +106,13 @@ Take a moment to browse the table of contents for this documentation, and you se
 
 ## Related video
 
-> [!Video https://docs.microsoft.com/shows/NuGet-101/What-is-NuGet-1-of-5/player]
+> [!Video https://learn.microsoft.com/shows/NuGet-101/What-is-NuGet-1-of-5/player]
 
 Find more NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
 ## Comments, contributions, and issues
 
-Finally, we very much welcome comments and contributions to this documentation&mdash;just select the **Feedback** and **Edit** commands on the top of any page, or visit the [docs repository](https://github.com/NuGet/docs.microsoft.com-nuget/) and [docs issue list](https://github.com/NuGet/docs.microsoft.com-nuget/issues) on GitHub.
+Finally, we very much welcome comments and contributions to this documentation&mdash;just select the **Feedback** and **Edit** commands on the top of any page, or visit the [docs repository](https://github.com/NuGet/learn.microsoft.com-nuget/) and [docs issue list](https://github.com/NuGet/learn.microsoft.com-nuget/issues) on GitHub.
 
 We also welcome contributions to NuGet itself through its [various GitHub repositories](https://github.com/NuGet/Home); NuGet issues can be found on [https://github.com/NuGet/home/issues](https://github.com/NuGet/home/issues).
 
