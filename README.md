@@ -29,6 +29,8 @@ No contribution is too big or too small.
 1. Send a pull request for your change. We review PRs on a regular basis.
 1. Thank you!
 
+> **If your content is not live yet, there is a manual `main` -> `live` pull request that is needed to pick-up the changes. Please create a PR or ping a docs owner to do so on your behalf.**
+
 If you're creating a new topic, keep the following in mind as well:
 
 1. Always place the new topic in an appropriate subfolder, and follow the conventions for filenames as you see them used here.
