@@ -1,9 +1,9 @@
 ---
 title: Package readme on NuGet.org
 description: Detailed explanation of how readme files on NuGet.org are rendered and what to do when you run into issues.
-author: chgill-MSFT
-ms.author: chgill
-ms.date: 02/23/2021
+author: nkolev92
+ms.author: nikolev
+ms.date: 08/31/2022
 ms.topic: conceptual
 ms.reviewer: anangaur
 ---
@@ -48,6 +48,8 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * api.dependabot.com
 * api.travis-ci.com
 * api.travis-ci.org
+* api.reuse.software
+* app.fossa.com
 * app.fossa.io
 * badge.fury.io
 * badgen.net
@@ -56,6 +58,7 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * buildstats.info
 * camo.githubusercontent.com
 * cdn.jsdelivr.net
+* cdn.syncfusion.com
 * ci.appveyor.com
 * circleci.com
 * codecov.io
@@ -72,6 +75,8 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * raw.githubusercontent.com
 * snyk.io
 * sonarcloud.io
+* travis-ci.com
+* travis-ci.org
 * user-images.githubusercontent.com
 
 If you feel that another domain should be added to the allow-list, please feel free to [file an issue](https://github.com/NuGet/NuGetGallery/issues) and it will be reviewed by our engineering team for privacy and security compliance. Images with relative local paths and images hosted from unsupported domains will not be rendered and will produce a warning on the readme file preview and package details page that is only visible to the package owners.
