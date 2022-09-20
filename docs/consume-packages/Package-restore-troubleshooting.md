@@ -115,4 +115,4 @@ You can also edit these settings directly in the applicable `nuget.config` file 
 
 - You may be using an old version of NuGet. Check [nuget.org/downloads](https://www.nuget.org/downloads) for the latest recommended versions. For Visual Studio 2015, we recommend 3.6.0.
 
-If you encounter other problems, [file an issue on GitHub](https://github.com/NuGet/learn.microsoft.com-nuget/issues) so we can get more details from you.
+If you encounter other problems, [file an issue on GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) so we can get more details from you.
