@@ -70,7 +70,7 @@ where `<packagePath>` identifies the package to push to the server.
 
 - **`-SymbolSource`**
 
-  *(3.5+)* Specifies the symbol server URL; nuget.smbsrc.net is used when pushing to nuget.org
+  Specifies the symbol server URL.
 
 - **`-SymbolApiKey`**
 
