@@ -1,4 +1,4 @@
-# docs.microsoft.com-nuget
+# NuGet Docs
 
 The NuGet documentation contained in this repository is hosted in [NuGet documentation](https://learn.microsoft.com/nuget/). This repository was migrated from the former NuGetDocs repository, https://github.com/NuGet/NuGetDocs, which is no longer in active use.
 
