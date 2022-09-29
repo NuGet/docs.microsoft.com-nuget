@@ -15,6 +15,19 @@ NuGet 1.3 was released on April 25, 2011.
 
 ## New Features
 
+### Streamlined Package Creation with symbol server integration
+
+The NuGet team partnered with the folks at [SymbolSource.org](http://www.symbolsource.org/) to offer
+a really simple way of publishing your sources and PDB’s along with your package. This allows consumers
+of your package to step into the source for your package in the debugger. For more details, read
+[Creating and Publishing a Symbol Package](../create-packages/symbol-packages.md)
+The easy way to publish NuGet packages with sources. You can also watch a live demonstration of this
+feature as part of the NuGet in Depth talk at Mix11. This feature is fully demonstrated starting at
+the 20 minute mark of the video.
+
+> [!NOTE]
+> The above is deprecated and no longer supported.
+
 ### `Open-PackagePage` Command
 
 This command makes it easy to get to the project page for a package from within the Package Manager
