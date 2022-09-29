@@ -126,7 +126,7 @@ Lists all known package sources. The order is ignored during restore operations 
 ```
 
 > [!NOTE]
-> When using the CLI, you can express a [`RestoreSources`](../reference/msbuild-targets.md#restore-properties) argument to override the `<packageSources>` defined in the NuGet.config.
+> When using the CLI, you can express a [`RestoreSources`](../reference/msbuild-targets.md#restore-properties) MSBuild property or [`--source`(.NET CLI)](/dotnet/core/tools/dotnet-restore#options) | [`-Source`(NuGet CLI)](../reference/cli-reference/cli-ref-restore#options) to override the `<packageSources>` defined in the NuGet.config.
 
 > [!Tip]
 > When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
