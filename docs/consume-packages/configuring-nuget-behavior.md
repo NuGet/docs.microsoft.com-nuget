@@ -17,7 +17,7 @@ NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Con
 | --- | --- | --- |
 | Solution | Current folder (aka Solution folder) or any folder up to the drive root.| In a solution folder, settings apply to all projects in subfolders. Note that if a config file is placed in a project folder, it has no effect on that project. |
 | User | **Windows:** `%appdata%\NuGet\NuGet.Config`<br/>**Mac/Linux:** `~/.config/NuGet/NuGet.Config` or `~/.nuget/NuGet/NuGet.Config` (varies by tooling) <br/>Additional configs are supported on all platforms. These configs cannot be edited by the tooling. </br> **Windows:** `%appdata%\NuGet\config\*.Config` <br/>**Mac/Linux:** `~/.config/NuGet/config/*.config` or `~/.nuget/config/*.config` | Settings apply to all operations, but are overridden by any project-level settings. |
-| Computer | **Windows:** `%ProgramFiles(x86)%\NuGet\Config`<br/>**Mac/Linux:** `$XDG_DATA_HOME`. If `$XDG_DATA_HOME` is null or empty, `~/.local/share` or `/usr/local/share` will be used (varies by OS distribution)  | Settings apply to all operations on the computer, but are overridden by any user- or project-level settings. |
+| Computer | **Windows:** `%ProgramFiles(x86)%\NuGet`<br/>**Mac/Linux:** `$XDG_DATA_HOME`. If `$XDG_DATA_HOME` is null or empty, `~/.local/share` or `/usr/local/share` will be used (varies by OS distribution)  | Settings apply to all operations on the computer, but are overridden by any user- or project-level settings. |
 
 > [!Note]
 > On Mac/Linux, the user config file location varies by tooling. .NET CLI uses `~/.nuget/NuGet` folder, while Mono uses `~/.config/NuGet` folder. 
@@ -38,7 +38,7 @@ If the tooling you use involves both locations, consider consolidating them by f
 
 Notes for earlier versions of NuGet:
 - NuGet 3.3 and earlier used a `.nuget` folder for solution-wide settings. This folder is not used in NuGet 3.4+.
-- For NuGet 2.6 to 3.x, the computer-level config file on Windows was located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}]]]\NuGet.Config`, where `{IDE}` can be `VisualStudio`, `{Version}` was the Visual Studio version such as `14.0`, and `{SKU}` is either `Community`, `Pro`, or `Enterprise`. To migrate settings to NuGet 4.0+, simply copy the config file to `%ProgramFiles(x86)%\NuGet\Config`. On Linux, this previous location was `/etc/opt`, and on Mac, `/Library/Application Support`.
+- For NuGet 2.6 to 3.x, the computer-level config file on Windows was located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}]]]\NuGet.Config`, where `{IDE}` can be `VisualStudio`, `{Version}` was the Visual Studio version such as `14.0`, and `{SKU}` is either `Community`, `Pro`, or `Enterprise`. To migrate settings to NuGet 4.0+, simply copy the config file to `%ProgramFiles(x86)%\NuGet`. On Linux, this previous location was `/etc/opt`, and on Mac, `/Library/Application Support`.
 
 ## Changing config settings
 
@@ -66,7 +66,7 @@ nuget config -set repositoryPath=c:\packages -configfile c:\my.Config
 nuget config -set repositoryPath=c:\packages -configfile .\myApp\NuGet.Config
 
 # Set repositoryPath in the computer-level file (requires elevation)
-nuget config -set repositoryPath=c:\packages -configfile %ProgramFiles(x86)%\NuGet\Config\NuGet.Config
+nuget config -set repositoryPath=c:\packages -configfile %ProgramFiles(x86)%\NuGet\NuGet.Config
 ```
 
 Mac/Linux:
@@ -236,7 +236,7 @@ The following table describes where the `NuGetDefaults.Config` file should be st
 
 | OS Platform  | `NuGetDefaults.Config` Location |
 | --- | --- |
-| Windows      | **Visual Studio 2017 or NuGet 4.x+:** `%ProgramFiles(x86)%\NuGet\Config` <br />**Visual Studio 2015 and earlier or NuGet 3.x and earlier:** `%PROGRAMDATA%\NuGet` |
+| Windows      | **Visual Studio 2017 or NuGet 4.x+:** `%ProgramFiles(x86)%\NuGet` <br />**Visual Studio 2015 and earlier or NuGet 3.x and earlier:** `%PROGRAMDATA%\NuGet` |
 | Mac/Linux    | `$XDG_DATA_HOME` (typically `~/.local/share` or `/usr/local/share`, depending on OS distribution)|
 
 ### NuGetDefaults.Config settings
