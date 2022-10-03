@@ -9,6 +9,9 @@ ms.topic: reference
 
 # project.json reference
 
+> [!Important]
+> This content is deprecated. Projects should use either the `packages.config` or PackageReference formats.
+
 *NuGet 3.x+*
 
 The `project.json` file maintains a list of packages used in a project, known as a package management format. It supersedes `packages.config` but is in turn superseded by [PackageReference](../consume-packages/package-references-in-project-files.md) with NuGet 4.0+.
