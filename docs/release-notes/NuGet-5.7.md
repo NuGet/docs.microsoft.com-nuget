@@ -26,7 +26,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 5.7.2
 
-* [Security]: Microsoft Security Advisory CVE-2022-30184 | .NET Information Disclosure Vulnerability - [#11883](https://github.com/NuGet/Home/issues/1188)
+* [Security]: Microsoft Security Advisory CVE-2022-30184 | .NET Information Disclosure Vulnerability - [#11883](https://github.com/NuGet/Home/issues/11883)
 
 ## Summary: What's New in 5.7
 
