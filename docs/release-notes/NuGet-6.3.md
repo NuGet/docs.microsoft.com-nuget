@@ -14,8 +14,13 @@ NuGet distribution vehicles:
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
 | [**6.3**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.3](https://visualstudio.microsoft.com/downloads/) | [6.0.400](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
+| [**6.3.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.3](https://visualstudio.microsoft.com/downloads/) | [6.0.402](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 17.3 with.NET Core workload
+
+## Summary: What's New in 6.3.1
+
+* [Security]: Microsoft Security Advisory CVE-2022-41032 | .NET Elevation of Privilege Vulnerability - [#12149](https://github.com/NuGet/Home/issues/12149)
 
 ## Summary: What's New in 6.3
 

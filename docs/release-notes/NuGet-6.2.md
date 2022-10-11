@@ -15,8 +15,13 @@ NuGet distribution vehicles:
 |:---|:---|:---|
 | [**6.2.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.2](https://visualstudio.microsoft.com/downloads/) | [6.0.300](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 | [**6.2.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.2.4](https://visualstudio.microsoft.com/downloads/) | [6.0.301](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
+| [**6.2.2**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.2](https://visualstudio.microsoft.com/downloads/) | [6.0.305](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with .NET Core workload
+
+## Summary: What's New in 6.2.2
+
+* [Security]: Microsoft Security Advisory CVE 2022-41032 | .NET Elevation of Privilege Vulnerability - [#12149](https://github.com/NuGet/Home/issues/12149)
 
 ## Summary: What's New in 6.2.1
 
