@@ -139,7 +139,7 @@ defined centrally.
     <PackageVersion Include="PackageA" Version="1.0.0" />
     <PackageVersion Include="PackageB" Version="2.0.0" />
   </ItemGroup>
-<Project>
+</Project>
 ```
 
 ```xml
@@ -150,7 +150,7 @@ defined centrally.
   <ItemGroup>
     <PackageReference Include="PackageA" VersionOverride="3.0.0" />
   </ItemGroup>
-<Project>
+</Project>
 ```
 
 You can disable this feature by setting the MSBuild property `EnablePackageVersionOverride` to `false` in a project or in a `Directory.Packages.props` or

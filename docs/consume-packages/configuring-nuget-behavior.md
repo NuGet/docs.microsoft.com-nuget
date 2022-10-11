@@ -236,7 +236,7 @@ The following table describes where the `NuGetDefaults.Config` file should be st
 
 | OS Platform  | `NuGetDefaults.Config` Location |
 | --- | --- |
-| Windows      | **Visual Studio 2017 or NuGet 4.x+:** `%ProgramFiles(x86)%\NuGet\Config` <br />**Visual Studio 2015 and earlier or NuGet 3.x and earlier:** `%PROGRAMDATA%\NuGet` |
+| Windows      | **Visual Studio 2017 or NuGet 4.x+:** `%ProgramFiles(x86)%\NuGet` <br />**Visual Studio 2015 and earlier or NuGet 3.x and earlier:** `%PROGRAMDATA%\NuGet` |
 | Mac/Linux    | `$XDG_DATA_HOME` (typically `~/.local/share` or `/usr/local/share`, depending on OS distribution)|
 
 ### NuGetDefaults.Config settings
