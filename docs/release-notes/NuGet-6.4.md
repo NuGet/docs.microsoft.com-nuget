@@ -107,3 +107,18 @@ NuGet distribution vehicles:
 
 
 **[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.3.1.1...6.4.0.117)**
+
+### Community contributions
+
+Thank you to all the contributors who helped make this NuGet release awesome!
+
+* [kkirkfield](https://github.com/kkirkfield)
+  * [4738](https://github.com/NuGet/NuGet.Client/pull/4738) Fix issue with _CleanPackageFiles target failing on rebuild
+* [MichaelSimons](https://github.com/MichaelSimons)
+  * [4737](https://github.com/NuGet/NuGet.Client/pull/4737) Tweak ApplySourceBuildPatchFiles target to support virtual mono repo (VMR)
+* [marcin-krystianc](https://github.com/marcin-krystianc)
+  * [4611](https://github.com/NuGet/NuGet.Client/pull/4611) Central transitive dependencies should be considered only for root nodes
+* [Forgind](https://github.com/Forgind)
+  * [4766](https://github.com/NuGet/NuGet.Client/pull/4766) Return warnings to log when NuGet SDK resolver fails
+* [lbussell](https://github.com/lbussell)
+  * [4742](https://github.com/NuGet/NuGet.Client/pull/4742) Update TFM to net7.0 for source-build
