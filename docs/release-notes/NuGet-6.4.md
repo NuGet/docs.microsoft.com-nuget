@@ -13,15 +13,13 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.4**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.4](https://visualstudio.microsoft.com/downloads/) | [7.0.100](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
+| [**6.4**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.4](https://visualstudio.microsoft.com/downloads/) | [7.0.100](https://dotnet.microsoft.com/download/dotnet-core/7.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 17.4 with .NET Core workload
 
 ## Summary: What's New in 6.4
 
-* [DCR]: Package Source Mapping API does not support saving  - [#11935](https://github.com/NuGet/Home/issues/11935)
-
-* [Feature]: Add ability to designate a package reference as used by every project in the repo - [#10159](https://github.com/NuGet/Home/issues/10159)
+* Add ability to designate a package reference as used by every project in the repo - GlobalPackageReference [#10159](https://github.com/NuGet/Home/issues/10159)
 
 ### Issues fixed in this release
 
@@ -29,15 +27,13 @@ NuGet distribution vehicles:
 
 * [DCR]: Static graph-based restore should handle an AggregateException from MSBuild - [#12100](https://github.com/NuGet/Home/issues/12100)
 
-* [DCR]:  Disable signed package verification by default on Linux in .NET 7 SDK - [#12043](https://github.com/NuGet/Home/issues/12043)
-
 * Signing:  use separate fallback certificate bundles for code signing and timestamping - [#12033](https://github.com/NuGet/Home/issues/12033)
-
-* Signing:  enable signed package verification by default on Linux in .NET 7 SDK - [#11973](https://github.com/NuGet/Home/issues/11973)
 
 * [DCR]: Central package management package source mapping should only look at configured feeds - [#11951](https://github.com/NuGet/Home/issues/11951)
 
 * [DCR]: Remove preview message when using central package management - [#11950](https://github.com/NuGet/Home/issues/11950)
+
+* [DCR]: Package Source Mapping API does not support saving  - [#11935](https://github.com/NuGet/Home/issues/11935)
 
 * [DCR]: Plugin timeout defaults should be increased - [#11793](https://github.com/NuGet/Home/issues/11793)
 
@@ -100,11 +96,6 @@ NuGet distribution vehicles:
 * [Bug Bash]The new designs of hovered-on menu between VS and NuGet are inconsistent - [#10978](https://github.com/NuGet/Home/issues/10978)
 
 * [Bug]: Metadata like PrivateAssets does not flow from parent to transitively pinned dependency in CPM - [#10311](https://github.com/NuGet/Home/issues/10311)
-
-**StillOpens:**
-
-* Test NuGet.Protocol.FuncTest.PluginTests.GetOrCreateAsync_WithUnhandledExceptionInPlugin_Throws is flaky - [#12122](https://github.com/NuGet/Home/issues/12122)
-
 
 **[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.3.1.1...6.4.0.117)**
 
