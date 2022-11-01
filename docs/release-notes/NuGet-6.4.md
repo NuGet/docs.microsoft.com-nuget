@@ -21,6 +21,8 @@ NuGet distribution vehicles:
 
 * Add ability to designate a package reference as used by every project in the repo - GlobalPackageReference [#10159](https://github.com/NuGet/Home/issues/10159)
 
+* Improved performance loading installed packages in the Package Manager UI - [#11923](https://github.com/NuGet/Home/issues/11923)
+
 ### Issues fixed in this release
 
 **DCRs:**
@@ -43,7 +45,7 @@ NuGet distribution vehicles:
 
 * Details for Installed MAUI packages are missing NuGet Project PM UI - [#12130](https://github.com/NuGet/Home/issues/12130)
 
-* [Bug]: Make static restore graph evaluation long path aware - [#12121](https://github.com/NuGet/Home/issues/12121)
+* Static graph restore supports long paths on Windows - [#12121](https://github.com/NuGet/Home/issues/12121)
 
 * TelemetryUtility.IsVsOfflineFeed fails to correctly identify the local feed with 64-bit windows - [#12110](https://github.com/NuGet/Home/issues/12110)
 
@@ -76,8 +78,6 @@ NuGet distribution vehicles:
 * Reduce redundant SolutionDirectory calculation, special-case template wizard solution directory retrieval - [#11936](https://github.com/NuGet/Home/issues/11936)
 
 * Make VS adapter ProjectDirectory sync, use IVsHierarchy only to generate the guids, avoid double casting VSProject4 - [#11928](https://github.com/NuGet/Home/issues/11928)
-
-* [Bug]: Visual Studio Installed Packages page is slow to load - [#11923](https://github.com/NuGet/Home/issues/11923)
 
 * [Bug]: NuGet.VisualStudio.Implementation.Extensibility.VsPathContextProvider.TryCreateContext fault - [#11918](https://github.com/NuGet/Home/issues/11918)
 
