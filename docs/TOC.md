@@ -65,7 +65,7 @@
 ### [API keys](nuget-org/scoped-api-keys.md)
 ## Publish to a private feed
 ### [Overview](hosting-packages/overview.md)
-### [Azure artifacts](/azure/devops/artifacts/nuget/publish?view=azure-devops)
+### [Azure artifacts](/azure/devops/artifacts/nuget/publish)
 ### [NuGet.Server](hosting-packages/nuget-server.md)
 ### [Local feeds](hosting-packages/local-feeds.md)
 # Concepts
