@@ -21,7 +21,9 @@ NuGet distribution vehicles:
 
 * Add ability to designate a package reference as used by every project in the repo - GlobalPackageReference [#10159](https://github.com/NuGet/Home/issues/10159)
 
-* Improved performance loading installed packages in the Package Manager UI - [#11923](https://github.com/NuGet/Home/issues/11923)
+* Improved performance loading packages for all tabs in the Package Manager UI - [#11923](https://github.com/NuGet/Home/issues/11923)
+
+* Prompts for authentication with Azure Artifacts package sources in Visual Studio indicate that it is for NuGet purposes and contain specific source information.
 
 ### Issues fixed in this release
 
