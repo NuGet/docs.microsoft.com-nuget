@@ -126,6 +126,18 @@ If you would like a new NuGet related API in Visual Studio, please search [NuGet
 
 For reference, the source code for NuGet.VisualStudio is contained within the [NuGet.Clients repository](https://github.com/NuGet/NuGet.Client/tree/dev/src/NuGet.Clients/NuGet.VisualStudio).
 
+## Understanding the .NET project systems
+
+When SDK style projects were added for .NET Core 1.0, it was designed to be more asynchronous than previous Visual Studio project systems. This has an impact on how all other Visual Studio components interact with it directly, or though other components such as NuGet. This is most noticeable on solution load and project load, where projects are not fully available some time after Visual Studio's older synchronous API notifications have already fired.
+
+During solution load, NuGet ignores `IVsSolutionEvents.OnAfterProjectLoad`, in order to avoid delaying the synchronous part of solution load. NuGet will synchronize its internal data structures after the synchronous part of solution load has completed. This is also true for non-SDK style projects.
+
+Even after all `IVsSolutionEvents.OnAfterSolutionLoad` event handlers finish, this only signals the end of the synchronous part of solution load. The asynchronous part of solution load is still in progress. Therefore, if your extension calls NuGet APIs like `GetInstalledPackagesAsync` or `InstallPackage` soon after project or solution load, NuGet might throw an `InvalidOperationException` with message similar to "The operation failed as details for project {project name} could not be loaded.".
+
+When a solution contains at least one SDK style project, NuGet will automatically perform a restore after solution load, and you should not call any Nuget APIs until this is complete. You can use `IVsNuGetProjectUpdateEvents` to get a notification when the solution restore, or when specific project restores, complete. If a solution does not contain any SDK style projects, then restore will not be scheduled automatically, and may not happen until a build is scheduled.
+
+In order to determine whether a project uses NuGet's asynchronous flow (SDK style project), use [`PackageUtilities.IsCapabilityMatch`](/dotnet/api/microsoft.visualstudio.shell.packageutilities.iscapabilitymatch) with the expression `CPS + PackageReference`.
+
 ## INuGetProjectService interface
 
 ```cs
