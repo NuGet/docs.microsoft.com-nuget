@@ -92,7 +92,7 @@ Repository
 - Project1 will evaluate the `Directory.Packages.props` file in the `Repository\Solution1\` directory and it must manually import the next one if so desired.
   ```xml
   <Project>
-    <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory)../, Directory.Packages.props))\Directory.Packages.props" Condition=" '$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory)../, Directory.Packages.props))' != '' " />
+    <Import Project="$([MSBuild]::GetPathOfFileAbove(Directory.Packages.props, $(MSBuildThisFileDirectory)..))" />
     <ItemGroup>
       <PackageVersion Update="Newtonsoft.Json" Version="12.0.1" />
     </ItemGroup>
