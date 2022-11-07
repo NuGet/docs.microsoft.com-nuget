@@ -265,6 +265,7 @@
 ### [NU5046](reference/errors-and-warnings/NU5046.md)
 ### [NU5047](reference/errors-and-warnings/NU5047.md)
 ### [NU5048](reference/errors-and-warnings/NU5048.md)
+### [NU5049](reference/errors-and-warnings/NU5049.md)
 ### [NU5100](reference/errors-and-warnings/NU5100.md)
 ### [NU5101](reference/errors-and-warnings/NU5101.md)
 ### [NU5102](reference/errors-and-warnings/NU5102.md)
