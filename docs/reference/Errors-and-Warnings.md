@@ -18,7 +18,7 @@ The errors and warnings listed here are available only with [PackageReference-ba
 
 | Group | Error Numbers |
 | --- | --- |
-| Invalid input errors | [NU1001](./errors-and-warnings/NU1001.md), [NU1002](./errors-and-warnings/NU1002.md), [NU1003](./errors-and-warnings/NU1003.md) |
+| Invalid input errors | [NU1001](./errors-and-warnings/NU1001.md), [NU1002](./errors-and-warnings/NU1002.md), [NU1003](./errors-and-warnings/NU1003.md), [NU1004](./errors-and-warnings/NU1004.md), [NU1005](./errors-and-warnings/NU1005.md), [NU1006](./errors-and-warnings/NU1006.md), [NU1007](./errors-and-warnings/NU1007.md), [NU1008](./errors-and-warnings/NU1008.md), [NU1009](./errors-and-warnings/NU1009.md), [NU1010](./errors-and-warnings/NU1010.md), [NU1011](./errors-and-warnings/NU1011.md), [NU1012](./errors-and-warnings/NU1012.md), |
 | Missing package and project errors | [NU1100](./errors-and-warnings/NU1100.md), [NU1101](./errors-and-warnings/NU1101.md), [NU1102](./errors-and-warnings/NU1102.md), [NU1103](./errors-and-warnings/NU1103.md), [NU1104](./errors-and-warnings/NU1104.md), [NU1105](./errors-and-warnings/NU1105.md), [NU1106](./errors-and-warnings/NU1106.md), [NU1107](./errors-and-warnings/NU1107.md), [NU1108](./errors-and-warnings/NU1108.md) |
 | Compatibility errors | [NU1201](./errors-and-warnings/NU1201.md), [NU1202](./errors-and-warnings/NU1202.md), [NU1203](./errors-and-warnings/NU1203.md), [NU1401](./errors-and-warnings/NU1401.md), [NU1403](./errors-and-warnings/NU1403.md) |
 | NuGet internal errors | [NU1000](./errors-and-warnings/NU1000.md) |
