@@ -99,7 +99,7 @@ NuGet distribution vehicles:
 
 * [Bug]: Metadata like PrivateAssets does not flow from parent to transitively pinned dependency in CPM - [#10311](https://github.com/NuGet/Home/issues/10311)
 
-**[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.3.1.1...6.4.0.117)**
+**[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.3.1.1...6.4.0.123)**
 
 ### Community contributions
 
