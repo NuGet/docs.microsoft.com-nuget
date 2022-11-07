@@ -156,6 +156,7 @@
 ### [NU1106](reference/errors-and-warnings/NU1106.md)
 ### [NU1107](reference/errors-and-warnings/NU1107.md)
 ### [NU1108](reference/errors-and-warnings/NU1108.md)
+### [NU1109](reference/errors-and-warnings/NU1109.md)
 ### [NU1201](reference/errors-and-warnings/NU1201.md)
 ### [NU1202](reference/errors-and-warnings/NU1202.md)
 ### [NU1203](reference/errors-and-warnings/NU1203.md)
