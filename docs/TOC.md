@@ -65,7 +65,7 @@
 ### [API keys](nuget-org/scoped-api-keys.md)
 ## Publish to a private feed
 ### [Overview](hosting-packages/overview.md)
-### [Azure artifacts](/azure/devops/artifacts/nuget/publish?view=azure-devops)
+### [Azure artifacts](/azure/devops/artifacts/nuget/publish)
 ### [NuGet.Server](hosting-packages/nuget-server.md)
 ### [Local feeds](hosting-packages/local-feeds.md)
 # Concepts
@@ -325,6 +325,7 @@
 ### [Known Issues](release-notes/known-issues.md)
 
 ### NuGet 6.x
+#### [NuGet 6.4](release-notes/NuGet-6.4.md)
 #### [NuGet 6.3](release-notes/NuGet-6.3.md)
 #### [NuGet 6.2](release-notes/NuGet-6.2.md)
 #### [NuGet 6.1](release-notes/NuGet-6.1.md)
