@@ -19,6 +19,8 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.4
 
+* Signed package verification is available for opt-in on Linux and macOS by setting the environment variable `DOTNET_NUGET_SIGNATURE_VERIFICATION` to `true`. - [#12033](https://github.com/NuGet/Home/issues/12033), [#11973](https://github.com/NuGet/Home/issues/11973)
+
 * Add ability to designate a package reference as used by every project in the repo - GlobalPackageReference [#10159](https://github.com/NuGet/Home/issues/10159)
 
 * Improved performance while loading packages for all tabs in the Package Manager UI and solution restore - [#11923](https://github.com/NuGet/Home/issues/11923)
