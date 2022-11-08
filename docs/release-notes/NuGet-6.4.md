@@ -19,9 +19,11 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.4
 
-* Signed package verification is available for opt-in on Linux and macOS by setting the environment variable `DOTNET_NUGET_SIGNATURE_VERIFICATION` to `true`. - [#12033](https://github.com/NuGet/Home/issues/12033), [#11973](https://github.com/NuGet/Home/issues/11973)
+* Central package management is considered production ready and the preview message has been removed - [#11950](https://github.com/NuGet/Home/issues/11950)
 
 * Add ability to designate a package reference as used by every project in the repo - GlobalPackageReference [#10159](https://github.com/NuGet/Home/issues/10159)
+
+* Signed package verification is available for opt-in on Linux and macOS by setting the environment variable `DOTNET_NUGET_SIGNATURE_VERIFICATION` to `true`. - [#12033](https://github.com/NuGet/Home/issues/12033), [#11973](https://github.com/NuGet/Home/issues/11973)
 
 * Improved performance while loading packages for all tabs in the Package Manager UI and solution restore - [#11923](https://github.com/NuGet/Home/issues/11923)
 
@@ -36,8 +38,6 @@ NuGet distribution vehicles:
 * Signing:  use separate fallback certificate bundles for code signing and timestamping - [#12033](https://github.com/NuGet/Home/issues/12033)
 
 * [DCR]: Central package management package source mapping should only look at configured feeds - [#11951](https://github.com/NuGet/Home/issues/11951)
-
-* [DCR]: Remove preview message when using central package management - [#11950](https://github.com/NuGet/Home/issues/11950)
 
 * [DCR]: Package Source Mapping API does not support saving  - [#11935](https://github.com/NuGet/Home/issues/11935)
 
