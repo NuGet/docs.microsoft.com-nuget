@@ -21,6 +21,7 @@ The list of properties documented in [NuGet pack and restore as MSBuild targets]
 | http_proxy | Http proxy used for NuGet HTTP operations. | This would be specified as `http://<username>:<password>@proxy.com`. |
 | no_proxy | Configures domains to bypass from using proxy. | Specified as domains separated by comma (,). |
 | EnableNuGetPackageRestore | Flag for if NuGet should implicitly grant consent if that's required by package on restore. | Specified flag is treated as *true* or *1*, any other value treated as flag not set. |
+| NUGET_CLI_LANGUAGE | Changes the output language of nuget.exe | Available in 6.5 and higher versions. Supported values are [supported Visual Studio languages](https://learn.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio?view=vs-2022&preserve-view=true#list-of-language-locales) locale names: `zh-cn`, `zh-tw`, `cs-cz`, `en-us`, `es-es`, `fr-fr`, `de-de`, `it-it`, `ja-jp`, `ko-kr`, `pl-pl`, `pt-br`, `ru-ru`, and `tr-tr`. |
 | NUGET_EXE_NO_PROMPT | Prevents the exe for prompting for credentials. | Any value except null or empty string will be treated as this flag set/true. |
 | FORCE_NUGET_EXE_INTERACTIVE | Global environment variable to force interactive mode. | Any value except null or empty string will be treated as this flag set/true. |
 | NUGET_PACKAGES | Path to use for the *global-packages* folder as described on [Managing the global packages and cache folders](../../consume-packages/managing-the-global-packages-and-cache-folders.md). | Specified as absolute path. |
