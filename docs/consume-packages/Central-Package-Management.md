@@ -211,5 +211,3 @@ There are 3 package sources defined in your configuration. When using central pa
 
 > [!Note]
 > Central package management is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
->
-> * There is currently no support in Visual Studio or the .NET CLI for Central Package Management.
