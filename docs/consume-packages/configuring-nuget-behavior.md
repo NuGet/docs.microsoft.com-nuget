@@ -3,7 +3,7 @@ title: Common NuGet configurations
 description: NuGet.Config files control NuGet's behavior both globally and on a per-project basis, and are modified with nuget config command.
 author: JonDouglas
 ms.author: jodou
-ms.date: 10/25/2017
+ms.date: 01/10/2022
 ms.topic: conceptual
 ---
 
@@ -16,8 +16,25 @@ NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Con
 | Scope | `NuGet.Config` file location | Description |
 | --- | --- | --- |
 | Solution | Current folder (aka Solution folder) or any folder up to the drive root.| In a solution folder, settings apply to all projects in subfolders. Note that if a config file is placed in a project folder, it has no effect on that project. |
-| User | **Windows:** `%appdata%\NuGet\NuGet.Config`<br/>**Mac/Linux:** `~/.config/NuGet/NuGet.Config` or `~/.nuget/NuGet/NuGet.Config` (varies by OS distribution) <br/>Additional configs are supported on all platforms. These configs cannot be edited by the tooling. </br> **Windows:** `%appdata%\NuGet\config\*.Config` <br/>**Mac/Linux:** `~/.config/NuGet/config/*.config` or `~/.nuget/config/*.config` | Settings apply to all operations, but are overridden by any project-level settings. |
+| User | **Windows:** `%appdata%\NuGet\NuGet.Config`<br/>**Mac/Linux:** `~/.config/NuGet/NuGet.Config` or `~/.nuget/NuGet/NuGet.Config` (varies by tooling) <br/>Additional configs are supported on all platforms. These configs cannot be edited by the tooling. </br> **Windows:** `%appdata%\NuGet\config\*.Config` <br/>**Mac/Linux:** `~/.config/NuGet/config/*.config` or `~/.nuget/config/*.config` | Settings apply to all operations, but are overridden by any project-level settings. |
 | Computer | **Windows:** `%ProgramFiles(x86)%\NuGet\Config`<br/>**Mac/Linux:** `$XDG_DATA_HOME`. If `$XDG_DATA_HOME` is null or empty, `~/.local/share` or `/usr/local/share` will be used (varies by OS distribution)  | Settings apply to all operations on the computer, but are overridden by any user- or project-level settings. |
+
+> [!Note]
+> On Mac/Linux, the user config file location varies by tooling. .NET CLI uses `~/.nuget/NuGet` folder, while Mono uses `~/.config/NuGet` folder. 
+
+### On Mac/Linux, the user-level config file location varies by tooling
+On Mac/Linux, the user config file location varies by tooling. 
+Majority of users use tools that look for the user config file under the `~/.nuget/NuGet` folder. 
+These other tools look for the user config file under the `~/.config/NuGet` folder:
+* Mono
+* NuGet.exe
+* Visual Studio 2019 for Mac (and earlier versions)
+* Visual Studio 2022 for Mac (and later versions), only when working on classic Mono projects.
+
+If the tooling you use involves both locations, consider consolidating them by following these steps to allow you to work with only one user-level config file:  
+1. Check the contents of the two user-level config files and keep the one you want under `~/.nuget/NuGet` folder. 
+2. Set symbolic link from `~/.nuget/NuGet` to `~/.config/Nuget`. E.g. Run bash command: `ln -s ~/.nuget/NuGet ~/.config/Nuget`.
+
 
 Notes for earlier versions of NuGet:
 - NuGet 3.3 and earlier used a `.nuget` folder for solution-wide settings. This folder is not used in NuGet 3.4+.
@@ -28,7 +45,7 @@ Notes for earlier versions of NuGet:
 A `NuGet.Config` file is a simple XML text file containing key/value pairs as described in the [NuGet Configuration Settings](../reference/nuget-config-file.md) topic.
 
 Settings are managed using the NuGet CLI [config command](../reference/cli-reference/cli-ref-config.md):
-- By default, changes are made to the user-level config file.
+- By default, changes are made to the user-level config file. (On Mac/Linux, the location of user-level config file varies by tooling)
 - To change settings in a different file, use the `-configFile` switch. In this case files can use any filename.
 - Keys are always case sensitive.
 - Elevation is required to change settings in the computer-level settings file.
@@ -219,7 +236,7 @@ The following table describes where the `NuGetDefaults.Config` file should be st
 
 | OS Platform  | `NuGetDefaults.Config` Location |
 | --- | --- |
-| Windows      | **Visual Studio 2017 or NuGet 4.x+:** `%ProgramFiles(x86)%\NuGet\Config` <br />**Visual Studio 2015 and earlier or NuGet 3.x and earlier:** `%PROGRAMDATA%\NuGet` |
+| Windows      | **Visual Studio 2017 or NuGet 4.x+:** `%ProgramFiles(x86)%\NuGet` <br />**Visual Studio 2015 and earlier or NuGet 3.x and earlier:** `%PROGRAMDATA%\NuGet` |
 | Mac/Linux    | `$XDG_DATA_HOME` (typically `~/.local/share` or `/usr/local/share`, depending on OS distribution)|
 
 ### NuGetDefaults.Config settings

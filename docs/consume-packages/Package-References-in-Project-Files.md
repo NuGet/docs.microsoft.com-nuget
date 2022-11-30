@@ -3,7 +3,7 @@ title: NuGet PackageReference in project files
 description: Details on NuGet PackageReference in project files as supported by NuGet 4.0+ and VS2017 and .NET Core 2.0
 author: nkolev92
 ms.author: nikolev
-ms.date: 03/16/2018
+ms.date: 4/6/2022
 ms.topic: conceptual
 ---
 
@@ -45,7 +45,7 @@ The convention for specifying the version of a package is the same as when using
 
 In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../concepts/package-versioning.md#version-ranges).
 
-## Using PackageReference for a project with no PackageReferences
+## Using PackageReference for a project with no package dependencies
 
 Advanced: If you have no packages installed in a project (no PackageReferences in project file and no packages.config file), but want the project to be restored as PackageReference style, you can set a Project property RestoreProjectStyle to PackageReference in your project file.
 

@@ -3,7 +3,7 @@ title: Create a NuGet package using MSBuild
 description: A detailed guide to the process of designing and creating a NuGet package using MSBuild, including key decision points like files and versioning.
 author: JonDouglas
 ms.author: jodou
-ms.date: 02/20/2020
+ms.date: 07/14/2022
 ms.topic: conceptual
 ---
 
@@ -179,6 +179,7 @@ You might also want to extend the capabilities of your package or otherwise supp
 - [Localization](../create-packages/creating-localized-packages.md)
 - [Pre-release versions](../create-packages/prerelease-packages.md)
 - [Set package type](../create-packages/set-package-type.md)
+- [MSBuild props and targets](../concepts/MSBuild-props-and-targets.md)
 - [Create packages with COM interop assemblies](../create-packages/author-packages-with-COM-interop-assemblies.md)
 
 Finally, there are additional package types to be aware of:

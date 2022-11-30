@@ -230,19 +230,16 @@ The `version` attribute in a `<dependency>` element describes the range versions
 When obtaining packages from a repository during install, reinstall, or restore operations, NuGet 3.4+ treats version numbers as follows:
 
 - Leading zeroes are removed from version numbers:
-
-  1.00 is treated as 1.0
-  1.01.1 is treated as 1.1.1
-  1.00.0.1 is treated as 1.0.0.1
+  - 1.00 is treated as 1.0
+  - 1.01.1 is treated as 1.1.1
+  - 1.00.0.1 is treated as 1.0.0.1
 
 - A zero in the fourth part of the version number will be omitted
-
-  1.0.0.0 is treated as 1.0.0
-  1.0.01.0 is treated as 1.0.1
+  - 1.0.0.0 is treated as 1.0.0
+  - 1.0.01.0 is treated as 1.0.1
 
 - SemVer 2.0.0 build metadata is removed
-
-  1.0.7+r3456 is treated as 1.0.7
+  - 1.0.7+r3456 is treated as 1.0.7
 
 `pack` and `restore` operations normalize versions whenever possible. For packages already built, this normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions when resolving dependencies.
 
@@ -256,4 +253,4 @@ If you are implementing NuGet functionality in a language that does not run on .
 
 1. `NuGetVersion` supports a 4th version segment, `Revision`, to be compatible with, or a superset of, [`System.Version`](/dotnet/api/system.version). Therefore, excluding prerelease and metadata labels, a version string is `Major.Minor.Patch.Revision`. As per version normalization described above, if `Revision` is zero, it is omit from the normalized version string.
 2. `NuGetVersion` only requires the major segment to be defined. All others are optional, and are equivalent to zero. This means that `1`, `1.0`, `1.0.0`, and `1.0.0.0` are all accepted and equal.
-3. `NuGetVersion` uses case insenstive string comparisons for pre-release components. This means that `1.0.0-alpha` and `1.0.0-Alpha` are equal.
+3. `NuGetVersion` uses case insensitive string comparisons for pre-release components. This means that `1.0.0-alpha` and `1.0.0-Alpha` are equal.

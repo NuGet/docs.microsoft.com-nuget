@@ -1,178 +1,205 @@
 ---
-title: Install and manage NuGet packages using the console in Visual Studio
-description: Instructions for using the NuGet Package Manager Console in Visual Studio for working with packages.
+title: Manage NuGet packages with the Visual Studio Package Manager Console
+description: See how to work with NuGet packages by using PowerShell commands in the Visual Studio Package Manager Console.
 author: JonDouglas
 ms.author: jodou
-ms.date: 07/08/2019
+ms.date: 08/29/2022
 ms.topic: conceptual
 f1_keywords: 
   - "vs.nuget.packagemanager.console"
 ---
 
-# Install and manage packages with the Package Manager Console in Visual Studio (PowerShell)
+# Manage packages with the Visual Studio Package Manager Console (PowerShell)
 
-The NuGet Package Manager Console lets you use [NuGet PowerShell commands](../reference/powershell-reference.md) to find, install, uninstall, and update NuGet packages. Using the console is necessary in cases where the Package Manager UI does not provide a way to perform an operation. To use `nuget.exe` CLI commands in the console, see [Using the nuget.exe CLI in the console](#use-the-nugetexe-cli-in-the-console).
+The Package Manager Console in Visual Studio uses PowerShell commands to interact with NuGet packages. You can use the console when there's no way to do an operation through the [Package Manager UI](install-use-packages-visual-studio.md). You can also use [dotnet CLI](../reference/dotnet-commands.md) or [NuGet CLI](#use-the-nugetexe-cli-in-the-console) commands in the console.
 
-The console is built into Visual Studio on Windows. It is not included with Visual Studio for Mac or Visual Studio Code.
+This article describes how to find, install, update, and uninstall NuGet packages with PowerShell commands in the Package Manager Console. For the complete Package Manager Console PowerShell command reference, see [PowerShell reference](../reference/powershell-reference.md).
 
-> [!Important]
-> The commands listed here are specific to the Package Manager Console in Visual Studio, and differ from the [Package Management module commands](/powershell/module/packagemanagement/) that are available in a general PowerShell environment. Specifically, each environment has commands that are not available in the other, and commands with the same name may also differ in their specific arguments. When using the Package Management Console in Visual Studio, the commands and arguments documented in this present topic apply.
+> [!IMPORTANT]
+> The PowerShell commands and arguments in this article are specific to the Visual Studio Package Manager Console. These commands differ from the [PackageManagement module commands](/powershell/module/packagemanagement) you can use in a general PowerShell environment. Each environment has commands that aren't available in the other, and commands with the same name might differ in their specific arguments.
 
-## Find and install a package
+## Console availability
 
-For example, finding and installing a package is done with three easy steps:
+Starting in Visual Studio 2017, NuGet and the NuGet Package Manager install automatically when you create any .NET-related workloads in Visual Studio. You can also install the Package Manager by selecting **Individual components** > **Code tools** > **NuGet package manager** in the Visual Studio Installer. 
 
-1. Open the project/solution in Visual Studio, and open the console using the **Tools > NuGet Package Manager > Package Manager Console** command.
+You can also search for the NuGet Package Manager extension under the **Tools** > **Extensions and Updates** or **Extensions** menus. If you're unable to use the extensions installer in Visual Studio, you can download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 
-1. Find the package you want to install. If you already know this, skip to step 3.
+The Package Manager Console is built into the Package Manager for Visual Studio on Windows. Visual Studio Code and Visual Studio for Mac don't include the console. Visual Studio for Mac has a UI for managing NuGet packages, and the equivalent console commands are available through the [NuGet CLI](../reference/nuget-exe-CLI-reference.md). For more information, see [Install and manage NuGet packages in Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough).
 
-    ```ps
-    # Find packages containing the keyword "elmah"
+## Quickly find and install a package
+
+To use the Package Manager Console to quickly find and install a package:
+
+1. Open your project or solution in Visual Studio, and select **Tools** > **NuGet Package Manager** > **Package Manager Console** to open the Package Manager Console window.
+
+1. In the console, enter `Find-Package` with a keyword to find the package you want to install. For example, to find packages that contain the keyword `elmah`, run the following command. If you already know the package name you want, skip this step.
+
+    ```powershell
     Find-Package elmah
     ```
 
-1. Run the install command:
+1. Once you find the name, use the `Install-Package` command to install the package. For example, to install the `Elmah.MVC` package, enter:
 
-    ```ps
-    # Install the Elmah package to the project named MyProject.
-    Install-Package Elmah -ProjectName MyProject
+    ```powershell
+    Install-Package Elmah.MVC
     ```
 
-> [!Important]
-> All operations that are available in the console can also be done with the [NuGet CLI](../reference/nuget-exe-cli-reference.md). However, console commands operate within the context of Visual Studio and a saved project/solution and often accomplish more than their equivalent CLI commands. For example, installing a package through the console adds a reference to the project whereas the CLI command does not. For this reason, developers working in Visual Studio typically prefer using the console to the CLI.
+For more details about these commands, see the [Find a package](#find-a-package) and [Install a package](#install-a-package) sections.
 
 > [!Tip]
-> Many console operations depend on having a solution opened in Visual Studio with a known path name. If you have an unsaved solution, or no solution, you can see the error, "Solution is not opened or not saved. Please ensure you have an open and saved solution." This indicates that the console cannot determine the solution folder. Saving an unsaved solution, or creating and saving a solution if you don't have one open, should correct the error.
+> Many console operations depend on having a solution with a known path name open in Visual Studio. If you have an unsaved solution, or no solution, you see the error **Solution is not opened or not saved. Please ensure you have an open and saved solution.** To correct the error, create and save a solution, or save an unsaved solution.
 
-## Opening the console and console controls
+## Console controls
 
-1. Open the console in Visual Studio using the **Tools > NuGet Package Manager > Package Manager Console** command. The console is a Visual Studio window that can be arranged and positioned however you like (see [Customize window layouts in Visual Studio](/visualstudio/ide/customizing-window-layouts-in-visual-studio)).
+To open the Package Manager Console in Visual Studio, select **Tools** > **NuGet Package Manager** > **Package Manager Console** from the top menu. The console is a Visual Studio window that you can arrange and position as you like. For more information, see [Customize window layouts in Visual Studio](/visualstudio/ide/customizing-window-layouts-in-visual-studio).
 
-1. By default, console commands operate against a specific package source and project as set in the control at the top of the window:
+By default, console commands operate against the specific package source and project shown in the controls at the top of the window:
 
-    ![Package Manager Console controls for package source and project](media/PackageManagerConsoleControls1.png)
+:::image type="content" source="media/PackageManagerConsoleControls1.png" alt-text="Screenshot that shows the Package Manager Console controls for package source and project.":::
 
-1. Selecting a different package source and/or project changes those defaults for subsequent commands. To overrride these settings without changing the defaults, most commands support `-Source` and `-ProjectName` options.
+Selecting a different package source or project changes the defaults for subsequent commands. To override these settings for single commands without changing the defaults, most console commands support `-Source` and `-ProjectName` options.
 
-1. To manage package sources, select the gear icon. This is a shortcut to the **Tools > Options > NuGet Package Manager > Package Sources** dialog box as described on the [Package Manager UI](install-use-packages-visual-studio.md#package-sources) page. Also, the control to the right of the project selector clears the console's contents:
+To manage package sources, select the gear icon, which opens the **Tools** > **Options** > **NuGet Package Manager** > **Package Sources** dialog box. The control next to the project selector clears the console's contents.
 
-    ![Package Manager Console settings and clear controls](media/PackageManagerConsoleControls2.png)
+:::image type="content" source="media/PackageManagerConsoleControls2.png" alt-text="Screenshot that shows the Package Manager Console settings and clear controls.":::
 
-1. The rightmost button interrupts a long-running command. For example, running `Get-Package -ListAvailable -PageSize 500` lists the top 500 packages on the default source (such as nuget.org), which could take several minutes to run.
+The button on the far right interrupts a long-running command. For example, running `Get-Package -ListAvailable -PageSize 500` lists the top 500 available packages on the default source, such as nuget.org, which could take several minutes.
 
-    ![Package Manager Console stop control](media/PackageManagerConsoleControls3.png)
-
-## Install a package
-
-```ps
-# Add the Elmah package to the default project as specified in the console's project selector
-Install-Package Elmah
-
-# Add the Elmah package to a project named UtilitiesLib that is not the default
-Install-Package Elmah -ProjectName UtilitiesLib
-```
-
-See [Install-Package](../reference/ps-reference/ps-ref-install-package.md).
-
-Installing a package in the console performs the same steps as described on [What happens when a package is installed](../concepts/package-installation-process.md), with the following additions:
-
-- The Console displays applicable license terms in its window with implied agreement. If you do not agree to the terms, you should uninstall the package immediately.
-- Also a reference to the package is added to the project file and appears in **Solution Explorer** under the **References** node, you need to save the project to see the changes in the project file directly.
-
-## Uninstall a package
-
-```ps
-# Uninstalls the Elmah package from the default project
-Uninstall-Package Elmah
-
-# Uninstalls the Elmah package and all its unused dependencies
-Uninstall-Package Elmah -RemoveDependencies 
-
-# Uninstalls the Elmah package even if another package depends on it
-Uninstall-Package Elmah -Force
-```
-
-See [Uninstall-Package](../reference/ps-reference/ps-ref-uninstall-package.md). Use [Get-Package](../reference/ps-reference/ps-ref-get-package.md) to see all packages currently installed in the default project if you need to find an identifier.
-
-Uninstalling a package performs the following actions:
-
-- Removes references to the package from the project (and whatever management format is in use). References no longer appear in **Solution Explorer**. (You might need to rebuild the project to see it removed from the **Bin** folder.)
-- Reverses any changes made to `app.config` or `web.config` when the package was installed.
-- Removes previously-installed dependencies if no remaining packages use those dependencies.
-
-## Update a package
-
-```ps
-# Checks if there are newer versions available for any installed packages
-Get-Package -updates
-
-# Updates a specific package using its identifier, in this case jQuery
-Update-Package jQuery
-
-# Update all packages in the project named MyProject (as it appears in Solution Explorer)
-Update-Package -ProjectName MyProject
-
-# Update all packages in the solution
-Update-Package
-```
-
-See [Get-Package](../reference/ps-reference/ps-ref-get-package.md) and [Update-Package](../reference/ps-reference/ps-ref-update-package.md)
+:::image type="content" source="media/PackageManagerConsoleControls3.png" alt-text="Screenshot that shows the Package Manager Console stop control.":::
 
 ## Find a package
 
-```ps
-# Find packages containing keywords
-Find-Package elmah
-Find-Package logging
+To find a package in the default source, use [Find-Package](../reference/ps-reference/ps-ref-find-package.md).
 
-# List packages whose ID begins with Elmah
-Find-Package Elmah -StartWith
+- To find and list packages that contain certain keywords:
 
-# By default, Get-Package returns a list of 20 packages; use -First to show more
-Find-Package logging -First 100
+  ```powershell
+  Find-Package <keyword1>
+  Find-Package <keyword2>
+  ```
 
-# List all versions of the package with the ID of "jquery"
-Find-Package jquery -AllVersions -ExactMatch
+- To find and list packages whose name begins with a string:
+
+  ```powershell
+  Find-Package <string> -StartWith
+  ```
+
+- By default, `Find-Package` returns a list of 20 packages. Use `-First` to show more packages. For example, to show the first 100 packages, use:
+
+  ```powershell
+  Find-Package <keyword> -First 100
+  ```
+
+- To list all versions of a certain package:
+
+  ```powershell
+  Find-Package <PackageName> -AllVersions -ExactMatch
+  ```
+
+## Install a package
+
+To install a package into the default project, use `Install-Package <PackageName>`. The [Install-Package](../reference/ps-reference/ps-ref-install-package.md) console command takes the following actions:
+
+- Does the steps in [What happens when a NuGet package is installed](../concepts/package-installation-process.md).
+- Displays applicable license terms in the console window with implied agreement. If you don't agree to the terms, you should uninstall the package.
+- Adds a reference to the package in the project file and in **Solution Explorer** under the **References** node. You must save the project before you can see the changes in the project file.
+
+By default, `Install-Package` adds the package to the default project the console window specifies. To add the package to a project that isn't the default, use the `-ProjectName` option. For example, to add the `Elmah.MVC` package to the non-default `UtilitiesLib` project, run the following command:
+
+```powershell
+Install-Package Elmah.MVC -ProjectName UtilitiesLib
 ```
 
-See [Find-Package](../reference/ps-reference/ps-ref-find-package.md). In Visual Studio 2013 and earlier, use [Get-Package](../reference/ps-reference/ps-ref-get-package.md) instead.
+## Uninstall a package
 
-## Availability of the console
+To uninstall a package from the default project, use `Uninstall-Package <PackageName>`. If you need to find the package name, use [Get-Package](../reference/ps-reference/ps-ref-get-package.md) to see all packages installed in the default project.
 
-Starting in Visual Studio 2017, NuGet and the NuGet Package Manager are automatically installed when you select any .NET-related workloads; you can also install it individually by checking the **Individual components > Code tools > NuGet package manager** option in the Visual Studio installer.
+[Uninstall-Package](../reference/ps-reference/ps-ref-uninstall-package.md) takes the following actions:
 
-Also, if you're missing the NuGet Package Manager in Visual Studio 2015 and earlier, check **Tools > Extensions and Updates...** and search for the NuGet Package Manager extension. If you're unable to use the extensions installer in Visual Studio, you can download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
+- Removes references to the package from the project and any management formats. References no longer appear in **Solution Explorer**. You might need to rebuild the project to remove the reference in the *bin* folder.
+- Reverses any changes that installing the package made to *app.config* or *web.config*.
+- Removes previously-installed dependencies if no remaining packages use those dependencies.
 
-The Package Manager Console is not presently available with Visual Studio for Mac. The equivalent commands, however, are available through the [NuGet CLI](../reference/nuget-exe-CLI-reference.md). Visual Studio for Mac does have a UI for managing NuGet packages. See [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough).
+To uninstall a package and all its unused dependencies, run:
 
-The Package Manager Console is not included with Visual Studio Code.
+```powershell
+Uninstall-Package <PackageName> -RemoveDependencies
+```
+
+To uninstall a package even if other packages depend on it, run:
+
+```powershell
+Uninstall-Package <PackageName> -Force
+```
+
+## Update a package
+
+To update a package, use [Get-Package](../reference/ps-reference/ps-ref-get-package.md) and [Update-Package](../reference/ps-reference/ps-ref-update-package.md). You can run the following commands:
+
+- To check if there are newer versions available for any installed packages:
+
+  ```powershell
+  Get-Package -updates
+  ```
+
+- To update a specific package:
+
+  ```powershell
+  Update-Package <PackageName>
+  ```
+
+- To update all packages in a project:
+
+  ```powershell
+  Update-Package -ProjectName <ProjectName>
+  ```
+
+- To update all packages in the solution:
+
+  ```powershell
+  Update-Package
+  ```
+
+<a name="use-the-nugetexe-cli-in-the-console"></a>
+## Use the NuGet CLI in the console
+
+You can also do most console operations with the [NuGet CLI](../reference/nuget-exe-cli-reference.md). However, the PowerShell console commands operate within the context of Visual Studio saved project and solution, and often do more than their equivalent NuGet CLI commands. For example, installing a package through `Install-Package` adds a reference to the project file, but the NuGet CLI command doesn't. For this reason, developers working in Visual Studio typically prefer to use the console commands rather than the NuGet CLI.
+
+To use NuGet CLI commands in the Package Manager Console, install the [NuGet.CommandLine](https://www.nuget.org/packages/NuGet.CommandLine) package.
+
+```powershell
+Install-Package NuGet.CommandLine
+```
+
+The preceding command installs the latest version of the NuGet CLI. To install a specific version, use the `-Version` option. For example, to install Version 4.4.1, enter:
+
+```powershell
+Install-Package NuGet.CommandLine -Version 4.4.1
+```
+
+After you install the `NuGet.CommandLine` package, you can run all NuGet CLI commands through the Package Manager Console.
 
 ## Extend the Package Manager Console
 
-Some packages install new commands for the console. For example, `MvcScaffolding` creates commands like `Scaffold` shown below, which generates ASP.NET MVC controllers and views:
+Some packages install new commands for the console. For example, `MvcScaffolding` creates commands like `Scaffold`, which generates ASP.NET MVC controllers and views:
 
-![Installing and using MvcScaffold](media/PackageManagerConsoleInstall.png)
+:::image type="content" source="media/PackageManagerConsoleInstall.png" alt-text="Screenshot that shows NuGet CLI commands available after installing the NuGet.CommandLine package.":::
 
 ## Set up a NuGet PowerShell profile
 
-A PowerShell profile lets you make commonly-used commands available wherever you use PowerShell. NuGet supports a NuGet-specific profile typically found at the following location:
+You can create a PowerShell profile to make your commonly-used commands available in all PowerShell contexts, so you don't lose your PowerShell settings between sessions. NuGet supports a NuGet-specific profile, usually at *%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1*.
 
-*%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1*
+To find your user profile location, enter `$profile` in the console:
 
-To find the profile, type `$profile` in the console:
-
-```ps
+```powershell
 $profile
 C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
-For more details, refer to [Windows PowerShell Profiles](/previous-versions//bb613488(v=vs.85)).
+To determine whether a profile exists at that location, enter `test-path $profile`. If the command returns `False`, you need to create the profile with the specified name at that location. For more information, see [Windows PowerShell Profiles](/previous-versions//bb613488(v=vs.85)).
 
-## Use the nuget.exe CLI in the console
+## Next steps
 
-To make the [`nuget.exe` CLI](../reference/nuget-exe-cli-reference.md) available in the Package Manager Console, install the [NuGet.CommandLine](https://www.nuget.org/packages/NuGet.CommandLine/) package from the console:
-
-```ps
-# Other versions are available, see https://www.nuget.org/packages/NuGet.CommandLine/
-Install-Package NuGet.CommandLine -Version 4.4.1
-```
+- [Install and manage NuGet packages with the dotnet CLI](install-use-packages-dotnet-cli.md)
+- [Manage packages using the nuget.exe CLI](install-use-packages-nuget-cli.md)
+- [Install and manage packages in Visual Studio using the NuGet Package Manager](install-use-packages-visual-studio.md)

@@ -113,9 +113,9 @@ Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 
 Lists all known package sources. The order is ignored during restore operations and with any project using the PackageReference format. NuGet respects the order of sources for install and update operations with projects using `packages.config`.
 
-| Key | Value |
-| --- | --- |
-| (name to assign to the package source) | The path or URL of the package source. |
+| Key | Value | protocolVersion |
+| --- | --- | --- |
+| (name to assign to the package source) | The path or URL of the package source. | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. https://api.nuget.org/v3/index.json). Supported in [NuGet 3.0+](https://learn.microsoft.com/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](https://learn.microsoft.com/nuget/api/overview) for more information about the version 3 protocol. |
 
 **Example**:
 
@@ -141,6 +141,9 @@ Optionally, valid authentication types can be specified with the `-validauthenti
 | password | The encrypted password for the source. Encrypted passwords are only supported on Windows, and only can be decrypted when used on the same machine and via the same user as the original encryption. |
 | cleartextpassword | The unencrypted password for the source. Note: environment variables can be used for improved security. |
 | validauthenticationtypes | Comma-separated list of valid authentication types for this source. Set this to `basic` if the server advertises NTLM or Negotiate and your credentials must be sent using the Basic mechanism, for instance when using a PAT with on-premises Azure DevOps Server. Other valid values include `negotiate`, `kerberos`, `ntlm`, and `digest`, but these values are unlikely to be useful. |
+
+> [!Tip]
+> If a non-encrypted password is passed for `password` the error message ["The parameter is incorrect" will occur](https://github.com/NuGet/Home/issues/3245).
 
 **Example:**
 

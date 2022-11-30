@@ -1,8 +1,8 @@
 ---
 title: NuGet 5.7 Release Notes
 description: Release notes for NuGet 5.7 including new features, bug fixes, and DCRs.
-author: chgill-msft
-ms.author: chgill
+author: nkolev92
+ms.author: nikolev
 ms.date: 8/14/2020
 ms.topic: conceptual
 ---
@@ -15,8 +15,18 @@ NuGet distribution vehicles:
 |:---|:---|:---|
 | [**5.7.0**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.7](https://visualstudio.microsoft.com/downloads/) | [3.1.401](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
 | [**5.7.1**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.7](https://visualstudio.microsoft.com/downloads/) | [3.1.408](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
+| [**5.7.2**](https://nuget.org/downloads) | N/A | [3.1.420](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
+| [**5.7.3**](https://nuget.org/downloads) | N/A | [3.1.424](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
+
+## Summary: What's New in 5.7.3
+
+* [Security]: Microsoft Security Advisory CVE-2022-41032 | .NET Elevation of Privilege Vulnerability - [#12149](https://github.com/NuGet/Home/issues/12149)
+
+## Summary: What's New in 5.7.2
+
+* [Security]: Microsoft Security Advisory CVE-2022-30184 | .NET Information Disclosure Vulnerability - [#11883](https://github.com/NuGet/Home/issues/11883)
 
 ## Summary: What's New in 5.7
 
