@@ -157,7 +157,7 @@ Name                    | In           | Type             | Required | Notes
 ----------------------- | ------------ | ------           | -------- | -----
 ID                      | URL          | string           | yes      | The ID of the package to modify deprecation information on
 X-NuGet-ApiKey          | Header       | string           | yes      | For example, `X-NuGet-ApiKey: {USER_API_KEY}`
-User-Agent              | Header       | string           | yes      | A user agent string is required, include a URL to your project if possible, e.g. `Spoon-Knife/1.0.0 (+https://github.com/octocat/Spoon-Knife)`
+User-Agent              | Header       | string           | yes      | A user agent string is required, optionally include a URL to your project if possible, e.g. `Spoon-Knife/1.0.0 (+https://github.com/octocat/Spoon-Knife)`
 versions                | Request body | array of strings | yes      | The package versions to apply the provided deprecation details to
 isLegacy                | Request body | boolean          | no       | If set to true, mark the package version(s) as legacy, defaults to false
 hasCriticalBugs         | Request body | boolean          | no       | If set to true, mark the package version(s) as having critical bugs, defaults to false
