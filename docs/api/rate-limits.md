@@ -45,12 +45,14 @@ The following tables list the rate limits for the NuGet.org API.
 **GET** `/api/v2/Packages` | IP | 20000 / minute | Query NuGet package metadata via v2 OData `Packages` collection | 
 **GET** `/api/v2/Packages/$count` | IP | 100 / minute | Query NuGet package count via v2 OData `Packages` collection | 
 
-## Package Push and Unlist
+## Package Push, unlist, relist, and set deprecation details
 
 | API | Limit Type | Limit Value | API Use Case | 
 |:---|:---|:---|:--- |
-**PUT** `/api/v2/package` | API Key | 350 / hour | Upload a new NuGet package (version) via v2 push endpoint 
-**DELETE** `/api/v2/package/{id}/{version}` | API Key | 250 / hour | Unlist a NuGet package (version) via v2 endpoint 
+**PUT** `/api/v2/package` | API Key | 350 / hour | Upload a new NuGet package (version) via package publish endpoint 
+**DELETE** `/api/v2/package/{id}/{version}` | API Key | 250 / hour | Unlist a NuGet package (version) via package publish endpoint 
+**POST** `/api/v2/package/{id}/{version}` | API Key | 250 / hour | Relist a NuGet package (version) via package publish endpoint
+**PUT** `/api/v2/package/{id}/deprecations` on multiple version | API Key | 1 / minute | Update the deprecation information on multiple package versions
 
 ## nuget.org website page views
 
