@@ -1,5 +1,5 @@
 ---
-title: Push and Delete, NuGet API
+title: Update Packages, NuGet API
 description: The publish service allows clients to publish new packages, unlist/delete, or deprecate existing packages.
 author: joelverhagen
 ms.author: jver
@@ -8,10 +8,12 @@ ms.topic: reference
 ms.reviewer: kraigb
 ---
 
-# Push and Delete
+# Push, delete/unlist, relist, deprecate
 
 It is possible to push, delete (or unlist, depending on the server implementation), and relist packages using the NuGet
 V3 API. These operations are based off of the `PackagePublish` resource found in the [service index](service-index.md).
+
+Many package feeds do not allow the modification of existing package content. However some metadata about a package can be modified after upload, e.g. listed status and deprecation information. Please refer to documentation for your specific package source as needed. This document generally describes generic behavior and behavior on nuget.org.
 
 ## Versioning
 
@@ -109,7 +111,7 @@ Status Code | Meaning
 ## Relist a package
 
 If a package is unlisted, it is possible to make that package once again visible in search results using the "relist"
-endpoint. This endpoint has the same shape as the [delete (unlist) endpoint](#delete-a-package) but uses the `POST`
+endpoint. This endpoint has the same shape as the [delete (unlist) endpoint](#delete-or-unlist-a-package) but uses the `POST`
 HTTP method instead of the `DELETE` method.
 
 If the package is already listed, the request still succeeds.
@@ -137,7 +139,7 @@ Status Code | Meaning
 
 > [!Note]
 > This API is currently in public preview. The API contract may change in the future. To ensure the package source still supports this contract, verify the `PackagePublish/3.0.0-preview.1` resource is listed in the [service index](service-index.md).
-> For NuGet.org, create an API key with the ability to **unlist**. This is the scope checked for this operation.
+> For nuget.org, create an API key with the ability to **unlist**. This is the scope checked for this operation.
 
 A package can be marked as deprecated or have deprecation details modified and removed using this endpoint. This endpoint uses the `PUT` HTTP method and expects a JSON request body.
 

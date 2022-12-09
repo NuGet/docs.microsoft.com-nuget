@@ -122,7 +122,7 @@
 #### [Package content](api/package-base-address-resource.md)
 #### [Package details URL](api/package-details-template-resource.md)
 #### [Package metadata](api/registration-base-url-resource.md)
-#### [Push and delete](api/package-publish-resource.md)
+#### [Update packages](api/package-publish-resource.md)
 #### [Push symbol packages](api/symbol-package-publish-resource.md)
 #### [Report abuse URL](api/report-abuse-resource.md)
 #### [Repository signatures](api/repository-signatures-resource.md)
