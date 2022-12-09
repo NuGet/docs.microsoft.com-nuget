@@ -137,8 +137,10 @@ Status Code | Meaning
 
 ## Deprecate or undeprecate a package
 
-> [!Note]
+> [!Warning]
 > This API is currently in public preview. The API contract may change in the future. To ensure the package source still supports this contract, verify the `PackagePublish/3.0.0-preview.1` resource is listed in the [service index](service-index.md).
+
+> [!Note]
 > For nuget.org, create an API key with the ability to **unlist**. This is the scope checked for this operation.
 
 A package can be marked as deprecated or have deprecation details modified and removed using this endpoint. This endpoint uses the `PUT` HTTP method and expects a JSON request body.
