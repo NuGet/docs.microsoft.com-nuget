@@ -54,7 +54,7 @@ For more information about SemVer 2.0.0, see
 ## Base URL
 
 The base URL for the following APIs is the value of the `@id` property associated with the aforementioned
-resource `@type` values. In the following document, the placeholder base URL `{@id}` will be used.
+resource `@type` values. In the following document, the placeholder base URL `{@id}` will be used. The base URL may change based on implementation or infrastructure changes within the package source so it must be dynamically fetched from the [service index](service-index.md) by the client software.
 
 ## HTTP methods
 
@@ -269,8 +269,10 @@ severity     | string | yes      | Severity of advisory: "0" = Low, "1" = Modera
 ### Sample request
 
 ```
-GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
+GET https://api.nuget.org/v3/registration-sample/nuget.server.core/index.json
 ```
+
+Make sure to fetch the base URL (`https://api.nuget.org/v3/registration-sample/` in this sample) from the service index as mentioned in the [base URL](#base-url) section.
 
 ### Sample response
 
@@ -308,8 +310,10 @@ The shape of the registration leaf objects is the same as in the registration in
 ## Sample request
 
 ```
-GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
+GET https://api.nuget.org/v3/registration-sample/ravendb.client/page/1.0.531/1.0.729-unstable.json
 ```
+
+Make sure to fetch the base URL (`https://api.nuget.org/v3/registration-sample/` in this sample) from the service index as mentioned in the [base URL](#base-url) section.
 
 ## Sample response
 
@@ -348,8 +352,10 @@ registration   | string  | no       | The URL to the registration index
 ### Sample request
 
 ```
-GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
+GET https://api.nuget.org/v3/registration-sample/nuget.versioning/4.3.0.json
 ```
+
+Make sure to fetch the base URL (`https://api.nuget.org/v3/registration-sample/` in this sample) from the service index as mentioned in the [base URL](#base-url) section.
 
 ### Sample response
 
