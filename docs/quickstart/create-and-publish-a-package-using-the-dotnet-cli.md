@@ -82,7 +82,7 @@ Publish your *.nupkg* file to nuget.org by using the [dotnet nuget push](/dotnet
 
 ### Get your API key
 
-[!INCLUDE [publish-api-key](includes/publish-api-key.md)]
+[!INCLUDE [publish-api-key](includes/publish-api-key-with-link.md)]
 
 ### Publish with dotnet nuget push
 
