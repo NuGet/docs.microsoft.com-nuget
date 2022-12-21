@@ -145,7 +145,7 @@ If you'd like to test and validate your package before publishing it a public ga
 
 ### Acquire your API key
 
-[!INCLUDE [publish-api-key](includes/publish-api-key.md)]
+[!INCLUDE [publish-api-key](includes/publish-api-key-with-link.md)]
 
 ### Publish with the NuGet CLI
 

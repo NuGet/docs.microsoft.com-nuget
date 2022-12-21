@@ -146,7 +146,7 @@ After you've created a *.nupkg* file, publish it to nuget.org by using either th
 
 Before you publish your NuGet package, create an API key:
 
-[!INCLUDE [publish-api-key](includes/publish-api-key.md)]
+[!INCLUDE [publish-api-key](includes/publish-api-key-with-link.md)]
 
 ### Publish with the .NET CLI or NuGet CLI
 

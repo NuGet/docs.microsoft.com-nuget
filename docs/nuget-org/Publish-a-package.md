@@ -46,7 +46,7 @@ To use either command line, you first need to get an API key from nuget.org.
 
 #### Create an API key
 
-[!INCLUDE [publish-api-key](../quickstart/includes/publish-api-key.md)]
+[!INCLUDE [publish-api-key](../quickstart/includes/publish-api-key-with-link.md)]
 
 #### Use the dotnet CLI
 
