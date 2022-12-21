@@ -174,15 +174,18 @@ deprecation              | object                     | no       | The deprecati
 description              | string                     | no       | 
 iconUrl                  | string                     | no       | 
 id                       | string                     | yes      | The ID of the package
+language                 | string                     | no       |
 licenseUrl               | string                     | no       |
 licenseExpression        | string                     | no       | 
 listed                   | boolean                    | no       | Should be considered as listed if absent
 minClientVersion         | string                     | no       | 
+packageContent           | string                     | no       | Duplicate of the same property in the parent object, included only for legacy reasons
 projectUrl               | string                     | no       | 
 published                | string                     | no       | A string containing a ISO 8601 timestamp of when the package was published
+readmeUrl                | string                     | no       | A URL for the rendered (HTML web page) view of the package README
 requireLicenseAcceptance | boolean                    | no       | 
 summary                  | string                     | no       | 
-tags                     | string or array of string  | no       | 
+tags                     | string or array of strings | no       | 
 title                    | string                     | no       | 
 version                  | string                     | yes      | The full version string after normalization
 vulnerabilities          | array of objects           | no       | The security vulnerabilities of the package
