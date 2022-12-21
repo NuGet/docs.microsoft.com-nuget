@@ -30,7 +30,7 @@ This version introduces support for the `packageType` query parameter, allowing 
 ## Base URL
 
 The base URL for the following APIs is the value of the `@id` property associated with one of the aforementioned
-resource `@type` values. In the following document, the placeholder base URL `{@id}` will be used.
+resource `@type` values. In the following document, the placeholder base URL `{@id}` will be used. The base URL may change based on implementation or infrastructure changes within the package source so it must be dynamically fetched from the [service index](service-index.md) by the client software.
 
 ## HTTP Methods
 
@@ -94,8 +94,10 @@ data      | array of strings | yes      | The package IDs matched by the request
 ### Sample request
 
 ```
-GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+GET https://search-sample.nuget.org/autocomplete?q=storage&prerelease=true
 ```
+
+Make sure to fetch the base URL (`https://search-sample.nuget.org/autocomplete` in this sample) from the service index as mentioned in the [base URL](#base-url) section.
 
 ### Sample response
 

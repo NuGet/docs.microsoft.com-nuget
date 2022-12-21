@@ -28,7 +28,7 @@ PackageBaseAddress/3.0.0 | The initial release
 ## Base URL
 
 The base URL for the following APIs is the value of the `@id` property associated with the aforementioned
-resource `@type` value. In the following document, the placeholder base URL `{@id}` will be used.
+resource `@type` value. In the following document, the placeholder base URL `{@id}` will be used. The base URL may change based on implementation or infrastructure changes within the package source so it must be dynamically fetched from the [service index](service-index.md) by the client software.
 
 ## HTTP methods
 
@@ -80,6 +80,8 @@ in the following endpoints.
 GET https://api.nuget.org/v3-flatcontainer/owin/index.json
 ```
 
+Make sure to fetch the base URL (`https://api.nuget.org/v3-flatcontainer/` in this sample) from the service index as mentioned in the [base URL](#base-url) section.
+
 ### Sample response
 
 [!code-JSON [package-base-address-index.json](./_data/package-base-address-index.json)]
@@ -121,6 +123,8 @@ If the package does not exist on the package source, a 404 status code is return
 GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
 ```
 
+Make sure to fetch the base URL (`https://api.nuget.org/v3-flatcontainer/` in this sample) from the service index as mentioned in the [base URL](#base-url) section.
+
 ### Sample response
 
 The binary stream that is the .nupkg for Newtonsoft.Json 9.0.1.
@@ -160,6 +164,8 @@ If the package does not exist on the package source, a 404 status code is return
 ```
 GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/6.0.4/newtonsoft.json.nuspec
 ```
+
+Make sure to fetch the base URL (`https://api.nuget.org/v3-flatcontainer/` in this sample) from the service index as mentioned in the [base URL](#base-url) section.
 
 ### Sample response
 
