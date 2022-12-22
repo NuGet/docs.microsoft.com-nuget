@@ -21,4 +21,4 @@
 
 *Scoping* lets you create separate API keys for different purposes. Each key has an expiration timeframe, and you can scope the key to specific packages or glob patterns. You also scope each key to specific operations: Push new packages and package versions, push only new package versions, or unlist.
 
-Through scoping, you can create API keys for different people who manage packages for your organization so they have only the permissions they need. For more information, see [scoped API keys](../../nuget-org/scoped-api-keys.md).
+Through scoping, you can create API keys for different people who manage packages for your organization so they have only the permissions they need.
