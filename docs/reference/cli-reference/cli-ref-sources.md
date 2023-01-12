@@ -69,12 +69,16 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
   Comma-separated list of valid authentication types for this source. By default, all authentication types are valid. Example: `basic,negotiate`.
 
+- **`-ProtocolVersion`**
+
+  The NuGet server protocol version to be used. The current version is "3". Supported in NuGet 3.0+. Defaults to "2" if not specified.
+  
 - **`-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
 
 > [!Note]
-> Make sure to add the sources' password under the same user context as the nuget.exe is later used to access the package source. The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted. So for example when you use a build server to restore NuGet packages the password must be encrypted with the same Windows user under which  the build server task will run.
+> Make sure to add the sources' password under the same user context as the nuget.exe is later used to access the package source. The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted. So for example when you use a build server to restore NuGet packages the password must be encrypted with the same Windows user under which the build server task will run.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
@@ -87,5 +91,5 @@ nuget sources Disable -Name "MyServer"
 
 nuget sources Enable -Name "nuget.org"
 
-nuget sources add -name foo.bar -source C:\NuGet\local -username foo -password bar -StorePasswordInClearText -configfile %AppData%\NuGet\my.config
+nuget sources add -name foo.bar -source C:\NuGet\local -username foo -password bar -StorePasswordInClearText -configfile %AppData%\NuGet\my.config -ProtocolVersion 2
 ```
