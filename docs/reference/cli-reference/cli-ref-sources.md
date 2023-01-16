@@ -71,7 +71,9 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
 - **`-ProtocolVersion`**
 
-  The NuGet server protocol version to be used. The current version is "3". Supported in NuGet 3.0+. Defaults to "2" if not specified.
+  The NuGet server protocol version to be used. Currently supported versions are `2` and `3`. Defaults to `2` if not specified. See [NuGet Server API](https://learn.microsoft.com/en-us/nuget/api/overview) for information about the version 3 protocol.
+  
+  Available in NuGet command line from version 6.6.
   
 - **`-Verbosity [normal|quiet|detailed]`**
 
