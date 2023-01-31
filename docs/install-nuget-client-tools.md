@@ -11,7 +11,15 @@ ms.topic: quickstart
 
 > **Looking to install a package? See [Ways to install NuGet packages](consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package).**
 
-To work with NuGet, as a package consumer or creator, you can use command-line interface (CLI) tools as well as NuGet features in Visual Studio. This article briefly outlines the capabilities of the different tools, how to install them, and their comparative [feature availability](#feature-availability). To get started using NuGet to consume packages, see [Install and use a package (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) and [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md). To get started creating NuGet packages, see [Create and publish a NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) and [Create and publish a NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md).
+To work with NuGet, as a package consumer or creator, you can use command-line interface (CLI) tools as well as NuGet features in Visual Studio. This article briefly outlines the capabilities of the different tools, how to install them, and their comparative [feature availability](#feature-availability). 
+
+To get started using NuGet to consume packages, see:
+* [Install and use a package (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
+* [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
+
+To get started creating NuGet packages, see:
+* [Create and publish a NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
+* [Create and publish a NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
 
 | Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Download&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
