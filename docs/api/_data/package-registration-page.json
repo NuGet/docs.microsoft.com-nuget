@@ -1,11 +1,11 @@
 {
   "count": 2,
   "lower": "1.0.531",
-  "parent": "https://api.nuget.org/v3/registration3/nuget.protocol.v3.example/index.json",
+  "parent": "https://api.nuget.org/v3/registration-sample/nuget.protocol.v3.example/index.json",
   "upper": "1.0.729-unstable",
   "items": [
     {
-      "@id": "https://api.nuget.org/v3/registration3/nuget.protocol.v3.example/1.0.531.json",
+      "@id": "https://api.nuget.org/v3/registration-sample/nuget.protocol.v3.example/1.0.531.json",
       "@type": "Package",
       "commitId": "e0b9ca79-75b5-414f-9e3e-de9534b5cfd1",
       "commitTimeStamp": "2017-10-26T14:12:19.3439088Z",
@@ -25,10 +25,10 @@
         "version": "1.0.531"
       },
       "packageContent": "https://api.nuget.org/v3-flatcontainer/nuget.protocol.v3.example/1.0.531/nuget.protocol.v3.example.1.0.531.nupkg",
-      "registration": "https://api.nuget.org/v3/registration3/nuget.protocol.v3.example/index.json"
+      "registration": "https://api.nuget.org/v3/registration-sample/nuget.protocol.v3.example/index.json"
     },
     {
-      "@id": "https://api.nuget.org/v3/registration3/nuget.protocol.v3.example/1.0.729-unstable.json",
+      "@id": "https://api.nuget.org/v3/registration-sample/nuget.protocol.v3.example/1.0.729-unstable.json",
       "@type": "Package",
       "commitId": "e0b9ca79-75b5-414f-9e3e-de9534b5cfd1",
       "commitTimeStamp": "2017-10-26T14:12:19.3439088Z",
@@ -59,7 +59,7 @@
         "version": "1.0.729-Unstable"
       },
       "packageContent": "https://api.nuget.org/v3-flatcontainer/nuget.protocol.v3.example/1.0.729-unstable/nuget.protocol.v3.example.1.0.729-unstable.nupkg",
-      "registration": "https://api.nuget.org/v3/registration3/nuget.protocol.v3.example/index.json"
+      "registration": "https://api.nuget.org/v3/registration-sample/nuget.protocol.v3.example/index.json"
     }
   ]
 }

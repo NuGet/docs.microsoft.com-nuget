@@ -460,7 +460,7 @@ Project file:
 
 ```xml
 <PropertyGroup>
-    <RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
+    <RestoreIgnoreFailedSources>true</RestoreIgnoreFailedSources>
 </PropertyGroup>
 ```
 

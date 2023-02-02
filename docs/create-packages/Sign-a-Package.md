@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.reviewer: anangaur
 ---
 
-# Signing NuGet Packages
+# Sign a NuGet package
 
-Signed packages allows for content integrity verification checks which provides protection against content tampering. The package signature also serves as the single source of truth about the actual origin of the package and bolsters package authenticity for the consumer. This guide assumes you have already [created a package](creating-a-package.md).
+A signed package allows for content integrity verification checks, which provides protection against content tampering. The package signature also serves as the single source of truth about the actual origin of the package and bolsters package authenticity for the consumer. This guide assumes you have already [created a package](creating-a-package.md).
 
 ## Get a code signing certificate
 
-Valid certificates may be obtained from a public certificate authority such as [DigiCert](https://www.digicert.com/code-signing/), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml), etc. The complete list of certification authorities trusted by Windows can be obtained from [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list).
+Valid certificates can be obtained from a public certificate authority such as [DigiCert](https://www.digicert.com/code-signing/), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), or [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml). You can obtain the complete list of certification authorities trusted by Windows from [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list).
 
 You can use self-issued certificates for testing purposes. However, packages signed using self-issued certificates are not accepted by NuGet.org. Learn more about [creating a test certificate](#create-a-test-certificate)
 
@@ -59,14 +59,15 @@ To publish a signed package, you must first register the certificate with NuGet.
 1. Browse and select the certficate file that was exported earlier.
   ![Registered Certificates](../reference/media/registered-certs.png)
 
-**Note**
-* One user can submit multiple certificates and the same certificate can be registered by multiple users.
-* Once a user has a certificate registered, all future package submissions **must** be signed with one of the certificates. See [Manage signing requirements for your package on NuGet.org](#manage-signing-requirements-for-your-package-on-nugetorg)
-* Users can also remove a registered certificate from the account. Once a certificate is removed, new packages signed with that certificate will fail at submission. Existing packages aren't affected.
+> [!NOTE]
+>
+> * One user can submit multiple certificates and the same certificate can be registered by multiple users.
+> * Once a user has a certificate registered, all future package submissions **must** be signed with one of the certificates. See [Manage signing requirements for your package on NuGet.org](#manage-signing-requirements-for-your-package-on-nugetorg)
+> * Users can also remove a registered certificate from the account. Once a certificate is removed, new packages signed with that certificate will fail at submission. Existing packages aren't affected.
 
 ## Publish the package
 
-You are now ready to publish the package to NuGet.org. See [Publishing packages](../nuget-org/Publish-a-package.md).
+You're now ready to publish the package to NuGet.org. See [Publishing packages](../nuget-org/Publish-a-package.md).
 
 ## Create a test certificate
 
@@ -90,14 +91,15 @@ This command creates a testing certificate available in the current user's perso
 > NuGet.org does not accept packages signed with self-issued certificates.
 
 ## Manage signing requirements for your package on NuGet.org
+
 1. [Sign in](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) to NuGet.org.
 
 1. Go to `Manage Packages` 
    ![Configure package signers](../reference/media/configure-package-signers.png)
 
-* If you are the sole owner of a package, you are the required signer i.e. you can use any of the registered certificates to sign and publish your packages to NuGet.org.
+* If you are the sole owner of a package, you are the required signer, that is, you can use any of the registered certificates to sign and publish your packages to NuGet.org.
 
-* If a package has multiple owners, by default, "Any" owner's certificates can be used to sign the package. As a co-owner of the package, you can override "Any" with yourself or any other co-owner to be the required signer. If you make an owner  who does not have any certificate registered, then unsigned packages will be allowed. 
+* If a package has multiple owners, by default, "Any" owner's certificates can be used to sign the package. As a co-owner of the package, you can override "Any" with yourself or any other co-owner to be the required signer. If you make an owner who does not have any certificate registered, then unsigned packages will be allowed. 
 
 * Similarly, if the default "Any" option is selected for a package where one owner has a certificate registered and another owner does not have any certificate registered, then NuGet.org accepts either a signed package with a signature registered by one of its owners or an unsigned package (because one of the owners does not have any certificate registered).
 
@@ -105,3 +107,4 @@ This command creates a testing certificate available in the current user's perso
 
 - [Manage package trust boundaries](../consume-packages/installing-signed-packages.md)
 - [Signed Packages Reference](../reference/Signed-Packages-Reference.md)
+- [.NET signed package verification](/dotnet/core/tools/nuget-signed-package-verification)

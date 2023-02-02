@@ -19,7 +19,7 @@ As NuGet has evolved, various different folders for build `.props` and `.targets
 | Folder | NuGet Version | Use |
 |--------|---------------|-----|
 | build | 2.5+ | Build logic for every framework of a project. |
-| buildMultiTargetting | 4.0+ | Build logic for the `outer build` for projects that target multiple frameworks. PackageReference only. |
+| buildMultiTargeting | 4.0+ | Build logic for the `outer build` for projects that target multiple frameworks. PackageReference only. |
 | buildTransitive | 5.0+ | Build logic for assets that flow transitively to any consuming project. See the [feature](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) page. PackageReference only. |
 
 ## Framework specific build folder

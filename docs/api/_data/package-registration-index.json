@@ -2,11 +2,11 @@
   "count": 1,
   "items": [
     {
-      "@id": "https://api.nuget.org/v3/registration3/nuget.server.core/index.json#page/3.0.0-beta/3.0.0-beta",
+      "@id": "https://api.nuget.org/v3/registration-sample/nuget.server.core/index.json#page/3.0.0-beta/3.0.0-beta",
       "count": 1,
       "items": [
         {
-          "@id": "https://api.nuget.org/v3/registration3/nuget.server.core/3.0.0-beta.json",
+          "@id": "https://api.nuget.org/v3/registration-sample/nuget.server.core/3.0.0-beta.json",
           "catalogEntry": {
             "@id": "https://api.nuget.org/v3/catalog0/data/2017.10.05.18.41.33/nuget.server.core.3.0.0-beta.json",
             "authors": ".NET Foundation",
@@ -18,7 +18,7 @@
                     "@id": "https://api.nuget.org/v3/catalog0/data/2017.10.05.18.41.33/nuget.server.core.3.0.0-beta.json#dependencygroup/nuget.core",
                     "id": "NuGet.Core",
                     "range": "[2.14.0, )",
-                    "registration": "https://api.nuget.org/v3/registration3/nuget.core/index.json"
+                    "registration": "https://api.nuget.org/v3/registration-sample/nuget.core/index.json"
                   }
                 ]
               }
@@ -46,7 +46,7 @@
             ]
           },
           "packageContent": "https://api.nuget.org/v3-flatcontainer/nuget.server.core/3.0.0-beta/nuget.server.core.3.0.0-beta.nupkg",
-          "registration": "https://api.nuget.org/v3/registration3/nuget.server.core/index.json"
+          "registration": "https://api.nuget.org/v3/registration-sample/nuget.server.core/index.json"
         }
       ],
       "lower": "3.0.0-beta",

@@ -28,6 +28,7 @@ There are also several other NuGet hosting products such as [Azure Artifacts](ht
 - [Gitea](https://gitea.io), an open-source, self-hostable Git service supports NuGet as a [package registry](https://docs.gitea.io/en-us/packages/nuget/)
 - [GitHub package registry](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [GitLab Package Registry](https://docs.gitlab.com/ee/user/packages/nuget_repository/)
+- [JetBrains Space](https://www.jetbrains.com/help/space/nuget-feed.html)
 - [LiGet](https://github.com/ai-traders/liget), an open-source implementation of NuGet V2 server that runs on kestrel in docker
 - [MyGet](https://myget.org)
 - [Nexus Repository OSS](https://www.sonatype.com/nexus-repository-oss) from Sonatype.

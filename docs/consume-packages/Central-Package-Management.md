@@ -92,7 +92,7 @@ Repository
 - Project1 will evaluate the `Directory.Packages.props` file in the `Repository\Solution1\` directory and it must manually import the next one if so desired.
   ```xml
   <Project>
-    <Import Project="..\Directory.Packages.props">
+    <Import Project="$([MSBuild]::GetPathOfFileAbove(Directory.Packages.props, $(MSBuildThisFileDirectory)..))" />
     <ItemGroup>
       <PackageVersion Update="Newtonsoft.Json" Version="12.0.1" />
     </ItemGroup>
@@ -211,5 +211,3 @@ There are 3 package sources defined in your configuration. When using central pa
 
 > [!Note]
 > Central package management is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
->
-> * There is currently no support in Visual Studio or the .NET CLI for Central Package Management.
