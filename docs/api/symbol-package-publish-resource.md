@@ -5,6 +5,7 @@ ms.author: cmanu
 manager: skofman
 ms.date: 10/30/2018
 ms.topic: reference
+ms.prod: nuget
 ms.technology: null
 description: The publish service allows clients to publish new symbol packages.
 keywords: NuGet API push symbol package

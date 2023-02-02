@@ -184,6 +184,3 @@ nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
 
 nuget pack Package.nuspec -exclude "*.exe" -exclude "*.bat"
 ```
-
-> [!Note]
-> The `pack` command for SDK-style projects is not supported, use `dotnet pack` or `msbuild -t:pack` to pack this those projects instead.

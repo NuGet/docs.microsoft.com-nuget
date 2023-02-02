@@ -33,13 +33,13 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "ms.service": "nuget",
       "feedback_system": "GitHub",
       "feedback_github_repo": "NuGet/docs.microsoft.com-nuget",
       "feedback_product_url": "https://github.com/NuGet/Home/issues/",
       "breadcrumb_path": "~/_breadcrumb/toc.yml",
       "ROBOTS": "INDEX,FOLLOW",
       "ms.topic": "conceptual",
+      "ms.prod": "nuget",
       "author": "JonDouglas",
       "ms.author": "jodou",
       "ms.reviewer": [
