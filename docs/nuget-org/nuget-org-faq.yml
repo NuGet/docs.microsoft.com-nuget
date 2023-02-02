@@ -104,15 +104,12 @@ sections:
     questions:
       - question: How to recover NuGet.org password login?
         answer: |
-          Please note that the [NuGet.org Password login has been discontinued](https://blog.nuget.org/20180515/NuGet.org-will-only-support-MSA-AAD-starting-June.html) and the only way to log in to NuGet.org is with a personal Microsoft account (MSA) or Azure Active Directory (AAD) account. However, in case you are unable to access your associated MSA/AAD accounts you might need to use password login for recovering your NuGet.org account. In this situation follow the steps below.
-          - **Requirement:** You will need to have access to the email that is associated with the account for which you need to recover the password.
-          - Go to the [Forgot password page](https://www.nuget.org/account/ForgotPassword)
-          - Enter the **email** address that is associated with the NuGet.org account you wish to recover.
-          - Click the **Send** button.
-          - You will get an email to the specified email address account with a link to reset your password. Click on this link and set the new password. If you can't find the mail check your "junk" folder.
-          - Once done, you can now login with username/password on NuGet.
-          - To login with username/password, use the **Sign in using Nuget.org account** link on the  [NuGet.org login page](https://www.nuget.org/users/account/LogOn).
+          Please note that the [NuGet.org Password login has been discontinued](https://blog.nuget.org/20180515/NuGet.org-will-only-support-MSA-AAD-starting-June.html). Unfortunately, NuGet.org has no way to recover password accounts, you can only log in to NuGet.org with a personal Microsoft account (MSA) or Azure Active Directory (AAD) account. 
           
+          If you are unable to use Microsoft login, [please follow the steps to recover your NuGet.org account](#unable-to-use-microsoft-login--how-do-i-recover-my-nuget-org-account).
+      
+          Please let us know if you need assistance in transferring ownership of your packages to a different account by sending an email to [support@nuget.org](mailto:support@nuget.org).
+
       - question: Which Microsoft account is linked to my NuGet.org account?
         answer: |
           If you have forgotten which Microsoft account is associated with your NuGet.org account, please follow the steps below to get assistance.
@@ -178,41 +175,17 @@ sections:
       - question: How do I find which Microsoft account is linked to this NuGet.org account?
         answer: |
           You should use the [sign in assistance](#which-microsoft-account-is-linked-to-my-nuget-org-account) flow to figure out which Microsoft account is linked to the NuGet.org account with the email address `account1@outlook.com`.
-          
-      - question: I want to override that account with my Microsoft account
+
+      - question: Unable to use Microsoft login, how do I recover my NuGet.org account?
         answer: |
-          Follow the steps in [Unable to use microsoft login, how do I recover my NuGet.org account](#unable-to-use-microsoft-login--how-do-i-recover-my-nuget-org-account) section to associate your Microsoft account with the existing NuGet.org account.
+          If you tried using the [sign in assistance](#which-microsoft-account-is-linked-to-my-nuget-org-account) and you do not have access to the Microsoft account that is associated with your NuGet.org account, please contact your Microsoft account support:
           
-      - question: Unable to use microsoft login, how do I recover my NuGet.org account?
-        answer: |
-          If you tried using the [sign in assistance](#which-microsoft-account-is-linked-to-my-nuget-org-account) and you do not have access to the Microsoft account that is associated with your NuGet.org account, please follow the steps below to link a new Microsoft account to your NuGet.org account.
-          1. **Requirement**: You will need access to a Microsoft account which is not associated with any existing NuGet.org accounts. If you do not have one, you can [create](https://signup.live.com) one.
-          2. If you've forgotten your username and password for your NuGet.org account, follow the [steps to recover your password login](#how-to-recover-nuget-org-password-login).
-          3. [Login to NuGet.org](https://www.nuget.org/users/account/LogOnNuGetAccount) using the username/password login.
-          4. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box.
-          5. **NOTE**: Please ignore the instruction to login with the specified Microsoft account. You can now link your NuGet.org account to any other Microsoft login.
-          6. Click on the button **Sign in with Microsoft** and login with the Microsoft account that you have an access to, as mentioned in step 1.
-          7. Your account will now be linked to the new Microsoft account, which you can use to log into NuGet.org going forward.
-          
-              ![Link MSA Dialog](media/link-msa-dialog.png)
-          
+          - Microsoft Account (MSA): [Get help with your Microsoft account](https://support.microsoft.com/account-billing/get-help-with-your-microsoft-account-ace6f3b3-e2d3-aeb1-6b96-d2e9e7e52133)
+          - Work or school account (AAD): [Work or school account help](https://support.microsoft.com/account-billing/work-or-school-account-help-718b3d92-a8a7-4656-8a05-c0228d346b7d) or contact your admin tenant.
+
       - question: How to transform my NuGet.org account to an organization?
         answer: |
-          If you want to transform your account to an organization, and this account is already associated with a Microsoft account login, please follow the steps given in the documentation for [organizations on nuget org](organizations-on-nuget-org.md).
-          
-          If, however, your NuGet.org account is not associated/linked with a Microsoft account, you can follow the steps below to transform this account to an organization.
-          1. **Requirement**: You need to have an individual account first created on NuGet.org to be used as an admin on the org account. If you do not have one, please [create a new NuGet.org account](individual-accounts.md)
-          2. Follow the [steps to recover your password login](#how-to-recover-nuget-org-password-login) for your NuGet.org account if you do not have password login for it, if you do, skip this step.
-          3. [Login to NuGet.org](https://www.nuget.org/users/account/LogOnNuGetAccount) using the username/password login.
-          4. Once logged in, you will see the popup dialog show up like below. This is the password discontinuation dialog box. 
-              > [!Important]
-              > Ignore this dialog box, **do not** click on the **Sign in with microsoft** button.
-          
-          5. Go to [https://www.nuget.org/account/transform](https://www.nuget.org/account/transform). This will allow you to convert the NuGet.org account to an org without linking to a Microsoft account.
-          6. Specify the admin username for your personal NuGet.org account/the account you created in Step 1.
-          7. Follow the instructions to complete transformation of this account to an organization.
-          
-              ![Link MSA Dialog](media/link-msa-dialog.png)
+          If you want to transform your account to an organization, please follow the steps given in the documentation for [organizations on nuget.org](organizations-on-nuget-org.md).
           
       - question: NuGet.org login issues for AAD accounts with unmanaged tenant?
         answer: |
@@ -231,10 +204,6 @@ sections:
           At this moment there is not a way for us (NuGet.org) to authenticate accounts with such "Unmanaged" tenant accounts in Azure Active directory. We are looking in to a better way to authenticate such accounts.
           
           If you want to login to NuGet.org with your Microsoft account(@yourdomain.com), you(or an administrator at your company) will need to claim the ownership of the AAD by doing a DNS validation to authenticate users with email address "@yourdomain.com". Please follow the steps for [domains admin takeover](/azure/active-directory/users-groups-roles/domains-admin-takeover) documented by the Azure Active directory. Once this is done, your normal login should start working.
-          
-      - question: I don’t want to do all that, what is the other way to recover my account?
-        answer: |
-          You can [create](https://www.microsoft.com/account) a new Microsoft account (with an email **not** associated with @yourdomain.com). Follow steps given in [recover your NuGet.org account](#unable-to-use-microsoft-login--how-do-i-recover-my-nuget-org-account) section.
           
       - question: How do I change my NuGet.org account username?
         answer: |

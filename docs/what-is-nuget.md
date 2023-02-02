@@ -32,7 +32,7 @@ A "compatible" package means that it contains assemblies built for at least one 
 Package developers who require APIs outside of .NET Standard, on the other hand, create separate assemblies for the different target frameworks they want to support and include all of those assemblies in the same package (which is called "multi-targeting"). When a consumer installs such a package, NuGet extracts only those assemblies that are needed by the project. This minimizes the package's footprint in the final application and/or assemblies produced by that project. A multi-targeting package is, of course, more difficult for its creator to maintain.
 
 > [!Note]
-> For guidance on app components vs. reusable libraries, see the [.NET Standard documentation on the topic](/dotnet/standard/net-standard?branch=master#when-to-target-net50-vs-netstandard).
+> For guidance on app components vs. reusable libraries, see the [.NET Standard documentation on the topic](/dotnet/standard/net-standard?branch=main#when-to-target-net50-vs-netstandard).
 
 ## NuGet tools
 
@@ -106,7 +106,7 @@ Take a moment to browse the table of contents for this documentation, and you se
 
 ## Related video
 
-> [!Video https://docs.microsoft.com/shows/NuGet-101/What-is-NuGet-1-of-5/player]
+> [!Video https://learn.microsoft.com/shows/NuGet-101/What-is-NuGet-1-of-5/player]
 
 Find more NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 

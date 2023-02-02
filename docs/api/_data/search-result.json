@@ -2,7 +2,7 @@
   "totalHits": 2,
   "data": [
     {
-      "registration": "https://api.nuget.org/v3/registration3/nuget.versioning/index.json",
+      "registration": "https://api.nuget.org/v3/registration-sample/nuget.versioning/index.json",
       "id": "NuGet.Versioning",
       "version": "4.4.0",
       "description": "NuGet's implementation of Semantic Versioning.",
@@ -22,29 +22,29 @@
         {
           "version": "3.3.0",
           "downloads": 50343,
-          "@id": "https://api.nuget.org/v3/registration3/nuget.versioning/3.3.0.json"
+          "@id": "https://api.nuget.org/v3/registration-sample/nuget.versioning/3.3.0.json"
         },
         {
           "version": "3.4.3",
           "downloads": 27932,
-          "@id": "https://api.nuget.org/v3/registration3/nuget.versioning/3.4.3.json"
+          "@id": "https://api.nuget.org/v3/registration-sample/nuget.versioning/3.4.3.json"
         },
         {
           "version": "4.0.0",
           "downloads": 63004,
-          "@id": "https://api.nuget.org/v3/registration3/nuget.versioning/4.0.0.json"
+          "@id": "https://api.nuget.org/v3/registration-sample/nuget.versioning/4.0.0.json"
         },
         {
           "version": "4.4.0",
           "downloads": 617,
-          "@id": "https://api.nuget.org/v3/registration3/nuget.versioning/4.4.0.json"
+          "@id": "https://api.nuget.org/v3/registration-sample/nuget.versioning/4.4.0.json"
         }
       ]
     },
     {
-      "@id": "https://api.nuget.org/v3/registration3/nerdbank.gitversioning/index.json",
+      "@id": "https://api.nuget.org/v3/registration-sample/nerdbank.gitversioning/index.json",
       "@type": "Package",
-      "registration": "https://api.nuget.org/v3/registration3/nerdbank.gitversioning/index.json",
+      "registration": "https://api.nuget.org/v3/registration-sample/nerdbank.gitversioning/index.json",
       "id": "Nerdbank.GitVersioning",
       "version": "2.0.41",
       "description": "Stamps your assemblies with semver 2.0 compliant git commit specific version information and provides NuGet versioning information as well.",
@@ -60,12 +60,12 @@
         {
           "version": "1.6.35",
           "downloads": 10229,
-          "@id": "https://api.nuget.org/v3/registration3/nerdbank.gitversioning/1.6.35.json"
+          "@id": "https://api.nuget.org/v3/registration-sample/nerdbank.gitversioning/1.6.35.json"
         },
         {
           "version": "2.0.41",
           "downloads": 1677,
-          "@id": "https://api.nuget.org/v3/registration3/nerdbank.gitversioning/2.0.41.json"
+          "@id": "https://api.nuget.org/v3/registration-sample/nerdbank.gitversioning/2.0.41.json"
         }
       ]
     }

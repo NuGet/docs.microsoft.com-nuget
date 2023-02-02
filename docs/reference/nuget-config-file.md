@@ -113,9 +113,9 @@ Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 
 Lists all known package sources. The order is ignored during restore operations and with any project using the PackageReference format. NuGet respects the order of sources for install and update operations with projects using `packages.config`.
 
-| Key | Value |
-| --- | --- |
-| (name to assign to the package source) | The path or URL of the package source. |
+| Key | Value | protocolVersion |
+| --- | --- | --- |
+| (name to assign to the package source) | The path or URL of the package source. | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. https://api.nuget.org/v3/index.json). Supported in [NuGet 3.0+](https://learn.microsoft.com/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](https://learn.microsoft.com/nuget/api/overview) for more information about the version 3 protocol. |
 
 **Example**:
 
