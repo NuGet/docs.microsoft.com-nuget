@@ -1,6 +1,6 @@
 ---
 title: Common NuGet configurations
-description: NuGet.Config files control NuGet's behavior both globally and on a per-project basis, and are modified with nuget config command.
+description: NuGet.Config files control NuGet's behavior, and can be modified with nuget config command.
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/10/2022
@@ -9,15 +9,15 @@ ms.topic: conceptual
 
 # Common NuGet configurations
 
-NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Config` (XML) files that can exist at project-, user-, and computer-wide levels. A global `NuGetDefaults.Config` file also specifically configures package sources. Settings apply to all commands issued in the CLI, the Package Manager Console, and the Package Manager UI.
+NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Config` (XML) files that can exist at solution- (project if no solution is used), user-, and computer-wide levels. A global `NuGetDefaults.Config` file also specifically configures package sources. Settings apply to all commands issued in the CLI, the Package Manager Console, and the Package Manager UI.
 
 ## Config file locations and uses
 
 | Scope | `NuGet.Config` file location | Description |
 | --- | --- | --- |
-| Solution | Current folder (aka Solution folder) or any folder up to the drive root.| In a solution folder, settings apply to all projects in subfolders. Note that if a config file is placed in a project folder, it has no effect on that project. |
-| User | **Windows:** `%appdata%\NuGet\NuGet.Config`<br/>**Mac/Linux:** `~/.config/NuGet/NuGet.Config` or `~/.nuget/NuGet/NuGet.Config` (varies by tooling) <br/>Additional configs are supported on all platforms. These configs cannot be edited by the tooling. </br> **Windows:** `%appdata%\NuGet\config\*.Config` <br/>**Mac/Linux:** `~/.config/NuGet/config/*.config` or `~/.nuget/config/*.config` | Settings apply to all operations, but are overridden by any project-level settings. |
-| Computer | **Windows:** `%ProgramFiles(x86)%\NuGet\Config`<br/>**Mac/Linux:** `$XDG_DATA_HOME`. If `$XDG_DATA_HOME` is null or empty, `~/.local/share` or `/usr/local/share` will be used (varies by OS distribution)  | Settings apply to all operations on the computer, but are overridden by any user- or project-level settings. |
+| Solution | Current folder (aka Solution folder) or any folder up to the drive root.| In a solution folder, settings apply to all projects in subfolders. Note that if a config file is placed in a project folder, it has no effect on that project. When restoring a project on the command line, the project's directory is treated as the solution directory, which can lead to differences in behaviour when restoring the project vs solution. |
+| User | **Windows:** `%appdata%\NuGet\NuGet.Config`<br/>**Mac/Linux:** `~/.config/NuGet/NuGet.Config` or `~/.nuget/NuGet/NuGet.Config` (varies by tooling) <br/>Additional configs are supported on all platforms. These configs cannot be edited by the tooling. </br> **Windows:** `%appdata%\NuGet\config\*.Config` <br/>**Mac/Linux:** `~/.config/NuGet/config/*.config` or `~/.nuget/config/*.config` | Settings apply to all operations, but are overridden by any solution-level settings. |
+| Computer | **Windows:** `%ProgramFiles(x86)%\NuGet\Config`<br/>**Mac/Linux:** `$XDG_DATA_HOME`. If `$XDG_DATA_HOME` is null or empty, `~/.local/share` or `/usr/local/share` will be used (varies by OS distribution)  | Settings apply to all operations on the computer, but are overridden by any user- or solution-level settings. |
 
 > [!Note]
 > On Mac/Linux, the user config file location varies by tooling. .NET CLI uses `~/.nuget/NuGet` folder, while Mono uses `~/.config/NuGet` folder. 
@@ -61,7 +61,7 @@ Windows:
 # Set repositoryPath in the user-level config file
 nuget config -set repositoryPath=c:\packages 
 
-# Set repositoryPath in project-level files
+# Set repositoryPath in solution-level files
 nuget config -set repositoryPath=c:\packages -configfile c:\my.Config
 nuget config -set repositoryPath=c:\packages -configfile .\myApp\NuGet.Config
 
@@ -75,7 +75,7 @@ Mac/Linux:
 # Set repositoryPath in the user-level config file
 nuget config -set repositoryPath=/home/packages 
 
-# Set repositoryPath in project-level files
+# Set repositoryPath in solution-level files
 nuget config -set repositoryPath=/home/projects/packages -configfile /home/my.Config
 nuget config -set repositoryPath=/home/packages -configfile home/myApp/NuGet.Config
 
@@ -110,7 +110,9 @@ Copy the template below into the new file and then use `nuget config -configFile
 
 ## How settings are applied
 
-Multiple `NuGet.Config` files allow you to store settings in different locations so that they apply to a single project, a group of projects, or all projects. These settings collectively apply to any NuGet operation invoked from the command line or from Visual Studio, with settings that exist "closest" to a project or the current folder taking precedence.
+Multiple `NuGet.Config` files allow you to store settings in different locations so that they apply to a single solution, or a group of solutions.
+These settings collectively apply to any NuGet operation invoked from the command line or from Visual Studio, with settings that exist "closest" to a solution or the current folder taking precedence.
+If a command line tool is used on a project file, rather than a solution file, then the project directory is used as the "solution directory", which can lead to inconsistent behaviour when there is a `NuGet.Config` file in a subdirectory of the solution file.
 
 Specifically, NuGet loads settings from the different config files in the following order:
 
@@ -118,16 +120,16 @@ Specifically, NuGet loads settings from the different config files in the follow
 1. The computer-level file.
 1. The user-level file.
 1. The file specified with `-configFile`.
-1. Files found in every folder in the path from the drive root to the current folder (where `nuget.exe` is invoked or the folder containing the Visual Studio project). For example, if a command is invoked in `c:\A\B\C`, NuGet looks for and loads config files in `c:\`, then `c:\A`, then `c:\A\B`, and finally `c:\A\B\C`.
+1. Files found in every folder in the path from the drive root to the current folder (where `nuget.exe` is invoked or the folder containing the Visual Studio solution). For example, if a command is invoked in `c:\A\B\C`, NuGet looks for and loads config files in `c:\`, then `c:\A`, then `c:\A\B`, and finally `c:\A\B\C`.
 
 As NuGet finds settings in these files, they are applied as follows:
 
-1. For single-item elements, NuGet replaced any previously-found value for the same key. This means that settings that are "closest" to the current folder or project override any others found earlier. For example, the `defaultPushSource` setting in `NuGetDefaults.Config` is overridden if it exists in any other config file.
+1. For single-item elements, NuGet replaced any previously-found value for the same key. This means that settings that are "closest" to the current folder or solution override any others found earlier. For example, the `defaultPushSource` setting in `NuGetDefaults.Config` is overridden if it exists in any other config file.
 1. For collection elements (such as `<packageSources>`), NuGet combines the values from all configuration files into a single collection.
 1. When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node.
 
 > [!Tip]
-> Add a `nuget.config` file in the root of your project repository. This is considered a best practice as it promotes repeatability and ensures that different users have the same NuGet configuration.
+> Add a `nuget.config` file in the root of your solution repository. This is considered a best practice as it promotes repeatability and ensures that different users have the same NuGet configuration.
 
 ### Settings walkthrough
 
