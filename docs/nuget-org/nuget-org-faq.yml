@@ -232,3 +232,10 @@ sections:
           2. Click on this url: [https://www.nuget.org/account/delete](https://www.nuget.org/account/delete) and follow the steps to submit the request for deleting the account.
           
           Our customer support will process this request and perform the account deletion.
+          
+      - question: What happens to my NuGet.org account when my Microsoft account gets deleted?
+        answer: |
+          When the Microsoft account you use to log-in to your NuGet.org account is deleted, your nuget.org account will be deleted as well. The account delete action is completed by the nuget.org administrator within 30 days from the date of the Microsoft account deletion.
+          
+          If you have packages associated with your account, we will notify you 3 business days before proceeding with deletion and offer assistance to transfer the packages to a different nuget.org account. 
+
