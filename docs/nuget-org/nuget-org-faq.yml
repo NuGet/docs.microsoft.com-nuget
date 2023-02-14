@@ -63,7 +63,7 @@ sections:
 
   - name: NuGet.org not accessible
     questions:
-      - question: What TLS version and cipher suites does NuGet.org support?
+      - question: What SSL/TLS version and cipher suites does NuGet.org support?
         answer: |
           NuGet.org supports TLS 1.2 and the following cipher suites:
           - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
