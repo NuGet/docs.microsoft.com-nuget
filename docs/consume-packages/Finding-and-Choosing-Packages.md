@@ -23,7 +23,7 @@ To search for a package, enter the package name or search terms in the Search bo
 
 ### Advanced filtering and sorting
 
-At nuget.org/packages, you can select the **Filter** button at upper-right to expand advanced sorting and filtering options.
+At nuget.org/packages, you can refine your search results by making use of the advanced filtering and sorting options.
 
 ![Screenshot that shows the filtering and sorting options on nuget.org.](media/Finding-08-SearchResults.png)
 
