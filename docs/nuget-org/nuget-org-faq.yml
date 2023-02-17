@@ -74,18 +74,17 @@ sections:
       - question: Why can't I restore packages from NuGet.org?
         answer: |
           If you meet transient failures when restoring packages from NuGet.org, we suggest you:
-          - use [V3 API endpoint](https://learn.microsoft.com/nuget/nuget-org/overview-nuget-org#api-endpoint-for-nugetorg) to restore packages from NuGet.org.
           - use the latest versions of NuGet clients with a better resilience support.
           - use environment variables of NuGet clients to enhance the retry policy on CI machines.
 
           | Environment Variable | Description | Remarks |
           | --- | --- | --- |
-          | NUGET_ENABLE_ENHANCED_HTTP_RETRY | Enables or disables enhanced HTTP retry in NuGet. | Possible values are `true` (default since NuGet CLI 6.2.0) or `false`. |
+          | NUGET_ENABLE_ENHANCED_HTTP_RETRY | Enables or disables enhanced HTTP retry in NuGet. | Possible values are `true` (default since .NET CLI 6.0.3, NuGet CLI 6.2, Visual Studio 2022 version 17.2) or `false`. |
           | NUGET_ENHANCED_MAX_NETWORK_TRY_COUNT | Configures the maximum number of times an HTTP connection should be retried when enhanced retries are enabled. | A number representing how many retries to perform, the default value is `6`. |
           | NUGET_ENHANCED_NETWORK_RETRY_DELAY_MILLISECONDS | Configures the amount of time to wait in milliseconds before retrying an HTTP connection when enhanced retries are enabled. | Number of millseconds to wait, the default value is `1000`. |
 
           > [!Note]
-          > These environment variables are available since [.NET CLI](https://learn.microsoft.com/nuget/reference/dotnet-commands) (.NET SDK) 6.0.100, [NuGet CLI](https://learn.microsoft.com/nuget/reference/nuget-exe-cli-reference) 6.0.0, Visual Studio 2022 version 17.0 and corresponding MSBuild version.
+          > These environment variables are available since [.NET CLI](https://learn.microsoft.com/nuget/reference/dotnet-commands) (.NET SDK) 6.0, [NuGet CLI](https://learn.microsoft.com/nuget/reference/nuget-exe-cli-reference) 6.0, Visual Studio 2022 version 17.0 and corresponding MSBuild version. See [NuGet Release Notes](https://learn.microsoft.com/nuget/release-notes/)
 
           If that version of NuGet client continues to fail, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
 
