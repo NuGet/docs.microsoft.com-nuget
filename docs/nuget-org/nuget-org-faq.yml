@@ -84,7 +84,7 @@ sections:
           | NUGET_ENHANCED_NETWORK_RETRY_DELAY_MILLISECONDS | Configures the amount of time to wait in milliseconds before retrying an HTTP connection when enhanced retries are enabled. | Number of millseconds to wait, the default value is `1000`. |
 
           > [!Note]
-          > These environment variables are available since [.NET CLI](https://learn.microsoft.com/nuget/reference/dotnet-commands) (.NET SDK) 6.0, [NuGet CLI](https://learn.microsoft.com/nuget/reference/nuget-exe-cli-reference) 6.0, Visual Studio 2022 version 17.0 and corresponding MSBuild version. See [NuGet Release Notes](https://learn.microsoft.com/nuget/release-notes/)
+          > These environment variables are available since [.NET CLI](https://learn.microsoft.com/nuget/reference/dotnet-commands) (.NET SDK) 6.0, [NuGet CLI](https://learn.microsoft.com/nuget/reference/nuget-exe-cli-reference) 6.0, Visual Studio 2022 version 17.0 and corresponding MSBuild version. See [NuGet Release Notes](https://learn.microsoft.com/nuget/release-notes/).
 
           If that version of NuGet client continues to fail, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
 
