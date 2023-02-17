@@ -27,7 +27,7 @@ At nuget.org/packages, you can refine your search results by making use of the a
 
 ![Screenshot that shows the filtering and sorting options on nuget.org.](media/Finding-08-SearchResults.png)
 
-Use the **Frameworks** filters to show packages targeting specific .NET frameworks (To learn more, see [Target Frameworks](https://learn.microsoft.com/dotnet/standard/frameworks)):
+Use the **Frameworks** filters to show packages targeting specific .NET frameworks (To learn more, see [Target Frameworks](/dotnet/standard/frameworks)):
 
 - Selecting one of the .NET framework generation checkboxes would filter the search results to packages targeting any of the Target Frameworks within that generation. For example, selecting `.NET` will return packages targeting any of the modern .NET frameworks, including `net5.0` through `net7.0`.
 
