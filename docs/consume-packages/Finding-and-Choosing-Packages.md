@@ -17,7 +17,7 @@ You can find packages directly at [https://nuget.org/packages](https://www.nuget
 
 At [nuget.org/packages](https://www.nuget.org/packages), you see a list of NuGet packages with the most popular packages across all .NET projects listed first. Some of these packages might be useful for your projects.
 
-![Screenshot that shows the default view of nuget.org/packages with the most popular packages at the top.](media/Finding-01-Popularity.png)
+![Screenshot that shows the default view of nuget.org/packages with the most popular packages at the top.](media/Finding-07-Popularity.png)
 
 To search for a package, enter the package name or search terms in the Search box at the top of the page. You can use [advanced search syntax](#search-syntax) to filter your search.
 
@@ -25,7 +25,15 @@ To search for a package, enter the package name or search terms in the Search bo
 
 At nuget.org/packages, you can select the **Filter** button at upper-right to expand advanced sorting and filtering options.
 
-![Screenshot that shows the Advanced Search panel on nuget.org.](media/Finding-02-SearchResults.png)
+![Screenshot that shows the filtering and sorting options on nuget.org.](media/Finding-08-SearchResults.png)
+
+Use the **Frameworks** filters to show packages targeting specific .NET frameworks (To learn more, see [Target Frameworks](https://learn.microsoft.com/dotnet/standard/frameworks)):
+
+- Selecting one of the .NET framework generation checkboxes would filter the search results to packages targeting any of the Target Frameworks within that generation. For example, selecting `.NET` will return packages targeting any of the modern .NET frameworks, including `net5.0` through `net7.0`.
+![Screenshot that shows the Framework filters on nuget.org.](media/Finding-09-FrameworkFilters.png)
+- Expanding one of these framework generations with the arrows on the right will show you individual Target Framework Monikers (TFMs) that you can filter your results by. For example, selecting `net5.0` will only return packages that explicitly target the '.NET 5.0' framework.
+- Combining multiple framework filters will show you search results that fall in the intersection of your selections. For example, selecting `netcoreapp3.1` and `net45` together will show packages that target *both* '.NET Core 3.1' and '.NET Framework 4.5'. Selecting the `.NET Core` framework generation checkbox and the `net45` checkbox together will return packages that target '.NET Framework 4.5', and at least one of the '.NET Core' TFMs (`netcoreapp1.0` through `netcoreapp3.1`).
+- You can learn more on how to evaluate a package's supported frameworks and its compatibility with your project [here](#determine-supported-frameworks).
 
 Use the **Package type** filter to show packages of a specific type:
 
@@ -34,15 +42,15 @@ Use the **Package type** filter to show packages of a specific type:
 - **.NET tool** filters to [.NET tools](/dotnet/core/tools/global-tools) packages that contain console applications.
 - **Template** filters to [.NET templates](/dotnet/core/install/templates) that you can use to create new projects with the [dotnet new](/dotnet/core/tools/dotnet-new) command.
 
-Use the **Sort by** option to sort the list by several criteria:
+By default, NuGet lists all versions of packages, including prerelease and beta versions. In the **Options** section, deselect the **Include prerelease** checkbox to list only stable, released package versions.
+
+To apply changes, select **Apply**. To get back to the defaults, select **Reset**.
+
+Use the **Sort by** dropdown on the top-right of the page to sort the list by several criteria:
 
 - **Relevance** is the default, and sorts results according to an internal scoring algorithm.
 - **Downloads** sorts the search results by the total number of downloads, in descending order.
 - **Recently updated** sorts the search results by the latest package version creation date, in descending chronological order.
-
-By default, NuGet lists all versions of packages, including prerelease and beta versions. In the **Options** section, deselect the **Include prerelease** checkbox to list only stable, released package versions.
-
-To apply changes, select **Apply**. To get back to the defaults, select **Reset**.
 
 ### Search syntax
 
