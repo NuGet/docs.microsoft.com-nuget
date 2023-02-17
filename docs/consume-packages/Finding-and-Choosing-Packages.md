@@ -31,7 +31,11 @@ Use the **Frameworks** filters to show packages targeting specific .NET framewor
 
 - Selecting one of the .NET framework generation checkboxes would filter the search results to packages targeting any of the Target Frameworks within that generation. For example, selecting `.NET` will return packages targeting any of the modern .NET frameworks, including `net5.0` through `net7.0`.
 
+<p align="center">
+
 ![Screenshot that shows the Framework filters on nuget.org.](media/Finding-09-FrameworkFilters.png)
+
+</p>
 
 - Expanding one of these framework generations with the arrows on the right will show you individual Target Framework Monikers (TFMs) that you can filter your results by. For example, selecting `net5.0` will only return packages that explicitly target the '.NET 5.0' framework.
 - Combining multiple framework filters will show you search results that fall in the intersection of your selections. For example, selecting `netcoreapp3.1` and `net45` together will show packages that target *both* '.NET Core 3.1' and '.NET Framework 4.5'. Selecting the `.NET Core` framework generation checkbox and the `net45` checkbox together will return packages that target '.NET Framework 4.5', and at least one of the '.NET Core' TFMs (`netcoreapp1.0` through `netcoreapp3.1`).
