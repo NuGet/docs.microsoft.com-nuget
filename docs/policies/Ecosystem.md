@@ -41,6 +41,7 @@ Many other individuals and companies have made significant contributions to the 
 - [MyGet (or NuGet-as-a-service)](http://www.myget.org/)
 - [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)
 - [NuGet Server](http://nugetserver.net/)
+- [NuGetizer](https://github.com/devlooped/nugetizer)
 - [OctopusDeploy](https://octopus.com/)
 - [Paket](https://fsprojects.github.io/Paket/)
 - [ProGet (Inedo)](http://inedo.com/proget)
