@@ -153,12 +153,12 @@ defined centrally.
 </Project>
 ```
 
-You can disable this feature by setting the MSBuild property `EnablePackageVersionOverride` to `false` in a project or in a `Directory.Packages.props` or
+You can disable this feature by setting the MSBuild property `CentralPackageVersionOverrideEnabled` to `false` in a project or in a `Directory.Packages.props` or
 `Directory.Build.props` import file:
 
 ```xml
 <PropertyGroup>
-  <EnablePackageVersionOverride>false</EnablePackageVersionOverride>
+  <CentralPackageVersionOverrideEnabled>false</CentralPackageVersionOverrideEnabled>
 </PropertyGroup>
 ```
 
