@@ -96,7 +96,7 @@ To create a NuGet package from your project, follow these steps:
 
 1. Select **Build** > **Configuration Manager**, and then set the **Active solution configuration** to **Release**.
 
-1. Select the AppLogger project in **Solution Explorer**, and then select **Build** > **Pack**.
+1. Select the AppLogger project in **Solution Explorer**, then select **Pack**.
 
     Visual Studio builds the project and creates the *.nupkg* file.
 
