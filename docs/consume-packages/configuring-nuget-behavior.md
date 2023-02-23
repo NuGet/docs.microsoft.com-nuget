@@ -33,7 +33,7 @@ These other tools look for the user config file under the `~/.config/NuGet` fold
 
 If the tooling you use involves both locations, consider consolidating them by following these steps to allow you to work with only one user-level config file:  
 1. Check the contents of the two user-level config files and keep the one you want under `~/.nuget/NuGet` folder. 
-2. Set symbolic link from `~/.nuget/NuGet` to `~/.config/Nuget`. E.g. Run bash command: `ln -s ~/.nuget/NuGet ~/.config/Nuget`.
+2. Set symbolic link from `~/.nuget/NuGet` to `~/.config/NuGet`. E.g. Run bash command: `ln -s ~/.nuget/NuGet ~/.config/NuGet`.
 
 
 Notes for earlier versions of NuGet:
