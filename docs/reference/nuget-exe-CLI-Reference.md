@@ -76,5 +76,5 @@ Developers concerned only with consuming packages, for example, need only unders
 
 ## Localization
 
-NuGet.exe's progress, warning and error messages are  translated in the same locales as Visual Studio.
-NuGet.exe ships as a single exe, and due to size considerations, only the most commonly surface messages are translated in all languages.
+NuGet.exe's progress, warning and error messages are translated into the same locales as Visual Studio.
+NuGet.exe ships as a single exe, and due to size considerations, only the most commonly surfaced messages are translated in all languages.
