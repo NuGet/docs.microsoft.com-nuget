@@ -56,6 +56,7 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * badges.gitter.im
 * bettercodehub.com
 * buildstats.info
+* caniuse.bitsofco.de
 * camo.githubusercontent.com
 * cdn.jsdelivr.net
 * cdn.syncfusion.com
@@ -65,6 +66,7 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * codefactor.io
 * coveralls.io
 * dev.azure.com
+* flat.badgen.net
 * github.com/.../workflows/.../badge.svg
 * gitlab.com
 * img.shields.io
