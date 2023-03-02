@@ -1,6 +1,8 @@
 ---
 title: licenses.nuget.org
+description: Protocol and display information for licenses.nuget.org. Describes the SPDX data source and rationale.
 author: agr
+ms.author: angrigor
 ms.date: 02/22/2019
 ---
 # licenses.nuget.org
