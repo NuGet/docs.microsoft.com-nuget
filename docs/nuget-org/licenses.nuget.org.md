@@ -24,7 +24,7 @@ compatibility with older clients that don't support the `license` element.
 
 The license and license exception information displayed on licenses.nuget.org is copied from the SPDX project's [license list data repository](https://github.com/spdx/license-list-data). The format that the information is displayed closely mimics the format used by the SPDX website itself, e.g. see [MIT on licenses.nuget.org](https://licenses.nuget.org/MIT) and [MIT on SPDX.org](https://spdx.org/licenses/MIT.html).
 
-Licenses that are not approved Open Source Initiative or the Free Software Foundation are not hosted on licenses.nuget.org and are excluded.
+Licenses that are not approved by Open Source Initiative or the Free Software Foundation are not hosted on licenses.nuget.org and are excluded.
 
 Several styles in addition to plain text are used in the display of the license. According to the [SPDX license list data FAQ](https://github.com/spdx/license-list-XML/blob/main/DOCS/faq.md#what-does-the-blue-text-and-red-text-mean-in-the-license-list-entry), red text is considered replaceable and blue text is considered omitable. For more generally information about the SPDX license list data, see their [FAQ](https://github.com/spdx/license-list-XML/blob/main/DOCS/faq.md) and the [SPDX license template specification](https://spdx.github.io/spdx-spec/v2.3/license-matching-guidelines-and-templates/).
 
