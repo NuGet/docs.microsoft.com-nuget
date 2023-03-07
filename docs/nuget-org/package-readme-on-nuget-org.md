@@ -49,6 +49,7 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * api.travis-ci.com
 * api.travis-ci.org
 * app.fossa.io
+* avatars.githubusercontent.com
 * badge.fury.io
 * badgen.net
 * badges.gitter.im
@@ -91,3 +92,4 @@ NuGet.org currently supports the following Markdown features:
 * [Emojis](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/EmojiSpecs.md)
 * [Auto-links](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/AutoLinks.md)
 
+We also support syntax highlighting, You can add an optional language identifier to enable syntax highlighting in your fenced code block.
