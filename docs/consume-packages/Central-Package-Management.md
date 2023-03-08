@@ -21,12 +21,11 @@ Historically, NuGet package dependencies have been managed in one of two locatio
 Starting with [NuGet 6.2](..\release-notes\NuGet-6.2.md), you can centrally manage your dependencies in your projects with the addition of a
 `Directory.Packages.props` file and an MSBuild property.
 
-The feature is available across all NuGet integrated tooling.
+The feature is available across all NuGet integrated tooling, starting with the following versions.
 
-* [Visual Studio 2022 17.2 and later](https://visualstudio.microsoft.com/downloads/)
-* [.NET SDK 6.0.300 and later](https://dotnet.microsoft.com/download/dotnet/6.0)
-* [.NET SDK 7.0.0-preview.4 and later](https://dotnet.microsoft.com/download/dotnet/7.0)
-* [nuget.exe 6.2.0 and later](https://www.nuget.org/downloads)
+* [Visual Studio 2022 17.2](https://visualstudio.microsoft.com/downloads/)
+* [.NET SDK 6.0.300](https://dotnet.microsoft.com/download/dotnet/6.0)
+* [nuget.exe 6.2.0](https://www.nuget.org/downloads)
 
 Older tooling will ignore central package management configurations and features. To use this feature to the fullest extent, ensure all your build environments
 use the latest compatible tooling versions.
