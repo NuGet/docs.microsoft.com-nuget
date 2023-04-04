@@ -179,7 +179,7 @@ If you'd like to disable central package management for any a particular project
 > [!Note]
 > This feature is only available in Visual Studio 2022 17.4 or higher, .NET SDK 7.0.100.preview7 or higher, and NuGet 6.4 or higher.
 
-A global package reference is used to specify that a package will be used by every project in a repository. This includes packages that do versioning, extend your build, or do any other package that is needed by all projects. Global package references are added to the PackageReference item group with the following metadata:
+A global package reference is used to specify that a package will be used by every project in a repository. This includes packages that do versioning, extend your build, or any other packages that are needed by all projects. Global package references are added to the PackageReference item group with the following metadata:
 
 * `IncludeAssets="Runtime;Build;Native;contentFiles;Analyzers"`<br/>
   This ensures that the package is only used as a development dependency and prevents any compile-time assembly references.
