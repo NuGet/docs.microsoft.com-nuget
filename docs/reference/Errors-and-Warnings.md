@@ -19,7 +19,7 @@ NuGet supports the following configuration properties.
 | Property | Scope | Description |
 |----------|-------|-------------|
 | TreatWarningsAsErrors | Project | Treats all NuGet warnings as errors |
-| NoWarn | Project, PackageReference | Suppress the warning for the project or package |
+| NoWarn | Project, PackageReference, ProjectReference | Suppress the warning for the current project, package or project reference   |
 | WarningsAsErrors | Project | Treat certain warnings as errors |
 | WarningsNotAsErrors | Project | Treat certain warnings not as errors. Used in combination with `TreatWarningsAsErrors` set to true. |
 
