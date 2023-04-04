@@ -70,7 +70,7 @@ Package search queries at nuget.org, from the NuGet CLI, and from within Visual 
 
 - You can search for multiple values or properties at the same time. For example:
 
-  `id:jquery id:ui` searches for multiple terms in the `id` property.<br/>  `id:jquery tags:validation` searches multiple properties.
+  `id:jquery id:ui` searches for multiple terms in the `id` property.<br/>  `id:jquery tags:validation` searches for multiple properties.
 
 - Search ignores unsupported properties, so `invalid:jquery ui` is the same as searching for `ui`, and `invalid:jquery` returns all packages.
 
@@ -97,7 +97,7 @@ To list and search only stable releases:
   - At nuget.org, deselect the **Include prerelease** checkbox in the advanced search panel.
   - In the Visual Studio NuGet Package Manager UI, deselect the **Include prerelease** checkbox next to the Search box.
 
-The Visual Studio Package Manager Console, NuGet CLI, and dotnet CLI tools don't include prerelease versions by default. To include prerelease versions:
+The Visual Studio Package Manager Console, NuGet CLI, and dotnet CLI tools doesn't include prerelease versions by default. To include prerelease versions:
 
 - In the Package Manager Console, use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. For more information, see the [PowerShell Reference](../reference/powershell-reference.md).
 
@@ -108,13 +108,13 @@ The Visual Studio Package Manager Console, NuGet CLI, and dotnet CLI tools don't
 <a name="native-cpp-packages"></a>
 ### Native C++ packages
 
-Visual Studio C++ projects can use native C++ NuGet packages. Installing these packages enables the **Manage NuGet Packages** context-menu command, exposes a `native` target framework, and provides MSBuild integration.
+Visual Studio C++ projects can use native C++ NuGet packages. Installing these packages enable the **Manage NuGet Packages** context-menu command, exposes a `native` target framework, and provides MSBuild integration.
 
 To find native packages on nuget.org/packages, search by using `tag:native`. Such packages typically provide *.targets* and *.props* files, which NuGet imports automatically when adding the packages.
 
 ## Evaluate packages
 
-The best way to evaluate a package's usefulness is to try it out. You take a dependency on a package when you use it, so you must make sure it's robust and reliable. However, installing a package and directly testing it is time-consuming. You can learn a lot about a package's quality by using the information on the package's page at nuget.org/packages.
+The best way to evaluate a package's usefulness is to try it out. You take a dependency on a package when you use it, so you must make sure it is robust and reliable. However, installing a package and directly testing it, is time-consuming. You can learn a lot about a package's quality by using the information on the package's page at nuget.org/packages.
 
 - The **Prefix Reserved** checkmark next to the package ID on the packages list and the package page means the package owners have applied for and been granted a [reserved package ID prefix](../nuget-org/id-prefix-reservation.md). To meet the [ID prefix reservation criteria](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria), package owners must clearly identify themselves and their packages.
 
