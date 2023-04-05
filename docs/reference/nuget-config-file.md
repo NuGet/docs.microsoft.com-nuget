@@ -121,6 +121,7 @@ Lists all known package sources. The order is ignored during restore operations 
 
 ```xml
 <packageSources>
+    <clear />    
     <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
     <add key="Contoso" value="https://contoso.com/packages/" />
     <add key="Test Source" value="c:\packages" />
@@ -454,6 +455,7 @@ Below is an example `nuget.config` file that illustrates a number of settings in
         See: nuget.exe help update
     -->
     <packageSources>
+        <clear />
         <add key="NuGet official package source" value="https://api.nuget.org/v3/index.json" />
         <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
     </packageSources>
