@@ -14,7 +14,15 @@ A signed package allows for content integrity verification checks, which provide
 
 ## Get a code signing certificate
 
-Valid certificates can be obtained from a public certificate authority such as [SSL.com](https://www.ssl.com/certificates/code-signing/), [DigiCert](https://www.digicert.com/code-signing/), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), or [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml). You can obtain the complete list of certification authorities trusted by Windows from [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list).
+Valid certificates may be obtained from any of the following Microsoft trusted certificate authorities:
+
+- [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml)
+- [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)
+- [DigiCert](https://www.digicert.com/code-signing/)
+- [GlobalSign](https://www.globalsign.com/en/code-signing-certificate/)
+- [SSL.com](https://www.ssl.com/certificates/code-signing/)
+
+The complete list of certification authorities trusted by Windows can also be obtained from [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list).
 
 You can use self-issued certificates for testing purposes. However, packages signed using self-issued certificates are not accepted by NuGet.org. Learn more about [creating a test certificate](#create-a-test-certificate)
 
