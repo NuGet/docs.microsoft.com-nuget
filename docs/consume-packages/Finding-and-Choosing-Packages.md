@@ -97,7 +97,7 @@ To list and search only stable releases:
   - At nuget.org, deselect the **Include prerelease** checkbox in the advanced search panel.
   - In the Visual Studio NuGet Package Manager UI, deselect the **Include prerelease** checkbox next to the Search box.
 
-The Visual Studio Package Manager Console, NuGet CLI, and dotnet CLI tools doesn't include prerelease versions by default. To include prerelease versions:
+The Visual Studio Package Manager Console, NuGet CLI, and dotnet CLI tools don't include prerelease versions by default. To include prerelease versions:
 
 - In the Package Manager Console, use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. For more information, see the [PowerShell Reference](../reference/powershell-reference.md).
 
@@ -114,7 +114,7 @@ To find native packages on nuget.org/packages, search by using `tag:native`. Suc
 
 ## Evaluate packages
 
-The best way to evaluate a package's usefulness is to try it out. You take a dependency on a package when you use it, so you must make sure it is robust and reliable. However, installing a package and directly testing it, is time-consuming. You can learn a lot about a package's quality by using the information on the package's page at nuget.org/packages.
+The best way to evaluate a package's usefulness is to try it out. You take a dependency on a package when you use it, so you must make sure it's robust and reliable. However, installing a package and directly testing it is time-consuming. You can learn a lot about a package's quality by using the information on the package's page at nuget.org/packages.
 
 - The **Prefix Reserved** checkmark next to the package ID on the packages list and the package page means the package owners have applied for and been granted a [reserved package ID prefix](../nuget-org/id-prefix-reservation.md). To meet the [ID prefix reservation criteria](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria), package owners must clearly identify themselves and their packages.
 
