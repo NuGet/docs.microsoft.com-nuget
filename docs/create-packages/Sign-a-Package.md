@@ -14,7 +14,7 @@ A signed package allows for content integrity verification checks, which provide
 
 ## Get a code signing certificate
 
-Valid certificates may be obtained from any of the following Microsoft trusted certificate authorities:
+Valid certificates can be obtained from a public certificate authority such as:
 
 - [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml)
 - [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)
