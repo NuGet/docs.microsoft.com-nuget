@@ -109,7 +109,7 @@ Some aspects that were supported in packages.config are not supported in Package
 
 * **Description**: XDT transforms are not supported with PackageReference and `.xdt` files are ignored when installing or uninstalling a package.
 
-* **Potential impact**: XDT transforms are not applied to any project XML files, most commonly, `web.config.install.xdt` and `web.config.uninstall.xdt`, which means the project's` web.config` file is not updated when the package is installed or uninstalled.
+* **Potential impact**: XDT transforms are not applied to any project XML files, most commonly, `web.config.install.xdt` and `web.config.uninstall.xdt`, which means the project's `web.config` file is not updated when the package is installed or uninstalled.
 
 ### Assemblies in the lib root are ignored when the package is installed after the migration
 
