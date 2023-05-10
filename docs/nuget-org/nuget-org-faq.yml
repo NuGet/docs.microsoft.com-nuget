@@ -230,11 +230,12 @@ sections:
         answer: |
           You can request a username change by sending an email to [support@nuget.org](mailto:support@nuget.org) from the email address that is attached to the account you want to update.
           Be sure to include the old username and the new username you would like to change to.
-          We will then review your request and, upon approval, get confirmation from you that we are about the take the correct action and that you understand the consequences.
+          We will then review your request and, upon approval, get confirmation from you that we are about to take the correct action and that you understand the consequences.
           Once you have confirmed, we will change your username.
 
           > [!Important]
           > The old username will still be **reserved**. You will not be able to reuse the old username again and **this includes the change of casings**.
+          > As a consequence of the above, we will not be able to revert this change either.
           > Any links to your old username profile page (e.g. https://www.nuget.org/profiles/OldUsername) will not be redirected to your new profile.
           > Package versions currently owned by your account will still contain the old username in the repository signature. New package versions will contain the new username.
           > Any author-provided metadata in the existing package versions referring to the old username or other identifying information will not be changed.
