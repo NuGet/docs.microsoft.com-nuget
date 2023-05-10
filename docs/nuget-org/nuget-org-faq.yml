@@ -228,11 +228,18 @@ sections:
           
       - question: How do I change my NuGet.org account username?
         answer: |
-          You cannot. As a matter of policy we do not allow the change of usernames. Also, doing so is a breaking change for users that may have defined [package trust policies based on the package owner](../consume-packages/installing-signed-packages.md#trust-package-owners). The only way to change your username is to create a new account with the desired username. We recommend you delete your existing account before you create a new one, otherwise you will not be able to reuse your registered Microsoft account.
+          You can request a username change by sending an email to [support@nuget.org](mailto:support@nuget.org) from the email address that is attached to the account you want to update.
+          Be sure to include the old username and the new username you would like to change to.
+          We will then review your request and, upon approval, get confirmation from you that we are about to take the correct action and that you understand the consequences.
+          Once you have confirmed, we will change your username.
+
           > [!Important]
-          > Deleting the user will still **reserve** the `username`. You will not be able to reuse the same username again and **this includes the change of casings**. As an example if you created a user with username `mycoolname` and you want to change this to `MyCoolName`(casing changes), it will not be possible after deleting the user.
-          
-          Follow the steps given in [delete your NuGet.org account](#how-to-delete-my-nuget-org-account) section and to [register a new account](individual-accounts.md) with correct username.
+          > - The old username will still be **reserved**. You will not be able to reuse the old username again and **this includes the change of casings**.
+          > - As a consequence of the above, we will not be able to revert this change either.
+          > - Any links to your old username profile page (e.g. https://www.nuget.org/profiles/OldUsername) will not be redirected to your new profile.
+          > - Package versions currently owned by your account will still contain the old username in the repository signature. New package versions will contain the new username.
+          > - Any author-provided metadata in the existing package versions referring to the old username or other identifying information will not be changed.
+          > - NuGet client policies asserting trust of your old username will not implicitly trust packages published by your new username. Package consumers with these client policies configured will need to manual update them to trust your new username when they attempt to update to a newly published package version.
           
       - question: How to delete my NuGet.org account?
         answer: |
