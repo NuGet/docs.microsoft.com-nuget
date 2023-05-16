@@ -35,6 +35,7 @@ Many other individuals and companies have made significant contributions to the 
 - [Chocolatey](https://chocolatey.org/)
 - [CoApp](http://coapp.org/)
 - [JetBrains ReSharper](https://resharper-plugins.jetbrains.com/)
+- [JetBrains Space](https://www.jetbrains.com/space/)
 - [JetBrains TeamCity](https://www.jetbrains.com/teamcity/)
 - [Klondike](https://github.com/themotleyfool/Klondike)
 - [MinimalNugetServer](https://github.com/TanukiSharp/MinimalNugetServer)
