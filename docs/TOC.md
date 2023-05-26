@@ -226,6 +226,7 @@
 ### [NU3037](reference/errors-and-warnings/NU3037.md)
 ### [NU3038](reference/errors-and-warnings/NU3038.md)
 ### [NU3040](reference/errors-and-warnings/NU3040.md)
+### [NU3042](reference/errors-and-warnings/NU3042.md)
 ### [NU5000](reference/errors-and-warnings/NU5000.md)
 ### [NU5001](reference/errors-and-warnings/NU5001.md)
 ### [NU5002](reference/errors-and-warnings/NU5002.md)
@@ -325,6 +326,8 @@
 ### [Known Issues](release-notes/known-issues.md)
 
 ### NuGet 6.x
+#### [NuGet 6.6](release-notes/NuGet-6.6.md)
+#### [NuGet 6.5](release-notes/NuGet-6.5.md)
 #### [NuGet 6.4](release-notes/NuGet-6.4.md)
 #### [NuGet 6.3](release-notes/NuGet-6.3.md)
 #### [NuGet 6.2](release-notes/NuGet-6.2.md)

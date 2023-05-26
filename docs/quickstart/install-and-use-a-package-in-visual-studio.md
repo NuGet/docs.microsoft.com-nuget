@@ -105,7 +105,7 @@ With the `Newtonsoft.Json` package in the project, call its `JsonConvert.Seriali
             Email = "john@microsoft.com",
             DOB = new DateTime(1980, 2, 20, 0, 0, 0, DateTimeKind.Utc),
         };
-        string json = JsonConvert.SerializeObject(account, Formatting.Indented);
+        string json = JsonConvert.SerializeObject(account, Newtonsoft.Json.Formatting.Indented);
         TextBlock.Text = json;
     }
     ```

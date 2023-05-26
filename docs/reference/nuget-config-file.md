@@ -121,11 +121,15 @@ Lists all known package sources. The order is ignored during restore operations 
 
 ```xml
 <packageSources>
+    <clear />    
     <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
     <add key="Contoso" value="https://contoso.com/packages/" />
     <add key="Test Source" value="c:\packages" />
 </packageSources>
 ```
+
+> [!NOTE]
+> When using the CLI, you can express a [`RestoreSources`](../reference/msbuild-targets.md#restore-properties) MSBuild property or [`--source`(.NET CLI)](/dotnet/core/tools/dotnet-restore#options) | [`-Source`(NuGet CLI)](/nuget/reference/cli-reference/cli-ref-restore#options) to override the `<packageSources>` defined in the NuGet.config.
 
 > [!Tip]
 > When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
@@ -451,6 +455,7 @@ Below is an example `nuget.config` file that illustrates a number of settings in
         See: nuget.exe help update
     -->
     <packageSources>
+        <clear />
         <add key="NuGet official package source" value="https://api.nuget.org/v3/index.json" />
         <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
     </packageSources>
