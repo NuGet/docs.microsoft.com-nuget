@@ -7,6 +7,8 @@ ms.date: 05/04/2023
 ms.topic: conceptual
 ---
 
+# Auditing package dependencies for security vulnerabilities
+
 ## About security audits
 
 A security audit for package managers like NuGet is a process that involves analyzing the security of the packages that are included in a software project. This involves identifying vulnerabilities, evaluating risks, and making recommendations for improving security. The audit can include a review of the packages themselves, as well as any dependencies and their associated risks. The goal of the audit is to identify and mitigate any security vulnerabilities that could be exploited by attackers, such as code injection or cross-site scripting attacks. 
