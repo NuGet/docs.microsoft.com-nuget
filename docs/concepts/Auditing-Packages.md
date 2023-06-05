@@ -18,6 +18,14 @@ A security audit for package managers like NuGet is a process that involves anal
 
 The `restore` command automatically runs when you do a common package operation such as loading a project for the first time, adding a new package, updating a package version, or removing a package from your project in your favorite IDE. A description of your dependencies is checked against a report of known vulnerabilities on the [GitHub Advisory Database]().
 
+> [!IMPORTANT]
+> For Audit to check packages, a package source that provides a vulnerability database must be used.
+> NuGet.org's V3 URL is one such example (https://api.nuget.org/v3/index.json), but note that NuGet.org's V2 endpoint does not.
+
+> [!NOTE]
+> .NET 8 preview 5+ enables Audit by default, but Visual Studio 17.7 does not ship .NET 8.
+> To opt-in to Audit explicitly, set `<NuGetAudit>true</NuGetAudit>` in your project file, or a *Directory.Build.props* file.
+
 1. On the command line, navigate to your project or solution directory.
 2. Ensure your project or solution contains a `.csproj` or `packages.config` files.
 3. Type `dotnet restore`.
