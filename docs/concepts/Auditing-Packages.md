@@ -39,7 +39,7 @@ Running `dotnet restore` will produce a report of security vulnerabilities with 
 
 If security vulnerabilities are found and updates are available for the package, you can either:
 
-- Edit the `.csproj`, `packages.config`, or other package version location with a newer version containing a security fix.
+- Edit the `.csproj` or other package version location(`Directory.Packages.props`) with a newer version containing a security fix.
 - Use the NuGet package manager user interface in Visual Studio to update the individual package.
 - Run the `dotnet add package` command with the respective package ID to update to the latest version.
 
