@@ -70,7 +70,7 @@ Package search queries at nuget.org, from the NuGet CLI, and from within Visual 
 
 - You can search for multiple values or properties at the same time. For example:
 
-  `id:jquery id:ui` searches for multiple terms in the `id` property.<br/>  `id:jquery tags:validation` searches multiple properties.
+  `id:jquery id:ui` searches for multiple terms in the `id` property.<br/>  `id:jquery tags:validation` searches for multiple properties.
 
 - Search ignores unsupported properties, so `invalid:jquery ui` is the same as searching for `ui`, and `invalid:jquery` returns all packages.
 
@@ -108,7 +108,7 @@ The Visual Studio Package Manager Console, NuGet CLI, and dotnet CLI tools don't
 <a name="native-cpp-packages"></a>
 ### Native C++ packages
 
-Visual Studio C++ projects can use native C++ NuGet packages. Installing these packages enables the **Manage NuGet Packages** context-menu command, exposes a `native` target framework, and provides MSBuild integration.
+Visual Studio C++ projects can use native C++ NuGet packages. Installing these packages enable the **Manage NuGet Packages** context-menu command, exposes a `native` target framework, and provides MSBuild integration.
 
 To find native packages on nuget.org/packages, search by using `tag:native`. Such packages typically provide *.targets* and *.props* files, which NuGet imports automatically when adding the packages.
 
