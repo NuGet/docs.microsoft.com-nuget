@@ -16,7 +16,7 @@ A security audit for package managers like NuGet is a process that involves anal
 
 ## Running a security audit with `restore`
 
-The `restore` command automatically runs when you do a common package operation such as loading a project for the first time, adding a new package, updating a package version, or removing a package from your project in your favorite IDE. A description of your dependencies is checked against a report of known vulnerabilities on the [GitHub Advisory Database]().
+The `restore` command automatically runs when you do a common package operation such as loading a project for the first time, adding a new package, updating a package version, or removing a package from your project in your favorite IDE. A description of your dependencies is checked against a report of known vulnerabilities on the [GitHub Advisory Database](https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anuget).
 
 > [!IMPORTANT]
 > For Audit to check packages, a package source that provides a vulnerability database must be used.
@@ -69,8 +69,6 @@ If a fix does not exist for the security advisory, you may want to suggest chang
 If you do not want to fix the vulnerability or are unable to update or replace the package, open an issue in the package's issue tracker or preferred contact method. On NuGet.org, you can navigate to the package details page and click `Report package` which will guide you to get in contact with the author.
 
 ### No security vulnerabilities found
-
-<Restore output>
 
 If no security vulnerabilities are found, this means that packages with known vulnerabilities were not found in your package graph at the present moment of time you checked. Since the advisory database can be updated at any time, we recommend regularly checking your `dotnet restore` output and ensuring the same in your continuous integration process.
 
