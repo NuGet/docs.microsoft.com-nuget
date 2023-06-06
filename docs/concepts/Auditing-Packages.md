@@ -30,7 +30,7 @@ The `restore` command automatically runs when you do a common package operation 
 
 1. On the command line, navigate to your project or solution directory.
 2. Ensure your project or solution contains a `.csproj` file.
-3. Type `dotnet restore`.
+3. Type `dotnet restore` or `restore` using your preferred tooling (i.e. MSBuild, NuGet.exe, etc).
 4. Review the audit report and address the known security vulnerabilities.
 
 ## Reviewing and acting on the security audit report
