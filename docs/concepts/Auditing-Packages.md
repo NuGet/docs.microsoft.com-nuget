@@ -29,7 +29,7 @@ The `restore` command automatically runs when you do a common package operation 
 > To opt-in to Audit explicitly, set `<NuGetAudit>true</NuGetAudit>` in your project file, or a *Directory.Build.props* file.
 
 1. On the command line, navigate to your project or solution directory.
-2. Ensure your project or solution contains a `.csproj` or `packages.config` files.
+2. Ensure your project or solution contains a `.csproj` file.
 3. Type `dotnet restore`.
 4. Review the audit report and address the known security vulnerabilities.
 
