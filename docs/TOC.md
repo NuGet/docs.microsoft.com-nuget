@@ -72,6 +72,7 @@
 ## [Package installation process](concepts/package-installation-process.md)
 ## [Package versioning](concepts/package-versioning.md)
 ## [Dependency resolution](concepts/dependency-resolution.md)
+## [Auditing package dependencies for security vulnerabilities](concepts/Auditing-Packages.md)
 ## [Best practices for a secure software supply chain](concepts/Security-Best-Practices.md)
 ## [MSBuild .props and .targets](concepts/MSBuild-props-and-targets.md)
 ## [Troubleshooting Installed Packages](concepts/troubleshooting-installed-packages.md)
