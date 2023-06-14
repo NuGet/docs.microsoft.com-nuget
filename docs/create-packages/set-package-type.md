@@ -17,6 +17,8 @@ Packages can be marked with one more more *package types* to indicate its intend
 
 - `DotnetTool` type packages are .NET tools that can be installed by the [dotnet CLI](/dotnet/articles/core/tools/index).
 
+- `MSBuildSdk` type packages are [MSBuild project SDKs](/visualstudio/msbuild/how-to-use-project-sdk) that simplifies using software development kits.
+
 - `Template` type packages provide [custom templates](/dotnet/core/tools/custom-templates) that can be used to create files or projects like an app, service, tool, or class library.
 
 Packages not marked with a type, including all packages created with earlier versions of NuGet, default to the `Dependency` type.

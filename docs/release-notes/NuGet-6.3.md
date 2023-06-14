@@ -13,10 +13,15 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.3**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.3](https://visualstudio.microsoft.com/downloads/) | [6.0.400](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
-| [**6.3.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.3](https://visualstudio.microsoft.com/downloads/) | [6.0.402](https://dotnet.microsoft.com/download/dotnet-core/<SDKMajorMinorVersionOnly>)<sup>1</sup> |
+| [**6.3**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.3](https://visualstudio.microsoft.com/downloads/) | [6.0.400](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
+| [**6.3.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.3](https://visualstudio.microsoft.com/downloads/) | [6.0.402](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
+| [**6.3.3**](https://nuget.org/downloads) | N/A | [6.0.410](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 17.3 with.NET Core workload
+
+## Summary: What's New in 6.3.3
+
+* [Security]: Microsoft Security Advisory CVE-2023-29337 | NuGet Client Remote Code Execution Vulnerability - [#12653](https://github.com/NuGet/Home/issues/12653)
 
 ## Summary: What's New in 6.3.1
 
