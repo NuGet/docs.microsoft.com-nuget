@@ -14,8 +14,13 @@ NuGet distribution vehicles:
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
 | [**6.4**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.4](https://visualstudio.microsoft.com/downloads/) | [7.0.100](https://dotnet.microsoft.com/download/dotnet-core/7.0)<sup>1</sup> |
+| [**6.4.2**](https://nuget.org/downloads) | N/A | [7.0.107](https://dotnet.microsoft.com/download/dotnet-core/7.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 17.4 with .NET Core workload
+
+## Summary: What's New in 6.4.2
+
+* [Security]: Microsoft Security Advisory CVE-2023-29337 | NuGet Client Remote Code Execution Vulnerability - [#12653](https://github.com/NuGet/Home/issues/12653)
 
 ## Summary: What's New in 6.4
 
