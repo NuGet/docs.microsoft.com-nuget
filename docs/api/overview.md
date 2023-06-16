@@ -65,6 +65,7 @@ Resource name                                                        | Required 
 [SearchAutocompleteService](search-autocomplete-service-resource.md) | no       | Discover package IDs and versions by substring.
 [SearchQueryService](search-query-service-resource.md)               | yes      | Filter and search for packages by keyword.
 [SymbolPackagePublish](symbol-package-publish-resource.md)           | no       | Push symbol packages.
+[VulnerabilityInfo](vulnerability-info.md)                           | no       | Packages with known vulnerabilities.
 
 In general, all non-binary data returned by a API resource are serialized using JSON. The response schema
 returned by each resource in the service index is defined individually for that resource. For more information about
