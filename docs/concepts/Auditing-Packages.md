@@ -25,7 +25,8 @@ The `restore` command automatically runs when you do a common package operation 
 > NuGet.org's V3 URL is one such example (https://api.nuget.org/v3/index.json), but note that NuGet.org's V2 endpoint does not.
 
 > [!NOTE]
-> To enable Audit, set `<NuGetAudit>true</NuGetAudit>` in your project file, or a *Directory.Build.props* file.
+> .NET 8 preview 6+ enables Audit by default, but Visual Studio 17.7 does not ship .NET 8.
+> To opt-in to Audit explicitly, set `<NuGetAudit>true</NuGetAudit>` in your project file, or a *Directory.Build.props* file.
 
 1. On the command line, navigate to your project or solution directory.
 2. Ensure your project or solution contains a `.csproj` file.
