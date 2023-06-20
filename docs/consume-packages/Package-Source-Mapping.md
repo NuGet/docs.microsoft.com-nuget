@@ -69,7 +69,7 @@ _From the Visual Studio Options Dialog_
 
 5. The `Package Source Mapping` options page will show the newly created source mapping.
 
-![The `Package Source Mapping` options page showing the newly created source mapping](media/packageSourceMapping_VSOptions_AddMappingComplete.png)
+![The `Package Source Mapping` options page showing the newly created source mapping](media/packageSourceMapping_VSOptions_AddMappingCompleted.png)
 
 6. Press `OK` on the Options Dialog to save changes to the applicable `nuget.config`.
 7. The NuGet Package Manager window will refresh and reflect the new status of the selected package's source mappings.
