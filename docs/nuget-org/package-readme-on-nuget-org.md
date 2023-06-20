@@ -80,6 +80,7 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * sonarcloud.io
 * travis-ci.com
 * travis-ci.org
+* wakatime.com
 * user-images.githubusercontent.com
 
 If you feel that another domain should be added to the allow-list, please feel free to [file an issue](https://github.com/NuGet/NuGetGallery/issues) and it will be reviewed by our engineering team for privacy and security compliance. Images with relative local paths and images hosted from unsupported domains will not be rendered and will produce a warning on the readme file preview and package details page that is only visible to the package owners.
