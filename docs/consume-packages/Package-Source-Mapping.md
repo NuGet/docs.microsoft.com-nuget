@@ -12,7 +12,7 @@ ms.topic: conceptual
 Safeguarding your software supply chain is crucial if you use a mix of public and private package sources.
 Use Package Source Mapping along side other [best practices](..\concepts\Security-Best-Practices.md) to help you fortify your supply chain against attacks.
 
-Starting with [NuGet 6.0](..\release-notes\NuGet-6.0.md), you can centrally declare which source each package in your solution should restore from in your nuget.config fil
+Starting with [NuGet 6.0](..\release-notes\NuGet-6.0.md), you can centrally declare which source each package in your solution should restore from in your nuget.config file.
 
 Starting with Visual Studio 17.5, you can add and remove Package Source Mappings with the Visual Studio Options Dialog
 
