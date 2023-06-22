@@ -5,6 +5,8 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/15/2022
 ms.topic: conceptual
+f1_keywords: 
+  - "vs.toolsoptionspages.nuget_package_manager.package_source_mapping"
 ---
 
 # Package Source Mapping
