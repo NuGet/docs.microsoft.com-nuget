@@ -9,6 +9,7 @@ f1_keywords:
   - "vs.toolsoptionspages.nuget_package_manager"
   - "vs.toolsoptionspages.nuget_package_manager.general"
   - "vs.toolsoptionspages.nuget_package_manager.package_sources"
+  - "vs.toolsoptionspages.nuget_package_manager.package_source_mapping"
   - "vs.nuget.packagemanager.ui"
 ---
 
