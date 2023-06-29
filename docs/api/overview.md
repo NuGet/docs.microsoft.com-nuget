@@ -20,6 +20,8 @@ Note in some cases, nuget.org has additional requirements that are not enforced 
 
 For a simple enumeration and download of available nuget.exe versions, see the [tools.json](tools-json.md) endpoint.
 
+If you are implementing a NuGet package repository, also see [the implementation guide](./implementation-guide.md) for additional requirements and recommendations.
+
 ## Service index
 
 The entry point for the API is a JSON document in a well known location. This document is called the **service index**. The location of the service index for nuget.org is `https://api.nuget.org/v3/index.json`.
