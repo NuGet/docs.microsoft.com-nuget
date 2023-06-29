@@ -12,6 +12,20 @@ ms.topic: conceptual
 Prior to 2019, NuGet package repositories could copy the package metadata from the `nupkg`'s [`nuspec` file](../reference/nuspec.md), and return the results unmodified in [search](./search-query-service-resource.md) and [package metadata](./registration-base-url-resource.md) requests.
 Since then, NuGet has evolved to provide developers with a richer experience, and this requires package repositories to do additional work in order to provide the additional value to developers.
 
+## URL structure for private feeds
+
+As described in [the overview of the NuGet API](./overview.md), the starting URL for all NuGet server communication is [the service index](./service-index.md).
+This document contains the URLs for all other resources that NuGet clients will query.
+As of NuGet 6.7 (Visual Studio & MSBuild 17.7, and .NET SDK 7.0.400), NuGet uses [.NET's `HttpClientHandler.PreAuthenticate](/dotnet/api/system.net.http.httpclienthandler.preauthenticate), which only works when subsequent URLs are in the same virtual directory, or a subdirectory, of a URL that has previously been authenticated.
+This will dramatically reduce the number of unauthenticated HTTP requests sent to the server, and therefore will reduce your server workload.
+
+For example, imagine the service index is located at https://pkgs.contoso.com/nuget/v3/service/index.json, but the search resource is at https://pkgs.contoso.com/nuget/v3/search.
+Since the search URL is not in the same directory as the service index, or a subdirectory, `HttpClientHandler`'s credential cache won't use the credential on the first request, forcing the server to respond with an HTTP 401 response, and then `HttpClientHandler` will re-request the URL with credentials.
+If the search resource was instead at https://pkgs.contoso.com/nuget/v3/service/search, the first request to the search resource will be authenticated since the search endpoint is in the same directory as the service index.
+Similarly, a `RegistrationBaseUrl` of https://pkgs.contoso.com/nuget/v3/registration/ will always try an unauthenticated request first, since the URL is not a subdirectory of the service index's location, but https://pkgs.contoso.com/nuget/v3/service/registration/ will be pre-authenticated since it's a subdirectory of the service index's location.
+
+This means if you wish to host different NuGet server resources on different servers, you will need a reverse proxy to ensure all customer facing URLs meet `HttpClientHandler`'s `PreAuthenticate` requirements.
+
 ## Embedded files
 
 Package [icons](../reference/nuspec.md#icon), [license](../reference/nuspec.md#license), and [readme](../reference/nuspec.md#readme) files can be (and is recommended to be) embedded in the package.
