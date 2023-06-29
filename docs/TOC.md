@@ -129,6 +129,7 @@
 #### [Repository signatures](api/repository-signatures-resource.md)
 #### [Search](api/search-query-service-resource.md)
 #### [Service index](api/service-index.md)
+#### [Vulnerability info](api/vulnerability-info.md)
 ### [How-to: query for all packages using the API](guides/api/query-for-all-published-packages.md)
 ### [Rate limits](api/rate-limits.md)
 ### [nuget.org protocols](api/nuget-protocols.md)
