@@ -46,6 +46,10 @@ NuGet will select runtime assets from `runtimes/{rid}/native/` and `runtimes/{ri
 
 When there are both `runtimes/{rid}/native/` and `runtimes/{rid}/lib/{tfm}/` files, NuGet will always select the `runtimes/{rid}/native/` assets, and then the assets from only one of the `runtimes/{rid}/lib/{tfm}/` directories, just like it does for compile assets in `ref/{tfms}/` or `lib/{tfms}/`.
 
+Similarly, NuGet selects the "best" RID, when multiple exist, or multiple match.
+Therefore, if a package contains both `runtimes/any/native/some.dll` and `runtimes/linux-x64/native/different.so`, when the project consuming the package targets `linux-x64`, NuGet will select `different.so`, and for all other RIDs that are not compatible with `linux-x64`, then NuGet will select `some.dll`.
+You cannot use the `any` RID to put common files that will be selected by all RIDs.
+
 ## Putting it together
 
 How to build any binaries native libraries is out of scope of this document.
