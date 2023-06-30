@@ -48,6 +48,7 @@
 ### [Select assemblies referenced by projects](create-packages/select-assemblies-referenced-by-projects.md)
 ### [Set package type](create-packages/set-package-type.md)
 ### [Create a localized package](create-packages/creating-localized-packages.md)
+### [.NET Packages containing native libraries](create-packages/native-files-in-net-packages.md)
 ## Guides for specific content
 ### [Create a UWP package (C++)](guides/create-uwp-packages.md)
 ### [Create a UWP package (C#)](guides/create-uwp-packages-CS.md)
