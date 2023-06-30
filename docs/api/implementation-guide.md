@@ -12,24 +12,37 @@ ms.topic: conceptual
 Prior to 2019, NuGet package repositories could copy the package metadata from the `nupkg`'s [`nuspec` file](../reference/nuspec.md), and return the results unmodified in [search](./search-query-service-resource.md) and [package metadata](./registration-base-url-resource.md) requests.
 Since then, NuGet has evolved to provide developers with a richer experience, and this requires package repositories to do additional work in order to provide the additional value to developers.
 
-## URL structure for private feeds
+## URL structure for authenticated feeds
 
 As described in [the overview of the NuGet API](./overview.md), the starting URL for all NuGet server communication is [the service index](./service-index.md).
 This document contains the URLs for all other resources that NuGet clients will query.
-As of NuGet 6.7 (Visual Studio & MSBuild 17.7, and .NET SDK 7.0.400), NuGet uses [.NET's `HttpClientHandler.PreAuthenticate](/dotnet/api/system.net.http.httpclienthandler.preauthenticate), which only works when subsequent URLs are in the same virtual directory, or a subdirectory, of a URL that has previously been authenticated.
+As of NuGet 6.7 (Visual Studio & MSBuild 17.7, and .NET SDK 7.0.400), NuGet uses [.NET's `HttpClientHandler.PreAuthenticate`](/dotnet/api/system.net.http.httpclienthandler.preauthenticate), which only avoids anonymous HTTP requests  when subsequent URLs are in the same virtual directory, or a subdirectory, of a URL that has previously been authenticated.
 This will dramatically reduce the number of unauthenticated HTTP requests sent to the server, and therefore will reduce your server workload.
 
-For example, imagine the service index is located at https://pkgs.contoso.com/nuget/v3/service/index.json, but the search resource is at https://pkgs.contoso.com/nuget/v3/search.
-Since the search URL is not in the same directory as the service index, or a subdirectory, `HttpClientHandler`'s credential cache won't use the credential on the first request, forcing the server to respond with an HTTP 401 response, and then `HttpClientHandler` will re-request the URL with credentials.
-If the search resource was instead at https://pkgs.contoso.com/nuget/v3/service/search, the first request to the search resource will be authenticated since the search endpoint is in the same directory as the service index.
-Similarly, a `RegistrationBaseUrl` of https://pkgs.contoso.com/nuget/v3/registration/ will always try an unauthenticated request first, since the URL is not a subdirectory of the service index's location, but https://pkgs.contoso.com/nuget/v3/service/registration/ will be pre-authenticated since it's a subdirectory of the service index's location.
+Here are some examples:
 
-This means if you wish to host different NuGet server resources on different servers, you will need a reverse proxy to ensure all customer facing URLs meet `HttpClientHandler`'s `PreAuthenticate` requirements.
+|URL|Will PreAuthenticate?|
+|--|--|
+|https://pkgs.contoso.com/nuget/v3/feed/index.json|N/A, this is the service index.|
+|https://pkgs.contoso.com/nuget/v3/search|No, not in the same or sub-directory as the service index.|
+|https://search.pkgs.contoso.com/nuget/v3/feed/|No, not on the same host name as the service index.|
+|https://pkgs.contoso.com/nuget/v3/feed/search|Yes, in the same directory as the service index.|
+|https://pkgs.contoso.com/nuget/v3/registration/|No, not in a subdirectory of the service index.|
+|https://pkgs.contoso.com/nuget/v3/feed/registration/|Yes, in a subdirectory of the service index.|
+|https://pkgs.contoso.com/nuget/v3/{guid}/registration/|See below|
+
+In the last example, the server might have a canonical (in this example a guid) name, and have one or more aliases. 
+If the service index request was authenticated on a non-canonical URL (the "friendly" name, in our example `feed`), then no, any requests to resources under the canonical URL will not match `HttpClientHandler`'s rules for `PreAuthenticate`.
+However, if the non-canonical URL is an HTTP redirection to the canonical URL, https://pkgs.contoso.com/nuget/v3/{guid}/index.json, then this URL will be used in `HttpClientHandler`'s credential cache.
+In this case, every request to the service index will have additional latency, due to the redirection.
+
+While NuGet's V3 API was designed to work on a static file server, the search resource is the exception that always requires a dynamic web service to process requests.
+If you wish to host search, or indeed any other NuGet API resource, on different servers, in order to benefit from `HttpClientHandler`'s `PreAuthenticate`, you will need to use a reverse proxy to ensure all customer facing URLs in the service index meet the "same or subdirectory" rule.
 
 ## Embedded files
 
-Package [icons](../reference/nuspec.md#icon), [license](../reference/nuspec.md#license), and [readme](../reference/nuspec.md#readme) files can be (and is recommended to be) embedded in the package.
-These files need a URL endpoint, either extracted and put on a static file, or a URL that dynamically extracts the files from the `.nupkg` on request, so that they can be viewed without downloading the entire `nupkg`.
+Package [icons](../reference/nuspec.md#icon), [license](../reference/nuspec.md#license), and [readme](../reference/nuspec.md#readme) files can be (and are recommended to be) embedded in the package.
+These files need a URL endpoint, either extracted and put on a static file server, or a URL that dynamically extracts the files from the `.nupkg` on request, so that they can be viewed without downloading the entire `nupkg`.
 If your package repository provides package browsing and viewing package details, you can use the URLs to show customers the embedded content on your website.
 
 Finally, the [package metadata resource](./registration-base-url-resource.md) and [search resource](./search-query-service-resource.md) must contain the hosted URL in the `iconUrl`, `licenseUrl`, and/or `readmeUrl` properties of the JSON response.
@@ -62,6 +75,6 @@ If your package repository is up-sourcing from nuget.org specifically, by keepin
 
 For the `VulnerabilityInfo` resource, nuget.org is providing vulnerability data for all GitHub reviewed advisories from the [GitHub Advisories database](https://github.com/advisories), even packages that are not hosted on nuget.org.
 Therefore, if your package repository provides upsourcing from nuget.org, or is otherwise intended on being a feed that customers host all their packages on, not just their private packages, your [service index](./service-index.md) could contain a link to nuget.org's [`VulnerabilityInfo` index](./vulnerability-info.md#vulnerability-index).
-However, if your repository is intended to be available on the customer's premises, and therefore not require a connection to the public internet, the vulnerability information should be mirrored.
+However, if your repository is intended to be available on the customer's premises, and therefore not require a connection to the public internet, the vulnerability pages should be mirrored.
 
 If your package repository is hosting first-party packages, and you would like to provide vulnerability information to customers using your own feed, but don't yet have any disclosed package vulnerabilities, you should provide a [vulnerability index](./vulnerability-info.md#vulnerability-index) with one or more [vulnerability pages](./vulnerability-info.md#vulnerability-page) whose contents are an empty JSON array (`[]`).
