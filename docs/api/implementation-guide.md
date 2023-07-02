@@ -12,7 +12,7 @@ ms.topic: conceptual
 Prior to 2018, NuGet package repositories could copy the package metadata from the `nupkg`'s [`nuspec` file](../reference/nuspec.md), and return the results unmodified in [search](./search-query-service-resource.md) and [package metadata](./registration-base-url-resource.md) requests.
 Since then, NuGet has evolved to provide developers with a richer experience, and this requires package repositories to do additional work in order to provide the additional value to developers.
 
-# Chronology
+## Chronology
 
 To assist authors of existing NuGet repositories keep up to date with NuGet's newest features, here is the chronology of the relevant features mentioned in the remainder of the document.
 
@@ -20,10 +20,10 @@ To assist authors of existing NuGet repositories keep up to date with NuGet's ne
 |--|--|
 |N/A (2013)|[A blog post explaining how to manage package owners on nuget.org](https://devblogs.microsoft.com/nuget/managing-package-owners/) clarified the owners shown on the website are the accounts that have permission to upload new versions, and therefore [the `owners` metadata in the package is ignored](#owner-field)|
 |[4.9](../release-notes/NuGet-4.9-RTM.md)|[Embedded licenses](#embedded-files)|
-|[5.3](../release-notes/NuGet-5.3.md)|[Embedded icons](#embedded-files), [Package deprecation in `RegistrationBaseUrl` (package metadata resource)](#known-vulnerability-and-deprecation-data)|
+|[5.3](../release-notes/NuGet-5.3.md)|[Embedded icons](#embedded-files) <br/> [Package deprecation in `RegistrationBaseUrl` (package metadata resource)](#known-vulnerability-and-deprecation-data)|
 |[5.8](../release-notes/NuGet-5.8.md)|[Package vulnerability information in `RegistrationsBaseUrl` (package metadata resource)](#known-vulnerability-and-deprecation-data)|
 |[5.10](../release-notes/NuGet-5.10.md)|[Embedded readme](#embedded-files)|
-|6.7|[PreAuthenticate authenticated requests](#url-structure-for-authenticated-feeds)|
+|6.7|[PreAuthenticate authenticated requests](#url-structure-for-authenticated-feeds) <br/> [`VulnerabilityInfo` resource](#known-vulnerabilities-database-vulnerabilityinfo)|
 
 ## Owner field
 
