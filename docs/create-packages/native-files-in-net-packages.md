@@ -22,11 +22,23 @@ While NuGet has a [`contentFiles/` feature](../reference/msbuild-targets#includi
 
 First we'll consider a project referencing packages.
 When the app is published for a specific [Runtime Identifier (RID)](/dotnet/core/rid-catalog), then NuGet package assets for that RID will be copied into the output directory.
-When the app is published without a specific RID, all RID specific content will be published in subdirectories, and a `{project}.deps.json` file is created that the .NET runtime loads to determine the .
+When the app is published without a specific RID, all RID specific content will be published in subdirectories, and a `{project}.deps.json` file is created that the .NET runtime loads to determine which directory to use as a probing path.
+
+Also, be aware that .NET 8 introduces [breaking changes regarding how it determines compatible RIDs from the `.deps.json` file](/dotnet/core/compatibility/deployment/8.0/rid-asset-list).
 
 ## Understanding NuGet package asset selection
 
-There are two [types of assets](../consume-packages/Package-References-in-Project-Files.md#controlling-dependency-assets) in a NuGet file that are most relevant to this scenario, compile and runtime assets.
+There are three types of assets in a NuGet file that are most relevant to this scenario, compile, runtime, and native assets.
+For a complete list of asset types, see the docs on [controlling dependency assets in `PackageReference` projects](../consume-packages/Package-References-in-Project-Files.md#controlling-dependency-assets).
+
+|Asset type|Short Description|
+|--|--|
+|[compile](#compile-assets)|Managed assemblies passed to the compiler. `refs/{tfm}/` if it exists, otherwise `lib/{tfm}`.|
+|[runtime](#runtime-assets)|Managed assemblies copied to the output directory. `runtimes/{rid}/lib/{tfm}/` if it exists, otherwise `lib/{tfm}`.|
+|[native](#native-assets)|Native libraries copied to the output directory. `runtimes/{rid}/native/`.|
+
+In all cases, NuGet chooses the "best" directory for a given Target Framework and RID, and only the files in that directory are copied.
+Therefore, you cannot put common assets in an inherited RID (such as `any`), because if any other RID is a better match, the `any` RID contents will not be considered.
 
 ### Compile assets
 
@@ -37,52 +49,49 @@ The .NET compiler will generate warnings when an assembly targets a different ar
 
 If your assembly contains a lot of managed code, not just P/Invoke method definitions, you can save space by making the `ref/` assembly a [reference assembly](/dotnet/standard/assembly/reference-assemblies#generating-reference-assemblies), but be sure to include it under `ref/` in your package, not `lib/`.
 
-Therefore, there is no capability to provide different compile-time assemblies for different RIDs, you will need to provide the same API surface for all RIDs, and do runtime checks (for example, throw )
+Therefore, there is no capability to provide different compile-time assemblies for different RIDs, you will need to provide the same API surface for all RIDs, and do runtime checks (for example, throw `PlatformNotSupportedException`).
 
 ### Runtime assets
 
 Runtime assets are copied to the output directory on build and publish, and the .NET SDK generates the `deps.json` with all the RID-specific asset information.
-NuGet will select runtime assets from `runtimes/{rid}/native/` and `runtimes/{rid}/lib/{tfm}/` (see below to understand `sub-path`), and if that doesn't exist, then it will fall back to `lib/{tfm}/`.
+NuGet will select runtime assets from `runtimes/{rid}/lib/{tfm}/`, and if that doesn't exist, then it will fall back to `lib/{tfm}/`.
+The best `{rid}` directory is selected first, followed by `{tfm}`.
 
-When there are both `runtimes/{rid}/native/` and `runtimes/{rid}/lib/{tfm}/` files, NuGet will always select the `runtimes/{rid}/native/` assets, and then the assets from only one of the `runtimes/{rid}/lib/{tfm}/` directories, just like it does for compile assets in `ref/{tfms}/` or `lib/{tfms}/`.
+### Native assets
 
-Similarly, NuGet selects the "best" RID, when multiple exist, or multiple match.
-Therefore, if a package contains both `runtimes/any/native/some.dll` and `runtimes/linux-x64/native/different.so`, when the project consuming the package targets `linux-x64`, NuGet will select `different.so`, and for all other RIDs that are not compatible with `linux-x64`, then NuGet will select `some.dll`.
-You cannot use the `any` RID to put common files that will be selected by all RIDs.
+Native assets are also copied to the output directory on build and publish, and are present in the `deps.json` file.
+NuGet will select native assets from the `runtimes/{rid}/native/` directory.
+
+> [!NOTE]
+> The [.NET SDK flattens any directory structure](https://github.com/dotnet/sdk/issues/9643) under `runtimes/{rid}/native/` when copying to the output directory.
 
 ## Putting it together
 
 How to build any binaries native libraries is out of scope of this document.
-It is assumed that all the native binaries and the .NET assemblies have been completed and compied to a machine for packing.
+It is assumed that all the native binaries and the .NET assemblies have been completed and copied to a machine for packing.
 
-Consider a package `Contoso.Native` that provides .NET APIs to `contoso.dll` on Windows, and `contoso.so` on other platforms.
+When packing with [NuGet's MSBuild Pack target](../reference/msbuild-targets.md#pack-target), you can include arbitrary files in arbitrary package paths using `Pack="true" PackagePath="{path}"` metadata on MSBuild items.
+For example, `<None Include="../cross-compile/linux-x64/contoso.so" Pack="true" PackagePath="runtimes/linux-x64/native/" />`.
+
+Consider a package `Contoso.Native` that provides .NET APIs to `libcontoso.dll` on Windows, `libcontoso.dylib` on OSX, and `libcontoso.so` on Linux.
 The package contents should be (excluding files required by the [Open Packaging Conventions](https://en.wikipedia.org/wiki/Open_Packaging_Conventions)):
 
 ```text
 Contoso.Native.1.0.0.nuspec
 ref/net8.0/Contoso.Native.dll
-runtimes/android/lib/net8.0/Contoso.Native.dll
-runtimes/android/native/contoso.so
-runtimes/ios/lib/net8.0/Contoso.Native.dll
-runtimes/ios/native/contoso.so
 runtimes/linux-arm64/lib/net8.0/Contoso.Native.dll
-runtimes/linux-arm64/native/contoso.so
+runtimes/linux-arm64/native/libcontoso.so
 runtimes/linux-x64/lib/net8.0/Contoso.Native.dll
-runtimes/linux-x64/native/contoso.so
-runtimes/maccatalyst-arm64/lib/net8.0/Contoso.Native.dll
-runtimes/maccatalyst-arm64/native/contoso.so
-runtimes/maccatalyst-x64/lib/net8.0/Contoso.Native.dll
-runtimes/maccatalyst-x64/native/contoso.so
+runtimes/linux-x64/native/libcontoso.so
+runtimes/osx-arm64/lib/net8.0/Contoso.Native.dll
+runtimes/osx-arm64/native/libcontoso.dylib
+runtimes/osx-x64/lib/net8.0/Contoso.Native.dll
+runtimes/osx-x64/native/contoso.dylib
 runtimes/win-arm64/lib/net8.0/Contoso.Native.dll
-runtimes/win-arm64/native/contoso.so
+runtimes/win-arm64/native/libcontoso.so
 runtimes/win-x64/lib/net8.0/Contoso.Native.dll
-runtimes/win-x64/native/contoso.so
+runtimes/win-x64/native/libcontoso.so
 ```
 
-If all the managed assemblies in `net8.0` directories are the same (there are no `#if` directives in the code), a technique to reduce the number of duplicated `runtimes/{rid}/lib/{tfm}/` files is to split the package into separate native and managed packages.
-The native package will be a dependency of the managed package.
-For example, a `Contoso.Native.runtime` package that contains all the `runtimes/{rid}/native/` files, and an empty (zero byte) file `ref/net8.0/_._` (zip files only understand files, not directories, so NuGet uses `_._` as a placeholder to say this directory should be considered empty).
-The `Contoso.Native` package could then contain `lib/net8.0/Contoso.Native.dll`, and not need separate `ref/` and `runtimes/` assets.
-
-When packing with [NuGet's MSBuild Pack target](../reference/msbuild-targets.md#pack-target), you can include arbitrary files in arbitrary package paths using `Pack="true" PackagePath="{path}"` metadata on MSBuild items.
-For example, `<None Include="../cross-compile/linux-x64/contoso.so" Pack="true" PackagePath="runtimes/linux-x64/native/" />`.
+If `Contoso.Native.dll` is the same for all RIDs (no `#if` in any source file), then one copy can be placed in `runtimes/any/lib/net8.0/Contoso.Native.dll`, and remove it from all other RID directories.
+Putting the DLL in `lib/net8.0/` is also possible, but not recommended, because NuGet will believe the package is compatible with `packages.config`, and those projects will fail at runtime.
