@@ -117,6 +117,7 @@
 ### [Update-Package](reference/ps-reference/ps-ref-update-package.md)
 ## NuGet Server API
 ### [Overview](api/overview.md)
+### [Server Implementation Guide](api/implementation-guide.md)
 ### Resources
 #### [Autocomplete](api/search-autocomplete-service-resource.md)
 #### [Catalog](api/catalog-resource.md)
