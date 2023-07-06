@@ -28,7 +28,7 @@ NuGet distribution vehicles:
 * [Security]: Microsoft Security Advisory CVE-2023-29337 | NuGet Client Remote Code Execution Vulnerability - [#12653](https://github.com/NuGet/Home/issues/12653)
 
 > [!NOTE]
-> There is a behavior breaking change on Linux. The temp folder where NuGet stores temporary files during its various operations is changed from `/tmp/NuGetScratch` to `/tmp/NuGetScratch<username>` on Linux. E.g. for user User1, the temp folder will be `/tmp/NuGetScratchUser1`.
+> There is a behavior breaking change on Linux. The temp folder location, where NuGet stores temporary files during its various operations, has changed from `/tmp/NuGetScratch` to `/tmp/NuGetScratch<username>` on Linux. e.g. for user User1, the temp folder will be `/tmp/NuGetScratchUser1`.
 
 ## Summary: What's New in 5.11.3
 
