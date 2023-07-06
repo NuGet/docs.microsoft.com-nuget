@@ -77,8 +77,31 @@ It is assumed that all the native binaries and the .NET assemblies have been com
 When packing with [NuGet's MSBuild Pack target](../reference/msbuild-targets.md#pack-target), you can include arbitrary files in arbitrary package paths using `Pack="true" PackagePath="{path}"` metadata on MSBuild items.
 For example, `<None Include="../cross-compile/linux-x64/libcontoso.so" Pack="true" PackagePath="runtimes/linux-x64/native/" />`.
 
-Consider a package `Contoso.Native` that provides .NET APIs to `libcontoso.dll` on Windows, `libcontoso.dylib` on OSX, and `libcontoso.so` on Linux.
-The package contents should be (excluding files required by the [Open Packaging Conventions](https://en.wikipedia.org/wiki/Open_Packaging_Conventions)):
+Consider a package `Contoso.Native` that provides .NET APIs to `libcontoso.dll` on Windows, `libcontoso.dylib` on OSX, and `libcontoso.so` on Linux, using `[DllImport("contoso")]`.
+The package contents should be (excluding files required by the [Open Packaging Conventions](https://en.wikipedia.org/wiki/Open_Packaging_Conventions))
+
+### Example 1
+
+If `Contoso.Native` is built as AnyCPU:
+
+```text
+Contoso.Native.1.0.0.nuspec
+ref/net8.0/Contoso.Native.dll
+runtimes/any/lib/net8.0/Contoso.Native.dll
+runtimes/linux-arm64/native/libcontoso.so
+runtimes/linux-x64/native/libcontoso.so
+runtimes/osx-arm64/native/libcontoso.dylib
+runtimes/osx-x64/native/libcontoso.dylib
+runtimes/win-arm64/native/contoso.dll
+runtimes/win-x64/native/contoso.dll
+```
+
+While the `ref/` and `runtimes/any/lib` copies of `Contoso.Native.dll` could be deduplicated into a single `lib/net8.0/Contoso.Native.dll` file, this is not recommended because NuGet will believe this package is compatible with proejcts using `packages.config`, and these projects will fail at runtime when the native `contoso.dll` is not found.
+
+### Example 2
+
+If `Contoso.Native` has any differences between architectures.
+For example, but not limited to, using `#if` to compile difference code for different RIDs, or using `<PlatformTarget>` (or anything else that causes `-platform:` to be passed to the compiler) with a value other than `AnyCPU`.
 
 ```text
 Contoso.Native.1.0.0.nuspec
@@ -92,10 +115,7 @@ runtimes/osx-arm64/native/libcontoso.dylib
 runtimes/osx-x64/lib/net8.0/Contoso.Native.dll
 runtimes/osx-x64/native/libcontoso.dylib
 runtimes/win-arm64/lib/net8.0/Contoso.Native.dll
-runtimes/win-arm64/native/libcontoso.so
+runtimes/win-arm64/native/contoso.dll
 runtimes/win-x64/lib/net8.0/Contoso.Native.dll
-runtimes/win-x64/native/libcontoso.so
+runtimes/win-x64/native/contoso.dll
 ```
-
-If `Contoso.Native.dll` is the same for all RIDs (no `#if` in any source file), then one copy can be placed in `runtimes/any/lib/net8.0/Contoso.Native.dll`, and remove it from all other RID directories, reducing the total file count from 14 to 9.
-Putting the DLL in `lib/net8.0/` is also possible, but not recommended, because NuGet will believe the package is compatible with `packages.config`, and those projects will fail at runtime since the native files will not be copied in the build.
