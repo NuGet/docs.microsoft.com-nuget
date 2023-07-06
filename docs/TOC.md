@@ -117,6 +117,7 @@
 ### [Update-Package](reference/ps-reference/ps-ref-update-package.md)
 ## NuGet Server API
 ### [Overview](api/overview.md)
+### [Server Implementation Guide](api/implementation-guide.md)
 ### Resources
 #### [Autocomplete](api/search-autocomplete-service-resource.md)
 #### [Catalog](api/catalog-resource.md)
@@ -129,6 +130,7 @@
 #### [Repository signatures](api/repository-signatures-resource.md)
 #### [Search](api/search-query-service-resource.md)
 #### [Service index](api/service-index.md)
+#### [Vulnerability info](api/vulnerability-info.md)
 ### [How-to: query for all packages using the API](guides/api/query-for-all-published-packages.md)
 ### [Rate limits](api/rate-limits.md)
 ### [nuget.org protocols](api/nuget-protocols.md)
@@ -184,6 +186,12 @@
 ### [NU1608](reference/errors-and-warnings/NU1608.md)
 ### [NU1701](reference/errors-and-warnings/NU1701.md)
 ### [NU1703](reference/errors-and-warnings/NU1703.md)
+### [NU1900](reference/errors-and-warnings/NU1900.md)
+### [NU1901](reference/errors-and-warnings/NU1901-NU1904.md)
+### [NU1902](reference/errors-and-warnings/NU1901-NU1904.md)
+### [NU1903](reference/errors-and-warnings/NU1901-NU1904.md)
+### [NU1904](reference/errors-and-warnings/NU1901-NU1904.md)
+### [NU1905](reference/errors-and-warnings/NU1905.md)
 ### [NU1801](reference/errors-and-warnings/NU1801.md)
 ### [NU1802](reference/errors-and-warnings/NU1802.md)
 ### [NU1803](reference/errors-and-warnings/NU1803.md)
