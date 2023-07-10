@@ -60,7 +60,7 @@ If you're creating a new topic, keep the following in mind as well:
 
 Periodically, about once a month, a manual RI is performance from `main` -> `live` branch.
 Based on the urgency of the docs, this may happen frequently.
-It is very important that the RI pul requessts are *merged* and *not squashed*.
+It is very important that the RI pull requests are *merged* and *not squashed*.
 
 ## Conventions
 
