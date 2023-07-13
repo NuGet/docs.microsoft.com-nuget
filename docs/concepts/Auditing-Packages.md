@@ -95,6 +95,10 @@ There is no support for excluding individual advisories at this time. You can us
 | NU1903 | high |
 | NU1904 | critical |
 
+You can customize your build to treat these warnings as errors to [treat warnings as errors, or treat warnings not as errors](/dotnet/csharp/language-reference/compiler-options/errors-warnings#warningsaserrors-and-warningsnotaserrors).
+For example, if you're already using `<TreatWarningsAsErrors>` to treat all (C#, NuGet, MSBuild, etc) warnings as errors, you can use `<WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>` to prevent vulnerabilities discovered in the future from breaking your build.
+Alternatively, if you want to keep low and moderate vulnerabilities as warnings, but treat high and critical vulnerabilities as errors, and you're not using `TreatWarningsAsErrors`, you can use `<WarningsAsErrors>NU1903;NU1904</WarningsAsErrors>`.
+
 ### Disabling security auditing
 
 At any time you wish to not receive security audit reports, you can opt-out of the experience entirely by setting the following MSBuild property in a `.csproj` or MSBuild file being evaluated as part of your project:
