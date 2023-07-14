@@ -26,10 +26,8 @@ No contribution is too big or too small.
     1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
     1. When using external links, especially to Microsoft Learn, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
 1. When you're done, enter a commit message below, and click **Propose file change**.
-1. Send a pull request for your change. We review PRs on a regular basis.
+1. Send a pull request for your change. Review requests are automatic and we review PRs on a regular basis.
 1. Thank you!
-
-> **If your content is not live yet, there is a manual `main` -> `live` pull request that is needed to pick-up the changes. Please create a PR or ping a content owner to do so on your behalf.**
 
 If you're creating a new topic, keep the following in mind as well:
 
@@ -57,6 +55,13 @@ If you're creating a new topic, keep the following in mind as well:
 | tutorial | Anything under the "Tutorial" node in the TOC that's authored according to Tutorial guidelines. |
 | reference | Any reference-type article that isn't auto-generated. |
 | article | Use for community-contributed content (that is, anything from outside the engineering team or the content team at Microsoft. |
+
+## Merging to the live branch
+
+NuGet team members have permissions to merge to `live` branch manually, at their own discretion.
+Otherwise, a regular (about once a month) Reverse Integration (RI) will be performed from `main` -> `live` branch.
+Based on the urgency of the docs, this may happen frequently.
+It is very important that the RI pull requests are *merged* and *not squashed*.
 
 ## Conventions
 
