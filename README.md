@@ -58,7 +58,8 @@ If you're creating a new topic, keep the following in mind as well:
 
 ## Merging to the live branch
 
-Periodically, about once a month, a manual RI is performance from `main` -> `live` branch.
+NuGet team members have permissions to merge to `live` branch manually, at their own discretion.
+Otherwise, a regular (about once a month) Reverse Integration (RI) will be performed from `main` -> `live` branch.
 Based on the urgency of the docs, this may happen frequently.
 It is very important that the RI pull requests are *merged* and *not squashed*.
 
