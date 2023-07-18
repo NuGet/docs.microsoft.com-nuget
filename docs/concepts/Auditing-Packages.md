@@ -88,12 +88,18 @@ There is no support for excluding individual advisories at this time. You can us
 
 ### Warning codes
 
-| Warning Code | Severity |
+| Warning Code | Reason |
 |--------------|----------|
-| NU1901 | low |
-| NU1902 | moderate |
-| NU1903 | high |
-| NU1904 | critical |
+| NU1900 | Error communicating with package source, while getting vulnerability information. |
+| NU1901 | Package with low severity detected |
+| NU1902 | Package with moderate severity detected |
+| NU1903 | Package with high severity detected |
+| NU1904 | Package with critical severity detected |
+| NU1905 | NuGetAudit is explicitly enabled, but no package sources are providing vulnerability data |
+
+You can customize your build to treat these warnings as errors to [treat warnings as errors, or treat warnings not as errors](/dotnet/csharp/language-reference/compiler-options/errors-warnings#warningsaserrors-and-warningsnotaserrors).
+For example, if you're already using `<TreatWarningsAsErrors>` to treat all (C#, NuGet, MSBuild, etc) warnings as errors, you can use `<WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>` to prevent vulnerabilities discovered in the future from breaking your build.
+Alternatively, if you want to keep low and moderate vulnerabilities as warnings, but treat missing vulnerability data and high and critical vulnerabilities as errors, and you're not using `TreatWarningsAsErrors`, you can use `<WarningsAsErrors>NU1903;NU1904;NU1905</WarningsAsErrors>`.
 
 ### Disabling security auditing
 
