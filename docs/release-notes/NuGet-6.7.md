@@ -87,11 +87,11 @@ NuGet distribution vehicles:
 
 * TargetFrameworkInformation.Clone calls ToDictionary on a type that is already a dictionary, TargetFrameworkInformation.Clone resizes a dictionary it already knows the destination size - [#12648](https://github.com/NuGet/Home/issues/12648)
 
-* PackageSpecReferenceDependencyProvider.GetLibrary unnecessarily resizes a List<T> that it doesn't even need - [#12647](https://github.com/NuGet/Home/issues/12647)
+* PackageSpecReferenceDependencyProvider.GetLibrary unnecessarily resizes a List&lt;T&gt; that it doesn't even need - [#12647](https://github.com/NuGet/Home/issues/12647)
 
 * ResolverUtility.FindLibraryCachedAsync should use a struct as lookup - [#12646](https://github.com/NuGet/Home/issues/12646)
 
-* ContentItemCollection.PopulateItemGroups unnecessarily causing resizes of List<T>, ContentItemCollection.PopulateItemGroups boxing List<T>.Enumerator - [#12645](https://github.com/NuGet/Home/issues/12645)
+* ContentItemCollection.PopulateItemGroups unnecessarily causing resizes of List&lt;T&gt;, ContentItemCollection.PopulateItemGroups boxing List&lt;T&gt;.Enumerator - [#12645](https://github.com/NuGet/Home/issues/12645)
 
 * PackageSpec.Clone and LibraryDependency.Clone overwrite collections created by their constructors. - [#12642](https://github.com/NuGet/Home/issues/12642)
 
