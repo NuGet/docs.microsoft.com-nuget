@@ -19,23 +19,15 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.7
 
-* NuGetAudit should warn when no vulnerability data available - [#12610](https://github.com/NuGet/Home/issues/12610)
-
-* remove period from NU190X - [#12600](https://github.com/NuGet/Home/issues/12600)
-
 * Package Source Mapping status for selected package in Details Pane - [#12586](https://github.com/NuGet/Home/issues/12586)
 
 * Add VulnerabilityInfo APIs into NuGet.Protocol - [#12518](https://github.com/NuGet/Home/issues/12518)
 
 * Signing:  raise actionable message on Linux if verification results in untrusted failure - [#12459](https://github.com/NuGet/Home/issues/12459)
 
-* Warn when vulnerabilities are detected during PackageReference restore  - [#12289](https://github.com/NuGet/Home/issues/12289)
-
 * Package Source Mapping UI - PM UI Actions support source pinning & create mappings in nuget.config - [#11797](https://github.com/NuGet/Home/issues/11797)
 
 * [Feature]: Show which package versions are vulnerable in the VS PMUI package details pane version dropdown - [#11127](https://github.com/NuGet/Home/issues/11127)
-
-* Suggestion:  NuGet config -list command to list configuration file locations - [#8420](https://github.com/NuGet/Home/issues/8420)
 
 ### Issues fixed in this release
 
@@ -47,11 +39,7 @@ NuGet distribution vehicles:
 
 * Install/Update buttons are enabled in Details Pane when the PackageSourceMapping is not found - [#12607](https://github.com/NuGet/Home/issues/12607)
 
-* NuGetAudit should check direct PackageReferences by default - [#12590](https://github.com/NuGet/Home/issues/12590)
-
 * Add nullable annotations to NuGet.Frameworks - [#12570](https://github.com/NuGet/Home/issues/12570)
-
-* NuGetAudit should be on by default with the .NET 8 SDK - [#12568](https://github.com/NuGet/Home/issues/12568)
 
 * NuGet should use a different property for the platform version for C++/CLI - [#12521](https://github.com/NuGet/Home/issues/12521)
 
