@@ -76,7 +76,9 @@ If no security vulnerabilities are found, this means that packages with known vu
 
 ### Setting a security audit mode
 
-By default, a security audit is done for top-level dependencies. In the case that you'd like to audit both top-level and transitive dependencies, you can set the `<NuGetAuditMode>` MSBuild property to the desired mode in which auditing will run. Possible values are `direct` and `all`. For example if you wanted to audit all dependencies for security advisories, you can set the following:
+By default, a security audit is done for top-level dependencies.
+In the case that you'd like to audit both top-level and transitive dependencies, you can set the `<NuGetAuditMode>` MSBuild property to the desired mode in which auditing will run.
+Possible values are `direct` and `all`. For example if you wanted to audit all dependencies for security advisories, you can set the following:
 
 ```xml
 <NuGetAuditMode>all</NuGetAuditMode>
