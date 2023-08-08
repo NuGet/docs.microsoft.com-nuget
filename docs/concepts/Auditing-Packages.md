@@ -74,6 +74,16 @@ If you do not want to fix the vulnerability or are unable to update or replace t
 
 If no security vulnerabilities are found, this means that packages with known vulnerabilities were not found in your package graph at the present moment of time you checked. Since the advisory database can be updated at any time, we recommend regularly checking your `dotnet restore` output and ensuring the same in your continuous integration process.
 
+### Setting a security audit mode
+
+By default, a security audit is done for top-level dependencies.
+In the case that you'd like to audit both top-level and transitive dependencies, you can set the `<NuGetAuditMode>` MSBuild property to the desired mode in which auditing will run.
+Possible values are `direct` and `all`. For example if you wanted to audit all dependencies for security advisories, you can set the following:
+
+```xml
+<NuGetAuditMode>all</NuGetAuditMode>
+```
+
 ### Setting a security audit level
 
 In cases where you only care about a certain threshold of a security advisory severity, you can set the `<NuGetAuditLevel>` MSBuild property to the desired level in which auditing will fail. Possible values are `low`, `moderate`, `high`, and `critical`. For example if you only want to see `moderate`, `high`, and `critical` advisories, you can set the following:
