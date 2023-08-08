@@ -25,8 +25,6 @@ NuGet distribution vehicles:
 
 * Signing:  raise actionable message on Linux if verification results in untrusted failure - [#12459](https://github.com/NuGet/Home/issues/12459)
 
-* Package Source Mapping UI - PM UI Actions support source pinning & create mappings in nuget.config - [#11797](https://github.com/NuGet/Home/issues/11797)
-
 * [Feature]: Show which package versions are vulnerable in the VS PMUI package details pane version dropdown - [#11127](https://github.com/NuGet/Home/issues/11127)
 
 ### Issues fixed in this release
