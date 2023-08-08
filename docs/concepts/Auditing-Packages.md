@@ -14,7 +14,7 @@ ms.topic: conceptual
 A security audit for package managers like NuGet is a process that involves analyzing the security of the packages that are included in a software project. This involves identifying vulnerabilities, evaluating risks, and making recommendations for improving security. The audit can include a review of the packages themselves, as well as any dependencies and their associated risks. The goal of the audit is to identify and mitigate any security vulnerabilities that could be exploited by attackers, such as code injection or cross-site scripting attacks. 
 
 > [!IMPORTANT]
-> Security auditing at restore time is available in .NET 8 Preview 4+ and Visual Studio 17.7 Preview 2+.
+> Security auditing at restore time is available in .NET 8 Preview 4+ and Visual Studio 17.8 Preview 1+.
 
 ## Running a security audit with `restore`
 
@@ -25,7 +25,7 @@ The `restore` command automatically runs when you do a common package operation 
 > NuGet.org's V3 URL is one such example (https://api.nuget.org/v3/index.json), but note that NuGet.org's V2 endpoint does not.
 
 > [!NOTE]
-> .NET 8 preview 6+ enables Audit by default, but Visual Studio 17.7 does not ship .NET 8.
+> .NET 8 preview 6+ enables Audit by default, but Visual Studio does not ship .NET 8 yet.
 > To opt-in to Audit explicitly, set `<NuGetAudit>true</NuGetAudit>` in your project file, or a *Directory.Build.props* file.
 
 1. On the command line, navigate to your project or solution directory.
