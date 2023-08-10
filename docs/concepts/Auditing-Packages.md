@@ -14,7 +14,7 @@ ms.topic: conceptual
 A security audit for package managers like NuGet is a process that involves analyzing the security of the packages that are included in a software project. This involves identifying vulnerabilities, evaluating risks, and making recommendations for improving security. The audit can include a review of the packages themselves, as well as any dependencies and their associated risks. The goal of the audit is to identify and mitigate any security vulnerabilities that could be exploited by attackers, such as code injection or cross-site scripting attacks. 
 
 > [!IMPORTANT]
-> Security auditing at restore time is available in .NET 8 Preview 4+ and Visual Studio 17.7 Preview 2+.
+> Security auditing at restore time is available in .NET 8 Preview 4+ and Visual Studio 17.8 Preview 1+.
 
 ## Running a security audit with `restore`
 
@@ -25,7 +25,7 @@ The `restore` command automatically runs when you do a common package operation 
 > NuGet.org's V3 URL is one such example (https://api.nuget.org/v3/index.json), but note that NuGet.org's V2 endpoint does not.
 
 > [!NOTE]
-> .NET 8 preview 6+ enables Audit by default, but Visual Studio 17.7 does not ship .NET 8.
+> .NET 8 preview 6+ enables Audit by default, but Visual Studio does not ship .NET 8 yet.
 > To opt-in to Audit explicitly, set `<NuGetAudit>true</NuGetAudit>` in your project file, or a *Directory.Build.props* file.
 
 1. On the command line, navigate to your project or solution directory.
@@ -74,6 +74,16 @@ If you do not want to fix the vulnerability or are unable to update or replace t
 
 If no security vulnerabilities are found, this means that packages with known vulnerabilities were not found in your package graph at the present moment of time you checked. Since the advisory database can be updated at any time, we recommend regularly checking your `dotnet restore` output and ensuring the same in your continuous integration process.
 
+### Setting a security audit mode
+
+By default, a security audit is done for top-level dependencies.
+In the case that you'd like to audit both top-level and transitive dependencies, you can set the `<NuGetAuditMode>` MSBuild property to the desired mode in which auditing will run.
+Possible values are `direct` and `all`. For example if you wanted to audit all dependencies for security advisories, you can set the following:
+
+```xml
+<NuGetAuditMode>all</NuGetAuditMode>
+```
+
 ### Setting a security audit level
 
 In cases where you only care about a certain threshold of a security advisory severity, you can set the `<NuGetAuditLevel>` MSBuild property to the desired level in which auditing will fail. Possible values are `low`, `moderate`, `high`, and `critical`. For example if you only want to see `moderate`, `high`, and `critical` advisories, you can set the following:
@@ -88,12 +98,18 @@ There is no support for excluding individual advisories at this time. You can us
 
 ### Warning codes
 
-| Warning Code | Severity |
+| Warning Code | Reason |
 |--------------|----------|
-| NU1901 | low |
-| NU1902 | moderate |
-| NU1903 | high |
-| NU1904 | critical |
+| NU1900 | Error communicating with package source, while getting vulnerability information. |
+| NU1901 | Package with low severity detected |
+| NU1902 | Package with moderate severity detected |
+| NU1903 | Package with high severity detected |
+| NU1904 | Package with critical severity detected |
+| NU1905 | NuGetAudit is explicitly enabled, but no package sources are providing vulnerability data |
+
+You can customize your build to treat these warnings as errors to [treat warnings as errors, or treat warnings not as errors](/dotnet/csharp/language-reference/compiler-options/errors-warnings#warningsaserrors-and-warningsnotaserrors).
+For example, if you're already using `<TreatWarningsAsErrors>` to treat all (C#, NuGet, MSBuild, etc) warnings as errors, you can use `<WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>` to prevent vulnerabilities discovered in the future from breaking your build.
+Alternatively, if you want to keep low and moderate vulnerabilities as warnings, but treat missing vulnerability data and high and critical vulnerabilities as errors, and you're not using `TreatWarningsAsErrors`, you can use `<WarningsAsErrors>NU1903;NU1904;NU1905</WarningsAsErrors>`.
 
 ### Disabling security auditing
 
