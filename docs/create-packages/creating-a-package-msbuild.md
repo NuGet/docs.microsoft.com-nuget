@@ -3,7 +3,7 @@ title: Create a NuGet package using MSBuild
 description: A detailed guide to the process of designing and creating a NuGet package using MSBuild, including key decision points like files and versioning.
 author: JonDouglas
 ms.author: jodou
-ms.date: 07/14/2022
+ms.date: 08/17/2023
 ms.topic: conceptual
 ---
 
@@ -86,7 +86,7 @@ If you are using MSBuild with a non-SDK-style project and PackageReference, add 
    ```xml
    <ItemGroup>
      <!-- ... -->
-     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.2.0"/>
+     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.7.0" PrivateAssets="all" Pack="false" />
      <!-- ... -->
    </ItemGroup>
    ```
