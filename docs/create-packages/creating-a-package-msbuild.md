@@ -90,6 +90,9 @@ If you are using MSBuild with a non-SDK-style project and PackageReference, add 
      <!-- ... -->
    </ItemGroup>
    ```
+   
+   > [!NOTE]
+   > [Consider using the latest version of this package available.](https://www.nuget.org/packages/nuget.build.tasks.pack)
 
 2. Open a Developer command prompt (In the **Search** box, type **Developer command prompt**).
 
