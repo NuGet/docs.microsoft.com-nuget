@@ -86,7 +86,7 @@ If you are using MSBuild with a non-SDK-style project and PackageReference, add 
    ```xml
    <ItemGroup>
      <!-- ... -->
-     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.7.0" PrivateAssets="all" Pack="false" />
+     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.7.0" PrivateAssets="all" />
      <!-- ... -->
    </ItemGroup>
    ```
