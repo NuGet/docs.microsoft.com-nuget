@@ -5,6 +5,8 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/15/2022
 ms.topic: conceptual
+f1_keywords: 
+  - "vs.toolsoptionspages.nuget_package_manager.package_source_mapping"
 ---
 
 # Package Source Mapping
@@ -13,6 +15,15 @@ Safeguarding your software supply chain is crucial if you use a mix of public an
 Use Package Source Mapping along side other [best practices](..\concepts\Security-Best-Practices.md) to help you fortify your supply chain against attacks.
 
 Starting with [NuGet 6.0](..\release-notes\NuGet-6.0.md), you can centrally declare which source each package in your solution should restore from in your nuget.config file.
+
+Starting with Visual Studio 17.5, you can add and remove Package Source Mappings with the Visual Studio Options Dialog
+
+### Visual Studio support
+| Visual Studio | Package Source Mapping | Support in Tools -> Options | Support in Package Manager UI |
+|-----|---------------------|---------------------|---------------------|
+| 17.0 - 17.4 | ✅ Available | ❌ Not available | ❌ Not available |
+| 17.5 | ✅ Available | ✅ Available | ❌ Not available |
+| 17.7 Preview 3| ✅ Available | ✅ Available | ✅ Status displayed |
 
 The feature is available across all NuGet integrated tooling.
 
@@ -32,6 +43,41 @@ For a video-based overview of the Package Source Mapping feature, consider watch
 
 To opt into this feature, you must have a `nuget.config` file. Having a single `nuget.config` at the root of your repository is considered a best practice. See [nuget.config documentation](../reference/nuget-config-file.md) to learn more.
 
+### Enable by using Visual Studio Options Dialog
+
+1. Open your solution in Visual Studio.
+2. Navigate to the `Package Source Mappings` Options Dialog.
+
+_From the Package Manager UI_
+
+- Select a package from the list to show it in the Details Pane.
+- Press the `Configure` button to open the Package Source Mappings options page.
+
+![The NuGet Package Manager window in Visual Studio showing a selected package, and a highlight around the "Package source mapping is off" status with a `Configure` button.](media/packageSourceMapping_PMUI_Status_Off_Annotated.png)
+
+_From the Visual Studio Options Dialog_
+
+  - Go to the `Tools` menu in the main Visual Studio toolbar, and choose `NuGet Package Manager` -> `Package Manager Settings`.
+  - Navigate to the `Package Source Mappings` page.
+
+![The Visual Studio `Package Source Mappings` Options Dialog showing no package source mappings, with an `Add` button to create a new mapping.](media/packageSourceMapping_VSOptions_NoMappings.png)
+
+3. Press the `Add` button in the `Package Source Mappings` page to open the `Add Package Source Mappings` dialog.
+
+![The `Add Package Source Mappings` dialog](media/packageSourceMapping_VSOptions_AddMappingOpened.png)
+4. Enter a Package ID or Package Pattern, and select one or more package source(s) by toggling the checkbox for your desired source(s).
+
+![The `Add Package Source Mappings` dialog with a filled package pattern and selected package source.](media/packageSourceMapping_VSOptions_AddMappingFilled.png)
+
+5. The `Package Source Mapping` options page will show the newly created source mapping.
+
+![The `Package Source Mapping` options page showing the newly created source mapping](media/packageSourceMapping_VSOptions_AddMappingCompleted.png)
+
+6. Press `OK` on the Options Dialog to save changes to the applicable `nuget.config`.
+7. The NuGet Package Manager window will refresh and reflect the new status of the selected package's source mappings.
+![The NuGet Package Manager window in Visual Studio showing a selected package with the "Package source mapping found" status with a `Configure` button.](media/packageSourceMapping_PMUI_Status_Mapped.png)
+
+### Enable by manually editing `nuget.config`
 * Declare your desired package sources in your `nuget.config` file.
 * Following your source declarations, add a `<packageSourceMapping>` element that specifies the desired mappings for each source.
 * Declare exactly one `packageSource` element for each source in use.
