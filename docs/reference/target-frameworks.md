@@ -89,6 +89,7 @@ Universal Windows Platform | uap | uap [uap10.0] |
 | | | net6.0 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
+| Native | native | native |
 
 ## Deprecated frameworks
 

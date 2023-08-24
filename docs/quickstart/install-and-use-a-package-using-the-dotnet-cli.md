@@ -3,7 +3,7 @@ title: Install and use a NuGet package with the dotnet CLI
 description: Get a quick tutorial on how to use the dotnet CLI to install and use a NuGet package in a .NET project.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/29/2022
+ms.date: 08/21/2023
 ms.topic: quickstart
 ---
 

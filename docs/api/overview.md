@@ -20,6 +20,8 @@ Note in some cases, nuget.org has additional requirements that are not enforced 
 
 For a simple enumeration and download of available nuget.exe versions, see the [tools.json](tools-json.md) endpoint.
 
+If you are implementing a NuGet package repository, also see [the implementation guide](./implementation-guide.md) for additional requirements and recommendations.
+
 ## Service index
 
 The entry point for the API is a JSON document in a well known location. This document is called the **service index**. The location of the service index for nuget.org is `https://api.nuget.org/v3/index.json`.
@@ -65,6 +67,7 @@ Resource name                                                        | Required 
 [SearchAutocompleteService](search-autocomplete-service-resource.md) | no       | Discover package IDs and versions by substring.
 [SearchQueryService](search-query-service-resource.md)               | yes      | Filter and search for packages by keyword.
 [SymbolPackagePublish](symbol-package-publish-resource.md)           | no       | Push symbol packages.
+[VulnerabilityInfo](vulnerability-info.md)                           | no       | Packages with known vulnerabilities.
 
 In general, all non-binary data returned by a API resource are serialized using JSON. The response schema
 returned by each resource in the service index is defined individually for that resource. For more information about

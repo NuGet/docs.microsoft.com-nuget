@@ -3,7 +3,7 @@ title: "Quickstart: Install and use a NuGet package in Visual Studio (Windows on
 description: In this quickstart, you learn how to install and use a NuGet package in a Visual Studio project for Windows.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/22/2022
+ms.date: 08/21/2023
 ms.topic: quickstart
 ---
 
@@ -105,7 +105,7 @@ With the `Newtonsoft.Json` package in the project, call its `JsonConvert.Seriali
             Email = "john@microsoft.com",
             DOB = new DateTime(1980, 2, 20, 0, 0, 0, DateTimeKind.Utc),
         };
-        string json = JsonConvert.SerializeObject(account, Formatting.Indented);
+        string json = JsonConvert.SerializeObject(account, Newtonsoft.Json.Formatting.Indented);
         TextBlock.Text = json;
     }
     ```
