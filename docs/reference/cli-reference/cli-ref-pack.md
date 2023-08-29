@@ -14,7 +14,7 @@ ms.topic: reference
 Creates a NuGet package based on the specified [.nuspec](../nuspec.md) or project file. The `dotnet pack` command (see [dotnet Commands](../dotnet-Commands.md)) and `msbuild -t:pack` (see [MSBuild targets](../msbuild-targets.md)) may be used as alternates.
 
 > [!Important]
-> Use [`dotnet pack`](../dotnet-Commands.md) or [`msbuild -t:pack`](../msbuild-targets.md) for [PackageReference](../../consume-packages/package-references-in-project-files.md) based projects. Starting with NuGet version 6.5+, the pack command will [error](../errors-and-warnings/NU5049.md] when attempting to pack these project types. Earlier versions would attempt to pack, but the generated package may not be correct.
+> Use [`dotnet pack`](../dotnet-Commands.md) or [`msbuild -t:pack`](../msbuild-targets.md) for [PackageReference](../../consume-packages/package-references-in-project-files.md) based projects. Starting with NuGet version 6.5+, the pack command will [error](../errors-and-warnings/NU5049.md) when attempting to pack these project types. Earlier versions would attempt to pack, but the generated package may not be correct.
 > Under Mono, creating a package from a project file is not supported. You also need to adjust non-local paths in the `.nuspec` file to Unix-style paths, as nuget.exe doesn't convert Windows pathnames itself.
 
 ## Usage
