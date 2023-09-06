@@ -3,7 +3,7 @@ title: "Quickstart: Install and use a NuGet package in Visual Studio (Windows on
 description: In this quickstart, you learn how to install and use a NuGet package in a Visual Studio project for Windows.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/22/2022
+ms.date: 08/21/2023
 ms.topic: quickstart
 ---
 

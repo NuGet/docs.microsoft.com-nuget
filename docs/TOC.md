@@ -58,7 +58,8 @@
 ### [Create a package with COM interop assemblies](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## Sign packages
 ### [Sign a package](create-packages/sign-a-package.md)
-### [Signed package signatures and requirements](reference/signed-packages-reference.md)
+### [Signed-package signatures and requirements](reference/signed-packages-reference.md)
+### [Signed-package verification options](reference/Signed-Package-Verification-Options.md)
 # Publish packages
 ## Publish to NuGet.org
 ### [Publish a package](nuget-org/publish-a-package.md)
