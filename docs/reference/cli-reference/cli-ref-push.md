@@ -66,11 +66,11 @@ where `<packagePath>` identifies the package to push to the server.
 
 - **`-SkipDuplicate`**
 
-  *(5.1+)* If a package and version already exists, skip it and continue with the next package in the push, if any.
+  *(5.1+)* If a package and version already exists, skip it and continue with the next package in the push, if any. This option is ignored if the package is being pushed to a UNC or local folder source.
 
 - **`-SymbolSource`**
 
-  *(3.5+)* Specifies the symbol server URL; nuget.smbsrc.net is used when pushing to nuget.org
+  Specifies the symbol server URL.
 
 - **`-SymbolApiKey`**
 

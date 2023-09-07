@@ -25,6 +25,9 @@ The easy way to publish NuGet packages with sources. You can also watch a live d
 feature as part of the NuGet in Depth talk at Mix11. This feature is fully demonstrated starting at
 the 20 minute mark of the video.
 
+> [!NOTE]
+> The above is deprecated and no longer supported.
+
 ### `Open-PackagePage` Command
 
 This command makes it easy to get to the project page for a package from within the Package Manager

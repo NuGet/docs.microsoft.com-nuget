@@ -11,6 +11,16 @@ ms.topic: conceptual
 
 [Known Issues](../release-notes/known-issues.md)
 
+[NuGet 6.7](../release-notes/NuGet-6.7.md)
+
+[NuGet 6.6](../release-notes/NuGet-6.6.md)
+
+[NuGet 6.5](../release-notes/NuGet-6.5.md)
+
+[NuGet 6.4](../release-notes/NuGet-6.4.md)
+
+[NuGet 6.3](../release-notes/NuGet-6.3.md)
+
 [NuGet 6.2](../release-notes/NuGet-6.2.md)
 
 [NuGet 6.1](../release-notes/NuGet-6.1.md)

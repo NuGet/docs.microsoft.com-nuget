@@ -73,3 +73,8 @@ Developers concerned only with consuming packages, for example, need only unders
 
 > [!Note]
 > Command option names are case-insensitive. Options that are deprecated are not included in this reference, such as `NoPrompt` (replaced by `NonInteractive`) and `Verbose` (replaced by `Verbosity`).
+
+## Localization
+
+NuGet.exe's progress, warning and error messages are translated into the same locales as Visual Studio.
+NuGet.exe ships as a single exe, and due to size considerations, only the most commonly surfaced messages are translated in all languages.

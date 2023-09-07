@@ -1,92 +1,88 @@
 ---
-title: Create and publish a NuGet package using the dotnet CLI
-description: A walkthrough tutorial on creating and publishing a NuGet package using the .NET Core CLI, dotnet.
+title: Create and publish a NuGet package with the dotnet CLI
+description: Walk through quickly creating and publishing a NuGet package by using the dotnet CLI.
 author: JonDouglas
 ms.author: jodou
-ms.date: 05/24/2019
+ms.date: 08/21/2023
 ms.topic: quickstart
 ---
 
-# Quickstart: Create and publish a package (dotnet CLI)
+# Quickstart: Create and publish a package with the dotnet CLI
 
-It's a simple process to create a NuGet package from a .NET Class Library and publish it to nuget.org using the `dotnet` command-line interface (CLI).
+This quickstart shows you how to quickly create a NuGet package from a .NET class library and publish it to nuget.org by using the .NET command-line interface, or [dotnet CLI](/dotnet/core/tools).
 
 ## Prerequisites
 
-1. Install the [.NET Core SDK](https://www.microsoft.com/net/download/), which includes the `dotnet` CLI. Starting in Visual Studio 2017, the dotnet CLI is automatically installed with any .NET Core related workloads.
+- The [.NET SDK](https://www.microsoft.com/net/download), which provides the dotnet command-line tool. Starting in Visual Studio 2017, the dotnet CLI automatically installs with any .NET or .NET Core related workloads.
 
-1. [Register for a free account on nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) if you don't have one already. Creating a new account sends a confirmation email. You must confirm the account before you can upload a package.
+- A free account on nuget.org. Follow the instructions at [Add a new individual account](../nuget-org/individual-accounts.md#add-a-new-individual-account).
 
 ## Create a class library project
 
-You can use an existing .NET Class Library project for the code you want to package, or create a simple one as follows:
+You can use an existing .NET Class Library project for the code you want to package, or create a simple project as follows:
 
-1. Create a folder called `AppLogger`.
+1. Create a folder named *AppLogger*.
+1. Open a command prompt and switch to the *AppLogger* folder. All the dotnet CLI commands in this quickstart run on the current folder by default.
+1. Enter `dotnet new classlib`, which creates a project with the current folder name.
 
-1. Open a command prompt and switch to the `AppLogger` folder.
-
-1. Type `dotnet new classlib`, which uses the name of the current folder for the project.
-
-   This creates the new project.
+For more information, see [dotnet new](/dotnet/core/tools/dotnet-new).
 
 ## Add package metadata to the project file
 
-Every NuGet package needs a manifest that describes the package's contents and dependencies. In a final package, the manifest is a `.nuspec` file that is generated from the NuGet metadata properties that you include in the project file.
+Every NuGet package has a manifest that describes the package's contents and dependencies. In the final package, the manifest is a *.nuspec* file, which uses the NuGet metadata properties you include in the project file.
 
-1. Open your project file (`.csproj`, `.fsproj` or `.vbproj` depending on the language you're using) and add the following minimal properties inside the existing `<PropertyGroup>` tag, changing the values as appropriate:
+Open the *.csproj*, *.fproj*, or *.vbproj* project file, and add the following properties inside the existing `<PropertyGroup>` tag. Use your own values for name and company, and replace the package identifier with a unique value.
 
-    ```xml
-    <PackageId>AppLogger</PackageId>
-    <Version>1.0.0</Version>
-    <Authors>your_name</Authors>
-    <Company>your_company</Company>
-    ```
+```xml
+<PackageId>Contoso.08.28.22.001.Test</PackageId>
+<Version>1.0.0</Version>
+<Authors>your_name</Authors>
+<Company>your_company</Company>
+```
 
-    > [!Important]
-    > Give the package an identifier that's unique across nuget.org or whatever host you're using. For this walkthrough we recommend including "Sample" or "Test" in the name as the later publishing step does make the package publicly visible (though it's unlikely anyone will actually use it).
+> [!Important]
+> The package identifier must be unique across nuget.org and other package sources. Publishing makes the package publicly visible, so if you use the example AppLogger library or other test library, use a unique name that includes `Sample` or `Test`.
 
-1. Add any optional properties described on [NuGet metadata properties](/dotnet/core/tools/csproj#nuget-metadata-properties).
+You can add any optional properties described in [NuGet metadata properties](/dotnet/core/tools/csproj#nuget-metadata-properties).
 
-    > [!Note]
-    > For packages built for public consumption, pay special attention to the **PackageTags** property, as tags help others find your package and understand what it does.
+> [!Note]
+> For packages you build for public consumption, pay special attention to the `PackageTags` property. Tags help others find your package and understand what it does.
 
 ## Run the pack command
 
-To build a NuGet package (a `.nupkg` file) from the project, run the `dotnet pack` command, which also builds the project automatically:
+To build a NuGet package or *.nupkg* file from the project, run the [dotnet pack](/dotnet/core/tools/dotnet-pack) command, which also builds the project automatically.
 
 ```dotnetcli
-# Uses the project file in the current folder by default
 dotnet pack
 ```
 
-The output shows the path to the `.nupkg` file:
+The output shows the path to the *.nupkg* file:
 
 ```output
-Microsoft (R) Build Engine version 15.5.180.51428 for .NET Core
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-  Restore completed in 29.91 ms for D:\proj\AppLoggerNet\AppLogger\AppLogger.csproj.
-  AppLogger -> D:\proj\AppLoggerNet\AppLogger\bin\Debug\netstandard2.0\AppLogger.dll
-  Successfully created package 'D:\proj\AppLoggerNet\AppLogger\bin\Debug\AppLogger.1.0.0.nupkg'.
-```
+MSBuild version 17.3.0+92e077650 for .NET
+  Determining projects to restore...
+  Restored C:\Users\myname\source\repos\AppLogger\AppLogger.csproj (in 64 ms).
+  AppLogger -> C:\Users\myname\source\repos\AppLogger\bin\Debug\net6.0\AppLogger.dll
+  Successfully created package 'C:\Users\myname\source\repos\AppLogger\bin\Debug\Contoso.08.28.22.001.Test.1.0.0.nupkg'.
+  ```
 
 ### Automatically generate package on build
 
-To automatically run `dotnet pack` when you run `dotnet build`, add the following line to your project file within `<PropertyGroup>`:
+To automatically run `dotnet pack` whenever you run `dotnet build`, add the following line to your project file within `<PropertyGroup>`:
 
 ```xml
-<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 ```
 
 ## Publish the package
 
-Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nuget push` command along with an API key acquired from nuget.org.
+Publish your *.nupkg* file to nuget.org by using the [dotnet nuget push](/dotnet/core/tools/dotnet-nuget-push) command with an API key you get from nuget.org.
 
 [!INCLUDE [publish-notes](includes/publish-notes.md)]
 
-### Acquire your API key
+### Get your API key
 
-[!INCLUDE [publish-api-key](includes/publish-api-key.md)]
+[!INCLUDE [publish-api-key](includes/publish-api-key-with-link.md)]
 
 ### Publish with dotnet nuget push
 
@@ -100,26 +96,29 @@ Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nug
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
+Congratulations on creating and publishing your first NuGet package!
+
 ## Related video
 
-> [!Video https://docs.microsoft.com/shows/NuGet-101/Create-and-Publish-a-NuGet-Package-with-the-NET-CLI-5-of-5/player]
+> [!Video https://learn.microsoft.com/shows/NuGet-101/Create-and-Publish-a-NuGet-Package-with-the-NET-CLI-5-of-5/player]
 
 Find more NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
 ## Next steps
 
-Congratulations on creating your first NuGet package!
+
+See more details about how to create packages with the dotnet CLI:
 
 > [!div class="nextstepaction"]
-> [Create a Package](../create-packages/creating-a-package-dotnet-cli.md)
+> [Create a NuGet package with the dotnet CLI](../create-packages/creating-a-package-dotnet-cli.md)
 
-To explore more that NuGet has to offer, select the links below.
+Get more information about creating and publishing NuGet packages:
 
-- [Publish a Package](../nuget-org/publish-a-package.md)
-- [Pre-release Packages](../create-packages/Prerelease-Packages.md)
+- [Publish a package](../nuget-org/publish-a-package.md)
+- [Prerelease packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple target frameworks](../create-packages/multiple-target-frameworks-project-file.md)
 - [Package versioning](../concepts/package-versioning.md)
-- [Adding a license expression or file](../reference/msbuild-targets.md#packing-a-license-expression-or-a-license-file)
-- [Creating localized packages](../create-packages/creating-localized-packages.md)
-- [Creating symbol packages](../create-packages/symbol-packages-snupkg.md)
-- [Signing packages](../create-packages/Sign-a-package.md)
+- [Add a license expression or file](../reference/msbuild-targets.md#packing-a-license-expression-or-a-license-file)
+- [Create localized packages](../create-packages/creating-localized-packages.md)
+- [Create symbol packages](../create-packages/symbol-packages-snupkg.md)
+- [Sign packages](../create-packages/Sign-a-package.md)

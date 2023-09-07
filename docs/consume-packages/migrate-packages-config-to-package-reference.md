@@ -3,7 +3,7 @@ title: Migrating from packages.config to PackageReference formats
 description: Details on how to migrate a project from the packages.config management format to PackageReference as supported by NuGet 4.0+ and VS2017 and .NET Core 2.0
 author: JonDouglas
 ms.author: jodou
-ms.date: 05/24/2019
+ms.date: 08/23/2021
 ms.topic: conceptual
 ---
 
@@ -109,7 +109,7 @@ Some aspects that were supported in packages.config are not supported in Package
 
 * **Description**: XDT transforms are not supported with PackageReference and `.xdt` files are ignored when installing or uninstalling a package.
 
-* **Potential impact**: XDT transforms are not applied to any project XML files, most commonly, `web.config.install.xdt` and `web.config.uninstall.xdt`, which means the project's` web.config` file is not updated when the package is installed or uninstalled.
+* **Potential impact**: XDT transforms are not applied to any project XML files, most commonly, `web.config.install.xdt` and `web.config.uninstall.xdt`, which means the project's `web.config` file is not updated when the package is installed or uninstalled.
 
 ### Assemblies in the lib root are ignored when the package is installed after the migration
 

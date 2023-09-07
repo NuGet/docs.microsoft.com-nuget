@@ -133,7 +133,7 @@ SDKs that are installed using an MSI can install NuGet packages directly on the 
     ```xml
     <Reference Id="NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5" MinVersion="1.7.30402.9028">
         <Name>NuGet Package Manager</Name>
-        <MoreInfoUrl>http://docs.microsoft.com/nuget/</MoreInfoUrl>
+        <MoreInfoUrl>http://learn.microsoft.com/nuget/</MoreInfoUrl>
     </Reference>
     <!-- ... -->
     ```

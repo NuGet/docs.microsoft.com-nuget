@@ -3,8 +3,10 @@ title: Package Source Mapping
 description: Describes package source mapping functionality and how to onboard
 author: nkolev92
 ms.author: nikolev
-ms.date: 10/15/2021
+ms.date: 03/15/2022
 ms.topic: conceptual
+f1_keywords: 
+  - "vs.toolsoptionspages.nuget_package_manager.package_source_mapping"
 ---
 
 # Package Source Mapping
@@ -13,6 +15,15 @@ Safeguarding your software supply chain is crucial if you use a mix of public an
 Use Package Source Mapping along side other [best practices](..\concepts\Security-Best-Practices.md) to help you fortify your supply chain against attacks.
 
 Starting with [NuGet 6.0](..\release-notes\NuGet-6.0.md), you can centrally declare which source each package in your solution should restore from in your nuget.config file.
+
+Starting with Visual Studio 17.5, you can add and remove Package Source Mappings with the Visual Studio Options Dialog
+
+### Visual Studio support
+| Visual Studio | Package Source Mapping | Support in Tools -> Options | Support in Package Manager UI |
+|-----|---------------------|---------------------|---------------------|
+| 17.0 - 17.4 | ✅ Available | ❌ Not available | ❌ Not available |
+| 17.5 | ✅ Available | ✅ Available | ❌ Not available |
+| 17.7 Preview 3| ✅ Available | ✅ Available | ✅ Status displayed |
 
 The feature is available across all NuGet integrated tooling.
 
@@ -32,6 +43,41 @@ For a video-based overview of the Package Source Mapping feature, consider watch
 
 To opt into this feature, you must have a `nuget.config` file. Having a single `nuget.config` at the root of your repository is considered a best practice. See [nuget.config documentation](../reference/nuget-config-file.md) to learn more.
 
+### Enable by using Visual Studio Options Dialog
+
+1. Open your solution in Visual Studio.
+2. Navigate to the `Package Source Mappings` Options Dialog.
+
+_From the Package Manager UI_
+
+- Select a package from the list to show it in the Details Pane.
+- Press the `Configure` button to open the Package Source Mappings options page.
+
+![The NuGet Package Manager window in Visual Studio showing a selected package, and a highlight around the "Package source mapping is off" status with a `Configure` button.](media/packageSourceMapping_PMUI_Status_Off_Annotated.png)
+
+_From the Visual Studio Options Dialog_
+
+  - Go to the `Tools` menu in the main Visual Studio toolbar, and choose `NuGet Package Manager` -> `Package Manager Settings`.
+  - Navigate to the `Package Source Mappings` page.
+
+![The Visual Studio `Package Source Mappings` Options Dialog showing no package source mappings, with an `Add` button to create a new mapping.](media/packageSourceMapping_VSOptions_NoMappings.png)
+
+3. Press the `Add` button in the `Package Source Mappings` page to open the `Add Package Source Mappings` dialog.
+
+![The `Add Package Source Mappings` dialog](media/packageSourceMapping_VSOptions_AddMappingOpened.png)
+4. Enter a Package ID or Package Pattern, and select one or more package source(s) by toggling the checkbox for your desired source(s).
+
+![The `Add Package Source Mappings` dialog with a filled package pattern and selected package source.](media/packageSourceMapping_VSOptions_AddMappingFilled.png)
+
+5. The `Package Source Mapping` options page will show the newly created source mapping.
+
+![The `Package Source Mapping` options page showing the newly created source mapping](media/packageSourceMapping_VSOptions_AddMappingCompleted.png)
+
+6. Press `OK` on the Options Dialog to save changes to the applicable `nuget.config`.
+7. The NuGet Package Manager window will refresh and reflect the new status of the selected package's source mappings.
+![The NuGet Package Manager window in Visual Studio showing a selected package with the "Package source mapping found" status with a `Configure` button.](media/packageSourceMapping_PMUI_Status_Mapped.png)
+
+### Enable by manually editing `nuget.config`
 * Declare your desired package sources in your `nuget.config` file.
 * Following your source declarations, add a `<packageSourceMapping>` element that specifies the desired mappings for each source.
 * Declare exactly one `packageSource` element for each source in use.
@@ -100,23 +146,34 @@ To learn more about how package installation works, see [the conceptual document
 
 ### Get started
 
-To fully onboard your repository you may take the following steps:
+There are 2 ways you can fully onboard your repository, [manually](#manual-onboarding) or using the [NuGet.PackageSourceMapper tool](#automated-onboarding-using-tool).
+
+#### Manual onboarding
+
+For manual onboarding you may take the following steps:
 
 1. Declare a new [global packages folder for your repo](../reference/nuget-config-file.md#config-section).
+1. Run [dotnet restore](/dotnet/core/tools/dotnet-restore) to restore dependencies.
 1. Run [`dotnet list package --include-transitive`](/dotnet/core/tools/dotnet-list-package#synopsis) to view all top-level and transitive packages in your solution.
     * For .NET framework projects using [`packages.config`](../reference/packages-config.md), the `packages.config` file will have a flat list of all direct and transitive packages.
 1. Define mappings such that every package ID in your solution - *including transitive packages* - matches a pattern for the target source.
+1. Run [dotnet nuget locals global-packages -c](/dotnet/core/tools/dotnet-nuget-locals) to clear global-packages directory.
 1. Run restore to validate that you have configured your mappings correctly. If your mappings don't fully cover every package ID in your solution, the error messages will help you identify the issue.
 1. When restore succeeds, you are done! Optionally consider:
     * Simplifying the configuration to fewer declarations by using broader package ID prefixes or [setting a default source](#setting-default-sources) where possible.
     * Verifying the source each package was restored from by checking the [metadata files in the global packages folder or reviewing the restore logs](https://devblogs.microsoft.com/nuget/performance-and-polish-with-nuget-5-9/).
 
+#### Automated onboarding using tool
+
+Many repositories have a large number of packages and doing the work manually can be time consuming. The [NuGet.PackageSourceMapper tool](https://www.nuget.org/packages/NuGet.PackageSourceMapper) can automatically generate a NuGet.config for you, based on your project's known packages and sources. 
+
+The package source mapper tool requires you to have completed a successful package restore in which it will read each respective `.nupkg.metadata` file generated as part of your build to best understand how you map your respective packages and sources. Tool not only covers top dependencies it also considers all the transitive dependencies when generating mapping.
+
+Tool has several option how to generate mapping pattern depending on your need, please check [blog post](https://devblogs.microsoft.com/nuget/quickly-map-your-nuget-packages-to-sources) and tool's [readme instruction](https://www.nuget.org/packages/NuGet.PackageSourceMapper#readme-body-tab) for more details.
+
 For an idea of how your source mappings may look like, refer to our [samples repo](https://github.com/NuGet/Samples/tree/main/PackageSourceMappingExample).
 
-
 > [!Note]
-> This feature is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
->
 > * There are no nuget.exe or dotnet.exe commands for managing the package source mapping configuration, see [NuGet/Home#10735](https://github.com/NuGet/Home/issues/10735).
 > * There are no means of mapping packages at package installation time, see [NuGet/Home#10730](https://github.com/NuGet/Home/issues/10730).
 > * There is a limitation when using the `DotNetCoreCLI@2` Azure Pipelines task which can be worked around by using `feed-` prefixes in your source mapping configuration. It is recommended however to use `NuGetAuthenticate` for your authentication needs and call the dotnet cli directly from a script task. See [microsoft/azure-pipelines-tasks#15542](https://github.com/microsoft/azure-pipelines-tasks/issues/15542).

@@ -54,7 +54,7 @@ For more information about SemVer 2.0.0, see
 ## Base URL
 
 The base URL for the following APIs is the value of the `@id` property associated with the aforementioned
-resource `@type` values. In the following document, the placeholder base URL `{@id}` will be used.
+resource `@type` values. In the following document, the placeholder base URL `{@id}` will be used. The base URL may change based on implementation or infrastructure changes within the package source so it must be dynamically fetched from the [service index](service-index.md) by the client software.
 
 ## HTTP methods
 
@@ -174,15 +174,18 @@ deprecation              | object                     | no       | The deprecati
 description              | string                     | no       | 
 iconUrl                  | string                     | no       | 
 id                       | string                     | yes      | The ID of the package
+language                 | string                     | no       |
 licenseUrl               | string                     | no       |
 licenseExpression        | string                     | no       | 
 listed                   | boolean                    | no       | Should be considered as listed if absent
 minClientVersion         | string                     | no       | 
+packageContent           | string                     | no       | Duplicate of the same property in the parent object, included only for legacy reasons
 projectUrl               | string                     | no       | 
 published                | string                     | no       | A string containing a ISO 8601 timestamp of when the package was published
+readmeUrl                | string                     | no       | A URL for the rendered (HTML web page) view of the package README
 requireLicenseAcceptance | boolean                    | no       | 
 summary                  | string                     | no       | 
-tags                     | string or array of string  | no       | 
+tags                     | string or array of strings | no       | 
 title                    | string                     | no       | 
 version                  | string                     | yes      | The full version string after normalization
 vulnerabilities          | array of objects           | no       | The security vulnerabilities of the package
@@ -269,8 +272,10 @@ severity     | string | yes      | Severity of advisory: "0" = Low, "1" = Modera
 ### Sample request
 
 ```
-GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
+GET https://api.nuget.org/v3/registration-sample/nuget.server.core/index.json
 ```
+
+Make sure to fetch the base URL (`https://api.nuget.org/v3/registration-sample/` in this sample) from the service index as mentioned in the [base URL](#base-url) section.
 
 ### Sample response
 
@@ -308,8 +313,10 @@ The shape of the registration leaf objects is the same as in the registration in
 ## Sample request
 
 ```
-GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
+GET https://api.nuget.org/v3/registration-sample/ravendb.client/page/1.0.531/1.0.729-unstable.json
 ```
+
+Make sure to fetch the base URL (`https://api.nuget.org/v3/registration-sample/` in this sample) from the service index as mentioned in the [base URL](#base-url) section.
 
 ## Sample response
 
@@ -348,8 +355,10 @@ registration   | string  | no       | The URL to the registration index
 ### Sample request
 
 ```
-GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
+GET https://api.nuget.org/v3/registration-sample/nuget.versioning/4.3.0.json
 ```
+
+Make sure to fetch the base URL (`https://api.nuget.org/v3/registration-sample/` in this sample) from the service index as mentioned in the [base URL](#base-url) section.
 
 ### Sample response
 

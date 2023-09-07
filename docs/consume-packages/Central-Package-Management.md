@@ -3,7 +3,7 @@ title: Central Package Management
 description: Manage your dependencies in a central location and how you can get started with central package management.
 author: jondouglas
 ms.author: jodou
-ms.date: 2/25/2022
+ms.date: 05/09/2022
 ms.topic: conceptual
 ---
 
@@ -21,12 +21,11 @@ Historically, NuGet package dependencies have been managed in one of two locatio
 Starting with [NuGet 6.2](..\release-notes\NuGet-6.2.md), you can centrally manage your dependencies in your projects with the addition of a
 `Directory.Packages.props` file and an MSBuild property.
 
-The feature is available across all NuGet integrated tooling.
+The feature is available across all NuGet integrated tooling, starting with the following versions.
 
-* [Visual Studio 2022 17.2 and later](https://visualstudio.microsoft.com/downloads/)
-* [.NET SDK 6.0.300 and later](https://dotnet.microsoft.com/download/dotnet/6.0)
-* [.NET SDK 7.0.0-preview.4 and later](https://dotnet.microsoft.com/download/dotnet/7.0)
-* [nuget.exe 6.2.0 and later](https://www.nuget.org/downloads)
+* [Visual Studio 2022 17.2](https://visualstudio.microsoft.com/downloads/)
+* [.NET SDK 6.0.300](https://dotnet.microsoft.com/download/dotnet/6.0)
+* [nuget.exe 6.2.0](https://www.nuget.org/downloads)
 
 Older tooling will ignore central package management configurations and features. To use this feature to the fullest extent, ensure all your build environments
 use the latest compatible tooling versions.
@@ -54,7 +53,7 @@ version.
 ```
 
 For each project, you then define a `<PackageReference />` but omit the `Version` attribute since the version will be attained from a corresponding
-`<PackageVersion `> item.
+`<PackageVersion />` item.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -92,7 +91,7 @@ Repository
 - Project1 will evaluate the `Directory.Packages.props` file in the `Repository\Solution1\` directory and it must manually import the next one if so desired.
   ```xml
   <Project>
-    <Import Project="..\Directory.Packages.props">
+    <Import Project="$([MSBuild]::GetPathOfFileAbove(Directory.Packages.props, $(MSBuildThisFileDirectory)..))" />
     <ItemGroup>
       <PackageVersion Update="Newtonsoft.Json" Version="12.0.1" />
     </ItemGroup>
@@ -139,7 +138,7 @@ defined centrally.
     <PackageVersion Include="PackageA" Version="1.0.0" />
     <PackageVersion Include="PackageB" Version="2.0.0" />
   </ItemGroup>
-<Project>
+</Project>
 ```
 
 ```xml
@@ -150,15 +149,15 @@ defined centrally.
   <ItemGroup>
     <PackageReference Include="PackageA" VersionOverride="3.0.0" />
   </ItemGroup>
-<Project>
+</Project>
 ```
 
-You can disable this feature by setting the MSBuild property `EnablePackageVersionOverride` to `false` in a project or in a `Directory.Packages.props` or
+You can disable this feature by setting the MSBuild property `CentralPackageVersionOverrideEnabled` to `false` in a project or in a `Directory.Packages.props` or
 `Directory.Build.props` import file:
 
 ```xml
 <PropertyGroup>
-  <EnablePackageVersionOverride>false</EnablePackageVersionOverride>
+  <CentralPackageVersionOverrideEnabled>false</CentralPackageVersionOverrideEnabled>
 </PropertyGroup>
 ```
 
@@ -176,6 +175,28 @@ If you'd like to disable central package management for any a particular project
 </PropertyGroup>
 ```
 
+## Global Package References
+> [!Note]
+> This feature is only available in Visual Studio 2022 17.4 or higher, .NET SDK 7.0.100.preview7 or higher, and NuGet 6.4 or higher.
+
+A global package reference is used to specify that a package will be used by every project in a repository. This includes packages that do versioning, extend your build, or any other packages that are needed by all projects. Global package references are added to the PackageReference item group with the following metadata:
+
+* `IncludeAssets="Runtime;Build;Native;contentFiles;Analyzers"`<br/>
+  This ensures that the package is only used as a development dependency and prevents any compile-time assembly references.
+* `PrivateAssets="All"`<br/>
+  This prevents global package references from being picked up by downstream dependencies.
+
+
+`GlobalPackageReference` items should be placed in your `Directory.Packages.props` to be used by every project in a repository:
+
+```xml
+<Project>
+  <ItemGroup>
+    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.5.109" />
+  </ItemGroup>
+</Project>
+```
+
 ## Warning when using multiple package sources
 
 When using central package management, you will see a `NU1507` warning if you have more than one package source defined in your configuration. To resolve
@@ -185,7 +206,7 @@ this warning, map your package sources with [package source mapping](https://aka
 There are 3 package sources defined in your configuration. When using central package management, please map your package sources with package source mapping (https://aka.ms/nuget-package-source-mapping) or specify a single package source.
 ```
 
+
+
 > [!Note]
-> This feature is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).
->
-> * There is currently no support in Visual Studio or the .NET CLI for Central Package Management.
+> Central package management is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).

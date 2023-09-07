@@ -3,7 +3,7 @@ title: Reinstalling and Updating NuGet Packages
 description: Details on when it's necessary to reinstall and update packages, as with broken package references in Visual Studio.
 author: JonDouglas
 ms.author: jodou
-ms.date: 12/07/2017
+ms.date: 09/03/2021
 ms.topic: conceptual
 ---
 

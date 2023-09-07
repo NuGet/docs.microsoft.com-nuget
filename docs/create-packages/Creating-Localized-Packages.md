@@ -139,7 +139,7 @@ You would create additional satellite assemblies in the same way for each suppor
 Using satellite packages has a few benefits:
 
 1. **Package size**: The overall footprint of the primary package is minimized, and consumers only incur the costs of each language they want to use.
-1. **Separate metadata**: Each satellite package has its own `.nuspec` file and thus its own localized metadata because. This can allow some consumers to find packages more easily by searching nuget.org with localized terms.
+1. **Separate metadata**: Each satellite package has its own `.nuspec` file and thus its own localized metadata. This can allow some consumers to find packages more easily by searching nuget.org with localized terms.
 1. **Decoupled releases**: Satellite assemblies can be released over time, rather than all at once, allowing you to spread out your localization efforts.
 
 However, satellite packages have their own set of disadvantages:

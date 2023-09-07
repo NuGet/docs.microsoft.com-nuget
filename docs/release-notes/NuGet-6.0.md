@@ -16,8 +16,21 @@ NuGet distribution vehicles:
 | [**6.0.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.0.0](https://visualstudio.microsoft.com/downloads/) | [6.0.0](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 | **6.0.1** | [Visual Studio 2022 version 17.0.2](https://visualstudio.microsoft.com/downloads/) | N/A |
 | [**6.0.2**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.0.11](https://visualstudio.microsoft.com/downloads/) | [6.0.301](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
+| [**6.0.3**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.0](https://visualstudio.microsoft.com/downloads/) | [6.0.110](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
+| [**6.0.5**](https://nuget.org/downloads) | N/A | [6.0.118](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with.NET Core workload
+
+## Summary: What's New in 6.0.5
+
+* [Security]: Microsoft Security Advisory CVE-2023-29337 | NuGet Client Remote Code Execution Vulnerability - [#12653](https://github.com/NuGet/Home/issues/12653)
+
+> [!NOTE]
+> There is a behavior breaking change on Linux. The temp folder location, where NuGet stores temporary files during its various operations, has changed from `/tmp/NuGetScratch` to `/tmp/NuGetScratch<username>`. E.g. for user User1, the temp folder will be `/tmp/NuGetScratchUser1`.
+
+## Summary: What's New in 6.0.3
+
+* [Security]: Microsoft Security Advisory CVE-2022-41032 | .NET Elevation of Privilege Vulnerability - [#12149](https://github.com/NuGet/Home/issues/12149)
 
 > [!NOTE]
 > Visual Studio 17.0, MSBuild 17.0, and .NET 6.0 require NuGet.exe 6.0 or later.
