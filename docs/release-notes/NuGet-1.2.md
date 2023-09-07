@@ -73,7 +73,7 @@ Package Explorer has been updated to support NuGet 1.2. For more information, ch
 ## Other features/fixes
 
 The previous list were the most noticeable of the many features we implemented and bugs we fixed. All in all, we
-implemented/fixed [59 work items](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.2&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0)
+implemented/fixed [59 work items](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.2&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0)
 in this release.
 
 ## Known Issues

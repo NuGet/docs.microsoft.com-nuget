@@ -40,7 +40,7 @@ We would like to thank the following external contributors for their significant
 11. [Xavier Decoster](https://www.codeplex.com/site/users/view/XavierDecoster) ([@XavierDecoster](https://twitter.com/xavierdecoster))
      - [#2991](https://nuget.codeplex.com/workitem/2991), [#3164](https://nuget.codeplex.com/workitem/3164) - Support Clear Text Password when storing package source credentials in nuget.cofig files
 12. [James Manning](http://www.codeplex.com/site/users/view/jmanning) ([@manningj](https://twitter.com/manningj))
-     - [#3190](http://nuget.codeplex.com/workitem/3190), [#3191](http://nuget.codeplex.com/workitem/3191) - Fix Get-Package help description
+     - [#3190](https://nuget.codeplex.com/workitem/3190), [#3191](https://nuget.codeplex.com/workitem/3191) - Fix Get-Package help description
 
 We also appreciate the following individuals for finding bugs with NuGet 2.5 Beta/RC that were approved and fixed before the final release:
 
@@ -119,7 +119,7 @@ Now nuget.exe pack command processes referenced projects with the following rule
 This allows a referenced project to be treated as a dependency if there is a `.nuspec` file, otherwise, it becomes part of the package.
 
 More details here:
-[http://nuget.codeplex.com/workitem/936](http://nuget.codeplex.com/workitem/936)
+[https://nuget.codeplex.com/workitem/936](https://nuget.codeplex.com/workitem/936)
 
 ### Add a 'Minimum NuGet Version' property to packages
 
@@ -154,7 +154,7 @@ Starting with NuGet 2.5, if a dependency version is already satisfied, the depen
 
 * NuGet will no longer update B, because it detects that the existing version 1.0.0 satisfies the dependency version constraint.
 
-For more background on this change, read the detailed [work item](http://nuget.codeplex.com/workitem/1681) as well as the related [discussion thread](http://nuget.codeplex.com/discussions/436712).
+For more background on this change, read the detailed [work item](https://nuget.codeplex.com/workitem/1681) as well as the related [discussion thread](http://nuget.codeplex.com/discussions/436712).
 
 ### nuget.exe outputs http requests with detailed verbosity
 

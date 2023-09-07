@@ -20,13 +20,13 @@ NuGet 2.8 was released on January 29, 2014.
 2. [Maarten Balliauw](https://www.codeplex.com/site/users/view/maartenba) ([@maartenballiauw](https://twitter.com/maartenballiauw))
     - [#2379](https://nuget.codeplex.com/workitem/2379) - Remove the $metadata suffix when persistening feed credentials.
 3. [Filip De Vos](https://www.codeplex.com/site/users/view/FilipDeVos) ([@foxtricks](https://twitter.com/foxtricks))
-    - [#3538](http://nuget.codeplex.com/workitem/3538) - Support specifying project file for the nuget.exe update command.
+    - [#3538](https://nuget.codeplex.com/workitem/3538) - Support specifying project file for the nuget.exe update command.
 4. [Juan Gonzalez](https://www.codeplex.com/site/users/view/jjgonzalez)
-    - [#3536](http://nuget.codeplex.com/workitem/3536) - Replacement tokens not passed with -IncludeReferencedProjects.
+    - [#3536](https://nuget.codeplex.com/workitem/3536) - Replacement tokens not passed with -IncludeReferencedProjects.
 5. [David Poole](https://www.codeplex.com/site/users/view/Sarkie) ([@Sarkie_Dave](https://twitter.com/Sarkie_Dave))
-    - [#3677](http://nuget.codeplex.com/workitem/3677) - Fix nuget.push throwing OutOfMemoryException when pushing large package.
+    - [#3677](https://nuget.codeplex.com/workitem/3677) - Fix nuget.push throwing OutOfMemoryException when pushing large package.
 6. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
-    - [#3666](http://nuget.codeplex.com/workitem/3666) - Fix incorrect target path when project references another CLI/C++ project.
+    - [#3666](https://nuget.codeplex.com/workitem/3666) - Fix incorrect target path when project references another CLI/C++ project.
 7. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - [#3639](https://nuget.codeplex.com/workitem/3639) - Allow packages to be installed as development dependencies by default
 8. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
