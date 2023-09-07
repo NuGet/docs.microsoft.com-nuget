@@ -70,7 +70,7 @@ regsvr32 "C:\Program Files (x86)\Common Files\microsoft shared\MSEnv\VsLangproj.
 
 If the command fails, check to see if the file exists in that location.
 
-For more information about this error, see this [work item](https://nuget.codeplex.com/workitem/3609 "Work item 3609").
+For more information about this error, see this [work item](https://blog.nuget.org/workitem/3609 "Work item 3609").
 
 ## Build failure after package update in VS 2012
 

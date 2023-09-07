@@ -72,4 +72,4 @@ By modifying the install command to download and install packages in parallel, N
 
 ## Bug Fixes
 NuGet 1.8 includes quite a few bug fixes with an emphasis on the package manager console and package restore workflow, particularly as it relates to package restore consent and Windows 8 Express integration.
-For a full list of work items fixed in NuGet 1.8, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.8&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0).
+For a full list of work items fixed in NuGet 1.8, please view the [NuGet Issue Tracker for this release](https://blog.nuget.org/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.8&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0).

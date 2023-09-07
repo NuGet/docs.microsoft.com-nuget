@@ -22,4 +22,4 @@ In this release, the support for NuGet Package Manager dialog was added for [DNX
 
 One bug was fixed that prevented packages from installing into FSharp projects properly:
 
-https://nuget.codeplex.com/workitem/4400
+https://blog.nuget.org/workitem/4400
