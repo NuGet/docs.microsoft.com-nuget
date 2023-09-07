@@ -68,7 +68,7 @@ you won’t need to specify it every time you push a package. For more details o
 
 ### Package Explorer
 Package Explorer has been updated to support NuGet 1.2. For more information, check out the
-[Package Explorer release notes](http://nuget.codeplex.com/wikipage?title=New%20features%20in%20NuGet%20Package%20Explorer%201.0).
+[Package Explorer release notes](https://nuget.codeplex.com/wikipage?title=New%20features%20in%20NuGet%20Package%20Explorer%201.0).
 
 ## Other features/fixes
 

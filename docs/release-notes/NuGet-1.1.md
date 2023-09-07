@@ -34,7 +34,7 @@ The NuGet Command Line Tool requires:
 
 ## Installation
 
-To use this [latest release](http://nuget.codeplex.com/releases/view/52018):
+To use this [latest release](https://nuget.codeplex.com/releases/view/52018):
 
 * First uninstall your older build. You need to run VS as administrator to do this.
 * Remove all the existing feeds that you have.
@@ -129,7 +129,7 @@ The following are the most significant changes made in CTP 2:
 * Updated the `.nuspec` Format. The `.nuspec` format now includes the *iconUrl* field for specifying a 32x32 png icon which will show up in the Add Package Dialog. So be sure to set that to distinguish your package. The `.nuspec` format also includes the new *projectUrl* field which you can use to point to a web page that provides more information about your package.
 
 This build will not work with old `.nupkg` files. If you get null reference exceptions, you're using an old `.nupkg` file and
-need to rebuild it with the updated [NuGet command line tool](http://nuget.codeplex.com/releases/52017/download/165468).
+need to rebuild it with the updated [NuGet command line tool](https://nuget.codeplex.com/releases/52017/download/165468).
 
 The following is a list of features and bugs that were fixed for NuGet CTP 2 (does not include bugs for minor code cleanups etc.).
 
