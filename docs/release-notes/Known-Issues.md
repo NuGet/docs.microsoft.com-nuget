@@ -164,7 +164,7 @@ If you try to uninstall NuGet via the Visual Studio Extension Manager, you may n
 
 ## The Package Manager Console crashes when I open it in Windows XP. What's wrong?
 
-NuGet requires Powershell 2.0 runtime. Windows XP, by default, doesn't have Powershell 2.0. You can download the Powershell 2.0 runtime from <https://support.microsoft.com/kb/968929>. After you install it, restart Visual Studio and you should be able to open Package Manager Console.
+NuGet requires Powershell 2.0 runtime. Windows XP, by default, doesn't have Powershell 2.0. You can download the Powershell 2.0 runtime from [PowerShell 2.0 Download](https://devblogs.microsoft.com/powershell/tag/powershell-2-0-download/). After you install it, restart Visual Studio and you should be able to open Package Manager Console.
 
 ## Visual Studio 2010 SP1 Beta crashes on exit if the Package Manager Console is open.
 
