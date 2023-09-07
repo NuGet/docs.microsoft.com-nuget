@@ -43,7 +43,7 @@ Studio build configuration transformations.
 
 In April 2013, we made two big announcements regarding NuGet support for XDT. The first
 was that the XDT library itself was being itself [released as a NuGet package](https://nuget.org/packages/Microsoft.Web.Xdt)
-and [open sourced on CodePlex](http://xdt.codeplex.com/). This step enabled the XDT engine
+and [open sourced on CodePlex](https://xdt.codeplex.com/). This step enabled the XDT engine
 to be used freely by other open-source software, including the NuGet client. The second
 announcement was the plan to support use of the XDT engine for transformations in the
 NuGet client. NuGet 2.6 includes this integration.
