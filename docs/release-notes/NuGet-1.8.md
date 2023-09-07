@@ -65,7 +65,7 @@ The second method is to set the environment variable “EnableNuGetPackageRestor
 
 Now, as stated above, we have only laid the groundwork for this feature in NuGet 1.8.  Practically, this means that while we’ve added all of the logic to enable the feature, it's not currently enforced in this version. It will be enabled, however, in the next release of NuGet, so we wanted to make you aware of it as soon as possible so that you can configure your environments appropriately and therefore not be impacted when we start enforce the consent constraint.
 
-For more details, please see the [team blog post](http://blog.nuget.org/20120518/package-restore-and-consent.html) on this feature.
+For more details, please see the [team blog post](https://blog.nuget.org/20120518/package-restore-and-consent.html) on this feature.
 
 ### nuget.exe Performance Improvements
 By modifying the install command to download and install packages in parallel, NuGet 1.8 brings dramatic performance improvements to nuget.exe – and by extension package restore.  High level testing shows that performance for installing 6 packages into a project improves by about 35% in NuGet 1.8.  Increasing the number of packages to 25 shows a performance gain of about 60%.

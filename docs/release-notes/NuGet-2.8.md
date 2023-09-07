@@ -27,7 +27,7 @@ NuGet 2.8 was released on January 29, 2014.
     - [#3677](https://blog.nuget.org/workitem/3677) - Fix nuget.push throwing OutOfMemoryException when pushing large package.
 6. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
     - [#3666](https://blog.nuget.org/workitem/3666) - Fix incorrect target path when project references another CLI/C++ project.
-7. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+7. [Adam Ralph](https://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - [#3639](https://blog.nuget.org/workitem/3639) - Allow packages to be installed as development dependencies by default
 8. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
     - [#3717](https://blog.nuget.org/workitem/3717) - Remove implicit upgrades to the latest patch version

@@ -37,4 +37,4 @@ We've made some changes to our [source code repositories on GitHub](http://githu
 
 ## Stay Tuned
 
-Please keep an eye on [our blog](http://blog.nuget.org) for more progress and announcements for NuGet 3.0!
+Please keep an eye on [our blog](https://blog.nuget.org) for more progress and announcements for NuGet 3.0!

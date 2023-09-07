@@ -31,4 +31,4 @@ In total, we closed 158 issues in this release, and you can review the [complete
 * [Improved error logging](https://github.com/NuGet/Home/issues/407)
 * [Improved powershell error messages when calling Update-Package](https://github.com/NuGet/Home/issues/5)
 
-Download this [update to the NuGet extension](https://blog.nuget.org/releases/view/615507) from Codeplex and please keep an eye on [our blog](http://blog.nuget.org) for more progress and announcements for NuGet 3.0!
+Download this [update to the NuGet extension](https://blog.nuget.org/releases/view/615507) from Codeplex and please keep an eye on [our blog](https://blog.nuget.org) for more progress and announcements for NuGet 3.0!

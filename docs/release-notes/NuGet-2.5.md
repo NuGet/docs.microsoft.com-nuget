@@ -29,7 +29,7 @@ We would like to thank the following external contributors for their significant
     - [#2920](https://blog.nuget.org/workitem/2920) - nuget.exe pack command does not propagate Properties to MSBuild
 6. [Miroslav Bajtos](https://www.codeplex.com/site/users/view/MiroslavBajtos) ([@bajtos](https://twitter.com/bajtos))
     - [#1511](https://blog.nuget.org/workitem/1511) - Modified XML handling code to preserve formatting.
-7. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+7. [Adam Ralph](https://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - Added recognized words to custom dictionary to allow build.cmd to succeed.
 8. [Bruno Roggeri](https://www.codeplex.com/site/users/view/broggeri)
     - Fix unit tests when running in localized VS.
@@ -39,7 +39,7 @@ We would like to thank the following external contributors for their significant
      - [#936](https://blog.nuget.org/workitem/936) - Handle project dependencies when packing
 11. [Xavier Decoster](https://www.codeplex.com/site/users/view/XavierDecoster) ([@XavierDecoster](https://twitter.com/xavierdecoster))
      - [#2991](https://blog.nuget.org/workitem/2991), [#3164](https://blog.nuget.org/workitem/3164) - Support Clear Text Password when storing package source credentials in nuget.cofig files
-12. [James Manning](http://www.codeplex.com/site/users/view/jmanning) ([@manningj](https://twitter.com/manningj))
+12. [James Manning](https://www.codeplex.com/site/users/view/jmanning) ([@manningj](https://twitter.com/manningj))
      - [#3190](https://blog.nuget.org/workitem/3190), [#3191](https://blog.nuget.org/workitem/3191) - Fix Get-Package help description
 
 We also appreciate the following individuals for finding bugs with NuGet 2.5 Beta/RC that were approved and fixed before the final release:
