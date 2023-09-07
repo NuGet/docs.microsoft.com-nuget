@@ -54,4 +54,4 @@ The list of issues fixed in the 3.3 command-line release are recorded in the [3.
 
 ## Known Issues
 
-We continue to track issues on our GitHub issues list which can be found at: [https://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
+We continue to track issues on our GitHub issues list which can be found at: [https://github.com/nuget/home/issues](https://github.com/nuget/home/issues)
