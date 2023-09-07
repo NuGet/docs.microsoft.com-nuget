@@ -100,7 +100,7 @@ When developing applications for multiple target platforms, it's common to have 
 
 ## Fallback to Local Cache
 
-Though NuGet packages are typically consumed from a remote gallery such as [the NuGet gallery](http://www.nuget.org/) using a network connection, there are many scenarios where the client is not connected. Without a network connection, the NuGet client was not able to successfully install packages - even when those packages were already on the client's machine in the local NuGet cache. NuGet 2.8 adds automatic cache fallback to the package manager console. For example, when disconnecting the network adapter and installing jQuery, the console shows the following:
+Though NuGet packages are typically consumed from a remote gallery such as [the NuGet gallery](https://www.nuget.org/) using a network connection, there are many scenarios where the client is not connected. Without a network connection, the NuGet client was not able to successfully install packages - even when those packages were already on the client's machine in the local NuGet cache. NuGet 2.8 adds automatic cache fallback to the package manager console. For example, when disconnecting the network adapter and installing jQuery, the console shows the following:
 
 ```
 PM> Install-Package jquery
