@@ -141,7 +141,7 @@ Optionally, valid authentication types can be specified with the `-validauthenti
 
 | Key | Value |
 | --- | --- |
-| username | The user name for the source in plain text. |
+| username | The user name for the source in plain text. Note: environment variables can be used for improved security. |
 | password | The encrypted password for the source. Encrypted passwords are only supported on Windows, and only can be decrypted when used on the same machine and via the same user as the original encryption. |
 | cleartextpassword | The unencrypted password for the source. Note: environment variables can be used for improved security. |
 | validauthenticationtypes | Comma-separated list of valid authentication types for this source. Set this to `basic` if the server advertises NTLM or Negotiate and your credentials must be sent using the Basic mechanism, for instance when using a PAT with on-premises Azure DevOps Server. Other valid values include `negotiate`, `kerberos`, `ntlm`, and `digest`, but these values are unlikely to be useful. |
