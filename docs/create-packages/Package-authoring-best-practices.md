@@ -124,8 +124,8 @@ Example: Copyright (c) Contoso 2020
 ❌ DO NOT use the deprecated `IconUrl` metadata property.
 
 ### README
-✔️ DO [add a README markdown file](https://learn.microsoft.com/nuget/reference/msbuild-targets#packagereadmefile) that provides an overview of what your package does and how to get started.
-> A package README will significantly improve the quality perception of your package as well as new user onboarding. Also consider [previewing your README](../nuget-org/package-readme-on-nuget-org.md#preview-your-readme) before you upload it! See [how to include a README file in your NuGet package](https://learn.microsoft.com/nuget/reference/msbuild-targets#packagereadmefile) for more details.
+✔️ DO [add a README markdown file](/nuget/reference/msbuild-targets#packagereadmefile) that provides an overview of what your package does and how to get started.
+> A package README will significantly improve the quality perception of your package as well as new user onboarding. Also consider [previewing your README](../nuget-org/package-readme-on-nuget-org.md#preview-your-readme) before you upload it! See [how to include a README file in your NuGet package](/nuget/reference/msbuild-targets#packagereadmefile) for more details.
 
 ### Repository Type and URL
 
