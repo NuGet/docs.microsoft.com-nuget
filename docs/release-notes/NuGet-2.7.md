@@ -44,9 +44,9 @@ We would like to thank the following external contributors for their significant
 12. [Daniel Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
      - #2990 - Add Version property to NetPortableProfile class.
 13. [David Simner](https://www.codeplex.com/site/users/view/DavidSimner)
-     - [#3460](https://nuget.codeplex.com/workitem/3460) - Fix bug NullReferenceException if requireApiKey = true, but the header X-NUGET-APIKEY isn't present
+     - #3460 - Fix bug NullReferenceException if requireApiKey = true, but the header X-NUGET-APIKEY isn't present
 14. [Michael Friis](https://www.codeplex.com/site/users/view/friism) ([@friism](https://twitter.com/friism))
-     - [#3278](https://nuget.codeplex.com/workitem/3278) - Fixes NuGet.Build targets file to so that it works correctly on MonoDevelop
+     - #3278 - Fixes NuGet.Build targets file to so that it works correctly on MonoDevelop
 15. [Pranav Krishnamoorthy](https://www.codeplex.com/site/users/view/pranavkm) ([@pranav_km](https://twitter.com/pranav_km))
      - Improve Restore command performance by increasing parallelization
 

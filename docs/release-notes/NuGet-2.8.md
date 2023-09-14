@@ -28,9 +28,9 @@ NuGet 2.8 was released on January 29, 2014.
 6. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
     - #3666 - Fix incorrect target path when project references another CLI/C++ project.
 7. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
-    - [#3639](https://nuget.codeplex.com/workitem/3639) - Allow packages to be installed as development dependencies by default
+    - #3639 - Allow packages to be installed as development dependencies by default
 8. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
-    - [#3717](https://nuget.codeplex.com/workitem/3717) - Remove implicit upgrades to the latest patch version
+    - #3717 - Remove implicit upgrades to the latest patch version
 9. [Gregory Vandenbrouck](https://www.codeplex.com/site/users/view/vdbg)
     - Several bug fixes and improvements for NuGet.Server, the nuget.exe mirror command, and others.
     - This work was done over several months, with Gregory working with us on the right timing to integrate into master for 2.8.
