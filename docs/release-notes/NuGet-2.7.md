@@ -112,11 +112,11 @@ With each of the partners above, they would use their own copy of nuget.exe and 
 
 #### Known Issues
 
-There were two known issues with nuget.exe restore with the initial 2.7 release, but they were fixed on 9/6/2013 with an update to the [NuGet.CommandLine package](http://www.nuget.org/packages/NuGet.CommandLine/).  This update is also available on the [NuGet 2.7 download page](https://nuget.codeplex.com/releases/view/107605) on CodePlex.  Running `nuget.exe update -self` will update to the latest release.
+There were two known issues with nuget.exe restore with the initial 2.7 release, but they were fixed on 9/6/2013 with an update to the [NuGet.CommandLine package](http://www.nuget.org/packages/NuGet.CommandLine/).  This update is also available on the NuGet 2.7 download page on CodePlex.  Running `nuget.exe update -self` will update to the latest release.
 
 The fixed were:
 
-1. New package restore doesn't work on Mono when using SLN file
+1. New package restore doesn't work on Mono when using SLN 
 1. New package restore doesn't work with Wix projects
 
 There is also a known issue with the new package restore workflow whereby Automatic Package Restore does not work for projects under a solution folder. This issue was fixed in NuGet 2.7.1.
@@ -187,7 +187,7 @@ The new package restore model in 2.7 is implemented by a new VSPackage which is 
 
 Since we are unsure how many developers are still using NuGet in that version/edition of Visual Studio, we are publishing a separate Visual Studio extension specifically for those users and publishing it on CodePlex (rather than the Visual Studio Extension Gallery). We don't plan to continue to maintain that extension, but if this affects you please let us know by filing an issue on CodePlex.
 
-To download the NuGet Package Manager (for Visual Studio 2010 Express for Windows Phone), visit the [NuGet 2.7 Downloads](https://nuget.codeplex.com/releases/view/107605) page.
+To download the NuGet Package Manager (for Visual Studio 2010 Express for Windows Phone), visit the NuGet 2.7 Downloads page.
 
 ### Bug Fixes
 
