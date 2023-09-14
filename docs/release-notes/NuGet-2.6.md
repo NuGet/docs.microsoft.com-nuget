@@ -135,7 +135,7 @@ relevance boosting.
 
 ### Tracking Direct Installs vs. Dependency Installs
 
-Package authors are relying more and more on the [Package Statistics](http://blog.nuget.org/20130226/Introducing-Package-Statistics.html)
+Package authors are relying more and more on the [Package Statistics](https://blog.nuget.org/20130226/Introducing-Package-Statistics.html)
 provided on the NuGet Gallery.  One significant missing data point that authors have asked
 for is a differentiation between direct package installs and dependency installs.  Until now,
 the NuGet client did not send any context around the installation operation for whether the

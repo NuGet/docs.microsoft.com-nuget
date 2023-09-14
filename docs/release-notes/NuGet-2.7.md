@@ -112,7 +112,7 @@ With each of the partners above, they would use their own copy of nuget.exe and 
 
 #### Known Issues
 
-There were two known issues with nuget.exe restore with the initial 2.7 release, but they were fixed on 9/6/2013 with an update to the [NuGet.CommandLine package](http://www.nuget.org/packages/NuGet.CommandLine/).  This update is also available on the NuGet 2.7 download page on CodePlex.  Running `nuget.exe update -self` will update to the latest release.
+There were two known issues with nuget.exe restore with the initial 2.7 release, but they were fixed on 9/6/2013 with an update to the [NuGet.CommandLine package](https://www.nuget.org/packages/NuGet.CommandLine/).  This update is also available on the NuGet 2.7 download page on CodePlex.  Running `nuget.exe update -self` will update to the latest release.
 
 The fixed were:
 
