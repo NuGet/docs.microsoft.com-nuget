@@ -135,13 +135,13 @@ not to include any file in the package.
 ## Bug Fixes
 NuGet 1.5 had a total of 107 work items fixed. 103 of those were marked as bugs.
 
-For a full list of work items fixed in NuGet 1.5, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.5&assignedTo=All&component=All&sortField=Summary&sortDirection=Descending&page=0).
+For a full list of work items fixed in NuGet 1.5, please view the NuGet Issue Tracker for this release.
 
 ## Bug fixes worth noting:
 
-* [Issue 1273](http://nuget.codeplex.com/workitem/1273): Made `packages.config` more version control
+* Issue 1273: Made `packages.config` more version control
 friendly by sorting packages alphabetically and removing extra whitespace.
-* [Issue 844](http://nuget.codeplex.com/workitem/844): Version numbers are now normalized so that
+* Issue 844: Version numbers are now normalized so that
 `Install-Package 1.0` works on a package with the version `1.0.0`.
-* [Issue 1060](http://nuget.codeplex.com/workitem/1060): When creating a package using nuget.exe,
+* Issue 1060: When creating a package using nuget.exe,
 the `-Version` flag overrides the `<version />` element.

@@ -39,7 +39,7 @@ If you produce Visual Studio templates, you can use NuGet to [preinstall package
 The main scenario for this feature is custom ASP.NET project templates.  The built-in ASP.NET templates use preinstalled packages, pulling packages from local disk.  You can now create a custom ASP.NET project template that uses the existing packages installed by ASP.NET but add extra NuGet packages into your template.
 
 ## Bug Fixes
-NuGet 2.2.1 includes a few targeted bug fixes. For a list of work items fixed in NuGet 2.2.1, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.2.1&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
+NuGet 2.2.1 includes a few targeted bug fixes. For a list of work items fixed in NuGet 2.2.1, please view the NuGet Issue Tracker for this release.
 
 
 ## Known Issues

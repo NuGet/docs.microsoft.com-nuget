@@ -17,34 +17,34 @@ NuGet 2.5 was released on April 25, 2013. This release was so big, we felt compe
 
 We would like to thank the following external contributors for their significant contributions to NuGet 2.5:
 
-1. [Daniel Plaisted](https://www.codeplex.com/site/users/view/dsplaisted) ([@dsplaisted](https://twitter.com/dsplaisted))
+1. Daniel Plaisted ([@dsplaisted](https://twitter.com/dsplaisted))
     - #2847 - Add MonoAndroid, MonoTouch, and MonoMac to the list of known target framework identifiers.
-2. [Andres G. Aragoneses](https://www.codeplex.com/site/users/view/knocte) ([@knocte](https://twitter.com/knocte))
+2. Andres G. Aragoneses ([@knocte](https://twitter.com/knocte))
     - #2865 - Fix spelling of `NuGet.targets` for a case-sensitive OS
-3. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
+3. David Fowler ([@davidfowl](https://twitter.com/davidfowl))
     - Make the solution build on Mono.
-4. [Andrew Theken](https://www.codeplex.com/site/users/view/atheken) ([@atheken](https://twitter.com/atheken))
+4. Andrew Theken ([@atheken](https://twitter.com/atheken))
     - Fix unit tests failing on Mono.
-5. [Olivier Dagenais](https://www.codeplex.com/site/users/view/OliIsCool) ([@OliIsCool](https://twitter.com/oliiscool))
+5. Olivier Dagenais ([@OliIsCool](https://twitter.com/oliiscool))
     - #2920 - nuget.exe pack command does not propagate Properties to MSBuild
-6. [Miroslav Bajtos](https://www.codeplex.com/site/users/view/MiroslavBajtos) ([@bajtos](https://twitter.com/bajtos))
+6. Miroslav Bajtos ([@bajtos](https://twitter.com/bajtos))
     - #1511 - Modified XML handling code to preserve formatting.
-7. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+7. Adam Ralph ([@adamralph](https://twitter.com/adamralph))
     - Added recognized words to custom dictionary to allow build.cmd to succeed.
-8. [Bruno Roggeri](https://www.codeplex.com/site/users/view/broggeri)
+8. Bruno Roggeri
     - Fix unit tests when running in localized VS.
-9. [Gareth Evans](https://www.codeplex.com/site/users/view/garethevans)
+9. Gareth Evans
     - Extracted interface from PackageService
-10. [Maxime Brugidou](https://www.codeplex.com/site/users/view/brugidou) ([@brugidou](https://twitter.com/brugidou))
+10. Maxime Brugidou ([@brugidou](https://twitter.com/brugidou))
      - #936 - Handle project dependencies when packing
-11. [Xavier Decoster](https://www.codeplex.com/site/users/view/XavierDecoster) ([@XavierDecoster](https://twitter.com/xavierdecoster))
+11. Xavier Decoster ([@XavierDecoster](https://twitter.com/xavierdecoster))
      - #2991, #3164 - Support Clear Text Password when storing package source credentials in nuget.cofig files
-12. [James Manning](http://www.codeplex.com/site/users/view/jmanning) ([@manningj](https://twitter.com/manningj))
+12. James Manning ([@manningj](https://twitter.com/manningj))
      - #3190, #3191 - Fix Get-Package help description
 
 We also appreciate the following individuals for finding bugs with NuGet 2.5 Beta/RC that were approved and fixed before the final release:
 
-1. [Tony Wall](https://www.codeplex.com/site/users/view/CodeChief) ([@CodeChief](https://twitter.com/codechief))
+1. Tony Wall ([@CodeChief](https://twitter.com/codechief))
     - #3200 - MSTest broken with lastest NuGet 2.4 and 2.5 builds
 
 ## Notable features in the release
@@ -119,7 +119,7 @@ Now nuget.exe pack command processes referenced projects with the following rule
 This allows a referenced project to be treated as a dependency if there is a `.nuspec` file, otherwise, it becomes part of the package.
 
 More details here:
-[http://nuget.codeplex.com/workitem/936](http://nuget.codeplex.com/workitem/936)
+http://nuget.codeplex.com/workitem/936
 
 ### Add a 'Minimum NuGet Version' property to packages
 
@@ -154,7 +154,7 @@ Starting with NuGet 2.5, if a dependency version is already satisfied, the depen
 
 * NuGet will no longer update B, because it detects that the existing version 1.0.0 satisfies the dependency version constraint.
 
-For more background on this change, read the detailed [work item](http://nuget.codeplex.com/workitem/1681) as well as the related [discussion thread](http://nuget.codeplex.com/discussions/436712).
+For more background on this change, read the detailed work item as well as the related [discussion thread](http://nuget.codeplex.com/discussions/436712).
 
 ### nuget.exe outputs http requests with detailed verbosity
 

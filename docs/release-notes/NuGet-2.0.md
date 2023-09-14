@@ -97,4 +97,4 @@ The tab completion feature in the NuGet Package Manager Console has been updated
 
 ## Bug Fixes
 NuGet 2.0 includes many bug fixes with an emphasis on package restore consent and performance.
-For a full list of work items fixed in NuGet 2.0, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.0&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0).
+For a full list of work items fixed in NuGet 2.0, please view the NuGet Issue Tracker for this release.
