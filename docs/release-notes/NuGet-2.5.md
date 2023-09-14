@@ -11,7 +11,7 @@ ms.topic: conceptual
 
 [NuGet 2.2.1 Release Notes](../release-notes/nuget-2.2.1.md) | [NuGet 2.6 Release Notes](../release-notes/nuget-2.6.md)
 
-NuGet 2.5 was released on April 25, 2013. This release was so big, we felt compelled to skip versions 2.3 and 2.4! To date, this is the largest release we've had for NuGet, with over [160 work items](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.5&status=all) in the release.
+NuGet 2.5 was released on April 25, 2013. This release was so big, we felt compelled to skip versions 2.3 and 2.4! To date, this is the largest release we've had for NuGet, with over 160 work items in the release.
 
 ## Acknowledgements
 

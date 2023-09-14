@@ -131,4 +131,4 @@ This is the NuGet team's first release of the NuGet Package Manager extension fo
 
 One of the major bug fixes made was performance improvement in the  update-package -reinstall    command.
 
-In addition to these features and the aforementioned performance fix, this release of NuGet also includes many other bug fixes. There were 181 total issues addressed in the release. For a full list of the work items fixed in NuGet 2.8, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.8&status=all).
+In addition to these features and the aforementioned performance fix, this release of NuGet also includes many other bug fixes. There were 181 total issues addressed in the release. For a full list of the work items fixed in NuGet 2.8, please view the NuGet Issue Tracker for this release.

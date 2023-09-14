@@ -40,4 +40,4 @@ Here's the list of updated packages:
 1. [NuGet.VisualStudio](https://www.nuget.org/packages/NuGet.VisualStudio/) (the package, not the extension)
 
 ## All Changes
-There were 10 issues addressed in the release. For a full list of the work items fixed in NuGet 2.8.2, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%202.8.2&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=All).
+There were 10 issues addressed in the release. For a full list of the work items fixed in NuGet 2.8.2, please view the NuGet Issue Tracker for this release

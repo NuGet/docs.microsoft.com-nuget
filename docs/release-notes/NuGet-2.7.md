@@ -116,10 +116,10 @@ There were two known issues with nuget.exe restore with the initial 2.7 release,
 
 The fixed were:
 
-1. [New package restore doesn't work on Mono when using SLN file](https://nuget.codeplex.com/workitem/3596)
-1. [New package restore doesn't work with Wix projects](https://nuget.codeplex.com/workitem/3598)
+1. New package restore doesn't work on Mono when using SLN file
+1. New package restore doesn't work with Wix projects
 
-There is also a known issue with the new package restore workflow whereby [Automatic Package Restore does not work for projects under a solution folder](https://nuget.codeplex.com/workitem/3625). This issue was fixed in NuGet 2.7.1.
+There is also a known issue with the new package restore workflow whereby Automatic Package Restore does not work for projects under a solution folder. This issue was fixed in NuGet 2.7.1.
 
 ### Project Retargeting and Upgrade Build Errors/Warnings
 
@@ -191,4 +191,4 @@ To download the NuGet Package Manager (for Visual Studio 2010 Express for Window
 
 ### Bug Fixes
 
-In addition to these features, this release of NuGet also includes many other bug fixes. There were 97 total issues addressed in the release. For a full list of work items fixed in NuGet 2.7, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.7&status=all).
+In addition to these features, this release of NuGet also includes many other bug fixes. There were 97 total issues addressed in the release. For a full list of work items fixed in NuGet 2.7, please view the NuGet Issue Tracker for this release.
