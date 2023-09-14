@@ -55,7 +55,7 @@ One issue was fixed for RTM since the RC.
 The following are the changes made in this Release Candidate since CTP 2. Visit the Issue Tracker to see the full list of bugs.
 
 * Updating Package from Console does not update dependencies.
-* Adding package picks up bin not package reference (CTP1)](http://nuget.codeplex.com/workitem/442)
+* Adding package picks up bin not package reference (CTP1)
 * Updating a package leaves broken references
 * Get-Package -Updates fails in the dialog, or when the 'All' aggregate source is selected in the console
 * Getting package verification errors
@@ -181,7 +181,7 @@ The following is a list of features and bugs that were fixed for NuGet CTP 2 (do
 * nuget.exe: specify destination path
 * Powershell Errors Opening Package Management Console on WinXP
 * VS Crashes while trying to load package list
-* allow meta packages (no files, only dependencies)](http://nuget.codeplex.com/workitem/180)
+* allow meta packages (no files, only dependencies)
 * Convert Powershell Script to Powershell 2.0 Module
 * PathResolver should discard path portion preceeding wildcard characters when target is specified
 * No dependencies
