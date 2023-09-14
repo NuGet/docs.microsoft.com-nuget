@@ -19,13 +19,13 @@ The most notable updates were in the nuget.exe command-line and the NuGet.Server
 
 ### Important nuget.exe Bug Fixes
 
-1. [nuget.exe Push fails and keeps retrying](https://nuget.codeplex.com/workitem/4000)
-1. [nuget.exe Push does not send Basic Auth credentials correctly](https://nuget.codeplex.com/workitem/4109)
-1. [nuget.exe Push won't follow temporary redirect](https://nuget.codeplex.com/workitem/4050)
+1. nuget.exe Push fails and keeps retrying
+1. nuget.exe Push does not send Basic Auth credentials correctly
+1. nuget.exe Push won't follow temporary redirect
 
 ### Important NuGet.Server Bug Fix
 
-1. [Wrong value of IsAbsoluteLatestVersion returned by NuGet.Server](https://nuget.codeplex.com/workitem/4147)
+1. Wrong value of IsAbsoluteLatestVersion returned by NuGet.Server
 
 ## Packages Updated
 
