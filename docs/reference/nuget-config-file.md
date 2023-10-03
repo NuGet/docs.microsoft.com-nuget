@@ -113,9 +113,12 @@ Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 
 Lists all known package sources. The order is ignored during restore operations and with any project using the PackageReference format. NuGet respects the order of sources for install and update operations with projects using `packages.config`.
 
-| Key | Value | protocolVersion |
-| --- | --- | --- |
-| (name to assign to the package source) | The path or URL of the package source. | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. https://api.nuget.org/v3/index.json). Supported in [NuGet 3.0+](/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](/nuget/api/overview) for more information about the version 3 protocol. |
+| XML Attribute | Purpose |
+| :-- | :-- |
+| **Key** | (name to assign to the package source) |
+| **Value** | The path or URL of the package source. |
+| **protocolVersion** | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. https://api.nuget.org/v3/index.json). Supported in [NuGet 3.0+](/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](/nuget/api/overview) for more information about the version 3 protocol. |
+| **allowInsecureConnections** | When false, or not specified, NuGet will emit a warning when the source uses http, rather than https. If you are confident that communication with this source will never be at risk of interception attacks, you can set the value to true to suppress the warning. Supported in NuGet 6.8+. |
 
 **Example**:
 
@@ -124,6 +127,7 @@ Lists all known package sources. The order is ignored during restore operations 
     <clear />    
     <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
     <add key="Contoso" value="https://contoso.com/packages/" />
+    <add key="http-source" value="http://httpsourcetrusted/" allowInsecureConnections="true" />
     <add key="Test Source" value="c:\packages" />
 </packageSources>
 ```
