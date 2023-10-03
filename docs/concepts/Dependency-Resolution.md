@@ -65,7 +65,7 @@ When using a floating version, NuGet resolves the highest version of a package t
 When the package graph for an application contains different versions of a package in the same subgraph, and one of those versions is a direct dependency in that subgraph, that version would be chosen for that subgraph and the rest will be ignored.
 This behavior allows an application to override any particular package version in the dependency graph.
 
-In the example below, the application depends directly on Package B with a version constraint of >=2.0. The application also depends on Package A which in turn also depends on Package B, but with a >=1.0 constraint. Because the dependency on Package B 2.0 is direct dependency to the application in the graph, that version is used:
+In the example below, the application depends directly on Package B with a version constraint of >=2.0.0. The application also depends on Package A which in turn also depends on Package B, but with a >=1.0.0 constraint. Because the dependency on Package B 2.0.0 is direct dependency to the application in the graph, that version is used:
 
 ![Application using the Direct dependency wins rule](media/direct-dependency-1.png)
 
@@ -73,14 +73,14 @@ In the example below, the application depends directly on Package B with a versi
 > The Direct dependency wins rule can result in a downgrade of the package version, thus potentially breaking other dependencies in the graph. When a package is downgraded, NuGet adds a [warning to alert the user](..\reference\errors-and-warnings\NU1605.md).
 
 This rule also results in greater efficiency with a large dependency graph.
-When a closer dependency in the same subgraph has a higher version than a further one, then NuGet ignores that dependency, NuGet also ignores all remaining dependencies on that branch of the graph.
+When a closer dependency in the same subgraph has a higher version than a further one, then NuGet ignores that dependency, and NuGet also ignores all remaining dependencies on that branch of the graph.
 
-In the diagram below, for example, because Package C 2.0 is used, NuGet ignores any branches in that subgraph that refer to an earlier version of Package C:
+In the diagram below, for example, because Package C 2.0.0 is used, NuGet ignores any branches in that subgraph that refer to an earlier version of Package C:
 
 ![When NuGet ignores a package in the graph, it ignores that entire branch](media/direct-dependency-2.png)
 
 Through this rule, NuGet tries to honor the intent of the package author.
-In the diagram below, the author of Package A has explicitly downgraded to Package C 1.0.0 from Package B 2.0.0.
+In the diagram below, the author of Package A has explicitly downgraded to Package C 1.0.0 from Package C 2.0.0.
 
 ![When a package author explicitly downgrades, NuGet honors that.](media/direct-dependency-3.png)
 
@@ -90,7 +90,7 @@ The application owner can choose to upgrade Package C to a version higher than 2
 
 #### Cousin dependencies
 
-When different package versions are referred in different subgraphs in the graph from the application, NuGet uses the lowest version that satisfies all version requirements (as with the [lowest applicable version](#lowest-applicable-version) and [floating versions](#floating-versions) rules). In the image below, for example, version 2.0 of Package B satisfies the other >=1.0 constraint, and is thus used:
+When different package versions are referred in different subgraphs in the graph from the application, NuGet uses the lowest version that satisfies all version requirements (as with the [lowest applicable version](#lowest-applicable-version) and [floating versions](#floating-versions) rules). In the image below, for example, version 2.0.0 of Package B satisfies the other >=1.0.0 constraint, and is thus used:
 
 ![Resolving cousin dependencies using the lower version that satisfies all constraints](media/cousin-dependencies-1.png)
 
@@ -98,7 +98,7 @@ Note that the packages do not need to be on the same distance for the cousin dep
 
 ![Resolving cousin dependencies using the lower version that satisfies all constraints at different distances](media/cousin-dependencies-2.png)
 
-In some cases, it's not possible to meet all version requirements. As shown below, if Package A requires exactly Package B 1.0 and Package C requires Package B >=2.0, then NuGet cannot resolve the dependencies and gives an error.
+In some cases, it's not possible to meet all version requirements. As shown below, if Package A requires exactly Package B 1.0.0 and Package C requires Package B >=2.0.0, then NuGet cannot resolve the dependencies and gives an error.
 
 ![Unresolvable dependencies due to an exact version requirement](media/cousin-dependencies-3.png)
 
