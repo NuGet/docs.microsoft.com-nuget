@@ -13,7 +13,7 @@ ms.topic: conceptual
 
 NuGet 3.0 Beta was released on February 23, 2015 for the Visual Studio 2015 CTP 6 release. This release means a lot to our team, as we have a number of architecture and performance improvements to share, and we're excited to start tuning the performance settings on our nuget.org service.
 
-We strongly recommend that you uninstall any prior version of the NuGet Visual Studio 2015 extension before installing this new version.  If you have any problems with this version of the extension, we recommend you revert to the [prior version](http://nuget.codeplex.com/downloads/get/909582) for use with Visual Studio 2015 preview.
+We strongly recommend that you uninstall any prior version of the NuGet Visual Studio 2015 extension before installing this new version.  If you have any problems with this version of the extension, we recommend you revert to the ```[prior version](http://nuget.codeplex.com/downloads/get/909582)``` for use with Visual Studio 2015 preview.
 
 ## Visual Studio 2012+
 
