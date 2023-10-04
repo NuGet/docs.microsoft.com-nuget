@@ -38,9 +38,9 @@ We would like to thank the following external contributors for their significant
 10. ```[Maxime Brugidou](https://www.codeplex.com/site/users/view/brugidou)``` ([@brugidou](https://twitter.com/brugidou))
      - ```[#936](https://nuget.codeplex.com/workitem/936)``` - Handle project dependencies when packing
 11. ```[Xavier Decoster](https://www.codeplex.com/site/users/view/XavierDecoster)``` ([@XavierDecoster](https://twitter.com/xavierdecoster))
-     - ```[#2991](https://nuget.codeplex.com/workitem/2991)```, [#3164](https://nuget.codeplex.com/workitem/3164) - Support Clear Text Password when storing package source credentials in nuget.cofig files
+     - ```[#2991](https://nuget.codeplex.com/workitem/2991)```, ```[#3164](https://nuget.codeplex.com/workitem/3164)``` - Support Clear Text Password when storing package source credentials in nuget.cofig files
 12. ```[James Manning](http://www.codeplex.com/site/users/view/jmanning)``` ([@manningj](https://twitter.com/manningj))
-     - ```[#3190](http://nuget.codeplex.com/workitem/3190)```, [#3191](http://nuget.codeplex.com/workitem/3191) - Fix Get-Package help description
+     - ```[#3190](http://nuget.codeplex.com/workitem/3190)```, ```[#3191](https://nuget.codeplex.com/workitem/3191)``` - Fix Get-Package help description
 
 We also appreciate the following individuals for finding bugs with NuGet 2.5 Beta/RC that were approved and fixed before the final release:
 
@@ -154,7 +154,7 @@ Starting with NuGet 2.5, if a dependency version is already satisfied, the depen
 
 * NuGet will no longer update B, because it detects that the existing version 1.0.0 satisfies the dependency version constraint.
 
-For more background on this change, read the detailed ```[work item](http://nuget.codeplex.com/workitem/1681)``` as well as the related [discussion thread](http://nuget.codeplex.com/discussions/436712).
+For more background on this change, read the detailed ```[work item](https://nuget.codeplex.com/workitem/1681)``` as well as the related ```[discussion thread](https://nuget.codeplex.com/discussions/436712)```.
 
 ### nuget.exe outputs http requests with detailed verbosity
 
@@ -186,6 +186,6 @@ nuget sources add -name test -source http://test -ConfigFile C:\test\.nuget\Nuge
 
 ### Support for Native projects
 
-With NuGet 2.5, the NuGet tooling is now available for Native projects in Visual Studio. We expect most native packages will utilize the MSBuild imports feature above, using a tool created by the [CoApp project](http://coapp.org). For more information, read [the details about the tool](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) on the coapp.org website.
+With NuGet 2.5, the NuGet tooling is now available for Native projects in Visual Studio. We expect most native packages will utilize the MSBuild imports feature above, using a tool created by the [CoApp project](https://coapp.org). For more information, read [the details about the tool](https://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) on the coapp.org website.
 
 The target framework name of "native" is introduced for packages to include files in \build, \content, and \tools when the package is installed into a native project.  The \`lib` folder is not used for native projects.

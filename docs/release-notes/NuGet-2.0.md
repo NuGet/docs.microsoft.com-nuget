@@ -25,7 +25,7 @@ then you likely need to restart Visual Studio using "Run as Administrator."
 
 ## Package restore consent is now active
 
-As described in this [post on package restore consent](http://blog.nuget.org/20120518/package-restore-and-consent.html), NuGet 2.0 will now require that consent be given to enable package restore to go online and download packages. Please ensure that you have provided consent via either the package manager configuration dialog or the EnableNuGetPackageRestore environment variable.
+As described in this [post on package restore consent](https://blog.nuget.org/20120518/package-restore-and-consent.html), NuGet 2.0 will now require that consent be given to enable package restore to go online and download packages. Please ensure that you have provided consent via either the package manager configuration dialog or the EnableNuGetPackageRestore environment variable.
 
 ## Group dependencies by target frameworks
 
