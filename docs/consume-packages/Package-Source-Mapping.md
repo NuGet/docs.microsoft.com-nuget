@@ -96,7 +96,8 @@ _From the Visual Studio Options Dialog_
   </packageSources>
   
   <!-- Define mappings by adding package patterns beneath the target source. -->
-  <!-- Contoso.* packages and NuGet.Common will be restored from contoso.com, everything else from nuget.org. -->
+  <!-- Contoso.* packages and NuGet.Common will be restored from contoso.com,
+       everything else from nuget.org. -->
   <packageSourceMapping>
     <!-- key value for <packageSource> should match key values from <packageSources> element -->
     <packageSource key="nuget.org">
