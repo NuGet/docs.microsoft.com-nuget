@@ -236,7 +236,7 @@ sections:
           > [!Important]
           > - The old username will still be **reserved**. You will not be able to reuse the old username again and **this includes the change of casings**.
           > - As a consequence of the above, we will not be able to revert this change either.
-          > - Any links to your old username profile page (e.g. https://www.nuget.org/profiles/OldUsername) will not be redirected to your new profile.
+          > - Any links to your old username profile page (e.g. ```https://www.nuget.org/profiles/OldUsername```) will not be redirected to your new profile.
           > - Package versions currently owned by your account will still contain the old username in the repository signature. New package versions will contain the new username.
           > - Any author-provided metadata in the existing package versions referring to the old username or other identifying information will not be changed.
           > - NuGet client policies asserting trust of your old username will not implicitly trust packages published by your new username. Package consumers with these client policies configured will need to manual update them to trust your new username when they attempt to update to a newly published package version.
