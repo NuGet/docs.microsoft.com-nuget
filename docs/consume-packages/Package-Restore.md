@@ -189,7 +189,7 @@ To avoid using packages in the HTTP cache:
 
 - Clear the cache by using `nuget locals http-cache -clear` or `dotnet nuget locals http-cache --clear`.
 - Temporarily set the **NUGET_HTTP_CACHE_PATH** environment variable to a different folder.
-- For `nuget restore`, use the `-NoCache` option, or for `dotnet restore`, use the `--no-cache` option. These options don't affect restore operations through the Visual Studio Package Manager or Console.
+- For `nuget restore`, use the `-NoHttpCache` option, or for `dotnet restore`, use the `--no-http-cache` option. These options don't affect restore operations through the Visual Studio Package Manager or Console.
 
 <a name="migrate-to-automatic-package-restore-visual-studio"></a>
 ## Migrate to automatic package restore

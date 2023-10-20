@@ -426,7 +426,7 @@ Additional restore settings may come from MSBuild properties in the project file
 | `RestorePackagesPath` | User packages folder path. |
 | `RestoreDisableParallel` | Limit downloads to one at a time. |
 | `RestoreConfigFile` | Path to a `Nuget.Config` file to apply. |
-| `RestoreNoCache` | If true, avoids using cached packages. See [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
+| `RestoreNoHttpCache` | If true, avoids using http cached packages. See [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | `RestoreIgnoreFailedSources` | If true, ignores failing or missing package sources. |
 | `RestoreFallbackFolders` | Fallback folders, used in the same way the user packages folder is used. |
 | `RestoreAdditionalProjectSources` | Additional sources to use during restore. |
