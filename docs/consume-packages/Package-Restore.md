@@ -3,7 +3,7 @@ title: NuGet Package Restore
 description: See an overview of how NuGet restores packages a project depends on, including how to disable restore and constrain versions.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/29/2022
+ms.date: 10/20/2023
 ms.topic: conceptual
 ---
 
