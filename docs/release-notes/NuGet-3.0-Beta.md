@@ -13,11 +13,11 @@ ms.topic: conceptual
 
 NuGet 3.0 Beta was released on February 23, 2015 for the Visual Studio 2015 CTP 6 release. This release means a lot to our team, as we have a number of architecture and performance improvements to share, and we're excited to start tuning the performance settings on our nuget.org service.
 
-We strongly recommend that you uninstall any prior version of the NuGet Visual Studio 2015 extension before installing this new version.  If you have any problems with this version of the extension, we recommend you revert to the [prior version](http://nuget.codeplex.com/downloads/get/909582) for use with Visual Studio 2015 preview.
+We strongly recommend that you uninstall any prior version of the NuGet Visual Studio 2015 extension before installing this new version.  If you have any problems with this version of the extension, we recommend you revert to the ```[prior version](http://nuget.codeplex.com/downloads/get/909582)``` for use with Visual Studio 2015 preview.
 
 ## Visual Studio 2012+
 
-This NuGet 3.0 Beta is available to install in the Visual Studio 2015 CTP 6 Extension Gallery. We are working to get preview drops out for Visual Studio 2012 and Visual Studio 2013 very soon. We previously shared our intent to [discontinue updates for Visual Studio 2010](http://blog.nuget.org/20141002/visual-studio-2010.html), and we did make that difficult decision.
+This NuGet 3.0 Beta is available to install in the Visual Studio 2015 CTP 6 Extension Gallery. We are working to get preview drops out for Visual Studio 2012 and Visual Studio 2013 very soon. We previously shared our intent to [discontinue updates for Visual Studio 2010](https://blog.nuget.org/20141002/visual-studio-2010.html), and we did make that difficult decision.
 
 ## New Client/Server API
 
@@ -51,4 +51,4 @@ We have now rearchitected our NuGet clients into several components that are the
 
 ## Stay Tuned
 
-Please keep an eye on [our blog](http://blog.nuget.org) for more progress and announcements for NuGet 3.0!
+Please keep an eye on [our blog](https://blog.nuget.org) for more progress and announcements for NuGet 3.0!

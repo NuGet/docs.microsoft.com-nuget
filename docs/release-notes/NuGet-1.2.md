@@ -68,12 +68,12 @@ you won’t need to specify it every time you push a package. For more details o
 
 ### Package Explorer
 Package Explorer has been updated to support NuGet 1.2. For more information, check out the
-[Package Explorer release notes](http://nuget.codeplex.com/wikipage?title=New%20features%20in%20NuGet%20Package%20Explorer%201.0).
+```[Package Explorer release notes](http://nuget.codeplex.com/wikipage?title=New%20features%20in%20NuGet%20Package%20Explorer%201.0)```.
 
 ## Other features/fixes
 
 The previous list were the most noticeable of the many features we implemented and bugs we fixed. All in all, we
-implemented/fixed [59 work items](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.2&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0)
+implemented/fixed ```[59 work items](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.2&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0)```
 in this release.
 
 ## Known Issues
