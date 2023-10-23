@@ -70,9 +70,9 @@ where `<packageID>` names the package to install (using the latest version), or 
 
   Displays help information for the command.
 
-- **`-NoCache`**
+- **`-NoHttpCache`**
 
-  Prevents NuGet from using cached packages. See [Managing the global packages and cache folders](../../consume-packages/managing-the-global-packages-and-cache-folders.md).
+  Prevents NuGet from using http cached packages. See [Managing the global packages and cache folders](../../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
 - **`-NonInteractive`**
 
