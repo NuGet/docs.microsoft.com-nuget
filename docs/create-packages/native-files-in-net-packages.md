@@ -27,7 +27,7 @@ Also, be aware that .NET 8 introduces [breaking changes regarding how it determi
 
 ## Understanding NuGet package asset selection
 
-There are three types of assets in a NuGet file that are most relevant to this scenario, compile, runtime, and native assets.
+There are three types of assets in a NuGet file that are most relevant to this scenario: compile, runtime, and native assets.
 For a complete list of asset types, see the docs on [controlling dependency assets in `PackageReference` projects](../consume-packages/Package-References-in-Project-Files.md#controlling-dependency-assets).
 
 |Asset type|Short Description|
@@ -45,7 +45,7 @@ To inspect the implementation of NuGet's asset selection, see [`NuGet.Client`'s 
 
 Compile assets are passed to the compiler, and therefore must only contain .NET assemblies.
 NuGet will select compile assets from `ref/{tfm}/`, and if that directory does not exist, it will fall back to `lib/{tfm}`, where `{tfm}` is the target framework that is the closest match the project referencing the package.
-However, in this scenario of creating a .NET package with native libraries, it is recommended to use `ref` because if `lib/` is used, NuGet will think the package is compatible with projects using `packages.config`, but those projects will fail at runtime because the native files will not be copied.
+However, in this scenario of creating a .NET package with native libraries, it is recommended to use `ref/` because if `lib/` is used, NuGet will think the package is compatible with projects using `packages.config`, but those projects will fail at runtime because the native files will not be copied.
 
 The .NET compiler will generate warnings when an assembly targets a different architecture than what the current compilation is targeting, so your package consumers will have the best experience if your `ref/` or `lib/` assemblies target `AnyCPU`.
 
@@ -95,7 +95,7 @@ runtimes/win-arm64/native/contoso.dll
 runtimes/win-x64/native/contoso.dll
 ```
 
-While the `ref/` and `runtimes/any/lib` copies of `Contoso.Native.dll` could be deduplicated into a single `lib/net8.0/Contoso.Native.dll` file, this is not recommended because NuGet will believe this package is compatible with proejcts using `packages.config`, and these projects will fail at runtime when the native `contoso.dll` is not found.
+While the `ref/` and `runtimes/any/lib` copies of `Contoso.Native.dll` could be deduplicated into a single `lib/net8.0/Contoso.Native.dll` file, this is not recommended because NuGet will believe this package is compatible with projects using `packages.config`, and these projects will fail at runtime when the native `contoso.dll` is not found.
 
 ### Example 2
 
