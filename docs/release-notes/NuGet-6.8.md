@@ -33,7 +33,7 @@ NuGet distribution vehicles:
 
 * Suggestion:  NuGet config -list command to list configuration file locations - [#8420](https://github.com/NuGet/Home/issues/8420)
 
-### Breaking changes 
+### Breaking changes
 
 * Remove the NuGetOperationType from NuGet.PackageManagement, use NuGetProjectActionType instead - [#12866](https://github.com/NuGet/Home/issues/12866)
 
@@ -42,20 +42,6 @@ NuGet distribution vehicles:
 * Add nullable annotations to NuGet.Common - [#12775](https://github.com/NuGet/Home/issues/12775)
 
 * Obsolete Clone methods on immutable types - [#12669](https://github.com/NuGet/Home/issues/12669)
-
-* NuGetAudit should warn when no vulnerability data available - [#12610](https://github.com/NuGet/Home/issues/12610)
-
-* Show an infobar for any detected security vulnerabilities in a project or solution. - [#12398](https://github.com/NuGet/Home/issues/12398)
-
-* Warn when vulnerabilities are detected during PackageReference restore  - [#12289](https://github.com/NuGet/Home/issues/12289)
-
-* [Feature]: Add more logging to NuGetSdkResolver - [#11445](https://github.com/NuGet/Home/issues/11445)
-
-* CLI: add protocolVersion argument to nuget source add - [#9170](https://github.com/NuGet/Home/issues/9170)
-
-* Show vulnerabilities in transitive packages for PackageReference type projects in PMUI - [#8756](https://github.com/NuGet/Home/issues/8756)
-
-* Suggestion:  NuGet config -list command to list configuration file locations - [#8420](https://github.com/NuGet/Home/issues/8420)
 
 ### Issues fixed in this release
 
