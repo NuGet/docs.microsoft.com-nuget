@@ -98,10 +98,12 @@ The following table compares the available features for the dotnet and `nuget.ex
 | Manage *global-package* and cache folders | &#10004; | &#10004; | &#10004; | | |
 | Manage NuGet configuration | | &#10004; | &#10004; | | |
 
-(1) Doesn't affect project files. Use the `dotnet.exe` CLI tool instead.
-(2) Works only with `packages.config` file and not with solution (`.sln`) files.
-(3) Various advanced package features are available through the CLI only as they aren't represented in the Visual Studio UI tools.
-(4) Works with `.nuspec` files but not with project files.
+**Feature notes**
+
+- (1) Doesn't affect project files. Use the `dotnet.exe` CLI tool instead.
+- (2) Works only with `packages.config` file and not with solution (`.sln`) files.
+- (3) Various advanced package features are available through the CLI only as they aren't represented in the Visual Studio UI tools.
+- (4) Works with `.nuspec` files but not with project files.
 
 ## Upcoming features
 
