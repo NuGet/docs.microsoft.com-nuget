@@ -1,3 +1,11 @@
+---
+title: Include
+description: Installation steps for the nuget.exe CLI tool on Windows, macOS, and Linux.
+author: JonDouglas
+ms.author: jodou
+ms.date: 11/01/2023
+ms.topic: include
+---
 
 # [Windows](#tab/windows)
 
