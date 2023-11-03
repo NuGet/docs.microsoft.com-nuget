@@ -154,7 +154,7 @@ Azure DevOps Server and TFS 2013 and later automatically restore packages during
 
 NuGet restore through any method honors any version constraints you specify in *packages.config* or the project file.
 
-- In *packages.config*, you can specify an `allowedVersions` range in the dependency. For more information, see [Constrain upgrade versions](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions). For example:
+- In *packages.config*, you can specify an `allowedVersions` range in the dependency. For more information, see [Constraints on upgrade versions](../consume-packages/reinstalling-and-updating-packages.md#constraints-on-upgrade-versions). For example:
 
   ```xml
   <package id="Newtonsoft.json" version="6.0.4" allowedVersions="[6,7)" />

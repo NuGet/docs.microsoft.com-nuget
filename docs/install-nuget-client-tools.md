@@ -109,7 +109,7 @@ The following table compares the available features for the dotnet and `nuget.ex
 
 If you want to preview upcoming NuGet features, install a [Visual Studio Preview](https://www.visualstudio.com/vs/preview/), which works side-by-side with stable releases of Visual Studio. To report problems or share ideas for previews, open an issue on the [NuGet GitHub repository](https://github.com/Nuget/Home/issues).
 
-### Related topics
+## Related articles
 
 - [Install and manage packages by using Visual Studio](consume-packages/install-use-packages-visual-studio.md)
 - [Install and manage packages by using PowerShell](consume-packages/install-use-packages-powershell.md)
