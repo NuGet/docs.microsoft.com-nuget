@@ -30,7 +30,7 @@ Always install the **latest** version of the tool that supports your configurati
 Behaviors can vary slightly based on your operating system distribution.
 
 > [!NOTE]
-> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with [Microsoft's Modern Lifecycle Policy](https://learn.microsoft.com/lifecycle/policies/modern). For more information, see [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac?view=vsmac-2022).
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with [Microsoft's Modern Lifecycle Policy](/lifecycle/policies/modern). For more information, see [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac).
 
 1. Install [Mono version 4.4.2 or later](https://www.mono-project.com/docs/getting-started/install/).
 
