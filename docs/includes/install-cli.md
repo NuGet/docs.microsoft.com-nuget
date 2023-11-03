@@ -3,7 +3,7 @@ title: Include
 description: Installation steps for the nuget.exe CLI tool on Windows, macOS, and Linux.
 author: JonDouglas
 ms.author: jodou
-ms.date: 11/01/2023
+ms.date: 11/03/2023
 ms.topic: include
 ---
 
@@ -28,6 +28,9 @@ Always install the **latest** version of the tool that supports your configurati
 # [macOS / Linux](#tab/macos+linux)
 
 Behaviors can vary slightly based on your operating system distribution.
+
+> [!NOTE]
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with [Microsoft's Modern Lifecycle Policy](https://learn.microsoft.com/lifecycle/policies/modern). For more information, see [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac?view=vsmac-2022).
 
 1. Install [Mono version 4.4.2 or later](https://www.mono-project.com/docs/getting-started/install/).
 

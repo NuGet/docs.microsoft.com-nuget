@@ -3,7 +3,7 @@ title: Install NuGet client tools
 description: Learn how to install and use the dotnet and NuGet client command-line interface (CLI) tools and the Package Manager tool for Visual Studio.
 author: JonDouglas
 ms.author: jodou
-ms.date: 11/01/2023
+ms.date: 11/03/2023
 ms.topic: quickstart
 ---
 
@@ -28,8 +28,8 @@ To get started creating NuGet packages, see these articles:
 | [dotnet.exe](#dotnetexe-cli) | The CLI tool for .NET Core and .NET Standard libraries, and for any [SDK-style project](resources/check-project-format.md) such as one that targets the .NET Framework. This CLI tool is included with the .NET Core SDK and provides core NuGet features on all platforms. In Visual Studio 2017 and later, the dotnet CLI is automatically installed with any .NET Core related workloads. | [.NET Core SDK](https://www.microsoft.com/net/download/) |
 | [nuget.exe](#nugetexe-cli) | The CLI tool for .NET Framework libraries and for any [**non**-SDK-style project](resources/check-project-format.md) such as one that targets .NET Standard libraries. This CLI tool provides all NuGet capabilities on Windows and most features on Mac and Linux when running under [Mono](https://www.mono-project.com/docs/getting-started/install/). | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
 | [Visual Studio](#visual-studio) | On Windows, the **NuGet Package Manager** is included with Visual Studio 2012 and later. Visual Studio provides the [Package Manager UI](consume-packages/install-use-packages-visual-studio.md) and the [Package Manager Console (PowerShell on Windows)](consume-packages/install-use-packages-powershell.md). You can use these tools to run most NuGet operations. | [Visual Studio](https://www.visualstudio.com/downloads/) |
-| [Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough) | On Mac, certain NuGet capabilities are built in directly. Package Manager Console isn't currently available. For other capabilities, use the `dotnet.exe` or `nuget.exe` CLI tools. | [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) |
-| [Visual Studio Code](https://code.visualstudio.com/docs) | On Windows, Mac, and Linux, NuGet capabilities are available through marketplace extensions, or use the `dotnet.exe` or `nuget.exe` CLI tools. | [Visual Studio Code](https://code.visualstudio.com/Download/) |
+| [Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough) | On Mac, certain NuGet capabilities are built in directly. Package Manager Console isn't currently available. For other capabilities, use the dotnet SDK or `nuget.exe` CLI tools. | [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) |
+| [Visual Studio Code](https://code.visualstudio.com/docs) | On Windows, Mac, and Linux, NuGet capabilities are available through marketplace extensions, or use the dotnet SDK or `nuget.exe` CLI tools. | [Visual Studio Code](https://code.visualstudio.com/Download/) |
 
 The [MSBuild CLI](reference/msbuild-targets.md) also restores and creates packages. MSBuild isn't a general-purpose tool for working with NuGet. This CLI tool is primarily useful on build servers. 
 
@@ -37,29 +37,27 @@ Package Manager Console commands work only within Visual Studio on Windows and d
 
 ## Visual Studio
 
-The installation process for the NuGet client tools is based on the version of Visual Studio.
+In Visual Studio 2017 and later, the Visual Studio installer includes the NuGet Package Manager with any workload that employs .NET.
 
-### Install on Visual Studio 2017 and later
+You can also install the Package Manager separately or verify your installation. Run the Visual Studio installer and check the option setting under **Individual Components > Code tools > NuGet package manager**. For more information, see [Install and manage packages in Visual Studio by using the NuGet Package Manager](../consume-packages/install-use-packages-visual-studio.md).
 
-In Visual Studio 2017 and later, the installer includes the NuGet Package Manager with any workload that employs .NET. To install the Package Manager separately, or to verify the installation, run the Visual Studio installer and check the option setting under **Individual Components > Code tools > NuGet package manager**.
-
-### Install on Visual Studio 2015 and earlier
-
-NuGet extensions for Visual Studio 2013 and 2015 can be downloaded from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
-
-For Visual Studio 2010 and earlier, install the **NuGet Package Manager for Visual Studio** extension. If you don't see the extension in the first page of the search results, try changing the **Sort By** dropdown to **Most Downloads** or use an alphabetical sort option.
+> [!NOTE]
+> For earlier versions of Visual Studio, you can download NuGet extensions at [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 
 ## CLI tools
 
 You can use either the dotnet CLI or the `nuget.exe` CLI to support NuGet features in the Visual Studio IDE. The dotnet CLI is installed with some Visual Studio workloads, such as .NET Core. The `nuget.exe` CLI must be installed separately as described earlier. For a feature comparison of the tools, see the [feature availability](#feature-availability) section.
 
-- To target .NET Core or .NET Standard, use the `dotnet.exe` CLI tool. This CLI is required for the SDK-style project format, which uses the [SDK attribute](/dotnet/core/tools/csproj#additions).
+- To target .NET Core or .NET Standard, use the dotnet SDK CLI tool. This CLI is required for the SDK-style project format, which uses the [SDK attribute](/dotnet/core/tools/csproj#additions).
 
-- To target the .NET Framework (non-SDK-style project only), use the `nuget.exe` CLI tool. If the project is migrated from `packages.config` to PackageReference, use the `dotnet.exe` CLI tool instead.
+- To target the .NET Framework (non-SDK-style project only), use the `nuget.exe` CLI tool. If the project is migrated from `packages.config` to PackageReference, use the dotnet SDK CLI tool instead.
 
-### dotnet.exe CLI
+### dotnet SDK CLI
 
-The .NET Core 2.0 CLI tool, `dotnet.exe`, works on all platforms (Windows, Mac, and Linux) and provides core NuGet features such as installing, restoring, and publishing packages. The dotnet CLI provides direct integration with .NET Core project files (such as `.csproj`), which is helpful in most scenarios. This CLI is also built directly for each platform and doesn't require installation of [Mono](https://www.mono-project.com/docs/getting-started/install/).
+The dotnet SDK is the .NET Core 2.0 CLI tool, which works on all platforms (Windows, Mac, and Linux) and provides core NuGet features such as installing, restoring, and publishing packages. The dotnet CLI provides direct integration with .NET Core project files (such as `.csproj`), which is helpful in most scenarios. This CLI is also built directly for each platform and doesn't require installation of [Mono](https://www.mono-project.com/docs/getting-started/install/).
+
+> [!NOTE]
+> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with [Microsoft's Modern Lifecycle Policy](https://learn.microsoft.com/lifecycle/policies/modern). For more information, see [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac?view=vsmac-2022).
 
 #### Install dotnet.exe
 

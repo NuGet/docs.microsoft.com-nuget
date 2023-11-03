@@ -3,7 +3,7 @@ title: Reinstall and update NuGet packages in Visual Studio
 description: Learn how to reinstall and update NuGet packages to address broken package references and broken projects in Visual Studio.
 author: JonDouglas
 ms.author: jodou
-ms.date: 11/02/2023
+ms.date: 11/03/2023
 ms.topic: conceptual
 ---
 
@@ -30,6 +30,14 @@ Here are some common scenarios where you might encounter broken package referenc
 
 You have several choices for how to update and reinstall NuGet packages. Common methods include NuGet Package Manager UI options, the NuGet Package Manager Console, and the NuGet (Command Line Interface) CLI. 
 
+### Package Manager UI
+
+In addition to the Console interface, the Package Manager UI also provides menu options to install, update, and uninstall packages.
+
+- To update a package, open the **Updates** tab, choose one or more packages, then select **Update**.
+
+- To reinstall a package, first uninstall the package and then install it again. Open the **Installed** tab, choose a package and record its name, then select **Uninstall**. Switch to the **Browse** tab and search for the package name, choose the package, then select **Install**.
+
 ### Package Manager Console
 
 You can access the Package Manager Console under **Tools** > **NuGet Package Manager** > **Package Manager Console**.
@@ -39,14 +47,6 @@ You can access the Package Manager Console under **Tools** > **NuGet Package Man
 - To reinstall a package, you can use the same command with the `-reinstall` parameter. This approach is the easiest option, if it's compatible with your configuration.
 
 For more information, see the [Update-Package command](#update-package-command) and [Package reinstall considerations](#package-reinstall-considerations) sections.
-
-### Package Manager UI
-
-In addition to the Console interface, the Package Manager UI also provides menu options to install, update, and uninstall packages.
-
-- To update a package, open the **Updates** tab, choose one or more packages, then select **Update**.
-
-- To reinstall a package, first uninstall the package and then install it again. Open the **Installed** tab, choose a package and record its name, then select **Uninstall**. Switch to the **Browse** tab and search for the package name, choose the package, then select **Install**.
 
 ### NuGet CLI
 
