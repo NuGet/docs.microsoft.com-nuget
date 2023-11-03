@@ -15,7 +15,7 @@ Whether your project is SDK-style or not depends on the method used to create th
 
 | Project&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default project format | CLI tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Notes |
 |:------------- |:-------------|:-----|:-----|
-| .NET Standard | SDK-style | [dotnet SDK(../install-nuget-client-tools.md#dotnet-sdk) | Projects created prior to Visual Studio 2017 are non-SDK-style. Use `nuget.exe` CLI. |
+| .NET Standard | SDK-style | [dotnet SDK](../install-nuget-client-tools.md#dotnet-sdk) | Projects created prior to Visual Studio 2017 are non-SDK-style. Use `nuget.exe` CLI. |
 | .NET Core | SDK-style | [dotnet SDK](../install-nuget-client-tools.md#dotnet-sdk) | Projects created prior to Visual Studio 2017 are non-SDK-style. Use `nuget.exe` CLI. |
 | .NET Framework | Non-SDK-style | [nuget.exe CLI](../install-nuget-client-tools.md#nugetexe-cli) | .NET Framework projects created using other methods may be SDK-style projects. For these, use [dotnet SDK](../install-nuget-client-tools.md#dotnet-sdk) instead. |
 | [Migrated](../consume-packages/migrate-packages-config-to-package-reference.md) .NET project | Non-SDK-style| To create packages, use [msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration) to create packages. | To create packages, `msbuild -t:pack` is recommended. Otherwise, use the [dotnet SDK](../install-nuget-client-tools.md#dotnet-sdk). Migrated projects are not SDK-style projects. |
