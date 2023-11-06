@@ -29,9 +29,9 @@ The *NuGet Client SDK* refers to a group of NuGet packages:
 * [`NuGet.Localization`](https://www.nuget.org/packages/NuGet.Localization) - NuGet localization package.
 * [`NuGet.PackageManagement`](https://www.nuget.org/packages/NuGet.PackageManagement) - NuGet Package Management functionality for Visual Studio installation flow.
 * [`NuGet.Packaging.Core`](https://www.nuget.org/packages/NuGet.Packaging.Core) - The (former home to) core data structures for `NuGet.Packaging`.
-* [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) - Used to interact with NuGet packages. `NuGet.Protocol` depends on this package.
+* [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) - Provides a set of APIs to interact with `.nupkg` and `.nuspec` files from a stream. `NuGet.Protocol` depends on this package.
 * [`NuGet.ProjectModel`](https://www.nuget.org/packages/NuGet.ProjectModel) - NuGet's core types and interfaces for PackageReference-based restore, such as lock files, assets file and internal restore models.
-* [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) - Used to interact with HTTP and file-based NuGet feeds.
+* [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) - Provides a set of APIs interact with HTTP and file-based NuGet feeds.
 * [`NuGet.Resolver`](https://www.nuget.org/packages/NuGet.Resolver) - NuGet's dependency resolver for packages.config based projects.
 * [`NuGet.Versioning`](https://www.nuget.org/packages/NuGet.Versioning) - NuGet's implementation of Semantic Versioning.
 
