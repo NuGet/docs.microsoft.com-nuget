@@ -38,9 +38,9 @@ If your target repository is on `https://machine/repo` that's running [NuGet.Ser
 
   Displays help information for the command.
 
-- **`-NoCache`**
+- **`-NoHttpCache`**
 
-  Prevents NuGet from using cached packages. See [Managing the global packages and cache folders](../../consume-packages/managing-the-global-packages-and-cache-folders.md).
+  Prevents NuGet from using http cached packages. See [Managing the global packages and cache folders](../../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
 - **`-Noop`**
 
@@ -67,7 +67,7 @@ Also see [Environment variables](cli-ref-environment-variables.md)
 ## Examples
 
 ```cli
-nuget mirror packages.config  https://MyRepo/nuget https://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -nocache
+nuget mirror packages.config  https://MyRepo/nuget https://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -nohttpcache
 
 nuget mirror Microsoft.AspNet.Mvc https://MyRepo/nuget https://MyRepo/api/v2/package -version 4.0.20505.0
 

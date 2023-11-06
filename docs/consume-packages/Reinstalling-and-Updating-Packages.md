@@ -1,52 +1,75 @@
 ---
-title: Reinstalling and Updating NuGet Packages
-description: Details on when it's necessary to reinstall and update packages, as with broken package references in Visual Studio.
+title: Reinstall and update NuGet packages in Visual Studio
+description: Learn how to reinstall and update NuGet packages to address broken package references and broken projects in Visual Studio.
 author: JonDouglas
 ms.author: jodou
-ms.date: 09/03/2021
+ms.date: 11/03/2023
 ms.topic: conceptual
 ---
 
-# How to reinstall and update packages
+# Reinstall and update NuGet packages in Visual Studio
+
+Sometimes package references can break within a Visual Studio project. Uninstalling and reinstalling the same version of the package often restores the references to working order. Updating a package, which installs an updated version, can also resolve the issue. This article describes how to reinstall and update NuGet packages to address broken package references and broken projects.
 
 > [!NOTE]
-> The following section applies to [packages.config](../reference/packages-config.md) based projects only. [PackageReference](../consume-packages/Package-References-in-Project-Files.md) projects automatically fix broken references when restore is run.
+> The guidance in this article applies only to projects that use the [packages.config](../reference/packages-config.md) management format. For [PackageReference](../consume-packages/Package-References-in-Project-Files.md) projects, a restore operation automatically fixes broken references.
 
-There are a number of situations, described below under [When to Reinstall a Package](#when-to-reinstall-a-package), where references to a package might get broken within a Visual Studio project. In these cases, uninstalling and then reinstalling the same version of the package will restore those references to working order. Updating a package simply means installing an updated version, which often restores a package to working order.
+## Common scenarios
 
-In Visual Studio, the Package Manager Console provides many flexible options for updating and reinstalling packages.
+Here are some common scenarios where you might encounter broken package references in your Visual Studio project.
 
-Updating and reinstalling packages is accomplished as follows:
+| Scenario | Description | Resolution |
+|---|---|---|
+| **Broken references after package restore** | You open your Visual Studio project and restore NuGet packages, but broken package references remain. | To fix the references, try reinstalling each package separately. |
+| **Broken project due to deleted files** | Deleted (missing) package files cause your project to break. NuGet doesn't prevent deleting items that you add from packages. It can be easy to inadvertently modify contents installed from a package and break your project. | To restore your project, try reinstalling the affected packages. |
+| **Broken project after package update** | A package update breaks your project. Companion updates to a dependency package generally cause this type of failure. | To restore the state of the dependency to its previous working order, try reinstalling the specific dependent package. |
+| **Broken references after project retarget or upgrade** | A project retarget or upgrade process causes broken package references. After you retarget your project, NuGet shows a build error. Build warnings list packages that might need to be reinstalled. Or, after you upgrade your project, NuGet shows an error in the project upgrade log. The log file lists packages that might need to be reinstalled. | To resolve issues due to a change in target framework, try reinstalling one or more packages. |
+| **Package changes under development** | Package authors often need to reinstall the same version of a package they're currently developing to test their changes. | The NuGet Package Manager Console in Visual Studio provides flexible options for updating and reinstalling packages. To reinstall a package under development, you can use the `Update-Package -reinstall` command. |
 
-| Method | Update | Reinstall |
-| --- | --- | --- |
-| Package Manager console (described in [Using Update-Package](#using-update-package)) | `Update-Package` command | `Update-Package -reinstall` command |
-| Package Manager UI | On the **Updates** tab, select one or more packages and select **Update** | On the **Installed** tab, select a package, record its name, then select **Uninstall**. Switch to the **Browse** tab, search for the package name, select it, then select **Install**). |
-| nuget.exe CLI | `nuget update` command | For all packages, delete the package folder, then run `nuget install`. For a single package, delete the package folder and use `nuget install <id>` to reinstall the same one. |
+## Implementation options
+
+You have several choices for how to update and reinstall NuGet packages. Common methods include NuGet Package Manager UI options, the NuGet Package Manager Console, and the NuGet (Command Line Interface) CLI. 
+
+### Package Manager UI
+
+In addition to the Console interface, the Package Manager UI also provides menu options to install, update, and uninstall packages.
+
+- To update a package, open the **Updates** tab, choose one or more packages, then select **Update**.
+
+- To reinstall a package, first uninstall the package and then install it again. Open the **Installed** tab, choose a package and record its name, then select **Uninstall**. Switch to the **Browse** tab and search for the package name, choose the package, then select **Install**.
+
+### Package Manager Console
+
+You can access the Package Manager Console under **Tools** > **NuGet Package Manager** > **Package Manager Console**.
+
+- To update a package, the Package Manager Console provides the `Update-Package` command. 
+
+- To reinstall a package, you can use the same command with the `-reinstall` parameter. This approach is the easiest option, if it's compatible with your configuration.
+
+For more information, see the [Update-Package command](#update-package-command) and [Package reinstall considerations](#package-reinstall-considerations) sections.
+
+### NuGet CLI
+
+The NuGet CLI, `nuget.exe`, is the command-line utility for Windows that provides all NuGet capabilities. 
+
+- To update an installed package, run the `nuget update` command.
+
+- To reinstall all NuGet packages, delete the package folder and then run the `nuget install` command.
+
+- To reinstall a single package, delete the package folder and then run the `nuget install <id>` command, where the `<id>` argument is the ID of the specific package.
 
 > [!NOTE]
-> For the dotnet CLI, the equivalent procedure is not required. In a similar scenario, you can [restore packages with the dotnet CLI](package-restore.md#restore-using-the-dotnet-cli).
+> For the **dotnet CLI**, the equivalent procedure isn't required. When you run the `dotnet restore` command, the dotnet CLI uses NuGet to determine dependencies and download any necessary NuGet packages. For more information, see [Restore NuGet packages with the dotnet CLI](package-restore.md#restore-using-the-dotnet-cli).
 
-In this article:
+## Constraints on upgrade versions
 
-- [When to Reinstall a Package](#when-to-reinstall-a-package)
-- [Constraining upgrade versions](#constraining-upgrade-versions)
+By default, reinstalling or updating a package _always_ installs the latest version available from the package source. However, projects that use the `packages.config` management format can specifically limit the allowed NuGet package version range.
 
-## When to Reinstall a Package
+Suppose your application works only with version 1.x of a package, but not with version 2.0 or later, due to a major change in the package API. To ensure your application works as expected, you want to constrain NuGet package upgrades to versions 1.x only. The limitation helps to prevent accidental updates that might break your application.
 
-1. **Broken references after package restore**: If you've opened a project and restored NuGet packages, but still see broken references, try reinstalling each of those packages.
-1. **Project is broken due to deleted files**: NuGet does not prevent you from removing items added from packages, so it's easy to inadvertently modify contents installed from a package and break your project. To restore the project, reinstall the affected packages.
-1. **Package update broke the project**: If an update to a package breaks a project, the failure is generally caused by a dependency package which may have also been updated. To restore the state of the dependency, reinstall that specific package.
-1. **Project retargeting or upgrade**: This can be useful when a project has been retargeted or upgraded and if the package requires reinstallation due to the change in target framework. NuGet shows a build error in such cases immediately after project retargeting, and subsequent build warnings let you know that the package may need to be reinstalled. For project upgrade, NuGet shows an error in the Project Upgrade Log.
-1. **Reinstalling a package during its development**: Package authors often need to reinstall the same version of package they're developing to test the behavior. The `Install-Package` command does not provide an option to force a reinstall, so use `Update-Package -reinstall` instead.
+To set a constraint, open the `packages.config` file in a text editor. Locate the dependency that you want to limit, and add the `allowedVersions` attribute with your desired version range.
 
-## Constraining upgrade versions
-
-By default, reinstalling or updating a package *always* installs the latest version available from the package source.
-
-In projects using the `packages.config` management format, however, you can specifically constrain the version range. For example, if you know that your application works only with version 1.x of a package but not 2.0 and above, perhaps due to a major change in the package API, then you'd want to constrain upgrades to 1.x versions. This prevents accidental updates that would break the application.
-
-To set a constraint, open `packages.config` in a text editor, locate the dependency in question, and add the `allowedVersions` attribute with a version range. For example, to constrain updates to version 1.x, set `allowedVersions` to `[1,2)`:
+The following example shows how to constrain updates to version 1.x by setting the `allowedVersions` attribute to `[1,2)`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -59,63 +82,104 @@ To set a constraint, open `packages.config` in a text editor, locate the depende
 
 In all cases, use the notation described in [Package versioning](../concepts/package-versioning.md#version-ranges).
 
-## Using Update-Package
+## Update-Package command
 
-Being mindful of the [Considerations](#considerations) described below, you can easily reinstall any package using the [Update-Package command](../reference/ps-reference/ps-ref-update-package.md) in the Visual Studio Package Manager Console (**Tools** > **NuGet Package Manager** > **Package Manager Console**).
+The [Update-Package command](../reference/ps-reference/ps-ref-update-package.md) in the Package Manager Console is the easiest way to reinstall a package and address broken references. However, this approach isn't usable in all scenarios. You can use the command to update an installed package, but not to do an initial install. If you try to update or reinstall a package that isn't already installed in the configuration, the command returns an error. Be sure to review the [Package reinstall considerations](#package-reinstall-considerations) section before working with the command.
 
-```ps
+Updating packages in a project or solution by using [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding prerelease packages). Projects that use the `packages.config` management format can limit upgrade versions as described in [Constraints on upgrade versions](#constraints-on-upgrade-versions).
+
+The following sections provide examples for working with the command.
+
+### Reinstall package options
+
+Here's a basic usage of the command to do a reinstall. To identify a specific NuGet package, you can use the optional `-Id` parameter.
+
+```powershell
+# Reinstall the package named <package_name>
 Update-Package -Id <package_name> –reinstall
 ```
 
-Using this command is much easier than removing a package and then trying to locate the same package in the NuGet gallery with the same version. Note that the `-Id` switch is optional.
+Using the `Update-Package` command is easier than removing a package and then trying to locate the same package in the NuGet gallery with the same version. 
 
-The same command without `-reinstall` updates a package to a newer version, if applicable. The command gives an error if the package in question is not already installed in a project; that is, `Update-Package` does not install packages directly.
+### Update package options
 
-```ps
+The same command without the `-reinstall` parameter updates a package to a newer version, if applicable. The command returns an error if the specified package isn't already installed in a project.
+
+```powershell
+# Update the package named <package_name>
 Update-Package <package_name>
 ```
 
-By default, `Update-Package` affects all projects in a solution. To limit the action to a specific project, use the `-ProjectName` switch, using the name of the project as it appears in Solution Explorer:
+### Project and solution options
 
-```ps
-# Reinstall the package in just MyProject
+By default, the `Update-Package` command affects all projects in a solution. To limit the action to a specific project, use the `-ProjectName` parameter. Provide the name of the project as it appears in Visual Studio Solution Explorer.
+
+The following command reinstalls a NuGet package for a specific project in your solution. The name of the specific NuGet package to reinstall is provided in the `<package_name>` parameter.
+
+```powershell
+# Reinstall the package named <package_name> in MyProject only
 Update-Package <package_name> -ProjectName MyProject -reinstall
 ```
 
-To *update* all packages in a project (or reinstall using `-reinstall`), use `-ProjectName` without specifying any particular package:
+If you want to reinstall all packages in your project, use the `-ProjectName` parameter by don't specify any particular package. You can follow this same approach to update the packages in your project, as shown in this example:
 
-```ps
+```powershell
+# Update all packages in MyProject only
 Update-Package -ProjectName MyProject
 ```
 
-To update all packages in a solution, just use `Update-Package` by itself with no other arguments or switches. Use this form carefully, because it can take considerable time to perform all the updates:
+To update all packages in a solution, just use the `Update-Package` command by itself with no other arguments or parameters.
 
-```ps
-# Updates all packages in all projects in the solution
+> [!IMPORTANT]
+> Be sure to use the following form of the command carefully. The command process can take considerable time to perform all of the updates.
+
+```powershell
+# Update all packages in all projects in the solution
 Update-Package 
 ```
 
-Updating packages in a project or solution using [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding pre-release packages). Projects that use `packages.config` can, if desired, limit update versions as described below in [Constraining upgrade versions](#constraining-upgrade-versions).
+## Package reinstall considerations
 
-For full details on the command, see the [Update-Package](../reference/ps-reference/ps-ref-update-package.md) reference.
+If you intend to use the `Update-Package` command to reinstall packages, review the following considerations to ensure compatibility with your configuration scenario.
 
-### Considerations
+- Packages and their dependencies might not support a retargeted project target framework.
+- When the `requireReinstallation` attribute is set to `true`, Visual Studio issues build warnings for affected packages.
+- Reinstall of a package and version constraints can introduce dependency version compatibility issues. 
+- Reinstall of a specific package can cause dependent packages to break.
 
-The following may be affected when reinstalling a package:
+### Package doesn't support project target framework
 
-1. **Reinstalling packages according to project target framework retargeting**
-    - In a simple case, just reinstalling a package using `Update-Package –reinstall <package_name>` works. A package that is installed against an old target framework gets uninstalled and the same package gets installed against the current target framework of the project.
-    - In some cases, there may be a package that does not support the new target framework.
-        - If a package supports portable class libraries (PCLs) and the project is retargeted to a combination of platforms no longer supported by the package, references to the package will be missing after reinstalling.
-        - This can surface for packages you're using directly or for packages installed as dependencies. It's possible for the package you're using directly to support the new target framework while its dependency does not.
-        - If reinstalling packages after retargeting your application results in build or runtime errors, you may need to revert your target framework or search for alternative packages that properly support your new target framework.
+If you retarget your project target framework, one or more packages might not support the new target configuration.
 
-1. **requireReinstallation attribute added in packages.config after project retargeting or upgrade**
-    - If NuGet detects that packages were affected by retargeting or upgrading a project, it adds a `requireReinstallation="true"` attribute in  `packages.config` to all affected package references. Because of this, each subsequent build in Visual Studio raises build warnings for those packages so you can remember to reinstall them.
+Usually, reinstalling a package with the `Update-Package –reinstall <package_name>` command works. A package installed against an old target framework is uninstalled and the same package is installed against the new target framework of the project.
 
-1. **Reinstalling packages with dependencies**
-    - `Update-Package –reinstall` reinstalls the same version of the original package, but installs the latest version of dependencies unless specific version constraints are provided. This allows you to update only the dependencies as required to fix an issue. However, if this rolls a dependency back to an earlier version, you can use `Update-Package <dependency_name>` to reinstall that one dependency without affecting the dependent package.
-    - `Update-Package –reinstall <packageName> -ignoreDependencies` reinstalls the same version of the original package but does not reinstall dependencies. Use this when updating package dependencies might result in a broken state
+In some cases, a package might not support the new target framework. Here are some of the issues you might encounter:
 
-1. **Reinstalling packages when dependent versions are involved**
-    - As explained above, reinstalling a package does not change versions of any other installed packages that depend on it. It's possible, then, that reinstalling a dependency could break the dependent package.
+- If a package supports portable class libraries (PCLs), and you retarget the project to a combination of platforms no longer supported by the package, references to the package can be missing after reinstalling.
+
+- This issue can surface for packages you use directly or for packages installed as dependencies. Any package that you use directly might support the new target framework while their dependencies don't.
+
+- If reinstalling packages after retargeting your application results in build or runtime errors, you might need to revert your target framework or search for alternative packages that properly support your new target framework.
+
+### requireReinstallation attribute set to true
+
+After you retarget your project target framework or upgrade NuGet packages, NuGet might add the `requireReinstallation` attribute to the `packages.config` file for your project. If NuGet detects affected packages during the retargeting or upgrading process, it adds a `requireReinstallation="true"` attribute to the `packages.config` file for all affected package references. As a result, each subsequent build of your project in Visual Studio raises build warnings for those packages. The warnings are presented as a reminder to reinstall the affected package.
+
+### Package dependency version incompatibility
+
+The `Update-Package –reinstall` command reinstalls the **same** version of an installed package and the **latest** version of any dependencies. To address version incompatibility issues, you can set version range constraints to control the configuration. NuGet adheres to the constraints and updates the package dependencies to newer versions only as required to fix an issue.
+
+- If your constraint settings cause a dependency to revert to an earlier version during package reinstall, you can address the issue with the `Update-Package <dependency_name>` command. This command reinstalls the specified dependency without affecting the dependent package.
+
+- You can also use the `Update-Package –reinstall <packageName> -ignoreDependencies` command. This option reinstalls the same version of the original package, but it doesn't reinstall dependencies. Use this approach when updating package dependencies might result in a broken configuration state.
+
+### Broken dependent package
+
+When you reinstall a specific package, any installed packages that depend on the reinstalled package aren't updated. The versions of these other installed packages remain the same. As a result, reinstalling a dependency can break a dependent package.
+
+## Related articles
+
+- Review the [packages.config](../reference/packages-config.md) management format.
+- Implement [PackageReference](../consume-packages/Package-References-in-Project-Files.md) in project files.
+- Use the [Update-Package command](../reference/ps-reference/ps-ref-update-package.md) in the NuGet Package Manager Console in Visual Studio.
+- Explore [package versioning](../concepts/package-versioning.md#version-ranges) notation formats.
