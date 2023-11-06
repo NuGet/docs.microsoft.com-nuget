@@ -25,7 +25,7 @@ The *NuGet Client SDK* refers to a group of NuGet packages:
 * [`NuGet.Credentials`](https://www.nuget.org/packages/NuGet.Credentials) - NuGet client's authentication models.
 * [`NuGet.DependencyResolver.Core`](https://www.nuget.org/packages/NuGet.DependencyResolver.Core) - NuGet's PackageReference dependency resolver implementation.
 * [`NuGet.Frameworks`](https://www.nuget.org/packages/NuGet.Frameworks) - NuGet's understanding of target frameworks.
-* [`NuGet.LibraryModel`](https://www.nuget.org/packages/NuGet.Frameworks) - NuGet's types and interfaces for understanding dependencies.
+* [`NuGet.LibraryModel`](https://www.nuget.org/packages/NuGet.LibraryModel) - NuGet's types and interfaces for understanding dependencies.
 * [`NuGet.Localization`](https://www.nuget.org/packages/NuGet.Localization) - NuGet localization package.
 * [`NuGet.PackageManagement`](https://www.nuget.org/packages/NuGet.PackageManagement) - NuGet Package Management functionality for Visual Studio installation flow.
 * [`NuGet.Packaging.Core`](https://www.nuget.org/packages/NuGet.Packaging.Core) - The (former home to) core data structures for `NuGet.Packaging`.
