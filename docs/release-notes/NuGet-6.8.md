@@ -1,8 +1,8 @@
 ---
 title: NuGet 6.8 Release Notes
 description: Release notes for NuGet 6.8 including new features, bug fixes, and DCRs.
-author: <TODO: GitHubAlias>
-ms.author: <TODO: MicrosoftAlias>
+author: nkolev92
+ms.author: nikolev
 ms.date: 10/30/2023
 ms.topic: conceptual
 ---
@@ -13,25 +13,18 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.8**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.8](https://visualstudio.microsoft.com/downloads/) | [<TODO: Full SDK Version>](https://dotnet.microsoft.com/download/dotnet-core/<TODO: SDKMajorMinorVersionOnly)<sup>1</sup> |
+| [**6.8**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.8](https://visualstudio.microsoft.com/downloads/) | [8.0.100](https://dotnet.microsoft.com/download/dotnet-core/8.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with.NET Core workload
 
 ## Summary: What's New in 6.8
 
-* NuGetAudit should warn when no vulnerability data available - [#12610](https://github.com/NuGet/Home/issues/12610)
+* [NuGetAudit](../concepts/Auditing-Packages.md) - notifications for package vulnerabilities
+  * Warn when vulnerabilities are detected during PackageReference restore  - [#12289](https://github.com/NuGet/Home/issues/12289)
+  * Show vulnerabilities in transitive packages for PackageReference type projects in PMUI - [#8756](https://github.com/NuGet/Home/issues/8756)
+  * Show an infobar in Solution Explorer for any detected security vulnerabilities in a project or solution - [#12398](https://github.com/NuGet/Home/issues/12398)
 
-* Show an infobar for any detected security vulnerabilities in a project or solution. - [#12398](https://github.com/NuGet/Home/issues/12398)
-
-* Warn when vulnerabilities are detected during PackageReference restore  - [#12289](https://github.com/NuGet/Home/issues/12289)
-
-* [Feature]: Add more logging to NuGetSdkResolver - [#11445](https://github.com/NuGet/Home/issues/11445)
-
-* CLI: add protocolVersion argument to nuget source add - [#9170](https://github.com/NuGet/Home/issues/9170)
-
-* Show vulnerabilities in transitive packages for PackageReference type projects in PMUI - [#8756](https://github.com/NuGet/Home/issues/8756)
-
-* Suggestion:  NuGet config -list command to list configuration file locations - [#8420](https://github.com/NuGet/Home/issues/8420)
+* Add [protocolVersion argument](../reference/cli-reference/cli-ref-sources.md#options) to nuget source add - [#9170](https://github.com/NuGet/Home/issues/9170)
 
 ### Breaking changes
 
@@ -66,6 +59,8 @@ NuGet distribution vehicles:
 * 16.10: remove package source 1.0 service. remove obsolete APIs (in nuget.configuration that we added in 16.8) - [#10015](https://github.com/NuGet/Home/issues/10015)
 
 **Bugs:**
+
+* Add more logging to NuGetSdkResolver - [#11445](https://github.com/NuGet/Home/issues/11445)
 
 * Upgrade Newtonsoft.Json reference to 13.0.3 - [#12858](https://github.com/NuGet/Home/issues/12858)
 
@@ -179,33 +174,3 @@ Thank you to all the contributors who helped make this NuGet release awesome!
   * [5250](https://github.com/NuGet/NuGet.Client/pull/5250) Don't allocate temporaries in FrameworkNameProvider.GetVersionString
 * [drewnoakes](https://github.com/drewnoakes)
   * [5271](https://github.com/NuGet/NuGet.Client/pull/5271) Remove allocations from PackageSource.Source setter
-**TODO: Issues that could not be categorized. Make sure the issue has the correct milestone (if required) or an appropriate Type label - StillOpens:**
-
-* Badly specified framework leads to a non coded error in Visual Studio - [#12943](https://github.com/NuGet/Home/issues/12943)
-
-* Theme: Secure Supply Chain with NuGet - [#12502](https://github.com/NuGet/Home/issues/12502)
-
-* [Epic] Support SBOMs for NuGet packages - [#12497](https://github.com/NuGet/Home/issues/12497)
-
-* [Epic]: Add support for central package management to Visual Studio Package Manager UI - [#12231](https://github.com/NuGet/Home/issues/12231)
-
-* [ArPow] NuGet.Client should publish source-build intermediate packages - [#11059](https://github.com/NuGet/Home/issues/11059)
-
-* [Epic] NuGet Package Vulnerability Auditing - [#8087](https://github.com/NuGet/Home/issues/8087)
-
-* PM UI multi targeting experience is incomplete - [#4681](https://github.com/NuGet/Home/issues/4681)
-
-**TODO: Issues that could not be categorized. Make sure the issue has the correct milestone (if required) or an appropriate Type label - BreakingChanges:**
-
-* Remove the NuGetOperationType from NuGet.PackageManagement, use NuGetProjectActionType instead - [#12866](https://github.com/NuGet/Home/issues/12866)
-
-* Changing PackageVulnerabilityInfo severity from int to enum - [#12781](https://github.com/NuGet/Home/issues/12781)
-
-* Add nullable annotations to NuGet.Common - [#12775](https://github.com/NuGet/Home/issues/12775)
-
-* Obsolete Clone methods on immutable types - [#12669](https://github.com/NuGet/Home/issues/12669)
-
-**TODO: Issues that could not be categorized. Make sure the issue has the correct milestone (if required) or an appropriate Type label - Nones:**
-
-* Contributing: Is the Windows 10 SDK actually needed? - [#10096](https://github.com/NuGet/Home/issues/10096)
-
