@@ -28,6 +28,8 @@ NuGet distribution vehicles:
 
 * Add [protocolVersion argument](../reference/cli-reference/cli-ref-sources.md#options) to nuget source add - [#9170](https://github.com/NuGet/Home/issues/9170)
 
+* Conditional package updating is respected in Visual Studio [#5420](https://github.com/NuGet/NuGet.Client/pull/5420)
+
 ### Breaking changes
 
 * Remove the NuGetOperationType from NuGet.PackageManagement, use NuGetProjectActionType instead - [#12866](https://github.com/NuGet/Home/issues/12866)
