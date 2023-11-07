@@ -24,6 +24,8 @@ NuGet distribution vehicles:
   * Show vulnerabilities in transitive packages for PackageReference type projects in PMUI - [#8756](https://github.com/NuGet/Home/issues/8756)
   * Show an infobar in Solution Explorer for any detected security vulnerabilities in a project or solution - [#12398](https://github.com/NuGet/Home/issues/12398)
 
+* Add [`allowInsecureConnections`](../reference/nuget-config-file.md#packagesources) property for package sources in NuGet.config, allowing opt-out of "HTTPs everywhere" warnings - [#12786](https://github.com/NuGet/Home/issues/12786)
+
 * Add [protocolVersion argument](../reference/cli-reference/cli-ref-sources.md#options) to nuget source add - [#9170](https://github.com/NuGet/Home/issues/9170)
 
 ### Breaking changes
@@ -43,8 +45,6 @@ NuGet distribution vehicles:
 * NuGetAudit: read vulnerability files with System.Text.Json - [#12855](https://github.com/NuGet/Home/issues/12855)
 
 * `PackageSourceMapping` API doesn't follow best practices for returning lists - [#12794](https://github.com/NuGet/Home/issues/12794)
-
-* Opt-out of "HTTPs everywhere" : add an allowInsecureConnections property in NuGet.Config - [#12786](https://github.com/NuGet/Home/issues/12786)
 
 * Signing:  enable `X509Chain.Build(...)` retry behavior by default - [#12592](https://github.com/NuGet/Home/issues/12592)
 
