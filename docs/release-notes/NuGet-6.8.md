@@ -38,8 +38,6 @@ NuGet distribution vehicles:
 
 ### Issues fixed in this release
 
-**DCRs:**
-
 * NuGetAudit should not warn when no vulnerability data is available - [#12875](https://github.com/NuGet/Home/issues/12875)
 
 * NuGetAudit: read vulnerability files with System.Text.Json - [#12855](https://github.com/NuGet/Home/issues/12855)
@@ -57,8 +55,6 @@ NuGet distribution vehicles:
 * Remove "Checking compatibility..." log messages from RestoreTask - [#10383](https://github.com/NuGet/Home/issues/10383)
 
 * 16.10: remove package source 1.0 service. remove obsolete APIs (in nuget.configuration that we added in 16.8) - [#10015](https://github.com/NuGet/Home/issues/10015)
-
-**Bugs:**
 
 * Add more logging to NuGetSdkResolver - [#11445](https://github.com/NuGet/Home/issues/11445)
 
