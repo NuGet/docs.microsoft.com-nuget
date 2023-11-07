@@ -124,49 +124,39 @@ NuGet distribution vehicles:
 
 Thank you to all the contributors who helped make this NuGet release awesome!
 
-* [MichaelSimons](https://github.com/MichaelSimons)
-  * [5418](https://github.com/NuGet/NuGet.Client/pull/5418) Fix source-build CI regression
-* [MichaelSimons](https://github.com/MichaelSimons)
-  * [5414](https://github.com/NuGet/NuGet.Client/pull/5414) Remove unnecessary source-build patch
-* [mthalman](https://github.com/mthalman)
-  * [5385](https://github.com/NuGet/NuGet.Client/pull/5385) Update Newtonsoft.Json from 13.0.1 to 13.0.3
-* [timheuer](https://github.com/timheuer)
-  * [5375](https://github.com/NuGet/NuGet.Client/pull/5375) Update VS Options add/remove package source icons to VS2022 styling
-* [dotnokato](https://github.com/dotnokato)
-  * [5002](https://github.com/NuGet/NuGet.Client/pull/5002) CLI: Add -protocolVersion option to nuget sources add/update commands
-* [oleksandr-didyk](https://github.com/oleksandr-didyk)
-  * [5352](https://github.com/NuGet/NuGet.Client/pull/5352) allow empty sb intermediate
-* [drolevar](https://github.com/drolevar)
-  * [5346](https://github.com/NuGet/NuGet.Client/pull/5346) Add .vdproj to the exclusion list
-* [Greybird](https://github.com/Greybird)
-  * [5335](https://github.com/NuGet/NuGet.Client/pull/5335) Remove projects from list package output
-* [NikolaMilosavljevic](https://github.com/NikolaMilosavljevic)
-  * [5322](https://github.com/NuGet/NuGet.Client/pull/5322) Fix incorrect package version property for System.Security.Cryptograp…
-* [drewnoakes](https://github.com/drewnoakes)
+* [drewnoakes](https://github.com/NuGet/NuGet.Client/pull/5311)
   * [5311](https://github.com/NuGet/NuGet.Client/pull/5311) Null annotate PackageDependencyInfo
-* [drewnoakes](https://github.com/drewnoakes)
   * [5310](https://github.com/NuGet/NuGet.Client/pull/5310) Reduce size of LockFileTargetLibrary
-* [drewnoakes](https://github.com/drewnoakes)
   * [5304](https://github.com/NuGet/NuGet.Client/pull/5304) Improve hashing and equality allocations/performance
-* [vishavpandhi](https://github.com/vishavpandhi)
-  * [5283](https://github.com/NuGet/NuGet.Client/pull/5283) [DartLab B2B feature] dropname for base VS should be retrieved using the baseline.
-* [v-chayan](https://github.com/v-chayan)
-  * [5278](https://github.com/NuGet/NuGet.Client/pull/5278) Remove redundant SourceBuildTrimNetFrameworkTargets property
-* [drewnoakes](https://github.com/drewnoakes)
   * [5267](https://github.com/NuGet/NuGet.Client/pull/5267) Reduce allocations in NuGet.DependencyResolver.Tracker
-* [marcin-krystianc](https://github.com/marcin-krystianc)
-  * [5293](https://github.com/NuGet/NuGet.Client/pull/5293) DetectAndMarkAmbiguousCentralTransitiveDependencies should be exhaustive and deterministic
-* [drewnoakes](https://github.com/drewnoakes)
   * [5232](https://github.com/NuGet/NuGet.Client/pull/5232) Reduce allocations in RuntimeGraph
-* [Erarndt](https://github.com/Erarndt)
-  * [5218](https://github.com/NuGet/NuGet.Client/pull/5218) Reduce some allocations in CreateGraphNode.
-* [drewnoakes](https://github.com/drewnoakes)
   * [5279](https://github.com/NuGet/NuGet.Client/pull/5279) Reduce allocations in VersionRangeFormatter
-* [drewnoakes](https://github.com/drewnoakes)
   * [5248](https://github.com/NuGet/NuGet.Client/pull/5248) Reduce allocations in RuntimeDescription and RuntimeDependencySet
-* [drewnoakes](https://github.com/drewnoakes)
   * [5269](https://github.com/NuGet/NuGet.Client/pull/5269) Don't box enumerators in ContentItemCollection
-* [drewnoakes](https://github.com/drewnoakes)
   * [5250](https://github.com/NuGet/NuGet.Client/pull/5250) Don't allocate temporaries in FrameworkNameProvider.GetVersionString
-* [drewnoakes](https://github.com/drewnoakes)
   * [5271](https://github.com/NuGet/NuGet.Client/pull/5271) Remove allocations from PackageSource.Source setter
+* [MichaelSimons](https://github.com/NuGet/NuGet.Client/pull/5418)
+  * [5418](https://github.com/NuGet/NuGet.Client/pull/5418) Fix source-build CI regression
+  * [5414](https://github.com/NuGet/NuGet.Client/pull/5414) Remove unnecessary source-build patch
+* [mthalman](https://github.com/NuGet/NuGet.Client/pull/5385)
+  * [5385](https://github.com/NuGet/NuGet.Client/pull/5385) Update Newtonsoft.Json from 13.0.1 to 13.0.3
+* [timheuer](https://github.com/NuGet/NuGet.Client/pull/5375)
+  * [5375](https://github.com/NuGet/NuGet.Client/pull/5375) Update VS Options add/remove package source icons to VS2022 styling
+* [dotnokato](https://github.com/NuGet/NuGet.Client/pull/5002)
+  * [5002](https://github.com/NuGet/NuGet.Client/pull/5002) CLI: Add -protocolVersion option to nuget sources add/update commands
+* [oleksandr-didyk](https://github.com/NuGet/NuGet.Client/pull/5352)
+  * [5352](https://github.com/NuGet/NuGet.Client/pull/5352) allow empty sb intermediate
+* [drolevar](https://github.com/NuGet/NuGet.Client/pull/5346)
+  * [5346](https://github.com/NuGet/NuGet.Client/pull/5346) Add .vdproj to the exclusion list
+* [Greybird](https://github.com/NuGet/NuGet.Client/pull/5335)
+  * [5335](https://github.com/NuGet/NuGet.Client/pull/5335) Remove projects from list package output
+* [NikolaMilosavljevic](https://github.com/NuGet/NuGet.Client/pull/5322)
+  * [5322](https://github.com/NuGet/NuGet.Client/pull/5322) Fix incorrect package version property for System.Security.Cryptograp…
+* [vishavpandhi](https://github.com/NuGet/NuGet.Client/pull/5283)
+  * [5283](https://github.com/NuGet/NuGet.Client/pull/5283) [DartLab B2B feature] dropname for base VS should be retrieved using the baseline.
+* [v-chayan](https://github.com/NuGet/NuGet.Client/pull/5278)
+  * [5278](https://github.com/NuGet/NuGet.Client/pull/5278) Remove redundant SourceBuildTrimNetFrameworkTargets property
+* [marcin-krystianc](https://github.com/NuGet/NuGet.Client/pull/5293)
+  * [5293](https://github.com/NuGet/NuGet.Client/pull/5293) DetectAndMarkAmbiguousCentralTransitiveDependencies should be exhaustive and deterministic
+* [Erarndt](https://github.com/NuGet/NuGet.Client/pull/5218)
+  * [5218](https://github.com/NuGet/NuGet.Client/pull/5218) Reduce some allocations in CreateGraphNode.
