@@ -10,6 +10,7 @@ ms.topic: conceptual
 # NuGet Client SDK
 
 The *NuGet Client SDK* refers to a group of NuGet packages:
+
 * [`NuGet.Indexing`](https://www.nuget.org/packages/NuGet.Indexing) - NuGet's indexing library for the Visual Studio client search functionality.
 * [`NuGet.Commands`](https://www.nuget.org/packages/NuGet.Commands) - Complete commands common to command-line and GUI NuGet clients.
 * [`NuGet.Common`](https://www.nuget.org/packages/NuGet.Common) - Common utilities and interfaces for all NuGet libraries.
@@ -106,7 +107,7 @@ Create a package, set metadata, and add dependencies using [`NuGet.Packaging`](h
 > It is strongly recommended that NuGet packages are created using the official NuGet tooling and **not** using this
 > low-level API. There are a variety of characteristics important for a well-formed package and the latest version of
 > tooling helps incorporate these best practices.
-> 
+>
 > For more information about creating NuGet packages, see the overview of the
 > [package creation workflow](../create-packages/overview-and-workflow.md) and the documentation for official pack
 > tooling (for example, [using the dotnet CLI](../create-packages/creating-a-package-dotnet-cli.md)).
@@ -123,9 +124,9 @@ Read a package from a file stream using [`NuGet.Packaging`](https://www.nuget.or
 
 You can find examples and documentation for some of the API in the following blog series by Dave Glick, published 2016:
 
-- [Exploring the NuGet v3 Libraries, Part 1: Introduction and concepts](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-1)
-- [Exploring the NuGet v3 Libraries, Part 2: Searching for packages](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-2)
-- [Exploring the NuGet v3 Libraries, Part 3: Installing packages](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
+* [Exploring the NuGet v3 Libraries, Part 1: Introduction and concepts](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-1)
+* [Exploring the NuGet v3 Libraries, Part 2: Searching for packages](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-2)
+* [Exploring the NuGet v3 Libraries, Part 3: Installing packages](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
 
 > [!Note]
 > These blog posts were written shortly after the **3.4.3** version of the NuGet client SDK packages were released.
@@ -133,4 +134,4 @@ You can find examples and documentation for some of the API in the following blo
 
 Martin Björkström did a follow-up blog post to Dave Glick's blog series where he introduces a different approach on using the NuGet Client SDK to install NuGet packages:
 
-- [Revisiting the NuGet v3 Libraries](https://martinbjorkstrom.com/posts/2018-09-19-revisiting-nuget-client-libraries)
+* [Revisiting the NuGet v3 Libraries](https://martinbjorkstrom.com/posts/2018-09-19-revisiting-nuget-client-libraries)
