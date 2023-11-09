@@ -13,9 +13,11 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.8**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.8](https://visualstudio.microsoft.com/downloads/) | [8.0.100](https://dotnet.microsoft.com/download/dotnet-core/8.0)<sup>1</sup> |
+| [**6.8**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.8](https://visualstudio.microsoft.com/downloads/) | [8.0.100](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio 2022 with.NET Core workload
+
+<sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
+
 
 ## Summary: What's New in 6.8
 
@@ -72,7 +74,7 @@ NuGet distribution vehicles:
 
 * dotnet list package doesn't list requested versions when using CPM - [#12765](https://github.com/NuGet/Home/issues/12765)
 
-* NuGet doesn't restore RID-specific assets for Microsoft.DotNet.ILCompiler - [#12757](https://github.com/NuGet/Home/issues/12757)
+* Fix case sensitivity of runtime dependency sets during merge - [#12757](https://github.com/NuGet/Home/issues/12757)
 
 * dotnet list package errors with Object reference not set to an instance of an object - [#12755](https://github.com/NuGet/Home/issues/12755)
 
