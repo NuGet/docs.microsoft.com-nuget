@@ -11,13 +11,6 @@ ms.topic: conceptual
 
 The *NuGet Client SDK* refers to a group of NuGet packages:
 * [`NuGet.Indexing`](https://www.nuget.org/packages/NuGet.Indexing) - NuGet's indexing library for the Visual Studio client search functionality.
-* [`NuGet.VisualStudio.Contracts`](https://www.nuget.org/packages/NuGet.VisualStudio.Contracts) - This package contains RPC contracts for NuGet’s Visual Studio Service Broker extensibility APIs.
-* [`NuGet.VisualStudio`](https://www.nuget.org/packages/NuGet.VisualStudio) - This package provides APIs for invoking NuGet services in Visual Studio.
-* [`Microsoft.Build.NuGetSdkResolver`](https://www.nuget.org/packages/Microsoft.Build.NuGetSdkResolver) - MSBuild SDK resolver for NuGet packages.
-* [`NuGet.Build.Tasks.Console`](https://www.nuget.org/packages/NuGet.Build.Tasks.Console) - NuGet Build tasks for MSBuild and dotnet restore.
-* [`NuGet.Build.Tasks.Pack`](https://www.nuget.org/packages/NuGet.Build.Tasks.Pack) - NuGet tasks for MSBuild and dotnet pack.
-* [`NuGet.Build.Tasks`](https://www.nuget.org/packages/NuGet.Build.Tasks) - NuGet tasks for MSBuild and dotnet restore.
-* [`NuGet.CommandLine.XPlat`](https://www.nuget.org/packages/NuGet.CommandLine.XPlat) - NuGet executable wrapper for the dotnet CLI nuget functionality.
 * [`NuGet.Commands`](https://www.nuget.org/packages/NuGet.Commands) - Complete commands common to command-line and GUI NuGet clients.
 * [`NuGet.Common`](https://www.nuget.org/packages/NuGet.Common) - Common utilities and interfaces for all NuGet libraries.
 * [`NuGet.Configuration`](https://www.nuget.org/packages/NuGet.Configuration) - NuGet's configuration settings implementation.
@@ -27,7 +20,6 @@ The *NuGet Client SDK* refers to a group of NuGet packages:
 * [`NuGet.LibraryModel`](https://www.nuget.org/packages/NuGet.LibraryModel) - NuGet's types and interfaces for understanding dependencies.
 * [`NuGet.Localization`](https://www.nuget.org/packages/NuGet.Localization) - NuGet localization package.
 * [`NuGet.PackageManagement`](https://www.nuget.org/packages/NuGet.PackageManagement) - NuGet Package Management functionality for Visual Studio installation flow.
-* [`NuGet.Packaging.Core`](https://www.nuget.org/packages/NuGet.Packaging.Core) - The (former home to) core data structures for `NuGet.Packaging`.
 * [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) - Provides a set of APIs to interact with `.nupkg` and `.nuspec` files from a stream. `NuGet.Protocol` depends on this package.
 * [`NuGet.ProjectModel`](https://www.nuget.org/packages/NuGet.ProjectModel) - NuGet's core types and interfaces for PackageReference-based restore, such as lock files, assets file and internal restore models.
 * [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) - Provides a set of APIs interact with HTTP and file-based NuGet feeds.
