@@ -10,7 +10,6 @@ ms.topic: conceptual
 # NuGet Client SDK
 
 The *NuGet Client SDK* refers to a group of NuGet packages:
-* [`NuGet.CommandLine`](https://www.nuget.org/packages/NuGet.CommandLine) - NuGet Command Line Interface.
 * [`NuGet.Indexing`](https://www.nuget.org/packages/NuGet.Indexing) - NuGet's indexing library for the Visual Studio client search functionality.
 * [`NuGet.VisualStudio.Contracts`](https://www.nuget.org/packages/NuGet.VisualStudio.Contracts) - This package contains RPC contracts for NuGet’s Visual Studio Service Broker extensibility APIs.
 * [`NuGet.VisualStudio`](https://www.nuget.org/packages/NuGet.VisualStudio) - This package provides APIs for invoking NuGet services in Visual Studio.
