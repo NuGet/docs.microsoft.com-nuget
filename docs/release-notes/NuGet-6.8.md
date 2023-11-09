@@ -32,7 +32,13 @@ NuGet distribution vehicles:
 
 * Conditional package updating is respected in Visual Studio [#5420](https://github.com/NuGet/NuGet.Client/pull/5420)
 
-### Breaking changes
+### Known issues
+
+* NuGetAuditMode doesn't work for SDK style projects in VS 17.8 - [#13003](https://github.com/NuGet/Home/issues/13003)
+
+### NuGet SDK breaking changes
+
+The following is a list of breaking changes in the NuGet SDK. If you are using NuGet tooling, such as Visual Studio or .NET SDK, you are not affected.
 
 * Remove the NuGetOperationType from NuGet.PackageManagement, use NuGetProjectActionType instead - [#12866](https://github.com/NuGet/Home/issues/12866)
 
