@@ -124,7 +124,6 @@ The following is a list of breaking changes in the NuGet SDK. If you are using N
 
 * [Bug]: View License dialog does not display license content - [#12060](https://github.com/NuGet/Home/issues/12060)
 
-* Package Source Mapping UI - Package Installation/update through PM UI - [#11366](https://github.com/NuGet/Home/issues/11366)
 
 * [Bug Bash] Only the embedded license content of the latest version can be loaded correctly in PM UI when there are multiple versions in the same package from local feeds - [#10670](https://github.com/NuGet/Home/issues/10670)
 
