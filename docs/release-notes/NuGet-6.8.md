@@ -28,7 +28,8 @@ NuGet distribution vehicles:
 
 * Add [`allowInsecureConnections`](../reference/nuget-config-file.md#packagesources) property for package sources in NuGet.config, allowing opt-out of "HTTPs everywhere" warnings - [#12786](https://github.com/NuGet/Home/issues/12786)
 
-  * Create Package Source Mappings during Installation/update through PM UI - [#11366](https://github.com/NuGet/Home/issues/11366)
+* Create Package Source Mappings during Installation/update through PM UI - [#11366](https://github.com/NuGet/Home/issues/11366)
+
 
 * Conditional package updating is respected in Visual Studio [#5420](https://github.com/NuGet/NuGet.Client/pull/5420)
 
