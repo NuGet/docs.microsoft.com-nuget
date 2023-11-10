@@ -32,6 +32,9 @@ A description of your dependencies is checked against a report of known vulnerab
 1. Type `dotnet restore` or `restore` using your preferred tooling (i.e. MSBuild, NuGet.exe, etc).
 1. Review the audit report and address the known security vulnerabilities.
 
+> [!NOTE]
+> At this time, NuGet does not audit `packages.config` projects.
+
 ## Reviewing and acting on the security audit report
 
 Running `dotnet restore` will produce a report of security vulnerabilities with the affected package name, the severity of the vulnerability, and a link to the advisory for more details.
