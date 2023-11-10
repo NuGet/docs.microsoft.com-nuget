@@ -25,12 +25,14 @@ NuGet distribution vehicles:
   * Warn when vulnerabilities are detected during PackageReference restore  - [#12289](https://github.com/NuGet/Home/issues/12289)
   * Show vulnerabilities in transitive packages for PackageReference type projects in PMUI - [#8756](https://github.com/NuGet/Home/issues/8756)
   * Show an infobar in Solution Explorer for any detected security vulnerabilities in a project or solution - [#12398](https://github.com/NuGet/Home/issues/12398)
-  * Create Package Source Mappings during Installation/update through PM UI - [#11366](https://github.com/NuGet/Home/issues/11366)
+
 * Add [`allowInsecureConnections`](../reference/nuget-config-file.md#packagesources) property for package sources in NuGet.config, allowing opt-out of "HTTPs everywhere" warnings - [#12786](https://github.com/NuGet/Home/issues/12786)
 
-* Add [protocolVersion argument](../reference/cli-reference/cli-ref-sources.md#options) to nuget source add - [#9170](https://github.com/NuGet/Home/issues/9170)
+  * Create Package Source Mappings during Installation/update through PM UI - [#11366](https://github.com/NuGet/Home/issues/11366)
 
 * Conditional package updating is respected in Visual Studio [#5420](https://github.com/NuGet/NuGet.Client/pull/5420)
+
+* Add [protocolVersion argument](../reference/cli-reference/cli-ref-sources.md#options) to nuget source add - [#9170](https://github.com/NuGet/Home/issues/9170)
 
 ### Known issues
 
