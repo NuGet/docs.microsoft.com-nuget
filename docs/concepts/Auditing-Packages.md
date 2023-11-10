@@ -16,8 +16,7 @@ This involves identifying vulnerabilities, evaluating risks, and making recommen
 The audit can include a review of the packages themselves, as well as any dependencies and their associated risks.
 The goal of the audit is to identify and mitigate any security vulnerabilities that could be exploited by attackers, such as code injection or cross-site scripting attacks.
 
-> [!IMPORTANT]
-> Security auditing at restore time is available in .NET 8 Preview 4+ and Visual Studio 17.8 Preview 1+.
+NuGet Audit is available starting from NuGet 6.8, the .NET 8 SDK (8.0.100), and Visual Studio 2022 17.8.
 
 ## Running a security audit with `restore`
 
@@ -27,10 +26,6 @@ A description of your dependencies is checked against a report of known vulnerab
 > [!IMPORTANT]
 > For Audit to check packages, a package source that provides a vulnerability database must be used.
 > NuGet.org's V3 URL is one such example (https://api.nuget.org/v3/index.json), but note that NuGet.org's V2 endpoint does not.
-
-> [!NOTE]
-> .NET 8 preview 6+ enables Audit by default, but Visual Studio does not ship .NET 8 yet.
-> To opt-in to Audit explicitly, set `<NuGetAudit>true</NuGetAudit>` in your project file, or a *Directory.Build.props* file.
 
 1. On the command line, navigate to your project or solution directory.
 1. Ensure your project or solution contains a `.csproj` file.
