@@ -90,6 +90,10 @@ For example if you wanted to audit all dependencies for security advisories, you
 <NuGetAuditMode>all</NuGetAuditMode>
 ```
 
+> [!NOTE]
+> Visual Studio 2022 17.8 does not support changing audit mode for SDK style packages.
+> It works from 17.9 Preview 2.
+
 ### Setting a security audit level
 
 In cases where you only care about a certain threshold of a security advisory severity, you can set the `<NuGetAuditLevel>` MSBuild property to the desired level in which auditing will fail.
