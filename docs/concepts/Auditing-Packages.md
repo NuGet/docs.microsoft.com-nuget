@@ -3,7 +3,7 @@ title: Auditing package dependencies for security vulnerabilities
 description: How to audit package dependencies for security vulnerabilities and acting on security audit reports.
 author: JonDouglas
 ms.author: jodou
-ms.date: 05/04/2023
+ms.date: 10/11/2023
 ms.topic: conceptual
 ---
 
@@ -11,14 +11,18 @@ ms.topic: conceptual
 
 ## About security audits
 
-A security audit for package managers like NuGet is a process that involves analyzing the security of the packages that are included in a software project. This involves identifying vulnerabilities, evaluating risks, and making recommendations for improving security. The audit can include a review of the packages themselves, as well as any dependencies and their associated risks. The goal of the audit is to identify and mitigate any security vulnerabilities that could be exploited by attackers, such as code injection or cross-site scripting attacks. 
+A security audit for package managers like NuGet is a process that involves analyzing the security of the packages that are included in a software project.
+This involves identifying vulnerabilities, evaluating risks, and making recommendations for improving security.
+The audit can include a review of the packages themselves, as well as any dependencies and their associated risks.
+The goal of the audit is to identify and mitigate any security vulnerabilities that could be exploited by attackers, such as code injection or cross-site scripting attacks.
 
 > [!IMPORTANT]
 > Security auditing at restore time is available in .NET 8 Preview 4+ and Visual Studio 17.8 Preview 1+.
 
 ## Running a security audit with `restore`
 
-The `restore` command automatically runs when you do a common package operation such as loading a project for the first time, adding a new package, updating a package version, or removing a package from your project in your favorite IDE. A description of your dependencies is checked against a report of known vulnerabilities on the [GitHub Advisory Database](https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anuget).
+The `restore` command automatically runs when you do a common package operation such as loading a project for the first time, adding a new package, updating a package version, or removing a package from your project in your favorite IDE.
+A description of your dependencies is checked against a report of known vulnerabilities on the [GitHub Advisory Database](https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anuget).
 
 > [!IMPORTANT]
 > For Audit to check packages, a package source that provides a vulnerability database must be used.
@@ -29,9 +33,9 @@ The `restore` command automatically runs when you do a common package operation 
 > To opt-in to Audit explicitly, set `<NuGetAudit>true</NuGetAudit>` in your project file, or a *Directory.Build.props* file.
 
 1. On the command line, navigate to your project or solution directory.
-2. Ensure your project or solution contains a `.csproj` file.
-3. Type `dotnet restore` or `restore` using your preferred tooling (i.e. MSBuild, NuGet.exe, etc).
-4. Review the audit report and address the known security vulnerabilities.
+1. Ensure your project or solution contains a `.csproj` file.
+1. Type `dotnet restore` or `restore` using your preferred tooling (i.e. MSBuild, NuGet.exe, etc).
+1. Review the audit report and address the known security vulnerabilities.
 
 ## Reviewing and acting on the security audit report
 
@@ -56,7 +60,8 @@ In the case that a known vulnerability exists in a package without a security fi
 
 #### Check for mitigating factors
 
-Review the security advisor for any mitigating factors that may allow you to continue using the package with the vulnerability. The vulnerability may only exist when the code is used on a specific framework, operating system, or a special function is called.
+Review the security advisor for any mitigating factors that may allow you to continue using the package with the vulnerability.
+The vulnerability may only exist when the code is used on a specific framework, operating system, or a special function is called.
 
 #### Use a suggested package
 
@@ -68,17 +73,20 @@ If a fix does not exist for the security advisory, you may want to suggest chang
 
 #### Open an issue
 
-If you do not want to fix the vulnerability or are unable to update or replace the package, open an issue in the package's issue tracker or preferred contact method. On NuGet.org, you can navigate to the package details page and click `Report package` which will guide you to get in contact with the author.
+If you do not want to fix the vulnerability or are unable to update or replace the package, open an issue in the package's issue tracker or preferred contact method.
+On NuGet.org, you can navigate to the package details page and click `Report package` which will guide you to get in contact with the author.
 
 ### No security vulnerabilities found
 
-If no security vulnerabilities are found, this means that packages with known vulnerabilities were not found in your package graph at the present moment of time you checked. Since the advisory database can be updated at any time, we recommend regularly checking your `dotnet restore` output and ensuring the same in your continuous integration process.
+If no security vulnerabilities are found, this means that packages with known vulnerabilities were not found in your package graph at the present moment of time you checked.
+Since the advisory database can be updated at any time, we recommend regularly checking your `dotnet restore` output and ensuring the same in your continuous integration process.
 
 ### Setting a security audit mode
 
 By default, a security audit is done for top-level dependencies.
 In the case that you'd like to audit both top-level and transitive dependencies, you can set the `<NuGetAuditMode>` MSBuild property to the desired mode in which auditing will run.
-Possible values are `direct` and `all`. For example if you wanted to audit all dependencies for security advisories, you can set the following:
+Possible values are `direct` and `all`.
+For example if you wanted to audit all dependencies for security advisories, you can set the following:
 
 ```xml
 <NuGetAuditMode>all</NuGetAuditMode>
@@ -86,7 +94,9 @@ Possible values are `direct` and `all`. For example if you wanted to audit all d
 
 ### Setting a security audit level
 
-In cases where you only care about a certain threshold of a security advisory severity, you can set the `<NuGetAuditLevel>` MSBuild property to the desired level in which auditing will fail. Possible values are `low`, `moderate`, `high`, and `critical`. For example if you only want to see `moderate`, `high`, and `critical` advisories, you can set the following:
+In cases where you only care about a certain threshold of a security advisory severity, you can set the `<NuGetAuditLevel>` MSBuild property to the desired level in which auditing will fail.
+Possible values are `low`, `moderate`, `high`, and `critical`.
+For example if you only want to see `moderate`, `high`, and `critical` advisories, you can set the following:
 
 ```xml
 <NuGetAuditLevel>moderate</NuGetAuditLevel>
@@ -94,7 +104,8 @@ In cases where you only care about a certain threshold of a security advisory se
 
 ### Excluding advisories
 
-There is no support for excluding individual advisories at this time. You can use `<NoWarn>` to suppress `NU1901`-`NU1904` warnings or use the `<NuGetAuditLevel>` functionality to ensure your audit reports are useful to your workflow.
+There is no support for excluding individual advisories at this time.
+You can use `<NoWarn>` to suppress `NU1901`-`NU1904` warnings or use the `<NuGetAuditLevel>` functionality to ensure your audit reports are useful to your workflow.
 
 ### Warning codes
 
@@ -121,4 +132,5 @@ At any time you wish to not receive security audit reports, you can opt-out of t
 
 ## Summary
 
-Security auditing features are crucial for maintaining the security and integrity of software projects. These features provide you with an additional layer of protection against security vulnerabilities and ensures that you can use open source packages with confidence.
+Security auditing features are crucial for maintaining the security and integrity of software projects.
+These features provide you with an additional layer of protection against security vulnerabilities and ensures that you can use open source packages with confidence.
