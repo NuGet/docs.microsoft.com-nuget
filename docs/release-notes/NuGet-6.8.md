@@ -30,7 +30,6 @@ NuGet distribution vehicles:
 
 * Create Package Source Mappings during Installation/update through PM UI - [#11366](https://github.com/NuGet/Home/issues/11366)
 
-
 * Conditional package updating is respected in Visual Studio [#5420](https://github.com/NuGet/NuGet.Client/pull/5420)
 
 * Add [protocolVersion argument](../reference/cli-reference/cli-ref-sources.md#options) to nuget source add - [#9170](https://github.com/NuGet/Home/issues/9170)
