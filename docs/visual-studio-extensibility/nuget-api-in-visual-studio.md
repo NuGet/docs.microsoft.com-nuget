@@ -29,7 +29,7 @@ These services are available in the package [NuGet.VisualStudio.Contracts](https
 
 ### MEF Services
 
-From NuGet 6.0, all of these APIs are available in the package [NuGet.VisualStudio](https://nuget.org/packages/NuGet.VisualStudio/). In NuGet 5.11 and earlier, the APIs in the namespace `NuGet.VisualStudio` are available in the package [NuGet.VisualStudio](https://nuget.org/packages.NuGet.VisualStudio/), and APIs in the namespace `NuGet.SolutionRestoreManager` are available in the package [NuGet.SolutionRestoreManager.Interop](https://www.nuget.org/packages/NuGet.SolutionRestoreManager.Interop/).
+From NuGet 6.0, all of these APIs are available in the package [NuGet.VisualStudio](https://www.nuget.org/packages/NuGet.VisualStudio/). In NuGet 5.11 and earlier, the APIs in the namespace `NuGet.VisualStudio` are available in the package [NuGet.VisualStudio](https://www.nuget.org/packages/NuGet.VisualStudio/), and APIs in the namespace `NuGet.SolutionRestoreManager` are available in the package [NuGet.SolutionRestoreManager.Interop](https://www.nuget.org/packages/NuGet.SolutionRestoreManager.Interop/).
 
 #### NuGet.VisualStudio
 
