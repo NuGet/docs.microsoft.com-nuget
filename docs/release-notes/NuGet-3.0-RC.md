@@ -32,9 +32,9 @@ In order to stabilize the NuGet clients, we resolved many issues as part of this
 
 ## GitHub presence overhaul
 
-We've made some changes to our [source code repositories on GitHub](http://github.com/nuget/home).  If you have any issues with the NuGet Visual Studio client, the Powershell commands, or the command-line executable you can log those issues and monitor their progress on our [GitHub Home repository issues list](http://github.com/nuget/home/issues).  We are tracking issues for the gallery in our [GitHub NuGetGallery repository](http://github.com/nuget/NuGetGallery/issues).
+We've made some changes to our [source code repositories on GitHub](https://github.com/nuget/home).  If you have any issues with the NuGet Visual Studio client, the Powershell commands, or the command-line executable you can log those issues and monitor their progress on our [GitHub Home repository issues list](https://github.com/nuget/home/issues).  We are tracking issues for the gallery in our [GitHub NuGetGallery repository](https://github.com/nuget/NuGetGallery/issues).
 
 
 ## Stay Tuned
 
-Please keep an eye on [our blog](http://blog.nuget.org) for more progress and announcements for NuGet 3.0!
+Please keep an eye on [our blog](https://blog.nuget.org) for more progress and announcements for NuGet 3.0!

@@ -87,7 +87,7 @@ Nuget.org has a package size limit of about 250 MB. When a package exceeding tha
 
 If such package is pushed from the command line, the following output is produced:
 
->   RequestEntityTooLarge https://www.nuget.org/api/v2/package/ 13903ms
+>   RequestEntityTooLarge https://api.nuget.org/v3/index.json 13903ms
 > error: Response status code does not indicate success: 413 (The package file exceeds the size limit. Please try again.).
 
 If you are getting this errors consider revising the package content to reduce its size. If you are packing debug symbols into your package consider publishing them [separately](../create-packages/Symbol-Packages-snupkg.md). Other assets can be published separately as one or more dependency packages to spread them into smaller chunks.
