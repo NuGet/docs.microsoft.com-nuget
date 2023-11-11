@@ -15,7 +15,7 @@ NuGet 3.0 Preview was released on November 12, 2014 as part of the Visual Studio
 
 ## Visual Studio 2012+
 
-This NuGet 3.0 Preview is included in Visual Studio 2015 Preview. We are working to get preview drops out for Visual Studio 2012 and Visual Studio 2013 very soon. We previously shared our intent to [discontinue updates for Visual Studio 2010](http://blog.nuget.org/20141002/visual-studio-2010.html), and we did make that difficult decision.
+This NuGet 3.0 Preview is included in Visual Studio 2015 Preview. We are working to get preview drops out for Visual Studio 2012 and Visual Studio 2013 very soon. We previously shared our intent to [discontinue updates for Visual Studio 2010](https://blog.nuget.org/20141002/visual-studio-2010.html), and we did make that difficult decision.
 
 ## Brand New UI
 
