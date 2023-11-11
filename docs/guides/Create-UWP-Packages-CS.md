@@ -3,7 +3,7 @@ title: Create NuGet Packages for the UWP Platform (C#)
 description: An end-to-end walkthrough of creating NuGet packages using a Windows Runtime Component for the Universal Windows Platform in C#.
 author: rrelyea
 ms.author: rrelyea
-ms.date: 02/28/2020
+ms.date: 11/01/2023
 ms.topic: tutorial
 ---
 
@@ -15,17 +15,17 @@ In this walkthrough you create a NuGet package with a C# UWP component (includin
 
 ## Prerequisites
 
-1. Visual Studio 2019. Install the 2019 Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well.
+1. Visual Studio 2019. Install the 2019 Community edition for free from [visualstudio.com](https://www.visualstudio.com/). You can also use the Professional and Enterprise editions.
 
-1. NuGet CLI. Download the latest version of `nuget.exe` from [nuget.org/downloads](https://nuget.org/downloads), saving it to a location of your choice (the download is the `.exe` directly). Then add that location to your PATH environment variable if it isn't already. [More details](../reference/nuget-exe-cli-reference.md#windows).
+1. NuGet CLI. Download the latest version of `nuget.exe` from [nuget.org/downloads](https://nuget.org/downloads) and save the tool to a location of your choice. (The download is the `.exe` file directly.) Add the tool file location to your PATH environment variable, if it isn't already. For more information, see [Installing nuget.exe](../reference/nuget-exe-cli-reference.md#installing-nugetexe).
 
 ## Create a UWP Windows Runtime component
 
-1. In Visual Studio, choose **File > New > Project**, search for "uwp c#", select the **Windows Runtime Component (Universal Windows)** template, click next, change the name to ImageEnhancer, and click Create. Accept the default values for Target Version and Minimum Version when prompted.
+1. In Visual Studio, select **File > New > Project**, and search for "uwp c#". Select the **Windows Runtime Component (Universal Windows)** template and select **Next**. Change the name to ImageEnhancer, and select **Create**. Accept the default values for Target Version and Minimum Version when prompted.
 
     ![Creating a new UWP Windows Runtime Component project](media/UWP-NewProject-CS.png)
 
-1. Right click the project in Solution Explorer, select **Add > New Item**, select **Templated Control**, change the name to AwesomeImageControl.cs, and click **Add**:
+1. Right-click the project in Solution Explorer, select **Add > New Item**, select **Templated Control**, change the name to AwesomeImageControl.cs, and select **Add**:
 
     ![Adding a new XAML Templated Control item to the project](media/UWP-NewXAMLControl-CS.png)
 
@@ -33,27 +33,28 @@ In this walkthrough you create a NuGet package with a C# UWP component (includin
 
     ![Setting Generate XML Documentation Files to Yes](media/UWP-GenerateXMLDocFiles-CS.png)
 
-1. Right click the *solution* now, select **Batch Build**, check the five build boxes in the dialog as shown below. This makes sure that when you do a build, you generate a full set of artifacts for each of the target systems that Windows supports.
+1. Right-click the *solution* and select **Batch Build**. Select the five build boxes, as shown in the following image. This makes sure that when you do a build, you generate a full set of artifacts for each of the target systems that Windows supports.
 
     ![Batch Build](media/UWP-BatchBuild-CS.png)
 
-1. In the Batch Build dialog, and click **Build** to verify the project and create the output files that you need for the NuGet package.
+1. In the Batch Build dialog, and select **Build** to verify the project and create the output files that you need for the NuGet package.
 
 > [!Note]
 > In this walkthrough you use the Debug artifacts for the package. For non-debug package, check the Release options in the Batch Build dialog instead, and refer to the resulting Release folders in the steps that follow.
 
 ## Create and update the .nuspec file
 
-To create the initial `.nuspec` file, do the three steps below. The sections that follow then guide you through other necessary updates.
+To create the initial `.nuspec` file, complete the following steps. The subsequent sections guide you through other necessary updates.
 
-1. Open a command prompt and navigate to the folder containing `ImageEnhancer.csproj` (this will be a subfolder below where the solution file is).
-1. Run the [`NuGet spec`](../reference/cli-reference/cli-ref-spec.md) command to generate `ImageEnhancer.nuspec` (the name of the file is taken from the name of the `.csroj` file):
+1. Open a command prompt and browse to the folder that contains the `ImageEnhancer.csproj` file, which should be a subfolder of the folder that contains the solution file.
+
+1. Run the [`NuGet spec`](../reference/cli-reference/cli-ref-spec.md) command to generate the `ImageEnhancer.nuspec` file. The name of the file is taken from the name of the `.csroj` file.
 
     ```cli
     nuget spec
     ```
 
-1. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. Do not leave any of the $propertyName$ values. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you get an error during the packing step.
+1. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. Don't leave any of the $propertyName$ values. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you get an error during the packing step.
 
     ```xml
     <?xml version="1.0"?>

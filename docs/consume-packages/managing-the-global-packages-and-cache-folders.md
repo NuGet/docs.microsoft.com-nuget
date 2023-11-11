@@ -23,7 +23,7 @@ Whenever you install, update, or restore a package, NuGet manages packages and p
 
 By using the cache and *global-packages* folders, NuGet generally avoids downloading packages that already exist on the computer, improving the performance of install, update, and restore operations. When using PackageReference, the *global-packages* folder also avoids keeping downloaded packages inside project folders, where they might be inadvertently added to source control, and reduces NuGet's overall impact on computer storage.
 
-When asked to retrieve a package, NuGet first looks in the *global-packages* folder. If the exact version of package is not there, then NuGet checks all non-HTTP package sources. If the package is still not found, NuGet looks for the package in the *http-cache* unless you specify `--no-cache` with `dotnet.exe` commands or `-NoCache` with `nuget.exe` commands. If the package is not in the cache, or the cache isn't used, NuGet then retrieves the package over HTTP .
+When asked to retrieve a package, NuGet first looks in the *global-packages* folder. If the exact version of package is not there, then NuGet checks all non-HTTP package sources. If the package is still not found, NuGet looks for the package in the *http-cache* unless you specify `--no-http-cache` with `dotnet.exe` commands or `-NoHttpCache` with `nuget.exe` commands. If the package is not in the cache, or the cache isn't used, NuGet then retrieves the package over HTTP .
 
 For more information, see [What happens when a package is installed?](../concepts/package-installation-process.md).
 
