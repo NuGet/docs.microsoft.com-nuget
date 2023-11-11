@@ -123,7 +123,7 @@ If you're licensing the package under a common license, like MIT or BSD-2-Clause
 > [!Note]
 > NuGet.org only accepts license expressions that are approved by the Open Source Initiative or the Free Software Foundation.
 
-If your package is licensed under multiple common licenses, you can specify a composite license using the [SPDX expression syntax version 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60). For example:
+If your package is licensed under multiple common licenses, you can specify a composite license using the [SPDX expression syntax version 2.0](https://spdx.github.io/spdx-spec/v2-draft/SPDX-license-expressions/#d4-composite-license-expressions). For example:
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
