@@ -15,7 +15,7 @@ NuGet 3.0 Preview was released on November 12, 2014 as part of the Visual Studio
 
 ## Visual Studio 2012+
 
-This NuGet 3.0 Preview is included in Visual Studio 2015 Preview. We are working to get preview drops out for Visual Studio 2012 and Visual Studio 2013 very soon. We previously shared our intent to [discontinue updates for Visual Studio 2010](http://blog.nuget.org/20141002/visual-studio-2010.html), and we did make that difficult decision.
+This NuGet 3.0 Preview is included in Visual Studio 2015 Preview. We are working to get preview drops out for Visual Studio 2012 and Visual Studio 2013 very soon. We previously shared our intent to [discontinue updates for Visual Studio 2010](https://blog.nuget.org/20141002/visual-studio-2010.html), and we did make that difficult decision.
 
 ## Brand New UI
 
@@ -113,11 +113,11 @@ Despite the investment we're putting into API v3, we've made all of these new fe
 
 Between now and 3.0 RTM, we are also working on some fundamental new NuGet features, beyond what you see in the UI. Here's a short list of salient investment areas:
 
-1. We're partnering with the Visual Studio and MSBuild teams to get [NuGet deeper into the platform](http://blog.nuget.org/20141014/in-the-platform.html).
-1. We're working to abandon installation-time package conventions and instead apply those conventions at packaging time by introducing a new "authoritative" [package manifest](http://blog.nuget.org/20141023/package-manifests.html).
+1. We're partnering with the Visual Studio and MSBuild teams to get [NuGet deeper into the platform](https://blog.nuget.org/20141014/in-the-platform.html).
+1. We're working to abandon installation-time package conventions and instead apply those conventions at packaging time by introducing a new "authoritative" [package manifest](https://blog.nuget.org/20141023/package-manifests.html).
 1. We're working to refactor the NuGet codebase to make the client and server components reusable in different domains beyond package management in Visual Studio.
 1. We're investigating the notion of "private dependencies" where a package can indicate that it has dependencies on other packages for implementation details only, and those dependencies shouldn't be surfaced as top-level dependencies.
 
 ## Stay Tuned
 
-Please keep an eye on [our blog](http://blog.nuget.org) for more progress and announcements for NuGet 3.0!
+Please keep an eye on [our blog](https://blog.nuget.org) for more progress and announcements for NuGet 3.0!

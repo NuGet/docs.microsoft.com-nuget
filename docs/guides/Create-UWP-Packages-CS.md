@@ -1,8 +1,8 @@
 ---
 title: Create NuGet Packages for the UWP Platform (C#)
 description: An end-to-end walkthrough of creating NuGet packages using a Windows Runtime Component for the Universal Windows Platform in C#.
-author: rrelyea
-ms.author: rrelyea
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/01/2023
 ms.topic: tutorial
 ---

@@ -49,4 +49,4 @@ There were a number of known issues delivered with this release, and all of thes
 * [Multiple Packages can be gathered in parallel](https://github.com/NuGet/Home/issues/713)
 * [Removed install-package -force command](https://github.com/NuGet/Home/issues/697)
 
-Please keep an eye on [our blog](http://blog.nuget.org) for more progress and announcements as we get ready to deliver support for Windows 10 development.
+Please keep an eye on [our blog](https://blog.nuget.org) for more progress and announcements as we get ready to deliver support for Windows 10 development.
