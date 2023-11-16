@@ -154,28 +154,28 @@ This is due to the build system having (partial) support for these NuGet convent
 The package with .NET Framework native libraries should have custom [MSBuild targets and props files](../concepts/MSBuild-props-and-targets.md), under `buildTransitive/<tfm>/<package ID>.[props|targets]`.
 For example, `buildTransitive/net472/Contoso.Native.targets`.
 To support `packages.config` projects, also have a `build/<tfm>/<package ID>.[props|targets]` which imports the `buildTransitive` file.
-This MSBuild script script should copy the native assemblies to subdirectories.
+This MSBuild script should copy the native library to subdirectories.
+Alternatively, the native libraries should have different filenames per CPU architecture, so they can all be copied into the same directory.
 
-Finally, the managed library that uses P/Invoke to call into the native library, it should have runtime checks to determine what platform the current executable is running in (x86, x64, or ARM64), and then P/Invoke into the native assembly in a correct directory.
-This is because .NET Framework supports the concept of "Any CPU" executables, which will execute (JIT compile) as x86 on x86 processors, and x64 otherwise (x64 or ARM64 processors).
-.NET Core removed this "Any CPU" executable concept, and separate x64, x86, and ARM64 executables need to be compiled and deployed explicitly.
-Therefore, managed libraries with P/Invoke do not need this runtime check on .NET Core runtimes, but do on .NET Framework runtimes.
-
-If the .NET Framework project consuming the library with managed concents explicitly opts out of "Any CPU", then these complications are not relevant, and the package author can use `runtimes/win-x64/lib/net48/contoso.dll`, for example.
-However, this is only feasible if the package is private and only used in projects that the package author controls, or at least has sufficient influence over.
+Finally, the managed library, that uses P/Invoke to call into the native library, it should have runtime checks to determine what platform the current executable is running in (x86, x64, or ARM64), and then P/Invoke into the native library with the correct filename or in the correct subdirectory.
 
 ### SDK style projects targeting .NET Framework
 
-If you test an SDK style project that targets .NET Framework with the `runtimes/*` convention, using .NET Framework TFM, you will see that the .NET SDK will copy the x86 assets when the build or publish does not specific a RID.
-However, as described above, if the x86 `.exe` is running on an x64 or ARM64 CPU, the runtime will JIT compile x64 instructions, and the runtime will fail to execute the x86 native assembly at the moment the managed library first P/Invokes the native library.
+When the .NET SDK builds a project targeting the .NET Framework, if one of `RuntimeIdentifier` or `PlatformTarget` is set, the .NET SDK will set the other property to an appropriate value, and package `runtimes/<rid>` contents (that [follow NuGet's conventions](#understanding-nuget-package-asset-selection)) will be copied to the output directory.
+If the the project does not set either `RuntimeIdentifier` or `PlatformTarget`, but any package contains RID specific contents, then the .NET SDK will set `PlatformTarget` to `x86`.
+Therefore, SDK style projects targeting .NET Framework will only use `AnyCPU` by default when none of the packages contain RID specific content.
 
-However, if `dotnet build -r win-x64` or `dotnet build -r win-arm64` (or the `publish` equivalents) are used, then the executable will be platform specific, failing to run on different CPU architectures, and the build will copy the correct native libraries.
+`dotnet build -r <rid>`, or the `publish` equivalent (for example, `dotnet publish -r win-arm64`) can be used to explicitly build or publish for a specific platform.
+
+In order to support `AnyCPU` projects, package authors must not use the `runtimes/` conventions in their package, and must use the MSBuild targets/props files [as suggested above](#projects-targeting-net-framework).
 
 ### Non-SDK style projects targeting .NET Framework with `PackageReference`
 
 If you test a non-SDK style `PackageReference` project with a package using the `runtimes/*` convention, the following behavior occurs.
 If the project's configuration targets the "Any CPU" platform, the build will not copy any of the RID specific assets from the package, and the app will fail at runtime.
 Using Visual Studio's Configuration Manager, the .NET projects can be changed to target x64, x86, or ARM64, instead of "Any CPU", in which case the app will work correctly at runtime.
+
+In order to support `AnyCPU` projects, package authors must use the MSBuild targets/props files [as suggested above](#projects-targeting-net-framework).
 
 ### `packages.config`
 
