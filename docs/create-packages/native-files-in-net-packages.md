@@ -23,7 +23,7 @@ First we'll consider a project referencing packages.
 When the app is published for a specific [Runtime Identifier (RID)](/dotnet/core/rid-catalog), then NuGet package assets for that RID will be copied into the output directory.
 When the app is published without a specific RID, all RID specific content will be published in subdirectories, and a `{project}.deps.json` file is created that the .NET runtime loads to determine which directory to use as a probing path.
 
-Also, be aware that .NET 8 introduces [breaking changes regarding how it determines compatible RIDs from the `.deps.json` file](/dotnet/core/compatibility/deployment/8.0/rid-asset-list).
+Also, be aware that .NET 8 introduces breaking changes regarding [how it determines compatible RIDs from the `.deps.json` file](/dotnet/core/compatibility/deployment/8.0/rid-asset-list) and [which RIDs are recognized by the SDK](/dotnet/core/compatibility/sdk/8.0/rid-graph).
 
 ## Understanding NuGet package asset selection
 
@@ -76,7 +76,7 @@ It is assumed that all the native binaries and the .NET assemblies have been com
 When packing with [NuGet's MSBuild Pack target](../reference/msbuild-targets.md#pack-target), you can include arbitrary files in arbitrary package paths using `Pack="true" PackagePath="{path}"` metadata on MSBuild items.
 For example, `<None Include="../cross-compile/linux-x64/libcontoso.so" Pack="true" PackagePath="runtimes/linux-x64/native/" />`.
 
-Consider a package `Contoso.Native` that provides .NET APIs to `libcontoso.dll` on Windows, `libcontoso.dylib` on OSX, and `libcontoso.so` on Linux, using `[DllImport("contoso")]`.
+Consider a package `Contoso.Native` that provides .NET APIs to `contoso.dll` on Windows, `libcontoso.dylib` on OSX, and `libcontoso.so` on Linux, using `[DllImport("contoso")]`.
 The package contents should be (excluding files required by the [Open Packaging Conventions](https://en.wikipedia.org/wiki/Open_Packaging_Conventions))
 
 ### Example 1
@@ -116,6 +116,24 @@ runtimes/osx-x64/native/libcontoso.dylib
 runtimes/win-arm64/lib/net8.0/Contoso.Native.dll
 runtimes/win-arm64/native/contoso.dll
 runtimes/win-x64/lib/net8.0/Contoso.Native.dll
+runtimes/win-x64/native/contoso.dll
+```
+
+### Example 3
+
+If `Contoso.Native` has conditional compilation per operating system, but not per CPU architecture.
+
+```text
+Contoso.Native.1.0.0.nuspec
+ref/net8.0/Contoso.Native.dll
+runtimes/linux/lib/net8.0/Contoso.Native.dll
+runtimes/linux-arm64/native/libcontoso.so
+runtimes/linux-x64/native/libcontoso.so
+runtimes/osx/lib/net8.0/Contoso.Native.dll
+runtimes/osx-arm64/native/libcontoso.dylib
+runtimes/osx-x64/native/libcontoso.dylib
+runtimes/win/lib/net8.0/Contoso.Native.dll
+runtimes/win-arm64/native/contoso.dll
 runtimes/win-x64/native/contoso.dll
 ```
 
