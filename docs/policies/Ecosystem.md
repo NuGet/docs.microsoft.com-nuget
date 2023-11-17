@@ -70,10 +70,10 @@ Using a new tool or technology usually comes with a learning curve. Luckily for 
 That said, authoring packages–and especially good packages–along with  embracing NuGet in automated build and deployment processes, requires spending a little more time with the following resources:
 
 - [NuGet Blog](https://devblogs.microsoft.com/nuget/)
-- [NuGet team on Twitter, @nuget](http://twitter.com/nuget)
+- [NuGet team on Twitter, @nuget](https://twitter.com/nuget)
 - Books:
   - [Apress Pro NuGet](http://bit.ly/ProNuGet)
-  - [NuGet 2 Essentials](http://www.amazon.com/NuGet-2-Essentials-Damir-Arh-ebook/dp/B00GTQD5M4)
+  - [NuGet 2 Essentials](https://www.amazon.com/NuGet-2-Essentials-Damir-Arh/dp/178216586X)
 
 ## Documentation for individual packages
 

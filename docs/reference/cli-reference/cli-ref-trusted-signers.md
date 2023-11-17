@@ -1,8 +1,8 @@
 ---
 title: NuGet CLI trusted-signers command
 description: Reference for the nuget.exe trusted-signers command
-author: patbel
-ms.author: patbel
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos

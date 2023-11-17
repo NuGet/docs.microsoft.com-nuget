@@ -43,4 +43,4 @@ The following features are available in this RC, with more planned for the 3.4 f
 
 ## Known Issues
 
-We continue to track issues on our GitHub issues list which can be found at: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
+We continue to track issues on our GitHub issues list which can be found at: [https://github.com/nuget/home/issues](https://github.com/nuget/home/issues)

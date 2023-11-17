@@ -1,8 +1,8 @@
 ---
 title: NuGet 5.8 Release Notes
 description: Release notes for NuGet 5.8 including new features, bug fixes, and DCRs.
-author: dominofire
-ms.author: feaguila
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/9/2020
 ms.topic: conceptual
 ---

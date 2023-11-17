@@ -48,7 +48,7 @@ There were a number of known issues delivered with this release.
 
 ## NuGet Command-line
 
-The NuGet command-line executable was updated and moved to a new distributable location so that historical versions of nuget.exe can continue to be made available.  You can download the 3.1 beta version of nuget.exe for Windows at: [http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe](http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe)
+The NuGet command-line executable was updated and moved to a new distributable location so that historical versions of nuget.exe can continue to be made available.  You can download the 3.1 beta version of nuget.exe for Windows at: [https://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe](https://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe)
 
 The new distributable location resides on the dist.nuget.org host, with a folder structure that follows this template:
 
@@ -66,4 +66,4 @@ The new distributable location resides on the dist.nuget.org host, with a folder
 1.    Cannot execute pack against a `project.json` file - [928](https://github.com/NuGet/Home/issues/928)
 2.    Is not supported on Mono - [1059](https://github.com/NuGet/Home/issues/1059)
 3.    Is not localized - [1058](https://github.com/NuGet/Home/issues/1058),   [1057](https://github.com/NuGet/Home/issues/1057)
-4.    Is not signed, just like the existing http://nuget.org/nuget.exe - [1073](https://github.com/NuGet/Home/issues/1073)
+4.    Is not signed, just like the existing https://nuget.org/nuget.exe - [1073](https://github.com/NuGet/Home/issues/1073)
