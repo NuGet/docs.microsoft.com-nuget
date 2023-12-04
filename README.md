@@ -23,7 +23,7 @@ No contribution is too big or too small.
 1. Visit the page to edit in [NuGet documentation](https://learn.microsoft.com/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.
 1. Edit the markdown:
     1. If you're including images (use PNGs, generally), place them in the media folder that's in the topic's folder. Links are then `media/<image_name>.png`.
-    1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the training `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
+    1. Relative links to other pages in this docset should be in the form `../<folder>/<topic-file>.md` including the trailing `.md`. If you're linking to another topic in the same folder, then `../<folder>/` can be omitted. When using anchors, always remember to include the `.md` before the `#`.
     1. When using external links, especially to Microsoft Learn, omit any language tag like "en-us" so that a reader in another language lands on a target page in that same language if it's available.
 1. When you're done, enter a commit message below, and click **Propose file change**.
 1. Send a pull request for your change. Review requests are automatic and we review PRs on a regular basis.
