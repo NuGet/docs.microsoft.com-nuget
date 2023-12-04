@@ -127,8 +127,8 @@ All requested packages must map to one or more sources by matching a defined pac
 ### Package Pattern Syntax
 
 | Pattern | Example syntax | Description |
-|-|--------|---------|-------------|
-| Package prefix pattern | `*`, `NuGet.*`, `NuGet.*` | Must end with a `*`, where `*` matches 0 or more characters. `*` is the shortest allowed prefix pattern and matches all packages ids. |
+|---------|---------|-------------|
+| Package prefix pattern | `*`, `NuGet.*` | Must end with a `*`, where `*` matches 0 or more characters. `*` is the shortest allowed prefix pattern and matches all packages ids. |
 | Package ID pattern | `NuGet.Common`, `Contoso.Contracts` | Exact package ID. |
 
 ### Package Pattern precedence
