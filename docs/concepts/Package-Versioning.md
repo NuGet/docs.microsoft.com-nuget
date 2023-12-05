@@ -82,6 +82,8 @@ Note that 1.0.1-alpha10 is sorted strictly in reverse alphabetical order, wherea
 1.0.1
 1.0.1-zzz
 1.0.1-open
+1.0.1-beta05
+1.0.1-beta02
 1.0.1-beta
 1.0.1-alpha2
 1.0.1-alpha10
@@ -89,6 +91,8 @@ Note that 1.0.1-alpha10 is sorted strictly in reverse alphabetical order, wherea
 ```
 
 Note that versions such as `1.0.1-rc.10` and `1.0.1-rc.2` are not parsable by older versions of the client, and such packages with those versions won't be available for download with those clients.
+
+If you use numerical suffixes with pre-release tags that might use double-digit numbers (or more), use leading zeroes as in beta01 and beta05 to ensure that they sort correctly when the numbers get larger. This recommendation only applies this schema.
 
 ## Version ranges
 
