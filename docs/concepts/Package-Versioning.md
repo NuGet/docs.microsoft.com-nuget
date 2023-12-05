@@ -14,11 +14,15 @@ A specific package is always referred to using its package identifier and an exa
 
 When creating a package, you assign a specific version number with an optional pre-release text suffix. When consuming packages, on the other hand, you can specify either an exact version number or a range of acceptable versions.
 
+The following document follows the [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) standard, supported by NuGet 4.3.0+ and Visual Studio 2017 version 15.3+.
+Certain [semantics of SemVer v2.0.0](#semantic-versioning-200) are not supported in older clients.
+
 In this topic:
 
 - [Version basics](#version-basics) including pre-release suffixes.
 - [Version ranges](#version-ranges)
 - [Normalized version numbers](#normalized-version-numbers)
+- [Semantic Versioning 2.0.0](#semantic-versioning-200)
 
 ## Version basics
 
@@ -54,7 +58,7 @@ That said, package developers generally follow recognized naming conventions:
 When resolving package references and multiple package versions differ only by suffix, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order and treats dot notation numbers with numerical order. For example, the following versions would be chosen in the exact order shown:
 
 > [!Note]
-> Prerelease numbers with dot notation, as in *1.0.1-build.23*, are considered are part of the [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html) standard, and as such are only supported with NuGet 4.3.0+.
+> Prerelease numbers with dot notation, as in *1.0.1-build.23*, are considered are part of the [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html) standard, and as such are [only supported with NuGet 4.3.0+](#semantic-versioning-200).
 
 ### [SemVer 2.0 sorting](#tab/semver20sort)
 
@@ -85,36 +89,6 @@ Note that 1.0.1-alpha10 is sorted strictly in reverse alphabetical order, wherea
 ```
 
 Note that versions such as `1.0.1-rc.10` and `1.0.1-rc.2` are not parsable by older versions of the client, and such packages with those versions won't be available for download with those clients.
-
-## Semantic Versioning 2.0.0
-
-With NuGet 4.3.0+ and Visual Studio 2017 version 15.3+, NuGet supports [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).
-
-Certain semantics of SemVer v2.0.0 are not supported in older clients. NuGet considers a package version to be SemVer v2.0.0 specific if either of the following statements is true:
-
-- The pre-release label is dot-separated, for example, *1.0.0-alpha.1*
-- The version has build-metadata, for example, *1.0.0+githash*
-
-For nuget.org, a package is defined as a SemVer v2.0.0 package if either of the following statements is true:
-
-- The package's own version is SemVer v2.0.0 compliant but not SemVer v1.0.0 compliant, as defined above.
-- Any of the package's dependency version ranges has a minimum or maximum version that is SemVer v2.0.0 compliant but not SemVer v1.0.0 compliant, defined above; for example, *[1.0.0-alpha.1, )*.
-
-If you upload a SemVer v2.0.0-specific package to nuget.org, the package is invisible to older clients and available to only the following NuGet clients:
-
-- NuGet 4.3.0+
-- Visual Studio 2017 version 15.3+
-- Visual Studio 2015 with [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)
-- dotnet
-  - dotnetcore.exe (.NET SDK 2.0.0+)
-
-Third-party clients:
-
-- JetBrains Rider
-- Paket version 5.0+
-
-<!-- For compatibility with previous dependency-versions page -->
-<a name="version-ranges"></a>
 
 ## Version ranges
 
@@ -251,6 +225,35 @@ When obtaining packages from a repository during install, reinstall, or restore 
 `pack` and `restore` operations normalize versions whenever possible. For packages already built, this normalization does not affect the version numbers in the packages themselves; it affects only how NuGet matches versions when resolving dependencies.
 
 However, NuGet package repositories must treat these values in the same way as NuGet to prevent package version duplication. Thus a repository that contains version *1.0* of a package should not also host version *1.0.0* as a separate and different package.
+
+## Semantic Versioning 2.0.0
+
+Certain semantics of SemVer v2.0.0 are not supported in older clients. 
+NuGet considers a package version to be SemVer v2.0.0 specific if either of the following statements is true:
+
+- The pre-release label is dot-separated, for example, *1.0.0-alpha.1*
+- The version has build-metadata, for example, *1.0.0+githash*
+
+For nuget.org, a package is defined as a SemVer v2.0.0 package if either of the following statements is true:
+
+- The package's own version is SemVer v2.0.0 compliant but not SemVer v1.0.0 compliant, as defined above.
+- Any of the package's dependency version ranges has a minimum or maximum version that is SemVer v2.0.0 compliant but not SemVer v1.0.0 compliant, defined above; for example, *[1.0.0-alpha.1, )*.
+
+If you upload a SemVer v2.0.0-specific package to nuget.org, the package is invisible to older clients and available to only the following NuGet clients:
+
+- NuGet 4.3.0+
+- Visual Studio 2017 version 15.3+
+- Visual Studio 2015 with [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)
+- dotnet
+  - dotnetcore.exe (.NET SDK 2.0.0+)
+
+Third-party clients:
+
+- JetBrains Rider
+- Paket version 5.0+
+
+<!-- For compatibility with previous dependency-versions page -->
+<a name="version-ranges"></a>
 
 ## Where NuGetVersion diverges from Semantic Versioning
 
