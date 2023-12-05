@@ -27,7 +27,7 @@ A specific version number is in the form *Major.Minor.Patch[-Suffix]*, where the
 - *Major*: Breaking changes
 - *Minor*: New features, but backwards compatible
 - *Patch*: Backwards compatible bug fixes only
-- *-Suffix* (optional): a hyphen followed by a string denoting a pre-release version (following the [Semantic Versioning or SemVer 1.0 convention](https://semver.org/spec/v1.0.0.html)).
+- *-Suffix* (optional): a hyphen followed by a string denoting a pre-release version (following the [Semantic Versioning or SemVer](https://semver.org/) convention).
 
 **Examples:**
 
@@ -69,6 +69,30 @@ When resolving package references and multiple package versions differ only by s
 ```
 
 Note that, 1.0.1-alpha10 is sorted strictly in reverse alphabetical order, whereas 1.0.1-rc.10 is greater precedence than 1.0.1-rc.2.
+
+# [SemVer 2.0](#tab/semver20)
+
+### Latest version
+
+Download and install the latest release of the Azure CLI. When the installer asks if it can make changes to your computer, select the "Yes" box.
+
+> [!div class="nextstepaction"]
+> [Latest release of the Azure CLI (32-bit)](https://aka.ms/installazurecliwindows)
+
+> [!div class="nextstepaction"]
+> [Latest release of the Azure CLI (64-bit)](https://aka.ms/installazurecliwindowsx64)
+
+If you have previously installed the Azure CLI, running either the 32-bit or 64-bit MSI will overwrite an existing installation.
+
+# [SemVer 1.0](#tab/semver10)
+
+### SemVer 1.0
+
+To install the Azure CLI using PowerShell, start PowerShell **as administrator** and run the following command:
+
+   ```PowerShell
+   $ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; Remove-Item .\AzureCLI.msi
+   ```
 
 ## Semantic Versioning 2.0.0
 
@@ -157,19 +181,6 @@ Always specify a version or version range for package dependencies in project fi
      Will resolve to the smallest acceptable stable version. -->
 <PackageReference Include="ExamplePackage" Version="[1.3.2,1.5)" />
 ```
-
-#### Floating version resolutions 
-
-| Version | Versions present on server | Resolution | Reason | Notes |
-|----------|--------------|-------------|-------------|-------------|
-| * | 1.1.0 <br> 1.1.1 <br> 1.2.0 <br> 1.3.0-alpha  | 1.2.0 | The highest stable version. |
-| 1.1.* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.2.0-alpha | 1.1.1 | The highest stable version that respects the specified pattern.|
-| \*-\* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.3.0-beta  | 1.3.0-beta | The highest version including the not stable versions. | Available in Visual Studio version 16.6, NuGet version 5.6, .NET Core SDK version 3.1.300 |
-| 1.1.\*-\* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.1.2-beta <br> 1.3.0-beta  | 1.1.2-beta | The highest version respecting the pattern and including the not stable versions. | Available in Visual Studio version 16.6, NuGet version 5.6, .NET Core SDK version 3.1.300 |
-
-> [!Note]
-> Floating version resolution does not take into account whether or not a package is listed. 
-> Floating version resolution will be resolved locally if the conditions can be satisfied with packages in the Global Package Folder.
 
 **References in `packages.config`:**
 

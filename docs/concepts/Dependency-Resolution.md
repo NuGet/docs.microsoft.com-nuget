@@ -57,8 +57,16 @@ When using a floating version, NuGet resolves the highest version of a package t
 
 ![Choosing version 6.0.1 when a floating version 6.0.* is requested](media/floating-versions-1.png)
 
+| Version | Versions present on server | Resolution | Reason | Notes |
+|----------|--------------|-------------|-------------|-------------|
+| * | 1.1.0 <br> 1.1.1 <br> 1.2.0 <br> 1.3.0-alpha  | 1.2.0 | The highest stable version. |
+| 1.1.* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.2.0-alpha | 1.1.1 | The highest stable version that respects the specified pattern.|
+| \*-\* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.3.0-beta  | 1.3.0-beta | The highest version including the not stable versions. | Available in Visual Studio version 16.6, NuGet version 5.6, .NET Core SDK version 3.1.300 |
+| 1.1.\*-\* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.1.2-beta <br> 1.3.0-beta  | 1.1.2-beta | The highest version respecting the pattern and including the not stable versions. | Available in Visual Studio version 16.6, NuGet version 5.6, .NET Core SDK version 3.1.300 |
+
 > [!Note]
-> For information on the behavior of floating versions and pre-release versions, see [Package versioning](package-versioning.md#version-ranges).
+> Floating version resolution does not take into account whether or not a package is listed.
+> Floating version resolution will be resolved locally if the conditions can be satisfied with packages in the Global Package Folder.
 
 #### Direct dependency wins
 
