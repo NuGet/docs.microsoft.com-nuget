@@ -107,11 +107,6 @@ When referring to package dependencies, NuGet supports using interval notation f
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | Mixed inclusive minimum and exclusive maximum version |
 | (1.0)    | invalid | invalid |
 
-When using the PackageReference format, NuGet also supports using a floating notation, \*, for Major, Minor, Patch, and pre-release suffix parts of the number. Floating versions are not supported with the `packages.config` format. When a floating version is specified, the rule is to resolve to the highest existent version that matches the version description. Examples of floating versions and the resolutions are below.
-
-> [!Note]
-> Version ranges in PackageReference include pre-release versions. By design, floating versions do not resolve prerelease versions unless opted into. For the status of the related feature request, see [issue 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297).
-
 ### Examples
 
 Always specify a version or version range for package dependencies in project files, `packages.config` files, and `.nuspec` files. Without a version or version range, NuGet 2.8.x and earlier chooses the latest available package version when resolving a dependency, whereas NuGet 3.x and later chooses the lowest package version. Specifying a version or version range avoids this uncertainty.
@@ -206,7 +201,7 @@ The `version` attribute in a `<dependency>` element describes the range versions
 ## Normalized version numbers
 
 > [!Note]
-> This is a breaking change for NuGet 3.4 and later.
+> This is a breaking change for NuGet 3.4+.
 
 When obtaining packages from a repository during install, reinstall, or restore operations, NuGet 3.4+ treats version numbers as follows:
 
@@ -228,7 +223,7 @@ However, NuGet package repositories must treat these values in the same way as N
 
 ## Semantic Versioning 2.0.0
 
-Certain semantics of SemVer v2.0.0 are not supported in older clients. 
+Certain semantics of SemVer v2.0.0 are not supported in older clients.
 NuGet considers a package version to be SemVer v2.0.0 specific if either of the following statements is true:
 
 - The pre-release label is dot-separated, for example, *1.0.0-alpha.1*
@@ -244,8 +239,7 @@ If you upload a SemVer v2.0.0-specific package to nuget.org, the package is invi
 - NuGet 4.3.0+
 - Visual Studio 2017 version 15.3+
 - Visual Studio 2015 with [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)
-- dotnet
-  - dotnetcore.exe (.NET SDK 2.0.0+)
+- .NET SDK 2.0.0+
 
 Third-party clients:
 
