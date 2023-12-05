@@ -94,6 +94,8 @@ Note that versions such as `1.0.1-rc.10` and `1.0.1-rc.2` are not parsable by ol
 
 If you use numerical suffixes with pre-release tags that might use double-digit numbers (or more), use leading zeroes as in beta01 and beta05 to ensure that they sort correctly when the numbers get larger. This recommendation only applies this schema.
 
+---
+
 ## Version ranges
 
 When referring to package dependencies, NuGet supports using interval notation for specifying version ranges, summarized as follows:
