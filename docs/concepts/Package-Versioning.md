@@ -51,10 +51,12 @@ That said, package developers generally follow recognized naming conventions:
 - `-beta`: Beta release, typically one that is feature complete for the next planned release, but may contain known bugs.
 - `-rc`: Release candidate, typically a release that's potentially final (stable) unless significant bugs emerge.
 
-> [!Note]
-> NuGet 4.3.0+ supports [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html), which supports pre-release numbers with dot notation, as in *1.0.1-build.23*. Dot notation is not supported with NuGet versions before 4.3.0. You can use a form like *1.0.1-build23*. It is recommended to use NuGet 4.3.0+, because nuget.org and newer NuGet clients will not treat "1.0.1-build23" as greater than "1.0.1-build3".
-
 When resolving package references and multiple package versions differ only by suffix, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order and treats dot notation numbers with numerical order. For example, the following versions would be chosen in the exact order shown:
+
+> [!Note]
+> Prerelease numbers with dot notation, as in *1.0.1-build.23*, are considered are part of the [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html) standard, and as such are only supported with NuGet 4.3.0+.
+
+### [SemVer 2.0 sorting](#tab/semver20sort)
 
 ```
 1.0.1
@@ -68,31 +70,21 @@ When resolving package references and multiple package versions differ only by s
 1.0.1-aaa
 ```
 
-Note that, 1.0.1-alpha10 is sorted strictly in reverse alphabetical order, whereas 1.0.1-rc.10 is greater precedence than 1.0.1-rc.2.
+Note that 1.0.1-alpha10 is sorted strictly in reverse alphabetical order, whereas 1.0.1-rc.10 is greater precedence than 1.0.1-rc.2.
 
-# [SemVer 2.0](#tab/semver20)
+### [SemVer 1.0 sorting](#tab/semver10sort)
 
-### Latest version
+```
+1.0.1
+1.0.1-zzz
+1.0.1-open
+1.0.1-beta
+1.0.1-alpha2
+1.0.1-alpha10
+1.0.1-aaa
+```
 
-Download and install the latest release of the Azure CLI. When the installer asks if it can make changes to your computer, select the "Yes" box.
-
-> [!div class="nextstepaction"]
-> [Latest release of the Azure CLI (32-bit)](https://aka.ms/installazurecliwindows)
-
-> [!div class="nextstepaction"]
-> [Latest release of the Azure CLI (64-bit)](https://aka.ms/installazurecliwindowsx64)
-
-If you have previously installed the Azure CLI, running either the 32-bit or 64-bit MSI will overwrite an existing installation.
-
-# [SemVer 1.0](#tab/semver10)
-
-### SemVer 1.0
-
-To install the Azure CLI using PowerShell, start PowerShell **as administrator** and run the following command:
-
-   ```PowerShell
-   $ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; Remove-Item .\AzureCLI.msi
-   ```
+Note that versions such as `1.0.1-rc.10` and `1.0.1-rc.2` are not parsable by older versions of the client, and such packages with those versions won't be available for download with those clients.
 
 ## Semantic Versioning 2.0.0
 
