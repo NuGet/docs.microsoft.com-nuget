@@ -55,7 +55,8 @@ That said, package developers generally follow recognized naming conventions:
 - `-beta`: Beta release, typically one that is feature complete for the next planned release, but may contain known bugs.
 - `-rc`: Release candidate, typically a release that's potentially final (stable) unless significant bugs emerge.
 
-When resolving package references and multiple package versions differ only by suffix, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order and treats dot notation numbers with numerical order. For example, the following versions would be chosen in the exact order shown:
+When ordering versions by precedence, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order and treats dot notation numbers with numerical order.
+An example ordering:
 
 > [!Note]
 > Prerelease numbers with dot notation, as in *1.0.1-build.23*, are considered are part of the [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html) standard, and as such are [only supported with NuGet 4.3.0+](#semantic-versioning-200).
@@ -92,7 +93,8 @@ Note that 1.0.1-alpha10 is sorted strictly in reverse alphabetical order, wherea
 
 Note that versions such as `1.0.1-rc.10` and `1.0.1-rc.2` are not parsable by older versions of the client, and such packages with those versions won't be available for download with those clients.
 
-If you use numerical suffixes with pre-release tags that might use double-digit numbers (or more), use leading zeroes as in beta01 and beta05 to ensure that they sort correctly when the numbers get larger. This recommendation only applies this schema.
+If you use numerical suffixes with pre-release tags that might use double-digit numbers (or more), use leading zeroes as in beta01 and beta05 to ensure that they sort correctly when the numbers get larger.
+This recommendation only applies this schema.
 
 ---
 
