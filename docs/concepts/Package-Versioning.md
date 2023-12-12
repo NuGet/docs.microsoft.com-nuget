@@ -55,8 +55,7 @@ That said, package developers generally follow recognized naming conventions:
 - `-beta`: Beta release, typically one that is feature complete for the next planned release, but may contain known bugs.
 - `-rc`: Release candidate, typically a release that's potentially final (stable) unless significant bugs emerge.
 
-When ordering versions by precedence, NuGet chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order and treats dot notation numbers with numerical order.
-An example ordering:
+When ordering versions by precedence, NuGet follows the SemVer standard and chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order and treats dot notation numbers with numerical order.
 
 > [!Note]
 > Prerelease numbers with dot notation, as in *1.0.1-build.23*, are considered are part of the [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html) standard, and as such are [only supported with NuGet 4.3.0+](#semantic-versioning-200).
