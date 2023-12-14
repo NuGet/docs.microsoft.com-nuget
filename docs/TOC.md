@@ -48,6 +48,7 @@
 ### [Select assemblies referenced by projects](create-packages/select-assemblies-referenced-by-projects.md)
 ### [Set package type](create-packages/set-package-type.md)
 ### [Create a localized package](create-packages/creating-localized-packages.md)
+### [.NET Packages containing native libraries](create-packages/native-files-in-net-packages.md)
 ## Guides for specific content
 ### [Create a UWP package (C++)](guides/create-uwp-packages.md)
 ### [Create a UWP package (C#)](guides/create-uwp-packages-CS.md)
@@ -338,6 +339,7 @@
 ### [Known Issues](release-notes/known-issues.md)
 
 ### NuGet 6.x
+#### [NuGet 6.8](release-notes/NuGet-6.8.md)
 #### [NuGet 6.7](release-notes/NuGet-6.7.md)
 #### [NuGet 6.6](release-notes/NuGet-6.6.md)
 #### [NuGet 6.5](release-notes/NuGet-6.5.md)
