@@ -15,7 +15,6 @@ For HTTP feeds, NuGet will with make an unauthenticated request, and if the serv
 1. [An environment variable `NuGetPackageSourceCredentials_{name}`](#credentials-in-environment-variables).
 1. [Add credentials in a *nuget.config* file](#credentials-in-nugetconfig-files).
 1. [Use a NuGet credential provider, if your package source provides one](#credential-providers).
-1. [Interactive login](#interactive-login)
 
 We recommend using a credential provider when possible.
 Secrets wil not be saved in the *nuget.config* file, reducing risk of accidentally leaking secrets.
@@ -75,14 +74,24 @@ For more information, see [the *nuget.config* reference docs on using environmen
 NuGet has an extensibility model, allowing [plugins to provide NuGet credentials](../reference/extensibility/NuGet-Cross-Platform-Authentication-Plugin.md).
 The [path that credential providers must be installed](../reference/extensibility/NuGet-Cross-Platform-Plugins.md#plugin-installation-and-discovery), for NuGet to discover, is different for .NET Framework (NuGet.exe, MSBuild, and Visual Studio), and the .NET SDK (running on the .NET 5+ runtime).
 
-NuGet passes its "interactive mode" flag to credential providers, so if the credential provider is not able to silently obtain credentials, it may fail unless [interactive mode is specified](#interactive-login).
+NuGet has a concept of being run in interactive mode or non-interactive mode.
+When in non-interactive mode, credential providers are asked not to block NuGet.
+While in interactive mode, the credential provider may prompt you to log in.
+Different tools have different defaults, so interactive mode may need to be opt-in or opt-out, depending on your scenario.
+
+|Tool|Default|Toggle|
+|--|--|--|
+|`dotnet` CLI|non-interactive|`--interactive` argument. For example, `dotnet restore --interactive`.|
+|MSBuild|non-interactive|`NuGetInteractive` MSBuild property. For example, `msbuild -t:restore -p:NuGetInteractive=true`.|
+|NuGet.exe|interactive|`-NonInteractive` argument. For example, `nuget.exe restore -NonInteractive`.|
+|Visual Studio|interactive|not possible to run in non-interactive mode.|
+
+[NuGet.exe supports both V1 and V2 credential providers](../reference/extensibility/nuget-exe-Credential-Providers.md), while MSBuild and the .NET SDK only support the cross platform (V2) plugins.
 
 In Visual Studio, NuGet has a [Visual Studio Credential Provider interface](../reference/extensibility/NuGet-Credential-Providers-for-Visual-Studio.md), which credential providers can use to provide a graphical login experience, or call Visual Studio APIs if necessary.
 NuGet in Visual Studio will fall back to the command line credential providers if it can't find a Visual Studio credential provider that handles the source.
 
-NuGet.exe supports both V1 and V2 credential providers, while MSBuild, the .NET SDK, and Visual Studio only support V2 plugins.
-
-Visual Studio 2017 version 17.9, and above, includes a credential provider for [Azure Artifacts](/azure/devops/artifacts/), that works within Visual Studio, MSBuild, and NuGet.exe.
+Visual Studio 2017 version 15.9, and above, includes a credential provider for [Azure Artifacts](/azure/devops/artifacts/), that works within Visual Studio, MSBuild, and NuGet.exe.
 However, the credential provider for the .NET SDK is not included by Visual Studio, so [must be installed separately](https://github.com/microsoft/artifacts-credprovider?tab=readme-ov-file#setup) to work with the `dotnet` CLI.
 
 ### List of credential providers
@@ -93,14 +102,3 @@ Until this is implemented, here is a list of credential providers we are aware o
 * [AWS CodeArtifact NuGet Credential Provider](https://docs.aws.amazon.com/codeartifact/latest/ug/nuget-cli.html#nuget-configure-cli)
 * [Azure Artifacts Credential Provider](https://github.com/microsoft/artifacts-credprovider). This link is just for the command line credential provider.
 * [MyGet Credential Provider for Visual Studio](http://docs.myget.org/docs/reference/credential-provider-for-visual-studio).
-
-## Interactive login
-
-When NuGet can not find credentials from any of the previous steps, NuGet will pause restore and prompt for credentials when in interactive mode.
-
-|Tool|Default|Toggle|
-|--|--|--|
-|`dotnet` CLI|non-interactive|`--interactive` argument. For example, `dotnet restore --interactive`.|
-|MSBuild|non-interactive|`NuGetInteractive` MSBuild property. For example, `msbuild -t:restore -p:NuGetInteractive=true`.|
-|NuGet.exe|interactive|`-NonInteractive` argument. For example, `nuget.exe restore -NonInteractive`.|
-|Visual Studio|interactive|not possible to run without prompting.|
