@@ -34,6 +34,8 @@ NuGet distribution vehicles:
 
 * Add [protocolVersion argument](../reference/cli-reference/cli-ref-sources.md#options) to nuget source add - [#9170](https://github.com/NuGet/Home/issues/9170)
 
+* Signed package verification is [enabled by default on Linux in .NET 8 SDK](/dotnet/core/tools/nuget-signed-package-verification#linux) - [#11262](https://github.com/NuGet/Home/issues/11262)
+
 ### Known issues
 
 * NuGetAuditMode doesn't work for SDK style projects in VS 17.8 - [#13003](https://github.com/NuGet/Home/issues/13003)

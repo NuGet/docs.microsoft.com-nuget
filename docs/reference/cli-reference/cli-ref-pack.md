@@ -120,7 +120,7 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 
 - **`-Tool`**
 
-   Specifies that the output files of the project should be placed in the `tool` folder.
+   Specifies that the output files of the project should be placed in the `tools` folder within the package.
 
 - **`-Verbosity [normal|quiet|detailed]`**
 

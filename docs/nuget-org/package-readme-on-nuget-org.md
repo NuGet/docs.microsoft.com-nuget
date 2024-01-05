@@ -41,13 +41,11 @@ Consider taking time to review and preview your readme file for [image complianc
 Due to security and privacy concerns, NuGet.org restricts the domains from which images and badges can be rendered to trusted hosts. 
 
 NuGet.org allows all images, including badges, from the following trusted domains to be rendered:
-* api.bintray.com
 * api.codacy.com
 * app.codacy.com
 * api.codeclimate.com
 * api.dependabot.com
 * api.travis-ci.com
-* api.travis-ci.org
 * api.reuse.software
 * app.fossa.com
 * app.fossa.io
@@ -55,7 +53,6 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * badge.fury.io
 * badgen.net
 * badges.gitter.im
-* bettercodehub.com
 * buildstats.info
 * caniuse.bitsofco.de
 * camo.githubusercontent.com
