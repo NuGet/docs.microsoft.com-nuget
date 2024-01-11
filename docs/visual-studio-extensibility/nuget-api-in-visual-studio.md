@@ -19,6 +19,15 @@ NuGet's product follows Visual Studio's version, but is 11.0 versions behind. Fo
 
 Starting from Visual Studio 17.1, NuGet's Visual Studio extensibility API packages match the version of Visual Studio that the APIs are targeting. For example, NuGet.VisualStudio and NuGet.VisualStudio.Contracts package version 17.1.0 should be used when your extension targets Visual Studio 17.1 and higher. In Visual Studio 17.0 and earlier, NuGet's package versions are the same as NuGet's product version. For example, if your extension targets Visual Studio 2022 version 17.0, you should use version 6.0 of NuGet's Visual Studio extensibility packages.
 
+## NuGet Client SDK in Visual Studio Extensions
+
+Only the APIs in `NuGet.VisualStudio` and `NuGet.VisualStudio.Contracts` are supported in Visual Studio extensions.
+NuGet provides binding redirects for these assemblies, so these assemblies do not need to be included in your extension.
+
+Using NuGet Client SDK packages, for example `NuGet.Protocol`, is not supported in Visual Studio extensions.
+NuGet does not provide binding redirects for these assemblies.
+See [the NuGet Client SDK support policy](../reference/NuGet-Client-SDK.md#support-policy) for more information.
+
 ## Services List
 
 ### Brokered Services

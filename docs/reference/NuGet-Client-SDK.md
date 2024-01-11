@@ -32,6 +32,14 @@ You can find the source code for these packages in the [NuGet/NuGet.Client](http
 > [!Note]
 > For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).
 
+## Support policy
+
+All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [https://aka.ms/opensource/security/create-report].
+Also see the [security policy in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/SECURITY.md).
+
+We do not guarantee API stability, as our team's responsibility is tooling, not libraries.
+See [https://github.com/NuGet/NuGet.Client/blob/dev/docs/nuget-sdk.md] for more information.
+
 ## NuGet.Protocol
 
 Install the `NuGet.Protocol` package to interact with HTTP and folder-based NuGet package feeds:
