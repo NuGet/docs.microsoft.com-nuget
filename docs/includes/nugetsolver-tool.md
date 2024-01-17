@@ -9,7 +9,5 @@ ms.topic: include
 
 > [!Tip]
 
-> **Alternative solution**: Use NuGetSolver, an automated experimental tool from Microsoft DevLabs(not officially supported by NuGet) for solving dependency conflicts, to help you find solutions to problems like this automatically!
-If you're using Visual Studio 2022, and have nuget.org as your only source, [NuGetSolver](https://devblogs.microsoft.com/nuget/introducing-nugetsolver-a-powerful-tool-for-resolving-nuget-dependency-conflicts-in-visual-studio/) can help free your dependency graph of resolver warnings/errors.
-[Learn more about how you can try out NuGetSolver](https://devblogs.microsoft.com/nuget/introducing-nugetsolver-a-powerful-tool-for-resolving-nuget-dependency-conflicts-in-visual-studio/#usage-recommendations-and-known-constraints) and we'd love to hear your feedback about your experience.
+> **Alternative solution**: NuGetSolver is a Visual Studio Extension developed by Microsoft DevLabs, designed to assist in resolving dependency conflicts. It automates the process of identifying and addressing these issues. For further details, visit the [NuGetSolver](https://marketplace.visualstudio.com/items?itemName=vsext.NuGetSolver) page on the Visual Studio Marketplace and we'd love to hear your feedback about your experience.
 
