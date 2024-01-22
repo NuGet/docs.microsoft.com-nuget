@@ -13,13 +13,14 @@ Many NuGet operations, such as restore and install, require communication with o
 For HTTP feeds, NuGet will with make an unauthenticated request, and if the server responds with an HTTP 401 response, NuGet will search for credentials in the following order:
 
 1. [An environment variable `NuGetPackageSourceCredentials_{name}`](#credentials-in-environment-variables).
-1. [Add credentials in a *nuget.config* file](#credentials-in-nugetconfig-files).
+1. [Credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 1. [Use a NuGet credential provider, if your package source provides one](#credential-providers).
 
-We recommend using a credential provider when possible.
-Secrets wil not be saved in the *nuget.config* file, reducing risk of accidentally leaking secrets.
-Additionally, it typically reduces the number of places you need to update when a credential expires or changes.
-If the credential provider supports single sign on, it may reduce the number of time you need to log in, or the number of places that credentials need to be saved.
+> [!NOTE]
+> We recommend using a credential provider when possible.
+> Secrets will not be saved in the *nuget.config* file, reducing risk of accidentally leaking secrets.
+> Additionally, it typically reduces the number of places you need to update when a credential expires or changes.
+> If the credential provider supports single sign on, it may reduce the number of time you need to log in, or the number of places that credentials need to be saved.
 
 The credentials you need to use are determined by the package source.
 Therefore, unless you're using a credential provider, you should check with your package source what credentials to use.
@@ -65,6 +66,9 @@ However, it's easier to use [`dotnet nuget update source`](/dotnet/core/tools/do
 > ![Warning]
 > Take care when setting credentials in *nuget.config* files, especially when saving the credential as plain text.
 > If the credential is written to a *nuget.config* file that is in source control, there is an increased risk of accidentally leaking the secret.
+>
+> As [NuGet accumulates settings from multiple files](../consume-packages/configuring-nuget-behavior.md), it is recommended to save credentials to your user *nuget.config* file.
+> We also recommend to save package sources in the solution (source code repository) *nuget.config* file, including a `<clear />` element, for build reliability.
 
 The username and plain text password in a *nuget.config* file can use an environment variable by adding `%` to the beginning and end of the environment variable name you would like to use.
 For more information, see [the *nuget.config* reference docs on using environment variables](../reference/nuget-config-file.md#using-environment-variables).
