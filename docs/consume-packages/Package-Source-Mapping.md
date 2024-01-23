@@ -11,12 +11,12 @@ f1_keywords:
 
 # Package Source Mapping
 
-By default, NuGet will search all package sources when it needs to download a package.
+Package Source Mapping is a tool that can be used to improve your supply chain security, especially if you use a mix of public and private package sources.
+
+By default, NuGet will search all configured package sources when it needs to download a package.
 When a package exists on multiple sources, it may not be deterministic which source the package will be downloaded from.
 With Package Source Mapping, you can filter, per package, which source(s) NuGet will search.
-This ensures that packages you only want to download from a specific source, or a subset of sources, will not accidentally be downloaded from a source considered untrusted for that package id.
 
-Package Source Mapping is a tool that can be used to improve your supply chain security, especially if you use a mix of public and private package sources.
 We also have suggestions for other [best practices](..\concepts\Security-Best-Practices.md) to help you fortify your supply chain against attacks.
 
 Package Source Mapping was added in [NuGet 6.0](..\release-notes\NuGet-6.0.md).
