@@ -10,7 +10,7 @@ ms.topic: conceptual
 # Consuming packages from authenticated feeds
 
 Many NuGet operations, such as restore and install, require communication with one or more package sources, which [can be configured in *nuget.config* files](../reference/nuget-config-file.md#packagesources).
-For HTTP feeds, NuGet will with make an unauthenticated request, and if the server responds with an HTTP 401 response, NuGet will search for credentials in the following order:
+For HTTP feeds, NuGet will make an unauthenticated request, and if the server responds with an HTTP 401 response, NuGet will search for credentials in the following order:
 
 1. [An environment variable `NuGetPackageSourceCredentials_{name}`](#credentials-in-environment-variables).
 1. [Credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
@@ -18,13 +18,13 @@ For HTTP feeds, NuGet will with make an unauthenticated request, and if the serv
 
 > [!NOTE]
 > We recommend using a credential provider when possible.
-> Secrets will not be saved in the *nuget.config* file, reducing risk of accidentally leaking secrets.
+> Using a credential provider avoids secrets in the *nuget.config* file, reducing risk of accidentally leaking secrets via source control.
 > Additionally, it typically reduces the number of places you need to update when a credential expires or changes.
-> If the credential provider supports single sign on, it may reduce the number of time you need to log in, or the number of places that credentials need to be saved.
+> If the credential provider supports single sign-on, it may reduce the number of times you need to login, or the number of places that credentials need to be saved.
 
 The credentials you need to use are determined by the package source.
-Therefore, unless you're using a credential provider, you should check with your package source what credentials to use.
-It is very common for package sources to forbid using your password (that you log into the website with) with NuGet.
+Therefore, unless you're using a credential provider, you should check with your package source for what credentials to use.
+It is very common for package sources to forbid you from using your password (that you log into the website with) with NuGet.
 Typically you need to create a Personal Access Token to use as NuGet's password, but you should check the documentation for the NuGet server you're using.
 Some package sources, such as Azure DevOps and GitHub, have scoped access tokens, so you may need to ensure that any tokens you create include the required scope.
 
@@ -32,7 +32,11 @@ Some package sources, such as Azure DevOps and GitHub, have scoped access tokens
 
 NuGet will search for an environment variable named `NuGetPackageSourceCredentials_{name}`, where `{name}` is the value of `key="name"` in your *nuget.config* file's package source.
 The value of the environment variable must be `Username={username};Password={password}`, and may optionally include `;ValidAuthenticationTypes={types}`.
-If the environment variable doesn't match NuGet's convention, NuGet will silently ignore the environment variable, and continue searching for credentials for the package source elsewhere.
+If the environment variable doesn't match NuGet's convention, or the value doesn't meet NuGet's expected pattern, NuGet will silently ignore the environment variable, and continue searching for credentials for the package source elsewhere.
+There are no logs to signal that NuGet uses the credential from the environment variable, which can cause difficulties in debugging authentication problems if the environment variable contains an expired secret, and the new secret is added to a *nuget.config* file, since the config file has lower precedence.
+
+> [!TIP]
+> Using environment variables in CI/CD pipelines is an excellent choice to minimize the risk of secrets being captured in logs.
 
 For example, consider the following *nuget.config* file:
 
@@ -52,10 +56,11 @@ If the username is `nugetUser` and the password is `secret123`, the environment 
 If NuGet should only use this credential for HTTP Basic authentication, but not other authentication schemes, you can set the environment variable's value to `Username=nugetUser;Password=secret123;ValidAuthenticationTypes=Basic`.
 For more information about valid authentication types, see [the docs on package credentials in *nuget.config* files](../reference/nuget-config-file.md#packagesourcecredentials).
 
-Note that environment variables have restrictions on allowed characters, and different operating systems may have different restrictions.
-For example, spaces are not allowed.
-Therefore, you use this environment variable feature to specify NuGet credentials for package sources that use any characters that are invalid for your platform's environment variables.
-In such cases, you should rename the package source in your *nuget.config* file.
+> [!NOTE]
+> Environment variables have restrictions on allowed characters, and different operating systems may have different restrictions.
+> For example, spaces are not allowed.
+> Therefore, you use this environment variable feature to specify NuGet credentials for package sources that use any characters that are invalid for your platform's environment variables.
+> In such cases, you should rename the package source in your *nuget.config* file.
 
 ## Credentials in *nuget.config* files
 
