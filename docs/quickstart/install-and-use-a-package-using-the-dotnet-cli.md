@@ -67,8 +67,8 @@ You can install NuGet packages into a .NET project. For this walkthrough, create
     {
         public class Account
         {
-            public string Name { get; set; }
-            public string Email { get; set; }
+            public string? Name { get; set; }
+            public string? Email { get; set; }
             public DateTime DOB { get; set; }
         }
         internal class Program
