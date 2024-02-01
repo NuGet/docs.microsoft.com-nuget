@@ -3,7 +3,7 @@ title: NuGet 6.9 Release Notes
 description: Release notes for NuGet 6.9 including new features, bug fixes, and DCRs.
 author: jgonz120
 ms.author: jongonza
-ms.date: 1/31/2024
+ms.date: 2/1/2024
 ms.topic: conceptual
 ---
 
@@ -38,6 +38,8 @@ NuGet distribution vehicles:
 * NuGetAudit should not download vulnerabilities database when project does not use any packages - [#13073](https://github.com/NuGet/Home/issues/13073)
 
 * Static graph-based restore should not enumerate every item's metadata - [#13049](https://github.com/NuGet/Home/issues/13049)
+
+* Migrate NuGet.CommandLine.XPlat package search to use System.CommandLine - [#13031](https://github.com/NuGet/Home/issues/13031)
 
 * Set NuGetAudit defaults in MSBuild - [#12960](https://github.com/NuGet/Home/issues/12960)
 
@@ -113,19 +115,7 @@ Thank you to all the contributors who helped make this NuGet release awesome!
 
 **TODO: Issues that could not be categorized. Make sure the issue has the correct milestone (if required) or an appropriate Type label - StillOpens:**
 
-* Shipped APIs tool is not doing the work to copy APIs from unshipped to shipped - [#13153](https://github.com/NuGet/Home/issues/13153)
-
 * RemoteDependencyWalker allocates a lot due to the fact that it's called recursively - [#12748](https://github.com/NuGet/Home/issues/12748)
 
 * Audit security vulnerabilities without adding nuget.org as package source  - [#12698](https://github.com/NuGet/Home/issues/12698)
-
-* Warn when vulnerabilities are detected during packages.config package installation - [#12308](https://github.com/NuGet/Home/issues/12308)
-
-* Warn when vulnerabilities are detected during packages.config restore - [#12307](https://github.com/NuGet/Home/issues/12307)
-
-* Don't hit registration to gather deprecation/vulnerability metadata - [#10865](https://github.com/NuGet/Home/issues/10865)
-
-**TODO: Issues that could not be categorized. Make sure the issue has the correct milestone (if required) or an appropriate Type label - Nones:**
-
-* Migrate NuGet.CommandLine.XPlat package search to use System.CommandLine - [#13031](https://github.com/NuGet/Home/issues/13031)
 
