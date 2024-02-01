@@ -11,14 +11,19 @@ f1_keywords:
 
 # Package Source Mapping
 
-Safeguarding your software supply chain is crucial if you use a mix of public and private package sources.
-Use Package Source Mapping along side other [best practices](..\concepts\Security-Best-Practices.md) to help you fortify your supply chain against attacks.
+Package Source Mapping is a tool that can be used to improve your supply chain security, especially if you use a mix of public and private package sources.
 
-Starting with [NuGet 6.0](..\release-notes\NuGet-6.0.md), you can centrally declare which source each package in your solution should restore from in your nuget.config file.
+By default, NuGet will search all configured package sources when it needs to download a package.
+When a package exists on multiple sources, it may not be deterministic which source the package will be downloaded from.
+With Package Source Mapping, you can filter, per package, which source(s) NuGet will search.
 
-Starting with Visual Studio 17.5, you can add and remove Package Source Mappings with the Visual Studio Options Dialog
+We also have suggestions for other [best practices](..\concepts\Security-Best-Practices.md) to help you fortify your supply chain against attacks.
+
+Package Source Mapping was added in [NuGet 6.0](..\release-notes\NuGet-6.0.md).
+Starting with Visual Studio 17.5, you can add and remove Package Source Mappings with the Visual Studio Options Dialog.
 
 ### Visual Studio support
+
 | Visual Studio | Package Source Mapping | Support in Tools -> Options | Support in Package Manager UI |
 |-----|---------------------|---------------------|---------------------|
 | 17.0 - 17.4 | ✅ Available | ❌ Not available | ❌ Not available |

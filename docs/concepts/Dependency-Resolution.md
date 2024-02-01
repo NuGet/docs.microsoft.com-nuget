@@ -172,3 +172,5 @@ To resolve incompatibilities, do one of the following:
 
 - Retarget your project to a framework that is supported by the packages you want to use.
 - Contact the author of the packages and work with them to add support for your chosen framework. Each package listing page on [nuget.org](https://www.nuget.org/) has a **Contact Owners** link for this purpose.
+
+[!INCLUDE [nugetsolver-tool](../includes/nugetsolver-tool.md)]

@@ -29,6 +29,9 @@ Consider including the following items in your readme:
 
 Keep in mind, high quality readmes can come in a wide variety of formats, shapes, and sizes! If you already have a package available on NuGet.org, chances are that you already have a `readme.md` or other documentation file in your repository that would be a great addition to your NuGet.org details page.
 
+> [!Note]
+> Read through our [blog on writing a high-quality README](https://devblogs.microsoft.com/nuget/write-a-high-quality-readme-for-nuget-packages/) for some best practices.
+
 ## Preview your readme
 
 To preview your readme file before it's live on NuGet.org, upload your package using the [Upload Package web portal on NuGet.org](/nuget/nuget-org/publish-a-package#web-portal-use-the-upload-package-tab-on-nugetorg) and scroll down to the "Readme File" section of the metadata preview. It should look something like this:
