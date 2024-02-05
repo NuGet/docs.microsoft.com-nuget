@@ -21,8 +21,6 @@ NuGet distribution vehicles:
 
 * Add `--format`, `--verbosity` , `configfile` options to `dotnet package search` - [#12978](https://github.com/NuGet/Home/issues/12978)
 
-* Add .NET 8 constants to NuGet.Frameworks  - [#12910](https://github.com/NuGet/Home/issues/12910)
-
 * Support for dotnet search command (equivalent to nuget.exe list, later search) - [#6060](https://github.com/NuGet/Home/issues/6060)
 
 * exact match and version search for nuget.exe list command - [#5138](https://github.com/NuGet/Home/issues/5138)
@@ -112,10 +110,3 @@ Thank you to all the contributors who helped make this NuGet release awesome!
   * [5496](https://github.com/NuGet/NuGet.Client/pull/5496) Eliminate obsolete API warnings/errors in product source-build
 * [amis92](https://github.com/NuGet/NuGet.Client/pull/5465)
   * [5465](https://github.com/NuGet/NuGet.Client/pull/5465) Add MemberNotNullWhen to SemanticVersion.HasMetadata
-
-**TODO: Issues that could not be categorized. Make sure the issue has the correct milestone (if required) or an appropriate Type label - StillOpens:**
-
-* RemoteDependencyWalker allocates a lot due to the fact that it's called recursively - [#12748](https://github.com/NuGet/Home/issues/12748)
-
-* Audit security vulnerabilities without adding nuget.org as package source  - [#12698](https://github.com/NuGet/Home/issues/12698)
-
