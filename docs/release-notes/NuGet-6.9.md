@@ -19,11 +19,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.9
 
-* Add `--format`, `--verbosity` , `configfile` options to `dotnet package search` - [#12978](https://github.com/NuGet/Home/issues/12978)
-
-* Support for dotnet search command (equivalent to nuget.exe list, later search) - [#6060](https://github.com/NuGet/Home/issues/6060)
-
-* exact match and version search for nuget.exe list command - [#5138](https://github.com/NuGet/Home/issues/5138)
+* Support for dotnet search command (equivalent to nuget.exe list, later search) - [#6060](https://github.com/NuGet/Home/issues/6060) [#5138](https://github.com/NuGet/Home/issues/5138)
 
 * PM UI multi targeting experience is incomplete - [#4681](https://github.com/NuGet/Home/issues/4681)
 
@@ -38,6 +34,8 @@ NuGet distribution vehicles:
 * Static graph-based restore should not enumerate every item's metadata - [#13049](https://github.com/NuGet/Home/issues/13049)
 
 * Migrate NuGet.CommandLine.XPlat package search to use System.CommandLine - [#13031](https://github.com/NuGet/Home/issues/13031)
+
+* Add `--format`, `--verbosity` , `configfile` options to `dotnet package search` - [#12978](https://github.com/NuGet/Home/issues/12978)
 
 * Set NuGetAudit defaults in MSBuild - [#12960](https://github.com/NuGet/Home/issues/12960)
 
