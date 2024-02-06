@@ -89,22 +89,22 @@ NuGet distribution vehicles:
 
 Thank you to all the contributors who helped make this NuGet release awesome!
 
-* [KirillOsenkov](https://github.com/NuGet/NuGet.Client/pull/5494)
-  * [5494](https://github.com/NuGet/NuGet.Client/pull/5494) Control embedding Restore files in binlog
-  * [5498](https://github.com/NuGet/NuGet.Client/pull/5498) Don't log task inputs and outputs when binary logger is enabled
-* [Erarndt](https://github.com/NuGet/NuGet.Client/pull/5535)
-  * [5535](https://github.com/NuGet/NuGet.Client/pull/5535) Unroll Linq usage in FilterDependencyProvidersForLibrary
-  * [5531](https://github.com/NuGet/NuGet.Client/pull/5531) Reduce allocations in calls to CreateGraphNode()
-* [dotnokato](https://github.com/NuGet/NuGet.Client/pull/5442)
-  * [5442](https://github.com/NuGet/NuGet.Client/pull/5442) Fix tests failing when run on systems with non-English language/locale settings
-  * [5441](https://github.com/NuGet/NuGet.Client/pull/5441) Fix incorrect json array returned for locales with comma as decimal separator in TelemetryUtility.ToJsonArrayOfTimingsInSeconds
-* [ellahathaway](https://github.com/NuGet/NuGet.Client/pull/5543)
-  * [5543](https://github.com/NuGet/NuGet.Client/pull/5543) Shorten source-build inner clone paths
-* [jasonmalinowski](https://github.com/NuGet/NuGet.Client/pull/5533)
-  * [5533](https://github.com/NuGet/NuGet.Client/pull/5533) Output a more debuggable message if a single value isn't specified
-* [mthalman](https://github.com/NuGet/NuGet.Client/pull/5511)
-  * [5511](https://github.com/NuGet/NuGet.Client/pull/5511) Target net9.0 for .NET source build
-* [NikolaMilosavljevic](https://github.com/NuGet/NuGet.Client/pull/5496)
-  * [5496](https://github.com/NuGet/NuGet.Client/pull/5496) Eliminate obsolete API warnings/errors in product source-build
-* [amis92](https://github.com/NuGet/NuGet.Client/pull/5465)
-  * [5465](https://github.com/NuGet/NuGet.Client/pull/5465) Add MemberNotNullWhen to SemanticVersion.HasMetadata
+* [KirillOsenkov](https://github.com/KirillOsenkov)
+  * Control embedding Restore files in binlog - [5494](https://github.com/NuGet/NuGet.Client/pull/5494)
+  * Don't log task inputs and outputs when binary logger is enabled - [5498](https://github.com/NuGet/NuGet.Client/pull/5498)
+* [Erarndt](https://github.com/Erarndt)
+  * Unroll Linq usage in FilterDependencyProvidersForLibrary - [5535](https://github.com/NuGet/NuGet.Client/pull/5535)
+  * Reduce allocations in calls to CreateGraphNode() - [5531](https://github.com/NuGet/NuGet.Client/pull/5531)
+* [dotnokato](https://github.com/dotnokato)
+  * Fix tests failing when run on systems with non-English language/locale settings - [5442](https://github.com/NuGet/NuGet.Client/pull/5442)
+  * Fix incorrect json array returned for locales with comma as decimal separator in TelemetryUtility.ToJsonArrayOfTimingsInSeconds - [5441](https://github.com/NuGet/NuGet.Client/pull/5441)
+* [ellahathaway](https://github.com/ellahathaway)
+  * Shorten source-build inner clone paths - [5543](https://github.com/NuGet/NuGet.Client/pull/5543)
+* [jasonmalinowski](https://github.com/jasonmalinowski)
+  * Output a more debuggable message if a single value isn't specified - [5533](https://github.com/NuGet/NuGet.Client/pull/5533)
+* [mthalman](https://github.com/mthalman)
+  * Target net9.0 for .NET source build - [5511](https://github.com/NuGet/NuGet.Client/pull/5511)
+* [NikolaMilosavljevic](https://github.com/NikolaMilosavljevic)
+  * Eliminate obsolete API warnings/errors in product source-build - [5496](https://github.com/NuGet/NuGet.Client/pull/5496)
+* [amis92](https://github.com/amis92)
+  * Add MemberNotNullWhen to SemanticVersion.HasMetadata - [5465](https://github.com/NuGet/NuGet.Client/pull/5465)
