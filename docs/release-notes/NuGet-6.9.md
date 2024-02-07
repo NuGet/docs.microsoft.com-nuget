@@ -21,7 +21,7 @@ NuGet distribution vehicles:
 
 * Support for dotnet search command (equivalent to nuget.exe list, later search) - [#6060](https://github.com/NuGet/Home/issues/6060) [#5138](https://github.com/NuGet/Home/issues/5138)
 
-* PM UI multi targeting experience is incomplete - [#4681](https://github.com/NuGet/Home/issues/4681)
+* PM UI multi targeting experience is incomplete - support for updating and uninstalling conditional package versions - [#4681](https://github.com/NuGet/Home/issues/4681)
 
 ### Breaking changes
 
