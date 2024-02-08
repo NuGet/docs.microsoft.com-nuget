@@ -31,7 +31,7 @@ Here are steps you can take to leverage the NuGet Support Policy effectively:
 
 * Use the latest version of NuGet.exe.
 * Note that we will release patches when critical security fixes are required for an LTS version of either Visual Studio or the .NET SDK.
-* Watch for unlisted NuGet.exe versions in [tool.json](../api/tools-json.md).
+* Watch for unlisted NuGet.exe versions in [tools.json](../api/tools-json.md).
 
 ### Security Patch Releases
 
@@ -42,7 +42,7 @@ Also see the [security policy in the NuGet.Client repo](https://github.com/NuGet
 
 ### NuGet.exe unlisting
 
-We will begin to remove links to deprecated and vulnerable versions of NuGet.exe from [tool.json](../api/tools-json.md) by March 31st, 2024.
+We will begin to remove links to deprecated and vulnerable versions of NuGet.exe from [tools.json](../api/tools-json.md) by March 31st, 2024.
 
 ## Prerequisites
 
