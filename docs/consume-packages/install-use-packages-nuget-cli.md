@@ -25,13 +25,13 @@ For a complete list of commands and their arguments, see the [NuGet CLI referenc
 We are fully committed to supporting the most recent version of NuGet.exe.
 This means you can rely on us for bug fixes, updates, and enhancements exclusive to the version currently under development.
 
-NuGet.exe follows the [Microsoft Modern Lifecycle Policy](https://learn.microsoft.com/lifecycle/policies/modern).
+NuGet.exe follows the [Microsoft Modern Lifecycle Policy](https://aka.ms/lifecycle).
 
 Here are steps you can take to leverage the NuGet Support Policy effectively:
 
 * Use the latest version of NuGet.exe.
 * Note that we will release patches when critical security fixes are required for an LTS version of either Visual Studio or the .NET SDK.
-* Watch for unlisted NuGet.exe versions in [tool.json](https://learn.microsoft.com/nuget/api/tools-json).
+* Watch for unlisted NuGet.exe versions in [tool.json](../api/tools-json.md).
 
 ### Security Patch Releases
 
@@ -42,7 +42,7 @@ Also see the [security policy in the NuGet.Client repo](https://github.com/NuGet
 
 ### NuGet.exe unlisting
 
-We will begin to remove links to deprecated and vulnerable versions of NuGet.exe from [tool.json](https://learn.microsoft.com/nuget/api/tools-json) by March 31st, 2024.
+We will begin to remove links to deprecated and vulnerable versions of NuGet.exe from [tool.json](../api/tools-json.md) by March 31st, 2024.
 
 ## Prerequisites
 
