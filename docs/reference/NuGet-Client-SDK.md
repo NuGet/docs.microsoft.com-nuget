@@ -40,6 +40,12 @@ Also, see the [security policy in the NuGet.Client repo](https://github.com/NuGe
 We do not guarantee API stability, as our team's responsibility is tooling, not libraries.
 See the [NuGet SDK documentation in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/docs/nuget-sdk.md) for more information.
 
+Here are steps you can take to leverage the NuGet Support Policy effectively:
+
+* Use the latest versions of NuGet Client SDK packages.
+* Note that we will release patches when critical security fixes are required for an LTS version of either Visual Studio or the .NET SDK.
+* Examine your project for dependencies on deprecated NuGet Client SDK packages.
+
 ### Security Patch Releases
 
 We will release patched versions of NuGet Client SDK packages exclusively when critical security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
