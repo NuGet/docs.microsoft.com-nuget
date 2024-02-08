@@ -40,6 +40,19 @@ Also, see the [security policy in the NuGet.Client repo](https://github.com/NuGe
 We do not guarantee API stability, as our team's responsibility is tooling, not libraries.
 See the [NuGet SDK documentation in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/docs/nuget-sdk.md) for more information.
 
+### Security Patch Releases
+
+We will release patched versions of NuGet Client SDK packages exclusively when critical security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
+
+All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [https://aka.ms/opensource/security/create-report].
+Also see the [security policy in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/SECURITY.md).
+
+### Package Deprecation
+
+As of January 31, 2024, we have deprecated older versions of NuGet Client SDK packages that are not tied to an LTS version of either Visual Studio or .NET.
+
+NuGet's package maintenance approach will align with the [.NET Package Maintenance (deprecation)](https://github.com/dotnet/announcements/issues/217) guidance.
+
 ## NuGet.Protocol
 
 Install the `NuGet.Protocol` package to interact with HTTP and folder-based NuGet package feeds:
