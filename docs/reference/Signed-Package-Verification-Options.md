@@ -28,7 +28,7 @@ For NuGet users, symptoms of this issue are that the NuGet operation will typica
 >
 > Starting with NuGet 6.8.0 and .NET 8 SDK, this option is enabled by default on Windows.  The environment variable does not need to be set explicitly unless you want to override the default value of `3,1000` or to opt out.  To opt out, set the environment variable with a value of `0`.
 
-You enable an experimental, automatic retry for untrusted root failures on Windows by setting an environment variable named `NUGET_EXPERIMENTAL_CHAIN_BUILD_RETRY_POLICY` with a value consisting of 2 comma-delimited positive integers representing retry count and sleep interval in milliseconds, respectively. You should pick values that are sensible for you.
+You can enable an experimental, automatic retry for untrusted root failures on Windows by setting an environment variable named `NUGET_EXPERIMENTAL_CHAIN_BUILD_RETRY_POLICY` with a value consisting of 2 comma-delimited positive integers representing retry count and sleep interval in milliseconds, respectively. You should pick values that are sensible for you.
 
 For example, setting the environment variable to a value of `3,1000` like so:
 
