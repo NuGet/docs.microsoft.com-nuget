@@ -17,6 +17,7 @@ You can find packages directly at [https://nuget.org/packages](https://www.nuget
 
 At [nuget.org/packages](https://www.nuget.org/packages), you see a list of NuGet packages with the most popular packages across all .NET projects listed first. Some of these packages might be useful for your projects.
 
+`TODO: Update screenshot`
 ![Screenshot that shows the default view of nuget.org/packages with the most popular packages at the top.](media/Finding-07-Popularity.png)
 
 To search for a package, enter the package name or search terms in the Search box at the top of the page. You can use [advanced search syntax](#search-syntax) to filter your search.
@@ -29,12 +30,16 @@ At nuget.org/packages, you can refine your search results by making use of the a
 
 Use the **Frameworks** filters to show packages targeting specific .NET frameworks (To learn more, see [Target Frameworks](/dotnet/standard/frameworks)):
 
-- Selecting one of the .NET framework generation checkboxes would filter the search results to packages targeting any of the Target Frameworks within that generation. For example, selecting `.NET` will return packages targeting any of the modern .NET frameworks, including `net5.0` through `net7.0`.
+- Selecting one of the .NET framework generation checkboxes would filter the search results to packages compatible with any of the individual Target Frameworks within that generation. For example, selecting `.NET` will return packages compatible with any of the modern .NET frameworks, including `net5.0` through `net8.0`.
+
+  `TODO: Update screenshot. Move above first bullet point?`
 
   ![Screenshot that shows the Framework filters on nuget.org.](media/Finding-09-FrameworkFilters.png)
 
-- Expanding one of these framework generations with the arrows on the right will show you individual Target Framework Monikers (TFMs) that you can filter your results by. For example, selecting `net5.0` will only return packages that explicitly target the '.NET 5.0' framework.
-- Combining multiple framework filters will show you search results that fall in the intersection of your selections. For example, selecting `netcoreapp3.1` and `net45` together will show packages that target *both* '.NET Core 3.1' and '.NET Framework 4.5'. Selecting the `.NET Core` framework generation checkbox and the `net45` checkbox together will return packages that target '.NET Framework 4.5', and at least one of the '.NET Core' TFMs (`netcoreapp1.0` through `netcoreapp3.1`).
+- Expanding one of these framework generations with the arrows on the right will show you individual Target Framework Monikers (TFMs) that you can filter your results by. For example, selecting `net5.0` will return packages compatible with the '.NET 5.0' framework.
+- By default, packages are filtered by their expanded list of computed compatible frameworks. If you want to filter packages purely by the asset frameworks they explicitly target, deselect the **Include computed frameworks** checkbox.
+- Combining multiple framework filters will show you search results that match all of your selected filters, i.e. packages that fall in the intersection of your selections. For example, selecting `netcoreapp3.1` and `net45` together will show packages that target **both** '.NET Core 3.1' and '.NET Framework 4.5'. Selecting the `.NET Core` framework generation checkbox and the `net45` checkbox together will return packages that target '.NET Framework 4.5', and at least one of the '.NET Core' TFMs (`netcoreapp1.0` through `netcoreapp3.1`).
+  - Alternatively, if you want to see packages matching **any one** of your framework filters, select the **Any** radio button on the **Framework Filter Mode** option. Now, selecting `netcoreapp3.1` and `net5.0` will show packages that target **either** '.NET Core 3.1' or '.NET 5.0'. Selecting the `netcoreapp3.1` checkbox and the `.NET` framework generation checkbox together will return packages that target '.NET Core 3.1' or any one of the '.NET' TFMs (`net5.0` through `net8.0`).
 - You can learn more on how to evaluate a package's supported frameworks and its compatibility with your project [here](#determine-supported-frameworks).
 
 Use the **Package type** filter to show packages of a specific type:
