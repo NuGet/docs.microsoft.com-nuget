@@ -13,15 +13,17 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.9**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.9](https://visualstudio.microsoft.com/downloads/) | [8.0.200](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
+| [**6.9.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.9](https://visualstudio.microsoft.com/downloads/) | [8.0.200](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
-## Summary: What's New in 6.9
+## Summary: What's New in 6.9.1
 
 * Support for dotnet search command (equivalent to nuget.exe list, later search) - [#6060](https://github.com/NuGet/Home/issues/6060) [#5138](https://github.com/NuGet/Home/issues/5138)
 
 * PM UI multi targeting experience is incomplete - support for updating and uninstalling conditional package versions - [#4681](https://github.com/NuGet/Home/issues/4681)
+
+* [Security]: Microsoft Security Advisory CVE-2024-0057 | NuGet Client Security Feature bypass Vulnerability - [#12653](https://github.com/NuGet/Home/issues/13241)
 
 ### Breaking changes
 

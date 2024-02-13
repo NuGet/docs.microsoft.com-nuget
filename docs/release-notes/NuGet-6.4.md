@@ -15,8 +15,13 @@ NuGet distribution vehicles:
 |:---|:---|:---|
 | [**6.4**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.4](https://visualstudio.microsoft.com/downloads/) | [7.0.100](https://dotnet.microsoft.com/download/dotnet-core/7.0)<sup>1</sup> |
 | [**6.4.2**](https://nuget.org/downloads) | N/A | [7.0.107](https://dotnet.microsoft.com/download/dotnet-core/7.0)<sup>1</sup> |
+| [**6.4.3**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.4](https://visualstudio.microsoft.com/downloads/) | [7.0.116](https://dotnet.microsoft.com/download/dotnet-core/7.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 17.4 with .NET Core workload
+
+## Summary: What's New in 6.4.3
+
+* [Security]: Microsoft Security Advisory CVE-2024-0057 | NuGet Client Security Feature bypass Vulnerability - [#12653](https://github.com/NuGet/Home/issues/13241)
 
 ## Summary: What's New in 6.4.2
 
