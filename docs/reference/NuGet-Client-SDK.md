@@ -34,11 +34,32 @@ You can find the source code for these packages in the [NuGet/NuGet.Client](http
 
 ## Support policy
 
-All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [https://aka.ms/opensource/security/create-report].
-Also see the [security policy in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/SECURITY.md).
+We are fully committed to supporting the most recent versions of the NuGet Client SDK packages.
+This means you can rely on us for bug fixes, updates, and enhancements exclusive to the version currently under development.
+
+NuGet Client SDK packages follow the [Microsoft Modern Lifecycle Policy](https://aka.ms/lifecycle).
 
 We do not guarantee API stability, as our team's responsibility is tooling, not libraries.
 See [https://github.com/NuGet/NuGet.Client/blob/dev/docs/nuget-sdk.md] for more information.
+
+Here are steps you can take to leverage the NuGet Support Policy effectively:
+
+* Use the latest versions of NuGet Client SDK packages.
+* Note that we will release patches when critical security fixes are required for an LTS version of either Visual Studio or the .NET SDK.
+* Examine your project for dependencies on deprecated NuGet Client SDK packages.
+
+### Security Patch Releases
+
+We will release patched versions of NuGet Client SDK packages exclusively when critical security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
+
+All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [https://aka.ms/opensource/security/create-report].
+Also see the [security policy in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/SECURITY.md).
+
+### Package Deprecation
+
+As of January 31, 2024, we have deprecated older versions of NuGet Client SDK packages that are not tied to an LTS version of either Visual Studio or .NET.
+
+NuGet's package maintenance approach will align with the [.NET Package Maintenance (deprecation)](https://github.com/dotnet/announcements/issues/217) guidance.
 
 ## NuGet.Protocol
 
