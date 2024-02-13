@@ -14,10 +14,14 @@ NuGet distribution vehicles:
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
 | [**6.8**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.8](https://visualstudio.microsoft.com/downloads/) | [8.0.100](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
+| [**6.8.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.8](https://visualstudio.microsoft.com/downloads/) | [8.0.102](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
 
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
+## Summary: What's New in 6.8.1
+
+* [Security]: Microsoft Security Advisory CVE-2024-0057 | NuGet Client Security Feature bypass Vulnerability - [#12653](https://github.com/NuGet/Home/issues/13241)
 
 ## Summary: What's New in 6.8
 
