@@ -17,11 +17,16 @@ NuGet distribution vehicles:
 | [**5.11.2**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.11.16](https://visualstudio.microsoft.com/downloads/) | N/A |
 | [**5.11.3**](https://nuget.org/downloads) | N/A | N/A |
 | [**5.11.5**](https://nuget.org/downloads) | N/A | N/A |
+| [**5.11.6**](https://nuget.org/downloads) | N/A | N/A |
 
 <sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
   
 > [!NOTE]
 > Visual Studio 16.11, MSBuild 16.11, and .NET 5.0.400+ requires NuGet.exe 5.11 or later.
+
+## Summary: What's New in 5.11.6
+
+* [Security]: Microsoft Security Advisory CVE-2024-0057 | NuGet Client Security Feature bypass Vulnerability - [#12653](https://github.com/NuGet/Home/issues/13241)
 
 ## Summary: What's New in 5.11.5
 
