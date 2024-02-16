@@ -121,6 +121,8 @@ When using multiple public & private NuGet source feeds, a package can be downlo
 
 For more information to secure your package feeds, see [3 Ways to Mitigate Risk When Using Private Package Feeds](https://azure.microsoft.com/resources/3-ways-to-mitigate-risk-using-private-package-feeds/).
 
+When using a private feed, refer to the [security best practices for managing credentials](../consume-packages/consuming-packages-authenticated-feeds.md#security-best-practices-for-managing-credentials).
+
 ### Client trust policies
 
 **📦 Package Consumer**

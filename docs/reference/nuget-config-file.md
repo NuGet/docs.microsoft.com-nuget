@@ -143,6 +143,10 @@ Lists all known package sources. The order is ignored during restore operations 
 Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`. Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.
 Optionally, valid authentication types can be specified with the `-validauthenticationtypes` switch.
 
+> [!NOTE]
+> :warning: **WARNING** :warning:
+> Storing passwords in clear text is not recommended. Refer to the best security practices for [consuming packages from private feeds](../consume-packages/consuming-packages-authenticated-feeds.md#security-best-practices-for-managing-credentials).
+
 | Key | Value |
 | --- | --- |
 | username | The user name for the source in plain text. Note: environment variables can be used for improved security. |
@@ -185,7 +189,10 @@ When using unencrypted passwords stored in an environment variable:
 </packageSourceCredentials>
 ```
 
-When using unencrypted passwords:
+When using unencrypted passwords.
+> [!NOTE]
+> :warning: **WARNING** :warning:
+> Storing passwords in clear text is not recommended.
 
 ```xml
 <packageSourceCredentials>
@@ -200,7 +207,10 @@ When using unencrypted passwords:
 </packageSourceCredentials>
 ```
 
-Additionally, valid authentication methods can be supplied:
+Additionally, valid authentication methods can be supplied.
+> [!NOTE]
+> :warning: **WARNING** :warning:
+> Storing passwords in clear text is not recommended.
 
 ```xml
 <packageSourceCredentials>
