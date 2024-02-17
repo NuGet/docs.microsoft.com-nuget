@@ -143,16 +143,18 @@ Lists all known package sources. The order is ignored during restore operations 
 Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`. Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.
 Optionally, valid authentication types can be specified with the `-validauthenticationtypes` switch.
 
-> [!NOTE]
-> :warning: **WARNING** :warning:
-> Storing passwords in clear text is not recommended. Refer to the best security practices for [consuming packages from private feeds](../consume-packages/consuming-packages-authenticated-feeds.md#security-best-practices-for-managing-credentials).
-
 | Key | Value |
 | --- | --- |
 | username | The user name for the source in plain text. Note: environment variables can be used for improved security. |
 | password | The encrypted password for the source. Encrypted passwords are only supported on Windows, and only can be decrypted when used on the same machine and via the same user as the original encryption. |
 | cleartextpassword | The unencrypted password for the source. Note: environment variables can be used for improved security. |
 | validauthenticationtypes | Comma-separated list of valid authentication types for this source. Set this to `basic` if the server advertises NTLM or Negotiate and your credentials must be sent using the Basic mechanism, for instance when using a PAT with on-premises Azure DevOps Server. Other valid values include `negotiate`, `kerberos`, `ntlm`, and `digest`, but these values are unlikely to be useful. |
+
+> [!NOTE]
+> :warning: **WARNING** :warning:
+> Storing passwords in clear text is strongly discouraged.
+> Please note that encrypted passwords are only supported on Windows. Furthermore, they can only be decrypted when used on the same machine and by the same user who originally encrypted them.
+> For more information on managing credentials securely, refer to our [security best practices for consuming packages from private feeds](../consume-packages/consuming-packages-authenticated-feeds.md#security-best-practices-for-managing-credentials).
 
 > [!Tip]
 > If a non-encrypted password is passed for `password` the error message ["The parameter is incorrect" will occur](https://github.com/NuGet/Home/issues/3245).
@@ -170,6 +172,23 @@ In the config file, the `<packageSourceCredentials>` element contains child node
     <Test_x0020_Source>
         <add key="Username" value="user" />
         <add key="Password" value="..." />
+    </Test_x0020_Source>
+</packageSourceCredentials>
+```
+
+Additionally, valid authentication methods can be supplied.
+
+```xml
+<packageSourceCredentials>
+    <Contoso>
+        <add key="Username" value="user@contoso.com" />
+        <add key="Password" value="..." />
+        <add key="ValidAuthenticationTypes" value="basic" />
+    </Contoso>
+    <Test_x0020_Source>
+        <add key="Username" value="user" />
+        <add key="Password" value="..." />
+        <add key="ValidAuthenticationTypes" value="basic, negotiate" />
     </Test_x0020_Source>
 </packageSourceCredentials>
 ```
@@ -192,7 +211,7 @@ When using unencrypted passwords stored in an environment variable:
 When using unencrypted passwords.
 > [!NOTE]
 > :warning: **WARNING** :warning:
-> Storing passwords in clear text is not recommended.
+> Storing passwords in clear text is strongly discouraged.
 
 ```xml
 <packageSourceCredentials>
@@ -203,26 +222,6 @@ When using unencrypted passwords.
     <Test_x0020_Source>
         <add key="Username" value="user" />
         <add key="ClearTextPassword" value="hal+9ooo_da!sY" />
-    </Test_x0020_Source>
-</packageSourceCredentials>
-```
-
-Additionally, valid authentication methods can be supplied.
-> [!NOTE]
-> :warning: **WARNING** :warning:
-> Storing passwords in clear text is not recommended.
-
-```xml
-<packageSourceCredentials>
-    <Contoso>
-        <add key="Username" value="user@contoso.com" />
-        <add key="Password" value="..." />
-        <add key="ValidAuthenticationTypes" value="basic" />
-    </Contoso>
-    <Test_x0020_Source>
-        <add key="Username" value="user" />
-        <add key="ClearTextPassword" value="hal+9ooo_da!sY" />
-        <add key="ValidAuthenticationTypes" value="basic, negotiate" />
     </Test_x0020_Source>
 </packageSourceCredentials>
 ```
