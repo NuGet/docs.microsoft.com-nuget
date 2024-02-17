@@ -29,8 +29,8 @@ If the credential provider supports single sign-on, it may decrease the frequenc
 This method provides an extra layer of security by storing the credentials in an encrypted format.
 For more information, refer to the section on [credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 
-  > [!NOTE]
-  > :warning: **WARNING** :warning: Be aware that encrypted passwords are only supported on Windows. Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
+    > [!NOTE]
+    > :warning: **WARNING** :warning: Be aware that encrypted passwords are only supported on Windows. Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
 
 1. **Using Environment Variable Macros in nuget.config**: If using encrypted credentials is not possible, consider storing the credentials in the *nuget.config* file with environment variable macros.
 This method allows you to reference environment variables that hold the actual credentials.
@@ -45,9 +45,9 @@ If these options are not feasible, you can store the credentials in the *nuget.c
 However, this option should only be used in environments where no other secure option is available.
 For more information, refer to the section on [credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 
-  > [!NOTE]
-  > :warning: **WARNING** :warning: Storing credentials in clear text in the *nuget.config* file, especially when saving the file in source control, is risky as it increases the chances of accidental credential leaks.
-  > If you must store credentials in the *nuget.config* file, consider using one of the more secure options mentioned above.
+    > [!NOTE]
+    > :warning: **WARNING** :warning: Storing credentials in clear text in the *nuget.config* file, especially when saving the file in source control, is risky as it increases the chances of accidental credential leaks.
+    > If you must store credentials in the *nuget.config* file, consider using one of the more secure options mentioned above.
 
 By adhering to these best practices, you can securely authenticate private feeds while minimizing the risk of sensitive information exposure.
 
