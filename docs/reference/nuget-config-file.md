@@ -154,7 +154,7 @@ Optionally, valid authentication types can be specified with the `-validauthenti
 > :warning: **WARNING** :warning:
 > Storing passwords in clear text is strongly discouraged.
 > Please note that encrypted passwords are only supported on Windows. Furthermore, they can only be decrypted when used on the same machine and by the same user who originally encrypted them.
-> For more information on managing credentials securely, refer to our [security best practices for consuming packages from private feeds](../consume-packages/consuming-packages-authenticated-feeds.md#security-best-practices-for-managing-credentials).
+> For more information on managing credentials securely, refer to the [security best practices for consuming packages from private feeds](../consume-packages/consuming-packages-authenticated-feeds.md#security-best-practices-for-managing-credentials).
 
 > [!Tip]
 > If a non-encrypted password is passed for `password` the error message ["The parameter is incorrect" will occur](https://github.com/NuGet/Home/issues/3245).

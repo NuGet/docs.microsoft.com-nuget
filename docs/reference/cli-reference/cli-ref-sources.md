@@ -53,6 +53,11 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
   Specifies the password for authenticating with the source.
 
+  > [!Note]
+  > Make sure to add the sources' password under the same user context as the nuget.exe is later used to access the package source.
+  > The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted.
+  > So for example when you use a build server to restore NuGet packages the password must be encrypted with the same Windows user under which the build server task will run.
+
 - **`-src|-Source`**
 
   Path to the package(s) source.
@@ -60,6 +65,11 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 - **`-StorePasswordInClearText`**
 
   Indicates to store the password in unencrypted text instead of the default behavior of storing an encrypted form.
+
+  > [!Note]
+  > :warning: **WARNING** :warning:
+  > Storing passwords in clear text is strongly discouraged.
+  > For more information on managing credentials securely, refer to the [security best practices for consuming packages from private feeds](../../consume-packages/consuming-packages-authenticated-feeds.md#security-best-practices-for-managing-credentials).
 
 - **`-UserName`**
 
@@ -79,9 +89,6 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 - **`-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
-
-> [!Note]
-> Make sure to add the sources' password under the same user context as the nuget.exe is later used to access the package source. The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted. So for example when you use a build server to restore NuGet packages the password must be encrypted with the same Windows user under which the build server task will run.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
