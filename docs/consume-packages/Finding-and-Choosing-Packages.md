@@ -17,8 +17,7 @@ You can find packages directly at [https://nuget.org/packages](https://www.nuget
 
 At [nuget.org/packages](https://www.nuget.org/packages), you see a list of NuGet packages with the most popular packages across all .NET projects listed first. Some of these packages might be useful for your projects.
 
-`TODO: Update screenshot`
-![Screenshot that shows the default view of nuget.org/packages with the most popular packages at the top.](media/Finding-07-Popularity.png)
+![Screenshot that shows the default view of nuget.org/packages with the most popular packages at the top.](media/Finding-07-MostPopular.png)
 
 To search for a package, enter the package name or search terms in the Search box at the top of the page. You can use [advanced search syntax](#search-syntax) to filter your search.
 
@@ -26,15 +25,13 @@ To search for a package, enter the package name or search terms in the Search bo
 
 At nuget.org/packages, you can refine your search results by making use of the advanced filtering and sorting options.
 
-![Screenshot that shows the filtering and sorting options on nuget.org.](media/Finding-08-SearchResults.png)
+![Screenshot that shows the filtering and sorting options on nuget.org.](media/Finding-08-FiltersAndSorts.png)
 
 Use the **Frameworks** filters to show packages targeting specific .NET frameworks (To learn more, see [Target Frameworks](/dotnet/standard/frameworks)):
 
 - Selecting one of the .NET framework generation checkboxes would filter the search results to packages compatible with any of the individual Target Frameworks within that generation. For example, selecting `.NET` will return packages compatible with any of the modern .NET frameworks, including `net5.0` through `net8.0`.
 
-  `TODO: Update screenshot. Move above first bullet point?`
-
-  ![Screenshot that shows the Framework filters on nuget.org.](media/Finding-09-FrameworkFilters.png)
+  ![Screenshot that shows the Framework filters on nuget.org.](media/Finding-09-FrameworkFilterPanel.png)
 
 - Expanding one of these framework generations with the arrows on the right will show you individual Target Framework Monikers (TFMs) that you can filter your results by. For example, selecting `net5.0` will return packages compatible with the '.NET 5.0' framework.
 - By default, packages are filtered by their expanded list of computed compatible frameworks. If you want to filter packages purely by the asset frameworks they explicitly target, deselect the **Include computed frameworks** checkbox.
