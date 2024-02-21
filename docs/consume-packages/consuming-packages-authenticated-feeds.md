@@ -23,14 +23,16 @@ Although NuGet searches for credentials in the order mentioned above, we recomme
 1. **Credential Provider**: It is highly recommended to use a credential provider whenever possible.
 This approach avoids storing secrets in plain text and minimizes the risk of accidentally exposing secrets through source control.
 Moreover, it generally reduces the number of places you need to update when a credential expires or changes.
-If the credential provider supports single sign-on, it may decrease the frequency of logins or the number of places where credentials need to be saved. Refer to the [credential providers](#credential-providers) section for more information.
+If the credential provider supports single sign-on, it may decrease the frequency of logins or the number of places where credentials need to be saved.
+Refer to the [credential providers](#credential-providers) section for more information.
 
 1. **Encrypted Credentials in nuget.config**: If a credential provider is not available, you should consider using encrypted credentials.
 This method provides an extra layer of security by storing the credentials in an encrypted format.
 For more information, refer to the section on [credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 
     > [!NOTE]
-    > :warning: **WARNING** :warning: Be aware that encrypted passwords are only supported on Windows. Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
+    > :warning: **WARNING** :warning: Be aware that encrypted passwords are only supported on Windows. 
+    > Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
 
 1. **Using Environment Variable Macros in nuget.config**: If using encrypted credentials is not possible, consider storing the credentials in the *nuget.config* file with environment variable macros.
 This method allows you to reference environment variables that hold the actual credentials.
