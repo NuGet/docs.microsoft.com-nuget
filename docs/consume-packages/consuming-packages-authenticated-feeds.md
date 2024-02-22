@@ -27,7 +27,7 @@ If the credential provider supports single sign-on, it may decrease the frequenc
 Refer to the [credential providers](#credential-providers) section for more information.
 
 1. **Encrypted Credentials in nuget.config**: If a credential provider is not available, you should consider using encrypted credentials.
-This method provides an extra layer of security by storing the credentials in an encrypted format.
+This approach provides an extra layer of security by storing the credentials in an encrypted format.
 For more information, refer to the section on [credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 
     > [!NOTE]
@@ -35,11 +35,12 @@ For more information, refer to the section on [credentials in *nuget.config* fil
     > Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
 
 1. **Using Environment Variable Macros in nuget.config**: If using encrypted credentials is not possible, consider storing the credentials in the *nuget.config* file with environment variable macros.
-This method allows you to reference environment variables that hold the actual credentials.
+This approach allows you to reference environment variables that contain the actual credentials. 
+It enhances transparency and helps end users understand how their credentials are configured.
 For more information, refer to the section on [credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 
 1. **Using Environment Variables Directly**: As a fallback option, you can store the credentials directly in environment variables.
-However, be aware that this method may offer less visibility and control compared to using environment variable macros in the *nuget.config* file.
+However, be aware that this approach may offer less visibility and control compared to using environment variable macros in the *nuget.config* file.
 For more information, refer to the section on [credentials in environment variables](#credentials-in-environment-variables).
 
 1. **Clear Text Credentials in NuGet.Config**: It is highly recommended to use one of the previously mentioned options.
