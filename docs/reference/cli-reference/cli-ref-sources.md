@@ -66,8 +66,7 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
   Indicates to store the password in unencrypted text instead of the default behavior of storing an encrypted form.
 
-  > [!Note]
-  > :warning: **WARNING** :warning:
+  > [!CAUTION]
   > Storing passwords in clear text is strongly discouraged.
   > For more information on managing credentials securely, refer to the [security best practices for consuming packages from private feeds](../../consume-packages/consuming-packages-authenticated-feeds.md#security-best-practices-for-managing-credentials).
 

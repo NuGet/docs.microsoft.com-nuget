@@ -150,8 +150,7 @@ Optionally, valid authentication types can be specified with the `-validauthenti
 | cleartextpassword | The unencrypted password for the source. Note: environment variables can be used for improved security. |
 | validauthenticationtypes | Comma-separated list of valid authentication types for this source. Set this to `basic` if the server advertises NTLM or Negotiate and your credentials must be sent using the Basic mechanism, for instance when using a PAT with on-premises Azure DevOps Server. Other valid values include `negotiate`, `kerberos`, `ntlm`, and `digest`, but these values are unlikely to be useful. |
 
-> [!NOTE]
-> :warning: **WARNING** :warning:
+> [!CAUTION]
 > Storing passwords in clear text is strongly discouraged.
 > Please note that encrypted passwords are only supported on Windows.
 > Furthermore, they can only be decrypted when used on the same machine and by the same user who originally encrypted them.
@@ -210,8 +209,7 @@ When using unencrypted passwords stored in an environment variable:
 ```
 
 When using unencrypted passwords.
-> [!NOTE]
-> :warning: **WARNING** :warning:
+> [!CAUTION]
 > Storing passwords in clear text is strongly discouraged.
 
 ```xml

@@ -36,8 +36,8 @@ Refer to the [credential providers](#credential-providers) section for more info
 This approach provides an extra layer of security by storing the credentials in an encrypted format.
 For more information, refer to the section on [credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 
-    > [!NOTE]
-    > :warning: **WARNING** :warning: Be aware that encrypted passwords are only supported on Windows. 
+    > [!CAUTION]
+    > Be aware that encrypted passwords are only supported on Windows. 
     > Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
 
 1. **Using Environment Variable Macros in nuget.config**: If using encrypted credentials is not possible, consider storing the credentials in the *nuget.config* file with environment variable macros.
@@ -54,8 +54,8 @@ If these options are not feasible, you can store the credentials in the *nuget.c
 However, this option should only be used in environments where no other secure option is available.
 For more information, refer to the section on [credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 
-    > [!NOTE]
-    > :warning: **WARNING** :warning: Storing credentials in clear text in the *nuget.config* file, especially when saving the file in source control, is risky as it increases the chances of accidental credential leaks.
+    > [!CAUTION]
+    > Storing credentials in clear text in the *nuget.config* file, especially when saving the file in source control, is risky as it increases the chances of accidental credential leaks.
     > If you must store credentials in the *nuget.config* file, consider using one of the more secure options mentioned above.
 
 By adhering to these best practices, you can securely authenticate private feeds while minimizing the risk of sensitive information exposure.
@@ -100,8 +100,7 @@ For more information about valid authentication types, see [the docs on package 
 See [the *nuget.config* file reference doc section on package source credentials](../reference/nuget-config-file.md#packagesourcecredentials) for more information, including syntax.
 However, it's easier to use [`dotnet nuget update source`](/dotnet/core/tools/dotnet-nuget-update-source) on the command line to set the credentials.
 
-> [!NOTE]
-> :warning: **WARNING** :warning:
+> [!CAUTION]
 > Take care when setting credentials in *nuget.config* files, especially when saving the credential as plain text.
 > If the credential is written to a *nuget.config* file that is in source control, there is an increased risk of accidentally leaking the secret.
 >
