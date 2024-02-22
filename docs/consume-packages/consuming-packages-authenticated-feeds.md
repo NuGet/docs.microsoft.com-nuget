@@ -16,6 +16,12 @@ For HTTP feeds, NuGet will make an unauthenticated request, and if the server re
 1. [Credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 1. [Use a NuGet credential provider, if your package source provides one](#credential-providers).
 
+The credentials you need to use are determined by the package source.
+Therefore, unless you're using a credential provider, you should check with your package source for what credentials to use.
+It is very common for package sources to forbid you from using your password (that you log into the website with) with NuGet.
+Typically you need to create a Personal Access Token to use as NuGet's password, but you should check the documentation for the NuGet server you're using.
+Some package sources, such as Azure DevOps and GitHub, have scoped access tokens, so you may need to ensure that any tokens you create include the required scope.
+
 ## Security best practices for managing credentials
 
 Although NuGet searches for credentials in the order mentioned above, we recommend the following sequence for securely managing credentials when authenticating with private feeds:
@@ -53,12 +59,6 @@ For more information, refer to the section on [credentials in *nuget.config* fil
     > If you must store credentials in the *nuget.config* file, consider using one of the more secure options mentioned above.
 
 By adhering to these best practices, you can securely authenticate private feeds while minimizing the risk of sensitive information exposure.
-
-The credentials you need to use are determined by the package source.
-Therefore, unless you're using a credential provider, you should check with your package source for what credentials to use.
-It is very common for package sources to forbid you from using your password (that you log into the website with) with NuGet.
-Typically you need to create a Personal Access Token to use as NuGet's password, but you should check the documentation for the NuGet server you're using.
-Some package sources, such as Azure DevOps and GitHub, have scoped access tokens, so you may need to ensure that any tokens you create include the required scope.
 
 ## Credentials in environment variables
 
