@@ -54,7 +54,7 @@ If these options are not feasible, you can store the credentials in the *nuget.c
 However, this option should only be used in environments where no other secure option is available.
 For more information, refer to the section on [credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 
-    > [!CAUTION]
+    > [!WARNING]
     > Storing credentials in clear text in the *nuget.config* file, especially when saving the file in source control, is risky as it increases the chances of accidental credential leaks.
     > If you must store credentials in the *nuget.config* file, consider using one of the more secure options mentioned above.
 
