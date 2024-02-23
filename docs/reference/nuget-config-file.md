@@ -209,7 +209,7 @@ When using unencrypted passwords stored in an environment variable:
 ```
 
 When using unencrypted passwords.
-> [!CAUTION]
+> [!WARNING]
 > Storing passwords in clear text is strongly discouraged.
 
 ```xml

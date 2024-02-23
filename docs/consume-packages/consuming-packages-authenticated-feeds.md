@@ -100,7 +100,7 @@ For more information about valid authentication types, see [the docs on package 
 See [the *nuget.config* file reference doc section on package source credentials](../reference/nuget-config-file.md#packagesourcecredentials) for more information, including syntax.
 However, it's easier to use [`dotnet nuget update source`](/dotnet/core/tools/dotnet-nuget-update-source) on the command line to set the credentials.
 
-> [!CAUTION]
+> [!WARNING]
 > Take care when setting credentials in *nuget.config* files, especially when saving the credential as plain text.
 > If the credential is written to a *nuget.config* file that is in source control, there is an increased risk of accidentally leaking the secret.
 >
