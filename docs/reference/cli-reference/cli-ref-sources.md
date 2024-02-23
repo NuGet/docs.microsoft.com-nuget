@@ -53,7 +53,7 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
   Specifies the password for authenticating with the source.
 
-  > [!CAUTION]
+  > [!NOTE]
   > Be aware that encrypted passwords are only supported on Windows. 
   > Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
 

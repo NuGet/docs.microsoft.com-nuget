@@ -36,7 +36,7 @@ Refer to the [credential providers](#credential-providers) section for more info
 This approach provides an extra layer of security by storing the credentials in an encrypted format.
 For more information, refer to the section on [credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 
-    > [!CAUTION]
+    > [!NOTE]
     > Be aware that encrypted passwords are only supported on Windows. 
     > Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
 
