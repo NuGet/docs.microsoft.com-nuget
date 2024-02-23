@@ -53,10 +53,9 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
   Specifies the password for authenticating with the source.
 
-  > [!Note]
-  > Make sure to add the sources' password under the same user context as the nuget.exe is later used to access the package source.
-  > The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted.
-  > So for example when you use a build server to restore NuGet packages the password must be encrypted with the same Windows user under which the build server task will run.
+  > [!CAUTION]
+  > Be aware that encrypted passwords are only supported on Windows. 
+  > Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
 
 - **`-src|-Source`**
 
