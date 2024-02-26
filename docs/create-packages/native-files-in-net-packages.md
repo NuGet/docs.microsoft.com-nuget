@@ -32,7 +32,7 @@ For a complete list of asset types, see the docs on [controlling dependency asse
 
 |Asset type|Short Description|
 |--|--|
-|[compile](#compile-assets)|Managed assemblies passed to the compiler. `refs/{tfm}/` if it exists, otherwise `lib/{tfm}/`.|
+|[compile](#compile-assets)|Managed assemblies passed to the compiler. `ref/{tfm}/` if it exists, otherwise `lib/{tfm}/`.|
 |[runtime](#runtime-assets)|Managed assemblies copied to the output directory. `runtimes/{rid}/lib/{tfm}/` if it exists, otherwise `lib/{tfm}/`.|
 |[native](#native-assets)|Native libraries copied to the output directory. `runtimes/{rid}/native/`.|
 
