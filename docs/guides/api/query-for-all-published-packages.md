@@ -79,7 +79,7 @@ After you have downloaded all of the catalog pages not filtered out, you have a 
 
 At this point, you can perform any custom processing you'd like on the catalog items. If all you need is the ID and version of the package, you can inspect the `nuget:id` and `nuget:version` properties on the catalog item objects found in the pages. Make sure to look at the `@type` property to know if the catalog item concerns an existing package or a deleted package.
 
-If you are interested in the metadata about the package (such at the description, dependencies, .nupkg size, etc), you can fetch the [catalog leaf document](../../api/catalog-resource.md#catalog-leaf) using the `@id` property.
+If you are interested in the metadata about the package (such as the description, dependencies, .nupkg size, etc), you can fetch the [catalog leaf document](../../api/catalog-resource.md#catalog-leaf) using the `@id` property.
 
 ```
 GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
