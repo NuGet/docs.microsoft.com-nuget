@@ -208,7 +208,7 @@ When using unencrypted passwords stored in an environment variable:
 </packageSourceCredentials>
 ```
 
-When using unencrypted passwords.
+When using unencrypted passwords:
 > [!WARNING]
 > Storing passwords in clear text is strongly discouraged.
 
