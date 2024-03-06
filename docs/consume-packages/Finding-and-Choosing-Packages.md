@@ -34,7 +34,7 @@ Use the **Frameworks** filters to show packages targeting specific .NET framewor
   ![Screenshot that shows the Framework filters on nuget.org.](media/Finding-09-FrameworkFilterPanel.png)
 
 - Expanding one of these framework generations with the arrows on the right will show you individual Target Framework Monikers (TFMs) that you can filter your results by. For example, selecting `net5.0` will return packages compatible with the '.NET 5.0' framework.
-- By default, packages are filtered by their expanded list of computed compatible frameworks. If you want to filter packages purely by the asset frameworks they explicitly target, deselect the **Include computed frameworks** checkbox.
+- By default, packages are filtered by their expanded list of computed compatible frameworks. If you want to filter packages purely by the asset frameworks they explicitly target, deselect the **Include compatible frameworks** checkbox.
 - Combining multiple framework filters will show you search results that match all of your selected filters, i.e. packages that fall in the intersection of your selections. For example, selecting `netcoreapp3.1` and `net45` together will show packages that target **both** '.NET Core 3.1' and '.NET Framework 4.5'. Selecting the `.NET Core` framework generation checkbox and the `net45` checkbox together will return packages that target '.NET Framework 4.5', and at least one of the '.NET Core' TFMs (`netcoreapp1.0` through `netcoreapp3.1`).
   - Alternatively, if you want to see packages matching **any one** of your framework filters, select the **Any** radio button on the **Framework Filter Mode** option. Now, selecting `netcoreapp3.1` and `net5.0` will show packages that target **either** '.NET Core 3.1' or '.NET 5.0'. Selecting the `netcoreapp3.1` checkbox and the `.NET` framework generation checkbox together will return packages that target '.NET Core 3.1' or any one of the '.NET' TFMs (`net5.0` through `net8.0`).
 - You can learn more on how to evaluate a package's supported frameworks and its compatibility with your project [here](#determine-supported-frameworks).
@@ -81,6 +81,14 @@ Package search queries at nuget.org, from the NuGet CLI, and from within Visual 
 NuGet installs a package into a project only if the package's supported .NET frameworks include the project's target frameworks. If the package isn't compatible, NuGet issues an error.
 
 There are several ways to determine the frameworks that a package supports:
+
+- On the search page, a package's supported frameworks will appear as badges below the package ID. These badges show the lowest supported framework versions from the **.NET**, **.NET Core**, **.NET Standard**, and **.NET Framework** generations. The package will be compatible with any framework version that's equal to or higher than the badge version shown.
+
+  'Dark blue' badges represent explicitly targeted frameworks, while 'light blue' badges represent computed compatible frameworks.
+
+  Clicking on a badge will redirect you to the package's details page on nuget.org. The **Frameworks** tab on the package's page will show the full list of supported frameworks.
+
+  ![Screenshot of the Framework badges on nuget.org's search page.](media/Finding-10-FrameworkBadgesInSearch.png)
 
 - On the package's page at nuget.org, supported frameworks appear below the package ID and on the **Frameworks** tab, but not all packages show supported frameworks.
 
