@@ -31,7 +31,7 @@ For more information, see [dotnet new](/dotnet/core/tools/dotnet-new).
 
 Every NuGet package has a manifest that describes the package's contents and dependencies. In the final package, the manifest is a *.nuspec* file, which uses the NuGet metadata properties you include in the project file.
 
-Open the *.csproj*, *.fproj*, or *.vbproj* project file, and add the following properties inside the existing `<PropertyGroup>` tag. Use your own values for name and company, and replace the package identifier with a unique value.
+Open the *.csproj*, *.fsproj*, or *.vbproj* project file, and add the following properties inside the existing `<PropertyGroup>` tag. Use your own values for name and company, and replace the package identifier with a unique value.
 
 ```xml
 <PackageId>Contoso.08.28.22.001.Test</PackageId>
