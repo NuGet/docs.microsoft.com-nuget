@@ -26,7 +26,7 @@ jobs:
           close-issue-message: 'This issue is closed. If you feel this issue has been closed in error, please submit a new comment on the issue, and we will review it.'
           stale-issue-label: 'stale'
           close-issue-label: 'auto-close'
-          exempt-issue-labels: 'exempt'
+          exempt-issue-labels: 'exempt,P1'
           remove-stale-when-updated: true
           days-before-close: 14
           days-before-issue-stale: 180
