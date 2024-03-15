@@ -364,6 +364,26 @@
             "source_path": "docs/tools/ps-ref-update-package.md",
             "redirect_url": "/nuget/reference/ps-reference/ps-ref-update-package",
             "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/errors-and-warnings/NU1901-NU1904.md",
+            "redirect_url": "docs/reference/errors-and-warnings/NU1901",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/errors-and-warnings/NU1901-NU1904.md",
+            "redirect_url": "docs/reference/errors-and-warnings/NU1902",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/errors-and-warnings/NU1901-NU1904.md",
+            "redirect_url": "docs/reference/errors-and-warnings/NU1903",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/errors-and-warnings/NU1901-NU1904.md",
+            "redirect_url": "docs/reference/errors-and-warnings/NU1904",
+            "redirect_document_id": false
         }
     ]
 }
