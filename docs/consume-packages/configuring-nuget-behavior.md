@@ -114,13 +114,14 @@ Multiple `NuGet.Config` files allow you to store settings in different locations
 These settings collectively apply to any NuGet operation invoked from the command line or from Visual Studio, with settings that exist "closest" to a solution or the current folder taking precedence.
 If a command line tool is used on a project file, rather than a solution file, then the project directory is used as the "solution directory", which can lead to inconsistent behaviour when there is a `NuGet.Config` file in a subdirectory of the solution file.
 
-Specifically, NuGet loads settings from the different config files in the following order:
+Specifically, when a config file is not specified explicitly on the command line, NuGet loads settings from the different config files in the following order:
 
 1. The [`NuGetDefaults.Config` file](#nuget-defaults-file), which contains settings related only to package sources.
 1. The computer-level file.
 1. The user-level file.
-1. The file specified with `-configFile`.
 1. Files found in every folder in the path from the drive root to the current folder (where `nuget.exe` is invoked or the folder containing the Visual Studio solution). For example, if a command is invoked in `c:\A\B\C`, NuGet looks for and loads config files in `c:\`, then `c:\A`, then `c:\A\B`, and finally `c:\A\B\C`.
+
+When a config file is explicitly specified on the command line, for example `nuget -configFile my.config` or `dotnet restore --configfile my.config`, only the settings from the specified file will be used.
 
 As NuGet finds settings in these files, they are applied as follows:
 
