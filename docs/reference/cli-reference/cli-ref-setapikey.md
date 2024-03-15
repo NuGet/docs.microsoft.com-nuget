@@ -9,9 +9,9 @@ ms.topic: reference
 
 # setapikey command (NuGet CLI)
 
-**Applies to:** package consumption, publishing &bullet; **Supported versions:** all
+**Applies to:** publishing &bullet; **Supported versions:** all
 
-Saves an API key for a given server URL into `NuGet.Config` so that it doesn't need to be entered for subsequent commands.
+Saves an API key for a given server URL into `NuGet.Config` so that it doesn't need to be entered for subsequent push commands.
 
 ## Usage
 
@@ -22,8 +22,10 @@ nuget setapikey <key> -Source <url> [options]
 where `<source>` identifies the server and `<key>` is the key to save. If `<source>` is omitted, nuget.org is assumed. 
 
 > [!NOTE]
-> API key is not used for authenticating with the private feed. Refer to [`nuget sources` command](../cli-reference/cli-ref-sources.md) to manage credentials for authenticating with the source.
-> API keys can be obtained from the individual NuGet servers. To create and manage APIKeys for nuget.org refer to [acquire-an-api-key](../../nuget-org/scoped-api-keys.md#acquire-an-api-key)
+> API key is not used for authenticating with the private feed.
+> Refer to [`nuget sources` command](../cli-reference/cli-ref-sources.md) to manage credentials for authenticating with the source.
+> API keys can be obtained from the individual NuGet servers.
+> To create and manage APIKeys for nuget.org refer to [acquire-an-api-key](../../nuget-org/scoped-api-keys.md#acquire-an-api-key).
 
 ## Options
 
