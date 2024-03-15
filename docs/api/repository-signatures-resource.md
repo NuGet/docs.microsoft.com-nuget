@@ -110,7 +110,7 @@ All hash values must be lowercase, hex-encoded string representations of the has
 ### Sample request
 
 ```
-GET https://api.nuget.org/v3-index/repository-signatures/4.7.0/index.json
+GET https://api.nuget.org/v3-index/repository-signatures/5.0.0/index.json
 ```
 
 ### Sample response
