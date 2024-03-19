@@ -47,7 +47,7 @@ A `NuGet.Config` file is a simple XML text file containing key/value pairs as de
 Settings are managed using the NuGet CLI [config command](../reference/cli-reference/cli-ref-config.md):
 - By default, changes are made to the user-level config file. (On Mac/Linux, the location of user-level config file varies by tooling)
 - To change settings in a different file, use the `-configFile` switch. In this case files can use any filename.
-- Keys are always case sensitive.
+- Keys are case sensitive when being referenced. New keys must be unique regardless of casing (case insensitive) .
 - Elevation is required to change settings in the computer-level settings file.
 
 > [!Warning]
