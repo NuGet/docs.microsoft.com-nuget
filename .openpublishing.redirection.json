@@ -367,22 +367,22 @@
         },
         {
             "source_path": "docs/reference/errors-and-warnings/NU1901.md",
-            "redirect_url": "docs/reference/errors-and-warnings/NU1901-NU1904",
+            "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
             "redirect_document_id": false
         },
         {
             "source_path": "docs/reference/errors-and-warnings/NU1902.md",
-            "redirect_url": "docs/reference/errors-and-warnings/NU1901-NU1904",
+            "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
             "redirect_document_id": false
         },
         {
             "source_path": "docs/reference/errors-and-warnings/NU1903.md",
-            "redirect_url": "docs/reference/errors-and-warnings/NU1901-NU1904",
+            "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
             "redirect_document_id": false
         },
         {
             "source_path": "docs/reference/errors-and-warnings/NU1904.md",
-            "redirect_url": "docs/reference/errors-and-warnings/NU1901-NU1904",
+            "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
             "redirect_document_id": false
         }
     ]
