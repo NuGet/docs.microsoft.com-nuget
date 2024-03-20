@@ -181,7 +181,7 @@ If you'd like to disable central package management for any a particular project
 
 A global package reference is used to specify that a package will be used by every project in a repository. This includes packages that do versioning, extend your build, or any other packages that are needed by all projects. Global package references are added to the PackageReference item group with the following metadata:
 
-* `IncludeAssets="Runtime;Build;Native;contentFiles;Analyzers"`<br/>
+* `IncludeAssets="Runtime;Build;Native;contentFiles;Analyzers;BuildMultitargeting;BuildTransitive"`<br/>
   This ensures that the package is only used as a development dependency and prevents any compile-time assembly references.
 * `PrivateAssets="All"`<br/>
   This prevents global package references from being picked up by downstream dependencies.
