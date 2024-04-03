@@ -103,7 +103,7 @@ Controls whether the `packages` folder of a solution is included in source contr
 
 ## Package source sections
 
-The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources`, `trustedSigners` and `packageSourceMapping` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
+The `packageSources`, `auditSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources`, `trustedSigners` and `packageSourceMapping` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
 
 The [`nuget sources` command](../reference/cli-reference/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../reference/cli-reference/cli-ref-setapikey.md), and `trustedSigners` which is managed using the [`nuget trusted-signers` command](../reference/cli-reference/cli-ref-trusted-signers.md).
 
@@ -112,6 +112,9 @@ Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 ### packageSources
 
 Lists all known package sources. The order is ignored during restore operations and with any project using the PackageReference format. NuGet respects the order of sources for install and update operations with projects using `packages.config`.
+
+When no [`auditSources`](#auditsources) are defined, then `packageSources` will be used for [NuGet Audit](../concepts/Auditing-Packages.md).
+See [the documentation on auditing packages](../concepts/Auditing-Packages.md#source-of-vulnerability-information) for more information.
 
 | XML Attribute | Purpose |
 | :-- | :-- |
@@ -137,6 +140,27 @@ Lists all known package sources. The order is ignored during restore operations 
 
 > [!Tip]
 > When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
+
+### auditSources
+
+[NuGet Audit](../concepts/Auditing-Packages.md) uses the sources defined in `auditSources` to download a vulnerabilities database and check packages for known vulnerabilities.
+This allows you to use NuGet Audit using nuget.org's vulnerability database (or any other source the provides [vulnerability information](../api/vulnerability-info.md)), without using it as a package source.
+If any audit source does not provide vulnerability information, [warning NU1905](./errors-and-warnings/NU1905.md) will be raised.
+
+`auditSources` have [the same attributes as package sources](#packagesources) (`key`, `value`, `protocolVersion`, and `allowInsecureConnections`).
+`auditSources` use the same credentials as `packageSourceCredentials`.
+Therefore, if you want to get a NU1905 warning when NuGetAudit can't run, and you use an authenticated feed for both package sources, and audit sources, like the source twice, both times with the same `key` name.
+
+`auditSources` is available from NuGet 6.10.
+
+**Example**:
+
+```xml
+<auditSources>
+    <clear />
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
+</auditSources>
+```
 
 ### packageSourceCredentials
 

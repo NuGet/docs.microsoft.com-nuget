@@ -79,6 +79,18 @@ On NuGet.org, you can navigate to the package details page and click `Report pac
 If no security vulnerabilities are found, this means that packages with known vulnerabilities were not found in your package graph at the present moment of time you checked.
 Since the advisory database can be updated at any time, we recommend regularly checking your `dotnet restore` output and ensuring the same in your continuous integration process.
 
+## Configuring NuGet Audit
+
+### Source of vulnerability information
+
+NuGet will read [`nuget.config` files](../reference/nuget-config-file.md) from [multiple locations](../consume-packages/configuring-nuget-behavior.md#common-nuget-configurations).
+
+When at least one [audit source](../reference/nuget-config-file.md#auditsources) is provided, NuGet will use these `auditSources` to download a vulnerability database.
+If an audit source does not provide [vulnerability information](../api/vulnerability-info.md), restore will raise a [NU1905 warning](../reference/errors-and-warnings/NU1905.md).
+
+If no `auditSources` are provided, then restore will use [`packageSources`](../reference/nuget-config-file.md#packagesources), but will not warn NU1905 if the source does not provide vulnerability information.
+Therefore, if none of your package sources provide vulnerability information, it is equivalent to [disabling the NuGetAudit feature](#disabling-security-auditing), as audit will not run and will not warn you.
+
 ### Setting a security audit mode
 
 By default, a security audit is done for top-level dependencies.
