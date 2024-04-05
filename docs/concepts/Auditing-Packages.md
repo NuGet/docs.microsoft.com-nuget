@@ -16,7 +16,10 @@ This involves identifying vulnerabilities, evaluating risks, and making recommen
 The audit can include a review of the packages themselves, as well as any dependencies and their associated risks.
 The goal of the audit is to identify and mitigate any security vulnerabilities that could be exploited by attackers, such as code injection or cross-site scripting attacks.
 
-NuGet Audit is available starting from NuGet 6.8, the .NET 8 SDK (8.0.100), and Visual Studio 2022 17.8.
+| Project Type | NuGet | .NET SDK | Visual Studio |
+|--------------|-------|----------|---------------|
+| PackageReference | 6.8 |  .NET 8 SDK (8.0.100) | Visual Studio 2022 17.8 |
+| packages.config | 6.10 | N/A | Visual Studio 2022 17.10 |
 
 ## Running a security audit with `restore`
 
@@ -28,16 +31,8 @@ A description of your dependencies is checked against a report of known vulnerab
 > NuGet.org's V3 URL is one such example (https://api.nuget.org/v3/index.json), but note that NuGet.org's V2 endpoint does not.
 
 1. On the command line, navigate to your project or solution directory.
-1. Ensure your project or solution contains a `.csproj` file.
-1. Type `dotnet restore` or `restore` using your preferred tooling (i.e. MSBuild, NuGet.exe, etc).
-1. Review the audit report and address the known security vulnerabilities.
-
-> [!NOTE]
-> At this time, NuGet does not audit `packages.config` projects.
-
-## Reviewing and acting on the security audit report
-
-Running `dotnet restore` will produce a report of security vulnerabilities with the affected package name, the severity of the vulnerability, and a link to the advisory for more details.
+1. Run `restore` using your preferred tooling (i.e. dotnet, MSBuild, NuGet.exe, VisualStudio etc).
+1. Review the warnings and address the known security vulnerabilities.
 
 ### Security vulnerabilities found with updates
 
@@ -79,30 +74,16 @@ On NuGet.org, you can navigate to the package details page and click `Report pac
 If no security vulnerabilities are found, this means that packages with known vulnerabilities were not found in your package graph at the present moment of time you checked.
 Since the advisory database can be updated at any time, we recommend regularly checking your `dotnet restore` output and ensuring the same in your continuous integration process.
 
-### Setting a security audit mode
+### Configuring NuGet audit
 
-By default, a security audit is done for top-level dependencies.
-In the case that you'd like to audit both top-level and transitive dependencies, you can set the `<NuGetAuditMode>` MSBuild property to the desired mode in which auditing will run.
-Possible values are `direct` and `all`.
-For example if you wanted to audit all dependencies for security advisories, you can set the following:
+Audit can be configured via MSBuild properties in a `.csproj` or MSBuild file being evaluated as part of your project.
+We recommend that audit is configured at a repository level.
 
-```xml
-<NuGetAuditMode>all</NuGetAuditMode>
-```
-
-> [!NOTE]
-> Visual Studio 2022 17.8 does not support changing audit mode for SDK style packages.
-> It works from 17.9 Preview 2.
-
-### Setting a security audit level
-
-In cases where you only care about a certain threshold of a security advisory severity, you can set the `<NuGetAuditLevel>` MSBuild property to the desired level in which auditing will fail.
-Possible values are `low`, `moderate`, `high`, and `critical`.
-For example if you only want to see `moderate`, `high`, and `critical` advisories, you can set the following:
-
-```xml
-<NuGetAuditLevel>moderate</NuGetAuditLevel>
-```
+| MSBuild Property | Default | Possible values | Notes |
+|------------------|------_--|-----------------|-------|
+| NuGetAuditMode | direct | `direct` and `all` | If you'd like to audit both top-level and transitive dependencies, you can set the value to `all`. NuGetAuditMode is not applicable for packages.config projects |
+| NuGetAuditLevel | low | `low`, `moderate`, `high`, and `critical` | If you'd like to see `moderate`, `high`, and `critical` advisories, set the value to `moderate` |
+| NuGetAudit | true | `true` and `false` | If you wish to not receive security audit reports, you can opt-out of the experience entirely by setting the value to `false` |
 
 ### Excluding advisories
 
@@ -123,13 +104,8 @@ You can customize your build to treat these warnings as errors to [treat warning
 For example, if you're already using `<TreatWarningsAsErrors>` to treat all (C#, NuGet, MSBuild, etc) warnings as errors, you can use `<WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>` to prevent vulnerabilities discovered in the future from breaking your build.
 Alternatively, if you want to keep low and moderate vulnerabilities as warnings, but treat high and critical vulnerabilities as errors, and you're not using `TreatWarningsAsErrors`, you can use `<WarningsAsErrors>NU1903;NU1904</WarningsAsErrors>`.
 
-### Disabling security auditing
-
-At any time you wish to not receive security audit reports, you can opt-out of the experience entirely by setting the following MSBuild property in a `.csproj` or MSBuild file being evaluated as part of your project:
-
-```xml
-<NuGetAudit>false</NuGetAudit>
-```
+> [!NOTE]
+> MSBuild properties for message severity such as `NoWarn` and `TreatWarningsAsErrors` are not supported for packages.config projects.
 
 ## Summary
 
