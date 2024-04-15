@@ -111,7 +111,7 @@ versions       | array of objects           | yes      | All of the versions of 
 authors        | string or array of strings | no       | 
 iconUrl        | string                     | no       | 
 licenseUrl     | string                     | no       | 
-owners         | string or array of strings | no       | 
+owners         | string or array of strings | no       | A string represents a single owner's username
 projectUrl     | string                     | no       | 
 registration   | string                     | no       | The absolute URL to the associated [registration index](registration-base-url-resource.md#registration-index)
 summary        | string                     | no       | 
