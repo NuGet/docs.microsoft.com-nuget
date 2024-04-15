@@ -125,6 +125,7 @@
 #### [Catalog](api/catalog-resource.md)
 #### [Package content](api/package-base-address-resource.md)
 #### [Package details URL](api/package-details-template-resource.md)
+#### [Owner URL](api/package-owner-template-resource.md)
 #### [Package metadata](api/registration-base-url-resource.md)
 #### [Push and delete](api/package-publish-resource.md)
 #### [Push symbol packages](api/symbol-package-publish-resource.md)
