@@ -40,22 +40,15 @@ Package Manager Console commands work only within Visual Studio on Windows and d
 
 ## Support policy
 
-We are fully committed to supporting the most recent version of NuGet.exe.
+The most recent version of NuGet.exe is fully supported and can be relied on for bug fixes, updates, and enhancements.
 
-This means you can rely on us for bug fixes, updates, and enhancements exclusive to the version currently under development.
+Out-of-support NuGet.exe versions will be unlisted from [tools.json](../api/tools-json.md).
 
-NuGet.exe follows the [Microsoft Modern Lifecycle Policy](https://aka.ms/lifecycle).
-
-Here are steps you can take to leverage the NuGet Support Policy effectively:
-
-* Use the latest version of NuGet.exe.
-* Note that we will release patches when critical security fixes are required for an LTS version of either Visual Studio or the .NET SDK.
-
-* Watch for unlisted NuGet.exe versions in [tools.json](../api/tools-json.md).
+For more information on NuGet.exe's support policy, see the [Microsoft Modern Lifecycle Policy](https://aka.ms/lifecycle).
 
 ### Security Patch Releases
 
-We will release patched versions of NuGet.exe exclusively when critical security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
+Patched versions of NuGet.exe will be released exclusively when critical security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
 
 All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [https://aka.ms/opensource/security/create-report].
 Also see the [security policy in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/SECURITY.md).
