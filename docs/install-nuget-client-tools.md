@@ -38,6 +38,32 @@ The [MSBuild CLI](reference/msbuild-targets.md) also restores and creates packag
 
 Package Manager Console commands work only within Visual Studio on Windows and don't work within other PowerShell environments.
 
+## Support policy
+
+We are fully committed to supporting the most recent version of NuGet.exe.
+
+This means you can rely on us for bug fixes, updates, and enhancements exclusive to the version currently under development.
+
+NuGet.exe follows the [Microsoft Modern Lifecycle Policy](https://aka.ms/lifecycle).
+
+Here are steps you can take to leverage the NuGet Support Policy effectively:
+
+* Use the latest version of NuGet.exe.
+* Note that we will release patches when critical security fixes are required for an LTS version of either Visual Studio or the .NET SDK.
+
+* Watch for unlisted NuGet.exe versions in [tools.json](../api/tools-json.md).
+
+### Security Patch Releases
+
+We will release patched versions of NuGet.exe exclusively when critical security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
+
+All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [https://aka.ms/opensource/security/create-report].
+Also see the [security policy in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/SECURITY.md).
+
+### NuGet.exe unlisting
+
+Deprecated and vulnerable versions of NuGet.exe will be removed from [tools.json](../api/tools-json.md) in 2024.
+
 ## Visual Studio
 
 In Visual Studio 2017 and later, the Visual Studio installer includes the NuGet Package Manager with any workload that employs .NET.
