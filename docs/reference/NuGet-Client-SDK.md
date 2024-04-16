@@ -33,29 +33,22 @@ You can find the source code for these packages in the [NuGet/NuGet.Client](http
 > For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).
 
 ## Support policy
+The most recent version of NuGet Client SDK is fully supported and can be relied on for bug fixes, updates, and enhancements.
 
-All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [MSRC's report page](https://aka.ms/opensource/security/create-report).
-Also, see the [security policy in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/SECURITY.md).
+The recommendation is to use the latest versions of NuGet Client SDK packages, and to examine your project for dependencies on deprecated NuGet Client SDK packages.
 
-We do not guarantee API stability, as our team's responsibility is tooling, not libraries.
-See the [NuGet SDK documentation in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/docs/nuget-sdk.md) for more information.
+Out-of-support NuGet Client SDK packages will be [deprecated on nuget.org](../nuget-org/Deprecate-packages.md#client-experience-for-deprecated-packages).
 
-Here are steps you can take to leverage the NuGet Support Policy effectively:
+### Patch Releases
 
-* Use the latest versions of NuGet Client SDK packages.
-* Note that we will release patches when critical security fixes are required for an LTS version of either Visual Studio or the .NET SDK.
-* Examine your project for dependencies on deprecated NuGet Client SDK packages.
-
-### Security Patch Releases
-
-We will release patched versions of NuGet Client SDK packages exclusively when critical security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
+Patched versions of NuGet Client SDK will be released exclusively when critical bugs or security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
 
 All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [https://aka.ms/opensource/security/create-report].
 Also see the [security policy in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/SECURITY.md).
 
 ### Package Deprecation
 
-As of January 31, 2024, we have deprecated older versions of NuGet Client SDK packages that are not tied to an LTS version of either Visual Studio or .NET.
+As of January 31, 2024, older versions of NuGet Client SDK packages that are not tied to an LTS version of either Visual Studio or .NET have been deprecated.
 
 NuGet's package maintenance approach will align with the [.NET Package Maintenance (deprecation)](https://github.com/dotnet/announcements/issues/217) guidance.
 

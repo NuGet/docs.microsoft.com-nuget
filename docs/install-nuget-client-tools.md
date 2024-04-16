@@ -46,7 +46,7 @@ Out-of-support NuGet.exe versions will be unlisted from [tools.json](../api/tool
 
 For more information on NuGet.exe's support policy, see the [Microsoft Modern Lifecycle Policy](https://aka.ms/lifecycle).
 
-### Security Patch Releases
+### Patch Releases
 
 Patched versions of NuGet.exe will be released exclusively when critical security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
 
