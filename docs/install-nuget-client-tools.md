@@ -50,7 +50,7 @@ For more information on NuGet.exe's support policy, see the [Microsoft Modern Li
 
 Patched versions of NuGet.exe will be released exclusively when critical security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
 
-All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [https://aka.ms/opensource/security/create-report].
+All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [MSRC's report page](https://aka.ms/opensource/security/create-report).
 Also, see the [security policy in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/SECURITY.md).
 
 ### NuGet.exe unlisting

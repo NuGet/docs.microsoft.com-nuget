@@ -43,12 +43,15 @@ Out-of-support NuGet Client SDK packages will be [deprecated on nuget.org](../nu
 
 Patched versions of NuGet Client SDK will be released exclusively when critical bugs or security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
 
-All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [https://aka.ms/opensource/security/create-report].
+All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [MSRC's report page](https://aka.ms/opensource/security/create-report).
 Also, see the [security policy in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/SECURITY.md).
+
+We do not guarantee API stability, as our team's responsibility is tooling, not libraries.
+See the [NuGet SDK documentation in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/docs/nuget-sdk.md) for more information.
 
 ### Package Deprecation
 
-As of January 31, 2024, older versions of NuGet Client SDK packages that are not tied to an LTS version of either Visual Studio or .NET have been deprecated.
+Older versions of NuGet Client SDK packages that are not tied to an LTS version of either Visual Studio or .NET will be deprecated.
 
 NuGet's package maintenance approach will align with the [.NET Package Maintenance (deprecation)](https://github.com/dotnet/announcements/issues/217) guidance.
 
