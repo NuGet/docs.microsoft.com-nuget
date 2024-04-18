@@ -42,8 +42,6 @@ Package Manager Console commands work only within Visual Studio on Windows and d
 
 The most recent version of NuGet.exe is fully supported and can be relied on for bug fixes, updates, and enhancements.
 
-Out-of-support NuGet.exe versions will be unlisted from [tools.json](./api/tools-json.md).
-
 For more information on NuGet.exe's support policy, see the [Microsoft Modern Lifecycle Policy](https://aka.ms/lifecycle).
 
 ### Patch Releases
@@ -55,7 +53,7 @@ Also, see the [security policy in the NuGet.Client repo](https://github.com/NuGe
 
 ### NuGet.exe unlisting
 
-Deprecated and vulnerable versions of NuGet.exe will be removed from [tools.json](./api/tools-json.md) in 2024.
+Out-of-support, deprecated, or vulnerable NuGet.exe versions will be unlisted from [tools.json](./api/tools-json.md).
 
 ## Visual Studio
 
