@@ -53,7 +53,7 @@ Also, see the [security policy in the NuGet.Client repo](https://github.com/NuGe
 
 ### NuGet.exe unlisting
 
-Out-of-support, deprecated, or vulnerable NuGet.exe versions will be unlisted from [tools.json](./api/tools-json.md).
+Out-of-support, deprecated, or vulnerable NuGet.exe versions will be removed from [tools.json](./api/tools-json.md).
 
 ## Visual Studio
 
