@@ -33,6 +33,7 @@ You can find the source code for these packages in the [NuGet/NuGet.Client](http
 > For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).
 
 ## Support policy
+
 The most recent version of NuGet Client SDK is fully supported and can be relied on for bug fixes, updates, and enhancements.
 
 The recommendation is to use the latest versions of NuGet Client SDK packages, and to examine your project for dependencies on deprecated NuGet Client SDK packages.
