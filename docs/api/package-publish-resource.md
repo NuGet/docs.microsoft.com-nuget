@@ -147,7 +147,11 @@ A package can be marked as deprecated or have deprecation details modified and r
 
 If the package already has deprecation details matching the request body, the request still succeeds.
 
-To mark a package as deprecated, set one or more of `isLegacy`, `hasCriticalBugs`, or `isOther` (generally called deprecation statuses) to `true`. To undeprecate a package (i.e. remove deprecation details), exclude the deprecation status booleans from the request body allowing them to default to `false`. You can explicitly set all of the deprecation status booleans to false but this to undeprecate but this approach may not be forward compatible.
+To mark a package as deprecated, set one or more of `isLegacy`, `hasCriticalBugs`, or `isOther` (generally called deprecation statuses or deprecation reasons) to `true`. To undeprecate a package (i.e. remove deprecation details), exclude all of the deprecation status booleans from the request body allowing them to default to `false`.
+
+A request body with only the required `versions` property will remove any deprecation information from all specified versions, since the deprecation status (reason) booleans default to `false`.
+
+You can mark the versions as unlisted at the same time by including the `listedVerb` property set to the `Unlist` string.
 
 For more information on the user experience of package deprecation, see [deprecating packages](../nuget-org/Deprecate-packages.md).
 
@@ -166,9 +170,10 @@ versions                | Request body | array of strings | yes      | The packa
 isLegacy                | Request body | boolean          | no       | If set to true, mark the package version(s) as legacy, defaults to false
 hasCriticalBugs         | Request body | boolean          | no       | If set to true, mark the package version(s) as having critical bugs, defaults to false
 isOther                 | Request body | boolean          | no       | If set to true, mark the package version(s) as having some other deprecation reason, defaults to false
-alternatePackageId      | Request body | string           | no       | An alternate package ID to refer package consumer to, in lieu of this package
+alternatePackageId      | Request body | string           | no       | An alternate package ID to refer package consumer to, in lieu of this package, required if `alternatePackageVersion` is specified 
 alternatePackageVersion | Request body | string           | no       | A specific version for the alternate package ID
-message                 | Request body | string           | no       | A user-facing, plain text message to include with the other deprecation details, required if `isOther` is true.
+message                 | Request body | string           | no       | A user-facing, plain text message to include with the other deprecation details, required if `isOther` is true
+listedVerb              | Request body | string           | no       | Changes the listed status with `Unlist` (mark all specified versions as unlisted), `Relist` (mark all specified versions as listed), or `Unchanged` (leave listed status as-is), defaults to `Unchanged`
 
 ### Response
 
@@ -180,8 +185,11 @@ Status Code | Meaning
 
 ### Sample request
 
+This request marks NuGet.Core 2.12.0 as deprecated with the "Legacy" reason. The NuGet.Protocol 6.4.0 package is used as the alternate package.
+
 ```
 PUT https://www.nuget.org/api/v2/package/NuGet.Core/deprecations
+User-Agent: Spoon-Knife/1.0.0
 X-NuGet-ApiKey: {USER_API_KEY}
 
 {
@@ -190,5 +198,23 @@ X-NuGet-ApiKey: {USER_API_KEY}
     "alternatePackageId": "NuGet.Protocol",
     "alternatePackageVersion": "6.4.0",
     "message": "NuGet.Core has been replaced by NuGet client v3 and later APIs."
+}
+```
+
+### Sample request
+
+This request marks NuGet.Core 2.12.0, 2.13.0, and 2.14.0 as deprecated with the "Legacy" and "Other" reasons displaying the provided message. All three versions will be unlisted at the same time as being marked as deprecated.
+
+```
+PUT https://www.nuget.org/api/v2/package/NuGet.Core/deprecations
+User-Agent: Spoon-Knife/1.0.0
+X-NuGet-ApiKey: {USER_API_KEY}
+
+{
+    "versions": [ "2.12.0", "2.13.0", "2.14.0" ],
+    "isLegacy": true,
+    "isOther": true
+    "message": "NuGet.Core has been replaced by NuGet client v3 and later APIs.",
+    "listedVerb": "Unlist"
 }
 ```
