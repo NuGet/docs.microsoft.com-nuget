@@ -52,7 +52,8 @@ The following tables list the rate limits for the NuGet.org API.
 **PUT** `/api/v2/package` | API Key | 350 / hour | Upload a new NuGet package (version) via package publish endpoint 
 **DELETE** `/api/v2/package/{id}/{version}` | API Key | 250 / hour | Unlist a NuGet package (version) via package publish endpoint 
 **POST** `/api/v2/package/{id}/{version}` | API Key | 250 / hour | Relist a NuGet package (version) via package publish endpoint
-**PUT** `/api/v2/package/{id}/deprecations` on multiple version | API Key | 1 / minute | Update the deprecation information on multiple package versions
+**PUT** `/api/v2/package/{id}/deprecations` on multiple versions | API Key | 1 / minute | Update the deprecation information on multiple package versions
+**PUT** `/api/v2/package/{id}/deprecations` on a single version | API Key | 250 / hour | Update the deprecation information on a single package version
 
 ## nuget.org website page views
 
