@@ -40,7 +40,7 @@ Package Manager Console commands work only within Visual Studio on Windows and d
 
 ## Support policy
 
-Visual Studio for Windows support policy can be found at [Visual Studio Product Lifecycle and Servicing](https://learn.microsoft.com/visualstudio/productinfo/vs-servicing).
+The Visual Studio for Windows support policy can be found at [Visual Studio Product Lifecycle and Servicing](https://learn.microsoft.com/visualstudio/productinfo/vs-servicing).
 
 
 The most recent version of NuGet.exe is fully supported and can be relied on for bug fixes, updates, and enhancements.
