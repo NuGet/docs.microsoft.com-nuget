@@ -3,7 +3,7 @@ title: Using NuGet.Server to Host NuGet Feeds
 description: How to create and host a NuGet package feed on any server running IIS using NuGet.Server, making packages available through HTTP and OData.
 author: JonDouglas
 ms.author: jodou
-ms.date: 03/13/2018
+ms.date: 07/11/2023
 ms.topic: conceptual
 ---
 
@@ -12,6 +12,7 @@ ms.topic: conceptual
 NuGet.Server is a package provided by the .NET Foundation that creates an ASP.NET application that can host a package feed on any server that runs IIS. Simply said, NuGet.Server makes a folder on the server available through HTTP(S) (specifically OData). It's easy to set up and is best for simple scenarios.
 
 1. Create an empty ASP.NET Web application in Visual Studio and add the NuGet.Server package to it.
+   - If you are using Visual Studio 2022, you must add the .NET Framework development tools. You need this so that you can create a new **ASP.NET Web Application (.NET Framework)** project.
 1. Configure the `Packages` folder in the application and add packages.
 1. Deploy the application to a suitable server.
 

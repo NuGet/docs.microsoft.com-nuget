@@ -12,7 +12,7 @@ ms.reviewer: ananguar
 
 [NuGet 3.5 RTM Release Notes](../release-notes/nuget-3.5-RTM.md)
 
-[NuGet 4.0 RC for Visual Studio 2017](http://blog.nuget.org/20161121/introducing-nuget4.0) is focused on adding support for .NET Core scenarios, addressing key customer feedback and improving performance in a variety of scenarios. This release brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restore, and more.
+[NuGet 4.0 RC for Visual Studio 2017](https://blog.nuget.org/20161121/introducing-nuget4.0) is focused on adding support for .NET Core scenarios, addressing key customer feedback and improving performance in a variety of scenarios. This release brings several improvements like support for PackageReference, NuGet commands as MSBuild targets, background package restore, and more.
 
 ## Bug Fixes
 

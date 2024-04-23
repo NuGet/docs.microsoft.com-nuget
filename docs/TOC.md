@@ -48,6 +48,7 @@
 ### [Select assemblies referenced by projects](create-packages/select-assemblies-referenced-by-projects.md)
 ### [Set package type](create-packages/set-package-type.md)
 ### [Create a localized package](create-packages/creating-localized-packages.md)
+### [.NET Packages containing native libraries](create-packages/native-files-in-net-packages.md)
 ## Guides for specific content
 ### [Create a UWP package (C++)](guides/create-uwp-packages.md)
 ### [Create a UWP package (C#)](guides/create-uwp-packages-CS.md)
@@ -58,7 +59,8 @@
 ### [Create a package with COM interop assemblies](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## Sign packages
 ### [Sign a package](create-packages/sign-a-package.md)
-### [Signed package signatures and requirements](reference/signed-packages-reference.md)
+### [Signed-package signatures and requirements](reference/signed-packages-reference.md)
+### [Signed-package verification options](reference/Signed-Package-Verification-Options.md)
 # Publish packages
 ## Publish to NuGet.org
 ### [Publish a package](nuget-org/publish-a-package.md)
@@ -72,6 +74,7 @@
 ## [Package installation process](concepts/package-installation-process.md)
 ## [Package versioning](concepts/package-versioning.md)
 ## [Dependency resolution](concepts/dependency-resolution.md)
+## [Auditing package dependencies for security vulnerabilities](concepts/Auditing-Packages.md)
 ## [Best practices for a secure software supply chain](concepts/Security-Best-Practices.md)
 ## [MSBuild .props and .targets](concepts/MSBuild-props-and-targets.md)
 ## [Troubleshooting Installed Packages](concepts/troubleshooting-installed-packages.md)
@@ -116,6 +119,7 @@
 ### [Update-Package](reference/ps-reference/ps-ref-update-package.md)
 ## NuGet Server API
 ### [Overview](api/overview.md)
+### [Server Implementation Guide](api/implementation-guide.md)
 ### Resources
 #### [Autocomplete](api/search-autocomplete-service-resource.md)
 #### [Catalog](api/catalog-resource.md)
@@ -128,6 +132,7 @@
 #### [Repository signatures](api/repository-signatures-resource.md)
 #### [Search](api/search-query-service-resource.md)
 #### [Service index](api/service-index.md)
+#### [Vulnerability info](api/vulnerability-info.md)
 ### [How-to: query for all packages using the API](guides/api/query-for-all-published-packages.md)
 ### [Rate limits](api/rate-limits.md)
 ### [nuget.org protocols](api/nuget-protocols.md)
@@ -147,6 +152,7 @@
 ### [NU1010](reference/errors-and-warnings/NU1010.md)
 ### [NU1011](reference/errors-and-warnings/NU1011.md)
 ### [NU1012](reference/errors-and-warnings/NU1012.md)
+### [NU1014](reference/errors-and-warnings/NU1014.md)
 ### [NU1100](reference/errors-and-warnings/NU1100.md)
 ### [NU1101](reference/errors-and-warnings/NU1101.md)
 ### [NU1102](reference/errors-and-warnings/NU1102.md)
@@ -157,6 +163,7 @@
 ### [NU1107](reference/errors-and-warnings/NU1107.md)
 ### [NU1108](reference/errors-and-warnings/NU1108.md)
 ### [NU1109](reference/errors-and-warnings/NU1109.md)
+### [NU1110](reference/errors-and-warnings/NU1110.md)
 ### [NU1201](reference/errors-and-warnings/NU1201.md)
 ### [NU1202](reference/errors-and-warnings/NU1202.md)
 ### [NU1203](reference/errors-and-warnings/NU1203.md)
@@ -183,6 +190,12 @@
 ### [NU1608](reference/errors-and-warnings/NU1608.md)
 ### [NU1701](reference/errors-and-warnings/NU1701.md)
 ### [NU1703](reference/errors-and-warnings/NU1703.md)
+### [NU1900](reference/errors-and-warnings/NU1900.md)
+### [NU1901](reference/errors-and-warnings/NU1901-NU1904.md)
+### [NU1902](reference/errors-and-warnings/NU1901-NU1904.md)
+### [NU1903](reference/errors-and-warnings/NU1901-NU1904.md)
+### [NU1904](reference/errors-and-warnings/NU1901-NU1904.md)
+### [NU1905](reference/errors-and-warnings/NU1905.md)
 ### [NU1801](reference/errors-and-warnings/NU1801.md)
 ### [NU1802](reference/errors-and-warnings/NU1802.md)
 ### [NU1803](reference/errors-and-warnings/NU1803.md)
@@ -226,6 +239,7 @@
 ### [NU3037](reference/errors-and-warnings/NU3037.md)
 ### [NU3038](reference/errors-and-warnings/NU3038.md)
 ### [NU3040](reference/errors-and-warnings/NU3040.md)
+### [NU3042](reference/errors-and-warnings/NU3042.md)
 ### [NU5000](reference/errors-and-warnings/NU5000.md)
 ### [NU5001](reference/errors-and-warnings/NU5001.md)
 ### [NU5002](reference/errors-and-warnings/NU5002.md)
@@ -325,6 +339,10 @@
 ### [Known Issues](release-notes/known-issues.md)
 
 ### NuGet 6.x
+#### [NuGet 6.8](release-notes/NuGet-6.8.md)
+#### [NuGet 6.7](release-notes/NuGet-6.7.md)
+#### [NuGet 6.6](release-notes/NuGet-6.6.md)
+#### [NuGet 6.5](release-notes/NuGet-6.5.md)
 #### [NuGet 6.4](release-notes/NuGet-6.4.md)
 #### [NuGet 6.3](release-notes/NuGet-6.3.md)
 #### [NuGet 6.2](release-notes/NuGet-6.2.md)

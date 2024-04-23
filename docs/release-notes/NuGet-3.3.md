@@ -32,7 +32,7 @@ NuGet 3.3 was released November 30, 2015 with a significant number of user inter
 
 ## New Command-line Features
 
-In this version we introduced the `add` and `init` commands to initialize folder-based repositories as described in the [nuget.exe reference](../reference/nuget-exe-cli-reference.md). Repositories that are constructed and maintained with this folder structure will [deliver significant performance benefits](http://blog.nuget.org/20150922/Accelerate-Package-Source.html) as outlined on our blog.
+In this version we introduced the `add` and `init` commands to initialize folder-based repositories as described in the [nuget.exe reference](../reference/nuget-exe-cli-reference.md). Repositories that are constructed and maintained with this folder structure will [deliver significant performance benefits](https://blog.nuget.org/20150922/Accelerate-Package-Source.html) as outlined on our blog.
 
 ## ContentFiles
 
@@ -54,4 +54,4 @@ The list of issues fixed in the 3.3 command-line release are recorded in the [3.
 
 ## Known Issues
 
-We continue to track issues on our GitHub issues list which can be found at: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
+We continue to track issues on our GitHub issues list which can be found at: [https://github.com/nuget/home/issues](https://github.com/nuget/home/issues)

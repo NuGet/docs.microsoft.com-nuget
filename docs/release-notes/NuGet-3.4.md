@@ -54,11 +54,11 @@ The following features were previously added in the RC and have been updated or 
     * Loading projects that have an init.ps1 script (like EntityFramework)
     * Publishing web content
 
-* **Workaround:** Ensure that your Windows 10 install has the latest patches applied, expecially the January 2016 (KB 3124263) or a later update.  More details are available on [GitHub issue #1638](http://github.com/nuget/home/issues/1638)
+* **Workaround:** Ensure that your Windows 10 install has the latest patches applied, expecially the January 2016 (KB 3124263) or a later update.  More details are available on [GitHub issue #1638](https://github.com/nuget/home/issues/1638)
 
 * **Issue:** NuGet v2 protocol redirects are broken.
 Custom NuGet repositories that redirect requests to an alternative host do not honor the redirect request.
 * **Workaround:**  To work around this issue, configure the package repository URI in settings to point to the redirected server location.
 For more information, see [GitHub pull request #387](https://github.com/NuGet/NuGet.Client/pull/387).
 
-We continue to track issues on our GitHub issues list which can be found at: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
+We continue to track issues on our GitHub issues list which can be found at: [https://github.com/nuget/home/issues](https://github.com/nuget/home/issues)

@@ -3,16 +3,32 @@ title: Package Source Mapping
 description: Describes package source mapping functionality and how to onboard
 author: nkolev92
 ms.author: nikolev
-ms.date: 03/15/2022
+ms.date: 10/18/2023
 ms.topic: conceptual
+f1_keywords: 
+  - "vs.toolsoptionspages.nuget_package_manager.package_source_mapping"
 ---
 
 # Package Source Mapping
 
-Safeguarding your software supply chain is crucial if you use a mix of public and private package sources.
-Use Package Source Mapping along side other [best practices](..\concepts\Security-Best-Practices.md) to help you fortify your supply chain against attacks.
+Package Source Mapping is a tool that can be used to improve your supply chain security, especially if you use a mix of public and private package sources.
 
-Starting with [NuGet 6.0](..\release-notes\NuGet-6.0.md), you can centrally declare which source each package in your solution should restore from in your nuget.config file.
+By default, NuGet will search all configured package sources when it needs to download a package.
+When a package exists on multiple sources, it may not be deterministic which source the package will be downloaded from.
+With Package Source Mapping, you can filter, per package, which source(s) NuGet will search.
+
+We also have suggestions for other [best practices](..\concepts\Security-Best-Practices.md) to help you fortify your supply chain against attacks.
+
+Package Source Mapping was added in [NuGet 6.0](..\release-notes\NuGet-6.0.md).
+Starting with Visual Studio 17.5, you can add and remove Package Source Mappings with the Visual Studio Options Dialog.
+
+### Visual Studio support
+
+| Visual Studio | Package Source Mapping | Support in Tools -> Options | Support in Package Manager UI |
+|-----|---------------------|---------------------|---------------------|
+| 17.0 - 17.4 | ✅ Available | ❌ Not available | ❌ Not available |
+| 17.5 | ✅ Available | ✅ Available | ❌ Not available |
+| 17.7 Preview 3| ✅ Available | ✅ Available | ✅ Status displayed |
 
 The feature is available across all NuGet integrated tooling.
 
@@ -32,33 +48,72 @@ For a video-based overview of the Package Source Mapping feature, consider watch
 
 To opt into this feature, you must have a `nuget.config` file. Having a single `nuget.config` at the root of your repository is considered a best practice. See [nuget.config documentation](../reference/nuget-config-file.md) to learn more.
 
+### Enable by using Visual Studio Options Dialog
+
+1. Open your solution in Visual Studio.
+2. Navigate to the `Package Source Mappings` Options Dialog.
+
+_From the Package Manager UI_
+
+- Select a package from the list to show it in the Details Pane.
+- Press the `Configure` button to open the Package Source Mappings options page.
+
+![The NuGet Package Manager window in Visual Studio showing a selected package, and a highlight around the "Package source mapping is off" status with a `Configure` button.](media/packageSourceMapping_PMUI_Status_Off_Annotated.png)
+
+_From the Visual Studio Options Dialog_
+
+  - Go to the `Tools` menu in the main Visual Studio toolbar, and choose `NuGet Package Manager` -> `Package Manager Settings`.
+  - Navigate to the `Package Source Mappings` page.
+
+![The Visual Studio `Package Source Mappings` Options Dialog showing no package source mappings, with an `Add` button to create a new mapping.](media/packageSourceMapping_VSOptions_NoMappings.png)
+
+3. Press the `Add` button in the `Package Source Mappings` page to open the `Add Package Source Mappings` dialog.
+
+![The `Add Package Source Mappings` dialog](media/packageSourceMapping_VSOptions_AddMappingOpened.png)
+4. Enter a Package ID or Package Pattern, and select one or more package source(s) by toggling the checkbox for your desired source(s).
+
+![The `Add Package Source Mappings` dialog with a filled package pattern and selected package source.](media/packageSourceMapping_VSOptions_AddMappingFilled.png)
+
+5. The `Package Source Mapping` options page will show the newly created source mapping.
+
+![The `Package Source Mapping` options page showing the newly created source mapping](media/packageSourceMapping_VSOptions_AddMappingCompleted.png)
+
+6. Press `OK` on the Options Dialog to save changes to the applicable `nuget.config`.
+7. The NuGet Package Manager window will refresh and reflect the new status of the selected package's source mappings.
+![The NuGet Package Manager window in Visual Studio showing a selected package with the "Package source mapping found" status with a `Configure` button.](media/packageSourceMapping_PMUI_Status_Mapped.png)
+
+### Enable by manually editing `nuget.config`
 * Declare your desired package sources in your `nuget.config` file.
 * Following your source declarations, add a `<packageSourceMapping>` element that specifies the desired mappings for each source.
 * Declare exactly one `packageSource` element for each source in use.
   * Add as many patterns as you find necessary.
 
 ```xml
-<!-- Define the package sources, nuget.org and contoso.com. -->
-<!-- `clear` ensures no additional sources are inherited from another config file. -->
-<packageSources>
-  <clear />
-  <!-- `key` can be any identifier for your source. -->
-  <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
-  <add key="contoso.com" value="https://contoso.com/packages/" />
-</packageSources>
-
-<!-- Define mappings by adding package patterns beneath the target source. -->
-<!-- Contoso.* packages and NuGet.Common will be restored from contoso.com, everything else from nuget.org. -->
-<packageSourceMapping>
-  <!-- key value for <packageSource> should match key values from <packageSources> element -->
-  <packageSource key="nuget.org">
-    <package pattern="*" />
-  </packageSource>
-  <packageSource key="contoso.com">
-    <package pattern="Contoso.*" />
-    <package pattern="NuGet.Common" />
-  </packageSource>
-</packageSourceMapping>
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <!-- Define the package sources, nuget.org and contoso.com. -->
+  <!-- `clear` ensures no additional sources are inherited from another config file. -->
+  <packageSources>
+    <clear />
+    <!-- `key` can be any identifier for your source. -->
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+    <add key="contoso.com" value="https://contoso.com/packages/" />
+  </packageSources>
+  
+  <!-- Define mappings by adding package patterns beneath the target source. -->
+  <!-- Contoso.* packages and NuGet.Common will be restored from contoso.com,
+       everything else from nuget.org. -->
+  <packageSourceMapping>
+    <!-- key value for <packageSource> should match key values from <packageSources> element -->
+    <packageSource key="nuget.org">
+      <package pattern="*" />
+    </packageSource>
+    <packageSource key="contoso.com">
+      <package pattern="Contoso.*" />
+      <package pattern="NuGet.Common" />
+    </packageSource>
+  </packageSourceMapping>
+</configuration>
 ```
 
 Package Source Mapping settings are applied following [nuget.config precedence rules](configuring-nuget-behavior.md#how-settings-are-applied) when multiple `nuget.config` files at various levels (machine-level, user-level, repo-level) are present.
@@ -77,8 +132,8 @@ All requested packages must map to one or more sources by matching a defined pac
 ### Package Pattern Syntax
 
 | Pattern | Example syntax | Description |
-|-|--------|---------|-------------|
-| Package prefix pattern | `*`, `NuGet.*`, `NuGet.*` | Must end with a `*`, where `*` matches 0 or more characters. `*` is the shortest allowed prefix pattern and matches all packages ids. |
+|---------|---------|-------------|
+| Package prefix pattern | `*`, `NuGet.*` | Must end with a `*`, where `*` matches 0 or more characters. `*` is the shortest allowed prefix pattern and matches all packages ids. |
 | Package ID pattern | `NuGet.Common`, `Contoso.Contracts` | Exact package ID. |
 
 ### Package Pattern precedence

@@ -53,6 +53,10 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
   Specifies the password for authenticating with the source.
 
+  > [!NOTE]
+  > Be aware that encrypted passwords are only supported on Windows. 
+  > Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
+
 - **`-src|-Source`**
 
   Path to the package(s) source.
@@ -60,6 +64,10 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 - **`-StorePasswordInClearText`**
 
   Indicates to store the password in unencrypted text instead of the default behavior of storing an encrypted form.
+
+  > [!WARNING]
+  > Storing passwords in clear text is strongly discouraged.
+  > For more information on managing credentials securely, refer to the [security best practices for consuming packages from private feeds](../../consume-packages/consuming-packages-authenticated-feeds.md#security-best-practices-for-managing-credentials).
 
 - **`-UserName`**
 
@@ -69,12 +77,16 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
   Comma-separated list of valid authentication types for this source. By default, all authentication types are valid. Example: `basic,negotiate`.
 
+- **`-ProtocolVersion`**
+
+  The NuGet server protocol version to be used.
+  See [NuGet.Config's packageSources documentation](../nuget-config-file.md#packagesources) for more information.
+  
+  Available in NuGet command line from version 6.8.
+  
 - **`-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
-
-> [!Note]
-> Make sure to add the sources' password under the same user context as the nuget.exe is later used to access the package source. The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted. So for example when you use a build server to restore NuGet packages the password must be encrypted with the same Windows user under which  the build server task will run.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
@@ -88,4 +100,6 @@ nuget sources Disable -Name "MyServer"
 nuget sources Enable -Name "nuget.org"
 
 nuget sources add -name foo.bar -source C:\NuGet\local -username foo -password bar -StorePasswordInClearText -configfile %AppData%\NuGet\my.config
+
+nuget sources Update -Name "nuget.org" -ProtocolVersion 3
 ```

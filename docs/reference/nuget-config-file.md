@@ -113,19 +113,27 @@ Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 
 Lists all known package sources. The order is ignored during restore operations and with any project using the PackageReference format. NuGet respects the order of sources for install and update operations with projects using `packages.config`.
 
-| Key | Value | protocolVersion |
-| --- | --- | --- |
-| (name to assign to the package source) | The path or URL of the package source. | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. https://api.nuget.org/v3/index.json). Supported in [NuGet 3.0+](https://learn.microsoft.com/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](https://learn.microsoft.com/nuget/api/overview) for more information about the version 3 protocol. |
+| XML Attribute | Purpose |
+| :-- | :-- |
+| **Key** | (name to assign to the package source) |
+| **Value** | The path or URL of the package source. |
+| **protocolVersion** | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. https://api.nuget.org/v3/index.json). Supported in [NuGet 3.0+](/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](/nuget/api/overview) for more information about the version 3 protocol. |
+| **allowInsecureConnections** | When false, or not specified, NuGet will emit a warning when the source uses http, rather than https. If you are confident that communication with this source will never be at risk of interception attacks, you can set the value to true to suppress the warning. Supported in NuGet 6.8+. |
 
 **Example**:
 
 ```xml
 <packageSources>
+    <clear />    
     <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
     <add key="Contoso" value="https://contoso.com/packages/" />
+    <add key="http-source" value="http://httpsourcetrusted/" allowInsecureConnections="true" />
     <add key="Test Source" value="c:\packages" />
 </packageSources>
 ```
+
+> [!NOTE]
+> When using the CLI, you can express a [`RestoreSources`](../reference/msbuild-targets.md#restore-properties) MSBuild property or [`--source`(.NET CLI)](/dotnet/core/tools/dotnet-restore#options) | [`-Source`(NuGet CLI)](/nuget/reference/cli-reference/cli-ref-restore#options) to override the `<packageSources>` defined in the NuGet.config.
 
 > [!Tip]
 > When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
@@ -137,10 +145,16 @@ Optionally, valid authentication types can be specified with the `-validauthenti
 
 | Key | Value |
 | --- | --- |
-| username | The user name for the source in plain text. |
+| username | The user name for the source in plain text. Note: environment variables can be used for improved security. |
 | password | The encrypted password for the source. Encrypted passwords are only supported on Windows, and only can be decrypted when used on the same machine and via the same user as the original encryption. |
 | cleartextpassword | The unencrypted password for the source. Note: environment variables can be used for improved security. |
 | validauthenticationtypes | Comma-separated list of valid authentication types for this source. Set this to `basic` if the server advertises NTLM or Negotiate and your credentials must be sent using the Basic mechanism, for instance when using a PAT with on-premises Azure DevOps Server. Other valid values include `negotiate`, `kerberos`, `ntlm`, and `digest`, but these values are unlikely to be useful. |
+
+> [!WARNING]
+> Storing passwords in clear text is strongly discouraged.
+> Please note that encrypted passwords are only supported on Windows.
+> Furthermore, they can only be decrypted when used on the same machine and by the same user who originally encrypted them.
+> For more information on managing credentials securely, refer to the [security best practices for consuming packages from private feeds](../consume-packages/consuming-packages-authenticated-feeds.md#security-best-practices-for-managing-credentials).
 
 > [!Tip]
 > If a non-encrypted password is passed for `password` the error message ["The parameter is incorrect" will occur](https://github.com/NuGet/Home/issues/3245).
@@ -162,6 +176,23 @@ In the config file, the `<packageSourceCredentials>` element contains child node
 </packageSourceCredentials>
 ```
 
+Additionally, valid authentication methods can be supplied.
+
+```xml
+<packageSourceCredentials>
+    <Contoso>
+        <add key="Username" value="user@contoso.com" />
+        <add key="Password" value="..." />
+        <add key="ValidAuthenticationTypes" value="basic" />
+    </Contoso>
+    <Test_x0020_Source>
+        <add key="Username" value="user" />
+        <add key="Password" value="..." />
+        <add key="ValidAuthenticationTypes" value="basic, negotiate" />
+    </Test_x0020_Source>
+</packageSourceCredentials>
+```
+
 When using unencrypted passwords stored in an environment variable:
 
 ```xml
@@ -178,6 +209,8 @@ When using unencrypted passwords stored in an environment variable:
 ```
 
 When using unencrypted passwords:
+> [!WARNING]
+> Storing passwords in clear text is strongly discouraged.
 
 ```xml
 <packageSourceCredentials>
@@ -188,23 +221,6 @@ When using unencrypted passwords:
     <Test_x0020_Source>
         <add key="Username" value="user" />
         <add key="ClearTextPassword" value="hal+9ooo_da!sY" />
-    </Test_x0020_Source>
-</packageSourceCredentials>
-```
-
-Additionally, valid authentication methods can be supplied:
-
-```xml
-<packageSourceCredentials>
-    <Contoso>
-        <add key="Username" value="user@contoso.com" />
-        <add key="Password" value="..." />
-        <add key="ValidAuthenticationTypes" value="basic" />
-    </Contoso>
-    <Test_x0020_Source>
-        <add key="Username" value="user" />
-        <add key="ClearTextPassword" value="hal+9ooo_da!sY" />
-        <add key="ValidAuthenticationTypes" value="basic, negotiate" />
     </Test_x0020_Source>
 </packageSourceCredentials>
 ```
@@ -291,10 +307,12 @@ If a `certificate` specifies `allowUntrustedRoot` as `true` the given certificat
     <author name="microsoft">
         <certificate fingerprint="3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
         <certificate fingerprint="AA12DA22A49BCE7D5C1AE64CC1F3D892F150DA76140F210ABD2CBFFCA2C18A27" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+        <certificate fingerprint="566A31882BE208BE4422F7CFD66ED09F5D4524A5994F50CCC8B05EC0528C1353" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
     </author>
     <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
         <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
         <certificate fingerprint="5A2901D6ADA3D18260B9C6DFE2133C95D74B9EEF6AE0E5DC334C8454D1477DF4" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+        <certificate fingerprint="1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />        
         <owners>microsoft;aspnet;nuget</owners>
     </repository>
 </trustedSigners>
@@ -451,6 +469,7 @@ Below is an example `nuget.config` file that illustrates a number of settings in
         See: nuget.exe help update
     -->
     <packageSources>
+        <clear />
         <add key="NuGet official package source" value="https://api.nuget.org/v3/index.json" />
         <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
     </packageSources>
@@ -479,10 +498,12 @@ Below is an example `nuget.config` file that illustrates a number of settings in
         <author name="microsoft">
             <certificate fingerprint="3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
             <certificate fingerprint="AA12DA22A49BCE7D5C1AE64CC1F3D892F150DA76140F210ABD2CBFFCA2C18A27" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+            <certificate fingerprint="566A31882BE208BE4422F7CFD66ED09F5D4524A5994F50CCC8B05EC0528C1353" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
         </author>
         <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
             <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
             <certificate fingerprint="5A2901D6ADA3D18260B9C6DFE2133C95D74B9EEF6AE0E5DC334C8454D1477DF4" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+            <certificate fingerprint="1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
             <owners>microsoft;aspnet;nuget</owners>
         </repository>
     </trustedSigners>

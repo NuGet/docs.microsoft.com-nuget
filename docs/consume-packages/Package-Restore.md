@@ -3,7 +3,7 @@ title: NuGet Package Restore
 description: See an overview of how NuGet restores packages a project depends on, including how to disable restore and constrain versions.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/29/2022
+ms.date: 10/20/2023
 ms.topic: conceptual
 ---
 
@@ -41,7 +41,7 @@ After a successful restore:
 
 If the package references in your project file or your *packages.config* file are incorrect and don't match your desired state, install or update the correct packages instead of using Package Restore.
 
-If you have missing packages or package-related errors after you run Package Restore, such as error icons in Solution Explorer, follow the instructions in [Troubleshooting Package Restore errors](package-restore-troubleshooting.md), or [reinstall or update](../consume-packages/reinstalling-and-updating-packages.md) the packages. In Visual Studio, the Package Manager Console provides several options for reinstalling packages. For more information, see [Use Package-Update](reinstalling-and-updating-packages.md#using-update-package).
+If you have missing packages or package-related errors after you run Package Restore, such as error icons in Solution Explorer, follow the instructions in [Troubleshooting Package Restore errors](package-restore-troubleshooting.md), or [reinstall or update](../consume-packages/reinstalling-and-updating-packages.md) the packages. In Visual Studio, the Package Manager Console provides several options for reinstalling packages. For more information, see [Use Package-Update](reinstalling-and-updating-packages.md#update-package-command).
 
 <a name="restore-using-visual-studio"></a>
 ## Restore packages in Visual Studio
@@ -154,7 +154,7 @@ Azure DevOps Server and TFS 2013 and later automatically restore packages during
 
 NuGet restore through any method honors any version constraints you specify in *packages.config* or the project file.
 
-- In *packages.config*, you can specify an `allowedVersions` range in the dependency. For more information, see [Constrain upgrade versions](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions). For example:
+- In *packages.config*, you can specify an `allowedVersions` range in the dependency. For more information, see [Constraints on upgrade versions](../consume-packages/reinstalling-and-updating-packages.md#constraints-on-upgrade-versions). For example:
 
   ```xml
   <package id="Newtonsoft.json" version="6.0.4" allowedVersions="[6,7)" />
@@ -189,7 +189,7 @@ To avoid using packages in the HTTP cache:
 
 - Clear the cache by using `nuget locals http-cache -clear` or `dotnet nuget locals http-cache --clear`.
 - Temporarily set the **NUGET_HTTP_CACHE_PATH** environment variable to a different folder.
-- For `nuget restore`, use the `-NoCache` option, or for `dotnet restore`, use the `--no-cache` option. These options don't affect restore operations through the Visual Studio Package Manager or Console.
+- For `nuget restore`, use the `-NoHttpCache` option, or for `dotnet restore`, use the `--no-http-cache` option. These options don't affect restore operations through the Visual Studio Package Manager or Console.
 
 <a name="migrate-to-automatic-package-restore-visual-studio"></a>
 ## Migrate to automatic package restore

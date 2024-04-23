@@ -3,7 +3,7 @@ title: Create and publish a NuGet package with the dotnet CLI
 description: Walk through quickly creating and publishing a NuGet package by using the dotnet CLI.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/29/2022
+ms.date: 08/21/2023
 ms.topic: quickstart
 ---
 
@@ -31,7 +31,7 @@ For more information, see [dotnet new](/dotnet/core/tools/dotnet-new).
 
 Every NuGet package has a manifest that describes the package's contents and dependencies. In the final package, the manifest is a *.nuspec* file, which uses the NuGet metadata properties you include in the project file.
 
-Open the *.csproj*, *.fproj*, or *.vbproj* project file, and add the following properties inside the existing `<PropertyGroup>` tag. Use your own values for name and company, and replace the package identifier with a unique value.
+Open the *.csproj*, *.fsproj*, or *.vbproj* project file, and add the following properties inside the existing `<PropertyGroup>` tag. Use your own values for name and company, and replace the package identifier with a unique value.
 
 ```xml
 <PackageId>Contoso.08.28.22.001.Test</PackageId>
@@ -43,7 +43,7 @@ Open the *.csproj*, *.fproj*, or *.vbproj* project file, and add the following p
 > [!Important]
 > The package identifier must be unique across nuget.org and other package sources. Publishing makes the package publicly visible, so if you use the example AppLogger library or other test library, use a unique name that includes `Sample` or `Test`.
 
-You can add any optional properties described in [NuGet metadata properties](/dotnet/core/tools/csproj#nuget-metadata-properties).
+You can add any optional properties described in [NuGet metadata properties](../reference/msbuild-targets.md#pack-target).
 
 > [!Note]
 > For packages you build for public consumption, pay special attention to the `PackageTags` property. Tags help others find your package and understand what it does.
@@ -82,7 +82,7 @@ Publish your *.nupkg* file to nuget.org by using the [dotnet nuget push](/dotnet
 
 ### Get your API key
 
-[!INCLUDE [publish-api-key](includes/publish-api-key.md)]
+[!INCLUDE [publish-api-key](includes/publish-api-key-with-link.md)]
 
 ### Publish with dotnet nuget push
 

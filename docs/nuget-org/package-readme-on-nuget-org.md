@@ -29,6 +29,9 @@ Consider including the following items in your readme:
 
 Keep in mind, high quality readmes can come in a wide variety of formats, shapes, and sizes! If you already have a package available on NuGet.org, chances are that you already have a `readme.md` or other documentation file in your repository that would be a great addition to your NuGet.org details page.
 
+> [!Note]
+> Read through our [blog on writing a high-quality README](https://devblogs.microsoft.com/nuget/write-a-high-quality-readme-for-nuget-packages/) for some best practices.
+
 ## Preview your readme
 
 To preview your readme file before it's live on NuGet.org, upload your package using the [Upload Package web portal on NuGet.org](/nuget/nuget-org/publish-a-package#web-portal-use-the-upload-package-tab-on-nugetorg) and scroll down to the "Readme File" section of the metadata preview. It should look something like this:
@@ -41,21 +44,20 @@ Consider taking time to review and preview your readme file for [image complianc
 Due to security and privacy concerns, NuGet.org restricts the domains from which images and badges can be rendered to trusted hosts. 
 
 NuGet.org allows all images, including badges, from the following trusted domains to be rendered:
-* api.bintray.com
 * api.codacy.com
 * app.codacy.com
 * api.codeclimate.com
 * api.dependabot.com
 * api.travis-ci.com
-* api.travis-ci.org
 * api.reuse.software
 * app.fossa.com
 * app.fossa.io
+* avatars.githubusercontent.com
 * badge.fury.io
 * badgen.net
 * badges.gitter.im
-* bettercodehub.com
 * buildstats.info
+* caniuse.bitsofco.de
 * camo.githubusercontent.com
 * cdn.jsdelivr.net
 * cdn.syncfusion.com
@@ -65,6 +67,7 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * codefactor.io
 * coveralls.io
 * dev.azure.com
+* flat.badgen.net
 * github.com/.../workflows/.../badge.svg
 * gitlab.com
 * img.shields.io
@@ -77,6 +80,7 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * sonarcloud.io
 * travis-ci.com
 * travis-ci.org
+* wakatime.com
 * user-images.githubusercontent.com
 
 If you feel that another domain should be added to the allow-list, please feel free to [file an issue](https://github.com/NuGet/NuGetGallery/issues) and it will be reviewed by our engineering team for privacy and security compliance. Images with relative local paths and images hosted from unsupported domains will not be rendered and will produce a warning on the readme file preview and package details page that is only visible to the package owners.
@@ -98,3 +102,4 @@ NuGet.org currently supports the following Markdown features:
 * [Emojis](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/EmojiSpecs.md)
 * [Auto-links](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/AutoLinks.md)
 
+We also support syntax highlighting, You can add an language identifier to enable syntax highlighting in your code spans.

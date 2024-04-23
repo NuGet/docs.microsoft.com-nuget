@@ -43,7 +43,7 @@ Studio build configuration transformations.
 
 In April 2013, we made two big announcements regarding NuGet support for XDT. The first
 was that the XDT library itself was being itself [released as a NuGet package](https://nuget.org/packages/Microsoft.Web.Xdt)
-and [open sourced on CodePlex](http://xdt.codeplex.com/). This step enabled the XDT engine
+and ```[open sourced on CodePlex](http://xdt.codeplex.com/)```. This step enabled the XDT engine
 to be used freely by other open-source software, including the NuGet client. The second
 announcement was the plan to support use of the XDT engine for transformations in the
 NuGet client. NuGet 2.6 includes this integration.
@@ -135,7 +135,7 @@ relevance boosting.
 
 ### Tracking Direct Installs vs. Dependency Installs
 
-Package authors are relying more and more on the [Package Statistics](http://blog.nuget.org/20130226/Introducing-Package-Statistics.html)
+Package authors are relying more and more on the [Package Statistics](https://blog.nuget.org/20130226/Introducing-Package-Statistics.html)
 provided on the NuGet Gallery.  One significant missing data point that authors have asked
 for is a differentiation between direct package installs and dependency installs.  Until now,
 the NuGet client did not send any context around the installation operation for whether the
@@ -158,4 +158,4 @@ package authors to fully understand how developers are installing their packages
 ## Bug Fixes
 
 NuGet 2.6 also includes several bug fixes. For a full list of work items fixed in NuGet 2.6, please view
-the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.6&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=All).
+the ```[NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.6&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=All)```.

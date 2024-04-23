@@ -1,3 +1,5 @@
+# Contributing
+
 No contribution is too big or too small.
 
 1. Visit the page to edit in the [NuGet documentation](https://learn.microsoft.com/nuget/), then click the **Edit** button on the top right. This brings you to the appropriate markdown page in the repo.

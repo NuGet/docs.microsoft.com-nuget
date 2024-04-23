@@ -3,7 +3,7 @@ title: "Quickstart: Create and publish a package using Visual Studio (.NET Frame
 description: A quickstart that shows how to create and publish a .NET Framework NuGet package using Visual Studio on Windows.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/29/2022
+ms.date: 08/21/2023
 ms.topic: quickstart
 ---
 
@@ -100,6 +100,7 @@ Run `nuget spec` only once to generate the initial manifest. If you update the p
         <authors>Your username</authors>
         <owners>Your username</owners>
         <license type="expression">MIT</license>
+        <!-- <icon>icon.png</icon> -->
         <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Package description</description>
@@ -145,7 +146,7 @@ If you'd like to test and validate your package before publishing it a public ga
 
 ### Acquire your API key
 
-[!INCLUDE [publish-api-key](includes/publish-api-key.md)]
+[!INCLUDE [publish-api-key](includes/publish-api-key-with-link.md)]
 
 ### Publish with the NuGet CLI
 

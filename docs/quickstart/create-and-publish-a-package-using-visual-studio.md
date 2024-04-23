@@ -3,7 +3,7 @@ title: "Quickstart: Create and publish a NuGet package using Visual Studio (Wind
 description: A quickstart that shows how to create and publish a .NET NuGet package using Visual Studio for Windows.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/29/2022
+ms.date: 08/21/2023
 ms.topic: quickstart
 ---
 
@@ -96,7 +96,7 @@ To create a NuGet package from your project, follow these steps:
 
 1. Select **Build** > **Configuration Manager**, and then set the **Active solution configuration** to **Release**.
 
-1. Select the AppLogger project in **Solution Explorer**, and then select **Build** > **Pack**.
+1. Select the AppLogger project in **Solution Explorer**, then select **Pack**.
 
     Visual Studio builds the project and creates the *.nupkg* file.
 
@@ -146,7 +146,7 @@ After you've created a *.nupkg* file, publish it to nuget.org by using either th
 
 Before you publish your NuGet package, create an API key:
 
-[!INCLUDE [publish-api-key](includes/publish-api-key.md)]
+[!INCLUDE [publish-api-key](includes/publish-api-key-with-link.md)]
 
 ### Publish with the .NET CLI or NuGet CLI
 

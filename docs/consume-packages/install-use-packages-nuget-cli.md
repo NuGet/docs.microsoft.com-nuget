@@ -3,7 +3,7 @@ title: Manage NuGet packages with the NuGet CLI
 description: Instructions for using the NuGet CLI, nuget.exe, to manage NuGet packages.
 author: mikejo5000
 ms.author: mikejo
-ms.date: 08/29/2022
+ms.date: 08/21/2023
 ms.topic: conceptual
 ---
 

@@ -9,9 +9,9 @@ ms.topic: conceptual
 
 # Authenticating feeds with nuget.exe credential providers
 
-In version `3.3` support was added for `nuget.exe` specific credential providers. Since then, in version `4.8` [support for credential providers](NuGet-Cross-Platform-Authentication-Plugin.md) that work across all command line scenarios (`nuget.exe`, `dotnet.exe`, `msbuild.exe`) was added.
+In version `3.3` support was added for `nuget.exe` specific (v1) credential providers. Since then, in version `4.8` [support for (v2) credential providers](NuGet-Cross-Platform-Authentication-Plugin.md) that work across all command line scenarios (`nuget.exe`, `dotnet.exe`, `msbuild.exe`) was added.
 
-See [Consuming Packages from authenticated feeds](../../consume-packages/consuming-packages-authenticated-feeds.md#nugetexe) for more details on all authentication approaches for `nuget.exe`
+See [Consuming Packages from authenticated feeds](../../consume-packages/consuming-packages-authenticated-feeds.md) for more details on all authentication approaches.
 
 ## nuget.exe credential provider discovery
 

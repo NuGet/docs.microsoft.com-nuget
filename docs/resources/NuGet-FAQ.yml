@@ -58,7 +58,7 @@ sections:
         answer: |
           NuGet generally works for .NET languages and is designed to bring .NET libraries into a project. Because it also supports MSBuild and Visual Studio automation in some project types, it also supports other projects and languages to various degrees.
           
-          The most recent version of NuGet supports C#, Visual Basic, F#, WiX, and C++.
+          The most recent version of NuGet supports C#, Visual Basic, F#, WiX, C++, and Q#.
           
       - question: |
           What project templates are supported by NuGet?

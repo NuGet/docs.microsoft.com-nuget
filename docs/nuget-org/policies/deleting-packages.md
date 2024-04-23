@@ -30,6 +30,7 @@ Packages that meet any of the following criteria are not allowed on the public N
 - Contains illegal content.
 - Are being used to squat on package identifiers, including packages that have zero productive content. Packages must contain code or the owners must concede the identifier to someone who actually has a product to ship.
 - Attempt to make the gallery do something that it's not explicitly designed to do.
+- Violates the [nuget.org Terms of Use or Code of Conduct](https://www.nuget.org/policies/Terms) in any way. Terms such as "unexpected", "discriminatory", "hateful", and "abusive" are evaluated and decided at the sole discretion of the NuGet team.
 
 If you find a package that is in violation of any of these items, click the **Report Abuse** link on the package details page and submit a report.
 
@@ -45,6 +46,6 @@ Steps to unlist a package:
 1. Expand the "Listing" section and select the package version
 1. Uncheck “List in search results” and select "Save"
 
-The specific package version has now been unlisted. In order to verify this, logout of your account and navigate to the package page (without the version part) e.g.: https://www.nuget.org/packages/YOUR-PACKAGE-NAME/. You will see all versions of that package that have **not** been unlisted. However, the package owner, when logged in, can see all versions and their listing status.
+The specific package version has now been unlisted. In order to verify this, logout of your account and navigate to the package page (without the version part) e.g.: ```https://www.nuget.org/packages/YOUR-PACKAGE-NAME/```. You will see all versions of that package that have **not** been unlisted. However, the package owner, when logged in, can see all versions and their listing status.
 
 It's also possible to deprecate a package version (in case you can't delete a package version). For more information about deprecating package versions, see [Deprecating packages](../deprecate-packages.md).

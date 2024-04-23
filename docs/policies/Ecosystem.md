@@ -17,7 +17,7 @@ All of these projects are able to innovate because of developer contributions. J
 
 ## .NET Foundation projects
 
-NuGet provides a free, open source package management system for the Microsoft development platform. It consists of a few client tools as well as the set of services that comprise the [official NuGet Gallery](http://www.nuget.org). Combined, these form the NuGet project which is governed by the [.NET Foundation](http://www.dotnetfoundation.org/).
+NuGet provides a free, open source package management system for the Microsoft development platform. It consists of a few client tools as well as the set of services that comprise the [official NuGet Gallery](https://www.nuget.org). Combined, these form the NuGet project which is governed by the [.NET Foundation](https://www.dotnetfoundation.org/).
 
 The NuGet Organization contains various repositories on GitHub. [https://github.com/Nuget/Home](https://github.com/Nuget/Home) gives an overview of all the repositories and where to find the various NuGet components.
 
@@ -33,14 +33,16 @@ Many other individuals and companies have made significant contributions to the 
 - [Artifactory](https://www.jfrog.com/artifactory/)
 - [BoxStarter](http://boxstarter.org/)
 - [Chocolatey](https://chocolatey.org/)
-- [CoApp](http://coapp.org/)
+- [CoApp](https://github.com/coapp/coapp.org)
 - [JetBrains ReSharper](https://resharper-plugins.jetbrains.com/)
+- [JetBrains Space](https://www.jetbrains.com/space/)
 - [JetBrains TeamCity](https://www.jetbrains.com/teamcity/)
 - [Klondike](https://github.com/themotleyfool/Klondike)
 - [MinimalNugetServer](https://github.com/TanukiSharp/MinimalNugetServer)
 - [MyGet (or NuGet-as-a-service)](http://www.myget.org/)
 - [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)
 - [NuGet Server](http://nugetserver.net/)
+- [NuGetizer](https://github.com/devlooped/nugetizer)
 - [OctopusDeploy](https://octopus.com/)
 - [Paket](https://fsprojects.github.io/Paket/)
 - [ProGet (Inedo)](http://inedo.com/proget)
@@ -54,12 +56,12 @@ Many other individuals and companies have made significant contributions to the 
 
 These are tools and utilities built on NuGet:
 
-- [Glimpse Extensions](http://getglimpse.com/Packages) (plug-ins are packages)
+- [Glimpse Extensions](https://meetglimpse.com/)
 - [NuGetMustHaves.com](http://nugetmusthaves.com/)
 - [Orchard](http://www.orchardproject.net/) (CMS modules are fetched from a v1 NuGet feed hosted in the Orchard Gallery)
 - [Java implementation of NuGet Server](http://jonnyzzz.com/blog/2012/03/07/nuget-server-in-pure-java/)
 - [NuGetLatest](https://twitter.com/NuGetLatest) (Twitter bot tweeting new package publications)
-- [DefinitelyTyped](http://definitelytyped.org/) ([Automatic](https://github.com/DefinitelyTyped/NugetAutomation/) TypeScript Type [Definitions published to NuGet](http://www.nuget.org/packages?q=DefinitelyTyped))
+- [DefinitelyTyped](http://definitelytyped.org/) ([Automatic](https://github.com/DefinitelyTyped/NugetAutomation/) TypeScript Type [Definitions published to NuGet](https://www.nuget.org/packages?q=DefinitelyTyped))
 
 ## Training materials and references
 
@@ -67,11 +69,11 @@ Using a new tool or technology usually comes with a learning curve. Luckily for 
 
 That said, authoring packages–and especially good packages–along with  embracing NuGet in automated build and deployment processes, requires spending a little more time with the following resources:
 
-- [NuGet Blog](http://blog.nuget.org/)
-- [NuGet team on Twitter, @nuget](http://twitter.com/nuget)
+- [NuGet Blog](https://devblogs.microsoft.com/nuget/)
+- [NuGet team on Twitter, @nuget](https://twitter.com/nuget)
 - Books:
   - [Apress Pro NuGet](http://bit.ly/ProNuGet)
-  - [NuGet 2 Essentials](http://www.amazon.com/NuGet-2-Essentials-Damir-Arh-ebook/dp/B00GTQD5M4)
+  - [NuGet 2 Essentials](https://www.amazon.com/NuGet-2-Essentials-Damir-Arh/dp/178216586X)
 
 ## Documentation for individual packages
 

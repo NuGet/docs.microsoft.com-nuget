@@ -73,9 +73,9 @@ where `<projectPath>` specifies the location of a solution or a `packages.config
 
   *(3.2+)* Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15.1, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.
 
-- **`-NoCache`**
+- **`-NoHttpCache`**
 
-  Prevents NuGet from using cached packages. See [Managing the global packages and cache folders](../../consume-packages/managing-the-global-packages-and-cache-folders.md).
+  Prevents NuGet from using http cached packages. See [Managing the global packages and cache folders](../../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
 - **`-NonInteractive`**
 

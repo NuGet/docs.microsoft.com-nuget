@@ -123,7 +123,7 @@ If you're licensing the package under a common license, like MIT or BSD-2-Clause
 > [!Note]
 > NuGet.org only accepts license expressions that are approved by the Open Source Initiative or the Free Software Foundation.
 
-If your package is licensed under multiple common licenses, you can specify a composite license using the [SPDX expression syntax version 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60). For example:
+If your package is licensed under multiple common licenses, you can specify a composite license using the [SPDX expression syntax version 2.0](https://spdx.github.io/spdx-spec/v2-draft/SPDX-license-expressions/#d4-composite-license-expressions). For example:
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
@@ -201,7 +201,7 @@ For example, you would add the following to your nuspec when creating a package 
 For the MSBuild equivalent, take a look at [Packing an icon image file](msbuild-targets.md#packing-an-icon-image-file).
 
 > [!Tip]
-> You can specify both `icon` and `iconUrl` to maintain backward compatibility with sources that do not support `icon`. Visual Studio will support `icon` for packages coming from a folder-based source in a future release.
+> To maintain backward compatibility with clients and sources that don't yet support `icon`, specify both `icon` and `iconUrl`. Visual Studio supports `icon` for packages coming from a folder-based source.
 
 #### readme
 
@@ -332,7 +332,7 @@ Specifies the minimum version of the NuGet client that can install this package,
 
 ## Replacement tokens
 
-When creating a package, the [`nuget pack` command](../reference/cli-reference/cli-ref-pack.md) replaces $-delimited tokens in the `.nuspec` file's `<metadata>` node with values that come from either a project file or the `pack` command's `-properties` switch.
+When creating a package, the [`nuget pack` command](../reference/cli-reference/cli-ref-pack.md) replaces $-delimited tokens in the `.nuspec` file's `<metadata>` and `<files>` nodes with values that come from either a project file or the `pack` command's `-properties` switch.
 
 On the command line, you specify token values with `nuget pack -properties <name>=<value>;<name>=<value>`. For example, you can use a token such as `$owners$` and `$desc$` in the `.nuspec` and provide the values at packing time as follows:
 

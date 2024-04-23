@@ -25,7 +25,7 @@ Visual Studio 2017 Version 15.7 and later supports migrating a project from the 
 * Migration is not currently available for C++ and ASP.NET projects.
 * Some packages may not be fully compatible with PackageReference. For more information, see [package compatibility issues](#package-compatibility-issues).
 
-In addition, there are some differences in how PackageReferences work compared to packages.config. For example, [constraining upgrade versions](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions) is not supported by PackageReference, but PackageReference adds support for [Floating Versions](../consume-packages/package-references-in-project-files.md#floating-versions).
+In addition, there are some differences in how PackageReferences work compared to packages.config. For example, [Constraints on upgrade versions](../consume-packages/reinstalling-and-updating-packages.md#constraints-on-upgrade-versions) is not supported by PackageReference, but PackageReference adds support for [Floating Versions](../consume-packages/package-references-in-project-files.md#floating-versions).
 
 ### Known Issues
 
@@ -109,7 +109,7 @@ Some aspects that were supported in packages.config are not supported in Package
 
 * **Description**: XDT transforms are not supported with PackageReference and `.xdt` files are ignored when installing or uninstalling a package.
 
-* **Potential impact**: XDT transforms are not applied to any project XML files, most commonly, `web.config.install.xdt` and `web.config.uninstall.xdt`, which means the project's` web.config` file is not updated when the package is installed or uninstalled.
+* **Potential impact**: XDT transforms are not applied to any project XML files, most commonly, `web.config.install.xdt` and `web.config.uninstall.xdt`, which means the project's `web.config` file is not updated when the package is installed or uninstalled.
 
 ### Assemblies in the lib root are ignored when the package is installed after the migration
 

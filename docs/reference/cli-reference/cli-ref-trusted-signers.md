@@ -1,8 +1,8 @@
 ---
 title: NuGet CLI trusted-signers command
 description: Reference for the nuget.exe trusted-signers command
-author: patbel
-ms.author: patbel
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
@@ -38,11 +38,13 @@ Registered trusted signers:
       Certificate fingerprint(s):
         SHA256 - 0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D
         SHA256 - 5A2901D6ADA3D18260B9C6DFE2133C95D74B9EEF6AE0E5DC334C8454D1477DF4
+        SHA256 - 1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D        
 
  2.   microsoft [author]
       Certificate fingerprint(s):
         SHA256 - 3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE
         SHA256 - AA12DA22A49BCE7D5C1AE64CC1F3D892F150DA76140F210ABD2CBFFCA2C18A27
+        SHA256 - 566A31882BE208BE4422F7CFD66ED09F5D4524A5994F50CCC8B05EC0528C1353
 
  3.   myUntrustedAuthorSignature [author]
       Certificate fingerprint(s):

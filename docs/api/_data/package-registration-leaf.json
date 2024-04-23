@@ -1,8 +1,8 @@
 {
-  "@id": "https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json",
+  "@id": "https://api.nuget.org/v3/registration-sample/nuget.versioning/4.3.0.json",
   "catalogEntry": "https://api.nuget.org/v3/catalog0/data/2017.08.11.18.24.22/nuget.versioning.4.3.0.json",
   "listed": true,
   "packageContent": "https://api.nuget.org/v3-flatcontainer/nuget.versioning/4.3.0/nuget.versioning.4.3.0.nupkg",
   "published": "2017-08-11T18:24:14.36+00:00",
-  "registration": "https://api.nuget.org/v3/registration3/nuget.versioning/index.json"
+  "registration": "https://api.nuget.org/v3/registration-sample/nuget.versioning/index.json"
 }
