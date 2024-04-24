@@ -34,11 +34,25 @@ You can find the source code for these packages in the [NuGet/NuGet.Client](http
 
 ## Support policy
 
+The most recent version of NuGet Client SDK is fully supported and can be relied on for bug fixes, updates, and enhancements.
+
+The recommendation is to use the latest versions of NuGet Client SDK packages, and to examine your project for dependencies on deprecated NuGet Client SDK packages.
+
+### Patch Releases
+
+Patched versions of NuGet Client SDK will be released exclusively when critical bugs or security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
+
 All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [MSRC's report page](https://aka.ms/opensource/security/create-report).
 Also, see the [security policy in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/SECURITY.md).
 
 We do not guarantee API stability, as our team's responsibility is tooling, not libraries.
 See the [NuGet SDK documentation in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/docs/nuget-sdk.md) for more information.
+
+### Package Deprecation
+
+Out-of-support NuGet Client SDK packages that are not tied to an LTS version of either Visual Studio or .NET will be [deprecated on nuget.org](../nuget-org/Deprecate-packages.md#client-experience-for-deprecated-packages).
+
+NuGet's package maintenance approach will align with the [.NET Package Maintenance (deprecation)](https://github.com/dotnet/announcements/issues/217) guidance.
 
 ## NuGet.Protocol
 
