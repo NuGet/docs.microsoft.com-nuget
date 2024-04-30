@@ -95,6 +95,8 @@ Note that versions such as `1.0.1-rc.10` and `1.0.1-rc.2` are not parsable by ol
 If you use numerical suffixes with pre-release tags that might use double-digit numbers (or more), use leading zeroes as in beta01 and beta05 to ensure that they sort correctly when the numbers get larger.
 This recommendation only applies this schema.
 
+Despite the ordering shown above, NuGet does not always consider both stable & prerelease packages during dependency resolution. Those rules are detailed in [Dependency Resolution](./Dependency-Resolution.md).
+
 ---
 
 ## Version ranges
