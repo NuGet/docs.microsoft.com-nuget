@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Common NuGet configurations
 
-NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Config` (XML) files that can exist at solution- (project if no solution is used), user-, and computer-wide levels. A global `NuGetDefaults.Config` file also specifically configures package sources. Settings apply to all commands issued in the CLI, the Package Manager Console, and the Package Manager UI.
+NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Config` (XML) files that can exist at solution- (project if no solution is used), user-, and computer-wide levels.
 
 ## Config file locations and uses
 
@@ -58,7 +58,10 @@ Settings are managed using the NuGet CLI [config command](../reference/cli-refer
 Windows:
 
 ```cli
-# Set repositoryPath in the user-level config file
+# Set globalPackagesFolder (available for PackageReference only) in the user-level config file
+nuget config -set globalPackagesFolder=c:\packages
+
+# Set repositoryPath (available for packages.config only) in the user-level config file
 nuget config -set repositoryPath=c:\packages 
 
 # Set repositoryPath in solution-level files
@@ -72,7 +75,10 @@ nuget config -set repositoryPath=c:\packages -configfile %ProgramFiles(x86)%\NuG
 Mac/Linux:
 
 ```cli
-# Set repositoryPath in the user-level config file
+# Set globalPackagesFolder (available for PackageReference only) in the user-level config file
+nuget config -set globalPackagesFolder=/home/packages
+
+# Set repositoryPath (available for packages.config only) in the user-level config file
 nuget config -set repositoryPath=/home/packages 
 
 # Set repositoryPath in solution-level files
@@ -84,7 +90,7 @@ nuget config -set repositoryPath=/home/packages -configfile $XDG_DATA_HOME/NuGet
 ```
 
 > [!Note]
-> In NuGet 3.4 and later you can use environment variables in any value, as in `repositoryPath=%PACKAGEHOME%` (Windows) and `repositoryPath=$PACKAGEHOME` (Mac/Linux).
+> In NuGet 3.4+ you can use environment variables in any value, as in `repositoryPath=%PACKAGEHOME%` (Windows) and `repositoryPath=$PACKAGEHOME` (Mac/Linux).
 
 ### Removing a value
 
@@ -100,7 +106,10 @@ nuget config -set repositoryPath= -configfile /home/my.Config
 
 ### Creating a new config file
 
-Copy the template below into the new file and then use `nuget config -configFile <filename>` to set values:
+Using the .NET CLI, create a default nuget.config by running `dotnet new nugetconfig`.
+For more information, see [dotnet CLI commands](../reference/dotnet-commands.md#package-consumption).
+
+Alternatively, manually copy the template below into the new file and then use `nuget config -configFile <filename>` to set values:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -116,7 +125,7 @@ If a command line tool is used on a project file, rather than a solution file, t
 
 Specifically, when a config file is not specified explicitly on the command line, NuGet loads settings from the different config files in the following order:
 
-1. The [`NuGetDefaults.Config` file](#nuget-defaults-file), which contains settings related only to package sources.
+1. (*Uncommon*) The [`NuGetDefaults.Config` file](#nuget-defaults-file), which contains settings related only to package sources.
 1. The computer-level file.
 1. The user-level file.
 1. Files found in every folder in the path from the drive root to the current folder (where `nuget.exe` is invoked or the folder containing the Visual Studio solution). For example, if a command is invoked in `c:\A\B\C`, NuGet looks for and loads config files in `c:\`, then `c:\A`, then `c:\A\B`, and finally `c:\A\B\C`.
@@ -154,9 +163,9 @@ File A. User-level file, (`%appdata%\NuGet\NuGet.Config` on Windows, `~/.config/
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
-    <activePackageSource>
-        <add key="NuGet official package source" value="https://api.nuget.org/v3/index.json" />
-    </activePackageSource>
+  <packageSources>
+    <add key="nuget" value="https://api.nuget.org/v3/index.json" />
+  </packageSources>
 </configuration>
 ```
 
@@ -226,7 +235,9 @@ These files cannot be edited by the standard tooling.
 
 ## NuGet defaults file
 
-The `NuGetDefaults.Config` file exists to specify package sources from which packages are installed and updated, and to control the default target for publishing packages with `nuget push`. Because administrators can conveniently (using Group Policy, for example) deploy consistent `NuGetDefaults.Config` files to developer and build machines, they can ensure that everyone in the organization is using the correct package sources rather than nuget.org.
+The `NuGetDefaults.Config` is uncommon and can only specify package sources from which packages are installed and updated, or control the default target for publishing packages with `nuget push`.
+
+Because administrators can conveniently (using Group Policy, for example) deploy consistent `NuGetDefaults.Config` files to developer and build machines, they can ensure that everyone in the organization is using the correct package sources, whether or not that includes nuget.org.
 
 > [!Important]
 > The `NuGetDefaults.Config` file never causes a package source to be removed from a developer's NuGet configuration. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a `NuGetDefaults.Config` file.
