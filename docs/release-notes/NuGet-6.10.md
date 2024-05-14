@@ -2,7 +2,6 @@
 title: NuGet 6.10 Release Notes
 description: Release notes for NuGet 6.10 including new features, bug fixes, and DCRs.
 author: kartheekp-ms
-ms.author: kartheekp-ms
 ms.date: 5/13/2024
 ms.topic: conceptual
 ---
@@ -33,7 +32,7 @@ NuGet distribution vehicles:
 
 * Add nullable annotations to NuGet.Configuration - [#13250](https://github.com/NuGet/Home/issues/13250)
 
-* [Dotnet Package Search] The search result of the package should be “version” instead of “latestVersion” when executing command “dotnet package search <Package Name> --exact-match --format json” - [#13158](https://github.com/NuGet/Home/issues/13158)
+* [Dotnet Package Search] The search result of the package should be “version” instead of “latestVersion” when executing command “dotnet package search \<Package Name\> --exact-match --format json” - [#13158](https://github.com/NuGet/Home/issues/13158)
 
 * ResolvedDependencyKey should be struct to reduce memory allocations - [#13138](https://github.com/NuGet/Home/issues/13138)
 
@@ -57,7 +56,7 @@ NuGet distribution vehicles:
 
 * Use of ConcurrentStack in object pool implementation creates large amounts of allocations - [#13147](https://github.com/NuGet/Home/issues/13147)
 
-* IsBestVersion boxes HashSet<T> enumerators resulting in lots of allocation overhead during restore. - [#13146](https://github.com/NuGet/Home/issues/13146)
+* IsBestVersion boxes HashSet\<T\> enumerators resulting in lots of allocation overhead during restore. - [#13146](https://github.com/NuGet/Home/issues/13146)
 
 * Deprecate NuGet.exe list in favor of NuGet.exe search - [#7912](https://github.com/NuGet/Home/issues/7912)
 
@@ -67,7 +66,7 @@ NuGet distribution vehicles:
 
 * Use the StringBuilderPool rather than allocating a new StringBuilder - [#13285](https://github.com/NuGet/Home/issues/13285)
 
-* Pass in an appropriate size for List<T> - [#13284](https://github.com/NuGet/Home/issues/13284)
+* Pass in an appropriate size for List\<T\> - [#13284](https://github.com/NuGet/Home/issues/13284)
 
 * JsonTextWriter allocates a large number strings - [#13283](https://github.com/NuGet/Home/issues/13283)
 
@@ -89,7 +88,7 @@ NuGet distribution vehicles:
 
 * Unroll LINQ usage to trim some allocations in AddMSBuildAssets - [#13223](https://github.com/NuGet/Home/issues/13223)
 
-* PackageSpecWriter is calling Any on an ICollection<T>/IList<T> instances instead of .Count - [#13213](https://github.com/NuGet/Home/issues/13213)
+* PackageSpecWriter is calling Any on an ICollection\<T\>/IList\<T\> instances instead of .Count - [#13213](https://github.com/NuGet/Home/issues/13213)
 
 * StringBuilder.Append(int) causes unnecessary allocations - [#13207](https://github.com/NuGet/Home/issues/13207)
 
@@ -166,7 +165,7 @@ Thank you to all the contributors who helped make this NuGet release awesome!
   * [5552](https://github.com/NuGet/NuGet.Client/pull/5552) Avoid creating the capture class for calls to WithExtension
   * [5556](https://github.com/NuGet/NuGet.Client/pull/5556) Switch from ConcurrentDictionary to Dictionary with lock to avoid rep…
   * [5551](https://github.com/NuGet/NuGet.Client/pull/5551) Use string.Contains instead of IEnumerable.Contains
-  * [5550](https://github.com/NuGet/NuGet.Client/pull/5550) Avoid boxing List<T> enumerator
+  * [5550](https://github.com/NuGet/NuGet.Client/pull/5550) Avoid boxing List\<T\> enumerator
 * [GenelleM](https://github.com/NuGet/NuGet.Client/pull/5655)
   * [5655](https://github.com/NuGet/NuGet.Client/pull/5655) Add 64-bit non crypto hash algo for dgspec uniqueness computation
   * [5629](https://github.com/NuGet/NuGet.Client/pull/5629) Replace calls to Any() on ICollection in PackageSpecWriter with Count > 0 Issue #13213
