@@ -18,11 +18,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.10
 
-* Add event tracing to restore to make it possible to measure performance - [#13274](https://github.com/NuGet/Home/issues/13274)
-
 * Warn when vulnerabilities are detected during packages.config restore in CLI scenarios. - [#13253](https://github.com/NuGet/Home/issues/13253)
-
-* Read auditSources from nuget.config files - [#13211](https://github.com/NuGet/Home/issues/13211)
 
 * [Feature]: add command dotnet config set - [#12476](https://github.com/NuGet/Home/issues/12476)
 
@@ -41,6 +37,10 @@ NuGet distribution vehicles:
 ### Issues fixed in this release
 
 * Stop using JObject in assets file reading to reduce allocations. [#12715](https://github.com/NuGet/Home/issues/12715)
+
+* Add event tracing to restore to make it possible to measure performance - [#13274](https://github.com/NuGet/Home/issues/13274)
+
+* Read auditSources from nuget.config files - [#13211](https://github.com/NuGet/Home/issues/13211)
 
 * SourceRepository.GetResourceAsync should be cancellable. - [#13234](https://github.com/NuGet/Home/issues/13234)
 
