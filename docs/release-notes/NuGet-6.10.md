@@ -18,11 +18,13 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.10
 
-* Warn when vulnerabilities are detected during packages.config restore in CLI scenarios. - [#13253](https://github.com/NuGet/Home/issues/13253)
-
 * [Feature]: add command dotnet config set - [#12476](https://github.com/NuGet/Home/issues/12476)
 
 * Warn when vulnerabilities are detected during packages.config restore - [#12307](https://github.com/NuGet/Home/issues/12307)
+
+* [Bug]: VS Credential Provider Incorrectly Setting Value of `isRetry` - [#11210](https://github.com/NuGet/Home/issues/11210)
+
+* dotnet list package --vulnerable requires constant login to 3rd party nuget feed - [#12456](https://github.com/NuGet/Home/issues/12456)
 
 ### Breaking changes
 
@@ -35,6 +37,8 @@ NuGet distribution vehicles:
 * [DCR]: Central Package Management - Respect .props file as a way to opt-in to the feature. - [#11834](https://github.com/NuGet/Home/issues/11834)
 
 ### Issues fixed in this release
+
+* Warn when vulnerabilities are detected during packages.config restore in CLI scenarios. - [#13253](https://github.com/NuGet/Home/issues/13253)
 
 * Stop using JObject in assets file reading to reduce allocations. [#12715](https://github.com/NuGet/Home/issues/12715)
 
@@ -128,11 +132,7 @@ NuGet distribution vehicles:
 
 * RemoteDependencyWalker allocates a lot due to the fact that it's called recursively - [#12748](https://github.com/NuGet/Home/issues/12748)
 
-* dotnet list package --vulnerable requires constant login to 3rd party nuget feed - [#12456](https://github.com/NuGet/Home/issues/12456)
-
 * [Bug]: Canceling msbuild restore is slow when invalid/unreachable source configured - [#11813](https://github.com/NuGet/Home/issues/11813)
-
-* [Bug]: VS Credential Provider Incorrectly Setting Value of `isRetry` - [#11210](https://github.com/NuGet/Home/issues/11210)
 
 * Restore:  excessive deep cloning of ProjectSpec - [#9041](https://github.com/NuGet/Home/issues/9041)
 
