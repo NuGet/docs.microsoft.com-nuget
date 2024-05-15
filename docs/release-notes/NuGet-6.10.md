@@ -18,7 +18,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.10
 
-* [Feature]: add command dotnet config set - [#12476](https://github.com/NuGet/Home/issues/12476)
+* [Feature]: add dotnet nuget config command - [#12469](https://github.com/NuGet/Home/issues/12469)
 
 * Warn when vulnerabilities are detected during packages.config restore - [#12307](https://github.com/NuGet/Home/issues/12307)
 
