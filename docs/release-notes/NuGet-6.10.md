@@ -102,7 +102,7 @@ NuGet distribution vehicles:
 
 * Search results in json format from dotnet package search should not include fields for which no values are provided - [#13166](https://github.com/NuGet/Home/issues/13166)
 
-* The search result of the package should be “totalDownloads” instead of “total downloads” when executing command “dotnet package search <Package Name> --format json” - [#13165](https://github.com/NuGet/Home/issues/13165)
+* The search result of the package should be “totalDownloads” instead of “total downloads” when executing command “dotnet package search \<Package Name\> --format json” - [#13165](https://github.com/NuGet/Home/issues/13165)
 
 * [dotnet package search] the failure to load a serivce index should be an error and not a warning.  - [#13163](https://github.com/NuGet/Home/issues/13163)
 
