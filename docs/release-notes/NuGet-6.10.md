@@ -22,6 +22,8 @@ NuGet distribution vehicles:
 
 * Warn when vulnerabilities are detected during packages.config restore - [#12307](https://github.com/NuGet/Home/issues/12307)
 
+* Display a vulnerability info bar when there's vulnerabilities in packages.config based projects. - [#13271](https://github.com/NuGet/Home/issues/13271)
+
 * [Bug]: VS Credential Provider Incorrectly Setting Value of `isRetry` - [#11210](https://github.com/NuGet/Home/issues/11210)
 
 * dotnet list package --vulnerable requires constant login to 3rd party nuget feed - [#12456](https://github.com/NuGet/Home/issues/12456)
@@ -81,8 +83,6 @@ NuGet distribution vehicles:
 * Process objects should be disposed so that the finalizer doesn't run - [#13280](https://github.com/NuGet/Home/issues/13280)
 
 * Avoid boxing enumerators for collections - [#13279](https://github.com/NuGet/Home/issues/13279)
-
-* Display a vulnerability info bar when there's vulnerabilities in packages.config based projects. - [#13271](https://github.com/NuGet/Home/issues/13271)
 
 * [.NET 9 Preview 3] no-op restore is no longer a no-op - [#13269](https://github.com/NuGet/Home/issues/13269)
 
