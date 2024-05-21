@@ -101,4 +101,4 @@ You can delete an organization account by clicking the **Delete** button shown i
 
 ![Deleting an organization](media/org-delete-option.png)
 
-To delete the organizaiton, you must confirm it by clicking the **Delete organization** confirmation button.
+To delete the organization, you must confirm it by clicking the **Delete organization** confirmation button.
