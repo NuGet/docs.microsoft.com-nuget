@@ -112,6 +112,21 @@ In some cases, it's not possible to meet all version requirements. As shown belo
 
 In these situations, the top-level consumer (the application or package) should add its own direct dependency on Package B so that the [Direct dependency wins](#direct-dependency-wins) rule applies.
 
+### Version ranges and prerelease versions with PackageReference
+
+It is not unusual for a package to have both stable and prerelease versions available.
+When resolving a dependency graph, NuGet decides whether to consider prerelease versions for a package based on a single rule:
+`If the project or any packages within the graph request a prerelease version of a package, then include both prerelease or stable versions, otherwise consider stable versions only.`
+
+In practice, under the lowest applicable rule, this means:
+
+| Version Range | Available versions | Selected version |
+|---------------|--------------------|------------------|
+| [1.0.0, 2.0.0) | 1.2.0-beta.1, 1.2.0, | 1.2.0 |
+| [1.0.0, 2.0.0-0) | 1.2.0-beta.1, 1.2.0, | 1.2.0-beta.1 |
+| [1.0.0, 2.0.0) | 1.2.0-beta.1, 2.0.0-beta.3 | None, [NU1103](../reference/errors-and-warnings/NU1103.md) is raised. |
+| [1.0.0, 2.0.0-rc) | 1.2.0-beta.1, 2.0.0-beta.3 | 1.2.0-beta.1 |
+
 ## Dependency resolution with packages.config
 
 With `packages.config`, a project's dependencies are written to `packages.config` as a flat list. Any dependencies of those packages are also written in the same list. When packages are installed, NuGet might also modify the `.csproj` file, `app.config`, `web.config`, and other individual files.
@@ -121,6 +136,11 @@ With `packages.config`, NuGet attempts to resolve dependency conflicts during th
 By default, NuGet 2.8 looks for the lowest patch version (see [NuGet 2.8 release notes](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies)). You can control this setting through the `DependencyVersion` attribute in `NuGet.Config` and the `-DependencyVersion` switch on the command line.  
 
 The `packages.config` process for resolving dependencies gets complicated for larger dependency graphs. Each new package installation requires a traversal of the whole graph and raises the chance for version conflicts. When a conflict occurs, installation is stopped, leaving the project in an indeterminate state, especially with potential modifications to the project file itself. This is not an issue when using other package management formats.
+
+### Version ranges and prerelease versions with packages.config
+
+packages.config resolution does not allow mixing of stable and pre-release dependency in a graph.
+If a dependency is expressed with a range like `[1.0.0, 2.0.0)`, pre-release packages are not allowed in the graph.
 
 ## Managing dependency assets
 
