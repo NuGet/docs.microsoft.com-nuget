@@ -87,7 +87,7 @@ sections:
           > These environment variables are available since [.NET CLI](https://learn.microsoft.com/nuget/reference/dotnet-commands) (.NET SDK) 6.0.100, [NuGet CLI](https://learn.microsoft.com/nuget/reference/nuget-exe-cli-reference) 6.0, Visual Studio 2022 version 17.0 and corresponding MSBuild version. See [NuGet Release Notes](https://learn.microsoft.com/nuget/release-notes/).
 
           > [!Important]
-          > NuGet.org suggests Alpine Linux customers migrate to Alpine Linux 3.18.0 or newer version, which supports TCP fallback in DNS resolver. Older versions of Alpine Linux that only support DNS over UDP may meet DNS failures from NuGet.org [V3 API](https://learn.microsoft.com/nuget/nuget-org/overview-nuget-org#api-endpoint-for-nugetorg).
+          > NuGet.org recommends that Alpine Linux customers migrate to Alpine Linux 3.18.0 or a newer version. These newer versions support TCP fallback in the DNS resolver. Older versions of Alpine Linux that only support DNS over UDP may experience DNS failures from the [V3 API](https://learn.microsoft.com/nuget/nuget-org/overview-nuget-org#api-endpoint-for-nugetorg).
 
           If that version of NuGet client continues to fail, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
 
