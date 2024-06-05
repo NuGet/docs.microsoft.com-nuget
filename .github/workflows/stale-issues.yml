@@ -22,7 +22,7 @@ jobs:
       - uses: actions/stale@v9
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          stale-issue-message: 'Thanks for sharing your feedback. We apologize for our delayed response. Throughout 2024 we are phasing out Git issues as the feedback mechanism on content and replacing it with a new feedback system. If you believe your feedback needs to be reviewed prior to closing, then respond directly in this issue and we’ll take a look at it. If no activity occurs in the next 7 days, this issue will be closed.'
+          stale-issue-message: 'Thanks for sharing your feedback. We apologize for our delayed response. Throughout 2024 we are phasing out GitHub issues as the feedback mechanism on documentation content and replacing it with a new feedback system. If you believe your feedback needs to be reviewed prior to closing, then respond directly in this issue and we’ll take a look at it. If no activity occurs in the next 7 days, this issue will be closed.'
           close-issue-message: 'This issue is closed. If you feel this issue has been closed in error, please submit a new comment on the issue, and we will review it.'
           stale-issue-label: 'stale'
           close-issue-label: 'auto-close'
