@@ -28,6 +28,21 @@ NuGet distribution vehicles:
 
 * dotnet list package --vulnerable requires constant login to 3rd party nuget feed - [#12456](https://github.com/NuGet/Home/issues/12456)
 
+### 6.10.0 Known issues
+
+NuGet.exe 6.10.0 and Visual Studio 17.10.0 may have failures during NuGet operations for projects using packages.config under the following scenarios:
+
+* Two or more projects in the solution have the same name
+* Two or more projects in the solution use the same packages.config file (the project files exist in the same directory)
+
+These issues have been fixed in NuGet.exe 6.10.1 and Visual Studio 17.10.2.
+
+Public tracking issues and discussions can be found in the following locations:
+
+* [Cannot nuget restore after updating visual studio community to 17.10.0. An item with the same key has already been added.](https://developercommunity.visualstudio.com/t/Cannot-nuget-restore-after-updating-visu/10665602)
+* [Visual Studio and PMC restore/update fails when multiple packages.config projects in the solution share the same name (An item with the same key has already been added)](https://github.com/NuGet/Home/issues/13465)
+* [##[error]The nuget command failed with exit code(1) and error(An item with the same key has already been added.](https://github.com/NuGet/Home/issues/13456)
+
 ### Breaking changes
 
 * Add nullable annotations to NuGet.Configuration - [#13250](https://github.com/NuGet/Home/issues/13250)
