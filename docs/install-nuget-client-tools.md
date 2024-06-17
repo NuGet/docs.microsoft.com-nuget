@@ -105,18 +105,18 @@ The following table compares the available features for the dotnet and `nuget.ex
 
 | Feature | dotnet CLI | nuget CLI (Windows) | nuget CLI (Mono) | Visual Studio (Windows) | Visual Studio for Mac |
 | --- | --- | --- | --- | --- | --- |
-| Search packages | | &#10004; | &#10004; | &#10004; | &#10004; |
+| Search packages | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; |
 | Install/uninstall packages | &#10004; | &#10004; (1) | &#10004; | &#10004; | &#10004; |
 | Update packages | &#10004; | &#10004; | | &#10004; | &#10004; |
 | Restore packages | &#10004; | &#10004; | &#10004; (2) | &#10004; | &#10004; |
-| Manage package feeds (sources) | | &#10004; | &#10004; | &#10004; | &#10004; |
+| Manage package feeds (sources) | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; |
 | Manage packages on a feed | &#10004; | &#10004; | &#10004; | | |
 | Set API keys for feeds | | &#10004; | &#10004; | | |
 | Create packages (3) | &#10004; | &#10004; | &#10004; (4) | &#10004; | |
 | Publish packages | &#10004; | &#10004; | &#10004; | &#10004; |  |
 | Replicate packages | | &#10004; | &#10004; | | |
 | Manage *global-package* and cache folders | &#10004; | &#10004; | &#10004; | | |
-| Manage NuGet configuration | | &#10004; | &#10004; | | |
+| Manage NuGet configuration | &#10004; | &#10004; | &#10004; | | |
 
 **Feature notes**
 
