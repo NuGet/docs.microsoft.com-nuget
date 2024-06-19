@@ -87,8 +87,15 @@ We recommend that audit is configured at a repository level.
 
 ### Excluding advisories
 
-There is no support for excluding individual advisories at this time.
-You can use `<NoWarn>` to suppress `NU1901`-`NU1904` warnings or use the `<NuGetAuditLevel>` functionality to ensure your audit reports are useful to your workflow.
+You can choose to exclude specific advisories from the audit report by adding a new `NuGetAuditSuppress` MSBuild item for each advisory. Define a `NuGetAuditSuppress` item with the `Include=` metadata set to the advisory URL you wish to suppress.
+
+```xml
+    <NuGetAuditSuppress Include="https://github.com/advisories/XXXX" />
+```
+
+Similar to the other NuGet audit configuration properties, `NuGetAuditSuppress` items can be defined at the project or repository level.
+
+`NuGetAuditSuppress` is available for PackageReference projects, but is not currently available for packages.config projects.
 
 ### Warning codes
 
