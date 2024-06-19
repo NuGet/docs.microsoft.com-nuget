@@ -95,7 +95,7 @@ You can choose to exclude specific advisories from the audit report by adding a 
 
 Similar to the other NuGet audit configuration properties, `NuGetAuditSuppress` items can be defined at the project or repository level.
 
-`NuGetAuditSuppress` is available for PackageReference projects, but is not currently available for packages.config projects.
+`NuGetAuditSuppress` is available for PackageReference projects. It is not currently available for packages.config projects.
 
 ### Warning codes
 
