@@ -3,7 +3,7 @@ title: Known Issues
 description: Known issues with NuGet including authentication, package installation, and tools.
 author: JonDouglas
 ms.author: jodou
-ms.date: 11/11/2016
+ms.date: 06/06/2024
 ms.topic: conceptual
 ---
 
@@ -13,6 +13,25 @@ These are the most common known issues with NuGet that are repeatedly reported. 
 
 > [!Note]
 > Starting with NuGet 4.0, known issues are a part of the respective release notes.
+
+## NuGet Audit settings may not be applied correctly for projects using packages.config in Visual Studio 17.10
+
+NuGet Audit support was added for packages.config projects starting from NuGet 6.10 and Visual Studio 17.10.
+Information on how to configure NuGet Audit can be found in our docs on [our docs on auditing packages](../concepts/Auditing-Packages.md).
+
+**Problem:**
+
+If two or more projects using packages.config in the solution use the same project name, then NuGet Audit will choose one and use the same NuGet Audit settings for both projects.
+
+The tracking issue to remove this limitation is [available on GitHub](https://github.com/NuGet/Home/issues/13466).
+
+**Workaround:**
+
+If all projects with the same name use the same configuration values, then there will be no functional difference when NuGet restores one project using a different project's configuration.
+
+NuGet.exe does not have this limitation, so you can [download NuGet.exe](../install-nuget-client-tools.md#nugetexe-cli) and run `NuGet.exe restore` on your solution to see if the NuGet Audit warnings are different on the command line to what Visual Studio is reporting.
+
+If it is feasible to rename the projects so they have different project names, then this problem scenario will not be encountered.
 
 ## Authentication issues with NuGet feeds in VSTS with nuget.exe v3.4.3
 
