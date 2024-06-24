@@ -53,6 +53,8 @@ Public tracking issues and discussions can be found in the following locations:
 
 * [DCR]: Central Package Management - Respect .props file as a way to opt-in to the feature. - [#11834](https://github.com/NuGet/Home/issues/11834)
 
+* Remove NuGet.Packaging.Core - [#12495](https://github.com/NuGet/Home/issues/12495)
+
 ### Issues fixed in this release
 
 * Warn when vulnerabilities are detected during packages.config restore in CLI scenarios. - [#13253](https://github.com/NuGet/Home/issues/13253)
