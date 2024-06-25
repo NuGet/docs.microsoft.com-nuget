@@ -59,7 +59,7 @@ Public tracking issues and discussions can be found in the following locations:
 
 * Warn when vulnerabilities are detected during packages.config restore in CLI scenarios. - [#13253](https://github.com/NuGet/Home/issues/13253)
 
-* Stop using JObject in assets file reading to reduce allocations - [#12715](https://github.com/NuGet/Home/issues/12715)
+* Stop using JObject in assets file reading to reduce allocations. [#12715](https://github.com/NuGet/Home/issues/12715)
 
 * Add event tracing to restore to make it possible to measure performance - [#13274](https://github.com/NuGet/Home/issues/13274)
 
