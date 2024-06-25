@@ -153,7 +153,7 @@ Public tracking issues and discussions can be found in the following locations:
 
 * Restore:  excessive deep cloning of ProjectSpec - [#9041](https://github.com/NuGet/Home/issues/9041)
 
-[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.9.1.3...6.10.1.5)
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.9.1.3...6.10.0.97)
 
 ### Community contributions
 
@@ -200,8 +200,8 @@ Thank you to all the contributors who helped make this NuGet release awesome!
 
 * Promote from warning to error in list package - [#13323](https://github.com/NuGet/Home/issues/13323)
 
-[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.9.1.3...6.10.1.5)
-
 * Visual Studio and PMC restore/update fails when multiple packages.config projects in the solution share the same name (An item with the same key has already been added) - [#13465](https://github.com/NuGet/Home/issues/13465)
 
 * ##[error]The nuget command failed with exit code(1) and error(An item with the same key has already been added. - [#13456](https://github.com/NuGet/Home/issues/13456)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.9.1.3...6.10.1.5)
