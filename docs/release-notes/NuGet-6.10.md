@@ -12,11 +12,11 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.10**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.10](https://visualstudio.microsoft.com/downloads/) | [8.0.3xx](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
+| [**6.10.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.10](https://visualstudio.microsoft.com/downloads/) | [8.0.3xx](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
-## Summary: What's New in 6.10
+## Summary: What's New in 6.10.1
 
 * [Feature]: add dotnet nuget config command - [#12469](https://github.com/NuGet/Home/issues/12469)
 
@@ -27,6 +27,8 @@ NuGet distribution vehicles:
 * [Bug]: VS Credential Provider Incorrectly Setting Value of `isRetry` - [#11210](https://github.com/NuGet/Home/issues/11210)
 
 * dotnet list package --vulnerable requires constant login to 3rd party nuget feed - [#12456](https://github.com/NuGet/Home/issues/12456)
+
+* [Feature]: add command dotnet config set - [#12476](https://github.com/NuGet/Home/issues/12476)
 
 ### 6.10.0 Known issues
 
@@ -59,11 +61,12 @@ Public tracking issues and discussions can be found in the following locations:
 
 * Warn when vulnerabilities are detected during packages.config restore in CLI scenarios. - [#13253](https://github.com/NuGet/Home/issues/13253)
 
-* Stop using JObject in assets file reading to reduce allocations. [#12715](https://github.com/NuGet/Home/issues/12715)
 
 * Add event tracing to restore to make it possible to measure performance - [#13274](https://github.com/NuGet/Home/issues/13274)
 
 * Read auditSources from nuget.config files - [#13211](https://github.com/NuGet/Home/issues/13211)
+
+* Promote from warning to error in list package - [#13323](https://github.com/NuGet/Home/issues/13323)
 
 * SourceRepository.GetResourceAsync should be cancellable. - [#13234](https://github.com/NuGet/Home/issues/13234)
 
@@ -82,6 +85,10 @@ Public tracking issues and discussions can be found in the following locations:
 * IsBestVersion boxes HashSet\<T\> enumerators resulting in lots of allocation overhead during restore. - [#13146](https://github.com/NuGet/Home/issues/13146)
 
 * Deprecate NuGet.exe list in favor of NuGet.exe search - [#7912](https://github.com/NuGet/Home/issues/7912)
+
+* Visual Studio and PMC restore/update fails when multiple packages.config projects in the solution share the same name (An item with the same key has already been added) - [#13465](https://github.com/NuGet/Home/issues/13465)
+
+* ##[error]The nuget command failed with exit code(1) and error(An item with the same key has already been added. - [#13456](https://github.com/NuGet/Home/issues/13456)
 
 * [Dotnet Package Search] An unhandled exception is thrown when searching with “--verbosity detailed” and “--format json” - [#13300](https://github.com/NuGet/Home/issues/13300)
 
@@ -149,11 +156,17 @@ Public tracking issues and discussions can be found in the following locations:
 
 * RemoteDependencyWalker allocates a lot due to the fact that it's called recursively - [#12748](https://github.com/NuGet/Home/issues/12748)
 
+* Stop using JObject in assets file reading to reduce allocations - [#12715](https://github.com/NuGet/Home/issues/12715)
+
+* dotnet list package --vulnerable requires constant login to 3rd party nuget feed - [#12456](https://github.com/NuGet/Home/issues/12456)
+
 * [Bug]: Canceling msbuild restore is slow when invalid/unreachable source configured - [#11813](https://github.com/NuGet/Home/issues/11813)
+
+* [Bug]: VS Credential Provider Incorrectly Setting Value of `isRetry` - [#11210](https://github.com/NuGet/Home/issues/11210)
 
 * Restore:  excessive deep cloning of ProjectSpec - [#9041](https://github.com/NuGet/Home/issues/9041)
 
-[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.9.1.3...6.10.0.97)
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.9.1.3...6.10.1.5)
 
 ### Community contributions
 
