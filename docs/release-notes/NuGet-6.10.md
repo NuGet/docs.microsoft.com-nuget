@@ -17,7 +17,6 @@ NuGet distribution vehicles:
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
 ## Summary: What's New in 6.10.1
-* [Feature]: add command dotnet config set - [#12476](https://github.com/NuGet/Home/issues/12476)
 
 ### Issues fixed in this release
 
