@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Common NuGet configurations
 
-NuGet's behavior is driven by the accumulated settings in one or more `NuGet.Config` (XML) files that can exist at solution- (project if no solution is used), user-, and computer-wide levels.
+NuGet's behavior is driven by the accumulated settings in one or more config (XML) files that can exist at solution- (project if no solution is used), user-, and computer-wide levels.
 
 ## Config file locations and uses
 
@@ -58,7 +58,7 @@ Settings are managed using the NuGet CLI [config command](../reference/cli-refer
 Windows:
 
 ```cli
-# Set globalPackagesFolder (available for PackageReference only) in the user-level config file
+# Set globalPackagesFolder in the user-level config file
 nuget config -set globalPackagesFolder=c:\packages
 
 # Set repositoryPath (available for packages.config only) in the user-level config file
@@ -237,7 +237,7 @@ These files cannot be edited by the standard tooling.
 
 The `NuGetDefaults.Config` is uncommon and can only specify package sources from which packages are installed and updated, or control the default target for publishing packages with `nuget push`.
 
-Because administrators can conveniently (using Group Policy, for example) deploy consistent `NuGetDefaults.Config` files to developer and build machines, they can ensure that everyone in the organization is using the correct package sources, whether or not that includes nuget.org.
+Because administrators can conveniently (using Group Policy, for example) deploy consistent `NuGetDefaults.Config` files to developer and build machines, they can ensure that everyone in the organization is using consistent package sources, whether or not that includes nuget.org.
 
 > [!Important]
 > The `NuGetDefaults.Config` file never causes a package source to be removed from a developer's NuGet configuration. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a `NuGetDefaults.Config` file.
