@@ -41,7 +41,7 @@ NuGet distribution vehicles:
 
 ### 6.10.0 Known issues
 
-NuGet.exe 6.10.0 and VisualMo Studio 17.10.0 may have failures during NuGet operations for projects using packages.config under the following scenarios:
+NuGet.exe 6.10.0 and Visual Studio 17.10.0 may have failures during NuGet operations for projects using packages.config under the following scenarios:
 
 * Two or more projects in the solution have the same name
 * Two or more projects in the solution use the same packages.config file (the project files exist in the same directory)
