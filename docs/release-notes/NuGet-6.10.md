@@ -16,6 +16,17 @@ NuGet distribution vehicles:
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
+## Summary: What's New in 6.10.1
+* [Feature]: add command dotnet config set - [#12476](https://github.com/NuGet/Home/issues/12476)
+
+### Issues fixed in this release
+
+* Visual Studio and PMC restore/update fails when multiple packages.config projects in the solution share the same name (An item with the same key has already been added) - [#13465](https://github.com/NuGet/Home/issues/13465)
+
+* ##[error]The nuget command failed with exit code(1) and error(An item with the same key has already been added. - [#13456](https://github.com/NuGet/Home/issues/13456)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.10.0.97...6.10.1.5)
+
 ## Summary: What's New in 6.10
 
 * [Feature]: add dotnet nuget config command - [#12469](https://github.com/NuGet/Home/issues/12469)
@@ -30,7 +41,7 @@ NuGet distribution vehicles:
 
 ### 6.10.0 Known issues
 
-NuGet.exe 6.10.0 and Visual Studio 17.10.0 may have failures during NuGet operations for projects using packages.config under the following scenarios:
+NuGet.exe 6.10.0 and VisualMo Studio 17.10.0 may have failures during NuGet operations for projects using packages.config under the following scenarios:
 
 * Two or more projects in the solution have the same name
 * Two or more projects in the solution use the same packages.config file (the project files exist in the same directory)
@@ -192,14 +203,3 @@ Thank you to all the contributors who helped make this NuGet release awesome!
   * [5625](https://github.com/NuGet/NuGet.Client/pull/5625) Eliminate System.CommandLine prebuilt package
 * [brianrob](https://github.com/NuGet/NuGet.Client/pull/5650)
   * [5650](https://github.com/NuGet/NuGet.Client/pull/5650) Add Restore Instrumentation
-
-## Summary: What's New in 6.10.1
-* [Feature]: add command dotnet config set - [#12476](https://github.com/NuGet/Home/issues/12476)
-
-### Issues fixed in this release
-
-* Visual Studio and PMC restore/update fails when multiple packages.config projects in the solution share the same name (An item with the same key has already been added) - [#13465](https://github.com/NuGet/Home/issues/13465)
-
-* ##[error]The nuget command failed with exit code(1) and error(An item with the same key has already been added. - [#13456](https://github.com/NuGet/Home/issues/13456)
-
-[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.10.0.97...6.10.1.5)
