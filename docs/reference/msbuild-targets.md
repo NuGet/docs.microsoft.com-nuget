@@ -113,6 +113,23 @@ The following table describes the MSBuild properties that can be added to a proj
 | `NuspecBasePath` | Base path for the *.nuspec* file. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec-file). |
 | `NuspecProperties` | Semicolon separated list of key=value pairs. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec-file). |
 
+### package item inputs
+
+As described in the section on [including content in your package](#including-content-in-a-package), there is certain [item metadata](/visualstudio/msbuild/msbuild-items#item-metadata) that can be added to [MSBuild items](/visualstudio/msbuild/msbuild-items), which pack will use.
+
+| Metadata | Description |
+|:--|:--|
+| Pack | The file that this item represents should be included in the package. For items of type `Content` this defaults to the value of the `IncludeContentInPack` property. For all other item types, this defaults to `false`. |
+| PackagePath | The path within the package that the file will be located. For items of type `Content`, this defaults to `content\;contentFiles\any\any\`. For all other items types, there is no default value. |
+
+The following item metadata only apply to files in the package that follow the correct `contentFiles/{language}/{target_framework}/**/*` naming convention, and the project using the package must be using `PackageReference` (not *packages.config*).
+More information can be found in on [including content in your package](#including-content-in-a-package).
+
+| Metadata | Description |
+|:--|:--|
+| PackageCopyToOutput | The file's `CopyToOutput` item metadata will be set the specified value in the project using the package. |
+| PackageFlatten | The file's `Flatten` item metadata will be set to the specified value in the project using the package. |
+
 ## pack scenarios
 
 ### Suppressing dependencies
