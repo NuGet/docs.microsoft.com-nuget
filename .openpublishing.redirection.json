@@ -17,6 +17,11 @@
         },
         {
             "source_path": "docs/api/nuget-exe-credential-providers.md",
+            "redirect_url": "/nuget/consume-packages/dependency-resolution",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/api/nuget-exe-credential-providers.md",
             "redirect_url": "/nuget/reference/extensibility/nuget-exe-credential-providers",
             "redirect_document_id": false
         },
