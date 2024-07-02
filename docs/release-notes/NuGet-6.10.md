@@ -12,9 +12,19 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.10**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.10](https://visualstudio.microsoft.com/downloads/) | [8.0.3xx](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
+| [**6.10.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.10](https://visualstudio.microsoft.com/downloads/) | [8.0.3xx](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
+
+## Summary: What's New in 6.10.1
+
+### Issues fixed in this release
+
+* Visual Studio and PMC restore/update fails when multiple packages.config projects in the solution share the same name (An item with the same key has already been added) - [#13465](https://github.com/NuGet/Home/issues/13465)
+
+* ##[error]The nuget command failed with exit code(1) and error(An item with the same key has already been added. - [#13456](https://github.com/NuGet/Home/issues/13456)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.10.0.97...6.10.1.5)
 
 ## Summary: What's New in 6.10
 
@@ -28,6 +38,21 @@ NuGet distribution vehicles:
 
 * dotnet list package --vulnerable requires constant login to 3rd party nuget feed - [#12456](https://github.com/NuGet/Home/issues/12456)
 
+### 6.10.0 Known issues
+
+NuGet.exe 6.10.0 and Visual Studio 17.10.0 may have failures during NuGet operations for projects using packages.config under the following scenarios:
+
+* Two or more projects in the solution have the same name
+* Two or more projects in the solution use the same packages.config file (the project files exist in the same directory)
+
+These issues have been fixed in NuGet.exe 6.10.1 and Visual Studio 17.10.2.
+
+Public tracking issues and discussions can be found in the following locations:
+
+* [Cannot nuget restore after updating visual studio community to 17.10.0. An item with the same key has already been added.](https://developercommunity.visualstudio.com/t/Cannot-nuget-restore-after-updating-visu/10665602)
+* [Visual Studio and PMC restore/update fails when multiple packages.config projects in the solution share the same name (An item with the same key has already been added)](https://github.com/NuGet/Home/issues/13465)
+* [##[error]The nuget command failed with exit code(1) and error(An item with the same key has already been added.](https://github.com/NuGet/Home/issues/13456)
+
 ### Breaking changes
 
 * Add nullable annotations to NuGet.Configuration - [#13250](https://github.com/NuGet/Home/issues/13250)
@@ -37,6 +62,8 @@ NuGet distribution vehicles:
 * ResolvedDependencyKey should be struct to reduce memory allocations - [#13138](https://github.com/NuGet/Home/issues/13138)
 
 * [DCR]: Central Package Management - Respect .props file as a way to opt-in to the feature. - [#11834](https://github.com/NuGet/Home/issues/11834)
+
+* Remove NuGet.Packaging.Core - [#12495](https://github.com/NuGet/Home/issues/12495)
 
 ### Issues fixed in this release
 

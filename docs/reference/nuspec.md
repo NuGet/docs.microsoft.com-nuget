@@ -35,7 +35,9 @@ In this topic:
 
 ## General form and schema
 
-The current `nuspec.xsd` schema file can be found in the [NuGet GitHub repository](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Packaging/compiler/resources/nuspec.xsd).
+A `nuspec.xsd` schema file can be found in the [NuGet GitHub repository](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Packaging/compiler/resources/nuspec.xsd).
+Note, that this file only represents the most recent schema for a `.nuspec` file. 
+No officially published versions exists and no version of that file corresponds to any specific NuGet version.  
 
 Within this schema, a `.nuspec` file has the following general form:
 
@@ -63,6 +65,11 @@ For a clear visual representation of the schema, open the schema file in Visual 
 All XML element names in the .nuspec file are case-sensitive, as is the case for XML in general. For example, using the
 metadata element `<description>` is correct and `<Description>` is not correct. The proper casing for each element name
 is documented below.
+
+> [!Important]
+> While the `.nuspec` file contains a reference to a schema 
+> (`xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd"`),
+> The NuGet-Team has never published a schema file that could be used for automatic schema validation.
 
 ### Required metadata elements
 

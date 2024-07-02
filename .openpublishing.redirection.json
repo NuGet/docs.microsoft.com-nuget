@@ -21,8 +21,18 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/consume-packages/dependency-resolution.md",
+            "redirect_url": "/nuget/concepts/dependency-resolution",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/consume-packages/managing-the-nuget-cache.md",
             "redirect_url": "/nuget/consume-packages/managing-the-global-packages-and-cache-folders",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/consume-packages/ways-to-install-a-package.md",
+            "redirect_url": "/nuget/consume-packages/overview-and-workflow",
             "redirect_document_id": false
         },
         {
@@ -31,8 +41,8 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/create-packages/project-json-impact.md",
-            "redirect_url": "/nuget/archive/project-json-impact",
+            "source_path": "docs/create-packages/native-packages.md",
+            "redirect_url": "/nuget/guides/native-packages",
             "redirect_document_id": false
         },
         {
@@ -41,13 +51,23 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/guides/create-cross-platform-packages.md",
-            "redirect_url": "/nuget/guides/create-packages-for-xamarin",
+            "source_path": "docs/create-packages/project-json-impact.md",
+            "redirect_url": "/nuget/archive/project-json-impact",
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/guides/install-nuget.md",
-            "redirect_url": "/nuget/install-nuget-client-tools",
+            "source_path": "docs/create-packages/publish-a-package.md",
+            "redirect_url": "/nuget/nuget-org/publish-a-package",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/faqs/nuget-faq.md",
+            "redirect_url": "/nuget/resources/nuget-faq",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/guides/create-cross-platform-packages.md",
+            "redirect_url": "/nuget/guides/create-packages-for-xamarin",
             "redirect_document_id": false
         },
         {
@@ -56,8 +76,98 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/Schema/project-json.md",
-            "redirect_url": "/nuget/archive/project-json",
+            "source_path": "docs/guides/install-nuget.md",
+            "redirect_url": "/nuget/install-nuget-client-tools",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/policies/command-line-reference.md",
+            "redirect_url": "/nuget/reference/nuget-exe-cli-reference",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/policies/data-requests.md",
+            "redirect_url": "/nuget/nuget-org/policies/data-requests",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/policies/deleting-packages.md",
+            "redirect_url": "/nuget/nuget-org/policies/deleting-packages",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/policies/dispute-resolution.md",
+            "redirect_url": "/nuget/nuget-org/policies/dispute-resolution",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/policies/nuget-faq.md",
+            "redirect_url": "/nuget/resources/nuget-faq",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Quickstart/Create-and-publish-a-package.md",
+            "redirect_url": "/nuget/quickstart/create-and-publish-a-package-using-visual-studio",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Quickstart/restore.md",
+            "redirect_url": "/nuget/consume-packages/package-restore-troubleshooting",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/Quickstart/Use-a-Package.md",
+            "redirect_url": "/nuget/quickstart/install-and-use-a-package-in-visual-studio",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/analyzers-conventions.md",
+            "redirect_url": "/nuget/guides/analyzers-conventions",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/errors-and-warnings/NU1901.md",
+            "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/errors-and-warnings/NU1902.md",
+            "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/errors-and-warnings/NU1903.md",
+            "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/errors-and-warnings/NU1904.md",
+            "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/ID-Prefix-Reservation.md",
+            "redirect_url": "/nuget/nuget-org/id-prefix-reservation",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/licenses.nuget.org.md",
+            "redirect_url": "/nuget/nuget-org/licenses.nuget.org",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/migrate-packages-config-to-package-reference.md",
+            "redirect_url": "/nuget/consume-packages/migrate-packages-config-to-package-reference",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/organizations-on-nuget-org.md",
+            "redirect_url": "/nuget/nuget-org/organizations-on-nuget-org",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/reference/package-versioning.md",
+            "redirect_url": "/nuget/concepts/package-versioning",
             "redirect_document_id": false
         },
         {
@@ -86,123 +196,13 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/Schema/project-json.md",
+            "redirect_url": "/nuget/archive/project-json",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/Schema/target-frameworks.md",
             "redirect_url": "/nuget/reference/target-frameworks",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/Quickstart/restore.md",
-            "redirect_url": "/nuget/consume-packages/package-restore-troubleshooting",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/Quickstart/Create-and-publish-a-package.md",
-            "redirect_url": "/nuget/quickstart/create-and-publish-a-package-using-visual-studio",
-            "redirect_document_id": false
-        },        
-        {
-            "source_path": "docs/Quickstart/Use-a-Package.md",
-            "redirect_url": "/nuget/quickstart/install-and-use-a-package-in-visual-studio",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/policies/command-line-reference.md",
-            "redirect_url": "/nuget/reference/nuget-exe-cli-reference",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/policies/nuget-faq.md",
-            "redirect_url": "/nuget/resources/nuget-faq",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/faqs/nuget-faq.md",
-            "redirect_url": "/nuget/resources/nuget-faq",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/reference/migrate-packages-config-to-package-reference.md",
-            "redirect_url": "/nuget/consume-packages/migrate-packages-config-to-package-reference",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/reference/analyzers-conventions.md",
-            "redirect_url": "/nuget/guides/analyzers-conventions",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/create-packages/native-packages.md",
-            "redirect_url": "/nuget/guides/native-packages",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/consume-packages/dependency-resolution.md",
-            "redirect_url": "/nuget/concepts/dependency-resolution",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/reference/package-versioning.md",
-            "redirect_url": "/nuget/concepts/package-versioning",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/reference/ID-Prefix-Reservation.md",
-            "redirect_url": "/nuget/nuget-org/id-prefix-reservation",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/reference/licenses.nuget.org.md",
-            "redirect_url": "/nuget/nuget-org/licenses.nuget.org",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/reference/organizations-on-nuget-org.md",
-            "redirect_url": "/nuget/nuget-org/organizations-on-nuget-org",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/policies/data-requests.md",
-            "redirect_url": "/nuget/nuget-org/policies/data-requests",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/policies/deleting-packages.md",
-            "redirect_url": "/nuget/nuget-org/policies/deleting-packages",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/policies/dispute-resolution.md",
-            "redirect_url": "/nuget/nuget-org/policies/dispute-resolution",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/consume-packages/ways-to-install-a-package.md",
-            "redirect_url": "/nuget/consume-packages/overview-and-workflow",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/create-packages/publish-a-package.md",
-            "redirect_url": "/nuget/nuget-org/publish-a-package",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/tools/package-manager-ui.md",
-            "redirect_url": "/nuget/consume-packages/install-use-packages-visual-studio",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/tools/package-manager-console.md",
-            "redirect_url": "/nuget/consume-packages/install-use-packages-powershell",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/tools/dotnet-commands.md",
-            "redirect_url": "/nuget/reference/dotnet-commands",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/tools/nuget-exe-cli-reference.md",
-            "redirect_url": "/nuget/reference/nuget-exe-cli-reference",
             "redirect_document_id": false
         },
         {
@@ -311,6 +311,26 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/tools/dotnet-commands.md",
+            "redirect_url": "/nuget/reference/dotnet-commands",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/nuget-exe-cli-reference.md",
+            "redirect_url": "/nuget/reference/nuget-exe-cli-reference",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/package-manager-console.md",
+            "redirect_url": "/nuget/consume-packages/install-use-packages-powershell",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/tools/package-manager-ui.md",
+            "redirect_url": "/nuget/consume-packages/install-use-packages-visual-studio",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/tools/powershell-reference.md",
             "redirect_url": "/nuget/reference/powershell-reference",
             "redirect_document_id": false
@@ -363,26 +383,6 @@
         {
             "source_path": "docs/tools/ps-ref-update-package.md",
             "redirect_url": "/nuget/reference/ps-reference/ps-ref-update-package",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/reference/errors-and-warnings/NU1901.md",
-            "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/reference/errors-and-warnings/NU1902.md",
-            "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/reference/errors-and-warnings/NU1903.md",
-            "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "docs/reference/errors-and-warnings/NU1904.md",
-            "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
             "redirect_document_id": false
         }
     ]
