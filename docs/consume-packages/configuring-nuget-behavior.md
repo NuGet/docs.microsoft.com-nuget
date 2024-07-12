@@ -59,38 +59,38 @@ Windows:
 
 ```cli
 # Set globalPackagesFolder in the user-level config file
-nuget config -set globalPackagesFolder=c:\packages
+dotnet nuget config set globalPackagesFolder "C:\packages"
 
 # Set repositoryPath (available for packages.config only) in the user-level config file
-nuget config -set repositoryPath=c:\packages 
+dotnet nuget config set repositoryPath "C:\packages"
 
 # Set repositoryPath in solution-level files
-nuget config -set repositoryPath=c:\packages -configfile c:\my.Config
-nuget config -set repositoryPath=c:\packages -configfile .\myApp\NuGet.Config
+dotnet nuget config set repositoryPath "C:\packages" --configfile "C:\my.config"
+dotnet nuget config set repositoryPath "c:\packages" --configfile "..\..\my.config"
 
 # Set repositoryPath in the computer-level file (requires elevation)
-nuget config -set repositoryPath=c:\packages -configfile %ProgramFiles(x86)%\NuGet\Config\NuGet.Config
+dotnet nuget config set repositoryPath "c:\packages" --configfile "%appdata%\NuGet\NuGet.Config"
 ```
 
 Mac/Linux:
 
 ```cli
-# Set globalPackagesFolder (available for PackageReference only) in the user-level config file
-nuget config -set globalPackagesFolder=/home/packages
+# Set globalPackagesFolder in the user-level config file
+dotnet nuget config set globalPackagesFolder /home/packages
 
 # Set repositoryPath (available for packages.config only) in the user-level config file
-nuget config -set repositoryPath=/home/packages 
+dotnet nuget config set repositoryPath /home/packages
 
 # Set repositoryPath in solution-level files
-nuget config -set repositoryPath=/home/projects/packages -configfile /home/my.Config
-nuget config -set repositoryPath=/home/packages -configfile home/myApp/NuGet.Config
+dotnet nuget config set repositoryPath /home/projects/packages --configfile /home/my.Config
+dotnet nuget config set repositoryPath /home/packages --configfile home/myApp/NuGet.Config
 
 # Set repositoryPath in the computer-level file (requires elevation)
-nuget config -set repositoryPath=/home/packages -configfile $XDG_DATA_HOME/NuGet.Config
+dotnet nuget config set repositoryPath /home/packages --configfile $XDG_DATA_HOME/NuGet.Config
 ```
 
 > [!Note]
-> In NuGet 3.4+ you can use environment variables in any value, as in `repositoryPath=%PACKAGEHOME%` (Windows) and `repositoryPath=$PACKAGEHOME` (Mac/Linux).
+> In NuGet 3.4 and later you can use environment variables in any value, as in `repositoryPath=%PACKAGEHOME%` (Windows) and `repositoryPath=$PACKAGEHOME` (Mac/Linux).
 
 ### Removing a value
 
