@@ -38,9 +38,22 @@ To find and install a NuGet package with Visual Studio, follow these steps:
 
    The **NuGet Package Manager** window opens.
 
-1. Select the **Browse** tab to display packages by popularity from the currently selected source (see [Package sources](#package-sources)). To search for a specific package, use the search box on the upper left. Select a package from the list to display its information on the right pane, which enables you to select a version to install.
+1. Select the **Browse** tab to display packages by popularity from the currently selected source (see [Package sources](#package-sources)).
 
-    :::image type="content" source="media/package-manager-install-tab.png" alt-text="Screenshot showing the NuGet Package Manager window with the Browse tab selected.":::
+    - To search for a specific package, use the search box on the upper left.
+    - Abbreviated information may be shown beside each package ID to help identify the correct package, and varies based on the selected package source(s).
+  Examples include package download count, author, or owner profile hyperlinks.
+
+    > [!Note]
+    > In Visual Studio 17.11 and higher, package owners are shown as profile hyperlinks when supported by the selected package source.
+    > Package ownership is defined by the package source. For example, see [Manage package owners on nuget.org](../nuget-org/publish-a-package.md#manage-package-owners-on-nugetorg).
+    >
+    > In Visual Studio 17.10 and earlier, the package _author_ metadata is shown, which appears as plain-text.
+    > For more information, see [Authors package metadata](../create-packages/package-authoring-best-practices.md#authors).
+
+    - Select a package to see detailed package information.
+    The details pane on the right appears and enables you to select a version to install.
+    ![Screenshot showing the NuGet Package Manager window with the Browse tab selected.](media/package-manager-browse-tab.png)
 
 1. In the right pane, select a **Version** from the dropdown list. If you want to include prerelease versions in the **Version** list, select **Include prerelease**.
 
