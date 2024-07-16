@@ -12,9 +12,19 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.10**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.10](https://visualstudio.microsoft.com/downloads/) | [8.0.3xx](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
+| [**6.10.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.10](https://visualstudio.microsoft.com/downloads/) | [8.0.3xx](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
+
+## Summary: What's New in 6.10.1
+
+### Issues fixed in this release
+
+* Visual Studio and PMC restore/update fails when multiple packages.config projects in the solution share the same name (An item with the same key has already been added) - [#13465](https://github.com/NuGet/Home/issues/13465)
+
+* ##[error]The nuget command failed with exit code(1) and error(An item with the same key has already been added. - [#13456](https://github.com/NuGet/Home/issues/13456)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.10.0.97...6.10.1.5)
 
 ## Summary: What's New in 6.10
 
@@ -52,6 +62,8 @@ Public tracking issues and discussions can be found in the following locations:
 * ResolvedDependencyKey should be struct to reduce memory allocations - [#13138](https://github.com/NuGet/Home/issues/13138)
 
 * [DCR]: Central Package Management - Respect .props file as a way to opt-in to the feature. - [#11834](https://github.com/NuGet/Home/issues/11834)
+
+* Remove NuGet.Packaging.Core - [#12495](https://github.com/NuGet/Home/issues/12495)
 
 ### Issues fixed in this release
 
