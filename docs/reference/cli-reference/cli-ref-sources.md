@@ -90,6 +90,9 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
+- **`-AllowInsecureConnections`**
+  Allows HTTP connections for adding or updating packages. Note: This method is not secure.
+
 ## Examples
 
 ```cli
