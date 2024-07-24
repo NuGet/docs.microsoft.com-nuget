@@ -87,11 +87,11 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 - **`-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
-
-Also see [Environment variables](cli-ref-environment-variables.md)
-
+  
 - **`-AllowInsecureConnections`**
   Allows HTTP connections for adding or updating packages. Note: This method is not secure.
+
+Also see [Environment variables](cli-ref-environment-variables.md)
 
 ## Examples
 
