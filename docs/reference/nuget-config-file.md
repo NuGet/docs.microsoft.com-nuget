@@ -119,6 +119,7 @@ Lists all known package sources. The order is ignored during restore operations 
 | **Value** | The path or URL of the package source. |
 | **protocolVersion** | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. https://api.nuget.org/v3/index.json). Supported in [NuGet 3.0+](/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](/nuget/api/overview) for more information about the version 3 protocol. |
 | **allowInsecureConnections** | When false, or not specified, NuGet will emit a warning when the source uses http, rather than https. If you are confident that communication with this source will never be at risk of interception attacks, you can set the value to true to suppress the warning. Supported in NuGet 6.8+. |
+| **disableTLSCertificateValidation ** | This configuration property allows you to disable SSL/TLS certificate validation for your HTTPS server. When set to true, the server will ignore any errors related to SSL/TLS certificates, such as expired or self-signed certificates, and establish the connection without validation |
 
 **Example**:
 
