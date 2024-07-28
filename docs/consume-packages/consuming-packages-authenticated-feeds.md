@@ -10,6 +10,10 @@ ms.topic: conceptual
 # Consuming packages from authenticated feeds
 
 Many NuGet operations, such as restore and install, require communication with one or more package sources, which [can be configured in *nuget.config* files](../reference/nuget-config-file.md#packagesources).
+
+> [!NOTE]
+> Use package sources that you trust.
+
 For HTTP feeds, NuGet will make an unauthenticated request, and if the server responds with an HTTP 401 response, NuGet will search for credentials in the following order:
 
 1. [An environment variable `NuGetPackageSourceCredentials_{name}`](#credentials-in-environment-variables).
@@ -37,11 +41,11 @@ This approach provides an extra layer of security by storing the credentials in 
 For more information, refer to the section on [credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 
     > [!NOTE]
-    > Be aware that encrypted passwords are only supported on Windows. 
+    > Be aware that encrypted passwords are only supported on Windows.
     > Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
 
 1. **Using Environment Variable Macros in nuget.config**: If using encrypted credentials is not possible, consider storing the credentials in the *nuget.config* file with environment variable macros.
-This approach allows you to reference environment variables that contain the actual credentials. 
+This approach allows you to reference environment variables that contain the actual credentials.
 It enhances transparency and helps end users understand how their credentials are configured.
 For more information, refer to the section on [credentials in *nuget.config* files](#credentials-in-nugetconfig-files).
 

@@ -13,6 +13,9 @@ ms.topic: reference
 
 Manages the list of sources located in the user scope configuration file or a specified configuration file. The user scope configuration file is located at `%appdata%\NuGet\NuGet.Config` (Windows) and `~/.nuget/NuGet/NuGet.Config` (Mac/Linux).
 
+> [!NOTE]
+> Use package sources that you trust.
+
 Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 
 ## Usage
@@ -54,13 +57,16 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
   Specifies the password for authenticating with the source.
 
   > [!NOTE]
-  > Be aware that encrypted passwords are only supported on Windows. 
+  > Be aware that encrypted passwords are only supported on Windows.
   > Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
 
 - **`-src|-Source`**
 
   Path to the package(s) source.
 
+  > [!NOTE]
+  > Use package sources that you trust.
+  
 - **`-StorePasswordInClearText`**
 
   Indicates to store the password in unencrypted text instead of the default behavior of storing an encrypted form.

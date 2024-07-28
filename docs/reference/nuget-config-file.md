@@ -117,7 +117,7 @@ Lists all known package sources. The order is ignored during restore operations 
 | :-- | :-- |
 | **Key** | (name to assign to the package source) |
 | **Value** | The path or URL of the package source. |
-| **protocolVersion** | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. https://api.nuget.org/v3/index.json). Supported in [NuGet 3.0+](/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](/nuget/api/overview) for more information about the version 3 protocol. |
+| **protocolVersion** | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. <https://api.nuget.org/v3/index.json>). Supported in [NuGet 3.0+](/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](/nuget/api/overview) for more information about the version 3 protocol. |
 | **allowInsecureConnections** | When false, or not specified, NuGet will emit a warning when the source uses http, rather than https. If you are confident that communication with this source will never be at risk of interception attacks, you can set the value to true to suppress the warning. Supported in NuGet 6.8+. |
 
 **Example**:
@@ -131,6 +131,9 @@ Lists all known package sources. The order is ignored during restore operations 
     <add key="Test Source" value="c:\packages" />
 </packageSources>
 ```
+
+> [!NOTE]
+> Use package sources that you trust.
 
 > [!NOTE]
 > When using the CLI, you can express a [`RestoreSources`](../reference/msbuild-targets.md#restore-properties) MSBuild property or [`--source`(.NET CLI)](/dotnet/core/tools/dotnet-restore#options) | [`-Source`(NuGet CLI)](/nuget/reference/cli-reference/cli-ref-restore#options) to override the `<packageSources>` defined in the NuGet.config.
@@ -286,7 +289,7 @@ Identifies to the currently active source or indicates the aggregate of all sour
 
 ## trustedSigners section
 
-Stores trusted signers used to allow package while installing or restoring. This list cannot be empty when the user sets `signatureValidationMode` to `require`. 
+Stores trusted signers used to allow package while installing or restoring. This list cannot be empty when the user sets `signatureValidationMode` to `require`.
 
 This section can be updated with the [`nuget trusted-signers` command](../reference/cli-reference/cli-ref-trusted-signers.md).
 
@@ -421,7 +424,6 @@ The table below show environnment variable syntax and path separator support for
 | `%MY_VAR%` | `\`  | Yes | Yes | No | No |
 | `$MY_VAR` | `/`  | No | No | No | No |
 | `$MY_VAR` | `\`  | No | No | No | No |
-
 
 ## Example config file
 
