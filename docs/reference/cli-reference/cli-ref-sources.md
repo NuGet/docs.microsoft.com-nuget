@@ -89,7 +89,7 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
   
 - **`-AllowInsecureConnections`**
-  Allows HTTP connections for adding or updating packages. Note: This method is not secure.
+  Allows HTTP connections for adding or updating packages. Note: This method is not secure. Available starting version 6.12.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
