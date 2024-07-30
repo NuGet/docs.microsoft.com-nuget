@@ -125,7 +125,7 @@ Lists all known package sources. The order is ignored during restore operations 
 
 ```xml
 <packageSources>
-    <clear />    
+    <clear />
     <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
     <add key="Contoso" value="https://contoso.com/packages/" />
     <add key="http-source" value="http://httpsourcetrusted/" allowInsecureConnections="true" />
@@ -139,6 +139,21 @@ Lists all known package sources. The order is ignored during restore operations 
 
 > [!Tip]
 > When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
+
+### auditSources
+
+Lists all known audit sources, which [NuGet Audit](../concepts/Auditing-Packages.md#running-a-security-audit-with-restore) will use during restore.
+If no audit sources are provided, restore will use package sources and suppress [NU1905](../reference/errors-and-warnings/NU1905.md).
+
+Audit sources support the same attributes as `packageSources` (`protocolVersion`, `allowInsecureConnections`), and sources that require authentication are configured with `packageSourceCredentials`, the same way as `packageSources`.
+
+**Example**:
+```xml
+<auditSources>
+    <clear />
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+</auditSources>
+```
 
 ### packageSourceCredentials
 
