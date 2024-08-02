@@ -16,6 +16,18 @@ NuGet distribution vehicles:
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
+## Summary: What's New in 6.10.2
+
+### Issues fixed in this release
+
+* Revert Enable central package management implicitly when Directory.Packages.props exists - [#11834](https://github.com/NuGet/Home/issues/11834)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.10.1.5...release-6.10.x)
+
+| [**6.10.2**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.10](https://visualstudio.microsoft.com/downloads/) | [8.0.3xx](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
+
+<sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
+
 ## Summary: What's New in 6.10.1
 
 ### Issues fixed in this release
