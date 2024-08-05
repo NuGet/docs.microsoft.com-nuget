@@ -64,9 +64,6 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 
   Path to the package(s) source.
 
-  > [!NOTE]
-  > Use package sources that you trust.
-  
 - **`-StorePasswordInClearText`**
 
   Indicates to store the password in unencrypted text instead of the default behavior of storing an encrypted form.
