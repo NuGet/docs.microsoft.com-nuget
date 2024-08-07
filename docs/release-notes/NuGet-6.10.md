@@ -22,7 +22,7 @@ NuGet distribution vehicles:
 
 * Revert Enable central package management implicitly when Directory.Packages.props exists - [#11834](https://github.com/NuGet/Home/issues/11834)
 
-[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.10.1.5...release-6.10.x)
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.10.1.5...6.10.2.8)
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
