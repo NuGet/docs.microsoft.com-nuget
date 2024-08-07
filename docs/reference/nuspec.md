@@ -93,9 +93,9 @@ A description of the package for UI display.
 When uploading a package to nuget.org, the `description` field is limited to 4000 characters.
 
 #### authors
-A comma-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors. 
-
-When uploading a package to nuget.org, the `authors` field is limited to 4000 characters.
+A comma-separated list of package authors. 
+The `authors` and the `owners` from the nuspec are ignored when uploading the package to nuget.org.
+For setting package ownership on nuget.org, see [Managing package owners on nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
 
 ### Optional metadata elements
 
@@ -103,7 +103,9 @@ When uploading a package to nuget.org, the `authors` field is limited to 4000 ch
 > [!Important]
 > owners is deprecated. Use authors instead.
 
-A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in `authors`, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
+A comma-separated list of package owners. 
+The `owners` from the nuspec is ignored when uploading the package to nuget.org.
+For setting package ownership on nuget.org, see [Managing package owners on nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
 
 #### projectUrl
 A URL for the package's home page, often shown in UI displays as well as nuget.org. 
