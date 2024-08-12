@@ -31,8 +31,6 @@ NuGet distribution vehicles:
 
 * `MSBuildRestoreUtility.GetRestoreAuditProperties` needs a breaking change to read `NuGetAuditSuppress` items - [#13313](https://github.com/NuGet/Home/issues/13313)
 
-* NuGetAudit should check transitive packages by default when the .NET 9 SDK is installed - [#13293](https://github.com/NuGet/Home/issues/13293)
-
 ### Issues fixed in this release
 
 * IVsNuGetProjectUpdateEvents.ProjectUpdateStarted or ProjectUpdateFinished should only provide a list of files that will get changed. - [#13413](https://github.com/NuGet/Home/issues/13413)
