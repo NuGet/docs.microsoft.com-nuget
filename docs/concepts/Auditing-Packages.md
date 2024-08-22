@@ -22,11 +22,11 @@ We also have a [blog post](https://devblogs.microsoft.com/nuget/nugetaudit-2-0-e
 
 | NuGet | .NET SDK | Visual Studio | Feature |
 |-------|----------|---------------|---------|
-| 5.9 | .NET 5 SDK (5.0.200) | N/A | [`dotnet list package --vulnerable`](#dotnet-list-package---vulnerable) |
-| 6.8 | .NET 8 SDK (8.0.100) | Visual Studio 2022 17.8 | [NuGetAudit](#running-a-security-audit-with-restore) for PackageReference |
-| 6.10 | N/A | Visual Studio 2022 17.10 | [NuGetAudit](#running-a-security-audit-with-restore) for packages.config|
-| 6.11 | .NET 8 SDK (8.0.400) | Visual Studio 2022 17.11 | [NuGetAuditSuppress](#excluding-advisories) for PackageReference |
-| 6.12 | .NET 9 SDK (9.0.100) | Visual Studio 2022 17.12 | [Audit sources](#audit-sources). [NuGetAuditSuppress](#excluding-advisories) for packages.config. |
+| [5.9](../release-notes/NuGet-5.9.md) | .NET 5 SDK (5.0.200) | N/A | [`dotnet list package --vulnerable`](#dotnet-list-package---vulnerable) |
+| [6.8](../release-notes/NuGet-6.8.md) | .NET 8 SDK (8.0.100) | Visual Studio 2022 17.8 | [NuGetAudit](#running-a-security-audit-with-restore) for PackageReference |
+| [6.10](../release-notes/NuGet-6.10.md) | N/A | Visual Studio 2022 17.10 | [NuGetAudit](#running-a-security-audit-with-restore) for packages.config|
+| [6.11](../release-notes/NuGet-6.11.md) | .NET 8 SDK (8.0.400) | Visual Studio 2022 17.11 | [NuGetAuditSuppress](#excluding-advisories) for PackageReference |
+| [6.12](../release-notes/NuGet-6.12.md) | .NET 9 SDK (9.0.100) | Visual Studio 2022 17.12 | [Audit sources](#audit-sources). [NuGetAuditSuppress](#excluding-advisories) for packages.config. |
 
 ## Running a security audit with `restore`
 
@@ -48,7 +48,7 @@ We recommend that audit is configured at a repository level.
 | NuGetAuditLevel | low | `low`, `moderate`, `high`, and `critical` | The minimum severity level to report. If you'd like to see `moderate`, `high`, and `critical` advisories (exclude `low`), set the value to `moderate` |
 | NuGetAudit | true | `true` and `false` | If you wish to not receive security audit reports, you can opt-out of the experience entirely by setting the value to `false` |
 
-(1) NuGetAuditMode defaulted to `direct` when it was introduced in the .NET 8.0.100 SDK and VS 17.8. In .NET 9.0.100 SDK and VS 17.12 the default changed to `all`.
+(1) NuGetAuditMode defaulted to `direct` when it was introduced in [the .NET 8.0.100 SDK and VS 17.8](../release-notes/NuGet-6.8.md). In [.NET 9.0.100 SDK and VS 17.12](../release-notes/NuGet-6.12.md) the default changed to `all`.
 
 #### Audit Sources
 
@@ -70,7 +70,7 @@ Note that the [V2 protocol is deprecated](../nuget-org/overview-nuget-org.md#api
 </configuration>
 ```
 
-Audit sources are available from NuGet 6.12, .NET 9.0.100 SDK, and Visual Studio 2022 17.12.
+Audit sources are available from [NuGet 6.12, .NET 9.0.100 SDK, and Visual Studio 2022 17.12](../release-notes/NuGet-6.12.md).
 Prior to this version, NuGet Audit will only use package sources to download vulnerability information.
 Audit sources are not used by `dotnet list package --vulnerable` at this time.
 
@@ -87,8 +87,8 @@ Define a `NuGetAuditSuppress` item with the `Include=` metadata set to the advis
 
 Similar to the other NuGet audit configuration properties, `NuGetAuditSuppress` items can be defined at the project or repository level.
 
-`NuGetAuditSuppress` is available for PackageReference projects starting from NuGet 6.11, Visual Studio 17.11, and the .NET 8.0.400 SDK.
-It is available for packages.config with Visual Studio 17.12 and NuGet 6.12.
+`NuGetAuditSuppress` is available for PackageReference projects starting from [NuGet 6.11, Visual Studio 17.11, and the .NET 8.0.400 SDK](../release-notes/NuGet-6.11.md).
+It is available for packages.config from [Visual Studio 17.12 and NuGet 6.12](../release-notes/NuGet-6.12.md).
 
 ### Warning codes
 
