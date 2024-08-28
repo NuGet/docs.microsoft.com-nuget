@@ -125,6 +125,15 @@ If security vulnerabilities are found and updates are available for the package,
 - Use the NuGet package manager user interface in Visual Studio to update the individual package.
 - Run the `dotnet add package` command with the respective package ID to update to the latest version.
 
+#### Transitive Packages
+
+If a known vulnerability exists in a top-level package's transitive dependencies, you have these options:
+
+- Add the fixed package version as a direct package reference. **Note:** Be sure to remove this reference when a new package version update becomes available.
+- Use [Central Package Management with the transitive pinning functionality](https://learn.microsoft.com/nuget/consume-packages/Central-Package-Management#transitive-pinning).
+- [Suppress the advisory](https://learn.microsoft.com/nuget/concepts/auditing-packages#excluding-advisories) until a package version update becomes available.
+- File an issue in the top-level package's tracker to request an update.
+
 ### Security vulnerabilities found with no updates
 
 In the case that a known vulnerability exists in a package without a security fix, you can do the following.
