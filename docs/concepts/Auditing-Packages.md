@@ -129,9 +129,9 @@ If security vulnerabilities are found and updates are available for the package,
 
 If a known vulnerability exists in a top-level package's transitive dependencies, you have these options:
 
-- Add the fixed package version as a direct package reference. **Note:** Be sure to remove this reference when a new package version update becomes available.
+- Add the fixed package version as a direct package reference. **Note:** Be sure to remove this reference when a new package version update becomes available and be sure to maintain the defined attributes for the expected behavior.
 - Use [Central Package Management with the transitive pinning functionality](https://learn.microsoft.com/nuget/consume-packages/Central-Package-Management#transitive-pinning).
-- [Suppress the advisory](https://learn.microsoft.com/nuget/concepts/auditing-packages#excluding-advisories) until a package version update becomes available.
+- [Suppress the advisory](https://learn.microsoft.com/nuget/concepts/auditing-packages#excluding-advisories) until it can be addressed.
 - File an issue in the top-level package's tracker to request an update.
 
 ### Security vulnerabilities found with no updates
