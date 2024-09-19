@@ -444,7 +444,7 @@ Additional restore settings may come from MSBuild properties in the project file
 | `RestorePackagesConfig` | An opt-in switch, that restores projects with packages.config. Support with `MSBuild -t:restore` only. |
 | `RestoreRepositoryPath` | packages.config only. Specifies the packages directory to which the packages should be restored. `SolutionDirectory` will be used if not specified. |
 | `RestoreUseStaticGraphEvaluation` | An opt-in switch to use static graph MSBuild evaluation instead of the standard evaluation. Static graph evaluation is an experimental feature that's significantly faster for large repos and solutions. |
-| `RestoreUseLegacyDependencyResolver` | An opt-out to use the legacy dependency resolver. NuGet's dependency resolver implementation was rewritten in the 6.12 release, matching .NET 9 and Visual Studio 17.12. This switch forces the previous algorithm to be used. |
+| `RestoreUseLegacyDependencyResolver` | An opt-out to use the legacy dependency resolver. NuGet's dependency resolver implementation was rewritten in the [6.12 release](../../docs/release-notes/NuGet-6.12.md). This switch forces the previous algorithm to be used. |
 
 The `ExcludeRestorePackageImports` property is an internal property used by NuGet.
 It should not be modified or set in any MSBuild files.
