@@ -418,7 +418,7 @@ If you follow the above method, there should be exactly 1 difference between the
 
 ```diff
       "projectStyle": "PackageReference",
-      +"restoreUseLegacyDependencyResolver": true,
++     "restoreUseLegacyDependencyResolver": true,
       "fallbackFolders": [
 ```
 
