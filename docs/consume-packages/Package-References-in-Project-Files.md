@@ -422,7 +422,7 @@ If you follow the above method, there should be exactly 1 difference between the
       "fallbackFolders": [
 ```
 
-If there any more differences, please [file an issue on GitHub](https://github.com/NuGet/Home/issues/) with all the details.
+If there are any more differences, please [file an issue on GitHub](https://github.com/NuGet/Home/issues/) with all the details.
 
 ## AssetTargetFallback
 
