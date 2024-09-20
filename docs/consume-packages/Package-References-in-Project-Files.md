@@ -414,7 +414,7 @@ Restore's intermediates generated in the `MSBuildProjectExtensionsPath` folder c
 1. Save the contents of the `obj` to a location indicating that it's the `legacy` behavior.
 1. Analyze the files yourself, or create a NuGet/Home issue and we'll take a look.
 
-If you follow the above method, there should be exactly 1 difference between the files:
+If you follow the above method, there should be exactly 1 difference between the `project.assets.json` files:
 
 ```diff
       "projectStyle": "PackageReference",
