@@ -81,6 +81,19 @@ We will cover various tools and techniques that NuGet and GitHub provides, which
 
 ## Knowing what is in your environment
 
+### Packages with known vulnerabilities
+
+**📦 Package Consumer | 📦🖊 Package Author**
+
+.NET 8 and Visual Studio 17.8 added [NuGetAudit](Auditing-Packages.md), which will warn about direct packages with known vulnerabilities during restore.
+.NET 9 and Visual Studio 17.12 changed the default to warn about transitive packages as well.
+
+NuGetAudit requires a source to provide a known vulnerabilities database, so if you're not using nuget.org as a package source, you should add it as an [audit source](Auditing-Packages.md#audit-sources).
+
+By the time that NuGet is warning you, the vulnerability is publicly known.
+Attackers can use this public disclosure to develop attacks for targets who have not patched their applications.
+Therefore, when you get a warning that a package your project is using has a known vulnerability, you should quickly take action.
+
 ### NuGet dependency graph
 
 **📦 Package Consumer**
@@ -94,7 +107,8 @@ This is typically found in one of two places:
 
 Depending on what method you use to manage your NuGet dependencies, you can also use Visual Studio to view your dependencies directly in [Solution Explorer](/visualstudio/ide/solutions-and-projects-in-visual-studio#solution-explorer) or [NuGet Package Manager](../consume-packages/install-use-packages-visual-studio.md).
 
-For CLI environments, you can use the [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) command to list out your project or solution’s dependencies.
+For CLI environments, you can use the [`dotnet list package` command](/dotnet/core/tools/dotnet-list-package) to list out your project or solution’s dependencies.
+You can also use the [`dotnet nuget why` command](/dotnet/core/tools/dotnet-nuget-why) to understand why transitive packages (those not directly referenced by your project) are being included in your project's package graph.
 
 For more information on managing NuGet dependencies, [see the following documentation](../consume-packages/overview-and-workflow.md).
 
@@ -128,6 +142,7 @@ This may include:
 
 You can use the [dotnet CLI](/dotnet/core/tools/dotnet-list-package) to list any known deprecated or vulnerable dependencies you may have inside your project or solution.
 You can use the command `dotnet list package --deprecated` or `dotnet list package --vulnerable` to provide you a list of any known deprecations or vulnerabilities.
+[NuGetAudit](Auditing-Packages.md) can warn you about known vulnerable dependencies, and is enabled by default when [a source provides a vulnerabilities database](Auditing-Packages.md#audit-sources).
 
 ### GitHub vulnerable dependencies
 
@@ -178,6 +193,48 @@ To enable lock files, [see the following documentation](../consume-packages/pack
 Package Source Mapping allows you to centrally declare which source each package in your solution should restore from in your nuget.config file.
 
 To enable package source mapping, [see the following documentation](../consume-packages/package-source-mapping.md).
+
+## Secure computers
+
+### Directory permissions
+
+**📦 Package Consumer**
+
+On Windows and Mac, and some Linux distributions, user account home directories are private by default.
+However, some Linux distributions make user directories readable by other accounts on the same computer by default.
+Additionally, there are [multiple configuration options to redirect NuGet's global packages folder and HTTP cache to non-default locations](../consume-packages/managing-the-global-packages-and-cache-folders).
+Solutions, projects, and repositories might also be created outside of the user's home directory.
+
+If you use any packages that are not on nuget.org, then if any other account on the computer can read NuGet's global packages or HTTP cache directories, or the project's build output directory, then these packages might be disclosed to people who should not have access to those packages.
+
+On Linux, `dotnet nuget update source` will change *nuget.config* file permissions to make it only readable by the file owner.
+However, if you edit the *nuget.config* file in any other way, and the file is in a location that other accounts can read the file, there might be information disclosure about package source URL or package source credentials.
+You should ensure any nuget.config file cannot be read by other users of the same computer.
+
+### Solutions within the downloads directory
+
+**📦 Package Consumer**
+
+Extra care should be taken if working on solutions or projects in your downloads directory.
+NuGet will [accumulate settings from multiple config files](../consume-packages/configuring-nuget-behavior.md), and MSBuild will typically import *Directory.Build.props*, *Directory.NuGet.props*, *Directory.Build.targets*, and potentially other files, from any parent directory, right up to the filesystem root.
+
+The downloads folder has additional risk, since it's usually the default location that web browsers will download files from the internet
+
+### Build Agents
+
+**📦 Package Consumer**
+
+Build agents (CI agents) that are not reset to an initial state after every build have multiple risks that must be considered.
+
+To learn about secure ways to manage credentials, [see the docs on consuming packages from authenticated feeds](../consume-packages/consuming-packages-authenticated-feeds).
+
+To learn about modifying the directories that NuGet stores data in, see [the docs on managing the global packages, cache, and temp folders](../consume-packages/managing-the-global-packages-and-cache-folders).
+These directories should be configured to a directory that the CI agent cleans after every build.
+
+Note that any packages used by your project might be left in your project's build output directory.
+If your project uses packages from authenticated sources, then other users of the same CI agent might gain unauthorized access to the package assemblies.
+Therefore, you should also clean your repo at the end of your build, even when the build fails or is cancelled.
+
 
 ## Monitor your supply chain
 
@@ -230,6 +287,8 @@ To protect the .NET package ecosystem when you are aware of a vulnerability in a
 If you are consuming a package that is deprecated and unlisted, you should avoid using the package.
 
 To learn how to deprecate and unlist a package, see the following documentation on [deprecating](../nuget-org/deprecate-packages.md) and [unlisting packages](../nuget-org/policies/deleting-packages.md#unlisting-a-package).
+
+Also consider reporting the known to the [GitHub Advisories Database](https://github.com/advisories).
 
 ## Summary
 
