@@ -201,7 +201,7 @@ To enable package source mapping, [see the following documentation](../consume-p
 
 On Windows and Mac, and some Linux distributions, user account home directories are private by default.
 However, some Linux distributions make user directories readable by other accounts on the same computer by default.
-Additionally, there are [multiple configuration options to redirect NuGet's global packages folder and HTTP cache to non-default locations](../consume-packages/managing-the-global-packages-and-cache-folders).
+Additionally, there are [multiple configuration options to redirect NuGet's global packages folder and HTTP cache to non-default locations](../consume-packages/managing-the-global-packages-and-cache-folders.md).
 Solutions, projects, and repositories might also be created outside of the user's home directory.
 
 If you use any packages that are not on nuget.org, then if any other account on the computer can read NuGet's global packages or HTTP cache directories, or the project's build output directory, then these packages might be disclosed to people who should not have access to those packages.
@@ -225,15 +225,14 @@ The downloads folder has additional risk, since it's usually the default locatio
 
 Build agents (CI agents) that are not reset to an initial state after every build have multiple risks that must be considered.
 
-To learn about secure ways to manage credentials, [see the docs on consuming packages from authenticated feeds](../consume-packages/consuming-packages-authenticated-feeds).
+To learn about secure ways to manage credentials, [see the docs on consuming packages from authenticated feeds](../consume-packages/consuming-packages-authenticated-feeds.md).
 
-To learn about modifying the directories that NuGet stores data in, see [the docs on managing the global packages, cache, and temp folders](../consume-packages/managing-the-global-packages-and-cache-folders).
+To learn about modifying the directories that NuGet stores data in, see [the docs on managing the global packages, cache, and temp folders](../consume-packages/managing-the-global-packages-and-cache-folders.md).
 These directories should be configured to a directory that the CI agent cleans after every build.
 
 Note that any packages used by your project might be left in your project's build output directory.
 If your project uses packages from authenticated sources, then other users of the same CI agent might gain unauthorized access to the package assemblies.
 Therefore, you should also clean your repo at the end of your build, even when the build fails or is cancelled.
-
 
 ## Monitor your supply chain
 
