@@ -3,7 +3,7 @@ title: Best practices for a secure software supply chain
 description: Best practices for securing your software supply chain using NuGet & GitHub.
 author: JonDouglas
 ms.author: jodou
-ms.date: 04/09/2024
+ms.date: 20/09/2024
 ms.topic: conceptual
 ---
 
