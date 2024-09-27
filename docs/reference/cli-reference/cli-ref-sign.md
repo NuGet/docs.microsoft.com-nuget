@@ -29,7 +29,7 @@ where `<package(s)>` is one or more `.nupkg` files.
 
 - **`-CertificateFingerprint`**
 
-  Specifies the fingerprint of the certificate used to search a local certificate store for the certificate.
+  Specifies the fingerprint to be used to search for the certificate in a local certificate store.
 
   Starting with NuGet.exe 6.12, this option can be used to specify the SHA-1, SHA-256, SHA-384, or SHA-512 fingerprint of the certificate.
   However, a `NU3043` warning is raised when a SHA-1 certificate fingerprint is used because it is no longer considered secure.
