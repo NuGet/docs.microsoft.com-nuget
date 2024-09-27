@@ -402,17 +402,21 @@ While the new restore algorithm is is functionally equivalent to the previous on
 To revert to the previous implementation, set the MSBuild property `RestoreUseLegacyDependencyResolver` to `true`.
 
 Should you face restore failures in 6.12, .NET 9 or 17.12, that weren't reproducing in earlier versions, please [file an issue on GitHub](https://github.com/NuGet/Home/issues/).
-Any potential discrepancies may manifest in different ways, such as during compilation or at runtime. There's also a chance that changes don't lead to failures, but just differences.
+Any differences between the old and new algorithms may have different impacts, such as during compilation or at runtime.
+There's also a chance that changes don't lead to failures, but different package versions being restored.
 If you think you may be impacted by any changes, here are the steps you can take to verify whether the changes in the NuGet restore algorithm are the root cause.
 
-Restore's intermediates generated in the `MSBuildProjectExtensionsPath` folder can help determine the equivalence between the 2 algorithms. Usually this is the `obj` folder of your build. You can use `msbuild.exe` or `dotnet.exe` for the next steps.
+Restore writes its results in the `MSBuildProjectExtensionsPath` directory, which can be compared with the new and old algorithms to find differences.
+Usually this is the `obj` folder of your build.
+You can use `msbuild.exe` or `dotnet.exe` for the next steps.
 
 1. Remove the `obj` folder for your project.
 1. Run `msbuild -t:restore`
 1. Save the contents of the `obj` to a location indicating that it's the `new` behavior.
 1. Run `msbuild -t:restore -p:RestoreUseLegacyDependencyResolver="true"`
 1. Save the contents of the `obj` to a location indicating that it's the `legacy` behavior.
-1. Analyze the files yourself, or create a NuGet/Home issue and we'll take a look.
+1. Compare the files in the two directories, particularly *project.assets.json*.
+Tools that can highlight differences are especially useful for this (for example, Visual Studio Code, open both files, and use the right-click "select for compare" and "compare to selected")
 
 If you follow the above method, there should be exactly 1 difference between the `project.assets.json` files:
 
