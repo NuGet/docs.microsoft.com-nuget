@@ -392,6 +392,42 @@ You can control various behaviors of restore with lock file as described below:
 | `-ForceEvaluate` | `--force-evaluate` | RestoreForceEvaluate | This option is useful with packages with floating version defined in the project. By default, NuGet restore will not update the package version automatically upon each restore unless you run restore with this option. |
 | `-LockFilePath` | `--lock-file-path` | NuGetLockFilePath | Defines a custom lock file location for a project. By default, NuGet supports `packages.lock.json` at the root directory. If you have multiple projects in the same directory, NuGet supports project specific lock file `packages.<project_name>.lock.json` |
 
+## NuGet Dependency Resolver
+
+The NuGet dependency resolver follows the [4 rules as described in the dependency resolution document](../../docs/concepts/Dependency-Resolution.md).
+
+In order to improve the performance and scalability of the restore operation, the restore algorithm was rewritten in the 6.12 release.
+As of the 6.12 release, the new restore algorithm is enabled by default for all PackageReference projects.
+While the new restore algorithm is is functionally equivalent to the previous one, as with any software, bugs are possible.
+To revert to the previous implementation, set the MSBuild property `RestoreUseLegacyDependencyResolver` to `true`.
+
+Should you face restore failures in 6.12, .NET 9 or 17.12, that weren't reproducing in earlier versions, please [file an issue on GitHub](https://github.com/NuGet/Home/issues/).
+Any differences between the old and new algorithms may have different impacts, such as during compilation or at runtime.
+There's also a chance that changes don't lead to failures, but different package versions being restored.
+If you think you may be impacted by any changes, here are the steps you can take to verify whether the changes in the NuGet restore algorithm are the root cause.
+
+Restore writes its results in the `MSBuildProjectExtensionsPath` directory, which can be compared with the new and old algorithms to find differences.
+Usually this is the `obj` folder of your build.
+You can use `msbuild.exe` or `dotnet.exe` for the next steps.
+
+1. Remove the `obj` folder for your project.
+1. Run `msbuild -t:restore`
+1. Save the contents of the `obj` to a location indicating that it's the `new` behavior.
+1. Run `msbuild -t:restore -p:RestoreUseLegacyDependencyResolver="true"`
+1. Save the contents of the `obj` to a location indicating that it's the `legacy` behavior.
+1. Compare the files in the two directories, particularly *project.assets.json*.
+Tools that can highlight differences are especially useful for this (for example, Visual Studio Code, open both files, and use the right-click "select for compare" and "compare to selected")
+
+If you follow the above method, there should be exactly 1 difference between the `project.assets.json` files:
+
+```diff
+      "projectStyle": "PackageReference",
++     "restoreUseLegacyDependencyResolver": true,
+      "fallbackFolders": [
+```
+
+If there are any more differences, please [file an issue on GitHub](https://github.com/NuGet/Home/issues/) with all the details.
+
 ## AssetTargetFallback
 
 The `AssetTargetFallback` property lets you specify additional compatible framework versions for projects that your project references and NuGet packages that your project consumes.
