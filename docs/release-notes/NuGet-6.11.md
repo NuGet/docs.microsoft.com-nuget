@@ -15,6 +15,14 @@ NuGet distribution vehicles:
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
+## Summary: What's New in 6.11.1
+
+### Issues fixed in this release
+
+* Fix "multiple attempts to download the nupkg have failed" - [#13545](https://github.com/NuGet/Home/issues/13545)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.11.0.122...6.11.1.2)
+
 ## Summary: What's New in 6.11
 
 * Suppress NuGetAudit warnings for specific advisories for PackageReference projects - [#13679](https://github.com/NuGet/Home/issues/13679)
@@ -69,7 +77,7 @@ NuGet distribution vehicles:
 
 * Vulnerability InfoBar remains visible in the Solution Explorer after closing solution - [#13055](https://github.com/NuGet/Home/issues/13055)
 
-[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.11.0.122...6.10.1.5)
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.10.1.5...6.11.0.122)
 
 ### Community contributions
 
