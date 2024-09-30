@@ -244,6 +244,7 @@
 ### [NU3038](reference/errors-and-warnings/NU3038.md)
 ### [NU3040](reference/errors-and-warnings/NU3040.md)
 ### [NU3042](reference/errors-and-warnings/NU3042.md)
+### [NU3043](reference/errors-and-warnings/NU3043.md)
 ### [NU5000](reference/errors-and-warnings/NU5000.md)
 ### [NU5001](reference/errors-and-warnings/NU5001.md)
 ### [NU5002](reference/errors-and-warnings/NU5002.md)
