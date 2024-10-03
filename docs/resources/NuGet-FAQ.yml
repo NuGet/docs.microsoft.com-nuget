@@ -25,7 +25,7 @@ sections:
         answer: |
           The command-line tool, `nuget.exe`, builds and runs typically under Windows. NuGet can run on Unix operating systems using `mono`, but it is not officially supported by [NuGet's Support Policy](https://devblogs.microsoft.com/nuget/announcing-nuget-exe-and-nuget-client-sdk-packages-support-policy-keeping-you-informed-and-secure/).
 
-          [Mono has transfered ownership to Wine and is no longer maintained by Microsoft](https://github.com/mono/mono/issues/21796).
+          [Mono has transferred ownership to Wine and is no longer maintained by Microsoft](https://github.com/mono/mono/issues/21796).
           
       - question: |
           How can I determine what a package contains and whether it's stable and useful for my application?
