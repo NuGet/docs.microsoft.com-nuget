@@ -102,8 +102,8 @@ It is available for packages.config from [Visual Studio 17.12 and NuGet 6.12](..
 | [NU1905](../reference/errors-and-warnings/NU1905.md) | An audit source does not provide a vulnerability database |
 
 You can customize your build to treat these warnings as errors to [treat warnings as errors, or treat warnings not as errors](/dotnet/csharp/language-reference/compiler-options/errors-warnings#warningsaserrors-and-warningsnotaserrors).
-For example, if you're already using `<TreatWarningsAsErrors>` to treat all (C#, NuGet, MSBuild, etc) warnings as errors, you can use `<WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>` to prevent vulnerabilities discovered in the future from breaking your build.
-Alternatively, if you want to keep low and moderate vulnerabilities as warnings, but treat high and critical vulnerabilities as errors, and you're not using `TreatWarningsAsErrors`, you can use `<WarningsAsErrors>NU1903;NU1904</WarningsAsErrors>`.
+For example, if you're already using `<TreatWarningsAsErrors>` to treat all (C#, NuGet, MSBuild, etc) warnings as errors, you can use `<WarningsNotAsErrors>$(WarningsNotAsErrors);NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>` to prevent vulnerabilities discovered in the future from breaking your build.
+Alternatively, if you want to keep low and moderate vulnerabilities as warnings, but treat high and critical vulnerabilities as errors, and you're not using `TreatWarningsAsErrors`, you can use `<WarningsAsErrors>$(WarningsAsErrors);NU1903;NU1904</WarningsAsErrors>`.
 
 > [!NOTE]
 > MSBuild properties for message severity such as `NoWarn` and `TreatWarningsAsErrors` are not supported for packages.config projects.
