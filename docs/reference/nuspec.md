@@ -825,11 +825,11 @@ C#-specific content for net45 and up
     /contentFiles/cs/net45/sample.cs
 ```
 
-Empty folders can use `.` to opt out of providing content for certain combinations of language and TxM, for example:
+Empty folders can use `_._` to opt out of providing content for certain combinations of language and TxM, for example:
 
 ```
 /contentFiles/vb/any/code.vb
-/contentFiles/cs/any/.
+/contentFiles/cs/any/_._
 ```
 
 #### Example contentFiles section
