@@ -27,7 +27,7 @@ NuGet 6.12.1 is available in Visual Studio 17.12.0 and the.NET 9.0.101 SDK.
 
 NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 
-* Add property for toggling the to the previous NuGet resolver: RestoreUseLegacyDependencyResolver   - [#13700](https://github.com/NuGet/Home/issues/13700)
+* Add property for toggling the to the previous NuGet resolver: RestoreUseLegacyDependencyResolver - [#13700](https://github.com/NuGet/Home/issues/13700)
 
 * Owner profile hyperlinks needed in Details Pane of PM UI - [#13686](https://github.com/NuGet/Home/issues/13686)
 
@@ -39,25 +39,27 @@ NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 
 * NuGetAuditSuppress for packages.config - [#13575](https://github.com/NuGet/Home/issues/13575)
 
-* Use `SDKAnalysisLevel` in restore "https everywhere: promote from warning to error" - [#13546](https://github.com/NuGet/Home/issues/13546)
+* [Feature] Enable Transitive Dependencies for Solution-level in Visual Studio - [#13216](https://github.com/NuGet/Home/issues/13216)
 
-* tweak wording of NU1603 - [#13446](https://github.com/NuGet/Home/issues/13446)
+* Audit security vulnerabilities without adding nuget.org as package source - [#12698](https://github.com/NuGet/Home/issues/12698)
 
 * Roll-out new breaking change process for SDK tools, respect SdkAnalysisLevel - [#13309](https://github.com/NuGet/Home/issues/13309)
 
-* [Feature] Enable Transitive Dependencies for Solution-level in Visual Studio - [#13216](https://github.com/NuGet/Home/issues/13216)
-
-* Audit security vulnerabilities without adding nuget.org as package source  - [#12698](https://github.com/NuGet/Home/issues/12698)
-
 ### Breaking changes
+
+* NuGetAudit should check transitive packages by default when the .NET 9 SDK is installed [#13293](https://github.com/NuGet/Home/issues/13293)
 
 * Change NuGetAuditMode default to all for non-SDK style projects - [#13584](https://github.com/NuGet/Home/issues/13584)
 
 * [Epic]Deprecate http usage: Promote from warning to error - [#13289](https://github.com/NuGet/Home/issues/13289)
 
+### Issues fixed in this release
+
 * Reduce allocations in TokenSegment.TryMatch - [#12728](https://github.com/NuGet/Home/issues/12728)
 
-### Issues fixed in this release
+* Use `SDKAnalysisLevel` in restore "https everywhere: promote from warning to error" - [#13546](https://github.com/NuGet/Home/issues/13546)
+
+* tweak wording of NU1603 - [#13446](https://github.com/NuGet/Home/issues/13446)
 
 * Default Package icon shown even when embedded icon file exists on disk - [#13766](https://github.com/NuGet/Home/issues/13766)
 
