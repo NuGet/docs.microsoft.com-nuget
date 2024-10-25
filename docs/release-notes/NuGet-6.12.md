@@ -121,7 +121,7 @@ NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 
 * 'why' and 'config' command does not show up in 'dotnet nuget --help' output - [#13517](https://github.com/NuGet/Home/issues/13517)
 
-* allocation: nuget.protocol.dll!NuGet.Protocol.HttpCacheUtility+<CreateCacheFileAsync>d__.MoveNext|nuget.protocol.dll!NuGet.Protocol.PackageDependencyGroupConverter.ReadJson - [#13445](https://github.com/NuGet/Home/issues/13445)
+* allocation: nuget.protocol.dll!NuGet.Protocol.HttpCacheUtility+&lt;CreateCacheFileAsync&gt;d__.MoveNext|nuget.protocol.dll!NuGet.Protocol.PackageDependencyGroupConverter.ReadJson - [#13445](https://github.com/NuGet/Home/issues/13445)
 
 * Reduce allocations in ContentItemCollection - [#12657](https://github.com/NuGet/Home/issues/12657)
 
