@@ -15,9 +15,15 @@ NuGet distribution vehicles:
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
-## Summary: What's New in 6.11.1
+## Known Issues
 
-NuGet 6.12.1 is available in Visual Studio 17.12.0 and the.NET 9.0.101 SDK.
+* Project and package in the same graph with the same name but different dependencies may lead to incorrect versions of the dependencies of that id [#13888](https://github.com/NuGet/Home/issues/13888)
+* VS PM UI shows warning icon about package vulnerability even after upgrade [#13866](https://github.com/NuGet/Home/issues/13866)
+* dotnet nuget why reports missing argument, even though it ran [#13908](https://github.com/NuGet/Home/issues/13908)
+
+## Summary: What's New in 6.12.1
+
+NuGet 6.12.1 is available in Visual Studio 17.12.0 and the .NET 9.0.101 SDK.
 
 ### Issues fixed in this release
 
@@ -27,23 +33,15 @@ NuGet 6.12.1 is available in Visual Studio 17.12.0 and the.NET 9.0.101 SDK.
 
 NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 
-* Add property for toggling the to the previous NuGet resolver: RestoreUseLegacyDependencyResolver - [#13700](https://github.com/NuGet/Home/issues/13700)
+* NuGet's dependency graph resolution algorithm does not scale well for large graphs - [#13692](https://github.com/NuGet/Home/issues/13692)
 
 * Owner profile hyperlinks needed in Details Pane of PM UI - [#13686](https://github.com/NuGet/Home/issues/13686)
 
-* Bubble-up Known Vulnerability Indicators in Solution Explorer for Transitive Packages - [#13636](https://github.com/NuGet/Home/issues/13636)
-
-* Map branch name from sourcelink to RepositoryBranch for NuGet pack - [#13625](https://github.com/NuGet/Home/issues/13625)
-
-* Enable `dotnet nuget why` on non-SDK style projects - [#13576](https://github.com/NuGet/Home/issues/13576)
-
-* NuGetAuditSuppress for packages.config - [#13575](https://github.com/NuGet/Home/issues/13575)
-
-* [Feature] Enable Transitive Dependencies for Solution-level in Visual Studio - [#13216](https://github.com/NuGet/Home/issues/13216)
-
 * Audit security vulnerabilities without adding nuget.org as package source - [#12698](https://github.com/NuGet/Home/issues/12698)
 
-* Roll-out new breaking change process for SDK tools, respect SdkAnalysisLevel - [#13309](https://github.com/NuGet/Home/issues/13309)
+* Deprecate SHA-1 fingerprints usage in NuGet Sign commands in favor of SHA-2 family fingerprints [#13891](https://github.com/NuGet/Home/issues/13891)
+
+* Deprecate http usage: Promote from warning to error - [#13289](https://github.com/NuGet/Home/issues/13289)
 
 ### Breaking changes
 
@@ -51,9 +49,19 @@ NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 
 * Change NuGetAuditMode default to all for non-SDK style projects - [#13584](https://github.com/NuGet/Home/issues/13584)
 
-* [Epic]Deprecate http usage: Promote from warning to error - [#13289](https://github.com/NuGet/Home/issues/13289)
-
 ### Issues fixed in this release
+
+* Bubble-up Known Vulnerability Indicators in Solution Explorer for Transitive Packages - [#13636](https://github.com/NuGet/Home/issues/13636)
+
+* Enable `dotnet nuget why` on non-SDK style projects - [#13576](https://github.com/NuGet/Home/issues/13576)
+
+* NuGetAuditSuppress for packages.config - [#13575](https://github.com/NuGet/Home/issues/13575)
+
+* Enable Transitive Dependencies for Solution-level in Visual Studio - [#13216](https://github.com/NuGet/Home/issues/13216)
+
+* Roll-out new breaking change process for SDK tools, respect SdkAnalysisLevel - [#13309](https://github.com/NuGet/Home/issues/13309)
+
+* Add property for toggling the to the previous NuGet resolver: RestoreUseLegacyDependencyResolver - [#13700](https://github.com/NuGet/Home/issues/13700)
 
 * Reduce allocations in TokenSegment.TryMatch - [#12728](https://github.com/NuGet/Home/issues/12728)
 
@@ -66,8 +74,6 @@ NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 * Navigation telemetry for hyperlinks: License, ReportAbuse, Readme, ProjectUrl - [#13749](https://github.com/NuGet/Home/issues/13749)
 
 * Navigation telemetry for Owner Profile URLs in PM UI - [#13738](https://github.com/NuGet/Home/issues/13738)
-
-* NuGet's dependency graph resolution algorithm does not scale well for large graphs - [#13692](https://github.com/NuGet/Home/issues/13692)
 
 * PM UI should show transitive path - [#13574](https://github.com/NuGet/Home/issues/13574)
 
@@ -128,6 +134,8 @@ NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 * When a source isn't accessible, service index cannot be read issues suppress the internal message making it difficult to understand the root cause - [#12530](https://github.com/NuGet/Home/issues/12530)
 
 * [Bug]: Extra space at start of package description in tooltip - [#12105](https://github.com/NuGet/Home/issues/12105)
+
+* Map branch name from sourcelink to RepositoryBranch for NuGet pack - [#13625](https://github.com/NuGet/Home/issues/13625)
 
 [List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.12.1.1...6.11.1.2)
 

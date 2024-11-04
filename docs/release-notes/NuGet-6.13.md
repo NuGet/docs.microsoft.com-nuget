@@ -2,7 +2,6 @@
 title: NuGet 6.13 Release Notes
 description: Release notes for NuGet 6.13 including new features, bug fixes, and DCRs.
 author: zivkan
-ms.date: 8/19/2024
 ms.topic: conceptual
 ---
 # NuGet 6.13 Release Notes
