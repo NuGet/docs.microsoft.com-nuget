@@ -33,7 +33,7 @@ NuGet 6.12.1 is available in Visual Studio 17.12.0 and the .NET 9.0.101 SDK.
 
 NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 
-* NuGet's dependency graph resolution algorithm does not scale well for large graphs - [#13692](https://github.com/NuGet/Home/issues/13692)
+* Add new graph resolution algorithm for better performance with large graphs - [#13692](https://github.com/NuGet/Home/issues/13692)
 
 * Owner profile hyperlinks needed in Details Pane of PM UI - [#13686](https://github.com/NuGet/Home/issues/13686)
 
