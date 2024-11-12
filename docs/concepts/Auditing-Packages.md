@@ -102,8 +102,8 @@ It is available for packages.config from [Visual Studio 17.12 and NuGet 6.12](..
 | [NU1905](../reference/errors-and-warnings/NU1905.md) | An audit source does not provide a vulnerability database |
 
 You can customize your build to treat these warnings as errors to [treat warnings as errors, or treat warnings not as errors](/dotnet/csharp/language-reference/compiler-options/errors-warnings#warningsaserrors-and-warningsnotaserrors).
-For example, if you're already using `<TreatWarningsAsErrors>` to treat all (C#, NuGet, MSBuild, etc) warnings as errors, you can use `<WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>` to prevent vulnerabilities discovered in the future from breaking your build.
-Alternatively, if you want to keep low and moderate vulnerabilities as warnings, but treat high and critical vulnerabilities as errors, and you're not using `TreatWarningsAsErrors`, you can use `<WarningsAsErrors>NU1903;NU1904</WarningsAsErrors>`.
+For example, if you're already using `<TreatWarningsAsErrors>` to treat all (C#, NuGet, MSBuild, etc) warnings as errors, you can use `<WarningsNotAsErrors>$(WarningsNotAsErrors);NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>` to prevent vulnerabilities discovered in the future from breaking your build.
+Alternatively, if you want to keep low and moderate vulnerabilities as warnings, but treat high and critical vulnerabilities as errors, and you're not using `TreatWarningsAsErrors`, you can use `<WarningsAsErrors>$(WarningsAsErrors);NU1903;NU1904</WarningsAsErrors>`.
 
 > [!NOTE]
 > MSBuild properties for message severity such as `NoWarn` and `TreatWarningsAsErrors` are not supported for packages.config projects.
@@ -130,8 +130,8 @@ If security vulnerabilities are found and updates are available for the package,
 If a known vulnerability exists in a top-level package's transitive dependencies, you have these options:
 
 - Add the fixed package version as a direct package reference. **Note:** Be sure to remove this reference when a new package version update becomes available and be sure to maintain the defined attributes for the expected behavior.
-- Use [Central Package Management with the transitive pinning functionality](https://learn.microsoft.com/nuget/consume-packages/Central-Package-Management#transitive-pinning).
-- [Suppress the advisory](https://learn.microsoft.com/nuget/concepts/auditing-packages#excluding-advisories) until it can be addressed.
+- Use [Central Package Management with the transitive pinning functionality](../consume-packages/Central-Package-Management.md#transitive-pinning).
+- [Suppress the advisory](#excluding-advisories) until it can be addressed.
 - File an issue in the top-level package's tracker to request an update.
 
 ### Security vulnerabilities found with no updates
