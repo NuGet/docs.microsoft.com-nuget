@@ -43,12 +43,11 @@ We recommend that audit is configured at a repository level.
 
 | MSBuild Property | Default | Possible values | Notes |
 |------------------|---------|-----------------|-------|
-| NuGetAuditMode | all (1) | `direct` and `all` | If you'd like to audit both top-level and transitive dependencies, you can set the value to `all`. NuGetAuditMode is not applicable for packages.config projects |
+| NuGetAuditMode | all | `direct` and `all` | If you'd like to audit top-level dependencies only, you can set the value to `direct`. NuGetAuditMode is not applicable for packages.config projects.  |
 | NuGetAuditLevel | low | `low`, `moderate`, `high`, and `critical` | The minimum severity level to report. If you'd like to see `moderate`, `high`, and `critical` advisories (exclude `low`), set the value to `moderate` |
 | NuGetAudit | true | `true` and `false` | If you wish to not receive security audit reports, you can opt-out of the experience entirely by setting the value to `false` |
-| [SdkAnalysisLevel](/dotnet/core/project-sdk/msbuild-props#sdkanalysislevel) | The version of the .NET SDK that is installed | `8.0.400`, `9.0.100` | Introduced in .NET 9, this property can be used to pin multiple NuGet and .NET SDK features to their defaults at the specified SDK version. |
 
-(1) NuGetAuditMode defaulted to `direct` when it was introduced in [the .NET 8.0.100 SDK and VS 17.8](../release-notes/NuGet-6.8.md). In [.NET 9.0.100 SDK and VS 17.12](../release-notes/NuGet-6.12.md) the default changed to `all`.
+Note: In .NET 8, the default value of NuGetAuditMode is `direct`. Therefore, setting [SdkAnalysisLevel](/dotnet/core/project-sdk/msbuild-props#sdkanalysislevel) to `8.0.400` changes the default value of NuGetAuditMode accordingly.
 
 #### Audit Sources
 
