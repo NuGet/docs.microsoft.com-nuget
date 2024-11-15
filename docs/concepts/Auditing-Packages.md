@@ -47,7 +47,8 @@ We recommend that audit is configured at a repository level.
 | NuGetAuditLevel | low | `low`, `moderate`, `high`, and `critical` | The minimum severity level to report. If you'd like to see `moderate`, `high`, and `critical` advisories (exclude `low`), set the value to `moderate` |
 | NuGetAudit | true | `true` and `false` | If you wish to not receive security audit reports, you can opt-out of the experience entirely by setting the value to `false` |
 
-Note: In .NET 8, the default value of NuGetAuditMode is `direct`. Therefore, setting [SdkAnalysisLevel](/dotnet/core/project-sdk/msbuild-props#sdkanalysislevel) to `8.0.400` changes the default value of NuGetAuditMode accordingly.
+Note: In .NET 8, the default value of NuGetAuditMode is `direct`.
+Therefore, setting [SdkAnalysisLevel](/dotnet/core/project-sdk/msbuild-props#sdkanalysislevel) to `8.0.400` changes the default value of NuGetAuditMode accordingly.
 
 #### Audit Sources
 
