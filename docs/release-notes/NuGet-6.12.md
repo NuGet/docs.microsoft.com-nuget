@@ -41,9 +41,9 @@ NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 
 * Deprecate SHA-1 fingerprints usage in NuGet Sign commands in favor of SHA-2 family fingerprints [#13891](https://github.com/NuGet/Home/issues/13891)
 
-* Deprecate http usage: Promote from warning to error - [#13289](https://github.com/NuGet/Home/issues/13289)
-
 ### Breaking changes
+
+* Deprecate http usage: Promote from warning to error - [#13289](https://github.com/NuGet/Home/issues/13289)
 
 * NuGetAudit should check transitive packages by default when the .NET 9 SDK is installed [#13293](https://github.com/NuGet/Home/issues/13293)
 
