@@ -35,29 +35,29 @@ NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 
 * Add new graph resolution algorithm for better performance with large graphs - [#13692](https://github.com/NuGet/Home/issues/13692)
 
-* Owner profile hyperlinks needed in Details Pane of PM UI - [#13686](https://github.com/NuGet/Home/issues/13686)
+* NuGetAudit raises warnings for vulnerable transitive packages by default when the .NET 9 SDK is installed [#13293](https://github.com/NuGet/Home/issues/13293)
+
+* Change NuGetAuditMode default from direct to all, raising warnings for vulnerable transitive packages for non-SDK style projects - [#13584](https://github.com/NuGet/Home/issues/13584)
 
 * Audit security vulnerabilities without adding nuget.org as package source - [#12698](https://github.com/NuGet/Home/issues/12698)
 
+* Owner profile hyperlinks needed in Details Pane of PM UI - [#13686](https://github.com/NuGet/Home/issues/13686)
+
 * Deprecate SHA-1 fingerprints usage in NuGet Sign commands in favor of SHA-2 family fingerprints [#13891](https://github.com/NuGet/Home/issues/13891)
 
-* Deprecate http usage: Promote from warning to error - [#13289](https://github.com/NuGet/Home/issues/13289)
+* Bubble-up Known Vulnerability Indicators in Solution Explorer for Transitive Packages - [#13636](https://github.com/NuGet/Home/issues/13636)
+
+* Enable Transitive Dependencies and vulnerabilities for Solution-level in Visual Studio - [#13216](https://github.com/NuGet/Home/issues/13216)
 
 ### Breaking changes
 
-* NuGetAudit should check transitive packages by default when the .NET 9 SDK is installed [#13293](https://github.com/NuGet/Home/issues/13293)
-
-* Change NuGetAuditMode default to all for non-SDK style projects - [#13584](https://github.com/NuGet/Home/issues/13584)
+* Deprecate http usage: Promote from warning to error - [#13289](https://github.com/NuGet/Home/issues/13289)
 
 ### Issues fixed in this release
-
-* Bubble-up Known Vulnerability Indicators in Solution Explorer for Transitive Packages - [#13636](https://github.com/NuGet/Home/issues/13636)
 
 * Enable `dotnet nuget why` on non-SDK style projects - [#13576](https://github.com/NuGet/Home/issues/13576)
 
 * NuGetAuditSuppress for packages.config - [#13575](https://github.com/NuGet/Home/issues/13575)
-
-* Enable Transitive Dependencies for Solution-level in Visual Studio - [#13216](https://github.com/NuGet/Home/issues/13216)
 
 * Roll-out new breaking change process for SDK tools, respect SdkAnalysisLevel - [#13309](https://github.com/NuGet/Home/issues/13309)
 
