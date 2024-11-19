@@ -43,6 +43,10 @@ NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 
 * Deprecate http usage: Promote from warning to error - [#13289](https://github.com/NuGet/Home/issues/13289)
 
+* Bubble-up Known Vulnerability Indicators in Solution Explorer for Transitive Packages - [#13636](https://github.com/NuGet/Home/issues/13636)
+
+* Enable Transitive Dependencies for Solution-level in Visual Studio - [#13216](https://github.com/NuGet/Home/issues/13216)
+
 ### Breaking changes
 
 * NuGetAudit should check transitive packages by default when the .NET 9 SDK is installed [#13293](https://github.com/NuGet/Home/issues/13293)
@@ -51,13 +55,9 @@ NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 
 ### Issues fixed in this release
 
-* Bubble-up Known Vulnerability Indicators in Solution Explorer for Transitive Packages - [#13636](https://github.com/NuGet/Home/issues/13636)
-
 * Enable `dotnet nuget why` on non-SDK style projects - [#13576](https://github.com/NuGet/Home/issues/13576)
 
 * NuGetAuditSuppress for packages.config - [#13575](https://github.com/NuGet/Home/issues/13575)
-
-* Enable Transitive Dependencies for Solution-level in Visual Studio - [#13216](https://github.com/NuGet/Home/issues/13216)
 
 * Roll-out new breaking change process for SDK tools, respect SdkAnalysisLevel - [#13309](https://github.com/NuGet/Home/issues/13309)
 
