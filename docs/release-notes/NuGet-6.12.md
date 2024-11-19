@@ -45,7 +45,7 @@ NuGet 6.12.0 is available in the .NET 9.0.100 SDK.
 
 * Bubble-up Known Vulnerability Indicators in Solution Explorer for Transitive Packages - [#13636](https://github.com/NuGet/Home/issues/13636)
 
-* Enable Transitive Dependencies for Solution-level in Visual Studio - [#13216](https://github.com/NuGet/Home/issues/13216)
+* Enable Transitive Dependencies and vulnerabilities for Solution-level in Visual Studio - [#13216](https://github.com/NuGet/Home/issues/13216)
 
 ### Breaking changes
 
