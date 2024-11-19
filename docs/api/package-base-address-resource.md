@@ -36,8 +36,8 @@ All URLs found in the package content resource support the HTTP methods `GET` an
 
 ## Enumerate package versions
 
-If the client knows a package ID and wants to discover which package versions the package source has available, the
-client can construct a predictable URL to enumerate all package versions. Every version listen in this list must be available for download.
+If the client knows a package ID and wants to discover which package versions the package source has available, the client can construct a predictable URL to enumerate all package versions.
+Every version listen in this list must be available for download.
 This list is meant to be a "directory listing" for the package content API mentioned below.
 
 > [!Note]
