@@ -60,6 +60,7 @@ Resource name                                                        | Required 
 [Catalog](catalog-resource.md)                                       | no       | Full record of all package events.
 [PackageBaseAddress](package-base-address-resource.md)               | yes      | Get package content (.nupkg).
 [PackageDetailsUriTemplate](package-details-template-resource.md)    | no       | Construct a URL to access a package details web page.
+[OwnerDetailsUriTemplate](owner-details-template-resource.md)        | no       | Construct a URL to access an owner web page.
 [PackagePublish](package-publish-resource.md)                        | yes      | Push and delete (or unlist) packages.
 [RegistrationsBaseUrl](registration-base-url-resource.md)            | yes      | Get package metadata.
 [ReportAbuseUriTemplate](report-abuse-resource.md)                   | no       | Construct a URL to access a report abuse web page.
