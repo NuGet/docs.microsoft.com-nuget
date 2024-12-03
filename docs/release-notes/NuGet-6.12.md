@@ -24,6 +24,14 @@ NuGet distribution vehicles:
 * VS PM UI shows warning icon about package vulnerability even after upgrade [#13866](https://github.com/NuGet/Home/issues/13866)
 * dotnet nuget why reports missing argument, even though it ran [#13908](https://github.com/NuGet/Home/issues/13908)
 
+## Summary: What's New in 6.12.3
+
+NuGet 6.12.3 is available in Visual Studio 17.12.2 and the .NET 9.0.101 SDK.
+
+### Issues fixed in this release
+
+* Small Solution PM UI size can cause a System.ArgumentException SolutionView.ListView_SizeChanged - [#13928](https://github.com/NuGet/Home/issues/13928)
+
 ## Summary: What's New in 6.12.1
 
 NuGet 6.12.1 is available in Visual Studio 17.12.0 and the .NET 9.0.101 SDK.
