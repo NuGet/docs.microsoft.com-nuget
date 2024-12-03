@@ -7,6 +7,9 @@ ms.topic: conceptual
 
 # NuGet 6.12 Release Notes
 
+> [!NOTE]
+> In response to developers' feedback to ensure builds continuity when updating to .NET SDK 9, we have reverted the default value of NuGetAuditMode to `direct` in Visual Studio 17.12.3 and .NET 9.0.101.
+
 NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
