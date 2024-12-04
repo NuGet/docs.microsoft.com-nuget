@@ -118,7 +118,7 @@ When referring to package dependencies, NuGet supports using interval notation f
 
 ### Best Practice
 
-Always specify a version or version range for package dependencies in project files, `packages.config` files, and `.nuspec` files. Without a version or version range, NuGet 2.8.x and earlier chooses the latest available package version when resolving a dependency, whereas NuGet 3.x and later chooses the lowest package version. Specifying a version or version range avoids this uncertainty.
+Always specify a version or version range for package dependencies in project files, `packages.config` files, and `.nuspec` files. Without a version or version range, when resolving a dependency, consistent restore results are not guaranteed.
 Avoid specifying an upper bound to version ranges to packages you don't own unless you know of a compatibility problem.  Upper bounds to version ranges harm adoption, discourage consumers from getting valuable updates to dependencies, and in some cases may lead them to use unsupported versions of dependencies.
 
 #### References in project files (PackageReference)
