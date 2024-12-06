@@ -99,6 +99,48 @@ The plugin entry point will be the name of the installed folder, with the .dll e
 > [!Note]
 > There is currently no user story for the installation of the plugins. It's as simple as moving the required files into the predetermined location.
 
+### Support for Plugins Installed as .NET Tools
+
+Starting 6.13, NuGet now supports plugins installed as global .NET tools. This enables plugin authors to publish their plugins as .NET tools, simplifying the deployment process.
+
+#### Key Features
+
+1. Plugins installed as .NET tools must follow a naming convention: **`nuget-plugin-*`**.
+2. Upon installation, these plugins are added to the `PATH` by the .NET SDK. NuGet scans the `PATH` environment variable for executables with names starting with `nuget-plugin-`.
+3. On Windows, NuGet looks for `.exe` or `.bat` files, while on Linux and macOS, it identifies plugins by checking for the executable bit.
+4. These plugins are launched in a separate process, consistent with the existing design.
+
+#### Example Workflow
+
+**For Plugin Authors:**
+
+1. Add the following property to the plugin project:
+
+    ```xml
+    <PropertyGroup>
+      <PackAsTool>true</PackAsTool>
+      <ToolCommandName>nuget-plugin-myplugin</ToolCommandName>
+    </PropertyGroup>
+    ```
+
+2. Publish the plugin as a .NET tool using `dotnet pack`.
+
+**For Consumers:**
+
+1. Install the plugin using:
+
+    ```bash
+    dotnet tool install -g nuget-plugin-myplugin
+    ```
+
+2. Use the plugin seamlessly in scenarios requiring NuGet authentication or operations like `dotnet restore --interactive`.
+
+> **Note:** Plugins installed as .NET tools provide a consistent experience across .NET Core and .NET Framework, eliminating the need to maintain separate plugins for each framework.
+
+### Security Considerations
+
+.NET tools run in full trust. It is essential to install only trusted plugins. While this is not a new concern, users should be aware of the risks when installing NuGet plugins via .NET tools.
+
 ## Supported operations
 
 Two operations are supported under the new plugin protocol.
