@@ -71,6 +71,7 @@ CI/CD scenarios and power users can use environment variables to override the be
 - `NUGET_NETFX_PLUGIN_PATHS` - defines the plugins that will be used by the .NET Framework based tooling (NuGet.exe/MSBuild.exe/Visual Studio). Takes precedence over `NUGET_PLUGIN_PATHS`. (NuGet version 5.3+ only)
 - `NUGET_NETCORE_PLUGIN_PATHS` - defines the plugins that will be used by the .NET Core based tooling (dotnet.exe). Takes precedence over `NUGET_PLUGIN_PATHS`. (NuGet version 5.3+ only)
 - `NUGET_PLUGIN_PATHS` - defines the plugins that will be used for that NuGet process, priority preserved. If this environment variable is set, it overrides the convention based discovery. Ignored if either of the framework specific variables is specified.
+                        - Starting 6.13, this can also be used to specify a path to a .Net tools plugin path.
 -  User-location, the NuGet Home location in `%UserProfile%/.nuget/plugins`. This location cannot be overriden. A different root directory will be used for .NET Core and .NET Framework plugins.
 
 | Framework | Root discovery location  |
