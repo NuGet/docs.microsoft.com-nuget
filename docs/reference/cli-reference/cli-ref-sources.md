@@ -55,6 +55,10 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 - **`-Password`**
 
   Specifies the password for authenticating with the source.
+  
+  > [!NOTE]
+  > When using an Azure DevOps Artifacts NuGet feed, this value should be set to a Personal Access Token (PAT) that is set with Read&Write under Packaging.
+  > To access the Personal Access Token section of Azure DevOps, go to https://dev.azure.com/yourprojectname/_usersSettings/tokens where yourprojectname is the name of your project. You can get there also by clicking the User Settings icon next to your logo in Azure DevOps, and selecting Personal Access Tokens.
 
   > [!NOTE]
   > Be aware that encrypted passwords are only supported on Windows.
@@ -75,6 +79,9 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 - **`-UserName`**
 
   Specifies the user name for authenticating with the source.
+
+  > [!NOTE]
+  > When using an Azure DevOps Artifacts NuGet feed, this value is ignored in favor of the Personal Access Toek provided in the Password parameter.
 
 - **`-ValidAuthenticationTypes`**
 
@@ -106,6 +113,8 @@ nuget sources Disable -Name "MyServer"
 nuget sources Enable -Name "nuget.org"
 
 nuget sources add -name foo.bar -source C:\NuGet\local -username foo -password bar -StorePasswordInClearText -configfile %AppData%\NuGet\my.config
+
+nuget sources add -name MyAzureDevOpsSource -source "https://pkgs.dev.azure.com/yourorgname/yourprojectname/_packaging/yourfeedname/nuget/v3/index.json" -username foo -password <Personal Access Token>
 
 nuget sources Update -Name "nuget.org" -ProtocolVersion 3
 ```
