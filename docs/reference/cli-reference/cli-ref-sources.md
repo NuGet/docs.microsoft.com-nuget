@@ -58,7 +58,7 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
   
   > [!NOTE]
   > When using an Azure DevOps Artifacts NuGet feed, this value should be set to a Personal Access Token (PAT) that is set with Read&Write under Packaging.
-  > To access the Personal Access Token section of Azure DevOps, go to https://dev.azure.com/yourprojectname/_usersSettings/tokens where yourprojectname is the name of your project. You can get there also by clicking the User Settings icon next to your logo in Azure DevOps, and selecting Personal Access Tokens.
+  > For information about provisioning Azure DevOps Personal Access Tokens, please review [Azure DevOps - Use personal access tokens](https://learn.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows)
 
   > [!NOTE]
   > Be aware that encrypted passwords are only supported on Windows.
