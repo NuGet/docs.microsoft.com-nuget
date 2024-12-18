@@ -179,3 +179,12 @@ sections:
           If the `target` has been modified manually, NuGet might not be able to detect that it needs removed when migrating.
           
           If your project is `PackageReference` and you still have this target in project file, it should be safe to remove.
+
+      - question: |
+          There is no README in Visual Studio NuGet Package Manager for the selected package.
+        answer: |
+          If you see the message "There is no README available for the selected package version" in Visual Studio NuGet Package Manager, that means that the selected version of the NuGet package does not have an embedded README file.
+          - If this is not the latest version of the package, consider checking the latest version.
+          - If the latest version doesn't have the README file embedded either, and you are not the maintainer of this package, consider filing an issue or contacting the maintainer to request a README.
+          - If you are the maintainer of the package, here is the guide on [how to embed the README in your package](https://aka.ms/nuget/readme). Please note that if you have added the README file on NuGet.org but didn't embed it in your package, the README will not be shown in Visual Studio. 
+
