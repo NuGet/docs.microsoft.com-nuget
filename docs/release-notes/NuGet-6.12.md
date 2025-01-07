@@ -26,7 +26,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.12.3
 
-NuGet 6.12.3 is available in Visual Studio 17.12.5.
+NuGet 6.12.3 is available in Visual Studio 17.12.4.
 
 ### Issues fixed in this release
 
