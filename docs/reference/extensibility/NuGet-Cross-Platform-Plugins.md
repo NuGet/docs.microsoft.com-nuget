@@ -110,8 +110,10 @@ Starting 6.13, NuGet now supports plugins installed as global .NET tools. This e
 
 1. Plugins installed as .NET tools must follow a naming convention: **`nuget-plugin-*`**.
 2. Upon installation, these plugins are added to the `PATH` by the .NET SDK. NuGet scans the `PATH` environment variable for executables with names starting with `nuget-plugin-`.
-3. On Windows, NuGet looks for `.exe` or `.bat` files, while on Linux and macOS, it identifies plugins by checking for the executable bit.
+3. In addition to number 1, on Windows, NuGet looks for `.exe` or `.bat` files, while on Linux and macOS, it identifies plugins by checking for the executable bit.
 4. These plugins are launched in a separate process, consistent with the existing design.
+
+To learn more about creating a .NET tool that works across platforms, refer to [Microsoft's guide on creating .NET global tools](/dotnet/core/tools/global-tools-how-to-create.md).
 
 #### Example Workflow
 
