@@ -35,7 +35,7 @@ To assist authors of existing NuGet repositories keep up to date with NuGet's ne
 ||Added `packageTypes` query parameter to `SearchQueryService` requests|
 |2021|[Embedded readme](#embedded-files)|
 |2023|[PreAuthenticate authenticated requests](#url-structure-for-authenticated-feeds) <br/> [`VulnerabilityInfo` resource](#known-vulnerabilities-database-vulnerabilityinfo)|
-|2025|[PreAuthenticate authenticated requests](#url-structure-for-authenticated-feeds) <br/> [`VulnerabilityInfo` resource](#known-vulnerabilities-database-vulnerabilityinfo) <br/> [Enable embedded README downloads](#enable-embedded-readme-downloads)|
+|2025|[Enable embedded README downloads](#enable-embedded-readme-downloads)|
 
 ## Owner field
 
