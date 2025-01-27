@@ -47,6 +47,8 @@ Under this version, the requirements are as follows:
 - Adhere to the negotiated plugin protocol version.
 - Respond to all requests within a reasonable time period.
 - Honor cancellation requests for any in-progress operation.
+- Plugins installed as global .NET tools starting with NuGet 6.13. These plugins:
+  - Must follow the naming convention `nuget-plugin-*`.
 
 The technical specification is described in more detail in the following specs:
 
