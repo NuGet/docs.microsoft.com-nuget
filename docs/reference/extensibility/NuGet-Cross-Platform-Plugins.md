@@ -52,6 +52,7 @@ The technical specification is described in more detail in the following specs:
 
 - [NuGet Package Download Plugin](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin)
 - [NuGet cross plat authentication plugin](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin)
+- [Dotnet Tools Plugins](https://github.com/NuGet/Home/blob/dev/accepted/2024/support-nuget-authentication-plugins-dotnet-tools.md)
 
 ## Client - Plugin interaction
 
@@ -73,7 +74,7 @@ CI/CD scenarios and power users can use environment variables to override the be
 - `NUGET_PLUGIN_PATHS`
   - defines the plugins that will be used for that NuGet process, priority preserved. If this environment variable is set, it overrides the convention based discovery. Ignored if either of the framework specific variables is specified.
   
-  - Starting 6.13, this can also be used to specify a path to a .Net tools plugin path.
+  - Starting 6.13, this can also be used to specify a path to a .NET tools plugin path.
 -  User-location, the NuGet Home location in `%UserProfile%/.nuget/plugins`. This location cannot be overriden. A different root directory will be used for .NET Core and .NET Framework plugins.
 
 | Framework | Root discovery location  |
@@ -101,50 +102,6 @@ The plugin entry point will be the name of the installed folder, with the .dll e
 
 > [!Note]
 > There is currently no user story for the installation of the plugins. It's as simple as moving the required files into the predetermined location.
-
-### Support for Plugins Installed as .NET Tools
-
-Starting 6.13, NuGet now supports plugins installed as global .NET tools. This enables plugin authors to publish their plugins as .NET tools, simplifying the deployment process.
-
-#### Key Features
-
-1. Plugins installed as .NET tools must follow a naming convention: **`nuget-plugin-*`**.
-2. Upon installation, these plugins are added to the `PATH` by the .NET SDK. NuGet scans the `PATH` environment variable for executables with names starting with `nuget-plugin-`.
-3. In addition to number 1, on Windows, NuGet looks for `.exe` or `.bat` files, while on Linux and macOS, it identifies plugins by checking for the executable bit.
-4. These plugins are launched in a separate process, consistent with the existing design.
-
-To learn more about creating a .NET tool that works across platforms, refer to [Microsoft's guide on creating .NET global tools](/dotnet/core/tools/global-tools-how-to-create.md).
-
-#### Example Workflow
-
-**For Plugin Authors:**
-
-1. Add the following property to the plugin project:
-
-    ```xml
-    <PropertyGroup>
-      <PackAsTool>true</PackAsTool>
-      <ToolCommandName>nuget-plugin-myplugin</ToolCommandName>
-    </PropertyGroup>
-    ```
-
-2. Publish the plugin as a .NET tool using `dotnet pack`.
-
-**For Consumers:**
-
-1. Install the plugin using:
-
-    ```bash
-    dotnet tool install -g nuget-plugin-myplugin
-    ```
-
-2. Use the plugin seamlessly in scenarios requiring NuGet authentication or operations like `dotnet restore --interactive`.
-
-> **Note:** Plugins installed as .NET tools provide a consistent experience across .NET Core and .NET Framework, eliminating the need to maintain separate plugins for each framework.
-
-### Security Considerations
-
-.NET tools run in full trust. It is essential to install only trusted plugins. While this is not a new concern, users should be aware of the risks when installing NuGet plugins via .NET tools.
 
 ## Supported operations
 
