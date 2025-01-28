@@ -68,6 +68,8 @@ When using a floating version, NuGet resolves the highest version of a package t
 > [!Note]
 > Floating version resolution does not take into account whether or not a package is listed.
 > Floating version resolution will be resolved locally if the conditions can be satisfied with packages in the Global Package Folder.
+
+> [!Note]
 > For more examples regarding pre-release floating versions see the [proposal.](https://github.com/NuGet/Home/wiki/Support-pre-release-packages-with-floating-versions)
 
 #### Direct dependency wins
