@@ -107,5 +107,7 @@ nuget sources Enable -Name "nuget.org"
 
 nuget sources add -name foo.bar -source C:\NuGet\local -username foo -password bar -StorePasswordInClearText -configfile %AppData%\NuGet\my.config
 
+nuget sources add -name MyAzureDevOpsSource -source "https://pkgs.dev.azure.com/yourorgname/yourprojectname/_packaging/yourfeedname/nuget/v3/index.json" -username ignored -password <Personal Access Token>
+
 nuget sources Update -Name "nuget.org" -ProtocolVersion 3
 ```
