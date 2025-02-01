@@ -10,9 +10,10 @@ ms.topic: reference
 # project.json reference
 
 > [!Important]
-> This content is deprecated. Projects should use either the `packages.config` or PackageReference formats.
+> This content is deprecated. Projects should use the PackageReference formats.
+> Learn how to [migrate your project.json project to PackageReference](#migrate-projectjson-to-packagereference).
 
-*NuGet 3.x+*
+*NuGet 3.x*
 
 The `project.json` file maintains a list of packages used in a project, known as a package management format. It supersedes `packages.config` but is in turn superseded by [PackageReference](../consume-packages/package-references-in-project-files.md) with NuGet 4.0+.
 
@@ -36,6 +37,18 @@ The [`project.lock.json`](#projectlockjson) file (described below) is also used 
     }
 }
 ```
+
+## Migrate project.json to PackageReference
+
+The migration between project.json and PackageReference is straightforward. The easiest way to do it to use the built-in migrator in the latest Visual Studio 2022.
+
+1. Load the project.json project in Visual Studio.
+1. Go to the solution explorer of the project.json project and find the dependencies node.
+1. Click `Migrate project.json to PackageReference...`!
+
+![Migrating from project.json to PackageReference](media/project-json-migrator.png)
+
+Alternatively, you may use the [dotnet migrate](/dotnet/core/tools/dotnet-migrate), or do the migration manually by taking all of the content from the project.json file and replacing it with the equivalent [PackageReference syntax](../consume-packages/Package-References-in-Project-Files.md).
 
 ## Dependencies
 
