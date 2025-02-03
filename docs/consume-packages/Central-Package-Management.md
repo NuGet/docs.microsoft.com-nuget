@@ -38,6 +38,11 @@ Central package management applies to all `<PackageReference>`-based MSBuild pro
 To get started with central package management, you must create a `Directory.Packages.props` file at the root of your repository and set the MSBuild property
 `ManagePackageVersionsCentrally` to `true`.
 
+You can create it manually or you can use the dotnet CLI:
+``` shell
+dotnet new packagesprops
+```
+
 Inside, you then define each of the respective package versions required of your projects using `<PackageVersion />` elements that define the package ID and
 version.
 
