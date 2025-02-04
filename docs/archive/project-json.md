@@ -40,7 +40,7 @@ The [`project.lock.json`](#projectlockjson) file (described below) is also used 
 
 ## Migrate project.json to PackageReference
 
-The migration between project.json and PackageReference is straightforward. The easiest way to do it to use the built-in migrator in the latest Visual Studio 2022.
+The migration between project.json and PackageReference is straightforward. The easiest way to do it to use the built-in migrator in the latest Visual Studio 2022, Update 14.
 
 1. Load the project.json project in Visual Studio.
 1. Go to the solution explorer of the project.json project and find the dependencies node.
