@@ -43,8 +43,8 @@ The value of the `@id` is a URL string containing any of the following placehold
 
 Name        | Type    | Required | Notes
 ----------- | ------- | -------- | -----
-`{lower_id}`      | string  | no       | The package ID, lowercased
-`{lower_version}` | string  | no       | The package version, lowercased
+`{lower_id}`      | string  | yes       | The package ID, lowercased
+`{lower_version}` | string  | yes       | The package version, lowercased
 
 Both `lower_id` and `lower_version` are lowercased using the rules implemented by .NET's
 [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant&preserve-view=true)
