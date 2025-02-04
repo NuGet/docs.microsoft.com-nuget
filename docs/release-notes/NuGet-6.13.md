@@ -1,7 +1,7 @@
 ---
 title: NuGet 6.13 Release Notes
 description: Release notes for NuGet 6.13 including new features, bug fixes, and DCRs.
-author: [Nigusu](https://github.com/Nigusu-Allehu)
+author: zivkan
 ms.date: 2/4/2025
 ms.topic: conceptual
 ---
@@ -12,7 +12,7 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.13**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.13](https://visualstudio.microsoft.com/downloads/) | [<TODO: Full SDK Version>](https://dotnet.microsoft.com/download/dotnet/<TODO: SDKMajorMinorVersionOnly)<sup>1</sup> |
+| [**6.13**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.13](https://visualstudio.microsoft.com/downloads/) | [9.0.2xx](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
@@ -118,6 +118,7 @@ Thank you to all the contributors who helped make this NuGet release awesome!
   * [6025](https://github.com/NuGet/NuGet.Client/pull/6025) Fix typo in EnhancedHttpRetryHelper.cs
 * [jimmylewis](https://github.com/NuGet/NuGet.Client/pull/6027)
   * [6027](https://github.com/NuGet/NuGet.Client/pull/6027) Refactor calls to EnsureVisualStudioHost() to a base [TestInitialize] method
+  
 **TODO: Issues that could not be categorized. Make sure the issue has the correct milestone (if required) or an appropriate Type label - StillOpens:**
 
 * Document PrunePackageReference and all the details around it  - [#14002](https://github.com/NuGet/Home/issues/14002)
