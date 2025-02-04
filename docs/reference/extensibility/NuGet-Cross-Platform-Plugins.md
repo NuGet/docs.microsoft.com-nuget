@@ -47,8 +47,12 @@ Under this version, the requirements are as follows:
 - Adhere to the negotiated plugin protocol version.
 - Respond to all requests within a reasonable time period.
 - Honor cancellation requests for any in-progress operation.
-- Plugins installed as global .NET tools starting with NuGet 6.13. These plugins:
-  - Must follow the naming convention `nuget-plugin-*`.
+- **Starting with NuGet 6.13, executable plugins (including global .NET tools) must follow these requirements:**  
+  - Naming Convention: Must follow the pattern `nuget-plugin-*`.  
+  - Windows:  
+    - Must be either `.exe` or `.bat` files.  
+  - Linux:  
+    - Must have their executable permissions enabled.
 
 The technical specification is described in more detail in the following specs:
 
@@ -76,7 +80,11 @@ CI/CD scenarios and power users can use environment variables to override the be
 - `NUGET_PLUGIN_PATHS`
   - defines the plugins that will be used for that NuGet process, priority preserved. If this environment variable is set, it overrides the convention based discovery. Ignored if either of the framework specific variables is specified.
   
-  - Starting 6.13, this can also be used to specify a path to a .NET tools plugin path.
+  - **Starting with NuGet 6.13:**  
+    - Can specify paths to executable plugin files, including .NET tools plugins.  
+    - Supports both file paths and folders containing plugin files.  
+    - **Windows:** Supports `.exe` and `.bat` files.  
+    - **Linux:** Requires executable permissions (`chmod +x`).
 -  User-location, the NuGet Home location in `%UserProfile%/.nuget/plugins`. This location cannot be overriden. A different root directory will be used for .NET Core and .NET Framework plugins.
 
 | Framework | Root discovery location  |
