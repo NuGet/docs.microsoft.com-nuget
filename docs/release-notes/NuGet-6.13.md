@@ -1,28 +1,139 @@
 ---
 title: NuGet 6.13 Release Notes
 description: Release notes for NuGet 6.13 including new features, bug fixes, and DCRs.
-author: zivkan
+author: [Nigusu](https://github.com/Nigusu-Allehu)
+ms.date: 2/4/2025
 ms.topic: conceptual
 ---
-# NuGet 6.13 Release Notes
 
-<!--
-    This is intentionally not yet added to TOC.md.
-    When this version is ready for release:
-    1. Rename this file to the next version
-    2. Change the version strings in this file to the next version
-    3. Use the release tool to create the real release notes for the version ready for release
-    4. Add the release notes to TOC.yml
--->
+# NuGet 6.13 Release Notes
 
 NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.13**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.13](https://visualstudio.microsoft.com/downloads/) | [9.0.2xx](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
+| [**6.13**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.13](https://visualstudio.microsoft.com/downloads/) | [<TODO: Full SDK Version>](https://dotnet.microsoft.com/download/dotnet/<TODO: SDKMajorMinorVersionOnly)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
-## Not yet released
+## Summary: What's New in 6.13
 
-This version of NuGet is in preview and these release notes will be updated when it is released.
+* Detect if restore used NuGetAudit or not for PackageReference projects - [#13778](https://github.com/NuGet/Home/issues/13778)
+
+* [Epic] Support for credential providers deployed via .NET tools - [#13742](https://github.com/NuGet/Home/issues/13742)
+
+* Support for credential providers deployed via .NET tools - [#12567](https://github.com/NuGet/Home/issues/12567)
+
+### Breaking changes
+
+* Support "Supplied by Platform" scenario in restore - [#7344](https://github.com/NuGet/Home/issues/7344)
+
+### Issues fixed in this release
+
+* Add indicator for deprecated and vulnerable packages to Package Details tab header. - [#13974](https://github.com/NuGet/Home/issues/13974)
+
+* Navigation telemetry for 'Clear All NuGet Storage' Command in VS Settings - [#13968](https://github.com/NuGet/Home/issues/13968)
+
+* New dependency resolver downloads more packages than before - [#13943](https://github.com/NuGet/Home/issues/13943)
+
+* Nuget Packages Manager screen for Solution automatically selects transitive dependencies - [#13893](https://github.com/NuGet/Home/issues/13893)
+
+* Debugging large repos with static graph-based restore is slow - [#13876](https://github.com/NuGet/Home/issues/13876)
+
+* NuGet Client SDK packages updating to net8.0 - [#13842](https://github.com/NuGet/Home/issues/13842)
+
+* Promote NU3043 warning to error in .NET 10 - [#13814](https://github.com/NuGet/Home/issues/13814)
+
+* dotnet nuget why should check RID specific packages - [#13718](https://github.com/NuGet/Home/issues/13718)
+
+* Allow specifying the msbuild binlog path when invoking static graph restore to avoid modifying the environment - [#10789](https://github.com/NuGet/Home/issues/10789)
+
+* Setting "Allow format selection on first package install" meaning is unclear - [#14016](https://github.com/NuGet/Home/issues/14016)
+
+* New dependency resolver does not handle floating versions correctly in some situations - [#13992](https://github.com/NuGet/Home/issues/13992)
+
+* New dependency resolver erroneously reports NU1605 (downgrade) when using transitive pinning a direct dependency and a downgrade exists in a package graph - [#13938](https://github.com/NuGet/Home/issues/13938)
+
+* NuGet Restore restoring old versions of transitive dependencies when direct dependency does not have guidelines for user's targeted .NET Framework - [#13934](https://github.com/NuGet/Home/issues/13934)
+
+* [Bug Bash] The “README” tab doesn’t show in the right panel of the PM UI after installing package - [#13924](https://github.com/NuGet/Home/issues/13924)
+
+* [Bug Bash] The tab “README” & “Package Details” should left-align with the content of each tab in the detail panel of PM UI  - [#13910](https://github.com/NuGet/Home/issues/13910)
+
+* `dotnet nuget why` reports missing argument, even though it ran - [#13908](https://github.com/NuGet/Home/issues/13908)
+
+* Project and package in the same graph with the same name but different dependencies may lead to incorrect versions of the dependencies of that id  - [#13888](https://github.com/NuGet/Home/issues/13888)
+
+* Spacing adjustments in Details Pane Tabs - [#13880](https://github.com/NuGet/Home/issues/13880)
+
+* The focus border on the Details Pane Tab content is being truncated - [#13879](https://github.com/NuGet/Home/issues/13879)
+
+* JAWS is reading the entire contents of the Package Details Tab when first visiting it - [#13878](https://github.com/NuGet/Home/issues/13878)
+
+* ContentItemCollection.PopulateItemGroups unnecessarily allocates - [#13851](https://github.com/NuGet/Home/issues/13851)
+
+* Read and write .nupkg.metadata files with System.Text.Json - [#13835](https://github.com/NuGet/Home/issues/13835)
+
+* NuGet Fails in Containers When HOME Is Not Set - [#13834](https://github.com/NuGet/Home/issues/13834)
+
+* Signing:  key not disposed - [#13823](https://github.com/NuGet/Home/issues/13823)
+
+* Walk TFMs in parallel when collecting pack outputs - [#13776](https://github.com/NuGet/Home/issues/13776)
+
+* PERF: NuGet Cloning operations are showing heavily in allocations during VS solution load - [#13647](https://github.com/NuGet/Home/issues/13647)
+
+* Fetching Vulnerability Resources doesn't respect cancellation - [#13644](https://github.com/NuGet/Home/issues/13644)
+
+* Wrong order of arguments in logs for centralized package version (string `Info_AddPkgCPM`) - [#13155](https://github.com/NuGet/Home/issues/13155)
+
+* Satellite assemblies for three-letter languages are not copied from NuGet package - [#12253](https://github.com/NuGet/Home/issues/12253)
+
+* Nuget pack doesn't support blank <version> in .nuspec even though version is passed on the command line - [#7987](https://github.com/NuGet/Home/issues/7987)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.13.1.3...6.12.3.1)
+
+### Community contributions
+
+Thank you to all the contributors who helped make this NuGet release awesome!
+
+* [SimonCropp](https://github.com/NuGet/NuGet.Client/pull/6185)
+  * [6185](https://github.com/NuGet/NuGet.Client/pull/6185) reduce memory in ManifestMetadata
+  * [6168](https://github.com/NuGet/NuGet.Client/pull/6168) remove duplicate dictionary lookups
+  * [6166](https://github.com/NuGet/NuGet.Client/pull/6166) remove redundant Count() in GlobalPackageFolderRepositories
+  * [6165](https://github.com/NuGet/NuGet.Client/pull/6165) avoid Any call in GetCommandAttribute
+  * [6167](https://github.com/NuGet/NuGet.Client/pull/6167) remove redundant casts
+* [baronfel](https://github.com/NuGet/NuGet.Client/pull/6124)
+  * [6124](https://github.com/NuGet/NuGet.Client/pull/6124) Expand Locale parser to support three-character language codes
+  * [6018](https://github.com/NuGet/NuGet.Client/pull/6018) Update _WalkEachTargetPerFramework to walk TFMs in parallel
+* [ToddGrun](https://github.com/NuGet/NuGet.Client/pull/6098)
+  * [6098](https://github.com/NuGet/NuGet.Client/pull/6098) Modify ContentItemCollection.PopulateItemGroups to use pooling for highly allocated temporary data structures
+  * [5930](https://github.com/NuGet/NuGet.Client/pull/5930) Attempt to move several data structures to be immutable
+* [mthalman](https://github.com/NuGet/NuGet.Client/pull/6212)
+  * [6212](https://github.com/NuGet/NuGet.Client/pull/6212) Fix formatting in GraphOperations
+* [kasperk81](https://github.com/NuGet/NuGet.Client/pull/6072)
+  * [6072](https://github.com/NuGet/NuGet.Client/pull/6072) add SpecialFolder.UserProfile fallback
+* [MichaelSimons](https://github.com/NuGet/NuGet.Client/pull/6102)
+  * [6102](https://github.com/NuGet/NuGet.Client/pull/6102) Update source-build team references
+* [akoeplinger](https://github.com/NuGet/NuGet.Client/pull/6025)
+  * [6025](https://github.com/NuGet/NuGet.Client/pull/6025) Fix typo in EnhancedHttpRetryHelper.cs
+* [jimmylewis](https://github.com/NuGet/NuGet.Client/pull/6027)
+  * [6027](https://github.com/NuGet/NuGet.Client/pull/6027) Refactor calls to EnsureVisualStudioHost() to a base [TestInitialize] method
+**TODO: Issues that could not be categorized. Make sure the issue has the correct milestone (if required) or an appropriate Type label - StillOpens:**
+
+* Document PrunePackageReference and all the details around it  - [#14002](https://github.com/NuGet/Home/issues/14002)
+
+* Update docs to notify customers that NU3043 warning is promoted to an error. - [#13963](https://github.com/NuGet/Home/issues/13963)
+
+* Project/Package with same id in the same graph may lead to discrepancy in behavior of new/old algorithm - [#13889](https://github.com/NuGet/Home/issues/13889)
+
+* ListPackage_WithPrivateHttpSourceCredentialServiceIsInvokedAsNeeded_Succeeds test can hang - [#13874](https://github.com/NuGet/Home/issues/13874)
+
+* NuGetPushCommandTest.PushCommand_PushTimeoutErrorMessage causes a test hang - [#13864](https://github.com/NuGet/Home/issues/13864)
+
+* Document .net tools Plugin feature - [#13858](https://github.com/NuGet/Home/issues/13858)
+
+* update docs that plugins no longer require authenticode - [#13850](https://github.com/NuGet/Home/issues/13850)
+
+* Document how to validate if restore ran audit on all projects - [#13802](https://github.com/NuGet/Home/issues/13802)
+
+* Analyze the user gestures that defeat no-op, specifically clean-build & rebuild - [#6987](https://github.com/NuGet/Home/issues/6987)
