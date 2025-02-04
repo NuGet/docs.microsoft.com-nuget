@@ -122,6 +122,7 @@ For an idea of how central package management may look like, refer to our [sampl
 
 You can automatically override a transitive package version even without an explicit top-level `<PackageReference />` by opting into a feature known as
 transitive pinning. This promotes a transitive dependency to a top-level dependency implicitly on your behalf when necessary.
+Note that downgrades are allowed when transitive pinning a package. If you attempt to pin a package to a lower version than the one requested by your dependencies, restore will raise a [NU1109](../reference/errors-and-warnings/NU1109.md) error.
 
 You can enable this feature by setting the MSBuild property `CentralPackageTransitivePinningEnabled` to `true` in a project or in a `Directory.Packages.props`
 or `Directory.Build.props` import file:
@@ -131,6 +132,45 @@ or `Directory.Build.props` import file:
   <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
 </PropertyGroup>
 ```
+
+### Transitive pinning and pack
+
+When a package is transitively pinned, your project uses a higher than the one requested by your dependencies.
+If you create a package from your project, in order to ensure that your package will work, NuGet will promote the transitively pinned dependencies to explicit dependencies in the nuspec.
+
+In the following example, `PackageA 1.0.0` has a dependency on `PackageB 1.0.0`.
+
+```xml
+<Project>
+  <ItemGroup>
+    <PackageVersion Include="PackageA" Version="1.0.0" />
+    <PackageVersion Include="PackageB" Version="2.0.0" />
+  </ItemGroup>
+</Project>
+```
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="PackageA" />
+  </ItemGroup>
+</Project>
+```
+
+When you use the pack command to create a package, both packages will appear in the dependency group.
+
+```xml
+      <group targetFramework="net6.0">
+        <dependency id="PackageA" version="6.12.1" exclude="Build,Analyzers" />
+        <dependency id="PackageB" version="6.12.1" exclude="Build,Analyzers" />
+      </group>
+```
+
+Because of this, the use of transitive pinning should be carefully evaluated when authoring a library as it may lead to dependencies you did not expect.
 
 ## Overriding package versions
 
@@ -181,6 +221,7 @@ If you'd like to disable central package management for any a particular project
 ```
 
 ## Global Package References
+
 > [!Note]
 > This feature is only available in Visual Studio 2022 17.4 or higher, .NET SDK 7.0.100.preview7 or higher, and NuGet 6.4 or higher.
 
