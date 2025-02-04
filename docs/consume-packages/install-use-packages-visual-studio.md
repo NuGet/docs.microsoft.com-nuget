@@ -54,7 +54,7 @@ To find and install a NuGet package with Visual Studio, follow these steps:
     - Select a package to see detailed package information.
     The details pane on the right appears and enables you to select a version to install.
     ![Screenshot showing the NuGet Package Manager window with the Browse tab selected.](media/package-manager-package-details.png)
-    You can see information about the owner(s), author(s), license, etc., on the Package Details tab and the package README file (if it is pprovided by the author) on the README tab.
+    You can see package metadata, information about the owner(s), author(s), license, etc., in the Package Details tab and the package README file (if it is provided by the package author) in the README tab.
     ![Screenshot showing the NuGet Package Manager window with the README tab selected.](media/package-manager-package-readme.png)
 
 1. In the right pane, select a **Version** from the dropdown list. If you want to include prerelease versions in the **Version** list, select **Include prerelease**.
