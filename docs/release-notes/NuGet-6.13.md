@@ -20,8 +20,6 @@ NuGet distribution vehicles:
 
 * Detect if restore used NuGetAudit or not for PackageReference projects - [#13778](https://github.com/NuGet/Home/issues/13778)
 
-* [Epic] Support for credential providers deployed via .NET tools - [#13742](https://github.com/NuGet/Home/issues/13742)
-
 * Support for credential providers deployed via .NET tools - [#12567](https://github.com/NuGet/Home/issues/12567)
 
 ### Breaking changes
@@ -119,22 +117,3 @@ Thank you to all the contributors who helped make this NuGet release awesome!
 * [jimmylewis](https://github.com/NuGet/NuGet.Client/pull/6027)
   * [6027](https://github.com/NuGet/NuGet.Client/pull/6027) Refactor calls to EnsureVisualStudioHost() to a base [TestInitialize] method
   
-**TODO: Issues that could not be categorized. Make sure the issue has the correct milestone (if required) or an appropriate Type label - StillOpens:**
-
-* Document PrunePackageReference and all the details around it  - [#14002](https://github.com/NuGet/Home/issues/14002)
-
-* Update docs to notify customers that NU3043 warning is promoted to an error. - [#13963](https://github.com/NuGet/Home/issues/13963)
-
-* Project/Package with same id in the same graph may lead to discrepancy in behavior of new/old algorithm - [#13889](https://github.com/NuGet/Home/issues/13889)
-
-* ListPackage_WithPrivateHttpSourceCredentialServiceIsInvokedAsNeeded_Succeeds test can hang - [#13874](https://github.com/NuGet/Home/issues/13874)
-
-* NuGetPushCommandTest.PushCommand_PushTimeoutErrorMessage causes a test hang - [#13864](https://github.com/NuGet/Home/issues/13864)
-
-* Document .net tools Plugin feature - [#13858](https://github.com/NuGet/Home/issues/13858)
-
-* update docs that plugins no longer require authenticode - [#13850](https://github.com/NuGet/Home/issues/13850)
-
-* Document how to validate if restore ran audit on all projects - [#13802](https://github.com/NuGet/Home/issues/13802)
-
-* Analyze the user gestures that defeat no-op, specifically clean-build & rebuild - [#6987](https://github.com/NuGet/Home/issues/6987)
