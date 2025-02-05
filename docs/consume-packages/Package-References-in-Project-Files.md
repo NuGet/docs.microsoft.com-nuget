@@ -495,9 +495,8 @@ Pruning is only supported for transitive packages. The following table illustrat
 |-----------------|----------|
 | Transitive package coming through another package | Prune |
 | Transitive package coming through another project | Prune |
-| Direct `PackageReference` | Warn and do not prune |
-| Matches the id of `ProjectReference` | Warn and do not prune |
-| Matches the id of the current project | Error |
+| Direct `PackageReference` | Raise the [NU1510](../reference/errors-and-warnings/NU1510.md) warning and do not prune |
+| Matches the id of `ProjectReference` | Raise the [NU1511](../reference/errors-and-warnings/NU1511.md) warning and do not prune |
 
 ### PrunePackageReference applications
 
