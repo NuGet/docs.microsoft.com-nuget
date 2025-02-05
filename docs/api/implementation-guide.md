@@ -35,6 +35,7 @@ To assist authors of existing NuGet repositories keep up to date with NuGet's ne
 ||Added `packageTypes` query parameter to `SearchQueryService` requests|
 |2021|[Embedded readme](#embedded-files)|
 |2023|[PreAuthenticate authenticated requests](#url-structure-for-authenticated-feeds) <br/> [`VulnerabilityInfo` resource](#known-vulnerabilities-database-vulnerabilityinfo)|
+|2025|[Enable embedded README downloads](#enable-embedded-readme-downloads)|
 
 ## Owner field
 
@@ -140,3 +141,7 @@ In this case, every request to the service index will have additional latency, d
 
 While NuGet's V3 API was designed to work on a static file server, the search resource is the exception that always requires a dynamic web service to process requests.
 If you wish to host search, or indeed any other NuGet API resource, on different servers, in order to benefit from `HttpClientHandler`'s `PreAuthenticate`, you will need to use a reverse proxy to ensure all customer facing URLs in the service index meet the "same or subdirectory" rule.
+
+## Enable embedded README downloads
+
+A [new resource](./readme-template-resource.md) was documented for constructing a URL that can be used to download a README for a given package. This will allow client, like the Package Management UI in VS, to display the embedded README for packages which haven't been previously installed by the user. The client will construct this URL and attempt to download the README, using the response to the request to determine if a README is available. This means servers should expect multiple requests to the constructed endpoint as users navigate the PM UI. 
