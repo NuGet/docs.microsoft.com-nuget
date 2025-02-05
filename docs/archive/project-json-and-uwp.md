@@ -10,7 +10,8 @@ ms.topic: conceptual
 # project.json and UWP
 
 > [!Important]
-> This content is deprecated. Projects should use either the `packages.config` or PackageReference formats.
+> This content is deprecated. Projects should use the PackageReference formats.
+> Learn how to [migrate your project.json project to PackageReference](./project-json.md#migrate-projectjson-to-packagereference).
 
 This document describes the package structure that employs features in NuGet 3+ (Visual Studio 2015 and later). The `minClientVersion` property of your `.nuspec` can be used to state that you require the features described here by setting it to 3.1.
 
