@@ -458,3 +458,52 @@ You can leave off `$(AssetTargetFallback)` if you wish to overwrite, instead of 
 > If you are using a [.NET SDK based project](/dotnet/core/sdk), appropriate `$(AssetTargetFallback)` values are configured and you do not need to set them manually.
 >
 > `$(PackageTargetFallback)` was an earlier feature that attempted to address this challenge, but it is fundamentally broken and *should* not be used. To migrate from `$(PackageTargetFallback)` to `$(AssetTargetFallback)`, simply change the property name.
+
+## PrunePackageReference
+
+The .NET Runtime is constantly evolving, with performance improvements and new APIs each release.
+There is a lot of functionality that's available within the runtime, but also as packages, such as [System..Text.Json](https://www.nuget.org/packages/System.Text.Json). This can often lead to a `System.Text.Json 8.0.0` in a project targeting `.NET 9` or `.NET 8`. This dependency is unnecessary and the build conflict resolution would not use the assembly coming from the package since it's already available in the .NET Runtime.
+Starting in in [NuGet version 6.13](..\release-notes\NuGet-6.13.md) and .NET SDK 9.0.200, `PrunePackageReference` enables the pruning of these packages at restore time for .NET SDK based projects.
+
+Package pruning is available as an opt-in feature with the .NET 9 SDK, and will be enabled by default for all `.NET` frameworks and `>= .NET Standard 2.0` starting with .NET 10 SDK.
+
+Package pruning is only available with the default dependency resolver as released in 6.12.
+
+### PrunePackageReference specification
+
+The list of packages to be pruned is defined with the `PrunePackageReference` item.
+
+| Attributes | Description |
+|------------|-------------|
+| Version | Specifies the maximum version to be pruned. `1.0.0` means that all packages up to and including 1.0.0 will be pruned. For `1.0.0`, `0.9.0` and `1.0.0` will be pruned, but `1.0.1` would not. |
+
+The following properties can be used to modify the pruning behavior.
+
+| PropertyName | Description |
+|--------------|-------------|
+| RestoreEnablePackagePruning  | Enables package pruning for the packages specified with `PrunePackageReference`. This property is per framework and the valid values are `true` and `false`. Defaults may differ based on the .NET SDK as defined above. |
+
+The .NET SDK predefines the list of packages to be pruned for you.
+
+### How PrunePackageReference works
+
+When the restore algorithm encounters a package specified to be pruned, it removes the package from the graph. This package id is not downloaded and does not appear in the assets file libraries or targets section. When a package is pruned, there is a detailed verbosity message indicating that the package id has been removed for the given framework.
+
+Pruning is only supported for transitive packages. The following table illustrates various pruning behaviors.
+
+| Dependency disposition | Behavior |
+|-----------------|----------|
+| Transitive package coming through another package | Prune |
+| Transitive package coming through another project | Prune |
+| Direct `PackageReference` | Warn and do not prune |
+| Matches the id of `ProjectReference` | Warn and do not prune |
+| Matches the id of the current project | Error |
+
+### PrunePackageReference applications
+
+The benefits of package pruning are two-fold:
+
+- Performance benefits, by virtue of reducing the number of packages within a dependency graph
+- Reduction of false positives by component scanners such as `NuGetAudit`
+
+Pruning is particularly valuable when `NuGetAuditMode` is set to `all`. If you are using the .NET 9, we recommend you try out pruning by setting `RestoreEnablePackagePruning` to `true`.
