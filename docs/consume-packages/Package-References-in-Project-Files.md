@@ -61,7 +61,7 @@ This may be useful, if you reference projects which are PackageReference styled 
 
 ## PackageReference and sources
 
-In PackageReference projects, the transitive dependency versions are resolved at restore time. As such, in PackageReference projects all sources need to be available for all restores. 
+In PackageReference projects, the transitive dependency versions are resolved at restore time. As such, in PackageReference projects all sources need to be available for all restores.
 
 ## Floating Versions
 
@@ -285,7 +285,7 @@ To suppress a warning project wide, consider doing:
 </ItemGroup>
 ```
 
-Sometimes warnings apply only to a certain package in the graph. We can choose to suppress that warning more selectively by adding a `NoWarn` on the PackageReference item. 
+Sometimes warnings apply only to a certain package in the graph. We can choose to suppress that warning more selectively by adding a `NoWarn` on the PackageReference item.
 
 ```xml
 <PropertyGroup>
@@ -307,15 +307,15 @@ When in Visual Studio, you can also [suppress warnings](/visualstudio/ide/how-to
 
 Input to NuGet restore is a set of `PackageReference` items from the project file (top-level or direct dependencies) and the output is a full closure of all the package dependencies including transitive dependencies. NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed. However, there are some scenarios where it is unable to do so. For example:
 
-* When you use floating versions like `<PackageReference Include="My.Sample.Lib" Version="4.*"/>`. While the intention here is to float to the latest version on every restore of packages, there are scenarios where users require the graph to be locked to a certain latest version and float to a later version, if available, upon an explicit gesture.
-* A newer version of the package matching PackageReference version requirements is published. E.g. 
+- When you use floating versions like `<PackageReference Include="My.Sample.Lib" Version="4.*"/>`. While the intention here is to float to the latest version on every restore of packages, there are scenarios where users require the graph to be locked to a certain latest version and float to a later version, if available, upon an explicit gesture.
+- A newer version of the package matching PackageReference version requirements is published. E.g.
 
-  * Day 1: if you specified `<PackageReference Include="My.Sample.Lib" Version="4.0.0"/>` but the versions available on the 
+  - Day 1: if you specified `<PackageReference Include="My.Sample.Lib" Version="4.0.0"/>` but the versions available on the
   NuGet repositories were 4.1.0, 4.2.0 and 4.3.0. In this case, NuGet would have resolved to  4.1.0 (nearest minimum version)
 
-  * Day 2: Version 4.0.0 gets published. NuGet will now find the exact match and start resolving to 4.0.0
+  - Day 2: Version 4.0.0 gets published. NuGet will now find the exact match and start resolving to 4.0.0
 
-* A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraint. This results in NuGet finding the best match when it cannot resolve to the deleted version.
+- A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraint. This results in NuGet finding the best match when it cannot resolve to the deleted version.
 
 ### Enabling the lock file
 
@@ -329,12 +329,13 @@ In order to persist the full closure of package dependencies you can opt-in to t
 </PropertyGroup>    
 ```
 
-If this property is set, NuGet restore will generate a lock file - `packages.lock.json` file at the project root directory that lists all the package dependencies. 
+If this property is set, NuGet restore will generate a lock file - `packages.lock.json` file at the project root directory that lists all the package dependencies.
 
 > [!Note]
 > Once a project has `packages.lock.json` file in its root directory, the lock file is always used with restore even if the property `RestorePackagesWithLockFile` is not set. So another way to opt-in to this feature is to create a dummy blank `packages.lock.json` file in the project's root directory.
 
 ### `restore` behavior with lock file
+
 If a lock file is present for project, NuGet uses this lock file to run `restore`. NuGet does a quick check to see if there were any changes in the package dependencies as mentioned in the project file (or dependent projects' files) and if there were no changes it just restores the packages mentioned in the lock file. There is no re-evaluation of package dependencies.
 
 If NuGet detects a change in the defined dependencies as mentioned in the project file(s), it re-evaluates the package graph and updates the lock file to reflect the new package closure for the project.
@@ -366,6 +367,7 @@ You may also set this conditional MSBuild property in your project file:
 If locked mode is `true`, restore will either restore the exact packages as listed in the lock file or fail if you updated the defined package dependencies for the project after lock file was created.
 
 ### Make lock file part of your source repository
+
 If you are building an application, an executable and the project in question is at the start of the dependency chain then do check in the lock file to the source code repository so that NuGet can make use of it during restore.
 
 However, if your project is a library project that you do not ship or a common code project on which other projects depend upon, you **should not** check in the lock file as part of your source code. There is no harm in keeping the lock file but the locked package dependencies for the common code project may not be used, as listed in the lock file, during the restore/build of a project that depends on this common-code project.
@@ -388,7 +390,7 @@ You can control various behaviors of restore with lock file as described below:
 | NuGet.exe option | dotnet option | MSBuild equivalent option | Description |
 |:--- |:--- |:--- |:--- |
 | `-UseLockFile` |`--use-lock-file` | RestorePackagesWithLockFile | Opts into the usage of a lock file. |
-| `-LockedMode` | `--locked-mode` | RestoreLockedMode | Enables locked mode for restore. This is useful in CI/CD scenarios where you want repeatable builds.|   
+| `-LockedMode` | `--locked-mode` | RestoreLockedMode | Enables locked mode for restore. This is useful in CI/CD scenarios where you want repeatable builds.|
 | `-ForceEvaluate` | `--force-evaluate` | RestoreForceEvaluate | This option is useful with packages with floating version defined in the project. By default, NuGet restore will not update the package version automatically upon each restore unless you run restore with this option. |
 | `-LockFilePath` | `--lock-file-path` | NuGetLockFilePath | Defines a custom lock file location for a project. By default, NuGet supports `packages.lock.json` at the root directory. If you have multiple projects in the same directory, NuGet supports project specific lock file `packages.<project_name>.lock.json` |
 
@@ -458,3 +460,51 @@ You can leave off `$(AssetTargetFallback)` if you wish to overwrite, instead of 
 > If you are using a [.NET SDK based project](/dotnet/core/sdk), appropriate `$(AssetTargetFallback)` values are configured and you do not need to set them manually.
 >
 > `$(PackageTargetFallback)` was an earlier feature that attempted to address this challenge, but it is fundamentally broken and *should* not be used. To migrate from `$(PackageTargetFallback)` to `$(AssetTargetFallback)`, simply change the property name.
+
+## PrunePackageReference
+
+The .NET Runtime is constantly evolving, with performance improvements and new APIs each release.
+There is a lot of functionality that's available within the runtime, but also as packages, such as [System..Text.Json](https://www.nuget.org/packages/System.Text.Json). This can often lead to a `System.Text.Json 8.0.0` in a project targeting `.NET 9` or `.NET 8`. This dependency is unnecessary and the build conflict resolution would not use the assembly coming from the package since it's already available in the .NET Runtime.
+Starting in in [NuGet version 6.13](..\release-notes\NuGet-6.13.md) and .NET SDK 9.0.200, `PrunePackageReference` enables the pruning of these packages at restore time for .NET SDK based projects.
+
+Package pruning is available as an opt-in feature with the .NET 9 SDK, and will be enabled by default for all `.NET` frameworks and `>= .NET Standard 2.0` starting with .NET 10 SDK.
+
+Package pruning is only available with the default dependency resolver as [released in 6.12](#nuget-dependency-resolver).
+
+### PrunePackageReference specification
+
+The list of packages to be pruned is defined with the `PrunePackageReference` item.
+
+| Attributes | Description |
+|------------|-------------|
+| Version | Specifies the maximum version to be pruned. `1.0.0` means that all packages up to and including 1.0.0 will be pruned. For `1.0.0`, `0.9.0` and `1.0.0` will be pruned, but `1.0.1` would not. |
+
+The following properties can be used to modify the pruning behavior.
+
+| PropertyName | Description |
+|--------------|-------------|
+| RestoreEnablePackagePruning  | Enables package pruning for the packages specified with `PrunePackageReference`. This property is per target framework and the valid values are `true` and `false`. Defaults may differ based on the .NET SDK as defined above. |
+
+The .NET SDK predefines the list of packages to be pruned for you.
+
+### How PrunePackageReference works
+
+When a package is specified to be pruned during restore, it is removed from the dependency graph. This package is not downloaded and does not appear in any of the outputs of NuGet. When a package is pruned, there is a detailed verbosity message indicating that the package has been removed for the given target framework.
+
+Pruning is only supported for transitive packages, meaning packages that are referenced by other packages or projects. The following table illustrates various package pruning behaviors.
+
+| Dependency disposition | Behavior |
+|-----------------|----------|
+| Matches the ID of a transitive package coming through another package | Prune |
+| Matches the ID of a transitive package coming through another project | Prune |
+| Matches the ID of a direct `PackageReference` | Raise the [NU1510](../reference/errors-and-warnings/NU1510.md) warning and do not prune |
+| Matches the ID of a `ProjectReference` | Raise the [NU1511](../reference/errors-and-warnings/NU1511.md) warning and do not prune |
+
+### PrunePackageReference applications
+
+The benefits of package pruning are two-fold:
+
+- Performance benefits, by virtue of reducing the number of packages within a dependency graph
+- Reduction of false positives by component scanners such as `NuGetAudit`
+
+Pruning is particularly valuable when [auditing](./../concepts/Auditing-Packages.md) packages with `NuGetAuditMode` is set to `all`. If you are using the .NET 9, we recommend you try out pruning by setting `RestoreEnablePackagePruning` to `true`.
