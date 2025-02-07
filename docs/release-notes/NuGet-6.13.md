@@ -26,19 +26,19 @@ NuGet distribution vehicles:
 
 * Allow specifying the msbuild binlog path when invoking static graph restore to avoid modifying the environment - [#10789](https://github.com/NuGet/Home/issues/10789)
 
-### New Dependency Resolver Fixes
-
-* New dependency resolver downloads more packages than before - [#13943](https://github.com/NuGet/Home/issues/13943)
-
-* New dependency resolver does not handle floating versions correctly in some situations - [#13992](https://github.com/NuGet/Home/issues/13992)
-
-* New dependency resolver erroneously reports NU1605 (downgrade) when using transitive pinning a direct dependency and a downgrade exists in a package graph - [#13938](https://github.com/NuGet/Home/issues/13938)
-
-* NuGet Restore restoring old versions of transitive dependencies when direct dependency does not have guidelines for user's targeted .NET Framework - [#13934](https://github.com/NuGet/Home/issues/13934)
-
-* Project and package in the same graph with the same name but different dependencies may lead to incorrect versions of the dependencies of that id  - [#13888](https://github.com/NuGet/Home/issues/13888)
-
 ### Issues fixed in this release
+
+* New Dependency Resolver Fixes
+
+  * New dependency resolver downloads more packages than before - [#13943](https://github.com/NuGet/Home/issues/13943)
+
+  * New dependency resolver does not handle floating versions correctly in some situations - [#13992](https://github.com/NuGet/Home/issues/13992)
+
+  * New dependency resolver erroneously reports NU1605 (downgrade) when using transitive pinning a direct dependency and a downgrade exists in a package graph - [#13938](https://github.com/NuGet/Home/issues/13938)
+
+  * NuGet Restore restoring old versions of transitive dependencies when direct dependency does not have guidelines for user's targeted .NET Framework - [#13934](https://github.com/NuGet/Home/issues/13934)
+
+  * Project and package in the same graph with the same name but different dependencies may lead to incorrect versions of the dependencies of that id  - [#13888](https://github.com/NuGet/Home/issues/13888)
 
 * Detect if restore used NuGetAudit or not for PackageReference projects - [#13778](https://github.com/NuGet/Home/issues/13778)
 
