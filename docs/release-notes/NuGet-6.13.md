@@ -1,7 +1,7 @@
 ---
 title: NuGet 6.13 Release Notes
 description: Release notes for NuGet 6.13 including new features, bug fixes, and DCRs.
-author: zivkan
+author: [nyenework](https://github.com/Nigusu-Allehu)
 ms.date: 2/4/2025
 ms.topic: conceptual
 ---
@@ -26,8 +26,6 @@ NuGet distribution vehicles:
 
 * Allow specifying the msbuild binlog path when invoking static graph restore to avoid modifying the environment - [#10789](https://github.com/NuGet/Home/issues/10789)
 
-### Issues fixed in this release
-
 * New Dependency Resolver Fixes
 
   * New dependency resolver downloads more packages than before - [#13943](https://github.com/NuGet/Home/issues/13943)
@@ -39,6 +37,8 @@ NuGet distribution vehicles:
   * NuGet Restore restoring old versions of transitive dependencies when direct dependency does not have guidelines for user's targeted .NET Framework - [#13934](https://github.com/NuGet/Home/issues/13934)
 
   * Project and package in the same graph with the same name but different dependencies may lead to incorrect versions of the dependencies of that id  - [#13888](https://github.com/NuGet/Home/issues/13888)
+
+### Issues fixed in this release
 
 * Detect if restore used NuGetAudit or not for PackageReference projects - [#13778](https://github.com/NuGet/Home/issues/13778)
 
