@@ -47,11 +47,18 @@ Under this version, the requirements are as follows:
 - Adhere to the negotiated plugin protocol version.
 - Respond to all requests within a reasonable time period.
 - Honor cancellation requests for any in-progress operation.
+- **Starting with NuGet 6.13, executable plugins (including global .NET tools) must follow these requirements:**  
+  - Naming Convention: Must follow the pattern `nuget-plugin-*`.  
+  - Windows:  
+    - Must be either `.exe` or `.bat` files.  
+  - Linux:  
+    - Must have their executable permissions enabled.
 
 The technical specification is described in more detail in the following specs:
 
 - [NuGet Package Download Plugin](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin)
 - [NuGet cross plat authentication plugin](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin)
+- [Dotnet Tools Plugins](https://github.com/NuGet/Home/blob/dev/accepted/2024/support-nuget-authentication-plugins-dotnet-tools.md)
 
 ## Client - Plugin interaction
 
@@ -70,7 +77,14 @@ CI/CD scenarios and power users can use environment variables to override the be
 
 - `NUGET_NETFX_PLUGIN_PATHS` - defines the plugins that will be used by the .NET Framework based tooling (NuGet.exe/MSBuild.exe/Visual Studio). Takes precedence over `NUGET_PLUGIN_PATHS`. (NuGet version 5.3+ only)
 - `NUGET_NETCORE_PLUGIN_PATHS` - defines the plugins that will be used by the .NET Core based tooling (dotnet.exe). Takes precedence over `NUGET_PLUGIN_PATHS`. (NuGet version 5.3+ only)
-- `NUGET_PLUGIN_PATHS` - defines the plugins that will be used for that NuGet process, priority preserved. If this environment variable is set, it overrides the convention based discovery. Ignored if either of the framework specific variables is specified.
+- `NUGET_PLUGIN_PATHS`
+  - defines the plugins that will be used for that NuGet process, priority preserved. If this environment variable is set, it overrides the convention based discovery. Ignored if either of the framework specific variables is specified.
+  
+  - **Starting with NuGet 6.13:**  
+    - Can specify paths to executable plugin files, including .NET tools plugins.  
+    - Supports both file paths and folders containing plugin files.  
+    - **Windows:** Supports `.exe` and `.bat` files.  
+    - **Linux:** Requires executable permissions (`chmod +x`).
 -  User-location, the NuGet Home location in `%UserProfile%/.nuget/plugins`. This location cannot be overriden. A different root directory will be used for .NET Core and .NET Framework plugins.
 
 | Framework | Root discovery location  |
