@@ -18,21 +18,33 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.13
 
-* Detect if restore used NuGetAudit or not for PackageReference projects - [#13778](https://github.com/NuGet/Home/issues/13778)
-
 * Support for credential providers deployed via .NET tools - [#12567](https://github.com/NuGet/Home/issues/12567)
-
-### Breaking changes
 
 * Support "Supplied by Platform" scenario in restore - [#7344](https://github.com/NuGet/Home/issues/7344)
 
+* dotnet nuget why should check RID specific packages - [#13718](https://github.com/NuGet/Home/issues/13718)
+
+* Allow specifying the msbuild binlog path when invoking static graph restore to avoid modifying the environment - [#10789](https://github.com/NuGet/Home/issues/10789)
+
+### New Dependency Resolver Fixes
+
+* New dependency resolver downloads more packages than before - [#13943](https://github.com/NuGet/Home/issues/13943)
+
+* New dependency resolver does not handle floating versions correctly in some situations - [#13992](https://github.com/NuGet/Home/issues/13992)
+
+* New dependency resolver erroneously reports NU1605 (downgrade) when using transitive pinning a direct dependency and a downgrade exists in a package graph - [#13938](https://github.com/NuGet/Home/issues/13938)
+
+* NuGet Restore restoring old versions of transitive dependencies when direct dependency does not have guidelines for user's targeted .NET Framework - [#13934](https://github.com/NuGet/Home/issues/13934)
+
+* Project and package in the same graph with the same name but different dependencies may lead to incorrect versions of the dependencies of that id  - [#13888](https://github.com/NuGet/Home/issues/13888)
+
 ### Issues fixed in this release
+
+* Detect if restore used NuGetAudit or not for PackageReference projects - [#13778](https://github.com/NuGet/Home/issues/13778)
 
 * Add indicator for deprecated and vulnerable packages to Package Details tab header. - [#13974](https://github.com/NuGet/Home/issues/13974)
 
 * Navigation telemetry for 'Clear All NuGet Storage' Command in VS Settings - [#13968](https://github.com/NuGet/Home/issues/13968)
-
-* New dependency resolver downloads more packages than before - [#13943](https://github.com/NuGet/Home/issues/13943)
 
 * Nuget Packages Manager screen for Solution automatically selects transitive dependencies - [#13893](https://github.com/NuGet/Home/issues/13893)
 
@@ -42,25 +54,13 @@ NuGet distribution vehicles:
 
 * Promote NU3043 warning to error in .NET 10 - [#13814](https://github.com/NuGet/Home/issues/13814)
 
-* dotnet nuget why should check RID specific packages - [#13718](https://github.com/NuGet/Home/issues/13718)
-
-* Allow specifying the msbuild binlog path when invoking static graph restore to avoid modifying the environment - [#10789](https://github.com/NuGet/Home/issues/10789)
-
 * Setting "Allow format selection on first package install" meaning is unclear - [#14016](https://github.com/NuGet/Home/issues/14016)
-
-* New dependency resolver does not handle floating versions correctly in some situations - [#13992](https://github.com/NuGet/Home/issues/13992)
-
-* New dependency resolver erroneously reports NU1605 (downgrade) when using transitive pinning a direct dependency and a downgrade exists in a package graph - [#13938](https://github.com/NuGet/Home/issues/13938)
-
-* NuGet Restore restoring old versions of transitive dependencies when direct dependency does not have guidelines for user's targeted .NET Framework - [#13934](https://github.com/NuGet/Home/issues/13934)
 
 * [Bug Bash] The “README” tab doesn’t show in the right panel of the PM UI after installing package - [#13924](https://github.com/NuGet/Home/issues/13924)
 
 * [Bug Bash] The tab “README” & “Package Details” should left-align with the content of each tab in the detail panel of PM UI  - [#13910](https://github.com/NuGet/Home/issues/13910)
 
 * `dotnet nuget why` reports missing argument, even though it ran - [#13908](https://github.com/NuGet/Home/issues/13908)
-
-* Project and package in the same graph with the same name but different dependencies may lead to incorrect versions of the dependencies of that id  - [#13888](https://github.com/NuGet/Home/issues/13888)
 
 * Spacing adjustments in Details Pane Tabs - [#13880](https://github.com/NuGet/Home/issues/13880)
 
