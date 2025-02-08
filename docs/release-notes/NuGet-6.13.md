@@ -1,7 +1,8 @@
 ---
 title: NuGet 6.13 Release Notes
 description: Release notes for NuGet 6.13 including new features, bug fixes, and DCRs.
-author: [nyenework](https://github.com/Nigusu-Allehu)
+author: Nigusu-Allehu
+ms.author: nyenework
 ms.date: 2/4/2025
 ms.topic: conceptual
 ---
@@ -86,7 +87,7 @@ NuGet distribution vehicles:
 
 * Satellite assemblies for three-letter languages are not copied from NuGet package - [#12253](https://github.com/NuGet/Home/issues/12253)
 
-* Nuget pack doesn't support blank <version> in .nuspec even though version is passed on the command line - [#7987](https://github.com/NuGet/Home/issues/7987)
+* Nuget pack doesn't support blank &lt;version&gt; in .nuspec even though version is passed on the command line - [#7987](https://github.com/NuGet/Home/issues/7987)
 
 [List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.13.1.3...6.12.3.1)
 
