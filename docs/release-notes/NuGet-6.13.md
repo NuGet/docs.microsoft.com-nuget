@@ -39,6 +39,8 @@ NuGet distribution vehicles:
 
   * Project and package in the same graph with the same name but different dependencies may lead to incorrect versions of the dependencies of that id  - [#13888](https://github.com/NuGet/Home/issues/13888)
 
+* Updated the Package Manager UI to render package README if they are available - [#12583](https://github.com/NuGet/Home/issues/12583)
+
 ### Issues fixed in this release
 
 * Detect if restore used NuGetAudit or not for PackageReference projects - [#13778](https://github.com/NuGet/Home/issues/13778)
@@ -56,10 +58,6 @@ NuGet distribution vehicles:
 * Promote NU3043 warning to error in .NET 10 - [#13814](https://github.com/NuGet/Home/issues/13814)
 
 * Setting "Allow format selection on first package install" meaning is unclear - [#14016](https://github.com/NuGet/Home/issues/14016)
-
-* [Bug Bash] The “README” tab doesn’t show in the right panel of the PM UI after installing package - [#13924](https://github.com/NuGet/Home/issues/13924)
-
-* [Bug Bash] The tab “README” & “Package Details” should left-align with the content of each tab in the detail panel of PM UI  - [#13910](https://github.com/NuGet/Home/issues/13910)
 
 * `dotnet nuget why` reports missing argument, even though it ran - [#13908](https://github.com/NuGet/Home/issues/13908)
 
