@@ -17,7 +17,15 @@ NuGet distribution vehicles:
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
+## Summary: What's New in 6.13.1
+
+NuGet 6.13.1 is available in Visual Studio 17.13.
+
+* Support for new slnx solution format - [#14034](https://github.com/NuGet/Home/issues/14034)
+
 ## Summary: What's New in 6.13
+
+NuGet 6.13.0 is available in the .NET 9.0.200 SDK.
 
 * Support for credential providers deployed via .NET tools - [#12567](https://github.com/NuGet/Home/issues/12567)
 
