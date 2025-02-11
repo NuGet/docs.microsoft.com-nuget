@@ -29,7 +29,7 @@ NuGet 6.13.0 is available in the .NET 9.0.200 SDK.
 
 * Support for credential providers deployed via .NET tools - [#12567](https://github.com/NuGet/Home/issues/12567)
 
-* Support "Supplied by Platform" scenario in restore - [#7344](https://github.com/NuGet/Home/issues/7344)
+* Opt-in feature: "Supplied by Platform", which removes packages that are supplied by the .NET platform from the dependency graph. This results in better performance and eliminates false positives for vulnerabilities in transitive dependencies. 
 
 * dotnet nuget why should check RID specific packages - [#13718](https://github.com/NuGet/Home/issues/13718)
 
