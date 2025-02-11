@@ -4,6 +4,7 @@ description: How to audit package dependencies for security vulnerabilities and 
 author: JonDouglas
 ms.author: jodou
 ms.topic: conceptual
+ms.date: 02/11/2015
 ---
 
 # Auditing package dependencies for security vulnerabilities
