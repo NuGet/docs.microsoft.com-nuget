@@ -41,7 +41,6 @@ The high level workflow can be described as follows:
 The current protocol version is *2.0.0*.
 Under this version, the requirements are as follows:
 
-- Have a valid, trusted Authenticode signature assemblies that will run on Windows and Mono. There is no special trust requirement for assemblies run on Linux and Mac yet. [Relevant issue](https://github.com/NuGet/Home/issues/6702)
 - Support stateless launching under the current security context of NuGet client tools. For example, NuGet client tools will not perform elevation or additional initialization outside of the plugin protocol described later.
 - Be non interactive, unless explicitly specified.
 - Adhere to the negotiated plugin protocol version.
@@ -53,6 +52,8 @@ Under this version, the requirements are as follows:
     - Must be either `.exe` or `.bat` files.  
   - Linux:  
     - Must have their executable permissions enabled.
+
+NuGet 6.12 (MSBuild 17.12, and .NET SDK 9.0.100) and earlier also required plugins to be Authenticode signed on Windows.
 
 The technical specification is described in more detail in the following specs:
 
