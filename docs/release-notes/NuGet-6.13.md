@@ -49,7 +49,7 @@ NuGet distribution vehicles:
 
 * Navigation telemetry for 'Clear All NuGet Storage' Command in VS Settings - [#13968](https://github.com/NuGet/Home/issues/13968)
 
-* Nuget Packages Manager screen for Solution automatically selects transitive dependencies - [#13893](https://github.com/NuGet/Home/issues/13893)
+* Nuget Package Manager for Solution automatically selects transitive dependencies - [#13893](https://github.com/NuGet/Home/issues/13893)
 
 * Debugging large repos with static graph-based restore is slow - [#13876](https://github.com/NuGet/Home/issues/13876)
 
