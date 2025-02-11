@@ -348,6 +348,7 @@
 ### [Known Issues](release-notes/known-issues.md)
 
 ### NuGet 6.x
+#### [NuGet 6.13](release-notes/NuGet-6.13.md)
 #### [NuGet 6.12](release-notes/NuGet-6.12.md)
 #### [NuGet 6.11](release-notes/NuGet-6.11.md)
 #### [NuGet 6.10](release-notes/NuGet-6.10.md)
