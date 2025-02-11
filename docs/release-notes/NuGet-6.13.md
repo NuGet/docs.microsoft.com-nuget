@@ -47,7 +47,7 @@ NuGet 6.13.0 is available in the .NET 9.0.200 SDK.
 
   * Project and package in the same graph with the same name but different dependencies may lead to incorrect versions of the dependencies of that id  - [#13888](https://github.com/NuGet/Home/issues/13888)
 
-* Updated the Package Manager UI to render package README if they are available - [#12583](https://github.com/NuGet/Home/issues/12583)
+* Package Manager UI in Visual Studio now shows embedded READMEs for NuGet packages, if available - [#12583](https://github.com/NuGet/Home/issues/12583)
 
 ### Issues fixed in this release
 
