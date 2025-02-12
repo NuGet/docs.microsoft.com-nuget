@@ -128,6 +128,7 @@
 #### [Package metadata](api/registration-base-url-resource.md)
 #### [Push and delete](api/package-publish-resource.md)
 #### [Push symbol packages](api/symbol-package-publish-resource.md)
+#### [README URI](api/readme-template-resource.md)
 #### [Report abuse URL](api/report-abuse-resource.md)
 #### [Repository signatures](api/repository-signatures-resource.md)
 #### [Search](api/search-query-service-resource.md)
@@ -185,6 +186,9 @@
 ### [NU1506](reference/errors-and-warnings/NU1506.md)
 ### [NU1507](reference/errors-and-warnings/NU1507.md)
 ### [NU1508](reference/errors-and-warnings/NU1508.md)
+### [NU1509](reference/errors-and-warnings/NU1509.md)
+### [NU1510](reference/errors-and-warnings/NU1510.md)
+### [NU1511](reference/errors-and-warnings/NU1511.md)
 ### [NU1601](reference/errors-and-warnings/NU1601.md)
 ### [NU1602](reference/errors-and-warnings/NU1602.md)
 ### [NU1603](reference/errors-and-warnings/NU1603.md)
@@ -344,6 +348,7 @@
 ### [Known Issues](release-notes/known-issues.md)
 
 ### NuGet 6.x
+#### [NuGet 6.13](release-notes/NuGet-6.13.md)
 #### [NuGet 6.12](release-notes/NuGet-6.12.md)
 #### [NuGet 6.11](release-notes/NuGet-6.11.md)
 #### [NuGet 6.10](release-notes/NuGet-6.10.md)

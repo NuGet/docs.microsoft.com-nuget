@@ -43,7 +43,7 @@ NuGet supports the following configuration properties.
 
 | Group | Warning numbers |
 | --- | --- |
-| Invalid input warnings | [NU1501](./errors-and-warnings/NU1501.md), [NU1502](./errors-and-warnings/NU1502.md), [NU1503](./errors-and-warnings/NU1503.md), [NU1504](./errors-and-warnings/NU1504.md), [NU1505](./errors-and-warnings/NU1505.md), [NU1506](./errors-and-warnings/NU1506.md), [NU1507](./errors-and-warnings/NU1507.md), [NU1508](./errors-and-warnings/NU1508.md) |
+| Invalid input warnings | [NU1501](./errors-and-warnings/NU1501.md), [NU1502](./errors-and-warnings/NU1502.md), [NU1503](./errors-and-warnings/NU1503.md), [NU1504](./errors-and-warnings/NU1504.md), [NU1505](./errors-and-warnings/NU1505.md), [NU1506](./errors-and-warnings/NU1506.md), [NU1507](./errors-and-warnings/NU1507.md), [NU1508](./errors-and-warnings/NU1508.md), [NU1509](./errors-and-warnings/NU1509.md), [NU1510](./errors-and-warnings/NU1510.md), [NU1511](./errors-and-warnings/NU1511.md) |
 | Unexpected package version warnings | [NU1601](./errors-and-warnings/NU1601.md), [NU1602](./errors-and-warnings/NU1602.md), [NU1603](./errors-and-warnings/NU1603.md), [NU1604](./errors-and-warnings/NU1604.md), [NU1605](./errors-and-warnings/NU1605.md), [NU1606](./errors-and-warnings/NU1108.md), [NU1607](./errors-and-warnings/NU1107.md) |
 | Resolver conflict warnings | [NU1608](./errors-and-warnings/NU1608.md) |
 | Package fallback warnings | [NU1701](./errors-and-warnings/NU1701.md), [NU1702](./errors-and-warnings/NU1702.md), [NU1703](./errors-and-warnings/NU1703.md)|
