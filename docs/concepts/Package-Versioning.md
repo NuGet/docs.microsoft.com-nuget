@@ -128,7 +128,7 @@ Avoid specifying an upper bound to version ranges to packages you don't own unle
      Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="6.1" />
 
-<!-- Accepts exactly version 6.1.0. -->
+<!-- Accepts only version 6.1.0. -->
 <PackageReference Include="ExamplePackage" Version="[6.1.0]" />
 
 <!-- Accepts any 6.x.y version.
