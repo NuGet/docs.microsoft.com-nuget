@@ -165,8 +165,8 @@ When you use the pack command to create a package, both packages will appear in 
 
 ```xml
       <group targetFramework="net6.0">
-        <dependency id="PackageA" version="6.12.1" exclude="Build,Analyzers" />
-        <dependency id="PackageB" version="6.12.1" exclude="Build,Analyzers" />
+        <dependency id="PackageA" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="PackageB" version="2.0.0" exclude="Build,Analyzers" />
       </group>
 ```
 
