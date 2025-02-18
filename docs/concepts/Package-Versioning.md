@@ -128,12 +128,12 @@ Avoid specifying an upper bound to version ranges to packages you don't own unle
      Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="6.1" />
 
-<!-- Accepts only version 6.1.0. -->
-<PackageReference Include="ExamplePackage" Version="[6.1.0]" />
-
 <!-- Accepts any 6.x.y version.
      Will resolve to the highest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="6.*" />
+
+<!-- Accepts only version 6.1.0. -->
+<PackageReference Include="ExamplePackage" Version="[6.1.0]" />
 
 <!-- Accepts any version above, but not including 4.1.3. Could be
      used to guarantee a dependency with a specific bug fix. 
