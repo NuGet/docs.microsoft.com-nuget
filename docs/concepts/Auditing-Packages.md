@@ -110,7 +110,7 @@ Alternatively, if you want to keep low and moderate vulnerabilities as warnings,
 
 NuGet in MSBuild 17.13 and .NET 9.0.200 added output properties `RestoreProjectCount`, `RestoreSkippedCount` and `RestoreProjectsAuditedCount` on the restore task.
 This can be used to enforce that audit ran during a restore.
-Note that these output properties are not available with static graph restore.
+Note that these output properties are not available with [static graph restore](../reference/msbuild-targets.md#restoring-with-msbuild-static-graph-evaluation).
 
 Since MSBuild is a scripting language, this can be achieved a number of different ways, but also has the same restrictions as MSBuild has.
 One example is to create a file *Directory.Solution.targets* in the same directory as your solution file, whose contents has a target similar to the following.
