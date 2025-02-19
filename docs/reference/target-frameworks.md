@@ -288,22 +288,5 @@ Additional frameworks defined by third parties provide compatibility with other 
  | | WindowsPhone 8.1 (UWP) |
  | | WindowsPhone 8.0 (SL) |
 
-Additionally, NuGet packages targeting Xamarin can use additional Xamarin-defined frameworks. See [Creating NuGet packages for Xamarin](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/).
-
-| Name | Description | .NET Standard |
-| --- | --- | ---
-| monoandroid | Mono Support for Android OS | netstandard1.4 |
-| monotouch | Mono Support for iOS | netstandard1.4 |
-| monomac | Mono Support for OSX | netstandard1.4 |
-| xamarinios | Support for Xamarin for iOS | netstandard1.4 |
-| xamarinmac | Supports for Xamarin for Mac | netstandard1.4 |
-| xamarinpsthree | Support for Xamarin on Playstation 3 | netstandard1.4 |
-| xamarinpsfour | Support for Xamarin on Playstation 4 | netstandard1.4 |
-| xamarinpsvita | Support for Xamarin on PS Vita | netstandard1.4 |
-| xamarinwatchos | Xamarin for Watch OS | netstandard1.4 |
-| xamarintvos | Xamarin for TV OS | netstandard1.4 |
-| xamarinxboxthreesixty | Xamarin for XBox 360 | netstandard1.4 |
-| xamarinxboxone | Xamarin for XBox One | netstandard1.4 |
-
 > [!Note]
 > Stephen Cleary has created a tool that lists the supported PCLs, which you can find on his post, [Framework profiles in .NET](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html).
