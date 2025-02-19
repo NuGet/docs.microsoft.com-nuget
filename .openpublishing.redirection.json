@@ -386,7 +386,7 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "docs/guides/create-packages-for-xamarin",
+            "source_path": "docs/guides/create-packages-for-xamarin.md",
             "redirect_url": "/nuget",
             "redirect_document_id": false
         }
