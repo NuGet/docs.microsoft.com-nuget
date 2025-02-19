@@ -99,7 +99,7 @@
             "source_path": "docs/Quickstart/Create-and-publish-a-package.md",
             "redirect_url": "/nuget/quickstart/create-and-publish-a-package-using-visual-studio",
             "redirect_document_id": false
-        },        
+        },
         {
             "source_path": "docs/Quickstart/Use-a-Package.md",
             "redirect_url": "/nuget/quickstart/install-and-use-a-package-in-visual-studio",
@@ -383,6 +383,11 @@
         {
             "source_path": "docs/reference/errors-and-warnings/NU1904.md",
             "redirect_url": "/nuget/reference/errors-and-warnings/NU1901-NU1904",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "docs/guides/create-packages-for-xamarin",
+            "redirect_url": "/nuget",
             "redirect_document_id": false
         }
     ]
