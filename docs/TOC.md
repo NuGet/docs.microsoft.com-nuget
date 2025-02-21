@@ -55,7 +55,6 @@
 ### [Create a native package](guides/native-packages.md)
 ### [Create UI controls as a NuGet package](guides/create-UI-controls.md)
 ### [Create an analyzer as a NuGet package](guides/analyzers-conventions.md)
-### [Create a package for Xamarin with Visual Studio 2017 or 2019](guides/create-packages-for-xamarin.md)
 ### [Create a package with COM interop assemblies](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## Sign packages
 ### [Sign a package](create-packages/sign-a-package.md)
