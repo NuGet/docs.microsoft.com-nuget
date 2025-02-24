@@ -4,6 +4,7 @@ description: How to audit package dependencies for security vulnerabilities and 
 author: JonDouglas
 ms.author: jodou
 ms.topic: conceptual
+ms.date: 02/11/2025
 ---
 
 # Auditing package dependencies for security vulnerabilities
@@ -104,6 +105,34 @@ Alternatively, if you want to keep low and moderate vulnerabilities as warnings,
 
 > [!NOTE]
 > MSBuild properties for message severity such as `NoWarn` and `TreatWarningsAsErrors` are not supported for packages.config projects.
+
+## Ensure restore audited projects
+
+NuGet in MSBuild 17.13 and .NET 9.0.200 added output properties `RestoreProjectCount`, `RestoreSkippedCount` and `RestoreProjectsAuditedCount` on the restore task.
+This can be used to enforce that audit ran during a restore.
+Note that these output properties are not available with [static graph restore](../reference/msbuild-targets.md#restoring-with-msbuild-static-graph-evaluation).
+
+Since MSBuild is a scripting language, this can be achieved a number of different ways, but also has the same restrictions as MSBuild has.
+One example is to create a file *Directory.Solution.targets* in the same directory as your solution file, whose contents has a target similar to the following.
+Note that *Directory.Build.props* is commonly used, but is imported by projects.
+However, NuGet's restore target and task runs at the solution level, so needs to be in MSBuild's solution extensibility file, not the project/build file.
+
+```xml
+<Project>
+    <Target Name="AssertRestoreTaskOutputProperties"
+            AfterTargets="Restore"
+            Condition="'$(CI)' == 'true'">
+        <Error
+            Condition="'$(RestoreProjectsAuditedCount)' != '$(RestoreProjectCount)'"
+            Text=""Restore did not audit every project in the solution. Expected: $(RestoreProjectCount) Found: $(RestoreProjectsAuditedCount)"" />
+    </Target>
+</Project>
+```
+
+Depending on your use-case, you may wish to use condition `'$(RestoreProjectCount)' != '$([MSBuild::Add($(RestoreProjectsAuditedCount), $(RestoreSkippedCount))'` on the error message, to account for projects that restore skipped because they were already up to date.
+Similarly, think about if you want this error to happen everywhere, or only in CI pipelines, and what environment variables are defined in your CI environment, and factor this into the target's condition.
+Again, since MSBuild is a scripting language, you can use any of its capabilities to customize your repo however you want.
+Viewing [MSBuild's metaproj](/visualstudio/msbuild/how-to-build-specific-targets-in-solutions-by-using-msbuild-exe#troubleshooting) and [binlogs](/visualstudio/msbuild/msbuild-command-line-reference#switches-for-loggers) are useful to develop and troubleshoot solution level targets.
 
 ## `dotnet list package --vulnerable`
 
