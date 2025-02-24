@@ -87,7 +87,7 @@ Select **Automatically check for missing packages during build in Visual Studio*
 </configuration>
 ```
 
-For non-SDK-style projects, you must select **Allow NuGet to download missing packages** as well as **Automatically check for missing packages during build in Visual Studio** in **Options** to enable automatic restore.
+You must select **Allow NuGet to download missing packages** as well as **Automatically check for missing packages during build in Visual Studio** in **Options** to enable package restore during build.
 
 <a name="choose-default-package-management-format"></a>
 #### Choose the default package management format
