@@ -31,8 +31,7 @@ The NuGet Visual Studio Extension 3.6+ implements an internal CredentialService 
 During credential acquisition, the credential service will try credential providers in the following order, stopping as soon as credentials are acquired:
 
 1. Credentials will be fetched from NuGet configuration files (using the built-in `SettingsCredentialProvider`).
-1. If the package source is on Visual Studio Team Services, the `VisualStudioAccountProvider` will be used.
-1. All other plug-in Visual Studio credential providers will be tried sequentially.
+1. Visual Studio credential providers will be tried sequentially.
 1. Try to use all NuGet cross platform credential providers sequentially.
 1. If no credentials have been acquired yet, the user will be prompted for credentials using a standard basic authentication dialog.
 
