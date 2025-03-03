@@ -3,7 +3,7 @@ title: Find and evaluate NuGet packages
 description: Find and evaluate publicly available NuGet packages for your project by using advanced nuget.org search filters and syntax.
 author: JonDouglas
 ms.author: jodou
-ms.date: 02/08/2024
+ms.date: 03/03/2025
 ms.topic: conceptual
 ---
 
