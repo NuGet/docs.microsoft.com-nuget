@@ -3,7 +3,7 @@ title: "Quickstart: Create and publish a NuGet package using Visual Studio (Wind
 description: A quickstart that shows how to create and publish a .NET NuGet package using Visual Studio for Windows.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/21/2023
+ms.date: 03/03/2025
 ms.topic: quickstart
 ---
 

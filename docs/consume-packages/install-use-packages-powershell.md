@@ -3,7 +3,7 @@ title: Manage NuGet packages with the Visual Studio Package Manager Console
 description: See how to work with NuGet packages by using PowerShell commands in the Visual Studio Package Manager Console.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/21/2023
+ms.date: 03/03/2025
 ms.topic: conceptual
 f1_keywords: 
   - "vs.nuget.packagemanager.console"
