@@ -3,8 +3,8 @@ title: Auditing package dependencies for security vulnerabilities
 description: How to audit package dependencies for security vulnerabilities and acting on security audit reports.
 author: JonDouglas
 ms.author: jodou
-ms.date: 07/19/2024
 ms.topic: conceptual
+ms.date: 02/11/2025
 ---
 
 # Auditing package dependencies for security vulnerabilities
@@ -44,11 +44,9 @@ We recommend that audit is configured at a repository level.
 
 | MSBuild Property | Default | Possible values | Notes |
 |------------------|---------|-----------------|-------|
-| NuGetAuditMode | all (1) | `direct` and `all` | If you'd like to audit both top-level and transitive dependencies, you can set the value to `all`. NuGetAuditMode is not applicable for packages.config projects |
+| NuGetAuditMode | direct | `direct` and `all` | If you'd like to audit top-level dependencies only, you can set the value to `direct`. NuGetAuditMode is not applicable for packages.config projects.  |
 | NuGetAuditLevel | low | `low`, `moderate`, `high`, and `critical` | The minimum severity level to report. If you'd like to see `moderate`, `high`, and `critical` advisories (exclude `low`), set the value to `moderate` |
 | NuGetAudit | true | `true` and `false` | If you wish to not receive security audit reports, you can opt-out of the experience entirely by setting the value to `false` |
-
-(1) NuGetAuditMode defaulted to `direct` when it was introduced in [the .NET 8.0.100 SDK and VS 17.8](../release-notes/NuGet-6.8.md). In [.NET 9.0.100 SDK and VS 17.12](../release-notes/NuGet-6.12.md) the default changed to `all`.
 
 #### Audit Sources
 
@@ -102,16 +100,44 @@ It is available for packages.config from [Visual Studio 17.12 and NuGet 6.12](..
 | [NU1905](../reference/errors-and-warnings/NU1905.md) | An audit source does not provide a vulnerability database |
 
 You can customize your build to treat these warnings as errors to [treat warnings as errors, or treat warnings not as errors](/dotnet/csharp/language-reference/compiler-options/errors-warnings#warningsaserrors-and-warningsnotaserrors).
-For example, if you're already using `<TreatWarningsAsErrors>` to treat all (C#, NuGet, MSBuild, etc) warnings as errors, you can use `<WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>` to prevent vulnerabilities discovered in the future from breaking your build.
-Alternatively, if you want to keep low and moderate vulnerabilities as warnings, but treat high and critical vulnerabilities as errors, and you're not using `TreatWarningsAsErrors`, you can use `<WarningsAsErrors>NU1903;NU1904</WarningsAsErrors>`.
+For example, if you're already using `<TreatWarningsAsErrors>` to treat all (C#, NuGet, MSBuild, etc) warnings as errors, you can use `<WarningsNotAsErrors>$(WarningsNotAsErrors);NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>` to prevent vulnerabilities discovered in the future from breaking your build.
+Alternatively, if you want to keep low and moderate vulnerabilities as warnings, but treat high and critical vulnerabilities as errors, and you're not using `TreatWarningsAsErrors`, you can use `<WarningsAsErrors>$(WarningsAsErrors);NU1903;NU1904</WarningsAsErrors>`.
 
 > [!NOTE]
 > MSBuild properties for message severity such as `NoWarn` and `TreatWarningsAsErrors` are not supported for packages.config projects.
 
+## Ensure restore audited projects
+
+NuGet in MSBuild 17.13 and .NET 9.0.200 added output properties `RestoreProjectCount`, `RestoreSkippedCount` and `RestoreProjectsAuditedCount` on the restore task.
+This can be used to enforce that audit ran during a restore.
+Note that these output properties are not available with [static graph restore](../reference/msbuild-targets.md#restoring-with-msbuild-static-graph-evaluation).
+
+Since MSBuild is a scripting language, this can be achieved a number of different ways, but also has the same restrictions as MSBuild has.
+One example is to create a file *Directory.Solution.targets* in the same directory as your solution file, whose contents has a target similar to the following.
+Note that *Directory.Build.props* is commonly used, but is imported by projects.
+However, NuGet's restore target and task runs at the solution level, so needs to be in MSBuild's solution extensibility file, not the project/build file.
+
+```xml
+<Project>
+    <Target Name="AssertRestoreTaskOutputProperties"
+            AfterTargets="Restore"
+            Condition="'$(CI)' == 'true'">
+        <Error
+            Condition="'$(RestoreProjectsAuditedCount)' != '$(RestoreProjectCount)'"
+            Text=""Restore did not audit every project in the solution. Expected: $(RestoreProjectCount) Found: $(RestoreProjectsAuditedCount)"" />
+    </Target>
+</Project>
+```
+
+Depending on your use-case, you may wish to use condition `'$(RestoreProjectCount)' != '$([MSBuild::Add($(RestoreProjectsAuditedCount), $(RestoreSkippedCount))'` on the error message, to account for projects that restore skipped because they were already up to date.
+Similarly, think about if you want this error to happen everywhere, or only in CI pipelines, and what environment variables are defined in your CI environment, and factor this into the target's condition.
+Again, since MSBuild is a scripting language, you can use any of its capabilities to customize your repo however you want.
+Viewing [MSBuild's metaproj](/visualstudio/msbuild/how-to-build-specific-targets-in-solutions-by-using-msbuild-exe#troubleshooting) and [binlogs](/visualstudio/msbuild/msbuild-command-line-reference#switches-for-loggers) are useful to develop and troubleshoot solution level targets.
+
 ## `dotnet list package --vulnerable`
 
 Once a project is successfully restored, [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) has a `--vulnerable` argument to filter the packages based on which packages have known vulnerabilities.
-Note that `--include-transitive` is not default, so should be included 
+Note that `--include-transitive` is not default, so should be included.
 
 ## Actions when packages with known vulnerabilities are reported
 
@@ -124,6 +150,15 @@ If security vulnerabilities are found and updates are available for the package,
 - Edit the `.csproj` or other package version location (`Directory.Packages.props`) with a newer version containing a security fix.
 - Use the NuGet package manager user interface in Visual Studio to update the individual package.
 - Run the `dotnet add package` command with the respective package ID to update to the latest version.
+
+#### Transitive Packages
+
+If a known vulnerability exists in a top-level package's transitive dependencies, you have these options:
+
+- Add the fixed package version as a direct package reference. **Note:** Be sure to remove this reference when a new package version update becomes available and be sure to maintain the defined attributes for the expected behavior.
+- Use [Central Package Management with the transitive pinning functionality](../consume-packages/Central-Package-Management.md#transitive-pinning).
+- [Suppress the advisory](#excluding-advisories) until it can be addressed.
+- File an issue in the top-level package's tracker to request an update.
 
 ### Security vulnerabilities found with no updates
 

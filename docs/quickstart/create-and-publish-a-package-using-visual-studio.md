@@ -11,7 +11,7 @@ ms.topic: quickstart
 
 With Microsoft Visual Studio, you can create a NuGet package from a .NET class library, and then publish it to nuget.org using a CLI tool.
 
-The quickstart is for Windows users only. If you're using Visual Studio for Mac, see [Create a NuGet package from existing library projects](/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library) or use the [.NET CLI](create-and-publish-a-package-using-the-dotnet-cli.md).
+The quickstart is for Windows users only. If you're using a Mac, use the [.NET CLI](create-and-publish-a-package-using-the-dotnet-cli.md).
 
 ## Prerequisites
 
@@ -214,17 +214,17 @@ In this example, the property specifies a file named *readme.txt* in the project
 3 ----------------------------------------------------
 4
 5 ----Silverlight 4 and Windows Phone 7.1+ projects-----
-6 To use XPATH features: System.Xml.Xpath.dll from the 3 Silverlight 4 SDK must be referenced. 
-7 This is normally found at 
-8 %ProgramFiles(x86)%\Microsoft SDKs\Microsoft SDKs\Silverlight\v4.0\Libraries\Client 
-9 or 
+6 To use XPATH features: System.Xml.Xpath.dll from the 3 Silverlight 4 SDK must be referenced.
+7 This is normally found at
+8 %ProgramFiles(x86)%\Microsoft SDKs\Microsoft SDKs\Silverlight\v4.0\Libraries\Client
+9 or
 10 %ProgramFiles%\Microsoft SDKs\Microsoft SDKs\Silverlight\v4.0\Libraries\Client
 11
 12 ----Silverlight 5 projects-----
-13 To use XPATH features: System.Xml.Xpath.dll from the Silverlight 5 SDK must be referenced. 
-14 This is normally found at 
-15 %ProgramFiles(x86)%\Microsoft SDKs\Microsoft SDKs\Silverlight\v5.0\Libraries\Client 
-16 or 
+13 To use XPATH features: System.Xml.Xpath.dll from the Silverlight 5 SDK must be referenced.
+14 This is normally found at
+15 %ProgramFiles(x86)%\Microsoft SDKs\Microsoft SDKs\Silverlight\v5.0\Libraries\Client
+16 or
 17 %ProgramFiles%\Microsoft SDKs\Microsoft SDKs\Silverlight\v5.0\Libraries\Client
 ```
 

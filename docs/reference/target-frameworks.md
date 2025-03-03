@@ -288,7 +288,7 @@ Additional frameworks defined by third parties provide compatibility with other 
  | | WindowsPhone 8.1 (UWP) |
  | | WindowsPhone 8.0 (SL) |
 
-Additionally, NuGet packages targeting Xamarin can use additional Xamarin-defined frameworks. See [Creating NuGet packages for Xamarin](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/).
+Additionally, NuGet packages targeting Xamarin can use additional Xamarin-defined frameworks:
 
 | Name | Description | .NET Standard |
 | --- | --- | ---
