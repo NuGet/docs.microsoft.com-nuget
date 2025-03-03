@@ -3,7 +3,7 @@ title: Install NuGet client tools
 description: Learn how to install and use the dotnet and NuGet client command-line interface (CLI) tools and the Package Manager tool for Visual Studio.
 author: JonDouglas
 ms.author: jodou
-ms.date: 11/03/2023
+ms.date: 03/03/2025
 ms.topic: quickstart
 ---
 

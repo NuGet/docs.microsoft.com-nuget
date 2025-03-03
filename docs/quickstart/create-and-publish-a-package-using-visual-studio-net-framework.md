@@ -3,7 +3,7 @@ title: "Quickstart: Create and publish a package using Visual Studio (.NET Frame
 description: A quickstart that shows how to create and publish a .NET Framework NuGet package using Visual Studio on Windows.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/21/2023
+ms.date: 03/03/2025
 ms.topic: quickstart
 ---
 

@@ -3,7 +3,7 @@ title: "Quickstart: Create and publish a NuGet package using Visual Studio (Wind
 description: A quickstart that shows how to create and publish a .NET NuGet package using Visual Studio for Windows.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/21/2023
+ms.date: 03/03/2025
 ms.topic: quickstart
 ---
 
@@ -233,9 +233,7 @@ In this example, the property specifies a file named *readme.txt* in the project
 
 ## Related video
 
-> [!VIDEO https://learn.microsoft.com/shows/NuGet-101/Create-and-Publish-a-NuGet-Package-with-Visual-Studio-4-of-5/player]
-
-Find more NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+Find NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
 Congratulations on creating a NuGet package by using a Visual Studio .NET class library. Advance to the next article to learn how to create a NuGet package with the Visual Studio .NET Framework.
 

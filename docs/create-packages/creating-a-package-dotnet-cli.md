@@ -3,7 +3,7 @@ title: Create a NuGet package with the dotnet CLI
 description: Read a detailed guide about the process of designing and creating a NuGet package, including key decision points like files and versioning.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/21/2023
+ms.date: 03/03/2025
 ms.topic: conceptual
 ---
 
