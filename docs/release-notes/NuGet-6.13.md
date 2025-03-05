@@ -20,8 +20,6 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.13.2
 
-NuGet 6.13.2 is available in Visual Studio 17.13.1.
-
 * Skip resolved child dependencies in the new dependency resolver algorithm if an identical one has already been resolved - [#14025](https://github.com/NuGet/Home/issues/14025)
 
 ## Summary: What's New in 6.13.1
