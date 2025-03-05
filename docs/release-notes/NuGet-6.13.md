@@ -17,6 +17,12 @@ NuGet distribution vehicles:
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
+## Summary: What's New in 6.13.2
+
+NuGet 6.13.2 is available in Visual Studio 17.13 and .NET 9.0.200 SDK.
+
+* Skip resolved child dependencies in the new restore resolver algorithm if an identical one has already been resolved - [#14025](https://github.com/NuGet/Home/issues/14025)
+
 ## Summary: What's New in 6.13.1
 
 NuGet 6.13.1 is available in Visual Studio 17.13.
