@@ -21,7 +21,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.13.2
 
-* New restore dependency resolver algorithm fails while resolving identical child dependencies - [#14025](https://github.com/NuGet/Home/issues/14025)
+* New restore dependency resolver fails when resolving identical child dependencies - [#14025](https://github.com/NuGet/Home/issues/14025)
 
 ## Summary: What's New in 6.13.1
 
