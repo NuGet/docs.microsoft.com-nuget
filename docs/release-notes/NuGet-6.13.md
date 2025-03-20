@@ -25,7 +25,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.13.1
 
-NuGet 6.13.1 is available in Visual Studio 17.13.
+NuGet 6.13.1 is available in Visual Studio 17.13 and .NET 9.0.201 SDK.
 
 * Support for new slnx solution format in dotnet nuget why and dotnet list package - [#14034](https://github.com/NuGet/Home/issues/14034)
 
