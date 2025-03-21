@@ -14,7 +14,7 @@ NuGet distribution vehicles:
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
 | [**6.13**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.13](https://visualstudio.microsoft.com/downloads/) | [9.0.2xx](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
-| [**6.13.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.13.1](https://visualstudio.microsoft.com/downloads/) | [9.0.2xx](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
+| [**6.13.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.13.1](https://visualstudio.microsoft.com/downloads/) | [9.0.201](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
 | [**6.13.2**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.13.2](https://visualstudio.microsoft.com/downloads/) | [9.0.2xx](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
