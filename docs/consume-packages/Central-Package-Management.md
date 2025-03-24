@@ -18,7 +18,7 @@ Historically, NuGet package dependencies have been managed in one of two locatio
 - `packages.config` - An XML file used in older project types to maintain the list of packages referenced by the project.
 - `<PackageReference />` - An XML element used in MSBuild projects defines NuGet package dependencies.
 
-Starting with [NuGet 6.2](..\release-notes\NuGet-6.2.md), you can centrally manage your dependencies in your projects with the addition of a
+Starting with [NuGet 6.2](../release-notes/NuGet-6.2.md), you can centrally manage your dependencies in your projects with the addition of a
 `Directory.Packages.props` file and an MSBuild property.
 
 The feature is available across all NuGet integrated tooling, starting with the following versions.
