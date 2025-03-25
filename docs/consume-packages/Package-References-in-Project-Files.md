@@ -464,7 +464,7 @@ You can leave off `$(AssetTargetFallback)` if you wish to overwrite, instead of 
 ## PrunePackageReference
 
 The .NET Runtime is constantly evolving, with performance improvements and new APIs each release.
-There is a lot of functionality that's available within the runtime, but also as packages, such as [System..Text.Json](https://www.nuget.org/packages/System.Text.Json). This can often lead to a `System.Text.Json 8.0.0` in a project targeting `.NET 9` or `.NET 8`. This dependency is unnecessary and the build conflict resolution would not use the assembly coming from the package since it's already available in the .NET Runtime.
+There is a lot of functionality that's available within the runtime, but also as packages, such as [System.Text.Json](https://www.nuget.org/packages/System.Text.Json). This can often lead to a `System.Text.Json 8.0.0` in a project targeting `.NET 9` or `.NET 8`. This dependency is unnecessary and the build conflict resolution would not use the assembly coming from the package since it's already available in the .NET Runtime.
 Starting in in [NuGet version 6.13](..\release-notes\NuGet-6.13.md) and .NET SDK 9.0.200, `PrunePackageReference` enables the pruning of these packages at restore time for .NET SDK based projects.
 
 Package pruning is available as an opt-in feature with the .NET 9 SDK, and will be enabled by default for all `.NET` frameworks and `>= .NET Standard 2.0` starting with .NET 10 SDK.
