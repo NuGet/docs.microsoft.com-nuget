@@ -27,7 +27,7 @@ Consider including the following items in your readme:
 * Where and how to leave feedback such as link to the project issues, Twitter, bug tracker, or other platform.
 * How to contribute, if applicable.
 
-For example, package README template looks like this:
+For example, you can start with this package README template:
 
 ```text
 # Package readme title, e.g., display name or title of the package (optional)
