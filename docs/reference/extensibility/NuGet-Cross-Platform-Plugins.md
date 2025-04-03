@@ -38,7 +38,8 @@ Under this version, the requirements are as follows:
 - Respond to all requests within a reasonable time period.
 - Honor cancellation requests for any in-progress operation.
 
-Plugins discovered from the PATH environment variable (for example, installed via `dotnet tool`) additionally must match the filename pattern `nuget-plugin-*`.
+Plugins discovered from the PATH environment variable (for example, installed via `dotnet tool`) additionally must match the filename pattern `nuget-plugin-*`. 
+The `nuget-plugin-` part must be written entirely in lowercase letters.
 
 NuGet 6.12 (MSBuild 17.12, and .NET SDK 9.0.100) and earlier also required plugins to be Authenticode signed on Windows.
 
@@ -98,6 +99,7 @@ The plugin entry point will be the name of the installed folder, with the .dll e
 ### PATH discovery
 
 Starting from [NuGet 6.13](../../release-notes/NuGet-6.13.md), NuGet will search each directory provided in the PATH environment variable for files matching the pattern `nuget-plugin-*`.
+The pattern matching is case-sensitive, and `nuget-plugin-` must be written entirely in lowercase letters.
 On Windows the file must have an `.exe` or `.bat` extension.
 On Linux and Mac the file must have the executable bit set.
 
