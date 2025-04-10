@@ -23,11 +23,9 @@ sections:
       - question: |
           Does NuGet support Mono?
         answer: |
-          The command-line tool, `nuget.exe`, builds and runs under Mono 3.2+ and can create packages in Mono.
-          
-          Although `nuget.exe` works fully on Windows, there are known issues on Linux and OS X. Refer to [Mono issues](https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mono) on GitHub.
-          
-          A [graphical client](https://github.com/mrward/monodevelop-nuget-addin) is available as an add-in for MonoDevelop.
+          The command-line tool, `nuget.exe`, builds and runs typically under Windows. NuGet can run on Unix operating systems using `mono`, but it is not officially supported by [NuGet's Support Policy](https://devblogs.microsoft.com/nuget/announcing-nuget-exe-and-nuget-client-sdk-packages-support-policy-keeping-you-informed-and-secure/).
+
+          [Mono has transferred ownership to Wine and is no longer maintained by Microsoft](https://github.com/mono/mono/issues/21796).
           
       - question: |
           How can I determine what a package contains and whether it's stable and useful for my application?
@@ -181,3 +179,12 @@ sections:
           If the `target` has been modified manually, NuGet might not be able to detect that it needs removed when migrating.
           
           If your project is `PackageReference` and you still have this target in project file, it should be safe to remove.
+
+      - question: |
+          There is no README in Visual Studio NuGet Package Manager for the selected package.
+        answer: |
+          If you see the message "There is no README available for the selected package version" in Visual Studio NuGet Package Manager, that means that the selected version of the NuGet package does not have an embedded README file.
+          - If this is not the latest version of the package, consider checking the latest version.
+          - If the latest version doesn't have the README file embedded either, and you are not the maintainer of this package, consider filing an issue or contacting the maintainer to request a README.
+          - If you are the maintainer of the package, here is the guide on [how to embed the README in your package](https://aka.ms/nuget/readme). Please note that if you have added the README file on NuGet.org but didn't embed it in your package, the README will not be shown in Visual Studio. 
+

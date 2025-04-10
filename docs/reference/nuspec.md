@@ -35,7 +35,9 @@ In this topic:
 
 ## General form and schema
 
-The current `nuspec.xsd` schema file can be found in the [NuGet GitHub repository](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Packaging/compiler/resources/nuspec.xsd).
+A `nuspec.xsd` schema file can be found in the [NuGet GitHub repository](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Packaging/compiler/resources/nuspec.xsd).
+Note, that this file only represents the most recent schema for a `.nuspec` file. 
+No officially published versions exists and no version of that file corresponds to any specific NuGet version.  
 
 Within this schema, a `.nuspec` file has the following general form:
 
@@ -64,6 +66,11 @@ All XML element names in the .nuspec file are case-sensitive, as is the case for
 metadata element `<description>` is correct and `<Description>` is not correct. The proper casing for each element name
 is documented below.
 
+> [!Important]
+> While the `.nuspec` file contains a reference to a schema 
+> (`xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd"`),
+> The NuGet-Team has never published a schema file that could be used for automatic schema validation.
+
 ### Required metadata elements
 
 Although the following elements are the minimum requirements for a package, you should consider adding the [optional metadata elements](#optional-metadata-elements) to improve the overall experience developers have with your package. 
@@ -86,9 +93,9 @@ A description of the package for UI display.
 When uploading a package to nuget.org, the `description` field is limited to 4000 characters.
 
 #### authors
-A comma-separated list of packages authors, matching the profile names on nuget.org. These are displayed in the NuGet Gallery on nuget.org and are used to cross-reference packages by the same authors. 
-
-When uploading a package to nuget.org, the `authors` field is limited to 4000 characters.
+A comma-separated list of package authors. 
+The `authors` and the `owners` from the nuspec are ignored when uploading the package to nuget.org.
+For setting package ownership on nuget.org, see [Managing package owners on nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
 
 ### Optional metadata elements
 
@@ -96,7 +103,9 @@ When uploading a package to nuget.org, the `authors` field is limited to 4000 ch
 > [!Important]
 > owners is deprecated. Use authors instead.
 
-A comma-separated list of the package creators using profile names on nuget.org. This is often the same list as in `authors`, and is ignored when uploading the package to nuget.org. See [Managing package owners on nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
+A comma-separated list of package owners. 
+The `owners` from the nuspec is ignored when uploading the package to nuget.org.
+For setting package ownership on nuget.org, see [Managing package owners on nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
 
 #### projectUrl
 A URL for the package's home page, often shown in UI displays as well as nuget.org. 
@@ -816,11 +825,11 @@ C#-specific content for net45 and up
     /contentFiles/cs/net45/sample.cs
 ```
 
-Empty folders can use `.` to opt out of providing content for certain combinations of language and TxM, for example:
+Empty folders can use `_._` to opt out of providing content for certain combinations of language and TxM, for example:
 
 ```
 /contentFiles/vb/any/code.vb
-/contentFiles/cs/any/.
+/contentFiles/cs/any/_._
 ```
 
 #### Example contentFiles section

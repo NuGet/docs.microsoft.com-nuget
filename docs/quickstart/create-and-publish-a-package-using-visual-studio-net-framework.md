@@ -3,7 +3,7 @@ title: "Quickstart: Create and publish a package using Visual Studio (.NET Frame
 description: A quickstart that shows how to create and publish a .NET Framework NuGet package using Visual Studio on Windows.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/21/2023
+ms.date: 03/03/2025
 ms.topic: quickstart
 ---
 
@@ -54,7 +54,7 @@ To create a class library project, follow these steps:
    }
    ```
 
-   Within a real-world NuGet package, you'd likely implement many useful features with which others can build applications. You can also set the target frameworks. For examples, see [UWP](../guides/create-uwp-packages.md) and [Xamarin](../guides/create-packages-for-xamarin.md).
+   Within a real-world NuGet package, you'd likely implement many useful features with which others can build applications. You can also set the target frameworks. For an example, see [UWP](../guides/create-uwp-packages.md).
 
 ## Configure project properties for the package
 

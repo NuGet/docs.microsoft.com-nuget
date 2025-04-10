@@ -3,7 +3,7 @@ title: "Quickstart: Install and use a NuGet package in Visual Studio (Windows on
 description: In this quickstart, you learn how to install and use a NuGet package in a Visual Studio project for Windows.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/21/2023
+ms.date: 03/03/2025
 ms.topic: quickstart
 ---
 
@@ -128,8 +128,7 @@ With the `Newtonsoft.Json` package in the project, call its `JsonConvert.Seriali
 
 ## Related video
 
-- [Install and Use a NuGet Package with Visual Studio](/shows/nuget-101/install-and-use-a-nuget-package-with-visual-studio-2-of-5/player)
-- Find more NuGet videos on [Channel 9](/shows/nuget-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+- Find NuGet videos on [Channel 9](/shows/nuget-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
 ## See also
 

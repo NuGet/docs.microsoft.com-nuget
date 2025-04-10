@@ -13,6 +13,9 @@ ms.topic: reference
 
 Manages the list of sources located in the user scope configuration file or a specified configuration file. The user scope configuration file is located at `%appdata%\NuGet\NuGet.Config` (Windows) and `~/.nuget/NuGet/NuGet.Config` (Mac/Linux).
 
+> [!NOTE]
+> Use package sources that you trust.
+
 Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 
 ## Usage
@@ -54,7 +57,7 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
   Specifies the password for authenticating with the source.
 
   > [!NOTE]
-  > Be aware that encrypted passwords are only supported on Windows. 
+  > Be aware that encrypted passwords are only supported on Windows.
   > Moreover, they can only be decrypted on the same machine and by the same user who originally encrypted them.
 
 - **`-src|-Source`**
@@ -87,6 +90,9 @@ where `<operation>` is one of *List, Add, Remove, Enable, Disable,* or *Update*,
 - **`-Verbosity [normal|quiet|detailed]`**
 
   Specifies the amount of detail displayed in the output: `normal` (the default), `quiet`, or `detailed`.
+  
+- **`-AllowInsecureConnections`**
+  Allows HTTP connections for adding or updating packages. Note: This method is not secure. Available starting version 6.12.
 
 Also see [Environment variables](cli-ref-environment-variables.md)
 
@@ -100,6 +106,8 @@ nuget sources Disable -Name "MyServer"
 nuget sources Enable -Name "nuget.org"
 
 nuget sources add -name foo.bar -source C:\NuGet\local -username foo -password bar -StorePasswordInClearText -configfile %AppData%\NuGet\my.config
+
+nuget sources add -name MyAzureDevOpsSource -source "https://pkgs.dev.azure.com/yourorgname/yourprojectname/_packaging/yourfeedname/nuget/v3/index.json" -username ignored -password <Personal Access Token>
 
 nuget sources Update -Name "nuget.org" -ProtocolVersion 3
 ```

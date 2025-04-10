@@ -10,7 +10,8 @@ ms.topic: conceptual
 # Impact of project.json when creating packages
 
 > [!Important]
-> This content is deprecated. Projects should use either the `packages.config` or PackageReference formats.
+> This content is deprecated. Projects should use the PackageReference formats.
+> Learn how to [migrate your project.json project to PackageReference](./project-json.md#migrate-projectjson-to-packagereference).
 
 The `project.json` system used in NuGet 3+ affects package authors in several ways as described in the following sections.
 

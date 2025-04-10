@@ -31,7 +31,7 @@ Contains miscellaneous configuration settings, which can be set using the [`nuge
 | Key | Value |
 | --- | --- |
 | dependencyVersion (`packages.config` only) | The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly. This value is also used by the NuGet Package Manager UI. Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
-| globalPackagesFolder (projects using PackageReference only) | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages` (Windows) or `~/.nuget/packages` (Mac/Linux). A relative path can be used in project-specific `nuget.config` files. This setting is overridden by the `NUGET_PACKAGES` environment variable, which takes precedence. |
+| globalPackagesFolder | The location of the default global packages folder. The default is `%userprofile%\.nuget\packages` (Windows) or `~/.nuget/packages` (Mac/Linux). A relative path can be used in project-specific `nuget.config` files. This setting is overridden by the `NUGET_PACKAGES` environment variable, which takes precedence. |
 | repositoryPath (`packages.config` only) | The location in which to install NuGet packages instead of the default `$(Solutiondir)/packages` folder. A relative path can be used in project-specific `nuget.config` files. |
 | defaultPushSource | Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://<username>:<password>@<domain>`. Passwords are encrypted and cannot be added manually. For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the http_proxy and no_proxy environment variables for those values. For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
@@ -117,26 +117,47 @@ Lists all known package sources. The order is ignored during restore operations 
 | :-- | :-- |
 | **Key** | (name to assign to the package source) |
 | **Value** | The path or URL of the package source. |
-| **protocolVersion** | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. https://api.nuget.org/v3/index.json). Supported in [NuGet 3.0+](/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](/nuget/api/overview) for more information about the version 3 protocol. |
+| **protocolVersion** | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. <https://api.nuget.org/v3/index.json>). Supported in [NuGet 3.0+](/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](/nuget/api/overview) for more information about the version 3 protocol. |
 | **allowInsecureConnections** | When false, or not specified, NuGet will emit a warning when the source uses http, rather than https. If you are confident that communication with this source will never be at risk of interception attacks, you can set the value to true to suppress the warning. Supported in NuGet 6.8+. |
+| **disableTLSCertificateValidation** | This configuration property allows you to disable SSL/TLS certificate validation for your HTTPS server. When set to true, the server will ignore any errors related to SSL/TLS certificates, such as expired or self-signed certificates, and establish the connection without validation. Supported in NuGet 6.11+. |
 
 **Example**:
 
 ```xml
 <packageSources>
-    <clear />    
+    <clear />
     <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
     <add key="Contoso" value="https://contoso.com/packages/" />
     <add key="http-source" value="http://httpsourcetrusted/" allowInsecureConnections="true" />
+    <add key="Invalid-certificate-https-source" value="https://httpsSourceTrusted/" disableTLSCertificateValidation="true" />
     <add key="Test Source" value="c:\packages" />
 </packageSources>
 ```
+
+> [!NOTE]
+> Use package sources that you trust.
 
 > [!NOTE]
 > When using the CLI, you can express a [`RestoreSources`](../reference/msbuild-targets.md#restore-properties) MSBuild property or [`--source`(.NET CLI)](/dotnet/core/tools/dotnet-restore#options) | [`-Source`(NuGet CLI)](/nuget/reference/cli-reference/cli-ref-restore#options) to override the `<packageSources>` defined in the NuGet.config.
 
 > [!Tip]
 > When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
+
+### auditSources
+
+Lists all known audit sources, which [NuGet Audit](../concepts/Auditing-Packages.md#running-a-security-audit-with-restore) will use during restore.
+If no audit sources are provided, restore will use package sources and suppress [NU1905](../reference/errors-and-warnings/NU1905.md).
+`auditSources` was added to [NuGet 6.12](../release-notes/NuGet-6.12.md).
+
+Audit sources support the same attributes as `packageSources` (`protocolVersion`, `allowInsecureConnections`), and sources that require authentication are configured with `packageSourceCredentials`, the same way as `packageSources`.
+
+**Example**:
+```xml
+<auditSources>
+    <clear />
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+</auditSources>
+```
 
 ### packageSourceCredentials
 
@@ -286,7 +307,7 @@ Identifies to the currently active source or indicates the aggregate of all sour
 
 ## trustedSigners section
 
-Stores trusted signers used to allow package while installing or restoring. This list cannot be empty when the user sets `signatureValidationMode` to `require`. 
+Stores trusted signers used to allow package while installing or restoring. This list cannot be empty when the user sets `signatureValidationMode` to `require`.
 
 This section can be updated with the [`nuget trusted-signers` command](../reference/cli-reference/cli-ref-trusted-signers.md).
 
@@ -421,7 +442,6 @@ The table below show environnment variable syntax and path separator support for
 | `%MY_VAR%` | `\`  | Yes | Yes | No | No |
 | `$MY_VAR` | `/`  | No | No | No | No |
 | `$MY_VAR` | `\`  | No | No | No | No |
-
 
 ## Example config file
 

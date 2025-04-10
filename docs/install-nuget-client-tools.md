@@ -3,7 +3,7 @@ title: Install NuGet client tools
 description: Learn how to install and use the dotnet and NuGet client command-line interface (CLI) tools and the Package Manager tool for Visual Studio.
 author: JonDouglas
 ms.author: jodou
-ms.date: 11/03/2023
+ms.date: 03/03/2025
 ms.topic: quickstart
 ---
 
@@ -37,6 +37,28 @@ To get started creating NuGet packages, see these articles:
 The [MSBuild CLI](reference/msbuild-targets.md) also restores and creates packages. MSBuild isn't a general-purpose tool for working with NuGet. This CLI tool is primarily useful on build servers. 
 
 Package Manager Console commands work only within Visual Studio on Windows and don't work within other PowerShell environments.
+
+## Support policy
+
+The Visual Studio for Windows support policy can be found at [Visual Studio Product Lifecycle and Servicing](/visualstudio/productinfo/vs-servicing).
+
+
+The most recent version of NuGet.exe is fully supported and can be relied on for bug fixes, updates, and enhancements.
+For more information on NuGet.exe's support policy, see the [Microsoft Modern Lifecycle Policy](https://aka.ms/lifecycle).
+
+
+The .NET SDK support policy can be found at [.NET and .NET Core Support Policy](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
+
+### Patch Releases
+
+Patched versions of NuGet.exe will be released exclusively when critical security fixes are required for a long-term support (LTS) version of Visual Studio or .NET SDK.
+
+All security bugs should be reported to the Microsoft Security Response Center (MSRC) at [MSRC's report page](https://aka.ms/opensource/security/create-report).
+Also, see the [security policy in the NuGet.Client repo](https://github.com/NuGet/NuGet.Client/blob/dev/SECURITY.md).
+
+### NuGet.exe unlisting
+
+Out-of-support, deprecated, or vulnerable NuGet.exe versions will be removed from [tools.json](./api/tools-json.md).
 
 ## Visual Studio
 
@@ -83,18 +105,18 @@ The following table compares the available features for the dotnet and `nuget.ex
 
 | Feature | dotnet CLI | nuget CLI (Windows) | nuget CLI (Mono) | Visual Studio (Windows) | Visual Studio for Mac |
 | --- | --- | --- | --- | --- | --- |
-| Search packages | | &#10004; | &#10004; | &#10004; | &#10004; |
+| Search packages | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; |
 | Install/uninstall packages | &#10004; | &#10004; (1) | &#10004; | &#10004; | &#10004; |
 | Update packages | &#10004; | &#10004; | | &#10004; | &#10004; |
 | Restore packages | &#10004; | &#10004; | &#10004; (2) | &#10004; | &#10004; |
-| Manage package feeds (sources) | | &#10004; | &#10004; | &#10004; | &#10004; |
+| Manage package feeds (sources) | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; |
 | Manage packages on a feed | &#10004; | &#10004; | &#10004; | | |
 | Set API keys for feeds | | &#10004; | &#10004; | | |
 | Create packages (3) | &#10004; | &#10004; | &#10004; (4) | &#10004; | |
 | Publish packages | &#10004; | &#10004; | &#10004; | &#10004; |  |
 | Replicate packages | | &#10004; | &#10004; | | |
 | Manage *global-package* and cache folders | &#10004; | &#10004; | &#10004; | | |
-| Manage NuGet configuration | | &#10004; | &#10004; | | |
+| Manage NuGet configuration | &#10004; | &#10004; | &#10004; | | |
 
 **Feature notes**
 

@@ -12,20 +12,11 @@ ms.topic: conceptual
 In NuGet 4.8+ support for cross platform plugins has been added.
 This was achieved with by building a new plugin extensibility model, that has to conform to a strict set of rules of operation.
 The plugins are self-contained executables (runnables in the .NET Core world), that the NuGet Clients launch in a separate process.
-This is a true write once, run everywhere plugin. It will work with all NuGet client tools.
-The plugins can be either .NET Framework (NuGet.exe, MSBuild.exe and Visual Studio), or .NET Core (dotnet.exe).
-A versioned communication protocol between the NuGet Client and the plugin is defined. During the startup handshake, the 2 processes negotiate the protocol version.
-
-In order to cover all NuGet client tools scenarios, one would need both a .NET Framework and a .NET Core plugin.
-The below describes the client/framework combinations of the plugins.
-
-| Client tool  | Framework |
-| ------------ | --------- |
-| Visual Studio | .NET Framework |
-| dotnet.exe | .NET Core |
-| NuGet.exe | .NET Framework |
-| MSBuild.exe | .NET Framework |
-| NuGet.exe on Mono | .NET Framework |
+This is a true write once, run everywhere plugin.
+It will work with all NuGet client tools.
+The plugins can be written in any programming language, but the easiest plugin development and installation experience will be with .NET.
+A versioned communication protocol between the NuGet Client and the plugin is defined.
+During the startup handshake, the 2 processes negotiate the protocol version.
 
 ## How does it work
 
@@ -41,17 +32,22 @@ The high level workflow can be described as follows:
 The current protocol version is *2.0.0*.
 Under this version, the requirements are as follows:
 
-- Have a valid, trusted Authenticode signature assemblies that will run on Windows and Mono. There is no special trust requirement for assemblies run on Linux and Mac yet. [Relevant issue](https://github.com/NuGet/Home/issues/6702)
 - Support stateless launching under the current security context of NuGet client tools. For example, NuGet client tools will not perform elevation or additional initialization outside of the plugin protocol described later.
 - Be non interactive, unless explicitly specified.
 - Adhere to the negotiated plugin protocol version.
 - Respond to all requests within a reasonable time period.
 - Honor cancellation requests for any in-progress operation.
 
+Plugins discovered from the PATH environment variable (for example, installed via `dotnet tool`) additionally must match the filename pattern `nuget-plugin-*`. 
+The `nuget-plugin-` part must be written entirely in lowercase letters.
+
+NuGet 6.12 (MSBuild 17.12, and .NET SDK 9.0.100) and earlier also required plugins to be Authenticode signed on Windows.
+
 The technical specification is described in more detail in the following specs:
 
 - [NuGet Package Download Plugin](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin)
 - [NuGet cross plat authentication plugin](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin)
+- [Dotnet Tools Plugins](https://github.com/NuGet/Home/blob/dev/accepted/2024/support-nuget-authentication-plugins-dotnet-tools.md)
 
 ## Client - Plugin interaction
 
@@ -65,23 +61,27 @@ After 1 minute of inactivity a plugin is considered idle and is shut down.
 
 ## Plugin installation and discovery
 
-The plugins will be discovered via a convention based directory structure.
-CI/CD scenarios and power users can use environment variables to override the behavior. When using environment variables, only absolute paths are allowed. Note that `NUGET_NETFX_PLUGIN_PATHS` and `NUGET_NETCORE_PLUGIN_PATHS` are only available with 5.3+ version of the NuGet tooling and later.
+NuGet searches for plugins from a convention based directory structure, and scanning the PATH environment variable.
+
+### Convention based discovery
+
+CI/CD scenarios and power users can use environment variables to override the behavior.
+When using environment variables, only absolute paths are allowed. Note that `NUGET_NETFX_PLUGIN_PATHS` and `NUGET_NETCORE_PLUGIN_PATHS` are only available with 5.3+ version of the NuGet tooling and later.
 
 - `NUGET_NETFX_PLUGIN_PATHS` - defines the plugins that will be used by the .NET Framework based tooling (NuGet.exe/MSBuild.exe/Visual Studio). Takes precedence over `NUGET_PLUGIN_PATHS`. (NuGet version 5.3+ only)
 - `NUGET_NETCORE_PLUGIN_PATHS` - defines the plugins that will be used by the .NET Core based tooling (dotnet.exe). Takes precedence over `NUGET_PLUGIN_PATHS`. (NuGet version 5.3+ only)
 - `NUGET_PLUGIN_PATHS` - defines the plugins that will be used for that NuGet process, priority preserved. If this environment variable is set, it overrides the convention based discovery. Ignored if either of the framework specific variables is specified.
--  User-location, the NuGet Home location in `%UserProfile%/.nuget/plugins`. This location cannot be overriden. A different root directory will be used for .NET Core and .NET Framework plugins.
+- User-location, the NuGet Home location in `%UserProfile%/.nuget/plugins`. This location cannot be overridden. A different root directory will be used for .NET Core and .NET Framework plugins.
 
-| Framework | Root discovery location  |
-| ------- | ------------------------ |
-| .NET Core |  `%UserProfile%/.nuget/plugins/netcore` |
-| .NET Framework | `%UserProfile%/.nuget/plugins/netfx` |
+| Framework | Root discovery location | Used by |
+| ------- | ------------------------ | ---- |
+| .NET Core |  `%UserProfile%/.nuget/plugins/netcore` | dotnet CLI |
+| .NET Framework | `%UserProfile%/.nuget/plugins/netfx` | MSBuild, NuGet.exe, Visual Studio |
 
 Each plugin should be installed in its own folder.
 The plugin entry point will be the name of the installed folder, with the .dll extensions for .NET Core, and .exe extension for .NET Framework.
 
-```
+```text
 .nuget
     plugins
         netfx
@@ -96,8 +96,17 @@ The plugin entry point will be the name of the installed folder, with the .dll e
                 ...
 ```
 
-> [!Note]
-> There is currently no user story for the installation of the plugins. It's as simple as moving the required files into the predetermined location.
+### PATH discovery
+
+Starting from [NuGet 6.13](../../release-notes/NuGet-6.13.md), NuGet will search each directory provided in the PATH environment variable for files matching the pattern `nuget-plugin-*`.
+The pattern matching is case-sensitive, and `nuget-plugin-` must be written entirely in lowercase letters.
+On Windows the file must have an `.exe` or `.bat` extension.
+On Linux and Mac the file must have the executable bit set.
+
+This allows NuGet plugins to be installed via `dotnet tool` commands, WinGet, a Linux distribution's package manager, or any other method that can put executables on the user's PATH.
+This also allows NuGet plugins to be written in any programming language (previously plugins for Linux and Mac must be written in .NET).
+
+We recommend plugins are developed in .NET, so that you can use the [NuGet.Protocol package](https://www.nuget.org/packages/NuGet.Protocol) to avoid needing to write the json RPC code, and to allow customers to discover your plugin via `dotnet package search nuget-plugin`.
 
 ## Supported operations
 

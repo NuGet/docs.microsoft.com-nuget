@@ -3,7 +3,7 @@ title: Install and manage packages in Visual Studio using the NuGet Package Mana
 description: Learn how to use the NuGet Package Manager UI in Visual Studio for working with NuGet packages.
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/21/2023
+ms.date: 03/03/2025
 ms.topic: conceptual
 f1_keywords: 
   - "vs.toolsoptionspages.nuget_package_manager"
@@ -38,9 +38,24 @@ To find and install a NuGet package with Visual Studio, follow these steps:
 
    The **NuGet Package Manager** window opens.
 
-1. Select the **Browse** tab to display packages by popularity from the currently selected source (see [Package sources](#package-sources)). To search for a specific package, use the search box on the upper left. Select a package from the list to display its information on the right pane, which enables you to select a version to install.
+1. Select the **Browse** tab to display packages by popularity from the currently selected source (see [Package sources](#package-sources)).
 
-    :::image type="content" source="media/package-manager-install-tab.png" alt-text="Screenshot showing the NuGet Package Manager window with the Browse tab selected.":::
+    - To search for a specific package, use the search box on the upper left.
+    - Abbreviated information may be shown beside each package ID to help identify the correct package, and varies based on the selected package source(s).
+  Examples include package download count, author, or owner profile hyperlinks.
+
+    > [!Note]
+    > In Visual Studio 17.11 and higher, package owners are shown as profile hyperlinks when supported by the selected package source.
+    > Package ownership is defined by the package source. For example, see [Manage package owners on nuget.org](../nuget-org/publish-a-package.md#manage-package-owners-on-nugetorg).
+    >
+    > In Visual Studio 17.10 and earlier, the package _author_ metadata is shown, which appears as plain-text.
+    > For more information, see [Authors package metadata](../create-packages/package-authoring-best-practices.md#authors).
+
+    - Select a package to see detailed package information.
+    The details pane on the right appears and enables you to select a version to install.
+    ![Screenshot showing the NuGet Package Manager window with the Browse tab, details pane, and "Package Details" tab selected.](media/package-manager-package-details.png)
+    You can see package metadata, information about the owner(s), author(s), license, etc., in the Package Details tab and the package README file (if it is provided by the package author) in the README tab.
+    ![Screenshot showing the NuGet Package Manager window with the README tab selected.](media/package-manager-package-readme.png)
 
 1. In the right pane, select a **Version** from the dropdown list. If you want to include prerelease versions in the **Version** list, select **Include prerelease**.
 
@@ -182,8 +197,7 @@ These options are available only for certain project types:
 
 ## Related video
 
-- [Install and Use a NuGet Package with Visual Studio](/shows/nuget-101/install-and-use-a-nuget-package-with-visual-studio-2-of-5/player)
-- Find more NuGet videos on [Channel 9](/shows/nuget-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+- Find NuGet videos on [Channel 9](/shows/nuget-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
 ## See also
 

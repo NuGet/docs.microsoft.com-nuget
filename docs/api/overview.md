@@ -62,6 +62,7 @@ Resource name                                                        | Required 
 [PackageDetailsUriTemplate](package-details-template-resource.md)    | no       | Construct a URL to access a package details web page.
 [OwnerDetailsUriTemplate](owner-details-template-resource.md)        | no       | Construct a URL to access an owner web page.
 [PackagePublish](package-publish-resource.md)                        | yes      | Push and delete (or unlist) packages.
+[ReadmeUriTemplate](readme-template-resource.md)                     | no       | Construct a URL to access a package's README.
 [RegistrationsBaseUrl](registration-base-url-resource.md)            | yes      | Get package metadata.
 [ReportAbuseUriTemplate](report-abuse-resource.md)                   | no       | Construct a URL to access a report abuse web page.
 [RepositorySignatures](repository-signatures-resource.md)            | no       | Get certificates used for repository signing.
