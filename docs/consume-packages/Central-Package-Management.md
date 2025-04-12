@@ -211,7 +211,7 @@ the feature is disabled.
 
 ## Disabling Central Package Management
 
-If you'd like to disable central package management for a particular project, you can disable it by setting the MSBuild property
+If you would like to disable central package management for a particular project, you can disable it by setting the MSBuild property
 `ManagePackageVersionsCentrally` to `false`:
 
 ```xml
