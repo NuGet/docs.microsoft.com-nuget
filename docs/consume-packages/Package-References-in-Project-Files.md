@@ -113,10 +113,16 @@ Allowable values for these tags are as follows, with multiple values separated b
 | analyzers | .NET analyzers |
 | native | Contents of the `native` folder |
 | none | None of the above are used. |
-| all | All of the above (except `none`) |
+| all | All of the above (except `none`). Also turns off "Publish" by default. |
+
+To set `PrivateAssets` to `all` without affecting publishing behavior, set `PrivateAssets` to `all` and `Publish` to `true` as in the first example below:
 
 ```xml
 <ItemGroup>
+    <!-- ... -->
+    <!-- This specifies all assets to be consumed without letting them flow to the parent project, -->
+    <!-- and it publishes the contents as normal -->
+    <PackageReference Include="Contoso.PrivateUtilities" Version="3.6.0" PrivateAssets="all" Publish="true" />
     <!-- ... -->
     <!-- Everything except the content files will be consumed by the project -->
     <!-- Everything except content files and analyzers will flow to the parent project-->
