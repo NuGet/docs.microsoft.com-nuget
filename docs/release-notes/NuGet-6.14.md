@@ -12,25 +12,27 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.14.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.14.1](https://visualstudio.microsoft.com/downloads/) | [9.0.300](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
+| [**6.14.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.14.0](https://visualstudio.microsoft.com/downloads/) | [9.0.300](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
 ## Summary: What's New in 6.14.0
+
+* NuGet needs to onboard to Unified Settings and create General page - [#14040](https://github.com/NuGet/Home/issues/14040)
+
+* Support for new `slnx` solution format - [#14034](https://github.com/NuGet/Home/issues/14034)
+
+* dotnet-nuget-push now supports --config-file - [#4879](https://github.com/NuGet/Home/issues/4879)
+
+* `dotnet list package --vulerable` should support auditSources - [#13767](https://github.com/NuGet/Home/issues/13767)
+
+### Issues fixed in this release
 
 * Event tracing in new dependency resolver - [#14134](https://github.com/NuGet/Home/issues/14134)
 
 * Support for new slnx format in static graph-based restore - [#14086](https://github.com/NuGet/Home/issues/14086)
 
 * Add Net90 to FrameworkConstants.CommonFrameworks - [#14067](https://github.com/NuGet/Home/issues/14067)
-
-* NuGet needs to onboard to Unified Settings and create General page - [#14040](https://github.com/NuGet/Home/issues/14040)
-
-* Support for new `slnx` solution format - [#14034](https://github.com/NuGet/Home/issues/14034)
-
-* dotnet-nuget-push: does not support --config-file included in examples - [#4879](https://github.com/NuGet/Home/issues/4879)
-
-### Issues fixed in this release
 
 * Don&#39;t show usage help when dotnet cli command throws unhandled exception - [#14200](https://github.com/NuGet/Home/issues/14200)
 
@@ -43,8 +45,6 @@ NuGet distribution vehicles:
 * NU5100 (AssemblyOutsideLibWarning): Why build is allowed but buildTransitive is not? - [#14080](https://github.com/NuGet/Home/issues/14080)
 
 * Can&#39;t copy the text from NuGet package manager gold bar - [#14074](https://github.com/NuGet/Home/issues/14074)
-
-* `dotnet list package --vulerable` should support auditSources - [#13767](https://github.com/NuGet/Home/issues/13767)
 
 * [DCR]: Focus shifts from Output window to Error List after every package operation, even with no error or warnings - [#11728](https://github.com/NuGet/Home/issues/11728)
 
