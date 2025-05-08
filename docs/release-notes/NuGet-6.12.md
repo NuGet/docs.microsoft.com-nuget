@@ -15,6 +15,7 @@ NuGet distribution vehicles:
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
 | [**6.12**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.12](https://visualstudio.microsoft.com/downloads/) | [9.0.1xx](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
+| [**6.12.4**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.12.8](https://visualstudio.microsoft.com/downloads/) | [9.0.106](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 
@@ -23,6 +24,14 @@ NuGet distribution vehicles:
 * Project and package in the same graph with the same name but different dependencies may lead to incorrect versions of the dependencies of that id [#13888](https://github.com/NuGet/Home/issues/13888)
 * VS PM UI shows warning icon about package vulnerability even after upgrade [#13866](https://github.com/NuGet/Home/issues/13866)
 * dotnet nuget why reports missing argument, even though it ran [#13908](https://github.com/NuGet/Home/issues/13908)
+
+## Summary: What's New in 6.12.4
+
+NuGet 6.12.4 is available in Visual Studio 17.12.8.
+
+### Issues fixed in this release
+
+* Restore should fail more quickly when using http sources - [#14210](https://github.com/NuGet/Home/issues/14210)
 
 ## Summary: What's New in 6.12.3
 
