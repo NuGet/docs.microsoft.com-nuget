@@ -141,8 +141,7 @@ However, the credential provider for the .NET SDK is not included by Visual Stud
 
 ### List of credential providers
 
-There is a [feature request to make credential providers installable via .NET tools](https://github.com/NuGet/Home/issues/12567), and this will likely make it easier to discover other credential providers.
-Until this is implemented, here is a list of credential providers we are aware of:
+Here is a list of credential providers we are aware of:
 
 * [AWS CodeArtifact NuGet Credential Provider](https://docs.aws.amazon.com/codeartifact/latest/ug/nuget-cli.html#nuget-configure-cli)
 * [Azure Artifacts Credential Provider](https://github.com/microsoft/artifacts-credprovider). This link is just for the command line credential provider.
