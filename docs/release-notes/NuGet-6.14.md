@@ -18,13 +18,15 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.14.0
 
-* NuGet needs to onboard to Unified Settings and create General page - [#14040](https://github.com/NuGet/Home/issues/14040)
+* (preview feature) NuGet onboards to Unified Settings and create General page - [#14040](https://github.com/NuGet/Home/issues/14040)
 
 * Support for new `slnx` solution format - [#14034](https://github.com/NuGet/Home/issues/14034)
 
 * dotnet-nuget-push now supports --config-file - [#4879](https://github.com/NuGet/Home/issues/4879)
 
-* `dotnet list package --vulerable` should support auditSources - [#13767](https://github.com/NuGet/Home/issues/13767)
+* `dotnet list package --vulnerable` should support auditSources - [#13767](https://github.com/NuGet/Home/issues/13767)
+
+* [DCR]: Focus shifts from Output window to Error List after every package operation, even with no error or warnings - [#11728](https://github.com/NuGet/Home/issues/11728)
 
 ### Issues fixed in this release
 
@@ -46,8 +48,6 @@ NuGet distribution vehicles:
 
 * Can&#39;t copy the text from NuGet package manager gold bar - [#14074](https://github.com/NuGet/Home/issues/14074)
 
-* [DCR]: Focus shifts from Output window to Error List after every package operation, even with no error or warnings - [#11728](https://github.com/NuGet/Home/issues/11728)
-
 * NuGet 6.13.2.1 does no longer support prerelease versions - [#14219](https://github.com/NuGet/Home/issues/14219)
 
 * Badly specified framework leads to an uninformative error - [#14216](https://github.com/NuGet/Home/issues/14216)
@@ -58,7 +58,7 @@ NuGet distribution vehicles:
 
 * Error in Visual Studio if Path contains directory you do not have permission to view - [#14192](https://github.com/NuGet/Home/issues/14192)
 
-* list package doesn&#39;t with a solution argument in 9.0.201 - [#14177](https://github.com/NuGet/Home/issues/14177)
+* list package doesn&#39;t work with a solution argument in 9.0.201 - [#14177](https://github.com/NuGet/Home/issues/14177)
 
 * Focus shifts from Output window to Error List after Clear NuGet Locals command - [#14157](https://github.com/NuGet/Home/issues/14157)
 
@@ -72,7 +72,7 @@ NuGet distribution vehicles:
 
 * dotnet list package does not display resolved versions when AuditSources are used - [#14116](https://github.com/NuGet/Home/issues/14116)
 
-* The REAMD tab always shows “Loading README” for the latest version of the package in the detail panel of PM UI - [#14098](https://github.com/NuGet/Home/issues/14098)
+* The REAMDE tab always shows “Loading README” for the latest version of the package in the detail panel of PM UI - [#14098](https://github.com/NuGet/Home/issues/14098)
 
 * [Bug Bash] The second time clicking ‘Installed’ tab for a remote source which doesn’t allow for downloading a README shows the README tab - [#14097](https://github.com/NuGet/Home/issues/14097)
 
@@ -88,7 +88,7 @@ NuGet distribution vehicles:
 
 * Value cannot be null. Parameter name: versionRange when opening the PM UI - [#13933](https://github.com/NuGet/Home/issues/13933)
 
-* Reenable new algorithm resolution with lock files - [#13800](https://github.com/NuGet/Home/issues/13800)
+* Reenable new algorithm resolution with lock files with .NET 10 SDK - [#13800](https://github.com/NuGet/Home/issues/13800)
 
 * Report the path when unable to read corrupted .nupkg.metadata  - [#13763](https://github.com/NuGet/Home/issues/13763)
 
