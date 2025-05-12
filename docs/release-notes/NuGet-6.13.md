@@ -13,8 +13,8 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.13**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.13](https://visualstudio.microsoft.com/downloads/) | [9.0.200](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
-| [**6.13.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.13.1](https://visualstudio.microsoft.com/downloads/) | [9.0.201](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
+| [**6.13.0**](https://nuget.org/downloads) | N/A | [9.0.200](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
+| [**6.13.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.13.0](https://visualstudio.microsoft.com/downloads/) | [9.0.201](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
 | [**6.13.2**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.13.2](https://visualstudio.microsoft.com/downloads/) | [9.0.203](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
@@ -23,11 +23,15 @@ NuGet distribution vehicles:
 
 * New restore dependency resolver fails when resolving identical child dependencies - [#14025](https://github.com/NuGet/Home/issues/14025)
 
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.13.1.3...6.13.2.1)
+
 ## Summary: What's New in 6.13.1
 
 NuGet 6.13.1 is available in Visual Studio 17.13 and .NET 9.0.201 SDK.
 
 * Support for new slnx solution format in dotnet nuget why and dotnet list package - [#14034](https://github.com/NuGet/Home/issues/14034)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.13.0.113...6.13.1.3)
 
 ## Summary: What's New in 6.13.0
 
@@ -101,7 +105,7 @@ NuGet 6.13.0 is available in the .NET 9.0.200 SDK.
 
 * Nuget pack doesn't support blank &lt;version&gt; in .nuspec even though version is passed on the command line - [#7987](https://github.com/NuGet/Home/issues/7987)
 
-[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.13.1.3...6.12.3.1)
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.12.3.1...6.13.1.3)
 
 ### Community contributions
 

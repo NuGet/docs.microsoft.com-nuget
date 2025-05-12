@@ -1,4 +1,4 @@
----
+﻿---
 title: Central Package Management
 description: Manage your dependencies in a central location and how you can get started with central package management.
 author: jondouglas
@@ -18,7 +18,7 @@ Historically, NuGet package dependencies have been managed in one of two locatio
 - `packages.config` - An XML file used in older project types to maintain the list of packages referenced by the project.
 - `<PackageReference />` - An XML element used in MSBuild projects defines NuGet package dependencies.
 
-Starting with [NuGet 6.2](..\release-notes\NuGet-6.2.md), you can centrally manage your dependencies in your projects with the addition of a
+Starting with [NuGet 6.2](../release-notes/NuGet-6.2.md), you can centrally manage your dependencies in your projects with the addition of a
 `Directory.Packages.props` file and an MSBuild property.
 
 The feature is available across all NuGet integrated tooling, starting with the following versions.
@@ -57,7 +57,7 @@ version.
 </Project>
 ```
 
-For each project, you then define a `<PackageReference />` but omit the `Version` attribute since the version will be attained from a corresponding
+For each project, you then define a `<PackageReference />` but omit the `Version` attribute since the version will be obtained from a corresponding
 `<PackageVersion />` item.
 
 ```xml
@@ -81,19 +81,24 @@ simplicity, only one `Directory.Packages.props` file is evaluated for a given pr
 What this means is that if you had multiple `Directory.Packages.props` files in your repository, the file that is closest to your project's directory will
 be evaluated for it. This allows you extra control at various levels of your repository.
 
-Here's an example, consider the following repository structure:
+Consider the following repository structure:
 
 ```
-Repository
- |-- Directory.Packages.props
- |-- Solution1
-     |-- Directory.Packages.props
-     |-- Project1
- |-- Solution2
-     |-- Project2
+📂 (root)
+ ├─📄 Directory.Packages.props
+ |
+ ├─📂Solution1
+ |  ├─ 📄Directory.Packages.props
+ |  |
+ |  └─ 📂 Project1
+ |      └─📄Project1.csproj
+ |
+ └─ 📂 Solution2
+    └─ 📂 Project2
+        └─ 📄 Project2.csproj
 ```
 
-- Project1 will evaluate the `Directory.Packages.props` file in the `Repository\Solution1\` directory and it must manually import the next one if so desired.
+- `Project1.csproj` will load the `Directory.Packages.props` file in the `Repository\Solution1\` directory first and it must manually import any parent ones if desired.
   ```xml
   <Project>
     <Import Project="$([MSBuild]::GetPathOfFileAbove(Directory.Packages.props, $(MSBuildThisFileDirectory)..))" />
@@ -102,14 +107,14 @@ Repository
     </ItemGroup>
   </Project>
   ```
-- Project2 will evaluate the `Directory.Packages.props` file in the `Repository\` directory.
+- `Project2.csproj` will evaluate the `Directory.Packages.props` file in the root directory.
 
-**Note:** MSBuild will not automatically import each `Directory.Packages.props` for you, only the first one closest to the project.  If you have multiple
-`Directory.Packages.props`, you must import the parent one manually while the root `Directory.Packages.props` would not.
+**Note:** MSBuild will not automatically import each `Directory.Packages.props` for you, only the first one found in the project directory or any parent directory.  If you have multiple
+`Directory.Packages.props` files, you must import any files in parent directories manually.
 
 ## Get started
 
-To fully onboard your repository, consider taking these steps:
+To fully onboard your repository, follow these steps:
 
 1. Create a new file at the root of your repository named `Directory.Packages.props` that declares your centrally defined package versions and set
  the MSBuild property `ManagePackageVersionsCentrally` to `true`.
@@ -211,7 +216,7 @@ the feature is disabled.
 
 ## Disabling Central Package Management
 
-If you'd like to disable central package management for any a particular project, you can disable it by setting the MSBuild property
+If you would like to disable central package management for a particular project, you can disable it by setting the MSBuild property
 `ManagePackageVersionsCentrally` to `false`:
 
 ```xml
@@ -251,8 +256,3 @@ this warning, map your package sources with [package source mapping](https://aka
 ```
 There are 3 package sources defined in your configuration. When using central package management, please map your package sources with package source mapping (https://aka.ms/nuget-package-source-mapping) or specify a single package source.
 ```
-
-
-
-> [!Note]
-> Central package management is in active development. We appreciate you trying it out and providing any feedback you may have at [NuGet/Home](https://github.com/nuget/home/issues).

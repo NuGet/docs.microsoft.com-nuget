@@ -4,7 +4,7 @@ description: How to audit package dependencies for security vulnerabilities and 
 author: JonDouglas
 ms.author: jodou
 ms.topic: conceptual
-ms.date: 02/11/2025
+ms.date: 05/05/2025
 ---
 
 # Auditing package dependencies for security vulnerabilities
@@ -44,9 +44,13 @@ We recommend that audit is configured at a repository level.
 
 | MSBuild Property | Default | Possible values | Notes |
 |------------------|---------|-----------------|-------|
-| NuGetAuditMode | direct | `direct` and `all` | If you'd like to audit top-level dependencies only, you can set the value to `direct`. NuGetAuditMode is not applicable for packages.config projects.  |
+| NuGetAuditMode | See 1 below | `direct` and `all` | If you'd like to audit top-level dependencies only, you can set the value to `direct`. NuGetAuditMode is not applicable for packages.config projects.  |
 | NuGetAuditLevel | low | `low`, `moderate`, `high`, and `critical` | The minimum severity level to report. If you'd like to see `moderate`, `high`, and `critical` advisories (exclude `low`), set the value to `moderate` |
 | NuGetAudit | true | `true` and `false` | If you wish to not receive security audit reports, you can opt-out of the experience entirely by setting the value to `false` |
+
+1. `NuGetAuditMode` defaults to `all` when a project targets `net10.0` or higher.
+   Otherwise `NuGetAuditMode` defaults to `direct`.
+   When a project multi-targets, if any one target framework selects `all`, then audit will use this value for all target frameworks.
 
 #### Audit Sources
 
