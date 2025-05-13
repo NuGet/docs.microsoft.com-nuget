@@ -90,12 +90,11 @@ sections:
           > NuGet.org recommends Alpine Linux users to upgrade to Alpine Linux 3.18.0 or newer. These versions support TCP fallback in the DNS resolver. If you use older versions of Alpine Linux that only support DNS over UDP, you may encounter DNS failures when accessing the [V3 API](https://learn.microsoft.com/nuget/nuget-org/overview-nuget-org#api-endpoint-for-nugetorg).
 
           If that version of NuGet client continues to fail, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
-
+          - !!! Your geographical area
           - The package sources you're using
           - The version of NuGet client you're using
           - A restore log with detailed verbosity
           - MTR or a Fiddler traces (see below)
-          - Your geographical area
           - Whether your machine is behind a proxy or firewall?
           - Is your machine located on a cloud providers' data center (Azure, AWS etc)? If yes, please provide the name of the provider and the region.
 
