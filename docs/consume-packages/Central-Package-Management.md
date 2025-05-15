@@ -127,7 +127,7 @@ For an idea of how central package management may look like, refer to our [sampl
 
 You can automatically override a transitive package version even without an explicit top-level `<PackageReference />` by opting into a feature known as
 transitive pinning. This promotes a transitive dependency to a top-level dependency implicitly on your behalf when necessary.
-Note that downgrades are allowed when transitive pinning a package. If you attempt to pin a package to a lower version than the one requested by your dependencies, restore will raise a [NU1109](../reference/errors-and-warnings/NU1109.md) error.
+Note that downgrades are not allowed when transitive pinning a package. If you attempt to pin a package to a lower version than the one requested by your dependencies, restore will raise a [NU1109](../reference/errors-and-warnings/NU1109.md) error.
 
 You can enable this feature by setting the MSBuild property `CentralPackageTransitivePinningEnabled` to `true` in a project or in a `Directory.Packages.props`
 or `Directory.Build.props` import file:
