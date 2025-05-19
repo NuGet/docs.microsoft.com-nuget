@@ -170,7 +170,7 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
 </ItemGroup>
 ```
 
-When you have many targets, it may be better to match ranges of TFMs, in which case you can use `IsTargetFrameworkCompatible`:
+When you have many targets, it may be better to match ranges of TFMs, in which case you can use [`IsTargetFrameworkCompatible`](/visualstudio/msbuild/property-functions#msbuild-targetframework-and-targetplatform-functions):
 ```xml
 <ItemGroup>
     <!-- reference 8.0 System.Text.Json when targeting things older than .NET 8 -->
