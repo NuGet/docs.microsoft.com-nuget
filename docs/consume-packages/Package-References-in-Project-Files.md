@@ -170,6 +170,20 @@ Conditions can also be applied at the `ItemGroup` level and will apply to all ch
 </ItemGroup>
 ```
 
+When you have many targets, it may be better to match ranges of TFMs, in which case you can use `IsTargetFrameworkCompatible`:
+```xml
+<ItemGroup>
+    <!-- reference 8.0 System.Text.Json when targeting things older than .NET 8 -->
+    <PackageReference Include="System.Text.Json"  Version="8.0.5" Condition=" !$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net8.0')) " />
+
+    <!-- reference 10.0 System.Linq.AsyncEnumerable when targeting things older than .NET 10 -->
+    <PackageReference Include="System.Linq.AsyncEnumerable"  Version="10.0.0-preview.2.25163.2" Condition=" !$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net10.0')) " />
+
+    <!-- Reference System.Memory on frameworks not compatible with .NET Core 2.1 nor .NETStandard 2.1 -->
+    <PackageReference Include="System.Memory" Condition=" !($([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'netcoreapp2.1')) OR $([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'netstandard2.1'))) " />
+</ItemGroup>
+```
+
 ## GeneratePathProperty
 
 This feature is available with NuGet **5.0** or above and with Visual Studio 2019 **16.0** or above.
