@@ -154,6 +154,27 @@ Being able to have information about your dependencies such as their license, tr
 
 For more information about Dependabot alerts & security updates, [see the following documentation](https://docs.github.com/en/github/managing-security-vulnerabilities/about-alerts-for-vulnerable-dependencies).
 
+## NuGet Configuration
+
+**📦 Package Consumer**
+
+Add a `nuget.config` file in the root of your project repository. This is considered a best practice as it promotes repeatability and ensures that different users have the same NuGet configuration.
+We recommend adding `clear` elements to ensure no user or machine specific configuration is applied. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
+
+For example:
+
+```xml
+<configuration>
+  <packageSources>
+    <clear />
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+  </packageSources>
+  <packageSourceMapping>
+    <clear />
+  </packageSourceMapping>
+</configuration>
+```
+
 ### NuGet feeds
 
 **📦 Package Consumer**
