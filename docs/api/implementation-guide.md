@@ -108,7 +108,7 @@ If your package repository is hosting first-party packages, and you would like t
 
 #### Reusing nuget.org's vulnerability data
 
-NuGet does not require that resources in the [service index](./service-index.md), or [the vulnerability index](#vulnerability-index), must be on the same server as the service index itself.
+NuGet does not require that resources in the [service index](./service-index.md), or [the vulnerability index](./vulnerability-info.md#vulnerability-index), must be on the same server as the service index itself.
 However, there are several reasons why some companies choose to block nuget.org at the firewall, or have on-prem feeds on a disconnected network.
 To avoid connectivity issues, we recommend serving vulnerability data from your own web app, so that NuGet clients only make HTTP connections to the host the feed is installed on.
 

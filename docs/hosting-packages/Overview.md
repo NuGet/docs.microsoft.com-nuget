@@ -33,7 +33,7 @@ There are also several other NuGet hosting products such as [Azure Artifacts](ht
 - [JetBrains Space](https://www.jetbrains.com/help/space/nuget-feed.html)
 - [LiGet](https://github.com/ai-traders/liget), an open-source implementation of NuGet V2 server that runs on kestrel in docker
 - [MyGet](https://myget.org)
-- [Nexus Repository OSS](https://www.sonatype.com/nexus-repository-oss) from Sonatype.
+- [Nexus Repository OSS](https://www.sonatype.com/products/sonatype-nexus-oss-download) from Sonatype.
 - [NuGet Server (Open Source)](https://github.com/svenkle/nuget-server), an open-source implementation similar to Inedo's NuGet Server
 - [NuGet Server](http://nugetserver.net/), a community project from Inedo
 - [ProGet](https://inedo.com/proget) from Inedo
