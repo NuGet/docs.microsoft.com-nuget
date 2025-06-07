@@ -66,8 +66,8 @@ determine which resource to prefer over another. One possible implementation is 
 compatible `@type` can be used in a round-robin fashion in case of connection failure or server error.
 
 A resource can use a different host or domain than the service index, but this may cause issues in environments with strict network rules.
-If you delegate resources to api.nuget.org, your feed will not work where access to nuget.org is blocked.
-We recommend configuration to enable or disable features that use api.nuget.org.
+In particular, if your service index add resources that point directly to nuget.org (rather than proxying or caching through your own feed), your feed will not work where access to nuget.org is blocked.
+If your feed is going to delegate particular resources to nuget.org, we recommend adding a configuration so that when your feed is deployed, the direct nuget.org reference can be removed from the service index.
 
 ### Sample request
 

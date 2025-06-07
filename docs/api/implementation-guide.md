@@ -106,8 +106,15 @@ Nuget.org provides vulnerability data for all GitHub reviewed advisories from th
 
 If your package repository is hosting first-party packages, and you would like to provide vulnerability information to customers using your own feed, but don't yet have any disclosed package vulnerabilities, you should provide a [vulnerability index](./vulnerability-info.md#vulnerability-index) with one or more [vulnerability pages](./vulnerability-info.md#vulnerability-page) whose contents are an empty JSON array (`[]`).
 
-If your package repository is intended to be used by apps as the default repository (instead of nuget.org), please read [our recommendations on using nuget.org's vulnerability data](../api/vulnerability-info.md#reusing-nugetorgs-vulnerability-data).
-Putting api.nuget.org URLs in your service index or vulnerability index will cause problems in companies that block api.nuget.org at the firewall.
+#### Reusing nuget.org's vulnerability data
+
+NuGet does not require that resources in the [service index](./service-index.md), or [the vulnerability index](#vulnerability-index), must be on the same server as the service index itself.
+However, there are several reasons why some companies choose to block nuget.org at the firewall, or have on-prem feeds on a disconnected network.
+To avoid connectivity issues, we recommend serving vulnerability data from your own web app, so that NuGet clients only make HTTP connections to the host the feed is installed on.
+
+✔️ DO cache or proxy the vulnerability pages in your own web app
+
+❌ DO NOT advertise api.nuget.org in your service index or vulnerability index without a configuration to turn this off.
 
 ## `packageTypes` search query
 
