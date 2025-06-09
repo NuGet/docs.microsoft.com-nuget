@@ -44,5 +44,5 @@ There are also several other NuGet hosting products such as [Azure Artifacts](ht
 Regardless of how packages are hosted, you access them by adding them to the list of available sources in `NuGet.Config`. This can be done in Visual Studio as described in [Package Sources](../consume-packages/install-use-packages-visual-studio.md#package-sources), or from the command line using [`nuget sources`](../reference/cli-reference/cli-ref-sources.md). The path to a source can be a local folder pathname, a network name, or a URL.
 
 [NuGet's V3 protocol](../api/overview.md) uses a [service index](../api//service-index.md) that contains a list of URLs used by various NuGet operations.
-All of the URLs in the service index must be accessible by developer and CI machines to avoid unexpeced errors.
+All of the URLs in the service index must be accessible by developer and CI machines to avoid unexpected errors.
 When installing any NuGet feed, it is important to validate that none of the service index resources are blocked by a company firewall, or if your network is disconnected from the Internet, that all service index resources are available on your private network.
