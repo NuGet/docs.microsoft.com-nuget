@@ -33,7 +33,7 @@ There are also several other NuGet hosting products such as [Azure Artifacts](ht
 - [JetBrains Space](https://www.jetbrains.com/help/space/nuget-feed.html)
 - [LiGet](https://github.com/ai-traders/liget), an open-source implementation of NuGet V2 server that runs on kestrel in docker
 - [MyGet](https://myget.org)
-- [Nexus Repository OSS](https://www.sonatype.com/nexus-repository-oss) from Sonatype.
+- [Nexus Repository OSS](https://www.sonatype.com/products/sonatype-nexus-oss-download) from Sonatype.
 - [NuGet Server (Open Source)](https://github.com/svenkle/nuget-server), an open-source implementation similar to Inedo's NuGet Server
 - [NuGet Server](http://nugetserver.net/), a community project from Inedo
 - [ProGet](https://inedo.com/proget) from Inedo
@@ -42,3 +42,7 @@ There are also several other NuGet hosting products such as [Azure Artifacts](ht
 - [RepoFlow](https://www.repoflow.io), a simple and easy-to-use package management platform.
 
 Regardless of how packages are hosted, you access them by adding them to the list of available sources in `NuGet.Config`. This can be done in Visual Studio as described in [Package Sources](../consume-packages/install-use-packages-visual-studio.md#package-sources), or from the command line using [`nuget sources`](../reference/cli-reference/cli-ref-sources.md). The path to a source can be a local folder pathname, a network name, or a URL.
+
+[NuGet's V3 protocol](../api/overview.md) uses a [service index](../api//service-index.md) that contains a list of URLs used by various NuGet operations.
+All of the URLs in the service index must be accessible by developer and CI machines to avoid unexpected errors.
+When installing any NuGet feed, it is important to validate that none of the service index resources are blocked by a company firewall, or if your network is disconnected from the Internet, that all service index resources are available on your private network.
