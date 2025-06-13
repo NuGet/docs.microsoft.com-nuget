@@ -73,6 +73,37 @@ For each project, you then define a `<PackageReference />` but omit the `Version
 
 Now you're using central package management and managing your versions in a central location!
 
+### Using Different Versions for Different Target Frameworks
+
+As NuGet packages evolve, sometimes package owners drop support for older target frameworks.
+This can cause issues for developers of libraries that still target older frameworks where they want to reference newer versions of packages with newer target frameworks.
+For example, this project targets .NET Standard 2.0, .NET 8.0, and .NET Framework 4.7.2 but references `PackageA` which no longer supports .NET Standard 2.0 in its latest version.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0;net472</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="PackageA" />
+  </ItemGroup>
+</Project>
+```
+
+In this case, you can define different versions for each target framework in your `Directory.Packages.props` using [MSBuild conditions](/visualstudio/msbuild/msbuild-conditions):
+
+```xml
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="PackageA" Version="1.0.0" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
+    <PackageVersion Include="PackageA" Version="2.0.0" Condition="'$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net472'" />
+  </ItemGroup>
+</Project>
+```
+
 ## Central Package Management rules
 
 The `Directory.Packages.props` file has a number of rules with regards to where it's located in a repository's directory and its context. For the sake of
