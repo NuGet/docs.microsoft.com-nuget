@@ -58,7 +58,7 @@ That said, package developers generally follow recognized naming conventions:
 When ordering versions by precedence, NuGet follows the SemVer standard and chooses a version without a suffix first, then applies precedence to pre-release versions in reverse alphabetical order and treats dot notation numbers with numerical order.
 
 > [!Note]
-> Prerelease numbers with dot notation, as in *1.0.1-build.23*, are considered are part of the [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html) standard, and as such are [only supported with NuGet 4.3.0+](#semantic-versioning-200).
+> Prerelease numbers with dot notation, as in *1.0.1-build.23*, are considered part of the [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html) standard, and as such are [only supported with NuGet 4.3.0+](#semantic-versioning-200).
 
 ### [SemVer 2.0 sorting](#tab/semver20sort)
 
