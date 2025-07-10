@@ -58,6 +58,21 @@ steps:
     run: dotnet nuget push artifacts/my-sdk.nupkg -k ${{steps.nuget_login.outputs.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json
 ```
 
+
+## Policy Ownership
+
+When you create a Trusted Publishing policy, you need to choose who owns it. The owner can be either:
+
+- **You (an individual user)**
+- **An organization you belong to**
+
+The policy will apply to all packages owned by the selected owner. That means it controls who can publish or modify those packages using Trusted Publishing.
+
+If you choose an organization, make sure you're an active member. If you leave the org later, the policy may become disabled until you're added back.
+
+Choosing the right owner helps ensure your publishing setup stays secure and aligned with your team’s structure.
+
+
 ## Temporarily Enabled Policies
 
 Sometimes when you create a Trusted Publishing policy, we can’t get the GitHub repository and owner IDs right away. This usually happens with private repos.
@@ -67,3 +82,19 @@ Why does that matter? Because we use those IDs to lock the policy to the origina
 If we don’t have the IDs, the policy starts out as **temporarily enabled**. You’ll see this in the UI. It works like a regular policy, but it only lasts for **7 days**.
 Once you publish from that repo, we’ll grab the IDs from the GitHub token and upgrade the policy to **permanently enabled**.
 If no publish happens in time, the policy is disabled. You can reset the 7-day timer at any point, even if the policy has already been disabled after the initial window expired.
+
+## Policy Ownership Warnings
+
+Trusted Publishing policies are tied to a specific owner - either an individual user or an organization.
+If something changes with that ownership, the policy might become disabled. When that happens, you'll see a warning in the UI.
+
+### Common cases
+
+- **User removed from organization**  
+  If a policy is owned by an organization and the user who created it is later removed from that org, the policy becomes disabled.  
+  If the user is added back to the organization, the policy will be enabled again automatically.
+
+- **Organization is no longer active**  
+  If the organization that owns the policy is locked or deleted, the policy becomes disabled.
+
+These warnings help make sure that only enabled, secure policies are used when publishing packages.
