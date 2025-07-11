@@ -42,20 +42,25 @@ To get started:
 Here’s a basic example:
 
 ```yaml
-steps:
-  # Build your artifacts/my-sdk.nupkg package here
-
-  # Get a short-lived NuGet API key
-  - name: NuGet login
-    id: nuget_login
-    uses: nuget/login@v1
-    with:
-      user: ${{secrets.NUGET_USER}}
-      source: https://api.nuget.org/v3/index.json
-
-  # Push the package
-  - name: NuGet push
-    run: dotnet nuget push artifacts/my-sdk.nupkg -k ${{steps.nuget_login.outputs.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json
+jobs:
+  build-and-publish:
+    permissions:
+      id-token: write  # enable GitHub OIDC token issuance for this job
+    
+    steps:
+      # Build your artifacts/my-sdk.nupkg package here
+    
+      # Get a short-lived NuGet API key
+      - name: NuGet login
+        id: nuget_login
+        uses: nuget/login@v1
+        with:
+          user: ${{secrets.NUGET_USER}}
+          source: https://api.nuget.org/v3/index.json
+    
+      # Push the package
+      - name: NuGet push
+        run: dotnet nuget push artifacts/my-sdk.nupkg -k ${{steps.nuget_login.outputs.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json
 ```
 
 
