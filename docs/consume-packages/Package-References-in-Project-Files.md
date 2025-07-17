@@ -498,7 +498,7 @@ For transitive packages, meaning packages that are referenced by other packages 
 
 For direct packages, `PrivateAssets='all'` and `IncludeAssets='none'` are implicitly applied.
 
-- `IncludeAssets='none'` ensures that the assemblies from this package are used during the build. Before pruning existing, the conflict resolution during build ensured the platform assemblies are preferred over the ones coming from the packages.
+- `IncludeAssets='none'` ensures that the assemblies from this package are not used during the build. Before pruning existed, the conflict resolution during the build ensured that platform assemblies were preferred over those coming from the packages.
 - `PrivateAssets='all'` ensures that the packages aren't included in packages or through project references.
 
 Example:
