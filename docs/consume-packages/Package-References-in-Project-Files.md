@@ -498,16 +498,16 @@ For transitive packages, meaning packages that are referenced by other packages 
 
 For direct packages, `PrivateAssets='all'` and `IncludeAssets='none'` are implicitly applied.
 
-- `IncludeAssets='none'` ensures that the assemblies from this package are used during the build.
+- `IncludeAssets='none'` ensures that the assemblies from this package are used during the build. Before pruning existing, the conflict resolution during build ensured the platform assemblies are preferred over the ones coming from the packages.
 - `PrivateAssets='all'` ensures that the packages aren't included in packages or through project references.
 
 Example:
 
-A project file like below:
+A project like below:
 
 ```xml
   <PropertyGroup>
-    <TargetFramework>net9.0;netstandard2.0</TargetFramework>
+    <TargetFrameworks>net9.0;netstandard2.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -527,7 +527,10 @@ will have a nuspec with the following dependencies:
 </dependencies>
 ```
 
-The following table illustrates various package pruning behaviors.
+When a direct PackageReference can be completely removed from your project, and one of the project frameworks are .NET 10 or newer, [NU1510](../reference/errors-and-warnings/NU1510.md) will be raised asking you to remove the package. 
+Following this suggestion will reduce the complexity of your project graph.
+
+The following table summarizes all the package pruning behaviors.
 
 | Dependency disposition | Behavior |
 |-----------------|----------|
@@ -535,10 +538,6 @@ The following table illustrates various package pruning behaviors.
 | Matches the ID of a transitive package coming through another project | Prune |
 | Matches the ID of a direct `PackageReference` | Apply `PrivateAssets='all'` and `IncludeAssets='none'` and raise the [NU1510](../reference/errors-and-warnings/NU1510.md) when the package can be removed from all frameworks and the project targets .NET 10. |
 | Matches the ID of a `ProjectReference` | Do not prune and raise the [NU1511](../reference/errors-and-warnings/NU1511.md) warning when the project targets .NET 10 |
-
-TODO NK: Clean-up, better documentation.
-
-Separate file?
 
 ### PrunePackageReference applications
 
