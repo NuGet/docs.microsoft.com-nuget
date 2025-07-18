@@ -469,7 +469,7 @@ This can often lead to a `System.Text.Json 8.0.0` in a project targeting `.NET 9
 Starting in [NuGet version 6.13](..\release-notes\NuGet-6.13.md) and .NET SDK 9.0.200, `PrunePackageReference` enables the pruning of these packages at restore time for .NET SDK based projects.
 The first iteration of pruning affected transitive packages only, but starting with .NET SDK 10, package pruning affects direct packages as well.
 
-Package pruning is available as an opt-in feature with the .NET 9 SDK, and is enabled by default for all `.NET` frameworks and `>= .NET Standard 2.0` starting with .NET 10 SDK.
+Package pruning is available as an opt-in feature with the .NET 9 SDK, and is enabled by default for `>= .NET 8.0` frameworks and `>= .NET Standard 2.0` starting with .NET 10 SDK.
 
 Package pruning is only available with the default dependency resolver as [released in 6.12](#nuget-dependency-resolver).
 
