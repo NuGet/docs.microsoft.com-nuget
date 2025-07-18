@@ -464,7 +464,7 @@ You can leave off `$(AssetTargetFallback)` if you wish to overwrite, instead of 
 ## PrunePackageReference
 
 The .NET Runtime is constantly evolving, with performance improvements and new APIs each release.
-There is a lot of functionality that's available within the runtime, but also as packages, such as [System.Text.Json](https://www.nuget.org/packages/System.Text.Json).
+New features added to .NET sometimes are also provided as packages, so that developers using older target frameworks can use the library, such as [System.Text.Json](https://www.nuget.org/packages/System.Text.Json).
 This can often lead to a `System.Text.Json 8.0.0` in a project targeting `.NET 9` or `.NET 8`. This dependency is unnecessary and the build conflict resolution would not use the assembly coming from the package since it's already available in the .NET Runtime.
 Starting in [NuGet version 6.13](..\release-notes\NuGet-6.13.md) and .NET SDK 9.0.200, `PrunePackageReference` enables the pruning of these packages at restore time for .NET SDK based projects.
 The first iteration of pruning affected transitive packages only, but starting with .NET SDK 10, package pruning affects direct packages as well.
@@ -492,9 +492,9 @@ The .NET SDK predefines the list of packages to be pruned for you.
 ### How PrunePackageReference works
 
 When a package is specified to be pruned during restore, it is removed from the dependency graph.
-When a package is pruned, there is a detailed verbosity message indicating that the package has been removed for the given target framework.
+When a package is pruned, there is a message, visible at detailed verbosity, indicating that the package has been removed for the given target framework.
 
-For transitive packages, meaning packages that are referenced by other packages or projects, the packages are not downloaded and do not appear in any of the outputs of NuGet.
+For transitive packages, meaning dependencies of other packages or projects, the packages are not downloaded and do not appear in any of the outputs of NuGet.
 
 For direct packages, `PrivateAssets='all'` and `IncludeAssets='none'` are implicitly applied.
 
