@@ -536,7 +536,7 @@ The following table summarizes all the package pruning behaviors.
 |-----------------|----------|
 | Matches the ID of a transitive package coming through another package | Prune |
 | Matches the ID of a transitive package coming through another project | Prune |
-| Matches the ID of a direct `PackageReference` | Apply `PrivateAssets='all'` and `IncludeAssets='none'` and raise the [NU1510](../reference/errors-and-warnings/NU1510.md) when the package can be removed from all frameworks and the project targets .NET 10. |
+| Matches the ID of a direct `PackageReference` | Apply `PrivateAssets='all'` and `IncludeAssets='none'` and raise the [NU1510](../reference/errors-and-warnings/NU1510.md) warning when the package can be removed from all frameworks and the project targets .NET 10. |
 | Matches the ID of a `ProjectReference` | Do not prune and raise the [NU1511](../reference/errors-and-warnings/NU1511.md) warning when the project targets .NET 10 |
 
 ### PrunePackageReference applications
