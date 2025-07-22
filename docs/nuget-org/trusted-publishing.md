@@ -102,4 +102,8 @@ If something changes with that ownership, the policy might become disabled. When
 - **Organization is no longer active**  
   If the organization that owns the policy is locked or deleted, the policy becomes disabled.
 
+- **Organization no longer owns any packages**  
+  If an organization no longer owns any packages on nuget.org, any Trusted Publishing policies created by its members that reference that organization will be disabled.  
+  To re-enable publishing, the organization must first be re-added as an owner to at least one package.
+
 These warnings help make sure that only enabled, secure policies are used when publishing packages.
