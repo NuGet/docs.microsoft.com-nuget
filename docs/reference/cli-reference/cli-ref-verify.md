@@ -12,7 +12,8 @@ ms.reviewer: rmpablos
 
 **Applies to:** package consumption &bullet; **Supported versions:** 4.6+
 
-Verifies a package and display the content hash.
+Verifies a package.
+Starting with [NuGet 7.0](../../release-notes/NuGet-7.0.md), the package's content hash will also be displayed.
 
 Verification of signed packages is not yet supported under Mono.
 
