@@ -12,7 +12,7 @@ ms.reviewer: rmpablos
 
 **Applies to:** package consumption &bullet; **Supported versions:** 4.6+
 
-Verifies a package.
+Verifies a package and display the content hash.
 
 Verification of signed packages is not yet supported under Mono.
 
