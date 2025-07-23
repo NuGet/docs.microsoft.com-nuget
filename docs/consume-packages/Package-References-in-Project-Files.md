@@ -464,10 +464,12 @@ You can leave off `$(AssetTargetFallback)` if you wish to overwrite, instead of 
 ## PrunePackageReference
 
 The .NET Runtime is constantly evolving, with performance improvements and new APIs each release.
-There is a lot of functionality that's available within the runtime, but also as packages, such as [System.Text.Json](https://www.nuget.org/packages/System.Text.Json). This can often lead to a `System.Text.Json 8.0.0` in a project targeting `.NET 9` or `.NET 8`. This dependency is unnecessary and the build conflict resolution would not use the assembly coming from the package since it's already available in the .NET Runtime.
-Starting in in [NuGet version 6.13](..\release-notes\NuGet-6.13.md) and .NET SDK 9.0.200, `PrunePackageReference` enables the pruning of these packages at restore time for .NET SDK based projects.
+New features added to .NET sometimes are also provided as packages, so that developers using older target frameworks can use the library, such as [System.Text.Json](https://www.nuget.org/packages/System.Text.Json).
+This can often lead to a `System.Text.Json 8.0.0` in a project targeting `.NET 9` or `.NET 8`. This dependency is unnecessary and the build conflict resolution would not use the assembly coming from the package since it's already available in the .NET Runtime.
+Starting in [NuGet version 6.13](..\release-notes\NuGet-6.13.md) and .NET SDK 9.0.200, `PrunePackageReference` enables the pruning of these packages at restore time for .NET SDK based projects.
+The first iteration of pruning affected transitive packages only, but starting with .NET SDK 10, package pruning affects direct packages as well.
 
-Package pruning is available as an opt-in feature with the .NET 9 SDK, and will be enabled by default for all `.NET` frameworks and `>= .NET Standard 2.0` starting with .NET 10 SDK.
+Package pruning is available as an opt-in feature with the .NET 9 SDK, and is enabled by default for `>= .NET 8.0` frameworks and `>= .NET Standard 2.0` starting with .NET 10 SDK.
 
 Package pruning is only available with the default dependency resolver as [released in 6.12](#nuget-dependency-resolver).
 
@@ -489,16 +491,53 @@ The .NET SDK predefines the list of packages to be pruned for you.
 
 ### How PrunePackageReference works
 
-When a package is specified to be pruned during restore, it is removed from the dependency graph. This package is not downloaded and does not appear in any of the outputs of NuGet. When a package is pruned, there is a detailed verbosity message indicating that the package has been removed for the given target framework.
+When a package is specified to be pruned during restore, it is removed from the dependency graph.
+When a package is pruned, there is a message, visible at detailed verbosity, indicating that the package has been removed for the given target framework.
 
-Pruning is only supported for transitive packages, meaning packages that are referenced by other packages or projects. The following table illustrates various package pruning behaviors.
+For transitive packages, meaning dependencies of other packages or projects, the packages are not downloaded and do not appear in any of the outputs of NuGet.
+
+For direct packages, `PrivateAssets='all'` and `IncludeAssets='none'` are implicitly applied.
+
+- `IncludeAssets='none'` ensures that the assemblies from this package are not used during the build. Before pruning existed, the conflict resolution during the build ensured that platform assemblies were preferred over those coming from the packages.
+- `PrivateAssets='all'` ensures that the packages aren't included in packages or through project references.
+
+Example:
+
+A project like below:
+
+```xml
+  <PropertyGroup>
+    <TargetFrameworks>net9.0;netstandard2.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="9.0.4" />
+  </ItemGroup>
+```
+
+will have a nuspec with the following dependencies:
+
+```xml
+<dependencies>
+    <group targetFramework=".NETFramework4.7.2">
+        <dependency id="System.Text.Json" version="9.0.4" />
+    </group>
+    <group targetFramework="net9.0">
+    </group>
+</dependencies>
+```
+
+When a direct PackageReference can be completely removed from your project, and one of the project frameworks are .NET 10 or newer, [NU1510](../reference/errors-and-warnings/NU1510.md) will be raised asking you to remove the package. 
+Following this suggestion will reduce the complexity of your project graph.
+
+The following table summarizes all the package pruning behaviors.
 
 | Dependency disposition | Behavior |
 |-----------------|----------|
 | Matches the ID of a transitive package coming through another package | Prune |
 | Matches the ID of a transitive package coming through another project | Prune |
-| Matches the ID of a direct `PackageReference` | Raise the [NU1510](../reference/errors-and-warnings/NU1510.md) warning and do not prune |
-| Matches the ID of a `ProjectReference` | Raise the [NU1511](../reference/errors-and-warnings/NU1511.md) warning and do not prune |
+| Matches the ID of a direct `PackageReference` | Apply `PrivateAssets='all'` and `IncludeAssets='none'` and raise the [NU1510](../reference/errors-and-warnings/NU1510.md) warning when the package can be removed from all frameworks and the project targets .NET 10. |
+| Matches the ID of a `ProjectReference` | Do not prune and raise the [NU1511](../reference/errors-and-warnings/NU1511.md) warning when the project targets .NET 10 |
 
 ### PrunePackageReference applications
 
