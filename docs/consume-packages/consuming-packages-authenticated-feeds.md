@@ -5,6 +5,7 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 12/22/2023
 ms.topic: conceptual
+ms.custom: sfi-ropc-nochange
 ---
 
 # Consuming packages from authenticated feeds

@@ -8,6 +8,7 @@ ms.topic: conceptual
 ms.reviewer: 
   - kraigb
   - camsoper
+ms.custom: sfi-image-nochange
 ---
 
 # Your organization on NuGet.org

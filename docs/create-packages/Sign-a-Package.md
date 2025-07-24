@@ -6,6 +6,7 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
+ms.custom: sfi-image-nochange
 ---
 
 # Sign a NuGet package
