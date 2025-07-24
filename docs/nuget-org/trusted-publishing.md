@@ -25,7 +25,10 @@ Here’s the basic flow:
 4. NuGet verifies it and returns a temporary API key.
 5. Your workflow uses that key to push the package.
 
-NuGet’s temporary API keys are valid for **15 minutes**, so your workflow should request the key shortly before publishing. If you request it too early, it might expire before the push happens.
+NuGet’s temporary API keys are valid for **15 minutes**, so your workflow should request the key shortly before publishing.
+If you request it too early, it might expire before the push happens. 
+
+Each short-lived token can only be used once to obtain a single temporary API key—one token, one API key.
 
 This setup gives you a secure and automated way to publish packages, without the risks that come with long-lived secrets.
 
@@ -73,37 +76,40 @@ When you create a Trusted Publishing policy, you need to choose who owns it. The
 
 The policy will apply to all packages owned by the selected owner. That means it controls who can publish or modify those packages using Trusted Publishing.
 
-If you choose an organization, make sure you're an active member. If you leave the org later, the policy may become disabled until you're added back.
+If you choose an organization, make sure you're an active member. If you leave the org later, the policy may become inactive until you're added back.
 
 Choosing the right owner helps ensure your publishing setup stays secure and aligned with your team’s structure.
 
 
-## Temporarily Enabled Policies
+## Policies Pending Full Activation
 
-Sometimes when you create a Trusted Publishing policy, we can’t get the GitHub repository and owner IDs right away. This usually happens with private repos.
+Sometimes when you create a Trusted Publishing policy, we can’t get the GitHub repository and owner IDs right away. 
+This usually happens with private repos. Once these IDs are available—typically after a successful publish—the policy
+becomes **active indefinitely**.
 
 Why does that matter? Because we use those IDs to lock the policy to the original repo and owner. That helps prevent resurrection attacks. Without the IDs, someone could delete a repo, recreate it with the same name, and try to publish as if nothing changed.
 
-If we don’t have the IDs, the policy starts out as **temporarily enabled**. You’ll see this in the UI. It works like a regular policy, but it only lasts for **7 days**.
-Once you publish from that repo, we’ll grab the IDs from the GitHub token and upgrade the policy to **permanently enabled**.
-If no publish happens in time, the policy is disabled. You can reset the 7-day timer at any point, even if the policy has already been disabled after the initial window expired.
+If we don’t have the IDs, the policy starts out as **active for 7 days**. You’ll see this in the UI. It works like a regular policy, but it will automatically become **inactive** after **7 days** unless a publish occurs.
+
+If no publish happens in time, the policy becomes **inactive**. You can reset the 7-day timer at any point, even if the policy has already become inactive after the initial window expired.
+
 
 ## Policy Ownership Warnings
 
-Trusted Publishing policies are tied to a specific owner - either an individual user or an organization.
-If something changes with that ownership, the policy might become disabled. When that happens, you'll see a warning in the UI.
+Trusted Publishing policies are tied to a specific owner—either an individual user or an organization.
+If something changes with that ownership, the policy might become inactive. When that happens, you'll see a warning in the UI.
 
 ### Common cases
 
 - **User removed from organization**  
-  If a policy is owned by an organization and the user who created it is later removed from that org, the policy becomes disabled.  
-  If the user is added back to the organization, the policy will be enabled again automatically.
+  If a policy is owned by an organization and the user who created it is later removed from that org, the policy becomes inactive.  
+  If the user is added back to the organization, the policy will be active again automatically.
 
 - **Organization is no longer active**  
-  If the organization that owns the policy is locked or deleted, the policy becomes disabled.
+  If the organization that owns the policy is locked or deleted, the policy becomes inactive.
 
 - **Organization no longer owns any packages**  
-  If an organization no longer owns any packages on nuget.org, any Trusted Publishing policies created by its members that reference that organization will be disabled.  
-  To re-enable publishing, the organization must first be re-added as an owner to at least one package.
+  If an organization no longer owns any packages on nuget.org, any Trusted Publishing policies created by its members that reference that organization will be inactive.  
+  To re-activate publishing, the organization must first be re-added as an owner to at least one package.
 
-These warnings help make sure that only enabled, secure policies are used when publishing packages.
+These warnings help make sure that only active, secure policies are used when publishing packages.
