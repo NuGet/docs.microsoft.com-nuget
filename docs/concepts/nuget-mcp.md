@@ -66,7 +66,7 @@ A command to start an MCP server would look something like this:
 dnx NuGet.Mcp.Server@0.1.2-preview --yes
 ```
 
-Environment variables and command-line arguments can both be used to configure your MCP server in custom ways. See the [section on inputs](#declaring-inputs-using-the-serverjson) above for more information.
+Environment variables and command-line arguments can both be used to configure your MCP server in custom ways. These inputs allow you to customize the behavior of your MCP server to suit specific needs.
 
 This will download the `NuGet.Mcp.Server` package of version `0.1.2-preview` from your configured package sources (NuGet.org by default), and launch the contained CLI tool. For an MCP server, you may see log messages appear in stderr, but the process will appear to hang. This is expected, since the process is waiting for MCP protocol messages over stdin from your MCP client.
 
