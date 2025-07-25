@@ -21,6 +21,8 @@ Packages can be marked with one more more *package types* to indicate its intend
 
 - `Template` type packages provide [custom templates](/dotnet/core/tools/custom-templates) that can be used to create files or projects like an app, service, tool, or class library.
 
+- `McpServer` type packages contain MCP servers. This package type is always accompanied by the `DotnetTool` package type, because a local MCP server is distributed as a .NET tool. For information on MCP server and NuGet, see [MCP servers in NuGet packages](../concepts/nuget-mcp.md).
+
 Packages not marked with a type, including all packages created with earlier versions of NuGet, default to the `Dependency` type.
 
 > [!NOTE]
