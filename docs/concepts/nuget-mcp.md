@@ -13,15 +13,6 @@ NuGet provides a convenient way to package and distribute MCP servers written in
 
 For more information about the Model Context Protocol (MCP) in general, see the [introduction on the MCP website](https://modelcontextprotocol.io/introduction). To create your own MCP server and package it using NuGet, see the [quickstart guide](/dotnet/ai/quickstarts/build-mcp-server).
 
-## Table of Contents
-
-- [Key considerations when building an MCP server](#key-considerations-when-building-an-mcp-server)
-- [Benefits of using .NET and NuGet for MCP servers](#benefits-of-using-net-and-nuget-for-mcp-servers)
-- [Applicable scenarios](#applicable-scenarios)
-- [Package download and execution](#package-download-and-execution)
-- [Runtime requirements](#runtime-requirements)
-- [Comparison to other ecosystems](#comparison-to-other-ecosystems)
-
 ## Key considerations when building an MCP server
 
 If you're interested in building an MCP server, ask yourself the following questions. The answers will help you decide if using a NuGet MCP server is the right decision for you.
