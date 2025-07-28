@@ -74,7 +74,8 @@ Note that the [V2 protocol is deprecated](../nuget-org/overview-nuget-org.md#api
 
 Audit sources are available from [NuGet 6.12, .NET 9.0.100 SDK, and Visual Studio 2022 17.12](../release-notes/NuGet-6.12.md).
 Prior to this version, NuGet Audit will only use package sources to download vulnerability information.
-Audit sources are not used by `dotnet list package --vulnerable` at this time.
+Starting [NuGet 6.14, .NET 9.0.300 SDK, and Visual Studio 2022 17.14](../release-notes/NuGet-6.14.md) the `dotnet package list --vulnerable` command also uses audit sources.
+In earlier versions, the command relied solely on package sources.
 
 #### Excluding advisories
 
