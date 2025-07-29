@@ -162,7 +162,7 @@ Finally, the managed library, that uses P/Invoke to call into the native library
 ### SDK style projects targeting .NET Framework
 
 When the .NET SDK builds a project targeting the .NET Framework, if one of `RuntimeIdentifier` or `PlatformTarget` is set, the .NET SDK will set the other property to an appropriate value, and package `runtimes/<rid>` contents (that [follow NuGet's conventions](#understanding-nuget-package-asset-selection)) will be copied to the output directory.
-If the the project does not set either `RuntimeIdentifier` or `PlatformTarget`, but any package contains RID specific contents, then the .NET SDK will set `PlatformTarget` to `x86`.
+If the project does not set either `RuntimeIdentifier` or `PlatformTarget`, but any package contains RID specific contents, then the .NET SDK will set `PlatformTarget` to `x86`.
 Therefore, SDK style projects targeting .NET Framework will only use `AnyCPU` by default when none of the packages contain RID specific content.
 
 `dotnet build -r <rid>`, or the `publish` equivalent (for example, `dotnet publish -r win-arm64`) can be used to explicitly build or publish for a specific platform.

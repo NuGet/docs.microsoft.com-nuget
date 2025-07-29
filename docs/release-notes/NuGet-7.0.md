@@ -1,10 +1,10 @@
 ---
-title: NuGet 6.15 Release Notes
-description: Release notes for NuGet 6.15 including new features, bug fixes, and DCRs.
+title: NuGet 7.0 Release Notes
+description: Release notes for NuGet 7.0 including new features, bug fixes, and DCRs.
 author: zivkan
 ms.topic: conceptual
 ---
-# NuGet 6.15 Release Notes
+# NuGet 7.0 Release Notes
 
 <!--
     This is intentionally not yet added to TOC.md.
@@ -19,9 +19,7 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.15**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.15](https://visualstudio.microsoft.com/downloads/) | [9.0.4xx](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
-
-<sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
+| [**7.0**](https://nuget.org/downloads) | TBD | TBD |
 
 ## Not yet released
 

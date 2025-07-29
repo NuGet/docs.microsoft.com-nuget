@@ -77,6 +77,7 @@
 ## [Best practices for a secure software supply chain](concepts/Security-Best-Practices.md)
 ## [MSBuild .props and .targets](concepts/MSBuild-props-and-targets.md)
 ## [Troubleshooting Installed Packages](concepts/troubleshooting-installed-packages.md)
+## [MCP servers in NuGet packages](concepts/nuget-mcp.md)
 # Reference
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config file](reference/nuget-config-file.md)
@@ -153,6 +154,7 @@
 ### [NU1011](reference/errors-and-warnings/NU1011.md)
 ### [NU1012](reference/errors-and-warnings/NU1012.md)
 ### [NU1014](reference/errors-and-warnings/NU1014.md)
+### [NU1015](reference/errors-and-warnings/NU1015.md)
 ### [NU1100](reference/errors-and-warnings/NU1100.md)
 ### [NU1101](reference/errors-and-warnings/NU1101.md)
 ### [NU1102](reference/errors-and-warnings/NU1102.md)
