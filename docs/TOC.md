@@ -77,6 +77,7 @@
 ## [Best practices for a secure software supply chain](concepts/Security-Best-Practices.md)
 ## [MSBuild .props and .targets](concepts/MSBuild-props-and-targets.md)
 ## [Troubleshooting Installed Packages](concepts/troubleshooting-installed-packages.md)
+## [MCP servers in NuGet packages](concepts/nuget-mcp.md)
 # Reference
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config file](reference/nuget-config-file.md)
