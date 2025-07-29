@@ -13,25 +13,6 @@ NuGet provides a convenient way to package and distribute MCP servers written in
 
 For more information about the Model Context Protocol (MCP) in general, see the [introduction on the MCP website](https://modelcontextprotocol.io/introduction). To create your own MCP server and package it using NuGet, see the [quickstart guide](/dotnet/ai/quickstarts/build-mcp-server).
 
-## Key considerations when building an MCP server
-
-If you're interested in building an MCP server, ask yourself the following questions. The answers will help you decide if using a NuGet MCP server is the right decision for you.
-
-- **What programming language do you want to write the MCP server in?** MCP is a language-agnostic protocol and there are several official SDKs. The [MCP website](https://modelcontextprotocol.io/quickstart/server) lists several official SDKs.
-- **Do you want the MCP server to be a local process running in the same context as the MCP client**, or should it be a central web service that you manage the operations of? This document focuses on local MCP servers, instead of remote ones.
-- **What runtime requirements are tolerable for your clients when launching the local MCP server process?** Popular MCP clients such as VS Code launch a local MCP server using a process like `npx` (for npm-based MCP servers) or `dnx` (for NuGet-based MCP servers). The client must have the appropriate runtime in order to acquire and execute the MCP server package.
-
-If you or your team are familiar with C# and the .NET ecosystem, shipping your MCP server via NuGet is a great option. If C# is new to you or your team, consider some of the trade-offs mentioned below. The .NET SDK provides a straightforward way to package MCP servers into a single, optimized package with minimal runtime dependencies.
-
-## Benefits of using .NET and NuGet for MCP servers
-
-There are several benefits to using NuGet for hosting your MCP server:
-
-- **Official SDK** - the [MCP C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) provides a familiar interface for implementing your MCP server in C# and makes it easy to expose tools to MCP clients.
-- **Flexible runtime options** - the .NET SDK provides several options for how your MCP server is compiled and packaged. See the [runtime requirements](#runtime-requirements) section for details.
-- **Discoverability and distribution** - NuGet.org provides a way to showcase your MCP server, allowing potential users to find your MCP server and easily use it from inside VS Code or Visual Studio. NuGet.org encourages the use of an embedded [`.mcp/server.json`](https://github.com/modelcontextprotocol/registry/blob/main/docs/server-json/README.md) to declare inputs and an `McpServer` package type to allow MCP servers to be differentiated from other tool or dependency packages.
-- **Familiar authoring workflows** - if you already use NuGet for creating dependency packages, creating and publishing an MCP server will be a very similar experience.
-
 ## Applicable scenarios
 
 Shipping your MCP server via NuGet does not apply to all situations. The term "MCP client" is used in this document and refers to an application that orchestrates the interaction between an AI agent or LLM and calls made to an MCP server. Some example MCP clients are [Visual Studio Code](https://code.visualstudio.com/docs/copilot/chat/mcp-servers), [Visual Studio](/visualstudio/ide/mcp-servers), [GitHub Copilot coding agent](https://docs.github.com/copilot/concepts/coding-agent/about-copilot-coding-agent), Claude Code, or Cursor.
@@ -41,9 +22,18 @@ Consider the following criteria to determine whether shipping your MCP server as
 - ✅ You want your MCP server to run **locally** on the user's system (i.e., in the same context as the MCP client).
   - Local MCP servers, such as those shipped in NuGet packages, run in the same context as the MCP client and communicate with the MCP client via standard IO (stdio) transport. The MCP client is responsible for launching the local MCP server process.
 - ✅ The .NET SDK is available to the MCP client.
-  - NuGet MCP servers are [.NET tool packages](/dotnet/core/tools/global-tools), which are installed and executed using the .NET SDK.
+  - NuGet MCP servers are [.NET tool packages](/dotnet/core/tools/global-tools), which are installed and executed using `dnx` from the .NET SDK.
 - ✅ You have a NuGet package feed to host your MCP server package.
   - NuGet.org can be used to publish MCP server packages and provides a tailored MCP browsing and consumption experience. However, any NuGet package feed, such as Azure Artifacts, can be used for hosting MCP servers if you wish to keep your MCP server package private.
+
+## Benefits of using .NET and NuGet for MCP servers
+
+There are several benefits to using NuGet for hosting your MCP server:
+
+- **Official SDK** - the [MCP C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) provides a familiar interface for implementing your MCP server in C# and makes it easy to expose tools to MCP clients.
+- **Flexible runtime options** - the .NET SDK provides several options for how your MCP server is compiled and packaged. See the [runtime requirements](#runtime-requirements) section for details.
+- **Discoverability and distribution** - NuGet.org provides a way to showcase your MCP server, allowing potential users to find your MCP server and easily use it from inside VS Code or Visual Studio. NuGet.org encourages the use of an embedded [`.mcp/server.json`](https://github.com/modelcontextprotocol/registry/blob/main/docs/server-json/README.md) to declare inputs and an `McpServer` package type to allow MCP servers to be differentiated from other tool or dependency packages.
+- **Familiar authoring workflows** - if you already use NuGet for creating dependency packages, creating and publishing an MCP server will be a very similar experience.
 
 ## Package download and execution
 
@@ -72,8 +62,8 @@ Once the package is downloaded, a runtime is needed to execute the code inside t
 There are three main options for how to package your MCP server:
 
 1. **Framework-dependent**: Requires that the MCP client has access to a compatible .NET runtime. If `dnx` is being used to download and execute the package, a runtime will be available.
-2. **Self-contained**: Bundles the runtime with the package. [Using trimming](/dotnet/core/deploying/trimming/trimming-options) can reduce the size of the package.
-3. **Ahead-of-time (AOT) compiled**: A self-contained package with AOT compilation enabled.
+2. **Self-contained**: Bundles the runtime with the package. [Using trimming](/dotnet/core/deploying/trimming/trimming-options) can reduce the size of the package. Self-contained .NET tools use `<PublishSelfContained>true</PublishSelfContained>`.
+3. **Ahead-of-time (AOT) compiled**: A self-contained package with AOT compilation enabled. See [native AOT deployment](/dotnet/core/deploying/native-aot/) for more information. AOT .NET tools use `<PublishAot>true</PublishAot>`.
 
 For MCP servers, we recommend using option #2 (self-contained package without AOT) because it eliminates the need for any specific .NET runtime version present in the user's environment. If you can guarantee a compatible runtime version on the intended execution environment, option #1 is reasonable. Option #3 (using AOT) is also a good option, but it forces you or your dependencies to make your code compatible with AOT compilation. The C# MCP SDK is AOT compatible, but other dependencies you intend to use may not yet be AOT compatible.
 
