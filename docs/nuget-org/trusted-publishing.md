@@ -25,6 +25,8 @@ Here’s the basic flow:
 4. NuGet verifies it and returns a temporary API key.
 5. Your workflow uses that key to push the package.
 
+![Screenshot that shows Trusted Publishing page.](media/trusted-publishing.png)
+
 NuGet’s temporary API keys are valid for **15 minutes**, so your workflow should request the key shortly before publishing.
 If you request it too early, it might expire before the push happens. 
 
@@ -83,15 +85,11 @@ Choosing the right owner helps ensure your publishing setup stays secure and ali
 
 ## Policies Pending Full Activation
 
-Sometimes when you create a Trusted Publishing policy, we can’t get the GitHub repository and owner IDs right away. 
-This usually happens with private repos. Once these IDs are available—typically after a successful publish—the policy
-becomes **active indefinitely**.
+Sometimes when you create a Trusted Publishing policy, it starts out as temporarily active for 7 days. This usually happens with private GitHub repos. You’ll see this status in the UI. During that time, it behaves like a regular policy. But if no publish happens within those 7 days, the policy automatically becomes inactive. You can restart the 7-day window at any time—even after it expires.
 
-Why does that matter? Because we use those IDs to lock the policy to the original repo and owner. That helps prevent resurrection attacks. Without the IDs, someone could delete a repo, recreate it with the same name, and try to publish as if nothing changed.
+Why is this temporary period necessary? Because NuGet needs GitHub repository and owner IDs to lock the policy to the original repo and owner. That helps prevent resurrection attacks. Without those IDs, someone could delete a repo, recreate it with the same name, and try to publish as if nothing changed. 
 
-If we don’t have the IDs, the policy starts out as **active for 7 days**. You’ll see this in the UI. It works like a regular policy, but it will automatically become **inactive** after **7 days** unless a publish occurs.
-
-If no publish happens in time, the policy becomes **inactive**. You can reset the 7-day timer at any point, even if the policy has already become inactive after the initial window expired.
+Once a successful publish provides the IDs (as part of GitHub’s short-lived token), the policy becomes permanently active.
 
 
 ## Policy Ownership Warnings
@@ -107,9 +105,5 @@ If something changes with that ownership, the policy might become inactive. When
 
 - **Organization is no longer active**  
   If the organization that owns the policy is locked or deleted, the policy becomes inactive.
-
-- **Organization no longer owns any packages**  
-  If an organization no longer owns any packages on nuget.org, any Trusted Publishing policies created by its members that reference that organization will be inactive.  
-  To re-activate publishing, the organization must first be re-added as an owner to at least one package.
 
 These warnings help make sure that only active, secure policies are used when publishing packages.
