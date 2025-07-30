@@ -5,6 +5,7 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
+ms.custom: sfi-image-nochange
 ---
 
 # NuGet 1.5 Release Notes

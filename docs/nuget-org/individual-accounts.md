@@ -5,6 +5,7 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
+ms.custom: sfi-image-nochange
 ---
 
 # Individual accounts on NuGet.org
