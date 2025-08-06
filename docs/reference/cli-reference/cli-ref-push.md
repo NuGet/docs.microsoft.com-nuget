@@ -29,7 +29,7 @@ where `<packagePath>` identifies the package to push to the server.
 ## Options
 
 - **`-AllowInsecureConnections`**
-  Allows pushing to HTTP sources (insecure).
+  Allows pushing to HTTP sources (insecure). For more information, refer to https://aka.ms/nuget-https-everywhere.
 
 - **`-ApiKey`**
 
