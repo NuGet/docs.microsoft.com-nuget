@@ -14,23 +14,7 @@ While managing dependencies for a single project is straightforward, it becomes 
 
 If you manage common dependencies for many different projects, you can leverage NuGet's Central Package Management (CPM) features to do all of this from a single, central location.
 
-Historically, NuGet package dependencies have been managed in one of two ways:
-
-- `packages.config` – An XML file used in older project types to maintain the list of packages referenced by the project.
-- `<PackageReference />` – An XML element in MSBuild project files that defines NuGet package dependencies.
-
-Starting with [NuGet 6.2](../release-notes/NuGet-6.2.md), you can centrally manage your dependencies in your projects with the addition of a `Directory.Packages.props` file and an MSBuild property.
-
-This feature is available across all NuGet-integrated tooling, starting with the following versions:
-
-* [Visual Studio 2022 17.2](https://visualstudio.microsoft.com/downloads/)
-* [.NET SDK 6.0.300](https://dotnet.microsoft.com/download/dotnet/6.0)
-* [nuget.exe 6.2.0](https://www.nuget.org/downloads)
-
-Older tooling will ignore Central Package Management configurations and features.
-To use this feature to the fullest extent, ensure all your build environments use the latest compatible tooling versions.
-
-Central Package Management applies to all `<PackageReference>`-based MSBuild projects (including [legacy CSPROJ](https://github.com/dotnet/project-system/blob/main/docs/feature-comparison.md)) as long as compatible tooling is used.
+Central Package Management applies to all `<PackageReference>`-based MSBuild projects (including [legacy CSPROJ](https://github.com/dotnet/project-system/blob/main/docs/feature-comparison.md)).
 
 ## Enabling Central Package Management
 
