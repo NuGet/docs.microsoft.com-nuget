@@ -160,7 +160,7 @@ If security vulnerabilities are found and updates are available for the package,
 If a known vulnerability exists in a top-level package's transitive dependencies, you have these options:
 
 - Add the fixed package version as a direct package reference. **Note:** Be sure to remove this reference when a new package version update becomes available and be sure to maintain the defined attributes for the expected behavior.
-- Use [Central Package Management with the transitive pinning functionality](../consume-packages/Central-Package-Management.md#pinning-transitive-packages-to-different-versions).
+- Use [Central Package Management with the transitive pinning functionality](../consume-packages/Central-Package-Management.md#transitive-pinning).
 - [Suppress the advisory](#excluding-advisories) until it can be addressed.
 - File an issue in the top-level package's tracker to request an update.
 

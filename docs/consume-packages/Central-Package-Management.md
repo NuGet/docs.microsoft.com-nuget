@@ -72,38 +72,6 @@ The version will be resolved from the corresponding `<PackageVersion />` entry i
 
 Now you're using Central Package Management and managing your versions in a central location!
 
-### Using Different Versions for Different Target Frameworks
-
-As NuGet packages evolve, package owners may drop support for older target frameworks.
-This can cause issues for developers of libraries that still target older frameworks but want to reference newer versions of packages for newer target frameworks.
-
-For example, if your project targets .NET Standard 2.0, .NET 8.0, and .NET Framework 4.7.2, but `PackageA` no longer supports .NET Standard 2.0 in its latest version, you can specify different versions for each target framework.
-
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net8.0;net472</TargetFrameworks>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="PackageA" />
-  </ItemGroup>
-</Project>
-```
-
-In this case, define different versions for each target framework in your `Directory.Packages.props` using [MSBuild conditions](/visualstudio/msbuild/msbuild-conditions):
-
-```xml
-<Project>
-  <PropertyGroup>
-    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageVersion Include="PackageA" Version="1.0.0" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
-    <PackageVersion Include="PackageA" Version="2.0.0" Condition="'$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net472'" />
-  </ItemGroup>
-</Project>
-```
-
 ## Central Package Management Rules
 
 The `Directory.Packages.props` file has specific rules regarding its location and context within a repository.
@@ -157,7 +125,39 @@ To fully onboard your repository, follow these steps:
 
 For an example of how Central Package Management may look, refer to our [samples repository](https://github.com/NuGet/Samples/tree/main/CentralPackageManagementExample).
 
-## Pinning Transitive Packages to Different Versions
+## Using Different Versions for Different Target Frameworks
+
+As NuGet packages evolve, package owners may drop support for older target frameworks.
+This can cause issues for developers of libraries that still target older frameworks but want to reference newer versions of packages for newer target frameworks.
+
+For example, if your project targets .NET Standard 2.0, .NET 8.0, and .NET Framework 4.7.2, but `PackageA` no longer supports .NET Standard 2.0 in its latest version, you can specify different versions for each target framework.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0;net472</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="PackageA" />
+  </ItemGroup>
+</Project>
+```
+
+In this case, define different versions for each target framework in your `Directory.Packages.props` using [MSBuild conditions](/visualstudio/msbuild/msbuild-conditions):
+
+```xml
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="PackageA" Version="1.0.0" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
+    <PackageVersion Include="PackageA" Version="2.0.0" Condition="'$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net472'" />
+  </ItemGroup>
+</Project>
+```
+
+## Transitive Pinning
 
 You can automatically override a transitive package version without an explicit top-level `<PackageReference />` item by opting into a feature known as transitive pinning.
 This promotes a transitive dependency to a top-level dependency implicitly on your behalf when necessary.
