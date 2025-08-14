@@ -57,11 +57,10 @@ jobs:
     
       # Get a short-lived NuGet API key
       - name: NuGet login
-        id: nuget_login
-        uses: nuget/login@v1
+        id: login
+        uses: NuGet/login@v1
         with:
           user: ${{secrets.NUGET_USER}}
-          source: https://api.nuget.org/v3/index.json
     
       # Push the package
       - name: NuGet push
