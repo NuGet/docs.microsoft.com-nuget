@@ -56,16 +56,16 @@ jobs:
       # Build your artifacts/my-sdk.nupkg package here
     
       # Get a short-lived NuGet API key
-      - name: NuGet login
-        id: nuget_login
-        uses: nuget/login@v1
+      - name: NuGet login (OIDC → temp API key)
+        uses: NuGet/login@v1
+        id: login
         with:
           user: ${{secrets.NUGET_USER}}
           source: https://api.nuget.org/v3/index.json
     
       # Push the package
       - name: NuGet push
-        run: dotnet nuget push artifacts/my-sdk.nupkg -k ${{steps.nuget_login.outputs.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json
+        run: dotnet nuget push artifacts/my-sdk.nupkg --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
 ```
 
 
