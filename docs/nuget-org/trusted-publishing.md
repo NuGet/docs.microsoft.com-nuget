@@ -61,7 +61,6 @@ jobs:
         id: login
         with:
           user: ${{secrets.NUGET_USER}}
-          source: https://api.nuget.org/v3/index.json
     
       # Push the package
       - name: NuGet push
