@@ -11,13 +11,13 @@ ms.topic: conceptual
 
 Package references, using `<PackageReference>` MSBuild items, specify NuGet package dependencies directly within project files, as opposed to having a separate `packages.config` file. Use of PackageReference doesn't affect other aspects of NuGet; for example, settings in `NuGet.Config` files (including package sources) are still applied as explained in [Common NuGet configurations](configuring-nuget-behavior.md).
 
-With PackageReference, you can also use MSBuild conditions to choose package references per target framework, or other groupings. It also allows for fine-grained control over dependencies and content flow. (See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
+With PackageReference, you can also use MSBuild conditions to choose package references per target framework, or other groupings. It also allows for fine-grained control over dependencies and content flow. (For more information, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)
 
 ## Project type support
 
-By default, PackageReference is used for .NET Core projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later, with the exception of C++ UWP projects. .NET Framework projects support PackageReference, but currently default to `packages.config`. To use PackageReference, [migrate](../consume-packages/migrate-packages-config-to-package-reference.md) the dependencies from `packages.config` into your project file, then remove packages.config.
+By default, PackageReference is used for .NET projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later, with the exception of C++ UWP projects. .NET Framework projects support PackageReference, but currently default to `packages.config`. To use PackageReference in a .NET Framework project, [migrate](../consume-packages/migrate-packages-config-to-package-reference.md) the dependencies from `packages.config` into your project file, then remove packages.config.
 
-ASP.NET apps targeting the full .NET Framework include only [limited support](https://github.com/NuGet/Home/issues/5877) for PackageReference. C++ and JavaScript project types are unsupported.
+ASP.NET apps that target the full .NET Framework include only [limited support](https://github.com/NuGet/Home/issues/5877) for PackageReference. C++ and JavaScript project types are unsupported.
 
 ## Adding a PackageReference
 
@@ -43,7 +43,7 @@ The convention for specifying the version of a package is the same as when using
 </ItemGroup>
 ```
 
-In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../concepts/package-versioning.md#version-ranges).
+In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described in [Package versioning](../concepts/package-versioning.md#version-ranges).
 
 ## Using PackageReference for a project with no package dependencies
 
@@ -57,11 +57,11 @@ Advanced: If you have no packages installed in a project (no PackageReferences i
 </PropertyGroup>    
 ```
 
-This may be useful, if you reference projects which are PackageReference styled (existing csproj or SDK-style projects). This will enable packages that those projects refer to, to be "transitively" referenced by your project.
+This might be useful if you reference projects that are PackageReference styled (existing csproj or SDK-style projects). This will enable packages that those projects refer to, to be "transitively" referenced by your project.
 
 ## PackageReference and sources
 
-In PackageReference projects, the transitive dependency versions are resolved at restore time. As such, in PackageReference projects all sources need to be available for all restores.
+In PackageReference projects, the transitive dependency versions are resolved at restore time. As such, in PackageReference projects, all sources need to be available for all restores.
 
 ## Floating Versions
 
@@ -94,13 +94,13 @@ You might be using a dependency purely as a development harness and might not wa
 
 The following metadata tags control dependency assets:
 
-| Tag | Description | Default Value |
-| --- | --- | --- |
-| IncludeAssets | These assets will be consumed | all |
-| ExcludeAssets | These assets will not be consumed | none |
+| Tag           | Description                                                        | Default Value                |
+|---------------|--------------------------------------------------------------------|------------------------------|
+| IncludeAssets | These assets will be consumed                                      | all                          |
+| ExcludeAssets | These assets will not be consumed                                  | none                         |
 | PrivateAssets | These assets will be consumed but won't flow to the parent project | contentfiles;analyzers;build |
 
-Allowable values for these tags are as follows, with multiple values separated by a semicolon except with `all` and `none` which must appear by themselves:
+Allowable values for these tags are as follows, with multiple values separated by a semicolon except for `all` and `none`, which must appear by themselves:
 
 | Value | Description |
 | --- | ---
@@ -143,9 +143,9 @@ Note that because `build` is not included with `PrivateAssets`, targets and prop
 
 ## Adding a PackageReference condition
 
-You can use a condition to control whether a package is included, where conditions can use any MSBuild variable or a variable defined in the targets or props file. However, at present, only the `TargetFramework` variable is supported.
+You can use a condition to control whether a package is included. Conditions can use any MSBuild variable or a variable defined in the targets or props file. However, at present, only the `TargetFramework` variable is supported.
 
-For example, say you're targeting `netstandard1.4` as well as `net452` but have a dependency that is applicable only for `net452`. In this case you don't want a `netstandard1.4` project that's consuming your package to add that unnecessary dependency. To prevent this, you specify a condition on the `PackageReference` as follows:
+For example, say you're targeting `netstandard1.4` as well as `net452` but have a dependency that's applicable only for `net452`. In this case you don't want a `netstandard1.4` project that consumes your package to add that unnecessary dependency. To prevent this, you specify a condition on the `PackageReference` as follows:
 
 ```xml
 <ItemGroup>
@@ -191,7 +191,7 @@ Example:
   </Target>
 ````
 
-Additionally NuGet will automatically generate properties for packages containing a tools folder.
+Additionally NuGet automatically generates properties for packages containing a tools folder.
 
 ```xml
   <ItemGroup>
@@ -206,12 +206,12 @@ Additionally NuGet will automatically generate properties for packages containin
 MSBuild properties and package identities do not have the same restrictions so the package identity needs to be changed to an MSBuild friendly name, prefixed by the word `Pkg`.
 To verify the exact name of the property generated, look at the generated [nuget.g.props](../reference/msbuild-targets.md#restore-outputs) file.
 
-## PackageReference Aliases
+## PackageReference aliases
 
-In some rare instances different packages will contain classes in the same namespace. Starting with NuGet 5.7 & Visual Studio 2019 Update 7, equivalent to ProjectReference, PackageReference supports [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases).
-By default no aliases are provided. When an alias is specified, *all* assemblies coming from the annotated package with need to be referenced with an alias.
+In some rare instances, different packages will contain classes in the same namespace. Starting with NuGet 5.7 & Visual Studio 2019 Update 7, equivalent to ProjectReference, PackageReference supports [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases).
+By default, no aliases are provided. When an alias is specified, *all* assemblies coming from the annotated package need to be referenced with an alias.
 
-You can look at sample usage at [NuGet\Samples](https://github.com/NuGet/Samples/tree/main/PackageReferenceAliasesExample)
+You can look at sample usage at [NuGet\Samples](https://github.com/NuGet/Samples/tree/main/PackageReferenceAliasesExample).
 
 In the project file, specify the aliases as follows:
 
@@ -221,7 +221,7 @@ In the project file, specify the aliases as follows:
   </ItemGroup>
 ```
 
-and in the code use it as follows:
+And in the code, use it as follows:
 
 ```cs
 extern alias ExampleAlias;
@@ -246,8 +246,8 @@ For many pack and restore scenarios, all NuGet warnings and errors are coded, an
 
 NuGet observes the following warning properties:
 
-- `TreatWarningsAsErrors`, treat all warnings as errors
-- `WarningsAsErrors`, treat specific warnings as errors
+- `TreatWarningsAsErrors`, treat all warnings as errors.
+- `WarningsAsErrors`, treat specific warnings as errors.
 - `NoWarn`, hide specific warnings, either project-wide or package-wide.
 
 Examples:
@@ -285,7 +285,7 @@ To suppress a warning project wide, consider doing:
 </ItemGroup>
 ```
 
-Sometimes warnings apply only to a certain package in the graph. We can choose to suppress that warning more selectively by adding a `NoWarn` on the PackageReference item.
+Sometimes warnings apply only to a certain package in the graph. You can choose to suppress that warning more selectively by adding a `NoWarn` on the PackageReference item.
 
 ```xml
 <PropertyGroup>
@@ -308,18 +308,18 @@ When in Visual Studio, you can also [suppress warnings](/visualstudio/ide/how-to
 Input to NuGet restore is a set of `PackageReference` items from the project file (top-level or direct dependencies) and the output is a full closure of all the package dependencies including transitive dependencies. NuGet tries to always produce the same full closure of package dependencies if the input PackageReference list has not changed. However, there are some scenarios where it is unable to do so. For example:
 
 - When you use floating versions like `<PackageReference Include="My.Sample.Lib" Version="4.*"/>`. While the intention here is to float to the latest version on every restore of packages, there are scenarios where users require the graph to be locked to a certain latest version and float to a later version, if available, upon an explicit gesture.
-- A newer version of the package matching PackageReference version requirements is published. E.g.
+- A newer version of the package matching PackageReference version requirements is published. For example:
 
   - Day 1: if you specified `<PackageReference Include="My.Sample.Lib" Version="4.0.0"/>` but the versions available on the
-  NuGet repositories were 4.1.0, 4.2.0 and 4.3.0. In this case, NuGet would have resolved to  4.1.0 (nearest minimum version)
+  NuGet repositories were 4.1.0, 4.2.0, and 4.3.0. In this case, NuGet would have resolved to 4.1.0 (nearest minimum version).
 
-  - Day 2: Version 4.0.0 gets published. NuGet will now find the exact match and start resolving to 4.0.0
+  - Day 2: Version 4.0.0 gets published. NuGet will now find the exact match and start resolving to 4.0.0.
 
 - A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraint. This results in NuGet finding the best match when it cannot resolve to the deleted version.
 
 ### Enabling the lock file
 
-In order to persist the full closure of package dependencies you can opt-in to the lock file feature by setting the MSBuild property `RestorePackagesWithLockFile` for your project:
+In order to persist the full closure of package dependencies, you can opt-in to the lock file feature by setting the MSBuild property `RestorePackagesWithLockFile` for your project:
 
 ```xml
 <PropertyGroup>
@@ -329,14 +329,14 @@ In order to persist the full closure of package dependencies you can opt-in to t
 </PropertyGroup>    
 ```
 
-If this property is set, NuGet restore will generate a lock file - `packages.lock.json` file at the project root directory that lists all the package dependencies.
+If this property is set, NuGet restore will generate a lock file (`packages.lock.json`) at the project root directory that lists all the package dependencies.
 
 > [!Note]
 > Once a project has `packages.lock.json` file in its root directory, the lock file is always used with restore even if the property `RestorePackagesWithLockFile` is not set. So another way to opt-in to this feature is to create a dummy blank `packages.lock.json` file in the project's root directory.
 
 ### `restore` behavior with lock file
 
-If a lock file is present for project, NuGet uses this lock file to run `restore`. NuGet does a quick check to see if there were any changes in the package dependencies as mentioned in the project file (or dependent projects' files) and if there were no changes it just restores the packages mentioned in the lock file. There is no re-evaluation of package dependencies.
+If a lock file is present for a project, NuGet uses this lock file to run `restore`. NuGet does a quick check to see if there were any changes in the package dependencies as mentioned in the project file (or dependent projects' files), and if there were no changes, it just restores the packages mentioned in the lock file. There is no re-evaluation of package dependencies.
 
 If NuGet detects a change in the defined dependencies as mentioned in the project file(s), it re-evaluates the package graph and updates the lock file to reflect the new package closure for the project.
 
@@ -354,7 +354,7 @@ For msbuild.exe, run:
 > msbuild.exe -t:restore -p:RestoreLockedMode=true
 ```
 
-You may also set this conditional MSBuild property in your project file:
+You can also set this conditional MSBuild property in your project file:
 
 ```xml
 <PropertyGroup>
@@ -368,11 +368,11 @@ If locked mode is `true`, restore will either restore the exact packages as list
 
 ### Make lock file part of your source repository
 
-If you are building an application, an executable and the project in question is at the start of the dependency chain then do check in the lock file to the source code repository so that NuGet can make use of it during restore.
+If you are building an application, an executable, and the project in question is at the start of the dependency chain, then do check in the lock file to the source code repository so that NuGet can make use of it during restore.
 
-However, if your project is a library project that you do not ship or a common code project on which other projects depend upon, you **should not** check in the lock file as part of your source code. There is no harm in keeping the lock file but the locked package dependencies for the common code project may not be used, as listed in the lock file, during the restore/build of a project that depends on this common-code project.
+However, if your project is a library project that you do not ship or a common code project on which other projects depend, you **should not** check in the lock file as part of your source code. There is no harm in keeping the lock file, but the locked package dependencies for the common code project can't be used, as listed in the lock file, during the restore/build of a project that depends on this common-code project.
 
-Eg.
+Example:
 
 ```
 ProjectA
@@ -396,7 +396,7 @@ You can control various behaviors of restore with lock file as described below:
 
 ## NuGet Dependency Resolver
 
-The NuGet dependency resolver follows the [4 rules as described in the dependency resolution document](../../docs/concepts/Dependency-Resolution.md).
+The NuGet dependency resolver follows the [four rules as described in the dependency resolution document](../../docs/concepts/Dependency-Resolution.md).
 
 In order to improve the performance and scalability of the restore operation, the restore algorithm was rewritten in the 6.12 release.
 As of the 6.12 release, the new restore algorithm is enabled by default for all PackageReference projects.
@@ -406,7 +406,7 @@ To revert to the previous implementation, set the MSBuild property `RestoreUseLe
 Should you face restore failures in 6.12, .NET 9 or 17.12, that weren't reproducing in earlier versions, please [file an issue on GitHub](https://github.com/NuGet/Home/issues/).
 Any differences between the old and new algorithms may have different impacts, such as during compilation or at runtime.
 There's also a chance that changes don't lead to failures, but different package versions being restored.
-If you think you may be impacted by any changes, here are the steps you can take to verify whether the changes in the NuGet restore algorithm are the root cause.
+If you think you might be impacted by any changes, here are the steps you can take to verify whether the changes in the NuGet restore algorithm are the root cause.
 
 Restore writes its results in the `MSBuildProjectExtensionsPath` directory, which can be compared with the new and old algorithms to find differences.
 Usually this is the `obj` folder of your build.
@@ -415,10 +415,11 @@ You can use `msbuild.exe` or `dotnet.exe` for the next steps.
 1. Remove the `obj` folder for your project.
 1. Run `msbuild -t:restore`
 1. Save the contents of the `obj` to a location indicating that it's the `new` behavior.
-1. Run `msbuild -t:restore -p:RestoreUseLegacyDependencyResolver="true"`
+1. Run `msbuild -t:restore -p:RestoreUseLegacyDependencyResolver="true"`.
 1. Save the contents of the `obj` to a location indicating that it's the `legacy` behavior.
 1. Compare the files in the two directories, particularly *project.assets.json*.
-Tools that can highlight differences are especially useful for this (for example, Visual Studio Code, open both files, and use the right-click "select for compare" and "compare to selected")
+
+   Tools that can highlight differences are especially useful for this (for example, in Visual Studio Code, open both files, and use the right-click "select for compare" and "compare to selected").
 
 If you follow the above method, there should be exactly 1 difference between the `project.assets.json` files:
 
@@ -464,7 +465,7 @@ You can leave off `$(AssetTargetFallback)` if you wish to overwrite, instead of 
 ## PrunePackageReference
 
 The .NET Runtime is constantly evolving, with performance improvements and new APIs each release.
-New features added to .NET sometimes are also provided as packages, so that developers using older target frameworks can use the library, such as [System.Text.Json](https://www.nuget.org/packages/System.Text.Json).
+New features added to .NET are also sometimes provided as packages, so that developers using older target frameworks can use the library, such as [System.Text.Json](https://www.nuget.org/packages/System.Text.Json).
 This can often lead to a `System.Text.Json 8.0.0` in a project targeting `.NET 9` or `.NET 8`. This dependency is unnecessary and the build conflict resolution would not use the assembly coming from the package since it's already available in the .NET Runtime.
 Starting in [NuGet version 6.13](..\release-notes\NuGet-6.13.md) and .NET SDK 9.0.200, `PrunePackageReference` enables the pruning of these packages at restore time for .NET SDK based projects.
 The first iteration of pruning affected transitive packages only, but starting with .NET SDK 10, package pruning affects direct packages as well.
@@ -546,4 +547,4 @@ The benefits of package pruning are two-fold:
 - Performance benefits, by virtue of reducing the number of packages within a dependency graph
 - Reduction of false positives by component scanners such as `NuGetAudit`
 
-Pruning is particularly valuable when [auditing](./../concepts/Auditing-Packages.md) packages with `NuGetAuditMode` is set to `all`. If you are using the .NET 9, we recommend you try out pruning by setting `RestoreEnablePackagePruning` to `true`.
+Pruning is particularly valuable when [auditing](./../concepts/Auditing-Packages.md) packages with `NuGetAuditMode` set to `all`. If you are using .NET 9, we recommend you try out pruning by setting `RestoreEnablePackagePruning` to `true`.
