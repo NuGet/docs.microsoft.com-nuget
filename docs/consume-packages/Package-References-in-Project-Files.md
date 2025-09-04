@@ -366,6 +366,14 @@ You can also set this conditional MSBuild property in your project file:
 
 If locked mode is `true`, restore will either restore the exact packages as listed in the lock file or fail if you updated the defined package dependencies for the project after lock file was created.
 
+#### Lock files and PrunePackageReference
+
+[PrunePackageReference](#prunepackagereference) changes the dependencies of a project, by removing unnecessary transitive packages.
+While removing these packages should not have an impact at runtime, it will affect lock files.
+If you enable pruning for an existing project, whenever the lock file gets regenerated, it may lead to fewer packages than before pruning.
+The lock file up to date check that powers locked mode is pruning aware, which means if you enabled pruning on a project, the check will account for packages that are pruned.
+However the next time the lock file is regenerated, it will exclude the pruned packages, so you may see a diff that's larger than usual.
+
 ### Make lock file part of your source repository
 
 If you are building an application, an executable, and the project in question is at the start of the dependency chain, then do check in the lock file to the source code repository so that NuGet can make use of it during restore.
