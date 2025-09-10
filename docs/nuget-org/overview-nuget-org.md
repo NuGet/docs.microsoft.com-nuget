@@ -33,6 +33,10 @@ Once you have a NuGet package (*.nupkg* file) to publish, you publish it to NuGe
 
 When you [publish a package](../create-packages/creating-a-package.md), you include the API key value in the CLI command.
 
+## Trusted publishing
+
+NuGet.org supports [Trusted Publishing](trusted-publishing.md), which is a secure and streamlined way to publish NuGet packages.
+
 ## ID prefixes
 
 When you publish packages, you can reserve and protect your identity by [reserving ID prefixes](id-prefix-reservation.md). When installing a package, package consumers are provided with additional information indicating that the package they are consuming is not deceptive in its identifying properties.
