@@ -39,11 +39,17 @@ This setup gives you a secure and automated way to publish packages, without the
 
 To get started:
 
-1. Log into nuget.org.
-2. Click your username and choose **Trusted Publishing**.
-3. Add a new trusted publishing policy. You’ll need to provide your GitHub org, repo, workflow file, and few other details.
-4. In your GitHub repo, update your workflow to request a short-lived API key and push your package.
-
+1. Log into **nuget.org**.
+2. Click your username and choose **Trusted Publishing**.  
+3. Add a new trusted publishing policy. For a GitHub repository `https://github.org/contoso/contoso-sdk`
+   with a workflow file `.github/workflows/build.yml` enter the following trusted policy details (case‑insensitive):  
+     - **Repository Owner:** `contoso`  
+     - **Repository:** `contoso-sdk`  
+     - **Workflow File:** `build.yml`  
+       > This corresponds to your workflow at `.github/workflows/build.yml`. Enter the **file name only** (`build.yml`)—do not include the `.github/workflows/` path.  
+     - **Environment (optional):** `release` 
+       > Enter environment if your workflow uses e.g. `environment: release` and you want to restrict this policy to that environment. 
+4. In your **GitHub repo**, update your workflow to request a short‑lived API key and push your package.  
 Here’s a basic example:
 
 ```yaml
@@ -60,7 +66,7 @@ jobs:
         uses: NuGet/login@v1
         id: login
         with:
-          user: ${{secrets.NUGET_USER}}
+          user: contoso-bot  # your nuget.org username (profile name), NOT your email address
     
       # Push the package
       - name: NuGet push
