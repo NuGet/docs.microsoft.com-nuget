@@ -78,24 +78,22 @@ Due to security and privacy concerns, NuGet.org restricts the domains from which
 
 NuGet.org allows all images, including badges, from the following trusted domains to be rendered:
 * api.codacy.com
-* app.codacy.com
 * api.codeclimate.com
 * api.dependabot.com
-* api.travis-ci.com
 * api.reuse.software
-* app.fossa.com
-* app.fossa.io
+* api.travis-ci.com
+* app.codacy.com
+* app.deepsource.com
 * avatars.githubusercontent.com
-* badge.fury.io
 * badgen.net
 * badges.gitter.im
-* buildstats.info
-* caniuse.bitsofco.de
 * camo.githubusercontent.com
+* caniuse.bitsofco.de
 * cdn.jsdelivr.net
 * cdn.syncfusion.com
 * ci.appveyor.com
 * circleci.com
+* cloudback.it
 * codecov.io
 * codefactor.io
 * coveralls.io
@@ -103,9 +101,11 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * flat.badgen.net
 * github.com/.../workflows/.../badge.svg
 * gitlab.com
-* img.shields.io
 * i.imgur.com
+* img.shields.io
+* infragistics.com
 * isitmaintained.com
+* media.githubusercontent.com
 * opencollective.com
 * raw.github.com
 * raw.githubusercontent.com
@@ -113,7 +113,6 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * sonarcloud.io
 * travis-ci.com
 * travis-ci.org
-* wakatime.com
 * user-images.githubusercontent.com
 
 If you feel that another domain should be added to the allow-list, please feel free to [file an issue](https://github.com/NuGet/NuGetGallery/issues) and it will be reviewed by our engineering team for privacy and security compliance. Images with relative local paths and images hosted from unsupported domains will not be rendered and will produce a warning on the readme file preview and package details page that is only visible to the package owners.
