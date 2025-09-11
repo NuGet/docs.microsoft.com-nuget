@@ -41,7 +41,7 @@ To get started:
 
 1. Log into **nuget.org**.
 2. Click your username and choose **Trusted Publishing**.  
-3. Add a new trusted publishing policy. For a GitHub repository `https://github.org/contoso/contoso-sdk`
+3. Add a new trusted publishing policy. For a GitHub repository `https://github.com/contoso/contoso-sdk`
    with a workflow file `.github/workflows/build.yml` enter the following trusted policy details (case‑insensitive):  
      - **Repository Owner:** `contoso`  
      - **Repository:** `contoso-sdk`  
