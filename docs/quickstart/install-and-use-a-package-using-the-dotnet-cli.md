@@ -103,7 +103,7 @@ Congratulations on installing and using your first NuGet package!
 
 ## Related video
 
-[Installing a NuGet Package using the .NET CLI](https://learn.microsoft.com/shows/dotnet-package-management-with-nuget-for-beginners/installing-a-nuget-package-using-the-dotnet-cli-nuget-for-beginners).
+> [!VIDEO https://learn-video.azurefd.net/vod/player?show=dotnet-package-management-with-nuget-for-beginners&ep=installing-a-nuget-package-using-the-dotnet-cli-nuget-for-beginners]
 
 Find more NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
