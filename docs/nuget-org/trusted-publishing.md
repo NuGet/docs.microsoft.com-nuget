@@ -18,7 +18,7 @@ This makes your publishing process safer by reducing the risk of leaked credenti
 ## How it works
 
 When your GitHub Actions workflow runs, it requests an encrypted OIDC token from github.com. This token
-includes information about your repository and workflow, and is cryptographically signed to prevent
+includes information about your repository and workflow, and is cryptographically signed by GitHub Actions to prevent
 tampering. The workflow forwards this token to nuget.org, which securely validates the token’s
 authenticity with github.com using industry-standard cryptographic methods. A token exchange endpoint on nuget.org then checks
 that the token’s details match a trusted publishing policy you’ve configured. If everything matches,
