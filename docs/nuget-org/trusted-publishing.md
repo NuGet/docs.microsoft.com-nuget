@@ -20,7 +20,7 @@ This makes your publishing process safer by reducing the risk of leaked credenti
 When your GitHub Actions workflow runs, it requests an encrypted OIDC token from github.com. This token
 includes information about your repository and workflow, and is cryptographically signed to prevent
 tampering. The workflow forwards this token to nuget.org, which securely validates the token’s
-authenticity with github.com using industry-standard cryptographic methods. Nuget.org then checks
+authenticity with github.com using industry-standard cryptographic methods. A token exchange endpoint on nuget.org then checks
 that the token’s details match a trusted publishing policy you’ve configured. If everything matches,
 nuget.org issues a short-lived API key for your workflow to use when publishing your package.
 
@@ -55,7 +55,7 @@ To get started:
      - **Workflow File:** `build.yml`  
        > This corresponds to your workflow at `.github/workflows/build.yml`. Enter the **file name only** (`build.yml`)—do not include the `.github/workflows/` path.  
      - **Environment (optional):** `release` 
-       > Enter environment if your workflow uses e.g. `environment: release` and you want to restrict this policy to that environment. 
+       > Enter environment if your workflow uses e.g. `environment: release` and you want to restrict this policy to that environment. Leave this empty if you do not use GitHub Actions environments.
 4. In your **GitHub repo**, update your workflow to request a short‑lived API key and push your package.  
 Here’s a basic example:
 
@@ -73,7 +73,7 @@ jobs:
         uses: NuGet/login@v1
         id: login
         with:
-          user: contoso-bot  # your nuget.org username (profile name), NOT your email address
+          user: contoso-bot # Recommended: use a secret like ${{ secrets.NUGET_USER }} for your nuget.org username (profile name), NOT your email address
     
       # Push the package
       - name: NuGet push
