@@ -17,7 +17,14 @@ This makes your publishing process safer by reducing the risk of leaked credenti
 
 ## How it works
 
-Here’s the basic flow:
+When your GitHub Actions workflow runs, it requests an encrypted OIDC token from github.com. This token
+includes information about your repository and workflow, and is cryptographically signed by GitHub Actions to prevent
+tampering. The workflow forwards this token to nuget.org, which securely validates the token’s
+authenticity with github.com using industry-standard cryptographic methods. A token exchange endpoint on nuget.org then checks
+that the token’s details match a trusted publishing policy you’ve configured. If everything matches,
+nuget.org issues a short-lived API key for your workflow to use when publishing your package.
+
+**Here’s the basic flow**
 
 1. Your CI/CD system (like GitHub Actions) runs a workflow.
 2. It issues a short-lived token.
@@ -27,7 +34,7 @@ Here’s the basic flow:
 
 ![Screenshot that shows Trusted Publishing page.](media/trusted-publishing.png)
 
-NuGet’s temporary API keys are valid for **15 minutes**, so your workflow should request the key shortly before publishing.
+NuGet’s temporary API keys are valid for **1 hour**, so your workflow should request the key shortly before publishing.
 If you request it too early, it might expire before the push happens. 
 
 Each short-lived token can only be used once to obtain a single temporary API key—one token, one API key.
@@ -39,11 +46,17 @@ This setup gives you a secure and automated way to publish packages, without the
 
 To get started:
 
-1. Log into nuget.org.
-2. Click your username and choose **Trusted Publishing**.
-3. Add a new trusted publishing policy. You’ll need to provide your GitHub org, repo, workflow file, and few other details.
-4. In your GitHub repo, update your workflow to request a short-lived API key and push your package.
-
+1. Log into **nuget.org**.
+2. Click your username and choose **Trusted Publishing**.  
+3. Add a new trusted publishing policy. For a GitHub repository `https://github.com/contoso/contoso-sdk`
+   with a workflow file `.github/workflows/build.yml` enter the following trusted policy details (case‑insensitive):  
+     - **Repository Owner:** `contoso`  
+     - **Repository:** `contoso-sdk`  
+     - **Workflow File:** `build.yml`  
+       > This corresponds to your workflow at `.github/workflows/build.yml`. Enter the **file name only** (`build.yml`)—do not include the `.github/workflows/` path.  
+     - **Environment (optional):** `release` 
+       > Enter environment if your workflow uses e.g. `environment: release` and you want to restrict this policy to that environment. Leave this empty if you do not use GitHub Actions environments.
+4. In your **GitHub repo**, update your workflow to request a short‑lived API key and push your package.  
 Here’s a basic example:
 
 ```yaml
@@ -60,7 +73,7 @@ jobs:
         uses: NuGet/login@v1
         id: login
         with:
-          user: ${{secrets.NUGET_USER}}
+          user: contoso-bot # Recommended: use a secret like ${{ secrets.NUGET_USER }} for your nuget.org username (profile name), NOT your email address
     
       # Push the package
       - name: NuGet push
