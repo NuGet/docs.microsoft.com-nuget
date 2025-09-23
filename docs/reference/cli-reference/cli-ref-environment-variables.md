@@ -39,4 +39,4 @@ The list of properties documented in [NuGet pack and restore as MSBuild targets]
 | NUGET_ENABLE_ENHANCED_HTTP_RETRY | Enables or disables enhanced HTTP retry in NuGet. | Possible values are `true` (default) or `false`. |
 | NUGET_ENHANCED_MAX_NETWORK_TRY_COUNT | Configures the maximum number of times an HTTP connection should be retried when enhanced retries are enabled. | A number representing how many retries to perform, the default value is `6`. |
 | NUGET_ENHANCED_NETWORK_RETRY_DELAY_MILLISECONDS | Configures the amount of time to wait in milliseconds before retrying an HTTP connection when enhanced retries are enabled. | Number of millseconds to wait, the default value is `1000`. |
-| NUGET_EXPERIMENTAL_USE_NJ_FOR_FILE_PARSING | Determines whether or not `Netwonsoft.Json` is used for parsing the assets file during restore | Possible values are `true` or `false` (default). |
+
