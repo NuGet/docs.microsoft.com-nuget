@@ -100,7 +100,7 @@ Congratulations on creating and publishing your first NuGet package!
 
 ## Related video
 
-> [!Video https://learn.microsoft.com/shows/NuGet-101/Create-and-Publish-a-NuGet-Package-with-the-NET-CLI-5-of-5/player]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?show=dotnet-package-management-with-nuget-for-beginners&ep=creating-and-publishing-a-nuget-package-nuget-for-beginners]
 
 Find more NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
