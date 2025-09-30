@@ -12,6 +12,8 @@ ms.topic: conceptual
 > [!Important]
 > This content is deprecated. Projects should use the PackageReference formats.
 > Learn how to [migrate your project.json project to PackageReference](./project-json.md#migrate-projectjson-to-packagereference).
+> Visual Studio 2026 automatically migrates project.json at solution load time.
+> [.NET 10 SDK & NuGet.exe 7.0](../release-notes/NuGet-7.0.md) do not support project.json projects.
 
 The `project.json` system used in NuGet 3+ affects package authors in several ways as described in the following sections.
 
