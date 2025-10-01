@@ -58,10 +58,14 @@ The following table summarizes how the plugin should behave for all combinations
 
 | IsNonInteractive | CanShowDialog | Plugin behavior |
 | ---------------- | ------------- | --------------- |
-| true | true | The IsNonInteractive switch takes precedence over the dialog switch. The plugin is not allowed to pop a dialog. This combination is only valid for .NET Framework plugins |
-| true | false | The IsNonInteractive switch takes precedence over the dialog switch. The plugin is not allowed to block. This combination is only valid for .NET Core plugins |
-| false | true | The plugin should show a dialog. This combination is only valid for .NET Framework plugins |
-| false | false | The plugin should/can not show a dialog. The plugin should use device flow to authenticate by logging an instruction message via the logger. This combination is only valid for .NET Core plugins |
+| true | true | The IsNonInteractive switch takes precedence over the dialog switch. The plugin is not allowed to block. |
+| true | false | The IsNonInteractive switch takes precedence over the dialog switch. The plugin is not allowed to block. |
+| false | true | The plugin can show a dialog if required. For example, interactive login, or account selection. |
+| false | false | The plugin should/can not show a dialog. The plugin should use device flow to authenticate by logging an instruction message via the logger. |
+
+Prior to [NuGet 7.0](../../release-notes/NuGet-7.0.md), NuGet would always set `CanShowDialog` to false on the dotnet CLI, and true for MSBuild restore.
+From 7.0, NuGet will always set `CanShowDialog` to true, but plugins should still detect when graphical interfaces are not available.
+For example when running on Linux over an SSH connection without X forwarding, or a PowerShell remote session.
 
 Please refer to the following specs before writing a plugin.
 
