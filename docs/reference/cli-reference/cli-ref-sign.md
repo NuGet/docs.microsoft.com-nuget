@@ -33,6 +33,8 @@ where `<package(s)>` is one or more `.nupkg` files.
 
   Starting with NuGet.exe 6.12, this option can be used to specify the SHA-1, SHA-256, SHA-384, or SHA-512 fingerprint of the certificate.
   However, a `NU3043` warning is raised when a SHA-1 certificate fingerprint is used because it is no longer considered secure.
+  In NuGet.exe 7.0 and later versions, the warning is elevated to an error.
+  Only SHA-2 family fingerprints (SHA-256, SHA-384, and SHA-512) are supported.
 
   All the previous versions of the NuGet.exe continue to accept only SHA-1 certificate fingerprint.
 
