@@ -111,15 +111,17 @@ These are usually configured by Visual Studio workloads and cannot be modified o
 
 ### Allow Insecure Connections
 
-The first column of the Package Sources table can show an icon with information about a warning or an error with the package source in that row.
+For security reasons, NuGet enforces the use of HTTPS sources by default.
+If you need to use an HTTP source, you must explicitly allow it.
+When an HTTP source is used, the first column of the Package Sources table will show an icon with information about a warning or an error with the package source in that row.
 
-When an HTTP package source is used and Allow Insecure Connections is enabled, a warning is shown in the leftmost status column:
+⚠️ When an HTTP package source is used and Allow Insecure Connections is enabled, a warning is shown in the leftmost status column:
 
-> HTTP sources are insecure. Consider using HTTPS instead. 'AllowInsecureConnections' is enabled, permitting HTTP access
+> HTTP sources are insecure. Consider using HTTPS instead. 'AllowInsecureConnections' is enabled, permitting HTTP access.
 
 ![Package Sources page of NuGet options](media/allow-insecure-warning.png)
 
-When an HTTP source is used and Allow Insecure Connections is disabled, an error is shown in the leftmost status column and NuGet restore will fail:
+❌ When an HTTP source is used and Allow Insecure Connections is disabled, an error is shown in the leftmost status column and NuGet restore will fail:
 
 > NuGet requires HTTPS sources. To use an HTTP source, you must explicitly set 'allowInsecureConnections' to true in your NuGet.Config file.
 
