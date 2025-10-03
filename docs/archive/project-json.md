@@ -51,7 +51,7 @@ The migration happens at solution load time:
 
 1. Open a solution containing project.json projects in Visual Studio 2026 or later.
 1. Visual Studio automatically detects project.json files and migrates them to PackageReference format.
-1. To check migration status, open the https://learn.microsoft.com/visualstudio/ide/output-window?view=visualstudio and select Show output from "Package Manager".
+1. To check migration status, open the [Output Window](/visualstudio/ide/output-window) and select Show output from "Package Manager".
 You should see messages like "Migrating project.json project..." followed by "Migration Succeeded" for each project.
 Any errors will appear in the Error List.
 1. A backup of the original project file and project.json file is created in a `Backup` folder in the root of the project directory.
