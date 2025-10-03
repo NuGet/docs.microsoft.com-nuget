@@ -70,24 +70,11 @@ For more information on NuGet caches and folders, see [Managing the global packa
 
 ## Configuration Files
 
-The Configuration Files options page displays the NuGet.Config files that apply to your current solution and allows you to open them for editing.
+The Configuration Files options page displays the NuGet.Config files that apply to your current solution and allows you to open them directly in Visual Studio for editing by selecting a file and using the "Open" button.
 
-**[PLACEHOLDER FOR SCREENSHOT: Configuration Files page showing the hierarchy of config files]**
-*Suggested screenshot: Show the Configuration Files page in Unified Settings displaying the list of applicable NuGet.Config files (machine-level, user-level, and solution-level) with their file paths and "Open" buttons. Resolution: Match other VS documentation screenshots.*
+Configuration files are listed in order from highest to lowest priority.
 
-### Understanding NuGet.Config Hierarchy
-
-NuGet uses a hierarchical configuration system where settings from multiple config files are merged:
-
-1. **Machine-level** config (applies to all users on the computer)
-2. **User-level** config (applies to the current user)
-3. **Solution-level** config files (applies to the current solution and takes precedence)
-
-Settings defined in files closer to your solution take precedence over those defined at higher levels. The Configuration Files page shows all applicable config files and their locations, allowing you to quickly open and edit them.
-
-**[PLACEHOLDER FOR SCREENSHOT: Example showing opening a config file in the editor]**
-*Suggested screenshot: Show a NuGet.Config file opened in the Visual Studio editor after clicking the "Open" button, demonstrating the workflow.*
-
+NuGet uses a hierarchical configuration system where settings from multiple config files are merged.
 For more information, see [Common NuGet configurations](configuring-nuget-behavior.md).
 
 ## Package Sources
@@ -214,7 +201,6 @@ For more details on screenshot best practices, see the [README.md](../../README.
 
 ## See Also
 
-- [Common NuGet configurations](configuring-nuget-behavior.md)
 - [NuGet.Config reference](../reference/nuget-config-file.md)
 - [Package Restore](Package-Restore.md)
 - [Package Source Mapping](Package-Source-Mapping.md)
