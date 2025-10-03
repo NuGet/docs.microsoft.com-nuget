@@ -87,7 +87,9 @@ You should now be able to see the migration option. Note that this option is not
 
 ## Create a package after migration
 
-Once the migration is complete, we recommend that you add a reference to the [nuget.build.tasks.pack](https://www.nuget.org/packages/nuget.build.tasks.pack) nuget package, and then use [msbuild -t:pack](../reference/msbuild-targets.md#pack-target) to create the package. Although in some scenarios you could use `dotnet.exe pack` instead of `msbuild -t:pack`, it is not recommended.
+Once the migration is complete, we recommend that you copy your package metadata from a `.nuspec` file to [MSBuild properties](../reference/msbuild-targets.md#pack-target), and then you can use `msbuild -t:Pack` to create the package.
+If you are using Visual Studio 2022 or ealier, you will also need to install the NuGet.Build.Tasks.Pack package.
+From Visual Studio 2026, pack is built-in to MSBuild.
 
 ## Package compatibility issues
 
