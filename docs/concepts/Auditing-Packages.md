@@ -4,7 +4,7 @@ description: How to audit package dependencies for security vulnerabilities and 
 author: JonDouglas
 ms.author: jodou
 ms.topic: conceptual
-ms.date: 05/05/2025
+ms.date: 10/01/2025
 ---
 
 # Auditing package dependencies for security vulnerabilities
@@ -27,6 +27,7 @@ We also have a [blog post](https://devblogs.microsoft.com/nuget/nugetaudit-2-0-e
 | [6.10](../release-notes/NuGet-6.10.md) | N/A | Visual Studio 2022 17.10 | [NuGetAudit](#running-a-security-audit-with-restore) for packages.config|
 | [6.11](../release-notes/NuGet-6.11.md) | .NET 8 SDK (8.0.400) | Visual Studio 2022 17.11 | [NuGetAuditSuppress](#excluding-advisories) for PackageReference |
 | [6.12](../release-notes/NuGet-6.12.md) | .NET 9 SDK (9.0.100) | Visual Studio 2022 17.12 | [Audit sources](#audit-sources). [NuGetAuditSuppress](#excluding-advisories) for packages.config. |
+| [7.0](../release-notes/NuGet-7.0.md) | .NET 10 SDK (10.0.100) | Visual Studio 2026 | [NuGetAuditMode default changes for .NET 10](#configuring-nuget-audit). [`dotnet package update --vulnerable`](#security-vulnerabilities-found-with-updates) |
 
 ## Running a security audit with `restore`
 
@@ -157,7 +158,8 @@ If security vulnerabilities are found and updates are available for the package,
 
 - Edit the `.csproj` or other package version location (`Directory.Packages.props`) with a newer version containing a security fix.
 - Use the NuGet package manager user interface in Visual Studio to update the individual package.
-- Run the `dotnet add package` command with the respective package ID to update to the latest version.
+- Run the `dotnet package update --vulnerable` command to update all vulnerable packages in a project to the first version without known vulnerabilities.
+- Run the `dotnet package update` or `dotnet package add` commands with the respective package ID to update to the latest version. Use [`dotnet add package` when using .NET 9 or earlier](/dotnet/core/whats-new/dotnet-10/sdk#more-consistent-command-order).
 
 #### Transitive Packages
 
