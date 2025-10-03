@@ -57,7 +57,6 @@ Any errors will appear in the Error List.
 1. A backup of the original project file and project.json file is created in a `Backup` folder in the root of the project directory.
 1. The migration converts all package dependencies to PackageReference format in the project file.
 
-If you need to roll back the automatic migration, you can restore the original files from the backup folder.
 
 ### Manual migration in Visual Studio 2022
 
