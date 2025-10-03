@@ -126,8 +126,6 @@ In this example, the ClassLibrary1 project is using EntityFramework 6.2.0, where
 
 Visual Studio ignores the order of package sources, and uses the package from whichever source is the first to respond to a request. For more information, see [Restore packages](package-restore.md). For information about how to load a package from a specific source, see [Package source mapping](package-source-mapping.md).
 
-To manage NuGet package sources, follow these steps:
-
 1. To change the source from which Visual Studio loads package metadata, select a source from the **Package source** selector.
 
    ![Screenshot showing the Package source selector highlighted.](media/package-source-selector.png)
@@ -136,21 +134,7 @@ To manage NuGet package sources, follow these steps:
 
     ![Screenshot showing the Package source settings icon highlighted.](media/package-source-settings.png)
 
-1. In the **Options** window, expand the **NuGet Package Manager** node and select **Package Sources**.
-
-    ![Screenshot showing the Options window with Package Sources selected.](media/package-sources.png)
-
-1. To add a source, select **+**, edit the **Name**, enter the URL or path in **Source**, and then select  **Update**.
-
-   The source now appears in the **Package source** dropdown list.
-
-1. To change a package source, select it, make edits in the **Name** and **Source** boxes, and select **Update**.
-
-1. To disable a package source, clear the box to the left of the name in the list.
-
-1. To remove a package source, select it, and then select the **X** button.
-
-   If a package source reappears after you delete it, it might be listed in a computer-level or user-level *NuGet.config* file. For the location of these files, see [Common NuGet configurations](../consume-packages/configuring-nuget-behavior.md). Remove the package source in the files by editing them manually or using the [nuget sources command](../reference/nuget-exe-CLI-reference.md).
+1. To manage NuGet package sources, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md#Package-Sources).
 
 ## NuGet Package Manager Options control
 
