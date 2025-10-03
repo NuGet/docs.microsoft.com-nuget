@@ -13,7 +13,10 @@ When you create a NuGet package from your code, you package that functionality i
 
 For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, NuGet uses information in the project file directly to create a package.  For a non-SDK-style project that uses `<PackageReference>`, NuGet also uses the project file to create a package.
 
-SDK-style projects have the pack functionality available by default. For non SDK-style PackageReference projects, you need to add the NuGet.Build.Tasks.Pack package to the project dependencies. For detailed information about MSBuild pack targets, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
+SDK-style projects have the pack functionality available by default.
+For non SDK-style PackageReference projects, it is also available by default starting from Visual Studio 2026.
+In earlier versions of Visual Studio you need to add the NuGet.Build.Tasks.Pack package to the project dependencies.
+For detailed information about MSBuild pack targets, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
 The command that creates a package, `msbuild -t:pack`, is functionally equivalent to `dotnet pack`.
 
@@ -79,14 +82,16 @@ For details on declaring dependencies and specifying version numbers, see [Packa
 
 ## Add the NuGet.Build.Tasks.Pack package
 
-If you are using MSBuild with a non-SDK-style project and PackageReference, add the NuGet.Build.Tasks.Pack package to your project.
+If you are using MSBuild with a non-SDK-style project and PackageReference in Visual Studio 2022 or earlier, add the NuGet.Build.Tasks.Pack package to your project.
+Visual Studio 2026 includes MSBuild based pack, so the package reference is no longer required.
+If you have a project that previously referenced NuGet.Build.Tasks.Pack, we recommend uninstalling the package reference when upgrading the Visual Studio 2026 or later, to ensure that you use Visual Studio's built-in pack and can benefit from new features and bug fixes.
 
 1. Open the project file and add the following after the `<PropertyGroup>` element:
 
    ```xml
    <ItemGroup>
      <!-- ... -->
-     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.7.0" PrivateAssets="all" />
+     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.14.0" PrivateAssets="all" />
      <!-- ... -->
    </ItemGroup>
    ```
