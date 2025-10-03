@@ -1,9 +1,9 @@
 ---
 title: NuGet Options in Visual Studio
 description: Reference guide for NuGet Package Manager options in Visual Studio, including General, Configuration Files, Package Sources, and Package Source Mapping settings.
-author: JonDouglas
-ms.author: jodou
-ms.date: 01/10/2025
+author: donnie-msft
+ms.author: eagoodso
+ms.date: 10/03/2025
 ms.topic: reference
 f1_keywords: 
   - "vs.toolsoptionspages.nuget_package_manager"
@@ -70,7 +70,7 @@ This section allows you to clear NuGet's local caches:
 **[PLACEHOLDER FOR SCREENSHOT: General page with Clear button highlighted and output showing successful cache clearing]**
 *Suggested screenshot: Show the General page with the "Clear NuGet local resources" button circled or highlighted, and if possible, show the Output window displaying the success message.*
 
-For more information on NuGet caches and folders, see [Managing the global packages, cache, and temp folders](managing-the-global-packages-and-cache-folders.md). You can also visit https://aka.ms/troubleshoot_nuget_cache for troubleshooting cache-related issues.
+For more information on NuGet caches and folders, see [Managing the global packages, cache, and temp folders](managing-the-global-packages-and-cache-folders.md). You can also visit <https://aka.ms/troubleshoot_nuget_cache> for troubleshooting cache-related issues.
 
 ## Configuration Files
 
@@ -124,7 +124,7 @@ Starting with NuGet 6.10, NuGet produces errors when using HTTP sources in most 
 1. **For Visual Studio**: Add the source URL to the allowed list in the NuGet Options (this feature may require enabling Unified Settings preview)
 2. **For command-line tools**: Use the `allowInsecureConnections` setting in your nuget.config file
 
-For more information on configuring HTTP source permissions, see https://aka.ms/nuget-https-everywhere.
+For more information on configuring HTTP source permissions, see <https://aka.ms/nuget-https-everywhere>.
 
 ### Adding a Package Source
 
@@ -176,6 +176,7 @@ By default, NuGet searches all configured package sources when restoring package
 ### Pattern Precedence
 
 When multiple patterns match a package:
+
 1. Exact package ID has highest precedence
 2. Longer prefix patterns have precedence over shorter ones
 3. `*` (wildcard) has lowest precedence
@@ -206,7 +207,7 @@ When creating screenshots for Visual Studio documentation:
 2. **Scaling**: Set Windows display scaling to 100% for consistent appearance
 3. **Theme**: Use the Visual Studio Light theme (or Blue theme) for better visibility in documentation
 4. **Zoom level**: Use default zoom level (100%) in Visual Studio
-5. **Annotations**: 
+5. **Annotations**:
    - Use red rounded rectangles to highlight important UI elements
    - Add arrows to guide the reader's attention when showing workflows
    - Keep annotations minimal and purposeful

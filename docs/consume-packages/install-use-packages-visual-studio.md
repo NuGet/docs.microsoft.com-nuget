@@ -6,9 +6,6 @@ ms.author: jodou
 ms.date: 03/03/2025
 ms.topic: conceptual
 f1_keywords: 
-  - "vs.toolsoptionspages.nuget_package_manager"
-  - "vs.toolsoptionspages.nuget_package_manager.general"
-  - "vs.toolsoptionspages.nuget_package_manager.package_sources"
   - "vs.nuget.packagemanager.ui"
 ---
 
@@ -48,7 +45,7 @@ To find and install a NuGet package with Visual Studio, follow these steps:
     > In Visual Studio 17.11 and higher, package owners are shown as profile hyperlinks when supported by the selected package source.
     > Package ownership is defined by the package source. For example, see [Manage package owners on nuget.org](../nuget-org/publish-a-package.md#manage-package-owners-on-nugetorg).
     >
-    > In Visual Studio 17.10 and earlier, the package _author_ metadata is shown, which appears as plain-text.
+    > In Visual Studio 17.10 and earlier, the package *author* metadata is shown, which appears as plain-text.
     > For more information, see [Authors package metadata](../create-packages/package-authoring-best-practices.md#authors).
 
     - Select a package to see detailed package information.
