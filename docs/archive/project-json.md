@@ -42,15 +42,32 @@ The [`project.lock.json`](#projectlockjson) file (described below) is also used 
 
 ## Migrate project.json to PackageReference
 
-The migration between project.json and PackageReference is straightforward. The easiest way to do it to use the built-in migrator in the latest Visual Studio 2022, Update 14.
+The migration between project.json and PackageReference is straightforward.
+
+### Automatic migration in Visual Studio 2026
+
+Visual Studio 2026 and later automatically migrates project.json projects to PackageReference when you open a solution containing project.json projects. The migration happens at solution load time:
+
+1. Open a solution containing project.json projects in Visual Studio 2026 or later.
+1. Visual Studio automatically detects project.json files and migrates them to PackageReference format.
+1. A backup of the original project file and project.json file is created in a `Backup` folder in the root of the project directory.
+1. The migration converts all package dependencies to PackageReference format in the project file.
+
+If you need to roll back the automatic migration, you can restore the original files from the backup folder.
+
+### Manual migration in Visual Studio 2022
+
+For Visual Studio 2022 and earlier, you can use the built-in migrator:
 
 1. Load the project.json project in Visual Studio.
 1. Go to the solution explorer of the project.json project and find the dependencies node.
-1. Click `Migrate project.json to PackageReference...`!
+1. Right-click and select `Migrate project.json to PackageReference...`
 
 ![Migrating from project.json to PackageReference](media/project-json-migrator.png)
 
-Alternatively, you may use the [dotnet migrate](/dotnet/core/tools/dotnet-migrate), or do the migration manually by taking all of the content from the project.json file and replacing it with the equivalent [PackageReference syntax](../consume-packages/Package-References-in-Project-Files.md).
+### Alternative migration methods
+
+Alternatively, you may use the [dotnet migrate](/dotnet/core/tools/dotnet-migrate) command-line tool, or do the migration manually by taking all of the content from the project.json file and replacing it with the equivalent [PackageReference syntax](../consume-packages/Package-References-in-Project-Files.md).
 
 ## Dependencies
 
