@@ -119,13 +119,13 @@ When an HTTP source is used, the first column of the Package Sources table will 
 
 > HTTP sources are insecure. Consider using HTTPS instead. 'AllowInsecureConnections' is enabled, permitting HTTP access.
 
-![Package Sources page of NuGet options](media/allow-insecure-warning.png)
+![Package Sources page with an HTTP source Warning and Allow Insecure Connections enabled](media/allow-insecure-warning.png)
 
 ❌ When an HTTP source is used and Allow Insecure Connections is disabled, an error is shown in the leftmost status column and NuGet restore will fail:
 
 > NuGet requires HTTPS sources. To use an HTTP source, you must explicitly set 'allowInsecureConnections' to true in your NuGet.Config file.
 
-![Package Sources page of NuGet options](media/allow-insecure-error.png)
+![Package Sources page with an HTTP source Error and Allow Insecure Connections disabled](media/allow-insecure-error.png)
 
 For more information on configuring HTTP source permissions, see <https://aka.ms/nuget-https-everywhere>.
 
@@ -133,85 +133,29 @@ For more information on configuring HTTP source permissions, see <https://aka.ms
 
 Package Source Mapping allows you to control which package sources are used for specific packages, improving supply chain security.
 
-> [!NOTE]
-> Package Source Mapping was introduced in NuGet 6.0 and Visual Studio 2022 version 17.5 added UI support in the Options dialog. In Visual Studio 17.14+, this is available in Unified Settings.
+![Package Source Mapping page of NuGet options](media/package-source-mapping-page.png)
 
-**[PLACEHOLDER FOR SCREENSHOT: Package Source Mapping page showing existing mappings]**
-*Suggested screenshot: Show the Package Source Mapping page in Unified Settings with several package patterns mapped to different sources. Include examples like "Microsoft.*" mapped to nuget.org and "Contoso.*" mapped to a private feed.*
+To modify, use the **Add, Edit, and Remove buttons** below the table.
 
-### Why Use Package Source Mapping?
+### Managing Package Source Mappings
 
-By default, NuGet searches all configured package sources when restoring packages. Package Source Mapping allows you to:
+Lists all configured package source mappings according to your NuGet.Config files.
 
-- **Filter package sources**: Specify which source(s) to use for each package or package pattern
-- **Improve security**: Prevent packages from being downloaded from untrusted sources
-- **Improve restore performance**: Reduce the number of sources NuGet needs to query
-- **Ensure deterministic restores**: Eliminate ambiguity when a package exists on multiple sources
+- **Package pattern**: Package pattern that is currently mapped (e.g., `Microsoft.*` or `Contoso.Contracts`)
+- **Source**: One or more package sources mapped to the package pattern.
+Package sources must be enabled to be shown.
 
-### Configuring Package Source Mapping in Visual Studio
+To modify, use the **Add, Edit, and Remove buttons** below the table.
+Press "Save" on the Add/Edit dialog and the changes will be updated in the relevant NuGet.Config file.
 
-1. Navigate to **Tools > Options > NuGet Package Manager > Package Source Mapping**
-2. Click **Add** to create a new mapping
-3. Enter a **Package pattern** (e.g., `Microsoft.*` or `Contoso.Contracts`)
-4. Select one or more **package sources** for this pattern
-5. Click **Save** to add the mapping
-6. Click **OK** to apply changes
+![Package Source Mapping add dialog](media/package-source-mapping-add.png)
 
-**[PLACEHOLDER FOR SCREENSHOT: Add Package Source Mapping dialog]**
-*Suggested screenshot: Show the "Add Package Source Mapping" dialog with a package pattern entered and source(s) selected.*
+For more information, see [Package Source Mapping](Package-Source-Mapping.md).
 
-### Package Pattern Syntax
+### Invalid Source Mappings
 
-- **Package ID pattern**: Exact match (e.g., `Newtonsoft.Json`)
-- **Package prefix pattern**: Wildcard pattern (e.g., `Microsoft.*` matches all packages starting with "Microsoft.")
-- **Wildcard pattern**: `*` matches all packages (used to set a default source)
+If a package source listed in your existing source mapping isn't enabled in your NuGet.Config file(s), an error will appear in the leftmost column.
 
-### Pattern Precedence
+Make sure all Source values in your mappings refer to package sources that are both available and enabled. Otherwise, the mapping may not work as expected.
 
-When multiple patterns match a package:
-
-1. Exact package ID has highest precedence
-2. Longer prefix patterns have precedence over shorter ones
-3. `*` (wildcard) has lowest precedence
-
-### Example Configuration
-
-```xml
-<packageSourceMapping>
-  <packageSource key="nuget.org">
-    <package pattern="*" />
-  </packageSource>
-  <packageSource key="contoso">
-    <package pattern="Contoso.*" />
-    <package pattern="Contoso.Special.Package" />
-  </packageSource>
-</packageSourceMapping>
-```
-
-This configuration maps all `Contoso.*` packages to the "contoso" source, while all other packages come from "nuget.org".
-
-For more information and advanced scenarios, see [Package Source Mapping](Package-Source-Mapping.md).
-
-## Screenshot Guidelines for Contributors
-
-When creating screenshots for Visual Studio documentation:
-
-1. **Resolution**: Use a display resolution of 1920x1080 or higher
-2. **Scaling**: Set Windows display scaling to 100% for consistent appearance
-3. **Theme**: Use the Visual Studio Light theme (or Blue theme) for better visibility in documentation
-4. **Zoom level**: Use default zoom level (100%) in Visual Studio
-5. **Annotations**:
-   - Use red rounded rectangles to highlight important UI elements
-   - Add arrows to guide the reader's attention when showing workflows
-   - Keep annotations minimal and purposeful
-6. **File format**: Save screenshots as PNG for best quality
-7. **Consistency**: Match the style and appearance of other Visual Studio documentation screenshots
-
-For more details on screenshot best practices, see the [README.md](../../README.md#screenshots-and-images) in this repository.
-
-## See Also
-
-- [NuGet.Config reference](../reference/nuget-config-file.md)
-- [Package Restore](Package-Restore.md)
-- [Package Source Mapping](Package-Source-Mapping.md)
-- [Managing the global packages, cache, and temp folders](managing-the-global-packages-and-cache-folders.md)
+![Package Source Mapping with an invalid package source](media/package-source-mapping-missing-source.png)
