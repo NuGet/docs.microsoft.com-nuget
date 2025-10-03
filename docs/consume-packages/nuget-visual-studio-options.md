@@ -70,54 +70,62 @@ For more information on NuGet caches and folders, see [Managing the global packa
 
 ## Configuration Files
 
-The Configuration Files options page displays the NuGet.Config files that apply to your current solution and allows you to open them directly in Visual Studio for editing by selecting a file and using the "Open" button.
+The Configuration Files options page displays the NuGet.Config files that apply to your current solution and allows you to open them directly in Visual Studio for editing.
+
+To edit a file, select a File Path and press the "Open" button.
+The file will open in a new tab in Visual Studio where it may be edited directly.
+
+![Configuration files page of NuGet options with the Open button highlighted](media/configuration-files.png)
 
 Configuration files are listed in order from highest to lowest priority.
-
 NuGet uses a hierarchical configuration system where settings from multiple config files are merged.
 For more information, see [Common NuGet configurations](configuring-nuget-behavior.md).
 
 ## Package Sources
 
-The Package Sources options page allows you to configure the sources from which NuGet downloads packages.
+The Package Sources options page allows you to manage the sources from which NuGet downloads packages.
 
-**[PLACEHOLDER FOR SCREENSHOT: Package Sources page with source list]**
-*Suggested screenshot: Show the Package Sources page displaying the list of package sources (e.g., nuget.org, private feeds) with checkboxes to enable/disable them, and buttons to Add/Remove/Edit sources.*
+![Package Sources page of NuGet options](media/package-sources-page.png)
 
 ### Managing Package Sources
 
-- **Available package sources**: Lists all configured package sources
+Lists all configured package sources according to your NuGet.Config files.
+
 - **Name**: Display name for the source
 - **Source**: URL or file path for the package source
-- **Enabled checkbox**: Enable or disable a source without removing it
-- **Add/Remove/Edit buttons**: Manage your package sources
-- **Move up/down arrows**: Change the order in which NuGet searches sources (only applicable for packages.config projects)
+- **Enabled checkbox**: Enable or disable a source without removing it.
+- **Allow Insecure Connections**: Enable or disable allowing insecure HTTP connections
+
+To modify, use the **Add, Edit, and Remove buttons** below the table.
+Checkboxes may be toggled directly in the table.
+Press "Save" on the Add/Edit dialog and the changes will be updated in the relevant NuGet.Config file.
+
+![Add dialog on the Package Sources page](media/package-source-add.png)
 
 ### Machine-wide Package Sources
 
-Package sources defined at the machine level are displayed separately and typically cannot be modified through the UI. These are usually configured by system administrators.
+"Machine-wide package sources" are listed below which are package sources defined at the machine level.
+These are usually configured by Visual Studio workloads and cannot be modified other than Enabling or Disabling the package source by toggling the checkbox in the Enabled column.
 
-### HTTP vs HTTPS Sources
+![Machine-wide sources table on the Package Sources page](media/package-source-machine-wide.png)
 
-> [!IMPORTANT]
-> For security reasons, NuGet enforces the use of HTTPS sources by default. If you need to use an HTTP source, you must explicitly allow it.
+### Allow Insecure Connections
 
-Starting with NuGet 6.10, NuGet produces errors when using HTTP sources in most scenarios to improve security. If you need to allow HTTP sources:
+The first column of the Package Sources table can show an icon with information about a warning or an error with the package source in that row.
 
-1. **For Visual Studio**: Add the source URL to the allowed list in the NuGet Options (this feature may require enabling Unified Settings preview)
-2. **For command-line tools**: Use the `allowInsecureConnections` setting in your nuget.config file
+When an HTTP package source is used and Allow Insecure Connections is enabled, a warning is shown in the leftmost status column:
+
+> HTTP sources are insecure. Consider using HTTPS instead. 'AllowInsecureConnections' is enabled, permitting HTTP access
+
+![Package Sources page of NuGet options](media/allow-insecure-warning.png)
+
+When an HTTP source is used and Allow Insecure Connections is disabled, an error is shown in the leftmost status column and NuGet restore will fail:
+
+> NuGet requires HTTPS sources. To use an HTTP source, you must explicitly set 'allowInsecureConnections' to true in your NuGet.Config file.
+
+![Package Sources page of NuGet options](media/allow-insecure-error.png)
 
 For more information on configuring HTTP source permissions, see <https://aka.ms/nuget-https-everywhere>.
-
-### Adding a Package Source
-
-1. Click the **Add** button (green plus icon)
-2. Enter a **Name** for the source (e.g., "Contoso Packages")
-3. Enter the **Source** URL or local path
-4. Click **Update** to save
-5. Click **OK** to apply changes
-
-For more information, see [Package Source Mapping](Package-Source-Mapping.md).
 
 ## Package Source Mapping
 
