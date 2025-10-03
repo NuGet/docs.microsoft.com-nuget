@@ -35,6 +35,8 @@ To manage your package sources in Visual Studio:
 1. Open **Tools** > **Options**
 2. Navigate to **NuGet Package Manager** > **Package Sources**
 
+![Screenshot showing the Options window with Package Sources selected](media/package-sources.png)
+
 In this view, you can add, edit, enable, or disable package sources.
 
 ### HTTP Source Warnings in Visual Studio
@@ -47,6 +49,9 @@ When you add or edit a package source that uses HTTP instead of HTTPS, Visual St
 
 These warnings and errors help you identify and resolve insecure configurations before they become security vulnerabilities.
 
+> [!NOTE]
+> Visual Studio 2022 and later use a unified settings experience that shows HTTP warnings and errors directly in the Package Sources settings UI. This makes it easier to identify and fix insecure package source configurations.
+
 ### Adding a Secure HTTPS Source
 
 To add a new package source with HTTPS:
@@ -57,10 +62,14 @@ To add a new package source with HTTPS:
 4. Enter the **Source** URL using `https://` (not `http://`)
 5. Click **Update** to save
 
+![Screenshot showing the Package source selector](media/package-source-selector.png)
+
 Example of a secure source URL:
 ```
 https://api.nuget.org/v3/index.json
 ```
+
+If you attempt to add an HTTP source, Visual Studio will display a warning in the settings UI. You should only proceed if you fully understand the security risks and trust the source.
 
 ## Command Line Configuration
 
@@ -146,4 +155,4 @@ When working with HTTP sources, you may encounter:
 - [HTTPS everywhere blog post](https://devblogs.microsoft.com/nuget/https-everywhere)
 - [Package source mapping](package-source-mapping.md)
 - [NuGet.Config reference](../reference/nuget-config-file.md)
-- [Security best practices](../concepts/security-best-practices.md)
+- [Security best practices](../concepts/Security-Best-Practices.md)
