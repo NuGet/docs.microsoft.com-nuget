@@ -17,6 +17,7 @@
 ### [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md)
 ### [Package Manager Console (PowerShell)](consume-packages/install-use-packages-powershell.md)
 ## Configure NuGet
+### [Visual Studio options](consume-packages/nuget-visual-studio-options.md)
 ### Package restore options
 #### [Restore packages](consume-packages/package-restore.md)
 #### [Troubleshooting](consume-packages/package-restore-troubleshooting.md)

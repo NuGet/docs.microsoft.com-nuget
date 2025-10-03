@@ -107,6 +107,8 @@ Starting in Visual Studio 2017, use the **Tools > NuGet Package Manager > Packag
 
 ![NuGet option command for clearing caches](media/options-clear-caches.png)
 
+For more information on Visual Studio NuGet options, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md).
+
 ## Troubleshooting errors
 
 The following errors can occur when using `nuget locals` or `dotnet nuget locals`:
