@@ -15,34 +15,34 @@ f1_keywords:
 
 # NuGet Package Manager Options in Visual Studio
 
-Visual Studio provides several options pages for configuring NuGet Package Manager behavior. These settings can be accessed through **Tools > Options > NuGet Package Manager** in Visual Studio.
-
-> [!NOTE]
-> Starting with Visual Studio 2022 version 17.14, NuGet options are available in the new Unified Settings experience (preview feature). The Unified Settings provides a modernized, searchable interface for configuring Visual Studio settings.
+Visual Studio provides several options pages for configuring NuGet Package Manager behavior.
+Configuration settings for NuGet are stored in your [NuGet.Config file(s)](../reference/nuget-config-file.md).
 
 ## Accessing NuGet Options
 
 There are multiple ways to access NuGet Package Manager options:
 
-1. **From the main menu**: Go to **Tools > Options**, then expand **NuGet Package Manager** in the left pane
-2. **From Package Manager UI**: Click the settings (gear) icon in the Package Manager UI toolbar
-3. **From Package Manager Console**: Click the settings (gear) icon in the Package Manager Console toolbar
-4. **Quick search**: Press **Ctrl+Q** and search for "NuGet" to quickly find NuGet-related settings
+1. **From the main menu**: Go to **Tools > Options**, then expand **NuGet Package Manager** in the left pane.
+1. **From the NuGet menu** found under the **Tools > NuGet Package Manager > Package Manager Settings** menu command.
+1. **Quick search**: Press **Ctrl+Q** and search for "NuGet" or a NuGet-related setting name to quickly jump to its Options page.
+1. **From Package Manager UI**: Press the settings (gear) icon in the Package Manager UI toolbar.
+1. **From Package Manager Console**: Click the settings (gear) icon in the Package Manager Console toolbar.
 
 ## General
 
-The General options page contains settings that control NuGet's package management behavior in Visual Studio.
+The General options page contains settings that control NuGet's package management behavior.
 
-**[PLACEHOLDER FOR SCREENSHOT: General options page showing all settings]**
-*Suggested screenshot: Show the General page in Unified Settings with all options visible, including package management format, cache clearing, and skip applying binding redirects settings. Resolution: 1920x1080 or match other VS documentation screenshots (typically scaled to fit ~800-1000px width for docs).*
+![Clear NuGet local resources button highlighted in the General page of NuGet options](media/clear-nuget-local-resources.png)
 
 ### Package Management
 
-- **Default package management format**: Choose between **PackageReference** (recommended for most projects) and **packages.config** (legacy format for older projects)
+- **Default package management format**: Choose between the NuGet formats [PackageReference](package-references-in-project-files.md) (recommended for most projects) and [packages.config](../reference/packages-config.md) (legacy format for older projects).
+For more information, see [Choose default package management format](package-restore.md#choose-default-package-management-format).
+
   - **PackageReference**: Stores package references directly in project files. This is the modern format that supports better dependency resolution and is required for SDK-style projects
   - **packages.config**: Legacy XML file format that stores package information separately from the project file
 
-- **Prompt for format selection on first package install**: When enabled, Visual Studio will ask you to choose between PackageReference and packages.config the first time you install a package in a project that doesn't already have packages
+- **Prompt for format selection on first package install**: When enabled, Visual Studio will ask you to choose between PackageReference and packages.config the first time you install a package in a project that doesn't already have packages.
 
 ### Package Restore
 
@@ -59,18 +59,14 @@ See [Package Restore](Package-Restore.md) for more information on package restor
 
 ### Clear NuGet Local Resources
 
-This section allows you to clear NuGet's local caches:
+The **Clear NuGet Local Resources** command button allows you to clear NuGet's local caches, including:
 
-- **Clear NuGet local resources**: Click this button to clear all local NuGet caches including:
-  - **http-cache**: Downloaded package metadata and packages
-  - **global-packages**: Installed packages folder
-  - **temp**: Temporary files
-  - **plugins-cache**: Plugin operation results
+- **http-cache**: Downloaded package metadata and packages
+- **global-packages**: Installed packages folder
+- **temp**: Temporary files
+- **plugins-cache**: Plugin operation results
 
-**[PLACEHOLDER FOR SCREENSHOT: General page with Clear button highlighted and output showing successful cache clearing]**
-*Suggested screenshot: Show the General page with the "Clear NuGet local resources" button circled or highlighted, and if possible, show the Output window displaying the success message.*
-
-For more information on NuGet caches and folders, see [Managing the global packages, cache, and temp folders](managing-the-global-packages-and-cache-folders.md). You can also visit <https://aka.ms/troubleshoot_nuget_cache> for troubleshooting cache-related issues.
+For more information on NuGet caches and folders, see [Managing the global packages, cache, and temp folders](managing-the-global-packages-and-cache-folders.md).
 
 ## Configuration Files
 
