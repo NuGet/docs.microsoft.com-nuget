@@ -46,10 +46,14 @@ The migration between project.json and PackageReference is straightforward.
 
 ### Automatic migration in Visual Studio 2026
 
-Visual Studio 2026 and later automatically migrates project.json projects to PackageReference when you open a solution containing project.json projects. The migration happens at solution load time:
+Visual Studio 2026 and later automatically migrates project.json projects to PackageReference when you open a solution containing project.json projects.
+The migration happens at solution load time:
 
 1. Open a solution containing project.json projects in Visual Studio 2026 or later.
 1. Visual Studio automatically detects project.json files and migrates them to PackageReference format.
+1. To check migration status, open the https://learn.microsoft.com/visualstudio/ide/output-window?view=visualstudio and select Show output from "Package Manager".
+You should see messages like "Migrating project.json project..." followed by "Migration Succeeded" for each project.
+Any errors will appear in the Error List.
 1. A backup of the original project file and project.json file is created in a `Backup` folder in the root of the project directory.
 1. The migration converts all package dependencies to PackageReference format in the project file.
 
