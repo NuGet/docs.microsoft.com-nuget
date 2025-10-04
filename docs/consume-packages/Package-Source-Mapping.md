@@ -63,7 +63,7 @@ _From the Visual Studio Options Dialog_
 * Go to the `Tools` menu in the main Visual Studio toolbar, and choose `NuGet Package Manager` -> `Package Manager Settings`.
 * Navigate to the `Package Source Mappings` page.
 
-For details about managing NuGet package source mappings, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md#Package-Source-Mapping).
+For details about managing NuGet package source mappings, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md#package-source-mapping).
 
 The NuGet Package Manager window will refresh and reflect the new status of the selected package's source mappings.
 ![The NuGet Package Manager window in Visual Studio showing a selected package with the "Package source mapping found" status with a `Configure` button.](media/packageSourceMapping_PMUI_Status_Mapped.png)

@@ -120,7 +120,7 @@ The [Output Window](/visualstudio/ide/output-window) when selecting Show output 
 
 Managing the cache isn't presently available through the Package Manager Console.
 
-For more information, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md#Clear-NuGet-Local-Resources).
+For more information, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md#clear-nuget-local-resources).
 
 ## Troubleshooting errors
 

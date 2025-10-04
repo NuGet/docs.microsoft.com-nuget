@@ -134,7 +134,7 @@ Visual Studio ignores the order of package sources, and uses the package from wh
 
     ![Screenshot showing the Package source settings icon highlighted.](media/package-source-settings.png)
 
-1. To manage NuGet package sources, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md#Package-Sources).
+1. To manage NuGet package sources, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md#package-sources).
 
 ## NuGet Package Manager Options control
 
