@@ -63,21 +63,9 @@ _From the Visual Studio Options Dialog_
 * Go to the `Tools` menu in the main Visual Studio toolbar, and choose `NuGet Package Manager` -> `Package Manager Settings`.
 * Navigate to the `Package Source Mappings` page.
 
-![The Visual Studio `Package Source Mappings` Options Dialog showing no package source mappings, with an `Add` button to create a new mapping.](media/packageSourceMapping_VSOptions_NoMappings.png)
+For details about managing NuGet package source mappings, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md#Package-Source-Mapping).
 
-3. Press the `Add` button in the `Package Source Mappings` page to open the `Add Package Source Mappings` dialog.
-
-![The `Add Package Source Mappings` dialog](media/packageSourceMapping_VSOptions_AddMappingOpened.png)
-4. Enter a Package ID or Package Pattern, and select one or more package source(s) by toggling the checkbox for your desired source(s).
-
-![The `Add Package Source Mappings` dialog with a filled package pattern and selected package source.](media/packageSourceMapping_VSOptions_AddMappingFilled.png)
-
-5. The `Package Source Mapping` options page will show the newly created source mapping.
-
-![The `Package Source Mapping` options page showing the newly created source mapping](media/packageSourceMapping_VSOptions_AddMappingCompleted.png)
-
-6. Press `OK` on the Options Dialog to save changes to the applicable `nuget.config`.
-7. The NuGet Package Manager window will refresh and reflect the new status of the selected package's source mappings.
+The NuGet Package Manager window will refresh and reflect the new status of the selected package's source mappings.
 ![The NuGet Package Manager window in Visual Studio showing a selected package with the "Package source mapping found" status with a `Configure` button.](media/packageSourceMapping_PMUI_Status_Mapped.png)
 
 ### Enable by manually editing `nuget.config`
