@@ -101,7 +101,7 @@ When upgrading to Visual Studio 2026 or later, we recommend uninstalling the pac
    </PropertyGroup>
    ```
 
-  If you are using Visual Studio 2022 or earlier, add the following after the `<PropertyGroup>` element:
+   If you are using Visual Studio 2022 or earlier, add the following after the `<PropertyGroup>` element:
 
    ```xml
    <ItemGroup>
