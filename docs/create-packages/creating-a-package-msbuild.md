@@ -18,7 +18,7 @@ For non-SDK-style PackageReference projects, it is also available by default sta
 In earlier versions of Visual Studio you need to add the NuGet.Build.Tasks.Pack package to the project dependencies and we recommend removing this package reference when upgrading to Visual Studio 2026.
 For detailed information about MSBuild pack targets, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
-For SDK style projects, `msbuild -t:pack` is functionally equivalent to `dotnet pack`.
+For SDK-style projects, `msbuild -t:pack` is functionally equivalent to `dotnet pack`.
 
 > [!IMPORTANT]
 > This topic applies to [SDK-style](../resources/check-project-format.md) projects, typically .NET Core and .NET Standard projects, and to non-SDK-style projects that use PackageReference.
@@ -82,7 +82,7 @@ For details on declaring dependencies and specifying version numbers, see [Packa
 
 ## Configure project for pack
 
-SDK-style projects do not have any configuration required.
+SDK-style projects do not require any additional configuration.
 
 Non-SDK-style projects either need at least one package installed (via PackageReference, not packages.config), or the project explicitly needs to instruct NuGet to treat the project as a PackageReference project via the `RestoreProjectStyle` property.
 
