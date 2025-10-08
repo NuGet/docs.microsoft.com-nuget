@@ -38,7 +38,7 @@ Similarly, you can write an MSBuild task, write your own target and consume NuGe
 
 For .NET projects that use the `PackageReference` format, using `msbuild -t:pack` draws inputs from the project file to use in creating a NuGet package.
 
-Non-SDK style projects will need to install the NuGet.Build.Tasks.Pack package when using Visual Studio 2022 or earlier.
+Non-SDK-style projects will need to install the NuGet.Build.Tasks.Pack package when using Visual Studio 2022 or earlier.
 We recommend uninstalling this package when upgrading to Visual Studio 2026 to ensure your project can use the latest pack features and bug fixes.
 
 The following table describes the MSBuild properties that can be added to a project file within the first `<PropertyGroup>` node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience, the table is organized by the equivalent property in a [`.nuspec` file](../reference/nuspec.md).
