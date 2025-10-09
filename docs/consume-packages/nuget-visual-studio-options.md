@@ -5,7 +5,7 @@ author: donnie-msft
 ms.author: eagoodso
 ms.date: 10/03/2025
 ms.topic: reference
-f1_keywords: 
+f1_keywords:
   - "vs.toolsoptionspages.nuget_package_manager"
   - "vs.toolsoptionspages.nuget_package_manager.general"
   - "vs.toolsoptionspages.nuget_package_manager.configuration_files"
@@ -32,12 +32,12 @@ There are multiple ways to access NuGet Package Manager options:
 
 The General options page contains settings that control NuGet's package management behavior.
 
-![Clear NuGet local resources button highlighted in the General page of NuGet options](media/clear-nuget-local-resources.png)
+![Clear NuGet local resources button highlighted in the General page of NuGet options](media/vsoptions/general.png)
 
 ### Package Management
 
 - **Default package management format**: Choose between the NuGet formats [PackageReference](package-references-in-project-files.md) (recommended for most projects) and [packages.config](../reference/packages-config.md) (legacy format for older projects).
-For more information, see [Choose default package management format](package-restore.md#choose-default-package-management-format).
+  For more information, see [Choose default package management format](package-restore.md#choose-default-package-management-format).
 
   - **PackageReference**: Stores package references directly in project files. This is the modern format that supports better dependency resolution and is required for SDK-style projects
   - **packages.config**: Legacy XML file format that stores package information separately from the project file
@@ -75,7 +75,7 @@ The Configuration Files options page displays the NuGet.Config files that apply 
 To edit a file, select a File Path and press the "Open" button.
 The file will open in a new tab in Visual Studio where it may be edited directly.
 
-![Configuration files page of NuGet options with the Open button highlighted](media/configuration-files.png)
+![Configuration files page of NuGet options with the Open button highlighted](media/vsoptions/configuration-files.png)
 
 Configuration files are listed in order from highest to lowest priority.
 NuGet uses a hierarchical configuration system where settings from multiple config files are merged.
@@ -85,7 +85,7 @@ For more information, see [Common NuGet configurations](configuring-nuget-behavi
 
 The Package Sources options page allows you to manage the sources from which NuGet downloads packages.
 
-![Package Sources page of NuGet options](media/package-sources-page.png)
+![Package Sources page of NuGet options](media/vsoptions/package-sources-page.png)
 
 ### Managing Package Sources
 
@@ -100,14 +100,14 @@ To modify, use the **Add, Edit, and Remove buttons** below the table.
 Checkboxes may be toggled directly in the table.
 Press "Save" on the Add/Edit dialog and the changes will be updated in the relevant NuGet.Config file.
 
-![Add dialog on the Package Sources page](media/package-source-add.png)
+![Add dialog on the Package Sources page](media/vsoptions/package-source-add.png)
 
 ### Machine-wide Package Sources
 
-"Machine-wide package sources" are listed below which are package sources defined at the machine level.
-These are usually configured by Visual Studio workloads and cannot be modified other than Enabling or Disabling the package source by toggling the checkbox in the Enabled column.
+Package sources defined at the machine level appear in a dedicated section below.
+These are generally provisioned by Visual Studio workloads and can only be enabled or disabled using the checkbox in the Enabled column.
 
-![Machine-wide sources table on the Package Sources page](media/package-source-machine-wide.png)
+![Machine-wide sources table on the Package Sources page](media/vsoptions/package-source-machine-wide.png)
 
 ### Allow Insecure Connections
 
@@ -119,13 +119,13 @@ When an HTTP source is used, the first column of the Package Sources table will 
 
 > HTTP sources are insecure. Consider using HTTPS instead. 'AllowInsecureConnections' is enabled, permitting HTTP access.
 
-![Package Sources page with an HTTP source Warning and Allow Insecure Connections enabled](media/allow-insecure-warning.png)
+![Package Sources page with an HTTP source Warning and Allow Insecure Connections enabled](media/vsoptions/package-source-http-warn.png)
 
 ❌ When an HTTP source is used and Allow Insecure Connections is disabled, an error is shown in the leftmost status column and NuGet restore will fail:
 
 > NuGet requires HTTPS sources. To use an HTTP source, you must explicitly set 'allowInsecureConnections' to true in your NuGet.Config file.
 
-![Package Sources page with an HTTP source Error and Allow Insecure Connections disabled](media/allow-insecure-error.png)
+![Package Sources page with an HTTP source Error and Allow Insecure Connections disabled](media/vsoptions/package-source-http-error.png)
 
 For more information on configuring HTTP source permissions, see <https://aka.ms/nuget-https-everywhere>.
 
@@ -133,7 +133,7 @@ For more information on configuring HTTP source permissions, see <https://aka.ms
 
 Package Source Mapping allows you to control which package sources are used for specific packages, improving supply chain security.
 
-![Package Source Mapping page of NuGet options](media/package-source-mapping-page.png)
+![Package Source Mapping page of NuGet options](media/vsoptions//package-source-mapping.png)
 
 To modify, use the **Add, Edit, and Remove buttons** below the table.
 
@@ -143,12 +143,12 @@ Lists all configured package source mappings according to your NuGet.Config file
 
 - **Package pattern**: Package pattern that is currently mapped (e.g., `Microsoft.*` or `Contoso.Contracts`)
 - **Source**: One or more package sources mapped to the package pattern.
-Package sources must be enabled to be shown.
+  Package sources must be enabled to be shown.
 
 To modify, use the **Add, Edit, and Remove buttons** below the table.
 Press "Save" on the Add/Edit dialog and the changes will be updated in the relevant NuGet.Config file.
 
-![Package Source Mapping add dialog](media/package-source-mapping-add.png)
+![Package Source Mapping add dialog](media/vsoptions/package-source-mapping-add.png)
 
 For more information, see [Package Source Mapping](Package-Source-Mapping.md).
 
@@ -158,4 +158,4 @@ If a package source listed in your existing source mapping isn't enabled in your
 
 Make sure all Source values in your mappings refer to package sources that are both available and enabled. Otherwise, the mapping may not work as expected.
 
-![Package Source Mapping with an invalid package source](media/package-source-mapping-missing-source.png)
+![Package Source Mapping with an invalid package source](media/vsoptions/package-source-mapping-missing-source.png)
