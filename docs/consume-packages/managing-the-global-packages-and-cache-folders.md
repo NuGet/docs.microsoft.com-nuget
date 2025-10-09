@@ -11,12 +11,12 @@ ms.topic: conceptual
 
 Whenever you install, update, or restore a package, NuGet manages packages and package information in several folders outside of your project structure:
 
-| Name | Description and Location (per user)|
+| Name | Location |
 | --- | --- |
-| global-packages | The *global-packages* folder is where NuGet installs any downloaded package. Each package is fully expanded into a subfolder that matches the package identifier and version number. Projects using the [PackageReference](package-references-in-project-files.md) format always use packages directly from this folder. When using the [packages.config](../reference/packages-config.md), packages are installed to the *global-packages* folder, then copied into the project's `packages` folder.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>Override using the NUGET_PACKAGES environment variable, the `globalPackagesFolder` or `repositoryPath` [configuration settings](../reference/nuget-config-file.md#config-section) (when using PackageReference and `packages.config`, respectively), or the `RestorePackagesPath` MSBuild property (MSBuild only). The environment variable takes precedence over the configuration setting.</li></ul> |
-| http-cache | The Visual Studio Package Manager (NuGet 3.x+) and the `dotnet` tool store copies of downloaded packages in this cache (saved as `.dat` files), organized into subfolders for each package source. Packages are not expanded, and the cache has an expiration time of 30 minutes.<br/><ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Override using the NUGET_HTTP_CACHE_PATH environment variable.</li></ul> |
-| temp | A folder where NuGet stores temporary files during its various operations.<br/><li>Windows: `%temp%\NuGetScratch`</li><li>Mac: `/tmp/NuGetScratch`</li><li>Linux: `/tmp/NuGetScratch<username>`</li><li>Override using the NUGET_SCRATCH environment variable.</li></ul> |
-| plugins-cache **4.8+** | A folder where NuGet stores the results from the operation claims request.<br/><ul><li>Windows: `%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/plugins-cache`</li><li>Override using the NUGET_PLUGINS_CACHE_PATH environment variable.</li></ul> |
+| [global-packages](#global-packages) | <ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>Override using the NUGET_PACKAGES environment variable, the `globalPackagesFolder` or `repositoryPath` [configuration settings](../reference/nuget-config-file.md#config-section) (when using PackageReference and `packages.config`, respectively), or the `RestorePackagesPath` MSBuild property (MSBuild only). The environment variable takes precedence over the configuration setting.</li></ul> |
+| http-cache | <ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Override using the NUGET_HTTP_CACHE_PATH environment variable.</li></ul> |
+| temp | <li>Windows: `%temp%\NuGetScratch`</li><li>Mac: `/tmp/NuGetScratch`</li><li>Linux: `/tmp/NuGetScratch<username>`</li><li>Override using the NUGET_SCRATCH environment variable.</li></ul> |
+| plugins-cache **4.8+** | <ul><li>Windows: `%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/plugins-cache`</li><li>Override using the NUGET_PLUGINS_CACHE_PATH environment variable.</li></ul> |
 
 > [!Note]
 > NuGet 3.5 and earlier uses *packages-cache* instead of the *http-cache*, which is located in `%localappdata%\NuGet\Cache`.
@@ -26,6 +26,33 @@ By using the cache and *global-packages* folders, NuGet generally avoids downloa
 When asked to retrieve a package, NuGet first looks in the *global-packages* folder. If the exact version of package is not there, then NuGet checks all non-HTTP package sources. If the package is still not found, NuGet looks for the package in the *http-cache* unless you specify `--no-http-cache` with `dotnet.exe` commands or `-NoHttpCache` with `nuget.exe` commands. If the package is not in the cache, or the cache isn't used, NuGet then retrieves the package over HTTP .
 
 For more information, see [What happens when a package is installed?](../concepts/package-installation-process.md).
+
+## global-packages
+
+The *global-packages* folder is where NuGet installs any downloaded package.
+Each package is fully expanded into a subfolder that matches the package identifier and version number.
+Projects using the [PackageReference](package-references-in-project-files.md) format always use packages directly from this folder.
+When using the [packages.config](../reference/packages-config.md), packages are installed to the *global-packages* folder, then copied into the project's `packages` folder.
+
+There is a [nuget.config setting `updatePackageLastAccessTime`](../reference/nuget-config-file.md) that will cause NuGet to update each package's `.nupkg.metadata` file when it is used in a restore.
+When restore runs, but a project is considered already up to date, the package timestamps are *not* updated.
+The `.nupkg.metadata` file is the last file that NuGet will create when downloading and extracting packages during a restore or install.
+It is important that the `.nupkg.metadata` file is deleted if any of the other package files are deleted, so we recommend that this file is deleted first, to prevent any failures leaving the package in an invalid state.
+If writing a cleanup tool in .NET, consider using `ConcurrencyUtilities.ExecuteWithFileLocked(Async)` from the [NuGet.Common package](https://www.nuget.org/packages/NuGet.Common), passing the full nupkg path of the package directory you're going to delete as the key, to avoid deleting a package that restore is trying to extract at the same time.
+
+## http-cache
+
+NuGet will cache copies of most NuGet feed communications (excluding search), organized into subfolders for each package source.
+Packages are not expanded, and files with a last modified date older than 30 minutes are typically considered expired.
+
+## temp
+
+A folder where NuGet may store temporary files during its various operations.
+
+## plugin-cache
+
+A folder where NuGet stores the results from the operation claims request.
+See the [cross platform plugins reference](../reference/extensibility/NuGet-Cross-Platform-Plugins.md) for more information.
 
 ## Viewing folder locations
 
