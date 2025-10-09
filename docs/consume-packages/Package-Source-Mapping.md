@@ -18,7 +18,8 @@ With Package Source Mapping, you can filter, per package, which source(s) NuGet 
 We also have suggestions for other [best practices](..\concepts\Security-Best-Practices.md) to help you fortify your supply chain against attacks.
 
 Package Source Mapping was added in [NuGet 6.0](..\release-notes\NuGet-6.0.md).
-Starting with Visual Studio 17.5, you can add and remove Package Source Mappings with the Visual Studio Options Dialog. For detailed information on all Visual Studio NuGet options, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md).
+Starting with Visual Studio 17.5, you can add and remove Package Source Mappings with the Visual Studio Options Dialog.
+For detailed information on all Visual Studio NuGet options, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md).
 
 ### Visual Studio support
 
