@@ -24,7 +24,7 @@ There are multiple ways to access NuGet Package Manager options:
 
 1. **From the main menu**: Go to **Tools > Options**, then expand **NuGet Package Manager** in the left pane.
 1. **From the NuGet menu** found under the **Tools > NuGet Package Manager > Package Manager Settings** menu command.
-1. **Quick search**: Press **Ctrl+Q** and search for "NuGet" or a NuGet-related setting name to quickly jump to its Options page.
+1. **Quick search**: Use [Visual Studio search](/visualstudio/ide/visual-studio-search) to search for "NuGet" or a NuGet-related setting name to quickly jump to its Options page.
 1. **From Package Manager UI**: Press the settings (gear) icon in the Package Manager UI toolbar.
 1. **From Package Manager Console**: Click the settings (gear) icon in the Package Manager Console toolbar.
 
