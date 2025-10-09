@@ -48,8 +48,8 @@ The General options page contains settings that control NuGet's package manageme
 
 Settings for automatic package restore during build operations:
 
-- **Allow NuGet to download missing packages**: When enabled, NuGet automatically downloads packages during build
-- **Automatically check for missing packages during build in Visual Studio**: Checks for missing packages and restores them before build
+- **Allow NuGet to download missing packages**: Select to enable package restore and the Restore NuGet Packages command.
+- **Automatically check for missing packages during build in Visual Studio**: Select to automatically restore any missing packages when you run a build from Visual Studio.
 
 See [Package Restore](Package-Restore.md) for more information on package restore behavior.
 
