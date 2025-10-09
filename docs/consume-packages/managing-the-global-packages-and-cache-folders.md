@@ -70,9 +70,12 @@ info : global-packages: /home/user1/.nuget/packages/
 info : temp: /tmp/NuGetScratchuser1
 info : plugins-cache: /home/user1/.local/share/NuGet/plugins-cache
 ```
+
 To display the location of a single folder, use `http-cache`, `global-packages`, `temp`, or `plugins-cache` instead of `all`.
 
 ## Clearing local folders
+
+### Command-line
 
 If you encounter package installation problems or otherwise want to ensure that you're installing packages from a remote gallery, use the `locals --clear` option (dotnet.exe) or `locals -clear` (nuget.exe), specifying the folder to clear, or `all` to clear all folders:
 
@@ -103,9 +106,23 @@ nuget locals all -clear
 
 Any packages used by projects that are currently open in Visual Studio are not cleared from the *global-packages* folder.
 
-Starting in Visual Studio 2017, use the **Tools > NuGet Package Manager > Package Manager Settings** menu command, then select **Clear All NuGet Cache(s)**. Managing the cache isn't presently available through the Package Manager Console. In Visual Studio 2015, use the CLI commands instead.
+### Visual Studio
 
-![NuGet option command for clearing caches](media/options-clear-caches.png)
+Visual Studio supports clearing all local folders in the "NuGet Package Manager" options found under the **Tools > NuGet Package Manager > Package Manager Settings** menu command.
+
+On the General page, select **Clear NuGet local resources**.
+Once started, this action cannot be cancelled.
+A progress bar will be shown and will contain the final status of the command.
+
+The [Output Window](/visualstudio/ide/output-window) when selecting Show output from "Package Manager" will show additional details about the clear command, including any error messages.
+
+### Clear NuGet Local Resources
+
+![Clear NuGet local resources button highlighted in the General page of NuGet options](media/vsoptions/general.png)
+
+Managing the cache isn't presently available through the Package Manager Console.
+
+For more information, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md#clear-nuget-local-resources).
 
 ## Troubleshooting errors
 
