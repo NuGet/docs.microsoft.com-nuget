@@ -54,7 +54,6 @@ From NuGet 6.0, all of these APIs are available in the package [NuGet.VisualStud
 - [`IVsPackageInstallerEvents`](#ivspackageinstallerevents-interface): Events for package install/uninstall. (3.3+)
 - [`IVsPackageInstallerProjectEvents`](#ivspackageinstallerprojectevents-interface): Batch events for package install/uninstall. (3.3+)
 - [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface): Methods to retrieve installed packages in the current solution and to check whether a given package is installed in a project. (3.3+)
-- [`IVsPackageManagerProvider`](#ivspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package. (3.3 - 5.11)
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface): Methods to restore packages installed in a project. (3.3+)
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface): Methods to retrieve a list of NuGet package sources. (3.3+)
 - [`IVsPackageUninstaller`](#ivspackageuninstaller-interface): Methods to uninstall NuGet packages from projects. (3.3+)
