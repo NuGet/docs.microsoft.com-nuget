@@ -34,16 +34,6 @@ The General options page contains settings that control NuGet's package manageme
 
 ![Clear NuGet local resources button highlighted in the General page of NuGet options](media/vsoptions/general.png)
 
-### Package Management
-
-- **Default package management format**: Choose between the NuGet formats [PackageReference](package-references-in-project-files.md) (recommended for most projects) and [packages.config](../reference/packages-config.md) (legacy format for older projects).
-  For more information, see [Choose default package management format](package-restore.md#choose-default-package-management-format).
-
-  - **PackageReference**: Stores package references directly in project files. This is the modern format that supports better dependency resolution and is required for SDK-style projects
-  - **packages.config**: Legacy XML file format that stores package information separately from the project file
-
-- **Prompt for format selection on first package install**: When enabled, Visual Studio will ask you to choose between PackageReference and packages.config the first time you install a package in a project that doesn't already have packages.
-
 ### Package Restore
 
 Settings for automatic package restore during build operations:
@@ -53,9 +43,19 @@ Settings for automatic package restore during build operations:
 
 See [Package Restore](Package-Restore.md) for more information on package restore behavior.
 
-### Package Updates
+### Binding Redirects
 
 - **Skip applying binding redirects**: When enabled, NuGet will not automatically add or update binding redirects in app.config or web.config files during package installation or updates
+
+### Package Management
+
+- **Default package management format**: Choose between the NuGet formats [PackageReference](package-references-in-project-files.md) (recommended for most projects) and [packages.config](../reference/packages-config.md) (legacy format for older projects).
+  For more information, see [Choose default package management format](package-restore.md#choose-default-package-management-format).
+
+  - **PackageReference**: Stores package references directly in project files. This is the modern format that supports better dependency resolution and is required for SDK-style projects
+  - **packages.config**: Legacy XML file format that stores package information separately from the project file
+
+- **Prompt for format selection on first package install**: When enabled, Visual Studio will ask you to choose between PackageReference and packages.config the first time you install a package in a project that doesn't already have packages.
 
 ### Clear NuGet Local Resources
 
