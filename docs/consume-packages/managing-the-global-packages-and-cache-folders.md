@@ -116,7 +116,9 @@ A progress bar will be shown and will contain the final status of the command.
 
 The [Output Window](/visualstudio/ide/output-window) when selecting Show output from "Package Manager" will show additional details about the clear command, including any error messages.
 
-![Clear NuGet local resources button highlighted in the General page of NuGet options](media/clear-nuget-local-resources.png)
+### Clear NuGet Local Resources
+
+![Clear NuGet local resources button highlighted in the General page of NuGet options](media/vsoptions/general.png)
 
 Managing the cache isn't presently available through the Package Manager Console.
 
