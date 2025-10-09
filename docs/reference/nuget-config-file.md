@@ -474,9 +474,6 @@ Below is an example `nuget.config` file that illustrates a number of settings in
         <add key="http_proxy" value="host" />
         <add key="http_proxy.user" value="username" />
         <add key="http_proxy.password" value="encrypted_password" />
-
-        <!-- Experimental: Update package last access time -->
-        <add key="updatePackageLastAccessTime" value="true" />
     </config>
 
     <packageRestore>
