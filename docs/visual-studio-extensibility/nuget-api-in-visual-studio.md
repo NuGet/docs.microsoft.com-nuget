@@ -49,13 +49,11 @@ From NuGet 6.0, all of these APIs are available in the package [NuGet.VisualStud
 - [`IVsFrameworkCompatibility3`](#ivsframeworkcompatibility3-interface) Contains methods to discover frameworks and compatibility between frameworks. (5.8+)
 - [`IVsFrameworkParser`](#ivsframeworkparser-interface) An interface for dealing with the conversion between strings and [FrameworkName](/dotnet/api/system.runtime.versioning.frameworkname) (4.0+)
 - [`IVsFrameworkParser2`](#ivsframeworkparser2-interface) An interface to parse .NET Framework strings. See [NuGet-IVsFrameworkParser](https://aka.ms/NuGet-IVsFrameworkParser). (5.8+)
-- [`IVsGlobalPackagesInitScriptExecutor`](#ivsglobalpackagesinitscriptexecutor-interface) Execute powershell scripts from package(s) in a solution (4.0+)
 - [`IVsPackageInstaller`](#ivspackageinstaller-interface): Methods to install NuGet packages into projects. (3.3+)
 - [`IVsPackageInstaller2](#ivspackageinstaller2-interface) Contains method to install latest version of a single package into a project within the current solution.
 - [`IVsPackageInstallerEvents`](#ivspackageinstallerevents-interface): Events for package install/uninstall. (3.3+)
 - [`IVsPackageInstallerProjectEvents`](#ivspackageinstallerprojectevents-interface): Batch events for package install/uninstall. (3.3+)
 - [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface): Methods to retrieve installed packages in the current solution and to check whether a given package is installed in a project. (3.3+)
-- [`IVsPackageManagerProvider`](#ivspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package. (3.3 - 5.11)
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface): Methods to restore packages installed in a project. (3.3+)
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface): Methods to retrieve a list of NuGet package sources. (3.3+)
 - [`IVsPackageUninstaller`](#ivspackageuninstaller-interface): Methods to uninstall NuGet packages from projects. (3.3+)
@@ -75,6 +73,7 @@ These interfaces are designed for project systems to interact with NuGet, allowi
 - [`IVsSolutionRestoreService2`](#ivssolutionrestoreservice2-interface) (4.3+)
 - [`IVsSolutionRestoreService3`](#ivssolutionrestoreservice3-interface) (5.1+)
 - [`IVsSolutionRestoreService4`](#ivssolutionrestoreservice4-interface) (6.0+)
+- [`IVsSolutionRestoreService5`](#ivssolutionrestoreservice5-interface) (6.11+)
 - [`IVsSolutionRestoreStatusProvider`](#ivssolutionrestorestatusprovider-interface) (6.0+)
 
 ## Using NuGet Services
@@ -411,31 +410,6 @@ public interface IRegistryKey
         /// <remarks>This API is not needed to get framework information about loaded projects, and should not be used to parse the project's TargetFramework property. See <a href="http://aka.ms/NuGet-IVsFrameworkParser">http://aka.ms/NuGet-IVsFrameworkParser</a>.<br/>
         /// This API is <a href="https://github.com/microsoft/vs-threading/blob/9f065f155525c4561257e02ad61e66e93e073886/doc/cookbook_vs.md#how-do-i-effectively-verify-that-my-code-is-fully-free-threaded">free-threaded</a>.</remarks>
         bool TryParse(string input, out IVsNuGetFramework nuGetFramework);
-    }
-```
-
-## IVsGlobalPackagesInitScriptExecutor interface
-
-```cs
-    /// <summary>
-    /// Execute powershell scripts from package(s) in a solution
-    /// </summary>
-    /// <remarks>Intended for internal use only.</remarks>
-    public interface IVsGlobalPackagesInitScriptExecutor
-    {
-        /// <summary>
-        /// Executes the init script of the given package if available.
-        /// 1) If the init.ps1 script has already been executed by the powershell host, it will not be executed again.
-        /// True is returned.
-        /// 2) If the package is found in the global packages folder it will be used.
-        /// If not, it will return false and do nothing.
-        /// 3) Also, note if other scripts are executing while this call was made, it will wait for them to complete.
-        /// </summary>
-        /// <param name="packageId">Id of the package whose init.ps1 will be executed.</param>
-        /// <param name="packageVersion">Version of the package whose init.ps1 will be executed.</param>
-        /// <returns>Returns true if the script was executed or has been executed already.</returns>
-        /// <remarks>This method throws if the init.ps1 being executed throws.</remarks>
-        Task<bool> ExecuteInitScriptAsync(string packageId, string packageVersion);
     }
 ```
 
@@ -807,53 +781,6 @@ public interface IRegistryKey
         /// You can use <see cref="IVsNuGetProjectUpdateEvents"/> or Microsoft.VisualStudio.OperationProgress to be notified when the project is ready.</exception>
         [Obsolete("This method can cause UI delays if called on the UI thread. Use INuGetProjectService.GetInstalledPackagesAsync in the NuGet.VisualStudio.Contracts package instead")]
         IEnumerable<IVsPackageMetadata> GetInstalledPackages(Project project);
-    }
-```
-
-## IVsPackageManagerProvider interface
-
-This interface was primarily used by the ASP.NET team, to suggest that Javascript and CSS packages like `jQuery` and `bootstrap` are installed with Bower instead of NuGet. Since they removed that functionality From Visual Studio, NuGet has obsolete this interface, and it will no longer be used by the Package Manager UI in Visual Studio 2022 (version 17.0) and later.
-
-```cs
-    /// <summary>
-    /// Interface allowing integration of alternate package manager suggestion for a NuGet package. 
-    /// For example jQuery may appear on Bower and npm,
-    /// it might be more appropriate to install a package from them for certain projects. 
-    /// </summary>
-    [Obsolete]
-    public interface IVsPackageManagerProvider
-    {
-        /// <summary>
-        /// Localized display package manager name.
-        /// </summary>
-        string PackageManagerName { get; }
-
-        /// <summary>
-        /// Package manager unique id.
-        /// </summary>
-        string PackageManagerId { get; }
-
-        /// <summary>
-        /// The tool tip description for the package
-        /// </summary>
-        string Description { get; }
-
-        /// <summary>
-        /// Check if a recommendation should be surfaced for an alternate package manager. 
-        /// This code should not rely on slow network calls, and should return rapidly.
-        /// </summary>
-        /// <param name="packageId">Current package id</param>
-        /// <param name="projectName">Unique project name for finding the project through VS dte</param>
-        /// <param name="token">Cancellation Token</param>
-        /// <returns>return true if need to direct to integrated package manager for this package</returns>
-        Task<bool> CheckForPackageAsync(string packageId, string projectName, CancellationToken token);
-
-        /// <summary>
-        /// This Action should take the user to the other package manager.
-        /// </summary>
-        /// <param name="packageId">Current package id</param>
-        /// <param name="projectName">Unique project name for finding the project through VS dte</param>
-        void GoToPackage(string packageId, string projectName);
     }
 ```
 
@@ -1249,6 +1176,7 @@ This interface was primarily used by the ASP.NET team, to suggest that Javascrip
         /// <exception cref="ArgumentException">Thrown if <paramref name="projectUniqueName" /> is not the path of a project file.</exception>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="projectRestoreInfo" /> is <c>null</c>.</exception>
         /// <exception cref="OperationCanceledException">Thrown if <paramref name="token" /> is cancelled.</exception>
+        [Obsolete("Use IVsSolutionRestoreService5 instead")]
         Task<bool> NominateProjectAsync(string projectUniqueName, IVsProjectRestoreInfo projectRestoreInfo, CancellationToken token);
     }
 ```
@@ -1315,6 +1243,7 @@ This interface was primarily used by the ASP.NET team, to suggest that Javascrip
         /// <exception cref="ArgumentException">Thrown if <paramref name="projectUniqueName" /> is not the path of a project file.</exception>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="projectRestoreInfo" /> is <c>null</c>.</exception>
         /// <exception cref="OperationCanceledException">Thrown if <paramref name="token" /> is cancelled.</exception>
+        [Obsolete("Use IVsSolutionRestoreService5 instead")]
         Task<bool> NominateProjectAsync(string projectUniqueName, IVsProjectRestoreInfo2 projectRestoreInfo, CancellationToken token);
     }
 ```
@@ -1339,6 +1268,36 @@ This interface was primarily used by the ASP.NET team, to suggest that Javascrip
         /// <exception cref="ArgumentNullException">If <paramref name="restoreInfoSource"/> is null. </exception>
         /// <exception cref="ArgumentException">If <paramref name="restoreInfoSource"/>'s <see cref="IVsProjectRestoreInfoSource.Name"/> is <see langword="null"/>. </exception>
         Task RegisterRestoreInfoSourceAsync(IVsProjectRestoreInfoSource restoreInfoSource, CancellationToken cancellationToken);
+    }
+```
+
+## IVsSolutionRestoreService5 interface
+
+```cs
+    /// <summary>
+    /// Represents a package restore service API for integration with a project system.
+    /// Implemented by NuGet.
+    /// </summary>
+    public interface IVsSolutionRestoreService5 : IVsSolutionRestoreService4
+    {
+        /// <summary>
+        /// An entry point used by CPS to indicate given project needs to be restored.
+        /// </summary>
+        /// <param name="projectUniqueName">
+        /// The full path to the project file. In the VS SDK's IVsSolution, this is also known as the unique name.
+        /// </param>
+        /// <param name="projectRestoreInfo">Metadata <see cref="IVsProjectRestoreInfo3"/> needed for restoring the project.</param>
+        /// <param name="token">Cancellation token.</param>
+        /// <returns>
+        /// Returns a restore task corresponding to the nominated project request.
+        /// NuGet will batch restore requests so it's possible the same restore task will be returned for multiple projects.
+        /// When the requested restore operation for the given project completes the task will indicate operation success or failure.
+        /// </returns>
+        /// <exception cref="ArgumentException">Thrown if <paramref name="projectUniqueName" /> is not the path of a project file,
+        /// or if <paramref name="projectRestoreInfo"/> has some basic validation errors.</exception>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="projectRestoreInfo" /> is <see langword="null" />.</exception>
+        /// <exception cref="OperationCanceledException">Thrown if <paramref name="token" /> is cancelled.</exception>
+        Task<bool> NominateProjectAsync(string projectUniqueName, IVsProjectRestoreInfo3 projectRestoreInfo, CancellationToken token);
     }
 ```
 
