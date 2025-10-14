@@ -13,9 +13,12 @@ When you create a NuGet package from your code, you package that functionality i
 
 For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, NuGet uses information in the project file directly to create a package.  For a non-SDK-style project that uses `<PackageReference>`, NuGet also uses the project file to create a package.
 
-SDK-style projects have the pack functionality available by default. For non SDK-style PackageReference projects, you need to add the NuGet.Build.Tasks.Pack package to the project dependencies. For detailed information about MSBuild pack targets, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
+SDK-style projects have the pack functionality available by default.
+For non-SDK-style PackageReference projects, it is also available by default starting from Visual Studio 2026.
+In earlier versions of Visual Studio you need to add the NuGet.Build.Tasks.Pack package to the project dependencies and we recommend removing this package reference when upgrading to Visual Studio 2026.
+For detailed information about MSBuild pack targets, see [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).
 
-The command that creates a package, `msbuild -t:pack`, is functionally equivalent to `dotnet pack`.
+For SDK-style projects, `msbuild -t:pack` is functionally equivalent to `dotnet pack`.
 
 > [!IMPORTANT]
 > This topic applies to [SDK-style](../resources/check-project-format.md) projects, typically .NET Core and .NET Standard projects, and to non-SDK-style projects that use PackageReference.
@@ -77,16 +80,33 @@ For details on declaring dependencies and specifying version numbers, see [Packa
 
 [!INCLUDE [choose-package-id](includes/choose-package-id.md)]
 
-## Add the NuGet.Build.Tasks.Pack package
+## Configure project for pack
 
-If you are using MSBuild with a non-SDK-style project and PackageReference, add the NuGet.Build.Tasks.Pack package to your project.
+SDK-style projects do not require any additional configuration.
 
-1. Open the project file and add the following after the `<PropertyGroup>` element:
+Non-SDK-style projects either need at least one package installed (via PackageReference, not packages.config), or the project explicitly needs to instruct NuGet to treat the project as a PackageReference project via the `RestoreProjectStyle` property.
+
+Visual Studio 2022 and earlier does not have pack built-in, so you also need to install the NuGet.Build.Tasks.Pack package.
+When upgrading to Visual Studio 2026 or later, we recommend uninstalling the package, so that you benefit from new features and bug fixes.
+
+1. Edit the project file.
+
+   If you want to explicitly instruct NuGet to treat the project as PackageReference (the project does not have any packages installed), find or add a `<PropertyGroup>` that does not have any `Condition` statement, and add:
+
+   ```xml
+   <PropertyGroup>
+     <!-- other properties -->
+     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+     <!-- more properties are allowed -->
+   </PropertyGroup>
+   ```
+
+   If you are using Visual Studio 2022 or earlier, add the following after the `<PropertyGroup>` element:
 
    ```xml
    <ItemGroup>
      <!-- ... -->
-     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.7.0" PrivateAssets="all" />
+     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.14.0" PrivateAssets="all" />
      <!-- ... -->
    </ItemGroup>
    ```
@@ -98,7 +118,7 @@ If you are using MSBuild with a non-SDK-style project and PackageReference, add 
 
    You typically want to start the Developer Command Prompt for Visual Studio from the **Start** menu, as it will be configured with all the necessary paths for MSBuild.
 
-3. Switch to the folder containing the project file and type the following command to install the NuGet.Build.Tasks.Pack package.
+3. Switch to the folder containing the project file and type the following command to restore the NuGet.Build.Tasks.Pack package.
 
    ```cmd
    # Uses the project file in the current folder by default

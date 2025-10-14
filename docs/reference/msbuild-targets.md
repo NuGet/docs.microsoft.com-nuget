@@ -38,6 +38,9 @@ Similarly, you can write an MSBuild task, write your own target and consume NuGe
 
 For .NET projects that use the `PackageReference` format, using `msbuild -t:pack` draws inputs from the project file to use in creating a NuGet package.
 
+Non-SDK-style projects will need to install the NuGet.Build.Tasks.Pack package when using Visual Studio 2022 or earlier.
+We recommend uninstalling this package when upgrading to Visual Studio 2026 to ensure your project can use the latest pack features and bug fixes.
+
 The following table describes the MSBuild properties that can be added to a project file within the first `<PropertyGroup>` node. You can make these edits easily in Visual Studio 2017 and later by right-clicking the project and selecting **Edit {project_name}** on the context menu. For convenience, the table is organized by the equivalent property in a [`.nuspec` file](../reference/nuspec.md).
 
 > [!NOTE]
@@ -307,7 +310,8 @@ When using `MSBuild -t:pack -p:IsTool=true`, all output files, as specified in t
 
 ### Packing using a `.nuspec` file
 
-Although it is recommended that you [include all the properties](../reference/msbuild-targets.md#pack-target) that are usually in the `.nuspec` file in the project file instead, you can choose to use a `.nuspec` file to pack your project. For a non-SDK-style project that uses `PackageReference`, you must import `NuGet.Build.Tasks.Pack.targets` so that the pack task can be executed. You still need to restore the project before you can pack a nuspec file. (An SDK-style project includes the pack targets by default.)
+Although it is recommended that you [include all the properties](../reference/msbuild-targets.md#pack-target) that are usually in the `.nuspec` file in the project file instead, you can choose to use a `.nuspec` file to pack your project.
+You still need to restore the project before you can pack a nuspec file. (An SDK-style project includes the pack targets by default.)
 
 The target framework of the project file is irrelevant and not used when packing a nuspec. The following three MSBuild properties are relevant to packing using a `.nuspec`:
 
