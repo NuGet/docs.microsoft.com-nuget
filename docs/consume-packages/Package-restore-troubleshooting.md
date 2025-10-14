@@ -9,7 +9,7 @@ ms.topic: conceptual
 
 # Troubleshooting package restore errors
 
-This article focuses on common errors when restoring packages and steps to resolve them. 
+This article focuses on common errors when restoring packages and steps to resolve them.
 
 Package Restore tries to install all package dependencies to the correct state matching the package references in your project file (*.csproj*) or your *packages.config* file. (In Visual Studio, the references appear in Solution Explorer under the **Dependencies \ NuGet** or the **References** node.) To follow the required steps to restore packages, see [Restore packages](../consume-packages/package-restore.md#restore-packages). If the package references in your project file (*.csproj*) or your *packages.config* file are incorrect (they do not match your desired state following Package Restore), then you need to either install or update packages instead of using Package Restore.
 
@@ -24,7 +24,7 @@ If you're using Visual Studio, first enable package restore as follows. Otherwis
 1. Select **OK**.
 1. Build your project again.
 
-![Enable NuGet package restore in Tool/Options](../consume-packages/media/restore-01-autorestoreoptions.png)
+![Enable NuGet package restore in Tool/Options](../consume-packages/media/vsoptions/general.png)
 
 These settings can also be changed in your `NuGet.Config` file; see the [consent](#consent) section. If your project is an older project that uses the MSBuild-integrated package restore, you may need to [migrate](package-restore.md#migrate-to-automatic-package-restore-visual-studio) to automatic package restore.
 
