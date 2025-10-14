@@ -34,11 +34,32 @@ Each package is fully expanded into a subfolder that matches the package identif
 Projects using the [PackageReference](package-references-in-project-files.md) format always use packages directly from this folder.
 When using the [packages.config](../reference/packages-config.md), packages are installed to the *global-packages* folder, then copied into the project's `packages` folder.
 
-There is a [nuget.config setting `updatePackageLastAccessTime`](../reference/nuget-config-file.md) that will cause NuGet to update each package's `.nupkg.metadata` file when it is used in a restore.
+### Cleaning the global-packages directory
+
+The global-packages directory needs to be manually cleaned to remove packages that are no longer used.
+You can do this with the `dotnet nuget locals global-packages --clean` command, or the "clear NuGet local resources" button in Visual Studio's options (equivalent to `dotnet nuget locals all --clear`).
+After clearing the global-packages directory, you will need to restore your projects again to redownload all required packages.
+In Visual Studio, you may need to reload your solution to clear NuGet's "up to date restores" cache, or alternatively do a command line restore (for example, within Visual Studio's terminal window) with `msbuild -t:restore your.sln`.
+
+To clean only unused packages, it's a two step process.
+First, there is a [nuget.config setting `updatePackageLastAccessTime`](../reference/nuget-config-file.md) that should be enabled.
+This setting will cause NuGet to update each package's `.nupkg.metadata` file when it is used in a restore.
 When restore runs, but a project is considered already up to date, the package timestamps are *not* updated.
-The `.nupkg.metadata` file is the last file that NuGet will create when downloading and extracting packages during a restore or install.
-It is important that the `.nupkg.metadata` file is deleted if any of the other package files are deleted, so we recommend that this file is deleted first, to prevent any failures leaving the package in an invalid state.
-If writing a cleanup tool in .NET, consider using `ConcurrencyUtilities.ExecuteWithFileLocked(Async)` from the [NuGet.Common package](https://www.nuget.org/packages/NuGet.Common), passing the full nupkg path of the package directory you're going to delete as the key, to avoid deleting a package that restore is trying to extract at the same time.
+The `.nupkg.metadata` file is the last file that NuGet will create when downloading and extracting packages during a restore or install, and is the file that restore uses to check if a package has been extracted successfully.
+
+Second, run a tool to perform the cleanup.
+After the `updatePackageLastAccessTime` setting is enabled, we recommend waiting a few days to make sure that all the packages you use regularly have had their timestamps updated.
+
+At this time, NuGet does not provide a tool or command to do this.
+You can [add a 👍 reaction to this GitHub issue](https://github.com/NuGet/Home/issues/4980) to signal your interest.
+Some community members have created their own open source NuGet cleaner tools that you can search for.
+
+If you are going to write your own cleanup tool, it is important that the `.nupkg.metadata` file is deleted if any of the other package files are deleted, so we recommend that this file is deleted first.
+Otherwise projects referencing the package may have unexpected behavior.
+If writing a cleanup tool in .NET, consider using `ConcurrencyUtilities.ExecuteWithFileLocked[Async](..)` from the [NuGet.Common package](https://www.nuget.org/packages/NuGet.Common), passing the full nupkg path of the package directory you're going to delete as the key, to avoid deleting a package that restore is trying to extract at the same time.
+The global packages directory can be programatically found with the [NuGet.Configuration package](https://www.nuget.org/packages/NuGet.Configuration).
+Use `Settings.LoadDefaultSettings(path)` to get an `ISettings` instance (you can pass `null` as the path, or pass a directory if you want to handle solutions with a nuget.config that redirects the global-packages directory), and then use `SettingsUtility.GetGlobalPackagesFolder(settings)`.
+Alternatively, you can run `dotnet nuget locals global-packages --list` as a child process and parse the output.
 
 ## http-cache
 
