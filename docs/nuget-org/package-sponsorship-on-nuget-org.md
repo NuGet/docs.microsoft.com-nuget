@@ -13,7 +13,7 @@ ai-usage: ai-generated
 Package maintainers are the foundation of the NuGet.org ecosystem, building and maintaining the packages that developers rely on. The NuGet.org sponsorship feature makes it easier for package consumers to recognize and support the authors behind their favorite packages.
 
 ## Overview
-NuGet.org now allows package authors to add a sponsorship URL to their packages. This link appears as a heart icon or "Sponsor this package" button on the package's page, guiding users to secure and popular platforms like GitHub Sponsors, Patreon, and Open Collective.
+NuGet.org now allows package authors to add sponsorship URLs to their packages. These links appear when the "Sponsor" button on the package details page is clicked.
 
 For package consumers, supporting your favorite packages is now easier than ever. Look for the sponsor icon on NuGet.org to see which packages need support while browsing or managing dependencies.
 
@@ -35,7 +35,7 @@ For package consumers, supporting your favorite packages is now easier than ever
 1. Go to [NuGet.org](https://nuget.org) and sign in to your account.
 2. Select your username in the top right corner.
 3. Select **Manage Packages** from the dropdown menu.
-4. Find the package you want to add sponsorship information to and select the edit button.
+4. Find the package you want to add sponsorship information for and select the edit button.
 
 ### Access sponsorship settings
 
