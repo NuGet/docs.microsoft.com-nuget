@@ -13,6 +13,8 @@ permissions:
 jobs:
   check-and-create-pr:
     runs-on: ubuntu-latest
+    # don't run in forks
+    if: github.repository == 'NuGet/docs.microsoft.com-nuget'
     steps:
       - name: Check if live is behind main
         id: check
@@ -20,7 +22,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           # Use GitHub API to compare branches
-          COMPARISON=$(gh api repos/${{ github.repository }}/compare/live...main --jq '{status: .status, ahead_by: .ahead_by, behind_by: .behind_by}')
+          COMPARISON=$(gh api repos/${{ github.repository }}/compare/live...main --template '{"status": "{{.status}}", "ahead_by": {{.ahead_by}}, "behind_by": {{.behind_by}}}')
           
           echo "Comparison result: $COMPARISON"
           
@@ -50,9 +52,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           # Check for existing open PR from main to live
-          EXISTING_PR=$(gh pr list --base live --head main --state open --json number --jq '.[0].number')
-          
-          if [ -n "$EXISTING_PR" ]; then
+          EXISTING_PR=$(gh pr list --base live --head main --state open --json number --template '{{range .}}{{.number}}{{end}}')
+
+          if [ -n "$EXISTING_PR" ] && [ "$EXISTING_PR" != "null" ]; then
             echo "PR already exists: #$EXISTING_PR"
             echo "pr_exists=true" >> $GITHUB_OUTPUT
             echo "pr_number=$EXISTING_PR" >> $GITHUB_OUTPUT
