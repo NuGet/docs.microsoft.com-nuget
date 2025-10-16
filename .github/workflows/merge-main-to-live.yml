@@ -1,0 +1,92 @@
+name: Merge main to live
+
+on:
+  schedule:
+    # Runs on the 1st and 15th of each month at 00:00 UTC
+    - cron: '0 0 1,15 * *'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  check-and-create-pr:
+    runs-on: ubuntu-latest
+    # don't run in forks
+    if: github.repository == 'NuGet/docs.microsoft.com-nuget'
+    steps:
+      - name: Check if live is behind main
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Use GitHub API to compare branches
+          COMPARISON=$(gh api repos/${{ github.repository }}/compare/live...main --template '{"status": "{{.status}}", "ahead_by": {{.ahead_by}}, "behind_by": {{.behind_by}}}')
+          
+          echo "Comparison result: $COMPARISON"
+          
+          STATUS=$(echo $COMPARISON | jq -r '.status')
+          AHEAD_BY=$(echo $COMPARISON | jq -r '.ahead_by')
+          BEHIND_BY=$(echo $COMPARISON | jq -r '.behind_by')
+          
+          echo "Status: $STATUS"
+          echo "Main is ahead by: $AHEAD_BY commits"
+          echo "Main is behind by: $BEHIND_BY commits"
+          
+          echo "ahead_by=$AHEAD_BY" >> $GITHUB_OUTPUT
+          
+          # If status is not 'identical', live is behind main
+          if [ "$STATUS" != "identical" ] && [ "$AHEAD_BY" -gt 0 ]; then
+            echo "Live branch is behind main by $AHEAD_BY commits"
+            echo "needs_pr=true" >> $GITHUB_OUTPUT
+          else
+            echo "Live branch is up to date with main"
+            echo "needs_pr=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check if PR already exists
+        if: steps.check.outputs.needs_pr == 'true'
+        id: check_pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Check for existing open PR from main to live
+          EXISTING_PR=$(gh pr list --base live --head main --state open --json number --template '{{range .}}{{.number}}{{end}}')
+
+          if [ -n "$EXISTING_PR" ] && [ "$EXISTING_PR" != "null" ]; then
+            echo "PR already exists: #$EXISTING_PR"
+            echo "pr_exists=true" >> $GITHUB_OUTPUT
+            echo "pr_number=$EXISTING_PR" >> $GITHUB_OUTPUT
+          else
+            echo "No existing PR found"
+            echo "pr_exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create pull request
+        if: steps.check.outputs.needs_pr == 'true' && steps.check_pr.outputs.pr_exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Create PR to merge main into live
+          gh pr create \
+            --base live \
+            --head main \
+            --title "Merge main to live - $(date +%Y-%m-%d)" \
+            --body "This is an automated pull request to merge the latest changes from main into live.
+
+          **Scheduled merge**: This PR was automatically created on $(date +%Y-%m-%d) as part of the bi-monthly sync process.
+          
+          Please review the changes and merge when ready."
+
+      - name: Summary
+        run: |
+          if [ "${{ steps.check.outputs.needs_pr }}" == "true" ]; then
+            if [ "${{ steps.check_pr.outputs.pr_exists }}" == "true" ]; then
+              echo "✅ Live branch is behind main, but PR #${{ steps.check_pr.outputs.pr_number }} already exists"
+            else
+              echo "✅ Live branch is behind main by ${{ steps.check.outputs.ahead_by }} commits. Pull request created successfully"
+            fi
+          else
+            echo "✅ Live branch is up to date with main. No action needed"
+          fi
