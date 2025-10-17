@@ -10,12 +10,10 @@ ai-usage: ai-generated
 
 # Package sponsorship on NuGet.org
 
-Package maintainers are the foundation of the NuGet.org ecosystem, building and maintaining the packages that developers rely on. The NuGet.org sponsorship feature makes it easier for package consumers to recognize and support the authors behind their favorite packages.
+The NuGet.org sponsorship feature makes it easier for package consumers to recognize and support the authors behind their favorite packages.
 
-## Overview
-NuGet.org now allows package authors to add sponsorship URLs to their packages. These links appear when the "Sponsor" button on the package details page is clicked.
+NuGet.org enables package authors to add sponsorship URLs to their packages. These links appear when the "Sponsor" button on the package details page is selected.
 
-For package consumers, supporting your favorite packages is now easier than ever. Look for the sponsor icon on NuGet.org to see which packages need support while browsing or managing dependencies.
 
 ## Setting up sponsorship for package publishers
 
@@ -112,7 +110,7 @@ No, NuGet.org doesn't track sponsorship link selections. You'll need to check an
 
 **Can I add custom sponsorship platforms not on the approved list?**
 
-Currently, only the approved list of platforms is supported. This helps ensure security and legitimacy of sponsorship links.
+Currently, only the approved list of platforms is supported. This helps ensure security and legitimacy of sponsorship links. If you'd like to request a new platform to be added to the approved list, you can open an issue on the [NuGet Gallery repository](https://github.com/NuGet/NuGetGallery/issues).
 
 **Does NuGet.org store my financial information?**
 
