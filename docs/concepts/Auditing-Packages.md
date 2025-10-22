@@ -124,7 +124,7 @@ This can be particularly impactful when a serious bug needs a speedy rollback or
 Additionally, resolving vulnerable packages on existing pull requests can require merging or rebasing branches after a fix is merged to the main branch, which may reset approvals.
 For this reason, you may want to treat NuGet Audit warnings as errors only for certain builds.
 
-You can take advantage of MSBuild's conditional statements to have a CI pipeline only for running audit.
+You can use MSBuild's conditional statements to configure a dedicated CI pipeline for running audits.
 Depending on your CI system and team processes, you can have failed runs of the audit pipeline email the team, or you may have a dashboard where you can show a badge of the most recent run of the pipeline.
 
 Like many things in programming, there are multiple ways to achieve the outcome.
@@ -147,9 +147,9 @@ For example, using GitHub Actions syntax:
 ```
 
 The property name `AuditPipeline` is only an example, and you can customize it as you wish, as long as the name is the same in both the MSBuild condition and the command line.
-MSBuild also uses environment variables when reading a property that has not yet been defined, so an environment variable with the same name also works.
+MSBuild also uses environment variables when reading a property that has not yet been defined, so an environment variable is an alternative to the command line parameter.
 
-By using conditions to selectively cause NuGet Audit warnings to fail a restore, you can have a separate pipeline to check packages for known vulnerabilities, while preventing new security advisories from blocking your bug fixes at inconvenient times.
+By using conditions to selectively cause NuGet Audit warnings to fail a restore, you can have a dedicated pipeline to check packages for known vulnerabilities, while preventing new security advisories from blocking your bug fixes at inconvenient times.
 Keeping NuGet Audit warnings enabled for local builds allows developers to get a non-blocking notification about new security advisories and can encourage upgrading package versions to fix the vulnerabilities more quickly than waiting for someone to check the audit pipeline status.
 
 ### Ensure restore audited projects
