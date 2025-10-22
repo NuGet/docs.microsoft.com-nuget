@@ -117,14 +117,9 @@ Alternatively, if you want to keep low and moderate vulnerabilities as warnings,
 
 ## Running NuGet Audit in CI
 
-### Warnings or errors
+### An example of wielding Errors in a Pipeline
 
-A common pain point for developers is when a build fails, blocking progress to work on new features or bug fixes.
-This can be particularly impactful when a serious bug needs a speedy rollback or bug fix, but new security advisories might be published on any day.
-Additionally, resolving vulnerable packages on existing pull requests can require merging or rebasing branches after a fix is merged to the main branch, which may reset approvals.
-For this reason, you may want to treat NuGet Audit warnings as errors only for certain builds.
-
-You can use MSBuild's conditional statements to configure a dedicated CI pipeline for running audits.
+You can use MSBuild's conditional statements to configure a dedicated CI pipeline for running audits, without audit warnings being treated as errors in other pipelines or on local builds.
 Depending on your CI system and team processes, you can have failed runs of the audit pipeline email the team, or you may have a dashboard where you can show a badge of the most recent run of the pipeline.
 
 Like many things in programming, there are multiple ways to achieve the outcome.
