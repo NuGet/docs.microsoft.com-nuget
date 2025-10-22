@@ -16,8 +16,6 @@ This involves identifying vulnerabilities, evaluating risks, and making recommen
 The audit can include a review of the packages themselves, as well as any dependencies and their associated risks.
 The goal of the audit is to identify and mitigate any security vulnerabilities that could be exploited by attackers, such as code injection or cross-site scripting attacks.
 
-We also have a [blog post](https://devblogs.microsoft.com/nuget/nugetaudit-2-0-elevating-security-and-trust-in-package-management/) which discusses our recommended method for taking action when a package with a known vulnerability is found to be used by your project, and tools to help get more information.
-
 ### Feature availability
 
 | NuGet | .NET SDK | Visual Studio | Feature |
@@ -149,8 +147,6 @@ Once a project is successfully restored, [`dotnet list package`](/dotnet/core/to
 Note that `--include-transitive` is not default, so should be included.
 
 ## Actions when packages with known vulnerabilities are reported
-
-We also have a [blog post](https://devblogs.microsoft.com/nuget/nugetaudit-2-0-elevating-security-and-trust-in-package-management/) which discusses our recommended method for taking action when a package with a known vulnerability is found to be used by your project, and tools to help get more information.
 
 ### Security vulnerabilities found with updates
 
