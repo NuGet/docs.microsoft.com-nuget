@@ -150,7 +150,7 @@ Note that `--include-transitive` is not default, so should be included.
 
 Getting a warning about packages with known vulnerabilities is only part of the process. Once discovered, action needs to be taken to remove the potential vulnerability from your solution.
 
-The easiest case is when a package you reference directly has the known vulnerability, in which case you update the version to another version that fixes the vulnerability
+The easiest case is when a package you reference directly has the known vulnerability, in which case you update the version to another version that fixes the vulnerability.
 
 Package vulnerabilities may be reported in both direct and transitive package references.
 The action you take to resolve may be different because of that.
