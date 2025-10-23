@@ -92,7 +92,7 @@ NuGet.org enables package authors to add sponsorship URLs to their packages. The
 3. The link opens in a new tab or window, keeping the NuGet package page open.
 
 > [!IMPORTANT]
-> These links take you to third-party platforms. Microsoft isn't affiliated with or responsible for the content or practices of third-party platforms.
+> These links take you to third-party platforms. Microsoft isn't affiliated with or responsible for the content or practices of third-party platforms, and we don't endorse them. Microsoft reserves the right to remove any allowed third-party platforms.
 
 ## Frequently asked questions
 
