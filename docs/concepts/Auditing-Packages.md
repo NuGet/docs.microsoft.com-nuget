@@ -171,7 +171,12 @@ Often a vulnerability will be in a transitive dependency.
 Our recommendation is to prefer updates to packages “closest” to your direct references.
 Though, there’s nothing wrong with just upgrading the package with known vulnerability either.
 
-For example, say your project references package A. Package A has a dependency on package B, which in turn has a dependency on package C. In this example, we’ll consider that package C version 1.0.0 has a known vulnerability, fixed in version 2.0.0. Our recommendation is to first try upgrading package A. If that doesn’t resolve the audit warning, then try upgrading package B. If that doesn’t resolve the audit warning, then upgrade C directly.
+For example, say your project references package A.
+Package A has a dependency on package B, which in turn has a dependency on package C.
+In this example, we’ll consider that package C version 1.0.0 has a known vulnerability, fixed in version 2.0.0.
+Our recommendation is to first try upgrading package A.
+If that doesn’t resolve the audit warning, then try upgrading package B.
+If that doesn’t resolve the audit warning, then upgrade C directly.
 To aid with this, you'll [need to find the transitive package path](#finding-the-transitive-package-path).
 
 In summary, if a known vulnerability exists in a top-level package's transitive dependencies, you have these options:
