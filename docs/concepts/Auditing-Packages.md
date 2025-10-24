@@ -117,7 +117,7 @@ Alternatively, if you want to keep low and moderate vulnerabilities as warnings,
 
 ## Running NuGet Audit in CI
 
-### An example of wielding Errors in a Pipeline
+### Separating Errors from Warnings with a Dedicated Auditing Pipeline
 
 You can use MSBuild's conditional statements to configure a dedicated CI pipeline for running audits, without audit warnings being treated as errors in other pipelines or on local builds.
 Depending on your CI system and team processes, you can have failed runs of the audit pipeline email the team, or you may have a dashboard where you can show a badge of the most recent run of the pipeline.
