@@ -213,7 +213,8 @@ Search the package name, and it will show you all instances under each project�
 
 ###### Visual Studio NuGet Package Manager UI
 
-When you look at the Installed tab in Visual Studio’s package manager UI, when the project uses PackageReference for package management, it will show both direct and transitive packages. Currently, this only happens when you manage packages for a project, not for the solution.
+When you look at the Installed tab in Visual Studio’s package manager UI, when the project uses PackageReference for package management, it will show both direct and transitive packages.
+Currently, this only happens when you manage packages for a project, not for the solution.
 
 If you mouse hover over a package in the package list, the tooltip will include the name of one direct package that has caused that transitive package to be included in the project.
 
