@@ -177,7 +177,8 @@ In summary, if a known vulnerability exists in a top-level package's transitive 
 - Check if the top-level package contains an update that does not have a transitive vulnerability and update that instead.
 - Update the closest package to your direct references that does not reference a vulnerability.
 - Add the fixed package version as a direct package reference. **Note:** Be sure to remove this reference when a new package version update becomes available and be sure to maintain the defined attributes for the expected behavior.
-- Use [Central Package Management with the transitive pinning functionality](../consume-packages/Central-Package-Management.md#transitive-pinning). Note that [CPM with transitive pinning will cause packages to become dependencies](../consume-packages/Central-Package-Management.md#transitive-pinning-and-pack) if you pack your project into your own package to share with others, even if your project doesn’t directly call APIs on that package.
+- Use [Central Package Management with the transitive pinning functionality](../consume-packages/Central-Package-Management.md#transitive-pinning).
+  Note that if you pack your project into your own package to share with others, [CPM with transitive pinning will cause packages to become dependencies](../consume-packages/Central-Package-Management.md#transitive-pinning-and-pack), even if your project doesn’t directly call APIs on that package.
 - [Suppress the advisory](#excluding-advisories) until it can be addressed.
 - File an issue in the top-level package's tracker to request an update.
 
