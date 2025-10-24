@@ -170,6 +170,10 @@ If a known vulnerability exists in a top-level package's transitive dependencies
 - [Suppress the advisory](#excluding-advisories) until it can be addressed.
 - File an issue in the top-level package's tracker to request an update.
 
+### Use Copilot to update packages
+NuGet has released a Model Context Protocol (MCP) server that has the ability to update packages in your project to versions that resolve known vulnerabilities.
+See [Fixing package vulnerabilities](NuGet-MCP-Server.md#Fixing-package-vulnerabilities) for more information.
+
 ### Security vulnerabilities found with no updates
 
 In the case that a known vulnerability exists in a package without a security fix, you can do the following.
