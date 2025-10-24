@@ -79,6 +79,7 @@
 ## [MSBuild .props and .targets](concepts/MSBuild-props-and-targets.md)
 ## [Troubleshooting Installed Packages](concepts/troubleshooting-installed-packages.md)
 ## [MCP servers in NuGet packages](concepts/nuget-mcp.md)
+## [Configuring the NuGet MCP Server](concepts/NuGet-MCP-Server.md)
 # Reference
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config file](reference/nuget-config-file.md)
