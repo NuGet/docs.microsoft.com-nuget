@@ -209,7 +209,7 @@ When you look at the Installed tab in Visual Studio’s package manager UI, when
 
 If you mouse hover over a package in the package list, the tooltip will include the name of one direct package that has caused that transitive package to be included in the project.
 
-![Visual Studio Package Manager UI tooltip](media/pmui-transitive-tooltip-1.png)
+![Visual Studio Package Manager UI tooltip](media/pm-ui-transitive-tooltip-1.png)
 
 ### Security vulnerabilities found with no updates
 
