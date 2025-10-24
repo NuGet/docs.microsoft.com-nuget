@@ -1,5 +1,5 @@
 ---
-title: Using the NuGet Model Context Protocl (MCP) Server
+title: Using the NuGet Model Context Protocol (MCP) Server
 description: How to configure and use the NuGet Model Context Protocol (MCP) server.
 author: Jeff Kluge
 ms.author: jeffkl
@@ -31,7 +31,7 @@ To enable the NuGet MCP server, follow these steps:
 
 ![GitHub Copilot Chat Tools window in Visual Studio 2026](./media/copilot-tools-menu.png)
 
-## Getting started Visual Studio 2022
+## Getting started in Visual Studio 2022
 
 > [!NOTE]
 > You must have Visual Studio 2022 17.14 or later in order to configure an MCP server.

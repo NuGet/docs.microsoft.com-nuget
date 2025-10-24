@@ -172,7 +172,7 @@ If a known vulnerability exists in a top-level package's transitive dependencies
 
 ### Use Copilot to update packages
 NuGet has released a Model Context Protocol (MCP) server that has the ability to update packages in your project to versions that resolve known vulnerabilities.
-See [Fixing package vulnerabilities](NuGet-MCP-Server.md#Fixing-package-vulnerabilities) for more information.
+See [Fixing package vulnerabilities](NuGet-MCP-Server.md#fixing-package-vulnerabilities) for more information.
 
 ### Security vulnerabilities found with no updates
 
