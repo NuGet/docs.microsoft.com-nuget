@@ -206,7 +206,7 @@ Then you can search the package name, and it will show you all instances under e
 
 When you look at the Installed tab in Visual Studio’s package manager UI, when the project uses PackageReference for package management, it will show both direct and transitive packages. Currently this only happens when you manage packages for a project, not for the solution, although we’re working to improve this.
 
-If you mouse hover of a package in the package list, the tooltip will include the name of one direct package that has caused that transitive package to be included in the project.
+If you mouse hover over a package in the package list, the tooltip will include the name of one direct package that has caused that transitive package to be included in the project.
 
 ![Visual Studio Package Manager UI tooltip](media/pmui-transitive-tooltip-1.png)
 
