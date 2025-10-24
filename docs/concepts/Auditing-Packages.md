@@ -195,11 +195,11 @@ On the commandline, you can use the [`dotnet nuget why` command](/dotnet/core/to
 ###### Visual Studio Solution Explorer
 
 SDK style projects also provide the full package graph under the project’s Dependency node. It’s also searchable!
-First, expand search options and enable “search external files”.
+Expand search options and enable “search external files”.
 
 ![Visual Studio Solution Explorer Search Options](media/vs-solution-explorer-search-options-1.png)
 
-Then you can search the package name, and it will show you all instances under each project’s Dependencies node.
+Search the package name, and it will show you all instances under each project’s Dependencies node.
 
 ![Visual Studio Solution Explorer Search Results](media/vs-solution-explorer-search-results-1.png)
 
