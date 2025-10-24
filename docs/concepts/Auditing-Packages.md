@@ -191,7 +191,8 @@ In summary, if a known vulnerability exists in a top-level package's transitive 
 
 ##### Finding the transitive package path
 
-There are several ways to find the package path. Which method you prefer depends on what tools you normally use during your development.
+There are several ways to find the package path.
+Which method you prefer depends on what tools you normally use during your development.
 
 ###### dotnet nuget why
 
