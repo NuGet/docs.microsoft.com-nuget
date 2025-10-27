@@ -232,7 +232,7 @@ Which method you prefer depends on what tools you normally use during your devel
 
 ###### dotnet nuget why
 
-On the commandline, you can use the [`dotnet nuget why` command](/dotnet/core/tools/dotnet-nuget-why) to understand why transitive packages are being included in your project's package graph.
+On the command line, you can use the [`dotnet nuget why` command](/dotnet/core/tools/dotnet-nuget-why) to understand why transitive packages are being included in your project's package graph.
 
 ![dotnet nuget why example](media/dotnet-nuget-why-1.png)
 
