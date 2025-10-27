@@ -113,7 +113,39 @@ Alternatively, if you want to keep low and moderate vulnerabilities as warnings,
 > [!NOTE]
 > MSBuild properties for message severity such as `NoWarn` and `TreatWarningsAsErrors` are not supported for packages.config projects.
 
-## Ensure restore audited projects
+## Running NuGet Audit in CI
+
+### Separating Errors from Warnings with a Dedicated Auditing Pipeline
+
+You can use MSBuild's conditional statements to configure a dedicated CI pipeline for running audits, without audit warnings being treated as errors in other pipelines or on local builds.
+Depending on your CI system and team processes, you can have failed runs of the audit pipeline email the team, or you may have a dashboard where you can show a badge of the most recent run of the pipeline.
+
+Like many things in programming, there are multiple ways to achieve the outcome.
+One option is to treat NuGet Audit warnings as errors only in an audit pipeline.
+
+```xml
+<PropertyGroup>
+  <NuGetAuditCodes>NU1900;NU1901;NU1902;NU1903;NU1904;NU1905</NuGetAuditCodes>
+  <WarningsAsErrors Condition=" '$(AuditPipeline)' == 'true' ">$(WarningsAsErrors);$(NuGetAuditCodes)</WarningsAsErrors>
+  <WarningsNotAsErrors Condition=" '$(AuditPipeline)' != 'true' ">$(WarningsNotAsErrors);$(NuGetAuditCodes)</WarningsNotAsErrors>
+</PropertyGroup>
+```
+
+Then in your pipeline, you run restore specifying the property used by the condition.
+For example, using GitHub Actions syntax:
+
+```yml
+- name: Restore with NuGet Auditing
+  run: dotnet restore -p:AuditPipeline=true
+```
+
+The property name `AuditPipeline` is only an example, and you can customize it as you wish, as long as the name is the same in both the MSBuild condition and the command line.
+MSBuild also uses environment variables when reading a property that has not yet been defined, so an environment variable is an alternative to the command line parameter.
+
+By using conditions to selectively cause NuGet Audit warnings to fail a restore, you can have a dedicated pipeline to check packages for known vulnerabilities, while preventing new security advisories from blocking your bug fixes at inconvenient times.
+Keeping NuGet Audit warnings enabled for local builds allows developers to get a non-blocking notification about new security advisories and can encourage upgrading package versions to fix the vulnerabilities more quickly than waiting for someone to check the audit pipeline status.
+
+### Ensure restore audited projects
 
 NuGet in MSBuild 17.13 and .NET 9.0.200 added output properties `RestoreProjectCount`, `RestoreSkippedCount` and `RestoreProjectsAuditedCount` on the restore task.
 This can be used to enforce that audit ran during a restore.
@@ -220,6 +252,10 @@ Currently, this only happens when you manage packages for a project, not for the
 If you mouse hover over a package in the package list, the tooltip will include the name of one direct package that has caused that transitive package to be included in the project.
 
 ![Visual Studio Package Manager UI tooltip](media/pm-ui-transitive-tooltip-1.png)
+
+### Use Copilot to update packages
+NuGet has released a Model Context Protocol (MCP) server that has the ability to update packages in your project to versions that resolve known vulnerabilities.
+See [Fixing package vulnerabilities](NuGet-MCP-Server.md#fixing-package-vulnerabilities) for more information.
 
 ### Security vulnerabilities found with no updates
 
