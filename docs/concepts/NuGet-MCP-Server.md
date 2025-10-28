@@ -99,7 +99,7 @@ Scroll down to the **Model Context Protocol (MCP)** section and add the followin
 }
 ```
 
-This will make all the MCP Server tools available, if you want specific tools you can list them in the `"tools"` parameter array. 
+This will make all the MCP Server tools available. If you want specific tools, you can list them in the `"tools"` parameter array.
 
 Finally, click the **Save MCP configuration** button to save your changes.
 
