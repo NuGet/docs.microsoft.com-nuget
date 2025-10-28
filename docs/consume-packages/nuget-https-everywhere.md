@@ -90,7 +90,7 @@ The following table summarizes the progression from **warnings (NU1803)** to **e
 
 | Versions Affected                                     | Behavior                                                              |
 | ----------------------------------------------------- | --------------------------------------------------------------------- |
-| Nuget.exe 6.3+, Visual Studio 17.3+, .NET 6.0.100+   |  ⚠️ **Warning (NU1803)** – HTTP sources allowed but discouraged        |
+| NuGet.exe 6.3+, Visual Studio 17.3+, .NET 6.0.100+   |  ⚠️ **Warning (NU1803)** – HTTP sources allowed but discouraged        |
 | NuGet.exe 6.12+, Visual Studio 17.12+, .NET 9.0.100+  | ❌ **Error (NU1302)** – HTTP sources blocked unless explicitly allowed|
 
 ## See Also
