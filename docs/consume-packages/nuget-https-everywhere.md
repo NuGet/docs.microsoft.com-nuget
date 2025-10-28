@@ -25,7 +25,7 @@ For additional background, see the [.NET Blog: HTTPS Everywhere](https://devblog
 
 This error occurs when one or more package sources in your configuration use an **HTTP** URL instead of **HTTPS**.
 
-In earlier SDK versions, this scenario produced a **warning** ([`NU1803`](../reference/errors-and-warnings/nu1302.md)).
+In earlier SDK versions, this scenario produced a **warning** ([`NU1803`](../reference/errors-and-warnings/nu1803.md)).
 Beginning with **.NET SDK 9.0.100** and later, it now results in an **error** unless the use of HTTP sources is explicitly permitted.
 
 ### Recommended Resolution
