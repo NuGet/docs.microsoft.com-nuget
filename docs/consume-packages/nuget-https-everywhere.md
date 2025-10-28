@@ -81,7 +81,7 @@ For **NuGet.exe** commands, use:
 | **dotnet CLI** | `dotnet nuget add source` | .NET **9.0.1xx** and newer  |
 
 For **Visual Studio** steps, refer to
-[NuGet Visual Studio Options – Allow Insecure Connections](https://learn.microsoft.com/nuget/consume-packages/nuget-visual-studio-options#allow-insecure-connections).
+[NuGet Visual Studio Options – Allow Insecure Connections](/nuget/consume-packages/nuget-visual-studio-options#allow-insecure-connections).
 
 ## HTTPS Enforcement Rollout Across Tools
 
