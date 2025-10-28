@@ -73,7 +73,7 @@ To verify that the MCP server is working correctly, open the GitHub Copilot Chat
 Then click the Tools icon in the bottom toolbar to bring up the Tools menu.
 You should see the MCP server named "nuget" in the list of available servers.
 
-## Getting started in GitHub Coilot Agent
+## Getting started in GitHub Copilot Agent
 
 You can also configure the MCP Server to work with GitHub Copilot as a Coding Agent in your repositories.
 Ensure that you configured your repository to use [GitHub Copilot Coding Agents](https://github.com/settings/copilot/coding_agent).
