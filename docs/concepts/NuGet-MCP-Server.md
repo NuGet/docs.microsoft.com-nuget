@@ -73,6 +73,84 @@ To verify that the MCP server is working correctly, open the GitHub Copilot Chat
 Then click the Tools icon in the bottom toolbar to bring up the Tools menu.
 You should see the MCP server named "nuget" in the list of available servers.
 
+## Getting started in GitHub Coilot Agent
+
+You can also configure the MCP Server to work with GitHub Copilot as a Coding Agent in your repositories.
+Ensure that you configured your repository to use [GitHub Copilot Coding Agents](https://github.com/settings/copilot/coding_agent).
+
+Browse to your repository and click the Settings tab.
+Expand the Copilot section and click on Coding Agents.
+
+![GitHub Copilot coding agent settings](./media/github-copilot-agent-settings.png)
+
+Scroll down to the **Model Context Protocol (MCP)** section and add the following JSON snippet to your `mcpServers` configuration:
+
+```json
+{ 
+  "mcpServers": {
+    "NuGet": {
+      "type": "local",
+      "command": "dnx",
+      "args": ["NuGet.Mcp.Server", "--yes"],
+      "tools": ["*"],
+      "env": {}
+    }
+  } 
+}
+```
+
+This will make all the MCP Server tools available, if you want specific tools you can list them in the `"tools"` parameter array. 
+
+Finally, click the **Save MCP configuration** button to save your changes.
+
+Now that the NuGet MCP is configured, you will also need to create a GitHub Actions workflow to install .NET 10 Preview 6 or higher so that the `dnx` command is available to run the MCP server.
+You can do this by creating the following workflow file in your repository at
+
+`.github/workflows/copilot-setup-steps.yml`
+
+The contents of this workflow file should be as follows:
+
+```yml
+name: "Copilot Setup Steps"
+
+# Automatically run the setup steps when they are changed to allow for easy validation, and
+# allow manual testing through the repository's "Actions" tab
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+  pull_request:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+
+jobs:
+  # The job MUST be called `copilot-setup-steps` or it will not be picked up by Copilot.
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+
+    # Set the permissions to the lowest permissions possible needed for your steps.
+    # Copilot will be given its own token for its operations.
+    permissions:
+      # If you want to clone the repository as part of your setup steps, for example to install dependencies, you'll need the `contents: read` permission. If you don't clone the repository in your setup steps, Copilot will do this for you automatically after the steps complete.
+      contents: read
+
+    # You can define any steps you want, and they will run before the agent starts.
+    # If you do not check out your code, Copilot will do this for you.
+    steps:
+      - name: Install .NET 10.x
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: |
+            10.x
+          dotnet-quality: preview
+
+      - name: dotnet --info
+        run: dotnet --info
+```
+
+This will ensure that the `dnx` command is available to run the NuGet MCP server when GitHub Copilot runs as a coding agent in your repository.
+
 ## Fixing package vulnerabilities
 
 The NuGet MCP server can help you identify and fix package vulnerabilities in your project.
