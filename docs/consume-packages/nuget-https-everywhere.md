@@ -37,7 +37,7 @@ If it does, update the feed URL to use the secure protocol:
 <add key="MyFeed" value="https://contoso/packages/v3/index.json" />
 ```
 
-Switching to HTTPS ensures end-to-end encryption and is the recommended and a more secure approach.
+Switching to HTTPS ensures end-to-end encryption and is the recommended and more secure approach.
 
 ### Allowing HTTP Feeds (Opt-Out)
 
