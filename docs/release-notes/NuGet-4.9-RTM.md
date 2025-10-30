@@ -4,7 +4,7 @@ description: Release notes for NuGet 4.9 including known issues, bug fixes, new 
 author: JonDouglas
 ms.author: jodou
 ms.date: 11/20/2018
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 4.9 Release Notes

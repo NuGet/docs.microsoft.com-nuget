@@ -4,7 +4,7 @@ description: Release notes for NuGet 6.9 including new features, bug fixes, and 
 author: jgonz120
 ms.author: jongonza
 ms.date: 2/1/2024
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 6.9 Release Notes

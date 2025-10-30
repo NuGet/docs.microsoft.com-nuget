@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.11 including new features, bug fixes, and
 author: erdembayar
 ms.author: eryondon
 ms.date: 8/10/2021
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 5.11 Release Notes

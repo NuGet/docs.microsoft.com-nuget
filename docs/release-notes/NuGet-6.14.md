@@ -3,7 +3,7 @@ title: NuGet 6.14 Release Notes
 description: Release notes for NuGet 6.14 including new features, bug fixes, and DCRs.
 author: zivkan
 ms.date: 5/6/2025
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 6.14 Release Notes

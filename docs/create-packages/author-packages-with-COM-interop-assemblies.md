@@ -4,7 +4,7 @@ description: Describes how to create packages that contain COM interop assemblie
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/09/2019
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # Create NuGet packages that contain COM interop assemblies

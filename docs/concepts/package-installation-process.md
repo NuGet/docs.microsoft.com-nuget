@@ -4,7 +4,7 @@ description: Detailed information about the package installation process
 author: JonDouglas
 ms.author: jodou
 ms.date: 06/20/2019
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # What happens when a NuGet package is installed?

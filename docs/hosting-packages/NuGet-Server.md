@@ -4,7 +4,7 @@ description: How to create and host a NuGet package feed on any server running I
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/11/2023
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # NuGet.Server

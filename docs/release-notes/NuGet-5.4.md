@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.4 including new features, bug fixes, and 
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/06/2019
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 5.4 Release Notes

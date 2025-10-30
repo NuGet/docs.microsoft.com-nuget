@@ -4,7 +4,7 @@ description: Describes the process of installing signed NuGet packages and confi
 author: JonDouglas
 ms.author: jodou
 ms.date: 11/29/2018
-ms.topic: conceptual
+ms.topic: install-set-up-deploy
 ---
 
 # Manage package trust boundaries

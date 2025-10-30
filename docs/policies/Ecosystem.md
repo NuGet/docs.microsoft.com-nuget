@@ -4,7 +4,7 @@ description: Comprehensive resources in the NuGet ecosystem including NuGet sour
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/18/2018
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # An overview of the NuGet ecosystem

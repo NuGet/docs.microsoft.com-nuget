@@ -4,7 +4,7 @@ description: Read a detailed guide about the process of designing and creating a
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/03/2025
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Create a NuGet package with the dotnet CLI

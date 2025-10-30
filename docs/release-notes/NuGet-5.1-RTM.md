@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.1 including new features, bug fixes, and 
 author: JonDouglas
 ms.author: jodou
 ms.date: 05/21/2019
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 5.1 Release Notes

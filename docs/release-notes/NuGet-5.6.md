@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.6 including new features, bug fixes, and 
 author: nkolev92
 ms.author: nikolev
 ms.date: 05/19/2020
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 5.6 Release Notes

@@ -4,7 +4,7 @@ description: Release notes for NuGet 4.0 RTM including known issues, bug fixes, 
 author: anangaur
 ms.author: anangaur
 ms.date: 03/03/2017
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 4.0 RTM Release Notes

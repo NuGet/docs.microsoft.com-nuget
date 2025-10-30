@@ -4,7 +4,7 @@ description: Release notes for NuGet 6.4 including new features, bug fixes, and 
 author: jebriede
 ms.author: jebriede
 ms.date: 10/27/2022
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 6.4 Release Notes

@@ -4,7 +4,7 @@ description: Known issues with NuGet including authentication, package installat
 author: JonDouglas
 ms.author: jodou
 ms.date: 06/06/2024
-ms.topic: conceptual
+ms.topic: troubleshooting-known-issue
 ---
 
 # Known Issues with NuGet

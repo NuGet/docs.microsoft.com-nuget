@@ -4,7 +4,7 @@ description: A detailed guide to the process of designing and creating a NuGet p
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/17/2023
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Create a NuGet package using MSBuild

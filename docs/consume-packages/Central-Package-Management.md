@@ -1,10 +1,10 @@
-﻿---
+---
 title: Central Package Management
 description: Manage your dependencies in a central location and learn how to get started with Central Package Management.
 author: jondouglas
 ms.author: jodou
 ms.date: 05/09/2022
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # Central Package Management (CPM)

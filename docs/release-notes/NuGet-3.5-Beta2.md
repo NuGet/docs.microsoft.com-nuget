@@ -4,7 +4,7 @@ description: Release notes for NuGet 3.5 Beta 2 including known issues, bug fixe
 author: JonDouglas
 ms.author: jodou
 ms.date: 11/11/2016
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 3.5 Beta2 Release Notes

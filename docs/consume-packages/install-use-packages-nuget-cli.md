@@ -4,7 +4,7 @@ description: Instructions for using the NuGet CLI, nuget.exe, to manage NuGet pa
 author: mikejo5000
 ms.author: mikejo
 ms.date: 03/03/2025
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Manage NuGet packages with the NuGet CLI

@@ -4,7 +4,7 @@ description: Release notes for NuGet 4.5 RTM including known issues, bug fixes, 
 author: anangaur
 ms.author: anangaur
 ms.date: 12/4/2017
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 4.5 Release Notes

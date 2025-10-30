@@ -4,7 +4,7 @@ description: How to pack native libraries in .NET packages
 author: zivkan
 ms.author: zivkan
 ms.date: 09/26/2023
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Including native libraries in .NET packages

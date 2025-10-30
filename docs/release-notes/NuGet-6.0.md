@@ -4,7 +4,7 @@ description: Release notes for NuGet 6.0 including new features, bug fixes, and 
 author: zkat
 ms.author: kmarchan
 ms.date: 10/7/2021
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 6.0 Release Notes

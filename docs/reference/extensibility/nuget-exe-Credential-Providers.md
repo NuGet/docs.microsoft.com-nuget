@@ -4,7 +4,7 @@ description: nuget.exe credential providers authenticate with a feed, and are im
 author: JonDouglas
 ms.author: jodou
 ms.date: 12/12/2017
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Authenticating feeds with nuget.exe credential providers

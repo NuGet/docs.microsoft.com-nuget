@@ -4,7 +4,7 @@ description: Details on creating native NuGet packages that contains C++ code in
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Creating native packages

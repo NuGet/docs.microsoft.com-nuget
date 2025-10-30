@@ -4,7 +4,7 @@ description: NuGet credential providers authenticate with feeds by implementing 
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Authenticating feeds in Visual Studio with NuGet credential providers

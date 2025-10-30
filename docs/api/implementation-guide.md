@@ -4,7 +4,7 @@ description: Guidelines and recommendations to anyone implementing the NuGet Ser
 author: zivkan
 ms.author: zivkan
 ms.date: 07/29/2023
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # NuGet Server Implementation Guide

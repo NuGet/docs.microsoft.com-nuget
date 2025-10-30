@@ -4,7 +4,7 @@ description: Description of how the project.json file is used to track NuGet dep
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/17/2017
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # project.json and UWP

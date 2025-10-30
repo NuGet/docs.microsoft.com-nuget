@@ -4,7 +4,7 @@ description: Describes how to identity your project format
 author: mikejo5000
 ms.author: mikejo
 ms.date: 07/09/2019
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # Identify the project format

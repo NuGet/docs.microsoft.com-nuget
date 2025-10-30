@@ -4,7 +4,7 @@ description: Details on how to migrate a project from the packages.config manage
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/23/2021
-ms.topic: conceptual
+ms.topic: upgrade-and-migration-article
 ---
 
 # Migrate from packages.config to PackageReference

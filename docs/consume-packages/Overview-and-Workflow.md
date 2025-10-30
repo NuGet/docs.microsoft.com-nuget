@@ -4,7 +4,7 @@ description: An overview of the process of consuming NuGet packages in a project
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/22/2018
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Package consumption workflow
