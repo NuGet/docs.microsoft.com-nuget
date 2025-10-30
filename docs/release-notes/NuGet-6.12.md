@@ -2,7 +2,7 @@
 title: NuGet 6.12 Release Notes
 description: Release notes for NuGet 6.12 including new features, bug fixes, and DCRs.
 author: zivkan
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 6.12 Release Notes

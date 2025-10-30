@@ -4,7 +4,7 @@ description: Detailed description on the process of deprecating packages and how
 author: anangaur
 ms.author: anangaur
 ms.date: 09/23/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: karann-msft
 ---
 

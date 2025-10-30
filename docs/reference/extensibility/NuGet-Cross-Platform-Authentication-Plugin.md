@@ -4,7 +4,7 @@ description: NuGet cross platform authentication plugins for NuGet.exe, dotnet.e
 author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # NuGet cross platform authentication plugin

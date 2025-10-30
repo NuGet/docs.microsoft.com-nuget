@@ -4,7 +4,7 @@ description: Explains how signed packages can be used to enable content integrit
 author: rido-min
 ms.author: rmpablos
 ms.date: 03/06/2018
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: anangaur
 ms.custom: sfi-image-nochange
 ---

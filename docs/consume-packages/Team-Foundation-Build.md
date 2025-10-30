@@ -4,7 +4,7 @@ description: A walkthrough of how NuGet package restore with with Team Foundatio
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Setting up package restore with Team Foundation Build

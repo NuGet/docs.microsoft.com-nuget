@@ -4,7 +4,7 @@ description: Learn how to reinstall and update NuGet packages to address broken 
 author: JonDouglas
 ms.author: jodou
 ms.date: 11/03/2023
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Reinstall and update NuGet packages in Visual Studio

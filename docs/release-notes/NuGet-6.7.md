@@ -4,7 +4,7 @@ description: Release notes for NuGet 6.7 including new features, bug fixes, and 
 author: jeffkl
 ms.author: jeffkl
 ms.date: 7/31/2023
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 6.7 Release Notes

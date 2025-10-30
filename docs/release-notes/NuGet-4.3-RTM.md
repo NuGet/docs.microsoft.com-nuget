@@ -4,7 +4,7 @@ description: Release notes for NuGet 4.3 RTM including known issues, bug fixes, 
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/14/2017
-ms.topic: conceptual
+ms.topic: release-notes
 ms.reviewer: anangaur
 ---
 

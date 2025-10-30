@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.2 including new features, bug fixes, and 
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/23/2019
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 5.2 Release Notes

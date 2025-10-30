@@ -4,7 +4,7 @@ description: Release notes for NuGet 6.6 including new features, bug fixes, and 
 author: donnie-msft
 ms.author: eagoodso
 ms.date: 5/1/2023
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 6.6 Release Notes

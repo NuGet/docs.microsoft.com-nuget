@@ -4,7 +4,7 @@ description: Make a subset of assemblies in the package available to the compile
 author: zivkan
 ms.author: zivkan
 ms.date: 05/24/2019
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Select Assemblies Referenced By Projects

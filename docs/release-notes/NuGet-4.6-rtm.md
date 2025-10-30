@@ -4,7 +4,7 @@ description: Release notes for NuGet 4.6.0 including known issues, bug fixes, ad
 author: anangaur
 ms.author: anangaur
 ms.date: 3/7/2018
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 4.6 Release Notes

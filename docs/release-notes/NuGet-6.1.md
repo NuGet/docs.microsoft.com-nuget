@@ -4,7 +4,7 @@ description: Release notes for NuGet 6.1 including new features, bug fixes, and 
 author: zivkan
 ms.author: zivkan
 ms.date: 2/15/2022
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 6.1 Release Notes

@@ -4,7 +4,7 @@ description: A description of common NuGet restore errors in Visual Studio and h
 author: JonDouglas
 ms.author: jodou
 ms.date: 05/25/2018
-ms.topic: conceptual
+ms.topic: troubleshooting-general
 ---
 
 # Troubleshooting package restore errors

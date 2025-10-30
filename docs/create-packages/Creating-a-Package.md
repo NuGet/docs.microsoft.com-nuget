@@ -4,7 +4,7 @@ description: A detailed guide on designing and creating a NuGet package, includi
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/03/2025
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Create a package using the nuget.exe CLI

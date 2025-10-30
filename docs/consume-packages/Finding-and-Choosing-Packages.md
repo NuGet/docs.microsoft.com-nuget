@@ -4,7 +4,7 @@ description: Find and evaluate publicly available NuGet packages for your projec
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/03/2025
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Find and evaluate NuGet packages for your project

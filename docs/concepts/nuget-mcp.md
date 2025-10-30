@@ -3,7 +3,7 @@ title: MCP servers in NuGet packages
 description: How can MCP servers be distributed using NuGet?
 author: joelverhagen
 ms.author: jver
-ms.topic: conceptual
+ms.topic: article
 ms.date: 07/23/2025
 ---
 

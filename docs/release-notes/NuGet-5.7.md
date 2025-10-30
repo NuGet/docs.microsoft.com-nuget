@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.7 including new features, bug fixes, and 
 author: nkolev92
 ms.author: nikolev
 ms.date: 8/14/2020
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 5.7 Release Notes

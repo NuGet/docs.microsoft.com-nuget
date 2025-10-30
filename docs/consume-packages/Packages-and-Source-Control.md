@@ -4,7 +4,7 @@ description: Considerations for how to treat NuGet packages within version contr
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/16/2018
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Omitting NuGet packages in source control systems

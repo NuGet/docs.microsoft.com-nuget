@@ -4,7 +4,7 @@ description: Release notes for NuGet 4.0 RC including known issues, bug fixes, a
 author: JonDouglas
 ms.author: jodou
 ms.date: 02/03/2017
-ms.topic: conceptual
+ms.topic: release-notes
 ms.reviewer: ananguar
 ---
 

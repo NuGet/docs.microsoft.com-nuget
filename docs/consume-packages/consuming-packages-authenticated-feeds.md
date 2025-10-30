@@ -4,7 +4,7 @@ description: Consuming packages from authenticated feeds in all NuGet client sce
 author: nkolev92
 ms.author: nikolev
 ms.date: 12/22/2023
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: sfi-ropc-nochange
 ---
 

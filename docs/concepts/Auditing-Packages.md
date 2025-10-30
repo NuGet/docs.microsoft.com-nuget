@@ -3,7 +3,7 @@ title: Auditing package dependencies for security vulnerabilities
 description: How to audit package dependencies for security vulnerabilities and acting on security audit reports.
 author: JonDouglas
 ms.author: jodou
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/01/2025
 ---
 

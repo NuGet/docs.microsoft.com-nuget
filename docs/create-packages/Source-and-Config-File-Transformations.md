@@ -4,7 +4,7 @@ description: Details on the ability for NuGet packages to transform source code 
 author: JonDouglas
 ms.author: jodou
 ms.date: 04/24/2017
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: anangaur
 ---
 

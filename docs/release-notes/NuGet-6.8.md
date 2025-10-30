@@ -4,7 +4,7 @@ description: Release notes for NuGet 6.8 including new features, bug fixes, and 
 author: nkolev92
 ms.author: nikolev
 ms.date: 10/30/2023
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 6.8 Release Notes

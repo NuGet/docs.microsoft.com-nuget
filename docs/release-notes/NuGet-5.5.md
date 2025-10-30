@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.5 including new features, bug fixes, and 
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/19/2020
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 5.5 Release Notes
