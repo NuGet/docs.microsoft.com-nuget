@@ -78,7 +78,7 @@ Note that the [V2 protocol is deprecated](../nuget-org/overview-nuget-org.md#api
 | Introduced In                                                                                | Feature Supporting Audit Sources                                   |
 | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
 | [NuGet 6.12, .NET 9.0.100 SDK, and Visual Studio 2022 17.12](../release-notes/NuGet-6.12.md) | Restore                                                            |
-| [NuGet 6.14, .NET 9.0.300 SDK](../release-notes/NuGet-6.14.md)                               | `dotnet package list --vulnerable`                                 |
+| [NuGet 6.14, .NET 9.0.300 SDK](../release-notes/NuGet-6.14.md)                               | `dotnet list package --vulnerable`                                 |
 | Not yet supported                                                                            | NuGet AuditSources support in the Visual Studio Package Manager UI |
 
 #### Excluding advisories
