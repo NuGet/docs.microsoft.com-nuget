@@ -4,7 +4,7 @@ description: The process for resolving disputes between NuGet package publishers
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/18/2018
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Resolving disputes over NuGet package names

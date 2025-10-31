@@ -4,7 +4,7 @@ description: A short reference for NuGet-related commands using the dotnet comma
 author: JonDouglas
 ms.author: jodou
 ms.date: 06/24/2019
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # dotnet CLI commands

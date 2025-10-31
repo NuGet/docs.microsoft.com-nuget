@@ -4,7 +4,7 @@ description: See how to use the dotnet CLI to install, list, remove, and update 
 author: mikejo5000
 ms.author: mikejo
 ms.date: 03/03/2025
-ms.topic: conceptual
+ms.topic: install-set-up-deploy
 ---
 
 # Install and manage NuGet packages with the dotnet CLI

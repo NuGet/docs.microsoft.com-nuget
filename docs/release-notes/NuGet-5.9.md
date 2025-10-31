@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.9 including new features, bug fixes, and 
 author: erdembayar
 ms.author: eryondon
 ms.date: 3/11/2021
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 5.9 Release Notes

@@ -4,7 +4,7 @@ description: Release notes for NuGet 3.0 Preview including known issues, bug fix
 author: JonDouglas
 ms.author: jodou
 ms.date: 11/11/2016
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 3.0 Preview Release Notes

@@ -4,7 +4,7 @@ description: Release notes for NuGet 6.5 including new features, bug fixes, and 
 author: martinrrm
 ms.author: mruizmares
 ms.date: 2/21/2023
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 6.5 Release Notes

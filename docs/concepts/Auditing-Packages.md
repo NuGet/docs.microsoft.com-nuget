@@ -3,7 +3,7 @@ title: Auditing package dependencies for security vulnerabilities
 description: How to audit package dependencies for security vulnerabilities and acting on security audit reports.
 author: JonDouglas
 ms.author: jodou
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/01/2025
 ---
 
@@ -201,6 +201,10 @@ If a known vulnerability exists in a top-level package's transitive dependencies
 - Use [Central Package Management with the transitive pinning functionality](../consume-packages/Central-Package-Management.md#transitive-pinning).
 - [Suppress the advisory](#excluding-advisories) until it can be addressed.
 - File an issue in the top-level package's tracker to request an update.
+
+### Use Copilot to update packages
+NuGet has released a Model Context Protocol (MCP) server that has the ability to update packages in your project to versions that resolve known vulnerabilities.
+See [Fixing package vulnerabilities](NuGet-MCP-Server.md#fixing-package-vulnerabilities) for more information.
 
 ### Security vulnerabilities found with no updates
 

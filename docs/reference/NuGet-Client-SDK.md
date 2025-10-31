@@ -4,7 +4,7 @@ description: The API is evolving and not yet documented, but examples are availa
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2018
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # NuGet Client SDK

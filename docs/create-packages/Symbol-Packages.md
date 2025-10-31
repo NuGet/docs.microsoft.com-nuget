@@ -4,7 +4,7 @@ description: How to create NuGet packages that contain only symbols to support d
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/12/2017
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: anangaur
 ---
 

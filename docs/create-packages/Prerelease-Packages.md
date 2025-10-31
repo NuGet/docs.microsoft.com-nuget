@@ -4,7 +4,7 @@ description: Guidance for building pre-release packages
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/14/2017
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Building pre-release packages

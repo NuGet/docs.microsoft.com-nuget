@@ -4,7 +4,7 @@ description: Release notes for NuGet 6.2 including new features, bug fixes, and 
 author: martinrrm
 ms.author: mruizmares
 ms.date: 5/9/2022
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 6.2 Release Notes

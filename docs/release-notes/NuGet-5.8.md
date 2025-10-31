@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.8 including new features, bug fixes, and 
 author: JonDouglas
 ms.author: jodou
 ms.date: 11/9/2020
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 5.8 Release Notes

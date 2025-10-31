@@ -4,7 +4,7 @@ description: Details on the process through which a NuGet package's dependencies
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/14/2017
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # How NuGet resolves package dependencies

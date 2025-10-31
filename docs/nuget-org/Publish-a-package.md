@@ -4,7 +4,7 @@ description: See detailed instructions about how to publish a NuGet package and 
 author: JonDouglas
 ms.author: jodou
 ms.date: 8/29/2022
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: anangaur
 ---
 

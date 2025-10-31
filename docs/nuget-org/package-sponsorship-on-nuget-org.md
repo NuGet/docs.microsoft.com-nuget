@@ -4,7 +4,7 @@ description: Learn how to add sponsorship links to your NuGet packages and suppo
 author: pranathibora14
 ms.author: prabora
 ms.date: 10/15/2025
-ms.topic: conceptual
+ms.topic: how-to
 ai-usage: ai-generated
 ---
 

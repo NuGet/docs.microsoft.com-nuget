@@ -4,7 +4,7 @@ description: Describes packages types to indicate intended use of a package.
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/09/2019
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Set a NuGet package type

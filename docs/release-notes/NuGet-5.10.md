@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.10 including new features, bug fixes, and
 author: zkat
 ms.author: kmarchan
 ms.date: 6/11/2021
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 5.10 Release Notes

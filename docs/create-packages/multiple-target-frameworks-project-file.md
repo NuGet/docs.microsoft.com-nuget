@@ -4,7 +4,7 @@ description: Description of the various methods to target multiple .NET Framewor
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/15/2019
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Support multiple .NET Framework versions in your project file

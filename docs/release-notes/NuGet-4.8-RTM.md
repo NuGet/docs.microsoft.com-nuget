@@ -4,7 +4,7 @@ description: Release notes for NuGet 4.8.1 including known issues, bug fixes, ad
 author: JonDouglas
 ms.author: jodou
 ms.date: 5/14/2018
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 4.8 Release Notes

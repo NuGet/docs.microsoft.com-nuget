@@ -2,7 +2,7 @@
 title: NuGet 7.0 Release Notes
 description: Release notes for NuGet 7.0 including new features, bug fixes, and DCRs.
 author: zivkan
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 # NuGet 7.0 Release Notes
 

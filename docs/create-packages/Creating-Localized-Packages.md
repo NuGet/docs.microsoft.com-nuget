@@ -4,7 +4,7 @@ description: Details on the two ways to create localized NuGet packages, either 
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/18/2018
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Creating localized NuGet packages

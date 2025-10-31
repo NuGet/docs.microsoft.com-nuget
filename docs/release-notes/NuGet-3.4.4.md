@@ -4,7 +4,7 @@ description: Release notes for NuGet 3.4.4 including known issues, bug fixes, ad
 author: JonDouglas
 ms.author: jodou
 ms.date: 11/11/2016
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 3.4.4 Release Notes

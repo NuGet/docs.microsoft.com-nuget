@@ -4,7 +4,7 @@ description: An overview of options for hosting your own NuGet package feeds or 
 author: JonDouglas
 ms.author: jodou
 ms.date: 3/2/2022
-ms.topic: conceptual
+ms.topic: concept-article
 ms.reviewer: anangaur
 ---
 

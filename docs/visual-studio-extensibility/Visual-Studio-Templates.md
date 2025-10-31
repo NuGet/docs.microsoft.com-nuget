@@ -4,7 +4,7 @@ description: Instructions for including NuGet packages as part of Visual Studio 
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/03/2018
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # Packages in Visual Studio templates

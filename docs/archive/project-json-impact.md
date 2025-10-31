@@ -4,7 +4,7 @@ description: Details on how the implementation of project.json in NuGet 3.x affe
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/18/2018
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Impact of project.json when creating packages

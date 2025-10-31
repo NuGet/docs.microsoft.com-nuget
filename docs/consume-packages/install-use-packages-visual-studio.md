@@ -4,7 +4,7 @@ description: Learn how to use the NuGet Package Manager UI in Visual Studio for 
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/03/2025
-ms.topic: conceptual
+ms.topic: install-set-up-deploy
 f1_keywords: 
   - "vs.nuget.packagemanager.ui"
 ---

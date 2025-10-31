@@ -4,7 +4,7 @@ description: An overview of the process of creating and publishing a NuGet packa
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/26/2017
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Package creation workflow

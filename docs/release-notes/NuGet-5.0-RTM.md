@@ -4,7 +4,7 @@ description: Release notes for NuGet 5.0 including known issues, bug fixes, new 
 author: JonDouglas
 ms.author: jodou
 ms.date: 04/02/2019
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 5.0 Release Notes

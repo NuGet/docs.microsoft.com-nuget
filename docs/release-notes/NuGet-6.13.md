@@ -4,7 +4,7 @@ description: Release notes for NuGet 6.13 including new features, bug fixes, and
 author: Nigusu-Allehu
 ms.author: nyenework
 ms.date: 2/4/2025
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 6.13 Release Notes

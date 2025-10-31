@@ -4,7 +4,7 @@ description: How to manage the global package installation folder, the package c
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/19/2018
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Managing the global packages, cache, and temp folders

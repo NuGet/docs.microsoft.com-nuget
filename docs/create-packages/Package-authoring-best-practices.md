@@ -4,7 +4,7 @@ description: A general guide of best practices for creating high quality NuGet p
 author: nkolev92
 ms.author: nikolev
 ms.date: 11/15/2021
-ms.topic: conceptual
+ms.topic: best-practice
 ---
 
 # Package authoring best practices

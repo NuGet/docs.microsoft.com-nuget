@@ -4,7 +4,7 @@ description: Policies for unlisting packages from nuget.org; permanent deletion 
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/18/2018
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Deleting packages
