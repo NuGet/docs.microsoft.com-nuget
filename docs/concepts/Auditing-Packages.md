@@ -201,7 +201,7 @@ If security vulnerabilities are found and updates are available for the package,
 #### Transitive Packages
 
 Often a vulnerability will be in a transitive dependency.
-Our recommendation is to prefer updates to packages “closest” to your direct references.
+Our recommendation is to prefer updates to packages "closest" to your direct references.
 Though, there's nothing wrong with just upgrading the package with known vulnerability either.
 
 For example, say your project references package A.
