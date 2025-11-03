@@ -16,8 +16,6 @@ This involves identifying vulnerabilities, evaluating risks, and making recommen
 The audit can include a review of the packages themselves, as well as any dependencies and their associated risks.
 The goal of the audit is to identify and mitigate any security vulnerabilities that could be exploited by attackers, such as code injection or cross-site scripting attacks.
 
-We also have a [blog post](https://devblogs.microsoft.com/nuget/nugetaudit-2-0-elevating-security-and-trust-in-package-management/) which discusses our recommended method for taking action when a package with a known vulnerability is found to be used by your project, and tools to help get more information.
-
 ### Feature availability
 
 | NuGet | .NET SDK | Visual Studio | Feature |
@@ -182,7 +180,14 @@ Note that `--include-transitive` is not default, so should be included.
 
 ## Actions when packages with known vulnerabilities are reported
 
-We also have a [blog post](https://devblogs.microsoft.com/nuget/nugetaudit-2-0-elevating-security-and-trust-in-package-management/) which discusses our recommended method for taking action when a package with a known vulnerability is found to be used by your project, and tools to help get more information.
+Getting a warning about packages with known vulnerabilities is only part of the process.
+Once discovered, action needs to be taken to remove the potential vulnerability from your solution.
+
+The easiest case is when a package you reference directly has the known vulnerability. 
+In this situation, update the package version to one that fixes the vulnerability. 
+
+Package vulnerabilities may be reported in both direct and transitive package references.
+The action you take to resolve may be different because of that.
 
 ### Security vulnerabilities found with updates
 
@@ -195,12 +200,59 @@ If security vulnerabilities are found and updates are available for the package,
 
 #### Transitive Packages
 
-If a known vulnerability exists in a top-level package's transitive dependencies, you have these options:
+Often a vulnerability will be in a transitive dependency.
+Our recommendation is to prefer updates to packages “closest” to your direct references.
+Though, there's nothing wrong with just upgrading the package with known vulnerability either.
 
+For example, say your project references package A.
+Package A has a dependency on package B, which in turn has a dependency on package C.
+In this example, we'll consider that package C version 1.0.0 has a known vulnerability, fixed in version 2.0.0.
+Our recommendation is to first try upgrading package A.
+If that doesn't resolve the audit warning, then try upgrading package B.
+If that doesn't resolve the audit warning, then upgrade C directly.
+To aid with this, you'll [need to find the transitive package path](#finding-the-transitive-package-path).
+
+In summary, if a known vulnerability exists in a top-level package's transitive dependencies, you have these options:
+
+- Check if the top-level package contains an update that does not have a transitive vulnerability and update that instead.
+- Update the closest package to your direct references that does not reference a vulnerability.
 - Add the fixed package version as a direct package reference. **Note:** Be sure to remove this reference when a new package version update becomes available and be sure to maintain the defined attributes for the expected behavior.
 - Use [Central Package Management with the transitive pinning functionality](../consume-packages/Central-Package-Management.md#transitive-pinning).
+  Note that if you pack your project into your own package to share with others, [CPM with transitive pinning will cause packages to become dependencies](../consume-packages/Central-Package-Management.md#transitive-pinning-and-pack), even if your project doesn't directly call APIs on that package.
 - [Suppress the advisory](#excluding-advisories) until it can be addressed.
 - File an issue in the top-level package's tracker to request an update.
+
+##### Finding the transitive package path
+
+There are several ways to find the package path.
+Which method you prefer depends on what tools you normally use during your development.
+
+###### dotnet nuget why
+
+On the command line, you can use the [`dotnet nuget why` command](/dotnet/core/tools/dotnet-nuget-why) to understand why transitive packages are being included in your project's package graph.
+
+![dotnet nuget why example](media/dotnet-nuget-why-1.png)
+
+###### Visual Studio Solution Explorer
+
+SDK style projects also provide the full package graph under the project's Dependency node.
+It's also searchable!
+Expand search options and enable “search external files”.
+
+![Visual Studio Solution Explorer Search Options](media/vs-solution-explorer-search-options-1.png)
+
+Search the package name, and it will show you all instances under each project's Dependencies node.
+
+![Visual Studio Solution Explorer Search Results](media/vs-solution-explorer-search-results-1.png)
+
+###### Visual Studio NuGet Package Manager UI
+
+When you look at the Installed tab in Visual Studio's package manager UI, when the project uses PackageReference for package management, it will show both direct and transitive packages.
+Currently, this only happens when you manage packages for a project, not for the solution.
+
+If you mouse hover over a package in the package list, the tooltip will include the name of one direct package that has caused that transitive package to be included in the project.
+
+![Visual Studio Package Manager UI tooltip](media/pm-ui-transitive-tooltip-1.png)
 
 ### Use Copilot to update packages
 NuGet has released a Model Context Protocol (MCP) server that has the ability to update packages in your project to versions that resolve known vulnerabilities.
