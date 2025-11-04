@@ -11,11 +11,10 @@ ms.topic: conceptual
 NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
-|:---|:---|:---|
+| :---|:---|:---|
 | [**7.0.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.0.0](https://visualstudio.microsoft.com/downloads/) | [10.0.100](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2026 with any .NET workload
-
 
 ## Summary: What's New in 7.0.0
 
@@ -41,15 +40,7 @@ NuGet distribution vehicles:
 
 ### Breaking changes
 
-### Issues fixed in this release
-
-* Build NuGet.exe with il-repack instead of ilmerge - [#14497](https://github.com/NuGet/Home/issues/14497)
-
-* Don&#39;t use reflection based deserialization in NuGet.Protocol - [#14470](https://github.com/NuGet/Home/issues/14470)
-
-* Convert Search Control to Fluent UI - [#14469](https://github.com/NuGet/Home/issues/14469)
-
-* Make NuGet.Client&#39;s Build.ps1 more friendly to GitHub Copilot in VSCode - [#14453](https://github.com/NuGet/Home/issues/14453)
+* Remove PackageSpec.Dependencies - [#14446](https://github.com/NuGet/Home/issues/14446)
 
 * unused NuGet VS Extensibility APIs removed - [#14403](https://github.com/NuGet/Home/issues/14403)
 
@@ -59,23 +50,13 @@ NuGet distribution vehicles:
 
 * Remove obsolete APIs from NuGet.Common, NuGet.Configuration, NuGet.LibraryModel, NuGet.Packaging and NuGet.ProjectModel - [#14393](https://github.com/NuGet/Home/issues/14393)
 
-* dotnet nuget verify should output package content hash - [#14384](https://github.com/NuGet/Home/issues/14384)
-
-* Generate identical [Content_Types].xml on repeated builds - [#14357](https://github.com/NuGet/Home/issues/14357)
-
-* Consider not writing NuGetToolVersion to generated MSBuild props files on Restore - [#14355](https://github.com/NuGet/Home/issues/14355)
-
-* Package pruning is enabled for all projects targeting .NET 10 including multi-targetes ones. - [#14345](https://github.com/NuGet/Home/issues/14345)
-
-* Remove NUGET_EXPERIMENTAL_USE_NJ_FOR_FILE_PARSING - [#14257](https://github.com/NuGet/Home/issues/14257)
+* Package pruning doesn&#39;t work with lock files - [#14272](https://github.com/NuGet/Home/issues/14272)
 
 * Pruning should prune and not warn for a direct reference in a multi-targeting project that does not prune on all TargetFrameworks - [#14196](https://github.com/NuGet/Home/issues/14196)
 
-* JsonSerializerIsReflectionDisabled on update to Nuget.Protocols 6.13.1 in apps with JsonSerializerIsReflectionEnabledByDefault set to false - [#14111](https://github.com/NuGet/Home/issues/14111)
+* Block and remove code for unused restore implementations such as `Standalone`. - [#14184](https://github.com/NuGet/Home/issues/14184)
 
-* Enable packing legacy PackageReference projects without the need for a package (ie merge NuGet.Build.Tasks.Pack into NuGet.Build.Tasks) - [#14046](https://github.com/NuGet/Home/issues/14046)
-
-* Enable CanShowDialog for .NET core Authentication Plugins - [#14010](https://github.com/NuGet/Home/issues/14010)
+* Remove `DotnetToolReference` restore - [#14183](https://github.com/NuGet/Home/issues/14183)
 
 * [DCR] Raise an error for SHA-1 fingerprints usage in NuGet.exe sign, mssign commands - [#13962](https://github.com/NuGet/Home/issues/13962)
 
@@ -83,11 +64,35 @@ NuGet distribution vehicles:
 
 * Show an error when a non https source is used in a resource in a service index - [#13364](https://github.com/NuGet/Home/issues/13364)
 
-* Remove project.json pack - [#7931](https://github.com/NuGet/Home/issues/7931)
-
 * Remove project.json support - [#7199](https://github.com/NuGet/Home/issues/7199)
 
 * Clean up Package Spec redudant APIs - [#6231](https://github.com/NuGet/Home/issues/6231)
+
+### Issues fixed in this release
+
+* Don&#39;t use reflection based deserialization in NuGet.Protocol - [#14470](https://github.com/NuGet/Home/issues/14470)
+
+* Convert Search Control to Fluent UI - [#14469](https://github.com/NuGet/Home/issues/14469)
+
+* Make NuGet.Client&#39;s Build.ps1 more friendly to GitHub Copilot in VSCode - [#14453](https://github.com/NuGet/Home/issues/14453)
+
+* dotnet nuget verify should output package content hash - [#14384](https://github.com/NuGet/Home/issues/14384)
+
+* Generate identical [Content_Types].xml on repeated builds - [#14357](https://github.com/NuGet/Home/issues/14357)
+
+* Consider not writing NuGetToolVersion to generated MSBuild props files on Restore - [#14355](https://github.com/NuGet/Home/issues/14355)
+
+* Package pruning is enabled for all projects targeting .NET 10 including multi-targeted ones - [#14345](https://github.com/NuGet/Home/issues/14345)
+
+* Remove NUGET_EXPERIMENTAL_USE_NJ_FOR_FILE_PARSING - [#14257](https://github.com/NuGet/Home/issues/14257)
+
+* JsonSerializerIsReflectionDisabled on update to Nuget.Protocols 6.13.1 in apps with JsonSerializerIsReflectionEnabledByDefault set to false - [#14111](https://github.com/NuGet/Home/issues/14111)
+
+* Enable packing legacy PackageReference projects without the need for a package (ie merge NuGet.Build.Tasks.Pack into NuGet.Build.Tasks) - [#14046](https://github.com/NuGet/Home/issues/14046)
+
+* Enable CanShowDialog for .NET core Authentication Plugins - [#14010](https://github.com/NuGet/Home/issues/14010)
+
+* Remove project.json pack - [#7931](https://github.com/NuGet/Home/issues/7931)
 
 * &quot;dotnet package update&quot; modifies wrong project file (csproj) - [#14585](https://github.com/NuGet/Home/issues/14585)
 
@@ -112,8 +117,6 @@ NuGet distribution vehicles:
 * Dead Code: ActionsAndVersions View - [#14464](https://github.com/NuGet/Home/issues/14464)
 
 * Have to manually select pre-populated text on Add Package Source dialog - [#14450](https://github.com/NuGet/Home/issues/14450)
-
-* Remove PackageSpec.Dependencies - [#14446](https://github.com/NuGet/Home/issues/14446)
 
 * review exception handling - [#14440](https://github.com/NuGet/Home/issues/14440)
 
@@ -142,12 +145,6 @@ NuGet distribution vehicles:
 * dotnet package update to a specific version - [#14306](https://github.com/NuGet/Home/issues/14306)
 
 * dotnet package update initial version - [#14305](https://github.com/NuGet/Home/issues/14305)
-
-* Package pruning doesn&#39;t work with lock files - [#14272](https://github.com/NuGet/Home/issues/14272)
-
-* Block and remove code for unused restore implementations such as `Standalone`. - [#14184](https://github.com/NuGet/Home/issues/14184)
-
-* Remove `DotnetToolReference` restore - [#14183](https://github.com/NuGet/Home/issues/14183)
 
 * Warning rollout for PrunePackageReference - [#14126](https://github.com/NuGet/Home/issues/14126)
 
@@ -193,7 +190,7 @@ NuGet distribution vehicles:
 
 * VS NuGet PMUI - Machine-wide package sources area should be vertically resize-able as well - [#7560](https://github.com/NuGet/Home/issues/7560)
 
-[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.15.0.86...7.0.0.289)
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.14.1.1...7.0.0.289)
 
 ### Community contributions
 
@@ -282,15 +279,4 @@ Thank you to all the contributors who helped make this NuGet release awesome!
   * [6530](https://github.com/NuGet/NuGet.Client/pull/6530) Fix `nuget.exe` restore finding MSBuild from SSMS instead of Visual Studio
 * [ToddGrun](https://github.com/NuGet/NuGet.Client/pull/6519)
   * [6519](https://github.com/NuGet/NuGet.Client/pull/6519) Make LockFileLibrary immutable for performance and sanity reasons
-**TODO: Issues that could not be categorized. Make sure the issue has the correct milestone (if required) or an appropriate Type label - Nones:**
-
-* review un-used Members - [#14435](https://github.com/NuGet/Home/issues/14435)
-
-**TODO: Issues that could not be categorized. Make sure the issue has the correct milestone (if required) or an appropriate Type label - StillOpens:**
-
-* Investigate and fix use of obsolete API VSPROPID_DeferredSaveSolution in VSSolutionManager - [#14423](https://github.com/NuGet/Home/issues/14423)
-
-* Remove Sha512HashFunction  - [#8450](https://github.com/NuGet/Home/issues/8450)
-
-* Deprecate and remove the old nuget.exe credential plugin model - [#7586](https://github.com/NuGet/Home/issues/7586)
-
+  
