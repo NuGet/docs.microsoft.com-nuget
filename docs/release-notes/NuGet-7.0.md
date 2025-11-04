@@ -3,7 +3,7 @@ title: NuGet 7.0 Release Notes
 description: Release notes for NuGet 7.0 including new features, bug fixes, and DCRs.
 author: donnie-msft
 ms.date: 10/29/2025
-ms.topic: conceptual
+ms.topic: release-notes
 ---
 
 # NuGet 7.0 Release Notes
@@ -18,15 +18,17 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 7.0.0
 
+* [TODO] [Announcing the NuGet MCP Server Preview](https://devblogs.microsoft.com/dotnet/nuget-mcp-server-preview/)
+
+* [TODO] Projects that target .NET 10 warn for vulnerabilities in transitive packages by defaulting to NuGetAuditMode=all
+
+* [TODO] Projects that target .NET 10 are enabled into package pruning 
+
+* Enable packing legacy PackageReference projects without the need for a package - [#14046](https://github.com/NuGet/Home/issues/14046)
+
+* Promote NU3043 warning to error in .NET 10 - [#13814](https://github.com/NuGet/Home/issues/13814)
+
 * Details pane reflects Vulnerability Data from Audit Sources - [#14554](https://github.com/NuGet/Home/issues/14554)
-
-* When adding an http source in the options dialog, have the user click on a checkbox to more explicitly agree to AllowInsecureConnections being added - [#14377](https://github.com/NuGet/Home/issues/14377)
-
-* Error needed in Package Sources settings for HTTP source without AllowInsecureConnections - [#14367](https://github.com/NuGet/Home/issues/14367)
-
-* Implement programmatic validation API for Unified Settings - [#14359](https://github.com/NuGet/Home/issues/14359)
-
-* Use Regex UI validation on NuGet options pages - [#14358](https://github.com/NuGet/Home/issues/14358)
 
 * Create Unified Settings page for &quot;Package Source Mapping&quot; - [#14234](https://github.com/NuGet/Home/issues/14234)
 
@@ -35,8 +37,6 @@ NuGet distribution vehicles:
 * NuGet AuditSources support in the Package Manager UI - [#13954](https://github.com/NuGet/Home/issues/13954)
 
 * dotnet update package --vulnerable (Audit fix) - [#13372](https://github.com/NuGet/Home/issues/13372)
-
-* [Feature]: dotnet list [project | solution] package does not work with solution filters - [#11789](https://github.com/NuGet/Home/issues/11789)
 
 ### Breaking changes
 
@@ -60,13 +60,15 @@ NuGet distribution vehicles:
 
 * [DCR] Raise an error for SHA-1 fingerprints usage in NuGet.exe sign, mssign commands - [#13962](https://github.com/NuGet/Home/issues/13962)
 
-* Promote NU3043 warning to error in .NET 10 - [#13814](https://github.com/NuGet/Home/issues/13814)
-
 * Show an error when a non https source is used in a resource in a service index - [#13364](https://github.com/NuGet/Home/issues/13364)
+
+* [TODO] Remove project.json pack - [#7931](https://github.com/NuGet/Home/issues/7931)
 
 * Remove project.json support - [#7199](https://github.com/NuGet/Home/issues/7199)
 
 * Clean up Package Spec redudant APIs - [#6231](https://github.com/NuGet/Home/issues/6231)
+
+* Add package ID validation during restore - [#14407](https://github.com/NuGet/Home/issues/14407)
 
 ### Issues fixed in this release
 
@@ -88,11 +90,7 @@ NuGet distribution vehicles:
 
 * JsonSerializerIsReflectionDisabled on update to Nuget.Protocols 6.13.1 in apps with JsonSerializerIsReflectionEnabledByDefault set to false - [#14111](https://github.com/NuGet/Home/issues/14111)
 
-* Enable packing legacy PackageReference projects without the need for a package (ie merge NuGet.Build.Tasks.Pack into NuGet.Build.Tasks) - [#14046](https://github.com/NuGet/Home/issues/14046)
-
 * Enable CanShowDialog for .NET core Authentication Plugins - [#14010](https://github.com/NuGet/Home/issues/14010)
-
-* Remove project.json pack - [#7931](https://github.com/NuGet/Home/issues/7931)
 
 * &quot;dotnet package update&quot; modifies wrong project file (csproj) - [#14585](https://github.com/NuGet/Home/issues/14585)
 
@@ -100,7 +98,7 @@ NuGet distribution vehicles:
 
 * [Localization] The table title ‘Package Source Mapping’ in the ‘Options-&gt;NuGet Package Manager-&gt;Package Source Mapping’ page was not localized - [#14550](https://github.com/NuGet/Home/issues/14550)
 
-* Remove RestoreTargetGraph.Name as it&#39;s redundant withg restoreTargetGraph.TargetGraphName being the widely used version - [#14529](https://github.com/NuGet/Home/issues/14529)
+* Remove RestoreTargetGraph.Name as it&#39;s redundant with restoreTargetGraph.TargetGraphName being the widely used version - [#14529](https://github.com/NuGet/Home/issues/14529)
 
 * Remove RestoreArgs.LockFileVersion as it&#39;s functionality unused - [#14524](https://github.com/NuGet/Home/issues/14524)
 
@@ -123,8 +121,6 @@ NuGet distribution vehicles:
 * Improve perf by avoiding redundant dictionary lookups - [#14432](https://github.com/NuGet/Home/issues/14432)
 
 * Move pruning enabled frameworks to the NuGet.targets - [#14424](https://github.com/NuGet/Home/issues/14424)
-
-* Add package ID validation during restore - [#14407](https://github.com/NuGet/Home/issues/14407)
 
 * Decommission Legacy VS Options NuGet Settings - [#14398](https://github.com/NuGet/Home/issues/14398)
 
@@ -159,6 +155,16 @@ NuGet distribution vehicles:
 * New dependency resolver does not properly handle floating prerelease versions - [#13833](https://github.com/NuGet/Home/issues/13833)
 
 * Reenable new algorithm resolution with lock files - [#13800](https://github.com/NuGet/Home/issues/13800)
+
+* [Feature]: dotnet list [project | solution] package does not work with solution filters - [#11789](https://github.com/NuGet/Home/issues/11789)
+
+* When adding an http source in the options dialog, have the user click on a checkbox to more explicitly agree to AllowInsecureConnections being added - [#14377](https://github.com/NuGet/Home/issues/14377)
+
+* Error needed in Package Sources settings for HTTP source without AllowInsecureConnections - [#14367](https://github.com/NuGet/Home/issues/14367)
+
+* Implement programmatic validation API for Unified Settings - [#14359](https://github.com/NuGet/Home/issues/14359)
+
+* Use Regex UI validation on NuGet options pages - [#14358](https://github.com/NuGet/Home/issues/14358)
 
 * [Bug Bash] Pressing the page-down button on the keyboard when focusing on ‘Version’ drop-down box with Tab key makes the box empty - [#13605](https://github.com/NuGet/Home/issues/13605)
 
