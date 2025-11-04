@@ -30,11 +30,13 @@ NuGet distribution vehicles:
 
 * Details pane reflects Vulnerability Data from Audit Sources - [#14554](https://github.com/NuGet/Home/issues/14554)
 
-* Create Unified Settings page for &quot;Package Source Mapping&quot; - [#14234](https://github.com/NuGet/Home/issues/14234)
-
-* Create Unified Settings page for &quot;Package sources&quot; - [#14233](https://github.com/NuGet/Home/issues/14233)
-
 * NuGet AuditSources support in the Package Manager UI - [#13954](https://github.com/NuGet/Home/issues/13954)
+
+* Migrate NuGet's settings to the new Visual Studio Options window
+
+  * Migrate &quot;Package sources&quot; settings in Visual Studio Options - [#14233](https://github.com/NuGet/Home/issues/14233)
+
+  * Migrate &quot;Package Source Mapping&quot; settings in Visual Studio Options - [#14234](https://github.com/NuGet/Home/issues/14234)
 
 * dotnet update package --vulnerable (Audit fix) - [#13372](https://github.com/NuGet/Home/issues/13372)
 
