@@ -18,7 +18,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 7.0.0
 
-* [TODO] [Announcing the NuGet MCP Server Preview](https://devblogs.microsoft.com/dotnet/nuget-mcp-server-preview/)
+* Created the [NuGet Model Context Protocol (MCP) Server](https://learn.microsoft.com/nuget/concepts/nuget-mcp-server) available in package, [NuGet.Mcp.Server](https://www.nuget.org/packages/NuGet.Mcp.Server#readme-body-tab)
 
 * [TODO] Projects that target .NET 10 warn for vulnerabilities in transitive packages by defaulting to NuGetAuditMode=all
 
