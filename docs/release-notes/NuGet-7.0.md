@@ -56,8 +56,6 @@ NuGet distribution vehicles:
 
 #### SDK Breaking changes
 
-* Remove PackageSpec.Dependencies - [#14446](https://github.com/NuGet/Home/issues/14446)
-
 * Remove all unused APIs marked as obsolete in NuGet.Frameworks, NuGet.Protocol, NuGet.Commands &amp; NuGet.PackageManagement - [#14395](https://github.com/NuGet/Home/issues/14395)
 
 * Remove obsolete APIs from NuGet.Common, NuGet.Configuration, NuGet.LibraryModel, NuGet.Packaging and NuGet.ProjectModel - [#14393](https://github.com/NuGet/Home/issues/14393)
@@ -66,11 +64,15 @@ NuGet distribution vehicles:
 
 * Remove `DotnetToolReference` restore - [#14183](https://github.com/NuGet/Home/issues/14183)
 
-* [TODO] Remove project.json pack - [#7931](https://github.com/NuGet/Home/issues/7931)
+* Project.json Deprecation
 
-* Remove project.json support - [#7199](https://github.com/NuGet/Home/issues/7199)
+  * Remove project.json pack - [#7931](https://github.com/NuGet/Home/issues/7931)
 
-* Clean up Package Spec redudant APIs - [#6231](https://github.com/NuGet/Home/issues/6231)
+  * Remove project.json support - [#7199](https://github.com/NuGet/Home/issues/7199)
+
+  * Remove PackageSpec.Dependencies - [#14446](https://github.com/NuGet/Home/issues/14446)
+
+  * Clean up Package Spec redudant APIs - [#6231](https://github.com/NuGet/Home/issues/6231)
 
 
 ### Issues fixed in this release
