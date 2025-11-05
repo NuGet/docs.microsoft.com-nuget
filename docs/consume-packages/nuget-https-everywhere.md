@@ -18,7 +18,7 @@ NuGet enforces this requirement by producing an error and stopping the operation
 This error occurs when one or more package sources in your configuration use an **HTTP** URL instead of **HTTPS**.
 
 In earlier NuGet versions, this scenario produced a **warning** ([`NU1803`](../reference/errors-and-warnings/nu1803.md)).
-Beginning with  [**NuGet 6.12**](release-notes/NuGet-6.12.md) and later, it now results in an **error** unless the use of HTTP sources is explicitly permitted.
+Beginning with  [**NuGet 6.12**](../release-notes/NuGet-6.12.md) and later, it now results in an **error** unless the use of HTTP sources is explicitly permitted.
 
 ### Recommended Resolution
 
@@ -35,10 +35,25 @@ Switching to HTTPS ensures end-to-end encryption and is the recommended and more
 
 If HTTPS is not available and you operate in a trusted or isolated environment, you can explicitly allow HTTP sources.
 
-#### Option 1: Use visual studio
+#### Option 1: Set allowInsecureConnections in your `NuGet.Config`
 
-For **Visual Studio** steps, refer to
-[NuGet Visual Studio Options – Allow Insecure Connections](/nuget/consume-packages/nuget-visual-studio-options#allow-insecure-connections).
+* **Using visual studio**
+
+  For **Visual Studio** steps, refer to
+  [NuGet Visual Studio Options – Allow Insecure Connections](/nuget/consume-packages/nuget-visual-studio-options#allow-insecure-connections).
+
+* **Editing `NuGet.Config` manually**
+
+  Add the `allowInsecureConnections="true"` attribute to the affected source:
+
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <configuration>
+    <packageSources>
+      <add key="MyHttpFeed" value="http://contoso/packages/v3/index.json" allowInsecureConnections="true" />
+    </packageSources>
+  </configuration>
+  ```
 
 #### Option 2: Use the Command-Line Parameter
 
@@ -64,28 +79,15 @@ For **NuGet.exe** commands, use:
 | **dotnet CLI** | `dotnet nuget push`       | .NET **10.0.1xx** and newer           |
 | **dotnet CLI** | `dotnet nuget add source` | .NET **9.0.1xx** and newer            |
 
-#### Option 3: Manually hand-edit your `NuGet.Config`
-
-Add the `allowInsecureConnections="true"` attribute to the affected source:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <packageSources>
-    <add key="MyHttpFeed" value="http://contoso/packages/v3/index.json" allowInsecureConnections="true" />
-  </packageSources>
-</configuration>
-```
-
 ## HTTPS Enforcement Rollout Across Tools
 
 NuGet’s HTTPS enforcement was introduced gradually across releases.
-The following table summarizes the progression from **warnings (NU1803)** to **errors (NU1302)**.
+The following table summarizes the progression from [**warnings (NU1803)**](../reference/errors-and-warnings/nu1803.md) to [**errors (NU1302)**](../reference/errors-and-warnings/nu1302.md).
 
 | Versions Affected                                     | Behavior                                                              |
 | ----------------------------------------------------- | --------------------------------------------------------------------- |
-| NuGet.exe 6.3+, Visual Studio 17.3+, .NET 6.0.100+   |  ⚠️ **Warning (NU1803)** – HTTP sources allowed but discouraged        |
-| NuGet.exe 6.12+, Visual Studio 17.12+, .NET 9.0.100+  | ❌ **Error (NU1302)** – HTTP sources blocked unless explicitly allowed|
+| [NuGet.exe 6.3](../release-notes/NuGet-6.3.md)+, Visual Studio 17.3+, .NET 6.0.100+   |  ⚠️ **Warning (NU1803)** – HTTP sources allowed but discouraged        |
+| [NuGet.exe 6.12](../release-notes/NuGet-6.12.md)+, Visual Studio 17.12+, .NET 9.0.100+  | ❌ **Error (NU1302)** – HTTP sources blocked unless explicitly allowed|
 
 ## See Also
 
