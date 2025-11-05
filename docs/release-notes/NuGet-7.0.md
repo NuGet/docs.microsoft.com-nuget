@@ -18,11 +18,11 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 7.0.0
 
+* Projects that target .NET 10 warn for vulnerabilities in transitive packages by defaulting to NuGetAuditMode=all [#14161](https://github.com/nuget/home/issues/14161)
+
+* [Package pruning](../consume-packages/Package-References-in-Project-Files.md#prunepackagereference) is enabled for all projects targeting .NET 10 [#14345](https://github.com/NuGet/Home/issues/14345)
+
 * Created the [NuGet Model Context Protocol (MCP) Server](https://learn.microsoft.com/nuget/concepts/nuget-mcp-server) available in package, [NuGet.Mcp.Server](https://www.nuget.org/packages/NuGet.Mcp.Server#readme-body-tab)
-
-* [TODO] Projects that target .NET 10 warn for vulnerabilities in transitive packages by defaulting to NuGetAuditMode=all
-
-* [TODO] Projects that target .NET 10 are enabled into package pruning 
 
 * Enable packing legacy PackageReference projects without the need for a package - [#14046](https://github.com/NuGet/Home/issues/14046)
 
@@ -42,30 +42,21 @@ NuGet distribution vehicles:
 
 ### Breaking changes
 
-* unused NuGet VS Extensibility APIs removed - [#14403](https://github.com/NuGet/Home/issues/14403)
+* Add package ID validation during restore - [#14407](https://github.com/NuGet/Home/issues/14407)
 
-* Package pruning doesn&#39;t work with lock files - [#14272](https://github.com/NuGet/Home/issues/14272)
+* Project.json is no longer supported in 7.0. Visual Studio 2026 automatically migrated project.json projects to PackageReference
 
-* Pruning should prune and not warn for a direct reference in a multi-targeting project that does not prune on all TargetFrameworks - [#14196](https://github.com/NuGet/Home/issues/14196)
+* Package pruning will lead to a one-time diff in packages lock file - [#14272](https://github.com/NuGet/Home/issues/14272)
 
-* [DCR] Raise an error for SHA-1 fingerprints usage in NuGet.exe sign, mssign commands - [#13962](https://github.com/NuGet/Home/issues/13962)
+* Pruning privatizes a direct references by apply PrivateAssets=all and IncludeAssets=none - [#14196](https://github.com/NuGet/Home/issues/14196)
+
+* Raise an error for SHA-1 fingerprints usage in NuGet.exe sign, mssign commands - [#13962](https://github.com/NuGet/Home/issues/13962)
 
 * Show an error when a non https source is used in a resource in a service index - [#13364](https://github.com/NuGet/Home/issues/13364)
 
-* Add package ID validation during restore - [#14407](https://github.com/NuGet/Home/issues/14407)
-
 #### SDK Breaking changes
 
-* Remove all unused APIs marked as obsolete in NuGet.Frameworks, NuGet.Protocol, NuGet.Commands &amp; NuGet.PackageManagement - [#14395](https://github.com/NuGet/Home/issues/14395)
-
-* Remove obsolete APIs from NuGet.Common, NuGet.Configuration, NuGet.LibraryModel, NuGet.Packaging and NuGet.ProjectModel - [#14393](https://github.com/NuGet/Home/issues/14393)
-
-* Block and remove code for unused restore implementations such as `Standalone`. - [#14184](https://github.com/NuGet/Home/issues/14184)
-
-* Remove `DotnetToolReference` restore - [#14183](https://github.com/NuGet/Home/issues/14183)
-
-* Project.json Deprecation
-
+* Project.json deprecation
   * Remove project.json pack - [#7931](https://github.com/NuGet/Home/issues/7931)
 
   * Remove project.json support - [#7199](https://github.com/NuGet/Home/issues/7199)
@@ -74,6 +65,15 @@ NuGet distribution vehicles:
 
   * Clean up Package Spec redudant APIs - [#6231](https://github.com/NuGet/Home/issues/6231)
 
+* Unused NuGet VS Extensibility APIs removed - [#14403](https://github.com/NuGet/Home/issues/14403)
+
+* Remove all unused APIs marked as obsolete in NuGet.Frameworks, NuGet.Protocol, NuGet.Commands &amp; NuGet.PackageManagement - [#14395](https://github.com/NuGet/Home/issues/14395)
+
+* Remove obsolete APIs from NuGet.Common, NuGet.Configuration, NuGet.LibraryModel, NuGet.Packaging and NuGet.ProjectModel - [#14393](https://github.com/NuGet/Home/issues/14393)
+
+* Block and remove code for unused restore implementations such as `Standalone`. - [#14184](https://github.com/NuGet/Home/issues/14184)
+
+* Remove `DotnetToolReference` restore - [#14183](https://github.com/NuGet/Home/issues/14183)
 
 ### Issues fixed in this release
 
@@ -91,8 +91,7 @@ NuGet distribution vehicles:
 
 * [Localization] The table title ‘Package Source Mapping’ in the ‘Options-&gt;NuGet Package Manager-&gt;Package Source Mapping’ page was not localized - [#14550](https://github.com/NuGet/Home/issues/14550)
 
-
-#### SDK fixes
+#### NuGet SDK fixes
 
 * Don&#39;t use reflection based deserialization in NuGet.Protocol - [#14470](https://github.com/NuGet/Home/issues/14470)
 
@@ -112,14 +111,11 @@ NuGet distribution vehicles:
 
 * Remove NUGET_EXPERIMENTAL_USE_NJ_FOR_FILE_PARSING - [#14257](https://github.com/NuGet/Home/issues/14257)
 
-
-
 * Enable CanShowDialog for .NET core Authentication Plugins - [#14010](https://github.com/NuGet/Home/issues/14010)
 
 * &quot;dotnet package update&quot; modifies wrong project file (csproj) - [#14585](https://github.com/NuGet/Home/issues/14585)
 
 * VS crashes when the only project in the solution is a project.json project - [#14553](https://github.com/NuGet/Home/issues/14553)
-
 
 * Remove RestoreTargetGraph.Name as it&#39;s redundant with restoreTargetGraph.TargetGraphName being the widely used version - [#14529](https://github.com/NuGet/Home/issues/14529)
 
