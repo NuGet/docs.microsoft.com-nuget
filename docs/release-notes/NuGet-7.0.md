@@ -26,7 +26,7 @@ NuGet distribution vehicles:
 
 * Enable packing legacy PackageReference projects without the need for a package - [#14046](https://github.com/NuGet/Home/issues/14046)
 
-* Promote NU3043 warning to error in .NET 10 - [#13814](https://github.com/NuGet/Home/issues/13814)
+* Deprecate SHA-1 usage in .NET 10 - [#13814](https://github.com/NuGet/Home/issues/13814)
 
 * Details pane reflects Vulnerability Data from Audit Sources - [#14554](https://github.com/NuGet/Home/issues/14554)
 
