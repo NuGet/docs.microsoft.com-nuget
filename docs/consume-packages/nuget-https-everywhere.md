@@ -5,6 +5,7 @@ author: Nigusu-Allehu
 ms.author: nyenework
 ms.date: 10/28/2025
 ms.topic: conceptual
+ai-usage: ai-generated
 ---
 
 # NuGet HTTPS Everywhere
@@ -37,12 +38,11 @@ If HTTPS is not available and you operate in a trusted or isolated environment, 
 
 #### Option 1: Set allowInsecureConnections in your `NuGet.Config`
 
-* **Using visual studio**
+* **Use Visual Studio**
 
-  For **Visual Studio** steps, refer to
-  [NuGet Visual Studio Options – Allow Insecure Connections](/nuget/consume-packages/nuget-visual-studio-options#allow-insecure-connections).
+  Enable or disable allowing insecure HTTP connections with the [Package Sources settings](/nuget/consume-packages/nuget-visual-studio-options#allow-insecure-connections) under the Visual Studio options > **NuGet Package Manager**.
 
-* **Editing `NuGet.Config` manually**
+* **Edit `NuGet.Config` manually**
 
   Add the `allowInsecureConnections="true"` attribute to the affected source:
 
