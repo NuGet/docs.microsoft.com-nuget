@@ -99,7 +99,7 @@ Alternatively, if you want to keep low and moderate vulnerabilities as warnings,
 
 #### Excluding advisories
 
-You can exclude the advisories by adding a new `NuGetAuditSuppress` MSBuild item for each advisory.
+You can exclude advisories by adding a new `NuGetAuditSuppress` MSBuild item for each advisory.
 Define a `NuGetAuditSuppress` item with the `Include=` metadata set to the advisory URL you wish to suppress.
 
 ```xml
