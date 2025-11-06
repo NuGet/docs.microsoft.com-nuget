@@ -115,7 +115,7 @@ It is available for packages.config from [Visual Studio 17.12 and NuGet 6.12](..
 
 ##### When to exclude advisories
 
-In scenarios where you have analyzed a specific advisory and have determined that it either does not apply to your scenario, or you are comfortable with the risks that imposes, you can choose to exclude specific advisories from the audit report.
+In scenarios where you have analyzed a specific advisory and have determined that it either does not apply to your scenario, or you are comfortable with the risks it imposes, you can choose to exclude specific advisories from the audit report.
 Note that this would completely suppress the advisories, even for packages that share the advisory that may not be part of your project.
 `NuGetAuditSuppress` should be considered a last resort for managing advisories.
 
