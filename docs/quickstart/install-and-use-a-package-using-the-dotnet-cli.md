@@ -9,7 +9,7 @@ ms.topic: quickstart
 
 # Quickstart: Install and use a package with the dotnet CLI
 
-NuGet packages contain compiled binary code that developers make available for other developers to use in their projects. For more information, see [What is NuGet](../What-is-NuGet.md). This quickstart describes how to install the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) NuGet package into a .NET project by using the [dotnet package add](/dotnet/core/tools/dotnet-add-package) command.
+NuGet packages contain compiled binary code that developers make available for other developers to use in their projects. For more information, see [What is NuGet](../What-is-NuGet.md). This quickstart describes how to install the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) NuGet package into a .NET project by using the [dotnet package add](/dotnet/core/tools/dotnet-package-add) command.
 
 You refer to installed packages in code with a `using <namespace>` directive, where `<namespace>` is often the package name. You can then use the package's API in your project.
 
