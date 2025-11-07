@@ -106,7 +106,7 @@ This is typically found in one of two places:
 
 Depending on what method you use to manage your NuGet dependencies, you can also use Visual Studio to view your dependencies directly in [Solution Explorer](/visualstudio/ide/solutions-and-projects-in-visual-studio#solution-explorer) or [NuGet Package Manager](../consume-packages/install-use-packages-visual-studio.md).
 
-For CLI environments, you can use the [`dotnet package list` command](/dotnet/core/tools/dotnet-list-package) to list out your project or solution’s dependencies.
+For CLI environments, you can use the [`dotnet package list` command](/dotnet/core/tools/dotnet-package-list) to list out your project or solution’s dependencies.
 You can also use the [`dotnet nuget why` command](/dotnet/core/tools/dotnet-nuget-why) to understand why transitive packages (those not directly referenced by your project) are being included in your project's package graph.
 
 For more information on managing NuGet dependencies, [see the following documentation](../consume-packages/overview-and-workflow.md).
