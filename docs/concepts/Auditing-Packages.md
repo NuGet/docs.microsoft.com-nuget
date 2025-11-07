@@ -77,23 +77,7 @@ Note that the [V2 protocol is deprecated](../nuget-org/overview-nuget-org.md#api
 | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
 | [NuGet 6.12, .NET 9.0.100 SDK, and Visual Studio 2022 17.12](../release-notes/NuGet-6.12.md) | Restore                                                            |
 | [NuGet 6.14, .NET 9.0.300 SDK](../release-notes/NuGet-6.14.md)                               | `dotnet package list --vulnerable`                                 |
-| Not yet supported                                                                            | NuGet AuditSources support in the Visual Studio Package Manager UI |
-
-#### Excluding advisories
-
-You can choose to exclude specific advisories from the audit report by adding a new `NuGetAuditSuppress` MSBuild item for each advisory.
-Define a `NuGetAuditSuppress` item with the `Include=` metadata set to the advisory URL you wish to suppress.
-
-```xml
-<ItemGroup>
-    <NuGetAuditSuppress Include="https://github.com/advisories/XXXX" />
-</ItemGroup>
-```
-
-Similar to the other NuGet audit configuration properties, `NuGetAuditSuppress` items can be defined at the project or repository level.
-
-`NuGetAuditSuppress` is available for PackageReference projects starting from [NuGet 6.11, Visual Studio 17.11, and the .NET 8.0.400 SDK](../release-notes/NuGet-6.11.md).
-It is available for packages.config from [Visual Studio 17.12 and NuGet 6.12](../release-notes/NuGet-6.12.md).
+| [NuGet 7.0 and Visual Studio 2026](../release-notes/NuGet-7.0.md)                            | NuGet AuditSources support in the Visual Studio Package Manager UI |
 
 ### Warning codes
 
@@ -112,6 +96,138 @@ Alternatively, if you want to keep low and moderate vulnerabilities as warnings,
 
 > [!NOTE]
 > MSBuild properties for message severity such as `NoWarn` and `TreatWarningsAsErrors` are not supported for packages.config projects.
+
+#### Excluding advisories
+
+You can exclude advisories by adding a new `NuGetAuditSuppress` MSBuild item for each advisory.
+Define a `NuGetAuditSuppress` item with the `Include=` metadata set to the advisory URL you wish to suppress.
+
+```xml
+<ItemGroup>
+    <NuGetAuditSuppress Include="https://github.com/advisories/XXXX" />
+</ItemGroup>
+```
+
+Similar to the other NuGet audit configuration properties, `NuGetAuditSuppress` items can be defined at the project or repository level.
+
+`NuGetAuditSuppress` is available for PackageReference projects starting from [NuGet 6.11, Visual Studio 17.11, and the .NET 8.0.400 SDK](../release-notes/NuGet-6.11.md).
+It is available for packages.config from [Visual Studio 17.12 and NuGet 6.12](../release-notes/NuGet-6.12.md).
+
+##### When to exclude advisories
+
+In scenarios where you have analyzed a specific advisory and have determined that it either does not apply to your scenario, or you are comfortable with the risks it imposes, you can choose to exclude specific advisories from the audit report.
+Note that this would completely suppress the advisories, even for packages that share the advisory that may not be part of your project.
+`NuGetAuditSuppress` should be considered a last resort for managing advisories.
+
+## Actions when packages with known vulnerabilities are reported
+
+Getting a warning about packages with known vulnerabilities is only part of the process.
+Once discovered, action needs to be taken to remove the potential vulnerability from your solution.
+
+The easiest case is when a package you reference directly has the known vulnerability.
+In this situation, update the package version to one that fixes the vulnerability.
+
+Package vulnerabilities may be reported in both direct and transitive package references.
+The action you take to resolve may be different because of that.
+
+### Security vulnerabilities found with updates
+
+If security vulnerabilities are found and updates are available for the package, you can do one of the following:
+
+- Edit the `.csproj` or other package version location (`Directory.Packages.props`) with a newer version containing a security fix.
+- Use the NuGet package manager user interface in Visual Studio to update the individual package.
+- Run the `dotnet package update --vulnerable` command to update all vulnerable packages in a project to the first version without known vulnerabilities.
+- Run the `dotnet package update` or `dotnet package add` commands with the respective package ID to update to the latest version. Use [`dotnet add package` when using .NET 9 or earlier](/dotnet/core/whats-new/dotnet-10/sdk#more-consistent-command-order).
+- Use the NuGet Model Context Protocol (MCP) server that has the ability to update packages in your project to versions that resolve known vulnerabilities.
+See [Fixing package vulnerabilities](NuGet-MCP-Server.md#fixing-package-vulnerabilities) for more information.
+
+#### Transitive Packages
+
+Often a vulnerability will be in a transitive dependency.
+Our recommendation is to prefer updates to packages "closest" to your direct references.
+Though, there's nothing wrong with just upgrading the package with known vulnerability either.
+
+For example, say your project references package A.
+Package A has a dependency on package B, which in turn has a dependency on package C.
+In this example, we'll consider that package C version 1.0.0 has a known vulnerability, fixed in version 2.0.0.
+Our recommendation is to first try upgrading package A.
+If that doesn't resolve the audit warning, then try upgrading package B.
+If that doesn't resolve the audit warning, then upgrade C directly.
+To aid with this, you'll [need to find the transitive package path](#finding-the-transitive-package-path).
+
+In summary, if a known vulnerability exists in a top-level package's transitive dependencies, you have these options:
+
+- Check if the top-level package contains an update that does not have a transitive vulnerability and update that instead.
+- Update the closest package to your direct references that does not reference a vulnerability.
+- Add the fixed package version as a direct package reference. **Note:** Be sure to remove this reference when a new package version update becomes available and be sure to maintain the defined attributes for the expected behavior.
+- Use [Central Package Management with the transitive pinning functionality](../consume-packages/Central-Package-Management.md#transitive-pinning).
+  Note that if you pack your project into your own package to share with others, [CPM with transitive pinning will cause packages to become dependencies](../consume-packages/Central-Package-Management.md#transitive-pinning-and-pack), even if your project doesn't directly call APIs on that package.
+- [Suppress the advisory](#excluding-advisories) until it can be addressed.
+- File an issue in the top-level package's tracker to request an update.
+
+##### Finding the transitive package path
+
+There are several ways to find the package path.
+Which method you prefer depends on what tools you normally use during your development.
+
+###### dotnet nuget why
+
+On the command line, you can use the [`dotnet nuget why` command](/dotnet/core/tools/dotnet-nuget-why) to understand why transitive packages are being included in your project's package graph.
+
+![dotnet nuget why example](media/dotnet-nuget-why-1.png)
+
+###### Visual Studio Solution Explorer
+
+SDK style projects also provide the full package graph under the project's Dependency node.
+It's also searchable!
+Expand search options and enable “search external files”.
+
+![Visual Studio Solution Explorer Search Options](media/vs-solution-explorer-search-options-1.png)
+
+Search the package name, and it will show you all instances under each project's Dependencies node.
+
+![Visual Studio Solution Explorer Search Results](media/vs-solution-explorer-search-results-1.png)
+
+###### Visual Studio NuGet Package Manager UI
+
+When you look at the Installed tab in Visual Studio's package manager UI, when the project uses PackageReference for package management, it will show both direct and transitive packages.
+Currently, this only happens when you manage packages for a project, not for the solution.
+
+If you mouse hover over a package in the package list, the tooltip will include the name of one direct package that has caused that transitive package to be included in the project.
+
+![Visual Studio Package Manager UI tooltip](media/pm-ui-transitive-tooltip-1.png)
+
+### Security vulnerabilities found with no updates
+
+In the case that a known vulnerability exists in a package without a security fix, you can do the following.
+
+- Check for any mitigating factors outlined in the advisory report.
+- Use a suggested package if the package is marked deprecated or is abandoned.
+- If the package is open source, consider contributing a fix.
+- Open an issue in the package's issue tracker.
+
+#### Check for mitigating factors
+
+Review the security advisor for any mitigating factors that may allow you to continue using the package with the vulnerability.
+The vulnerability may only exist when the code is used on a specific framework, operating system, or a special function is called.
+
+#### Use a suggested package
+
+In the case that a security advisory is reported for the package you're using and the package is marked deprecated or seems abandoned, consider using any suggested alternate package the package author has declared or a package comprising of similar functionality that is maintained.
+
+#### Contribute a fix
+
+If a fix does not exist for the security advisory, you may want to suggest changes that addresses the vulnerability in a pull request on package's open source repository or contact the author through the `Contact owners` section on the NuGet.org package detail page.
+
+#### Open an issue
+
+If you do not want to fix the vulnerability or are unable to update or replace the package, open an issue in the package's issue tracker or preferred contact method.
+On NuGet.org, you can navigate to the package details page and click `Report package` which will guide you to get in contact with the author.
+
+### No security vulnerabilities found
+
+If no security vulnerabilities are found, this means that packages with known vulnerabilities were not found in your package graph at the present moment of time you checked.
+Since the advisory database can be updated at any time, we recommend regularly checking your `dotnet restore` output and ensuring the same in your continuous integration process.
 
 ## Running NuGet Audit in CI
 
@@ -175,122 +291,5 @@ Viewing [MSBuild's metaproj](/visualstudio/msbuild/how-to-build-specific-targets
 
 ## `dotnet list package --vulnerable`
 
-Once a project is successfully restored, [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) has a `--vulnerable` argument to filter the packages based on which packages have known vulnerabilities.
+[`dotnet list package`](/dotnet/core/tools/dotnet-list-package) has a `--vulnerable` argument to filter the packages based on which packages have known vulnerabilities.
 Note that `--include-transitive` is not default, so should be included.
-
-## Actions when packages with known vulnerabilities are reported
-
-Getting a warning about packages with known vulnerabilities is only part of the process.
-Once discovered, action needs to be taken to remove the potential vulnerability from your solution.
-
-The easiest case is when a package you reference directly has the known vulnerability. 
-In this situation, update the package version to one that fixes the vulnerability. 
-
-Package vulnerabilities may be reported in both direct and transitive package references.
-The action you take to resolve may be different because of that.
-
-### Security vulnerabilities found with updates
-
-If security vulnerabilities are found and updates are available for the package, you can either:
-
-- Edit the `.csproj` or other package version location (`Directory.Packages.props`) with a newer version containing a security fix.
-- Use the NuGet package manager user interface in Visual Studio to update the individual package.
-- Run the `dotnet package update --vulnerable` command to update all vulnerable packages in a project to the first version without known vulnerabilities.
-- Run the `dotnet package update` or `dotnet package add` commands with the respective package ID to update to the latest version. Use [`dotnet add package` when using .NET 9 or earlier](/dotnet/core/whats-new/dotnet-10/sdk#more-consistent-command-order).
-
-#### Transitive Packages
-
-Often a vulnerability will be in a transitive dependency.
-Our recommendation is to prefer updates to packages "closest" to your direct references.
-Though, there's nothing wrong with just upgrading the package with known vulnerability either.
-
-For example, say your project references package A.
-Package A has a dependency on package B, which in turn has a dependency on package C.
-In this example, we'll consider that package C version 1.0.0 has a known vulnerability, fixed in version 2.0.0.
-Our recommendation is to first try upgrading package A.
-If that doesn't resolve the audit warning, then try upgrading package B.
-If that doesn't resolve the audit warning, then upgrade C directly.
-To aid with this, you'll [need to find the transitive package path](#finding-the-transitive-package-path).
-
-In summary, if a known vulnerability exists in a top-level package's transitive dependencies, you have these options:
-
-- Check if the top-level package contains an update that does not have a transitive vulnerability and update that instead.
-- Update the closest package to your direct references that does not reference a vulnerability.
-- Add the fixed package version as a direct package reference. **Note:** Be sure to remove this reference when a new package version update becomes available and be sure to maintain the defined attributes for the expected behavior.
-- Use [Central Package Management with the transitive pinning functionality](../consume-packages/Central-Package-Management.md#transitive-pinning).
-  Note that if you pack your project into your own package to share with others, [CPM with transitive pinning will cause packages to become dependencies](../consume-packages/Central-Package-Management.md#transitive-pinning-and-pack), even if your project doesn't directly call APIs on that package.
-- [Suppress the advisory](#excluding-advisories) until it can be addressed.
-- File an issue in the top-level package's tracker to request an update.
-
-##### Finding the transitive package path
-
-There are several ways to find the package path.
-Which method you prefer depends on what tools you normally use during your development.
-
-###### dotnet nuget why
-
-On the command line, you can use the [`dotnet nuget why` command](/dotnet/core/tools/dotnet-nuget-why) to understand why transitive packages are being included in your project's package graph.
-
-![dotnet nuget why example](media/dotnet-nuget-why-1.png)
-
-###### Visual Studio Solution Explorer
-
-SDK style projects also provide the full package graph under the project's Dependency node.
-It's also searchable!
-Expand search options and enable “search external files”.
-
-![Visual Studio Solution Explorer Search Options](media/vs-solution-explorer-search-options-1.png)
-
-Search the package name, and it will show you all instances under each project's Dependencies node.
-
-![Visual Studio Solution Explorer Search Results](media/vs-solution-explorer-search-results-1.png)
-
-###### Visual Studio NuGet Package Manager UI
-
-When you look at the Installed tab in Visual Studio's package manager UI, when the project uses PackageReference for package management, it will show both direct and transitive packages.
-Currently, this only happens when you manage packages for a project, not for the solution.
-
-If you mouse hover over a package in the package list, the tooltip will include the name of one direct package that has caused that transitive package to be included in the project.
-
-![Visual Studio Package Manager UI tooltip](media/pm-ui-transitive-tooltip-1.png)
-
-### Use Copilot to update packages
-NuGet has released a Model Context Protocol (MCP) server that has the ability to update packages in your project to versions that resolve known vulnerabilities.
-See [Fixing package vulnerabilities](NuGet-MCP-Server.md#fixing-package-vulnerabilities) for more information.
-
-### Security vulnerabilities found with no updates
-
-In the case that a known vulnerability exists in a package without a security fix, you can do the following.
-
-- Check for any mitigating factors outlined in the advisory report.
-- Use a suggested package if the package is marked deprecated or is abandoned.
-- If the package is open source, consider contributing a fix.
-- Open an issue in the package's issue tracker.
-
-#### Check for mitigating factors
-
-Review the security advisor for any mitigating factors that may allow you to continue using the package with the vulnerability.
-The vulnerability may only exist when the code is used on a specific framework, operating system, or a special function is called.
-
-#### Use a suggested package
-
-In the case that a security advisory is reported for the package you're using and the package is marked deprecated or seems abandoned, consider using any suggested alternate package the package author has declared or a package comprising of similar functionality that is maintained.
-
-#### Contribute a fix
-
-If a fix does not exist for the security advisory, you may want to suggest changes that addresses the vulnerability in a pull request on package's open source repository or contact the author through the `Contact owners` section on the NuGet.org package detail page.
-
-#### Open an issue
-
-If you do not want to fix the vulnerability or are unable to update or replace the package, open an issue in the package's issue tracker or preferred contact method.
-On NuGet.org, you can navigate to the package details page and click `Report package` which will guide you to get in contact with the author.
-
-### No security vulnerabilities found
-
-If no security vulnerabilities are found, this means that packages with known vulnerabilities were not found in your package graph at the present moment of time you checked.
-Since the advisory database can be updated at any time, we recommend regularly checking your `dotnet restore` output and ensuring the same in your continuous integration process.
-
-## Summary
-
-Security auditing features are crucial for maintaining the security and integrity of software projects.
-These features provide you with an additional layer of protection against security vulnerabilities and ensures that you can use open source packages with confidence.
