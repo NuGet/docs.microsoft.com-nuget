@@ -73,7 +73,7 @@ dotnet package list
 
 ## Remove a package
 
-Use the [dotnet package remove](/dotnet/core/tools/dotnet-remove-package) command to remove a package reference from the project file.
+Use the [dotnet package remove](/dotnet/core/tools/dotnet-package-remove) command to remove a package reference from the project file.
 
 ```dotnetcli
 dotnet package remove <PACKAGE_NAME>
