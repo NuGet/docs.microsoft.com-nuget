@@ -123,7 +123,7 @@ If you see the error **This project references NuGet package(s) that are missing
 [!INCLUDE [restore-dotnet-cli](includes/restore-dotnet-cli.md)]
 
 > [!IMPORTANT]
-> To add a missing package reference to the project file, use [dotnet package add](/dotnet/core/tools/dotnet-add-package), which also runs `restore`.
+> To add a missing package reference to the project file, use [dotnet package add](/dotnet/core/tools/dotnet-package-add), which also runs `restore`.
 
 <a name="restore-using-the-nugetexe-cli"></a>
 
