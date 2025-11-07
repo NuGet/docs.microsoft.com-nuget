@@ -291,5 +291,5 @@ Viewing [MSBuild's metaproj](/visualstudio/msbuild/how-to-build-specific-targets
 
 ## `dotnet list package --vulnerable`
 
-Once a project is successfully restored, [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) has a `--vulnerable` argument to filter the packages based on which packages have known vulnerabilities.
+[`dotnet list package`](/dotnet/core/tools/dotnet-list-package) has a `--vulnerable` argument to filter the packages based on which packages have known vulnerabilities.
 Note that `--include-transitive` is not default, so should be included.
