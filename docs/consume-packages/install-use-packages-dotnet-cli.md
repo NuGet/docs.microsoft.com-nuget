@@ -21,20 +21,20 @@ For most commands, the CLI tool looks for a project file in the current director
 
 ## Install or update a package
 
-The [dotnet add package](/dotnet/core/tools/dotnet-add-package) command adds a package reference to the project file, and then runs `dotnet restore` to install the package.
+The [dotnet package add](/dotnet/core/tools/dotnet-add-package) command adds a package reference to the project file, and then runs `dotnet restore` to install the package.
 
 1. Open a command line and switch to the directory that contains your project file.
 
 1. Use the following command to install a NuGet package:
 
     ```dotnetcli
-    dotnet add package <PACKAGE_NAME>
+    dotnet package add <PACKAGE_NAME>
     ```
 
     For example, to install the `Newtonsoft.Json` package, use the following command
 
     ```dotnetcli
-    dotnet add package Newtonsoft.Json
+    dotnet package add Newtonsoft.Json
     ```
 
 1. After the command completes, you can open the project file to see the package reference.
@@ -49,40 +49,40 @@ The [dotnet add package](/dotnet/core/tools/dotnet-add-package) command adds a p
 
 ## Install a specific version of a package
 
-The `dotnet add package` command installs the latest version of the package unless you specify a different version.
+The `dotnet package add` command installs the latest version of the package unless you specify a different version.
 
 To install a specific version of a NuGet package, use the optional `-v` or `--version` switch:
 
 ```dotnetcli
-dotnet add package <PACKAGE_NAME> -v <VERSION>
+dotnet package add <PACKAGE_NAME> -v <VERSION>
 ```
 
 For example, to add version 12.0.1 of the `Newtonsoft.Json` package, use this command:
 
 ```dotnetcli
-dotnet add package Newtonsoft.Json --version 12.0.1
+dotnet package add Newtonsoft.Json --version 12.0.1
 ```
 
 ## List package references
 
-List the package references and versions for your project by using the [dotnet list package](/dotnet/core/tools/dotnet-list-package) command:
+List the package references and versions for your project by using the [dotnet package list](/dotnet/core/tools/dotnet-package-list) command:
 
 ```dotnetcli
-dotnet list package
+dotnet package list
 ```
 
 ## Remove a package
 
-Use the [dotnet remove package](/dotnet/core/tools/dotnet-remove-package) command to remove a package reference from the project file.
+Use the [dotnet package remove](/dotnet/core/tools/dotnet-remove-package) command to remove a package reference from the project file.
 
 ```dotnetcli
-dotnet remove package <PACKAGE_NAME>
+dotnet package remove <PACKAGE_NAME>
 ```
 
 For example, to remove the `Newtonsoft.Json` package, use the following command:
 
 ```dotnetcli
-dotnet remove package Newtonsoft.Json
+dotnet package remove Newtonsoft.Json
 ```
 
 ## Restore packages

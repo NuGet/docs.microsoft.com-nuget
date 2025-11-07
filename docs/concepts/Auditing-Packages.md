@@ -20,7 +20,7 @@ The goal of the audit is to identify and mitigate any security vulnerabilities t
 
 | NuGet | .NET SDK | Visual Studio | Feature |
 |-------|----------|---------------|---------|
-| [5.9](../release-notes/NuGet-5.9.md) | .NET 5 SDK (5.0.200) | N/A | [`dotnet list package --vulnerable`](#dotnet-list-package---vulnerable) |
+| [5.9](../release-notes/NuGet-5.9.md) | .NET 5 SDK (5.0.200) | N/A | [`dotnet package list --vulnerable`](#dotnet-list-package---vulnerable) |
 | [6.8](../release-notes/NuGet-6.8.md) | .NET 8 SDK (8.0.100) | Visual Studio 2022 17.8 | [NuGetAudit](#running-a-security-audit-with-restore) for PackageReference |
 | [6.10](../release-notes/NuGet-6.10.md) | N/A | Visual Studio 2022 17.10 | [NuGetAudit](#running-a-security-audit-with-restore) for packages.config|
 | [6.11](../release-notes/NuGet-6.11.md) | .NET 8 SDK (8.0.400) | Visual Studio 2022 17.11 | [NuGetAuditSuppress](#excluding-advisories) for PackageReference |
@@ -196,7 +196,7 @@ If security vulnerabilities are found and updates are available for the package,
 - Edit the `.csproj` or other package version location (`Directory.Packages.props`) with a newer version containing a security fix.
 - Use the NuGet package manager user interface in Visual Studio to update the individual package.
 - Run the `dotnet package update --vulnerable` command to update all vulnerable packages in a project to the first version without known vulnerabilities.
-- Run the `dotnet package update` or `dotnet package add` commands with the respective package ID to update to the latest version. Use [`dotnet add package` when using .NET 9 or earlier](/dotnet/core/whats-new/dotnet-10/sdk#more-consistent-command-order).
+- Run the `dotnet package update` or `dotnet package add` commands with the respective package ID to update to the latest version. Use [`dotnet package add` when using .NET 9 or earlier](/dotnet/core/whats-new/dotnet-10/sdk#more-consistent-command-order).
 
 #### Transitive Packages
 

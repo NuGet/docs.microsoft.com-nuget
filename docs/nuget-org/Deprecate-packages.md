@@ -47,10 +47,10 @@ Visual Studio warns about a deprecated package's usage on the `Installed` tab. I
 ### dotnet.exe
 *Available starting with .NET SDK 3.0*
 
-If you use dotnet.exe, you can run the command `dotnet list package --deprecated` on the solution or project folder to get a list of deprecated packages along with the deprecation information:
+If you use dotnet.exe, you can run the command `dotnet package list --deprecated` on the solution or project folder to get a list of deprecated packages along with the deprecation information:
 
 ```
-> dotnet list package --deprecated
+> dotnet package list --deprecated
 
 The following sources were used:
    https://api.nuget.org/v3/index.json
