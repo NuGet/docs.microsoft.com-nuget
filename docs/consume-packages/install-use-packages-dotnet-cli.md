@@ -21,7 +21,7 @@ For most commands, the CLI tool looks for a project file in the current director
 
 ## Install or update a package
 
-The [dotnet package add](/dotnet/core/tools/dotnet-add-package) command adds a package reference to the project file, and then runs `dotnet restore` to install the package.
+The [dotnet package add](/dotnet/core/tools/dotnet-package-add) command adds a package reference to the project file, and then runs `dotnet restore` to install the package.
 
 1. Open a command line and switch to the directory that contains your project file.
 
