@@ -22,7 +22,7 @@ NuGet distribution vehicles:
 
 * [Package pruning](../consume-packages/Package-References-in-Project-Files.md#prunepackagereference) is enabled for all projects targeting .NET 10 [#14345](https://github.com/NuGet/Home/issues/14345)
 
-* Created the [NuGet Model Context Protocol (MCP) Server](../concepts/NuGet-MCP-Server) available in package, [NuGet.Mcp.Server](https://www.nuget.org/packages/NuGet.Mcp.Server#readme-body-tab)
+* Created the [NuGet Model Context Protocol (MCP) Server](../concepts/NuGet-MCP-Server.md) available in package, [NuGet.Mcp.Server](https://www.nuget.org/packages/NuGet.Mcp.Server#readme-body-tab)
 
 * Enable packing legacy PackageReference projects without the need for a package - [#14046](https://github.com/NuGet/Home/issues/14046)
 
