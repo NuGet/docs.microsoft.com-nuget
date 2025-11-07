@@ -22,11 +22,8 @@ NuGet distribution vehicles:
 
 * [Package pruning](../consume-packages/Package-References-in-Project-Files.md#prunepackagereference) is enabled for all projects targeting .NET 10 [#14345](https://github.com/NuGet/Home/issues/14345)
 
-* (A) Created the [NuGet Model Context Protocol (MCP) Server](../concepts/NuGet-MCP-Server.md) available in package, [NuGet.Mcp.Server](https://www.nuget.org/packages/NuGet.Mcp.Server#readme-body-tab)
-
-* (B) Created the NuGet Model Context Protocol (MCP) Server, supported by .NET 10 SDK or later. NuGet's MCP is pre-installed in Visual Studio 2026, and installable in VS 17.14 and VS Code.
-
-* (C) Created the NuGet Model Context Protocol (MCP) Server, supported by .NET 10 SDK or later. NuGet's MCP is pre-installed in Visual Studio 2026, and installable in VS 17.14 and VS Code.
+* Created the [NuGet Model Context Protocol (MCP) Server](../concepts/NuGet-MCP-Server.md), supported by .NET 10 SDK or later.
+NuGet's MCP is pre-installed in Visual Studio 2026, and installable in VS 17.14 and VS Code.
 The server is published on nuget.org as the [NuGet.Mcp.Server](https://www.nuget.org/packages/NuGet.Mcp.Server#readme-body-tab) package.
 
 * Enable packing legacy PackageReference projects without the need for a package - [#14046](https://github.com/NuGet/Home/issues/14046)
