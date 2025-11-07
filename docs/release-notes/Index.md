@@ -1,8 +1,8 @@
 ---
 title: Release Notes
 description: Index of NuGet release notes and known issues for all versions.
-author: anangaur
-ms.author: anangaur
+author: donnie-msft
+ms.author: eagoodso
 ms.date: 05/25/2022
 ms.topic: release-notes
 ---
