@@ -22,7 +22,12 @@ NuGet distribution vehicles:
 
 * [Package pruning](../consume-packages/Package-References-in-Project-Files.md#prunepackagereference) is enabled for all projects targeting .NET 10 [#14345](https://github.com/NuGet/Home/issues/14345)
 
-* Created the [NuGet Model Context Protocol (MCP) Server](../concepts/NuGet-MCP-Server.md) available in package, [NuGet.Mcp.Server](https://www.nuget.org/packages/NuGet.Mcp.Server#readme-body-tab)
+* (A) Created the [NuGet Model Context Protocol (MCP) Server](../concepts/NuGet-MCP-Server.md) available in package, [NuGet.Mcp.Server](https://www.nuget.org/packages/NuGet.Mcp.Server#readme-body-tab)
+
+* (B) Created the NuGet Model Context Protocol (MCP) Server, supported by .NET 10 SDK or later. NuGet's MCP is pre-installed in Visual Studio 2026, and installable in VS 17.14 and VS Code.
+
+* (C) Created the NuGet Model Context Protocol (MCP) Server, supported by .NET 10 SDK or later. NuGet's MCP is pre-installed in Visual Studio 2026, and installable in VS 17.14 and VS Code.
+The server is published on nuget.org as the [NuGet.Mcp.Server](https://www.nuget.org/packages/NuGet.Mcp.Server#readme-body-tab) package.
 
 * Enable packing legacy PackageReference projects without the need for a package - [#14046](https://github.com/NuGet/Home/issues/14046)
 
@@ -77,77 +82,19 @@ NuGet distribution vehicles:
 
 ### Issues fixed in this release
 
-#### NuGet in Visual Studio fixes
-
-* Convert Search Control to Fluent UI - [#14469](https://github.com/NuGet/Home/issues/14469)
-
-* Improve validation of NuGet's settings in Visual Studio Options - [#14359](https://github.com/NuGet/Home/issues/14359)
-
-* Show validation errors on NuGet options pages while typing - [#14358](https://github.com/NuGet/Home/issues/14358)
-
-* [Bug Bash] Pressing the page-down button on the keyboard when focusing on ‘Version’ drop-down box with Tab key makes the box empty - [#13605](https://github.com/NuGet/Home/issues/13605)
-
-* [Bug Bash] [Unstable] The first removing of a source mapping from the ‘Package Source Mappings’ list in ‘Package Source Mapping’ dialog doesn’t work   - [#13520](https://github.com/NuGet/Home/issues/13520)
-
-* [Localization] The table title ‘Package Source Mapping’ in the ‘Options-&gt;NuGet Package Manager-&gt;Package Source Mapping’ page was not localized - [#14550](https://github.com/NuGet/Home/issues/14550)
-
 #### NuGet SDK fixes
 
 * Don&#39;t use reflection based deserialization in NuGet.Protocol - [#14470](https://github.com/NuGet/Home/issues/14470)
 
 * JsonSerializerIsReflectionDisabled on update to Nuget.Protocols 6.13.1 in apps with JsonSerializerIsReflectionEnabledByDefault set to false - [#14111](https://github.com/NuGet/Home/issues/14111)
 
-#### Other
-
-* Make NuGet.Client&#39;s Build.ps1 more friendly to GitHub Copilot in VSCode - [#14453](https://github.com/NuGet/Home/issues/14453)
-
-* dotnet nuget verify should output package content hash - [#14384](https://github.com/NuGet/Home/issues/14384)
-
-* Generate identical [Content_Types].xml on repeated builds - [#14357](https://github.com/NuGet/Home/issues/14357)
-
-* Consider not writing NuGetToolVersion to generated MSBuild props files on Restore - [#14355](https://github.com/NuGet/Home/issues/14355)
-
-* Package pruning is enabled for all projects targeting .NET 10 including multi-targeted ones - [#14345](https://github.com/NuGet/Home/issues/14345)
-
-* Remove NUGET_EXPERIMENTAL_USE_NJ_FOR_FILE_PARSING - [#14257](https://github.com/NuGet/Home/issues/14257)
+#### .NET CLI
 
 * Enable CanShowDialog for .NET core Authentication Plugins - [#14010](https://github.com/NuGet/Home/issues/14010)
 
 * &quot;dotnet package update&quot; modifies wrong project file (csproj) - [#14585](https://github.com/NuGet/Home/issues/14585)
 
-* VS crashes when the only project in the solution is a project.json project - [#14553](https://github.com/NuGet/Home/issues/14553)
-
-* Remove RestoreTargetGraph.Name as it&#39;s redundant with restoreTargetGraph.TargetGraphName being the widely used version - [#14529](https://github.com/NuGet/Home/issues/14529)
-
-* Remove RestoreArgs.LockFileVersion as it&#39;s functionality unused - [#14524](https://github.com/NuGet/Home/issues/14524)
-
-* pack legacy csproj: include pack targets and tasks in VS build tools - [#14520](https://github.com/NuGet/Home/issues/14520)
-
-* Change _RestorePackagePruningDefault  to RestorePackagePruningDefault - [#14511](https://github.com/NuGet/Home/issues/14511)
-
-* Remove NUGET_BULK_RESTORE_COORDINATION and NUGET_SOLUTION_CACHE_INITIALIZATION fallbacks - [#14502](https://github.com/NuGet/Home/issues/14502)
-
-* [Bug Bash] The “Options-&gt;NuGet Package Manager-&gt;Package Sources” page is disabled after checking or unchecking the checkbox “Enabled” of any one of the package sources having duplicated sources - [#14499](https://github.com/NuGet/Home/issues/14499)
-
-* Use Fluent TextBox for Project PM UI Installed Version - [#14466](https://github.com/NuGet/Home/issues/14466)
-
-* Dead Code: ActionsAndVersions View - [#14464](https://github.com/NuGet/Home/issues/14464)
-
-* Have to manually select pre-populated text on Add Package Source dialog - [#14450](https://github.com/NuGet/Home/issues/14450)
-
-* review exception handling - [#14440](https://github.com/NuGet/Home/issues/14440)
-
-* Improve perf by avoiding redundant dictionary lookups - [#14432](https://github.com/NuGet/Home/issues/14432)
-
-* Move pruning enabled frameworks to the NuGet.targets - [#14424](https://github.com/NuGet/Home/issues/14424)
-
-* Decommission Legacy VS Options NuGet Settings - [#14398](https://github.com/NuGet/Home/issues/14398)
-
-* LockFileLibrary does not need to be mutable - [#14385](https://github.com/NuGet/Home/issues/14385)
-
-* VS should not delete Package Source attributes when Name is updated - [#14370](https://github.com/NuGet/Home/issues/14370)
-
-* NuGet Restore fails if SQL Server Management Studio 21 is installed - [#14349](https://github.com/NuGet/Home/issues/14349)
+* dotnet nuget verify should output package content hash - [#14384](https://github.com/NuGet/Home/issues/14384)
 
 * dotnet package update should support --verbosity - [#14319](https://github.com/NuGet/Home/issues/14319)
 
@@ -161,27 +108,39 @@ NuGet distribution vehicles:
 
 * dotnet package update initial version - [#14305](https://github.com/NuGet/Home/issues/14305)
 
-* Warning rollout for PrunePackageReference - [#14126](https://github.com/NuGet/Home/issues/14126)
-
 * [Bug Bash][Unstable] An error “Attempted to divide by zero.” occurs when executing command “dotnet list [ProjectPath] package --vulnerable” - [#14122](https://github.com/NuGet/Home/issues/14122)
 
-* Missing audit warnings from &quot;nuget install&quot; when nuget.org is not a package source - [#14096](https://github.com/NuGet/Home/issues/14096)
-
-* Improve NU1004 when pruning is used with locked mode - [#14075](https://github.com/NuGet/Home/issues/14075)
-
-* It&#39;s not possible to push to HTTP sources specified via command line - [#14047](https://github.com/NuGet/Home/issues/14047)
-
-* New dependency resolver does not properly handle floating prerelease versions - [#13833](https://github.com/NuGet/Home/issues/13833)
-
-* Reenable new algorithm resolution with lock files - [#13800](https://github.com/NuGet/Home/issues/13800)
-
 * [Feature]: dotnet list [project | solution] package does not work with solution filters - [#11789](https://github.com/NuGet/Home/issues/11789)
+
+#### Package Manager UI in Visual Studio
+
+* Convert Search Control to Fluent UI - [#14469](https://github.com/NuGet/Home/issues/14469)
+
+* Use Fluent TextBox for Project PM UI Installed Version - [#14466](https://github.com/NuGet/Home/issues/14466)
+
+* [Bug Bash] There is a tiny gap in the version drop-down list of PM UI - [#11990](https://github.com/NuGet/Home/issues/11990)
+
+* [Bug Bash] The dropdown list of PM UI doesn’t distinguish the background color between selected-item and hover-on item - [#10977](https://github.com/NuGet/Home/issues/10977)
+
+* [Bug Bash] Pressing the page-down button on the keyboard when focusing on ‘Version’ drop-down box with Tab key makes the box empty - [#13605](https://github.com/NuGet/Home/issues/13605)
+
+* Dead Code: ActionsAndVersions View - [#14464](https://github.com/NuGet/Home/issues/14464)
+
+#### Visual Studio options
+
+* Decommission Legacy VS Options NuGet Settings - [#14398](https://github.com/NuGet/Home/issues/14398)
 
 * When adding an http source in the options dialog, have the user click on a checkbox to more explicitly agree to AllowInsecureConnections being added - [#14377](https://github.com/NuGet/Home/issues/14377)
 
 * Error needed in Package Sources settings for HTTP source without AllowInsecureConnections - [#14367](https://github.com/NuGet/Home/issues/14367)
 
-* dotnet restore/Visual Studio conflicting with .esproj + Nx project.json - [#13512](https://github.com/NuGet/Home/issues/13512)
+* Improve validation of NuGet's settings in Visual Studio Options - [#14359](https://github.com/NuGet/Home/issues/14359)
+
+* Show validation errors on NuGet options pages while typing - [#14358](https://github.com/NuGet/Home/issues/14358)
+
+* [Bug Bash] [Unstable] The first removing of a source mapping from the ‘Package Source Mappings’ list in ‘Package Source Mapping’ dialog doesn’t work   - [#13520](https://github.com/NuGet/Home/issues/13520)
+
+* [Localization] The table title ‘Package Source Mapping’ in the ‘Options-&gt;NuGet Package Manager-&gt;Package Source Mapping’ page was not localized - [#14550](https://github.com/NuGet/Home/issues/14550)
 
 * [Bug Bash] The offline package source cannot be enabled after disabling it from the ‘Machine-wide package sources’ source list previously in the ‘Options-&gt;NuGet Package Manager-&gt;Package Sources’ window - [#13434](https://github.com/NuGet/Home/issues/13434)
 
@@ -195,17 +154,73 @@ NuGet distribution vehicles:
 
 * [Bug Bash] The “Remove” button should be disable when no package source mapping is selected in the “Package Source Mappings” list  - [#13115](https://github.com/NuGet/Home/issues/13115)
 
-* Stop ilmerging pack - [#13079](https://github.com/NuGet/Home/issues/13079)
-
-* [Bug Bash] There will be a duplicated package source when modifying the name of source “Microsoft Visual Studio Offline Packages” - [#13057](https://github.com/NuGet/Home/issues/13057)
-
-* [Bug Bash] There is a tiny gap in the version drop-down list of PM UI - [#11990](https://github.com/NuGet/Home/issues/11990)
-
-* [Bug Bash] The dropdown list of PM UI doesn’t distinguish the background color between selected-item and hover-on item - [#10977](https://github.com/NuGet/Home/issues/10977)
-
 * [CSY] Duplicated hotkeys show in “Options-&gt;NuGet Package Manager-&gt;Package Sources” dialog - [#7822](https://github.com/NuGet/Home/issues/7822)
 
 * VS NuGet PMUI - Machine-wide package sources area should be vertically resize-able as well - [#7560](https://github.com/NuGet/Home/issues/7560)
+
+* [Bug Bash] There will be a duplicated package source when modifying the name of source “Microsoft Visual Studio Offline Packages” - [#13057](https://github.com/NuGet/Home/issues/13057)
+
+* [Bug Bash] The “Options-&gt;NuGet Package Manager-&gt;Package Sources” page is disabled after checking or unchecking the checkbox “Enabled” of any one of the package sources having duplicated sources - [#14499](https://github.com/NuGet/Home/issues/14499)
+
+* Have to manually select pre-populated text on Add Package Source dialog - [#14450](https://github.com/NuGet/Home/issues/14450)
+
+* VS should not delete Package Source attributes when Name is updated - [#14370](https://github.com/NuGet/Home/issues/14370)
+
+#### Package Pruning
+
+* Warning rollout for PrunePackageReference - [#14126](https://github.com/NuGet/Home/issues/14126)
+
+* Missing audit warnings from &quot;nuget install&quot; when nuget.org is not a package source - [#14096](https://github.com/NuGet/Home/issues/14096)
+
+* It&#39;s not possible to push to HTTP sources specified via command line - [#14047](https://github.com/NuGet/Home/issues/14047)
+
+* Package pruning is enabled for all projects targeting .NET 10 including multi-targeted ones - [#14345](https://github.com/NuGet/Home/issues/14345)
+
+* Move pruning enabled frameworks to the NuGet.targets - [#14424](https://github.com/NuGet/Home/issues/14424)
+
+* Change _RestorePackagePruningDefault  to RestorePackagePruningDefault - [#14511](https://github.com/NuGet/Home/issues/14511)
+
+#### Restore
+
+* dotnet restore/Visual Studio conflicting with .esproj + Nx project.json - [#13512](https://github.com/NuGet/Home/issues/13512)
+
+* Improve NU1004 when pruning is used with locked mode - [#14075](https://github.com/NuGet/Home/issues/14075)
+
+* Consider not writing NuGetToolVersion to generated MSBuild props files on Restore - [#14355](https://github.com/NuGet/Home/issues/14355)
+
+* NuGet Restore fails if SQL Server Management Studio 21 is installed - [#14349](https://github.com/NuGet/Home/issues/14349)
+
+* Remove NUGET_EXPERIMENTAL_USE_NJ_FOR_FILE_PARSING - [#14257](https://github.com/NuGet/Home/issues/14257)
+
+* Remove RestoreTargetGraph.Name as it&#39;s redundant with restoreTargetGraph.TargetGraphName being the widely used version - [#14529](https://github.com/NuGet/Home/issues/14529)
+
+* Remove RestoreArgs.LockFileVersion as it&#39;s functionality unused - [#14524](https://github.com/NuGet/Home/issues/14524)
+
+* Remove NUGET_BULK_RESTORE_COORDINATION and NUGET_SOLUTION_CACHE_INITIALIZATION fallbacks - [#14502](https://github.com/NuGet/Home/issues/14502)
+
+#### Dependency resolver
+
+* New dependency resolver does not properly handle floating prerelease versions - [#13833](https://github.com/NuGet/Home/issues/13833)
+
+* Reenable new algorithm resolution with lock files - [#13800](https://github.com/NuGet/Home/issues/13800)
+
+#### Other
+
+* Stop ilmerging pack - [#13079](https://github.com/NuGet/Home/issues/13079)
+
+* Make NuGet.Client&#39;s Build.ps1 more friendly to GitHub Copilot in VSCode - [#14453](https://github.com/NuGet/Home/issues/14453)
+
+* Generate identical [Content_Types].xml on repeated builds - [#14357](https://github.com/NuGet/Home/issues/14357)
+
+* pack legacy csproj: include pack targets and tasks in VS build tools - [#14520](https://github.com/NuGet/Home/issues/14520)
+
+* VS crashes when the only project in the solution is a project.json project - [#14553](https://github.com/NuGet/Home/issues/14553)
+
+* review exception handling - [#14440](https://github.com/NuGet/Home/issues/14440)
+
+* Improve perf by avoiding redundant dictionary lookups - [#14432](https://github.com/NuGet/Home/issues/14432)
+
+* LockFileLibrary does not need to be mutable - [#14385](https://github.com/NuGet/Home/issues/14385)
 
 [List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.14.1.1...7.0.0.289)
 
