@@ -126,6 +126,7 @@
 ### Resources
 #### [Autocomplete](api/search-autocomplete-service-resource.md)
 #### [Catalog](api/catalog-resource.md)
+#### [Owner URL](api/owner-details-template-resource.md)
 #### [Package content](api/package-base-address-resource.md)
 #### [Package details URL](api/package-details-template-resource.md)
 #### [Package metadata](api/registration-base-url-resource.md)
