@@ -37,7 +37,7 @@ All newly acquired PackageDownload packages will be installed in the global pack
 | pack | Included in the package specification | Not included in the package specification. |
 | Transitivity | PackageReference items are automatically propagated to dependant projects | PackageDownload items are ignored by dependant projects |
 | Version | Version ranges such as `1.0.0` or `[1.0.0, )` are supported. Exactly 1 version is allowed. | Only exact versions are supported. More than 1 version can be downloaded. |
-| dotnet list package | All dependencies are included | PackageDownload packages are not shown by `dotnet list package`. |
+| dotnet package list | All dependencies are included | PackageDownload packages are not shown by `dotnet package list`. |
 
 Due to the fact that PackageDownload are not tied to the project in any way beyond acquisition, multiple versions of the same package can be downloaded.
 
@@ -46,7 +46,7 @@ Due to the fact that PackageDownload are not tied to the project in any way beyo
 Given that this is an advanced feature with limited applicability, it doesn't have a tooling support equivalent to PackageReference.
 
 - There is no VisualStudio or dotnet.exe functionality to modify PackageDownload items. You can only change them manually in your project files.
-- dotnet add, remove, and list commands do not account for PackageDownload items.
+- dotnet package/reference add, remove, and list commands do not account for PackageDownload items.
 - PackageDownload items are *not* part of the [packages lock file](package-references-in-project-files.md#locking-dependencies).
 
 ### PackageDownload applications
