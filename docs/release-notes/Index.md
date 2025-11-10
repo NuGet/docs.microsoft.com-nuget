@@ -1,8 +1,8 @@
 ---
 title: Release Notes
 description: Index of NuGet release notes and known issues for all versions.
-author: anangaur
-ms.author: anangaur
+author: donnie-msft
+ms.author: eagoodso
 ms.date: 05/25/2022
 ms.topic: release-notes
 ---
@@ -11,7 +11,11 @@ ms.topic: release-notes
 
 [Known Issues](../release-notes/known-issues.md)
 
-[Nuget 6.13](../release-notes/NuGet-6.13.md)
+[NuGet 7.0](../release-notes/NuGet-7.0.md)
+
+[NuGet 6.14](../release-notes/NuGet-6.14.md)
+
+[NuGet 6.13](../release-notes/NuGet-6.13.md)
 
 [NuGet 6.12](../release-notes/NuGet-6.12.md)
 
