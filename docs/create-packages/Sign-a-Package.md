@@ -28,7 +28,7 @@ You can use self-issued certificates for testing purposes. However, packages sig
 
 ## Export the certificate file
 
-* If your certificate is stored in a hardware token, you should not export the certificate. Instead, specify the SHA-1 certificate fingerprint (thumbprint) by using the option `--certificate-fingerprint <SHA-1fingerprint>` (replacing `--certificate-path <PathToTheCertificate>`)
+* If your certificate is stored in a hardware token, you should not export the certificate. Instead, specify the SHA-2 family certificate fingerprints (thumbprint) by using the option `--certificate-fingerprint <SHA-2fingerprint>` (replacing `--certificate-path <PathToTheCertificate>`)
 
 * You can export an existing certificate to a binary DER format by using the Certificate Export Wizard.
 
