@@ -496,6 +496,16 @@ Below is an example `nuget.config` file that illustrates a number of settings in
         <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
     </packageSources>
 
+    <!-- Used to enforce that certain packages only come from specific package sources. -->
+    <packageSourceMapping>
+      <packageSource key="MyRepo - ES">
+        <package pattern="ES.*" />
+      </packageSource>
+      <packageSource key="NuGet official package source">
+        <package pattern="*" />
+      </packageSource>
+    </packageSourceMapping>
+
     <!-- Used to store credentials -->
     <packageSourceCredentials />
 
