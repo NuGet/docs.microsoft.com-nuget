@@ -113,7 +113,7 @@ The Visual Studio Package Manager Console, NuGet CLI, and dotnet CLI tools don't
 
 - For the NuGet CLI, use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. For more information, see the [NuGet CLI reference](../reference/nuget-exe-cli-reference.md).
 
-- For the dotnet CLI, specify a prerelease version with the `-v` argument. For more information, see the [dotnet add package reference](/dotnet/core/tools/dotnet-add-package).
+- For the dotnet CLI, specify a prerelease version with the `-v` argument. For more information, see the [dotnet package reference add](/dotnet/core/tools/dotnet-add-package).
 
 <a name="native-cpp-packages"></a>
 ### Native C++ packages
