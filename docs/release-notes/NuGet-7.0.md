@@ -17,6 +17,12 @@ NuGet distribution vehicles:
 
 <sup>1</sup> Installed with Visual Studio 2026 with any .NET workload
 
+## Summary: What's New in 7.0.1
+
+* Fixed NU1011 error that occurred when using Central Package Management with floating versions allowed [#14637](https://github.com/NuGet/Home/issues/14637)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.0.0.289...7.0.1.1)
+
 ## Summary: What's New in 7.0.0
 
 * Projects that target .NET 10 warn for vulnerabilities in transitive packages by defaulting to NuGetAuditMode=all [#14161](https://github.com/nuget/home/issues/14161)
