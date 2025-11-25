@@ -20,6 +20,8 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 7.0.1
 
+### Issues fixed in this release
+
 * Fixed NU1011 error that occurred when using Central Package Management with floating versions allowed [#14637](https://github.com/NuGet/Home/issues/14637)
 
 [List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.0.0.289...7.0.1.1)
