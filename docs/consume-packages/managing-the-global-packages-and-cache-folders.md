@@ -37,7 +37,7 @@ When using the [packages.config](../reference/packages-config.md), packages are 
 ### Cleaning the global-packages directory
 
 The global-packages directory needs to be manually cleaned to remove packages that are no longer used.
-You can do this with the `dotnet nuget locals global-packages --clean` command, or the "clear NuGet local resources" button in Visual Studio's options (equivalent to `dotnet nuget locals all --clear`).
+You can do this with the `dotnet nuget locals global-packages --clear` command, or the "clear NuGet local resources" button in Visual Studio's options (equivalent to `dotnet nuget locals all --clear`).
 After clearing the global-packages directory, you will need to restore your projects again to redownload all required packages.
 In Visual Studio, you may need to reload your solution to clear NuGet's "up to date restores" cache, or alternatively do a command line restore (for example, within Visual Studio's terminal window) with `msbuild -t:restore your.sln`.
 
