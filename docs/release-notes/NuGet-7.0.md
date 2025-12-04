@@ -14,8 +14,17 @@ NuGet distribution vehicles:
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 | :---|:---|:---|
 | [**7.0.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.0.0](https://visualstudio.microsoft.com/downloads/) | [10.0.100](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> |
+| [**7.0.1**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.1.0](https://visualstudio.microsoft.com/downloads/) | |
 
 <sup>1</sup> Installed with Visual Studio 2026 with any .NET workload
+
+## Summary: What's New in 7.0.1
+
+### Issues fixed in this release
+
+* Fixed NU1011 error that occurred when using Central Package Management with floating versions allowed [#14637](https://github.com/NuGet/Home/issues/14637)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.0.0.289...7.0.1.1)
 
 ## Summary: What's New in 7.0.0
 
