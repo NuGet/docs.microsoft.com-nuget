@@ -15,7 +15,7 @@ NuGet distribution vehicles:
 | :---|:---|:---|
 | [**7.0.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.0.0](https://visualstudio.microsoft.com/downloads/) | [10.0.100](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> |
 | [**7.0.1**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.1.0](https://visualstudio.microsoft.com/downloads/) | |
-| [**7.0.2**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.1.1](https://visualstudio.microsoft.com/downloads/) | |
+| [**7.0.2**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.1.1](https://visualstudio.microsoft.com/downloads/) | [10.0.102](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2026 with any .NET workload
 
