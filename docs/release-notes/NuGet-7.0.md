@@ -21,11 +21,11 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 7.0.2
 
-* Vulnerability InfoBar now has "How to fix with GitHub Copilot" link to NuGet's MCP Server documentation [6959](https://github.com/NuGet/NuGet.Client/pull/6959)
+* Vulnerability InfoBar in Visual Studio now has "How to fix with GitHub Copilot" link to NuGet's MCP Server documentation [#14680](https://github.com/NuGet/Home/issues/14680)
 
 ### Issues fixed in this release
 
-* dotnet nuget why is writing target package on new line instead of in package graph [14664](https://github.com/nuget/home/issues/14664)
+* dotnet nuget why is writing target package on new line instead of in package graph [#14664](https://github.com/NuGet/Home/issues/14664)
 
 [List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.0.1.1...7.0.2.3)
 
