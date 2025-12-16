@@ -119,7 +119,7 @@ Currently, creating source mappings is automatic only when:
 
 - The project is using PackageReference.
 - Package source mapping is already enabled (you've added a mapping already, or created a section in your NuGet.Config).
-- A single package source is selected in the dropdown (i.e., selecting "All" for package sources is not supported as it is ambiguous which source should be mapped)
+- A single package source is selected in the dropdown (that is, selecting "All" for package sources is not supported as it is ambiguous which source should be mapped).
 
 ![The Newtonsoft.Json package is selected in Package Manager UI and the message "A package source mapping will be created." is shown. The "Show preview window" option is checked.](./media/package-source-mapping-auto.png)
 
