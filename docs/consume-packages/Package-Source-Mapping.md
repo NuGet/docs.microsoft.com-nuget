@@ -109,7 +109,7 @@ Package Source Mapping settings are applied following [nuget.config precedence r
 
 ## Installing with Package Manager UI
 
-As of Visual Studio 17.8 or newer, when the criteria below is met, Package Manager UI will attempt to automatically create package source mappings when you use the package Install and Update features.
+As of Visual Studio 17.8 or newer, when the criteria below is met, Package Manager UI will attempt to automatically create package source mappings for the package IDs being installed (the top-level and dependent packages), when using the package Install or Update features.
 
 The following message will be shown when the criteria for this to happen automatically is met:
 
@@ -131,7 +131,7 @@ Selecting the "Show preview window" option will list the new package source mapp
 If the preview is not what you want for the source mappings, cancel the install and configure the relevant source mappings manually prior to performing the Install/Update.
 
 For example, installing the package `Polly` results in both `Polly` and its dependency `Polly.Core` being automatically source mapped to the selected package source, nuget.org.
-Microsoft dependent packages are being installed using the existing `Microsoft.*` package source mapping.
+Microsoft dependent packages are being installed using existing package source mappings.
 
 ![Preview changes window showing a Solution section with "Creating source mappings to 'nuget.org': Polly, Polly.Core" with an Apply, Copy, and Cancel button.](./media/package-source-mapping-preview.png)
 
