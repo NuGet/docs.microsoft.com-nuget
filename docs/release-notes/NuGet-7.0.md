@@ -15,8 +15,19 @@ NuGet distribution vehicles:
 | :---|:---|:---|
 | [**7.0.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.0.0](https://visualstudio.microsoft.com/downloads/) | [10.0.100](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> |
 | [**7.0.1**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.1.0](https://visualstudio.microsoft.com/downloads/) | |
+| [**7.0.2**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.1.1](https://visualstudio.microsoft.com/downloads/) | [10.0.102](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2026 with any .NET workload
+
+## Summary: What's New in 7.0.2
+
+* Vulnerability InfoBar in Visual Studio now has "How to fix with GitHub Copilot" link to NuGet's MCP Server documentation - [#14680](https://github.com/NuGet/Home/issues/14680)
+
+### Issues fixed in this release
+
+* dotnet nuget why is writing target package on new line instead of in package graph - [#14664](https://github.com/NuGet/Home/issues/14664)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.0.1.1...7.0.2.3)
 
 ## Summary: What's New in 7.0.1
 

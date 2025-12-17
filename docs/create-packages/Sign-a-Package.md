@@ -73,7 +73,7 @@ To publish a signed package, you must first register the certificate with NuGet.
 > [!NOTE]
 >
 > * One user can submit multiple certificates and the same certificate can be registered by multiple users.
-> * Once a user has a certificate registered, all future package submissions **must** be signed with one of the certificates. See [Manage signing requirements for your package on NuGet.org](#manage-signing-requirements-for-your-package-on-nugetorg)
+> * While a user has one or more certificates registered, all package submissions **must** be signed with one of the certificates. See [Manage signing requirements for your package on NuGet.org](#manage-signing-requirements-for-your-package-on-nugetorg)
 > * Users can also remove a registered certificate from the account. Once a certificate is removed, new packages signed with that certificate will fail at submission. Existing packages aren't affected.
 
 ## Publish the package
