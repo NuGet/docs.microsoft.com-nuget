@@ -98,6 +98,7 @@ NuGet.org allows all images, including badges, from the following trusted domain
 * codefactor.io
 * coveralls.io
 * dev.azure.com
+* devpod.sh
 * flat.badgen.net
 * github.com/.../workflows/.../badge.svg
 * gitlab.com
