@@ -56,7 +56,11 @@ To get started:
        > This corresponds to your workflow at `.github/workflows/build.yml`. Enter the **file name only** (`build.yml`)—do not include the `.github/workflows/` path.  
      - **Environment (optional):** `release` 
        > Enter environment if your workflow uses e.g. `environment: release` and you want to restrict this policy to that environment. Leave this empty if you do not use GitHub Actions environments.
-4. In your **GitHub repo**, update your workflow to request a short‑lived API key and push your package.  
+4. In your **GitHub repo**, update your workflow to request a short‑lived API key and push your package.
+
+> [!NOTE]
+> While pull requests by third parties will be able to change the workflow file, their requests will be stamped with their owner and repository name IDs and thus won't match the configured trust policy and will be rejected.
+
 Here’s a basic example:
 
 ```yaml
