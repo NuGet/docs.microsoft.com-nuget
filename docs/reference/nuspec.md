@@ -27,11 +27,11 @@ In this topic:
 
 - Use `.nuspec` with `nuget.exe pack` for non-SDK-style projects that use `packages.config`.
 
-- A `.nuspec` file is not required to create packages for [SDK-style projects](../resources/check-project-format.md) (typically .NET Core and .NET Standard projects that use the [SDK attribute](/dotnet/core/tools/csproj#additions)). (Note that a `.nuspec` is generated when you create the package.)
+- A `.nuspec` file is not required to create packages for [SDK-style projects](../resources/check-project-format.md) (typically .NET Core and .NET Standard projects that use the [SDK attribute](/dotnet/core/project-sdk/overview). (Note that a `.nuspec` is generated when you create the package.)
 
    If you are creating a package using `dotnet.exe pack` or `msbuild pack target`, we recommend that you [include all the properties](../reference/msbuild-targets.md#pack-target) that are usually in the `.nuspec` file in the project file instead. However, you can instead choose to [use a `.nuspec` file to pack using `dotnet.exe` or `msbuild pack target`](../reference/msbuild-targets.md#packing-using-a-nuspec-file).
 
-- For projects migrated from `packages.config` to [PackageReference](../consume-packages/package-references-in-project-files.md), a `.nuspec` file is not required to create the package. Instead, use [msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
+- For projects migrated from `packages.config` to [PackageReference](../consume-packages/Package-References-in-Project-Files.md), a `.nuspec` file is not required to create the package. Instead, use [msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
 ## General form and schema
 
@@ -78,12 +78,12 @@ Although the following elements are the minimum requirements for a package, you 
 These elements must appear within a `<metadata>` element.
 
 #### id 
-The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package resides in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number) for guidance.
+The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package resides in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/Creating-a-Package.md#choose-a-unique-package-identifier-and-setting-the-version-number) for guidance.
 
 When uploading a package to nuget.org, the `id` field is limited to 128 characters.
 
 #### version
-The version of the package, following the *major.minor.patch* pattern. Version numbers may include a pre-release suffix as described in [Package versioning](../concepts/package-versioning.md#pre-release-versions). 
+The version of the package, following the *major.minor.patch* pattern. Version numbers may include a pre-release suffix as described in [Package versioning](../concepts/Package-Versioning.md#pre-release-versions). 
 
 When uploading a package to nuget.org, the `version` field is limited to 64 characters.
 
@@ -95,7 +95,7 @@ When uploading a package to nuget.org, the `description` field is limited to 400
 #### authors
 A comma-separated list of package authors. 
 The `authors` and the `owners` from the nuspec are ignored when uploading the package to nuget.org.
-For setting package ownership on nuget.org, see [Managing package owners on nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
+For setting package ownership on nuget.org, see [Managing package owners on nuget.org](../nuget-org/Publish-a-package.md#managing-package-owners-on-nugetorg). 
 
 ### Optional metadata elements
 
@@ -105,7 +105,7 @@ For setting package ownership on nuget.org, see [Managing package owners on nuge
 
 A comma-separated list of package owners. 
 The `owners` from the nuspec is ignored when uploading the package to nuget.org.
-For setting package ownership on nuget.org, see [Managing package owners on nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
+For setting package ownership on nuget.org, see [Managing package owners on nuget.org](../nuget-org/Publish-a-package.md#managing-package-owners-on-nugetorg). 
 
 #### projectUrl
 A URL for the package's home page, often shown in UI displays as well as nuget.org. 
@@ -262,7 +262,7 @@ When uploading a package to nuget.org, the `releaseNotes` field is limited to 35
 When uploading a package to nuget.org, the `copyright` field is limited to 4000 characters.
 
 #### language
-The locale ID for the package. See [Creating localized packages](../create-packages/creating-localized-packages.md).
+The locale ID for the package. See [Creating localized packages](../create-packages/Creating-Localized-Packages.md).
 
 #### tags
 A space-delimited list of tags and keywords that describe the package and aid discoverability of packages through search and filtering. 
@@ -395,7 +395,7 @@ The `<dependencies>` element within `<metadata>` contains any number of `<depend
 | Attribute | Description |
 | --- | --- |
 | `id` | (Required) The package ID of the dependency, such as "EntityFramework" and "NUnit", which is the name of the package nuget.org shows on a package page. |
-| `version` | (Required) The range of versions acceptable as a dependency. See [Package versioning](../concepts/package-versioning.md#version-ranges) for exact syntax. Floating versions are not supported. |
+| `version` | (Required) The range of versions acceptable as a dependency. See [Package versioning](../concepts/Package-Versioning.md#version-ranges) for exact syntax. Floating versions are not supported. |
 | include | A comma-delimited list of include/exclude tags (see below) indicating of the dependency to include in the final package. The default value is `all`. |
 | exclude | A comma-delimited list of include/exclude tags (see below) indicating of the dependency to exclude in the final package. The  default value is `build,analyzers` which can be over-written. But `content/ ContentFiles` are also implicitly excluded in the final package which can't be over-written. Tags specified with `exclude` take precedence over those specified with `include`. For example, `include="runtime, compile" exclude="compile"` is the same as `include="runtime"`. |
 
@@ -447,7 +447,7 @@ The `<group>` element without a `targetFramework` attribute is used as the defau
 > The group format cannot be intermixed with a flat list.
 
 > [!Note]
-> The format of [Target Framework Moniker (TFM)](../reference/target-frameworks.md) used in `lib/ref` folder is different when compared to the TFM used in `dependency groups`. If the target frameworks declared in the `dependencies group` and the `lib/ref` folder of `.nuspec` file do not have exact matches then `pack` command will raise [NuGet Warning NU5128](../reference/errors-and-warnings/nu5128.md).
+> The format of [Target Framework Moniker (TFM)](../reference/target-frameworks.md) used in `lib/ref` folder is different when compared to the TFM used in `dependency groups`. If the target frameworks declared in the `dependencies group` and the `lib/ref` folder of `.nuspec` file do not have exact matches then `pack` command will raise [NuGet Warning NU5128](../reference/errors-and-warnings/NU5128.md).
 
 The following example shows different variations of the `<group>` element:
 
@@ -471,7 +471,7 @@ The following example shows different variations of the `<group>` element:
 
 ## Explicit assembly references
 
-The `<references>` element is used by projects using `packages.config` to explicitly specify the assemblies that the target project should reference when using the package. Explicit references are typically used for design-time only assemblies. For more information, see the page on [selecting assemblies referenced by projects](../create-packages/select-assemblies-referenced-by-projects.md) for more information.
+The `<references>` element is used by projects using `packages.config` to explicitly specify the assemblies that the target project should reference when using the package. Explicit references are typically used for design-time only assemblies. For more information, see the page on [selecting assemblies referenced by projects](../create-packages/Select-assemblies-referenced-by-projects.md) for more information.
 
 For example, the following `<references>` element instructs NuGet to add references to only `xunit.dll` and `xunit.extensions.dll` even if there are additional assemblies in the package:
 
@@ -538,7 +538,7 @@ The following example shows a reference to `System.Net` for all target framework
 
 ## Including assembly files
 
-If you follow the conventions described in [Creating a Package](../create-packages/creating-a-package.md), you do not have to explicitly specify a list of files in the `.nuspec` file. The `nuget pack` command automatically picks up the necessary files.
+If you follow the conventions described in [Creating a Package](../create-packages/Creating-a-Package.md), you do not have to explicitly specify a list of files in the `.nuspec` file. The `nuget pack` command automatically picks up the necessary files.
 
 > [!Important]
 > When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, *excluding* those that are named `.resources.dll` because they are assumed to be localized satellite assemblies. For this reason, avoid using `.resources.dll` for files that otherwise contain essential package code.
@@ -562,7 +562,7 @@ Each `<file>` element specifies the following attributes:
 | Attribute | Description |
 | --- | --- |
 | **src** | The location of the file or files to include, subject to exclusions specified by the `exclude` attribute. The path is relative to the `.nuspec` file unless an absolute path is specified. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
-| **target** | The relative path to the folder within the package where the source files are placed, which must begin with `lib`, `content`, `build`, or `tools`. See [Creating a .nuspec from a convention-based working directory](../create-packages/creating-a-package.md#from-a-convention-based-working-directory). |
+| **target** | The relative path to the folder within the package where the source files are placed, which must begin with `lib`, `content`, `build`, or `tools`. See [Creating a .nuspec from a convention-based working directory](../create-packages/Creating-a-Package.md#from-a-convention-based-working-directory). |
 | **exclude** | A semicolon-delimited list of files or file patterns to exclude from the `src` location. The wildcard character `*` is allowed, and the double wildcard `**` implies a recursive folder search. |
 
 ### Examples

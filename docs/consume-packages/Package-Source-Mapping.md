@@ -28,6 +28,7 @@ For detailed information on all Visual Studio NuGet options, see [NuGet Options 
 | 17.0 - 17.4 | ✅ Available | ❌ Not available | ❌ Not available |
 | 17.5 | ✅ Available | ✅ Available | ❌ Not available |
 | 17.7 Preview 3| ✅ Available | ✅ Available | ✅ Status displayed |
+| 17.8 | ✅ Available | ✅ Available | ✅ [PackageReference automatically creates mappings](#installing-with-package-manager-ui)|
 
 The feature is available across all NuGet integrated tooling.
 
@@ -105,6 +106,34 @@ The NuGet Package Manager window will refresh and reflect the new status of the 
 ```
 
 Package Source Mapping settings are applied following [nuget.config precedence rules](configuring-nuget-behavior.md#how-settings-are-applied) when multiple `nuget.config` files at various levels (machine-level, user-level, repo-level) are present.
+
+## Installing with Package Manager UI
+
+As of Visual Studio 17.8 or newer, when the criteria below is met, Package Manager UI will attempt to automatically create package source mappings for the package IDs being installed (the top-level and dependent packages), when using the package Install or Update features.
+
+The following message will be shown when the criteria for this to happen automatically is met:
+
+> A package source mapping will be created.
+
+Currently, creating source mappings is automatic only when:
+
+- The project is using PackageReference.
+- Package source mapping is already enabled (you've added a mapping already, or created a section in your NuGet.Config).
+- A single package source is selected in the dropdown (that is, selecting "All" for package sources is not supported as it is ambiguous which source should be mapped).
+
+![The Newtonsoft.Json package is selected in Package Manager UI and the message "A package source mapping will be created." is shown. The "Show preview window" option is checked.](./media/package-source-mapping-auto.png)
+
+The operation may fail with [NU1110](../../docs/reference/errors-and-warnings/NU1110.md) if it's found that a dependency in your Global Packages Folder came from a package source that isn't enabled in your current solution.
+See the error code documentation for ways to resolve this problem.
+
+Selecting the "Show preview window" option will list the new package source mappings being created.
+
+If the preview is not what you want for the source mappings, cancel the install and configure the relevant source mappings manually prior to performing the Install/Update.
+
+For example, installing the package `Polly` results in both `Polly` and its dependency `Polly.Core` being automatically source mapped to the selected package source, nuget.org.
+Microsoft dependent packages are being installed using existing package source mappings.
+
+![Preview changes window showing a Solution section with "Creating source mappings to 'nuget.org': Polly, Polly.Core" with an Apply, Copy, and Cancel button.](./media/package-source-mapping-preview.png)
 
 ## Package Source Mapping rules
 
