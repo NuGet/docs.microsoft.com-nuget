@@ -4,7 +4,7 @@ description: How to configure and use the NuGet Model Context Protocol (MCP) ser
 author: jeffkl
 ms.author: jeffkl
 ms.topic: conceptual
-ms.date: 10/01/2025
+ms.date: 01/20/2026
 ---
 
 # Using the NuGet Model Context Protocol (MCP) Server
@@ -65,7 +65,7 @@ You should see the MCP server named "nuget" in the list of available servers.
 To configure the NuGet MCP server in VS Code click the appropriate button below and it will be set up.
 
 [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](
-https://vscode.dev/redirect/mcp/install?name=NuGet&config=%7B%22name%22%3A%22NuGet.Mcp.Server%22%2C%22command%22%3A%22dnx%22%2C%22args%22%3A%5B%22NuGet.Mcp.Server%22%2C%22https%3A%2F%2Fapi.nuget.org%2Fv3%2Findex.json%22%2Cnull%2Cnull%5D%7D) [![Install in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-Install_Server-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=NuGet&config=%7B%22name%22%3A%22NuGet.Mcp.Server%22%2C%22command%22%3A%22dnx%22%2C%22args%22%3A%5B%22NuGet.Mcp.Server%22%2C%22https%3A%2F%2Fapi.nuget.org%2Fv3%2Findex.json%22%2Cnull%2Cnull%5D%7D&quality=insiders)
+https://vscode.dev/redirect/mcp/install?name=NuGet&config=%7B%22name%22%3A%22NuGet.Mcp.Server%22%2C%22command%22%3A%22dnx%22%2C%22args%22%3A%5B%22NuGet.Mcp.Server%22%2C%22--source%22%2C%20%22https%3A%2F%2Fapi.nuget.org%2Fv3%2Findex.json%22%2C%22--yes%22%5D%7D) [![Install in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-Install_Server-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=NuGet&config=%7B%22name%22%3A%22NuGet.Mcp.Server%22%2C%22command%22%3A%22dnx%22%2C%22args%22%3A%5B%22NuGet.Mcp.Server%22%2C%22--source%22%2C%22https%3A%2F%2Fapi.nuget.org%2Fv3%2Findex.json%22%2C%22--yes%22%5D%7D&quality=insiders)
 
 > ![GitHub Copilot Chat Tools window in VS Code](./media/copilot-tools-menu-vs-code.png)
 
