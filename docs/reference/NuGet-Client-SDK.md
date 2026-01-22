@@ -59,7 +59,7 @@ NuGet's package maintenance approach will align with the [.NET Package Maintenan
 Install the `NuGet.Protocol` package to interact with HTTP and folder-based NuGet package feeds:
 
 ```ps1
-dotnet add package NuGet.Protocol
+dotnet package add NuGet.Protocol
 ```
 
 You can find the source code for these examples on the [NuGet.Protocol.Samples](https://github.com/NuGet/Samples/tree/main/NuGetProtocolSamples) project on GitHub.
@@ -119,7 +119,7 @@ Use [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) to work wi
 Install the `NuGet.Packaging` package to interact with `.nupkg` and `.nuspec` files from a stream:
 
 ```ps1
-dotnet add package NuGet.Packaging
+dotnet package add NuGet.Packaging
 ```
 
 ### Create a package
