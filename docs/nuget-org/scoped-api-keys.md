@@ -4,7 +4,7 @@ description: Take control of API keys that you use to push packages
 author: mikejo5000
 ms.author: mikejo
 ms.date: 06/04/2019
-ms.topic: article
+ms.topic: concept-article
 ---
 
 # Scoped API keys

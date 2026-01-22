@@ -4,7 +4,7 @@ description: Describes the PackageDownload feature, which is a complement to Pac
 author: nkolev92
 ms.author: nikolev
 ms.date: 12/22/2021
-ms.topic: article
+ms.topic: concept-article
 ---
 
 # PackageDownload

@@ -3,7 +3,7 @@ title: Using the NuGet Model Context Protocol (MCP) Server
 description: How to configure and use the NuGet Model Context Protocol (MCP) server.
 author: jeffkl
 ms.author: jeffkl
-ms.topic: conceptual
+ms.topic: get-started
 ms.date: 01/20/2026
 ---
 

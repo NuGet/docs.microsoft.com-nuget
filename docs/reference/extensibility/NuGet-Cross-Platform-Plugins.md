@@ -4,7 +4,7 @@ description: NuGet cross platform plugins for NuGet.exe, dotnet.exe, msbuild.exe
 author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
-ms.topic: article
+ms.topic: concept-article
 ---
 
 # NuGet cross platform plugins

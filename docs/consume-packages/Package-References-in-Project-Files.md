@@ -4,7 +4,7 @@ description: Details on NuGet PackageReference in project files as supported by 
 author: nkolev92
 ms.author: nikolev
 ms.date: 4/6/2022
-ms.topic: article
+ms.topic: concept-article
 ---
 
 # `PackageReference` in project files

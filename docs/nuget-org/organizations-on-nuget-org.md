@@ -4,7 +4,7 @@ description: Organizations on NuGet.org helps you to manage packages published b
 author: anangaur
 ms.author: anangaur
 ms.date: 04/10/2018
-ms.topic: article
+ms.topic: concept-article
 ms.reviewer: 
   - kraigb
   - camsoper
