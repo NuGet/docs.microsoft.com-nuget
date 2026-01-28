@@ -4,7 +4,7 @@ description: NuGet.Config files control NuGet's behavior, and can be modified wi
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/10/2022
-ms.topic: article
+ms.topic: how-to
 ---
 
 # Common NuGet configurations

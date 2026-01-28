@@ -4,7 +4,7 @@ description: Trusted Publishing on nuget.org
 author: etvorun
 ms.author: evgenyt
 ms.date: 07/01/2025
-ms.topic: article
+ms.topic: best-practice
 ---
 
 # Trusted Publishing on nuget.org

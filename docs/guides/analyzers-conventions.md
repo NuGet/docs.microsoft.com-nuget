@@ -4,7 +4,7 @@ description: Conventions for .NET analyzers that are packaged and distributed wi
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
-ms.topic: article
+ms.topic: concept-article
 ---
 
 # Analyzer NuGet formats

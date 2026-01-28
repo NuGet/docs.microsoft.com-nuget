@@ -4,7 +4,7 @@ description: Manage your dependencies in a central location and learn how to get
 author: jondouglas
 ms.author: jodou
 ms.date: 05/09/2022
-ms.topic: article
+ms.topic: how-to
 ---
 
 # Central Package Management (CPM)
