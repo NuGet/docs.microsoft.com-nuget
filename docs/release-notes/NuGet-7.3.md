@@ -20,13 +20,11 @@ NuGet distribution vehicles:
 
 * Support for managing audit sources in Visual Studio options UI - [#13955](https://github.com/NuGet/Home/issues/13955)
 
-* &quot;Manage NuGet Packages&quot; in vulnerability gold bar could take you to a view with vulnerability filter selected - [#13050](https://github.com/NuGet/Home/issues/13050)
+* `Manage NuGet Packages` in vulnerability gold bar could take you to a view with vulnerability filter selected - [#13050](https://github.com/NuGet/Home/issues/13050)
 
 * Vulnerability InfoBar in Visual Studio now has &quot;How to fix with GitHub Copilot&quot; link to NuGet&#39;s MCP Server documentation - [#14680](https://github.com/NuGet/Home/issues/14680)
 
-* Add &quot;dotnet nuget download&quot; command - [#12513](https://github.com/NuGet/Home/issues/12513)
-
-### Breaking changes
+* Add `dotnet nuget download` command - [#12513](https://github.com/NuGet/Home/issues/12513)
 
 ### Issues fixed in this release
 
