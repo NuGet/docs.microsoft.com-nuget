@@ -18,7 +18,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 7.3.0
 
-* Support for add/update/delete auditsources in Visual Studio options UI - [#13955](https://github.com/NuGet/Home/issues/13955)
+* Support for managing audit sources in Visual Studio options UI - [#13955](https://github.com/NuGet/Home/issues/13955)
 
 * &quot;Manage NuGet Packages&quot; in vulnerability gold bar could take you to a view with vulnerability filter selected - [#13050](https://github.com/NuGet/Home/issues/13050)
 
