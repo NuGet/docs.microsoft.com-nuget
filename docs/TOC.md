@@ -352,6 +352,7 @@
 ### [Known Issues](release-notes/known-issues.md)
 ### NuGet 7.x
 #### [NuGet 7.0](release-notes/NuGet-7.0.md)
+#### [NuGet 7.3](release-notes/NuGet-7.3.md)
 ### NuGet 6.x
 #### [NuGet 6.14](release-notes/NuGet-6.14.md)
 #### [NuGet 6.13](release-notes/NuGet-6.13.md)
