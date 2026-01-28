@@ -1,7 +1,7 @@
 ---
 title: NuGet 7.3 Release Notes
 description: Release notes for NuGet 7.3 including new features, bug fixes, and DCRs.
-author: nkoev92
+author: nkolev92
 ms.date: 1/28/2026
 ms.topic: release-notes
 ---
