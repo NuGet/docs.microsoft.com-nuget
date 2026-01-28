@@ -14,7 +14,7 @@ NuGet distribution vehicles:
 |:---|:---|:---|
 | [**7.3.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.3.0](https://visualstudio.microsoft.com/downloads/) | [10.0.200](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio <TODO: VSYear. Unknown version/year combo, consider updating the tool.> with any .NET workload
+<sup>1</sup> Installed with Visual Studio 2026 with any .NET workload
 
 ## Summary: What's New in 7.3.0
 
