@@ -1,15 +1,15 @@
 ---
-title: How to manage the global packages, cache, temp folders in NuGet
-description: How to manage the global package installation folder, the package cache, and the temp folders that exist on a computer, which are used when installing, restoring, and updating packages.
+title: How to manage the global packages, http cache, temp directories in NuGet
+description: How to manage the global package installation directory, the http cache, and the temp directory that exist on a computer, which are used when installing, restoring, and updating packages.
 author: JonDouglas
 ms.author: jodou
-ms.date: 03/19/2018
+ms.date: 01/30/2026
 ms.topic: how-to
 ---
 
-# Managing the global packages, cache, and temp folders
+# Managing the global packages, cache, and temp directories
 
-Whenever you install, update, or restore a package, NuGet manages packages and package information in several folders outside of your project structure:
+Whenever you install, update, or restore a package, NuGet manages packages and package information in several directories outside of your project structure:
 
 | Name | Location |
 | --- | --- |
@@ -21,18 +21,22 @@ Whenever you install, update, or restore a package, NuGet manages packages and p
 > [!Note]
 > NuGet 3.5 and earlier uses *packages-cache* instead of the *http-cache*, which is located in `%localappdata%\NuGet\Cache`.
 
-By using the cache and *global-packages* folders, NuGet generally avoids downloading packages that already exist on the computer, improving the performance of install, update, and restore operations. When using PackageReference, the *global-packages* folder also avoids keeping downloaded packages inside project folders, where they might be inadvertently added to source control, and reduces NuGet's overall impact on computer storage.
+By using the *global-packages* directory, NuGet generally avoids downloading packages that already exist on the computer, improving the performance of install, update, and restore operations.
+When using PackageReference, the *global-packages* directory also avoids keeping downloaded packages inside project directories, where they might be inadvertently added to source control, and reduces NuGet's overall impact on computer storage.
 
-When asked to retrieve a package, NuGet first looks in the *global-packages* folder. If the exact version of package is not there, then NuGet checks all non-HTTP package sources. If the package is still not found, NuGet looks for the package in the *http-cache* unless you specify `--no-http-cache` with `dotnet.exe` commands or `-NoHttpCache` with `nuget.exe` commands. If the package is not in the cache, or the cache isn't used, NuGet then retrieves the package over HTTP .
+When asked to retrieve a package, NuGet first looks in the *global-packages* directory.
+If the exact version of package is not there, then NuGet checks all non-HTTP package sources.
+If the package is still not found, NuGet looks for the package in the *http-cache* unless you specify `--no-http-cache` with `dotnet.exe` commands or `-NoHttpCache` with `nuget.exe` commands.
+If the package is not in the cache, or the cache isn't used, NuGet then retrieves the package over HTTP .
 
 For more information, see [What happens when a package is installed?](../concepts/package-installation-process.md).
 
 ## global-packages
 
-The *global-packages* folder is where NuGet installs any downloaded package.
-Each package is fully expanded into a subfolder that matches the package identifier and version number.
-Projects using the [PackageReference](package-references-in-project-files.md) format always use packages directly from this folder.
-When using the [packages.config](../reference/packages-config.md), packages are installed to the *global-packages* folder, then copied into the project's `packages` folder.
+The *global-packages* directory is where NuGet installs any downloaded package.
+Each package is fully expanded into a subdirectory that matches the package identifier and version number.
+Projects using the [PackageReference](package-references-in-project-files.md) format always use packages directly from this directory.
+When using the [packages.config](../reference/packages-config.md), packages are also installed to the *global-packages* directory, then copied into the project's `packages` directory.
 
 ### Cleaning the global-packages directory
 
@@ -44,7 +48,7 @@ In Visual Studio, you may need to reload your solution to clear NuGet's "up to d
 To clean only unused packages, it's a two step process.
 First, there is a [nuget.config setting `updatePackageLastAccessTime`](../reference/nuget-config-file.md) that should be enabled.
 This setting will cause NuGet to update each package's `.nupkg.metadata` file when it is used in a restore.
-When restore runs, but a project is considered already up to date, the package timestamps are *not* updated.
+When restore runs, but a project is considered already up to date, the package timestamps are *not* updated, so if a project's restore inputs don't change for several weeks, the `.nupkg.metadata` files will not have their timestamps updated.
 The `.nupkg.metadata` file is the last file that NuGet will create when downloading and extracting packages during a restore or install, and is the file that restore uses to check if a package has been extracted successfully.
 
 Second, run a tool to perform the cleanup.
@@ -57,31 +61,35 @@ Some community members have created their own open source NuGet cleaner tools th
 If you are going to write your own cleanup tool, it is important that the `.nupkg.metadata` file is deleted if any of the other package files are deleted, so we recommend that this file is deleted first.
 Otherwise projects referencing the package may have unexpected behavior.
 If writing a cleanup tool in .NET, consider using `ConcurrencyUtilities.ExecuteWithFileLocked[Async](..)` from the [NuGet.Common package](https://www.nuget.org/packages/NuGet.Common), passing the full nupkg path of the package directory you're going to delete as the key, to avoid deleting a package that restore is trying to extract at the same time.
-The global packages directory can be programatically found with the [NuGet.Configuration package](https://www.nuget.org/packages/NuGet.Configuration).
+The global packages directory can be programmatically found with the [NuGet.Configuration package](https://www.nuget.org/packages/NuGet.Configuration).
 Use `Settings.LoadDefaultSettings(path)` to get an `ISettings` instance (you can pass `null` as the path, or pass a directory if you want to handle solutions with a nuget.config that redirects the global-packages directory), and then use `SettingsUtility.GetGlobalPackagesFolder(settings)`.
 Alternatively, you can run `dotnet nuget locals global-packages --list` as a child process and parse the output.
 
 ## http-cache
 
-NuGet will cache copies of most NuGet feed communications (excluding search), organized into subfolders for each package source.
+NuGet will cache copies of most NuGet feed communications (excluding search), organized into subdirectories for each package source.
 Packages are not expanded, and files with a last modified date older than 30 minutes are typically considered expired.
 
 ## temp
 
-A folder where NuGet may store temporary files during its various operations.
+A directory where NuGet may store temporary files during its various operations.
+
+If multiple NuGet operations are performed in parallel, for example a single machine running multiple CI agents, it's important for all of the processes to share the same temp (`NuGetScratch`) directory.
+NuGet uses the temp directory to coordinate inter-process access to the http-cache and global-packages directories, using filesystem locks.
+If different processes use different temp directories, but the same global-packages or http-cache directory, various errors might occur when tying to restore or install packages.
+NuGet does not use filesystem locking to coordinate restoring projects, so two different processes trying to restore the same project at the same time can encounter problems even when using the same `NuGetScratch` directory.
 
 ## plugin-cache
 
-A folder where NuGet stores the results from the operation claims request.
+A directory where NuGet stores the results from the operation claims request.
 See the [cross platform plugins reference](../reference/extensibility/NuGet-Cross-Platform-Plugins.md) for more information.
 
-## Viewing folder locations
+## Viewing directory locations
 
-You can view locations using the [nuget locals command](../reference/cli-reference/cli-ref-locals.md):
+You can view directory locations using the [dotnet nuget locals command](/dotnet/core/tools/dotnet-nuget-locals):
 
-```cli
-# Display locals for all folders: global-packages, http cache, temp and plugins cache
-nuget locals all -list
+```dotnetcli
+dotnet nuget locals all --list
 ```
 
 Typical output (Windows; "user1" is the current username):
@@ -91,14 +99,6 @@ http-cache: C:\Users\user1\AppData\Local\NuGet\v3-cache
 global-packages: C:\Users\user1\.nuget\packages\
 temp: C:\Users\user1\AppData\Local\Temp\NuGetScratch
 plugins-cache: C:\Users\user1\AppData\Local\NuGet\plugins-cache
-```
-
-(`package-cache` is used in NuGet 2.x and appears with NuGet 3.5 and earlier.)
-
-You can also view folder locations using the [dotnet nuget locals command](/dotnet/core/tools/dotnet-nuget-locals):
-
-```dotnetcli
-dotnet nuget locals all --list
 ```
 
 Typical output (Mac; "user1" is the current username):
@@ -121,11 +121,18 @@ info : plugins-cache: /home/user1/.local/share/NuGet/plugins-cache
 
 To display the location of a single folder, use `http-cache`, `global-packages`, `temp`, or `plugins-cache` instead of `all`.
 
-## Clearing local folders
+You can also view locations with NuGet.exe with [the locals command](../reference/cli-reference/cli-ref-locals.md):
+
+```cli
+# Display locals for all directories: global-packages, http cache, temp and plugins cache
+nuget locals all -list
+```
+
+## Clearing local directories
 
 ### Command-line
 
-If you encounter package installation problems or otherwise want to ensure that you're installing packages from a remote gallery, use the `locals --clear` option (dotnet.exe) or `locals -clear` (nuget.exe), specifying the folder to clear, or `all` to clear all folders:
+If you encounter package installation problems or otherwise want to ensure that you're installing packages from a remote gallery, use the `locals --clear` option (dotnet.exe) or `locals -clear` (nuget.exe), specifying the location to clear, or `all` to clear all directories:
 
 ```cli
 # Clear the 3.x+ cache (use either command)
@@ -135,7 +142,7 @@ nuget locals http-cache -clear
 # Clear the 2.x cache (NuGet CLI 3.5 and earlier only)
 nuget locals packages-cache -clear
 
-# Clear the global packages folder (use either command)
+# Clear the global packages directory (use either command)
 dotnet nuget locals global-packages --clear
 nuget locals global-packages -clear
 
@@ -152,11 +159,9 @@ dotnet nuget locals all --clear
 nuget locals all -clear
 ```
 
-Any packages used by projects that are currently open in Visual Studio are not cleared from the *global-packages* folder.
-
 ### Visual Studio
 
-Visual Studio supports clearing all local folders in the "NuGet Package Manager" options found under the **Tools > NuGet Package Manager > Package Manager Settings** menu command.
+Visual Studio supports clearing all local directories in the "NuGet Package Manager" options found under the **Tools > NuGet Package Manager > Package Manager Settings** menu command.
 
 On the General page, select **Clear NuGet local resources**.
 Once started, this action cannot be cancelled.
@@ -164,11 +169,7 @@ A progress bar will be shown and will contain the final status of the command.
 
 The [Output Window](/visualstudio/ide/output-window) when selecting Show output from "Package Manager" will show additional details about the clear command, including any error messages.
 
-### Clear NuGet Local Resources
-
 ![Clear NuGet local resources button highlighted in the General page of NuGet options](media/vsoptions/general.png)
-
-Managing the cache isn't presently available through the Package Manager Console.
 
 For more information, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md#clear-nuget-local-resources).
 
@@ -186,4 +187,4 @@ The following errors can occur when using `nuget locals` or `dotnet nuget locals
 
 - *Error: The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.*
 
-    Shorten the folder names and try again.
+    Shorten the directory names and try again.
