@@ -109,7 +109,7 @@ You can also edit these settings directly in the applicable `nuget.config` file 
 
 ## Other potential conditions
 
-- You may encounter build errors due to missing files, with a message saying to use NuGet restore to download them. However, running a restore might say, "All packages are already installed and there is nothing to restore." In this case, delete the `packages` folder (when using `packages.config`) or the `obj/project.assets.json` file (when using PackageReference) and run restore again. 
+- You may encounter build errors due to missing files, with a message saying to use NuGet restore to download them. However, running a restore might say, "All packages are already installed and there is nothing to restore." In this case, delete the `packages` folder (when using `packages.config`) or the `obj/project.assets.json` file (when using PackageReference) and run restore again.
 
 - When obtaining a project from source control, your project folders may be set to read-only. Change the folder permissions and try restoring packages again.
 
