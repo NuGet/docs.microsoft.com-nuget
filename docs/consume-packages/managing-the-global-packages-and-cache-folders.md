@@ -67,6 +67,9 @@ Alternatively, you can run `dotnet nuget locals global-packages --list` as a chi
 NuGet will cache copies of most NuGet feed communications (excluding search), organized into subdirectories for each package source.
 Packages are not expanded, and files with a last modified date older than 30 minutes are typically considered expired.
 
+PackageReference restore will cache the list of versions a source contains.
+So, if a new version of a package is published and you want to use it more quickly than the 30 minute cache expiration period, you can clear the http-cache to force restore to check for a newer version more quickly.
+
 ## temp
 
 A directory where NuGet may store temporary files during its various operations.
@@ -132,12 +135,9 @@ nuget locals all -list
 If you encounter package installation problems or otherwise want to ensure that you're installing packages from a remote gallery, use the `locals --clear` option (dotnet.exe) or `locals -clear` (nuget.exe), specifying the location to clear, or `all` to clear all directories:
 
 ```cli
-# Clear the 3.x+ cache (use either command)
+# Clear the http cache (use either command)
 dotnet nuget locals http-cache --clear
 nuget locals http-cache -clear
-
-# Clear the 2.x cache (NuGet CLI 3.5 and earlier only)
-nuget locals packages-cache -clear
 
 # Clear the global packages directory (use either command)
 dotnet nuget locals global-packages --clear
