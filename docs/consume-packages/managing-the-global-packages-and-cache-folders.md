@@ -7,7 +7,7 @@ ms.date: 01/30/2026
 ms.topic: how-to
 ---
 
-# Managing the global packages, cache, and temp directories
+# Managing the global packages, HTTP cache, and temp directories
 
 Whenever you install, update, or restore a package, NuGet manages packages and package information in several directories outside of your project structure:
 
@@ -18,16 +18,13 @@ Whenever you install, update, or restore a package, NuGet manages packages and p
 | [temp](#temp) | <li>Windows: `%temp%\NuGetScratch`</li><li>Mac: `/tmp/NuGetScratch`</li><li>Linux: `/tmp/NuGetScratch<username>`</li><li>Override using the NUGET_SCRATCH environment variable.</li></ul> |
 | [plugins-cache](#plugin-cache) **4.8+** | <ul><li>Windows: `%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/plugins-cache`</li><li>Override using the NUGET_PLUGINS_CACHE_PATH environment variable.</li></ul> |
 
-> [!Note]
-> NuGet 3.5 and earlier uses *packages-cache* instead of the *http-cache*, which is located in `%localappdata%\NuGet\Cache`.
-
 By using the *global-packages* directory, NuGet generally avoids downloading packages that already exist on the computer, improving the performance of install, update, and restore operations.
 When using PackageReference, the *global-packages* directory also avoids keeping downloaded packages inside project directories, where they might be inadvertently added to source control, and reduces NuGet's overall impact on computer storage.
 
 When asked to retrieve a package, NuGet first looks in the *global-packages* directory.
-If the exact version of package is not there, then NuGet checks all non-HTTP package sources.
+If the exact version of the package is not there, then NuGet checks all non-HTTP package sources.
 If the package is still not found, NuGet looks for the package in the *http-cache* unless you specify `--no-http-cache` with `dotnet.exe` commands or `-NoHttpCache` with `nuget.exe` commands.
-If the package is not in the cache, or the cache isn't used, NuGet then retrieves the package over HTTP .
+If the package is not in the HTTP cache, or the HTTP cache isn't used, NuGet then retrieves the package over HTTP.
 
 For more information, see [What happens when a package is installed?](../concepts/package-installation-process.md).
 
@@ -76,7 +73,7 @@ A directory where NuGet may store temporary files during its various operations.
 
 If multiple NuGet operations are performed in parallel, for example a single machine running multiple CI agents, it's important for all of the processes to share the same temp (`NuGetScratch`) directory.
 NuGet uses the temp directory to coordinate inter-process access to the http-cache and global-packages directories, using filesystem locks.
-If different processes use different temp directories, but the same global-packages or http-cache directory, various errors might occur when tying to restore or install packages.
+If different processes use different temp directories, but the same global-packages or http-cache directory, various errors might occur when trying to restore or install packages.
 NuGet does not use filesystem locking to coordinate restoring projects, so two different processes trying to restore the same project at the same time can encounter problems even when using the same `NuGetScratch` directory.
 
 ## plugin-cache
@@ -124,7 +121,7 @@ To display the location of a single folder, use `http-cache`, `global-packages`,
 You can also view locations with NuGet.exe with [the locals command](../reference/cli-reference/cli-ref-locals.md):
 
 ```cli
-# Display locals for all directories: global-packages, http cache, temp and plugins cache
+# Display locals for all directories: global-packages, http-cache, temp and plugins-cache
 nuget locals all -list
 ```
 
