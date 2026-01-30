@@ -27,7 +27,7 @@ When a package is extracted into the *global-packages* folder, a file `.nupkg.me
 ```
 
 > [!Note]
-> If your *global-packages* folder has packages extracted before you upgraded to a newer version of tools that has NuGet 5.9.0, the `.nupkg.metadata` file will be version 1 and will not contain the package source. You can [clear your *global-packages* folder](../consume-packages/managing-the-global-packages-and-cache-folders.md#clearing-local-folders) to ensure all packages will contain the package source.
+> If your *global-packages* folder has packages extracted before you upgraded to a newer version of tools that has NuGet 5.9.0, the `.nupkg.metadata` file will be version 1 and will not contain the package source. You can [clear your *global-packages* folder](../consume-packages/managing-the-global-packages-and-cache-folders.md#clearing-local-directories) to ensure all packages will contain the package source.
 
 > [!Tip]
 > NuGet writes the `.nupkg.metadata` file to the *global-packages* folder only. Projects using `packages.config` use a solution packages folder, which does not create a `.nupkg.metadata` file.
