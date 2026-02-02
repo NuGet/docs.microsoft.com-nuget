@@ -4,7 +4,7 @@ description: Protocol and display information for licenses.nuget.org. Describes 
 author: agr
 ms.author: angrigor
 ms.date: 03/02/2023
-ms.topic: article
+ms.topic: concept-article
 ---
 # licenses.nuget.org
 

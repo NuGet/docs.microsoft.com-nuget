@@ -4,7 +4,7 @@ description: The governance model for NuGet, including roles and responsibilitie
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/18/2018
-ms.topic: article
+ms.topic: concept-article
 ---
 
 # NuGet governance

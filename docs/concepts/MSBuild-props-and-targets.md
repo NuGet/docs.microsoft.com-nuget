@@ -4,7 +4,7 @@ description: Describes MSBuild props and targets in NuGet packages
 author: nkolev92
 ms.author: nikolev
 ms.date: 07/13/2022
-ms.topic: article
+ms.topic: concept-article
 ---
 
 # MSBuild .props and .targets in a package

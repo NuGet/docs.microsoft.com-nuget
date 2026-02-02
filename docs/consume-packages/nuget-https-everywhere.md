@@ -4,7 +4,7 @@ description: Learn why NuGet enforces HTTPS connections for package sources, wha
 author: Nigusu-Allehu
 ms.author: nyenework
 ms.date: 10/28/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ai-usage: ai-generated
 ---
 

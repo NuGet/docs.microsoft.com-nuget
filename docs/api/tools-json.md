@@ -4,7 +4,7 @@ description: The endpoint for
 author: jver
 ms.author: jver
 ms.date: 08/16/2018
-ms.topic: article
+ms.topic: concept-article
 ms.reviewer: kraigb
 ---
 

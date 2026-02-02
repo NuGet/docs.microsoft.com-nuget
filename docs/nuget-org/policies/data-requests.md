@@ -4,7 +4,7 @@ description: Policies for requesting user data export and delete
 author: JonDouglas
 ms.author: jodou
 ms.date: 05/01/2018
-ms.topic: article
+ms.topic: concept-article
 ---
 
 # User Data Requests

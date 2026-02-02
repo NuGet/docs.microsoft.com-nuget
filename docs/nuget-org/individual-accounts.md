@@ -4,7 +4,7 @@ description: Individual acccounts on NuGet.org are required to publish packages
 author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
-ms.topic: article
+ms.topic: how-to
 ms.custom: sfi-image-nochange
 ---
 

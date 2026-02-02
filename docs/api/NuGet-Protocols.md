@@ -4,7 +4,7 @@ description: The evolving nuget.org protocols to interact with NuGet clients.
 author: anangaur
 ms.author: anangaur
 ms.date: 01/21/2021
-ms.topic: article
+ms.topic: reference
 ms.reviewer: kraigb
 ---
 

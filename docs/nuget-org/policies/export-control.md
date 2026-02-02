@@ -4,7 +4,7 @@ description: Policies governing export control laws
 author: JonDouglas
 ms.author: jodou
 ms.date: 06/27/2019
-ms.topic: article
+ms.topic: concept-article
 ---
 
 # Export Control Policy
