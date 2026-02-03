@@ -114,7 +114,7 @@ If no audit sources are configured, NuGet Audit uses package sources.
 ![Audit Sources section with checkbox "Use separate sources for vulnerability audit"](media/vsoptions/audit-sources-1.png)
 
 Configure an audit source by selecting the checkbox, "Use separate sources for vulnerability audit".
-Now, a table is available for managing audit sources which works similarly to the package sources table.
+Now, a table is available for managing audit sources which works similar to the package sources table.
 
 ![Empty table for managing audit sources](media/vsoptions/audit-sources-2.png)
 
