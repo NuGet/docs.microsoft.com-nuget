@@ -120,7 +120,7 @@ Now, a table is available for managing audit sources which works similarly to th
 
 For example, adding nuget.org as an audit source is shown here.
 
-![Empty table for managing audit sources](media/vsoptions/audit-sources-3.png)
+![Audit Source configured for nuget.org](media/vsoptions/audit-sources-3.png)
 
 Remove all audit sources to revert to using package sources for vulnerability data.
 
