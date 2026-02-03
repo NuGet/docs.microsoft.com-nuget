@@ -81,13 +81,16 @@ Configuration files are listed in order from highest to lowest priority.
 NuGet uses a hierarchical configuration system where settings from multiple config files are merged.
 For more information, see [Common NuGet configurations](configuring-nuget-behavior.md).
 
-## Package Sources
+## Sources
 
-The Package Sources options page allows you to manage the sources from which NuGet downloads packages.
-
-![Package Sources page of NuGet options](media/vsoptions/package-sources-page.png)
+The Sources options page allows you to manage the sources from which NuGet downloads packages and retrieves package vulnerability data.
 
 ### Managing Package Sources
+
+Package sources define where NuGet retrieves packages for install, restore, audit, and update operations.
+[Learn more about package sources](https://learn.microsoft.com/nuget/reference/nuget-config-file#packagesources)
+
+![Sources page of NuGet options](media/vsoptions/sources-page.png)
 
 Lists all configured package sources according to your NuGet.Config files.
 
