@@ -105,6 +105,25 @@ Press "Save" on the Add/Edit dialog and the changes will be updated in the relev
 
 ![Add dialog on the Package Sources page](media/vsoptions/package-source-add.png)
 
+### Managing Audit Sources
+
+Audit sources provide vulnerability data during restore without acting as package sources.
+If no audit sources are configured, NuGet Audit uses package sources.
+[Learn more about audit sources](https://learn.microsoft.com/nuget/reference/nuget-config-file#auditsources)
+
+![Audit Sources section with checkbox "Use separate sources for vulnerability audit"](media/vsoptions/audit-sources-1.png)
+
+Configure an audit source by selecting the checkbox, "Use separate sources for vulnerability audit".
+Now, a table is available for managing audit sources which works similarly to the package sources table.
+
+![Empty table for managing audit sources](media/vsoptions/audit-sources-2.png)
+
+For example, adding nuget.org as an audit source is shown here.
+
+![Empty table for managing audit sources](media/vsoptions/audit-sources-3.png)
+
+Remove all audit sources to revert to using package sources for vulnerability data.
+
 ### Machine-wide Package Sources
 
 Package sources defined at the machine level appear in a dedicated section below.
