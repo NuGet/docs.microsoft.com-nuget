@@ -3,7 +3,7 @@ title: NuGet Options in Visual Studio
 description: Reference guide for NuGet Package Manager options in Visual Studio, including General, Configuration Files, Package Sources, and Package Source Mapping settings.
 author: donnie-msft
 ms.author: eagoodso
-ms.date: 10/03/2025
+ms.date: 02/03/2026
 ms.topic: reference
 f1_keywords:
   - "vs.toolsoptionspages.nuget_package_manager"
@@ -45,15 +45,15 @@ See [Package Restore](Package-Restore.md) for more information on package restor
 
 ### Binding Redirects
 
-- **Skip applying binding redirects**: When enabled, NuGet will not automatically add or update binding redirects in app.config or web.config files during package installation or updates
+- **Skip applying binding redirects**: When enabled, NuGet will not automatically add or update binding redirects in app.config or web.config files during package installation or updates.
 
 ### Package Management
 
 - **Default package management format**: Choose between the NuGet formats [PackageReference](package-references-in-project-files.md) (recommended for most projects) and [packages.config](../reference/packages-config.md) (legacy format for older projects).
   For more information, see [Choose default package management format](package-restore.md#choose-default-package-management-format).
 
-  - **PackageReference**: Stores package references directly in project files. This is the modern format that supports better dependency resolution and is required for SDK-style projects
-  - **packages.config**: Legacy XML file format that stores package information separately from the project file
+  - **PackageReference**: Stores package references directly in project files. This is the modern format that supports better dependency resolution and is required for SDK-style projects.
+  - **packages.config**: Legacy XML file format that stores package information separately from the project file.
 
 - **Prompt for format selection on first package install**: When enabled, Visual Studio will ask you to choose between PackageReference and packages.config the first time you install a package in a project that doesn't already have packages.
 
@@ -81,13 +81,16 @@ Configuration files are listed in order from highest to lowest priority.
 NuGet uses a hierarchical configuration system where settings from multiple config files are merged.
 For more information, see [Common NuGet configurations](configuring-nuget-behavior.md).
 
-## Package Sources
+## Sources
 
-The Package Sources options page allows you to manage the sources from which NuGet downloads packages.
-
-![Package Sources page of NuGet options](media/vsoptions/package-sources-page.png)
+The Sources options page allows you to manage the sources from which NuGet downloads packages and retrieves package vulnerability data.
 
 ### Managing Package Sources
+
+Package sources define where NuGet retrieves packages for install, restore, audit, and update operations.
+[Learn more about package sources](/nuget/reference/nuget-config-file#packagesources)
+
+![Sources page of NuGet options](media/vsoptions/sources-page.png)
 
 Lists all configured package sources according to your NuGet.Config files.
 
@@ -101,6 +104,25 @@ Checkboxes may be toggled directly in the table.
 Press "Save" on the Add/Edit dialog and the changes will be updated in the relevant NuGet.Config file.
 
 ![Add dialog on the Package Sources page](media/vsoptions/package-source-add.png)
+
+### Managing Audit Sources
+
+Audit sources provide vulnerability data during restore without acting as package sources.
+If no audit sources are configured, NuGet Audit uses package sources.
+[Learn more about audit sources](/nuget/reference/nuget-config-file#auditsources)
+
+![Audit Sources section with checkbox "Use separate sources for vulnerability audit"](media/vsoptions/audit-sources-1.png)
+
+Configure an audit source by selecting the checkbox, "Use separate sources for vulnerability audit".
+Now, a table is available for managing audit sources which works similar to the package sources table.
+
+![Empty table for managing audit sources](media/vsoptions/audit-sources-2.png)
+
+For example, adding nuget.org as an audit source is shown here.
+
+![Audit Source configured for nuget.org](media/vsoptions/audit-sources-3.png)
+
+Remove all audit sources to revert to using package sources for vulnerability data.
 
 ### Machine-wide Package Sources
 
@@ -133,7 +155,7 @@ For more information on configuring HTTP source permissions, see <https://aka.ms
 
 Package Source Mapping allows you to control which package sources are used for specific packages, improving supply chain security.
 
-![Package Source Mapping page of NuGet options](media/vsoptions//package-source-mapping.png)
+![Package Source Mapping page of NuGet options](media/vsoptions/package-source-mapping.png)
 
 To modify, use the **Add, Edit, and Remove buttons** below the table.
 
