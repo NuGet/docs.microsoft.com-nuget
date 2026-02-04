@@ -135,7 +135,7 @@ nuget locals all -list
 If you encounter package installation problems or otherwise want to ensure that you're installing packages from a remote gallery, use the `locals --clear` option (dotnet.exe) or `locals -clear` (nuget.exe), specifying the location to clear, or `all` to clear all directories:
 
 ```cli
-# Clear the http cache (use either command)
+# Clear the HTTP cache (use either command)
 dotnet nuget locals http-cache --clear
 nuget locals http-cache -clear
 
