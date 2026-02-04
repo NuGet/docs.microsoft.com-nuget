@@ -21,7 +21,7 @@ The authentication mechanism in dotnet.exe is device flow. When the restore or a
 When the user completes the authentication the operation will continue.
 
 To make the operation interactive, one should pass `--interactive`.
-Currently only the explicit `dotnet restore` and `dotnet add package` commands support an interactive switch.
+Currently only the explicit `dotnet restore` and `dotnet package add` commands support an interactive switch.
 There is no interactive switch on `dotnet build` and `dotnet publish`.
 
 ## Authentication in MSBuild
