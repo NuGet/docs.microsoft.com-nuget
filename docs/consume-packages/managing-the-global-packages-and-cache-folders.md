@@ -1,8 +1,8 @@
 ---
-title: How to manage the global packages, http cache, temp directories in NuGet
-description: How to manage the global package installation directory, the http cache, and the temp directory that exist on a computer, which are used when installing, restoring, and updating packages.
-author: JonDouglas
-ms.author: jodou
+title: How to manage the global packages, HTTP cache, temp directories in NuGet
+description: How to manage the global package installation directory, the HTTP cache, and the temp directory that exist on a computer, which are used when installing, restoring, and updating packages.
+author: nuget/nuget-client
+ms.author: nugetclient
 ms.date: 01/30/2026
 ms.topic: how-to
 ---
