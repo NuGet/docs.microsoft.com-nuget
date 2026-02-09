@@ -14,9 +14,9 @@ Sometimes you might want to validate which source a specific package was install
 > [!Note]
 > Some package sources support a concept known as upstream sources. For example, [Azure Artifacts upstream sources](/azure/devops/artifacts/concepts/upstream-sources). NuGet clients do not know whether a package came from an upstream source. Therefore, any logging of the package source will list the configured source, not the upstream source.
 
-## `.nupkg.metadata` file in global packages directory
+## `.nupkg.metadata` file in global packages folder
 
-When a package is extracted into the *global-packages* directory, a file `.nupkg.metadata` is written. Starting from NuGet 5.9.0, NuGet will add the package source. See below to map NuGet versions to Visual Studio or .NET SDK versions. For example:
+When a package is extracted into the *global-packages* folder, a file `.nupkg.metadata` is written. Starting from NuGet 5.9.0, NuGet will add the package source. See below to map NuGet versions to Visual Studio or .NET SDK versions. For example:
 
 ```json
 {
@@ -27,10 +27,10 @@ When a package is extracted into the *global-packages* directory, a file `.nupkg
 ```
 
 > [!Note]
-> If your *global-packages* directory has packages extracted before you upgraded to a newer version of tools that has NuGet 5.9.0, the `.nupkg.metadata` file will be version 1 and will not contain the package source. You can [clear your *global-packages* directory](../consume-packages/managing-the-global-packages-and-cache-folders.md#clearing-local-directories) to ensure all packages will contain the package source.
+> If your *global-packages* folder has packages extracted before you upgraded to a newer version of tools that has NuGet 5.9.0, the `.nupkg.metadata` file will be version 1 and will not contain the package source. You can [clear your *global-packages* folder](../consume-packages/managing-the-global-packages-and-cache-folders.md#clearing-local-folders) to ensure all packages will contain the package source.
 
 > [!Tip]
-> NuGet writes the `.nupkg.metadata` file to the *global-packages* directory only. Projects using `packages.config` use a solution packages directory, which does not create a `.nupkg.metadata` file.
+> NuGet writes the `.nupkg.metadata` file to the *global-packages* folder only. Projects using `packages.config` use a solution packages folder, which does not create a `.nupkg.metadata` file.
 
 ## Installed package log message
 
@@ -45,7 +45,7 @@ Installed Moq 4.16.1 from https://api.nuget.org/v3/index.json with content hash 
 
 ## HTTP log message
 
-When a package is not available locally, either in the *global-packages* directory, a fallback folder, or a local file source, NuGet will download it from any configured package source over HTTP. HTTP requests and responses are logged at the normal verbosity level, and you should see only a single request and response per package version. For example:
+When a package is not available locally, either in the *global-packages* folder, a fallback folder, or a local file source, NuGet will download it from any configured package source over HTTP. HTTP requests and responses are logged at the normal verbosity level, and you should see only a single request and response per package version. For example:
 
 ```text
 info :   GET https://api.nuget.org/v3-flatcontainer/moq/index.json
@@ -73,7 +73,7 @@ If the package being downloaded is signed, NuGet will validate the signature and
 PackageSignatureVerificationLog: PackageIdentity: Moq.4.16.1 Source: https://api.nuget.org/v3/index.json PackageSignatureValidity: True
 ```
 
-This message will be reported whether the package was downloaded from an HTTP package source, or copied from a local package source. It will not be output if the package is already available in the *global-packages* directory or a fallback folder.
+This message will be reported whether the package was downloaded from an HTTP package source, or copied from a local package source. It will not be output if the package is already available in the *global-packages* folder or a fallback folder.
 
 > [!Important]
 > Due to [removal of trust of VeriSign CA](https://github.com/dotnet/announcements/issues/180) NuGet has disabled signed package verification on certain platforms, in certain versions of NuGet and the .NET SDK. Therefore, the same packages may have `PackageSignatureVerificationLog` logs, or those logs may be missing, depending on what platform you're running restore on, and which version of .NET or NuGet you're using.

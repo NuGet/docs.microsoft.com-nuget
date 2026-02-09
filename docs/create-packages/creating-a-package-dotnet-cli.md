@@ -109,7 +109,8 @@ Test the installation manually in Visual Studio or on the command line by using 
 
 > [!IMPORTANT]
 > - You can't change packages once created. If you correct a problem, change the package contents and repack.
-> - After you recreate the package, retesting still uses the old version of the package until you [clear your global packages directory](../consume-packages/managing-the-global-packages-and-cache-folders.md#clearing-local-directories). Clearing the directory is especially important for packages that don't use a unique prerelease label on every build.
+> 
+> - After you recreate the package, retesting still uses the old version of the package until you [clear your global packages folder](../consume-packages/managing-the-global-packages-and-cache-folders.md#clearing-local-folders). Clearing the folder is especially important for packages that don't use a unique prerelease label on every build.
 
 ## Next steps
 
