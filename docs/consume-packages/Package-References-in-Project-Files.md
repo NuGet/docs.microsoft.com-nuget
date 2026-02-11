@@ -497,8 +497,8 @@ The following properties can be used to modify the pruning behavior.
 | RestoreEnablePackagePruning  | Enables package pruning for the packages specified with `PrunePackageReference`. This property is per target framework and the valid values are `true` and `false`. Defaults may differ based on the .NET SDK as defined above. |
 
 The .NET SDK predefines the list of packages to be pruned for you.
-That list is based on the shared frameworks specified in your project. 
-Only direct framework references are considered, and pruning data won't be added for frameworks that are brought in [through packages](../reference/nuspec#framework-reference-groups).
+That list is based on the shared frameworks specified in your project.
+Only direct framework references are considered, and pruning data won't be added for frameworks that are brought in [through packages](../reference/nuspec.md#framework-reference-groups).
 
 ### How PrunePackageReference works
 
