@@ -3,7 +3,8 @@ title: NuGet PackageReference in project files
 description: Details on NuGet PackageReference in project files as supported by NuGet 4.0+ and VS2017 and .NET Core 2.0
 author: nkolev92
 ms.author: nikolev
-ms.date: 4/6/2022
+ms.date: 02/12/2026
+ms.update-cycle: 1095-days
 ms.topic: concept-article
 ---
 
