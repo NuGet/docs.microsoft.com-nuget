@@ -4,7 +4,7 @@ description: Details on NuGet PackageReference in project files as supported by 
 author: nkolev92
 ms.author: nikolev
 ms.date: 02/12/2026
-ms.update-cycle: 1095 days
+ms.update-cycle: 1095-days
 ms.topic: concept-article
 ---
 

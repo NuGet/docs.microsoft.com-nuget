@@ -4,7 +4,7 @@ description: Manage your dependencies in a central location and learn how to get
 author: jondouglas
 ms.author: jodou
 ms.date: 08/22/2025
-ms.update-cycle: 1095 days
+ms.update-cycle: 1095-days
 ms.topic: how-to
 ---
 

@@ -4,7 +4,7 @@ description: A description of common NuGet restore errors in Visual Studio and h
 author: JonDouglas
 ms.author: jodou
 ms.date: 01/29/2026
-ms.update-cycle: 1095 days
+ms.update-cycle: 1095-days
 ms.topic: troubleshooting-general
 ---
 

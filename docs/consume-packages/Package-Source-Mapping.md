@@ -4,7 +4,7 @@ description: Describes package source mapping functionality and how to onboard
 author: nkolev92
 ms.author: nikolev
 ms.date: 12/29/2025
-ms.update-cycle: 1095 days
+ms.update-cycle: 1095-days
 ms.topic: how-to
 ---
 

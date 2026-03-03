@@ -4,7 +4,7 @@ description: How to manage the global package installation folder, the HTTP cach
 author: zivkan
 ms.author: zivkan
 ms.date: 02/11/2026
-ms.update-cycle: 1095 days
+ms.update-cycle: 1095-days
 ms.topic: how-to
 ---
 

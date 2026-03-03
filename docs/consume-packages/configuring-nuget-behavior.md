@@ -4,7 +4,7 @@ description: NuGet.Config files control NuGet's behavior, and can be modified wi
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/15/2024
-ms.update-cycle: 1095 days
+ms.update-cycle: 1095-days
 ms.topic: how-to
 ---
 

@@ -4,7 +4,7 @@ description: See an overview of how NuGet restores packages a project depends on
 author: JonDouglas
 ms.author: jodou
 ms.date: 10/14/2025
-ms.update-cycle: 1095 days
+ms.update-cycle: 1095-days
 ms.topic: how-to
 ---
 

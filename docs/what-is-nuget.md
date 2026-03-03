@@ -4,7 +4,7 @@ description: A comprehensive introduction to what NuGet is and does
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/03/2025
-ms.update-cycle: 1095 days
+ms.update-cycle: 1095-days
 ms.topic: overview
 ---
 

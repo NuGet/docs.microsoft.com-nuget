@@ -4,7 +4,7 @@ description: NuGet pack and restore can work directly as MSBuild targets with Nu
 author: nkolev92
 ms.author: nikolev
 ms.date: 10/09/2025
-ms.update-cycle: 1095 days
+ms.update-cycle: 1095-days
 ms.topic: reference
 no-loc: [NuGet, MSBuild, .nuspec, nuspec]
 ---
