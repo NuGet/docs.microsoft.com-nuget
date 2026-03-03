@@ -3,7 +3,8 @@ title: Common NuGet configurations
 description: NuGet.Config files control NuGet's behavior, and can be modified with nuget config command.
 author: JonDouglas
 ms.author: jodou
-ms.date: 01/10/2022
+ms.date: 07/15/2024
+ms.update-cycle: 1095-days
 ms.topic: how-to
 ---
 

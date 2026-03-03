@@ -3,7 +3,8 @@ title: How to manage the global packages, HTTP cache, temp folders in NuGet
 description: How to manage the global package installation folder, the HTTP cache, and the temp folders that exist on a computer, which are used when installing, restoring, and updating packages.
 author: zivkan
 ms.author: zivkan
-ms.date: 01/30/2026
+ms.date: 02/11/2026
+ms.update-cycle: 1095-days
 ms.topic: how-to
 ---
 
