@@ -9,46 +9,58 @@ ms.topic: how-to
 
 # Find and evaluate NuGet packages for your project
 
-When you start a .NET project, or identify a functional need in your app or service, you can often install existing NuGet packages to save the time and trouble of [creating your own packages](../create-packages/overview-and-workflow.md). Existing packages can come from the [nuget.org](https://www.nuget.org/packages) public collection, or from private sources that your organization or another party provide.
+When you start a .NET project, or identify a functional need in your app or service, you can often install existing NuGet packages to save the time and trouble of [creating your own packages](../create-packages/overview-and-workflow.md). Existing packages can come from the [nuget.org](https://www.nuget.org/packages) public collection, or from private sources that your organization or another party provides.
 
 ## Find packages
 
 You can find packages directly at [https://nuget.org/packages](https://www.nuget.org/packages), or from the [Visual Studio Package Manager UI](install-use-packages-visual-studio.md) or [Package Manager Console](install-use-packages-powershell.md) with nuget.org as a source. All packages from nuget.org are routinely scanned for viruses.
 
-At [nuget.org/packages](https://www.nuget.org/packages), you see a list of NuGet packages with the most popular packages across all .NET projects listed first. Some of these packages might be useful for your projects.
+At [nuget.org/packages](https://www.nuget.org/packages), you see a list of NuGet packages. The most popular packages across all .NET projects are listed first. Some of these packages might be useful for your projects.
 
-![Screenshot that shows the default view of nuget.org/packages with the most popular packages at the top.](media/Finding-07-MostPopular.png)
+:::image type="content" source="media/Finding-07-MostPopular.png" alt-text="Screenshot of the nuget.org/packages site, which lists packages and information about updates, downloads, and supported frameworks for each one.":::
 
-To search for a package, enter the package name or search terms in the Search box at the top of the page. You can use [advanced search syntax](#search-syntax) to filter your search.
+To search for a package, enter the package name or search terms in the search box at the top of the page. You can use [advanced search syntax](#search-syntax) to filter your search.
 
 ### Advanced filtering and sorting
 
-At nuget.org/packages, you can refine your search results by making use of the advanced filtering and sorting options.
+At nuget.org/packages, you can refine your search results by using advanced filtering and sorting options.
 
-![Screenshot that shows the filtering and sorting options on nuget.org.](media/Finding-08-FiltersAndSorts.png)
+:::image type="content" source="media/Finding-08-FiltersAndSorts.png" alt-text="Screenshot of nuget.org/packages with the filter options and sorting list highlighted. Filter options like the framework and package type are visible.":::
 
-Use the **Frameworks** filters to show packages targeting specific .NET frameworks (To learn more, see [Target Frameworks](/dotnet/standard/frameworks)):
+#### Framework filters
 
-- Selecting one of the .NET framework generation checkboxes would filter the search results to packages compatible with any of the individual Target Frameworks within that generation. For example, selecting `.NET` will return packages compatible with any of the modern .NET frameworks, including `net5.0` through `net8.0`.
+Use the **Frameworks** filters to show packages that target specific .NET frameworks. For more information, see [Target frameworks in SDK-style projects](/dotnet/standard/frameworks).
 
-  ![Screenshot that shows the Framework filters on nuget.org.](media/Finding-09-FrameworkFilterPanel.png)
+- If you select one .NET framework generation, the filter limits the search results to packages that are compatible with any of the individual target frameworks within that generation. For example, selecting **.NET** returns packages that are compatible with any of the modern .NET frameworks, including `net5.0` through `net10.0`.
 
-- Expanding one of these framework generations with the arrows on the right will show you individual Target Framework Monikers (TFMs) that you can filter your results by. For example, selecting `net5.0` will return packages compatible with the '.NET 5.0' framework.
-- By default, packages are filtered by their expanded list of computed compatible frameworks. If you want to filter packages purely by the asset frameworks they explicitly target, deselect the **Include compatible frameworks** checkbox.
-- Combining multiple framework filters will show you search results that match all of your selected filters, i.e. packages that fall in the intersection of your selections. For example, selecting `netcoreapp3.1` and `net45` together will show packages that target **both** '.NET Core 3.1' and '.NET Framework 4.5'. Selecting the `.NET Core` framework generation checkbox and the `net45` checkbox together will return packages that target '.NET Framework 4.5', and at least one of the '.NET Core' TFMs (`netcoreapp1.0` through `netcoreapp3.1`).
-  - Alternatively, if you want to see packages matching **any one** of your framework filters, select the **Any** radio button on the **Framework Filter Mode** option. Now, selecting `netcoreapp3.1` and `net5.0` will show packages that target **either** '.NET Core 3.1' or '.NET 5.0'. Selecting the `netcoreapp3.1` checkbox and the `.NET` framework generation checkbox together will return packages that target '.NET Core 3.1' or any one of the '.NET' TFMs (`net5.0` through `net8.0`).
-- You can learn more on how to evaluate a package's supported frameworks and its compatibility with your project [here](#determine-supported-frameworks).
+  :::image type="content" source="media/Finding-09-FrameworkFilterPanel.png" alt-text="Screenshot that shows the framework filters on nuget.org. Under the expanded .NET framework, frameworks from net5.0 to net10.0 are listed.":::
 
-Use the **Package type** filter to show packages of a specific type:
+- If you use the arrows to expand a framework generation, you see individual target framework monikers (TFMs) that you can filter your results by. For example, selecting **net5.0** returns packages that are compatible with the .NET 5.0 framework.
+- By default, packages are filtered by their expanded list of computed compatible frameworks. If you want to filter packages purely by the asset frameworks they explicitly target, clear the **Include compatible frameworks** checkbox.
+- Combining multiple framework filters shows you search results that match all your selected filters. In other words, you see packages that fall in the intersection of your selections. For example:
+  - Selecting **netcoreapp3.1** and **net45** shows your packages that target **both** .NET Core 3.1 and .NET Framework 4.5.
+  - Selecting the **.NET Core** framework generation and **net45** returns packages that target .NET Framework 4.5 and at least one of the .NET Core TFMs (netcoreapp1.0 through netcoreapp3.1).
 
-- **All types** is the default and shows all packages regardless of type.
-- **Dependency** filters to regular NuGet packages that you can install into your project.
+  Alternatively, you can see packages that match **any one** of your framework filters. To do so, go to the top of the filter options. Next to **Framework Filter Mode**, select **Any**.
+  - Selecting **netcoreapp3.1** and **net5.0** then shows you packages that target **either** .NET Core 3.1 or .NET 5.0.
+  - Selecting **netcoreapp3.1** and the **.NET** framework generation returns packages that target .NET Core 3.1 or any of the .NET TFMs (`net5.0` through `net8.0`).
+- For more information about how to evaluate a package's supported frameworks and its compatibility with your project, see [Determine supported frameworks](#determine-supported-frameworks), later in this article.
+
+#### Package type filter
+
+Use the **Package type** filter to see packages of a specific type:
+
+- **All types** is the default value and shows all packages regardless of type.
+- **Dependency** filters to regular NuGet packages that you can install in your project.
 - **.NET tool** filters to [.NET tools](/dotnet/core/tools/global-tools) packages that contain console applications.
 - **Template** filters to [.NET templates](/dotnet/core/install/templates) that you can use to create new projects with the [dotnet new](/dotnet/core/tools/dotnet-new) command.
+- **MCP Server** filters to Model Context Protocol (MCP) server packages.
 
 By default, NuGet lists all versions of packages, including prerelease and beta versions. In the **Options** section, deselect the **Include prerelease** checkbox to list only stable, released package versions.
 
 To apply changes, select **Apply**. To get back to the defaults, select **Reset**.
+
+#### Sorting list
 
 Use the **Sort by** dropdown on the top-right of the page to sort the list by several criteria:
 
