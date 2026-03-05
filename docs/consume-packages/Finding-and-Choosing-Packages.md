@@ -15,7 +15,7 @@ When you start a .NET project, or identify a functional need in your app or serv
 
 You can find packages directly at [https://nuget.org/packages](https://www.nuget.org/packages), or from the [Visual Studio Package Manager UI](install-use-packages-visual-studio.md) or [Package Manager Console](install-use-packages-powershell.md) with nuget.org as a source. All packages from nuget.org are routinely scanned for viruses.
 
-At [nuget.org/packages](https://www.nuget.org/packages), you see a list of NuGet packages. The most popular packages across all .NET projects are listed first. Some of these packages might be useful for your projects.
+At [nuget.org/packages](https://www.nuget.org/packages), you see a list of NuGet packages with the most popular packages across all .NET projects listed first. Some of these packages might be useful for your projects.
 
 :::image type="content" source="media/Finding-07-MostPopular.png" alt-text="Screenshot of the nuget.org/packages site, which lists packages and information about updates, downloads, and supported frameworks for each one.":::
 
@@ -43,7 +43,7 @@ Use the **Frameworks** filters to show packages that target specific .NET framew
 
   Alternatively, you can see packages that match **any one** of your framework filters. To do so, go to the top of the filter options. Next to **Framework Filter Mode**, select **Any**.
   - Selecting **netcoreapp3.1** and **net5.0** then shows you packages that target **either** .NET Core 3.1 or .NET 5.0.
-  - Selecting **netcoreapp3.1** and the **.NET** framework generation returns packages that target .NET Core 3.1 or any of the .NET TFMs (`net5.0` through `net8.0`).
+  - Selecting **netcoreapp3.1** and the **.NET** framework generation returns packages that target .NET Core 3.1 or any of the .NET TFMs (`net5.0` through `net10.0`).
 - For more information about how to evaluate a package's supported frameworks and its compatibility with your project, see [Determine supported frameworks](#determine-supported-frameworks), later in this article.
 
 #### Package type filter
@@ -54,19 +54,19 @@ Use the **Package type** filter to see packages of a specific type:
 - **Dependency** filters to regular NuGet packages that you can install in your project.
 - **.NET tool** filters to [.NET tools](/dotnet/core/tools/global-tools) packages that contain console applications.
 - **Template** filters to [.NET templates](/dotnet/core/install/templates) that you can use to create new projects with the [dotnet new](/dotnet/core/tools/dotnet-new) command.
-- **MCP Server** filters to Model Context Protocol (MCP) server packages.
+- **MCP Server** filters to packages that implement Model Context Protocol (MCP) servers, which you can use to connect AI applications to your data and systems.
 
-By default, NuGet lists all versions of packages, including prerelease and beta versions. In the **Options** section, deselect the **Include prerelease** checkbox to list only stable, released package versions.
+By default, NuGet lists all versions of packages, including prerelease and beta versions. In the **Options** section, clear the **Include prerelease** checkbox to list only stable, released package versions.
 
-To apply changes, select **Apply**. To get back to the defaults, select **Reset**.
+To apply changes, select **Apply**. To go back to the default values, select **Reset**.
 
 #### Sorting list
 
-Use the **Sort by** dropdown on the top-right of the page to sort the list by several criteria:
+Use the **Sort by** list in the upper-right corner of the page to sort the package list by several criteria:
 
-- **Relevance** is the default, and sorts results according to an internal scoring algorithm.
+- **Relevance** is the default value, and sorts results according to an internal scoring algorithm.
 - **Downloads** sorts the search results by the total number of downloads, in descending order.
-- **Recently updated** sorts the search results by the latest package version creation date, in descending chronological order.
+- **Recently updated** sorts the search results by the creation date of the latest package version, in descending chronological order.
 
 ### Search syntax
 
@@ -74,11 +74,11 @@ Package search queries at nuget.org, from the NuGet CLI, and from within Visual 
 
 - You can search the package `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary`, or `owner` properties by using the syntax `<property>:<term>`.
 
-- Search applies to keywords and descriptions, and is case-insensitive. For example, the following strings all search the `id` property for the string `nuget.core`:
+- Searches apply to keywords and descriptions, and are case-insensitive. For example, the following strings all search the `id` property for the string `nuget.core`:
 
   `id:NuGet.Core`<br/>  `ID:nuget.core`<br/>  `Id:NUGET.CORE`
 
-- Searches on the `id` property match substrings, while `packageid` and `owner` use exact, case-insensitive matches. For example:
+- Searches on the `id` property match substrings, but `packageid` and `owner` use exact, case-insensitive matches. For example:
 
   `PackageId:jquery` searches for the exact package ID `jquery`.<br/>  `Id:jquery` searches for all package IDs that contain the string `jquery`.
 
@@ -86,7 +86,7 @@ Package search queries at nuget.org, from the NuGet CLI, and from within Visual 
 
   `id:jquery id:ui` searches for multiple terms in the `id` property.<br/>  `id:jquery tags:validation` searches for multiple properties.
 
-- Search ignores unsupported properties, so `invalid:jquery ui` is the same as searching for `ui`, and `invalid:jquery` returns all packages.
+- Searches ignore unsupported properties, so `invalid:jquery ui` is the same as searching for `ui`, and `invalid:jquery` returns all packages.
 
 ### Determine supported frameworks
 
@@ -94,19 +94,19 @@ NuGet installs a package into a project only if the package's supported .NET fra
 
 There are several ways to determine the frameworks that a package supports:
 
-- On the search page, a package's supported frameworks will appear as badges below the package ID. These badges show the lowest supported framework versions from the **.NET**, **.NET Core**, **.NET Standard**, and **.NET Framework** generations. The package will be compatible with any framework version that's equal to or higher than the badge version shown.
+- Check the search page for a package's supported frameworks, which appear as badges below the package ID. These badges show the lowest supported framework versions from the .NET, .NET Core, .NET Standard, and .NET Framework generations. The package is compatible with any framework version that's greater than or equal to the badge version shown.
 
-  'Dark blue' badges represent explicitly targeted frameworks, while 'light blue' badges represent computed compatible frameworks.
+  Dark blue badges represent explicitly targeted frameworks. Light blue badges represent computed compatible frameworks.
 
-  Clicking on a badge will redirect you to the package's details page on nuget.org. The **Frameworks** tab on the package's page will show the full list of supported frameworks.
+  Selecting a badge redirects you to the package's details page on nuget.org. On that page, the **Frameworks** tab displays the full list of supported frameworks.
 
-  ![Screenshot of the Framework badges on nuget.org's search page.](media/Finding-10-FrameworkBadgesInSearch.png)
+  :::image type="content" source="media/Finding-10-FrameworkBadgesInSearch.png" alt-text="Screenshot of nuget.org/packages. Under two package names, the rows of framework badges are highlighted, and a tooltip about compatibility is visible.":::
 
-- On the package's page at nuget.org, supported frameworks appear below the package ID and on the **Frameworks** tab, but not all packages show supported frameworks.
+- Check the package's page at nuget.org for supported frameworks. They appear below the package ID and on the **Frameworks** tab, but not all packages show supported frameworks.
 
-  ![Screenshot of the Frameworks UI and tab on the package page at nuget.org.](media/supported-frameworks.png)
+  :::image type="content" source="media/supported-frameworks.png" alt-text="Screenshot of a nuget.org package page. Under the name, the framework badges are highlighted. The Frameworks tab lists numerous .NET versions.":::
 
-- Download the package manually by selecting **Download package** under **About**. Change the file extension of the downloaded package from *.nupkg* to *.zip*, open the *.zip* folder, and examine its *lib* folder. There are subfolders for each supported framework, each named with a target framework moniker (TFM). For more information, see [Target Frameworks](../reference/target-frameworks.md). If there aren't any subfolders under *lib* and there's only a single DLL, try to install the package to discover its compatibility.
+- Download the package manually from the package page by going to the **About** section and selecting **Download package**. Change the file extension of the downloaded package from *.nupkg* to *.zip*, open the *.zip* folder, and examine its *lib* folder. There are subfolders for each supported framework, each named with a TFM. For more information, see [Target frameworks](../reference/target-frameworks.md). If there aren't any subfolders under *lib* and there's only a single DLL, try to install the package to discover its compatibility.
 
 - Try to install the package into a project by using [Install-Package](../reference/ps-reference/ps-ref-install-package.md) in the Visual Studio Package Manager Console. If the package is incompatible, the console output shows the package's supported frameworks.
 
@@ -116,8 +116,8 @@ Many package authors provide preview and beta releases as they continue to impro
 
 To list and search only stable releases:
 
-  - At nuget.org, deselect the **Include prerelease** checkbox in the advanced search panel.
-  - In the Visual Studio NuGet Package Manager UI, deselect the **Include prerelease** checkbox next to the Search box.
+- At nuget.org, go to the advanced search panel and clear the **Include prerelease** checkbox.
+- In the Visual Studio NuGet Package Manager UI, clear the **Include prerelease** checkbox next to the search box.
 
 The Visual Studio Package Manager Console, NuGet CLI, and dotnet CLI tools don't include prerelease versions by default. To include prerelease versions:
 
