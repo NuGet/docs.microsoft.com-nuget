@@ -70,7 +70,7 @@ Use the **Sort by** list in the upper-right corner of the page to sort the packa
 
 ### Search syntax
 
-Package search queries at nuget.org, from the NuGet CLI, and from within Visual Studio all use the same syntax. Other package sources, like Azure Artifacts or GitHub Package Repository, might use different syntax or might not support advanced filtering.
+Package search queries at nuget.org, from the NuGet command-line interface (CLI), and from within Visual Studio all use the same syntax. Other package sources, like Azure Artifacts or GitHub Package Repository, might use different syntax or might not support advanced filtering.
 
 - You can search the package `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary`, or `owner` properties by using the syntax `<property>:<term>`.
 
@@ -114,23 +114,23 @@ There are several ways to determine the frameworks that a package supports:
 
 Many package authors provide preview and beta releases as they continue to improve and seek feedback on latest revisions. By default, nuget.org shows prerelease packages in its package list and search results.
 
-To list and search only stable releases:
+To list and search for only stable releases:
 
 - At nuget.org, go to the advanced search panel and clear the **Include prerelease** checkbox.
 - In the Visual Studio NuGet Package Manager UI, clear the **Include prerelease** checkbox next to the search box.
 
 The Visual Studio Package Manager Console, NuGet CLI, and dotnet CLI tools don't include prerelease versions by default. To include prerelease versions:
 
-- In the Package Manager Console, use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. For more information, see the [PowerShell Reference](../reference/powershell-reference.md).
+- In the Package Manager Console, use the `-IncludePrerelease` switch with the `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package`, and `Update-Package` commands. For more information, see [PowerShell reference](../reference/powershell-reference.md).
 
-- For the NuGet CLI, use the `-prerelease` switch with the `install`, `update`, `delete`, and `mirror` commands. For more information, see the [NuGet CLI reference](../reference/nuget-exe-cli-reference.md).
+- For the NuGet CLI, use the `-prerelease` switch with the `install`, `update`, `list`, `search`, and `mirror` commands. For more information, see [NuGet CLI reference](../reference/nuget-exe-cli-reference.md).
 
-- For the dotnet CLI, specify a prerelease version with the `-v` argument. For more information, see the [dotnet add package reference](/dotnet/core/tools/dotnet-add-package).
+- For the dotnet CLI, specify a prerelease version with the `-v` argument. For more information, see [dotnet package add](/dotnet/core/tools/dotnet-package-add).
 
 <a name="native-cpp-packages"></a>
 ### Native C++ packages
 
-Visual Studio C++ projects can use native C++ NuGet packages. Installing these packages enable the **Manage NuGet Packages** context-menu command, exposes a `native` target framework, and provides MSBuild integration.
+Visual Studio C++ projects can use native C++ NuGet packages. Installing these packages enables the **Manage NuGet Packages** context-menu command, exposes a `native` target framework, and provides MSBuild integration.
 
 To find native packages on nuget.org/packages, search by using `tag:native`. Such packages typically provide *.targets* and *.props* files, which NuGet imports automatically when adding the packages.
 
@@ -138,21 +138,21 @@ To find native packages on nuget.org/packages, search by using `tag:native`. Suc
 
 The best way to evaluate a package's usefulness is to try it out. You take a dependency on a package when you use it, so you must make sure it's robust and reliable. However, installing a package and directly testing it is time-consuming. You can learn a lot about a package's quality by using the information on the package's page at nuget.org/packages.
 
-- The **Prefix Reserved** checkmark next to the package ID on the packages list and the package page means the package owners have applied for and been granted a [reserved package ID prefix](../nuget-org/id-prefix-reservation.md). To meet the [ID prefix reservation criteria](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria), package owners must clearly identify themselves and their packages.
+- The **Prefix Reserved** check mark means the package owners have applied for and been granted a [reserved package ID prefix](../nuget-org/id-prefix-reservation.md). On the package list, you can find this check mark next to the package ID. On the package page, it's under the ID. To meet the [ID prefix reservation criteria](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria), package owners must clearly identify themselves and their packages.
 
-  ![Screenshot that shows Prefix Reserved on a package's page.](media/prefix-reserved.png)
+  :::image type="content" source="media/prefix-reserved.png" alt-text="Screenshot of a package page at nuget.org. Under the package name is a blue check mark labeled Prefix Reserved.":::
   
-- **Downloads** in the package page's right column shows **Total**, **Current version**, and **Per day average** downloads. Large numbers indicate that the package has proven itself among many developers.
+- The **Downloads** section in the package page's side column shows **Total**, **Current version**, and **Per day average** downloads. Large numbers indicate that the package has proven itself among many developers.
 
-  ![Screenshot that shows Download statistics on a package's page.](media/Finding-03-Downloads.png)
+  :::image type="content" source="media/Finding-03-Downloads.png" alt-text="Screenshot of a package page Downloads section that shows total downloads, downloads of the current version, and per-day average downloads.":::
   
-  Select **Full stats** next to **Downloads** to see a page that shows package downloads for the past six weeks by version number. Versions that more developers are using are typically better choices.
+  Next to **Downloads**, select **Full stats** to go to a page that shows package downloads for the past six weeks by version number. Versions that more developers are using are typically better choices.
 
-- The **Used By** tab on the package page shows the top five most popular nuget.org packages and GitHub repositories that depend on this package. Packages and repos that depend on this package are called *dependents*. Dependent packages and repos can be seen as endorsing this package, because they chose to trust and depend on it.
+- The **Used By** tab on the package page shows the top five most popular nuget.org packages and GitHub repositories that depend on this package. Packages and repos that depend on this package are called *dependents*. Dependent packages and repos can be seen as endorsing this package, because they choose to trust and depend on it.
 
-  ![Screenshot that shows the Used By list.](media/Used-By-section-Humanizer.png)
+  :::image type="content" source="media/Used-By-section-Humanizer.png" alt-text="Screenshot of a package page. The Used By tab lists NuGet packages and GitHub repositories and their download counts. The highest is in the billions." lightbox="media/Used-By-section-Humanizer.png":::
   
-  The *latest stable version* of a dependent package must depend on any version of this package. This definition ensures that listed dependent packages are an up-to-date reflection of package authors' decisions to trust and depend on the package. The dependents list doesn't show prerelease dependents, because they're not considered wholehearted endorsements yet. The following examples show which packages show as dependents:
+  The *latest stable version* of a dependent package must depend on any version of this package. This definition ensures that listed dependent packages are an up-to-date reflection of package authors' decisions to trust and depend on the package. The dependents list doesn't show prerelease dependents, because they're not considered wholehearted endorsements yet. The following examples show which packages can be listed as dependents:
 
   | Dependent package version | Dependent package listed as a dependent? |
   |-|-|
@@ -167,29 +167,28 @@ The best way to evaluate a package's usefulness is to try it out. You take a dep
 
 - The **Versions** tab on the package page shows the **Versions**, **Downloads**, **Last Updated** dates, and serious vulnerabilities of package versions. The version you install shouldn't have any high-severity vulnerabilities. A well-maintained package has recent updates and a long version history. Neglected packages have few and long-ago updates.
 
-  ![Screenshot that shows the Versions list.](media/Finding-04-VersionHistory.png)
+  :::image type="content" source="media/Finding-04-VersionHistory.png" alt-text="Screenshot of a package page. The Versions tab lists the name, downloads, and date of each version. Some versions have a warning icon." lightbox="media/Finding-04-VersionHistory.png":::
 
-The right column of the package page has other informative links:
+In the side column of the package page, the **About** and **Owners** sections have other informative links:
 
 :::row:::
    :::column span="":::
-![Screenshot that shows the right column of the package page.](media/right-column.png)
+      :::image type="content" source="media/right-column.png" alt-text="Screenshot of the side column of a package page, with links for the owners, project website, source repository, and license highlighted." lightbox="":::
    :::column-end:::
    :::column span="2":::
-- Select **Project website**, if available, to see what support options the author provides. A project with a dedicated site is generally well supported.
+      - Select **Project website**, if available, to see what support options the author provides. A project with a dedicated site is generally well supported.
 
-- Select **Source repository** to go to the Git source code repository for the package. Many authors maintain their packages in open-source repositories, so users can directly contribute bug fixes and feature improvements. The package's contribution history is a good indicator of how many developers are actively involved.
+      - Select **Source repository** to go to the Git source code repository for the package. Many authors maintain their packages in open-source repositories, so users can directly contribute bug fixes and feature improvements. The package's contribution history is a good indicator of how many developers are actively involved.
 
-- Select **\<license type> license** to see the package's MIT or other license. If a package doesn't specify license terms, contact the package owner.
+      - Select **\<license type> license** to see the package's MIT or other license. If a package doesn't specify license terms, contact the package owner.
 
-- Select any of the package owners under **Owners** to see other packages they've published. Owners with multiple packages are more likely to continue supporting their work. Select **Contact owners** next to **Owners** to reach out directly to the package developers.
-
+      - Select any of the package owners under **Owners** to see other packages they've published. Owners with multiple packages are more likely to continue supporting their work. Next to **Owners**, select **Contact owners** to reach out directly to the package developers.
    :::column-end:::
 :::row-end:::  
 
 ## Retrieve license information
 
-Some NuGet clients and NuGet feeds might not be able to surface licensing information. To maintain backward compatibility in such cases, the license URL points to this document about how to retrieve the license information.
+Some NuGet clients and NuGet feeds might not be able to provide licensing information. To maintain backward compatibility in such cases, the license URL points to this document about how to retrieve the license information.
 
 If selecting the license URL for a package brings you to this page, it implies the package contains a license file and:
 
