@@ -71,26 +71,25 @@ To interrupt a long-running command, select the **Stop command execution** icon 
 
 To find a package in the default source, use [Find-Package](../reference/ps-reference/ps-ref-find-package.md).
 
-- To find and list packages that contain certain keywords:
+- To find and list packages that contain a certain keyword, use the following command:
 
   ```powershell
-  Find-Package <keyword1>
-  Find-Package <keyword2>
+  Find-Package <keyword>
   ```
 
-- To find and list packages whose name begins with a string:
+- To find and list packages whose name begins with a string, use the following command:
 
   ```powershell
   Find-Package <string> -StartWith
   ```
 
-- By default, `Find-Package` returns a list of 20 packages. Use `-First` to show more packages. For example, to show the first 100 packages, use:
+- By default, `Find-Package` returns a list of 20 packages. Use `-First` to specify a different number of packages. For example, to show the first 100 packages, use the following command:
 
   ```powershell
   Find-Package <keyword> -First 100
   ```
 
-- To list all versions of a certain package:
+- To list all versions of a certain package, use the following command:
 
   ```powershell
   Find-Package <PackageName> -AllVersions -ExactMatch
@@ -98,13 +97,13 @@ To find a package in the default source, use [Find-Package](../reference/ps-refe
 
 ## Install a package
 
-To install a package into the default project, use `Install-Package <PackageName>`. The [Install-Package](../reference/ps-reference/ps-ref-install-package.md) console command takes the following actions:
+To install a package into the default project, use `Install-Package <package-name>`. The [Install-Package](../reference/ps-reference/ps-ref-install-package.md) console command takes the following actions:
 
 - Does the steps in [What happens when a NuGet package is installed](../concepts/package-installation-process.md).
 - Displays applicable license terms in the console window with implied agreement. If you don't agree to the terms, you should uninstall the package.
 - Adds a reference to the package in the project file and in **Solution Explorer** under the **References** node. You must save the project before you can see the changes in the project file.
 
-By default, `Install-Package` adds the package to the default project the console window specifies. To add the package to a project that isn't the default, use the `-ProjectName` option. For example, to add the `Elmah.MVC` package to the non-default `UtilitiesLib` project, run the following command:
+By default, `Install-Package` adds the package to the default project that the console window specifies. To add the package to a project that isn't the default project, use the `-ProjectName` option. For example, to add the `Elmah.MVC` package to the non-default `UtilitiesLib` project, run the following command:
 
 ```powershell
 Install-Package Elmah.MVC -ProjectName UtilitiesLib
@@ -112,49 +111,49 @@ Install-Package Elmah.MVC -ProjectName UtilitiesLib
 
 ## Uninstall a package
 
-To uninstall a package from the default project, use `Uninstall-Package <PackageName>`. If you need to find the package name, use [Get-Package](../reference/ps-reference/ps-ref-get-package.md) to see all packages installed in the default project.
+To uninstall a package from the default project, use `Uninstall-Package <package-name>`. If you need to find the package name, use [Get-Package](../reference/ps-reference/ps-ref-get-package.md) to see all packages installed in the default project.
 
 [Uninstall-Package](../reference/ps-reference/ps-ref-uninstall-package.md) takes the following actions:
 
 - Removes references to the package from the project and any management formats. References no longer appear in **Solution Explorer**. You might need to rebuild the project to remove the reference in the *bin* folder.
 - Reverses any changes that installing the package made to *app.config* or *web.config*.
-- Removes previously-installed dependencies if no remaining packages use those dependencies.
+- Removes previously installed dependencies if no remaining packages use those dependencies.
 
-To uninstall a package and all its unused dependencies, run:
+To uninstall a package and all its unused dependencies, run the following commmand:
 
 ```powershell
-Uninstall-Package <PackageName> -RemoveDependencies
+Uninstall-Package <package-name> -RemoveDependencies
 ```
 
-To uninstall a package even if other packages depend on it, run:
+To uninstall a package even if other packages depend on it, run the following command:
 
 ```powershell
-Uninstall-Package <PackageName> -Force
+Uninstall-Package <package-name> -Force
 ```
 
 ## Update a package
 
-To update a package, use [Get-Package](../reference/ps-reference/ps-ref-get-package.md) and [Update-Package](../reference/ps-reference/ps-ref-update-package.md). You can run the following commands:
+To update packages, use [Update-Package](../reference/ps-reference/ps-ref-update-package.md). You can also use [Get-Package](../reference/ps-reference/ps-ref-get-package.md) to list available updates for installed packages.
 
-- To check if there are newer versions available for any installed packages:
+- To check if there are newer versions available for any packages that are installed in the solution, use the following command:
 
   ```powershell
   Get-Package -updates
   ```
 
-- To update a specific package:
+- To update a specific package, use the following command:
 
   ```powershell
-  Update-Package <PackageName>
+  Update-Package <package-name>
   ```
 
-- To update all packages in a project:
+- To update all packages in a project, use the following command:
 
   ```powershell
-  Update-Package -ProjectName <ProjectName>
+  Update-Package -ProjectName <project-name>
   ```
 
-- To update all packages in the solution:
+- To update all packages in the solution, use the following command:
 
   ```powershell
   Update-Package
@@ -163,7 +162,7 @@ To update a package, use [Get-Package](../reference/ps-reference/ps-ref-get-pack
 <a name="use-the-nugetexe-cli-in-the-console"></a>
 ## Use the NuGet CLI in the console
 
-You can also do most console operations with the [NuGet CLI](../reference/nuget-exe-cli-reference.md). However, the PowerShell console commands operate within the context of Visual Studio saved project and solution, and often do more than their equivalent NuGet CLI commands. For example, installing a package through `Install-Package` adds a reference to the project file, but the NuGet CLI command doesn't. For this reason, developers working in Visual Studio typically prefer to use the console commands rather than the NuGet CLI.
+You can also do most console operations by using the [NuGet CLI](../reference/nuget-exe-cli-reference.md). However, the PowerShell console commands operate within the context of the Visual Studio saved project and solution, and often do more than their equivalent NuGet CLI commands. For example, installing a package through `Install-Package` adds a reference to the project file, but the NuGet CLI command doesn't. For this reason, developers who work in Visual Studio typically prefer to use the console commands rather than the NuGet CLI.
 
 To use NuGet CLI commands in the Package Manager Console, install the [NuGet.CommandLine](https://www.nuget.org/packages/NuGet.CommandLine) package.
 
@@ -171,7 +170,7 @@ To use NuGet CLI commands in the Package Manager Console, install the [NuGet.Com
 Install-Package NuGet.CommandLine
 ```
 
-The preceding command installs the latest version of the NuGet CLI. To install a specific version, use the `-Version` option. For example, to install Version 4.4.1, enter:
+The preceding command installs the latest version of the NuGet CLI. To install a specific version, use the `-Version` option. For example, to install Version 4.4.1, use the following command:
 
 ```powershell
 Install-Package NuGet.CommandLine -Version 4.4.1
@@ -183,7 +182,7 @@ After you install the `NuGet.CommandLine` package, you can run all NuGet CLI com
 
 Some packages install new commands for the console. For example, `MvcScaffolding` creates commands like `Scaffold`, which generates ASP.NET MVC controllers and views:
 
-:::image type="content" source="media/PackageManagerConsoleInstall.png" alt-text="Screenshot that shows NuGet CLI commands available after installing the NuGet.CommandLine package.":::
+:::image type="content" source="media/extend-package-manager-console.png" alt-text="Screenshot that shows NuGet CLI commands available after installing the NuGet.CommandLine package.":::
 
 ## Set up a NuGet PowerShell profile
 
