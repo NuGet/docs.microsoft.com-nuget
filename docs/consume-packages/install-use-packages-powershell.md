@@ -1,6 +1,6 @@
 ---
 title: Manage NuGet Packages with the Visual Studio Package Manager Console
-description: See how to work with NuGet packages by using PowerShell commands in the Visual Studio Package Manager Console.
+description: Find out how to use PowerShell commands in the Visual Studio Package Manager Console to use and manage NuGet packages in your project or solution.
 author: JonDouglas
 ms.author: jodou
 ms.date: 03/03/2025
@@ -11,7 +11,7 @@ f1_keywords:
 
 # Manage packages with the Visual Studio Package Manager Console (PowerShell)
 
-The Package Manager Console in Visual Studio uses PowerShell commands to interact with NuGet packages. You can use the console when there's no way to do an operation through the [Package Manager UI](install-use-packages-visual-studio.md). You can also use [dotnet CLI](../reference/dotnet-commands.md) or [NuGet CLI](#use-the-nugetexe-cli-in-the-console) commands in the console.
+The Package Manager Console in Visual Studio uses PowerShell commands to interact with NuGet packages. You can use the console when there's no way to do an operation through the [Package Manager UI](install-use-packages-visual-studio.md). You can also use [dotnet command-line interface (CLI)](../reference/dotnet-commands.md) or [NuGet CLI](#use-the-nugetexe-cli-in-the-console) commands in the console.
 
 This article describes how to find, install, update, and uninstall NuGet packages by using PowerShell commands in the Package Manager Console. For the complete Package Manager Console PowerShell command reference, see [PowerShell reference](../reference/powershell-reference.md).
 
@@ -55,15 +55,15 @@ To open the Package Manager Console in Visual Studio, select **Tools** > **NuGet
 
 By default, console commands operate against the specific package source and project shown in the controls at the top of the Package Manager Console window:
 
-:::image type="content" source="media/package-manage-console-package-source-default-project.png" alt-text="Screenshot of the Package Manager Console window. At the top, the Package source and Default project lists are highlighted.":::
+:::image type="content" source="media/package-manager-console-package-source-default-project.png" alt-text="Screenshot of the Package Manager Console window. At the top, the Package source and Default project lists are highlighted.":::
 
 Selecting a different package source or project changes the defaults for subsequent commands. To override these settings for single commands without changing the defaults, most console commands support `-Source` and `-ProjectName` options.
 
-To manage package sources, select the gear icon, which opens the **Tools** > **Options** > **NuGet Package Manager** > **Package Sources** dialog box. To clear the console's contents, select the **Clear Console** icon :::image type="icon" source="media/package-manager-console-clear-console-icon.png"::: next to the **Default project** list.
+To manage package sources, select the gear icon, which opens the **Tools** > **Options** > **NuGet Package Manager** > **Package Sources** dialog box. To clear the console's contents, select **Clear Console** :::image type="icon" source="media/package-manager-console-clear-console-icon.png":::, next to the **Default project** list.
 
 :::image type="content" source="media/package-manager-console-settings-clear-console.png" alt-text="Screenshot of the Package Manager Console window. Near the top, two icons are highlighted. One shows a gear. The other shows output lines and a red X.":::
 
-To interrupt a long-running command, select the **Stop command execution** icon :::image type="icon" source="media/package-manager-console-stop-command-execution-icon.png":::, which is next to the **Clear Console** icon. For example, running `Get-Package -ListAvailable -PageSize 500` lists the top 500 available packages on the default source, such as nuget.org, which can take several minutes.
+To interrupt a long-running command, select **Stop command execution** :::image type="icon" source="media/package-manager-console-stop-command-execution-icon.png":::, next to the **Clear Console** icon. For example, running `Get-Package -ListAvailable -PageSize 500` lists the top 500 available packages on the default source, such as nuget.org, which can take several minutes.
 
 :::image type="content" source="media/package-manager-console-stop-command-execution.png" alt-text="Screenshot of the Package Manager Console window. Near the top, the Stop command execution icon, which looks like a red square, is highlighted.":::
 
@@ -135,7 +135,7 @@ Uninstall-Package <package-name> -Force
 
 To update packages, use [Update-Package](../reference/ps-reference/ps-ref-update-package.md). You can also use [Get-Package](../reference/ps-reference/ps-ref-get-package.md) to list available updates for installed packages.
 
-- To check if there are newer versions available for any packages that are installed in the solution, use the following command:
+- To check whether newer versions are available for any packages that are installed in the solution, use the following command:
 
   ```powershell
   Get-Package -updates
@@ -180,9 +180,12 @@ After you install the `NuGet.CommandLine` package, you can run all NuGet CLI com
 
 ## Extend the Package Manager Console
 
-Some packages install new commands for the console. For example, `MvcScaffolding` creates commands like `Scaffold`, which generates ASP.NET MVC controllers and views:
+Some packages extend the Package Manager Console by adding commands. For example, the `Microsoft.EntityFrameworkCore.Tools` package adds commands like the following ones:
 
-:::image type="content" source="media/extend-package-manager-console.png" alt-text="Screenshot that shows NuGet CLI commands available after installing the NuGet.CommandLine package.":::
+- `Add-Migration`: Generates a migration file for creating or updating database tables.
+- `Update-Database`: Creates or updates a database according to the latest migration.
+
+:::image type="content" source="media/extend-package-manager-console.png" alt-text="Screenshot of the Package Manager Console window. Output from the Add-Migration and Update-Database commands shows a database being created.":::
 
 ## Set up a NuGet PowerShell profile
 
