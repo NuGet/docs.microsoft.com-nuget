@@ -73,7 +73,7 @@ To interrupt a long-running command, select **Stop command execution** :::image 
 
 To find a package in the default source, use [Find-Package](../reference/ps-reference/ps-ref-find-package.md). The following code blocks show you how to use parameters to refine your search:
 
-- Find and list packages with an ID that contains a certain keyword:
+- Find and list packages that contain a certain keyword:
 
   ```powershell
   Find-Package <keyword>
@@ -85,7 +85,7 @@ To find a package in the default source, use [Find-Package](../reference/ps-refe
   Find-Package <string> -StartWith
   ```
 
-- Show the first 100 packages with an ID that contains a certain keyword:
+- Show the first 100 packages that contain a certain keyword:
 
   ```powershell
   Find-Package <keyword> -First 100
