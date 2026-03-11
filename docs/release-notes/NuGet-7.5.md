@@ -42,7 +42,7 @@ NuGet distribution vehicles:
 
 * Ensure the .NET SDK can handled aliased assets file - [#14536](https://github.com/NuGet/Home/issues/14536)
 
-* Enable dnx to be AOT compatible (InProgress) - [#14408](https://github.com/NuGet/Home/issues/14408)
+* Make NuGet AOT compatible (InProgress) - [#14408](https://github.com/NuGet/Home/issues/14408)
   * AOT Compatible: ManifestVersionUtility - [#7128](https://github.com/NuGet/NuGet.Client/pull/7128)
   * AOT Compatible: Add overrideVersion to enforce -Version precedence - [#7133](https://github.com/NuGet/NuGet.Client/pull/7133)
   * AOT compatible: NuGet.DependencyResolver.Core - [#7138](https://github.com/NuGet/NuGet.Client/pull/7138)
