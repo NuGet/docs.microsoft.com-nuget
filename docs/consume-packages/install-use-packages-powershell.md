@@ -40,7 +40,7 @@ To use the Package Manager Console to quickly find and install a package, take t
     Find-Package elmah
     ```
 
-1. After you find the package, use the `Install-Package` command with the package ID to install the package. For example, to install the `Elmah.MVC` package, enter:
+1. After you find the package, run the `Install-Package` command with the package ID to install the package. For example, to install the `Elmah.MVC` package, run the following command:
 
     ```powershell
     Install-Package Elmah.MVC
@@ -53,7 +53,7 @@ For more details about these commands, see the [Find a package](#find-a-package)
 
 ## Use console controls
 
-To open the Package Manager Console in Visual Studio, select **Tools** > **NuGet Package Manager** > **Package Manager Console** from the top menu. The console is a Visual Studio window that you can arrange and position as you like. For more information, see [Customize window layouts and personalize tabs](/visualstudio/ide/customizing-window-layouts-in-visual-studio).
+To open the Package Manager Console in Visual Studio, go to the top menu, and then select **Tools** > **NuGet Package Manager** > **Package Manager Console**. The console is a Visual Studio window that you can arrange and position as you like. For more information, see [Customize window layouts and personalize tabs](/visualstudio/ide/customizing-window-layouts-in-visual-studio).
 
 By default, console commands operate against the specific package source and project shown in the controls at the top of the Package Manager Console window:
 
