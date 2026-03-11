@@ -67,7 +67,7 @@ To manage package sources, select the gear icon, which opens the **Tools** > **O
 
 To interrupt a long-running command, select **Stop command execution** :::image type="icon" source="media/package-manager-console-stop-command-execution-icon.png":::, next to the **Clear Console** icon. For example, running `Get-Package -ListAvailable -PageSize 500` lists the top 500 available packages on the default source, such as nuget.org, which can take several minutes.
 
-:::image type="content" source="media/package-manager-console-stop-command-execution.png" alt-text="Screenshot of the Package Manager Console window. Near the top, the Stop command execution icon, which looks like a red square, is highlighted.":::
+:::image type="content" source="media/package-manager-console-stop-command-execution.png" alt-text="Screenshot of the Package Manager Console window. Near the top, the Stop command execution icon, which looks like a red square, is highlighted." lightbox="media/package-manager-console-stop-command-execution.png":::
 
 ## Find a package
 
