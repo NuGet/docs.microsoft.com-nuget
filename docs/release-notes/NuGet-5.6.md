@@ -72,5 +72,7 @@ NuGet distribution vehicles:
 
 * Sort packages by ID in the Updates tab of the PM UI - [#9278](https://github.com/NuGet/Home/issues/9278)
 
+* Pack no longer raises NU5105 when packing a SemVer 2.0 package - [#9044](https://github.com/NuGet/Home/issues/9044) [#5201](https://github.com/NuGet/Home/issues/5201)
+
 
 **[List of all issues fixed in this release - 5.6](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5e3b2080c4b30708e48bf9f3)**
