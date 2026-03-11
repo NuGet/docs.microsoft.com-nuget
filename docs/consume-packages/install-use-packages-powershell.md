@@ -34,7 +34,7 @@ To use the Package Manager Console to quickly find and install a package, take t
 
 1. Open your project or solution in Visual Studio, and select **Tools** > **NuGet Package Manager** > **Package Manager Console** to open the Package Manager Console window.
 
-1. In the console, use `Find-Package` with a keyword to find the package you want to install. For example, to find packages that provide error logging modules and handlers (ELMAH), run the following command to search for the keyword `elmah`. If you already know the package name you want, skip this step.
+1. In the console, run the `Find-Package` command with a keyword to find the package you want to install. For example, to find packages that provide error logging modules and handlers (ELMAH), run the following command to search for the keyword `elmah`. If you already know the package name you want, skip this step.
 
     ```powershell
     Find-Package elmah
@@ -91,7 +91,7 @@ To find a package in the default source, use [Find-Package](../reference/ps-refe
   Find-Package <keyword> -First 100
   ```
 
-  By default, `Find-Package` returns a list of 20 packages. As in this example, you can use `-First` to specify a different number of packages.
+  By default, `Find-Package` returns a list of 20 packages. As in the preceding example, you can use `-First` to specify a different number of packages.
 
 - List all versions of a certain package:
 
