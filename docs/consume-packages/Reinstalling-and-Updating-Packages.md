@@ -100,7 +100,7 @@ In all cases, use the notation described in [Package versioning](../concepts/pac
 
 ## Update-Package command
 
-The [Update-Package command](../reference/ps-reference/ps-ref-update-package.md) in the Package Manager Console is the easiest way to reinstall a package and address broken references. However, this approach isn't usable in all scenarios. You can use the command to update an installed package, but not to do an initial install. If you try to update or reinstall a package that isn't already installed in the configuration, the command returns an error. Be sure to review the [Package reinstall considerations](#package-reinstall-considerations) section before working with the command.
+The [Update-Package command](../reference/ps-reference/ps-ref-update-package.md) in the Package Manager Console is the easiest way to reinstall a package and address broken references. However, this approach isn't usable in all scenarios. You can use the command to update an installed package, but not to do an initial install. If you try to update or reinstall a package that isn't already installed in the configuration, the command returns an error. Before working with the command, review the [Package reinstall considerations](#package-reinstall-considerations) section.
 
 Updating packages in a project or solution by using [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) always updates to the latest version of the package (excluding prerelease packages). Projects that use the `packages.config` management format can limit upgrade versions as described in [Constraints on upgrade versions](#constraints-on-upgrade-versions).
 
@@ -111,8 +111,8 @@ The following sections provide examples for working with the command.
 Here's a basic usage of the command to do a reinstall. To identify a specific NuGet package, you can use the optional `-Id` parameter.
 
 ```powershell
-# Reinstall the package named <package_name>
-Update-Package -Id <package_name> –reinstall
+# Reinstall the package named <package-name>.
+Update-Package -Id <package-name> –reinstall
 ```
 
 Using the `Update-Package` command is easier than removing a package and then trying to locate the same package in the NuGet gallery with the same version. 
