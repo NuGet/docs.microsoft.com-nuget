@@ -1,5 +1,5 @@
 ---
-title: Reinstall and update NuGet packages in Visual Studio
+title: Reinstall and Update NuGet Packages in Visual Studio
 description: Learn how to reinstall and update NuGet packages to address broken package references and broken projects in Visual Studio.
 author: JonDouglas
 ms.author: jodou
@@ -24,19 +24,21 @@ Here are some common scenarios where you might encounter broken package referenc
 | **Broken project due to deleted files** | Deleted (missing) package files cause your project to break. NuGet doesn't prevent deleting items that you add from packages. It can be easy to inadvertently modify contents installed from a package and break your project. | To restore your project, try reinstalling the affected packages. |
 | **Broken project after package update** | A package update breaks your project. Companion updates to a dependency package generally cause this type of failure. | To restore the state of the dependency to its previous working order, try reinstalling the specific dependent package. |
 | **Broken references after project retarget or upgrade** | A project retarget or upgrade process causes broken package references. After you retarget your project, NuGet shows a build error. Build warnings list packages that might need to be reinstalled. Or, after you upgrade your project, NuGet shows an error in the project upgrade log. The log file lists packages that might need to be reinstalled. | To resolve issues due to a change in target framework, try reinstalling one or more packages. |
-| **Package changes under development** | Package authors often need to reinstall the same version of a package they're currently developing to test their changes. | The NuGet Package Manager Console in Visual Studio provides flexible options for updating and reinstalling packages. To reinstall a package under development, you can use the `Update-Package -reinstall` command. |
+| **Package changes under development** | Package authors often need to reinstall the same version of a package they're currently developing to test their changes. | To reinstall a package under development, try using the `Update-Package -reinstall` command in the NuGet Package Manager Console in Visual Studio. The console provides flexible options for updating and reinstalling packages. |
 
 ## Implementation options
 
-You have several choices for how to update and reinstall NuGet packages. Common methods include NuGet Package Manager UI options, the NuGet Package Manager Console, and the NuGet (Command Line Interface) CLI. 
+You have several choices for how to update and reinstall NuGet packages. Common methods include NuGet Package Manager UI options, the NuGet Package Manager Console, and the NuGet command-line interface (CLI).
 
 ### Package Manager UI
 
-In addition to the Console interface, the Package Manager UI also provides menu options to install, update, and uninstall packages.
+In addition to the Package Manager Console, the Package Manager UI also provides menu options to install, update, and uninstall packages.
 
-- To update a package, open the **Updates** tab, choose one or more packages, then select **Update**.
+- To update a package in the UI, open the **Updates** tab, select one or more packages, and then select **Update**.
 
-- To reinstall a package, first uninstall the package and then install it again. Open the **Installed** tab, choose a package and record its name, then select **Uninstall**. Switch to the **Browse** tab and search for the package name, choose the package, then select **Install**.
+- To reinstall a package, first uninstall the package and then install it again:
+  1. Open the **Installed** tab, select a package and record its name, and then select **Uninstall**.
+  1. Switch to the **Browse** tab and search for the package name, select the package, and then select **Install**.
 
 ### Package Manager Console
 
@@ -44,7 +46,7 @@ You can access the Package Manager Console under **Tools** > **NuGet Package Man
 
 - To update a package, the Package Manager Console provides the `Update-Package` command. 
 
-- To reinstall a package, you can use the same command with the `-reinstall` parameter. This approach is the easiest option, if it's compatible with your configuration.
+- To reinstall a package, you can use the `Update-Package` command with the `-reinstall` parameter. This approach is the easiest option, if it's compatible with your configuration.
 
 For more information, see the [Update-Package command](#update-package-command) and [Package reinstall considerations](#package-reinstall-considerations) sections.
 
@@ -52,11 +54,25 @@ For more information, see the [Update-Package command](#update-package-command) 
 
 The NuGet CLI, `nuget.exe`, is the command-line utility for Windows that provides all NuGet capabilities. 
 
-- To update an installed package, run the `nuget update` command.
+- To update an installed package, run the following command. For `<package-configuration-file-path>`, use the path to your *packages.config* file or a solution file that lists project dependencies.
 
-- To reinstall all NuGet packages, delete the package folder and then run the `nuget install` command.
+  `nuget update <package-configuration-file-path>`
 
-- To reinstall a single package, delete the package folder and then run the `nuget install <id>` command, where the `<id>` argument is the ID of the specific package.
+- To reinstall all NuGet packages, go to the *packages* folder, delete all the package subfolders, and then run the following command.
+  - For `<package-configuration-file-path>`, use the path to your *packages.config* file or a solution file that lists project dependencies.
+  - For `<packages-folder-path>`, use the path to the *packages* folder.
+
+  `nuget install <package-configuration-file-path> -OutputDirectory <packages-folder-path>`
+
+- To reinstall a single package, delete the folder for that package, and then run the following command.
+  - For `<ID>`, use the ID of the package you want to reinstall.
+  - For `<packages-folder-path>`, use the path to the *packages* folder. 
+
+  `nuget install <ID> -OutputDirectory <packages-folder-path>`
+
+  If you don't use the most recent version of the package, run the following command instead, to specify the version you use:
+
+  `nuget install <ID> -Version <version> -OutputDirectory <packages-folder-path>`
 
 > [!NOTE]
 > For the **dotnet CLI**, the equivalent procedure isn't required. When you run the `dotnet restore` command, the dotnet CLI uses NuGet to determine dependencies and download any necessary NuGet packages. For more information, see [Restore NuGet packages with the dotnet CLI](package-restore.md#restore-using-the-dotnet-cli).
@@ -65,9 +81,9 @@ The NuGet CLI, `nuget.exe`, is the command-line utility for Windows that provide
 
 By default, reinstalling or updating a package _always_ installs the latest version available from the package source. However, projects that use the `packages.config` management format can specifically limit the allowed NuGet package version range.
 
-Suppose your application works only with version 1.x of a package, but not with version 2.0 or later, due to a major change in the package API. To ensure your application works as expected, you want to constrain NuGet package upgrades to versions 1.x only. The limitation helps to prevent accidental updates that might break your application.
+Suppose your application works only with version 1.x of a package, but not with version 2.0 or later, due to a major change in the package API. To help ensure your application works as expected, you want to constrain NuGet package upgrades to versions 1.x only. The limitation helps to prevent accidental updates that might break your application.
 
-To set a constraint, open the `packages.config` file in a text editor. Locate the dependency that you want to limit, and add the `allowedVersions` attribute with your desired version range.
+To set a constraint, open the *packages.config* file in a text editor. Locate the dependency that you want to limit, and add the `allowedVersions` attribute with your desired version range.
 
 The following example shows how to constrain updates to version 1.x by setting the `allowedVersions` attribute to `[1,2)`:
 
