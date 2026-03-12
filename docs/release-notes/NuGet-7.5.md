@@ -58,7 +58,7 @@ NuGet distribution vehicles:
 
 Thank you to all the contributors who helped make this NuGet release awesome!
 
-* [nareshjo](https://github.com/NuGet/NuGet.Client/pull/7132)
+* [nareshjo](https://github.com/nareshjo)
   * [7132](https://github.com/NuGet/NuGet.Client/pull/7132) Avoid redundant SourceRepository allocation on cache hit in CachingSourceProvider
   * [7089](https://github.com/NuGet/NuGet.Client/pull/7089) Reduce allocations in `ResolverMetadataClient.ProcessPackageVersion` by avoiding JArray enumerator allocations
   * [7095](https://github.com/NuGet/NuGet.Client/pull/7095) Pre-size List in TryGetPortableFrameworks to avoid array resize allocations
@@ -69,7 +69,7 @@ Thank you to all the contributors who helped make this NuGet release awesome!
   * [7037](https://github.com/NuGet/NuGet.Client/pull/7037) Reduce allocation in GetContentFileGroup by providing accurate capacity for List
   * [7035](https://github.com/NuGet/NuGet.Client/pull/7035) Reduce allocation in DownloadTimeoutStream.ReadAsync caused by avoiding unconditional string.Format allocation
   * [7026](https://github.com/NuGet/NuGet.Client/pull/7026) Fix list capacity calculation in GetGraphItemAsync that is leading to allocations
-* [viceice](https://github.com/NuGet/NuGet.Client/pull/7145)
+* [viceice](https://github.com/NuGet/viceice)
   * [7145](https://github.com/NuGet/NuGet.Client/pull/7145) Handle empty paths when locating extensions
 
   
