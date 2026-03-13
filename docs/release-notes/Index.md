@@ -13,6 +13,8 @@ ms.topic: release-notes
 
 [NuGet 7.5](../release-notes/NuGet-7.5.md)
 
+[NuGet 7.4](../release-notes/NuGet-7.4.md)
+
 [NuGet 7.3](../release-notes/NuGet-7.3.md)
 
 [NuGet 7.0](../release-notes/NuGet-7.0.md)
