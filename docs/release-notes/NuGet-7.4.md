@@ -12,25 +12,15 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**7.4.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.4.0](https://visualstudio.microsoft.com/downloads/) | [10.0.300](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> |
-
-<sup>1</sup> Installed with Visual Studio 2026 with any .NET workload
+| [**7.4.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.4.0](https://visualstudio.microsoft.com/downloads/) | N/A
 
 ## Summary: What's New in 7.4.0
-
-### Breaking changes
-
-* Report real transitive reference versions in `dotnet nuget why`, not final resolved versions - [#13752](https://github.com/NuGet/Home/issues/13752)
 
 ### Issues fixed in this release
 
 * Ensure PM UI refreshes when audit sources are updated - [#14688](https://github.com/NuGet/Home/issues/14688)
 
 * NU1701 Warning Not Suppressed by NoWarn=&quot;NU1701&quot; on PackageReference (dotnet restore / build) - [#14756](https://github.com/NuGet/Home/issues/14756)
-
-* dotnet nuget why on non-sdk style project&#39;s assets file doesn&#39;t work - [#14695](https://github.com/NuGet/Home/issues/14695)
-
-* No vulns shown for vulnerable &amp; deprecated package version when using dotnet list package --vulnerable - [#14477](https://github.com/NuGet/Home/issues/14477)
 
 [List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.3.0.78...7.4.0.28)
 
