@@ -1,11 +1,10 @@
 ---
 title: Target Frameworks Reference for NuGet
-description: NuGet target framework references identify and isolate framework-dependent components of a package.
-author: JonDouglas
-ms.author: jodou
-ms.date: 12/11/2017
+description: NuGet target framework references identify and isolate framework-dependent components of a package, including support for multi-targeting with duplicate frameworks.
+author: nkolev92
+ms.author: nikolev
+ms.date: 03/25/2026
 ms.topic: reference
-ms.reviewer: anangaur
 ---
 
 # Target frameworks
@@ -17,9 +16,38 @@ NuGet uses target framework references in a variety of places to specifically id
 - [.nupkg folder name](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): The folders inside a package's `lib` folder can be named according to the target framework, each of which contains the DLLs and other content appropriate to that framework.
 - [packages.config](../reference/packages-config.md): The `targetframework` attribute of a dependency specifies the variant of a package to install.
 
-> [!Note]
-> NuGet supports all of the modern .NET target frameworks:
-> - For a list of the latest target frameworks, see the [Target frameworks in SDK-style projects](/dotnet/standard/frameworks) documentation.
+For the canonical list of all supported target frameworks and their TFM syntax, see [Target frameworks in SDK-style projects](/dotnet/standard/frameworks).
+
+## TargetFramework values are aliases
+
+The `TargetFramework` property in a project file is a friendly name — an alias — that gets translated into a canonical framework identity. The .NET SDK performs this translation by setting the `TargetFrameworkMoniker` (TFM), and when applicable, the `TargetPlatformMoniker` properties.
+
+For example, when you write `<TargetFramework>net10.0-windows</TargetFramework>`, the .NET SDK translates that into:
+
+- `TargetFrameworkMoniker` = `.NETCoreApp,Version=v10.0`
+- `TargetPlatformMoniker` = `Windows,Version=7.0`
+
+NuGet uses these moniker properties — not the `TargetFramework` string — for package compatibility checks. This means the `TargetFramework` value itself can be any string, as long as the moniker properties are set correctly. For example, the following project is valid:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>banana</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'banana' ">
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
+    <TargetFrameworkMoniker>.NETCoreApp,Version=v10.0</TargetFrameworkMoniker>
+  </PropertyGroup>
+</Project>
+```
+
+This project restores and builds for .NET 10.0, even though the `TargetFramework` value is `banana`. The .NET SDK already relies on this aliasing mechanism for OS-specific TFMs like `net8.0-ios` and `net8.0-android`, where the short TFM is translated into the full moniker with platform information.
+
+## Multi-targeting with duplicate frameworks
+
+Starting with [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300, multiple `TargetFrameworks` aliases can resolve to the same effective framework. This enables scenarios like multi-RID builds and multi-version extension targeting. For details on how this works with restore, pack, lock files, and project references, see [Multi-targeting with duplicate frameworks](../consume-packages/package-references-in-project-files.md#multi-targeting-with-duplicate-frameworks).
 
 ## Supported frameworks
 
@@ -89,6 +117,8 @@ Universal Windows Platform | uap | uap [uap10.0] |
 | | | net6.0 |
 | | | net7.0 |
 | | | net8.0 |
+| | | net9.0 |
+| | | net10.0 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
 | Native | native | native |
