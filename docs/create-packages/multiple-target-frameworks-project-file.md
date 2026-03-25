@@ -70,7 +70,7 @@ Here is the *.csproj* file that is generated using the preceding steps and .NET 
 
 Starting with [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300, you can use multiple `TargetFrameworks` values that resolve to the same underlying framework. This enables scenarios like building for multiple runtimes or targeting multiple versions of a host application from a single project.
 
-For details on how this works with restore and pack, see [Multi-targeting with duplicate frameworks](../consume-packages/package-references-in-project-files.md#multi-targeting-with-duplicate-frameworks).
+For details on how this works with restore and pack, see [Targeting multiple frameworks](../consume-packages/package-references-in-project-files.md#multi-targeting-with-duplicate-frameworks).
 
 ## See also
 

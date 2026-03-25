@@ -142,6 +142,82 @@ Note that because `build` is not included with `PrivateAssets`, targets and prop
 > [!NOTE]
 > When `developmentDependency` is set to `true` in a `.nuspec` file, this marks a package as a development-only dependency, which prevents the package from being included as a dependency in other packages. With PackageReference *(NuGet 4.8+)*, this flag also means that it will exclude compile-time assets from compilation. For more information, see [DevelopmentDependency support for PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference).
 
+## Targeting multiple frameworks
+
+SDK-style projects support multi-targeting by listing multiple values in the `TargetFrameworks` property. When a project targets multiple frameworks, NuGet restore produces a separate dependency graph for each framework, and `dotnet pack` creates a package with framework-specific assets for each target.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net10.0;netstandard2.0</TargetFrameworks>
+  </PropertyGroup>
+</Project>
+```
+
+For a step-by-step guide on setting up a multi-targeted project, see [Support multiple .NET frameworks in your project file](../create-packages/multiple-target-frameworks-project-file.md).
+
+### How TargetFramework values work
+
+The `TargetFramework` property in a project file is a friendly name — an alias — that gets translated into a canonical framework identity. The .NET SDK performs this translation by setting the `TargetFrameworkMoniker` (TFM), and when applicable, the `TargetPlatformMoniker` properties.
+
+NuGet uses these moniker properties — not the `TargetFramework` string — for package compatibility checks. This means the `TargetFramework` value itself can be any string, as long as the moniker properties are set correctly.
+
+For more details on the aliasing mechanism, see [TargetFramework values are aliases](../reference/target-frameworks.md#targetframework-values-are-aliases).
+
+### Multi-targeting with duplicate frameworks
+
+*This feature requires [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300 or later.*
+
+Because `TargetFramework` values are aliases, multiple aliases can resolve to the *same* effective framework. Starting with [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300, NuGet and the .NET SDK support this scenario.
+
+This enables use cases such as:
+
+- **Multi-RID builds**: Build platform-specific assemblies from a single project.
+
+  ```xml
+  <Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+      <TargetFrameworks>apple;banana</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+      <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+      <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
+      <TargetFrameworkMoniker>.NETCoreApp,Version=v10.0</TargetFrameworkMoniker>
+    </PropertyGroup>
+  </Project>
+  ```
+
+- **Multi-version extensions**: Target multiple versions of a host application, such as Visual Studio.
+
+  ```xml
+  <Project Sdk="Microsoft.VisualStudio.Extensibility.Sdk">
+    <PropertyGroup>
+      <TargetFrameworks>vs18;vs17.14</TargetFrameworks>
+    </PropertyGroup>
+  </Project>
+  ```
+
+  In this example, the Visual Studio Extensibility SDK is responsible for setting the canonical moniker properties for each alias.
+
+#### Pack
+
+A NuGet package can only contain one set of build output and one dependency group per effective framework. When you pack a project with duplicate effective frameworks, you must tell NuGet which alias contributes these assets or the pack raises [NU5051](../reference/errors-and-warnings/NU5051.md). See [NU5051](../reference/errors-and-warnings/NU5051.md) for resolution steps and examples.
+
+#### Lock file
+
+When a project uses duplicate effective frameworks, the [packages lock file](#locking-dependencies) is automatically upgraded to a format that uses the alias as the key instead of the effective framework. This upgrade happens transparently — locked mode and CI/CD scenarios continue to work as before.
+
+#### Project references
+
+When a project references another project that has multiple aliases resolving to the same framework, NuGet uses the alias name as a tiebreaker. If the referencing project has an alias with the same name as one in the referenced project, that alias is preferred. If there’s no matching name and multiple candidates exist, NuGet reports an error.
+
+#### Limitations
+
+- Only SDK-style projects support duplicate effective frameworks.
+- Aliases that contain path separator characters (`/` or `\`) are blocked.
+- Visual Studio’s Package Manager UI doesn’t have special support for duplicate frameworks, but you can manage packages by editing the project file directly or using the `dotnet` CLI.
+
 ## Adding a PackageReference condition
 
 You can use a condition to control whether a package is included. Conditions can use any MSBuild variable or a variable defined in the targets or props file. However, at present, only the `TargetFramework` variable is supported.
@@ -238,60 +314,6 @@ namespace PackageReferenceAliasesExample
 }
 
 ```
-
-## Multi-targeting with duplicate frameworks
-
-*This feature requires [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300 or later.*
-
-SDK-style projects support [multi-targeting](../create-packages/multiple-target-frameworks-project-file.md) by listing multiple values in the `TargetFrameworks` property. Because [TargetFramework values are aliases](../reference/target-frameworks.md#targetframework-values-are-aliases), multiple aliases can resolve to the *same* effective framework. Starting with [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300, NuGet and the .NET SDK support this scenario.
-
-This enables use cases such as:
-
-- **Multi-RID builds**: Build platform-specific assemblies from a single project.
-
-  ```xml
-  <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-      <TargetFrameworks>apple;banana</TargetFrameworks>
-    </PropertyGroup>
-
-    <PropertyGroup>
-      <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
-      <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
-      <TargetFrameworkMoniker>.NETCoreApp,Version=v10.0</TargetFrameworkMoniker>
-    </PropertyGroup>
-  </Project>
-  ```
-
-- **Multi-version extensions**: Target multiple versions of a host application, such as Visual Studio.
-
-  ```xml
-  <Project Sdk="Microsoft.VisualStudio.Extensibility.Sdk">
-    <PropertyGroup>
-      <TargetFrameworks>vs18;vs17.14</TargetFrameworks>
-    </PropertyGroup>
-  </Project>
-  ```
-
-  In this example, the Visual Studio Extensibility SDK is responsible for setting the canonical moniker properties for each alias.
-
-### Pack
-
-A NuGet package can only contain one set of build output and one dependency group per effective framework. When you pack a project with duplicate effective frameworks, you must tell NuGet which alias contributes these assets or the pack raises [NU5051](../reference/errors-and-warnings/NU5051.md). See [NU5051](../reference/errors-and-warnings/NU5051.md) for resolution steps and examples.
-
-### Lock file
-
-When a project uses duplicate effective frameworks, the [packages lock file](#locking-dependencies) is automatically upgraded to a format that uses the alias as the key instead of the effective framework. This upgrade happens transparently — locked mode and CI/CD scenarios continue to work as before.
-
-### Project references
-
-When a project references another project that has multiple aliases resolving to the same framework, NuGet uses the alias name as a tiebreaker. If the referencing project has an alias with the same name as one in the referenced project, that alias is preferred. If there's no matching name and multiple candidates exist, NuGet reports an error.
-
-### Limitations
-
-- Only SDK-style projects support duplicate effective frameworks.
-- Aliases that contain path separator characters (`/` or `\`) are blocked.
-- Visual Studio's Package Manager UI doesn't have special support for duplicate frameworks, but you can manage packages by editing the project file directly or using the `dotnet` CLI.
 
 ## NuGet warnings and errors
 

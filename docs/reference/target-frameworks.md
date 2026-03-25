@@ -47,7 +47,7 @@ This project restores and builds for .NET 10.0, even though the `TargetFramework
 
 ## Multi-targeting with duplicate frameworks
 
-Starting with [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300, multiple `TargetFrameworks` aliases can resolve to the same effective framework. This enables scenarios like multi-RID builds and multi-version extension targeting. For details on how this works with restore, pack, lock files, and project references, see [Multi-targeting with duplicate frameworks](../consume-packages/package-references-in-project-files.md#multi-targeting-with-duplicate-frameworks).
+Starting with [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300, multiple `TargetFrameworks` aliases can resolve to the same effective framework. This enables scenarios like multi-RID builds and multi-version extension targeting. For details on how this works with restore, pack, lock files, and project references, see [Targeting multiple frameworks](../consume-packages/package-references-in-project-files.md#multi-targeting-with-duplicate-frameworks).
 
 ## Supported frameworks
 
