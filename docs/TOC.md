@@ -32,7 +32,6 @@
 ### [PackageDownload functionality](consume-packages/packagedownload-functionality.md)
 ## Reference packages in your project
 ### [PackageReference in project files](consume-packages/package-references-in-project-files.md)
-### [Targeting multiple frameworks in a project file](consume-packages/package-reference-multi-targeting.md)
 ### [Migrate packages.config to PackageReference](consume-packages/migrate-packages-config-to-package-reference.md)
 ### [packages.config](reference/packages-config.md)
 ### [Central Package Management](consume-packages/Central-Package-Management.md)
