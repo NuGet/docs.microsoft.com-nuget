@@ -1,8 +1,9 @@
 ---
 title: NuGet 7.6 Release Notes
-description: Release notes for NuGet 7.5 6ncluding new features, bug fixes, and DCRs.
+description: Release notes for NuGet 7.6 including new features, bug fixes, and DCRs.
 author: nikolev
 ms.topic: release-notes
+ms.date: 03/26/2026
 ---
 # NuGet 7.6 Release Notes
 
@@ -19,7 +20,7 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**7.5**](https://nuget.org/downloads) | TBD | TBD |
+| [**7.6**](https://nuget.org/downloads) | TBD | TBD |
 
 ## Not yet released
 

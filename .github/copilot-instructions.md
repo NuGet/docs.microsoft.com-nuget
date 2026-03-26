@@ -30,6 +30,7 @@ Follow [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-g
 
 - Sentence case headings (no gerunds in titles).
 - Be concise, break up long sentences.
+- Every sentence should be in its own line in the Markdown source for better readability and version control diffs.
 - Oxford comma in lists.
 - Use bullets for unordered lists.
 - Number all ordered list items as "1." (not sequential numbering like "1.", "2.", "3.", etc.)

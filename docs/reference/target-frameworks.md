@@ -36,7 +36,7 @@ NuGet uses these moniker properties — not the `TargetFramework` string — for
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'banana' ">
-    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
     <TargetFrameworkMoniker>.NETCoreApp,Version=v10.0</TargetFrameworkMoniker>
   </PropertyGroup>

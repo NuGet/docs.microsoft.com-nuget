@@ -3,6 +3,7 @@ title: NuGet 7.5 Release Notes
 description: Release notes for NuGet 7.5 including new features, bug fixes, and DCRs.
 author: nikolev
 ms.topic: release-notes
+ms.date: 03/26/2026
 ---
 # NuGet 7.5 Release Notes
 

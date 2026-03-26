@@ -354,7 +354,8 @@ In order to persist the full closure of package dependencies, you can opt-in to 
 
 If this property is set, NuGet restore will generate a lock file (`packages.lock.json`) at the project root directory that lists all the package dependencies.
 
-The `packages.lock.json` has a versioned format. Depending on the features you have enabled, such as Central Package Management and transitive pinning, or whether you use a duplicate effective target framework you may get a different version.
+The `packages.lock.json` format is versioned.
+The format version depends on the features you use, such as Central Package Management's transitive pinning or duplicate effective target frameworks.
 
 > [!Note]
 > Once a project has `packages.lock.json` file in its root directory, the lock file is always used with restore even if the property `RestorePackagesWithLockFile` is not set. So another way to opt-in to this feature is to create a dummy blank `packages.lock.json` file in the project's root directory.
@@ -519,7 +520,7 @@ This enables use cases such as:
   </Project>
   ```
 
-  - **Benchmarking different versions of a package**
+- **Benchmarking different versions of a package**
 
   ```xml
   <Project Sdk="Microsoft.NET.Sdk">
@@ -527,7 +528,7 @@ This enables use cases such as:
       <TargetFrameworks>benchmark7.0;benchmark8.0</TargetFrameworks>
     </PropertyGroup>
 
-    <!-- Frameworks ommited for brevity-->
+    <!-- Frameworks omitted for brevity-->
 
     <ItemGroup>
       <PackageReference Include="BenchmarkDotNet" Version="0.13.9" />
