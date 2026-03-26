@@ -164,60 +164,6 @@ NuGet uses these moniker properties — not the `TargetFramework` string — for
 
 For more details on the aliasing mechanism, see [TargetFramework values are aliases](../reference/target-frameworks.md#targetframework-values-are-aliases).
 
-### Multi-targeting with duplicate frameworks
-
-*This feature requires [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300 or later.*
-
-Because `TargetFramework` values are aliases, multiple aliases can resolve to the *same* effective framework. Starting with [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300, NuGet and the .NET SDK support this scenario.
-
-This enables use cases such as:
-
-- **Multi-RID builds**: Build platform-specific assemblies from a single project.
-
-  ```xml
-  <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-      <TargetFrameworks>apple;banana</TargetFrameworks>
-    </PropertyGroup>
-
-    <PropertyGroup>
-      <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
-      <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
-      <TargetFrameworkMoniker>.NETCoreApp,Version=v10.0</TargetFrameworkMoniker>
-    </PropertyGroup>
-  </Project>
-  ```
-
-- **Multi-version extensions**: Target multiple versions of a host application, such as Visual Studio.
-
-  ```xml
-  <Project Sdk="Microsoft.VisualStudio.Extensibility.Sdk">
-    <PropertyGroup>
-      <TargetFrameworks>vs18;vs17.14</TargetFrameworks>
-    </PropertyGroup>
-  </Project>
-  ```
-
-  In this example, the Visual Studio Extensibility SDK is responsible for setting the canonical moniker properties for each alias.
-
-#### Pack
-
-A NuGet package can only contain one set of build output and one dependency group per effective framework. When you pack a project with duplicate effective frameworks, you must tell NuGet which alias contributes these assets or the pack raises [NU5051](../reference/errors-and-warnings/NU5051.md). See [NU5051](../reference/errors-and-warnings/NU5051.md) for resolution steps and examples.
-
-#### Lock file
-
-When a project uses duplicate effective frameworks, the [packages lock file](#locking-dependencies) is automatically upgraded to a format that uses the alias as the key instead of the effective framework. This upgrade happens transparently — locked mode and CI/CD scenarios continue to work as before.
-
-#### Project references
-
-When a project references another project that has multiple aliases resolving to the same framework, NuGet uses the alias name as a tiebreaker. If the referencing project has an alias with the same name as one in the referenced project, that alias is preferred. If there’s no matching name and multiple candidates exist, NuGet reports an error.
-
-#### Limitations
-
-- Only SDK-style projects support duplicate effective frameworks.
-- Aliases that contain path separator characters (`/` or `\`) are blocked.
-- Visual Studio’s Package Manager UI doesn’t have special support for duplicate frameworks, but you can manage packages by editing the project file directly or using the `dotnet` CLI.
-
 ## Adding a PackageReference condition
 
 You can use a condition to control whether a package is included. Conditions can use any MSBuild variable or a variable defined in the targets or props file. However, at present, only the `TargetFramework` variable is supported.
@@ -408,6 +354,8 @@ In order to persist the full closure of package dependencies, you can opt-in to 
 
 If this property is set, NuGet restore will generate a lock file (`packages.lock.json`) at the project root directory that lists all the package dependencies.
 
+The `packages.lock.json` has a versioned format. Depending on the features you have enabled, such as Central Package Management and transitive pinning, or whether you use a duplicate effective target framework you may get a different version.
+
 > [!Note]
 > Once a project has `packages.lock.json` file in its root directory, the lock file is always used with restore even if the property `RestorePackagesWithLockFile` is not set. So another way to opt-in to this feature is to create a dummy blank `packages.lock.json` file in the project's root directory.
 
@@ -546,6 +494,62 @@ You can leave off `$(AssetTargetFallback)` if you wish to overwrite, instead of 
 > If you are using a [.NET SDK based project](/dotnet/core/sdk), appropriate `$(AssetTargetFallback)` values are configured and you do not need to set them manually.
 >
 > `$(PackageTargetFallback)` was an earlier feature that attempted to address this challenge, but it is fundamentally broken and *should* not be used. To migrate from `$(PackageTargetFallback)` to `$(AssetTargetFallback)`, simply change the property name.
+
+### Multi-targeting with duplicate frameworks
+
+*This feature requires [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300 or later.*
+
+Because `TargetFramework` values are aliases, multiple aliases can resolve to the *same* effective framework. Starting with [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300, NuGet and the .NET SDK support this scenario.
+
+This enables use cases such as:
+
+- **Multi-RID builds**: Build platform-specific assemblies from a single project.
+
+  ```xml
+  <Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+      <TargetFrameworks>net10.0;linux;ios</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'linux' OR '$(TargetFramework)' == 'ios' OR '$(TargetFramework)' == 'net10.0'">
+      <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+      <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
+      <TargetFrameworkMoniker>.NETCoreApp,Version=v10.0</TargetFrameworkMoniker>
+    </PropertyGroup>
+  </Project>
+  ```
+
+  - **Benchmarking different versions of a package**
+
+  ```xml
+  <Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+      <TargetFrameworks>benchmark7.0;benchmark8.0</TargetFrameworks>
+    </PropertyGroup>
+
+    <!-- Frameworks ommited for brevity-->
+
+    <ItemGroup>
+      <PackageReference Include="BenchmarkDotNet" Version="0.13.9" />
+      <PackageReference Include="Contoso.FastLibrary" Version="7.0" Condition="'$(TargetFramework)' == 'benchmark7.0' "/>
+      <PackageReference Include="Contoso.FastLibrary" Version="8.0" Condition="'$(TargetFramework)' == 'benchmark8.0' "/>
+    </ItemGroup>
+  </Project>
+  ```
+
+#### Pack
+
+A NuGet package can only contain one set of build output and one dependency group per effective framework. When you pack a project with duplicate effective frameworks, you must tell NuGet which alias contributes these assets or the pack raises [NU5051](../reference/errors-and-warnings/NU5051.md). See [NU5051](../reference/errors-and-warnings/NU5051.md) for resolution steps and examples.
+
+#### Project references
+
+When a project references another project that has multiple aliases resolving to the same framework, NuGet uses the alias name as a tiebreaker. If the referencing project has an alias with the same name as one in the referenced project, that alias is preferred. If there’s no matching name and multiple candidates exist, NuGet reports an error.
+
+#### Limitations
+
+- Only SDK-style projects support duplicate effective frameworks.
+- Aliases that contain path separator characters (`/` or `\`) are blocked.
+- Visual Studio’s Package Manager UI doesn’t have special support for duplicate frameworks, but you can manage packages by editing the project file directly or using the `dotnet` CLI.
 
 ## PrunePackageReference
 
