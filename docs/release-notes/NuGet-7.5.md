@@ -21,7 +21,6 @@ NuGet distribution vehicles:
 ### Issues fixed in this release
 
 * Ensure PM UI and PMC updating support aliased package changes - [#14539](https://github.com/NuGet/Home/issues/14539)
-  * Add package and update package treat framework as an alias - [#14540](https://github.com/NuGet/Home/issues/14540)
   * Change the assets file format to support aliasing - [#14534](https://github.com/NuGet/Home/issues/14534)
   * Ensure PackagesLockFile supports aliases - [#14538](https://github.com/NuGet/Home/issues/14538)
   * Ensure the .NET SDK can handle aliased assets file - [#14536](https://github.com/NuGet/Home/issues/14536)
