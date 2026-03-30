@@ -202,7 +202,6 @@
 ### [NU1701](reference/errors-and-warnings/NU1701.md)
 ### [NU1702](reference/errors-and-warnings/NU1702.md)
 ### [NU1703](reference/errors-and-warnings/NU1703.md)
-### [NU1704](reference/errors-and-warnings/NU1704.md)
 ### [NU1900](reference/errors-and-warnings/NU1900.md)
 ### [NU1901](reference/errors-and-warnings/NU1901-NU1904.md)
 ### [NU1902](reference/errors-and-warnings/NU1901-NU1904.md)
