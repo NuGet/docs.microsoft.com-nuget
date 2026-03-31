@@ -1,22 +1,19 @@
 ---
 title: Multi-targeting for NuGet Packages in your project file
-description: Description of the various methods to target multiple .NET Framework versions from within a single NuGet package in your project file.
+description: Description of the various methods to target multiple .NET frameworks from within a single NuGet package in your project file.
 author: JonDouglas
 ms.author: jodou
 ms.date: 07/15/2019
 ms.topic: how-to
 ---
 
-# Support multiple .NET Framework versions in your project file
+# Support multiple .NET frameworks in your project file
 
 When you first create a project, we recommend you create a .NET Standard class library, as it provides compatibility with the widest range of consuming projects. By using .NET Standard, you add [cross-platform support](/dotnet/standard/library-guidance/cross-platform-targeting) to a .NET library by default. However, in some scenarios, you may also need to include code that targets a particular framework. This article shows you how to do that for [SDK-style](../resources/check-project-format.md) projects.
 
 For SDK-style projects, you can configure support for multiple targets frameworks ([TFM](/dotnet/standard/frameworks)) in your project file, then use `dotnet pack` or `msbuild /t:pack` to create the package.
 
-> [!NOTE]
-> nuget.exe CLI does not support packing SDK-style projects, so you should only use `dotnet pack` or `msbuild /t:pack`. We recommend that you [include all the properties](../reference/msbuild-targets.md#pack-target) that are usually in the `.nuspec` file in the project file instead. To target multiple .NET Framework versions in a non-SDK-style project, see [Supporting multiple .NET Framework versions](supporting-multiple-target-frameworks.md).
-
-## Create a project that supports multiple .NET Framework versions
+## Create a project that supports multiple .NET frameworks
 
 1. Create a new .NET Standard class library either in Visual Studio or use `dotnet new classlib`.
 
@@ -69,7 +66,14 @@ Here is the *.csproj* file that is generated using the preceding steps and .NET 
 </Project>
 ```
 
+## Multi-targeting with duplicate frameworks
+
+Starting with [NuGet 7.6](../release-notes/NuGet-7.6.md) / .NET SDK 10.0.300, you can use multiple `TargetFrameworks` values that resolve to the same underlying framework. This enables scenarios like building for multiple runtimes or targeting multiple versions of a host application from a single project.
+
+For details on how this works with restore and pack, see [Targeting multiple frameworks](../consume-packages/package-references-in-project-files.md#multi-targeting-with-duplicate-frameworks).
+
 ## See also
 
 * [How to specify target frameworks](/dotnet/standard/frameworks#how-to-specify-target-frameworks)
 * [Cross-platform targeting](/dotnet/standard/library-guidance/cross-platform-targeting)
+* [Target frameworks reference](../reference/target-frameworks.md)
