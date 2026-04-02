@@ -113,7 +113,7 @@ For a basic reinstallation, use the following command. To identify a specific Nu
 
 ```powershell
 # Reinstall the package named <package-name>.
-Update-Package -Id <package-name> –reinstall
+Update-Package -Id <package-name> -reinstall
 ```
 
 Using the `Update-Package` command is easier than removing a package and then trying to locate the package and the correct version in the NuGet gallery.
@@ -168,7 +168,7 @@ If you intend to use the `Update-Package` command to reinstall packages, review 
 
 If you retarget your project target framework, one or more packages might not support the new target configuration.
 
-Usually, you can reinstall a package by using the `Update-Package –reinstall <package-name>` command. A package installed against an old target framework is uninstalled and the same package is installed against the new target framework of the project.
+Usually, you can reinstall a package by using the `Update-Package -reinstall <package-name>` command. A package installed against an old target framework is uninstalled and the same package is installed against the new target framework of the project.
 
 In some cases, a package might not support the new target framework. Here are some of the issues you might encounter:
 
@@ -184,11 +184,11 @@ After you retarget your project target framework or upgrade NuGet packages, NuGe
 
 ### Package dependency version incompatibility
 
-The `Update-Package –reinstall` command reinstalls the **same** version of an installed package and the **latest** version of any dependencies. To address version incompatibility issues, you can set version range constraints to control the configuration. NuGet adheres to the constraints and updates the package dependencies to newer versions only as required to fix an issue.
+The `Update-Package -reinstall` command reinstalls the **same** version of an installed package and the **latest** version of any dependencies. To address version incompatibility issues, you can set version range constraints to control the configuration. NuGet adheres to the constraints and updates the package dependencies to newer versions only as required to fix an issue.
 
 - If your constraint settings cause a dependency to revert to an earlier version during a package reinstallation, you can address the issue by using the `Update-Package <dependency-name>` command. This command reinstalls the specified dependency without affecting the dependent package.
 
-- You can also use the `Update-Package –reinstall <package-name> -ignoreDependencies` command. This option reinstalls the same version of the original package, but it doesn't reinstall dependencies. Using this approach when updating package dependencies might result in a broken configuration state.
+- You can also use the `Update-Package -reinstall <package-name> -ignoreDependencies` command. This option reinstalls the same version of the original package, but it doesn't reinstall dependencies. Using this approach when updating package dependencies might result in a broken configuration state.
 
 ### Broken dependent package
 
