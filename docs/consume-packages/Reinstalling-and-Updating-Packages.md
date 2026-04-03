@@ -178,7 +178,7 @@ In some cases, a package might not support the new target framework. Here are so
 
 - Reinstalling packages after retargeting your application can result in build or runtime errors. In this case, you might need to revert your target framework or search for alternative packages that properly support your new target framework.
 
-### The requireReinstallation attribute set to true
+### The `requireReinstallation` attribute set to true
 
 After you retarget your project target framework or upgrade NuGet packages, NuGet might add the `requireReinstallation` attribute to the *packages.config* file for your project. If NuGet detects affected packages during the retargeting or upgrading process, it adds a `requireReinstallation="true"` attribute to the *packages.config* file for all affected package references. As a result, each subsequent build of your project in Visual Studio raises build warnings for those packages. The warnings are presented as a reminder to reinstall the affected package.
 
