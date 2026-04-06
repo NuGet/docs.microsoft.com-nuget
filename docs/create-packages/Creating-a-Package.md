@@ -16,7 +16,7 @@ No matter what your package does or what code it contains, you use one of the co
 
 - For .NET Core and .NET Standard projects that use the [SDK-style format](../resources/check-project-format.md), and any other SDK-style projects, see [Create a NuGet package with the dotnet CLI](creating-a-package-dotnet-cli.md).
 
-- For projects migrated from `packages.config` to [`PackageReference`](../consume-packages/package-references-in-project-files.md), see [msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
+- For projects migrated from `packages.config` to [`PackageReference`](../consume-packages/package-references-in-project-files.md), use the [`msbuild -t:pack`](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration) command.
 
 Technically, a NuGet package is a ZIP file that's been renamed to have the extension *.nupkg* and whose contents match certain conventions. This article describes the detailed process of creating a package that meets those conventions.
 
@@ -27,9 +27,9 @@ Packaging begins with the compiled code (assemblies), symbols, and other files t
 
 ## Decide which assemblies to package
 
-Most general-purpose packages contain one or more assemblies that other developers can use in their own projects. In general, it's best to have one assembly per NuGet package, provided that each assembly is independently useful.
+Most general-purpose packages contain one or more assemblies that other developers can use in their own projects.
 
-For example, consider the following cases that involve an assembly called *Utilities.dll* that depends on an assembly called *Parser.dll*:
+In general, it's best to have one assembly per NuGet package, provided that each assembly is independently useful. For example, consider the following cases that involve an assembly called *Utilities.dll* that depends on an assembly called *Parser.dll*:
 
 - If *Parser.dll* is useful on its own, create one package for *Utilities.dll* and one for *Parser.dll*. Doing so allows developers to use *Parser.dll* independently of *Utilities.dll*.
 
