@@ -67,6 +67,7 @@ The following properties are common optional ones:
 - A locale ID.
 - A project URL.
 - A license as an expression or file. The `licenseUrl` property is deprecated. Use the [`license` nuspec metadata element](../reference/nuspec.md#license) instead.
+- A read-me file.
 - An icon file. The `iconUrl` property is deprecated. Use the [`icon` nuspec metadata element](../reference/nuspec.md#icon) instead.
 - Lists of dependencies and references.
 - Tags that assist in gallery searches.
@@ -89,9 +90,11 @@ The following code is a typical (but fictitious) *.nuspec* file, with comments t
         <!-- A project URL that provides a link for the gallery -->
         <projectUrl>http://github.com/contoso/UsefulStuff</projectUrl>
 
-         <!-- License information that's displayed on the gallery -->
+        <!-- License information that's displayed on the gallery -->
         <license type="expression">Apache-2.0</license>
         
+        <!-- The location of a read-me file that's displayed in the Visual Studio Package Manager UI -->
+        <readme>docs\readme.md</readme>
 
         <!-- An icon that's used in the Visual Studio Package Manager UI -->
         <icon>icon.png</icon>
@@ -286,12 +289,9 @@ To directly specify files to include in the package, use the `<files>` node in t
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
-    <!-- ... -->
+        <!-- ... -->
     </metadata>
     <files>
-        <!-- Add a read-me file. -->
-        <file src="readme.md" target="" />
-
         <!-- Add files from an arbitrary folder that's not necessarily in the project. -->
         <file src="..\..\SomeRoot\**\*.*" target="" />
     </files>
@@ -301,7 +301,24 @@ To directly specify files to include in the package, use the `<files>` node in t
 > [!Tip]
 > When you use the convention-based working directory approach, you can place the *readme.md* file in the package root and other content in the *content* folder. No `<file>` elements are necessary in the manifest.
 
-When you include a file named *readme.md* in the package root, Visual Studio displays the contents of that file in the Package Manager UI. For example, the following screenshot shows the read-me file for the `HtmlAgilityPack` package:
+To include a read-me file in the package, use the `readme` metadata element to specify the target path to the read-me file. Also use a `file` metadata element to specify the source path and target folder of the read-me file. For more information, see [`readme`](../reference/nuspec.md#readme).
+
+```xml
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+    <metadata>
+        <!-- ... -->
+        <readme>docs\readme.md</readme>
+        <!-- ... -->
+    </metadata>
+    <files>
+        <!-- Add a read-me file. -->
+        <file src="..\readme.md" target="docs\" />
+    </files>
+</package>
+```
+
+Visual Studio displays the contents of the read-me file in the Package Manager UI. For example, the following screenshot shows the read-me file for the `HtmlAgilityPack` package:
 
 :::image type="content" source="media/package-read-me-file.png" alt-text="Screenshot of the Visual Studio Package Manager UI that shows a package details pane. The README tab describes HTML parsing abilities of the package." lightbox="media/package-read-me-file.png":::
 
