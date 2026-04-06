@@ -112,7 +112,7 @@ The following code is a typical (but fictitious) *.nuspec* file, with comments t
         <description>Core utility functions for web applications</description>
 
         <!-- Copyright information -->
-        <copyright>Copyright ©2016 Contoso Corporation</copyright>
+        <copyright>Copyright ©2026 Contoso Corporation</copyright>
 
         <!-- Tags that appear in the gallery and can be used for tag searches -->
         <tags>web utility http json url parsing</tags>
@@ -147,7 +147,7 @@ After you know the location of the *global-packages* folder, take the following 
 1. Open the *.zip* file and examine the *.nuspec* file within it.
 
 > [!Note]
-> When you create a *.nuspec* file from a Visual Studio project, the manifest contains tokens that are replaced with information from the project when the package is built. See [Create the .nuspec file from a Visual Studio project](#from-a-visual-studio-project).
+> When you create a *.nuspec* file from a Visual Studio project, the manifest contains tokens that are replaced with information from the project when the package is built. For more information, see [Create the .nuspec file from a Visual Studio project](#from-a-visual-studio-project).
 
 ## Create the .nuspec file
 
@@ -177,15 +177,15 @@ The folders align with the following conventions:
 
 | Folder | Contents | Action upon package install |
 | --- | --- | --- |
-| (root) | The package manifest, top-level folders, and optionally, a read-me Markdown file and an icon image | This folder is used as the starting point for standardized subfolders, such as *lib* and *build*. |
-| lib/{tfm} | Assembly (*.dll*), documentation (*.xml*), and symbol (*.pdb*) files for the given target framework moniker (TFM) | Assemblies are added as references for compile time and runtime. The *.xml* and *.pdb* files are copied into project folders. For information about creating framework target-specific subfolders, see [Support multiple .NET versions](supporting-multiple-target-frameworks.md). |
-| ref/{tfm} | Assembly (*.dll*), and symbol (*.pdb*) files for the given TFM | Assemblies are added as references only for compile time. Nothing is copied into the project *bin* folder. |
-| runtimes | Architecture-specific assembly (*.dll*), symbol (*.pdb*), and native resource (*.pri*) files | Assemblies are added as references only for runtime. Other files are copied into project folders. There should always be a corresponding (TFM) `AnyCPU` specific assembly under the */ref/{tfm}* folder to provide the corresponding compile-time assembly. See [Support multiple .NET versions](supporting-multiple-target-frameworks.md). |
-| content | Arbitrary files | The contents are copied to the project root. Think of the *content* folder as the root of the target application that ultimately consumes the package. To have the package add an image in the application's */images* folder, place it in the package's *content/images* folder. |
-| build | *(3.x+)* Microsoft Build Engine (MSBuild) *.targets* and *.props* files | These files are automatically inserted into the project. |
-| buildMultiTargeting | *(4.0+)* MSBuild *.targets* and *.props* files for cross-framework targeting | These files are automatically inserted into the project. |
-| buildTransitive | *(5.0+)* MSBuild *.targets* and *.props* files that flow transitively to any consuming project. | These files are automatically inserted into the project.  See the [feature](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) page. |
-| tools | PowerShell scripts and programs accessible from the Package Manager Console | The *tools* folder is added to the `PATH` environment variable for the Package Manager Console only. It's *not* added to the `PATH` value that MSBuild uses when it builds the project. |
+| *(root)* | The package manifest, top-level folders, and optionally, a read-me Markdown file and an icon image | This folder is used as the starting point for standardized subfolders, such as *lib* and *build*. |
+| *lib/\<tfm\>* | Assembly (*.dll*), documentation (*.xml*), and symbol (*.pdb*) files for the given target framework moniker (TFM) | Assemblies are added as references for compile time and runtime. The *.xml* and *.pdb* files are copied into project folders. For information about creating framework target-specific subfolders, see [Support multiple .NET versions](supporting-multiple-target-frameworks.md). |
+| *ref/\<tfm\>* | Assembly (*.dll*), and symbol (*.pdb*) files for the given TFM | Assemblies are added as references only for compile time. Nothing is copied into the project *bin* folder. |
+| *runtimes* | Architecture-specific assembly (*.dll*), symbol (*.pdb*), and native resource (*.pri*) files | Assemblies are added as references only for runtime. Other files are copied into project folders. There should always be a corresponding (TFM) `AnyCPU` specific assembly under the */ref/\<tfm\>* folder to provide the corresponding compile-time assembly. See [Support multiple .NET versions](supporting-multiple-target-frameworks.md). |
+| *content* | Arbitrary files | The contents are copied to the project root. Think of the *content* folder as the root of the target application that ultimately consumes the package. To have the package add an image in the application's */images* folder, place it in the package's *content/images* folder. |
+| *build* | *(3.x+)* Microsoft Build Engine (MSBuild) *.targets* and *.props* files | These files are automatically inserted into the project. |
+| *buildMultiTargeting* | *(4.0+)* MSBuild *.targets* and *.props* files for cross-framework targeting | These files are automatically inserted into the project. |
+| *buildTransitive* | *(5.0+)* MSBuild *.targets* and *.props* files that flow transitively to any consuming project | These files are automatically inserted into the project.  See the [feature](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior) page. |
+| *tools* | PowerShell scripts and programs accessible from the Package Manager Console | The *tools* folder is added to the `PATH` environment variable for the Package Manager Console only. It's *not* added to the `PATH` value that MSBuild uses when it builds the project. |
 
 Because your folder structure can contain assemblies for many target frameworks, this method is necessary when you create packages that support multiple frameworks.
 
@@ -301,14 +301,14 @@ To directly specify files to include in the package, use the `<files>` node in t
 > [!Tip]
 > When you use the convention-based working directory approach, you can place the *readme.md* file in the package root and other content in the *content* folder. No `<file>` elements are necessary in the manifest.
 
-When you include a file named *readme.md* in the package root, Visual Studio displays the contents of that file in the Package Manager UI. For example, the following screenshot shows the read-me file for the HtmlAgilityPack package:
+When you include a file named *readme.md* in the package root, Visual Studio displays the contents of that file in the Package Manager UI. For example, the following screenshot shows the read-me file for the `HtmlAgilityPack` package:
 
 :::image type="content" source="media/package-read-me-file.png" alt-text="Screenshot of the Visual Studio Package Manager UI that shows a package details pane. The README tab describes HTML parsing abilities of the package." lightbox="media/package-read-me-file.png":::
 
 > [!Note]
 > If you include an empty `<files>` node in the *.nuspec* file, NuGet includes the contents of the *lib* folder in the package but no other content.
 
-## Include MSBuild .props and .targets files in a package
+## Include MSBuild props and targets in a package
 
 In some cases, you might want to add custom build targets or properties to projects that consume your package, such as running a custom tool or process during build.
 For more information about custom build targets and properties, see [MSBuild .props and .targets in a package](..\concepts\MSBuild-props-and-targets.md).
