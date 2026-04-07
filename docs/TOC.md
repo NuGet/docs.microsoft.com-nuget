@@ -161,6 +161,7 @@
 ### [NU1015](reference/errors-and-warnings/NU1015.md)
 ### [NU1016](reference/errors-and-warnings/NU1016.md)
 ### [NU1017](reference/errors-and-warnings/NU1017.md)
+### [NU1018](reference/errors-and-warnings/NU1018.md)
 ### [NU1019](reference/errors-and-warnings/NU1019.md)
 ### [NU1100](reference/errors-and-warnings/NU1100.md)
 ### [NU1101](reference/errors-and-warnings/NU1101.md)
