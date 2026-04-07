@@ -70,5 +70,3 @@ Thank you to all the contributors who helped make this NuGet release awesome!
   * [7026](https://github.com/NuGet/NuGet.Client/pull/7026) Fix list capacity calculation in GetGraphItemAsync that is leading to allocations
 * [viceice](https://github.com/NuGet/viceice)
   * [7145](https://github.com/NuGet/NuGet.Client/pull/7145) Handle empty paths when locating extensions
-
-  
