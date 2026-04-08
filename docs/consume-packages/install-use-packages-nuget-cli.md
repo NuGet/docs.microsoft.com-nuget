@@ -78,22 +78,28 @@ nuget install Newtonsoft.Json -Version 12.0.1
 
 ## List packages
 
-Use the [`search`](../reference/cli-reference/cli-ref-search.md) command to display basic information about packages at a specified source.
+Use the [`search`](../reference/cli-reference/cli-ref-search.md) command or the [`list`](../reference/cli-reference/cli-ref-list.md) command to display basic information about packages at a specified source.
+
+For example, if you use a NuGet version that's earlier than 5.8, use `list` to list packages in the *packages* subfolder of *MyProject*:
 
 ```cli
-nuget search -Source <source>
+nuget list -Source C:\Users\%USERNAME%\source\repos\MyProject\packages
 ```
 
-For example, to list packages in the *packages* subfolder of *MyProject*, use the following command:
+If you use NuGet 5.8+, use `search` to display basic information about packages:
 
 ```cli
 nuget search -Source C:\Users\%USERNAME%\source\repos\MyProject\packages
 ```
 
-You can also specify search terms to limit the results by package names, tags, or descriptions:
+For either command, you can also specify search terms to limit the results by package names, tags, or descriptions:
 
 ```cli
+# Use with NuGet 5.8+.
 nuget search <search-terms> -Source <source>
+
+# Use with NuGet versions earlier than 5.8.
+nuget list <search-terms> -Source <source>
 ```
 
 ## Update all packages
