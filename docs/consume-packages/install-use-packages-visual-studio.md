@@ -11,64 +11,63 @@ f1_keywords:
 
 # Install and manage packages in Visual Studio using the NuGet Package Manager
 
-The NuGet Package Manager UI in Microsoft Visual Studio for Windows allows you to easily install, uninstall, and update NuGet packages in projects and solutions.
-
-The article is for Windows users only. If you're using Visual Studio for Mac, see [Including a NuGet package in your project](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json).
+You can use the NuGet Package Manager UI in Microsoft Visual Studio for Windows to easily install, uninstall, and update NuGet packages in projects and solutions.
 
 ## Prerequisites
 
-- Install Visual Studio 2022 for Windows with any .NET-related workload.
+- Install Visual Studio 2026 for Windows with any .NET-related workload.
 
-  You can install the 2022 Community edition for free from [visualstudio.microsoft.com](https://visualstudio.microsoft.com/), or use the Professional or Enterprise edition.
+  You can install the 2026 Community edition for free from [visualstudio.microsoft.com](https://visualstudio.microsoft.com/), or you can use the Professional or Enterprise edition.
 
-  Visual Studio 2017 and higher automatically includes NuGet Package Manager  when a .NET-related workload is installed. To install it individually in Visual Studio Installer, select the **Individual components** tab, and then select **NuGet package manager** under **Code tools** .
+  Visual Studio 2017 and later versions automatically include NuGet Package Manager when a .NET-related workload is installed. To install the NuGet Package Manager individually in Visual Studio Installer, select **Individual components** > **Code tools** > **NuGet package manager**.
 
-  For Visual Studio 2015, if you're missing the NuGet Package Manager, check **Tools** > **Extensions and Updates** and search for the *NuGet Package Manager* extension. If you're unable to use the extensions installer in Visual Studio, download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
+  For Visual Studio 2015, if you're missing the NuGet Package Manager, select **Tools** > **Extensions and Updates**, and then search for the **NuGet Package Manager** extension. If you can't use the extensions installer in Visual Studio, download the extension directly from [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 
 - [Register for a free account on nuget.org](../nuget-org/individual-accounts.md#add-a-new-individual-account) if you don't have one already. You must register and confirm the account before you can upload a NuGet package.
 
 ## Find and install a package
 
-To find and install a NuGet package with Visual Studio, follow these steps:
+To find and install a NuGet package by using Visual Studio, follow these steps:
 
 1. Load a project in **Solution Explorer**, and then select **Project** > **Manage NuGet Packages**.
 
    The **NuGet Package Manager** window opens.
 
-1. Select the **Browse** tab to display packages by popularity from the currently selected source (see [Package sources](#package-sources)).
+1. Go to the **Browse** tab to display packages by popularity from the currently selected source. For information about sources, see [Package sources](#package-sources).
 
-    - To search for a specific package, use the search box on the upper left.
-    - Abbreviated information may be shown beside each package ID to help identify the correct package, and varies based on the selected package source(s).
-  Examples include package download count, author, or owner profile hyperlinks.
+    - To search for a specific package, use the search box in the upper-left corner of the tab.
+    - Abbreviated information might be shown beside each package ID to help you identify the correct package. This information varies based on the selected package sources. Examples include the package download count, the authors, or a link to the owner's profile.
 
     > [!Note]
-    > In Visual Studio 17.11 and higher, package owners are shown as profile hyperlinks when supported by the selected package source.
-    > Package ownership is defined by the package source. For example, see [Manage package owners on nuget.org](../nuget-org/publish-a-package.md#manage-package-owners-on-nugetorg).
+    > In Visual Studio 17.11 and later, package owners are shown as profile links when supported by the selected package source.
+    > Package ownership is defined by the package source. For more information, see [Manage package owners on nuget.org](../nuget-org/publish-a-package.md#manage-package-owners-on-nugetorg).
     >
-    > In Visual Studio 17.10 and earlier, the package *author* metadata is shown, which appears as plain-text.
+    > In Visual Studio 17.10 and earlier, the package `author` metadata is shown, which appears as plain text.
     > For more information, see [Authors package metadata](../create-packages/package-authoring-best-practices.md#authors).
 
-    - Select a package to see detailed package information.
-    The details pane on the right appears and enables you to select a version to install.
-    ![Screenshot showing the NuGet Package Manager window with the Browse tab, details pane, and "Package Details" tab selected.](media/package-manager-package-details.png)
-    You can see package metadata, information about the owner(s), author(s), license, etc., in the Package Details tab and the package README file (if it is provided by the package author) in the README tab.
-    ![Screenshot showing the NuGet Package Manager window with the README tab selected.](media/package-manager-package-readme.png)
+    - Select a package to open its details pane. In the details pane, the **Package Details** tab displays package metadata, information about the owners, authors, and license, and other information. The details pane also provides a way for you to select a version to install.
 
-1. In the right pane, select a **Version** from the dropdown list. If you want to include prerelease versions in the **Version** list, select **Include prerelease**.
+      :::image type="content" source="media/package-manager-package-details.png" alt-text="Screenshot of the NuGet Package Manager. In the Browse tab, a package is selected. The Package Details tab of its details pane lists information." lightbox="media/package-manager-package-details.png":::
 
-1. To install the NuGet package, select **Install**. You might be asked to accept license terms or prompted to verify the installation.
+      The **README** tab of the details pane displays the package read-me file if it's provided by the package author.
 
-   Visual Studio installs the package and its dependencies in the project. When installation is complete, the added packages appear on the **Installed** tab. You can also find packages in the **Dependencies** > **Packages** node of your project in **Solution Explorer**. After you install a package, you can refer to it in the project with a `using` statement.
+      :::image type="content" source="media/package-manager-package-readme.png" alt-text="Screenshot of the NuGet Package Manager. In the Browse tab, a package is selected. The README tab of its details pane describes the package." lightbox="media/package-manager-package-readme.png":::
 
-1. (Optional) NuGet has two formats in which a project can use packages: [PackageReference](package-references-in-project-files.md) and [packages.config](../reference/packages-config.md). To set the default format, select **Tools** > **Options**, expand **NuGet Package Manager**, select **General**, and then choose the **Default package management format**. For more information, see [Choose default package management format](package-restore.md#choose-default-package-management-format).
+1. In the details pane, next to **Version**, select a version. If you want to include prerelease versions in the **Version** list, go to the top of the **NuGet Package Manager** window. Next to the search box, select **Include prerelease**.
+
+1. To install the NuGet package, select **Install**. You might be prompted to accept license terms or verify the installation.
+
+   Visual Studio installs the package and its dependencies in the project. When installation is complete, the added packages appear on the NuGet Package Manager **Installed** tab. You can also find packages in in **Solution Explorer**, in the **Dependencies** > **Packages** node of your project. After you install a package, you can refer to it in the project with a `using` statement.
+
+1. (Optional) NuGet has two formats in which a project can use packages: [PackageReference](package-references-in-project-files.md) and [packages.config](../reference/packages-config.md). To set the default format, select **Tools** > **Options**, and then expand **NuGet Package Manager**. In the **General** section, under **Package Management**, select a format in the **Default package management format** list. For more information, see [Choose default package management format](package-restore.md#choose-default-package-management-format).
 
 ## Uninstall a package
 
 To uninstall a NuGet package, follow these steps:
 
-1. Load a project in **Solution Explorer**, select **Project** > **Manage NuGet Packages**, and then select the **Installed** tab.
+1. Load a project in **Solution Explorer**, select **Project** > **Manage NuGet Packages**, and then go to the **Installed** tab.
 
-1. Select the package to uninstall in the left pane (use the **Search** box to find it, if necessary), and then select **Uninstall** from the right pane.
+1. In the main pane, select the package to uninstall. If needed, use the search box to find the package. Then in the package details pane, select **Uninstall**.
 
     ![Screenshot showing the NuGet Package Manager with a package selected and its Uninstall button highlighted.](media/uninstall-package.png)
 
