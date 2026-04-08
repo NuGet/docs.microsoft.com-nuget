@@ -53,7 +53,7 @@ To create the initial `.nuspec` file, do the three steps below. The sections tha
     nuget spec
     ```
 
-1. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you get an error during the packing step.
+1. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The `<id>` value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](../create-packages/Creating-a-Package.md#choose-a-unique-package-identifier-and-set-the-version-number)). Also note that you must also update the author and description tags or you get an error during the packing step.
 
     ```xml
     <?xml version="1.0"?>
