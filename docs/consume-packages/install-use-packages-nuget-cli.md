@@ -12,7 +12,7 @@ ms.topic: how-to
 
 You can use the `nuget.exe` command-line interface (CLI) to manage NuGet packages in Visual Studio projects and solutions. This article describes the most common NuGet CLI commands for managing NuGet packages. All these commands work on Windows, and most work on macOS and on Linux with Mono. 
 
-The NuGet CLI runs on .NET Framework and non-SDK-style projects, for example non-SDK style projects that target .NET Standard libraries. The NuGet CLI commands can use a project [packages.config](../reference/packages-config.md) file that lists package references. For non-SDK-style projects that use `PackageReference` instead of *packages.config* for package references, use the [dotnet CLI](install-use-packages-dotnet-cli.md) instead.
+The NuGet CLI runs on .NET Framework and non-SDK-style projects, for example non-SDK-style projects that target .NET Standard libraries. The NuGet CLI commands can use a project [packages.config](../reference/packages-config.md) file that lists package references. For non-SDK-style projects that use `PackageReference` instead of *packages.config* for package references, use the [dotnet CLI](install-use-packages-dotnet-cli.md) instead.
 
 > [!NOTE]
 > For most non-SDK-style projects that use *packages.config*, it's best to [migrate packages.config to `PackageReference`](migrate-packages-config-to-package-reference.md), and then use the dotnet CLI instead of the NuGet CLI to manage packages. However, you can't migrate C++ or ASP.NET projects.
@@ -108,7 +108,7 @@ It's best to run `restore` before you run `update`. Then the `update` command ha
 
 ## Remove a package
 
-To remove a package, delete that package from the project folder. To reinstall packages, use the `restore` or `install` commands.
+To remove a package, you can delete that package from the project folder. To reinstall packages, use the `restore` or `install` commands.
 
 Deleting packages from disk doesn't update the project, *packages.config*, or *NuGet.Config* files. The best way to remove packages is by using the Visual Studio [Package Manager UI](install-use-packages-visual-studio.md) or [Package Manager Console](install-use-packages-powershell.md).
 
