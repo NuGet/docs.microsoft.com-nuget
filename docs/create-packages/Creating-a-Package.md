@@ -94,7 +94,7 @@ The following code is a typical (but fictitious) *.nuspec* file, with comments t
         <license type="expression">Apache-2.0</license>
         
         <!-- The location of a read-me file that's displayed in the Visual Studio Package Manager UI -->
-        <readme>docs\readme.md</readme>
+        <readme>readme.md</readme>
 
         <!-- An icon that's used in the Visual Studio Package Manager UI -->
         <icon>icon.png</icon>
