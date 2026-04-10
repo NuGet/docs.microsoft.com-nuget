@@ -58,8 +58,14 @@ To find and install a NuGet package by using Visual Studio, follow these steps:
 
 NuGet has two formats in which a project can use packages:
 
-- [PackageReference](Package-References-in-Project-Files.md)
+- [`PackageReference`](Package-References-in-Project-Files.md)
 - [packages.config](../reference/packages-config.md)
+
+Only some types of projects support both package management formats. Specifically, non-SDK-style .NET Framework projects that have a *.csproj* file support both formats. For .NET SDK-style projects, `PackageReference` is required.
+
+The recommended format is `PackageReference`. But some NuGet packages aren't fully compatible with `PackageReference`. For more information, see [Package compatibility issues](migrate-packages-config-to-package-reference.md#package-compatibility-issues).
+
+For more information about package management formats, see [Migrate from packages.config to `PackageReference`](migrate-packages-config-to-package-reference.md) and [Project type support](Package-References-in-Project-Files.md#project-type-support).
 
 To set the default format, follow these steps:
 
@@ -67,7 +73,7 @@ To set the default format, follow these steps:
 1. In the side pane, select **NuGet Package Manager**, and then select **General**.
 1. In the main window, under **Package Management**, select a format in the **Default package management format** list.
 
-For more information, see [Choose the default package management format](Package-Restore.md#choose-the-default-package-management-format).
+For more information about configuring this setting, see [Choose the default package management format](Package-Restore.md#choose-the-default-package-management-format).
 
 ## Uninstall a package
 
