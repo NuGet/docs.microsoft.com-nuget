@@ -3,7 +3,7 @@ title: Install and Manage Packages in Visual Studio Using the NuGet Package Mana
 description: Find out how to use the NuGet Package Manager UI in Visual Studio to install, uninstall, and update NuGet packages in projects and solutions.
 author: JonDouglas
 ms.author: jodou
-ms.date: 03/03/2025
+ms.date: 04/10/2026
 ms.topic: install-set-up-deploy
 f1_keywords: 
   - "vs.nuget.packagemanager.ui"
@@ -12,11 +12,11 @@ f1_keywords:
 
 # Install and manage packages in Visual Studio using the NuGet Package Manager
 
-You can use the NuGet Package Manager UI in Microsoft Visual Studio for Windows to easily install, uninstall, and update NuGet packages in projects and solutions.
+You can use the NuGet Package Manager UI in Microsoft Visual Studio to easily install, uninstall, and update NuGet packages in projects and solutions.
 
 ## Prerequisites
 
-- Visual Studio 2026 for Windows with any .NET-related workload. You can install the 2026 Community edition for free from [visualstudio.microsoft.com](https://visualstudio.microsoft.com/), or you can use the Professional or Enterprise edition.
+- Visual Studio 2026 with any .NET-related workload. You can install the 2026 Community edition for free from [visualstudio.microsoft.com](https://visualstudio.microsoft.com/), or you can use the Professional or Enterprise edition.
 
 - The NuGet Package Manager. Visual Studio 2017 and later versions automatically include the NuGet Package Manager when a .NET-related workload is installed. To install the NuGet Package Manager individually in Visual Studio Installer, select **Individual components** > **Code tools** > **NuGet package manager**.
 
@@ -56,7 +56,20 @@ To find and install a NuGet package by using Visual Studio, follow these steps:
 
    Visual Studio installs the package and its dependencies in the project. When installation is complete, the added packages appear on the NuGet Package Manager **Installed** tab. You can also find packages in **Solution Explorer**, in the **Dependencies** > **Packages** node of your project. After you install a package, you can refer to it in the project with a `using` statement.
 
-1. (Optional) NuGet has two formats in which a project can use packages: [PackageReference](package-references-in-project-files.md) and [packages.config](../reference/packages-config.md). To set the default format, select **Tools** > **Options**, and then expand **NuGet Package Manager**. In the **General** section, under **Package Management**, select a format in the **Default package management format** list. For more information, see [Choose the default package management format](package-restore.md#choose-the-default-package-management-format).
+## Set the package management format
+
+NuGet has two formats in which a project can use packages:
+
+- [PackageReference](package-references-in-project-files.md)
+- [packages.config](../reference/packages-config.md)
+
+To set the default format, follow these steps:
+
+1. In Visual Studio, select **Tools** > **Options**.
+1. In the side pane, select **NuGet Package Manager**, and then select **General**.
+1. In the main window, under **Package Management**, select a format in the **Default package management format** list.
+
+For more information, see [Choose the default package management format](package-restore.md#choose-the-default-package-management-format).
 
 ## Uninstall a package
 
@@ -116,7 +129,7 @@ Developers typically consider it bad practice to use different versions of the s
 
 :::image type="content" source="media/consolidate-tab.png" alt-text="Screenshot of the Manage Packages for Solution window. The package details pane lists two projects that use different versions of the package." lightbox="media/consolidate-tab.png":::
 
-In this example, the MyClassLibrary project uses EntityFramework 6.5.1, but MyConsoleApp uses EntityFramework 6.5.0. To consolidate package versions, follow these steps:
+In this example, the MyClassLibrary project uses `EntityFramework` 6.5.1, but MyConsoleApp uses `EntityFramework` 6.5.0. To consolidate package versions, follow these steps:
 
 1. On the **Consolidate** tab, select the projects to update in the project list.
 
@@ -158,7 +171,7 @@ These options are available only for certain project types:
 - **Dependency behavior**: This option specifies the versions of dependent packages that NuGet installs. It has the following settings:
 
   - **Ignore Dependencies** skips the installation of dependencies, which typically breaks the package being installed.
-  - **Lowest** installs the dependency with the minimal version number that meets the requirements of the primary chosen package. This setting is the default one.
+  - **Lowest** installs the dependency with the minimum version number that meets the requirements of the primary chosen package. This setting is the default one.
   - **Highest Patch** installs the version with the same major and minor version numbers as the selected version, but the highest patch number. For example, if version 1.2.2 is specified, the highest version that starts with 1.2 is installed.
   - **Highest Minor** installs the version with the same major version number as the selected version, but the highest minor number and patch number. If version 1.2.2 is specified, the highest version that starts with 1 is installed.
   - **Highest** installs the highest available version of the package.
