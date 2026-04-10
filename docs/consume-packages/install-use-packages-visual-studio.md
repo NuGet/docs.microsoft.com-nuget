@@ -18,9 +18,7 @@ You can use the NuGet Package Manager UI in Microsoft Visual Studio to easily in
 
 - Visual Studio 2026 with any .NET-related workload. You can install the 2026 Community edition for free from [visualstudio.microsoft.com](https://visualstudio.microsoft.com/), or you can use the Professional or Enterprise edition.
 
-- The NuGet Package Manager. Visual Studio 2017 and later versions automatically include the NuGet Package Manager when a .NET-related workload is installed. To install the NuGet Package Manager individually in Visual Studio Installer, select **Individual components** > **Code tools** > **NuGet package manager**.
-
-- An account at nuget.org. You can [register for a free account](../nuget-org/individual-accounts.md#add-a-new-individual-account) if you don't have one already. You must register and confirm the account before you can upload a NuGet package.
+- The NuGet Package Manager. Visual Studio 2017 and later versions automatically include the NuGet Package Manager when a .NET-related workload is installed. To install the NuGet Package Manager manually in Visual Studio Installer, select **Individual components** > **Code tools** > **NuGet package manager**.
 
 ## Find and install a package
 
