@@ -58,7 +58,7 @@ To find and install a NuGet package by using Visual Studio, follow these steps:
 
 NuGet has two formats in which a project can use packages:
 
-- [PackageReference](package-references-in-project-files.md)
+- [PackageReference](Package-References-in-Project-Files.md)
 - [packages.config](../reference/packages-config.md)
 
 To set the default format, follow these steps:
@@ -67,7 +67,7 @@ To set the default format, follow these steps:
 1. In the side pane, select **NuGet Package Manager**, and then select **General**.
 1. In the main window, under **Package Management**, select a format in the **Default package management format** list.
 
-For more information, see [Choose the default package management format](package-restore.md#choose-the-default-package-management-format).
+For more information, see [Choose the default package management format](Package-Restore.md#choose-the-default-package-management-format).
 
 ## Uninstall a package
 
@@ -139,7 +139,7 @@ In this example, the MyClassLibrary project uses `EntityFramework` 6.5.1, but My
 
 ## Package sources
 
-Visual Studio ignores the order of package sources. Instead, it uses the package from the source that responds first to a request. For more information, see [Restore packages](package-restore.md). For information about how to load a package from a specific source, see [Package source mapping](package-source-mapping.md).
+Visual Studio ignores the order of package sources. Instead, it uses the package from the source that responds first to a request. For more information, see [Restore packages](Package-Restore.md). For information about how to load a package from a specific source, see [Package source mapping](Package-Source-Mapping.md).
 
 1. To change the source from which Visual Studio loads package metadata, go to the top of the **NuGet Package Manager** window or the **Manage Packages for Solution** window. Next to **Package source**, select the source that you want to use.
 
@@ -189,7 +189,7 @@ These options are available only for certain project types:
 
 - **Remove dependencies**: When selected, this option removes any dependent packages if they're not referenced elsewhere in the project.
 
-- **Force uninstall, even if there are dependencies on it**: When selected, this option uninstalls a package even if it's still referenced in the project. This option is typically used in combination with **Remove dependencies** to remove a package and the dependencies it installed. But using this option can lead to broken references in the project. In such a case, you might need to [reinstall those other packages](reinstalling-and-updating-packages.md).
+- **Force uninstall, even if there are dependencies on it**: When selected, this option uninstalls a package even if it's still referenced in the project. This option is typically used in combination with **Remove dependencies** to remove a package and the dependencies it installed. But using this option can lead to broken references in the project. In such a case, you might need to [reinstall those other packages](Reinstalling-and-Updating-Packages.md).
 
 ## Related videos
 
@@ -200,7 +200,7 @@ These options are available only for certain project types:
 For more information about NuGet, see the following articles:
 
 - [An introduction to NuGet](../what-is-nuget.md)
-- [Package consumption workflow](overview-and-workflow.md)
-- [Find and evaluate NuGet packages for your project](finding-and-choosing-packages.md)
-- [`PackageReference` in project files](package-references-in-project-files.md)
+- [Package consumption workflow](Overview-and-Workflow.md)
+- [Find and evaluate NuGet packages for your project](Finding-and-Choosing-Packages.md)
+- [`PackageReference` in project files](Package-References-in-Project-Files.md)
 - [Quickstart: Install and use a package with the dotnet CLI](../quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
