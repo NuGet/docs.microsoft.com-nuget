@@ -18,12 +18,12 @@ If the `nuget.exe` CLI tool is already installed, you can update the tool to the
    - To download the latest recommended version, go to [https://dist.nuget.org/win-x86-commandline/latest/nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe).
    - To download the deprecated version 2.8.6, to maintain compatibility with older continuous integration systems, go to [https://dist.nuget.org/win-x86-commandline/v2.8.6/nuget.exe](https://dist.nuget.org/win-x86-commandline/v2.8.6/nuget.exe). Version 2.8.6 isn't compatible with [Mono](https://www.mono-project.com/docs/getting-started/install/).
    - To select a version to download, go to [nuget.org/downloads](https://nuget.org/downloads).
-     - Version 5.0 and later versions require the .NET Framework version 4.7.2 or later.
+     - Version 5.0 and later require .NET Framework 4.7.2 or later.
      - Version 4.1.0 or later is required to publish packages to nuget.org.
 
 1. When prompted, save the file to a folder of your choice. The *nuget.exe* file is downloaded directly. The downloaded file isn't an installer, so there's no need to run the file directly from the browser.
 
-1. To use the CLI tool from any folder, add the *nuget.exe* path to your `PATH` environment variable.
+1. To use the CLI tool from any folder, add the folder that contains the *nuget.exe* file to your `PATH` environment variable.
 
 # [macOS / Linux](#tab/macos+linux)
 

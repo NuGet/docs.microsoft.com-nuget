@@ -111,7 +111,7 @@ The following table compares the available features for the dotnet CLI, `nuget.e
 | Create packages (3) | &#10004; | &#10004; | &#10004; (4) | &#10004; |
 | Publish packages | &#10004; | &#10004; | &#10004; | &#10004; |
 | Replicate packages | | &#10004; | &#10004; | |
-| Manage *global-package* and cache folders | &#10004; | &#10004; | &#10004; | |
+| Manage *global-packages* and cache folders | &#10004; | &#10004; | &#10004; | |
 | Manage NuGet configuration | &#10004; | &#10004; | &#10004; | |
 
 Feature notes:
