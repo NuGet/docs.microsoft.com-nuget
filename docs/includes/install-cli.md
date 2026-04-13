@@ -30,7 +30,7 @@ If the `nuget.exe` CLI tool is already installed, you can update the tool to the
 Behaviors can vary slightly based on your operating system distribution.
 
 > [!NOTE]
-> Visual Studio for Mac was retired on August 31, 2024 in accordance with [Microsoft's Modern Lifecycle Policy](/lifecycle/policies/modern). You can continue to work with Visual Studio for Mac, but there are several other options for developers on Mac, such as the [C# Dev Kit extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit).
+> Visual Studio for Mac was retired on August 31, 2024, in accordance with the [Microsoft Modern Lifecycle Policy](/lifecycle/policies/modern). You can continue to work with Visual Studio for Mac, but there are several other options for developers on macOS, such as the [C# Dev Kit extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit).
 >
 > For more information about support timelines and alternatives, see [Visual Studio for Mac retired August 31, 2024](/lifecycle/announcements/visual-studio-mac-end-of-servicing).
 

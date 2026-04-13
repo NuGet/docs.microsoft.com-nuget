@@ -99,7 +99,7 @@ To find out how to use basic commands with the `nuget.exe` CLI tool, see [Manage
 
 The following table compares the available features for the dotnet CLI, `nuget.exe` CLI, and Visual Studio tools for supported platforms.
 
-| Feature | dotnet CLI | nuget CLI (Windows) | nuget CLI (Mono) | Visual Studio (Windows) |
+| Feature | dotnet CLI | nuget CLI (Windows) | nuget CLI (Mono) | Visual Studio |
 | --- | --- | --- | --- | --- |
 | Search packages | &#10004; | &#10004; | &#10004; | &#10004; |
 | Install or uninstall packages | &#10004; | &#10004; (1) | &#10004; | &#10004; |
