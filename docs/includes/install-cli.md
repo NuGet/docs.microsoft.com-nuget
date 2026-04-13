@@ -46,7 +46,7 @@ Behaviors can vary slightly based on your operating system distribution.
 1. Create an alias by adding the following code to the file that your operating system uses to store Bash aliases or configuration information. Typically, the *~/.bash_aliases* or *~/.bash_profile* file is used for this purpose.
 
    ```bash
-   # Create as alias for `nuget`.
+   # Create an alias for `nuget`.
    alias nuget="mono /usr/local/bin/nuget.exe"
    ```
 

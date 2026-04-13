@@ -69,7 +69,7 @@ You can also install the Package Manager separately or verify your installation.
 
 You can use either the dotnet CLI or the `nuget.exe` CLI to support NuGet features in the Visual Studio IDE. The dotnet CLI is installed with some Visual Studio workloads, such as .NET. The `nuget.exe` CLI must be installed separately as described earlier. For a feature comparison of the tools, see the [Feature availability](#feature-availability) section.
 
-- To target .NET or .NET Standard, use the dotnet SDK CLI tool. This CLI is required for the SDK-style project format, which uses the [SDK attribute](/dotnet/core/project-sdk/overview#project-files).
+- To target .NET or .NET Standard, use the dotnet SDK CLI tool. This CLI is required for the SDK-style project format, which uses the [`SDK` attribute](/dotnet/core/project-sdk/overview#project-files).
 
 - To target .NET Framework (non-SDK-style projects only), use the `nuget.exe` CLI tool. If the project is migrated from the `packages.config` format to `PackageReference`, use the dotnet SDK CLI tool instead.
 
