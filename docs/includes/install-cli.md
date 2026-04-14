@@ -1,9 +1,9 @@
 ---
 title: Include
-description: Installation steps for the nuget.exe CLI tool on Windows, macOS, and Linux.
+description: Find out how to install the nuget.exe CLI tool on Windows, macOS, and Linux. Get step-by-step instructions and information about various versions.
 author: JonDouglas
 ms.author: jodou
-ms.date: 11/03/2023
+ms.date: 04/13/2026
 ms.topic: include
 ---
 
@@ -11,43 +11,45 @@ ms.topic: include
 
 Always install the **latest** version of the tool that supports your configuration.
 
-- You can download the latest recommended version at `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`.
-- If you already have the `nuget.exe` CLI tool installed, you can update the tool to the latest version with the command `nuget update -self`.
-- For compatibility with older continuous integration systems, a previous URL, `https://nuget.org/nuget.exe` currently provides the [deprecated version 2.8.6](https://github.com/NuGet/NuGetGallery/issues/5381) of the CLI tool.
+If the `nuget.exe` CLI tool is already installed, you can update the tool to the latest version by using the command `nuget update -self`.
 
-1. Visit [nuget.org/downloads](https://nuget.org/downloads) and download NuGet version 3.3 or later.
+1. Download `nuget.exe`:
 
-   - Version 5.0 and later requires the .NET Framework version 4.7.2 or later.
-   - Version 4.1.0 and later is required to publish packages to `nuget.org`.
-   - Version 2.8.6 isn't compatible with [Mono](https://www.mono-project.com/docs/getting-started/install/).
+   - To download the latest recommended version, go to [https://dist.nuget.org/win-x86-commandline/latest/nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe).
+   - To download the deprecated version 2.8.6, to maintain compatibility with older continuous integration systems, go to [https://dist.nuget.org/win-x86-commandline/v2.8.6/nuget.exe](https://dist.nuget.org/win-x86-commandline/v2.8.6/nuget.exe). Version 2.8.6 isn't compatible with [Mono](https://www.mono-project.com/docs/getting-started/install/).
+   - To select a version to download, go to [nuget.org/downloads](https://nuget.org/downloads).
+     - Version 5.0 and later require .NET Framework 4.7.2 or later.
+     - Version 4.1.0 or later is required to publish packages to nuget.org.
 
-1. Each download is the `nuget.exe` file directly. Instruct your browser to save the file to a folder of your choice. The download file isn't an installer, so you don't see anything if you run the file directly from the browser.
+1. When prompted, save the file to a folder of your choice. The *nuget.exe* file is downloaded directly. The downloaded file isn't an installer, so there's no need to run the file directly from the browser.
 
-1. To use the CLI tool from anywhere, add the folder location for the `nuget.exe` file to your PATH environment variable.
+1. To use the CLI tool from any folder, add the folder that contains the *nuget.exe* file to your `PATH` environment variable.
 
 # [macOS / Linux](#tab/macos+linux)
 
 Behaviors can vary slightly based on your operating system distribution.
 
 > [!NOTE]
-> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with [Microsoft's Modern Lifecycle Policy](/lifecycle/policies/modern). For more information, see [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac).
+> Visual Studio for Mac was retired on August 31, 2024, in accordance with the [Microsoft Modern Lifecycle Policy](/lifecycle/policies/modern). You can continue to work with Visual Studio for Mac, but there are several other options for developers on macOS, such as the [C# Dev Kit extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit).
+>
+> For more information about support timelines and alternatives, see [Visual Studio for Mac retired August 31, 2024](/lifecycle/announcements/visual-studio-mac-end-of-servicing).
 
 1. Install [Mono version 4.4.2 or later](https://www.mono-project.com/docs/getting-started/install/).
 
-1. Execute the following command at a shell prompt:
+1. At a shell prompt, run the following command:
 
    ```bash
-   # Download the latest stable `nuget.exe` to `/usr/local/bin`
+   # Download the latest stable version of `nuget.exe` to /usr/local/bin.
    sudo curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
    ```
 
-1. Create an alias by adding the following script to the appropriate file for your operating system (typically `~/.bash_aliases` or `~/.bash_profile`):
+1. Create an alias by adding the following code to the file that your operating system uses to store Bash aliases or configuration information. Typically, the *~/.bash_aliases* or *~/.bash_profile* file is used for this purpose.
 
    ```bash
-   # Create as alias for nuget
+   # Create an alias for `nuget`.
    alias nuget="mono /usr/local/bin/nuget.exe"
    ```
 
-1. Reload the shell. Test the installation by entering the command `nuget` with no parameters. NuGet CLI help should display.
+1. Reload the shell. Test the installation by entering the command `nuget` with no parameters. The command should print NuGet CLI help information to the screen.
 
 ---
