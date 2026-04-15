@@ -13,8 +13,15 @@ NuGet distribution vehicles:
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
 | [**7.3.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.3.0](https://visualstudio.microsoft.com/downloads/) | [10.0.200](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> |
+| [**7.3.1**](https://nuget.org/downloads) | N/A | [10.0.202](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> | |
 
 <sup>1</sup> Installed with Visual Studio 2026 with any .NET workload
+
+## Summary: What's New in 7.3.1
+
+* Security Advisory | Defense in Depth update for NuGet Client - [14857](https://github.com/NuGet/Home/issues/14857)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.3.0.78...7.3.1.1)
 
 ## Summary: What's New in 7.3.0
 

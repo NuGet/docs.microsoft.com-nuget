@@ -11,9 +11,16 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**6.11**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.11](https://visualstudio.microsoft.com/downloads/) | [8.0.4xx](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
+| [**6.11**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.11](https://visualstudio.microsoft.com/downloads/) | [8.0.400](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
+| [**6.11.2**](https://nuget.org/downloads) | N/A | [8.0.420](https://dotnet.microsoft.com/download/dotnet/8.0) |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
+
+## Summary: What's New in 6.11.2
+
+* Security Advisory | Defense in Depth update for NuGet Client - [14857](https://github.com/NuGet/Home/issues/14857)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.11.1.2...6.11.2.1)
 
 ## Summary: What's New in 6.11.1
 

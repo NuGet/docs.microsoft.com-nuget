@@ -13,8 +13,15 @@ NuGet distribution vehicles:
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
 | [**6.14.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.14.0](https://visualstudio.microsoft.com/downloads/) | [9.0.300](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
+| [**6.14.3**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.14.30] | [9.0.313]](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
+
+## Summary: What's New in 6.14.3
+
+* Security Advisory | Defense in Depth update for NuGet Client - [14857](https://github.com/NuGet/Home/issues/14857)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.14.2.2...6.14.3.1)
 
 ## Summary: What's New in 6.14.0
 

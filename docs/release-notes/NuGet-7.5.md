@@ -51,7 +51,9 @@ NuGet distribution vehicles:
 
 * Remove dead code from PackageSpecReferenceDependencyProvider and use PackageSpec TargetFrameworkInformation in GetReferenceNearestTargetFrameworkTask - [#7065](https://github.com/NuGet/NuGet.Client/pull/7065)
 
-[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.3.0.78...7.5.0.44)
+* Security Advisory | Defense in Depth update for NuGet Client - [14857](https://github.com/NuGet/Home/issues/14857)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.3.0.78...7.5.0.55)
 
 ### Community contributions
 

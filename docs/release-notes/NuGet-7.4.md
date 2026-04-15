@@ -12,7 +12,14 @@ NuGet distribution vehicles:
 
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
-| [**7.4.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.4.0](https://visualstudio.microsoft.com/downloads/) | N/A
+| [**7.4.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.4.0](https://visualstudio.microsoft.com/downloads/) | N/A |
+| [**7.4.1**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.4.4](https://visualstudio.microsoft.com/downloads/) | N/A |
+
+## Summary: What's New in 7.4.1
+
+* Security Advisory | Defense in Depth update for NuGet Client - [14857](https://github.com/NuGet/Home/issues/14857)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.4.0.28...7.4.1.1)
 
 ## Summary: What's New in 7.4.0
 
