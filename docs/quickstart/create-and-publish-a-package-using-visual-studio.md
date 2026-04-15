@@ -24,7 +24,7 @@ This quickstart is for Windows users only. If you're using a Mac, use the [.NET 
 
 - The .NET CLI.
 
-  For Visual Studio 2017 and later, the .NET CLI is automatically installed with any .NET-related workload. You can also install the [.NET SDK](https://dotnet.microsoft.com/download) to get the .NET CLI. The .NET CLI is required for .NET projects that use the [SDK-style format](../resources/check-project-format.md) (and an `SDK` attribute). The default .NET class library template in Visual Studio 2017 and later uses the `SDK` attribute.
+  For Visual Studio 2017 and later, the .NET CLI is automatically installed with any .NET-related workload. You can also install the [.NET SDK](https://dotnet.microsoft.com/download) to get the .NET CLI. The .NET CLI is required for .NET projects that use the [SDK-style format](../resources/check-project-format.md) (and an SDK attribute). The default .NET class library template in Visual Studio 2017 and later uses the SDK attribute.
 
   > [!IMPORTANT]
   > If you're working with a non-SDK-style project, follow the procedures in [Create and publish a package using Visual Studio (.NET Framework, Windows)](create-and-publish-a-package-using-visual-studio-net-framework.md) instead to create and publish the package. For this article, the .NET CLI is recommended. Although you can publish any NuGet package by using the NuGet CLI, some of the steps in this article are specific to SDK-style projects and the .NET CLI. The NuGet CLI is used for [non-SDK-style projects](../resources/check-project-format.md) (typically .NET Framework projects).
@@ -174,7 +174,7 @@ For publishing, you can use the NuGet CLI (`nuget.exe`) as an alternative to the
 
 1. Open a command prompt window, and then go to the folder that contains the *.nupkg* file.
 
-1. Run the following command. Replace `<package-file>` with the name of your *.nupkg* file, and replace `<API-key>` with your API key. The package file has the format *\<package-ID\>.version.nupkg*, for example, *Contoso.App.Logger.Test.1.0.0.nupkg*.
+1. Run the following command. Replace `<package-file>` with the name of your *.nupkg* file, and replace `<API-key>` with your API key. The package file has the format *\<package-ID\>.\<version\>.nupkg*, for example, *Contoso.App.Logger.Test.1.0.0.nupkg*.
 
    ```nuget
    nuget push <package-file> <API-key> -Source https://api.nuget.org/v3/index.json
@@ -265,12 +265,12 @@ For videos about using NuGet for package management, see [.NET Package Managemen
 
 ## Related content
 
-To find out how to create a NuGet package with the Visual Studio .NET Framework, see [Create a package using the nuget.exe CLI](../create-packages/creating-a-package.md).
+To find out how to create a NuGet package with the Visual Studio .NET Framework, see [Create a package using the nuget.exe CLI](../create-packages/Creating-a-Package.md).
 
 For more information about NuGet, see the following articles:
 
 - [Create a NuGet package with the dotnet CLI](../create-packages/creating-a-package-dotnet-cli.md)
-- [Publish NuGet packages](../nuget-org/publish-a-package.md)
+- [Publish NuGet packages](../nuget-org/Publish-a-package.md)
 - [Building pre-release packages](../create-packages/Prerelease-Packages.md)
 - [Support multiple .NET frameworks in your project file](../create-packages/multiple-target-frameworks-project-file.md)
 - [Package versioning](../concepts/package-versioning.md)
