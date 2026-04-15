@@ -1,15 +1,16 @@
 ---
-title: "Quickstart: Create and publish a NuGet package using Visual Studio (Windows only)"
-description: A quickstart that shows how to create and publish a .NET NuGet package using Visual Studio for Windows.
+title: "Quickstart: Create and Publish a NuGet Package Using Visual Studio (Windows Only)"
+description: In this quickstart, find out how to use Visual Studio to create a basic NuGet package and then use the command line to publish the package to nuget.org.
 author: JonDouglas
 ms.author: jodou
-ms.date: 03/03/2025
+ms.date: 04/15/2026
 ms.topic: quickstart
+# customer intent: As a developer, I want to find out how to create and publish a NuGet package so that I can make my code available to other developers.
 ---
 
 # Quickstart: Create and publish a NuGet package using Visual Studio (Windows only)
 
-With Microsoft Visual Studio, you can create a NuGet package from a .NET class library, and then publish it to nuget.org by using a CLI tool.
+In this quickstart, you use Microsoft Visual Studio to create a NuGet package from a .NET class library. Then you publish the package to nuget.org by using a command-line interface (CLI) tool.
 
 This quickstart is for Windows users only. If you're using a Mac, use the [.NET CLI](create-and-publish-a-package-using-the-dotnet-cli.md).
 
@@ -23,10 +24,10 @@ This quickstart is for Windows users only. If you're using a Mac, use the [.NET 
 
 - The .NET CLI.
 
-  For Visual Studio 2017 and later, the .NET CLI is automatically installed with any .NET-related workload. You can also install the [.NET SDK](https://www.microsoft.com/net/download/) to get the .NET CLI. The .NET CLI is required for .NET projects that use the [SDK-style format](../resources/check-project-format.md) (and an `SDK` attribute). The default .NET class library template in Visual Studio 2017 and later uses the `SDK` attribute.
+  For Visual Studio 2017 and later, the .NET CLI is automatically installed with any .NET-related workload. You can also install the [.NET SDK](https://dotnet.microsoft.com/download) to get the .NET CLI. The .NET CLI is required for .NET projects that use the [SDK-style format](../resources/check-project-format.md) (and an `SDK` attribute). The default .NET class library template in Visual Studio 2017 and later uses the `SDK` attribute.
 
   > [!IMPORTANT]
-  > If you're working with a non-SDK-style project, follow the procedures in [Create and publish a .NET Framework package (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md) instead to create and publish the package. For this article, the .NET CLI is recommended. Although you can publish any NuGet package by using the NuGet CLI, some of the steps in this article are specific to SDK-style projects and the .NET CLI. The NuGet CLI is used for [non-SDK-style projects](../resources/check-project-format.md) (typically .NET Framework).
+  > If you're working with a non-SDK-style project, follow the procedures in [Create and publish a package using Visual Studio (.NET Framework, Windows)](create-and-publish-a-package-using-visual-studio-net-framework.md) instead to create and publish the package. For this article, the .NET CLI is recommended. Although you can publish any NuGet package by using the NuGet CLI, some of the steps in this article are specific to SDK-style projects and the .NET CLI. The NuGet CLI is used for [non-SDK-style projects](../resources/check-project-format.md) (typically .NET Framework projects).
 
 - A [free account on nuget.org](../nuget-org/individual-accounts.md#add-a-new-individual-account). You must register and confirm the account before you can upload a NuGet package.
 
@@ -34,11 +35,11 @@ This quickstart is for Windows users only. If you're using a Mac, use the [.NET 
 
 ## Create a class library project
 
-You can use an existing .NET Class Library project for the code you want to package, or you can create one by taking the following steps:
+You can use an existing .NET class library project for the code you want to package, or you can create one by taking the following steps:
 
 1. In Visual Studio, select **File** > **New** > **Project/Solution**.
 
-1. In the **Create a new project** window, go to the search box and enter **Class Library**.
+1. In the **Create a new project** window, go to the search box and enter **class library**.
 
 1. In the resulting list of project templates, select the **Class Library** template that meets the following criteria:
    - Has the description *A project for creating a class library that targets .NET or .NET Standard*
@@ -50,9 +51,9 @@ You can use an existing .NET Class Library project for the code you want to pack
 
 1. In the **Additional information** window, select an appropriate value for **Framework**, and then select **Create**.
 
-   If you're unsure which framework to select, the latest is a good choice, and can be easily changed later. For information about which framework to use, see [When to target .NET 5.0 or .NET 6.0 vs. .NET Standard](/dotnet/standard/net-standard#when-to-target-net50-or-net60-vs-netstandard).
+   If you're unsure which framework to select, the latest is a good choice, and can be easily changed later. For information about which framework to use, see [When to target `netx.0` vs. `netstandard`](/dotnet/standard/net-standard#when-to-target-netx0-vs-netstandard).
 
-1. To check whether the project is created properly, select **Build** > **Build Solution**. Then check the *Debug* folder for the DLL. If you build a release configuration, check the *Release* folder instead.
+1. To check whether the project is created properly, select **Build** > **Build Solution**. Then check the *Debug* folder for the DLL. If your project is configured to build a release configuration, check the *Release* folder instead.
 
 1. (Optional) For this quickstart, you don't need to write any additional code for the NuGet package, because the template class library is sufficient to create a package. However, if you want to add some functional code to the package, include the following code:
 
@@ -71,15 +72,15 @@ You can use an existing .NET Class Library project for the code you want to pack
 
 ## Configure package properties
 
-After you createdyour project, you can configure the NuGet package properties by following these steps:
+After you create your project, you can configure the NuGet package properties by following these steps:
 
 1. In **Solution Explorer**, select your project, and then select **Project** > **\<project-name\> Properties**, where \<project-name\> is the name of your project.
 
 1. Expand the **Package** node, and then select **General**.
 
-   The **Package** node appears only for SDK-style projects in Visual Studio. If you're targeting a non-SDK style project (typically .NET Framework), either [migrate the project](../consume-packages/migrate-packages-config-to-package-reference.md), or see [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) for step-by-step instructions.
+   The **Package** node appears only for SDK-style projects in Visual Studio. If you're targeting a non-SDK style project (typically .NET Framework projects), either [migrate the project](../consume-packages/migrate-packages-config-to-package-reference.md), or see [Create and publish a package using Visual Studio (.NET Framework, Windows)](create-and-publish-a-package-using-visual-studio-net-framework.md) for step-by-step instructions.
 
-   :::image type="content" source="media/qs-create-vs-project-properties.png" alt-text="Screenshot of a project properties window in Visual Studio. General properties for a NuGet package are visible, such as the package ID and title.":::
+   :::image type="content" source="media/qs-create-vs-project-properties.png" alt-text="Screenshot of a project properties window in Visual Studio. General properties for a NuGet package are visible, such as the package ID and title." lightbox="media/qs-create-vs-project-properties.png":::
 
 1. For **Package ID**, give your package a unique ID.
 
@@ -88,7 +89,7 @@ After you createdyour project, you can configure the NuGet package properties by
 
 1. Fill out any other desired properties. For packages built for public consumption, pay special attention to the **Tags** property, because tags help others find your package and understand what it does.
 
-   All the properties go into the *.nuspec* manifest that Visual Studio creates for the project. For a table that shows how Microsoft Build (MSBuild) properties (SDK-style projects) map to *.nuspec* file properties, see [pack targets](../reference/msbuild-targets.md#pack-target). For a description of *.nuspec* file properties, see the [.nuspec file reference](../reference/nuspec.md).
+   All the properties go into the *.nuspec* manifest that Visual Studio creates for the project. For a table that shows how Microsoft Build (MSBuild) properties in SDK-style projects map to *.nuspec* file properties, see [pack target](../reference/msbuild-targets.md#pack-target). For a description of *.nuspec* file properties, see [.nuspec reference](../reference/nuspec.md).
 
 1. (Optional) To see the properties directly in the *AppLogger.csproj* project file, select **Project** > **Edit Project File**.
 
@@ -106,7 +107,7 @@ To create a NuGet package from your project, follow these steps:
 
    Visual Studio builds the project and creates the *.nupkg* file.
 
-1. Examine the **Output** window for detailed information, including the path to the package file. In this example, the built assembly is in *bin\Release\net8.0*, which is appropriate for a .NET 8.0 target:
+1. Examine the **Output** window for detailed information, including the path to the package file. In this example, the built assembly is in the *bin\Release\net8.0* folder, which is appropriate for a .NET 8.0 target:
 
    ```output
    1>------ Build started: Project: AppLogger, Configuration: Release Any CPU ------
@@ -115,23 +116,23 @@ To create a NuGet package from your project, follow these steps:
    ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
    ```
 
-If you don't see the **Pack** command on the menu, your project probably isn't an SDK-style project. Take one of the following steps:
+If the **Pack** command is missing from the menu, your project probably isn't an SDK-style project. Take one of the following steps:
 
 - [Migrate the project](../consume-packages/migrate-packages-config-to-package-reference.md) from the `packages.config` format to the `PackageReference` format so that you can use the .NET CLI.
-- Follow the instructions in [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) to use the NuGet CLI to create and publish a NuGet package from your project.
+- Follow the instructions in [Create and publish a package using Visual Studio (.NET Framework, Windows)](create-and-publish-a-package-using-visual-studio-net-framework.md) to use the NuGet CLI to create and publish a NuGet package from your project.
 
 ### (Optional) Generate package on build
 
 You can configure Visual Studio to automatically generate the NuGet package when you build the project:
 
-1. Select your project in **Solution Explorer**, and then select **Project** > **\<project-name> Properties**, where \<project-name> is the name of your project (**AppLogger** in this case).
+1. Select your project in **Solution Explorer**, and then select **Project** > **\<project-name\> Properties**, where \<project-name\> is the name of your project (**AppLogger** in this case).
 
 1. Expand the **Package** node, select **General**, and then select **Generate NuGet package on build**.
 
-    :::image type="content" source="media/qs-create-vs-generate-on-build.png" alt-text="Screenshot of a project properties window in Visual Studio. In the General properties section, the Generate NuGet package on build option is selected.":::
+   :::image type="content" source="media/qs-create-vs-generate-on-build.png" alt-text="Screenshot of a project properties window in Visual Studio. In the General properties section, the Generate NuGet package on build option is selected." lightbox="media/qs-create-vs-generate-on-build.png":::
 
 > [!NOTE]
-> When you select this option, the extra time that's needed generate the package increases the overall build time for your project.
+> When you select this option, the extra time that's needed to generate the package increases the overall build time for your project.
 
 ### (Optional) Pack with MSBuild
 
@@ -143,7 +144,7 @@ As an alternative to using the **Pack** menu command, you can use the `msbuild -
 
 1. Run the following command: `msbuild -t:pack`.
 
-For more information, see [Create a package using MSBuild](../create-packages/creating-a-package-msbuild.md).
+For more information, see [Create a NuGet package using MSBuild](../create-packages/creating-a-package-msbuild.md).
 
 ## Publish the package
 
@@ -184,16 +185,15 @@ For publishing, you can use the NuGet CLI (`nuget.exe`) as an alternative to the
    ```output
    Pushing <package-file> to 'https://www.nuget.org/api/v2/package'...
      PUT https://www.nuget.org/api/v2/package/
-   WARNING: License missing. See how to include a license within the package: https://aka.ms/nuget/authoring-best-practices#licensing.
-     Created https://www.nuget.org/api/v2/package/ 1092ms
+     Created https://www.nuget.org/api/v2/package/ 950ms
    Your package was pushed.
    ```
 
-For more information, see [nuget push](../reference/cli-reference/cli-ref-push.md).
+For more information, see [push command (NuGet CLI)](../reference/cli-reference/cli-ref-push.md).
 
 ---
 
-### Publish errors
+### Errors during publishing
 
 [!INCLUDE [publish-errors](includes/publish-errors.md)]
 
@@ -217,7 +217,7 @@ To add a read-me file to the package, take the following steps:
 
    Visual Studio adds information about your read-me file to the project file:
    - A `PackageReadmeFile` child element is added to the `PropertyGroup` element.
-   - A `None` child element for the file is added to the `ItemGroup` element.
+   - A `None` child element is added to the `ItemGroup` element.
 
    ```xml
    <Project Sdk="Microsoft.NET.Sdk">
@@ -242,23 +242,37 @@ In the preceding example, the property specifies a file named *read-me.md* in th
 
 For example, the following screenshot shows the read-me file for the `HtmlAgilityPack` package:
 
-:::image type="content" source="media/package-read-me-file.png" alt-text="Screenshot of the Visual Studio Package Manager UI that shows a package details pane. The README tab describes HTML parsing abilities of the package." lightbox="media/package-read-me-file.png":::
+:::image type="content" source="media/package-read-me-file.png" alt-text="Screenshot of the Visual Studio Package Manager UI that shows a package details pane. The README tab describes HTML parsing abilities of the package." lightbox="media/package-read-me-file.png" lightbox="media/package-read-me-file.png":::
 
-## Related video
+### Add other files
 
-Find NuGet videos on [Channel 9](/shows/NuGet-101/) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+To add other files to a package, open the project file by selecting **Project** > **Edit Project File**. Then add a `Content` child element to the `ItemGroup` element:
 
-Congratulations on creating a NuGet package by using a Visual Studio .NET class library. Advance to the next article to learn how to create a NuGet package with the Visual Studio .NET Framework.
+```xml
+<ItemGroup>
+  <Content Include="other-content.md">
+    <Pack>true</Pack>
+    <PackagePath>\</PackagePath>
+  </Content>
+</ItemGroup>
+```
 
-> [!div class="nextstepaction"]
-> [Create a package using the NuGet CLI](../create-packages/creating-a-package.md)
+For more information, see [Including content in a package](../reference/msbuild-targets.md#including-content-in-a-package).
 
-To explore more that NuGet has to offer, see the following articles:
+## Related videos
 
-- [Create a NuGet package](../create-packages/creating-a-package-dotnet-cli.md)
-- [Publish a package](../nuget-org/publish-a-package.md)
-- [Build a prerelease package](../create-packages/Prerelease-Packages.md)
-- [Support multiple .NET Framework versions](../create-packages/multiple-target-frameworks-project-file.md)
+For videos about using NuGet for package management, see [.NET Package Management with NuGet for Beginners](/shows/dotnet-package-management-with-nuget-for-beginners) and [NuGet for Beginners](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+
+## Related content
+
+To find out how to create a NuGet package with the Visual Studio .NET Framework, see [Create a package using the nuget.exe CLI](../create-packages/creating-a-package.md).
+
+For more information about NuGet, see the following articles:
+
+- [Create a NuGet package with the dotnet CLI](../create-packages/creating-a-package-dotnet-cli.md)
+- [Publish NuGet packages](../nuget-org/publish-a-package.md)
+- [Building pre-release packages](../create-packages/Prerelease-Packages.md)
+- [Support multiple .NET frameworks in your project file](../create-packages/multiple-target-frameworks-project-file.md)
 - [Package versioning](../concepts/package-versioning.md)
-- [Create localized NuGet packages](../create-packages/creating-localized-packages.md)
-- [Porting to .NET Core from .NET Framework](/dotnet/articles/core/porting/index)
+- [Creating localized NuGet packages](../create-packages/Creating-Localized-Packages.md)
+- [Overview of upgrading .NET apps](/dotnet/core/porting/)
