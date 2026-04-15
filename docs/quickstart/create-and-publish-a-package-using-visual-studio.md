@@ -242,7 +242,7 @@ In the preceding example, the property specifies a file named *read-me.md* in th
 
 For example, the following screenshot shows the read-me file for the `HtmlAgilityPack` package:
 
-:::image type="content" source="media/package-read-me-file.png" alt-text="Screenshot of the Visual Studio Package Manager UI that shows a package details pane. The README tab describes HTML parsing abilities of the package." lightbox="media/package-read-me-file.png" lightbox="media/package-read-me-file.png":::
+:::image type="content" source="media/package-read-me-file.png" alt-text="Screenshot of the Visual Studio Package Manager UI that shows a package details pane. The README tab describes HTML parsing abilities of the package." lightbox="media/package-read-me-file.png":::
 
 ### Add other files
 
