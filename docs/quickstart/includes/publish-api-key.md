@@ -1,4 +1,4 @@
-1. [Sign into your nuget.org account](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) or [create an account](../../nuget-org/individual-accounts.md#add-a-new-individual-account) if you don't have one already.
+1. [Sign in to your nuget.org account](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) or [create an account](../../nuget-org/individual-accounts.md#add-a-new-individual-account) if you don't have one already.
 
 1. In the upper-right corner, select your user name, and then select **API Keys**.
 
@@ -6,7 +6,7 @@
 
 1. Under **Select Scopes**, select **Push**.
 
-1. Under **Select Packages**, for **Glob Pattern**, enter **\***.
+1. Under **Select Packages**, for **Glob Pattern**, enter an asterisk (**\***).
 
 1. Select **Create**.
 
