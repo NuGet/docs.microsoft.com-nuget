@@ -9,24 +9,25 @@ ms.topic: quickstart
 
 # Quickstart: Install and use a package with the dotnet CLI
 
-NuGet packages contain compiled binary code that developers make available for other developers to use in their projects. For more information, see [What is NuGet](../What-is-NuGet.md). This quickstart describes how to install the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) NuGet package into a .NET project by using the [dotnet add package](/dotnet/core/tools/dotnet-add-package) command.
+In this quickstart, you install the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) NuGet package into a .NET project by using the [dotnet add package](/dotnet/core/tools/dotnet-add-package) command. NuGet packages contain compiled binary code that developers make available for other developers to use in their projects. For more information, see [What is NuGet](../What-is-NuGet.md).
 
 You refer to installed packages in code with a `using <namespace>` directive, where `<namespace>` is often the package name. You can then use the package's API in your project.
 
 > [!Tip]
-> Browse [nuget.org/packages](https://nuget.org/packages) to find packages you can reuse in your own applications. You can search directly at [https://nuget.org](https://nuget.org/packages), or find and install packages from within Visual Studio. For more information, see [Find and evaluate NuGet packages for your project](../consume-packages/finding-and-choosing-packages.md).
+> Browse [nuget.org/packages](https://nuget.org/packages) to find packages you can reuse in your own applications. You can search directly at [https://nuget.org](https://nuget.org/packages), or you can find and install packages from within Visual Studio. For more information, see [Find and evaluate NuGet packages for your project](../consume-packages/finding-and-choosing-packages.md).
 
 ## Prerequisites
 
-- The [.NET SDK](https://www.microsoft.com/net/download), which provides the `dotnet` command-line tool. Starting in Visual Studio 2017, the dotnet CLI automatically installs with any .NET or .NET Core related workloads.
+- Visual Studio 2026. You can install the 2026 Community edition for free from [visualstudio.microsoft.com](https://visualstudio.microsoft.com/), or you can use the Professional or Enterprise edition.
+- The [.NET SDK](https://www.microsoft.com/net/download), which provides the `dotnet` command-line interface (CLI). In Visual Studio, the dotnet CLI automatically installs with any .NET-related workloads.
 
 ## Create a project
 
-You can install NuGet packages into a .NET project. For this walkthrough, create a simple .NET console project by using the dotnet CLI, as follows:
+You can install NuGet packages into a .NET project. For this quickstart, take the following steps to create a basic .NET console project by using the dotnet CLI:
 
 1. Create a folder named *Nuget.Quickstart* for the project.
 
-1. Open a command prompt and switch to the new folder.
+1. Open a command prompt window and go to the new folder.
 
 1. Create the project by using the following command:
 
@@ -44,11 +45,11 @@ You can install NuGet packages into a .NET project. For this walkthrough, create
     dotnet add package Newtonsoft.Json
     ```
 
-2. After the command completes, open the *Nuget.Quickstart.csproj* file in Visual Studio to see the added NuGet package reference:
+2. After the command finishes, open the *Nuget.Quickstart.csproj* file in Visual Studio to see the added NuGet package reference:
 
     ```xml
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     </ItemGroup>
     ```
 
@@ -89,7 +90,7 @@ You can install NuGet packages into a .NET project. For this walkthrough, create
     }
     ```
 
-1. Save the file, then build and run the app by using the `dotnet run` command. The output is the JSON representation of the `Account` object in the code:
+1. Save the file, and then build and run the app by using the `dotnet run` command. The output is the JSON representation of the `Account` object in the code:
 
     ```output
     {
@@ -99,9 +100,7 @@ You can install NuGet packages into a .NET project. For this walkthrough, create
     }
     ```
 
-Congratulations on installing and using your first NuGet package!
-
-## Related video
+## Related videos
 
 > [!VIDEO https://learn-video.azurefd.net/vod/player?show=dotnet-package-management-with-nuget-for-beginners&ep=installing-a-nuget-package-using-the-dotnet-cli-nuget-for-beginners]
 
