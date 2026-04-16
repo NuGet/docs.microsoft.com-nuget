@@ -2,7 +2,7 @@
 title: NuGet 7.4 Release Notes
 description: Release notes for NuGet 7.4 including new features, bug fixes, and DCRs.
 author: jebriede
-ms.date: 03/12/2026
+ms.date: 04/14/2026
 ms.topic: release-notes
 ---
 

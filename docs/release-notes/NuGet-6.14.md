@@ -2,7 +2,7 @@
 title: NuGet 6.14 Release Notes
 description: Release notes for NuGet 6.14 including new features, bug fixes, and DCRs.
 author: zivkan
-ms.date: 5/6/2025
+ms.date: 4/14/2026
 ms.topic: release-notes
 ---
 
@@ -13,7 +13,7 @@ NuGet distribution vehicles:
 | NuGet version | Available in Visual Studio version | Available in .NET SDK(s) |
 |:---|:---|:---|
 | [**6.14.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.14.0](https://visualstudio.microsoft.com/downloads/) | [9.0.300](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
-| [**6.14.3**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.14.30] | [9.0.313]](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
+| [**6.14.3**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.14.30](https://visualstudio.microsoft.com/downloads/) | [9.0.313](https://dotnet.microsoft.com/download/dotnet/9.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
 

@@ -3,7 +3,7 @@ title: NuGet 7.0 Release Notes
 description: Release notes for NuGet 7.0 including new features, bug fixes, and DCRs.
 author: donnie-msft
 ms.author: eagoodso
-ms.date: 10/29/2025
+ms.date: 4/14/2026
 ms.topic: release-notes
 ---
 

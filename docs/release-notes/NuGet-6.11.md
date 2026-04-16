@@ -2,7 +2,7 @@
 title: NuGet 6.11 Release Notes
 description: Release notes for NuGet 6.11 including new features, bug fixes, and DCRs.
 author: martinrrm
-ms.date: 8/13/2024
+ms.date: 4/14/2026
 ms.topic: release-notes
 ---
 # NuGet 6.11 Release Notes
