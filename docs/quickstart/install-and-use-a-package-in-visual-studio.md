@@ -17,11 +17,11 @@ You can install a NuGet package in a Visual Studio project by using the [NuGet P
 This article is for Windows users only. If you're using Visual Studio for Mac, see [Install and use a package in Visual Studio for Mac](install-and-use-a-package-in-visual-studio-mac.md).
 
 > [!TIP]
-> To find a NuGet package, start with *nuget.org*. Browsing nuget.org is how .NET developers typically find components they can reuse in their own applications. You can do a search of nuget.org directly or find and install packages within Visual Studio as shown in this article. For more information, see [Find and evaluate NuGet packages for your project](../consume-packages/Finding-and-Choosing-Packages.md).
+> To find a NuGet package, start with [nuget.org](https://www.nuget.org/). Browsing nuget.org is how .NET developers typically find components they can reuse in their own applications. You can do a search of nuget.org directly or find and install packages within Visual Studio as shown in this article. For more information, see [Find and evaluate NuGet packages for your project](../consume-packages/Finding-and-Choosing-Packages.md).
 
 ## Prerequisites
 
-- Install Visual Studio 2026 for Windows with the .NET desktop development workload.
+- Install Visual Studio 2026 with the .NET desktop development workload.
 
   You can install the 2026 Community edition for free from [visualstudio.microsoft.com](https://visualstudio.microsoft.com/), or you can use the Professional or Enterprise edition.
 
