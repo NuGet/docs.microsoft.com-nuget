@@ -67,7 +67,7 @@ Alternatively, to use the [Package Manager Console](../consume-packages/install-
 
 1. At the top of the **Package Manager Console** window, verify that the **Default project** list shows the project in which you want to install the package. If you have a single project in the solution, it's preselected.
 
-   :::image type="content" source="media/qs-use-package-manager-console.png" alt-text="Screenshot of the Package Manage Console window, which contains information about the version and licensing. The Default project list is highlighted." lightbox="media/qs-use-package-manager-console.png":::
+   :::image type="content" source="media/qs-use-package-manager-console.png" alt-text="Screenshot of the Package Manager Console window, which contains information about the version and licensing. The Default project list is highlighted." lightbox="media/qs-use-package-manager-console.png":::
 
 1. At the console prompt, enter the command `Install-Package Newtonsoft.Json`. For more information about this command, see [Install-Package](../reference/ps-reference/ps-ref-install-package.md).
 
