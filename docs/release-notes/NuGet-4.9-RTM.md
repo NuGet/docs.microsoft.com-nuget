@@ -3,7 +3,7 @@ title: NuGet 4.9 RTM Release Notes
 description: Release notes for NuGet 4.9 including known issues, bug fixes, new features, and DCRs.
 author: JonDouglas
 ms.author: jodou
-ms.date: 11/20/2018
+ms.date: 4/14/2026
 ms.topic: release-notes
 ---
 
@@ -19,6 +19,13 @@ NuGet distribution vehicles:
 | [**4.9.3**](https://nuget.org/downloads) |[Visual Studio 2017 version 15.9.6](https://visualstudio.microsoft.com/downloads/) | [2.1.504, 2.2.104](https://www.microsoft.com/net/download/visual-studio-sdks) |
 | [**4.9.5**](https://nuget.org/downloads) |n/a| n/a [.NET Core 2.1 is out of support as of August 21, 2021](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)
 | [**4.9.6**](https://nuget.org/downloads) |n/a| n/a [.NET Core 2.1 is out of support as of August 21, 2021](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)
+| [**4.9.7**](https://nuget.org/downloads) |[Visual Studio 2017 version 15.9.79](https://visualstudio.microsoft.com/downloads/) | N/A |
+
+## Summary: What's New in 4.9.7
+
+* Security Advisory | Defense in Depth update for NuGet Client - [14857](https://github.com/NuGet/Home/issues/14857)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/4.9.6.8...4.9.7.2)
 
 ## Summary: What's New in 4.9.6
 
