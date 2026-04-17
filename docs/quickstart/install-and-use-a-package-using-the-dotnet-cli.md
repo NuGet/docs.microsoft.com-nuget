@@ -15,12 +15,11 @@ In this quickstart, you install the popular [`Newtonsoft.Json`](https://www.nuge
 To install the package, you use the [dotnet package add](/dotnet/core/tools/dotnet-package-add) command, which is part of the dotnet command-line interface (CLI).
 
 > [!Tip]
-> Browse [nuget.org/packages](https://www.nuget.org/packages) to find packages you can reuse in your own applications. You can search directly at [https://nuget.org](https://www.nuget.org/packages), or you can find and install packages from within Visual Studio. For more information, see [Find and evaluate NuGet packages for your project](../consume-packages/Finding-and-Choosing-Packages.md).
+> Browse [nuget.org/packages](https://www.nuget.org/packages) to find packages you can reuse in your own applications. You can search directly at [https://nuget.org/packages](https://www.nuget.org/packages), or you can find and install packages from within Visual Studio. For more information, see [Find and evaluate NuGet packages for your project](../consume-packages/Finding-and-Choosing-Packages.md).
 
 ## Prerequisites
 
-- Visual Studio 2026. You can install the 2026 Community edition for free from [visualstudio.microsoft.com](https://visualstudio.microsoft.com/), or you can use the Professional or Enterprise edition.
-- The [.NET SDK](https://dotnet.microsoft.com/download), which provides the dotnet CLI. In Visual Studio, the dotnet CLI automatically installs with any .NET-related workloads.
+The [.NET SDK](https://dotnet.microsoft.com/download), which provides the dotnet CLI. In Visual Studio, the dotnet CLI automatically installs with any .NET-related workloads.
 
 ## Create a project
 
@@ -52,7 +51,7 @@ You can install NuGet packages into a .NET project. For this quickstart, take th
    dotnet add package Newtonsoft.Json
    ```
 
-1. After the command finishes, open the *Nuget.Quickstart.csproj* file in Visual Studio to check for the added NuGet package reference:
+1. After the command finishes, open the *Nuget.Quickstart.csproj* file in Visual Studio or in a text editor. Check for the added NuGet package reference:
 
    ```xml
    <ItemGroup>
@@ -64,7 +63,7 @@ You can install NuGet packages into a .NET project. For this quickstart, take th
 
 In code, you refer to installed packages by using a `using <namespace>` directive, where `<namespace>` is often the package name. You can then use the package's API in your project.
 
-1. In Visual Studio, open the *Program.cs* file and add the following line at the top of the file:
+1. In Visual Studio or in a text editor, open the *Program.cs* file. Add the following line to the top of the file:
 
    ```cs
    using Newtonsoft.Json;
@@ -77,7 +76,7 @@ In code, you refer to installed packages by using a `using <namespace>` directiv
    {
        public class Account
        {
-           public string? ID { get; set; }
+           public string? Id { get; set; }
            public decimal Balance { get; set; }
            public DateTime Created { get; set; }
        }
@@ -87,7 +86,7 @@ In code, you refer to installed packages by using a `using <namespace>` directiv
            {
                Account account = new Account
                {
-                   ID = "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+                   Id = "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
                    Balance = 4389.21m,
                    Created = new DateTime(2026, 4, 16, 0, 0, 0, DateTimeKind.Utc),
                };
@@ -103,8 +102,8 @@ In code, you refer to installed packages by using a `using <namespace>` directiv
 
    ```output
    {
-     "ID": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
-     "Balance": "4389.21",
+     "Id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+     "Balance": 4389.21,
      "Created": "2026-04-16T00:00:00Z"
    }
    ```
