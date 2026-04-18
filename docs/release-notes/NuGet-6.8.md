@@ -3,7 +3,7 @@ title: NuGet 6.8 Release Notes
 description: Release notes for NuGet 6.8 including new features, bug fixes, and DCRs.
 author: nkolev92
 ms.author: nikolev
-ms.date: 10/30/2023
+ms.date: 4/14/2026
 ms.topic: release-notes
 ---
 
@@ -15,9 +15,15 @@ NuGet distribution vehicles:
 |:---|:---|:---|
 | [**6.8**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.8](https://visualstudio.microsoft.com/downloads/) | [8.0.100](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
 | [**6.8.1**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.8](https://visualstudio.microsoft.com/downloads/) | [8.0.102](https://dotnet.microsoft.com/download/dotnet/8.0)<sup>1</sup> |
-
+| [**6.8.2**](https://nuget.org/downloads) | N/A | [8.0.126](https://dotnet.microsoft.com/download/dotnet/8.0) |
 
 <sup>1</sup> Installed with Visual Studio 2022 with any .NET workload
+
+## Summary: What's New in 6.8.2
+
+* Security Advisory | Defense in Depth update for NuGet Client - [14857](https://github.com/NuGet/Home/issues/14857)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/6.8.1.2...6.8.2.3)
 
 ## Summary: What's New in 6.8.1
 

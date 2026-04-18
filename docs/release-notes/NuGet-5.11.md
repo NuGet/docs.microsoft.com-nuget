@@ -3,7 +3,7 @@ title: NuGet 5.11 Release Notes
 description: Release notes for NuGet 5.11 including new features, bug fixes, and DCRs.
 author: erdembayar
 ms.author: eryondon
-ms.date: 8/10/2021
+ms.date: 4/14/2026
 ms.topic: release-notes
 ---
 
@@ -18,11 +18,18 @@ NuGet distribution vehicles:
 | [**5.11.3**](https://nuget.org/downloads) | N/A | N/A |
 | [**5.11.5**](https://nuget.org/downloads) | N/A | N/A |
 | [**5.11.6**](https://nuget.org/downloads) | N/A | N/A |
+| [**5.11.7**](https://nuget.org/downloads) | [Visual Studio 2019 version 16.11.55](https://visualstudio.microsoft.com/downloads/) | N/A |
 
 <sup>1</sup> Installed with Visual Studio 2019 with .NET Core workload
   
 > [!NOTE]
 > Visual Studio 16.11, MSBuild 16.11, and .NET 5.0.400+ requires NuGet.exe 5.11 or later.
+
+## Summary: What's New in 5.11.7
+
+* Security Advisory | Defense in Depth update for NuGet Client - [14857](https://github.com/NuGet/Home/issues/14857)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/5.11.6.4...5.11.7.1)
 
 ## Summary: What's New in 5.11.6
 

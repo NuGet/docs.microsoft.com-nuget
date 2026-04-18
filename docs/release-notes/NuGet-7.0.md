@@ -3,7 +3,7 @@ title: NuGet 7.0 Release Notes
 description: Release notes for NuGet 7.0 including new features, bug fixes, and DCRs.
 author: donnie-msft
 ms.author: eagoodso
-ms.date: 10/29/2025
+ms.date: 4/14/2026
 ms.topic: release-notes
 ---
 
@@ -16,8 +16,15 @@ NuGet distribution vehicles:
 | [**7.0.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.0.0](https://visualstudio.microsoft.com/downloads/) | [10.0.100](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> |
 | [**7.0.1**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.1.0](https://visualstudio.microsoft.com/downloads/) | |
 | [**7.0.2**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.1.1](https://visualstudio.microsoft.com/downloads/) | [10.0.102](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> |
+| [**7.0.3**](https://nuget.org/downloads) | N/A | [10.0.106](https://dotnet.microsoft.com/download/dotnet/10.0)<sup>1</sup> |
 
 <sup>1</sup> Installed with Visual Studio 2026 with any .NET workload
+
+## Summary: What's New in 7.0.3
+
+* Security Advisory | Defense in Depth update for NuGet Client - [14857](https://github.com/NuGet/Home/issues/14857)
+
+[List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.0.2.3...7.0.3.1)
 
 ## Summary: What's New in 7.0.2
 
