@@ -18,7 +18,7 @@ For most commands, the CLI tool looks for a project file in the current director
 
 ## Prerequisites
 
-The [.NET SDK](https://dotnet.microsoft.com/download), which provides the `dotnet` command-line tool. In Visual Studio, the dotnet CLI automatically installs with all .NET-related workloads.
+The [.NET SDK](https://dotnet.microsoft.com/download), which provides the dotnet CLI. In Visual Studio, the dotnet CLI automatically installs with all .NET-related workloads.
 
 ## Install or update a package
 
@@ -38,13 +38,13 @@ The [dotnet package add](/dotnet/core/tools/dotnet-package-add) command adds a p
    dotnet package add Newtonsoft.Json
    ```
 
-   If you're using .NET 9 or earlier, use the verb-first form instead:
+   If you're using .NET 9 or earlier, use the verb-first form of the command instead:
 
    ```dotnetcli
    dotnet add package <package-name>
    ```
 
-1. After the command finishes, open the project file to check the package reference.
+1. After the command finishes, open the project file to check for the package reference.
 
    For example, open the *.csproj* file and check for the added `Newtonsoft.Json` package reference:
 

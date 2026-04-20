@@ -1,4 +1,4 @@
-The [`dotnet restore`](/dotnet/core/tools/dotnet-restore) command restores packages that are listed in the project file in `<PackageReference>` elements. For more information, see [`PackageReference` in project files](../../consume-packages/Package-References-in-Project-Files.md).
+The [`dotnet restore`](/dotnet/core/tools/dotnet-restore) command restores packages that are listed in `<PackageReference>` elements in the project file. For more information, see [`PackageReference` in project files](../../consume-packages/Package-References-in-Project-Files.md).
 
 Starting with .NET Core 2.0 and continuing through .NET, the `dotnet build` and `dotnet run` commands restore packages automatically, as do many other dotnet CLI commands. As of NuGet 4.0, `dotnet restore` runs the same code as the `nuget restore` NuGet CLI command.
 
