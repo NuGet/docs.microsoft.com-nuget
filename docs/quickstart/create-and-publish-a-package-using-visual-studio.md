@@ -12,7 +12,7 @@ ms.topic: quickstart
 
 In this quickstart, you use Microsoft Visual Studio to create a NuGet package from a .NET class library. Then you publish the package to nuget.org by using a command-line interface (CLI) tool.
 
-This quickstart is for Windows users only. If you're using a Mac, use the [.NET CLI](create-and-publish-a-package-using-the-dotnet-cli.md).
+This quickstart is for Windows users only. If you're using a different platform, use the [.NET CLI](create-and-publish-a-package-using-the-dotnet-cli.md).
 
 ## Prerequisites
 
@@ -52,8 +52,6 @@ You can use an existing .NET class library project for the code you want to pack
 1. In the **Additional information** window, select an appropriate value for **Framework**, and then select **Create**.
 
    If you're unsure which framework to select, the latest is a good choice, and can be easily changed later. For information about which framework to use, see [When to target `netx.0` vs. `netstandard`](/dotnet/standard/net-standard#when-to-target-netx0-vs-netstandard).
-
-1. To check whether the project is created properly, select **Build** > **Build Solution**. Then check the *Debug* folder for the DLL. If your project is configured to build a release configuration, check the *Release* folder instead.
 
 1. (Optional) For this quickstart, you don't need to write any additional code for the NuGet package, because the template class library is sufficient to create a package. However, if you want to add some functional code to the package, include the following code:
 
@@ -118,7 +116,7 @@ To create a NuGet package from your project, follow these steps:
 
 If the **Pack** command is missing from the menu, your project probably isn't an SDK-style project. Take one of the following steps:
 
-- [Migrate the project](../consume-packages/migrate-packages-config-to-package-reference.md) from the `packages.config` format to the `PackageReference` format so that you can use the .NET CLI.
+- [Upgrade the project](/dotnet/core/porting/github-copilot-app-modernization/overview) so that you can use the .NET CLI.
 - Follow the instructions in [Create and publish a package using Visual Studio (.NET Framework, Windows)](create-and-publish-a-package-using-visual-studio-net-framework.md) to use the NuGet CLI to create and publish a NuGet package from your project.
 
 ### (Optional) Generate package on build
@@ -217,7 +215,7 @@ To add a read-me file to the package, take the following steps:
    <Project Sdk="Microsoft.NET.Sdk">
        <PropertyGroup>
            ...
-           <PackageReadmeFile>read-me.md</PackageReadmeFile>
+           <PackageReadmeFile>readme.md</PackageReadmeFile>
            ...
        </PropertyGroup>
    </Project>
@@ -229,22 +227,19 @@ To add a read-me file to the package, take the following steps:
    <Project Sdk="Microsoft.NET.Sdk">
        <PropertyGroup>
            ...
-           <PackageReadmeFile>read-me.md</PackageReadmeFile>
+           <PackageReadmeFile>readme.md</PackageReadmeFile>
            ...
        </PropertyGroup>
    
        <ItemGroup>
            ...
-           <None Include="read-me.md">
-             <Pack>True</Pack>
-             <PackagePath>\</PackagePath>
-           </None>
+           <None Include="readme.md" Pack="true" PackagePath="\" />
            ...
        </ItemGroup>
    </Project>
    ```
 
-In the preceding example, the property specifies a file named *read-me.md* in the project root. After you build, pack, and publish your package, nuget.org displays the contents of the read-me file on the package page. Visual Studio also displays the contents of that file in the Package Manager UI.
+In the preceding example, the property specifies a file named *readme.md* in the project root. After you build, pack, and publish your package, nuget.org displays the contents of the read-me file on the package page. Visual Studio also displays the contents of that file in the Package Manager UI.
 
 For example, the following screenshot shows the read-me file for the `HtmlAgilityPack` package:
 
