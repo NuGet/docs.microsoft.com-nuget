@@ -209,15 +209,21 @@ You can include a read-me file or other files in your package.
 
 To add a read-me file to the package, take the following steps:
 
-1. In **Solution Explorer**, select your project, and then select **Project** > **\<project-name\> Properties**, where \<project-name\> is the name of your project.
+1. Open the project file by selecting **Project** > **Edit Project File**.
 
-1. Expand the **Package** node, select **General**, and then scroll to the **README** section.
+1. In the project file, go to the `PropertyGroup` element, and then add a `PackageReadmeFile` child element:
 
-1. Select **Browse**, and then select your read-me file.
+   ```xml
+   <Project Sdk="Microsoft.NET.Sdk">
+       <PropertyGroup>
+           ...
+           <PackageReadmeFile>read-me.md</PackageReadmeFile>
+           ...
+       </PropertyGroup>
+   </Project>
+   ```
 
-   Visual Studio adds information about your read-me file to the project file:
-   - A `PackageReadmeFile` child element is added to the `PropertyGroup` element.
-   - A `None` child element is added to the `ItemGroup` element.
+1. Go to the `ItemGroup` element, and then add a `None` child element:
 
    ```xml
    <Project Sdk="Microsoft.NET.Sdk">
@@ -229,7 +235,7 @@ To add a read-me file to the package, take the following steps:
    
        <ItemGroup>
            ...
-           <None Update="read-me.md">
+           <None Include="read-me.md">
              <Pack>True</Pack>
              <PackagePath>\</PackagePath>
            </None>
