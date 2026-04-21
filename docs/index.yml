@@ -9,7 +9,7 @@ metadata:
    ms.topic: hub-page
    author: JonDouglas
    ms.author: jodou
-   ms.date: 03/03/2025
+   ms.date: 04/20/2026
 
 highlightedContent:
    items:
@@ -54,10 +54,10 @@ conceptualContent:
       links:
         - text: Workflow (overview)
           itemType: overview
-          url: ./consume-packages/overview-and-workflow.md
+          url: ./consume-packages/Overview-and-Workflow.md
         - text: Find and choose packages
           itemType: get-started
-          url: ./consume-packages/finding-and-choosing-packages.md
+          url: ./consume-packages/Finding-and-Choosing-Packages.md
         - text: Use Visual Studio
           itemType: how-to-guide
           url: ./consume-packages/install-use-packages-visual-studio.md
@@ -74,7 +74,7 @@ conceptualContent:
       links:
         - text: Workflow (overview)
           itemType: overview
-          url: ./create-packages/overview-and-workflow.md
+          url: ./create-packages/Overview-and-Workflow.md
         - text: Use Visual Studio
           itemType: how-to-guide
           url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
@@ -83,7 +83,7 @@ conceptualContent:
           url: ./create-packages/creating-a-package-dotnet-cli.md
         - text: Use nuget.exe CLI
           itemType: how-to-guide
-          url: ./create-packages/creating-a-package.md
+          url: ./create-packages/Creating-a-Package.md
         - text: Use MSBuild
           itemType: how-to-guide
           url: ./create-packages/creating-a-package-msbuild.md
@@ -94,10 +94,10 @@ conceptualContent:
       links:
         - text: Publish to NuGet.org
           itemType: overview
-          url: ./nuget-org/publish-a-package.md
+          url: ./nuget-org/Publish-a-package.md
         - text: Publish to a private feed
           itemType: overview
-          url: ./hosting-packages/overview.md
+          url: ./hosting-packages/Overview.md
 
 additionalContent:
    sections:
@@ -114,15 +114,15 @@ additionalContent:
             - text: API keys
               url: ./nuget-org/scoped-api-keys.md
             - text: Publish a package
-              url: ./nuget-org/publish-a-package.md
+              url: ./nuget-org/Publish-a-package.md
         - title: Reference
           links:
             - text: dotnet CLI
-              url: ./reference/dotnet-commands.md
+              url: ./reference/dotnet-Commands.md
             - text: nuget.exe CLI
-              url: ./reference/nuget-exe-cli-reference.md
+              url: ./reference/nuget-exe-CLI-Reference.md
             - text: Package references
-              url: ./consume-packages/package-references-in-project-files.md
+              url: ./consume-packages/Package-References-in-Project-Files.md
             - text: pack and restore as MSBuild targets
               url: ./reference/msbuild-targets.md
             - text: .nuspec
@@ -134,15 +134,15 @@ additionalContent:
         - title: Resources
           links:
             - text: Policies - NuGet
-              url: ./policies/governance.md
+              url: ./policies/Governance.md
             - text: Policies - NuGet.org
               url: ./nuget-org/policies/data-requests.md
             - text: Release notes
-              url: ./release-notes/known-issues.md
+              url: ./release-notes/Known-Issues.md
             - text: FAQ - NuGet
-              url: ./resources/nuget-faq.yml
+              url: ./resources/NuGet-FAQ.yml
             - text: FAQ - NuGet.org
               url: ./nuget-org/nuget-org-faq.yml
 
 
-   footer: "[Blogs](https://devblogs.microsoft.com/nuget/) - [Twitter](https://twitter.com/nuget) - [Stack Overflow](https://stackoverflow.com/questions/tagged/nuget)"
+   footer: "[Blogs](https://devblogs.microsoft.com/dotnet/category/nuget/) - [X](https://x.com/nuget) - [Stack Overflow](https://stackoverflow.com/questions/tagged/nuget)"

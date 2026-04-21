@@ -22,6 +22,9 @@ To publish on nuget.org, sign in to nuget.org with a Microsoft account, and use 
 
 Once you have an account, you can publish a package to nuget.org by using the nuget.org web portal, the dotnet CLI, or the NuGet CLI version 4.1.0 or above. You can also publish packages through Azure Pipelines.
 
+> [!NOTE]
+> If you want to publish your package on a test site before publishing it on nuget.org, you can use [https://int.nugettest.org](https://int.nugettest.org). Note that packages uploaded to int.nugettest.org might not be preserved.
+
 ### Upload to the nuget.org web portal
 
 To upload a package to the nuget.org website:
