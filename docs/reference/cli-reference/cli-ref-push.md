@@ -33,7 +33,7 @@ where `<packagePath>` identifies the package to push to the server.
 
 - **`-ApiKey`**
 
-  The API key for the target repository. If not present,  the one specified in the config file is used.
+  The API key for the target repository. If not present, the `NUGET_API_KEY` environment variable is read *(7.6+)*. If neither is set, the one specified in the config file is used.
 
 - **`-ConfigFile`**
 
@@ -77,7 +77,7 @@ where `<packagePath>` identifies the package to push to the server.
 
 - **`-SymbolApiKey`**
 
-  *(3.5+)* Specifies the API key for the URL specified in `-SymbolSource`.
+  *(3.5+)* Specifies the API key for the URL specified in `-SymbolSource`. If not present, the `NUGET_SYMBOL_API_KEY` environment variable is read *(7.6+)*. If neither is set, the one specified in the config file is used.
 
 - **`-Timeout`**
 

@@ -13,6 +13,10 @@ ms.topic: reference
 
 Saves an API key for a given server URL into `NuGet.Config` so that it doesn't need to be entered for subsequent push commands.
 
+> [!TIP]
+> Starting with NuGet 7.6, you can also set the `NUGET_API_KEY` environment variable to provide an API key for push operations without storing it in `NuGet.Config`.
+> For more information, see [environment variables](cli-ref-environment-variables.md).
+
 ## Usage
 
 ```cli

@@ -73,6 +73,10 @@ The [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) prope
     nuget SetApiKey Your-API-Key
     ```
 
+    > [!TIP]
+    > Starting with NuGet 7.6, you can set the `NUGET_API_KEY` and `NUGET_SYMBOL_API_KEY` environment variables instead of using `SetApiKey`.
+    > For more information, see [environment variables](../reference/cli-reference/cli-ref-environment-variables.md).
+
 1. After publishing your primary package to nuget.org, push the symbol package as follows.
 
     ```cli

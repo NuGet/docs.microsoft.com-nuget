@@ -252,6 +252,10 @@ When using unencrypted passwords:
 
 Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../reference/cli-reference/cli-ref-setapikey.md).
 
+> [!NOTE]
+> Starting with NuGet 7.6, the `NUGET_API_KEY` and `NUGET_SYMBOL_API_KEY` environment variables can also provide API keys for push operations.
+> The command-line option takes precedence over the environment variable, and the environment variable takes precedence over keys stored in `NuGet.Config`.
+
 | Key | Value |
 | --- | --- |
 | (source URL) | The encrypted API key. |
