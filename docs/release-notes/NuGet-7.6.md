@@ -18,55 +18,77 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 7.6.0
 
-* Pack with aliased frameworks should allow combining build outputs from the same framework into a single pack - [#14751](https://github.com/NuGet/Home/issues/14751)
-
 * Treat TargetFramework(s) values as aliases - [#5154](https://github.com/NuGet/Home/issues/5154)
   * This feature enables building for the same framework multiple times, enabling scenarios such as generating runtime specific assemblies for the same target framework, as well as making running benchmarks on different versions of the same package easier.
   * [Learn more about TargetFramework aliases](/nuget/reference/target-frameworks#targetframework-values-are-aliases)
 
-* [Design spec][OIDC] Enrich telemetry for nuget.exe push to include about where the push is from (Azure DevOps, GitHub Actions, etc) - [#14740](https://github.com/NuGet/Home/issues/14740)
+* Pack aliased frameworks into a single package - [#14751](https://github.com/NuGet/Home/issues/14751)
+  * When multiple TargetFramework aliases resolve to the same framework, `dotnet pack` now combines their build outputs into a single package instead of producing errors.
 
-* APIs for package management of file-based apps - [#14390](https://github.com/NuGet/Home/issues/14390)
+* Push telemetry includes CI environment context - [#14740](https://github.com/NuGet/Home/issues/14740)
+  * `nuget.exe push` now includes telemetry about the CI environment (Azure DevOps, GitHub Actions, and others) to help diagnose push failures.
 
-* Get push API key from environment variable - [#12539](https://github.com/NuGet/Home/issues/12539)
+* Package management APIs for file-based apps - [#14390](https://github.com/NuGet/Home/issues/14390)
+  * NuGet now exposes APIs that `dotnet package add`, `list`, `remove`, and `update` use for file-based apps that reference packages with `#:package` directives in C# source files.
+
+* Read push API key from environment variable - [#12539](https://github.com/NuGet/Home/issues/12539)
+  * `dotnet nuget push` can now read the API key from an environment variable, avoiding the need to pass secrets on the command line or store them in configuration files.
 
 ### Issues fixed in this release
 
-* List package should use TargetFramework property as a key it its output instead of the effective TargetFramework; Introduce a V2 version of the list package output - [#14762](https://github.com/NuGet/Home/issues/14762)
+* `dotnet list package` now displays the TargetFramework alias instead of the resolved framework - [#14762](https://github.com/NuGet/Home/issues/14762)
+  * Output now shows the alias you authored (for example, `apple`) rather than the resolved framework (for example, `net10.0`), making it easier to identify which target framework each package belongs to.
 
-* Block aliases with path separator - [#14752](https://github.com/NuGet/Home/issues/14752)
+* Block path separators in TargetFramework aliases - [#14752](https://github.com/NuGet/Home/issues/14752)
+  * NuGet now rejects TargetFramework alias values that contain path separator characters to prevent file system issues during restore and pack.
 
-* Add package and update package treat framework as an alias - [#14540](https://github.com/NuGet/Home/issues/14540)
+* `dotnet package add` and `dotnet package update` recognize framework aliases - [#14540](https://github.com/NuGet/Home/issues/14540)
+  * The `add` and `update` commands now treat TargetFramework values as aliases, correctly matching packages to aliased framework entries in the project file.
 
-* [CPM] dotnet add package with --no-restore causes NU1008 - [#12552](https://github.com/NuGet/Home/issues/12552)
+* `dotnet add package --no-restore` with Central Package Management no longer produces NU1008 - [#12552](https://github.com/NuGet/Home/issues/12552)
+  * When using Central Package Management, `dotnet add package --no-restore` now correctly adds the `PackageReference` without a `Version` attribute instead of producing a restore error.
 
-* Error while using Add-Migration in  nuget console in Visual Studio Insiders 18.6 - [#14862](https://github.com/NuGet/Home/issues/14862)
+* Fix `Add-Migration` error in Package Manager Console - [#14862](https://github.com/NuGet/Home/issues/14862)
+  * Running `Add-Migration` in the NuGet Package Manager Console no longer throws a "GetProjectFromHierarchy must be called on the UI thread" error.
 
-* `&lt;NuGetAuditSuppress&gt;` with packages.config projects doesn&#39;t work for more than one suppression - [#14825](https://github.com/NuGet/Home/issues/14825)
+* `NuGetAuditSuppress` with packages.config now supports multiple suppressions - [#14825](https://github.com/NuGet/Home/issues/14825)
+  * Previously, only the first `NuGetAuditSuppress` entry was honored in packages.config projects. All suppressions are now applied correctly.
 
-* GetReferenceFrameworkNearestTask does not use aliases for disambiguation when using AssetTargetFallback - [#14807](https://github.com/NuGet/Home/issues/14807)
+* Framework alias disambiguation with AssetTargetFallback - [#14807](https://github.com/NuGet/Home/issues/14807)
+  * `GetReferenceNearestTargetFrameworkTask` now uses framework aliases for disambiguation when `AssetTargetFallback` is enabled, matching the behavior of the restore dependency resolver.
 
-* Aliasing opt-in is broken due to a versioning change in .NET 10.0.3xx - [#14805](https://github.com/NuGet/Home/issues/14805)
+* Fix framework aliasing opt-in for .NET 10.0.3xx SDK - [#14805](https://github.com/NuGet/Home/issues/14805)
+  * A versioning change in the .NET 10.0.3xx SDK broke the framework aliasing opt-in check. The detection logic is now corrected.
 
-* Context menu on Search control in PM UI is missing VS color theming - [#14799](https://github.com/NuGet/Home/issues/14799)
+* Fix context menu theming on Package Manager UI search box - [#14799](https://github.com/NuGet/Home/issues/14799)
+  * The right-click context menu on the search control in the NuGet Package Manager UI now follows the Visual Studio color theme.
 
-* When using aliased frameworks, package conditions are not generated correctly - [#14796](https://github.com/NuGet/Home/issues/14796)
+* Correct package conditions for aliased frameworks - [#14796](https://github.com/NuGet/Home/issues/14796)
+  * When using aliased frameworks that resolve to the same underlying framework, NuGet now generates the correct MSBuild conditions in the project file so that each alias gets its own package references.
 
-* NugetProjectServiceV1 brokered service is not usable from out-of-proc consumers - [#14732](https://github.com/NuGet/Home/issues/14732)
+* Fix NuGetProjectServiceV1 for out-of-process consumers - [#14732](https://github.com/NuGet/Home/issues/14732)
+  * The `NuGetProjectServiceV1` brokered service now uses the correct serialization settings, making it usable from out-of-process Visual Studio extensions.
 
-* Context menus to Copy text from PM UI are missing VS color theming - [#14704](https://github.com/NuGet/Home/issues/14704)
+* Fix context menu theming on Package Manager UI copy menus - [#14704](https://github.com/NuGet/Home/issues/14704)
+  * The right-click copy context menus in the Package Manager UI Package Details tab now follow the Visual Studio color theme.
 
-* Ensure seamless experience with aliasing when packing - [#14535](https://github.com/NuGet/Home/issues/14535)
+* Consistent aliasing behavior during pack - [#14535](https://github.com/NuGet/Home/issues/14535)
+  * Packing now correctly handles projects with TargetFramework aliases, producing consistent package output regardless of alias usage.
 
-* No vulnerabilities shown for vulnerable and deprecated package version when using `dotnet list package --vulnerable` - [#14477](https://github.com/NuGet/Home/issues/14477)
+* `dotnet list package --vulnerable` now shows vulnerabilities for deprecated packages - [#14477](https://github.com/NuGet/Home/issues/14477)
+  * Previously, vulnerability information was not displayed for package versions that were both vulnerable and deprecated. Both statuses are now reported.
 
-* `dotnet list package` invalid TFM resolution; does not work when TargetFramework property matches real framework. - [#14339](https://github.com/NuGet/Home/issues/14339)
+* `dotnet list package` resolves conditional TargetFramework values correctly - [#14339](https://github.com/NuGet/Home/issues/14339)
+  * `dotnet list package` no longer fails when a project uses a TargetFramework property value that matches a real framework moniker, such as `net9.0-windows` with conditional `PackageReference` elements.
 
-* NU1107 message provides poor guidance when CPVM + transitive pinning is enabled - [#12277](https://github.com/NuGet/Home/issues/12277)
+* Improved NU1107 error message with Central Package Management and transitive pinning - [#12277](https://github.com/NuGet/Home/issues/12277)
+  * The NU1107 version conflict error now provides relevant guidance when Central Package Management with transitive pinning is enabled, instead of suggesting actions that don't apply in that configuration.
 
-* [Bug]: NU1004: The project Xxx has no compatible target framework for .NET vs .NET Framework cross reference with -LockedMode - [#12010](https://github.com/NuGet/Home/issues/12010)
+* Fix NU1004 for cross-framework references with locked mode - [#12010](https://github.com/NuGet/Home/issues/12010)
+  * Restoring with `--locked-mode` no longer produces a false NU1004 error when a .NET project references a .NET Framework project.
 
-* Random error: Failed to resolve SDK &#39;package/version&#39;. Package restore was successful but a package with the ID of &quot;package&quot; was not installed. - [#10935](https://github.com/NuGet/Home/issues/10935)
+* Fix intermittent "Failed to resolve SDK" error during parallel restores - [#10935](https://github.com/NuGet/Home/issues/10935)
+  * Parallel `dotnet` restore processes no longer intermittently fail with "Failed to resolve SDK" when the package is already installed in the global packages folder.
 
 [List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.5.0.55...7.6.0.59)
 
