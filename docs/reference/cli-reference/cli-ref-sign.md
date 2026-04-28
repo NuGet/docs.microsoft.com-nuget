@@ -29,6 +29,8 @@ where `<package(s)>` is one or more `.nupkg` files.
 
 - **`-AllowUntrustedRoot`**
 
+  Available starting with NuGet.exe 7.6.
+
   Allows signing packages with a certificate whose root certificate authority (CA) isn't installed in a trusted root certificate store. When specified, the `UntrustedRoot` X.509 chain status is treated as a warning instead of an error. The certificate chain is still fully built and validated for structure.
 
 - **`-CertificateFingerprint`**
