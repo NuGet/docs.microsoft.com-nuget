@@ -38,4 +38,6 @@ The list of properties documented in [NuGet pack and restore as MSBuild targets]
 | NUGET_CERT_REVOCATION_MODE | Determines how the revocation status check of the certificate used to sign a package, is performed when a signed package is installed or restored. When not set, defaults to `online`.| Possible values *online* (default), *offline*.  Related to [NU3028](../errors-and-warnings/NU3028.md) |
 | NUGET_ENHANCED_MAX_NETWORK_TRY_COUNT | Configures the maximum number of times an HTTP connection should be retried when enhanced retries are enabled. | A number representing how many retries to perform, the default value is `6`. |
 | NUGET_ENHANCED_NETWORK_RETRY_DELAY_MILLISECONDS | Configures the amount of time to wait in milliseconds before retrying an HTTP connection when enhanced retries are enabled. | Number of millseconds to wait, the default value is `1000`. |
+| NUGET_API_KEY | Fallback API key used when pushing a package if no API key is provided via `--api-key` and no key is found in the config file. | Available in NuGet 7.6+, Visual Studio 2026 17.6+, or .NET SDK 10.0.300+. |
+| NUGET_SYMBOL_API_KEY | Fallback API key used when pushing a symbols package if no API key is provided via `--symbol-api-key` and no key is found in the config file. | Available in NuGet 7.6+, Visual Studio 2026 17.6+, or .NET SDK 10.0.300+. |
 
