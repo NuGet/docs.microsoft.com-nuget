@@ -161,6 +161,11 @@ Audit sources support the same attributes as `packageSources` (`protocolVersion`
 </auditSources>
 ```
 
+> [!TIP]
+> nuget.org also provides `https://data.nuget.org/v3/index.json`, a service index that only contains vulnerability data and doesn't serve packages.
+> Network administrators who block `api.nuget.org` to prevent package downloads might be willing to allow `data.nuget.org` if asked.
+> For more information, see [audit sources](../concepts/Auditing-Packages.md#audit-sources).
+
 ### packageSourceCredentials
 
 Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`. Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.
