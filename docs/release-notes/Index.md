@@ -11,6 +11,8 @@ ms.topic: release-notes
 
 [Known Issues](../release-notes/known-issues.md)
 
+[NuGet 7.6](../release-notes/NuGet-7.6.md)
+
 [NuGet 7.5](../release-notes/NuGet-7.5.md)
 
 [NuGet 7.4](../release-notes/NuGet-7.4.md)
