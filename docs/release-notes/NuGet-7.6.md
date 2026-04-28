@@ -22,10 +22,6 @@ NuGet distribution vehicles:
 |:---|:---|:---|
 | [**7.6**](https://nuget.org/downloads) | TBD | TBD |
 
-## Summary: What's New in 7.6
-
-* `dotnet nuget verify` now outputs CRL and OCSP URLs for certificates at normal and higher verbosity - [#7181](https://github.com/NuGet/NuGet.Client/pull/7181)
-
 ## Not yet released
 
 This version of NuGet is in preview and these release notes will be updated when it is released.
