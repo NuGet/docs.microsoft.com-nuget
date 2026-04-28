@@ -40,8 +40,6 @@ NuGet distribution vehicles:
 
 * [CPM] dotnet add package with --no-restore causes NU1008 - [#12552](https://github.com/NuGet/Home/issues/12552)
 
-* Treat TargetFramework(s) values as aliases - [#5154](https://github.com/NuGet/Home/issues/5154)
-
 * Error while using Add-Migration in  nuget console in Visual Studio Insiders 18.6 - [#14862](https://github.com/NuGet/Home/issues/14862)
 
 * `&lt;NuGetAuditSuppress&gt;` with packages.config projects doesn&#39;t work for more than one suppression - [#14825](https://github.com/NuGet/Home/issues/14825)
