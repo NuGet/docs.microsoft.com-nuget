@@ -33,7 +33,7 @@ where `<packagePath>` identifies the package to push to the server.
 
 - **`-ApiKey`**
 
-  The API key for the target repository. If not present, the one specified in the config file is used. If not present in the config file, NuGet 7.6+, Visual Studio 2026 17.6+, or .NET SDK 10.0.300+ checks the `NUGET_API_KEY` environment variable.
+  The API key for the target repository. If not present, the one specified in the config file is used. If not present in the config file, NuGet 7.6+, Visual Studio 2026 18.6+, or .NET SDK 10.0.300+ checks the `NUGET_API_KEY` environment variable.
 
 - **`-ConfigFile`**
 
@@ -77,7 +77,7 @@ where `<packagePath>` identifies the package to push to the server.
 
 - **`-SymbolApiKey`**
 
-  *(3.5+)* Specifies the API key for the URL specified in `-SymbolSource`. If not present, NuGet 7.6+, Visual Studio 2026 17.6+, or .NET SDK 10.0.300+ checks the `NUGET_SYMBOL_API_KEY` environment variable.
+  *(3.5+)* Specifies the API key for the URL specified in `-SymbolSource`. If not present, NuGet 7.6+, Visual Studio 2026 18.6+, or .NET SDK 10.0.300+ checks the `NUGET_SYMBOL_API_KEY` environment variable.
 
 - **`-Timeout`**
 
