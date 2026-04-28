@@ -20,6 +20,10 @@ NuGet distribution vehicles:
 
 * Pack with aliased frameworks should allow combining build outputs from the same framework into a single pack - [#14751](https://github.com/NuGet/Home/issues/14751)
 
+* Treat TargetFramework(s) values as aliases - [#5154](https://github.com/NuGet/Home/issues/5154)
+  * This feature enables building for the same framework multiple times, enabling scenarios such as generating runtime specific assemblies for the same target framework, as well as making running benchmarks on different versions of the same package easier.
+  * [Learn more about TargetFramework aliases](/nuget/reference/target-frameworks#targetframework-values-are-aliases)
+
 * [Design spec][OIDC] Enrich telemetry for nuget.exe push to include about where the push is from (Azure DevOps, GitHub Actions, etc) - [#14740](https://github.com/NuGet/Home/issues/14740)
 
 * APIs for package management of file-based apps - [#14390](https://github.com/NuGet/Home/issues/14390)
@@ -56,7 +60,7 @@ NuGet distribution vehicles:
 
 * Ensure seamless experience with aliasing when packing - [#14535](https://github.com/NuGet/Home/issues/14535)
 
-* No vulns shown for vulnerable &amp; deprecated package version when using dotnet list package --vulnerable - [#14477](https://github.com/NuGet/Home/issues/14477)
+* No vulnerabilities shown for vulnerable and deprecated package version when using `dotnet list package --vulnerable` - [#14477](https://github.com/NuGet/Home/issues/14477)
 
 * `dotnet list package` invalid TFM resolution; does not work when TargetFramework property matches real framework. - [#14339](https://github.com/NuGet/Home/issues/14339)
 
