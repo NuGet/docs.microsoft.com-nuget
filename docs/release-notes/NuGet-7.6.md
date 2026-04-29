@@ -22,11 +22,8 @@ NuGet distribution vehicles:
   * This feature enables building for the same framework multiple times, enabling scenarios such as generating runtime specific assemblies for the same target framework, as well as making running benchmarks on different versions of the same package easier.
   * [Learn more about TargetFramework aliases](/nuget/reference/target-frameworks#targetframework-values-are-aliases)
 
-* Pack aliased frameworks into a single package - [#14751](https://github.com/NuGet/Home/issues/14751)
-  * When multiple TargetFramework aliases resolve to the same framework, `dotnet pack` now combines their build outputs into a single package instead of producing errors.
-
-* Push telemetry includes CI environment context - [#14740](https://github.com/NuGet/Home/issues/14740)
-  * `nuget.exe push` now includes telemetry about the CI environment (Azure DevOps, GitHub Actions, and others) to help diagnose push failures.
+* Pack is aliased-framework-aware - [#14751](https://github.com/NuGet/Home/issues/14751)
+  * When a project has multiple TargetFramework aliases that resolve to the same framework, `dotnet pack` now detects the ambiguity and raises NU5051 with an actionable error message instead of producing unexpected output.
 
 * Package management APIs for file-based apps - [#14390](https://github.com/NuGet/Home/issues/14390)
   * NuGet now exposes APIs that `dotnet package add`, `list`, `remove`, and `update` use for file-based apps that reference packages with `#:package` directives in C# source files.
@@ -36,14 +33,8 @@ NuGet distribution vehicles:
 
 ### Issues fixed in this release
 
-* `dotnet list package` now displays the TargetFramework alias instead of the resolved framework - [#14762](https://github.com/NuGet/Home/issues/14762)
-  * Output now shows the alias you authored (for example, `apple`) rather than the resolved framework (for example, `net10.0`), making it easier to identify which target framework each package belongs to.
-
-* Block path separators in TargetFramework aliases - [#14752](https://github.com/NuGet/Home/issues/14752)
-  * NuGet now rejects TargetFramework alias values that contain path separator characters to prevent file system issues during restore and pack.
-
-* `dotnet package add` and `dotnet package update` recognize framework aliases - [#14540](https://github.com/NuGet/Home/issues/14540)
-  * The `add` and `update` commands now treat TargetFramework values as aliases, correctly matching packages to aliased framework entries in the project file.
+* `nuget push` sends CI platform in user-agent header - [#14740](https://github.com/NuGet/Home/issues/14740)
+  * `nuget.exe push` now includes the CI platform (Azure DevOps, GitHub Actions, and others) in the HTTP user-agent header, allowing package sources to identify where pushes originate.
 
 * `dotnet add package --no-restore` with Central Package Management no longer produces NU1008 - [#12552](https://github.com/NuGet/Home/issues/12552)
   * When using Central Package Management, `dotnet add package --no-restore` now correctly adds the `PackageReference` without a `Version` attribute instead of producing a restore error.
@@ -54,26 +45,14 @@ NuGet distribution vehicles:
 * `NuGetAuditSuppress` with packages.config now supports multiple suppressions - [#14825](https://github.com/NuGet/Home/issues/14825)
   * Previously, only the first `NuGetAuditSuppress` entry was honored in packages.config projects. All suppressions are now applied correctly.
 
-* Framework alias disambiguation with AssetTargetFallback - [#14807](https://github.com/NuGet/Home/issues/14807)
-  * `GetReferenceNearestTargetFrameworkTask` now uses framework aliases for disambiguation when `AssetTargetFallback` is enabled, matching the behavior of the restore dependency resolver.
-
-* Fix framework aliasing opt-in for .NET 10.0.3xx SDK - [#14805](https://github.com/NuGet/Home/issues/14805)
-  * A versioning change in the .NET 10.0.3xx SDK broke the framework aliasing opt-in check. The detection logic is now corrected.
-
 * Fix context menu theming on Package Manager UI search box - [#14799](https://github.com/NuGet/Home/issues/14799)
   * The right-click context menu on the search control in the NuGet Package Manager UI now follows the Visual Studio color theme.
-
-* Correct package conditions for aliased frameworks - [#14796](https://github.com/NuGet/Home/issues/14796)
-  * When using aliased frameworks that resolve to the same underlying framework, NuGet now generates the correct MSBuild conditions in the project file so that each alias gets its own package references.
 
 * Fix NuGetProjectServiceV1 for out-of-process consumers - [#14732](https://github.com/NuGet/Home/issues/14732)
   * The `NuGetProjectServiceV1` brokered service now uses the correct serialization settings, making it usable from out-of-process Visual Studio extensions.
 
 * Fix context menu theming on Package Manager UI copy menus - [#14704](https://github.com/NuGet/Home/issues/14704)
   * The right-click copy context menus in the Package Manager UI Package Details tab now follow the Visual Studio color theme.
-
-* Consistent aliasing behavior during pack - [#14535](https://github.com/NuGet/Home/issues/14535)
-  * Packing now correctly handles projects with TargetFramework aliases, producing consistent package output regardless of alias usage.
 
 * `dotnet list package --vulnerable` now shows vulnerabilities for deprecated packages - [#14477](https://github.com/NuGet/Home/issues/14477)
   * Previously, vulnerability information was not displayed for package versions that were both vulnerable and deprecated. Both statuses are now reported.
