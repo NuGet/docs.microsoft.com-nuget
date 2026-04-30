@@ -15,7 +15,8 @@ NuGet distribution vehicles:
 | [**7.5.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.5.0](https://visualstudio.microsoft.com/downloads/) | N/A |
 
 > [!NOTE]
-> Visual Studio-only release. NuGet SDK packages are published quarterly with .NET.
+> Visual Studio-only release.
+> NuGet updates included in the .NET SDK ship with .NET releases.
 
 ## Summary: What's New in 7.5.0
 
