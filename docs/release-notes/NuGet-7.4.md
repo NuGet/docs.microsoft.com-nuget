@@ -15,6 +15,9 @@ NuGet distribution vehicles:
 | [**7.4.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.4.0](https://visualstudio.microsoft.com/downloads/) | N/A |
 | [**7.4.1**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.4.4](https://visualstudio.microsoft.com/downloads/) | N/A |
 
+> [!NOTE]
+> Visual Studio-only release. SDK packages are published quarterly.
+
 ## Summary: What's New in 7.4.1
 
 * Security Advisory | Defense in Depth update for NuGet Client - [14857](https://github.com/NuGet/Home/issues/14857)
