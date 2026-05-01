@@ -17,7 +17,7 @@ NuGet distribution vehicles:
 
 > [!NOTE]
 > Visual Studio-only release.
-> NuGet updates included in the .NET SDK ship with .NET releases.
+> NuGet SDK packages are published quarterly with .NET.
 
 ## Summary: What's New in 7.4.1
 
