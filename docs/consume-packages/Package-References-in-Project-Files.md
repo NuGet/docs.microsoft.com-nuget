@@ -341,7 +341,7 @@ Input to NuGet restore is a set of `PackageReference` items from the project fil
 - A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraint. This results in NuGet finding the best match when it cannot resolve to the deleted version.
 
 > [!Note]
-> It's also recommended to pin the version of the .NET SDK that's used so the SDK version and dependency graph stay in lockstep. See [global.json](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json) and especially the `rollForward` section with the `disable` value [global.json rollForward Policy](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json). For related issues when not pinning, see [ASP.NET Core GitHub issue](https://github.com/dotnet/aspnetcore/issues/65061) and [.NET Core SDK GitHub issue](https://github.com/dotnet/sdk/issues/48795)
+> It's also recommended to pin the version of the .NET SDK that's used so the SDK version and dependency graph stay in lockstep. See [global.json](/dotnet/core/tools/global-json) and especially the `rollForward` section with the `disable` value [global.json rollForward Policy](/dotnet/core/tools/global-json). For related issues when not pinning, see [ASP.NET Core GitHub issue](https://github.com/dotnet/aspnetcore/issues/65061) and [.NET Core SDK GitHub issue](https://github.com/dotnet/sdk/issues/48795)
 
 ### Enabling the lock file
 
