@@ -112,6 +112,10 @@ NuGet does not require that resources in the [service index](./service-index.md)
 However, there are several reasons why some companies choose to block nuget.org at the firewall, or have on-prem feeds on a disconnected network.
 To avoid connectivity issues, we recommend serving vulnerability data from your own web app, so that NuGet clients only make HTTP connections to the host the feed is installed on.
 
+As an alternative to caching or proxying, users can ask their network administrator to allow access to `https://data.nuget.org/v3/index.json` and configure it as an [audit source](../concepts/Auditing-Packages.md#audit-sources).
+This endpoint only serves vulnerability data, not packages, so it might be allowed even when `api.nuget.org` is blocked.
+When users configure `data.nuget.org` as an audit source, your feed may not need to implement the `VulnerabilityInfo` resource.
+
 ✔️ DO cache or proxy the vulnerability pages in your own web app
 
 ❌ DO NOT advertise api.nuget.org in your service index or vulnerability index without a configuration to turn this off.

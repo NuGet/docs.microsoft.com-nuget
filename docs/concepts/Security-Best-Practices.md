@@ -175,6 +175,10 @@ For example:
 </configuration>
 ```
 
+> [!TIP]
+> If your organization blocks access to `api.nuget.org`, consider asking the network administrator to allow `https://data.nuget.org/v3/index.json` and configure it as an [audit source](Auditing-Packages.md#audit-sources) for [NuGet Audit](Auditing-Packages.md).
+> This endpoint only serves vulnerability data, not packages, so it might be allowed even when `api.nuget.org` is blocked.
+
 ### NuGet feeds
 
 **📦 Package Consumer**

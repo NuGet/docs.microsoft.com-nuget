@@ -3,7 +3,7 @@ title: NuGet CLI sign command
 description: Reference for the nuget.exe sign command
 author: dtivel
 ms.author: dtivel
-ms.date: 03/06/2018
+ms.date: 04/28/2026
 ms.topic: reference
 ms.reviewer: rmpablos
 ---
@@ -26,6 +26,12 @@ nuget sign <package(s)> [options]
 where `<package(s)>` is one or more `.nupkg` files.
 
 ## Options
+
+- **`-AllowUntrustedRoot`**
+
+  Available starting with NuGet.exe 7.6.
+
+  Allows signing packages with a certificate whose root certificate authority (CA) isn't installed in a trusted root certificate store. When specified, the `UntrustedRoot` X.509 chain status is treated as a warning instead of an error. The certificate chain is still fully built and validated for structure.
 
 - **`-CertificateFingerprint`**
 

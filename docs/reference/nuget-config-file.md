@@ -161,6 +161,11 @@ Audit sources support the same attributes as `packageSources` (`protocolVersion`
 </auditSources>
 ```
 
+> [!TIP]
+> nuget.org also provides `https://data.nuget.org/v3/index.json`, a service index that only contains vulnerability data and doesn't serve packages.
+> Network administrators who block `api.nuget.org` to prevent package downloads might be willing to allow `data.nuget.org` if asked.
+> For more information, see [audit sources](../concepts/Auditing-Packages.md#audit-sources).
+
 ### packageSourceCredentials
 
 Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`. Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.
@@ -251,6 +256,10 @@ When using unencrypted passwords:
 ### apikeys
 
 Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../reference/cli-reference/cli-ref-setapikey.md).
+
+> [!NOTE]
+> Starting with NuGet 7.6, the `NUGET_API_KEY` and `NUGET_SYMBOL_API_KEY` environment variables can also provide API keys for push operations.
+> The command-line option takes precedence over the environment variable, and the environment variable takes precedence over keys stored in `NuGet.Config`.
 
 | Key | Value |
 | --- | --- |

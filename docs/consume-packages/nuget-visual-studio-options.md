@@ -111,6 +111,10 @@ Audit sources provide vulnerability data during restore without acting as packag
 If no audit sources are configured, NuGet Audit uses package sources.
 [Learn more about audit sources](/nuget/reference/nuget-config-file#auditsources)
 
+> [!TIP]
+> If your organization blocks access to `api.nuget.org`, ask your network administrator to allow `https://data.nuget.org/v3/index.json`.
+> You can then add that endpoint as an audit source to keep NuGet Audit vulnerability checks enabled without allowing package downloads from `api.nuget.org`.
+
 ![Audit Sources section with checkbox "Use separate sources for vulnerability audit"](media/vsoptions/audit-sources-1.png)
 
 Configure an audit source by selecting the checkbox, "Use separate sources for vulnerability audit".

@@ -62,11 +62,19 @@ Since a common mitigation for package substitution attacks is [to use a single p
 The data source for nuget.org's vulnerability database is [GitHub Advisory Database](https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anuget).
 Note that the [V2 protocol is deprecated](../nuget-org/overview-nuget-org.md#api-endpoint-for-nugetorg), so if your nuget.config is still using the V2 endpoint, you must migrate to the V3 endpoint.
 
+nuget.org provides two service index endpoints that can be used as an audit source:
+
+- `https://api.nuget.org/v3/index.json` — The full nuget.org service index, which includes all NuGet resources (package download, search, vulnerability data, and more).
+- `https://data.nuget.org/v3/index.json` — A vulnerability-data-only service index that doesn't include package content or other resources.
+
+The `data.nuget.org` endpoint is useful for organizations that block access to `api.nuget.org` at the network level.
+Because this endpoint only serves vulnerability data and not packages, network administrators who block `api.nuget.org` to prevent package downloads might be willing to allow `data.nuget.org` if asked.
+
 ```xml
 <configuration>
     <auditSources>
         <clear />
-        <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+        <add key="nuget.org" value="https://data.nuget.org/v3/index.json" />
     </auditSources>
 </configuration>
 ```

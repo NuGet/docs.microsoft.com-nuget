@@ -50,3 +50,11 @@ To use NuGet.org as a package repository with NuGet clients, you should use the 
 Older clients can still use the V2 protocol to reach NuGet.org. However, please note, NuGet clients 3.0 or later will have slower and less reliable service using the V2 protocol:
 
 `https://www.nuget.org/api/v2` (**The V2 protocol is deprecated!**)
+
+nuget.org also provides a vulnerability-data-only endpoint:
+
+`https://data.nuget.org/v3/index.json`
+
+This service index only contains the [`VulnerabilityInfo`](../api/vulnerability-info.md) resource and doesn't serve packages.
+It's designed for use as an [audit source](../concepts/Auditing-Packages.md#audit-sources) in environments where access to `api.nuget.org` is blocked at the network level.
+Because this endpoint doesn't provide package content, network administrators who block `api.nuget.org` to prevent package downloads might be willing to allow `data.nuget.org` if asked.
