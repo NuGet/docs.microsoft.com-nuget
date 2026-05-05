@@ -14,6 +14,10 @@ NuGet distribution vehicles:
 |:---|:---|:---|
 | [**7.5.0**](https://nuget.org/downloads) | [Visual Studio 2026 version 18.5.0](https://visualstudio.microsoft.com/downloads/) | N/A |
 
+> [!NOTE]
+> Visual Studio-only release.
+> NuGet SDK packages are published quarterly with .NET.
+
 ## Summary: What's New in 7.5.0
 
 * Ensure PM UI and PMC updating support aliased package changes - [#14539](https://github.com/NuGet/Home/issues/14539)
