@@ -9,7 +9,9 @@ ms.topic: release-notes
 
 # Release Notes
 
-[Known Issues](../release-notes/known-issues.md)
+[Known Issues](../release-notes/Known-Issues.md)
+
+[NuGet 7.6](../release-notes/NuGet-7.6.md)
 
 [NuGet 7.5](../release-notes/NuGet-7.5.md)
 
