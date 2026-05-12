@@ -85,7 +85,7 @@ For more information, see [Common NuGet configurations](configuring-nuget-behavi
 
 The Sources options page allows you to manage the sources from which NuGet downloads packages and retrieves package vulnerability data.
 
-### Managing Package Sources
+### Package Sources
 
 Package sources define where NuGet retrieves packages for install, restore, audit, and update operations.
 [Learn more about package sources](/nuget/reference/nuget-config-file#packagesources)
@@ -105,7 +105,7 @@ Press "Save" on the Add/Edit dialog and the changes will be updated in the relev
 
 ![Add dialog on the Package Sources page](media/vsoptions/package-source-add.png)
 
-### Managing Audit Sources
+### Audit Sources
 
 Audit sources provide vulnerability data during restore without acting as package sources.
 If no audit sources are configured, NuGet Audit uses package sources.
