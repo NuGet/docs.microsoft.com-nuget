@@ -17,11 +17,11 @@ With PackageReference, you can also use MSBuild conditions to choose package ref
 ## Project type support
 
 By default, PackageReference is used for .NET projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later.
-C++ PackageReference support is experimental.
-For the latest C++ support details, see [NuGet PackageReference for C++ projects in Visual Studio](https://devblogs.microsoft.com/cppblog/nuget-packagereference-for-c-projects-in-visual-studio/).
 .NET Framework projects support PackageReference, but currently default to `packages.config`.
 To use PackageReference in a .NET Framework project, [migrate](../consume-packages/migrate-packages-config-to-package-reference.md) the dependencies from `packages.config` into your project file, then remove packages.config.
 
+C++ PackageReference support is experimental.
+For the latest C++ support details, see [NuGet PackageReference for C++ projects in Visual Studio](https://devblogs.microsoft.com/cppblog/nuget-packagereference-for-c-projects-in-visual-studio/).
 ASP.NET apps that target the full .NET Framework include only [limited support](https://github.com/NuGet/Home/issues/5877) for PackageReference.
 JavaScript project types are unsupported.
 
