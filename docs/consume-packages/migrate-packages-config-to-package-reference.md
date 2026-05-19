@@ -23,8 +23,6 @@ Visual Studio 2017 Version 15.7 and later supports migrating a project from the 
 
 * NuGet PackageReference is not available in Visual Studio 2015 and earlier. Migrated projects can be opened only in Visual Studio 2017 and later.
 * Migration is not currently available for C++ and ASP.NET projects.
-  C++ PackageReference support is experimental.
-  For the latest C++ support details, see [NuGet PackageReference for C++ projects in Visual Studio](https://devblogs.microsoft.com/cppblog/nuget-packagereference-for-c-projects-in-visual-studio/).
 * Some packages may not be fully compatible with PackageReference. For more information, see [package compatibility issues](#package-compatibility-issues).
 
 In addition, there are some differences in how PackageReferences work compared to packages.config. For example, [Constraints on upgrade versions](../consume-packages/reinstalling-and-updating-packages.md#constraints-on-upgrade-versions) is not supported by PackageReference, but PackageReference adds support for [Floating Versions](../consume-packages/package-references-in-project-files.md#floating-versions).
