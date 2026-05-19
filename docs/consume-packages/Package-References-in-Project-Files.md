@@ -3,7 +3,7 @@ title: NuGet PackageReference in project files
 description: Details on NuGet PackageReference in project files as supported by NuGet 4.0+ and VS2017 and .NET Core 2.0
 author: nkolev92
 ms.author: nikolev
-ms.date: 02/12/2026
+ms.date: 05/19/2026
 ms.update-cycle: 1095-days
 ms.topic: concept-article
 ---
@@ -16,9 +16,15 @@ With PackageReference, you can also use MSBuild conditions to choose package ref
 
 ## Project type support
 
-By default, PackageReference is used for .NET projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later, with the exception of C++ UWP projects. .NET Framework projects support PackageReference, but currently default to `packages.config`. To use PackageReference in a .NET Framework project, [migrate](../consume-packages/migrate-packages-config-to-package-reference.md) the dependencies from `packages.config` into your project file, then remove packages.config.
+By default, PackageReference is used for .NET projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later.
+C++ PackageReference support is experimental.
+For the latest C++ support details, see [NuGet PackageReference for C++ projects in Visual Studio](https://devblogs.microsoft.com/cppblog/nuget-packagereference-for-c-projects-in-visual-studio/).
+.NET Framework projects support PackageReference, but currently default to `packages.config`.
+To use PackageReference in a .NET Framework project, [migrate](../consume-packages/migrate-packages-config-to-package-reference.md) the dependencies from `packages.config` into your project file, then remove packages.config.
 
-ASP.NET apps that target the full .NET Framework include only [limited support](https://github.com/NuGet/Home/issues/5877) for PackageReference. C++ and JavaScript project types are unsupported.
+ASP.NET apps that target the full .NET Framework include only [limited support](https://github.com/NuGet/Home/issues/5877) for PackageReference.
+C++ projects have experimental PackageReference support.
+JavaScript project types are unsupported.
 
 ## Adding a PackageReference
 
