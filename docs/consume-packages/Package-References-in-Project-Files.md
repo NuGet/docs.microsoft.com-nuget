@@ -23,7 +23,6 @@ For the latest C++ support details, see [NuGet PackageReference for C++ projects
 To use PackageReference in a .NET Framework project, [migrate](../consume-packages/migrate-packages-config-to-package-reference.md) the dependencies from `packages.config` into your project file, then remove packages.config.
 
 ASP.NET apps that target the full .NET Framework include only [limited support](https://github.com/NuGet/Home/issues/5877) for PackageReference.
-C++ projects have experimental PackageReference support.
 JavaScript project types are unsupported.
 
 ## Adding a PackageReference
