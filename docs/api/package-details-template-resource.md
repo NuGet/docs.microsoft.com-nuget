@@ -25,27 +25,6 @@ The following `@type` values are used:
 ------------------------------- | -----
 PackageDetailsUriTemplate/5.1.0 | The initial release
 
-## URL template
-
-The URL for the following API is the value of the `@id` property associated with one of the aforementioned
-resource `@type` values.
-
-## HTTP methods
-
-Although the client is not intended to make requests to the package details URL on behalf of the user, the web page
-should support the `GET` method to allow a clicked URL to be easily opened in a web browser.
-
-## Construct the URL
-
-Given a known package ID and version, the client implementation can construct a URL used to access a web interface. The
-client implementation should display this constructed URL (or clickable link) to the user allowing them to open a web
-browser to the URL and to learn more about the package. The contents of the package details page is determined by the
-server implementation.
-
-The URL must be an absolute URL and the scheme (protocol) must be HTTPS.
-
-The value of the `@id` in the service index is a URL string containing any of the following placeholder tokens:
-
 ### URL placeholders
 
 Name        | Type    | Required | Notes
@@ -70,3 +49,19 @@ produce the following URL and provide it to the user:
 ```http
 https://www.nuget.org/packages/NuGet.Versioning/4.3.0
 ```
+
+## Construct the URL
+
+Given a known package ID and version, the client implementation can construct a URL used to access a web interface. The
+client implementation should display this constructed URL (or clickable link) to the user allowing them to open a web
+browser to the URL and to learn more about the package. The contents of the package details page is determined by the
+server implementation.
+
+The URL must be an absolute URL and the scheme (protocol) must be HTTPS.
+
+The value of the `@id` in the service index is a URL string containing any of the following placeholder tokens:
+
+## HTTP methods
+
+Although the client is not intended to make requests to the package details URL on behalf of the user, the web page
+should support the `GET` method to allow a clicked URL to be easily opened in a web browser.
