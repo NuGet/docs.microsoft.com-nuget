@@ -80,7 +80,7 @@ These elements must appear within a `<metadata>` element.
 #### id 
 The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package resides in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See [Choosing a unique package identifier](../create-packages/Creating-a-Package.md#choose-a-unique-package-identifier-and-set-the-version-number) for guidance.
 
-When uploading a package to nuget.org, the `id` field is limited to 128 characters.
+When uploading a package to nuget.org, the `id` field is limited to 120 characters and must follow the [nuget.org package naming rules](../nuget-org/Publish-a-package.md#package-name-limits).
 
 #### version
 The version of the package, following the *major.minor.patch* pattern. Version numbers may include a pre-release suffix as described in [Package versioning](../concepts/Package-Versioning.md#pre-release-versions). 
