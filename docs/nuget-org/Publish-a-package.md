@@ -92,7 +92,7 @@ Packages published to nuget.org must adhere to the following package naming rule
 - Must be 128 characters or less.
 
 > [!NOTE]
-> We recommend starting your package name with a letter.
+> For readability and clarity, we recommend starting your package name with a letter.
 
 ### Package size limits
 
