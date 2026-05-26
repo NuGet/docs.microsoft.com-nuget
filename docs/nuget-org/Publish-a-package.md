@@ -91,6 +91,9 @@ Packages published to nuget.org must adhere to the following package naming rule
 - Cannot contain consecutive `.` (dot) or `-` (dash) characters.
 - Must be 128 characters or less.
 
+> [!NOTE]
+> We recommend starting your package name with a letter.
+
 ### Package size limits
 
 Nuget.org has a package size limit of about 250 MB. When a package exceeding that limit is uploaded the following error is displayed:
