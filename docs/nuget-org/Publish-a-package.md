@@ -84,7 +84,7 @@ To submit a signed package, you must first [register the certificate](../create-
 
 ### Package name limits
 
-NuGet derives URLs and file system paths from a normalized form of the package ID, and inconsistencies in normalization can cause two visibly different IDs to collide. To protect your package brand and the integrity of the ecosystem, nuget.org enforces the following package naming rules:
+Packages published to nuget.org must adhere to the following package naming rules:
 
 - Must start with a letter or underscore.
 - Can only contain the characters A-Z, a-z, 0-9, `.` (dot), `-` (dash), or `_` (underscore).
