@@ -89,7 +89,7 @@ Packages published to nuget.org must adhere to the following package naming rule
 - Must start with a letter or number.
 - Can only contain letters, numbers, dots (`.`), or dashes (`-`).
 - Cannot contain consecutive `.` (dot) or `-` (dash) characters.
-- Must be 128 characters or less.
+- Must be 100 characters or less.
 
 > [!NOTE]
 > For readability and clarity, we recommend starting your package name with a letter.
