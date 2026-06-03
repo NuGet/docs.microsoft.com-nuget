@@ -70,7 +70,7 @@ dotnet nuget config set repositoryPath "C:\packages" --configfile "C:\my.config"
 dotnet nuget config set repositoryPath "c:\packages" --configfile "..\..\my.config"
 
 # Set repositoryPath in the computer-level file (requires elevation)
-dotnet nuget config set repositoryPath "c:\packages" --configfile "%appdata%\NuGet\NuGet.Config"
+dotnet nuget config set repositoryPath "c:\packages" --configfile "%ProgramFiles(x86)%\NuGet\Config\NuGet.config"
 ```
 
 Mac/Linux:
