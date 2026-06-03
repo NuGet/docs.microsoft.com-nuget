@@ -86,7 +86,7 @@ To submit a signed package, you must first [register the certificate](../create-
 
 Packages published to nuget.org must adhere to the following package naming rules:
 
-- Must start with a letter, number, or underscore.
+- Must start with a letter (A-Z, a-z), number, or underscore.
 - Can only contain letters, numbers, dots (`.`), or dashes (`-`).
 - Cannot contain consecutive `.` (dot) or `-` (dash) characters.
 - Must be 100 characters or less.
