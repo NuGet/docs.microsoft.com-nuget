@@ -116,6 +116,9 @@ The following table describes the MSBuild properties that can be added to a proj
 | `NuspecFile` | Relative or absolute path to the *.nuspec* file being used for packing. If specified, it's used **exclusively** for packaging information, and any information in the projects is not used. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec-file). |
 | `NuspecBasePath` | Base path for the *.nuspec* file. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec-file). |
 | `NuspecProperties` | Semicolon separated list of key=value pairs. For more information, see [Packing using a .nuspec](#packing-using-a-nuspec-file). |
+| `Deterministic` | This Boolean value specifies whether to enable deterministic mode and use the same timestamp for all files added to a package. The default value is `true` (.NET 11+). |
+| `DeterministicTimestamp` | This string value specifies a timestamp that's used as the file modification date/time for all files added to the NuGet package. It can be a date/time in RFC 3339 format (example: `1996-12-19T16:39:57-08:00`), it can be the number of non-leap seconds since 00:00:00 UTC on 1 Jan 1970 (also known as the Unix time), it can be the special string `true` (use the current wall clock time), or `false` to not modify file times when creating deterministic packages. This option is ignored if `Deterministic` is not `true`. The default value is `true` (.NET 11+, NuGet 7.9.0+). |
+| `SOURCE_DATE_EPOCH` | Specifies the number of non-leap seconds since 00:00:00 UTC on 1 Jan 1970 (also known as the Unix time). This is used automatically in place of `DeterministicTimestamp` if that's not defined and `SOURCE_DATE_EPOCH` is. For more information, see [the `SOURCE_DATE_EPOCH` specification](https://reproducible-builds.org/docs/source-date-epoch/) (NuGet 7.9.0+). |
 
 ## pack scenarios
 
