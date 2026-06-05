@@ -26,8 +26,6 @@ NuGet distribution vehicles:
 
 * Pin System.Security.Crypography.Xml to 8.0.3 - [#14865](https://github.com/NuGet/Home/issues/14865)
 
-* nuget.exe restore `-MSBuildPath` crashes when pointing it to .NET SDK directory - [#14844](https://github.com/NuGet/Home/issues/14844)
-
 * Test TSTInfo structure generation is not DER-compliant. - [#14838](https://github.com/NuGet/Home/issues/14838)
 
 * SourceRepositoryDependencyProvider.GetInstalledVersions returns null when packages may be available. - [#14837](https://github.com/NuGet/Home/issues/14837)
