@@ -30,7 +30,7 @@ NuGet distribution vehicles:
 
 * SourceRepositoryDependencyProvider.GetInstalledVersions returns null when packages may be available. - [#14837](https://github.com/NuGet/Home/issues/14837)
 
-* [Bug Bash][Unstable] The ‘Installed’ tab was not refreshed after fixing the NuGet package vulnerabilities with GitHub Copilot - [#14761](https://github.com/NuGet/Home/issues/14761)
+* [Bug Bash] [Unstable] The ‘Installed’ tab was not refreshed after fixing the NuGet package vulnerabilities with GitHub Copilot - [#14761](https://github.com/NuGet/Home/issues/14761)
 
 [List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.6.0.59...7.7.0.44)
 
