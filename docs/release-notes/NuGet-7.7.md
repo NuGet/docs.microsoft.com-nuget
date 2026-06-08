@@ -24,7 +24,7 @@ NuGet distribution vehicles:
 
 ### Issues fixed in this release
 
-* Pin System.Security.Crypography.Xml to 8.0.3 - [#14865](https://github.com/NuGet/Home/issues/14865)
+* Pin System.Security.Cryptography.Xml to 8.0.3 - [#14865](https://github.com/NuGet/Home/issues/14865)
 
 * Test TSTInfo structure generation is not DER-compliant. - [#14838](https://github.com/NuGet/Home/issues/14838)
 
