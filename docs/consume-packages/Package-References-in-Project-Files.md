@@ -261,6 +261,35 @@ namespace PackageReferenceAliasesExample
 
 ```
 
+## IsImplicitlyDefined metadata
+
+MSBuild project SDKs sometimes inject `<PackageReference>` items into a project from their `.props` or `.targets` files on the consumer's behalf — for example, the .NET SDK injects framework packs such as `Microsoft.NETCore.App`, and the MSTest SDK injects test framework and adapter packages. To indicate that a reference is owned by the SDK rather than authored by the project, the SDK sets the `IsImplicitlyDefined` metadata to `true`:
+
+```xml
+<PackageReference Include="Contoso.SdkPackage" Version="$(ContosoSdkVersion)" IsImplicitlyDefined="true" />
+```
+
+End users do not set this metadata on references in their own project files.
+
+### Behavior for end users
+
+When a `<PackageReference>` has `IsImplicitlyDefined="true"`:
+
+- The package is listed in the Visual Studio NuGet Package Manager UI's **Installed** tab, but no Update is offered for it and it cannot be uninstalled from the UI. Its version is controlled by the SDK.
+- Adding a duplicate `<PackageReference>` for the same package id in your project file produces [NU1504](../reference/errors-and-warnings/NU1504.md) during restore.
+
+To change the version of an implicitly defined package, set the version property documented by the SDK (for example, `<MSTestVersion>` for `MSTest.Sdk`), or upgrade the SDK itself.
+
+### Guidance for SDK authors
+
+If you author an MSBuild project SDK that injects `<PackageReference>` items, set `IsImplicitlyDefined="true"` on every reference your SDK injects. This:
+
+- Stops the NuGet Package Manager UI from offering an Update for a package whose version your SDK pins, avoiding a confusing "upgrade succeeded but reverted" experience for end users.
+- Surfaces a clear [NU1504](../reference/errors-and-warnings/NU1504.md) duplicate-reference warning if a user adds the same package id manually, rather than letting their `<PackageReference Version="...">` silently lose to the SDK's.
+- Follows the same contract the .NET SDK uses for framework packs such as `Microsoft.NETCore.App` and `Microsoft.AspNetCore.App`.
+
+Combine `IsImplicitlyDefined="true"` with a documented MSBuild property (for example, `$(ContosoSdkVersion)`) so end users have a documented way to influence the resolved version.
+
 ## NuGet warnings and errors
 
 *This feature is available with NuGet **4.3** or above and with Visual Studio 2017 **15.3** or above.*
