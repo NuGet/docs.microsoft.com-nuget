@@ -261,6 +261,19 @@ namespace PackageReferenceAliasesExample
 
 ```
 
+## IsImplicitlyDefined metadata
+
+MSBuild project SDKs sometimes inject `<PackageReference>` items on the consumer's behalf — for example, the .NET SDK injects framework packs such as `Microsoft.NETCore.App`. SDKs mark these references with `IsImplicitlyDefined="true"` so NuGet knows they're owned by the SDK rather than authored by the project:
+
+```xml
+<PackageReference Include="Contoso.SdkPackage" Version="$(ContosoSdkVersion)" IsImplicitlyDefined="true" />
+```
+
+End users don't set this metadata on references in their own project files.
+
+- **SDK authors**: Set `IsImplicitlyDefined="true"` on every `<PackageReference>` your SDK injects, and pair it with a documented MSBuild property (for example, `$(ContosoSdkVersion)`) so end users have a supported way to influence the resolved version. This follows the same contract the .NET SDK uses for framework packs such as `Microsoft.NETCore.App`.
+- **End users**: Implicitly defined packages appear in the Visual Studio Package Manager UI's **Installed** tab but can't be updated or uninstalled there, and adding a duplicate `<PackageReference>` for the same package id produces [NU1504](../reference/errors-and-warnings/NU1504.md) during restore (from `dotnet`, `msbuild`, or Visual Studio). To change the version, set the property documented by the SDK (for example, `<MSTestVersion>` for `MSTest.Sdk`) or upgrade the SDK.
+
 ## NuGet warnings and errors
 
 *This feature is available with NuGet **4.3** or above and with Visual Studio 2017 **15.3** or above.*
