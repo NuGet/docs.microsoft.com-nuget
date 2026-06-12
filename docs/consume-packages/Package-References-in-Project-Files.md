@@ -271,23 +271,8 @@ MSBuild project SDKs sometimes inject `<PackageReference>` items on the consumer
 
 End users don't set this metadata on references in their own project files.
 
-### Behavior for end users
-
-When a `<PackageReference>` has `IsImplicitlyDefined="true"`:
-
-- It appears in the Visual Studio NuGet Package Manager UI's **Installed** tab, but can't be updated or uninstalled there. Its version is controlled by the SDK.
-- Adding a duplicate `<PackageReference>` for the same package id produces [NU1504](../reference/errors-and-warnings/NU1504.md) during restore.
-
-To change the version, set the property documented by the SDK (for example, `<MSTestVersion>` for `MSTest.Sdk`) or upgrade the SDK.
-
-### Guidance for SDK authors
-
-If you author an MSBuild project SDK that injects `<PackageReference>` items, set `IsImplicitlyDefined="true"` on every injected reference. Doing so:
-
-- Prevents the Package Manager UI from offering updates that the SDK would silently revert.
-- Raises a clear [NU1504](../reference/errors-and-warnings/NU1504.md) duplicate-reference warning if a user adds the same package id manually.
-- Follows the same contract the .NET SDK uses for framework packs such as `Microsoft.NETCore.App` and `Microsoft.AspNetCore.App`.
-- Pair it with a documented MSBuild property (for example, `$(ContosoSdkVersion)`) so end users have a supported way to influence the resolved version.
+- **SDK authors**: Set `IsImplicitlyDefined="true"` on every `<PackageReference>` your SDK injects, and pair it with a documented MSBuild property (for example, `$(ContosoSdkVersion)`) so end users have a supported way to influence the resolved version. This follows the same contract the .NET SDK uses for framework packs such as `Microsoft.NETCore.App`.
+- **End users**: Implicitly defined packages appear in the Visual Studio Package Manager UI's **Installed** tab but can't be updated or uninstalled there, and adding a duplicate `<PackageReference>` for the same package id produces [NU1504](../reference/errors-and-warnings/NU1504.md) during restore (from `dotnet`, `msbuild`, or Visual Studio). To change the version, set the property documented by the SDK (for example, `<MSTestVersion>` for `MSTest.Sdk`) or upgrade the SDK.
 
 ## NuGet warnings and errors
 
