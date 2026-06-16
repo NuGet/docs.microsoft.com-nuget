@@ -40,4 +40,5 @@ The list of properties documented in [NuGet pack and restore as MSBuild targets]
 | NUGET_API_KEY | The API key used to authenticate when pushing packages. If not set, the value from the `apikeys` section of `NuGet.Config` is used. | Available in NuGet 7.6 and higher. The command-line option takes precedence over this environment variable. |
 | NUGET_SYMBOL_API_KEY | The API key used to authenticate when pushing symbol packages. If not set, the value from the `apikeys` section of `NuGet.Config` is used. | Available in NuGet 7.6 and higher. The command-line option takes precedence over this environment variable. |
 | NUGET_ENHANCED_NETWORK_RETRY_DELAY_MILLISECONDS | Configures the amount of time to wait in milliseconds before retrying an HTTP connection when enhanced retries are enabled. | Number of millseconds to wait, the default value is `1000`. |
+| NUGET_DISABLE_PACKAGEID_VALIDATION | Allows NuGet to bypass validation checks for package IDs. | Set to true to disable package ID validation. The default value is false. |
 
