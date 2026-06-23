@@ -38,6 +38,14 @@ where `<nuspecPath>` and `<projectPath>` specify the `.nuspec` or project file, 
 
   The NuGet configuration file to apply. If not specified, `%AppData%\NuGet\NuGet.Config` (Windows), or `~/.nuget/NuGet/NuGet.Config` or `~/.config/NuGet/NuGet.Config` (Mac/Linux) is used.
 
+- **`-Deterministic`**
+
+  *(7.9+)* Build packages in deterministic mode. This produces bit-identical packages for the same input (source code, project file, build configuration), with a known caveat of timestamps. See `DeterministicTimestamp` on how to reproduce with identical date/times.
+
+- **`-DeterministicTimestamp`**
+
+  *(7.9+)* Specify a timestamp that's used as the file modification date/time for all files added to the NuGet package. It can be a date/time in RFC 3339 format (such as `1996-12-19T16:39:57-08:00`), it can be the number of non-leap seconds since 00:00:00 UTC on 1 Jan 1970 (also known as the Unix time), or it can be the special string `true` (default, use the current wall clock time), or `false` to not modify file times when creating deterministic packages. This option is ignored if `Deterministic` is not enabled.
+
 - **`-Exclude`**
 
   Specifies one or more wildcard patterns to exclude when creating a package. To specify more than one pattern, repeat the -Exclude flag. See example below.
