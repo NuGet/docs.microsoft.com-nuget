@@ -17,8 +17,8 @@ NuGet's behavior is driven by the accumulated settings in one or more config (XM
 | Scope | `NuGet.Config` file location | Description |
 | --- | --- | --- |
 | Solution | Current folder (aka Solution folder) or any folder up to the drive root.| In a solution folder, settings apply to all projects in subfolders. Note that if a config file is placed in a project folder, it has no effect on that project. When restoring a project on the command line, the project's directory is treated as the solution directory, which can lead to differences in behaviour when restoring the project vs solution. |
-| User | **Windows:** `%appdata%\NuGet\NuGet.Config`<br/>**Mac/Linux:** `~/.config/NuGet/NuGet.Config` or `~/.nuget/NuGet/NuGet.Config` (varies by tooling) <br/>Additional configs are supported on all platforms. These configs cannot be edited by the tooling. </br> **Windows:** `%appdata%\NuGet\config\*.Config` <br/>**Mac/Linux:** `~/.config/NuGet/config/*.config` or `~/.nuget/config/*.config` | Settings apply to all operations, but are overridden by any solution-level settings. |
-| Computer | **Windows:** `%ProgramFiles(x86)%\NuGet\Config`<br/>**Mac/Linux:** `/etc/opt/NuGet/Config` (Linux) or `/Library/Application Support` (Mac) by default. If `$NUGET_COMMON_APPLICATION_DATA` is neither null nor empty, then `$NUGET_COMMON_APPLICATION_DATA/NuGet/Config` instead  | Settings apply to all operations on the computer, but are overridden by any user- or solution-level settings. |
+| User | **Windows:** `%appdata%\NuGet\NuGet.Config`<br/>**Mac/Linux:** `~/.config/NuGet/NuGet.Config` or `~/.nuget/NuGet/NuGet.Config` (varies by tooling) <br/>Additional configs are supported on all platforms. These configs cannot be edited by the tooling. </br> **Windows:** `%appdata%\NuGet\config\*.Config` <br/>**Mac/Linux:** `~/.config/NuGet/config/*.config` or `~/.nuget/NuGet/config/*.config` | Settings apply to all operations, but are overridden by any solution-level settings. |
+| Computer | **Windows:** `%ProgramFiles(x86)%\NuGet\Config`<br/>**Mac:** `/Library/Application Support/NuGet/Config`<br/>**Linux:** `/etc/opt/NuGet/Config` by default. If `$NUGET_COMMON_APPLICATION_DATA` is neither null nor empty, then `$NUGET_COMMON_APPLICATION_DATA/NuGet/Config` instead. | Settings apply to all operations on the computer, but are overridden by any user- or solution-level settings. |
 
 > [!Note]
 > On Mac/Linux, the user config file location varies by tooling. .NET CLI uses `~/.nuget/NuGet` folder, while Mono uses `~/.config/NuGet` folder. 
@@ -87,7 +87,7 @@ dotnet nuget config set repositoryPath /home/projects/packages --configfile /hom
 dotnet nuget config set repositoryPath /home/packages --configfile home/myApp/NuGet.Config
 
 # Set repositoryPath in the computer-level file (requires elevation)
-dotnet nuget config set repositoryPath /home/packages --configfile $XDG_DATA_HOME/NuGet.Config
+dotnet nuget config set repositoryPath /home/packages --configfile /etc/opt/NuGet/Config/NuGet.Config
 ```
 
 > [!Note]
@@ -232,7 +232,7 @@ These files cannot be edited by the standard tooling.
 | OS Platform  | Additional Configurations |
 | --- | --- |
 | Windows      | `%appdata%\NuGet\config\*.Config` |
-| Mac/Linux    | `~/.config/NuGet/config/*.config` or `~/.nuget/config/*.config` |
+| Mac/Linux    | `~/.config/NuGet/config/*.config` or `~/.nuget/NuGet/config/*.config` |
 
 ## NuGet defaults file
 
@@ -252,7 +252,8 @@ The following table describes where the `NuGetDefaults.Config` file should be st
 | OS Platform  | `NuGetDefaults.Config` Location |
 | --- | --- |
 | Windows      | **Visual Studio 2017 or NuGet 4.x+:** `%ProgramFiles(x86)%\NuGet` <br />**Visual Studio 2015 and earlier or NuGet 3.x and earlier:** `%PROGRAMDATA%\NuGet` |
-| Mac/Linux    | `$XDG_DATA_HOME` (typically `~/.local/share` or `/usr/local/share`, depending on OS distribution)|
+| Mac          | `/Library/Application Support/NuGet` |
+| Linux        | `/etc/opt/NuGet` by default. If `$NUGET_COMMON_APPLICATION_DATA` is neither null nor empty, then `$NUGET_COMMON_APPLICATION_DATA/NuGet` instead. |
 
 ### NuGetDefaults.Config settings
 
