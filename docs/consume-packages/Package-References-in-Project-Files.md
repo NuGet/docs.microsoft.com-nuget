@@ -243,7 +243,7 @@ Visual Studio's NuGet package manager and `dotnet package update` won't offer pa
 ```
 
 When a project uses [Central Package Management (CPM)](Central-Package-Management.md), don't define a matching `<PackageVersion />` item in `Directory.Packages.props` for an implicitly defined package.
-For implicit packages, the version must come from the `PackageReference` item itself.
+For implicitly defined packages, the version must come from the `PackageReference` item itself.
 If CPM includes a `PackageVersion` for the same package, NuGet raises [NU1009](../reference/errors-and-warnings/NU1009.md).
 
 ## PackageReference aliases
