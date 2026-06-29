@@ -232,8 +232,8 @@ To verify the exact name of the property generated, look at the generated [nuget
 ## `IsImplicitlyDefined` metadata
 
 Some SDKs add `PackageReference` items automatically.
-If an SDK defines a `PackageReference`, set `IsImplicitlyDefined="true"` on that item.
-This metadata tells NuGet tooling that the SDK controls the package version.
+If you author an SDK that defines a `PackageReference`, set `IsImplicitlyDefined="true"` on that item.
+This metadata tells NuGet tooling to treat the package version as controlled by the SDK.
 Visual Studio's NuGet package manager and `dotnet package update` won't offer package upgrades for implicitly defined packages.
 
 ```xml
