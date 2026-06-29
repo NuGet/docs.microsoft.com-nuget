@@ -229,6 +229,23 @@ Additionally NuGet automatically generates properties for packages containing a 
 MSBuild properties and package identities do not have the same restrictions so the package identity needs to be changed to an MSBuild friendly name, prefixed by the word `Pkg`.
 To verify the exact name of the property generated, look at the generated [nuget.g.props](../reference/msbuild-targets.md#restore-outputs) file.
 
+## `IsImplicitlyDefined` metadata
+
+Some SDKs add `PackageReference` items automatically.
+If an SDK defines a `PackageReference`, set `IsImplicitlyDefined="true"` on that item.
+This metadata tells NuGet tooling that the SDK controls the package version.
+Visual Studio's NuGet package manager and `dotnet package update` won't offer package upgrades for implicitly defined packages.
+
+```xml
+<ItemGroup>
+  <PackageReference Include="PackageName" Version="1.2.3" IsImplicitlyDefined="true" />
+</ItemGroup>
+```
+
+When a project uses [Central Package Management (CPM)](Central-Package-Management.md), don't define a matching `<PackageVersion />` item in `Directory.Packages.props` for an implicitly defined package.
+For implicit packages, the version must come from the `PackageReference` item itself.
+If CPM includes a `PackageVersion` for the same package, NuGet raises [NU1009](../reference/errors-and-warnings/NU1009.md).
+
 ## PackageReference aliases
 
 In some rare instances, different packages will contain classes in the same namespace. Starting with NuGet 5.7 & Visual Studio 2019 Update 7, equivalent to ProjectReference, PackageReference supports [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases).
