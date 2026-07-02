@@ -40,9 +40,9 @@ NuGet distribution vehicles:
 
 * C++/CLI PackageReference project fails when referencing a C++ PackageReference project - [#14876](https://github.com/NuGet/Home/issues/14876)
 
-* When accidentally specifying multiple TFMs in &lt;TargetFramework&gt;, InvalidOperationException is thrown - [#14605](https://github.com/NuGet/Home/issues/14605)
+* When accidentally specifying multiple TFMs in `<TargetFramework>`, InvalidOperationException is thrown - [#14605](https://github.com/NuGet/Home/issues/14605)
 
-* &quot;Sequence contains no matching element&quot; when using a bad TF - [#13772](https://github.com/NuGet/Home/issues/13772)
+* "Sequence contains no matching element" when using a bad TF - [#13772](https://github.com/NuGet/Home/issues/13772)
 
 * Perf: ContentFileUtils should cache/reuse virtual file instances - [#12696](https://github.com/NuGet/Home/issues/12696)
 
