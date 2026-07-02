@@ -16,7 +16,7 @@ Whenever you install, update, or restore a package, NuGet manages packages and p
 | --- | --- |
 | [global-packages](#global-packages) | <ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>Override using the NUGET_PACKAGES environment variable, the `globalPackagesFolder` or `repositoryPath` [configuration settings](../reference/nuget-config-file.md#config-section) (when using PackageReference and `packages.config`, respectively), or the `RestorePackagesPath` MSBuild property (MSBuild only). The environment variable takes precedence over the configuration setting.</li></ul> |
 | [http-cache](#http-cache) | <ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Override using the NUGET_HTTP_CACHE_PATH environment variable.</li></ul> |
-| [temp](#temp) | <li>Windows: `%temp%\NuGetScratch`</li><li>Mac: `/tmp/NuGetScratch`</li><li>Linux: `/tmp/NuGetScratch<username>`</li><li>Override using the NUGET_SCRATCH environment variable.</li></ul> |
+| [temp](#temp) | <li>Windows: `%temp%\NuGetScratch`</li><li>Mac: `$TMPDIR/NuGetScratch`</li><li>Linux: `/tmp/NuGetScratch<username>`</li><li>Override using the NUGET_SCRATCH environment variable.</li></ul> |
 | [plugins-cache](#plugin-cache) **4.8+** | <ul><li>Windows: `%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/plugins-cache`</li><li>Override using the NUGET_PLUGINS_CACHE_PATH environment variable.</li></ul> |
 
 By using the *global-packages* folder, NuGet generally avoids downloading packages that already exist on the computer, improving the performance of install, update, and restore operations.
