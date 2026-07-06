@@ -26,8 +26,6 @@ NuGet distribution vehicles:
 
 * NuGet nearest-TFM behavior for Windows TFM should take into account revision for CsWinRT 3.0 multi-targeting - [#14859](https://github.com/NuGet/Home/issues/14859)
 
-* Add deprecation warning for monoandroid TFMs - [#14828](https://github.com/NuGet/Home/issues/14828)
-
 * Plugin ServiceIndex is tied to Newtonsoft.Json (JObject), blocking STJ migration - [#14913](https://github.com/NuGet/Home/issues/14913)
 
 * Plugin Message.Payload is tied to Newtonsoft.Json (JObject), blocking STJ migration - [#14901](https://github.com/NuGet/Home/issues/14901)
