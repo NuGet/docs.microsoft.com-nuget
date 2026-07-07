@@ -129,6 +129,7 @@ See the following articles for ways to extend the capabilities of your package o
 - [Prerelease versions](../create-packages/prerelease-packages.md)
 - [Set package type](../create-packages/set-package-type.md)
 - [MSBuild props and targets](../concepts/MSBuild-props-and-targets.md)
+- [Create deterministic packages](../create-packages/deterministic-packages.md)
 - [Create packages with COM interop assemblies](../create-packages/author-packages-with-COM-interop-assemblies.md)
 - [Create native packages](../guides/native-packages.md)
 - [Create symbol packages (.snupkg)](symbol-packages-snupkg.md)
