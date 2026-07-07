@@ -99,7 +99,7 @@ To automatically run `dotnet pack` whenever you run `dotnet build`, add the foll
 > [!NOTE]
 > When you automatically generate the package, packing increases the build time for your project.
 
-Running `dotnet pack` on a solution packs all the projects in the solution that are packable, that is, have the `IsPackable` property set to `true`.
+Running `dotnet pack` on a solution packs all the projects in the solution that are packable, that is, have the [`IsPackable`](/nuget/reference/msbuild-targets#pack-target-inputs) property set to `true`.
 
 ### Test package installation
 

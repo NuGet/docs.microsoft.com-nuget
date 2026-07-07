@@ -144,7 +144,7 @@ If security vulnerabilities are found and updates are available for the package,
 
 - Edit the `.csproj` or other package version location (`Directory.Packages.props`) with a newer version containing a security fix.
 - Use the NuGet package manager user interface in Visual Studio to update the individual package.
-- Run the `dotnet package update --vulnerable` command to update all vulnerable packages in a project to the first version without known vulnerabilities.
+- Run the `dotnet package update --vulnerable` command to update all vulnerable packages in a project or solution to the first version without known vulnerabilities.
 - Run the `dotnet package update` or `dotnet package add` commands with the respective package ID to update to the latest version. Use [`dotnet add package` when using .NET 9 or earlier](/dotnet/core/whats-new/dotnet-10/sdk#more-consistent-command-order).
 - Use the NuGet Model Context Protocol (MCP) server that has the ability to update packages in your project to versions that resolve known vulnerabilities.
 See [Fixing package vulnerabilities](NuGet-MCP-Server.md#fixing-package-vulnerabilities) for more information.

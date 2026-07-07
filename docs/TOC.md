@@ -198,6 +198,7 @@
 ### [NU1509](reference/errors-and-warnings/NU1509.md)
 ### [NU1510](reference/errors-and-warnings/NU1510.md)
 ### [NU1511](reference/errors-and-warnings/NU1511.md)
+### [NU1512](reference/errors-and-warnings/NU1512.md)
 ### [NU1601](reference/errors-and-warnings/NU1601.md)
 ### [NU1602](reference/errors-and-warnings/NU1602.md)
 ### [NU1603](reference/errors-and-warnings/NU1603.md)
