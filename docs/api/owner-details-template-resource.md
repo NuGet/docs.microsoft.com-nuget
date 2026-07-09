@@ -1,6 +1,8 @@
 ---
 title: Owner Details URL Template, NuGet API
 description: The owner details URL template allows clients to display a link to a package owner's profile page in their UI.
+author: donnie-msft
+ms.author: eagoodso
 ms.date: 07/09/2026
 ms.topic: reference
 ai-usage: ai-generated
@@ -25,10 +27,11 @@ OwnerDetailsUriTemplate/6.11.0   | The initial release
 ## URL template
 
 The URL for the following API is the value of the `@id` property associated with one of the aforementioned resource `@type` values.
+
 For example, nuget.org's owner details template looks like this:
 
 ```http
-https://www.nuget.org/profiles/{owner}
+https://www.nuget.org/profiles/{owner}?_src=template
 ```
 
 ## HTTP methods
@@ -54,8 +57,8 @@ Name      | Type   | Required | Notes
 The client should retain the casing of the username in whatever form it was found in other API responses or in the package repository signature.
 NuGet.org treats owner usernames in a case insensitive manner, but not all package sources may have this flexibility.
 
-For example, if the client implementation needs to display a link to the owner details page for the owner `nuget`, it would produce the following URL and provide it to the user:
+For example, if the client implementation needs to display a link to the owner details page for the owner `Microsoft`, it would produce the following URL and provide it to the user:
 
 ```http
-https://www.nuget.org/profiles/nuget
+https://www.nuget.org/profiles/Microsoft
 ```
