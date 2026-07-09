@@ -31,7 +31,7 @@ The URL for the following API is the value of the `@id` property associated with
 For example, nuget.org's owner details template looks like this:
 
 ```http
-https://www.nuget.org/profiles/{owner}?_src=template
+https://www.nuget.org/profiles/{owner}
 ```
 
 ## HTTP methods
