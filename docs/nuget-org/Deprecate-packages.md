@@ -1,9 +1,9 @@
 ---
 title: Deprecating packages on nuget.org
 description: Detailed description on the process of deprecating packages and how the clients shows this information
-author: anangaur
-ms.author: anangaur
-ms.date: 09/23/2019
+author: donnie-msft
+ms.author: eagoodso
+ms.date: 07/16/2026
 ms.topic: how-to
 ms.reviewer: karann-msft
 ---
