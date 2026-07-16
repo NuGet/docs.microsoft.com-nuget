@@ -40,15 +40,17 @@ To assist authors of existing NuGet repositories keep up to date with NuGet's ne
 
 ## Owner field
 
-Consider two of the [package manifest file (`.nuspec`)](../reference/nuspec.md) fields, `<authors>` and `<owners>`.
-Package authors who are packaging third-party content often put the third-party name in the `<authors>` field.
-The `<owners>` field was intended to denote who published the package on a repository, and therefore who should be contacted in case of packing issues or questions.
+The preferred way to represent ownership is the accounts your repository granted permission to publish new versions.
+Populate the [search resource](./search-query-service-resource.md)'s optional `owners` property with those account usernames, and omit it if your repository has no concept of package ownership.
 
-This was explained in [a blog post from 2013](https://devblogs.microsoft.com/nuget/managing-package-owners/), so the `<owners>` field is considered deprecated in the `.nuspec` file.
-If package's manifest contain this metadata, it should be ignored.
-Do not return the value of the `.nuspec` file's `<owners>` field in the `owners` property in the [search resource](./search-query-service-resource.md) or [package metadata resource](./registration-base-url-resource.md) JSON response.
+The `.nuspec` file has a deprecated `<owners>` field.
+It's self-declared freeform text written by whoever packed the package, so it can't be trusted to identify who actually controls a package.
+nuget.org ignores it, and both `<authors>` and `<owners>` are dropped when a package is uploaded.
+For how nuget.org manages this, see [Managing package owners on nuget.org](../nuget-org/Publish-a-package.md#managing-package-owners-on-nugetorg).
 
-If your repository has per-package permissions, it is recommended to report the accounts that have permissions to publish new versions in the `owner` metadata for search and package metadata resources JSON responses.
+A private or third-party feed without an account model can choose to surface the `.nuspec` `<owners>` value in the `owners` property instead.
+If you do this, be cautious: the values are freeform and unverified.
+This matters especially when you also provide the [owner details URL template](./owner-details-template-resource.md), because clients would build profile links from that untrusted text.
 
 ## `verified` search response field
 
