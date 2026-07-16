@@ -10,7 +10,7 @@ ai-usage: ai-generated
 
 # Owner details URL template
 
-It is possible for a client to build a URL that can be used by the user to see a package owner's profile page in their web browser.
+Package feeds that have owner profile pages can inform client tools how to construct the profile URL via this template.
 This is useful when a package source wants to enable all client experiences (even third-party) to link to the profile page of a specific package owner.
 
 The resource used for building this URL is the `OwnerDetailsUriTemplate` resource found in the
@@ -40,7 +40,8 @@ Although the client is not intended to make requests to the owner details URL on
 
 ## Construct the URL
 
-Given a known owner username, the client implementation can construct a URL used to access a web interface.
+The [search](search-query-service-resource.md) resource returns package owner information, including owner usernames.
+Given an owner username from the search resource, the client implementation can construct a URL used to access a web interface.
 The client implementation should display this constructed URL (or clickable link) to the user allowing them to open a web browser to the URL and to learn more about the owner.
 The contents of the owner details page is determined by the server implementation.
 
