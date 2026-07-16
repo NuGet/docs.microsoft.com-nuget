@@ -36,6 +36,7 @@ To assist authors of existing NuGet repositories keep up to date with NuGet's ne
 |2021|[Embedded readme](#embedded-files)|
 |2023|[PreAuthenticate authenticated requests](#url-structure-for-authenticated-feeds) <br/> [`VulnerabilityInfo` resource](#known-vulnerabilities-database-vulnerabilityinfo)|
 |2025|[Enable embedded README downloads](#enable-embedded-readme-downloads)|
+|2026|[Provide package owner detail links](#provide-package-owner-detail-links)|
 
 ## Owner field
 
@@ -155,3 +156,16 @@ If you wish to host search, or indeed any other NuGet API resource, on different
 ## Enable embedded README downloads
 
 A [new resource](./readme-template-resource.md) was documented for constructing a URL that can be used to download a README for a given package. This will allow client, like the Package Management UI in VS, to display the embedded README for packages which haven't been previously installed by the user. The client will construct this URL and attempt to download the README, using the response to the request to determine if a README is available. This means servers should expect multiple requests to the constructed endpoint as users navigate the PM UI. 
+
+## Provide package owner detail links
+
+The [owner details URL template resource](./owner-details-template-resource.md) lets your feed tell clients how to construct a link to a package owner's profile page.
+Visual Studio's Package Manager UI uses this to show owner links when browsing a package's details.
+For an example of how these links appear, see [Find and install a package](../consume-packages/install-use-packages-visual-studio.md#find-and-install-a-package).
+This also enables other client experiences, including third-party ones, to link users to the profile page of a specific package owner.
+
+The [search resource](./search-query-service-resource.md) returns package owner usernames in the `owners` property of its JSON response.
+A client takes an owner username from the search response and substitutes it into the `{owner}` placeholder of the template to build the profile URL.
+
+If your repository has owner profile pages, add the `OwnerDetailsUriTemplate` resource to your [service index](./service-index.md), with an `@id` that contains the `{owner}` placeholder.
+The constructed URL must be an absolute HTTPS URL.
