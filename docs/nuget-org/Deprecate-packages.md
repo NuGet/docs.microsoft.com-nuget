@@ -62,6 +62,10 @@ Project `My.Test.Project` has the following deprecated packages
 
 ```
 
+> [!NOTE]
+> [Package Source Mapping](../consume-packages/package-source-mapping.md) doesn't apply to `dotnet list package --deprecated`.
+> The command queries all configured sources for deprecation metadata, sending your package IDs to every source, including public ones.
+
 ## Transfer popularity to a newer package
 
 Package authors who have deprecated a legacy package can choose to transfer its "popularity" to a newer package to boost the newer package's search ranking. This helps customers discover the newer package instead of the deprecated package.
