@@ -19,10 +19,9 @@ With Package Source Mapping, you can filter, per package, which source(s) NuGet 
 We also have suggestions for other [best practices](..\concepts\Security-Best-Practices.md) to help you fortify your supply chain against attacks.
 
 > [!IMPORTANT]
-> Package Source Mapping currently applies only to the package download path used by restore, install, and update operations.
+> Package Source Mapping currently applies only when NuGet downloads packages during restore, install, and update operations.
 > It doesn't yet filter the sources that other client commands query for package metadata.
 > Commands such as [`dotnet package add`](/dotnet/core/tools/dotnet-package-add) and [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) (including `--outdated`, `--deprecated`, and `--vulnerable`) and the Package Manager UI's browse and update metadata lookups send the requested package IDs to *all* configured sources, including public ones.
-> If you use a mix of public and private sources, the names of your private packages can reach a public source through these metadata operations even when Package Source Mapping is configured.
 > For the current status of these feature gaps, see the following tracking issues:
 >
 > * dotnet.exe package commands (`add`, `list package`): [NuGet/Home#12766](https://github.com/NuGet/Home/issues/12766) and [NuGet/Home#11380](https://github.com/NuGet/Home/issues/11380).
@@ -217,5 +216,5 @@ For an idea of how your source mappings may look like, refer to our [samples rep
 >
 > * There are no nuget.exe or dotnet.exe commands for managing the package source mapping configuration, see [NuGet/Home#10735](https://github.com/NuGet/Home/issues/10735).
 > * There are no means of mapping packages at package installation time, see [NuGet/Home#10730](https://github.com/NuGet/Home/issues/10730).
-> * Package Source Mapping applies only to the package download path used by restore, install, and update. It doesn't apply to commands that query source metadata, such as `dotnet package add` and `dotnet list package --outdated/--deprecated/--vulnerable`. Those commands send package IDs to all configured sources.
+> * Package Source Mapping applies only when NuGet downloads packages during restore, install, and update. It doesn't apply to commands that query source metadata, such as `dotnet package add` and `dotnet list package --outdated/--deprecated/--vulnerable`. Those commands send package IDs to all configured sources.
 > * There is a limitation when using the `DotNetCoreCLI@2` Azure Pipelines task which can be worked around by using `feed-` prefixes in your source mapping configuration. It is recommended however to use `NuGetAuthenticate` for your authentication needs and call the dotnet cli directly from a script task. See [microsoft/azure-pipelines-tasks#15542](https://github.com/microsoft/azure-pipelines-tasks/issues/15542).
