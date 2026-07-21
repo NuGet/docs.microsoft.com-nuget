@@ -36,7 +36,7 @@ To assist authors of existing NuGet repositories keep up to date with NuGet's ne
 |2021|[Embedded readme](#embedded-files)|
 |2023|[PreAuthenticate authenticated requests](#url-structure-for-authenticated-feeds) <br/> [`VulnerabilityInfo` resource](#known-vulnerabilities-database-vulnerabilityinfo)|
 |2025|[Enable embedded README downloads](#enable-embedded-readme-downloads)|
-|2026|[Provide package owner detail links](#provide-package-owner-detail-links)|
+|2026|[Provide package owner detail links](#owner-field)|
 
 ## Owner field
 
@@ -48,9 +48,12 @@ It's self-declared freeform text written by whoever packed the package, so it ca
 nuget.org ignores it, and both `<authors>` and `<owners>` are dropped when a package is uploaded.
 For how nuget.org manages this, see [Managing package owners on nuget.org](../nuget-org/Publish-a-package.md#managing-package-owners-on-nugetorg).
 
-A private or third-party feed without an account model can choose to surface the `.nuspec` `<owners>` value in the `owners` property instead.
-If you do this, be cautious: the values are freeform and unverified.
-This matters especially when you also provide the [owner details URL template](./owner-details-template-resource.md), because clients would build profile links from that untrusted text.
+If your feed has no concept of package ownership, omit the `owners` property rather than falling back to the deprecated `.nuspec` `<owners>` field.
+Because that text is freeform and unverified, don't use it to build profile links with the owner details URL template described next, where clients would present it as an authoritative owner.
+
+If your repository has owner profile pages, add the [`OwnerDetailsUriTemplate`](./owner-details-template-resource.md) resource to your [service index](./service-index.md), with an `@id` that contains the `{owner}` placeholder.
+Clients such as Visual Studio's Package Manager UI take each username from the `owners` property, substitute it into the `{owner}` placeholder, and use the resulting absolute HTTPS URL to link users to that owner's profile page.
+For an example of how these links appear, see [Find and install a package](../consume-packages/install-use-packages-visual-studio.md#find-and-install-a-package).
 
 ## `verified` search response field
 
@@ -158,16 +161,3 @@ If you wish to host search, or indeed any other NuGet API resource, on different
 ## Enable embedded README downloads
 
 A [new resource](./readme-template-resource.md) was documented for constructing a URL that can be used to download a README for a given package. This will allow client, like the Package Management UI in VS, to display the embedded README for packages which haven't been previously installed by the user. The client will construct this URL and attempt to download the README, using the response to the request to determine if a README is available. This means servers should expect multiple requests to the constructed endpoint as users navigate the PM UI. 
-
-## Provide package owner detail links
-
-The [owner details URL template resource](./owner-details-template-resource.md) lets your feed tell clients how to construct a link to a package owner's profile page.
-Visual Studio's Package Manager UI uses this to show owner links when browsing a package's details.
-For an example of how these links appear, see [Find and install a package](../consume-packages/install-use-packages-visual-studio.md#find-and-install-a-package).
-This also enables other client experiences, including third-party ones, to link users to the profile page of a specific package owner.
-
-The [search resource](./search-query-service-resource.md) returns package owner usernames in the `owners` property of its JSON response.
-A client takes an owner username from the search response and substitutes it into the `{owner}` placeholder of the template to build the profile URL.
-
-If your repository has owner profile pages, add the `OwnerDetailsUriTemplate` resource to your [service index](./service-index.md), with an `@id` that contains the `{owner}` placeholder.
-The constructed URL must be an absolute HTTPS URL.
