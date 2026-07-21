@@ -18,23 +18,24 @@ With Package Source Mapping, you can filter, per package, which source(s) NuGet 
 
 We also have suggestions for other [best practices](..\concepts\Security-Best-Practices.md) to help you fortify your supply chain against attacks.
 
-> [!IMPORTANT]
-> Package Source Mapping currently applies only when NuGet downloads packages during restore, install, and update operations.
-> It doesn't yet filter the sources that other client commands query for package metadata.
-> Commands such as [`dotnet package add`](/dotnet/core/tools/dotnet-package-add) and [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) (including `--outdated`, `--deprecated`, and `--vulnerable`) and the Package Manager UI's browse and update metadata lookups send the requested package IDs to *all* configured sources, including public ones.
-> For the current status of these feature gaps, see the following tracking issues:
->
-> * dotnet.exe package commands (`add`, `list package`): [NuGet/Home#12766](https://github.com/NuGet/Home/issues/12766) and [NuGet/Home#11380](https://github.com/NuGet/Home/issues/11380).
-> * Package Manager Console (PMC): [NuGet/Home#11384](https://github.com/NuGet/Home/issues/11384).
-> * Package Manager UI (PMUI) in Visual Studio: [NuGet/Home#12783](https://github.com/NuGet/Home/issues/12783).
->
-> See [Security best practices](..\concepts\Security-Best-Practices.md#nuget-feeds) for more information.
-
 Package Source Mapping was added in [NuGet 6.0](..\release-notes\NuGet-6.0.md).
 Starting with Visual Studio 17.5, you can add and remove Package Source Mappings with the Visual Studio Options Dialog.
 For detailed information on all Visual Studio NuGet options, see [NuGet Options in Visual Studio](nuget-visual-studio-options.md).
 
-### Visual Studio support
+## Scope and limitations
+
+Package Source Mapping currently applies only when NuGet downloads packages during restore, install, and update operations.
+It doesn't yet filter the sources that other client commands query for package metadata.
+Commands such as [`dotnet package add`](/dotnet/core/tools/dotnet-package-add) and [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) (including `--outdated`, `--deprecated`, and `--vulnerable`) and the Package Manager UI's browse and update metadata lookups send the requested package IDs to all configured sources, including public ones.
+For the current status of these feature gaps, see the following tracking issues:
+
+* dotnet.exe package commands (`add`, `list package`): [NuGet/Home#12766](https://github.com/NuGet/Home/issues/12766) and [NuGet/Home#11380](https://github.com/NuGet/Home/issues/11380).
+* Package Manager Console (PMC): [NuGet/Home#11384](https://github.com/NuGet/Home/issues/11384).
+* Package Manager UI (PM UI) in Visual Studio: [NuGet/Home#12783](https://github.com/NuGet/Home/issues/12783).
+
+See [Security best practices](..\concepts\Security-Best-Practices.md#nuget-feeds) for more information.
+
+## Visual Studio support
 
 | Visual Studio | Package Source Mapping | Support in Tools -> Options | Support in Package Manager UI |
 |-----|---------------------|---------------------|---------------------|
