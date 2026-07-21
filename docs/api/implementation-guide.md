@@ -40,7 +40,7 @@ To assist authors of existing NuGet repositories keep up to date with NuGet's ne
 
 ## Owner field
 
-The preferred way to represent ownership is the accounts your repository granted permission to publish new versions.
+The preferred way to represent ownership is to list the accounts that your repository granted permissions for publishing new package versions.
 Populate the [search resource](./search-query-service-resource.md)'s optional `owners` property with those account usernames, and omit it if your repository has no concept of package ownership.
 
 The `.nuspec` file has a deprecated `<owners>` field.
