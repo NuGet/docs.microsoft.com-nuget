@@ -58,6 +58,7 @@ The **service index** describes a variety of resources. The current set of suppo
 Resource name                                                        | Required | Description
 -------------------------------------------------------------------- | -------- | -----------
 [Catalog](catalog-resource.md)                                       | no       | Full record of all package events.
+[OwnerDetailsUriTemplate](owner-details-template-resource.md)        | no       | Construct a URL to access a package owner's profile page.
 [PackageBaseAddress](package-base-address-resource.md)               | yes      | Get package content (.nupkg).
 [PackageDetailsUriTemplate](package-details-template-resource.md)    | no       | Construct a URL to access a package details web page.
 [PackagePublish](package-publish-resource.md)                        | yes      | Push and delete (or unlist) packages.
