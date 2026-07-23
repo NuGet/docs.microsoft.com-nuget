@@ -382,6 +382,11 @@ The `packageSourceMapping` section contains the details that help the NuGet pack
 
 This section can only be managed manually right now.
 
+> [!NOTE]
+> `packageSourceMapping` filters only the package download path used by restore, install, and update.
+> It doesn't apply to commands that query source metadata, such as `dotnet package add` and `dotnet list package --outdated/--deprecated/--vulnerable`, which send package IDs to all configured sources.
+> For more information, see [Package Source Mapping](../consume-packages/package-source-mapping.md).
+
 A `packageSourceMapping` section can only contain `packageSource` sections.
 
 ### packageSource

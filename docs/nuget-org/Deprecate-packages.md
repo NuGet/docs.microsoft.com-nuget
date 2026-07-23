@@ -1,9 +1,9 @@
 ---
 title: Deprecating packages on nuget.org
 description: Detailed description on the process of deprecating packages and how the clients shows this information
-author: anangaur
-ms.author: anangaur
-ms.date: 09/23/2019
+author: donnie-msft
+ms.author: eagoodso
+ms.date: 07/16/2026
 ms.topic: how-to
 ms.reviewer: karann-msft
 ---
@@ -61,6 +61,10 @@ Project `My.Test.Project` has the following deprecated packages
    > My.Sample.Lib        6.0.0      Legacy      My.Awesome.Package
 
 ```
+
+> [!NOTE]
+> [Package Source Mapping](../consume-packages/package-source-mapping.md) doesn't apply to `dotnet list package --deprecated`.
+> The command queries all configured sources for deprecation metadata, sending your package IDs to every source, including public ones.
 
 ## Transfer popularity to a newer package
 
