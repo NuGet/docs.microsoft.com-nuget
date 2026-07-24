@@ -11,7 +11,7 @@ ms.topic: how-to
 
 NuGet.org lets you register one or more code signing certificates on your individual account or organization. You manage registered certificates in the **Certificates** section of the account or organization settings page.
 
-Registering a certificate changes what NuGet.org accepts from that account: once at least one certificate is registered, the account is required to author-sign the packages it pushes with a registered certificate. This is referred to as **required author signing**.
+Once you register at least one certificate, NuGet.org requires every package that account pushes to be author-signed with one of the registered certificates. This is referred to as **required author signing**.
 
 This article describes the effect of registering a certificate and how to manage certificates on NuGet.org. For how package signatures work and the requirements NuGet.org enforces on each signature, see [Signed package reference](../reference/Signed-Packages-Reference.md).
 
