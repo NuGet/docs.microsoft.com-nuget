@@ -2,8 +2,8 @@
 title: Trusted Publishing
 description: Trusted Publishing on nuget.org
 author: etvorun
-ms.author: evgenyt
-ms.date: 07/01/2025
+ms.author: evgenyt, lparezanin
+ms.date: 07/01/2025, 7/29/2026
 ms.topic: best-practice
 ---
 
@@ -79,6 +79,55 @@ jobs:
       - name: NuGet push
         run: dotnet nuget push artifacts/my-sdk.nupkg --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
 ```
+
+## Gitlab support
+
+Trusted publishing lets your GitLab CI/CD pipeline publish to NuGet.org without storing a long-lived API key. GitLab issues a short-lived OIDC token that NuGet.org validates against your registered policy and exchanges for a temporary API key. How it works
+
+1. The pipeline requests a short-lived OIDC token from GitLab's identity provider.
+2. It sends that token to NuGet.org (POST /api/v2/token).
+3. NuGet.org validates the token against your registered policy and returns a short-lived API key.
+4. The pipeline uses the key to dotnet nuget push. You own three things: Thing	What it is NuGet.org account	The user/org that owns the packages GitLab project	The project whose pipelines are trusted Trusted-publishing policy	Tells NuGet.org "account A trusts GitLab project 
+
+---
+
+### Step 1 — Register the policy on NuGet.org
+Sign in → Account → Federated credentials → Add a new policy:
+
+![Screenshot that shows Trusted Publishing page.](media/gitlab_OIDC.png)
+
+### Step 2 — Configure the GitLab CI/CD pipeline
+The job must declare a GitLab environment and request an OIDC token via id_tokens:
+
+```
+publish:
+  stage: deploy
+  environment: production
+  id_tokens:
+    NUGET_ID_TOKEN:
+      aud: nuget.org
+  script:
+    - |
+      NUGET_API_KEY=$(curl -s -X POST https://www.nuget.org/api/v2/token \
+        -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
+        -d "subject_token_type=urn:ietf:params:oauth:token-type:id_token" \
+        -d "subject_token=$NUGET_ID_TOKEN" | jq -r '.token')
+    - dotnet pack --configuration Release
+    - dotnet nuget push "**/*.nupkg"
+        --api-key "$NUGET_API_KEY"
+        --source https://www.nuget.org/api/v2/package
+        --skip-duplicate
+
+```
+
+### Required token claims:
+
+| Claim          | Required | Notes                                   |
+|----------------|----------|------------------------------------------|
+| namespace_path | Yes      | Must match policy's namespacePath        |
+| project_path   | Yes      | Must match policy's projectPath          |
+| environment    | Optional | Validated only if set in the policy      |
+| ref            | Optional | Must be a branch name (e.g., no tags)    |
 
 
 ## Policy Ownership
