@@ -94,7 +94,7 @@ Trusted publishing lets your GitLab CI/CD pipeline publish to NuGet.org without 
 ### Step 1 — Register the policy on NuGet.org
 Sign in → Account → Federated credentials → Add a new policy:
 
-![Screenshot that shows Trusted Publishing page.](media/gitlab_OIDC.png)
+![Screenshot that shows Trusted Publishing page.](media/gitlab_oidc.png)
 
 ### Step 2 — Configure the GitLab CI/CD pipeline
 The job must declare a GitLab environment and request an OIDC token via id_tokens:
