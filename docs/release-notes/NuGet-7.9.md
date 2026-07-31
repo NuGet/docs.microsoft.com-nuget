@@ -18,12 +18,6 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 7.9.0
 
-* Capability discovery for SearchFilter.PackageTypes across PackageSearchResource implementations - [#14936](https://github.com/NuGet/Home/issues/14936)
-
-* Use a deterministic order for files when calculating psmdcp hash - [#14916](https://github.com/NuGet/Home/issues/14916)
-
-* Feature ask client side -- Surface PackageType query parameter in the NuGet.org search API - [#8915](https://github.com/NuGet/Home/issues/8915)
-
 ### Breaking changes
 
 * SearchFilter changing `PackageTypes` to `PackageType` - [#14941](https://github.com/NuGet/Home/issues/14941)
@@ -89,6 +83,10 @@ NuGet distribution vehicles:
 * Revisit deterministic pack - [#8601](https://github.com/NuGet/Home/issues/8601)
 
 * RestoreLockedMode=true & RestoreForceEvaluate=true should error - [#8222](https://github.com/NuGet/Home/issues/8222)
+
+* Use a deterministic order for files when calculating psmdcp hash - [#14916](https://github.com/NuGet/Home/issues/14916)
+
+* Capability discovery for SearchFilter.PackageTypes across PackageSearchResource implementations - [#14936](https://github.com/NuGet/Home/issues/14936)
 
 [List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.8.0.59...7.9.0.83)
 
