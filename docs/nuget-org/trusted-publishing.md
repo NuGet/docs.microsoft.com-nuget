@@ -2,8 +2,8 @@
 title: Trusted Publishing
 description: Trusted Publishing on nuget.org
 author: etvorun
-ms.author: evgenyt
-ms.date: 07/01/2025
+ms.author: evgenyt, lparezanin
+ms.date: 07/01/2025, 7/29/2026
 ms.topic: best-practice
 ---
 
@@ -79,6 +79,66 @@ jobs:
       - name: NuGet push
         run: dotnet nuget push artifacts/my-sdk.nupkg --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
 ```
+
+## Gitlab support
+
+Trusted publishing lets your GitLab CI/CD pipeline publish to NuGet.org without storing a long-lived API key. GitLab issues a short-lived OIDC token that NuGet.org validates against your registered policy and exchanges for a temporary API key. How it works
+
+1. The pipeline requests a short-lived OIDC token from GitLab's identity provider.
+2. It sends that token to NuGet.org (POST /api/v2/token).
+3. NuGet.org validates the token against your registered policy and returns a short-lived API key.
+4. The pipeline uses the key to dotnet nuget push. You own three things: Thing	What it is NuGet.org account	The user/org that owns the packages GitLab project	The project whose pipelines are trusted Trusted-publishing policy	Tells NuGet.org "account A trusts GitLab project 
+
+---
+
+### Step 1 — Register the policy on NuGet.org
+Sign in → Account → Federated credentials → Add a new policy:
+
+![Screenshot that shows Trusted Publishing page.](media/gitlab_oidc.png)
+
+### Step 2 — Configure the GitLab CI/CD pipeline
+The job must request an OIDC token via id_tokens:
+
+```
+stages:
+  - publish
+
+publish_nuget:
+  stage: publish
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+
+  id_tokens:
+    NUGET_ID_TOKEN:
+      aud: "https://www.nuget.org"
+
+  variables:
+    NUGET_TOKEN_ENDPOINT: "https://www.nuget.org/api/v2/token"
+    NUGET_SOURCE: "https://www.nuget.org/api/v2/package"
+    NUGET_USERNAME: # Your NuGet username
+
+  script:
+    # Exchange OIDC token for NuGet API key .
+    - |
+      apt-get update && apt-get install -y jq
+      RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$NUGET_TOKEN_ENDPOINT" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Bearer $NUGET_ID_TOKEN" \
+        -d "{\"username\": \"$NUGET_USERNAME\", \"tokenType\": \"ApiKey\"}")
+      API_KEY=$(echo "$RESPONSE" | head -n -1 | jq -r '.apiKey')
+
+    # Push package
+    - dotnet nuget push ./artifacts/*.nupkg -s "$NUGET_SOURCE" -k "$API_KEY"
+
+```
+
+### Required token claims:
+
+| Claim          | Required | Notes                                   |
+|----------------|----------|------------------------------------------|
+| namespace_path | Yes      | Must match policy's namespacePath        |
+| project_path   | Yes      | Must match policy's projectPath          |
+| environment    | Optional | Validated only if set in the policy      |
+| ref            | Optional | Must be a branch name (e.g., no tags)    |
 
 
 ## Policy Ownership
