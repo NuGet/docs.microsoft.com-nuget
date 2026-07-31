@@ -97,26 +97,37 @@ Sign in → Account → Federated credentials → Add a new policy:
 ![Screenshot that shows Trusted Publishing page.](media/gitlab_oidc.png)
 
 ### Step 2 — Configure the GitLab CI/CD pipeline
-The job must declare a GitLab environment and request an OIDC token via id_tokens:
+The job must request an OIDC token via id_tokens:
 
 ```
-publish:
-  stage: deploy
-  environment: production
+stages:
+  - publish
+
+publish_nuget:
+  stage: publish
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+
   id_tokens:
     NUGET_ID_TOKEN:
-      aud: nuget.org
+      aud: "https://www.nuget.org"
+
+  variables:
+    NUGET_TOKEN_ENDPOINT: "https://www.nuget.org/api/v2/token"
+    NUGET_SOURCE: "https://www.nuget.org/api/v2/package"
+    NUGET_USERNAME: # Your NuGet username
+
   script:
+    # Exchange OIDC token for NuGet API key .
     - |
-      NUGET_API_KEY=$(curl -s -X POST https://www.nuget.org/api/v2/token \
-        -d "grant_type=urn:ietf:params:oauth:grant-type:token-exchange" \
-        -d "subject_token_type=urn:ietf:params:oauth:token-type:id_token" \
-        -d "subject_token=$NUGET_ID_TOKEN" | jq -r '.token')
-    - dotnet pack --configuration Release
-    - dotnet nuget push "**/*.nupkg"
-        --api-key "$NUGET_API_KEY"
-        --source https://www.nuget.org/api/v2/package
-        --skip-duplicate
+      apt-get update && apt-get install -y jq
+      RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$NUGET_TOKEN_ENDPOINT" \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Bearer $NUGET_ID_TOKEN" \
+        -d "{\"username\": \"$NUGET_USERNAME\", \"tokenType\": \"ApiKey\"}")
+      API_KEY=$(echo "$RESPONSE" | head -n -1 | jq -r '.apiKey')
+
+    # Push package
+    - dotnet nuget push ./artifacts/*.nupkg -s "$NUGET_SOURCE" -k "$API_KEY"
 
 ```
 
