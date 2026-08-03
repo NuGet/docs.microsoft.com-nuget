@@ -3,6 +3,7 @@ title: Best practices for a secure software supply chain
 description: Best practices for securing your software supply chain using NuGet & GitHub.
 author: JonDouglas
 ms.author: jodou
+ms.date: 07/16/2026
 ms.topic: best-practice
 ---
 
@@ -188,6 +189,14 @@ When using multiple public & private NuGet source feeds, a package can be downlo
 To ensure your build is predictable and secure from known attacks such as [Dependency Confusion](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610), knowing what specific feed(s) your packages are coming from is a best practice.
 You can use a single feed or private feed with upstreaming capabilities for protection.
 
+When you configure both a public and a private source, client commands that query package metadata (for example, `dotnet package add` and `dotnet list package --outdated/--deprecated/--vulnerable`) send the requested package IDs to every configured source, including public ones.
+[Package Source Mapping](../consume-packages/package-source-mapping.md) doesn't prevent this, because it applies only when NuGet downloads packages during restore, install, and update.
+For the current status of these feature gaps, see the following tracking issues:
+
+* dotnet.exe package commands (`add`, `list package`): [NuGet/Home#12766](https://github.com/NuGet/Home/issues/12766) and [NuGet/Home#11380](https://github.com/NuGet/Home/issues/11380).
+* Package Manager Console (PMC): [NuGet/Home#11384](https://github.com/NuGet/Home/issues/11384).
+* Package Manager UI (PMUI) in Visual Studio: [NuGet/Home#12783](https://github.com/NuGet/Home/issues/12783).
+
 For more information to secure your package feeds, see [3 Ways to Mitigate Risk When Using Private Package Feeds](https://azure.microsoft.com/resources/3-ways-to-mitigate-risk-using-private-package-feeds/en-us/).
 
 When using a private feed, refer to the [security best practices for managing credentials](../consume-packages/consuming-packages-authenticated-feeds.md#security-best-practices-for-managing-credentials).
@@ -215,6 +224,10 @@ To enable lock files, [see the following documentation](../consume-packages/pack
 **📦 Package Consumer**
 
 Package Source Mapping allows you to centrally declare which source each package in your solution should restore from in your nuget.config file.
+
+Package Source Mapping currently applies only when NuGet downloads packages during restore, install, and update.
+A current limitation is that it doesn't yet filter the sources that other client commands query for package metadata.
+For more information, see [NuGet feeds](#nuget-feeds).
 
 To enable package source mapping, [see the following documentation](../consume-packages/package-source-mapping.md).
 

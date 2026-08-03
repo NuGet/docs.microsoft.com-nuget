@@ -126,6 +126,7 @@
 ### Resources
 #### [Autocomplete](api/search-autocomplete-service-resource.md)
 #### [Catalog](api/catalog-resource.md)
+#### [Owner details URL](api/owner-details-template-resource.md)
 #### [Package content](api/package-base-address-resource.md)
 #### [Package details URL](api/package-details-template-resource.md)
 #### [Package metadata](api/registration-base-url-resource.md)
@@ -307,6 +308,7 @@
 ### [NU5048](reference/errors-and-warnings/NU5048.md)
 ### [NU5049](reference/errors-and-warnings/NU5049.md)
 ### [NU5051](reference/errors-and-warnings/NU5051.md)
+### [NU5052](reference/errors-and-warnings/NU5052.md)
 ### [NU5100](reference/errors-and-warnings/NU5100.md)
 ### [NU5101](reference/errors-and-warnings/NU5101.md)
 ### [NU5102](reference/errors-and-warnings/NU5102.md)
