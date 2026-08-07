@@ -75,6 +75,12 @@ NuGet distribution vehicles:
 
 * [Bug Bash][Unstable] An error “A project with ID ‘XXXXXXX-XXXXXXX’ was not found” occurred after installing a package with PackageReference format into a Console App (.NET Framework 4.8.1) - [#12397](https://github.com/NuGet/Home/issues/12397)
 
+#### NuGet SDK
+
+* [Epic]Migrate NuGet client libraries from Newtonsoft.Json to System.Text.Json deserialization - [#14846](https://github.com/NuGet/Home/issues/14846)
+
+* Annotate Newtonsoft.Json deserialization code path - [#14934](https://github.com/NuGet/Home/issues/14934)
+
 #### NuGet MCP Server
 
 * The NuGet Solver tool is still unavailable after the NuGet MCP Server is enabled from MCP Server Manager - [#14912](https://github.com/NuGet/Home/issues/14912)
@@ -89,13 +95,7 @@ NuGet distribution vehicles:
 
 * Failed to update binding redirects error needs more information - [#14940](https://github.com/NuGet/Home/issues/14940)
 
-* [AOT test] System.Text.Json code path failures in NuGet.Protocol: Vulnerability Severity and PackageDependencyGroupStjConverter - [#14938](https://github.com/NuGet/Home/issues/14938)
-
-* A/B test System.Text.Json versus Newtonsoft.Json deserializations - [#14937](https://github.com/NuGet/Home/issues/14937)
-
 * Remove `PackageSearchResourceV3(NuGet.Protocol.RawSearchResourceV3 searchResource) ` constructor - [#14935](https://github.com/NuGet/Home/issues/14935)
-
-* Annotate Newtonsoft.Json deserialization code path - [#14934](https://github.com/NuGet/Home/issues/14934)
 
 * Migrate NuGet's dotnet CLI commands to System.CommandLine - [#14848](https://github.com/NuGet/Home/issues/14848)
 
