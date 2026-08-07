@@ -3,7 +3,7 @@ title: Search, NuGet API
 description: The search service allows clients to query for packages by keyword and to filter results on certain package fields.
 author: joelverhagen
 ms.author: jver
-ms.date: 10/26/2017
+ms.date: 08/03/2026
 ms.topic: reference
 ms.reviewer: kraigb
 ---
@@ -107,6 +107,7 @@ Name           | Type                       | Required | Notes
 id             | string                     | yes      | The ID of the matched package
 version        | string                     | yes      | The full SemVer 2.0.0 version string of the package (could contain build metadata)
 description    | string                     | no       | 
+deprecation    | object                     | no       | The deprecation associated with the latest package version
 versions       | array of objects           | yes      | All of the versions of the package matching the `prerelease` parameter
 authors        | string or array of strings | no       | 
 iconUrl        | string                     | no       | 
@@ -119,6 +120,7 @@ tags           | string or array of strings | no       |
 title          | string                     | no       | 
 totalDownloads | integer                    | no       | This value can be inferred by the sum of downloads in the `versions` array
 verified       | boolean                    | no       | A JSON boolean indicating whether the package is [verified](../nuget-org/id-prefix-reservation.md)
+vulnerabilities | array of objects          | no       | The known security vulnerabilities associated with the latest package version
 packageTypes   | array of objects           | yes      | The package types defined by the package author (added in `SearchQueryService/3.5.0`)
 
 On nuget.org, a verified package is one which has a package ID matching a reserved ID prefix and owned by one of the
@@ -133,6 +135,36 @@ Name      | Type    | Required | Notes
 @id       | string  | yes      | The absolute URL to the associated [registration leaf](registration-base-url-resource.md#registration-leaf)
 version   | string  | yes      | The full SemVer 2.0.0 version string of the package (could contain build metadata)
 downloads | integer | yes      | The number of downloads for this specific package version
+
+#### Package deprecation
+
+The `deprecation` object has the following properties:
+
+Name             | Type             | Required | Notes
+---------------- | ---------------- | -------- | -----
+reasons          | array of strings | yes      | The reasons why the package was deprecated
+message          | string           | no       | Additional details about the deprecation
+alternatePackage | object           | no       | The alternate package to use instead
+
+The `reasons` array contains at least one of the values documented in [Package deprecation](registration-base-url-resource.md#package-deprecation).
+
+The `alternatePackage` object has the following properties:
+
+Name  | Type   | Required | Notes
+----- | ------ | -------- | -----
+id    | string | yes      | The ID of the alternate package
+range | string | no       | The allowed [version range](../concepts/package-versioning.md#version-ranges), or `*` if any version is allowed
+
+#### Vulnerabilities
+
+Each item in the `vulnerabilities` array is a JSON object with the following properties:
+
+Name        | Type    | Required | Notes
+----------- | ------- | -------- | -----
+advisoryUrl | string  | yes      | The URL of the security advisory for the package
+severity    | integer | yes      | The advisory severity: `0` = Low, `1` = Moderate, `2` = High, and `3` = Critical
+
+The array is empty when the latest package version has no known vulnerabilities.
 
 The `packageTypes` array will always consist of at least one (1) item. Package type for a given package ID is considered to be the package types defined by the latest version of the package with respect to the other search parameters. Each item in the `packageTypes` array is a JSON object with the following properties:
 
