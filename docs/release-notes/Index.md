@@ -3,13 +3,15 @@ title: Release Notes
 description: Index of NuGet release notes and known issues for all versions.
 author: donnie-msft
 ms.author: eagoodso
-ms.date: 05/25/2022
+ms.date: 07/31/2026
 ms.topic: release-notes
 ---
 
 # Release Notes
 
 [Known Issues](../release-notes/Known-Issues.md)
+
+[NuGet 7.9](../release-notes/NuGet-7.9.md)
 
 [NuGet 7.8](../release-notes/NuGet-7.8.md)
 
