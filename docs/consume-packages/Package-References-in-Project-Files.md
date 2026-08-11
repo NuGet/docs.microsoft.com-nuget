@@ -356,6 +356,11 @@ Input to NuGet restore is a set of `PackageReference` items from the project fil
 
 - A given package version is removed from the repository. Though nuget.org does not allow package deletions, not all package repositories have this constraint. This results in NuGet finding the best match when it cannot resolve to the deleted version.
 
+> [!Note]
+> For some project types, the .NET SDK adds implicit `PackageReference` items, and using a different SDK version will change the package version, leading to locked mode restore failures.
+> To mitigate this issue, you can use a [global.json file](/dotnet/core/tools/global-json), setting the [global.json rollForward Policy](/dotnet/core/tools/global-json#rollforward) to disable.
+> This means that all developers working in this repo, and your CI pipelines, will need to use the same version of the SDK at all times, but it allows you to control when the implicit packages change versions.
+
 ### Enabling the lock file
 
 In order to persist the full closure of package dependencies, you can opt-in to the lock file feature by setting the MSBuild property `RestorePackagesWithLockFile` for your project:
