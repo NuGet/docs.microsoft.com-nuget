@@ -3,7 +3,7 @@ title: Manage NuGet Packages with the NuGet CLI
 description: Find out how to use the NuGet CLI, nuget.exe, to manage NuGet packages in non-SDK-style projects that use a packages.config file to list package references.
 author: mikejo5000
 ms.author: mikejo
-ms.date: 04/08/2026
+ms.date: 05/19/2026
 ms.topic: how-to
 # customer intent: As a developer, I want to find out how to use the NuGet CLI so that I can manage NuGet packages in my projects and solutions.
 ---
@@ -15,7 +15,10 @@ You can use the `nuget.exe` command-line interface (CLI) to manage NuGet package
 The NuGet CLI runs on .NET Framework and non-SDK-style projects, for example non-SDK-style projects that target .NET Standard libraries. The NuGet CLI commands can use a project [packages.config](../reference/packages-config.md) file that lists package references. For non-SDK-style projects that use `PackageReference` instead of *packages.config* for package references, use the [dotnet CLI](install-use-packages-dotnet-cli.md) instead.
 
 > [!NOTE]
-> For most non-SDK-style projects that use *packages.config*, it's best to [migrate packages.config to `PackageReference`](migrate-packages-config-to-package-reference.md), and then use the dotnet CLI instead of the NuGet CLI to manage packages. However, you can't migrate C++ or ASP.NET projects.
+> For most non-SDK-style projects that use *packages.config*, it's best to [migrate packages.config to `PackageReference`](migrate-packages-config-to-package-reference.md), and then use the dotnet CLI instead of the NuGet CLI to manage packages.
+> However, you can't use the migration tool for C++ or ASP.NET projects.
+> C++ PackageReference support is experimental.
+> For the latest C++ support details, see [NuGet PackageReference for C++ projects in Visual Studio](https://devblogs.microsoft.com/cppblog/nuget-packagereference-for-c-projects-in-visual-studio/).
 
 For most commands, the NuGet CLI tool uses the current folder, unless you specify a different location in the command. To run NuGet CLI commands, open a command-line program and switch to the folder that contains your project file.
 
