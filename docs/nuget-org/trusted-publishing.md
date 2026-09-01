@@ -13,14 +13,14 @@ Trusted Publishing is a better way to publish NuGet packages. You don’t need t
 
 This makes your publishing process safer by reducing the risk of leaked credentials. It also makes automation easier because you don’t need to rotate or store secrets. This approach is part of a broader industry shift toward secure, keyless publishing. If you're curious, check out the OpenSSF initiative: https://repos.openssf.org/trusted-publishers-for-all-package-repositories.
 
-> ⚠️ **Heads up:** If you don’t see the **Trusted Publishing** option in your nuget.org account, it might not be available to you yet. We’re rolling it out gradually.
+![Screenshot that shows OIDC Trusted Publishing page.](media/trust-publishing.png)
 
 ## How it works
 
-When your GitHub Actions workflow runs, it requests an encrypted OIDC token from github.com. This token
-includes information about your repository and workflow, and is cryptographically signed by GitHub Actions to prevent
+When your DevSecOps platform (ex: GitHub, GitLab) workflow runs, it requests an encrypted OIDC token from your DevSecOps platform. This token
+includes information about your repository and workflow, and is cryptographically signed by your DevSecOps platform, to prevent
 tampering. The workflow forwards this token to nuget.org, which securely validates the token’s
-authenticity with github.com using industry-standard cryptographic methods. A token exchange endpoint on nuget.org then checks
+authenticity with your DevSecOps platform, using industry-standard cryptographic methods. A token exchange endpoint on nuget.org then checks
 that the token’s details match a trusted publishing policy you’ve configured. If everything matches,
 nuget.org issues a short-lived API key for your workflow to use when publishing your package.
 
@@ -32,7 +32,7 @@ nuget.org issues a short-lived API key for your workflow to use when publishing 
 4. NuGet verifies it and returns a temporary API key.
 5. Your workflow uses that key to push the package.
 
-![Screenshot that shows Trusted Publishing page.](media/trusted-publishing.png)
+![Screenshot that shows OIDC Trusted Publishing page.](media/oidc-github.png)
 
 NuGet’s temporary API keys are valid for **1 hour**, so your workflow should request the key shortly before publishing.
 If you request it too early, it might expire before the push happens. 
@@ -94,7 +94,7 @@ Trusted publishing lets your GitLab CI/CD pipeline publish to NuGet.org without 
 ### Step 1 — Register the policy on NuGet.org
 Sign in → Account → Federated credentials → Add a new policy:
 
-![Screenshot that shows Trusted Publishing page.](media/gitlab_oidc.png)
+![Screenshot that shows Trusted Publishing page.](media/oidc-gitlab.png)
 
 ### Step 2 — Configure the GitLab CI/CD pipeline
 The job must request an OIDC token via id_tokens:
@@ -140,6 +140,10 @@ publish_nuget:
 | environment    | Optional | Validated only if set in the policy      |
 | ref            | Optional | Must be a branch name (e.g., no tags)    |
 
+
+## Select Scopes
+
+Policy Scopes determine whether specific publishing actions, such as publishing new packages or publishing new versions of existing packages, are allowed. The associated glob pattern can be used to target specific packages and define which packages the policy applies to. 
 
 ## Policy Ownership
 
