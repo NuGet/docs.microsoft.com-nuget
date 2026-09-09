@@ -68,7 +68,7 @@ A package can have multiple owners, and each owner can independently register ce
 NuGet.org computes the author-signing policy per package ID from that package's owners and any configured required signer:
 
 - **No required signer:** signing is allowed when any owner has a registered certificate and required only when every owner has one. A signed package can use a certificate registered to any owner.
-- **A required signer is set:** only that account's certificate state matters for these signing calculations. If it has certificates, signing is required and only its certificates are accepted. If it has none, asynchronous signature validation rejects every author-signed submission, even when another owner has certificates.
+- **A required signer is set:** only that account's certificate state matters for these signing calculations. If it has certificates, signing is required, and only its certificates are accepted. If it has none, asynchronous signature validation rejects every author-signed submission, even when another owner has certificates.
 
 You can set the required signer from the **Manage Packages** page.
 
