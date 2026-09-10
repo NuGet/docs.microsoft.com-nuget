@@ -3,6 +3,7 @@
 ## [Individual accounts](individual-accounts.md)
 ## [Organizations](organizations-on-nuget-org.md)
 ## [API keys](scoped-api-keys.md)
+## [Signing certificates](package-signing-certificates.md)
 # Manage packages on NuGet.org
 ## [Publish a package](publish-a-package.md)
 ## [Package ID prefix reservation](id-prefix-reservation.md)
