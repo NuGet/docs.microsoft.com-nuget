@@ -4,7 +4,7 @@ description: How to configure and use the NuGet Model Context Protocol (MCP) ser
 author: jeffkl
 ms.author: jeffkl
 ms.topic: get-started
-ms.date: 01/20/2026
+ms.date: 09/29/2026
 ---
 
 # Using the NuGet Model Context Protocol (MCP) Server
@@ -150,6 +150,25 @@ jobs:
 ```
 
 This will ensure that the `dnx` command is available to run the NuGet MCP server when GitHub Copilot runs as a coding agent in your repository.
+
+## Review package source mappings and supply chain security
+
+The NuGet MCP server can review your repository's NuGet configuration and provide information to help you evaluate its supply chain security.
+For example, enter the following prompt in the GitHub Copilot Chat window:
+
+> Review this repository's package source mappings.
+
+The review can identify package source mappings inherited from machine-level `NuGet.Config` files and provide guidance for moving them to a repository-level configuration file.
+It can also identify configurations where enabling Package Source Mapping or simplifying existing mappings could improve supply chain security.
+The review recommends changes but doesn't create package source mappings.
+Review the output against your package source requirements before changing your configuration.
+
+In Visual Studio, you can also start a review from the following locations:
+
+- With a solution open, go to **Tools > Options > NuGet Package Manager > Package Source Mapping**, and then select **Review with GitHub Copilot**.
+- For an NU1507 warning or error, select **Ask Copilot for a fix** (the sparkle icon) next to NU1507 in the **Error List**.
+
+To use these entry points, you must be signed in to GitHub Copilot and have the NuGet MCP server enabled.
 
 ## Fixing package vulnerabilities
 
