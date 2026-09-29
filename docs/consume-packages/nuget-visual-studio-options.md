@@ -178,15 +178,14 @@ For more information, see [Package Source Mapping](Package-Source-Mapping.md).
 
 ### Review with GitHub Copilot
 
-This option is available in Visual Studio 2026 version 18.11.0 or higher.
-When a solution is open, select **Review with GitHub Copilot** to review the repository's NuGet supply chain security configuration, including its package source mappings.
+When a solution is open in Visual Studio 2026 version 18.11.0 or higher, select **Review with GitHub Copilot** to review the repository's NuGet supply chain security configuration, including its package source mappings.
 
 GitHub Copilot can identify package source mappings inherited from machine-level `NuGet.Config` files and provide guidance for moving them to a repository-level configuration file.
 It can also identify opportunities to simplify existing mappings.
 Review the output against your package source requirements before changing your configuration.
 The review doesn't create package source mappings.
 
-To use this option, you must be signed in to GitHub Copilot and have the NuGet MCP server enabled.
+To use this button, you must be signed in to GitHub Copilot and have the NuGet MCP server enabled.
 For setup instructions, see [Using the NuGet Model Context Protocol (MCP) Server](../concepts/NuGet-MCP-Server.md).
 
 

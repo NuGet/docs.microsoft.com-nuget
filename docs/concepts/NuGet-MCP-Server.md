@@ -164,10 +164,10 @@ It can also identify configurations where enabling Package Source Mapping or sim
 The review recommends changes but doesn't create package source mappings.
 Review the output against your package source requirements before changing your configuration.
 
-In Visual Studio 2026 version 18.11.0 or higher, you can also start a review from the following locations:
+Visual Studio 2026 version 18.11.0 or higher also provides the following entry points for starting a review:
 
-- With a solution open, go to **Tools > Options > NuGet Package Manager > Package Source Mapping**, and then select **Review with GitHub Copilot**.
-- For an NU1507 warning or error, select **Ask Copilot for a fix** (the sparkle icon) next to NU1507 in the **Error List**.
+- With a solution open, go to **Tools > Options > NuGet Package Manager > Package Source Mapping**, and then select [Review with GitHub Copilot](../consume-packages/nuget-visual-studio-options.md#review-with-github-copilot).
+- For an NU1507 warning or error related to Central Package Management (CPM) and Package Source Mapping, select [Ask Copilot for a fix](../reference/errors-and-warnings/NU1507.md#use-github-copilot) (the sparkle icon) next to NU1507 in the **Error List**.
 
 To use these entry points, you must be signed in to GitHub Copilot and have the NuGet MCP server enabled.
 
