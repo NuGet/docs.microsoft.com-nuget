@@ -153,23 +153,20 @@ This will ensure that the `dnx` command is available to run the NuGet MCP server
 
 ## Review supply chain security
 
-The NuGet MCP server can review your repository's NuGet configuration and provide information to help you evaluate its supply chain security.
-
-For example, enter the following prompt in the GitHub Copilot Chat window:
+Ask the NuGet MCP server to review your repository's supply chain security configuration by entering the following prompt in the GitHub Copilot Chat window:
 
 > Review this repository's package source mappings.
 
-The review can identify package source mappings inherited from machine-level `NuGet.Config` files and provide guidance for moving them to a repository-level configuration file.
-It can also identify configurations where enabling Package Source Mapping or simplifying existing mappings could improve supply chain security.
-The review recommends changes but doesn't create package source mappings.
+The MCP server can identify package source mappings inherited from machine-level `NuGet.Config` files and provide guidance for moving them to a repository-level configuration file.
+It can also identify opportunities to enable Package Source Mapping or simplify existing mappings.
 Review the output against your package source requirements before changing your configuration.
 
-Visual Studio 2026 version 18.11.0 or higher also provides the following entry points for starting a review:
+In Visual Studio 2026 version 18.11.0 or higher, you can start the same review without entering the prompt:
 
 - With a solution open, go to **Tools > Options > NuGet Package Manager > Package Source Mapping**, and then select [Review with GitHub Copilot](../consume-packages/nuget-visual-studio-options.md#review-with-github-copilot).
-- For an NU1507 warning or error related to Central Package Management (CPM) and Package Source Mapping, select [Ask Copilot for a fix](../reference/errors-and-warnings/NU1507.md#use-github-copilot) (the sparkle icon) next to NU1507 in the **Error List**.
+- When NU1507 appears in the **Error List**, select [Ask Copilot for a fix](../reference/errors-and-warnings/NU1507.md#use-github-copilot) (the sparkle icon).
 
-To use these entry points, you must be signed in to GitHub Copilot and have the NuGet MCP server enabled.
+To use these actions, you must be signed in to GitHub Copilot and have the NuGet MCP server enabled.
 
 ## Fixing package vulnerabilities
 
