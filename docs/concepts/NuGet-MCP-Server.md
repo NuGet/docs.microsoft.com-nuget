@@ -151,9 +151,10 @@ jobs:
 
 This will ensure that the `dnx` command is available to run the NuGet MCP server when GitHub Copilot runs as a coding agent in your repository.
 
-## Review package source mappings and supply chain security
+## Review supply chain security
 
 The NuGet MCP server can review your repository's NuGet configuration and provide information to help you evaluate its supply chain security.
+
 For example, enter the following prompt in the GitHub Copilot Chat window:
 
 > Review this repository's package source mappings.

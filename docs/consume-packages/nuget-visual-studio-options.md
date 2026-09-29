@@ -178,13 +178,14 @@ For more information, see [Package Source Mapping](Package-Source-Mapping.md).
 
 ### Review with GitHub Copilot
 
+When a solution is open, select **Review with GitHub Copilot** to review the repository's NuGet supply chain security configuration, including its package source mappings.
+
 GitHub Copilot can identify package source mappings inherited from machine-level `NuGet.Config` files and provide guidance for moving them to a repository-level configuration file.
 It can also identify opportunities to simplify existing mappings.
 Review the output against your package source requirements before changing your configuration.
 The review doesn't create package source mappings.
 
 To use this option, you must be signed in to GitHub Copilot and have the NuGet MCP server enabled.
-When a solution is open, select **Review with GitHub Copilot** to review the repository's NuGet supply chain security configuration.
 For setup instructions, see [Using the NuGet Model Context Protocol (MCP) Server](../concepts/NuGet-MCP-Server.md).
 
 
