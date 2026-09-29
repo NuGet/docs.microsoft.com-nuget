@@ -178,6 +178,7 @@ For more information, see [Package Source Mapping](Package-Source-Mapping.md).
 
 ### Review with GitHub Copilot
 
+This option is available in Visual Studio 2026 version 18.11.0 or higher.
 When a solution is open, select **Review with GitHub Copilot** to review the repository's NuGet supply chain security configuration, including its package source mappings.
 
 GitHub Copilot can identify package source mappings inherited from machine-level `NuGet.Config` files and provide guidance for moving them to a repository-level configuration file.
