@@ -153,15 +153,15 @@ This will ensure that the `dnx` command is available to run the NuGet MCP server
 
 ## Review supply chain security
 
-Ask the NuGet MCP server to review your repository's supply chain security configuration by entering the following prompt in the GitHub Copilot Chat window:
+Ask the NuGet MCP server to review your repository's supply chain security configuration.
+
+For example, enter the following prompt in the GitHub Copilot Chat window:
 
 > Review this repository's package source mappings.
 
-The MCP server can identify package source mappings inherited from machine-level `NuGet.Config` files and provide guidance for moving them to a repository-level configuration file.
-It can also identify opportunities to enable Package Source Mapping or simplify existing mappings.
-Review the output against your package source requirements before changing your configuration.
+- The MCP server can provide guidance for enabling Package Source Mapping, simplifying existing mappings, or moving mappings from a machine-level `NuGet.Config` file to a repository-level `NuGet.Config` file.
 
-In Visual Studio 2026 version 18.11.0 or higher, you can start the same review without entering the prompt:
+In **Visual Studio 2026** (18.11.0 or higher), you can start the review in the following ways:
 
 - With a solution open, go to **Tools > Options > NuGet Package Manager > Package Source Mapping**, and then select [Review with GitHub Copilot](../consume-packages/nuget-visual-studio-options.md#review-with-github-copilot).
 - When NU1507 appears in the **Error List**, select [Ask Copilot for a fix](../reference/errors-and-warnings/NU1507.md#use-github-copilot) (the sparkle icon).
