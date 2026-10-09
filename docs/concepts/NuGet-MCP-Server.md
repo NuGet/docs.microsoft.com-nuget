@@ -159,14 +159,15 @@ For example, enter the following prompt in the GitHub Copilot Chat window:
 
 > Review this repository's package source mappings.
 
-- The MCP server can provide guidance for enabling Package Source Mapping, simplifying existing mappings, or moving mappings from a machine-level `NuGet.Config` file to a repository-level `NuGet.Config` file.
+- The MCP server can provide guidance for enabling [Package Source Mapping](../consume-packages/Package-Source-Mapping.md), simplifying existing mappings, or moving mappings from a machine-level `NuGet.Config` file to a repository-level `NuGet.Config` file.
 
 In **Visual Studio 2026** (18.11.0 or higher), you can start the review in the following ways:
 
 - With a solution open, go to **Tools > Options > NuGet Package Manager > Package Source Mapping**, and then select [Review with GitHub Copilot](../consume-packages/nuget-visual-studio-options.md#review-with-github-copilot).
 - When NU1507 appears in the **Error List**, select [Ask Copilot for a fix](../reference/errors-and-warnings/NU1507.md#use-github-copilot) (the sparkle icon).
 
-To use these actions, you must be signed in to GitHub Copilot and have the NuGet MCP server enabled.
+> [!NOTE]
+> To use these actions, you must be signed in to GitHub Copilot and have the NuGet MCP server enabled.
 
 ## Fixing package vulnerabilities
 
