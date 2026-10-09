@@ -386,6 +386,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "docs/reference/errors-and-warnings/NU5036.md",
+            "redirect_url": "/nuget/reference/errors-and-warnings",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "docs/guides/create-packages-for-xamarin.md",
             "redirect_url": "/nuget",
             "redirect_document_id": false
