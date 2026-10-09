@@ -295,6 +295,7 @@
 ### [NU5033](reference/errors-and-warnings/NU5033.md)
 ### [NU5034](reference/errors-and-warnings/NU5034.md)
 ### [NU5035](reference/errors-and-warnings/NU5035.md)
+### [NU5036](reference/errors-and-warnings/NU5036.md)
 ### [NU5037](reference/errors-and-warnings/NU5037.md)
 ### [NU5038](reference/errors-and-warnings/NU5038.md)
 ### [NU5039](reference/errors-and-warnings/NU5039.md)
