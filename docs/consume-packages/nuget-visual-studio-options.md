@@ -3,7 +3,7 @@ title: NuGet Options in Visual Studio
 description: Reference guide for NuGet Package Manager options in Visual Studio, including General, Configuration Files, Package Sources, and Package Source Mapping settings.
 author: donnie-msft
 ms.author: eagoodso
-ms.date: 02/03/2026
+ms.date: 09/29/2026
 ms.topic: reference
 f1_keywords:
   - "vs.toolsoptionspages.nuget_package_manager"
@@ -161,8 +161,6 @@ Package Source Mapping allows you to control which package sources are used for 
 
 ![Package Source Mapping page of NuGet options](media/vsoptions/package-source-mapping.png)
 
-To modify, use the **Add, Edit, and Remove buttons** below the table.
-
 ### Managing Package Source Mappings
 
 Lists all configured package source mappings according to your NuGet.Config files.
@@ -177,6 +175,19 @@ Press "Save" on the Add/Edit dialog and the changes will be updated in the relev
 ![Package Source Mapping add dialog](media/vsoptions/package-source-mapping-add.png)
 
 For more information, see [Package Source Mapping](Package-Source-Mapping.md).
+
+### Review with GitHub Copilot
+
+When a solution is open in Visual Studio 2026 version 18.11.0 or higher, select **Review with GitHub Copilot** to review the repository's NuGet supply chain security configuration, including its package source mappings.
+
+GitHub Copilot can identify package source mappings inherited from machine-level `NuGet.Config` files and provide guidance for moving them to a repository-level configuration file.
+It can also identify opportunities to simplify existing mappings.
+Review the output against your package source requirements before changing your configuration.
+The review doesn't create package source mappings.
+
+To use this button, you must be signed in to GitHub Copilot and have the NuGet MCP server enabled.
+For setup instructions, see [Using the NuGet Model Context Protocol (MCP) Server](../concepts/NuGet-MCP-Server.md).
+
 
 ### Invalid Source Mappings
 
