@@ -34,7 +34,7 @@ You can find the source code for these packages in the [NuGet/NuGet.Client](http
 
 ## Support policy
 
-The NuGet Client SDK is maintained on a best-effort basis, including bug fixes, updates, and enhancements.
+The most recent version of the NuGet Client SDK is maintained on a best-effort basis, including bug fixes, updates, and enhancements.
 
 The recommendation is to use the latest versions of NuGet Client SDK packages, and to examine your project for dependencies on deprecated NuGet Client SDK packages.
 
