@@ -35,9 +35,6 @@ NuGet distribution vehicles:
 
 * Credential-provider plugins remain available across restores in the same MSBuild build, avoiding null-reference errors and authentication failures caused by premature teardown ([NuGet/Home#15044](https://github.com/NuGet/Home/issues/15044)).
 
-* `NuGet.Configuration` can read and write package update cooldown settings ([NuGet/Home#15026](https://github.com/NuGet/Home/issues/15026)).
-  This adds configuration APIs, not cooldown enforcement.
-
 * Backspace in the Package Manager Console removes complete supplementary Unicode characters without corrupting the input ([NuGet/Home#15025](https://github.com/NuGet/Home/issues/15025)).
 
 [List of commits in this release](https://github.com/NuGet/NuGet.Client/compare/7.10.0.40...7.11.0.24)
