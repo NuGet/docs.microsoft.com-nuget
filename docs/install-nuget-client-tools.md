@@ -5,6 +5,7 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 04/13/2026
 ms.topic: how-to
+ai-usage: ai-generated
 # customer intent: As a developer, I want to become familiar with NuGet client tools and find out how to install them so that I can use them to manage NuGet packages in my projects.
 ---
 
@@ -31,7 +32,7 @@ To get started creating NuGet packages, see these articles:
 | Tool | Description | Download |
 | --- | --- | --- |
 | [dotnet SDK](#dotnet-sdk) | The CLI tool for .NET and .NET Standard libraries, and for any [SDK-style project](resources/check-project-format.md) such as one that targets the .NET Framework. This CLI tool is included with the .NET SDK and provides core NuGet features on all platforms. In Visual Studio 2017 and later, the dotnet CLI is automatically installed with any .NET-related workloads. | [.NET SDK](https://dotnet.microsoft.com/download) |
-| [nuget.exe](#nugetexe-cli) | The CLI tool for .NET Framework libraries and for any [non-SDK-style project](resources/check-project-format.md) such as one that targets .NET Standard libraries. This CLI tool provides all NuGet capabilities on Windows and most features on macOS and Linux when running under [Mono](https://www.mono-project.com/docs/getting-started/install/). | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [nuget.exe](#nugetexe-cli) | The original command-line tool for working with NuGet packages. Use it on Windows for .NET Framework libraries and [non-SDK-style projects](resources/check-project-format.md). It isn't supported on Mono, Linux, or macOS. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
 | [Visual Studio](#visual-studio) | A full-fledged integrated development environment (IDE) that includes NuGet Package Manager. Visual Studio provides the [Package Manager UI](consume-packages/install-use-packages-visual-studio.md) and the [Package Manager Console (PowerShell on Windows)](consume-packages/install-use-packages-powershell.md). You can use these tools to run most NuGet operations. | [Visual Studio](https://visualstudio.microsoft.com/downloads/) |
 | [Visual Studio Code](https://code.visualstudio.com/docs) | A lightweight, open-source code editor for Windows, macOS, and Linux that offers NuGet capabilities through marketplace extensions. You can also use the dotnet SDK or `nuget.exe` CLI tools from within Visual Studio Code. | [Visual Studio Code](https://code.visualstudio.com/Download/) |
 
@@ -43,7 +44,8 @@ Package Manager Console commands work only within Visual Studio on Windows and d
 
 For the Visual Studio for Windows support policy, see [Visual Studio Product Lifecycle and Servicing](/visualstudio/releases/2026/servicing-vs).
 
-The most recent version of `nuget.exe` is fully supported and can be relied on for bug fixes, updates, and enhancements.
+The most recent version of `nuget.exe` is fully supported on Windows and can be relied on for bug fixes, updates, and enhancements.
+`nuget.exe` isn't supported on Mono, Linux, or macOS.
 For more information about the `nuget.exe` support policy, see [Modern Lifecycle Policy](/lifecycle/policies/modern).
 
 For the .NET SDK support policy, see [.NET and .NET Core Support Policy](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
@@ -87,7 +89,9 @@ To find out how to use basic commands with the dotnet SDK CLI tool, see [Install
 
 ### nuget.exe CLI
 
-The NuGet CLI, `nuget.exe`, is the command-line utility for Windows that provides all NuGet capabilities. This CLI can also run on macOS and Linux by using [Mono](https://www.mono-project.com/docs/getting-started/install/) with some limitations.
+The NuGet CLI, `nuget.exe`, is the original command-line tool for working with NuGet packages on Windows.
+`nuget.exe` isn't supported on Mono, Linux, or macOS.
+On Linux and macOS, use the [dotnet CLI](#dotnet-sdk) included with the .NET SDK instead.
 
 To find out how to use basic commands with the `nuget.exe` CLI tool, see [Manage NuGet packages with the nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md).
 
@@ -99,27 +103,26 @@ To find out how to use basic commands with the `nuget.exe` CLI tool, see [Manage
 
 The following table compares the available features for the dotnet CLI, `nuget.exe` CLI, and Visual Studio tools for supported platforms.
 
-| Feature | dotnet CLI | nuget CLI (Windows) | nuget CLI (Mono) | Visual Studio |
-| --- | --- | --- | --- | --- |
-| Search packages | &#10004; | &#10004; | &#10004; | &#10004; |
-| Install or uninstall packages | &#10004; | &#10004; (1) | &#10004; | &#10004; |
-| Update packages | &#10004; | &#10004; | | &#10004; |
-| Restore packages | &#10004; | &#10004; | &#10004; (2) | &#10004; |
-| Manage package feeds (sources) | &#10004; | &#10004; | &#10004; | &#10004; |
-| Manage packages on a feed | &#10004; | &#10004; | &#10004; | |
-| Set API keys for feeds | | &#10004; | &#10004; | |
-| Create packages (3) | &#10004; | &#10004; | &#10004; (4) | &#10004; |
-| Publish packages | &#10004; | &#10004; | &#10004; | &#10004; |
-| Replicate packages | | &#10004; | &#10004; | |
-| Manage *global-packages* and cache folders | &#10004; | &#10004; | &#10004; | |
-| Manage NuGet configuration | &#10004; | &#10004; | &#10004; | |
+| Feature | dotnet CLI | nuget CLI | Visual Studio |
+| --- | --- | --- | --- |
+| Search packages | &#10004; | &#10004; | &#10004; |
+| Install or uninstall packages | &#10004; | &#10004; (1) | &#10004; |
+| Update packages | &#10004; | &#10004; (2) | &#10004; |
+| Restore packages | &#10004; | &#10004; | &#10004; |
+| Manage package feeds (sources) | &#10004; | &#10004; | &#10004; |
+| Manage packages on a feed | &#10004; | &#10004; | |
+| Set API keys for feeds | | &#10004; | |
+| Create packages (3) | &#10004; | &#10004; | &#10004; |
+| Publish packages | &#10004; | &#10004; | &#10004; |
+| Replicate packages | | &#10004; | |
+| Manage *global-packages* and cache folders | &#10004; | &#10004; | |
+| Manage NuGet configuration | &#10004; | &#10004; | |
 
 Feature notes:
 
 - (1) Using this feature doesn't affect project files. Use the dotnet SDK CLI tool instead.
-- (2) This feature works only with *packages.config* files and not with solution (*.sln* or *.slnx*) files.
+- (2) This feature supports `packages.config` only and doesn't run package install or uninstall scripts.
 - (3) Various advanced package features are available through the CLI only, because they aren't represented in the Visual Studio UI tools.
-- (4) This feature works with *.nuspec* files but not with project files.
 
 ## Upcoming features
 

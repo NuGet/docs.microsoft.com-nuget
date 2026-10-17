@@ -5,6 +5,7 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/23/2018
 ms.topic: reference
+ai-usage: ai-generated
 ---
 
 # NuGet CLI reference
@@ -29,8 +30,8 @@ To learn how to use basic commands with the `nuget.exe` CLI, see [Install and us
 See [feature availability](../install-nuget-client-tools.md#feature-availability) for exact details.
 
 - All commands are available on Windows.
-- All commands work with nuget.exe running on Mono except where indicated for `pack`, `restore`, and `update`.
-- The `pack`, `restore`, `delete`, `locals`, and `push` commands are also available on Mac and Linux through the dotnet CLI.
+- `nuget.exe` isn't supported on Mono, Linux, or macOS.
+- Use the [dotnet CLI](/dotnet/core/tools/) for NuGet operations on Linux and macOS, including the `pack`, `restore`, `delete`, `locals`, and `push` commands.
 
 ## Commands and applicability
 
