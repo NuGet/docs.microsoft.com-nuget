@@ -3,8 +3,9 @@ title: .NET Compiler Platform Analyzer Formats for NuGet
 description: Conventions for .NET analyzers that are packaged and distributed with NuGet packages that implement an API or library.
 author: JonDouglas
 ms.author: jodou
-ms.date: 01/09/2017
+ms.date: 09/18/2026
 ms.topic: concept-article
+ai-usage: ai-assisted
 ---
 
 # Analyzer NuGet formats
@@ -13,38 +14,42 @@ The .NET Compiler Platform (also known as "Roslyn") allows developers to create 
 
 Analyzers themselves are typically packaged and distributed as part of the NuGet packages that implement the API or library in question.
 
-For a good example, see the [System.Runtime.Analyzers](https://www.nuget.org/packages/System.Runtime.Analyzers) package, which has the following contents:
+For a good example, see the [CommunityToolkit.Mvvm 8.4.2](https://www.nuget.org/packages/CommunityToolkit.Mvvm/8.4.2) package, which includes the following analyzer and build assets:
 
-- analyzers\dotnet\System.Runtime.Analyzers.dll
-- analyzers\dotnet\cs\System.Runtime.CSharp.Analyzers.dll
-- analyzers\dotnet\vb\System.Runtime.VisualBasic.Analyzers.dll
-- build\System.Runtime.Analyzers.Common.props
-- build\System.Runtime.Analyzers.props
-- build\System.Runtime.CSharp.Analyzers.props
-- build\System.Runtime.VisualBasic.Analyzers.props
-- tools\install.ps1
-- tools\uninstall.ps1
+- analyzers\dotnet\roslyn4.0\cs\CommunityToolkit.Mvvm.SourceGenerators.dll
+- analyzers\dotnet\roslyn4.3\cs\CommunityToolkit.Mvvm.SourceGenerators.dll
+- analyzers\dotnet\roslyn4.12\cs\CommunityToolkit.Mvvm.SourceGenerators.dll
+- analyzers\dotnet\roslyn5.0\cs\CommunityToolkit.Mvvm.SourceGenerators.dll
+- analyzers\dotnet\roslyn4.0\cs\CommunityToolkit.Mvvm.CodeFixers.dll
+- analyzers\dotnet\roslyn4.3\cs\CommunityToolkit.Mvvm.CodeFixers.dll
+- analyzers\dotnet\roslyn4.12\cs\CommunityToolkit.Mvvm.CodeFixers.dll
+- analyzers\dotnet\roslyn5.0\cs\CommunityToolkit.Mvvm.CodeFixers.dll
+- buildTransitive\CommunityToolkit.Mvvm.SourceGenerators.targets
 
-As you can see, you place the analyzer DLLs into an `analyzers` folder in the package.
-
-Props files, which are included to disable legacy FxCop rules in favor of the analyzer implementation, are placed in the `build` folder.
-
-Install and uninstall scripts that support projects using `packages.config` are placed in `tools`.
-
-Also note that because this package has no platform-specific requirements, the `platform` folder is omitted.
+The analyzer DLLs are placed in the `analyzers` folder, with separate variants for supported Roslyn compiler API versions.
+The targets file in `buildTransitive` provides supporting build logic to the project and to projects that reference it.
 
 
 ## Analyzers path format
 
-The use of the `analyzers` folder is similar to that used for [target frameworks](../create-packages/supporting-multiple-target-frameworks.md), except the specifiers in the path describe development host dependencies instead of build-time. The general format is as follows:
+The use of the `analyzers` folder is similar to that used for [target frameworks](../create-packages/supporting-multiple-target-frameworks.md), except the specifiers in the path describe development host dependencies instead of build-time. Analyzer assemblies are `.dll` files anywhere under the `analyzers` folder, except satellite `.resources.dll` assemblies. The general format is as follows:
 
 ```
-$/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
+$/analyzers/{framework_name}/{compiler_api_version}/{supported_language}/{analyzer_name}.dll
 ```
 
-- **framework_name** and **version**: the *optional* API surface area of the .NET Framework that the contained DLLs need to run. `dotnet` is presently the only valid value because Roslyn is the only host that can run analyzers. If no target is specified, DLLs are assumed to apply to *all* targets.
-- **supported_language**: the language for which the DLL applies, one of `cs` (C#) and `vb` (Visual Basic), and `fs` (F#). The language indicates that the analyzer should be loaded only for a project using that language. If no language is specified then the DLL is assumed to apply to *all* languages that support analyzers.
-- **analyzer_name**: specifies the DLLs of the analyzer. If you need additional files beyond DLLs, they must be included through a targets or properties files.
+The path segments are optional. The language and compiler API version segments can appear at any depth.
+
+- **framework_name**: the development host that loads the analyzer. `dotnet` is presently the only valid value because Roslyn is the only supported host. If no host is specified, the DLL is assumed to apply to all hosts.
+- **compiler_api_version**: the minimum supported compiler API version, in the form `roslynX.Y`, such as `roslyn4.0`. When a package contains multiple versioned analyzer variants, the .NET SDK selects the highest version that is not greater than the compiler version in use. If no compiler API version is specified, the analyzer applies to all compiler versions.
+- **supported_language**: the language for which the DLL applies, one of `cs` (C#), `vb` (Visual Basic), and `fs` (F#). The analyzer is loaded only for projects using that language. If no language is specified, the DLL is assumed to apply to all languages that support analyzers.
+- **analyzer_name**: specifies the analyzer DLL. If you need additional files beyond DLLs, they must be included through targets or properties files.
+
+For example:
+
+- `analyzers/dotnet/MyAnalyzer.dll`: analyzer for all supported languages and compiler versions.
+- `analyzers/dotnet/cs/MyAnalyzer.dll`: C# analyzer for all compiler versions.
+- `analyzers/dotnet/roslyn4.0/cs/MyAnalyzer.dll`: C# analyzer for Roslyn 4.0 and later.
 
 
 ## Install and uninstall scripts
