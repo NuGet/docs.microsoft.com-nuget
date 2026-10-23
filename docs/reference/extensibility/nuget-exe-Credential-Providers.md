@@ -49,6 +49,11 @@ When loading credential providers, `nuget.exe` searches the above locations, in 
 
 ## Creating a nuget.exe credential provider
 
+Create a [cross-platform authentication plugin](NuGet-Cross-Platform-Authentication-Plugin.md#creating-a-cross-platform-authentication-plugin).
+
+<details>
+<summary>Legacy credential provider protocol</summary>
+
 A V1 credential provider is a command-line executable, named in the form `CredentialProvider*.exe`, that gathers inputs, acquires credentials as appropriate, and then returns the appropriate exit status code and standard output.
 
 A provider must do the following:
@@ -93,21 +98,4 @@ Example stdout:
     "Message"  : "" }
 ```
 
-## Troubleshooting a credential provider
-
-At present, NuGet doesn't provide much direct support for debugging custom credential providers; [issue 4598](https://github.com/NuGet/Home/issues/4598) is tracking this work.
-
-You can also do the following:
-
-- Run nuget.exe with the `-verbosity` switch to inspect detailed output.
-- Add debug messages to `stdout` in appropriate places.
-- Be sure that you're using nuget.exe 3.3 or higher.
-- Attach debugger on startup with this code snippet:
-
-    ```cs
-    while (!Debugger.IsAttached)
-    {
-        System.Threading.Thread.Sleep(100);
-    }
-    Debugger.Break();
-    ```
+</details>
