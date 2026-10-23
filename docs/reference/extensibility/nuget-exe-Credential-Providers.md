@@ -5,7 +5,6 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 12/12/2017
 ms.topic: concept-article
-ai-usage: ai-generated
 ---
 
 # Authenticating feeds with nuget.exe credential providers
@@ -53,7 +52,7 @@ Create a [cross-platform authentication plugin](NuGet-Cross-Platform-Authenticat
 
 <details>
 <summary>Legacy credential provider protocol</summary>
-
+### Creating a legacy credential provider protocol
 A V1 credential provider is a command-line executable, named in the form `CredentialProvider*.exe`, that gathers inputs, acquires credentials as appropriate, and then returns the appropriate exit status code and standard output.
 
 A provider must do the following:
@@ -65,7 +64,7 @@ A provider must do the following:
 - Optionally emit additional trace logging to stderr. No secrets should ever be written to stderr, since at verbosity levels "normal" or "detailed" such traces are echoed by NuGet to the console.
 - Unexpected parameters should be ignored, providing forward compatibility with future versions of NuGet.
 
-### Input parameters
+#### Input parameters
 
 | Parameter/Switch |Description|
 |----------------|-----------|
@@ -74,7 +73,7 @@ A provider must do the following:
 | IsRetry | If present, indicates that this attempt is a retry of a previously failed attempt. Providers typically use this flag to ensure that they bypass any existing cache and prompt for new credentials if possible.|
 | Verbosity {value} | If present, one of the following values: "normal", "quiet", or "detailed". If no value is supplied, defaults to "normal". Providers should use this as an indication of the level of optional logging to emit to the standard error stream. |
 
-### Exit codes
+#### Exit codes
 
 | Code |Result | Description |
 |----------------|-----------|-----------|
@@ -82,7 +81,7 @@ A provider must do the following:
 | 1 | ProviderNotApplicable | The current provider does not provide credentials for the given URI.|
 | 2 | Failure | The provider is the correct provider for the given URI, but cannot provide credentials. In this case, nuget.exe will not retry authentication and will fail. A typical example is when a user cancels an interactive login. |
 
-### Standard output
+#### Standard output
 
 | Property |Notes|
 |----------------|-----------|
