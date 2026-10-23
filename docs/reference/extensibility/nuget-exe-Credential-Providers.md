@@ -34,7 +34,7 @@ For installation locations and discovery rules, see [Plugin installation and dis
 
 V1 credential providers can be used in 3 ways:
 
-- **From an environment variable**: Credential providers can be stored anywhere and made accessible to `nuget.exe` by setting the `%NUGET_CREDENTIALPROVIDERS_PATH%` environment variable to the directories containing providers.
+- **From an environment variable**: Credential providers can be stored anywhere and made accessible to `nuget.exe` by setting the `NUGET_CREDENTIALPROVIDERS_PATH` environment variable to the directories containing providers.
   This variable can be a semicolon-separated list (for example, `path1;path2`) if you have multiple locations.
 
 - **Globally**: to make a credential provider available to all instances of `nuget.exe` run under the current user's profile, add it to `%LocalAppData%\NuGet\CredentialProviders`.
