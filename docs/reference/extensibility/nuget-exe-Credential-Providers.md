@@ -53,7 +53,7 @@ Create a [cross-platform authentication plugin](NuGet-Cross-Platform-Authenticat
 <details>
 <summary>Legacy credential provider protocol</summary>
 
-### Creating a legacy credential provider protocol
+### Creating a legacy credential provider
 
 A V1 credential provider is a command-line executable, named in the form `CredentialProvider*.exe`, that gathers inputs, acquires credentials as appropriate, and then returns the appropriate exit status code and standard output.
 
