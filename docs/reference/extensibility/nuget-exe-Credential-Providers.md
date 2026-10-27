@@ -9,17 +9,38 @@ ms.topic: concept-article
 
 # Authenticating feeds with nuget.exe credential providers
 
-In version `3.3` support was added for `nuget.exe` specific (v1) credential providers. Since then, in version `4.8` [support for (v2) credential providers](NuGet-Cross-Platform-Authentication-Plugin.md) that work across all command line scenarios (`nuget.exe`, `dotnet.exe`, `msbuild.exe`) was added.
+Use [cross-platform (V2) credential providers](NuGet-Cross-Platform-Authentication-Plugin.md) to authenticate feeds with `nuget.exe` 4.8 and later.
+These providers also work with the `dotnet` CLI, MSBuild, and Visual Studio.
+
+This article also describes the `nuget.exe`-specific (V1) model, deprecated in [NuGet 5.0](../../release-notes/NuGet-5.0-RTM.md).
 
 See [Consuming Packages from authenticated feeds](../../consume-packages/consuming-packages-authenticated-feeds.md) for more details on all authentication approaches.
 
 ## nuget.exe credential provider discovery
 
-nuget.exe credential providers can be used in 3 ways:
+V1 and V2 providers use different environment variables and installation locations.
 
-- **Globally**: to make a credential provider available to all instances of `nuget.exe` run under the current user's profile, add it to `%LocalAppData%\NuGet\CredentialProviders`. You may need to create the `CredentialProviders` folder. Credential providers can be installed at the root of the `CredentialProviders`  folder or within a subfolder. If a credential provider has multiple files/assemblies, you can use subfolders to keep the providers organized.
+### Cross-platform (V2) credential providers
 
-- **From an environment variable**: Credential providers can be stored anywhere and made accessible to `nuget.exe` by setting the `%NUGET_CREDENTIALPROVIDERS_PATH%` environment variable to the provider location. This variable can be a semicolon-separated list (for example, `path1;path2`) if you have multiple locations.
+These providers use `NUGET_PLUGIN_PATHS` or, in NuGet 5.3 and later, `NUGET_NETFX_PLUGIN_PATHS`.
+For `nuget.exe`, `NUGET_NETFX_PLUGIN_PATHS` takes precedence over `NUGET_PLUGIN_PATHS`.
+Set these variables to a semicolon-separated list of absolute paths to plugin executables.
+For installation locations and discovery rules, see [Plugin installation and discovery](NuGet-Cross-Platform-Plugins.md#plugin-installation-and-discovery).
+
+### nuget.exe-specific (V1) credential providers
+
+> [!WARNING]
+> These credential providers are deprecated starting with [NuGet 5.0](../../release-notes/NuGet-5.0-RTM.md) and [will be removed in a future version of `nuget.exe`](https://github.com/NuGet/Home/issues/7586).
+
+V1 credential providers can be used in 3 ways:
+
+- **From an environment variable**: Credential providers can be stored anywhere and made accessible to `nuget.exe` by setting the `NUGET_CREDENTIALPROVIDERS_PATH` environment variable to the directories containing providers.
+  This variable can be a semicolon-separated list (for example, `path1;path2`) if you have multiple locations.
+
+- **Globally**: to make a credential provider available to all instances of `nuget.exe` run under the current user's profile, add it to `%LocalAppData%\NuGet\CredentialProviders`.
+  You might need to create the `CredentialProviders` folder.
+  Credential providers can be installed at the root of the `CredentialProviders` folder or within a subfolder.
+  If a credential provider has multiple files/assemblies, you can use subfolders to keep the providers organized.
 
 - **Alongside nuget.exe**: nuget.exe credential providers can be placed in the same folder as `nuget.exe`.
 
@@ -27,7 +48,14 @@ When loading credential providers, `nuget.exe` searches the above locations, in 
 
 ## Creating a nuget.exe credential provider
 
-A credential provider is a command-line executable, named in the form `CredentialProvider*.exe`, that gathers inputs, acquires credentials as appropriate, and then returns the appropriate exit status code and standard output.
+Create a [cross-platform authentication plugin](NuGet-Cross-Platform-Authentication-Plugin.md#creating-a-cross-platform-authentication-plugin).
+
+<details>
+<summary>Legacy credential provider protocol</summary>
+
+### Creating a legacy credential provider
+
+A V1 credential provider is a command-line executable, named in the form `CredentialProvider*.exe`, that gathers inputs, acquires credentials as appropriate, and then returns the appropriate exit status code and standard output.
 
 A provider must do the following:
 
@@ -38,7 +66,7 @@ A provider must do the following:
 - Optionally emit additional trace logging to stderr. No secrets should ever be written to stderr, since at verbosity levels "normal" or "detailed" such traces are echoed by NuGet to the console.
 - Unexpected parameters should be ignored, providing forward compatibility with future versions of NuGet.
 
-### Input parameters
+#### Input parameters
 
 | Parameter/Switch |Description|
 |----------------|-----------|
@@ -47,7 +75,7 @@ A provider must do the following:
 | IsRetry | If present, indicates that this attempt is a retry of a previously failed attempt. Providers typically use this flag to ensure that they bypass any existing cache and prompt for new credentials if possible.|
 | Verbosity {value} | If present, one of the following values: "normal", "quiet", or "detailed". If no value is supplied, defaults to "normal". Providers should use this as an indication of the level of optional logging to emit to the standard error stream. |
 
-### Exit codes
+#### Exit codes
 
 | Code |Result | Description |
 |----------------|-----------|-----------|
@@ -55,7 +83,7 @@ A provider must do the following:
 | 1 | ProviderNotApplicable | The current provider does not provide credentials for the given URI.|
 | 2 | Failure | The provider is the correct provider for the given URI, but cannot provide credentials. In this case, nuget.exe will not retry authentication and will fail. A typical example is when a user cancels an interactive login. |
 
-### Standard output
+#### Standard output
 
 | Property |Notes|
 |----------------|-----------|
@@ -71,21 +99,4 @@ Example stdout:
     "Message"  : "" }
 ```
 
-## Troubleshooting a credential provider
-
-At present, NuGet doesn't provide much direct support for debugging custom credential providers; [issue 4598](https://github.com/NuGet/Home/issues/4598) is tracking this work.
-
-You can also do the following:
-
-- Run nuget.exe with the `-verbosity` switch to inspect detailed output.
-- Add debug messages to `stdout` in appropriate places.
-- Be sure that you're using nuget.exe 3.3 or higher.
-- Attach debugger on startup with this code snippet:
-
-    ```cs
-    while (!Debugger.IsAttached)
-    {
-        System.Threading.Thread.Sleep(100);
-    }
-    Debugger.Break();
-    ```
+</details>
