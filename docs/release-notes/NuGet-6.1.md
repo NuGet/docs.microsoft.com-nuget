@@ -15,7 +15,7 @@ NuGet distribution vehicles:
 |:---|:---|:---|
 | [**6.1.0**](https://nuget.org/downloads) | [Visual Studio 2022 version 17.1](https://visualstudio.microsoft.com/downloads/) | [6.0.200](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio 2022 with.NET Core workload
+<sup>1</sup> Installed with Visual Studio 2022 with .NET Core workload
 
 ## Summary: What's New in 6.1
 
@@ -75,9 +75,9 @@ NuGet distribution vehicles:
 
 * The strings "ms"  and "sec" are not localized on Output - Package Manager window. - [#11297](https://github.com/NuGet/Home/issues/11297)
 
-* Sort Package Source dropdown list using locale/culture setttings in PM UI - [#11298](https://github.com/NuGet/Home/issues/11298)
+* Sort Package Source dropdown list using locale/culture settings in PM UI - [#11298](https://github.com/NuGet/Home/issues/11298)
 
-* Update SDPX license list from da7ecca to fafa781 - [#11309](https://github.com/NuGet/Home/issues/11309)
+* Update SPDX license list from da7ecca to fafa781 - [#11309](https://github.com/NuGet/Home/issues/11309)
 
 * [Bug]: NuGet.Localization isn't generated - [#11328](https://github.com/NuGet/Home/issues/11328)
 

@@ -18,7 +18,7 @@ NuGet distribution vehicles:
 | [**6.3.3**](https://nuget.org/downloads) | N/A | [6.0.410](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 | [**6.3.4**](https://nuget.org/downloads) | N/A | [6.0.419](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio 17.3 with.NET Core workload
+<sup>1</sup> Installed with Visual Studio 17.3 with .NET Core workload
 
 ## Summary: What's New in 6.3.4
 
@@ -37,7 +37,7 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 6.3
 
-* [Feature] Allow to user to input custom (floating) versions through the PM UI - [#9829](https://github.com/NuGet/Home/issues/9829) [#3788](https://github.com/NuGet/Home/issues/3788)
+* [Feature] Allow the user to input custom (floating) versions through the PM UI - [#9829](https://github.com/NuGet/Home/issues/9829) [#3788](https://github.com/NuGet/Home/issues/3788)
 
 * [Feature] NuGet warns when duplicate PackageReference, PackageVersion or PackageDownload items are specified - [#9467](https://github.com/NuGet/Home/issues/9467) [#9864](https://github.com/NuGet/Home/issues/9864)
 
@@ -81,7 +81,7 @@ NuGet distribution vehicles:
 
 * When restore raises an NU1301, build might fail with a `project.assets.json doesn't have a target for 'net6.0-windows10.0.19041.0` like error that's a red herring - [#11862](https://github.com/NuGet/Home/issues/11862)
 
-* [Bug]: Package source option "All" appears unsorted in the in the list when using VS in non-English languages - [#11857](https://github.com/NuGet/Home/issues/11857)
+* [Bug]: Package source option "All" appears unsorted in the list when using VS in non-English languages - [#11857](https://github.com/NuGet/Home/issues/11857)
 
 * [Bug]: [Bug Bash] The “Version” dropdown box is blank in “Consolidate” tab of solution-level PM UI - [#11806](https://github.com/NuGet/Home/issues/11806)
 
