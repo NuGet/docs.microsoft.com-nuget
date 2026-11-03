@@ -51,6 +51,7 @@ Available commands and applicability to package creation, package consumption, a
 | Secondary Commands | Applicable Roles | NuGet Version | Description |
 | --- | --- | --- | --- |
 | [add](cli-reference/cli-ref-add.md) | Publishing | 3.3+ | Adds a package to a non-HTTP package source using hierarchical layout. For HTTP sources, use *push*. |
+| [client-certs](cli-reference/cli-ref-client-certs.md) | Consumption, Publishing | 5.7+ | Lists, adds, updates, or removes HTTPS client certificate configurations for package sources. |
 | [delete](cli-reference/cli-ref-delete.md) | Publishing | All | Removes or unlists a package from a package source. |
 | [init](cli-reference/cli-ref-init.md) | Creation | 3.3+ | Adds packages from a folder to a package source using hierarchical layout. |
 | [install](cli-reference/cli-ref-install.md) | Consumption | All | Installs a package into the current project but does not modify projects or reference files. |
@@ -66,9 +67,9 @@ NuGet CLI commands by applicable roles:
 
 | Role | Commands |
 | --- | --- |
-| Consumption | `config`, `help`, `install`, `list`, `locals`, `restore`, `search`, `setapikey`, `sources`, `update` |
+| Consumption | `client-certs`, `config`, `help`, `install`, `list`, `locals`, `restore`, `search`, `setapikey`, `sources`, `update` |
 | Creation | `config`, `help`, `init`, `pack`, `spec` |
-| Publishing | `add`, `config`, `delete`, `help`, `list`, `push`, `setapikey`, `sources` |
+| Publishing | `add`, `client-certs`, `config`, `delete`, `help`, `list`, `push`, `setapikey`, `sources` |
 
 Developers concerned only with consuming packages, for example, need only understand that subset of NuGet commands.
 

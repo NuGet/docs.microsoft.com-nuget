@@ -5,6 +5,7 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 06/24/2019
 ms.topic: reference
+ai-usage: ai-generated
 ---
 
 # dotnet CLI commands
@@ -22,6 +23,7 @@ For the complete command reference on `dotnet` CLI, see [.NET Core command-line 
 - [**dotnet restore**](/dotnet/core/tools/dotnet-restore?tabs=netcore2x): Restores the dependencies and tools of a project. As of NuGet 4.0, this runs the same code as `nuget restore`.
 - [**dotnet nuget locals**](/dotnet/core/tools/dotnet-nuget-locals): Lists locations of the *global-packages*, *http-cache*, and *temp* folders and clears the contents of those folders.
 - [**dotnet new nugetconfig**](/dotnet/core/tools/dotnet-new): Creates a [`nuget.config`](../reference/nuget-config-file.md) file to configure NuGet's behavior.
+- [**dotnet nuget add client-cert**](/dotnet/core/tools/dotnet-nuget-add-client-cert): Adds an HTTPS client certificate configuration for a package source.
 
 ## Package creation
 
