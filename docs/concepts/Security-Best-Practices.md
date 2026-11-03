@@ -5,6 +5,7 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 07/16/2026
 ms.topic: best-practice
+ai-usage: ai-generated
 ---
 
 # Best practices for a secure software supply chain
@@ -143,6 +144,13 @@ This may include:
 You can use the [dotnet CLI](/dotnet/core/tools/dotnet-list-package) to list any known deprecated or vulnerable dependencies you may have inside your project or solution.
 You can use the command `dotnet list package --deprecated` or `dotnet list package --vulnerable` to provide you a list of any known deprecations or vulnerabilities.
 [NuGetAudit](Auditing-Packages.md) can warn you about known vulnerable dependencies, and is enabled by default when [a source provides a vulnerabilities database](Auditing-Packages.md#audit-sources).
+
+### Minimum package publish age
+
+Configure a [minimum package publish age](../consume-packages/minimum-package-publish-age.md) to delay automatic selection of newly published versions with supported NuGet commands.
+The delay gives package owners and the community time to identify malicious releases, but it doesn't guarantee package safety.
+It can also delay legitimate security fixes, so review the tradeoff as part of your update policy.
+Ordinary restore doesn't enforce package ages.
 
 ### GitHub vulnerable dependencies
 

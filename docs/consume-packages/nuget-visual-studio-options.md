@@ -5,6 +5,7 @@ author: donnie-msft
 ms.author: eagoodso
 ms.date: 09/29/2026
 ms.topic: reference
+ai-usage: ai-generated
 f1_keywords:
   - "vs.toolsoptionspages.nuget_package_manager"
   - "vs.toolsoptionspages.nuget_package_manager.general"
@@ -104,6 +105,23 @@ Checkboxes may be toggled directly in the table.
 Press "Save" on the Add/Edit dialog and the changes will be updated in the relevant NuGet.Config file.
 
 ![Add dialog on the Package Sources page](media/vsoptions/package-source-add.png)
+
+### Minimum publish age
+
+Starting with Visual Studio 18.12, you can configure a [minimum package publish age](minimum-package-publish-age.md) on the **Sources** options page.
+
+**Minimum publish age (hours)** sets the delay for a package source in whole hours.
+A value of `0` disables the delay for that source.
+
+The value is stored as the source's [`minPublishAgeHours`](../reference/nuget-config-file.md#packagesources) attribute in `nuget.config`.
+
+The **Minimum publish age exceptions** section appears when a non-machine-wide package source has a nonzero minimum age or an exception is already configured.
+Its package ID patterns bypass the minimum age on all sources.
+For example, `Contoso.Library` exempts one package, and `Contoso.*` exempts all packages with that prefix.
+An exception applies to every version of a matching package.
+
+These settings configure the policy used by supported operations; ordinary package restore doesn't enforce package ages.
+For supported commands and floating-version limitations, see [Minimum package publish age](minimum-package-publish-age.md#how-package-selection-uses-the-age).
 
 ### Audit Sources
 
