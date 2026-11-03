@@ -3,7 +3,7 @@ title: Minimum package publish age
 description: Delay automatic selection of newly published NuGet package versions by configuring a minimum publish age for each package source.
 author: zivkan
 ms.date: 11/03/2026
-ms.topic: conceptual
+ms.topic: concept-article
 ai-usage: ai-generated
 ---
 
