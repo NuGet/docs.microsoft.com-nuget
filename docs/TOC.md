@@ -307,6 +307,7 @@
 ### [NU5047](reference/errors-and-warnings/NU5047.md)
 ### [NU5048](reference/errors-and-warnings/NU5048.md)
 ### [NU5049](reference/errors-and-warnings/NU5049.md)
+### [NU5050](reference/errors-and-warnings/NU5050.md)
 ### [NU5051](reference/errors-and-warnings/NU5051.md)
 ### [NU5052](reference/errors-and-warnings/NU5052.md)
 ### [NU5100](reference/errors-and-warnings/NU5100.md)
@@ -340,6 +341,7 @@
 ### [NU5129](reference/errors-and-warnings/NU5129.md)
 ### [NU5130](reference/errors-and-warnings/NU5130.md)
 ### [NU5131](reference/errors-and-warnings/NU5131.md)
+### [NU5132](reference/errors-and-warnings/NU5132.md)
 ### [NU5133](reference/errors-and-warnings/NU5133.md)
 ### [NU5500](reference/errors-and-warnings/NU5500.md)
 ### [NU5501](reference/errors-and-warnings/NU5501.md)
@@ -365,6 +367,7 @@
 ## Release notes
 ### [Known Issues](release-notes/Known-Issues.md)
 ### NuGet 7.x
+#### [NuGet 7.11](release-notes/NuGet-7.11.md)
 #### [NuGet 7.10](release-notes/NuGet-7.10.md)
 #### [NuGet 7.9](release-notes/NuGet-7.9.md)
 #### [NuGet 7.8](release-notes/NuGet-7.8.md)

@@ -1,11 +1,17 @@
 ---
 title: Include
-description: Find out how to install the nuget.exe CLI tool on Windows, macOS, and Linux. Get step-by-step instructions and information about various versions.
+description: Find out how to install the nuget.exe CLI tool on Windows.
 author: JonDouglas
 ms.author: jodou
 ms.date: 04/13/2026
 ms.topic: include
+ai-usage: ai-generated
 ---
+
+> [!IMPORTANT]
+> `nuget.exe` is supported only on Windows.
+> Running `nuget.exe` on Mono isn't supported, including on Linux and macOS.
+> On Linux and macOS, use the [dotnet CLI](/dotnet/core/tools/) included with the [.NET SDK](https://dotnet.microsoft.com/download) instead.
 
 # [Windows](#tab/windows)
 
@@ -16,7 +22,6 @@ If the `nuget.exe` CLI tool is already installed, you can update the tool to the
 1. Download `nuget.exe`:
 
    - To download the latest recommended version, go to [https://dist.nuget.org/win-x86-commandline/latest/nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe).
-   - To download the deprecated version 2.8.6, to maintain compatibility with older continuous integration systems, go to [https://dist.nuget.org/win-x86-commandline/v2.8.6/nuget.exe](https://dist.nuget.org/win-x86-commandline/v2.8.6/nuget.exe). Version 2.8.6 isn't compatible with [Mono](https://www.mono-project.com/docs/getting-started/install/).
    - To select a version to download, go to [nuget.org/downloads](https://nuget.org/downloads).
      - Version 5.0 and later require .NET Framework 4.7.2 or later.
      - Version 4.1.0 or later is required to publish packages to nuget.org.
@@ -27,29 +32,7 @@ If the `nuget.exe` CLI tool is already installed, you can update the tool to the
 
 # [macOS / Linux](#tab/macos+linux)
 
-Behaviors can vary slightly based on your operating system distribution.
-
-> [!NOTE]
-> Visual Studio for Mac was retired on August 31, 2024, in accordance with the [Microsoft Modern Lifecycle Policy](/lifecycle/policies/modern). You can continue to work with Visual Studio for Mac, but there are several other options for developers on macOS, such as the [C# Dev Kit extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit).
->
-> For more information about support timelines and alternatives, see [Visual Studio for Mac retired August 31, 2024](/lifecycle/announcements/visual-studio-mac-end-of-servicing).
-
-1. Install [Mono version 4.4.2 or later](https://www.mono-project.com/docs/getting-started/install/).
-
-1. At a shell prompt, run the following command:
-
-   ```bash
-   # Download the latest stable version of `nuget.exe` to /usr/local/bin.
-   sudo curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
-   ```
-
-1. Create an alias by adding the following code to the file that your operating system uses to store Bash aliases or configuration information. Typically, the *~/.bash_aliases* or *~/.bash_profile* file is used for this purpose.
-
-   ```bash
-   # Create an alias for `nuget`.
-   alias nuget="mono /usr/local/bin/nuget.exe"
-   ```
-
-1. Reload the shell. Test the installation by entering the command `nuget` with no parameters. The command should print NuGet CLI help information to the screen.
+`nuget.exe` isn't supported on Linux or macOS, including when running on Mono.
+Install the [.NET SDK](https://dotnet.microsoft.com/download) to use the [dotnet CLI](/dotnet/core/tools/) for NuGet operations instead.
 
 ---

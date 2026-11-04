@@ -83,7 +83,7 @@ To enable this capability, set the `apiKey` to a value (ideally a strong passwor
 
 If your server is already secured or you do not otherwise require an API key (for example, when using a private server on a local team network), you can set `requireApiKey` to `false`. All users with access to the server can then push packages.
 
-Starting with NuGet.Server 3.0.0, the URL for pushing packages was change to `http://<domain>/nuget`. Prior to the
+Starting with NuGet.Server 3.0.0, the URL for pushing packages was changed to `http://<domain>/nuget`. Prior to the
 3.0.0 release, the push URL was `http://<domain>/api/v2/package`.
 
 With NuGet 3.2.1 and newer, this legacy URL `/api/v2/package` is enabled in addition to `/nuget` by default via
@@ -92,7 +92,7 @@ does not work when multiple feeds are hosted in the same project.
 
 ## Removing packages from the feed
 
-With NuGet.Server, the [nuget delete](../reference/cli-reference/cli-ref-delete.md) command removes a package from the repository provided that you include the API key with the comment.
+With NuGet.Server, the [nuget delete](../reference/cli-reference/cli-ref-delete.md) command removes a package from the repository provided that you include the API key with the command.
 
 If you want to change the behavior to delist the package instead (leaving it available for package restore), change the `enableDelisting` key in `web.config` to true.
 
@@ -113,7 +113,7 @@ When `packagesPath` is omitted or left blank, the packages folder is the default
 
 ## Making packages available when you publish the web app
 
-To make packages available in the feed when you publish the application to a server, add each `.nupkg` files to the `Packages` folder in Visual Studio, then set each one's **Build Action** to **Content** and **Copy to Output Directory** to **Copy always**:
+To make packages available in the feed when you publish the application to a server, add each `.nupkg` file to the `Packages` folder in Visual Studio, then set each one's **Build Action** to **Content** and **Copy to Output Directory** to **Copy always**:
 
 ![Copying packages to the Packages folder in the project](media/Hosting_05-NuGet.Server-Package-Folder.png)
 

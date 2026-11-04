@@ -20,7 +20,7 @@ NuGet distribution vehicles:
 | [**6.0.5**](https://nuget.org/downloads) | N/A | [6.0.118](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 | [**6.0.6**](https://nuget.org/downloads) | N/A | [6.0.127](https://dotnet.microsoft.com/download/dotnet-core/6.0)<sup>1</sup> |
 
-<sup>1</sup> Installed with Visual Studio 2022 with.NET Core workload
+<sup>1</sup> Installed with Visual Studio 2022 with .NET Core workload
 
 ## Summary: What's New in 6.0.6
 
