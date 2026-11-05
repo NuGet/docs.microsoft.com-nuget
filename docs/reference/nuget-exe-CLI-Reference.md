@@ -5,7 +5,7 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/23/2018
 ms.topic: reference
-ai-usage: ai-generated
+ai-usage: ai-assisted
 ---
 
 # NuGet CLI reference

@@ -6,7 +6,7 @@ ms.author: nikolev
 ms.date: 12/22/2023
 ms.topic: how-to
 ms.custom: sfi-ropc-nochange
-ai-usage: ai-generated
+ai-usage: ai-assisted
 ---
 
 # Consuming packages from authenticated feeds

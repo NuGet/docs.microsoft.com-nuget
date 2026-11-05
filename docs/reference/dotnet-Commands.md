@@ -5,7 +5,7 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 06/24/2019
 ms.topic: reference
-ai-usage: ai-generated
+ai-usage: ai-assisted
 ---
 
 # dotnet CLI commands
