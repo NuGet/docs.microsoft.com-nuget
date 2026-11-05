@@ -1,3 +1,7 @@
+---
+ai-usage: ai-assisted
+---
+
 # [What is NuGet?](what-is-nuget.md)
 # Get started
 ## [Install NuGet client tools](install-nuget-client-tools.md)
@@ -30,6 +34,7 @@
 ### [Work with source control systems](consume-packages/packages-and-source-control.md)
 ### [Common NuGet configurations](consume-packages/configuring-nuget-behavior.md)
 ### [PackageDownload functionality](consume-packages/packagedownload-functionality.md)
+### [HTTPS client certificates](consume-packages/https-client-certificates.md)
 ## Reference packages in your project
 ### [PackageReference in project files](consume-packages/package-references-in-project-files.md)
 ### [Migrate packages.config to PackageReference](consume-packages/migrate-packages-config-to-package-reference.md)
@@ -87,8 +92,10 @@
 ## [Target frameworks](reference/target-frameworks.md)
 ## [pack and restore as MSBuild targets](reference/msbuild-targets.md)
 ## [dotnet CLI](reference/dotnet-Commands.md)
+### [dotnet nuget add client-cert](/dotnet/core/tools/dotnet-nuget-add-client-cert)
 ## [nuget.exe CLI reference](reference/nuget-exe-cli-reference.md)
 ### [add](reference/cli-reference/cli-ref-add.md)
+### [client-certs](reference/cli-reference/cli-ref-client-certs.md)
 ### [config](reference/cli-reference/cli-ref-config.md)
 ### [delete](reference/cli-reference/cli-ref-delete.md)
 ### [help or ?](reference/cli-reference/cli-ref-help.md)

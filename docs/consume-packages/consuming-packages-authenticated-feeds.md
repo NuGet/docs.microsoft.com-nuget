@@ -6,6 +6,7 @@ ms.author: nikolev
 ms.date: 12/22/2023
 ms.topic: how-to
 ms.custom: sfi-ropc-nochange
+ai-usage: ai-assisted
 ---
 
 # Consuming packages from authenticated feeds
@@ -147,3 +148,9 @@ Here is a list of credential providers we are aware of:
 * [AWS CodeArtifact NuGet Credential Provider](https://docs.aws.amazon.com/codeartifact/latest/ug/nuget-cli.html#nuget-configure-cli)
 * [Azure Artifacts Credential Provider](https://github.com/microsoft/artifacts-credprovider). This link is just for the command line credential provider.
 * [MyGet Credential Provider for Visual Studio](http://docs.myget.org/docs/reference/credential-provider-for-visual-studio).
+
+## HTTPS client certificates
+
+Some private HTTPS feeds require a client certificate for mutual TLS (mTLS) authentication, where both the client and server authenticate with certificates.
+Client certificates are configured separately from HTTP credentials, and your feed might require both.
+If your feed requires a client certificate, see [Authenticate to a feed with an HTTPS client certificate](https-client-certificates.md).
