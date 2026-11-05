@@ -18,9 +18,16 @@ The general process is as follows:
    If the installation tool is Visual Studio or the dotnet CLI, the tool first attempts to install the package. If it's incompatible, the package is not added to the project file or `packages.config`.
 
 2. Acquire the package:
-   - Check if the package (by exact identifer and version number) is already installed in the *global-packages* folder as described on [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md).
+   - Check if the package (by exact identifier and version number) is already installed in the *global-packages* folder.
+     For PackageReference projects, also check the configured fallback package folders.
+     See [Package installation directories](package-installation-directories.md) for information about these locations.
 
-   - If the package is not in the *global-packages* folder, attempt to retrieve it from the sources listed in the [configuration files](../consume-packages/Configuring-NuGet-Behavior.md). [Package Source Mapping](../consume-packages/package-source-mapping.md) configurations are applied at this point. For online sources, attempt first to retrieve the package from the HTTP cache unless `-NoHttpCache` is specified with `nuget.exe` commands or `--no-http-cache` is specified with `dotnet restore`. (Visual Studio and `dotnet add package` always use the cache.) If a package is used from the cache, "CACHE" appears in the output. The cache has an expiration time of 30 minutes.
+   - If the package isn't already installed in these locations, attempt to retrieve it from the sources listed in the [configuration files](../consume-packages/Configuring-NuGet-Behavior.md).
+     [Package Source Mapping](../consume-packages/package-source-mapping.md) configurations are applied at this point.
+     For online sources, attempt first to retrieve the package from the HTTP cache unless `-NoHttpCache` is specified with `nuget.exe` commands or `--no-http-cache` is specified with `dotnet restore`.
+     (Visual Studio and `dotnet add package` always use the cache.)
+     If a package is used from the cache, "CACHE" appears in the output.
+     The cache has an expiration time of 30 minutes.
 
    - If the package has been specified using a [floating version](../consume-packages/Package-References-in-Project-Files.md#floating-versions), or without a minimum version, NuGet *will* contact all sources to figure out the best match.
    Example: `1.*`, `(, 2.0.0]`.
