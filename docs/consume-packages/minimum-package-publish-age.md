@@ -76,6 +76,7 @@ Each source is evaluated independently.
 If a version is eligible on at least one source considered for that package, it can be selected even if another source's minimum age would exclude it.
 For example, a source with no minimum age can make a recently published version eligible even when the same version is too new on another source.
 Use [Package Source Mapping](package-source-mapping.md) to limit packages to their expected sources.
+Note that `dotnet package add` doesn't currently use Package Source Mapping to select package versions ([NuGet/Home#11380](https://github.com/NuGet/Home/issues/11380)).
 
 > [!IMPORTANT]
 > Minimum publish age filters automatic version choices; it isn't a general rule that blocks package downloads.
