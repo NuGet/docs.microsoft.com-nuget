@@ -5,7 +5,7 @@ author: zivkan
 ms.author: zivkan
 ms.date: 10/23/2026
 ms.topic: reference
-ai-usage: ai-generated
+ai-usage: ai-assisted
 ---
 
 # client-certs command (NuGet CLI)

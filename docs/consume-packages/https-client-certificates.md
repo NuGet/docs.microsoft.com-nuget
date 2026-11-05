@@ -5,7 +5,7 @@ author: zivkan
 ms.author: zivkan
 ms.date: 10/23/2026
 ms.topic: how-to
-ai-usage: ai-generated
+ai-usage: ai-assisted
 ---
 
 # Authenticate to a feed with an HTTPS client certificate
