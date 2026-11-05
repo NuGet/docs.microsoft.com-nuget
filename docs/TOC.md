@@ -73,6 +73,7 @@
 ### [Local feeds](hosting-packages/local-feeds.md)
 # Concepts
 ## [Package installation process](concepts/package-installation-process.md)
+## [Package installation directories](concepts/package-installation-directories.md)
 ## [Package versioning](concepts/package-versioning.md)
 ## [Dependency resolution](concepts/dependency-resolution.md)
 ## [Auditing package dependencies for security vulnerabilities](concepts/Auditing-Packages.md)
