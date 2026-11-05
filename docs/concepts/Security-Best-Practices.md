@@ -5,7 +5,7 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 07/16/2026
 ms.topic: best-practice
-ai-usage: ai-generated
+ai-usage: ai-assisted
 ---
 
 # Best practices for a secure software supply chain

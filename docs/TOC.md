@@ -1,5 +1,5 @@
 ---
-ai-usage: ai-generated
+ai-usage: ai-assisted
 ---
 
 # [What is NuGet?](what-is-nuget.md)

@@ -6,7 +6,7 @@ ms.author: jodou
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ai-usage: ai-generated
+ai-usage: ai-assisted
 ---
 
 # Errors and warnings

@@ -5,7 +5,7 @@ author: donnie-msft
 ms.author: eagoodso
 ms.date: 09/29/2026
 ms.topic: reference
-ai-usage: ai-generated
+ai-usage: ai-assisted
 f1_keywords:
   - "vs.toolsoptionspages.nuget_package_manager"
   - "vs.toolsoptionspages.nuget_package_manager.general"

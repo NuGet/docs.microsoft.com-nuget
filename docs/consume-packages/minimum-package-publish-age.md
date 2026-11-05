@@ -4,7 +4,7 @@ description: Delay automatic selection of newly published NuGet package versions
 author: zivkan
 ms.date: 11/03/2026
 ms.topic: concept-article
-ai-usage: ai-generated
+ai-usage: ai-assisted
 ---
 
 # Minimum package publish age
