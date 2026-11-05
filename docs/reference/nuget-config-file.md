@@ -5,6 +5,7 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/13/2019
 ms.topic: reference
+ai-usage: ai-assisted
 ---
 
 # `nuget.config` reference
@@ -105,9 +106,13 @@ Controls whether the `packages` folder of a solution is included in source contr
 
 ## Package source sections
 
-The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources`, `trustedSigners` and `packageSourceMapping` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
+The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources`, `trustedSigners`, `packageSourceMapping`, and `minPublishAgeExceptions` sections configure how NuGet works with package repositories during install, restore, and update operations.
 
-The [`nuget sources` command](../reference/cli-reference/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../reference/cli-reference/cli-ref-setapikey.md), and `trustedSigners` which is managed using the [`nuget trusted-signers` command](../reference/cli-reference/cli-ref-trusted-signers.md).
+Manage package sources and credentials with the `dotnet nuget` source-management commands or [`nuget sources`](cli-reference/cli-ref-sources.md).
+For `trustedSigners`, use [`dotnet nuget trust`](/dotnet/core/tools/dotnet-nuget-trust) or [`nuget trusted-signers`](cli-reference/cli-ref-trusted-signers.md).
+For `apikeys`, use [`nuget setapikey`](cli-reference/cli-ref-setapikey.md); the .NET CLI doesn't have an equivalent command.
+
+For settings without a dedicated command, edit `nuget.config` directly or use the available [Visual Studio options](../consume-packages/nuget-visual-studio-options.md).
 
 Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
 
@@ -122,6 +127,7 @@ Lists all known package sources. The order is ignored during restore operations 
 | **protocolVersion** | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. <https://api.nuget.org/v3/index.json>). Supported in [NuGet 3.0+](/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](/nuget/api/overview) for more information about the version 3 protocol. |
 | **allowInsecureConnections** | When false, or not specified, NuGet will emit a warning when the source uses http, rather than https. If you are confident that communication with this source will never be at risk of interception attacks, you can set the value to true to suppress the warning. Supported in NuGet 6.8+. |
 | **disableTLSCertificateValidation** | This configuration property allows you to disable SSL/TLS certificate validation for your HTTPS server. When set to true, the server will ignore any errors related to SSL/TLS certificates, such as expired or self-signed certificates, and establish the connection without validation. Supported in NuGet 6.11+. |
+| **minPublishAgeHours** | The minimum number of hours since publication before a version is eligible for automatic selection by supported commands. Accepts whole numbers from `0` through `256204778`; defaults to `0` (no delay). Invalid values cause a configuration error. Supported in NuGet 8.0+, .NET SDK 11.0.100+, and Visual Studio 18.12+. See [Minimum package publish age](../consume-packages/minimum-package-publish-age.md) for supported operations and restore limitations. |
 
 **Example**:
 
@@ -144,6 +150,49 @@ Lists all known package sources. The order is ignored during restore operations 
 
 > [!Tip]
 > When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
+
+For example, to require a minimum publish age of 72 hours for nuget.org:
+
+```xml
+<packageSources>
+    <clear />
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" minPublishAgeHours="72" />
+</packageSources>
+```
+
+Redefining a source with the same key in a higher-priority configuration file replaces all of that source's earlier attributes.
+If the new definition omits `minPublishAgeHours`, the minimum age becomes zero.
+
+### minPublishAgeExceptions
+
+Exempts matching packages from [minimum publish age](../consume-packages/minimum-package-publish-age.md) checks on all sources.
+Supported in NuGet 8.0+, .NET SDK 11.0.100+, and Visual Studio 18.12+.
+By default, no packages are exempt.
+
+Each child must be a `package` element with a `pattern` attribute.
+Patterns are case-insensitive and use the [Package Source Mapping pattern syntax](../consume-packages/package-source-mapping.md#package-pattern-syntax).
+An exact ID matches one package; a prefix ending in `*` matches packages with that prefix.
+The `*` pattern matches every package.
+Exceptions apply to all versions of a matching package.
+
+**Example**:
+
+```xml
+<minPublishAgeExceptions>
+    <package pattern="Contoso.*" />
+    <package pattern="Fabrikam.WebApi.Client" />
+</minPublishAgeExceptions>
+```
+
+The nearest configuration file that defines this section replaces the entire exception list from lower-priority files.
+The patterns aren't merged across files.
+To clear inherited exceptions, use an empty section:
+
+```xml
+<minPublishAgeExceptions />
+```
+
+This section doesn't support a `<clear />` child.
 
 ### auditSources
 

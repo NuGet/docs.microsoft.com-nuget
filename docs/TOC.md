@@ -1,3 +1,7 @@
+---
+ai-usage: ai-assisted
+---
+
 # [What is NuGet?](what-is-nuget.md)
 # Get started
 ## [Install NuGet client tools](install-nuget-client-tools.md)
@@ -23,6 +27,7 @@
 #### [Restore packages](consume-packages/package-restore.md)
 #### [Troubleshooting](consume-packages/package-restore-troubleshooting.md)
 ### [Package source mapping](consume-packages/package-source-mapping.md)
+### [Minimum package publish age](consume-packages/minimum-package-publish-age.md)
 ### [Reinstall and update packages](consume-packages/reinstalling-and-updating-packages.md)
 ### [Manage global packages and cache folders](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ### [Manage package trust boundaries](consume-packages/installing-signed-packages.md)
@@ -164,6 +169,7 @@
 ### [NU1017](reference/errors-and-warnings/NU1017.md)
 ### [NU1018](reference/errors-and-warnings/NU1018.md)
 ### [NU1019](reference/errors-and-warnings/NU1019.md)
+### [NU1020](reference/errors-and-warnings/nu1020.md)
 ### [NU1100](reference/errors-and-warnings/NU1100.md)
 ### [NU1101](reference/errors-and-warnings/NU1101.md)
 ### [NU1102](reference/errors-and-warnings/NU1102.md)
