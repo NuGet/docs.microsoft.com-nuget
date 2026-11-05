@@ -54,7 +54,7 @@ By default, `add` and `update` fail if NuGet can't find or load the certificate.
 | `-FindBy <type>` | For store certificates with `add` or `update`. An [X509FindType](/dotnet/api/system.security.cryptography.x509certificates.x509findtype) name **without the `FindBy` prefix**, such as `Thumbprint` or `SubjectName`. Defaults to `Thumbprint` for `add`. |
 | `-FindValue <value>` | For store certificates with `add` or `update`. The search value for `-FindBy`. Required when adding a store certificate. |
 | `-Force` | For `add` or `update`. Saves the configuration even if NuGet can't find or load the certificate. Doesn't bypass TLS validation during package operations. |
-| `-ConfigFile <file>` | The NuGet configuration file to read or modify. If specified, only this file is used. Otherwise, NuGet uses the configuration hierarchy from the current directory. |
+| `-ConfigFile <file>` | The NuGet configuration file to read or modify. Required when adding a file certificate with `add -Path`, even with `-Force`. If specified, only this file is used. For other operations, omitting this option uses the configuration hierarchy from the current directory. |
 | `-ForceEnglishOutput` | Uses an invariant, English-based culture for command output. |
 | `-NonInteractive` | Suppresses prompts for user input or confirmations. |
 | `-Verbosity <level>` | Sets output detail to `normal` (the default), `quiet`, or `detailed`. |

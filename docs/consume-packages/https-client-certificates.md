@@ -99,6 +99,7 @@ nuget client-certs add -PackageSource Contoso -Path C:\certificates\client.pfx -
 ```
 
 Omit the password option if the file doesn't require a password.
+When adding a file certificate, you must specify `--configfile` (`dotnet`) or `-ConfigFile` (`nuget.exe`), even if you use the force option.
 Don't combine file options with certificate store options.
 If you already configured a store certificate for `Contoso`, remove that configuration before adding a file certificate.
 
