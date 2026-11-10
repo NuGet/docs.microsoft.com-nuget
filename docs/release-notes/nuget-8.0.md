@@ -19,8 +19,6 @@ NuGet distribution vehicles:
 
 ## Summary: What's New in 8.0.0
 
-* Add `NuGet.Protocol` APIs for package staging resources - [#15084](https://github.com/NuGet/Home/issues/15084)
-
 * Add `dotnet nuget stage push` to upload packages and symbols to a staging service - [#15083](https://github.com/NuGet/Home/issues/15083)
 
 * Review package supply-chain security with Copilot from the Visual Studio Error List - [#15049](https://github.com/NuGet/Home/issues/15049)
@@ -29,19 +27,20 @@ NuGet distribution vehicles:
 
 ### Breaking changes
 
-* Add nullable annotations to `NuGet.Resolver`, which can introduce compiler warnings or errors in consuming projects - [#15069](https://github.com/NuGet/Home/issues/15069)
+* Add nullable annotations to the following libraries, which can introduce compiler warnings or errors in consuming projects:
+  * `NuGet.Resolver` - [#15069](https://github.com/NuGet/Home/issues/15069)
+  * `NuGet.DependencyResolver.Core` - [#15060](https://github.com/NuGet/Home/issues/15060)
+  * `NuGet.Credentials` - [#15012](https://github.com/NuGet/Home/issues/15012)
 
 * Replace the .NET 8 target with .NET 10 in NuGet client libraries. Retain the .NET Framework 4.7.2 target - [#15062](https://github.com/NuGet/Home/issues/15062)
 
-* Add nullable annotations to `NuGet.DependencyResolver.Core`, which can introduce compiler warnings or errors in consuming projects - [#15060](https://github.com/NuGet/Home/issues/15060)
-
-* Warn with NU5052 for non-standard package IDs in classic `msbuild /t:pack` and `nuget.exe pack` - [#15013](https://github.com/NuGet/Home/issues/15013)
-
-* Add nullable annotations to `NuGet.Credentials`, which can introduce compiler warnings or errors in consuming projects - [#15012](https://github.com/NuGet/Home/issues/15012)
-
-* Emit NU5052 for non-standard package IDs during SDK pack when `SdkAnalysisLevel` is `11.0.100` or later - [#14949](https://github.com/NuGet/Home/issues/14949)
+* Warn with NU5052 for non-standard package IDs in the following pack flows:
+  * Classic `msbuild /t:pack` and `nuget.exe pack` - [#15013](https://github.com/NuGet/Home/issues/15013)
+  * SDK pack when `SdkAnalysisLevel` is `11.0.100` or later - [#14949](https://github.com/NuGet/Home/issues/14949)
 
 ### Issues fixed in this release
+
+* Add `NuGet.Protocol` APIs for package staging resources - [#15084](https://github.com/NuGet/Home/issues/15084)
 
 * Warn when `dotnet package add` uses a non-standard package ID - [#15076](https://github.com/NuGet/Home/issues/15076)
 
