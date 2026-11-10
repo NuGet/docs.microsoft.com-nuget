@@ -3,7 +3,7 @@ title: Migrating from packages.config to PackageReference formats
 description: Details on how to migrate a project from the packages.config management format to PackageReference as supported by NuGet 4.0+ and VS2017 and .NET Core 2.0
 author: JonDouglas
 ms.author: jodou
-ms.date: 08/23/2021
+ms.date: 05/19/2026
 ms.topic: upgrade-and-migration-article
 ---
 
@@ -43,7 +43,10 @@ Perform any one of the following NuGet actions:
 * Run NuGet restore - Right-click on the solution node in the Solution Explorer and select `Restore NuGet Packages` 
 * Build the project which also triggers NuGet restore 
 
-You should now be able to see the migration option. Note that this option is not supported and will not show up for ASP.NET and C++ project types. 
+You should now be able to see the migration option.
+Note that this option is not supported and won't show up for ASP.NET and C++ project types.
+C++ PackageReference support is experimental.
+For the latest C++ support details, see [NuGet PackageReference for C++ projects in Visual Studio](https://devblogs.microsoft.com/cppblog/nuget-packagereference-for-c-projects-in-visual-studio/).
 
 ## Migration steps
 
