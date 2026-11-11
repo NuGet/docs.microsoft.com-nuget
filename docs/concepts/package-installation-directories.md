@@ -66,4 +66,6 @@ Projects that use [packages.config](../reference/packages-config.md) keep their 
 Each package has a directory that combines its ID and version, such as `Newtonsoft.Json.13.0.3`.
 These projects reference the package files in that directory rather than using them directly from the global-packages folder.
 
+If a package is missing from the solution packages folder, NuGet copies it from the global-packages folder, and only downloads it if it's missing from both, as described in [What happens when a NuGet package is installed?](package-installation-process.md).
+
 To change this location, set [`repositoryPath` in `nuget.config`](../reference/nuget-config-file.md#config-section).

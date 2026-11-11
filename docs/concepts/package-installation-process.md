@@ -43,6 +43,7 @@ The general process is as follows:
 3. Save a copy of the package and other information in the *http-cache* folder as described on [Managing the global packages and cache folders](../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
 4. If downloaded, install the package into the per-user *global-packages* folder. NuGet creates a subfolder for each package identifier, then creates subfolders for each installed version of the package.
+   For projects using `packages.config`, NuGet then copies the package from the global-packages folder into the solution packages folder.
 
 5. NuGet installs package dependencies as required. This process might update package versions in the process, as described in [Dependency Resolution](../concepts/dependency-resolution.md).
 
