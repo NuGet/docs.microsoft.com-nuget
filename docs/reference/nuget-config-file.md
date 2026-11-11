@@ -1,10 +1,11 @@
 ---
 title: nuget.config File Reference
-description: NuGet.Config file reference including the config, bindingRedirects, packageRestore, solution, and packageSource sections.
+description: NuGet.Config file reference including package sources, credentials, HTTPS client certificates, and package restore settings.
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/13/2019
 ms.topic: reference
+ai-usage: ai-assisted
 ---
 
 # `nuget.config` reference
@@ -105,11 +106,17 @@ Controls whether the `packages` folder of a solution is included in source contr
 
 ## Package source sections
 
-The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources`, `trustedSigners` and `packageSourceMapping` all work together to configure how NuGet works with package repositories during install, restore, and update operations.
+The `packageSources`, `packageSourceCredentials`, `clientCertificates`, `apikeys`, `activePackageSource`, `disabledPackageSources`, `trustedSigners`, `packageSourceMapping`, and `minPublishAgeExceptions` sections configure how NuGet works with package repositories during install, restore, and update operations.
 
-The [`nuget sources` command](../reference/cli-reference/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../reference/cli-reference/cli-ref-setapikey.md), and `trustedSigners` which is managed using the [`nuget trusted-signers` command](../reference/cli-reference/cli-ref-trusted-signers.md).
+Manage package sources and credentials with the `dotnet nuget` source-management commands or [`nuget sources`](cli-reference/cli-ref-sources.md).
+For `trustedSigners`, use [`dotnet nuget trust`](/dotnet/core/tools/dotnet-nuget-trust) or [`nuget trusted-signers`](cli-reference/cli-ref-trusted-signers.md).
+For `apikeys`, use [`nuget setapikey`](cli-reference/cli-ref-setapikey.md); the .NET CLI doesn't have an equivalent command.
+
+For settings without a dedicated command, edit `nuget.config` directly or use the available [Visual Studio options](../consume-packages/nuget-visual-studio-options.md).
 
 Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.
+
+Manage `clientCertificates` with [`nuget client-certs`](cli-reference/cli-ref-client-certs.md) or [`dotnet nuget add client-cert`](/dotnet/core/tools/dotnet-nuget-add-client-cert).
 
 ### packageSources
 
@@ -122,6 +129,7 @@ Lists all known package sources. The order is ignored during restore operations 
 | **protocolVersion** | The NuGet server protocol version to be used. The current version is "3". Defaults to version "2" when not pointing to a package source URL ending in `.json` (e.g. <https://api.nuget.org/v3/index.json>). Supported in [NuGet 3.0+](/nuget/release-notes/nuget-3.0.0). See [NuGet Server API](/nuget/api/overview) for more information about the version 3 protocol. |
 | **allowInsecureConnections** | When false, or not specified, NuGet will emit a warning when the source uses http, rather than https. If you are confident that communication with this source will never be at risk of interception attacks, you can set the value to true to suppress the warning. Supported in NuGet 6.8+. |
 | **disableTLSCertificateValidation** | This configuration property allows you to disable SSL/TLS certificate validation for your HTTPS server. When set to true, the server will ignore any errors related to SSL/TLS certificates, such as expired or self-signed certificates, and establish the connection without validation. Supported in NuGet 6.11+. |
+| **minPublishAgeHours** | The minimum number of hours since publication before a version is eligible for automatic selection by supported commands. Accepts whole numbers from `0` through `256204778`; defaults to `0` (no delay). Invalid values cause a configuration error. Supported in NuGet 8.0+, .NET SDK 11.0.100+, and Visual Studio 18.12+. See [Minimum package publish age](../consume-packages/minimum-package-publish-age.md) for supported operations and restore limitations. |
 
 **Example**:
 
@@ -145,6 +153,49 @@ Lists all known package sources. The order is ignored during restore operations 
 > [!Tip]
 > When `<clear />` is present for a given node, NuGet ignores previously defined configuration values for that node. [Read more about how settings are applied](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
 
+For example, to require a minimum publish age of 72 hours for nuget.org:
+
+```xml
+<packageSources>
+    <clear />
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" minPublishAgeHours="72" />
+</packageSources>
+```
+
+Redefining a source with the same key in a higher-priority configuration file replaces all of that source's earlier attributes.
+If the new definition omits `minPublishAgeHours`, the minimum age becomes zero.
+
+### minPublishAgeExceptions
+
+Exempts matching packages from [minimum publish age](../consume-packages/minimum-package-publish-age.md) checks on all sources.
+Supported in NuGet 8.0+, .NET SDK 11.0.100+, and Visual Studio 18.12+.
+By default, no packages are exempt.
+
+Each child must be a `package` element with a `pattern` attribute.
+Patterns are case-insensitive and use the [Package Source Mapping pattern syntax](../consume-packages/package-source-mapping.md#package-pattern-syntax).
+An exact ID matches one package; a prefix ending in `*` matches packages with that prefix.
+The `*` pattern matches every package.
+Exceptions apply to all versions of a matching package.
+
+**Example**:
+
+```xml
+<minPublishAgeExceptions>
+    <package pattern="Contoso.*" />
+    <package pattern="Fabrikam.WebApi.Client" />
+</minPublishAgeExceptions>
+```
+
+The nearest configuration file that defines this section replaces the entire exception list from lower-priority files.
+The patterns aren't merged across files.
+To clear inherited exceptions, use an empty section:
+
+```xml
+<minPublishAgeExceptions />
+```
+
+This section doesn't support a `<clear />` child.
+
 ### auditSources
 
 Lists all known audit sources, which [NuGet Audit](../concepts/Auditing-Packages.md#running-a-security-audit-with-restore) will use during restore.
@@ -165,6 +216,67 @@ Audit sources support the same attributes as `packageSources` (`protocolVersion`
 > nuget.org also provides `https://data.nuget.org/v3/index.json`, a service index that only contains vulnerability data and doesn't serve packages.
 > Network administrators who block `api.nuget.org` to prevent package downloads might be willing to allow `data.nuget.org` if asked.
 > For more information, see [audit sources](../concepts/Auditing-Packages.md#audit-sources).
+
+### clientCertificates
+
+Specifies client certificates for HTTPS package sources that require certificate-based authentication.
+Supported in NuGet 5.7 and later.
+For setup instructions, see [Authenticate to a feed with an HTTPS client certificate](../consume-packages/https-client-certificates.md).
+
+Each `packageSource` attribute must match the name (`key`) of a configured package source exactly, including capitalization, rather than its URL.
+You can configure at most one `fileCert` or `storeCert` entry per package source.
+Use `<clear />` to ignore client certificate settings inherited from earlier configuration files.
+
+#### fileCert
+
+Loads a certificate from a file.
+Use a PKCS #12 file (`.pfx` or `.p12`) that includes the certificate and its private key.
+
+| Attribute | Description |
+| --- | --- |
+| `packageSource` | Required. The name of the package source. |
+| `path` | Required. The absolute or relative path to the certificate file. NuGet first checks the supplied path, then tries a relative path against the directory containing the configuration file. |
+| `password` | Optional. The encrypted certificate password, generated by a client certificate CLI command. Encryption is supported only on Windows, and the password can be decrypted only by the same user on the same machine. |
+| `clearTextPassword` | Optional. The unencrypted certificate password. Don't specify both `password` and `clearTextPassword`. Omit both attributes if the file doesn't require a password. |
+
+> [!WARNING]
+> Don't commit certificate files containing private keys or certificate passwords to source control.
+> Restrict access to the certificate file and any configuration file that contains a clear-text password.
+
+#### storeCert
+
+Finds certificates in an operating system certificate store.
+The available stores and search capabilities depend on your operating system.
+
+| Attribute | Description |
+| --- | --- |
+| `packageSource` | Required. The name of the package source. |
+| `storeLocation` | Optional. `CurrentUser` (the default) or `LocalMachine`. |
+| `storeName` | Optional. A [StoreName](/dotnet/api/system.security.cryptography.x509certificates.storename) value: `AddressBook`, `AuthRoot`, `CertificateAuthority`, `Disallowed`, `My`, `Root`, `TrustedPeople`, or `TrustedPublisher`. Defaults to `My`, the personal certificate store. |
+| `findBy` | Optional. An [X509FindType](/dotnet/api/system.security.cryptography.x509certificates.x509findtype) name **without the `FindBy` prefix**, such as `Thumbprint`, `SubjectName`, or `IssuerName`. Defaults to `Thumbprint`. |
+| `findValue` | Required. The search value for `findBy`, such as a certificate thumbprint. |
+
+**Example**:
+
+```xml
+<configuration>
+    <packageSources>
+        <add key="Contoso" value="https://nuget.contoso.com/v3/index.json" />
+        <add key="Fabrikam" value="https://nuget.fabrikam.com/v3/index.json" />
+    </packageSources>
+    <clientCertificates>
+        <storeCert packageSource="Contoso"
+                   storeLocation="CurrentUser"
+                   storeName="My"
+                   findBy="Thumbprint"
+                   findValue="4894671AE5AA84840CC1079E89E82D426BC24EC6" />
+        <fileCert packageSource="Fabrikam" path="C:\certificates\client.pfx" />
+    </clientCertificates>
+</configuration>
+```
+
+The `fileCert` example uses a file that doesn't require a password.
+For password-protected files, use a [client certificate CLI command](cli-reference/cli-ref-client-certs.md) to generate the password attribute.
 
 ### packageSourceCredentials
 
