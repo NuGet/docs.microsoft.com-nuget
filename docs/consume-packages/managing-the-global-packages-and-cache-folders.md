@@ -14,7 +14,7 @@ Whenever you install, update, or restore a package, NuGet manages packages and p
 
 | Name | Location |
 | --- | --- |
-| [global-packages](#global-packages) | <ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>Override using the NUGET_PACKAGES environment variable, the `globalPackagesFolder` or `repositoryPath` [configuration settings](../reference/nuget-config-file.md#config-section) (when using PackageReference and `packages.config`, respectively), or the `RestorePackagesPath` MSBuild property (MSBuild only). The environment variable takes precedence over the configuration setting.</li></ul> |
+| [global-packages](#global-packages) | <ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>Override using the `NUGET_PACKAGES` environment variable, the `globalPackagesFolder` [configuration setting](../reference/nuget-config-file.md#config-section), or the `RestorePackagesPath` MSBuild property (MSBuild only). The environment variable takes precedence over the configuration setting.</li></ul> |
 | [http-cache](#http-cache) | <ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Override using the NUGET_HTTP_CACHE_PATH environment variable.</li></ul> |
 | [temp](#temp) | <li>Windows: `%temp%\NuGetScratch`</li><li>Mac: `$TMPDIR/NuGetScratch`</li><li>Linux: `/tmp/NuGetScratch<username>`</li><li>Override using the NUGET_SCRATCH environment variable.</li></ul> |
 | [plugins-cache](#plugin-cache) **4.8+** | <ul><li>Windows: `%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/plugins-cache`</li><li>Override using the NUGET_PLUGINS_CACHE_PATH environment variable.</li></ul> |
@@ -23,7 +23,8 @@ By using the *global-packages* folder, NuGet generally avoids downloading packag
 When using PackageReference, the *global-packages* folder also avoids keeping downloaded packages inside project folders, where they might be inadvertently added to source control, and reduces NuGet's overall impact on computer storage.
 
 When asked to retrieve a package, NuGet first looks in the *global-packages* folder.
-If the exact version of the package is not there, then NuGet checks all non-HTTP package sources.
+For PackageReference projects, it also checks configured [fallback package folders](../concepts/package-installation-directories.md#fallback-package-folders).
+If the exact version of the package isn't already installed, then NuGet checks all non-HTTP package sources.
 If the package is still not found, NuGet looks for the package in the *http-cache* unless you specify `--no-http-cache` with `dotnet.exe` commands or `-NoHttpCache` with `nuget.exe` commands.
 If the package is not in the HTTP cache, or the HTTP cache isn't used, NuGet then retrieves the package over HTTP.
 
@@ -31,10 +32,9 @@ For more information, see [What happens when a package is installed?](../concept
 
 ## global-packages
 
-The *global-packages* folder is where NuGet installs any downloaded package.
-Each package is fully expanded into a subfolder that matches the package identifier and version number.
-Projects using the [PackageReference](package-references-in-project-files.md) format always use packages directly from this folder.
-When using the [packages.config](../reference/packages-config.md), packages are installed to the *global-packages* folder, then copied into the project's `packages` folder.
+The [global-packages folder](../concepts/package-installation-directories.md#global-packages-folder) is NuGet's de facto package installation directory.
+Projects using [PackageReference](package-references-in-project-files.md) use packages directly from this folder or from configured fallback folders.
+Projects using [packages.config](../reference/packages-config.md) use a separate [solution packages folder](../concepts/package-installation-directories.md#solution-packages-folder), whose location you can change with the `repositoryPath` configuration setting.
 
 ### Cleaning the global-packages directory
 
