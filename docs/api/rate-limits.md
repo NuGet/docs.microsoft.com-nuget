@@ -2,7 +2,7 @@
 title: Rate Limits, NuGet API
 description: The NuGet APIs will have enforced rate limits to prevent abuse.
 author: cmanu
-ms.author: cmanu
+ms.author: madsk
 ms.date: 03/20/2018
 ms.topic: reference
 ms.reviewer: 

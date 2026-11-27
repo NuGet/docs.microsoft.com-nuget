@@ -2,7 +2,7 @@
 title: README Uri Template, NuGet API
 description: The README uri template allows clients to download the readme for a package, if available.
 author: jgonz120
-ms.author: jongonza
+ms.author: madsk
 ms.date: 1/6/2025
 ms.topic: reference
 ms.reviewer: 
