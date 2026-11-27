@@ -2,7 +2,7 @@
 title: Identify the project format
 description: Describes how to identity your project format
 author: mikejo5000
-ms.author: mikejo
+ms.author: madsk
 ms.date: 07/09/2019
 ms.topic: concept-article
 ---

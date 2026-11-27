@@ -3,7 +3,7 @@ metadata:
   title: NuGet Frequently-Asked Questions
   description: Common questions and answers for using NuGet on the command line and in Visual Studio
   author: shishirx34
-  ms.author: shishirh
+  ms.author: madsk
   ms.date: 01/08/2025
   ms.update-cycle: 1095-days
   ms.topic: faq
