@@ -2,7 +2,7 @@
 title: Manage NuGet Packages with the NuGet CLI
 description: Find out how to use the NuGet CLI, nuget.exe, to manage NuGet packages in non-SDK-style projects that use a packages.config file to list package references.
 author: mikejo5000
-ms.author: mikejo
+ms.author: madsk
 ms.date: 04/08/2026
 ms.topic: how-to
 # customer intent: As a developer, I want to find out how to use the NuGet CLI so that I can manage NuGet packages in my projects and solutions.

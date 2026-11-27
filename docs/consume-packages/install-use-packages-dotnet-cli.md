@@ -2,7 +2,7 @@
 title: Install and Manage NuGet Packages with the dotnet CLI
 description: Find out how to use the dotnet command-line interface (CLI) to install, list, remove, and update NuGet packages in .NET projects.
 author: mikejo5000
-ms.author: mikejo
+ms.author: madsk
 ms.date: 04/17/2026
 ms.topic: how-to
 # customer intent: As a developer, I want to find out how to use the dotnet CLI to manage NuGet packages so that I can use the packages in .NET projects.
