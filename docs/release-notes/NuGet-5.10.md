@@ -2,7 +2,7 @@
 title: NuGet 5.10 Release Notes
 description: Release notes for NuGet 5.10 including new features, bug fixes, and DCRs.
 author: zkat
-ms.author: kmarchan
+ms.author: madsk
 ms.date: 6/11/2021
 ms.topic: release-notes
 ---

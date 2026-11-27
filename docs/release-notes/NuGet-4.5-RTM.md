@@ -2,7 +2,7 @@
 title: NuGet 4.5 RTM Release Notes
 description: Release notes for NuGet 4.5 RTM including known issues, bug fixes, added features, and DCRs.
 author: anangaur
-ms.author: anangaur
+ms.author: madsk
 ms.date: 12/4/2017
 ms.topic: release-notes
 ---
