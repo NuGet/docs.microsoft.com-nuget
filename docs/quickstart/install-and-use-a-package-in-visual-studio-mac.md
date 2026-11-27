@@ -2,7 +2,7 @@
 title: Install and use a NuGet package in Visual Studio for Mac
 description: A walkthrough tutorial on the process of installing and using a NuGet package in a Visual Studio for Mac project.
 author: jmatthiesen
-ms.author: jomatthi
+ms.author: madsk
 ms.date: 08/14/2019
 ms.topic: quickstart
 ---
