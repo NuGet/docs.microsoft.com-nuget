@@ -2,7 +2,7 @@
 title: NuGet 6.0 Release Notes
 description: Release notes for NuGet 6.0 including new features, bug fixes, and DCRs.
 author: zkat
-ms.author: kmarchan
+ms.author: madsk
 ms.date: 10/7/2021
 ms.topic: release-notes
 ---

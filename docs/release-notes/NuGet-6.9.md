@@ -2,7 +2,7 @@
 title: NuGet 6.9 Release Notes
 description: Release notes for NuGet 6.9 including new features, bug fixes, and DCRs.
 author: jgonz120
-ms.author: jongonza
+ms.author: madsk
 ms.date: 2/1/2024
 ms.topic: release-notes
 ---
