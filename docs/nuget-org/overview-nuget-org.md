@@ -2,7 +2,7 @@
 title: Overview of NuGet.org
 description: Overview of NuGet.org
 author: mikejo5000
-ms.author: mikejo
+ms.author: madsk
 ms.date: 06/05/2019
 ms.topic: concept-article
 ---

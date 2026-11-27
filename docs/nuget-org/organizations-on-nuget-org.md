@@ -2,7 +2,7 @@
 title: Your organization on NuGet.org
 description: Organizations on NuGet.org helps you to manage packages published by group or in a team, company environment.
 author: anangaur
-ms.author: anangaur
+ms.author: madsk
 ms.date: 04/10/2018
 ms.topic: concept-article
 ms.reviewer: 
